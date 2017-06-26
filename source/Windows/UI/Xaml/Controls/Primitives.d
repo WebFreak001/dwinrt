@@ -1341,6 +1341,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IButtonBase).set_CommandParameter(value));
 	}
+	final EventRegistrationToken OnClick(void delegate(IInspectable, Windows.UI.Xaml.RoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IButtonBase).add_Click(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeClick(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IButtonBase).remove_Click(token));
@@ -1417,6 +1423,12 @@ class ButtonBaseT(Base) : AgileObject!Base, ButtonBase
 
 interface CalendarPanel : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.Primitives.ICalendarPanel
 {
+	static CalendarPanel New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(CalendarPanel).abi_ActivateInstance(&ret));
+		return ret.as!(CalendarPanel);
+	}
 }
 
 interface CalendarViewTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.ICalendarViewTemplateSettings
@@ -2718,6 +2730,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IJumpListItemBackgroundConverterStatics).get_DisabledProperty(&_ret));
 		return _ret;
 	}
+	static JumpListItemBackgroundConverter New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(JumpListItemBackgroundConverter).abi_ActivateInstance(&ret));
+		return ret.as!(JumpListItemBackgroundConverter);
+	}
 }
 
 interface JumpListItemForegroundConverter : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IJumpListItemForegroundConverter, Windows.UI.Xaml.Data.IValueConverter
@@ -2773,6 +2791,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IJumpListItemForegroundConverterStatics).get_DisabledProperty(&_ret));
 		return _ret;
+	}
+	static JumpListItemForegroundConverter New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(JumpListItemForegroundConverter).abi_ActivateInstance(&ret));
+		return ret.as!(JumpListItemForegroundConverter);
 	}
 }
 
@@ -3393,6 +3417,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelector).set_ItemTemplate(value));
 	}
+	final EventRegistrationToken OnSelectionChanged(void delegate(IInspectable, Windows.UI.Xaml.Controls.SelectionChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelector).add_SelectionChanged(event!(Windows.UI.Xaml.Controls.SelectionChangedEventHandler, IInspectable, Windows.UI.Xaml.Controls.SelectionChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeSelectionChanged(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelector).remove_SelectionChanged(token));
@@ -3824,6 +3854,12 @@ class PivotHeaderItemT(Base) : AgileObject!Base, PivotHeaderItem
 
 interface PivotHeaderPanel : Windows.UI.Xaml.Controls.Canvas, Windows.UI.Xaml.Controls.Primitives.IPivotHeaderPanel
 {
+	static PivotHeaderPanel New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PivotHeaderPanel).abi_ActivateInstance(&ret));
+		return ret.as!(PivotHeaderPanel);
+	}
 }
 
 interface PivotPanel : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.Primitives.IPivotPanel, Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo
@@ -3872,6 +3908,12 @@ extern(Windows):
 		float _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetRegularSnapPoints(orientation, alignment, out_offset, &_ret));
 		return _ret;
+	}
+	static PivotPanel New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PivotPanel).abi_ActivateInstance(&ret));
+		return ret.as!(PivotPanel);
 	}
 }
 
@@ -4011,6 +4053,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IPopupStatics).get_IsLightDismissEnabledProperty(&_ret));
 		return _ret;
 	}
+	static Popup New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Popup).abi_ActivateInstance(&ret));
+		return ret.as!(Popup);
+	}
 }
 
 interface ProgressBarTemplateSettings : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IProgressBarTemplateSettings
@@ -4135,6 +4183,12 @@ extern(Windows):
 	final void Value(double value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBase).set_Value(value));
+	}
+	final EventRegistrationToken OnValueChanged(void delegate(IInspectable, Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBase).add_ValueChanged(event!(Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventHandler, IInspectable, Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeValueChanged(EventRegistrationToken token)
 	{
@@ -4278,6 +4332,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IRepeatButtonStatics).get_IntervalProperty(&_ret));
 		return _ret;
 	}
+	static RepeatButton New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(RepeatButton).abi_ActivateInstance(&ret));
+		return ret.as!(RepeatButton);
+	}
 }
 
 interface ScrollBar : Windows.UI.Xaml.Controls.Primitives.RangeBase, Windows.UI.Xaml.Controls.Primitives.IScrollBar
@@ -4313,6 +4373,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollBar).set_IndicatorMode(value));
 	}
+	final EventRegistrationToken OnScroll(void delegate(IInspectable, Windows.UI.Xaml.Controls.Primitives.ScrollEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollBar).add_Scroll(event!(Windows.UI.Xaml.Controls.Primitives.ScrollEventHandler, IInspectable, Windows.UI.Xaml.Controls.Primitives.ScrollEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeScroll(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollBar).remove_Scroll(token));
@@ -4342,6 +4408,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IScrollBarStatics).get_IndicatorModeProperty(&_ret));
 		return _ret;
 	}
+	static ScrollBar New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ScrollBar).abi_ActivateInstance(&ret));
+		return ret.as!(ScrollBar);
+	}
 }
 
 interface ScrollEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Controls.Primitives.IScrollEventArgs
@@ -4358,6 +4430,12 @@ extern(Windows):
 		Windows.UI.Xaml.Controls.Primitives.ScrollEventType _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollEventArgs).get_ScrollEventType(&_ret));
 		return _ret;
+	}
+	static ScrollEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ScrollEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(ScrollEventArgs);
 	}
 }
 
@@ -4413,6 +4491,12 @@ extern(Windows):
 	final void IsSynchronizedWithCurrentItem(Windows.Foundation.IReference!(bool) value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISelector).set_IsSynchronizedWithCurrentItem(value));
+	}
+	final EventRegistrationToken OnSelectionChanged(void delegate(IInspectable, Windows.UI.Xaml.Controls.SelectionChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISelector).add_SelectionChanged(event!(Windows.UI.Xaml.Controls.SelectionChangedEventHandler, IInspectable, Windows.UI.Xaml.Controls.SelectionChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeSelectionChanged(EventRegistrationToken token)
 	{
@@ -4631,13 +4715,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IThumb).get_IsDragging(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnDragStarted(void delegate(IInspectable, Windows.UI.Xaml.Controls.Primitives.DragStartedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IThumb).add_DragStarted(event!(Windows.UI.Xaml.Controls.Primitives.DragStartedEventHandler, IInspectable, Windows.UI.Xaml.Controls.Primitives.DragStartedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeDragStarted(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IThumb).remove_DragStarted(token));
 	}
+	final EventRegistrationToken OnDragDelta(void delegate(IInspectable, Windows.UI.Xaml.Controls.Primitives.DragDeltaEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IThumb).add_DragDelta(event!(Windows.UI.Xaml.Controls.Primitives.DragDeltaEventHandler, IInspectable, Windows.UI.Xaml.Controls.Primitives.DragDeltaEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeDragDelta(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IThumb).remove_DragDelta(token));
+	}
+	final EventRegistrationToken OnDragCompleted(void delegate(IInspectable, Windows.UI.Xaml.Controls.Primitives.DragCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IThumb).add_DragCompleted(event!(Windows.UI.Xaml.Controls.Primitives.DragCompletedEventHandler, IInspectable, Windows.UI.Xaml.Controls.Primitives.DragCompletedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeDragCompleted(EventRegistrationToken token)
 	{
@@ -4659,6 +4761,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IThumbStatics).get_IsDraggingProperty(&_ret));
 		return _ret;
+	}
+	static Thumb New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Thumb).abi_ActivateInstance(&ret));
+		return ret.as!(Thumb);
 	}
 }
 
@@ -4688,6 +4796,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.ITickBarStatics).get_FillProperty(&_ret));
 		return _ret;
 	}
+	static TickBar New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(TickBar).abi_ActivateInstance(&ret));
+		return ret.as!(TickBar);
+	}
 }
 
 interface ToggleButton : Windows.UI.Xaml.Controls.Primitives.ButtonBase, Windows.UI.Xaml.Controls.Primitives.IToggleButton, Windows.UI.Xaml.Controls.Primitives.IToggleButtonOverrides
@@ -4713,13 +4827,31 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToggleButton).set_IsThreeState(value));
 	}
+	final EventRegistrationToken OnChecked(void delegate(IInspectable, Windows.UI.Xaml.RoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToggleButton).add_Checked(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeChecked(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToggleButton).remove_Checked(token));
 	}
+	final EventRegistrationToken OnUnchecked(void delegate(IInspectable, Windows.UI.Xaml.RoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToggleButton).add_Unchecked(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeUnchecked(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToggleButton).remove_Unchecked(token));
+	}
+	final EventRegistrationToken OnIndeterminate(void delegate(IInspectable, Windows.UI.Xaml.RoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToggleButton).add_Indeterminate(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeIndeterminate(EventRegistrationToken token)
 	{

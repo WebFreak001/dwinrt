@@ -412,6 +412,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebTokenResponse).get_Properties(&_ret));
 		return _ret;
 	}
+	static WebTokenResponse New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(WebTokenResponse).abi_ActivateInstance(&ret));
+		return ret.as!(WebTokenResponse);
+	}
 	static Windows.Security.Authentication.Web.Core.WebTokenResponse New(HSTRING token)
 	{
 		auto factory = factory!(Windows.Security.Authentication.Web.Core.IWebTokenResponseFactory);

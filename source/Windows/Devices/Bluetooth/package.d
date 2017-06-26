@@ -1181,6 +1181,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothSignalStrengthFilter).set_SamplingInterval(value));
 	}
+	static BluetoothSignalStrengthFilter New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BluetoothSignalStrengthFilter).abi_ActivateInstance(&ret));
+		return ret.as!(BluetoothSignalStrengthFilter);
+	}
 }
 
 interface BluetoothUuidHelper

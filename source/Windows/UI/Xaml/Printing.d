@@ -92,6 +92,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IAddPagesEventArgs).get_PrintTaskOptions(&_ret));
 		return _ret;
 	}
+	static AddPagesEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(AddPagesEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(AddPagesEventArgs);
+	}
 }
 
 interface GetPreviewPageEventArgs : Windows.UI.Xaml.Printing.IGetPreviewPageEventArgs
@@ -102,6 +108,12 @@ extern(Windows):
 		INT32 _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IGetPreviewPageEventArgs).get_PageNumber(&_ret));
 		return _ret;
+	}
+	static GetPreviewPageEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(GetPreviewPageEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(GetPreviewPageEventArgs);
 	}
 }
 
@@ -120,6 +132,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPaginateEventArgs).get_CurrentPreviewPageNumber(&_ret));
 		return _ret;
 	}
+	static PaginateEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PaginateEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(PaginateEventArgs);
+	}
 }
 
 interface PrintDocument : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Printing.IPrintDocument
@@ -131,13 +149,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).get_DocumentSource(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnPaginate(void delegate(IInspectable, Windows.UI.Xaml.Printing.PaginateEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).add_Paginate(event!(Windows.UI.Xaml.Printing.PaginateEventHandler, IInspectable, Windows.UI.Xaml.Printing.PaginateEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removePaginate(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).remove_Paginate(token));
 	}
+	final EventRegistrationToken OnGetPreviewPage(void delegate(IInspectable, Windows.UI.Xaml.Printing.GetPreviewPageEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).add_GetPreviewPage(event!(Windows.UI.Xaml.Printing.GetPreviewPageEventHandler, IInspectable, Windows.UI.Xaml.Printing.GetPreviewPageEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeGetPreviewPage(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).remove_GetPreviewPage(token));
+	}
+	final EventRegistrationToken OnAddPages(void delegate(IInspectable, Windows.UI.Xaml.Printing.AddPagesEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).add_AddPages(event!(Windows.UI.Xaml.Printing.AddPagesEventHandler, IInspectable, Windows.UI.Xaml.Printing.AddPagesEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeAddPages(EventRegistrationToken token)
 	{

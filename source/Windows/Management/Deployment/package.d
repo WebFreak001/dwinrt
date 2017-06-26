@@ -462,6 +462,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Management.Deployment.IPackageManager5).get_DebugSettings(&_ret));
 		return _ret;
 	}
+	static PackageManager New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PackageManager).abi_ActivateInstance(&ret));
+		return ret.as!(PackageManager);
+	}
 }
 
 interface PackageManagerDebugSettings : Windows.Management.Deployment.IPackageManagerDebugSettings

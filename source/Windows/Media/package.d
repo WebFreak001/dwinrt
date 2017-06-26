@@ -899,6 +899,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.IMediaExtensionManager2).abi_RegisterMediaExtensionForAppService(extension, connection));
 	}
+	static MediaExtensionManager New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MediaExtensionManager).abi_ActivateInstance(&ret));
+		return ret.as!(MediaExtensionManager);
+	}
 }
 
 interface MediaMarkerTypes
@@ -1028,6 +1034,12 @@ extern(Windows):
 	final void removeEnded(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.Media.IMediaTimelineController2).remove_Ended(token));
+	}
+	static MediaTimelineController New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MediaTimelineController).abi_ActivateInstance(&ret));
+		return ret.as!(MediaTimelineController);
 	}
 }
 
@@ -1531,6 +1543,12 @@ extern(Windows):
 	final void Position(Windows.Foundation.TimeSpan value)
 	{
 		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControlsTimelineProperties).set_Position(value));
+	}
+	static SystemMediaTransportControlsTimelineProperties New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SystemMediaTransportControlsTimelineProperties).abi_ActivateInstance(&ret));
+		return ret.as!(SystemMediaTransportControlsTimelineProperties);
 	}
 }
 

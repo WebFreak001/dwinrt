@@ -1180,6 +1180,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapActualCameraChangedEventArgs2).get_ChangeReason(&_ret));
 		return _ret;
 	}
+	static MapActualCameraChangedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapActualCameraChangedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(MapActualCameraChangedEventArgs);
+	}
 }
 
 interface MapActualCameraChangingEventArgs : Windows.UI.Xaml.Controls.Maps.IMapActualCameraChangingEventArgs, Windows.UI.Xaml.Controls.Maps.IMapActualCameraChangingEventArgs2
@@ -1196,6 +1202,12 @@ extern(Windows):
 		Windows.UI.Xaml.Controls.Maps.MapCameraChangeReason _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapActualCameraChangingEventArgs2).get_ChangeReason(&_ret));
 		return _ret;
+	}
+	static MapActualCameraChangingEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapActualCameraChangingEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(MapActualCameraChangingEventArgs);
 	}
 }
 
@@ -1385,6 +1397,12 @@ extern(Windows):
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Controls.Maps.MapElement) _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapContextRequestedEventArgs).get_MapElements(&_ret));
 		return _ret;
+	}
+	static MapContextRequestedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapContextRequestedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(MapContextRequestedEventArgs);
 	}
 }
 
@@ -2202,6 +2220,12 @@ extern(Windows):
 	{
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).abi_SetNormalizedAnchorPoint(element, value));
 	}
+	static MapControl New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapControl).abi_ActivateInstance(&ret));
+		return ret.as!(MapControl);
+	}
 }
 
 interface MapControlBusinessLandmarkClickEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlBusinessLandmarkClickEventArgs
@@ -2212,6 +2236,12 @@ extern(Windows):
 		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.LocalSearch.LocalLocation) _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlBusinessLandmarkClickEventArgs).get_LocalLocations(&_ret));
 		return _ret;
+	}
+	static MapControlBusinessLandmarkClickEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapControlBusinessLandmarkClickEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(MapControlBusinessLandmarkClickEventArgs);
 	}
 }
 
@@ -2224,6 +2254,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlBusinessLandmarkPointerEnteredEventArgs).get_LocalLocations(&_ret));
 		return _ret;
 	}
+	static MapControlBusinessLandmarkPointerEnteredEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapControlBusinessLandmarkPointerEnteredEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(MapControlBusinessLandmarkPointerEnteredEventArgs);
+	}
 }
 
 interface MapControlBusinessLandmarkPointerExitedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlBusinessLandmarkPointerExitedEventArgs
@@ -2235,6 +2271,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlBusinessLandmarkPointerExitedEventArgs).get_LocalLocations(&_ret));
 		return _ret;
 	}
+	static MapControlBusinessLandmarkPointerExitedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapControlBusinessLandmarkPointerExitedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(MapControlBusinessLandmarkPointerExitedEventArgs);
+	}
 }
 
 interface MapControlBusinessLandmarkRightTappedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlBusinessLandmarkRightTappedEventArgs
@@ -2245,6 +2287,12 @@ extern(Windows):
 		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.LocalSearch.LocalLocation) _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlBusinessLandmarkRightTappedEventArgs).get_LocalLocations(&_ret));
 		return _ret;
+	}
+	static MapControlBusinessLandmarkRightTappedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapControlBusinessLandmarkRightTappedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(MapControlBusinessLandmarkRightTappedEventArgs);
 	}
 }
 
@@ -2361,6 +2409,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeatureClickEventArgs).get_TransitProperties(&_ret));
 		return _ret;
 	}
+	static MapControlTransitFeatureClickEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapControlTransitFeatureClickEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(MapControlTransitFeatureClickEventArgs);
+	}
 }
 
 interface MapControlTransitFeaturePointerEnteredEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeaturePointerEnteredEventArgs
@@ -2383,6 +2437,12 @@ extern(Windows):
 		Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeaturePointerEnteredEventArgs).get_TransitProperties(&_ret));
 		return _ret;
+	}
+	static MapControlTransitFeaturePointerEnteredEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapControlTransitFeaturePointerEnteredEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(MapControlTransitFeaturePointerEnteredEventArgs);
 	}
 }
 
@@ -2407,6 +2467,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeaturePointerExitedEventArgs).get_TransitProperties(&_ret));
 		return _ret;
 	}
+	static MapControlTransitFeaturePointerExitedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapControlTransitFeaturePointerExitedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(MapControlTransitFeaturePointerExitedEventArgs);
+	}
 }
 
 interface MapControlTransitFeatureRightTappedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeatureRightTappedEventArgs
@@ -2429,6 +2495,12 @@ extern(Windows):
 		Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeatureRightTappedEventArgs).get_TransitProperties(&_ret));
 		return _ret;
+	}
+	static MapControlTransitFeatureRightTappedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapControlTransitFeatureRightTappedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(MapControlTransitFeatureRightTappedEventArgs);
 	}
 }
 
@@ -2459,6 +2531,12 @@ class MapCustomExperienceT(Base) : AgileObject!Base, MapCustomExperience
 
 interface MapCustomExperienceChangedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapCustomExperienceChangedEventArgs
 {
+	static MapCustomExperienceChangedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapCustomExperienceChangedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(MapCustomExperienceChangedEventArgs);
+	}
 }
 
 interface MapElement : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapElement, Windows.UI.Xaml.Controls.Maps.IMapElement2
@@ -2564,6 +2642,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapElementClickEventArgs).get_MapElements(&_ret));
 		return _ret;
 	}
+	static MapElementClickEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapElementClickEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(MapElementClickEventArgs);
+	}
 }
 
 interface MapElementPointerEnteredEventArgs : Windows.UI.Xaml.Controls.Maps.IMapElementPointerEnteredEventArgs
@@ -2587,6 +2671,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapElementPointerEnteredEventArgs).get_MapElement(&_ret));
 		return _ret;
 	}
+	static MapElementPointerEnteredEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapElementPointerEnteredEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(MapElementPointerEnteredEventArgs);
+	}
 }
 
 interface MapElementPointerExitedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapElementPointerExitedEventArgs
@@ -2609,6 +2699,12 @@ extern(Windows):
 		Windows.UI.Xaml.Controls.Maps.MapElement _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapElementPointerExitedEventArgs).get_MapElement(&_ret));
 		return _ret;
+	}
+	static MapElementPointerExitedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapElementPointerExitedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(MapElementPointerExitedEventArgs);
 	}
 }
 
@@ -2690,6 +2786,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapIconStatics).get_NormalizedAnchorPointProperty(&_ret));
 		return _ret;
 	}
+	static MapIcon New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapIcon).abi_ActivateInstance(&ret));
+		return ret.as!(MapIcon);
+	}
 }
 
 interface MapInputEventArgs : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapInputEventArgs
@@ -2706,6 +2808,12 @@ extern(Windows):
 		Windows.Devices.Geolocation.Geopoint _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapInputEventArgs).get_Location(&_ret));
 		return _ret;
+	}
+	static MapInputEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapInputEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(MapInputEventArgs);
 	}
 }
 
@@ -2762,6 +2870,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapItemsControlStatics).get_ItemTemplateProperty(&_ret));
 		return _ret;
+	}
+	static MapItemsControl New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapItemsControl).abi_ActivateInstance(&ret));
+		return ret.as!(MapItemsControl);
 	}
 }
 
@@ -2849,6 +2963,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapPolygonStatics).get_StrokeDashedProperty(&_ret));
 		return _ret;
 	}
+	static MapPolygon New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapPolygon).abi_ActivateInstance(&ret));
+		return ret.as!(MapPolygon);
+	}
 }
 
 interface MapPolyline : Windows.UI.Xaml.Controls.Maps.MapElement, Windows.UI.Xaml.Controls.Maps.IMapPolyline
@@ -2913,6 +3033,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapPolylineStatics).get_StrokeDashedProperty(&_ret));
 		return _ret;
 	}
+	static MapPolyline New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapPolyline).abi_ActivateInstance(&ret));
+		return ret.as!(MapPolyline);
+	}
 }
 
 interface MapRightTappedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapRightTappedEventArgs
@@ -2929,6 +3055,12 @@ extern(Windows):
 		Windows.Devices.Geolocation.Geopoint _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapRightTappedEventArgs).get_Location(&_ret));
 		return _ret;
+	}
+	static MapRightTappedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapRightTappedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(MapRightTappedEventArgs);
 	}
 }
 
@@ -3143,6 +3275,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTargetCameraChangedEventArgs2).get_ChangeReason(&_ret));
 		return _ret;
 	}
+	static MapTargetCameraChangedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapTargetCameraChangedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(MapTargetCameraChangedEventArgs);
+	}
 }
 
 interface MapTileBitmapRequest : Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequest
@@ -3164,6 +3302,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequest).abi_GetDeferral(&_ret));
 		return _ret;
 	}
+	static MapTileBitmapRequest New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapTileBitmapRequest).abi_ActivateInstance(&ret));
+		return ret.as!(MapTileBitmapRequest);
+	}
 }
 
 interface MapTileBitmapRequestDeferral : Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequestDeferral
@@ -3172,6 +3316,12 @@ extern(Windows):
 	final void Complete()
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequestDeferral).abi_Complete());
+	}
+	static MapTileBitmapRequestDeferral New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapTileBitmapRequestDeferral).abi_ActivateInstance(&ret));
+		return ret.as!(MapTileBitmapRequestDeferral);
 	}
 }
 
@@ -3201,6 +3351,12 @@ extern(Windows):
 		Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequest _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileBitmapRequestedEventArgs).get_Request(&_ret));
 		return _ret;
+	}
+	static MapTileBitmapRequestedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapTileBitmapRequestedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(MapTileBitmapRequestedEventArgs);
 	}
 }
 
@@ -3479,6 +3635,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileUriRequest).abi_GetDeferral(&_ret));
 		return _ret;
 	}
+	static MapTileUriRequest New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapTileUriRequest).abi_ActivateInstance(&ret));
+		return ret.as!(MapTileUriRequest);
+	}
 }
 
 interface MapTileUriRequestDeferral : Windows.UI.Xaml.Controls.Maps.IMapTileUriRequestDeferral
@@ -3487,6 +3649,12 @@ extern(Windows):
 	final void Complete()
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileUriRequestDeferral).abi_Complete());
+	}
+	static MapTileUriRequestDeferral New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapTileUriRequestDeferral).abi_ActivateInstance(&ret));
+		return ret.as!(MapTileUriRequestDeferral);
 	}
 }
 
@@ -3516,6 +3684,12 @@ extern(Windows):
 		Windows.UI.Xaml.Controls.Maps.MapTileUriRequest _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileUriRequestedEventArgs).get_Request(&_ret));
 		return _ret;
+	}
+	static MapTileUriRequestedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapTileUriRequestedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(MapTileUriRequestedEventArgs);
 	}
 }
 

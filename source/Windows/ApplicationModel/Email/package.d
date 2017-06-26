@@ -859,6 +859,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailAttachment2).set_MimeType(value));
 	}
+	static EmailAttachment New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(EmailAttachment).abi_ActivateInstance(&ret));
+		return ret.as!(EmailAttachment);
+	}
 	static Windows.ApplicationModel.Email.EmailAttachment New(HSTRING fileName, Windows.Storage.Streams.IRandomAccessStreamReference data)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Email.IEmailAttachmentFactory);
@@ -1261,6 +1267,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).set_Template(value));
 	}
+	static EmailIrmInfo New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(EmailIrmInfo).abi_ActivateInstance(&ret));
+		return ret.as!(EmailIrmInfo);
+	}
 	static Windows.ApplicationModel.Email.EmailIrmInfo New(Windows.Foundation.DateTime expiration, Windows.ApplicationModel.Email.EmailIrmTemplate irmTemplate)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Email.IEmailIrmInfoFactory);
@@ -1302,6 +1314,12 @@ extern(Windows):
 	final void Name(HSTRING value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmTemplate).set_Name(value));
+	}
+	static EmailIrmTemplate New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(EmailIrmTemplate).abi_ActivateInstance(&ret));
+		return ret.as!(EmailIrmTemplate);
 	}
 	static Windows.ApplicationModel.Email.EmailIrmTemplate New(HSTRING id, HSTRING name, HSTRING description)
 	{
@@ -1792,6 +1810,12 @@ extern(Windows):
 		Windows.ApplicationModel.Email.EmailMailboxAutoReply _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings).get_UnknownExternalReply(&_ret));
 		return _ret;
+	}
+	static EmailMailboxAutoReplySettings New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(EmailMailboxAutoReplySettings).abi_ActivateInstance(&ret));
+		return ret.as!(EmailMailboxAutoReplySettings);
 	}
 }
 
@@ -2344,6 +2368,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo2).get_IsReportedOutOfDateByServer(&_ret));
 		return _ret;
 	}
+	static EmailMeetingInfo New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(EmailMeetingInfo).abi_ActivateInstance(&ret));
+		return ret.as!(EmailMeetingInfo);
+	}
 }
 
 interface EmailMessage : Windows.ApplicationModel.Email.IEmailMessage, Windows.ApplicationModel.Email.IEmailMessage2, Windows.ApplicationModel.Email.IEmailMessage3, Windows.ApplicationModel.Email.IEmailMessage4
@@ -2665,6 +2695,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage4).set_SentRepresenting(value));
 	}
+	static EmailMessage New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(EmailMessage).abi_ActivateInstance(&ret));
+		return ret.as!(EmailMessage);
+	}
 }
 
 interface EmailMessageBatch : Windows.ApplicationModel.Email.IEmailMessageBatch
@@ -2740,6 +2776,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailQueryOptions).get_FolderIds(&_ret));
 		return _ret;
 	}
+	static EmailQueryOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(EmailQueryOptions).abi_ActivateInstance(&ret));
+		return ret.as!(EmailQueryOptions);
+	}
 	static Windows.ApplicationModel.Email.EmailQueryOptions New(HSTRING text)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Email.IEmailQueryOptionsFactory);
@@ -2814,6 +2856,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailRecipient).set_Address(value));
 	}
+	static EmailRecipient New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(EmailRecipient).abi_ActivateInstance(&ret));
+		return ret.as!(EmailRecipient);
+	}
 	static Windows.ApplicationModel.Email.EmailRecipient New(HSTRING address)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Email.IEmailRecipientFactory);
@@ -2852,6 +2900,12 @@ extern(Windows):
 	final void SetPublicKeys(Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.Certificate) value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailRecipientResolutionResult2).abi_SetPublicKeys(value));
+	}
+	static EmailRecipientResolutionResult New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(EmailRecipientResolutionResult).abi_ActivateInstance(&ret));
+		return ret.as!(EmailRecipientResolutionResult);
 	}
 }
 

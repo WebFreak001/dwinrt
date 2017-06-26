@@ -1616,6 +1616,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+	static HttpContentHeaderCollection New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(HttpContentHeaderCollection).abi_ActivateInstance(&ret));
+		return ret.as!(HttpContentHeaderCollection);
+	}
 }
 
 interface HttpContentRangeHeaderValue : Windows.Web.Http.Headers.IHttpContentRangeHeaderValue, Windows.Foundation.IStringable

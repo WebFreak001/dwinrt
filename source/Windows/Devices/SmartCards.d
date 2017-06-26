@@ -342,6 +342,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardPinPolicy).set_SpecialCharacters(value));
 	}
+	static SmartCardPinPolicy New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SmartCardPinPolicy).abi_ActivateInstance(&ret));
+		return ret.as!(SmartCardPinPolicy);
+	}
 }
 
 interface SmartCardPinResetDeferral : Windows.Devices.SmartCards.ISmartCardPinResetDeferral

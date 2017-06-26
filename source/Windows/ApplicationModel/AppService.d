@@ -203,6 +203,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection2).set_User(value));
 	}
+	static AppServiceConnection New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(AppServiceConnection).abi_ActivateInstance(&ret));
+		return ret.as!(AppServiceConnection);
+	}
 }
 
 interface AppServiceDeferral : Windows.ApplicationModel.AppService.IAppServiceDeferral

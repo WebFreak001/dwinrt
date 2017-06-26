@@ -251,6 +251,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisement).abi_GetSectionsByType(type, &_ret));
 		return _ret;
 	}
+	static BluetoothLEAdvertisement New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BluetoothLEAdvertisement).abi_ActivateInstance(&ret));
+		return ret.as!(BluetoothLEAdvertisement);
+	}
 }
 
 interface BluetoothLEAdvertisementBytePattern : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementBytePattern
@@ -286,6 +292,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementBytePattern).set_Data(value));
 	}
+	static BluetoothLEAdvertisementBytePattern New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BluetoothLEAdvertisementBytePattern).abi_ActivateInstance(&ret));
+		return ret.as!(BluetoothLEAdvertisementBytePattern);
+	}
 	static Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementBytePattern New(ubyte dataType, INT16 offset, Windows.Storage.Streams.IBuffer data)
 	{
 		auto factory = factory!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementBytePatternFactory);
@@ -317,6 +329,12 @@ extern(Windows):
 	final void Data(Windows.Storage.Streams.IBuffer value)
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataSection).set_Data(value));
+	}
+	static BluetoothLEAdvertisementDataSection New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BluetoothLEAdvertisementDataSection).abi_ActivateInstance(&ret));
+		return ret.as!(BluetoothLEAdvertisementDataSection);
 	}
 	static Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementDataSection New(ubyte dataType, Windows.Storage.Streams.IBuffer data)
 	{
@@ -488,6 +506,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementFilter).get_BytePatterns(&_ret));
 		return _ret;
 	}
+	static BluetoothLEAdvertisementFilter New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BluetoothLEAdvertisementFilter).abi_ActivateInstance(&ret));
+		return ret.as!(BluetoothLEAdvertisementFilter);
+	}
 }
 
 interface BluetoothLEAdvertisementPublisher : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisher
@@ -522,6 +546,12 @@ extern(Windows):
 	final void removeStatusChanged(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisher).remove_StatusChanged(token));
+	}
+	static BluetoothLEAdvertisementPublisher New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BluetoothLEAdvertisementPublisher).abi_ActivateInstance(&ret));
+		return ret.as!(BluetoothLEAdvertisementPublisher);
 	}
 	static Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisher New(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisement advertisement)
 	{
@@ -675,6 +705,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher).remove_Stopped(token));
 	}
+	static BluetoothLEAdvertisementWatcher New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BluetoothLEAdvertisementWatcher).abi_ActivateInstance(&ret));
+		return ret.as!(BluetoothLEAdvertisementWatcher);
+	}
 	static Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher New(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementFilter advertisementFilter)
 	{
 		auto factory = factory!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcherFactory);
@@ -717,6 +753,12 @@ extern(Windows):
 	final void Data(Windows.Storage.Streams.IBuffer value)
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEManufacturerData).set_Data(value));
+	}
+	static BluetoothLEManufacturerData New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BluetoothLEManufacturerData).abi_ActivateInstance(&ret));
+		return ret.as!(BluetoothLEManufacturerData);
 	}
 	static Windows.Devices.Bluetooth.Advertisement.BluetoothLEManufacturerData New(UINT16 companyId, Windows.Storage.Streams.IBuffer data)
 	{

@@ -61,6 +61,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Media.Playlists.IPlaylistStatics).abi_LoadAsync(file, &_ret));
 		return _ret;
 	}
+	static Playlist New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Playlist).abi_ActivateInstance(&ret));
+		return ret.as!(Playlist);
+	}
 }
 
 enum PlaylistFormat

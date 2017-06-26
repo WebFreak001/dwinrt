@@ -893,6 +893,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachmentStatics).abi_GetWatcher(requiredInterfaces, &_ret));
 		return _ret;
 	}
+	static AllJoynBusAttachment New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(AllJoynBusAttachment).abi_ActivateInstance(&ret));
+		return ret.as!(AllJoynBusAttachment);
+	}
 	static Windows.Devices.AllJoyn.AllJoynBusAttachment New(HSTRING connectionSpecification)
 	{
 		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynBusAttachmentFactory);
@@ -955,6 +961,12 @@ extern(Windows):
 	final void removeStopped(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusObject).remove_Stopped(token));
+	}
+	static AllJoynBusObject New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(AllJoynBusObject).abi_ActivateInstance(&ret));
+		return ret.as!(AllJoynBusObject);
 	}
 	static Windows.Devices.AllJoyn.AllJoynBusObject New(HSTRING objectPath)
 	{

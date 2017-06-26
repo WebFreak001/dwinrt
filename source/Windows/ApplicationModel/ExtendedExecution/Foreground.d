@@ -81,6 +81,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
 	}
+	static ExtendedExecutionForegroundSession New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ExtendedExecutionForegroundSession).abi_ActivateInstance(&ret));
+		return ret.as!(ExtendedExecutionForegroundSession);
+	}
 }
 
 enum ExtendedExecutionForegroundReason

@@ -1662,6 +1662,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Data.Xml.Dom.IXmlDocumentStatics).abi_LoadFromFileWithSettingsAsync(file, loadSettings, &_ret));
 		return _ret;
 	}
+	static XmlDocument New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(XmlDocument).abi_ActivateInstance(&ret));
+		return ret.as!(XmlDocument);
+	}
 }
 
 interface XmlDocumentFragment : Windows.Data.Xml.Dom.IXmlDocumentFragment, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
@@ -2523,6 +2529,12 @@ extern(Windows):
 	final void ElementContentWhiteSpace(bool value)
 	{
 		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlLoadSettings).set_ElementContentWhiteSpace(value));
+	}
+	static XmlLoadSettings New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(XmlLoadSettings).abi_ActivateInstance(&ret));
+		return ret.as!(XmlLoadSettings);
 	}
 }
 

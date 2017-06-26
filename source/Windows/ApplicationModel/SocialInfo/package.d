@@ -231,6 +231,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.ISocialFeedChildItem).set_SharedItem(value));
 	}
+	static SocialFeedChildItem New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SocialFeedChildItem).abi_ActivateInstance(&ret));
+		return ret.as!(SocialFeedChildItem);
+	}
 }
 
 interface SocialFeedContent : Windows.ApplicationModel.SocialInfo.ISocialFeedContent
@@ -401,6 +407,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.ISocialFeedItem).set_Style(value));
 	}
+	static SocialFeedItem New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SocialFeedItem).abi_ActivateInstance(&ret));
+		return ret.as!(SocialFeedItem);
+	}
 }
 
 interface SocialFeedSharedItem : Windows.ApplicationModel.SocialInfo.ISocialFeedSharedItem
@@ -461,6 +473,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.ISocialFeedSharedItem).get_Thumbnail(&_ret));
 		return _ret;
 	}
+	static SocialFeedSharedItem New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SocialFeedSharedItem).abi_ActivateInstance(&ret));
+		return ret.as!(SocialFeedSharedItem);
+	}
 }
 
 interface SocialItemThumbnail : Windows.ApplicationModel.SocialInfo.ISocialItemThumbnail
@@ -508,6 +526,12 @@ extern(Windows):
 		Windows.Foundation.IAsyncAction _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.ISocialItemThumbnail).abi_SetImageAsync(image, &_ret));
 		return _ret;
+	}
+	static SocialItemThumbnail New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SocialItemThumbnail).abi_ActivateInstance(&ret));
+		return ret.as!(SocialItemThumbnail);
 	}
 }
 

@@ -515,6 +515,12 @@ extern(Windows):
 
 interface AccessKeyDisplayDismissedEventArgs : Windows.UI.Xaml.Input.IAccessKeyDisplayDismissedEventArgs
 {
+	static AccessKeyDisplayDismissedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(AccessKeyDisplayDismissedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(AccessKeyDisplayDismissedEventArgs);
+	}
 }
 
 interface AccessKeyDisplayRequestedEventArgs : Windows.UI.Xaml.Input.IAccessKeyDisplayRequestedEventArgs
@@ -525,6 +531,12 @@ extern(Windows):
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Input.IAccessKeyDisplayRequestedEventArgs).get_PressedKeys(&_ret));
 		return _ret;
+	}
+	static AccessKeyDisplayRequestedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(AccessKeyDisplayRequestedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(AccessKeyDisplayRequestedEventArgs);
 	}
 }
 
@@ -540,6 +552,12 @@ extern(Windows):
 	final void Handled(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Input.IAccessKeyInvokedEventArgs).set_Handled(value));
+	}
+	static AccessKeyInvokedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(AccessKeyInvokedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(AccessKeyInvokedEventArgs);
 	}
 }
 
@@ -592,6 +610,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Input.IContextRequestedEventArgs).abi_TryGetPosition(relativeTo, out_point, &_ret));
 		return _ret;
 	}
+	static ContextRequestedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ContextRequestedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(ContextRequestedEventArgs);
+	}
 }
 
 interface DoubleTappedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IDoubleTappedRoutedEventArgs
@@ -618,6 +642,12 @@ extern(Windows):
 		Windows.Foundation.Point _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Input.IDoubleTappedRoutedEventArgs).abi_GetPosition(relativeTo, &_ret));
 		return _ret;
+	}
+	static DoubleTappedRoutedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DoubleTappedRoutedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(DoubleTappedRoutedEventArgs);
 	}
 }
 
@@ -663,6 +693,12 @@ extern(Windows):
 	final void XYFocusNavigationStrategyOverride(Windows.UI.Xaml.Input.XYFocusNavigationStrategyOverride value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Input.IFindNextElementOptions).set_XYFocusNavigationStrategyOverride(value));
+	}
+	static FindNextElementOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(FindNextElementOptions).abi_ActivateInstance(&ret));
+		return ret.as!(FindNextElementOptions);
 	}
 }
 
@@ -772,6 +808,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Input.IHoldingRoutedEventArgs).abi_GetPosition(relativeTo, &_ret));
 		return _ret;
 	}
+	static HoldingRoutedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(HoldingRoutedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(HoldingRoutedEventArgs);
+	}
 }
 
 interface InertiaExpansionBehavior : Windows.UI.Xaml.Input.IInertiaExpansionBehavior
@@ -858,6 +900,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Input.IInputScope).get_Names(&_ret));
 		return _ret;
 	}
+	static InputScope New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(InputScope).abi_ActivateInstance(&ret));
+		return ret.as!(InputScope);
+	}
 }
 
 interface InputScopeName : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Input.IInputScopeName
@@ -872,6 +920,12 @@ extern(Windows):
 	final void NameValue(Windows.UI.Xaml.Input.InputScopeNameValue value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Input.IInputScopeName).set_NameValue(value));
+	}
+	static InputScopeName New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(InputScopeName).abi_ActivateInstance(&ret));
+		return ret.as!(InputScopeName);
 	}
 	static Windows.UI.Xaml.Input.InputScopeName New(Windows.UI.Xaml.Input.InputScopeNameValue nameValue)
 	{
@@ -1029,6 +1083,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationCompletedRoutedEventArgs).get_PointerDeviceType(&_ret));
 		return _ret;
 	}
+	static ManipulationCompletedRoutedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ManipulationCompletedRoutedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(ManipulationCompletedRoutedEventArgs);
+	}
 }
 
 interface ManipulationDeltaRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IManipulationDeltaRoutedEventArgs
@@ -1089,6 +1149,12 @@ extern(Windows):
 	final void Complete()
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationDeltaRoutedEventArgs).abi_Complete());
+	}
+	static ManipulationDeltaRoutedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ManipulationDeltaRoutedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(ManipulationDeltaRoutedEventArgs);
 	}
 }
 
@@ -1165,6 +1231,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationInertiaStartingRoutedEventArgs).get_Velocities(&_ret));
 		return _ret;
 	}
+	static ManipulationInertiaStartingRoutedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ManipulationInertiaStartingRoutedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(ManipulationInertiaStartingRoutedEventArgs);
+	}
 }
 
 interface ManipulationPivot : Windows.UI.Xaml.Input.IManipulationPivot
@@ -1189,6 +1261,12 @@ extern(Windows):
 	final void Radius(double value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationPivot).set_Radius(value));
+	}
+	static ManipulationPivot New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ManipulationPivot).abi_ActivateInstance(&ret));
+		return ret.as!(ManipulationPivot);
 	}
 	static Windows.UI.Xaml.Input.ManipulationPivot New(Windows.Foundation.Point center, double radius)
 	{
@@ -1313,6 +1391,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationStartingRoutedEventArgs).set_Handled(value));
 	}
+	static ManipulationStartingRoutedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ManipulationStartingRoutedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(ManipulationStartingRoutedEventArgs);
+	}
 }
 
 interface NoFocusCandidateFoundEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.INoFocusCandidateFoundEventArgs
@@ -1435,6 +1519,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Input.IRightTappedRoutedEventArgs).abi_GetPosition(relativeTo, &_ret));
 		return _ret;
 	}
+	static RightTappedRoutedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(RightTappedRoutedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(RightTappedRoutedEventArgs);
+	}
 }
 
 interface TappedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.ITappedRoutedEventArgs
@@ -1461,6 +1551,12 @@ extern(Windows):
 		Windows.Foundation.Point _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Input.ITappedRoutedEventArgs).abi_GetPosition(relativeTo, &_ret));
 		return _ret;
+	}
+	static TappedRoutedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(TappedRoutedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(TappedRoutedEventArgs);
 	}
 }
 

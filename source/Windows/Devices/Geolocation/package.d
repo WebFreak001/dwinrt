@@ -693,6 +693,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Devices.Geolocation.IGeolocatorStatics).abi_GetGeopositionHistoryWithDurationAsync(startTime, duration, &_ret));
 		return _ret;
 	}
+	static Geolocator New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Geolocator).abi_ActivateInstance(&ret));
+		return ret.as!(Geolocator);
+	}
 }
 
 interface Geopath : Windows.Devices.Geolocation.IGeopath, Windows.Devices.Geolocation.IGeoshape

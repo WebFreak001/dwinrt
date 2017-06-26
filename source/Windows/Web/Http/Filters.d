@@ -247,6 +247,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter4).abi_ClearAuthenticationCache());
 	}
+	static HttpBaseProtocolFilter New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(HttpBaseProtocolFilter).abi_ActivateInstance(&ret));
+		return ret.as!(HttpBaseProtocolFilter);
+	}
 }
 
 interface HttpCacheControl : Windows.Web.Http.Filters.IHttpCacheControl

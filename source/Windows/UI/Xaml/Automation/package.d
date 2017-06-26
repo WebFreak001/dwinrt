@@ -667,6 +667,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationAnnotationStatics).get_ElementProperty(&_ret));
 		return _ret;
 	}
+	static AutomationAnnotation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(AutomationAnnotation).abi_ActivateInstance(&ret));
+		return ret.as!(AutomationAnnotation);
+	}
 	static Windows.UI.Xaml.Automation.AutomationAnnotation New(Windows.UI.Xaml.Automation.AnnotationType type)
 	{
 		auto factory = factory!(Windows.UI.Xaml.Automation.IAutomationAnnotationFactory);

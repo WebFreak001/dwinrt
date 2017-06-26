@@ -1078,6 +1078,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).abi_Stop());
 	}
+	static MobileBroadbandAccountWatcher New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MobileBroadbandAccountWatcher).abi_ActivateInstance(&ret));
+		return ret.as!(MobileBroadbandAccountWatcher);
+	}
 }
 
 interface MobileBroadbandDeviceInformation : Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation, Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation2, Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation3
@@ -1932,6 +1938,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringAccessPointConfiguration).set_Passphrase(value));
 	}
+	static NetworkOperatorTetheringAccessPointConfiguration New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(NetworkOperatorTetheringAccessPointConfiguration).abi_ActivateInstance(&ret));
+		return ret.as!(NetworkOperatorTetheringAccessPointConfiguration);
+	}
 }
 
 interface NetworkOperatorTetheringClient : Windows.Networking.NetworkOperators.INetworkOperatorTetheringClient
@@ -2097,6 +2109,12 @@ extern(Windows):
 		Windows.Networking.NetworkOperators.ProvisioningAgent _ret;
 		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IProvisioningAgentStaticMethods).abi_CreateFromNetworkAccountId(networkAccountId, &_ret));
 		return _ret;
+	}
+	static ProvisioningAgent New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ProvisioningAgent).abi_ActivateInstance(&ret));
+		return ret.as!(ProvisioningAgent);
 	}
 }
 

@@ -294,6 +294,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Casting.ICastingDevicePicker).abi_Hide());
 	}
+	static CastingDevicePicker New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(CastingDevicePicker).abi_ActivateInstance(&ret));
+		return ret.as!(CastingDevicePicker);
+	}
 }
 
 interface CastingDevicePickerFilter : Windows.Media.Casting.ICastingDevicePickerFilter

@@ -613,6 +613,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Store.IProductPurchaseDisplayProperties).set_Image(value));
 	}
+	static ProductPurchaseDisplayProperties New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ProductPurchaseDisplayProperties).abi_ActivateInstance(&ret));
+		return ret.as!(ProductPurchaseDisplayProperties);
+	}
 	static Windows.ApplicationModel.Store.ProductPurchaseDisplayProperties New(HSTRING name)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Store.IProductPurchaseDisplayPropertiesFactory);

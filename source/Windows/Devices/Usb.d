@@ -567,6 +567,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbControlRequestType).set_AsByte(value));
 	}
+	static UsbControlRequestType New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(UsbControlRequestType).abi_ActivateInstance(&ret));
+		return ret.as!(UsbControlRequestType);
+	}
 }
 
 interface UsbDescriptor : Windows.Devices.Usb.IUsbDescriptor
@@ -710,6 +716,12 @@ extern(Windows):
 	final void ProtocolCode(Windows.Foundation.IReference!(ubyte) value)
 	{
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceClass).set_ProtocolCode(value));
+	}
+	static UsbDeviceClass New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(UsbDeviceClass).abi_ActivateInstance(&ret));
+		return ret.as!(UsbDeviceClass);
 	}
 }
 
@@ -1219,6 +1231,12 @@ extern(Windows):
 	final void Length(UINT32 value)
 	{
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).set_Length(value));
+	}
+	static UsbSetupPacket New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(UsbSetupPacket).abi_ActivateInstance(&ret));
+		return ret.as!(UsbSetupPacket);
 	}
 	static Windows.Devices.Usb.UsbSetupPacket New(Windows.Storage.Streams.IBuffer eightByteBuffer)
 	{

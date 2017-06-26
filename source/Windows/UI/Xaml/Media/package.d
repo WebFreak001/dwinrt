@@ -1213,6 +1213,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IArcSegmentStatics).get_SweepDirectionProperty(&_ret));
 		return _ret;
 	}
+	static ArcSegment New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ArcSegment).abi_ActivateInstance(&ret));
+		return ret.as!(ArcSegment);
+	}
 }
 
 interface BezierSegment : Windows.UI.Xaml.Media.PathSegment, Windows.UI.Xaml.Media.IBezierSegment
@@ -1273,10 +1279,22 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IBezierSegmentStatics).get_Point3Property(&_ret));
 		return _ret;
 	}
+	static BezierSegment New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BezierSegment).abi_ActivateInstance(&ret));
+		return ret.as!(BezierSegment);
+	}
 }
 
 interface BitmapCache : Windows.UI.Xaml.Media.CacheMode, Windows.UI.Xaml.Media.IBitmapCache
 {
+	static BitmapCache New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BitmapCache).abi_ActivateInstance(&ret));
+		return ret.as!(BitmapCache);
+	}
 }
 
 interface Brush : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IBrush
@@ -1426,6 +1444,12 @@ extern(Windows):
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Media.Brush)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Brush)).abi_First(out_first));
+	}
+	static BrushCollection New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BrushCollection).abi_ActivateInstance(&ret));
+		return ret.as!(BrushCollection);
 	}
 }
 
@@ -1608,6 +1632,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositeTransformStatics).get_TranslateYProperty(&_ret));
 		return _ret;
 	}
+	static CompositeTransform New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(CompositeTransform).abi_ActivateInstance(&ret));
+		return ret.as!(CompositeTransform);
+	}
 }
 
 interface CompositionTarget : Windows.UI.Xaml.Media.ICompositionTarget
@@ -1701,6 +1731,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(double)).abi_First(out_first));
 	}
+	static DoubleCollection New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DoubleCollection).abi_ActivateInstance(&ret));
+		return ret.as!(DoubleCollection);
+	}
 }
 
 interface EllipseGeometry : Windows.UI.Xaml.Media.Geometry, Windows.UI.Xaml.Media.IEllipseGeometry
@@ -1760,6 +1796,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IEllipseGeometryStatics).get_RadiusYProperty(&_ret));
 		return _ret;
+	}
+	static EllipseGeometry New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(EllipseGeometry).abi_ActivateInstance(&ret));
+		return ret.as!(EllipseGeometry);
 	}
 }
 
@@ -1987,6 +2029,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Geometry)).abi_First(out_first));
 	}
+	static GeometryCollection New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(GeometryCollection).abi_ActivateInstance(&ret));
+		return ret.as!(GeometryCollection);
+	}
 }
 
 interface GeometryGroup : Windows.UI.Xaml.Media.Geometry, Windows.UI.Xaml.Media.IGeometryGroup
@@ -2030,6 +2078,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGeometryGroupStatics).get_ChildrenProperty(&_ret));
 		return _ret;
+	}
+	static GeometryGroup New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(GeometryGroup).abi_ActivateInstance(&ret));
+		return ret.as!(GeometryGroup);
 	}
 }
 
@@ -2180,6 +2234,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGradientStopStatics).get_OffsetProperty(&_ret));
 		return _ret;
 	}
+	static GradientStop New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(GradientStop).abi_ActivateInstance(&ret));
+		return ret.as!(GradientStop);
+	}
 }
 
 interface GradientStopCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.GradientStop)
@@ -2243,6 +2303,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.GradientStop)).abi_First(out_first));
 	}
+	static GradientStopCollection New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(GradientStopCollection).abi_ActivateInstance(&ret));
+		return ret.as!(GradientStopCollection);
+	}
 }
 
 interface ImageBrush : Windows.UI.Xaml.Media.TileBrush, Windows.UI.Xaml.Media.IImageBrush
@@ -2258,9 +2324,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IImageBrush).set_ImageSource(value));
 	}
+	final EventRegistrationToken OnImageFailed(void delegate(IInspectable, Windows.UI.Xaml.ExceptionRoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IImageBrush).add_ImageFailed(event!(Windows.UI.Xaml.ExceptionRoutedEventHandler, IInspectable, Windows.UI.Xaml.ExceptionRoutedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeImageFailed(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IImageBrush).remove_ImageFailed(token));
+	}
+	final EventRegistrationToken OnImageOpened(void delegate(IInspectable, Windows.UI.Xaml.RoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IImageBrush).add_ImageOpened(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeImageOpened(EventRegistrationToken token)
 	{
@@ -2278,6 +2356,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IImageBrushStatics).get_ImageSourceProperty(&_ret));
 		return _ret;
+	}
+	static ImageBrush New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ImageBrush).abi_ActivateInstance(&ret));
+		return ret.as!(ImageBrush);
 	}
 }
 
@@ -2341,6 +2425,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ILineGeometryStatics).get_EndPointProperty(&_ret));
 		return _ret;
 	}
+	static LineGeometry New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(LineGeometry).abi_ActivateInstance(&ret));
+		return ret.as!(LineGeometry);
+	}
 }
 
 interface LineSegment : Windows.UI.Xaml.Media.PathSegment, Windows.UI.Xaml.Media.ILineSegment
@@ -2368,6 +2458,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ILineSegmentStatics).get_PointProperty(&_ret));
 		return _ret;
+	}
+	static LineSegment New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(LineSegment).abi_ActivateInstance(&ret));
+		return ret.as!(LineSegment);
 	}
 }
 
@@ -2412,6 +2508,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ILinearGradientBrushStatics).get_EndPointProperty(&_ret));
 		return _ret;
+	}
+	static LinearGradientBrush New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(LinearGradientBrush).abi_ActivateInstance(&ret));
+		return ret.as!(LinearGradientBrush);
 	}
 	static Windows.UI.Xaml.Media.LinearGradientBrush New(Windows.UI.Xaml.Media.GradientStopCollection gradientStopCollection, double angle)
 	{
@@ -2527,6 +2629,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IMatrix3DProjectionStatics).get_ProjectionMatrixProperty(&_ret));
 		return _ret;
 	}
+	static Matrix3DProjection New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Matrix3DProjection).abi_ActivateInstance(&ret));
+		return ret.as!(Matrix3DProjection);
+	}
 }
 
 interface MatrixHelper : Windows.UI.Xaml.Media.IMatrixHelper
@@ -2589,6 +2697,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IMatrixTransformStatics).get_MatrixProperty(&_ret));
 		return _ret;
 	}
+	static MatrixTransform New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MatrixTransform).abi_ActivateInstance(&ret));
+		return ret.as!(MatrixTransform);
+	}
 }
 
 interface MediaTransportControlsThumbnailRequestedEventArgs : Windows.UI.Xaml.Media.IMediaTransportControlsThumbnailRequestedEventArgs
@@ -2620,6 +2734,12 @@ extern(Windows):
 		HRESULT _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPartialMediaFailureDetectedEventArgs2).get_ExtendedError(&_ret));
 		return _ret;
+	}
+	static PartialMediaFailureDetectedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PartialMediaFailureDetectedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(PartialMediaFailureDetectedEventArgs);
 	}
 }
 
@@ -2697,6 +2817,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPathFigureStatics).get_IsFilledProperty(&_ret));
 		return _ret;
 	}
+	static PathFigure New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PathFigure).abi_ActivateInstance(&ret));
+		return ret.as!(PathFigure);
+	}
 }
 
 interface PathFigureCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.PathFigure)
@@ -2760,6 +2886,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.PathFigure)).abi_First(out_first));
 	}
+	static PathFigureCollection New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PathFigureCollection).abi_ActivateInstance(&ret));
+		return ret.as!(PathFigureCollection);
+	}
 }
 
 interface PathGeometry : Windows.UI.Xaml.Media.Geometry, Windows.UI.Xaml.Media.IPathGeometry
@@ -2803,6 +2935,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPathGeometryStatics).get_FiguresProperty(&_ret));
 		return _ret;
+	}
+	static PathGeometry New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PathGeometry).abi_ActivateInstance(&ret));
+		return ret.as!(PathGeometry);
 	}
 }
 
@@ -2884,6 +3022,12 @@ extern(Windows):
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Media.PathSegment)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.PathSegment)).abi_First(out_first));
+	}
+	static PathSegmentCollection New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PathSegmentCollection).abi_ActivateInstance(&ret));
+		return ret.as!(PathSegmentCollection);
 	}
 }
 
@@ -3101,6 +3245,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_ProjectionMatrixProperty(&_ret));
 		return _ret;
 	}
+	static PlaneProjection New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PlaneProjection).abi_ActivateInstance(&ret));
+		return ret.as!(PlaneProjection);
+	}
 }
 
 interface PointCollection : Windows.Foundation.Collections.IVector!(Windows.Foundation.Point), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Point)
@@ -3164,6 +3314,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Point)).abi_First(out_first));
 	}
+	static PointCollection New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PointCollection).abi_ActivateInstance(&ret));
+		return ret.as!(PointCollection);
+	}
 }
 
 interface PolyBezierSegment : Windows.UI.Xaml.Media.PathSegment, Windows.UI.Xaml.Media.IPolyBezierSegment
@@ -3191,6 +3347,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPolyBezierSegmentStatics).get_PointsProperty(&_ret));
 		return _ret;
+	}
+	static PolyBezierSegment New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PolyBezierSegment).abi_ActivateInstance(&ret));
+		return ret.as!(PolyBezierSegment);
 	}
 }
 
@@ -3220,6 +3382,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPolyLineSegmentStatics).get_PointsProperty(&_ret));
 		return _ret;
 	}
+	static PolyLineSegment New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PolyLineSegment).abi_ActivateInstance(&ret));
+		return ret.as!(PolyLineSegment);
+	}
 }
 
 interface PolyQuadraticBezierSegment : Windows.UI.Xaml.Media.PathSegment, Windows.UI.Xaml.Media.IPolyQuadraticBezierSegment
@@ -3247,6 +3415,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPolyQuadraticBezierSegmentStatics).get_PointsProperty(&_ret));
 		return _ret;
+	}
+	static PolyQuadraticBezierSegment New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PolyQuadraticBezierSegment).abi_ActivateInstance(&ret));
+		return ret.as!(PolyQuadraticBezierSegment);
 	}
 }
 
@@ -3317,10 +3491,22 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IQuadraticBezierSegmentStatics).get_Point2Property(&_ret));
 		return _ret;
 	}
+	static QuadraticBezierSegment New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(QuadraticBezierSegment).abi_ActivateInstance(&ret));
+		return ret.as!(QuadraticBezierSegment);
+	}
 }
 
 interface RateChangedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Media.IRateChangedRoutedEventArgs
 {
+	static RateChangedRoutedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(RateChangedRoutedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(RateChangedRoutedEventArgs);
+	}
 }
 
 interface RectangleGeometry : Windows.UI.Xaml.Media.Geometry, Windows.UI.Xaml.Media.IRectangleGeometry
@@ -3348,6 +3534,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IRectangleGeometryStatics).get_RectProperty(&_ret));
 		return _ret;
+	}
+	static RectangleGeometry New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(RectangleGeometry).abi_ActivateInstance(&ret));
+		return ret.as!(RectangleGeometry);
 	}
 }
 
@@ -3419,6 +3611,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IRotateTransformStatics).get_AngleProperty(&_ret));
 		return _ret;
+	}
+	static RotateTransform New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(RotateTransform).abi_ActivateInstance(&ret));
+		return ret.as!(RotateTransform);
 	}
 }
 
@@ -3496,6 +3694,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IScaleTransformStatics).get_ScaleYProperty(&_ret));
 		return _ret;
 	}
+	static ScaleTransform New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ScaleTransform).abi_ActivateInstance(&ret));
+		return ret.as!(ScaleTransform);
+	}
 }
 
 interface SkewTransform : Windows.UI.Xaml.Media.Transform, Windows.UI.Xaml.Media.ISkewTransform
@@ -3572,6 +3776,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ISkewTransformStatics).get_AngleYProperty(&_ret));
 		return _ret;
 	}
+	static SkewTransform New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SkewTransform).abi_ActivateInstance(&ret));
+		return ret.as!(SkewTransform);
+	}
 }
 
 interface SolidColorBrush : Windows.UI.Xaml.Media.Brush, Windows.UI.Xaml.Media.ISolidColorBrush
@@ -3599,6 +3809,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ISolidColorBrushStatics).get_ColorProperty(&_ret));
 		return _ret;
+	}
+	static SolidColorBrush New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SolidColorBrush).abi_ActivateInstance(&ret));
+		return ret.as!(SolidColorBrush);
 	}
 	static Windows.UI.Xaml.Media.SolidColorBrush New(Windows.UI.Color color)
 	{
@@ -3754,6 +3970,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ITimelineMarkerStatics).get_TextProperty(&_ret));
 		return _ret;
 	}
+	static TimelineMarker New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(TimelineMarker).abi_ActivateInstance(&ret));
+		return ret.as!(TimelineMarker);
+	}
 }
 
 interface TimelineMarkerCollection : Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker), Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.TimelineMarker)
@@ -3817,6 +4039,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.TimelineMarker)).abi_First(out_first));
 	}
+	static TimelineMarkerCollection New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(TimelineMarkerCollection).abi_ActivateInstance(&ret));
+		return ret.as!(TimelineMarkerCollection);
+	}
 }
 
 interface TimelineMarkerRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Media.ITimelineMarkerRoutedEventArgs
@@ -3831,6 +4059,12 @@ extern(Windows):
 	final void Marker(Windows.UI.Xaml.Media.TimelineMarker value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITimelineMarkerRoutedEventArgs).set_Marker(value));
+	}
+	static TimelineMarkerRoutedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(TimelineMarkerRoutedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(TimelineMarkerRoutedEventArgs);
 	}
 }
 
@@ -3913,6 +4147,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Transform)).abi_First(out_first));
 	}
+	static TransformCollection New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(TransformCollection).abi_ActivateInstance(&ret));
+		return ret.as!(TransformCollection);
+	}
 }
 
 interface TransformGroup : Windows.UI.Xaml.Media.Transform, Windows.UI.Xaml.Media.ITransformGroup
@@ -3946,6 +4186,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ITransformGroupStatics).get_ChildrenProperty(&_ret));
 		return _ret;
+	}
+	static TransformGroup New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(TransformGroup).abi_ActivateInstance(&ret));
+		return ret.as!(TransformGroup);
 	}
 }
 
@@ -3990,6 +4236,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ITranslateTransformStatics).get_YProperty(&_ret));
 		return _ret;
+	}
+	static TranslateTransform New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(TranslateTransform).abi_ActivateInstance(&ret));
+		return ret.as!(TranslateTransform);
 	}
 }
 

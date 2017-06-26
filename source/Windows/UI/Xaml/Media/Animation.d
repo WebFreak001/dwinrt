@@ -1405,6 +1405,12 @@ interface ITransitionFactory : IInspectable
 
 interface AddDeleteThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.IAddDeleteThemeTransition
 {
+	static AddDeleteThemeTransition New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(AddDeleteThemeTransition).abi_ActivateInstance(&ret));
+		return ret.as!(AddDeleteThemeTransition);
+	}
 }
 
 interface BackEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.IBackEase
@@ -1433,6 +1439,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IBackEaseStatics).get_AmplitudeProperty(&_ret));
 		return _ret;
 	}
+	static BackEase New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BackEase).abi_ActivateInstance(&ret));
+		return ret.as!(BackEase);
+	}
 }
 
 interface BeginStoryboard : Windows.UI.Xaml.TriggerAction, Windows.UI.Xaml.Media.Animation.IBeginStoryboard
@@ -1460,6 +1472,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IBeginStoryboardStatics).get_StoryboardProperty(&_ret));
 		return _ret;
+	}
+	static BeginStoryboard New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BeginStoryboard).abi_ActivateInstance(&ret));
+		return ret.as!(BeginStoryboard);
 	}
 }
 
@@ -1505,10 +1523,22 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IBounceEaseStatics).get_BouncinessProperty(&_ret));
 		return _ret;
 	}
+	static BounceEase New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BounceEase).abi_ActivateInstance(&ret));
+		return ret.as!(BounceEase);
+	}
 }
 
 interface CircleEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.ICircleEase
 {
+	static CircleEase New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(CircleEase).abi_ActivateInstance(&ret));
+		return ret.as!(CircleEase);
+	}
 }
 
 interface ColorAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IColorAnimation
@@ -1601,6 +1631,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IColorAnimationStatics).get_EnableDependentAnimationProperty(&_ret));
 		return _ret;
 	}
+	static ColorAnimation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ColorAnimation).abi_ActivateInstance(&ret));
+		return ret.as!(ColorAnimation);
+	}
 }
 
 interface ColorAnimationUsingKeyFrames : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IColorAnimationUsingKeyFrames
@@ -1634,6 +1670,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IColorAnimationUsingKeyFramesStatics).get_EnableDependentAnimationProperty(&_ret));
 		return _ret;
+	}
+	static ColorAnimationUsingKeyFrames New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ColorAnimationUsingKeyFrames).abi_ActivateInstance(&ret));
+		return ret.as!(ColorAnimationUsingKeyFrames);
 	}
 }
 
@@ -1767,6 +1809,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).abi_First(out_first));
 	}
+	static ColorKeyFrameCollection New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ColorKeyFrameCollection).abi_ActivateInstance(&ret));
+		return ret.as!(ColorKeyFrameCollection);
+	}
 }
 
 interface CommonNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.ICommonNavigationTransitionInfo
@@ -1810,6 +1858,12 @@ extern(Windows):
 	static void SetIsStaggerElement(Windows.UI.Xaml.UIElement element, bool value)
 	{
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ICommonNavigationTransitionInfoStatics).abi_SetIsStaggerElement(element, value));
+	}
+	static CommonNavigationTransitionInfo New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(CommonNavigationTransitionInfo).abi_ActivateInstance(&ret));
+		return ret.as!(CommonNavigationTransitionInfo);
 	}
 }
 
@@ -1950,6 +2004,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContentThemeTransitionStatics).get_VerticalOffsetProperty(&_ret));
 		return _ret;
 	}
+	static ContentThemeTransition New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ContentThemeTransition).abi_ActivateInstance(&ret));
+		return ret.as!(ContentThemeTransition);
+	}
 }
 
 interface ContinuumNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfo
@@ -2026,26 +2086,62 @@ extern(Windows):
 	{
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics).abi_SetExitElementContainer(element, value));
 	}
+	static ContinuumNavigationTransitionInfo New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ContinuumNavigationTransitionInfo).abi_ActivateInstance(&ret));
+		return ret.as!(ContinuumNavigationTransitionInfo);
+	}
 }
 
 interface CubicEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.ICubicEase
 {
+	static CubicEase New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(CubicEase).abi_ActivateInstance(&ret));
+		return ret.as!(CubicEase);
+	}
 }
 
 interface DiscreteColorKeyFrame : Windows.UI.Xaml.Media.Animation.ColorKeyFrame, Windows.UI.Xaml.Media.Animation.IDiscreteColorKeyFrame
 {
+	static DiscreteColorKeyFrame New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DiscreteColorKeyFrame).abi_ActivateInstance(&ret));
+		return ret.as!(DiscreteColorKeyFrame);
+	}
 }
 
 interface DiscreteDoubleKeyFrame : Windows.UI.Xaml.Media.Animation.DoubleKeyFrame, Windows.UI.Xaml.Media.Animation.IDiscreteDoubleKeyFrame
 {
+	static DiscreteDoubleKeyFrame New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DiscreteDoubleKeyFrame).abi_ActivateInstance(&ret));
+		return ret.as!(DiscreteDoubleKeyFrame);
+	}
 }
 
 interface DiscreteObjectKeyFrame : Windows.UI.Xaml.Media.Animation.ObjectKeyFrame, Windows.UI.Xaml.Media.Animation.IDiscreteObjectKeyFrame
 {
+	static DiscreteObjectKeyFrame New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DiscreteObjectKeyFrame).abi_ActivateInstance(&ret));
+		return ret.as!(DiscreteObjectKeyFrame);
+	}
 }
 
 interface DiscretePointKeyFrame : Windows.UI.Xaml.Media.Animation.PointKeyFrame, Windows.UI.Xaml.Media.Animation.IDiscretePointKeyFrame
 {
+	static DiscretePointKeyFrame New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DiscretePointKeyFrame).abi_ActivateInstance(&ret));
+		return ret.as!(DiscretePointKeyFrame);
+	}
 }
 
 interface DoubleAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDoubleAnimation
@@ -2138,6 +2234,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimationStatics).get_EnableDependentAnimationProperty(&_ret));
 		return _ret;
 	}
+	static DoubleAnimation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DoubleAnimation).abi_ActivateInstance(&ret));
+		return ret.as!(DoubleAnimation);
+	}
 }
 
 interface DoubleAnimationUsingKeyFrames : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDoubleAnimationUsingKeyFrames
@@ -2171,6 +2273,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimationUsingKeyFramesStatics).get_EnableDependentAnimationProperty(&_ret));
 		return _ret;
+	}
+	static DoubleAnimationUsingKeyFrames New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DoubleAnimationUsingKeyFrames).abi_ActivateInstance(&ret));
+		return ret.as!(DoubleAnimationUsingKeyFrames);
 	}
 }
 
@@ -2304,6 +2412,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).abi_First(out_first));
 	}
+	static DoubleKeyFrameCollection New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DoubleKeyFrameCollection).abi_ActivateInstance(&ret));
+		return ret.as!(DoubleKeyFrameCollection);
+	}
 }
 
 interface DragItemThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDragItemThemeAnimation
@@ -2331,6 +2445,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDragItemThemeAnimationStatics).get_TargetNameProperty(&_ret));
 		return _ret;
+	}
+	static DragItemThemeAnimation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DragItemThemeAnimation).abi_ActivateInstance(&ret));
+		return ret.as!(DragItemThemeAnimation);
 	}
 }
 
@@ -2392,10 +2512,22 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimationStatics).get_DirectionProperty(&_ret));
 		return _ret;
 	}
+	static DragOverThemeAnimation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DragOverThemeAnimation).abi_ActivateInstance(&ret));
+		return ret.as!(DragOverThemeAnimation);
+	}
 }
 
 interface DrillInNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.IDrillInNavigationTransitionInfo
 {
+	static DrillInNavigationTransitionInfo New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DrillInNavigationTransitionInfo).abi_ActivateInstance(&ret));
+		return ret.as!(DrillInNavigationTransitionInfo);
+	}
 }
 
 interface DrillInThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation
@@ -2471,6 +2603,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimationStatics).get_ExitTargetProperty(&_ret));
 		return _ret;
+	}
+	static DrillInThemeAnimation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DrillInThemeAnimation).abi_ActivateInstance(&ret));
+		return ret.as!(DrillInThemeAnimation);
 	}
 }
 
@@ -2548,6 +2686,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimationStatics).get_ExitTargetProperty(&_ret));
 		return _ret;
 	}
+	static DrillOutThemeAnimation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DrillOutThemeAnimation).abi_ActivateInstance(&ret));
+		return ret.as!(DrillOutThemeAnimation);
+	}
 }
 
 interface DropTargetItemThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDropTargetItemThemeAnimation
@@ -2575,6 +2719,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDropTargetItemThemeAnimationStatics).get_TargetNameProperty(&_ret));
 		return _ret;
+	}
+	static DropTargetItemThemeAnimation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DropTargetItemThemeAnimation).abi_ActivateInstance(&ret));
+		return ret.as!(DropTargetItemThemeAnimation);
 	}
 }
 
@@ -2604,6 +2754,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEasingColorKeyFrameStatics).get_EasingFunctionProperty(&_ret));
 		return _ret;
 	}
+	static EasingColorKeyFrame New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(EasingColorKeyFrame).abi_ActivateInstance(&ret));
+		return ret.as!(EasingColorKeyFrame);
+	}
 }
 
 interface EasingDoubleKeyFrame : Windows.UI.Xaml.Media.Animation.DoubleKeyFrame, Windows.UI.Xaml.Media.Animation.IEasingDoubleKeyFrame
@@ -2631,6 +2787,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEasingDoubleKeyFrameStatics).get_EasingFunctionProperty(&_ret));
 		return _ret;
+	}
+	static EasingDoubleKeyFrame New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(EasingDoubleKeyFrame).abi_ActivateInstance(&ret));
+		return ret.as!(EasingDoubleKeyFrame);
 	}
 }
 
@@ -2711,6 +2873,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEasingPointKeyFrameStatics).get_EasingFunctionProperty(&_ret));
 		return _ret;
 	}
+	static EasingPointKeyFrame New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(EasingPointKeyFrame).abi_ActivateInstance(&ret));
+		return ret.as!(EasingPointKeyFrame);
+	}
 }
 
 interface EdgeUIThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.IEdgeUIThemeTransition
@@ -2738,6 +2906,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEdgeUIThemeTransitionStatics).get_EdgeProperty(&_ret));
 		return _ret;
+	}
+	static EdgeUIThemeTransition New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(EdgeUIThemeTransition).abi_ActivateInstance(&ret));
+		return ret.as!(EdgeUIThemeTransition);
 	}
 }
 
@@ -2783,6 +2957,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IElasticEaseStatics).get_SpringinessProperty(&_ret));
 		return _ret;
 	}
+	static ElasticEase New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ElasticEase).abi_ActivateInstance(&ret));
+		return ret.as!(ElasticEase);
+	}
 }
 
 interface EntranceNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.IEntranceNavigationTransitionInfo
@@ -2808,6 +2988,12 @@ interface EntranceNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.Nav
 	static void SetIsTargetElement(Windows.UI.Xaml.UIElement element, bool value)
 	{
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEntranceNavigationTransitionInfoStatics).abi_SetIsTargetElement(element, value));
+	}
+	static EntranceNavigationTransitionInfo New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(EntranceNavigationTransitionInfo).abi_ActivateInstance(&ret));
+		return ret.as!(EntranceNavigationTransitionInfo);
 	}
 }
 
@@ -2869,6 +3055,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransitionStatics).get_IsStaggeringEnabledProperty(&_ret));
 		return _ret;
 	}
+	static EntranceThemeTransition New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(EntranceThemeTransition).abi_ActivateInstance(&ret));
+		return ret.as!(EntranceThemeTransition);
+	}
 }
 
 interface ExponentialEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.IExponentialEase
@@ -2896,6 +3088,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IExponentialEaseStatics).get_ExponentProperty(&_ret));
 		return _ret;
+	}
+	static ExponentialEase New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ExponentialEase).abi_ActivateInstance(&ret));
+		return ret.as!(ExponentialEase);
 	}
 }
 
@@ -2925,6 +3123,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IFadeInThemeAnimationStatics).get_TargetNameProperty(&_ret));
 		return _ret;
 	}
+	static FadeInThemeAnimation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(FadeInThemeAnimation).abi_ActivateInstance(&ret));
+		return ret.as!(FadeInThemeAnimation);
+	}
 }
 
 interface FadeOutThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IFadeOutThemeAnimation
@@ -2953,6 +3157,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IFadeOutThemeAnimationStatics).get_TargetNameProperty(&_ret));
 		return _ret;
 	}
+	static FadeOutThemeAnimation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(FadeOutThemeAnimation).abi_ActivateInstance(&ret));
+		return ret.as!(FadeOutThemeAnimation);
+	}
 }
 
 interface KeySpline : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Animation.IKeySpline
@@ -2978,6 +3188,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IKeySpline).set_ControlPoint2(value));
 	}
+	static KeySpline New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(KeySpline).abi_ActivateInstance(&ret));
+		return ret.as!(KeySpline);
+	}
 }
 
 interface KeyTimeHelper : Windows.UI.Xaml.Media.Animation.IKeyTimeHelper
@@ -2998,14 +3214,32 @@ interface KeyTimeHelper : Windows.UI.Xaml.Media.Animation.IKeyTimeHelper
 
 interface LinearColorKeyFrame : Windows.UI.Xaml.Media.Animation.ColorKeyFrame, Windows.UI.Xaml.Media.Animation.ILinearColorKeyFrame
 {
+	static LinearColorKeyFrame New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(LinearColorKeyFrame).abi_ActivateInstance(&ret));
+		return ret.as!(LinearColorKeyFrame);
+	}
 }
 
 interface LinearDoubleKeyFrame : Windows.UI.Xaml.Media.Animation.DoubleKeyFrame, Windows.UI.Xaml.Media.Animation.ILinearDoubleKeyFrame
 {
+	static LinearDoubleKeyFrame New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(LinearDoubleKeyFrame).abi_ActivateInstance(&ret));
+		return ret.as!(LinearDoubleKeyFrame);
+	}
 }
 
 interface LinearPointKeyFrame : Windows.UI.Xaml.Media.Animation.PointKeyFrame, Windows.UI.Xaml.Media.Animation.ILinearPointKeyFrame
 {
+	static LinearPointKeyFrame New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(LinearPointKeyFrame).abi_ActivateInstance(&ret));
+		return ret.as!(LinearPointKeyFrame);
+	}
 }
 
 interface NavigationThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.INavigationThemeTransition
@@ -3033,6 +3267,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.INavigationThemeTransitionStatics).get_DefaultNavigationTransitionInfoProperty(&_ret));
 		return _ret;
+	}
+	static NavigationThemeTransition New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(NavigationThemeTransition).abi_ActivateInstance(&ret));
+		return ret.as!(NavigationThemeTransition);
 	}
 }
 
@@ -3097,6 +3337,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IObjectAnimationUsingKeyFramesStatics).get_EnableDependentAnimationProperty(&_ret));
 		return _ret;
+	}
+	static ObjectAnimationUsingKeyFrames New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ObjectAnimationUsingKeyFrames).abi_ActivateInstance(&ret));
+		return ret.as!(ObjectAnimationUsingKeyFrames);
 	}
 }
 
@@ -3230,6 +3476,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).abi_First(out_first));
 	}
+	static ObjectKeyFrameCollection New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ObjectKeyFrameCollection).abi_ActivateInstance(&ret));
+		return ret.as!(ObjectKeyFrameCollection);
+	}
 }
 
 interface PaneThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.IPaneThemeTransition
@@ -3257,6 +3509,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPaneThemeTransitionStatics).get_EdgeProperty(&_ret));
 		return _ret;
+	}
+	static PaneThemeTransition New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PaneThemeTransition).abi_ActivateInstance(&ret));
+		return ret.as!(PaneThemeTransition);
 	}
 }
 
@@ -3350,6 +3608,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointAnimationStatics).get_EnableDependentAnimationProperty(&_ret));
 		return _ret;
 	}
+	static PointAnimation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PointAnimation).abi_ActivateInstance(&ret));
+		return ret.as!(PointAnimation);
+	}
 }
 
 interface PointAnimationUsingKeyFrames : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPointAnimationUsingKeyFrames
@@ -3383,6 +3647,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointAnimationUsingKeyFramesStatics).get_EnableDependentAnimationProperty(&_ret));
 		return _ret;
+	}
+	static PointAnimationUsingKeyFrames New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PointAnimationUsingKeyFrames).abi_ActivateInstance(&ret));
+		return ret.as!(PointAnimationUsingKeyFrames);
 	}
 }
 
@@ -3516,6 +3786,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).abi_First(out_first));
 	}
+	static PointKeyFrameCollection New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PointKeyFrameCollection).abi_ActivateInstance(&ret));
+		return ret.as!(PointKeyFrameCollection);
+	}
 }
 
 interface PointerDownThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPointerDownThemeAnimation
@@ -3544,6 +3820,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointerDownThemeAnimationStatics).get_TargetNameProperty(&_ret));
 		return _ret;
 	}
+	static PointerDownThemeAnimation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PointerDownThemeAnimation).abi_ActivateInstance(&ret));
+		return ret.as!(PointerDownThemeAnimation);
+	}
 }
 
 interface PointerUpThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPointerUpThemeAnimation
@@ -3571,6 +3853,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointerUpThemeAnimationStatics).get_TargetNameProperty(&_ret));
 		return _ret;
+	}
+	static PointerUpThemeAnimation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PointerUpThemeAnimation).abi_ActivateInstance(&ret));
+		return ret.as!(PointerUpThemeAnimation);
 	}
 }
 
@@ -3632,6 +3920,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimationStatics).get_FromVerticalOffsetProperty(&_ret));
 		return _ret;
 	}
+	static PopInThemeAnimation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PopInThemeAnimation).abi_ActivateInstance(&ret));
+		return ret.as!(PopInThemeAnimation);
+	}
 }
 
 interface PopOutThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPopOutThemeAnimation
@@ -3659,6 +3953,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPopOutThemeAnimationStatics).get_TargetNameProperty(&_ret));
 		return _ret;
+	}
+	static PopOutThemeAnimation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PopOutThemeAnimation).abi_ActivateInstance(&ret));
+		return ret.as!(PopOutThemeAnimation);
 	}
 }
 
@@ -3704,6 +4004,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPopupThemeTransitionStatics).get_FromVerticalOffsetProperty(&_ret));
 		return _ret;
 	}
+	static PopupThemeTransition New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PopupThemeTransition).abi_ActivateInstance(&ret));
+		return ret.as!(PopupThemeTransition);
+	}
 }
 
 interface PowerEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.IPowerEase
@@ -3732,22 +4038,52 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPowerEaseStatics).get_PowerProperty(&_ret));
 		return _ret;
 	}
+	static PowerEase New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PowerEase).abi_ActivateInstance(&ret));
+		return ret.as!(PowerEase);
+	}
 }
 
 interface QuadraticEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.IQuadraticEase
 {
+	static QuadraticEase New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(QuadraticEase).abi_ActivateInstance(&ret));
+		return ret.as!(QuadraticEase);
+	}
 }
 
 interface QuarticEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.IQuarticEase
 {
+	static QuarticEase New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(QuarticEase).abi_ActivateInstance(&ret));
+		return ret.as!(QuarticEase);
+	}
 }
 
 interface QuinticEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.IQuinticEase
 {
+	static QuinticEase New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(QuinticEase).abi_ActivateInstance(&ret));
+		return ret.as!(QuinticEase);
+	}
 }
 
 interface ReorderThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.IReorderThemeTransition
 {
+	static ReorderThemeTransition New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ReorderThemeTransition).abi_ActivateInstance(&ret));
+		return ret.as!(ReorderThemeTransition);
+	}
 }
 
 interface RepeatBehaviorHelper : Windows.UI.Xaml.Media.Animation.IRepeatBehaviorHelper
@@ -3854,6 +4190,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimationStatics).get_FromVerticalOffsetProperty(&_ret));
 		return _ret;
 	}
+	static RepositionThemeAnimation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(RepositionThemeAnimation).abi_ActivateInstance(&ret));
+		return ret.as!(RepositionThemeAnimation);
+	}
 }
 
 interface RepositionThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.IRepositionThemeTransition, Windows.UI.Xaml.Media.Animation.IRepositionThemeTransition2
@@ -3882,14 +4224,32 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeTransitionStatics2).get_IsStaggeringEnabledProperty(&_ret));
 		return _ret;
 	}
+	static RepositionThemeTransition New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(RepositionThemeTransition).abi_ActivateInstance(&ret));
+		return ret.as!(RepositionThemeTransition);
+	}
 }
 
 interface SineEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.ISineEase
 {
+	static SineEase New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SineEase).abi_ActivateInstance(&ret));
+		return ret.as!(SineEase);
+	}
 }
 
 interface SlideNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.ISlideNavigationTransitionInfo
 {
+	static SlideNavigationTransitionInfo New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SlideNavigationTransitionInfo).abi_ActivateInstance(&ret));
+		return ret.as!(SlideNavigationTransitionInfo);
+	}
 }
 
 interface SplineColorKeyFrame : Windows.UI.Xaml.Media.Animation.ColorKeyFrame, Windows.UI.Xaml.Media.Animation.ISplineColorKeyFrame
@@ -3917,6 +4277,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplineColorKeyFrameStatics).get_KeySplineProperty(&_ret));
 		return _ret;
+	}
+	static SplineColorKeyFrame New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SplineColorKeyFrame).abi_ActivateInstance(&ret));
+		return ret.as!(SplineColorKeyFrame);
 	}
 }
 
@@ -3946,6 +4312,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplineDoubleKeyFrameStatics).get_KeySplineProperty(&_ret));
 		return _ret;
 	}
+	static SplineDoubleKeyFrame New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SplineDoubleKeyFrame).abi_ActivateInstance(&ret));
+		return ret.as!(SplineDoubleKeyFrame);
+	}
 }
 
 interface SplinePointKeyFrame : Windows.UI.Xaml.Media.Animation.PointKeyFrame, Windows.UI.Xaml.Media.Animation.ISplinePointKeyFrame
@@ -3973,6 +4345,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplinePointKeyFrameStatics).get_KeySplineProperty(&_ret));
 		return _ret;
+	}
+	static SplinePointKeyFrame New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SplinePointKeyFrame).abi_ActivateInstance(&ret));
+		return ret.as!(SplinePointKeyFrame);
 	}
 }
 
@@ -4162,6 +4540,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics).get_ContentTranslationOffsetProperty(&_ret));
 		return _ret;
 	}
+	static SplitCloseThemeAnimation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SplitCloseThemeAnimation).abi_ActivateInstance(&ret));
+		return ret.as!(SplitCloseThemeAnimation);
+	}
 }
 
 interface SplitOpenThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation
@@ -4350,6 +4734,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics).get_ContentTranslationOffsetProperty(&_ret));
 		return _ret;
 	}
+	static SplitOpenThemeAnimation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SplitOpenThemeAnimation).abi_ActivateInstance(&ret));
+		return ret.as!(SplitOpenThemeAnimation);
+	}
 }
 
 interface Storyboard : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IStoryboard
@@ -4444,10 +4834,22 @@ extern(Windows):
 	{
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IStoryboardStatics).abi_SetTarget(timeline, target));
 	}
+	static Storyboard New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Storyboard).abi_ActivateInstance(&ret));
+		return ret.as!(Storyboard);
+	}
 }
 
 interface SuppressNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.ISuppressNavigationTransitionInfo
 {
+	static SuppressNavigationTransitionInfo New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SuppressNavigationTransitionInfo).abi_ActivateInstance(&ret));
+		return ret.as!(SuppressNavigationTransitionInfo);
+	}
 }
 
 interface SwipeBackThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation
@@ -4508,6 +4910,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimationStatics).get_FromVerticalOffsetProperty(&_ret));
 		return _ret;
 	}
+	static SwipeBackThemeAnimation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SwipeBackThemeAnimation).abi_ActivateInstance(&ret));
+		return ret.as!(SwipeBackThemeAnimation);
+	}
 }
 
 interface SwipeHintThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation
@@ -4567,6 +4975,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimationStatics).get_ToVerticalOffsetProperty(&_ret));
 		return _ret;
+	}
+	static SwipeHintThemeAnimation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SwipeHintThemeAnimation).abi_ActivateInstance(&ret));
+		return ret.as!(SwipeHintThemeAnimation);
 	}
 }
 
@@ -4794,6 +5208,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.Timeline)).abi_First(out_first));
 	}
+	static TimelineCollection New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(TimelineCollection).abi_ActivateInstance(&ret));
+		return ret.as!(TimelineCollection);
+	}
 }
 
 interface Transition : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Animation.ITransition
@@ -4874,6 +5294,12 @@ extern(Windows):
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Media.Animation.Transition)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.Transition)).abi_First(out_first));
+	}
+	static TransitionCollection New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(TransitionCollection).abi_ActivateInstance(&ret));
+		return ret.as!(TransitionCollection);
 	}
 }
 

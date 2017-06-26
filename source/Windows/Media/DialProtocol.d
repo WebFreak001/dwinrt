@@ -268,6 +268,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.DialProtocol.IDialDevicePicker).abi_SetDisplayStatus(device, status));
 	}
+	static DialDevicePicker New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DialDevicePicker).abi_ActivateInstance(&ret));
+		return ret.as!(DialDevicePicker);
+	}
 }
 
 interface DialDevicePickerFilter : Windows.Media.DialProtocol.IDialDevicePickerFilter

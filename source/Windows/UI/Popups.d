@@ -178,6 +178,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Popups.IPopupMenu).abi_ShowAsyncWithRectAndPlacement(selection, preferredPlacement, &_ret));
 		return _ret;
 	}
+	static PopupMenu New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PopupMenu).abi_ActivateInstance(&ret));
+		return ret.as!(PopupMenu);
+	}
 }
 
 interface UICommand : Windows.UI.Popups.IUICommand
@@ -212,6 +218,12 @@ extern(Windows):
 	final void Id(IInspectable value)
 	{
 		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).set_Id(value));
+	}
+	static UICommand New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(UICommand).abi_ActivateInstance(&ret));
+		return ret.as!(UICommand);
 	}
 	static Windows.UI.Popups.UICommand New(HSTRING label)
 	{
@@ -268,6 +280,12 @@ extern(Windows):
 	final void Id(IInspectable value)
 	{
 		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).set_Id(value));
+	}
+	static UICommandSeparator New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(UICommandSeparator).abi_ActivateInstance(&ret));
+		return ret.as!(UICommandSeparator);
 	}
 }
 

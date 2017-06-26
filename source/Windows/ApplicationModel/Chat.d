@@ -860,6 +860,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversationThreadingInfo).set_Kind(value));
 	}
+	static ChatConversationThreadingInfo New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ChatConversationThreadingInfo).abi_ActivateInstance(&ret));
+		return ret.as!(ChatConversationThreadingInfo);
+	}
 }
 
 interface ChatMessage : Windows.ApplicationModel.Chat.IChatMessage, Windows.ApplicationModel.Chat.IChatMessage2, Windows.ApplicationModel.Chat.IChatMessage3, Windows.ApplicationModel.Chat.IChatMessage4, Windows.ApplicationModel.Chat.IChatItem
@@ -1118,6 +1124,12 @@ extern(Windows):
 		Windows.ApplicationModel.Chat.ChatItemKind _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatItem).get_ItemKind(&_ret));
 		return _ret;
+	}
+	static ChatMessage New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ChatMessage).abi_ActivateInstance(&ret));
+		return ret.as!(ChatMessage);
 	}
 }
 
@@ -1690,6 +1702,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatQueryOptions).set_SearchString(value));
 	}
+	static ChatQueryOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ChatQueryOptions).abi_ActivateInstance(&ret));
+		return ret.as!(ChatQueryOptions);
+	}
 }
 
 interface ChatRecipientDeliveryInfo : Windows.ApplicationModel.Chat.IChatRecipientDeliveryInfo
@@ -1754,6 +1772,12 @@ extern(Windows):
 		Windows.ApplicationModel.Chat.ChatMessageStatus _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatRecipientDeliveryInfo).get_Status(&_ret));
 		return _ret;
+	}
+	static ChatRecipientDeliveryInfo New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ChatRecipientDeliveryInfo).abi_ActivateInstance(&ret));
+		return ret.as!(ChatRecipientDeliveryInfo);
 	}
 }
 

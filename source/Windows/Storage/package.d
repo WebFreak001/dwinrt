@@ -731,6 +731,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))).abi_First(out_first));
 	}
+	static ApplicationDataCompositeValue New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ApplicationDataCompositeValue).abi_ActivateInstance(&ret));
+		return ret.as!(ApplicationDataCompositeValue);
+	}
 }
 
 interface ApplicationDataContainer : Windows.Storage.IApplicationDataContainer

@@ -315,6 +315,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
 		return _ret;
 	}
+	static MidiActiveSensingMessage New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MidiActiveSensingMessage).abi_ActivateInstance(&ret));
+		return ret.as!(MidiActiveSensingMessage);
+	}
 }
 
 interface MidiChannelPressureMessage : Windows.Devices.Midi.IMidiChannelPressureMessage, Windows.Devices.Midi.IMidiMessage
@@ -379,6 +385,12 @@ extern(Windows):
 		Windows.Devices.Midi.MidiMessageType _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
 		return _ret;
+	}
+	static MidiContinueMessage New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MidiContinueMessage).abi_ActivateInstance(&ret));
+		return ret.as!(MidiContinueMessage);
 	}
 }
 
@@ -848,6 +860,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
 		return _ret;
 	}
+	static MidiStartMessage New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MidiStartMessage).abi_ActivateInstance(&ret));
+		return ret.as!(MidiStartMessage);
+	}
 }
 
 interface MidiStopMessage : Windows.Devices.Midi.IMidiMessage
@@ -870,6 +888,12 @@ extern(Windows):
 		Windows.Devices.Midi.MidiMessageType _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
 		return _ret;
+	}
+	static MidiStopMessage New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MidiStopMessage).abi_ActivateInstance(&ret));
+		return ret.as!(MidiStopMessage);
 	}
 }
 
@@ -988,6 +1012,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
 		return _ret;
 	}
+	static MidiSystemResetMessage New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MidiSystemResetMessage).abi_ActivateInstance(&ret));
+		return ret.as!(MidiSystemResetMessage);
+	}
 }
 
 interface MidiTimeCodeMessage : Windows.Devices.Midi.IMidiTimeCodeMessage, Windows.Devices.Midi.IMidiMessage
@@ -1053,6 +1083,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
 		return _ret;
 	}
+	static MidiTimingClockMessage New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MidiTimingClockMessage).abi_ActivateInstance(&ret));
+		return ret.as!(MidiTimingClockMessage);
+	}
 }
 
 interface MidiTuneRequestMessage : Windows.Devices.Midi.IMidiMessage
@@ -1075,6 +1111,12 @@ extern(Windows):
 		Windows.Devices.Midi.MidiMessageType _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
 		return _ret;
+	}
+	static MidiTuneRequestMessage New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MidiTuneRequestMessage).abi_ActivateInstance(&ret));
+		return ret.as!(MidiTuneRequestMessage);
 	}
 }
 

@@ -442,6 +442,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IAudioEncodingPropertiesStatics).abi_CreateWma(sampleRate, channelCount, bitrate, &_ret));
 		return _ret;
 	}
+	static AudioEncodingProperties New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(AudioEncodingProperties).abi_ActivateInstance(&ret));
+		return ret.as!(AudioEncodingProperties);
+	}
 }
 
 interface ContainerEncodingProperties : Windows.Media.MediaProperties.IContainerEncodingProperties, Windows.Media.MediaProperties.IMediaEncodingProperties
@@ -468,6 +474,12 @@ extern(Windows):
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Subtype(&_ret));
 		return _ret;
+	}
+	static ContainerEncodingProperties New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ContainerEncodingProperties).abi_ActivateInstance(&ret));
+		return ret.as!(ContainerEncodingProperties);
 	}
 }
 
@@ -611,6 +623,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IImageEncodingPropertiesStatics).abi_CreateJpegXR(&_ret));
 		return _ret;
 	}
+	static ImageEncodingProperties New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ImageEncodingProperties).abi_ActivateInstance(&ret));
+		return ret.as!(ImageEncodingProperties);
+	}
 }
 
 interface MediaEncodingProfile : Windows.Media.MediaProperties.IMediaEncodingProfile
@@ -694,6 +712,12 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(Windows.Media.MediaProperties.MediaEncodingProfile) _ret;
 		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingProfileStatics).abi_CreateFromStreamAsync(stream, &_ret));
 		return _ret;
+	}
+	static MediaEncodingProfile New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MediaEncodingProfile).abi_ActivateInstance(&ret));
+		return ret.as!(MediaEncodingProfile);
 	}
 }
 
@@ -992,6 +1016,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(GUID, IInspectable))).abi_First(out_first));
 	}
+	static MediaPropertySet New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MediaPropertySet).abi_ActivateInstance(&ret));
+		return ret.as!(MediaPropertySet);
+	}
 }
 
 interface MediaRatio : Windows.Media.MediaProperties.IMediaRatio
@@ -1180,6 +1210,12 @@ extern(Windows):
 		Windows.Media.MediaProperties.VideoEncodingProperties _ret;
 		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IVideoEncodingPropertiesStatics).abi_CreateUncompressed(subtype, width, height, &_ret));
 		return _ret;
+	}
+	static VideoEncodingProperties New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VideoEncodingProperties).abi_ActivateInstance(&ret));
+		return ret.as!(VideoEncodingProperties);
 	}
 }
 

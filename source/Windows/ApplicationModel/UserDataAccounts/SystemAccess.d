@@ -568,6 +568,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IDeviceAccountConfiguration2).set_IsSyncScheduleManagedBySystem(value));
 	}
+	static DeviceAccountConfiguration New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DeviceAccountConfiguration).abi_ActivateInstance(&ret));
+		return ret.as!(DeviceAccountConfiguration);
+	}
 }
 
 interface UserDataAccountSystemAccessManager

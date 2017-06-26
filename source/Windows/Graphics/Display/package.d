@@ -431,7 +431,12 @@ interface DisplayProperties
 		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).set_AutoRotationPreferences(value));
 	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
-	HRESULT add_OrientationChanged(Windows.Graphics.Display.DisplayPropertiesEventHandler handler, EventRegistrationToken* return_token);
+	static EventRegistrationToken OnOrientationChanged(void delegate(IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).add_OrientationChanged(event!(Windows.Graphics.Display.DisplayPropertiesEventHandler, IInspectable)(fn), &tok));
+		return tok;
+	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	static void removeOrientationChanged(EventRegistrationToken token)
 	{
@@ -452,7 +457,12 @@ interface DisplayProperties
 		return _ret;
 	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
-	HRESULT add_LogicalDpiChanged(Windows.Graphics.Display.DisplayPropertiesEventHandler handler, EventRegistrationToken* return_token);
+	static EventRegistrationToken OnLogicalDpiChanged(void delegate(IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).add_LogicalDpiChanged(event!(Windows.Graphics.Display.DisplayPropertiesEventHandler, IInspectable)(fn), &tok));
+		return tok;
+	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	static void removeLogicalDpiChanged(EventRegistrationToken token)
 	{
@@ -466,7 +476,12 @@ interface DisplayProperties
 		return _ret;
 	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
-	HRESULT add_StereoEnabledChanged(Windows.Graphics.Display.DisplayPropertiesEventHandler handler, EventRegistrationToken* return_token);
+	static EventRegistrationToken OnStereoEnabledChanged(void delegate(IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).add_StereoEnabledChanged(event!(Windows.Graphics.Display.DisplayPropertiesEventHandler, IInspectable)(fn), &tok));
+		return tok;
+	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	static void removeStereoEnabledChanged(EventRegistrationToken token)
 	{
@@ -480,14 +495,24 @@ interface DisplayProperties
 		return _ret;
 	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
-	HRESULT add_ColorProfileChanged(Windows.Graphics.Display.DisplayPropertiesEventHandler handler, EventRegistrationToken* return_token);
+	static EventRegistrationToken OnColorProfileChanged(void delegate(IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).add_ColorProfileChanged(event!(Windows.Graphics.Display.DisplayPropertiesEventHandler, IInspectable)(fn), &tok));
+		return tok;
+	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	static void removeColorProfileChanged(EventRegistrationToken token)
 	{
 		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).remove_ColorProfileChanged(token));
 	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
-	HRESULT add_DisplayContentsInvalidated(Windows.Graphics.Display.DisplayPropertiesEventHandler handler, EventRegistrationToken* return_token);
+	static EventRegistrationToken OnDisplayContentsInvalidated(void delegate(IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).add_DisplayContentsInvalidated(event!(Windows.Graphics.Display.DisplayPropertiesEventHandler, IInspectable)(fn), &tok));
+		return tok;
+	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	static void removeDisplayContentsInvalidated(EventRegistrationToken token)
 	{

@@ -22,4 +22,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.System.Display.IDisplayRequest).abi_RequestRelease());
 	}
+	static DisplayRequest New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DisplayRequest).abi_ActivateInstance(&ret));
+		return ret.as!(DisplayRequest);
+	}
 }

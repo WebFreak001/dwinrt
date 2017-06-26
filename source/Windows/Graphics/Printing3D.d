@@ -642,6 +642,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackageStatics).abi_LoadAsync(value, &_ret));
 		return _ret;
 	}
+	static Printing3D3MFPackage New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Printing3D3MFPackage).abi_ActivateInstance(&ret));
+		return ret.as!(Printing3D3MFPackage);
+	}
 }
 
 interface Printing3DBaseMaterial : Windows.Graphics.Printing3D.IPrinting3DBaseMaterial
@@ -685,6 +691,12 @@ extern(Windows):
 		HSTRING _ret;
 		Debug.OK(staticInstance.as!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterialStatics).get_Pla(&_ret));
 		return _ret;
+	}
+	static Printing3DBaseMaterial New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Printing3DBaseMaterial).abi_ActivateInstance(&ret));
+		return ret.as!(Printing3DBaseMaterial);
 	}
 }
 
@@ -734,6 +746,12 @@ extern(Windows):
 	final void Color(Windows.UI.Color value)
 	{
 		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DColorMaterial2).set_Color(value));
+	}
+	static Printing3DColorMaterial New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Printing3DColorMaterial).abi_ActivateInstance(&ret));
+		return ret.as!(Printing3DColorMaterial);
 	}
 }
 
@@ -820,6 +838,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponent).set_PartNumber(value));
 	}
+	static Printing3DComponent New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Printing3DComponent).abi_ActivateInstance(&ret));
+		return ret.as!(Printing3DComponent);
+	}
 }
 
 interface Printing3DComponentWithMatrix : Windows.Graphics.Printing3D.IPrinting3DComponentWithMatrix
@@ -845,6 +869,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponentWithMatrix).set_Matrix(value));
 	}
+	static Printing3DComponentWithMatrix New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Printing3DComponentWithMatrix).abi_ActivateInstance(&ret));
+		return ret.as!(Printing3DComponentWithMatrix);
+	}
 }
 
 interface Printing3DCompositeMaterial : Windows.Graphics.Printing3D.IPrinting3DCompositeMaterial
@@ -855,6 +885,12 @@ extern(Windows):
 		Windows.Foundation.Collections.IVector!(double) _ret;
 		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterial).get_Values(&_ret));
 		return _ret;
+	}
+	static Printing3DCompositeMaterial New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Printing3DCompositeMaterial).abi_ActivateInstance(&ret));
+		return ret.as!(Printing3DCompositeMaterial);
 	}
 }
 
@@ -931,6 +967,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DFaceReductionOptions).set_MaxEdgeLength(value));
 	}
+	static Printing3DFaceReductionOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Printing3DFaceReductionOptions).abi_ActivateInstance(&ret));
+		return ret.as!(Printing3DFaceReductionOptions);
+	}
 }
 
 interface Printing3DMaterial : Windows.Graphics.Printing3D.IPrinting3DMaterial
@@ -965,6 +1007,12 @@ extern(Windows):
 		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DMultiplePropertyMaterialGroup) _ret;
 		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMaterial).get_MultiplePropertyGroups(&_ret));
 		return _ret;
+	}
+	static Printing3DMaterial New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Printing3DMaterial).abi_ActivateInstance(&ret));
+		return ret.as!(Printing3DMaterial);
 	}
 }
 
@@ -1088,6 +1136,12 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Printing3D.Printing3DMeshVerificationResult) _ret;
 		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).abi_VerifyAsync(value, &_ret));
 		return _ret;
+	}
+	static Printing3DMesh New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Printing3DMesh).abi_ActivateInstance(&ret));
+		return ret.as!(Printing3DMesh);
 	}
 }
 
@@ -1235,6 +1289,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel2).abi_RepairWithProgressAsync(&_ret));
 		return _ret;
 	}
+	static Printing3DModel New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Printing3DModel).abi_ActivateInstance(&ret));
+		return ret.as!(Printing3DModel);
+	}
 }
 
 interface Printing3DModelTexture : Windows.Graphics.Printing3D.IPrinting3DModelTexture
@@ -1270,6 +1330,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModelTexture).set_TileStyleV(value));
 	}
+	static Printing3DModelTexture New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Printing3DModelTexture).abi_ActivateInstance(&ret));
+		return ret.as!(Printing3DModelTexture);
+	}
 }
 
 interface Printing3DMultiplePropertyMaterial : Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterial
@@ -1280,6 +1346,12 @@ extern(Windows):
 		Windows.Foundation.Collections.IVector!(UINT32) _ret;
 		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterial).get_MaterialIndices(&_ret));
 		return _ret;
+	}
+	static Printing3DMultiplePropertyMaterial New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Printing3DMultiplePropertyMaterial).abi_ActivateInstance(&ret));
+		return ret.as!(Printing3DMultiplePropertyMaterial);
 	}
 }
 
@@ -1346,6 +1418,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterial).set_V(value));
 	}
+	static Printing3DTexture2CoordMaterial New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Printing3DTexture2CoordMaterial).abi_ActivateInstance(&ret));
+		return ret.as!(Printing3DTexture2CoordMaterial);
+	}
 }
 
 interface Printing3DTexture2CoordMaterialGroup : Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroup, Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroup2
@@ -1404,6 +1482,12 @@ extern(Windows):
 	final void Name(HSTRING value)
 	{
 		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTextureResource).set_Name(value));
+	}
+	static Printing3DTextureResource New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Printing3DTextureResource).abi_ActivateInstance(&ret));
+		return ret.as!(Printing3DTextureResource);
 	}
 }
 

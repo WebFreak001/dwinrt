@@ -753,6 +753,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateExtension).set_Value(__valueSize, value));
 	}
+	static CertificateExtension New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(CertificateExtension).abi_ActivateInstance(&ret));
+		return ret.as!(CertificateExtension);
+	}
 }
 
 interface CertificateKeyUsages : Windows.Security.Cryptography.Certificates.ICertificateKeyUsages
@@ -838,6 +844,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateKeyUsages).set_DigitalSignature(value));
 	}
+	static CertificateKeyUsages New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(CertificateKeyUsages).abi_ActivateInstance(&ret));
+		return ret.as!(CertificateKeyUsages);
+	}
 }
 
 interface CertificateQuery : Windows.Security.Cryptography.Certificates.ICertificateQuery, Windows.Security.Cryptography.Certificates.ICertificateQuery2
@@ -918,6 +930,12 @@ extern(Windows):
 	final void StoreName(HSTRING value)
 	{
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateQuery2).set_StoreName(value));
+	}
+	static CertificateQuery New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(CertificateQuery).abi_ActivateInstance(&ret));
+		return ret.as!(CertificateQuery);
 	}
 }
 
@@ -1112,6 +1130,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties4).get_Extensions(&_ret));
 		return _ret;
 	}
+	static CertificateRequestProperties New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(CertificateRequestProperties).abi_ActivateInstance(&ret));
+		return ret.as!(CertificateRequestProperties);
+	}
 }
 
 interface CertificateStore : Windows.Security.Cryptography.Certificates.ICertificateStore, Windows.Security.Cryptography.Certificates.ICertificateStore2
@@ -1238,6 +1262,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IChainBuildingParameters).get_ExclusiveTrustRoots(&_ret));
 		return _ret;
 	}
+	static ChainBuildingParameters New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ChainBuildingParameters).abi_ActivateInstance(&ret));
+		return ret.as!(ChainBuildingParameters);
+	}
 }
 
 interface ChainValidationParameters : Windows.Security.Cryptography.Certificates.IChainValidationParameters
@@ -1262,6 +1292,12 @@ extern(Windows):
 	final void ServerDnsName(Windows.Networking.HostName value)
 	{
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IChainValidationParameters).set_ServerDnsName(value));
+	}
+	static ChainValidationParameters New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ChainValidationParameters).abi_ActivateInstance(&ret));
+		return ret.as!(ChainValidationParameters);
 	}
 }
 
@@ -1385,6 +1421,12 @@ extern(Windows):
 		Windows.Security.Cryptography.Certificates.CmsTimestampInfo _ret;
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICmsSignerInfo).get_TimestampInfo(&_ret));
 		return _ret;
+	}
+	static CmsSignerInfo New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(CmsSignerInfo).abi_ActivateInstance(&ret));
+		return ret.as!(CmsSignerInfo);
 	}
 }
 
@@ -1592,6 +1634,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.IPfxImportParameters).set_ReaderName(value));
 	}
+	static PfxImportParameters New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PfxImportParameters).abi_ActivateInstance(&ret));
+		return ret.as!(PfxImportParameters);
+	}
 }
 
 interface StandardCertificateStoreNames
@@ -1702,6 +1750,12 @@ extern(Windows):
 		Windows.Security.Cryptography.Certificates.CertificateExtension _ret;
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ISubjectAlternativeNameInfo2).get_Extension(&_ret));
 		return _ret;
+	}
+	static SubjectAlternativeNameInfo New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SubjectAlternativeNameInfo).abi_ActivateInstance(&ret));
+		return ret.as!(SubjectAlternativeNameInfo);
 	}
 }
 

@@ -1996,6 +1996,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotationStatics).get_PeerProperty(&_ret));
 		return _ret;
 	}
+	static AutomationPeerAnnotation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(AutomationPeerAnnotation).abi_ActivateInstance(&ret));
+		return ret.as!(AutomationPeerAnnotation);
+	}
 	static Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation New(Windows.UI.Xaml.Automation.AnnotationType type)
 	{
 		auto factory = factory!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotationFactory);

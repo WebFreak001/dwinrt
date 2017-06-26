@@ -378,6 +378,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Storage.Search.IIndexableContent).set_StreamContentType(value));
 	}
+	static IndexableContent New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(IndexableContent).abi_ActivateInstance(&ret));
+		return ret.as!(IndexableContent);
+	}
 }
 
 interface QueryOptions : Windows.Storage.Search.IQueryOptions, Windows.Storage.Search.IQueryOptionsWithProviderFilter
@@ -480,6 +486,12 @@ extern(Windows):
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
 		Debug.OK(this.as!(Windows.Storage.Search.IQueryOptionsWithProviderFilter).get_StorageProviderIdFilter(&_ret));
 		return _ret;
+	}
+	static QueryOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(QueryOptions).abi_ActivateInstance(&ret));
+		return ret.as!(QueryOptions);
 	}
 	static Windows.Storage.Search.QueryOptions New(Windows.Storage.Search.CommonFileQuery query, Windows.Foundation.Collections.IIterable!(HSTRING) fileTypeFilter)
 	{
@@ -800,6 +812,12 @@ extern(Windows):
 	final void Value(IInspectable value)
 	{
 		Debug.OK(this.as!(Windows.Storage.Search.IValueAndLanguage).set_Value(value));
+	}
+	static ValueAndLanguage New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ValueAndLanguage).abi_ActivateInstance(&ret));
+		return ret.as!(ValueAndLanguage);
 	}
 }
 

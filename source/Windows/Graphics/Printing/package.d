@@ -332,6 +332,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintPageInfo).get_Orientation(&_ret));
 		return _ret;
 	}
+	static PrintPageInfo New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PrintPageInfo).abi_ActivateInstance(&ret));
+		return ret.as!(PrintPageInfo);
+	}
 }
 
 interface PrintTask : Windows.Graphics.Printing.IPrintTask, Windows.Graphics.Printing.IPrintTaskTargetDeviceSupport, Windows.Graphics.Printing.IPrintTask2

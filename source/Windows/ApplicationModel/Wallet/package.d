@@ -675,6 +675,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletRelevantLocation).set_DisplayMessage(value));
 	}
+	static WalletRelevantLocation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(WalletRelevantLocation).abi_ActivateInstance(&ret));
+		return ret.as!(WalletRelevantLocation);
+	}
 }
 
 interface WalletTransaction : Windows.ApplicationModel.Wallet.IWalletTransaction
@@ -739,6 +745,12 @@ extern(Windows):
 	final void IsLaunchable(bool value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletTransaction).set_IsLaunchable(value));
+	}
+	static WalletTransaction New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(WalletTransaction).abi_ActivateInstance(&ret));
+		return ret.as!(WalletTransaction);
 	}
 }
 

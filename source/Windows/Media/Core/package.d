@@ -1334,6 +1334,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).get_Id(&_ret));
 		return _ret;
 	}
+	static ChapterCue New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ChapterCue).abi_ActivateInstance(&ret));
+		return ret.as!(ChapterCue);
+	}
 }
 
 interface CodecInfo : Windows.Media.Core.ICodecInfo
@@ -1379,6 +1385,12 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.CodecInfo)) _ret;
 		Debug.OK(this.as!(Windows.Media.Core.ICodecQuery).abi_FindAllAsync(kind, category, subType, &_ret));
 		return _ret;
+	}
+	static CodecQuery New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(CodecQuery).abi_ActivateInstance(&ret));
+		return ret.as!(CodecQuery);
 	}
 }
 
@@ -1747,6 +1759,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Core.IDataCue2).get_Properties(&_ret));
 		return _ret;
 	}
+	static DataCue New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DataCue).abi_ActivateInstance(&ret));
+		return ret.as!(DataCue);
+	}
 }
 
 interface FaceDetectedEventArgs : Windows.Media.Core.IFaceDetectedEventArgs
@@ -1833,6 +1851,12 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.Media.Core.IFaceDetectionEffectDefinition).get_SynchronousDetectionEnabled(&_ret));
 		return _ret;
+	}
+	static FaceDetectionEffectDefinition New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(FaceDetectionEffectDefinition).abi_ActivateInstance(&ret));
+		return ret.as!(FaceDetectionEffectDefinition);
 	}
 }
 
@@ -2004,6 +2028,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).get_Id(&_ret));
 		return _ret;
 	}
+	static ImageCue New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ImageCue).abi_ActivateInstance(&ret));
+		return ret.as!(ImageCue);
+	}
 }
 
 interface MediaBinder : Windows.Media.Core.IMediaBinder
@@ -2034,6 +2064,12 @@ extern(Windows):
 		Windows.Media.Core.MediaSource _ret;
 		Debug.OK(this.as!(Windows.Media.Core.IMediaBinder).get_Source(&_ret));
 		return _ret;
+	}
+	static MediaBinder New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MediaBinder).abi_ActivateInstance(&ret));
+		return ret.as!(MediaBinder);
 	}
 }
 
@@ -3043,6 +3079,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Media.Core.IMseStreamSourceStatics).abi_IsContentTypeSupported(contentType, &_ret));
 		return _ret;
 	}
+	static MseStreamSource New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MseStreamSource).abi_ActivateInstance(&ret));
+		return ret.as!(MseStreamSource);
+	}
 }
 
 interface SceneAnalysisEffect : Windows.Media.Core.ISceneAnalysisEffect, Windows.Media.IMediaExtension
@@ -3094,6 +3136,12 @@ extern(Windows):
 		Windows.Foundation.Collections.IPropertySet _ret;
 		Debug.OK(this.as!(Windows.Media.Effects.IVideoEffectDefinition).get_Properties(&_ret));
 		return _ret;
+	}
+	static SceneAnalysisEffectDefinition New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SceneAnalysisEffectDefinition).abi_ActivateInstance(&ret));
+		return ret.as!(SceneAnalysisEffectDefinition);
 	}
 }
 
@@ -3249,6 +3297,12 @@ extern(Windows):
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).get_Id(&_ret));
 		return _ret;
+	}
+	static SpeechCue New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SpeechCue).abi_ActivateInstance(&ret));
+		return ret.as!(SpeechCue);
 	}
 }
 
@@ -3453,6 +3507,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Core.IMediaCue).get_Id(&_ret));
 		return _ret;
 	}
+	static TimedTextCue New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(TimedTextCue).abi_ActivateInstance(&ret));
+		return ret.as!(TimedTextCue);
+	}
 }
 
 interface TimedTextLine : Windows.Media.Core.ITimedTextLine
@@ -3473,6 +3533,12 @@ extern(Windows):
 		Windows.Foundation.Collections.IVector!(Windows.Media.Core.TimedTextSubformat) _ret;
 		Debug.OK(this.as!(Windows.Media.Core.ITimedTextLine).get_Subformats(&_ret));
 		return _ret;
+	}
+	static TimedTextLine New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(TimedTextLine).abi_ActivateInstance(&ret));
+		return ret.as!(TimedTextLine);
 	}
 }
 
@@ -3598,6 +3664,12 @@ extern(Windows):
 	final void ScrollMode(Windows.Media.Core.TimedTextScrollMode value)
 	{
 		Debug.OK(this.as!(Windows.Media.Core.ITimedTextRegion).set_ScrollMode(value));
+	}
+	static TimedTextRegion New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(TimedTextRegion).abi_ActivateInstance(&ret));
+		return ret.as!(TimedTextRegion);
 	}
 }
 
@@ -3827,6 +3899,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Core.ITimedTextStyle2).set_IsOverlineEnabled(value));
 	}
+	static TimedTextStyle New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(TimedTextStyle).abi_ActivateInstance(&ret));
+		return ret.as!(TimedTextStyle);
+	}
 }
 
 interface TimedTextSubformat : Windows.Media.Core.ITimedTextSubformat
@@ -3861,6 +3939,12 @@ extern(Windows):
 	final void SubformatStyle(Windows.Media.Core.TimedTextStyle value)
 	{
 		Debug.OK(this.as!(Windows.Media.Core.ITimedTextSubformat).set_SubformatStyle(value));
+	}
+	static TimedTextSubformat New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(TimedTextSubformat).abi_ActivateInstance(&ret));
+		return ret.as!(TimedTextSubformat);
 	}
 }
 
@@ -3913,6 +3997,12 @@ extern(Windows):
 		Windows.Foundation.Collections.IPropertySet _ret;
 		Debug.OK(this.as!(Windows.Media.Effects.IVideoEffectDefinition).get_Properties(&_ret));
 		return _ret;
+	}
+	static VideoStabilizationEffectDefinition New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VideoStabilizationEffectDefinition).abi_ActivateInstance(&ret));
+		return ret.as!(VideoStabilizationEffectDefinition);
 	}
 }
 

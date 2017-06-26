@@ -249,6 +249,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectAdvertisementPublisher).abi_Stop());
 	}
+	static WiFiDirectAdvertisementPublisher New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(WiFiDirectAdvertisementPublisher).abi_ActivateInstance(&ret));
+		return ret.as!(WiFiDirectAdvertisementPublisher);
+	}
 }
 
 interface WiFiDirectAdvertisementPublisherStatusChangedEventArgs : Windows.Devices.WiFiDirect.IWiFiDirectAdvertisementPublisherStatusChangedEventArgs
@@ -280,6 +286,12 @@ extern(Windows):
 	final void removeConnectionRequested(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectConnectionListener).remove_ConnectionRequested(token));
+	}
+	static WiFiDirectConnectionListener New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(WiFiDirectConnectionListener).abi_ActivateInstance(&ret));
+		return ret.as!(WiFiDirectConnectionListener);
 	}
 }
 
@@ -324,6 +336,12 @@ extern(Windows):
 		Windows.Devices.Enumeration.DevicePairingKinds _ret;
 		Debug.OK(staticInstance.as!(Windows.Devices.WiFiDirect.IWiFiDirectConnectionParametersStatics).abi_GetDevicePairingKinds(configurationMethod, &_ret));
 		return _ret;
+	}
+	static WiFiDirectConnectionParameters New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(WiFiDirectConnectionParameters).abi_ActivateInstance(&ret));
+		return ret.as!(WiFiDirectConnectionParameters);
 	}
 }
 
@@ -460,6 +478,12 @@ extern(Windows):
 		Windows.Foundation.Collections.IVector!(Windows.Devices.WiFiDirect.WiFiDirectInformationElement) _ret;
 		Debug.OK(staticInstance.as!(Windows.Devices.WiFiDirect.IWiFiDirectInformationElementStatics).abi_CreateFromDeviceInformation(deviceInformation, &_ret));
 		return _ret;
+	}
+	static WiFiDirectInformationElement New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(WiFiDirectInformationElement).abi_ActivateInstance(&ret));
+		return ret.as!(WiFiDirectInformationElement);
 	}
 }
 

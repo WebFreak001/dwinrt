@@ -835,6 +835,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue))).abi_First(out_first));
 	}
+	static BitmapPropertySet New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BitmapPropertySet).abi_ActivateInstance(&ret));
+		return ret.as!(BitmapPropertySet);
+	}
 }
 
 interface BitmapTransform : Windows.Graphics.Imaging.IBitmapTransform
@@ -899,6 +905,12 @@ extern(Windows):
 	final void Bounds(Windows.Graphics.Imaging.BitmapBounds value)
 	{
 		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapTransform).set_Bounds(value));
+	}
+	static BitmapTransform New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BitmapTransform).abi_ActivateInstance(&ret));
+		return ret.as!(BitmapTransform);
 	}
 }
 

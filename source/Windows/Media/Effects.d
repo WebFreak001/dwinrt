@@ -536,6 +536,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).get_ProcessingAlgorithm(&_ret));
 		return _ret;
 	}
+	static VideoTransformEffectDefinition New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VideoTransformEffectDefinition).abi_ActivateInstance(&ret));
+		return ret.as!(VideoTransformEffectDefinition);
+	}
 }
 
 enum AudioEffectType

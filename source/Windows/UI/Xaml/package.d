@@ -1814,9 +1814,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IApplication).set_RequestedTheme(value));
 	}
+	final EventRegistrationToken OnUnhandledException(void delegate(IInspectable, Windows.UI.Xaml.UnhandledExceptionEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IApplication).add_UnhandledException(event!(Windows.UI.Xaml.UnhandledExceptionEventHandler, IInspectable, Windows.UI.Xaml.UnhandledExceptionEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeUnhandledException(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IApplication).remove_UnhandledException(token));
+	}
+	final EventRegistrationToken OnSuspending(void delegate(IInspectable, Windows.ApplicationModel.SuspendingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IApplication).add_Suspending(event!(Windows.UI.Xaml.SuspendingEventHandler, IInspectable, Windows.ApplicationModel.SuspendingEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeSuspending(EventRegistrationToken token)
 	{
@@ -1856,9 +1868,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IApplication2).set_RequiresPointerMode(value));
 	}
+	final EventRegistrationToken OnLeavingBackground(void delegate(IInspectable, Windows.ApplicationModel.LeavingBackgroundEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IApplication2).add_LeavingBackground(event!(Windows.UI.Xaml.LeavingBackgroundEventHandler, IInspectable, Windows.ApplicationModel.LeavingBackgroundEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeLeavingBackground(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IApplication2).remove_LeavingBackground(token));
+	}
+	final EventRegistrationToken OnEnteredBackground(void delegate(IInspectable, Windows.ApplicationModel.EnteredBackgroundEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IApplication2).add_EnteredBackground(event!(Windows.UI.Xaml.EnteredBackgroundEventHandler, IInspectable, Windows.ApplicationModel.EnteredBackgroundEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeEnteredBackground(EventRegistrationToken token)
 	{
@@ -2005,6 +2029,12 @@ extern(Windows):
 	final void TargetRect(Windows.Foundation.IReference!(Windows.Foundation.Rect) value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IBringIntoViewOptions).set_TargetRect(value));
+	}
+	static BringIntoViewOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BringIntoViewOptions).abi_ActivateInstance(&ret));
+		return ret.as!(BringIntoViewOptions);
 	}
 }
 
@@ -2177,6 +2207,12 @@ extern(Windows):
 	final void IsOverdrawHeatMapEnabled(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IDebugSettings).set_IsOverdrawHeatMapEnabled(value));
+	}
+	final EventRegistrationToken OnBindingFailed(void delegate(IInspectable, Windows.UI.Xaml.BindingFailedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IDebugSettings).add_BindingFailed(event!(Windows.UI.Xaml.BindingFailedEventHandler, IInspectable, Windows.UI.Xaml.BindingFailedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeBindingFailed(EventRegistrationToken token)
 	{
@@ -2853,6 +2889,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.IEventTrigger).get_Actions(&_ret));
 		return _ret;
 	}
+	static EventTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(EventTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(EventTrigger);
+	}
 }
 
 interface ExceptionRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.IExceptionRoutedEventArgs
@@ -3074,13 +3116,31 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).set_FlowDirection(value));
 	}
+	final EventRegistrationToken OnLoaded(void delegate(IInspectable, Windows.UI.Xaml.RoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).add_Loaded(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeLoaded(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).remove_Loaded(token));
 	}
+	final EventRegistrationToken OnUnloaded(void delegate(IInspectable, Windows.UI.Xaml.RoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).add_Unloaded(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeUnloaded(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).remove_Unloaded(token));
+	}
+	final EventRegistrationToken OnSizeChanged(void delegate(IInspectable, Windows.UI.Xaml.SizeChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).add_SizeChanged(event!(Windows.UI.Xaml.SizeChangedEventHandler, IInspectable, Windows.UI.Xaml.SizeChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeSizeChanged(EventRegistrationToken token)
 	{
@@ -3473,6 +3533,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Core.IFrameworkView).abi_Uninitialize());
 	}
+	static FrameworkView New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(FrameworkView).abi_ActivateInstance(&ret));
+		return ret.as!(FrameworkView);
+	}
 }
 
 interface FrameworkViewSource : Windows.UI.Xaml.IFrameworkViewSource, Windows.ApplicationModel.Core.IFrameworkViewSource
@@ -3483,6 +3549,12 @@ extern(Windows):
 		Windows.ApplicationModel.Core.IFrameworkView _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Core.IFrameworkViewSource).abi_CreateView(&_ret));
 		return _ret;
+	}
+	static FrameworkViewSource New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(FrameworkViewSource).abi_ActivateInstance(&ret));
+		return ret.as!(FrameworkViewSource);
 	}
 }
 
@@ -3915,6 +3987,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.ISetter2).set_Target(value));
 	}
+	static Setter New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Setter).abi_ActivateInstance(&ret));
+		return ret.as!(Setter);
+	}
 	static Windows.UI.Xaml.Setter New(Windows.UI.Xaml.DependencyProperty targetProperty, IInspectable value)
 	{
 		auto factory = factory!(Windows.UI.Xaml.ISetterFactory);
@@ -4017,6 +4095,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.SetterBase)).abi_First(out_first));
 	}
+	static SetterBaseCollection New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SetterBaseCollection).abi_ActivateInstance(&ret));
+		return ret.as!(SetterBaseCollection);
+	}
 }
 
 interface SizeChangedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.ISizeChangedEventArgs
@@ -4096,6 +4180,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IStateTriggerStatics).get_IsActiveProperty(&_ret));
 		return _ret;
 	}
+	static StateTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(StateTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(StateTrigger);
+	}
 }
 
 interface StateTriggerBase : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IStateTriggerBase, Windows.UI.Xaml.IStateTriggerBaseProtected
@@ -4169,6 +4259,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IStyle).abi_Seal());
 	}
+	static Style New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Style).abi_ActivateInstance(&ret));
+		return ret.as!(Style);
+	}
 	static Windows.UI.Xaml.Style New(Windows.UI.Xaml.Interop.TypeName targetType)
 	{
 		auto factory = factory!(Windows.UI.Xaml.IStyleFactory);
@@ -4200,6 +4296,12 @@ extern(Windows):
 	final void Target(IInspectable value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.ITargetPropertyPath).set_Target(value));
+	}
+	static TargetPropertyPath New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(TargetPropertyPath).abi_ActivateInstance(&ret));
+		return ret.as!(TargetPropertyPath);
 	}
 	static Windows.UI.Xaml.TargetPropertyPath New(Windows.UI.Xaml.DependencyProperty targetProperty)
 	{
@@ -4310,6 +4412,12 @@ extern(Windows):
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.TriggerAction)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.TriggerAction)).abi_First(out_first));
+	}
+	static TriggerActionCollection New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(TriggerActionCollection).abi_ActivateInstance(&ret));
+		return ret.as!(TriggerActionCollection);
 	}
 }
 
@@ -4575,101 +4683,251 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).get_PointerCaptures(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnKeyUp(void delegate(IInspectable, Windows.UI.Xaml.Input.KeyRoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_KeyUp(event!(Windows.UI.Xaml.Input.KeyEventHandler, IInspectable, Windows.UI.Xaml.Input.KeyRoutedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeKeyUp(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_KeyUp(token));
+	}
+	final EventRegistrationToken OnKeyDown(void delegate(IInspectable, Windows.UI.Xaml.Input.KeyRoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_KeyDown(event!(Windows.UI.Xaml.Input.KeyEventHandler, IInspectable, Windows.UI.Xaml.Input.KeyRoutedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeKeyDown(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_KeyDown(token));
 	}
+	final EventRegistrationToken OnGotFocus(void delegate(IInspectable, Windows.UI.Xaml.RoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_GotFocus(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeGotFocus(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_GotFocus(token));
+	}
+	final EventRegistrationToken OnLostFocus(void delegate(IInspectable, Windows.UI.Xaml.RoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_LostFocus(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeLostFocus(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_LostFocus(token));
 	}
+	final EventRegistrationToken OnDragEnter(void delegate(IInspectable, Windows.UI.Xaml.DragEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_DragEnter(event!(Windows.UI.Xaml.DragEventHandler, IInspectable, Windows.UI.Xaml.DragEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeDragEnter(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_DragEnter(token));
+	}
+	final EventRegistrationToken OnDragLeave(void delegate(IInspectable, Windows.UI.Xaml.DragEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_DragLeave(event!(Windows.UI.Xaml.DragEventHandler, IInspectable, Windows.UI.Xaml.DragEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeDragLeave(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_DragLeave(token));
 	}
+	final EventRegistrationToken OnDragOver(void delegate(IInspectable, Windows.UI.Xaml.DragEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_DragOver(event!(Windows.UI.Xaml.DragEventHandler, IInspectable, Windows.UI.Xaml.DragEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeDragOver(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_DragOver(token));
+	}
+	final EventRegistrationToken OnDrop(void delegate(IInspectable, Windows.UI.Xaml.DragEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_Drop(event!(Windows.UI.Xaml.DragEventHandler, IInspectable, Windows.UI.Xaml.DragEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeDrop(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_Drop(token));
 	}
+	final EventRegistrationToken OnPointerPressed(void delegate(IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_PointerPressed(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removePointerPressed(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerPressed(token));
+	}
+	final EventRegistrationToken OnPointerMoved(void delegate(IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_PointerMoved(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removePointerMoved(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerMoved(token));
 	}
+	final EventRegistrationToken OnPointerReleased(void delegate(IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_PointerReleased(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removePointerReleased(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerReleased(token));
+	}
+	final EventRegistrationToken OnPointerEntered(void delegate(IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_PointerEntered(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removePointerEntered(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerEntered(token));
 	}
+	final EventRegistrationToken OnPointerExited(void delegate(IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_PointerExited(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removePointerExited(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerExited(token));
+	}
+	final EventRegistrationToken OnPointerCaptureLost(void delegate(IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_PointerCaptureLost(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removePointerCaptureLost(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerCaptureLost(token));
 	}
+	final EventRegistrationToken OnPointerCanceled(void delegate(IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_PointerCanceled(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removePointerCanceled(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerCanceled(token));
+	}
+	final EventRegistrationToken OnPointerWheelChanged(void delegate(IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_PointerWheelChanged(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removePointerWheelChanged(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerWheelChanged(token));
 	}
+	final EventRegistrationToken OnTapped(void delegate(IInspectable, Windows.UI.Xaml.Input.TappedRoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_Tapped(event!(Windows.UI.Xaml.Input.TappedEventHandler, IInspectable, Windows.UI.Xaml.Input.TappedRoutedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeTapped(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_Tapped(token));
+	}
+	final EventRegistrationToken OnDoubleTapped(void delegate(IInspectable, Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_DoubleTapped(event!(Windows.UI.Xaml.Input.DoubleTappedEventHandler, IInspectable, Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeDoubleTapped(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_DoubleTapped(token));
 	}
+	final EventRegistrationToken OnHolding(void delegate(IInspectable, Windows.UI.Xaml.Input.HoldingRoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_Holding(event!(Windows.UI.Xaml.Input.HoldingEventHandler, IInspectable, Windows.UI.Xaml.Input.HoldingRoutedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeHolding(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_Holding(token));
+	}
+	final EventRegistrationToken OnRightTapped(void delegate(IInspectable, Windows.UI.Xaml.Input.RightTappedRoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_RightTapped(event!(Windows.UI.Xaml.Input.RightTappedEventHandler, IInspectable, Windows.UI.Xaml.Input.RightTappedRoutedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeRightTapped(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_RightTapped(token));
 	}
+	final EventRegistrationToken OnManipulationStarting(void delegate(IInspectable, Windows.UI.Xaml.Input.ManipulationStartingRoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_ManipulationStarting(event!(Windows.UI.Xaml.Input.ManipulationStartingEventHandler, IInspectable, Windows.UI.Xaml.Input.ManipulationStartingRoutedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeManipulationStarting(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationStarting(token));
+	}
+	final EventRegistrationToken OnManipulationInertiaStarting(void delegate(IInspectable, Windows.UI.Xaml.Input.ManipulationInertiaStartingRoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_ManipulationInertiaStarting(event!(Windows.UI.Xaml.Input.ManipulationInertiaStartingEventHandler, IInspectable, Windows.UI.Xaml.Input.ManipulationInertiaStartingRoutedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeManipulationInertiaStarting(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationInertiaStarting(token));
 	}
+	final EventRegistrationToken OnManipulationStarted(void delegate(IInspectable, Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_ManipulationStarted(event!(Windows.UI.Xaml.Input.ManipulationStartedEventHandler, IInspectable, Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeManipulationStarted(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationStarted(token));
 	}
+	final EventRegistrationToken OnManipulationDelta(void delegate(IInspectable, Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_ManipulationDelta(event!(Windows.UI.Xaml.Input.ManipulationDeltaEventHandler, IInspectable, Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeManipulationDelta(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationDelta(token));
+	}
+	final EventRegistrationToken OnManipulationCompleted(void delegate(IInspectable, Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_ManipulationCompleted(event!(Windows.UI.Xaml.Input.ManipulationCompletedEventHandler, IInspectable, Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeManipulationCompleted(EventRegistrationToken token)
 	{
@@ -5518,6 +5776,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.IVisualState2).get_StateTriggers(&_ret));
 		return _ret;
 	}
+	static VisualState New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VisualState).abi_ActivateInstance(&ret));
+		return ret.as!(VisualState);
+	}
 }
 
 interface VisualStateChangedEventArgs : Windows.UI.Xaml.IVisualStateChangedEventArgs
@@ -5553,6 +5817,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateChangedEventArgs).set_Control(value));
 	}
+	static VisualStateChangedEventArgs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VisualStateChangedEventArgs).abi_ActivateInstance(&ret));
+		return ret.as!(VisualStateChangedEventArgs);
+	}
 }
 
 interface VisualStateGroup : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IVisualStateGroup
@@ -5582,13 +5852,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateGroup).get_CurrentState(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnCurrentStateChanged(void delegate(IInspectable, Windows.UI.Xaml.VisualStateChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateGroup).add_CurrentStateChanged(event!(Windows.UI.Xaml.VisualStateChangedEventHandler, IInspectable, Windows.UI.Xaml.VisualStateChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeCurrentStateChanged(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateGroup).remove_CurrentStateChanged(token));
 	}
+	final EventRegistrationToken OnCurrentStateChanging(void delegate(IInspectable, Windows.UI.Xaml.VisualStateChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateGroup).add_CurrentStateChanging(event!(Windows.UI.Xaml.VisualStateChangedEventHandler, IInspectable, Windows.UI.Xaml.VisualStateChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeCurrentStateChanging(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateGroup).remove_CurrentStateChanging(token));
+	}
+	static VisualStateGroup New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VisualStateGroup).abi_ActivateInstance(&ret));
+		return ret.as!(VisualStateGroup);
 	}
 }
 
@@ -5790,17 +6078,41 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).get_Dispatcher(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnActivated(void delegate(IInspectable, Windows.UI.Core.WindowActivatedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).add_Activated(event!(Windows.UI.Xaml.WindowActivatedEventHandler, IInspectable, Windows.UI.Core.WindowActivatedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeActivated(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).remove_Activated(token));
+	}
+	final EventRegistrationToken OnClosed(void delegate(IInspectable, Windows.UI.Core.CoreWindowEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).add_Closed(event!(Windows.UI.Xaml.WindowClosedEventHandler, IInspectable, Windows.UI.Core.CoreWindowEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeClosed(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).remove_Closed(token));
 	}
+	final EventRegistrationToken OnSizeChanged(void delegate(IInspectable, Windows.UI.Core.WindowSizeChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).add_SizeChanged(event!(Windows.UI.Xaml.WindowSizeChangedEventHandler, IInspectable, Windows.UI.Core.WindowSizeChangedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeSizeChanged(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).remove_SizeChanged(token));
+	}
+	final EventRegistrationToken OnVisibilityChanged(void delegate(IInspectable, Windows.UI.Core.VisibilityChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).add_VisibilityChanged(event!(Windows.UI.Xaml.WindowVisibilityChangedEventHandler, IInspectable, Windows.UI.Core.VisibilityChangedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeVisibilityChanged(EventRegistrationToken token)
 	{

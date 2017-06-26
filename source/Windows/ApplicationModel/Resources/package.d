@@ -76,6 +76,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Resources.IResourceLoaderStatics).abi_GetStringForReference(uri, &_ret));
 		return _ret;
 	}
+	static ResourceLoader New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ResourceLoader).abi_ActivateInstance(&ret));
+		return ret.as!(ResourceLoader);
+	}
 	deprecated("ResourceLoader may be altered or unavailable for releases after Windows 8.1. Instead, use GetForCurrentView.")
 	static Windows.ApplicationModel.Resources.ResourceLoader New(HSTRING name)
 	{

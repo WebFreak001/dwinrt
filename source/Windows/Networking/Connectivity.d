@@ -459,6 +459,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Networking.Connectivity.ICellularApnContext).set_AuthenticationType(value));
 	}
+	static CellularApnContext New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(CellularApnContext).abi_ActivateInstance(&ret));
+		return ret.as!(CellularApnContext);
+	}
 }
 
 interface ConnectionCost : Windows.Networking.Connectivity.IConnectionCost, Windows.Networking.Connectivity.IConnectionCost2
@@ -705,6 +711,12 @@ extern(Windows):
 		Windows.Storage.Streams.IBuffer _ret;
 		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfileFilter2).get_RawData(&_ret));
 		return _ret;
+	}
+	static ConnectionProfileFilter New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ConnectionProfileFilter).abi_ActivateInstance(&ret));
+		return ret.as!(ConnectionProfileFilter);
 	}
 }
 
@@ -983,7 +995,12 @@ interface NetworkInformation
 		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.INetworkInformationStatics).abi_GetSortedEndpointPairs(destinationList, sortOptions, &_ret));
 		return _ret;
 	}
-	HRESULT add_NetworkStatusChanged(Windows.Networking.Connectivity.NetworkStatusChangedEventHandler networkStatusHandler, EventRegistrationToken* return_eventCookie);
+	static EventRegistrationToken OnNetworkStatusChanged(void delegate(IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.INetworkInformationStatics).add_NetworkStatusChanged(event!(Windows.Networking.Connectivity.NetworkStatusChangedEventHandler, IInspectable)(fn), &tok));
+		return tok;
+	}
 	static void removeNetworkStatusChanged(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.INetworkInformationStatics).remove_NetworkStatusChanged(eventCookie));

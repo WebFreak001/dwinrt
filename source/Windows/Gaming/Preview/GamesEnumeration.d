@@ -62,17 +62,32 @@ interface GameList
 		Debug.OK(staticInstance.as!(Windows.Gaming.Preview.GamesEnumeration.IGameListStatics).abi_FindAllAsyncPackageFamilyName(packageFamilyName, &_ret));
 		return _ret;
 	}
-	HRESULT add_GameAdded(Windows.Gaming.Preview.GamesEnumeration.GameListChangedEventHandler handler, EventRegistrationToken* return_token);
+	static EventRegistrationToken OnGameAdded(void delegate(Windows.Gaming.Preview.GamesEnumeration.GameListEntry) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Gaming.Preview.GamesEnumeration.IGameListStatics).add_GameAdded(event!(Windows.Gaming.Preview.GamesEnumeration.GameListChangedEventHandler, Windows.Gaming.Preview.GamesEnumeration.GameListEntry)(fn), &tok));
+		return tok;
+	}
 	static void removeGameAdded(EventRegistrationToken token)
 	{
 		Debug.OK(staticInstance.as!(Windows.Gaming.Preview.GamesEnumeration.IGameListStatics).remove_GameAdded(token));
 	}
-	HRESULT add_GameRemoved(Windows.Gaming.Preview.GamesEnumeration.GameListRemovedEventHandler handler, EventRegistrationToken* return_token);
+	static EventRegistrationToken OnGameRemoved(void delegate(HSTRING) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Gaming.Preview.GamesEnumeration.IGameListStatics).add_GameRemoved(event!(Windows.Gaming.Preview.GamesEnumeration.GameListRemovedEventHandler, HSTRING)(fn), &tok));
+		return tok;
+	}
 	static void removeGameRemoved(EventRegistrationToken token)
 	{
 		Debug.OK(staticInstance.as!(Windows.Gaming.Preview.GamesEnumeration.IGameListStatics).remove_GameRemoved(token));
 	}
-	HRESULT add_GameUpdated(Windows.Gaming.Preview.GamesEnumeration.GameListChangedEventHandler handler, EventRegistrationToken* return_token);
+	static EventRegistrationToken OnGameUpdated(void delegate(Windows.Gaming.Preview.GamesEnumeration.GameListEntry) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Gaming.Preview.GamesEnumeration.IGameListStatics).add_GameUpdated(event!(Windows.Gaming.Preview.GamesEnumeration.GameListChangedEventHandler, Windows.Gaming.Preview.GamesEnumeration.GameListEntry)(fn), &tok));
+		return tok;
+	}
 	static void removeGameUpdated(EventRegistrationToken token)
 	{
 		Debug.OK(staticInstance.as!(Windows.Gaming.Preview.GamesEnumeration.IGameListStatics).remove_GameUpdated(token));

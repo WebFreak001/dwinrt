@@ -684,6 +684,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Notifications.IAdaptiveNotificationContent).get_Hints(&_ret));
 		return _ret;
 	}
+	static AdaptiveNotificationText New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(AdaptiveNotificationText).abi_ActivateInstance(&ret));
+		return ret.as!(AdaptiveNotificationText);
+	}
 }
 
 interface BadgeNotification : Windows.UI.Notifications.IBadgeNotification
@@ -1011,6 +1017,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Notifications.INotification).set_Visual(value));
 	}
+	static Notification New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Notification).abi_ActivateInstance(&ret));
+		return ret.as!(Notification);
+	}
 }
 
 interface NotificationBinding : Windows.UI.Notifications.INotificationBinding
@@ -1068,6 +1080,12 @@ extern(Windows):
 	final void SequenceNumber(UINT32 value)
 	{
 		Debug.OK(this.as!(Windows.UI.Notifications.INotificationData).set_SequenceNumber(value));
+	}
+	static NotificationData New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(NotificationData).abi_ActivateInstance(&ret));
+		return ret.as!(NotificationData);
 	}
 	static Windows.UI.Notifications.NotificationData New(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) initialValues, UINT32 sequenceNumber)
 	{

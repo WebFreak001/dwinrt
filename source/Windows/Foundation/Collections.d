@@ -168,6 +168,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))).abi_First(out_first));
 	}
+	static PropertySet New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PropertySet).abi_ActivateInstance(&ret));
+		return ret.as!(PropertySet);
+	}
 }
 
 interface StringMap : Windows.Foundation.Collections.IMap!(HSTRING, HSTRING), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)), Windows.Foundation.Collections.IObservableMap!(HSTRING, HSTRING)
@@ -219,6 +225,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IObservableMap!(HSTRING, HSTRING)).remove_MapChanged(token));
 	}
+	static StringMap New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(StringMap).abi_ActivateInstance(&ret));
+		return ret.as!(StringMap);
+	}
 }
 
 interface ValueSet : Windows.Foundation.Collections.IPropertySet, Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))
@@ -269,6 +281,12 @@ extern(Windows):
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))).abi_First(out_first));
+	}
+	static ValueSet New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ValueSet).abi_ActivateInstance(&ret));
+		return ret.as!(ValueSet);
 	}
 }
 

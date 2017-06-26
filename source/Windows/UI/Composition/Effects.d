@@ -82,4 +82,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Graphics.Effects.IGraphicsEffect).set_Name(name));
 	}
+	static SceneLightingEffect New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SceneLightingEffect).abi_ActivateInstance(&ret));
+		return ret.as!(SceneLightingEffect);
+	}
 }

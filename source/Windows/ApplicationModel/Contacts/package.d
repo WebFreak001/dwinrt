@@ -1302,6 +1302,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContact3).get_SortName(&_ret));
 		return _ret;
 	}
+	static Contact New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Contact).abi_ActivateInstance(&ret));
+		return ret.as!(Contact);
+	}
 }
 
 interface ContactAddress : Windows.ApplicationModel.Contacts.IContactAddress
@@ -1377,6 +1383,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAddress).set_Description(value));
 	}
+	static ContactAddress New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ContactAddress).abi_ActivateInstance(&ret));
+		return ret.as!(ContactAddress);
+	}
 }
 
 interface ContactAnnotation : Windows.ApplicationModel.Contacts.IContactAnnotation, Windows.ApplicationModel.Contacts.IContactAnnotation2
@@ -1445,6 +1457,12 @@ extern(Windows):
 	final void ContactListId(HSTRING value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactAnnotation2).set_ContactListId(value));
+	}
+	static ContactAnnotation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ContactAnnotation).abi_ActivateInstance(&ret));
+		return ret.as!(ContactAnnotation);
 	}
 }
 
@@ -1625,6 +1643,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactCardOptions2).get_ServerSearchContactListIds(&_ret));
 		return _ret;
 	}
+	static ContactCardOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ContactCardOptions).abi_ActivateInstance(&ret));
+		return ret.as!(ContactCardOptions);
+	}
 }
 
 interface ContactChange : Windows.ApplicationModel.Contacts.IContactChange
@@ -1725,6 +1749,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactConnectedServiceAccount).set_ServiceName(value));
 	}
+	static ContactConnectedServiceAccount New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ContactConnectedServiceAccount).abi_ActivateInstance(&ret));
+		return ret.as!(ContactConnectedServiceAccount);
+	}
 }
 
 interface ContactDate : Windows.ApplicationModel.Contacts.IContactDate
@@ -1780,6 +1810,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactDate).set_Description(value));
 	}
+	static ContactDate New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ContactDate).abi_ActivateInstance(&ret));
+		return ret.as!(ContactDate);
+	}
 }
 
 interface ContactEmail : Windows.ApplicationModel.Contacts.IContactEmail
@@ -1814,6 +1850,12 @@ extern(Windows):
 	final void Description(HSTRING value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactEmail).set_Description(value));
+	}
+	static ContactEmail New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ContactEmail).abi_ActivateInstance(&ret));
+		return ret.as!(ContactEmail);
 	}
 }
 
@@ -1923,6 +1965,12 @@ extern(Windows):
 		Windows.ApplicationModel.Contacts.ContactInstantMessageField _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory).abi_CreateInstantMessage_All(userName, category, service, displayText, verb, &_ret));
 		return _ret;
+	}
+	static ContactFieldFactory New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ContactFieldFactory).abi_ActivateInstance(&ret));
+		return ret.as!(ContactFieldFactory);
 	}
 }
 
@@ -2139,6 +2187,12 @@ extern(Windows):
 	final void Description(HSTRING value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactJobInfo).set_Description(value));
+	}
+	static ContactJobInfo New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ContactJobInfo).abi_ActivateInstance(&ret));
+		return ret.as!(ContactJobInfo);
 	}
 }
 
@@ -2975,6 +3029,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPhone).set_Description(value));
 	}
+	static ContactPhone New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ContactPhone).abi_ActivateInstance(&ret));
+		return ret.as!(ContactPhone);
+	}
 }
 
 interface ContactPicker : Windows.ApplicationModel.Contacts.IContactPicker, Windows.ApplicationModel.Contacts.IContactPicker2, Windows.ApplicationModel.Contacts.IContactPicker3
@@ -3061,6 +3121,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Contacts.IContactPickerStatics).abi_IsSupportedAsync(&_ret));
 		return _ret;
 	}
+	static ContactPicker New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ContactPicker).abi_ActivateInstance(&ret));
+		return ret.as!(ContactPicker);
+	}
 }
 
 interface ContactQueryOptions : Windows.ApplicationModel.Contacts.IContactQueryOptions
@@ -3113,6 +3179,12 @@ extern(Windows):
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactQueryOptions).get_AnnotationListIds(&_ret));
 		return _ret;
+	}
+	static ContactQueryOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ContactQueryOptions).abi_ActivateInstance(&ret));
+		return ret.as!(ContactQueryOptions);
 	}
 	static Windows.ApplicationModel.Contacts.ContactQueryOptions New(HSTRING text)
 	{
@@ -3214,6 +3286,12 @@ extern(Windows):
 	final void Relationship(Windows.ApplicationModel.Contacts.ContactRelationship value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactSignificantOther2).set_Relationship(value));
+	}
+	static ContactSignificantOther New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ContactSignificantOther).abi_ActivateInstance(&ret));
+		return ret.as!(ContactSignificantOther);
 	}
 }
 
@@ -3341,6 +3419,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactWebsite2).set_RawValue(value));
 	}
+	static ContactWebsite New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ContactWebsite).abi_ActivateInstance(&ret));
+		return ret.as!(ContactWebsite);
+	}
 }
 
 interface FullContactCardOptions : Windows.ApplicationModel.Contacts.IFullContactCardOptions
@@ -3355,6 +3439,12 @@ extern(Windows):
 	final void DesiredRemainingView(Windows.UI.ViewManagement.ViewSizePreference value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IFullContactCardOptions).set_DesiredRemainingView(value));
+	}
+	static FullContactCardOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(FullContactCardOptions).abi_ActivateInstance(&ret));
+		return ret.as!(FullContactCardOptions);
 	}
 }
 

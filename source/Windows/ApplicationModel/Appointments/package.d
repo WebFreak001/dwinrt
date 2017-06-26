@@ -742,6 +742,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointment3).set_DetailsKind(value));
 	}
+	static Appointment New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Appointment).abi_ActivateInstance(&ret));
+		return ret.as!(Appointment);
+	}
 }
 
 interface AppointmentCalendar : Windows.ApplicationModel.Appointments.IAppointmentCalendar, Windows.ApplicationModel.Appointments.IAppointmentCalendar2, Windows.ApplicationModel.Appointments.IAppointmentCalendar3
@@ -1167,6 +1173,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentParticipant).set_Address(value));
 	}
+	static AppointmentInvitee New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(AppointmentInvitee).abi_ActivateInstance(&ret));
+		return ret.as!(AppointmentInvitee);
+	}
 }
 
 interface AppointmentManager
@@ -1344,6 +1356,12 @@ extern(Windows):
 	final void Address(HSTRING value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentParticipant).set_Address(value));
+	}
+	static AppointmentOrganizer New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(AppointmentOrganizer).abi_ActivateInstance(&ret));
+		return ret.as!(AppointmentOrganizer);
 	}
 }
 
@@ -1599,6 +1617,12 @@ extern(Windows):
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentRecurrence3).get_CalendarIdentifier(&_ret));
 		return _ret;
+	}
+	static AppointmentRecurrence New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(AppointmentRecurrence).abi_ActivateInstance(&ret));
+		return ret.as!(AppointmentRecurrence);
 	}
 }
 
@@ -1868,6 +1892,12 @@ extern(Windows):
 	final void MaxCount(UINT32 value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IFindAppointmentsOptions).set_MaxCount(value));
+	}
+	static FindAppointmentsOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(FindAppointmentsOptions).abi_ActivateInstance(&ret));
+		return ret.as!(FindAppointmentsOptions);
 	}
 }
 

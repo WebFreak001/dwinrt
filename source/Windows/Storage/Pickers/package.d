@@ -290,6 +290,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Storage.Pickers.IFileOpenPickerStatics).abi_ResumePickSingleFileAsync(&_ret));
 		return _ret;
 	}
+	static FileOpenPicker New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(FileOpenPicker).abi_ActivateInstance(&ret));
+		return ret.as!(FileOpenPicker);
+	}
 }
 
 interface FilePickerFileTypesOrderedMap : Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)))
@@ -464,6 +470,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Storage.Pickers.IFileSavePicker3).set_EnterpriseId(value));
 	}
+	static FileSavePicker New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(FileSavePicker).abi_ActivateInstance(&ret));
+		return ret.as!(FileSavePicker);
+	}
 }
 
 interface FolderPicker : Windows.Storage.Pickers.IFolderPicker, Windows.Storage.Pickers.IFolderPicker2
@@ -531,6 +543,12 @@ extern(Windows):
 	final void PickFolderAndContinue()
 	{
 		Debug.OK(this.as!(Windows.Storage.Pickers.IFolderPicker2).abi_PickFolderAndContinue());
+	}
+	static FolderPicker New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(FolderPicker).abi_ActivateInstance(&ret));
+		return ret.as!(FolderPicker);
 	}
 }
 

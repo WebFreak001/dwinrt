@@ -795,6 +795,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDDownloadEngineNotifier).abi_OnNetworkError());
 	}
+	static NDDownloadEngineNotifier New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(NDDownloadEngineNotifier).abi_ActivateInstance(&ret));
+		return ret.as!(NDDownloadEngineNotifier);
+	}
 }
 
 interface NDLicenseFetchDescriptor : Windows.Media.Protection.PlayReady.INDLicenseFetchDescriptor
@@ -846,6 +852,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDStorageFileHelper).abi_GetFileURLs(file, &_ret));
 		return _ret;
 	}
+	static NDStorageFileHelper New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(NDStorageFileHelper).abi_ActivateInstance(&ret));
+		return ret.as!(NDStorageFileHelper);
+	}
 }
 
 interface NDStreamParserNotifier : Windows.Media.Protection.PlayReady.INDStreamParserNotifier
@@ -870,6 +882,12 @@ extern(Windows):
 	final void OnBeginSetupDecryptor(Windows.Media.Core.IMediaStreamDescriptor descriptor, GUID keyID, UINT32 __proBytesSize, ubyte* proBytes)
 	{
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDStreamParserNotifier).abi_OnBeginSetupDecryptor(descriptor, keyID, __proBytesSize, proBytes));
+	}
+	static NDStreamParserNotifier New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(NDStreamParserNotifier).abi_ActivateInstance(&ret));
+		return ret.as!(NDStreamParserNotifier);
 	}
 }
 
@@ -1199,6 +1217,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionServiceRequest).get_Type(&_ret));
 		return _ret;
 	}
+	static PlayReadyDomainJoinServiceRequest New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PlayReadyDomainJoinServiceRequest).abi_ActivateInstance(&ret));
+		return ret.as!(PlayReadyDomainJoinServiceRequest);
+	}
 }
 
 interface PlayReadyDomainLeaveServiceRequest : Windows.Media.Protection.PlayReady.IPlayReadyDomainLeaveServiceRequest, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
@@ -1286,6 +1310,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionServiceRequest).get_Type(&_ret));
 		return _ret;
 	}
+	static PlayReadyDomainLeaveServiceRequest New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PlayReadyDomainLeaveServiceRequest).abi_ActivateInstance(&ret));
+		return ret.as!(PlayReadyDomainLeaveServiceRequest);
+	}
 }
 
 interface PlayReadyITADataGenerator : Windows.Media.Protection.PlayReady.IPlayReadyITADataGenerator
@@ -1296,6 +1326,12 @@ extern(Windows):
 		ubyte* _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyITADataGenerator).abi_GenerateData(guidCPSystemId, countOfStreams, configuration, format, out___dataBytesSize, &_ret));
 		return _ret;
+	}
+	static PlayReadyITADataGenerator New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PlayReadyITADataGenerator).abi_ActivateInstance(&ret));
+		return ret.as!(PlayReadyITADataGenerator);
 	}
 }
 
@@ -1363,6 +1399,12 @@ extern(Windows):
 		GUID _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionServiceRequest).get_Type(&_ret));
 		return _ret;
+	}
+	static PlayReadyIndividualizationServiceRequest New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PlayReadyIndividualizationServiceRequest).abi_ActivateInstance(&ret));
+		return ret.as!(PlayReadyIndividualizationServiceRequest);
 	}
 }
 
@@ -1534,6 +1576,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicenseAcquisitionServiceRequest3).abi_CreateLicenseIterable(contentHeader, fullyEvaluated, &_ret));
 		return _ret;
 	}
+	static PlayReadyLicenseAcquisitionServiceRequest New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PlayReadyLicenseAcquisitionServiceRequest).abi_ActivateInstance(&ret));
+		return ret.as!(PlayReadyLicenseAcquisitionServiceRequest);
+	}
 }
 
 interface PlayReadyLicenseIterable : Windows.Foundation.Collections.IIterable!(Windows.Media.Protection.PlayReady.IPlayReadyLicense)
@@ -1542,6 +1590,12 @@ extern(Windows):
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Media.Protection.PlayReady.IPlayReadyLicense)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Media.Protection.PlayReady.IPlayReadyLicense)).abi_First(out_first));
+	}
+	static PlayReadyLicenseIterable New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PlayReadyLicenseIterable).abi_ActivateInstance(&ret));
+		return ret.as!(PlayReadyLicenseIterable);
 	}
 	static Windows.Media.Protection.PlayReady.PlayReadyLicenseIterable New(Windows.Media.Protection.PlayReady.PlayReadyContentHeader contentHeader, bool fullyEvaluated)
 	{
@@ -1696,6 +1750,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionServiceRequest).get_Type(&_ret));
 		return _ret;
 	}
+	static PlayReadyMeteringReportServiceRequest New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PlayReadyMeteringReportServiceRequest).abi_ActivateInstance(&ret));
+		return ret.as!(PlayReadyMeteringReportServiceRequest);
+	}
 }
 
 interface PlayReadyRevocationServiceRequest : Windows.Media.Protection.PlayReady.IPlayReadyRevocationServiceRequest, Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest, Windows.Media.Protection.IMediaProtectionServiceRequest
@@ -1762,6 +1822,12 @@ extern(Windows):
 		GUID _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionServiceRequest).get_Type(&_ret));
 		return _ret;
+	}
+	static PlayReadyRevocationServiceRequest New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PlayReadyRevocationServiceRequest).abi_ActivateInstance(&ret));
+		return ret.as!(PlayReadyRevocationServiceRequest);
 	}
 }
 

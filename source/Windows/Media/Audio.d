@@ -1584,6 +1584,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter2).set_SpatialAudioModel(value));
 	}
+	static AudioNodeEmitter New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(AudioNodeEmitter).abi_ActivateInstance(&ret));
+		return ret.as!(AudioNodeEmitter);
+	}
 	static Windows.Media.Audio.AudioNodeEmitter New(Windows.Media.Audio.AudioNodeEmitterShape shape, Windows.Media.Audio.AudioNodeEmitterDecayModel decayModel, Windows.Media.Audio.AudioNodeEmitterSettings settings)
 	{
 		auto factory = factory!(Windows.Media.Audio.IAudioNodeEmitterFactory);
@@ -1759,6 +1765,12 @@ extern(Windows):
 	final void DopplerVelocity(Windows.Foundation.Numerics.Vector3 value)
 	{
 		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeListener).set_DopplerVelocity(value));
+	}
+	static AudioNodeListener New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(AudioNodeListener).abi_ActivateInstance(&ret));
+		return ret.as!(AudioNodeListener);
 	}
 }
 

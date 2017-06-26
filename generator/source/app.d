@@ -735,12 +735,16 @@ void processIDL(string file)
 								enforce(content.children[0].children[0].name == "IDL.scoped_name");
 								obj.staticBase = content.children[0].children[0].matches.join("");
 							}
-							else if (content.children[0].name == "IDL.activatable"
-									&& content.children[0].children.length > 1)
+							else if (content.children[0].name == "IDL.activatable")
 							{
-								enforce(content.children[0].children[0].name == "IDL.scoped_name");
-								enforce(content.children[0].children[1].name == "IDL.scoped_name");
-								obj.activatable = content.children[0].children[0].matches.join("");
+								if (content.children[0].children.length > 1)
+								{
+									enforce(content.children[0].children[0].name == "IDL.scoped_name");
+									enforce(content.children[0].children[1].name == "IDL.scoped_name");
+									obj.activatable = content.children[0].children[0].matches.join("");
+								}
+								else
+									obj.simpleActivatable = true;
 							}
 						}
 					}
@@ -1419,6 +1423,7 @@ struct Interface
 	string composable;
 	string staticBase;
 	string activatable;
+	bool simpleActivatable;
 
 	Interface instance(string[] types)
 	{
@@ -1448,6 +1453,7 @@ struct Interface
 		instanced.composable = composable;
 		instanced.staticBase = staticBase;
 		instanced.activatable = activatable;
+		instanced.simpleActivatable = simpleActivatable;
 		return instanced;
 	}
 
@@ -1530,6 +1536,15 @@ struct Interface
 			}
 			ret ~= "\n";
 		}
+		if (simpleActivatable)
+		{
+			ret ~= "\tstatic " ~ name ~ " New()\n";
+			ret ~= "\t{\n";
+			ret ~= "\t\tIInspectable ret;\n";
+			ret ~= "\t\tDebug.OK(activationFactory!(" ~ name ~ ").abi_ActivateInstance(&ret));\n";
+			ret ~= "\t\treturn ret.as!(" ~ name ~ ");\n";
+			ret ~= "\t}\n";
+		}
 		if (activatable.length)
 		{
 			auto factory = findInterface(activatable);
@@ -1544,7 +1559,7 @@ struct Interface
 				ret ~= method.toString("static ").indent ~ "\n";
 			}
 		}
-		else if (composable.length)
+		if (composable.length)
 		{
 			auto obj = findInterface(composable);
 			if (obj.methods.length)
@@ -1638,29 +1653,26 @@ struct InterfaceMethod
 		{
 			enforce(arguments.length == 2);
 			string fname = fullName;
+			string type = arguments[0].type;
+			string args;
 			if (arguments[0].type.startsWith("Windows.Foundation.TypedEventHandler!("))
+				args = type["Windows.Foundation.TypedEventHandler!(".length .. $ - 1];
+			else if (arguments[0].type.startsWith("Windows.Foundation.EventHandler!("))
+				args = "IInspectable, " ~ type["Windows.Foundation.EventHandler!(".length .. $ - 1];
+			else if (!arguments[0].type.canFind("!"))
+			{
+				auto obj = findInterface(type);
+				if (obj.methods.length == 1 && obj.methods[0].name == "Invoke")
+					args = obj.methods[0].arguments.map!"a.type".join(", ");
+			}
+			if (args.length)
 			{
 				enforce(arguments[1].type == "EventRegistrationToken*", arguments[1].type);
-				string type = arguments[0].type;
-				string args = type["Windows.Foundation.TypedEventHandler!(".length .. $ - 1];
 				arguments = [InterfaceArgument(ArgumentDirection.in_, "void delegate(" ~ args ~ ")", "fn")];
 				name = "On" ~ name;
 				returnType = "EventRegistrationToken";
 				string registerCall = "Debug.OK(this.as!(" ~ baseName ~ ")." ~ fname
 					~ "(event!(" ~ type ~ ", " ~ args ~ ")(fn), &tok));";
-				implementation = "EventRegistrationToken tok;\n" ~ registerCall ~ "\nreturn tok;";
-			}
-			else if (arguments[0].type.startsWith("Windows.Foundation.EventHandler!("))
-			{
-				enforce(arguments[1].type == "EventRegistrationToken*", arguments[1].type);
-				string type = arguments[0].type;
-				string args = type["Windows.Foundation.EventHandler!(".length .. $ - 1];
-				arguments = [InterfaceArgument(ArgumentDirection.in_,
-						"void delegate(IInspectable, " ~ args ~ ")", "fn")];
-				name = "On" ~ name;
-				returnType = "EventRegistrationToken";
-				string registerCall = "Debug.OK(this.as!(" ~ baseName ~ ")." ~ fname
-					~ "(event!(" ~ type ~ ", IInspectable, " ~ args ~ ")(fn), &tok));";
 				implementation = "EventRegistrationToken tok;\n" ~ registerCall ~ "\nreturn tok;";
 			}
 			else

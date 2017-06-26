@@ -674,6 +674,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.IAdvancedPhotoCaptureSettings).set_Mode(value));
 	}
+	static AdvancedPhotoCaptureSettings New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(AdvancedPhotoCaptureSettings).abi_ActivateInstance(&ret));
+		return ret.as!(AdvancedPhotoCaptureSettings);
+	}
 }
 
 interface AdvancedPhotoControl : Windows.Media.Devices.IAdvancedPhotoControl
@@ -867,25 +873,61 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).get_HasRinger(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnAnswerRequested(void delegate(Windows.Media.Devices.CallControl) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).add_AnswerRequested(event!(Windows.Media.Devices.CallControlEventHandler, Windows.Media.Devices.CallControl)(fn), &tok));
+		return tok;
+	}
 	final void removeAnswerRequested(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).remove_AnswerRequested(token));
+	}
+	final EventRegistrationToken OnHangUpRequested(void delegate(Windows.Media.Devices.CallControl) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).add_HangUpRequested(event!(Windows.Media.Devices.CallControlEventHandler, Windows.Media.Devices.CallControl)(fn), &tok));
+		return tok;
 	}
 	final void removeHangUpRequested(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).remove_HangUpRequested(token));
 	}
+	final EventRegistrationToken OnDialRequested(void delegate(Windows.Media.Devices.CallControl, Windows.Media.Devices.DialRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).add_DialRequested(event!(Windows.Media.Devices.DialRequestedEventHandler, Windows.Media.Devices.CallControl, Windows.Media.Devices.DialRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeDialRequested(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).remove_DialRequested(token));
+	}
+	final EventRegistrationToken OnRedialRequested(void delegate(Windows.Media.Devices.CallControl, Windows.Media.Devices.RedialRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).add_RedialRequested(event!(Windows.Media.Devices.RedialRequestedEventHandler, Windows.Media.Devices.CallControl, Windows.Media.Devices.RedialRequestedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeRedialRequested(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).remove_RedialRequested(token));
 	}
+	final EventRegistrationToken OnKeypadPressed(void delegate(Windows.Media.Devices.CallControl, Windows.Media.Devices.KeypadPressedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).add_KeypadPressed(event!(Windows.Media.Devices.KeypadPressedEventHandler, Windows.Media.Devices.CallControl, Windows.Media.Devices.KeypadPressedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeKeypadPressed(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).remove_KeypadPressed(token));
+	}
+	final EventRegistrationToken OnAudioTransferRequested(void delegate(Windows.Media.Devices.CallControl) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).add_AudioTransferRequested(event!(Windows.Media.Devices.CallControlEventHandler, Windows.Media.Devices.CallControl)(fn), &tok));
+		return tok;
 	}
 	final void removeAudioTransferRequested(EventRegistrationToken token)
 	{
@@ -1346,6 +1388,12 @@ extern(Windows):
 	final void DisableDriverFallback(bool value)
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.IFocusSettings).set_DisableDriverFallback(value));
+	}
+	static FocusSettings New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(FocusSettings).abi_ActivateInstance(&ret));
+		return ret.as!(FocusSettings);
 	}
 }
 
@@ -1898,6 +1946,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.IRegionOfInterest2).set_Weight(value));
 	}
+	static RegionOfInterest New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(RegionOfInterest).abi_ActivateInstance(&ret));
+		return ret.as!(RegionOfInterest);
+	}
 }
 
 interface RegionsOfInterestControl : Windows.Media.Devices.IRegionsOfInterestControl
@@ -2423,6 +2477,12 @@ extern(Windows):
 	final void Value(float value)
 	{
 		Debug.OK(this.as!(Windows.Media.Devices.IZoomSettings).set_Value(value));
+	}
+	static ZoomSettings New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ZoomSettings).abi_ActivateInstance(&ret));
+		return ret.as!(ZoomSettings);
 	}
 }
 

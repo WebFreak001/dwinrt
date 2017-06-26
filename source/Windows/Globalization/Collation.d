@@ -80,6 +80,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Globalization.Collation.CharacterGrouping)).abi_First(out_first));
 	}
+	static CharacterGroupings New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(CharacterGroupings).abi_ActivateInstance(&ret));
+		return ret.as!(CharacterGroupings);
+	}
 	static Windows.Globalization.Collation.CharacterGroupings New(HSTRING language)
 	{
 		auto factory = factory!(Windows.Globalization.Collation.ICharacterGroupingsFactory);

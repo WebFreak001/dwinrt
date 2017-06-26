@@ -729,6 +729,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_SimIccId(&_ret));
 		return _ret;
 	}
+	static SmsAppMessage New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SmsAppMessage).abi_ActivateInstance(&ret));
+		return ret.as!(SmsAppMessage);
+	}
 }
 
 interface SmsBinaryMessage : Windows.Devices.Sms.ISmsBinaryMessage, Windows.Devices.Sms.ISmsMessage
@@ -769,6 +775,12 @@ extern(Windows):
 		Windows.Devices.Sms.SmsMessageClass _ret;
 		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessage).get_MessageClass(&_ret));
 		return _ret;
+	}
+	static SmsBinaryMessage New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SmsBinaryMessage).abi_ActivateInstance(&ret));
+		return ret.as!(SmsBinaryMessage);
 	}
 }
 
@@ -913,9 +925,23 @@ extern(Windows):
 		return _ret;
 	}
 	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
+	final EventRegistrationToken OnSmsMessageReceived(void delegate(Windows.Devices.Sms.SmsDevice, Windows.Devices.Sms.SmsMessageReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice).add_SmsMessageReceived(event!(Windows.Devices.Sms.SmsMessageReceivedEventHandler, Windows.Devices.Sms.SmsDevice, Windows.Devices.Sms.SmsMessageReceivedEventArgs)(fn), &tok));
+		return tok;
+	}
+	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
 	final void removeSmsMessageReceived(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice).remove_SmsMessageReceived(eventCookie));
+	}
+	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
+	final EventRegistrationToken OnSmsDeviceStatusChanged(void delegate(Windows.Devices.Sms.SmsDevice) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice).add_SmsDeviceStatusChanged(event!(Windows.Devices.Sms.SmsDeviceStatusChangedEventHandler, Windows.Devices.Sms.SmsDevice)(fn), &tok));
+		return tok;
 	}
 	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
 	final void removeSmsDeviceStatusChanged(EventRegistrationToken eventCookie)
@@ -1602,6 +1628,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Devices.Sms.ISmsTextMessageStatics).abi_FromBinaryData(format, __valueSize, value, &_ret));
 		return _ret;
 	}
+	static SmsTextMessage New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SmsTextMessage).abi_ActivateInstance(&ret));
+		return ret.as!(SmsTextMessage);
+	}
 }
 
 interface SmsTextMessage2 : Windows.Devices.Sms.ISmsTextMessage2, Windows.Devices.Sms.ISmsMessageBase
@@ -1720,6 +1752,12 @@ extern(Windows):
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_SimIccId(&_ret));
 		return _ret;
+	}
+	static SmsTextMessage2 New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SmsTextMessage2).abi_ActivateInstance(&ret));
+		return ret.as!(SmsTextMessage2);
 	}
 }
 

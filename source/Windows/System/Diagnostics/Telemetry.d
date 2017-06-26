@@ -86,6 +86,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.System.Diagnostics.Telemetry.IPlatformTelemetryRegistrationSettings).set_UploadQuotaSize(value));
 	}
+	static PlatformTelemetryRegistrationSettings New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PlatformTelemetryRegistrationSettings).abi_ActivateInstance(&ret));
+		return ret.as!(PlatformTelemetryRegistrationSettings);
+	}
 }
 
 enum PlatformTelemetryRegistrationStatus

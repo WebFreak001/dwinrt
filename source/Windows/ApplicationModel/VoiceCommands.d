@@ -268,6 +268,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandContentTile).set_ContentTileType(value));
 	}
+	static VoiceCommandContentTile New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VoiceCommandContentTile).abi_ActivateInstance(&ret));
+		return ret.as!(VoiceCommandContentTile);
+	}
 }
 
 interface VoiceCommandDefinition : Windows.ApplicationModel.VoiceCommands.IVoiceCommandDefinition
@@ -502,6 +508,12 @@ extern(Windows):
 	final void SpokenMessage(HSTRING value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandUserMessage).set_SpokenMessage(value));
+	}
+	static VoiceCommandUserMessage New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VoiceCommandUserMessage).abi_ActivateInstance(&ret));
+		return ret.as!(VoiceCommandUserMessage);
 	}
 }
 

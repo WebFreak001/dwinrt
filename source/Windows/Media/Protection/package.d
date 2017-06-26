@@ -214,18 +214,42 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
 	}
+	static HdcpSession New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(HdcpSession).abi_ActivateInstance(&ret));
+		return ret.as!(HdcpSession);
+	}
 }
 
 interface MediaProtectionManager : Windows.Media.Protection.IMediaProtectionManager
 {
 extern(Windows):
+	final EventRegistrationToken OnServiceRequested(void delegate(Windows.Media.Protection.MediaProtectionManager, Windows.Media.Protection.ServiceRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionManager).add_ServiceRequested(event!(Windows.Media.Protection.ServiceRequestedEventHandler, Windows.Media.Protection.MediaProtectionManager, Windows.Media.Protection.ServiceRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeServiceRequested(EventRegistrationToken cookie)
 	{
 		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionManager).remove_ServiceRequested(cookie));
 	}
+	final EventRegistrationToken OnRebootNeeded(void delegate(Windows.Media.Protection.MediaProtectionManager) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionManager).add_RebootNeeded(event!(Windows.Media.Protection.RebootNeededEventHandler, Windows.Media.Protection.MediaProtectionManager)(fn), &tok));
+		return tok;
+	}
 	final void removeRebootNeeded(EventRegistrationToken cookie)
 	{
 		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionManager).remove_RebootNeeded(cookie));
+	}
+	final EventRegistrationToken OnComponentLoadFailed(void delegate(Windows.Media.Protection.MediaProtectionManager, Windows.Media.Protection.ComponentLoadFailedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionManager).add_ComponentLoadFailed(event!(Windows.Media.Protection.ComponentLoadFailedEventHandler, Windows.Media.Protection.MediaProtectionManager, Windows.Media.Protection.ComponentLoadFailedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeComponentLoadFailed(EventRegistrationToken cookie)
 	{
@@ -236,6 +260,12 @@ extern(Windows):
 		Windows.Foundation.Collections.IPropertySet _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionManager).get_Properties(&_ret));
 		return _ret;
+	}
+	static MediaProtectionManager New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MediaProtectionManager).abi_ActivateInstance(&ret));
+		return ret.as!(MediaProtectionManager);
 	}
 }
 
@@ -274,6 +304,12 @@ extern(Windows):
 		Windows.Media.Protection.ProtectionCapabilityResult _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.IProtectionCapabilities).abi_IsTypeSupported(type, keySystem, &_ret));
 		return _ret;
+	}
+	static ProtectionCapabilities New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ProtectionCapabilities).abi_ActivateInstance(&ret));
+		return ret.as!(ProtectionCapabilities);
 	}
 }
 

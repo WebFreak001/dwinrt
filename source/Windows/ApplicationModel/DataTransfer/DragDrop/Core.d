@@ -218,6 +218,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragOperation2).set_AllowedOperations(value));
 	}
+	static CoreDragOperation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(CoreDragOperation).abi_ActivateInstance(&ret));
+		return ret.as!(CoreDragOperation);
+	}
 }
 
 interface CoreDragUIOverride : Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragUIOverride

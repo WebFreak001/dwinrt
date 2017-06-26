@@ -528,6 +528,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_StartTime(value));
 	}
+	static PhoneCallHistoryEntry New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PhoneCallHistoryEntry).abi_ActivateInstance(&ret));
+		return ret.as!(PhoneCallHistoryEntry);
+	}
 }
 
 interface PhoneCallHistoryEntryAddress : Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress
@@ -573,6 +579,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress).set_RawAddressKind(value));
 	}
+	static PhoneCallHistoryEntryAddress New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PhoneCallHistoryEntryAddress).abi_ActivateInstance(&ret));
+		return ret.as!(PhoneCallHistoryEntryAddress);
+	}
 	static Windows.ApplicationModel.Calls.PhoneCallHistoryEntryAddress New(HSTRING rawAddress, Windows.ApplicationModel.Calls.PhoneCallHistoryEntryRawAddressKind rawAddressKind)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddressFactory);
@@ -600,6 +612,12 @@ extern(Windows):
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryQueryOptions).get_SourceIds(&_ret));
 		return _ret;
+	}
+	static PhoneCallHistoryEntryQueryOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PhoneCallHistoryEntryQueryOptions).abi_ActivateInstance(&ret));
+		return ret.as!(PhoneCallHistoryEntryQueryOptions);
 	}
 }
 

@@ -324,6 +324,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_StartDate(value));
 	}
+	static UserDataTask New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(UserDataTask).abi_ActivateInstance(&ret));
+		return ret.as!(UserDataTask);
+	}
 }
 
 interface UserDataTaskBatch : Windows.ApplicationModel.UserDataTasks.IUserDataTaskBatch
@@ -589,6 +595,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskQueryOptions).set_Kind(value));
 	}
+	static UserDataTaskQueryOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(UserDataTaskQueryOptions).abi_ActivateInstance(&ret));
+		return ret.as!(UserDataTaskQueryOptions);
+	}
 }
 
 interface UserDataTaskReader : Windows.ApplicationModel.UserDataTasks.IUserDataTaskReader
@@ -685,6 +697,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).set_Day(value));
 	}
+	static UserDataTaskRecurrenceProperties New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(UserDataTaskRecurrenceProperties).abi_ActivateInstance(&ret));
+		return ret.as!(UserDataTaskRecurrenceProperties);
+	}
 }
 
 interface UserDataTaskRegenerationProperties : Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties
@@ -729,6 +747,12 @@ extern(Windows):
 	final void Interval(INT32 value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties).set_Interval(value));
+	}
+	static UserDataTaskRegenerationProperties New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(UserDataTaskRegenerationProperties).abi_ActivateInstance(&ret));
+		return ret.as!(UserDataTaskRegenerationProperties);
 	}
 }
 

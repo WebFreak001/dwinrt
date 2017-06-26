@@ -2018,6 +2018,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList3).set_MaxPlayedItemsToKeepOpen(value));
 	}
+	static MediaPlaybackList New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MediaPlaybackList).abi_ActivateInstance(&ret));
+		return ret.as!(MediaPlaybackList);
+	}
 }
 
 interface MediaPlaybackSession : Windows.Media.Playback.IMediaPlaybackSession, Windows.Media.Playback.IMediaPlaybackSession2
@@ -2929,6 +2935,12 @@ extern(Windows):
 	final void CopyFrameToStereoscopicVideoSurfaces(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface destinationLeftEye, Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface destinationRightEye)
 	{
 		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer5).abi_CopyFrameToStereoscopicVideoSurfaces(destinationLeftEye, destinationRightEye));
+	}
+	static MediaPlayer New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MediaPlayer).abi_ActivateInstance(&ret));
+		return ret.as!(MediaPlayer);
 	}
 }
 

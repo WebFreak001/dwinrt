@@ -173,6 +173,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.ContentRestrictions.IRatedContentRestrictions).remove_RestrictionsChanged(token));
 	}
+	static RatedContentRestrictions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(RatedContentRestrictions).abi_ActivateInstance(&ret));
+		return ret.as!(RatedContentRestrictions);
+	}
 	static Windows.Media.ContentRestrictions.RatedContentRestrictions New(UINT32 maxAgeRating)
 	{
 		auto factory = factory!(Windows.Media.ContentRestrictions.IRatedContentRestrictionsFactory);

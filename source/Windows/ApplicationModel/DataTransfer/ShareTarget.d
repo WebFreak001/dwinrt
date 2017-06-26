@@ -86,6 +86,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.ShareTarget.IQuickLink).get_SupportedFileTypes(&_ret));
 		return _ret;
 	}
+	static QuickLink New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(QuickLink).abi_ActivateInstance(&ret));
+		return ret.as!(QuickLink);
+	}
 }
 
 interface ShareOperation : Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation, Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation2

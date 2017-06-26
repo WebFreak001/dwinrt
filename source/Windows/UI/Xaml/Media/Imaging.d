@@ -318,13 +318,31 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).set_DecodePixelHeight(value));
 	}
+	final EventRegistrationToken OnDownloadProgress(void delegate(IInspectable, Windows.UI.Xaml.Media.Imaging.DownloadProgressEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).add_DownloadProgress(event!(Windows.UI.Xaml.Media.Imaging.DownloadProgressEventHandler, IInspectable, Windows.UI.Xaml.Media.Imaging.DownloadProgressEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeDownloadProgress(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).remove_DownloadProgress(token));
 	}
+	final EventRegistrationToken OnImageOpened(void delegate(IInspectable, Windows.UI.Xaml.RoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).add_ImageOpened(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeImageOpened(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).remove_ImageOpened(token));
+	}
+	final EventRegistrationToken OnImageFailed(void delegate(IInspectable, Windows.UI.Xaml.ExceptionRoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).add_ImageFailed(event!(Windows.UI.Xaml.ExceptionRoutedEventHandler, IInspectable, Windows.UI.Xaml.ExceptionRoutedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeImageFailed(EventRegistrationToken token)
 	{
@@ -400,6 +418,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImageStatics).get_DecodePixelHeightProperty(&_ret));
 		return _ret;
+	}
+	static BitmapImage New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BitmapImage).abi_ActivateInstance(&ret));
+		return ret.as!(BitmapImage);
 	}
 	static Windows.UI.Xaml.Media.Imaging.BitmapImage New(Windows.Foundation.Uri uriSource)
 	{
@@ -548,6 +572,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmapStatics).get_PixelHeightProperty(&_ret));
 		return _ret;
 	}
+	static RenderTargetBitmap New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(RenderTargetBitmap).abi_ActivateInstance(&ret));
+		return ret.as!(RenderTargetBitmap);
+	}
 }
 
 interface SoftwareBitmapSource : Windows.UI.Xaml.Media.ImageSource, Windows.UI.Xaml.Media.Imaging.ISoftwareBitmapSource, Windows.Foundation.IClosable
@@ -562,6 +592,12 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	static SoftwareBitmapSource New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SoftwareBitmapSource).abi_ActivateInstance(&ret));
+		return ret.as!(SoftwareBitmapSource);
 	}
 }
 

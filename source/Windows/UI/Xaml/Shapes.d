@@ -185,6 +185,12 @@ extern(Windows):
 
 interface Ellipse : Windows.UI.Xaml.Shapes.Shape, Windows.UI.Xaml.Shapes.IEllipse
 {
+	static Ellipse New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Ellipse).abi_ActivateInstance(&ret));
+		return ret.as!(Ellipse);
+	}
 }
 
 interface Line : Windows.UI.Xaml.Shapes.Shape, Windows.UI.Xaml.Shapes.ILine
@@ -260,6 +266,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.ILineStatics).get_Y2Property(&_ret));
 		return _ret;
+	}
+	static Line New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Line).abi_ActivateInstance(&ret));
+		return ret.as!(Line);
 	}
 }
 
@@ -356,6 +368,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.IPolygonStatics).get_PointsProperty(&_ret));
 		return _ret;
 	}
+	static Polygon New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Polygon).abi_ActivateInstance(&ret));
+		return ret.as!(Polygon);
+	}
 }
 
 interface Polyline : Windows.UI.Xaml.Shapes.Shape, Windows.UI.Xaml.Shapes.IPolyline
@@ -400,6 +418,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.IPolylineStatics).get_PointsProperty(&_ret));
 		return _ret;
 	}
+	static Polyline New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Polyline).abi_ActivateInstance(&ret));
+		return ret.as!(Polyline);
+	}
 }
 
 interface Rectangle : Windows.UI.Xaml.Shapes.Shape, Windows.UI.Xaml.Shapes.IRectangle
@@ -443,6 +467,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.IRectangleStatics).get_RadiusYProperty(&_ret));
 		return _ret;
+	}
+	static Rectangle New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Rectangle).abi_ActivateInstance(&ret));
+		return ret.as!(Rectangle);
 	}
 }
 

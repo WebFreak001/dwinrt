@@ -428,6 +428,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_Properties(&_ret));
 		return _ret;
 	}
+	static PaymentAddress New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PaymentAddress).abi_ActivateInstance(&ret));
+		return ret.as!(PaymentAddress);
+	}
 }
 
 interface PaymentCurrencyAmount : Windows.ApplicationModel.Payments.IPaymentCurrencyAmount
@@ -521,6 +527,12 @@ extern(Windows):
 	final void Modifiers(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentDetailsModifier) value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetails).set_Modifiers(value));
+	}
+	static PaymentDetails New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PaymentDetails).abi_ActivateInstance(&ret));
+		return ret.as!(PaymentDetails);
 	}
 	static Windows.ApplicationModel.Payments.PaymentDetails New(Windows.ApplicationModel.Payments.PaymentItem total)
 	{
@@ -651,6 +663,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentMediator).abi_SubmitPaymentRequestWithChangeHandlerAsync(paymentRequest, changeHandler, &_ret));
 		return _ret;
 	}
+	static PaymentMediator New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PaymentMediator).abi_ActivateInstance(&ret));
+		return ret.as!(PaymentMediator);
+	}
 }
 
 interface PaymentMerchantInfo : Windows.ApplicationModel.Payments.IPaymentMerchantInfo
@@ -667,6 +685,12 @@ extern(Windows):
 		Windows.Foundation.Uri _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentMerchantInfo).get_Uri(&_ret));
 		return _ret;
+	}
+	static PaymentMerchantInfo New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PaymentMerchantInfo).abi_ActivateInstance(&ret));
+		return ret.as!(PaymentMerchantInfo);
 	}
 	static Windows.ApplicationModel.Payments.PaymentMerchantInfo New(Windows.Foundation.Uri uri)
 	{
@@ -760,6 +784,12 @@ extern(Windows):
 	final void ShippingType(Windows.ApplicationModel.Payments.PaymentShippingType value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentOptions).set_ShippingType(value));
+	}
+	static PaymentOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PaymentOptions).abi_ActivateInstance(&ret));
+		return ret.as!(PaymentOptions);
 	}
 }
 

@@ -579,6 +579,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
 	}
+	static DataWriter New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DataWriter).abi_ActivateInstance(&ret));
+		return ret.as!(DataWriter);
+	}
 	static Windows.Storage.Streams.DataWriter New(Windows.Storage.Streams.IOutputStream outputStream)
 	{
 		auto factory = factory!(Windows.Storage.Streams.IDataWriterFactory);
@@ -796,6 +802,12 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IInputStream).abi_ReadAsync(buffer, count, options, &_ret));
 		return _ret;
+	}
+	static InMemoryRandomAccessStream New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(InMemoryRandomAccessStream).abi_ActivateInstance(&ret));
+		return ret.as!(InMemoryRandomAccessStream);
 	}
 }
 

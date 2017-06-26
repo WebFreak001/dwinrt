@@ -463,6 +463,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo).set_Hidden(value));
 	}
+	static PerceptionFrameProviderInfo New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PerceptionFrameProviderInfo).abi_ActivateInstance(&ret));
+		return ret.as!(PerceptionFrameProviderInfo);
+	}
 }
 
 interface PerceptionFrameProviderManagerService

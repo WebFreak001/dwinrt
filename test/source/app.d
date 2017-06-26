@@ -70,12 +70,7 @@ extern (Windows):
 	override HRESULT abi_SetWindow(CoreWindow window)
 	{
 		Debug.WriteLine("SetWindow");
-
-		IInspectable insp;
-		auto f = activationFactory!ICompositor;
-		Debug.OK(f.abi_ActivateInstance(&insp));
-		Compositor compositor = cast(Compositor) insp;
-		compositor.inspect!Compositor;
+		Compositor compositor = Compositor.New;
 
 		ContainerVisual root = compositor.CreateContainerVisual();
 

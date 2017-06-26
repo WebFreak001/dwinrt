@@ -220,4 +220,10 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreviewShowNoteOptions).set_ShowWithFocus(value));
 	}
+	static NotesWindowManagerPreviewShowNoteOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(NotesWindowManagerPreviewShowNoteOptions).abi_ActivateInstance(&ret));
+		return ret.as!(NotesWindowManagerPreviewShowNoteOptions);
+	}
 }

@@ -349,22 +349,42 @@ interface WebUIApplication
 		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.WebUI.IWebUIActivationStatics);
 		return _staticInstance;
 	}
-	HRESULT add_Activated(Windows.UI.WebUI.ActivatedEventHandler handler, EventRegistrationToken* return_token);
+	static EventRegistrationToken OnActivated(void delegate(IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.UI.WebUI.IWebUIActivationStatics).add_Activated(event!(Windows.UI.WebUI.ActivatedEventHandler, IInspectable, Windows.ApplicationModel.Activation.IActivatedEventArgs)(fn), &tok));
+		return tok;
+	}
 	static void removeActivated(EventRegistrationToken token)
 	{
 		Debug.OK(staticInstance.as!(Windows.UI.WebUI.IWebUIActivationStatics).remove_Activated(token));
 	}
-	HRESULT add_Suspending(Windows.UI.WebUI.SuspendingEventHandler handler, EventRegistrationToken* return_token);
+	static EventRegistrationToken OnSuspending(void delegate(IInspectable, Windows.ApplicationModel.ISuspendingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.UI.WebUI.IWebUIActivationStatics).add_Suspending(event!(Windows.UI.WebUI.SuspendingEventHandler, IInspectable, Windows.ApplicationModel.ISuspendingEventArgs)(fn), &tok));
+		return tok;
+	}
 	static void removeSuspending(EventRegistrationToken token)
 	{
 		Debug.OK(staticInstance.as!(Windows.UI.WebUI.IWebUIActivationStatics).remove_Suspending(token));
 	}
-	HRESULT add_Resuming(Windows.UI.WebUI.ResumingEventHandler handler, EventRegistrationToken* return_token);
+	static EventRegistrationToken OnResuming(void delegate(IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.UI.WebUI.IWebUIActivationStatics).add_Resuming(event!(Windows.UI.WebUI.ResumingEventHandler, IInspectable)(fn), &tok));
+		return tok;
+	}
 	static void removeResuming(EventRegistrationToken token)
 	{
 		Debug.OK(staticInstance.as!(Windows.UI.WebUI.IWebUIActivationStatics).remove_Resuming(token));
 	}
-	HRESULT add_Navigated(Windows.UI.WebUI.NavigatedEventHandler handler, EventRegistrationToken* return_token);
+	static EventRegistrationToken OnNavigated(void delegate(IInspectable, Windows.UI.WebUI.IWebUINavigatedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.UI.WebUI.IWebUIActivationStatics).add_Navigated(event!(Windows.UI.WebUI.NavigatedEventHandler, IInspectable, Windows.UI.WebUI.IWebUINavigatedEventArgs)(fn), &tok));
+		return tok;
+	}
 	static void removeNavigated(EventRegistrationToken token)
 	{
 		Debug.OK(staticInstance.as!(Windows.UI.WebUI.IWebUIActivationStatics).remove_Navigated(token));
@@ -680,6 +700,12 @@ extern(Windows):
 		IInspectable _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBackgroundTaskInstance).get_TriggerDetails(&_ret));
 		return _ret;
+	}
+	final EventRegistrationToken OnCanceled(void delegate(Windows.ApplicationModel.Background.IBackgroundTaskInstance, Windows.ApplicationModel.Background.BackgroundTaskCancellationReason) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBackgroundTaskInstance).add_Canceled(event!(Windows.ApplicationModel.Background.BackgroundTaskCanceledEventHandler, Windows.ApplicationModel.Background.IBackgroundTaskInstance, Windows.ApplicationModel.Background.BackgroundTaskCancellationReason)(fn), &tok));
+		return tok;
 	}
 	final void removeCanceled(EventRegistrationToken cookie)
 	{

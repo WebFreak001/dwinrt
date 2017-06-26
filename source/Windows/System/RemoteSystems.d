@@ -876,6 +876,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionInvitationListener).remove_InvitationReceived(token));
 	}
+	static RemoteSystemSessionInvitationListener New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(RemoteSystemSessionInvitationListener).abi_ActivateInstance(&ret));
+		return ret.as!(RemoteSystemSessionInvitationListener);
+	}
 }
 
 interface RemoteSystemSessionInvitationReceivedEventArgs : Windows.System.RemoteSystems.IRemoteSystemSessionInvitationReceivedEventArgs
@@ -1003,6 +1009,12 @@ extern(Windows):
 	final void IsInviteOnly(bool value)
 	{
 		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionOptions).set_IsInviteOnly(value));
+	}
+	static RemoteSystemSessionOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(RemoteSystemSessionOptions).abi_ActivateInstance(&ret));
+		return ret.as!(RemoteSystemSessionOptions);
 	}
 }
 

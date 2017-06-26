@@ -429,6 +429,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.ViewManagement.IAccessibilitySettings).remove_HighContrastChanged(cookie));
 	}
+	static AccessibilitySettings New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(AccessibilitySettings).abi_ActivateInstance(&ret));
+		return ret.as!(AccessibilitySettings);
+	}
 }
 
 interface ActivationViewSwitcher : Windows.UI.ViewManagement.IActivationViewSwitcher
@@ -902,6 +908,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewTransferContextStatics).get_DataPackageFormatId(&_ret));
 		return _ret;
 	}
+	static ApplicationViewTransferContext New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ApplicationViewTransferContext).abi_ActivateInstance(&ret));
+		return ret.as!(ApplicationViewTransferContext);
+	}
 }
 
 interface InputPane : Windows.UI.ViewManagement.IInputPane, Windows.UI.ViewManagement.IInputPane2, Windows.UI.ViewManagement.IInputPaneControl
@@ -1163,6 +1175,12 @@ extern(Windows):
 	final void removeAdvancedEffectsEnabledChanged(EventRegistrationToken cookie)
 	{
 		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings4).remove_AdvancedEffectsEnabledChanged(cookie));
+	}
+	static UISettings New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(UISettings).abi_ActivateInstance(&ret));
+		return ret.as!(UISettings);
 	}
 }
 

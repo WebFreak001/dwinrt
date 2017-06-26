@@ -636,6 +636,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.StartScreen.ISecondaryTileStatics).abi_FindAllForPackageAsync(&_ret));
 		return _ret;
 	}
+	static SecondaryTile New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SecondaryTile).abi_ActivateInstance(&ret));
+		return ret.as!(SecondaryTile);
+	}
 	deprecated("SecondaryTile(string, string, string, string, Windows.UI.StartScreen.TileOptions, Windows.Foundation.Uri) may be altered or unavailable for releases after Windows Phone 8.1. Instead, use SecondaryTile(string, string, string, Windows.Foundation.Uri, Windows.UI.StartScreen.TileSize).")
 	static Windows.UI.StartScreen.SecondaryTile New(HSTRING tileId, HSTRING shortName, HSTRING displayName, HSTRING arguments, Windows.UI.StartScreen.TileOptions tileOptions, Windows.Foundation.Uri logoReference)
 	{

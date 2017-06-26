@@ -434,6 +434,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_ConnectionStatus(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnConnectionStatusChanged(void delegate(Windows.Media.Streaming.IBasicDevice, Windows.Media.Streaming.ConnectionStatus) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).add_ConnectionStatusChanged(event!(Windows.Media.Streaming.ConnectionStatusHandler, Windows.Media.Streaming.IBasicDevice, Windows.Media.Streaming.ConnectionStatus)(fn), &tok));
+		return tok;
+	}
 	final void removeConnectionStatusChanged(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).remove_ConnectionStatusChanged(token));
@@ -468,6 +474,12 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.DevicePair) _ret;
 		Debug.OK(staticInstance.as!(Windows.Media.Streaming.IActiveBasicDeviceStatics).abi_CreateDevicesOnMatchingNetworkAsync(serverUDN, renderer, optimizeForProxying, allowChangeRendererNetwork, &_ret));
 		return _ret;
+	}
+	static ActiveBasicDevice New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ActiveBasicDevice).abi_ActivateInstance(&ret));
+		return ret.as!(ActiveBasicDevice);
 	}
 }
 
@@ -586,9 +598,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_ConnectionStatus(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnConnectionStatusChanged(void delegate(Windows.Media.Streaming.IBasicDevice, Windows.Media.Streaming.ConnectionStatus) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).add_ConnectionStatusChanged(event!(Windows.Media.Streaming.ConnectionStatusHandler, Windows.Media.Streaming.IBasicDevice, Windows.Media.Streaming.ConnectionStatus)(fn), &tok));
+		return tok;
+	}
 	final void removeConnectionStatusChanged(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).remove_ConnectionStatusChanged(token));
+	}
+	static BasicDevice New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BasicDevice).abi_ActivateInstance(&ret));
+		return ret.as!(BasicDevice);
 	}
 }
 
@@ -630,13 +654,31 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Streaming.IDeviceController).abi_RemoveDevice(device));
 	}
+	final EventRegistrationToken OnDeviceArrival(void delegate(Windows.Media.Streaming.IDeviceController, HSTRING, Windows.Media.Streaming.IBasicDevice) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.Media.Streaming.IDeviceController).add_DeviceArrival(event!(Windows.Media.Streaming.DeviceControllerFinderHandler, Windows.Media.Streaming.IDeviceController, HSTRING, Windows.Media.Streaming.IBasicDevice)(fn), &tok));
+		return tok;
+	}
 	final void removeDeviceArrival(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.Media.Streaming.IDeviceController).remove_DeviceArrival(token));
 	}
+	final EventRegistrationToken OnDeviceDeparture(void delegate(Windows.Media.Streaming.IDeviceController, HSTRING, Windows.Media.Streaming.IBasicDevice) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.Media.Streaming.IDeviceController).add_DeviceDeparture(event!(Windows.Media.Streaming.DeviceControllerFinderHandler, Windows.Media.Streaming.IDeviceController, HSTRING, Windows.Media.Streaming.IBasicDevice)(fn), &tok));
+		return tok;
+	}
 	final void removeDeviceDeparture(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.Media.Streaming.IDeviceController).remove_DeviceDeparture(token));
+	}
+	static DeviceController New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DeviceController).abi_ActivateInstance(&ret));
+		return ret.as!(DeviceController);
 	}
 }
 
@@ -786,9 +828,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).abi_GetPositionInformationAsync(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnTransportParametersUpdate(void delegate(Windows.Media.Streaming.IMediaRenderer, Windows.Media.Streaming.ITransportParameters) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).add_TransportParametersUpdate(event!(Windows.Media.Streaming.TransportParametersUpdateHandler, Windows.Media.Streaming.IMediaRenderer, Windows.Media.Streaming.ITransportParameters)(fn), &tok));
+		return tok;
+	}
 	final void removeTransportParametersUpdate(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).remove_TransportParametersUpdate(token));
+	}
+	final EventRegistrationToken OnRenderingParametersUpdate(void delegate(Windows.Media.Streaming.IMediaRenderer, Windows.Media.Streaming.RenderingParameters) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).add_RenderingParametersUpdate(event!(Windows.Media.Streaming.RenderingParametersUpdateHandler, Windows.Media.Streaming.IMediaRenderer, Windows.Media.Streaming.RenderingParameters)(fn), &tok));
+		return tok;
 	}
 	final void removeRenderingParametersUpdate(EventRegistrationToken token)
 	{
@@ -912,6 +966,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_ConnectionStatus(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnConnectionStatusChanged(void delegate(Windows.Media.Streaming.IBasicDevice, Windows.Media.Streaming.ConnectionStatus) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).add_ConnectionStatusChanged(event!(Windows.Media.Streaming.ConnectionStatusHandler, Windows.Media.Streaming.IBasicDevice, Windows.Media.Streaming.ConnectionStatus)(fn), &tok));
+		return tok;
+	}
 	final void removeConnectionStatusChanged(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).remove_ConnectionStatusChanged(token));
@@ -934,6 +994,12 @@ extern(Windows):
 		Windows.Media.Streaming.CreateMediaRendererOperation _ret;
 		Debug.OK(staticInstance.as!(Windows.Media.Streaming.IMediaRendererFactory).abi_CreateMediaRendererFromBasicDeviceAsync(basicDevice, &_ret));
 		return _ret;
+	}
+	static MediaRenderer New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MediaRenderer).abi_ActivateInstance(&ret));
+		return ret.as!(MediaRenderer);
 	}
 }
 

@@ -181,6 +181,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatOverlayMessageSource).abi_SetDelayBeforeClosingAfterMessageReceived(value));
 	}
+	static GameChatOverlayMessageSource New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(GameChatOverlayMessageSource).abi_ActivateInstance(&ret));
+		return ret.as!(GameChatOverlayMessageSource);
+	}
 }
 
 enum GameChatMessageOrigin

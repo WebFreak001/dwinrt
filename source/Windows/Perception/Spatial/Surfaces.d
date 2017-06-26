@@ -267,6 +267,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptionsStatics).get_SupportedVertexNormalFormats(&_ret));
 		return _ret;
 	}
+	static SpatialSurfaceMeshOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SpatialSurfaceMeshOptions).abi_ActivateInstance(&ret));
+		return ret.as!(SpatialSurfaceMeshOptions);
+	}
 }
 
 interface SpatialSurfaceObserver : Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserver
@@ -308,5 +314,11 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(Windows.Perception.Spatial.SpatialPerceptionAccessStatus) _ret;
 		Debug.OK(staticInstance.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserverStatics).abi_RequestAccessAsync(&_ret));
 		return _ret;
+	}
+	static SpatialSurfaceObserver New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SpatialSurfaceObserver).abi_ActivateInstance(&ret));
+		return ret.as!(SpatialSurfaceObserver);
 	}
 }

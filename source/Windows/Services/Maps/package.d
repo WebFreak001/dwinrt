@@ -630,6 +630,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteDrivingOptions).set_RouteRestrictions(value));
 	}
+	static MapRouteDrivingOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MapRouteDrivingOptions).abi_ActivateInstance(&ret));
+		return ret.as!(MapRouteDrivingOptions);
+	}
 }
 
 interface MapRouteFinder

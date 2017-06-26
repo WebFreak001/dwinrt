@@ -3308,6 +3308,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUI).abi_CaptureFileAsync(mode, &_ret));
 		return _ret;
 	}
+	static CameraCaptureUI New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(CameraCaptureUI).abi_ActivateInstance(&ret));
+		return ret.as!(CameraCaptureUI);
+	}
 }
 
 interface CameraCaptureUIPhotoCaptureSettings : Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings
@@ -3946,9 +3952,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_GetEncoderProperty(mediaStreamType, propertyId, &_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnFailed(void delegate(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureFailedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).add_Failed(event!(Windows.Media.Capture.MediaCaptureFailedEventHandler, Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureFailedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeFailed(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).remove_Failed(eventCookie));
+	}
+	final EventRegistrationToken OnRecordLimitationExceeded(void delegate(Windows.Media.Capture.MediaCapture) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).add_RecordLimitationExceeded(event!(Windows.Media.Capture.RecordLimitationExceededEventHandler, Windows.Media.Capture.MediaCapture)(fn), &tok));
+		return tok;
 	}
 	final void removeRecordLimitationExceeded(EventRegistrationToken eventCookie)
 	{
@@ -4261,6 +4279,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Media.Capture.IMediaCaptureStatics).abi_FindKnownVideoProfiles(videoDeviceId, name, &_ret));
 		return _ret;
 	}
+	static MediaCapture New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MediaCapture).abi_ActivateInstance(&ret));
+		return ret.as!(MediaCapture);
+	}
 }
 
 interface MediaCaptureDeviceExclusiveControlStatusChangedEventArgs : Windows.Media.Capture.IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs
@@ -4470,6 +4494,12 @@ extern(Windows):
 	final void AlwaysPlaySystemShutterSound(bool value)
 	{
 		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings6).set_AlwaysPlaySystemShutterSound(value));
+	}
+	static MediaCaptureInitializationSettings New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MediaCaptureInitializationSettings).abi_ActivateInstance(&ret));
+		return ret.as!(MediaCaptureInitializationSettings);
 	}
 }
 

@@ -278,6 +278,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Data.Pdf.IPdfPageRenderOptions).set_BitmapEncoderId(value));
 	}
+	static PdfPageRenderOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PdfPageRenderOptions).abi_ActivateInstance(&ret));
+		return ret.as!(PdfPageRenderOptions);
+	}
 }
 
 enum PdfPageRotation

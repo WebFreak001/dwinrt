@@ -556,6 +556,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage3).remove_ShareCompleted(token));
 	}
+	static DataPackage New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DataPackage).abi_ActivateInstance(&ret));
+		return ret.as!(DataPackage);
+	}
 }
 
 interface DataPackagePropertySet : Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet, Windows.Foundation.Collections.IMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)), Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet2, Windows.ApplicationModel.DataTransfer.IDataPackagePropertySet3

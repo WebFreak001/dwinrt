@@ -753,6 +753,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannelOptions).set_Group(value));
 	}
+	static LoggingChannelOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(LoggingChannelOptions).abi_ActivateInstance(&ret));
+		return ret.as!(LoggingChannelOptions);
+	}
 	static Windows.Foundation.Diagnostics.LoggingChannelOptions New(GUID group)
 	{
 		auto factory = factory!(Windows.Foundation.Diagnostics.ILoggingChannelOptionsFactory);
@@ -1225,6 +1231,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddRectArrayWithFormatAndTags(name, __valueSize, value, format, tags));
 	}
+	static LoggingFields New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(LoggingFields).abi_ActivateInstance(&ret));
+		return ret.as!(LoggingFields);
+	}
 }
 
 interface LoggingOptions : Windows.Foundation.Diagnostics.ILoggingOptions
@@ -1290,6 +1302,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).set_RelatedActivityId(value));
 	}
+	static LoggingOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(LoggingOptions).abi_ActivateInstance(&ret));
+		return ret.as!(LoggingOptions);
+	}
 	static Windows.Foundation.Diagnostics.LoggingOptions New(INT64 keywords)
 	{
 		auto factory = factory!(Windows.Foundation.Diagnostics.ILoggingOptionsFactory);
@@ -1351,6 +1369,12 @@ extern(Windows):
 		Windows.Foundation.Diagnostics.ErrorOptions _ret;
 		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IErrorReportingSettings).abi_GetErrorOptions(&_ret));
 		return _ret;
+	}
+	static RuntimeBrokerErrorSettings New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(RuntimeBrokerErrorSettings).abi_ActivateInstance(&ret));
+		return ret.as!(RuntimeBrokerErrorSettings);
 	}
 }
 

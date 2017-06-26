@@ -135,6 +135,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder2).get_VideoProcessingAlgorithm(&_ret));
 		return _ret;
 	}
+	static MediaTranscoder New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MediaTranscoder).abi_ActivateInstance(&ret));
+		return ret.as!(MediaTranscoder);
+	}
 }
 
 interface PrepareTranscodeResult : Windows.Media.Transcoding.IPrepareTranscodeResult

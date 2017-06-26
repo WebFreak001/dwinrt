@@ -418,6 +418,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Devices.Core.IFrameController2).get_FlashControl(&_ret));
 		return _ret;
 	}
+	static FrameController New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(FrameController).abi_ActivateInstance(&ret));
+		return ret.as!(FrameController);
+	}
 }
 
 interface FrameExposureCapabilities : Windows.Media.Devices.Core.IFrameExposureCapabilities

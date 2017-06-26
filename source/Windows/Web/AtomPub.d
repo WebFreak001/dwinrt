@@ -195,6 +195,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationClient).abi_RetrieveFeedAsync(uri, &_ret));
 		return _ret;
 	}
+	static AtomPubClient New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(AtomPubClient).abi_ActivateInstance(&ret));
+		return ret.as!(AtomPubClient);
+	}
 	static Windows.Web.AtomPub.AtomPubClient New(Windows.Security.Credentials.PasswordCredential serverCredential)
 	{
 		auto factory = factory!(Windows.Web.AtomPub.IAtomPubClientFactory);

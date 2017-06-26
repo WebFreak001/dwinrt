@@ -193,6 +193,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).get_CredentialSaveOption(&_ret));
 		return _ret;
 	}
+	static CredentialPickerOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(CredentialPickerOptions).abi_ActivateInstance(&ret));
+		return ret.as!(CredentialPickerOptions);
+	}
 }
 
 interface CredentialPickerResults : Windows.Security.Credentials.UI.ICredentialPickerResults

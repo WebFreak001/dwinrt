@@ -518,6 +518,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Media.Editing.IMediaCompositionStatics).abi_LoadAsync(file, &_ret));
 		return _ret;
 	}
+	static MediaComposition New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MediaComposition).abi_ActivateInstance(&ret));
+		return ret.as!(MediaComposition);
+	}
 }
 
 interface MediaOverlay : Windows.Media.Editing.IMediaOverlay
@@ -611,6 +617,12 @@ extern(Windows):
 		Windows.Media.Effects.IVideoCompositorDefinition _ret;
 		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlayLayer).get_CustomCompositorDefinition(&_ret));
 		return _ret;
+	}
+	static MediaOverlayLayer New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MediaOverlayLayer).abi_ActivateInstance(&ret));
+		return ret.as!(MediaOverlayLayer);
 	}
 	static Windows.Media.Editing.MediaOverlayLayer New(Windows.Media.Effects.IVideoCompositorDefinition compositorDefinition)
 	{

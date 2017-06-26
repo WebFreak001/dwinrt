@@ -821,6 +821,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Networking.Sockets.IDatagramSocketStatics).abi_GetEndpointPairsWithSortOptionsAsync(remoteHostName, remoteServiceName, sortOptions, &_ret));
 		return _ret;
 	}
+	static DatagramSocket New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DatagramSocket).abi_ActivateInstance(&ret));
+		return ret.as!(DatagramSocket);
+	}
 }
 
 interface DatagramSocketControl : Windows.Networking.Sockets.IDatagramSocketControl, Windows.Networking.Sockets.IDatagramSocketControl2, Windows.Networking.Sockets.IDatagramSocketControl3
@@ -1010,6 +1016,12 @@ extern(Windows):
 	final void removeServerCustomValidationRequested(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocket2).remove_ServerCustomValidationRequested(eventCookie));
+	}
+	static MessageWebSocket New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MessageWebSocket).abi_ActivateInstance(&ret));
+		return ret.as!(MessageWebSocket);
 	}
 }
 
@@ -1373,6 +1385,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Networking.Sockets.IStreamSocketStatics).abi_GetEndpointPairsWithSortOptionsAsync(remoteHostName, remoteServiceName, sortOptions, &_ret));
 		return _ret;
 	}
+	static StreamSocket New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(StreamSocket).abi_ActivateInstance(&ret));
+		return ret.as!(StreamSocket);
+	}
 }
 
 interface StreamSocketControl : Windows.Networking.Sockets.IStreamSocketControl, Windows.Networking.Sockets.IStreamSocketControl2, Windows.Networking.Sockets.IStreamSocketControl3
@@ -1620,6 +1638,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener3).abi_TransferOwnershipWithContext(socketId, data));
 	}
+	static StreamSocketListener New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(StreamSocketListener).abi_ActivateInstance(&ret));
+		return ret.as!(StreamSocketListener);
+	}
 }
 
 interface StreamSocketListenerConnectionReceivedEventArgs : Windows.Networking.Sockets.IStreamSocketListenerConnectionReceivedEventArgs
@@ -1763,6 +1787,12 @@ extern(Windows):
 	final void removeServerCustomValidationRequested(EventRegistrationToken eventCookie)
 	{
 		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamWebSocket2).remove_ServerCustomValidationRequested(eventCookie));
+	}
+	static StreamWebSocket New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(StreamWebSocket).abi_ActivateInstance(&ret));
+		return ret.as!(StreamWebSocket);
 	}
 }
 
@@ -1909,6 +1939,12 @@ extern(Windows):
 	final void Run(Windows.ApplicationModel.Background.IBackgroundTaskInstance taskInstance)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBackgroundTask).abi_Run(taskInstance));
+	}
+	static WebSocketKeepAlive New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(WebSocketKeepAlive).abi_ActivateInstance(&ret));
+		return ret.as!(WebSocketKeepAlive);
 	}
 }
 

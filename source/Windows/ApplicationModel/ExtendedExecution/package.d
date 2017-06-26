@@ -93,6 +93,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
 	}
+	static ExtendedExecutionSession New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ExtendedExecutionSession).abi_ActivateInstance(&ret));
+		return ret.as!(ExtendedExecutionSession);
+	}
 }
 
 enum ExtendedExecutionReason

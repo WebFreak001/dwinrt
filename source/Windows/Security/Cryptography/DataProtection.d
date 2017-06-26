@@ -48,6 +48,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Security.Cryptography.DataProtection.IDataProtectionProvider).abi_UnprotectStreamAsync(src, dest, &_ret));
 		return _ret;
 	}
+	static DataProtectionProvider New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DataProtectionProvider).abi_ActivateInstance(&ret));
+		return ret.as!(DataProtectionProvider);
+	}
 	static Windows.Security.Cryptography.DataProtection.DataProtectionProvider New(HSTRING protectionDescriptor)
 	{
 		auto factory = factory!(Windows.Security.Cryptography.DataProtection.IDataProtectionProviderFactory);

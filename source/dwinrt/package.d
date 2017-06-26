@@ -692,8 +692,7 @@ extern (Windows):
 	}
 }
 
-final class GenericAgileHandler(T, Args...)
-	: AgileObject!(GenericAgileHandler!(T, Args)), T
+final class GenericAgileHandler(T, Args...) : AgileObject!(GenericAgileHandler!(T, Args)), T
 {
 extern (Windows):
 	override HRESULT abi_Invoke(Args args)
@@ -1238,16 +1237,15 @@ extern (Windows):
 	}
 }
 
-class TypedEvent(TSender, TArgs, Base = Windows.Foundation.TypedEventHandler!(TSender, TArgs))
-	: ComObject, Base
+class TypedEvent(Base, Args...) : ComObject, Base
 {
-	alias Callback = extern (Windows) void delegate(TSender, TArgs);
+	alias Callback = extern (Windows) void delegate(Args);
 
 	extern (Windows)
 	{
-		override HRESULT abi_Invoke(TSender sender, TArgs args)
+		override HRESULT abi_Invoke(Args args)
 		{
-			callback(sender, args);
+			callback(args);
 			return S_OK;
 		}
 	}
@@ -1259,17 +1257,26 @@ class TypedEvent(TSender, TArgs, Base = Windows.Foundation.TypedEventHandler!(TS
 		this.callback = callback;
 	}
 
-	void opCall(TSender sender, TArgs args)
+	void opCall(Args args)
 	{
-		callback(sender, args);
+		callback(args);
 	}
 }
 
-auto event(Base = Windows.Foundation.TypedEventHandler!(TSender, TArgs), TSender, TArgs, Fn)(Fn cb)
+alias DCallbackFunc(T...) = extern (D) void delegate(T);
+
+auto event(Base, TArgs...)(DCallbackFunc!TArgs cb)
 {
-	return new TypedEvent!(TSender, TArgs, Base)((sender, args) {
-		cb(sender, args);
+	return new TypedEvent!(Base, TArgs)(cast(WindowsCallbackFunc!TArgs)(TArgs args) {
+		cb(args);
 	});
+}
+
+alias WindowsCallbackFunc(T...) = extern (Windows) void delegate(T);
+
+auto event(Base, TArgs...)(WindowsCallbackFunc!TArgs cb)
+{
+	return new TypedEvent!(Base, TArgs)(cb);
 }
 
 struct makable(Composable, Class, Interface)
@@ -1286,7 +1293,8 @@ auto make(T, Args...)(Args args)
 		{
 			T t = new T(args);
 			Class inst;
-			Debug.OK(activationFactory!(Class, Interface).abi_CreateInstance(t, &t.m_inner, &inst));
+			Debug.OK(activationFactory!(Class, Interface)
+					.abi_CreateInstance(t, &t.m_inner, &inst));
 			return t.as!Composable;
 		}
 	}

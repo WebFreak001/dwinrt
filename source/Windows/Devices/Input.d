@@ -113,6 +113,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Input.IKeyboardCapabilities).get_KeyboardPresent(&_ret));
 		return _ret;
 	}
+	static KeyboardCapabilities New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(KeyboardCapabilities).abi_ActivateInstance(&ret));
+		return ret.as!(KeyboardCapabilities);
+	}
 }
 
 interface MouseCapabilities : Windows.Devices.Input.IMouseCapabilities
@@ -147,6 +153,12 @@ extern(Windows):
 		UINT32 _ret;
 		Debug.OK(this.as!(Windows.Devices.Input.IMouseCapabilities).get_NumberOfButtons(&_ret));
 		return _ret;
+	}
+	static MouseCapabilities New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MouseCapabilities).abi_ActivateInstance(&ret));
+		return ret.as!(MouseCapabilities);
 	}
 }
 
@@ -269,6 +281,12 @@ extern(Windows):
 		UINT32 _ret;
 		Debug.OK(this.as!(Windows.Devices.Input.ITouchCapabilities).get_Contacts(&_ret));
 		return _ret;
+	}
+	static TouchCapabilities New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(TouchCapabilities).abi_ActivateInstance(&ret));
+		return ret.as!(TouchCapabilities);
 	}
 }
 

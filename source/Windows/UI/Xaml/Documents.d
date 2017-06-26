@@ -760,6 +760,12 @@ extern(Windows):
 
 interface Bold : Windows.UI.Xaml.Documents.Span, Windows.UI.Xaml.Documents.IBold
 {
+	static Bold New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Bold).abi_ActivateInstance(&ret));
+		return ret.as!(Bold);
+	}
 }
 
 interface Glyphs : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Documents.IGlyphs, Windows.UI.Xaml.Documents.IGlyphs2
@@ -920,6 +926,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IGlyphsStatics).get_FillProperty(&_ret));
 		return _ret;
 	}
+	static Glyphs New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Glyphs).abi_ActivateInstance(&ret));
+		return ret.as!(Glyphs);
+	}
 }
 
 interface Hyperlink : Windows.UI.Xaml.Documents.Span, Windows.UI.Xaml.Documents.IHyperlink, Windows.UI.Xaml.Documents.IHyperlink2, Windows.UI.Xaml.Documents.IHyperlink3, Windows.UI.Xaml.Documents.IHyperlink4
@@ -1051,9 +1063,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).set_XYFocusRightNavigationStrategy(value));
 	}
+	final EventRegistrationToken OnGotFocus(void delegate(IInspectable, Windows.UI.Xaml.RoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).add_GotFocus(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeGotFocus(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).remove_GotFocus(token));
+	}
+	final EventRegistrationToken OnLostFocus(void delegate(IInspectable, Windows.UI.Xaml.RoutedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).add_LostFocus(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeLostFocus(EventRegistrationToken token)
 	{
@@ -1077,6 +1101,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IHyperlinkStatics).get_NavigateUriProperty(&_ret));
 		return _ret;
+	}
+	static Hyperlink New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Hyperlink).abi_ActivateInstance(&ret));
+		return ret.as!(Hyperlink);
 	}
 }
 
@@ -1185,14 +1215,32 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IInlineUIContainer).set_Child(value));
 	}
+	static InlineUIContainer New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(InlineUIContainer).abi_ActivateInstance(&ret));
+		return ret.as!(InlineUIContainer);
+	}
 }
 
 interface Italic : Windows.UI.Xaml.Documents.Span, Windows.UI.Xaml.Documents.IItalic
 {
+	static Italic New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Italic).abi_ActivateInstance(&ret));
+		return ret.as!(Italic);
+	}
 }
 
 interface LineBreak : Windows.UI.Xaml.Documents.Inline, Windows.UI.Xaml.Documents.ILineBreak
 {
+	static LineBreak New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(LineBreak).abi_ActivateInstance(&ret));
+		return ret.as!(LineBreak);
+	}
 }
 
 interface Paragraph : Windows.UI.Xaml.Documents.Block, Windows.UI.Xaml.Documents.IParagraph
@@ -1226,6 +1274,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IParagraphStatics).get_TextIndentProperty(&_ret));
 		return _ret;
+	}
+	static Paragraph New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Paragraph).abi_ActivateInstance(&ret));
+		return ret.as!(Paragraph);
 	}
 }
 
@@ -1264,6 +1318,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IRunStatics).get_FlowDirectionProperty(&_ret));
 		return _ret;
+	}
+	static Run New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Run).abi_ActivateInstance(&ret));
+		return ret.as!(Run);
 	}
 }
 
@@ -2420,6 +2480,12 @@ interface Typography : Windows.UI.Xaml.Documents.ITypography
 
 interface Underline : Windows.UI.Xaml.Documents.Span, Windows.UI.Xaml.Documents.IUnderline
 {
+	static Underline New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Underline).abi_ActivateInstance(&ret));
+		return ret.as!(Underline);
+	}
 }
 
 enum LogicalDirection

@@ -267,6 +267,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Search.ILocalContentSuggestionSettings).get_PropertiesToMatch(&_ret));
 		return _ret;
 	}
+	static LocalContentSuggestionSettings New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(LocalContentSuggestionSettings).abi_ActivateInstance(&ret));
+		return ret.as!(LocalContentSuggestionSettings);
+	}
 }
 
 interface SearchPane : Windows.ApplicationModel.Search.ISearchPane

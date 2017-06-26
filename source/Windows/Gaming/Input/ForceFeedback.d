@@ -179,6 +179,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Gaming.Input.ForceFeedback.IConstantForceEffect).abi_SetParametersWithEnvelope(vector, attackGain, sustainGain, releaseGain, startDelay, attackDuration, sustainDuration, releaseDuration, repeatCount));
 	}
+	static ConstantForceEffect New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ConstantForceEffect).abi_ActivateInstance(&ret));
+		return ret.as!(ConstantForceEffect);
+	}
 }
 
 interface ForceFeedbackMotor : Windows.Gaming.Input.ForceFeedback.IForceFeedbackMotor
@@ -340,6 +346,12 @@ extern(Windows):
 	final void SetParametersWithEnvelope(Windows.Foundation.Numerics.Vector3 startVector, Windows.Foundation.Numerics.Vector3 endVector, float attackGain, float sustainGain, float releaseGain, Windows.Foundation.TimeSpan startDelay, Windows.Foundation.TimeSpan attackDuration, Windows.Foundation.TimeSpan sustainDuration, Windows.Foundation.TimeSpan releaseDuration, UINT32 repeatCount)
 	{
 		Debug.OK(this.as!(Windows.Gaming.Input.ForceFeedback.IRampForceEffect).abi_SetParametersWithEnvelope(startVector, endVector, attackGain, sustainGain, releaseGain, startDelay, attackDuration, sustainDuration, releaseDuration, repeatCount));
+	}
+	static RampForceEffect New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(RampForceEffect).abi_ActivateInstance(&ret));
+		return ret.as!(RampForceEffect);
 	}
 }
 

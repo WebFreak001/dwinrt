@@ -988,6 +988,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).remove_CrossSliding(cookie));
 	}
+	static GestureRecognizer New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(GestureRecognizer).abi_ActivateInstance(&ret));
+		return ret.as!(GestureRecognizer);
+	}
 }
 
 interface HoldingEventArgs : Windows.UI.Input.IHoldingEventArgs

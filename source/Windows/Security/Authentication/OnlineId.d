@@ -141,6 +141,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator).get_AuthenticatedSafeCustomerId(&_ret));
 		return _ret;
 	}
+	static OnlineIdAuthenticator New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(OnlineIdAuthenticator).abi_ActivateInstance(&ret));
+		return ret.as!(OnlineIdAuthenticator);
+	}
 }
 
 interface OnlineIdServiceTicket : Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicket

@@ -1016,6 +1016,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IApplicationTrigger).abi_RequestAsyncWithArguments(arguments, &_ret));
 		return _ret;
 	}
+	static ApplicationTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ApplicationTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(ApplicationTrigger);
+	}
 }
 
 interface ApplicationTriggerDetails : Windows.ApplicationModel.Background.IApplicationTriggerDetails
@@ -1031,6 +1037,12 @@ extern(Windows):
 
 interface AppointmentStoreNotificationTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger, Windows.ApplicationModel.Background.IAppointmentStoreNotificationTrigger
 {
+	static AppointmentStoreNotificationTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(AppointmentStoreNotificationTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(AppointmentStoreNotificationTrigger);
+	}
 }
 
 interface BackgroundExecutionManager
@@ -1142,6 +1154,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBackgroundTaskBuilder4).set_TaskGroup(value));
 	}
+	static BackgroundTaskBuilder New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BackgroundTaskBuilder).abi_ActivateInstance(&ret));
+		return ret.as!(BackgroundTaskBuilder);
+	}
 }
 
 interface BackgroundTaskCompletedEventArgs : Windows.ApplicationModel.Background.IBackgroundTaskCompletedEventArgs
@@ -1200,9 +1218,21 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBackgroundTaskRegistration).get_Name(&_ret));
 		return _ret;
 	}
+	final EventRegistrationToken OnProgress(void delegate(Windows.ApplicationModel.Background.BackgroundTaskRegistration, Windows.ApplicationModel.Background.BackgroundTaskProgressEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBackgroundTaskRegistration).add_Progress(event!(Windows.ApplicationModel.Background.BackgroundTaskProgressEventHandler, Windows.ApplicationModel.Background.BackgroundTaskRegistration, Windows.ApplicationModel.Background.BackgroundTaskProgressEventArgs)(fn), &tok));
+		return tok;
+	}
 	final void removeProgress(EventRegistrationToken cookie)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBackgroundTaskRegistration).remove_Progress(cookie));
+	}
+	final EventRegistrationToken OnCompleted(void delegate(Windows.ApplicationModel.Background.BackgroundTaskRegistration, Windows.ApplicationModel.Background.BackgroundTaskCompletedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBackgroundTaskRegistration).add_Completed(event!(Windows.ApplicationModel.Background.BackgroundTaskCompletedEventHandler, Windows.ApplicationModel.Background.BackgroundTaskRegistration, Windows.ApplicationModel.Background.BackgroundTaskCompletedEventArgs)(fn), &tok));
+		return tok;
 	}
 	final void removeCompleted(EventRegistrationToken cookie)
 	{
@@ -1311,6 +1341,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBluetoothLEAdvertisementPublisherTrigger).get_Advertisement(&_ret));
 		return _ret;
 	}
+	static BluetoothLEAdvertisementPublisherTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BluetoothLEAdvertisementPublisherTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(BluetoothLEAdvertisementPublisherTrigger);
+	}
 }
 
 interface BluetoothLEAdvertisementWatcherTrigger : Windows.ApplicationModel.Background.IBluetoothLEAdvertisementWatcherTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
@@ -1360,10 +1396,22 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBluetoothLEAdvertisementWatcherTrigger).set_AdvertisementFilter(value));
 	}
+	static BluetoothLEAdvertisementWatcherTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BluetoothLEAdvertisementWatcherTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(BluetoothLEAdvertisementWatcherTrigger);
+	}
 }
 
 interface CachedFileUpdaterTrigger : Windows.ApplicationModel.Background.ICachedFileUpdaterTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
+	static CachedFileUpdaterTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(CachedFileUpdaterTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(CachedFileUpdaterTrigger);
+	}
 }
 
 interface CachedFileUpdaterTriggerDetails : Windows.ApplicationModel.Background.ICachedFileUpdaterTriggerDetails
@@ -1391,14 +1439,32 @@ extern(Windows):
 
 interface ChatMessageNotificationTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger, Windows.ApplicationModel.Background.IChatMessageNotificationTrigger
 {
+	static ChatMessageNotificationTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ChatMessageNotificationTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(ChatMessageNotificationTrigger);
+	}
 }
 
 interface ChatMessageReceivedNotificationTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger, Windows.ApplicationModel.Background.IChatMessageReceivedNotificationTrigger
 {
+	static ChatMessageReceivedNotificationTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ChatMessageReceivedNotificationTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(ChatMessageReceivedNotificationTrigger);
+	}
 }
 
 interface ContactStoreNotificationTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger, Windows.ApplicationModel.Background.IContactStoreNotificationTrigger
 {
+	static ContactStoreNotificationTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ContactStoreNotificationTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(ContactStoreNotificationTrigger);
+	}
 }
 
 interface ContentPrefetchTrigger : Windows.ApplicationModel.Background.IContentPrefetchTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
@@ -1409,6 +1475,12 @@ extern(Windows):
 		Windows.Foundation.TimeSpan _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IContentPrefetchTrigger).get_WaitInterval(&_ret));
 		return _ret;
+	}
+	static ContentPrefetchTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ContentPrefetchTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(ContentPrefetchTrigger);
 	}
 	static Windows.ApplicationModel.Background.ContentPrefetchTrigger New(Windows.Foundation.TimeSpan waitInterval)
 	{
@@ -1498,6 +1570,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IDeviceServicingTrigger).abi_RequestAsyncWithArguments(deviceId, expectedDuration, arguments, &_ret));
 		return _ret;
 	}
+	static DeviceServicingTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DeviceServicingTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(DeviceServicingTrigger);
+	}
 }
 
 interface DeviceUseTrigger : Windows.ApplicationModel.Background.IDeviceUseTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
@@ -1515,6 +1593,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IDeviceUseTrigger).abi_RequestAsyncWithArguments(deviceId, arguments, &_ret));
 		return _ret;
 	}
+	static DeviceUseTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DeviceUseTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(DeviceUseTrigger);
+	}
 }
 
 interface DeviceWatcherTrigger : Windows.ApplicationModel.Background.IDeviceWatcherTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
@@ -1523,6 +1607,12 @@ interface DeviceWatcherTrigger : Windows.ApplicationModel.Background.IDeviceWatc
 
 interface EmailStoreNotificationTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger, Windows.ApplicationModel.Background.IEmailStoreNotificationTrigger
 {
+	static EmailStoreNotificationTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(EmailStoreNotificationTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(EmailStoreNotificationTrigger);
+	}
 }
 
 interface GattCharacteristicNotificationTrigger : Windows.ApplicationModel.Background.IGattCharacteristicNotificationTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger, Windows.ApplicationModel.Background.IGattCharacteristicNotificationTrigger2
@@ -1663,26 +1753,62 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IMediaProcessingTrigger).abi_RequestAsyncWithArguments(arguments, &_ret));
 		return _ret;
 	}
+	static MediaProcessingTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MediaProcessingTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(MediaProcessingTrigger);
+	}
 }
 
 interface MobileBroadbandDeviceServiceNotificationTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger
 {
+	static MobileBroadbandDeviceServiceNotificationTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MobileBroadbandDeviceServiceNotificationTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(MobileBroadbandDeviceServiceNotificationTrigger);
+	}
 }
 
 interface MobileBroadbandPinLockStateChangeTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger
 {
+	static MobileBroadbandPinLockStateChangeTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MobileBroadbandPinLockStateChangeTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(MobileBroadbandPinLockStateChangeTrigger);
+	}
 }
 
 interface MobileBroadbandRadioStateChangeTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger
 {
+	static MobileBroadbandRadioStateChangeTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MobileBroadbandRadioStateChangeTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(MobileBroadbandRadioStateChangeTrigger);
+	}
 }
 
 interface MobileBroadbandRegistrationStateChangeTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger
 {
+	static MobileBroadbandRegistrationStateChangeTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MobileBroadbandRegistrationStateChangeTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(MobileBroadbandRegistrationStateChangeTrigger);
+	}
 }
 
 interface NetworkOperatorHotspotAuthenticationTrigger : Windows.ApplicationModel.Background.INetworkOperatorHotspotAuthenticationTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
+	static NetworkOperatorHotspotAuthenticationTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(NetworkOperatorHotspotAuthenticationTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(NetworkOperatorHotspotAuthenticationTrigger);
+	}
 }
 
 interface NetworkOperatorNotificationTrigger : Windows.ApplicationModel.Background.INetworkOperatorNotificationTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
@@ -1729,6 +1855,12 @@ extern(Windows):
 
 interface PushNotificationTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger
 {
+	static PushNotificationTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PushNotificationTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(PushNotificationTrigger);
+	}
 	static Windows.ApplicationModel.Background.PushNotificationTrigger New(HSTRING applicationId)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Background.IPushNotificationTriggerFactory);
@@ -1740,6 +1872,12 @@ interface PushNotificationTrigger : Windows.ApplicationModel.Background.IBackgro
 
 interface RcsEndUserMessageAvailableTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger, Windows.ApplicationModel.Background.IRcsEndUserMessageAvailableTrigger
 {
+	static RcsEndUserMessageAvailableTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(RcsEndUserMessageAvailableTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(RcsEndUserMessageAvailableTrigger);
+	}
 }
 
 interface RfcommConnectionTrigger : Windows.ApplicationModel.Background.IRfcommConnectionTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
@@ -1787,10 +1925,22 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IRfcommConnectionTrigger).set_RemoteHostName(value));
 	}
+	static RfcommConnectionTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(RfcommConnectionTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(RfcommConnectionTrigger);
+	}
 }
 
 interface SecondaryAuthenticationFactorAuthenticationTrigger : Windows.ApplicationModel.Background.ISecondaryAuthenticationFactorAuthenticationTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
+	static SecondaryAuthenticationFactorAuthenticationTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SecondaryAuthenticationFactorAuthenticationTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(SecondaryAuthenticationFactorAuthenticationTrigger);
+	}
 }
 
 interface SensorDataThresholdTrigger : Windows.ApplicationModel.Background.ISensorDataThresholdTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
@@ -1823,6 +1973,12 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.ISocketActivityTrigger).get_IsWakeFromLowPowerSupported(&_ret));
 		return _ret;
+	}
+	static SocketActivityTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SocketActivityTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(SocketActivityTrigger);
 	}
 }
 
@@ -1916,6 +2072,12 @@ extern(Windows):
 
 interface ToastNotificationActionTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger
 {
+	static ToastNotificationActionTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ToastNotificationActionTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(ToastNotificationActionTrigger);
+	}
 	static Windows.ApplicationModel.Background.ToastNotificationActionTrigger New(HSTRING applicationId)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Background.IToastNotificationActionTriggerFactory);
@@ -1927,6 +2089,12 @@ interface ToastNotificationActionTrigger : Windows.ApplicationModel.Background.I
 
 interface ToastNotificationHistoryChangedTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger
 {
+	static ToastNotificationHistoryChangedTrigger New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ToastNotificationHistoryChangedTrigger).abi_ActivateInstance(&ret));
+		return ret.as!(ToastNotificationHistoryChangedTrigger);
+	}
 	static Windows.ApplicationModel.Background.ToastNotificationHistoryChangedTrigger New(HSTRING applicationId)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Background.IToastNotificationHistoryChangedTriggerFactory);

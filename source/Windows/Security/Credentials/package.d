@@ -339,6 +339,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Security.Credentials.IPasswordCredential).get_Properties(&_ret));
 		return _ret;
 	}
+	static PasswordCredential New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PasswordCredential).abi_ActivateInstance(&ret));
+		return ret.as!(PasswordCredential);
+	}
 	static Windows.Security.Credentials.PasswordCredential New(HSTRING resource, HSTRING userName, HSTRING password)
 	{
 		auto factory = factory!(Windows.Security.Credentials.ICredentialFactory);
@@ -397,6 +403,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))).abi_First(out_first));
 	}
+	static PasswordCredentialPropertyStore New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PasswordCredentialPropertyStore).abi_ActivateInstance(&ret));
+		return ret.as!(PasswordCredentialPropertyStore);
+	}
 }
 
 interface PasswordVault : Windows.Security.Credentials.IPasswordVault
@@ -433,6 +445,12 @@ extern(Windows):
 		Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.PasswordCredential) _ret;
 		Debug.OK(this.as!(Windows.Security.Credentials.IPasswordVault).abi_RetrieveAll(&_ret));
 		return _ret;
+	}
+	static PasswordVault New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PasswordVault).abi_ActivateInstance(&ret));
+		return ret.as!(PasswordVault);
 	}
 }
 

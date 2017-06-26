@@ -2277,6 +2277,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositor3).abi_CreateHostBackdropBrush(&_ret));
 		return _ret;
 	}
+	static Compositor New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Compositor).abi_ActivateInstance(&ret));
+		return ret.as!(Compositor);
+	}
 }
 
 interface ContainerVisual : Windows.UI.Composition.Visual, Windows.UI.Composition.IContainerVisual

@@ -450,9 +450,21 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).abi_StopPublishingMessage(messageId));
 	}
+	final EventRegistrationToken OnDeviceArrived(void delegate(Windows.Networking.Proximity.ProximityDevice) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).add_DeviceArrived(event!(Windows.Networking.Proximity.DeviceArrivedEventHandler, Windows.Networking.Proximity.ProximityDevice)(fn), &tok));
+		return tok;
+	}
 	final void removeDeviceArrived(EventRegistrationToken cookie)
 	{
 		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).remove_DeviceArrived(cookie));
+	}
+	final EventRegistrationToken OnDeviceDeparted(void delegate(Windows.Networking.Proximity.ProximityDevice) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).add_DeviceDeparted(event!(Windows.Networking.Proximity.DeviceDepartedEventHandler, Windows.Networking.Proximity.ProximityDevice)(fn), &tok));
+		return tok;
 	}
 	final void removeDeviceDeparted(EventRegistrationToken cookie)
 	{

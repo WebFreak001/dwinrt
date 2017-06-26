@@ -701,6 +701,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalyzer).abi_AnalyzeAsync(&_ret));
 		return _ret;
 	}
+	static InkAnalyzer New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(InkAnalyzer).abi_ActivateInstance(&ret));
+		return ret.as!(InkAnalyzer);
+	}
 }
 
 enum InkAnalysisDrawingKind

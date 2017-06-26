@@ -119,6 +119,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatterStatics).abi_WrapWithLeftToRightMarkers(number, &_ret));
 		return _ret;
 	}
+	static PhoneNumberFormatter New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PhoneNumberFormatter).abi_ActivateInstance(&ret));
+		return ret.as!(PhoneNumberFormatter);
+	}
 }
 
 interface PhoneNumberInfo : Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo, Windows.Foundation.IStringable

@@ -325,6 +325,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Resources.Core.IResourceContextStatics).abi_CreateMatchingContext(result, &_ret));
 		return _ret;
 	}
+	static ResourceContext New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ResourceContext).abi_ActivateInstance(&ret));
+		return ret.as!(ResourceContext);
+	}
 }
 
 interface ResourceContextLanguagesVectorView : Windows.Foundation.Collections.IVectorView!(HSTRING), Windows.Foundation.Collections.IIterable!(HSTRING)

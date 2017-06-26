@@ -1109,6 +1109,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Globalization.ITimeZoneOnCalendar).abi_TimeZoneAsString(idealLength, &_ret));
 		return _ret;
 	}
+	static Calendar New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(Calendar).abi_ActivateInstance(&ret));
+		return ret.as!(Calendar);
+	}
 	static Windows.Globalization.Calendar New(Windows.Foundation.Collections.IIterable!(HSTRING) languages)
 	{
 		auto factory = factory!(Windows.Globalization.ICalendarFactory);
@@ -2220,6 +2226,12 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(staticInstance.as!(Windows.Globalization.IGeographicRegionStatics).abi_IsSupported(geographicRegionCode, &_ret));
 		return _ret;
+	}
+	static GeographicRegion New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(GeographicRegion).abi_ActivateInstance(&ret));
+		return ret.as!(GeographicRegion);
 	}
 	static Windows.Globalization.GeographicRegion New(HSTRING geographicRegionCode)
 	{

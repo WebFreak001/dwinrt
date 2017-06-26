@@ -330,6 +330,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3DStatics).get_TranslateZProperty(&_ret));
 		return _ret;
 	}
+	static CompositeTransform3D New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(CompositeTransform3D).abi_ActivateInstance(&ret));
+		return ret.as!(CompositeTransform3D);
+	}
 }
 
 interface Matrix3DHelper : Windows.UI.Xaml.Media.Media3D.IMatrix3DHelper
@@ -435,6 +441,12 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Media3D.IPerspectiveTransform3DStatics).get_OffsetYProperty(&_ret));
 		return _ret;
+	}
+	static PerspectiveTransform3D New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PerspectiveTransform3D).abi_ActivateInstance(&ret));
+		return ret.as!(PerspectiveTransform3D);
 	}
 }
 

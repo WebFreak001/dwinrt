@@ -1620,6 +1620,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristicParameters).get_PresentationFormats(&_ret));
 		return _ret;
 	}
+	static GattLocalCharacteristicParameters New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(GattLocalCharacteristicParameters).abi_ActivateInstance(&ret));
+		return ret.as!(GattLocalCharacteristicParameters);
+	}
 }
 
 interface GattLocalCharacteristicResult : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristicResult
@@ -1720,6 +1726,12 @@ extern(Windows):
 		Windows.Devices.Bluetooth.GenericAttributeProfile.GattProtectionLevel _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalDescriptorParameters).get_WriteProtectionLevel(&_ret));
 		return _ret;
+	}
+	static GattLocalDescriptorParameters New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(GattLocalDescriptorParameters).abi_ActivateInstance(&ret));
+		return ret.as!(GattLocalDescriptorParameters);
 	}
 }
 
@@ -2224,6 +2236,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattReliableWriteTransaction2).abi_CommitWithResultAsync(&_ret));
 		return _ret;
 	}
+	static GattReliableWriteTransaction New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(GattReliableWriteTransaction).abi_ActivateInstance(&ret));
+		return ret.as!(GattReliableWriteTransaction);
+	}
 }
 
 interface GattRequestStateChangedEventArgs : Windows.Devices.Bluetooth.GenericAttributeProfile.IGattRequestStateChangedEventArgs
@@ -2334,6 +2352,12 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisingParameters).get_IsDiscoverable(&_ret));
 		return _ret;
+	}
+	static GattServiceProviderAdvertisingParameters New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(GattServiceProviderAdvertisingParameters).abi_ActivateInstance(&ret));
+		return ret.as!(GattServiceProviderAdvertisingParameters);
 	}
 }
 

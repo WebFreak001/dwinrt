@@ -557,6 +557,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Input.Inking.IInkDrawingAttributesStatics).abi_CreateForPencil(&_ret));
 		return _ret;
 	}
+	static InkDrawingAttributes New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(InkDrawingAttributes).abi_ActivateInstance(&ret));
+		return ret.as!(InkDrawingAttributes);
+	}
 }
 
 interface InkDrawingAttributesPencilProperties : Windows.UI.Input.Inking.IInkDrawingAttributesPencilProperties
@@ -731,6 +737,12 @@ extern(Windows):
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult) _ret;
 		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_GetRecognitionResults(&_ret));
 		return _ret;
+	}
+	static InkManager New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(InkManager).abi_ActivateInstance(&ret));
+		return ret.as!(InkManager);
 	}
 }
 
@@ -1158,6 +1170,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkRecognizerContainer).abi_GetRecognizers(&_ret));
 		return _ret;
 	}
+	static InkRecognizerContainer New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(InkRecognizerContainer).abi_ActivateInstance(&ret));
+		return ret.as!(InkRecognizerContainer);
+	}
 }
 
 interface InkStroke : Windows.UI.Input.Inking.IInkStroke, Windows.UI.Input.Inking.IInkStroke2, Windows.UI.Input.Inking.IInkStroke3
@@ -1292,6 +1310,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeBuilder3).abi_CreateStrokeFromInkPoints(inkPoints, transform, strokeStartedTime, strokeDuration, &_ret));
 		return _ret;
 	}
+	static InkStrokeBuilder New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(InkStrokeBuilder).abi_ActivateInstance(&ret));
+		return ret.as!(InkStrokeBuilder);
+	}
 }
 
 interface InkStrokeContainer : Windows.UI.Input.Inking.IInkStrokeContainer, Windows.UI.Input.Inking.IInkStrokeContainer2, Windows.UI.Input.Inking.IInkStrokeContainer3
@@ -1394,6 +1418,12 @@ extern(Windows):
 		Windows.UI.Input.Inking.InkStroke _ret;
 		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer3).abi_GetStrokeById(id, &_ret));
 		return _ret;
+	}
+	static InkStrokeContainer New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(InkStrokeContainer).abi_ActivateInstance(&ret));
+		return ret.as!(InkStrokeContainer);
 	}
 }
 

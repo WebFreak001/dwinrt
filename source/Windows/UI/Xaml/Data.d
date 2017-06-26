@@ -647,6 +647,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Data.ICollectionViewSourceStatics).get_ItemsPathProperty(&_ret));
 		return _ret;
 	}
+	static CollectionViewSource New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(CollectionViewSource).abi_ActivateInstance(&ret));
+		return ret.as!(CollectionViewSource);
+	}
 }
 
 interface CurrentChangingEventArgs : Windows.UI.Xaml.Data.ICurrentChangingEventArgs

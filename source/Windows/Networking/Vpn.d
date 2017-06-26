@@ -903,6 +903,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Bordered(&_ret));
 		return _ret;
 	}
+	static VpnCustomCheckBox New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VpnCustomCheckBox).abi_ActivateInstance(&ret));
+		return ret.as!(VpnCustomCheckBox);
+	}
 }
 
 interface VpnCustomComboBox : Windows.Networking.Vpn.IVpnCustomComboBox, Windows.Networking.Vpn.IVpnCustomPrompt
@@ -953,6 +959,12 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Bordered(&_ret));
 		return _ret;
+	}
+	static VpnCustomComboBox New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VpnCustomComboBox).abi_ActivateInstance(&ret));
+		return ret.as!(VpnCustomComboBox);
 	}
 }
 
@@ -1015,6 +1027,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Bordered(&_ret));
 		return _ret;
 	}
+	static VpnCustomEditBox New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VpnCustomEditBox).abi_ActivateInstance(&ret));
+		return ret.as!(VpnCustomEditBox);
+	}
 }
 
 interface VpnCustomErrorBox : Windows.Networking.Vpn.IVpnCustomErrorBox, Windows.Networking.Vpn.IVpnCustomPrompt
@@ -1049,6 +1067,12 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Bordered(&_ret));
 		return _ret;
+	}
+	static VpnCustomErrorBox New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VpnCustomErrorBox).abi_ActivateInstance(&ret));
+		return ret.as!(VpnCustomErrorBox);
 	}
 }
 
@@ -1101,6 +1125,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_Emphasized(&_ret));
 		return _ret;
 	}
+	static VpnCustomPromptBooleanInput New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VpnCustomPromptBooleanInput).abi_ActivateInstance(&ret));
+		return ret.as!(VpnCustomPromptBooleanInput);
+	}
 }
 
 interface VpnCustomPromptOptionSelector : Windows.Networking.Vpn.IVpnCustomPromptOptionSelector, Windows.Networking.Vpn.IVpnCustomPromptElement
@@ -1148,6 +1178,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_Emphasized(&_ret));
 		return _ret;
 	}
+	static VpnCustomPromptOptionSelector New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VpnCustomPromptOptionSelector).abi_ActivateInstance(&ret));
+		return ret.as!(VpnCustomPromptOptionSelector);
+	}
 }
 
 interface VpnCustomPromptText : Windows.Networking.Vpn.IVpnCustomPromptText, Windows.Networking.Vpn.IVpnCustomPromptElement
@@ -1192,6 +1228,12 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_Emphasized(&_ret));
 		return _ret;
+	}
+	static VpnCustomPromptText New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VpnCustomPromptText).abi_ActivateInstance(&ret));
+		return ret.as!(VpnCustomPromptText);
 	}
 }
 
@@ -1254,6 +1296,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_Emphasized(&_ret));
 		return _ret;
 	}
+	static VpnCustomPromptTextInput New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VpnCustomPromptTextInput).abi_ActivateInstance(&ret));
+		return ret.as!(VpnCustomPromptTextInput);
+	}
 }
 
 interface VpnCustomTextBox : Windows.Networking.Vpn.IVpnCustomTextBox, Windows.Networking.Vpn.IVpnCustomPrompt
@@ -1299,6 +1347,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Bordered(&_ret));
 		return _ret;
 	}
+	static VpnCustomTextBox New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VpnCustomTextBox).abi_ActivateInstance(&ret));
+		return ret.as!(VpnCustomTextBox);
+	}
 }
 
 interface VpnDomainNameAssignment : Windows.Networking.Vpn.IVpnDomainNameAssignment
@@ -1319,6 +1373,12 @@ extern(Windows):
 		Windows.Foundation.Uri _ret;
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnDomainNameAssignment).get_ProxyAutoConfigurationUri(&_ret));
 		return _ret;
+	}
+	static VpnDomainNameAssignment New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VpnDomainNameAssignment).abi_ActivateInstance(&ret));
+		return ret.as!(VpnDomainNameAssignment);
 	}
 }
 
@@ -1445,6 +1505,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnManagementAgent).abi_DisconnectProfileAsync(profile, &_ret));
 		return _ret;
 	}
+	static VpnManagementAgent New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VpnManagementAgent).abi_ActivateInstance(&ret));
+		return ret.as!(VpnManagementAgent);
+	}
 }
 
 interface VpnNamespaceAssignment : Windows.Networking.Vpn.IVpnNamespaceAssignment
@@ -1469,6 +1535,12 @@ extern(Windows):
 		Windows.Foundation.Uri _ret;
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNamespaceAssignment).get_ProxyAutoConfigUri(&_ret));
 		return _ret;
+	}
+	static VpnNamespaceAssignment New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VpnNamespaceAssignment).abi_ActivateInstance(&ret));
+		return ret.as!(VpnNamespaceAssignment);
 	}
 }
 
@@ -1642,6 +1714,12 @@ extern(Windows):
 		Windows.Networking.Vpn.VpnManagementConnectionStatus _ret;
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile2).get_ConnectionStatus(&_ret));
 		return _ret;
+	}
+	static VpnNativeProfile New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VpnNativeProfile).abi_ActivateInstance(&ret));
+		return ret.as!(VpnNativeProfile);
 	}
 }
 
@@ -1860,6 +1938,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPlugInProfile2).get_ConnectionStatus(&_ret));
 		return _ret;
 	}
+	static VpnPlugInProfile New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VpnPlugInProfile).abi_ActivateInstance(&ret));
+		return ret.as!(VpnPlugInProfile);
+	}
 }
 
 interface VpnRoute : Windows.Networking.Vpn.IVpnRoute
@@ -1946,6 +2030,12 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRouteAssignment).get_ExcludeLocalSubnets(&_ret));
 		return _ret;
+	}
+	static VpnRouteAssignment New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VpnRouteAssignment).abi_ActivateInstance(&ret));
+		return ret.as!(VpnRouteAssignment);
 	}
 }
 
@@ -2060,6 +2150,12 @@ extern(Windows):
 	final void AllowInbound(bool value)
 	{
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilterAssignment).set_AllowInbound(value));
+	}
+	static VpnTrafficFilterAssignment New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(VpnTrafficFilterAssignment).abi_ActivateInstance(&ret));
+		return ret.as!(VpnTrafficFilterAssignment);
 	}
 }
 

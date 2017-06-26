@@ -213,6 +213,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Media.SpeechSynthesis.IInstalledVoicesStatic).get_DefaultVoice(&_ret));
 		return _ret;
 	}
+	static SpeechSynthesizer New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SpeechSynthesizer).abi_ActivateInstance(&ret));
+		return ret.as!(SpeechSynthesizer);
+	}
 }
 
 interface SpeechSynthesizerOptions : Windows.Media.SpeechSynthesis.ISpeechSynthesizerOptions

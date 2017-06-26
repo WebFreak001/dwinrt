@@ -420,6 +420,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+	static HttpClient New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(HttpClient).abi_ActivateInstance(&ret));
+		return ret.as!(HttpClient);
+	}
 	static Windows.Web.Http.HttpClient New(Windows.Web.Http.Filters.IHttpFilter filter)
 	{
 		auto factory = factory!(Windows.Web.Http.IHttpClientFactory);
@@ -761,6 +767,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+	static HttpMultipartContent New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(HttpMultipartContent).abi_ActivateInstance(&ret));
+		return ret.as!(HttpMultipartContent);
+	}
 	static Windows.Web.Http.HttpMultipartContent New(HSTRING subtype)
 	{
 		auto factory = factory!(Windows.Web.Http.IHttpMultipartContentFactory);
@@ -848,6 +860,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+	static HttpMultipartFormDataContent New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(HttpMultipartFormDataContent).abi_ActivateInstance(&ret));
+		return ret.as!(HttpMultipartFormDataContent);
+	}
 	static Windows.Web.Http.HttpMultipartFormDataContent New(HSTRING boundary)
 	{
 		auto factory = factory!(Windows.Web.Http.IHttpMultipartFormDataContentFactory);
@@ -917,6 +935,12 @@ extern(Windows):
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
+	}
+	static HttpRequestMessage New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(HttpRequestMessage).abi_ActivateInstance(&ret));
+		return ret.as!(HttpRequestMessage);
 	}
 	static Windows.Web.Http.HttpRequestMessage New(Windows.Web.Http.HttpMethod method, Windows.Foundation.Uri uri)
 	{
@@ -1017,6 +1041,12 @@ extern(Windows):
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
+	}
+	static HttpResponseMessage New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(HttpResponseMessage).abi_ActivateInstance(&ret));
+		return ret.as!(HttpResponseMessage);
 	}
 	static Windows.Web.Http.HttpResponseMessage New(Windows.Web.Http.HttpStatusCode statusCode)
 	{

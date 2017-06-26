@@ -85,6 +85,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+	static DnssdRegistrationResult New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DnssdRegistrationResult).abi_ActivateInstance(&ret));
+		return ret.as!(DnssdRegistrationResult);
+	}
 }
 
 interface DnssdServiceInstance : Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance, Windows.Foundation.IStringable

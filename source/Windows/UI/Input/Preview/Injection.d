@@ -150,6 +150,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputKeyboardInfo).set_VirtualKey(value));
 	}
+	static InjectedInputKeyboardInfo New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(InjectedInputKeyboardInfo).abi_ActivateInstance(&ret));
+		return ret.as!(InjectedInputKeyboardInfo);
+	}
 }
 
 interface InjectedInputMouseInfo : Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo
@@ -204,6 +210,12 @@ extern(Windows):
 	final void TimeOffsetInMilliseconds(UINT32 value)
 	{
 		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo).set_TimeOffsetInMilliseconds(value));
+	}
+	static InjectedInputMouseInfo New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(InjectedInputMouseInfo).abi_ActivateInstance(&ret));
+		return ret.as!(InjectedInputMouseInfo);
 	}
 }
 
@@ -280,6 +292,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).set_TiltY(value));
 	}
+	static InjectedInputPenInfo New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(InjectedInputPenInfo).abi_ActivateInstance(&ret));
+		return ret.as!(InjectedInputPenInfo);
+	}
 }
 
 interface InjectedInputTouchInfo : Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo
@@ -334,6 +352,12 @@ extern(Windows):
 	final void TouchParameters(Windows.UI.Input.Preview.Injection.InjectedInputTouchParameters value)
 	{
 		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo).set_TouchParameters(value));
+	}
+	static InjectedInputTouchInfo New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(InjectedInputTouchInfo).abi_ActivateInstance(&ret));
+		return ret.as!(InjectedInputTouchInfo);
 	}
 }
 

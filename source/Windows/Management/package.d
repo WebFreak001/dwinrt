@@ -117,6 +117,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Management.IMdmAlert).set_Type(value));
 	}
+	static MdmAlert New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(MdmAlert).abi_ActivateInstance(&ret));
+		return ret.as!(MdmAlert);
+	}
 }
 
 interface MdmSession : Windows.Management.IMdmSession

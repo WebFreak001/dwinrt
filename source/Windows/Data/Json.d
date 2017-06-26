@@ -267,6 +267,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Data.Json.IJsonArrayStatics).abi_TryParse(input, out_result, &_ret));
 		return _ret;
 	}
+	static JsonArray New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(JsonArray).abi_ActivateInstance(&ret));
+		return ret.as!(JsonArray);
+	}
 }
 
 interface JsonError
@@ -472,6 +478,12 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(staticInstance.as!(Windows.Data.Json.IJsonObjectStatics).abi_TryParse(input, out_result, &_ret));
 		return _ret;
+	}
+	static JsonObject New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(JsonObject).abi_ActivateInstance(&ret));
+		return ret.as!(JsonObject);
 	}
 }
 

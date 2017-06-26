@@ -512,6 +512,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloaderStaticMethods).abi_GetCurrentDownloadsForGroupAsync(group, &_ret));
 		return _ret;
 	}
+	static BackgroundDownloader New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BackgroundDownloader).abi_ActivateInstance(&ret));
+		return ret.as!(BackgroundDownloader);
+	}
 	static Windows.Networking.BackgroundTransfer.BackgroundDownloader New(Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroup completionGroup)
 	{
 		auto factory = factory!(Windows.Networking.BackgroundTransfer.IBackgroundDownloaderFactory);
@@ -539,6 +545,12 @@ extern(Windows):
 	final void Enable()
 	{
 		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferCompletionGroup).abi_Enable());
+	}
+	static BackgroundTransferCompletionGroup New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BackgroundTransferCompletionGroup).abi_ActivateInstance(&ret));
+		return ret.as!(BackgroundTransferCompletionGroup);
 	}
 }
 
@@ -573,6 +585,12 @@ extern(Windows):
 	final void SetFile(Windows.Storage.IStorageFile value)
 	{
 		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferContentPart).abi_SetFile(value));
+	}
+	static BackgroundTransferContentPart New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BackgroundTransferContentPart).abi_ActivateInstance(&ret));
+		return ret.as!(BackgroundTransferContentPart);
 	}
 	static Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart New(HSTRING name)
 	{
@@ -804,6 +822,12 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.UploadOperation)) _ret;
 		Debug.OK(staticInstance.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploaderStaticMethods).abi_GetCurrentUploadsForGroupAsync(group, &_ret));
 		return _ret;
+	}
+	static BackgroundUploader New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(BackgroundUploader).abi_ActivateInstance(&ret));
+		return ret.as!(BackgroundUploader);
 	}
 	static Windows.Networking.BackgroundTransfer.BackgroundUploader New(Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroup completionGroup)
 	{

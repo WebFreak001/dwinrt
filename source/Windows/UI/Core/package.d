@@ -1690,6 +1690,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).abi_ShowAsync(&_ret));
 		return _ret;
 	}
+	static CoreWindowDialog New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(CoreWindowDialog).abi_ActivateInstance(&ret));
+		return ret.as!(CoreWindowDialog);
+	}
 	static Windows.UI.Core.CoreWindowDialog New(HSTRING title)
 	{
 		auto factory = factory!(Windows.UI.Core.ICoreWindowDialogFactory);

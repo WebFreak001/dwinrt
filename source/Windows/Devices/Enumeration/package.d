@@ -836,6 +836,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePicker).abi_SetDisplayStatus(device, status, options));
 	}
+	static DevicePicker New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(DevicePicker).abi_ActivateInstance(&ret));
+		return ret.as!(DevicePicker);
+	}
 }
 
 interface DevicePickerAppearance : Windows.Devices.Enumeration.IDevicePickerAppearance

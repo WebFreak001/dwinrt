@@ -533,6 +533,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.System.ILauncherViewOptions).set_DesiredRemainingView(value));
 	}
+	static FolderLauncherOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(FolderLauncherOptions).abi_ActivateInstance(&ret));
+		return ret.as!(FolderLauncherOptions);
+	}
 }
 
 interface KnownUserProperties
@@ -769,6 +775,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.System.ILauncherOptions4).set_LimitPickerToCurrentAppAndAppUriHandlers(value));
 	}
+	static LauncherOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(LauncherOptions).abi_ActivateInstance(&ret));
+		return ret.as!(LauncherOptions);
+	}
 }
 
 interface LauncherUIOptions : Windows.System.ILauncherUIOptions
@@ -929,6 +941,12 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.System.IProcessLauncherOptions).set_WorkingDirectory(value));
 	}
+	static ProcessLauncherOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(ProcessLauncherOptions).abi_ActivateInstance(&ret));
+		return ret.as!(ProcessLauncherOptions);
+	}
 }
 
 interface ProcessLauncherResult : Windows.System.IProcessLauncherResult
@@ -1014,6 +1032,12 @@ extern(Windows):
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
 		Debug.OK(this.as!(Windows.System.IRemoteLauncherOptions).get_PreferredAppIds(&_ret));
 		return _ret;
+	}
+	static RemoteLauncherOptions New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(RemoteLauncherOptions).abi_ActivateInstance(&ret));
+		return ret.as!(RemoteLauncherOptions);
 	}
 }
 
@@ -1284,6 +1308,12 @@ extern(Windows):
 		bool _ret;
 		Debug.OK(staticInstance.as!(Windows.System.IUserPickerStatics).abi_IsSupported(&_ret));
 		return _ret;
+	}
+	static UserPicker New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(UserPicker).abi_ActivateInstance(&ret));
+		return ret.as!(UserPicker);
 	}
 }
 

@@ -645,6 +645,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_StopAsync(&_ret));
 		return _ret;
 	}
+	static PlayToReceiver New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(PlayToReceiver).abi_ActivateInstance(&ret));
+		return ret.as!(PlayToReceiver);
+	}
 }
 
 interface PlayToSource : Windows.Media.PlayTo.IPlayToSource, Windows.Media.PlayTo.IPlayToSourceWithPreferredSourceUri

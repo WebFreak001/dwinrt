@@ -130,6 +130,12 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation2).get_SystemFirmwareVersion(&_ret));
 		return _ret;
 	}
+	static EasClientDeviceInformation New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(EasClientDeviceInformation).abi_ActivateInstance(&ret));
+		return ret.as!(EasClientDeviceInformation);
+	}
 }
 
 interface EasClientSecurityPolicy : Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy
@@ -226,6 +232,12 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(Windows.Security.ExchangeActiveSyncProvisioning.EasComplianceResults) _ret;
 		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).abi_ApplyAsync(&_ret));
 		return _ret;
+	}
+	static EasClientSecurityPolicy New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(EasClientSecurityPolicy).abi_ActivateInstance(&ret));
+		return ret.as!(EasClientSecurityPolicy);
 	}
 }
 

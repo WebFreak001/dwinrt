@@ -834,6 +834,12 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerStatics).get_SupportedGrammarLanguages(&_ret));
 		return _ret;
 	}
+	static SpeechRecognizer New()
+	{
+		IInspectable ret;
+		Debug.OK(activationFactory!(SpeechRecognizer).abi_ActivateInstance(&ret));
+		return ret.as!(SpeechRecognizer);
+	}
 	static Windows.Media.SpeechRecognition.SpeechRecognizer New(Windows.Globalization.Language language)
 	{
 		auto factory = factory!(Windows.Media.SpeechRecognition.ISpeechRecognizerFactory);
