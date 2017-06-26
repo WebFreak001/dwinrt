@@ -107,8 +107,17 @@ wstring factoryNameOf(T)()
 	assert(false, T.stringof ~ " is no factory or has no WinrtFactory attached to it!");
 }
 
+struct WinrtName
+{
+	wstring name;
+}
+
 wstring winrtNameOf(T)()
 {
+	foreach (attr; __traits(getAttributes, T))
+		static if (is(typeof(attr) == WinrtName))
+			return attr.name;
+
 	import std.conv;
 	import std.string;
 	import std.traits;
