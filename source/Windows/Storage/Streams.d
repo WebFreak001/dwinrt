@@ -239,6 +239,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Storage.Streams.IBufferStatics).abi_CreateMemoryBufferOverIBuffer(input, &_ret));
 		return _ret;
 	}
+	static Windows.Storage.Streams.Buffer New(UINT32 capacity)
+	{
+		auto factory = factory!(Windows.Storage.Streams.IBufferFactory);
+		Windows.Storage.Streams.Buffer _ret;
+		Debug.OK(factory.as!(Windows.Storage.Streams.IBufferFactory).abi_Create(capacity, &_ret));
+		return _ret;
+	}
 }
 
 interface DataReader : Windows.Storage.Streams.IDataReader, Windows.Foundation.IClosable
@@ -409,6 +416,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Storage.Streams.IDataReaderStatics).abi_FromBuffer(buffer, &_ret));
 		return _ret;
 	}
+	static Windows.Storage.Streams.DataReader New(Windows.Storage.Streams.IInputStream inputStream)
+	{
+		auto factory = factory!(Windows.Storage.Streams.IDataReaderFactory);
+		Windows.Storage.Streams.DataReader _ret;
+		Debug.OK(factory.as!(Windows.Storage.Streams.IDataReaderFactory).abi_CreateDataReader(inputStream, &_ret));
+		return _ret;
+	}
 }
 
 interface DataReaderLoadOperation : Windows.Foundation.IAsyncOperation!(UINT32)
@@ -564,6 +578,13 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	static Windows.Storage.Streams.DataWriter New(Windows.Storage.Streams.IOutputStream outputStream)
+	{
+		auto factory = factory!(Windows.Storage.Streams.IDataWriterFactory);
+		Windows.Storage.Streams.DataWriter _ret;
+		Debug.OK(factory.as!(Windows.Storage.Streams.IDataWriterFactory).abi_CreateDataWriter(outputStream, &_ret));
+		return _ret;
 	}
 }
 

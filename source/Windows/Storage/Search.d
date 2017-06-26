@@ -481,6 +481,20 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Storage.Search.IQueryOptionsWithProviderFilter).get_StorageProviderIdFilter(&_ret));
 		return _ret;
 	}
+	static Windows.Storage.Search.QueryOptions New(Windows.Storage.Search.CommonFileQuery query, Windows.Foundation.Collections.IIterable!(HSTRING) fileTypeFilter)
+	{
+		auto factory = factory!(Windows.Storage.Search.IQueryOptionsFactory);
+		Windows.Storage.Search.QueryOptions _ret;
+		Debug.OK(factory.as!(Windows.Storage.Search.IQueryOptionsFactory).abi_CreateCommonFileQuery(query, fileTypeFilter, &_ret));
+		return _ret;
+	}
+	static Windows.Storage.Search.QueryOptions New(Windows.Storage.Search.CommonFolderQuery query)
+	{
+		auto factory = factory!(Windows.Storage.Search.IQueryOptionsFactory);
+		Windows.Storage.Search.QueryOptions _ret;
+		Debug.OK(factory.as!(Windows.Storage.Search.IQueryOptionsFactory).abi_CreateCommonFolderQuery(query, &_ret));
+		return _ret;
+	}
 }
 
 interface SortEntryVector : Windows.Foundation.Collections.IVector!(Windows.Storage.Search.SortEntry), Windows.Foundation.Collections.IIterable!(Windows.Storage.Search.SortEntry)

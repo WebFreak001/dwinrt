@@ -97,6 +97,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Networking.IEndpointPair).set_RemoteServiceName(value));
 	}
+	static Windows.Networking.EndpointPair New(Windows.Networking.HostName localHostName, HSTRING localServiceName, Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName)
+	{
+		auto factory = factory!(Windows.Networking.IEndpointPairFactory);
+		Windows.Networking.EndpointPair _ret;
+		Debug.OK(factory.as!(Windows.Networking.IEndpointPairFactory).abi_CreateEndpointPair(localHostName, localServiceName, remoteHostName, remoteServiceName, &_ret));
+		return _ret;
+	}
 }
 
 interface HostName : Windows.Networking.IHostName, Windows.Foundation.IStringable
@@ -155,6 +162,13 @@ extern(Windows):
 	{
 		INT32 _ret;
 		Debug.OK(staticInstance.as!(Windows.Networking.IHostNameStatics).abi_Compare(value1, value2, &_ret));
+		return _ret;
+	}
+	static Windows.Networking.HostName New(HSTRING hostName)
+	{
+		auto factory = factory!(Windows.Networking.IHostNameFactory);
+		Windows.Networking.HostName _ret;
+		Debug.OK(factory.as!(Windows.Networking.IHostNameFactory).abi_CreateHostName(hostName, &_ret));
 		return _ret;
 	}
 }

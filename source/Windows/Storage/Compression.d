@@ -73,6 +73,20 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
 	}
+	static Windows.Storage.Compression.Compressor New(Windows.Storage.Streams.IOutputStream underlyingStream)
+	{
+		auto factory = factory!(Windows.Storage.Compression.ICompressorFactory);
+		Windows.Storage.Compression.Compressor _ret;
+		Debug.OK(factory.as!(Windows.Storage.Compression.ICompressorFactory).abi_CreateCompressor(underlyingStream, &_ret));
+		return _ret;
+	}
+	static Windows.Storage.Compression.Compressor New(Windows.Storage.Streams.IOutputStream underlyingStream, Windows.Storage.Compression.CompressAlgorithm algorithm, UINT32 blockSize)
+	{
+		auto factory = factory!(Windows.Storage.Compression.ICompressorFactory);
+		Windows.Storage.Compression.Compressor _ret;
+		Debug.OK(factory.as!(Windows.Storage.Compression.ICompressorFactory).abi_CreateCompressorEx(underlyingStream, algorithm, blockSize, &_ret));
+		return _ret;
+	}
 }
 
 interface Decompressor : Windows.Storage.Compression.IDecompressor, Windows.Storage.Streams.IInputStream, Windows.Foundation.IClosable
@@ -93,6 +107,13 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	static Windows.Storage.Compression.Decompressor New(Windows.Storage.Streams.IInputStream underlyingStream)
+	{
+		auto factory = factory!(Windows.Storage.Compression.IDecompressorFactory);
+		Windows.Storage.Compression.Decompressor _ret;
+		Debug.OK(factory.as!(Windows.Storage.Compression.IDecompressorFactory).abi_CreateDecompressor(underlyingStream, &_ret));
+		return _ret;
 	}
 }
 

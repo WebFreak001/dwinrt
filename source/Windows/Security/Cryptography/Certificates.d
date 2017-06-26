@@ -656,6 +656,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICertificate3).get_KeyStorageProviderName(&_ret));
 		return _ret;
 	}
+	static Windows.Security.Cryptography.Certificates.Certificate New(Windows.Storage.Streams.IBuffer certBlob)
+	{
+		auto factory = factory!(Windows.Security.Cryptography.Certificates.ICertificateFactory);
+		Windows.Security.Cryptography.Certificates.Certificate _ret;
+		Debug.OK(factory.as!(Windows.Security.Cryptography.Certificates.ICertificateFactory).abi_CreateCertificate(certBlob, &_ret));
+		return _ret;
+	}
 }
 
 interface CertificateChain : Windows.Security.Cryptography.Certificates.ICertificateChain
@@ -1298,6 +1305,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.ICmsAttachedSignatureStatics).abi_GenerateSignatureAsync(data, signers, certificates, &_ret));
 		return _ret;
 	}
+	static Windows.Security.Cryptography.Certificates.CmsAttachedSignature New(Windows.Storage.Streams.IBuffer inputBlob)
+	{
+		auto factory = factory!(Windows.Security.Cryptography.Certificates.ICmsAttachedSignatureFactory);
+		Windows.Security.Cryptography.Certificates.CmsAttachedSignature _ret;
+		Debug.OK(factory.as!(Windows.Security.Cryptography.Certificates.ICmsAttachedSignatureFactory).abi_CreateCmsAttachedSignature(inputBlob, &_ret));
+		return _ret;
+	}
 }
 
 interface CmsDetachedSignature : Windows.Security.Cryptography.Certificates.ICmsDetachedSignature
@@ -1332,6 +1346,13 @@ extern(Windows):
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;
 		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.ICmsDetachedSignatureStatics).abi_GenerateSignatureAsync(data, signers, certificates, &_ret));
+		return _ret;
+	}
+	static Windows.Security.Cryptography.Certificates.CmsDetachedSignature New(Windows.Storage.Streams.IBuffer inputBlob)
+	{
+		auto factory = factory!(Windows.Security.Cryptography.Certificates.ICmsDetachedSignatureFactory);
+		Windows.Security.Cryptography.Certificates.CmsDetachedSignature _ret;
+		Debug.OK(factory.as!(Windows.Security.Cryptography.Certificates.ICmsDetachedSignatureFactory).abi_CreateCmsDetachedSignature(inputBlob, &_ret));
 		return _ret;
 	}
 }

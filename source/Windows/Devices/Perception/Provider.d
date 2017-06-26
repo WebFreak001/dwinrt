@@ -285,6 +285,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionControlGroup).get_FrameProviderIds(&_ret));
 		return _ret;
 	}
+	deprecated("PerceptionControlGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	static Windows.Devices.Perception.Provider.PerceptionControlGroup New(Windows.Foundation.Collections.IIterable!(HSTRING) ids)
+	{
+		auto factory = factory!(Windows.Devices.Perception.Provider.IPerceptionControlGroupFactory);
+		Windows.Devices.Perception.Provider.PerceptionControlGroup _ret;
+		Debug.OK(factory.as!(Windows.Devices.Perception.Provider.IPerceptionControlGroupFactory).abi_Create(ids, &_ret));
+		return _ret;
+	}
 }
 
 interface PerceptionCorrelation : Windows.Devices.Perception.Provider.IPerceptionCorrelation
@@ -311,6 +319,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionCorrelation).get_Orientation(&_ret));
 		return _ret;
 	}
+	deprecated("PerceptionCorrelation may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	static Windows.Devices.Perception.Provider.PerceptionCorrelation New(HSTRING targetId, Windows.Foundation.Numerics.Vector3 position, Windows.Foundation.Numerics.Quaternion orientation)
+	{
+		auto factory = factory!(Windows.Devices.Perception.Provider.IPerceptionCorrelationFactory);
+		Windows.Devices.Perception.Provider.PerceptionCorrelation _ret;
+		Debug.OK(factory.as!(Windows.Devices.Perception.Provider.IPerceptionCorrelationFactory).abi_Create(targetId, position, orientation, &_ret));
+		return _ret;
+	}
 }
 
 interface PerceptionCorrelationGroup : Windows.Devices.Perception.Provider.IPerceptionCorrelationGroup
@@ -323,6 +339,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionCorrelationGroup).get_RelativeLocations(&_ret));
 		return _ret;
 	}
+	deprecated("PerceptionCorrelationGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	static Windows.Devices.Perception.Provider.PerceptionCorrelationGroup New(Windows.Foundation.Collections.IIterable!(Windows.Devices.Perception.Provider.PerceptionCorrelation) relativeLocations)
+	{
+		auto factory = factory!(Windows.Devices.Perception.Provider.IPerceptionCorrelationGroupFactory);
+		Windows.Devices.Perception.Provider.PerceptionCorrelationGroup _ret;
+		Debug.OK(factory.as!(Windows.Devices.Perception.Provider.IPerceptionCorrelationGroupFactory).abi_Create(relativeLocations, &_ret));
+		return _ret;
+	}
 }
 
 interface PerceptionFaceAuthenticationGroup : Windows.Devices.Perception.Provider.IPerceptionFaceAuthenticationGroup
@@ -333,6 +357,14 @@ extern(Windows):
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
 		Debug.OK(this.as!(Windows.Devices.Perception.Provider.IPerceptionFaceAuthenticationGroup).get_FrameProviderIds(&_ret));
+		return _ret;
+	}
+	deprecated("PerceptionFaceAuthenticationGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	static Windows.Devices.Perception.Provider.PerceptionFaceAuthenticationGroup New(Windows.Foundation.Collections.IIterable!(HSTRING) ids, Windows.Devices.Perception.Provider.PerceptionStartFaceAuthenticationHandler startHandler, Windows.Devices.Perception.Provider.PerceptionStopFaceAuthenticationHandler stopHandler)
+	{
+		auto factory = factory!(Windows.Devices.Perception.Provider.IPerceptionFaceAuthenticationGroupFactory);
+		Windows.Devices.Perception.Provider.PerceptionFaceAuthenticationGroup _ret;
+		Debug.OK(factory.as!(Windows.Devices.Perception.Provider.IPerceptionFaceAuthenticationGroupFactory).abi_Create(ids, startHandler, stopHandler, &_ret));
 		return _ret;
 	}
 }
@@ -551,5 +583,13 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	deprecated("PerceptionVideoFrameAllocator may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	static Windows.Devices.Perception.Provider.PerceptionVideoFrameAllocator New(UINT32 maxOutstandingFrameCountForWrite, Windows.Graphics.Imaging.BitmapPixelFormat format, Windows.Foundation.Size resolution, Windows.Graphics.Imaging.BitmapAlphaMode alpha)
+	{
+		auto factory = factory!(Windows.Devices.Perception.Provider.IPerceptionVideoFrameAllocatorFactory);
+		Windows.Devices.Perception.Provider.PerceptionVideoFrameAllocator _ret;
+		Debug.OK(factory.as!(Windows.Devices.Perception.Provider.IPerceptionVideoFrameAllocatorFactory).abi_Create(maxOutstandingFrameCountForWrite, format, resolution, alpha, &_ret));
+		return _ret;
 	}
 }

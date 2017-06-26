@@ -2133,6 +2133,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IUssdMessage).set_PayloadAsText(value));
 	}
+	static Windows.Networking.NetworkOperators.UssdMessage New(HSTRING messageText)
+	{
+		auto factory = factory!(Windows.Networking.NetworkOperators.IUssdMessageFactory);
+		Windows.Networking.NetworkOperators.UssdMessage _ret;
+		Debug.OK(factory.as!(Windows.Networking.NetworkOperators.IUssdMessageFactory).abi_CreateMessage(messageText, &_ret));
+		return _ret;
+	}
 }
 
 interface UssdReply : Windows.Networking.NetworkOperators.IUssdReply

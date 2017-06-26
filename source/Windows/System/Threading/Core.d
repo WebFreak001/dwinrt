@@ -56,6 +56,27 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.System.Threading.Core.IPreallocatedWorkItem).abi_RunAsync(&_ret));
 		return _ret;
 	}
+	static Windows.System.Threading.Core.PreallocatedWorkItem New(Windows.System.Threading.WorkItemHandler handler)
+	{
+		auto factory = factory!(Windows.System.Threading.Core.IPreallocatedWorkItemFactory);
+		Windows.System.Threading.Core.PreallocatedWorkItem _ret;
+		Debug.OK(factory.as!(Windows.System.Threading.Core.IPreallocatedWorkItemFactory).abi_CreateWorkItem(handler, &_ret));
+		return _ret;
+	}
+	static Windows.System.Threading.Core.PreallocatedWorkItem New(Windows.System.Threading.WorkItemHandler handler, Windows.System.Threading.WorkItemPriority priority)
+	{
+		auto factory = factory!(Windows.System.Threading.Core.IPreallocatedWorkItemFactory);
+		Windows.System.Threading.Core.PreallocatedWorkItem _ret;
+		Debug.OK(factory.as!(Windows.System.Threading.Core.IPreallocatedWorkItemFactory).abi_CreateWorkItemWithPriority(handler, priority, &_ret));
+		return _ret;
+	}
+	static Windows.System.Threading.Core.PreallocatedWorkItem New(Windows.System.Threading.WorkItemHandler handler, Windows.System.Threading.WorkItemPriority priority, Windows.System.Threading.WorkItemOptions options)
+	{
+		auto factory = factory!(Windows.System.Threading.Core.IPreallocatedWorkItemFactory);
+		Windows.System.Threading.Core.PreallocatedWorkItem _ret;
+		Debug.OK(factory.as!(Windows.System.Threading.Core.IPreallocatedWorkItemFactory).abi_CreateWorkItemWithPriorityAndOptions(handler, priority, options, &_ret));
+		return _ret;
+	}
 }
 
 interface SignalNotifier : Windows.System.Threading.Core.ISignalNotifier

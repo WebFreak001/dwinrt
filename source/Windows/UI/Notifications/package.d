@@ -705,6 +705,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeNotification).get_ExpirationTime(&_ret));
 		return _ret;
 	}
+	static Windows.UI.Notifications.BadgeNotification New(Windows.Data.Xml.Dom.XmlDocument content)
+	{
+		auto factory = factory!(Windows.UI.Notifications.IBadgeNotificationFactory);
+		Windows.UI.Notifications.BadgeNotification _ret;
+		Debug.OK(factory.as!(Windows.UI.Notifications.IBadgeNotificationFactory).abi_CreateBadgeNotification(content, &_ret));
+		return _ret;
+	}
 }
 
 interface BadgeUpdateManager
@@ -1062,6 +1069,20 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Notifications.INotificationData).set_SequenceNumber(value));
 	}
+	static Windows.UI.Notifications.NotificationData New(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) initialValues, UINT32 sequenceNumber)
+	{
+		auto factory = factory!(Windows.UI.Notifications.INotificationDataFactory);
+		Windows.UI.Notifications.NotificationData _ret;
+		Debug.OK(factory.as!(Windows.UI.Notifications.INotificationDataFactory).abi_CreateNotificationDataWithValuesAndSequenceNumber(initialValues, sequenceNumber, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Notifications.NotificationData New(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) initialValues)
+	{
+		auto factory = factory!(Windows.UI.Notifications.INotificationDataFactory);
+		Windows.UI.Notifications.NotificationData _ret;
+		Debug.OK(factory.as!(Windows.UI.Notifications.INotificationDataFactory).abi_CreateNotificationDataWithValues(initialValues, &_ret));
+		return _ret;
+	}
 }
 
 interface NotificationVisual : Windows.UI.Notifications.INotificationVisual
@@ -1134,6 +1155,13 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledTileNotification).get_Id(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Notifications.ScheduledTileNotification New(Windows.Data.Xml.Dom.XmlDocument content, Windows.Foundation.DateTime deliveryTime)
+	{
+		auto factory = factory!(Windows.UI.Notifications.IScheduledTileNotificationFactory);
+		Windows.UI.Notifications.ScheduledTileNotification _ret;
+		Debug.OK(factory.as!(Windows.UI.Notifications.IScheduledTileNotificationFactory).abi_CreateScheduledTileNotification(content, deliveryTime, &_ret));
 		return _ret;
 	}
 }
@@ -1225,6 +1253,20 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification3).set_RemoteId(value));
 	}
+	static Windows.UI.Notifications.ScheduledToastNotification New(Windows.Data.Xml.Dom.XmlDocument content, Windows.Foundation.DateTime deliveryTime)
+	{
+		auto factory = factory!(Windows.UI.Notifications.IScheduledToastNotificationFactory);
+		Windows.UI.Notifications.ScheduledToastNotification _ret;
+		Debug.OK(factory.as!(Windows.UI.Notifications.IScheduledToastNotificationFactory).abi_CreateScheduledToastNotification(content, deliveryTime, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Notifications.ScheduledToastNotification New(Windows.Data.Xml.Dom.XmlDocument content, Windows.Foundation.DateTime deliveryTime, Windows.Foundation.TimeSpan snoozeInterval, UINT32 maximumSnoozeCount)
+	{
+		auto factory = factory!(Windows.UI.Notifications.IScheduledToastNotificationFactory);
+		Windows.UI.Notifications.ScheduledToastNotification _ret;
+		Debug.OK(factory.as!(Windows.UI.Notifications.IScheduledToastNotificationFactory).abi_CreateScheduledToastNotificationRecurring(content, deliveryTime, snoozeInterval, maximumSnoozeCount, &_ret));
+		return _ret;
+	}
 }
 
 interface ShownTileNotification : Windows.UI.Notifications.IShownTileNotification
@@ -1255,6 +1297,13 @@ extern(Windows):
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
 		Debug.OK(this.as!(Windows.UI.Notifications.ITileFlyoutNotification).get_ExpirationTime(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Notifications.TileFlyoutNotification New(Windows.Data.Xml.Dom.XmlDocument content)
+	{
+		auto factory = factory!(Windows.UI.Notifications.ITileFlyoutNotificationFactory);
+		Windows.UI.Notifications.TileFlyoutNotification _ret;
+		Debug.OK(factory.as!(Windows.UI.Notifications.ITileFlyoutNotificationFactory).abi_CreateTileFlyoutNotification(content, &_ret));
 		return _ret;
 	}
 }
@@ -1351,6 +1400,13 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.UI.Notifications.ITileNotification).get_Tag(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Notifications.TileNotification New(Windows.Data.Xml.Dom.XmlDocument content)
+	{
+		auto factory = factory!(Windows.UI.Notifications.ITileNotificationFactory);
+		Windows.UI.Notifications.TileNotification _ret;
+		Debug.OK(factory.as!(Windows.UI.Notifications.ITileNotificationFactory).abi_CreateTileNotification(content, &_ret));
 		return _ret;
 	}
 }
@@ -1536,6 +1592,13 @@ extern(Windows):
 	final void Icon(Windows.Foundation.Uri value)
 	{
 		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollection).set_Icon(value));
+	}
+	static Windows.UI.Notifications.ToastCollection New(HSTRING collectionId, HSTRING displayName, HSTRING launchArgs, Windows.Foundation.Uri iconUri)
+	{
+		auto factory = factory!(Windows.UI.Notifications.IToastCollectionFactory);
+		Windows.UI.Notifications.ToastCollection _ret;
+		Debug.OK(factory.as!(Windows.UI.Notifications.IToastCollectionFactory).abi_CreateInstance(collectionId, displayName, launchArgs, iconUri, &_ret));
+		return _ret;
 	}
 }
 
@@ -1726,6 +1789,13 @@ extern(Windows):
 	final void Priority(Windows.UI.Notifications.ToastNotificationPriority value)
 	{
 		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification4).set_Priority(value));
+	}
+	static Windows.UI.Notifications.ToastNotification New(Windows.Data.Xml.Dom.XmlDocument content)
+	{
+		auto factory = factory!(Windows.UI.Notifications.IToastNotificationFactory);
+		Windows.UI.Notifications.ToastNotification _ret;
+		Debug.OK(factory.as!(Windows.UI.Notifications.IToastNotificationFactory).abi_CreateToastNotification(content, &_ret));
+		return _ret;
 	}
 }
 

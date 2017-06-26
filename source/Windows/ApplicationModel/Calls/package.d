@@ -573,6 +573,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress).set_RawAddressKind(value));
 	}
+	static Windows.ApplicationModel.Calls.PhoneCallHistoryEntryAddress New(HSTRING rawAddress, Windows.ApplicationModel.Calls.PhoneCallHistoryEntryRawAddressKind rawAddressKind)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddressFactory);
+		Windows.ApplicationModel.Calls.PhoneCallHistoryEntryAddress _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddressFactory).abi_Create(rawAddress, rawAddressKind, &_ret));
+		return _ret;
+	}
 }
 
 interface PhoneCallHistoryEntryQueryOptions : Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryQueryOptions

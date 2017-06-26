@@ -172,6 +172,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
 	}
+	static Windows.Devices.Gpio.GpioChangeCounter New(Windows.Devices.Gpio.GpioPin pin)
+	{
+		auto factory = factory!(Windows.Devices.Gpio.IGpioChangeCounterFactory);
+		Windows.Devices.Gpio.GpioChangeCounter _ret;
+		Debug.OK(factory.as!(Windows.Devices.Gpio.IGpioChangeCounterFactory).abi_Create(pin, &_ret));
+		return _ret;
+	}
 }
 
 interface GpioChangeReader : Windows.Devices.Gpio.IGpioChangeReader, Windows.Foundation.IClosable
@@ -256,6 +263,20 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	static Windows.Devices.Gpio.GpioChangeReader New(Windows.Devices.Gpio.GpioPin pin)
+	{
+		auto factory = factory!(Windows.Devices.Gpio.IGpioChangeReaderFactory);
+		Windows.Devices.Gpio.GpioChangeReader _ret;
+		Debug.OK(factory.as!(Windows.Devices.Gpio.IGpioChangeReaderFactory).abi_Create(pin, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Gpio.GpioChangeReader New(Windows.Devices.Gpio.GpioPin pin, INT32 minCapacity)
+	{
+		auto factory = factory!(Windows.Devices.Gpio.IGpioChangeReaderFactory);
+		Windows.Devices.Gpio.GpioChangeReader _ret;
+		Debug.OK(factory.as!(Windows.Devices.Gpio.IGpioChangeReaderFactory).abi_CreateWithCapacity(pin, minCapacity, &_ret));
+		return _ret;
 	}
 }
 

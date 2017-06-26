@@ -385,6 +385,34 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Storage.BulkAccess.IFileInformationFactory).abi_GetVirtualizedFoldersVector(&_ret));
 		return _ret;
 	}
+	static Windows.Storage.BulkAccess.FileInformationFactory New(Windows.Storage.Search.IStorageQueryResultBase queryResult, Windows.Storage.FileProperties.ThumbnailMode mode)
+	{
+		auto factory = factory!(Windows.Storage.BulkAccess.IFileInformationFactoryFactory);
+		Windows.Storage.BulkAccess.FileInformationFactory _ret;
+		Debug.OK(factory.as!(Windows.Storage.BulkAccess.IFileInformationFactoryFactory).abi_CreateWithMode(queryResult, mode, &_ret));
+		return _ret;
+	}
+	static Windows.Storage.BulkAccess.FileInformationFactory New(Windows.Storage.Search.IStorageQueryResultBase queryResult, Windows.Storage.FileProperties.ThumbnailMode mode, UINT32 requestedThumbnailSize)
+	{
+		auto factory = factory!(Windows.Storage.BulkAccess.IFileInformationFactoryFactory);
+		Windows.Storage.BulkAccess.FileInformationFactory _ret;
+		Debug.OK(factory.as!(Windows.Storage.BulkAccess.IFileInformationFactoryFactory).abi_CreateWithModeAndSize(queryResult, mode, requestedThumbnailSize, &_ret));
+		return _ret;
+	}
+	static Windows.Storage.BulkAccess.FileInformationFactory New(Windows.Storage.Search.IStorageQueryResultBase queryResult, Windows.Storage.FileProperties.ThumbnailMode mode, UINT32 requestedThumbnailSize, Windows.Storage.FileProperties.ThumbnailOptions thumbnailOptions)
+	{
+		auto factory = factory!(Windows.Storage.BulkAccess.IFileInformationFactoryFactory);
+		Windows.Storage.BulkAccess.FileInformationFactory _ret;
+		Debug.OK(factory.as!(Windows.Storage.BulkAccess.IFileInformationFactoryFactory).abi_CreateWithModeAndSizeAndOptions(queryResult, mode, requestedThumbnailSize, thumbnailOptions, &_ret));
+		return _ret;
+	}
+	static Windows.Storage.BulkAccess.FileInformationFactory New(Windows.Storage.Search.IStorageQueryResultBase queryResult, Windows.Storage.FileProperties.ThumbnailMode mode, UINT32 requestedThumbnailSize, Windows.Storage.FileProperties.ThumbnailOptions thumbnailOptions, bool delayLoad)
+	{
+		auto factory = factory!(Windows.Storage.BulkAccess.IFileInformationFactoryFactory);
+		Windows.Storage.BulkAccess.FileInformationFactory _ret;
+		Debug.OK(factory.as!(Windows.Storage.BulkAccess.IFileInformationFactoryFactory).abi_CreateWithModeAndSizeAndOptionsAndFlags(queryResult, mode, requestedThumbnailSize, thumbnailOptions, delayLoad, &_ret));
+		return _ret;
+	}
 }
 
 interface FolderInformation : Windows.Storage.BulkAccess.IStorageItemInformation, Windows.Storage.IStorageFolder, Windows.Storage.IStorageItem, Windows.Storage.IStorageItemProperties, Windows.Storage.Search.IStorageFolderQueryOperations, Windows.Storage.IStorageItem2, Windows.Storage.IStorageFolder2, Windows.Storage.IStorageItemPropertiesWithProvider

@@ -636,6 +636,29 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.StartScreen.ISecondaryTileStatics).abi_FindAllForPackageAsync(&_ret));
 		return _ret;
 	}
+	deprecated("SecondaryTile(string, string, string, string, Windows.UI.StartScreen.TileOptions, Windows.Foundation.Uri) may be altered or unavailable for releases after Windows Phone 8.1. Instead, use SecondaryTile(string, string, string, Windows.Foundation.Uri, Windows.UI.StartScreen.TileSize).")
+	static Windows.UI.StartScreen.SecondaryTile New(HSTRING tileId, HSTRING shortName, HSTRING displayName, HSTRING arguments, Windows.UI.StartScreen.TileOptions tileOptions, Windows.Foundation.Uri logoReference)
+	{
+		auto factory = factory!(Windows.UI.StartScreen.ISecondaryTileFactory);
+		Windows.UI.StartScreen.SecondaryTile _ret;
+		Debug.OK(factory.as!(Windows.UI.StartScreen.ISecondaryTileFactory).abi_CreateTile(tileId, shortName, displayName, arguments, tileOptions, logoReference, &_ret));
+		return _ret;
+	}
+	deprecated("SecondaryTile(string, string, string, string, Windows.UI.StartScreen.TileOptions, Windows.Foundation.Uri, Windows.Foundation.Uri) may be altered or unavailable for releases after Windows Phone 8.1. Instead, use SecondaryTile(string, string, string, Windows.Foundation.Uri, Windows.UI.StartScreen.TileSize).")
+	static Windows.UI.StartScreen.SecondaryTile New(HSTRING tileId, HSTRING shortName, HSTRING displayName, HSTRING arguments, Windows.UI.StartScreen.TileOptions tileOptions, Windows.Foundation.Uri logoReference, Windows.Foundation.Uri wideLogoReference)
+	{
+		auto factory = factory!(Windows.UI.StartScreen.ISecondaryTileFactory);
+		Windows.UI.StartScreen.SecondaryTile _ret;
+		Debug.OK(factory.as!(Windows.UI.StartScreen.ISecondaryTileFactory).abi_CreateWideTile(tileId, shortName, displayName, arguments, tileOptions, logoReference, wideLogoReference, &_ret));
+		return _ret;
+	}
+	static Windows.UI.StartScreen.SecondaryTile New(HSTRING tileId)
+	{
+		auto factory = factory!(Windows.UI.StartScreen.ISecondaryTileFactory);
+		Windows.UI.StartScreen.SecondaryTile _ret;
+		Debug.OK(factory.as!(Windows.UI.StartScreen.ISecondaryTileFactory).abi_CreateWithId(tileId, &_ret));
+		return _ret;
+	}
 }
 
 interface SecondaryTileVisualElements : Windows.UI.StartScreen.ISecondaryTileVisualElements, Windows.UI.StartScreen.ISecondaryTileVisualElements2, Windows.UI.StartScreen.ISecondaryTileVisualElements3

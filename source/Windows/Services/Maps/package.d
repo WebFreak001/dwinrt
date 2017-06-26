@@ -303,6 +303,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Services.Maps.IEnhancedWaypoint).get_Kind(&_ret));
 		return _ret;
 	}
+	static Windows.Services.Maps.EnhancedWaypoint New(Windows.Devices.Geolocation.Geopoint point, Windows.Services.Maps.WaypointKind kind)
+	{
+		auto factory = factory!(Windows.Services.Maps.IEnhancedWaypointFactory);
+		Windows.Services.Maps.EnhancedWaypoint _ret;
+		Debug.OK(factory.as!(Windows.Services.Maps.IEnhancedWaypointFactory).abi_Create(point, kind, &_ret));
+		return _ret;
+	}
 }
 
 interface ManeuverWarning : Windows.Services.Maps.IManeuverWarning

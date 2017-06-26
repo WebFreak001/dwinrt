@@ -135,6 +135,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Gaming.Input.ForceFeedback.IConditionForceEffect).abi_SetParameters(direction, positiveCoefficient, negativeCoefficient, maxPositiveMagnitude, maxNegativeMagnitude, deadZone, bias));
 	}
+	static Windows.Gaming.Input.ForceFeedback.ConditionForceEffect New(Windows.Gaming.Input.ForceFeedback.ConditionForceEffectKind effectKind)
+	{
+		auto factory = factory!(Windows.Gaming.Input.ForceFeedback.IConditionForceEffectFactory);
+		Windows.Gaming.Input.ForceFeedback.ConditionForceEffect _ret;
+		Debug.OK(factory.as!(Windows.Gaming.Input.ForceFeedback.IConditionForceEffectFactory).abi_CreateInstance(effectKind, &_ret));
+		return _ret;
+	}
 }
 
 interface ConstantForceEffect : Windows.Gaming.Input.ForceFeedback.IForceFeedbackEffect, Windows.Gaming.Input.ForceFeedback.IConstantForceEffect
@@ -289,6 +296,13 @@ extern(Windows):
 	final void SetParametersWithEnvelope(Windows.Foundation.Numerics.Vector3 vector, float frequency, float phase, float bias, float attackGain, float sustainGain, float releaseGain, Windows.Foundation.TimeSpan startDelay, Windows.Foundation.TimeSpan attackDuration, Windows.Foundation.TimeSpan sustainDuration, Windows.Foundation.TimeSpan releaseDuration, UINT32 repeatCount)
 	{
 		Debug.OK(this.as!(Windows.Gaming.Input.ForceFeedback.IPeriodicForceEffect).abi_SetParametersWithEnvelope(vector, frequency, phase, bias, attackGain, sustainGain, releaseGain, startDelay, attackDuration, sustainDuration, releaseDuration, repeatCount));
+	}
+	static Windows.Gaming.Input.ForceFeedback.PeriodicForceEffect New(Windows.Gaming.Input.ForceFeedback.PeriodicForceEffectKind effectKind)
+	{
+		auto factory = factory!(Windows.Gaming.Input.ForceFeedback.IPeriodicForceEffectFactory);
+		Windows.Gaming.Input.ForceFeedback.PeriodicForceEffect _ret;
+		Debug.OK(factory.as!(Windows.Gaming.Input.ForceFeedback.IPeriodicForceEffectFactory).abi_CreateInstance(effectKind, &_ret));
+		return _ret;
 	}
 }
 

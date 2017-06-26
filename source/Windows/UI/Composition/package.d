@@ -1421,6 +1421,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Composition.ICompositionEffectSourceParameter).get_Name(&_ret));
 		return _ret;
 	}
+	static Windows.UI.Composition.CompositionEffectSourceParameter New(HSTRING name)
+	{
+		auto factory = factory!(Windows.UI.Composition.ICompositionEffectSourceParameterFactory);
+		Windows.UI.Composition.CompositionEffectSourceParameter _ret;
+		Debug.OK(factory.as!(Windows.UI.Composition.ICompositionEffectSourceParameterFactory).abi_Create(name, &_ret));
+		return _ret;
+	}
 }
 
 interface CompositionGraphicsDevice : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionGraphicsDevice, Windows.UI.Composition.ICompositionGraphicsDevice2

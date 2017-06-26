@@ -401,6 +401,27 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Devices.Geolocation.IGeoboundingBoxStatics).abi_TryComputeWithAltitudeReferenceAndSpatialReference(positions, altitudeRefSystem, spatialReferenceId, &_ret));
 		return _ret;
 	}
+	static Windows.Devices.Geolocation.GeoboundingBox New(Windows.Devices.Geolocation.BasicGeoposition northwestCorner, Windows.Devices.Geolocation.BasicGeoposition southeastCorner)
+	{
+		auto factory = factory!(Windows.Devices.Geolocation.IGeoboundingBoxFactory);
+		Windows.Devices.Geolocation.GeoboundingBox _ret;
+		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeoboundingBoxFactory).abi_Create(northwestCorner, southeastCorner, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Geolocation.GeoboundingBox New(Windows.Devices.Geolocation.BasicGeoposition northwestCorner, Windows.Devices.Geolocation.BasicGeoposition southeastCorner, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeReferenceSystem)
+	{
+		auto factory = factory!(Windows.Devices.Geolocation.IGeoboundingBoxFactory);
+		Windows.Devices.Geolocation.GeoboundingBox _ret;
+		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeoboundingBoxFactory).abi_CreateWithAltitudeReference(northwestCorner, southeastCorner, altitudeReferenceSystem, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Geolocation.GeoboundingBox New(Windows.Devices.Geolocation.BasicGeoposition northwestCorner, Windows.Devices.Geolocation.BasicGeoposition southeastCorner, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeReferenceSystem, UINT32 spatialReferenceId)
+	{
+		auto factory = factory!(Windows.Devices.Geolocation.IGeoboundingBoxFactory);
+		Windows.Devices.Geolocation.GeoboundingBox _ret;
+		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeoboundingBoxFactory).abi_CreateWithAltitudeReferenceAndSpatialReference(northwestCorner, southeastCorner, altitudeReferenceSystem, spatialReferenceId, &_ret));
+		return _ret;
+	}
 }
 
 interface Geocircle : Windows.Devices.Geolocation.IGeocircle, Windows.Devices.Geolocation.IGeoshape
@@ -434,6 +455,27 @@ extern(Windows):
 	{
 		Windows.Devices.Geolocation.AltitudeReferenceSystem _ret;
 		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_AltitudeReferenceSystem(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Geolocation.Geocircle New(Windows.Devices.Geolocation.BasicGeoposition position, double radius)
+	{
+		auto factory = factory!(Windows.Devices.Geolocation.IGeocircleFactory);
+		Windows.Devices.Geolocation.Geocircle _ret;
+		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeocircleFactory).abi_Create(position, radius, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Geolocation.Geocircle New(Windows.Devices.Geolocation.BasicGeoposition position, double radius, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeReferenceSystem)
+	{
+		auto factory = factory!(Windows.Devices.Geolocation.IGeocircleFactory);
+		Windows.Devices.Geolocation.Geocircle _ret;
+		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeocircleFactory).abi_CreateWithAltitudeReferenceSystem(position, radius, altitudeReferenceSystem, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Geolocation.Geocircle New(Windows.Devices.Geolocation.BasicGeoposition position, double radius, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeReferenceSystem, UINT32 spatialReferenceId)
+	{
+		auto factory = factory!(Windows.Devices.Geolocation.IGeocircleFactory);
+		Windows.Devices.Geolocation.Geocircle _ret;
+		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeocircleFactory).abi_CreateWithAltitudeReferenceSystemAndSpatialReferenceId(position, radius, altitudeReferenceSystem, spatialReferenceId, &_ret));
 		return _ret;
 	}
 }
@@ -680,6 +722,27 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_AltitudeReferenceSystem(&_ret));
 		return _ret;
 	}
+	static Windows.Devices.Geolocation.Geopath New(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions)
+	{
+		auto factory = factory!(Windows.Devices.Geolocation.IGeopathFactory);
+		Windows.Devices.Geolocation.Geopath _ret;
+		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeopathFactory).abi_Create(positions, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Geolocation.Geopath New(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeReferenceSystem)
+	{
+		auto factory = factory!(Windows.Devices.Geolocation.IGeopathFactory);
+		Windows.Devices.Geolocation.Geopath _ret;
+		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeopathFactory).abi_CreateWithAltitudeReference(positions, altitudeReferenceSystem, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Geolocation.Geopath New(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeReferenceSystem, UINT32 spatialReferenceId)
+	{
+		auto factory = factory!(Windows.Devices.Geolocation.IGeopathFactory);
+		Windows.Devices.Geolocation.Geopath _ret;
+		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeopathFactory).abi_CreateWithAltitudeReferenceAndSpatialReference(positions, altitudeReferenceSystem, spatialReferenceId, &_ret));
+		return _ret;
+	}
 }
 
 interface Geopoint : Windows.Devices.Geolocation.IGeopoint, Windows.Devices.Geolocation.IGeoshape
@@ -707,6 +770,27 @@ extern(Windows):
 	{
 		Windows.Devices.Geolocation.AltitudeReferenceSystem _ret;
 		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_AltitudeReferenceSystem(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Geolocation.Geopoint New(Windows.Devices.Geolocation.BasicGeoposition position)
+	{
+		auto factory = factory!(Windows.Devices.Geolocation.IGeopointFactory);
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeopointFactory).abi_Create(position, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Geolocation.Geopoint New(Windows.Devices.Geolocation.BasicGeoposition position, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeReferenceSystem)
+	{
+		auto factory = factory!(Windows.Devices.Geolocation.IGeopointFactory);
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeopointFactory).abi_CreateWithAltitudeReferenceSystem(position, altitudeReferenceSystem, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Geolocation.Geopoint New(Windows.Devices.Geolocation.BasicGeoposition position, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeReferenceSystem, UINT32 spatialReferenceId)
+	{
+		auto factory = factory!(Windows.Devices.Geolocation.IGeopointFactory);
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeopointFactory).abi_CreateWithAltitudeReferenceSystemAndSpatialReferenceId(position, altitudeReferenceSystem, spatialReferenceId, &_ret));
 		return _ret;
 	}
 }

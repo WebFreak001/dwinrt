@@ -248,6 +248,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionPMPServer).get_Properties(&_ret));
 		return _ret;
 	}
+	static Windows.Media.Protection.MediaProtectionPMPServer New(Windows.Foundation.Collections.IPropertySet pProperties)
+	{
+		auto factory = factory!(Windows.Media.Protection.IMediaProtectionPMPServerFactory);
+		Windows.Media.Protection.MediaProtectionPMPServer _ret;
+		Debug.OK(factory.as!(Windows.Media.Protection.IMediaProtectionPMPServerFactory).abi_CreatePMPServer(pProperties, &_ret));
+		return _ret;
+	}
 }
 
 interface MediaProtectionServiceCompletion : Windows.Media.Protection.IMediaProtectionServiceCompletion

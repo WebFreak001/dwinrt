@@ -703,6 +703,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterialGroup).get_MaterialGroupId(&_ret));
 		return _ret;
 	}
+	static Windows.Graphics.Printing3D.Printing3DBaseMaterialGroup New(UINT32 MaterialGroupId)
+	{
+		auto factory = factory!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterialGroupFactory);
+		Windows.Graphics.Printing3D.Printing3DBaseMaterialGroup _ret;
+		Debug.OK(factory.as!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterialGroupFactory).abi_Create(MaterialGroupId, &_ret));
+		return _ret;
+	}
 }
 
 interface Printing3DColorMaterial : Windows.Graphics.Printing3D.IPrinting3DColorMaterial, Windows.Graphics.Printing3D.IPrinting3DColorMaterial2
@@ -743,6 +750,13 @@ extern(Windows):
 	{
 		UINT32 _ret;
 		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DColorMaterialGroup).get_MaterialGroupId(&_ret));
+		return _ret;
+	}
+	static Windows.Graphics.Printing3D.Printing3DColorMaterialGroup New(UINT32 MaterialGroupId)
+	{
+		auto factory = factory!(Windows.Graphics.Printing3D.IPrinting3DColorMaterialGroupFactory);
+		Windows.Graphics.Printing3D.Printing3DColorMaterialGroup _ret;
+		Debug.OK(factory.as!(Windows.Graphics.Printing3D.IPrinting3DColorMaterialGroupFactory).abi_Create(MaterialGroupId, &_ret));
 		return _ret;
 	}
 }
@@ -874,6 +888,13 @@ extern(Windows):
 	final void BaseMaterialGroup(Windows.Graphics.Printing3D.Printing3DBaseMaterialGroup value)
 	{
 		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroup2).set_BaseMaterialGroup(value));
+	}
+	static Windows.Graphics.Printing3D.Printing3DCompositeMaterialGroup New(UINT32 MaterialGroupId)
+	{
+		auto factory = factory!(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroupFactory);
+		Windows.Graphics.Printing3D.Printing3DCompositeMaterialGroup _ret;
+		Debug.OK(factory.as!(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroupFactory).abi_Create(MaterialGroupId, &_ret));
+		return _ret;
 	}
 }
 
@@ -1283,6 +1304,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterialGroup).get_MaterialGroupId(&_ret));
 		return _ret;
 	}
+	static Windows.Graphics.Printing3D.Printing3DMultiplePropertyMaterialGroup New(UINT32 MaterialGroupId)
+	{
+		auto factory = factory!(Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterialGroupFactory);
+		Windows.Graphics.Printing3D.Printing3DMultiplePropertyMaterialGroup _ret;
+		Debug.OK(factory.as!(Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterialGroupFactory).abi_Create(MaterialGroupId, &_ret));
+		return _ret;
+	}
 }
 
 interface Printing3DTexture2CoordMaterial : Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterial
@@ -1344,6 +1372,13 @@ extern(Windows):
 	final void Texture(Windows.Graphics.Printing3D.Printing3DModelTexture value)
 	{
 		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroup2).set_Texture(value));
+	}
+	static Windows.Graphics.Printing3D.Printing3DTexture2CoordMaterialGroup New(UINT32 MaterialGroupId)
+	{
+		auto factory = factory!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroupFactory);
+		Windows.Graphics.Printing3D.Printing3DTexture2CoordMaterialGroup _ret;
+		Debug.OK(factory.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroupFactory).abi_Create(MaterialGroupId, &_ret));
+		return _ret;
 	}
 }
 

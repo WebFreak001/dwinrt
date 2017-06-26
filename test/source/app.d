@@ -98,15 +98,10 @@ extern (Windows):
 
 	extern (D) void spam()
 	{
-		MessageDialog dialog;
-		Debug.OK(dwinrt.factory!IMessageDialogFactory.abi_CreateWithTitle(
-				hstring("You are the 1 millionth visitor! Claim your price now.")
-				.handle, hstring("Congratulations!").handle, &dialog));
-		UICommand defaultCommand, cancelCommand;
-		Debug.OK(dwinrt.factory!IUICommandFactory.abi_Create(hstring("Claim Reward")
-				.handle, &defaultCommand));
-		Debug.OK(dwinrt.factory!IUICommandFactory.abi_Create(hstring("Later")
-				.handle, &cancelCommand));
+		MessageDialog dialog = MessageDialog.New(hstring("You are the 1 millionth visitor! Claim your price now.")
+				.handle, hstring("Congratulations!").handle);
+		UICommand defaultCommand = UICommand.New(hstring("Claim Reward").handle);
+		UICommand cancelCommand = UICommand.New(hstring("Later").handle);
 		Debug.OK(dialog.Commands.abi_Append(defaultCommand));
 		Debug.OK(dialog.Commands.abi_Append(cancelCommand));
 		dialog.DefaultCommandIndex = 0;

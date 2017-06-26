@@ -418,6 +418,20 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_Probability(value));
 	}
+	static auto New(Windows.Storage.StorageFile file)
+	{
+		auto factory = factory!(Windows.Media.SpeechRecognition.ISpeechRecognitionGrammarFileConstraintFactory);
+		const Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint _ret;
+		Debug.OK(factory.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionGrammarFileConstraintFactory).abi_Create(file, &_ret));
+		return _ret;
+	}
+	static auto New(Windows.Storage.StorageFile file, HSTRING tag)
+	{
+		auto factory = factory!(Windows.Media.SpeechRecognition.ISpeechRecognitionGrammarFileConstraintFactory);
+		const Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint _ret;
+		Debug.OK(factory.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionGrammarFileConstraintFactory).abi_CreateWithTag(file, tag, &_ret));
+		return _ret;
+	}
 }
 
 interface SpeechRecognitionHypothesis : Windows.Media.SpeechRecognition.ISpeechRecognitionHypothesis
@@ -486,6 +500,20 @@ extern(Windows):
 	final void Probability(Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability value)
 	{
 		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_Probability(value));
+	}
+	static auto New(Windows.Foundation.Collections.IIterable!(HSTRING) commands)
+	{
+		auto factory = factory!(Windows.Media.SpeechRecognition.ISpeechRecognitionListConstraintFactory);
+		const Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint _ret;
+		Debug.OK(factory.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionListConstraintFactory).abi_Create(commands, &_ret));
+		return _ret;
+	}
+	static auto New(Windows.Foundation.Collections.IIterable!(HSTRING) commands, HSTRING tag)
+	{
+		auto factory = factory!(Windows.Media.SpeechRecognition.ISpeechRecognitionListConstraintFactory);
+		const Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint _ret;
+		Debug.OK(factory.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionListConstraintFactory).abi_CreateWithTag(commands, tag, &_ret));
+		return _ret;
 	}
 }
 
@@ -626,6 +654,20 @@ extern(Windows):
 	final void Probability(Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability value)
 	{
 		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_Probability(value));
+	}
+	static auto New(Windows.Media.SpeechRecognition.SpeechRecognitionScenario scenario, HSTRING topicHint)
+	{
+		auto factory = factory!(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraintFactory);
+		const Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint _ret;
+		Debug.OK(factory.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraintFactory).abi_Create(scenario, topicHint, &_ret));
+		return _ret;
+	}
+	static auto New(Windows.Media.SpeechRecognition.SpeechRecognitionScenario scenario, HSTRING topicHint, HSTRING tag)
+	{
+		auto factory = factory!(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraintFactory);
+		const Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint _ret;
+		Debug.OK(factory.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraintFactory).abi_CreateWithTag(scenario, topicHint, tag, &_ret));
+		return _ret;
 	}
 }
 
@@ -790,6 +832,13 @@ extern(Windows):
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Globalization.Language) _ret;
 		Debug.OK(staticInstance.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerStatics).get_SupportedGrammarLanguages(&_ret));
+		return _ret;
+	}
+	static Windows.Media.SpeechRecognition.SpeechRecognizer New(Windows.Globalization.Language language)
+	{
+		auto factory = factory!(Windows.Media.SpeechRecognition.ISpeechRecognizerFactory);
+		Windows.Media.SpeechRecognition.SpeechRecognizer _ret;
+		Debug.OK(factory.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerFactory).abi_Create(language, &_ret));
 		return _ret;
 	}
 }

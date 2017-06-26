@@ -106,6 +106,34 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofence).get_SingleUse(&_ret));
 		return _ret;
 	}
+	static Windows.Devices.Geolocation.Geofencing.Geofence New(HSTRING id, Windows.Devices.Geolocation.IGeoshape geoshape)
+	{
+		auto factory = factory!(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory);
+		Windows.Devices.Geolocation.Geofencing.Geofence _ret;
+		Debug.OK(factory.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory).abi_Create(id, geoshape, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Geolocation.Geofencing.Geofence New(HSTRING id, Windows.Devices.Geolocation.IGeoshape geoshape, Windows.Devices.Geolocation.Geofencing.MonitoredGeofenceStates monitoredStates, bool singleUse)
+	{
+		auto factory = factory!(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory);
+		Windows.Devices.Geolocation.Geofencing.Geofence _ret;
+		Debug.OK(factory.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory).abi_CreateWithMonitorStates(id, geoshape, monitoredStates, singleUse, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Geolocation.Geofencing.Geofence New(HSTRING id, Windows.Devices.Geolocation.IGeoshape geoshape, Windows.Devices.Geolocation.Geofencing.MonitoredGeofenceStates monitoredStates, bool singleUse, Windows.Foundation.TimeSpan dwellTime)
+	{
+		auto factory = factory!(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory);
+		Windows.Devices.Geolocation.Geofencing.Geofence _ret;
+		Debug.OK(factory.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory).abi_CreateWithMonitorStatesAndDwellTime(id, geoshape, monitoredStates, singleUse, dwellTime, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Geolocation.Geofencing.Geofence New(HSTRING id, Windows.Devices.Geolocation.IGeoshape geoshape, Windows.Devices.Geolocation.Geofencing.MonitoredGeofenceStates monitoredStates, bool singleUse, Windows.Foundation.TimeSpan dwellTime, Windows.Foundation.DateTime startTime, Windows.Foundation.TimeSpan duration)
+	{
+		auto factory = factory!(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory);
+		Windows.Devices.Geolocation.Geofencing.Geofence _ret;
+		Debug.OK(factory.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory).abi_CreateWithMonitorStatesDwellTimeStartTimeAndDuration(id, geoshape, monitoredStates, singleUse, dwellTime, startTime, duration, &_ret));
+		return _ret;
+	}
 }
 
 interface GeofenceMonitor : Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor

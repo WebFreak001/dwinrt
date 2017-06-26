@@ -195,6 +195,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationClient).abi_RetrieveFeedAsync(uri, &_ret));
 		return _ret;
 	}
+	static Windows.Web.AtomPub.AtomPubClient New(Windows.Security.Credentials.PasswordCredential serverCredential)
+	{
+		auto factory = factory!(Windows.Web.AtomPub.IAtomPubClientFactory);
+		Windows.Web.AtomPub.AtomPubClient _ret;
+		Debug.OK(factory.as!(Windows.Web.AtomPub.IAtomPubClientFactory).abi_CreateAtomPubClientWithCredentials(serverCredential, &_ret));
+		return _ret;
+	}
 }
 
 interface ResourceCollection : Windows.Web.AtomPub.IResourceCollection, Windows.Web.Syndication.ISyndicationNode

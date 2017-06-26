@@ -463,6 +463,20 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentCurrencyAmount).set_Value(value));
 	}
+	static Windows.ApplicationModel.Payments.PaymentCurrencyAmount New(HSTRING value, HSTRING currency)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentCurrencyAmountFactory);
+		Windows.ApplicationModel.Payments.PaymentCurrencyAmount _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentCurrencyAmountFactory).abi_Create(value, currency, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Payments.PaymentCurrencyAmount New(HSTRING value, HSTRING currency, HSTRING currencySystem)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentCurrencyAmountFactory);
+		Windows.ApplicationModel.Payments.PaymentCurrencyAmount _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentCurrencyAmountFactory).abi_CreateWithCurrencySystem(value, currency, currencySystem, &_ret));
+		return _ret;
+	}
 }
 
 interface PaymentDetails : Windows.ApplicationModel.Payments.IPaymentDetails
@@ -508,6 +522,20 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetails).set_Modifiers(value));
 	}
+	static Windows.ApplicationModel.Payments.PaymentDetails New(Windows.ApplicationModel.Payments.PaymentItem total)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentDetailsFactory);
+		Windows.ApplicationModel.Payments.PaymentDetails _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentDetailsFactory).abi_Create(total, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Payments.PaymentDetails New(Windows.ApplicationModel.Payments.PaymentItem total, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Payments.PaymentItem) displayItems)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentDetailsFactory);
+		Windows.ApplicationModel.Payments.PaymentDetails _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentDetailsFactory).abi_CreateWithDisplayItems(total, displayItems, &_ret));
+		return _ret;
+	}
 }
 
 interface PaymentDetailsModifier : Windows.ApplicationModel.Payments.IPaymentDetailsModifier
@@ -535,6 +563,27 @@ extern(Windows):
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentItem) _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetailsModifier).get_AdditionalDisplayItems(&_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Payments.PaymentDetailsModifier New(Windows.Foundation.Collections.IIterable!(HSTRING) supportedMethodIds, Windows.ApplicationModel.Payments.PaymentItem total)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentDetailsModifierFactory);
+		Windows.ApplicationModel.Payments.PaymentDetailsModifier _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentDetailsModifierFactory).abi_Create(supportedMethodIds, total, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Payments.PaymentDetailsModifier New(Windows.Foundation.Collections.IIterable!(HSTRING) supportedMethodIds, Windows.ApplicationModel.Payments.PaymentItem total, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Payments.PaymentItem) additionalDisplayItems)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentDetailsModifierFactory);
+		Windows.ApplicationModel.Payments.PaymentDetailsModifier _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentDetailsModifierFactory).abi_CreateWithAdditionalDisplayItems(supportedMethodIds, total, additionalDisplayItems, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Payments.PaymentDetailsModifier New(Windows.Foundation.Collections.IIterable!(HSTRING) supportedMethodIds, Windows.ApplicationModel.Payments.PaymentItem total, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Payments.PaymentItem) additionalDisplayItems, HSTRING jsonData)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentDetailsModifierFactory);
+		Windows.ApplicationModel.Payments.PaymentDetailsModifier _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentDetailsModifierFactory).abi_CreateWithAdditionalDisplayItemsAndJsonData(supportedMethodIds, total, additionalDisplayItems, jsonData, &_ret));
 		return _ret;
 	}
 }
@@ -571,6 +620,13 @@ extern(Windows):
 	final void Pending(bool value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentItem).set_Pending(value));
+	}
+	static Windows.ApplicationModel.Payments.PaymentItem New(HSTRING label, Windows.ApplicationModel.Payments.PaymentCurrencyAmount amount)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentItemFactory);
+		Windows.ApplicationModel.Payments.PaymentItem _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentItemFactory).abi_Create(label, amount, &_ret));
+		return _ret;
 	}
 }
 
@@ -612,6 +668,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentMerchantInfo).get_Uri(&_ret));
 		return _ret;
 	}
+	static Windows.ApplicationModel.Payments.PaymentMerchantInfo New(Windows.Foundation.Uri uri)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentMerchantInfoFactory);
+		Windows.ApplicationModel.Payments.PaymentMerchantInfo _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentMerchantInfoFactory).abi_Create(uri, &_ret));
+		return _ret;
+	}
 }
 
 interface PaymentMethodData : Windows.ApplicationModel.Payments.IPaymentMethodData
@@ -627,6 +690,20 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentMethodData).get_JsonData(&_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Payments.PaymentMethodData New(Windows.Foundation.Collections.IIterable!(HSTRING) supportedMethodIds)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentMethodDataFactory);
+		Windows.ApplicationModel.Payments.PaymentMethodData _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentMethodDataFactory).abi_Create(supportedMethodIds, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Payments.PaymentMethodData New(Windows.Foundation.Collections.IIterable!(HSTRING) supportedMethodIds, HSTRING jsonData)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentMethodDataFactory);
+		Windows.ApplicationModel.Payments.PaymentMethodData _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentMethodDataFactory).abi_CreateWithJsonData(supportedMethodIds, jsonData, &_ret));
 		return _ret;
 	}
 }
@@ -713,6 +790,27 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequest).get_Options(&_ret));
 		return _ret;
 	}
+	static Windows.ApplicationModel.Payments.PaymentRequest New(Windows.ApplicationModel.Payments.PaymentDetails details, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Payments.PaymentMethodData) methodData)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentRequestFactory);
+		Windows.ApplicationModel.Payments.PaymentRequest _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentRequestFactory).abi_Create(details, methodData, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Payments.PaymentRequest New(Windows.ApplicationModel.Payments.PaymentDetails details, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Payments.PaymentMethodData) methodData, Windows.ApplicationModel.Payments.PaymentMerchantInfo merchantInfo)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentRequestFactory);
+		Windows.ApplicationModel.Payments.PaymentRequest _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentRequestFactory).abi_CreateWithMerchantInfo(details, methodData, merchantInfo, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Payments.PaymentRequest New(Windows.ApplicationModel.Payments.PaymentDetails details, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Payments.PaymentMethodData) methodData, Windows.ApplicationModel.Payments.PaymentMerchantInfo merchantInfo, Windows.ApplicationModel.Payments.PaymentOptions options)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentRequestFactory);
+		Windows.ApplicationModel.Payments.PaymentRequest _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentRequestFactory).abi_CreateWithMerchantInfoAndOptions(details, methodData, merchantInfo, options, &_ret));
+		return _ret;
+	}
 }
 
 interface PaymentRequestChangedArgs : Windows.ApplicationModel.Payments.IPaymentRequestChangedArgs
@@ -774,6 +872,20 @@ extern(Windows):
 	final void UpdatedPaymentDetails(Windows.ApplicationModel.Payments.PaymentDetails value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedResult).set_UpdatedPaymentDetails(value));
+	}
+	static Windows.ApplicationModel.Payments.PaymentRequestChangedResult New(bool changeAcceptedByMerchant)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentRequestChangedResultFactory);
+		Windows.ApplicationModel.Payments.PaymentRequestChangedResult _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedResultFactory).abi_Create(changeAcceptedByMerchant, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Payments.PaymentRequestChangedResult New(bool changeAcceptedByMerchant, Windows.ApplicationModel.Payments.PaymentDetails updatedPaymentDetails)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentRequestChangedResultFactory);
+		Windows.ApplicationModel.Payments.PaymentRequestChangedResult _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedResultFactory).abi_CreateWithPaymentDetails(changeAcceptedByMerchant, updatedPaymentDetails, &_ret));
+		return _ret;
 	}
 }
 
@@ -884,6 +996,27 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentShippingOption).set_IsSelected(value));
 	}
+	static Windows.ApplicationModel.Payments.PaymentShippingOption New(HSTRING label, Windows.ApplicationModel.Payments.PaymentCurrencyAmount amount)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentShippingOptionFactory);
+		Windows.ApplicationModel.Payments.PaymentShippingOption _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentShippingOptionFactory).abi_Create(label, amount, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Payments.PaymentShippingOption New(HSTRING label, Windows.ApplicationModel.Payments.PaymentCurrencyAmount amount, bool selected)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentShippingOptionFactory);
+		Windows.ApplicationModel.Payments.PaymentShippingOption _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentShippingOptionFactory).abi_CreateWithSelected(label, amount, selected, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Payments.PaymentShippingOption New(HSTRING label, Windows.ApplicationModel.Payments.PaymentCurrencyAmount amount, bool selected, HSTRING tag)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentShippingOptionFactory);
+		Windows.ApplicationModel.Payments.PaymentShippingOption _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentShippingOptionFactory).abi_CreateWithSelectedAndTag(label, amount, selected, tag, &_ret));
+		return _ret;
+	}
 }
 
 interface PaymentToken : Windows.ApplicationModel.Payments.IPaymentToken
@@ -899,6 +1032,20 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentToken).get_JsonDetails(&_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Payments.PaymentToken New(HSTRING paymentMethodId)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentTokenFactory);
+		Windows.ApplicationModel.Payments.PaymentToken _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentTokenFactory).abi_Create(paymentMethodId, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Payments.PaymentToken New(HSTRING paymentMethodId, HSTRING jsonDetails)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentTokenFactory);
+		Windows.ApplicationModel.Payments.PaymentToken _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentTokenFactory).abi_CreateWithJsonDetails(paymentMethodId, jsonDetails, &_ret));
 		return _ret;
 	}
 }

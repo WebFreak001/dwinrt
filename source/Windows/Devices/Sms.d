@@ -1175,6 +1175,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_BroadcastChannels(&_ret));
 		return _ret;
 	}
+	static Windows.Devices.Sms.SmsFilterRule New(Windows.Devices.Sms.SmsMessageType messageType)
+	{
+		auto factory = factory!(Windows.Devices.Sms.ISmsFilterRuleFactory);
+		Windows.Devices.Sms.SmsFilterRule _ret;
+		Debug.OK(factory.as!(Windows.Devices.Sms.ISmsFilterRuleFactory).abi_CreateFilterRule(messageType, &_ret));
+		return _ret;
+	}
 }
 
 interface SmsFilterRules : Windows.Devices.Sms.ISmsFilterRules
@@ -1190,6 +1197,13 @@ extern(Windows):
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Devices.Sms.SmsFilterRule) _ret;
 		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRules).get_Rules(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Sms.SmsFilterRules New(Windows.Devices.Sms.SmsFilterActionType actionType)
+	{
+		auto factory = factory!(Windows.Devices.Sms.ISmsFilterRulesFactory);
+		Windows.Devices.Sms.SmsFilterRules _ret;
+		Debug.OK(factory.as!(Windows.Devices.Sms.ISmsFilterRulesFactory).abi_CreateFilterRules(actionType, &_ret));
 		return _ret;
 	}
 }

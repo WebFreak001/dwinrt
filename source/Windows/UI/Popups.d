@@ -135,6 +135,20 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).set_Options(value));
 	}
+	static Windows.UI.Popups.MessageDialog New(HSTRING content)
+	{
+		auto factory = factory!(Windows.UI.Popups.IMessageDialogFactory);
+		Windows.UI.Popups.MessageDialog _ret;
+		Debug.OK(factory.as!(Windows.UI.Popups.IMessageDialogFactory).abi_Create(content, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Popups.MessageDialog New(HSTRING content, HSTRING title)
+	{
+		auto factory = factory!(Windows.UI.Popups.IMessageDialogFactory);
+		Windows.UI.Popups.MessageDialog _ret;
+		Debug.OK(factory.as!(Windows.UI.Popups.IMessageDialogFactory).abi_CreateWithTitle(content, title, &_ret));
+		return _ret;
+	}
 }
 
 interface PopupMenu : Windows.UI.Popups.IPopupMenu
@@ -198,6 +212,27 @@ extern(Windows):
 	final void Id(IInspectable value)
 	{
 		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).set_Id(value));
+	}
+	static Windows.UI.Popups.UICommand New(HSTRING label)
+	{
+		auto factory = factory!(Windows.UI.Popups.IUICommandFactory);
+		Windows.UI.Popups.UICommand _ret;
+		Debug.OK(factory.as!(Windows.UI.Popups.IUICommandFactory).abi_Create(label, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Popups.UICommand New(HSTRING label, Windows.UI.Popups.UICommandInvokedHandler action)
+	{
+		auto factory = factory!(Windows.UI.Popups.IUICommandFactory);
+		Windows.UI.Popups.UICommand _ret;
+		Debug.OK(factory.as!(Windows.UI.Popups.IUICommandFactory).abi_CreateWithHandler(label, action, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Popups.UICommand New(HSTRING label, Windows.UI.Popups.UICommandInvokedHandler action, IInspectable commandId)
+	{
+		auto factory = factory!(Windows.UI.Popups.IUICommandFactory);
+		Windows.UI.Popups.UICommand _ret;
+		Debug.OK(factory.as!(Windows.UI.Popups.IUICommandFactory).abi_CreateWithHandlerAndId(label, action, commandId, &_ret));
+		return _ret;
 	}
 }
 

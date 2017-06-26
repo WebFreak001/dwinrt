@@ -59,6 +59,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Gpio.Provider.IGpioPinProviderValueChangedEventArgs).get_Edge(&_ret));
 		return _ret;
 	}
+	static Windows.Devices.Gpio.Provider.GpioPinProviderValueChangedEventArgs New(Windows.Devices.Gpio.Provider.ProviderGpioPinEdge edge)
+	{
+		auto factory = factory!(Windows.Devices.Gpio.Provider.IGpioPinProviderValueChangedEventArgsFactory);
+		Windows.Devices.Gpio.Provider.GpioPinProviderValueChangedEventArgs _ret;
+		Debug.OK(factory.as!(Windows.Devices.Gpio.Provider.IGpioPinProviderValueChangedEventArgsFactory).abi_Create(edge, &_ret));
+		return _ret;
+	}
 }
 
 enum ProviderGpioPinDriveMode

@@ -163,6 +163,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Spi.ISpiConnectionSettings).set_SharingMode(value));
 	}
+	static Windows.Devices.Spi.SpiConnectionSettings New(INT32 chipSelectLine)
+	{
+		auto factory = factory!(Windows.Devices.Spi.ISpiConnectionSettingsFactory);
+		Windows.Devices.Spi.SpiConnectionSettings _ret;
+		Debug.OK(factory.as!(Windows.Devices.Spi.ISpiConnectionSettingsFactory).abi_Create(chipSelectLine, &_ret));
+		return _ret;
+	}
 }
 
 interface SpiController : Windows.Devices.Spi.ISpiController

@@ -215,6 +215,20 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletBarcode).abi_GetImageAsync(&_ret));
 		return _ret;
 	}
+	static Windows.ApplicationModel.Wallet.WalletBarcode New(Windows.ApplicationModel.Wallet.WalletBarcodeSymbology symbology, HSTRING value)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Wallet.IWalletBarcodeFactory);
+		Windows.ApplicationModel.Wallet.WalletBarcode _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Wallet.IWalletBarcodeFactory).abi_CreateWalletBarcode(symbology, value, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Wallet.WalletBarcode New(Windows.Storage.Streams.IRandomAccessStreamReference streamToBarcodeImage)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Wallet.IWalletBarcodeFactory);
+		Windows.ApplicationModel.Wallet.WalletBarcode _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Wallet.IWalletBarcodeFactory).abi_CreateCustomWalletBarcode(streamToBarcodeImage, &_ret));
+		return _ret;
+	}
 }
 
 interface WalletItem : Windows.ApplicationModel.Wallet.IWalletItem
@@ -486,6 +500,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItem).get_Verbs(&_ret));
 		return _ret;
 	}
+	static Windows.ApplicationModel.Wallet.WalletItem New(Windows.ApplicationModel.Wallet.WalletItemKind kind, HSTRING displayName)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Wallet.IWalletItemFactory);
+		Windows.ApplicationModel.Wallet.WalletItem _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Wallet.IWalletItemFactory).abi_CreateWalletItem(kind, displayName, &_ret));
+		return _ret;
+	}
 }
 
 interface WalletItemCustomProperty : Windows.ApplicationModel.Wallet.IWalletItemCustomProperty
@@ -540,6 +561,13 @@ extern(Windows):
 	final void SummaryViewPosition(Windows.ApplicationModel.Wallet.WalletSummaryViewPosition value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletItemCustomProperty).set_SummaryViewPosition(value));
+	}
+	static Windows.ApplicationModel.Wallet.WalletItemCustomProperty New(HSTRING name, HSTRING value)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Wallet.IWalletItemCustomPropertyFactory);
+		Windows.ApplicationModel.Wallet.WalletItemCustomProperty _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Wallet.IWalletItemCustomPropertyFactory).abi_CreateWalletItemCustomProperty(name, value, &_ret));
+		return _ret;
 	}
 }
 
@@ -726,6 +754,13 @@ extern(Windows):
 	final void Name(HSTRING value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.IWalletVerb).set_Name(value));
+	}
+	static Windows.ApplicationModel.Wallet.WalletVerb New(HSTRING name)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Wallet.IWalletVerbFactory);
+		Windows.ApplicationModel.Wallet.WalletVerb _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Wallet.IWalletVerbFactory).abi_CreateWalletVerb(name, &_ret));
+		return _ret;
 	}
 }
 

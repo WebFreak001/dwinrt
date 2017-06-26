@@ -667,6 +667,20 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationAnnotationStatics).get_ElementProperty(&_ret));
 		return _ret;
 	}
+	static Windows.UI.Xaml.Automation.AutomationAnnotation New(Windows.UI.Xaml.Automation.AnnotationType type)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Automation.IAutomationAnnotationFactory);
+		Windows.UI.Xaml.Automation.AutomationAnnotation _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Automation.IAutomationAnnotationFactory).abi_CreateInstance(type, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Automation.AutomationAnnotation New(Windows.UI.Xaml.Automation.AnnotationType type, Windows.UI.Xaml.UIElement element)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Automation.IAutomationAnnotationFactory);
+		Windows.UI.Xaml.Automation.AutomationAnnotation _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Automation.IAutomationAnnotationFactory).abi_CreateWithElementParameter(type, element, &_ret));
+		return _ret;
+	}
 }
 
 interface AutomationElementIdentifiers : Windows.UI.Xaml.Automation.IAutomationElementIdentifiers

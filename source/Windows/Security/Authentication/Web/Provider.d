@@ -259,6 +259,20 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountClientView).get_AccountPairwiseId(&_ret));
 		return _ret;
 	}
+	static Windows.Security.Authentication.Web.Provider.WebAccountClientView New(Windows.Security.Authentication.Web.Provider.WebAccountClientViewType viewType, Windows.Foundation.Uri applicationCallbackUri)
+	{
+		auto factory = factory!(Windows.Security.Authentication.Web.Provider.IWebAccountClientViewFactory);
+		Windows.Security.Authentication.Web.Provider.WebAccountClientView _ret;
+		Debug.OK(factory.as!(Windows.Security.Authentication.Web.Provider.IWebAccountClientViewFactory).abi_Create(viewType, applicationCallbackUri, &_ret));
+		return _ret;
+	}
+	static Windows.Security.Authentication.Web.Provider.WebAccountClientView New(Windows.Security.Authentication.Web.Provider.WebAccountClientViewType viewType, Windows.Foundation.Uri applicationCallbackUri, HSTRING accountPairwiseId)
+	{
+		auto factory = factory!(Windows.Security.Authentication.Web.Provider.IWebAccountClientViewFactory);
+		Windows.Security.Authentication.Web.Provider.WebAccountClientView _ret;
+		Debug.OK(factory.as!(Windows.Security.Authentication.Web.Provider.IWebAccountClientViewFactory).abi_CreateWithPairwiseId(viewType, applicationCallbackUri, accountPairwiseId, &_ret));
+		return _ret;
+	}
 }
 
 interface WebAccountManager
@@ -635,6 +649,13 @@ extern(Windows):
 	{
 		Windows.Security.Authentication.Web.Core.WebTokenResponse _ret;
 		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebProviderTokenResponse).get_ClientResponse(&_ret));
+		return _ret;
+	}
+	static Windows.Security.Authentication.Web.Provider.WebProviderTokenResponse New(Windows.Security.Authentication.Web.Core.WebTokenResponse webTokenResponse)
+	{
+		auto factory = factory!(Windows.Security.Authentication.Web.Provider.IWebProviderTokenResponseFactory);
+		Windows.Security.Authentication.Web.Provider.WebProviderTokenResponse _ret;
+		Debug.OK(factory.as!(Windows.Security.Authentication.Web.Provider.IWebProviderTokenResponseFactory).abi_Create(webTokenResponse, &_ret));
 		return _ret;
 	}
 }

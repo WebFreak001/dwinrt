@@ -350,6 +350,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
 		return _ret;
 	}
+	static Windows.Devices.Midi.MidiChannelPressureMessage New(ubyte channel, ubyte pressure)
+	{
+		auto factory = factory!(Windows.Devices.Midi.IMidiChannelPressureMessageFactory);
+		Windows.Devices.Midi.MidiChannelPressureMessage _ret;
+		Debug.OK(factory.as!(Windows.Devices.Midi.IMidiChannelPressureMessageFactory).abi_CreateMidiChannelPressureMessage(channel, pressure, &_ret));
+		return _ret;
+	}
 }
 
 interface MidiContinueMessage : Windows.Devices.Midi.IMidiMessage
@@ -412,6 +419,13 @@ extern(Windows):
 	{
 		Windows.Devices.Midi.MidiMessageType _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Midi.MidiControlChangeMessage New(ubyte channel, ubyte controller, ubyte controlValue)
+	{
+		auto factory = factory!(Windows.Devices.Midi.IMidiControlChangeMessageFactory);
+		Windows.Devices.Midi.MidiControlChangeMessage _ret;
+		Debug.OK(factory.as!(Windows.Devices.Midi.IMidiControlChangeMessageFactory).abi_CreateMidiControlChangeMessage(channel, controller, controlValue, &_ret));
 		return _ret;
 	}
 }
@@ -510,6 +524,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
 		return _ret;
 	}
+	static Windows.Devices.Midi.MidiNoteOffMessage New(ubyte channel, ubyte note, ubyte velocity)
+	{
+		auto factory = factory!(Windows.Devices.Midi.IMidiNoteOffMessageFactory);
+		Windows.Devices.Midi.MidiNoteOffMessage _ret;
+		Debug.OK(factory.as!(Windows.Devices.Midi.IMidiNoteOffMessageFactory).abi_CreateMidiNoteOffMessage(channel, note, velocity, &_ret));
+		return _ret;
+	}
 }
 
 interface MidiNoteOnMessage : Windows.Devices.Midi.IMidiNoteOnMessage, Windows.Devices.Midi.IMidiMessage
@@ -549,6 +570,13 @@ extern(Windows):
 	{
 		Windows.Devices.Midi.MidiMessageType _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Midi.MidiNoteOnMessage New(ubyte channel, ubyte note, ubyte velocity)
+	{
+		auto factory = factory!(Windows.Devices.Midi.IMidiNoteOnMessageFactory);
+		Windows.Devices.Midi.MidiNoteOnMessage _ret;
+		Debug.OK(factory.as!(Windows.Devices.Midi.IMidiNoteOnMessageFactory).abi_CreateMidiNoteOnMessage(channel, note, velocity, &_ret));
 		return _ret;
 	}
 }
@@ -628,6 +656,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
 		return _ret;
 	}
+	static Windows.Devices.Midi.MidiPitchBendChangeMessage New(ubyte channel, UINT16 bend)
+	{
+		auto factory = factory!(Windows.Devices.Midi.IMidiPitchBendChangeMessageFactory);
+		Windows.Devices.Midi.MidiPitchBendChangeMessage _ret;
+		Debug.OK(factory.as!(Windows.Devices.Midi.IMidiPitchBendChangeMessageFactory).abi_CreateMidiPitchBendChangeMessage(channel, bend, &_ret));
+		return _ret;
+	}
 }
 
 interface MidiPolyphonicKeyPressureMessage : Windows.Devices.Midi.IMidiPolyphonicKeyPressureMessage, Windows.Devices.Midi.IMidiMessage
@@ -669,6 +704,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
 		return _ret;
 	}
+	static Windows.Devices.Midi.MidiPolyphonicKeyPressureMessage New(ubyte channel, ubyte note, ubyte pressure)
+	{
+		auto factory = factory!(Windows.Devices.Midi.IMidiPolyphonicKeyPressureMessageFactory);
+		Windows.Devices.Midi.MidiPolyphonicKeyPressureMessage _ret;
+		Debug.OK(factory.as!(Windows.Devices.Midi.IMidiPolyphonicKeyPressureMessageFactory).abi_CreateMidiPolyphonicKeyPressureMessage(channel, note, pressure, &_ret));
+		return _ret;
+	}
 }
 
 interface MidiProgramChangeMessage : Windows.Devices.Midi.IMidiProgramChangeMessage, Windows.Devices.Midi.IMidiMessage
@@ -704,6 +746,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
 		return _ret;
 	}
+	static Windows.Devices.Midi.MidiProgramChangeMessage New(ubyte channel, ubyte program)
+	{
+		auto factory = factory!(Windows.Devices.Midi.IMidiProgramChangeMessageFactory);
+		Windows.Devices.Midi.MidiProgramChangeMessage _ret;
+		Debug.OK(factory.as!(Windows.Devices.Midi.IMidiProgramChangeMessageFactory).abi_CreateMidiProgramChangeMessage(channel, program, &_ret));
+		return _ret;
+	}
 }
 
 interface MidiSongPositionPointerMessage : Windows.Devices.Midi.IMidiSongPositionPointerMessage, Windows.Devices.Midi.IMidiMessage
@@ -733,6 +782,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
 		return _ret;
 	}
+	static Windows.Devices.Midi.MidiSongPositionPointerMessage New(UINT16 beats)
+	{
+		auto factory = factory!(Windows.Devices.Midi.IMidiSongPositionPointerMessageFactory);
+		Windows.Devices.Midi.MidiSongPositionPointerMessage _ret;
+		Debug.OK(factory.as!(Windows.Devices.Midi.IMidiSongPositionPointerMessageFactory).abi_CreateMidiSongPositionPointerMessage(beats, &_ret));
+		return _ret;
+	}
 }
 
 interface MidiSongSelectMessage : Windows.Devices.Midi.IMidiSongSelectMessage, Windows.Devices.Midi.IMidiMessage
@@ -760,6 +816,13 @@ extern(Windows):
 	{
 		Windows.Devices.Midi.MidiMessageType _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Midi.MidiSongSelectMessage New(ubyte song)
+	{
+		auto factory = factory!(Windows.Devices.Midi.IMidiSongSelectMessageFactory);
+		Windows.Devices.Midi.MidiSongSelectMessage _ret;
+		Debug.OK(factory.as!(Windows.Devices.Midi.IMidiSongSelectMessageFactory).abi_CreateMidiSongSelectMessage(song, &_ret));
 		return _ret;
 	}
 }
@@ -895,6 +958,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
 		return _ret;
 	}
+	static Windows.Devices.Midi.MidiSystemExclusiveMessage New(Windows.Storage.Streams.IBuffer rawData)
+	{
+		auto factory = factory!(Windows.Devices.Midi.IMidiSystemExclusiveMessageFactory);
+		Windows.Devices.Midi.MidiSystemExclusiveMessage _ret;
+		Debug.OK(factory.as!(Windows.Devices.Midi.IMidiSystemExclusiveMessageFactory).abi_CreateMidiSystemExclusiveMessage(rawData, &_ret));
+		return _ret;
+	}
 }
 
 interface MidiSystemResetMessage : Windows.Devices.Midi.IMidiMessage
@@ -951,6 +1021,13 @@ extern(Windows):
 	{
 		Windows.Devices.Midi.MidiMessageType _ret;
 		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Midi.MidiTimeCodeMessage New(ubyte frameType, ubyte values)
+	{
+		auto factory = factory!(Windows.Devices.Midi.IMidiTimeCodeMessageFactory);
+		Windows.Devices.Midi.MidiTimeCodeMessage _ret;
+		Debug.OK(factory.as!(Windows.Devices.Midi.IMidiTimeCodeMessageFactory).abi_CreateMidiTimeCodeMessage(frameType, values, &_ret));
 		return _ret;
 	}
 }

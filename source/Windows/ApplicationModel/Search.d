@@ -628,6 +628,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Search.ISearchQueryLinguisticDetails).get_QueryTextCompositionLength(&_ret));
 		return _ret;
 	}
+	static Windows.ApplicationModel.Search.SearchQueryLinguisticDetails New(Windows.Foundation.Collections.IIterable!(HSTRING) queryTextAlternatives, UINT32 queryTextCompositionStart, UINT32 queryTextCompositionLength)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Search.ISearchQueryLinguisticDetailsFactory);
+		Windows.ApplicationModel.Search.SearchQueryLinguisticDetails _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Search.ISearchQueryLinguisticDetailsFactory).abi_CreateInstance(queryTextAlternatives, queryTextCompositionStart, queryTextCompositionLength, &_ret));
+		return _ret;
+	}
 }
 
 interface SearchSuggestionCollection : Windows.ApplicationModel.Search.ISearchSuggestionCollection

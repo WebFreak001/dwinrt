@@ -133,6 +133,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.ContentRestrictions.IRatedContentDescription).set_Ratings(value));
 	}
+	static Windows.Media.ContentRestrictions.RatedContentDescription New(HSTRING id, HSTRING title, Windows.Media.ContentRestrictions.RatedContentCategory category)
+	{
+		auto factory = factory!(Windows.Media.ContentRestrictions.IRatedContentDescriptionFactory);
+		Windows.Media.ContentRestrictions.RatedContentDescription _ret;
+		Debug.OK(factory.as!(Windows.Media.ContentRestrictions.IRatedContentDescriptionFactory).abi_Create(id, title, category, &_ret));
+		return _ret;
+	}
 }
 
 interface RatedContentRestrictions : Windows.Media.ContentRestrictions.IRatedContentRestrictions
@@ -165,6 +172,13 @@ extern(Windows):
 	final void removeRestrictionsChanged(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.Media.ContentRestrictions.IRatedContentRestrictions).remove_RestrictionsChanged(token));
+	}
+	static Windows.Media.ContentRestrictions.RatedContentRestrictions New(UINT32 maxAgeRating)
+	{
+		auto factory = factory!(Windows.Media.ContentRestrictions.IRatedContentRestrictionsFactory);
+		Windows.Media.ContentRestrictions.RatedContentRestrictions _ret;
+		Debug.OK(factory.as!(Windows.Media.ContentRestrictions.IRatedContentRestrictionsFactory).abi_CreateWithMaxAgeRating(maxAgeRating, &_ret));
+		return _ret;
 	}
 }
 

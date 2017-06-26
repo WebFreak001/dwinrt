@@ -664,6 +664,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IBlockStatics).get_MarginProperty(&_ret));
 		return _ret;
 	}
+	static Block New()
+	{
+		IInspectable outer, inner;
+		Block ret;
+		Debug.OK(activationFactory!(Block, Windows.UI.Xaml.Documents.IBlockFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(Block, Block, Windows.UI.Xaml.Documents.IBlockFactory)
 class BlockT(Base) : AgileObject!Base, Block
@@ -1079,6 +1086,13 @@ interface HyperlinkClickEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.
 
 interface Inline : Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Documents.IInline
 {
+	static Inline New()
+	{
+		IInspectable outer, inner;
+		Inline ret;
+		Debug.OK(activationFactory!(Inline, Windows.UI.Xaml.Documents.IInlineFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(Inline, Inline, Windows.UI.Xaml.Documents.IInlineFactory)
 class InlineT(Base) : AgileObject!Base, Inline
@@ -1265,6 +1279,13 @@ extern(Windows):
 	final void Inlines(Windows.UI.Xaml.Documents.InlineCollection value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ISpan).set_Inlines(value));
+	}
+	static Span New()
+	{
+		IInspectable outer, inner;
+		Span ret;
+		Debug.OK(activationFactory!(Span, Windows.UI.Xaml.Documents.ISpanFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(Span, Span, Windows.UI.Xaml.Documents.ISpanFactory)

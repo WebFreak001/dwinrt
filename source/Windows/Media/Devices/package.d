@@ -829,6 +829,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Devices.IAudioDeviceModulesManager).abi_FindAll(&_ret));
 		return _ret;
 	}
+	static Windows.Media.Devices.AudioDeviceModulesManager New(HSTRING deviceId)
+	{
+		auto factory = factory!(Windows.Media.Devices.IAudioDeviceModulesManagerFactory);
+		Windows.Media.Devices.AudioDeviceModulesManager _ret;
+		Debug.OK(factory.as!(Windows.Media.Devices.IAudioDeviceModulesManagerFactory).abi_Create(deviceId, &_ret));
+		return _ret;
+	}
 }
 
 interface CallControl : Windows.Media.Devices.ICallControl

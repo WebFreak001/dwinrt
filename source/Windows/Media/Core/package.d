@@ -1175,6 +1175,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Core.IAudioStreamDescriptor2).get_TrailingEncoderPadding(&_ret));
 		return _ret;
 	}
+	static Windows.Media.Core.AudioStreamDescriptor New(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties)
+	{
+		auto factory = factory!(Windows.Media.Core.IAudioStreamDescriptorFactory);
+		Windows.Media.Core.AudioStreamDescriptor _ret;
+		Debug.OK(factory.as!(Windows.Media.Core.IAudioStreamDescriptorFactory).abi_Create(encodingProperties, &_ret));
+		return _ret;
+	}
 }
 
 interface AudioTrack : Windows.Media.Core.IMediaTrack, Windows.Media.Core.IAudioTrack
@@ -2606,6 +2613,20 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource3).get_MaxSupportedPlaybackRate(&_ret));
 		return _ret;
 	}
+	static Windows.Media.Core.MediaStreamSource New(Windows.Media.Core.IMediaStreamDescriptor descriptor)
+	{
+		auto factory = factory!(Windows.Media.Core.IMediaStreamSourceFactory);
+		Windows.Media.Core.MediaStreamSource _ret;
+		Debug.OK(factory.as!(Windows.Media.Core.IMediaStreamSourceFactory).abi_CreateFromDescriptor(descriptor, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Core.MediaStreamSource New(Windows.Media.Core.IMediaStreamDescriptor descriptor, Windows.Media.Core.IMediaStreamDescriptor descriptor2)
+	{
+		auto factory = factory!(Windows.Media.Core.IMediaStreamSourceFactory);
+		Windows.Media.Core.MediaStreamSource _ret;
+		Debug.OK(factory.as!(Windows.Media.Core.IMediaStreamSourceFactory).abi_CreateFromDescriptors(descriptor, descriptor2, &_ret));
+		return _ret;
+	}
 }
 
 interface MediaStreamSourceClosedEventArgs : Windows.Media.Core.IMediaStreamSourceClosedEventArgs
@@ -3336,6 +3357,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Core.ITimedMetadataTrack2).get_Name(&_ret));
 		return _ret;
 	}
+	static Windows.Media.Core.TimedMetadataTrack New(HSTRING id, HSTRING language, Windows.Media.Core.TimedMetadataKind kind)
+	{
+		auto factory = factory!(Windows.Media.Core.ITimedMetadataTrackFactory);
+		Windows.Media.Core.TimedMetadataTrack _ret;
+		Debug.OK(factory.as!(Windows.Media.Core.ITimedMetadataTrackFactory).abi_Create(id, language, kind, &_ret));
+		return _ret;
+	}
 }
 
 interface TimedMetadataTrackError : Windows.Media.Core.ITimedMetadataTrackError
@@ -3932,6 +3960,13 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamDescriptor).get_Language(&_ret));
+		return _ret;
+	}
+	static Windows.Media.Core.VideoStreamDescriptor New(Windows.Media.MediaProperties.VideoEncodingProperties encodingProperties)
+	{
+		auto factory = factory!(Windows.Media.Core.IVideoStreamDescriptorFactory);
+		Windows.Media.Core.VideoStreamDescriptor _ret;
+		Debug.OK(factory.as!(Windows.Media.Core.IVideoStreamDescriptorFactory).abi_Create(encodingProperties, &_ret));
 		return _ret;
 	}
 }

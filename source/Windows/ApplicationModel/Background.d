@@ -883,6 +883,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IActivitySensorTrigger).get_MinimumReportInterval(&_ret));
 		return _ret;
 	}
+	static Windows.ApplicationModel.Background.ActivitySensorTrigger New(UINT32 reportIntervalInMilliseconds)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Background.IActivitySensorTriggerFactory);
+		Windows.ApplicationModel.Background.ActivitySensorTrigger _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Background.IActivitySensorTriggerFactory).abi_Create(reportIntervalInMilliseconds, &_ret));
+		return _ret;
+	}
 }
 
 interface AlarmApplicationManager
@@ -918,6 +925,13 @@ extern(Windows):
 	{
 		Windows.ApplicationModel.Background.AppBroadcastTriggerProviderInfo _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IAppBroadcastTrigger).get_ProviderInfo(&_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Background.AppBroadcastTrigger New(HSTRING providerKey)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Background.IAppBroadcastTriggerFactory);
+		Windows.ApplicationModel.Background.AppBroadcastTrigger _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Background.IAppBroadcastTriggerFactory).abi_CreateAppBroadcastTrigger(providerKey, &_ret));
 		return _ret;
 	}
 }
@@ -1256,6 +1270,20 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBackgroundTaskRegistrationGroup).get_AllTasks(&_ret));
 		return _ret;
 	}
+	static Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup New(HSTRING id)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Background.IBackgroundTaskRegistrationGroupFactory);
+		Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Background.IBackgroundTaskRegistrationGroupFactory).abi_Create(id, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup New(HSTRING id, HSTRING name)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Background.IBackgroundTaskRegistrationGroupFactory);
+		Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Background.IBackgroundTaskRegistrationGroupFactory).abi_CreateWithName(id, name, &_ret));
+		return _ret;
+	}
 }
 
 interface BackgroundWorkCost
@@ -1382,6 +1410,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IContentPrefetchTrigger).get_WaitInterval(&_ret));
 		return _ret;
 	}
+	static Windows.ApplicationModel.Background.ContentPrefetchTrigger New(Windows.Foundation.TimeSpan waitInterval)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Background.IContentPrefetchTriggerFactory);
+		Windows.ApplicationModel.Background.ContentPrefetchTrigger _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Background.IContentPrefetchTriggerFactory).abi_Create(waitInterval, &_ret));
+		return _ret;
+	}
 }
 
 interface DeviceConnectionChangeTrigger : Windows.ApplicationModel.Background.IDeviceConnectionChangeTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
@@ -1437,6 +1472,13 @@ extern(Windows):
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IDeviceManufacturerNotificationTrigger).get_OneShot(&_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Background.DeviceManufacturerNotificationTrigger New(HSTRING triggerQualifier, bool oneShot)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Background.IDeviceManufacturerNotificationTriggerFactory);
+		Windows.ApplicationModel.Background.DeviceManufacturerNotificationTrigger _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Background.IDeviceManufacturerNotificationTriggerFactory).abi_Create(triggerQualifier, oneShot, &_ret));
 		return _ret;
 	}
 }
@@ -1496,6 +1538,13 @@ extern(Windows):
 	{
 		Windows.Devices.Bluetooth.Background.BluetoothEventTriggeringMode _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IGattCharacteristicNotificationTrigger2).get_EventTriggeringMode(&_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Background.GattCharacteristicNotificationTrigger New(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic characteristic)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Background.IGattCharacteristicNotificationTriggerFactory);
+		Windows.ApplicationModel.Background.GattCharacteristicNotificationTrigger _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Background.IGattCharacteristicNotificationTriggerFactory).abi_Create(characteristic, &_ret));
 		return _ret;
 	}
 }
@@ -1566,6 +1615,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.ILocationTrigger).get_TriggerType(&_ret));
 		return _ret;
 	}
+	static Windows.ApplicationModel.Background.LocationTrigger New(Windows.ApplicationModel.Background.LocationTriggerType triggerType)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Background.ILocationTriggerFactory);
+		Windows.ApplicationModel.Background.LocationTrigger _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Background.ILocationTriggerFactory).abi_Create(triggerType, &_ret));
+		return _ret;
+	}
 }
 
 interface MaintenanceTrigger : Windows.ApplicationModel.Background.IMaintenanceTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
@@ -1581,6 +1637,13 @@ extern(Windows):
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IMaintenanceTrigger).get_OneShot(&_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Background.MaintenanceTrigger New(UINT32 freshnessTime, bool oneShot)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Background.IMaintenanceTriggerFactory);
+		Windows.ApplicationModel.Background.MaintenanceTrigger _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Background.IMaintenanceTriggerFactory).abi_Create(freshnessTime, oneShot, &_ret));
 		return _ret;
 	}
 }
@@ -1631,6 +1694,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.INetworkOperatorNotificationTrigger).get_NetworkAccountId(&_ret));
 		return _ret;
 	}
+	static Windows.ApplicationModel.Background.NetworkOperatorNotificationTrigger New(HSTRING networkAccountId)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Background.INetworkOperatorNotificationTriggerFactory);
+		Windows.ApplicationModel.Background.NetworkOperatorNotificationTrigger _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Background.INetworkOperatorNotificationTriggerFactory).abi_Create(networkAccountId, &_ret));
+		return _ret;
+	}
 }
 
 interface PhoneTrigger : Windows.ApplicationModel.Background.IPhoneTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
@@ -1648,10 +1718,24 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IPhoneTrigger).get_TriggerType(&_ret));
 		return _ret;
 	}
+	static Windows.ApplicationModel.Background.PhoneTrigger New(Windows.ApplicationModel.Calls.Background.PhoneTriggerType type, bool oneShot)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Background.IPhoneTriggerFactory);
+		Windows.ApplicationModel.Background.PhoneTrigger _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Background.IPhoneTriggerFactory).abi_Create(type, oneShot, &_ret));
+		return _ret;
+	}
 }
 
 interface PushNotificationTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger
 {
+	static Windows.ApplicationModel.Background.PushNotificationTrigger New(HSTRING applicationId)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Background.IPushNotificationTriggerFactory);
+		Windows.ApplicationModel.Background.PushNotificationTrigger _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Background.IPushNotificationTriggerFactory).abi_Create(applicationId, &_ret));
+		return _ret;
+	}
 }
 
 interface RcsEndUserMessageAvailableTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger, Windows.ApplicationModel.Background.IRcsEndUserMessageAvailableTrigger
@@ -1711,10 +1795,24 @@ interface SecondaryAuthenticationFactorAuthenticationTrigger : Windows.Applicati
 
 interface SensorDataThresholdTrigger : Windows.ApplicationModel.Background.ISensorDataThresholdTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
+	static Windows.ApplicationModel.Background.SensorDataThresholdTrigger New(Windows.Devices.Sensors.ISensorDataThreshold threshold)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Background.ISensorDataThresholdTriggerFactory);
+		Windows.ApplicationModel.Background.SensorDataThresholdTrigger _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Background.ISensorDataThresholdTriggerFactory).abi_Create(threshold, &_ret));
+		return _ret;
+	}
 }
 
 interface SmsMessageReceivedTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger
 {
+	static Windows.ApplicationModel.Background.SmsMessageReceivedTrigger New(Windows.Devices.Sms.SmsFilterRules filterRules)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Background.ISmsMessageReceivedTriggerFactory);
+		Windows.ApplicationModel.Background.SmsMessageReceivedTrigger _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Background.ISmsMessageReceivedTriggerFactory).abi_Create(filterRules, &_ret));
+		return _ret;
+	}
 }
 
 interface SocketActivityTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger, Windows.ApplicationModel.Background.ISocketActivityTrigger
@@ -1759,6 +1857,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.ISystemCondition).get_ConditionType(&_ret));
 		return _ret;
 	}
+	static Windows.ApplicationModel.Background.SystemCondition New(Windows.ApplicationModel.Background.SystemConditionType conditionType)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Background.ISystemConditionFactory);
+		Windows.ApplicationModel.Background.SystemCondition _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Background.ISystemConditionFactory).abi_Create(conditionType, &_ret));
+		return _ret;
+	}
 }
 
 interface SystemTrigger : Windows.ApplicationModel.Background.ISystemTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
@@ -1774,6 +1879,13 @@ extern(Windows):
 	{
 		Windows.ApplicationModel.Background.SystemTriggerType _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.ISystemTrigger).get_TriggerType(&_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Background.SystemTrigger New(Windows.ApplicationModel.Background.SystemTriggerType triggerType, bool oneShot)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Background.ISystemTriggerFactory);
+		Windows.ApplicationModel.Background.SystemTrigger _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Background.ISystemTriggerFactory).abi_Create(triggerType, oneShot, &_ret));
 		return _ret;
 	}
 }
@@ -1793,18 +1905,46 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.ITimeTrigger).get_OneShot(&_ret));
 		return _ret;
 	}
+	static Windows.ApplicationModel.Background.TimeTrigger New(UINT32 freshnessTime, bool oneShot)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Background.ITimeTriggerFactory);
+		Windows.ApplicationModel.Background.TimeTrigger _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Background.ITimeTriggerFactory).abi_Create(freshnessTime, oneShot, &_ret));
+		return _ret;
+	}
 }
 
 interface ToastNotificationActionTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger
 {
+	static Windows.ApplicationModel.Background.ToastNotificationActionTrigger New(HSTRING applicationId)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Background.IToastNotificationActionTriggerFactory);
+		Windows.ApplicationModel.Background.ToastNotificationActionTrigger _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Background.IToastNotificationActionTriggerFactory).abi_Create(applicationId, &_ret));
+		return _ret;
+	}
 }
 
 interface ToastNotificationHistoryChangedTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger
 {
+	static Windows.ApplicationModel.Background.ToastNotificationHistoryChangedTrigger New(HSTRING applicationId)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Background.IToastNotificationHistoryChangedTriggerFactory);
+		Windows.ApplicationModel.Background.ToastNotificationHistoryChangedTrigger _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Background.IToastNotificationHistoryChangedTriggerFactory).abi_Create(applicationId, &_ret));
+		return _ret;
+	}
 }
 
 interface UserNotificationChangedTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger
 {
+	static Windows.ApplicationModel.Background.UserNotificationChangedTrigger New(Windows.UI.Notifications.NotificationKinds notificationKinds)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Background.IUserNotificationChangedTriggerFactory);
+		Windows.ApplicationModel.Background.UserNotificationChangedTrigger _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Background.IUserNotificationChangedTriggerFactory).abi_Create(notificationKinds, &_ret));
+		return _ret;
+	}
 }
 
 enum AlarmAccessStatus

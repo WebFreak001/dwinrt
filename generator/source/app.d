@@ -735,6 +735,13 @@ void processIDL(string file)
 								enforce(content.children[0].children[0].name == "IDL.scoped_name");
 								obj.staticBase = content.children[0].children[0].matches.join("");
 							}
+							else if (content.children[0].name == "IDL.activatable"
+									&& content.children[0].children.length > 1)
+							{
+								enforce(content.children[0].children[0].name == "IDL.scoped_name");
+								enforce(content.children[0].children[1].name == "IDL.scoped_name");
+								obj.activatable = content.children[0].children[0].matches.join("");
+							}
 						}
 					}
 				}
@@ -1411,6 +1418,7 @@ struct Interface
 	InterfaceMethod[] methods;
 	string composable;
 	string staticBase;
+	string activatable;
 
 	Interface instance(string[] types)
 	{
@@ -1438,6 +1446,8 @@ struct Interface
 			instanced.methods ~= copy;
 		}
 		instanced.composable = composable;
+		instanced.staticBase = staticBase;
+		instanced.activatable = activatable;
 		return instanced;
 	}
 
@@ -1520,6 +1530,51 @@ struct Interface
 			}
 			ret ~= "\n";
 		}
+		if (activatable.length)
+		{
+			auto factory = findInterface(activatable);
+			foreach (method; factory.methods)
+			{
+				method.implement(activatable);
+				method.name = "New";
+				method.implementation = "auto factory = factory!(" ~ activatable ~ ");\n" ~ method.implementation.replace("this.",
+						"factory.");
+				if (method.returnType.startsWith("const "))
+					method.returnType = "auto";
+				ret ~= method.toString("static ").indent ~ "\n";
+			}
+		}
+		else if (composable.length)
+		{
+			auto obj = findInterface(composable);
+			if (obj.methods.length)
+			{
+				if (obj.methods[0].name == "CreateInstance")
+				{
+					string extraArgs;
+					string extraVals;
+					foreach (arg; obj.methods[0].arguments[0 .. $ - 3])
+					{
+						extraArgs ~= arg.toString ~ ", ";
+						extraVals ~= arg.fullName ~ ", ";
+					}
+					if (extraArgs.length)
+						extraArgs.length -= 2;
+					ret ~= "\tstatic " ~ name ~ " New(" ~ extraArgs ~ ")\n";
+					ret ~= "\t{\n";
+					ret ~= "\t\tIInspectable outer, inner;\n";
+					ret ~= "\t\t" ~ name ~ " ret;\n";
+					ret ~= "\t\tDebug.OK(activationFactory!(" ~ name ~ ", " ~ composable
+						~ ").abi_CreateInstance(" ~ extraVals ~ "outer, &inner, &ret));\n";
+					ret ~= "\t\treturn ret;\n";
+					ret ~= "\t}\n";
+				}
+				else
+				{
+					writeln("TODO: Implement composable creation of ", name, " - ", composable);
+				}
+			}
+		}
 		ret ~= "}";
 		if (requires.length)
 		{
@@ -1591,8 +1646,8 @@ struct InterfaceMethod
 				arguments = [InterfaceArgument(ArgumentDirection.in_, "void delegate(" ~ args ~ ")", "fn")];
 				name = "On" ~ name;
 				returnType = "EventRegistrationToken";
-				string registerCall = "Debug.OK(this.as!(" ~ baseName ~ ")." ~ fname ~ "(event!(" ~ type ~ ", "
-					~ args ~ ")(fn), &tok));";
+				string registerCall = "Debug.OK(this.as!(" ~ baseName ~ ")." ~ fname
+					~ "(event!(" ~ type ~ ", " ~ args ~ ")(fn), &tok));";
 				implementation = "EventRegistrationToken tok;\n" ~ registerCall ~ "\nreturn tok;";
 			}
 			else if (arguments[0].type.startsWith("Windows.Foundation.EventHandler!("))
@@ -1604,8 +1659,8 @@ struct InterfaceMethod
 						"void delegate(IInspectable, " ~ args ~ ")", "fn")];
 				name = "On" ~ name;
 				returnType = "EventRegistrationToken";
-				string registerCall = "Debug.OK(this.as!(" ~ baseName ~ ")." ~ fname ~ "(event!(" ~ type
-					~ ", IInspectable, " ~ args ~ ")(fn), &tok));";
+				string registerCall = "Debug.OK(this.as!(" ~ baseName ~ ")." ~ fname
+					~ "(event!(" ~ type ~ ", IInspectable, " ~ args ~ ")(fn), &tok));";
 				implementation = "EventRegistrationToken tok;\n" ~ registerCall ~ "\nreturn tok;";
 			}
 			else
@@ -1619,7 +1674,8 @@ struct InterfaceMethod
 			string fname = fullName;
 			name = "remove" ~ name;
 			returnType = "void";
-			implementation = "Debug.OK(this.as!(" ~ baseName ~ ")." ~ fname ~ "(" ~ arguments[0].fullName ~ "));";
+			implementation = "Debug.OK(this.as!(" ~ baseName ~ ")." ~ fname ~ "("
+				~ arguments[0].fullName ~ "));";
 		}
 		else
 		{

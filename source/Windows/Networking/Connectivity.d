@@ -1138,6 +1138,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Connectivity.IRoutePolicy).get_HostNameType(&_ret));
 		return _ret;
 	}
+	static Windows.Networking.Connectivity.RoutePolicy New(Windows.Networking.Connectivity.ConnectionProfile connectionProfile, Windows.Networking.HostName hostName, Windows.Networking.DomainNameType type)
+	{
+		auto factory = factory!(Windows.Networking.Connectivity.IRoutePolicyFactory);
+		Windows.Networking.Connectivity.RoutePolicy _ret;
+		Debug.OK(factory.as!(Windows.Networking.Connectivity.IRoutePolicyFactory).abi_CreateRoutePolicy(connectionProfile, hostName, type, &_ret));
+		return _ret;
+	}
 }
 
 interface WlanConnectionProfileDetails : Windows.Networking.Connectivity.IWlanConnectionProfileDetails

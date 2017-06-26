@@ -130,6 +130,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Custom.IIOControlCode).get_ControlCode(&_ret));
 		return _ret;
 	}
+	static Windows.Devices.Custom.IOControlCode New(UINT16 deviceType, UINT16 function_, Windows.Devices.Custom.IOControlAccessMode accessMode, Windows.Devices.Custom.IOControlBufferingMethod bufferingMethod)
+	{
+		auto factory = factory!(Windows.Devices.Custom.IIOControlCodeFactory);
+		Windows.Devices.Custom.IOControlCode _ret;
+		Debug.OK(factory.as!(Windows.Devices.Custom.IIOControlCodeFactory).abi_CreateIOControlCode(deviceType, function_, accessMode, bufferingMethod, &_ret));
+		return _ret;
+	}
 }
 
 interface KnownDeviceTypes

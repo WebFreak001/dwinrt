@@ -436,6 +436,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Data.IBinding2).set_UpdateSourceTrigger(value));
 	}
+	static Binding New()
+	{
+		IInspectable outer, inner;
+		Binding ret;
+		Debug.OK(activationFactory!(Binding, Windows.UI.Xaml.Data.IBindingFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(Binding, Binding, Windows.UI.Xaml.Data.IBindingFactory)
 class BindingT(Base) : AgileObject!Base, Binding
@@ -477,6 +484,13 @@ class BindingT(Base) : AgileObject!Base, Binding
 
 interface BindingBase : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Data.IBindingBase
 {
+	static BindingBase New()
+	{
+		IInspectable outer, inner;
+		BindingBase ret;
+		Debug.OK(activationFactory!(BindingBase, Windows.UI.Xaml.Data.IBindingBaseFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(BindingBase, BindingBase, Windows.UI.Xaml.Data.IBindingBaseFactory)
 class BindingBaseT(Base) : AgileObject!Base, BindingBase
@@ -654,6 +668,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Data.ICurrentChangingEventArgs).get_IsCancelable(&_ret));
 		return _ret;
 	}
+	static CurrentChangingEventArgs New()
+	{
+		IInspectable outer, inner;
+		CurrentChangingEventArgs ret;
+		Debug.OK(activationFactory!(CurrentChangingEventArgs, Windows.UI.Xaml.Data.ICurrentChangingEventArgsFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(CurrentChangingEventArgs, CurrentChangingEventArgs, Windows.UI.Xaml.Data.ICurrentChangingEventArgsFactory)
 class CurrentChangingEventArgsT(Base) : AgileObject!Base, CurrentChangingEventArgs
@@ -694,6 +715,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Data.IItemIndexRange).get_LastIndex(&_ret));
 		return _ret;
 	}
+	static ItemIndexRange New(INT32 firstIndex, UINT32 length)
+	{
+		IInspectable outer, inner;
+		ItemIndexRange ret;
+		Debug.OK(activationFactory!(ItemIndexRange, Windows.UI.Xaml.Data.IItemIndexRangeFactory).abi_CreateInstance(firstIndex, length, outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(ItemIndexRange, ItemIndexRange, Windows.UI.Xaml.Data.IItemIndexRangeFactory)
 class ItemIndexRangeT(Base) : AgileObject!Base, ItemIndexRange
@@ -721,6 +749,13 @@ extern(Windows):
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Data.IPropertyChangedEventArgs).get_PropertyName(&_ret));
 		return _ret;
+	}
+	static PropertyChangedEventArgs New(HSTRING name)
+	{
+		IInspectable outer, inner;
+		PropertyChangedEventArgs ret;
+		Debug.OK(activationFactory!(PropertyChangedEventArgs, Windows.UI.Xaml.Data.IPropertyChangedEventArgsFactory).abi_CreateInstance(name, outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(PropertyChangedEventArgs, PropertyChangedEventArgs, Windows.UI.Xaml.Data.IPropertyChangedEventArgsFactory)
@@ -751,6 +786,13 @@ extern(Windows):
 	final void Mode(Windows.UI.Xaml.Data.RelativeSourceMode value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Data.IRelativeSource).set_Mode(value));
+	}
+	static RelativeSource New()
+	{
+		IInspectable outer, inner;
+		RelativeSource ret;
+		Debug.OK(activationFactory!(RelativeSource, Windows.UI.Xaml.Data.IRelativeSourceFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(RelativeSource, RelativeSource, Windows.UI.Xaml.Data.IRelativeSourceFactory)

@@ -1473,6 +1473,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).set_DesiredRenderDeviceAudioProcessing(value));
 	}
+	static Windows.Media.Audio.AudioGraphSettings New(Windows.Media.Render.AudioRenderCategory audioRenderCategory)
+	{
+		auto factory = factory!(Windows.Media.Audio.IAudioGraphSettingsFactory);
+		Windows.Media.Audio.AudioGraphSettings _ret;
+		Debug.OK(factory.as!(Windows.Media.Audio.IAudioGraphSettingsFactory).abi_Create(audioRenderCategory, &_ret));
+		return _ret;
+	}
 }
 
 interface AudioGraphUnrecoverableErrorOccurredEventArgs : Windows.Media.Audio.IAudioGraphUnrecoverableErrorOccurredEventArgs
@@ -1576,6 +1583,13 @@ extern(Windows):
 	final void SpatialAudioModel(Windows.Media.Audio.SpatialAudioModel value)
 	{
 		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter2).set_SpatialAudioModel(value));
+	}
+	static Windows.Media.Audio.AudioNodeEmitter New(Windows.Media.Audio.AudioNodeEmitterShape shape, Windows.Media.Audio.AudioNodeEmitterDecayModel decayModel, Windows.Media.Audio.AudioNodeEmitterSettings settings)
+	{
+		auto factory = factory!(Windows.Media.Audio.IAudioNodeEmitterFactory);
+		Windows.Media.Audio.AudioNodeEmitter _ret;
+		Debug.OK(factory.as!(Windows.Media.Audio.IAudioNodeEmitterFactory).abi_CreateAudioNodeEmitter(shape, decayModel, settings, &_ret));
+		return _ret;
 	}
 }
 
@@ -1963,6 +1977,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_Properties(&_ret));
 		return _ret;
 	}
+	static Windows.Media.Audio.EchoEffectDefinition New(Windows.Media.Audio.AudioGraph audioGraph)
+	{
+		auto factory = factory!(Windows.Media.Audio.IEchoEffectDefinitionFactory);
+		Windows.Media.Audio.EchoEffectDefinition _ret;
+		Debug.OK(factory.as!(Windows.Media.Audio.IEchoEffectDefinitionFactory).abi_Create(audioGraph, &_ret));
+		return _ret;
+	}
 }
 
 interface EqualizerBand : Windows.Media.Audio.IEqualizerBand
@@ -2021,6 +2042,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_Properties(&_ret));
 		return _ret;
 	}
+	static Windows.Media.Audio.EqualizerEffectDefinition New(Windows.Media.Audio.AudioGraph audioGraph)
+	{
+		auto factory = factory!(Windows.Media.Audio.IEqualizerEffectDefinitionFactory);
+		Windows.Media.Audio.EqualizerEffectDefinition _ret;
+		Debug.OK(factory.as!(Windows.Media.Audio.IEqualizerEffectDefinitionFactory).abi_Create(audioGraph, &_ret));
+		return _ret;
+	}
 }
 
 interface FrameInputNodeQuantumStartedEventArgs : Windows.Media.Audio.IFrameInputNodeQuantumStartedEventArgs
@@ -2067,6 +2095,13 @@ extern(Windows):
 	{
 		Windows.Foundation.Collections.IPropertySet _ret;
 		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_Properties(&_ret));
+		return _ret;
+	}
+	static Windows.Media.Audio.LimiterEffectDefinition New(Windows.Media.Audio.AudioGraph audioGraph)
+	{
+		auto factory = factory!(Windows.Media.Audio.ILimiterEffectDefinitionFactory);
+		Windows.Media.Audio.LimiterEffectDefinition _ret;
+		Debug.OK(factory.as!(Windows.Media.Audio.ILimiterEffectDefinitionFactory).abi_Create(audioGraph, &_ret));
 		return _ret;
 	}
 }
@@ -2314,6 +2349,13 @@ extern(Windows):
 	{
 		Windows.Foundation.Collections.IPropertySet _ret;
 		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_Properties(&_ret));
+		return _ret;
+	}
+	static Windows.Media.Audio.ReverbEffectDefinition New(Windows.Media.Audio.AudioGraph audioGraph)
+	{
+		auto factory = factory!(Windows.Media.Audio.IReverbEffectDefinitionFactory);
+		Windows.Media.Audio.ReverbEffectDefinition _ret;
+		Debug.OK(factory.as!(Windows.Media.Audio.IReverbEffectDefinitionFactory).abi_Create(audioGraph, &_ret));
 		return _ret;
 	}
 }

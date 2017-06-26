@@ -565,6 +565,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).get_GestureSettings(&_ret));
 		return _ret;
 	}
+	static Windows.UI.Input.Spatial.SpatialGestureRecognizer New(Windows.UI.Input.Spatial.SpatialGestureSettings settings)
+	{
+		auto factory = factory!(Windows.UI.Input.Spatial.ISpatialGestureRecognizerFactory);
+		Windows.UI.Input.Spatial.SpatialGestureRecognizer _ret;
+		Debug.OK(factory.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizerFactory).abi_Create(settings, &_ret));
+		return _ret;
+	}
 }
 
 interface SpatialHoldCanceledEventArgs : Windows.UI.Input.Spatial.ISpatialHoldCanceledEventArgs

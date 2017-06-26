@@ -917,6 +917,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapTypedValue).get_Type(&_ret));
 		return _ret;
 	}
+	static Windows.Graphics.Imaging.BitmapTypedValue New(IInspectable value, Windows.Foundation.PropertyType type)
+	{
+		auto factory = factory!(Windows.Graphics.Imaging.IBitmapTypedValueFactory);
+		Windows.Graphics.Imaging.BitmapTypedValue _ret;
+		Debug.OK(factory.as!(Windows.Graphics.Imaging.IBitmapTypedValueFactory).abi_Create(value, type, &_ret));
+		return _ret;
+	}
 }
 
 interface ImageStream : Windows.Storage.Streams.IRandomAccessStreamWithContentType, Windows.Storage.Streams.IContentTypeProvider, Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream
@@ -1141,6 +1148,20 @@ extern(Windows):
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) _ret;
 		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.ISoftwareBitmapStatics).abi_CreateCopyWithAlphaFromSurfaceAsync(surface, alpha, &_ret));
+		return _ret;
+	}
+	static Windows.Graphics.Imaging.SoftwareBitmap New(Windows.Graphics.Imaging.BitmapPixelFormat format, INT32 width, INT32 height)
+	{
+		auto factory = factory!(Windows.Graphics.Imaging.ISoftwareBitmapFactory);
+		Windows.Graphics.Imaging.SoftwareBitmap _ret;
+		Debug.OK(factory.as!(Windows.Graphics.Imaging.ISoftwareBitmapFactory).abi_Create(format, width, height, &_ret));
+		return _ret;
+	}
+	static Windows.Graphics.Imaging.SoftwareBitmap New(Windows.Graphics.Imaging.BitmapPixelFormat format, INT32 width, INT32 height, Windows.Graphics.Imaging.BitmapAlphaMode alpha)
+	{
+		auto factory = factory!(Windows.Graphics.Imaging.ISoftwareBitmapFactory);
+		Windows.Graphics.Imaging.SoftwareBitmap _ret;
+		Debug.OK(factory.as!(Windows.Graphics.Imaging.ISoftwareBitmapFactory).abi_CreateWithAlpha(format, width, height, alpha, &_ret));
 		return _ret;
 	}
 }

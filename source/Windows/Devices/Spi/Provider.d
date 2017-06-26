@@ -108,6 +108,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings).set_SharingMode(value));
 	}
+	static Windows.Devices.Spi.Provider.ProviderSpiConnectionSettings New(INT32 chipSelectLine)
+	{
+		auto factory = factory!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettingsFactory);
+		Windows.Devices.Spi.Provider.ProviderSpiConnectionSettings _ret;
+		Debug.OK(factory.as!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettingsFactory).abi_Create(chipSelectLine, &_ret));
+		return _ret;
+	}
 }
 
 enum ProviderSpiMode

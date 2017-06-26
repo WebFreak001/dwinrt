@@ -51,6 +51,13 @@ interface CustomXamlResourceLoader : Windows.UI.Xaml.Resources.ICustomXamlResour
 	{
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Resources.ICustomXamlResourceLoaderStatics).set_Current(value));
 	}
+	static CustomXamlResourceLoader New()
+	{
+		IInspectable outer, inner;
+		CustomXamlResourceLoader ret;
+		Debug.OK(activationFactory!(CustomXamlResourceLoader, Windows.UI.Xaml.Resources.ICustomXamlResourceLoaderFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(CustomXamlResourceLoader, CustomXamlResourceLoader, Windows.UI.Xaml.Resources.ICustomXamlResourceLoaderFactory)
 class CustomXamlResourceLoaderT(Base) : AgileObject!Base, CustomXamlResourceLoader

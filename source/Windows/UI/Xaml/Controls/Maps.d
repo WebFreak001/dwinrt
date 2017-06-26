@@ -1021,6 +1021,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.ICustomMapTileDataSource).remove_BitmapRequested(token));
 	}
+	static CustomMapTileDataSource New()
+	{
+		IInspectable outer, inner;
+		CustomMapTileDataSource ret;
+		Debug.OK(activationFactory!(CustomMapTileDataSource, Windows.UI.Xaml.Controls.Maps.ICustomMapTileDataSourceFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(CustomMapTileDataSource, CustomMapTileDataSource, Windows.UI.Xaml.Controls.Maps.ICustomMapTileDataSourceFactory)
 class CustomMapTileDataSourceT(Base) : AgileObject!Base, CustomMapTileDataSource
@@ -1078,6 +1085,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource).remove_UriRequested(token));
 	}
+	static HttpMapTileDataSource New()
+	{
+		IInspectable outer, inner;
+		HttpMapTileDataSource ret;
+		Debug.OK(activationFactory!(HttpMapTileDataSource, Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSourceFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(HttpMapTileDataSource, HttpMapTileDataSource, Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSourceFactory)
 class HttpMapTileDataSourceT(Base) : AgileObject!Base, HttpMapTileDataSource
@@ -1123,6 +1137,13 @@ extern(Windows):
 	final void removeUriRequested(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.ILocalMapTileDataSource).remove_UriRequested(token));
+	}
+	static LocalMapTileDataSource New()
+	{
+		IInspectable outer, inner;
+		LocalMapTileDataSource ret;
+		Debug.OK(activationFactory!(LocalMapTileDataSource, Windows.UI.Xaml.Controls.Maps.ILocalMapTileDataSourceFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(LocalMapTileDataSource, LocalMapTileDataSource, Windows.UI.Xaml.Controls.Maps.ILocalMapTileDataSourceFactory)
@@ -1252,6 +1273,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapBillboardStatics).get_CollisionBehaviorDesiredProperty(&_ret));
 		return _ret;
 	}
+	static Windows.UI.Xaml.Controls.Maps.MapBillboard New(Windows.UI.Xaml.Controls.Maps.MapCamera camera)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Controls.Maps.IMapBillboardFactory);
+		Windows.UI.Xaml.Controls.Maps.MapBillboard _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Controls.Maps.IMapBillboardFactory).abi_CreateInstanceFromCamera(camera, &_ret));
+		return _ret;
+	}
 }
 
 interface MapCamera : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapCamera
@@ -1306,6 +1334,34 @@ extern(Windows):
 	final void FieldOfView(double value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapCamera).set_FieldOfView(value));
+	}
+	static Windows.UI.Xaml.Controls.Maps.MapCamera New(Windows.Devices.Geolocation.Geopoint location)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Controls.Maps.IMapCameraFactory);
+		Windows.UI.Xaml.Controls.Maps.MapCamera _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Controls.Maps.IMapCameraFactory).abi_CreateInstanceWithLocation(location, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Controls.Maps.MapCamera New(Windows.Devices.Geolocation.Geopoint location, double headingInDegrees)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Controls.Maps.IMapCameraFactory);
+		Windows.UI.Xaml.Controls.Maps.MapCamera _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Controls.Maps.IMapCameraFactory).abi_CreateInstanceWithLocationAndHeading(location, headingInDegrees, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Controls.Maps.MapCamera New(Windows.Devices.Geolocation.Geopoint location, double headingInDegrees, double pitchInDegrees)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Controls.Maps.IMapCameraFactory);
+		Windows.UI.Xaml.Controls.Maps.MapCamera _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Controls.Maps.IMapCameraFactory).abi_CreateInstanceWithLocationHeadingAndPitch(location, headingInDegrees, pitchInDegrees, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Controls.Maps.MapCamera New(Windows.Devices.Geolocation.Geopoint location, double headingInDegrees, double pitchInDegrees, double rollInDegrees, double fieldOfViewInDegrees)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Controls.Maps.IMapCameraFactory);
+		Windows.UI.Xaml.Controls.Maps.MapCamera _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Controls.Maps.IMapCameraFactory).abi_CreateInstanceWithLocationHeadingPitchRollAndFieldOfView(location, headingInDegrees, pitchInDegrees, rollInDegrees, fieldOfViewInDegrees, &_ret));
+		return _ret;
 	}
 }
 
@@ -2275,6 +2331,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlDataHelper2).remove_TransitFeaturePointerExited(token));
 	}
+	static Windows.UI.Xaml.Controls.Maps.MapControlDataHelper New(Windows.UI.Xaml.Controls.Maps.MapControl map)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Controls.Maps.IMapControlDataHelperFactory);
+		Windows.UI.Xaml.Controls.Maps.MapControlDataHelper _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Controls.Maps.IMapControlDataHelperFactory).abi_CreateInstance(map, &_ret));
+		return _ret;
+	}
 }
 
 interface MapControlTransitFeatureClickEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeatureClickEventArgs
@@ -2371,6 +2434,13 @@ extern(Windows):
 
 interface MapCustomExperience : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapCustomExperience
 {
+	static MapCustomExperience New()
+	{
+		IInspectable outer, inner;
+		MapCustomExperience ret;
+		Debug.OK(activationFactory!(MapCustomExperience, Windows.UI.Xaml.Controls.Maps.IMapCustomExperienceFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(MapCustomExperience, MapCustomExperience, Windows.UI.Xaml.Controls.Maps.IMapCustomExperienceFactory)
 class MapCustomExperienceT(Base) : AgileObject!Base, MapCustomExperience
@@ -2442,6 +2512,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapElementStatics).get_VisibleProperty(&_ret));
 		return _ret;
+	}
+	static MapElement New()
+	{
+		IInspectable outer, inner;
+		MapElement ret;
+		Debug.OK(activationFactory!(MapElement, Windows.UI.Xaml.Controls.Maps.IMapElementFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(MapElement, MapElement, Windows.UI.Xaml.Controls.Maps.IMapElementFactory)
@@ -3129,6 +3206,13 @@ extern(Windows):
 
 interface MapTileDataSource : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapTileDataSource
 {
+	static MapTileDataSource New()
+	{
+		IInspectable outer, inner;
+		MapTileDataSource ret;
+		Debug.OK(activationFactory!(MapTileDataSource, Windows.UI.Xaml.Controls.Maps.IMapTileDataSourceFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(MapTileDataSource, MapTileDataSource, Windows.UI.Xaml.Controls.Maps.IMapTileDataSourceFactory)
 class MapTileDataSourceT(Base) : AgileObject!Base, MapTileDataSource
@@ -3331,6 +3415,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics).get_VisibleProperty(&_ret));
 		return _ret;
 	}
+	static MapTileSource New()
+	{
+		IInspectable outer, inner;
+		MapTileSource ret;
+		Debug.OK(activationFactory!(MapTileSource, Windows.UI.Xaml.Controls.Maps.IMapTileSourceFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(MapTileSource, MapTileSource, Windows.UI.Xaml.Controls.Maps.IMapTileSourceFactory)
 class MapTileSourceT(Base) : AgileObject!Base, MapTileSource
@@ -3490,6 +3581,20 @@ extern(Windows):
 	final void ZoomButtonsVisible(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IStreetsideExperience).set_ZoomButtonsVisible(value));
+	}
+	static Windows.UI.Xaml.Controls.Maps.StreetsideExperience New(Windows.UI.Xaml.Controls.Maps.StreetsidePanorama panorama)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Controls.Maps.IStreetsideExperienceFactory);
+		Windows.UI.Xaml.Controls.Maps.StreetsideExperience _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Controls.Maps.IStreetsideExperienceFactory).abi_CreateInstanceWithPanorama(panorama, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Controls.Maps.StreetsideExperience New(Windows.UI.Xaml.Controls.Maps.StreetsidePanorama panorama, double headingInDegrees, double pitchInDegrees, double fieldOfViewInDegrees)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Controls.Maps.IStreetsideExperienceFactory);
+		Windows.UI.Xaml.Controls.Maps.StreetsideExperience _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Controls.Maps.IStreetsideExperienceFactory).abi_CreateInstanceWithPanoramaHeadingPitchAndFieldOfView(panorama, headingInDegrees, pitchInDegrees, fieldOfViewInDegrees, &_ret));
+		return _ret;
 	}
 }
 

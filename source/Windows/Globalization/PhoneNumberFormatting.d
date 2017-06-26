@@ -197,6 +197,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfoStatics).abi_TryParseWithRegion(input, regionCode, out_phoneNumber, &_ret));
 		return _ret;
 	}
+	static Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo New(HSTRING number)
+	{
+		auto factory = factory!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfoFactory);
+		Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo _ret;
+		Debug.OK(factory.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfoFactory).abi_Create(number, &_ret));
+		return _ret;
+	}
 }
 
 enum PhoneNumberFormat

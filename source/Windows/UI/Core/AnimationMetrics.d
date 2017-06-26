@@ -93,6 +93,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IAnimationDescription).get_ZOrder(&_ret));
 		return _ret;
 	}
+	static Windows.UI.Core.AnimationMetrics.AnimationDescription New(Windows.UI.Core.AnimationMetrics.AnimationEffect effect, Windows.UI.Core.AnimationMetrics.AnimationEffectTarget target)
+	{
+		auto factory = factory!(Windows.UI.Core.AnimationMetrics.IAnimationDescriptionFactory);
+		Windows.UI.Core.AnimationMetrics.AnimationDescription _ret;
+		Debug.OK(factory.as!(Windows.UI.Core.AnimationMetrics.IAnimationDescriptionFactory).abi_CreateInstance(effect, target, &_ret));
+		return _ret;
+	}
 }
 
 interface OpacityAnimation : Windows.UI.Core.AnimationMetrics.IOpacityAnimation, Windows.UI.Core.AnimationMetrics.IPropertyAnimation

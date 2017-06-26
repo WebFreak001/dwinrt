@@ -512,6 +512,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloaderStaticMethods).abi_GetCurrentDownloadsForGroupAsync(group, &_ret));
 		return _ret;
 	}
+	static Windows.Networking.BackgroundTransfer.BackgroundDownloader New(Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroup completionGroup)
+	{
+		auto factory = factory!(Windows.Networking.BackgroundTransfer.IBackgroundDownloaderFactory);
+		Windows.Networking.BackgroundTransfer.BackgroundDownloader _ret;
+		Debug.OK(factory.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloaderFactory).abi_CreateWithCompletionGroup(completionGroup, &_ret));
+		return _ret;
+	}
 }
 
 interface BackgroundTransferCompletionGroup : Windows.Networking.BackgroundTransfer.IBackgroundTransferCompletionGroup
@@ -566,6 +573,20 @@ extern(Windows):
 	final void SetFile(Windows.Storage.IStorageFile value)
 	{
 		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferContentPart).abi_SetFile(value));
+	}
+	static Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart New(HSTRING name)
+	{
+		auto factory = factory!(Windows.Networking.BackgroundTransfer.IBackgroundTransferContentPartFactory);
+		Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart _ret;
+		Debug.OK(factory.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferContentPartFactory).abi_CreateWithName(name, &_ret));
+		return _ret;
+	}
+	static Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart New(HSTRING name, HSTRING fileName)
+	{
+		auto factory = factory!(Windows.Networking.BackgroundTransfer.IBackgroundTransferContentPartFactory);
+		Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart _ret;
+		Debug.OK(factory.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferContentPartFactory).abi_CreateWithNameAndFileName(name, fileName, &_ret));
+		return _ret;
 	}
 }
 
@@ -782,6 +803,13 @@ extern(Windows):
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.UploadOperation)) _ret;
 		Debug.OK(staticInstance.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploaderStaticMethods).abi_GetCurrentUploadsForGroupAsync(group, &_ret));
+		return _ret;
+	}
+	static Windows.Networking.BackgroundTransfer.BackgroundUploader New(Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroup completionGroup)
+	{
+		auto factory = factory!(Windows.Networking.BackgroundTransfer.IBackgroundUploaderFactory);
+		Windows.Networking.BackgroundTransfer.BackgroundUploader _ret;
+		Debug.OK(factory.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploaderFactory).abi_CreateWithCompletionGroup(completionGroup, &_ret));
 		return _ret;
 	}
 }

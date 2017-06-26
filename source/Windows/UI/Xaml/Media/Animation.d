@@ -1679,6 +1679,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IColorKeyFrameStatics).get_KeyTimeProperty(&_ret));
 		return _ret;
 	}
+	static ColorKeyFrame New()
+	{
+		IInspectable outer, inner;
+		ColorKeyFrame ret;
+		Debug.OK(activationFactory!(ColorKeyFrame, Windows.UI.Xaml.Media.Animation.IColorKeyFrameFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(ColorKeyFrame, ColorKeyFrame, Windows.UI.Xaml.Media.Animation.IColorKeyFrameFactory)
 class ColorKeyFrameT(Base) : AgileObject!Base, ColorKeyFrame
@@ -2208,6 +2215,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrameStatics).get_KeyTimeProperty(&_ret));
 		return _ret;
+	}
+	static DoubleKeyFrame New()
+	{
+		IInspectable outer, inner;
+		DoubleKeyFrame ret;
+		Debug.OK(activationFactory!(DoubleKeyFrame, Windows.UI.Xaml.Media.Animation.IDoubleKeyFrameFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(DoubleKeyFrame, DoubleKeyFrame, Windows.UI.Xaml.Media.Animation.IDoubleKeyFrameFactory)
@@ -3024,6 +3038,13 @@ extern(Windows):
 
 interface NavigationTransitionInfo : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Animation.INavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.INavigationTransitionInfoOverrides
 {
+	static NavigationTransitionInfo New()
+	{
+		IInspectable outer, inner;
+		NavigationTransitionInfo ret;
+		Debug.OK(activationFactory!(NavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.INavigationTransitionInfoFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(NavigationTransitionInfo, NavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.INavigationTransitionInfoFactory)
 class NavigationTransitionInfoT(Base) : AgileObject!Base, NavigationTransitionInfo
@@ -3120,6 +3141,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrameStatics).get_KeyTimeProperty(&_ret));
 		return _ret;
+	}
+	static ObjectKeyFrame New()
+	{
+		IInspectable outer, inner;
+		ObjectKeyFrame ret;
+		Debug.OK(activationFactory!(ObjectKeyFrame, Windows.UI.Xaml.Media.Animation.IObjectKeyFrameFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(ObjectKeyFrame, ObjectKeyFrame, Windows.UI.Xaml.Media.Animation.IObjectKeyFrameFactory)
@@ -3399,6 +3427,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointKeyFrameStatics).get_KeyTimeProperty(&_ret));
 		return _ret;
+	}
+	static PointKeyFrame New()
+	{
+		IInspectable outer, inner;
+		PointKeyFrame ret;
+		Debug.OK(activationFactory!(PointKeyFrame, Windows.UI.Xaml.Media.Animation.IPointKeyFrameFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(PointKeyFrame, PointKeyFrame, Windows.UI.Xaml.Media.Animation.IPointKeyFrameFactory)
@@ -4660,6 +4695,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ITimelineStatics).get_RepeatBehaviorProperty(&_ret));
 		return _ret;
+	}
+	static Timeline New()
+	{
+		IInspectable outer, inner;
+		Timeline ret;
+		Debug.OK(activationFactory!(Timeline, Windows.UI.Xaml.Media.Animation.ITimelineFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(Timeline, Timeline, Windows.UI.Xaml.Media.Animation.ITimelineFactory)

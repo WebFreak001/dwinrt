@@ -1844,6 +1844,27 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactField).get_Value(&_ret));
 		return _ret;
 	}
+	static Windows.ApplicationModel.Contacts.ContactField New(HSTRING value, Windows.ApplicationModel.Contacts.ContactFieldType type)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactFieldFactory);
+		Windows.ApplicationModel.Contacts.ContactField _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Contacts.IContactFieldFactory).abi_CreateField_Default(value, type, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Contacts.ContactField New(HSTRING value, Windows.ApplicationModel.Contacts.ContactFieldType type, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactFieldFactory);
+		Windows.ApplicationModel.Contacts.ContactField _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Contacts.IContactFieldFactory).abi_CreateField_Category(value, type, category, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Contacts.ContactField New(HSTRING name, HSTRING value, Windows.ApplicationModel.Contacts.ContactFieldType type, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactFieldFactory);
+		Windows.ApplicationModel.Contacts.ContactField _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Contacts.IContactFieldFactory).abi_CreateField_Custom(name, value, type, category, &_ret));
+		return _ret;
+	}
 }
 
 interface ContactFieldFactory : Windows.ApplicationModel.Contacts.IContactFieldFactory, Windows.ApplicationModel.Contacts.IContactLocationFieldFactory, Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory
@@ -2011,6 +2032,27 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactField).get_Value(&_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Contacts.ContactInstantMessageField New(HSTRING userName)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory);
+		Windows.ApplicationModel.Contacts.ContactInstantMessageField _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory).abi_CreateInstantMessage_Default(userName, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Contacts.ContactInstantMessageField New(HSTRING userName, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory);
+		Windows.ApplicationModel.Contacts.ContactInstantMessageField _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory).abi_CreateInstantMessage_Category(userName, category, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Contacts.ContactInstantMessageField New(HSTRING userName, Windows.ApplicationModel.Contacts.ContactFieldCategory category, HSTRING service, HSTRING displayText, Windows.Foundation.Uri verb)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory);
+		Windows.ApplicationModel.Contacts.ContactInstantMessageField _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory).abi_CreateInstantMessage_All(userName, category, service, displayText, verb, &_ret));
 		return _ret;
 	}
 }
@@ -2700,6 +2742,27 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactField).get_Value(&_ret));
 		return _ret;
 	}
+	static Windows.ApplicationModel.Contacts.ContactLocationField New(HSTRING unstructuredAddress)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory);
+		Windows.ApplicationModel.Contacts.ContactLocationField _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory).abi_CreateLocation_Default(unstructuredAddress, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Contacts.ContactLocationField New(HSTRING unstructuredAddress, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory);
+		Windows.ApplicationModel.Contacts.ContactLocationField _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory).abi_CreateLocation_Category(unstructuredAddress, category, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Contacts.ContactLocationField New(HSTRING unstructuredAddress, Windows.ApplicationModel.Contacts.ContactFieldCategory category, HSTRING street, HSTRING city, HSTRING region, HSTRING country, HSTRING postalCode)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory);
+		Windows.ApplicationModel.Contacts.ContactLocationField _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory).abi_CreateLocation_All(unstructuredAddress, category, street, city, region, country, postalCode, &_ret));
+		return _ret;
+	}
 }
 
 interface ContactManager
@@ -3049,6 +3112,20 @@ extern(Windows):
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactQueryOptions).get_AnnotationListIds(&_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Contacts.ContactQueryOptions New(HSTRING text)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactQueryOptionsFactory);
+		Windows.ApplicationModel.Contacts.ContactQueryOptions _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Contacts.IContactQueryOptionsFactory).abi_CreateWithText(text, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Contacts.ContactQueryOptions New(HSTRING text, Windows.ApplicationModel.Contacts.ContactQuerySearchFields fields)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactQueryOptionsFactory);
+		Windows.ApplicationModel.Contacts.ContactQueryOptions _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Contacts.IContactQueryOptionsFactory).abi_CreateWithTextAndFields(text, fields, &_ret));
 		return _ret;
 	}
 }

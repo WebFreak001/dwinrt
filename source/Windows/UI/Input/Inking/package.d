@@ -767,6 +767,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPoint2).get_Timestamp(&_ret));
 		return _ret;
 	}
+	static Windows.UI.Input.Inking.InkPoint New(Windows.Foundation.Point position, float pressure)
+	{
+		auto factory = factory!(Windows.UI.Input.Inking.IInkPointFactory);
+		Windows.UI.Input.Inking.InkPoint _ret;
+		Debug.OK(factory.as!(Windows.UI.Input.Inking.IInkPointFactory).abi_CreateInkPoint(position, pressure, &_ret));
+		return _ret;
+	}
 }
 
 interface InkPresenter : Windows.UI.Input.Inking.IInkPresenter, Windows.UI.Input.Inking.IInkPresenter2
@@ -991,6 +998,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).set_Transform(value));
 	}
+	static Windows.UI.Input.Inking.InkPresenterProtractor New(Windows.UI.Input.Inking.InkPresenter inkPresenter)
+	{
+		auto factory = factory!(Windows.UI.Input.Inking.IInkPresenterProtractorFactory);
+		Windows.UI.Input.Inking.InkPresenterProtractor _ret;
+		Debug.OK(factory.as!(Windows.UI.Input.Inking.IInkPresenterProtractorFactory).abi_Create(inkPresenter, &_ret));
+		return _ret;
+	}
 }
 
 interface InkPresenterRuler : Windows.UI.Input.Inking.IInkPresenterRuler, Windows.UI.Input.Inking.IInkPresenterStencil, Windows.UI.Input.Inking.IInkPresenterRuler2
@@ -1081,6 +1095,13 @@ extern(Windows):
 	final void IsCompassVisible(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterRuler2).set_IsCompassVisible(value));
+	}
+	static Windows.UI.Input.Inking.InkPresenterRuler New(Windows.UI.Input.Inking.InkPresenter inkPresenter)
+	{
+		auto factory = factory!(Windows.UI.Input.Inking.IInkPresenterRulerFactory);
+		Windows.UI.Input.Inking.InkPresenterRuler _ret;
+		Debug.OK(factory.as!(Windows.UI.Input.Inking.IInkPresenterRulerFactory).abi_Create(inkPresenter, &_ret));
+		return _ret;
 	}
 }
 

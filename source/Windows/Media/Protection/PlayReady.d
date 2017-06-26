@@ -725,6 +725,14 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDClient).abi_Close());
 	}
+	deprecated("INDClientFactory is deprecated and might not work on all platforms. For more info, see MSDN.")
+	static Windows.Media.Protection.PlayReady.NDClient New(Windows.Media.Protection.PlayReady.INDDownloadEngine downloadEngine, Windows.Media.Protection.PlayReady.INDStreamParser streamParser, Windows.Media.Protection.PlayReady.INDMessenger pMessenger)
+	{
+		auto factory = factory!(Windows.Media.Protection.PlayReady.INDClientFactory);
+		Windows.Media.Protection.PlayReady.NDClient _ret;
+		Debug.OK(factory.as!(Windows.Media.Protection.PlayReady.INDClientFactory).abi_CreateInstance(downloadEngine, streamParser, pMessenger, &_ret));
+		return _ret;
+	}
 }
 
 interface NDCustomData : Windows.Media.Protection.PlayReady.INDCustomData
@@ -742,6 +750,14 @@ extern(Windows):
 	{
 		ubyte* _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDCustomData).get_CustomData(out___customDataBytesSize, &_ret));
+		return _ret;
+	}
+	deprecated("INDCustomDataFactory is deprecated and might not work on all platforms. For more info, see MSDN.")
+	static Windows.Media.Protection.PlayReady.NDCustomData New(UINT32 __customDataTypeIDBytesSize, ubyte* customDataTypeIDBytes, UINT32 __customDataBytesSize, ubyte* customDataBytes)
+	{
+		auto factory = factory!(Windows.Media.Protection.PlayReady.INDCustomDataFactory);
+		Windows.Media.Protection.PlayReady.NDCustomData _ret;
+		Debug.OK(factory.as!(Windows.Media.Protection.PlayReady.INDCustomDataFactory).abi_CreateInstance(__customDataTypeIDBytesSize, customDataTypeIDBytes, __customDataBytesSize, customDataBytes, &_ret));
 		return _ret;
 	}
 }
@@ -809,6 +825,14 @@ extern(Windows):
 	final void LicenseFetchChallengeCustomData(Windows.Media.Protection.PlayReady.INDCustomData licenseFetchChallengeCustomData)
 	{
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDLicenseFetchDescriptor).set_LicenseFetchChallengeCustomData(licenseFetchChallengeCustomData));
+	}
+	deprecated("INDLicenseFetchDescriptorFactory is deprecated and might not work on all platforms. For more info, see MSDN.")
+	static Windows.Media.Protection.PlayReady.NDLicenseFetchDescriptor New(Windows.Media.Protection.PlayReady.NDContentIDType contentIDType, UINT32 __contentIDBytesSize, ubyte* contentIDBytes, Windows.Media.Protection.PlayReady.INDCustomData licenseFetchChallengeCustomData)
+	{
+		auto factory = factory!(Windows.Media.Protection.PlayReady.INDLicenseFetchDescriptorFactory);
+		Windows.Media.Protection.PlayReady.NDLicenseFetchDescriptor _ret;
+		Debug.OK(factory.as!(Windows.Media.Protection.PlayReady.INDLicenseFetchDescriptorFactory).abi_CreateInstance(contentIDType, __contentIDBytesSize, contentIDBytes, licenseFetchChallengeCustomData, &_ret));
+		return _ret;
 	}
 }
 
@@ -878,6 +902,14 @@ extern(Windows):
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDSendResult) _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDMessenger).abi_SendLicenseFetchRequestAsync(__sessionIDBytesSize, sessionIDBytes, __challengeDataBytesSize, challengeDataBytes, &_ret));
+		return _ret;
+	}
+	deprecated("INDTCPMessengerFactory is deprecated and might not work on all platforms. For more info, see MSDN.")
+	static Windows.Media.Protection.PlayReady.NDTCPMessenger New(HSTRING remoteHostName, UINT32 remoteHostPort)
+	{
+		auto factory = factory!(Windows.Media.Protection.PlayReady.INDTCPMessengerFactory);
+		Windows.Media.Protection.PlayReady.NDTCPMessenger _ret;
+		Debug.OK(factory.as!(Windows.Media.Protection.PlayReady.INDTCPMessengerFactory).abi_CreateInstance(remoteHostName, remoteHostPort, &_ret));
 		return _ret;
 	}
 }
@@ -957,6 +989,27 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyContentHeader2).get_KeyIdStrings(out___contentKeyIdStringsSize, &_ret));
 		return _ret;
 	}
+	static Windows.Media.Protection.PlayReady.PlayReadyContentHeader New(UINT32 __headerBytesSize, ubyte* headerBytes, Windows.Foundation.Uri licenseAcquisitionUrl, Windows.Foundation.Uri licenseAcquisitionUserInterfaceUrl, HSTRING customAttributes, GUID domainServiceId)
+	{
+		auto factory = factory!(Windows.Media.Protection.PlayReady.IPlayReadyContentHeaderFactory);
+		Windows.Media.Protection.PlayReady.PlayReadyContentHeader _ret;
+		Debug.OK(factory.as!(Windows.Media.Protection.PlayReady.IPlayReadyContentHeaderFactory).abi_CreateInstanceFromWindowsMediaDrmHeader(__headerBytesSize, headerBytes, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, customAttributes, domainServiceId, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Protection.PlayReady.PlayReadyContentHeader New(GUID contentKeyId, HSTRING contentKeyIdString, Windows.Media.Protection.PlayReady.PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, Windows.Foundation.Uri licenseAcquisitionUrl, Windows.Foundation.Uri licenseAcquisitionUserInterfaceUrl, HSTRING customAttributes, GUID domainServiceId)
+	{
+		auto factory = factory!(Windows.Media.Protection.PlayReady.IPlayReadyContentHeaderFactory);
+		Windows.Media.Protection.PlayReady.PlayReadyContentHeader _ret;
+		Debug.OK(factory.as!(Windows.Media.Protection.PlayReady.IPlayReadyContentHeaderFactory).abi_CreateInstanceFromComponents(contentKeyId, contentKeyIdString, contentEncryptionAlgorithm, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, customAttributes, domainServiceId, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Protection.PlayReady.PlayReadyContentHeader New(UINT32 __headerBytesSize, ubyte* headerBytes)
+	{
+		auto factory = factory!(Windows.Media.Protection.PlayReady.IPlayReadyContentHeaderFactory);
+		Windows.Media.Protection.PlayReady.PlayReadyContentHeader _ret;
+		Debug.OK(factory.as!(Windows.Media.Protection.PlayReady.IPlayReadyContentHeaderFactory).abi_CreateInstanceFromPlayReadyHeader(__headerBytesSize, headerBytes, &_ret));
+		return _ret;
+	}
 }
 
 interface PlayReadyContentResolver
@@ -1016,6 +1069,13 @@ extern(Windows):
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Media.Protection.PlayReady.IPlayReadyDomain)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Media.Protection.PlayReady.IPlayReadyDomain)).abi_First(out_first));
+	}
+	static Windows.Media.Protection.PlayReady.PlayReadyDomainIterable New(GUID domainAccountId)
+	{
+		auto factory = factory!(Windows.Media.Protection.PlayReady.IPlayReadyDomainIterableFactory);
+		Windows.Media.Protection.PlayReady.PlayReadyDomainIterable _ret;
+		Debug.OK(factory.as!(Windows.Media.Protection.PlayReady.IPlayReadyDomainIterableFactory).abi_CreateInstance(domainAccountId, &_ret));
+		return _ret;
 	}
 }
 
@@ -1483,6 +1543,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Media.Protection.PlayReady.IPlayReadyLicense)).abi_First(out_first));
 	}
+	static Windows.Media.Protection.PlayReady.PlayReadyLicenseIterable New(Windows.Media.Protection.PlayReady.PlayReadyContentHeader contentHeader, bool fullyEvaluated)
+	{
+		auto factory = factory!(Windows.Media.Protection.PlayReady.IPlayReadyLicenseIterableFactory);
+		Windows.Media.Protection.PlayReady.PlayReadyLicenseIterable _ret;
+		Debug.OK(factory.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicenseIterableFactory).abi_CreateInstance(contentHeader, fullyEvaluated, &_ret));
+		return _ret;
+	}
 }
 
 interface PlayReadyLicenseIterator : Windows.Foundation.Collections.IIterator!(Windows.Media.Protection.PlayReady.IPlayReadyLicense)
@@ -1543,6 +1610,13 @@ extern(Windows):
 	{
 		Windows.Media.Protection.PlayReady.PlayReadyLicenseIterable _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicenseSession2).abi_CreateLicenseIterable(contentHeader, fullyEvaluated, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Protection.PlayReady.PlayReadyLicenseSession New(Windows.Foundation.Collections.IPropertySet configuration)
+	{
+		auto factory = factory!(Windows.Media.Protection.PlayReady.IPlayReadyLicenseSessionFactory);
+		Windows.Media.Protection.PlayReady.PlayReadyLicenseSession _ret;
+		Debug.OK(factory.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicenseSessionFactory).abi_CreateInstance(configuration, &_ret));
 		return _ret;
 	}
 }
@@ -1698,6 +1772,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest)).abi_First(out_first));
 	}
+	static Windows.Media.Protection.PlayReady.PlayReadySecureStopIterable New(UINT32 __publisherCertBytesSize, ubyte* publisherCertBytes)
+	{
+		auto factory = factory!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopIterableFactory);
+		Windows.Media.Protection.PlayReady.PlayReadySecureStopIterable _ret;
+		Debug.OK(factory.as!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopIterableFactory).abi_CreateInstance(__publisherCertBytesSize, publisherCertBytes, &_ret));
+		return _ret;
+	}
 }
 
 interface PlayReadySecureStopIterator : Windows.Foundation.Collections.IIterator!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequest)
@@ -1818,6 +1899,20 @@ extern(Windows):
 	{
 		GUID _ret;
 		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionServiceRequest).get_Type(&_ret));
+		return _ret;
+	}
+	static Windows.Media.Protection.PlayReady.PlayReadySecureStopServiceRequest New(UINT32 __publisherCertBytesSize, ubyte* publisherCertBytes)
+	{
+		auto factory = factory!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequestFactory);
+		Windows.Media.Protection.PlayReady.PlayReadySecureStopServiceRequest _ret;
+		Debug.OK(factory.as!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequestFactory).abi_CreateInstance(__publisherCertBytesSize, publisherCertBytes, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Protection.PlayReady.PlayReadySecureStopServiceRequest New(GUID sessionID, UINT32 __publisherCertBytesSize, ubyte* publisherCertBytes)
+	{
+		auto factory = factory!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequestFactory);
+		Windows.Media.Protection.PlayReady.PlayReadySecureStopServiceRequest _ret;
+		Debug.OK(factory.as!(Windows.Media.Protection.PlayReady.IPlayReadySecureStopServiceRequestFactory).abi_CreateInstanceFromSessionID(sessionID, __publisherCertBytesSize, publisherCertBytes, &_ret));
 		return _ret;
 	}
 }

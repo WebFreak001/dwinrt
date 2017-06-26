@@ -1449,6 +1449,13 @@ class AppBarToggleButtonAutomationPeerT(Base) : AgileObject!Base, AppBarToggleBu
 
 interface AutoSuggestBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IAutoSuggestBoxAutomationPeer
 {
+	static Windows.UI.Xaml.Automation.Peers.AutoSuggestBoxAutomationPeer New(Windows.UI.Xaml.Controls.AutoSuggestBox owner)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Automation.Peers.IAutoSuggestBoxAutomationPeerFactory);
+		Windows.UI.Xaml.Automation.Peers.AutoSuggestBoxAutomationPeer _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Automation.Peers.IAutoSuggestBoxAutomationPeerFactory).abi_CreateInstanceWithOwner(owner, &_ret));
+		return _ret;
+	}
 }
 
 interface AutomationPeer : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Automation.Peers.IAutomationPeer, Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides, Windows.UI.Xaml.Automation.Peers.IAutomationPeerProtected, Windows.UI.Xaml.Automation.Peers.IAutomationPeer2, Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides2, Windows.UI.Xaml.Automation.Peers.IAutomationPeer3, Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3, Windows.UI.Xaml.Automation.Peers.IAutomationPeer4, Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides4, Windows.UI.Xaml.Automation.Peers.IAutomationPeer5, Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5, Windows.UI.Xaml.Automation.Peers.IAutomationPeer6, Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides6
@@ -1769,6 +1776,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerStatics).abi_ListenerExists(eventId, &_ret));
 		return _ret;
 	}
+	static AutomationPeer New()
+	{
+		IInspectable outer, inner;
+		AutomationPeer ret;
+		Debug.OK(activationFactory!(AutomationPeer, Windows.UI.Xaml.Automation.Peers.IAutomationPeerFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(AutomationPeer, AutomationPeer, Windows.UI.Xaml.Automation.Peers.IAutomationPeerFactory)
 class AutomationPeerT(Base) : AgileObject!Base, AutomationPeer
@@ -1980,6 +1994,20 @@ extern(Windows):
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotationStatics).get_PeerProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation New(Windows.UI.Xaml.Automation.AnnotationType type)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotationFactory);
+		Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotationFactory).abi_CreateInstance(type, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation New(Windows.UI.Xaml.Automation.AnnotationType type, Windows.UI.Xaml.Automation.Peers.AutomationPeer peer)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotationFactory);
+		Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotationFactory).abi_CreateWithPeerParameter(type, peer, &_ret));
 		return _ret;
 	}
 }
@@ -3253,10 +3281,24 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).abi_GetSelection(out___returnValueSize, &_ret));
 		return _ret;
 	}
+	static Windows.UI.Xaml.Automation.Peers.PivotAutomationPeer New(Windows.UI.Xaml.Controls.Pivot owner)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Automation.Peers.IPivotAutomationPeerFactory);
+		Windows.UI.Xaml.Automation.Peers.PivotAutomationPeer _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Automation.Peers.IPivotAutomationPeerFactory).abi_CreateInstanceWithOwner(owner, &_ret));
+		return _ret;
+	}
 }
 
 interface PivotItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer, Windows.UI.Xaml.Automation.Peers.IPivotItemAutomationPeer
 {
+	static Windows.UI.Xaml.Automation.Peers.PivotItemAutomationPeer New(Windows.UI.Xaml.Controls.PivotItem owner)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Automation.Peers.IPivotItemAutomationPeerFactory);
+		Windows.UI.Xaml.Automation.Peers.PivotItemAutomationPeer _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Automation.Peers.IPivotItemAutomationPeerFactory).abi_CreateInstanceWithOwner(owner, &_ret));
+		return _ret;
+	}
 }
 
 interface PivotItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IPivotItemDataAutomationPeer, Windows.UI.Xaml.Automation.Provider.IScrollItemProvider, Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider, Windows.UI.Xaml.Automation.Provider.IVirtualizedItemProvider
@@ -3293,6 +3335,13 @@ extern(Windows):
 	final void Realize()
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IVirtualizedItemProvider).abi_Realize());
+	}
+	static Windows.UI.Xaml.Automation.Peers.PivotItemDataAutomationPeer New(IInspectable item, Windows.UI.Xaml.Automation.Peers.PivotAutomationPeer parent)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Automation.Peers.IPivotItemDataAutomationPeerFactory);
+		Windows.UI.Xaml.Automation.Peers.PivotItemDataAutomationPeer _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Automation.Peers.IPivotItemDataAutomationPeerFactory).abi_CreateInstanceWithParentAndItem(item, parent, &_ret));
+		return _ret;
 	}
 }
 

@@ -325,6 +325,20 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+	static Windows.Web.Http.HttpBufferContent New(Windows.Storage.Streams.IBuffer content)
+	{
+		auto factory = factory!(Windows.Web.Http.IHttpBufferContentFactory);
+		Windows.Web.Http.HttpBufferContent _ret;
+		Debug.OK(factory.as!(Windows.Web.Http.IHttpBufferContentFactory).abi_CreateFromBuffer(content, &_ret));
+		return _ret;
+	}
+	static Windows.Web.Http.HttpBufferContent New(Windows.Storage.Streams.IBuffer content, UINT32 offset, UINT32 count)
+	{
+		auto factory = factory!(Windows.Web.Http.IHttpBufferContentFactory);
+		Windows.Web.Http.HttpBufferContent _ret;
+		Debug.OK(factory.as!(Windows.Web.Http.IHttpBufferContentFactory).abi_CreateFromBufferWithOffset(content, offset, count, &_ret));
+		return _ret;
+	}
 }
 
 interface HttpClient : Windows.Web.Http.IHttpClient, Windows.Foundation.IClosable, Windows.Foundation.IStringable
@@ -406,6 +420,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+	static Windows.Web.Http.HttpClient New(Windows.Web.Http.Filters.IHttpFilter filter)
+	{
+		auto factory = factory!(Windows.Web.Http.IHttpClientFactory);
+		Windows.Web.Http.HttpClient _ret;
+		Debug.OK(factory.as!(Windows.Web.Http.IHttpClientFactory).abi_Create(filter, &_ret));
+		return _ret;
+	}
 }
 
 interface HttpCookie : Windows.Web.Http.IHttpCookie, Windows.Foundation.IStringable
@@ -473,6 +494,13 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
+	static Windows.Web.Http.HttpCookie New(HSTRING name, HSTRING domain, HSTRING path)
+	{
+		auto factory = factory!(Windows.Web.Http.IHttpCookieFactory);
+		Windows.Web.Http.HttpCookie _ret;
+		Debug.OK(factory.as!(Windows.Web.Http.IHttpCookieFactory).abi_Create(name, domain, path, &_ret));
 		return _ret;
 	}
 }
@@ -588,6 +616,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+	static Windows.Web.Http.HttpFormUrlEncodedContent New(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) content)
+	{
+		auto factory = factory!(Windows.Web.Http.IHttpFormUrlEncodedContentFactory);
+		Windows.Web.Http.HttpFormUrlEncodedContent _ret;
+		Debug.OK(factory.as!(Windows.Web.Http.IHttpFormUrlEncodedContentFactory).abi_Create(content, &_ret));
+		return _ret;
+	}
 }
 
 interface HttpMethod : Windows.Web.Http.IHttpMethod, Windows.Foundation.IStringable
@@ -654,6 +689,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Web.Http.IHttpMethodStatics).get_Put(&_ret));
 		return _ret;
 	}
+	static Windows.Web.Http.HttpMethod New(HSTRING method)
+	{
+		auto factory = factory!(Windows.Web.Http.IHttpMethodFactory);
+		Windows.Web.Http.HttpMethod _ret;
+		Debug.OK(factory.as!(Windows.Web.Http.IHttpMethodFactory).abi_Create(method, &_ret));
+		return _ret;
+	}
 }
 
 interface HttpMultipartContent : Windows.Web.Http.IHttpContent, Windows.Foundation.IClosable, Windows.Web.Http.IHttpMultipartContent, Windows.Foundation.Collections.IIterable!(Windows.Web.Http.IHttpContent), Windows.Foundation.IStringable
@@ -717,6 +759,20 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
+	static Windows.Web.Http.HttpMultipartContent New(HSTRING subtype)
+	{
+		auto factory = factory!(Windows.Web.Http.IHttpMultipartContentFactory);
+		Windows.Web.Http.HttpMultipartContent _ret;
+		Debug.OK(factory.as!(Windows.Web.Http.IHttpMultipartContentFactory).abi_CreateWithSubtype(subtype, &_ret));
+		return _ret;
+	}
+	static Windows.Web.Http.HttpMultipartContent New(HSTRING subtype, HSTRING boundary)
+	{
+		auto factory = factory!(Windows.Web.Http.IHttpMultipartContentFactory);
+		Windows.Web.Http.HttpMultipartContent _ret;
+		Debug.OK(factory.as!(Windows.Web.Http.IHttpMultipartContentFactory).abi_CreateWithSubtypeAndBoundary(subtype, boundary, &_ret));
 		return _ret;
 	}
 }
@@ -792,6 +848,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+	static Windows.Web.Http.HttpMultipartFormDataContent New(HSTRING boundary)
+	{
+		auto factory = factory!(Windows.Web.Http.IHttpMultipartFormDataContentFactory);
+		Windows.Web.Http.HttpMultipartFormDataContent _ret;
+		Debug.OK(factory.as!(Windows.Web.Http.IHttpMultipartFormDataContentFactory).abi_CreateWithBoundary(boundary, &_ret));
+		return _ret;
+	}
 }
 
 interface HttpRequestMessage : Windows.Web.Http.IHttpRequestMessage, Windows.Foundation.IClosable, Windows.Foundation.IStringable
@@ -853,6 +916,13 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
+	static Windows.Web.Http.HttpRequestMessage New(Windows.Web.Http.HttpMethod method, Windows.Foundation.Uri uri)
+	{
+		auto factory = factory!(Windows.Web.Http.IHttpRequestMessageFactory);
+		Windows.Web.Http.HttpRequestMessage _ret;
+		Debug.OK(factory.as!(Windows.Web.Http.IHttpRequestMessageFactory).abi_Create(method, uri, &_ret));
 		return _ret;
 	}
 }
@@ -948,6 +1018,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+	static Windows.Web.Http.HttpResponseMessage New(Windows.Web.Http.HttpStatusCode statusCode)
+	{
+		auto factory = factory!(Windows.Web.Http.IHttpResponseMessageFactory);
+		Windows.Web.Http.HttpResponseMessage _ret;
+		Debug.OK(factory.as!(Windows.Web.Http.IHttpResponseMessageFactory).abi_Create(statusCode, &_ret));
+		return _ret;
+	}
 }
 
 interface HttpStreamContent : Windows.Web.Http.IHttpContent, Windows.Foundation.IClosable, Windows.Foundation.IStringable
@@ -1005,6 +1082,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+	static Windows.Web.Http.HttpStreamContent New(Windows.Storage.Streams.IInputStream content)
+	{
+		auto factory = factory!(Windows.Web.Http.IHttpStreamContentFactory);
+		Windows.Web.Http.HttpStreamContent _ret;
+		Debug.OK(factory.as!(Windows.Web.Http.IHttpStreamContentFactory).abi_CreateFromInputStream(content, &_ret));
+		return _ret;
+	}
 }
 
 interface HttpStringContent : Windows.Web.Http.IHttpContent, Windows.Foundation.IClosable, Windows.Foundation.IStringable
@@ -1060,6 +1144,27 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
+	static Windows.Web.Http.HttpStringContent New(HSTRING content)
+	{
+		auto factory = factory!(Windows.Web.Http.IHttpStringContentFactory);
+		Windows.Web.Http.HttpStringContent _ret;
+		Debug.OK(factory.as!(Windows.Web.Http.IHttpStringContentFactory).abi_CreateFromString(content, &_ret));
+		return _ret;
+	}
+	static Windows.Web.Http.HttpStringContent New(HSTRING content, Windows.Storage.Streams.UnicodeEncoding encoding)
+	{
+		auto factory = factory!(Windows.Web.Http.IHttpStringContentFactory);
+		Windows.Web.Http.HttpStringContent _ret;
+		Debug.OK(factory.as!(Windows.Web.Http.IHttpStringContentFactory).abi_CreateFromStringWithEncoding(content, encoding, &_ret));
+		return _ret;
+	}
+	static Windows.Web.Http.HttpStringContent New(HSTRING content, Windows.Storage.Streams.UnicodeEncoding encoding, HSTRING mediaType)
+	{
+		auto factory = factory!(Windows.Web.Http.IHttpStringContentFactory);
+		Windows.Web.Http.HttpStringContent _ret;
+		Debug.OK(factory.as!(Windows.Web.Http.IHttpStringContentFactory).abi_CreateFromStringWithEncodingAndMediaType(content, encoding, mediaType, &_ret));
 		return _ret;
 	}
 }

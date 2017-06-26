@@ -41,4 +41,11 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Data.Xml.Xsl.IXsltProcessor2).abi_TransformToDocument(inputNode, &_ret));
 		return _ret;
 	}
+	static Windows.Data.Xml.Xsl.XsltProcessor New(Windows.Data.Xml.Dom.XmlDocument document)
+	{
+		auto factory = factory!(Windows.Data.Xml.Xsl.IXsltProcessorFactory);
+		Windows.Data.Xml.Xsl.XsltProcessor _ret;
+		Debug.OK(factory.as!(Windows.Data.Xml.Xsl.IXsltProcessorFactory).abi_CreateInstance(document, &_ret));
+		return _ret;
+	}
 }

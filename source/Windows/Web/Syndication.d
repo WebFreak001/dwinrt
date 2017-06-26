@@ -369,6 +369,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationAttribute).set_Value(value));
 	}
+	static Windows.Web.Syndication.SyndicationAttribute New(HSTRING attributeName, HSTRING attributeNamespace, HSTRING attributeValue)
+	{
+		auto factory = factory!(Windows.Web.Syndication.ISyndicationAttributeFactory);
+		Windows.Web.Syndication.SyndicationAttribute _ret;
+		Debug.OK(factory.as!(Windows.Web.Syndication.ISyndicationAttributeFactory).abi_CreateSyndicationAttribute(attributeName, attributeNamespace, attributeValue, &_ret));
+		return _ret;
+	}
 }
 
 interface SyndicationCategory : Windows.Web.Syndication.ISyndicationCategory, Windows.Web.Syndication.ISyndicationNode
@@ -472,6 +479,20 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).abi_GetXmlDocument(format, &_ret));
 		return _ret;
 	}
+	static Windows.Web.Syndication.SyndicationCategory New(HSTRING term)
+	{
+		auto factory = factory!(Windows.Web.Syndication.ISyndicationCategoryFactory);
+		Windows.Web.Syndication.SyndicationCategory _ret;
+		Debug.OK(factory.as!(Windows.Web.Syndication.ISyndicationCategoryFactory).abi_CreateSyndicationCategory(term, &_ret));
+		return _ret;
+	}
+	static Windows.Web.Syndication.SyndicationCategory New(HSTRING term, HSTRING scheme, HSTRING label)
+	{
+		auto factory = factory!(Windows.Web.Syndication.ISyndicationCategoryFactory);
+		Windows.Web.Syndication.SyndicationCategory _ret;
+		Debug.OK(factory.as!(Windows.Web.Syndication.ISyndicationCategoryFactory).abi_CreateSyndicationCategoryEx(term, scheme, label, &_ret));
+		return _ret;
+	}
 }
 
 interface SyndicationClient : Windows.Web.Syndication.ISyndicationClient
@@ -535,6 +556,13 @@ extern(Windows):
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Syndication.SyndicationFeed, Windows.Web.Syndication.RetrievalProgress) _ret;
 		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationClient).abi_RetrieveFeedAsync(uri, &_ret));
+		return _ret;
+	}
+	static Windows.Web.Syndication.SyndicationClient New(Windows.Security.Credentials.PasswordCredential serverCredential)
+	{
+		auto factory = factory!(Windows.Web.Syndication.ISyndicationClientFactory);
+		Windows.Web.Syndication.SyndicationClient _ret;
+		Debug.OK(factory.as!(Windows.Web.Syndication.ISyndicationClientFactory).abi_CreateSyndicationClient(serverCredential, &_ret));
 		return _ret;
 	}
 }
@@ -649,6 +677,20 @@ extern(Windows):
 	final void SourceUri(Windows.Foundation.Uri value)
 	{
 		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationContent).set_SourceUri(value));
+	}
+	static Windows.Web.Syndication.SyndicationContent New(HSTRING text, Windows.Web.Syndication.SyndicationTextType type)
+	{
+		auto factory = factory!(Windows.Web.Syndication.ISyndicationContentFactory);
+		Windows.Web.Syndication.SyndicationContent _ret;
+		Debug.OK(factory.as!(Windows.Web.Syndication.ISyndicationContentFactory).abi_CreateSyndicationContent(text, type, &_ret));
+		return _ret;
+	}
+	static Windows.Web.Syndication.SyndicationContent New(Windows.Foundation.Uri sourceUri)
+	{
+		auto factory = factory!(Windows.Web.Syndication.ISyndicationContentFactory);
+		Windows.Web.Syndication.SyndicationContent _ret;
+		Debug.OK(factory.as!(Windows.Web.Syndication.ISyndicationContentFactory).abi_CreateSyndicationContentWithSourceUri(sourceUri, &_ret));
+		return _ret;
 	}
 }
 
@@ -887,6 +929,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).abi_GetXmlDocument(format, &_ret));
 		return _ret;
 	}
+	static Windows.Web.Syndication.SyndicationFeed New(HSTRING title, HSTRING subtitle, Windows.Foundation.Uri uri)
+	{
+		auto factory = factory!(Windows.Web.Syndication.ISyndicationFeedFactory);
+		Windows.Web.Syndication.SyndicationFeed _ret;
+		Debug.OK(factory.as!(Windows.Web.Syndication.ISyndicationFeedFactory).abi_CreateSyndicationFeed(title, subtitle, uri, &_ret));
+		return _ret;
+	}
 }
 
 interface SyndicationGenerator : Windows.Web.Syndication.ISyndicationGenerator, Windows.Web.Syndication.ISyndicationNode
@@ -988,6 +1037,13 @@ extern(Windows):
 	{
 		Windows.Data.Xml.Dom.XmlDocument _ret;
 		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).abi_GetXmlDocument(format, &_ret));
+		return _ret;
+	}
+	static Windows.Web.Syndication.SyndicationGenerator New(HSTRING text)
+	{
+		auto factory = factory!(Windows.Web.Syndication.ISyndicationGeneratorFactory);
+		Windows.Web.Syndication.SyndicationGenerator _ret;
+		Debug.OK(factory.as!(Windows.Web.Syndication.ISyndicationGeneratorFactory).abi_CreateSyndicationGenerator(text, &_ret));
 		return _ret;
 	}
 }
@@ -1209,6 +1265,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).abi_GetXmlDocument(format, &_ret));
 		return _ret;
 	}
+	static Windows.Web.Syndication.SyndicationItem New(HSTRING title, Windows.Web.Syndication.SyndicationContent content, Windows.Foundation.Uri uri)
+	{
+		auto factory = factory!(Windows.Web.Syndication.ISyndicationItemFactory);
+		Windows.Web.Syndication.SyndicationItem _ret;
+		Debug.OK(factory.as!(Windows.Web.Syndication.ISyndicationItemFactory).abi_CreateSyndicationItem(title, content, uri, &_ret));
+		return _ret;
+	}
 }
 
 interface SyndicationLink : Windows.Web.Syndication.ISyndicationLink, Windows.Web.Syndication.ISyndicationNode
@@ -1342,6 +1405,20 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).abi_GetXmlDocument(format, &_ret));
 		return _ret;
 	}
+	static Windows.Web.Syndication.SyndicationLink New(Windows.Foundation.Uri uri)
+	{
+		auto factory = factory!(Windows.Web.Syndication.ISyndicationLinkFactory);
+		Windows.Web.Syndication.SyndicationLink _ret;
+		Debug.OK(factory.as!(Windows.Web.Syndication.ISyndicationLinkFactory).abi_CreateSyndicationLink(uri, &_ret));
+		return _ret;
+	}
+	static Windows.Web.Syndication.SyndicationLink New(Windows.Foundation.Uri uri, HSTRING relationship, HSTRING title, HSTRING mediaType, UINT32 length)
+	{
+		auto factory = factory!(Windows.Web.Syndication.ISyndicationLinkFactory);
+		Windows.Web.Syndication.SyndicationLink _ret;
+		Debug.OK(factory.as!(Windows.Web.Syndication.ISyndicationLinkFactory).abi_CreateSyndicationLinkEx(uri, relationship, title, mediaType, length, &_ret));
+		return _ret;
+	}
 }
 
 interface SyndicationNode : Windows.Web.Syndication.ISyndicationNode
@@ -1413,6 +1490,13 @@ extern(Windows):
 	{
 		Windows.Data.Xml.Dom.XmlDocument _ret;
 		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).abi_GetXmlDocument(format, &_ret));
+		return _ret;
+	}
+	static Windows.Web.Syndication.SyndicationNode New(HSTRING nodeName, HSTRING nodeNamespace, HSTRING nodeValue)
+	{
+		auto factory = factory!(Windows.Web.Syndication.ISyndicationNodeFactory);
+		Windows.Web.Syndication.SyndicationNode _ret;
+		Debug.OK(factory.as!(Windows.Web.Syndication.ISyndicationNodeFactory).abi_CreateSyndicationNode(nodeName, nodeNamespace, nodeValue, &_ret));
 		return _ret;
 	}
 }
@@ -1518,6 +1602,20 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).abi_GetXmlDocument(format, &_ret));
 		return _ret;
 	}
+	static Windows.Web.Syndication.SyndicationPerson New(HSTRING name)
+	{
+		auto factory = factory!(Windows.Web.Syndication.ISyndicationPersonFactory);
+		Windows.Web.Syndication.SyndicationPerson _ret;
+		Debug.OK(factory.as!(Windows.Web.Syndication.ISyndicationPersonFactory).abi_CreateSyndicationPerson(name, &_ret));
+		return _ret;
+	}
+	static Windows.Web.Syndication.SyndicationPerson New(HSTRING name, HSTRING email, Windows.Foundation.Uri uri)
+	{
+		auto factory = factory!(Windows.Web.Syndication.ISyndicationPersonFactory);
+		Windows.Web.Syndication.SyndicationPerson _ret;
+		Debug.OK(factory.as!(Windows.Web.Syndication.ISyndicationPersonFactory).abi_CreateSyndicationPersonEx(name, email, uri, &_ret));
+		return _ret;
+	}
 }
 
 interface SyndicationText : Windows.Web.Syndication.ISyndicationText, Windows.Web.Syndication.ISyndicationNode
@@ -1619,6 +1717,20 @@ extern(Windows):
 	{
 		Windows.Data.Xml.Dom.XmlDocument _ret;
 		Debug.OK(this.as!(Windows.Web.Syndication.ISyndicationNode).abi_GetXmlDocument(format, &_ret));
+		return _ret;
+	}
+	static Windows.Web.Syndication.SyndicationText New(HSTRING text)
+	{
+		auto factory = factory!(Windows.Web.Syndication.ISyndicationTextFactory);
+		Windows.Web.Syndication.SyndicationText _ret;
+		Debug.OK(factory.as!(Windows.Web.Syndication.ISyndicationTextFactory).abi_CreateSyndicationText(text, &_ret));
+		return _ret;
+	}
+	static Windows.Web.Syndication.SyndicationText New(HSTRING text, Windows.Web.Syndication.SyndicationTextType type)
+	{
+		auto factory = factory!(Windows.Web.Syndication.ISyndicationTextFactory);
+		Windows.Web.Syndication.SyndicationText _ret;
+		Debug.OK(factory.as!(Windows.Web.Syndication.ISyndicationTextFactory).abi_CreateSyndicationTextEx(text, type, &_ret));
 		return _ret;
 	}
 }

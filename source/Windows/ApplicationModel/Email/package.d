@@ -859,6 +859,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailAttachment2).set_MimeType(value));
 	}
+	static Windows.ApplicationModel.Email.EmailAttachment New(HSTRING fileName, Windows.Storage.Streams.IRandomAccessStreamReference data)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Email.IEmailAttachmentFactory);
+		Windows.ApplicationModel.Email.EmailAttachment _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Email.IEmailAttachmentFactory).abi_Create(fileName, data, &_ret));
+		return _ret;
+	}
 }
 
 interface EmailConversation : Windows.ApplicationModel.Email.IEmailConversation
@@ -1254,6 +1261,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).set_Template(value));
 	}
+	static Windows.ApplicationModel.Email.EmailIrmInfo New(Windows.Foundation.DateTime expiration, Windows.ApplicationModel.Email.EmailIrmTemplate irmTemplate)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Email.IEmailIrmInfoFactory);
+		Windows.ApplicationModel.Email.EmailIrmInfo _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Email.IEmailIrmInfoFactory).abi_Create(expiration, irmTemplate, &_ret));
+		return _ret;
+	}
 }
 
 interface EmailIrmTemplate : Windows.ApplicationModel.Email.IEmailIrmTemplate
@@ -1288,6 +1302,13 @@ extern(Windows):
 	final void Name(HSTRING value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmTemplate).set_Name(value));
+	}
+	static Windows.ApplicationModel.Email.EmailIrmTemplate New(HSTRING id, HSTRING name, HSTRING description)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Email.IEmailIrmTemplateFactory);
+		Windows.ApplicationModel.Email.EmailIrmTemplate _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Email.IEmailIrmTemplateFactory).abi_Create(id, name, description, &_ret));
+		return _ret;
 	}
 }
 
@@ -2719,6 +2740,20 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailQueryOptions).get_FolderIds(&_ret));
 		return _ret;
 	}
+	static Windows.ApplicationModel.Email.EmailQueryOptions New(HSTRING text)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Email.IEmailQueryOptionsFactory);
+		Windows.ApplicationModel.Email.EmailQueryOptions _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Email.IEmailQueryOptionsFactory).abi_CreateWithText(text, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Email.EmailQueryOptions New(HSTRING text, Windows.ApplicationModel.Email.EmailQuerySearchFields fields)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Email.IEmailQueryOptionsFactory);
+		Windows.ApplicationModel.Email.EmailQueryOptions _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Email.IEmailQueryOptionsFactory).abi_CreateWithTextAndFields(text, fields, &_ret));
+		return _ret;
+	}
 }
 
 interface EmailQueryTextSearch : Windows.ApplicationModel.Email.IEmailQueryTextSearch
@@ -2778,6 +2813,20 @@ extern(Windows):
 	final void Address(HSTRING value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailRecipient).set_Address(value));
+	}
+	static Windows.ApplicationModel.Email.EmailRecipient New(HSTRING address)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Email.IEmailRecipientFactory);
+		Windows.ApplicationModel.Email.EmailRecipient _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Email.IEmailRecipientFactory).abi_Create(address, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Email.EmailRecipient New(HSTRING address, HSTRING name)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Email.IEmailRecipientFactory);
+		Windows.ApplicationModel.Email.EmailRecipient _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Email.IEmailRecipientFactory).abi_CreateWithName(address, name, &_ret));
+		return _ret;
 	}
 }
 

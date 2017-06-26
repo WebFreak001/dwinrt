@@ -590,6 +590,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
 	}
+	static Windows.Media.AudioFrame New(UINT32 capacity)
+	{
+		auto factory = factory!(Windows.Media.IAudioFrameFactory);
+		Windows.Media.AudioFrame _ret;
+		Debug.OK(factory.as!(Windows.Media.IAudioFrameFactory).abi_Create(capacity, &_ret));
+		return _ret;
+	}
 }
 
 interface AutoRepeatModeChangeRequestedEventArgs : Windows.Media.IAutoRepeatModeChangeRequestedEventArgs
@@ -1656,6 +1663,20 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	static Windows.Media.VideoFrame New(Windows.Graphics.Imaging.BitmapPixelFormat format, INT32 width, INT32 height)
+	{
+		auto factory = factory!(Windows.Media.IVideoFrameFactory);
+		Windows.Media.VideoFrame _ret;
+		Debug.OK(factory.as!(Windows.Media.IVideoFrameFactory).abi_Create(format, width, height, &_ret));
+		return _ret;
+	}
+	static Windows.Media.VideoFrame New(Windows.Graphics.Imaging.BitmapPixelFormat format, INT32 width, INT32 height, Windows.Graphics.Imaging.BitmapAlphaMode alpha)
+	{
+		auto factory = factory!(Windows.Media.IVideoFrameFactory);
+		Windows.Media.VideoFrame _ret;
+		Debug.OK(factory.as!(Windows.Media.IVideoFrameFactory).abi_CreateWithAlpha(format, width, height, alpha, &_ret));
+		return _ret;
 	}
 }
 

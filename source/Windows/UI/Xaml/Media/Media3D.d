@@ -440,6 +440,13 @@ extern(Windows):
 
 interface Transform3D : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Media3D.ITransform3D
 {
+	static Transform3D New()
+	{
+		IInspectable outer, inner;
+		Transform3D ret;
+		Debug.OK(activationFactory!(Transform3D, Windows.UI.Xaml.Media.Media3D.ITransform3DFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(Transform3D, Transform3D, Windows.UI.Xaml.Media.Media3D.ITransform3DFactory)
 class Transform3DT(Base) : AgileObject!Base, Transform3D

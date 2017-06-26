@@ -484,6 +484,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
 	}
+	static Windows.Foundation.Diagnostics.FileLoggingSession New(HSTRING name)
+	{
+		auto factory = factory!(Windows.Foundation.Diagnostics.IFileLoggingSessionFactory);
+		Windows.Foundation.Diagnostics.FileLoggingSession _ret;
+		Debug.OK(factory.as!(Windows.Foundation.Diagnostics.IFileLoggingSessionFactory).abi_Create(name, &_ret));
+		return _ret;
+	}
 }
 
 interface LogFileGeneratedEventArgs : Windows.Foundation.Diagnostics.ILogFileGeneratedEventArgs
@@ -590,6 +597,20 @@ extern(Windows):
 	{
 		Windows.Foundation.Diagnostics.LoggingActivity _ret;
 		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_StartActivityWithFieldsAndOptions(startEventName, fields, level, options, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Diagnostics.LoggingActivity New(HSTRING activityName, Windows.Foundation.Diagnostics.ILoggingChannel loggingChannel)
+	{
+		auto factory = factory!(Windows.Foundation.Diagnostics.ILoggingActivityFactory);
+		Windows.Foundation.Diagnostics.LoggingActivity _ret;
+		Debug.OK(factory.as!(Windows.Foundation.Diagnostics.ILoggingActivityFactory).abi_CreateLoggingActivity(activityName, loggingChannel, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Diagnostics.LoggingActivity New(HSTRING activityName, Windows.Foundation.Diagnostics.ILoggingChannel loggingChannel, Windows.Foundation.Diagnostics.LoggingLevel level)
+	{
+		auto factory = factory!(Windows.Foundation.Diagnostics.ILoggingActivityFactory);
+		Windows.Foundation.Diagnostics.LoggingActivity _ret;
+		Debug.OK(factory.as!(Windows.Foundation.Diagnostics.ILoggingActivityFactory).abi_CreateLoggingActivityWithLevel(activityName, loggingChannel, level, &_ret));
 		return _ret;
 	}
 }
@@ -709,6 +730,14 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_StartActivityWithFieldsAndOptions(startEventName, fields, level, options, &_ret));
 		return _ret;
 	}
+	deprecated("This constructor creates a LoggingChannel in Windows 8.1 compatibility mode. Prefer the two-parameter constructor.")
+	static Windows.Foundation.Diagnostics.LoggingChannel New(HSTRING name)
+	{
+		auto factory = factory!(Windows.Foundation.Diagnostics.ILoggingChannelFactory);
+		Windows.Foundation.Diagnostics.LoggingChannel _ret;
+		Debug.OK(factory.as!(Windows.Foundation.Diagnostics.ILoggingChannelFactory).abi_Create(name, &_ret));
+		return _ret;
+	}
 }
 
 interface LoggingChannelOptions : Windows.Foundation.Diagnostics.ILoggingChannelOptions
@@ -723,6 +752,13 @@ extern(Windows):
 	final void Group(GUID value)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannelOptions).set_Group(value));
+	}
+	static Windows.Foundation.Diagnostics.LoggingChannelOptions New(GUID group)
+	{
+		auto factory = factory!(Windows.Foundation.Diagnostics.ILoggingChannelOptionsFactory);
+		Windows.Foundation.Diagnostics.LoggingChannelOptions _ret;
+		Debug.OK(factory.as!(Windows.Foundation.Diagnostics.ILoggingChannelOptionsFactory).abi_Create(group, &_ret));
+		return _ret;
 	}
 }
 
@@ -1254,6 +1290,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).set_RelatedActivityId(value));
 	}
+	static Windows.Foundation.Diagnostics.LoggingOptions New(INT64 keywords)
+	{
+		auto factory = factory!(Windows.Foundation.Diagnostics.ILoggingOptionsFactory);
+		Windows.Foundation.Diagnostics.LoggingOptions _ret;
+		Debug.OK(factory.as!(Windows.Foundation.Diagnostics.ILoggingOptionsFactory).abi_CreateWithKeywords(keywords, &_ret));
+		return _ret;
+	}
 }
 
 interface LoggingSession : Windows.Foundation.Diagnostics.ILoggingSession, Windows.Foundation.IClosable
@@ -1286,6 +1329,13 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	static Windows.Foundation.Diagnostics.LoggingSession New(HSTRING name)
+	{
+		auto factory = factory!(Windows.Foundation.Diagnostics.ILoggingSessionFactory);
+		Windows.Foundation.Diagnostics.LoggingSession _ret;
+		Debug.OK(factory.as!(Windows.Foundation.Diagnostics.ILoggingSessionFactory).abi_Create(name, &_ret));
+		return _ret;
 	}
 }
 

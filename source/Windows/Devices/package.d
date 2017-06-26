@@ -69,6 +69,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.ILowLevelDevicesAggregateProvider).get_SpiControllerProvider(&_ret));
 		return _ret;
 	}
+	static Windows.Devices.LowLevelDevicesAggregateProvider New(Windows.Devices.Adc.Provider.IAdcControllerProvider adc, Windows.Devices.Pwm.Provider.IPwmControllerProvider pwm, Windows.Devices.Gpio.Provider.IGpioControllerProvider gpio, Windows.Devices.I2c.Provider.II2cControllerProvider i2c, Windows.Devices.Spi.Provider.ISpiControllerProvider spi)
+	{
+		auto factory = factory!(Windows.Devices.ILowLevelDevicesAggregateProviderFactory);
+		Windows.Devices.LowLevelDevicesAggregateProvider _ret;
+		Debug.OK(factory.as!(Windows.Devices.ILowLevelDevicesAggregateProviderFactory).abi_Create(adc, pwm, gpio, i2c, spi, &_ret));
+		return _ret;
+	}
 }
 
 interface LowLevelDevicesController : Windows.Devices.ILowLevelDevicesController

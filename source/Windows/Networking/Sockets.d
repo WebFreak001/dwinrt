@@ -679,6 +679,20 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger2).get_IsWakeFromLowPowerSupported(&_ret));
 		return _ret;
 	}
+	static Windows.Networking.Sockets.ControlChannelTrigger New(HSTRING channelId, UINT32 serverKeepAliveIntervalInMinutes)
+	{
+		auto factory = factory!(Windows.Networking.Sockets.IControlChannelTriggerFactory);
+		Windows.Networking.Sockets.ControlChannelTrigger _ret;
+		Debug.OK(factory.as!(Windows.Networking.Sockets.IControlChannelTriggerFactory).abi_CreateControlChannelTrigger(channelId, serverKeepAliveIntervalInMinutes, &_ret));
+		return _ret;
+	}
+	static Windows.Networking.Sockets.ControlChannelTrigger New(HSTRING channelId, UINT32 serverKeepAliveIntervalInMinutes, Windows.Networking.Sockets.ControlChannelTriggerResourceType resourceRequestType)
+	{
+		auto factory = factory!(Windows.Networking.Sockets.IControlChannelTriggerFactory);
+		Windows.Networking.Sockets.ControlChannelTrigger _ret;
+		Debug.OK(factory.as!(Windows.Networking.Sockets.IControlChannelTriggerFactory).abi_CreateControlChannelTriggerEx(channelId, serverKeepAliveIntervalInMinutes, resourceRequestType, &_ret));
+		return _ret;
+	}
 }
 
 interface DatagramSocket : Windows.Networking.Sockets.IDatagramSocket, Windows.Foundation.IClosable, Windows.Networking.Sockets.IDatagramSocket2, Windows.Networking.Sockets.IDatagramSocket3
@@ -1143,6 +1157,13 @@ extern(Windows):
 	{
 		Windows.Storage.Streams.IBuffer _ret;
 		Debug.OK(this.as!(Windows.Networking.Sockets.ISocketActivityContext).get_Data(&_ret));
+		return _ret;
+	}
+	static Windows.Networking.Sockets.SocketActivityContext New(Windows.Storage.Streams.IBuffer data)
+	{
+		auto factory = factory!(Windows.Networking.Sockets.ISocketActivityContextFactory);
+		Windows.Networking.Sockets.SocketActivityContext _ret;
+		Debug.OK(factory.as!(Windows.Networking.Sockets.ISocketActivityContextFactory).abi_Create(data, &_ret));
 		return _ret;
 	}
 }

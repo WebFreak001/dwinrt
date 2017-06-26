@@ -651,6 +651,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
 	}
+	static Windows.Foundation.Deferral New(Windows.Foundation.DeferralCompletedHandler handler)
+	{
+		auto factory = factory!(Windows.Foundation.IDeferralFactory);
+		Windows.Foundation.Deferral _ret;
+		Debug.OK(factory.as!(Windows.Foundation.IDeferralFactory).abi_Create(handler, &_ret));
+		return _ret;
+	}
 }
 
 interface MemoryBuffer : Windows.Foundation.IMemoryBuffer, Windows.Foundation.IClosable
@@ -665,6 +672,13 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+	static Windows.Foundation.MemoryBuffer New(UINT32 capacity)
+	{
+		auto factory = factory!(Windows.Foundation.IMemoryBufferFactory);
+		Windows.Foundation.MemoryBuffer _ret;
+		Debug.OK(factory.as!(Windows.Foundation.IMemoryBufferFactory).abi_Create(capacity, &_ret));
+		return _ret;
 	}
 }
 
@@ -1054,6 +1068,20 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Foundation.IUriEscapeStatics).abi_EscapeComponent(toEscape, &_ret));
 		return _ret;
 	}
+	static Windows.Foundation.Uri New(HSTRING uri)
+	{
+		auto factory = factory!(Windows.Foundation.IUriRuntimeClassFactory);
+		Windows.Foundation.Uri _ret;
+		Debug.OK(factory.as!(Windows.Foundation.IUriRuntimeClassFactory).abi_CreateUri(uri, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Uri New(HSTRING baseUri, HSTRING relativeUri)
+	{
+		auto factory = factory!(Windows.Foundation.IUriRuntimeClassFactory);
+		Windows.Foundation.Uri _ret;
+		Debug.OK(factory.as!(Windows.Foundation.IUriRuntimeClassFactory).abi_CreateWithRelativeUri(baseUri, relativeUri, &_ret));
+		return _ret;
+	}
 }
 
 interface WwwFormUrlDecoder : Windows.Foundation.IWwwFormUrlDecoderRuntimeClass, Windows.Foundation.Collections.IVectorView!(Windows.Foundation.IWwwFormUrlDecoderEntry), Windows.Foundation.Collections.IIterable!(Windows.Foundation.IWwwFormUrlDecoderEntry)
@@ -1088,6 +1116,13 @@ extern(Windows):
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.IWwwFormUrlDecoderEntry)).abi_First(out_first));
+	}
+	static Windows.Foundation.WwwFormUrlDecoder New(HSTRING query)
+	{
+		auto factory = factory!(Windows.Foundation.IWwwFormUrlDecoderRuntimeClassFactory);
+		Windows.Foundation.WwwFormUrlDecoder _ret;
+		Debug.OK(factory.as!(Windows.Foundation.IWwwFormUrlDecoderRuntimeClassFactory).abi_CreateWwwFormUrlDecoder(query, &_ret));
+		return _ret;
 	}
 }
 

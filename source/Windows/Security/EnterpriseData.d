@@ -482,6 +482,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Security.EnterpriseData.IFileUnprotectOptions).get_Audit(&_ret));
 		return _ret;
 	}
+	static Windows.Security.EnterpriseData.FileUnprotectOptions New(bool audit)
+	{
+		auto factory = factory!(Windows.Security.EnterpriseData.IFileUnprotectOptionsFactory);
+		Windows.Security.EnterpriseData.FileUnprotectOptions _ret;
+		Debug.OK(factory.as!(Windows.Security.EnterpriseData.IFileUnprotectOptionsFactory).abi_Create(audit, &_ret));
+		return _ret;
+	}
 }
 
 interface ProtectedAccessResumedEventArgs : Windows.Security.EnterpriseData.IProtectedAccessResumedEventArgs
@@ -627,6 +634,20 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfo).get_TargetDescription(&_ret));
+		return _ret;
+	}
+	static Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo New(Windows.Security.EnterpriseData.ProtectionPolicyAuditAction action, HSTRING dataDescription, HSTRING sourceDescription, HSTRING targetDescription)
+	{
+		auto factory = factory!(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfoFactory);
+		Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo _ret;
+		Debug.OK(factory.as!(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfoFactory).abi_Create(action, dataDescription, sourceDescription, targetDescription, &_ret));
+		return _ret;
+	}
+	static Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo New(Windows.Security.EnterpriseData.ProtectionPolicyAuditAction action, HSTRING dataDescription)
+	{
+		auto factory = factory!(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfoFactory);
+		Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo _ret;
+		Debug.OK(factory.as!(Windows.Security.EnterpriseData.IProtectionPolicyAuditInfoFactory).abi_CreateWithActionAndDataDescription(action, dataDescription, &_ret));
 		return _ret;
 	}
 }

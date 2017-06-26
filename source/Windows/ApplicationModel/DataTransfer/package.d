@@ -1166,6 +1166,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IShareProvider).set_Tag(value));
 	}
+	static Windows.ApplicationModel.DataTransfer.ShareProvider New(HSTRING title, Windows.Storage.Streams.RandomAccessStreamReference displayIcon, Windows.UI.Color backgroundColor, Windows.ApplicationModel.DataTransfer.ShareProviderHandler handler)
+	{
+		auto factory = factory!(Windows.ApplicationModel.DataTransfer.IShareProviderFactory);
+		Windows.ApplicationModel.DataTransfer.ShareProvider _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.DataTransfer.IShareProviderFactory).abi_Create(title, displayIcon, backgroundColor, handler, &_ret));
+		return _ret;
+	}
 }
 
 interface ShareProviderOperation : Windows.ApplicationModel.DataTransfer.IShareProviderOperation

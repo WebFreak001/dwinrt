@@ -246,6 +246,20 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_Properties(&_ret));
 		return _ret;
 	}
+	static Windows.Media.Effects.AudioEffectDefinition New(HSTRING activatableClassId)
+	{
+		auto factory = factory!(Windows.Media.Effects.IAudioEffectDefinitionFactory);
+		Windows.Media.Effects.AudioEffectDefinition _ret;
+		Debug.OK(factory.as!(Windows.Media.Effects.IAudioEffectDefinitionFactory).abi_Create(activatableClassId, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Effects.AudioEffectDefinition New(HSTRING activatableClassId, Windows.Foundation.Collections.IPropertySet props)
+	{
+		auto factory = factory!(Windows.Media.Effects.IAudioEffectDefinitionFactory);
+		Windows.Media.Effects.AudioEffectDefinition _ret;
+		Debug.OK(factory.as!(Windows.Media.Effects.IAudioEffectDefinitionFactory).abi_CreateWithProperties(activatableClassId, props, &_ret));
+		return _ret;
+	}
 }
 
 interface AudioEffectsManager
@@ -400,6 +414,20 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Effects.IVideoCompositorDefinition).get_Properties(&_ret));
 		return _ret;
 	}
+	static Windows.Media.Effects.VideoCompositorDefinition New(HSTRING activatableClassId)
+	{
+		auto factory = factory!(Windows.Media.Effects.IVideoCompositorDefinitionFactory);
+		Windows.Media.Effects.VideoCompositorDefinition _ret;
+		Debug.OK(factory.as!(Windows.Media.Effects.IVideoCompositorDefinitionFactory).abi_Create(activatableClassId, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Effects.VideoCompositorDefinition New(HSTRING activatableClassId, Windows.Foundation.Collections.IPropertySet props)
+	{
+		auto factory = factory!(Windows.Media.Effects.IVideoCompositorDefinitionFactory);
+		Windows.Media.Effects.VideoCompositorDefinition _ret;
+		Debug.OK(factory.as!(Windows.Media.Effects.IVideoCompositorDefinitionFactory).abi_CreateWithProperties(activatableClassId, props, &_ret));
+		return _ret;
+	}
 }
 
 interface VideoEffectDefinition : Windows.Media.Effects.IVideoEffectDefinition
@@ -415,6 +443,20 @@ extern(Windows):
 	{
 		Windows.Foundation.Collections.IPropertySet _ret;
 		Debug.OK(this.as!(Windows.Media.Effects.IVideoEffectDefinition).get_Properties(&_ret));
+		return _ret;
+	}
+	static Windows.Media.Effects.VideoEffectDefinition New(HSTRING activatableClassId)
+	{
+		auto factory = factory!(Windows.Media.Effects.IVideoEffectDefinitionFactory);
+		Windows.Media.Effects.VideoEffectDefinition _ret;
+		Debug.OK(factory.as!(Windows.Media.Effects.IVideoEffectDefinitionFactory).abi_Create(activatableClassId, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Effects.VideoEffectDefinition New(HSTRING activatableClassId, Windows.Foundation.Collections.IPropertySet props)
+	{
+		auto factory = factory!(Windows.Media.Effects.IVideoEffectDefinitionFactory);
+		Windows.Media.Effects.VideoEffectDefinition _ret;
+		Debug.OK(factory.as!(Windows.Media.Effects.IVideoEffectDefinitionFactory).abi_CreateWithProperties(activatableClassId, props, &_ret));
 		return _ret;
 	}
 }

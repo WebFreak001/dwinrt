@@ -206,6 +206,55 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterStatics).get_ShortTime(&_ret));
 		return _ret;
 	}
+	static Windows.Globalization.DateTimeFormatting.DateTimeFormatter New(HSTRING formatTemplate)
+	{
+		auto factory = factory!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory);
+		Windows.Globalization.DateTimeFormatting.DateTimeFormatter _ret;
+		Debug.OK(factory.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory).abi_CreateDateTimeFormatter(formatTemplate, &_ret));
+		return _ret;
+	}
+	static Windows.Globalization.DateTimeFormatting.DateTimeFormatter New(HSTRING formatTemplate, Windows.Foundation.Collections.IIterable!(HSTRING) languages)
+	{
+		auto factory = factory!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory);
+		Windows.Globalization.DateTimeFormatting.DateTimeFormatter _ret;
+		Debug.OK(factory.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory).abi_CreateDateTimeFormatterLanguages(formatTemplate, languages, &_ret));
+		return _ret;
+	}
+	static Windows.Globalization.DateTimeFormatting.DateTimeFormatter New(HSTRING formatTemplate, Windows.Foundation.Collections.IIterable!(HSTRING) languages, HSTRING geographicRegion, HSTRING calendar, HSTRING clock)
+	{
+		auto factory = factory!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory);
+		Windows.Globalization.DateTimeFormatting.DateTimeFormatter _ret;
+		Debug.OK(factory.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory).abi_CreateDateTimeFormatterContext(formatTemplate, languages, geographicRegion, calendar, clock, &_ret));
+		return _ret;
+	}
+	static Windows.Globalization.DateTimeFormatting.DateTimeFormatter New(Windows.Globalization.DateTimeFormatting.YearFormat yearFormat, Windows.Globalization.DateTimeFormatting.MonthFormat monthFormat, Windows.Globalization.DateTimeFormatting.DayFormat dayFormat, Windows.Globalization.DateTimeFormatting.DayOfWeekFormat dayOfWeekFormat)
+	{
+		auto factory = factory!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory);
+		Windows.Globalization.DateTimeFormatting.DateTimeFormatter _ret;
+		Debug.OK(factory.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory).abi_CreateDateTimeFormatterDate(yearFormat, monthFormat, dayFormat, dayOfWeekFormat, &_ret));
+		return _ret;
+	}
+	static Windows.Globalization.DateTimeFormatting.DateTimeFormatter New(Windows.Globalization.DateTimeFormatting.HourFormat hourFormat, Windows.Globalization.DateTimeFormatting.MinuteFormat minuteFormat, Windows.Globalization.DateTimeFormatting.SecondFormat secondFormat)
+	{
+		auto factory = factory!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory);
+		Windows.Globalization.DateTimeFormatting.DateTimeFormatter _ret;
+		Debug.OK(factory.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory).abi_CreateDateTimeFormatterTime(hourFormat, minuteFormat, secondFormat, &_ret));
+		return _ret;
+	}
+	static Windows.Globalization.DateTimeFormatting.DateTimeFormatter New(Windows.Globalization.DateTimeFormatting.YearFormat yearFormat, Windows.Globalization.DateTimeFormatting.MonthFormat monthFormat, Windows.Globalization.DateTimeFormatting.DayFormat dayFormat, Windows.Globalization.DateTimeFormatting.DayOfWeekFormat dayOfWeekFormat, Windows.Globalization.DateTimeFormatting.HourFormat hourFormat, Windows.Globalization.DateTimeFormatting.MinuteFormat minuteFormat, Windows.Globalization.DateTimeFormatting.SecondFormat secondFormat, Windows.Foundation.Collections.IIterable!(HSTRING) languages)
+	{
+		auto factory = factory!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory);
+		Windows.Globalization.DateTimeFormatting.DateTimeFormatter _ret;
+		Debug.OK(factory.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory).abi_CreateDateTimeFormatterDateTimeLanguages(yearFormat, monthFormat, dayFormat, dayOfWeekFormat, hourFormat, minuteFormat, secondFormat, languages, &_ret));
+		return _ret;
+	}
+	static Windows.Globalization.DateTimeFormatting.DateTimeFormatter New(Windows.Globalization.DateTimeFormatting.YearFormat yearFormat, Windows.Globalization.DateTimeFormatting.MonthFormat monthFormat, Windows.Globalization.DateTimeFormatting.DayFormat dayFormat, Windows.Globalization.DateTimeFormatting.DayOfWeekFormat dayOfWeekFormat, Windows.Globalization.DateTimeFormatting.HourFormat hourFormat, Windows.Globalization.DateTimeFormatting.MinuteFormat minuteFormat, Windows.Globalization.DateTimeFormatting.SecondFormat secondFormat, Windows.Foundation.Collections.IIterable!(HSTRING) languages, HSTRING geographicRegion, HSTRING calendar, HSTRING clock)
+	{
+		auto factory = factory!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory);
+		Windows.Globalization.DateTimeFormatting.DateTimeFormatter _ret;
+		Debug.OK(factory.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterFactory).abi_CreateDateTimeFormatterDateTimeContext(yearFormat, monthFormat, dayFormat, dayOfWeekFormat, hourFormat, minuteFormat, secondFormat, languages, geographicRegion, calendar, clock, &_ret));
+		return _ret;
+	}
 }
 
 enum DayFormat

@@ -268,6 +268,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebProviderError).get_Properties(&_ret));
 		return _ret;
 	}
+	static Windows.Security.Authentication.Web.Core.WebProviderError New(UINT32 errorCode, HSTRING errorMessage)
+	{
+		auto factory = factory!(Windows.Security.Authentication.Web.Core.IWebProviderErrorFactory);
+		Windows.Security.Authentication.Web.Core.WebProviderError _ret;
+		Debug.OK(factory.as!(Windows.Security.Authentication.Web.Core.IWebProviderErrorFactory).abi_Create(errorCode, errorMessage, &_ret));
+		return _ret;
+	}
 }
 
 interface WebTokenRequest : Windows.Security.Authentication.Web.Core.IWebTokenRequest, Windows.Security.Authentication.Web.Core.IWebTokenRequest2, Windows.Security.Authentication.Web.Core.IWebTokenRequest3
@@ -318,6 +325,34 @@ extern(Windows):
 	final void CorrelationId(HSTRING value)
 	{
 		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebTokenRequest3).set_CorrelationId(value));
+	}
+	static Windows.Security.Authentication.Web.Core.WebTokenRequest New(Windows.Security.Credentials.WebAccountProvider provider, HSTRING scope_, HSTRING clientId)
+	{
+		auto factory = factory!(Windows.Security.Authentication.Web.Core.IWebTokenRequestFactory);
+		Windows.Security.Authentication.Web.Core.WebTokenRequest _ret;
+		Debug.OK(factory.as!(Windows.Security.Authentication.Web.Core.IWebTokenRequestFactory).abi_Create(provider, scope_, clientId, &_ret));
+		return _ret;
+	}
+	static Windows.Security.Authentication.Web.Core.WebTokenRequest New(Windows.Security.Credentials.WebAccountProvider provider, HSTRING scope_, HSTRING clientId, Windows.Security.Authentication.Web.Core.WebTokenRequestPromptType promptType)
+	{
+		auto factory = factory!(Windows.Security.Authentication.Web.Core.IWebTokenRequestFactory);
+		Windows.Security.Authentication.Web.Core.WebTokenRequest _ret;
+		Debug.OK(factory.as!(Windows.Security.Authentication.Web.Core.IWebTokenRequestFactory).abi_CreateWithPromptType(provider, scope_, clientId, promptType, &_ret));
+		return _ret;
+	}
+	static Windows.Security.Authentication.Web.Core.WebTokenRequest New(Windows.Security.Credentials.WebAccountProvider provider)
+	{
+		auto factory = factory!(Windows.Security.Authentication.Web.Core.IWebTokenRequestFactory);
+		Windows.Security.Authentication.Web.Core.WebTokenRequest _ret;
+		Debug.OK(factory.as!(Windows.Security.Authentication.Web.Core.IWebTokenRequestFactory).abi_CreateWithProvider(provider, &_ret));
+		return _ret;
+	}
+	static Windows.Security.Authentication.Web.Core.WebTokenRequest New(Windows.Security.Credentials.WebAccountProvider provider, HSTRING scope_)
+	{
+		auto factory = factory!(Windows.Security.Authentication.Web.Core.IWebTokenRequestFactory);
+		Windows.Security.Authentication.Web.Core.WebTokenRequest _ret;
+		Debug.OK(factory.as!(Windows.Security.Authentication.Web.Core.IWebTokenRequestFactory).abi_CreateWithScope(provider, scope_, &_ret));
+		return _ret;
 	}
 }
 
@@ -375,6 +410,27 @@ extern(Windows):
 	{
 		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
 		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebTokenResponse).get_Properties(&_ret));
+		return _ret;
+	}
+	static Windows.Security.Authentication.Web.Core.WebTokenResponse New(HSTRING token)
+	{
+		auto factory = factory!(Windows.Security.Authentication.Web.Core.IWebTokenResponseFactory);
+		Windows.Security.Authentication.Web.Core.WebTokenResponse _ret;
+		Debug.OK(factory.as!(Windows.Security.Authentication.Web.Core.IWebTokenResponseFactory).abi_CreateWithToken(token, &_ret));
+		return _ret;
+	}
+	static Windows.Security.Authentication.Web.Core.WebTokenResponse New(HSTRING token, Windows.Security.Credentials.WebAccount webAccount)
+	{
+		auto factory = factory!(Windows.Security.Authentication.Web.Core.IWebTokenResponseFactory);
+		Windows.Security.Authentication.Web.Core.WebTokenResponse _ret;
+		Debug.OK(factory.as!(Windows.Security.Authentication.Web.Core.IWebTokenResponseFactory).abi_CreateWithTokenAndAccount(token, webAccount, &_ret));
+		return _ret;
+	}
+	static Windows.Security.Authentication.Web.Core.WebTokenResponse New(HSTRING token, Windows.Security.Credentials.WebAccount webAccount, Windows.Security.Authentication.Web.Core.WebProviderError error)
+	{
+		auto factory = factory!(Windows.Security.Authentication.Web.Core.IWebTokenResponseFactory);
+		Windows.Security.Authentication.Web.Core.WebTokenResponse _ret;
+		Debug.OK(factory.as!(Windows.Security.Authentication.Web.Core.IWebTokenResponseFactory).abi_CreateWithTokenAccountAndError(token, webAccount, error, &_ret));
 		return _ret;
 	}
 }

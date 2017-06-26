@@ -106,6 +106,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.I2c.II2cConnectionSettings).set_SharingMode(value));
 	}
+	static Windows.Devices.I2c.I2cConnectionSettings New(INT32 slaveAddress)
+	{
+		auto factory = factory!(Windows.Devices.I2c.II2cConnectionSettingsFactory);
+		Windows.Devices.I2c.I2cConnectionSettings _ret;
+		Debug.OK(factory.as!(Windows.Devices.I2c.II2cConnectionSettingsFactory).abi_Create(slaveAddress, &_ret));
+		return _ret;
+	}
 }
 
 interface I2cController : Windows.Devices.I2c.II2cController

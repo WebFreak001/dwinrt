@@ -723,6 +723,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoinerEventArgs).abi_Accept());
 	}
+	static Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs New(HSTRING uniqueName, UINT16 sessionPort, Windows.Devices.AllJoyn.AllJoynTrafficType trafficType, ubyte proximity, Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoiner acceptSessionJoiner)
+	{
+		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoinerEventArgsFactory);
+		Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs _ret;
+		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoinerEventArgsFactory).abi_Create(uniqueName, sessionPort, trafficType, proximity, acceptSessionJoiner, &_ret));
+		return _ret;
+	}
 }
 
 interface AllJoynAuthenticationCompleteEventArgs : Windows.Devices.AllJoyn.IAllJoynAuthenticationCompleteEventArgs
@@ -886,6 +893,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachmentStatics).abi_GetWatcher(requiredInterfaces, &_ret));
 		return _ret;
 	}
+	static Windows.Devices.AllJoyn.AllJoynBusAttachment New(HSTRING connectionSpecification)
+	{
+		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynBusAttachmentFactory);
+		Windows.Devices.AllJoyn.AllJoynBusAttachment _ret;
+		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachmentFactory).abi_Create(connectionSpecification, &_ret));
+		return _ret;
+	}
 }
 
 interface AllJoynBusAttachmentStateChangedEventArgs : Windows.Devices.AllJoyn.IAllJoynBusAttachmentStateChangedEventArgs
@@ -942,6 +956,20 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusObject).remove_Stopped(token));
 	}
+	static Windows.Devices.AllJoyn.AllJoynBusObject New(HSTRING objectPath)
+	{
+		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynBusObjectFactory);
+		Windows.Devices.AllJoyn.AllJoynBusObject _ret;
+		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynBusObjectFactory).abi_Create(objectPath, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.AllJoyn.AllJoynBusObject New(HSTRING objectPath, Windows.Devices.AllJoyn.AllJoynBusAttachment busAttachment)
+	{
+		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynBusObjectFactory);
+		Windows.Devices.AllJoyn.AllJoynBusObject _ret;
+		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynBusObjectFactory).abi_CreateWithBusAttachment(objectPath, busAttachment, &_ret));
+		return _ret;
+	}
 }
 
 interface AllJoynBusObjectStoppedEventArgs : Windows.Devices.AllJoyn.IAllJoynBusObjectStoppedEventArgs
@@ -951,6 +979,13 @@ extern(Windows):
 	{
 		INT32 _ret;
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusObjectStoppedEventArgs).get_Status(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs New(INT32 status)
+	{
+		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynBusObjectStoppedEventArgsFactory);
+		Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs _ret;
+		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynBusObjectStoppedEventArgsFactory).abi_Create(status, &_ret));
 		return _ret;
 	}
 }
@@ -1091,6 +1126,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynMessageInfo).get_SenderUniqueName(&_ret));
 		return _ret;
 	}
+	static Windows.Devices.AllJoyn.AllJoynMessageInfo New(HSTRING senderUniqueName)
+	{
+		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynMessageInfoFactory);
+		Windows.Devices.AllJoyn.AllJoynMessageInfo _ret;
+		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynMessageInfoFactory).abi_Create(senderUniqueName, &_ret));
+		return _ret;
+	}
 }
 
 interface AllJoynProducerStoppedEventArgs : Windows.Devices.AllJoyn.IAllJoynProducerStoppedEventArgs
@@ -1100,6 +1142,13 @@ extern(Windows):
 	{
 		INT32 _ret;
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynProducerStoppedEventArgs).get_Status(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.AllJoyn.AllJoynProducerStoppedEventArgs New(INT32 status)
+	{
+		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynProducerStoppedEventArgsFactory);
+		Windows.Devices.AllJoyn.AllJoynProducerStoppedEventArgs _ret;
+		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynProducerStoppedEventArgsFactory).abi_Create(status, &_ret));
 		return _ret;
 	}
 }
@@ -1138,6 +1187,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynServiceInfoStatics).abi_FromIdAsync(deviceId, &_ret));
 		return _ret;
 	}
+	static Windows.Devices.AllJoyn.AllJoynServiceInfo New(HSTRING uniqueName, HSTRING objectPath, UINT16 sessionPort)
+	{
+		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynServiceInfoFactory);
+		Windows.Devices.AllJoyn.AllJoynServiceInfo _ret;
+		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynServiceInfoFactory).abi_Create(uniqueName, objectPath, sessionPort, &_ret));
+		return _ret;
+	}
 }
 
 interface AllJoynServiceInfoRemovedEventArgs : Windows.Devices.AllJoyn.IAllJoynServiceInfoRemovedEventArgs
@@ -1147,6 +1203,13 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynServiceInfoRemovedEventArgs).get_UniqueName(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.AllJoyn.AllJoynServiceInfoRemovedEventArgs New(HSTRING uniqueName)
+	{
+		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynServiceInfoRemovedEventArgsFactory);
+		Windows.Devices.AllJoyn.AllJoynServiceInfoRemovedEventArgs _ret;
+		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynServiceInfoRemovedEventArgsFactory).abi_Create(uniqueName, &_ret));
 		return _ret;
 	}
 }
@@ -1232,6 +1295,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSessionJoinedEventArgs).get_Session(&_ret));
 		return _ret;
 	}
+	static Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs New(Windows.Devices.AllJoyn.AllJoynSession session)
+	{
+		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynSessionJoinedEventArgsFactory);
+		Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs _ret;
+		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynSessionJoinedEventArgsFactory).abi_Create(session, &_ret));
+		return _ret;
+	}
 }
 
 interface AllJoynSessionLostEventArgs : Windows.Devices.AllJoyn.IAllJoynSessionLostEventArgs
@@ -1241,6 +1311,13 @@ extern(Windows):
 	{
 		Windows.Devices.AllJoyn.AllJoynSessionLostReason _ret;
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSessionLostEventArgs).get_Reason(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.AllJoyn.AllJoynSessionLostEventArgs New(Windows.Devices.AllJoyn.AllJoynSessionLostReason reason)
+	{
+		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynSessionLostEventArgsFactory);
+		Windows.Devices.AllJoyn.AllJoynSessionLostEventArgs _ret;
+		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynSessionLostEventArgsFactory).abi_Create(reason, &_ret));
 		return _ret;
 	}
 }
@@ -1254,6 +1331,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSessionMemberAddedEventArgs).get_UniqueName(&_ret));
 		return _ret;
 	}
+	static Windows.Devices.AllJoyn.AllJoynSessionMemberAddedEventArgs New(HSTRING uniqueName)
+	{
+		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynSessionMemberAddedEventArgsFactory);
+		Windows.Devices.AllJoyn.AllJoynSessionMemberAddedEventArgs _ret;
+		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynSessionMemberAddedEventArgsFactory).abi_Create(uniqueName, &_ret));
+		return _ret;
+	}
 }
 
 interface AllJoynSessionMemberRemovedEventArgs : Windows.Devices.AllJoyn.IAllJoynSessionMemberRemovedEventArgs
@@ -1263,6 +1347,13 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSessionMemberRemovedEventArgs).get_UniqueName(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.AllJoyn.AllJoynSessionMemberRemovedEventArgs New(HSTRING uniqueName)
+	{
+		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynSessionMemberRemovedEventArgsFactory);
+		Windows.Devices.AllJoyn.AllJoynSessionMemberRemovedEventArgs _ret;
+		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynSessionMemberRemovedEventArgsFactory).abi_Create(uniqueName, &_ret));
 		return _ret;
 	}
 }
@@ -1392,6 +1483,13 @@ extern(Windows):
 	{
 		INT32 _ret;
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynWatcherStoppedEventArgs).get_Status(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.AllJoyn.AllJoynWatcherStoppedEventArgs New(INT32 status)
+	{
+		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynWatcherStoppedEventArgsFactory);
+		Windows.Devices.AllJoyn.AllJoynWatcherStoppedEventArgs _ret;
+		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynWatcherStoppedEventArgsFactory).abi_Create(status, &_ret));
 		return _ret;
 	}
 }

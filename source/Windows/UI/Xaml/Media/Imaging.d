@@ -401,6 +401,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImageStatics).get_DecodePixelHeightProperty(&_ret));
 		return _ret;
 	}
+	static Windows.UI.Xaml.Media.Imaging.BitmapImage New(Windows.Foundation.Uri uriSource)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Media.Imaging.IBitmapImageFactory);
+		Windows.UI.Xaml.Media.Imaging.BitmapImage _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImageFactory).abi_CreateInstanceWithUriSource(uriSource, &_ret));
+		return _ret;
+	}
 }
 
 interface BitmapSource : Windows.UI.Xaml.Media.ImageSource, Windows.UI.Xaml.Media.Imaging.IBitmapSource
@@ -446,6 +453,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.IBitmapSourceStatics).get_PixelHeightProperty(&_ret));
 		return _ret;
+	}
+	static BitmapSource New()
+	{
+		IInspectable outer, inner;
+		BitmapSource ret;
+		Debug.OK(activationFactory!(BitmapSource, Windows.UI.Xaml.Media.Imaging.IBitmapSourceFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(BitmapSource, BitmapSource, Windows.UI.Xaml.Media.Imaging.IBitmapSourceFactory)
@@ -653,6 +667,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSourceStatics).get_RasterizePixelHeightProperty(&_ret));
 		return _ret;
 	}
+	static SvgImageSource New()
+	{
+		IInspectable outer, inner;
+		SvgImageSource ret;
+		Debug.OK(activationFactory!(SvgImageSource, Windows.UI.Xaml.Media.Imaging.ISvgImageSourceFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(SvgImageSource, SvgImageSource, Windows.UI.Xaml.Media.Imaging.ISvgImageSourceFactory)
 class SvgImageSourceT(Base) : AgileObject!Base, SvgImageSource
@@ -697,6 +718,20 @@ interface SvgImageSourceOpenedEventArgs : Windows.UI.Xaml.Media.Imaging.ISvgImag
 
 interface VirtualSurfaceImageSource : Windows.UI.Xaml.Media.Imaging.SurfaceImageSource, Windows.UI.Xaml.Media.Imaging.IVirtualSurfaceImageSource
 {
+	static Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource New(INT32 pixelWidth, INT32 pixelHeight)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Media.Imaging.IVirtualSurfaceImageSourceFactory);
+		Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Media.Imaging.IVirtualSurfaceImageSourceFactory).abi_CreateInstanceWithDimensions(pixelWidth, pixelHeight, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource New(INT32 pixelWidth, INT32 pixelHeight, bool isOpaque)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Media.Imaging.IVirtualSurfaceImageSourceFactory);
+		Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Media.Imaging.IVirtualSurfaceImageSourceFactory).abi_CreateInstanceWithDimensionsAndOpacity(pixelWidth, pixelHeight, isOpaque, &_ret));
+		return _ret;
+	}
 }
 
 interface WriteableBitmap : Windows.UI.Xaml.Media.Imaging.BitmapSource, Windows.UI.Xaml.Media.Imaging.IWriteableBitmap
@@ -712,10 +747,24 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IWriteableBitmap).abi_Invalidate());
 	}
+	static Windows.UI.Xaml.Media.Imaging.WriteableBitmap New(INT32 pixelWidth, INT32 pixelHeight)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Media.Imaging.IWriteableBitmapFactory);
+		Windows.UI.Xaml.Media.Imaging.WriteableBitmap _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Media.Imaging.IWriteableBitmapFactory).abi_CreateInstanceWithDimensions(pixelWidth, pixelHeight, &_ret));
+		return _ret;
+	}
 }
 
 interface XamlRenderingBackgroundTask : Windows.UI.Xaml.Media.Imaging.IXamlRenderingBackgroundTask, Windows.UI.Xaml.Media.Imaging.IXamlRenderingBackgroundTaskOverrides
 {
+	static XamlRenderingBackgroundTask New()
+	{
+		IInspectable outer, inner;
+		XamlRenderingBackgroundTask ret;
+		Debug.OK(activationFactory!(XamlRenderingBackgroundTask, Windows.UI.Xaml.Media.Imaging.IXamlRenderingBackgroundTaskFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(XamlRenderingBackgroundTask, XamlRenderingBackgroundTask, Windows.UI.Xaml.Media.Imaging.IXamlRenderingBackgroundTaskFactory)
 class XamlRenderingBackgroundTaskT(Base) : AgileObject!Base, XamlRenderingBackgroundTask

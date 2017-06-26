@@ -181,6 +181,20 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicketRequest).get_Policy(&_ret));
 		return _ret;
 	}
+	static Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest New(HSTRING service, HSTRING policy)
+	{
+		auto factory = factory!(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicketRequestFactory);
+		Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest _ret;
+		Debug.OK(factory.as!(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicketRequestFactory).abi_CreateOnlineIdServiceTicketRequest(service, policy, &_ret));
+		return _ret;
+	}
+	static Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest New(HSTRING service)
+	{
+		auto factory = factory!(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicketRequestFactory);
+		Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest _ret;
+		Debug.OK(factory.as!(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicketRequestFactory).abi_CreateOnlineIdServiceTicketRequestAdvanced(service, &_ret));
+		return _ret;
+	}
 }
 
 interface OnlineIdSystemAuthenticator

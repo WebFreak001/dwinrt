@@ -1337,6 +1337,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IBrushStatics).get_RelativeTransformProperty(&_ret));
 		return _ret;
 	}
+	static Brush New()
+	{
+		IInspectable outer, inner;
+		Brush ret;
+		Debug.OK(activationFactory!(Brush, Windows.UI.Xaml.Media.IBrushFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(Brush, Brush, Windows.UI.Xaml.Media.IBrushFactory)
 class BrushT(Base) : AgileObject!Base, Brush
@@ -1424,6 +1431,13 @@ extern(Windows):
 
 interface CacheMode : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.ICacheMode
 {
+	static CacheMode New()
+	{
+		IInspectable outer, inner;
+		CacheMode ret;
+		Debug.OK(activationFactory!(CacheMode, Windows.UI.Xaml.Media.ICacheModeFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(CacheMode, CacheMode, Windows.UI.Xaml.Media.ICacheModeFactory)
 class CacheModeT(Base) : AgileObject!Base, CacheMode
@@ -1815,6 +1829,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeneralTransform).abi_TransformBounds(rect, &_ret));
 		return _ret;
 	}
+	static GeneralTransform New()
+	{
+		IInspectable outer, inner;
+		GeneralTransform ret;
+		Debug.OK(activationFactory!(GeneralTransform, Windows.UI.Xaml.Media.IGeneralTransformFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(GeneralTransform, GeneralTransform, Windows.UI.Xaml.Media.IGeneralTransformFactory)
 class GeneralTransformT(Base) : AgileObject!Base, GeneralTransform
@@ -2085,6 +2106,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGradientBrushStatics).get_GradientStopsProperty(&_ret));
 		return _ret;
+	}
+	static GradientBrush New()
+	{
+		IInspectable outer, inner;
+		GradientBrush ret;
+		Debug.OK(activationFactory!(GradientBrush, Windows.UI.Xaml.Media.IGradientBrushFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(GradientBrush, GradientBrush, Windows.UI.Xaml.Media.IGradientBrushFactory)
@@ -2383,6 +2411,13 @@ extern(Windows):
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ILinearGradientBrushStatics).get_EndPointProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Media.LinearGradientBrush New(Windows.UI.Xaml.Media.GradientStopCollection gradientStopCollection, double angle)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Media.ILinearGradientBrushFactory);
+		Windows.UI.Xaml.Media.LinearGradientBrush _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Media.ILinearGradientBrushFactory).abi_CreateInstanceWithGradientStopCollectionAndAngle(gradientStopCollection, angle, &_ret));
 		return _ret;
 	}
 }
@@ -3217,6 +3252,13 @@ extern(Windows):
 
 interface Projection : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.IProjection
 {
+	static Projection New()
+	{
+		IInspectable outer, inner;
+		Projection ret;
+		Debug.OK(activationFactory!(Projection, Windows.UI.Xaml.Media.IProjectionFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(Projection, Projection, Windows.UI.Xaml.Media.IProjectionFactory)
 class ProjectionT(Base) : AgileObject!Base, Projection
@@ -3558,6 +3600,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ISolidColorBrushStatics).get_ColorProperty(&_ret));
 		return _ret;
 	}
+	static Windows.UI.Xaml.Media.SolidColorBrush New(Windows.UI.Color color)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Media.ISolidColorBrushFactory);
+		Windows.UI.Xaml.Media.SolidColorBrush _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Media.ISolidColorBrushFactory).abi_CreateInstanceWithColor(color, &_ret));
+		return _ret;
+	}
 }
 
 interface TileBrush : Windows.UI.Xaml.Media.Brush, Windows.UI.Xaml.Media.ITileBrush
@@ -3617,6 +3666,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ITileBrushStatics).get_StretchProperty(&_ret));
 		return _ret;
+	}
+	static TileBrush New()
+	{
+		IInspectable outer, inner;
+		TileBrush ret;
+		Debug.OK(activationFactory!(TileBrush, Windows.UI.Xaml.Media.ITileBrushFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(TileBrush, TileBrush, Windows.UI.Xaml.Media.ITileBrushFactory)
@@ -4029,6 +4085,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseStatics).get_FallbackColorProperty(&_ret));
 		return _ret;
 	}
+	static XamlCompositionBrushBase New()
+	{
+		IInspectable outer, inner;
+		XamlCompositionBrushBase ret;
+		Debug.OK(activationFactory!(XamlCompositionBrushBase, Windows.UI.Xaml.Media.IXamlCompositionBrushBaseFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(XamlCompositionBrushBase, XamlCompositionBrushBase, Windows.UI.Xaml.Media.IXamlCompositionBrushBaseFactory)
 class XamlCompositionBrushBaseT(Base) : AgileObject!Base, XamlCompositionBrushBase
@@ -4090,6 +4153,13 @@ extern(Windows):
 	static void RemoveTargetBrush(HSTRING lightId, Windows.UI.Xaml.Media.Brush brush)
 	{
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IXamlLightStatics).abi_RemoveTargetBrush(lightId, brush));
+	}
+	static XamlLight New()
+	{
+		IInspectable outer, inner;
+		XamlLight ret;
+		Debug.OK(activationFactory!(XamlLight, Windows.UI.Xaml.Media.IXamlLightFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(XamlLight, XamlLight, Windows.UI.Xaml.Media.IXamlLightFactory)

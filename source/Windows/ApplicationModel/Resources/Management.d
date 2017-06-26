@@ -122,6 +122,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Management.IResourceIndexer).abi_IndexFileContentsAsync(file, &_ret));
 		return _ret;
 	}
+	static Windows.ApplicationModel.Resources.Management.ResourceIndexer New(Windows.Foundation.Uri projectRoot)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Resources.Management.IResourceIndexerFactory);
+		Windows.ApplicationModel.Resources.Management.ResourceIndexer _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Resources.Management.IResourceIndexerFactory).abi_CreateResourceIndexer(projectRoot, &_ret));
+		return _ret;
+	}
 }
 
 enum IndexedResourceType

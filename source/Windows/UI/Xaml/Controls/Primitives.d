@@ -1382,6 +1382,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IButtonBaseStatics).get_CommandParameterProperty(&_ret));
 		return _ret;
 	}
+	static ButtonBase New()
+	{
+		IInspectable outer, inner;
+		ButtonBase ret;
+		Debug.OK(activationFactory!(ButtonBase, Windows.UI.Xaml.Controls.Primitives.IButtonBaseFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(ButtonBase, ButtonBase, Windows.UI.Xaml.Controls.Primitives.IButtonBaseFactory)
 class ButtonBaseT(Base) : AgileObject!Base, ButtonBase
@@ -1681,6 +1688,13 @@ extern(Windows):
 		float _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).abi_GetRegularSnapPoints(orientation, alignment, out_offset, &_ret));
 		return _ret;
+	}
+	static CarouselPanel New()
+	{
+		IInspectable outer, inner;
+		CarouselPanel ret;
+		Debug.OK(activationFactory!(CarouselPanel, Windows.UI.Xaml.Controls.Primitives.ICarouselPanelFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(CarouselPanel, CarouselPanel, Windows.UI.Xaml.Controls.Primitives.ICarouselPanelFactory)
@@ -2083,6 +2097,13 @@ extern(Windows):
 	static void ShowAttachedFlyout(Windows.UI.Xaml.FrameworkElement flyoutOwner)
 	{
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics).abi_ShowAttachedFlyout(flyoutOwner));
+	}
+	static FlyoutBase New()
+	{
+		IInspectable outer, inner;
+		FlyoutBase ret;
+		Debug.OK(activationFactory!(FlyoutBase, Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(FlyoutBase, FlyoutBase, Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseFactory)
@@ -2529,6 +2550,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics).get_ContentMarginProperty(&_ret));
 		return _ret;
+	}
+	static GridViewItemPresenter New()
+	{
+		IInspectable outer, inner;
+		GridViewItemPresenter ret;
+		Debug.OK(activationFactory!(GridViewItemPresenter, Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(GridViewItemPresenter, GridViewItemPresenter, Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterFactory)
@@ -3201,6 +3229,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics).get_ContentMarginProperty(&_ret));
 		return _ret;
 	}
+	static ListViewItemPresenter New()
+	{
+		IInspectable outer, inner;
+		ListViewItemPresenter ret;
+		Debug.OK(activationFactory!(ListViewItemPresenter, Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(ListViewItemPresenter, ListViewItemPresenter, Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterFactory)
 class ListViewItemPresenterT(Base) : AgileObject!Base, ListViewItemPresenter
@@ -3734,6 +3769,13 @@ interface PickerFlyoutBase : Windows.UI.Xaml.Controls.Primitives.FlyoutBase, Win
 	{
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IPickerFlyoutBaseStatics).abi_SetTitle(element, value));
 	}
+	static PickerFlyoutBase New()
+	{
+		IInspectable outer, inner;
+		PickerFlyoutBase ret;
+		Debug.OK(activationFactory!(PickerFlyoutBase, Windows.UI.Xaml.Controls.Primitives.IPickerFlyoutBaseFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(PickerFlyoutBase, PickerFlyoutBase, Windows.UI.Xaml.Controls.Primitives.IPickerFlyoutBaseFactory)
 class PickerFlyoutBaseT(Base) : AgileObject!Base, PickerFlyoutBase
@@ -3757,6 +3799,13 @@ class PickerFlyoutBaseT(Base) : AgileObject!Base, PickerFlyoutBase
 
 interface PivotHeaderItem : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.Primitives.IPivotHeaderItem
 {
+	static PivotHeaderItem New()
+	{
+		IInspectable outer, inner;
+		PivotHeaderItem ret;
+		Debug.OK(activationFactory!(PivotHeaderItem, Windows.UI.Xaml.Controls.Primitives.IPivotHeaderItemFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(PivotHeaderItem, PivotHeaderItem, Windows.UI.Xaml.Controls.Primitives.IPivotHeaderItemFactory)
 class PivotHeaderItemT(Base) : AgileObject!Base, PivotHeaderItem
@@ -4128,6 +4177,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBaseStatics).get_ValueProperty(&_ret));
 		return _ret;
 	}
+	static RangeBase New()
+	{
+		IInspectable outer, inner;
+		RangeBase ret;
+		Debug.OK(activationFactory!(RangeBase, Windows.UI.Xaml.Controls.Primitives.IRangeBaseFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(RangeBase, RangeBase, Windows.UI.Xaml.Controls.Primitives.IRangeBaseFactory)
 class RangeBaseT(Base) : AgileObject!Base, RangeBase
@@ -4459,6 +4515,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.ISelectorItemStatics).get_IsSelectedProperty(&_ret));
 		return _ret;
 	}
+	static SelectorItem New()
+	{
+		IInspectable outer, inner;
+		SelectorItem ret;
+		Debug.OK(activationFactory!(SelectorItem, Windows.UI.Xaml.Controls.Primitives.ISelectorItemFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(SelectorItem, SelectorItem, Windows.UI.Xaml.Controls.Primitives.ISelectorItemFactory)
 class SelectorItemT(Base) : AgileObject!Base, SelectorItem
@@ -4680,6 +4743,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IToggleButtonStatics).get_IsThreeStateProperty(&_ret));
 		return _ret;
+	}
+	static ToggleButton New()
+	{
+		IInspectable outer, inner;
+		ToggleButton ret;
+		Debug.OK(activationFactory!(ToggleButton, Windows.UI.Xaml.Controls.Primitives.IToggleButtonFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(ToggleButton, ToggleButton, Windows.UI.Xaml.Controls.Primitives.IToggleButtonFactory)

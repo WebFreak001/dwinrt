@@ -873,6 +873,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Input.IInputScopeName).set_NameValue(value));
 	}
+	static Windows.UI.Xaml.Input.InputScopeName New(Windows.UI.Xaml.Input.InputScopeNameValue nameValue)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Input.IInputScopeNameFactory);
+		Windows.UI.Xaml.Input.InputScopeName _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Input.IInputScopeNameFactory).abi_CreateInstance(nameValue, &_ret));
+		return _ret;
+	}
 }
 
 interface KeyRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IKeyRoutedEventArgs, Windows.UI.Xaml.Input.IKeyRoutedEventArgs2, Windows.UI.Xaml.Input.IKeyRoutedEventArgs3
@@ -1183,6 +1190,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationPivot).set_Radius(value));
 	}
+	static Windows.UI.Xaml.Input.ManipulationPivot New(Windows.Foundation.Point center, double radius)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Input.IManipulationPivotFactory);
+		Windows.UI.Xaml.Input.ManipulationPivot _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Input.IManipulationPivotFactory).abi_CreateInstanceWithCenterAndRadius(center, radius, &_ret));
+		return _ret;
+	}
 }
 
 interface ManipulationStartedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgs
@@ -1225,6 +1239,13 @@ extern(Windows):
 	final void Complete()
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgs).abi_Complete());
+	}
+	static ManipulationStartedRoutedEventArgs New()
+	{
+		IInspectable outer, inner;
+		ManipulationStartedRoutedEventArgs ret;
+		Debug.OK(activationFactory!(ManipulationStartedRoutedEventArgs, Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgsFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(ManipulationStartedRoutedEventArgs, ManipulationStartedRoutedEventArgs, Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgsFactory)

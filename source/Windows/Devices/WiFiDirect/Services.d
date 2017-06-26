@@ -392,6 +392,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).abi_Stop());
 	}
+	static Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser New(HSTRING serviceName)
+	{
+		auto factory = factory!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiserFactory);
+		Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser _ret;
+		Debug.OK(factory.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiserFactory).abi_CreateWiFiDirectServiceAdvertiser(serviceName, &_ret));
+		return _ret;
+	}
 }
 
 interface WiFiDirectServiceAutoAcceptSessionConnectedEventArgs : Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs

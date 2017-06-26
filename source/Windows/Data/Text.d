@@ -269,6 +269,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Data.Text.ISelectableWordsSegmenter).abi_Tokenize(text, startIndex, handler));
 	}
+	static Windows.Data.Text.SelectableWordsSegmenter New(HSTRING language)
+	{
+		auto factory = factory!(Windows.Data.Text.ISelectableWordsSegmenterFactory);
+		Windows.Data.Text.SelectableWordsSegmenter _ret;
+		Debug.OK(factory.as!(Windows.Data.Text.ISelectableWordsSegmenterFactory).abi_CreateWithLanguage(language, &_ret));
+		return _ret;
+	}
 }
 
 interface SemanticTextQuery : Windows.Data.Text.ISemanticTextQuery
@@ -284,6 +291,20 @@ extern(Windows):
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextSegment) _ret;
 		Debug.OK(this.as!(Windows.Data.Text.ISemanticTextQuery).abi_FindInProperty(propertyContent, propertyName, &_ret));
+		return _ret;
+	}
+	static Windows.Data.Text.SemanticTextQuery New(HSTRING aqsFilter)
+	{
+		auto factory = factory!(Windows.Data.Text.ISemanticTextQueryFactory);
+		Windows.Data.Text.SemanticTextQuery _ret;
+		Debug.OK(factory.as!(Windows.Data.Text.ISemanticTextQueryFactory).abi_Create(aqsFilter, &_ret));
+		return _ret;
+	}
+	static Windows.Data.Text.SemanticTextQuery New(HSTRING aqsFilter, HSTRING filterLanguage)
+	{
+		auto factory = factory!(Windows.Data.Text.ISemanticTextQueryFactory);
+		Windows.Data.Text.SemanticTextQuery _ret;
+		Debug.OK(factory.as!(Windows.Data.Text.ISemanticTextQueryFactory).abi_CreateWithLanguage(aqsFilter, filterLanguage, &_ret));
 		return _ret;
 	}
 }
@@ -313,6 +334,13 @@ extern(Windows):
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
 		Debug.OK(this.as!(Windows.Data.Text.ITextConversionGenerator).abi_GetCandidatesWithMaxCountAsync(input, maxCandidates, &_ret));
+		return _ret;
+	}
+	static Windows.Data.Text.TextConversionGenerator New(HSTRING languageTag)
+	{
+		auto factory = factory!(Windows.Data.Text.ITextConversionGeneratorFactory);
+		Windows.Data.Text.TextConversionGenerator _ret;
+		Debug.OK(factory.as!(Windows.Data.Text.ITextConversionGeneratorFactory).abi_Create(languageTag, &_ret));
 		return _ret;
 	}
 }
@@ -361,6 +389,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Data.Text.ITextPredictionGenerator).abi_GetCandidatesWithMaxCountAsync(input, maxCandidates, &_ret));
 		return _ret;
 	}
+	static Windows.Data.Text.TextPredictionGenerator New(HSTRING languageTag)
+	{
+		auto factory = factory!(Windows.Data.Text.ITextPredictionGeneratorFactory);
+		Windows.Data.Text.TextPredictionGenerator _ret;
+		Debug.OK(factory.as!(Windows.Data.Text.ITextPredictionGeneratorFactory).abi_Create(languageTag, &_ret));
+		return _ret;
+	}
 }
 
 interface TextReverseConversionGenerator : Windows.Data.Text.ITextReverseConversionGenerator, Windows.Data.Text.ITextReverseConversionGenerator2
@@ -388,6 +423,13 @@ extern(Windows):
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextPhoneme)) _ret;
 		Debug.OK(this.as!(Windows.Data.Text.ITextReverseConversionGenerator2).abi_GetPhonemesAsync(input, &_ret));
+		return _ret;
+	}
+	static Windows.Data.Text.TextReverseConversionGenerator New(HSTRING languageTag)
+	{
+		auto factory = factory!(Windows.Data.Text.ITextReverseConversionGeneratorFactory);
+		Windows.Data.Text.TextReverseConversionGenerator _ret;
+		Debug.OK(factory.as!(Windows.Data.Text.ITextReverseConversionGeneratorFactory).abi_Create(languageTag, &_ret));
 		return _ret;
 	}
 }
@@ -549,6 +591,13 @@ extern(Windows):
 	final void Tokenize(HSTRING text, UINT32 startIndex, Windows.Data.Text.WordSegmentsTokenizingHandler handler)
 	{
 		Debug.OK(this.as!(Windows.Data.Text.IWordsSegmenter).abi_Tokenize(text, startIndex, handler));
+	}
+	static Windows.Data.Text.WordsSegmenter New(HSTRING language)
+	{
+		auto factory = factory!(Windows.Data.Text.IWordsSegmenterFactory);
+		Windows.Data.Text.WordsSegmenter _ret;
+		Debug.OK(factory.as!(Windows.Data.Text.IWordsSegmenterFactory).abi_CreateWithLanguage(language, &_ret));
+		return _ret;
 	}
 }
 

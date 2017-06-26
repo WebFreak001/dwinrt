@@ -144,4 +144,11 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Globalization.Fonts.ILanguageFontGroup).get_DocumentAlternate2Font(&_ret));
 		return _ret;
 	}
+	static Windows.Globalization.Fonts.LanguageFontGroup New(HSTRING languageTag)
+	{
+		auto factory = factory!(Windows.Globalization.Fonts.ILanguageFontGroupFactory);
+		Windows.Globalization.Fonts.LanguageFontGroup _ret;
+		Debug.OK(factory.as!(Windows.Globalization.Fonts.ILanguageFontGroupFactory).abi_CreateLanguageFontGroup(languageTag, &_ret));
+		return _ret;
+	}
 }

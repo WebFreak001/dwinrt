@@ -2021,6 +2021,13 @@ extern(Windows):
 
 interface PedometerDataThreshold : Windows.Devices.Sensors.ISensorDataThreshold
 {
+	static Windows.Devices.Sensors.PedometerDataThreshold New(Windows.Devices.Sensors.Pedometer sensor, INT32 stepGoal)
+	{
+		auto factory = factory!(Windows.Devices.Sensors.IPedometerDataThresholdFactory);
+		Windows.Devices.Sensors.PedometerDataThreshold _ret;
+		Debug.OK(factory.as!(Windows.Devices.Sensors.IPedometerDataThresholdFactory).abi_Create(sensor, stepGoal, &_ret));
+		return _ret;
+	}
 }
 
 interface PedometerReading : Windows.Devices.Sensors.IPedometerReading
@@ -2129,6 +2136,13 @@ extern(Windows):
 
 interface ProximitySensorDataThreshold : Windows.Devices.Sensors.ISensorDataThreshold
 {
+	static Windows.Devices.Sensors.ProximitySensorDataThreshold New(Windows.Devices.Sensors.ProximitySensor sensor)
+	{
+		auto factory = factory!(Windows.Devices.Sensors.IProximitySensorDataThresholdFactory);
+		Windows.Devices.Sensors.ProximitySensorDataThreshold _ret;
+		Debug.OK(factory.as!(Windows.Devices.Sensors.IProximitySensorDataThresholdFactory).abi_Create(sensor, &_ret));
+		return _ret;
+	}
 }
 
 interface ProximitySensorDisplayOnOffController : Windows.Foundation.IClosable

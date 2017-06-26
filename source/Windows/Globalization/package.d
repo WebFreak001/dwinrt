@@ -1109,6 +1109,20 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Globalization.ITimeZoneOnCalendar).abi_TimeZoneAsString(idealLength, &_ret));
 		return _ret;
 	}
+	static Windows.Globalization.Calendar New(Windows.Foundation.Collections.IIterable!(HSTRING) languages)
+	{
+		auto factory = factory!(Windows.Globalization.ICalendarFactory);
+		Windows.Globalization.Calendar _ret;
+		Debug.OK(factory.as!(Windows.Globalization.ICalendarFactory).abi_CreateCalendarDefaultCalendarAndClock(languages, &_ret));
+		return _ret;
+	}
+	static Windows.Globalization.Calendar New(Windows.Foundation.Collections.IIterable!(HSTRING) languages, HSTRING calendar, HSTRING clock)
+	{
+		auto factory = factory!(Windows.Globalization.ICalendarFactory);
+		Windows.Globalization.Calendar _ret;
+		Debug.OK(factory.as!(Windows.Globalization.ICalendarFactory).abi_CreateCalendar(languages, calendar, clock, &_ret));
+		return _ret;
+	}
 }
 
 interface CalendarIdentifiers
@@ -2207,6 +2221,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.Globalization.IGeographicRegionStatics).abi_IsSupported(geographicRegionCode, &_ret));
 		return _ret;
 	}
+	static Windows.Globalization.GeographicRegion New(HSTRING geographicRegionCode)
+	{
+		auto factory = factory!(Windows.Globalization.IGeographicRegionFactory);
+		Windows.Globalization.GeographicRegion _ret;
+		Debug.OK(factory.as!(Windows.Globalization.IGeographicRegionFactory).abi_CreateGeographicRegion(geographicRegionCode, &_ret));
+		return _ret;
+	}
 }
 
 interface JapanesePhoneme : Windows.Globalization.IJapanesePhoneme
@@ -2304,6 +2325,13 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.as!(Windows.Globalization.ILanguageStatics).get_CurrentInputMethodLanguageTag(&_ret));
+		return _ret;
+	}
+	static Windows.Globalization.Language New(HSTRING languageTag)
+	{
+		auto factory = factory!(Windows.Globalization.ILanguageFactory);
+		Windows.Globalization.Language _ret;
+		Debug.OK(factory.as!(Windows.Globalization.ILanguageFactory).abi_CreateLanguage(languageTag, &_ret));
 		return _ret;
 	}
 }

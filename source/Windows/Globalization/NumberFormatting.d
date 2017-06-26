@@ -369,6 +369,20 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignedZeroOption).set_IsZeroSigned(value));
 	}
+	static Windows.Globalization.NumberFormatting.CurrencyFormatter New(HSTRING currencyCode)
+	{
+		auto factory = factory!(Windows.Globalization.NumberFormatting.ICurrencyFormatterFactory);
+		Windows.Globalization.NumberFormatting.CurrencyFormatter _ret;
+		Debug.OK(factory.as!(Windows.Globalization.NumberFormatting.ICurrencyFormatterFactory).abi_CreateCurrencyFormatterCode(currencyCode, &_ret));
+		return _ret;
+	}
+	static Windows.Globalization.NumberFormatting.CurrencyFormatter New(HSTRING currencyCode, Windows.Foundation.Collections.IIterable!(HSTRING) languages, HSTRING geographicRegion)
+	{
+		auto factory = factory!(Windows.Globalization.NumberFormatting.ICurrencyFormatterFactory);
+		Windows.Globalization.NumberFormatting.CurrencyFormatter _ret;
+		Debug.OK(factory.as!(Windows.Globalization.NumberFormatting.ICurrencyFormatterFactory).abi_CreateCurrencyFormatterCodeContext(currencyCode, languages, geographicRegion, &_ret));
+		return _ret;
+	}
 }
 
 interface DecimalFormatter : Windows.Globalization.NumberFormatting.INumberFormatterOptions, Windows.Globalization.NumberFormatting.INumberFormatter, Windows.Globalization.NumberFormatting.INumberFormatter2, Windows.Globalization.NumberFormatting.INumberParser, Windows.Globalization.NumberFormatting.ISignificantDigitsOption, Windows.Globalization.NumberFormatting.INumberRounderOption, Windows.Globalization.NumberFormatting.ISignedZeroOption
@@ -532,6 +546,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignedZeroOption).set_IsZeroSigned(value));
 	}
+	static Windows.Globalization.NumberFormatting.DecimalFormatter New(Windows.Foundation.Collections.IIterable!(HSTRING) languages, HSTRING geographicRegion)
+	{
+		auto factory = factory!(Windows.Globalization.NumberFormatting.IDecimalFormatterFactory);
+		Windows.Globalization.NumberFormatting.DecimalFormatter _ret;
+		Debug.OK(factory.as!(Windows.Globalization.NumberFormatting.IDecimalFormatterFactory).abi_CreateDecimalFormatter(languages, geographicRegion, &_ret));
+		return _ret;
+	}
 }
 
 interface IncrementNumberRounder : Windows.Globalization.NumberFormatting.INumberRounder, Windows.Globalization.NumberFormatting.IIncrementNumberRounder
@@ -624,6 +645,13 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.INumeralSystemTranslator).abi_TranslateNumerals(value, &_ret));
+		return _ret;
+	}
+	static Windows.Globalization.NumberFormatting.NumeralSystemTranslator New(Windows.Foundation.Collections.IIterable!(HSTRING) languages)
+	{
+		auto factory = factory!(Windows.Globalization.NumberFormatting.INumeralSystemTranslatorFactory);
+		Windows.Globalization.NumberFormatting.NumeralSystemTranslator _ret;
+		Debug.OK(factory.as!(Windows.Globalization.NumberFormatting.INumeralSystemTranslatorFactory).abi_Create(languages, &_ret));
 		return _ret;
 	}
 }
@@ -789,6 +817,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignedZeroOption).set_IsZeroSigned(value));
 	}
+	static Windows.Globalization.NumberFormatting.PercentFormatter New(Windows.Foundation.Collections.IIterable!(HSTRING) languages, HSTRING geographicRegion)
+	{
+		auto factory = factory!(Windows.Globalization.NumberFormatting.IPercentFormatterFactory);
+		Windows.Globalization.NumberFormatting.PercentFormatter _ret;
+		Debug.OK(factory.as!(Windows.Globalization.NumberFormatting.IPercentFormatterFactory).abi_CreatePercentFormatter(languages, geographicRegion, &_ret));
+		return _ret;
+	}
 }
 
 interface PermilleFormatter : Windows.Globalization.NumberFormatting.INumberFormatterOptions, Windows.Globalization.NumberFormatting.INumberFormatter, Windows.Globalization.NumberFormatting.INumberFormatter2, Windows.Globalization.NumberFormatting.INumberParser, Windows.Globalization.NumberFormatting.ISignificantDigitsOption, Windows.Globalization.NumberFormatting.INumberRounderOption, Windows.Globalization.NumberFormatting.ISignedZeroOption
@@ -951,6 +986,13 @@ extern(Windows):
 	final void IsZeroSigned(bool value)
 	{
 		Debug.OK(this.as!(Windows.Globalization.NumberFormatting.ISignedZeroOption).set_IsZeroSigned(value));
+	}
+	static Windows.Globalization.NumberFormatting.PermilleFormatter New(Windows.Foundation.Collections.IIterable!(HSTRING) languages, HSTRING geographicRegion)
+	{
+		auto factory = factory!(Windows.Globalization.NumberFormatting.IPermilleFormatterFactory);
+		Windows.Globalization.NumberFormatting.PermilleFormatter _ret;
+		Debug.OK(factory.as!(Windows.Globalization.NumberFormatting.IPermilleFormatterFactory).abi_CreatePermilleFormatter(languages, geographicRegion, &_ret));
+		return _ret;
 	}
 }
 

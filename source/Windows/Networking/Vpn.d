@@ -611,6 +611,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnAppId).set_Value(value));
 	}
+	static Windows.Networking.Vpn.VpnAppId New(Windows.Networking.Vpn.VpnAppIdType type, HSTRING value)
+	{
+		auto factory = factory!(Windows.Networking.Vpn.IVpnAppIdFactory);
+		Windows.Networking.Vpn.VpnAppId _ret;
+		Debug.OK(factory.as!(Windows.Networking.Vpn.IVpnAppIdFactory).abi_Create(type, value, &_ret));
+		return _ret;
+	}
 }
 
 interface VpnChannel : Windows.Networking.Vpn.IVpnChannel, Windows.Networking.Vpn.IVpnChannel2
@@ -1356,6 +1363,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnDomainNameInfo2).get_WebProxyUris(&_ret));
 		return _ret;
 	}
+	static Windows.Networking.Vpn.VpnDomainNameInfo New(HSTRING name, Windows.Networking.Vpn.VpnDomainNameType nameType, Windows.Foundation.Collections.IIterable!(Windows.Networking.HostName) dnsServerList, Windows.Foundation.Collections.IIterable!(Windows.Networking.HostName) proxyServerList)
+	{
+		auto factory = factory!(Windows.Networking.Vpn.IVpnDomainNameInfoFactory);
+		Windows.Networking.Vpn.VpnDomainNameInfo _ret;
+		Debug.OK(factory.as!(Windows.Networking.Vpn.IVpnDomainNameInfoFactory).abi_CreateVpnDomainNameInfo(name, nameType, dnsServerList, proxyServerList, &_ret));
+		return _ret;
+	}
 }
 
 interface VpnInterfaceId : Windows.Networking.Vpn.IVpnInterfaceId
@@ -1364,6 +1378,13 @@ extern(Windows):
 	final void GetAddressInfo(UINT32* out___idSize, ubyte** out_id)
 	{
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnInterfaceId).abi_GetAddressInfo(out___idSize, out_id));
+	}
+	static Windows.Networking.Vpn.VpnInterfaceId New(UINT32 __addressSize, ubyte* address)
+	{
+		auto factory = factory!(Windows.Networking.Vpn.IVpnInterfaceIdFactory);
+		Windows.Networking.Vpn.VpnInterfaceId _ret;
+		Debug.OK(factory.as!(Windows.Networking.Vpn.IVpnInterfaceIdFactory).abi_CreateVpnInterfaceId(__addressSize, address, &_ret));
+		return _ret;
 	}
 }
 
@@ -1482,6 +1503,13 @@ extern(Windows):
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) _ret;
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNamespaceInfo).get_WebProxyServers(&_ret));
+		return _ret;
+	}
+	static Windows.Networking.Vpn.VpnNamespaceInfo New(HSTRING name, Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) dnsServerList, Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) proxyServerList)
+	{
+		auto factory = factory!(Windows.Networking.Vpn.IVpnNamespaceInfoFactory);
+		Windows.Networking.Vpn.VpnNamespaceInfo _ret;
+		Debug.OK(factory.as!(Windows.Networking.Vpn.IVpnNamespaceInfoFactory).abi_CreateVpnNamespaceInfo(name, dnsServerList, proxyServerList, &_ret));
 		return _ret;
 	}
 }
@@ -1650,6 +1678,13 @@ extern(Windows):
 	{
 		Windows.Networking.Vpn.VpnAppId _ret;
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBuffer2).get_AppId(&_ret));
+		return _ret;
+	}
+	static Windows.Networking.Vpn.VpnPacketBuffer New(Windows.Networking.Vpn.VpnPacketBuffer parentBuffer, UINT32 offset, UINT32 length)
+	{
+		auto factory = factory!(Windows.Networking.Vpn.IVpnPacketBufferFactory);
+		Windows.Networking.Vpn.VpnPacketBuffer _ret;
+		Debug.OK(factory.as!(Windows.Networking.Vpn.IVpnPacketBufferFactory).abi_CreateVpnPacketBuffer(parentBuffer, offset, length, &_ret));
 		return _ret;
 	}
 }
@@ -1850,6 +1885,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRoute).get_PrefixSize(&_ret));
 		return _ret;
 	}
+	static Windows.Networking.Vpn.VpnRoute New(Windows.Networking.HostName address, ubyte prefixSize)
+	{
+		auto factory = factory!(Windows.Networking.Vpn.IVpnRouteFactory);
+		Windows.Networking.Vpn.VpnRoute _ret;
+		Debug.OK(factory.as!(Windows.Networking.Vpn.IVpnRouteFactory).abi_CreateVpnRoute(address, prefixSize, &_ret));
+		return _ret;
+	}
 }
 
 interface VpnRouteAssignment : Windows.Networking.Vpn.IVpnRouteAssignment
@@ -1980,6 +2022,13 @@ extern(Windows):
 	final void RoutingPolicyType(Windows.Networking.Vpn.VpnRoutingPolicyType value)
 	{
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilter).set_RoutingPolicyType(value));
+	}
+	static Windows.Networking.Vpn.VpnTrafficFilter New(Windows.Networking.Vpn.VpnAppId appId)
+	{
+		auto factory = factory!(Windows.Networking.Vpn.IVpnTrafficFilterFactory);
+		Windows.Networking.Vpn.VpnTrafficFilter _ret;
+		Debug.OK(factory.as!(Windows.Networking.Vpn.IVpnTrafficFilterFactory).abi_Create(appId, &_ret));
+		return _ret;
 	}
 }
 

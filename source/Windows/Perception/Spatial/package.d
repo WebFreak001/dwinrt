@@ -508,6 +508,20 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Perception.Spatial.ISpatialEntity).get_Properties(&_ret));
 		return _ret;
 	}
+	static Windows.Perception.Spatial.SpatialEntity New(Windows.Perception.Spatial.SpatialAnchor spatialAnchor)
+	{
+		auto factory = factory!(Windows.Perception.Spatial.ISpatialEntityFactory);
+		Windows.Perception.Spatial.SpatialEntity _ret;
+		Debug.OK(factory.as!(Windows.Perception.Spatial.ISpatialEntityFactory).abi_CreateWithSpatialAnchor(spatialAnchor, &_ret));
+		return _ret;
+	}
+	static Windows.Perception.Spatial.SpatialEntity New(Windows.Perception.Spatial.SpatialAnchor spatialAnchor, Windows.Foundation.Collections.ValueSet propertySet)
+	{
+		auto factory = factory!(Windows.Perception.Spatial.ISpatialEntityFactory);
+		Windows.Perception.Spatial.SpatialEntity _ret;
+		Debug.OK(factory.as!(Windows.Perception.Spatial.ISpatialEntityFactory).abi_CreateWithSpatialAnchorAndProperties(spatialAnchor, propertySet, &_ret));
+		return _ret;
+	}
 }
 
 interface SpatialEntityAddedEventArgs : Windows.Perception.Spatial.ISpatialEntityAddedEventArgs

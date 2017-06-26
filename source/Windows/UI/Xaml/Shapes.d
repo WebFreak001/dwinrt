@@ -289,6 +289,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.IPathStatics).get_DataProperty(&_ret));
 		return _ret;
 	}
+	static Path New()
+	{
+		IInspectable outer, inner;
+		Path ret;
+		Debug.OK(activationFactory!(Path, Windows.UI.Xaml.Shapes.IPathFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(Path, Path, Windows.UI.Xaml.Shapes.IPathFactory)
 class PathT(Base) : AgileObject!Base, Path
@@ -636,6 +643,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.IShapeStatics).get_StretchProperty(&_ret));
 		return _ret;
+	}
+	static Shape New()
+	{
+		IInspectable outer, inner;
+		Shape ret;
+		Debug.OK(activationFactory!(Shape, Windows.UI.Xaml.Shapes.IShapeFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(Shape, Shape, Windows.UI.Xaml.Shapes.IShapeFactory)

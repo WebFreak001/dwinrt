@@ -1758,6 +1758,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IAdaptiveTriggerStatics).get_MinWindowHeightProperty(&_ret));
 		return _ret;
 	}
+	static AdaptiveTrigger New()
+	{
+		IInspectable outer, inner;
+		AdaptiveTrigger ret;
+		Debug.OK(activationFactory!(AdaptiveTrigger, Windows.UI.Xaml.IAdaptiveTriggerFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(AdaptiveTrigger, AdaptiveTrigger, Windows.UI.Xaml.IAdaptiveTriggerFactory)
 class AdaptiveTriggerT(Base) : AgileObject!Base, AdaptiveTrigger
@@ -1891,6 +1898,13 @@ extern(Windows):
 	static void LoadComponentWithResourceLocation(IInspectable component, Windows.Foundation.Uri resourceLocator, Windows.UI.Xaml.Controls.Primitives.ComponentResourceLocation componentResourceLocation)
 	{
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IApplicationStatics).abi_LoadComponentWithResourceLocation(component, resourceLocator, componentResourceLocation));
+	}
+	static Application New()
+	{
+		IInspectable outer, inner;
+		Application ret;
+		Debug.OK(activationFactory!(Application, Windows.UI.Xaml.IApplicationFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(Application, Application, Windows.UI.Xaml.IApplicationFactory)
@@ -2069,6 +2083,13 @@ extern(Windows):
 	{
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDataTemplateStatics2).abi_SetExtensionInstance(element, value));
 	}
+	static DataTemplate New()
+	{
+		IInspectable outer, inner;
+		DataTemplate ret;
+		Debug.OK(activationFactory!(DataTemplate, Windows.UI.Xaml.IDataTemplateFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(DataTemplate, DataTemplate, Windows.UI.Xaml.IDataTemplateFactory)
 class DataTemplateT(Base) : AgileObject!Base, DataTemplate
@@ -2098,6 +2119,13 @@ extern(Windows):
 	final void DataType(IInspectable value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IDataTemplateKey).set_DataType(value));
+	}
+	static DataTemplateKey New()
+	{
+		IInspectable outer, inner;
+		DataTemplateKey ret;
+		Debug.OK(activationFactory!(DataTemplateKey, Windows.UI.Xaml.IDataTemplateKeyFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(DataTemplateKey, DataTemplateKey, Windows.UI.Xaml.IDataTemplateKeyFactory)
@@ -2221,6 +2249,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IDependencyObject2).abi_UnregisterPropertyChangedCallback(dp, token));
 	}
+	static DependencyObject New()
+	{
+		IInspectable outer, inner;
+		DependencyObject ret;
+		Debug.OK(activationFactory!(DependencyObject, Windows.UI.Xaml.IDependencyObjectFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(DependencyObject, DependencyObject, Windows.UI.Xaml.IDependencyObjectFactory)
 class DependencyObjectT(Base) : AgileObject!Base, DependencyObject
@@ -2310,6 +2345,13 @@ extern(Windows):
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.DependencyObject)* out_first)
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.DependencyObject)).abi_First(out_first));
+	}
+	static DependencyObjectCollection New()
+	{
+		IInspectable outer, inner;
+		DependencyObjectCollection ret;
+		Debug.OK(activationFactory!(DependencyObjectCollection, Windows.UI.Xaml.IDependencyObjectCollectionFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(DependencyObjectCollection, DependencyObjectCollection, Windows.UI.Xaml.IDependencyObjectCollectionFactory)
@@ -2439,6 +2481,13 @@ extern(Windows):
 	final void Stop()
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IDispatcherTimer).abi_Stop());
+	}
+	static DispatcherTimer New()
+	{
+		IInspectable outer, inner;
+		DispatcherTimer ret;
+		Debug.OK(activationFactory!(DispatcherTimer, Windows.UI.Xaml.IDispatcherTimerFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(DispatcherTimer, DispatcherTimer, Windows.UI.Xaml.IDispatcherTimerFactory)
@@ -3272,6 +3321,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_FlowDirectionProperty(&_ret));
 		return _ret;
 	}
+	static FrameworkElement New()
+	{
+		IInspectable outer, inner;
+		FrameworkElement ret;
+		Debug.OK(activationFactory!(FrameworkElement, Windows.UI.Xaml.IFrameworkElementFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(FrameworkElement, FrameworkElement, Windows.UI.Xaml.IFrameworkElementFactory)
 class FrameworkElementT(Base) : AgileObject!Base, FrameworkElement
@@ -3371,6 +3427,13 @@ class FrameworkElementT(Base) : AgileObject!Base, FrameworkElement
 
 interface FrameworkTemplate : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IFrameworkTemplate
 {
+	static FrameworkTemplate New()
+	{
+		IInspectable outer, inner;
+		FrameworkTemplate ret;
+		Debug.OK(activationFactory!(FrameworkTemplate, Windows.UI.Xaml.IFrameworkTemplateFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(FrameworkTemplate, FrameworkTemplate, Windows.UI.Xaml.IFrameworkTemplateFactory)
 class FrameworkTemplateT(Base) : AgileObject!Base, FrameworkTemplate
@@ -3575,6 +3638,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.IPropertyPath).get_Path(&_ret));
 		return _ret;
 	}
+	static Windows.UI.Xaml.PropertyPath New(HSTRING path)
+	{
+		auto factory = factory!(Windows.UI.Xaml.IPropertyPathFactory);
+		Windows.UI.Xaml.PropertyPath _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.IPropertyPathFactory).abi_CreateInstance(path, &_ret));
+		return _ret;
+	}
 }
 
 interface RectHelper : Windows.UI.Xaml.IRectHelper
@@ -3738,6 +3808,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(IInspectable, IInspectable))).abi_First(out_first));
 	}
+	static ResourceDictionary New()
+	{
+		IInspectable outer, inner;
+		ResourceDictionary ret;
+		Debug.OK(activationFactory!(ResourceDictionary, Windows.UI.Xaml.IResourceDictionaryFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(ResourceDictionary, ResourceDictionary, Windows.UI.Xaml.IResourceDictionaryFactory)
 class ResourceDictionaryT(Base) : AgileObject!Base, ResourceDictionary
@@ -3780,6 +3857,13 @@ extern(Windows):
 		IInspectable _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.IRoutedEventArgs).get_OriginalSource(&_ret));
 		return _ret;
+	}
+	static RoutedEventArgs New()
+	{
+		IInspectable outer, inner;
+		RoutedEventArgs ret;
+		Debug.OK(activationFactory!(RoutedEventArgs, Windows.UI.Xaml.IRoutedEventArgsFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(RoutedEventArgs, RoutedEventArgs, Windows.UI.Xaml.IRoutedEventArgsFactory)
@@ -3830,6 +3914,13 @@ extern(Windows):
 	final void Target(Windows.UI.Xaml.TargetPropertyPath value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.ISetter2).set_Target(value));
+	}
+	static Windows.UI.Xaml.Setter New(Windows.UI.Xaml.DependencyProperty targetProperty, IInspectable value)
+	{
+		auto factory = factory!(Windows.UI.Xaml.ISetterFactory);
+		Windows.UI.Xaml.Setter _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.ISetterFactory).abi_CreateInstance(targetProperty, value, &_ret));
+		return _ret;
 	}
 }
 
@@ -4014,6 +4105,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IStateTriggerBaseProtected).abi_SetActive(IsActive));
 	}
+	static StateTriggerBase New()
+	{
+		IInspectable outer, inner;
+		StateTriggerBase ret;
+		Debug.OK(activationFactory!(StateTriggerBase, Windows.UI.Xaml.IStateTriggerBaseFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(StateTriggerBase, StateTriggerBase, Windows.UI.Xaml.IStateTriggerBaseFactory)
 class StateTriggerBaseT(Base) : AgileObject!Base, StateTriggerBase
@@ -4071,6 +4169,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IStyle).abi_Seal());
 	}
+	static Windows.UI.Xaml.Style New(Windows.UI.Xaml.Interop.TypeName targetType)
+	{
+		auto factory = factory!(Windows.UI.Xaml.IStyleFactory);
+		Windows.UI.Xaml.Style _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.IStyleFactory).abi_CreateInstance(targetType, &_ret));
+		return _ret;
+	}
 }
 
 interface TargetPropertyPath : Windows.UI.Xaml.ITargetPropertyPath
@@ -4095,6 +4200,13 @@ extern(Windows):
 	final void Target(IInspectable value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.ITargetPropertyPath).set_Target(value));
+	}
+	static Windows.UI.Xaml.TargetPropertyPath New(Windows.UI.Xaml.DependencyProperty targetProperty)
+	{
+		auto factory = factory!(Windows.UI.Xaml.ITargetPropertyPathFactory);
+		Windows.UI.Xaml.TargetPropertyPath _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.ITargetPropertyPathFactory).abi_CreateInstance(targetProperty, &_ret));
+		return _ret;
 	}
 }
 
@@ -5526,6 +5638,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IVisualStateManagerStatics).abi_GoToState(control, stateName, useTransitions, &_ret));
 		return _ret;
 	}
+	static VisualStateManager New()
+	{
+		IInspectable outer, inner;
+		VisualStateManager ret;
+		Debug.OK(activationFactory!(VisualStateManager, Windows.UI.Xaml.IVisualStateManagerFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(VisualStateManager, VisualStateManager, Windows.UI.Xaml.IVisualStateManagerFactory)
 class VisualStateManagerT(Base) : AgileObject!Base, VisualStateManager
@@ -5600,6 +5719,13 @@ extern(Windows):
 	final void Storyboard(Windows.UI.Xaml.Media.Animation.Storyboard value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IVisualTransition).set_Storyboard(value));
+	}
+	static VisualTransition New()
+	{
+		IInspectable outer, inner;
+		VisualTransition ret;
+		Debug.OK(activationFactory!(VisualTransition, Windows.UI.Xaml.IVisualTransitionFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(VisualTransition, VisualTransition, Windows.UI.Xaml.IVisualTransitionFactory)

@@ -575,6 +575,20 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlay).set_AudioEnabled(value));
 	}
+	static Windows.Media.Editing.MediaOverlay New(Windows.Media.Editing.MediaClip clip)
+	{
+		auto factory = factory!(Windows.Media.Editing.IMediaOverlayFactory);
+		Windows.Media.Editing.MediaOverlay _ret;
+		Debug.OK(factory.as!(Windows.Media.Editing.IMediaOverlayFactory).abi_Create(clip, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Editing.MediaOverlay New(Windows.Media.Editing.MediaClip clip, Windows.Foundation.Rect position, double opacity)
+	{
+		auto factory = factory!(Windows.Media.Editing.IMediaOverlayFactory);
+		Windows.Media.Editing.MediaOverlay _ret;
+		Debug.OK(factory.as!(Windows.Media.Editing.IMediaOverlayFactory).abi_CreateWithPositionAndOpacity(clip, position, opacity, &_ret));
+		return _ret;
+	}
 }
 
 interface MediaOverlayLayer : Windows.Media.Editing.IMediaOverlayLayer
@@ -596,6 +610,13 @@ extern(Windows):
 	{
 		Windows.Media.Effects.IVideoCompositorDefinition _ret;
 		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlayLayer).get_CustomCompositorDefinition(&_ret));
+		return _ret;
+	}
+	static Windows.Media.Editing.MediaOverlayLayer New(Windows.Media.Effects.IVideoCompositorDefinition compositorDefinition)
+	{
+		auto factory = factory!(Windows.Media.Editing.IMediaOverlayLayerFactory);
+		Windows.Media.Editing.MediaOverlayLayer _ret;
+		Debug.OK(factory.as!(Windows.Media.Editing.IMediaOverlayLayerFactory).abi_CreateWithCompositorDefinition(compositorDefinition, &_ret));
 		return _ret;
 	}
 }

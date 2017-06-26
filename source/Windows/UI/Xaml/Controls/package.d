@@ -7364,6 +7364,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IAppBarStatics).get_IsStickyProperty(&_ret));
 		return _ret;
 	}
+	static AppBar New()
+	{
+		IInspectable outer, inner;
+		AppBar ret;
+		Debug.OK(activationFactory!(AppBar, Windows.UI.Xaml.Controls.IAppBarFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(AppBar, AppBar, Windows.UI.Xaml.Controls.IAppBarFactory)
 class AppBarT(Base) : AgileObject!Base, AppBar
@@ -7494,6 +7501,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IAppBarButtonStatics).get_IsCompactProperty(&_ret));
 		return _ret;
 	}
+	static AppBarButton New()
+	{
+		IInspectable outer, inner;
+		AppBarButton ret;
+		Debug.OK(activationFactory!(AppBarButton, Windows.UI.Xaml.Controls.IAppBarButtonFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(AppBarButton, AppBarButton, Windows.UI.Xaml.Controls.IAppBarButtonFactory)
 class AppBarButtonT(Base) : AgileObject!Base, AppBarButton
@@ -7565,6 +7579,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IAppBarSeparatorStatics).get_IsCompactProperty(&_ret));
 		return _ret;
+	}
+	static AppBarSeparator New()
+	{
+		IInspectable outer, inner;
+		AppBarSeparator ret;
+		Debug.OK(activationFactory!(AppBarSeparator, Windows.UI.Xaml.Controls.IAppBarSeparatorFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(AppBarSeparator, AppBarSeparator, Windows.UI.Xaml.Controls.IAppBarSeparatorFactory)
@@ -7672,6 +7693,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IAppBarToggleButtonStatics).get_IsCompactProperty(&_ret));
 		return _ret;
+	}
+	static AppBarToggleButton New()
+	{
+		IInspectable outer, inner;
+		AppBarToggleButton ret;
+		Debug.OK(activationFactory!(AppBarToggleButton, Windows.UI.Xaml.Controls.IAppBarToggleButtonFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(AppBarToggleButton, AppBarToggleButton, Windows.UI.Xaml.Controls.IAppBarToggleButtonFactory)
@@ -8022,6 +8050,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IBitmapIconStatics).get_UriSourceProperty(&_ret));
 		return _ret;
 	}
+	static BitmapIcon New()
+	{
+		IInspectable outer, inner;
+		BitmapIcon ret;
+		Debug.OK(activationFactory!(BitmapIcon, Windows.UI.Xaml.Controls.IBitmapIconFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(BitmapIcon, BitmapIcon, Windows.UI.Xaml.Controls.IBitmapIconFactory)
 class BitmapIconT(Base) : AgileObject!Base, BitmapIcon
@@ -8186,6 +8221,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IButtonStaticsWithFlyout).get_FlyoutProperty(&_ret));
 		return _ret;
+	}
+	static Button New()
+	{
+		IInspectable outer, inner;
+		Button ret;
+		Debug.OK(activationFactory!(Button, Windows.UI.Xaml.Controls.IButtonFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(Button, Button, Windows.UI.Xaml.Controls.IButtonFactory)
@@ -8523,6 +8565,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.ICalendarDatePickerStatics).get_IsGroupLabelVisibleProperty(&_ret));
 		return _ret;
+	}
+	static CalendarDatePicker New()
+	{
+		IInspectable outer, inner;
+		CalendarDatePicker ret;
+		Debug.OK(activationFactory!(CalendarDatePicker, Windows.UI.Xaml.Controls.ICalendarDatePickerFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(CalendarDatePicker, CalendarDatePicker, Windows.UI.Xaml.Controls.ICalendarDatePickerFactory)
@@ -9448,6 +9497,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.ICalendarViewStatics).get_CalendarViewDayItemStyleProperty(&_ret));
 		return _ret;
 	}
+	static CalendarView New()
+	{
+		IInspectable outer, inner;
+		CalendarView ret;
+		Debug.OK(activationFactory!(CalendarView, Windows.UI.Xaml.Controls.ICalendarViewFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(CalendarView, CalendarView, Windows.UI.Xaml.Controls.ICalendarViewFactory)
 class CalendarViewT(Base) : AgileObject!Base, CalendarView
@@ -9612,6 +9668,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.ICalendarViewDayItemStatics).get_DateProperty(&_ret));
 		return _ret;
 	}
+	static CalendarViewDayItem New()
+	{
+		IInspectable outer, inner;
+		CalendarViewDayItem ret;
+		Debug.OK(activationFactory!(CalendarViewDayItem, Windows.UI.Xaml.Controls.ICalendarViewDayItemFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(CalendarViewDayItem, CalendarViewDayItem, Windows.UI.Xaml.Controls.ICalendarViewDayItemFactory)
 class CalendarViewDayItemT(Base) : AgileObject!Base, CalendarViewDayItem
@@ -9747,6 +9810,13 @@ interface Canvas : Windows.UI.Xaml.Controls.Panel, Windows.UI.Xaml.Controls.ICan
 	{
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.ICanvasStatics).abi_SetZIndex(element, value));
 	}
+	static Canvas New()
+	{
+		IInspectable outer, inner;
+		Canvas ret;
+		Debug.OK(activationFactory!(Canvas, Windows.UI.Xaml.Controls.ICanvasFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(Canvas, Canvas, Windows.UI.Xaml.Controls.ICanvasFactory)
 class CanvasT(Base) : AgileObject!Base, Canvas
@@ -9809,6 +9879,13 @@ extern(Windows):
 
 interface CheckBox : Windows.UI.Xaml.Controls.Primitives.ToggleButton, Windows.UI.Xaml.Controls.ICheckBox
 {
+	static CheckBox New()
+	{
+		IInspectable outer, inner;
+		CheckBox ret;
+		Debug.OK(activationFactory!(CheckBox, Windows.UI.Xaml.Controls.ICheckBoxFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(CheckBox, CheckBox, Windows.UI.Xaml.Controls.ICheckBoxFactory)
 class CheckBoxT(Base) : AgileObject!Base, CheckBox
@@ -10197,6 +10274,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IComboBoxStatics).get_MaxDropDownHeightProperty(&_ret));
 		return _ret;
 	}
+	static ComboBox New()
+	{
+		IInspectable outer, inner;
+		ComboBox ret;
+		Debug.OK(activationFactory!(ComboBox, Windows.UI.Xaml.Controls.IComboBoxFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(ComboBox, ComboBox, Windows.UI.Xaml.Controls.IComboBoxFactory)
 class ComboBoxT(Base) : AgileObject!Base, ComboBox
@@ -10248,6 +10332,13 @@ class ComboBoxT(Base) : AgileObject!Base, ComboBox
 
 interface ComboBoxItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem, Windows.UI.Xaml.Controls.IComboBoxItem
 {
+	static ComboBoxItem New()
+	{
+		IInspectable outer, inner;
+		ComboBoxItem ret;
+		Debug.OK(activationFactory!(ComboBoxItem, Windows.UI.Xaml.Controls.IComboBoxItemFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(ComboBoxItem, ComboBoxItem, Windows.UI.Xaml.Controls.IComboBoxItemFactory)
 class ComboBoxItemT(Base) : AgileObject!Base, ComboBoxItem
@@ -10354,6 +10445,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.ICommandBarStatics).get_SecondaryCommandsProperty(&_ret));
 		return _ret;
 	}
+	static CommandBar New()
+	{
+		IInspectable outer, inner;
+		CommandBar ret;
+		Debug.OK(activationFactory!(CommandBar, Windows.UI.Xaml.Controls.ICommandBarFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(CommandBar, CommandBar, Windows.UI.Xaml.Controls.ICommandBarFactory)
 class CommandBarT(Base) : AgileObject!Base, CommandBar
@@ -10387,6 +10485,13 @@ class CommandBarT(Base) : AgileObject!Base, CommandBar
 
 interface CommandBarOverflowPresenter : Windows.UI.Xaml.Controls.ItemsControl, Windows.UI.Xaml.Controls.ICommandBarOverflowPresenter
 {
+	static CommandBarOverflowPresenter New()
+	{
+		IInspectable outer, inner;
+		CommandBarOverflowPresenter ret;
+		Debug.OK(activationFactory!(CommandBarOverflowPresenter, Windows.UI.Xaml.Controls.ICommandBarOverflowPresenterFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(CommandBarOverflowPresenter, CommandBarOverflowPresenter, Windows.UI.Xaml.Controls.ICommandBarOverflowPresenterFactory)
 class CommandBarOverflowPresenterT(Base) : AgileObject!Base, CommandBarOverflowPresenter
@@ -10535,6 +10640,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IContentControlStatics).get_ContentTransitionsProperty(&_ret));
 		return _ret;
+	}
+	static ContentControl New()
+	{
+		IInspectable outer, inner;
+		ContentControl ret;
+		Debug.OK(activationFactory!(ContentControl, Windows.UI.Xaml.Controls.IContentControlFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(ContentControl, ContentControl, Windows.UI.Xaml.Controls.IContentControlFactory)
@@ -10894,6 +11006,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IContentDialogStatics).get_IsSecondaryButtonEnabledProperty(&_ret));
 		return _ret;
+	}
+	static ContentDialog New()
+	{
+		IInspectable outer, inner;
+		ContentDialog ret;
+		Debug.OK(activationFactory!(ContentDialog, Windows.UI.Xaml.Controls.IContentDialogFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(ContentDialog, ContentDialog, Windows.UI.Xaml.Controls.IContentDialogFactory)
@@ -11368,6 +11487,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IContentPresenterStatics).get_ForegroundProperty(&_ret));
 		return _ret;
+	}
+	static ContentPresenter New()
+	{
+		IInspectable outer, inner;
+		ContentPresenter ret;
+		Debug.OK(activationFactory!(ContentPresenter, Windows.UI.Xaml.Controls.IContentPresenterFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(ContentPresenter, ContentPresenter, Windows.UI.Xaml.Controls.IContentPresenterFactory)
@@ -11952,6 +12078,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IControlStatics).get_FocusStateProperty(&_ret));
 		return _ret;
 	}
+	static Control New()
+	{
+		IInspectable outer, inner;
+		Control ret;
+		Debug.OK(activationFactory!(Control, Windows.UI.Xaml.Controls.IControlFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(Control, Control, Windows.UI.Xaml.Controls.IControlFactory)
 class ControlT(Base) : AgileObject!Base, Control
@@ -12124,6 +12257,13 @@ extern(Windows):
 		Windows.UI.Xaml.DataTemplate _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IDataTemplateSelector2).abi_SelectTemplateForItem(item, &_ret));
 		return _ret;
+	}
+	static DataTemplateSelector New()
+	{
+		IInspectable outer, inner;
+		DataTemplateSelector ret;
+		Debug.OK(activationFactory!(DataTemplateSelector, Windows.UI.Xaml.Controls.IDataTemplateSelectorFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(DataTemplateSelector, DataTemplateSelector, Windows.UI.Xaml.Controls.IDataTemplateSelectorFactory)
@@ -12404,6 +12544,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IDatePickerStatics).get_OrientationProperty(&_ret));
 		return _ret;
+	}
+	static DatePicker New()
+	{
+		IInspectable outer, inner;
+		DatePicker ret;
+		Debug.OK(activationFactory!(DatePicker, Windows.UI.Xaml.Controls.IDatePickerFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(DatePicker, DatePicker, Windows.UI.Xaml.Controls.IDatePickerFactory)
@@ -12792,6 +12939,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IFlipViewStatics2).get_UseTouchAnimationsForAllNavigationProperty(&_ret));
 		return _ret;
 	}
+	static FlipView New()
+	{
+		IInspectable outer, inner;
+		FlipView ret;
+		Debug.OK(activationFactory!(FlipView, Windows.UI.Xaml.Controls.IFlipViewFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(FlipView, FlipView, Windows.UI.Xaml.Controls.IFlipViewFactory)
 class FlipViewT(Base) : AgileObject!Base, FlipView
@@ -12813,6 +12967,13 @@ class FlipViewT(Base) : AgileObject!Base, FlipView
 
 interface FlipViewItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem, Windows.UI.Xaml.Controls.IFlipViewItem
 {
+	static FlipViewItem New()
+	{
+		IInspectable outer, inner;
+		FlipViewItem ret;
+		Debug.OK(activationFactory!(FlipViewItem, Windows.UI.Xaml.Controls.IFlipViewItemFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(FlipViewItem, FlipViewItem, Windows.UI.Xaml.Controls.IFlipViewItemFactory)
 class FlipViewItemT(Base) : AgileObject!Base, FlipViewItem
@@ -12871,6 +13032,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IFlyoutStatics).get_FlyoutPresenterStyleProperty(&_ret));
 		return _ret;
 	}
+	static Flyout New()
+	{
+		IInspectable outer, inner;
+		Flyout ret;
+		Debug.OK(activationFactory!(Flyout, Windows.UI.Xaml.Controls.IFlyoutFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(Flyout, Flyout, Windows.UI.Xaml.Controls.IFlyoutFactory)
 class FlyoutT(Base) : AgileObject!Base, Flyout
@@ -12893,6 +13061,13 @@ class FlyoutT(Base) : AgileObject!Base, Flyout
 
 interface FlyoutPresenter : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IFlyoutPresenter
 {
+	static FlyoutPresenter New()
+	{
+		IInspectable outer, inner;
+		FlyoutPresenter ret;
+		Debug.OK(activationFactory!(FlyoutPresenter, Windows.UI.Xaml.Controls.IFlyoutPresenterFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(FlyoutPresenter, FlyoutPresenter, Windows.UI.Xaml.Controls.IFlyoutPresenterFactory)
 class FlyoutPresenterT(Base) : AgileObject!Base, FlyoutPresenter
@@ -13037,6 +13212,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IFontIconStatics).get_FontStyleProperty(&_ret));
 		return _ret;
+	}
+	static FontIcon New()
+	{
+		IInspectable outer, inner;
+		FontIcon ret;
+		Debug.OK(activationFactory!(FontIcon, Windows.UI.Xaml.Controls.IFontIconFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(FontIcon, FontIcon, Windows.UI.Xaml.Controls.IFontIconFactory)
@@ -13232,6 +13414,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IFrameStatics).get_BackStackDepthProperty(&_ret));
 		return _ret;
 	}
+	static Frame New()
+	{
+		IInspectable outer, inner;
+		Frame ret;
+		Debug.OK(activationFactory!(Frame, Windows.UI.Xaml.Controls.IFrameFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(Frame, Frame, Windows.UI.Xaml.Controls.IFrameFactory)
 class FrameT(Base) : AgileObject!Base, Frame
@@ -13405,6 +13594,13 @@ extern(Windows):
 	{
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IGridStatics).abi_SetColumnSpan(element, value));
 	}
+	static Grid New()
+	{
+		IInspectable outer, inner;
+		Grid ret;
+		Debug.OK(activationFactory!(Grid, Windows.UI.Xaml.Controls.IGridFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(Grid, Grid, Windows.UI.Xaml.Controls.IGridFactory)
 class GridT(Base) : AgileObject!Base, Grid
@@ -13434,6 +13630,13 @@ class GridT(Base) : AgileObject!Base, Grid
 
 interface GridView : Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.IGridView
 {
+	static GridView New()
+	{
+		IInspectable outer, inner;
+		GridView ret;
+		Debug.OK(activationFactory!(GridView, Windows.UI.Xaml.Controls.IGridViewFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(GridView, GridView, Windows.UI.Xaml.Controls.IGridViewFactory)
 class GridViewT(Base) : AgileObject!Base, GridView
@@ -13452,6 +13655,13 @@ class GridViewT(Base) : AgileObject!Base, GridView
 
 interface GridViewHeaderItem : Windows.UI.Xaml.Controls.ListViewBaseHeaderItem, Windows.UI.Xaml.Controls.IGridViewHeaderItem
 {
+	static GridViewHeaderItem New()
+	{
+		IInspectable outer, inner;
+		GridViewHeaderItem ret;
+		Debug.OK(activationFactory!(GridViewHeaderItem, Windows.UI.Xaml.Controls.IGridViewHeaderItemFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(GridViewHeaderItem, GridViewHeaderItem, Windows.UI.Xaml.Controls.IGridViewHeaderItemFactory)
 class GridViewHeaderItemT(Base) : AgileObject!Base, GridViewHeaderItem
@@ -13477,6 +13687,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGridViewItem).get_TemplateSettings(&_ret));
 		return _ret;
 	}
+	static GridViewItem New()
+	{
+		IInspectable outer, inner;
+		GridViewItem ret;
+		Debug.OK(activationFactory!(GridViewItem, Windows.UI.Xaml.Controls.IGridViewItemFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(GridViewItem, GridViewItem, Windows.UI.Xaml.Controls.IGridViewItemFactory)
 class GridViewItemT(Base) : AgileObject!Base, GridViewItem
@@ -13496,6 +13713,13 @@ class GridViewItemT(Base) : AgileObject!Base, GridViewItem
 
 interface GroupItem : Windows.UI.Xaml.Controls.ContentControl, Windows.UI.Xaml.Controls.IGroupItem
 {
+	static GroupItem New()
+	{
+		IInspectable outer, inner;
+		GroupItem ret;
+		Debug.OK(activationFactory!(GroupItem, Windows.UI.Xaml.Controls.IGroupItemFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(GroupItem, GroupItem, Windows.UI.Xaml.Controls.IGroupItemFactory)
 class GroupItemT(Base) : AgileObject!Base, GroupItem
@@ -13593,6 +13817,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGroupStyle2).set_HeaderContainerStyle(value));
 	}
+	static GroupStyle New()
+	{
+		IInspectable outer, inner;
+		GroupStyle ret;
+		Debug.OK(activationFactory!(GroupStyle, Windows.UI.Xaml.Controls.IGroupStyleFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(GroupStyle, GroupStyle, Windows.UI.Xaml.Controls.IGroupStyleFactory)
 class GroupStyleT(Base) : AgileObject!Base, GroupStyle
@@ -13635,6 +13866,13 @@ extern(Windows):
 		Windows.UI.Xaml.Controls.GroupStyle _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IGroupStyleSelector).abi_SelectGroupStyle(group, level, &_ret));
 		return _ret;
+	}
+	static GroupStyleSelector New()
+	{
+		IInspectable outer, inner;
+		GroupStyleSelector ret;
+		Debug.OK(activationFactory!(GroupStyleSelector, Windows.UI.Xaml.Controls.IGroupStyleSelectorFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(GroupStyleSelector, GroupStyleSelector, Windows.UI.Xaml.Controls.IGroupStyleSelectorFactory)
@@ -13836,6 +14074,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IHubStatics).get_IsZoomedInViewProperty(&_ret));
 		return _ret;
 	}
+	static Hub New()
+	{
+		IInspectable outer, inner;
+		Hub ret;
+		Debug.OK(activationFactory!(Hub, Windows.UI.Xaml.Controls.IHubFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(Hub, Hub, Windows.UI.Xaml.Controls.IHubFactory)
 class HubT(Base) : AgileObject!Base, Hub
@@ -13955,6 +14200,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IHubSectionStatics).get_IsHeaderInteractiveProperty(&_ret));
 		return _ret;
+	}
+	static HubSection New()
+	{
+		IInspectable outer, inner;
+		HubSection ret;
+		Debug.OK(activationFactory!(HubSection, Windows.UI.Xaml.Controls.IHubSectionFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(HubSection, HubSection, Windows.UI.Xaml.Controls.IHubSectionFactory)
@@ -14079,6 +14331,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IHyperlinkButtonStatics).get_NavigateUriProperty(&_ret));
 		return _ret;
+	}
+	static HyperlinkButton New()
+	{
+		IInspectable outer, inner;
+		HyperlinkButton ret;
+		Debug.OK(activationFactory!(HyperlinkButton, Windows.UI.Xaml.Controls.IHyperlinkButtonFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(HyperlinkButton, HyperlinkButton, Windows.UI.Xaml.Controls.IHyperlinkButtonFactory)
@@ -14244,6 +14503,13 @@ extern(Windows):
 		Windows.UI.Input.Inking.InkPresenter _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkCanvas).get_InkPresenter(&_ret));
 		return _ret;
+	}
+	static InkCanvas New()
+	{
+		IInspectable outer, inner;
+		InkCanvas ret;
+		Debug.OK(activationFactory!(InkCanvas, Windows.UI.Xaml.Controls.IInkCanvasFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(InkCanvas, InkCanvas, Windows.UI.Xaml.Controls.IInkCanvasFactory)
@@ -14460,6 +14726,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IInkToolbarStatics).get_TargetInkCanvasProperty(&_ret));
 		return _ret;
 	}
+	static InkToolbar New()
+	{
+		IInspectable outer, inner;
+		InkToolbar ret;
+		Debug.OK(activationFactory!(InkToolbar, Windows.UI.Xaml.Controls.IInkToolbarFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(InkToolbar, InkToolbar, Windows.UI.Xaml.Controls.IInkToolbarFactory)
 class InkToolbarT(Base) : AgileObject!Base, InkToolbar
@@ -14508,6 +14781,13 @@ class InkToolbarT(Base) : AgileObject!Base, InkToolbar
 
 interface InkToolbarBallpointPenButton : Windows.UI.Xaml.Controls.InkToolbarPenButton, Windows.UI.Xaml.Controls.IInkToolbarBallpointPenButton
 {
+	static InkToolbarBallpointPenButton New()
+	{
+		IInspectable outer, inner;
+		InkToolbarBallpointPenButton ret;
+		Debug.OK(activationFactory!(InkToolbarBallpointPenButton, Windows.UI.Xaml.Controls.IInkToolbarBallpointPenButtonFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(InkToolbarBallpointPenButton, InkToolbarBallpointPenButton, Windows.UI.Xaml.Controls.IInkToolbarBallpointPenButtonFactory)
 class InkToolbarBallpointPenButtonT(Base) : AgileObject!Base, InkToolbarBallpointPenButton
@@ -14532,6 +14812,13 @@ extern(Windows):
 		Windows.UI.Input.Inking.InkDrawingAttributes _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IInkToolbarCustomPen).abi_CreateInkDrawingAttributes(brush, strokeWidth, &_ret));
 		return _ret;
+	}
+	static InkToolbarCustomPen New()
+	{
+		IInspectable outer, inner;
+		InkToolbarCustomPen ret;
+		Debug.OK(activationFactory!(InkToolbarCustomPen, Windows.UI.Xaml.Controls.IInkToolbarCustomPenFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(InkToolbarCustomPen, InkToolbarCustomPen, Windows.UI.Xaml.Controls.IInkToolbarCustomPenFactory)
@@ -14595,6 +14882,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IInkToolbarCustomPenButtonStatics).get_ConfigurationContentProperty(&_ret));
 		return _ret;
 	}
+	static InkToolbarCustomPenButton New()
+	{
+		IInspectable outer, inner;
+		InkToolbarCustomPenButton ret;
+		Debug.OK(activationFactory!(InkToolbarCustomPenButton, Windows.UI.Xaml.Controls.IInkToolbarCustomPenButtonFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(InkToolbarCustomPenButton, InkToolbarCustomPenButton, Windows.UI.Xaml.Controls.IInkToolbarCustomPenButtonFactory)
 class InkToolbarCustomPenButtonT(Base) : AgileObject!Base, InkToolbarCustomPenButton
@@ -14617,6 +14911,13 @@ class InkToolbarCustomPenButtonT(Base) : AgileObject!Base, InkToolbarCustomPenBu
 
 interface InkToolbarCustomToggleButton : Windows.UI.Xaml.Controls.InkToolbarToggleButton, Windows.UI.Xaml.Controls.IInkToolbarCustomToggleButton
 {
+	static InkToolbarCustomToggleButton New()
+	{
+		IInspectable outer, inner;
+		InkToolbarCustomToggleButton ret;
+		Debug.OK(activationFactory!(InkToolbarCustomToggleButton, Windows.UI.Xaml.Controls.IInkToolbarCustomToggleButtonFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(InkToolbarCustomToggleButton, InkToolbarCustomToggleButton, Windows.UI.Xaml.Controls.IInkToolbarCustomToggleButtonFactory)
 class InkToolbarCustomToggleButtonT(Base) : AgileObject!Base, InkToolbarCustomToggleButton
@@ -14658,6 +14959,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IInkToolbarCustomToolButtonStatics).get_ConfigurationContentProperty(&_ret));
 		return _ret;
+	}
+	static InkToolbarCustomToolButton New()
+	{
+		IInspectable outer, inner;
+		InkToolbarCustomToolButton ret;
+		Debug.OK(activationFactory!(InkToolbarCustomToolButton, Windows.UI.Xaml.Controls.IInkToolbarCustomToolButtonFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(InkToolbarCustomToolButton, InkToolbarCustomToolButton, Windows.UI.Xaml.Controls.IInkToolbarCustomToolButtonFactory)
@@ -14702,6 +15010,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IInkToolbarEraserButtonStatics2).get_IsClearAllVisibleProperty(&_ret));
 		return _ret;
+	}
+	static InkToolbarEraserButton New()
+	{
+		IInspectable outer, inner;
+		InkToolbarEraserButton ret;
+		Debug.OK(activationFactory!(InkToolbarEraserButton, Windows.UI.Xaml.Controls.IInkToolbarEraserButtonFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(InkToolbarEraserButton, InkToolbarEraserButton, Windows.UI.Xaml.Controls.IInkToolbarEraserButtonFactory)
@@ -14784,6 +15099,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IInkToolbarFlyoutItemStatics).get_IsCheckedProperty(&_ret));
 		return _ret;
 	}
+	static InkToolbarFlyoutItem New()
+	{
+		IInspectable outer, inner;
+		InkToolbarFlyoutItem ret;
+		Debug.OK(activationFactory!(InkToolbarFlyoutItem, Windows.UI.Xaml.Controls.IInkToolbarFlyoutItemFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(InkToolbarFlyoutItem, InkToolbarFlyoutItem, Windows.UI.Xaml.Controls.IInkToolbarFlyoutItemFactory)
 class InkToolbarFlyoutItemT(Base) : AgileObject!Base, InkToolbarFlyoutItem
@@ -14810,6 +15132,13 @@ class InkToolbarFlyoutItemT(Base) : AgileObject!Base, InkToolbarFlyoutItem
 
 interface InkToolbarHighlighterButton : Windows.UI.Xaml.Controls.InkToolbarPenButton, Windows.UI.Xaml.Controls.IInkToolbarHighlighterButton
 {
+	static InkToolbarHighlighterButton New()
+	{
+		IInspectable outer, inner;
+		InkToolbarHighlighterButton ret;
+		Debug.OK(activationFactory!(InkToolbarHighlighterButton, Windows.UI.Xaml.Controls.IInkToolbarHighlighterButtonFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(InkToolbarHighlighterButton, InkToolbarHighlighterButton, Windows.UI.Xaml.Controls.IInkToolbarHighlighterButtonFactory)
 class InkToolbarHighlighterButtonT(Base) : AgileObject!Base, InkToolbarHighlighterButton
@@ -15045,6 +15374,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IInkToolbarPenConfigurationControlStatics).get_PenButtonProperty(&_ret));
 		return _ret;
 	}
+	static InkToolbarPenConfigurationControl New()
+	{
+		IInspectable outer, inner;
+		InkToolbarPenConfigurationControl ret;
+		Debug.OK(activationFactory!(InkToolbarPenConfigurationControl, Windows.UI.Xaml.Controls.IInkToolbarPenConfigurationControlFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(InkToolbarPenConfigurationControl, InkToolbarPenConfigurationControl, Windows.UI.Xaml.Controls.IInkToolbarPenConfigurationControlFactory)
 class InkToolbarPenConfigurationControlT(Base) : AgileObject!Base, InkToolbarPenConfigurationControl
@@ -15064,6 +15400,13 @@ class InkToolbarPenConfigurationControlT(Base) : AgileObject!Base, InkToolbarPen
 
 interface InkToolbarPencilButton : Windows.UI.Xaml.Controls.InkToolbarPenButton, Windows.UI.Xaml.Controls.IInkToolbarPencilButton
 {
+	static InkToolbarPencilButton New()
+	{
+		IInspectable outer, inner;
+		InkToolbarPencilButton ret;
+		Debug.OK(activationFactory!(InkToolbarPencilButton, Windows.UI.Xaml.Controls.IInkToolbarPencilButtonFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(InkToolbarPencilButton, InkToolbarPencilButton, Windows.UI.Xaml.Controls.IInkToolbarPencilButtonFactory)
 class InkToolbarPencilButtonT(Base) : AgileObject!Base, InkToolbarPencilButton
@@ -15103,6 +15446,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IInkToolbarRulerButtonStatics).get_RulerProperty(&_ret));
 		return _ret;
+	}
+	static InkToolbarRulerButton New()
+	{
+		IInspectable outer, inner;
+		InkToolbarRulerButton ret;
+		Debug.OK(activationFactory!(InkToolbarRulerButton, Windows.UI.Xaml.Controls.IInkToolbarRulerButtonFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(InkToolbarRulerButton, InkToolbarRulerButton, Windows.UI.Xaml.Controls.IInkToolbarRulerButtonFactory)
@@ -15202,6 +15552,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IInkToolbarStencilButtonStatics).get_IsProtractorItemVisibleProperty(&_ret));
 		return _ret;
+	}
+	static InkToolbarStencilButton New()
+	{
+		IInspectable outer, inner;
+		InkToolbarStencilButton ret;
+		Debug.OK(activationFactory!(InkToolbarStencilButton, Windows.UI.Xaml.Controls.IInkToolbarStencilButtonFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(InkToolbarStencilButton, InkToolbarStencilButton, Windows.UI.Xaml.Controls.IInkToolbarStencilButtonFactory)
@@ -15698,6 +16055,13 @@ extern(Windows):
 		Windows.UI.Xaml.Controls.ItemsControl _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IItemsControlStatics).abi_ItemsControlFromItemContainer(container, &_ret));
 		return _ret;
+	}
+	static ItemsControl New()
+	{
+		IInspectable outer, inner;
+		ItemsControl ret;
+		Debug.OK(activationFactory!(ItemsControl, Windows.UI.Xaml.Controls.IItemsControlFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(ItemsControl, ItemsControl, Windows.UI.Xaml.Controls.IItemsControlFactory)
@@ -16278,6 +16642,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IListBoxStatics).get_SelectionModeProperty(&_ret));
 		return _ret;
 	}
+	static ListBox New()
+	{
+		IInspectable outer, inner;
+		ListBox ret;
+		Debug.OK(activationFactory!(ListBox, Windows.UI.Xaml.Controls.IListBoxFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(ListBox, ListBox, Windows.UI.Xaml.Controls.IListBoxFactory)
 class ListBoxT(Base) : AgileObject!Base, ListBox
@@ -16304,6 +16675,13 @@ class ListBoxT(Base) : AgileObject!Base, ListBox
 
 interface ListBoxItem : Windows.UI.Xaml.Controls.Primitives.SelectorItem, Windows.UI.Xaml.Controls.IListBoxItem
 {
+	static ListBoxItem New()
+	{
+		IInspectable outer, inner;
+		ListBoxItem ret;
+		Debug.OK(activationFactory!(ListBoxItem, Windows.UI.Xaml.Controls.IListBoxItemFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(ListBoxItem, ListBoxItem, Windows.UI.Xaml.Controls.IListBoxItemFactory)
 class ListBoxItemT(Base) : AgileObject!Base, ListBoxItem
@@ -16488,6 +16866,13 @@ interface ListPickerFlyoutPresenter : Windows.UI.Xaml.Controls.Control, Windows.
 
 interface ListView : Windows.UI.Xaml.Controls.ListViewBase, Windows.UI.Xaml.Controls.IListView
 {
+	static ListView New()
+	{
+		IInspectable outer, inner;
+		ListView ret;
+		Debug.OK(activationFactory!(ListView, Windows.UI.Xaml.Controls.IListViewFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(ListView, ListView, Windows.UI.Xaml.Controls.IListViewFactory)
 class ListViewT(Base) : AgileObject!Base, ListView
@@ -16944,6 +17329,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IListViewBaseStatics).get_HeaderTransitionsProperty(&_ret));
 		return _ret;
 	}
+	static ListViewBase New()
+	{
+		IInspectable outer, inner;
+		ListViewBase ret;
+		Debug.OK(activationFactory!(ListViewBase, Windows.UI.Xaml.Controls.IListViewBaseFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(ListViewBase, ListViewBase, Windows.UI.Xaml.Controls.IListViewBaseFactory)
 class ListViewBaseT(Base) : AgileObject!Base, ListViewBase
@@ -17059,6 +17451,13 @@ class ListViewBaseHeaderItemT(Base) : AgileObject!Base, ListViewBaseHeaderItem
 
 interface ListViewHeaderItem : Windows.UI.Xaml.Controls.ListViewBaseHeaderItem, Windows.UI.Xaml.Controls.IListViewHeaderItem
 {
+	static ListViewHeaderItem New()
+	{
+		IInspectable outer, inner;
+		ListViewHeaderItem ret;
+		Debug.OK(activationFactory!(ListViewHeaderItem, Windows.UI.Xaml.Controls.IListViewHeaderItemFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(ListViewHeaderItem, ListViewHeaderItem, Windows.UI.Xaml.Controls.IListViewHeaderItemFactory)
 class ListViewHeaderItemT(Base) : AgileObject!Base, ListViewHeaderItem
@@ -17083,6 +17482,13 @@ extern(Windows):
 		Windows.UI.Xaml.Controls.Primitives.ListViewItemTemplateSettings _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IListViewItem).get_TemplateSettings(&_ret));
 		return _ret;
+	}
+	static ListViewItem New()
+	{
+		IInspectable outer, inner;
+		ListViewItem ret;
+		Debug.OK(activationFactory!(ListViewItem, Windows.UI.Xaml.Controls.IListViewItemFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(ListViewItem, ListViewItem, Windows.UI.Xaml.Controls.IListViewItemFactory)
@@ -17895,6 +18301,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IMediaPlayerElementStatics).get_MediaPlayerProperty(&_ret));
 		return _ret;
 	}
+	static MediaPlayerElement New()
+	{
+		IInspectable outer, inner;
+		MediaPlayerElement ret;
+		Debug.OK(activationFactory!(MediaPlayerElement, Windows.UI.Xaml.Controls.IMediaPlayerElementFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(MediaPlayerElement, MediaPlayerElement, Windows.UI.Xaml.Controls.IMediaPlayerElementFactory)
 class MediaPlayerElementT(Base) : AgileObject!Base, MediaPlayerElement
@@ -17984,6 +18397,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IMediaPlayerPresenterStatics).get_IsFullWindowProperty(&_ret));
 		return _ret;
+	}
+	static MediaPlayerPresenter New()
+	{
+		IInspectable outer, inner;
+		MediaPlayerPresenter ret;
+		Debug.OK(activationFactory!(MediaPlayerPresenter, Windows.UI.Xaml.Controls.IMediaPlayerPresenterFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(MediaPlayerPresenter, MediaPlayerPresenter, Windows.UI.Xaml.Controls.IMediaPlayerPresenterFactory)
@@ -18369,6 +18789,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IMediaTransportControlsStatics).get_IsCompactProperty(&_ret));
 		return _ret;
 	}
+	static MediaTransportControls New()
+	{
+		IInspectable outer, inner;
+		MediaTransportControls ret;
+		Debug.OK(activationFactory!(MediaTransportControls, Windows.UI.Xaml.Controls.IMediaTransportControlsFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(MediaTransportControls, MediaTransportControls, Windows.UI.Xaml.Controls.IMediaTransportControlsFactory)
 class MediaTransportControlsT(Base) : AgileObject!Base, MediaTransportControls
@@ -18498,6 +18925,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IMenuFlyoutStatics).get_MenuFlyoutPresenterStyleProperty(&_ret));
 		return _ret;
 	}
+	static MenuFlyout New()
+	{
+		IInspectable outer, inner;
+		MenuFlyout ret;
+		Debug.OK(activationFactory!(MenuFlyout, Windows.UI.Xaml.Controls.IMenuFlyoutFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(MenuFlyout, MenuFlyout, Windows.UI.Xaml.Controls.IMenuFlyoutFactory)
 class MenuFlyoutT(Base) : AgileObject!Base, MenuFlyout
@@ -18591,6 +19025,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IMenuFlyoutItemStatics).get_CommandParameterProperty(&_ret));
 		return _ret;
 	}
+	static MenuFlyoutItem New()
+	{
+		IInspectable outer, inner;
+		MenuFlyoutItem ret;
+		Debug.OK(activationFactory!(MenuFlyoutItem, Windows.UI.Xaml.Controls.IMenuFlyoutItemFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(MenuFlyoutItem, MenuFlyoutItem, Windows.UI.Xaml.Controls.IMenuFlyoutItemFactory)
 class MenuFlyoutItemT(Base) : AgileObject!Base, MenuFlyoutItem
@@ -18645,6 +19086,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IMenuFlyoutPresenter2).get_TemplateSettings(&_ret));
 		return _ret;
 	}
+	static MenuFlyoutPresenter New()
+	{
+		IInspectable outer, inner;
+		MenuFlyoutPresenter ret;
+		Debug.OK(activationFactory!(MenuFlyoutPresenter, Windows.UI.Xaml.Controls.IMenuFlyoutPresenterFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(MenuFlyoutPresenter, MenuFlyoutPresenter, Windows.UI.Xaml.Controls.IMenuFlyoutPresenterFactory)
 class MenuFlyoutPresenterT(Base) : AgileObject!Base, MenuFlyoutPresenter
@@ -18665,6 +19113,13 @@ class MenuFlyoutPresenterT(Base) : AgileObject!Base, MenuFlyoutPresenter
 
 interface MenuFlyoutSeparator : Windows.UI.Xaml.Controls.MenuFlyoutItemBase, Windows.UI.Xaml.Controls.IMenuFlyoutSeparator
 {
+	static MenuFlyoutSeparator New()
+	{
+		IInspectable outer, inner;
+		MenuFlyoutSeparator ret;
+		Debug.OK(activationFactory!(MenuFlyoutSeparator, Windows.UI.Xaml.Controls.IMenuFlyoutSeparatorFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(MenuFlyoutSeparator, MenuFlyoutSeparator, Windows.UI.Xaml.Controls.IMenuFlyoutSeparatorFactory)
 class MenuFlyoutSeparatorT(Base) : AgileObject!Base, MenuFlyoutSeparator
@@ -18806,6 +19261,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IPageStatics).get_BottomAppBarProperty(&_ret));
 		return _ret;
 	}
+	static Page New()
+	{
+		IInspectable outer, inner;
+		Page ret;
+		Debug.OK(activationFactory!(Page, Windows.UI.Xaml.Controls.IPageFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(Page, Page, Windows.UI.Xaml.Controls.IPageFactory)
 class PageT(Base) : AgileObject!Base, Page
@@ -18895,6 +19357,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IPanelStatics).get_ChildrenTransitionsProperty(&_ret));
 		return _ret;
+	}
+	static Panel New()
+	{
+		IInspectable outer, inner;
+		Panel ret;
+		Debug.OK(activationFactory!(Panel, Windows.UI.Xaml.Controls.IPanelFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(Panel, Panel, Windows.UI.Xaml.Controls.IPanelFactory)
@@ -19118,6 +19587,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IPathIconStatics).get_DataProperty(&_ret));
 		return _ret;
+	}
+	static PathIcon New()
+	{
+		IInspectable outer, inner;
+		PathIcon ret;
+		Debug.OK(activationFactory!(PathIcon, Windows.UI.Xaml.Controls.IPathIconFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(PathIcon, PathIcon, Windows.UI.Xaml.Controls.IPathIconFactory)
@@ -19431,6 +19907,13 @@ extern(Windows):
 	{
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IPivotStatics).abi_SetSlideInAnimationGroup(element, value));
 	}
+	static Pivot New()
+	{
+		IInspectable outer, inner;
+		Pivot ret;
+		Debug.OK(activationFactory!(Pivot, Windows.UI.Xaml.Controls.IPivotFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(Pivot, Pivot, Windows.UI.Xaml.Controls.IPivotFactory)
 class PivotT(Base) : AgileObject!Base, Pivot
@@ -19508,6 +19991,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IPivotItemStatics).get_HeaderProperty(&_ret));
 		return _ret;
+	}
+	static PivotItem New()
+	{
+		IInspectable outer, inner;
+		PivotItem ret;
+		Debug.OK(activationFactory!(PivotItem, Windows.UI.Xaml.Controls.IPivotItemFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(PivotItem, PivotItem, Windows.UI.Xaml.Controls.IPivotItemFactory)
@@ -19606,6 +20096,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IProgressBarStatics).get_ShowPausedProperty(&_ret));
 		return _ret;
 	}
+	static ProgressBar New()
+	{
+		IInspectable outer, inner;
+		ProgressBar ret;
+		Debug.OK(activationFactory!(ProgressBar, Windows.UI.Xaml.Controls.IProgressBarFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(ProgressBar, ProgressBar, Windows.UI.Xaml.Controls.IProgressBarFactory)
 class ProgressBarT(Base) : AgileObject!Base, ProgressBar
@@ -19688,6 +20185,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IRadioButtonStatics).get_GroupNameProperty(&_ret));
 		return _ret;
+	}
+	static RadioButton New()
+	{
+		IInspectable outer, inner;
+		RadioButton ret;
+		Debug.OK(activationFactory!(RadioButton, Windows.UI.Xaml.Controls.IRadioButtonFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(RadioButton, RadioButton, Windows.UI.Xaml.Controls.IRadioButtonFactory)
@@ -20037,6 +20541,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IRelativePanelStatics).get_PaddingProperty(&_ret));
 		return _ret;
 	}
+	static RelativePanel New()
+	{
+		IInspectable outer, inner;
+		RelativePanel ret;
+		Debug.OK(activationFactory!(RelativePanel, Windows.UI.Xaml.Controls.IRelativePanelFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(RelativePanel, RelativePanel, Windows.UI.Xaml.Controls.IRelativePanelFactory)
 class RelativePanelT(Base) : AgileObject!Base, RelativePanel
@@ -20370,6 +20881,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IRichEditBoxStatics).get_InputScopeProperty(&_ret));
 		return _ret;
+	}
+	static RichEditBox New()
+	{
+		IInspectable outer, inner;
+		RichEditBox ret;
+		Debug.OK(activationFactory!(RichEditBox, Windows.UI.Xaml.Controls.IRichEditBoxFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(RichEditBox, RichEditBox, Windows.UI.Xaml.Controls.IRichEditBoxFactory)
@@ -22208,6 +22726,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.ISearchBoxStatics).get_ChooseSuggestionOnEnterProperty(&_ret));
 		return _ret;
 	}
+	static SearchBox New()
+	{
+		IInspectable outer, inner;
+		SearchBox ret;
+		Debug.OK(activationFactory!(SearchBox, Windows.UI.Xaml.Controls.ISearchBoxFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(SearchBox, SearchBox, Windows.UI.Xaml.Controls.ISearchBoxFactory)
 class SearchBoxT(Base) : AgileObject!Base, SearchBox
@@ -22671,6 +23196,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.ISettingsFlyoutStatics).get_IconSourceProperty(&_ret));
 		return _ret;
 	}
+	static SettingsFlyout New()
+	{
+		IInspectable outer, inner;
+		SettingsFlyout ret;
+		Debug.OK(activationFactory!(SettingsFlyout, Windows.UI.Xaml.Controls.ISettingsFlyoutFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(SettingsFlyout, SettingsFlyout, Windows.UI.Xaml.Controls.ISettingsFlyoutFactory)
 class SettingsFlyoutT(Base) : AgileObject!Base, SettingsFlyout
@@ -22874,6 +23406,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.ISliderStatics).get_ThumbToolTipValueConverterProperty(&_ret));
 		return _ret;
+	}
+	static Slider New()
+	{
+		IInspectable outer, inner;
+		Slider ret;
+		Debug.OK(activationFactory!(Slider, Windows.UI.Xaml.Controls.ISliderFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(Slider, Slider, Windows.UI.Xaml.Controls.ISliderFactory)
@@ -23094,6 +23633,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.ISplitViewStatics).get_PaneBackgroundProperty(&_ret));
 		return _ret;
 	}
+	static SplitView New()
+	{
+		IInspectable outer, inner;
+		SplitView ret;
+		Debug.OK(activationFactory!(SplitView, Windows.UI.Xaml.Controls.ISplitViewFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(SplitView, SplitView, Windows.UI.Xaml.Controls.ISplitViewFactory)
 class SplitViewT(Base) : AgileObject!Base, SplitView
@@ -23279,6 +23825,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IStackPanelStatics).get_OrientationProperty(&_ret));
 		return _ret;
 	}
+	static StackPanel New()
+	{
+		IInspectable outer, inner;
+		StackPanel ret;
+		Debug.OK(activationFactory!(StackPanel, Windows.UI.Xaml.Controls.IStackPanelFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(StackPanel, StackPanel, Windows.UI.Xaml.Controls.IStackPanelFactory)
 class StackPanelT(Base) : AgileObject!Base, StackPanel
@@ -23328,6 +23881,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.IStyleSelector).abi_SelectStyle(item, container, &_ret));
 		return _ret;
 	}
+	static StyleSelector New()
+	{
+		IInspectable outer, inner;
+		StyleSelector ret;
+		Debug.OK(activationFactory!(StyleSelector, Windows.UI.Xaml.Controls.IStyleSelectorFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(StyleSelector, StyleSelector, Windows.UI.Xaml.Controls.IStyleSelectorFactory)
 class StyleSelectorT(Base) : AgileObject!Base, StyleSelector
@@ -23356,6 +23916,13 @@ extern(Windows):
 		Windows.UI.Core.CoreIndependentInputSource _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.ISwapChainBackgroundPanel2).abi_CreateCoreIndependentInputSource(deviceTypes, &_ret));
 		return _ret;
+	}
+	static SwapChainBackgroundPanel New()
+	{
+		IInspectable outer, inner;
+		SwapChainBackgroundPanel ret;
+		Debug.OK(activationFactory!(SwapChainBackgroundPanel, Windows.UI.Xaml.Controls.ISwapChainBackgroundPanelFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(SwapChainBackgroundPanel, SwapChainBackgroundPanel, Windows.UI.Xaml.Controls.ISwapChainBackgroundPanelFactory)
@@ -23425,6 +23992,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.ISwapChainPanelStatics).get_CompositionScaleYProperty(&_ret));
 		return _ret;
 	}
+	static SwapChainPanel New()
+	{
+		IInspectable outer, inner;
+		SwapChainPanel ret;
+		Debug.OK(activationFactory!(SwapChainPanel, Windows.UI.Xaml.Controls.ISwapChainPanelFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(SwapChainPanel, SwapChainPanel, Windows.UI.Xaml.Controls.ISwapChainPanelFactory)
 class SwapChainPanelT(Base) : AgileObject!Base, SwapChainPanel
@@ -23470,6 +24044,13 @@ extern(Windows):
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.ISymbolIconStatics).get_SymbolProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Controls.SymbolIcon New(Windows.UI.Xaml.Controls.Symbol symbol)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Controls.ISymbolIconFactory);
+		Windows.UI.Xaml.Controls.SymbolIcon _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Controls.ISymbolIconFactory).abi_CreateInstanceWithSymbol(symbol, &_ret));
 		return _ret;
 	}
 }
@@ -24242,6 +24823,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.ITextBoxStatics).get_InputScopeProperty(&_ret));
 		return _ret;
 	}
+	static TextBox New()
+	{
+		IInspectable outer, inner;
+		TextBox ret;
+		Debug.OK(activationFactory!(TextBox, Windows.UI.Xaml.Controls.ITextBoxFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(TextBox, TextBox, Windows.UI.Xaml.Controls.ITextBoxFactory)
 class TextBoxT(Base) : AgileObject!Base, TextBox
@@ -24534,6 +25122,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.ITimePickerStatics).get_TimeProperty(&_ret));
 		return _ret;
 	}
+	static TimePicker New()
+	{
+		IInspectable outer, inner;
+		TimePicker ret;
+		Debug.OK(activationFactory!(TimePicker, Windows.UI.Xaml.Controls.ITimePickerFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(TimePicker, TimePicker, Windows.UI.Xaml.Controls.ITimePickerFactory)
 class TimePickerT(Base) : AgileObject!Base, TimePicker
@@ -24687,6 +25282,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IToggleMenuFlyoutItemStatics).get_IsCheckedProperty(&_ret));
 		return _ret;
+	}
+	static ToggleMenuFlyoutItem New()
+	{
+		IInspectable outer, inner;
+		ToggleMenuFlyoutItem ret;
+		Debug.OK(activationFactory!(ToggleMenuFlyoutItem, Windows.UI.Xaml.Controls.IToggleMenuFlyoutItemFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(ToggleMenuFlyoutItem, ToggleMenuFlyoutItem, Windows.UI.Xaml.Controls.IToggleMenuFlyoutItemFactory)
@@ -24944,6 +25546,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IToolTipStatics).get_VerticalOffsetProperty(&_ret));
 		return _ret;
 	}
+	static ToolTip New()
+	{
+		IInspectable outer, inner;
+		ToolTip ret;
+		Debug.OK(activationFactory!(ToolTip, Windows.UI.Xaml.Controls.IToolTipFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(ToolTip, ToolTip, Windows.UI.Xaml.Controls.IToolTipFactory)
 class ToolTipT(Base) : AgileObject!Base, ToolTip
@@ -25125,6 +25734,13 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IUserControlStatics).get_ContentProperty(&_ret));
 		return _ret;
+	}
+	static UserControl New()
+	{
+		IInspectable outer, inner;
+		UserControl ret;
+		Debug.OK(activationFactory!(UserControl, Windows.UI.Xaml.Controls.IUserControlFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
 	}
 }
 @makable!(UserControl, UserControl, Windows.UI.Xaml.Controls.IUserControlFactory)
@@ -25862,6 +26478,13 @@ extern(Windows):
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.IWebViewStatics).get_DataTransferPackageProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Controls.WebView New(Windows.UI.Xaml.Controls.WebViewExecutionMode executionMode)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Controls.IWebViewFactory4);
+		Windows.UI.Xaml.Controls.WebView _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Controls.IWebViewFactory4).abi_CreateInstanceWithExecutionMode(executionMode, &_ret));
 		return _ret;
 	}
 }

@@ -286,6 +286,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementBytePattern).set_Data(value));
 	}
+	static Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementBytePattern New(ubyte dataType, INT16 offset, Windows.Storage.Streams.IBuffer data)
+	{
+		auto factory = factory!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementBytePatternFactory);
+		Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementBytePattern _ret;
+		Debug.OK(factory.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementBytePatternFactory).abi_Create(dataType, offset, data, &_ret));
+		return _ret;
+	}
 }
 
 interface BluetoothLEAdvertisementDataSection : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataSection
@@ -310,6 +317,13 @@ extern(Windows):
 	final void Data(Windows.Storage.Streams.IBuffer value)
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataSection).set_Data(value));
+	}
+	static Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementDataSection New(ubyte dataType, Windows.Storage.Streams.IBuffer data)
+	{
+		auto factory = factory!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataSectionFactory);
+		Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementDataSection _ret;
+		Debug.OK(factory.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataSectionFactory).abi_Create(dataType, data, &_ret));
+		return _ret;
 	}
 }
 
@@ -509,6 +523,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisher).remove_StatusChanged(token));
 	}
+	static Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisher New(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisement advertisement)
+	{
+		auto factory = factory!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisherFactory);
+		Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisher _ret;
+		Debug.OK(factory.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisherFactory).abi_Create(advertisement, &_ret));
+		return _ret;
+	}
 }
 
 interface BluetoothLEAdvertisementPublisherStatusChangedEventArgs : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisherStatusChangedEventArgs
@@ -654,6 +675,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher).remove_Stopped(token));
 	}
+	static Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher New(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementFilter advertisementFilter)
+	{
+		auto factory = factory!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcherFactory);
+		Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher _ret;
+		Debug.OK(factory.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcherFactory).abi_Create(advertisementFilter, &_ret));
+		return _ret;
+	}
 }
 
 interface BluetoothLEAdvertisementWatcherStoppedEventArgs : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcherStoppedEventArgs
@@ -689,6 +717,13 @@ extern(Windows):
 	final void Data(Windows.Storage.Streams.IBuffer value)
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEManufacturerData).set_Data(value));
+	}
+	static Windows.Devices.Bluetooth.Advertisement.BluetoothLEManufacturerData New(UINT16 companyId, Windows.Storage.Streams.IBuffer data)
+	{
+		auto factory = factory!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEManufacturerDataFactory);
+		Windows.Devices.Bluetooth.Advertisement.BluetoothLEManufacturerData _ret;
+		Debug.OK(factory.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEManufacturerDataFactory).abi_Create(companyId, data, &_ret));
+		return _ret;
 	}
 }
 

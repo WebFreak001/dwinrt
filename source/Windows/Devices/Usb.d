@@ -1220,6 +1220,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).set_Length(value));
 	}
+	static Windows.Devices.Usb.UsbSetupPacket New(Windows.Storage.Streams.IBuffer eightByteBuffer)
+	{
+		auto factory = factory!(Windows.Devices.Usb.IUsbSetupPacketFactory);
+		Windows.Devices.Usb.UsbSetupPacket _ret;
+		Debug.OK(factory.as!(Windows.Devices.Usb.IUsbSetupPacketFactory).abi_CreateWithEightByteBuffer(eightByteBuffer, &_ret));
+		return _ret;
+	}
 }
 
 enum UsbControlRecipient

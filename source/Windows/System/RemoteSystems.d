@@ -567,6 +567,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemAuthorizationKindFilter).get_RemoteSystemAuthorizationKind(&_ret));
 		return _ret;
 	}
+	static Windows.System.RemoteSystems.RemoteSystemAuthorizationKindFilter New(Windows.System.RemoteSystems.RemoteSystemAuthorizationKind remoteSystemAuthorizationKind)
+	{
+		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemAuthorizationKindFilterFactory);
+		Windows.System.RemoteSystems.RemoteSystemAuthorizationKindFilter _ret;
+		Debug.OK(factory.as!(Windows.System.RemoteSystems.IRemoteSystemAuthorizationKindFilterFactory).abi_Create(remoteSystemAuthorizationKind, &_ret));
+		return _ret;
+	}
 }
 
 interface RemoteSystemConnectionRequest : Windows.System.RemoteSystems.IRemoteSystemConnectionRequest
@@ -576,6 +583,13 @@ extern(Windows):
 	{
 		Windows.System.RemoteSystems.RemoteSystem _ret;
 		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemConnectionRequest).get_RemoteSystem(&_ret));
+		return _ret;
+	}
+	static Windows.System.RemoteSystems.RemoteSystemConnectionRequest New(Windows.System.RemoteSystems.RemoteSystem remoteSystem)
+	{
+		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemConnectionRequestFactory);
+		Windows.System.RemoteSystems.RemoteSystemConnectionRequest _ret;
+		Debug.OK(factory.as!(Windows.System.RemoteSystems.IRemoteSystemConnectionRequestFactory).abi_Create(remoteSystem, &_ret));
 		return _ret;
 	}
 }
@@ -589,6 +603,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemDiscoveryTypeFilter).get_RemoteSystemDiscoveryType(&_ret));
 		return _ret;
 	}
+	static Windows.System.RemoteSystems.RemoteSystemDiscoveryTypeFilter New(Windows.System.RemoteSystems.RemoteSystemDiscoveryType discoveryType)
+	{
+		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemDiscoveryTypeFilterFactory);
+		Windows.System.RemoteSystems.RemoteSystemDiscoveryTypeFilter _ret;
+		Debug.OK(factory.as!(Windows.System.RemoteSystems.IRemoteSystemDiscoveryTypeFilterFactory).abi_Create(discoveryType, &_ret));
+		return _ret;
+	}
 }
 
 interface RemoteSystemKindFilter : Windows.System.RemoteSystems.IRemoteSystemKindFilter, Windows.System.RemoteSystems.IRemoteSystemFilter
@@ -598,6 +619,13 @@ extern(Windows):
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
 		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemKindFilter).get_RemoteSystemKinds(&_ret));
+		return _ret;
+	}
+	static Windows.System.RemoteSystems.RemoteSystemKindFilter New(Windows.Foundation.Collections.IIterable!(HSTRING) remoteSystemKinds)
+	{
+		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemKindFilterFactory);
+		Windows.System.RemoteSystems.RemoteSystemKindFilter _ret;
+		Debug.OK(factory.as!(Windows.System.RemoteSystems.IRemoteSystemKindFilterFactory).abi_Create(remoteSystemKinds, &_ret));
 		return _ret;
 	}
 }
@@ -749,6 +777,20 @@ extern(Windows):
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.System.RemoteSystems.RemoteSystemSessionCreationResult) _ret;
 		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionController).abi_CreateSessionAsync(&_ret));
+		return _ret;
+	}
+	static Windows.System.RemoteSystems.RemoteSystemSessionController New(HSTRING displayName)
+	{
+		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemSessionControllerFactory);
+		Windows.System.RemoteSystems.RemoteSystemSessionController _ret;
+		Debug.OK(factory.as!(Windows.System.RemoteSystems.IRemoteSystemSessionControllerFactory).abi_CreateController(displayName, &_ret));
+		return _ret;
+	}
+	static Windows.System.RemoteSystems.RemoteSystemSessionController New(HSTRING displayName, Windows.System.RemoteSystems.RemoteSystemSessionOptions options)
+	{
+		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemSessionControllerFactory);
+		Windows.System.RemoteSystems.RemoteSystemSessionController _ret;
+		Debug.OK(factory.as!(Windows.System.RemoteSystems.IRemoteSystemSessionControllerFactory).abi_CreateControllerWithSessionOptions(displayName, options, &_ret));
 		return _ret;
 	}
 }
@@ -932,6 +974,20 @@ extern(Windows):
 	final void removeValueSetReceived(EventRegistrationToken token)
 	{
 		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannel).remove_ValueSetReceived(token));
+	}
+	static Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel New(Windows.System.RemoteSystems.RemoteSystemSession session, HSTRING channelName)
+	{
+		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannelFactory);
+		Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel _ret;
+		Debug.OK(factory.as!(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannelFactory).abi_Create(session, channelName, &_ret));
+		return _ret;
+	}
+	static Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel New(Windows.System.RemoteSystems.RemoteSystemSession session, HSTRING channelName, Windows.System.RemoteSystems.RemoteSystemSessionMessageChannelReliability reliability)
+	{
+		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannelFactory);
+		Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel _ret;
+		Debug.OK(factory.as!(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannelFactory).abi_CreateWithReliability(session, channelName, reliability, &_ret));
+		return _ret;
 	}
 }
 
@@ -1133,6 +1189,13 @@ extern(Windows):
 	{
 		Windows.System.RemoteSystems.RemoteSystemStatusType _ret;
 		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemStatusTypeFilter).get_RemoteSystemStatusType(&_ret));
+		return _ret;
+	}
+	static Windows.System.RemoteSystems.RemoteSystemStatusTypeFilter New(Windows.System.RemoteSystems.RemoteSystemStatusType remoteSystemStatusType)
+	{
+		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemStatusTypeFilterFactory);
+		Windows.System.RemoteSystems.RemoteSystemStatusTypeFilter _ret;
+		Debug.OK(factory.as!(Windows.System.RemoteSystems.IRemoteSystemStatusTypeFilterFactory).abi_Create(remoteSystemStatusType, &_ret));
 		return _ret;
 	}
 }

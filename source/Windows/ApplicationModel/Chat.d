@@ -1194,6 +1194,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageAttachment2).set_OriginalFileName(value));
 	}
+	static Windows.ApplicationModel.Chat.ChatMessageAttachment New(HSTRING mimeType, Windows.Storage.Streams.IRandomAccessStreamReference dataStreamReference)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Chat.IChatMessageAttachmentFactory);
+		Windows.ApplicationModel.Chat.ChatMessageAttachment _ret;
+		Debug.OK(factory.as!(Windows.ApplicationModel.Chat.IChatMessageAttachmentFactory).abi_CreateChatMessageAttachment(mimeType, dataStreamReference, &_ret));
+		return _ret;
+	}
 }
 
 interface ChatMessageBlocking

@@ -176,6 +176,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+	static Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance New(HSTRING dnssdServiceInstanceName, Windows.Networking.HostName hostName, UINT16 port)
+	{
+		auto factory = factory!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstanceFactory);
+		Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance _ret;
+		Debug.OK(factory.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstanceFactory).abi_Create(dnssdServiceInstanceName, hostName, port, &_ret));
+		return _ret;
+	}
 }
 
 interface DnssdServiceInstanceCollection : Windows.Foundation.Collections.IVectorView!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance), Windows.Foundation.Collections.IIterable!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance)

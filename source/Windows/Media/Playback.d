@@ -967,6 +967,20 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreak).set_CanStart(value));
 	}
+	static Windows.Media.Playback.MediaBreak New(Windows.Media.Playback.MediaBreakInsertionMethod insertionMethod)
+	{
+		auto factory = factory!(Windows.Media.Playback.IMediaBreakFactory);
+		Windows.Media.Playback.MediaBreak _ret;
+		Debug.OK(factory.as!(Windows.Media.Playback.IMediaBreakFactory).abi_Create(insertionMethod, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Playback.MediaBreak New(Windows.Media.Playback.MediaBreakInsertionMethod insertionMethod, Windows.Foundation.TimeSpan presentationPosition)
+	{
+		auto factory = factory!(Windows.Media.Playback.IMediaBreakFactory);
+		Windows.Media.Playback.MediaBreak _ret;
+		Debug.OK(factory.as!(Windows.Media.Playback.IMediaBreakFactory).abi_CreateWithPresentationPosition(insertionMethod, presentationPosition, &_ret));
+		return _ret;
+	}
 }
 
 interface MediaBreakEndedEventArgs : Windows.Media.Playback.IMediaBreakEndedEventArgs
@@ -1819,6 +1833,13 @@ extern(Windows):
 	{
 		Windows.Media.Playback.MediaPlaybackItem _ret;
 		Debug.OK(staticInstance.as!(Windows.Media.Playback.IMediaPlaybackItemStatics).abi_FindFromMediaSource(source, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Playback.MediaPlaybackItem New(Windows.Media.Core.MediaSource source)
+	{
+		auto factory = factory!(Windows.Media.Playback.IMediaPlaybackItemFactory);
+		Windows.Media.Playback.MediaPlaybackItem _ret;
+		Debug.OK(factory.as!(Windows.Media.Playback.IMediaPlaybackItemFactory).abi_Create(source, &_ret));
 		return _ret;
 	}
 }
@@ -3002,6 +3023,20 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Media.Playback.IPlaybackMediaMarker).get_Text(&_ret));
+		return _ret;
+	}
+	static Windows.Media.Playback.PlaybackMediaMarker New(Windows.Foundation.TimeSpan value)
+	{
+		auto factory = factory!(Windows.Media.Playback.IPlaybackMediaMarkerFactory);
+		Windows.Media.Playback.PlaybackMediaMarker _ret;
+		Debug.OK(factory.as!(Windows.Media.Playback.IPlaybackMediaMarkerFactory).abi_CreateFromTime(value, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Playback.PlaybackMediaMarker New(Windows.Foundation.TimeSpan value, HSTRING mediaMarketType, HSTRING text)
+	{
+		auto factory = factory!(Windows.Media.Playback.IPlaybackMediaMarkerFactory);
+		Windows.Media.Playback.PlaybackMediaMarker _ret;
+		Debug.OK(factory.as!(Windows.Media.Playback.IPlaybackMediaMarkerFactory).abi_Create(value, mediaMarketType, text, &_ret));
 		return _ret;
 	}
 }

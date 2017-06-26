@@ -339,6 +339,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Security.Credentials.IPasswordCredential).get_Properties(&_ret));
 		return _ret;
 	}
+	static Windows.Security.Credentials.PasswordCredential New(HSTRING resource, HSTRING userName, HSTRING password)
+	{
+		auto factory = factory!(Windows.Security.Credentials.ICredentialFactory);
+		Windows.Security.Credentials.PasswordCredential _ret;
+		Debug.OK(factory.as!(Windows.Security.Credentials.ICredentialFactory).abi_CreatePasswordCredential(resource, userName, password, &_ret));
+		return _ret;
+	}
 }
 
 interface PasswordCredentialPropertyStore : Windows.Foundation.Collections.IPropertySet, Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))
@@ -480,6 +487,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Security.Credentials.IWebAccount2).abi_SignOutWithClientIdAsync(clientId, &_ret));
 		return _ret;
 	}
+	static Windows.Security.Credentials.WebAccount New(Windows.Security.Credentials.WebAccountProvider webAccountProvider, HSTRING userName, Windows.Security.Credentials.WebAccountState state)
+	{
+		auto factory = factory!(Windows.Security.Credentials.IWebAccountFactory);
+		Windows.Security.Credentials.WebAccount _ret;
+		Debug.OK(factory.as!(Windows.Security.Credentials.IWebAccountFactory).abi_CreateWebAccount(webAccountProvider, userName, state, &_ret));
+		return _ret;
+	}
 }
 
 interface WebAccountProvider : Windows.Security.Credentials.IWebAccountProvider, Windows.Security.Credentials.IWebAccountProvider2, Windows.Security.Credentials.IWebAccountProvider3
@@ -520,6 +534,13 @@ extern(Windows):
 	{
 		Windows.System.User _ret;
 		Debug.OK(this.as!(Windows.Security.Credentials.IWebAccountProvider3).get_User(&_ret));
+		return _ret;
+	}
+	static Windows.Security.Credentials.WebAccountProvider New(HSTRING id, HSTRING displayName, Windows.Foundation.Uri iconUri)
+	{
+		auto factory = factory!(Windows.Security.Credentials.IWebAccountProviderFactory);
+		Windows.Security.Credentials.WebAccountProvider _ret;
+		Debug.OK(factory.as!(Windows.Security.Credentials.IWebAccountProviderFactory).abi_CreateWebAccountProvider(id, displayName, iconUri, &_ret));
 		return _ret;
 	}
 }

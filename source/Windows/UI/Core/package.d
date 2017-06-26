@@ -1036,6 +1036,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Core.ICoreCursor).get_Type(&_ret));
 		return _ret;
 	}
+	static Windows.UI.Core.CoreCursor New(Windows.UI.Core.CoreCursorType type, UINT32 id)
+	{
+		auto factory = factory!(Windows.UI.Core.ICoreCursorFactory);
+		Windows.UI.Core.CoreCursor _ret;
+		Debug.OK(factory.as!(Windows.UI.Core.ICoreCursorFactory).abi_CreateCursor(type, id, &_ret));
+		return _ret;
+	}
 }
 
 interface CoreDispatcher : Windows.UI.Core.ICoreDispatcher, Windows.UI.Core.ICoreAcceleratorKeys, Windows.UI.Core.ICoreDispatcherWithTaskPriority, Windows.UI.Core.ICoreDispatcher2
@@ -1683,6 +1690,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).abi_ShowAsync(&_ret));
 		return _ret;
 	}
+	static Windows.UI.Core.CoreWindowDialog New(HSTRING title)
+	{
+		auto factory = factory!(Windows.UI.Core.ICoreWindowDialogFactory);
+		Windows.UI.Core.CoreWindowDialog _ret;
+		Debug.OK(factory.as!(Windows.UI.Core.ICoreWindowDialogFactory).abi_CreateWithTitle(title, &_ret));
+		return _ret;
+	}
 }
 
 interface CoreWindowEventArgs : Windows.UI.Core.ICoreWindowEventArgs
@@ -1775,6 +1789,20 @@ extern(Windows):
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) _ret;
 		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).abi_ShowAsync(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Core.CoreWindowFlyout New(Windows.Foundation.Point position)
+	{
+		auto factory = factory!(Windows.UI.Core.ICoreWindowFlyoutFactory);
+		Windows.UI.Core.CoreWindowFlyout _ret;
+		Debug.OK(factory.as!(Windows.UI.Core.ICoreWindowFlyoutFactory).abi_Create(position, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Core.CoreWindowFlyout New(Windows.Foundation.Point position, HSTRING title)
+	{
+		auto factory = factory!(Windows.UI.Core.ICoreWindowFlyoutFactory);
+		Windows.UI.Core.CoreWindowFlyout _ret;
+		Debug.OK(factory.as!(Windows.UI.Core.ICoreWindowFlyoutFactory).abi_CreateWithTitle(position, title, &_ret));
 		return _ret;
 	}
 }

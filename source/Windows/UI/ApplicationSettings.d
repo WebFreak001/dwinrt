@@ -295,6 +295,20 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.ApplicationSettings.ICredentialCommand).get_CredentialDeleted(&_ret));
 		return _ret;
 	}
+	static Windows.UI.ApplicationSettings.CredentialCommand New(Windows.Security.Credentials.PasswordCredential passwordCredential)
+	{
+		auto factory = factory!(Windows.UI.ApplicationSettings.ICredentialCommandFactory);
+		Windows.UI.ApplicationSettings.CredentialCommand _ret;
+		Debug.OK(factory.as!(Windows.UI.ApplicationSettings.ICredentialCommandFactory).abi_CreateCredentialCommand(passwordCredential, &_ret));
+		return _ret;
+	}
+	static Windows.UI.ApplicationSettings.CredentialCommand New(Windows.Security.Credentials.PasswordCredential passwordCredential, Windows.UI.ApplicationSettings.CredentialCommandCredentialDeletedHandler deleted)
+	{
+		auto factory = factory!(Windows.UI.ApplicationSettings.ICredentialCommandFactory);
+		Windows.UI.ApplicationSettings.CredentialCommand _ret;
+		Debug.OK(factory.as!(Windows.UI.ApplicationSettings.ICredentialCommandFactory).abi_CreateCredentialCommandWithHandler(passwordCredential, deleted, &_ret));
+		return _ret;
+	}
 }
 
 interface SettingsCommand : Windows.UI.Popups.IUICommand
@@ -341,6 +355,13 @@ extern(Windows):
 	{
 		Windows.UI.ApplicationSettings.SettingsCommand _ret;
 		Debug.OK(staticInstance.as!(Windows.UI.ApplicationSettings.ISettingsCommandStatics).get_AccountsCommand(&_ret));
+		return _ret;
+	}
+	static Windows.UI.ApplicationSettings.SettingsCommand New(IInspectable settingsCommandId, HSTRING label, Windows.UI.Popups.UICommandInvokedHandler handler)
+	{
+		auto factory = factory!(Windows.UI.ApplicationSettings.ISettingsCommandFactory);
+		Windows.UI.ApplicationSettings.SettingsCommand _ret;
+		Debug.OK(factory.as!(Windows.UI.ApplicationSettings.ISettingsCommandFactory).abi_CreateSettingsCommand(settingsCommandId, label, handler, &_ret));
 		return _ret;
 	}
 }
@@ -433,6 +454,13 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IWebAccountCommand).get_Actions(&_ret));
 		return _ret;
 	}
+	static Windows.UI.ApplicationSettings.WebAccountCommand New(Windows.Security.Credentials.WebAccount webAccount, Windows.UI.ApplicationSettings.WebAccountCommandInvokedHandler invoked, Windows.UI.ApplicationSettings.SupportedWebAccountActions actions)
+	{
+		auto factory = factory!(Windows.UI.ApplicationSettings.IWebAccountCommandFactory);
+		Windows.UI.ApplicationSettings.WebAccountCommand _ret;
+		Debug.OK(factory.as!(Windows.UI.ApplicationSettings.IWebAccountCommandFactory).abi_CreateWebAccountCommand(webAccount, invoked, actions, &_ret));
+		return _ret;
+	}
 }
 
 interface WebAccountInvokedArgs : Windows.UI.ApplicationSettings.IWebAccountInvokedArgs
@@ -459,6 +487,13 @@ extern(Windows):
 	{
 		Windows.UI.ApplicationSettings.WebAccountProviderCommandInvokedHandler _ret;
 		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IWebAccountProviderCommand).get_Invoked(&_ret));
+		return _ret;
+	}
+	static Windows.UI.ApplicationSettings.WebAccountProviderCommand New(Windows.Security.Credentials.WebAccountProvider webAccountProvider, Windows.UI.ApplicationSettings.WebAccountProviderCommandInvokedHandler invoked)
+	{
+		auto factory = factory!(Windows.UI.ApplicationSettings.IWebAccountProviderCommandFactory);
+		Windows.UI.ApplicationSettings.WebAccountProviderCommand _ret;
+		Debug.OK(factory.as!(Windows.UI.ApplicationSettings.IWebAccountProviderCommandFactory).abi_CreateWebAccountProviderCommand(webAccountProvider, invoked, &_ret));
 		return _ret;
 	}
 }

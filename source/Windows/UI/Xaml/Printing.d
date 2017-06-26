@@ -176,6 +176,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Printing.IPrintDocumentStatics).get_DocumentSourceProperty(&_ret));
 		return _ret;
 	}
+	static PrintDocument New()
+	{
+		IInspectable outer, inner;
+		PrintDocument ret;
+		Debug.OK(activationFactory!(PrintDocument, Windows.UI.Xaml.Printing.IPrintDocumentFactory).abi_CreateInstance(outer, &inner, &ret));
+		return ret;
+	}
 }
 @makable!(PrintDocument, PrintDocument, Windows.UI.Xaml.Printing.IPrintDocumentFactory)
 class PrintDocumentT(Base) : AgileObject!Base, PrintDocument

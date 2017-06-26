@@ -1081,6 +1081,13 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Services.Store.IStorePurchaseProperties).set_ExtendedJsonData(value));
 	}
+	static Windows.Services.Store.StorePurchaseProperties New(HSTRING name)
+	{
+		auto factory = factory!(Windows.Services.Store.IStorePurchasePropertiesFactory);
+		Windows.Services.Store.StorePurchaseProperties _ret;
+		Debug.OK(factory.as!(Windows.Services.Store.IStorePurchasePropertiesFactory).abi_Create(name, &_ret));
+		return _ret;
+	}
 }
 
 interface StorePurchaseResult : Windows.Services.Store.IStorePurchaseResult

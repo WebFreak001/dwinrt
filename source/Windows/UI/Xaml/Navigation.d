@@ -260,6 +260,13 @@ extern(Windows):
 		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Navigation.IPageStackEntryStatics).get_SourcePageTypeProperty(&_ret));
 		return _ret;
 	}
+	static Windows.UI.Xaml.Navigation.PageStackEntry New(Windows.UI.Xaml.Interop.TypeName sourcePageType, IInspectable parameter, Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo navigationTransitionInfo)
+	{
+		auto factory = factory!(Windows.UI.Xaml.Navigation.IPageStackEntryFactory);
+		Windows.UI.Xaml.Navigation.PageStackEntry _ret;
+		Debug.OK(factory.as!(Windows.UI.Xaml.Navigation.IPageStackEntryFactory).abi_CreateInstance(sourcePageType, parameter, navigationTransitionInfo, &_ret));
+		return _ret;
+	}
 }
 
 enum NavigationCacheMode
