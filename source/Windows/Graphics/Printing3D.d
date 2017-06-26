@@ -444,12 +444,31 @@ extern(Windows):
 	final EventRegistrationToken OnTaskRequested(void delegate(Windows.Graphics.Printing3D.Print3DManager, Windows.Graphics.Printing3D.Print3DTaskRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_TaskRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DManager, Windows.Graphics.Printing3D.Print3DTaskRequestedEventArgs), Windows.Graphics.Printing3D.Print3DManager, Windows.Graphics.Printing3D.Print3DTaskRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DManager).add_TaskRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DManager, Windows.Graphics.Printing3D.Print3DTaskRequestedEventArgs), Windows.Graphics.Printing3D.Print3DManager, Windows.Graphics.Printing3D.Print3DTaskRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTaskRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_TaskRequested(token));
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DManager).remove_TaskRequested(token));
+	}
+
+	private static Windows.Graphics.Printing3D.IPrint3DManagerStatics _staticInstance;
+	public static Windows.Graphics.Printing3D.IPrint3DManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Graphics.Printing3D.IPrint3DManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Graphics.Printing3D.Print3DManager GetForCurrentView()
+	{
+		Windows.Graphics.Printing3D.Print3DManager _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Printing3D.IPrint3DManagerStatics).abi_GetForCurrentView(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(bool) ShowPrintUIAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Printing3D.IPrint3DManagerStatics).abi_ShowPrintUIAsync(&_ret));
+		return _ret;
 	}
 }
 
@@ -465,32 +484,32 @@ extern(Windows):
 	final EventRegistrationToken OnSubmitting(void delegate(Windows.Graphics.Printing3D.Print3DTask, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Submitting(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DTask, IInspectable), Windows.Graphics.Printing3D.Print3DTask, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTask).add_Submitting(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DTask, IInspectable), Windows.Graphics.Printing3D.Print3DTask, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSubmitting(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_Submitting(eventCookie));
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTask).remove_Submitting(eventCookie));
 	}
 	final EventRegistrationToken OnCompleted(void delegate(Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Completed(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskCompletedEventArgs), Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskCompletedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTask).add_Completed(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskCompletedEventArgs), Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCompleted(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_Completed(eventCookie));
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTask).remove_Completed(eventCookie));
 	}
 	final EventRegistrationToken OnSourceChanged(void delegate(Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskSourceChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SourceChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskSourceChangedEventArgs), Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskSourceChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTask).add_SourceChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskSourceChangedEventArgs), Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskSourceChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSourceChanged(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_SourceChanged(eventCookie));
+		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTask).remove_SourceChanged(eventCookie));
 	}
 }
 
@@ -610,6 +629,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackage).abi_SaveModelToPackageAsync(value, &_ret));
 		return _ret;
 	}
+
+	private static Windows.Graphics.Printing3D.IPrinting3D3MFPackageStatics _staticInstance;
+	public static Windows.Graphics.Printing3D.IPrinting3D3MFPackageStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Graphics.Printing3D.IPrinting3D3MFPackageStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Graphics.Printing3D.Printing3D3MFPackage) LoadAsync(Windows.Storage.Streams.IRandomAccessStream value)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Printing3D.Printing3D3MFPackage) _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackageStatics).abi_LoadAsync(value, &_ret));
+		return _ret;
+	}
 }
 
 interface Printing3DBaseMaterial : Windows.Graphics.Printing3D.IPrinting3DBaseMaterial
@@ -634,6 +666,25 @@ extern(Windows):
 	final void Color(Windows.Graphics.Printing3D.Printing3DColorMaterial value)
 	{
 		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterial).set_Color(value));
+	}
+
+	private static Windows.Graphics.Printing3D.IPrinting3DBaseMaterialStatics _staticInstance;
+	public static Windows.Graphics.Printing3D.IPrinting3DBaseMaterialStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterialStatics);
+		return _staticInstance;
+	}
+	static HSTRING Abs()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterialStatics).get_Abs(&_ret));
+		return _ret;
+	}
+	static HSTRING Pla()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterialStatics).get_Pla(&_ret));
+		return _ret;
 	}
 }
 

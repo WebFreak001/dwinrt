@@ -376,6 +376,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_AltitudeReferenceSystem(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Devices.Geolocation.IGeoboundingBoxStatics _staticInstance;
+	public static Windows.Devices.Geolocation.IGeoboundingBoxStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Geolocation.IGeoboundingBoxStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.Geolocation.GeoboundingBox TryCompute(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions)
+	{
+		Windows.Devices.Geolocation.GeoboundingBox _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Geolocation.IGeoboundingBoxStatics).abi_TryCompute(positions, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Geolocation.GeoboundingBox TryComputeWithAltitudeReference(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeRefSystem)
+	{
+		Windows.Devices.Geolocation.GeoboundingBox _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Geolocation.IGeoboundingBoxStatics).abi_TryComputeWithAltitudeReference(positions, altitudeRefSystem, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Geolocation.GeoboundingBox TryComputeWithAltitudeReferenceAndSpatialReference(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeRefSystem, UINT32 spatialReferenceId)
+	{
+		Windows.Devices.Geolocation.GeoboundingBox _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Geolocation.IGeoboundingBoxStatics).abi_TryComputeWithAltitudeReferenceAndSpatialReference(positions, altitudeRefSystem, spatialReferenceId, &_ret));
+		return _ret;
+	}
 }
 
 interface Geocircle : Windows.Devices.Geolocation.IGeocircle, Windows.Devices.Geolocation.IGeoshape
@@ -570,22 +595,22 @@ extern(Windows):
 	final EventRegistrationToken OnPositionChanged(void delegate(Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.PositionChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PositionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.PositionChangedEventArgs), Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.PositionChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).add_PositionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.PositionChangedEventArgs), Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.PositionChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePositionChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PositionChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).remove_PositionChanged(token));
 	}
 	final EventRegistrationToken OnStatusChanged(void delegate(Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.StatusChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_StatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.StatusChangedEventArgs), Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.StatusChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).add_StatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.StatusChangedEventArgs), Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.StatusChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_StatusChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).remove_StatusChanged(token));
 	}
 	final Windows.Foundation.IReference!(UINT32) DesiredAccuracyInMeters()
 	{
@@ -600,6 +625,31 @@ extern(Windows):
 	final void AllowFallbackToConsentlessPositions()
 	{
 		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator2).abi_AllowFallbackToConsentlessPositions());
+	}
+
+	private static Windows.Devices.Geolocation.IGeolocatorStatics _staticInstance;
+	public static Windows.Devices.Geolocation.IGeolocatorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Geolocation.IGeolocatorStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.GeolocationAccessStatus) RequestAccessAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.GeolocationAccessStatus) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Geolocation.IGeolocatorStatics).abi_RequestAccessAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geoposition)) GetGeopositionHistoryAsync(Windows.Foundation.DateTime startTime)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geoposition)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Geolocation.IGeolocatorStatics).abi_GetGeopositionHistoryAsync(startTime, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geoposition)) GetGeopositionHistoryWithDurationAsync(Windows.Foundation.DateTime startTime, Windows.Foundation.TimeSpan duration)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geoposition)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Geolocation.IGeolocatorStatics).abi_GetGeopositionHistoryWithDurationAsync(startTime, duration, &_ret));
+		return _ret;
 	}
 }
 

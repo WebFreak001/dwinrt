@@ -1063,12 +1063,12 @@ extern(Windows):
 	final EventRegistrationToken OnSyncStatusChanged(void delegate(Windows.ApplicationModel.Appointments.AppointmentCalendarSyncManager, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SyncStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.AppointmentCalendarSyncManager, IInspectable), Windows.ApplicationModel.Appointments.AppointmentCalendarSyncManager, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendarSyncManager).add_SyncStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.AppointmentCalendarSyncManager, IInspectable), Windows.ApplicationModel.Appointments.AppointmentCalendarSyncManager, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSyncStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SyncStatusChanged(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentCalendarSyncManager).remove_SyncStatusChanged(token));
 	}
 	final void Status(Windows.ApplicationModel.Appointments.AppointmentCalendarSyncStatus value)
 	{
@@ -1171,6 +1171,66 @@ extern(Windows):
 
 interface AppointmentManager
 {
+	private static Windows.ApplicationModel.Appointments.IAppointmentManagerStatics _staticInstance;
+	public static Windows.ApplicationModel.Appointments.IAppointmentManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Appointments.IAppointmentManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(HSTRING) ShowAddAppointmentAsync(Windows.ApplicationModel.Appointments.Appointment appointment, Windows.Foundation.Rect selection)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentManagerStatics).abi_ShowAddAppointmentAsync(appointment, selection, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(HSTRING) ShowAddAppointmentWithPlacementAsync(Windows.ApplicationModel.Appointments.Appointment appointment, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentManagerStatics).abi_ShowAddAppointmentWithPlacementAsync(appointment, selection, preferredPlacement, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(HSTRING) ShowReplaceAppointmentAsync(HSTRING appointmentId, Windows.ApplicationModel.Appointments.Appointment appointment, Windows.Foundation.Rect selection)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentManagerStatics).abi_ShowReplaceAppointmentAsync(appointmentId, appointment, selection, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(HSTRING) ShowReplaceAppointmentWithPlacementAsync(HSTRING appointmentId, Windows.ApplicationModel.Appointments.Appointment appointment, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentManagerStatics).abi_ShowReplaceAppointmentWithPlacementAsync(appointmentId, appointment, selection, preferredPlacement, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(HSTRING) ShowReplaceAppointmentWithPlacementAndDateAsync(HSTRING appointmentId, Windows.ApplicationModel.Appointments.Appointment appointment, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement, Windows.Foundation.DateTime instanceStartDate)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentManagerStatics).abi_ShowReplaceAppointmentWithPlacementAndDateAsync(appointmentId, appointment, selection, preferredPlacement, instanceStartDate, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(bool) ShowRemoveAppointmentAsync(HSTRING appointmentId, Windows.Foundation.Rect selection)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentManagerStatics).abi_ShowRemoveAppointmentAsync(appointmentId, selection, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(bool) ShowRemoveAppointmentWithPlacementAsync(HSTRING appointmentId, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentManagerStatics).abi_ShowRemoveAppointmentWithPlacementAsync(appointmentId, selection, preferredPlacement, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(bool) ShowRemoveAppointmentWithPlacementAndDateAsync(HSTRING appointmentId, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement, Windows.Foundation.DateTime instanceStartDate)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentManagerStatics).abi_ShowRemoveAppointmentWithPlacementAndDateAsync(appointmentId, selection, preferredPlacement, instanceStartDate, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction ShowTimeFrameAsync(Windows.Foundation.DateTime timeToShow, Windows.Foundation.TimeSpan duration)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentManagerStatics).abi_ShowTimeFrameAsync(timeToShow, duration, &_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentManagerForUser : Windows.ApplicationModel.Appointments.IAppointmentManagerForUser
@@ -1289,6 +1349,150 @@ extern(Windows):
 
 interface AppointmentProperties
 {
+	private static Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics _staticInstance;
+	public static Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics);
+		return _staticInstance;
+	}
+	static HSTRING Subject()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics).get_Subject(&_ret));
+		return _ret;
+	}
+	static HSTRING Location()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics).get_Location(&_ret));
+		return _ret;
+	}
+	static HSTRING StartTime()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics).get_StartTime(&_ret));
+		return _ret;
+	}
+	static HSTRING Duration()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics).get_Duration(&_ret));
+		return _ret;
+	}
+	static HSTRING Reminder()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics).get_Reminder(&_ret));
+		return _ret;
+	}
+	static HSTRING BusyStatus()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics).get_BusyStatus(&_ret));
+		return _ret;
+	}
+	static HSTRING Sensitivity()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics).get_Sensitivity(&_ret));
+		return _ret;
+	}
+	static HSTRING OriginalStartTime()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics).get_OriginalStartTime(&_ret));
+		return _ret;
+	}
+	static HSTRING IsResponseRequested()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics).get_IsResponseRequested(&_ret));
+		return _ret;
+	}
+	static HSTRING AllowNewTimeProposal()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics).get_AllowNewTimeProposal(&_ret));
+		return _ret;
+	}
+	static HSTRING AllDay()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics).get_AllDay(&_ret));
+		return _ret;
+	}
+	static HSTRING Details()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics).get_Details(&_ret));
+		return _ret;
+	}
+	static HSTRING OnlineMeetingLink()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics).get_OnlineMeetingLink(&_ret));
+		return _ret;
+	}
+	static HSTRING ReplyTime()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics).get_ReplyTime(&_ret));
+		return _ret;
+	}
+	static HSTRING Organizer()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics).get_Organizer(&_ret));
+		return _ret;
+	}
+	static HSTRING UserResponse()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics).get_UserResponse(&_ret));
+		return _ret;
+	}
+	static HSTRING HasInvitees()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics).get_HasInvitees(&_ret));
+		return _ret;
+	}
+	static HSTRING IsCanceledMeeting()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics).get_IsCanceledMeeting(&_ret));
+		return _ret;
+	}
+	static HSTRING IsOrganizedByUser()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics).get_IsOrganizedByUser(&_ret));
+		return _ret;
+	}
+	static HSTRING Recurrence()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics).get_Recurrence(&_ret));
+		return _ret;
+	}
+	static HSTRING Uri()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics).get_Uri(&_ret));
+		return _ret;
+	}
+	static HSTRING Invitees()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics).get_Invitees(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVector!(HSTRING) DefaultProperties()
+	{
+		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.IAppointmentPropertiesStatics).get_DefaultProperties(&_ret));
+		return _ret;
+	}
 }
 
 interface AppointmentRecurrence : Windows.ApplicationModel.Appointments.IAppointmentRecurrence, Windows.ApplicationModel.Appointments.IAppointmentRecurrence2, Windows.ApplicationModel.Appointments.IAppointmentRecurrence3
@@ -1530,12 +1734,12 @@ extern(Windows):
 	final EventRegistrationToken OnStoreChanged(void delegate(Windows.ApplicationModel.Appointments.AppointmentStore, Windows.ApplicationModel.Appointments.AppointmentStoreChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_StoreChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.AppointmentStore, Windows.ApplicationModel.Appointments.AppointmentStoreChangedEventArgs), Windows.ApplicationModel.Appointments.AppointmentStore, Windows.ApplicationModel.Appointments.AppointmentStoreChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore2).add_StoreChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.AppointmentStore, Windows.ApplicationModel.Appointments.AppointmentStoreChangedEventArgs), Windows.ApplicationModel.Appointments.AppointmentStore, Windows.ApplicationModel.Appointments.AppointmentStoreChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStoreChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_StoreChanged(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.IAppointmentStore2).remove_StoreChanged(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.AppointmentCalendar) CreateAppointmentCalendarInAccountAsync(HSTRING name, HSTRING userDataAccountId)
 	{

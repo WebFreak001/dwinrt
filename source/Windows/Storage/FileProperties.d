@@ -263,6 +263,30 @@ extern(Windows):
 
 interface GeotagHelper
 {
+	private static Windows.Storage.FileProperties.IGeotagHelperStatics _staticInstance;
+	public static Windows.Storage.FileProperties.IGeotagHelperStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Storage.FileProperties.IGeotagHelperStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.Geopoint) GetGeotagAsync(Windows.Storage.IStorageFile file)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.Geopoint) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.FileProperties.IGeotagHelperStatics).abi_GetGeotagAsync(file, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction SetGeotagFromGeolocatorAsync(Windows.Storage.IStorageFile file, Windows.Devices.Geolocation.Geolocator geolocator)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.FileProperties.IGeotagHelperStatics).abi_SetGeotagFromGeolocatorAsync(file, geolocator, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction SetGeotagAsync(Windows.Storage.IStorageFile file, Windows.Devices.Geolocation.Geopoint geopoint)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.FileProperties.IGeotagHelperStatics).abi_SetGeotagAsync(file, geopoint, &_ret));
+		return _ret;
+	}
 }
 
 interface ImageProperties : Windows.Storage.FileProperties.IImageProperties, Windows.Storage.FileProperties.IStorageItemExtraProperties

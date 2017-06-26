@@ -247,6 +247,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.IPageStackEntry).get_NavigationTransitionInfo(&_ret));
 		return _ret;
 	}
+
+	private static Windows.UI.Xaml.Navigation.IPageStackEntryStatics _staticInstance;
+	public static Windows.UI.Xaml.Navigation.IPageStackEntryStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Navigation.IPageStackEntryStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty SourcePageTypeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Navigation.IPageStackEntryStatics).get_SourcePageTypeProperty(&_ret));
+		return _ret;
+	}
 }
 
 enum NavigationCacheMode

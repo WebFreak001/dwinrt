@@ -643,61 +643,61 @@ extern(Windows):
 	final EventRegistrationToken OnRegistrationCompleted(void delegate(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDRegistrationCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_RegistrationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDRegistrationCompletedEventArgs), Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDRegistrationCompletedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDClient).add_RegistrationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDRegistrationCompletedEventArgs), Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDRegistrationCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final void removeRegistrationCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_RegistrationCompleted(token));
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDClient).remove_RegistrationCompleted(token));
 	}
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final EventRegistrationToken OnProximityDetectionCompleted(void delegate(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDProximityDetectionCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ProximityDetectionCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDProximityDetectionCompletedEventArgs), Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDProximityDetectionCompletedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDClient).add_ProximityDetectionCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDProximityDetectionCompletedEventArgs), Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDProximityDetectionCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final void removeProximityDetectionCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ProximityDetectionCompleted(token));
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDClient).remove_ProximityDetectionCompleted(token));
 	}
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final EventRegistrationToken OnLicenseFetchCompleted(void delegate(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDLicenseFetchCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_LicenseFetchCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDLicenseFetchCompletedEventArgs), Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDLicenseFetchCompletedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDClient).add_LicenseFetchCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDLicenseFetchCompletedEventArgs), Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDLicenseFetchCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final void removeLicenseFetchCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_LicenseFetchCompleted(token));
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDClient).remove_LicenseFetchCompleted(token));
 	}
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final EventRegistrationToken OnReRegistrationNeeded(void delegate(Windows.Media.Protection.PlayReady.NDClient, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ReRegistrationNeeded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient, IInspectable), Windows.Media.Protection.PlayReady.NDClient, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDClient).add_ReRegistrationNeeded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient, IInspectable), Windows.Media.Protection.PlayReady.NDClient, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final void removeReRegistrationNeeded(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ReRegistrationNeeded(token));
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDClient).remove_ReRegistrationNeeded(token));
 	}
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final EventRegistrationToken OnClosedCaptionDataReceived(void delegate(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDClosedCaptionDataReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ClosedCaptionDataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDClosedCaptionDataReceivedEventArgs), Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDClosedCaptionDataReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDClient).add_ClosedCaptionDataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDClosedCaptionDataReceivedEventArgs), Windows.Media.Protection.PlayReady.NDClient, Windows.Media.Protection.PlayReady.INDClosedCaptionDataReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final void removeClosedCaptionDataReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ClosedCaptionDataReceived(token));
+		Debug.OK(this.as!(Windows.Media.Protection.PlayReady.INDClient).remove_ClosedCaptionDataReceived(token));
 	}
 	deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.PlayReady.INDStartResult) StartAsync(Windows.Foundation.Uri contentUrl, UINT32 startAsyncOptions, Windows.Media.Protection.PlayReady.INDCustomData registrationCustomData, Windows.Media.Protection.PlayReady.INDLicenseFetchDescriptor licenseFetchDescriptor)
@@ -961,6 +961,18 @@ extern(Windows):
 
 interface PlayReadyContentResolver
 {
+	private static Windows.Media.Protection.PlayReady.IPlayReadyContentResolver _staticInstance;
+	public static Windows.Media.Protection.PlayReady.IPlayReadyContentResolver staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Protection.PlayReady.IPlayReadyContentResolver);
+		return _staticInstance;
+	}
+	static Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest ServiceRequest(Windows.Media.Protection.PlayReady.PlayReadyContentHeader contentHeader)
+	{
+		Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Protection.PlayReady.IPlayReadyContentResolver).abi_ServiceRequest(contentHeader, &_ret));
+		return _ret;
+	}
 }
 
 interface PlayReadyDomain : Windows.Media.Protection.PlayReady.IPlayReadyDomain
@@ -1500,6 +1512,18 @@ extern(Windows):
 
 interface PlayReadyLicenseManagement
 {
+	private static Windows.Media.Protection.PlayReady.IPlayReadyLicenseManagement _staticInstance;
+	public static Windows.Media.Protection.PlayReady.IPlayReadyLicenseManagement staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Protection.PlayReady.IPlayReadyLicenseManagement);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncAction DeleteLicenses(Windows.Media.Protection.PlayReady.PlayReadyContentHeader contentHeader)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Protection.PlayReady.IPlayReadyLicenseManagement).abi_DeleteLicenses(contentHeader, &_ret));
+		return _ret;
+	}
 }
 
 interface PlayReadyLicenseSession : Windows.Media.Protection.PlayReady.IPlayReadyLicenseSession, Windows.Media.Protection.PlayReady.IPlayReadyLicenseSession2
@@ -1823,6 +1847,60 @@ extern(Windows):
 
 interface PlayReadyStatics
 {
+	private static Windows.Media.Protection.PlayReady.IPlayReadyStatics _staticInstance;
+	public static Windows.Media.Protection.PlayReady.IPlayReadyStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Protection.PlayReady.IPlayReadyStatics);
+		return _staticInstance;
+	}
+	static GUID DomainJoinServiceRequestType()
+	{
+		GUID _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Protection.PlayReady.IPlayReadyStatics).get_DomainJoinServiceRequestType(&_ret));
+		return _ret;
+	}
+	static GUID DomainLeaveServiceRequestType()
+	{
+		GUID _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Protection.PlayReady.IPlayReadyStatics).get_DomainLeaveServiceRequestType(&_ret));
+		return _ret;
+	}
+	static GUID IndividualizationServiceRequestType()
+	{
+		GUID _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Protection.PlayReady.IPlayReadyStatics).get_IndividualizationServiceRequestType(&_ret));
+		return _ret;
+	}
+	static GUID LicenseAcquirerServiceRequestType()
+	{
+		GUID _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Protection.PlayReady.IPlayReadyStatics).get_LicenseAcquirerServiceRequestType(&_ret));
+		return _ret;
+	}
+	static GUID MeteringReportServiceRequestType()
+	{
+		GUID _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Protection.PlayReady.IPlayReadyStatics).get_MeteringReportServiceRequestType(&_ret));
+		return _ret;
+	}
+	static GUID RevocationServiceRequestType()
+	{
+		GUID _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Protection.PlayReady.IPlayReadyStatics).get_RevocationServiceRequestType(&_ret));
+		return _ret;
+	}
+	static GUID MediaProtectionSystemId()
+	{
+		GUID _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Protection.PlayReady.IPlayReadyStatics).get_MediaProtectionSystemId(&_ret));
+		return _ret;
+	}
+	static UINT32 PlayReadySecurityVersion()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Protection.PlayReady.IPlayReadyStatics).get_PlayReadySecurityVersion(&_ret));
+		return _ret;
+	}
 }
 
 enum NDCertificateFeature

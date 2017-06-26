@@ -147,32 +147,32 @@ extern(Windows):
 	final EventRegistrationToken OnSystemLockStateChanged(void delegate(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SystemLockStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, IInspectable), Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).add_SystemLockStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, IInspectable), Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSystemLockStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SystemLockStateChanged(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).remove_SystemLockStateChanged(token));
 	}
 	final EventRegistrationToken OnNotePlacementChanged(void delegate(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NotePlacementChangedPreviewEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_NotePlacementChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NotePlacementChangedPreviewEventArgs), Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NotePlacementChangedPreviewEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).add_NotePlacementChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NotePlacementChangedPreviewEventArgs), Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NotePlacementChangedPreviewEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeNotePlacementChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_NotePlacementChanged(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).remove_NotePlacementChanged(token));
 	}
 	final EventRegistrationToken OnNoteVisibilityChanged(void delegate(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NoteVisibilityChangedPreviewEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_NoteVisibilityChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NoteVisibilityChangedPreviewEventArgs), Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NoteVisibilityChangedPreviewEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).add_NoteVisibilityChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NoteVisibilityChangedPreviewEventArgs), Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NoteVisibilityChangedPreviewEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeNoteVisibilityChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_NoteVisibilityChanged(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).remove_NoteVisibilityChanged(token));
 	}
 	final void ShowNoteRelativeToWithOptions(INT32 noteViewId, INT32 anchorNoteViewId, Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreviewShowNoteOptions options)
 	{
@@ -190,6 +190,19 @@ extern(Windows):
 	{
 		Windows.Foundation.IAsyncAction _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2).abi_SetThumbnailImageForTaskSwitcherAsync(bitmap, &_ret));
+		return _ret;
+	}
+
+	private static Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreviewStatics _staticInstance;
+	public static Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreviewStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreviewStatics);
+		return _staticInstance;
+	}
+	static Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview GetForCurrentApp()
+	{
+		Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreviewStatics).abi_GetForCurrentApp(&_ret));
 		return _ret;
 	}
 }

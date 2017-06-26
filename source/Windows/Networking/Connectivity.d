@@ -742,6 +742,26 @@ extern(Windows):
 
 interface ConnectivityManager
 {
+	private static Windows.Networking.Connectivity.IConnectivityManagerStatics _staticInstance;
+	public static Windows.Networking.Connectivity.IConnectivityManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.Connectivity.IConnectivityManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Networking.Connectivity.ConnectionSession) AcquireConnectionAsync(Windows.Networking.Connectivity.CellularApnContext cellularApnContext)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.Connectivity.ConnectionSession) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.IConnectivityManagerStatics).abi_AcquireConnectionAsync(cellularApnContext, &_ret));
+		return _ret;
+	}
+	static void AddHttpRoutePolicy(Windows.Networking.Connectivity.RoutePolicy routePolicy)
+	{
+		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.IConnectivityManagerStatics).abi_AddHttpRoutePolicy(routePolicy));
+	}
+	static void RemoveHttpRoutePolicy(Windows.Networking.Connectivity.RoutePolicy routePolicy)
+	{
+		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.IConnectivityManagerStatics).abi_RemoveHttpRoutePolicy(routePolicy));
+	}
 }
 
 interface DataPlanStatus : Windows.Networking.Connectivity.IDataPlanStatus
@@ -921,6 +941,53 @@ extern(Windows):
 
 interface NetworkInformation
 {
+	private static Windows.Networking.Connectivity.INetworkInformationStatics _staticInstance;
+	public static Windows.Networking.Connectivity.INetworkInformationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.Connectivity.INetworkInformationStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.Collections.IVectorView!(Windows.Networking.Connectivity.ConnectionProfile) GetConnectionProfiles()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Networking.Connectivity.ConnectionProfile) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.INetworkInformationStatics).abi_GetConnectionProfiles(&_ret));
+		return _ret;
+	}
+	static Windows.Networking.Connectivity.ConnectionProfile GetInternetConnectionProfile()
+	{
+		Windows.Networking.Connectivity.ConnectionProfile _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.INetworkInformationStatics).abi_GetInternetConnectionProfile(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(Windows.Networking.Connectivity.LanIdentifier) GetLanIdentifiers()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Networking.Connectivity.LanIdentifier) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.INetworkInformationStatics).abi_GetLanIdentifiers(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) GetHostNames()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.INetworkInformationStatics).abi_GetHostNames(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Networking.Connectivity.ProxyConfiguration) GetProxyConfigurationAsync(Windows.Foundation.Uri uri)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.Connectivity.ProxyConfiguration) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.INetworkInformationStatics).abi_GetProxyConfigurationAsync(uri, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair) GetSortedEndpointPairs(Windows.Foundation.Collections.IIterable!(Windows.Networking.EndpointPair) destinationList, Windows.Networking.HostNameSortOptions sortOptions)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.INetworkInformationStatics).abi_GetSortedEndpointPairs(destinationList, sortOptions, &_ret));
+		return _ret;
+	}
+	HRESULT add_NetworkStatusChanged(Windows.Networking.Connectivity.NetworkStatusChangedEventHandler networkStatusHandler, EventRegistrationToken* return_eventCookie);
+	static void removeNetworkStatusChanged(EventRegistrationToken eventCookie)
+	{
+		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.INetworkInformationStatics).remove_NetworkStatusChanged(eventCookie));
+	}
 }
 
 interface NetworkItem : Windows.Networking.Connectivity.INetworkItem

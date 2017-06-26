@@ -165,16 +165,160 @@ extern(Windows):
 
 interface XamlBinaryWriter : Windows.UI.Xaml.Markup.IXamlBinaryWriter
 {
+	private static Windows.UI.Xaml.Markup.IXamlBinaryWriterStatics _staticInstance;
+	public static Windows.UI.Xaml.Markup.IXamlBinaryWriterStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Markup.IXamlBinaryWriterStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.Markup.XamlBinaryWriterErrorInformation Write(Windows.Foundation.Collections.IVector!(Windows.Storage.Streams.IRandomAccessStream) inputStreams, Windows.Foundation.Collections.IVector!(Windows.Storage.Streams.IRandomAccessStream) outputStreams, Windows.UI.Xaml.Markup.IXamlMetadataProvider xamlMetadataProvider)
+	{
+		Windows.UI.Xaml.Markup.XamlBinaryWriterErrorInformation _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBinaryWriterStatics).abi_Write(inputStreams, outputStreams, xamlMetadataProvider, &_ret));
+		return _ret;
+	}
 }
 
 interface XamlBindingHelper : Windows.UI.Xaml.Markup.IXamlBindingHelper
 {
+	private static Windows.UI.Xaml.Markup.IXamlBindingHelperStatics _staticInstance;
+	public static Windows.UI.Xaml.Markup.IXamlBindingHelperStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty DataTemplateComponentProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics).get_DataTemplateComponentProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Markup.IDataTemplateComponent GetDataTemplateComponent(Windows.UI.Xaml.DependencyObject element)
+	{
+		Windows.UI.Xaml.Markup.IDataTemplateComponent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics).abi_GetDataTemplateComponent(element, &_ret));
+		return _ret;
+	}
+	static void SetDataTemplateComponent(Windows.UI.Xaml.DependencyObject element, Windows.UI.Xaml.Markup.IDataTemplateComponent value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics).abi_SetDataTemplateComponent(element, value));
+	}
+	static void SuspendRendering(Windows.UI.Xaml.UIElement target)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics).abi_SuspendRendering(target));
+	}
+	static void ResumeRendering(Windows.UI.Xaml.UIElement target)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics).abi_ResumeRendering(target));
+	}
+	static IInspectable ConvertValue(Windows.UI.Xaml.Interop.TypeName type, IInspectable value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics).abi_ConvertValue(type, value, &_ret));
+		return _ret;
+	}
+	static void SetPropertyFromString(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, HSTRING value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics).abi_SetPropertyFromString(dependencyObject, propertyToSet, value));
+	}
+	static void SetPropertyFromBoolean(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics).abi_SetPropertyFromBoolean(dependencyObject, propertyToSet, value));
+	}
+	static void SetPropertyFromChar16(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, wchar value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics).abi_SetPropertyFromChar16(dependencyObject, propertyToSet, value));
+	}
+	static void SetPropertyFromDateTime(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, Windows.Foundation.DateTime value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics).abi_SetPropertyFromDateTime(dependencyObject, propertyToSet, value));
+	}
+	static void SetPropertyFromDouble(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, double value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics).abi_SetPropertyFromDouble(dependencyObject, propertyToSet, value));
+	}
+	static void SetPropertyFromInt32(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, INT32 value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics).abi_SetPropertyFromInt32(dependencyObject, propertyToSet, value));
+	}
+	static void SetPropertyFromUInt32(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, UINT32 value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics).abi_SetPropertyFromUInt32(dependencyObject, propertyToSet, value));
+	}
+	static void SetPropertyFromInt64(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, INT64 value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics).abi_SetPropertyFromInt64(dependencyObject, propertyToSet, value));
+	}
+	static void SetPropertyFromUInt64(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, ulong value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics).abi_SetPropertyFromUInt64(dependencyObject, propertyToSet, value));
+	}
+	static void SetPropertyFromSingle(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, float value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics).abi_SetPropertyFromSingle(dependencyObject, propertyToSet, value));
+	}
+	static void SetPropertyFromPoint(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, Windows.Foundation.Point value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics).abi_SetPropertyFromPoint(dependencyObject, propertyToSet, value));
+	}
+	static void SetPropertyFromRect(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, Windows.Foundation.Rect value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics).abi_SetPropertyFromRect(dependencyObject, propertyToSet, value));
+	}
+	static void SetPropertyFromSize(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, Windows.Foundation.Size value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics).abi_SetPropertyFromSize(dependencyObject, propertyToSet, value));
+	}
+	static void SetPropertyFromTimeSpan(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, Windows.Foundation.TimeSpan value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics).abi_SetPropertyFromTimeSpan(dependencyObject, propertyToSet, value));
+	}
+	static void SetPropertyFromByte(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, ubyte value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics).abi_SetPropertyFromByte(dependencyObject, propertyToSet, value));
+	}
+	static void SetPropertyFromUri(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, Windows.Foundation.Uri value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics).abi_SetPropertyFromUri(dependencyObject, propertyToSet, value));
+	}
+	static void SetPropertyFromObject(IInspectable dependencyObject, Windows.UI.Xaml.DependencyProperty propertyToSet, IInspectable value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlBindingHelperStatics).abi_SetPropertyFromObject(dependencyObject, propertyToSet, value));
+	}
 }
 
 interface XamlMarkupHelper : Windows.UI.Xaml.Markup.IXamlMarkupHelper
 {
+	private static Windows.UI.Xaml.Markup.IXamlMarkupHelperStatics _staticInstance;
+	public static Windows.UI.Xaml.Markup.IXamlMarkupHelperStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Markup.IXamlMarkupHelperStatics);
+		return _staticInstance;
+	}
+	static void UnloadObject(Windows.UI.Xaml.DependencyObject element)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlMarkupHelperStatics).abi_UnloadObject(element));
+	}
 }
 
 interface XamlReader : Windows.UI.Xaml.Markup.IXamlReader
 {
+	private static Windows.UI.Xaml.Markup.IXamlReaderStatics _staticInstance;
+	public static Windows.UI.Xaml.Markup.IXamlReaderStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Markup.IXamlReaderStatics);
+		return _staticInstance;
+	}
+	static IInspectable Load(HSTRING xaml)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlReaderStatics).abi_Load(xaml, &_ret));
+		return _ret;
+	}
+	static IInspectable LoadWithInitialTemplateValidation(HSTRING xaml)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Markup.IXamlReaderStatics).abi_LoadWithInitialTemplateValidation(xaml, &_ret));
+		return _ret;
+	}
 }

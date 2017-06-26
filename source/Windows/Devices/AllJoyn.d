@@ -665,6 +665,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutDataView).get_Manufacturer(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Devices.AllJoyn.IAllJoynAboutDataViewStatics _staticInstance;
+	public static Windows.Devices.AllJoyn.IAllJoynAboutDataViewStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.AllJoyn.IAllJoynAboutDataViewStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView) GetDataBySessionPortAsync(HSTRING uniqueName, Windows.Devices.AllJoyn.AllJoynBusAttachment busAttachment, UINT16 sessionPort)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynAboutDataViewStatics).abi_GetDataBySessionPortAsync(uniqueName, busAttachment, sessionPort, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView) GetDataBySessionPortWithLanguageAsync(HSTRING uniqueName, Windows.Devices.AllJoyn.AllJoynBusAttachment busAttachment, UINT16 sessionPort, Windows.Globalization.Language language)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynAboutDataViewStatics).abi_GetDataBySessionPortWithLanguageAsync(uniqueName, busAttachment, sessionPort, language, &_ret));
+		return _ret;
+	}
 }
 
 interface AllJoynAcceptSessionJoinerEventArgs : Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoinerEventArgs
@@ -773,12 +792,12 @@ extern(Windows):
 	final EventRegistrationToken OnStateChanged(void delegate(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynBusAttachmentStateChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynBusAttachmentStateChangedEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynBusAttachmentStateChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynBusAttachmentStateChangedEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynBusAttachmentStateChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_StateChanged(token));
+		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).remove_StateChanged(token));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Devices.AllJoyn.AllJoynAuthenticationMechanism) AuthenticationMechanisms()
 	{
@@ -789,32 +808,32 @@ extern(Windows):
 	final EventRegistrationToken OnCredentialsRequested(void delegate(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_CredentialsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsRequestedEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).add_CredentialsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsRequestedEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCredentialsRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_CredentialsRequested(token));
+		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).remove_CredentialsRequested(token));
 	}
 	final EventRegistrationToken OnCredentialsVerificationRequested(void delegate(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsVerificationRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_CredentialsVerificationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsVerificationRequestedEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsVerificationRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).add_CredentialsVerificationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsVerificationRequestedEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsVerificationRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCredentialsVerificationRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_CredentialsVerificationRequested(token));
+		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).remove_CredentialsVerificationRequested(token));
 	}
 	final EventRegistrationToken OnAuthenticationComplete(void delegate(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAuthenticationCompleteEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AuthenticationComplete(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAuthenticationCompleteEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAuthenticationCompleteEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).add_AuthenticationComplete(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAuthenticationCompleteEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAuthenticationCompleteEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAuthenticationComplete(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AuthenticationComplete(token));
+		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).remove_AuthenticationComplete(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView) GetAboutDataAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo)
 	{
@@ -831,22 +850,41 @@ extern(Windows):
 	final EventRegistrationToken OnAcceptSessionJoinerRequested(void delegate(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AcceptSessionJoinerRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment2).add_AcceptSessionJoinerRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAcceptSessionJoinerRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AcceptSessionJoinerRequested(token));
+		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment2).remove_AcceptSessionJoinerRequested(token));
 	}
 	final EventRegistrationToken OnSessionJoined(void delegate(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SessionJoined(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment2).add_SessionJoined(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSessionJoined(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SessionJoined(token));
+		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment2).remove_SessionJoined(token));
+	}
+
+	private static Windows.Devices.AllJoyn.IAllJoynBusAttachmentStatics _staticInstance;
+	public static Windows.Devices.AllJoyn.IAllJoynBusAttachmentStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.AllJoyn.IAllJoynBusAttachmentStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.AllJoyn.AllJoynBusAttachment GetDefault()
+	{
+		Windows.Devices.AllJoyn.AllJoynBusAttachment _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachmentStatics).abi_GetDefault(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Enumeration.DeviceWatcher GetWatcher(Windows.Foundation.Collections.IIterable!(HSTRING) requiredInterfaces)
+	{
+		Windows.Devices.Enumeration.DeviceWatcher _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachmentStatics).abi_GetWatcher(requiredInterfaces, &_ret));
+		return _ret;
 	}
 }
 
@@ -897,12 +935,12 @@ extern(Windows):
 	final EventRegistrationToken OnStopped(void delegate(Windows.Devices.AllJoyn.AllJoynBusObject, Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusObject, Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs), Windows.Devices.AllJoyn.AllJoynBusObject, Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusObject).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusObject, Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs), Windows.Devices.AllJoyn.AllJoynBusObject, Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStopped(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Stopped(token));
+		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusObject).remove_Stopped(token));
 	}
 }
 
@@ -1087,6 +1125,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynServiceInfo).get_SessionPort(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Devices.AllJoyn.IAllJoynServiceInfoStatics _staticInstance;
+	public static Windows.Devices.AllJoyn.IAllJoynServiceInfoStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.AllJoyn.IAllJoynServiceInfoStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynServiceInfo) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynServiceInfo) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynServiceInfoStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
 }
 
 interface AllJoynServiceInfoRemovedEventArgs : Windows.Devices.AllJoyn.IAllJoynServiceInfoRemovedEventArgs
@@ -1124,32 +1175,51 @@ extern(Windows):
 	final EventRegistrationToken OnMemberAdded(void delegate(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberAddedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_MemberAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberAddedEventArgs), Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberAddedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSession).add_MemberAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberAddedEventArgs), Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberAddedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMemberAdded(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MemberAdded(token));
+		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSession).remove_MemberAdded(token));
 	}
 	final EventRegistrationToken OnMemberRemoved(void delegate(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberRemovedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_MemberRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberRemovedEventArgs), Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberRemovedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSession).add_MemberRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberRemovedEventArgs), Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberRemovedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMemberRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MemberRemoved(token));
+		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSession).remove_MemberRemoved(token));
 	}
 	final EventRegistrationToken OnLost(void delegate(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionLostEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Lost(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionLostEventArgs), Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionLostEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSession).add_Lost(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionLostEventArgs), Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionLostEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeLost(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Lost(token));
+		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSession).remove_Lost(token));
+	}
+
+	private static Windows.Devices.AllJoyn.IAllJoynSessionStatics _staticInstance;
+	public static Windows.Devices.AllJoyn.IAllJoynSessionStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.AllJoyn.IAllJoynSessionStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynSession) GetFromServiceInfoAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynSession) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynSessionStatics).abi_GetFromServiceInfoAsync(serviceInfo, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynSession) GetFromServiceInfoAndBusAttachmentAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo, Windows.Devices.AllJoyn.AllJoynBusAttachment busAttachment)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynSession) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynSessionStatics).abi_GetFromServiceInfoAndBusAttachmentAsync(serviceInfo, busAttachment, &_ret));
+		return _ret;
 	}
 }
 
@@ -1199,6 +1269,120 @@ extern(Windows):
 
 interface AllJoynStatus
 {
+	private static Windows.Devices.AllJoyn.IAllJoynStatusStatics _staticInstance;
+	public static Windows.Devices.AllJoyn.IAllJoynStatusStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.AllJoyn.IAllJoynStatusStatics);
+		return _staticInstance;
+	}
+	static INT32 Ok()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_Ok(&_ret));
+		return _ret;
+	}
+	static INT32 Fail()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_Fail(&_ret));
+		return _ret;
+	}
+	static INT32 OperationTimedOut()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_OperationTimedOut(&_ret));
+		return _ret;
+	}
+	static INT32 OtherEndClosed()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_OtherEndClosed(&_ret));
+		return _ret;
+	}
+	static INT32 ConnectionRefused()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_ConnectionRefused(&_ret));
+		return _ret;
+	}
+	static INT32 AuthenticationFailed()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_AuthenticationFailed(&_ret));
+		return _ret;
+	}
+	static INT32 AuthenticationRejectedByUser()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_AuthenticationRejectedByUser(&_ret));
+		return _ret;
+	}
+	static INT32 SslConnectFailed()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_SslConnectFailed(&_ret));
+		return _ret;
+	}
+	static INT32 SslIdentityVerificationFailed()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_SslIdentityVerificationFailed(&_ret));
+		return _ret;
+	}
+	static INT32 InsufficientSecurity()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_InsufficientSecurity(&_ret));
+		return _ret;
+	}
+	static INT32 InvalidArgument1()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_InvalidArgument1(&_ret));
+		return _ret;
+	}
+	static INT32 InvalidArgument2()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_InvalidArgument2(&_ret));
+		return _ret;
+	}
+	static INT32 InvalidArgument3()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_InvalidArgument3(&_ret));
+		return _ret;
+	}
+	static INT32 InvalidArgument4()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_InvalidArgument4(&_ret));
+		return _ret;
+	}
+	static INT32 InvalidArgument5()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_InvalidArgument5(&_ret));
+		return _ret;
+	}
+	static INT32 InvalidArgument6()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_InvalidArgument6(&_ret));
+		return _ret;
+	}
+	static INT32 InvalidArgument7()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_InvalidArgument7(&_ret));
+		return _ret;
+	}
+	static INT32 InvalidArgument8()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_InvalidArgument8(&_ret));
+		return _ret;
+	}
 }
 
 interface AllJoynWatcherStoppedEventArgs : Windows.Devices.AllJoyn.IAllJoynWatcherStoppedEventArgs

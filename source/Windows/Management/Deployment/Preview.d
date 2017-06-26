@@ -21,6 +21,18 @@ extern(Windows):
 
 interface ClassicAppManager
 {
+	private static Windows.Management.Deployment.Preview.IClassicAppManagerStatics _staticInstance;
+	public static Windows.Management.Deployment.Preview.IClassicAppManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Management.Deployment.Preview.IClassicAppManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Management.Deployment.Preview.InstalledClassicAppInfo FindInstalledApp(HSTRING appUninstallKey)
+	{
+		Windows.Management.Deployment.Preview.InstalledClassicAppInfo _ret;
+		Debug.OK(staticInstance.as!(Windows.Management.Deployment.Preview.IClassicAppManagerStatics).abi_FindInstalledApp(appUninstallKey, &_ret));
+		return _ret;
+	}
 }
 
 interface InstalledClassicAppInfo : Windows.Management.Deployment.Preview.IInstalledClassicAppInfo

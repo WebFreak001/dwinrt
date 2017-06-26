@@ -370,52 +370,52 @@ extern(Windows):
 	final EventRegistrationToken OnDownloadBitrateChanged(void delegate(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadBitrateChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DownloadBitrateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadBitrateChangedEventArgs), Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadBitrateChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).add_DownloadBitrateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadBitrateChangedEventArgs), Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadBitrateChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDownloadBitrateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DownloadBitrateChanged(token));
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).remove_DownloadBitrateChanged(token));
 	}
 	final EventRegistrationToken OnPlaybackBitrateChanged(void delegate(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourcePlaybackBitrateChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PlaybackBitrateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourcePlaybackBitrateChangedEventArgs), Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourcePlaybackBitrateChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).add_PlaybackBitrateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourcePlaybackBitrateChangedEventArgs), Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourcePlaybackBitrateChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePlaybackBitrateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PlaybackBitrateChanged(token));
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).remove_PlaybackBitrateChanged(token));
 	}
 	final EventRegistrationToken OnDownloadRequested(void delegate(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DownloadRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadRequestedEventArgs), Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).add_DownloadRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadRequestedEventArgs), Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDownloadRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DownloadRequested(token));
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).remove_DownloadRequested(token));
 	}
 	final EventRegistrationToken OnDownloadCompleted(void delegate(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DownloadCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadCompletedEventArgs), Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadCompletedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).add_DownloadCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadCompletedEventArgs), Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDownloadCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DownloadCompleted(token));
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).remove_DownloadCompleted(token));
 	}
 	final EventRegistrationToken OnDownloadFailed(void delegate(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadFailedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DownloadFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadFailedEventArgs), Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadFailedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).add_DownloadFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadFailedEventArgs), Windows.Media.Streaming.Adaptive.AdaptiveMediaSource, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadFailedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDownloadFailed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DownloadFailed(token));
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource).remove_DownloadFailed(token));
 	}
 	final Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceAdvancedSettings AdvancedSettings()
 	{
@@ -460,6 +460,43 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+
+	private static Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceStatics _staticInstance;
+	public static Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceStatics);
+		return _staticInstance;
+	}
+	static bool IsContentTypeSupported(HSTRING contentType)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceStatics).abi_IsContentTypeSupported(contentType, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) CreateFromUriAsync(Windows.Foundation.Uri uri)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceStatics).abi_CreateFromUriAsync(uri, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) CreateFromUriWithDownloaderAsync(Windows.Foundation.Uri uri, Windows.Web.Http.HttpClient httpClient)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceStatics).abi_CreateFromUriWithDownloaderAsync(uri, httpClient, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) CreateFromStreamAsync(Windows.Storage.Streams.IInputStream stream, Windows.Foundation.Uri uri, HSTRING contentType)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceStatics).abi_CreateFromStreamAsync(stream, uri, contentType, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) CreateFromStreamWithDownloaderAsync(Windows.Storage.Streams.IInputStream stream, Windows.Foundation.Uri uri, HSTRING contentType, Windows.Web.Http.HttpClient httpClient)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceStatics).abi_CreateFromStreamWithDownloaderAsync(stream, uri, contentType, httpClient, &_ret));
+		return _ret;
 	}
 }
 
@@ -615,12 +652,12 @@ extern(Windows):
 	final EventRegistrationToken OnDiagnosticAvailable(void delegate(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnostics, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnosticAvailableEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DiagnosticAvailable(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnostics, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnosticAvailableEventArgs), Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnostics, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnosticAvailableEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnostics).add_DiagnosticAvailable(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnostics, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnosticAvailableEventArgs), Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnostics, Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDiagnosticAvailableEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDiagnosticAvailable(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DiagnosticAvailable(token));
+		Debug.OK(this.as!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDiagnostics).remove_DiagnosticAvailable(token));
 	}
 }
 

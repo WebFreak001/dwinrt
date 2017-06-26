@@ -2102,6 +2102,42 @@ extern(Windows):
 
 interface ContactLaunchActionVerbs
 {
+	private static Windows.ApplicationModel.Contacts.IContactLaunchActionVerbsStatics _staticInstance;
+	public static Windows.ApplicationModel.Contacts.IContactLaunchActionVerbsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Contacts.IContactLaunchActionVerbsStatics);
+		return _staticInstance;
+	}
+	static HSTRING Call()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Contacts.IContactLaunchActionVerbsStatics).get_Call(&_ret));
+		return _ret;
+	}
+	static HSTRING Message()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Contacts.IContactLaunchActionVerbsStatics).get_Message(&_ret));
+		return _ret;
+	}
+	static HSTRING Map()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Contacts.IContactLaunchActionVerbsStatics).get_Map(&_ret));
+		return _ret;
+	}
+	static HSTRING Post()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Contacts.IContactLaunchActionVerbsStatics).get_Post(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoCall()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Contacts.IContactLaunchActionVerbsStatics).get_VideoCall(&_ret));
+		return _ret;
+	}
 }
 
 interface ContactList : Windows.ApplicationModel.Contacts.IContactList, Windows.ApplicationModel.Contacts.IContactList2
@@ -2186,12 +2222,12 @@ extern(Windows):
 	final EventRegistrationToken OnContactChanged(void delegate(Windows.ApplicationModel.Contacts.ContactList, Windows.ApplicationModel.Contacts.ContactChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ContactChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactList, Windows.ApplicationModel.Contacts.ContactChangedEventArgs), Windows.ApplicationModel.Contacts.ContactList, Windows.ApplicationModel.Contacts.ContactChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).add_ContactChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactList, Windows.ApplicationModel.Contacts.ContactChangedEventArgs), Windows.ApplicationModel.Contacts.ContactList, Windows.ApplicationModel.Contacts.ContactChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeContactChanged(EventRegistrationToken value)
 	{
-		Debug.OK(remove_ContactChanged(value));
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactList).remove_ContactChanged(value));
 	}
 	final Windows.Foundation.IAsyncAction SaveAsync()
 	{
@@ -2580,12 +2616,12 @@ extern(Windows):
 	final EventRegistrationToken OnSyncStatusChanged(void delegate(Windows.ApplicationModel.Contacts.ContactListSyncManager, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SyncStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactListSyncManager, IInspectable), Windows.ApplicationModel.Contacts.ContactListSyncManager, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncManager).add_SyncStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactListSyncManager, IInspectable), Windows.ApplicationModel.Contacts.ContactListSyncManager, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSyncStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SyncStatusChanged(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactListSyncManager).remove_SyncStatusChanged(token));
 	}
 	final void Status(Windows.ApplicationModel.Contacts.ContactListSyncStatus value)
 	{
@@ -2668,6 +2704,26 @@ extern(Windows):
 
 interface ContactManager
 {
+	private static Windows.ApplicationModel.Contacts.IContactManagerStatics _staticInstance;
+	public static Windows.ApplicationModel.Contacts.IContactManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Contacts.IContactManagerStatics);
+		return _staticInstance;
+	}
+	static void ShowContactCard(Windows.ApplicationModel.Contacts.Contact contact, Windows.Foundation.Rect selection)
+	{
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Contacts.IContactManagerStatics).abi_ShowContactCard(contact, selection));
+	}
+	static void ShowContactCardWithPlacement(Windows.ApplicationModel.Contacts.Contact contact, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
+	{
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Contacts.IContactManagerStatics).abi_ShowContactCardWithPlacement(contact, selection, preferredPlacement));
+	}
+	static Windows.ApplicationModel.Contacts.ContactCardDelayedDataLoader ShowDelayLoadedContactCard(Windows.ApplicationModel.Contacts.Contact contact, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
+	{
+		Windows.ApplicationModel.Contacts.ContactCardDelayedDataLoader _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Contacts.IContactManagerStatics).abi_ShowDelayLoadedContactCard(contact, selection, preferredPlacement, &_ret));
+		return _ret;
+	}
 }
 
 interface ContactManagerForUser : Windows.ApplicationModel.Contacts.IContactManagerForUser, Windows.ApplicationModel.Contacts.IContactManagerForUser2
@@ -2778,22 +2834,22 @@ extern(Windows):
 	final EventRegistrationToken OnLaunchFullAppRequested(void delegate(Windows.ApplicationModel.Contacts.ContactPanel, Windows.ApplicationModel.Contacts.ContactPanelLaunchFullAppRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_LaunchFullAppRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactPanel, Windows.ApplicationModel.Contacts.ContactPanelLaunchFullAppRequestedEventArgs), Windows.ApplicationModel.Contacts.ContactPanel, Windows.ApplicationModel.Contacts.ContactPanelLaunchFullAppRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPanel).add_LaunchFullAppRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactPanel, Windows.ApplicationModel.Contacts.ContactPanelLaunchFullAppRequestedEventArgs), Windows.ApplicationModel.Contacts.ContactPanel, Windows.ApplicationModel.Contacts.ContactPanelLaunchFullAppRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeLaunchFullAppRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_LaunchFullAppRequested(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPanel).remove_LaunchFullAppRequested(token));
 	}
 	final EventRegistrationToken OnClosing(void delegate(Windows.ApplicationModel.Contacts.ContactPanel, Windows.ApplicationModel.Contacts.ContactPanelClosingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Closing(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactPanel, Windows.ApplicationModel.Contacts.ContactPanelClosingEventArgs), Windows.ApplicationModel.Contacts.ContactPanel, Windows.ApplicationModel.Contacts.ContactPanelClosingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPanel).add_Closing(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactPanel, Windows.ApplicationModel.Contacts.ContactPanelClosingEventArgs), Windows.ApplicationModel.Contacts.ContactPanel, Windows.ApplicationModel.Contacts.ContactPanelClosingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeClosing(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Closing(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPanel).remove_Closing(token));
 	}
 }
 
@@ -2921,6 +2977,25 @@ extern(Windows):
 	{
 		Windows.System.User _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactPicker3).get_User(&_ret));
+		return _ret;
+	}
+
+	private static Windows.ApplicationModel.Contacts.IContactPickerStatics _staticInstance;
+	public static Windows.ApplicationModel.Contacts.IContactPickerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Contacts.IContactPickerStatics);
+		return _staticInstance;
+	}
+	static Windows.ApplicationModel.Contacts.ContactPicker CreateForUser(Windows.System.User user)
+	{
+		Windows.ApplicationModel.Contacts.ContactPicker _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Contacts.IContactPickerStatics).abi_CreateForUser(user, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(bool) IsSupportedAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Contacts.IContactPickerStatics).abi_IsSupportedAsync(&_ret));
 		return _ret;
 	}
 }
@@ -3095,12 +3170,12 @@ extern(Windows):
 	final EventRegistrationToken OnContactChanged(void delegate(Windows.ApplicationModel.Contacts.ContactStore, Windows.ApplicationModel.Contacts.ContactChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ContactChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactStore, Windows.ApplicationModel.Contacts.ContactChangedEventArgs), Windows.ApplicationModel.Contacts.ContactStore, Windows.ApplicationModel.Contacts.ContactChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactStore2).add_ContactChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.ContactStore, Windows.ApplicationModel.Contacts.ContactChangedEventArgs), Windows.ApplicationModel.Contacts.ContactStore, Windows.ApplicationModel.Contacts.ContactChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeContactChanged(EventRegistrationToken value)
 	{
-		Debug.OK(remove_ContactChanged(value));
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IContactStore2).remove_ContactChanged(value));
 	}
 	final Windows.ApplicationModel.Contacts.AggregateContactManager AggregateContactManager()
 	{
@@ -3208,6 +3283,54 @@ extern(Windows):
 
 interface KnownContactField
 {
+	private static Windows.ApplicationModel.Contacts.IKnownContactFieldStatics _staticInstance;
+	public static Windows.ApplicationModel.Contacts.IKnownContactFieldStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Contacts.IKnownContactFieldStatics);
+		return _staticInstance;
+	}
+	deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")
+	static HSTRING Email()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Contacts.IKnownContactFieldStatics).get_Email(&_ret));
+		return _ret;
+	}
+	deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")
+	static HSTRING PhoneNumber()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Contacts.IKnownContactFieldStatics).get_PhoneNumber(&_ret));
+		return _ret;
+	}
+	deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")
+	static HSTRING Location()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Contacts.IKnownContactFieldStatics).get_Location(&_ret));
+		return _ret;
+	}
+	deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")
+	static HSTRING InstantMessage()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Contacts.IKnownContactFieldStatics).get_InstantMessage(&_ret));
+		return _ret;
+	}
+	deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")
+	static Windows.ApplicationModel.Contacts.ContactFieldType ConvertNameToType(HSTRING name)
+	{
+		Windows.ApplicationModel.Contacts.ContactFieldType _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Contacts.IKnownContactFieldStatics).abi_ConvertNameToType(name, &_ret));
+		return _ret;
+	}
+	deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")
+	static HSTRING ConvertTypeToName(Windows.ApplicationModel.Contacts.ContactFieldType type)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Contacts.IKnownContactFieldStatics).abi_ConvertTypeToName(type, &_ret));
+		return _ret;
+	}
 }
 
 interface PinnedContactIdsQueryResult : Windows.ApplicationModel.Contacts.IPinnedContactIdsQueryResult
@@ -3268,6 +3391,31 @@ extern(Windows):
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.PinnedContactIdsQueryResult) _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.IPinnedContactManager).abi_GetPinnedContactIdsAsync(&_ret));
+		return _ret;
+	}
+
+	private static Windows.ApplicationModel.Contacts.IPinnedContactManagerStatics _staticInstance;
+	public static Windows.ApplicationModel.Contacts.IPinnedContactManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Contacts.IPinnedContactManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.ApplicationModel.Contacts.PinnedContactManager GetDefault()
+	{
+		Windows.ApplicationModel.Contacts.PinnedContactManager _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Contacts.IPinnedContactManagerStatics).abi_GetDefault(&_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Contacts.PinnedContactManager GetForUser(Windows.System.User user)
+	{
+		Windows.ApplicationModel.Contacts.PinnedContactManager _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Contacts.IPinnedContactManagerStatics).abi_GetForUser(user, &_ret));
+		return _ret;
+	}
+	static bool IsSupported()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Contacts.IPinnedContactManagerStatics).abi_IsSupported(&_ret));
 		return _ret;
 	}
 }

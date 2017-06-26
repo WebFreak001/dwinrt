@@ -56,11 +56,24 @@ extern(Windows):
 	final EventRegistrationToken OnCloseRequested(void delegate(IInspectable, Windows.UI.Core.Preview.SystemNavigationCloseRequestedPreviewEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_CloseRequested(event!(Windows.Foundation.EventHandler!(Windows.UI.Core.Preview.SystemNavigationCloseRequestedPreviewEventArgs), IInspectable, Windows.UI.Core.Preview.SystemNavigationCloseRequestedPreviewEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.Preview.ISystemNavigationManagerPreview).add_CloseRequested(event!(Windows.Foundation.EventHandler!(Windows.UI.Core.Preview.SystemNavigationCloseRequestedPreviewEventArgs), IInspectable, Windows.UI.Core.Preview.SystemNavigationCloseRequestedPreviewEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCloseRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_CloseRequested(token));
+		Debug.OK(this.as!(Windows.UI.Core.Preview.ISystemNavigationManagerPreview).remove_CloseRequested(token));
+	}
+
+	private static Windows.UI.Core.Preview.ISystemNavigationManagerPreviewStatics _staticInstance;
+	public static Windows.UI.Core.Preview.ISystemNavigationManagerPreviewStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Core.Preview.ISystemNavigationManagerPreviewStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Core.Preview.SystemNavigationManagerPreview GetForCurrentView()
+	{
+		Windows.UI.Core.Preview.SystemNavigationManagerPreview _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Core.Preview.ISystemNavigationManagerPreviewStatics).abi_GetForCurrentView(&_ret));
+		return _ret;
 	}
 }

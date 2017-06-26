@@ -655,6 +655,24 @@ extern(Windows):
 
 interface ChatCapabilitiesManager
 {
+	private static Windows.ApplicationModel.Chat.IChatCapabilitiesManagerStatics _staticInstance;
+	public static Windows.ApplicationModel.Chat.IChatCapabilitiesManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Chat.IChatCapabilitiesManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatCapabilities) GetCachedCapabilitiesAsync(HSTRING address)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatCapabilities) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Chat.IChatCapabilitiesManagerStatics).abi_GetCachedCapabilitiesAsync(address, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatCapabilities) GetCapabilitiesFromNetworkAsync(HSTRING address)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatCapabilities) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Chat.IChatCapabilitiesManagerStatics).abi_GetCapabilitiesFromNetworkAsync(address, &_ret));
+		return _ret;
+	}
 }
 
 interface ChatConversation : Windows.ApplicationModel.Chat.IChatConversation, Windows.ApplicationModel.Chat.IChatConversation2, Windows.ApplicationModel.Chat.IChatItem
@@ -751,12 +769,12 @@ extern(Windows):
 	final EventRegistrationToken OnRemoteParticipantComposingChanged(void delegate(Windows.ApplicationModel.Chat.ChatConversation, Windows.ApplicationModel.Chat.RemoteParticipantComposingChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_RemoteParticipantComposingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.ChatConversation, Windows.ApplicationModel.Chat.RemoteParticipantComposingChangedEventArgs), Windows.ApplicationModel.Chat.ChatConversation, Windows.ApplicationModel.Chat.RemoteParticipantComposingChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversation).add_RemoteParticipantComposingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.ChatConversation, Windows.ApplicationModel.Chat.RemoteParticipantComposingChangedEventArgs), Windows.ApplicationModel.Chat.ChatConversation, Windows.ApplicationModel.Chat.RemoteParticipantComposingChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRemoteParticipantComposingChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_RemoteParticipantComposingChanged(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatConversation).remove_RemoteParticipantComposingChanged(token));
 	}
 	final bool CanModifyParticipants()
 	{
@@ -1180,6 +1198,18 @@ extern(Windows):
 
 interface ChatMessageBlocking
 {
+	private static Windows.ApplicationModel.Chat.IChatMessageBlockingStatic _staticInstance;
+	public static Windows.ApplicationModel.Chat.IChatMessageBlockingStatic staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Chat.IChatMessageBlockingStatic);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncAction MarkMessageAsBlockedAsync(HSTRING localChatMessageId, bool blocked)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Chat.IChatMessageBlockingStatic).abi_MarkMessageAsBlockedAsync(localChatMessageId, blocked, &_ret));
+		return _ret;
+	}
 }
 
 interface ChatMessageChange : Windows.ApplicationModel.Chat.IChatMessageChange
@@ -1259,6 +1289,24 @@ extern(Windows):
 
 interface ChatMessageManager
 {
+	private static Windows.ApplicationModel.Chat.IChatMessageManager2Statics _staticInstance;
+	public static Windows.ApplicationModel.Chat.IChatMessageManager2Statics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Chat.IChatMessageManager2Statics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(HSTRING) RegisterTransportAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Chat.IChatMessageManager2Statics).abi_RegisterTransportAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessageTransport) GetTransportAsync(HSTRING transportId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessageTransport) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Chat.IChatMessageManager2Statics).abi_GetTransportAsync(transportId, &_ret));
+		return _ret;
+	}
 }
 
 interface ChatMessageNotificationTriggerDetails : Windows.ApplicationModel.Chat.IChatMessageNotificationTriggerDetails, Windows.ApplicationModel.Chat.IChatMessageNotificationTriggerDetails2
@@ -1379,12 +1427,12 @@ extern(Windows):
 	final EventRegistrationToken OnMessageChanged(void delegate(Windows.ApplicationModel.Chat.ChatMessageStore, Windows.ApplicationModel.Chat.ChatMessageChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_MessageChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.ChatMessageStore, Windows.ApplicationModel.Chat.ChatMessageChangedEventArgs), Windows.ApplicationModel.Chat.ChatMessageStore, Windows.ApplicationModel.Chat.ChatMessageChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore).add_MessageChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.ChatMessageStore, Windows.ApplicationModel.Chat.ChatMessageChangedEventArgs), Windows.ApplicationModel.Chat.ChatMessageStore, Windows.ApplicationModel.Chat.ChatMessageChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMessageChanged(EventRegistrationToken value)
 	{
-		Debug.OK(remove_MessageChanged(value));
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore).remove_MessageChanged(value));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) ForwardMessageAsync(HSTRING localChatMessageId, Windows.Foundation.Collections.IIterable!(HSTRING) addresses)
 	{
@@ -1479,12 +1527,12 @@ extern(Windows):
 	final EventRegistrationToken OnStoreChanged(void delegate(Windows.ApplicationModel.Chat.ChatMessageStore, Windows.ApplicationModel.Chat.ChatMessageStoreChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_StoreChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.ChatMessageStore, Windows.ApplicationModel.Chat.ChatMessageStoreChangedEventArgs), Windows.ApplicationModel.Chat.ChatMessageStore, Windows.ApplicationModel.Chat.ChatMessageStoreChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore2).add_StoreChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.ChatMessageStore, Windows.ApplicationModel.Chat.ChatMessageStoreChangedEventArgs), Windows.ApplicationModel.Chat.ChatMessageStore, Windows.ApplicationModel.Chat.ChatMessageStoreChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStoreChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_StoreChanged(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IChatMessageStore2).remove_StoreChanged(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) GetMessageBySyncIdAsync(HSTRING syncId)
 	{
@@ -1881,17 +1929,47 @@ extern(Windows):
 	final EventRegistrationToken OnMessageAvailableChanged(void delegate(Windows.ApplicationModel.Chat.RcsEndUserMessageManager, Windows.ApplicationModel.Chat.RcsEndUserMessageAvailableEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_MessageAvailableChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.RcsEndUserMessageManager, Windows.ApplicationModel.Chat.RcsEndUserMessageAvailableEventArgs), Windows.ApplicationModel.Chat.RcsEndUserMessageManager, Windows.ApplicationModel.Chat.RcsEndUserMessageAvailableEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsEndUserMessageManager).add_MessageAvailableChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.RcsEndUserMessageManager, Windows.ApplicationModel.Chat.RcsEndUserMessageAvailableEventArgs), Windows.ApplicationModel.Chat.RcsEndUserMessageManager, Windows.ApplicationModel.Chat.RcsEndUserMessageAvailableEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMessageAvailableChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MessageAvailableChanged(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsEndUserMessageManager).remove_MessageAvailableChanged(token));
 	}
 }
 
 interface RcsManager
 {
+	private static Windows.ApplicationModel.Chat.IRcsManagerStatics _staticInstance;
+	public static Windows.ApplicationModel.Chat.IRcsManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Chat.IRcsManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.ApplicationModel.Chat.RcsEndUserMessageManager GetEndUserMessageManager()
+	{
+		Windows.ApplicationModel.Chat.RcsEndUserMessageManager _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Chat.IRcsManagerStatics).abi_GetEndUserMessageManager(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.RcsTransport)) GetTransportsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Chat.RcsTransport)) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Chat.IRcsManagerStatics).abi_GetTransportsAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.RcsTransport) GetTransportAsync(HSTRING transportId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.RcsTransport) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Chat.IRcsManagerStatics).abi_GetTransportAsync(transportId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction LeaveConversationAsync(Windows.ApplicationModel.Chat.ChatConversation conversation)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Chat.IRcsManagerStatics).abi_LeaveConversationAsync(conversation, &_ret));
+		return _ret;
+	}
 }
 
 interface RcsServiceKindSupportedChangedEventArgs : Windows.ApplicationModel.Chat.IRcsServiceKindSupportedChangedEventArgs
@@ -1953,12 +2031,12 @@ extern(Windows):
 	final EventRegistrationToken OnServiceKindSupportedChanged(void delegate(Windows.ApplicationModel.Chat.RcsTransport, Windows.ApplicationModel.Chat.RcsServiceKindSupportedChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ServiceKindSupportedChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.RcsTransport, Windows.ApplicationModel.Chat.RcsServiceKindSupportedChangedEventArgs), Windows.ApplicationModel.Chat.RcsTransport, Windows.ApplicationModel.Chat.RcsServiceKindSupportedChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsTransport).add_ServiceKindSupportedChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Chat.RcsTransport, Windows.ApplicationModel.Chat.RcsServiceKindSupportedChangedEventArgs), Windows.ApplicationModel.Chat.RcsTransport, Windows.ApplicationModel.Chat.RcsServiceKindSupportedChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeServiceKindSupportedChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ServiceKindSupportedChanged(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Chat.IRcsTransport).remove_ServiceKindSupportedChanged(token));
 	}
 }
 

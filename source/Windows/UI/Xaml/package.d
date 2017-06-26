@@ -1739,6 +1739,25 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IAdaptiveTrigger).set_MinWindowHeight(value));
 	}
+
+	private static Windows.UI.Xaml.IAdaptiveTriggerStatics _staticInstance;
+	public static Windows.UI.Xaml.IAdaptiveTriggerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.IAdaptiveTriggerStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty MinWindowWidthProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IAdaptiveTriggerStatics).get_MinWindowWidthProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty MinWindowHeightProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IAdaptiveTriggerStatics).get_MinWindowHeightProperty(&_ret));
+		return _ret;
+	}
 }
 @makable!(AdaptiveTrigger, AdaptiveTrigger, Windows.UI.Xaml.IAdaptiveTriggerFactory)
 class AdaptiveTriggerT(Base) : AgileObject!Base, AdaptiveTrigger
@@ -1790,21 +1809,21 @@ extern(Windows):
 	}
 	final void removeUnhandledException(EventRegistrationToken token)
 	{
-		Debug.OK(remove_UnhandledException(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IApplication).remove_UnhandledException(token));
 	}
 	final void removeSuspending(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Suspending(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IApplication).remove_Suspending(token));
 	}
 	final EventRegistrationToken OnResuming(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Resuming(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.IApplication).add_Resuming(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeResuming(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Resuming(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IApplication).remove_Resuming(token));
 	}
 	final void Exit()
 	{
@@ -1832,11 +1851,11 @@ extern(Windows):
 	}
 	final void removeLeavingBackground(EventRegistrationToken token)
 	{
-		Debug.OK(remove_LeavingBackground(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IApplication2).remove_LeavingBackground(token));
 	}
 	final void removeEnteredBackground(EventRegistrationToken token)
 	{
-		Debug.OK(remove_EnteredBackground(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IApplication2).remove_EnteredBackground(token));
 	}
 	final Windows.UI.Xaml.ApplicationHighContrastAdjustment HighContrastAdjustment()
 	{
@@ -1848,9 +1867,34 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IApplication3).set_HighContrastAdjustment(value));
 	}
+
+	private static Windows.UI.Xaml.IApplicationStatics _staticInstance;
+	public static Windows.UI.Xaml.IApplicationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.IApplicationStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.Application Current()
+	{
+		Windows.UI.Xaml.Application _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IApplicationStatics).get_Current(&_ret));
+		return _ret;
+	}
+	static void Start(Windows.UI.Xaml.ApplicationInitializationCallback callback)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IApplicationStatics).abi_Start(callback));
+	}
+	static void LoadComponent(IInspectable component, Windows.Foundation.Uri resourceLocator)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IApplicationStatics).abi_LoadComponent(component, resourceLocator));
+	}
+	static void LoadComponentWithResourceLocation(IInspectable component, Windows.Foundation.Uri resourceLocator, Windows.UI.Xaml.Controls.Primitives.ComponentResourceLocation componentResourceLocation)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IApplicationStatics).abi_LoadComponentWithResourceLocation(component, resourceLocator, componentResourceLocation));
+	}
 }
 @makable!(Application, Application, Windows.UI.Xaml.IApplicationFactory)
-abstract class ApplicationT(Base) : AgileObject!Base, Application
+class ApplicationT(Base) : AgileObject!Base, Application
 {
 	override HRESULT QueryInterface(const(IID)* riid, void** ppv)
 	{
@@ -1952,6 +1996,24 @@ extern(Windows):
 
 interface CornerRadiusHelper : Windows.UI.Xaml.ICornerRadiusHelper
 {
+	private static Windows.UI.Xaml.ICornerRadiusHelperStatics _staticInstance;
+	public static Windows.UI.Xaml.ICornerRadiusHelperStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.ICornerRadiusHelperStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.CornerRadius FromRadii(double topLeft, double topRight, double bottomRight, double bottomLeft)
+	{
+		Windows.UI.Xaml.CornerRadius _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.ICornerRadiusHelperStatics).abi_FromRadii(topLeft, topRight, bottomRight, bottomLeft, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.CornerRadius FromUniformRadius(double uniformRadius)
+	{
+		Windows.UI.Xaml.CornerRadius _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.ICornerRadiusHelperStatics).abi_FromUniformRadius(uniformRadius, &_ret));
+		return _ret;
+	}
 }
 
 interface DataContextChangedEventArgs : Windows.UI.Xaml.IDataContextChangedEventArgs
@@ -1983,6 +2045,29 @@ extern(Windows):
 		Windows.UI.Xaml.DependencyObject _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.IDataTemplate).abi_LoadContent(&_ret));
 		return _ret;
+	}
+
+	private static Windows.UI.Xaml.IDataTemplateStatics2 _staticInstance;
+	public static Windows.UI.Xaml.IDataTemplateStatics2 staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.IDataTemplateStatics2);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty ExtensionInstanceProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDataTemplateStatics2).get_ExtensionInstanceProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.IDataTemplateExtension GetExtensionInstance(Windows.UI.Xaml.FrameworkElement element)
+	{
+		Windows.UI.Xaml.IDataTemplateExtension _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDataTemplateStatics2).abi_GetExtensionInstance(element, &_ret));
+		return _ret;
+	}
+	static void SetExtensionInstance(Windows.UI.Xaml.FrameworkElement element, Windows.UI.Xaml.IDataTemplateExtension value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDataTemplateStatics2).abi_SetExtensionInstance(element, value));
 	}
 }
 @makable!(DataTemplate, DataTemplate, Windows.UI.Xaml.IDataTemplateFactory)
@@ -2067,7 +2152,7 @@ extern(Windows):
 	}
 	final void removeBindingFailed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_BindingFailed(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IDebugSettings).remove_BindingFailed(token));
 	}
 	final bool EnableRedrawRegions()
 	{
@@ -2166,7 +2251,7 @@ interface DependencyObjectCollection : Windows.UI.Xaml.DependencyObject, Windows
 extern(Windows):
 	final void removeVectorChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_VectorChanged(token));
+		Debug.OK(this.as!(Windows.Foundation.Collections.IObservableVector!(Windows.UI.Xaml.DependencyObject)).remove_VectorChanged(token));
 	}
 	final Windows.UI.Xaml.DependencyObject GetAt(uint index)
 	{
@@ -2268,6 +2353,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.IDependencyProperty).abi_GetMetadata(forType, &_ret));
 		return _ret;
 	}
+
+	private static Windows.UI.Xaml.IDependencyPropertyStatics _staticInstance;
+	public static Windows.UI.Xaml.IDependencyPropertyStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.IDependencyPropertyStatics);
+		return _staticInstance;
+	}
+	static IInspectable UnsetValue()
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDependencyPropertyStatics).get_UnsetValue(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty Register(HSTRING name, Windows.UI.Xaml.Interop.TypeName propertyType, Windows.UI.Xaml.Interop.TypeName ownerType, Windows.UI.Xaml.PropertyMetadata typeMetadata)
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDependencyPropertyStatics).abi_Register(name, propertyType, ownerType, typeMetadata, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty RegisterAttached(HSTRING name, Windows.UI.Xaml.Interop.TypeName propertyType, Windows.UI.Xaml.Interop.TypeName ownerType, Windows.UI.Xaml.PropertyMetadata defaultMetadata)
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDependencyPropertyStatics).abi_RegisterAttached(name, propertyType, ownerType, defaultMetadata, &_ret));
+		return _ret;
+	}
 }
 
 interface DependencyPropertyChangedEventArgs : Windows.UI.Xaml.IDependencyPropertyChangedEventArgs
@@ -2315,12 +2425,12 @@ extern(Windows):
 	final EventRegistrationToken OnTick(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Tick(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.IDispatcherTimer).add_Tick(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeTick(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Tick(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IDispatcherTimer).remove_Tick(token));
 	}
 	final void Start()
 	{
@@ -2585,10 +2695,94 @@ extern(Windows):
 
 interface DurationHelper : Windows.UI.Xaml.IDurationHelper
 {
+	private static Windows.UI.Xaml.IDurationHelperStatics _staticInstance;
+	public static Windows.UI.Xaml.IDurationHelperStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.IDurationHelperStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.Duration Automatic()
+	{
+		Windows.UI.Xaml.Duration _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDurationHelperStatics).get_Automatic(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Duration Forever()
+	{
+		Windows.UI.Xaml.Duration _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDurationHelperStatics).get_Forever(&_ret));
+		return _ret;
+	}
+	static INT32 Compare(Windows.UI.Xaml.Duration duration1, Windows.UI.Xaml.Duration duration2)
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDurationHelperStatics).abi_Compare(duration1, duration2, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Duration FromTimeSpan(Windows.Foundation.TimeSpan timeSpan)
+	{
+		Windows.UI.Xaml.Duration _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDurationHelperStatics).abi_FromTimeSpan(timeSpan, &_ret));
+		return _ret;
+	}
+	static bool GetHasTimeSpan(Windows.UI.Xaml.Duration target)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDurationHelperStatics).abi_GetHasTimeSpan(target, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Duration Add(Windows.UI.Xaml.Duration target, Windows.UI.Xaml.Duration duration)
+	{
+		Windows.UI.Xaml.Duration _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDurationHelperStatics).abi_Add(target, duration, &_ret));
+		return _ret;
+	}
+	static bool Equals(Windows.UI.Xaml.Duration target, Windows.UI.Xaml.Duration value)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDurationHelperStatics).abi_Equals(target, value, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Duration Subtract(Windows.UI.Xaml.Duration target, Windows.UI.Xaml.Duration duration)
+	{
+		Windows.UI.Xaml.Duration _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDurationHelperStatics).abi_Subtract(target, duration, &_ret));
+		return _ret;
+	}
 }
 
 interface ElementSoundPlayer : Windows.UI.Xaml.IElementSoundPlayer
 {
+	private static Windows.UI.Xaml.IElementSoundPlayerStatics _staticInstance;
+	public static Windows.UI.Xaml.IElementSoundPlayerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.IElementSoundPlayerStatics);
+		return _staticInstance;
+	}
+	static double Volume()
+	{
+		double _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IElementSoundPlayerStatics).get_Volume(&_ret));
+		return _ret;
+	}
+	static void Volume(double value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IElementSoundPlayerStatics).set_Volume(value));
+	}
+	static Windows.UI.Xaml.ElementSoundPlayerState State()
+	{
+		Windows.UI.Xaml.ElementSoundPlayerState _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IElementSoundPlayerStatics).get_State(&_ret));
+		return _ret;
+	}
+	static void State(Windows.UI.Xaml.ElementSoundPlayerState value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IElementSoundPlayerStatics).set_State(value));
+	}
+	static void Play(Windows.UI.Xaml.ElementSoundKind sound)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IElementSoundPlayerStatics).abi_Play(sound));
+	}
 }
 
 interface EventTrigger : Windows.UI.Xaml.TriggerBase, Windows.UI.Xaml.IEventTrigger
@@ -2833,25 +3027,25 @@ extern(Windows):
 	}
 	final void removeLoaded(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Loaded(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).remove_Loaded(token));
 	}
 	final void removeUnloaded(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Unloaded(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).remove_Unloaded(token));
 	}
 	final void removeSizeChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SizeChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).remove_SizeChanged(token));
 	}
 	final EventRegistrationToken OnLayoutUpdated(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_LayoutUpdated(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).add_LayoutUpdated(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeLayoutUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(remove_LayoutUpdated(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).remove_LayoutUpdated(token));
 	}
 	final IInspectable FindName(HSTRING name)
 	{
@@ -2876,12 +3070,12 @@ extern(Windows):
 	final EventRegistrationToken OnDataContextChanged(void delegate(Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.DataContextChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DataContextChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.DataContextChangedEventArgs), Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.DataContextChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement2).add_DataContextChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.DataContextChangedEventArgs), Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.DataContextChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDataContextChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DataContextChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement2).remove_DataContextChanged(token));
 	}
 	final Windows.UI.Xaml.Data.BindingExpression GetBindingExpression(Windows.UI.Xaml.DependencyProperty dp)
 	{
@@ -2892,12 +3086,12 @@ extern(Windows):
 	final EventRegistrationToken OnLoading(void delegate(Windows.UI.Xaml.FrameworkElement, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Loading(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.FrameworkElement, IInspectable), Windows.UI.Xaml.FrameworkElement, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement3).add_Loading(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.FrameworkElement, IInspectable), Windows.UI.Xaml.FrameworkElement, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeLoading(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Loading(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement3).remove_Loading(token));
 	}
 	final bool AllowFocusOnInteraction()
 	{
@@ -2968,6 +3162,115 @@ extern(Windows):
 	final void AllowFocusWhenDisabled(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement4).set_AllowFocusWhenDisabled(value));
+	}
+
+	private static Windows.UI.Xaml.IFrameworkElementStatics _staticInstance;
+	public static Windows.UI.Xaml.IFrameworkElementStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.IFrameworkElementStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty TagProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_TagProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty LanguageProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_LanguageProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ActualWidthProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_ActualWidthProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ActualHeightProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_ActualHeightProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty WidthProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_WidthProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty HeightProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_HeightProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty MinWidthProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_MinWidthProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty MaxWidthProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_MaxWidthProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty MinHeightProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_MinHeightProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty MaxHeightProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_MaxHeightProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty HorizontalAlignmentProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_HorizontalAlignmentProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty VerticalAlignmentProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_VerticalAlignmentProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty MarginProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_MarginProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty NameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_NameProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty DataContextProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_DataContextProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty StyleProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_StyleProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty FlowDirectionProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_FlowDirectionProperty(&_ret));
+		return _ret;
 	}
 }
 @makable!(FrameworkElement, FrameworkElement, Windows.UI.Xaml.IFrameworkElementFactory)
@@ -3122,6 +3425,54 @@ extern(Windows):
 
 interface GridLengthHelper : Windows.UI.Xaml.IGridLengthHelper
 {
+	private static Windows.UI.Xaml.IGridLengthHelperStatics _staticInstance;
+	public static Windows.UI.Xaml.IGridLengthHelperStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.IGridLengthHelperStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.GridLength Auto()
+	{
+		Windows.UI.Xaml.GridLength _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IGridLengthHelperStatics).get_Auto(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.GridLength FromPixels(double pixels)
+	{
+		Windows.UI.Xaml.GridLength _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IGridLengthHelperStatics).abi_FromPixels(pixels, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.GridLength FromValueAndType(double value, Windows.UI.Xaml.GridUnitType type)
+	{
+		Windows.UI.Xaml.GridLength _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IGridLengthHelperStatics).abi_FromValueAndType(value, type, &_ret));
+		return _ret;
+	}
+	static bool GetIsAbsolute(Windows.UI.Xaml.GridLength target)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IGridLengthHelperStatics).abi_GetIsAbsolute(target, &_ret));
+		return _ret;
+	}
+	static bool GetIsAuto(Windows.UI.Xaml.GridLength target)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IGridLengthHelperStatics).abi_GetIsAuto(target, &_ret));
+		return _ret;
+	}
+	static bool GetIsStar(Windows.UI.Xaml.GridLength target)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IGridLengthHelperStatics).abi_GetIsStar(target, &_ret));
+		return _ret;
+	}
+	static bool Equals(Windows.UI.Xaml.GridLength target, Windows.UI.Xaml.GridLength value)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IGridLengthHelperStatics).abi_Equals(target, value, &_ret));
+		return _ret;
+	}
 }
 
 interface MediaFailedRoutedEventArgs : Windows.UI.Xaml.ExceptionRoutedEventArgs, Windows.UI.Xaml.IMediaFailedRoutedEventArgs
@@ -3137,6 +3488,18 @@ extern(Windows):
 
 interface PointHelper : Windows.UI.Xaml.IPointHelper
 {
+	private static Windows.UI.Xaml.IPointHelperStatics _staticInstance;
+	public static Windows.UI.Xaml.IPointHelperStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.IPointHelperStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.Point FromCoordinates(float x, float y)
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IPointHelperStatics).abi_FromCoordinates(x, y, &_ret));
+		return _ret;
+	}
 }
 
 interface PropertyMetadata : Windows.UI.Xaml.IPropertyMetadata
@@ -3152,6 +3515,37 @@ extern(Windows):
 	{
 		Windows.UI.Xaml.CreateDefaultValueCallback _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.IPropertyMetadata).get_CreateDefaultValueCallback(&_ret));
+		return _ret;
+	}
+
+	private static Windows.UI.Xaml.IPropertyMetadataStatics _staticInstance;
+	public static Windows.UI.Xaml.IPropertyMetadataStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.IPropertyMetadataStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.PropertyMetadata CreateWithDefaultValue(IInspectable defaultValue)
+	{
+		Windows.UI.Xaml.PropertyMetadata _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IPropertyMetadataStatics).abi_CreateWithDefaultValue(defaultValue, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.PropertyMetadata CreateWithDefaultValueAndCallback(IInspectable defaultValue, Windows.UI.Xaml.PropertyChangedCallback propertyChangedCallback)
+	{
+		Windows.UI.Xaml.PropertyMetadata _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IPropertyMetadataStatics).abi_CreateWithDefaultValueAndCallback(defaultValue, propertyChangedCallback, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.PropertyMetadata CreateWithFactory(Windows.UI.Xaml.CreateDefaultValueCallback createDefaultValueCallback)
+	{
+		Windows.UI.Xaml.PropertyMetadata _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IPropertyMetadataStatics).abi_CreateWithFactory(createDefaultValueCallback, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.PropertyMetadata CreateWithFactoryAndCallback(Windows.UI.Xaml.CreateDefaultValueCallback createDefaultValueCallback, Windows.UI.Xaml.PropertyChangedCallback propertyChangedCallback)
+	{
+		Windows.UI.Xaml.PropertyMetadata _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IPropertyMetadataStatics).abi_CreateWithFactoryAndCallback(createDefaultValueCallback, propertyChangedCallback, &_ret));
 		return _ret;
 	}
 }
@@ -3185,6 +3579,96 @@ extern(Windows):
 
 interface RectHelper : Windows.UI.Xaml.IRectHelper
 {
+	private static Windows.UI.Xaml.IRectHelperStatics _staticInstance;
+	public static Windows.UI.Xaml.IRectHelperStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.IRectHelperStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.Rect Empty()
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).get_Empty(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Rect FromCoordinatesAndDimensions(float x, float y, float width, float height)
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_FromCoordinatesAndDimensions(x, y, width, height, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Rect FromPoints(Windows.Foundation.Point point1, Windows.Foundation.Point point2)
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_FromPoints(point1, point2, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Rect FromLocationAndSize(Windows.Foundation.Point location, Windows.Foundation.Size size)
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_FromLocationAndSize(location, size, &_ret));
+		return _ret;
+	}
+	static bool GetIsEmpty(Windows.Foundation.Rect target)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_GetIsEmpty(target, &_ret));
+		return _ret;
+	}
+	static float GetBottom(Windows.Foundation.Rect target)
+	{
+		float _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_GetBottom(target, &_ret));
+		return _ret;
+	}
+	static float GetLeft(Windows.Foundation.Rect target)
+	{
+		float _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_GetLeft(target, &_ret));
+		return _ret;
+	}
+	static float GetRight(Windows.Foundation.Rect target)
+	{
+		float _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_GetRight(target, &_ret));
+		return _ret;
+	}
+	static float GetTop(Windows.Foundation.Rect target)
+	{
+		float _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_GetTop(target, &_ret));
+		return _ret;
+	}
+	static bool Contains(Windows.Foundation.Rect target, Windows.Foundation.Point point)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_Contains(target, point, &_ret));
+		return _ret;
+	}
+	static bool Equals(Windows.Foundation.Rect target, Windows.Foundation.Rect value)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_Equals(target, value, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Rect Intersect(Windows.Foundation.Rect target, Windows.Foundation.Rect rect)
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_Intersect(target, rect, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Rect UnionWithPoint(Windows.Foundation.Rect target, Windows.Foundation.Point point)
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_UnionWithPoint(target, point, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Rect UnionWithRect(Windows.Foundation.Rect target, Windows.Foundation.Rect rect)
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_UnionWithRect(target, rect, &_ret));
+		return _ret;
+	}
 }
 
 interface ResourceDictionary : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IResourceDictionary, Windows.Foundation.Collections.IMap!(IInspectable, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(IInspectable, IInspectable))
@@ -3463,6 +3947,36 @@ extern(Windows):
 
 interface SizeHelper : Windows.UI.Xaml.ISizeHelper
 {
+	private static Windows.UI.Xaml.ISizeHelperStatics _staticInstance;
+	public static Windows.UI.Xaml.ISizeHelperStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.ISizeHelperStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.Size Empty()
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.ISizeHelperStatics).get_Empty(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Size FromDimensions(float width, float height)
+	{
+		Windows.Foundation.Size _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.ISizeHelperStatics).abi_FromDimensions(width, height, &_ret));
+		return _ret;
+	}
+	static bool GetIsEmpty(Windows.Foundation.Size target)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.ISizeHelperStatics).abi_GetIsEmpty(target, &_ret));
+		return _ret;
+	}
+	static bool Equals(Windows.Foundation.Size target, Windows.Foundation.Size value)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.ISizeHelperStatics).abi_Equals(target, value, &_ret));
+		return _ret;
+	}
 }
 
 interface StateTrigger : Windows.UI.Xaml.StateTriggerBase, Windows.UI.Xaml.IStateTrigger
@@ -3477,6 +3991,19 @@ extern(Windows):
 	final void IsActive(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IStateTrigger).set_IsActive(value));
+	}
+
+	private static Windows.UI.Xaml.IStateTriggerStatics _staticInstance;
+	public static Windows.UI.Xaml.IStateTriggerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.IStateTriggerStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsActiveProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IStateTriggerStatics).get_IsActiveProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -3573,6 +4100,24 @@ extern(Windows):
 
 interface ThicknessHelper : Windows.UI.Xaml.IThicknessHelper
 {
+	private static Windows.UI.Xaml.IThicknessHelperStatics _staticInstance;
+	public static Windows.UI.Xaml.IThicknessHelperStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.IThicknessHelperStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.Thickness FromLengths(double left, double top, double right, double bottom)
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IThicknessHelperStatics).abi_FromLengths(left, top, right, bottom, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Thickness FromUniformLength(double uniformLength)
+	{
+		Windows.UI.Xaml.Thickness _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IThicknessHelperStatics).abi_FromUniformLength(uniformLength, &_ret));
+		return _ret;
+	}
 }
 
 interface TriggerAction : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.ITriggerAction
@@ -3920,103 +4465,103 @@ extern(Windows):
 	}
 	final void removeKeyUp(EventRegistrationToken token)
 	{
-		Debug.OK(remove_KeyUp(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_KeyUp(token));
 	}
 	final void removeKeyDown(EventRegistrationToken token)
 	{
-		Debug.OK(remove_KeyDown(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_KeyDown(token));
 	}
 	final void removeGotFocus(EventRegistrationToken token)
 	{
-		Debug.OK(remove_GotFocus(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_GotFocus(token));
 	}
 	final void removeLostFocus(EventRegistrationToken token)
 	{
-		Debug.OK(remove_LostFocus(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_LostFocus(token));
 	}
 	final void removeDragEnter(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DragEnter(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_DragEnter(token));
 	}
 	final void removeDragLeave(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DragLeave(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_DragLeave(token));
 	}
 	final void removeDragOver(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DragOver(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_DragOver(token));
 	}
 	final void removeDrop(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Drop(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_Drop(token));
 	}
 	final void removePointerPressed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PointerPressed(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerPressed(token));
 	}
 	final void removePointerMoved(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PointerMoved(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerMoved(token));
 	}
 	final void removePointerReleased(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PointerReleased(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerReleased(token));
 	}
 	final void removePointerEntered(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PointerEntered(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerEntered(token));
 	}
 	final void removePointerExited(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PointerExited(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerExited(token));
 	}
 	final void removePointerCaptureLost(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PointerCaptureLost(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerCaptureLost(token));
 	}
 	final void removePointerCanceled(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PointerCanceled(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerCanceled(token));
 	}
 	final void removePointerWheelChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PointerWheelChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerWheelChanged(token));
 	}
 	final void removeTapped(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Tapped(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_Tapped(token));
 	}
 	final void removeDoubleTapped(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DoubleTapped(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_DoubleTapped(token));
 	}
 	final void removeHolding(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Holding(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_Holding(token));
 	}
 	final void removeRightTapped(EventRegistrationToken token)
 	{
-		Debug.OK(remove_RightTapped(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_RightTapped(token));
 	}
 	final void removeManipulationStarting(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ManipulationStarting(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationStarting(token));
 	}
 	final void removeManipulationInertiaStarting(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ManipulationInertiaStarting(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationInertiaStarting(token));
 	}
 	final void removeManipulationStarted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ManipulationStarted(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationStarted(token));
 	}
 	final void removeManipulationDelta(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ManipulationDelta(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationDelta(token));
 	}
 	final void removeManipulationCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ManipulationCompleted(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationCompleted(token));
 	}
 	final void Measure(Windows.Foundation.Size availableSize)
 	{
@@ -4105,22 +4650,22 @@ extern(Windows):
 	final EventRegistrationToken OnDragStarting(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DragStartingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DragStarting(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DragStartingEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DragStartingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement3).add_DragStarting(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DragStartingEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DragStartingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDragStarting(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DragStarting(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement3).remove_DragStarting(token));
 	}
 	final EventRegistrationToken OnDropCompleted(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DropCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DropCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DropCompletedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DropCompletedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement3).add_DropCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DropCompletedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DropCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDropCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DropCompleted(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement3).remove_DropCompleted(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.DataTransfer.DataPackageOperation) StartDragAsync(Windows.UI.Input.PointerPoint pointerPoint)
 	{
@@ -4181,52 +4726,52 @@ extern(Windows):
 	final EventRegistrationToken OnContextRequested(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.ContextRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ContextRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.ContextRequestedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.ContextRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).add_ContextRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.ContextRequestedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.ContextRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeContextRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ContextRequested(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).remove_ContextRequested(token));
 	}
 	final EventRegistrationToken OnContextCanceled(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.RoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ContextCanceled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.RoutedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).add_ContextCanceled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.RoutedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeContextCanceled(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ContextCanceled(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).remove_ContextCanceled(token));
 	}
 	final EventRegistrationToken OnAccessKeyDisplayRequested(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AccessKeyDisplayRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).add_AccessKeyDisplayRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAccessKeyDisplayRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AccessKeyDisplayRequested(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).remove_AccessKeyDisplayRequested(token));
 	}
 	final EventRegistrationToken OnAccessKeyDisplayDismissed(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AccessKeyDisplayDismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).add_AccessKeyDisplayDismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAccessKeyDisplayDismissed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AccessKeyDisplayDismissed(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).remove_AccessKeyDisplayDismissed(token));
 	}
 	final EventRegistrationToken OnAccessKeyInvoked(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AccessKeyInvoked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).add_AccessKeyInvoked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAccessKeyInvoked(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AccessKeyInvoked(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).remove_AccessKeyInvoked(token));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.XamlLight) Lights()
 	{
@@ -4337,32 +4882,32 @@ extern(Windows):
 	final EventRegistrationToken OnGettingFocus(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.GettingFocusEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_GettingFocus(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.GettingFocusEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.GettingFocusEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).add_GettingFocus(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.GettingFocusEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.GettingFocusEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeGettingFocus(EventRegistrationToken token)
 	{
-		Debug.OK(remove_GettingFocus(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).remove_GettingFocus(token));
 	}
 	final EventRegistrationToken OnLosingFocus(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.LosingFocusEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_LosingFocus(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.LosingFocusEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.LosingFocusEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).add_LosingFocus(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.LosingFocusEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.LosingFocusEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeLosingFocus(EventRegistrationToken token)
 	{
-		Debug.OK(remove_LosingFocus(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).remove_LosingFocus(token));
 	}
 	final EventRegistrationToken OnNoFocusCandidateFound(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_NoFocusCandidateFound(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).add_NoFocusCandidateFound(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeNoFocusCandidateFound(EventRegistrationToken token)
 	{
-		Debug.OK(remove_NoFocusCandidateFound(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).remove_NoFocusCandidateFound(token));
 	}
 	final void StartBringIntoView()
 	{
@@ -4371,6 +4916,253 @@ extern(Windows):
 	final void StartBringIntoViewWithOptions(Windows.UI.Xaml.BringIntoViewOptions options)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).abi_StartBringIntoViewWithOptions(options));
+	}
+
+	private static Windows.UI.Xaml.IUIElementStatics _staticInstance;
+	public static Windows.UI.Xaml.IUIElementStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.IUIElementStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.RoutedEvent KeyDownEvent()
+	{
+		Windows.UI.Xaml.RoutedEvent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_KeyDownEvent(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.RoutedEvent KeyUpEvent()
+	{
+		Windows.UI.Xaml.RoutedEvent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_KeyUpEvent(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.RoutedEvent PointerEnteredEvent()
+	{
+		Windows.UI.Xaml.RoutedEvent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_PointerEnteredEvent(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.RoutedEvent PointerPressedEvent()
+	{
+		Windows.UI.Xaml.RoutedEvent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_PointerPressedEvent(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.RoutedEvent PointerMovedEvent()
+	{
+		Windows.UI.Xaml.RoutedEvent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_PointerMovedEvent(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.RoutedEvent PointerReleasedEvent()
+	{
+		Windows.UI.Xaml.RoutedEvent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_PointerReleasedEvent(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.RoutedEvent PointerExitedEvent()
+	{
+		Windows.UI.Xaml.RoutedEvent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_PointerExitedEvent(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.RoutedEvent PointerCaptureLostEvent()
+	{
+		Windows.UI.Xaml.RoutedEvent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_PointerCaptureLostEvent(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.RoutedEvent PointerCanceledEvent()
+	{
+		Windows.UI.Xaml.RoutedEvent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_PointerCanceledEvent(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.RoutedEvent PointerWheelChangedEvent()
+	{
+		Windows.UI.Xaml.RoutedEvent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_PointerWheelChangedEvent(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.RoutedEvent TappedEvent()
+	{
+		Windows.UI.Xaml.RoutedEvent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_TappedEvent(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.RoutedEvent DoubleTappedEvent()
+	{
+		Windows.UI.Xaml.RoutedEvent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_DoubleTappedEvent(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.RoutedEvent HoldingEvent()
+	{
+		Windows.UI.Xaml.RoutedEvent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_HoldingEvent(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.RoutedEvent RightTappedEvent()
+	{
+		Windows.UI.Xaml.RoutedEvent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_RightTappedEvent(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.RoutedEvent ManipulationStartingEvent()
+	{
+		Windows.UI.Xaml.RoutedEvent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_ManipulationStartingEvent(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.RoutedEvent ManipulationInertiaStartingEvent()
+	{
+		Windows.UI.Xaml.RoutedEvent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_ManipulationInertiaStartingEvent(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.RoutedEvent ManipulationStartedEvent()
+	{
+		Windows.UI.Xaml.RoutedEvent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_ManipulationStartedEvent(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.RoutedEvent ManipulationDeltaEvent()
+	{
+		Windows.UI.Xaml.RoutedEvent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_ManipulationDeltaEvent(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.RoutedEvent ManipulationCompletedEvent()
+	{
+		Windows.UI.Xaml.RoutedEvent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_ManipulationCompletedEvent(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.RoutedEvent DragEnterEvent()
+	{
+		Windows.UI.Xaml.RoutedEvent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_DragEnterEvent(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.RoutedEvent DragLeaveEvent()
+	{
+		Windows.UI.Xaml.RoutedEvent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_DragLeaveEvent(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.RoutedEvent DragOverEvent()
+	{
+		Windows.UI.Xaml.RoutedEvent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_DragOverEvent(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.RoutedEvent DropEvent()
+	{
+		Windows.UI.Xaml.RoutedEvent _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_DropEvent(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty AllowDropProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_AllowDropProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty OpacityProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_OpacityProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ClipProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_ClipProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty RenderTransformProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_RenderTransformProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ProjectionProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_ProjectionProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty RenderTransformOriginProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_RenderTransformOriginProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsHitTestVisibleProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_IsHitTestVisibleProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty VisibilityProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_VisibilityProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty UseLayoutRoundingProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_UseLayoutRoundingProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty TransitionsProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_TransitionsProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty CacheModeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_CacheModeProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsTapEnabledProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_IsTapEnabledProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsDoubleTapEnabledProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_IsDoubleTapEnabledProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsRightTapEnabledProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_IsRightTapEnabledProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsHoldingEnabledProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_IsHoldingEnabledProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ManipulationModeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_ManipulationModeProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty PointerCapturesProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_PointerCapturesProperty(&_ret));
+		return _ret;
 	}
 }
 @makable!(UIElement, UIElement, Windows.UI.Xaml.IUIElementFactory)
@@ -4680,11 +5472,11 @@ extern(Windows):
 	}
 	final void removeCurrentStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_CurrentStateChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateGroup).remove_CurrentStateChanged(token));
 	}
 	final void removeCurrentStateChanging(EventRegistrationToken token)
 	{
-		Debug.OK(remove_CurrentStateChanging(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateGroup).remove_CurrentStateChanging(token));
 	}
 }
 
@@ -4698,6 +5490,41 @@ extern(Windows):
 	final void RaiseCurrentStateChanged(Windows.UI.Xaml.VisualStateGroup stateGroup, Windows.UI.Xaml.VisualState oldState, Windows.UI.Xaml.VisualState newState, Windows.UI.Xaml.Controls.Control control)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateManagerProtected).abi_RaiseCurrentStateChanged(stateGroup, oldState, newState, control));
+	}
+
+	private static Windows.UI.Xaml.IVisualStateManagerStatics _staticInstance;
+	public static Windows.UI.Xaml.IVisualStateManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.IVisualStateManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.VisualStateGroup) GetVisualStateGroups(Windows.UI.Xaml.FrameworkElement obj)
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.VisualStateGroup) _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IVisualStateManagerStatics).abi_GetVisualStateGroups(obj, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty CustomVisualStateManagerProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IVisualStateManagerStatics).get_CustomVisualStateManagerProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.VisualStateManager GetCustomVisualStateManager(Windows.UI.Xaml.FrameworkElement obj)
+	{
+		Windows.UI.Xaml.VisualStateManager _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IVisualStateManagerStatics).abi_GetCustomVisualStateManager(obj, &_ret));
+		return _ret;
+	}
+	static void SetCustomVisualStateManager(Windows.UI.Xaml.FrameworkElement obj, Windows.UI.Xaml.VisualStateManager value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IVisualStateManagerStatics).abi_SetCustomVisualStateManager(obj, value));
+	}
+	static bool GoToState(Windows.UI.Xaml.Controls.Control control, HSTRING stateName, bool useTransitions)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IVisualStateManagerStatics).abi_GoToState(control, stateName, useTransitions, &_ret));
+		return _ret;
 	}
 }
 @makable!(VisualStateManager, VisualStateManager, Windows.UI.Xaml.IVisualStateManagerFactory)
@@ -4839,19 +5666,19 @@ extern(Windows):
 	}
 	final void removeActivated(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Activated(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).remove_Activated(token));
 	}
 	final void removeClosed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Closed(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).remove_Closed(token));
 	}
 	final void removeSizeChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SizeChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).remove_SizeChanged(token));
 	}
 	final void removeVisibilityChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_VisibilityChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).remove_VisibilityChanged(token));
 	}
 	final void Activate()
 	{
@@ -4869,6 +5696,19 @@ extern(Windows):
 	{
 		Windows.UI.Composition.Compositor _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.IWindow3).get_Compositor(&_ret));
+		return _ret;
+	}
+
+	private static Windows.UI.Xaml.IWindowStatics _staticInstance;
+	public static Windows.UI.Xaml.IWindowStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.IWindowStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.Window Current()
+	{
+		Windows.UI.Xaml.Window _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IWindowStatics).get_Current(&_ret));
 		return _ret;
 	}
 }

@@ -314,6 +314,48 @@ extern(Windows):
 
 interface DataProtectionManager
 {
+	private static Windows.Security.EnterpriseData.IDataProtectionManagerStatics _staticInstance;
+	public static Windows.Security.EnterpriseData.IDataProtectionManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.EnterpriseData.IDataProtectionManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.BufferProtectUnprotectResult) ProtectAsync(Windows.Storage.Streams.IBuffer data, HSTRING identity)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.BufferProtectUnprotectResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IDataProtectionManagerStatics).abi_ProtectAsync(data, identity, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.BufferProtectUnprotectResult) UnprotectAsync(Windows.Storage.Streams.IBuffer data)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.BufferProtectUnprotectResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IDataProtectionManagerStatics).abi_UnprotectAsync(data, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.DataProtectionInfo) ProtectStreamAsync(Windows.Storage.Streams.IInputStream unprotectedStream, HSTRING identity, Windows.Storage.Streams.IOutputStream protectedStream)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.DataProtectionInfo) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IDataProtectionManagerStatics).abi_ProtectStreamAsync(unprotectedStream, identity, protectedStream, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.DataProtectionInfo) UnprotectStreamAsync(Windows.Storage.Streams.IInputStream protectedStream, Windows.Storage.Streams.IOutputStream unprotectedStream)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.DataProtectionInfo) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IDataProtectionManagerStatics).abi_UnprotectStreamAsync(protectedStream, unprotectedStream, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.DataProtectionInfo) GetProtectionInfoAsync(Windows.Storage.Streams.IBuffer protectedData)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.DataProtectionInfo) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IDataProtectionManagerStatics).abi_GetProtectionInfoAsync(protectedData, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.DataProtectionInfo) GetStreamProtectionInfoAsync(Windows.Storage.Streams.IInputStream protectedStream)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.DataProtectionInfo) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IDataProtectionManagerStatics).abi_GetStreamProtectionInfoAsync(protectedStream, &_ret));
+		return _ret;
+	}
 }
 
 interface FileProtectionInfo : Windows.Security.EnterpriseData.IFileProtectionInfo
@@ -341,10 +383,90 @@ extern(Windows):
 
 interface FileProtectionManager
 {
+	private static Windows.Security.EnterpriseData.IFileProtectionManagerStatics _staticInstance;
+	public static Windows.Security.EnterpriseData.IFileProtectionManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.EnterpriseData.IFileProtectionManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.FileProtectionInfo) ProtectAsync(Windows.Storage.IStorageItem target, HSTRING identity)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.FileProtectionInfo) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IFileProtectionManagerStatics).abi_ProtectAsync(target, identity, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(bool) CopyProtectionAsync(Windows.Storage.IStorageItem source, Windows.Storage.IStorageItem target)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IFileProtectionManagerStatics).abi_CopyProtectionAsync(source, target, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.FileProtectionInfo) GetProtectionInfoAsync(Windows.Storage.IStorageItem source)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.FileProtectionInfo) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IFileProtectionManagerStatics).abi_GetProtectionInfoAsync(source, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedContainerExportResult) SaveFileAsContainerAsync(Windows.Storage.IStorageFile protectedFile)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedContainerExportResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IFileProtectionManagerStatics).abi_SaveFileAsContainerAsync(protectedFile, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedContainerImportResult) LoadFileFromContainerAsync(Windows.Storage.IStorageFile containerFile)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedContainerImportResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IFileProtectionManagerStatics).abi_LoadFileFromContainerAsync(containerFile, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedContainerImportResult) LoadFileFromContainerWithTargetAsync(Windows.Storage.IStorageFile containerFile, Windows.Storage.IStorageItem target)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedContainerImportResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IFileProtectionManagerStatics).abi_LoadFileFromContainerWithTargetAsync(containerFile, target, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedFileCreateResult) CreateProtectedAndOpenAsync(Windows.Storage.IStorageFolder parentFolder, HSTRING desiredName, HSTRING identity, Windows.Storage.CreationCollisionOption collisionOption)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedFileCreateResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IFileProtectionManagerStatics).abi_CreateProtectedAndOpenAsync(parentFolder, desiredName, identity, collisionOption, &_ret));
+		return _ret;
+	}
 }
 
 interface FileRevocationManager
 {
+	private static Windows.Security.EnterpriseData.IFileRevocationManagerStatics _staticInstance;
+	public static Windows.Security.EnterpriseData.IFileRevocationManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.EnterpriseData.IFileRevocationManagerStatics);
+		return _staticInstance;
+	}
+	deprecated("FileRevocationManager might be unavailable after Windows 10. Instead, use FileProtectionManager.")
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.FileProtectionStatus) ProtectAsync(Windows.Storage.IStorageItem storageItem, HSTRING enterpriseIdentity)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.FileProtectionStatus) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IFileRevocationManagerStatics).abi_ProtectAsync(storageItem, enterpriseIdentity, &_ret));
+		return _ret;
+	}
+	deprecated("FileRevocationManager might be unavailable after Windows 10. Instead, use FileProtectionManager.")
+	static Windows.Foundation.IAsyncOperation!(bool) CopyProtectionAsync(Windows.Storage.IStorageItem sourceStorageItem, Windows.Storage.IStorageItem targetStorageItem)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IFileRevocationManagerStatics).abi_CopyProtectionAsync(sourceStorageItem, targetStorageItem, &_ret));
+		return _ret;
+	}
+	deprecated("FileRevocationManager might be unavailable after Windows 10. Instead, use FileProtectionManager.")
+	static void Revoke(HSTRING enterpriseIdentity)
+	{
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IFileRevocationManagerStatics).abi_Revoke(enterpriseIdentity));
+	}
+	deprecated("FileRevocationManager might be unavailable after Windows 10. Instead, use FileProtectionManager.")
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.FileProtectionStatus) GetStatusAsync(Windows.Storage.IStorageItem storageItem)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.FileProtectionStatus) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IFileRevocationManagerStatics).abi_GetStatusAsync(storageItem, &_ret));
+		return _ret;
+	}
 }
 
 interface FileUnprotectOptions : Windows.Security.EnterpriseData.IFileUnprotectOptions
@@ -530,6 +652,93 @@ extern(Windows):
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.Security.EnterpriseData.IProtectionPolicyManager2).get_ShowEnterpriseIndicator(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Security.EnterpriseData.IProtectionPolicyManagerStatics _staticInstance;
+	public static Windows.Security.EnterpriseData.IProtectionPolicyManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.EnterpriseData.IProtectionPolicyManagerStatics);
+		return _staticInstance;
+	}
+	static bool IsIdentityManaged(HSTRING identity)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IProtectionPolicyManagerStatics).abi_IsIdentityManaged(identity, &_ret));
+		return _ret;
+	}
+	static bool TryApplyProcessUIPolicy(HSTRING identity)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IProtectionPolicyManagerStatics).abi_TryApplyProcessUIPolicy(identity, &_ret));
+		return _ret;
+	}
+	static void ClearProcessUIPolicy()
+	{
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IProtectionPolicyManagerStatics).abi_ClearProcessUIPolicy());
+	}
+	static Windows.Security.EnterpriseData.ThreadNetworkContext CreateCurrentThreadNetworkContext(HSTRING identity)
+	{
+		Windows.Security.EnterpriseData.ThreadNetworkContext _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IProtectionPolicyManagerStatics).abi_CreateCurrentThreadNetworkContext(identity, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(HSTRING) GetPrimaryManagedIdentityForNetworkEndpointAsync(Windows.Networking.HostName endpointHost)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IProtectionPolicyManagerStatics).abi_GetPrimaryManagedIdentityForNetworkEndpointAsync(endpointHost, &_ret));
+		return _ret;
+	}
+	static void RevokeContent(HSTRING identity)
+	{
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IProtectionPolicyManagerStatics).abi_RevokeContent(identity));
+	}
+	static Windows.Security.EnterpriseData.ProtectionPolicyManager GetForCurrentView()
+	{
+		Windows.Security.EnterpriseData.ProtectionPolicyManager _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IProtectionPolicyManagerStatics).abi_GetForCurrentView(&_ret));
+		return _ret;
+	}
+	static EventRegistrationToken OnProtectedAccessSuspending(void delegate(IInspectable, Windows.Security.EnterpriseData.ProtectedAccessSuspendingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IProtectionPolicyManagerStatics).add_ProtectedAccessSuspending(event!(Windows.Foundation.EventHandler!(Windows.Security.EnterpriseData.ProtectedAccessSuspendingEventArgs), IInspectable, Windows.Security.EnterpriseData.ProtectedAccessSuspendingEventArgs)(fn), &tok));
+		return tok;
+	}
+	static void removeProtectedAccessSuspending(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IProtectionPolicyManagerStatics).remove_ProtectedAccessSuspending(token));
+	}
+	static EventRegistrationToken OnProtectedAccessResumed(void delegate(IInspectable, Windows.Security.EnterpriseData.ProtectedAccessResumedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IProtectionPolicyManagerStatics).add_ProtectedAccessResumed(event!(Windows.Foundation.EventHandler!(Windows.Security.EnterpriseData.ProtectedAccessResumedEventArgs), IInspectable, Windows.Security.EnterpriseData.ProtectedAccessResumedEventArgs)(fn), &tok));
+		return tok;
+	}
+	static void removeProtectedAccessResumed(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IProtectionPolicyManagerStatics).remove_ProtectedAccessResumed(token));
+	}
+	static EventRegistrationToken OnProtectedContentRevoked(void delegate(IInspectable, Windows.Security.EnterpriseData.ProtectedContentRevokedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IProtectionPolicyManagerStatics).add_ProtectedContentRevoked(event!(Windows.Foundation.EventHandler!(Windows.Security.EnterpriseData.ProtectedContentRevokedEventArgs), IInspectable, Windows.Security.EnterpriseData.ProtectedContentRevokedEventArgs)(fn), &tok));
+		return tok;
+	}
+	static void removeProtectedContentRevoked(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IProtectionPolicyManagerStatics).remove_ProtectedContentRevoked(token));
+	}
+	static Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult CheckAccess(HSTRING sourceIdentity, HSTRING targetIdentity)
+	{
+		Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IProtectionPolicyManagerStatics).abi_CheckAccess(sourceIdentity, targetIdentity, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult) RequestAccessAsync(HSTRING sourceIdentity, HSTRING targetIdentity)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.EnterpriseData.IProtectionPolicyManagerStatics).abi_RequestAccessAsync(sourceIdentity, targetIdentity, &_ret));
 		return _ret;
 	}
 }

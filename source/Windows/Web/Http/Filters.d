@@ -236,12 +236,12 @@ extern(Windows):
 	final EventRegistrationToken OnServerCustomValidationRequested(void delegate(Windows.Web.Http.Filters.HttpBaseProtocolFilter, Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ServerCustomValidationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Web.Http.Filters.HttpBaseProtocolFilter, Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs), Windows.Web.Http.Filters.HttpBaseProtocolFilter, Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter4).add_ServerCustomValidationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Web.Http.Filters.HttpBaseProtocolFilter, Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs), Windows.Web.Http.Filters.HttpBaseProtocolFilter, Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeServerCustomValidationRequested(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_ServerCustomValidationRequested(eventCookie));
+		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter4).remove_ServerCustomValidationRequested(eventCookie));
 	}
 	final void ClearAuthenticationCache()
 	{

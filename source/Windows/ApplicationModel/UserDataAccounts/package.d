@@ -287,6 +287,36 @@ extern(Windows):
 
 interface UserDataAccountManager
 {
+	private static Windows.ApplicationModel.UserDataAccounts.IUserDataAccountManagerStatics _staticInstance;
+	public static Windows.ApplicationModel.UserDataAccounts.IUserDataAccountManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore) RequestStoreAsync(Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreAccessType storeAccessType)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountManagerStatics).abi_RequestStoreAsync(storeAccessType, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(HSTRING) ShowAddAccountAsync(Windows.ApplicationModel.UserDataAccounts.UserDataAccountContentKinds contentKinds)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountManagerStatics).abi_ShowAddAccountAsync(contentKinds, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction ShowAccountSettingsAsync(HSTRING id)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountManagerStatics).abi_ShowAccountSettingsAsync(id, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction ShowAccountErrorResolverAsync(HSTRING id)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountManagerStatics).abi_ShowAccountErrorResolverAsync(id, &_ret));
+		return _ret;
+	}
 }
 
 interface UserDataAccountManagerForUser : Windows.ApplicationModel.UserDataAccounts.IUserDataAccountManagerForUser
@@ -336,12 +366,12 @@ extern(Windows):
 	final EventRegistrationToken OnStoreChanged(void delegate(Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore, Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_StoreChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore, Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreChangedEventArgs), Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore, Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore2).add_StoreChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore, Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreChangedEventArgs), Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore, Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStoreChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_StoreChanged(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore2).remove_StoreChanged(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount) CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, HSTRING enterpriseId)
 	{

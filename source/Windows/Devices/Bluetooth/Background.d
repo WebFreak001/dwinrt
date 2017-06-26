@@ -192,6 +192,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IGattServiceProviderConnection).abi_Start());
 	}
+
+	private static Windows.Devices.Bluetooth.Background.IGattServiceProviderConnectionStatics _staticInstance;
+	public static Windows.Devices.Bluetooth.Background.IGattServiceProviderConnectionStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Bluetooth.Background.IGattServiceProviderConnectionStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Devices.Bluetooth.Background.GattServiceProviderConnection) AllServices()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Devices.Bluetooth.Background.GattServiceProviderConnection) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Background.IGattServiceProviderConnectionStatics).get_AllServices(&_ret));
+		return _ret;
+	}
 }
 
 interface GattServiceProviderTriggerDetails : Windows.Devices.Bluetooth.Background.IGattServiceProviderTriggerDetails

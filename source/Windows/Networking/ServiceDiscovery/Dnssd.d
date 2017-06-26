@@ -213,32 +213,32 @@ extern(Windows):
 	final EventRegistrationToken OnAdded(void delegate(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance), Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher).add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance), Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance)(fn), &tok));
 		return tok;
 	}
 	final void removeAdded(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Added(token));
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher).remove_Added(token));
 	}
 	final EventRegistrationToken OnEnumerationCompleted(void delegate(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, IInspectable), Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher).add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, IInspectable), Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeEnumerationCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_EnumerationCompleted(token));
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher).remove_EnumerationCompleted(token));
 	}
 	final EventRegistrationToken OnStopped(void delegate(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, IInspectable), Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, IInspectable), Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeStopped(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Stopped(token));
+		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher).remove_Stopped(token));
 	}
 	final Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcherStatus Status()
 	{

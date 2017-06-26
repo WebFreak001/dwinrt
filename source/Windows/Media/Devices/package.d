@@ -810,12 +810,12 @@ extern(Windows):
 	final EventRegistrationToken OnModuleNotificationReceived(void delegate(Windows.Media.Devices.AudioDeviceModulesManager, Windows.Media.Devices.AudioDeviceModuleNotificationEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ModuleNotificationReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Devices.AudioDeviceModulesManager, Windows.Media.Devices.AudioDeviceModuleNotificationEventArgs), Windows.Media.Devices.AudioDeviceModulesManager, Windows.Media.Devices.AudioDeviceModuleNotificationEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Devices.IAudioDeviceModulesManager).add_ModuleNotificationReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Devices.AudioDeviceModulesManager, Windows.Media.Devices.AudioDeviceModuleNotificationEventArgs), Windows.Media.Devices.AudioDeviceModulesManager, Windows.Media.Devices.AudioDeviceModuleNotificationEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeModuleNotificationReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ModuleNotificationReceived(token));
+		Debug.OK(this.as!(Windows.Media.Devices.IAudioDeviceModulesManager).remove_ModuleNotificationReceived(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.AudioDeviceModule) FindAllById(HSTRING moduleId)
 	{
@@ -862,27 +862,46 @@ extern(Windows):
 	}
 	final void removeAnswerRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AnswerRequested(token));
+		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).remove_AnswerRequested(token));
 	}
 	final void removeHangUpRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_HangUpRequested(token));
+		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).remove_HangUpRequested(token));
 	}
 	final void removeDialRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DialRequested(token));
+		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).remove_DialRequested(token));
 	}
 	final void removeRedialRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_RedialRequested(token));
+		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).remove_RedialRequested(token));
 	}
 	final void removeKeypadPressed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_KeypadPressed(token));
+		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).remove_KeypadPressed(token));
 	}
 	final void removeAudioTransferRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AudioTransferRequested(token));
+		Debug.OK(this.as!(Windows.Media.Devices.ICallControl).remove_AudioTransferRequested(token));
+	}
+
+	private static Windows.Media.Devices.ICallControlStatics _staticInstance;
+	public static Windows.Media.Devices.ICallControlStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Devices.ICallControlStatics);
+		return _staticInstance;
+	}
+	static Windows.Media.Devices.CallControl GetDefault()
+	{
+		Windows.Media.Devices.CallControl _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Devices.ICallControlStatics).abi_GetDefault(&_ret));
+		return _ret;
+	}
+	static Windows.Media.Devices.CallControl FromId(HSTRING deviceId)
+	{
+		Windows.Media.Devices.CallControl _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Devices.ICallControlStatics).abi_FromId(deviceId, &_ret));
+		return _ret;
 	}
 }
 
@@ -1581,6 +1600,62 @@ extern(Windows):
 
 interface MediaDevice
 {
+	private static Windows.Media.Devices.IMediaDeviceStatics _staticInstance;
+	public static Windows.Media.Devices.IMediaDeviceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Devices.IMediaDeviceStatics);
+		return _staticInstance;
+	}
+	static HSTRING GetAudioCaptureSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Devices.IMediaDeviceStatics).abi_GetAudioCaptureSelector(&_ret));
+		return _ret;
+	}
+	static HSTRING GetAudioRenderSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Devices.IMediaDeviceStatics).abi_GetAudioRenderSelector(&_ret));
+		return _ret;
+	}
+	static HSTRING GetVideoCaptureSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Devices.IMediaDeviceStatics).abi_GetVideoCaptureSelector(&_ret));
+		return _ret;
+	}
+	static HSTRING GetDefaultAudioCaptureId(Windows.Media.Devices.AudioDeviceRole role)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Devices.IMediaDeviceStatics).abi_GetDefaultAudioCaptureId(role, &_ret));
+		return _ret;
+	}
+	static HSTRING GetDefaultAudioRenderId(Windows.Media.Devices.AudioDeviceRole role)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Devices.IMediaDeviceStatics).abi_GetDefaultAudioRenderId(role, &_ret));
+		return _ret;
+	}
+	static EventRegistrationToken OnDefaultAudioCaptureDeviceChanged(void delegate(IInspectable, Windows.Media.Devices.DefaultAudioCaptureDeviceChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Media.Devices.IMediaDeviceStatics).add_DefaultAudioCaptureDeviceChanged(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.Media.Devices.DefaultAudioCaptureDeviceChangedEventArgs), IInspectable, Windows.Media.Devices.DefaultAudioCaptureDeviceChangedEventArgs)(fn), &tok));
+		return tok;
+	}
+	static void removeDefaultAudioCaptureDeviceChanged(EventRegistrationToken cookie)
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.Devices.IMediaDeviceStatics).remove_DefaultAudioCaptureDeviceChanged(cookie));
+	}
+	static EventRegistrationToken OnDefaultAudioRenderDeviceChanged(void delegate(IInspectable, Windows.Media.Devices.DefaultAudioRenderDeviceChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Media.Devices.IMediaDeviceStatics).add_DefaultAudioRenderDeviceChanged(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.Media.Devices.DefaultAudioRenderDeviceChangedEventArgs), IInspectable, Windows.Media.Devices.DefaultAudioRenderDeviceChangedEventArgs)(fn), &tok));
+		return tok;
+	}
+	static void removeDefaultAudioRenderDeviceChanged(EventRegistrationToken cookie)
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.Devices.IMediaDeviceStatics).remove_DefaultAudioRenderDeviceChanged(cookie));
+	}
 }
 
 interface MediaDeviceControl : Windows.Media.Devices.IMediaDeviceControl

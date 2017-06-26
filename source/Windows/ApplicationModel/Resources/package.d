@@ -62,4 +62,18 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Resources.IResourceLoader2).abi_GetStringForUri(uri, &_ret));
 		return _ret;
 	}
+
+	private static Windows.ApplicationModel.Resources.IResourceLoaderStatics _staticInstance;
+	public static Windows.ApplicationModel.Resources.IResourceLoaderStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Resources.IResourceLoaderStatics);
+		return _staticInstance;
+	}
+	deprecated("GetStringForReference may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use GetStringForUri.")
+	static HSTRING GetStringForReference(Windows.Foundation.Uri uri)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Resources.IResourceLoaderStatics).abi_GetStringForReference(uri, &_ret));
+		return _ret;
+	}
 }

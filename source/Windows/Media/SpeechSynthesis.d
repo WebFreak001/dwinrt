@@ -194,6 +194,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.SpeechSynthesis.ISpeechSynthesizer2).get_Options(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Media.SpeechSynthesis.IInstalledVoicesStatic _staticInstance;
+	public static Windows.Media.SpeechSynthesis.IInstalledVoicesStatic staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.SpeechSynthesis.IInstalledVoicesStatic);
+		return _staticInstance;
+	}
+	static Windows.Foundation.Collections.IVectorView!(Windows.Media.SpeechSynthesis.VoiceInformation) AllVoices()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.SpeechSynthesis.VoiceInformation) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.SpeechSynthesis.IInstalledVoicesStatic).get_AllVoices(&_ret));
+		return _ret;
+	}
+	static Windows.Media.SpeechSynthesis.VoiceInformation DefaultVoice()
+	{
+		Windows.Media.SpeechSynthesis.VoiceInformation _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.SpeechSynthesis.IInstalledVoicesStatic).get_DefaultVoice(&_ret));
+		return _ret;
+	}
 }
 
 interface SpeechSynthesizerOptions : Windows.Media.SpeechSynthesis.ISpeechSynthesizerOptions

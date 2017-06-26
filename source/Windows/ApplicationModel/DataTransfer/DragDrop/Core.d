@@ -110,12 +110,12 @@ extern(Windows):
 	final EventRegistrationToken OnTargetRequested(void delegate(Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragDropManager, Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDropOperationTargetRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_TargetRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragDropManager, Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDropOperationTargetRequestedEventArgs), Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragDropManager, Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDropOperationTargetRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragDropManager).add_TargetRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragDropManager, Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDropOperationTargetRequestedEventArgs), Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragDropManager, Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDropOperationTargetRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTargetRequested(EventRegistrationToken value)
 	{
-		Debug.OK(remove_TargetRequested(value));
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragDropManager).remove_TargetRequested(value));
 	}
 	final bool AreConcurrentOperationsEnabled()
 	{
@@ -126,6 +126,19 @@ extern(Windows):
 	final void AreConcurrentOperationsEnabled(bool value)
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragDropManager).set_AreConcurrentOperationsEnabled(value));
+	}
+
+	private static Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragDropManagerStatics _staticInstance;
+	public static Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragDropManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragDropManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragDropManager GetForCurrentView()
+	{
+		Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragDropManager _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragDropManagerStatics).abi_GetForCurrentView(&_ret));
+		return _ret;
 	}
 }
 

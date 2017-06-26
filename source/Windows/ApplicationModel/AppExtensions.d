@@ -155,52 +155,65 @@ extern(Windows):
 	final EventRegistrationToken OnPackageInstalled(void delegate(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageInstalledEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PackageInstalled(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageInstalledEventArgs), Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageInstalledEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).add_PackageInstalled(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageInstalledEventArgs), Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageInstalledEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePackageInstalled(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PackageInstalled(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).remove_PackageInstalled(token));
 	}
 	final EventRegistrationToken OnPackageUpdating(void delegate(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PackageUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatingEventArgs), Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).add_PackageUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatingEventArgs), Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePackageUpdating(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PackageUpdating(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).remove_PackageUpdating(token));
 	}
 	final EventRegistrationToken OnPackageUpdated(void delegate(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PackageUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatedEventArgs), Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).add_PackageUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatedEventArgs), Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePackageUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PackageUpdated(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).remove_PackageUpdated(token));
 	}
 	final EventRegistrationToken OnPackageUninstalling(void delegate(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUninstallingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PackageUninstalling(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUninstallingEventArgs), Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUninstallingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).add_PackageUninstalling(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUninstallingEventArgs), Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUninstallingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePackageUninstalling(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PackageUninstalling(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).remove_PackageUninstalling(token));
 	}
 	final EventRegistrationToken OnPackageStatusChanged(void delegate(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageStatusChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PackageStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageStatusChangedEventArgs), Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageStatusChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).add_PackageStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageStatusChangedEventArgs), Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageStatusChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePackageStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PackageStatusChanged(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).remove_PackageStatusChanged(token));
+	}
+
+	private static Windows.ApplicationModel.AppExtensions.IAppExtensionCatalogStatics _staticInstance;
+	public static Windows.ApplicationModel.AppExtensions.IAppExtensionCatalogStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalogStatics);
+		return _staticInstance;
+	}
+	static Windows.ApplicationModel.AppExtensions.AppExtensionCatalog Open(HSTRING appExtensionName)
+	{
+		Windows.ApplicationModel.AppExtensions.AppExtensionCatalog _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalogStatics).abi_Open(appExtensionName, &_ret));
+		return _ret;
 	}
 }
 

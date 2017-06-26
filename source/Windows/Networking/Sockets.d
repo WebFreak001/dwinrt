@@ -745,12 +745,12 @@ extern(Windows):
 	final EventRegistrationToken OnMessageReceived(void delegate(Windows.Networking.Sockets.DatagramSocket, Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.DatagramSocket, Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs), Windows.Networking.Sockets.DatagramSocket, Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.DatagramSocket, Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs), Windows.Networking.Sockets.DatagramSocket, Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMessageReceived(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_MessageReceived(eventCookie));
+		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).remove_MessageReceived(eventCookie));
 	}
 	final void Close()
 	{
@@ -787,6 +787,25 @@ extern(Windows):
 	final void TransferOwnershipWithContextAndKeepAliveTime(HSTRING socketId, Windows.Networking.Sockets.SocketActivityContext data, Windows.Foundation.TimeSpan keepAliveTime)
 	{
 		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket3).abi_TransferOwnershipWithContextAndKeepAliveTime(socketId, data, keepAliveTime));
+	}
+
+	private static Windows.Networking.Sockets.IDatagramSocketStatics _staticInstance;
+	public static Windows.Networking.Sockets.IDatagramSocketStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.Sockets.IDatagramSocketStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair)) GetEndpointPairsAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Sockets.IDatagramSocketStatics).abi_GetEndpointPairsAsync(remoteHostName, remoteServiceName, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair)) GetEndpointPairsWithSortOptionsAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName, Windows.Networking.HostNameSortOptions sortOptions)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Sockets.IDatagramSocketStatics).abi_GetEndpointPairsWithSortOptionsAsync(remoteHostName, remoteServiceName, sortOptions, &_ret));
+		return _ret;
 	}
 }
 
@@ -927,12 +946,12 @@ extern(Windows):
 	final EventRegistrationToken OnMessageReceived(void delegate(Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs), Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocket).add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs), Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMessageReceived(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_MessageReceived(eventCookie));
+		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocket).remove_MessageReceived(eventCookie));
 	}
 	final Windows.Storage.Streams.IOutputStream OutputStream()
 	{
@@ -953,12 +972,12 @@ extern(Windows):
 	final EventRegistrationToken OnClosed(void delegate(Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs), Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs), Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeClosed(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_Closed(eventCookie));
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).remove_Closed(eventCookie));
 	}
 	final void CloseWithStatus(UINT16 code, HSTRING reason)
 	{
@@ -971,12 +990,12 @@ extern(Windows):
 	final EventRegistrationToken OnServerCustomValidationRequested(void delegate(Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ServerCustomValidationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs), Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocket2).add_ServerCustomValidationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs), Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeServerCustomValidationRequested(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_ServerCustomValidationRequested(eventCookie));
+		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocket2).remove_ServerCustomValidationRequested(eventCookie));
 	}
 }
 
@@ -1173,6 +1192,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.Sockets.ISocketActivityInformation).get_StreamSocketListener(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Networking.Sockets.ISocketActivityInformationStatics _staticInstance;
+	public static Windows.Networking.Sockets.ISocketActivityInformationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.Sockets.ISocketActivityInformationStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Networking.Sockets.SocketActivityInformation) AllSockets()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Networking.Sockets.SocketActivityInformation) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Sockets.ISocketActivityInformationStatics).get_AllSockets(&_ret));
+		return _ret;
+	}
 }
 
 interface SocketActivityTriggerDetails : Windows.Networking.Sockets.ISocketActivityTriggerDetails
@@ -1194,6 +1226,18 @@ extern(Windows):
 
 interface SocketError
 {
+	private static Windows.Networking.Sockets.ISocketErrorStatics _staticInstance;
+	public static Windows.Networking.Sockets.ISocketErrorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.Sockets.ISocketErrorStatics);
+		return _staticInstance;
+	}
+	static Windows.Networking.Sockets.SocketErrorStatus GetStatus(INT32 hresult)
+	{
+		Windows.Networking.Sockets.SocketErrorStatus _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Sockets.ISocketErrorStatics).abi_GetStatus(hresult, &_ret));
+		return _ret;
+	}
 }
 
 interface StreamSocket : Windows.Networking.Sockets.IStreamSocket, Windows.Foundation.IClosable, Windows.Networking.Sockets.IStreamSocket2, Windows.Networking.Sockets.IStreamSocket3
@@ -1288,6 +1332,25 @@ extern(Windows):
 	final void TransferOwnershipWithContextAndKeepAliveTime(HSTRING socketId, Windows.Networking.Sockets.SocketActivityContext data, Windows.Foundation.TimeSpan keepAliveTime)
 	{
 		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket3).abi_TransferOwnershipWithContextAndKeepAliveTime(socketId, data, keepAliveTime));
+	}
+
+	private static Windows.Networking.Sockets.IStreamSocketStatics _staticInstance;
+	public static Windows.Networking.Sockets.IStreamSocketStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.Sockets.IStreamSocketStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair)) GetEndpointPairsAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Sockets.IStreamSocketStatics).abi_GetEndpointPairsAsync(remoteHostName, remoteServiceName, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair)) GetEndpointPairsWithSortOptionsAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName, Windows.Networking.HostNameSortOptions sortOptions)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Sockets.IStreamSocketStatics).abi_GetEndpointPairsWithSortOptionsAsync(remoteHostName, remoteServiceName, sortOptions, &_ret));
+		return _ret;
 	}
 }
 
@@ -1491,12 +1554,12 @@ extern(Windows):
 	final EventRegistrationToken OnConnectionReceived(void delegate(Windows.Networking.Sockets.StreamSocketListener, Windows.Networking.Sockets.StreamSocketListenerConnectionReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ConnectionReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.StreamSocketListener, Windows.Networking.Sockets.StreamSocketListenerConnectionReceivedEventArgs), Windows.Networking.Sockets.StreamSocketListener, Windows.Networking.Sockets.StreamSocketListenerConnectionReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener).add_ConnectionReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.StreamSocketListener, Windows.Networking.Sockets.StreamSocketListenerConnectionReceivedEventArgs), Windows.Networking.Sockets.StreamSocketListener, Windows.Networking.Sockets.StreamSocketListenerConnectionReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeConnectionReceived(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_ConnectionReceived(eventCookie));
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener).remove_ConnectionReceived(eventCookie));
 	}
 	final void Close()
 	{
@@ -1655,12 +1718,12 @@ extern(Windows):
 	final EventRegistrationToken OnClosed(void delegate(Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs), Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs), Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeClosed(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_Closed(eventCookie));
+		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).remove_Closed(eventCookie));
 	}
 	final void CloseWithStatus(UINT16 code, HSTRING reason)
 	{
@@ -1673,12 +1736,12 @@ extern(Windows):
 	final EventRegistrationToken OnServerCustomValidationRequested(void delegate(Windows.Networking.Sockets.StreamWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ServerCustomValidationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.StreamWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs), Windows.Networking.Sockets.StreamWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamWebSocket2).add_ServerCustomValidationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.StreamWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs), Windows.Networking.Sockets.StreamWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeServerCustomValidationRequested(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_ServerCustomValidationRequested(eventCookie));
+		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamWebSocket2).remove_ServerCustomValidationRequested(eventCookie));
 	}
 }
 
@@ -1805,6 +1868,18 @@ extern(Windows):
 
 interface WebSocketError
 {
+	private static Windows.Networking.Sockets.IWebSocketErrorStatics _staticInstance;
+	public static Windows.Networking.Sockets.IWebSocketErrorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.Sockets.IWebSocketErrorStatics);
+		return _staticInstance;
+	}
+	static Windows.Web.WebErrorStatus GetStatus(INT32 hresult)
+	{
+		Windows.Web.WebErrorStatus _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Sockets.IWebSocketErrorStatics).abi_GetStatus(hresult, &_ret));
+		return _ret;
+	}
 }
 
 interface WebSocketKeepAlive : Windows.ApplicationModel.Background.IBackgroundTask

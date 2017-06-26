@@ -41,6 +41,60 @@ extern(Windows):
 
 interface PlatformDiagnosticActions
 {
+	private static Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticActionsStatics _staticInstance;
+	public static Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticActionsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticActionsStatics);
+		return _staticInstance;
+	}
+	static bool IsScenarioEnabled(GUID scenarioId)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticActionsStatics).abi_IsScenarioEnabled(scenarioId, &_ret));
+		return _ret;
+	}
+	static bool TryEscalateScenario(GUID scenarioId, Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticEscalationType escalationType, HSTRING outputDirectory, bool timestampOutputDirectory, bool forceEscalationUpload, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) triggers)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticActionsStatics).abi_TryEscalateScenario(scenarioId, escalationType, outputDirectory, timestampOutputDirectory, forceEscalationUpload, triggers, &_ret));
+		return _ret;
+	}
+	static Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticActionState DownloadLatestSettingsForNamespace(HSTRING partner, HSTRING feature, bool isScenarioNamespace, bool downloadOverCostedNetwork, bool downloadOverBattery)
+	{
+		Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticActionState _ret;
+		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticActionsStatics).abi_DownloadLatestSettingsForNamespace(partner, feature, isScenarioNamespace, downloadOverCostedNetwork, downloadOverBattery, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(GUID) GetActiveScenarioList()
+	{
+		Windows.Foundation.Collections.IVectorView!(GUID) _ret;
+		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticActionsStatics).abi_GetActiveScenarioList(&_ret));
+		return _ret;
+	}
+	static Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticActionState ForceUpload(Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticEventBufferLatencies latency, bool uploadOverCostedNetwork, bool uploadOverBattery)
+	{
+		Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticActionState _ret;
+		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticActionsStatics).abi_ForceUpload(latency, uploadOverCostedNetwork, uploadOverBattery, &_ret));
+		return _ret;
+	}
+	static Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceSlotState IsTraceRunning(Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceSlotType slotType, GUID scenarioId, ulong traceProfileHash)
+	{
+		Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceSlotState _ret;
+		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticActionsStatics).abi_IsTraceRunning(slotType, scenarioId, traceProfileHash, &_ret));
+		return _ret;
+	}
+	static Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceRuntimeInfo GetActiveTraceRuntime(Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceSlotType slotType)
+	{
+		Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceRuntimeInfo _ret;
+		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticActionsStatics).abi_GetActiveTraceRuntime(slotType, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceInfo) GetKnownTraceList(Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceSlotType slotType)
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceInfo) _ret;
+		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticActionsStatics).abi_GetKnownTraceList(slotType, &_ret));
+		return _ret;
+	}
 }
 
 interface PlatformDiagnosticTraceInfo : Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceInfo

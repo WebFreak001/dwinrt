@@ -295,6 +295,24 @@ extern(Windows):
 
 interface VoiceCommandDefinitionManager
 {
+	private static Windows.ApplicationModel.VoiceCommands.IVoiceCommandDefinitionManagerStatics _staticInstance;
+	public static Windows.ApplicationModel.VoiceCommands.IVoiceCommandDefinitionManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandDefinitionManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncAction InstallCommandDefinitionsFromStorageFileAsync(Windows.Storage.StorageFile file)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandDefinitionManagerStatics).abi_InstallCommandDefinitionsFromStorageFileAsync(file, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition) InstalledCommandDefinitions()
+	{
+		Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandDefinitionManagerStatics).get_InstalledCommandDefinitions(&_ret));
+		return _ret;
+	}
 }
 
 interface VoiceCommandDisambiguationResult : Windows.ApplicationModel.VoiceCommands.IVoiceCommandDisambiguationResult
@@ -345,6 +363,43 @@ extern(Windows):
 	{
 		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile) _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandResponse).get_VoiceCommandContentTiles(&_ret));
+		return _ret;
+	}
+
+	private static Windows.ApplicationModel.VoiceCommands.IVoiceCommandResponseStatics _staticInstance;
+	public static Windows.ApplicationModel.VoiceCommands.IVoiceCommandResponseStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandResponseStatics);
+		return _staticInstance;
+	}
+	static UINT32 MaxSupportedVoiceCommandContentTiles()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandResponseStatics).get_MaxSupportedVoiceCommandContentTiles(&_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse CreateResponse(Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage userMessage)
+	{
+		Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandResponseStatics).abi_CreateResponse(userMessage, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse CreateResponseWithTiles(Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage message, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile) contentTiles)
+	{
+		Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandResponseStatics).abi_CreateResponseWithTiles(message, contentTiles, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse CreateResponseForPrompt(Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage message, Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage repeatMessage)
+	{
+		Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandResponseStatics).abi_CreateResponseForPrompt(message, repeatMessage, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse CreateResponseForPromptWithTiles(Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage message, Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage repeatMessage, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile) contentTiles)
+	{
+		Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandResponseStatics).abi_CreateResponseForPromptWithTiles(message, repeatMessage, contentTiles, &_ret));
 		return _ret;
 	}
 }
@@ -403,12 +458,25 @@ extern(Windows):
 	final EventRegistrationToken OnVoiceCommandCompleted(void delegate(Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection, Windows.ApplicationModel.VoiceCommands.VoiceCommandCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_VoiceCommandCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection, Windows.ApplicationModel.VoiceCommands.VoiceCommandCompletedEventArgs), Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection, Windows.ApplicationModel.VoiceCommands.VoiceCommandCompletedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandServiceConnection).add_VoiceCommandCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection, Windows.ApplicationModel.VoiceCommands.VoiceCommandCompletedEventArgs), Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection, Windows.ApplicationModel.VoiceCommands.VoiceCommandCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeVoiceCommandCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_VoiceCommandCompleted(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandServiceConnection).remove_VoiceCommandCompleted(token));
+	}
+
+	private static Windows.ApplicationModel.VoiceCommands.IVoiceCommandServiceConnectionStatics _staticInstance;
+	public static Windows.ApplicationModel.VoiceCommands.IVoiceCommandServiceConnectionStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandServiceConnectionStatics);
+		return _staticInstance;
+	}
+	static Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection FromAppServiceTriggerDetails(Windows.ApplicationModel.AppService.AppServiceTriggerDetails triggerDetails)
+	{
+		Windows.ApplicationModel.VoiceCommands.VoiceCommandServiceConnection _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.VoiceCommands.IVoiceCommandServiceConnectionStatics).abi_FromAppServiceTriggerDetails(triggerDetails, &_ret));
+		return _ret;
 	}
 }
 

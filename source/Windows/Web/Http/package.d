@@ -605,6 +605,55 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Web.Http.IHttpMethodStatics _staticInstance;
+	public static Windows.Web.Http.IHttpMethodStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Web.Http.IHttpMethodStatics);
+		return _staticInstance;
+	}
+	static Windows.Web.Http.HttpMethod Delete()
+	{
+		Windows.Web.Http.HttpMethod _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.IHttpMethodStatics).get_Delete(&_ret));
+		return _ret;
+	}
+	static Windows.Web.Http.HttpMethod Get()
+	{
+		Windows.Web.Http.HttpMethod _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.IHttpMethodStatics).get_Get(&_ret));
+		return _ret;
+	}
+	static Windows.Web.Http.HttpMethod Head()
+	{
+		Windows.Web.Http.HttpMethod _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.IHttpMethodStatics).get_Head(&_ret));
+		return _ret;
+	}
+	static Windows.Web.Http.HttpMethod Options()
+	{
+		Windows.Web.Http.HttpMethod _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.IHttpMethodStatics).get_Options(&_ret));
+		return _ret;
+	}
+	static Windows.Web.Http.HttpMethod Patch()
+	{
+		Windows.Web.Http.HttpMethod _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.IHttpMethodStatics).get_Patch(&_ret));
+		return _ret;
+	}
+	static Windows.Web.Http.HttpMethod Post()
+	{
+		Windows.Web.Http.HttpMethod _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.IHttpMethodStatics).get_Post(&_ret));
+		return _ret;
+	}
+	static Windows.Web.Http.HttpMethod Put()
+	{
+		Windows.Web.Http.HttpMethod _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.IHttpMethodStatics).get_Put(&_ret));
+		return _ret;
+	}
 }
 
 interface HttpMultipartContent : Windows.Web.Http.IHttpContent, Windows.Foundation.IClosable, Windows.Web.Http.IHttpMultipartContent, Windows.Foundation.Collections.IIterable!(Windows.Web.Http.IHttpContent), Windows.Foundation.IStringable

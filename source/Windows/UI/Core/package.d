@@ -793,12 +793,12 @@ extern(Windows):
 	final EventRegistrationToken OnAcceleratorKeyActivated(void delegate(Windows.UI.Core.CoreDispatcher, Windows.UI.Core.AcceleratorKeyEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AcceleratorKeyActivated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreDispatcher, Windows.UI.Core.AcceleratorKeyEventArgs), Windows.UI.Core.CoreDispatcher, Windows.UI.Core.AcceleratorKeyEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreAcceleratorKeys).add_AcceleratorKeyActivated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreDispatcher, Windows.UI.Core.AcceleratorKeyEventArgs), Windows.UI.Core.CoreDispatcher, Windows.UI.Core.AcceleratorKeyEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAcceleratorKeyActivated(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_AcceleratorKeyActivated(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreAcceleratorKeys).remove_AcceleratorKeyActivated(cookie));
 	}
 }
 
@@ -824,12 +824,12 @@ extern(Windows):
 	final EventRegistrationToken OnInputEnabled(void delegate(IInspectable, Windows.UI.Core.InputEnabledEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_InputEnabled(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.InputEnabledEventArgs), IInspectable, Windows.UI.Core.InputEnabledEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreInputSourceBase).add_InputEnabled(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.InputEnabledEventArgs), IInspectable, Windows.UI.Core.InputEnabledEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeInputEnabled(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_InputEnabled(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreInputSourceBase).remove_InputEnabled(cookie));
 	}
 	final void ReleasePointerCapture()
 	{
@@ -864,72 +864,72 @@ extern(Windows):
 	final EventRegistrationToken OnPointerCaptureLost(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerCaptureLost(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerCaptureLost(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerCaptureLost(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerCaptureLost(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerCaptureLost(cookie));
 	}
 	final EventRegistrationToken OnPointerEntered(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerEntered(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerEntered(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerEntered(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerEntered(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerEntered(cookie));
 	}
 	final EventRegistrationToken OnPointerExited(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerExited(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerExited(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerExited(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerExited(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerExited(cookie));
 	}
 	final EventRegistrationToken OnPointerMoved(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerMoved(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerMoved(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerMoved(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerMoved(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerMoved(cookie));
 	}
 	final EventRegistrationToken OnPointerPressed(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerPressed(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerPressed(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerPressed(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerPressed(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerPressed(cookie));
 	}
 	final EventRegistrationToken OnPointerReleased(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerReleased(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerReleased(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerReleased(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerReleased(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerReleased(cookie));
 	}
 	final EventRegistrationToken OnPointerWheelChanged(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerWheelChanged(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerWheelChanged(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerWheelChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerWheelChanged(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerWheelChanged(cookie));
 	}
 	final Windows.UI.Core.CoreVirtualKeyStates GetCurrentKeyState(Windows.System.VirtualKey virtualKey)
 	{
@@ -940,32 +940,32 @@ extern(Windows):
 	final EventRegistrationToken OnCharacterReceived(void delegate(IInspectable, Windows.UI.Core.CharacterReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_CharacterReceived(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.CharacterReceivedEventArgs), IInspectable, Windows.UI.Core.CharacterReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreKeyboardInputSource).add_CharacterReceived(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.CharacterReceivedEventArgs), IInspectable, Windows.UI.Core.CharacterReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCharacterReceived(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_CharacterReceived(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreKeyboardInputSource).remove_CharacterReceived(cookie));
 	}
 	final EventRegistrationToken OnKeyDown(void delegate(IInspectable, Windows.UI.Core.KeyEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_KeyDown(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.KeyEventArgs), IInspectable, Windows.UI.Core.KeyEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreKeyboardInputSource).add_KeyDown(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.KeyEventArgs), IInspectable, Windows.UI.Core.KeyEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeKeyDown(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_KeyDown(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreKeyboardInputSource).remove_KeyDown(cookie));
 	}
 	final EventRegistrationToken OnKeyUp(void delegate(IInspectable, Windows.UI.Core.KeyEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_KeyUp(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.KeyEventArgs), IInspectable, Windows.UI.Core.KeyEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreKeyboardInputSource).add_KeyUp(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.KeyEventArgs), IInspectable, Windows.UI.Core.KeyEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeKeyUp(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_KeyUp(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreKeyboardInputSource).remove_KeyUp(cookie));
 	}
 	final bool HasFocus()
 	{
@@ -976,42 +976,42 @@ extern(Windows):
 	final EventRegistrationToken OnGotFocus(void delegate(IInspectable, Windows.UI.Core.CoreWindowEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_GotFocus(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.CoreWindowEventArgs), IInspectable, Windows.UI.Core.CoreWindowEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreComponentFocusable).add_GotFocus(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.CoreWindowEventArgs), IInspectable, Windows.UI.Core.CoreWindowEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeGotFocus(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_GotFocus(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreComponentFocusable).remove_GotFocus(cookie));
 	}
 	final EventRegistrationToken OnLostFocus(void delegate(IInspectable, Windows.UI.Core.CoreWindowEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_LostFocus(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.CoreWindowEventArgs), IInspectable, Windows.UI.Core.CoreWindowEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreComponentFocusable).add_LostFocus(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.CoreWindowEventArgs), IInspectable, Windows.UI.Core.CoreWindowEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeLostFocus(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_LostFocus(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreComponentFocusable).remove_LostFocus(cookie));
 	}
 	final EventRegistrationToken OnTouchHitTesting(void delegate(IInspectable, Windows.UI.Core.TouchHitTestingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_TouchHitTesting(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.TouchHitTestingEventArgs), IInspectable, Windows.UI.Core.TouchHitTestingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreTouchHitTesting).add_TouchHitTesting(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.TouchHitTestingEventArgs), IInspectable, Windows.UI.Core.TouchHitTestingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTouchHitTesting(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_TouchHitTesting(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreTouchHitTesting).remove_TouchHitTesting(cookie));
 	}
 	final EventRegistrationToken OnClosestInteractiveBoundsRequested(void delegate(Windows.UI.Core.CoreComponentInputSource, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ClosestInteractiveBoundsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreComponentInputSource, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs), Windows.UI.Core.CoreComponentInputSource, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreClosestInteractiveBoundsRequested).add_ClosestInteractiveBoundsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreComponentInputSource, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs), Windows.UI.Core.CoreComponentInputSource, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeClosestInteractiveBoundsRequested(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_ClosestInteractiveBoundsRequested(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreClosestInteractiveBoundsRequested).remove_ClosestInteractiveBoundsRequested(cookie));
 	}
 	final HSTRING GetCurrentKeyEventDeviceId()
 	{
@@ -1066,12 +1066,12 @@ extern(Windows):
 	final EventRegistrationToken OnAcceleratorKeyActivated(void delegate(Windows.UI.Core.CoreDispatcher, Windows.UI.Core.AcceleratorKeyEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AcceleratorKeyActivated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreDispatcher, Windows.UI.Core.AcceleratorKeyEventArgs), Windows.UI.Core.CoreDispatcher, Windows.UI.Core.AcceleratorKeyEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreAcceleratorKeys).add_AcceleratorKeyActivated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreDispatcher, Windows.UI.Core.AcceleratorKeyEventArgs), Windows.UI.Core.CoreDispatcher, Windows.UI.Core.AcceleratorKeyEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAcceleratorKeyActivated(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_AcceleratorKeyActivated(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreAcceleratorKeys).remove_AcceleratorKeyActivated(cookie));
 	}
 	final Windows.UI.Core.CoreDispatcherPriority CurrentPriority()
 	{
@@ -1135,12 +1135,12 @@ extern(Windows):
 	final EventRegistrationToken OnInputEnabled(void delegate(IInspectable, Windows.UI.Core.InputEnabledEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_InputEnabled(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.InputEnabledEventArgs), IInspectable, Windows.UI.Core.InputEnabledEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreInputSourceBase).add_InputEnabled(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.InputEnabledEventArgs), IInspectable, Windows.UI.Core.InputEnabledEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeInputEnabled(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_InputEnabled(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreInputSourceBase).remove_InputEnabled(cookie));
 	}
 	final void ReleasePointerCapture()
 	{
@@ -1175,72 +1175,72 @@ extern(Windows):
 	final EventRegistrationToken OnPointerCaptureLost(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerCaptureLost(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerCaptureLost(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerCaptureLost(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerCaptureLost(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerCaptureLost(cookie));
 	}
 	final EventRegistrationToken OnPointerEntered(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerEntered(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerEntered(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerEntered(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerEntered(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerEntered(cookie));
 	}
 	final EventRegistrationToken OnPointerExited(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerExited(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerExited(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerExited(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerExited(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerExited(cookie));
 	}
 	final EventRegistrationToken OnPointerMoved(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerMoved(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerMoved(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerMoved(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerMoved(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerMoved(cookie));
 	}
 	final EventRegistrationToken OnPointerPressed(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerPressed(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerPressed(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerPressed(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerPressed(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerPressed(cookie));
 	}
 	final EventRegistrationToken OnPointerReleased(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerReleased(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerReleased(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerReleased(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerReleased(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerReleased(cookie));
 	}
 	final EventRegistrationToken OnPointerWheelChanged(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerWheelChanged(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerWheelChanged(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerWheelChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerWheelChanged(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerWheelChanged(cookie));
 	}
 }
 
@@ -1344,172 +1344,172 @@ extern(Windows):
 	final EventRegistrationToken OnActivated(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.WindowActivatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Activated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.WindowActivatedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.WindowActivatedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_Activated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.WindowActivatedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.WindowActivatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeActivated(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_Activated(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_Activated(cookie));
 	}
 	final EventRegistrationToken OnAutomationProviderRequested(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.AutomationProviderRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AutomationProviderRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.AutomationProviderRequestedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.AutomationProviderRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_AutomationProviderRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.AutomationProviderRequestedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.AutomationProviderRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAutomationProviderRequested(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_AutomationProviderRequested(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_AutomationProviderRequested(cookie));
 	}
 	final EventRegistrationToken OnCharacterReceived(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.CharacterReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_CharacterReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.CharacterReceivedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.CharacterReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_CharacterReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.CharacterReceivedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.CharacterReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCharacterReceived(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_CharacterReceived(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_CharacterReceived(cookie));
 	}
 	final EventRegistrationToken OnClosed(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeClosed(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_Closed(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_Closed(cookie));
 	}
 	final EventRegistrationToken OnInputEnabled(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.InputEnabledEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_InputEnabled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.InputEnabledEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.InputEnabledEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_InputEnabled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.InputEnabledEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.InputEnabledEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeInputEnabled(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_InputEnabled(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_InputEnabled(cookie));
 	}
 	final EventRegistrationToken OnKeyDown(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.KeyEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_KeyDown(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.KeyEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.KeyEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_KeyDown(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.KeyEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.KeyEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeKeyDown(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_KeyDown(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_KeyDown(cookie));
 	}
 	final EventRegistrationToken OnKeyUp(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.KeyEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_KeyUp(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.KeyEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.KeyEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_KeyUp(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.KeyEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.KeyEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeKeyUp(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_KeyUp(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_KeyUp(cookie));
 	}
 	final EventRegistrationToken OnPointerCaptureLost(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerCaptureLost(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_PointerCaptureLost(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerCaptureLost(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerCaptureLost(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_PointerCaptureLost(cookie));
 	}
 	final EventRegistrationToken OnPointerEntered(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerEntered(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_PointerEntered(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerEntered(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerEntered(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_PointerEntered(cookie));
 	}
 	final EventRegistrationToken OnPointerExited(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerExited(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_PointerExited(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerExited(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerExited(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_PointerExited(cookie));
 	}
 	final EventRegistrationToken OnPointerMoved(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerMoved(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_PointerMoved(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerMoved(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerMoved(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_PointerMoved(cookie));
 	}
 	final EventRegistrationToken OnPointerPressed(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerPressed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_PointerPressed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerPressed(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerPressed(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_PointerPressed(cookie));
 	}
 	final EventRegistrationToken OnPointerReleased(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerReleased(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_PointerReleased(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerReleased(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerReleased(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_PointerReleased(cookie));
 	}
 	final EventRegistrationToken OnTouchHitTesting(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.TouchHitTestingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_TouchHitTesting(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.TouchHitTestingEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.TouchHitTestingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_TouchHitTesting(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.TouchHitTestingEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.TouchHitTestingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTouchHitTesting(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_TouchHitTesting(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_TouchHitTesting(cookie));
 	}
 	final EventRegistrationToken OnPointerWheelChanged(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerWheelChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_PointerWheelChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerWheelChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerWheelChanged(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_PointerWheelChanged(cookie));
 	}
 	final EventRegistrationToken OnSizeChanged(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.WindowSizeChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SizeChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.WindowSizeChangedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.WindowSizeChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_SizeChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.WindowSizeChangedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.WindowSizeChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSizeChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_SizeChanged(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_SizeChanged(cookie));
 	}
 	final EventRegistrationToken OnVisibilityChanged(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.VisibilityChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_VisibilityChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.VisibilityChangedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.VisibilityChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_VisibilityChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.VisibilityChangedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.VisibilityChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeVisibilityChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_VisibilityChanged(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_VisibilityChanged(cookie));
 	}
 	final void PointerPosition(Windows.Foundation.Point value)
 	{
@@ -1518,42 +1518,42 @@ extern(Windows):
 	final EventRegistrationToken OnPointerRoutedAway(void delegate(Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerRoutedAway(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerRedirector).add_PointerRoutedAway(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerRoutedAway(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerRoutedAway(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerRedirector).remove_PointerRoutedAway(cookie));
 	}
 	final EventRegistrationToken OnPointerRoutedTo(void delegate(Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerRoutedTo(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerRedirector).add_PointerRoutedTo(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerRoutedTo(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerRoutedTo(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerRedirector).remove_PointerRoutedTo(cookie));
 	}
 	final EventRegistrationToken OnPointerRoutedReleased(void delegate(Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PointerRoutedReleased(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerRedirector).add_PointerRoutedReleased(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerRoutedReleased(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_PointerRoutedReleased(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICorePointerRedirector).remove_PointerRoutedReleased(cookie));
 	}
 	final EventRegistrationToken OnClosestInteractiveBoundsRequested(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ClosestInteractiveBoundsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow3).add_ClosestInteractiveBoundsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeClosestInteractiveBoundsRequested(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_ClosestInteractiveBoundsRequested(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow3).remove_ClosestInteractiveBoundsRequested(cookie));
 	}
 	final HSTRING GetCurrentKeyEventDeviceId()
 	{
@@ -1564,22 +1564,35 @@ extern(Windows):
 	final EventRegistrationToken OnResizeStarted(void delegate(Windows.UI.Core.CoreWindow, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ResizeStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, IInspectable), Windows.UI.Core.CoreWindow, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow4).add_ResizeStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, IInspectable), Windows.UI.Core.CoreWindow, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeResizeStarted(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_ResizeStarted(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow4).remove_ResizeStarted(cookie));
 	}
 	final EventRegistrationToken OnResizeCompleted(void delegate(Windows.UI.Core.CoreWindow, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ResizeCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, IInspectable), Windows.UI.Core.CoreWindow, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow4).add_ResizeCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, IInspectable), Windows.UI.Core.CoreWindow, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeResizeCompleted(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_ResizeCompleted(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow4).remove_ResizeCompleted(cookie));
+	}
+
+	private static Windows.UI.Core.ICoreWindowStatic _staticInstance;
+	public static Windows.UI.Core.ICoreWindowStatic staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Core.ICoreWindowStatic);
+		return _staticInstance;
+	}
+	static Windows.UI.Core.CoreWindow GetForCurrentThread()
+	{
+		Windows.UI.Core.CoreWindow _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Core.ICoreWindowStatic).abi_GetForCurrentThread(&_ret));
+		return _ret;
 	}
 }
 
@@ -1589,12 +1602,12 @@ extern(Windows):
 	final EventRegistrationToken OnShowing(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Showing(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).add_Showing(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeShowing(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_Showing(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).remove_Showing(cookie));
 	}
 	final Windows.Foundation.Size MaxSize()
 	{
@@ -1693,12 +1706,12 @@ extern(Windows):
 	final EventRegistrationToken OnShowing(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Showing(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).add_Showing(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeShowing(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_Showing(cookie));
+		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).remove_Showing(cookie));
 	}
 	final Windows.Foundation.Size MaxSize()
 	{
@@ -1790,6 +1803,19 @@ extern(Windows):
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowResizeManagerLayoutCapability).get_ShouldWaitForLayoutCompletion(&_ret));
+		return _ret;
+	}
+
+	private static Windows.UI.Core.ICoreWindowResizeManagerStatics _staticInstance;
+	public static Windows.UI.Core.ICoreWindowResizeManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Core.ICoreWindowResizeManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Core.CoreWindowResizeManager GetForCurrentView()
+	{
+		Windows.UI.Core.CoreWindowResizeManager _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Core.ICoreWindowResizeManagerStatics).abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 }
@@ -1898,12 +1924,12 @@ extern(Windows):
 	final EventRegistrationToken OnBackRequested(void delegate(IInspectable, Windows.UI.Core.BackRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_BackRequested(event!(Windows.Foundation.EventHandler!(Windows.UI.Core.BackRequestedEventArgs), IInspectable, Windows.UI.Core.BackRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Core.ISystemNavigationManager).add_BackRequested(event!(Windows.Foundation.EventHandler!(Windows.UI.Core.BackRequestedEventArgs), IInspectable, Windows.UI.Core.BackRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeBackRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_BackRequested(token));
+		Debug.OK(this.as!(Windows.UI.Core.ISystemNavigationManager).remove_BackRequested(token));
 	}
 	final Windows.UI.Core.AppViewBackButtonVisibility AppViewBackButtonVisibility()
 	{
@@ -1914,6 +1940,19 @@ extern(Windows):
 	final void AppViewBackButtonVisibility(Windows.UI.Core.AppViewBackButtonVisibility value)
 	{
 		Debug.OK(this.as!(Windows.UI.Core.ISystemNavigationManager2).set_AppViewBackButtonVisibility(value));
+	}
+
+	private static Windows.UI.Core.ISystemNavigationManagerStatics _staticInstance;
+	public static Windows.UI.Core.ISystemNavigationManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Core.ISystemNavigationManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Core.SystemNavigationManager GetForCurrentView()
+	{
+		Windows.UI.Core.SystemNavigationManager _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Core.ISystemNavigationManagerStatics).abi_GetForCurrentView(&_ret));
+		return _ret;
 	}
 }
 

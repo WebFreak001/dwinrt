@@ -379,12 +379,12 @@ extern(Windows):
 	final EventRegistrationToken OnFrameArrived(void delegate(Windows.Media.Capture.Frames.MediaFrameReader, Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_FrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Frames.MediaFrameReader, Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs), Windows.Media.Capture.Frames.MediaFrameReader, Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameReader).add_FrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Frames.MediaFrameReader, Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs), Windows.Media.Capture.Frames.MediaFrameReader, Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeFrameArrived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_FrameArrived(token));
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameReader).remove_FrameArrived(token));
 	}
 	final Windows.Media.Capture.Frames.MediaFrameReference TryAcquireLatestFrame()
 	{
@@ -503,12 +503,12 @@ extern(Windows):
 	final EventRegistrationToken OnFormatChanged(void delegate(Windows.Media.Capture.Frames.MediaFrameSource, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_FormatChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Frames.MediaFrameSource, IInspectable), Windows.Media.Capture.Frames.MediaFrameSource, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSource).add_FormatChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Frames.MediaFrameSource, IInspectable), Windows.Media.Capture.Frames.MediaFrameSource, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeFormatChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_FormatChanged(token));
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSource).remove_FormatChanged(token));
 	}
 	final Windows.Media.Devices.Core.CameraIntrinsics TryGetCameraIntrinsics(Windows.Media.Capture.Frames.MediaFrameFormat format)
 	{
@@ -591,6 +591,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMediaFrameSourceGroup).get_SourceInfos(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Media.Capture.Frames.IMediaFrameSourceGroupStatics _staticInstance;
+	public static Windows.Media.Capture.Frames.IMediaFrameSourceGroupStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Capture.Frames.IMediaFrameSourceGroupStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.Frames.MediaFrameSourceGroup)) FindAllAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.Frames.MediaFrameSourceGroup)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Capture.Frames.IMediaFrameSourceGroupStatics).abi_FindAllAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceGroup) FromIdAsync(HSTRING id)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceGroup) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Capture.Frames.IMediaFrameSourceGroupStatics).abi_FromIdAsync(id, &_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Capture.Frames.IMediaFrameSourceGroupStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaFrameSourceInfo : Windows.Media.Capture.Frames.IMediaFrameSourceInfo
@@ -650,12 +675,12 @@ extern(Windows):
 	final EventRegistrationToken OnFrameArrived(void delegate(Windows.Media.Capture.Frames.MultiSourceMediaFrameReader, Windows.Media.Capture.Frames.MultiSourceMediaFrameArrivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_FrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Frames.MultiSourceMediaFrameReader, Windows.Media.Capture.Frames.MultiSourceMediaFrameArrivedEventArgs), Windows.Media.Capture.Frames.MultiSourceMediaFrameReader, Windows.Media.Capture.Frames.MultiSourceMediaFrameArrivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMultiSourceMediaFrameReader).add_FrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Frames.MultiSourceMediaFrameReader, Windows.Media.Capture.Frames.MultiSourceMediaFrameArrivedEventArgs), Windows.Media.Capture.Frames.MultiSourceMediaFrameReader, Windows.Media.Capture.Frames.MultiSourceMediaFrameArrivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeFrameArrived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_FrameArrived(token));
+		Debug.OK(this.as!(Windows.Media.Capture.Frames.IMultiSourceMediaFrameReader).remove_FrameArrived(token));
 	}
 	final Windows.Media.Capture.Frames.MultiSourceMediaFrameReference TryAcquireLatestFrame()
 	{

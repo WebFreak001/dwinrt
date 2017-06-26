@@ -27,4 +27,17 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Preview.InkWorkspace.IInkWorkspaceHostedAppManager).abi_SetThumbnailAsync(bitmap, &_ret));
 		return _ret;
 	}
+
+	private static Windows.ApplicationModel.Preview.InkWorkspace.IInkWorkspaceHostedAppManagerStatics _staticInstance;
+	public static Windows.ApplicationModel.Preview.InkWorkspace.IInkWorkspaceHostedAppManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Preview.InkWorkspace.IInkWorkspaceHostedAppManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.ApplicationModel.Preview.InkWorkspace.InkWorkspaceHostedAppManager GetForCurrentApp()
+	{
+		Windows.ApplicationModel.Preview.InkWorkspace.InkWorkspaceHostedAppManager _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Preview.InkWorkspace.IInkWorkspaceHostedAppManagerStatics).abi_GetForCurrentApp(&_ret));
+		return _ret;
+	}
 }

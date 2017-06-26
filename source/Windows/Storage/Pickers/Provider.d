@@ -159,23 +159,23 @@ extern(Windows):
 	final EventRegistrationToken OnFileRemoved(void delegate(Windows.Storage.Pickers.Provider.FileOpenPickerUI, Windows.Storage.Pickers.Provider.FileRemovedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_FileRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileOpenPickerUI, Windows.Storage.Pickers.Provider.FileRemovedEventArgs), Windows.Storage.Pickers.Provider.FileOpenPickerUI, Windows.Storage.Pickers.Provider.FileRemovedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).add_FileRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileOpenPickerUI, Windows.Storage.Pickers.Provider.FileRemovedEventArgs), Windows.Storage.Pickers.Provider.FileOpenPickerUI, Windows.Storage.Pickers.Provider.FileRemovedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")
 	final void removeFileRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(remove_FileRemoved(token));
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).remove_FileRemoved(token));
 	}
 	final EventRegistrationToken OnClosing(void delegate(Windows.Storage.Pickers.Provider.FileOpenPickerUI, Windows.Storage.Pickers.Provider.PickerClosingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Closing(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileOpenPickerUI, Windows.Storage.Pickers.Provider.PickerClosingEventArgs), Windows.Storage.Pickers.Provider.FileOpenPickerUI, Windows.Storage.Pickers.Provider.PickerClosingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).add_Closing(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileOpenPickerUI, Windows.Storage.Pickers.Provider.PickerClosingEventArgs), Windows.Storage.Pickers.Provider.FileOpenPickerUI, Windows.Storage.Pickers.Provider.PickerClosingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeClosing(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Closing(token));
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).remove_Closing(token));
 	}
 }
 
@@ -231,22 +231,22 @@ extern(Windows):
 	final EventRegistrationToken OnFileNameChanged(void delegate(Windows.Storage.Pickers.Provider.FileSavePickerUI, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_FileNameChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileSavePickerUI, IInspectable), Windows.Storage.Pickers.Provider.FileSavePickerUI, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileSavePickerUI).add_FileNameChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileSavePickerUI, IInspectable), Windows.Storage.Pickers.Provider.FileSavePickerUI, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeFileNameChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_FileNameChanged(token));
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileSavePickerUI).remove_FileNameChanged(token));
 	}
 	final EventRegistrationToken OnTargetFileRequested(void delegate(Windows.Storage.Pickers.Provider.FileSavePickerUI, Windows.Storage.Pickers.Provider.TargetFileRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_TargetFileRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileSavePickerUI, Windows.Storage.Pickers.Provider.TargetFileRequestedEventArgs), Windows.Storage.Pickers.Provider.FileSavePickerUI, Windows.Storage.Pickers.Provider.TargetFileRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileSavePickerUI).add_TargetFileRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileSavePickerUI, Windows.Storage.Pickers.Provider.TargetFileRequestedEventArgs), Windows.Storage.Pickers.Provider.FileSavePickerUI, Windows.Storage.Pickers.Provider.TargetFileRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTargetFileRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_TargetFileRequested(token));
+		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileSavePickerUI).remove_TargetFileRequested(token));
 	}
 }
 

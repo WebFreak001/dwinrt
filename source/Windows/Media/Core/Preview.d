@@ -14,4 +14,26 @@ extern(Windows):
 
 interface SoundLevelBroker
 {
+	private static Windows.Media.Core.Preview.ISoundLevelBrokerStatics _staticInstance;
+	public static Windows.Media.Core.Preview.ISoundLevelBrokerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Core.Preview.ISoundLevelBrokerStatics);
+		return _staticInstance;
+	}
+	static Windows.Media.SoundLevel SoundLevel()
+	{
+		Windows.Media.SoundLevel _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.Preview.ISoundLevelBrokerStatics).get_SoundLevel(&_ret));
+		return _ret;
+	}
+	static EventRegistrationToken OnSoundLevelChanged(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.Preview.ISoundLevelBrokerStatics).add_SoundLevelChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
+	static void removeSoundLevelChanged(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.Core.Preview.ISoundLevelBrokerStatics).remove_SoundLevelChanged(token));
+	}
 }

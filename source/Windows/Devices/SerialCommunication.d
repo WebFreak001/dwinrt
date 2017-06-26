@@ -254,26 +254,57 @@ extern(Windows):
 	final EventRegistrationToken OnErrorReceived(void delegate(Windows.Devices.SerialCommunication.SerialDevice, Windows.Devices.SerialCommunication.ErrorReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ErrorReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.SerialCommunication.SerialDevice, Windows.Devices.SerialCommunication.ErrorReceivedEventArgs), Windows.Devices.SerialCommunication.SerialDevice, Windows.Devices.SerialCommunication.ErrorReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).add_ErrorReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.SerialCommunication.SerialDevice, Windows.Devices.SerialCommunication.ErrorReceivedEventArgs), Windows.Devices.SerialCommunication.SerialDevice, Windows.Devices.SerialCommunication.ErrorReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeErrorReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ErrorReceived(token));
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).remove_ErrorReceived(token));
 	}
 	final EventRegistrationToken OnPinChanged(void delegate(Windows.Devices.SerialCommunication.SerialDevice, Windows.Devices.SerialCommunication.PinChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PinChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.SerialCommunication.SerialDevice, Windows.Devices.SerialCommunication.PinChangedEventArgs), Windows.Devices.SerialCommunication.SerialDevice, Windows.Devices.SerialCommunication.PinChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).add_PinChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.SerialCommunication.SerialDevice, Windows.Devices.SerialCommunication.PinChangedEventArgs), Windows.Devices.SerialCommunication.SerialDevice, Windows.Devices.SerialCommunication.PinChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePinChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PinChanged(token));
+		Debug.OK(this.as!(Windows.Devices.SerialCommunication.ISerialDevice).remove_PinChanged(token));
 	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+
+	private static Windows.Devices.SerialCommunication.ISerialDeviceStatics _staticInstance;
+	public static Windows.Devices.SerialCommunication.ISerialDeviceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.SerialCommunication.ISerialDeviceStatics);
+		return _staticInstance;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.SerialCommunication.ISerialDeviceStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelectorFromPortName(HSTRING portName)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.SerialCommunication.ISerialDeviceStatics).abi_GetDeviceSelectorFromPortName(portName, &_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelectorFromUsbVidPid(UINT16 vendorId, UINT16 productId)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.SerialCommunication.ISerialDeviceStatics).abi_GetDeviceSelectorFromUsbVidPid(vendorId, productId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.SerialCommunication.SerialDevice) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.SerialCommunication.SerialDevice) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.SerialCommunication.ISerialDeviceStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
 	}
 }
 

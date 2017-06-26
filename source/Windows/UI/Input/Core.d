@@ -34,4 +34,17 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Input.Core.IRadialControllerIndependentInputSource).get_Dispatcher(&_ret));
 		return _ret;
 	}
+
+	private static Windows.UI.Input.Core.IRadialControllerIndependentInputSourceStatics _staticInstance;
+	public static Windows.UI.Input.Core.IRadialControllerIndependentInputSourceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Input.Core.IRadialControllerIndependentInputSourceStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Input.Core.RadialControllerIndependentInputSource CreateForView(Windows.ApplicationModel.Core.CoreApplicationView view)
+	{
+		Windows.UI.Input.Core.RadialControllerIndependentInputSource _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Input.Core.IRadialControllerIndependentInputSourceStatics).abi_CreateForView(view, &_ret));
+		return _ret;
+	}
 }

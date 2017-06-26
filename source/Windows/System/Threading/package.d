@@ -56,6 +56,30 @@ extern(Windows):
 
 interface ThreadPool
 {
+	private static Windows.System.Threading.IThreadPoolStatics _staticInstance;
+	public static Windows.System.Threading.IThreadPoolStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.System.Threading.IThreadPoolStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncAction RunAsync(Windows.System.Threading.WorkItemHandler handler)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.System.Threading.IThreadPoolStatics).abi_RunAsync(handler, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction RunWithPriorityAsync(Windows.System.Threading.WorkItemHandler handler, Windows.System.Threading.WorkItemPriority priority)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.System.Threading.IThreadPoolStatics).abi_RunWithPriorityAsync(handler, priority, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction RunWithPriorityAndOptionsAsync(Windows.System.Threading.WorkItemHandler handler, Windows.System.Threading.WorkItemPriority priority, Windows.System.Threading.WorkItemOptions options)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.System.Threading.IThreadPoolStatics).abi_RunWithPriorityAndOptionsAsync(handler, priority, options, &_ret));
+		return _ret;
+	}
 }
 
 interface ThreadPoolTimer : Windows.System.Threading.IThreadPoolTimer
@@ -76,6 +100,37 @@ extern(Windows):
 	final void Cancel()
 	{
 		Debug.OK(this.as!(Windows.System.Threading.IThreadPoolTimer).abi_Cancel());
+	}
+
+	private static Windows.System.Threading.IThreadPoolTimerStatics _staticInstance;
+	public static Windows.System.Threading.IThreadPoolTimerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.System.Threading.IThreadPoolTimerStatics);
+		return _staticInstance;
+	}
+	static Windows.System.Threading.ThreadPoolTimer CreatePeriodicTimer(Windows.System.Threading.TimerElapsedHandler handler, Windows.Foundation.TimeSpan period)
+	{
+		Windows.System.Threading.ThreadPoolTimer _ret;
+		Debug.OK(staticInstance.as!(Windows.System.Threading.IThreadPoolTimerStatics).abi_CreatePeriodicTimer(handler, period, &_ret));
+		return _ret;
+	}
+	static Windows.System.Threading.ThreadPoolTimer CreateTimer(Windows.System.Threading.TimerElapsedHandler handler, Windows.Foundation.TimeSpan delay)
+	{
+		Windows.System.Threading.ThreadPoolTimer _ret;
+		Debug.OK(staticInstance.as!(Windows.System.Threading.IThreadPoolTimerStatics).abi_CreateTimer(handler, delay, &_ret));
+		return _ret;
+	}
+	static Windows.System.Threading.ThreadPoolTimer CreatePeriodicTimerWithCompletion(Windows.System.Threading.TimerElapsedHandler handler, Windows.Foundation.TimeSpan period, Windows.System.Threading.TimerDestroyedHandler destroyed)
+	{
+		Windows.System.Threading.ThreadPoolTimer _ret;
+		Debug.OK(staticInstance.as!(Windows.System.Threading.IThreadPoolTimerStatics).abi_CreatePeriodicTimerWithCompletion(handler, period, destroyed, &_ret));
+		return _ret;
+	}
+	static Windows.System.Threading.ThreadPoolTimer CreateTimerWithCompletion(Windows.System.Threading.TimerElapsedHandler handler, Windows.Foundation.TimeSpan delay, Windows.System.Threading.TimerDestroyedHandler destroyed)
+	{
+		Windows.System.Threading.ThreadPoolTimer _ret;
+		Debug.OK(staticInstance.as!(Windows.System.Threading.IThreadPoolTimerStatics).abi_CreateTimerWithCompletion(handler, delay, destroyed, &_ret));
+		return _ret;
 	}
 }
 

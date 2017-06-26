@@ -18,4 +18,16 @@ extern(Windows):
 
 interface ApplicationDataManager : Windows.Management.Core.IApplicationDataManager
 {
+	private static Windows.Management.Core.IApplicationDataManagerStatics _staticInstance;
+	public static Windows.Management.Core.IApplicationDataManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Management.Core.IApplicationDataManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Storage.ApplicationData CreateForPackageFamily(HSTRING packageFamilyName)
+	{
+		Windows.Storage.ApplicationData _ret;
+		Debug.OK(staticInstance.as!(Windows.Management.Core.IApplicationDataManagerStatics).abi_CreateForPackageFamily(packageFamilyName, &_ret));
+		return _ret;
+	}
 }

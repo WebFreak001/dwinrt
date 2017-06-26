@@ -654,6 +654,18 @@ extern(Windows):
 
 interface SyndicationError
 {
+	private static Windows.Web.Syndication.ISyndicationErrorStatics _staticInstance;
+	public static Windows.Web.Syndication.ISyndicationErrorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Web.Syndication.ISyndicationErrorStatics);
+		return _staticInstance;
+	}
+	static Windows.Web.Syndication.SyndicationErrorStatus GetStatus(INT32 hresult)
+	{
+		Windows.Web.Syndication.SyndicationErrorStatus _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Syndication.ISyndicationErrorStatics).abi_GetStatus(hresult, &_ret));
+		return _ret;
+	}
 }
 
 interface SyndicationFeed : Windows.Web.Syndication.ISyndicationFeed, Windows.Web.Syndication.ISyndicationNode

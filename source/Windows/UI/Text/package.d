@@ -281,6 +281,78 @@ interface ITextSelection : ITextSelection_Base, Windows.UI.Text.ITextRange {}
 
 interface FontWeights : Windows.UI.Text.IFontWeights
 {
+	private static Windows.UI.Text.IFontWeightsStatics _staticInstance;
+	public static Windows.UI.Text.IFontWeightsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Text.IFontWeightsStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Text.FontWeight Black()
+	{
+		Windows.UI.Text.FontWeight _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Text.IFontWeightsStatics).get_Black(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Text.FontWeight Bold()
+	{
+		Windows.UI.Text.FontWeight _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Text.IFontWeightsStatics).get_Bold(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Text.FontWeight ExtraBlack()
+	{
+		Windows.UI.Text.FontWeight _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Text.IFontWeightsStatics).get_ExtraBlack(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Text.FontWeight ExtraBold()
+	{
+		Windows.UI.Text.FontWeight _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Text.IFontWeightsStatics).get_ExtraBold(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Text.FontWeight ExtraLight()
+	{
+		Windows.UI.Text.FontWeight _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Text.IFontWeightsStatics).get_ExtraLight(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Text.FontWeight Light()
+	{
+		Windows.UI.Text.FontWeight _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Text.IFontWeightsStatics).get_Light(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Text.FontWeight Medium()
+	{
+		Windows.UI.Text.FontWeight _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Text.IFontWeightsStatics).get_Medium(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Text.FontWeight Normal()
+	{
+		Windows.UI.Text.FontWeight _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Text.IFontWeightsStatics).get_Normal(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Text.FontWeight SemiBold()
+	{
+		Windows.UI.Text.FontWeight _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Text.IFontWeightsStatics).get_SemiBold(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Text.FontWeight SemiLight()
+	{
+		Windows.UI.Text.FontWeight _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Text.IFontWeightsStatics).get_SemiLight(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Text.FontWeight Thin()
+	{
+		Windows.UI.Text.FontWeight _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Text.IFontWeightsStatics).get_Thin(&_ret));
+		return _ret;
+	}
 }
 
 interface RichEditTextDocument : Windows.UI.Text.ITextDocument, Windows.UI.Text.ITextDocument2
@@ -446,6 +518,60 @@ extern(Windows):
 
 interface TextConstants
 {
+	private static Windows.UI.Text.ITextConstantsStatics _staticInstance;
+	public static Windows.UI.Text.ITextConstantsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Text.ITextConstantsStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Color AutoColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Text.ITextConstantsStatics).get_AutoColor(&_ret));
+		return _ret;
+	}
+	static INT32 MinUnitCount()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Text.ITextConstantsStatics).get_MinUnitCount(&_ret));
+		return _ret;
+	}
+	static INT32 MaxUnitCount()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Text.ITextConstantsStatics).get_MaxUnitCount(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Color UndefinedColor()
+	{
+		Windows.UI.Color _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Text.ITextConstantsStatics).get_UndefinedColor(&_ret));
+		return _ret;
+	}
+	static float UndefinedFloatValue()
+	{
+		float _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Text.ITextConstantsStatics).get_UndefinedFloatValue(&_ret));
+		return _ret;
+	}
+	static INT32 UndefinedInt32Value()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Text.ITextConstantsStatics).get_UndefinedInt32Value(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Text.FontStretch UndefinedFontStretch()
+	{
+		Windows.UI.Text.FontStretch _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Text.ITextConstantsStatics).get_UndefinedFontStretch(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Text.FontStyle UndefinedFontStyle()
+	{
+		Windows.UI.Text.FontStyle _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Text.ITextConstantsStatics).get_UndefinedFontStyle(&_ret));
+		return _ret;
+	}
 }
 
 enum CaretType

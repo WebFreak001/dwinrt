@@ -405,6 +405,43 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingProperties2).get_IsSpatial(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Media.MediaProperties.IAudioEncodingPropertiesStatics _staticInstance;
+	public static Windows.Media.MediaProperties.IAudioEncodingPropertiesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.MediaProperties.IAudioEncodingPropertiesStatics);
+		return _staticInstance;
+	}
+	static Windows.Media.MediaProperties.AudioEncodingProperties CreateAac(UINT32 sampleRate, UINT32 channelCount, UINT32 bitrate)
+	{
+		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IAudioEncodingPropertiesStatics).abi_CreateAac(sampleRate, channelCount, bitrate, &_ret));
+		return _ret;
+	}
+	static Windows.Media.MediaProperties.AudioEncodingProperties CreateAacAdts(UINT32 sampleRate, UINT32 channelCount, UINT32 bitrate)
+	{
+		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IAudioEncodingPropertiesStatics).abi_CreateAacAdts(sampleRate, channelCount, bitrate, &_ret));
+		return _ret;
+	}
+	static Windows.Media.MediaProperties.AudioEncodingProperties CreateMp3(UINT32 sampleRate, UINT32 channelCount, UINT32 bitrate)
+	{
+		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IAudioEncodingPropertiesStatics).abi_CreateMp3(sampleRate, channelCount, bitrate, &_ret));
+		return _ret;
+	}
+	static Windows.Media.MediaProperties.AudioEncodingProperties CreatePcm(UINT32 sampleRate, UINT32 channelCount, UINT32 bitsPerSample)
+	{
+		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IAudioEncodingPropertiesStatics).abi_CreatePcm(sampleRate, channelCount, bitsPerSample, &_ret));
+		return _ret;
+	}
+	static Windows.Media.MediaProperties.AudioEncodingProperties CreateWma(UINT32 sampleRate, UINT32 channelCount, UINT32 bitrate)
+	{
+		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IAudioEncodingPropertiesStatics).abi_CreateWma(sampleRate, channelCount, bitrate, &_ret));
+		return _ret;
+	}
 }
 
 interface ContainerEncodingProperties : Windows.Media.MediaProperties.IContainerEncodingProperties, Windows.Media.MediaProperties.IMediaEncodingProperties
@@ -436,6 +473,72 @@ extern(Windows):
 
 interface H264ProfileIds
 {
+	private static Windows.Media.MediaProperties.IH264ProfileIdsStatics _staticInstance;
+	public static Windows.Media.MediaProperties.IH264ProfileIdsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.MediaProperties.IH264ProfileIdsStatics);
+		return _staticInstance;
+	}
+	static INT32 ConstrainedBaseline()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IH264ProfileIdsStatics).get_ConstrainedBaseline(&_ret));
+		return _ret;
+	}
+	static INT32 Baseline()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IH264ProfileIdsStatics).get_Baseline(&_ret));
+		return _ret;
+	}
+	static INT32 Extended()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IH264ProfileIdsStatics).get_Extended(&_ret));
+		return _ret;
+	}
+	static INT32 Main()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IH264ProfileIdsStatics).get_Main(&_ret));
+		return _ret;
+	}
+	static INT32 High()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IH264ProfileIdsStatics).get_High(&_ret));
+		return _ret;
+	}
+	static INT32 High10()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IH264ProfileIdsStatics).get_High10(&_ret));
+		return _ret;
+	}
+	static INT32 High422()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IH264ProfileIdsStatics).get_High422(&_ret));
+		return _ret;
+	}
+	static INT32 High444()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IH264ProfileIdsStatics).get_High444(&_ret));
+		return _ret;
+	}
+	static INT32 StereoHigh()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IH264ProfileIdsStatics).get_StereoHigh(&_ret));
+		return _ret;
+	}
+	static INT32 MultiviewHigh()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IH264ProfileIdsStatics).get_MultiviewHigh(&_ret));
+		return _ret;
+	}
 }
 
 interface ImageEncodingProperties : Windows.Media.MediaProperties.IImageEncodingProperties, Windows.Media.MediaProperties.IMediaEncodingProperties
@@ -483,6 +586,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Subtype(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Media.MediaProperties.IImageEncodingPropertiesStatics _staticInstance;
+	public static Windows.Media.MediaProperties.IImageEncodingPropertiesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.MediaProperties.IImageEncodingPropertiesStatics);
+		return _staticInstance;
+	}
+	static Windows.Media.MediaProperties.ImageEncodingProperties CreateJpeg()
+	{
+		Windows.Media.MediaProperties.ImageEncodingProperties _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IImageEncodingPropertiesStatics).abi_CreateJpeg(&_ret));
+		return _ret;
+	}
+	static Windows.Media.MediaProperties.ImageEncodingProperties CreatePng()
+	{
+		Windows.Media.MediaProperties.ImageEncodingProperties _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IImageEncodingPropertiesStatics).abi_CreatePng(&_ret));
+		return _ret;
+	}
+	static Windows.Media.MediaProperties.ImageEncodingProperties CreateJpegXR()
+	{
+		Windows.Media.MediaProperties.ImageEncodingProperties _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IImageEncodingPropertiesStatics).abi_CreateJpegXR(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaEncodingProfile : Windows.Media.MediaProperties.IMediaEncodingProfile
@@ -518,10 +646,305 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProfile).get_Container(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Media.MediaProperties.IMediaEncodingProfileStatics _staticInstance;
+	public static Windows.Media.MediaProperties.IMediaEncodingProfileStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.MediaProperties.IMediaEncodingProfileStatics);
+		return _staticInstance;
+	}
+	static Windows.Media.MediaProperties.MediaEncodingProfile CreateM4a(Windows.Media.MediaProperties.AudioEncodingQuality quality)
+	{
+		Windows.Media.MediaProperties.MediaEncodingProfile _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingProfileStatics).abi_CreateM4a(quality, &_ret));
+		return _ret;
+	}
+	static Windows.Media.MediaProperties.MediaEncodingProfile CreateMp3(Windows.Media.MediaProperties.AudioEncodingQuality quality)
+	{
+		Windows.Media.MediaProperties.MediaEncodingProfile _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingProfileStatics).abi_CreateMp3(quality, &_ret));
+		return _ret;
+	}
+	static Windows.Media.MediaProperties.MediaEncodingProfile CreateWma(Windows.Media.MediaProperties.AudioEncodingQuality quality)
+	{
+		Windows.Media.MediaProperties.MediaEncodingProfile _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingProfileStatics).abi_CreateWma(quality, &_ret));
+		return _ret;
+	}
+	static Windows.Media.MediaProperties.MediaEncodingProfile CreateMp4(Windows.Media.MediaProperties.VideoEncodingQuality quality)
+	{
+		Windows.Media.MediaProperties.MediaEncodingProfile _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingProfileStatics).abi_CreateMp4(quality, &_ret));
+		return _ret;
+	}
+	static Windows.Media.MediaProperties.MediaEncodingProfile CreateWmv(Windows.Media.MediaProperties.VideoEncodingQuality quality)
+	{
+		Windows.Media.MediaProperties.MediaEncodingProfile _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingProfileStatics).abi_CreateWmv(quality, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.MediaProperties.MediaEncodingProfile) CreateFromFileAsync(Windows.Storage.IStorageFile file)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.MediaProperties.MediaEncodingProfile) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingProfileStatics).abi_CreateFromFileAsync(file, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.MediaProperties.MediaEncodingProfile) CreateFromStreamAsync(Windows.Storage.Streams.IRandomAccessStream stream)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.MediaProperties.MediaEncodingProfile) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingProfileStatics).abi_CreateFromStreamAsync(stream, &_ret));
+		return _ret;
+	}
 }
 
 interface MediaEncodingSubtypes
 {
+	private static Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics _staticInstance;
+	public static Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics);
+		return _staticInstance;
+	}
+	static HSTRING Aac()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Aac(&_ret));
+		return _ret;
+	}
+	static HSTRING AacAdts()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_AacAdts(&_ret));
+		return _ret;
+	}
+	static HSTRING Ac3()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Ac3(&_ret));
+		return _ret;
+	}
+	static HSTRING AmrNb()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_AmrNb(&_ret));
+		return _ret;
+	}
+	static HSTRING AmrWb()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_AmrWb(&_ret));
+		return _ret;
+	}
+	static HSTRING Argb32()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Argb32(&_ret));
+		return _ret;
+	}
+	static HSTRING Asf()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Asf(&_ret));
+		return _ret;
+	}
+	static HSTRING Avi()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Avi(&_ret));
+		return _ret;
+	}
+	static HSTRING Bgra8()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Bgra8(&_ret));
+		return _ret;
+	}
+	static HSTRING Bmp()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Bmp(&_ret));
+		return _ret;
+	}
+	static HSTRING Eac3()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Eac3(&_ret));
+		return _ret;
+	}
+	static HSTRING Float()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Float(&_ret));
+		return _ret;
+	}
+	static HSTRING Gif()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Gif(&_ret));
+		return _ret;
+	}
+	static HSTRING H263()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_H263(&_ret));
+		return _ret;
+	}
+	static HSTRING H264()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_H264(&_ret));
+		return _ret;
+	}
+	static HSTRING H264Es()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_H264Es(&_ret));
+		return _ret;
+	}
+	static HSTRING Hevc()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Hevc(&_ret));
+		return _ret;
+	}
+	static HSTRING HevcEs()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_HevcEs(&_ret));
+		return _ret;
+	}
+	static HSTRING Iyuv()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Iyuv(&_ret));
+		return _ret;
+	}
+	static HSTRING Jpeg()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Jpeg(&_ret));
+		return _ret;
+	}
+	static HSTRING JpegXr()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_JpegXr(&_ret));
+		return _ret;
+	}
+	static HSTRING Mjpg()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Mjpg(&_ret));
+		return _ret;
+	}
+	static HSTRING Mpeg()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Mpeg(&_ret));
+		return _ret;
+	}
+	static HSTRING Mpeg1()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Mpeg1(&_ret));
+		return _ret;
+	}
+	static HSTRING Mpeg2()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Mpeg2(&_ret));
+		return _ret;
+	}
+	static HSTRING Mp3()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Mp3(&_ret));
+		return _ret;
+	}
+	static HSTRING Mpeg4()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Mpeg4(&_ret));
+		return _ret;
+	}
+	static HSTRING Nv12()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Nv12(&_ret));
+		return _ret;
+	}
+	static HSTRING Pcm()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Pcm(&_ret));
+		return _ret;
+	}
+	static HSTRING Png()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Png(&_ret));
+		return _ret;
+	}
+	static HSTRING Rgb24()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Rgb24(&_ret));
+		return _ret;
+	}
+	static HSTRING Rgb32()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Rgb32(&_ret));
+		return _ret;
+	}
+	static HSTRING Tiff()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Tiff(&_ret));
+		return _ret;
+	}
+	static HSTRING Wave()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Wave(&_ret));
+		return _ret;
+	}
+	static HSTRING Wma8()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Wma8(&_ret));
+		return _ret;
+	}
+	static HSTRING Wma9()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Wma9(&_ret));
+		return _ret;
+	}
+	static HSTRING Wmv3()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Wmv3(&_ret));
+		return _ret;
+	}
+	static HSTRING Wvc1()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Wvc1(&_ret));
+		return _ret;
+	}
+	static HSTRING Yuy2()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Yuy2(&_ret));
+		return _ret;
+	}
+	static HSTRING Yv12()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Yv12(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaPropertySet : Windows.Foundation.Collections.IMap!(GUID, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(GUID, IInspectable))
@@ -598,6 +1021,42 @@ extern(Windows):
 
 interface Mpeg2ProfileIds
 {
+	private static Windows.Media.MediaProperties.IMpeg2ProfileIdsStatics _staticInstance;
+	public static Windows.Media.MediaProperties.IMpeg2ProfileIdsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.MediaProperties.IMpeg2ProfileIdsStatics);
+		return _staticInstance;
+	}
+	static INT32 Simple()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMpeg2ProfileIdsStatics).get_Simple(&_ret));
+		return _ret;
+	}
+	static INT32 Main()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMpeg2ProfileIdsStatics).get_Main(&_ret));
+		return _ret;
+	}
+	static INT32 SignalNoiseRatioScalable()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMpeg2ProfileIdsStatics).get_SignalNoiseRatioScalable(&_ret));
+		return _ret;
+	}
+	static INT32 SpatiallyScalable()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMpeg2ProfileIdsStatics).get_SpatiallyScalable(&_ret));
+		return _ret;
+	}
+	static INT32 High()
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMpeg2ProfileIdsStatics).get_High(&_ret));
+		return _ret;
+	}
 }
 
 interface VideoEncodingProperties : Windows.Media.MediaProperties.IVideoEncodingProperties, Windows.Media.MediaProperties.IMediaEncodingProperties, Windows.Media.MediaProperties.IVideoEncodingProperties2, Windows.Media.MediaProperties.IVideoEncodingProperties3, Windows.Media.MediaProperties.IVideoEncodingProperties4
@@ -695,6 +1154,31 @@ extern(Windows):
 	{
 		Windows.Media.MediaProperties.SphericalVideoFrameFormat _ret;
 		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties4).get_SphericalVideoFrameFormat(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Media.MediaProperties.IVideoEncodingPropertiesStatics _staticInstance;
+	public static Windows.Media.MediaProperties.IVideoEncodingPropertiesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.MediaProperties.IVideoEncodingPropertiesStatics);
+		return _staticInstance;
+	}
+	static Windows.Media.MediaProperties.VideoEncodingProperties CreateH264()
+	{
+		Windows.Media.MediaProperties.VideoEncodingProperties _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IVideoEncodingPropertiesStatics).abi_CreateH264(&_ret));
+		return _ret;
+	}
+	static Windows.Media.MediaProperties.VideoEncodingProperties CreateMpeg2()
+	{
+		Windows.Media.MediaProperties.VideoEncodingProperties _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IVideoEncodingPropertiesStatics).abi_CreateMpeg2(&_ret));
+		return _ret;
+	}
+	static Windows.Media.MediaProperties.VideoEncodingProperties CreateUncompressed(HSTRING subtype, UINT32 width, UINT32 height)
+	{
+		Windows.Media.MediaProperties.VideoEncodingProperties _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IVideoEncodingPropertiesStatics).abi_CreateUncompressed(subtype, width, height, &_ret));
 		return _ret;
 	}
 }

@@ -12,4 +12,16 @@ extern(Windows):
 
 interface InteractiveSession
 {
+	private static Windows.System.RemoteDesktop.IInteractiveSessionStatics _staticInstance;
+	public static Windows.System.RemoteDesktop.IInteractiveSessionStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.System.RemoteDesktop.IInteractiveSessionStatics);
+		return _staticInstance;
+	}
+	static bool IsRemote()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.System.RemoteDesktop.IInteractiveSessionStatics).get_IsRemote(&_ret));
+		return _ret;
+	}
 }

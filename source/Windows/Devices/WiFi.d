@@ -88,12 +88,12 @@ extern(Windows):
 	final EventRegistrationToken OnAvailableNetworksChanged(void delegate(Windows.Devices.WiFi.WiFiAdapter, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AvailableNetworksChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFi.WiFiAdapter, IInspectable), Windows.Devices.WiFi.WiFiAdapter, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAdapter).add_AvailableNetworksChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFi.WiFiAdapter, IInspectable), Windows.Devices.WiFi.WiFiAdapter, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeAvailableNetworksChanged(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_AvailableNetworksChanged(eventCookie));
+		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAdapter).remove_AvailableNetworksChanged(eventCookie));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) ConnectAsync(Windows.Devices.WiFi.WiFiAvailableNetwork availableNetwork, Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind)
 	{
@@ -116,6 +116,37 @@ extern(Windows):
 	final void Disconnect()
 	{
 		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAdapter).abi_Disconnect());
+	}
+
+	private static Windows.Devices.WiFi.IWiFiAdapterStatics _staticInstance;
+	public static Windows.Devices.WiFi.IWiFiAdapterStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.WiFi.IWiFiAdapterStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.WiFi.WiFiAdapter)) FindAllAdaptersAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.WiFi.WiFiAdapter)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.WiFi.IWiFiAdapterStatics).abi_FindAllAdaptersAsync(&_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.WiFi.IWiFiAdapterStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiAdapter) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiAdapter) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.WiFi.IWiFiAdapterStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiAccessStatus) RequestAccessAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiAccessStatus) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.WiFi.IWiFiAdapterStatics).abi_RequestAccessAsync(&_ret));
+		return _ret;
 	}
 }
 

@@ -670,6 +670,246 @@ extern(Windows):
 
 interface PropertyValue
 {
+	private static Windows.Foundation.IPropertyValueStatics _staticInstance;
+	public static Windows.Foundation.IPropertyValueStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Foundation.IPropertyValueStatics);
+		return _staticInstance;
+	}
+	static IInspectable CreateEmpty()
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateEmpty(&_ret));
+		return _ret;
+	}
+	static IInspectable CreateUInt8(ubyte value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateUInt8(value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateInt16(INT16 value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateInt16(value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateUInt16(UINT16 value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateUInt16(value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateInt32(INT32 value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateInt32(value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateUInt32(UINT32 value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateUInt32(value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateInt64(INT64 value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateInt64(value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateUInt64(ulong value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateUInt64(value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateSingle(float value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateSingle(value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateDouble(double value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateDouble(value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateChar16(wchar value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateChar16(value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateBoolean(bool value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateBoolean(value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateString(HSTRING value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateString(value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateInspectable(IInspectable value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateInspectable(value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateGuid(GUID value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateGuid(value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateDateTime(Windows.Foundation.DateTime value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateDateTime(value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateTimeSpan(Windows.Foundation.TimeSpan value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateTimeSpan(value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreatePoint(Windows.Foundation.Point value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreatePoint(value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateSize(Windows.Foundation.Size value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateSize(value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateRect(Windows.Foundation.Rect value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateRect(value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateUInt8Array(UINT32 __valueSize, ubyte* value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateUInt8Array(__valueSize, value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateInt16Array(UINT32 __valueSize, INT16* value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateInt16Array(__valueSize, value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateUInt16Array(UINT32 __valueSize, UINT16* value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateUInt16Array(__valueSize, value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateInt32Array(UINT32 __valueSize, INT32* value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateInt32Array(__valueSize, value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateUInt32Array(UINT32 __valueSize, UINT32* value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateUInt32Array(__valueSize, value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateInt64Array(UINT32 __valueSize, INT64* value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateInt64Array(__valueSize, value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateUInt64Array(UINT32 __valueSize, ulong* value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateUInt64Array(__valueSize, value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateSingleArray(UINT32 __valueSize, float* value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateSingleArray(__valueSize, value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateDoubleArray(UINT32 __valueSize, double* value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateDoubleArray(__valueSize, value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateChar16Array(UINT32 __valueSize, wchar* value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateChar16Array(__valueSize, value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateBooleanArray(UINT32 __valueSize, bool* value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateBooleanArray(__valueSize, value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateStringArray(UINT32 __valueSize, HSTRING* value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateStringArray(__valueSize, value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateInspectableArray(UINT32 __valueSize, IInspectable* value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateInspectableArray(__valueSize, value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateGuidArray(UINT32 __valueSize, GUID* value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateGuidArray(__valueSize, value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateDateTimeArray(UINT32 __valueSize, Windows.Foundation.DateTime* value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateDateTimeArray(__valueSize, value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateTimeSpanArray(UINT32 __valueSize, Windows.Foundation.TimeSpan* value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateTimeSpanArray(__valueSize, value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreatePointArray(UINT32 __valueSize, Windows.Foundation.Point* value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreatePointArray(__valueSize, value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateSizeArray(UINT32 __valueSize, Windows.Foundation.Size* value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateSizeArray(__valueSize, value, &_ret));
+		return _ret;
+	}
+	static IInspectable CreateRectArray(UINT32 __valueSize, Windows.Foundation.Rect* value)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateRectArray(__valueSize, value, &_ret));
+		return _ret;
+	}
 }
 
 interface Uri : Windows.Foundation.IUriRuntimeClass, Windows.Foundation.IUriRuntimeClassWithAbsoluteCanonicalUri, Windows.Foundation.IStringable
@@ -793,6 +1033,25 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Foundation.IUriEscapeStatics _staticInstance;
+	public static Windows.Foundation.IUriEscapeStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Foundation.IUriEscapeStatics);
+		return _staticInstance;
+	}
+	static HSTRING UnescapeComponent(HSTRING toUnescape)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IUriEscapeStatics).abi_UnescapeComponent(toUnescape, &_ret));
+		return _ret;
+	}
+	static HSTRING EscapeComponent(HSTRING toEscape)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.IUriEscapeStatics).abi_EscapeComponent(toEscape, &_ret));
 		return _ret;
 	}
 }

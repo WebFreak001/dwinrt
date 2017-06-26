@@ -234,12 +234,12 @@ extern(Windows):
 	final EventRegistrationToken OnStatusChanged(void delegate(Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisher, Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisherStatusChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_StatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisher, Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisherStatusChangedEventArgs), Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisher, Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisherStatusChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectAdvertisementPublisher).add_StatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisher, Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisherStatusChangedEventArgs), Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisher, Windows.Devices.WiFiDirect.WiFiDirectAdvertisementPublisherStatusChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_StatusChanged(token));
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectAdvertisementPublisher).remove_StatusChanged(token));
 	}
 	final void Start()
 	{
@@ -274,12 +274,12 @@ extern(Windows):
 	final EventRegistrationToken OnConnectionRequested(void delegate(Windows.Devices.WiFiDirect.WiFiDirectConnectionListener, Windows.Devices.WiFiDirect.WiFiDirectConnectionRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ConnectionRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.WiFiDirectConnectionListener, Windows.Devices.WiFiDirect.WiFiDirectConnectionRequestedEventArgs), Windows.Devices.WiFiDirect.WiFiDirectConnectionListener, Windows.Devices.WiFiDirect.WiFiDirectConnectionRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectConnectionListener).add_ConnectionRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.WiFiDirectConnectionListener, Windows.Devices.WiFiDirect.WiFiDirectConnectionRequestedEventArgs), Windows.Devices.WiFiDirect.WiFiDirectConnectionListener, Windows.Devices.WiFiDirect.WiFiDirectConnectionRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeConnectionRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ConnectionRequested(token));
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectConnectionListener).remove_ConnectionRequested(token));
 	}
 }
 
@@ -311,6 +311,19 @@ extern(Windows):
 	final void PreferredPairingProcedure(Windows.Devices.WiFiDirect.WiFiDirectPairingProcedure value)
 	{
 		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectConnectionParameters2).set_PreferredPairingProcedure(value));
+	}
+
+	private static Windows.Devices.WiFiDirect.IWiFiDirectConnectionParametersStatics _staticInstance;
+	public static Windows.Devices.WiFiDirect.IWiFiDirectConnectionParametersStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.WiFiDirect.IWiFiDirectConnectionParametersStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.Enumeration.DevicePairingKinds GetDevicePairingKinds(Windows.Devices.WiFiDirect.WiFiDirectConfigurationMethod configurationMethod)
+	{
+		Windows.Devices.Enumeration.DevicePairingKinds _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.WiFiDirect.IWiFiDirectConnectionParametersStatics).abi_GetDevicePairingKinds(configurationMethod, &_ret));
+		return _ret;
 	}
 }
 
@@ -358,12 +371,12 @@ extern(Windows):
 	final EventRegistrationToken OnConnectionStatusChanged(void delegate(Windows.Devices.WiFiDirect.WiFiDirectDevice, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ConnectionStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.WiFiDirectDevice, IInspectable), Windows.Devices.WiFiDirect.WiFiDirectDevice, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectDevice).add_ConnectionStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.WiFiDirectDevice, IInspectable), Windows.Devices.WiFiDirect.WiFiDirectDevice, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeConnectionStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ConnectionStatusChanged(token));
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectDevice).remove_ConnectionStatusChanged(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair) GetConnectionEndpointPairs()
 	{
@@ -374,6 +387,25 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+
+	private static Windows.Devices.WiFiDirect.IWiFiDirectDeviceStatics _staticInstance;
+	public static Windows.Devices.WiFiDirect.IWiFiDirectDeviceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.WiFiDirect.IWiFiDirectDeviceStatics);
+		return _staticInstance;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.WiFiDirect.IWiFiDirectDeviceStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.WiFiDirectDevice) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.WiFiDirectDevice) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.WiFiDirect.IWiFiDirectDeviceStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
 	}
 }
 
@@ -409,6 +441,25 @@ extern(Windows):
 	final void Value(Windows.Storage.Streams.IBuffer value)
 	{
 		Debug.OK(this.as!(Windows.Devices.WiFiDirect.IWiFiDirectInformationElement).set_Value(value));
+	}
+
+	private static Windows.Devices.WiFiDirect.IWiFiDirectInformationElementStatics _staticInstance;
+	public static Windows.Devices.WiFiDirect.IWiFiDirectInformationElementStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.WiFiDirect.IWiFiDirectInformationElementStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.Collections.IVector!(Windows.Devices.WiFiDirect.WiFiDirectInformationElement) CreateFromBuffer(Windows.Storage.Streams.IBuffer buffer)
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Devices.WiFiDirect.WiFiDirectInformationElement) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.WiFiDirect.IWiFiDirectInformationElementStatics).abi_CreateFromBuffer(buffer, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVector!(Windows.Devices.WiFiDirect.WiFiDirectInformationElement) CreateFromDeviceInformation(Windows.Devices.Enumeration.DeviceInformation deviceInformation)
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Devices.WiFiDirect.WiFiDirectInformationElement) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.WiFiDirect.IWiFiDirectInformationElementStatics).abi_CreateFromDeviceInformation(deviceInformation, &_ret));
+		return _ret;
 	}
 }
 

@@ -31,10 +31,52 @@ extern(Windows):
 
 interface MdmPolicy
 {
+	private static Windows.Management.Workplace.IMdmAllowPolicyStatics _staticInstance;
+	public static Windows.Management.Workplace.IMdmAllowPolicyStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Management.Workplace.IMdmAllowPolicyStatics);
+		return _staticInstance;
+	}
+	static bool IsBrowserAllowed()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Management.Workplace.IMdmAllowPolicyStatics).abi_IsBrowserAllowed(&_ret));
+		return _ret;
+	}
+	static bool IsCameraAllowed()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Management.Workplace.IMdmAllowPolicyStatics).abi_IsCameraAllowed(&_ret));
+		return _ret;
+	}
+	static bool IsMicrosoftAccountAllowed()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Management.Workplace.IMdmAllowPolicyStatics).abi_IsMicrosoftAccountAllowed(&_ret));
+		return _ret;
+	}
+	static bool IsStoreAllowed()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Management.Workplace.IMdmAllowPolicyStatics).abi_IsStoreAllowed(&_ret));
+		return _ret;
+	}
 }
 
 interface WorkplaceSettings
 {
+	private static Windows.Management.Workplace.IWorkplaceSettingsStatics _staticInstance;
+	public static Windows.Management.Workplace.IWorkplaceSettingsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Management.Workplace.IWorkplaceSettingsStatics);
+		return _staticInstance;
+	}
+	static bool IsMicrosoftAccountOptional()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Management.Workplace.IWorkplaceSettingsStatics).get_IsMicrosoftAccountOptional(&_ret));
+		return _ret;
+	}
 }
 
 enum MessagingSyncPolicy

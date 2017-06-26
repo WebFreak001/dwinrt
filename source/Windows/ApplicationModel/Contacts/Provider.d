@@ -71,12 +71,12 @@ extern(Windows):
 	final EventRegistrationToken OnContactRemoved(void delegate(Windows.ApplicationModel.Contacts.Provider.ContactPickerUI, Windows.ApplicationModel.Contacts.Provider.ContactRemovedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ContactRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.Provider.ContactPickerUI, Windows.ApplicationModel.Contacts.Provider.ContactRemovedEventArgs), Windows.ApplicationModel.Contacts.Provider.ContactPickerUI, Windows.ApplicationModel.Contacts.Provider.ContactRemovedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI).add_ContactRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.Provider.ContactPickerUI, Windows.ApplicationModel.Contacts.Provider.ContactRemovedEventArgs), Windows.ApplicationModel.Contacts.Provider.ContactPickerUI, Windows.ApplicationModel.Contacts.Provider.ContactRemovedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeContactRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ContactRemoved(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI).remove_ContactRemoved(token));
 	}
 	final Windows.ApplicationModel.Contacts.Provider.AddContactResult AddContact(Windows.ApplicationModel.Contacts.Contact contact)
 	{

@@ -977,22 +977,22 @@ extern(Windows):
 	final EventRegistrationToken OnOptionChanged(void delegate(Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails, Windows.Graphics.Printing.OptionDetails.PrintTaskOptionChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_OptionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails, Windows.Graphics.Printing.OptionDetails.PrintTaskOptionChangedEventArgs), Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails, Windows.Graphics.Printing.OptionDetails.PrintTaskOptionChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintTaskOptionDetails).add_OptionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails, Windows.Graphics.Printing.OptionDetails.PrintTaskOptionChangedEventArgs), Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails, Windows.Graphics.Printing.OptionDetails.PrintTaskOptionChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeOptionChanged(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_OptionChanged(eventCookie));
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintTaskOptionDetails).remove_OptionChanged(eventCookie));
 	}
 	final EventRegistrationToken OnBeginValidation(void delegate(Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_BeginValidation(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails, IInspectable), Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintTaskOptionDetails).add_BeginValidation(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails, IInspectable), Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeBeginValidation(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_BeginValidation(eventCookie));
+		Debug.OK(this.as!(Windows.Graphics.Printing.OptionDetails.IPrintTaskOptionDetails).remove_BeginValidation(eventCookie));
 	}
 	final Windows.Graphics.Printing.PrintPageDescription GetPageDescription(UINT32 jobPageNumber)
 	{
@@ -1004,6 +1004,19 @@ extern(Windows):
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
 		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreUIConfiguration).get_DisplayedOptions(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Graphics.Printing.OptionDetails.IPrintTaskOptionDetailsStatic _staticInstance;
+	public static Windows.Graphics.Printing.OptionDetails.IPrintTaskOptionDetailsStatic staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Graphics.Printing.OptionDetails.IPrintTaskOptionDetailsStatic);
+		return _staticInstance;
+	}
+	static Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails GetFromPrintTaskOptions(Windows.Graphics.Printing.PrintTaskOptions printTaskOptions)
+	{
+		Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.OptionDetails.IPrintTaskOptionDetailsStatic).abi_GetFromPrintTaskOptions(printTaskOptions, &_ret));
 		return _ret;
 	}
 }

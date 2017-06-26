@@ -103,6 +103,37 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.FaceAnalysis.IFaceDetector).set_MaxDetectableFaceSize(value));
 	}
+
+	private static Windows.Media.FaceAnalysis.IFaceDetectorStatics _staticInstance;
+	public static Windows.Media.FaceAnalysis.IFaceDetectorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.FaceAnalysis.IFaceDetectorStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.FaceAnalysis.FaceDetector) CreateAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.FaceAnalysis.FaceDetector) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.FaceAnalysis.IFaceDetectorStatics).abi_CreateAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Imaging.BitmapPixelFormat) GetSupportedBitmapPixelFormats()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Imaging.BitmapPixelFormat) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.FaceAnalysis.IFaceDetectorStatics).abi_GetSupportedBitmapPixelFormats(&_ret));
+		return _ret;
+	}
+	static bool IsBitmapPixelFormatSupported(Windows.Graphics.Imaging.BitmapPixelFormat bitmapPixelFormat)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.FaceAnalysis.IFaceDetectorStatics).abi_IsBitmapPixelFormatSupported(bitmapPixelFormat, &_ret));
+		return _ret;
+	}
+	static bool IsSupported()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.FaceAnalysis.IFaceDetectorStatics).get_IsSupported(&_ret));
+		return _ret;
+	}
 }
 
 interface FaceTracker : Windows.Media.FaceAnalysis.IFaceTracker
@@ -133,5 +164,36 @@ extern(Windows):
 	final void MaxDetectableFaceSize(Windows.Graphics.Imaging.BitmapSize value)
 	{
 		Debug.OK(this.as!(Windows.Media.FaceAnalysis.IFaceTracker).set_MaxDetectableFaceSize(value));
+	}
+
+	private static Windows.Media.FaceAnalysis.IFaceTrackerStatics _staticInstance;
+	public static Windows.Media.FaceAnalysis.IFaceTrackerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.FaceAnalysis.IFaceTrackerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.FaceAnalysis.FaceTracker) CreateAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.FaceAnalysis.FaceTracker) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.FaceAnalysis.IFaceTrackerStatics).abi_CreateAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Imaging.BitmapPixelFormat) GetSupportedBitmapPixelFormats()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Imaging.BitmapPixelFormat) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.FaceAnalysis.IFaceTrackerStatics).abi_GetSupportedBitmapPixelFormats(&_ret));
+		return _ret;
+	}
+	static bool IsBitmapPixelFormatSupported(Windows.Graphics.Imaging.BitmapPixelFormat bitmapPixelFormat)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.FaceAnalysis.IFaceTrackerStatics).abi_IsBitmapPixelFormatSupported(bitmapPixelFormat, &_ret));
+		return _ret;
+	}
+	static bool IsSupported()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.FaceAnalysis.IFaceTrackerStatics).get_IsSupported(&_ret));
+		return _ret;
 	}
 }

@@ -1176,6 +1176,43 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IArcSegment).set_SweepDirection(value));
 	}
+
+	private static Windows.UI.Xaml.Media.IArcSegmentStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IArcSegmentStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IArcSegmentStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty PointProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IArcSegmentStatics).get_PointProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty SizeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IArcSegmentStatics).get_SizeProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty RotationAngleProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IArcSegmentStatics).get_RotationAngleProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsLargeArcProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IArcSegmentStatics).get_IsLargeArcProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty SweepDirectionProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IArcSegmentStatics).get_SweepDirectionProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface BezierSegment : Windows.UI.Xaml.Media.PathSegment, Windows.UI.Xaml.Media.IBezierSegment
@@ -1210,6 +1247,31 @@ extern(Windows):
 	final void Point3(Windows.Foundation.Point value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBezierSegment).set_Point3(value));
+	}
+
+	private static Windows.UI.Xaml.Media.IBezierSegmentStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IBezierSegmentStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IBezierSegmentStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty Point1Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IBezierSegmentStatics).get_Point1Property(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty Point2Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IBezierSegmentStatics).get_Point2Property(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty Point3Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IBezierSegmentStatics).get_Point3Property(&_ret));
+		return _ret;
 	}
 }
 
@@ -1249,6 +1311,31 @@ extern(Windows):
 	final void RelativeTransform(Windows.UI.Xaml.Media.Transform value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBrush).set_RelativeTransform(value));
+	}
+
+	private static Windows.UI.Xaml.Media.IBrushStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IBrushStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IBrushStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty OpacityProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IBrushStatics).get_OpacityProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty TransformProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IBrushStatics).get_TransformProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty RelativeTransformProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IBrushStatics).get_RelativeTransformProperty(&_ret));
+		return _ret;
 	}
 }
 @makable!(Brush, Brush, Windows.UI.Xaml.Media.IBrushFactory)
@@ -1446,10 +1533,97 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).set_TranslateY(value));
 	}
+
+	private static Windows.UI.Xaml.Media.ICompositeTransformStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.ICompositeTransformStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.ICompositeTransformStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty CenterXProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositeTransformStatics).get_CenterXProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty CenterYProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositeTransformStatics).get_CenterYProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ScaleXProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositeTransformStatics).get_ScaleXProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ScaleYProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositeTransformStatics).get_ScaleYProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty SkewXProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositeTransformStatics).get_SkewXProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty SkewYProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositeTransformStatics).get_SkewYProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty RotationProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositeTransformStatics).get_RotationProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty TranslateXProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositeTransformStatics).get_TranslateXProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty TranslateYProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositeTransformStatics).get_TranslateYProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface CompositionTarget : Windows.UI.Xaml.Media.ICompositionTarget
 {
+	private static Windows.UI.Xaml.Media.ICompositionTargetStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.ICompositionTargetStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.ICompositionTargetStatics);
+		return _staticInstance;
+	}
+	static EventRegistrationToken OnRendering(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositionTargetStatics).add_Rendering(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
+	static void removeRendering(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositionTargetStatics).remove_Rendering(token));
+	}
+	static EventRegistrationToken OnSurfaceContentsLost(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositionTargetStatics).add_SurfaceContentsLost(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
+	static void removeSurfaceContentsLost(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositionTargetStatics).remove_SurfaceContentsLost(token));
+	}
 }
 
 interface DoubleCollection : Windows.Foundation.Collections.IVector!(double), Windows.Foundation.Collections.IIterable!(double)
@@ -1548,6 +1722,31 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IEllipseGeometry).set_RadiusY(value));
 	}
+
+	private static Windows.UI.Xaml.Media.IEllipseGeometryStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IEllipseGeometryStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IEllipseGeometryStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty CenterProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IEllipseGeometryStatics).get_CenterProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty RadiusXProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IEllipseGeometryStatics).get_RadiusXProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty RadiusYProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IEllipseGeometryStatics).get_RadiusYProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface FontFamily : Windows.UI.Xaml.Media.IFontFamily
@@ -1557,6 +1756,19 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IFontFamily).get_Source(&_ret));
+		return _ret;
+	}
+
+	private static Windows.UI.Xaml.Media.IFontFamilyStatics2 _staticInstance;
+	public static Windows.UI.Xaml.Media.IFontFamilyStatics2 staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IFontFamilyStatics2);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.Media.FontFamily XamlAutoFontFamily()
+	{
+		Windows.UI.Xaml.Media.FontFamily _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IFontFamilyStatics2).get_XamlAutoFontFamily(&_ret));
 		return _ret;
 	}
 }
@@ -1647,6 +1859,31 @@ extern(Windows):
 	{
 		Windows.Foundation.Rect _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeometry).get_Bounds(&_ret));
+		return _ret;
+	}
+
+	private static Windows.UI.Xaml.Media.IGeometryStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IGeometryStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IGeometryStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.Media.Geometry Empty()
+	{
+		Windows.UI.Xaml.Media.Geometry _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGeometryStatics).get_Empty(&_ret));
+		return _ret;
+	}
+	static double StandardFlatteningTolerance()
+	{
+		double _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGeometryStatics).get_StandardFlatteningTolerance(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty TransformProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGeometryStatics).get_TransformProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1754,6 +1991,25 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeometryGroup).set_Children(value));
 	}
+
+	private static Windows.UI.Xaml.Media.IGeometryGroupStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IGeometryGroupStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IGeometryGroupStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty FillRuleProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGeometryGroupStatics).get_FillRuleProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ChildrenProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGeometryGroupStatics).get_ChildrenProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface GradientBrush : Windows.UI.Xaml.Media.Brush, Windows.UI.Xaml.Media.IGradientBrush
@@ -1798,6 +2054,37 @@ extern(Windows):
 	final void GradientStops(Windows.UI.Xaml.Media.GradientStopCollection value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientBrush).set_GradientStops(value));
+	}
+
+	private static Windows.UI.Xaml.Media.IGradientBrushStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IGradientBrushStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IGradientBrushStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty SpreadMethodProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGradientBrushStatics).get_SpreadMethodProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty MappingModeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGradientBrushStatics).get_MappingModeProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ColorInterpolationModeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGradientBrushStatics).get_ColorInterpolationModeProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty GradientStopsProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGradientBrushStatics).get_GradientStopsProperty(&_ret));
+		return _ret;
 	}
 }
 @makable!(GradientBrush, GradientBrush, Windows.UI.Xaml.Media.IGradientBrushFactory)
@@ -1845,6 +2132,25 @@ extern(Windows):
 	final void Offset(double value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientStop).set_Offset(value));
+	}
+
+	private static Windows.UI.Xaml.Media.IGradientStopStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IGradientStopStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IGradientStopStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty ColorProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGradientStopStatics).get_ColorProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty OffsetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGradientStopStatics).get_OffsetProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -1926,11 +2232,24 @@ extern(Windows):
 	}
 	final void removeImageFailed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ImageFailed(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IImageBrush).remove_ImageFailed(token));
 	}
 	final void removeImageOpened(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ImageOpened(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.IImageBrush).remove_ImageOpened(token));
+	}
+
+	private static Windows.UI.Xaml.Media.IImageBrushStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IImageBrushStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IImageBrushStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty ImageSourceProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IImageBrushStatics).get_ImageSourceProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -1975,6 +2294,25 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILineGeometry).set_EndPoint(value));
 	}
+
+	private static Windows.UI.Xaml.Media.ILineGeometryStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.ILineGeometryStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.ILineGeometryStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty StartPointProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ILineGeometryStatics).get_StartPointProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty EndPointProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ILineGeometryStatics).get_EndPointProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface LineSegment : Windows.UI.Xaml.Media.PathSegment, Windows.UI.Xaml.Media.ILineSegment
@@ -1989,6 +2327,19 @@ extern(Windows):
 	final void Point(Windows.Foundation.Point value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILineSegment).set_Point(value));
+	}
+
+	private static Windows.UI.Xaml.Media.ILineSegmentStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.ILineSegmentStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.ILineSegmentStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty PointProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ILineSegmentStatics).get_PointProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2014,6 +2365,25 @@ extern(Windows):
 	final void EndPoint(Windows.Foundation.Point value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILinearGradientBrush).set_EndPoint(value));
+	}
+
+	private static Windows.UI.Xaml.Media.ILinearGradientBrushStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.ILinearGradientBrushStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.ILinearGradientBrushStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty StartPointProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ILinearGradientBrushStatics).get_StartPointProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty EndPointProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ILinearGradientBrushStatics).get_EndPointProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2052,16 +2422,47 @@ extern(Windows):
 	final EventRegistrationToken OnLoadCompleted(void delegate(Windows.UI.Xaml.Media.LoadedImageSurface, Windows.UI.Xaml.Media.LoadedImageSourceLoadCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_LoadCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.LoadedImageSurface, Windows.UI.Xaml.Media.LoadedImageSourceLoadCompletedEventArgs), Windows.UI.Xaml.Media.LoadedImageSurface, Windows.UI.Xaml.Media.LoadedImageSourceLoadCompletedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILoadedImageSurface).add_LoadCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.LoadedImageSurface, Windows.UI.Xaml.Media.LoadedImageSourceLoadCompletedEventArgs), Windows.UI.Xaml.Media.LoadedImageSurface, Windows.UI.Xaml.Media.LoadedImageSourceLoadCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeLoadCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_LoadCompleted(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILoadedImageSurface).remove_LoadCompleted(token));
 	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+
+	private static Windows.UI.Xaml.Media.ILoadedImageSurfaceStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.ILoadedImageSurfaceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.ILoadedImageSurfaceStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.Media.LoadedImageSurface StartLoadFromUriWithSize(Windows.Foundation.Uri uri, Windows.Foundation.Size desiredMaxSize)
+	{
+		Windows.UI.Xaml.Media.LoadedImageSurface _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ILoadedImageSurfaceStatics).abi_StartLoadFromUriWithSize(uri, desiredMaxSize, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Media.LoadedImageSurface StartLoadFromUri(Windows.Foundation.Uri uri)
+	{
+		Windows.UI.Xaml.Media.LoadedImageSurface _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ILoadedImageSurfaceStatics).abi_StartLoadFromUri(uri, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Media.LoadedImageSurface StartLoadFromStreamWithSize(Windows.Storage.Streams.IRandomAccessStream stream, Windows.Foundation.Size desiredMaxSize)
+	{
+		Windows.UI.Xaml.Media.LoadedImageSurface _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ILoadedImageSurfaceStatics).abi_StartLoadFromStreamWithSize(stream, desiredMaxSize, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Media.LoadedImageSurface StartLoadFromStream(Windows.Storage.Streams.IRandomAccessStream stream)
+	{
+		Windows.UI.Xaml.Media.LoadedImageSurface _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ILoadedImageSurfaceStatics).abi_StartLoadFromStream(stream, &_ret));
+		return _ret;
 	}
 }
 
@@ -2078,10 +2479,53 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IMatrix3DProjection).set_ProjectionMatrix(value));
 	}
+
+	private static Windows.UI.Xaml.Media.IMatrix3DProjectionStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IMatrix3DProjectionStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IMatrix3DProjectionStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty ProjectionMatrixProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IMatrix3DProjectionStatics).get_ProjectionMatrixProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface MatrixHelper : Windows.UI.Xaml.Media.IMatrixHelper
 {
+	private static Windows.UI.Xaml.Media.IMatrixHelperStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IMatrixHelperStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IMatrixHelperStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.Media.Matrix Identity()
+	{
+		Windows.UI.Xaml.Media.Matrix _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IMatrixHelperStatics).get_Identity(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Media.Matrix FromElements(double m11, double m12, double m21, double m22, double offsetX, double offsetY)
+	{
+		Windows.UI.Xaml.Media.Matrix _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IMatrixHelperStatics).abi_FromElements(m11, m12, m21, m22, offsetX, offsetY, &_ret));
+		return _ret;
+	}
+	static bool GetIsIdentity(Windows.UI.Xaml.Media.Matrix target)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IMatrixHelperStatics).abi_GetIsIdentity(target, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Point Transform(Windows.UI.Xaml.Media.Matrix target, Windows.Foundation.Point point)
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IMatrixHelperStatics).abi_Transform(target, point, &_ret));
+		return _ret;
+	}
 }
 
 interface MatrixTransform : Windows.UI.Xaml.Media.Transform, Windows.UI.Xaml.Media.IMatrixTransform
@@ -2096,6 +2540,19 @@ extern(Windows):
 	final void Matrix(Windows.UI.Xaml.Media.Matrix value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IMatrixTransform).set_Matrix(value));
+	}
+
+	private static Windows.UI.Xaml.Media.IMatrixTransformStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IMatrixTransformStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IMatrixTransformStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty MatrixProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IMatrixTransformStatics).get_MatrixProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2173,6 +2630,37 @@ extern(Windows):
 	final void IsFilled(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathFigure).set_IsFilled(value));
+	}
+
+	private static Windows.UI.Xaml.Media.IPathFigureStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IPathFigureStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IPathFigureStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty SegmentsProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPathFigureStatics).get_SegmentsProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty StartPointProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPathFigureStatics).get_StartPointProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsClosedProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPathFigureStatics).get_IsClosedProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsFilledProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPathFigureStatics).get_IsFilledProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2261,6 +2749,25 @@ extern(Windows):
 	final void Figures(Windows.UI.Xaml.Media.PathFigureCollection value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathGeometry).set_Figures(value));
+	}
+
+	private static Windows.UI.Xaml.Media.IPathGeometryStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IPathGeometryStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IPathGeometryStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty FillRuleProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPathGeometryStatics).get_FillRuleProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty FiguresProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPathGeometryStatics).get_FiguresProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2474,6 +2981,91 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_ProjectionMatrix(&_ret));
 		return _ret;
 	}
+
+	private static Windows.UI.Xaml.Media.IPlaneProjectionStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IPlaneProjectionStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IPlaneProjectionStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty LocalOffsetXProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_LocalOffsetXProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty LocalOffsetYProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_LocalOffsetYProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty LocalOffsetZProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_LocalOffsetZProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty RotationXProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_RotationXProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty RotationYProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_RotationYProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty RotationZProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_RotationZProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty CenterOfRotationXProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_CenterOfRotationXProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty CenterOfRotationYProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_CenterOfRotationYProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty CenterOfRotationZProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_CenterOfRotationZProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty GlobalOffsetXProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_GlobalOffsetXProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty GlobalOffsetYProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_GlobalOffsetYProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty GlobalOffsetZProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_GlobalOffsetZProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ProjectionMatrixProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_ProjectionMatrixProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface PointCollection : Windows.Foundation.Collections.IVector!(Windows.Foundation.Point), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Point)
@@ -2552,6 +3144,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPolyBezierSegment).set_Points(value));
 	}
+
+	private static Windows.UI.Xaml.Media.IPolyBezierSegmentStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IPolyBezierSegmentStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IPolyBezierSegmentStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty PointsProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPolyBezierSegmentStatics).get_PointsProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface PolyLineSegment : Windows.UI.Xaml.Media.PathSegment, Windows.UI.Xaml.Media.IPolyLineSegment
@@ -2567,6 +3172,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPolyLineSegment).set_Points(value));
 	}
+
+	private static Windows.UI.Xaml.Media.IPolyLineSegmentStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IPolyLineSegmentStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IPolyLineSegmentStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty PointsProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPolyLineSegmentStatics).get_PointsProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface PolyQuadraticBezierSegment : Windows.UI.Xaml.Media.PathSegment, Windows.UI.Xaml.Media.IPolyQuadraticBezierSegment
@@ -2581,6 +3199,19 @@ extern(Windows):
 	final void Points(Windows.UI.Xaml.Media.PointCollection value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPolyQuadraticBezierSegment).set_Points(value));
+	}
+
+	private static Windows.UI.Xaml.Media.IPolyQuadraticBezierSegmentStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IPolyQuadraticBezierSegmentStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IPolyQuadraticBezierSegmentStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty PointsProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPolyQuadraticBezierSegmentStatics).get_PointsProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2625,6 +3256,25 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IQuadraticBezierSegment).set_Point2(value));
 	}
+
+	private static Windows.UI.Xaml.Media.IQuadraticBezierSegmentStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IQuadraticBezierSegmentStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IQuadraticBezierSegmentStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty Point1Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IQuadraticBezierSegmentStatics).get_Point1Property(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty Point2Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IQuadraticBezierSegmentStatics).get_Point2Property(&_ret));
+		return _ret;
+	}
 }
 
 interface RateChangedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Media.IRateChangedRoutedEventArgs
@@ -2643,6 +3293,19 @@ extern(Windows):
 	final void Rect(Windows.Foundation.Rect value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IRectangleGeometry).set_Rect(value));
+	}
+
+	private static Windows.UI.Xaml.Media.IRectangleGeometryStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IRectangleGeometryStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IRectangleGeometryStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty RectProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IRectangleGeometryStatics).get_RectProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2690,6 +3353,31 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IRotateTransform).set_Angle(value));
 	}
+
+	private static Windows.UI.Xaml.Media.IRotateTransformStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IRotateTransformStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IRotateTransformStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty CenterXProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IRotateTransformStatics).get_CenterXProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty CenterYProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IRotateTransformStatics).get_CenterYProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty AngleProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IRotateTransformStatics).get_AngleProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface ScaleTransform : Windows.UI.Xaml.Media.Transform, Windows.UI.Xaml.Media.IScaleTransform
@@ -2734,6 +3422,37 @@ extern(Windows):
 	final void ScaleY(double value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IScaleTransform).set_ScaleY(value));
+	}
+
+	private static Windows.UI.Xaml.Media.IScaleTransformStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IScaleTransformStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IScaleTransformStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty CenterXProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IScaleTransformStatics).get_CenterXProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty CenterYProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IScaleTransformStatics).get_CenterYProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ScaleXProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IScaleTransformStatics).get_ScaleXProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ScaleYProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IScaleTransformStatics).get_ScaleYProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2780,6 +3499,37 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.ISkewTransform).set_AngleY(value));
 	}
+
+	private static Windows.UI.Xaml.Media.ISkewTransformStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.ISkewTransformStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.ISkewTransformStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty CenterXProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ISkewTransformStatics).get_CenterXProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty CenterYProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ISkewTransformStatics).get_CenterYProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty AngleXProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ISkewTransformStatics).get_AngleXProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty AngleYProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ISkewTransformStatics).get_AngleYProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface SolidColorBrush : Windows.UI.Xaml.Media.Brush, Windows.UI.Xaml.Media.ISolidColorBrush
@@ -2794,6 +3544,19 @@ extern(Windows):
 	final void Color(Windows.UI.Color value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.ISolidColorBrush).set_Color(value));
+	}
+
+	private static Windows.UI.Xaml.Media.ISolidColorBrushStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.ISolidColorBrushStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.ISolidColorBrushStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty ColorProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ISolidColorBrushStatics).get_ColorProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2829,6 +3592,31 @@ extern(Windows):
 	final void Stretch(Windows.UI.Xaml.Media.Stretch value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITileBrush).set_Stretch(value));
+	}
+
+	private static Windows.UI.Xaml.Media.ITileBrushStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.ITileBrushStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.ITileBrushStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty AlignmentXProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ITileBrushStatics).get_AlignmentXProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty AlignmentYProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ITileBrushStatics).get_AlignmentYProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty StretchProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ITileBrushStatics).get_StretchProperty(&_ret));
+		return _ret;
 	}
 }
 @makable!(TileBrush, TileBrush, Windows.UI.Xaml.Media.ITileBrushFactory)
@@ -2884,6 +3672,31 @@ extern(Windows):
 	final void Text(HSTRING value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITimelineMarker).set_Text(value));
+	}
+
+	private static Windows.UI.Xaml.Media.ITimelineMarkerStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.ITimelineMarkerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.ITimelineMarkerStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty TimeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ITimelineMarkerStatics).get_TimeProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty TypeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ITimelineMarkerStatics).get_TypeProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty TextProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ITimelineMarkerStatics).get_TextProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -3065,6 +3878,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITransformGroup).get_Value(&_ret));
 		return _ret;
 	}
+
+	private static Windows.UI.Xaml.Media.ITransformGroupStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.ITransformGroupStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.ITransformGroupStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty ChildrenProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ITransformGroupStatics).get_ChildrenProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface TranslateTransform : Windows.UI.Xaml.Media.Transform, Windows.UI.Xaml.Media.ITranslateTransform
@@ -3090,10 +3916,81 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITranslateTransform).set_Y(value));
 	}
+
+	private static Windows.UI.Xaml.Media.ITranslateTransformStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.ITranslateTransformStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.ITranslateTransformStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty XProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ITranslateTransformStatics).get_XProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty YProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ITranslateTransformStatics).get_YProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface VisualTreeHelper : Windows.UI.Xaml.Media.IVisualTreeHelper
 {
+	private static Windows.UI.Xaml.Media.IVisualTreeHelperStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IVisualTreeHelperStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IVisualTreeHelperStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) FindElementsInHostCoordinatesPoint(Windows.Foundation.Point intersectingPoint, Windows.UI.Xaml.UIElement subtree)
+	{
+		Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IVisualTreeHelperStatics).abi_FindElementsInHostCoordinatesPoint(intersectingPoint, subtree, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) FindElementsInHostCoordinatesRect(Windows.Foundation.Rect intersectingRect, Windows.UI.Xaml.UIElement subtree)
+	{
+		Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IVisualTreeHelperStatics).abi_FindElementsInHostCoordinatesRect(intersectingRect, subtree, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) FindAllElementsInHostCoordinatesPoint(Windows.Foundation.Point intersectingPoint, Windows.UI.Xaml.UIElement subtree, bool includeAllElements)
+	{
+		Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IVisualTreeHelperStatics).abi_FindAllElementsInHostCoordinatesPoint(intersectingPoint, subtree, includeAllElements, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) FindAllElementsInHostCoordinatesRect(Windows.Foundation.Rect intersectingRect, Windows.UI.Xaml.UIElement subtree, bool includeAllElements)
+	{
+		Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IVisualTreeHelperStatics).abi_FindAllElementsInHostCoordinatesRect(intersectingRect, subtree, includeAllElements, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyObject GetChild(Windows.UI.Xaml.DependencyObject reference, INT32 childIndex)
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IVisualTreeHelperStatics).abi_GetChild(reference, childIndex, &_ret));
+		return _ret;
+	}
+	static INT32 GetChildrenCount(Windows.UI.Xaml.DependencyObject reference)
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IVisualTreeHelperStatics).abi_GetChildrenCount(reference, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyObject GetParent(Windows.UI.Xaml.DependencyObject reference)
+	{
+		Windows.UI.Xaml.DependencyObject _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IVisualTreeHelperStatics).abi_GetParent(reference, &_ret));
+		return _ret;
+	}
+	static void DisconnectChildrenRecursive(Windows.UI.Xaml.UIElement element)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IVisualTreeHelperStatics).abi_DisconnectChildrenRecursive(element));
+	}
 }
 
 interface XamlCompositionBrushBase : Windows.UI.Xaml.Media.Brush, Windows.UI.Xaml.Media.IXamlCompositionBrushBase, Windows.UI.Xaml.Media.IXamlCompositionBrushBaseOverrides, Windows.UI.Xaml.Media.IXamlCompositionBrushBaseProtected
@@ -3118,6 +4015,19 @@ extern(Windows):
 	final void CompositionBrush(Windows.UI.Composition.CompositionBrush value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseProtected).set_CompositionBrush(value));
+	}
+
+	private static Windows.UI.Xaml.Media.IXamlCompositionBrushBaseStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IXamlCompositionBrushBaseStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty FallbackColorProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseStatics).get_FallbackColorProperty(&_ret));
+		return _ret;
 	}
 }
 @makable!(XamlCompositionBrushBase, XamlCompositionBrushBase, Windows.UI.Xaml.Media.IXamlCompositionBrushBaseFactory)
@@ -3157,6 +4067,29 @@ extern(Windows):
 	final void CompositionLight(Windows.UI.Composition.CompositionLight value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlLightProtected).set_CompositionLight(value));
+	}
+
+	private static Windows.UI.Xaml.Media.IXamlLightStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.IXamlLightStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IXamlLightStatics);
+		return _staticInstance;
+	}
+	static void AddTargetElement(HSTRING lightId, Windows.UI.Xaml.UIElement element)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IXamlLightStatics).abi_AddTargetElement(lightId, element));
+	}
+	static void RemoveTargetElement(HSTRING lightId, Windows.UI.Xaml.UIElement element)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IXamlLightStatics).abi_RemoveTargetElement(lightId, element));
+	}
+	static void AddTargetBrush(HSTRING lightId, Windows.UI.Xaml.Media.Brush brush)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IXamlLightStatics).abi_AddTargetBrush(lightId, brush));
+	}
+	static void RemoveTargetBrush(HSTRING lightId, Windows.UI.Xaml.Media.Brush brush)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IXamlLightStatics).abi_RemoveTargetBrush(lightId, brush));
 	}
 }
 @makable!(XamlLight, XamlLight, Windows.UI.Xaml.Media.IXamlLightFactory)

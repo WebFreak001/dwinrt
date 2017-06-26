@@ -545,6 +545,32 @@ extern(Windows):
 
 interface AccessKeyManager : Windows.UI.Xaml.Input.IAccessKeyManager
 {
+	private static Windows.UI.Xaml.Input.IAccessKeyManagerStatics _staticInstance;
+	public static Windows.UI.Xaml.Input.IAccessKeyManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Input.IAccessKeyManagerStatics);
+		return _staticInstance;
+	}
+	static bool IsDisplayModeEnabled()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Input.IAccessKeyManagerStatics).get_IsDisplayModeEnabled(&_ret));
+		return _ret;
+	}
+	static EventRegistrationToken OnIsDisplayModeEnabledChanged(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Input.IAccessKeyManagerStatics).add_IsDisplayModeEnabledChanged(event!(Windows.Foundation.TypedEventHandler!(IInspectable, IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
+	static void removeIsDisplayModeEnabledChanged(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Input.IAccessKeyManagerStatics).remove_IsDisplayModeEnabledChanged(token));
+	}
+	static void ExitDisplayMode()
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Input.IAccessKeyManagerStatics).abi_ExitDisplayMode());
+	}
 }
 
 interface ContextRequestedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IContextRequestedEventArgs
@@ -642,6 +668,18 @@ extern(Windows):
 
 interface FocusManager : Windows.UI.Xaml.Input.IFocusManager
 {
+	private static Windows.UI.Xaml.Input.IFocusManagerStatics _staticInstance;
+	public static Windows.UI.Xaml.Input.IFocusManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Input.IFocusManagerStatics);
+		return _staticInstance;
+	}
+	static IInspectable GetFocusedElement()
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Input.IFocusManagerStatics).abi_GetFocusedElement(&_ret));
+		return _ret;
+	}
 }
 
 interface GettingFocusEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.Input.IGettingFocusEventArgs

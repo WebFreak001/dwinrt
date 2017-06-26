@@ -503,6 +503,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbConfigurationDescriptor).get_RemoteWakeup(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Devices.Usb.IUsbConfigurationDescriptorStatics _staticInstance;
+	public static Windows.Devices.Usb.IUsbConfigurationDescriptorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Usb.IUsbConfigurationDescriptorStatics);
+		return _staticInstance;
+	}
+	static bool TryParse(Windows.Devices.Usb.UsbDescriptor descriptor, Windows.Devices.Usb.UsbConfigurationDescriptor* out_parsed)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbConfigurationDescriptorStatics).abi_TryParse(descriptor, out_parsed, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Usb.UsbConfigurationDescriptor Parse(Windows.Devices.Usb.UsbDescriptor descriptor)
+	{
+		Windows.Devices.Usb.UsbConfigurationDescriptor _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbConfigurationDescriptorStatics).abi_Parse(descriptor, &_ret));
+		return _ret;
+	}
 }
 
 interface UsbControlRequestType : Windows.Devices.Usb.IUsbControlRequestType
@@ -620,6 +639,43 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
 	}
+
+	private static Windows.Devices.Usb.IUsbDeviceStatics _staticInstance;
+	public static Windows.Devices.Usb.IUsbDeviceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Usb.IUsbDeviceStatics);
+		return _staticInstance;
+	}
+	static HSTRING GetDeviceSelector(UINT32 vendorId, UINT32 productId, GUID winUsbInterfaceClass)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceStatics).abi_GetDeviceSelector(vendorId, productId, winUsbInterfaceClass, &_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelectorGuidOnly(GUID winUsbInterfaceClass)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceStatics).abi_GetDeviceSelectorGuidOnly(winUsbInterfaceClass, &_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelectorVidPidOnly(UINT32 vendorId, UINT32 productId)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceStatics).abi_GetDeviceSelectorVidPidOnly(vendorId, productId, &_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceClassSelector(Windows.Devices.Usb.UsbDeviceClass usbClass)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceStatics).abi_GetDeviceClassSelector(usbClass, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Usb.UsbDevice) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Usb.UsbDevice) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
 }
 
 interface UsbDeviceClass : Windows.Devices.Usb.IUsbDeviceClass
@@ -659,6 +715,66 @@ extern(Windows):
 
 interface UsbDeviceClasses : Windows.Devices.Usb.IUsbDeviceClasses
 {
+	private static Windows.Devices.Usb.IUsbDeviceClassesStatics _staticInstance;
+	public static Windows.Devices.Usb.IUsbDeviceClassesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Usb.IUsbDeviceClassesStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.Usb.UsbDeviceClass CdcControl()
+	{
+		Windows.Devices.Usb.UsbDeviceClass _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceClassesStatics).get_CdcControl(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Usb.UsbDeviceClass Physical()
+	{
+		Windows.Devices.Usb.UsbDeviceClass _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceClassesStatics).get_Physical(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Usb.UsbDeviceClass PersonalHealthcare()
+	{
+		Windows.Devices.Usb.UsbDeviceClass _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceClassesStatics).get_PersonalHealthcare(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Usb.UsbDeviceClass ActiveSync()
+	{
+		Windows.Devices.Usb.UsbDeviceClass _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceClassesStatics).get_ActiveSync(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Usb.UsbDeviceClass PalmSync()
+	{
+		Windows.Devices.Usb.UsbDeviceClass _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceClassesStatics).get_PalmSync(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Usb.UsbDeviceClass DeviceFirmwareUpdate()
+	{
+		Windows.Devices.Usb.UsbDeviceClass _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceClassesStatics).get_DeviceFirmwareUpdate(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Usb.UsbDeviceClass Irda()
+	{
+		Windows.Devices.Usb.UsbDeviceClass _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceClassesStatics).get_Irda(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Usb.UsbDeviceClass Measurement()
+	{
+		Windows.Devices.Usb.UsbDeviceClass _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceClassesStatics).get_Measurement(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Usb.UsbDeviceClass VendorSpecific()
+	{
+		Windows.Devices.Usb.UsbDeviceClass _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceClassesStatics).get_VendorSpecific(&_ret));
+		return _ret;
+	}
 }
 
 interface UsbDeviceDescriptor : Windows.Devices.Usb.IUsbDeviceDescriptor
@@ -747,6 +863,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbEndpointDescriptor).get_AsInterruptOutEndpointDescriptor(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Devices.Usb.IUsbEndpointDescriptorStatics _staticInstance;
+	public static Windows.Devices.Usb.IUsbEndpointDescriptorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Usb.IUsbEndpointDescriptorStatics);
+		return _staticInstance;
+	}
+	static bool TryParse(Windows.Devices.Usb.UsbDescriptor descriptor, Windows.Devices.Usb.UsbEndpointDescriptor* out_parsed)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbEndpointDescriptorStatics).abi_TryParse(descriptor, out_parsed, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Usb.UsbEndpointDescriptor Parse(Windows.Devices.Usb.UsbDescriptor descriptor)
+	{
+		Windows.Devices.Usb.UsbEndpointDescriptor _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbEndpointDescriptorStatics).abi_Parse(descriptor, &_ret));
+		return _ret;
+	}
 }
 
 interface UsbInterface : Windows.Devices.Usb.IUsbInterface
@@ -827,6 +962,25 @@ extern(Windows):
 	{
 		ubyte _ret;
 		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceDescriptor).get_InterfaceNumber(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Devices.Usb.IUsbInterfaceDescriptorStatics _staticInstance;
+	public static Windows.Devices.Usb.IUsbInterfaceDescriptorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Usb.IUsbInterfaceDescriptorStatics);
+		return _staticInstance;
+	}
+	static bool TryParse(Windows.Devices.Usb.UsbDescriptor descriptor, Windows.Devices.Usb.UsbInterfaceDescriptor* out_parsed)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbInterfaceDescriptorStatics).abi_TryParse(descriptor, out_parsed, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Usb.UsbInterfaceDescriptor Parse(Windows.Devices.Usb.UsbDescriptor descriptor)
+	{
+		Windows.Devices.Usb.UsbInterfaceDescriptor _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbInterfaceDescriptorStatics).abi_Parse(descriptor, &_ret));
 		return _ret;
 	}
 }
@@ -942,12 +1096,12 @@ extern(Windows):
 	final EventRegistrationToken OnDataReceived(void delegate(Windows.Devices.Usb.UsbInterruptInPipe, Windows.Devices.Usb.UsbInterruptInEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Usb.UsbInterruptInPipe, Windows.Devices.Usb.UsbInterruptInEventArgs), Windows.Devices.Usb.UsbInterruptInPipe, Windows.Devices.Usb.UsbInterruptInEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptInPipe).add_DataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Usb.UsbInterruptInPipe, Windows.Devices.Usb.UsbInterruptInEventArgs), Windows.Devices.Usb.UsbInterruptInPipe, Windows.Devices.Usb.UsbInterruptInEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDataReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DataReceived(token));
+		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptInPipe).remove_DataReceived(token));
 	}
 }
 

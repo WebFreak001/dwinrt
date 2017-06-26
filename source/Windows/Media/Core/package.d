@@ -1211,12 +1211,12 @@ extern(Windows):
 	final EventRegistrationToken OnOpenFailed(void delegate(Windows.Media.Core.AudioTrack, Windows.Media.Core.AudioTrackOpenFailedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_OpenFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.AudioTrack, Windows.Media.Core.AudioTrackOpenFailedEventArgs), Windows.Media.Core.AudioTrack, Windows.Media.Core.AudioTrackOpenFailedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IAudioTrack).add_OpenFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.AudioTrack, Windows.Media.Core.AudioTrackOpenFailedEventArgs), Windows.Media.Core.AudioTrack, Windows.Media.Core.AudioTrackOpenFailedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeOpenFailed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_OpenFailed(token));
+		Debug.OK(this.as!(Windows.Media.Core.IAudioTrack).remove_OpenFailed(token));
 	}
 	final Windows.Media.MediaProperties.AudioEncodingProperties GetEncodingProperties()
 	{
@@ -1377,6 +1377,318 @@ extern(Windows):
 
 interface CodecSubtypes
 {
+	private static Windows.Media.Core.ICodecSubtypesStatics _staticInstance;
+	public static Windows.Media.Core.ICodecSubtypesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Core.ICodecSubtypesStatics);
+		return _staticInstance;
+	}
+	static HSTRING VideoFormatDV25()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatDV25(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatDV50()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatDV50(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatDvc()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatDvc(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatDvh1()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatDvh1(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatDvhD()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatDvhD(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatDvsd()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatDvsd(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatDvsl()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatDvsl(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatH263()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatH263(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatH264()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatH264(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatH265()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatH265(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatH264ES()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatH264ES(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatHevc()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatHevc(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatHevcES()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatHevcES(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatM4S2()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatM4S2(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatMjpg()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatMjpg(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatMP43()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatMP43(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatMP4S()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatMP4S(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatMP4V()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatMP4V(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatMpeg2()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatMpeg2(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatVP80()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatVP80(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatVP90()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatVP90(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatMpg1()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatMpg1(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatMss1()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatMss1(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatMss2()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatMss2(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatWmv1()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatWmv1(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatWmv2()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatWmv2(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatWmv3()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatWmv3(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormatWvc1()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormatWvc1(&_ret));
+		return _ret;
+	}
+	static HSTRING VideoFormat420O()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_VideoFormat420O(&_ret));
+		return _ret;
+	}
+	static HSTRING AudioFormatAac()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_AudioFormatAac(&_ret));
+		return _ret;
+	}
+	static HSTRING AudioFormatAdts()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_AudioFormatAdts(&_ret));
+		return _ret;
+	}
+	static HSTRING AudioFormatAlac()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_AudioFormatAlac(&_ret));
+		return _ret;
+	}
+	static HSTRING AudioFormatAmrNB()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_AudioFormatAmrNB(&_ret));
+		return _ret;
+	}
+	static HSTRING AudioFormatAmrWB()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_AudioFormatAmrWB(&_ret));
+		return _ret;
+	}
+	static HSTRING AudioFormatAmrWP()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_AudioFormatAmrWP(&_ret));
+		return _ret;
+	}
+	static HSTRING AudioFormatDolbyAC3()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_AudioFormatDolbyAC3(&_ret));
+		return _ret;
+	}
+	static HSTRING AudioFormatDolbyAC3Spdif()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_AudioFormatDolbyAC3Spdif(&_ret));
+		return _ret;
+	}
+	static HSTRING AudioFormatDolbyDDPlus()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_AudioFormatDolbyDDPlus(&_ret));
+		return _ret;
+	}
+	static HSTRING AudioFormatDrm()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_AudioFormatDrm(&_ret));
+		return _ret;
+	}
+	static HSTRING AudioFormatDts()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_AudioFormatDts(&_ret));
+		return _ret;
+	}
+	static HSTRING AudioFormatFlac()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_AudioFormatFlac(&_ret));
+		return _ret;
+	}
+	static HSTRING AudioFormatFloat()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_AudioFormatFloat(&_ret));
+		return _ret;
+	}
+	static HSTRING AudioFormatMP3()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_AudioFormatMP3(&_ret));
+		return _ret;
+	}
+	static HSTRING AudioFormatMPeg()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_AudioFormatMPeg(&_ret));
+		return _ret;
+	}
+	static HSTRING AudioFormatMsp1()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_AudioFormatMsp1(&_ret));
+		return _ret;
+	}
+	static HSTRING AudioFormatOpus()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_AudioFormatOpus(&_ret));
+		return _ret;
+	}
+	static HSTRING AudioFormatPcm()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_AudioFormatPcm(&_ret));
+		return _ret;
+	}
+	static HSTRING AudioFormatWmaSpdif()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_AudioFormatWmaSpdif(&_ret));
+		return _ret;
+	}
+	static HSTRING AudioFormatWMAudioLossless()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_AudioFormatWMAudioLossless(&_ret));
+		return _ret;
+	}
+	static HSTRING AudioFormatWMAudioV8()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_AudioFormatWMAudioV8(&_ret));
+		return _ret;
+	}
+	static HSTRING AudioFormatWMAudioV9()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ICodecSubtypesStatics).get_AudioFormatWMAudioV9(&_ret));
+		return _ret;
+	}
 }
 
 interface DataCue : Windows.Media.Core.IDataCue, Windows.Media.Core.IMediaCue, Windows.Media.Core.IDataCue2
@@ -1467,12 +1779,12 @@ extern(Windows):
 	final EventRegistrationToken OnFaceDetected(void delegate(Windows.Media.Core.FaceDetectionEffect, Windows.Media.Core.FaceDetectedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_FaceDetected(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.FaceDetectionEffect, Windows.Media.Core.FaceDetectedEventArgs), Windows.Media.Core.FaceDetectionEffect, Windows.Media.Core.FaceDetectedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IFaceDetectionEffect).add_FaceDetected(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.FaceDetectionEffect, Windows.Media.Core.FaceDetectedEventArgs), Windows.Media.Core.FaceDetectionEffect, Windows.Media.Core.FaceDetectedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeFaceDetected(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_FaceDetected(cookie));
+		Debug.OK(this.as!(Windows.Media.Core.IFaceDetectionEffect).remove_FaceDetected(cookie));
 	}
 	final void SetProperties(Windows.Foundation.Collections.IPropertySet configuration)
 	{
@@ -1693,12 +2005,12 @@ extern(Windows):
 	final EventRegistrationToken OnBinding(void delegate(Windows.Media.Core.MediaBinder, Windows.Media.Core.MediaBindingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Binding(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaBinder, Windows.Media.Core.MediaBindingEventArgs), Windows.Media.Core.MediaBinder, Windows.Media.Core.MediaBindingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IMediaBinder).add_Binding(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaBinder, Windows.Media.Core.MediaBindingEventArgs), Windows.Media.Core.MediaBinder, Windows.Media.Core.MediaBindingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeBinding(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Binding(token));
+		Debug.OK(this.as!(Windows.Media.Core.IMediaBinder).remove_Binding(token));
 	}
 	final HSTRING Token()
 	{
@@ -1724,12 +2036,12 @@ extern(Windows):
 	final EventRegistrationToken OnCanceled(void delegate(Windows.Media.Core.MediaBindingEventArgs, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Canceled(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaBindingEventArgs, IInspectable), Windows.Media.Core.MediaBindingEventArgs, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IMediaBindingEventArgs).add_Canceled(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaBindingEventArgs, IInspectable), Windows.Media.Core.MediaBindingEventArgs, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeCanceled(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Canceled(token));
+		Debug.OK(this.as!(Windows.Media.Core.IMediaBindingEventArgs).remove_Canceled(token));
 	}
 	final Windows.Media.Core.MediaBinder MediaBinder()
 	{
@@ -1782,12 +2094,12 @@ extern(Windows):
 	final EventRegistrationToken OnOpenOperationCompleted(void delegate(Windows.Media.Core.MediaSource, Windows.Media.Core.MediaSourceOpenOperationCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_OpenOperationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaSource, Windows.Media.Core.MediaSourceOpenOperationCompletedEventArgs), Windows.Media.Core.MediaSource, Windows.Media.Core.MediaSourceOpenOperationCompletedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IMediaSource2).add_OpenOperationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaSource, Windows.Media.Core.MediaSourceOpenOperationCompletedEventArgs), Windows.Media.Core.MediaSource, Windows.Media.Core.MediaSourceOpenOperationCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeOpenOperationCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_OpenOperationCompleted(token));
+		Debug.OK(this.as!(Windows.Media.Core.IMediaSource2).remove_OpenOperationCompleted(token));
 	}
 	final Windows.Foundation.Collections.ValueSet CustomProperties()
 	{
@@ -1826,12 +2138,12 @@ extern(Windows):
 	final EventRegistrationToken OnStateChanged(void delegate(Windows.Media.Core.MediaSource, Windows.Media.Core.MediaSourceStateChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaSource, Windows.Media.Core.MediaSourceStateChangedEventArgs), Windows.Media.Core.MediaSource, Windows.Media.Core.MediaSourceStateChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IMediaSource3).add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaSource, Windows.Media.Core.MediaSourceStateChangedEventArgs), Windows.Media.Core.MediaSource, Windows.Media.Core.MediaSourceStateChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_StateChanged(token));
+		Debug.OK(this.as!(Windows.Media.Core.IMediaSource3).remove_StateChanged(token));
 	}
 	final Windows.Media.Core.MediaSourceState State()
 	{
@@ -1871,6 +2183,61 @@ extern(Windows):
 	{
 		Windows.Foundation.IAsyncAction _ret;
 		Debug.OK(this.as!(Windows.Media.Core.IMediaSource4).abi_OpenAsync(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Media.Core.IMediaSourceStatics _staticInstance;
+	public static Windows.Media.Core.IMediaSourceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Core.IMediaSourceStatics);
+		return _staticInstance;
+	}
+	static Windows.Media.Core.MediaSource CreateFromAdaptiveMediaSource(Windows.Media.Streaming.Adaptive.AdaptiveMediaSource mediaSource)
+	{
+		Windows.Media.Core.MediaSource _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.IMediaSourceStatics).abi_CreateFromAdaptiveMediaSource(mediaSource, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Core.MediaSource CreateFromMediaStreamSource(Windows.Media.Core.MediaStreamSource mediaSource)
+	{
+		Windows.Media.Core.MediaSource _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.IMediaSourceStatics).abi_CreateFromMediaStreamSource(mediaSource, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Core.MediaSource CreateFromMseStreamSource(Windows.Media.Core.MseStreamSource mediaSource)
+	{
+		Windows.Media.Core.MediaSource _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.IMediaSourceStatics).abi_CreateFromMseStreamSource(mediaSource, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Core.MediaSource CreateFromIMediaSource(Windows.Media.Core.IMediaSource mediaSource)
+	{
+		Windows.Media.Core.MediaSource _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.IMediaSourceStatics).abi_CreateFromIMediaSource(mediaSource, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Core.MediaSource CreateFromStorageFile(Windows.Storage.IStorageFile file)
+	{
+		Windows.Media.Core.MediaSource _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.IMediaSourceStatics).abi_CreateFromStorageFile(file, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Core.MediaSource CreateFromStream(Windows.Storage.Streams.IRandomAccessStream stream, HSTRING contentType)
+	{
+		Windows.Media.Core.MediaSource _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.IMediaSourceStatics).abi_CreateFromStream(stream, contentType, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Core.MediaSource CreateFromStreamReference(Windows.Storage.Streams.IRandomAccessStreamReference stream, HSTRING contentType)
+	{
+		Windows.Media.Core.MediaSource _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.IMediaSourceStatics).abi_CreateFromStreamReference(stream, contentType, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Core.MediaSource CreateFromUri(Windows.Foundation.Uri uri)
+	{
+		Windows.Media.Core.MediaSource _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.IMediaSourceStatics).abi_CreateFromUri(uri, &_ret));
 		return _ret;
 	}
 }
@@ -1920,12 +2287,12 @@ extern(Windows):
 	final EventRegistrationToken OnProcessed(void delegate(Windows.Media.Core.MediaStreamSample, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Processed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSample, IInspectable), Windows.Media.Core.MediaStreamSample, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSample).add_Processed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSample, IInspectable), Windows.Media.Core.MediaStreamSample, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeProcessed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Processed(token));
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSample).remove_Processed(token));
 	}
 	final Windows.Storage.Streams.Buffer Buffer()
 	{
@@ -1989,6 +2356,25 @@ extern(Windows):
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSample).get_Discontinuous(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Media.Core.IMediaStreamSampleStatics _staticInstance;
+	public static Windows.Media.Core.IMediaStreamSampleStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Core.IMediaStreamSampleStatics);
+		return _staticInstance;
+	}
+	static Windows.Media.Core.MediaStreamSample CreateFromBuffer(Windows.Storage.Streams.IBuffer buffer, Windows.Foundation.TimeSpan timestamp)
+	{
+		Windows.Media.Core.MediaStreamSample _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.IMediaStreamSampleStatics).abi_CreateFromBuffer(buffer, timestamp, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Core.MediaStreamSample) CreateFromStreamAsync(Windows.Storage.Streams.IInputStream stream, UINT32 count, Windows.Foundation.TimeSpan timestamp)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Core.MediaStreamSample) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.IMediaStreamSampleStatics).abi_CreateFromStreamAsync(stream, count, timestamp, &_ret));
 		return _ret;
 	}
 }
@@ -2075,52 +2461,52 @@ extern(Windows):
 	final EventRegistrationToken OnClosed(void delegate(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceClosedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceClosedEventArgs), Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceClosedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceClosedEventArgs), Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceClosedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeClosed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Closed(token));
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).remove_Closed(token));
 	}
 	final EventRegistrationToken OnStarting(void delegate(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceStartingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Starting(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceStartingEventArgs), Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceStartingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).add_Starting(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceStartingEventArgs), Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceStartingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStarting(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Starting(token));
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).remove_Starting(token));
 	}
 	final EventRegistrationToken OnPaused(void delegate(Windows.Media.Core.MediaStreamSource, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Paused(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, IInspectable), Windows.Media.Core.MediaStreamSource, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).add_Paused(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, IInspectable), Windows.Media.Core.MediaStreamSource, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removePaused(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Paused(token));
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).remove_Paused(token));
 	}
 	final EventRegistrationToken OnSampleRequested(void delegate(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSampleRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SampleRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSampleRequestedEventArgs), Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSampleRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).add_SampleRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSampleRequestedEventArgs), Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSampleRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSampleRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SampleRequested(token));
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).remove_SampleRequested(token));
 	}
 	final EventRegistrationToken OnSwitchStreamsRequested(void delegate(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSwitchStreamsRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SwitchStreamsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSwitchStreamsRequestedEventArgs), Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSwitchStreamsRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).add_SwitchStreamsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSwitchStreamsRequestedEventArgs), Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSwitchStreamsRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSwitchStreamsRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SwitchStreamsRequested(token));
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource).remove_SwitchStreamsRequested(token));
 	}
 	final void NotifyError(Windows.Media.Core.MediaStreamSourceErrorStatus errorStatus)
 	{
@@ -2203,12 +2589,12 @@ extern(Windows):
 	final EventRegistrationToken OnSampleRendered(void delegate(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSampleRenderedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SampleRendered(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSampleRenderedEventArgs), Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSampleRenderedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource2).add_SampleRendered(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSampleRenderedEventArgs), Windows.Media.Core.MediaStreamSource, Windows.Media.Core.MediaStreamSourceSampleRenderedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSampleRendered(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SampleRendered(token));
+		Debug.OK(this.as!(Windows.Media.Core.IMediaStreamSource2).remove_SampleRendered(token));
 	}
 	final void MaxSupportedPlaybackRate(Windows.Foundation.IReference!(double) value)
 	{
@@ -2396,52 +2782,52 @@ extern(Windows):
 	final EventRegistrationToken OnUpdateStarting(void delegate(Windows.Media.Core.MseSourceBuffer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_UpdateStarting(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer, IInspectable), Windows.Media.Core.MseSourceBuffer, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).add_UpdateStarting(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer, IInspectable), Windows.Media.Core.MseSourceBuffer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeUpdateStarting(EventRegistrationToken token)
 	{
-		Debug.OK(remove_UpdateStarting(token));
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).remove_UpdateStarting(token));
 	}
 	final EventRegistrationToken OnUpdated(void delegate(Windows.Media.Core.MseSourceBuffer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer, IInspectable), Windows.Media.Core.MseSourceBuffer, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer, IInspectable), Windows.Media.Core.MseSourceBuffer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Updated(token));
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).remove_Updated(token));
 	}
 	final EventRegistrationToken OnUpdateEnded(void delegate(Windows.Media.Core.MseSourceBuffer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_UpdateEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer, IInspectable), Windows.Media.Core.MseSourceBuffer, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).add_UpdateEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer, IInspectable), Windows.Media.Core.MseSourceBuffer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeUpdateEnded(EventRegistrationToken token)
 	{
-		Debug.OK(remove_UpdateEnded(token));
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).remove_UpdateEnded(token));
 	}
 	final EventRegistrationToken OnErrorOccurred(void delegate(Windows.Media.Core.MseSourceBuffer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ErrorOccurred(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer, IInspectable), Windows.Media.Core.MseSourceBuffer, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).add_ErrorOccurred(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer, IInspectable), Windows.Media.Core.MseSourceBuffer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeErrorOccurred(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ErrorOccurred(token));
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).remove_ErrorOccurred(token));
 	}
 	final EventRegistrationToken OnAborted(void delegate(Windows.Media.Core.MseSourceBuffer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Aborted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer, IInspectable), Windows.Media.Core.MseSourceBuffer, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).add_Aborted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBuffer, IInspectable), Windows.Media.Core.MseSourceBuffer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeAborted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Aborted(token));
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBuffer).remove_Aborted(token));
 	}
 	final Windows.Media.Core.MseAppendMode Mode()
 	{
@@ -2523,22 +2909,22 @@ extern(Windows):
 	final EventRegistrationToken OnSourceBufferAdded(void delegate(Windows.Media.Core.MseSourceBufferList, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SourceBufferAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBufferList, IInspectable), Windows.Media.Core.MseSourceBufferList, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBufferList).add_SourceBufferAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBufferList, IInspectable), Windows.Media.Core.MseSourceBufferList, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSourceBufferAdded(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SourceBufferAdded(token));
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBufferList).remove_SourceBufferAdded(token));
 	}
 	final EventRegistrationToken OnSourceBufferRemoved(void delegate(Windows.Media.Core.MseSourceBufferList, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SourceBufferRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBufferList, IInspectable), Windows.Media.Core.MseSourceBufferList, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBufferList).add_SourceBufferRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseSourceBufferList, IInspectable), Windows.Media.Core.MseSourceBufferList, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSourceBufferRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SourceBufferRemoved(token));
+		Debug.OK(this.as!(Windows.Media.Core.IMseSourceBufferList).remove_SourceBufferRemoved(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.MseSourceBuffer) Buffers()
 	{
@@ -2554,32 +2940,32 @@ extern(Windows):
 	final EventRegistrationToken OnOpened(void delegate(Windows.Media.Core.MseStreamSource, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Opened(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseStreamSource, IInspectable), Windows.Media.Core.MseStreamSource, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IMseStreamSource).add_Opened(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseStreamSource, IInspectable), Windows.Media.Core.MseStreamSource, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeOpened(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Opened(token));
+		Debug.OK(this.as!(Windows.Media.Core.IMseStreamSource).remove_Opened(token));
 	}
 	final EventRegistrationToken OnEnded(void delegate(Windows.Media.Core.MseStreamSource, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Ended(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseStreamSource, IInspectable), Windows.Media.Core.MseStreamSource, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IMseStreamSource).add_Ended(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseStreamSource, IInspectable), Windows.Media.Core.MseStreamSource, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeEnded(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Ended(token));
+		Debug.OK(this.as!(Windows.Media.Core.IMseStreamSource).remove_Ended(token));
 	}
 	final EventRegistrationToken OnClosed(void delegate(Windows.Media.Core.MseStreamSource, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseStreamSource, IInspectable), Windows.Media.Core.MseStreamSource, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IMseStreamSource).add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.MseStreamSource, IInspectable), Windows.Media.Core.MseStreamSource, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeClosed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Closed(token));
+		Debug.OK(this.as!(Windows.Media.Core.IMseStreamSource).remove_Closed(token));
 	}
 	final Windows.Media.Core.MseSourceBufferList SourceBuffers()
 	{
@@ -2623,6 +3009,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Core.IMseStreamSource).abi_EndOfStream(status));
 	}
+
+	private static Windows.Media.Core.IMseStreamSourceStatics _staticInstance;
+	public static Windows.Media.Core.IMseStreamSourceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Core.IMseStreamSourceStatics);
+		return _staticInstance;
+	}
+	static bool IsContentTypeSupported(HSTRING contentType)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.IMseStreamSourceStatics).abi_IsContentTypeSupported(contentType, &_ret));
+		return _ret;
+	}
 }
 
 interface SceneAnalysisEffect : Windows.Media.Core.ISceneAnalysisEffect, Windows.Media.IMediaExtension
@@ -2647,12 +3046,12 @@ extern(Windows):
 	final EventRegistrationToken OnSceneAnalyzed(void delegate(Windows.Media.Core.SceneAnalysisEffect, Windows.Media.Core.SceneAnalyzedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SceneAnalyzed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.SceneAnalysisEffect, Windows.Media.Core.SceneAnalyzedEventArgs), Windows.Media.Core.SceneAnalysisEffect, Windows.Media.Core.SceneAnalyzedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.ISceneAnalysisEffect).add_SceneAnalyzed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.SceneAnalysisEffect, Windows.Media.Core.SceneAnalyzedEventArgs), Windows.Media.Core.SceneAnalysisEffect, Windows.Media.Core.SceneAnalyzedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSceneAnalyzed(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_SceneAnalyzed(cookie));
+		Debug.OK(this.as!(Windows.Media.Core.ISceneAnalysisEffect).remove_SceneAnalyzed(cookie));
 	}
 	final void SetProperties(Windows.Foundation.Collections.IPropertySet configuration)
 	{
@@ -2838,32 +3237,32 @@ extern(Windows):
 	final EventRegistrationToken OnCueEntered(void delegate(Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.MediaCueEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_CueEntered(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.MediaCueEventArgs), Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.MediaCueEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.ITimedMetadataTrack).add_CueEntered(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.MediaCueEventArgs), Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.MediaCueEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCueEntered(EventRegistrationToken token)
 	{
-		Debug.OK(remove_CueEntered(token));
+		Debug.OK(this.as!(Windows.Media.Core.ITimedMetadataTrack).remove_CueEntered(token));
 	}
 	final EventRegistrationToken OnCueExited(void delegate(Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.MediaCueEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_CueExited(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.MediaCueEventArgs), Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.MediaCueEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.ITimedMetadataTrack).add_CueExited(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.MediaCueEventArgs), Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.MediaCueEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCueExited(EventRegistrationToken token)
 	{
-		Debug.OK(remove_CueExited(token));
+		Debug.OK(this.as!(Windows.Media.Core.ITimedMetadataTrack).remove_CueExited(token));
 	}
 	final EventRegistrationToken OnTrackFailed(void delegate(Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.TimedMetadataTrackFailedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_TrackFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.TimedMetadataTrackFailedEventArgs), Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.TimedMetadataTrackFailedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.ITimedMetadataTrack).add_TrackFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.TimedMetadataTrackFailedEventArgs), Windows.Media.Core.TimedMetadataTrack, Windows.Media.Core.TimedMetadataTrackFailedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTrackFailed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_TrackFailed(token));
+		Debug.OK(this.as!(Windows.Media.Core.ITimedMetadataTrack).remove_TrackFailed(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.IMediaCue) Cues()
 	{
@@ -3180,12 +3579,43 @@ extern(Windows):
 	final EventRegistrationToken OnResolved(void delegate(Windows.Media.Core.TimedTextSource, Windows.Media.Core.TimedTextSourceResolveResultEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Resolved(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.TimedTextSource, Windows.Media.Core.TimedTextSourceResolveResultEventArgs), Windows.Media.Core.TimedTextSource, Windows.Media.Core.TimedTextSourceResolveResultEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextSource).add_Resolved(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.TimedTextSource, Windows.Media.Core.TimedTextSourceResolveResultEventArgs), Windows.Media.Core.TimedTextSource, Windows.Media.Core.TimedTextSourceResolveResultEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeResolved(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Resolved(token));
+		Debug.OK(this.as!(Windows.Media.Core.ITimedTextSource).remove_Resolved(token));
+	}
+
+	private static Windows.Media.Core.ITimedTextSourceStatics _staticInstance;
+	public static Windows.Media.Core.ITimedTextSourceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Core.ITimedTextSourceStatics);
+		return _staticInstance;
+	}
+	static Windows.Media.Core.TimedTextSource CreateFromStream(Windows.Storage.Streams.IRandomAccessStream stream)
+	{
+		Windows.Media.Core.TimedTextSource _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ITimedTextSourceStatics).abi_CreateFromStream(stream, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Core.TimedTextSource CreateFromUri(Windows.Foundation.Uri uri)
+	{
+		Windows.Media.Core.TimedTextSource _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ITimedTextSourceStatics).abi_CreateFromUri(uri, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Core.TimedTextSource CreateFromStreamWithLanguage(Windows.Storage.Streams.IRandomAccessStream stream, HSTRING defaultLanguage)
+	{
+		Windows.Media.Core.TimedTextSource _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ITimedTextSourceStatics).abi_CreateFromStreamWithLanguage(stream, defaultLanguage, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Core.TimedTextSource CreateFromUriWithLanguage(Windows.Foundation.Uri uri, HSTRING defaultLanguage)
+	{
+		Windows.Media.Core.TimedTextSource _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Core.ITimedTextSourceStatics).abi_CreateFromUriWithLanguage(uri, defaultLanguage, &_ret));
+		return _ret;
 	}
 }
 
@@ -3422,12 +3852,12 @@ extern(Windows):
 	final EventRegistrationToken OnEnabledChanged(void delegate(Windows.Media.Core.VideoStabilizationEffect, Windows.Media.Core.VideoStabilizationEffectEnabledChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_EnabledChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.VideoStabilizationEffect, Windows.Media.Core.VideoStabilizationEffectEnabledChangedEventArgs), Windows.Media.Core.VideoStabilizationEffect, Windows.Media.Core.VideoStabilizationEffectEnabledChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IVideoStabilizationEffect).add_EnabledChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.VideoStabilizationEffect, Windows.Media.Core.VideoStabilizationEffectEnabledChangedEventArgs), Windows.Media.Core.VideoStabilizationEffect, Windows.Media.Core.VideoStabilizationEffectEnabledChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeEnabledChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_EnabledChanged(cookie));
+		Debug.OK(this.as!(Windows.Media.Core.IVideoStabilizationEffect).remove_EnabledChanged(cookie));
 	}
 	final Windows.Media.Capture.VideoStreamConfiguration GetRecommendedStreamConfiguration(Windows.Media.Devices.VideoDeviceController controller, Windows.Media.MediaProperties.VideoEncodingProperties desiredProperties)
 	{
@@ -3540,12 +3970,12 @@ extern(Windows):
 	final EventRegistrationToken OnOpenFailed(void delegate(Windows.Media.Core.VideoTrack, Windows.Media.Core.VideoTrackOpenFailedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_OpenFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.VideoTrack, Windows.Media.Core.VideoTrackOpenFailedEventArgs), Windows.Media.Core.VideoTrack, Windows.Media.Core.VideoTrackOpenFailedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.IVideoTrack).add_OpenFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.VideoTrack, Windows.Media.Core.VideoTrackOpenFailedEventArgs), Windows.Media.Core.VideoTrack, Windows.Media.Core.VideoTrackOpenFailedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeOpenFailed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_OpenFailed(token));
+		Debug.OK(this.as!(Windows.Media.Core.IVideoTrack).remove_OpenFailed(token));
 	}
 	final Windows.Media.MediaProperties.VideoEncodingProperties GetEncodingProperties()
 	{

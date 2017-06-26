@@ -181,6 +181,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScanner).abi_ScanFilesToFolderAsync(scanSource, storageFolder, &_ret));
 		return _ret;
 	}
+
+	private static Windows.Devices.Scanners.IImageScannerStatics _staticInstance;
+	public static Windows.Devices.Scanners.IImageScannerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Scanners.IImageScannerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Scanners.ImageScanner) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Scanners.ImageScanner) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Scanners.IImageScannerStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Scanners.IImageScannerStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
 }
 
 interface ImageScannerAutoConfiguration : Windows.Devices.Scanners.IImageScannerFormatConfiguration

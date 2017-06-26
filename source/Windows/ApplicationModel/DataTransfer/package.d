@@ -414,6 +414,40 @@ extern(Windows):
 
 interface Clipboard
 {
+	private static Windows.ApplicationModel.DataTransfer.IClipboardStatics _staticInstance;
+	public static Windows.ApplicationModel.DataTransfer.IClipboardStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.DataTransfer.IClipboardStatics);
+		return _staticInstance;
+	}
+	static Windows.ApplicationModel.DataTransfer.DataPackageView GetContent()
+	{
+		Windows.ApplicationModel.DataTransfer.DataPackageView _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.DataTransfer.IClipboardStatics).abi_GetContent(&_ret));
+		return _ret;
+	}
+	static void SetContent(Windows.ApplicationModel.DataTransfer.DataPackage content)
+	{
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.DataTransfer.IClipboardStatics).abi_SetContent(content));
+	}
+	static void Flush()
+	{
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.DataTransfer.IClipboardStatics).abi_Flush());
+	}
+	static void Clear()
+	{
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.DataTransfer.IClipboardStatics).abi_Clear());
+	}
+	static EventRegistrationToken OnContentChanged(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.DataTransfer.IClipboardStatics).add_ContentChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
+	static void removeContentChanged(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.DataTransfer.IClipboardStatics).remove_ContentChanged(token));
+	}
 }
 
 interface DataPackage : Windows.ApplicationModel.DataTransfer.IDataPackage, Windows.ApplicationModel.DataTransfer.IDataPackage2, Windows.ApplicationModel.DataTransfer.IDataPackage3
@@ -444,22 +478,22 @@ extern(Windows):
 	final EventRegistrationToken OnOperationCompleted(void delegate(Windows.ApplicationModel.DataTransfer.DataPackage, Windows.ApplicationModel.DataTransfer.OperationCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_OperationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataPackage, Windows.ApplicationModel.DataTransfer.OperationCompletedEventArgs), Windows.ApplicationModel.DataTransfer.DataPackage, Windows.ApplicationModel.DataTransfer.OperationCompletedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage).add_OperationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataPackage, Windows.ApplicationModel.DataTransfer.OperationCompletedEventArgs), Windows.ApplicationModel.DataTransfer.DataPackage, Windows.ApplicationModel.DataTransfer.OperationCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeOperationCompleted(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_OperationCompleted(eventCookie));
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage).remove_OperationCompleted(eventCookie));
 	}
 	final EventRegistrationToken OnDestroyed(void delegate(Windows.ApplicationModel.DataTransfer.DataPackage, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Destroyed(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataPackage, IInspectable), Windows.ApplicationModel.DataTransfer.DataPackage, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage).add_Destroyed(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataPackage, IInspectable), Windows.ApplicationModel.DataTransfer.DataPackage, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeDestroyed(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_Destroyed(eventCookie));
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage).remove_Destroyed(eventCookie));
 	}
 	final void SetData(HSTRING formatId, IInspectable value)
 	{
@@ -515,12 +549,12 @@ extern(Windows):
 	final EventRegistrationToken OnShareCompleted(void delegate(Windows.ApplicationModel.DataTransfer.DataPackage, Windows.ApplicationModel.DataTransfer.ShareCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ShareCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataPackage, Windows.ApplicationModel.DataTransfer.ShareCompletedEventArgs), Windows.ApplicationModel.DataTransfer.DataPackage, Windows.ApplicationModel.DataTransfer.ShareCompletedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage3).add_ShareCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataPackage, Windows.ApplicationModel.DataTransfer.ShareCompletedEventArgs), Windows.ApplicationModel.DataTransfer.DataPackage, Windows.ApplicationModel.DataTransfer.ShareCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeShareCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ShareCompleted(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataPackage3).remove_ShareCompleted(token));
 	}
 }
 
@@ -1005,37 +1039,72 @@ extern(Windows):
 	final EventRegistrationToken OnDataRequested(void delegate(Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DataRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs), Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataTransferManager).add_DataRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs), Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDataRequested(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_DataRequested(eventCookie));
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataTransferManager).remove_DataRequested(eventCookie));
 	}
 	final EventRegistrationToken OnTargetApplicationChosen(void delegate(Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.TargetApplicationChosenEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_TargetApplicationChosen(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.TargetApplicationChosenEventArgs), Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.TargetApplicationChosenEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataTransferManager).add_TargetApplicationChosen(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.TargetApplicationChosenEventArgs), Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.TargetApplicationChosenEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTargetApplicationChosen(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_TargetApplicationChosen(eventCookie));
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataTransferManager).remove_TargetApplicationChosen(eventCookie));
 	}
 	final EventRegistrationToken OnShareProvidersRequested(void delegate(Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.ShareProvidersRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ShareProvidersRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.ShareProvidersRequestedEventArgs), Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.ShareProvidersRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataTransferManager2).add_ShareProvidersRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.ShareProvidersRequestedEventArgs), Windows.ApplicationModel.DataTransfer.DataTransferManager, Windows.ApplicationModel.DataTransfer.ShareProvidersRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeShareProvidersRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ShareProvidersRequested(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.DataTransfer.IDataTransferManager2).remove_ShareProvidersRequested(token));
+	}
+
+	private static Windows.ApplicationModel.DataTransfer.IDataTransferManagerStatics _staticInstance;
+	public static Windows.ApplicationModel.DataTransfer.IDataTransferManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.DataTransfer.IDataTransferManagerStatics);
+		return _staticInstance;
+	}
+	static void ShowShareUI()
+	{
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.DataTransfer.IDataTransferManagerStatics).abi_ShowShareUI());
+	}
+	static Windows.ApplicationModel.DataTransfer.DataTransferManager GetForCurrentView()
+	{
+		Windows.ApplicationModel.DataTransfer.DataTransferManager _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.DataTransfer.IDataTransferManagerStatics).abi_GetForCurrentView(&_ret));
+		return _ret;
 	}
 }
 
 interface HtmlFormatHelper
 {
+	private static Windows.ApplicationModel.DataTransfer.IHtmlFormatHelperStatics _staticInstance;
+	public static Windows.ApplicationModel.DataTransfer.IHtmlFormatHelperStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.DataTransfer.IHtmlFormatHelperStatics);
+		return _staticInstance;
+	}
+	static HSTRING GetStaticFragment(HSTRING htmlFormat)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.DataTransfer.IHtmlFormatHelperStatics).abi_GetStaticFragment(htmlFormat, &_ret));
+		return _ret;
+	}
+	static HSTRING CreateHtmlFormat(HSTRING htmlFragment)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.DataTransfer.IHtmlFormatHelperStatics).abi_CreateHtmlFormat(htmlFragment, &_ret));
+		return _ret;
+	}
 }
 
 interface OperationCompletedEventArgs : Windows.ApplicationModel.DataTransfer.IOperationCompletedEventArgs, Windows.ApplicationModel.DataTransfer.IOperationCompletedEventArgs2
@@ -1162,10 +1231,75 @@ extern(Windows):
 
 interface SharedStorageAccessManager
 {
+	private static Windows.ApplicationModel.DataTransfer.ISharedStorageAccessManagerStatics _staticInstance;
+	public static Windows.ApplicationModel.DataTransfer.ISharedStorageAccessManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.DataTransfer.ISharedStorageAccessManagerStatics);
+		return _staticInstance;
+	}
+	static HSTRING AddFile(Windows.Storage.IStorageFile file)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.DataTransfer.ISharedStorageAccessManagerStatics).abi_AddFile(file, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) RedeemTokenForFileAsync(HSTRING token)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.DataTransfer.ISharedStorageAccessManagerStatics).abi_RedeemTokenForFileAsync(token, &_ret));
+		return _ret;
+	}
+	static void RemoveFile(HSTRING token)
+	{
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.DataTransfer.ISharedStorageAccessManagerStatics).abi_RemoveFile(token));
+	}
 }
 
 interface StandardDataFormats
 {
+	private static Windows.ApplicationModel.DataTransfer.IStandardDataFormatsStatics _staticInstance;
+	public static Windows.ApplicationModel.DataTransfer.IStandardDataFormatsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.DataTransfer.IStandardDataFormatsStatics);
+		return _staticInstance;
+	}
+	static HSTRING Text()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.DataTransfer.IStandardDataFormatsStatics).get_Text(&_ret));
+		return _ret;
+	}
+	deprecated("Uri may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use WebLink or ApplicationLink.")
+	static HSTRING Uri()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.DataTransfer.IStandardDataFormatsStatics).get_Uri(&_ret));
+		return _ret;
+	}
+	static HSTRING Html()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.DataTransfer.IStandardDataFormatsStatics).get_Html(&_ret));
+		return _ret;
+	}
+	static HSTRING Rtf()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.DataTransfer.IStandardDataFormatsStatics).get_Rtf(&_ret));
+		return _ret;
+	}
+	static HSTRING Bitmap()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.DataTransfer.IStandardDataFormatsStatics).get_Bitmap(&_ret));
+		return _ret;
+	}
+	static HSTRING StorageItems()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.DataTransfer.IStandardDataFormatsStatics).get_StorageItems(&_ret));
+		return _ret;
+	}
 }
 
 interface TargetApplicationChosenEventArgs : Windows.ApplicationModel.DataTransfer.ITargetApplicationChosenEventArgs

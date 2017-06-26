@@ -224,6 +224,42 @@ extern(Windows):
 
 interface KeyCredentialManager
 {
+	private static Windows.Security.Credentials.IKeyCredentialManagerStatics _staticInstance;
+	public static Windows.Security.Credentials.IKeyCredentialManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Credentials.IKeyCredentialManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(bool) IsSupportedAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Credentials.IKeyCredentialManagerStatics).abi_IsSupportedAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction RenewAttestationAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Credentials.IKeyCredentialManagerStatics).abi_RenewAttestationAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.KeyCredentialRetrievalResult) RequestCreateAsync(HSTRING name, Windows.Security.Credentials.KeyCredentialCreationOption option)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.KeyCredentialRetrievalResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Credentials.IKeyCredentialManagerStatics).abi_RequestCreateAsync(name, option, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.KeyCredentialRetrievalResult) OpenAsync(HSTRING name)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.KeyCredentialRetrievalResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Credentials.IKeyCredentialManagerStatics).abi_OpenAsync(name, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction DeleteAsync(HSTRING name)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Credentials.IKeyCredentialManagerStatics).abi_DeleteAsync(name, &_ret));
+		return _ret;
+	}
 }
 
 interface KeyCredentialOperationResult : Windows.Security.Credentials.IKeyCredentialOperationResult
@@ -310,7 +346,7 @@ interface PasswordCredentialPropertyStore : Windows.Foundation.Collections.IProp
 extern(Windows):
 	final void removeMapChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MapChanged(token));
+		Debug.OK(this.as!(Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable)).remove_MapChanged(token));
 	}
 	final  IInspectable Lookup(HSTRING key)
 	{

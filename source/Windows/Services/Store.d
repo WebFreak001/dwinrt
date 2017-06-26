@@ -560,12 +560,12 @@ extern(Windows):
 	final EventRegistrationToken OnOfflineLicensesChanged(void delegate(Windows.Services.Store.StoreContext, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_OfflineLicensesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Store.StoreContext, IInspectable), Windows.Services.Store.StoreContext, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Services.Store.IStoreContext).add_OfflineLicensesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Store.StoreContext, IInspectable), Windows.Services.Store.StoreContext, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeOfflineLicensesChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_OfflineLicensesChanged(token));
+		Debug.OK(this.as!(Windows.Services.Store.IStoreContext).remove_OfflineLicensesChanged(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(HSTRING) GetCustomerPurchaseIdAsync(HSTRING serviceTicket, HSTRING publisherUserId)
 	{
@@ -681,6 +681,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Services.Store.IStoreContext2).abi_FindStoreProductForPackageAsync(productKinds, package_, &_ret));
 		return _ret;
 	}
+
+	private static Windows.Services.Store.IStoreContextStatics _staticInstance;
+	public static Windows.Services.Store.IStoreContextStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Services.Store.IStoreContextStatics);
+		return _staticInstance;
+	}
+	static Windows.Services.Store.StoreContext GetDefault()
+	{
+		Windows.Services.Store.StoreContext _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.Store.IStoreContextStatics).abi_GetDefault(&_ret));
+		return _ret;
+	}
+	static Windows.Services.Store.StoreContext GetForUser(Windows.System.User user)
+	{
+		Windows.Services.Store.StoreContext _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.Store.IStoreContextStatics).abi_GetForUser(user, &_ret));
+		return _ret;
+	}
 }
 
 interface StoreImage : Windows.Services.Store.IStoreImage
@@ -759,12 +778,12 @@ extern(Windows):
 	final EventRegistrationToken OnLicenseLost(void delegate(Windows.Services.Store.StorePackageLicense, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_LicenseLost(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Store.StorePackageLicense, IInspectable), Windows.Services.Store.StorePackageLicense, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Services.Store.IStorePackageLicense).add_LicenseLost(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Store.StorePackageLicense, IInspectable), Windows.Services.Store.StorePackageLicense, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeLicenseLost(EventRegistrationToken token)
 	{
-		Debug.OK(remove_LicenseLost(token));
+		Debug.OK(this.as!(Windows.Services.Store.IStorePackageLicense).remove_LicenseLost(token));
 	}
 	final Windows.ApplicationModel.Package Package()
 	{
@@ -1083,6 +1102,18 @@ extern(Windows):
 
 interface StoreRequestHelper
 {
+	private static Windows.Services.Store.IStoreRequestHelperStatics _staticInstance;
+	public static Windows.Services.Store.IStoreRequestHelperStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Services.Store.IStoreRequestHelperStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StoreSendRequestResult) SendRequestAsync(Windows.Services.Store.StoreContext context, UINT32 requestKind, HSTRING parametersAsJson)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StoreSendRequestResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.Store.IStoreRequestHelperStatics).abi_SendRequestAsync(context, requestKind, parametersAsJson, &_ret));
+		return _ret;
+	}
 }
 
 interface StoreSendRequestResult : Windows.Services.Store.IStoreSendRequestResult, Windows.Services.Store.IStoreSendRequestResult2

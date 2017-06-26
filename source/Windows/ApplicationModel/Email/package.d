@@ -1588,12 +1588,12 @@ extern(Windows):
 	final EventRegistrationToken OnMailboxChanged(void delegate(Windows.ApplicationModel.Email.EmailMailbox, Windows.ApplicationModel.Email.EmailMailboxChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_MailboxChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.EmailMailbox, Windows.ApplicationModel.Email.EmailMailboxChangedEventArgs), Windows.ApplicationModel.Email.EmailMailbox, Windows.ApplicationModel.Email.EmailMailboxChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).add_MailboxChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.EmailMailbox, Windows.ApplicationModel.Email.EmailMailboxChangedEventArgs), Windows.ApplicationModel.Email.EmailMailbox, Windows.ApplicationModel.Email.EmailMailboxChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMailboxChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MailboxChanged(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).remove_MailboxChanged(token));
 	}
 	final Windows.Foundation.IAsyncAction SmartSendMessageAsync(Windows.ApplicationModel.Email.EmailMessage message, bool smartSend)
 	{
@@ -2124,12 +2124,12 @@ extern(Windows):
 	final EventRegistrationToken OnSyncStatusChanged(void delegate(Windows.ApplicationModel.Email.EmailMailboxSyncManager, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SyncStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.EmailMailboxSyncManager, IInspectable), Windows.ApplicationModel.Email.EmailMailboxSyncManager, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxSyncManager).add_SyncStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.EmailMailboxSyncManager, IInspectable), Windows.ApplicationModel.Email.EmailMailboxSyncManager, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSyncStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SyncStatusChanged(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxSyncManager).remove_SyncStatusChanged(token));
 	}
 	final void Status(Windows.ApplicationModel.Email.EmailMailboxSyncStatus value)
 	{
@@ -2147,6 +2147,18 @@ extern(Windows):
 
 interface EmailManager
 {
+	private static Windows.ApplicationModel.Email.IEmailManagerStatics _staticInstance;
+	public static Windows.ApplicationModel.Email.IEmailManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Email.IEmailManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncAction ShowComposeNewEmailAsync(Windows.ApplicationModel.Email.EmailMessage message)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Email.IEmailManagerStatics).abi_ShowComposeNewEmailAsync(message, &_ret));
+		return _ret;
+	}
 }
 
 interface EmailManagerForUser : Windows.ApplicationModel.Email.IEmailManagerForUser

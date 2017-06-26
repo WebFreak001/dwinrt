@@ -326,92 +326,92 @@ extern(Windows):
 	final EventRegistrationToken OnTextRequested(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_TextRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextRequestedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).add_TextRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextRequestedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTextRequested(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_TextRequested(cookie));
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).remove_TextRequested(cookie));
 	}
 	final EventRegistrationToken OnSelectionRequested(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SelectionRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionRequestedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).add_SelectionRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionRequestedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSelectionRequested(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_SelectionRequested(cookie));
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).remove_SelectionRequested(cookie));
 	}
 	final EventRegistrationToken OnLayoutRequested(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextLayoutRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_LayoutRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextLayoutRequestedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextLayoutRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).add_LayoutRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextLayoutRequestedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextLayoutRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeLayoutRequested(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_LayoutRequested(cookie));
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).remove_LayoutRequested(cookie));
 	}
 	final EventRegistrationToken OnTextUpdating(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_TextUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).add_TextUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTextUpdating(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_TextUpdating(cookie));
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).remove_TextUpdating(cookie));
 	}
 	final EventRegistrationToken OnSelectionUpdating(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionUpdatingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SelectionUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionUpdatingEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionUpdatingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).add_SelectionUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionUpdatingEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionUpdatingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSelectionUpdating(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_SelectionUpdating(cookie));
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).remove_SelectionUpdating(cookie));
 	}
 	final EventRegistrationToken OnFormatUpdating(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextFormatUpdatingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_FormatUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextFormatUpdatingEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextFormatUpdatingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).add_FormatUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextFormatUpdatingEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextFormatUpdatingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeFormatUpdating(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_FormatUpdating(cookie));
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).remove_FormatUpdating(cookie));
 	}
 	final EventRegistrationToken OnCompositionStarted(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionStartedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_CompositionStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionStartedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionStartedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).add_CompositionStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionStartedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionStartedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCompositionStarted(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_CompositionStarted(cookie));
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).remove_CompositionStarted(cookie));
 	}
 	final EventRegistrationToken OnCompositionCompleted(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_CompositionCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionCompletedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionCompletedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).add_CompositionCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionCompletedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCompositionCompleted(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_CompositionCompleted(cookie));
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).remove_CompositionCompleted(cookie));
 	}
 	final EventRegistrationToken OnFocusRemoved(void delegate(Windows.UI.Text.Core.CoreTextEditContext, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_FocusRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, IInspectable), Windows.UI.Text.Core.CoreTextEditContext, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).add_FocusRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, IInspectable), Windows.UI.Text.Core.CoreTextEditContext, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeFocusRemoved(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_FocusRemoved(cookie));
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).remove_FocusRemoved(cookie));
 	}
 	final void NotifyFocusEnter()
 	{
@@ -436,12 +436,12 @@ extern(Windows):
 	final EventRegistrationToken OnNotifyFocusLeaveCompleted(void delegate(Windows.UI.Text.Core.CoreTextEditContext, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_NotifyFocusLeaveCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, IInspectable), Windows.UI.Text.Core.CoreTextEditContext, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext2).add_NotifyFocusLeaveCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, IInspectable), Windows.UI.Text.Core.CoreTextEditContext, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeNotifyFocusLeaveCompleted(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_NotifyFocusLeaveCompleted(cookie));
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext2).remove_NotifyFocusLeaveCompleted(cookie));
 	}
 }
 
@@ -646,6 +646,18 @@ extern(Windows):
 
 interface CoreTextServicesConstants
 {
+	private static Windows.UI.Text.Core.ICoreTextServicesStatics _staticInstance;
+	public static Windows.UI.Text.Core.ICoreTextServicesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Text.Core.ICoreTextServicesStatics);
+		return _staticInstance;
+	}
+	static wchar HiddenCharacter()
+	{
+		wchar _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Text.Core.ICoreTextServicesStatics).get_HiddenCharacter(&_ret));
+		return _ret;
+	}
 }
 
 interface CoreTextServicesManager : Windows.UI.Text.Core.ICoreTextServicesManager
@@ -660,17 +672,30 @@ extern(Windows):
 	final EventRegistrationToken OnInputLanguageChanged(void delegate(Windows.UI.Text.Core.CoreTextServicesManager, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_InputLanguageChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextServicesManager, IInspectable), Windows.UI.Text.Core.CoreTextServicesManager, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextServicesManager).add_InputLanguageChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextServicesManager, IInspectable), Windows.UI.Text.Core.CoreTextServicesManager, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeInputLanguageChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_InputLanguageChanged(cookie));
+		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextServicesManager).remove_InputLanguageChanged(cookie));
 	}
 	final Windows.UI.Text.Core.CoreTextEditContext CreateEditContext()
 	{
 		Windows.UI.Text.Core.CoreTextEditContext _ret;
 		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextServicesManager).abi_CreateEditContext(&_ret));
+		return _ret;
+	}
+
+	private static Windows.UI.Text.Core.ICoreTextServicesManagerStatics _staticInstance;
+	public static Windows.UI.Text.Core.ICoreTextServicesManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Text.Core.ICoreTextServicesManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Text.Core.CoreTextServicesManager GetForCurrentView()
+	{
+		Windows.UI.Text.Core.CoreTextServicesManager _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Text.Core.ICoreTextServicesManagerStatics).abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 }

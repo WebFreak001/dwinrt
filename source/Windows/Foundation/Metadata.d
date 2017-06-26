@@ -21,6 +21,72 @@ extern(Windows):
 
 interface ApiInformation
 {
+	private static Windows.Foundation.Metadata.IApiInformationStatics _staticInstance;
+	public static Windows.Foundation.Metadata.IApiInformationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Foundation.Metadata.IApiInformationStatics);
+		return _staticInstance;
+	}
+	static bool IsTypePresent(HSTRING typeName)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.Metadata.IApiInformationStatics).abi_IsTypePresent(typeName, &_ret));
+		return _ret;
+	}
+	static bool IsMethodPresent(HSTRING typeName, HSTRING methodName)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.Metadata.IApiInformationStatics).abi_IsMethodPresent(typeName, methodName, &_ret));
+		return _ret;
+	}
+	static bool IsMethodPresentWithArity(HSTRING typeName, HSTRING methodName, UINT32 inputParameterCount)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.Metadata.IApiInformationStatics).abi_IsMethodPresentWithArity(typeName, methodName, inputParameterCount, &_ret));
+		return _ret;
+	}
+	static bool IsEventPresent(HSTRING typeName, HSTRING eventName)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.Metadata.IApiInformationStatics).abi_IsEventPresent(typeName, eventName, &_ret));
+		return _ret;
+	}
+	static bool IsPropertyPresent(HSTRING typeName, HSTRING propertyName)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.Metadata.IApiInformationStatics).abi_IsPropertyPresent(typeName, propertyName, &_ret));
+		return _ret;
+	}
+	static bool IsReadOnlyPropertyPresent(HSTRING typeName, HSTRING propertyName)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.Metadata.IApiInformationStatics).abi_IsReadOnlyPropertyPresent(typeName, propertyName, &_ret));
+		return _ret;
+	}
+	static bool IsWriteablePropertyPresent(HSTRING typeName, HSTRING propertyName)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.Metadata.IApiInformationStatics).abi_IsWriteablePropertyPresent(typeName, propertyName, &_ret));
+		return _ret;
+	}
+	static bool IsEnumNamedValuePresent(HSTRING enumTypeName, HSTRING valueName)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.Metadata.IApiInformationStatics).abi_IsEnumNamedValuePresent(enumTypeName, valueName, &_ret));
+		return _ret;
+	}
+	static bool IsApiContractPresentByMajor(HSTRING contractName, UINT16 majorVersion)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.Metadata.IApiInformationStatics).abi_IsApiContractPresentByMajor(contractName, majorVersion, &_ret));
+		return _ret;
+	}
+	static bool IsApiContractPresentByMajorAndMinor(HSTRING contractName, UINT16 majorVersion, UINT16 minorVersion)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.Metadata.IApiInformationStatics).abi_IsApiContractPresentByMajorAndMinor(contractName, majorVersion, minorVersion, &_ret));
+		return _ret;
+	}
 }
 
 enum GCPressureAmount

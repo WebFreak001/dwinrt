@@ -156,12 +156,25 @@ extern(Windows):
 	final EventRegistrationToken OnMouseMoved(void delegate(Windows.Devices.Input.MouseDevice, Windows.Devices.Input.MouseEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_MouseMoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Input.MouseDevice, Windows.Devices.Input.MouseEventArgs), Windows.Devices.Input.MouseDevice, Windows.Devices.Input.MouseEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Input.IMouseDevice).add_MouseMoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Input.MouseDevice, Windows.Devices.Input.MouseEventArgs), Windows.Devices.Input.MouseDevice, Windows.Devices.Input.MouseEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMouseMoved(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_MouseMoved(cookie));
+		Debug.OK(this.as!(Windows.Devices.Input.IMouseDevice).remove_MouseMoved(cookie));
+	}
+
+	private static Windows.Devices.Input.IMouseDeviceStatics _staticInstance;
+	public static Windows.Devices.Input.IMouseDeviceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Input.IMouseDeviceStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.Input.MouseDevice GetForCurrentView()
+	{
+		Windows.Devices.Input.MouseDevice _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Input.IMouseDeviceStatics).abi_GetForCurrentView(&_ret));
+		return _ret;
 	}
 }
 
@@ -219,6 +232,25 @@ extern(Windows):
 	{
 		UINT32 _ret;
 		Debug.OK(this.as!(Windows.Devices.Input.IPointerDevice2).get_MaxPointersWithZDistance(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Devices.Input.IPointerDeviceStatics _staticInstance;
+	public static Windows.Devices.Input.IPointerDeviceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Input.IPointerDeviceStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.Input.PointerDevice GetPointerDevice(UINT32 pointerId)
+	{
+		Windows.Devices.Input.PointerDevice _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Input.IPointerDeviceStatics).abi_GetPointerDevice(pointerId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(Windows.Devices.Input.PointerDevice) GetPointerDevices()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Input.PointerDevice) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Input.IPointerDeviceStatics).abi_GetPointerDevices(&_ret));
 		return _ret;
 	}
 }

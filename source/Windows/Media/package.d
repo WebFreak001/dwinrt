@@ -630,6 +630,211 @@ extern(Windows):
 
 interface MediaControl
 {
+	private static Windows.Media.IMediaControl _staticInstance;
+	public static Windows.Media.IMediaControl staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.IMediaControl);
+		return _staticInstance;
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static EventRegistrationToken OnSoundLevelChanged(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).add_SoundLevelChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static void removeSoundLevelChanged(EventRegistrationToken cookie)
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).remove_SoundLevelChanged(cookie));
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static EventRegistrationToken OnPlayPressed(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).add_PlayPressed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static void removePlayPressed(EventRegistrationToken cookie)
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).remove_PlayPressed(cookie));
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static EventRegistrationToken OnPausePressed(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).add_PausePressed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static void removePausePressed(EventRegistrationToken cookie)
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).remove_PausePressed(cookie));
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static EventRegistrationToken OnStopPressed(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).add_StopPressed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static void removeStopPressed(EventRegistrationToken cookie)
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).remove_StopPressed(cookie));
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static EventRegistrationToken OnPlayPauseTogglePressed(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).add_PlayPauseTogglePressed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static void removePlayPauseTogglePressed(EventRegistrationToken cookie)
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).remove_PlayPauseTogglePressed(cookie));
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static EventRegistrationToken OnRecordPressed(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).add_RecordPressed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static void removeRecordPressed(EventRegistrationToken cookie)
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).remove_RecordPressed(cookie));
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static EventRegistrationToken OnNextTrackPressed(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).add_NextTrackPressed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static void removeNextTrackPressed(EventRegistrationToken cookie)
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).remove_NextTrackPressed(cookie));
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static EventRegistrationToken OnPreviousTrackPressed(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).add_PreviousTrackPressed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static void removePreviousTrackPressed(EventRegistrationToken cookie)
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).remove_PreviousTrackPressed(cookie));
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static EventRegistrationToken OnFastForwardPressed(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).add_FastForwardPressed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static void removeFastForwardPressed(EventRegistrationToken cookie)
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).remove_FastForwardPressed(cookie));
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static EventRegistrationToken OnRewindPressed(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).add_RewindPressed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static void removeRewindPressed(EventRegistrationToken cookie)
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).remove_RewindPressed(cookie));
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static EventRegistrationToken OnChannelUpPressed(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).add_ChannelUpPressed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static void removeChannelUpPressed(EventRegistrationToken cookie)
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).remove_ChannelUpPressed(cookie));
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static EventRegistrationToken OnChannelDownPressed(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).add_ChannelDownPressed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static void removeChannelDownPressed(EventRegistrationToken cookie)
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).remove_ChannelDownPressed(cookie));
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static Windows.Media.SoundLevel SoundLevel()
+	{
+		Windows.Media.SoundLevel _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).get_SoundLevel(&_ret));
+		return _ret;
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static void TrackName(HSTRING value)
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).set_TrackName(value));
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static HSTRING TrackName()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).get_TrackName(&_ret));
+		return _ret;
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static void ArtistName(HSTRING value)
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).set_ArtistName(value));
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static HSTRING ArtistName()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).get_ArtistName(&_ret));
+		return _ret;
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static void IsPlaying(bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).set_IsPlaying(value));
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static bool IsPlaying()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).get_IsPlaying(&_ret));
+		return _ret;
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static void AlbumArt(Windows.Foundation.Uri value)
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).set_AlbumArt(value));
+	}
+	deprecated("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")
+	static Windows.Foundation.Uri AlbumArt()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaControl).get_AlbumArt(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaExtensionManager : Windows.Media.IMediaExtensionManager, Windows.Media.IMediaExtensionManager2
@@ -691,6 +896,18 @@ extern(Windows):
 
 interface MediaMarkerTypes
 {
+	private static Windows.Media.IMediaMarkerTypesStatics _staticInstance;
+	public static Windows.Media.IMediaMarkerTypesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.IMediaMarkerTypesStatics);
+		return _staticInstance;
+	}
+	static HSTRING Bookmark()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.IMediaMarkerTypesStatics).get_Bookmark(&_ret));
+		return _ret;
+	}
 }
 
 interface MediaProcessingTriggerDetails : Windows.Media.IMediaProcessingTriggerDetails
@@ -748,22 +965,22 @@ extern(Windows):
 	final EventRegistrationToken OnPositionChanged(void delegate(Windows.Media.MediaTimelineController, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PositionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.MediaTimelineController, IInspectable), Windows.Media.MediaTimelineController, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.IMediaTimelineController).add_PositionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.MediaTimelineController, IInspectable), Windows.Media.MediaTimelineController, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removePositionChanged(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_PositionChanged(eventCookie));
+		Debug.OK(this.as!(Windows.Media.IMediaTimelineController).remove_PositionChanged(eventCookie));
 	}
 	final EventRegistrationToken OnStateChanged(void delegate(Windows.Media.MediaTimelineController, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.MediaTimelineController, IInspectable), Windows.Media.MediaTimelineController, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.IMediaTimelineController).add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.MediaTimelineController, IInspectable), Windows.Media.MediaTimelineController, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeStateChanged(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_StateChanged(eventCookie));
+		Debug.OK(this.as!(Windows.Media.IMediaTimelineController).remove_StateChanged(eventCookie));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) Duration()
 	{
@@ -788,22 +1005,22 @@ extern(Windows):
 	final EventRegistrationToken OnFailed(void delegate(Windows.Media.MediaTimelineController, Windows.Media.MediaTimelineControllerFailedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Failed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.MediaTimelineController, Windows.Media.MediaTimelineControllerFailedEventArgs), Windows.Media.MediaTimelineController, Windows.Media.MediaTimelineControllerFailedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.IMediaTimelineController2).add_Failed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.MediaTimelineController, Windows.Media.MediaTimelineControllerFailedEventArgs), Windows.Media.MediaTimelineController, Windows.Media.MediaTimelineControllerFailedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeFailed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Failed(token));
+		Debug.OK(this.as!(Windows.Media.IMediaTimelineController2).remove_Failed(token));
 	}
 	final EventRegistrationToken OnEnded(void delegate(Windows.Media.MediaTimelineController, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Ended(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.MediaTimelineController, IInspectable), Windows.Media.MediaTimelineController, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.IMediaTimelineController2).add_Ended(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.MediaTimelineController, IInspectable), Windows.Media.MediaTimelineController, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeEnded(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Ended(token));
+		Debug.OK(this.as!(Windows.Media.IMediaTimelineController2).remove_Ended(token));
 	}
 }
 
@@ -1060,22 +1277,22 @@ extern(Windows):
 	final EventRegistrationToken OnButtonPressed(void delegate(Windows.Media.SystemMediaTransportControls, Windows.Media.SystemMediaTransportControlsButtonPressedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ButtonPressed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.SystemMediaTransportControlsButtonPressedEventArgs), Windows.Media.SystemMediaTransportControls, Windows.Media.SystemMediaTransportControlsButtonPressedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).add_ButtonPressed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.SystemMediaTransportControlsButtonPressedEventArgs), Windows.Media.SystemMediaTransportControls, Windows.Media.SystemMediaTransportControlsButtonPressedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeButtonPressed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ButtonPressed(token));
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).remove_ButtonPressed(token));
 	}
 	final EventRegistrationToken OnPropertyChanged(void delegate(Windows.Media.SystemMediaTransportControls, Windows.Media.SystemMediaTransportControlsPropertyChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PropertyChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.SystemMediaTransportControlsPropertyChangedEventArgs), Windows.Media.SystemMediaTransportControls, Windows.Media.SystemMediaTransportControlsPropertyChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).add_PropertyChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.SystemMediaTransportControlsPropertyChangedEventArgs), Windows.Media.SystemMediaTransportControls, Windows.Media.SystemMediaTransportControlsPropertyChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePropertyChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PropertyChanged(token));
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls).remove_PropertyChanged(token));
 	}
 	final Windows.Media.MediaPlaybackAutoRepeatMode AutoRepeatMode()
 	{
@@ -1114,42 +1331,55 @@ extern(Windows):
 	final EventRegistrationToken OnPlaybackPositionChangeRequested(void delegate(Windows.Media.SystemMediaTransportControls, Windows.Media.PlaybackPositionChangeRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PlaybackPositionChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.PlaybackPositionChangeRequestedEventArgs), Windows.Media.SystemMediaTransportControls, Windows.Media.PlaybackPositionChangeRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls2).add_PlaybackPositionChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.PlaybackPositionChangeRequestedEventArgs), Windows.Media.SystemMediaTransportControls, Windows.Media.PlaybackPositionChangeRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePlaybackPositionChangeRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PlaybackPositionChangeRequested(token));
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls2).remove_PlaybackPositionChangeRequested(token));
 	}
 	final EventRegistrationToken OnPlaybackRateChangeRequested(void delegate(Windows.Media.SystemMediaTransportControls, Windows.Media.PlaybackRateChangeRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PlaybackRateChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.PlaybackRateChangeRequestedEventArgs), Windows.Media.SystemMediaTransportControls, Windows.Media.PlaybackRateChangeRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls2).add_PlaybackRateChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.PlaybackRateChangeRequestedEventArgs), Windows.Media.SystemMediaTransportControls, Windows.Media.PlaybackRateChangeRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePlaybackRateChangeRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PlaybackRateChangeRequested(token));
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls2).remove_PlaybackRateChangeRequested(token));
 	}
 	final EventRegistrationToken OnShuffleEnabledChangeRequested(void delegate(Windows.Media.SystemMediaTransportControls, Windows.Media.ShuffleEnabledChangeRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ShuffleEnabledChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.ShuffleEnabledChangeRequestedEventArgs), Windows.Media.SystemMediaTransportControls, Windows.Media.ShuffleEnabledChangeRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls2).add_ShuffleEnabledChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.ShuffleEnabledChangeRequestedEventArgs), Windows.Media.SystemMediaTransportControls, Windows.Media.ShuffleEnabledChangeRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeShuffleEnabledChangeRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ShuffleEnabledChangeRequested(token));
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls2).remove_ShuffleEnabledChangeRequested(token));
 	}
 	final EventRegistrationToken OnAutoRepeatModeChangeRequested(void delegate(Windows.Media.SystemMediaTransportControls, Windows.Media.AutoRepeatModeChangeRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AutoRepeatModeChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.AutoRepeatModeChangeRequestedEventArgs), Windows.Media.SystemMediaTransportControls, Windows.Media.AutoRepeatModeChangeRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls2).add_AutoRepeatModeChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SystemMediaTransportControls, Windows.Media.AutoRepeatModeChangeRequestedEventArgs), Windows.Media.SystemMediaTransportControls, Windows.Media.AutoRepeatModeChangeRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAutoRepeatModeChangeRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AutoRepeatModeChangeRequested(token));
+		Debug.OK(this.as!(Windows.Media.ISystemMediaTransportControls2).remove_AutoRepeatModeChangeRequested(token));
+	}
+
+	private static Windows.Media.ISystemMediaTransportControlsStatics _staticInstance;
+	public static Windows.Media.ISystemMediaTransportControlsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.ISystemMediaTransportControlsStatics);
+		return _staticInstance;
+	}
+	static Windows.Media.SystemMediaTransportControls GetForCurrentView()
+	{
+		Windows.Media.SystemMediaTransportControls _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.ISystemMediaTransportControlsStatics).abi_GetForCurrentView(&_ret));
+		return _ret;
 	}
 }
 
@@ -1330,6 +1560,18 @@ extern(Windows):
 
 interface VideoEffects
 {
+	private static Windows.Media.IVideoEffectsStatics _staticInstance;
+	public static Windows.Media.IVideoEffectsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.IVideoEffectsStatics);
+		return _staticInstance;
+	}
+	static HSTRING VideoStabilization()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.IVideoEffectsStatics).get_VideoStabilization(&_ret));
+		return _ret;
+	}
 }
 
 interface VideoFrame : Windows.Media.IVideoFrame, Windows.Media.IMediaFrame, Windows.Foundation.IClosable

@@ -251,10 +251,131 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3D).set_TranslateZ(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Media3D.ICompositeTransform3DStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Media3D.ICompositeTransform3DStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3DStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty CenterXProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3DStatics).get_CenterXProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty CenterYProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3DStatics).get_CenterYProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty CenterZProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3DStatics).get_CenterZProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty RotationXProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3DStatics).get_RotationXProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty RotationYProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3DStatics).get_RotationYProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty RotationZProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3DStatics).get_RotationZProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ScaleXProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3DStatics).get_ScaleXProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ScaleYProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3DStatics).get_ScaleYProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ScaleZProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3DStatics).get_ScaleZProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty TranslateXProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3DStatics).get_TranslateXProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty TranslateYProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3DStatics).get_TranslateYProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty TranslateZProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Media3D.ICompositeTransform3DStatics).get_TranslateZProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface Matrix3DHelper : Windows.UI.Xaml.Media.Media3D.IMatrix3DHelper
 {
+	private static Windows.UI.Xaml.Media.Media3D.IMatrix3DHelperStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Media3D.IMatrix3DHelperStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Media3D.IMatrix3DHelperStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.Media.Media3D.Matrix3D Identity()
+	{
+		Windows.UI.Xaml.Media.Media3D.Matrix3D _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Media3D.IMatrix3DHelperStatics).get_Identity(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Media.Media3D.Matrix3D Multiply(Windows.UI.Xaml.Media.Media3D.Matrix3D matrix1, Windows.UI.Xaml.Media.Media3D.Matrix3D matrix2)
+	{
+		Windows.UI.Xaml.Media.Media3D.Matrix3D _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Media3D.IMatrix3DHelperStatics).abi_Multiply(matrix1, matrix2, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Media.Media3D.Matrix3D FromElements(double m11, double m12, double m13, double m14, double m21, double m22, double m23, double m24, double m31, double m32, double m33, double m34, double offsetX, double offsetY, double offsetZ, double m44)
+	{
+		Windows.UI.Xaml.Media.Media3D.Matrix3D _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Media3D.IMatrix3DHelperStatics).abi_FromElements(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, offsetX, offsetY, offsetZ, m44, &_ret));
+		return _ret;
+	}
+	static bool GetHasInverse(Windows.UI.Xaml.Media.Media3D.Matrix3D target)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Media3D.IMatrix3DHelperStatics).abi_GetHasInverse(target, &_ret));
+		return _ret;
+	}
+	static bool GetIsIdentity(Windows.UI.Xaml.Media.Media3D.Matrix3D target)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Media3D.IMatrix3DHelperStatics).abi_GetIsIdentity(target, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Media.Media3D.Matrix3D Invert(Windows.UI.Xaml.Media.Media3D.Matrix3D target)
+	{
+		Windows.UI.Xaml.Media.Media3D.Matrix3D _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Media3D.IMatrix3DHelperStatics).abi_Invert(target, &_ret));
+		return _ret;
+	}
 }
 
 interface PerspectiveTransform3D : Windows.UI.Xaml.Media.Media3D.Transform3D, Windows.UI.Xaml.Media.Media3D.IPerspectiveTransform3D
@@ -289,6 +410,31 @@ extern(Windows):
 	final void OffsetY(double value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Media3D.IPerspectiveTransform3D).set_OffsetY(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Media3D.IPerspectiveTransform3DStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Media3D.IPerspectiveTransform3DStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Media3D.IPerspectiveTransform3DStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty DepthProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Media3D.IPerspectiveTransform3DStatics).get_DepthProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty OffsetXProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Media3D.IPerspectiveTransform3DStatics).get_OffsetXProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty OffsetYProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Media3D.IPerspectiveTransform3DStatics).get_OffsetYProperty(&_ret));
+		return _ret;
 	}
 }
 

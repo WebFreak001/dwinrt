@@ -113,6 +113,24 @@ extern(Windows):
 
 interface StorageApplicationPermissions
 {
+	private static Windows.Storage.AccessCache.IStorageApplicationPermissionsStatics _staticInstance;
+	public static Windows.Storage.AccessCache.IStorageApplicationPermissionsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Storage.AccessCache.IStorageApplicationPermissionsStatics);
+		return _staticInstance;
+	}
+	static Windows.Storage.AccessCache.StorageItemAccessList FutureAccessList()
+	{
+		Windows.Storage.AccessCache.StorageItemAccessList _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.AccessCache.IStorageApplicationPermissionsStatics).get_FutureAccessList(&_ret));
+		return _ret;
+	}
+	static Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList MostRecentlyUsedList()
+	{
+		Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.AccessCache.IStorageApplicationPermissionsStatics).get_MostRecentlyUsedList(&_ret));
+		return _ret;
+	}
 }
 
 interface StorageItemAccessList : Windows.Storage.AccessCache.IStorageItemAccessList
@@ -214,12 +232,12 @@ extern(Windows):
 	final EventRegistrationToken OnItemRemoved(void delegate(Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList, Windows.Storage.AccessCache.ItemRemovedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ItemRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList, Windows.Storage.AccessCache.ItemRemovedEventArgs), Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList, Windows.Storage.AccessCache.ItemRemovedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemMostRecentlyUsedList).add_ItemRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList, Windows.Storage.AccessCache.ItemRemovedEventArgs), Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList, Windows.Storage.AccessCache.ItemRemovedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeItemRemoved(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_ItemRemoved(eventCookie));
+		Debug.OK(this.as!(Windows.Storage.AccessCache.IStorageItemMostRecentlyUsedList).remove_ItemRemoved(eventCookie));
 	}
 	final HSTRING AddOverloadDefaultMetadata(Windows.Storage.IStorageItem file)
 	{

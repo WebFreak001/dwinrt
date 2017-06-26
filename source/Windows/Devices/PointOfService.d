@@ -1116,12 +1116,12 @@ extern(Windows):
 	final EventRegistrationToken OnStatusUpdated(void delegate(Windows.Devices.PointOfService.BarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerStatusUpdatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_StatusUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.BarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerStatusUpdatedEventArgs), Windows.Devices.PointOfService.BarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerStatusUpdatedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScanner).add_StatusUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.BarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerStatusUpdatedEventArgs), Windows.Devices.PointOfService.BarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerStatusUpdatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStatusUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(remove_StatusUpdated(token));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IBarcodeScanner).remove_StatusUpdated(token));
 	}
 	final HSTRING VideoDeviceId()
 	{
@@ -1132,6 +1132,31 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+
+	private static Windows.Devices.PointOfService.IBarcodeScannerStatics _staticInstance;
+	public static Windows.Devices.PointOfService.IBarcodeScannerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.PointOfService.IBarcodeScannerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.BarcodeScanner) GetDefaultAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.BarcodeScanner) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeScannerStatics).abi_GetDefaultAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.BarcodeScanner) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.BarcodeScanner) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeScannerStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeScannerStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
 	}
 }
 
@@ -1257,6 +1282,576 @@ extern(Windows):
 
 interface BarcodeSymbologies
 {
+	private static Windows.Devices.PointOfService.IBarcodeSymbologiesStatics _staticInstance;
+	public static Windows.Devices.PointOfService.IBarcodeSymbologiesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics);
+		return _staticInstance;
+	}
+	static UINT32 Unknown()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Unknown(&_ret));
+		return _ret;
+	}
+	static UINT32 Ean8()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Ean8(&_ret));
+		return _ret;
+	}
+	static UINT32 Ean8Add2()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Ean8Add2(&_ret));
+		return _ret;
+	}
+	static UINT32 Ean8Add5()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Ean8Add5(&_ret));
+		return _ret;
+	}
+	static UINT32 Eanv()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Eanv(&_ret));
+		return _ret;
+	}
+	static UINT32 EanvAdd2()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_EanvAdd2(&_ret));
+		return _ret;
+	}
+	static UINT32 EanvAdd5()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_EanvAdd5(&_ret));
+		return _ret;
+	}
+	static UINT32 Ean13()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Ean13(&_ret));
+		return _ret;
+	}
+	static UINT32 Ean13Add2()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Ean13Add2(&_ret));
+		return _ret;
+	}
+	static UINT32 Ean13Add5()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Ean13Add5(&_ret));
+		return _ret;
+	}
+	static UINT32 Isbn()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Isbn(&_ret));
+		return _ret;
+	}
+	static UINT32 IsbnAdd5()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_IsbnAdd5(&_ret));
+		return _ret;
+	}
+	static UINT32 Ismn()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Ismn(&_ret));
+		return _ret;
+	}
+	static UINT32 IsmnAdd2()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_IsmnAdd2(&_ret));
+		return _ret;
+	}
+	static UINT32 IsmnAdd5()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_IsmnAdd5(&_ret));
+		return _ret;
+	}
+	static UINT32 Issn()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Issn(&_ret));
+		return _ret;
+	}
+	static UINT32 IssnAdd2()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_IssnAdd2(&_ret));
+		return _ret;
+	}
+	static UINT32 IssnAdd5()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_IssnAdd5(&_ret));
+		return _ret;
+	}
+	static UINT32 Ean99()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Ean99(&_ret));
+		return _ret;
+	}
+	static UINT32 Ean99Add2()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Ean99Add2(&_ret));
+		return _ret;
+	}
+	static UINT32 Ean99Add5()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Ean99Add5(&_ret));
+		return _ret;
+	}
+	static UINT32 Upca()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Upca(&_ret));
+		return _ret;
+	}
+	static UINT32 UpcaAdd2()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_UpcaAdd2(&_ret));
+		return _ret;
+	}
+	static UINT32 UpcaAdd5()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_UpcaAdd5(&_ret));
+		return _ret;
+	}
+	static UINT32 Upce()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Upce(&_ret));
+		return _ret;
+	}
+	static UINT32 UpceAdd2()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_UpceAdd2(&_ret));
+		return _ret;
+	}
+	static UINT32 UpceAdd5()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_UpceAdd5(&_ret));
+		return _ret;
+	}
+	static UINT32 UpcCoupon()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_UpcCoupon(&_ret));
+		return _ret;
+	}
+	static UINT32 TfStd()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_TfStd(&_ret));
+		return _ret;
+	}
+	static UINT32 TfDis()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_TfDis(&_ret));
+		return _ret;
+	}
+	static UINT32 TfInt()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_TfInt(&_ret));
+		return _ret;
+	}
+	static UINT32 TfInd()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_TfInd(&_ret));
+		return _ret;
+	}
+	static UINT32 TfMat()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_TfMat(&_ret));
+		return _ret;
+	}
+	static UINT32 TfIata()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_TfIata(&_ret));
+		return _ret;
+	}
+	static UINT32 Gs1DatabarType1()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Gs1DatabarType1(&_ret));
+		return _ret;
+	}
+	static UINT32 Gs1DatabarType2()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Gs1DatabarType2(&_ret));
+		return _ret;
+	}
+	static UINT32 Gs1DatabarType3()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Gs1DatabarType3(&_ret));
+		return _ret;
+	}
+	static UINT32 Code39()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Code39(&_ret));
+		return _ret;
+	}
+	static UINT32 Code39Ex()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Code39Ex(&_ret));
+		return _ret;
+	}
+	static UINT32 Trioptic39()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Trioptic39(&_ret));
+		return _ret;
+	}
+	static UINT32 Code32()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Code32(&_ret));
+		return _ret;
+	}
+	static UINT32 Pzn()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Pzn(&_ret));
+		return _ret;
+	}
+	static UINT32 Code93()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Code93(&_ret));
+		return _ret;
+	}
+	static UINT32 Code93Ex()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Code93Ex(&_ret));
+		return _ret;
+	}
+	static UINT32 Code128()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Code128(&_ret));
+		return _ret;
+	}
+	static UINT32 Gs1128()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Gs1128(&_ret));
+		return _ret;
+	}
+	static UINT32 Gs1128Coupon()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Gs1128Coupon(&_ret));
+		return _ret;
+	}
+	static UINT32 UccEan128()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_UccEan128(&_ret));
+		return _ret;
+	}
+	static UINT32 Sisac()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Sisac(&_ret));
+		return _ret;
+	}
+	static UINT32 Isbt()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Isbt(&_ret));
+		return _ret;
+	}
+	static UINT32 Codabar()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Codabar(&_ret));
+		return _ret;
+	}
+	static UINT32 Code11()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Code11(&_ret));
+		return _ret;
+	}
+	static UINT32 Msi()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Msi(&_ret));
+		return _ret;
+	}
+	static UINT32 Plessey()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Plessey(&_ret));
+		return _ret;
+	}
+	static UINT32 Telepen()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Telepen(&_ret));
+		return _ret;
+	}
+	static UINT32 Code16k()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Code16k(&_ret));
+		return _ret;
+	}
+	static UINT32 CodablockA()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_CodablockA(&_ret));
+		return _ret;
+	}
+	static UINT32 CodablockF()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_CodablockF(&_ret));
+		return _ret;
+	}
+	static UINT32 Codablock128()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Codablock128(&_ret));
+		return _ret;
+	}
+	static UINT32 Code49()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Code49(&_ret));
+		return _ret;
+	}
+	static UINT32 Aztec()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Aztec(&_ret));
+		return _ret;
+	}
+	static UINT32 DataCode()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_DataCode(&_ret));
+		return _ret;
+	}
+	static UINT32 DataMatrix()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_DataMatrix(&_ret));
+		return _ret;
+	}
+	static UINT32 HanXin()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_HanXin(&_ret));
+		return _ret;
+	}
+	static UINT32 Maxicode()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Maxicode(&_ret));
+		return _ret;
+	}
+	static UINT32 MicroPdf417()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_MicroPdf417(&_ret));
+		return _ret;
+	}
+	static UINT32 MicroQr()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_MicroQr(&_ret));
+		return _ret;
+	}
+	static UINT32 Pdf417()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Pdf417(&_ret));
+		return _ret;
+	}
+	static UINT32 Qr()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Qr(&_ret));
+		return _ret;
+	}
+	static UINT32 MsTag()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_MsTag(&_ret));
+		return _ret;
+	}
+	static UINT32 Ccab()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Ccab(&_ret));
+		return _ret;
+	}
+	static UINT32 Ccc()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Ccc(&_ret));
+		return _ret;
+	}
+	static UINT32 Tlc39()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Tlc39(&_ret));
+		return _ret;
+	}
+	static UINT32 AusPost()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_AusPost(&_ret));
+		return _ret;
+	}
+	static UINT32 CanPost()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_CanPost(&_ret));
+		return _ret;
+	}
+	static UINT32 ChinaPost()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_ChinaPost(&_ret));
+		return _ret;
+	}
+	static UINT32 DutchKix()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_DutchKix(&_ret));
+		return _ret;
+	}
+	static UINT32 InfoMail()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_InfoMail(&_ret));
+		return _ret;
+	}
+	static UINT32 ItalianPost25()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_ItalianPost25(&_ret));
+		return _ret;
+	}
+	static UINT32 ItalianPost39()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_ItalianPost39(&_ret));
+		return _ret;
+	}
+	static UINT32 JapanPost()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_JapanPost(&_ret));
+		return _ret;
+	}
+	static UINT32 KoreanPost()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_KoreanPost(&_ret));
+		return _ret;
+	}
+	static UINT32 SwedenPost()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_SwedenPost(&_ret));
+		return _ret;
+	}
+	static UINT32 UkPost()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_UkPost(&_ret));
+		return _ret;
+	}
+	static UINT32 UsIntelligent()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_UsIntelligent(&_ret));
+		return _ret;
+	}
+	static UINT32 UsIntelligentPkg()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_UsIntelligentPkg(&_ret));
+		return _ret;
+	}
+	static UINT32 UsPlanet()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_UsPlanet(&_ret));
+		return _ret;
+	}
+	static UINT32 UsPostNet()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_UsPostNet(&_ret));
+		return _ret;
+	}
+	static UINT32 Us4StateFics()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Us4StateFics(&_ret));
+		return _ret;
+	}
+	static UINT32 OcrA()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_OcrA(&_ret));
+		return _ret;
+	}
+	static UINT32 OcrB()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_OcrB(&_ret));
+		return _ret;
+	}
+	static UINT32 Micr()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_Micr(&_ret));
+		return _ret;
+	}
+	static UINT32 ExtendedBase()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).get_ExtendedBase(&_ret));
+		return _ret;
+	}
+	static HSTRING GetName(UINT32 scanDataType)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IBarcodeSymbologiesStatics).abi_GetName(scanDataType, &_ret));
+		return _ret;
+	}
 }
 
 interface BarcodeSymbologyAttributes : Windows.Devices.PointOfService.IBarcodeSymbologyAttributes
@@ -1386,16 +1981,41 @@ extern(Windows):
 	final EventRegistrationToken OnStatusUpdated(void delegate(Windows.Devices.PointOfService.CashDrawer, Windows.Devices.PointOfService.CashDrawerStatusUpdatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_StatusUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.CashDrawer, Windows.Devices.PointOfService.CashDrawerStatusUpdatedEventArgs), Windows.Devices.PointOfService.CashDrawer, Windows.Devices.PointOfService.CashDrawerStatusUpdatedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawer).add_StatusUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.CashDrawer, Windows.Devices.PointOfService.CashDrawerStatusUpdatedEventArgs), Windows.Devices.PointOfService.CashDrawer, Windows.Devices.PointOfService.CashDrawerStatusUpdatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStatusUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(remove_StatusUpdated(token));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawer).remove_StatusUpdated(token));
 	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+
+	private static Windows.Devices.PointOfService.ICashDrawerStatics _staticInstance;
+	public static Windows.Devices.PointOfService.ICashDrawerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.PointOfService.ICashDrawerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.CashDrawer) GetDefaultAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.CashDrawer) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.ICashDrawerStatics).abi_GetDefaultAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.CashDrawer) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.CashDrawer) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.ICashDrawerStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.ICashDrawerStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
 	}
 }
 
@@ -1486,12 +2106,12 @@ extern(Windows):
 	final EventRegistrationToken OnAlarmTimeoutExpired(void delegate(Windows.Devices.PointOfService.CashDrawerCloseAlarm, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AlarmTimeoutExpired(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.CashDrawerCloseAlarm, IInspectable), Windows.Devices.PointOfService.CashDrawerCloseAlarm, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerCloseAlarm).add_AlarmTimeoutExpired(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.CashDrawerCloseAlarm, IInspectable), Windows.Devices.PointOfService.CashDrawerCloseAlarm, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeAlarmTimeoutExpired(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AlarmTimeoutExpired(token));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerCloseAlarm).remove_AlarmTimeoutExpired(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) StartAsync()
 	{
@@ -1518,22 +2138,22 @@ extern(Windows):
 	final EventRegistrationToken OnDrawerClosed(void delegate(Windows.Devices.PointOfService.CashDrawerEventSource, Windows.Devices.PointOfService.CashDrawerClosedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DrawerClosed(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.CashDrawerEventSource, Windows.Devices.PointOfService.CashDrawerClosedEventArgs), Windows.Devices.PointOfService.CashDrawerEventSource, Windows.Devices.PointOfService.CashDrawerClosedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerEventSource).add_DrawerClosed(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.CashDrawerEventSource, Windows.Devices.PointOfService.CashDrawerClosedEventArgs), Windows.Devices.PointOfService.CashDrawerEventSource, Windows.Devices.PointOfService.CashDrawerClosedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDrawerClosed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DrawerClosed(token));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerEventSource).remove_DrawerClosed(token));
 	}
 	final EventRegistrationToken OnDrawerOpened(void delegate(Windows.Devices.PointOfService.CashDrawerEventSource, Windows.Devices.PointOfService.CashDrawerOpenedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DrawerOpened(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.CashDrawerEventSource, Windows.Devices.PointOfService.CashDrawerOpenedEventArgs), Windows.Devices.PointOfService.CashDrawerEventSource, Windows.Devices.PointOfService.CashDrawerOpenedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerEventSource).add_DrawerOpened(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.CashDrawerEventSource, Windows.Devices.PointOfService.CashDrawerOpenedEventArgs), Windows.Devices.PointOfService.CashDrawerEventSource, Windows.Devices.PointOfService.CashDrawerOpenedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDrawerOpened(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DrawerOpened(token));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.ICashDrawerEventSource).remove_DrawerOpened(token));
 	}
 }
 
@@ -1654,62 +2274,62 @@ extern(Windows):
 	final EventRegistrationToken OnDataReceived(void delegate(Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerDataReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerDataReceivedEventArgs), Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerDataReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).add_DataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerDataReceivedEventArgs), Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerDataReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDataReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DataReceived(token));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).remove_DataReceived(token));
 	}
 	final EventRegistrationToken OnTriggerPressed(void delegate(IInspectable, Windows.Devices.PointOfService.ClaimedBarcodeScanner) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_TriggerPressed(event!(Windows.Foundation.EventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner), IInspectable, Windows.Devices.PointOfService.ClaimedBarcodeScanner)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).add_TriggerPressed(event!(Windows.Foundation.EventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner), IInspectable, Windows.Devices.PointOfService.ClaimedBarcodeScanner)(fn), &tok));
 		return tok;
 	}
 	final void removeTriggerPressed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_TriggerPressed(token));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).remove_TriggerPressed(token));
 	}
 	final EventRegistrationToken OnTriggerReleased(void delegate(IInspectable, Windows.Devices.PointOfService.ClaimedBarcodeScanner) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_TriggerReleased(event!(Windows.Foundation.EventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner), IInspectable, Windows.Devices.PointOfService.ClaimedBarcodeScanner)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).add_TriggerReleased(event!(Windows.Foundation.EventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner), IInspectable, Windows.Devices.PointOfService.ClaimedBarcodeScanner)(fn), &tok));
 		return tok;
 	}
 	final void removeTriggerReleased(EventRegistrationToken token)
 	{
-		Debug.OK(remove_TriggerReleased(token));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).remove_TriggerReleased(token));
 	}
 	final EventRegistrationToken OnReleaseDeviceRequested(void delegate(IInspectable, Windows.Devices.PointOfService.ClaimedBarcodeScanner) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ReleaseDeviceRequested(event!(Windows.Foundation.EventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner), IInspectable, Windows.Devices.PointOfService.ClaimedBarcodeScanner)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).add_ReleaseDeviceRequested(event!(Windows.Foundation.EventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner), IInspectable, Windows.Devices.PointOfService.ClaimedBarcodeScanner)(fn), &tok));
 		return tok;
 	}
 	final void removeReleaseDeviceRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ReleaseDeviceRequested(token));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).remove_ReleaseDeviceRequested(token));
 	}
 	final EventRegistrationToken OnImagePreviewReceived(void delegate(Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerImagePreviewReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ImagePreviewReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerImagePreviewReceivedEventArgs), Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerImagePreviewReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).add_ImagePreviewReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerImagePreviewReceivedEventArgs), Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerImagePreviewReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeImagePreviewReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ImagePreviewReceived(token));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).remove_ImagePreviewReceived(token));
 	}
 	final EventRegistrationToken OnErrorOccurred(void delegate(Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerErrorOccurredEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ErrorOccurred(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerErrorOccurredEventArgs), Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerErrorOccurredEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).add_ErrorOccurred(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerErrorOccurredEventArgs), Windows.Devices.PointOfService.ClaimedBarcodeScanner, Windows.Devices.PointOfService.BarcodeScannerErrorOccurredEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeErrorOccurred(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ErrorOccurred(token));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedBarcodeScanner).remove_ErrorOccurred(token));
 	}
 	final void Close()
 	{
@@ -1807,12 +2427,12 @@ extern(Windows):
 	final EventRegistrationToken OnReleaseDeviceRequested(void delegate(Windows.Devices.PointOfService.ClaimedCashDrawer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ReleaseDeviceRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedCashDrawer, IInspectable), Windows.Devices.PointOfService.ClaimedCashDrawer, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedCashDrawer).add_ReleaseDeviceRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedCashDrawer, IInspectable), Windows.Devices.PointOfService.ClaimedCashDrawer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeReleaseDeviceRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ReleaseDeviceRequested(token));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedCashDrawer).remove_ReleaseDeviceRequested(token));
 	}
 	final void Close()
 	{
@@ -1993,16 +2613,41 @@ extern(Windows):
 	final EventRegistrationToken OnReleaseDeviceRequested(void delegate(Windows.Devices.PointOfService.ClaimedLineDisplay, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ReleaseDeviceRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedLineDisplay, IInspectable), Windows.Devices.PointOfService.ClaimedLineDisplay, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedLineDisplay).add_ReleaseDeviceRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedLineDisplay, IInspectable), Windows.Devices.PointOfService.ClaimedLineDisplay, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeReleaseDeviceRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ReleaseDeviceRequested(token));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedLineDisplay).remove_ReleaseDeviceRequested(token));
 	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+
+	private static Windows.Devices.PointOfService.IClaimedLineDisplayStatics _staticInstance;
+	public static Windows.Devices.PointOfService.IClaimedLineDisplayStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.PointOfService.IClaimedLineDisplayStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.ClaimedLineDisplay) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.ClaimedLineDisplay) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IClaimedLineDisplayStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IClaimedLineDisplayStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelectorWithConnectionTypes(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IClaimedLineDisplayStatics).abi_GetDeviceSelectorWithConnectionTypes(connectionTypes, &_ret));
+		return _ret;
 	}
 }
 
@@ -2136,52 +2781,52 @@ extern(Windows):
 	final EventRegistrationToken OnBankCardDataReceived(void delegate(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderBankCardDataReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_BankCardDataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderBankCardDataReceivedEventArgs), Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderBankCardDataReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).add_BankCardDataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderBankCardDataReceivedEventArgs), Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderBankCardDataReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeBankCardDataReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_BankCardDataReceived(token));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).remove_BankCardDataReceived(token));
 	}
 	final EventRegistrationToken OnAamvaCardDataReceived(void delegate(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderAamvaCardDataReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AamvaCardDataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderAamvaCardDataReceivedEventArgs), Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderAamvaCardDataReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).add_AamvaCardDataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderAamvaCardDataReceivedEventArgs), Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderAamvaCardDataReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAamvaCardDataReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AamvaCardDataReceived(token));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).remove_AamvaCardDataReceived(token));
 	}
 	final EventRegistrationToken OnVendorSpecificDataReceived(void delegate(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_VendorSpecificDataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs), Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).add_VendorSpecificDataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs), Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeVendorSpecificDataReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_VendorSpecificDataReceived(token));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).remove_VendorSpecificDataReceived(token));
 	}
 	final EventRegistrationToken OnReleaseDeviceRequested(void delegate(IInspectable, Windows.Devices.PointOfService.ClaimedMagneticStripeReader) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ReleaseDeviceRequested(event!(Windows.Foundation.EventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader), IInspectable, Windows.Devices.PointOfService.ClaimedMagneticStripeReader)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).add_ReleaseDeviceRequested(event!(Windows.Foundation.EventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader), IInspectable, Windows.Devices.PointOfService.ClaimedMagneticStripeReader)(fn), &tok));
 		return tok;
 	}
 	final void removeReleaseDeviceRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ReleaseDeviceRequested(token));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).remove_ReleaseDeviceRequested(token));
 	}
 	final EventRegistrationToken OnErrorOccurred(void delegate(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderErrorOccurredEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ErrorOccurred(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderErrorOccurredEventArgs), Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderErrorOccurredEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).add_ErrorOccurred(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderErrorOccurredEventArgs), Windows.Devices.PointOfService.ClaimedMagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderErrorOccurredEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeErrorOccurred(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ErrorOccurred(token));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedMagneticStripeReader).remove_ErrorOccurred(token));
 	}
 	final void Close()
 	{
@@ -2291,12 +2936,12 @@ extern(Windows):
 	final EventRegistrationToken OnReleaseDeviceRequested(void delegate(Windows.Devices.PointOfService.ClaimedPosPrinter, Windows.Devices.PointOfService.PosPrinterReleaseDeviceRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ReleaseDeviceRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedPosPrinter, Windows.Devices.PointOfService.PosPrinterReleaseDeviceRequestedEventArgs), Windows.Devices.PointOfService.ClaimedPosPrinter, Windows.Devices.PointOfService.PosPrinterReleaseDeviceRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedPosPrinter).add_ReleaseDeviceRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.ClaimedPosPrinter, Windows.Devices.PointOfService.PosPrinterReleaseDeviceRequestedEventArgs), Windows.Devices.PointOfService.ClaimedPosPrinter, Windows.Devices.PointOfService.PosPrinterReleaseDeviceRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeReleaseDeviceRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ReleaseDeviceRequested(token));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IClaimedPosPrinter).remove_ReleaseDeviceRequested(token));
 	}
 	final void Close()
 	{
@@ -2791,6 +3436,37 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
 	}
+
+	private static Windows.Devices.PointOfService.ILineDisplayStatics _staticInstance;
+	public static Windows.Devices.PointOfService.ILineDisplayStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.PointOfService.ILineDisplayStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.LineDisplay) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.LineDisplay) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.ILineDisplayStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.LineDisplay) GetDefaultAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.LineDisplay) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.ILineDisplayStatics).abi_GetDefaultAsync(&_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.ILineDisplayStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelectorWithConnectionTypes(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.ILineDisplayStatics).abi_GetDeviceSelectorWithConnectionTypes(connectionTypes, &_ret));
+		return _ret;
+	}
 }
 
 interface LineDisplayCapabilities : Windows.Devices.PointOfService.ILineDisplayCapabilities
@@ -3021,16 +3697,41 @@ extern(Windows):
 	final EventRegistrationToken OnStatusUpdated(void delegate(Windows.Devices.PointOfService.MagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderStatusUpdatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_StatusUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.MagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderStatusUpdatedEventArgs), Windows.Devices.PointOfService.MagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderStatusUpdatedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReader).add_StatusUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.MagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderStatusUpdatedEventArgs), Windows.Devices.PointOfService.MagneticStripeReader, Windows.Devices.PointOfService.MagneticStripeReaderStatusUpdatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStatusUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(remove_StatusUpdated(token));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IMagneticStripeReader).remove_StatusUpdated(token));
 	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+
+	private static Windows.Devices.PointOfService.IMagneticStripeReaderStatics _staticInstance;
+	public static Windows.Devices.PointOfService.IMagneticStripeReaderStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.PointOfService.IMagneticStripeReaderStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.MagneticStripeReader) GetDefaultAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.MagneticStripeReader) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IMagneticStripeReaderStatics).abi_GetDefaultAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.MagneticStripeReader) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.MagneticStripeReader) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IMagneticStripeReaderStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IMagneticStripeReaderStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
 	}
 }
 
@@ -3285,10 +3986,64 @@ extern(Windows):
 
 interface MagneticStripeReaderCardTypes
 {
+	private static Windows.Devices.PointOfService.IMagneticStripeReaderCardTypesStatics _staticInstance;
+	public static Windows.Devices.PointOfService.IMagneticStripeReaderCardTypesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.PointOfService.IMagneticStripeReaderCardTypesStatics);
+		return _staticInstance;
+	}
+	static UINT32 Unknown()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IMagneticStripeReaderCardTypesStatics).get_Unknown(&_ret));
+		return _ret;
+	}
+	static UINT32 Bank()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IMagneticStripeReaderCardTypesStatics).get_Bank(&_ret));
+		return _ret;
+	}
+	static UINT32 Aamva()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IMagneticStripeReaderCardTypesStatics).get_Aamva(&_ret));
+		return _ret;
+	}
+	static UINT32 ExtendedBase()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IMagneticStripeReaderCardTypesStatics).get_ExtendedBase(&_ret));
+		return _ret;
+	}
 }
 
 interface MagneticStripeReaderEncryptionAlgorithms
 {
+	private static Windows.Devices.PointOfService.IMagneticStripeReaderEncryptionAlgorithmsStatics _staticInstance;
+	public static Windows.Devices.PointOfService.IMagneticStripeReaderEncryptionAlgorithmsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.PointOfService.IMagneticStripeReaderEncryptionAlgorithmsStatics);
+		return _staticInstance;
+	}
+	static UINT32 None()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IMagneticStripeReaderEncryptionAlgorithmsStatics).get_None(&_ret));
+		return _ret;
+	}
+	static UINT32 TripleDesDukpt()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IMagneticStripeReaderEncryptionAlgorithmsStatics).get_TripleDesDukpt(&_ret));
+		return _ret;
+	}
+	static UINT32 ExtendedBase()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IMagneticStripeReaderEncryptionAlgorithmsStatics).get_ExtendedBase(&_ret));
+		return _ret;
+	}
 }
 
 interface MagneticStripeReaderErrorOccurredEventArgs : Windows.Devices.PointOfService.IMagneticStripeReaderErrorOccurredEventArgs
@@ -3496,16 +4251,41 @@ extern(Windows):
 	final EventRegistrationToken OnStatusUpdated(void delegate(Windows.Devices.PointOfService.PosPrinter, Windows.Devices.PointOfService.PosPrinterStatusUpdatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_StatusUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.PosPrinter, Windows.Devices.PointOfService.PosPrinterStatusUpdatedEventArgs), Windows.Devices.PointOfService.PosPrinter, Windows.Devices.PointOfService.PosPrinterStatusUpdatedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinter).add_StatusUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.PointOfService.PosPrinter, Windows.Devices.PointOfService.PosPrinterStatusUpdatedEventArgs), Windows.Devices.PointOfService.PosPrinter, Windows.Devices.PointOfService.PosPrinterStatusUpdatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStatusUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(remove_StatusUpdated(token));
+		Debug.OK(this.as!(Windows.Devices.PointOfService.IPosPrinter).remove_StatusUpdated(token));
 	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+
+	private static Windows.Devices.PointOfService.IPosPrinterStatics _staticInstance;
+	public static Windows.Devices.PointOfService.IPosPrinterStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.PointOfService.IPosPrinterStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.PosPrinter) GetDefaultAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.PosPrinter) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IPosPrinterStatics).abi_GetDefaultAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.PosPrinter) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.PosPrinter) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IPosPrinterStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IPosPrinterStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
 	}
 }
 
@@ -3576,6 +4356,30 @@ extern(Windows):
 
 interface PosPrinterCharacterSetIds
 {
+	private static Windows.Devices.PointOfService.IPosPrinterCharacterSetIdsStatics _staticInstance;
+	public static Windows.Devices.PointOfService.IPosPrinterCharacterSetIdsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.PointOfService.IPosPrinterCharacterSetIdsStatics);
+		return _staticInstance;
+	}
+	static UINT32 Utf16LE()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IPosPrinterCharacterSetIdsStatics).get_Utf16LE(&_ret));
+		return _ret;
+	}
+	static UINT32 Ascii()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IPosPrinterCharacterSetIdsStatics).get_Ascii(&_ret));
+		return _ret;
+	}
+	static UINT32 Ansi()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.PointOfService.IPosPrinterCharacterSetIdsStatics).get_Ansi(&_ret));
+		return _ret;
+	}
 }
 
 interface PosPrinterReleaseDeviceRequestedEventArgs : Windows.Devices.PointOfService.IPosPrinterReleaseDeviceRequestedEventArgs

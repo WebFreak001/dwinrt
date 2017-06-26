@@ -134,6 +134,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticationManager).abi_DenySessionAsync(userAccountId, sessionId, sessionAuthenticationType, &_ret));
 		return _ret;
 	}
+
+	private static Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticatorStatics _staticInstance;
+	public static Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticatorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticatorStatics);
+		return _staticInstance;
+	}
+	static Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthenticationManager Current()
+	{
+		Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthenticationManager _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticatorStatics).get_Current(&_ret));
+		return _ret;
+	}
 }
 
 interface MicrosoftAccountMultiFactorGetSessionsResult : Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorGetSessionsResult

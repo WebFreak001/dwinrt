@@ -38,6 +38,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Printers.IPrint3DDevice).get_PrintSchema(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Devices.Printers.IPrint3DDeviceStatics _staticInstance;
+	public static Windows.Devices.Printers.IPrint3DDeviceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Printers.IPrint3DDeviceStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Printers.Print3DDevice) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Printers.Print3DDevice) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Printers.IPrint3DDeviceStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Printers.IPrint3DDeviceStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
 }
 
 interface PrintSchema : Windows.Devices.Printers.IPrintSchema

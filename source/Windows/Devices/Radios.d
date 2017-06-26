@@ -38,12 +38,12 @@ extern(Windows):
 	final EventRegistrationToken OnStateChanged(void delegate(Windows.Devices.Radios.Radio, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Radios.Radio, IInspectable), Windows.Devices.Radios.Radio, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Radios.IRadio).add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Radios.Radio, IInspectable), Windows.Devices.Radios.Radio, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeStateChanged(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_StateChanged(eventCookie));
+		Debug.OK(this.as!(Windows.Devices.Radios.IRadio).remove_StateChanged(eventCookie));
 	}
 	final Windows.Devices.Radios.RadioState State()
 	{
@@ -61,6 +61,37 @@ extern(Windows):
 	{
 		Windows.Devices.Radios.RadioKind _ret;
 		Debug.OK(this.as!(Windows.Devices.Radios.IRadio).get_Kind(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Devices.Radios.IRadioStatics _staticInstance;
+	public static Windows.Devices.Radios.IRadioStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Radios.IRadioStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Radios.Radio)) GetRadiosAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Radios.Radio)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Radios.IRadioStatics).abi_GetRadiosAsync(&_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Radios.IRadioStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Radios.Radio) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Radios.Radio) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Radios.IRadioStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Radios.RadioAccessStatus) RequestAccessAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Radios.RadioAccessStatus) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Radios.IRadioStatics).abi_RequestAccessAsync(&_ret));
 		return _ret;
 	}
 }

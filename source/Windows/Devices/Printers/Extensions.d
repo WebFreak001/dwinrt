@@ -126,22 +126,22 @@ extern(Windows):
 	final EventRegistrationToken OnPrintRequested(void delegate(Windows.Devices.Printers.Extensions.Print3DWorkflow, Windows.Devices.Printers.Extensions.Print3DWorkflowPrintRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PrintRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Printers.Extensions.Print3DWorkflow, Windows.Devices.Printers.Extensions.Print3DWorkflowPrintRequestedEventArgs), Windows.Devices.Printers.Extensions.Print3DWorkflow, Windows.Devices.Printers.Extensions.Print3DWorkflowPrintRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflow).add_PrintRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Printers.Extensions.Print3DWorkflow, Windows.Devices.Printers.Extensions.Print3DWorkflowPrintRequestedEventArgs), Windows.Devices.Printers.Extensions.Print3DWorkflow, Windows.Devices.Printers.Extensions.Print3DWorkflowPrintRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePrintRequested(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_PrintRequested(eventCookie));
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflow).remove_PrintRequested(eventCookie));
 	}
 	final EventRegistrationToken OnPrinterChanged(void delegate(Windows.Devices.Printers.Extensions.Print3DWorkflow, Windows.Devices.Printers.Extensions.Print3DWorkflowPrinterChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PrinterChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Printers.Extensions.Print3DWorkflow, Windows.Devices.Printers.Extensions.Print3DWorkflowPrinterChangedEventArgs), Windows.Devices.Printers.Extensions.Print3DWorkflow, Windows.Devices.Printers.Extensions.Print3DWorkflowPrinterChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflow2).add_PrinterChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Printers.Extensions.Print3DWorkflow, Windows.Devices.Printers.Extensions.Print3DWorkflowPrinterChangedEventArgs), Windows.Devices.Printers.Extensions.Print3DWorkflow, Windows.Devices.Printers.Extensions.Print3DWorkflowPrinterChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePrinterChanged(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_PrinterChanged(eventCookie));
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflow2).remove_PrinterChanged(eventCookie));
 	}
 }
 
@@ -181,6 +181,18 @@ extern(Windows):
 
 interface PrintExtensionContext
 {
+	private static Windows.Devices.Printers.Extensions.IPrintExtensionContextStatic _staticInstance;
+	public static Windows.Devices.Printers.Extensions.IPrintExtensionContextStatic staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Printers.Extensions.IPrintExtensionContextStatic);
+		return _staticInstance;
+	}
+	static IInspectable FromDeviceId(HSTRING deviceId)
+	{
+		IInspectable _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Printers.Extensions.IPrintExtensionContextStatic).abi_FromDeviceId(deviceId, &_ret));
+		return _ret;
+	}
 }
 
 interface PrintNotificationEventDetails : Windows.Devices.Printers.Extensions.IPrintNotificationEventDetails
@@ -216,12 +228,12 @@ extern(Windows):
 	final EventRegistrationToken OnSaveRequested(void delegate(Windows.Devices.Printers.Extensions.PrintTaskConfiguration, Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SaveRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Printers.Extensions.PrintTaskConfiguration, Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequestedEventArgs), Windows.Devices.Printers.Extensions.PrintTaskConfiguration, Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintTaskConfiguration).add_SaveRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Printers.Extensions.PrintTaskConfiguration, Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequestedEventArgs), Windows.Devices.Printers.Extensions.PrintTaskConfiguration, Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSaveRequested(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_SaveRequested(eventCookie));
+		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintTaskConfiguration).remove_SaveRequested(eventCookie));
 	}
 }
 

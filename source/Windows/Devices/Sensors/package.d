@@ -862,22 +862,22 @@ extern(Windows):
 	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.Accelerometer, Windows.Devices.Sensors.AccelerometerReadingChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Accelerometer, Windows.Devices.Sensors.AccelerometerReadingChangedEventArgs), Windows.Devices.Sensors.Accelerometer, Windows.Devices.Sensors.AccelerometerReadingChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometer).add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Accelerometer, Windows.Devices.Sensors.AccelerometerReadingChangedEventArgs), Windows.Devices.Sensors.Accelerometer, Windows.Devices.Sensors.AccelerometerReadingChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ReadingChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometer).remove_ReadingChanged(token));
 	}
 	final EventRegistrationToken OnShaken(void delegate(Windows.Devices.Sensors.Accelerometer, Windows.Devices.Sensors.AccelerometerShakenEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Shaken(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Accelerometer, Windows.Devices.Sensors.AccelerometerShakenEventArgs), Windows.Devices.Sensors.Accelerometer, Windows.Devices.Sensors.AccelerometerShakenEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometer).add_Shaken(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Accelerometer, Windows.Devices.Sensors.AccelerometerShakenEventArgs), Windows.Devices.Sensors.Accelerometer, Windows.Devices.Sensors.AccelerometerShakenEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeShaken(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Shaken(token));
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometer).remove_Shaken(token));
 	}
 	final HSTRING DeviceId()
 	{
@@ -915,6 +915,19 @@ extern(Windows):
 	{
 		Windows.Devices.Sensors.AccelerometerReadingType _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.IAccelerometer4).get_ReadingType(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Devices.Sensors.IAccelerometerStatics _staticInstance;
+	public static Windows.Devices.Sensors.IAccelerometerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Sensors.IAccelerometerStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.Sensors.Accelerometer GetDefault()
+	{
+		Windows.Devices.Sensors.Accelerometer _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.IAccelerometerStatics).abi_GetDefault(&_ret));
 		return _ret;
 	}
 }
@@ -1012,12 +1025,49 @@ extern(Windows):
 	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.ActivitySensor, Windows.Devices.Sensors.ActivitySensorReadingChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.ActivitySensor, Windows.Devices.Sensors.ActivitySensorReadingChangedEventArgs), Windows.Devices.Sensors.ActivitySensor, Windows.Devices.Sensors.ActivitySensorReadingChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Sensors.IActivitySensor).add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.ActivitySensor, Windows.Devices.Sensors.ActivitySensorReadingChangedEventArgs), Windows.Devices.Sensors.ActivitySensor, Windows.Devices.Sensors.ActivitySensorReadingChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ReadingChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Sensors.IActivitySensor).remove_ReadingChanged(token));
+	}
+
+	private static Windows.Devices.Sensors.IActivitySensorStatics _staticInstance;
+	public static Windows.Devices.Sensors.IActivitySensorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Sensors.IActivitySensorStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.ActivitySensor) GetDefaultAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.ActivitySensor) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.IActivitySensorStatics).abi_GetDefaultAsync(&_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.IActivitySensorStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.ActivitySensor) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.ActivitySensor) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.IActivitySensorStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.ActivitySensorReading)) GetSystemHistoryAsync(Windows.Foundation.DateTime fromTime)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.ActivitySensorReading)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.IActivitySensorStatics).abi_GetSystemHistoryAsync(fromTime, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.ActivitySensorReading)) GetSystemHistoryWithDurationAsync(Windows.Foundation.DateTime fromTime, Windows.Foundation.TimeSpan duration)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.ActivitySensorReading)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.IActivitySensorStatics).abi_GetSystemHistoryWithDurationAsync(fromTime, duration, &_ret));
+		return _ret;
 	}
 }
 
@@ -1111,12 +1161,25 @@ extern(Windows):
 	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.Altimeter, Windows.Devices.Sensors.AltimeterReadingChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Altimeter, Windows.Devices.Sensors.AltimeterReadingChangedEventArgs), Windows.Devices.Sensors.Altimeter, Windows.Devices.Sensors.AltimeterReadingChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAltimeter).add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Altimeter, Windows.Devices.Sensors.AltimeterReadingChangedEventArgs), Windows.Devices.Sensors.Altimeter, Windows.Devices.Sensors.AltimeterReadingChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ReadingChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Sensors.IAltimeter).remove_ReadingChanged(token));
+	}
+
+	private static Windows.Devices.Sensors.IAltimeterStatics _staticInstance;
+	public static Windows.Devices.Sensors.IAltimeterStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Sensors.IAltimeterStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.Sensors.Altimeter GetDefault()
+	{
+		Windows.Devices.Sensors.Altimeter _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.IAltimeterStatics).abi_GetDefault(&_ret));
+		return _ret;
 	}
 }
 
@@ -1182,12 +1245,25 @@ extern(Windows):
 	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.Barometer, Windows.Devices.Sensors.BarometerReadingChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Barometer, Windows.Devices.Sensors.BarometerReadingChangedEventArgs), Windows.Devices.Sensors.Barometer, Windows.Devices.Sensors.BarometerReadingChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Sensors.IBarometer).add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Barometer, Windows.Devices.Sensors.BarometerReadingChangedEventArgs), Windows.Devices.Sensors.Barometer, Windows.Devices.Sensors.BarometerReadingChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ReadingChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Sensors.IBarometer).remove_ReadingChanged(token));
+	}
+
+	private static Windows.Devices.Sensors.IBarometerStatics _staticInstance;
+	public static Windows.Devices.Sensors.IBarometerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Sensors.IBarometerStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.Sensors.Barometer GetDefault()
+	{
+		Windows.Devices.Sensors.Barometer _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.IBarometerStatics).abi_GetDefault(&_ret));
+		return _ret;
 	}
 }
 
@@ -1247,12 +1323,12 @@ extern(Windows):
 	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.Compass, Windows.Devices.Sensors.CompassReadingChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Compass, Windows.Devices.Sensors.CompassReadingChangedEventArgs), Windows.Devices.Sensors.Compass, Windows.Devices.Sensors.CompassReadingChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Sensors.ICompass).add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Compass, Windows.Devices.Sensors.CompassReadingChangedEventArgs), Windows.Devices.Sensors.Compass, Windows.Devices.Sensors.CompassReadingChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ReadingChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Sensors.ICompass).remove_ReadingChanged(token));
 	}
 	final HSTRING DeviceId()
 	{
@@ -1268,6 +1344,19 @@ extern(Windows):
 	{
 		Windows.Graphics.Display.DisplayOrientations _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.ICompass2).get_ReadingTransform(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Devices.Sensors.ICompassStatics _staticInstance;
+	public static Windows.Devices.Sensors.ICompassStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Sensors.ICompassStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.Sensors.Compass GetDefault()
+	{
+		Windows.Devices.Sensors.Compass _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.ICompassStatics).abi_GetDefault(&_ret));
 		return _ret;
 	}
 }
@@ -1340,12 +1429,12 @@ extern(Windows):
 	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.Gyrometer, Windows.Devices.Sensors.GyrometerReadingChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Gyrometer, Windows.Devices.Sensors.GyrometerReadingChangedEventArgs), Windows.Devices.Sensors.Gyrometer, Windows.Devices.Sensors.GyrometerReadingChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Sensors.IGyrometer).add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Gyrometer, Windows.Devices.Sensors.GyrometerReadingChangedEventArgs), Windows.Devices.Sensors.Gyrometer, Windows.Devices.Sensors.GyrometerReadingChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ReadingChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Sensors.IGyrometer).remove_ReadingChanged(token));
 	}
 	final HSTRING DeviceId()
 	{
@@ -1361,6 +1450,19 @@ extern(Windows):
 	{
 		Windows.Graphics.Display.DisplayOrientations _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.IGyrometer2).get_ReadingTransform(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Devices.Sensors.IGyrometerStatics _staticInstance;
+	public static Windows.Devices.Sensors.IGyrometerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Sensors.IGyrometerStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.Sensors.Gyrometer GetDefault()
+	{
+		Windows.Devices.Sensors.Gyrometer _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.IGyrometerStatics).abi_GetDefault(&_ret));
 		return _ret;
 	}
 }
@@ -1433,12 +1535,12 @@ extern(Windows):
 	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.Inclinometer, Windows.Devices.Sensors.InclinometerReadingChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Inclinometer, Windows.Devices.Sensors.InclinometerReadingChangedEventArgs), Windows.Devices.Sensors.Inclinometer, Windows.Devices.Sensors.InclinometerReadingChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Sensors.IInclinometer).add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Inclinometer, Windows.Devices.Sensors.InclinometerReadingChangedEventArgs), Windows.Devices.Sensors.Inclinometer, Windows.Devices.Sensors.InclinometerReadingChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ReadingChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Sensors.IInclinometer).remove_ReadingChanged(token));
 	}
 	final HSTRING DeviceId()
 	{
@@ -1460,6 +1562,19 @@ extern(Windows):
 	{
 		Windows.Devices.Sensors.SensorReadingType _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.IInclinometer2).get_ReadingType(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Devices.Sensors.IInclinometerStatics _staticInstance;
+	public static Windows.Devices.Sensors.IInclinometerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Sensors.IInclinometerStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.Sensors.Inclinometer GetDefault()
+	{
+		Windows.Devices.Sensors.Inclinometer _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.IInclinometerStatics).abi_GetDefault(&_ret));
 		return _ret;
 	}
 }
@@ -1538,17 +1653,30 @@ extern(Windows):
 	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.LightSensor, Windows.Devices.Sensors.LightSensorReadingChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.LightSensor, Windows.Devices.Sensors.LightSensorReadingChangedEventArgs), Windows.Devices.Sensors.LightSensor, Windows.Devices.Sensors.LightSensorReadingChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Sensors.ILightSensor).add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.LightSensor, Windows.Devices.Sensors.LightSensorReadingChangedEventArgs), Windows.Devices.Sensors.LightSensor, Windows.Devices.Sensors.LightSensorReadingChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ReadingChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Sensors.ILightSensor).remove_ReadingChanged(token));
 	}
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.ILightSensorDeviceId).get_DeviceId(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Devices.Sensors.ILightSensorStatics _staticInstance;
+	public static Windows.Devices.Sensors.ILightSensorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Sensors.ILightSensorStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.Sensors.LightSensor GetDefault()
+	{
+		Windows.Devices.Sensors.LightSensor _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.ILightSensorStatics).abi_GetDefault(&_ret));
 		return _ret;
 	}
 }
@@ -1609,12 +1737,12 @@ extern(Windows):
 	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.Magnetometer, Windows.Devices.Sensors.MagnetometerReadingChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Magnetometer, Windows.Devices.Sensors.MagnetometerReadingChangedEventArgs), Windows.Devices.Sensors.Magnetometer, Windows.Devices.Sensors.MagnetometerReadingChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Sensors.IMagnetometer).add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Magnetometer, Windows.Devices.Sensors.MagnetometerReadingChangedEventArgs), Windows.Devices.Sensors.Magnetometer, Windows.Devices.Sensors.MagnetometerReadingChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ReadingChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Sensors.IMagnetometer).remove_ReadingChanged(token));
 	}
 	final HSTRING DeviceId()
 	{
@@ -1630,6 +1758,19 @@ extern(Windows):
 	{
 		Windows.Graphics.Display.DisplayOrientations _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.IMagnetometer2).get_ReadingTransform(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Devices.Sensors.IMagnetometerStatics _staticInstance;
+	public static Windows.Devices.Sensors.IMagnetometerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Sensors.IMagnetometerStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.Sensors.Magnetometer GetDefault()
+	{
+		Windows.Devices.Sensors.Magnetometer _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.IMagnetometerStatics).abi_GetDefault(&_ret));
 		return _ret;
 	}
 }
@@ -1708,12 +1849,12 @@ extern(Windows):
 	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.OrientationSensor, Windows.Devices.Sensors.OrientationSensorReadingChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.OrientationSensor, Windows.Devices.Sensors.OrientationSensorReadingChangedEventArgs), Windows.Devices.Sensors.OrientationSensor, Windows.Devices.Sensors.OrientationSensorReadingChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Sensors.IOrientationSensor).add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.OrientationSensor, Windows.Devices.Sensors.OrientationSensorReadingChangedEventArgs), Windows.Devices.Sensors.OrientationSensor, Windows.Devices.Sensors.OrientationSensorReadingChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ReadingChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Sensors.IOrientationSensor).remove_ReadingChanged(token));
 	}
 	final HSTRING DeviceId()
 	{
@@ -1735,6 +1876,19 @@ extern(Windows):
 	{
 		Windows.Devices.Sensors.SensorReadingType _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.IOrientationSensor2).get_ReadingType(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Devices.Sensors.IOrientationSensorStatics _staticInstance;
+	public static Windows.Devices.Sensors.IOrientationSensorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Sensors.IOrientationSensorStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.Sensors.OrientationSensor GetDefault()
+	{
+		Windows.Devices.Sensors.OrientationSensor _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.IOrientationSensorStatics).abi_GetDefault(&_ret));
 		return _ret;
 	}
 }
@@ -1813,17 +1967,54 @@ extern(Windows):
 	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.Pedometer, Windows.Devices.Sensors.PedometerReadingChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Pedometer, Windows.Devices.Sensors.PedometerReadingChangedEventArgs), Windows.Devices.Sensors.Pedometer, Windows.Devices.Sensors.PedometerReadingChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Sensors.IPedometer).add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Pedometer, Windows.Devices.Sensors.PedometerReadingChangedEventArgs), Windows.Devices.Sensors.Pedometer, Windows.Devices.Sensors.PedometerReadingChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ReadingChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Sensors.IPedometer).remove_ReadingChanged(token));
 	}
 	final Windows.Foundation.Collections.IMapView!(Windows.Devices.Sensors.PedometerStepKind, Windows.Devices.Sensors.PedometerReading) GetCurrentReadings()
 	{
 		Windows.Foundation.Collections.IMapView!(Windows.Devices.Sensors.PedometerStepKind, Windows.Devices.Sensors.PedometerReading) _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.IPedometer2).abi_GetCurrentReadings(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Devices.Sensors.IPedometerStatics _staticInstance;
+	public static Windows.Devices.Sensors.IPedometerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Sensors.IPedometerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.Pedometer) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.Pedometer) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.IPedometerStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.Pedometer) GetDefaultAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.Pedometer) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.IPedometerStatics).abi_GetDefaultAsync(&_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.IPedometerStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.PedometerReading)) GetSystemHistoryAsync(Windows.Foundation.DateTime fromTime)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.PedometerReading)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.IPedometerStatics).abi_GetSystemHistoryAsync(fromTime, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.PedometerReading)) GetSystemHistoryWithDurationAsync(Windows.Foundation.DateTime fromTime, Windows.Foundation.TimeSpan duration)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.PedometerReading)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.IPedometerStatics).abi_GetSystemHistoryWithDurationAsync(fromTime, duration, &_ret));
 		return _ret;
 	}
 }
@@ -1902,17 +2093,36 @@ extern(Windows):
 	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.ProximitySensor, Windows.Devices.Sensors.ProximitySensorReadingChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.ProximitySensor, Windows.Devices.Sensors.ProximitySensorReadingChangedEventArgs), Windows.Devices.Sensors.ProximitySensor, Windows.Devices.Sensors.ProximitySensorReadingChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Sensors.IProximitySensor).add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.ProximitySensor, Windows.Devices.Sensors.ProximitySensorReadingChangedEventArgs), Windows.Devices.Sensors.ProximitySensor, Windows.Devices.Sensors.ProximitySensorReadingChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ReadingChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Sensors.IProximitySensor).remove_ReadingChanged(token));
 	}
 	final Windows.Devices.Sensors.ProximitySensorDisplayOnOffController CreateDisplayOnOffController()
 	{
 		Windows.Devices.Sensors.ProximitySensorDisplayOnOffController _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.IProximitySensor).abi_CreateDisplayOnOffController(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Devices.Sensors.IProximitySensorStatics _staticInstance;
+	public static Windows.Devices.Sensors.IProximitySensorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Sensors.IProximitySensorStatics);
+		return _staticInstance;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.IProximitySensorStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Sensors.ProximitySensor FromId(HSTRING sensorId)
+	{
+		Windows.Devices.Sensors.ProximitySensor _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.IProximitySensorStatics).abi_FromId(sensorId, &_ret));
 		return _ret;
 	}
 }
@@ -2081,12 +2291,12 @@ extern(Windows):
 	final EventRegistrationToken OnOrientationChanged(void delegate(Windows.Devices.Sensors.SimpleOrientationSensor, Windows.Devices.Sensors.SimpleOrientationSensorOrientationChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_OrientationChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.SimpleOrientationSensor, Windows.Devices.Sensors.SimpleOrientationSensorOrientationChangedEventArgs), Windows.Devices.Sensors.SimpleOrientationSensor, Windows.Devices.Sensors.SimpleOrientationSensorOrientationChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Sensors.ISimpleOrientationSensor).add_OrientationChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.SimpleOrientationSensor, Windows.Devices.Sensors.SimpleOrientationSensorOrientationChangedEventArgs), Windows.Devices.Sensors.SimpleOrientationSensor, Windows.Devices.Sensors.SimpleOrientationSensorOrientationChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeOrientationChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_OrientationChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Sensors.ISimpleOrientationSensor).remove_OrientationChanged(token));
 	}
 	final HSTRING DeviceId()
 	{
@@ -2102,6 +2312,19 @@ extern(Windows):
 	{
 		Windows.Graphics.Display.DisplayOrientations _ret;
 		Debug.OK(this.as!(Windows.Devices.Sensors.ISimpleOrientationSensor2).get_ReadingTransform(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Devices.Sensors.ISimpleOrientationSensorStatics _staticInstance;
+	public static Windows.Devices.Sensors.ISimpleOrientationSensorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Sensors.ISimpleOrientationSensorStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.Sensors.SimpleOrientationSensor GetDefault()
+	{
+		Windows.Devices.Sensors.SimpleOrientationSensor _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.ISimpleOrientationSensorStatics).abi_GetDefault(&_ret));
 		return _ret;
 	}
 }

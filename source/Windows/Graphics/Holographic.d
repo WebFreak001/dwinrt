@@ -397,6 +397,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicDisplay).get_SpatialLocator(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Graphics.Holographic.IHolographicDisplayStatics _staticInstance;
+	public static Windows.Graphics.Holographic.IHolographicDisplayStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Graphics.Holographic.IHolographicDisplayStatics);
+		return _staticInstance;
+	}
+	static Windows.Graphics.Holographic.HolographicDisplay GetDefault()
+	{
+		Windows.Graphics.Holographic.HolographicDisplay _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Holographic.IHolographicDisplayStatics).abi_GetDefault(&_ret));
+		return _ret;
+	}
 }
 
 interface HolographicFrame : Windows.Graphics.Holographic.IHolographicFrame
@@ -487,27 +500,40 @@ extern(Windows):
 	final EventRegistrationToken OnCameraAdded(void delegate(Windows.Graphics.Holographic.HolographicSpace, Windows.Graphics.Holographic.HolographicSpaceCameraAddedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_CameraAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Holographic.HolographicSpace, Windows.Graphics.Holographic.HolographicSpaceCameraAddedEventArgs), Windows.Graphics.Holographic.HolographicSpace, Windows.Graphics.Holographic.HolographicSpaceCameraAddedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicSpace).add_CameraAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Holographic.HolographicSpace, Windows.Graphics.Holographic.HolographicSpaceCameraAddedEventArgs), Windows.Graphics.Holographic.HolographicSpace, Windows.Graphics.Holographic.HolographicSpaceCameraAddedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCameraAdded(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_CameraAdded(cookie));
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicSpace).remove_CameraAdded(cookie));
 	}
 	final EventRegistrationToken OnCameraRemoved(void delegate(Windows.Graphics.Holographic.HolographicSpace, Windows.Graphics.Holographic.HolographicSpaceCameraRemovedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_CameraRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Holographic.HolographicSpace, Windows.Graphics.Holographic.HolographicSpaceCameraRemovedEventArgs), Windows.Graphics.Holographic.HolographicSpace, Windows.Graphics.Holographic.HolographicSpaceCameraRemovedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicSpace).add_CameraRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Holographic.HolographicSpace, Windows.Graphics.Holographic.HolographicSpaceCameraRemovedEventArgs), Windows.Graphics.Holographic.HolographicSpace, Windows.Graphics.Holographic.HolographicSpaceCameraRemovedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCameraRemoved(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_CameraRemoved(cookie));
+		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicSpace).remove_CameraRemoved(cookie));
 	}
 	final Windows.Graphics.Holographic.HolographicFrame CreateNextFrame()
 	{
 		Windows.Graphics.Holographic.HolographicFrame _ret;
 		Debug.OK(this.as!(Windows.Graphics.Holographic.IHolographicSpace).abi_CreateNextFrame(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Graphics.Holographic.IHolographicSpaceStatics _staticInstance;
+	public static Windows.Graphics.Holographic.IHolographicSpaceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Graphics.Holographic.IHolographicSpaceStatics);
+		return _staticInstance;
+	}
+	static Windows.Graphics.Holographic.HolographicSpace CreateForCoreWindow(Windows.UI.Core.CoreWindow window)
+	{
+		Windows.Graphics.Holographic.HolographicSpace _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Holographic.IHolographicSpaceStatics).abi_CreateForCoreWindow(window, &_ret));
 		return _ret;
 	}
 }

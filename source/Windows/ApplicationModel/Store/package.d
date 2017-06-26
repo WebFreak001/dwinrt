@@ -254,10 +254,126 @@ extern(Windows):
 
 interface CurrentApp
 {
+	private static Windows.ApplicationModel.Store.ICurrentApp _staticInstance;
+	public static Windows.ApplicationModel.Store.ICurrentApp staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Store.ICurrentApp);
+		return _staticInstance;
+	}
+	static Windows.ApplicationModel.Store.LicenseInformation LicenseInformation()
+	{
+		Windows.ApplicationModel.Store.LicenseInformation _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.ICurrentApp).get_LicenseInformation(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Uri LinkUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.ICurrentApp).get_LinkUri(&_ret));
+		return _ret;
+	}
+	static GUID AppId()
+	{
+		GUID _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.ICurrentApp).get_AppId(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(HSTRING) RequestAppPurchaseAsync(bool includeReceipt)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.ICurrentApp).abi_RequestAppPurchaseAsync(includeReceipt, &_ret));
+		return _ret;
+	}
+	deprecated("RequestProductPurchaseAsync(productId, includeReceipt) may be altered or unavailable for releases after Windows 8.1. Instead, use RequestProductPurchaseAsync(productId).")
+	static Windows.Foundation.IAsyncOperation!(HSTRING) RequestProductPurchaseAsync(HSTRING productId, bool includeReceipt)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.ICurrentApp).abi_RequestProductPurchaseAsync(productId, includeReceipt, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.ListingInformation) LoadListingInformationAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.ListingInformation) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.ICurrentApp).abi_LoadListingInformationAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(HSTRING) GetAppReceiptAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.ICurrentApp).abi_GetAppReceiptAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(HSTRING) GetProductReceiptAsync(HSTRING productId)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.ICurrentApp).abi_GetProductReceiptAsync(productId, &_ret));
+		return _ret;
+	}
 }
 
 interface CurrentAppSimulator
 {
+	private static Windows.ApplicationModel.Store.ICurrentAppSimulator _staticInstance;
+	public static Windows.ApplicationModel.Store.ICurrentAppSimulator staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Store.ICurrentAppSimulator);
+		return _staticInstance;
+	}
+	static Windows.ApplicationModel.Store.LicenseInformation LicenseInformation()
+	{
+		Windows.ApplicationModel.Store.LicenseInformation _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.ICurrentAppSimulator).get_LicenseInformation(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Uri LinkUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.ICurrentAppSimulator).get_LinkUri(&_ret));
+		return _ret;
+	}
+	static GUID AppId()
+	{
+		GUID _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.ICurrentAppSimulator).get_AppId(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(HSTRING) RequestAppPurchaseAsync(bool includeReceipt)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.ICurrentAppSimulator).abi_RequestAppPurchaseAsync(includeReceipt, &_ret));
+		return _ret;
+	}
+	deprecated("RequestProductPurchaseAsync(productId, includeReceipt) may be altered or unavailable for releases after Windows 8.1. Instead, use RequestProductPurchaseAsync(productId).")
+	static Windows.Foundation.IAsyncOperation!(HSTRING) RequestProductPurchaseAsync(HSTRING productId, bool includeReceipt)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.ICurrentAppSimulator).abi_RequestProductPurchaseAsync(productId, includeReceipt, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.ListingInformation) LoadListingInformationAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.ListingInformation) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.ICurrentAppSimulator).abi_LoadListingInformationAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(HSTRING) GetAppReceiptAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.ICurrentAppSimulator).abi_GetAppReceiptAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(HSTRING) GetProductReceiptAsync(HSTRING productId)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.ICurrentAppSimulator).abi_GetProductReceiptAsync(productId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction ReloadSimulatorAsync(Windows.Storage.StorageFile simulatorSettingsFile)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.ICurrentAppSimulator).abi_ReloadSimulatorAsync(simulatorSettingsFile, &_ret));
+		return _ret;
+	}
 }
 
 interface LicenseInformation : Windows.ApplicationModel.Store.ILicenseInformation
@@ -289,7 +405,7 @@ extern(Windows):
 	}
 	final void removeLicenseChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_LicenseChanged(cookie));
+		Debug.OK(this.as!(Windows.ApplicationModel.Store.ILicenseInformation).remove_LicenseChanged(cookie));
 	}
 }
 

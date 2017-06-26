@@ -68,6 +68,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.Payments.Provider.IPaymentAppManager).abi_UnregisterAsync(&_ret));
 		return _ret;
 	}
+
+	private static Windows.ApplicationModel.Payments.Provider.IPaymentAppManagerStatics _staticInstance;
+	public static Windows.ApplicationModel.Payments.Provider.IPaymentAppManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Payments.Provider.IPaymentAppManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.ApplicationModel.Payments.Provider.PaymentAppManager Current()
+	{
+		Windows.ApplicationModel.Payments.Provider.PaymentAppManager _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Payments.Provider.IPaymentAppManagerStatics).get_Current(&_ret));
+		return _ret;
+	}
 }
 
 interface PaymentTransaction : Windows.ApplicationModel.Payments.Provider.IPaymentTransaction
@@ -130,6 +143,19 @@ extern(Windows):
 	final void Reject()
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction).abi_Reject());
+	}
+
+	private static Windows.ApplicationModel.Payments.Provider.IPaymentTransactionStatics _staticInstance;
+	public static Windows.ApplicationModel.Payments.Provider.IPaymentTransactionStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Payments.Provider.IPaymentTransactionStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.Provider.PaymentTransaction) FromIdAsync(HSTRING id)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.Provider.PaymentTransaction) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Payments.Provider.IPaymentTransactionStatics).abi_FromIdAsync(id, &_ret));
+		return _ret;
 	}
 }
 

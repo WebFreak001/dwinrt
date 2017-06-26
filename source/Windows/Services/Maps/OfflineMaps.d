@@ -72,18 +72,43 @@ extern(Windows):
 	}
 	final void removeStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_StatusChanged(token));
+		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage).remove_StatusChanged(token));
 	}
 	final EventRegistrationToken OnStatusChanged(void delegate(Windows.Services.Maps.OfflineMaps.OfflineMapPackage, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_StatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.OfflineMaps.OfflineMapPackage, IInspectable), Windows.Services.Maps.OfflineMaps.OfflineMapPackage, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage).add_StatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.OfflineMaps.OfflineMapPackage, IInspectable), Windows.Services.Maps.OfflineMaps.OfflineMapPackage, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageStartDownloadResult) RequestStartDownloadAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageStartDownloadResult) _ret;
 		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage).abi_RequestStartDownloadAsync(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Services.Maps.OfflineMaps.IOfflineMapPackageStatics _staticInstance;
+	public static Windows.Services.Maps.OfflineMaps.IOfflineMapPackageStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackageStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageQueryResult) FindPackagesAsync(Windows.Devices.Geolocation.Geopoint queryPoint)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageQueryResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackageStatics).abi_FindPackagesAsync(queryPoint, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageQueryResult) FindPackagesInBoundingBoxAsync(Windows.Devices.Geolocation.GeoboundingBox queryBoundingBox)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageQueryResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackageStatics).abi_FindPackagesInBoundingBoxAsync(queryBoundingBox, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageQueryResult) FindPackagesInGeocircleAsync(Windows.Devices.Geolocation.Geocircle queryCircle)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageQueryResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackageStatics).abi_FindPackagesInGeocircleAsync(queryCircle, &_ret));
 		return _ret;
 	}
 }

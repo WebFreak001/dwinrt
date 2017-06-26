@@ -88,16 +88,41 @@ extern(Windows):
 	final EventRegistrationToken OnAvailabilityChanged(void delegate(Windows.Devices.Lights.Lamp, Windows.Devices.Lights.LampAvailabilityChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AvailabilityChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Lights.Lamp, Windows.Devices.Lights.LampAvailabilityChangedEventArgs), Windows.Devices.Lights.Lamp, Windows.Devices.Lights.LampAvailabilityChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Lights.ILamp).add_AvailabilityChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Lights.Lamp, Windows.Devices.Lights.LampAvailabilityChangedEventArgs), Windows.Devices.Lights.Lamp, Windows.Devices.Lights.LampAvailabilityChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAvailabilityChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AvailabilityChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Lights.ILamp).remove_AvailabilityChanged(token));
 	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+
+	private static Windows.Devices.Lights.ILampStatics _staticInstance;
+	public static Windows.Devices.Lights.ILampStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Lights.ILampStatics);
+		return _staticInstance;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Lights.ILampStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Lights.Lamp) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Lights.Lamp) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Lights.ILampStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Lights.Lamp) GetDefaultAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Lights.Lamp) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Lights.ILampStatics).abi_GetDefaultAsync(&_ret));
+		return _ret;
 	}
 }
 

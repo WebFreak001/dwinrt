@@ -1014,12 +1014,12 @@ extern(Windows):
 	final EventRegistrationToken OnBitmapRequested(void delegate(Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource, Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_BitmapRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource, Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs), Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource, Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.ICustomMapTileDataSource).add_BitmapRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource, Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs), Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource, Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeBitmapRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_BitmapRequested(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.ICustomMapTileDataSource).remove_BitmapRequested(token));
 	}
 }
 @makable!(CustomMapTileDataSource, CustomMapTileDataSource, Windows.UI.Xaml.Controls.Maps.ICustomMapTileDataSourceFactory)
@@ -1071,12 +1071,12 @@ extern(Windows):
 	final EventRegistrationToken OnUriRequested(void delegate(Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource, Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_UriRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource, Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs), Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource, Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource).add_UriRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource, Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs), Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource, Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeUriRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_UriRequested(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource).remove_UriRequested(token));
 	}
 }
 @makable!(HttpMapTileDataSource, HttpMapTileDataSource, Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSourceFactory)
@@ -1117,12 +1117,12 @@ extern(Windows):
 	final EventRegistrationToken OnUriRequested(void delegate(Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource, Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_UriRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource, Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs), Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource, Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.ILocalMapTileDataSource).add_UriRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource, Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs), Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource, Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeUriRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_UriRequested(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.ILocalMapTileDataSource).remove_UriRequested(token));
 	}
 }
 @makable!(LocalMapTileDataSource, LocalMapTileDataSource, Windows.UI.Xaml.Controls.Maps.ILocalMapTileDataSourceFactory)
@@ -1225,6 +1225,31 @@ extern(Windows):
 	{
 		Windows.UI.Xaml.Controls.Maps.MapCamera _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapBillboard).get_ReferenceCamera(&_ret));
+		return _ret;
+	}
+
+	private static Windows.UI.Xaml.Controls.Maps.IMapBillboardStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Maps.IMapBillboardStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Maps.IMapBillboardStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty LocationProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapBillboardStatics).get_LocationProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty NormalizedAnchorPointProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapBillboardStatics).get_NormalizedAnchorPointProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty CollisionBehaviorDesiredProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapBillboardStatics).get_CollisionBehaviorDesiredProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1481,92 +1506,92 @@ extern(Windows):
 	final EventRegistrationToken OnCenterChanged(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_CenterChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable), Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).add_CenterChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable), Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeCenterChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_CenterChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).remove_CenterChanged(token));
 	}
 	final EventRegistrationToken OnHeadingChanged(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_HeadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable), Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).add_HeadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable), Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeHeadingChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_HeadingChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).remove_HeadingChanged(token));
 	}
 	final EventRegistrationToken OnLoadingStatusChanged(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_LoadingStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable), Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).add_LoadingStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable), Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeLoadingStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_LoadingStatusChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).remove_LoadingStatusChanged(token));
 	}
 	final EventRegistrationToken OnMapDoubleTapped(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_MapDoubleTapped(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).add_MapDoubleTapped(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMapDoubleTapped(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MapDoubleTapped(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).remove_MapDoubleTapped(token));
 	}
 	final EventRegistrationToken OnMapHolding(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_MapHolding(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).add_MapHolding(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMapHolding(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MapHolding(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).remove_MapHolding(token));
 	}
 	final EventRegistrationToken OnMapTapped(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_MapTapped(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).add_MapTapped(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapInputEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMapTapped(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MapTapped(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).remove_MapTapped(token));
 	}
 	final EventRegistrationToken OnPitchChanged(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PitchChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable), Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).add_PitchChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable), Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removePitchChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PitchChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).remove_PitchChanged(token));
 	}
 	final EventRegistrationToken OnTransformOriginChanged(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_TransformOriginChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable), Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).add_TransformOriginChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable), Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeTransformOriginChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_TransformOriginChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).remove_TransformOriginChanged(token));
 	}
 	final EventRegistrationToken OnZoomLevelChanged(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ZoomLevelChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable), Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).add_ZoomLevelChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable), Windows.UI.Xaml.Controls.Maps.MapControl, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeZoomLevelChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ZoomLevelChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl).remove_ZoomLevelChanged(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Controls.Maps.MapElement) FindMapElementsAtOffset(Windows.Foundation.Point offset)
 	{
@@ -1723,72 +1748,72 @@ extern(Windows):
 	final EventRegistrationToken OnMapElementClick(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapElementClickEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_MapElementClick(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapElementClickEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapElementClickEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).add_MapElementClick(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapElementClickEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapElementClickEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMapElementClick(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MapElementClick(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).remove_MapElementClick(token));
 	}
 	final EventRegistrationToken OnMapElementPointerEntered(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapElementPointerEnteredEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_MapElementPointerEntered(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapElementPointerEnteredEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapElementPointerEnteredEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).add_MapElementPointerEntered(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapElementPointerEnteredEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapElementPointerEnteredEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMapElementPointerEntered(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MapElementPointerEntered(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).remove_MapElementPointerEntered(token));
 	}
 	final EventRegistrationToken OnMapElementPointerExited(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapElementPointerExitedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_MapElementPointerExited(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapElementPointerExitedEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapElementPointerExitedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).add_MapElementPointerExited(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapElementPointerExitedEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapElementPointerExitedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMapElementPointerExited(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MapElementPointerExited(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).remove_MapElementPointerExited(token));
 	}
 	final EventRegistrationToken OnActualCameraChanged(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapActualCameraChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ActualCameraChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapActualCameraChangedEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapActualCameraChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).add_ActualCameraChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapActualCameraChangedEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapActualCameraChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeActualCameraChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ActualCameraChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).remove_ActualCameraChanged(token));
 	}
 	final EventRegistrationToken OnActualCameraChanging(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapActualCameraChangingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ActualCameraChanging(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapActualCameraChangingEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapActualCameraChangingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).add_ActualCameraChanging(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapActualCameraChangingEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapActualCameraChangingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeActualCameraChanging(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ActualCameraChanging(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).remove_ActualCameraChanging(token));
 	}
 	final EventRegistrationToken OnTargetCameraChanged(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_TargetCameraChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).add_TargetCameraChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTargetCameraChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_TargetCameraChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).remove_TargetCameraChanged(token));
 	}
 	final EventRegistrationToken OnCustomExperienceChanged(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapCustomExperienceChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_CustomExperienceChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapCustomExperienceChangedEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapCustomExperienceChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).add_CustomExperienceChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapCustomExperienceChangedEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapCustomExperienceChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCustomExperienceChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_CustomExperienceChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl2).remove_CustomExperienceChanged(token));
 	}
 	final void StartContinuousRotate(double rateInDegreesPerSecond)
 	{
@@ -1871,12 +1896,12 @@ extern(Windows):
 	final EventRegistrationToken OnMapRightTapped(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapRightTappedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_MapRightTapped(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapRightTappedEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapRightTappedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl3).add_MapRightTapped(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapRightTappedEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapRightTappedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMapRightTapped(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MapRightTapped(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl3).remove_MapRightTapped(token));
 	}
 	final bool BusinessLandmarksEnabled()
 	{
@@ -1937,12 +1962,12 @@ extern(Windows):
 	final EventRegistrationToken OnMapContextRequested(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapContextRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_MapContextRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapContextRequestedEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapContextRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl5).add_MapContextRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapContextRequestedEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapContextRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMapContextRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MapContextRequested(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl5).remove_MapContextRequested(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Controls.Maps.MapElement) FindMapElementsAtOffsetWithRadius(Windows.Foundation.Point offset, double radius)
 	{
@@ -1973,6 +1998,153 @@ extern(Windows):
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControl5).abi_TryPanToAsync(location, &_ret));
 		return _ret;
+	}
+
+	private static Windows.UI.Xaml.Controls.Maps.IMapControlStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Maps.IMapControlStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty CenterProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).get_CenterProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ChildrenProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).get_ChildrenProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ColorSchemeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).get_ColorSchemeProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty DesiredPitchProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).get_DesiredPitchProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty HeadingProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).get_HeadingProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty LandmarksVisibleProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).get_LandmarksVisibleProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty LoadingStatusProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).get_LoadingStatusProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty MapServiceTokenProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).get_MapServiceTokenProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty PedestrianFeaturesVisibleProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).get_PedestrianFeaturesVisibleProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty PitchProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).get_PitchProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty StyleProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).get_StyleProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty TrafficFlowVisibleProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).get_TrafficFlowVisibleProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty TransformOriginProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).get_TransformOriginProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty WatermarkModeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).get_WatermarkModeProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ZoomLevelProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).get_ZoomLevelProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty MapElementsProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).get_MapElementsProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty RoutesProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).get_RoutesProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty TileSourcesProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).get_TileSourcesProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty LocationProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).get_LocationProperty(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Geolocation.Geopoint GetLocation(Windows.UI.Xaml.DependencyObject element)
+	{
+		Windows.Devices.Geolocation.Geopoint _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).abi_GetLocation(element, &_ret));
+		return _ret;
+	}
+	static void SetLocation(Windows.UI.Xaml.DependencyObject element, Windows.Devices.Geolocation.Geopoint value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).abi_SetLocation(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty NormalizedAnchorPointProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).get_NormalizedAnchorPointProperty(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Point GetNormalizedAnchorPoint(Windows.UI.Xaml.DependencyObject element)
+	{
+		Windows.Foundation.Point _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).abi_GetNormalizedAnchorPoint(element, &_ret));
+		return _ret;
+	}
+	static void SetNormalizedAnchorPoint(Windows.UI.Xaml.DependencyObject element, Windows.Foundation.Point value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapControlStatics).abi_SetNormalizedAnchorPoint(element, value));
 	}
 }
 
@@ -2026,82 +2198,82 @@ extern(Windows):
 	final EventRegistrationToken OnBusinessLandmarkClick(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkClickEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_BusinessLandmarkClick(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkClickEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkClickEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlDataHelper).add_BusinessLandmarkClick(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkClickEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkClickEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeBusinessLandmarkClick(EventRegistrationToken token)
 	{
-		Debug.OK(remove_BusinessLandmarkClick(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlDataHelper).remove_BusinessLandmarkClick(token));
 	}
 	final EventRegistrationToken OnTransitFeatureClick(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeatureClickEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_TransitFeatureClick(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeatureClickEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeatureClickEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlDataHelper).add_TransitFeatureClick(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeatureClickEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeatureClickEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTransitFeatureClick(EventRegistrationToken token)
 	{
-		Debug.OK(remove_TransitFeatureClick(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlDataHelper).remove_TransitFeatureClick(token));
 	}
 	final EventRegistrationToken OnBusinessLandmarkRightTapped(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkRightTappedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_BusinessLandmarkRightTapped(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkRightTappedEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkRightTappedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlDataHelper).add_BusinessLandmarkRightTapped(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkRightTappedEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkRightTappedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeBusinessLandmarkRightTapped(EventRegistrationToken token)
 	{
-		Debug.OK(remove_BusinessLandmarkRightTapped(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlDataHelper).remove_BusinessLandmarkRightTapped(token));
 	}
 	final EventRegistrationToken OnTransitFeatureRightTapped(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeatureRightTappedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_TransitFeatureRightTapped(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeatureRightTappedEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeatureRightTappedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlDataHelper).add_TransitFeatureRightTapped(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeatureRightTappedEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeatureRightTappedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTransitFeatureRightTapped(EventRegistrationToken token)
 	{
-		Debug.OK(remove_TransitFeatureRightTapped(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlDataHelper).remove_TransitFeatureRightTapped(token));
 	}
 	final EventRegistrationToken OnBusinessLandmarkPointerEntered(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerEnteredEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_BusinessLandmarkPointerEntered(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerEnteredEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerEnteredEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlDataHelper2).add_BusinessLandmarkPointerEntered(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerEnteredEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerEnteredEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeBusinessLandmarkPointerEntered(EventRegistrationToken token)
 	{
-		Debug.OK(remove_BusinessLandmarkPointerEntered(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlDataHelper2).remove_BusinessLandmarkPointerEntered(token));
 	}
 	final EventRegistrationToken OnTransitFeaturePointerEntered(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerEnteredEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_TransitFeaturePointerEntered(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerEnteredEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerEnteredEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlDataHelper2).add_TransitFeaturePointerEntered(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerEnteredEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerEnteredEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTransitFeaturePointerEntered(EventRegistrationToken token)
 	{
-		Debug.OK(remove_TransitFeaturePointerEntered(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlDataHelper2).remove_TransitFeaturePointerEntered(token));
 	}
 	final EventRegistrationToken OnBusinessLandmarkPointerExited(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerExitedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_BusinessLandmarkPointerExited(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerExitedEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerExitedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlDataHelper2).add_BusinessLandmarkPointerExited(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerExitedEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlBusinessLandmarkPointerExitedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeBusinessLandmarkPointerExited(EventRegistrationToken token)
 	{
-		Debug.OK(remove_BusinessLandmarkPointerExited(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlDataHelper2).remove_BusinessLandmarkPointerExited(token));
 	}
 	final EventRegistrationToken OnTransitFeaturePointerExited(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerExitedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_TransitFeaturePointerExited(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerExitedEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerExitedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlDataHelper2).add_TransitFeaturePointerExited(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerExitedEventArgs), Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapControlTransitFeaturePointerExitedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTransitFeaturePointerExited(EventRegistrationToken token)
 	{
-		Debug.OK(remove_TransitFeaturePointerExited(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapControlDataHelper2).remove_TransitFeaturePointerExited(token));
 	}
 }
 
@@ -2252,6 +2424,25 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapElement2).set_MapTabIndex(value));
 	}
+
+	private static Windows.UI.Xaml.Controls.Maps.IMapElementStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Maps.IMapElementStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Maps.IMapElementStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty ZIndexProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapElementStatics).get_ZIndexProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty VisibleProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapElementStatics).get_VisibleProperty(&_ret));
+		return _ret;
+	}
 }
 @makable!(MapElement, MapElement, Windows.UI.Xaml.Controls.Maps.IMapElementFactory)
 class MapElementT(Base) : AgileObject!Base, MapElement
@@ -2397,6 +2588,31 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapIcon2).set_CollisionBehaviorDesired(value));
 	}
+
+	private static Windows.UI.Xaml.Controls.Maps.IMapIconStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Maps.IMapIconStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Maps.IMapIconStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty LocationProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapIconStatics).get_LocationProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty TitleProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapIconStatics).get_TitleProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty NormalizedAnchorPointProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapIconStatics).get_NormalizedAnchorPointProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface MapInputEventArgs : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapInputEventArgs
@@ -2444,6 +2660,31 @@ extern(Windows):
 	final void ItemTemplate(Windows.UI.Xaml.DataTemplate value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapItemsControl).set_ItemTemplate(value));
+	}
+
+	private static Windows.UI.Xaml.Controls.Maps.IMapItemsControlStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Maps.IMapItemsControlStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Maps.IMapItemsControlStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty ItemsSourceProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapItemsControlStatics).get_ItemsSourceProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ItemsProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapItemsControlStatics).get_ItemsProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ItemTemplateProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapItemsControlStatics).get_ItemTemplateProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2506,6 +2747,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapPolygon2).get_Paths(&_ret));
 		return _ret;
 	}
+
+	private static Windows.UI.Xaml.Controls.Maps.IMapPolygonStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Maps.IMapPolygonStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Maps.IMapPolygonStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty PathProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapPolygonStatics).get_PathProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty StrokeThicknessProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapPolygonStatics).get_StrokeThicknessProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty StrokeDashedProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapPolygonStatics).get_StrokeDashedProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface MapPolyline : Windows.UI.Xaml.Controls.Maps.MapElement, Windows.UI.Xaml.Controls.Maps.IMapPolyline
@@ -2550,6 +2816,25 @@ extern(Windows):
 	final void StrokeDashed(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapPolyline).set_StrokeDashed(value));
+	}
+
+	private static Windows.UI.Xaml.Controls.Maps.IMapPolylineStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Maps.IMapPolylineStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Maps.IMapPolylineStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty PathProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapPolylineStatics).get_PathProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty StrokeDashedProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapPolylineStatics).get_StrokeDashedProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2632,17 +2917,138 @@ extern(Windows):
 	final EventRegistrationToken OnTargetCameraChanged(void delegate(Windows.UI.Xaml.Controls.Maps.MapScene, Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_TargetCameraChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapScene, Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs), Windows.UI.Xaml.Controls.Maps.MapScene, Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapScene).add_TargetCameraChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Maps.MapScene, Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs), Windows.UI.Xaml.Controls.Maps.MapScene, Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTargetCameraChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_TargetCameraChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapScene).remove_TargetCameraChanged(token));
+	}
+
+	private static Windows.UI.Xaml.Controls.Maps.IMapSceneStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Maps.IMapSceneStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Maps.IMapSceneStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.Controls.Maps.MapScene CreateFromBoundingBox(Windows.Devices.Geolocation.GeoboundingBox bounds)
+	{
+		Windows.UI.Xaml.Controls.Maps.MapScene _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapSceneStatics).abi_CreateFromBoundingBox(bounds, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Controls.Maps.MapScene CreateFromBoundingBoxWithHeadingAndPitch(Windows.Devices.Geolocation.GeoboundingBox bounds, double headingInDegrees, double pitchInDegrees)
+	{
+		Windows.UI.Xaml.Controls.Maps.MapScene _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapSceneStatics).abi_CreateFromBoundingBoxWithHeadingAndPitch(bounds, headingInDegrees, pitchInDegrees, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Controls.Maps.MapScene CreateFromCamera(Windows.UI.Xaml.Controls.Maps.MapCamera camera)
+	{
+		Windows.UI.Xaml.Controls.Maps.MapScene _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapSceneStatics).abi_CreateFromCamera(camera, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Controls.Maps.MapScene CreateFromLocation(Windows.Devices.Geolocation.Geopoint location)
+	{
+		Windows.UI.Xaml.Controls.Maps.MapScene _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapSceneStatics).abi_CreateFromLocation(location, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Controls.Maps.MapScene CreateFromLocationWithHeadingAndPitch(Windows.Devices.Geolocation.Geopoint location, double headingInDegrees, double pitchInDegrees)
+	{
+		Windows.UI.Xaml.Controls.Maps.MapScene _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapSceneStatics).abi_CreateFromLocationWithHeadingAndPitch(location, headingInDegrees, pitchInDegrees, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Controls.Maps.MapScene CreateFromLocationAndRadius(Windows.Devices.Geolocation.Geopoint location, double radiusInMeters)
+	{
+		Windows.UI.Xaml.Controls.Maps.MapScene _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapSceneStatics).abi_CreateFromLocationAndRadius(location, radiusInMeters, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Controls.Maps.MapScene CreateFromLocationAndRadiusWithHeadingAndPitch(Windows.Devices.Geolocation.Geopoint location, double radiusInMeters, double headingInDegrees, double pitchInDegrees)
+	{
+		Windows.UI.Xaml.Controls.Maps.MapScene _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapSceneStatics).abi_CreateFromLocationAndRadiusWithHeadingAndPitch(location, radiusInMeters, headingInDegrees, pitchInDegrees, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Controls.Maps.MapScene CreateFromLocations(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) locations)
+	{
+		Windows.UI.Xaml.Controls.Maps.MapScene _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapSceneStatics).abi_CreateFromLocations(locations, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Controls.Maps.MapScene CreateFromLocationsWithHeadingAndPitch(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) locations, double headingInDegrees, double pitchInDegrees)
+	{
+		Windows.UI.Xaml.Controls.Maps.MapScene _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapSceneStatics).abi_CreateFromLocationsWithHeadingAndPitch(locations, headingInDegrees, pitchInDegrees, &_ret));
+		return _ret;
 	}
 }
 
 interface MapStyleSheet : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapStyleSheet
 {
+	private static Windows.UI.Xaml.Controls.Maps.IMapStyleSheetStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Maps.IMapStyleSheetStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Maps.IMapStyleSheetStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.Controls.Maps.MapStyleSheet Aerial()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapStyleSheet _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapStyleSheetStatics).abi_Aerial(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Controls.Maps.MapStyleSheet AerialWithOverlay()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapStyleSheet _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapStyleSheetStatics).abi_AerialWithOverlay(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Controls.Maps.MapStyleSheet RoadLight()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapStyleSheet _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapStyleSheetStatics).abi_RoadLight(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Controls.Maps.MapStyleSheet RoadDark()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapStyleSheet _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapStyleSheetStatics).abi_RoadDark(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Controls.Maps.MapStyleSheet RoadHighContrastLight()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapStyleSheet _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapStyleSheetStatics).abi_RoadHighContrastLight(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Controls.Maps.MapStyleSheet RoadHighContrastDark()
+	{
+		Windows.UI.Xaml.Controls.Maps.MapStyleSheet _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapStyleSheetStatics).abi_RoadHighContrastDark(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Controls.Maps.MapStyleSheet Combine(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Controls.Maps.MapStyleSheet) styleSheets)
+	{
+		Windows.UI.Xaml.Controls.Maps.MapStyleSheet _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapStyleSheetStatics).abi_Combine(styleSheets, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Controls.Maps.MapStyleSheet ParseFromJson(HSTRING styleAsJson)
+	{
+		Windows.UI.Xaml.Controls.Maps.MapStyleSheet _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapStyleSheetStatics).abi_ParseFromJson(styleAsJson, &_ret));
+		return _ret;
+	}
+	static bool TryParseFromJson(HSTRING styleAsJson, Windows.UI.Xaml.Controls.Maps.MapStyleSheet* out_styleSheet)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapStyleSheetStatics).abi_TryParseFromJson(styleAsJson, out_styleSheet, &_ret));
+		return _ret;
+	}
 }
 
 interface MapTargetCameraChangedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapTargetCameraChangedEventArgs, Windows.UI.Xaml.Controls.Maps.IMapTargetCameraChangedEventArgs2
@@ -2852,6 +3258,79 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSource).set_Visible(value));
 	}
+
+	private static Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty DataSourceProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics).get_DataSourceProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty LayerProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics).get_LayerProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ZoomLevelRangeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics).get_ZoomLevelRangeProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty BoundsProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics).get_BoundsProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty AllowOverstretchProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics).get_AllowOverstretchProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsFadingEnabledProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics).get_IsFadingEnabledProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsTransparencyEnabledProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics).get_IsTransparencyEnabledProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsRetryEnabledProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics).get_IsRetryEnabledProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ZIndexProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics).get_ZIndexProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty TilePixelSizeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics).get_TilePixelSizeProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty VisibleProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IMapTileSourceStatics).get_VisibleProperty(&_ret));
+		return _ret;
+	}
 }
 @makable!(MapTileSource, MapTileSource, Windows.UI.Xaml.Controls.Maps.IMapTileSourceFactory)
 class MapTileSourceT(Base) : AgileObject!Base, MapTileSource
@@ -3021,6 +3500,25 @@ extern(Windows):
 	{
 		Windows.Devices.Geolocation.Geopoint _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Maps.IStreetsidePanorama).get_Location(&_ret));
+		return _ret;
+	}
+
+	private static Windows.UI.Xaml.Controls.Maps.IStreetsidePanoramaStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Maps.IStreetsidePanoramaStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Maps.IStreetsidePanoramaStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Controls.Maps.StreetsidePanorama) FindNearbyWithLocationAsync(Windows.Devices.Geolocation.Geopoint location)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Controls.Maps.StreetsidePanorama) _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IStreetsidePanoramaStatics).abi_FindNearbyWithLocationAsync(location, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Controls.Maps.StreetsidePanorama) FindNearbyWithLocationAndRadiusAsync(Windows.Devices.Geolocation.Geopoint location, double radiusInMeters)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Controls.Maps.StreetsidePanorama) _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Maps.IStreetsidePanoramaStatics).abi_FindNearbyWithLocationAndRadiusAsync(location, radiusInMeters, &_ret));
 		return _ret;
 	}
 }

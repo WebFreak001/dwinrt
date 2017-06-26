@@ -103,6 +103,18 @@ extern(Windows):
 
 interface AppServiceCatalog
 {
+	private static Windows.ApplicationModel.AppService.IAppServiceCatalogStatics _staticInstance;
+	public static Windows.ApplicationModel.AppService.IAppServiceCatalogStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.AppService.IAppServiceCatalogStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppInfo)) FindAppServiceProvidersAsync(HSTRING appServiceName)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppInfo)) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.AppService.IAppServiceCatalogStatics).abi_FindAppServiceProvidersAsync(appServiceName, &_ret));
+		return _ret;
+	}
 }
 
 interface AppServiceClosedEventArgs : Windows.ApplicationModel.AppService.IAppServiceClosedEventArgs
@@ -154,22 +166,22 @@ extern(Windows):
 	final EventRegistrationToken OnRequestReceived(void delegate(Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_RequestReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs), Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection).add_RequestReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs), Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRequestReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_RequestReceived(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection).remove_RequestReceived(token));
 	}
 	final EventRegistrationToken OnServiceClosed(void delegate(Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceClosedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ServiceClosed(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceClosedEventArgs), Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceClosedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection).add_ServiceClosed(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceClosedEventArgs), Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceClosedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeServiceClosed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ServiceClosed(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection).remove_ServiceClosed(token));
 	}
 	final void Close()
 	{

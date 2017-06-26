@@ -89,6 +89,34 @@ extern(Windows):
 
 interface ElementCompositionPreview : Windows.UI.Xaml.Hosting.IElementCompositionPreview
 {
+	private static Windows.UI.Xaml.Hosting.IElementCompositionPreviewStatics _staticInstance;
+	public static Windows.UI.Xaml.Hosting.IElementCompositionPreviewStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Hosting.IElementCompositionPreviewStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Composition.Visual GetElementVisual(Windows.UI.Xaml.UIElement element)
+	{
+		Windows.UI.Composition.Visual _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Hosting.IElementCompositionPreviewStatics).abi_GetElementVisual(element, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Composition.Visual GetElementChildVisual(Windows.UI.Xaml.UIElement element)
+	{
+		Windows.UI.Composition.Visual _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Hosting.IElementCompositionPreviewStatics).abi_GetElementChildVisual(element, &_ret));
+		return _ret;
+	}
+	static void SetElementChildVisual(Windows.UI.Xaml.UIElement element, Windows.UI.Composition.Visual visual)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Hosting.IElementCompositionPreviewStatics).abi_SetElementChildVisual(element, visual));
+	}
+	static Windows.UI.Composition.CompositionPropertySet GetScrollViewerManipulationPropertySet(Windows.UI.Xaml.Controls.ScrollViewer scrollViewer)
+	{
+		Windows.UI.Composition.CompositionPropertySet _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Hosting.IElementCompositionPreviewStatics).abi_GetScrollViewerManipulationPropertySet(scrollViewer, &_ret));
+		return _ret;
+	}
 }
 
 interface XamlUIPresenter : Windows.UI.Xaml.Hosting.IXamlUIPresenter
@@ -135,5 +163,30 @@ extern(Windows):
 	final void Present()
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenter).abi_Present());
+	}
+
+	private static Windows.UI.Xaml.Hosting.IXamlUIPresenterStatics _staticInstance;
+	public static Windows.UI.Xaml.Hosting.IXamlUIPresenterStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Hosting.IXamlUIPresenterStatics);
+		return _staticInstance;
+	}
+	static bool CompleteTimelinesAutomatically()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenterStatics).get_CompleteTimelinesAutomatically(&_ret));
+		return _ret;
+	}
+	static void CompleteTimelinesAutomatically(bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenterStatics).set_CompleteTimelinesAutomatically(value));
+	}
+	static void SetHost(Windows.UI.Xaml.Hosting.IXamlUIPresenterHost host)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenterStatics).abi_SetHost(host));
+	}
+	static void NotifyWindowSizeChanged()
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenterStatics).abi_NotifyWindowSizeChanged());
 	}
 }

@@ -159,12 +159,12 @@ extern(Windows):
 	final EventRegistrationToken OnRestrictionsChanged(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_RestrictionsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.ContentRestrictions.IRatedContentRestrictions).add_RestrictionsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeRestrictionsChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_RestrictionsChanged(token));
+		Debug.OK(this.as!(Windows.Media.ContentRestrictions.IRatedContentRestrictions).remove_RestrictionsChanged(token));
 	}
 }
 

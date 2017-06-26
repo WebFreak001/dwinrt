@@ -175,6 +175,37 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter2).abi_FormatUsingTimeZone(datetime, timeZoneId, &_ret));
 		return _ret;
 	}
+
+	private static Windows.Globalization.DateTimeFormatting.IDateTimeFormatterStatics _staticInstance;
+	public static Windows.Globalization.DateTimeFormatting.IDateTimeFormatterStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterStatics);
+		return _staticInstance;
+	}
+	static Windows.Globalization.DateTimeFormatting.DateTimeFormatter LongDate()
+	{
+		Windows.Globalization.DateTimeFormatting.DateTimeFormatter _ret;
+		Debug.OK(staticInstance.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterStatics).get_LongDate(&_ret));
+		return _ret;
+	}
+	static Windows.Globalization.DateTimeFormatting.DateTimeFormatter LongTime()
+	{
+		Windows.Globalization.DateTimeFormatting.DateTimeFormatter _ret;
+		Debug.OK(staticInstance.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterStatics).get_LongTime(&_ret));
+		return _ret;
+	}
+	static Windows.Globalization.DateTimeFormatting.DateTimeFormatter ShortDate()
+	{
+		Windows.Globalization.DateTimeFormatting.DateTimeFormatter _ret;
+		Debug.OK(staticInstance.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterStatics).get_ShortDate(&_ret));
+		return _ret;
+	}
+	static Windows.Globalization.DateTimeFormatting.DateTimeFormatter ShortTime()
+	{
+		Windows.Globalization.DateTimeFormatting.DateTimeFormatter _ret;
+		Debug.OK(staticInstance.as!(Windows.Globalization.DateTimeFormatting.IDateTimeFormatterStatics).get_ShortTime(&_ret));
+		return _ret;
+	}
 }
 
 enum DayFormat

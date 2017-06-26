@@ -369,6 +369,42 @@ extern(Windows):
 
 interface AsyncCausalityTracer
 {
+	private static Windows.Foundation.Diagnostics.IAsyncCausalityTracerStatics _staticInstance;
+	public static Windows.Foundation.Diagnostics.IAsyncCausalityTracerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Foundation.Diagnostics.IAsyncCausalityTracerStatics);
+		return _staticInstance;
+	}
+	static void TraceOperationCreation(Windows.Foundation.Diagnostics.CausalityTraceLevel traceLevel, Windows.Foundation.Diagnostics.CausalitySource source, GUID platformId, ulong operationId, HSTRING operationName, ulong relatedContext)
+	{
+		Debug.OK(staticInstance.as!(Windows.Foundation.Diagnostics.IAsyncCausalityTracerStatics).abi_TraceOperationCreation(traceLevel, source, platformId, operationId, operationName, relatedContext));
+	}
+	static void TraceOperationCompletion(Windows.Foundation.Diagnostics.CausalityTraceLevel traceLevel, Windows.Foundation.Diagnostics.CausalitySource source, GUID platformId, ulong operationId, AsyncStatus status)
+	{
+		Debug.OK(staticInstance.as!(Windows.Foundation.Diagnostics.IAsyncCausalityTracerStatics).abi_TraceOperationCompletion(traceLevel, source, platformId, operationId, status));
+	}
+	static void TraceOperationRelation(Windows.Foundation.Diagnostics.CausalityTraceLevel traceLevel, Windows.Foundation.Diagnostics.CausalitySource source, GUID platformId, ulong operationId, Windows.Foundation.Diagnostics.CausalityRelation relation)
+	{
+		Debug.OK(staticInstance.as!(Windows.Foundation.Diagnostics.IAsyncCausalityTracerStatics).abi_TraceOperationRelation(traceLevel, source, platformId, operationId, relation));
+	}
+	static void TraceSynchronousWorkStart(Windows.Foundation.Diagnostics.CausalityTraceLevel traceLevel, Windows.Foundation.Diagnostics.CausalitySource source, GUID platformId, ulong operationId, Windows.Foundation.Diagnostics.CausalitySynchronousWork work)
+	{
+		Debug.OK(staticInstance.as!(Windows.Foundation.Diagnostics.IAsyncCausalityTracerStatics).abi_TraceSynchronousWorkStart(traceLevel, source, platformId, operationId, work));
+	}
+	static void TraceSynchronousWorkCompletion(Windows.Foundation.Diagnostics.CausalityTraceLevel traceLevel, Windows.Foundation.Diagnostics.CausalitySource source, Windows.Foundation.Diagnostics.CausalitySynchronousWork work)
+	{
+		Debug.OK(staticInstance.as!(Windows.Foundation.Diagnostics.IAsyncCausalityTracerStatics).abi_TraceSynchronousWorkCompletion(traceLevel, source, work));
+	}
+	static EventRegistrationToken OnTracingStatusChanged(void delegate(IInspectable, Windows.Foundation.Diagnostics.TracingStatusChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Foundation.Diagnostics.IAsyncCausalityTracerStatics).add_TracingStatusChanged(event!(Windows.Foundation.EventHandler!(Windows.Foundation.Diagnostics.TracingStatusChangedEventArgs), IInspectable, Windows.Foundation.Diagnostics.TracingStatusChangedEventArgs)(fn), &tok));
+		return tok;
+	}
+	static void removeTracingStatusChanged(EventRegistrationToken cookie)
+	{
+		Debug.OK(staticInstance.as!(Windows.Foundation.Diagnostics.IAsyncCausalityTracerStatics).remove_TracingStatusChanged(cookie));
+	}
 }
 
 interface ErrorDetails : Windows.Foundation.Diagnostics.IErrorDetails
@@ -390,6 +426,19 @@ extern(Windows):
 	{
 		Windows.Foundation.Uri _ret;
 		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IErrorDetails).get_HelpUri(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Foundation.Diagnostics.IErrorDetailsStatics _staticInstance;
+	public static Windows.Foundation.Diagnostics.IErrorDetailsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Foundation.Diagnostics.IErrorDetailsStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Diagnostics.ErrorDetails) CreateFromHResultAsync(INT32 errorCode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Diagnostics.ErrorDetails) _ret;
+		Debug.OK(staticInstance.as!(Windows.Foundation.Diagnostics.IErrorDetailsStatics).abi_CreateFromHResultAsync(errorCode, &_ret));
 		return _ret;
 	}
 }
@@ -424,12 +473,12 @@ extern(Windows):
 	final EventRegistrationToken OnLogFileGenerated(void delegate(Windows.Foundation.Diagnostics.IFileLoggingSession, Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_LogFileGenerated(event!(Windows.Foundation.TypedEventHandler!(Windows.Foundation.Diagnostics.IFileLoggingSession, Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs), Windows.Foundation.Diagnostics.IFileLoggingSession, Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IFileLoggingSession).add_LogFileGenerated(event!(Windows.Foundation.TypedEventHandler!(Windows.Foundation.Diagnostics.IFileLoggingSession, Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs), Windows.Foundation.Diagnostics.IFileLoggingSession, Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeLogFileGenerated(EventRegistrationToken token)
 	{
-		Debug.OK(remove_LogFileGenerated(token));
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IFileLoggingSession).remove_LogFileGenerated(token));
 	}
 	final void Close()
 	{
@@ -585,12 +634,12 @@ extern(Windows):
 	final EventRegistrationToken OnLoggingEnabled(void delegate(Windows.Foundation.Diagnostics.ILoggingChannel, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_LoggingEnabled(event!(Windows.Foundation.TypedEventHandler!(Windows.Foundation.Diagnostics.ILoggingChannel, IInspectable), Windows.Foundation.Diagnostics.ILoggingChannel, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannel).add_LoggingEnabled(event!(Windows.Foundation.TypedEventHandler!(Windows.Foundation.Diagnostics.ILoggingChannel, IInspectable), Windows.Foundation.Diagnostics.ILoggingChannel, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeLoggingEnabled(EventRegistrationToken token)
 	{
-		Debug.OK(remove_LoggingEnabled(token));
+		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannel).remove_LoggingEnabled(token));
 	}
 	final void Close()
 	{

@@ -311,6 +311,20 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceContext).set_Languages(languages));
 	}
+
+	private static Windows.ApplicationModel.Resources.Core.IResourceContextStatics _staticInstance;
+	public static Windows.ApplicationModel.Resources.Core.IResourceContextStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Resources.Core.IResourceContextStatics);
+		return _staticInstance;
+	}
+	deprecated("CreateMatchingContext may be altered or unavailable for releases after Windows 8.1. Instead, use ResourceContext.GetForCurrentView.OverrideToMatch.")
+	static Windows.ApplicationModel.Resources.Core.ResourceContext CreateMatchingContext(Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Resources.Core.ResourceQualifier) result)
+	{
+		Windows.ApplicationModel.Resources.Core.ResourceContext _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Resources.Core.IResourceContextStatics).abi_CreateMatchingContext(result, &_ret));
+		return _ret;
+	}
 }
 
 interface ResourceContextLanguagesVectorView : Windows.Foundation.Collections.IVectorView!(HSTRING), Windows.Foundation.Collections.IIterable!(HSTRING)
@@ -382,6 +396,25 @@ extern(Windows):
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceMap) _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Resources.Core.IResourceManager2).abi_GetAllSubtreesForPackage(packageName, resourceLayoutInfo, &_ret));
+		return _ret;
+	}
+
+	private static Windows.ApplicationModel.Resources.Core.IResourceManagerStatics _staticInstance;
+	public static Windows.ApplicationModel.Resources.Core.IResourceManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Resources.Core.IResourceManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.ApplicationModel.Resources.Core.ResourceManager Current()
+	{
+		Windows.ApplicationModel.Resources.Core.ResourceManager _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Resources.Core.IResourceManagerStatics).get_Current(&_ret));
+		return _ret;
+	}
+	static bool IsResourceReference(HSTRING resourceReference)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Resources.Core.IResourceManagerStatics).abi_IsResourceReference(resourceReference, &_ret));
 		return _ret;
 	}
 }
@@ -594,7 +627,7 @@ interface ResourceQualifierObservableMap : Windows.Foundation.Collections.IObser
 extern(Windows):
 	final void removeMapChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MapChanged(token));
+		Debug.OK(this.as!(Windows.Foundation.Collections.IObservableMap!(HSTRING, HSTRING)).remove_MapChanged(token));
 	}
 	final  HSTRING Lookup(HSTRING key)
 	{

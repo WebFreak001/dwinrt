@@ -220,6 +220,25 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Storage.Streams.IBuffer).set_Length(value));
 	}
+
+	private static Windows.Storage.Streams.IBufferStatics _staticInstance;
+	public static Windows.Storage.Streams.IBufferStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Storage.Streams.IBufferStatics);
+		return _staticInstance;
+	}
+	static Windows.Storage.Streams.Buffer CreateCopyFromMemoryBuffer(Windows.Foundation.IMemoryBuffer input)
+	{
+		Windows.Storage.Streams.Buffer _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.Streams.IBufferStatics).abi_CreateCopyFromMemoryBuffer(input, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.MemoryBuffer CreateMemoryBufferOverIBuffer(Windows.Storage.Streams.IBuffer input)
+	{
+		Windows.Foundation.MemoryBuffer _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.Streams.IBufferStatics).abi_CreateMemoryBufferOverIBuffer(input, &_ret));
+		return _ret;
+	}
 }
 
 interface DataReader : Windows.Storage.Streams.IDataReader, Windows.Foundation.IClosable
@@ -376,6 +395,19 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+
+	private static Windows.Storage.Streams.IDataReaderStatics _staticInstance;
+	public static Windows.Storage.Streams.IDataReaderStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Storage.Streams.IDataReaderStatics);
+		return _staticInstance;
+	}
+	static Windows.Storage.Streams.DataReader FromBuffer(Windows.Storage.Streams.IBuffer buffer)
+	{
+		Windows.Storage.Streams.DataReader _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.Streams.IDataReaderStatics).abi_FromBuffer(buffer, &_ret));
+		return _ret;
 	}
 }
 
@@ -784,6 +816,30 @@ extern(Windows):
 
 interface RandomAccessStream
 {
+	private static Windows.Storage.Streams.IRandomAccessStreamStatics _staticInstance;
+	public static Windows.Storage.Streams.IRandomAccessStreamStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Storage.Streams.IRandomAccessStreamStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) CopyAsync(Windows.Storage.Streams.IInputStream source, Windows.Storage.Streams.IOutputStream destination)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.Streams.IRandomAccessStreamStatics).abi_CopyAsync(source, destination, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) CopySizeAsync(Windows.Storage.Streams.IInputStream source, Windows.Storage.Streams.IOutputStream destination, ulong bytesToCopy)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.Streams.IRandomAccessStreamStatics).abi_CopySizeAsync(source, destination, bytesToCopy, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) CopyAndCloseAsync(Windows.Storage.Streams.IInputStream source, Windows.Storage.Streams.IOutputStream destination)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.Streams.IRandomAccessStreamStatics).abi_CopyAndCloseAsync(source, destination, &_ret));
+		return _ret;
+	}
 }
 
 interface RandomAccessStreamOverStream : Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream
@@ -870,6 +926,31 @@ extern(Windows):
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) _ret;
 		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStreamReference).abi_OpenReadAsync(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Storage.Streams.IRandomAccessStreamReferenceStatics _staticInstance;
+	public static Windows.Storage.Streams.IRandomAccessStreamReferenceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Storage.Streams.IRandomAccessStreamReferenceStatics);
+		return _staticInstance;
+	}
+	static Windows.Storage.Streams.RandomAccessStreamReference CreateFromFile(Windows.Storage.IStorageFile file)
+	{
+		Windows.Storage.Streams.RandomAccessStreamReference _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.Streams.IRandomAccessStreamReferenceStatics).abi_CreateFromFile(file, &_ret));
+		return _ret;
+	}
+	static Windows.Storage.Streams.RandomAccessStreamReference CreateFromUri(Windows.Foundation.Uri uri)
+	{
+		Windows.Storage.Streams.RandomAccessStreamReference _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.Streams.IRandomAccessStreamReferenceStatics).abi_CreateFromUri(uri, &_ret));
+		return _ret;
+	}
+	static Windows.Storage.Streams.RandomAccessStreamReference CreateFromStream(Windows.Storage.Streams.IRandomAccessStream stream)
+	{
+		Windows.Storage.Streams.RandomAccessStreamReference _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.Streams.IRandomAccessStreamReferenceStatics).abi_CreateFromStream(stream, &_ret));
 		return _ret;
 	}
 }

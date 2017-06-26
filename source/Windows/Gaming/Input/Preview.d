@@ -13,4 +13,22 @@ extern(Windows):
 
 interface GameControllerProviderInfo
 {
+	private static Windows.Gaming.Input.Preview.IGameControllerProviderInfoStatics _staticInstance;
+	public static Windows.Gaming.Input.Preview.IGameControllerProviderInfoStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Gaming.Input.Preview.IGameControllerProviderInfoStatics);
+		return _staticInstance;
+	}
+	static HSTRING GetParentProviderId(Windows.Gaming.Input.Custom.IGameControllerProvider provider)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Gaming.Input.Preview.IGameControllerProviderInfoStatics).abi_GetParentProviderId(provider, &_ret));
+		return _ret;
+	}
+	static HSTRING GetProviderId(Windows.Gaming.Input.Custom.IGameControllerProvider provider)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Gaming.Input.Preview.IGameControllerProviderInfoStatics).abi_GetProviderId(provider, &_ret));
+		return _ret;
+	}
 }

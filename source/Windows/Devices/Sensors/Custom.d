@@ -76,12 +76,31 @@ extern(Windows):
 	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.Custom.CustomSensor, Windows.Devices.Sensors.Custom.CustomSensorReadingChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Custom.CustomSensor, Windows.Devices.Sensors.Custom.CustomSensorReadingChangedEventArgs), Windows.Devices.Sensors.Custom.CustomSensor, Windows.Devices.Sensors.Custom.CustomSensorReadingChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Sensors.Custom.ICustomSensor).add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Custom.CustomSensor, Windows.Devices.Sensors.Custom.CustomSensorReadingChangedEventArgs), Windows.Devices.Sensors.Custom.CustomSensor, Windows.Devices.Sensors.Custom.CustomSensorReadingChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ReadingChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Sensors.Custom.ICustomSensor).remove_ReadingChanged(token));
+	}
+
+	private static Windows.Devices.Sensors.Custom.ICustomSensorStatics _staticInstance;
+	public static Windows.Devices.Sensors.Custom.ICustomSensorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Sensors.Custom.ICustomSensorStatics);
+		return _staticInstance;
+	}
+	static HSTRING GetDeviceSelector(GUID interfaceId)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.Custom.ICustomSensorStatics).abi_GetDeviceSelector(interfaceId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.Custom.CustomSensor) FromIdAsync(HSTRING sensorId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.Custom.CustomSensor) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.Custom.ICustomSensorStatics).abi_FromIdAsync(sensorId, &_ret));
+		return _ret;
 	}
 }
 

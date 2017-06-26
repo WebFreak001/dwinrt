@@ -644,32 +644,45 @@ extern(Windows):
 	final EventRegistrationToken OnStarting(void delegate(Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Starting(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs), Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IEdgeGesture).add_Starting(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs), Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStarting(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Starting(token));
+		Debug.OK(this.as!(Windows.UI.Input.IEdgeGesture).remove_Starting(token));
 	}
 	final EventRegistrationToken OnCompleted(void delegate(Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Completed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs), Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IEdgeGesture).add_Completed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs), Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Completed(token));
+		Debug.OK(this.as!(Windows.UI.Input.IEdgeGesture).remove_Completed(token));
 	}
 	final EventRegistrationToken OnCanceled(void delegate(Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Canceled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs), Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IEdgeGesture).add_Canceled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs), Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCanceled(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Canceled(token));
+		Debug.OK(this.as!(Windows.UI.Input.IEdgeGesture).remove_Canceled(token));
+	}
+
+	private static Windows.UI.Input.IEdgeGestureStatics _staticInstance;
+	public static Windows.UI.Input.IEdgeGestureStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Input.IEdgeGestureStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Input.EdgeGesture GetForCurrentView()
+	{
+		Windows.UI.Input.EdgeGesture _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Input.IEdgeGestureStatics).abi_GetForCurrentView(&_ret));
+		return _ret;
 	}
 }
 
@@ -888,92 +901,92 @@ extern(Windows):
 	final EventRegistrationToken OnTapped(void delegate(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.TappedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Tapped(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.TappedEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.TappedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).add_Tapped(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.TappedEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.TappedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTapped(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_Tapped(cookie));
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).remove_Tapped(cookie));
 	}
 	final EventRegistrationToken OnRightTapped(void delegate(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.RightTappedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_RightTapped(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.RightTappedEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.RightTappedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).add_RightTapped(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.RightTappedEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.RightTappedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRightTapped(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_RightTapped(cookie));
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).remove_RightTapped(cookie));
 	}
 	final EventRegistrationToken OnHolding(void delegate(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.HoldingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Holding(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.HoldingEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.HoldingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).add_Holding(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.HoldingEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.HoldingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeHolding(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_Holding(cookie));
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).remove_Holding(cookie));
 	}
 	final EventRegistrationToken OnDragging(void delegate(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.DraggingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Dragging(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.DraggingEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.DraggingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).add_Dragging(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.DraggingEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.DraggingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDragging(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_Dragging(cookie));
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).remove_Dragging(cookie));
 	}
 	final EventRegistrationToken OnManipulationStarted(void delegate(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationStartedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ManipulationStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationStartedEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationStartedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).add_ManipulationStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationStartedEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationStartedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeManipulationStarted(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_ManipulationStarted(cookie));
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).remove_ManipulationStarted(cookie));
 	}
 	final EventRegistrationToken OnManipulationUpdated(void delegate(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationUpdatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ManipulationUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationUpdatedEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationUpdatedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).add_ManipulationUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationUpdatedEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationUpdatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeManipulationUpdated(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_ManipulationUpdated(cookie));
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).remove_ManipulationUpdated(cookie));
 	}
 	final EventRegistrationToken OnManipulationInertiaStarting(void delegate(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationInertiaStartingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ManipulationInertiaStarting(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationInertiaStartingEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationInertiaStartingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).add_ManipulationInertiaStarting(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationInertiaStartingEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationInertiaStartingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeManipulationInertiaStarting(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_ManipulationInertiaStarting(cookie));
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).remove_ManipulationInertiaStarting(cookie));
 	}
 	final EventRegistrationToken OnManipulationCompleted(void delegate(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ManipulationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationCompletedEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationCompletedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).add_ManipulationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationCompletedEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeManipulationCompleted(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_ManipulationCompleted(cookie));
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).remove_ManipulationCompleted(cookie));
 	}
 	final EventRegistrationToken OnCrossSliding(void delegate(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.CrossSlidingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_CrossSliding(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.CrossSlidingEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.CrossSlidingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).add_CrossSliding(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.CrossSlidingEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.CrossSlidingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCrossSliding(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_CrossSliding(cookie));
+		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).remove_CrossSliding(cookie));
 	}
 }
 
@@ -1016,22 +1029,35 @@ extern(Windows):
 	final EventRegistrationToken OnKeyDown(void delegate(Windows.UI.Input.KeyboardDeliveryInterceptor, Windows.UI.Core.KeyEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_KeyDown(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.KeyboardDeliveryInterceptor, Windows.UI.Core.KeyEventArgs), Windows.UI.Input.KeyboardDeliveryInterceptor, Windows.UI.Core.KeyEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IKeyboardDeliveryInterceptor).add_KeyDown(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.KeyboardDeliveryInterceptor, Windows.UI.Core.KeyEventArgs), Windows.UI.Input.KeyboardDeliveryInterceptor, Windows.UI.Core.KeyEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeKeyDown(EventRegistrationToken token)
 	{
-		Debug.OK(remove_KeyDown(token));
+		Debug.OK(this.as!(Windows.UI.Input.IKeyboardDeliveryInterceptor).remove_KeyDown(token));
 	}
 	final EventRegistrationToken OnKeyUp(void delegate(Windows.UI.Input.KeyboardDeliveryInterceptor, Windows.UI.Core.KeyEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_KeyUp(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.KeyboardDeliveryInterceptor, Windows.UI.Core.KeyEventArgs), Windows.UI.Input.KeyboardDeliveryInterceptor, Windows.UI.Core.KeyEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IKeyboardDeliveryInterceptor).add_KeyUp(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.KeyboardDeliveryInterceptor, Windows.UI.Core.KeyEventArgs), Windows.UI.Input.KeyboardDeliveryInterceptor, Windows.UI.Core.KeyEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeKeyUp(EventRegistrationToken token)
 	{
-		Debug.OK(remove_KeyUp(token));
+		Debug.OK(this.as!(Windows.UI.Input.IKeyboardDeliveryInterceptor).remove_KeyUp(token));
+	}
+
+	private static Windows.UI.Input.IKeyboardDeliveryInterceptorStatics _staticInstance;
+	public static Windows.UI.Input.IKeyboardDeliveryInterceptorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Input.IKeyboardDeliveryInterceptorStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Input.KeyboardDeliveryInterceptor GetForCurrentView()
+	{
+		Windows.UI.Input.KeyboardDeliveryInterceptor _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Input.IKeyboardDeliveryInterceptorStatics).abi_GetForCurrentView(&_ret));
+		return _ret;
 	}
 }
 
@@ -1253,6 +1279,37 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Input.IPointerPoint).get_Properties(&_ret));
 		return _ret;
 	}
+
+	private static Windows.UI.Input.IPointerPointStatics _staticInstance;
+	public static Windows.UI.Input.IPointerPointStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Input.IPointerPointStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Input.PointerPoint GetCurrentPoint(UINT32 pointerId)
+	{
+		Windows.UI.Input.PointerPoint _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Input.IPointerPointStatics).abi_GetCurrentPoint(pointerId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint) GetIntermediatePoints(UINT32 pointerId)
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint) _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Input.IPointerPointStatics).abi_GetIntermediatePoints(pointerId, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Input.PointerPoint GetCurrentPointTransformed(UINT32 pointerId, Windows.UI.Input.IPointerPointTransform transform)
+	{
+		Windows.UI.Input.PointerPoint _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Input.IPointerPointStatics).abi_GetCurrentPointTransformed(pointerId, transform, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint) GetIntermediatePointsTransformed(UINT32 pointerId, Windows.UI.Input.IPointerPointTransform transform)
+	{
+		Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint) _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Input.IPointerPointStatics).abi_GetIntermediatePointsTransformed(pointerId, transform, &_ret));
+		return _ret;
+	}
 }
 
 interface PointerPointProperties : Windows.UI.Input.IPointerPointProperties, Windows.UI.Input.IPointerPointProperties2
@@ -1433,6 +1490,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Input.IPointerVisualizationSettings).get_IsBarrelButtonFeedbackEnabled(&_ret));
 		return _ret;
 	}
+
+	private static Windows.UI.Input.IPointerVisualizationSettingsStatics _staticInstance;
+	public static Windows.UI.Input.IPointerVisualizationSettingsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Input.IPointerVisualizationSettingsStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Input.PointerVisualizationSettings GetForCurrentView()
+	{
+		Windows.UI.Input.PointerVisualizationSettings _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Input.IPointerVisualizationSettingsStatics).abi_GetForCurrentView(&_ret));
+		return _ret;
+	}
 }
 
 interface RadialController : Windows.UI.Input.IRadialController, Windows.UI.Input.IRadialController2
@@ -1467,102 +1537,121 @@ extern(Windows):
 	final EventRegistrationToken OnScreenContactStarted(void delegate(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerScreenContactStartedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ScreenContactStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerScreenContactStartedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController).add_ScreenContactStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerScreenContactStartedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeScreenContactStarted(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_ScreenContactStarted(cookie));
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController).remove_ScreenContactStarted(cookie));
 	}
 	final EventRegistrationToken OnScreenContactEnded(void delegate(Windows.UI.Input.RadialController, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ScreenContactEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, IInspectable), Windows.UI.Input.RadialController, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController).add_ScreenContactEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, IInspectable), Windows.UI.Input.RadialController, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeScreenContactEnded(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_ScreenContactEnded(cookie));
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController).remove_ScreenContactEnded(cookie));
 	}
 	final EventRegistrationToken OnScreenContactContinued(void delegate(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ScreenContactContinued(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController).add_ScreenContactContinued(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeScreenContactContinued(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_ScreenContactContinued(cookie));
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController).remove_ScreenContactContinued(cookie));
 	}
 	final EventRegistrationToken OnControlLost(void delegate(Windows.UI.Input.RadialController, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ControlLost(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, IInspectable), Windows.UI.Input.RadialController, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController).add_ControlLost(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, IInspectable), Windows.UI.Input.RadialController, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeControlLost(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_ControlLost(cookie));
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController).remove_ControlLost(cookie));
 	}
 	final EventRegistrationToken OnRotationChanged(void delegate(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerRotationChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_RotationChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerRotationChangedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerRotationChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController).add_RotationChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerRotationChangedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerRotationChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRotationChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_RotationChanged(token));
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController).remove_RotationChanged(token));
 	}
 	final EventRegistrationToken OnButtonClicked(void delegate(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonClickedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ButtonClicked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonClickedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonClickedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController).add_ButtonClicked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonClickedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonClickedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeButtonClicked(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ButtonClicked(token));
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController).remove_ButtonClicked(token));
 	}
 	final EventRegistrationToken OnControlAcquired(void delegate(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerControlAcquiredEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ControlAcquired(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerControlAcquiredEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerControlAcquiredEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController).add_ControlAcquired(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerControlAcquiredEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerControlAcquiredEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeControlAcquired(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_ControlAcquired(cookie));
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController).remove_ControlAcquired(cookie));
 	}
 	final EventRegistrationToken OnButtonPressed(void delegate(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonPressedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ButtonPressed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonPressedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonPressedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController2).add_ButtonPressed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonPressedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonPressedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeButtonPressed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ButtonPressed(token));
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController2).remove_ButtonPressed(token));
 	}
 	final EventRegistrationToken OnButtonHolding(void delegate(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonHoldingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ButtonHolding(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonHoldingEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonHoldingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController2).add_ButtonHolding(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonHoldingEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonHoldingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeButtonHolding(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ButtonHolding(token));
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController2).remove_ButtonHolding(token));
 	}
 	final EventRegistrationToken OnButtonReleased(void delegate(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonReleasedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ButtonReleased(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonReleasedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonReleasedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController2).add_ButtonReleased(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonReleasedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonReleasedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeButtonReleased(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ButtonReleased(token));
+		Debug.OK(this.as!(Windows.UI.Input.IRadialController2).remove_ButtonReleased(token));
+	}
+
+	private static Windows.UI.Input.IRadialControllerStatics _staticInstance;
+	public static Windows.UI.Input.IRadialControllerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Input.IRadialControllerStatics);
+		return _staticInstance;
+	}
+	static bool IsSupported()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Input.IRadialControllerStatics).abi_IsSupported(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Input.RadialController CreateForCurrentView()
+	{
+		Windows.UI.Input.RadialController _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Input.IRadialControllerStatics).abi_CreateForCurrentView(&_ret));
+		return _ret;
 	}
 }
 
@@ -1671,6 +1760,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerConfiguration2).get_IsMenuSuppressed(&_ret));
 		return _ret;
 	}
+
+	private static Windows.UI.Input.IRadialControllerConfigurationStatics _staticInstance;
+	public static Windows.UI.Input.IRadialControllerConfigurationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Input.IRadialControllerConfigurationStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Input.RadialControllerConfiguration GetForCurrentView()
+	{
+		Windows.UI.Input.RadialControllerConfiguration _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Input.IRadialControllerConfigurationStatics).abi_GetForCurrentView(&_ret));
+		return _ret;
+	}
 }
 
 interface RadialControllerControlAcquiredEventArgs : Windows.UI.Input.IRadialControllerControlAcquiredEventArgs, Windows.UI.Input.IRadialControllerControlAcquiredEventArgs2
@@ -1755,12 +1857,31 @@ extern(Windows):
 	final EventRegistrationToken OnInvoked(void delegate(Windows.UI.Input.RadialControllerMenuItem, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Invoked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialControllerMenuItem, IInspectable), Windows.UI.Input.RadialControllerMenuItem, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerMenuItem).add_Invoked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialControllerMenuItem, IInspectable), Windows.UI.Input.RadialControllerMenuItem, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeInvoked(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Invoked(token));
+		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerMenuItem).remove_Invoked(token));
+	}
+
+	private static Windows.UI.Input.IRadialControllerMenuItemStatics _staticInstance;
+	public static Windows.UI.Input.IRadialControllerMenuItemStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Input.IRadialControllerMenuItemStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Input.RadialControllerMenuItem CreateFromIcon(HSTRING displayText, Windows.Storage.Streams.RandomAccessStreamReference icon)
+	{
+		Windows.UI.Input.RadialControllerMenuItem _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Input.IRadialControllerMenuItemStatics).abi_CreateFromIcon(displayText, icon, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Input.RadialControllerMenuItem CreateFromKnownIcon(HSTRING displayText, Windows.UI.Input.RadialControllerMenuKnownIcon value)
+	{
+		Windows.UI.Input.RadialControllerMenuItem _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Input.IRadialControllerMenuItemStatics).abi_CreateFromKnownIcon(displayText, value, &_ret));
+		return _ret;
 	}
 }
 

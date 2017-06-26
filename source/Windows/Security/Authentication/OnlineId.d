@@ -185,6 +185,24 @@ extern(Windows):
 
 interface OnlineIdSystemAuthenticator
 {
+	private static Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorStatics _staticInstance;
+	public static Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorStatics);
+		return _staticInstance;
+	}
+	static Windows.Security.Authentication.OnlineId.OnlineIdSystemAuthenticatorForUser Default()
+	{
+		Windows.Security.Authentication.OnlineId.OnlineIdSystemAuthenticatorForUser _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorStatics).get_Default(&_ret));
+		return _ret;
+	}
+	static Windows.Security.Authentication.OnlineId.OnlineIdSystemAuthenticatorForUser GetForUser(Windows.System.User user)
+	{
+		Windows.Security.Authentication.OnlineId.OnlineIdSystemAuthenticatorForUser _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorStatics).abi_GetForUser(user, &_ret));
+		return _ret;
+	}
 }
 
 interface OnlineIdSystemAuthenticatorForUser : Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorForUser

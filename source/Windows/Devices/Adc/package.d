@@ -122,6 +122,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Adc.IAdcController).abi_OpenChannel(channelNumber, &_ret));
 		return _ret;
 	}
+
+	private static Windows.Devices.Adc.IAdcControllerStatics _staticInstance;
+	public static Windows.Devices.Adc.IAdcControllerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Adc.IAdcControllerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Adc.AdcController)) GetControllersAsync(Windows.Devices.Adc.Provider.IAdcProvider provider)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Adc.AdcController)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Adc.IAdcControllerStatics).abi_GetControllersAsync(provider, &_ret));
+		return _ret;
+	}
 }
 
 enum AdcChannelMode

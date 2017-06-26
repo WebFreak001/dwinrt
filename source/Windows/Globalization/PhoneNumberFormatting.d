@@ -90,6 +90,35 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatter).abi_FormatStringWithLeftToRightMarkers(number, &_ret));
 		return _ret;
 	}
+
+	private static Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatterStatics _staticInstance;
+	public static Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatterStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatterStatics);
+		return _staticInstance;
+	}
+	static void TryCreate(HSTRING regionCode, Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormatter* out_phoneNumber)
+	{
+		Debug.OK(staticInstance.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatterStatics).abi_TryCreate(regionCode, out_phoneNumber));
+	}
+	static INT32 GetCountryCodeForRegion(HSTRING regionCode)
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatterStatics).abi_GetCountryCodeForRegion(regionCode, &_ret));
+		return _ret;
+	}
+	static HSTRING GetNationalDirectDialingPrefixForRegion(HSTRING regionCode, bool stripNonDigit)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatterStatics).abi_GetNationalDirectDialingPrefixForRegion(regionCode, stripNonDigit, &_ret));
+		return _ret;
+	}
+	static HSTRING WrapWithLeftToRightMarkers(HSTRING number)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatterStatics).abi_WrapWithLeftToRightMarkers(number, &_ret));
+		return _ret;
+	}
 }
 
 interface PhoneNumberInfo : Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo, Windows.Foundation.IStringable
@@ -147,6 +176,25 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfoStatics _staticInstance;
+	public static Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfoStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfoStatics);
+		return _staticInstance;
+	}
+	static Windows.Globalization.PhoneNumberFormatting.PhoneNumberParseResult TryParse(HSTRING input, Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo* out_phoneNumber)
+	{
+		Windows.Globalization.PhoneNumberFormatting.PhoneNumberParseResult _ret;
+		Debug.OK(staticInstance.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfoStatics).abi_TryParse(input, out_phoneNumber, &_ret));
+		return _ret;
+	}
+	static Windows.Globalization.PhoneNumberFormatting.PhoneNumberParseResult TryParseWithRegion(HSTRING input, HSTRING regionCode, Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo* out_phoneNumber)
+	{
+		Windows.Globalization.PhoneNumberFormatting.PhoneNumberParseResult _ret;
+		Debug.OK(staticInstance.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfoStatics).abi_TryParseWithRegion(input, regionCode, out_phoneNumber, &_ret));
 		return _ret;
 	}
 }

@@ -298,6 +298,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.ICompositionConditionalValue).set_Value(value));
 	}
+
+	private static Windows.UI.Composition.Interactions.ICompositionConditionalValueStatics _staticInstance;
+	public static Windows.UI.Composition.Interactions.ICompositionConditionalValueStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Composition.Interactions.ICompositionConditionalValueStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Composition.Interactions.CompositionConditionalValue Create(Windows.UI.Composition.Compositor compositor)
+	{
+		Windows.UI.Composition.Interactions.CompositionConditionalValue _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Composition.Interactions.ICompositionConditionalValueStatics).abi_Create(compositor, &_ret));
+		return _ret;
+	}
 }
 
 interface CompositionInteractionSourceCollection : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.Interactions.ICompositionInteractionSourceCollection, Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.ICompositionInteractionSource)
@@ -514,6 +527,25 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker2).abi_ConfigureCenterPointYInertiaModifiers(conditionalValues));
 	}
+
+	private static Windows.UI.Composition.Interactions.IInteractionTrackerStatics _staticInstance;
+	public static Windows.UI.Composition.Interactions.IInteractionTrackerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Composition.Interactions.IInteractionTrackerStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Composition.Interactions.InteractionTracker Create(Windows.UI.Composition.Compositor compositor)
+	{
+		Windows.UI.Composition.Interactions.InteractionTracker _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Composition.Interactions.IInteractionTrackerStatics).abi_Create(compositor, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Composition.Interactions.InteractionTracker CreateWithOwner(Windows.UI.Composition.Compositor compositor, Windows.UI.Composition.Interactions.IInteractionTrackerOwner owner)
+	{
+		Windows.UI.Composition.Interactions.InteractionTracker _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Composition.Interactions.IInteractionTrackerStatics).abi_CreateWithOwner(compositor, owner, &_ret));
+		return _ret;
+	}
 }
 
 interface InteractionTrackerCustomAnimationStateEnteredArgs : Windows.UI.Composition.Interactions.IInteractionTrackerCustomAnimationStateEnteredArgs
@@ -579,6 +611,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaMotion).set_Motion(value));
 	}
+
+	private static Windows.UI.Composition.Interactions.IInteractionTrackerInertiaMotionStatics _staticInstance;
+	public static Windows.UI.Composition.Interactions.IInteractionTrackerInertiaMotionStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaMotionStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Composition.Interactions.InteractionTrackerInertiaMotion Create(Windows.UI.Composition.Compositor compositor)
+	{
+		Windows.UI.Composition.Interactions.InteractionTrackerInertiaMotion _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaMotionStatics).abi_Create(compositor, &_ret));
+		return _ret;
+	}
 }
 
 interface InteractionTrackerInertiaRestingValue : Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier, Windows.UI.Composition.Interactions.IInteractionTrackerInertiaRestingValue
@@ -603,6 +648,19 @@ extern(Windows):
 	final void RestingValue(Windows.UI.Composition.ExpressionAnimation value)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaRestingValue).set_RestingValue(value));
+	}
+
+	private static Windows.UI.Composition.Interactions.IInteractionTrackerInertiaRestingValueStatics _staticInstance;
+	public static Windows.UI.Composition.Interactions.IInteractionTrackerInertiaRestingValueStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaRestingValueStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Composition.Interactions.InteractionTrackerInertiaRestingValue Create(Windows.UI.Composition.Compositor compositor)
+	{
+		Windows.UI.Composition.Interactions.InteractionTrackerInertiaRestingValue _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaRestingValueStatics).abi_Create(compositor, &_ret));
+		return _ret;
 	}
 }
 
@@ -856,6 +914,19 @@ extern(Windows):
 	final void ConfigureDeltaScaleModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues)
 	{
 		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).abi_ConfigureDeltaScaleModifiers(conditionalValues));
+	}
+
+	private static Windows.UI.Composition.Interactions.IVisualInteractionSourceStatics _staticInstance;
+	public static Windows.UI.Composition.Interactions.IVisualInteractionSourceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Composition.Interactions.IVisualInteractionSourceStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Composition.Interactions.VisualInteractionSource Create(Windows.UI.Composition.Visual source)
+	{
+		Windows.UI.Composition.Interactions.VisualInteractionSource _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Composition.Interactions.IVisualInteractionSourceStatics).abi_Create(source, &_ret));
+		return _ret;
 	}
 }
 @makable!(VisualInteractionSource, VisualInteractionSource, Windows.UI.Composition.Interactions.IVisualInteractionSourceObjectFactory)

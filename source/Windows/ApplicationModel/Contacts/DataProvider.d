@@ -70,22 +70,22 @@ extern(Windows):
 	final EventRegistrationToken OnSyncRequested(void delegate(Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection, Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequestEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SyncRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection, Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequestEventArgs), Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection, Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequestEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderConnection).add_SyncRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection, Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequestEventArgs), Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection, Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequestEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSyncRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SyncRequested(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderConnection).remove_SyncRequested(token));
 	}
 	final EventRegistrationToken OnServerSearchReadBatchRequested(void delegate(Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection, Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequestEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ServerSearchReadBatchRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection, Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequestEventArgs), Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection, Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequestEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderConnection).add_ServerSearchReadBatchRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection, Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequestEventArgs), Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection, Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequestEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeServerSearchReadBatchRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ServerSearchReadBatchRequested(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderConnection).remove_ServerSearchReadBatchRequested(token));
 	}
 	final void Start()
 	{

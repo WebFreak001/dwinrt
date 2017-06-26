@@ -572,62 +572,62 @@ extern(Windows):
 	final EventRegistrationToken OnSyncRequested(void delegate(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequestEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SyncRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequestEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).add_SyncRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequestEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSyncRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SyncRequested(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).remove_SyncRequested(token));
 	}
 	final EventRegistrationToken OnCreateOrUpdateAppointmentRequested(void delegate(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_CreateOrUpdateAppointmentRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).add_CreateOrUpdateAppointmentRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCreateOrUpdateAppointmentRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_CreateOrUpdateAppointmentRequested(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).remove_CreateOrUpdateAppointmentRequested(token));
 	}
 	final EventRegistrationToken OnCancelMeetingRequested(void delegate(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequestEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_CancelMeetingRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequestEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).add_CancelMeetingRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequestEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCancelMeetingRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_CancelMeetingRequested(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).remove_CancelMeetingRequested(token));
 	}
 	final EventRegistrationToken OnForwardMeetingRequested(void delegate(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequestEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ForwardMeetingRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequestEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).add_ForwardMeetingRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequestEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeForwardMeetingRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ForwardMeetingRequested(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).remove_ForwardMeetingRequested(token));
 	}
 	final EventRegistrationToken OnProposeNewTimeForMeetingRequested(void delegate(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequestEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ProposeNewTimeForMeetingRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequestEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).add_ProposeNewTimeForMeetingRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequestEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeProposeNewTimeForMeetingRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ProposeNewTimeForMeetingRequested(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).remove_ProposeNewTimeForMeetingRequested(token));
 	}
 	final EventRegistrationToken OnUpdateMeetingResponseRequested(void delegate(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeetingResponseRequestEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_UpdateMeetingResponseRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeetingResponseRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeetingResponseRequestEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).add_UpdateMeetingResponseRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeetingResponseRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeetingResponseRequestEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeUpdateMeetingResponseRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_UpdateMeetingResponseRequested(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).remove_UpdateMeetingResponseRequested(token));
 	}
 	final void Start()
 	{

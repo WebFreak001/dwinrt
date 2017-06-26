@@ -633,6 +633,37 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IBlock).set_Margin(value));
 	}
+
+	private static Windows.UI.Xaml.Documents.IBlockStatics _staticInstance;
+	public static Windows.UI.Xaml.Documents.IBlockStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Documents.IBlockStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty TextAlignmentProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IBlockStatics).get_TextAlignmentProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty LineHeightProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IBlockStatics).get_LineHeightProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty LineStackingStrategyProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IBlockStatics).get_LineStackingStrategyProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty MarginProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IBlockStatics).get_MarginProperty(&_ret));
+		return _ret;
+	}
 }
 @makable!(Block, Block, Windows.UI.Xaml.Documents.IBlockFactory)
 class BlockT(Base) : AgileObject!Base, Block
@@ -827,6 +858,61 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs2).set_ColorFontPaletteIndex(value));
 	}
+
+	private static Windows.UI.Xaml.Documents.IGlyphsStatics _staticInstance;
+	public static Windows.UI.Xaml.Documents.IGlyphsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Documents.IGlyphsStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty UnicodeStringProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IGlyphsStatics).get_UnicodeStringProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IndicesProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IGlyphsStatics).get_IndicesProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty FontUriProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IGlyphsStatics).get_FontUriProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty StyleSimulationsProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IGlyphsStatics).get_StyleSimulationsProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty FontRenderingEmSizeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IGlyphsStatics).get_FontRenderingEmSizeProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty OriginXProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IGlyphsStatics).get_OriginXProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty OriginYProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IGlyphsStatics).get_OriginYProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty FillProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IGlyphsStatics).get_FillProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface Hyperlink : Windows.UI.Xaml.Documents.Span, Windows.UI.Xaml.Documents.IHyperlink, Windows.UI.Xaml.Documents.IHyperlink2, Windows.UI.Xaml.Documents.IHyperlink3, Windows.UI.Xaml.Documents.IHyperlink4
@@ -845,12 +931,12 @@ extern(Windows):
 	final EventRegistrationToken OnClick(void delegate(Windows.UI.Xaml.Documents.Hyperlink, Windows.UI.Xaml.Documents.HyperlinkClickEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Click(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.Hyperlink, Windows.UI.Xaml.Documents.HyperlinkClickEventArgs), Windows.UI.Xaml.Documents.Hyperlink, Windows.UI.Xaml.Documents.HyperlinkClickEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink).add_Click(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.Hyperlink, Windows.UI.Xaml.Documents.HyperlinkClickEventArgs), Windows.UI.Xaml.Documents.Hyperlink, Windows.UI.Xaml.Documents.HyperlinkClickEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeClick(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Click(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink).remove_Click(token));
 	}
 	final Windows.UI.Xaml.Documents.UnderlineStyle UnderlineStyle()
 	{
@@ -960,16 +1046,29 @@ extern(Windows):
 	}
 	final void removeGotFocus(EventRegistrationToken token)
 	{
-		Debug.OK(remove_GotFocus(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).remove_GotFocus(token));
 	}
 	final void removeLostFocus(EventRegistrationToken token)
 	{
-		Debug.OK(remove_LostFocus(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).remove_LostFocus(token));
 	}
 	final bool Focus(Windows.UI.Xaml.FocusState value)
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).abi_Focus(value, &_ret));
+		return _ret;
+	}
+
+	private static Windows.UI.Xaml.Documents.IHyperlinkStatics _staticInstance;
+	public static Windows.UI.Xaml.Documents.IHyperlinkStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Documents.IHyperlinkStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty NavigateUriProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IHyperlinkStatics).get_NavigateUriProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1101,6 +1200,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IParagraph).set_TextIndent(value));
 	}
+
+	private static Windows.UI.Xaml.Documents.IParagraphStatics _staticInstance;
+	public static Windows.UI.Xaml.Documents.IParagraphStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Documents.IParagraphStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty TextIndentProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IParagraphStatics).get_TextIndentProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface Run : Windows.UI.Xaml.Documents.Inline, Windows.UI.Xaml.Documents.IRun
@@ -1125,6 +1237,19 @@ extern(Windows):
 	final void FlowDirection(Windows.UI.Xaml.FlowDirection value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IRun).set_FlowDirection(value));
+	}
+
+	private static Windows.UI.Xaml.Documents.IRunStatics _staticInstance;
+	public static Windows.UI.Xaml.Documents.IRunStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Documents.IRunStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty FlowDirectionProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IRunStatics).get_FlowDirectionProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -1381,32 +1506,87 @@ extern(Windows):
 	final EventRegistrationToken OnAccessKeyDisplayRequested(void delegate(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AccessKeyDisplayRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs), Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).add_AccessKeyDisplayRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs), Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAccessKeyDisplayRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AccessKeyDisplayRequested(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).remove_AccessKeyDisplayRequested(token));
 	}
 	final EventRegistrationToken OnAccessKeyDisplayDismissed(void delegate(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AccessKeyDisplayDismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs), Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).add_AccessKeyDisplayDismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs), Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAccessKeyDisplayDismissed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AccessKeyDisplayDismissed(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).remove_AccessKeyDisplayDismissed(token));
 	}
 	final EventRegistrationToken OnAccessKeyInvoked(void delegate(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AccessKeyInvoked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs), Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).add_AccessKeyInvoked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs), Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAccessKeyInvoked(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AccessKeyInvoked(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).remove_AccessKeyInvoked(token));
+	}
+
+	private static Windows.UI.Xaml.Documents.ITextElementStatics _staticInstance;
+	public static Windows.UI.Xaml.Documents.ITextElementStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Documents.ITextElementStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty FontSizeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITextElementStatics).get_FontSizeProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty FontFamilyProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITextElementStatics).get_FontFamilyProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty FontWeightProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITextElementStatics).get_FontWeightProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty FontStyleProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITextElementStatics).get_FontStyleProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty FontStretchProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITextElementStatics).get_FontStretchProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty CharacterSpacingProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITextElementStatics).get_CharacterSpacingProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ForegroundProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITextElementStatics).get_ForegroundProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty LanguageProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITextElementStatics).get_LanguageProperty(&_ret));
+		return _ret;
 	}
 }
 @makable!(TextElement, TextElement, Windows.UI.Xaml.Documents.ITextElementFactory)
@@ -1521,6 +1701,700 @@ extern(Windows):
 
 interface Typography : Windows.UI.Xaml.Documents.ITypography
 {
+	private static Windows.UI.Xaml.Documents.ITypographyStatics _staticInstance;
+	public static Windows.UI.Xaml.Documents.ITypographyStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Documents.ITypographyStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty AnnotationAlternatesProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_AnnotationAlternatesProperty(&_ret));
+		return _ret;
+	}
+	static INT32 GetAnnotationAlternates(Windows.UI.Xaml.DependencyObject element)
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetAnnotationAlternates(element, &_ret));
+		return _ret;
+	}
+	static void SetAnnotationAlternates(Windows.UI.Xaml.DependencyObject element, INT32 value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetAnnotationAlternates(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty EastAsianExpertFormsProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_EastAsianExpertFormsProperty(&_ret));
+		return _ret;
+	}
+	static bool GetEastAsianExpertForms(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetEastAsianExpertForms(element, &_ret));
+		return _ret;
+	}
+	static void SetEastAsianExpertForms(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetEastAsianExpertForms(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty EastAsianLanguageProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_EastAsianLanguageProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.FontEastAsianLanguage GetEastAsianLanguage(Windows.UI.Xaml.DependencyObject element)
+	{
+		Windows.UI.Xaml.FontEastAsianLanguage _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetEastAsianLanguage(element, &_ret));
+		return _ret;
+	}
+	static void SetEastAsianLanguage(Windows.UI.Xaml.DependencyObject element, Windows.UI.Xaml.FontEastAsianLanguage value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetEastAsianLanguage(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty EastAsianWidthsProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_EastAsianWidthsProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.FontEastAsianWidths GetEastAsianWidths(Windows.UI.Xaml.DependencyObject element)
+	{
+		Windows.UI.Xaml.FontEastAsianWidths _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetEastAsianWidths(element, &_ret));
+		return _ret;
+	}
+	static void SetEastAsianWidths(Windows.UI.Xaml.DependencyObject element, Windows.UI.Xaml.FontEastAsianWidths value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetEastAsianWidths(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty StandardLigaturesProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StandardLigaturesProperty(&_ret));
+		return _ret;
+	}
+	static bool GetStandardLigatures(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStandardLigatures(element, &_ret));
+		return _ret;
+	}
+	static void SetStandardLigatures(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStandardLigatures(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty ContextualLigaturesProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_ContextualLigaturesProperty(&_ret));
+		return _ret;
+	}
+	static bool GetContextualLigatures(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetContextualLigatures(element, &_ret));
+		return _ret;
+	}
+	static void SetContextualLigatures(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetContextualLigatures(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty DiscretionaryLigaturesProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_DiscretionaryLigaturesProperty(&_ret));
+		return _ret;
+	}
+	static bool GetDiscretionaryLigatures(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetDiscretionaryLigatures(element, &_ret));
+		return _ret;
+	}
+	static void SetDiscretionaryLigatures(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetDiscretionaryLigatures(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty HistoricalLigaturesProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_HistoricalLigaturesProperty(&_ret));
+		return _ret;
+	}
+	static bool GetHistoricalLigatures(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetHistoricalLigatures(element, &_ret));
+		return _ret;
+	}
+	static void SetHistoricalLigatures(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetHistoricalLigatures(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty StandardSwashesProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StandardSwashesProperty(&_ret));
+		return _ret;
+	}
+	static INT32 GetStandardSwashes(Windows.UI.Xaml.DependencyObject element)
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStandardSwashes(element, &_ret));
+		return _ret;
+	}
+	static void SetStandardSwashes(Windows.UI.Xaml.DependencyObject element, INT32 value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStandardSwashes(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty ContextualSwashesProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_ContextualSwashesProperty(&_ret));
+		return _ret;
+	}
+	static INT32 GetContextualSwashes(Windows.UI.Xaml.DependencyObject element)
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetContextualSwashes(element, &_ret));
+		return _ret;
+	}
+	static void SetContextualSwashes(Windows.UI.Xaml.DependencyObject element, INT32 value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetContextualSwashes(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty ContextualAlternatesProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_ContextualAlternatesProperty(&_ret));
+		return _ret;
+	}
+	static bool GetContextualAlternates(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetContextualAlternates(element, &_ret));
+		return _ret;
+	}
+	static void SetContextualAlternates(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetContextualAlternates(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty StylisticAlternatesProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticAlternatesProperty(&_ret));
+		return _ret;
+	}
+	static INT32 GetStylisticAlternates(Windows.UI.Xaml.DependencyObject element)
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticAlternates(element, &_ret));
+		return _ret;
+	}
+	static void SetStylisticAlternates(Windows.UI.Xaml.DependencyObject element, INT32 value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticAlternates(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty StylisticSet1Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet1Property(&_ret));
+		return _ret;
+	}
+	static bool GetStylisticSet1(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet1(element, &_ret));
+		return _ret;
+	}
+	static void SetStylisticSet1(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet1(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty StylisticSet2Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet2Property(&_ret));
+		return _ret;
+	}
+	static bool GetStylisticSet2(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet2(element, &_ret));
+		return _ret;
+	}
+	static void SetStylisticSet2(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet2(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty StylisticSet3Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet3Property(&_ret));
+		return _ret;
+	}
+	static bool GetStylisticSet3(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet3(element, &_ret));
+		return _ret;
+	}
+	static void SetStylisticSet3(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet3(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty StylisticSet4Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet4Property(&_ret));
+		return _ret;
+	}
+	static bool GetStylisticSet4(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet4(element, &_ret));
+		return _ret;
+	}
+	static void SetStylisticSet4(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet4(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty StylisticSet5Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet5Property(&_ret));
+		return _ret;
+	}
+	static bool GetStylisticSet5(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet5(element, &_ret));
+		return _ret;
+	}
+	static void SetStylisticSet5(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet5(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty StylisticSet6Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet6Property(&_ret));
+		return _ret;
+	}
+	static bool GetStylisticSet6(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet6(element, &_ret));
+		return _ret;
+	}
+	static void SetStylisticSet6(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet6(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty StylisticSet7Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet7Property(&_ret));
+		return _ret;
+	}
+	static bool GetStylisticSet7(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet7(element, &_ret));
+		return _ret;
+	}
+	static void SetStylisticSet7(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet7(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty StylisticSet8Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet8Property(&_ret));
+		return _ret;
+	}
+	static bool GetStylisticSet8(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet8(element, &_ret));
+		return _ret;
+	}
+	static void SetStylisticSet8(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet8(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty StylisticSet9Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet9Property(&_ret));
+		return _ret;
+	}
+	static bool GetStylisticSet9(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet9(element, &_ret));
+		return _ret;
+	}
+	static void SetStylisticSet9(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet9(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty StylisticSet10Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet10Property(&_ret));
+		return _ret;
+	}
+	static bool GetStylisticSet10(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet10(element, &_ret));
+		return _ret;
+	}
+	static void SetStylisticSet10(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet10(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty StylisticSet11Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet11Property(&_ret));
+		return _ret;
+	}
+	static bool GetStylisticSet11(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet11(element, &_ret));
+		return _ret;
+	}
+	static void SetStylisticSet11(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet11(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty StylisticSet12Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet12Property(&_ret));
+		return _ret;
+	}
+	static bool GetStylisticSet12(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet12(element, &_ret));
+		return _ret;
+	}
+	static void SetStylisticSet12(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet12(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty StylisticSet13Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet13Property(&_ret));
+		return _ret;
+	}
+	static bool GetStylisticSet13(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet13(element, &_ret));
+		return _ret;
+	}
+	static void SetStylisticSet13(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet13(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty StylisticSet14Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet14Property(&_ret));
+		return _ret;
+	}
+	static bool GetStylisticSet14(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet14(element, &_ret));
+		return _ret;
+	}
+	static void SetStylisticSet14(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet14(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty StylisticSet15Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet15Property(&_ret));
+		return _ret;
+	}
+	static bool GetStylisticSet15(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet15(element, &_ret));
+		return _ret;
+	}
+	static void SetStylisticSet15(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet15(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty StylisticSet16Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet16Property(&_ret));
+		return _ret;
+	}
+	static bool GetStylisticSet16(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet16(element, &_ret));
+		return _ret;
+	}
+	static void SetStylisticSet16(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet16(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty StylisticSet17Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet17Property(&_ret));
+		return _ret;
+	}
+	static bool GetStylisticSet17(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet17(element, &_ret));
+		return _ret;
+	}
+	static void SetStylisticSet17(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet17(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty StylisticSet18Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet18Property(&_ret));
+		return _ret;
+	}
+	static bool GetStylisticSet18(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet18(element, &_ret));
+		return _ret;
+	}
+	static void SetStylisticSet18(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet18(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty StylisticSet19Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet19Property(&_ret));
+		return _ret;
+	}
+	static bool GetStylisticSet19(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet19(element, &_ret));
+		return _ret;
+	}
+	static void SetStylisticSet19(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet19(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty StylisticSet20Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet20Property(&_ret));
+		return _ret;
+	}
+	static bool GetStylisticSet20(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet20(element, &_ret));
+		return _ret;
+	}
+	static void SetStylisticSet20(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet20(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty CapitalsProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_CapitalsProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.FontCapitals GetCapitals(Windows.UI.Xaml.DependencyObject element)
+	{
+		Windows.UI.Xaml.FontCapitals _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetCapitals(element, &_ret));
+		return _ret;
+	}
+	static void SetCapitals(Windows.UI.Xaml.DependencyObject element, Windows.UI.Xaml.FontCapitals value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetCapitals(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty CapitalSpacingProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_CapitalSpacingProperty(&_ret));
+		return _ret;
+	}
+	static bool GetCapitalSpacing(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetCapitalSpacing(element, &_ret));
+		return _ret;
+	}
+	static void SetCapitalSpacing(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetCapitalSpacing(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty KerningProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_KerningProperty(&_ret));
+		return _ret;
+	}
+	static bool GetKerning(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetKerning(element, &_ret));
+		return _ret;
+	}
+	static void SetKerning(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetKerning(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty CaseSensitiveFormsProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_CaseSensitiveFormsProperty(&_ret));
+		return _ret;
+	}
+	static bool GetCaseSensitiveForms(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetCaseSensitiveForms(element, &_ret));
+		return _ret;
+	}
+	static void SetCaseSensitiveForms(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetCaseSensitiveForms(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty HistoricalFormsProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_HistoricalFormsProperty(&_ret));
+		return _ret;
+	}
+	static bool GetHistoricalForms(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetHistoricalForms(element, &_ret));
+		return _ret;
+	}
+	static void SetHistoricalForms(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetHistoricalForms(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty FractionProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_FractionProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.FontFraction GetFraction(Windows.UI.Xaml.DependencyObject element)
+	{
+		Windows.UI.Xaml.FontFraction _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetFraction(element, &_ret));
+		return _ret;
+	}
+	static void SetFraction(Windows.UI.Xaml.DependencyObject element, Windows.UI.Xaml.FontFraction value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetFraction(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty NumeralStyleProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_NumeralStyleProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.FontNumeralStyle GetNumeralStyle(Windows.UI.Xaml.DependencyObject element)
+	{
+		Windows.UI.Xaml.FontNumeralStyle _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetNumeralStyle(element, &_ret));
+		return _ret;
+	}
+	static void SetNumeralStyle(Windows.UI.Xaml.DependencyObject element, Windows.UI.Xaml.FontNumeralStyle value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetNumeralStyle(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty NumeralAlignmentProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_NumeralAlignmentProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.FontNumeralAlignment GetNumeralAlignment(Windows.UI.Xaml.DependencyObject element)
+	{
+		Windows.UI.Xaml.FontNumeralAlignment _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetNumeralAlignment(element, &_ret));
+		return _ret;
+	}
+	static void SetNumeralAlignment(Windows.UI.Xaml.DependencyObject element, Windows.UI.Xaml.FontNumeralAlignment value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetNumeralAlignment(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty SlashedZeroProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_SlashedZeroProperty(&_ret));
+		return _ret;
+	}
+	static bool GetSlashedZero(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetSlashedZero(element, &_ret));
+		return _ret;
+	}
+	static void SetSlashedZero(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetSlashedZero(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty MathematicalGreekProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_MathematicalGreekProperty(&_ret));
+		return _ret;
+	}
+	static bool GetMathematicalGreek(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetMathematicalGreek(element, &_ret));
+		return _ret;
+	}
+	static void SetMathematicalGreek(Windows.UI.Xaml.DependencyObject element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetMathematicalGreek(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty VariantsProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_VariantsProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.FontVariants GetVariants(Windows.UI.Xaml.DependencyObject element)
+	{
+		Windows.UI.Xaml.FontVariants _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetVariants(element, &_ret));
+		return _ret;
+	}
+	static void SetVariants(Windows.UI.Xaml.DependencyObject element, Windows.UI.Xaml.FontVariants value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetVariants(element, value));
+	}
 }
 
 interface Underline : Windows.UI.Xaml.Documents.Span, Windows.UI.Xaml.Documents.IUnderline

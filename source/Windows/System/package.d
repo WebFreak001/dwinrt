@@ -453,6 +453,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.System.IAppDiagnosticInfo).get_AppInfo(&_ret));
 		return _ret;
 	}
+
+	private static Windows.System.IAppDiagnosticInfoStatics _staticInstance;
+	public static Windows.System.IAppDiagnosticInfoStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.System.IAppDiagnosticInfoStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.System.AppDiagnosticInfo)) RequestInfoAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.System.AppDiagnosticInfo)) _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IAppDiagnosticInfoStatics).abi_RequestInfoAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface AppMemoryReport : Windows.System.IAppMemoryReport
@@ -524,6 +537,66 @@ extern(Windows):
 
 interface KnownUserProperties
 {
+	private static Windows.System.IKnownUserPropertiesStatics _staticInstance;
+	public static Windows.System.IKnownUserPropertiesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.System.IKnownUserPropertiesStatics);
+		return _staticInstance;
+	}
+	static HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IKnownUserPropertiesStatics).get_DisplayName(&_ret));
+		return _ret;
+	}
+	static HSTRING FirstName()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IKnownUserPropertiesStatics).get_FirstName(&_ret));
+		return _ret;
+	}
+	static HSTRING LastName()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IKnownUserPropertiesStatics).get_LastName(&_ret));
+		return _ret;
+	}
+	static HSTRING ProviderName()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IKnownUserPropertiesStatics).get_ProviderName(&_ret));
+		return _ret;
+	}
+	static HSTRING AccountName()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IKnownUserPropertiesStatics).get_AccountName(&_ret));
+		return _ret;
+	}
+	static HSTRING GuestHost()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IKnownUserPropertiesStatics).get_GuestHost(&_ret));
+		return _ret;
+	}
+	static HSTRING PrincipalName()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IKnownUserPropertiesStatics).get_PrincipalName(&_ret));
+		return _ret;
+	}
+	static HSTRING DomainName()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IKnownUserPropertiesStatics).get_DomainName(&_ret));
+		return _ret;
+	}
+	static HSTRING SessionInitiationProtocolUri()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IKnownUserPropertiesStatics).get_SessionInitiationProtocolUri(&_ret));
+		return _ret;
+	}
 }
 
 interface LaunchUriResult : Windows.System.ILaunchUriResult
@@ -545,6 +618,36 @@ extern(Windows):
 
 interface Launcher
 {
+	private static Windows.System.ILauncherStatics _staticInstance;
+	public static Windows.System.ILauncherStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.System.ILauncherStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(bool) LaunchFileAsync(Windows.Storage.IStorageFile file)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(staticInstance.as!(Windows.System.ILauncherStatics).abi_LaunchFileAsync(file, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(bool) LaunchFileWithOptionsAsync(Windows.Storage.IStorageFile file, Windows.System.LauncherOptions options)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(staticInstance.as!(Windows.System.ILauncherStatics).abi_LaunchFileWithOptionsAsync(file, options, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(bool) LaunchUriAsync(Windows.Foundation.Uri uri)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(staticInstance.as!(Windows.System.ILauncherStatics).abi_LaunchUriAsync(uri, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(bool) LaunchUriWithOptionsAsync(Windows.Foundation.Uri uri, Windows.System.LauncherOptions options)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(staticInstance.as!(Windows.System.ILauncherStatics).abi_LaunchUriWithOptionsAsync(uri, options, &_ret));
+		return _ret;
+	}
 }
 
 interface LauncherOptions : Windows.System.ILauncherOptions, Windows.System.ILauncherViewOptions, Windows.System.ILauncherOptions2, Windows.System.ILauncherOptions3, Windows.System.ILauncherOptions4
@@ -705,10 +808,82 @@ extern(Windows):
 
 interface MemoryManager
 {
+	private static Windows.System.IMemoryManagerStatics _staticInstance;
+	public static Windows.System.IMemoryManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.System.IMemoryManagerStatics);
+		return _staticInstance;
+	}
+	static ulong AppMemoryUsage()
+	{
+		ulong _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IMemoryManagerStatics).get_AppMemoryUsage(&_ret));
+		return _ret;
+	}
+	static ulong AppMemoryUsageLimit()
+	{
+		ulong _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IMemoryManagerStatics).get_AppMemoryUsageLimit(&_ret));
+		return _ret;
+	}
+	static Windows.System.AppMemoryUsageLevel AppMemoryUsageLevel()
+	{
+		Windows.System.AppMemoryUsageLevel _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IMemoryManagerStatics).get_AppMemoryUsageLevel(&_ret));
+		return _ret;
+	}
+	static EventRegistrationToken OnAppMemoryUsageIncreased(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.System.IMemoryManagerStatics).add_AppMemoryUsageIncreased(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
+	static void removeAppMemoryUsageIncreased(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.System.IMemoryManagerStatics).remove_AppMemoryUsageIncreased(token));
+	}
+	static EventRegistrationToken OnAppMemoryUsageDecreased(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.System.IMemoryManagerStatics).add_AppMemoryUsageDecreased(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
+	static void removeAppMemoryUsageDecreased(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.System.IMemoryManagerStatics).remove_AppMemoryUsageDecreased(token));
+	}
+	static EventRegistrationToken OnAppMemoryUsageLimitChanging(void delegate(IInspectable, Windows.System.AppMemoryUsageLimitChangingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.System.IMemoryManagerStatics).add_AppMemoryUsageLimitChanging(event!(Windows.Foundation.EventHandler!(Windows.System.AppMemoryUsageLimitChangingEventArgs), IInspectable, Windows.System.AppMemoryUsageLimitChangingEventArgs)(fn), &tok));
+		return tok;
+	}
+	static void removeAppMemoryUsageLimitChanging(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.System.IMemoryManagerStatics).remove_AppMemoryUsageLimitChanging(token));
+	}
 }
 
 interface ProcessLauncher
 {
+	private static Windows.System.IProcessLauncherStatics _staticInstance;
+	public static Windows.System.IProcessLauncherStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.System.IProcessLauncherStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.System.ProcessLauncherResult) RunToCompletionAsync(HSTRING fileName, HSTRING args)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.System.ProcessLauncherResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IProcessLauncherStatics).abi_RunToCompletionAsync(fileName, args, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.System.ProcessLauncherResult) RunToCompletionAsyncWithOptions(HSTRING fileName, HSTRING args, Windows.System.ProcessLauncherOptions options)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.System.ProcessLauncherResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IProcessLauncherStatics).abi_RunToCompletionAsyncWithOptions(fileName, args, options, &_ret));
+		return _ret;
+	}
 }
 
 interface ProcessLauncherOptions : Windows.System.IProcessLauncherOptions
@@ -795,6 +970,30 @@ extern(Windows):
 
 interface RemoteLauncher
 {
+	private static Windows.System.IRemoteLauncherStatics _staticInstance;
+	public static Windows.System.IRemoteLauncherStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.System.IRemoteLauncherStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus) LaunchUriAsync(Windows.System.RemoteSystems.RemoteSystemConnectionRequest remoteSystemConnectionRequest, Windows.Foundation.Uri uri)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus) _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IRemoteLauncherStatics).abi_LaunchUriAsync(remoteSystemConnectionRequest, uri, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus) LaunchUriWithOptionsAsync(Windows.System.RemoteSystems.RemoteSystemConnectionRequest remoteSystemConnectionRequest, Windows.Foundation.Uri uri, Windows.System.RemoteLauncherOptions options)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus) _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IRemoteLauncherStatics).abi_LaunchUriWithOptionsAsync(remoteSystemConnectionRequest, uri, options, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus) LaunchUriWithDataAsync(Windows.System.RemoteSystems.RemoteSystemConnectionRequest remoteSystemConnectionRequest, Windows.Foundation.Uri uri, Windows.System.RemoteLauncherOptions options, Windows.Foundation.Collections.ValueSet inputData)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus) _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IRemoteLauncherStatics).abi_LaunchUriWithDataAsync(remoteSystemConnectionRequest, uri, options, inputData, &_ret));
+		return _ret;
+	}
 }
 
 interface RemoteLauncherOptions : Windows.System.IRemoteLauncherOptions
@@ -820,10 +1019,52 @@ extern(Windows):
 
 interface ShutdownManager
 {
+	private static Windows.System.IShutdownManagerStatics _staticInstance;
+	public static Windows.System.IShutdownManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.System.IShutdownManagerStatics);
+		return _staticInstance;
+	}
+	static void BeginShutdown(Windows.System.ShutdownKind shutdownKind, Windows.Foundation.TimeSpan timeout)
+	{
+		Debug.OK(staticInstance.as!(Windows.System.IShutdownManagerStatics).abi_BeginShutdown(shutdownKind, timeout));
+	}
+	static void CancelShutdown()
+	{
+		Debug.OK(staticInstance.as!(Windows.System.IShutdownManagerStatics).abi_CancelShutdown());
+	}
 }
 
 interface TimeZoneSettings
 {
+	private static Windows.System.ITimeZoneSettingsStatics _staticInstance;
+	public static Windows.System.ITimeZoneSettingsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.System.ITimeZoneSettingsStatics);
+		return _staticInstance;
+	}
+	static HSTRING CurrentTimeZoneDisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.System.ITimeZoneSettingsStatics).get_CurrentTimeZoneDisplayName(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(HSTRING) SupportedTimeZoneDisplayNames()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.System.ITimeZoneSettingsStatics).get_SupportedTimeZoneDisplayNames(&_ret));
+		return _ret;
+	}
+	static bool CanChangeTimeZone()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.System.ITimeZoneSettingsStatics).get_CanChangeTimeZone(&_ret));
+		return _ret;
+	}
+	static void ChangeTimeZoneByDisplayName(HSTRING timeZoneDisplayName)
+	{
+		Debug.OK(staticInstance.as!(Windows.System.ITimeZoneSettingsStatics).abi_ChangeTimeZoneByDisplayName(timeZoneDisplayName));
+	}
 }
 
 interface User : Windows.System.IUser
@@ -863,6 +1104,43 @@ extern(Windows):
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamReference) _ret;
 		Debug.OK(this.as!(Windows.System.IUser).abi_GetPictureAsync(desiredSize, &_ret));
+		return _ret;
+	}
+
+	private static Windows.System.IUserStatics _staticInstance;
+	public static Windows.System.IUserStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.System.IUserStatics);
+		return _staticInstance;
+	}
+	static Windows.System.UserWatcher CreateWatcher()
+	{
+		Windows.System.UserWatcher _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IUserStatics).abi_CreateWatcher(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User)) FindAllAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User)) _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IUserStatics).abi_FindAllAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User)) FindAllAsyncByType(Windows.System.UserType type)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User)) _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IUserStatics).abi_FindAllAsyncByType(type, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User)) FindAllAsyncByTypeAndStatus(Windows.System.UserType type, Windows.System.UserAuthenticationStatus status)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User)) _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IUserStatics).abi_FindAllAsyncByTypeAndStatus(type, status, &_ret));
+		return _ret;
+	}
+	static Windows.System.User GetFromId(HSTRING nonRoamableId)
+	{
+		Windows.System.User _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IUserStatics).abi_GetFromId(nonRoamableId, &_ret));
 		return _ret;
 	}
 }
@@ -918,6 +1196,28 @@ extern(Windows):
 
 interface UserDeviceAssociation
 {
+	private static Windows.System.IUserDeviceAssociationStatics _staticInstance;
+	public static Windows.System.IUserDeviceAssociationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.System.IUserDeviceAssociationStatics);
+		return _staticInstance;
+	}
+	static Windows.System.User FindUserFromDeviceId(HSTRING deviceId)
+	{
+		Windows.System.User _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IUserDeviceAssociationStatics).abi_FindUserFromDeviceId(deviceId, &_ret));
+		return _ret;
+	}
+	static EventRegistrationToken OnUserDeviceAssociationChanged(void delegate(IInspectable, Windows.System.UserDeviceAssociationChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.System.IUserDeviceAssociationStatics).add_UserDeviceAssociationChanged(event!(Windows.Foundation.EventHandler!(Windows.System.UserDeviceAssociationChangedEventArgs), IInspectable, Windows.System.UserDeviceAssociationChangedEventArgs)(fn), &tok));
+		return tok;
+	}
+	static void removeUserDeviceAssociationChanged(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.System.IUserDeviceAssociationStatics).remove_UserDeviceAssociationChanged(token));
+	}
 }
 
 interface UserDeviceAssociationChangedEventArgs : Windows.System.IUserDeviceAssociationChangedEventArgs
@@ -972,6 +1272,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.System.IUserPicker).abi_PickSingleUserAsync(&_ret));
 		return _ret;
 	}
+
+	private static Windows.System.IUserPickerStatics _staticInstance;
+	public static Windows.System.IUserPickerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.System.IUserPickerStatics);
+		return _staticInstance;
+	}
+	static bool IsSupported()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.System.IUserPickerStatics).abi_IsSupported(&_ret));
+		return _ret;
+	}
 }
 
 interface UserWatcher : Windows.System.IUserWatcher
@@ -994,72 +1307,72 @@ extern(Windows):
 	final EventRegistrationToken OnAdded(void delegate(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs), Windows.System.UserWatcher, Windows.System.UserChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.System.IUserWatcher).add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs), Windows.System.UserWatcher, Windows.System.UserChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAdded(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Added(token));
+		Debug.OK(this.as!(Windows.System.IUserWatcher).remove_Added(token));
 	}
 	final EventRegistrationToken OnRemoved(void delegate(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs), Windows.System.UserWatcher, Windows.System.UserChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.System.IUserWatcher).add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs), Windows.System.UserWatcher, Windows.System.UserChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Removed(token));
+		Debug.OK(this.as!(Windows.System.IUserWatcher).remove_Removed(token));
 	}
 	final EventRegistrationToken OnUpdated(void delegate(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs), Windows.System.UserWatcher, Windows.System.UserChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.System.IUserWatcher).add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs), Windows.System.UserWatcher, Windows.System.UserChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Updated(token));
+		Debug.OK(this.as!(Windows.System.IUserWatcher).remove_Updated(token));
 	}
 	final EventRegistrationToken OnAuthenticationStatusChanged(void delegate(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AuthenticationStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs), Windows.System.UserWatcher, Windows.System.UserChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.System.IUserWatcher).add_AuthenticationStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs), Windows.System.UserWatcher, Windows.System.UserChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAuthenticationStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AuthenticationStatusChanged(token));
+		Debug.OK(this.as!(Windows.System.IUserWatcher).remove_AuthenticationStatusChanged(token));
 	}
 	final EventRegistrationToken OnAuthenticationStatusChanging(void delegate(Windows.System.UserWatcher, Windows.System.UserAuthenticationStatusChangingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AuthenticationStatusChanging(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserAuthenticationStatusChangingEventArgs), Windows.System.UserWatcher, Windows.System.UserAuthenticationStatusChangingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.System.IUserWatcher).add_AuthenticationStatusChanging(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserAuthenticationStatusChangingEventArgs), Windows.System.UserWatcher, Windows.System.UserAuthenticationStatusChangingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAuthenticationStatusChanging(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AuthenticationStatusChanging(token));
+		Debug.OK(this.as!(Windows.System.IUserWatcher).remove_AuthenticationStatusChanging(token));
 	}
 	final EventRegistrationToken OnEnumerationCompleted(void delegate(Windows.System.UserWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, IInspectable), Windows.System.UserWatcher, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.System.IUserWatcher).add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, IInspectable), Windows.System.UserWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeEnumerationCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_EnumerationCompleted(token));
+		Debug.OK(this.as!(Windows.System.IUserWatcher).remove_EnumerationCompleted(token));
 	}
 	final EventRegistrationToken OnStopped(void delegate(Windows.System.UserWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, IInspectable), Windows.System.UserWatcher, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.System.IUserWatcher).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, IInspectable), Windows.System.UserWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeStopped(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Stopped(token));
+		Debug.OK(this.as!(Windows.System.IUserWatcher).remove_Stopped(token));
 	}
 }
 

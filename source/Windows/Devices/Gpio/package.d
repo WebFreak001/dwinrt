@@ -286,6 +286,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioController).abi_TryOpenPin(pinNumber, sharingMode, out_pin, out_openStatus, &_ret));
 		return _ret;
 	}
+
+	private static Windows.Devices.Gpio.IGpioControllerStatics _staticInstance;
+	public static Windows.Devices.Gpio.IGpioControllerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Gpio.IGpioControllerStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.Gpio.GpioController GetDefault()
+	{
+		Windows.Devices.Gpio.GpioController _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Gpio.IGpioControllerStatics).abi_GetDefault(&_ret));
+		return _ret;
+	}
 }
 
 interface GpioPin : Windows.Devices.Gpio.IGpioPin, Windows.Foundation.IClosable
@@ -294,12 +307,12 @@ extern(Windows):
 	final EventRegistrationToken OnValueChanged(void delegate(Windows.Devices.Gpio.GpioPin, Windows.Devices.Gpio.GpioPinValueChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ValueChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Gpio.GpioPin, Windows.Devices.Gpio.GpioPinValueChangedEventArgs), Windows.Devices.Gpio.GpioPin, Windows.Devices.Gpio.GpioPinValueChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPin).add_ValueChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Gpio.GpioPin, Windows.Devices.Gpio.GpioPinValueChangedEventArgs), Windows.Devices.Gpio.GpioPin, Windows.Devices.Gpio.GpioPinValueChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeValueChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ValueChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPin).remove_ValueChanged(token));
 	}
 	final Windows.Foundation.TimeSpan DebounceTimeout()
 	{

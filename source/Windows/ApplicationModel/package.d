@@ -422,6 +422,18 @@ extern(Windows):
 
 interface DesignMode
 {
+	private static Windows.ApplicationModel.IDesignModeStatics _staticInstance;
+	public static Windows.ApplicationModel.IDesignModeStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.IDesignModeStatics);
+		return _staticInstance;
+	}
+	static bool DesignModeEnabled()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.IDesignModeStatics).get_DesignModeEnabled(&_ret));
+		return _ret;
+	}
 }
 
 interface EnteredBackgroundEventArgs : Windows.ApplicationModel.IEnteredBackgroundEventArgs
@@ -437,6 +449,36 @@ extern(Windows):
 
 interface FullTrustProcessLauncher
 {
+	private static Windows.ApplicationModel.IFullTrustProcessLauncherStatics _staticInstance;
+	public static Windows.ApplicationModel.IFullTrustProcessLauncherStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.IFullTrustProcessLauncherStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncAction LaunchFullTrustProcessForCurrentAppAsync()
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.IFullTrustProcessLauncherStatics).abi_LaunchFullTrustProcessForCurrentAppAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction LaunchFullTrustProcessForCurrentAppWithParametersAsync(HSTRING parameterGroupId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.IFullTrustProcessLauncherStatics).abi_LaunchFullTrustProcessForCurrentAppWithParametersAsync(parameterGroupId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction LaunchFullTrustProcessForAppAsync(HSTRING fullTrustPackageRelativeAppId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.IFullTrustProcessLauncherStatics).abi_LaunchFullTrustProcessForAppAsync(fullTrustPackageRelativeAppId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction LaunchFullTrustProcessForAppWithParametersAsync(HSTRING fullTrustPackageRelativeAppId, HSTRING parameterGroupId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.IFullTrustProcessLauncherStatics).abi_LaunchFullTrustProcessForAppWithParametersAsync(fullTrustPackageRelativeAppId, parameterGroupId, &_ret));
+		return _ret;
+	}
 }
 
 interface LeavingBackgroundEventArgs : Windows.ApplicationModel.ILeavingBackgroundEventArgs
@@ -602,6 +644,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.ApplicationModel.IPackage5).abi_SetInUseAsync(inUse, &_ret));
 		return _ret;
 	}
+
+	private static Windows.ApplicationModel.IPackageStatics _staticInstance;
+	public static Windows.ApplicationModel.IPackageStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.IPackageStatics);
+		return _staticInstance;
+	}
+	static Windows.ApplicationModel.Package Current()
+	{
+		Windows.ApplicationModel.Package _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.IPackageStatics).get_Current(&_ret));
+		return _ret;
+	}
 }
 
 interface PackageCatalog : Windows.ApplicationModel.IPackageCatalog, Windows.ApplicationModel.IPackageCatalog2
@@ -610,67 +665,86 @@ extern(Windows):
 	final EventRegistrationToken OnPackageStaging(void delegate(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStagingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PackageStaging(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStagingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStagingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog).add_PackageStaging(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStagingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStagingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePackageStaging(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PackageStaging(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog).remove_PackageStaging(token));
 	}
 	final EventRegistrationToken OnPackageInstalling(void delegate(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageInstallingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PackageInstalling(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageInstallingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageInstallingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog).add_PackageInstalling(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageInstallingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageInstallingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePackageInstalling(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PackageInstalling(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog).remove_PackageInstalling(token));
 	}
 	final EventRegistrationToken OnPackageUpdating(void delegate(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUpdatingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PackageUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUpdatingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUpdatingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog).add_PackageUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUpdatingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUpdatingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePackageUpdating(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PackageUpdating(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog).remove_PackageUpdating(token));
 	}
 	final EventRegistrationToken OnPackageUninstalling(void delegate(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUninstallingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PackageUninstalling(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUninstallingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUninstallingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog).add_PackageUninstalling(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUninstallingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUninstallingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePackageUninstalling(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PackageUninstalling(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog).remove_PackageUninstalling(token));
 	}
 	final EventRegistrationToken OnPackageStatusChanged(void delegate(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStatusChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PackageStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStatusChangedEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStatusChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog).add_PackageStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStatusChangedEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStatusChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePackageStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PackageStatusChanged(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog).remove_PackageStatusChanged(token));
 	}
 	final EventRegistrationToken OnPackageContentGroupStaging(void delegate(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageContentGroupStagingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PackageContentGroupStaging(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageContentGroupStagingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageContentGroupStagingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog2).add_PackageContentGroupStaging(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageContentGroupStagingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageContentGroupStagingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePackageContentGroupStaging(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PackageContentGroupStaging(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog2).remove_PackageContentGroupStaging(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.PackageCatalogAddOptionalPackageResult) AddOptionalPackageAsync(HSTRING optionalPackageFamilyName)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.PackageCatalogAddOptionalPackageResult) _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog2).abi_AddOptionalPackageAsync(optionalPackageFamilyName, &_ret));
+		return _ret;
+	}
+
+	private static Windows.ApplicationModel.IPackageCatalogStatics _staticInstance;
+	public static Windows.ApplicationModel.IPackageCatalogStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.IPackageCatalogStatics);
+		return _staticInstance;
+	}
+	static Windows.ApplicationModel.PackageCatalog OpenForCurrentPackage()
+	{
+		Windows.ApplicationModel.PackageCatalog _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.IPackageCatalogStatics).abi_OpenForCurrentPackage(&_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.PackageCatalog OpenForCurrentUser()
+	{
+		Windows.ApplicationModel.PackageCatalog _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.IPackageCatalogStatics).abi_OpenForCurrentUser(&_ret));
 		return _ret;
 	}
 }
@@ -717,6 +791,19 @@ extern(Windows):
 	{
 		bool _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.IPackageContentGroup).get_IsRequired(&_ret));
+		return _ret;
+	}
+
+	private static Windows.ApplicationModel.IPackageContentGroupStatics _staticInstance;
+	public static Windows.ApplicationModel.IPackageContentGroupStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.IPackageContentGroupStatics);
+		return _staticInstance;
+	}
+	static HSTRING RequiredGroupName()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.IPackageContentGroupStatics).get_RequiredGroupName(&_ret));
 		return _ret;
 	}
 }
@@ -1096,6 +1183,25 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.IStartupTask).get_TaskId(&_ret));
+		return _ret;
+	}
+
+	private static Windows.ApplicationModel.IStartupTaskStatics _staticInstance;
+	public static Windows.ApplicationModel.IStartupTaskStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.IStartupTaskStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.StartupTask)) GetForCurrentPackageAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.StartupTask)) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.IStartupTaskStatics).abi_GetForCurrentPackageAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.StartupTask) GetAsync(HSTRING taskId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.StartupTask) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.IStartupTaskStatics).abi_GetAsync(taskId, &_ret));
 		return _ret;
 	}
 }

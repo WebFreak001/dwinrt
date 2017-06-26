@@ -66,6 +66,43 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Ocr.IOcrEngine).get_RecognizerLanguage(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Media.Ocr.IOcrEngineStatics _staticInstance;
+	public static Windows.Media.Ocr.IOcrEngineStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Ocr.IOcrEngineStatics);
+		return _staticInstance;
+	}
+	static UINT32 MaxImageDimension()
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Ocr.IOcrEngineStatics).get_MaxImageDimension(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(Windows.Globalization.Language) AvailableRecognizerLanguages()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Globalization.Language) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Ocr.IOcrEngineStatics).get_AvailableRecognizerLanguages(&_ret));
+		return _ret;
+	}
+	static bool IsLanguageSupported(Windows.Globalization.Language language)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Ocr.IOcrEngineStatics).abi_IsLanguageSupported(language, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Ocr.OcrEngine TryCreateFromLanguage(Windows.Globalization.Language language)
+	{
+		Windows.Media.Ocr.OcrEngine _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Ocr.IOcrEngineStatics).abi_TryCreateFromLanguage(language, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Ocr.OcrEngine TryCreateFromUserProfileLanguages()
+	{
+		Windows.Media.Ocr.OcrEngine _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Ocr.IOcrEngineStatics).abi_TryCreateFromUserProfileLanguages(&_ret));
+		return _ret;
+	}
 }
 
 interface OcrLine : Windows.Media.Ocr.IOcrLine

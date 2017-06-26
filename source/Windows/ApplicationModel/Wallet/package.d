@@ -610,6 +610,18 @@ extern(Windows):
 
 interface WalletManager
 {
+	private static Windows.ApplicationModel.Wallet.IWalletManagerStatics _staticInstance;
+	public static Windows.ApplicationModel.Wallet.IWalletManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Wallet.IWalletManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.WalletItemStore) RequestStoreAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.WalletItemStore) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Wallet.IWalletManagerStatics).abi_RequestStoreAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface WalletRelevantLocation : Windows.ApplicationModel.Wallet.IWalletRelevantLocation

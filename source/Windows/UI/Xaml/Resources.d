@@ -35,6 +35,22 @@ extern(Windows):
 
 interface CustomXamlResourceLoader : Windows.UI.Xaml.Resources.ICustomXamlResourceLoader, Windows.UI.Xaml.Resources.ICustomXamlResourceLoaderOverrides
 {
+	private static Windows.UI.Xaml.Resources.ICustomXamlResourceLoaderStatics _staticInstance;
+	public static Windows.UI.Xaml.Resources.ICustomXamlResourceLoaderStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Resources.ICustomXamlResourceLoaderStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.Resources.CustomXamlResourceLoader Current()
+	{
+		Windows.UI.Xaml.Resources.CustomXamlResourceLoader _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Resources.ICustomXamlResourceLoaderStatics).get_Current(&_ret));
+		return _ret;
+	}
+	static void Current(Windows.UI.Xaml.Resources.CustomXamlResourceLoader value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Resources.ICustomXamlResourceLoaderStatics).set_Current(value));
+	}
 }
 @makable!(CustomXamlResourceLoader, CustomXamlResourceLoader, Windows.UI.Xaml.Resources.ICustomXamlResourceLoaderFactory)
 class CustomXamlResourceLoaderT(Base) : AgileObject!Base, CustomXamlResourceLoader

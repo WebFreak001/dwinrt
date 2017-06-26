@@ -1420,6 +1420,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IBackEase).set_Amplitude(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.IBackEaseStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IBackEaseStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IBackEaseStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty AmplitudeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IBackEaseStatics).get_AmplitudeProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface BeginStoryboard : Windows.UI.Xaml.TriggerAction, Windows.UI.Xaml.Media.Animation.IBeginStoryboard
@@ -1434,6 +1447,19 @@ extern(Windows):
 	final void Storyboard(Windows.UI.Xaml.Media.Animation.Storyboard value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IBeginStoryboard).set_Storyboard(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.IBeginStoryboardStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IBeginStoryboardStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IBeginStoryboardStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty StoryboardProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IBeginStoryboardStatics).get_StoryboardProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -1459,6 +1485,25 @@ extern(Windows):
 	final void Bounciness(double value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IBounceEase).set_Bounciness(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.IBounceEaseStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IBounceEaseStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IBounceEaseStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty BouncesProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IBounceEaseStatics).get_BouncesProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty BouncinessProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IBounceEaseStatics).get_BouncinessProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -1519,6 +1564,43 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimation).set_EnableDependentAnimation(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.IColorAnimationStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IColorAnimationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IColorAnimationStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty FromProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IColorAnimationStatics).get_FromProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ToProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IColorAnimationStatics).get_ToProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ByProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IColorAnimationStatics).get_ByProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty EasingFunctionProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IColorAnimationStatics).get_EasingFunctionProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty EnableDependentAnimationProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IColorAnimationStatics).get_EnableDependentAnimationProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface ColorAnimationUsingKeyFrames : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IColorAnimationUsingKeyFrames
@@ -1539,6 +1621,19 @@ extern(Windows):
 	final void EnableDependentAnimation(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimationUsingKeyFrames).set_EnableDependentAnimation(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.IColorAnimationUsingKeyFramesStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IColorAnimationUsingKeyFramesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IColorAnimationUsingKeyFramesStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty EnableDependentAnimationProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IColorAnimationUsingKeyFramesStatics).get_EnableDependentAnimationProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -1564,6 +1659,25 @@ extern(Windows):
 	final void KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorKeyFrame).set_KeyTime(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.IColorKeyFrameStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IColorKeyFrameStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IColorKeyFrameStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty ValueProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IColorKeyFrameStatics).get_ValueProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty KeyTimeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IColorKeyFrameStatics).get_KeyTimeProperty(&_ret));
+		return _ret;
 	}
 }
 @makable!(ColorKeyFrame, ColorKeyFrame, Windows.UI.Xaml.Media.Animation.IColorKeyFrameFactory)
@@ -1661,6 +1775,35 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ICommonNavigationTransitionInfo).set_IsStaggeringEnabled(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.ICommonNavigationTransitionInfoStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.ICommonNavigationTransitionInfoStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.ICommonNavigationTransitionInfoStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsStaggeringEnabledProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ICommonNavigationTransitionInfoStatics).get_IsStaggeringEnabledProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsStaggerElementProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ICommonNavigationTransitionInfoStatics).get_IsStaggerElementProperty(&_ret));
+		return _ret;
+	}
+	static bool GetIsStaggerElement(Windows.UI.Xaml.UIElement element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ICommonNavigationTransitionInfoStatics).abi_GetIsStaggerElement(element, &_ret));
+		return _ret;
+	}
+	static void SetIsStaggerElement(Windows.UI.Xaml.UIElement element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ICommonNavigationTransitionInfoStatics).abi_SetIsStaggerElement(element, value));
+	}
 }
 
 interface ConnectedAnimation : Windows.UI.Xaml.Media.Animation.IConnectedAnimation, Windows.UI.Xaml.Media.Animation.IConnectedAnimation2
@@ -1669,12 +1812,12 @@ extern(Windows):
 	final EventRegistrationToken OnCompleted(void delegate(Windows.UI.Xaml.Media.Animation.ConnectedAnimation, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Completed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Animation.ConnectedAnimation, IInspectable), Windows.UI.Xaml.Media.Animation.ConnectedAnimation, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimation).add_Completed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Animation.ConnectedAnimation, IInspectable), Windows.UI.Xaml.Media.Animation.ConnectedAnimation, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Completed(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimation).remove_Completed(token));
 	}
 	final bool TryStart(Windows.UI.Xaml.UIElement destination)
 	{
@@ -1743,6 +1886,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService).abi_GetAnimation(key, &_ret));
 		return _ret;
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.IConnectedAnimationServiceStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IConnectedAnimationServiceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IConnectedAnimationServiceStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.Media.Animation.ConnectedAnimationService GetForCurrentView()
+	{
+		Windows.UI.Xaml.Media.Animation.ConnectedAnimationService _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimationServiceStatics).abi_GetForCurrentView(&_ret));
+		return _ret;
+	}
 }
 
 interface ContentThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.IContentThemeTransition
@@ -1768,6 +1924,25 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IContentThemeTransition).set_VerticalOffset(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.IContentThemeTransitionStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IContentThemeTransitionStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IContentThemeTransitionStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty HorizontalOffsetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContentThemeTransitionStatics).get_HorizontalOffsetProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty VerticalOffsetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContentThemeTransitionStatics).get_VerticalOffsetProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface ContinuumNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfo
@@ -1782,6 +1957,67 @@ extern(Windows):
 	final void ExitElement(Windows.UI.Xaml.UIElement value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfo).set_ExitElement(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty ExitElementProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics).get_ExitElementProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsEntranceElementProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics).get_IsEntranceElementProperty(&_ret));
+		return _ret;
+	}
+	static bool GetIsEntranceElement(Windows.UI.Xaml.UIElement element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics).abi_GetIsEntranceElement(element, &_ret));
+		return _ret;
+	}
+	static void SetIsEntranceElement(Windows.UI.Xaml.UIElement element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics).abi_SetIsEntranceElement(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty IsExitElementProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics).get_IsExitElementProperty(&_ret));
+		return _ret;
+	}
+	static bool GetIsExitElement(Windows.UI.Xaml.UIElement element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics).abi_GetIsExitElement(element, &_ret));
+		return _ret;
+	}
+	static void SetIsExitElement(Windows.UI.Xaml.UIElement element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics).abi_SetIsExitElement(element, value));
+	}
+	static Windows.UI.Xaml.DependencyProperty ExitElementContainerProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics).get_ExitElementContainerProperty(&_ret));
+		return _ret;
+	}
+	static bool GetExitElementContainer(Windows.UI.Xaml.Controls.ListViewBase element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics).abi_GetExitElementContainer(element, &_ret));
+		return _ret;
+	}
+	static void SetExitElementContainer(Windows.UI.Xaml.Controls.ListViewBase element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics).abi_SetExitElementContainer(element, value));
 	}
 }
 
@@ -1858,6 +2094,43 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimation).set_EnableDependentAnimation(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.IDoubleAnimationStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IDoubleAnimationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IDoubleAnimationStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty FromProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimationStatics).get_FromProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ToProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimationStatics).get_ToProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ByProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimationStatics).get_ByProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty EasingFunctionProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimationStatics).get_EasingFunctionProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty EnableDependentAnimationProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimationStatics).get_EnableDependentAnimationProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface DoubleAnimationUsingKeyFrames : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDoubleAnimationUsingKeyFrames
@@ -1878,6 +2151,19 @@ extern(Windows):
 	final void EnableDependentAnimation(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimationUsingKeyFrames).set_EnableDependentAnimation(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.IDoubleAnimationUsingKeyFramesStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IDoubleAnimationUsingKeyFramesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IDoubleAnimationUsingKeyFramesStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty EnableDependentAnimationProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimationUsingKeyFramesStatics).get_EnableDependentAnimationProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -1903,6 +2189,25 @@ extern(Windows):
 	final void KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame).set_KeyTime(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.IDoubleKeyFrameStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IDoubleKeyFrameStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrameStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty ValueProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrameStatics).get_ValueProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty KeyTimeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrameStatics).get_KeyTimeProperty(&_ret));
+		return _ret;
 	}
 }
 @makable!(DoubleKeyFrame, DoubleKeyFrame, Windows.UI.Xaml.Media.Animation.IDoubleKeyFrameFactory)
@@ -2000,6 +2305,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDragItemThemeAnimation).set_TargetName(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.IDragItemThemeAnimationStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IDragItemThemeAnimationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IDragItemThemeAnimationStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDragItemThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface DragOverThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation
@@ -2034,6 +2352,31 @@ extern(Windows):
 	final void Direction(Windows.UI.Xaml.Controls.Primitives.AnimationDirection value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation).set_Direction(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimationStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimationStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ToOffsetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimationStatics).get_ToOffsetProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty DirectionProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimationStatics).get_DirectionProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2084,6 +2427,37 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation).set_ExitTarget(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimationStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimationStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty EntranceTargetNameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimationStatics).get_EntranceTargetNameProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty EntranceTargetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimationStatics).get_EntranceTargetProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ExitTargetNameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimationStatics).get_ExitTargetNameProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ExitTargetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimationStatics).get_ExitTargetProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface DrillOutThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation
@@ -2129,6 +2503,37 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation).set_ExitTarget(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimationStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimationStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty EntranceTargetNameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimationStatics).get_EntranceTargetNameProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty EntranceTargetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimationStatics).get_EntranceTargetProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ExitTargetNameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimationStatics).get_ExitTargetNameProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ExitTargetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimationStatics).get_ExitTargetProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface DropTargetItemThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IDropTargetItemThemeAnimation
@@ -2143,6 +2548,19 @@ extern(Windows):
 	final void TargetName(HSTRING value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDropTargetItemThemeAnimation).set_TargetName(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.IDropTargetItemThemeAnimationStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IDropTargetItemThemeAnimationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IDropTargetItemThemeAnimationStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDropTargetItemThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2159,6 +2577,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEasingColorKeyFrame).set_EasingFunction(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.IEasingColorKeyFrameStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IEasingColorKeyFrameStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IEasingColorKeyFrameStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty EasingFunctionProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEasingColorKeyFrameStatics).get_EasingFunctionProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface EasingDoubleKeyFrame : Windows.UI.Xaml.Media.Animation.DoubleKeyFrame, Windows.UI.Xaml.Media.Animation.IEasingDoubleKeyFrame
@@ -2173,6 +2604,19 @@ extern(Windows):
 	final void EasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEasingDoubleKeyFrame).set_EasingFunction(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.IEasingDoubleKeyFrameStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IEasingDoubleKeyFrameStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IEasingDoubleKeyFrameStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty EasingFunctionProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEasingDoubleKeyFrameStatics).get_EasingFunctionProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2193,6 +2637,19 @@ extern(Windows):
 	{
 		double _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEasingFunctionBase).abi_Ease(normalizedTime, &_ret));
+		return _ret;
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.IEasingFunctionBaseStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IEasingFunctionBaseStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IEasingFunctionBaseStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty EasingModeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEasingFunctionBaseStatics).get_EasingModeProperty(&_ret));
 		return _ret;
 	}
 }
@@ -2227,6 +2684,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEasingPointKeyFrame).set_EasingFunction(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.IEasingPointKeyFrameStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IEasingPointKeyFrameStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IEasingPointKeyFrameStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty EasingFunctionProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEasingPointKeyFrameStatics).get_EasingFunctionProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface EdgeUIThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.IEdgeUIThemeTransition
@@ -2241,6 +2711,19 @@ extern(Windows):
 	final void Edge(Windows.UI.Xaml.Controls.Primitives.EdgeTransitionLocation value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEdgeUIThemeTransition).set_Edge(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.IEdgeUIThemeTransitionStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IEdgeUIThemeTransitionStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IEdgeUIThemeTransitionStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty EdgeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEdgeUIThemeTransitionStatics).get_EdgeProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2267,10 +2750,51 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IElasticEase).set_Springiness(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.IElasticEaseStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IElasticEaseStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IElasticEaseStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty OscillationsProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IElasticEaseStatics).get_OscillationsProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty SpringinessProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IElasticEaseStatics).get_SpringinessProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface EntranceNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.IEntranceNavigationTransitionInfo
 {
+	private static Windows.UI.Xaml.Media.Animation.IEntranceNavigationTransitionInfoStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IEntranceNavigationTransitionInfoStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IEntranceNavigationTransitionInfoStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsTargetElementProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEntranceNavigationTransitionInfoStatics).get_IsTargetElementProperty(&_ret));
+		return _ret;
+	}
+	static bool GetIsTargetElement(Windows.UI.Xaml.UIElement element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEntranceNavigationTransitionInfoStatics).abi_GetIsTargetElement(element, &_ret));
+		return _ret;
+	}
+	static void SetIsTargetElement(Windows.UI.Xaml.UIElement element, bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEntranceNavigationTransitionInfoStatics).abi_SetIsTargetElement(element, value));
+	}
 }
 
 interface EntranceThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.IEntranceThemeTransition
@@ -2306,6 +2830,31 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransition).set_IsStaggeringEnabled(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.IEntranceThemeTransitionStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IEntranceThemeTransitionStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransitionStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty FromHorizontalOffsetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransitionStatics).get_FromHorizontalOffsetProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty FromVerticalOffsetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransitionStatics).get_FromVerticalOffsetProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsStaggeringEnabledProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransitionStatics).get_IsStaggeringEnabledProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface ExponentialEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.IExponentialEase
@@ -2320,6 +2869,19 @@ extern(Windows):
 	final void Exponent(double value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IExponentialEase).set_Exponent(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.IExponentialEaseStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IExponentialEaseStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IExponentialEaseStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty ExponentProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IExponentialEaseStatics).get_ExponentProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2336,6 +2898,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IFadeInThemeAnimation).set_TargetName(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.IFadeInThemeAnimationStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IFadeInThemeAnimationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IFadeInThemeAnimationStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IFadeInThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface FadeOutThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IFadeOutThemeAnimation
@@ -2350,6 +2925,19 @@ extern(Windows):
 	final void TargetName(HSTRING value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IFadeOutThemeAnimation).set_TargetName(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.IFadeOutThemeAnimationStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IFadeOutThemeAnimationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IFadeOutThemeAnimationStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IFadeOutThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2380,6 +2968,18 @@ extern(Windows):
 
 interface KeyTimeHelper : Windows.UI.Xaml.Media.Animation.IKeyTimeHelper
 {
+	private static Windows.UI.Xaml.Media.Animation.IKeyTimeHelperStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IKeyTimeHelperStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IKeyTimeHelperStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.Media.Animation.KeyTime FromTimeSpan(Windows.Foundation.TimeSpan timeSpan)
+	{
+		Windows.UI.Xaml.Media.Animation.KeyTime _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IKeyTimeHelperStatics).abi_FromTimeSpan(timeSpan, &_ret));
+		return _ret;
+	}
 }
 
 interface LinearColorKeyFrame : Windows.UI.Xaml.Media.Animation.ColorKeyFrame, Windows.UI.Xaml.Media.Animation.ILinearColorKeyFrame
@@ -2406,6 +3006,19 @@ extern(Windows):
 	final void DefaultNavigationTransitionInfo(Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.INavigationThemeTransition).set_DefaultNavigationTransitionInfo(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.INavigationThemeTransitionStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.INavigationThemeTransitionStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.INavigationThemeTransitionStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty DefaultNavigationTransitionInfoProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.INavigationThemeTransitionStatics).get_DefaultNavigationTransitionInfoProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2451,6 +3064,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IObjectAnimationUsingKeyFrames).set_EnableDependentAnimation(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.IObjectAnimationUsingKeyFramesStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IObjectAnimationUsingKeyFramesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IObjectAnimationUsingKeyFramesStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty EnableDependentAnimationProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IObjectAnimationUsingKeyFramesStatics).get_EnableDependentAnimationProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface ObjectKeyFrame : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Media.Animation.IObjectKeyFrame
@@ -2475,6 +3101,25 @@ extern(Windows):
 	final void KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame).set_KeyTime(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.IObjectKeyFrameStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IObjectKeyFrameStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrameStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty ValueProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrameStatics).get_ValueProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty KeyTimeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrameStatics).get_KeyTimeProperty(&_ret));
+		return _ret;
 	}
 }
 @makable!(ObjectKeyFrame, ObjectKeyFrame, Windows.UI.Xaml.Media.Animation.IObjectKeyFrameFactory)
@@ -2572,6 +3217,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPaneThemeTransition).set_Edge(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.IPaneThemeTransitionStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IPaneThemeTransitionStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IPaneThemeTransitionStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty EdgeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPaneThemeTransitionStatics).get_EdgeProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface PointAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPointAnimation
@@ -2627,6 +3285,43 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimation).set_EnableDependentAnimation(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.IPointAnimationStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IPointAnimationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IPointAnimationStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty FromProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointAnimationStatics).get_FromProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ToProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointAnimationStatics).get_ToProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ByProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointAnimationStatics).get_ByProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty EasingFunctionProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointAnimationStatics).get_EasingFunctionProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty EnableDependentAnimationProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointAnimationStatics).get_EnableDependentAnimationProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface PointAnimationUsingKeyFrames : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPointAnimationUsingKeyFrames
@@ -2647,6 +3342,19 @@ extern(Windows):
 	final void EnableDependentAnimation(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimationUsingKeyFrames).set_EnableDependentAnimation(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.IPointAnimationUsingKeyFramesStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IPointAnimationUsingKeyFramesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IPointAnimationUsingKeyFramesStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty EnableDependentAnimationProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointAnimationUsingKeyFramesStatics).get_EnableDependentAnimationProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2672,6 +3380,25 @@ extern(Windows):
 	final void KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointKeyFrame).set_KeyTime(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.IPointKeyFrameStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IPointKeyFrameStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IPointKeyFrameStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty ValueProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointKeyFrameStatics).get_ValueProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty KeyTimeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointKeyFrameStatics).get_KeyTimeProperty(&_ret));
+		return _ret;
 	}
 }
 @makable!(PointKeyFrame, PointKeyFrame, Windows.UI.Xaml.Media.Animation.IPointKeyFrameFactory)
@@ -2769,6 +3496,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointerDownThemeAnimation).set_TargetName(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.IPointerDownThemeAnimationStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IPointerDownThemeAnimationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IPointerDownThemeAnimationStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointerDownThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface PointerUpThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPointerUpThemeAnimation
@@ -2783,6 +3523,19 @@ extern(Windows):
 	final void TargetName(HSTRING value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointerUpThemeAnimation).set_TargetName(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.IPointerUpThemeAnimationStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IPointerUpThemeAnimationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IPointerUpThemeAnimationStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointerUpThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2819,6 +3572,31 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation).set_FromVerticalOffset(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.IPopInThemeAnimationStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IPopInThemeAnimationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimationStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty FromHorizontalOffsetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimationStatics).get_FromHorizontalOffsetProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty FromVerticalOffsetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimationStatics).get_FromVerticalOffsetProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface PopOutThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IPopOutThemeAnimation
@@ -2833,6 +3611,19 @@ extern(Windows):
 	final void TargetName(HSTRING value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopOutThemeAnimation).set_TargetName(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.IPopOutThemeAnimationStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IPopOutThemeAnimationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IPopOutThemeAnimationStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPopOutThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2859,6 +3650,25 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopupThemeTransition).set_FromVerticalOffset(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.IPopupThemeTransitionStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IPopupThemeTransitionStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IPopupThemeTransitionStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty FromHorizontalOffsetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPopupThemeTransitionStatics).get_FromHorizontalOffsetProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty FromVerticalOffsetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPopupThemeTransitionStatics).get_FromVerticalOffsetProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface PowerEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows.UI.Xaml.Media.Animation.IPowerEase
@@ -2873,6 +3683,19 @@ extern(Windows):
 	final void Power(double value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPowerEase).set_Power(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.IPowerEaseStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IPowerEaseStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IPowerEaseStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty PowerProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPowerEaseStatics).get_PowerProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2894,6 +3717,48 @@ interface ReorderThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, W
 
 interface RepeatBehaviorHelper : Windows.UI.Xaml.Media.Animation.IRepeatBehaviorHelper
 {
+	private static Windows.UI.Xaml.Media.Animation.IRepeatBehaviorHelperStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IRepeatBehaviorHelperStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IRepeatBehaviorHelperStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.Media.Animation.RepeatBehavior Forever()
+	{
+		Windows.UI.Xaml.Media.Animation.RepeatBehavior _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IRepeatBehaviorHelperStatics).get_Forever(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Media.Animation.RepeatBehavior FromCount(double count)
+	{
+		Windows.UI.Xaml.Media.Animation.RepeatBehavior _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IRepeatBehaviorHelperStatics).abi_FromCount(count, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Media.Animation.RepeatBehavior FromDuration(Windows.Foundation.TimeSpan duration)
+	{
+		Windows.UI.Xaml.Media.Animation.RepeatBehavior _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IRepeatBehaviorHelperStatics).abi_FromDuration(duration, &_ret));
+		return _ret;
+	}
+	static bool GetHasCount(Windows.UI.Xaml.Media.Animation.RepeatBehavior target)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IRepeatBehaviorHelperStatics).abi_GetHasCount(target, &_ret));
+		return _ret;
+	}
+	static bool GetHasDuration(Windows.UI.Xaml.Media.Animation.RepeatBehavior target)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IRepeatBehaviorHelperStatics).abi_GetHasDuration(target, &_ret));
+		return _ret;
+	}
+	static bool Equals(Windows.UI.Xaml.Media.Animation.RepeatBehavior target, Windows.UI.Xaml.Media.Animation.RepeatBehavior value)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IRepeatBehaviorHelperStatics).abi_Equals(target, value, &_ret));
+		return _ret;
+	}
 }
 
 interface RepositionThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation
@@ -2929,6 +3794,31 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation).set_FromVerticalOffset(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimationStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimationStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty FromHorizontalOffsetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimationStatics).get_FromHorizontalOffsetProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty FromVerticalOffsetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimationStatics).get_FromVerticalOffsetProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface RepositionThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, Windows.UI.Xaml.Media.Animation.IRepositionThemeTransition, Windows.UI.Xaml.Media.Animation.IRepositionThemeTransition2
@@ -2943,6 +3833,19 @@ extern(Windows):
 	final void IsStaggeringEnabled(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeTransition2).set_IsStaggeringEnabled(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.IRepositionThemeTransitionStatics2 _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IRepositionThemeTransitionStatics2 staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IRepositionThemeTransitionStatics2);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsStaggeringEnabledProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeTransitionStatics2).get_IsStaggeringEnabledProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2967,6 +3870,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplineColorKeyFrame).set_KeySpline(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.ISplineColorKeyFrameStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.ISplineColorKeyFrameStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.ISplineColorKeyFrameStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty KeySplineProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplineColorKeyFrameStatics).get_KeySplineProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface SplineDoubleKeyFrame : Windows.UI.Xaml.Media.Animation.DoubleKeyFrame, Windows.UI.Xaml.Media.Animation.ISplineDoubleKeyFrame
@@ -2982,6 +3898,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplineDoubleKeyFrame).set_KeySpline(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.ISplineDoubleKeyFrameStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.ISplineDoubleKeyFrameStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.ISplineDoubleKeyFrameStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty KeySplineProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplineDoubleKeyFrameStatics).get_KeySplineProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface SplinePointKeyFrame : Windows.UI.Xaml.Media.Animation.PointKeyFrame, Windows.UI.Xaml.Media.Animation.ISplinePointKeyFrame
@@ -2996,6 +3925,19 @@ extern(Windows):
 	final void KeySpline(Windows.UI.Xaml.Media.Animation.KeySpline value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplinePointKeyFrame).set_KeySpline(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.ISplinePointKeyFrameStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.ISplinePointKeyFrameStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.ISplinePointKeyFrameStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty KeySplineProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplinePointKeyFrameStatics).get_KeySplineProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -3112,6 +4054,79 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).set_ContentTranslationOffset(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty OpenedTargetNameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics).get_OpenedTargetNameProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty OpenedTargetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics).get_OpenedTargetProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ClosedTargetNameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics).get_ClosedTargetNameProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ClosedTargetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics).get_ClosedTargetProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ContentTargetNameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics).get_ContentTargetNameProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ContentTargetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics).get_ContentTargetProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty OpenedLengthProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics).get_OpenedLengthProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ClosedLengthProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics).get_ClosedLengthProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty OffsetFromCenterProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics).get_OffsetFromCenterProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ContentTranslationDirectionProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics).get_ContentTranslationDirectionProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ContentTranslationOffsetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics).get_ContentTranslationOffsetProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface SplitOpenThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation
@@ -3227,6 +4242,79 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).set_ContentTranslationOffset(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty OpenedTargetNameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics).get_OpenedTargetNameProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty OpenedTargetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics).get_OpenedTargetProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ClosedTargetNameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics).get_ClosedTargetNameProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ClosedTargetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics).get_ClosedTargetProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ContentTargetNameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics).get_ContentTargetNameProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ContentTargetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics).get_ContentTargetProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty OpenedLengthProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics).get_OpenedLengthProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ClosedLengthProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics).get_ClosedLengthProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty OffsetFromCenterProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics).get_OffsetFromCenterProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ContentTranslationDirectionProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics).get_ContentTranslationDirectionProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ContentTranslationOffsetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics).get_ContentTranslationOffsetProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface Storyboard : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.IStoryboard
@@ -3278,6 +4366,49 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IStoryboard).abi_SkipToFill());
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.IStoryboardStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.IStoryboardStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.IStoryboardStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty TargetPropertyProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IStoryboardStatics).get_TargetPropertyProperty(&_ret));
+		return _ret;
+	}
+	static HSTRING GetTargetProperty(Windows.UI.Xaml.Media.Animation.Timeline element)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IStoryboardStatics).abi_GetTargetProperty(element, &_ret));
+		return _ret;
+	}
+	static void SetTargetProperty(Windows.UI.Xaml.Media.Animation.Timeline element, HSTRING path)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IStoryboardStatics).abi_SetTargetProperty(element, path));
+	}
+	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IStoryboardStatics).get_TargetNameProperty(&_ret));
+		return _ret;
+	}
+	static HSTRING GetTargetName(Windows.UI.Xaml.Media.Animation.Timeline element)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IStoryboardStatics).abi_GetTargetName(element, &_ret));
+		return _ret;
+	}
+	static void SetTargetName(Windows.UI.Xaml.Media.Animation.Timeline element, HSTRING name)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IStoryboardStatics).abi_SetTargetName(element, name));
+	}
+	static void SetTarget(Windows.UI.Xaml.Media.Animation.Timeline timeline, Windows.UI.Xaml.DependencyObject target)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IStoryboardStatics).abi_SetTarget(timeline, target));
+	}
 }
 
 interface SuppressNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo, Windows.UI.Xaml.Media.Animation.ISuppressNavigationTransitionInfo
@@ -3317,6 +4448,31 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation).set_FromVerticalOffset(value));
 	}
+
+	private static Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimationStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimationStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty FromHorizontalOffsetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimationStatics).get_FromHorizontalOffsetProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty FromVerticalOffsetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimationStatics).get_FromVerticalOffsetProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface SwipeHintThemeAnimation : Windows.UI.Xaml.Media.Animation.Timeline, Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation
@@ -3351,6 +4507,31 @@ extern(Windows):
 	final void ToVerticalOffset(double value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation).set_ToVerticalOffset(value));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimationStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimationStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ToHorizontalOffsetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimationStatics).get_ToHorizontalOffsetProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ToVerticalOffsetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimationStatics).get_ToVerticalOffsetProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -3420,12 +4601,65 @@ extern(Windows):
 	final EventRegistrationToken OnCompleted(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Completed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).add_Completed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Completed(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).remove_Completed(token));
+	}
+
+	private static Windows.UI.Xaml.Media.Animation.ITimelineStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Animation.ITimelineStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Animation.ITimelineStatics);
+		return _staticInstance;
+	}
+	static bool AllowDependentAnimations()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ITimelineStatics).get_AllowDependentAnimations(&_ret));
+		return _ret;
+	}
+	static void AllowDependentAnimations(bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ITimelineStatics).set_AllowDependentAnimations(value));
+	}
+	static Windows.UI.Xaml.DependencyProperty AutoReverseProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ITimelineStatics).get_AutoReverseProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty BeginTimeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ITimelineStatics).get_BeginTimeProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty DurationProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ITimelineStatics).get_DurationProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty SpeedRatioProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ITimelineStatics).get_SpeedRatioProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty FillBehaviorProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ITimelineStatics).get_FillBehaviorProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty RepeatBehaviorProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ITimelineStatics).get_RepeatBehaviorProperty(&_ret));
+		return _ret;
 	}
 }
 @makable!(Timeline, Timeline, Windows.UI.Xaml.Media.Animation.ITimelineFactory)

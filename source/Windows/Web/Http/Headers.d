@@ -877,6 +877,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Web.Http.Headers.IHttpChallengeHeaderValueStatics _staticInstance;
+	public static Windows.Web.Http.Headers.IHttpChallengeHeaderValueStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Web.Http.Headers.IHttpChallengeHeaderValueStatics);
+		return _staticInstance;
+	}
+	static Windows.Web.Http.Headers.HttpChallengeHeaderValue Parse(HSTRING input)
+	{
+		Windows.Web.Http.Headers.HttpChallengeHeaderValue _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpChallengeHeaderValueStatics).abi_Parse(input, &_ret));
+		return _ret;
+	}
+	static bool TryParse(HSTRING input, Windows.Web.Http.Headers.HttpChallengeHeaderValue* out_challengeHeaderValue)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpChallengeHeaderValueStatics).abi_TryParse(input, out_challengeHeaderValue, &_ret));
+		return _ret;
+	}
 }
 
 interface HttpChallengeHeaderValueCollection : Windows.Web.Http.Headers.IHttpChallengeHeaderValueCollection, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpChallengeHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpChallengeHeaderValue), Windows.Foundation.IStringable
@@ -973,6 +992,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Web.Http.Headers.IHttpConnectionOptionHeaderValueStatics _staticInstance;
+	public static Windows.Web.Http.Headers.IHttpConnectionOptionHeaderValueStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Web.Http.Headers.IHttpConnectionOptionHeaderValueStatics);
+		return _staticInstance;
+	}
+	static Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue Parse(HSTRING input)
+	{
+		Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpConnectionOptionHeaderValueStatics).abi_Parse(input, &_ret));
+		return _ret;
+	}
+	static bool TryParse(HSTRING input, Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue* out_connectionOptionHeaderValue)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpConnectionOptionHeaderValueStatics).abi_TryParse(input, out_connectionOptionHeaderValue, &_ret));
+		return _ret;
+	}
 }
 
 interface HttpConnectionOptionHeaderValueCollection : Windows.Web.Http.Headers.IHttpConnectionOptionHeaderValueCollection, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpConnectionOptionHeaderValue), Windows.Foundation.IStringable
@@ -1067,6 +1105,25 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Web.Http.Headers.IHttpContentCodingHeaderValueStatics _staticInstance;
+	public static Windows.Web.Http.Headers.IHttpContentCodingHeaderValueStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Web.Http.Headers.IHttpContentCodingHeaderValueStatics);
+		return _staticInstance;
+	}
+	static Windows.Web.Http.Headers.HttpContentCodingHeaderValue Parse(HSTRING input)
+	{
+		Windows.Web.Http.Headers.HttpContentCodingHeaderValue _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpContentCodingHeaderValueStatics).abi_Parse(input, &_ret));
+		return _ret;
+	}
+	static bool TryParse(HSTRING input, Windows.Web.Http.Headers.HttpContentCodingHeaderValue* out_contentCodingHeaderValue)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpContentCodingHeaderValueStatics).abi_TryParse(input, out_contentCodingHeaderValue, &_ret));
 		return _ret;
 	}
 }
@@ -1169,6 +1226,25 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Web.Http.Headers.IHttpContentCodingWithQualityHeaderValueStatics _staticInstance;
+	public static Windows.Web.Http.Headers.IHttpContentCodingWithQualityHeaderValueStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Web.Http.Headers.IHttpContentCodingWithQualityHeaderValueStatics);
+		return _staticInstance;
+	}
+	static Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue Parse(HSTRING input)
+	{
+		Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpContentCodingWithQualityHeaderValueStatics).abi_Parse(input, &_ret));
+		return _ret;
+	}
+	static bool TryParse(HSTRING input, Windows.Web.Http.Headers.HttpContentCodingWithQualityHeaderValue* out_contentCodingWithQualityHeaderValue)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpContentCodingWithQualityHeaderValueStatics).abi_TryParse(input, out_contentCodingWithQualityHeaderValue, &_ret));
 		return _ret;
 	}
 }
@@ -1315,6 +1391,25 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Web.Http.Headers.IHttpContentDispositionHeaderValueStatics _staticInstance;
+	public static Windows.Web.Http.Headers.IHttpContentDispositionHeaderValueStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Web.Http.Headers.IHttpContentDispositionHeaderValueStatics);
+		return _staticInstance;
+	}
+	static Windows.Web.Http.Headers.HttpContentDispositionHeaderValue Parse(HSTRING input)
+	{
+		Windows.Web.Http.Headers.HttpContentDispositionHeaderValue _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpContentDispositionHeaderValueStatics).abi_Parse(input, &_ret));
+		return _ret;
+	}
+	static bool TryParse(HSTRING input, Windows.Web.Http.Headers.HttpContentDispositionHeaderValue* out_contentDispositionHeaderValue)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpContentDispositionHeaderValueStatics).abi_TryParse(input, out_contentDispositionHeaderValue, &_ret));
 		return _ret;
 	}
 }
@@ -1511,6 +1606,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Web.Http.Headers.IHttpContentRangeHeaderValueStatics _staticInstance;
+	public static Windows.Web.Http.Headers.IHttpContentRangeHeaderValueStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Web.Http.Headers.IHttpContentRangeHeaderValueStatics);
+		return _staticInstance;
+	}
+	static Windows.Web.Http.Headers.HttpContentRangeHeaderValue Parse(HSTRING input)
+	{
+		Windows.Web.Http.Headers.HttpContentRangeHeaderValue _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpContentRangeHeaderValueStatics).abi_Parse(input, &_ret));
+		return _ret;
+	}
+	static bool TryParse(HSTRING input, Windows.Web.Http.Headers.HttpContentRangeHeaderValue* out_contentRangeHeaderValue)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpContentRangeHeaderValueStatics).abi_TryParse(input, out_contentRangeHeaderValue, &_ret));
+		return _ret;
+	}
 }
 
 interface HttpCookiePairHeaderValue : Windows.Web.Http.Headers.IHttpCookiePairHeaderValue, Windows.Foundation.IStringable
@@ -1536,6 +1650,25 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Web.Http.Headers.IHttpCookiePairHeaderValueStatics _staticInstance;
+	public static Windows.Web.Http.Headers.IHttpCookiePairHeaderValueStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Web.Http.Headers.IHttpCookiePairHeaderValueStatics);
+		return _staticInstance;
+	}
+	static Windows.Web.Http.Headers.HttpCookiePairHeaderValue Parse(HSTRING input)
+	{
+		Windows.Web.Http.Headers.HttpCookiePairHeaderValue _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpCookiePairHeaderValueStatics).abi_Parse(input, &_ret));
+		return _ret;
+	}
+	static bool TryParse(HSTRING input, Windows.Web.Http.Headers.HttpCookiePairHeaderValue* out_cookiePairHeaderValue)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpCookiePairHeaderValueStatics).abi_TryParse(input, out_cookiePairHeaderValue, &_ret));
 		return _ret;
 	}
 }
@@ -1646,6 +1779,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Web.Http.Headers.IHttpCredentialsHeaderValueStatics _staticInstance;
+	public static Windows.Web.Http.Headers.IHttpCredentialsHeaderValueStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Web.Http.Headers.IHttpCredentialsHeaderValueStatics);
+		return _staticInstance;
+	}
+	static Windows.Web.Http.Headers.HttpCredentialsHeaderValue Parse(HSTRING input)
+	{
+		Windows.Web.Http.Headers.HttpCredentialsHeaderValue _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpCredentialsHeaderValueStatics).abi_Parse(input, &_ret));
+		return _ret;
+	}
+	static bool TryParse(HSTRING input, Windows.Web.Http.Headers.HttpCredentialsHeaderValue* out_credentialsHeaderValue)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpCredentialsHeaderValueStatics).abi_TryParse(input, out_credentialsHeaderValue, &_ret));
+		return _ret;
+	}
 }
 
 interface HttpDateOrDeltaHeaderValue : Windows.Web.Http.Headers.IHttpDateOrDeltaHeaderValue, Windows.Foundation.IStringable
@@ -1667,6 +1819,25 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Web.Http.Headers.IHttpDateOrDeltaHeaderValueStatics _staticInstance;
+	public static Windows.Web.Http.Headers.IHttpDateOrDeltaHeaderValueStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Web.Http.Headers.IHttpDateOrDeltaHeaderValueStatics);
+		return _staticInstance;
+	}
+	static Windows.Web.Http.Headers.HttpDateOrDeltaHeaderValue Parse(HSTRING input)
+	{
+		Windows.Web.Http.Headers.HttpDateOrDeltaHeaderValue _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpDateOrDeltaHeaderValueStatics).abi_Parse(input, &_ret));
+		return _ret;
+	}
+	static bool TryParse(HSTRING input, Windows.Web.Http.Headers.HttpDateOrDeltaHeaderValue* out_dateOrDeltaHeaderValue)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpDateOrDeltaHeaderValueStatics).abi_TryParse(input, out_dateOrDeltaHeaderValue, &_ret));
 		return _ret;
 	}
 }
@@ -1700,6 +1871,25 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Web.Http.Headers.IHttpExpectationHeaderValueStatics _staticInstance;
+	public static Windows.Web.Http.Headers.IHttpExpectationHeaderValueStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Web.Http.Headers.IHttpExpectationHeaderValueStatics);
+		return _staticInstance;
+	}
+	static Windows.Web.Http.Headers.HttpExpectationHeaderValue Parse(HSTRING input)
+	{
+		Windows.Web.Http.Headers.HttpExpectationHeaderValue _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpExpectationHeaderValueStatics).abi_Parse(input, &_ret));
+		return _ret;
+	}
+	static bool TryParse(HSTRING input, Windows.Web.Http.Headers.HttpExpectationHeaderValue* out_expectationHeaderValue)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpExpectationHeaderValueStatics).abi_TryParse(input, out_expectationHeaderValue, &_ret));
 		return _ret;
 	}
 }
@@ -1883,6 +2073,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Web.Http.Headers.IHttpLanguageRangeWithQualityHeaderValueStatics _staticInstance;
+	public static Windows.Web.Http.Headers.IHttpLanguageRangeWithQualityHeaderValueStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Web.Http.Headers.IHttpLanguageRangeWithQualityHeaderValueStatics);
+		return _staticInstance;
+	}
+	static Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue Parse(HSTRING input)
+	{
+		Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpLanguageRangeWithQualityHeaderValueStatics).abi_Parse(input, &_ret));
+		return _ret;
+	}
+	static bool TryParse(HSTRING input, Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue* out_languageRangeWithQualityHeaderValue)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpLanguageRangeWithQualityHeaderValueStatics).abi_TryParse(input, out_languageRangeWithQualityHeaderValue, &_ret));
+		return _ret;
+	}
 }
 
 interface HttpLanguageRangeWithQualityHeaderValueCollection : Windows.Web.Http.Headers.IHttpLanguageRangeWithQualityHeaderValueCollection, Windows.Foundation.Collections.IVector!(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue), Windows.Foundation.Collections.IIterable!(Windows.Web.Http.Headers.HttpLanguageRangeWithQualityHeaderValue), Windows.Foundation.IStringable
@@ -1999,6 +2208,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Web.Http.Headers.IHttpMediaTypeHeaderValueStatics _staticInstance;
+	public static Windows.Web.Http.Headers.IHttpMediaTypeHeaderValueStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Web.Http.Headers.IHttpMediaTypeHeaderValueStatics);
+		return _staticInstance;
+	}
+	static Windows.Web.Http.Headers.HttpMediaTypeHeaderValue Parse(HSTRING input)
+	{
+		Windows.Web.Http.Headers.HttpMediaTypeHeaderValue _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpMediaTypeHeaderValueStatics).abi_Parse(input, &_ret));
+		return _ret;
+	}
+	static bool TryParse(HSTRING input, Windows.Web.Http.Headers.HttpMediaTypeHeaderValue* out_mediaTypeHeaderValue)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpMediaTypeHeaderValueStatics).abi_TryParse(input, out_mediaTypeHeaderValue, &_ret));
+		return _ret;
+	}
 }
 
 interface HttpMediaTypeWithQualityHeaderValue : Windows.Web.Http.Headers.IHttpMediaTypeWithQualityHeaderValue, Windows.Foundation.IStringable
@@ -2044,6 +2272,25 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Web.Http.Headers.IHttpMediaTypeWithQualityHeaderValueStatics _staticInstance;
+	public static Windows.Web.Http.Headers.IHttpMediaTypeWithQualityHeaderValueStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Web.Http.Headers.IHttpMediaTypeWithQualityHeaderValueStatics);
+		return _staticInstance;
+	}
+	static Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue Parse(HSTRING input)
+	{
+		Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpMediaTypeWithQualityHeaderValueStatics).abi_Parse(input, &_ret));
+		return _ret;
+	}
+	static bool TryParse(HSTRING input, Windows.Web.Http.Headers.HttpMediaTypeWithQualityHeaderValue* out_mediaTypeWithQualityHeaderValue)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpMediaTypeWithQualityHeaderValueStatics).abi_TryParse(input, out_mediaTypeWithQualityHeaderValue, &_ret));
 		return _ret;
 	}
 }
@@ -2231,6 +2478,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Web.Http.Headers.IHttpNameValueHeaderValueStatics _staticInstance;
+	public static Windows.Web.Http.Headers.IHttpNameValueHeaderValueStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Web.Http.Headers.IHttpNameValueHeaderValueStatics);
+		return _staticInstance;
+	}
+	static Windows.Web.Http.Headers.HttpNameValueHeaderValue Parse(HSTRING input)
+	{
+		Windows.Web.Http.Headers.HttpNameValueHeaderValue _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpNameValueHeaderValueStatics).abi_Parse(input, &_ret));
+		return _ret;
+	}
+	static bool TryParse(HSTRING input, Windows.Web.Http.Headers.HttpNameValueHeaderValue* out_nameValueHeaderValue)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpNameValueHeaderValueStatics).abi_TryParse(input, out_nameValueHeaderValue, &_ret));
+		return _ret;
+	}
 }
 
 interface HttpProductHeaderValue : Windows.Web.Http.Headers.IHttpProductHeaderValue, Windows.Foundation.IStringable
@@ -2254,6 +2520,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Web.Http.Headers.IHttpProductHeaderValueStatics _staticInstance;
+	public static Windows.Web.Http.Headers.IHttpProductHeaderValueStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Web.Http.Headers.IHttpProductHeaderValueStatics);
+		return _staticInstance;
+	}
+	static Windows.Web.Http.Headers.HttpProductHeaderValue Parse(HSTRING input)
+	{
+		Windows.Web.Http.Headers.HttpProductHeaderValue _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpProductHeaderValueStatics).abi_Parse(input, &_ret));
+		return _ret;
+	}
+	static bool TryParse(HSTRING input, Windows.Web.Http.Headers.HttpProductHeaderValue* out_productHeaderValue)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpProductHeaderValueStatics).abi_TryParse(input, out_productHeaderValue, &_ret));
+		return _ret;
+	}
 }
 
 interface HttpProductInfoHeaderValue : Windows.Web.Http.Headers.IHttpProductInfoHeaderValue, Windows.Foundation.IStringable
@@ -2275,6 +2560,25 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Web.Http.Headers.IHttpProductInfoHeaderValueStatics _staticInstance;
+	public static Windows.Web.Http.Headers.IHttpProductInfoHeaderValueStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Web.Http.Headers.IHttpProductInfoHeaderValueStatics);
+		return _staticInstance;
+	}
+	static Windows.Web.Http.Headers.HttpProductInfoHeaderValue Parse(HSTRING input)
+	{
+		Windows.Web.Http.Headers.HttpProductInfoHeaderValue _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpProductInfoHeaderValueStatics).abi_Parse(input, &_ret));
+		return _ret;
+	}
+	static bool TryParse(HSTRING input, Windows.Web.Http.Headers.HttpProductInfoHeaderValue* out_productInfoHeaderValue)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpProductInfoHeaderValueStatics).abi_TryParse(input, out_productInfoHeaderValue, &_ret));
 		return _ret;
 	}
 }
@@ -2723,6 +3027,25 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Web.Http.Headers.IHttpTransferCodingHeaderValueStatics _staticInstance;
+	public static Windows.Web.Http.Headers.IHttpTransferCodingHeaderValueStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Web.Http.Headers.IHttpTransferCodingHeaderValueStatics);
+		return _staticInstance;
+	}
+	static Windows.Web.Http.Headers.HttpTransferCodingHeaderValue Parse(HSTRING input)
+	{
+		Windows.Web.Http.Headers.HttpTransferCodingHeaderValue _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpTransferCodingHeaderValueStatics).abi_Parse(input, &_ret));
+		return _ret;
+	}
+	static bool TryParse(HSTRING input, Windows.Web.Http.Headers.HttpTransferCodingHeaderValue* out_transferCodingHeaderValue)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Web.Http.Headers.IHttpTransferCodingHeaderValueStatics).abi_TryParse(input, out_transferCodingHeaderValue, &_ret));
 		return _ret;
 	}
 }

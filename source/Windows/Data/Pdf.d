@@ -90,6 +90,37 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Data.Pdf.IPdfDocument).get_IsPasswordProtected(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Data.Pdf.IPdfDocumentStatics _staticInstance;
+	public static Windows.Data.Pdf.IPdfDocumentStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Data.Pdf.IPdfDocumentStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument) LoadFromFileAsync(Windows.Storage.IStorageFile file)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument) _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Pdf.IPdfDocumentStatics).abi_LoadFromFileAsync(file, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument) LoadFromFileWithPasswordAsync(Windows.Storage.IStorageFile file, HSTRING password)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument) _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Pdf.IPdfDocumentStatics).abi_LoadFromFileWithPasswordAsync(file, password, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument) LoadFromStreamAsync(Windows.Storage.Streams.IRandomAccessStream inputStream)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument) _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Pdf.IPdfDocumentStatics).abi_LoadFromStreamAsync(inputStream, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument) LoadFromStreamWithPasswordAsync(Windows.Storage.Streams.IRandomAccessStream inputStream, HSTRING password)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument) _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Pdf.IPdfDocumentStatics).abi_LoadFromStreamWithPasswordAsync(inputStream, password, &_ret));
+		return _ret;
+	}
 }
 
 interface PdfPage : Windows.Data.Pdf.IPdfPage, Windows.Foundation.IClosable

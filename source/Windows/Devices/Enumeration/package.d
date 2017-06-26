@@ -354,17 +354,42 @@ extern(Windows):
 	final EventRegistrationToken OnAccessChanged(void delegate(Windows.Devices.Enumeration.DeviceAccessInformation, Windows.Devices.Enumeration.DeviceAccessChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AccessChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceAccessInformation, Windows.Devices.Enumeration.DeviceAccessChangedEventArgs), Windows.Devices.Enumeration.DeviceAccessInformation, Windows.Devices.Enumeration.DeviceAccessChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceAccessInformation).add_AccessChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceAccessInformation, Windows.Devices.Enumeration.DeviceAccessChangedEventArgs), Windows.Devices.Enumeration.DeviceAccessInformation, Windows.Devices.Enumeration.DeviceAccessChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAccessChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_AccessChanged(cookie));
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceAccessInformation).remove_AccessChanged(cookie));
 	}
 	final Windows.Devices.Enumeration.DeviceAccessStatus CurrentStatus()
 	{
 		Windows.Devices.Enumeration.DeviceAccessStatus _ret;
 		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceAccessInformation).get_CurrentStatus(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Devices.Enumeration.IDeviceAccessInformationStatics _staticInstance;
+	public static Windows.Devices.Enumeration.IDeviceAccessInformationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Enumeration.IDeviceAccessInformationStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.Enumeration.DeviceAccessInformation CreateFromId(HSTRING deviceId)
+	{
+		Windows.Devices.Enumeration.DeviceAccessInformation _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Enumeration.IDeviceAccessInformationStatics).abi_CreateFromId(deviceId, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Enumeration.DeviceAccessInformation CreateFromDeviceClassId(GUID deviceClassId)
+	{
+		Windows.Devices.Enumeration.DeviceAccessInformation _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Enumeration.IDeviceAccessInformationStatics).abi_CreateFromDeviceClassId(deviceClassId, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Enumeration.DeviceAccessInformation CreateFromDeviceClass(Windows.Devices.Enumeration.DeviceClass deviceClass)
+	{
+		Windows.Devices.Enumeration.DeviceAccessInformation _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Enumeration.IDeviceAccessInformationStatics).abi_CreateFromDeviceClass(deviceClass, &_ret));
 		return _ret;
 	}
 }
@@ -458,6 +483,73 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformation2).get_Pairing(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Devices.Enumeration.IDeviceInformationStatics _staticInstance;
+	public static Windows.Devices.Enumeration.IDeviceInformationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Enumeration.IDeviceInformationStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation) CreateFromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Enumeration.IDeviceInformationStatics).abi_CreateFromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation) CreateFromIdAsyncAdditionalProperties(HSTRING deviceId, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Enumeration.IDeviceInformationStatics).abi_CreateFromIdAsyncAdditionalProperties(deviceId, additionalProperties, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) FindAllAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Enumeration.IDeviceInformationStatics).abi_FindAllAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) FindAllAsyncDeviceClass(Windows.Devices.Enumeration.DeviceClass deviceClass)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Enumeration.IDeviceInformationStatics).abi_FindAllAsyncDeviceClass(deviceClass, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) FindAllAsyncAqsFilter(HSTRING aqsFilter)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Enumeration.IDeviceInformationStatics).abi_FindAllAsyncAqsFilter(aqsFilter, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) FindAllAsyncAqsFilterAndAdditionalProperties(HSTRING aqsFilter, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Enumeration.IDeviceInformationStatics).abi_FindAllAsyncAqsFilterAndAdditionalProperties(aqsFilter, additionalProperties, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Enumeration.DeviceWatcher CreateWatcher()
+	{
+		Windows.Devices.Enumeration.DeviceWatcher _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Enumeration.IDeviceInformationStatics).abi_CreateWatcher(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Enumeration.DeviceWatcher CreateWatcherDeviceClass(Windows.Devices.Enumeration.DeviceClass deviceClass)
+	{
+		Windows.Devices.Enumeration.DeviceWatcher _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Enumeration.IDeviceInformationStatics).abi_CreateWatcherDeviceClass(deviceClass, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Enumeration.DeviceWatcher CreateWatcherAqsFilter(HSTRING aqsFilter)
+	{
+		Windows.Devices.Enumeration.DeviceWatcher _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Enumeration.IDeviceInformationStatics).abi_CreateWatcherAqsFilter(aqsFilter, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Enumeration.DeviceWatcher CreateWatcherAqsFilterAndAdditionalProperties(HSTRING aqsFilter, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties)
+	{
+		Windows.Devices.Enumeration.DeviceWatcher _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Enumeration.IDeviceInformationStatics).abi_CreateWatcherAqsFilterAndAdditionalProperties(aqsFilter, additionalProperties, &_ret));
+		return _ret;
+	}
 }
 
 interface DeviceInformationCollection : Windows.Foundation.Collections.IVectorView!(Windows.Devices.Enumeration.DeviceInformation), Windows.Foundation.Collections.IIterable!(Windows.Devices.Enumeration.DeviceInformation)
@@ -513,12 +605,12 @@ extern(Windows):
 	final EventRegistrationToken OnPairingRequested(void delegate(Windows.Devices.Enumeration.DeviceInformationCustomPairing, Windows.Devices.Enumeration.DevicePairingRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PairingRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceInformationCustomPairing, Windows.Devices.Enumeration.DevicePairingRequestedEventArgs), Windows.Devices.Enumeration.DeviceInformationCustomPairing, Windows.Devices.Enumeration.DevicePairingRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformationCustomPairing).add_PairingRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceInformationCustomPairing, Windows.Devices.Enumeration.DevicePairingRequestedEventArgs), Windows.Devices.Enumeration.DeviceInformationCustomPairing, Windows.Devices.Enumeration.DevicePairingRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePairingRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PairingRequested(token));
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformationCustomPairing).remove_PairingRequested(token));
 	}
 }
 
@@ -571,6 +663,19 @@ extern(Windows):
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceUnpairingResult) _ret;
 		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceInformationPairing2).abi_UnpairAsync(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Devices.Enumeration.IDeviceInformationPairingStatics _staticInstance;
+	public static Windows.Devices.Enumeration.IDeviceInformationPairingStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Enumeration.IDeviceInformationPairingStatics);
+		return _staticInstance;
+	}
+	static bool TryRegisterForAllInboundPairingRequests(Windows.Devices.Enumeration.DevicePairingKinds pairingKindsSupported)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Enumeration.IDeviceInformationPairingStatics).abi_TryRegisterForAllInboundPairingRequests(pairingKindsSupported, &_ret));
 		return _ret;
 	}
 }
@@ -676,32 +781,32 @@ extern(Windows):
 	final EventRegistrationToken OnDeviceSelected(void delegate(Windows.Devices.Enumeration.DevicePicker, Windows.Devices.Enumeration.DeviceSelectedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DeviceSelected(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DevicePicker, Windows.Devices.Enumeration.DeviceSelectedEventArgs), Windows.Devices.Enumeration.DevicePicker, Windows.Devices.Enumeration.DeviceSelectedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePicker).add_DeviceSelected(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DevicePicker, Windows.Devices.Enumeration.DeviceSelectedEventArgs), Windows.Devices.Enumeration.DevicePicker, Windows.Devices.Enumeration.DeviceSelectedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDeviceSelected(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DeviceSelected(token));
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePicker).remove_DeviceSelected(token));
 	}
 	final EventRegistrationToken OnDisconnectButtonClicked(void delegate(Windows.Devices.Enumeration.DevicePicker, Windows.Devices.Enumeration.DeviceDisconnectButtonClickedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DisconnectButtonClicked(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DevicePicker, Windows.Devices.Enumeration.DeviceDisconnectButtonClickedEventArgs), Windows.Devices.Enumeration.DevicePicker, Windows.Devices.Enumeration.DeviceDisconnectButtonClickedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePicker).add_DisconnectButtonClicked(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DevicePicker, Windows.Devices.Enumeration.DeviceDisconnectButtonClickedEventArgs), Windows.Devices.Enumeration.DevicePicker, Windows.Devices.Enumeration.DeviceDisconnectButtonClickedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDisconnectButtonClicked(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DisconnectButtonClicked(token));
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePicker).remove_DisconnectButtonClicked(token));
 	}
 	final EventRegistrationToken OnDevicePickerDismissed(void delegate(Windows.Devices.Enumeration.DevicePicker, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DevicePickerDismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DevicePicker, IInspectable), Windows.Devices.Enumeration.DevicePicker, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePicker).add_DevicePickerDismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DevicePicker, IInspectable), Windows.Devices.Enumeration.DevicePicker, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeDevicePickerDismissed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DevicePickerDismissed(token));
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDevicePicker).remove_DevicePickerDismissed(token));
 	}
 	final void Show(Windows.Foundation.Rect selection)
 	{
@@ -936,52 +1041,52 @@ extern(Windows):
 	final EventRegistrationToken OnAdded(void delegate(Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformation) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformation), Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformation)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceWatcher).add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformation), Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformation)(fn), &tok));
 		return tok;
 	}
 	final void removeAdded(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Added(token));
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceWatcher).remove_Added(token));
 	}
 	final EventRegistrationToken OnUpdated(void delegate(Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformationUpdate) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformationUpdate), Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformationUpdate)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceWatcher).add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformationUpdate), Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformationUpdate)(fn), &tok));
 		return tok;
 	}
 	final void removeUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Updated(token));
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceWatcher).remove_Updated(token));
 	}
 	final EventRegistrationToken OnRemoved(void delegate(Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformationUpdate) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformationUpdate), Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformationUpdate)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceWatcher).add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformationUpdate), Windows.Devices.Enumeration.DeviceWatcher, Windows.Devices.Enumeration.DeviceInformationUpdate)(fn), &tok));
 		return tok;
 	}
 	final void removeRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Removed(token));
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceWatcher).remove_Removed(token));
 	}
 	final EventRegistrationToken OnEnumerationCompleted(void delegate(Windows.Devices.Enumeration.DeviceWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher, IInspectable), Windows.Devices.Enumeration.DeviceWatcher, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceWatcher).add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher, IInspectable), Windows.Devices.Enumeration.DeviceWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeEnumerationCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_EnumerationCompleted(token));
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceWatcher).remove_EnumerationCompleted(token));
 	}
 	final EventRegistrationToken OnStopped(void delegate(Windows.Devices.Enumeration.DeviceWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher, IInspectable), Windows.Devices.Enumeration.DeviceWatcher, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceWatcher).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceWatcher, IInspectable), Windows.Devices.Enumeration.DeviceWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeStopped(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Stopped(token));
+		Debug.OK(this.as!(Windows.Devices.Enumeration.IDeviceWatcher).remove_Stopped(token));
 	}
 	final Windows.Devices.Enumeration.DeviceWatcherStatus Status()
 	{

@@ -32,6 +32,24 @@ extern(Windows):
 
 interface PlatformTelemetryClient
 {
+	private static Windows.System.Diagnostics.Telemetry.IPlatformTelemetryClientStatics _staticInstance;
+	public static Windows.System.Diagnostics.Telemetry.IPlatformTelemetryClientStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.System.Diagnostics.Telemetry.IPlatformTelemetryClientStatics);
+		return _staticInstance;
+	}
+	static Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationResult Register(HSTRING id)
+	{
+		Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationResult _ret;
+		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.Telemetry.IPlatformTelemetryClientStatics).abi_Register(id, &_ret));
+		return _ret;
+	}
+	static Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationResult RegisterWithSettings(HSTRING id, Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationSettings settings)
+	{
+		Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationResult _ret;
+		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.Telemetry.IPlatformTelemetryClientStatics).abi_RegisterWithSettings(id, settings, &_ret));
+		return _ret;
+	}
 }
 
 interface PlatformTelemetryRegistrationResult : Windows.System.Diagnostics.Telemetry.IPlatformTelemetryRegistrationResult

@@ -80,6 +80,16 @@ extern(Windows):
 
 interface CachedFileUpdater
 {
+	private static Windows.Storage.Provider.ICachedFileUpdaterStatics _staticInstance;
+	public static Windows.Storage.Provider.ICachedFileUpdaterStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Storage.Provider.ICachedFileUpdaterStatics);
+		return _staticInstance;
+	}
+	static void SetUpdateInformation(Windows.Storage.IStorageFile file, HSTRING contentId, Windows.Storage.Provider.ReadActivationMode readMode, Windows.Storage.Provider.WriteActivationMode writeMode, Windows.Storage.Provider.CachedFileOptions options)
+	{
+		Debug.OK(staticInstance.as!(Windows.Storage.Provider.ICachedFileUpdaterStatics).abi_SetUpdateInformation(file, contentId, readMode, writeMode, options));
+	}
 }
 
 interface CachedFileUpdaterUI : Windows.Storage.Provider.ICachedFileUpdaterUI, Windows.Storage.Provider.ICachedFileUpdaterUI2
@@ -104,22 +114,22 @@ extern(Windows):
 	final EventRegistrationToken OnFileUpdateRequested(void delegate(Windows.Storage.Provider.CachedFileUpdaterUI, Windows.Storage.Provider.FileUpdateRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_FileUpdateRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Provider.CachedFileUpdaterUI, Windows.Storage.Provider.FileUpdateRequestedEventArgs), Windows.Storage.Provider.CachedFileUpdaterUI, Windows.Storage.Provider.FileUpdateRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Storage.Provider.ICachedFileUpdaterUI).add_FileUpdateRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Provider.CachedFileUpdaterUI, Windows.Storage.Provider.FileUpdateRequestedEventArgs), Windows.Storage.Provider.CachedFileUpdaterUI, Windows.Storage.Provider.FileUpdateRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeFileUpdateRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_FileUpdateRequested(token));
+		Debug.OK(this.as!(Windows.Storage.Provider.ICachedFileUpdaterUI).remove_FileUpdateRequested(token));
 	}
 	final EventRegistrationToken OnUIRequested(void delegate(Windows.Storage.Provider.CachedFileUpdaterUI, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_UIRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Provider.CachedFileUpdaterUI, IInspectable), Windows.Storage.Provider.CachedFileUpdaterUI, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Storage.Provider.ICachedFileUpdaterUI).add_UIRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Provider.CachedFileUpdaterUI, IInspectable), Windows.Storage.Provider.CachedFileUpdaterUI, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeUIRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_UIRequested(token));
+		Debug.OK(this.as!(Windows.Storage.Provider.ICachedFileUpdaterUI).remove_UIRequested(token));
 	}
 	final Windows.Storage.Provider.UIStatus UIStatus()
 	{

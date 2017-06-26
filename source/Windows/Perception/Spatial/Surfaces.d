@@ -242,6 +242,31 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions).set_IncludeVertexNormals(value));
 	}
+
+	private static Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptionsStatics _staticInstance;
+	public static Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptionsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptionsStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.Collections.IVectorView!(Windows.Graphics.DirectX.DirectXPixelFormat) SupportedVertexPositionFormats()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Graphics.DirectX.DirectXPixelFormat) _ret;
+		Debug.OK(staticInstance.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptionsStatics).get_SupportedVertexPositionFormats(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(Windows.Graphics.DirectX.DirectXPixelFormat) SupportedTriangleIndexFormats()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Graphics.DirectX.DirectXPixelFormat) _ret;
+		Debug.OK(staticInstance.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptionsStatics).get_SupportedTriangleIndexFormats(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(Windows.Graphics.DirectX.DirectXPixelFormat) SupportedVertexNormalFormats()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Graphics.DirectX.DirectXPixelFormat) _ret;
+		Debug.OK(staticInstance.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptionsStatics).get_SupportedVertexNormalFormats(&_ret));
+		return _ret;
+	}
 }
 
 interface SpatialSurfaceObserver : Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserver
@@ -264,11 +289,24 @@ extern(Windows):
 	final EventRegistrationToken OnObservedSurfacesChanged(void delegate(Windows.Perception.Spatial.Surfaces.SpatialSurfaceObserver, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ObservedSurfacesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.Surfaces.SpatialSurfaceObserver, IInspectable), Windows.Perception.Spatial.Surfaces.SpatialSurfaceObserver, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserver).add_ObservedSurfacesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.Surfaces.SpatialSurfaceObserver, IInspectable), Windows.Perception.Spatial.Surfaces.SpatialSurfaceObserver, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeObservedSurfacesChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ObservedSurfacesChanged(token));
+		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserver).remove_ObservedSurfacesChanged(token));
+	}
+
+	private static Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserverStatics _staticInstance;
+	public static Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserverStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserverStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Perception.Spatial.SpatialPerceptionAccessStatus) RequestAccessAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Perception.Spatial.SpatialPerceptionAccessStatus) _ret;
+		Debug.OK(staticInstance.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserverStatics).abi_RequestAccessAsync(&_ret));
+		return _ret;
 	}
 }

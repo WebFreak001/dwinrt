@@ -551,6 +551,16 @@ class BindingExpressionBaseT(Base) : AgileObject!Base, BindingExpressionBase
 
 interface BindingOperations : Windows.UI.Xaml.Data.IBindingOperations
 {
+	private static Windows.UI.Xaml.Data.IBindingOperationsStatics _staticInstance;
+	public static Windows.UI.Xaml.Data.IBindingOperationsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Data.IBindingOperationsStatics);
+		return _staticInstance;
+	}
+	static void SetBinding(Windows.UI.Xaml.DependencyObject target, Windows.UI.Xaml.DependencyProperty dp, Windows.UI.Xaml.Data.BindingBase binding)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Data.IBindingOperationsStatics).abi_SetBinding(target, dp, binding));
+	}
 }
 
 interface CollectionViewSource : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Data.ICollectionViewSource
@@ -591,6 +601,37 @@ extern(Windows):
 	final void ItemsPath(Windows.UI.Xaml.PropertyPath value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Data.ICollectionViewSource).set_ItemsPath(value));
+	}
+
+	private static Windows.UI.Xaml.Data.ICollectionViewSourceStatics _staticInstance;
+	public static Windows.UI.Xaml.Data.ICollectionViewSourceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Data.ICollectionViewSourceStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty SourceProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Data.ICollectionViewSourceStatics).get_SourceProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ViewProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Data.ICollectionViewSourceStatics).get_ViewProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsSourceGroupedProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Data.ICollectionViewSourceStatics).get_IsSourceGroupedProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ItemsPathProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Data.ICollectionViewSourceStatics).get_ItemsPathProperty(&_ret));
+		return _ret;
 	}
 }
 

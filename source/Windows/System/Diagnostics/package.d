@@ -216,6 +216,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiagnosticInfo).get_CpuUsage(&_ret));
 		return _ret;
 	}
+
+	private static Windows.System.Diagnostics.IProcessDiagnosticInfoStatics _staticInstance;
+	public static Windows.System.Diagnostics.IProcessDiagnosticInfoStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.System.Diagnostics.IProcessDiagnosticInfoStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.Collections.IVectorView!(Windows.System.Diagnostics.ProcessDiagnosticInfo) GetForProcesses()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.System.Diagnostics.ProcessDiagnosticInfo) _ret;
+		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.IProcessDiagnosticInfoStatics).abi_GetForProcesses(&_ret));
+		return _ret;
+	}
+	static Windows.System.Diagnostics.ProcessDiagnosticInfo GetForCurrentProcess()
+	{
+		Windows.System.Diagnostics.ProcessDiagnosticInfo _ret;
+		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.IProcessDiagnosticInfoStatics).abi_GetForCurrentProcess(&_ret));
+		return _ret;
+	}
 }
 
 interface ProcessDiskUsage : Windows.System.Diagnostics.IProcessDiskUsage
@@ -405,6 +424,19 @@ extern(Windows):
 	{
 		Windows.System.Diagnostics.SystemCpuUsage _ret;
 		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemDiagnosticInfo).get_CpuUsage(&_ret));
+		return _ret;
+	}
+
+	private static Windows.System.Diagnostics.ISystemDiagnosticInfoStatics _staticInstance;
+	public static Windows.System.Diagnostics.ISystemDiagnosticInfoStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.System.Diagnostics.ISystemDiagnosticInfoStatics);
+		return _staticInstance;
+	}
+	static Windows.System.Diagnostics.SystemDiagnosticInfo GetForCurrentSystem()
+	{
+		Windows.System.Diagnostics.SystemDiagnosticInfo _ret;
+		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.ISystemDiagnosticInfoStatics).abi_GetForCurrentSystem(&_ret));
 		return _ret;
 	}
 }

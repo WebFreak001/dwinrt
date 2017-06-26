@@ -422,72 +422,72 @@ extern(Windows):
 	final EventRegistrationToken OnGuidanceUpdated(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceUpdatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_GuidanceUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceUpdatedEventArgs), Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceUpdatedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).add_GuidanceUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceUpdatedEventArgs), Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceUpdatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeGuidanceUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(remove_GuidanceUpdated(token));
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).remove_GuidanceUpdated(token));
 	}
 	final EventRegistrationToken OnDestinationReached(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DestinationReached(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).add_DestinationReached(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeDestinationReached(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DestinationReached(token));
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).remove_DestinationReached(token));
 	}
 	final EventRegistrationToken OnRerouting(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Rerouting(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).add_Rerouting(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeRerouting(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Rerouting(token));
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).remove_Rerouting(token));
 	}
 	final EventRegistrationToken OnRerouted(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceReroutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Rerouted(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceReroutedEventArgs), Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceReroutedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).add_Rerouted(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceReroutedEventArgs), Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceReroutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRerouted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Rerouted(token));
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).remove_Rerouted(token));
 	}
 	final EventRegistrationToken OnRerouteFailed(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_RerouteFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).add_RerouteFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeRerouteFailed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_RerouteFailed(token));
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).remove_RerouteFailed(token));
 	}
 	final EventRegistrationToken OnUserLocationLost(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_UserLocationLost(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).add_UserLocationLost(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeUserLocationLost(EventRegistrationToken token)
 	{
-		Debug.OK(remove_UserLocationLost(token));
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).remove_UserLocationLost(token));
 	}
 	final EventRegistrationToken OnUserLocationRestored(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_UserLocationRestored(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).add_UserLocationRestored(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeUserLocationRestored(EventRegistrationToken token)
 	{
-		Debug.OK(remove_UserLocationRestored(token));
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).remove_UserLocationRestored(token));
 	}
 	final void SetGuidanceVoice(INT32 voiceId, HSTRING voiceFolder)
 	{
@@ -504,12 +504,12 @@ extern(Windows):
 	final EventRegistrationToken OnAudioNotificationRequested(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceAudioNotificationRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AudioNotificationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceAudioNotificationRequestedEventArgs), Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceAudioNotificationRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator2).add_AudioNotificationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceAudioNotificationRequestedEventArgs), Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceAudioNotificationRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAudioNotificationRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AudioNotificationRequested(token));
+		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator2).remove_AudioNotificationRequested(token));
 	}
 	final bool IsGuidanceAudioMuted()
 	{
@@ -520,6 +520,19 @@ extern(Windows):
 	final void IsGuidanceAudioMuted(bool value)
 	{
 		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator2).set_IsGuidanceAudioMuted(value));
+	}
+
+	private static Windows.Services.Maps.Guidance.IGuidanceNavigatorStatics _staticInstance;
+	public static Windows.Services.Maps.Guidance.IGuidanceNavigatorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Services.Maps.Guidance.IGuidanceNavigatorStatics);
+		return _staticInstance;
+	}
+	static Windows.Services.Maps.Guidance.GuidanceNavigator GetCurrent()
+	{
+		Windows.Services.Maps.Guidance.GuidanceNavigator _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.Maps.Guidance.IGuidanceNavigatorStatics).abi_GetCurrent(&_ret));
+		return _ret;
 	}
 }
 
@@ -673,6 +686,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoute).abi_ConvertToMapRoute(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Services.Maps.Guidance.IGuidanceRouteStatics _staticInstance;
+	public static Windows.Services.Maps.Guidance.IGuidanceRouteStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Services.Maps.Guidance.IGuidanceRouteStatics);
+		return _staticInstance;
+	}
+	static bool CanCreateFromMapRoute(Windows.Services.Maps.MapRoute mapRoute)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.Maps.Guidance.IGuidanceRouteStatics).abi_CanCreateFromMapRoute(mapRoute, &_ret));
+		return _ret;
+	}
+	static Windows.Services.Maps.Guidance.GuidanceRoute TryCreateFromMapRoute(Windows.Services.Maps.MapRoute mapRoute)
+	{
+		Windows.Services.Maps.Guidance.GuidanceRoute _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.Maps.Guidance.IGuidanceRouteStatics).abi_TryCreateFromMapRoute(mapRoute, &_ret));
+		return _ret;
+	}
 }
 
 interface GuidanceTelemetryCollector : Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector
@@ -711,6 +743,19 @@ extern(Windows):
 	final void UploadFrequency(INT32 value)
 	{
 		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector).set_UploadFrequency(value));
+	}
+
+	private static Windows.Services.Maps.Guidance.IGuidanceTelemetryCollectorStatics _staticInstance;
+	public static Windows.Services.Maps.Guidance.IGuidanceTelemetryCollectorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollectorStatics);
+		return _staticInstance;
+	}
+	static Windows.Services.Maps.Guidance.GuidanceTelemetryCollector GetCurrent()
+	{
+		Windows.Services.Maps.Guidance.GuidanceTelemetryCollector _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollectorStatics).abi_GetCurrent(&_ret));
+		return _ret;
 	}
 }
 

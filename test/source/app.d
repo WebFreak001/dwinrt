@@ -148,17 +148,10 @@ extern (Windows):
 	override HRESULT abi_Run()
 	{
 		Debug.WriteLine("Run");
-		CoreWindow window;
-		auto fac = dwinrt.factory!ICoreWindowStatic;
-		Debug.WriteLine("Factory %s", fac);
-		Debug.OK(fac.abi_GetForCurrentThread(&window));
-
-		Debug.WriteLine("Window %s", window);
+		CoreWindow window = CoreWindow.GetForCurrentThread;
 		window.Activate();
-		Debug.WriteLine("Window Activated");
 
 		dispatcher = window.Dispatcher;
-
 		dispatcher.ProcessEvents(CoreProcessEventsOption.ProcessUntilQuit);
 
 		return S_OK;
@@ -180,5 +173,5 @@ void run()
 {
 	MessageBoxA(null, "Starting".ptr, null, MB_ICONEXCLAMATION);
 
-	Debug.OK(factory!ICoreApplication.abi_Run(new App));
+	CoreApplication.Run(new App);
 }

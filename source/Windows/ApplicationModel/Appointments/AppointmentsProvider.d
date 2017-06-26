@@ -98,6 +98,36 @@ extern(Windows):
 
 interface AppointmentsProviderLaunchActionVerbs
 {
+	private static Windows.ApplicationModel.Appointments.AppointmentsProvider.IAppointmentsProviderLaunchActionVerbsStatics _staticInstance;
+	public static Windows.ApplicationModel.Appointments.AppointmentsProvider.IAppointmentsProviderLaunchActionVerbsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IAppointmentsProviderLaunchActionVerbsStatics);
+		return _staticInstance;
+	}
+	static HSTRING AddAppointment()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IAppointmentsProviderLaunchActionVerbsStatics).get_AddAppointment(&_ret));
+		return _ret;
+	}
+	static HSTRING ReplaceAppointment()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IAppointmentsProviderLaunchActionVerbsStatics).get_ReplaceAppointment(&_ret));
+		return _ret;
+	}
+	static HSTRING RemoveAppointment()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IAppointmentsProviderLaunchActionVerbsStatics).get_RemoveAppointment(&_ret));
+		return _ret;
+	}
+	static HSTRING ShowTimeFrame()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Appointments.AppointmentsProvider.IAppointmentsProviderLaunchActionVerbsStatics).get_ShowTimeFrame(&_ret));
+		return _ret;
+	}
 }
 
 interface RemoveAppointmentOperation : Windows.ApplicationModel.Appointments.AppointmentsProvider.IRemoveAppointmentOperation

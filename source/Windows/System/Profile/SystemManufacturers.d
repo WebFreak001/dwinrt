@@ -12,4 +12,16 @@ extern(Windows):
 
 interface SmbiosInformation
 {
+	private static Windows.System.Profile.SystemManufacturers.ISmbiosInformationStatics _staticInstance;
+	public static Windows.System.Profile.SystemManufacturers.ISmbiosInformationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.System.Profile.SystemManufacturers.ISmbiosInformationStatics);
+		return _staticInstance;
+	}
+	static HSTRING SerialNumber()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.System.Profile.SystemManufacturers.ISmbiosInformationStatics).get_SerialNumber(&_ret));
+		return _ret;
+	}
 }

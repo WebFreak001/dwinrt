@@ -133,15 +133,15 @@ extern(Windows):
 	}
 	final void removePaginate(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Paginate(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).remove_Paginate(token));
 	}
 	final void removeGetPreviewPage(EventRegistrationToken token)
 	{
-		Debug.OK(remove_GetPreviewPage(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).remove_GetPreviewPage(token));
 	}
 	final void removeAddPages(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AddPages(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).remove_AddPages(token));
 	}
 	final void AddPage(Windows.UI.Xaml.UIElement pageVisual)
 	{
@@ -162,6 +162,19 @@ extern(Windows):
 	final void InvalidatePreview()
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).abi_InvalidatePreview());
+	}
+
+	private static Windows.UI.Xaml.Printing.IPrintDocumentStatics _staticInstance;
+	public static Windows.UI.Xaml.Printing.IPrintDocumentStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Printing.IPrintDocumentStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty DocumentSourceProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Printing.IPrintDocumentStatics).get_DocumentSourceProperty(&_ret));
+		return _ret;
 	}
 }
 @makable!(PrintDocument, PrintDocument, Windows.UI.Xaml.Printing.IPrintDocumentFactory)

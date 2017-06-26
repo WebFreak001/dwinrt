@@ -251,12 +251,31 @@ extern(Windows):
 	final EventRegistrationToken OnPrintTaskRequested(void delegate(Windows.Graphics.Printing.PrintManager, Windows.Graphics.Printing.PrintTaskRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PrintTaskRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintManager, Windows.Graphics.Printing.PrintTaskRequestedEventArgs), Windows.Graphics.Printing.PrintManager, Windows.Graphics.Printing.PrintTaskRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintManager).add_PrintTaskRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintManager, Windows.Graphics.Printing.PrintTaskRequestedEventArgs), Windows.Graphics.Printing.PrintManager, Windows.Graphics.Printing.PrintTaskRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePrintTaskRequested(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_PrintTaskRequested(eventCookie));
+		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintManager).remove_PrintTaskRequested(eventCookie));
+	}
+
+	private static Windows.Graphics.Printing.IPrintManagerStatic _staticInstance;
+	public static Windows.Graphics.Printing.IPrintManagerStatic staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Graphics.Printing.IPrintManagerStatic);
+		return _staticInstance;
+	}
+	static Windows.Graphics.Printing.PrintManager GetForCurrentView()
+	{
+		Windows.Graphics.Printing.PrintManager _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IPrintManagerStatic).abi_GetForCurrentView(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(bool) ShowPrintUIAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IPrintManagerStatic).abi_ShowPrintUIAsync(&_ret));
+		return _ret;
 	}
 }
 
@@ -339,42 +358,42 @@ extern(Windows):
 	final EventRegistrationToken OnPreviewing(void delegate(Windows.Graphics.Printing.PrintTask, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Previewing(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, IInspectable), Windows.Graphics.Printing.PrintTask, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTask).add_Previewing(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, IInspectable), Windows.Graphics.Printing.PrintTask, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removePreviewing(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_Previewing(eventCookie));
+		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTask).remove_Previewing(eventCookie));
 	}
 	final EventRegistrationToken OnSubmitting(void delegate(Windows.Graphics.Printing.PrintTask, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Submitting(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, IInspectable), Windows.Graphics.Printing.PrintTask, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTask).add_Submitting(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, IInspectable), Windows.Graphics.Printing.PrintTask, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSubmitting(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_Submitting(eventCookie));
+		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTask).remove_Submitting(eventCookie));
 	}
 	final EventRegistrationToken OnProgressing(void delegate(Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskProgressingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Progressing(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskProgressingEventArgs), Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskProgressingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTask).add_Progressing(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskProgressingEventArgs), Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskProgressingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeProgressing(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_Progressing(eventCookie));
+		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTask).remove_Progressing(eventCookie));
 	}
 	final EventRegistrationToken OnCompleted(void delegate(Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Completed(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskCompletedEventArgs), Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskCompletedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTask).add_Completed(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskCompletedEventArgs), Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCompleted(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_Completed(eventCookie));
+		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTask).remove_Completed(eventCookie));
 	}
 	final void IsPrinterTargetEnabled(bool value)
 	{
@@ -660,6 +679,90 @@ extern(Windows):
 
 interface StandardPrintTaskOptions
 {
+	private static Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic _staticInstance;
+	public static Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic);
+		return _staticInstance;
+	}
+	static HSTRING MediaSize()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_MediaSize(&_ret));
+		return _ret;
+	}
+	static HSTRING MediaType()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_MediaType(&_ret));
+		return _ret;
+	}
+	static HSTRING Orientation()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_Orientation(&_ret));
+		return _ret;
+	}
+	static HSTRING PrintQuality()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_PrintQuality(&_ret));
+		return _ret;
+	}
+	static HSTRING ColorMode()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_ColorMode(&_ret));
+		return _ret;
+	}
+	static HSTRING Duplex()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_Duplex(&_ret));
+		return _ret;
+	}
+	static HSTRING Collation()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_Collation(&_ret));
+		return _ret;
+	}
+	static HSTRING Staple()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_Staple(&_ret));
+		return _ret;
+	}
+	static HSTRING HolePunch()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_HolePunch(&_ret));
+		return _ret;
+	}
+	static HSTRING Binding()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_Binding(&_ret));
+		return _ret;
+	}
+	static HSTRING Copies()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_Copies(&_ret));
+		return _ret;
+	}
+	static HSTRING NUp()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_NUp(&_ret));
+		return _ret;
+	}
+	static HSTRING InputBin()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_InputBin(&_ret));
+		return _ret;
+	}
 }
 
 enum PrintBinding

@@ -12,4 +12,22 @@ extern(Windows):
 
 interface MediaRendererBroker
 {
+	private static Windows.Media.Streaming.Internal.IMediaRendererBrokerStatics _staticInstance;
+	public static Windows.Media.Streaming.Internal.IMediaRendererBrokerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Streaming.Internal.IMediaRendererBrokerStatics);
+		return _staticInstance;
+	}
+	static Windows.Media.Streaming.CreateMediaRendererOperation CreateMediaRendererAsync(HSTRING deviceIdentifier, IInspectable mediaSessionFactoryMF, HSTRING applicationUserModelId)
+	{
+		Windows.Media.Streaming.CreateMediaRendererOperation _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Streaming.Internal.IMediaRendererBrokerStatics).abi_CreateMediaRendererAsync(deviceIdentifier, mediaSessionFactoryMF, applicationUserModelId, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Streaming.CreateMediaRendererOperation CreateMediaRendererFromBasicDeviceAsync(Windows.Media.Streaming.IBasicDevice basicDevice, IInspectable mediaSessionFactoryMF, HSTRING applicationUserModelId)
+	{
+		Windows.Media.Streaming.CreateMediaRendererOperation _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Streaming.Internal.IMediaRendererBrokerStatics).abi_CreateMediaRendererFromBasicDeviceAsync(basicDevice, mediaSessionFactoryMF, applicationUserModelId, &_ret));
+		return _ret;
+	}
 }

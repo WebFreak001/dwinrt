@@ -12,4 +12,14 @@ extern(Windows):
 
 interface CorePerceptionAutomation
 {
+	private static Windows.Perception.Automation.Core.ICorePerceptionAutomationStatics _staticInstance;
+	public static Windows.Perception.Automation.Core.ICorePerceptionAutomationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Perception.Automation.Core.ICorePerceptionAutomationStatics);
+		return _staticInstance;
+	}
+	static void SetActivationFactoryProvider(Windows.Foundation.IGetActivationFactory provider)
+	{
+		Debug.OK(staticInstance.as!(Windows.Perception.Automation.Core.ICorePerceptionAutomationStatics).abi_SetActivationFactoryProvider(provider));
+	}
 }

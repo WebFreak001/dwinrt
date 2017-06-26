@@ -13,4 +13,22 @@ extern(Windows):
 
 interface HolographicApplicationPreview
 {
+	private static Windows.ApplicationModel.Preview.Holographic.IHolographicApplicationPreviewStatics _staticInstance;
+	public static Windows.ApplicationModel.Preview.Holographic.IHolographicApplicationPreviewStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Preview.Holographic.IHolographicApplicationPreviewStatics);
+		return _staticInstance;
+	}
+	static bool IsCurrentViewPresentedOnHolographicDisplay()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Preview.Holographic.IHolographicApplicationPreviewStatics).abi_IsCurrentViewPresentedOnHolographicDisplay(&_ret));
+		return _ret;
+	}
+	static bool IsHolographicActivation(Windows.ApplicationModel.Activation.IActivatedEventArgs activatedEventArgs)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Preview.Holographic.IHolographicApplicationPreviewStatics).abi_IsHolographicActivation(activatedEventArgs, &_ret));
+		return _ret;
+	}
 }

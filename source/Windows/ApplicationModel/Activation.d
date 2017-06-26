@@ -2100,12 +2100,12 @@ extern(Windows):
 	final EventRegistrationToken OnDismissed(void delegate(Windows.ApplicationModel.Activation.SplashScreen, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Dismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Activation.SplashScreen, IInspectable), Windows.ApplicationModel.Activation.SplashScreen, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ISplashScreen).add_Dismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Activation.SplashScreen, IInspectable), Windows.ApplicationModel.Activation.SplashScreen, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeDismissed(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_Dismissed(cookie));
+		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ISplashScreen).remove_Dismissed(cookie));
 	}
 }
 

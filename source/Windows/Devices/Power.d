@@ -53,12 +53,37 @@ extern(Windows):
 	final EventRegistrationToken OnReportUpdated(void delegate(Windows.Devices.Power.Battery, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ReportUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Power.Battery, IInspectable), Windows.Devices.Power.Battery, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Power.IBattery).add_ReportUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Power.Battery, IInspectable), Windows.Devices.Power.Battery, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeReportUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ReportUpdated(token));
+		Debug.OK(this.as!(Windows.Devices.Power.IBattery).remove_ReportUpdated(token));
+	}
+
+	private static Windows.Devices.Power.IBatteryStatics _staticInstance;
+	public static Windows.Devices.Power.IBatteryStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Power.IBatteryStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.Power.Battery AggregateBattery()
+	{
+		Windows.Devices.Power.Battery _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Power.IBatteryStatics).get_AggregateBattery(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Power.Battery) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Power.Battery) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Power.IBatteryStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Power.IBatteryStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
 	}
 }
 

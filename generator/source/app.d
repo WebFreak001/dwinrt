@@ -730,6 +730,11 @@ void processIDL(string file)
 								enforce(content.children[0].children[0].name == "IDL.scoped_name");
 								obj.composable = content.children[0].children[0].matches.join("");
 							}
+							else if (content.children[0].name == "IDL.static_")
+							{
+								enforce(content.children[0].children[0].name == "IDL.scoped_name");
+								obj.staticBase = content.children[0].children[0].matches.join("");
+							}
 						}
 					}
 				}
@@ -1405,6 +1410,7 @@ struct Interface
 	bool isRuntimeClass;
 	InterfaceMethod[] methods;
 	string composable;
+	string staticBase;
 
 	Interface instance(string[] types)
 	{
@@ -1495,6 +1501,25 @@ struct Interface
 		auto extra = name in extraMethods;
 		foreach (method; methods ~ (extra ? *extra : []))
 			ret ~= method.toString.indent ~ "\n";
+		if (staticBase.length)
+		{
+			if (methods.length)
+				ret ~= "\n";
+			ret ~= "\tprivate static " ~ staticBase ~ " _staticInstance;\n";
+			ret ~= "\tpublic static " ~ staticBase ~ " staticInstance()\n";
+			ret ~= "\t{\n";
+			ret ~= "\t\tif (_staticInstance is null) _staticInstance = factory!(" ~ staticBase ~ ");\n";
+			ret ~= "\t\treturn _staticInstance;\n";
+			ret ~= "\t}";
+			auto base = findInterface(staticBase);
+			foreach (method; base.methods)
+			{
+				method.implement(staticBase);
+				method.implementation = method.implementation.replace("this.", "staticInstance.");
+				ret ~= "\n" ~ method.toString("static ").indent;
+			}
+			ret ~= "\n";
+		}
 		ret ~= "}";
 		if (requires.length)
 		{
@@ -1566,7 +1591,7 @@ struct InterfaceMethod
 				arguments = [InterfaceArgument(ArgumentDirection.in_, "void delegate(" ~ args ~ ")", "fn")];
 				name = "On" ~ name;
 				returnType = "EventRegistrationToken";
-				string registerCall = "Debug.OK(" ~ fname ~ "(event!(" ~ type ~ ", "
+				string registerCall = "Debug.OK(this.as!(" ~ baseName ~ ")." ~ fname ~ "(event!(" ~ type ~ ", "
 					~ args ~ ")(fn), &tok));";
 				implementation = "EventRegistrationToken tok;\n" ~ registerCall ~ "\nreturn tok;";
 			}
@@ -1579,7 +1604,7 @@ struct InterfaceMethod
 						"void delegate(IInspectable, " ~ args ~ ")", "fn")];
 				name = "On" ~ name;
 				returnType = "EventRegistrationToken";
-				string registerCall = "Debug.OK(" ~ fname ~ "(event!(" ~ type
+				string registerCall = "Debug.OK(this.as!(" ~ baseName ~ ")." ~ fname ~ "(event!(" ~ type
 					~ ", IInspectable, " ~ args ~ ")(fn), &tok));";
 				implementation = "EventRegistrationToken tok;\n" ~ registerCall ~ "\nreturn tok;";
 			}
@@ -1594,7 +1619,7 @@ struct InterfaceMethod
 			string fname = fullName;
 			name = "remove" ~ name;
 			returnType = "void";
-			implementation = "Debug.OK(" ~ fname ~ "(" ~ arguments[0].fullName ~ "));";
+			implementation = "Debug.OK(this.as!(" ~ baseName ~ ")." ~ fname ~ "(" ~ arguments[0].fullName ~ "));";
 		}
 		else
 		{
@@ -1672,7 +1697,7 @@ struct InterfaceMethod
 		return ret;
 	}
 
-	string toString() const
+	string toString(string implementationPrefix = "final ") const
 	{
 		string ret;
 		if (documentation.length)
@@ -1680,7 +1705,7 @@ struct InterfaceMethod
 		if (deprecation.length)
 			ret ~= "deprecated(" ~ deprecation ~ ")\n";
 		if (implementation.length)
-			ret ~= "final ";
+			ret ~= implementationPrefix;
 		ret ~= returnType ~ " ";
 		ret ~= fullName;
 		ret ~= "(";

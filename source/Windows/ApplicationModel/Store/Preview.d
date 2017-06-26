@@ -120,6 +120,42 @@ extern(Windows):
 
 interface StoreConfiguration
 {
+	private static Windows.ApplicationModel.Store.Preview.IStoreConfigurationStatics _staticInstance;
+	public static Windows.ApplicationModel.Store.Preview.IStoreConfigurationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Store.Preview.IStoreConfigurationStatics);
+		return _staticInstance;
+	}
+	static void SetSystemConfiguration(HSTRING catalogHardwareManufacturerId, HSTRING catalogStoreContentModifierId, Windows.Foundation.DateTime systemConfigurationExpiration, HSTRING catalogHardwareDescriptor)
+	{
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.Preview.IStoreConfigurationStatics).abi_SetSystemConfiguration(catalogHardwareManufacturerId, catalogStoreContentModifierId, systemConfigurationExpiration, catalogHardwareDescriptor));
+	}
+	static void SetMobileOperatorConfiguration(HSTRING mobileOperatorId, UINT32 appDownloadLimitInMegabytes, UINT32 updateDownloadLimitInMegabytes)
+	{
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.Preview.IStoreConfigurationStatics).abi_SetMobileOperatorConfiguration(mobileOperatorId, appDownloadLimitInMegabytes, updateDownloadLimitInMegabytes));
+	}
+	static void SetStoreWebAccountId(HSTRING webAccountId)
+	{
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.Preview.IStoreConfigurationStatics).abi_SetStoreWebAccountId(webAccountId));
+	}
+	static bool IsStoreWebAccountId(HSTRING webAccountId)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.Preview.IStoreConfigurationStatics).abi_IsStoreWebAccountId(webAccountId, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Store.Preview.StoreHardwareManufacturerInfo HardwareManufacturerInfo()
+	{
+		Windows.ApplicationModel.Store.Preview.StoreHardwareManufacturerInfo _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.Preview.IStoreConfigurationStatics).get_HardwareManufacturerInfo(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Store.Preview.StoreSystemFeature)) FilterUnsupportedSystemFeaturesAsync(Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Store.Preview.StoreSystemFeature) systemFeatures)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Store.Preview.StoreSystemFeature)) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.Preview.IStoreConfigurationStatics).abi_FilterUnsupportedSystemFeaturesAsync(systemFeatures, &_ret));
+		return _ret;
+	}
 }
 
 interface StoreHardwareManufacturerInfo : Windows.ApplicationModel.Store.Preview.IStoreHardwareManufacturerInfo
@@ -153,6 +189,24 @@ extern(Windows):
 
 interface StorePreview
 {
+	private static Windows.ApplicationModel.Store.Preview.IStorePreview _staticInstance;
+	public static Windows.ApplicationModel.Store.Preview.IStorePreview staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Store.Preview.IStorePreview);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.Preview.StorePreviewPurchaseResults) RequestProductPurchaseByProductIdAndSkuIdAsync(HSTRING productId, HSTRING skuId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.Preview.StorePreviewPurchaseResults) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.Preview.IStorePreview).abi_RequestProductPurchaseByProductIdAndSkuIdAsync(productId, skuId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Store.Preview.StorePreviewProductInfo)) LoadAddOnProductInfosAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Store.Preview.StorePreviewProductInfo)) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.Preview.IStorePreview).abi_LoadAddOnProductInfosAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface StorePreviewProductInfo : Windows.ApplicationModel.Store.Preview.IStorePreviewProductInfo
@@ -262,6 +316,24 @@ extern(Windows):
 
 interface WebAuthenticationCoreManagerHelper
 {
+	private static Windows.ApplicationModel.Store.Preview.IWebAuthenticationCoreManagerHelper _staticInstance;
+	public static Windows.ApplicationModel.Store.Preview.IWebAuthenticationCoreManagerHelper staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Store.Preview.IWebAuthenticationCoreManagerHelper);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) RequestTokenWithUIElementHostingAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.UI.Xaml.UIElement uiElement)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.Preview.IWebAuthenticationCoreManagerHelper).abi_RequestTokenWithUIElementHostingAsync(request, uiElement, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) RequestTokenWithUIElementHostingAndWebAccountAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.Security.Credentials.WebAccount webAccount, Windows.UI.Xaml.UIElement uiElement)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.Preview.IWebAuthenticationCoreManagerHelper).abi_RequestTokenWithUIElementHostingAndWebAccountAsync(request, webAccount, uiElement, &_ret));
+		return _ret;
+	}
 }
 
 @bitflags

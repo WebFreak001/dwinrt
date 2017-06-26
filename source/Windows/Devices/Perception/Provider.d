@@ -246,6 +246,33 @@ extern(Windows):
 
 interface KnownPerceptionFrameKind
 {
+	private static Windows.Devices.Perception.Provider.IKnownPerceptionFrameKindStatics _staticInstance;
+	public static Windows.Devices.Perception.Provider.IKnownPerceptionFrameKindStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Perception.Provider.IKnownPerceptionFrameKindStatics);
+		return _staticInstance;
+	}
+	deprecated("KnownPerceptionFrameKind may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	static HSTRING Color()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Perception.Provider.IKnownPerceptionFrameKindStatics).get_Color(&_ret));
+		return _ret;
+	}
+	deprecated("KnownPerceptionFrameKind may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	static HSTRING Depth()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Perception.Provider.IKnownPerceptionFrameKindStatics).get_Depth(&_ret));
+		return _ret;
+	}
+	deprecated("KnownPerceptionFrameKind may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	static HSTRING Infrared()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Perception.Provider.IKnownPerceptionFrameKindStatics).get_Infrared(&_ret));
+		return _ret;
+	}
 }
 
 interface PerceptionControlGroup : Windows.Devices.Perception.Provider.IPerceptionControlGroup
@@ -408,6 +435,62 @@ extern(Windows):
 
 interface PerceptionFrameProviderManagerService
 {
+	private static Windows.Devices.Perception.Provider.IPerceptionFrameProviderManagerServiceStatics _staticInstance;
+	public static Windows.Devices.Perception.Provider.IPerceptionFrameProviderManagerServiceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Perception.Provider.IPerceptionFrameProviderManagerServiceStatics);
+		return _staticInstance;
+	}
+	deprecated("PerceptionFrameProviderManagerService may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	static void RegisterFrameProviderInfo(Windows.Devices.Perception.Provider.IPerceptionFrameProviderManager manager, Windows.Devices.Perception.Provider.PerceptionFrameProviderInfo frameProviderInfo)
+	{
+		Debug.OK(staticInstance.as!(Windows.Devices.Perception.Provider.IPerceptionFrameProviderManagerServiceStatics).abi_RegisterFrameProviderInfo(manager, frameProviderInfo));
+	}
+	deprecated("PerceptionFrameProviderManagerService may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	static void UnregisterFrameProviderInfo(Windows.Devices.Perception.Provider.IPerceptionFrameProviderManager manager, Windows.Devices.Perception.Provider.PerceptionFrameProviderInfo frameProviderInfo)
+	{
+		Debug.OK(staticInstance.as!(Windows.Devices.Perception.Provider.IPerceptionFrameProviderManagerServiceStatics).abi_UnregisterFrameProviderInfo(manager, frameProviderInfo));
+	}
+	deprecated("PerceptionFrameProviderManagerService may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	static void RegisterFaceAuthenticationGroup(Windows.Devices.Perception.Provider.IPerceptionFrameProviderManager manager, Windows.Devices.Perception.Provider.PerceptionFaceAuthenticationGroup faceAuthenticationGroup)
+	{
+		Debug.OK(staticInstance.as!(Windows.Devices.Perception.Provider.IPerceptionFrameProviderManagerServiceStatics).abi_RegisterFaceAuthenticationGroup(manager, faceAuthenticationGroup));
+	}
+	deprecated("PerceptionFrameProviderManagerService may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	static void UnregisterFaceAuthenticationGroup(Windows.Devices.Perception.Provider.IPerceptionFrameProviderManager manager, Windows.Devices.Perception.Provider.PerceptionFaceAuthenticationGroup faceAuthenticationGroup)
+	{
+		Debug.OK(staticInstance.as!(Windows.Devices.Perception.Provider.IPerceptionFrameProviderManagerServiceStatics).abi_UnregisterFaceAuthenticationGroup(manager, faceAuthenticationGroup));
+	}
+	deprecated("PerceptionFrameProviderManagerService may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	static void RegisterControlGroup(Windows.Devices.Perception.Provider.IPerceptionFrameProviderManager manager, Windows.Devices.Perception.Provider.PerceptionControlGroup controlGroup)
+	{
+		Debug.OK(staticInstance.as!(Windows.Devices.Perception.Provider.IPerceptionFrameProviderManagerServiceStatics).abi_RegisterControlGroup(manager, controlGroup));
+	}
+	deprecated("PerceptionFrameProviderManagerService may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	static void UnregisterControlGroup(Windows.Devices.Perception.Provider.IPerceptionFrameProviderManager manager, Windows.Devices.Perception.Provider.PerceptionControlGroup controlGroup)
+	{
+		Debug.OK(staticInstance.as!(Windows.Devices.Perception.Provider.IPerceptionFrameProviderManagerServiceStatics).abi_UnregisterControlGroup(manager, controlGroup));
+	}
+	deprecated("PerceptionFrameProviderManagerService may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	static void RegisterCorrelationGroup(Windows.Devices.Perception.Provider.IPerceptionFrameProviderManager manager, Windows.Devices.Perception.Provider.PerceptionCorrelationGroup correlationGroup)
+	{
+		Debug.OK(staticInstance.as!(Windows.Devices.Perception.Provider.IPerceptionFrameProviderManagerServiceStatics).abi_RegisterCorrelationGroup(manager, correlationGroup));
+	}
+	deprecated("PerceptionFrameProviderManagerService may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	static void UnregisterCorrelationGroup(Windows.Devices.Perception.Provider.IPerceptionFrameProviderManager manager, Windows.Devices.Perception.Provider.PerceptionCorrelationGroup correlationGroup)
+	{
+		Debug.OK(staticInstance.as!(Windows.Devices.Perception.Provider.IPerceptionFrameProviderManagerServiceStatics).abi_UnregisterCorrelationGroup(manager, correlationGroup));
+	}
+	deprecated("PerceptionFrameProviderManagerService may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	static void UpdateAvailabilityForProvider(Windows.Devices.Perception.Provider.IPerceptionFrameProvider provider, bool available)
+	{
+		Debug.OK(staticInstance.as!(Windows.Devices.Perception.Provider.IPerceptionFrameProviderManagerServiceStatics).abi_UpdateAvailabilityForProvider(provider, available));
+	}
+	deprecated("PerceptionFrameProviderManagerService may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
+	static void PublishFrameForProvider(Windows.Devices.Perception.Provider.IPerceptionFrameProvider provider, Windows.Devices.Perception.Provider.PerceptionFrame frame)
+	{
+		Debug.OK(staticInstance.as!(Windows.Devices.Perception.Provider.IPerceptionFrameProviderManagerServiceStatics).abi_PublishFrameForProvider(provider, frame));
+	}
 }
 
 interface PerceptionPropertyChangeRequest : Windows.Devices.Perception.Provider.IPerceptionPropertyChangeRequest

@@ -277,6 +277,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Storage.Search.IContentIndexerQueryOperations).abi_CreateQuery(searchFilter, propertiesToRetrieve, &_ret));
 		return _ret;
 	}
+
+	private static Windows.Storage.Search.IContentIndexerStatics _staticInstance;
+	public static Windows.Storage.Search.IContentIndexerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Storage.Search.IContentIndexerStatics);
+		return _staticInstance;
+	}
+	static Windows.Storage.Search.ContentIndexer GetIndexerWithName(HSTRING indexName)
+	{
+		Windows.Storage.Search.ContentIndexer _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.Search.IContentIndexerStatics).abi_GetIndexerWithName(indexName, &_ret));
+		return _ret;
+	}
+	static Windows.Storage.Search.ContentIndexer GetIndexer()
+	{
+		Windows.Storage.Search.ContentIndexer _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.Search.IContentIndexerStatics).abi_GetIndexer(&_ret));
+		return _ret;
+	}
 }
 
 interface ContentIndexerQuery : Windows.Storage.Search.IContentIndexerQuery
@@ -557,22 +576,22 @@ extern(Windows):
 	final EventRegistrationToken OnContentsChanged(void delegate(Windows.Storage.Search.IStorageQueryResultBase, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ContentsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Search.IStorageQueryResultBase, IInspectable), Windows.Storage.Search.IStorageQueryResultBase, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).add_ContentsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Search.IStorageQueryResultBase, IInspectable), Windows.Storage.Search.IStorageQueryResultBase, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeContentsChanged(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_ContentsChanged(eventCookie));
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).remove_ContentsChanged(eventCookie));
 	}
 	final EventRegistrationToken OnOptionsChanged(void delegate(Windows.Storage.Search.IStorageQueryResultBase, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_OptionsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Search.IStorageQueryResultBase, IInspectable), Windows.Storage.Search.IStorageQueryResultBase, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).add_OptionsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Search.IStorageQueryResultBase, IInspectable), Windows.Storage.Search.IStorageQueryResultBase, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeOptionsChanged(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_OptionsChanged(eventCookie));
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).remove_OptionsChanged(eventCookie));
 	}
 	final Windows.Foundation.IAsyncOperation!(UINT32) FindStartIndexAsync(IInspectable value)
 	{
@@ -628,22 +647,22 @@ extern(Windows):
 	final EventRegistrationToken OnContentsChanged(void delegate(Windows.Storage.Search.IStorageQueryResultBase, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ContentsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Search.IStorageQueryResultBase, IInspectable), Windows.Storage.Search.IStorageQueryResultBase, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).add_ContentsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Search.IStorageQueryResultBase, IInspectable), Windows.Storage.Search.IStorageQueryResultBase, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeContentsChanged(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_ContentsChanged(eventCookie));
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).remove_ContentsChanged(eventCookie));
 	}
 	final EventRegistrationToken OnOptionsChanged(void delegate(Windows.Storage.Search.IStorageQueryResultBase, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_OptionsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Search.IStorageQueryResultBase, IInspectable), Windows.Storage.Search.IStorageQueryResultBase, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).add_OptionsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Search.IStorageQueryResultBase, IInspectable), Windows.Storage.Search.IStorageQueryResultBase, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeOptionsChanged(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_OptionsChanged(eventCookie));
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).remove_OptionsChanged(eventCookie));
 	}
 	final Windows.Foundation.IAsyncOperation!(UINT32) FindStartIndexAsync(IInspectable value)
 	{
@@ -693,22 +712,22 @@ extern(Windows):
 	final EventRegistrationToken OnContentsChanged(void delegate(Windows.Storage.Search.IStorageQueryResultBase, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ContentsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Search.IStorageQueryResultBase, IInspectable), Windows.Storage.Search.IStorageQueryResultBase, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).add_ContentsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Search.IStorageQueryResultBase, IInspectable), Windows.Storage.Search.IStorageQueryResultBase, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeContentsChanged(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_ContentsChanged(eventCookie));
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).remove_ContentsChanged(eventCookie));
 	}
 	final EventRegistrationToken OnOptionsChanged(void delegate(Windows.Storage.Search.IStorageQueryResultBase, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_OptionsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Search.IStorageQueryResultBase, IInspectable), Windows.Storage.Search.IStorageQueryResultBase, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).add_OptionsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Search.IStorageQueryResultBase, IInspectable), Windows.Storage.Search.IStorageQueryResultBase, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeOptionsChanged(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_OptionsChanged(eventCookie));
+		Debug.OK(this.as!(Windows.Storage.Search.IStorageQueryResultBase).remove_OptionsChanged(eventCookie));
 	}
 	final Windows.Foundation.IAsyncOperation!(UINT32) FindStartIndexAsync(IInspectable value)
 	{

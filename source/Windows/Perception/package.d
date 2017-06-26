@@ -38,4 +38,16 @@ extern(Windows):
 
 interface PerceptionTimestampHelper
 {
+	private static Windows.Perception.IPerceptionTimestampHelperStatics _staticInstance;
+	public static Windows.Perception.IPerceptionTimestampHelperStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Perception.IPerceptionTimestampHelperStatics);
+		return _staticInstance;
+	}
+	static Windows.Perception.PerceptionTimestamp FromHistoricalTargetTime(Windows.Foundation.DateTime targetTime)
+	{
+		Windows.Perception.PerceptionTimestamp _ret;
+		Debug.OK(staticInstance.as!(Windows.Perception.IPerceptionTimestampHelperStatics).abi_FromHistoricalTargetTime(targetTime, &_ret));
+		return _ret;
+	}
 }

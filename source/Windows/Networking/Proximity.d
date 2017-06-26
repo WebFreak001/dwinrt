@@ -189,6 +189,108 @@ extern(Windows):
 
 interface PeerFinder
 {
+	private static Windows.Networking.Proximity.IPeerFinderStatics _staticInstance;
+	public static Windows.Networking.Proximity.IPeerFinderStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.Proximity.IPeerFinderStatics);
+		return _staticInstance;
+	}
+	static bool AllowBluetooth()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).get_AllowBluetooth(&_ret));
+		return _ret;
+	}
+	static void AllowBluetooth(bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).set_AllowBluetooth(value));
+	}
+	static bool AllowInfrastructure()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).get_AllowInfrastructure(&_ret));
+		return _ret;
+	}
+	static void AllowInfrastructure(bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).set_AllowInfrastructure(value));
+	}
+	static bool AllowWiFiDirect()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).get_AllowWiFiDirect(&_ret));
+		return _ret;
+	}
+	static void AllowWiFiDirect(bool value)
+	{
+		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).set_AllowWiFiDirect(value));
+	}
+	static HSTRING DisplayName()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).get_DisplayName(&_ret));
+		return _ret;
+	}
+	static void DisplayName(HSTRING value)
+	{
+		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).set_DisplayName(value));
+	}
+	static Windows.Networking.Proximity.PeerDiscoveryTypes SupportedDiscoveryTypes()
+	{
+		Windows.Networking.Proximity.PeerDiscoveryTypes _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).get_SupportedDiscoveryTypes(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) AlternateIdentities()
+	{
+		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).get_AlternateIdentities(&_ret));
+		return _ret;
+	}
+	static void Start()
+	{
+		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).abi_Start());
+	}
+	static void StartWithMessage(HSTRING peerMessage)
+	{
+		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).abi_StartWithMessage(peerMessage));
+	}
+	static void Stop()
+	{
+		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).abi_Stop());
+	}
+	static EventRegistrationToken OnTriggeredConnectionStateChanged(void delegate(IInspectable, Windows.Networking.Proximity.TriggeredConnectionStateChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).add_TriggeredConnectionStateChanged(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.Networking.Proximity.TriggeredConnectionStateChangedEventArgs), IInspectable, Windows.Networking.Proximity.TriggeredConnectionStateChangedEventArgs)(fn), &tok));
+		return tok;
+	}
+	static void removeTriggeredConnectionStateChanged(EventRegistrationToken cookie)
+	{
+		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).remove_TriggeredConnectionStateChanged(cookie));
+	}
+	static EventRegistrationToken OnConnectionRequested(void delegate(IInspectable, Windows.Networking.Proximity.ConnectionRequestedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).add_ConnectionRequested(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.Networking.Proximity.ConnectionRequestedEventArgs), IInspectable, Windows.Networking.Proximity.ConnectionRequestedEventArgs)(fn), &tok));
+		return tok;
+	}
+	static void removeConnectionRequested(EventRegistrationToken cookie)
+	{
+		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).remove_ConnectionRequested(cookie));
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Proximity.PeerInformation)) FindAllPeersAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Proximity.PeerInformation)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).abi_FindAllPeersAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Networking.Sockets.StreamSocket) ConnectAsync(Windows.Networking.Proximity.PeerInformation peerInformation)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.Sockets.StreamSocket) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).abi_ConnectAsync(peerInformation, &_ret));
+		return _ret;
+	}
 }
 
 interface PeerInformation : Windows.Networking.Proximity.IPeerInformation, Windows.Networking.Proximity.IPeerInformation3, Windows.Networking.Proximity.IPeerInformationWithHostAndService
@@ -232,52 +334,52 @@ extern(Windows):
 	final EventRegistrationToken OnAdded(void delegate(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation), Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation), Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation)(fn), &tok));
 		return tok;
 	}
 	final void removeAdded(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Added(token));
+		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).remove_Added(token));
 	}
 	final EventRegistrationToken OnRemoved(void delegate(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation), Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation), Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation)(fn), &tok));
 		return tok;
 	}
 	final void removeRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Removed(token));
+		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).remove_Removed(token));
 	}
 	final EventRegistrationToken OnUpdated(void delegate(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation), Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation), Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation)(fn), &tok));
 		return tok;
 	}
 	final void removeUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Updated(token));
+		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).remove_Updated(token));
 	}
 	final EventRegistrationToken OnEnumerationCompleted(void delegate(Windows.Networking.Proximity.PeerWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, IInspectable), Windows.Networking.Proximity.PeerWatcher, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, IInspectable), Windows.Networking.Proximity.PeerWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeEnumerationCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_EnumerationCompleted(token));
+		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).remove_EnumerationCompleted(token));
 	}
 	final EventRegistrationToken OnStopped(void delegate(Windows.Networking.Proximity.PeerWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, IInspectable), Windows.Networking.Proximity.PeerWatcher, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, IInspectable), Windows.Networking.Proximity.PeerWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeStopped(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Stopped(token));
+		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).remove_Stopped(token));
 	}
 	final Windows.Networking.Proximity.PeerWatcherStatus Status()
 	{
@@ -350,11 +452,11 @@ extern(Windows):
 	}
 	final void removeDeviceArrived(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_DeviceArrived(cookie));
+		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).remove_DeviceArrived(cookie));
 	}
 	final void removeDeviceDeparted(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_DeviceDeparted(cookie));
+		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).remove_DeviceDeparted(cookie));
 	}
 	final UINT32 MaxMessageBytes()
 	{
@@ -372,6 +474,31 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).get_DeviceId(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Networking.Proximity.IProximityDeviceStatics _staticInstance;
+	public static Windows.Networking.Proximity.IProximityDeviceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.Proximity.IProximityDeviceStatics);
+		return _staticInstance;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IProximityDeviceStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
+	static Windows.Networking.Proximity.ProximityDevice GetDefault()
+	{
+		Windows.Networking.Proximity.ProximityDevice _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IProximityDeviceStatics).abi_GetDefault(&_ret));
+		return _ret;
+	}
+	static Windows.Networking.Proximity.ProximityDevice FromId(HSTRING deviceId)
+	{
+		Windows.Networking.Proximity.ProximityDevice _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IProximityDeviceStatics).abi_FromId(deviceId, &_ret));
 		return _ret;
 	}
 }

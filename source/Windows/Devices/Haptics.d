@@ -64,6 +64,42 @@ extern(Windows):
 
 interface KnownSimpleHapticsControllerWaveforms
 {
+	private static Windows.Devices.Haptics.IKnownSimpleHapticsControllerWaveformsStatics _staticInstance;
+	public static Windows.Devices.Haptics.IKnownSimpleHapticsControllerWaveformsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Haptics.IKnownSimpleHapticsControllerWaveformsStatics);
+		return _staticInstance;
+	}
+	static UINT16 Click()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Haptics.IKnownSimpleHapticsControllerWaveformsStatics).get_Click(&_ret));
+		return _ret;
+	}
+	static UINT16 BuzzContinuous()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Haptics.IKnownSimpleHapticsControllerWaveformsStatics).get_BuzzContinuous(&_ret));
+		return _ret;
+	}
+	static UINT16 RumbleContinuous()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Haptics.IKnownSimpleHapticsControllerWaveformsStatics).get_RumbleContinuous(&_ret));
+		return _ret;
+	}
+	static UINT16 Press()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Haptics.IKnownSimpleHapticsControllerWaveformsStatics).get_Press(&_ret));
+		return _ret;
+	}
+	static UINT16 Release()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Haptics.IKnownSimpleHapticsControllerWaveformsStatics).get_Release(&_ret));
+		return _ret;
+	}
 }
 
 interface SimpleHapticsController : Windows.Devices.Haptics.ISimpleHapticsController
@@ -157,6 +193,43 @@ extern(Windows):
 	{
 		Windows.Devices.Haptics.SimpleHapticsController _ret;
 		Debug.OK(this.as!(Windows.Devices.Haptics.IVibrationDevice).get_SimpleHapticsController(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Devices.Haptics.IVibrationDeviceStatics _staticInstance;
+	public static Windows.Devices.Haptics.IVibrationDeviceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Haptics.IVibrationDeviceStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Haptics.VibrationAccessStatus) RequestAccessAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Haptics.VibrationAccessStatus) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Haptics.IVibrationDeviceStatics).abi_RequestAccessAsync(&_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Haptics.IVibrationDeviceStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Haptics.VibrationDevice) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Haptics.VibrationDevice) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Haptics.IVibrationDeviceStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Haptics.VibrationDevice) GetDefaultAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Haptics.VibrationDevice) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Haptics.IVibrationDeviceStatics).abi_GetDefaultAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Haptics.VibrationDevice)) FindAllAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Haptics.VibrationDevice)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Haptics.IVibrationDeviceStatics).abi_FindAllAsync(&_ret));
 		return _ret;
 	}
 }

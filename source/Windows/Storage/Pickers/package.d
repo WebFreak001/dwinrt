@@ -276,6 +276,20 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Storage.Pickers.IFileOpenPicker2).abi_PickMultipleFilesAndContinue());
 	}
+
+	private static Windows.Storage.Pickers.IFileOpenPickerStatics _staticInstance;
+	public static Windows.Storage.Pickers.IFileOpenPickerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Storage.Pickers.IFileOpenPickerStatics);
+		return _staticInstance;
+	}
+	deprecated("Instead, use PickSingleFileAsync")
+	static Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) ResumePickSingleFileAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.Pickers.IFileOpenPickerStatics).abi_ResumePickSingleFileAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface FilePickerFileTypesOrderedMap : Windows.Foundation.Collections.IMap!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Foundation.Collections.IVector!(HSTRING)))

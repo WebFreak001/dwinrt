@@ -436,7 +436,38 @@ extern(Windows):
 	}
 	final void removeConnectionStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ConnectionStatusChanged(token));
+		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).remove_ConnectionStatusChanged(token));
+	}
+
+	private static Windows.Media.Streaming.IActiveBasicDeviceStatics _staticInstance;
+	public static Windows.Media.Streaming.IActiveBasicDeviceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Streaming.IActiveBasicDeviceStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.ActiveBasicDevice) CreateBasicDeviceAsync(HSTRING deviceIdentifier, Windows.Media.Streaming.DeviceTypes type)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.ActiveBasicDevice) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Streaming.IActiveBasicDeviceStatics).abi_CreateBasicDeviceAsync(deviceIdentifier, type, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.ActiveBasicDevice) CloneBasicDeviceAsync(Windows.Media.Streaming.IBasicDevice basicDevice)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.ActiveBasicDevice) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Streaming.IActiveBasicDeviceStatics).abi_CloneBasicDeviceAsync(basicDevice, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.DevicePair) GetDevicesOnMatchingNetworkAsync(Windows.Media.Streaming.IActiveBasicDevice server, Windows.Media.Streaming.IActiveBasicDevice renderer, bool optimizeForProxying, bool allowChangeRendererNetwork)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.DevicePair) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Streaming.IActiveBasicDeviceStatics).abi_GetDevicesOnMatchingNetworkAsync(server, renderer, optimizeForProxying, allowChangeRendererNetwork, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.DevicePair) CreateDevicesOnMatchingNetworkAsync(HSTRING serverUDN, Windows.Media.Streaming.IActiveBasicDevice renderer, bool optimizeForProxying, bool allowChangeRendererNetwork)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.DevicePair) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Streaming.IActiveBasicDeviceStatics).abi_CreateDevicesOnMatchingNetworkAsync(serverUDN, renderer, optimizeForProxying, allowChangeRendererNetwork, &_ret));
+		return _ret;
 	}
 }
 
@@ -557,7 +588,7 @@ extern(Windows):
 	}
 	final void removeConnectionStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ConnectionStatusChanged(token));
+		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).remove_ConnectionStatusChanged(token));
 	}
 }
 
@@ -601,11 +632,11 @@ extern(Windows):
 	}
 	final void removeDeviceArrival(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DeviceArrival(token));
+		Debug.OK(this.as!(Windows.Media.Streaming.IDeviceController).remove_DeviceArrival(token));
 	}
 	final void removeDeviceDeparture(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DeviceDeparture(token));
+		Debug.OK(this.as!(Windows.Media.Streaming.IDeviceController).remove_DeviceDeparture(token));
 	}
 }
 
@@ -757,11 +788,11 @@ extern(Windows):
 	}
 	final void removeTransportParametersUpdate(EventRegistrationToken token)
 	{
-		Debug.OK(remove_TransportParametersUpdate(token));
+		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).remove_TransportParametersUpdate(token));
 	}
 	final void removeRenderingParametersUpdate(EventRegistrationToken token)
 	{
-		Debug.OK(remove_RenderingParametersUpdate(token));
+		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).remove_RenderingParametersUpdate(token));
 	}
 	final Windows.Foundation.IAsyncAction NextAsync()
 	{
@@ -883,12 +914,61 @@ extern(Windows):
 	}
 	final void removeConnectionStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ConnectionStatusChanged(token));
+		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).remove_ConnectionStatusChanged(token));
+	}
+
+	private static Windows.Media.Streaming.IMediaRendererFactory _staticInstance;
+	public static Windows.Media.Streaming.IMediaRendererFactory staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Streaming.IMediaRendererFactory);
+		return _staticInstance;
+	}
+	static Windows.Media.Streaming.CreateMediaRendererOperation CreateMediaRendererAsync(HSTRING deviceIdentifier)
+	{
+		Windows.Media.Streaming.CreateMediaRendererOperation _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Streaming.IMediaRendererFactory).abi_CreateMediaRendererAsync(deviceIdentifier, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Streaming.CreateMediaRendererOperation CreateMediaRendererFromBasicDeviceAsync(Windows.Media.Streaming.IBasicDevice basicDevice)
+	{
+		Windows.Media.Streaming.CreateMediaRendererOperation _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Streaming.IMediaRendererFactory).abi_CreateMediaRendererFromBasicDeviceAsync(basicDevice, &_ret));
+		return _ret;
 	}
 }
 
 interface StreamSelector
 {
+	private static Windows.Media.Streaming.IStreamSelectorStatics _staticInstance;
+	public static Windows.Media.Streaming.IStreamSelectorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Streaming.IStreamSelectorStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) SelectBestStreamAsync(Windows.Storage.StorageFile storageFile, Windows.Foundation.Collections.IPropertySet selectorProperties)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Streaming.IStreamSelectorStatics).abi_SelectBestStreamAsync(storageFile, selectorProperties, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Collections.IPropertySet)) GetStreamPropertiesAsync(Windows.Storage.StorageFile storageFile, Windows.Foundation.Collections.IPropertySet selectorProperties)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Collections.IPropertySet)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Streaming.IStreamSelectorStatics).abi_GetStreamPropertiesAsync(storageFile, selectorProperties, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) SelectBestStreamFromStreamAsync(Windows.Storage.Streams.IRandomAccessStream stream, Windows.Foundation.Collections.IPropertySet selectorProperties)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Streaming.IStreamSelectorStatics).abi_SelectBestStreamFromStreamAsync(stream, selectorProperties, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Collections.IPropertySet)) GetStreamPropertiesFromStreamAsync(Windows.Storage.Streams.IRandomAccessStream stream, Windows.Foundation.Collections.IPropertySet selectorProperties)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Collections.IPropertySet)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Streaming.IStreamSelectorStatics).abi_GetStreamPropertiesFromStreamAsync(stream, selectorProperties, &_ret));
+		return _ret;
+	}
 }
 
 enum ConnectionStatus

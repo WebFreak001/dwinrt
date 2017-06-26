@@ -492,6 +492,26 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader3).get_CompletionGroup(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Networking.BackgroundTransfer.IBackgroundDownloaderStaticMethods _staticInstance;
+	public static Windows.Networking.BackgroundTransfer.IBackgroundDownloaderStaticMethods staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.BackgroundTransfer.IBackgroundDownloaderStaticMethods);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.DownloadOperation)) GetCurrentDownloadsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.DownloadOperation)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloaderStaticMethods).abi_GetCurrentDownloadsAsync(&_ret));
+		return _ret;
+	}
+	deprecated("GetCurrentDownloadsAsync(group) may be altered or unavailable for releases after Windows 8.1. Instead, use GetCurrentDownloadsForTransferGroupAsync.")
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.DownloadOperation)) GetCurrentDownloadsForGroupAsync(HSTRING group)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.DownloadOperation)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloaderStaticMethods).abi_GetCurrentDownloadsForGroupAsync(group, &_ret));
+		return _ret;
+	}
 }
 
 interface BackgroundTransferCompletionGroup : Windows.Networking.BackgroundTransfer.IBackgroundTransferCompletionGroup
@@ -551,6 +571,18 @@ extern(Windows):
 
 interface BackgroundTransferError
 {
+	private static Windows.Networking.BackgroundTransfer.IBackgroundTransferErrorStaticMethods _staticInstance;
+	public static Windows.Networking.BackgroundTransfer.IBackgroundTransferErrorStaticMethods staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.BackgroundTransfer.IBackgroundTransferErrorStaticMethods);
+		return _staticInstance;
+	}
+	static Windows.Web.WebErrorStatus GetStatus(INT32 hresult)
+	{
+		Windows.Web.WebErrorStatus _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferErrorStaticMethods).abi_GetStatus(hresult, &_ret));
+		return _ret;
+	}
 }
 
 interface BackgroundTransferGroup : Windows.Networking.BackgroundTransfer.IBackgroundTransferGroup
@@ -571,6 +603,19 @@ extern(Windows):
 	final void TransferBehavior(Windows.Networking.BackgroundTransfer.BackgroundTransferBehavior value)
 	{
 		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferGroup).set_TransferBehavior(value));
+	}
+
+	private static Windows.Networking.BackgroundTransfer.IBackgroundTransferGroupStatics _staticInstance;
+	public static Windows.Networking.BackgroundTransfer.IBackgroundTransferGroupStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.BackgroundTransfer.IBackgroundTransferGroupStatics);
+		return _staticInstance;
+	}
+	static Windows.Networking.BackgroundTransfer.BackgroundTransferGroup CreateGroup(HSTRING name)
+	{
+		Windows.Networking.BackgroundTransfer.BackgroundTransferGroup _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferGroupStatics).abi_CreateGroup(name, &_ret));
+		return _ret;
 	}
 }
 
@@ -719,10 +764,52 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader3).get_CompletionGroup(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Networking.BackgroundTransfer.IBackgroundUploaderStaticMethods _staticInstance;
+	public static Windows.Networking.BackgroundTransfer.IBackgroundUploaderStaticMethods staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.BackgroundTransfer.IBackgroundUploaderStaticMethods);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.UploadOperation)) GetCurrentUploadsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.UploadOperation)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploaderStaticMethods).abi_GetCurrentUploadsAsync(&_ret));
+		return _ret;
+	}
+	deprecated("GetCurrentUploadsAsync(group) may be altered or unavailable for releases after Windows 8.1. Instead, use GetCurrentUploadsForTransferGroupAsync.")
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.UploadOperation)) GetCurrentUploadsForGroupAsync(HSTRING group)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.UploadOperation)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploaderStaticMethods).abi_GetCurrentUploadsForGroupAsync(group, &_ret));
+		return _ret;
+	}
 }
 
 interface ContentPrefetcher
 {
+	private static Windows.Networking.BackgroundTransfer.IContentPrefetcher _staticInstance;
+	public static Windows.Networking.BackgroundTransfer.IContentPrefetcher staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.BackgroundTransfer.IContentPrefetcher);
+		return _staticInstance;
+	}
+	static Windows.Foundation.Collections.IVector!(Windows.Foundation.Uri) ContentUris()
+	{
+		Windows.Foundation.Collections.IVector!(Windows.Foundation.Uri) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.BackgroundTransfer.IContentPrefetcher).get_ContentUris(&_ret));
+		return _ret;
+	}
+	static void IndirectContentUri(Windows.Foundation.Uri value)
+	{
+		Debug.OK(staticInstance.as!(Windows.Networking.BackgroundTransfer.IContentPrefetcher).set_IndirectContentUri(value));
+	}
+	static Windows.Foundation.Uri IndirectContentUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.BackgroundTransfer.IContentPrefetcher).get_IndirectContentUri(&_ret));
+		return _ret;
+	}
 }
 
 interface DownloadOperation : Windows.Networking.BackgroundTransfer.IDownloadOperation, Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation, Windows.Networking.BackgroundTransfer.IBackgroundTransferOperationPriority, Windows.Networking.BackgroundTransfer.IDownloadOperation2

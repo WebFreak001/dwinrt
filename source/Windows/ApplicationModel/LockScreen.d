@@ -78,12 +78,25 @@ extern(Windows):
 	final EventRegistrationToken OnUnlocking(void delegate(Windows.ApplicationModel.LockScreen.LockApplicationHost, Windows.ApplicationModel.LockScreen.LockScreenUnlockingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Unlocking(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockApplicationHost, Windows.ApplicationModel.LockScreen.LockScreenUnlockingEventArgs), Windows.ApplicationModel.LockScreen.LockApplicationHost, Windows.ApplicationModel.LockScreen.LockScreenUnlockingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockApplicationHost).add_Unlocking(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockApplicationHost, Windows.ApplicationModel.LockScreen.LockScreenUnlockingEventArgs), Windows.ApplicationModel.LockScreen.LockApplicationHost, Windows.ApplicationModel.LockScreen.LockScreenUnlockingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeUnlocking(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Unlocking(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockApplicationHost).remove_Unlocking(token));
+	}
+
+	private static Windows.ApplicationModel.LockScreen.ILockApplicationHostStatics _staticInstance;
+	public static Windows.ApplicationModel.LockScreen.ILockApplicationHostStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.LockScreen.ILockApplicationHostStatics);
+		return _staticInstance;
+	}
+	static Windows.ApplicationModel.LockScreen.LockApplicationHost GetForCurrentView()
+	{
+		Windows.ApplicationModel.LockScreen.LockApplicationHost _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.LockScreen.ILockApplicationHostStatics).abi_GetForCurrentView(&_ret));
+		return _ret;
 	}
 }
 
@@ -126,12 +139,12 @@ extern(Windows):
 	final EventRegistrationToken OnLockScreenImageChanged(void delegate(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_LockScreenImageChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable), Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).add_LockScreenImageChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable), Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeLockScreenImageChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_LockScreenImageChanged(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).remove_LockScreenImageChanged(token));
 	}
 	final Windows.Storage.Streams.IRandomAccessStream LockScreenImage()
 	{
@@ -142,12 +155,12 @@ extern(Windows):
 	final EventRegistrationToken OnBadgesChanged(void delegate(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_BadgesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable), Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).add_BadgesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable), Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeBadgesChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_BadgesChanged(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).remove_BadgesChanged(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.LockScreen.LockScreenBadge) Badges()
 	{
@@ -158,12 +171,12 @@ extern(Windows):
 	final EventRegistrationToken OnDetailTextChanged(void delegate(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DetailTextChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable), Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).add_DetailTextChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable), Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeDetailTextChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DetailTextChanged(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).remove_DetailTextChanged(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) DetailText()
 	{
@@ -174,12 +187,12 @@ extern(Windows):
 	final EventRegistrationToken OnAlarmIconChanged(void delegate(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AlarmIconChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable), Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).add_AlarmIconChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable), Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeAlarmIconChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AlarmIconChanged(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).remove_AlarmIconChanged(token));
 	}
 	final Windows.Storage.Streams.IRandomAccessStream AlarmIcon()
 	{

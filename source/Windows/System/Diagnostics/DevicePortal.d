@@ -44,22 +44,35 @@ extern(Windows):
 	final EventRegistrationToken OnClosed(void delegate(Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionClosedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionClosedEventArgs), Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionClosedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnection).add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionClosedEventArgs), Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionClosedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeClosed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Closed(token));
+		Debug.OK(this.as!(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnection).remove_Closed(token));
 	}
 	final EventRegistrationToken OnRequestReceived(void delegate(Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionRequestReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_RequestReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionRequestReceivedEventArgs), Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionRequestReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnection).add_RequestReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionRequestReceivedEventArgs), Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionRequestReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRequestReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_RequestReceived(token));
+		Debug.OK(this.as!(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnection).remove_RequestReceived(token));
+	}
+
+	private static Windows.System.Diagnostics.DevicePortal.IDevicePortalConnectionStatics _staticInstance;
+	public static Windows.System.Diagnostics.DevicePortal.IDevicePortalConnectionStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnectionStatics);
+		return _staticInstance;
+	}
+	static Windows.System.Diagnostics.DevicePortal.DevicePortalConnection GetForAppServiceConnection(Windows.ApplicationModel.AppService.AppServiceConnection appServiceConnection)
+	{
+		Windows.System.Diagnostics.DevicePortal.DevicePortalConnection _ret;
+		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnectionStatics).abi_GetForAppServiceConnection(appServiceConnection, &_ret));
+		return _ret;
 	}
 }
 

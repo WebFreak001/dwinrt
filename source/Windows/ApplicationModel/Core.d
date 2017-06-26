@@ -212,6 +212,58 @@ extern(Windows):
 
 interface CoreApplication
 {
+	private static Windows.ApplicationModel.Core.ICoreApplication _staticInstance;
+	public static Windows.ApplicationModel.Core.ICoreApplication staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Core.ICoreApplication);
+		return _staticInstance;
+	}
+	static HSTRING Id()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Core.ICoreApplication).get_Id(&_ret));
+		return _ret;
+	}
+	static EventRegistrationToken OnSuspending(void delegate(IInspectable, Windows.ApplicationModel.SuspendingEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Core.ICoreApplication).add_Suspending(event!(Windows.Foundation.EventHandler!(Windows.ApplicationModel.SuspendingEventArgs), IInspectable, Windows.ApplicationModel.SuspendingEventArgs)(fn), &tok));
+		return tok;
+	}
+	static void removeSuspending(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Core.ICoreApplication).remove_Suspending(token));
+	}
+	static EventRegistrationToken OnResuming(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Core.ICoreApplication).add_Resuming(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
+	static void removeResuming(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Core.ICoreApplication).remove_Resuming(token));
+	}
+	static Windows.Foundation.Collections.IPropertySet Properties()
+	{
+		Windows.Foundation.Collections.IPropertySet _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Core.ICoreApplication).get_Properties(&_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Core.CoreApplicationView GetCurrentView()
+	{
+		Windows.ApplicationModel.Core.CoreApplicationView _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Core.ICoreApplication).abi_GetCurrentView(&_ret));
+		return _ret;
+	}
+	static void Run(Windows.ApplicationModel.Core.IFrameworkViewSource viewSource)
+	{
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Core.ICoreApplication).abi_Run(viewSource));
+	}
+	static void RunWithActivationFactories(Windows.Foundation.IGetActivationFactory activationFactoryCallback)
+	{
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Core.ICoreApplication).abi_RunWithActivationFactories(activationFactoryCallback));
+	}
 }
 
 interface CoreApplicationView : Windows.ApplicationModel.Core.ICoreApplicationView, Windows.ApplicationModel.Core.ICoreApplicationView2, Windows.ApplicationModel.Core.ICoreApplicationView3, Windows.ApplicationModel.Core.ICoreApplicationView5
@@ -226,12 +278,12 @@ extern(Windows):
 	final EventRegistrationToken OnActivated(void delegate(Windows.ApplicationModel.Core.CoreApplicationView, Windows.ApplicationModel.Activation.IActivatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Activated(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationView, Windows.ApplicationModel.Activation.IActivatedEventArgs), Windows.ApplicationModel.Core.CoreApplicationView, Windows.ApplicationModel.Activation.IActivatedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView).add_Activated(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationView, Windows.ApplicationModel.Activation.IActivatedEventArgs), Windows.ApplicationModel.Core.CoreApplicationView, Windows.ApplicationModel.Activation.IActivatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeActivated(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Activated(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView).remove_Activated(token));
 	}
 	final bool IsMain()
 	{
@@ -266,12 +318,12 @@ extern(Windows):
 	final EventRegistrationToken OnHostedViewClosing(void delegate(Windows.ApplicationModel.Core.CoreApplicationView, Windows.ApplicationModel.Core.HostedViewClosingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_HostedViewClosing(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationView, Windows.ApplicationModel.Core.HostedViewClosingEventArgs), Windows.ApplicationModel.Core.CoreApplicationView, Windows.ApplicationModel.Core.HostedViewClosingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView3).add_HostedViewClosing(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationView, Windows.ApplicationModel.Core.HostedViewClosingEventArgs), Windows.ApplicationModel.Core.CoreApplicationView, Windows.ApplicationModel.Core.HostedViewClosingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeHostedViewClosing(EventRegistrationToken token)
 	{
-		Debug.OK(remove_HostedViewClosing(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView3).remove_HostedViewClosing(token));
 	}
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{
@@ -315,12 +367,12 @@ extern(Windows):
 	final EventRegistrationToken OnLayoutMetricsChanged(void delegate(Windows.ApplicationModel.Core.CoreApplicationViewTitleBar, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_LayoutMetricsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationViewTitleBar, IInspectable), Windows.ApplicationModel.Core.CoreApplicationViewTitleBar, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar).add_LayoutMetricsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationViewTitleBar, IInspectable), Windows.ApplicationModel.Core.CoreApplicationViewTitleBar, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeLayoutMetricsChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_LayoutMetricsChanged(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar).remove_LayoutMetricsChanged(token));
 	}
 	final bool IsVisible()
 	{
@@ -331,12 +383,12 @@ extern(Windows):
 	final EventRegistrationToken OnIsVisibleChanged(void delegate(Windows.ApplicationModel.Core.CoreApplicationViewTitleBar, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_IsVisibleChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationViewTitleBar, IInspectable), Windows.ApplicationModel.Core.CoreApplicationViewTitleBar, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar).add_IsVisibleChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationViewTitleBar, IInspectable), Windows.ApplicationModel.Core.CoreApplicationViewTitleBar, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeIsVisibleChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_IsVisibleChanged(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar).remove_IsVisibleChanged(token));
 	}
 }
 

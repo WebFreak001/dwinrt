@@ -248,10 +248,41 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Data.Json.IJsonArrayStatics _staticInstance;
+	public static Windows.Data.Json.IJsonArrayStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Data.Json.IJsonArrayStatics);
+		return _staticInstance;
+	}
+	static Windows.Data.Json.JsonArray Parse(HSTRING input)
+	{
+		Windows.Data.Json.JsonArray _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Json.IJsonArrayStatics).abi_Parse(input, &_ret));
+		return _ret;
+	}
+	static bool TryParse(HSTRING input, Windows.Data.Json.JsonArray* out_result)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Json.IJsonArrayStatics).abi_TryParse(input, out_result, &_ret));
+		return _ret;
+	}
 }
 
 interface JsonError
 {
+	private static Windows.Data.Json.IJsonErrorStatics2 _staticInstance;
+	public static Windows.Data.Json.IJsonErrorStatics2 staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Data.Json.IJsonErrorStatics2);
+		return _staticInstance;
+	}
+	static Windows.Data.Json.JsonErrorStatus GetJsonStatus(INT32 hresult)
+	{
+		Windows.Data.Json.JsonErrorStatus _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Json.IJsonErrorStatics2).abi_GetJsonStatus(hresult, &_ret));
+		return _ret;
+	}
 }
 
 interface JsonObject : Windows.Data.Json.IJsonObject, Windows.Data.Json.IJsonValue, Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Data.Json.IJsonValue)), Windows.Data.Json.IJsonObjectWithDefaultValues, Windows.Foundation.IStringable
@@ -423,6 +454,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Data.Json.IJsonObjectStatics _staticInstance;
+	public static Windows.Data.Json.IJsonObjectStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Data.Json.IJsonObjectStatics);
+		return _staticInstance;
+	}
+	static Windows.Data.Json.JsonObject Parse(HSTRING input)
+	{
+		Windows.Data.Json.JsonObject _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Json.IJsonObjectStatics).abi_Parse(input, &_ret));
+		return _ret;
+	}
+	static bool TryParse(HSTRING input, Windows.Data.Json.JsonObject* out_result)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Json.IJsonObjectStatics).abi_TryParse(input, out_result, &_ret));
+		return _ret;
+	}
 }
 
 interface JsonValue : Windows.Data.Json.IJsonValue, Windows.Foundation.IStringable
@@ -474,6 +524,43 @@ extern(Windows):
 	{
 		HSTRING _ret;
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Data.Json.IJsonValueStatics _staticInstance;
+	public static Windows.Data.Json.IJsonValueStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Data.Json.IJsonValueStatics);
+		return _staticInstance;
+	}
+	static Windows.Data.Json.JsonValue Parse(HSTRING input)
+	{
+		Windows.Data.Json.JsonValue _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Json.IJsonValueStatics).abi_Parse(input, &_ret));
+		return _ret;
+	}
+	static bool TryParse(HSTRING input, Windows.Data.Json.JsonValue* out_result)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Json.IJsonValueStatics).abi_TryParse(input, out_result, &_ret));
+		return _ret;
+	}
+	static Windows.Data.Json.JsonValue CreateBooleanValue(bool input)
+	{
+		Windows.Data.Json.JsonValue _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Json.IJsonValueStatics).abi_CreateBooleanValue(input, &_ret));
+		return _ret;
+	}
+	static Windows.Data.Json.JsonValue CreateNumberValue(double input)
+	{
+		Windows.Data.Json.JsonValue _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Json.IJsonValueStatics).abi_CreateNumberValue(input, &_ret));
+		return _ret;
+	}
+	static Windows.Data.Json.JsonValue CreateStringValue(HSTRING input)
+	{
+		Windows.Data.Json.JsonValue _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Json.IJsonValueStatics).abi_CreateStringValue(input, &_ret));
 		return _ret;
 	}
 }

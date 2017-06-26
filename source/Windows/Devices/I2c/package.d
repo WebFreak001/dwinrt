@@ -117,6 +117,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.I2c.II2cController).abi_GetDevice(settings, &_ret));
 		return _ret;
 	}
+
+	private static Windows.Devices.I2c.II2cControllerStatics _staticInstance;
+	public static Windows.Devices.I2c.II2cControllerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.I2c.II2cControllerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.I2c.I2cController)) GetControllersAsync(Windows.Devices.I2c.Provider.II2cProvider provider)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.I2c.I2cController)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.I2c.II2cControllerStatics).abi_GetControllersAsync(provider, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.I2c.I2cController) GetDefaultAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.I2c.I2cController) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.I2c.II2cControllerStatics).abi_GetDefaultAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface I2cDevice : Windows.Devices.I2c.II2cDevice, Windows.Foundation.IClosable
@@ -167,6 +186,31 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+
+	private static Windows.Devices.I2c.II2cDeviceStatics _staticInstance;
+	public static Windows.Devices.I2c.II2cDeviceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.I2c.II2cDeviceStatics);
+		return _staticInstance;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.I2c.II2cDeviceStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelectorFromFriendlyName(HSTRING friendlyName)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.I2c.II2cDeviceStatics).abi_GetDeviceSelectorFromFriendlyName(friendlyName, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.I2c.I2cDevice) FromIdAsync(HSTRING deviceId, Windows.Devices.I2c.I2cConnectionSettings settings)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.I2c.I2cDevice) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.I2c.II2cDeviceStatics).abi_FromIdAsync(deviceId, settings, &_ret));
+		return _ret;
 	}
 }
 

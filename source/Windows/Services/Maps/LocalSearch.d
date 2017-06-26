@@ -80,6 +80,60 @@ extern(Windows):
 
 interface LocalCategories
 {
+	private static Windows.Services.Maps.LocalSearch.ILocalCategoriesStatics _staticInstance;
+	public static Windows.Services.Maps.LocalSearch.ILocalCategoriesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Services.Maps.LocalSearch.ILocalCategoriesStatics);
+		return _staticInstance;
+	}
+	static HSTRING BankAndCreditUnions()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.Maps.LocalSearch.ILocalCategoriesStatics).get_BankAndCreditUnions(&_ret));
+		return _ret;
+	}
+	static HSTRING EatDrink()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.Maps.LocalSearch.ILocalCategoriesStatics).get_EatDrink(&_ret));
+		return _ret;
+	}
+	static HSTRING Hospitals()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.Maps.LocalSearch.ILocalCategoriesStatics).get_Hospitals(&_ret));
+		return _ret;
+	}
+	static HSTRING HotelsAndMotels()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.Maps.LocalSearch.ILocalCategoriesStatics).get_HotelsAndMotels(&_ret));
+		return _ret;
+	}
+	static HSTRING All()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.Maps.LocalSearch.ILocalCategoriesStatics).get_All(&_ret));
+		return _ret;
+	}
+	static HSTRING Parking()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.Maps.LocalSearch.ILocalCategoriesStatics).get_Parking(&_ret));
+		return _ret;
+	}
+	static HSTRING SeeDo()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.Maps.LocalSearch.ILocalCategoriesStatics).get_SeeDo(&_ret));
+		return _ret;
+	}
+	static HSTRING Shop()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.Maps.LocalSearch.ILocalCategoriesStatics).get_Shop(&_ret));
+		return _ret;
+	}
 }
 
 interface LocalLocation : Windows.Services.Maps.LocalSearch.ILocalLocation, Windows.Services.Maps.LocalSearch.ILocalLocation2
@@ -149,6 +203,18 @@ extern(Windows):
 
 interface LocalLocationFinder
 {
+	private static Windows.Services.Maps.LocalSearch.ILocalLocationFinderStatics _staticInstance;
+	public static Windows.Services.Maps.LocalSearch.ILocalLocationFinderStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Services.Maps.LocalSearch.ILocalLocationFinderStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.LocalSearch.LocalLocationFinderResult) FindLocalLocationsAsync(HSTRING searchTerm, Windows.Devices.Geolocation.Geocircle searchArea, HSTRING localCategory, UINT32 maxResults)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.LocalSearch.LocalLocationFinderResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.Maps.LocalSearch.ILocalLocationFinderStatics).abi_FindLocalLocationsAsync(searchTerm, searchArea, localCategory, maxResults, &_ret));
+		return _ret;
+	}
 }
 
 interface LocalLocationFinderResult : Windows.Services.Maps.LocalSearch.ILocalLocationFinderResult

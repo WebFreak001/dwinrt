@@ -394,6 +394,112 @@ extern(Windows):
 
 interface UnicodeCharacters
 {
+	private static Windows.Data.Text.IUnicodeCharactersStatics _staticInstance;
+	public static Windows.Data.Text.IUnicodeCharactersStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Data.Text.IUnicodeCharactersStatics);
+		return _staticInstance;
+	}
+	static UINT32 GetCodepointFromSurrogatePair(UINT32 highSurrogate, UINT32 lowSurrogate)
+	{
+		UINT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_GetCodepointFromSurrogatePair(highSurrogate, lowSurrogate, &_ret));
+		return _ret;
+	}
+	static void GetSurrogatePairFromCodepoint(UINT32 codepoint, wchar* out_highSurrogate, wchar* out_lowSurrogate)
+	{
+		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_GetSurrogatePairFromCodepoint(codepoint, out_highSurrogate, out_lowSurrogate));
+	}
+	static bool IsHighSurrogate(UINT32 codepoint)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsHighSurrogate(codepoint, &_ret));
+		return _ret;
+	}
+	static bool IsLowSurrogate(UINT32 codepoint)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsLowSurrogate(codepoint, &_ret));
+		return _ret;
+	}
+	static bool IsSupplementary(UINT32 codepoint)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsSupplementary(codepoint, &_ret));
+		return _ret;
+	}
+	static bool IsNoncharacter(UINT32 codepoint)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsNoncharacter(codepoint, &_ret));
+		return _ret;
+	}
+	static bool IsWhitespace(UINT32 codepoint)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsWhitespace(codepoint, &_ret));
+		return _ret;
+	}
+	static bool IsAlphabetic(UINT32 codepoint)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsAlphabetic(codepoint, &_ret));
+		return _ret;
+	}
+	static bool IsCased(UINT32 codepoint)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsCased(codepoint, &_ret));
+		return _ret;
+	}
+	static bool IsUppercase(UINT32 codepoint)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsUppercase(codepoint, &_ret));
+		return _ret;
+	}
+	static bool IsLowercase(UINT32 codepoint)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsLowercase(codepoint, &_ret));
+		return _ret;
+	}
+	static bool IsIdStart(UINT32 codepoint)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsIdStart(codepoint, &_ret));
+		return _ret;
+	}
+	static bool IsIdContinue(UINT32 codepoint)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsIdContinue(codepoint, &_ret));
+		return _ret;
+	}
+	static bool IsGraphemeBase(UINT32 codepoint)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsGraphemeBase(codepoint, &_ret));
+		return _ret;
+	}
+	static bool IsGraphemeExtend(UINT32 codepoint)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsGraphemeExtend(codepoint, &_ret));
+		return _ret;
+	}
+	static Windows.Data.Text.UnicodeNumericType GetNumericType(UINT32 codepoint)
+	{
+		Windows.Data.Text.UnicodeNumericType _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_GetNumericType(codepoint, &_ret));
+		return _ret;
+	}
+	static Windows.Data.Text.UnicodeGeneralCategory GetGeneralCategory(UINT32 codepoint)
+	{
+		Windows.Data.Text.UnicodeGeneralCategory _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_GetGeneralCategory(codepoint, &_ret));
+		return _ret;
+	}
 }
 
 interface WordSegment : Windows.Data.Text.IWordSegment

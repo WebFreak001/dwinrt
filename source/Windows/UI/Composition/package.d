@@ -1114,12 +1114,25 @@ extern(Windows):
 	final EventRegistrationToken OnChanged(void delegate(Windows.UI.Composition.CompositionCapabilities, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Changed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Composition.CompositionCapabilities, IInspectable), Windows.UI.Composition.CompositionCapabilities, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Composition.ICompositionCapabilities).add_Changed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Composition.CompositionCapabilities, IInspectable), Windows.UI.Composition.CompositionCapabilities, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Changed(token));
+		Debug.OK(this.as!(Windows.UI.Composition.ICompositionCapabilities).remove_Changed(token));
+	}
+
+	private static Windows.UI.Composition.ICompositionCapabilitiesStatics _staticInstance;
+	public static Windows.UI.Composition.ICompositionCapabilitiesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Composition.ICompositionCapabilitiesStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Composition.CompositionCapabilities GetForCurrentView()
+	{
+		Windows.UI.Composition.CompositionCapabilities _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Composition.ICompositionCapabilitiesStatics).abi_GetForCurrentView(&_ret));
+		return _ret;
 	}
 }
 
@@ -1260,12 +1273,12 @@ extern(Windows):
 	final EventRegistrationToken OnCompleted(void delegate(IInspectable, Windows.UI.Composition.CompositionBatchCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Completed(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Composition.CompositionBatchCompletedEventArgs), IInspectable, Windows.UI.Composition.CompositionBatchCompletedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Composition.ICompositionCommitBatch).add_Completed(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Composition.CompositionBatchCompletedEventArgs), IInspectable, Windows.UI.Composition.CompositionBatchCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Completed(token));
+		Debug.OK(this.as!(Windows.UI.Composition.ICompositionCommitBatch).remove_Completed(token));
 	}
 }
 
@@ -1422,12 +1435,12 @@ extern(Windows):
 	final EventRegistrationToken OnRenderingDeviceReplaced(void delegate(Windows.UI.Composition.CompositionGraphicsDevice, Windows.UI.Composition.RenderingDeviceReplacedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_RenderingDeviceReplaced(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Composition.CompositionGraphicsDevice, Windows.UI.Composition.RenderingDeviceReplacedEventArgs), Windows.UI.Composition.CompositionGraphicsDevice, Windows.UI.Composition.RenderingDeviceReplacedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Composition.ICompositionGraphicsDevice).add_RenderingDeviceReplaced(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Composition.CompositionGraphicsDevice, Windows.UI.Composition.RenderingDeviceReplacedEventArgs), Windows.UI.Composition.CompositionGraphicsDevice, Windows.UI.Composition.RenderingDeviceReplacedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRenderingDeviceReplaced(EventRegistrationToken token)
 	{
-		Debug.OK(remove_RenderingDeviceReplaced(token));
+		Debug.OK(this.as!(Windows.UI.Composition.ICompositionGraphicsDevice).remove_RenderingDeviceReplaced(token));
 	}
 	final Windows.UI.Composition.CompositionDrawingSurface CreateDrawingSurface2(Windows.Graphics.SizeInt32 sizePixels, Windows.Graphics.DirectX.DirectXPixelFormat pixelFormat, Windows.Graphics.DirectX.DirectXAlphaMode alphaMode)
 	{
@@ -1831,12 +1844,12 @@ extern(Windows):
 	final EventRegistrationToken OnCompleted(void delegate(IInspectable, Windows.UI.Composition.CompositionBatchCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Completed(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Composition.CompositionBatchCompletedEventArgs), IInspectable, Windows.UI.Composition.CompositionBatchCompletedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Composition.ICompositionScopedBatch).add_Completed(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Composition.CompositionBatchCompletedEventArgs), IInspectable, Windows.UI.Composition.CompositionBatchCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Completed(token));
+		Debug.OK(this.as!(Windows.UI.Composition.ICompositionScopedBatch).remove_Completed(token));
 	}
 }
 

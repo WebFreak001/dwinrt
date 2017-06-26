@@ -797,12 +797,12 @@ extern(Windows):
 	final EventRegistrationToken OnFileCompleted(void delegate(Windows.Media.Audio.AudioFileInputNode, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_FileCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFileInputNode, IInspectable), Windows.Media.Audio.AudioFileInputNode, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).add_FileCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFileInputNode, IInspectable), Windows.Media.Audio.AudioFileInputNode, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeFileCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_FileCompleted(token));
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).remove_FileCompleted(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection) OutgoingConnections()
 	{
@@ -1006,22 +1006,22 @@ extern(Windows):
 	final EventRegistrationToken OnAudioFrameCompleted(void delegate(Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.AudioFrameCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AudioFrameCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.AudioFrameCompletedEventArgs), Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.AudioFrameCompletedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameInputNode).add_AudioFrameCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.AudioFrameCompletedEventArgs), Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.AudioFrameCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAudioFrameCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AudioFrameCompleted(token));
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameInputNode).remove_AudioFrameCompleted(token));
 	}
 	final EventRegistrationToken OnQuantumStarted(void delegate(Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_QuantumStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs), Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameInputNode).add_QuantumStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs), Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeQuantumStarted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_QuantumStarted(token));
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameInputNode).remove_QuantumStarted(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection) OutgoingConnections()
 	{
@@ -1268,32 +1268,32 @@ extern(Windows):
 	final EventRegistrationToken OnQuantumStarted(void delegate(Windows.Media.Audio.AudioGraph, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_QuantumStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioGraph, IInspectable), Windows.Media.Audio.AudioGraph, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).add_QuantumStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioGraph, IInspectable), Windows.Media.Audio.AudioGraph, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeQuantumStarted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_QuantumStarted(token));
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).remove_QuantumStarted(token));
 	}
 	final EventRegistrationToken OnQuantumProcessed(void delegate(Windows.Media.Audio.AudioGraph, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_QuantumProcessed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioGraph, IInspectable), Windows.Media.Audio.AudioGraph, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).add_QuantumProcessed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioGraph, IInspectable), Windows.Media.Audio.AudioGraph, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeQuantumProcessed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_QuantumProcessed(token));
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).remove_QuantumProcessed(token));
 	}
 	final EventRegistrationToken OnUnrecoverableErrorOccurred(void delegate(Windows.Media.Audio.AudioGraph, Windows.Media.Audio.AudioGraphUnrecoverableErrorOccurredEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_UnrecoverableErrorOccurred(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioGraph, Windows.Media.Audio.AudioGraphUnrecoverableErrorOccurredEventArgs), Windows.Media.Audio.AudioGraph, Windows.Media.Audio.AudioGraphUnrecoverableErrorOccurredEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).add_UnrecoverableErrorOccurred(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioGraph, Windows.Media.Audio.AudioGraphUnrecoverableErrorOccurredEventArgs), Windows.Media.Audio.AudioGraph, Windows.Media.Audio.AudioGraphUnrecoverableErrorOccurredEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeUnrecoverableErrorOccurred(EventRegistrationToken token)
 	{
-		Debug.OK(remove_UnrecoverableErrorOccurred(token));
+		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).remove_UnrecoverableErrorOccurred(token));
 	}
 	final ulong CompletedQuantumCount()
 	{
@@ -1363,6 +1363,19 @@ extern(Windows):
 	{
 		Windows.Media.Audio.AudioGraphBatchUpdater _ret;
 		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph2).abi_CreateBatchUpdater(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Media.Audio.IAudioGraphStatics _staticInstance;
+	public static Windows.Media.Audio.IAudioGraphStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Audio.IAudioGraphStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioGraphResult) CreateAsync(Windows.Media.Audio.AudioGraphSettings settings)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioGraphResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Audio.IAudioGraphStatics).abi_CreateAsync(settings, &_ret));
 		return _ret;
 	}
 }
@@ -1616,6 +1629,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterDecayModel).get_NaturalProperties(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Media.Audio.IAudioNodeEmitterDecayModelStatics _staticInstance;
+	public static Windows.Media.Audio.IAudioNodeEmitterDecayModelStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Audio.IAudioNodeEmitterDecayModelStatics);
+		return _staticInstance;
+	}
+	static Windows.Media.Audio.AudioNodeEmitterDecayModel CreateNatural(double minGain, double maxGain, double unityGainDistance, double cutoffDistance)
+	{
+		Windows.Media.Audio.AudioNodeEmitterDecayModel _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Audio.IAudioNodeEmitterDecayModelStatics).abi_CreateNatural(minGain, maxGain, unityGainDistance, cutoffDistance, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Audio.AudioNodeEmitterDecayModel CreateCustom(double minGain, double maxGain)
+	{
+		Windows.Media.Audio.AudioNodeEmitterDecayModel _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Audio.IAudioNodeEmitterDecayModelStatics).abi_CreateCustom(minGain, maxGain, &_ret));
+		return _ret;
+	}
 }
 
 interface AudioNodeEmitterNaturalDecayModelProperties : Windows.Media.Audio.IAudioNodeEmitterNaturalDecayModelProperties
@@ -1648,6 +1680,25 @@ extern(Windows):
 	{
 		Windows.Media.Audio.AudioNodeEmitterConeProperties _ret;
 		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterShape).get_ConeProperties(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Media.Audio.IAudioNodeEmitterShapeStatics _staticInstance;
+	public static Windows.Media.Audio.IAudioNodeEmitterShapeStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Audio.IAudioNodeEmitterShapeStatics);
+		return _staticInstance;
+	}
+	static Windows.Media.Audio.AudioNodeEmitterShape CreateCone(double innerAngle, double outerAngle, double outerAngleGain)
+	{
+		Windows.Media.Audio.AudioNodeEmitterShape _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Audio.IAudioNodeEmitterShapeStatics).abi_CreateCone(innerAngle, outerAngle, outerAngleGain, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Audio.AudioNodeEmitterShape CreateOmnidirectional()
+	{
+		Windows.Media.Audio.AudioNodeEmitterShape _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Audio.IAudioNodeEmitterShapeStatics).abi_CreateOmnidirectional(&_ret));
 		return _ret;
 	}
 }

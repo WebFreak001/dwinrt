@@ -425,6 +425,37 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardProvisioning2).abi_GetAuthorityKeyContainerNameAsync(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Devices.SmartCards.ISmartCardProvisioningStatics _staticInstance;
+	public static Windows.Devices.SmartCards.ISmartCardProvisioningStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.SmartCards.ISmartCardProvisioningStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning) FromSmartCardAsync(Windows.Devices.SmartCards.SmartCard card)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.SmartCards.ISmartCardProvisioningStatics).abi_FromSmartCardAsync(card, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning) RequestVirtualSmartCardCreationAsync(HSTRING friendlyName, Windows.Storage.Streams.IBuffer administrativeKey, Windows.Devices.SmartCards.SmartCardPinPolicy pinPolicy)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.SmartCards.ISmartCardProvisioningStatics).abi_RequestVirtualSmartCardCreationAsync(friendlyName, administrativeKey, pinPolicy, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning) RequestVirtualSmartCardCreationAsyncWithCardId(HSTRING friendlyName, Windows.Storage.Streams.IBuffer administrativeKey, Windows.Devices.SmartCards.SmartCardPinPolicy pinPolicy, GUID cardId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.SmartCards.ISmartCardProvisioningStatics).abi_RequestVirtualSmartCardCreationAsyncWithCardId(friendlyName, administrativeKey, pinPolicy, cardId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(bool) RequestVirtualSmartCardDeletionAsync(Windows.Devices.SmartCards.SmartCard card)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.SmartCards.ISmartCardProvisioningStatics).abi_RequestVirtualSmartCardDeletionAsync(card, &_ret));
+		return _ret;
+	}
 }
 
 interface SmartCardReader : Windows.Devices.SmartCards.ISmartCardReader
@@ -463,22 +494,47 @@ extern(Windows):
 	final EventRegistrationToken OnCardAdded(void delegate(Windows.Devices.SmartCards.SmartCardReader, Windows.Devices.SmartCards.CardAddedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_CardAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.SmartCards.SmartCardReader, Windows.Devices.SmartCards.CardAddedEventArgs), Windows.Devices.SmartCards.SmartCardReader, Windows.Devices.SmartCards.CardAddedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardReader).add_CardAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.SmartCards.SmartCardReader, Windows.Devices.SmartCards.CardAddedEventArgs), Windows.Devices.SmartCards.SmartCardReader, Windows.Devices.SmartCards.CardAddedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCardAdded(EventRegistrationToken token)
 	{
-		Debug.OK(remove_CardAdded(token));
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardReader).remove_CardAdded(token));
 	}
 	final EventRegistrationToken OnCardRemoved(void delegate(Windows.Devices.SmartCards.SmartCardReader, Windows.Devices.SmartCards.CardRemovedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_CardRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.SmartCards.SmartCardReader, Windows.Devices.SmartCards.CardRemovedEventArgs), Windows.Devices.SmartCards.SmartCardReader, Windows.Devices.SmartCards.CardRemovedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardReader).add_CardRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.SmartCards.SmartCardReader, Windows.Devices.SmartCards.CardRemovedEventArgs), Windows.Devices.SmartCards.SmartCardReader, Windows.Devices.SmartCards.CardRemovedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCardRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(remove_CardRemoved(token));
+		Debug.OK(this.as!(Windows.Devices.SmartCards.ISmartCardReader).remove_CardRemoved(token));
+	}
+
+	private static Windows.Devices.SmartCards.ISmartCardReaderStatics _staticInstance;
+	public static Windows.Devices.SmartCards.ISmartCardReaderStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.SmartCards.ISmartCardReaderStatics);
+		return _staticInstance;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.SmartCards.ISmartCardReaderStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelectorWithKind(Windows.Devices.SmartCards.SmartCardReaderKind kind)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.SmartCards.ISmartCardReaderStatics).abi_GetDeviceSelectorWithKind(kind, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardReader) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardReader) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.SmartCards.ISmartCardReaderStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
 	}
 }
 

@@ -205,12 +205,12 @@ extern(Windows):
 	final EventRegistrationToken OnAudioCaptureEffectsChanged(void delegate(Windows.Media.Effects.AudioCaptureEffectsManager, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AudioCaptureEffectsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Effects.AudioCaptureEffectsManager, IInspectable), Windows.Media.Effects.AudioCaptureEffectsManager, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Effects.IAudioCaptureEffectsManager).add_AudioCaptureEffectsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Effects.AudioCaptureEffectsManager, IInspectable), Windows.Media.Effects.AudioCaptureEffectsManager, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeAudioCaptureEffectsChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AudioCaptureEffectsChanged(token));
+		Debug.OK(this.as!(Windows.Media.Effects.IAudioCaptureEffectsManager).remove_AudioCaptureEffectsChanged(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Effects.AudioEffect) GetAudioCaptureEffects()
 	{
@@ -250,6 +250,36 @@ extern(Windows):
 
 interface AudioEffectsManager
 {
+	private static Windows.Media.Effects.IAudioEffectsManagerStatics _staticInstance;
+	public static Windows.Media.Effects.IAudioEffectsManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Effects.IAudioEffectsManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Media.Effects.AudioRenderEffectsManager CreateAudioRenderEffectsManager(HSTRING deviceId, Windows.Media.Render.AudioRenderCategory category)
+	{
+		Windows.Media.Effects.AudioRenderEffectsManager _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Effects.IAudioEffectsManagerStatics).abi_CreateAudioRenderEffectsManager(deviceId, category, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Effects.AudioRenderEffectsManager CreateAudioRenderEffectsManagerWithMode(HSTRING deviceId, Windows.Media.Render.AudioRenderCategory category, Windows.Media.AudioProcessing mode)
+	{
+		Windows.Media.Effects.AudioRenderEffectsManager _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Effects.IAudioEffectsManagerStatics).abi_CreateAudioRenderEffectsManagerWithMode(deviceId, category, mode, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Effects.AudioCaptureEffectsManager CreateAudioCaptureEffectsManager(HSTRING deviceId, Windows.Media.Capture.MediaCategory category)
+	{
+		Windows.Media.Effects.AudioCaptureEffectsManager _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Effects.IAudioEffectsManagerStatics).abi_CreateAudioCaptureEffectsManager(deviceId, category, &_ret));
+		return _ret;
+	}
+	static Windows.Media.Effects.AudioCaptureEffectsManager CreateAudioCaptureEffectsManagerWithMode(HSTRING deviceId, Windows.Media.Capture.MediaCategory category, Windows.Media.AudioProcessing mode)
+	{
+		Windows.Media.Effects.AudioCaptureEffectsManager _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Effects.IAudioEffectsManagerStatics).abi_CreateAudioCaptureEffectsManagerWithMode(deviceId, category, mode, &_ret));
+		return _ret;
+	}
 }
 
 interface AudioRenderEffectsManager : Windows.Media.Effects.IAudioRenderEffectsManager, Windows.Media.Effects.IAudioRenderEffectsManager2
@@ -258,12 +288,12 @@ extern(Windows):
 	final EventRegistrationToken OnAudioRenderEffectsChanged(void delegate(Windows.Media.Effects.AudioRenderEffectsManager, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AudioRenderEffectsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Effects.AudioRenderEffectsManager, IInspectable), Windows.Media.Effects.AudioRenderEffectsManager, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Effects.IAudioRenderEffectsManager).add_AudioRenderEffectsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Effects.AudioRenderEffectsManager, IInspectable), Windows.Media.Effects.AudioRenderEffectsManager, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeAudioRenderEffectsChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AudioRenderEffectsChanged(token));
+		Debug.OK(this.as!(Windows.Media.Effects.IAudioRenderEffectsManager).remove_AudioRenderEffectsChanged(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Effects.AudioEffect) GetAudioRenderEffects()
 	{

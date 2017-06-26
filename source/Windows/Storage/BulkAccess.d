@@ -87,22 +87,22 @@ extern(Windows):
 	final EventRegistrationToken OnThumbnailUpdated(void delegate(Windows.Storage.BulkAccess.IStorageItemInformation, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ThumbnailUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.BulkAccess.IStorageItemInformation, IInspectable), Windows.Storage.BulkAccess.IStorageItemInformation, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Storage.BulkAccess.IStorageItemInformation).add_ThumbnailUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.BulkAccess.IStorageItemInformation, IInspectable), Windows.Storage.BulkAccess.IStorageItemInformation, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeThumbnailUpdated(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_ThumbnailUpdated(eventCookie));
+		Debug.OK(this.as!(Windows.Storage.BulkAccess.IStorageItemInformation).remove_ThumbnailUpdated(eventCookie));
 	}
 	final EventRegistrationToken OnPropertiesUpdated(void delegate(Windows.Storage.BulkAccess.IStorageItemInformation, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PropertiesUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.BulkAccess.IStorageItemInformation, IInspectable), Windows.Storage.BulkAccess.IStorageItemInformation, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Storage.BulkAccess.IStorageItemInformation).add_PropertiesUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.BulkAccess.IStorageItemInformation, IInspectable), Windows.Storage.BulkAccess.IStorageItemInformation, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removePropertiesUpdated(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_PropertiesUpdated(eventCookie));
+		Debug.OK(this.as!(Windows.Storage.BulkAccess.IStorageItemInformation).remove_PropertiesUpdated(eventCookie));
 	}
 	final HSTRING FileType()
 	{
@@ -429,22 +429,22 @@ extern(Windows):
 	final EventRegistrationToken OnThumbnailUpdated(void delegate(Windows.Storage.BulkAccess.IStorageItemInformation, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ThumbnailUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.BulkAccess.IStorageItemInformation, IInspectable), Windows.Storage.BulkAccess.IStorageItemInformation, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Storage.BulkAccess.IStorageItemInformation).add_ThumbnailUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.BulkAccess.IStorageItemInformation, IInspectable), Windows.Storage.BulkAccess.IStorageItemInformation, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeThumbnailUpdated(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_ThumbnailUpdated(eventCookie));
+		Debug.OK(this.as!(Windows.Storage.BulkAccess.IStorageItemInformation).remove_ThumbnailUpdated(eventCookie));
 	}
 	final EventRegistrationToken OnPropertiesUpdated(void delegate(Windows.Storage.BulkAccess.IStorageItemInformation, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PropertiesUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.BulkAccess.IStorageItemInformation, IInspectable), Windows.Storage.BulkAccess.IStorageItemInformation, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Storage.BulkAccess.IStorageItemInformation).add_PropertiesUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.BulkAccess.IStorageItemInformation, IInspectable), Windows.Storage.BulkAccess.IStorageItemInformation, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removePropertiesUpdated(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_PropertiesUpdated(eventCookie));
+		Debug.OK(this.as!(Windows.Storage.BulkAccess.IStorageItemInformation).remove_PropertiesUpdated(eventCookie));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) CreateFileAsyncOverloadDefaultOptions(HSTRING desiredName)
 	{

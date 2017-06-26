@@ -98,6 +98,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Pwm.IPwmController).abi_OpenPin(pinNumber, &_ret));
 		return _ret;
 	}
+
+	private static Windows.Devices.Pwm.IPwmControllerStatics _staticInstance;
+	public static Windows.Devices.Pwm.IPwmControllerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Pwm.IPwmControllerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Pwm.PwmController)) GetControllersAsync(Windows.Devices.Pwm.Provider.IPwmProvider provider)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Pwm.PwmController)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Pwm.IPwmControllerStatics).abi_GetControllersAsync(provider, &_ret));
+		return _ret;
+	}
 }
 
 interface PwmPin : Windows.Devices.Pwm.IPwmPin, Windows.Foundation.IClosable

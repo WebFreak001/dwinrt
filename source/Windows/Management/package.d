@@ -172,6 +172,34 @@ extern(Windows):
 
 interface MdmSessionManager
 {
+	private static Windows.Management.IMdmSessionManagerStatics _staticInstance;
+	public static Windows.Management.IMdmSessionManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Management.IMdmSessionManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.Collections.IVectorView!(HSTRING) SessionIds()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.Management.IMdmSessionManagerStatics).get_SessionIds(&_ret));
+		return _ret;
+	}
+	static Windows.Management.MdmSession TryCreateSession()
+	{
+		Windows.Management.MdmSession _ret;
+		Debug.OK(staticInstance.as!(Windows.Management.IMdmSessionManagerStatics).abi_TryCreateSession(&_ret));
+		return _ret;
+	}
+	static void DeleteSessionById(HSTRING sessionId)
+	{
+		Debug.OK(staticInstance.as!(Windows.Management.IMdmSessionManagerStatics).abi_DeleteSessionById(sessionId));
+	}
+	static Windows.Management.MdmSession GetSessionById(HSTRING sessionId)
+	{
+		Windows.Management.MdmSession _ret;
+		Debug.OK(staticInstance.as!(Windows.Management.IMdmSessionManagerStatics).abi_GetSessionById(sessionId, &_ret));
+		return _ret;
+	}
 }
 
 enum MdmAlertDataType

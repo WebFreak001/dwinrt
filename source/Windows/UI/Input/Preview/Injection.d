@@ -376,6 +376,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInputInjector).abi_InjectShortcut(shortcut));
 	}
+
+	private static Windows.UI.Input.Preview.Injection.IInputInjectorStatics _staticInstance;
+	public static Windows.UI.Input.Preview.Injection.IInputInjectorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Input.Preview.Injection.IInputInjectorStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Input.Preview.Injection.InputInjector TryCreate()
+	{
+		Windows.UI.Input.Preview.Injection.InputInjector _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Input.Preview.Injection.IInputInjectorStatics).abi_TryCreate(&_ret));
+		return _ret;
+	}
 }
 
 enum InjectedInputButtonChangeKind

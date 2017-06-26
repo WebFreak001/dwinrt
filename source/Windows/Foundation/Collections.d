@@ -124,7 +124,7 @@ interface PropertySet : Windows.Foundation.Collections.IPropertySet, Windows.Fou
 extern(Windows):
 	final void removeMapChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MapChanged(token));
+		Debug.OK(this.as!(Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable)).remove_MapChanged(token));
 	}
 	final  IInspectable Lookup(HSTRING key)
 	{
@@ -217,7 +217,7 @@ extern(Windows):
 	}
 	final void removeMapChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MapChanged(token));
+		Debug.OK(this.as!(Windows.Foundation.Collections.IObservableMap!(HSTRING, HSTRING)).remove_MapChanged(token));
 	}
 }
 
@@ -226,7 +226,7 @@ interface ValueSet : Windows.Foundation.Collections.IPropertySet, Windows.Founda
 extern(Windows):
 	final void removeMapChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MapChanged(token));
+		Debug.OK(this.as!(Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable)).remove_MapChanged(token));
 	}
 	final  IInspectable Lookup(HSTRING key)
 	{

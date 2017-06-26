@@ -73,4 +73,20 @@ extern(Windows):
 
 interface LowLevelDevicesController : Windows.Devices.ILowLevelDevicesController
 {
+	private static Windows.Devices.ILowLevelDevicesControllerStatics _staticInstance;
+	public static Windows.Devices.ILowLevelDevicesControllerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.ILowLevelDevicesControllerStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.ILowLevelDevicesAggregateProvider DefaultProvider()
+	{
+		Windows.Devices.ILowLevelDevicesAggregateProvider _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.ILowLevelDevicesControllerStatics).get_DefaultProvider(&_ret));
+		return _ret;
+	}
+	static void DefaultProvider(Windows.Devices.ILowLevelDevicesAggregateProvider value)
+	{
+		Debug.OK(staticInstance.as!(Windows.Devices.ILowLevelDevicesControllerStatics).set_DefaultProvider(value));
+	}
 }

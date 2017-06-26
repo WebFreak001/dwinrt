@@ -67,17 +67,29 @@ extern(Windows):
 	final EventRegistrationToken OnItemsChanged(void delegate(Windows.ApplicationModel.Wallet.System.WalletItemSystemStore, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ItemsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Wallet.System.WalletItemSystemStore, IInspectable), Windows.ApplicationModel.Wallet.System.WalletItemSystemStore, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore2).add_ItemsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Wallet.System.WalletItemSystemStore, IInspectable), Windows.ApplicationModel.Wallet.System.WalletItemSystemStore, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeItemsChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_ItemsChanged(cookie));
+		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore2).remove_ItemsChanged(cookie));
 	}
 }
 
 interface WalletManagerSystem
 {
+	private static Windows.ApplicationModel.Wallet.System.IWalletManagerSystemStatics _staticInstance;
+	public static Windows.ApplicationModel.Wallet.System.IWalletManagerSystemStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Wallet.System.IWalletManagerSystemStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.System.WalletItemSystemStore) RequestStoreAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.System.WalletItemSystemStore) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Wallet.System.IWalletManagerSystemStatics).abi_RequestStoreAsync(&_ret));
+		return _ret;
+	}
 }
 
 enum WalletItemAppAssociation

@@ -343,6 +343,32 @@ extern(Windows):
 
 interface WebUIApplication
 {
+	private static Windows.UI.WebUI.IWebUIActivationStatics _staticInstance;
+	public static Windows.UI.WebUI.IWebUIActivationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.WebUI.IWebUIActivationStatics);
+		return _staticInstance;
+	}
+	HRESULT add_Activated(Windows.UI.WebUI.ActivatedEventHandler handler, EventRegistrationToken* return_token);
+	static void removeActivated(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.WebUI.IWebUIActivationStatics).remove_Activated(token));
+	}
+	HRESULT add_Suspending(Windows.UI.WebUI.SuspendingEventHandler handler, EventRegistrationToken* return_token);
+	static void removeSuspending(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.WebUI.IWebUIActivationStatics).remove_Suspending(token));
+	}
+	HRESULT add_Resuming(Windows.UI.WebUI.ResumingEventHandler handler, EventRegistrationToken* return_token);
+	static void removeResuming(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.WebUI.IWebUIActivationStatics).remove_Resuming(token));
+	}
+	HRESULT add_Navigated(Windows.UI.WebUI.NavigatedEventHandler handler, EventRegistrationToken* return_token);
+	static void removeNavigated(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.WebUI.IWebUIActivationStatics).remove_Navigated(token));
+	}
 }
 
 interface WebUIAppointmentsProviderAddAppointmentActivatedEventArgs : Windows.ApplicationModel.Activation.IAppointmentsProviderAddAppointmentActivatedEventArgs, Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.UI.WebUI.IActivatedEventArgsDeferral, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
@@ -600,6 +626,18 @@ extern(Windows):
 
 interface WebUIBackgroundTaskInstance
 {
+	private static Windows.UI.WebUI.IWebUIBackgroundTaskInstanceStatics _staticInstance;
+	public static Windows.UI.WebUI.IWebUIBackgroundTaskInstanceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.WebUI.IWebUIBackgroundTaskInstanceStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.WebUI.IWebUIBackgroundTaskInstance Current()
+	{
+		Windows.UI.WebUI.IWebUIBackgroundTaskInstance _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.WebUI.IWebUIBackgroundTaskInstanceStatics).get_Current(&_ret));
+		return _ret;
+	}
 }
 
 interface WebUIBackgroundTaskInstanceRuntimeClass : Windows.UI.WebUI.IWebUIBackgroundTaskInstance, Windows.ApplicationModel.Background.IBackgroundTaskInstance
@@ -645,7 +683,7 @@ extern(Windows):
 	}
 	final void removeCanceled(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_Canceled(cookie));
+		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBackgroundTaskInstance).remove_Canceled(cookie));
 	}
 	final UINT32 SuspendedCount()
 	{

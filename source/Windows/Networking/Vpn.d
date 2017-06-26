@@ -657,12 +657,12 @@ extern(Windows):
 	final EventRegistrationToken OnActivityChange(void delegate(Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ActivityChange(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityEventArgs), Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).add_ActivityChange(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityEventArgs), Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeActivityChange(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ActivityChange(token));
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).remove_ActivityChange(token));
 	}
 	final void PlugInContext(IInspectable value)
 	{
@@ -703,12 +703,12 @@ extern(Windows):
 	final EventRegistrationToken OnActivityStateChange(void delegate(Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityStateChangedArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ActivityStateChange(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityStateChangedArgs), Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityStateChangedArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).add_ActivityStateChange(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityStateChangedArgs), Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityStateChangedArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeActivityStateChange(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ActivityStateChange(token));
+		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).remove_ActivityStateChange(token));
 	}
 	final Windows.Networking.Vpn.VpnPacketBuffer GetVpnSendPacketBuffer()
 	{
@@ -753,6 +753,17 @@ extern(Windows):
 	final void StartWithTrafficFilter(Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIpv4List, Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIpv6List, Windows.Networking.Vpn.VpnInterfaceId vpnInterfaceId, Windows.Networking.Vpn.VpnRouteAssignment assignedRoutes, Windows.Networking.Vpn.VpnDomainNameAssignment assignedNamespace, UINT32 mtuSize, UINT32 maxFrameSize, bool reserved, IInspectable mainOuterTunnelTransport, IInspectable optionalOuterTunnelTransport, Windows.Networking.Vpn.VpnTrafficFilterAssignment assignedTrafficFilters)
 	{
 		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).abi_StartWithTrafficFilter(assignedClientIpv4List, assignedClientIpv6List, vpnInterfaceId, assignedRoutes, assignedNamespace, mtuSize, maxFrameSize, reserved, mainOuterTunnelTransport, optionalOuterTunnelTransport, assignedTrafficFilters));
+	}
+
+	private static Windows.Networking.Vpn.IVpnChannelStatics _staticInstance;
+	public static Windows.Networking.Vpn.IVpnChannelStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.Vpn.IVpnChannelStatics);
+		return _staticInstance;
+	}
+	static void ProcessEventAsync(IInspectable thirdPartyPlugIn, IInspectable event)
+	{
+		Debug.OK(staticInstance.as!(Windows.Networking.Vpn.IVpnChannelStatics).abi_ProcessEventAsync(thirdPartyPlugIn, event));
 	}
 }
 

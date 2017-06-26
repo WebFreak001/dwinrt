@@ -174,6 +174,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Spi.ISpiController).abi_GetDevice(settings, &_ret));
 		return _ret;
 	}
+
+	private static Windows.Devices.Spi.ISpiControllerStatics _staticInstance;
+	public static Windows.Devices.Spi.ISpiControllerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Spi.ISpiControllerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Spi.SpiController) GetDefaultAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Spi.SpiController) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Spi.ISpiControllerStatics).abi_GetDefaultAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Spi.SpiController)) GetControllersAsync(Windows.Devices.Spi.Provider.ISpiProvider provider)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Spi.SpiController)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Spi.ISpiControllerStatics).abi_GetControllersAsync(provider, &_ret));
+		return _ret;
+	}
 }
 
 interface SpiDevice : Windows.Devices.Spi.ISpiDevice, Windows.Foundation.IClosable
@@ -210,6 +229,37 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+
+	private static Windows.Devices.Spi.ISpiDeviceStatics _staticInstance;
+	public static Windows.Devices.Spi.ISpiDeviceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Spi.ISpiDeviceStatics);
+		return _staticInstance;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Spi.ISpiDeviceStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelectorFromFriendlyName(HSTRING friendlyName)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Spi.ISpiDeviceStatics).abi_GetDeviceSelectorFromFriendlyName(friendlyName, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Spi.SpiBusInfo GetBusInfo(HSTRING busId)
+	{
+		Windows.Devices.Spi.SpiBusInfo _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Spi.ISpiDeviceStatics).abi_GetBusInfo(busId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Spi.SpiDevice) FromIdAsync(HSTRING busId, Windows.Devices.Spi.SpiConnectionSettings settings)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Spi.SpiDevice) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Spi.ISpiDeviceStatics).abi_FromIdAsync(busId, settings, &_ret));
+		return _ret;
 	}
 }
 

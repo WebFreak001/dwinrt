@@ -399,16 +399,41 @@ extern(Windows):
 	final EventRegistrationToken OnInputReportReceived(void delegate(Windows.Devices.HumanInterfaceDevice.HidDevice, Windows.Devices.HumanInterfaceDevice.HidInputReportReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_InputReportReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.HumanInterfaceDevice.HidDevice, Windows.Devices.HumanInterfaceDevice.HidInputReportReceivedEventArgs), Windows.Devices.HumanInterfaceDevice.HidDevice, Windows.Devices.HumanInterfaceDevice.HidInputReportReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidDevice).add_InputReportReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.HumanInterfaceDevice.HidDevice, Windows.Devices.HumanInterfaceDevice.HidInputReportReceivedEventArgs), Windows.Devices.HumanInterfaceDevice.HidDevice, Windows.Devices.HumanInterfaceDevice.HidInputReportReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeInputReportReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_InputReportReceived(token));
+		Debug.OK(this.as!(Windows.Devices.HumanInterfaceDevice.IHidDevice).remove_InputReportReceived(token));
 	}
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+
+	private static Windows.Devices.HumanInterfaceDevice.IHidDeviceStatics _staticInstance;
+	public static Windows.Devices.HumanInterfaceDevice.IHidDeviceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.HumanInterfaceDevice.IHidDeviceStatics);
+		return _staticInstance;
+	}
+	static HSTRING GetDeviceSelector(UINT16 usagePage, UINT16 usageId)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.HumanInterfaceDevice.IHidDeviceStatics).abi_GetDeviceSelector(usagePage, usageId, &_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelectorVidPid(UINT16 usagePage, UINT16 usageId, UINT16 vendorId, UINT16 productId)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.HumanInterfaceDevice.IHidDeviceStatics).abi_GetDeviceSelectorVidPid(usagePage, usageId, vendorId, productId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidDevice) FromIdAsync(HSTRING deviceId, Windows.Storage.FileAccessMode accessMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidDevice) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.HumanInterfaceDevice.IHidDeviceStatics).abi_FromIdAsync(deviceId, accessMode, &_ret));
+		return _ret;
 	}
 }
 

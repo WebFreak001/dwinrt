@@ -144,6 +144,24 @@ interface IXusbGameControllerProvider : IXusbGameControllerProvider_Base, Window
 
 interface GameControllerFactoryManager
 {
+	private static Windows.Gaming.Input.Custom.IGameControllerFactoryManagerStatics _staticInstance;
+	public static Windows.Gaming.Input.Custom.IGameControllerFactoryManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Gaming.Input.Custom.IGameControllerFactoryManagerStatics);
+		return _staticInstance;
+	}
+	static void RegisterCustomFactoryForGipInterface(Windows.Gaming.Input.Custom.ICustomGameControllerFactory factory, GUID interfaceId)
+	{
+		Debug.OK(staticInstance.as!(Windows.Gaming.Input.Custom.IGameControllerFactoryManagerStatics).abi_RegisterCustomFactoryForGipInterface(factory, interfaceId));
+	}
+	static void RegisterCustomFactoryForHardwareId(Windows.Gaming.Input.Custom.ICustomGameControllerFactory factory, UINT16 hardwareVendorId, UINT16 hardwareProductId)
+	{
+		Debug.OK(staticInstance.as!(Windows.Gaming.Input.Custom.IGameControllerFactoryManagerStatics).abi_RegisterCustomFactoryForHardwareId(factory, hardwareVendorId, hardwareProductId));
+	}
+	static void RegisterCustomFactoryForXusbType(Windows.Gaming.Input.Custom.ICustomGameControllerFactory factory, Windows.Gaming.Input.Custom.XusbDeviceType xusbType, Windows.Gaming.Input.Custom.XusbDeviceSubtype xusbSubtype)
+	{
+		Debug.OK(staticInstance.as!(Windows.Gaming.Input.Custom.IGameControllerFactoryManagerStatics).abi_RegisterCustomFactoryForXusbType(factory, xusbType, xusbSubtype));
+	}
 }
 
 interface GipFirmwareUpdateResult : Windows.Gaming.Input.Custom.IGipFirmwareUpdateResult

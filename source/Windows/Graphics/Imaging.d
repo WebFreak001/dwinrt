@@ -440,6 +440,73 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapFrameWithSoftwareBitmap).abi_GetSoftwareBitmapTransformedAsync(pixelFormat, alphaMode, transform, exifOrientationMode, colorManagementMode, &_ret));
 		return _ret;
 	}
+
+	private static Windows.Graphics.Imaging.IBitmapDecoderStatics _staticInstance;
+	public static Windows.Graphics.Imaging.IBitmapDecoderStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Graphics.Imaging.IBitmapDecoderStatics);
+		return _staticInstance;
+	}
+	static GUID BmpDecoderId()
+	{
+		GUID _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.IBitmapDecoderStatics).get_BmpDecoderId(&_ret));
+		return _ret;
+	}
+	static GUID JpegDecoderId()
+	{
+		GUID _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.IBitmapDecoderStatics).get_JpegDecoderId(&_ret));
+		return _ret;
+	}
+	static GUID PngDecoderId()
+	{
+		GUID _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.IBitmapDecoderStatics).get_PngDecoderId(&_ret));
+		return _ret;
+	}
+	static GUID TiffDecoderId()
+	{
+		GUID _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.IBitmapDecoderStatics).get_TiffDecoderId(&_ret));
+		return _ret;
+	}
+	static GUID GifDecoderId()
+	{
+		GUID _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.IBitmapDecoderStatics).get_GifDecoderId(&_ret));
+		return _ret;
+	}
+	static GUID JpegXRDecoderId()
+	{
+		GUID _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.IBitmapDecoderStatics).get_JpegXRDecoderId(&_ret));
+		return _ret;
+	}
+	static GUID IcoDecoderId()
+	{
+		GUID _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.IBitmapDecoderStatics).get_IcoDecoderId(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Imaging.BitmapCodecInformation) GetDecoderInformationEnumerator()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Imaging.BitmapCodecInformation) _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.IBitmapDecoderStatics).abi_GetDecoderInformationEnumerator(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapDecoder) CreateAsync(Windows.Storage.Streams.IRandomAccessStream stream)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapDecoder) _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.IBitmapDecoderStatics).abi_CreateAsync(stream, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapDecoder) CreateWithIdAsync(GUID decoderId, Windows.Storage.Streams.IRandomAccessStream stream)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapDecoder) _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.IBitmapDecoderStatics).abi_CreateWithIdAsync(decoderId, stream, &_ret));
+		return _ret;
+	}
 }
 
 interface BitmapEncoder : Windows.Graphics.Imaging.IBitmapEncoder, Windows.Graphics.Imaging.IBitmapEncoderWithSoftwareBitmap
@@ -524,6 +591,79 @@ extern(Windows):
 	final void SetSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap bitmap)
 	{
 		Debug.OK(this.as!(Windows.Graphics.Imaging.IBitmapEncoderWithSoftwareBitmap).abi_SetSoftwareBitmap(bitmap));
+	}
+
+	private static Windows.Graphics.Imaging.IBitmapEncoderStatics _staticInstance;
+	public static Windows.Graphics.Imaging.IBitmapEncoderStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Graphics.Imaging.IBitmapEncoderStatics);
+		return _staticInstance;
+	}
+	static GUID BmpEncoderId()
+	{
+		GUID _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.IBitmapEncoderStatics).get_BmpEncoderId(&_ret));
+		return _ret;
+	}
+	static GUID JpegEncoderId()
+	{
+		GUID _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.IBitmapEncoderStatics).get_JpegEncoderId(&_ret));
+		return _ret;
+	}
+	static GUID PngEncoderId()
+	{
+		GUID _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.IBitmapEncoderStatics).get_PngEncoderId(&_ret));
+		return _ret;
+	}
+	static GUID TiffEncoderId()
+	{
+		GUID _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.IBitmapEncoderStatics).get_TiffEncoderId(&_ret));
+		return _ret;
+	}
+	static GUID GifEncoderId()
+	{
+		GUID _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.IBitmapEncoderStatics).get_GifEncoderId(&_ret));
+		return _ret;
+	}
+	static GUID JpegXREncoderId()
+	{
+		GUID _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.IBitmapEncoderStatics).get_JpegXREncoderId(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Imaging.BitmapCodecInformation) GetEncoderInformationEnumerator()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Imaging.BitmapCodecInformation) _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.IBitmapEncoderStatics).abi_GetEncoderInformationEnumerator(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapEncoder) CreateAsync(GUID encoderId, Windows.Storage.Streams.IRandomAccessStream stream)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapEncoder) _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.IBitmapEncoderStatics).abi_CreateAsync(encoderId, stream, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapEncoder) CreateWithEncodingOptionsAsync(GUID encoderId, Windows.Storage.Streams.IRandomAccessStream stream, Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Graphics.Imaging.BitmapTypedValue)) encodingOptions)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapEncoder) _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.IBitmapEncoderStatics).abi_CreateWithEncodingOptionsAsync(encoderId, stream, encodingOptions, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapEncoder) CreateForTranscodingAsync(Windows.Storage.Streams.IRandomAccessStream stream, Windows.Graphics.Imaging.BitmapDecoder bitmapDecoder)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapEncoder) _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.IBitmapEncoderStatics).abi_CreateForTranscodingAsync(stream, bitmapDecoder, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapEncoder) CreateForInPlacePropertyEncodingAsync(Windows.Graphics.Imaging.BitmapDecoder bitmapDecoder)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapEncoder) _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.IBitmapEncoderStatics).abi_CreateForInPlacePropertyEncodingAsync(bitmapDecoder, &_ret));
+		return _ret;
 	}
 }
 
@@ -953,6 +1093,55 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+
+	private static Windows.Graphics.Imaging.ISoftwareBitmapStatics _staticInstance;
+	public static Windows.Graphics.Imaging.ISoftwareBitmapStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Graphics.Imaging.ISoftwareBitmapStatics);
+		return _staticInstance;
+	}
+	static Windows.Graphics.Imaging.SoftwareBitmap Copy(Windows.Graphics.Imaging.SoftwareBitmap source)
+	{
+		Windows.Graphics.Imaging.SoftwareBitmap _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.ISoftwareBitmapStatics).abi_Copy(source, &_ret));
+		return _ret;
+	}
+	static Windows.Graphics.Imaging.SoftwareBitmap Convert(Windows.Graphics.Imaging.SoftwareBitmap source, Windows.Graphics.Imaging.BitmapPixelFormat format)
+	{
+		Windows.Graphics.Imaging.SoftwareBitmap _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.ISoftwareBitmapStatics).abi_Convert(source, format, &_ret));
+		return _ret;
+	}
+	static Windows.Graphics.Imaging.SoftwareBitmap ConvertWithAlpha(Windows.Graphics.Imaging.SoftwareBitmap source, Windows.Graphics.Imaging.BitmapPixelFormat format, Windows.Graphics.Imaging.BitmapAlphaMode alpha)
+	{
+		Windows.Graphics.Imaging.SoftwareBitmap _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.ISoftwareBitmapStatics).abi_ConvertWithAlpha(source, format, alpha, &_ret));
+		return _ret;
+	}
+	static Windows.Graphics.Imaging.SoftwareBitmap CreateCopyFromBuffer(Windows.Storage.Streams.IBuffer source, Windows.Graphics.Imaging.BitmapPixelFormat format, INT32 width, INT32 height)
+	{
+		Windows.Graphics.Imaging.SoftwareBitmap _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.ISoftwareBitmapStatics).abi_CreateCopyFromBuffer(source, format, width, height, &_ret));
+		return _ret;
+	}
+	static Windows.Graphics.Imaging.SoftwareBitmap CreateCopyWithAlphaFromBuffer(Windows.Storage.Streams.IBuffer source, Windows.Graphics.Imaging.BitmapPixelFormat format, INT32 width, INT32 height, Windows.Graphics.Imaging.BitmapAlphaMode alpha)
+	{
+		Windows.Graphics.Imaging.SoftwareBitmap _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.ISoftwareBitmapStatics).abi_CreateCopyWithAlphaFromBuffer(source, format, width, height, alpha, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) CreateCopyFromSurfaceAsync(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface surface)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.ISoftwareBitmapStatics).abi_CreateCopyFromSurfaceAsync(surface, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) CreateCopyWithAlphaFromSurfaceAsync(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface surface, Windows.Graphics.Imaging.BitmapAlphaMode alpha)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) _ret;
+		Debug.OK(staticInstance.as!(Windows.Graphics.Imaging.ISoftwareBitmapStatics).abi_CreateCopyWithAlphaFromSurfaceAsync(surface, alpha, &_ret));
+		return _ret;
 	}
 }
 

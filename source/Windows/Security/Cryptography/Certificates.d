@@ -683,6 +683,30 @@ extern(Windows):
 
 interface CertificateEnrollmentManager
 {
+	private static Windows.Security.Cryptography.Certificates.ICertificateEnrollmentManagerStatics _staticInstance;
+	public static Windows.Security.Cryptography.Certificates.ICertificateEnrollmentManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Certificates.ICertificateEnrollmentManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(HSTRING) CreateRequestAsync(Windows.Security.Cryptography.Certificates.CertificateRequestProperties request)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.ICertificateEnrollmentManagerStatics).abi_CreateRequestAsync(request, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction InstallCertificateAsync(HSTRING certificate, Windows.Security.Cryptography.Certificates.InstallOptions installOption)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.ICertificateEnrollmentManagerStatics).abi_InstallCertificateAsync(certificate, installOption, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction ImportPfxDataAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.ExportOption exportable, Windows.Security.Cryptography.Certificates.KeyProtectionLevel keyProtectionLevel, Windows.Security.Cryptography.Certificates.InstallOptions installOption, HSTRING friendlyName)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.ICertificateEnrollmentManagerStatics).abi_ImportPfxDataAsync(pfxData, password, exportable, keyProtectionLevel, installOption, friendlyName, &_ret));
+		return _ret;
+	}
 }
 
 interface CertificateExtension : Windows.Security.Cryptography.Certificates.ICertificateExtension
@@ -1104,6 +1128,42 @@ extern(Windows):
 
 interface CertificateStores
 {
+	private static Windows.Security.Cryptography.Certificates.ICertificateStoresStatics _staticInstance;
+	public static Windows.Security.Cryptography.Certificates.ICertificateStoresStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Certificates.ICertificateStoresStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate)) FindAllAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.ICertificateStoresStatics).abi_FindAllAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate)) FindAllWithQueryAsync(Windows.Security.Cryptography.Certificates.CertificateQuery query)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.ICertificateStoresStatics).abi_FindAllWithQueryAsync(query, &_ret));
+		return _ret;
+	}
+	static Windows.Security.Cryptography.Certificates.CertificateStore TrustedRootCertificationAuthorities()
+	{
+		Windows.Security.Cryptography.Certificates.CertificateStore _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.ICertificateStoresStatics).get_TrustedRootCertificationAuthorities(&_ret));
+		return _ret;
+	}
+	static Windows.Security.Cryptography.Certificates.CertificateStore IntermediateCertificationAuthorities()
+	{
+		Windows.Security.Cryptography.Certificates.CertificateStore _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.ICertificateStoresStatics).get_IntermediateCertificationAuthorities(&_ret));
+		return _ret;
+	}
+	static Windows.Security.Cryptography.Certificates.CertificateStore GetStoreByName(HSTRING storeName)
+	{
+		Windows.Security.Cryptography.Certificates.CertificateStore _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.ICertificateStoresStatics).abi_GetStoreByName(storeName, &_ret));
+		return _ret;
+	}
 }
 
 interface ChainBuildingParameters : Windows.Security.Cryptography.Certificates.IChainBuildingParameters
@@ -1225,6 +1285,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICmsAttachedSignature).abi_VerifySignature(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Security.Cryptography.Certificates.ICmsAttachedSignatureStatics _staticInstance;
+	public static Windows.Security.Cryptography.Certificates.ICmsAttachedSignatureStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Certificates.ICmsAttachedSignatureStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) GenerateSignatureAsync(Windows.Storage.Streams.IBuffer data, Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.CmsSignerInfo) signers, Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.Certificate) certificates)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.ICmsAttachedSignatureStatics).abi_GenerateSignatureAsync(data, signers, certificates, &_ret));
+		return _ret;
+	}
 }
 
 interface CmsDetachedSignature : Windows.Security.Cryptography.Certificates.ICmsDetachedSignature
@@ -1246,6 +1319,19 @@ extern(Windows):
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Certificates.SignatureValidationResult) _ret;
 		Debug.OK(this.as!(Windows.Security.Cryptography.Certificates.ICmsDetachedSignature).abi_VerifySignatureAsync(data, &_ret));
+		return _ret;
+	}
+
+	private static Windows.Security.Cryptography.Certificates.ICmsDetachedSignatureStatics _staticInstance;
+	public static Windows.Security.Cryptography.Certificates.ICmsDetachedSignatureStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Certificates.ICmsDetachedSignatureStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) GenerateSignatureAsync(Windows.Storage.Streams.IInputStream data, Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.CmsSignerInfo) signers, Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.Certificate) certificates)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.ICmsDetachedSignatureStatics).abi_GenerateSignatureAsync(data, signers, certificates, &_ret));
 		return _ret;
 	}
 }
@@ -1306,14 +1392,110 @@ extern(Windows):
 
 interface KeyAlgorithmNames
 {
+	private static Windows.Security.Cryptography.Certificates.IKeyAlgorithmNamesStatics _staticInstance;
+	public static Windows.Security.Cryptography.Certificates.IKeyAlgorithmNamesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Certificates.IKeyAlgorithmNamesStatics);
+		return _staticInstance;
+	}
+	static HSTRING Rsa()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.IKeyAlgorithmNamesStatics).get_Rsa(&_ret));
+		return _ret;
+	}
+	static HSTRING Dsa()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.IKeyAlgorithmNamesStatics).get_Dsa(&_ret));
+		return _ret;
+	}
+	static HSTRING Ecdh256()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.IKeyAlgorithmNamesStatics).get_Ecdh256(&_ret));
+		return _ret;
+	}
+	static HSTRING Ecdh384()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.IKeyAlgorithmNamesStatics).get_Ecdh384(&_ret));
+		return _ret;
+	}
+	static HSTRING Ecdh521()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.IKeyAlgorithmNamesStatics).get_Ecdh521(&_ret));
+		return _ret;
+	}
+	static HSTRING Ecdsa256()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.IKeyAlgorithmNamesStatics).get_Ecdsa256(&_ret));
+		return _ret;
+	}
+	static HSTRING Ecdsa384()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.IKeyAlgorithmNamesStatics).get_Ecdsa384(&_ret));
+		return _ret;
+	}
+	static HSTRING Ecdsa521()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.IKeyAlgorithmNamesStatics).get_Ecdsa521(&_ret));
+		return _ret;
+	}
 }
 
 interface KeyAttestationHelper
 {
+	private static Windows.Security.Cryptography.Certificates.IKeyAttestationHelperStatics _staticInstance;
+	public static Windows.Security.Cryptography.Certificates.IKeyAttestationHelperStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Certificates.IKeyAttestationHelperStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(HSTRING) DecryptTpmAttestationCredentialAsync(HSTRING credential)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.IKeyAttestationHelperStatics).abi_DecryptTpmAttestationCredentialAsync(credential, &_ret));
+		return _ret;
+	}
+	static HSTRING GetTpmAttestationCredentialId(HSTRING credential)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.IKeyAttestationHelperStatics).abi_GetTpmAttestationCredentialId(credential, &_ret));
+		return _ret;
+	}
 }
 
 interface KeyStorageProviderNames
 {
+	private static Windows.Security.Cryptography.Certificates.IKeyStorageProviderNamesStatics _staticInstance;
+	public static Windows.Security.Cryptography.Certificates.IKeyStorageProviderNamesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Certificates.IKeyStorageProviderNamesStatics);
+		return _staticInstance;
+	}
+	static HSTRING SoftwareKeyStorageProvider()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.IKeyStorageProviderNamesStatics).get_SoftwareKeyStorageProvider(&_ret));
+		return _ret;
+	}
+	static HSTRING SmartcardKeyStorageProvider()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.IKeyStorageProviderNamesStatics).get_SmartcardKeyStorageProvider(&_ret));
+		return _ret;
+	}
+	static HSTRING PlatformKeyStorageProvider()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.IKeyStorageProviderNamesStatics).get_PlatformKeyStorageProvider(&_ret));
+		return _ret;
+	}
 }
 
 interface PfxImportParameters : Windows.Security.Cryptography.Certificates.IPfxImportParameters
@@ -1393,6 +1575,30 @@ extern(Windows):
 
 interface StandardCertificateStoreNames
 {
+	private static Windows.Security.Cryptography.Certificates.IStandardCertificateStoreNamesStatics _staticInstance;
+	public static Windows.Security.Cryptography.Certificates.IStandardCertificateStoreNamesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Certificates.IStandardCertificateStoreNamesStatics);
+		return _staticInstance;
+	}
+	static HSTRING Personal()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.IStandardCertificateStoreNamesStatics).get_Personal(&_ret));
+		return _ret;
+	}
+	static HSTRING TrustedRootCertificationAuthorities()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.IStandardCertificateStoreNamesStatics).get_TrustedRootCertificationAuthorities(&_ret));
+		return _ret;
+	}
+	static HSTRING IntermediateCertificationAuthorities()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Certificates.IStandardCertificateStoreNamesStatics).get_IntermediateCertificationAuthorities(&_ret));
+		return _ret;
+	}
 }
 
 interface SubjectAlternativeNameInfo : Windows.Security.Cryptography.Certificates.ISubjectAlternativeNameInfo, Windows.Security.Cryptography.Certificates.ISubjectAlternativeNameInfo2

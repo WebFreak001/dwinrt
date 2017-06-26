@@ -626,12 +626,12 @@ extern(Windows):
 	final EventRegistrationToken OnDataChanged(void delegate(Windows.Storage.ApplicationData, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DataChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.ApplicationData, IInspectable), Windows.Storage.ApplicationData, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Storage.IApplicationData).add_DataChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.ApplicationData, IInspectable), Windows.Storage.ApplicationData, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeDataChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DataChanged(token));
+		Debug.OK(this.as!(Windows.Storage.IApplicationData).remove_DataChanged(token));
 	}
 	final void SignalDataChanged()
 	{
@@ -667,6 +667,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Storage.IApplicationData3).get_SharedLocalFolder(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Storage.IApplicationDataStatics _staticInstance;
+	public static Windows.Storage.IApplicationDataStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Storage.IApplicationDataStatics);
+		return _staticInstance;
+	}
+	static Windows.Storage.ApplicationData Current()
+	{
+		Windows.Storage.ApplicationData _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IApplicationDataStatics).get_Current(&_ret));
+		return _ret;
+	}
 }
 
 interface ApplicationDataCompositeValue : Windows.Foundation.Collections.IPropertySet, Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IMap!(HSTRING, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))
@@ -674,7 +687,7 @@ interface ApplicationDataCompositeValue : Windows.Foundation.Collections.IProper
 extern(Windows):
 	final void removeMapChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MapChanged(token));
+		Debug.OK(this.as!(Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable)).remove_MapChanged(token));
 	}
 	final  IInspectable Lookup(HSTRING key)
 	{
@@ -764,7 +777,7 @@ interface ApplicationDataContainerSettings : Windows.Foundation.Collections.IPro
 extern(Windows):
 	final void removeMapChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MapChanged(token));
+		Debug.OK(this.as!(Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable)).remove_MapChanged(token));
 	}
 	final  IInspectable Lookup(HSTRING key)
 	{
@@ -812,22 +825,272 @@ extern(Windows):
 
 interface CachedFileManager
 {
+	private static Windows.Storage.ICachedFileManagerStatics _staticInstance;
+	public static Windows.Storage.ICachedFileManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Storage.ICachedFileManagerStatics);
+		return _staticInstance;
+	}
+	static void DeferUpdates(Windows.Storage.IStorageFile file)
+	{
+		Debug.OK(staticInstance.as!(Windows.Storage.ICachedFileManagerStatics).abi_DeferUpdates(file));
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Storage.Provider.FileUpdateStatus) CompleteUpdatesAsync(Windows.Storage.IStorageFile file)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Provider.FileUpdateStatus) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.ICachedFileManagerStatics).abi_CompleteUpdatesAsync(file, &_ret));
+		return _ret;
+	}
 }
 
 interface DownloadsFolder
 {
+	private static Windows.Storage.IDownloadsFolderStatics _staticInstance;
+	public static Windows.Storage.IDownloadsFolderStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Storage.IDownloadsFolderStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) CreateFileAsync(HSTRING desiredName)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IDownloadsFolderStatics).abi_CreateFileAsync(desiredName, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) CreateFolderAsync(HSTRING desiredName)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IDownloadsFolderStatics).abi_CreateFolderAsync(desiredName, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) CreateFileWithCollisionOptionAsync(HSTRING desiredName, Windows.Storage.CreationCollisionOption option)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IDownloadsFolderStatics).abi_CreateFileWithCollisionOptionAsync(desiredName, option, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) CreateFolderWithCollisionOptionAsync(HSTRING desiredName, Windows.Storage.CreationCollisionOption option)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IDownloadsFolderStatics).abi_CreateFolderWithCollisionOptionAsync(desiredName, option, &_ret));
+		return _ret;
+	}
 }
 
 interface FileIO
 {
+	private static Windows.Storage.IFileIOStatics _staticInstance;
+	public static Windows.Storage.IFileIOStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Storage.IFileIOStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(HSTRING) ReadTextAsync(Windows.Storage.IStorageFile file)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IFileIOStatics).abi_ReadTextAsync(file, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(HSTRING) ReadTextWithEncodingAsync(Windows.Storage.IStorageFile file, Windows.Storage.Streams.UnicodeEncoding encoding)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IFileIOStatics).abi_ReadTextWithEncodingAsync(file, encoding, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction WriteTextAsync(Windows.Storage.IStorageFile file, HSTRING contents)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IFileIOStatics).abi_WriteTextAsync(file, contents, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction WriteTextWithEncodingAsync(Windows.Storage.IStorageFile file, HSTRING contents, Windows.Storage.Streams.UnicodeEncoding encoding)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IFileIOStatics).abi_WriteTextWithEncodingAsync(file, contents, encoding, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction AppendTextAsync(Windows.Storage.IStorageFile file, HSTRING contents)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IFileIOStatics).abi_AppendTextAsync(file, contents, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction AppendTextWithEncodingAsync(Windows.Storage.IStorageFile file, HSTRING contents, Windows.Storage.Streams.UnicodeEncoding encoding)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IFileIOStatics).abi_AppendTextWithEncodingAsync(file, contents, encoding, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(HSTRING)) ReadLinesAsync(Windows.Storage.IStorageFile file)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(HSTRING)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IFileIOStatics).abi_ReadLinesAsync(file, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(HSTRING)) ReadLinesWithEncodingAsync(Windows.Storage.IStorageFile file, Windows.Storage.Streams.UnicodeEncoding encoding)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(HSTRING)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IFileIOStatics).abi_ReadLinesWithEncodingAsync(file, encoding, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction WriteLinesAsync(Windows.Storage.IStorageFile file, Windows.Foundation.Collections.IIterable!(HSTRING) lines)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IFileIOStatics).abi_WriteLinesAsync(file, lines, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction WriteLinesWithEncodingAsync(Windows.Storage.IStorageFile file, Windows.Foundation.Collections.IIterable!(HSTRING) lines, Windows.Storage.Streams.UnicodeEncoding encoding)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IFileIOStatics).abi_WriteLinesWithEncodingAsync(file, lines, encoding, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction AppendLinesAsync(Windows.Storage.IStorageFile file, Windows.Foundation.Collections.IIterable!(HSTRING) lines)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IFileIOStatics).abi_AppendLinesAsync(file, lines, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction AppendLinesWithEncodingAsync(Windows.Storage.IStorageFile file, Windows.Foundation.Collections.IIterable!(HSTRING) lines, Windows.Storage.Streams.UnicodeEncoding encoding)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IFileIOStatics).abi_AppendLinesWithEncodingAsync(file, lines, encoding, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) ReadBufferAsync(Windows.Storage.IStorageFile file)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IFileIOStatics).abi_ReadBufferAsync(file, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction WriteBufferAsync(Windows.Storage.IStorageFile file, Windows.Storage.Streams.IBuffer buffer)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IFileIOStatics).abi_WriteBufferAsync(file, buffer, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction WriteBytesAsync(Windows.Storage.IStorageFile file, UINT32 __bufferSize, ubyte* buffer)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IFileIOStatics).abi_WriteBytesAsync(file, __bufferSize, buffer, &_ret));
+		return _ret;
+	}
 }
 
 interface KnownFolders
 {
+	private static Windows.Storage.IKnownFoldersCameraRollStatics _staticInstance;
+	public static Windows.Storage.IKnownFoldersCameraRollStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Storage.IKnownFoldersCameraRollStatics);
+		return _staticInstance;
+	}
+	static Windows.Storage.StorageFolder CameraRoll()
+	{
+		Windows.Storage.StorageFolder _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IKnownFoldersCameraRollStatics).get_CameraRoll(&_ret));
+		return _ret;
+	}
 }
 
 interface PathIO
 {
+	private static Windows.Storage.IPathIOStatics _staticInstance;
+	public static Windows.Storage.IPathIOStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Storage.IPathIOStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(HSTRING) ReadTextAsync(HSTRING absolutePath)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IPathIOStatics).abi_ReadTextAsync(absolutePath, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(HSTRING) ReadTextWithEncodingAsync(HSTRING absolutePath, Windows.Storage.Streams.UnicodeEncoding encoding)
+	{
+		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IPathIOStatics).abi_ReadTextWithEncodingAsync(absolutePath, encoding, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction WriteTextAsync(HSTRING absolutePath, HSTRING contents)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IPathIOStatics).abi_WriteTextAsync(absolutePath, contents, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction WriteTextWithEncodingAsync(HSTRING absolutePath, HSTRING contents, Windows.Storage.Streams.UnicodeEncoding encoding)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IPathIOStatics).abi_WriteTextWithEncodingAsync(absolutePath, contents, encoding, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction AppendTextAsync(HSTRING absolutePath, HSTRING contents)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IPathIOStatics).abi_AppendTextAsync(absolutePath, contents, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction AppendTextWithEncodingAsync(HSTRING absolutePath, HSTRING contents, Windows.Storage.Streams.UnicodeEncoding encoding)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IPathIOStatics).abi_AppendTextWithEncodingAsync(absolutePath, contents, encoding, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(HSTRING)) ReadLinesAsync(HSTRING absolutePath)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(HSTRING)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IPathIOStatics).abi_ReadLinesAsync(absolutePath, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(HSTRING)) ReadLinesWithEncodingAsync(HSTRING absolutePath, Windows.Storage.Streams.UnicodeEncoding encoding)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(HSTRING)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IPathIOStatics).abi_ReadLinesWithEncodingAsync(absolutePath, encoding, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction WriteLinesAsync(HSTRING absolutePath, Windows.Foundation.Collections.IIterable!(HSTRING) lines)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IPathIOStatics).abi_WriteLinesAsync(absolutePath, lines, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction WriteLinesWithEncodingAsync(HSTRING absolutePath, Windows.Foundation.Collections.IIterable!(HSTRING) lines, Windows.Storage.Streams.UnicodeEncoding encoding)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IPathIOStatics).abi_WriteLinesWithEncodingAsync(absolutePath, lines, encoding, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction AppendLinesAsync(HSTRING absolutePath, Windows.Foundation.Collections.IIterable!(HSTRING) lines)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IPathIOStatics).abi_AppendLinesAsync(absolutePath, lines, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction AppendLinesWithEncodingAsync(HSTRING absolutePath, Windows.Foundation.Collections.IIterable!(HSTRING) lines, Windows.Storage.Streams.UnicodeEncoding encoding)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IPathIOStatics).abi_AppendLinesWithEncodingAsync(absolutePath, lines, encoding, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) ReadBufferAsync(HSTRING absolutePath)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IPathIOStatics).abi_ReadBufferAsync(absolutePath, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction WriteBufferAsync(HSTRING absolutePath, Windows.Storage.Streams.IBuffer buffer)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IPathIOStatics).abi_WriteBufferAsync(absolutePath, buffer, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction WriteBytesAsync(HSTRING absolutePath, UINT32 __bufferSize, ubyte* buffer)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IPathIOStatics).abi_WriteBytesAsync(absolutePath, __bufferSize, buffer, &_ret));
+		return _ret;
+	}
 }
 
 interface SetVersionDeferral : Windows.Storage.ISetVersionDeferral
@@ -1103,6 +1366,49 @@ extern(Windows):
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageStreamTransaction) _ret;
 		Debug.OK(this.as!(Windows.Storage.IStorageFile2).abi_OpenTransactedWriteWithOptionsAsync(options, &_ret));
+		return _ret;
+	}
+
+	private static Windows.Storage.IStorageFileStatics _staticInstance;
+	public static Windows.Storage.IStorageFileStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Storage.IStorageFileStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) GetFileFromPathAsync(HSTRING path)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IStorageFileStatics).abi_GetFileFromPathAsync(path, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) GetFileFromApplicationUriAsync(Windows.Foundation.Uri uri)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IStorageFileStatics).abi_GetFileFromApplicationUriAsync(uri, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) CreateStreamedFileAsync(HSTRING displayNameWithExtension, Windows.Storage.StreamedFileDataRequestedHandler dataRequested, Windows.Storage.Streams.IRandomAccessStreamReference thumbnail)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IStorageFileStatics).abi_CreateStreamedFileAsync(displayNameWithExtension, dataRequested, thumbnail, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) ReplaceWithStreamedFileAsync(Windows.Storage.IStorageFile fileToReplace, Windows.Storage.StreamedFileDataRequestedHandler dataRequested, Windows.Storage.Streams.IRandomAccessStreamReference thumbnail)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IStorageFileStatics).abi_ReplaceWithStreamedFileAsync(fileToReplace, dataRequested, thumbnail, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) CreateStreamedFileFromUriAsync(HSTRING displayNameWithExtension, Windows.Foundation.Uri uri, Windows.Storage.Streams.IRandomAccessStreamReference thumbnail)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IStorageFileStatics).abi_CreateStreamedFileFromUriAsync(displayNameWithExtension, uri, thumbnail, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) ReplaceWithStreamedFileFromUriAsync(Windows.Storage.IStorageFile fileToReplace, Windows.Foundation.Uri uri, Windows.Storage.Streams.IRandomAccessStreamReference thumbnail)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IStorageFileStatics).abi_ReplaceWithStreamedFileFromUriAsync(fileToReplace, uri, thumbnail, &_ret));
 		return _ret;
 	}
 }
@@ -1416,6 +1722,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Storage.IStorageItemPropertiesWithProvider).get_Provider(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Storage.IStorageFolderStatics _staticInstance;
+	public static Windows.Storage.IStorageFolderStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Storage.IStorageFolderStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) GetFolderFromPathAsync(HSTRING path)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IStorageFolderStatics).abi_GetFolderFromPathAsync(path, &_ret));
+		return _ret;
+	}
 }
 
 interface StorageLibrary : Windows.Storage.IStorageLibrary, Windows.Storage.IStorageLibrary2
@@ -1448,17 +1767,30 @@ extern(Windows):
 	final EventRegistrationToken OnDefinitionChanged(void delegate(Windows.Storage.StorageLibrary, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DefinitionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.StorageLibrary, IInspectable), Windows.Storage.StorageLibrary, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Storage.IStorageLibrary).add_DefinitionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.StorageLibrary, IInspectable), Windows.Storage.StorageLibrary, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeDefinitionChanged(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_DefinitionChanged(eventCookie));
+		Debug.OK(this.as!(Windows.Storage.IStorageLibrary).remove_DefinitionChanged(eventCookie));
 	}
 	final Windows.Storage.StorageLibraryChangeTracker ChangeTracker()
 	{
 		Windows.Storage.StorageLibraryChangeTracker _ret;
 		Debug.OK(this.as!(Windows.Storage.IStorageLibrary2).get_ChangeTracker(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Storage.IStorageLibraryStatics _staticInstance;
+	public static Windows.Storage.IStorageLibraryStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Storage.IStorageLibraryStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageLibrary) GetLibraryAsync(Windows.Storage.KnownLibraryId libraryId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageLibrary) _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.IStorageLibraryStatics).abi_GetLibraryAsync(libraryId, &_ret));
 		return _ret;
 	}
 }
@@ -1773,6 +2105,90 @@ extern(Windows):
 
 interface SystemProperties
 {
+	private static Windows.Storage.ISystemProperties _staticInstance;
+	public static Windows.Storage.ISystemProperties staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Storage.ISystemProperties);
+		return _staticInstance;
+	}
+	static HSTRING Author()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.ISystemProperties).get_Author(&_ret));
+		return _ret;
+	}
+	static HSTRING Comment()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.ISystemProperties).get_Comment(&_ret));
+		return _ret;
+	}
+	static HSTRING ItemNameDisplay()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.ISystemProperties).get_ItemNameDisplay(&_ret));
+		return _ret;
+	}
+	static HSTRING Keywords()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.ISystemProperties).get_Keywords(&_ret));
+		return _ret;
+	}
+	static HSTRING Rating()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.ISystemProperties).get_Rating(&_ret));
+		return _ret;
+	}
+	static HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.ISystemProperties).get_Title(&_ret));
+		return _ret;
+	}
+	static Windows.Storage.SystemAudioProperties Audio()
+	{
+		Windows.Storage.SystemAudioProperties _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.ISystemProperties).get_Audio(&_ret));
+		return _ret;
+	}
+	static Windows.Storage.SystemGPSProperties GPS()
+	{
+		Windows.Storage.SystemGPSProperties _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.ISystemProperties).get_GPS(&_ret));
+		return _ret;
+	}
+	static Windows.Storage.SystemMediaProperties Media()
+	{
+		Windows.Storage.SystemMediaProperties _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.ISystemProperties).get_Media(&_ret));
+		return _ret;
+	}
+	static Windows.Storage.SystemMusicProperties Music()
+	{
+		Windows.Storage.SystemMusicProperties _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.ISystemProperties).get_Music(&_ret));
+		return _ret;
+	}
+	static Windows.Storage.SystemPhotoProperties Photo()
+	{
+		Windows.Storage.SystemPhotoProperties _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.ISystemProperties).get_Photo(&_ret));
+		return _ret;
+	}
+	static Windows.Storage.SystemVideoProperties Video()
+	{
+		Windows.Storage.SystemVideoProperties _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.ISystemProperties).get_Video(&_ret));
+		return _ret;
+	}
+	static Windows.Storage.SystemImageProperties Image()
+	{
+		Windows.Storage.SystemImageProperties _ret;
+		Debug.OK(staticInstance.as!(Windows.Storage.ISystemProperties).get_Image(&_ret));
+		return _ret;
+	}
 }
 
 interface SystemVideoProperties : Windows.Storage.ISystemVideoProperties

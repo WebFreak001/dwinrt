@@ -113,17 +113,41 @@ extern(Windows):
 	final EventRegistrationToken OnPushNotificationReceived(void delegate(Windows.Networking.PushNotifications.PushNotificationChannel, Windows.Networking.PushNotifications.PushNotificationReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PushNotificationReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.PushNotifications.PushNotificationChannel, Windows.Networking.PushNotifications.PushNotificationReceivedEventArgs), Windows.Networking.PushNotifications.PushNotificationChannel, Windows.Networking.PushNotifications.PushNotificationReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.PushNotifications.IPushNotificationChannel).add_PushNotificationReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.PushNotifications.PushNotificationChannel, Windows.Networking.PushNotifications.PushNotificationReceivedEventArgs), Windows.Networking.PushNotifications.PushNotificationChannel, Windows.Networking.PushNotifications.PushNotificationReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePushNotificationReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PushNotificationReceived(token));
+		Debug.OK(this.as!(Windows.Networking.PushNotifications.IPushNotificationChannel).remove_PushNotificationReceived(token));
 	}
 }
 
 interface PushNotificationChannelManager
 {
+	private static Windows.Networking.PushNotifications.IPushNotificationChannelManagerStatics _staticInstance;
+	public static Windows.Networking.PushNotifications.IPushNotificationChannelManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.PushNotifications.IPushNotificationChannelManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) CreatePushNotificationChannelForApplicationAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.PushNotifications.IPushNotificationChannelManagerStatics).abi_CreatePushNotificationChannelForApplicationAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) CreatePushNotificationChannelForApplicationAsyncWithId(HSTRING applicationId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.PushNotifications.IPushNotificationChannelManagerStatics).abi_CreatePushNotificationChannelForApplicationAsyncWithId(applicationId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) CreatePushNotificationChannelForSecondaryTileAsync(HSTRING tileId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.PushNotifications.IPushNotificationChannelManagerStatics).abi_CreatePushNotificationChannelForSecondaryTileAsync(tileId, &_ret));
+		return _ret;
+	}
 }
 
 interface PushNotificationChannelManagerForUser : Windows.Networking.PushNotifications.IPushNotificationChannelManagerForUser, Windows.Networking.PushNotifications.IPushNotificationChannelManagerForUser2

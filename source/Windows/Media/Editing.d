@@ -244,6 +244,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).get_AudioEffectDefinitions(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Media.Editing.IBackgroundAudioTrackStatics _staticInstance;
+	public static Windows.Media.Editing.IBackgroundAudioTrackStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Editing.IBackgroundAudioTrackStatics);
+		return _staticInstance;
+	}
+	static Windows.Media.Editing.BackgroundAudioTrack CreateFromEmbeddedAudioTrack(Windows.Media.Editing.EmbeddedAudioTrack embeddedAudioTrack)
+	{
+		Windows.Media.Editing.BackgroundAudioTrack _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Editing.IBackgroundAudioTrackStatics).abi_CreateFromEmbeddedAudioTrack(embeddedAudioTrack, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Editing.BackgroundAudioTrack) CreateFromFileAsync(Windows.Storage.IStorageFile file)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Editing.BackgroundAudioTrack) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Editing.IBackgroundAudioTrackStatics).abi_CreateFromFileAsync(file, &_ret));
+		return _ret;
+	}
 }
 
 interface EmbeddedAudioTrack : Windows.Media.Editing.IEmbeddedAudioTrack
@@ -360,6 +379,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_VideoEffectDefinitions(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Media.Editing.IMediaClipStatics _staticInstance;
+	public static Windows.Media.Editing.IMediaClipStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Editing.IMediaClipStatics);
+		return _staticInstance;
+	}
+	static Windows.Media.Editing.MediaClip CreateFromColor(Windows.UI.Color color, Windows.Foundation.TimeSpan originalDuration)
+	{
+		Windows.Media.Editing.MediaClip _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Editing.IMediaClipStatics).abi_CreateFromColor(color, originalDuration, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Editing.MediaClip) CreateFromFileAsync(Windows.Storage.IStorageFile file)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Editing.MediaClip) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Editing.IMediaClipStatics).abi_CreateFromFileAsync(file, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Editing.MediaClip) CreateFromImageFileAsync(Windows.Storage.IStorageFile file, Windows.Foundation.TimeSpan originalDuration)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Editing.MediaClip) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Editing.IMediaClipStatics).abi_CreateFromImageFileAsync(file, originalDuration, &_ret));
+		return _ret;
+	}
 }
 
 interface MediaComposition : Windows.Media.Editing.IMediaComposition, Windows.Media.Editing.IMediaComposition2
@@ -459,6 +503,19 @@ extern(Windows):
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Media.Editing.MediaOverlayLayer) _ret;
 		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition2).get_OverlayLayers(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Media.Editing.IMediaCompositionStatics _staticInstance;
+	public static Windows.Media.Editing.IMediaCompositionStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Editing.IMediaCompositionStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Editing.MediaComposition) LoadAsync(Windows.Storage.StorageFile file)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Editing.MediaComposition) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Editing.IMediaCompositionStatics).abi_LoadAsync(file, &_ret));
 		return _ret;
 	}
 }

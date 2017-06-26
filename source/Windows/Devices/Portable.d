@@ -22,10 +22,46 @@ extern(Windows):
 
 interface ServiceDevice
 {
+	private static Windows.Devices.Portable.IServiceDeviceStatics _staticInstance;
+	public static Windows.Devices.Portable.IServiceDeviceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Portable.IServiceDeviceStatics);
+		return _staticInstance;
+	}
+	static HSTRING GetDeviceSelector(Windows.Devices.Portable.ServiceDeviceType serviceType)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Portable.IServiceDeviceStatics).abi_GetDeviceSelector(serviceType, &_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelectorFromServiceId(GUID serviceId)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Portable.IServiceDeviceStatics).abi_GetDeviceSelectorFromServiceId(serviceId, &_ret));
+		return _ret;
+	}
 }
 
 interface StorageDevice
 {
+	private static Windows.Devices.Portable.IStorageDeviceStatics _staticInstance;
+	public static Windows.Devices.Portable.IStorageDeviceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Portable.IStorageDeviceStatics);
+		return _staticInstance;
+	}
+	static Windows.Storage.StorageFolder FromId(HSTRING deviceId)
+	{
+		Windows.Storage.StorageFolder _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Portable.IStorageDeviceStatics).abi_FromId(deviceId, &_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Portable.IStorageDeviceStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
 }
 
 enum ServiceDeviceType

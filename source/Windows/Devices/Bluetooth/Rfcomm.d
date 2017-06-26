@@ -193,6 +193,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService3).abi_RequestAccessAsync(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceServiceStatics _staticInstance;
+	public static Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceServiceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceServiceStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceServiceStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelector(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId serviceId)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceServiceStatics).abi_GetDeviceSelector(serviceId, &_ret));
+		return _ret;
+	}
 }
 
 interface RfcommDeviceServicesResult : Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceServicesResult
@@ -233,6 +252,61 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceId).abi_AsString(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceIdStatics _staticInstance;
+	public static Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceIdStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceIdStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId FromUuid(GUID uuid)
+	{
+		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceIdStatics).abi_FromUuid(uuid, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId FromShortId(UINT32 shortId)
+	{
+		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceIdStatics).abi_FromShortId(shortId, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId SerialPort()
+	{
+		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceIdStatics).get_SerialPort(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId ObexObjectPush()
+	{
+		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceIdStatics).get_ObexObjectPush(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId ObexFileTransfer()
+	{
+		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceIdStatics).get_ObexFileTransfer(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId PhoneBookAccessPce()
+	{
+		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceIdStatics).get_PhoneBookAccessPce(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId PhoneBookAccessPse()
+	{
+		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceIdStatics).get_PhoneBookAccessPse(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId GenericFileTransfer()
+	{
+		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceIdStatics).get_GenericFileTransfer(&_ret));
+		return _ret;
+	}
 }
 
 interface RfcommServiceProvider : Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider, Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider2
@@ -261,5 +335,18 @@ extern(Windows):
 	final void StartAdvertisingWithRadioDiscoverability(Windows.Networking.Sockets.StreamSocketListener listener, bool radioDiscoverable)
 	{
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider2).abi_StartAdvertisingWithRadioDiscoverability(listener, radioDiscoverable));
+	}
+
+	private static Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProviderStatics _staticInstance;
+	public static Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProviderStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProviderStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceProvider) CreateAsync(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId serviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceProvider) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProviderStatics).abi_CreateAsync(serviceId, &_ret));
+		return _ret;
 	}
 }

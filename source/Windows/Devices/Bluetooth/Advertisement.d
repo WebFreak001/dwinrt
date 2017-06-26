@@ -315,6 +315,144 @@ extern(Windows):
 
 interface BluetoothLEAdvertisementDataTypes
 {
+	private static Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics _staticInstance;
+	public static Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics);
+		return _staticInstance;
+	}
+	static ubyte Flags()
+	{
+		ubyte _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics).get_Flags(&_ret));
+		return _ret;
+	}
+	static ubyte IncompleteService16BitUuids()
+	{
+		ubyte _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics).get_IncompleteService16BitUuids(&_ret));
+		return _ret;
+	}
+	static ubyte CompleteService16BitUuids()
+	{
+		ubyte _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics).get_CompleteService16BitUuids(&_ret));
+		return _ret;
+	}
+	static ubyte IncompleteService32BitUuids()
+	{
+		ubyte _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics).get_IncompleteService32BitUuids(&_ret));
+		return _ret;
+	}
+	static ubyte CompleteService32BitUuids()
+	{
+		ubyte _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics).get_CompleteService32BitUuids(&_ret));
+		return _ret;
+	}
+	static ubyte IncompleteService128BitUuids()
+	{
+		ubyte _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics).get_IncompleteService128BitUuids(&_ret));
+		return _ret;
+	}
+	static ubyte CompleteService128BitUuids()
+	{
+		ubyte _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics).get_CompleteService128BitUuids(&_ret));
+		return _ret;
+	}
+	static ubyte ShortenedLocalName()
+	{
+		ubyte _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics).get_ShortenedLocalName(&_ret));
+		return _ret;
+	}
+	static ubyte CompleteLocalName()
+	{
+		ubyte _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics).get_CompleteLocalName(&_ret));
+		return _ret;
+	}
+	static ubyte TxPowerLevel()
+	{
+		ubyte _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics).get_TxPowerLevel(&_ret));
+		return _ret;
+	}
+	static ubyte SlaveConnectionIntervalRange()
+	{
+		ubyte _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics).get_SlaveConnectionIntervalRange(&_ret));
+		return _ret;
+	}
+	static ubyte ServiceSolicitation16BitUuids()
+	{
+		ubyte _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics).get_ServiceSolicitation16BitUuids(&_ret));
+		return _ret;
+	}
+	static ubyte ServiceSolicitation32BitUuids()
+	{
+		ubyte _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics).get_ServiceSolicitation32BitUuids(&_ret));
+		return _ret;
+	}
+	static ubyte ServiceSolicitation128BitUuids()
+	{
+		ubyte _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics).get_ServiceSolicitation128BitUuids(&_ret));
+		return _ret;
+	}
+	static ubyte ServiceData16BitUuids()
+	{
+		ubyte _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics).get_ServiceData16BitUuids(&_ret));
+		return _ret;
+	}
+	static ubyte ServiceData32BitUuids()
+	{
+		ubyte _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics).get_ServiceData32BitUuids(&_ret));
+		return _ret;
+	}
+	static ubyte ServiceData128BitUuids()
+	{
+		ubyte _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics).get_ServiceData128BitUuids(&_ret));
+		return _ret;
+	}
+	static ubyte PublicTargetAddress()
+	{
+		ubyte _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics).get_PublicTargetAddress(&_ret));
+		return _ret;
+	}
+	static ubyte RandomTargetAddress()
+	{
+		ubyte _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics).get_RandomTargetAddress(&_ret));
+		return _ret;
+	}
+	static ubyte Appearance()
+	{
+		ubyte _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics).get_Appearance(&_ret));
+		return _ret;
+	}
+	static ubyte AdvertisingInterval()
+	{
+		ubyte _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics).get_AdvertisingInterval(&_ret));
+		return _ret;
+	}
+	static ubyte ManufacturerSpecificData()
+	{
+		ubyte _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementDataTypesStatics).get_ManufacturerSpecificData(&_ret));
+		return _ret;
+	}
 }
 
 interface BluetoothLEAdvertisementFilter : Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementFilter
@@ -364,12 +502,12 @@ extern(Windows):
 	final EventRegistrationToken OnStatusChanged(void delegate(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisherStatusChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_StatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisherStatusChangedEventArgs), Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisherStatusChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisher).add_StatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisherStatusChangedEventArgs), Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisherStatusChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_StatusChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisher).remove_StatusChanged(token));
 	}
 }
 
@@ -499,22 +637,22 @@ extern(Windows):
 	final EventRegistrationToken OnReceived(void delegate(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Received(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementReceivedEventArgs), Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher).add_Received(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementReceivedEventArgs), Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Received(token));
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher).remove_Received(token));
 	}
 	final EventRegistrationToken OnStopped(void delegate(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcherStoppedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcherStoppedEventArgs), Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcherStoppedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcherStoppedEventArgs), Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher, Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcherStoppedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStopped(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Stopped(token));
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher).remove_Stopped(token));
 	}
 }
 

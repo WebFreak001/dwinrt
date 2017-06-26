@@ -76,12 +76,12 @@ extern(Windows):
 	final EventRegistrationToken OnRevoked(void delegate(IInspectable, Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionRevokedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Revoked(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionRevokedEventArgs), IInspectable, Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionRevokedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession).add_Revoked(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionRevokedEventArgs), IInspectable, Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionRevokedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRevoked(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Revoked(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession).remove_Revoked(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionResult) RequestExtensionAsync()
 	{

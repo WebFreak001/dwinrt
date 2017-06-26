@@ -320,15 +320,15 @@ extern(Windows):
 	}
 	final void removeDownloadProgress(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DownloadProgress(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).remove_DownloadProgress(token));
 	}
 	final void removeImageOpened(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ImageOpened(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).remove_ImageOpened(token));
 	}
 	final void removeImageFailed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ImageFailed(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).remove_ImageFailed(token));
 	}
 	final Windows.UI.Xaml.Media.Imaging.DecodePixelType DecodePixelType()
 	{
@@ -370,6 +370,37 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage3).abi_Stop());
 	}
+
+	private static Windows.UI.Xaml.Media.Imaging.IBitmapImageStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Imaging.IBitmapImageStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Imaging.IBitmapImageStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty CreateOptionsProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImageStatics).get_CreateOptionsProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty UriSourceProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImageStatics).get_UriSourceProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty DecodePixelWidthProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImageStatics).get_DecodePixelWidthProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty DecodePixelHeightProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImageStatics).get_DecodePixelHeightProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface BitmapSource : Windows.UI.Xaml.Media.ImageSource, Windows.UI.Xaml.Media.Imaging.IBitmapSource
@@ -395,6 +426,25 @@ extern(Windows):
 	{
 		Windows.Foundation.IAsyncAction _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapSource).abi_SetSourceAsync(streamSource, &_ret));
+		return _ret;
+	}
+
+	private static Windows.UI.Xaml.Media.Imaging.IBitmapSourceStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Imaging.IBitmapSourceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Imaging.IBitmapSourceStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty PixelWidthProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.IBitmapSourceStatics).get_PixelWidthProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty PixelHeightProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.IBitmapSourceStatics).get_PixelHeightProperty(&_ret));
 		return _ret;
 	}
 }
@@ -463,6 +513,25 @@ extern(Windows):
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmap).abi_GetPixelsAsync(&_ret));
+		return _ret;
+	}
+
+	private static Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmapStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmapStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmapStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty PixelWidthProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmapStatics).get_PixelWidthProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty PixelHeightProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmapStatics).get_PixelHeightProperty(&_ret));
 		return _ret;
 	}
 }
@@ -536,27 +605,52 @@ extern(Windows):
 	final EventRegistrationToken OnOpened(void delegate(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceOpenedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Opened(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceOpenedEventArgs), Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceOpenedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).add_Opened(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceOpenedEventArgs), Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceOpenedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeOpened(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Opened(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).remove_Opened(token));
 	}
 	final EventRegistrationToken OnOpenFailed(void delegate(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceFailedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_OpenFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceFailedEventArgs), Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceFailedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).add_OpenFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceFailedEventArgs), Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceFailedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeOpenFailed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_OpenFailed(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).remove_OpenFailed(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Media.Imaging.SvgImageSourceLoadStatus) SetSourceAsync(Windows.Storage.Streams.IRandomAccessStream streamSource)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Media.Imaging.SvgImageSourceLoadStatus) _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).abi_SetSourceAsync(streamSource, &_ret));
+		return _ret;
+	}
+
+	private static Windows.UI.Xaml.Media.Imaging.ISvgImageSourceStatics _staticInstance;
+	public static Windows.UI.Xaml.Media.Imaging.ISvgImageSourceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.Imaging.ISvgImageSourceStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty UriSourceProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSourceStatics).get_UriSourceProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty RasterizePixelWidthProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSourceStatics).get_RasterizePixelWidthProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty RasterizePixelHeightProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSourceStatics).get_RasterizePixelHeightProperty(&_ret));
 		return _ret;
 	}
 }

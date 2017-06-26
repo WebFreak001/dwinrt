@@ -846,6 +846,65 @@ extern(Windows):
 
 interface BackgroundMediaPlayer
 {
+	private static Windows.Media.Playback.IBackgroundMediaPlayerStatics _staticInstance;
+	public static Windows.Media.Playback.IBackgroundMediaPlayerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Playback.IBackgroundMediaPlayerStatics);
+		return _staticInstance;
+	}
+	deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")
+	static Windows.Media.Playback.MediaPlayer Current()
+	{
+		Windows.Media.Playback.MediaPlayer _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Playback.IBackgroundMediaPlayerStatics).get_Current(&_ret));
+		return _ret;
+	}
+	deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")
+	static EventRegistrationToken OnMessageReceivedFromBackground(void delegate(IInspectable, Windows.Media.Playback.MediaPlayerDataReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Media.Playback.IBackgroundMediaPlayerStatics).add_MessageReceivedFromBackground(event!(Windows.Foundation.EventHandler!(Windows.Media.Playback.MediaPlayerDataReceivedEventArgs), IInspectable, Windows.Media.Playback.MediaPlayerDataReceivedEventArgs)(fn), &tok));
+		return tok;
+	}
+	deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")
+	static void removeMessageReceivedFromBackground(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.Playback.IBackgroundMediaPlayerStatics).remove_MessageReceivedFromBackground(token));
+	}
+	deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")
+	static EventRegistrationToken OnMessageReceivedFromForeground(void delegate(IInspectable, Windows.Media.Playback.MediaPlayerDataReceivedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Media.Playback.IBackgroundMediaPlayerStatics).add_MessageReceivedFromForeground(event!(Windows.Foundation.EventHandler!(Windows.Media.Playback.MediaPlayerDataReceivedEventArgs), IInspectable, Windows.Media.Playback.MediaPlayerDataReceivedEventArgs)(fn), &tok));
+		return tok;
+	}
+	deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")
+	static void removeMessageReceivedFromForeground(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.Playback.IBackgroundMediaPlayerStatics).remove_MessageReceivedFromForeground(token));
+	}
+	deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")
+	static void SendMessageToBackground(Windows.Foundation.Collections.ValueSet value)
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.Playback.IBackgroundMediaPlayerStatics).abi_SendMessageToBackground(value));
+	}
+	deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")
+	static void SendMessageToForeground(Windows.Foundation.Collections.ValueSet value)
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.Playback.IBackgroundMediaPlayerStatics).abi_SendMessageToForeground(value));
+	}
+	deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")
+	static bool IsMediaPlaying()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Playback.IBackgroundMediaPlayerStatics).abi_IsMediaPlaying(&_ret));
+		return _ret;
+	}
+	deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")
+	static void Shutdown()
+	{
+		Debug.OK(staticInstance.as!(Windows.Media.Playback.IBackgroundMediaPlayerStatics).abi_Shutdown());
+	}
 }
 
 interface CurrentMediaPlaybackItemChangedEventArgs : Windows.Media.Playback.ICurrentMediaPlaybackItemChangedEventArgs, Windows.Media.Playback.ICurrentMediaPlaybackItemChangedEventArgs2
@@ -927,42 +986,42 @@ extern(Windows):
 	final EventRegistrationToken OnBreaksSeekedOver(void delegate(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakSeekedOverEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_BreaksSeekedOver(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakSeekedOverEventArgs), Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakSeekedOverEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakManager).add_BreaksSeekedOver(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakSeekedOverEventArgs), Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakSeekedOverEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeBreaksSeekedOver(EventRegistrationToken token)
 	{
-		Debug.OK(remove_BreaksSeekedOver(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakManager).remove_BreaksSeekedOver(token));
 	}
 	final EventRegistrationToken OnBreakStarted(void delegate(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakStartedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_BreakStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakStartedEventArgs), Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakStartedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakManager).add_BreakStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakStartedEventArgs), Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakStartedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeBreakStarted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_BreakStarted(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakManager).remove_BreakStarted(token));
 	}
 	final EventRegistrationToken OnBreakEnded(void delegate(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakEndedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_BreakEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakEndedEventArgs), Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakEndedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakManager).add_BreakEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakEndedEventArgs), Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakEndedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeBreakEnded(EventRegistrationToken token)
 	{
-		Debug.OK(remove_BreakEnded(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakManager).remove_BreakEnded(token));
 	}
 	final EventRegistrationToken OnBreakSkipped(void delegate(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakSkippedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_BreakSkipped(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakSkippedEventArgs), Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakSkippedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakManager).add_BreakSkipped(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakSkippedEventArgs), Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakSkippedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeBreakSkipped(EventRegistrationToken token)
 	{
-		Debug.OK(remove_BreakSkipped(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakManager).remove_BreakSkipped(token));
 	}
 	final Windows.Media.Playback.MediaBreak CurrentBreak()
 	{
@@ -992,12 +1051,12 @@ extern(Windows):
 	final EventRegistrationToken OnScheduleChanged(void delegate(Windows.Media.Playback.MediaBreakSchedule, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ScheduleChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakSchedule, IInspectable), Windows.Media.Playback.MediaBreakSchedule, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakSchedule).add_ScheduleChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakSchedule, IInspectable), Windows.Media.Playback.MediaBreakSchedule, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeScheduleChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ScheduleChanged(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakSchedule).remove_ScheduleChanged(token));
 	}
 	final void InsertMidrollBreak(Windows.Media.Playback.MediaBreak mediaBreak)
 	{
@@ -1157,12 +1216,12 @@ extern(Windows):
 	final EventRegistrationToken OnSelectedIndexChanged(void delegate(Windows.Media.Core.ISingleSelectMediaTrackList, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SelectedIndexChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.ISingleSelectMediaTrackList, IInspectable), Windows.Media.Core.ISingleSelectMediaTrackList, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.ISingleSelectMediaTrackList).add_SelectedIndexChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.ISingleSelectMediaTrackList, IInspectable), Windows.Media.Core.ISingleSelectMediaTrackList, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSelectedIndexChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SelectedIndexChanged(token));
+		Debug.OK(this.as!(Windows.Media.Core.ISingleSelectMediaTrackList).remove_SelectedIndexChanged(token));
 	}
 	final void SelectedIndex(INT32 value)
 	{
@@ -1258,102 +1317,102 @@ extern(Windows):
 	final EventRegistrationToken OnPlayReceived(void delegate(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPlayReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PlayReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPlayReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPlayReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).add_PlayReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPlayReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPlayReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePlayReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PlayReceived(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).remove_PlayReceived(token));
 	}
 	final EventRegistrationToken OnPauseReceived(void delegate(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPauseReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PauseReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPauseReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPauseReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).add_PauseReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPauseReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPauseReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePauseReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PauseReceived(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).remove_PauseReceived(token));
 	}
 	final EventRegistrationToken OnNextReceived(void delegate(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerNextReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_NextReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerNextReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerNextReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).add_NextReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerNextReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerNextReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeNextReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_NextReceived(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).remove_NextReceived(token));
 	}
 	final EventRegistrationToken OnPreviousReceived(void delegate(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PreviousReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).add_PreviousReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePreviousReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PreviousReceived(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).remove_PreviousReceived(token));
 	}
 	final EventRegistrationToken OnFastForwardReceived(void delegate(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerFastForwardReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_FastForwardReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerFastForwardReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerFastForwardReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).add_FastForwardReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerFastForwardReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerFastForwardReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeFastForwardReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_FastForwardReceived(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).remove_FastForwardReceived(token));
 	}
 	final EventRegistrationToken OnRewindReceived(void delegate(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerRewindReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_RewindReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerRewindReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerRewindReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).add_RewindReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerRewindReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerRewindReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRewindReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_RewindReceived(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).remove_RewindReceived(token));
 	}
 	final EventRegistrationToken OnShuffleReceived(void delegate(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerShuffleReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ShuffleReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerShuffleReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerShuffleReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).add_ShuffleReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerShuffleReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerShuffleReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeShuffleReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ShuffleReceived(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).remove_ShuffleReceived(token));
 	}
 	final EventRegistrationToken OnAutoRepeatModeReceived(void delegate(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AutoRepeatModeReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).add_AutoRepeatModeReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAutoRepeatModeReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AutoRepeatModeReceived(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).remove_AutoRepeatModeReceived(token));
 	}
 	final EventRegistrationToken OnPositionReceived(void delegate(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPositionReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PositionReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPositionReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPositionReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).add_PositionReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPositionReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPositionReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePositionReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PositionReceived(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).remove_PositionReceived(token));
 	}
 	final EventRegistrationToken OnRateReceived(void delegate(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerRateReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_RateReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerRateReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerRateReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).add_RateReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerRateReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerRateReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRateReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_RateReceived(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).remove_RateReceived(token));
 	}
 }
 
@@ -1412,12 +1471,12 @@ extern(Windows):
 	final EventRegistrationToken OnIsEnabledChanged(void delegate(Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_IsEnabledChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior, IInspectable), Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerCommandBehavior).add_IsEnabledChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior, IInspectable), Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeIsEnabledChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_IsEnabledChanged(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerCommandBehavior).remove_IsEnabledChanged(token));
 	}
 }
 
@@ -1634,32 +1693,32 @@ extern(Windows):
 	final EventRegistrationToken OnAudioTracksChanged(void delegate(Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AudioTracksChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs), Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem).add_AudioTracksChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs), Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAudioTracksChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AudioTracksChanged(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem).remove_AudioTracksChanged(token));
 	}
 	final EventRegistrationToken OnVideoTracksChanged(void delegate(Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_VideoTracksChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs), Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem).add_VideoTracksChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs), Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeVideoTracksChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_VideoTracksChanged(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem).remove_VideoTracksChanged(token));
 	}
 	final EventRegistrationToken OnTimedMetadataTracksChanged(void delegate(Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_TimedMetadataTracksChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs), Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem).add_TimedMetadataTracksChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs), Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTimedMetadataTracksChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_TimedMetadataTracksChanged(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem).remove_TimedMetadataTracksChanged(token));
 	}
 	final Windows.Media.Core.MediaSource Source()
 	{
@@ -1749,6 +1808,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem3).set_AutoLoadedDisplayProperties(value));
 	}
+
+	private static Windows.Media.Playback.IMediaPlaybackItemStatics _staticInstance;
+	public static Windows.Media.Playback.IMediaPlaybackItemStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Playback.IMediaPlaybackItemStatics);
+		return _staticInstance;
+	}
+	static Windows.Media.Playback.MediaPlaybackItem FindFromMediaSource(Windows.Media.Core.MediaSource source)
+	{
+		Windows.Media.Playback.MediaPlaybackItem _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Playback.IMediaPlaybackItemStatics).abi_FindFromMediaSource(source, &_ret));
+		return _ret;
+	}
 }
 
 interface MediaPlaybackItemError : Windows.Media.Playback.IMediaPlaybackItemError
@@ -1802,32 +1874,32 @@ extern(Windows):
 	final EventRegistrationToken OnItemFailed(void delegate(Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemFailedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ItemFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemFailedEventArgs), Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemFailedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList).add_ItemFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemFailedEventArgs), Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemFailedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeItemFailed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ItemFailed(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList).remove_ItemFailed(token));
 	}
 	final EventRegistrationToken OnCurrentItemChanged(void delegate(Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.CurrentMediaPlaybackItemChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_CurrentItemChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.CurrentMediaPlaybackItemChangedEventArgs), Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.CurrentMediaPlaybackItemChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList).add_CurrentItemChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.CurrentMediaPlaybackItemChangedEventArgs), Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.CurrentMediaPlaybackItemChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCurrentItemChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_CurrentItemChanged(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList).remove_CurrentItemChanged(token));
 	}
 	final EventRegistrationToken OnItemOpened(void delegate(Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemOpenedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ItemOpened(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemOpenedEventArgs), Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemOpenedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList).add_ItemOpened(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemOpenedEventArgs), Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemOpenedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeItemOpened(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ItemOpened(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList).remove_ItemOpened(token));
 	}
 	final Windows.Foundation.Collections.IObservableVector!(Windows.Media.Playback.MediaPlaybackItem) Items()
 	{
@@ -1933,102 +2005,102 @@ extern(Windows):
 	final EventRegistrationToken OnPlaybackStateChanged(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PlaybackStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).add_PlaybackStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removePlaybackStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PlaybackStateChanged(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).remove_PlaybackStateChanged(token));
 	}
 	final EventRegistrationToken OnPlaybackRateChanged(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PlaybackRateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).add_PlaybackRateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removePlaybackRateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PlaybackRateChanged(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).remove_PlaybackRateChanged(token));
 	}
 	final EventRegistrationToken OnSeekCompleted(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SeekCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).add_SeekCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSeekCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SeekCompleted(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).remove_SeekCompleted(token));
 	}
 	final EventRegistrationToken OnBufferingStarted(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_BufferingStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).add_BufferingStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeBufferingStarted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_BufferingStarted(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).remove_BufferingStarted(token));
 	}
 	final EventRegistrationToken OnBufferingEnded(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_BufferingEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).add_BufferingEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeBufferingEnded(EventRegistrationToken token)
 	{
-		Debug.OK(remove_BufferingEnded(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).remove_BufferingEnded(token));
 	}
 	final EventRegistrationToken OnBufferingProgressChanged(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_BufferingProgressChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).add_BufferingProgressChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeBufferingProgressChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_BufferingProgressChanged(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).remove_BufferingProgressChanged(token));
 	}
 	final EventRegistrationToken OnDownloadProgressChanged(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DownloadProgressChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).add_DownloadProgressChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeDownloadProgressChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DownloadProgressChanged(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).remove_DownloadProgressChanged(token));
 	}
 	final EventRegistrationToken OnNaturalDurationChanged(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_NaturalDurationChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).add_NaturalDurationChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeNaturalDurationChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_NaturalDurationChanged(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).remove_NaturalDurationChanged(token));
 	}
 	final EventRegistrationToken OnPositionChanged(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PositionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).add_PositionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removePositionChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PositionChanged(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).remove_PositionChanged(token));
 	}
 	final EventRegistrationToken OnNaturalVideoSizeChanged(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_NaturalVideoSizeChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).add_NaturalVideoSizeChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeNaturalVideoSizeChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_NaturalVideoSizeChanged(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).remove_NaturalVideoSizeChanged(token));
 	}
 	final Windows.Media.Playback.MediaPlayer MediaPlayer()
 	{
@@ -2133,42 +2205,42 @@ extern(Windows):
 	final EventRegistrationToken OnBufferedRangesChanged(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_BufferedRangesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession2).add_BufferedRangesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeBufferedRangesChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_BufferedRangesChanged(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession2).remove_BufferedRangesChanged(token));
 	}
 	final EventRegistrationToken OnPlayedRangesChanged(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PlayedRangesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession2).add_PlayedRangesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removePlayedRangesChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PlayedRangesChanged(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession2).remove_PlayedRangesChanged(token));
 	}
 	final EventRegistrationToken OnSeekableRangesChanged(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SeekableRangesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession2).add_SeekableRangesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSeekableRangesChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SeekableRangesChanged(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession2).remove_SeekableRangesChanged(token));
 	}
 	final EventRegistrationToken OnSupportedPlaybackRatesChanged(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SupportedPlaybackRatesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession2).add_SupportedPlaybackRatesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSupportedPlaybackRatesChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SupportedPlaybackRatesChanged(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession2).remove_SupportedPlaybackRatesChanged(token));
 	}
 	final Windows.Media.Playback.MediaPlaybackSphericalVideoProjection SphericalVideoProjection()
 	{
@@ -2297,12 +2369,12 @@ extern(Windows):
 	final EventRegistrationToken OnPresentationModeChanged(void delegate(Windows.Media.Playback.MediaPlaybackTimedMetadataTrackList, Windows.Media.Playback.TimedMetadataPresentationModeChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PresentationModeChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackTimedMetadataTrackList, Windows.Media.Playback.TimedMetadataPresentationModeChangedEventArgs), Windows.Media.Playback.MediaPlaybackTimedMetadataTrackList, Windows.Media.Playback.TimedMetadataPresentationModeChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackTimedMetadataTrackList).add_PresentationModeChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackTimedMetadataTrackList, Windows.Media.Playback.TimedMetadataPresentationModeChangedEventArgs), Windows.Media.Playback.MediaPlaybackTimedMetadataTrackList, Windows.Media.Playback.TimedMetadataPresentationModeChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePresentationModeChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PresentationModeChanged(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackTimedMetadataTrackList).remove_PresentationModeChanged(token));
 	}
 	final Windows.Media.Playback.TimedMetadataTrackPresentationMode GetPresentationMode(UINT32 index)
 	{
@@ -2346,12 +2418,12 @@ extern(Windows):
 	final EventRegistrationToken OnSelectedIndexChanged(void delegate(Windows.Media.Core.ISingleSelectMediaTrackList, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SelectedIndexChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.ISingleSelectMediaTrackList, IInspectable), Windows.Media.Core.ISingleSelectMediaTrackList, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Core.ISingleSelectMediaTrackList).add_SelectedIndexChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.ISingleSelectMediaTrackList, IInspectable), Windows.Media.Core.ISingleSelectMediaTrackList, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSelectedIndexChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SelectedIndexChanged(token));
+		Debug.OK(this.as!(Windows.Media.Core.ISingleSelectMediaTrackList).remove_SelectedIndexChanged(token));
 	}
 	final void SelectedIndex(INT32 value)
 	{
@@ -2484,114 +2556,114 @@ extern(Windows):
 	final EventRegistrationToken OnMediaOpened(void delegate(Windows.Media.Playback.MediaPlayer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_MediaOpened(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).add_MediaOpened(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeMediaOpened(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MediaOpened(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).remove_MediaOpened(token));
 	}
 	final EventRegistrationToken OnMediaEnded(void delegate(Windows.Media.Playback.MediaPlayer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_MediaEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).add_MediaEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeMediaEnded(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MediaEnded(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).remove_MediaEnded(token));
 	}
 	final EventRegistrationToken OnMediaFailed(void delegate(Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.MediaPlayerFailedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_MediaFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.MediaPlayerFailedEventArgs), Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.MediaPlayerFailedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).add_MediaFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.MediaPlayerFailedEventArgs), Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.MediaPlayerFailedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMediaFailed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MediaFailed(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).remove_MediaFailed(token));
 	}
 	deprecated("Use PlaybackSession.PlaybackStateChanged instead of CurrentStateChanged.  For more info, see MSDN.")
 	final EventRegistrationToken OnCurrentStateChanged(void delegate(Windows.Media.Playback.MediaPlayer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_CurrentStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).add_CurrentStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("Use PlaybackSession.PlaybackStateChanged instead of CurrentStateChanged.  For more info, see MSDN.")
 	final void removeCurrentStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_CurrentStateChanged(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).remove_CurrentStateChanged(token));
 	}
 	deprecated("Use media tracks on MediaPlaybackItem instead of PlaybackMediaMarkers.	For more info, see MSDN.")
 	final EventRegistrationToken OnPlaybackMediaMarkerReached(void delegate(Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.PlaybackMediaMarkerReachedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PlaybackMediaMarkerReached(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.PlaybackMediaMarkerReachedEventArgs), Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.PlaybackMediaMarkerReachedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).add_PlaybackMediaMarkerReached(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.PlaybackMediaMarkerReachedEventArgs), Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.PlaybackMediaMarkerReachedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("Use media tracks on MediaPlaybackItem instead of PlaybackMediaMarkers.	For more info, see MSDN.")
 	final void removePlaybackMediaMarkerReached(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PlaybackMediaMarkerReached(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).remove_PlaybackMediaMarkerReached(token));
 	}
 	deprecated("Use PlaybackSession.PlaybackRateChanged instead of MediaPlayerRateChanged.	For more info, see MSDN.")
 	final EventRegistrationToken OnMediaPlayerRateChanged(void delegate(Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.MediaPlayerRateChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_MediaPlayerRateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.MediaPlayerRateChangedEventArgs), Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.MediaPlayerRateChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).add_MediaPlayerRateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.MediaPlayerRateChangedEventArgs), Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.MediaPlayerRateChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("Use PlaybackSession.PlaybackRateChanged instead of MediaPlayerRateChanged.	For more info, see MSDN.")
 	final void removeMediaPlayerRateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MediaPlayerRateChanged(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).remove_MediaPlayerRateChanged(token));
 	}
 	final EventRegistrationToken OnVolumeChanged(void delegate(Windows.Media.Playback.MediaPlayer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_VolumeChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).add_VolumeChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeVolumeChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_VolumeChanged(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).remove_VolumeChanged(token));
 	}
 	deprecated("Use PlaybackSession.SeekCompleted instead of SeekCompleted.	 For more info, see MSDN.")
 	final EventRegistrationToken OnSeekCompleted(void delegate(Windows.Media.Playback.MediaPlayer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SeekCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).add_SeekCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("Use PlaybackSession.SeekCompleted instead of SeekCompleted.	 For more info, see MSDN.")
 	final void removeSeekCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SeekCompleted(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).remove_SeekCompleted(token));
 	}
 	deprecated("Use PlaybackSession.BufferingStarted instead of BufferingStarted.  For more info, see MSDN.")
 	final EventRegistrationToken OnBufferingStarted(void delegate(Windows.Media.Playback.MediaPlayer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_BufferingStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).add_BufferingStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("Use PlaybackSession.BufferingStarted instead of BufferingStarted.  For more info, see MSDN.")
 	final void removeBufferingStarted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_BufferingStarted(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).remove_BufferingStarted(token));
 	}
 	deprecated("Use PlaybackSession.BufferingEnded instead of BufferingEnded.  For more info, see MSDN.")
 	final EventRegistrationToken OnBufferingEnded(void delegate(Windows.Media.Playback.MediaPlayer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_BufferingEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).add_BufferingEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("Use PlaybackSession.BufferingEnded instead of BufferingEnded.  For more info, see MSDN.")
 	final void removeBufferingEnded(EventRegistrationToken token)
 	{
-		Debug.OK(remove_BufferingEnded(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).remove_BufferingEnded(token));
 	}
 	final void Play()
 	{
@@ -2682,22 +2754,22 @@ extern(Windows):
 	final EventRegistrationToken OnIsMutedChanged(void delegate(Windows.Media.Playback.MediaPlayer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_IsMutedChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).add_IsMutedChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeIsMutedChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_IsMutedChanged(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).remove_IsMutedChanged(token));
 	}
 	final EventRegistrationToken OnSourceChanged(void delegate(Windows.Media.Playback.MediaPlayer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SourceChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).add_SourceChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSourceChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SourceChanged(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).remove_SourceChanged(token));
 	}
 	final double AudioBalance()
 	{
@@ -2808,12 +2880,12 @@ extern(Windows):
 	final EventRegistrationToken OnVideoFrameAvailable(void delegate(Windows.Media.Playback.MediaPlayer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_VideoFrameAvailable(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer5).add_VideoFrameAvailable(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeVideoFrameAvailable(EventRegistrationToken token)
 	{
-		Debug.OK(remove_VideoFrameAvailable(token));
+		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer5).remove_VideoFrameAvailable(token));
 	}
 	final bool IsVideoFrameServerEnabled()
 	{

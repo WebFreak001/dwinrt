@@ -12,4 +12,16 @@ extern(Windows):
 
 interface HtmlUtilities
 {
+	private static Windows.Data.Html.IHtmlUtilities _staticInstance;
+	public static Windows.Data.Html.IHtmlUtilities staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Data.Html.IHtmlUtilities);
+		return _staticInstance;
+	}
+	static HSTRING ConvertToText(HSTRING html)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Html.IHtmlUtilities).abi_ConvertToText(html, &_ret));
+		return _ret;
+	}
 }

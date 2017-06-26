@@ -67,6 +67,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Services.Cortana.ICortanaPermissionsManager).abi_RevokePermissionsAsync(permissions, &_ret));
 		return _ret;
 	}
+
+	private static Windows.Services.Cortana.ICortanaPermissionsManagerStatics _staticInstance;
+	public static Windows.Services.Cortana.ICortanaPermissionsManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Services.Cortana.ICortanaPermissionsManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Services.Cortana.CortanaPermissionsManager GetDefault()
+	{
+		Windows.Services.Cortana.CortanaPermissionsManager _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.Cortana.ICortanaPermissionsManagerStatics).abi_GetDefault(&_ret));
+		return _ret;
+	}
 }
 
 interface CortanaSettings : Windows.Services.Cortana.ICortanaSettings
@@ -87,6 +100,25 @@ extern(Windows):
 	final void IsVoiceActivationEnabled(bool value)
 	{
 		Debug.OK(this.as!(Windows.Services.Cortana.ICortanaSettings).set_IsVoiceActivationEnabled(value));
+	}
+
+	private static Windows.Services.Cortana.ICortanaSettingsStatics _staticInstance;
+	public static Windows.Services.Cortana.ICortanaSettingsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Services.Cortana.ICortanaSettingsStatics);
+		return _staticInstance;
+	}
+	static bool IsSupported()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.Cortana.ICortanaSettingsStatics).abi_IsSupported(&_ret));
+		return _ret;
+	}
+	static Windows.Services.Cortana.CortanaSettings GetDefault()
+	{
+		Windows.Services.Cortana.CortanaSettings _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.Cortana.ICortanaSettingsStatics).abi_GetDefault(&_ret));
+		return _ret;
 	}
 }
 

@@ -1631,6 +1631,37 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Data.Xml.Dom.IXmlDocumentIO2).abi_LoadXmlFromBufferWithSettings(buffer, loadSettings));
 	}
+
+	private static Windows.Data.Xml.Dom.IXmlDocumentStatics _staticInstance;
+	public static Windows.Data.Xml.Dom.IXmlDocumentStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Data.Xml.Dom.IXmlDocumentStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Data.Xml.Dom.XmlDocument) LoadFromUriAsync(Windows.Foundation.Uri uri)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Data.Xml.Dom.XmlDocument) _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Xml.Dom.IXmlDocumentStatics).abi_LoadFromUriAsync(uri, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Data.Xml.Dom.XmlDocument) LoadFromUriWithSettingsAsync(Windows.Foundation.Uri uri, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Data.Xml.Dom.XmlDocument) _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Xml.Dom.IXmlDocumentStatics).abi_LoadFromUriWithSettingsAsync(uri, loadSettings, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Data.Xml.Dom.XmlDocument) LoadFromFileAsync(Windows.Storage.IStorageFile file)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Data.Xml.Dom.XmlDocument) _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Xml.Dom.IXmlDocumentStatics).abi_LoadFromFileAsync(file, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Data.Xml.Dom.XmlDocument) LoadFromFileWithSettingsAsync(Windows.Storage.IStorageFile file, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Data.Xml.Dom.XmlDocument) _ret;
+		Debug.OK(staticInstance.as!(Windows.Data.Xml.Dom.IXmlDocumentStatics).abi_LoadFromFileWithSettingsAsync(file, loadSettings, &_ret));
+		return _ret;
+	}
 }
 
 interface XmlDocumentFragment : Windows.Data.Xml.Dom.IXmlDocumentFragment, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector

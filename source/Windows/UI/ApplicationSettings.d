@@ -200,12 +200,29 @@ extern(Windows):
 	final EventRegistrationToken OnAccountCommandsRequested(void delegate(Windows.UI.ApplicationSettings.AccountsSettingsPane, Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AccountCommandsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ApplicationSettings.AccountsSettingsPane, Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs), Windows.UI.ApplicationSettings.AccountsSettingsPane, Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPane).add_AccountCommandsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ApplicationSettings.AccountsSettingsPane, Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs), Windows.UI.ApplicationSettings.AccountsSettingsPane, Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAccountCommandsRequested(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_AccountCommandsRequested(cookie));
+		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPane).remove_AccountCommandsRequested(cookie));
+	}
+
+	private static Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics _staticInstance;
+	public static Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.ApplicationSettings.AccountsSettingsPane GetForCurrentView()
+	{
+		Windows.UI.ApplicationSettings.AccountsSettingsPane _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics).abi_GetForCurrentView(&_ret));
+		return _ret;
+	}
+	static void Show()
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics).abi_Show());
 	}
 }
 
@@ -313,6 +330,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).set_Id(value));
 	}
+
+	private static Windows.UI.ApplicationSettings.ISettingsCommandStatics _staticInstance;
+	public static Windows.UI.ApplicationSettings.ISettingsCommandStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.ApplicationSettings.ISettingsCommandStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.ApplicationSettings.SettingsCommand AccountsCommand()
+	{
+		Windows.UI.ApplicationSettings.SettingsCommand _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.ApplicationSettings.ISettingsCommandStatics).get_AccountsCommand(&_ret));
+		return _ret;
+	}
 }
 
 interface SettingsPane : Windows.UI.ApplicationSettings.ISettingsPane
@@ -322,13 +352,39 @@ extern(Windows):
 	final EventRegistrationToken OnCommandsRequested(void delegate(Windows.UI.ApplicationSettings.SettingsPane, Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_CommandsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ApplicationSettings.SettingsPane, Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs), Windows.UI.ApplicationSettings.SettingsPane, Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.ApplicationSettings.ISettingsPane).add_CommandsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ApplicationSettings.SettingsPane, Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs), Windows.UI.ApplicationSettings.SettingsPane, Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final void removeCommandsRequested(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_CommandsRequested(cookie));
+		Debug.OK(this.as!(Windows.UI.ApplicationSettings.ISettingsPane).remove_CommandsRequested(cookie));
+	}
+
+	private static Windows.UI.ApplicationSettings.ISettingsPaneStatics _staticInstance;
+	public static Windows.UI.ApplicationSettings.ISettingsPaneStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.ApplicationSettings.ISettingsPaneStatics);
+		return _staticInstance;
+	}
+	deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+	static Windows.UI.ApplicationSettings.SettingsPane GetForCurrentView()
+	{
+		Windows.UI.ApplicationSettings.SettingsPane _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.ApplicationSettings.ISettingsPaneStatics).abi_GetForCurrentView(&_ret));
+		return _ret;
+	}
+	deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+	static void Show()
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.ApplicationSettings.ISettingsPaneStatics).abi_Show());
+	}
+	deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
+	static Windows.UI.ApplicationSettings.SettingsEdgeLocation Edge()
+	{
+		Windows.UI.ApplicationSettings.SettingsEdgeLocation _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.ApplicationSettings.ISettingsPaneStatics).get_Edge(&_ret));
+		return _ret;
 	}
 }
 

@@ -157,6 +157,41 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthentication).abi_AbortAuthenticationAsync(errorLogMessage, &_ret));
 		return _ret;
 	}
+
+	private static Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthenticationStatics _staticInstance;
+	public static Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthenticationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthenticationStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncAction ShowNotificationMessageAsync(HSTRING deviceName, Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationMessage message)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthenticationStatics).abi_ShowNotificationMessageAsync(deviceName, message, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationResult) StartAuthenticationAsync(HSTRING deviceId, Windows.Storage.Streams.IBuffer serviceAuthenticationNonce)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthenticationStatics).abi_StartAuthenticationAsync(deviceId, serviceAuthenticationNonce, &_ret));
+		return _ret;
+	}
+	static EventRegistrationToken OnAuthenticationStageChanged(void delegate(IInspectable, Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthenticationStatics).add_AuthenticationStageChanged(event!(Windows.Foundation.EventHandler!(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs), IInspectable, Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs)(fn), &tok));
+		return tok;
+	}
+	static void removeAuthenticationStageChanged(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthenticationStatics).remove_AuthenticationStageChanged(token));
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStageInfo) GetAuthenticationStageInfoAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorAuthenticationStageInfo) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthenticationStatics).abi_GetAuthenticationStageInfoAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface SecondaryAuthenticationFactorAuthenticationResult : Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorAuthenticationResult
@@ -270,6 +305,37 @@ extern(Windows):
 	{
 		Windows.Foundation.IAsyncAction _ret;
 		Debug.OK(this.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorRegistration).abi_AbortRegisteringDeviceAsync(errorLogMessage, &_ret));
+		return _ret;
+	}
+
+	private static Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics _staticInstance;
+	public static Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus) RegisterDevicePresenceMonitoringAsync(HSTRING deviceId, HSTRING deviceInstancePath, Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics).abi_RegisterDevicePresenceMonitoringAsync(deviceId, deviceInstancePath, monitoringMode, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus) RegisterDevicePresenceMonitoringWithNewDeviceAsync(HSTRING deviceId, HSTRING deviceInstancePath, Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode, HSTRING deviceFriendlyName, HSTRING deviceModelNumber, Windows.Storage.Streams.IBuffer deviceConfigurationData)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics).abi_RegisterDevicePresenceMonitoringWithNewDeviceAsync(deviceId, deviceInstancePath, monitoringMode, deviceFriendlyName, deviceModelNumber, deviceConfigurationData, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction UnregisterDevicePresenceMonitoringAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics).abi_UnregisterDevicePresenceMonitoringAsync(deviceId, &_ret));
+		return _ret;
+	}
+	static bool IsDevicePresenceMonitoringSupported()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Identity.Provider.ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics).abi_IsDevicePresenceMonitoringSupported(&_ret));
 		return _ret;
 	}
 }

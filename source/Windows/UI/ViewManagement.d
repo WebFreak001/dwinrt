@@ -422,12 +422,12 @@ extern(Windows):
 	final EventRegistrationToken OnHighContrastChanged(void delegate(Windows.UI.ViewManagement.AccessibilitySettings, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_HighContrastChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.AccessibilitySettings, IInspectable), Windows.UI.ViewManagement.AccessibilitySettings, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IAccessibilitySettings).add_HighContrastChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.AccessibilitySettings, IInspectable), Windows.UI.ViewManagement.AccessibilitySettings, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeHighContrastChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_HighContrastChanged(cookie));
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IAccessibilitySettings).remove_HighContrastChanged(cookie));
 	}
 }
 
@@ -517,12 +517,12 @@ extern(Windows):
 	final EventRegistrationToken OnConsolidated(void delegate(Windows.UI.ViewManagement.ApplicationView, Windows.UI.ViewManagement.ApplicationViewConsolidatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Consolidated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.ApplicationView, Windows.UI.ViewManagement.ApplicationViewConsolidatedEventArgs), Windows.UI.ViewManagement.ApplicationView, Windows.UI.ViewManagement.ApplicationViewConsolidatedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).add_Consolidated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.ApplicationView, Windows.UI.ViewManagement.ApplicationViewConsolidatedEventArgs), Windows.UI.ViewManagement.ApplicationView, Windows.UI.ViewManagement.ApplicationViewConsolidatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeConsolidated(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Consolidated(token));
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).remove_Consolidated(token));
 	}
 	deprecated("Use the TryEnterFullScreen method and IsFullScreenMode property instead of SuppressSystemOverlays. For more info, see MSDN.")
 	final bool SuppressSystemOverlays()
@@ -545,12 +545,12 @@ extern(Windows):
 	final EventRegistrationToken OnVisibleBoundsChanged(void delegate(Windows.UI.ViewManagement.ApplicationView, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_VisibleBoundsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.ApplicationView, IInspectable), Windows.UI.ViewManagement.ApplicationView, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView2).add_VisibleBoundsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.ApplicationView, IInspectable), Windows.UI.ViewManagement.ApplicationView, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeVisibleBoundsChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_VisibleBoundsChanged(token));
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView2).remove_VisibleBoundsChanged(token));
 	}
 	final bool SetDesiredBoundsMode(Windows.UI.ViewManagement.ApplicationViewBoundsMode boundsMode)
 	{
@@ -640,6 +640,20 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView4).abi_TryConsolidateAsync(&_ret));
 		return _ret;
 	}
+
+	private static Windows.UI.ViewManagement.IApplicationViewFullscreenStatics _staticInstance;
+	public static Windows.UI.ViewManagement.IApplicationViewFullscreenStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.ViewManagement.IApplicationViewFullscreenStatics);
+		return _staticInstance;
+	}
+	deprecated("IApplicationViewFullscreenStatics is deprecated after Windows 8. Please use other resize APIs.")
+	static bool TryUnsnapToFullscreen()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewFullscreenStatics).abi_TryUnsnapToFullscreen(&_ret));
+		return _ret;
+	}
 }
 
 interface ApplicationViewConsolidatedEventArgs : Windows.UI.ViewManagement.IApplicationViewConsolidatedEventArgs, Windows.UI.ViewManagement.IApplicationViewConsolidatedEventArgs2
@@ -661,10 +675,80 @@ extern(Windows):
 
 interface ApplicationViewScaling : Windows.UI.ViewManagement.IApplicationViewScaling
 {
+	private static Windows.UI.ViewManagement.IApplicationViewScalingStatics _staticInstance;
+	public static Windows.UI.ViewManagement.IApplicationViewScalingStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.ViewManagement.IApplicationViewScalingStatics);
+		return _staticInstance;
+	}
+	static bool DisableLayoutScaling()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewScalingStatics).get_DisableLayoutScaling(&_ret));
+		return _ret;
+	}
+	static bool TrySetDisableLayoutScaling(bool disableLayoutScaling)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewScalingStatics).abi_TrySetDisableLayoutScaling(disableLayoutScaling, &_ret));
+		return _ret;
+	}
 }
 
 interface ApplicationViewSwitcher
 {
+	private static Windows.UI.ViewManagement.IApplicationViewSwitcherStatics _staticInstance;
+	public static Windows.UI.ViewManagement.IApplicationViewSwitcherStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.ViewManagement.IApplicationViewSwitcherStatics);
+		return _staticInstance;
+	}
+	static void DisableShowingMainViewOnActivation()
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewSwitcherStatics).abi_DisableShowingMainViewOnActivation());
+	}
+	static Windows.Foundation.IAsyncOperation!(bool) TryShowAsStandaloneAsync(INT32 viewId)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewSwitcherStatics).abi_TryShowAsStandaloneAsync(viewId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(bool) TryShowAsStandaloneWithSizePreferenceAsync(INT32 viewId, Windows.UI.ViewManagement.ViewSizePreference sizePreference)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewSwitcherStatics).abi_TryShowAsStandaloneWithSizePreferenceAsync(viewId, sizePreference, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(bool) TryShowAsStandaloneWithAnchorViewAndSizePreferenceAsync(INT32 viewId, Windows.UI.ViewManagement.ViewSizePreference sizePreference, INT32 anchorViewId, Windows.UI.ViewManagement.ViewSizePreference anchorSizePreference)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewSwitcherStatics).abi_TryShowAsStandaloneWithAnchorViewAndSizePreferenceAsync(viewId, sizePreference, anchorViewId, anchorSizePreference, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction SwitchAsync(INT32 viewId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewSwitcherStatics).abi_SwitchAsync(viewId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction SwitchFromViewAsync(INT32 toViewId, INT32 fromViewId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewSwitcherStatics).abi_SwitchFromViewAsync(toViewId, fromViewId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction SwitchFromViewWithOptionsAsync(INT32 toViewId, INT32 fromViewId, Windows.UI.ViewManagement.ApplicationViewSwitchingOptions options)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewSwitcherStatics).abi_SwitchFromViewWithOptionsAsync(toViewId, fromViewId, options, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(bool) PrepareForCustomAnimatedSwitchAsync(INT32 toViewId, INT32 fromViewId, Windows.UI.ViewManagement.ApplicationViewSwitchingOptions options)
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewSwitcherStatics).abi_PrepareForCustomAnimatedSwitchAsync(toViewId, fromViewId, options, &_ret));
+		return _ret;
+	}
 }
 
 interface ApplicationViewTitleBar : Windows.UI.ViewManagement.IApplicationViewTitleBar
@@ -805,6 +889,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTransferContext).set_ViewId(value));
 	}
+
+	private static Windows.UI.ViewManagement.IApplicationViewTransferContextStatics _staticInstance;
+	public static Windows.UI.ViewManagement.IApplicationViewTransferContextStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.ViewManagement.IApplicationViewTransferContextStatics);
+		return _staticInstance;
+	}
+	static HSTRING DataPackageFormatId()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewTransferContextStatics).get_DataPackageFormatId(&_ret));
+		return _ret;
+	}
 }
 
 interface InputPane : Windows.UI.ViewManagement.IInputPane, Windows.UI.ViewManagement.IInputPane2, Windows.UI.ViewManagement.IInputPaneControl
@@ -813,22 +910,22 @@ extern(Windows):
 	final EventRegistrationToken OnShowing(void delegate(Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Showing(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs), Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPane).add_Showing(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs), Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeShowing(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Showing(token));
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPane).remove_Showing(token));
 	}
 	final EventRegistrationToken OnHiding(void delegate(Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Hiding(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs), Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPane).add_Hiding(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs), Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeHiding(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Hiding(token));
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPane).remove_Hiding(token));
 	}
 	final Windows.Foundation.Rect OccludedRect()
 	{
@@ -858,6 +955,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPaneControl).set_Visible(value));
 	}
+
+	private static Windows.UI.ViewManagement.IInputPaneStatics _staticInstance;
+	public static Windows.UI.ViewManagement.IInputPaneStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.ViewManagement.IInputPaneStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.ViewManagement.InputPane GetForCurrentView()
+	{
+		Windows.UI.ViewManagement.InputPane _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IInputPaneStatics).abi_GetForCurrentView(&_ret));
+		return _ret;
+	}
 }
 
 interface InputPaneVisibilityEventArgs : Windows.UI.ViewManagement.IInputPaneVisibilityEventArgs
@@ -883,6 +993,46 @@ extern(Windows):
 
 interface ProjectionManager
 {
+	private static Windows.UI.ViewManagement.IProjectionManagerStatics _staticInstance;
+	public static Windows.UI.ViewManagement.IProjectionManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.ViewManagement.IProjectionManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncAction StartProjectingAsync(INT32 projectionViewId, INT32 anchorViewId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IProjectionManagerStatics).abi_StartProjectingAsync(projectionViewId, anchorViewId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction SwapDisplaysForViewsAsync(INT32 projectionViewId, INT32 anchorViewId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IProjectionManagerStatics).abi_SwapDisplaysForViewsAsync(projectionViewId, anchorViewId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction StopProjectingAsync(INT32 projectionViewId, INT32 anchorViewId)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IProjectionManagerStatics).abi_StopProjectingAsync(projectionViewId, anchorViewId, &_ret));
+		return _ret;
+	}
+	static bool ProjectionDisplayAvailable()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IProjectionManagerStatics).get_ProjectionDisplayAvailable(&_ret));
+		return _ret;
+	}
+	static EventRegistrationToken OnProjectionDisplayAvailableChanged(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IProjectionManagerStatics).add_ProjectionDisplayAvailableChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
+	static void removeProjectionDisplayAvailableChanged(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IProjectionManagerStatics).remove_ProjectionDisplayAvailableChanged(token));
+	}
 }
 
 interface UISettings : Windows.UI.ViewManagement.IUISettings, Windows.UI.ViewManagement.IUISettings2, Windows.UI.ViewManagement.IUISettings3, Windows.UI.ViewManagement.IUISettings4
@@ -975,12 +1125,12 @@ extern(Windows):
 	final EventRegistrationToken OnTextScaleFactorChanged(void delegate(Windows.UI.ViewManagement.UISettings, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_TextScaleFactorChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings, IInspectable), Windows.UI.ViewManagement.UISettings, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings2).add_TextScaleFactorChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings, IInspectable), Windows.UI.ViewManagement.UISettings, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeTextScaleFactorChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_TextScaleFactorChanged(cookie));
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings2).remove_TextScaleFactorChanged(cookie));
 	}
 	final Windows.UI.Color GetColorValue(Windows.UI.ViewManagement.UIColorType desiredColor)
 	{
@@ -991,12 +1141,12 @@ extern(Windows):
 	final EventRegistrationToken OnColorValuesChanged(void delegate(Windows.UI.ViewManagement.UISettings, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ColorValuesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings, IInspectable), Windows.UI.ViewManagement.UISettings, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings3).add_ColorValuesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings, IInspectable), Windows.UI.ViewManagement.UISettings, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeColorValuesChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_ColorValuesChanged(cookie));
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings3).remove_ColorValuesChanged(cookie));
 	}
 	final bool AdvancedEffectsEnabled()
 	{
@@ -1007,12 +1157,12 @@ extern(Windows):
 	final EventRegistrationToken OnAdvancedEffectsEnabledChanged(void delegate(Windows.UI.ViewManagement.UISettings, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AdvancedEffectsEnabledChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings, IInspectable), Windows.UI.ViewManagement.UISettings, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings4).add_AdvancedEffectsEnabledChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings, IInspectable), Windows.UI.ViewManagement.UISettings, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeAdvancedEffectsEnabledChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_AdvancedEffectsEnabledChanged(cookie));
+		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings4).remove_AdvancedEffectsEnabledChanged(cookie));
 	}
 }
 
@@ -1023,6 +1173,19 @@ extern(Windows):
 	{
 		Windows.UI.ViewManagement.UserInteractionMode _ret;
 		Debug.OK(this.as!(Windows.UI.ViewManagement.IUIViewSettings).get_UserInteractionMode(&_ret));
+		return _ret;
+	}
+
+	private static Windows.UI.ViewManagement.IUIViewSettingsStatics _staticInstance;
+	public static Windows.UI.ViewManagement.IUIViewSettingsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.ViewManagement.IUIViewSettingsStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.ViewManagement.UIViewSettings GetForCurrentView()
+	{
+		Windows.UI.ViewManagement.UIViewSettings _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IUIViewSettingsStatics).abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 }
@@ -1049,6 +1212,19 @@ extern(Windows):
 	final void CustomSize(Windows.Foundation.Size value)
 	{
 		Debug.OK(this.as!(Windows.UI.ViewManagement.IViewModePreferences).set_CustomSize(value));
+	}
+
+	private static Windows.UI.ViewManagement.IViewModePreferencesStatics _staticInstance;
+	public static Windows.UI.ViewManagement.IViewModePreferencesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.ViewManagement.IViewModePreferencesStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.ViewManagement.ViewModePreferences CreateDefault(Windows.UI.ViewManagement.ApplicationViewMode mode)
+	{
+		Windows.UI.ViewManagement.ViewModePreferences _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IViewModePreferencesStatics).abi_CreateDefault(mode, &_ret));
+		return _ret;
 	}
 }
 

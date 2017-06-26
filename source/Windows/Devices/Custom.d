@@ -76,6 +76,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Custom.ICustomDevice).abi_TrySendIOControlAsync(ioControlCode, inputBuffer, outputBuffer, &_ret));
 		return _ret;
 	}
+
+	private static Windows.Devices.Custom.ICustomDeviceStatics _staticInstance;
+	public static Windows.Devices.Custom.ICustomDeviceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Custom.ICustomDeviceStatics);
+		return _staticInstance;
+	}
+	static HSTRING GetDeviceSelector(GUID classGuid)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Custom.ICustomDeviceStatics).abi_GetDeviceSelector(classGuid, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Custom.CustomDevice) FromIdAsync(HSTRING deviceId, Windows.Devices.Custom.DeviceAccessMode desiredAccess, Windows.Devices.Custom.DeviceSharingMode sharingMode)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Custom.CustomDevice) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Custom.ICustomDeviceStatics).abi_FromIdAsync(deviceId, desiredAccess, sharingMode, &_ret));
+		return _ret;
+	}
 }
 
 interface IOControlCode : Windows.Devices.Custom.IIOControlCode
@@ -115,6 +134,18 @@ extern(Windows):
 
 interface KnownDeviceTypes
 {
+	private static Windows.Devices.Custom.IKnownDeviceTypesStatics _staticInstance;
+	public static Windows.Devices.Custom.IKnownDeviceTypesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Custom.IKnownDeviceTypesStatics);
+		return _staticInstance;
+	}
+	static UINT16 Unknown()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Custom.IKnownDeviceTypesStatics).get_Unknown(&_ret));
+		return _ret;
+	}
 }
 
 enum DeviceAccessMode

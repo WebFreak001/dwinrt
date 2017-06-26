@@ -521,12 +521,12 @@ extern(Windows):
 	final EventRegistrationToken OnSyncStatusChanged(void delegate(Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncManager, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SyncStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncManager, IInspectable), Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncManager, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager).add_SyncStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncManager, IInspectable), Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncManager, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSyncStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SyncStatusChanged(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager).remove_SyncStatusChanged(token));
 	}
 }
 
@@ -543,6 +543,25 @@ extern(Windows):
 	{
 		Windows.System.User _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskManager).get_User(&_ret));
+		return _ret;
+	}
+
+	private static Windows.ApplicationModel.UserDataTasks.IUserDataTaskManagerStatics _staticInstance;
+	public static Windows.ApplicationModel.UserDataTasks.IUserDataTaskManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.ApplicationModel.UserDataTasks.UserDataTaskManager GetDefault()
+	{
+		Windows.ApplicationModel.UserDataTasks.UserDataTaskManager _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskManagerStatics).abi_GetDefault(&_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.UserDataTasks.UserDataTaskManager GetForUser(Windows.System.User user)
+	{
+		Windows.ApplicationModel.UserDataTasks.UserDataTaskManager _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskManagerStatics).abi_GetForUser(user, &_ret));
 		return _ret;
 	}
 }

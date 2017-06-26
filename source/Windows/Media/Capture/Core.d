@@ -88,22 +88,22 @@ extern(Windows):
 	final EventRegistrationToken OnPhotoCaptured(void delegate(Windows.Media.Capture.Core.VariablePhotoSequenceCapture, Windows.Media.Capture.Core.VariablePhotoCapturedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_PhotoCaptured(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Core.VariablePhotoSequenceCapture, Windows.Media.Capture.Core.VariablePhotoCapturedEventArgs), Windows.Media.Capture.Core.VariablePhotoSequenceCapture, Windows.Media.Capture.Core.VariablePhotoCapturedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture).add_PhotoCaptured(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Core.VariablePhotoSequenceCapture, Windows.Media.Capture.Core.VariablePhotoCapturedEventArgs), Windows.Media.Capture.Core.VariablePhotoSequenceCapture, Windows.Media.Capture.Core.VariablePhotoCapturedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePhotoCaptured(EventRegistrationToken token)
 	{
-		Debug.OK(remove_PhotoCaptured(token));
+		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture).remove_PhotoCaptured(token));
 	}
 	final EventRegistrationToken OnStopped(void delegate(Windows.Media.Capture.Core.VariablePhotoSequenceCapture, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Core.VariablePhotoSequenceCapture, IInspectable), Windows.Media.Capture.Core.VariablePhotoSequenceCapture, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Core.VariablePhotoSequenceCapture, IInspectable), Windows.Media.Capture.Core.VariablePhotoSequenceCapture, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeStopped(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Stopped(token));
+		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture).remove_Stopped(token));
 	}
 	final Windows.Foundation.IAsyncAction UpdateSettingsAsync()
 	{

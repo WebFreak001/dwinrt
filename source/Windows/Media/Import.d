@@ -511,12 +511,12 @@ extern(Windows):
 	final EventRegistrationToken OnSelectionChanged(void delegate(Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportSelectionChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SelectionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportSelectionChangedEventArgs), Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportSelectionChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).add_SelectionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportSelectionChangedEventArgs), Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportSelectionChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSelectionChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SelectionChanged(token));
+		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).remove_SelectionChanged(token));
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportImportItemsResult, Windows.Media.Import.PhotoImportProgress) ImportItemsAsync()
 	{
@@ -527,12 +527,12 @@ extern(Windows):
 	final EventRegistrationToken OnItemImported(void delegate(Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportItemImportedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ItemImported(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportItemImportedEventArgs), Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportItemImportedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).add_ItemImported(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportItemImportedEventArgs), Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportItemImportedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeItemImported(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ItemImported(token));
+		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).remove_ItemImported(token));
 	}
 	final void AddItemsInDateRangeToSelection(Windows.Foundation.DateTime rangeStart, Windows.Foundation.TimeSpan rangeLength)
 	{
@@ -723,6 +723,30 @@ extern(Windows):
 
 interface PhotoImportManager
 {
+	private static Windows.Media.Import.IPhotoImportManagerStatics _staticInstance;
+	public static Windows.Media.Import.IPhotoImportManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Import.IPhotoImportManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(bool) IsSupportedAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(bool) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Import.IPhotoImportManagerStatics).abi_IsSupportedAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportSource)) FindAllSourcesAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportSource)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Import.IPhotoImportManagerStatics).abi_FindAllSourcesAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportOperation) GetPendingOperations()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportOperation) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Import.IPhotoImportManagerStatics).abi_GetPendingOperations(&_ret));
+		return _ret;
+	}
 }
 
 interface PhotoImportOperation : Windows.Media.Import.IPhotoImportOperation
@@ -984,6 +1008,25 @@ extern(Windows):
 	{
 		Windows.Media.Import.PhotoImportSession _ret;
 		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSource).abi_CreateImportSession(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Media.Import.IPhotoImportSourceStatics _staticInstance;
+	public static Windows.Media.Import.IPhotoImportSourceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Import.IPhotoImportSourceStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Import.PhotoImportSource) FromIdAsync(HSTRING sourceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Import.PhotoImportSource) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Import.IPhotoImportSourceStatics).abi_FromIdAsync(sourceId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Import.PhotoImportSource) FromFolderAsync(Windows.Storage.IStorageFolder sourceRootFolder)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Import.PhotoImportSource) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Import.IPhotoImportSourceStatics).abi_FromFolderAsync(sourceRootFolder, &_ret));
 		return _ret;
 	}
 }

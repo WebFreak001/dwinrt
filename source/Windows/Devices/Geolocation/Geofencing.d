@@ -132,12 +132,12 @@ extern(Windows):
 	final EventRegistrationToken OnGeofenceStateChanged(void delegate(Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_GeofenceStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable), Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor).add_GeofenceStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable), Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeGeofenceStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_GeofenceStateChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor).remove_GeofenceStateChanged(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geofencing.GeofenceStateChangeReport) ReadReports()
 	{
@@ -148,12 +148,25 @@ extern(Windows):
 	final EventRegistrationToken OnStatusChanged(void delegate(Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_StatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable), Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor).add_StatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable), Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_StatusChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor).remove_StatusChanged(token));
+	}
+
+	private static Windows.Devices.Geolocation.Geofencing.IGeofenceMonitorStatics _staticInstance;
+	public static Windows.Devices.Geolocation.Geofencing.IGeofenceMonitorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitorStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.Geolocation.Geofencing.GeofenceMonitor Current()
+	{
+		Windows.Devices.Geolocation.Geofencing.GeofenceMonitor _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitorStatics).get_Current(&_ret));
+		return _ret;
 	}
 }
 

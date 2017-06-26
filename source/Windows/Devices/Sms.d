@@ -915,12 +915,40 @@ extern(Windows):
 	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
 	final void removeSmsMessageReceived(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_SmsMessageReceived(eventCookie));
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice).remove_SmsMessageReceived(eventCookie));
 	}
 	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
 	final void removeSmsDeviceStatusChanged(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_SmsDeviceStatusChanged(eventCookie));
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice).remove_SmsDeviceStatusChanged(eventCookie));
+	}
+
+	private static Windows.Devices.Sms.ISmsDeviceStatics _staticInstance;
+	public static Windows.Devices.Sms.ISmsDeviceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Sms.ISmsDeviceStatics);
+		return _staticInstance;
+	}
+	deprecated("ISmsDeviceStatics may be altered or unavailable for releases after Windows 10.")
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sms.ISmsDeviceStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
+	deprecated("ISmsDeviceStatics may be altered or unavailable for releases after Windows 10.")
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsDevice) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsDevice) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sms.ISmsDeviceStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
+	deprecated("ISmsDeviceStatics may be altered or unavailable for releases after Windows 10.")
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsDevice) GetDefaultAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsDevice) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sms.ISmsDeviceStatics).abi_GetDefaultAsync(&_ret));
+		return _ret;
 	}
 }
 
@@ -982,12 +1010,43 @@ extern(Windows):
 	final EventRegistrationToken OnDeviceStatusChanged(void delegate(Windows.Devices.Sms.SmsDevice2, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DeviceStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sms.SmsDevice2, IInspectable), Windows.Devices.Sms.SmsDevice2, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).add_DeviceStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sms.SmsDevice2, IInspectable), Windows.Devices.Sms.SmsDevice2, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeDeviceStatusChanged(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_DeviceStatusChanged(eventCookie));
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).remove_DeviceStatusChanged(eventCookie));
+	}
+
+	private static Windows.Devices.Sms.ISmsDevice2Statics _staticInstance;
+	public static Windows.Devices.Sms.ISmsDevice2Statics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Sms.ISmsDevice2Statics);
+		return _staticInstance;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sms.ISmsDevice2Statics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Sms.SmsDevice2 FromId(HSTRING deviceId)
+	{
+		Windows.Devices.Sms.SmsDevice2 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sms.ISmsDevice2Statics).abi_FromId(deviceId, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Sms.SmsDevice2 GetDefault()
+	{
+		Windows.Devices.Sms.SmsDevice2 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sms.ISmsDevice2Statics).abi_GetDefault(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Sms.SmsDevice2 FromParentId(HSTRING parentDeviceId)
+	{
+		Windows.Devices.Sms.SmsDevice2 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sms.ISmsDevice2Statics).abi_FromParentId(parentDeviceId, &_ret));
+		return _ret;
 	}
 }
 
@@ -1225,12 +1284,31 @@ extern(Windows):
 	final EventRegistrationToken OnMessageReceived(void delegate(Windows.Devices.Sms.SmsMessageRegistration, Windows.Devices.Sms.SmsMessageReceivedTriggerDetails) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sms.SmsMessageRegistration, Windows.Devices.Sms.SmsMessageReceivedTriggerDetails), Windows.Devices.Sms.SmsMessageRegistration, Windows.Devices.Sms.SmsMessageReceivedTriggerDetails)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageRegistration).add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sms.SmsMessageRegistration, Windows.Devices.Sms.SmsMessageReceivedTriggerDetails), Windows.Devices.Sms.SmsMessageRegistration, Windows.Devices.Sms.SmsMessageReceivedTriggerDetails)(fn), &tok));
 		return tok;
 	}
 	final void removeMessageReceived(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_MessageReceived(eventCookie));
+		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageRegistration).remove_MessageReceived(eventCookie));
+	}
+
+	private static Windows.Devices.Sms.ISmsMessageRegistrationStatics _staticInstance;
+	public static Windows.Devices.Sms.ISmsMessageRegistrationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Sms.ISmsMessageRegistrationStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.SmsMessageRegistration) AllRegistrations()
+	{
+		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.SmsMessageRegistration) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sms.ISmsMessageRegistrationStatics).get_AllRegistrations(&_ret));
+		return _ret;
+	}
+	static Windows.Devices.Sms.SmsMessageRegistration Register(HSTRING id, Windows.Devices.Sms.SmsFilterRules filterRules)
+	{
+		Windows.Devices.Sms.SmsMessageRegistration _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sms.ISmsMessageRegistrationStatics).abi_Register(id, filterRules, &_ret));
+		return _ret;
 	}
 }
 
@@ -1487,6 +1565,27 @@ extern(Windows):
 	{
 		Windows.Devices.Sms.SmsMessageClass _ret;
 		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessage).get_MessageClass(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Devices.Sms.ISmsTextMessageStatics _staticInstance;
+	public static Windows.Devices.Sms.ISmsTextMessageStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Sms.ISmsTextMessageStatics);
+		return _staticInstance;
+	}
+	deprecated("ISmsTextMessageStatics may be altered or unavailable for releases after Windows 10.")
+	static Windows.Devices.Sms.SmsTextMessage FromBinaryMessage(Windows.Devices.Sms.SmsBinaryMessage binaryMessage)
+	{
+		Windows.Devices.Sms.SmsTextMessage _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sms.ISmsTextMessageStatics).abi_FromBinaryMessage(binaryMessage, &_ret));
+		return _ret;
+	}
+	deprecated("ISmsTextMessageStatics may be altered or unavailable for releases after Windows 10.")
+	static Windows.Devices.Sms.SmsTextMessage FromBinaryData(Windows.Devices.Sms.SmsDataFormat format, UINT32 __valueSize, ubyte* value)
+	{
+		Windows.Devices.Sms.SmsTextMessage _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Sms.ISmsTextMessageStatics).abi_FromBinaryData(format, __valueSize, value, &_ret));
 		return _ret;
 	}
 }

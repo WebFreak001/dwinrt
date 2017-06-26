@@ -572,6 +572,18 @@ extern(Windows):
 
 interface UserDataAccountSystemAccessManager
 {
+	private static Windows.ApplicationModel.UserDataAccounts.SystemAccess.IUserDataAccountSystemAccessManagerStatics _staticInstance;
+	public static Windows.ApplicationModel.UserDataAccounts.SystemAccess.IUserDataAccountSystemAccessManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IUserDataAccountSystemAccessManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) AddAndShowDeviceAccountsAsync(Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountConfiguration) accounts)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.UserDataAccounts.SystemAccess.IUserDataAccountSystemAccessManagerStatics).abi_AddAndShowDeviceAccountsAsync(accounts, &_ret));
+		return _ret;
+	}
 }
 
 enum DeviceAccountAuthenticationType

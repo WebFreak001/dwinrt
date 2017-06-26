@@ -64,6 +64,30 @@ extern(Windows):
 
 interface CredentialPicker
 {
+	private static Windows.Security.Credentials.UI.ICredentialPickerStatics _staticInstance;
+	public static Windows.Security.Credentials.UI.ICredentialPickerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Credentials.UI.ICredentialPickerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) PickWithOptionsAsync(Windows.Security.Credentials.UI.CredentialPickerOptions options)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Credentials.UI.ICredentialPickerStatics).abi_PickWithOptionsAsync(options, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) PickWithMessageAsync(HSTRING targetName, HSTRING message)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Credentials.UI.ICredentialPickerStatics).abi_PickWithMessageAsync(targetName, message, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) PickWithCaptionAsync(HSTRING targetName, HSTRING message, HSTRING caption)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Credentials.UI.ICredentialPickerStatics).abi_PickWithCaptionAsync(targetName, message, caption, &_ret));
+		return _ret;
+	}
 }
 
 interface CredentialPickerOptions : Windows.Security.Credentials.UI.ICredentialPickerOptions
@@ -220,6 +244,24 @@ extern(Windows):
 
 interface UserConsentVerifier
 {
+	private static Windows.Security.Credentials.UI.IUserConsentVerifierStatics _staticInstance;
+	public static Windows.Security.Credentials.UI.IUserConsentVerifierStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Credentials.UI.IUserConsentVerifierStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.UserConsentVerifierAvailability) CheckAvailabilityAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.UserConsentVerifierAvailability) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Credentials.UI.IUserConsentVerifierStatics).abi_CheckAvailabilityAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.UserConsentVerificationResult) RequestVerificationAsync(HSTRING message)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.UserConsentVerificationResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Credentials.UI.IUserConsentVerifierStatics).abi_RequestVerificationAsync(message, &_ret));
+		return _ret;
+	}
 }
 
 enum AuthenticationProtocol

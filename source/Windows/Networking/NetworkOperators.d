@@ -726,6 +726,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IHotspotAuthenticationContext2).abi_IssueCredentialsAsync(userName, password, extraParameters, markAsManualConnectOnFailure, &_ret));
 		return _ret;
 	}
+
+	private static Windows.Networking.NetworkOperators.IHotspotAuthenticationContextStatics _staticInstance;
+	public static Windows.Networking.NetworkOperators.IHotspotAuthenticationContextStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.NetworkOperators.IHotspotAuthenticationContextStatics);
+		return _staticInstance;
+	}
+	static bool TryGetAuthenticationContext(HSTRING evenToken, Windows.Networking.NetworkOperators.HotspotAuthenticationContext* out_context)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IHotspotAuthenticationContextStatics).abi_TryGetAuthenticationContext(evenToken, out_context, &_ret));
+		return _ret;
+	}
 }
 
 interface HotspotAuthenticationEventDetails : Windows.Networking.NetworkOperators.IHotspotAuthenticationEventDetails
@@ -770,18 +783,132 @@ extern(Windows):
 
 interface KnownCSimFilePaths
 {
+	private static Windows.Networking.NetworkOperators.IKnownCSimFilePathsStatics _staticInstance;
+	public static Windows.Networking.NetworkOperators.IKnownCSimFilePathsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.NetworkOperators.IKnownCSimFilePathsStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.Collections.IVectorView!(UINT32) EFSpn()
+	{
+		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownCSimFilePathsStatics).get_EFSpn(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(UINT32) Gid1()
+	{
+		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownCSimFilePathsStatics).get_Gid1(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(UINT32) Gid2()
+	{
+		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownCSimFilePathsStatics).get_Gid2(&_ret));
+		return _ret;
+	}
 }
 
 interface KnownRuimFilePaths
 {
+	private static Windows.Networking.NetworkOperators.IKnownRuimFilePathsStatics _staticInstance;
+	public static Windows.Networking.NetworkOperators.IKnownRuimFilePathsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.NetworkOperators.IKnownRuimFilePathsStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.Collections.IVectorView!(UINT32) EFSpn()
+	{
+		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownRuimFilePathsStatics).get_EFSpn(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(UINT32) Gid1()
+	{
+		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownRuimFilePathsStatics).get_Gid1(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(UINT32) Gid2()
+	{
+		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownRuimFilePathsStatics).get_Gid2(&_ret));
+		return _ret;
+	}
 }
 
 interface KnownSimFilePaths
 {
+	private static Windows.Networking.NetworkOperators.IKnownSimFilePathsStatics _staticInstance;
+	public static Windows.Networking.NetworkOperators.IKnownSimFilePathsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.NetworkOperators.IKnownSimFilePathsStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.Collections.IVectorView!(UINT32) EFOns()
+	{
+		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownSimFilePathsStatics).get_EFOns(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(UINT32) EFSpn()
+	{
+		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownSimFilePathsStatics).get_EFSpn(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(UINT32) Gid1()
+	{
+		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownSimFilePathsStatics).get_Gid1(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(UINT32) Gid2()
+	{
+		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownSimFilePathsStatics).get_Gid2(&_ret));
+		return _ret;
+	}
 }
 
 interface KnownUSimFilePaths
 {
+	private static Windows.Networking.NetworkOperators.IKnownUSimFilePathsStatics _staticInstance;
+	public static Windows.Networking.NetworkOperators.IKnownUSimFilePathsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.NetworkOperators.IKnownUSimFilePathsStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.Collections.IVectorView!(UINT32) EFSpn()
+	{
+		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownUSimFilePathsStatics).get_EFSpn(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(UINT32) EFOpl()
+	{
+		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownUSimFilePathsStatics).get_EFOpl(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(UINT32) EFPnn()
+	{
+		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownUSimFilePathsStatics).get_EFPnn(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(UINT32) Gid1()
+	{
+		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownUSimFilePathsStatics).get_Gid1(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Collections.IVectorView!(UINT32) Gid2()
+	{
+		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownUSimFilePathsStatics).get_Gid2(&_ret));
+		return _ret;
+	}
 }
 
 interface MobileBroadbandAccount : Windows.Networking.NetworkOperators.IMobileBroadbandAccount, Windows.Networking.NetworkOperators.IMobileBroadbandAccount2, Windows.Networking.NetworkOperators.IMobileBroadbandAccount3
@@ -829,6 +956,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccount3).get_AccountExperienceUrl(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Networking.NetworkOperators.IMobileBroadbandAccountStatics _staticInstance;
+	public static Windows.Networking.NetworkOperators.IMobileBroadbandAccountStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.Collections.IVectorView!(HSTRING) AvailableNetworkAccountIds()
+	{
+		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountStatics).get_AvailableNetworkAccountIds(&_ret));
+		return _ret;
+	}
+	static Windows.Networking.NetworkOperators.MobileBroadbandAccount CreateFromNetworkAccountId(HSTRING networkAccountId)
+	{
+		Windows.Networking.NetworkOperators.MobileBroadbandAccount _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountStatics).abi_CreateFromNetworkAccountId(networkAccountId, &_ret));
+		return _ret;
+	}
 }
 
 interface MobileBroadbandAccountEventArgs : Windows.Networking.NetworkOperators.IMobileBroadbandAccountEventArgs
@@ -871,52 +1017,52 @@ extern(Windows):
 	final EventRegistrationToken OnAccountAdded(void delegate(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AccountAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).add_AccountAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAccountAdded(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_AccountAdded(cookie));
+		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).remove_AccountAdded(cookie));
 	}
 	final EventRegistrationToken OnAccountUpdated(void delegate(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountUpdatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AccountUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountUpdatedEventArgs), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountUpdatedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).add_AccountUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountUpdatedEventArgs), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountUpdatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAccountUpdated(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_AccountUpdated(cookie));
+		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).remove_AccountUpdated(cookie));
 	}
 	final EventRegistrationToken OnAccountRemoved(void delegate(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AccountRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).add_AccountRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAccountRemoved(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_AccountRemoved(cookie));
+		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).remove_AccountRemoved(cookie));
 	}
 	final EventRegistrationToken OnEnumerationCompleted(void delegate(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeEnumerationCompleted(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_EnumerationCompleted(cookie));
+		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).remove_EnumerationCompleted(cookie));
 	}
 	final EventRegistrationToken OnStopped(void delegate(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeStopped(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_Stopped(cookie));
+		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).remove_Stopped(cookie));
 	}
 	final Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcherStatus Status()
 	{
@@ -1153,12 +1299,12 @@ extern(Windows):
 	final EventRegistrationToken OnDataReceived(void delegate(Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataSession, Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataSession, Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataReceivedEventArgs), Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataSession, Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceDataSession).add_DataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataSession, Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataReceivedEventArgs), Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataSession, Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDataReceived(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(remove_DataReceived(eventCookie));
+		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceDataSession).remove_DataReceived(eventCookie));
 	}
 }
 
@@ -1269,6 +1415,31 @@ extern(Windows):
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandNetwork _ret;
 		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandModem).get_CurrentNetwork(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Networking.NetworkOperators.IMobileBroadbandModemStatics _staticInstance;
+	public static Windows.Networking.NetworkOperators.IMobileBroadbandModemStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.NetworkOperators.IMobileBroadbandModemStatics);
+		return _staticInstance;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IMobileBroadbandModemStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
+	static Windows.Networking.NetworkOperators.MobileBroadbandModem FromId(HSTRING deviceId)
+	{
+		Windows.Networking.NetworkOperators.MobileBroadbandModem _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IMobileBroadbandModemStatics).abi_FromId(deviceId, &_ret));
+		return _ret;
+	}
+	static Windows.Networking.NetworkOperators.MobileBroadbandModem GetDefault()
+	{
+		Windows.Networking.NetworkOperators.MobileBroadbandModem _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IMobileBroadbandModemStatics).abi_GetDefault(&_ret));
 		return _ret;
 	}
 }
@@ -1831,6 +2002,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringClientManager).abi_GetTetheringClients(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Networking.NetworkOperators.INetworkOperatorTetheringManagerStatics _staticInstance;
+	public static Windows.Networking.NetworkOperators.INetworkOperatorTetheringManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Networking.NetworkOperators.TetheringCapability GetTetheringCapability(HSTRING networkAccountId)
+	{
+		Windows.Networking.NetworkOperators.TetheringCapability _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringManagerStatics).abi_GetTetheringCapability(networkAccountId, &_ret));
+		return _ret;
+	}
+	static Windows.Networking.NetworkOperators.NetworkOperatorTetheringManager CreateFromNetworkAccountId(HSTRING networkAccountId)
+	{
+		Windows.Networking.NetworkOperators.NetworkOperatorTetheringManager _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringManagerStatics).abi_CreateFromNetworkAccountId(networkAccountId, &_ret));
+		return _ret;
+	}
 }
 
 interface NetworkOperatorTetheringOperationResult : Windows.Networking.NetworkOperators.INetworkOperatorTetheringOperationResult
@@ -1893,6 +2083,19 @@ extern(Windows):
 	{
 		Windows.Networking.NetworkOperators.ProvisionedProfile _ret;
 		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IProvisioningAgent).abi_GetProvisionedProfile(mediaType, profileName, &_ret));
+		return _ret;
+	}
+
+	private static Windows.Networking.NetworkOperators.IProvisioningAgentStaticMethods _staticInstance;
+	public static Windows.Networking.NetworkOperators.IProvisioningAgentStaticMethods staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.NetworkOperators.IProvisioningAgentStaticMethods);
+		return _staticInstance;
+	}
+	static Windows.Networking.NetworkOperators.ProvisioningAgent CreateFromNetworkAccountId(HSTRING networkAccountId)
+	{
+		Windows.Networking.NetworkOperators.ProvisioningAgent _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IProvisioningAgentStaticMethods).abi_CreateFromNetworkAccountId(networkAccountId, &_ret));
 		return _ret;
 	}
 }
@@ -1961,6 +2164,25 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IUssdSession).abi_Close());
+	}
+
+	private static Windows.Networking.NetworkOperators.IUssdSessionStatics _staticInstance;
+	public static Windows.Networking.NetworkOperators.IUssdSessionStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.NetworkOperators.IUssdSessionStatics);
+		return _staticInstance;
+	}
+	static Windows.Networking.NetworkOperators.UssdSession CreateFromNetworkAccountId(HSTRING networkAccountId)
+	{
+		Windows.Networking.NetworkOperators.UssdSession _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IUssdSessionStatics).abi_CreateFromNetworkAccountId(networkAccountId, &_ret));
+		return _ret;
+	}
+	static Windows.Networking.NetworkOperators.UssdSession CreateFromNetworkInterfaceId(HSTRING networkInterfaceId)
+	{
+		Windows.Networking.NetworkOperators.UssdSession _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IUssdSessionStatics).abi_CreateFromNetworkInterfaceId(networkInterfaceId, &_ret));
+		return _ret;
 	}
 }
 

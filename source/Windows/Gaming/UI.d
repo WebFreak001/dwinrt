@@ -57,6 +57,44 @@ extern(Windows):
 
 interface GameBar
 {
+	private static Windows.Gaming.UI.IGameBarStatics _staticInstance;
+	public static Windows.Gaming.UI.IGameBarStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Gaming.UI.IGameBarStatics);
+		return _staticInstance;
+	}
+	static EventRegistrationToken OnVisibilityChanged(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Gaming.UI.IGameBarStatics).add_VisibilityChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
+	static void removeVisibilityChanged(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.Gaming.UI.IGameBarStatics).remove_VisibilityChanged(token));
+	}
+	static EventRegistrationToken OnIsInputRedirectedChanged(void delegate(IInspectable, IInspectable) fn)
+	{
+		EventRegistrationToken tok;
+		Debug.OK(staticInstance.as!(Windows.Gaming.UI.IGameBarStatics).add_IsInputRedirectedChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		return tok;
+	}
+	static void removeIsInputRedirectedChanged(EventRegistrationToken token)
+	{
+		Debug.OK(staticInstance.as!(Windows.Gaming.UI.IGameBarStatics).remove_IsInputRedirectedChanged(token));
+	}
+	static bool Visible()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Gaming.UI.IGameBarStatics).get_Visible(&_ret));
+		return _ret;
+	}
+	static bool IsInputRedirected()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Gaming.UI.IGameBarStatics).get_IsInputRedirected(&_ret));
+		return _ret;
+	}
 }
 
 interface GameChatMessageReceivedEventArgs : Windows.Gaming.UI.IGameChatMessageReceivedEventArgs
@@ -111,6 +149,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatOverlay).abi_AddMessage(sender, message, origin));
 	}
+
+	private static Windows.Gaming.UI.IGameChatOverlayStatics _staticInstance;
+	public static Windows.Gaming.UI.IGameChatOverlayStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Gaming.UI.IGameChatOverlayStatics);
+		return _staticInstance;
+	}
+	static Windows.Gaming.UI.GameChatOverlay GetDefault()
+	{
+		Windows.Gaming.UI.GameChatOverlay _ret;
+		Debug.OK(staticInstance.as!(Windows.Gaming.UI.IGameChatOverlayStatics).abi_GetDefault(&_ret));
+		return _ret;
+	}
 }
 
 interface GameChatOverlayMessageSource : Windows.Gaming.UI.IGameChatOverlayMessageSource
@@ -119,12 +170,12 @@ extern(Windows):
 	final EventRegistrationToken OnMessageReceived(void delegate(Windows.Gaming.UI.GameChatOverlayMessageSource, Windows.Gaming.UI.GameChatMessageReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.UI.GameChatOverlayMessageSource, Windows.Gaming.UI.GameChatMessageReceivedEventArgs), Windows.Gaming.UI.GameChatOverlayMessageSource, Windows.Gaming.UI.GameChatMessageReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatOverlayMessageSource).add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.UI.GameChatOverlayMessageSource, Windows.Gaming.UI.GameChatMessageReceivedEventArgs), Windows.Gaming.UI.GameChatOverlayMessageSource, Windows.Gaming.UI.GameChatMessageReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMessageReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MessageReceived(token));
+		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatOverlayMessageSource).remove_MessageReceived(token));
 	}
 	final void SetDelayBeforeClosingAfterMessageReceived(Windows.Foundation.TimeSpan value)
 	{

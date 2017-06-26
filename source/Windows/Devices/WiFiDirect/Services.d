@@ -197,12 +197,12 @@ extern(Windows):
 	final EventRegistrationToken OnSessionDeferred(void delegate(Windows.Devices.WiFiDirect.Services.WiFiDirectService, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionDeferredEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SessionDeferred(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectService, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionDeferredEventArgs), Windows.Devices.WiFiDirect.Services.WiFiDirectService, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionDeferredEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectService).add_SessionDeferred(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectService, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionDeferredEventArgs), Windows.Devices.WiFiDirect.Services.WiFiDirectService, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionDeferredEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSessionDeferred(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SessionDeferred(token));
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectService).remove_SessionDeferred(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceProvisioningInfo) GetProvisioningInfoAsync(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceConfigurationMethod selectedConfigurationMethod)
 	{
@@ -220,6 +220,31 @@ extern(Windows):
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession) _ret;
 		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectService).abi_ConnectAsyncWithPin(pin, &_ret));
+		return _ret;
+	}
+
+	private static Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceStatics _staticInstance;
+	public static Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceStatics);
+		return _staticInstance;
+	}
+	static HSTRING GetSelector(HSTRING serviceName)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceStatics).abi_GetSelector(serviceName, &_ret));
+		return _ret;
+	}
+	static HSTRING GetSelectorWithFilter(HSTRING serviceName, Windows.Storage.Streams.IBuffer serviceInfoFilter)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceStatics).abi_GetSelectorWithFilter(serviceName, serviceInfoFilter, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectService) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectService) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceStatics).abi_FromIdAsync(deviceId, &_ret));
 		return _ret;
 	}
 }
@@ -320,32 +345,32 @@ extern(Windows):
 	final EventRegistrationToken OnSessionRequested(void delegate(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SessionRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionRequestedEventArgs), Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).add_SessionRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionRequestedEventArgs), Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSessionRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SessionRequested(token));
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).remove_SessionRequested(token));
 	}
 	final EventRegistrationToken OnAutoAcceptSessionConnected(void delegate(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAutoAcceptSessionConnectedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AutoAcceptSessionConnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAutoAcceptSessionConnectedEventArgs), Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAutoAcceptSessionConnectedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).add_AutoAcceptSessionConnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAutoAcceptSessionConnectedEventArgs), Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAutoAcceptSessionConnectedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAutoAcceptSessionConnected(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AutoAcceptSessionConnected(token));
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).remove_AutoAcceptSessionConnected(token));
 	}
 	final EventRegistrationToken OnAdvertisementStatusChanged(void delegate(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AdvertisementStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser, IInspectable), Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).add_AdvertisementStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser, IInspectable), Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeAdvertisementStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_AdvertisementStatusChanged(token));
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceAdvertiser).remove_AdvertisementStatusChanged(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession) ConnectAsync(Windows.Devices.Enumeration.DeviceInformation deviceInfo)
 	{
@@ -474,12 +499,12 @@ extern(Windows):
 	final EventRegistrationToken OnSessionStatusChanged(void delegate(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SessionStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession, IInspectable), Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSession).add_SessionStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession, IInspectable), Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSessionStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SessionStatusChanged(token));
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSession).remove_SessionStatusChanged(token));
 	}
 	final Windows.Foundation.IAsyncAction AddStreamSocketListenerAsync(Windows.Networking.Sockets.StreamSocketListener value)
 	{
@@ -496,12 +521,12 @@ extern(Windows):
 	final EventRegistrationToken OnRemotePortAdded(void delegate(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceRemotePortAddedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_RemotePortAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceRemotePortAddedEventArgs), Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceRemotePortAddedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSession).add_RemotePortAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceRemotePortAddedEventArgs), Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession, Windows.Devices.WiFiDirect.Services.WiFiDirectServiceRemotePortAddedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRemotePortAdded(EventRegistrationToken token)
 	{
-		Debug.OK(remove_RemotePortAdded(token));
+		Debug.OK(this.as!(Windows.Devices.WiFiDirect.Services.IWiFiDirectServiceSession).remove_RemotePortAdded(token));
 	}
 	final void Close()
 	{

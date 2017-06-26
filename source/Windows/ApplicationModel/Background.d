@@ -887,6 +887,24 @@ extern(Windows):
 
 interface AlarmApplicationManager
 {
+	private static Windows.ApplicationModel.Background.IAlarmApplicationManagerStatics _staticInstance;
+	public static Windows.ApplicationModel.Background.IAlarmApplicationManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Background.IAlarmApplicationManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.AlarmAccessStatus) RequestAccessAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.AlarmAccessStatus) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Background.IAlarmApplicationManagerStatics).abi_RequestAccessAsync(&_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Background.AlarmAccessStatus GetAccessStatus()
+	{
+		Windows.ApplicationModel.Background.AlarmAccessStatus _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Background.IAlarmApplicationManagerStatics).abi_GetAccessStatus(&_ret));
+		return _ret;
+	}
 }
 
 interface AppBroadcastTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger, Windows.ApplicationModel.Background.IAppBroadcastTrigger
@@ -1003,6 +1021,44 @@ interface AppointmentStoreNotificationTrigger : Windows.ApplicationModel.Backgro
 
 interface BackgroundExecutionManager
 {
+	private static Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics _staticInstance;
+	public static Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.BackgroundAccessStatus) RequestAccessAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.BackgroundAccessStatus) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics).abi_RequestAccessAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.BackgroundAccessStatus) RequestAccessForApplicationAsync(HSTRING applicationId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.BackgroundAccessStatus) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics).abi_RequestAccessForApplicationAsync(applicationId, &_ret));
+		return _ret;
+	}
+	static void RemoveAccess()
+	{
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics).abi_RemoveAccess());
+	}
+	static void RemoveAccessForApplication(HSTRING applicationId)
+	{
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics).abi_RemoveAccessForApplication(applicationId));
+	}
+	static Windows.ApplicationModel.Background.BackgroundAccessStatus GetAccessStatus()
+	{
+		Windows.ApplicationModel.Background.BackgroundAccessStatus _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics).abi_GetAccessStatus(&_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Background.BackgroundAccessStatus GetAccessStatusForApplication(HSTRING applicationId)
+	{
+		Windows.ApplicationModel.Background.BackgroundAccessStatus _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Background.IBackgroundExecutionManagerStatics).abi_GetAccessStatusForApplication(applicationId, &_ret));
+		return _ret;
+	}
 }
 
 interface BackgroundTaskBuilder : Windows.ApplicationModel.Background.IBackgroundTaskBuilder, Windows.ApplicationModel.Background.IBackgroundTaskBuilder2, Windows.ApplicationModel.Background.IBackgroundTaskBuilder3, Windows.ApplicationModel.Background.IBackgroundTaskBuilder4
@@ -1132,11 +1188,11 @@ extern(Windows):
 	}
 	final void removeProgress(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_Progress(cookie));
+		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBackgroundTaskRegistration).remove_Progress(cookie));
 	}
 	final void removeCompleted(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_Completed(cookie));
+		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBackgroundTaskRegistration).remove_Completed(cookie));
 	}
 	final void Unregister(bool cancelTask)
 	{
@@ -1152,6 +1208,19 @@ extern(Windows):
 	{
 		Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBackgroundTaskRegistration3).get_TaskGroup(&_ret));
+		return _ret;
+	}
+
+	private static Windows.ApplicationModel.Background.IBackgroundTaskRegistrationStatics _staticInstance;
+	public static Windows.ApplicationModel.Background.IBackgroundTaskRegistrationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Background.IBackgroundTaskRegistrationStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.Collections.IMapView!(GUID, Windows.ApplicationModel.Background.IBackgroundTaskRegistration) AllTasks()
+	{
+		Windows.Foundation.Collections.IMapView!(GUID, Windows.ApplicationModel.Background.IBackgroundTaskRegistration) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Background.IBackgroundTaskRegistrationStatics).get_AllTasks(&_ret));
 		return _ret;
 	}
 }
@@ -1174,12 +1243,12 @@ extern(Windows):
 	final EventRegistrationToken OnBackgroundActivated(void delegate(Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup, Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_BackgroundActivated(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup, Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs), Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup, Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBackgroundTaskRegistrationGroup).add_BackgroundActivated(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup, Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs), Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup, Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeBackgroundActivated(EventRegistrationToken token)
 	{
-		Debug.OK(remove_BackgroundActivated(token));
+		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBackgroundTaskRegistrationGroup).remove_BackgroundActivated(token));
 	}
 	final Windows.Foundation.Collections.IMapView!(GUID, Windows.ApplicationModel.Background.BackgroundTaskRegistration) AllTasks()
 	{
@@ -1191,6 +1260,18 @@ extern(Windows):
 
 interface BackgroundWorkCost
 {
+	private static Windows.ApplicationModel.Background.IBackgroundWorkCostStatics _staticInstance;
+	public static Windows.ApplicationModel.Background.IBackgroundWorkCostStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Background.IBackgroundWorkCostStatics);
+		return _staticInstance;
+	}
+	static Windows.ApplicationModel.Background.BackgroundWorkCostValue CurrentBackgroundWorkCost()
+	{
+		Windows.ApplicationModel.Background.BackgroundWorkCostValue _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Background.IBackgroundWorkCostStatics).get_CurrentBackgroundWorkCost(&_ret));
+		return _ret;
+	}
 }
 
 interface BluetoothLEAdvertisementPublisherTrigger : Windows.ApplicationModel.Background.IBluetoothLEAdvertisementPublisherTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
@@ -1328,6 +1409,19 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IDeviceConnectionChangeTrigger).set_MaintainConnection(value));
 	}
+
+	private static Windows.ApplicationModel.Background.IDeviceConnectionChangeTriggerStatics _staticInstance;
+	public static Windows.ApplicationModel.Background.IDeviceConnectionChangeTriggerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Background.IDeviceConnectionChangeTriggerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceConnectionChangeTrigger) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceConnectionChangeTrigger) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Background.IDeviceConnectionChangeTriggerStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
 }
 
 interface DeviceManufacturerNotificationTrigger : Windows.ApplicationModel.Background.IDeviceManufacturerNotificationTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
@@ -1429,6 +1523,19 @@ extern(Windows):
 	{
 		Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisingParameters _ret;
 		Debug.OK(this.as!(Windows.ApplicationModel.Background.IGattServiceProviderTrigger).get_AdvertisingParameters(&_ret));
+		return _ret;
+	}
+
+	private static Windows.ApplicationModel.Background.IGattServiceProviderTriggerStatics _staticInstance;
+	public static Windows.ApplicationModel.Background.IGattServiceProviderTriggerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Background.IGattServiceProviderTriggerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.GattServiceProviderTriggerResult) CreateAsync(HSTRING triggerId, GUID serviceUuid)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.GattServiceProviderTriggerResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Background.IGattServiceProviderTriggerStatics).abi_CreateAsync(triggerId, serviceUuid, &_ret));
 		return _ret;
 	}
 }
@@ -1623,6 +1730,24 @@ extern(Windows):
 
 interface StorageLibraryContentChangedTrigger : Windows.ApplicationModel.Background.IStorageLibraryContentChangedTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
+	private static Windows.ApplicationModel.Background.IStorageLibraryContentChangedTriggerStatics _staticInstance;
+	public static Windows.ApplicationModel.Background.IStorageLibraryContentChangedTriggerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Background.IStorageLibraryContentChangedTriggerStatics);
+		return _staticInstance;
+	}
+	static Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger Create(Windows.Storage.StorageLibrary storageLibrary)
+	{
+		Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Background.IStorageLibraryContentChangedTriggerStatics).abi_Create(storageLibrary, &_ret));
+		return _ret;
+	}
+	static Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger CreateFromLibraries(Windows.Foundation.Collections.IIterable!(Windows.Storage.StorageLibrary) storageLibraries)
+	{
+		Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Background.IStorageLibraryContentChangedTriggerStatics).abi_CreateFromLibraries(storageLibraries, &_ret));
+		return _ret;
+	}
 }
 
 interface SystemCondition : Windows.ApplicationModel.Background.ISystemCondition, Windows.ApplicationModel.Background.IBackgroundCondition

@@ -33,6 +33,24 @@ extern(Windows):
 
 interface NamedPolicy
 {
+	private static Windows.Management.Policies.INamedPolicyStatics _staticInstance;
+	public static Windows.Management.Policies.INamedPolicyStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Management.Policies.INamedPolicyStatics);
+		return _staticInstance;
+	}
+	static Windows.Management.Policies.NamedPolicyData GetPolicyFromPath(HSTRING area, HSTRING name)
+	{
+		Windows.Management.Policies.NamedPolicyData _ret;
+		Debug.OK(staticInstance.as!(Windows.Management.Policies.INamedPolicyStatics).abi_GetPolicyFromPath(area, name, &_ret));
+		return _ret;
+	}
+	static Windows.Management.Policies.NamedPolicyData GetPolicyFromPathForUser(Windows.System.User user, HSTRING area, HSTRING name)
+	{
+		Windows.Management.Policies.NamedPolicyData _ret;
+		Debug.OK(staticInstance.as!(Windows.Management.Policies.INamedPolicyStatics).abi_GetPolicyFromPathForUser(user, area, name, &_ret));
+		return _ret;
+	}
 }
 
 interface NamedPolicyData : Windows.Management.Policies.INamedPolicyData
@@ -107,12 +125,12 @@ extern(Windows):
 	final EventRegistrationToken OnChanged(void delegate(Windows.Management.Policies.NamedPolicyData, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Changed(event!(Windows.Foundation.TypedEventHandler!(Windows.Management.Policies.NamedPolicyData, IInspectable), Windows.Management.Policies.NamedPolicyData, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).add_Changed(event!(Windows.Foundation.TypedEventHandler!(Windows.Management.Policies.NamedPolicyData, IInspectable), Windows.Management.Policies.NamedPolicyData, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_Changed(cookie));
+		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).remove_Changed(cookie));
 	}
 }
 

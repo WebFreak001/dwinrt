@@ -1756,6 +1756,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer6).abi_GetCulture(&_ret));
 		return _ret;
 	}
+
+	private static Windows.UI.Xaml.Automation.Peers.IAutomationPeerStatics _staticInstance;
+	public static Windows.UI.Xaml.Automation.Peers.IAutomationPeerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerStatics);
+		return _staticInstance;
+	}
+	static bool ListenerExists(Windows.UI.Xaml.Automation.Peers.AutomationEvents eventId)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerStatics).abi_ListenerExists(eventId, &_ret));
+		return _ret;
+	}
 }
 @makable!(AutomationPeer, AutomationPeer, Windows.UI.Xaml.Automation.Peers.IAutomationPeerFactory)
 class AutomationPeerT(Base) : AgileObject!Base, AutomationPeer
@@ -1949,6 +1962,25 @@ extern(Windows):
 	final void Peer(Windows.UI.Xaml.Automation.Peers.AutomationPeer value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotation).set_Peer(value));
+	}
+
+	private static Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotationStatics _staticInstance;
+	public static Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotationStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty TypeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotationStatics).get_TypeProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty PeerProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotationStatics).get_PeerProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2299,6 +2331,25 @@ extern(Windows):
 	{
 		Windows.UI.Xaml.UIElement _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IFrameworkElementAutomationPeer).get_Owner(&_ret));
+		return _ret;
+	}
+
+	private static Windows.UI.Xaml.Automation.Peers.IFrameworkElementAutomationPeerStatics _staticInstance;
+	public static Windows.UI.Xaml.Automation.Peers.IFrameworkElementAutomationPeerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Automation.Peers.IFrameworkElementAutomationPeerStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.Automation.Peers.AutomationPeer FromElement(Windows.UI.Xaml.UIElement element)
+	{
+		Windows.UI.Xaml.Automation.Peers.AutomationPeer _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.Peers.IFrameworkElementAutomationPeerStatics).abi_FromElement(element, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Automation.Peers.AutomationPeer CreatePeerForElement(Windows.UI.Xaml.UIElement element)
+	{
+		Windows.UI.Xaml.Automation.Peers.AutomationPeer _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.Peers.IFrameworkElementAutomationPeerStatics).abi_CreatePeerForElement(element, &_ret));
 		return _ret;
 	}
 }

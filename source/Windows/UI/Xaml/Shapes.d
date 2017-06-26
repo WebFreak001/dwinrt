@@ -230,6 +230,37 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.ILine).set_Y2(value));
 	}
+
+	private static Windows.UI.Xaml.Shapes.ILineStatics _staticInstance;
+	public static Windows.UI.Xaml.Shapes.ILineStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Shapes.ILineStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty X1Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.ILineStatics).get_X1Property(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty Y1Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.ILineStatics).get_Y1Property(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty X2Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.ILineStatics).get_X2Property(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty Y2Property()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.ILineStatics).get_Y2Property(&_ret));
+		return _ret;
+	}
 }
 
 interface Path : Windows.UI.Xaml.Shapes.Shape, Windows.UI.Xaml.Shapes.IPath
@@ -244,6 +275,19 @@ extern(Windows):
 	final void Data(Windows.UI.Xaml.Media.Geometry value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IPath).set_Data(value));
+	}
+
+	private static Windows.UI.Xaml.Shapes.IPathStatics _staticInstance;
+	public static Windows.UI.Xaml.Shapes.IPathStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Shapes.IPathStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty DataProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.IPathStatics).get_DataProperty(&_ret));
+		return _ret;
 	}
 }
 @makable!(Path, Path, Windows.UI.Xaml.Shapes.IPathFactory)
@@ -286,6 +330,25 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IPolygon).set_Points(value));
 	}
+
+	private static Windows.UI.Xaml.Shapes.IPolygonStatics _staticInstance;
+	public static Windows.UI.Xaml.Shapes.IPolygonStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Shapes.IPolygonStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty FillRuleProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.IPolygonStatics).get_FillRuleProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty PointsProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.IPolygonStatics).get_PointsProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface Polyline : Windows.UI.Xaml.Shapes.Shape, Windows.UI.Xaml.Shapes.IPolyline
@@ -311,6 +374,25 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IPolyline).set_Points(value));
 	}
+
+	private static Windows.UI.Xaml.Shapes.IPolylineStatics _staticInstance;
+	public static Windows.UI.Xaml.Shapes.IPolylineStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Shapes.IPolylineStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty FillRuleProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.IPolylineStatics).get_FillRuleProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty PointsProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.IPolylineStatics).get_PointsProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface Rectangle : Windows.UI.Xaml.Shapes.Shape, Windows.UI.Xaml.Shapes.IRectangle
@@ -335,6 +417,25 @@ extern(Windows):
 	final void RadiusY(double value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IRectangle).set_RadiusY(value));
+	}
+
+	private static Windows.UI.Xaml.Shapes.IRectangleStatics _staticInstance;
+	public static Windows.UI.Xaml.Shapes.IRectangleStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Shapes.IRectangleStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty RadiusXProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.IRectangleStatics).get_RadiusXProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty RadiusYProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.IRectangleStatics).get_RadiusYProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -461,6 +562,79 @@ extern(Windows):
 	{
 		Windows.UI.Composition.CompositionBrush _ret;
 		Debug.OK(this.as!(Windows.UI.Xaml.Shapes.IShape2).abi_GetAlphaMask(&_ret));
+		return _ret;
+	}
+
+	private static Windows.UI.Xaml.Shapes.IShapeStatics _staticInstance;
+	public static Windows.UI.Xaml.Shapes.IShapeStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Shapes.IShapeStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty FillProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.IShapeStatics).get_FillProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty StrokeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.IShapeStatics).get_StrokeProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty StrokeMiterLimitProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.IShapeStatics).get_StrokeMiterLimitProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty StrokeThicknessProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.IShapeStatics).get_StrokeThicknessProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty StrokeStartLineCapProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.IShapeStatics).get_StrokeStartLineCapProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty StrokeEndLineCapProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.IShapeStatics).get_StrokeEndLineCapProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty StrokeLineJoinProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.IShapeStatics).get_StrokeLineJoinProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty StrokeDashOffsetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.IShapeStatics).get_StrokeDashOffsetProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty StrokeDashCapProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.IShapeStatics).get_StrokeDashCapProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty StrokeDashArrayProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.IShapeStatics).get_StrokeDashArrayProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty StretchProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Shapes.IShapeStatics).get_StretchProperty(&_ret));
 		return _ret;
 	}
 }

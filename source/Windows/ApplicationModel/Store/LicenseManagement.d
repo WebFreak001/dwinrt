@@ -44,6 +44,24 @@ extern(Windows):
 
 interface LicenseManager
 {
+	private static Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics _staticInstance;
+	public static Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncAction AddLicenseAsync(Windows.Storage.Streams.IBuffer license)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics).abi_AddLicenseAsync(license, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult) GetSatisfactionInfosAsync(Windows.Foundation.Collections.IIterable!(HSTRING) contentIds, Windows.Foundation.Collections.IIterable!(HSTRING) keyIds)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics).abi_GetSatisfactionInfosAsync(contentIds, keyIds, &_ret));
+		return _ret;
+	}
 }
 
 interface LicenseSatisfactionInfo : Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo

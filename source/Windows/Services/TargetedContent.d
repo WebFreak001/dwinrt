@@ -289,6 +289,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Services.TargetedContent.ITargetedContentContainer).abi_SelectSingleObject(path, &_ret));
 		return _ret;
 	}
+
+	private static Windows.Services.TargetedContent.ITargetedContentContainerStatics _staticInstance;
+	public static Windows.Services.TargetedContent.ITargetedContentContainerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Services.TargetedContent.ITargetedContentContainerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Services.TargetedContent.TargetedContentContainer) GetAsync(HSTRING contentId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Services.TargetedContent.TargetedContentContainer) _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.TargetedContent.ITargetedContentContainerStatics).abi_GetAsync(contentId, &_ret));
+		return _ret;
+	}
 }
 
 interface TargetedContentFile : Windows.Storage.Streams.IRandomAccessStreamReference
@@ -437,32 +450,51 @@ extern(Windows):
 	final EventRegistrationToken OnContentChanged(void delegate(Windows.Services.TargetedContent.TargetedContentSubscription, Windows.Services.TargetedContent.TargetedContentChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ContentChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.TargetedContent.TargetedContentSubscription, Windows.Services.TargetedContent.TargetedContentChangedEventArgs), Windows.Services.TargetedContent.TargetedContentSubscription, Windows.Services.TargetedContent.TargetedContentChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Services.TargetedContent.ITargetedContentSubscription).add_ContentChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.TargetedContent.TargetedContentSubscription, Windows.Services.TargetedContent.TargetedContentChangedEventArgs), Windows.Services.TargetedContent.TargetedContentSubscription, Windows.Services.TargetedContent.TargetedContentChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeContentChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_ContentChanged(cookie));
+		Debug.OK(this.as!(Windows.Services.TargetedContent.ITargetedContentSubscription).remove_ContentChanged(cookie));
 	}
 	final EventRegistrationToken OnAvailabilityChanged(void delegate(Windows.Services.TargetedContent.TargetedContentSubscription, Windows.Services.TargetedContent.TargetedContentAvailabilityChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_AvailabilityChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.TargetedContent.TargetedContentSubscription, Windows.Services.TargetedContent.TargetedContentAvailabilityChangedEventArgs), Windows.Services.TargetedContent.TargetedContentSubscription, Windows.Services.TargetedContent.TargetedContentAvailabilityChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Services.TargetedContent.ITargetedContentSubscription).add_AvailabilityChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.TargetedContent.TargetedContentSubscription, Windows.Services.TargetedContent.TargetedContentAvailabilityChangedEventArgs), Windows.Services.TargetedContent.TargetedContentSubscription, Windows.Services.TargetedContent.TargetedContentAvailabilityChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAvailabilityChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_AvailabilityChanged(cookie));
+		Debug.OK(this.as!(Windows.Services.TargetedContent.ITargetedContentSubscription).remove_AvailabilityChanged(cookie));
 	}
 	final EventRegistrationToken OnStateChanged(void delegate(Windows.Services.TargetedContent.TargetedContentSubscription, Windows.Services.TargetedContent.TargetedContentStateChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.TargetedContent.TargetedContentSubscription, Windows.Services.TargetedContent.TargetedContentStateChangedEventArgs), Windows.Services.TargetedContent.TargetedContentSubscription, Windows.Services.TargetedContent.TargetedContentStateChangedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Services.TargetedContent.ITargetedContentSubscription).add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.TargetedContent.TargetedContentSubscription, Windows.Services.TargetedContent.TargetedContentStateChangedEventArgs), Windows.Services.TargetedContent.TargetedContentSubscription, Windows.Services.TargetedContent.TargetedContentStateChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStateChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_StateChanged(cookie));
+		Debug.OK(this.as!(Windows.Services.TargetedContent.ITargetedContentSubscription).remove_StateChanged(cookie));
+	}
+
+	private static Windows.Services.TargetedContent.ITargetedContentSubscriptionStatics _staticInstance;
+	public static Windows.Services.TargetedContent.ITargetedContentSubscriptionStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Services.TargetedContent.ITargetedContentSubscriptionStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Services.TargetedContent.TargetedContentSubscription) GetAsync(HSTRING subscriptionId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Services.TargetedContent.TargetedContentSubscription) _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.TargetedContent.ITargetedContentSubscriptionStatics).abi_GetAsync(subscriptionId, &_ret));
+		return _ret;
+	}
+	static Windows.Services.TargetedContent.TargetedContentSubscriptionOptions GetOptions(HSTRING subscriptionId)
+	{
+		Windows.Services.TargetedContent.TargetedContentSubscriptionOptions _ret;
+		Debug.OK(staticInstance.as!(Windows.Services.TargetedContent.ITargetedContentSubscriptionStatics).abi_GetOptions(subscriptionId, &_ret));
+		return _ret;
 	}
 }
 

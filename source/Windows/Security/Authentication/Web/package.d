@@ -36,6 +36,30 @@ extern(Windows):
 
 interface WebAuthenticationBroker
 {
+	private static Windows.Security.Authentication.Web.IWebAuthenticationBrokerStatics _staticInstance;
+	public static Windows.Security.Authentication.Web.IWebAuthenticationBrokerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Authentication.Web.IWebAuthenticationBrokerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult) AuthenticateWithCallbackUriAsync(Windows.Security.Authentication.Web.WebAuthenticationOptions options, Windows.Foundation.Uri requestUri, Windows.Foundation.Uri callbackUri)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.IWebAuthenticationBrokerStatics).abi_AuthenticateWithCallbackUriAsync(options, requestUri, callbackUri, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult) AuthenticateWithoutCallbackUriAsync(Windows.Security.Authentication.Web.WebAuthenticationOptions options, Windows.Foundation.Uri requestUri)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.IWebAuthenticationBrokerStatics).abi_AuthenticateWithoutCallbackUriAsync(options, requestUri, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Uri GetCurrentApplicationCallbackUri()
+	{
+		Windows.Foundation.Uri _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.IWebAuthenticationBrokerStatics).abi_GetCurrentApplicationCallbackUri(&_ret));
+		return _ret;
+	}
 }
 
 interface WebAuthenticationResult : Windows.Security.Authentication.Web.IWebAuthenticationResult

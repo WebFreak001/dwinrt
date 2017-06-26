@@ -709,6 +709,36 @@ extern(Windows):
 
 interface BadgeUpdateManager
 {
+	private static Windows.UI.Notifications.IBadgeUpdateManagerStatics _staticInstance;
+	public static Windows.UI.Notifications.IBadgeUpdateManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Notifications.IBadgeUpdateManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Notifications.BadgeUpdater CreateBadgeUpdaterForApplication()
+	{
+		Windows.UI.Notifications.BadgeUpdater _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IBadgeUpdateManagerStatics).abi_CreateBadgeUpdaterForApplication(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Notifications.BadgeUpdater CreateBadgeUpdaterForApplicationWithId(HSTRING applicationId)
+	{
+		Windows.UI.Notifications.BadgeUpdater _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IBadgeUpdateManagerStatics).abi_CreateBadgeUpdaterForApplicationWithId(applicationId, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Notifications.BadgeUpdater CreateBadgeUpdaterForSecondaryTile(HSTRING tileId)
+	{
+		Windows.UI.Notifications.BadgeUpdater _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IBadgeUpdateManagerStatics).abi_CreateBadgeUpdaterForSecondaryTile(tileId, &_ret));
+		return _ret;
+	}
+	static Windows.Data.Xml.Dom.XmlDocument GetTemplateContent(Windows.UI.Notifications.BadgeTemplateType type)
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IBadgeUpdateManagerStatics).abi_GetTemplateContent(type, &_ret));
+		return _ret;
+	}
 }
 
 interface BadgeUpdateManagerForUser : Windows.UI.Notifications.IBadgeUpdateManagerForUser
@@ -767,14 +797,188 @@ extern(Windows):
 
 interface KnownAdaptiveNotificationHints
 {
+	private static Windows.UI.Notifications.IKnownAdaptiveNotificationHintsStatics _staticInstance;
+	public static Windows.UI.Notifications.IKnownAdaptiveNotificationHintsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Notifications.IKnownAdaptiveNotificationHintsStatics);
+		return _staticInstance;
+	}
+	static HSTRING Style()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationHintsStatics).get_Style(&_ret));
+		return _ret;
+	}
+	static HSTRING Wrap()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationHintsStatics).get_Wrap(&_ret));
+		return _ret;
+	}
+	static HSTRING MaxLines()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationHintsStatics).get_MaxLines(&_ret));
+		return _ret;
+	}
+	static HSTRING MinLines()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationHintsStatics).get_MinLines(&_ret));
+		return _ret;
+	}
+	static HSTRING TextStacking()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationHintsStatics).get_TextStacking(&_ret));
+		return _ret;
+	}
+	static HSTRING Align()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationHintsStatics).get_Align(&_ret));
+		return _ret;
+	}
 }
 
 interface KnownAdaptiveNotificationTextStyles
 {
+	private static Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics _staticInstance;
+	public static Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics);
+		return _staticInstance;
+	}
+	static HSTRING Caption()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_Caption(&_ret));
+		return _ret;
+	}
+	static HSTRING Body()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_Body(&_ret));
+		return _ret;
+	}
+	static HSTRING Base()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_Base(&_ret));
+		return _ret;
+	}
+	static HSTRING Subtitle()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_Subtitle(&_ret));
+		return _ret;
+	}
+	static HSTRING Title()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_Title(&_ret));
+		return _ret;
+	}
+	static HSTRING Subheader()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_Subheader(&_ret));
+		return _ret;
+	}
+	static HSTRING Header()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_Header(&_ret));
+		return _ret;
+	}
+	static HSTRING TitleNumeral()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_TitleNumeral(&_ret));
+		return _ret;
+	}
+	static HSTRING SubheaderNumeral()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_SubheaderNumeral(&_ret));
+		return _ret;
+	}
+	static HSTRING HeaderNumeral()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_HeaderNumeral(&_ret));
+		return _ret;
+	}
+	static HSTRING CaptionSubtle()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_CaptionSubtle(&_ret));
+		return _ret;
+	}
+	static HSTRING BodySubtle()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_BodySubtle(&_ret));
+		return _ret;
+	}
+	static HSTRING BaseSubtle()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_BaseSubtle(&_ret));
+		return _ret;
+	}
+	static HSTRING SubtitleSubtle()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_SubtitleSubtle(&_ret));
+		return _ret;
+	}
+	static HSTRING TitleSubtle()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_TitleSubtle(&_ret));
+		return _ret;
+	}
+	static HSTRING SubheaderSubtle()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_SubheaderSubtle(&_ret));
+		return _ret;
+	}
+	static HSTRING SubheaderNumeralSubtle()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_SubheaderNumeralSubtle(&_ret));
+		return _ret;
+	}
+	static HSTRING HeaderSubtle()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_HeaderSubtle(&_ret));
+		return _ret;
+	}
+	static HSTRING HeaderNumeralSubtle()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_HeaderNumeralSubtle(&_ret));
+		return _ret;
+	}
 }
 
 interface KnownNotificationBindings
 {
+	private static Windows.UI.Notifications.IKnownNotificationBindingsStatics _staticInstance;
+	public static Windows.UI.Notifications.IKnownNotificationBindingsStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Notifications.IKnownNotificationBindingsStatics);
+		return _staticInstance;
+	}
+	static HSTRING ToastGeneric()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownNotificationBindingsStatics).get_ToastGeneric(&_ret));
+		return _ret;
+	}
 }
 
 interface Notification : Windows.UI.Notifications.INotification
@@ -1057,6 +1261,36 @@ extern(Windows):
 
 interface TileFlyoutUpdateManager
 {
+	private static Windows.UI.Notifications.ITileFlyoutUpdateManagerStatics _staticInstance;
+	public static Windows.UI.Notifications.ITileFlyoutUpdateManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Notifications.ITileFlyoutUpdateManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Notifications.TileFlyoutUpdater CreateTileFlyoutUpdaterForApplication()
+	{
+		Windows.UI.Notifications.TileFlyoutUpdater _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.ITileFlyoutUpdateManagerStatics).abi_CreateTileFlyoutUpdaterForApplication(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Notifications.TileFlyoutUpdater CreateTileFlyoutUpdaterForApplicationWithId(HSTRING applicationId)
+	{
+		Windows.UI.Notifications.TileFlyoutUpdater _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.ITileFlyoutUpdateManagerStatics).abi_CreateTileFlyoutUpdaterForApplicationWithId(applicationId, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Notifications.TileFlyoutUpdater CreateTileFlyoutUpdaterForSecondaryTile(HSTRING tileId)
+	{
+		Windows.UI.Notifications.TileFlyoutUpdater _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.ITileFlyoutUpdateManagerStatics).abi_CreateTileFlyoutUpdaterForSecondaryTile(tileId, &_ret));
+		return _ret;
+	}
+	static Windows.Data.Xml.Dom.XmlDocument GetTemplateContent(Windows.UI.Notifications.TileFlyoutTemplateType type)
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.ITileFlyoutUpdateManagerStatics).abi_GetTemplateContent(type, &_ret));
+		return _ret;
+	}
 }
 
 interface TileFlyoutUpdater : Windows.UI.Notifications.ITileFlyoutUpdater
@@ -1123,6 +1357,36 @@ extern(Windows):
 
 interface TileUpdateManager
 {
+	private static Windows.UI.Notifications.ITileUpdateManagerStatics _staticInstance;
+	public static Windows.UI.Notifications.ITileUpdateManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Notifications.ITileUpdateManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Notifications.TileUpdater CreateTileUpdaterForApplication()
+	{
+		Windows.UI.Notifications.TileUpdater _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.ITileUpdateManagerStatics).abi_CreateTileUpdaterForApplication(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Notifications.TileUpdater CreateTileUpdaterForApplicationWithId(HSTRING applicationId)
+	{
+		Windows.UI.Notifications.TileUpdater _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.ITileUpdateManagerStatics).abi_CreateTileUpdaterForApplicationWithId(applicationId, &_ret));
+		return _ret;
+	}
+	static Windows.UI.Notifications.TileUpdater CreateTileUpdaterForSecondaryTile(HSTRING tileId)
+	{
+		Windows.UI.Notifications.TileUpdater _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.ITileUpdateManagerStatics).abi_CreateTileUpdaterForSecondaryTile(tileId, &_ret));
+		return _ret;
+	}
+	static Windows.Data.Xml.Dom.XmlDocument GetTemplateContent(Windows.UI.Notifications.TileTemplateType type)
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.ITileUpdateManagerStatics).abi_GetTemplateContent(type, &_ret));
+		return _ret;
+	}
 }
 
 interface TileUpdateManagerForUser : Windows.UI.Notifications.ITileUpdateManagerForUser
@@ -1366,32 +1630,32 @@ extern(Windows):
 	final EventRegistrationToken OnDismissed(void delegate(Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastDismissedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Dismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastDismissedEventArgs), Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastDismissedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification).add_Dismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastDismissedEventArgs), Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastDismissedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDismissed(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_Dismissed(cookie));
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification).remove_Dismissed(cookie));
 	}
 	final EventRegistrationToken OnActivated(void delegate(Windows.UI.Notifications.ToastNotification, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Activated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.ToastNotification, IInspectable), Windows.UI.Notifications.ToastNotification, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification).add_Activated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.ToastNotification, IInspectable), Windows.UI.Notifications.ToastNotification, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeActivated(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_Activated(cookie));
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification).remove_Activated(cookie));
 	}
 	final EventRegistrationToken OnFailed(void delegate(Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastFailedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Failed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastFailedEventArgs), Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastFailedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification).add_Failed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastFailedEventArgs), Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastFailedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeFailed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Failed(token));
+		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification).remove_Failed(token));
 	}
 	final void Tag(HSTRING value)
 	{
@@ -1546,6 +1810,30 @@ extern(Windows):
 
 interface ToastNotificationManager
 {
+	private static Windows.UI.Notifications.IToastNotificationManagerStatics _staticInstance;
+	public static Windows.UI.Notifications.IToastNotificationManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Notifications.IToastNotificationManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Notifications.ToastNotifier CreateToastNotifier()
+	{
+		Windows.UI.Notifications.ToastNotifier _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IToastNotificationManagerStatics).abi_CreateToastNotifier(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Notifications.ToastNotifier CreateToastNotifierWithId(HSTRING applicationId)
+	{
+		Windows.UI.Notifications.ToastNotifier _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IToastNotificationManagerStatics).abi_CreateToastNotifierWithId(applicationId, &_ret));
+		return _ret;
+	}
+	static Windows.Data.Xml.Dom.XmlDocument GetTemplateContent(Windows.UI.Notifications.ToastTemplateType type)
+	{
+		Windows.Data.Xml.Dom.XmlDocument _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IToastNotificationManagerStatics).abi_GetTemplateContent(type, &_ret));
+		return _ret;
+	}
 }
 
 interface ToastNotificationManagerForUser : Windows.UI.Notifications.IToastNotificationManagerForUser, Windows.UI.Notifications.IToastNotificationManagerForUser2

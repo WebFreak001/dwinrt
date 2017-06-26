@@ -144,6 +144,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Networking.IHostNameStatics _staticInstance;
+	public static Windows.Networking.IHostNameStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Networking.IHostNameStatics);
+		return _staticInstance;
+	}
+	static INT32 Compare(HSTRING value1, HSTRING value2)
+	{
+		INT32 _ret;
+		Debug.OK(staticInstance.as!(Windows.Networking.IHostNameStatics).abi_Compare(value1, value2, &_ret));
+		return _ret;
+	}
 }
 
 enum DomainNameType

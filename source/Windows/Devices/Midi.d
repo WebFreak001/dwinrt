@@ -422,12 +422,12 @@ extern(Windows):
 	final EventRegistrationToken OnMessageReceived(void delegate(Windows.Devices.Midi.MidiInPort, Windows.Devices.Midi.MidiMessageReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Midi.MidiInPort, Windows.Devices.Midi.MidiMessageReceivedEventArgs), Windows.Devices.Midi.MidiInPort, Windows.Devices.Midi.MidiMessageReceivedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiInPort).add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Midi.MidiInPort, Windows.Devices.Midi.MidiMessageReceivedEventArgs), Windows.Devices.Midi.MidiInPort, Windows.Devices.Midi.MidiMessageReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMessageReceived(EventRegistrationToken token)
 	{
-		Debug.OK(remove_MessageReceived(token));
+		Debug.OK(this.as!(Windows.Devices.Midi.IMidiInPort).remove_MessageReceived(token));
 	}
 	final HSTRING DeviceId()
 	{
@@ -438,6 +438,25 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+
+	private static Windows.Devices.Midi.IMidiInPortStatics _staticInstance;
+	public static Windows.Devices.Midi.IMidiInPortStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Midi.IMidiInPortStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiInPort) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiInPort) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Midi.IMidiInPortStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Midi.IMidiInPortStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
 	}
 }
 
@@ -554,6 +573,25 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+
+	private static Windows.Devices.Midi.IMidiOutPortStatics _staticInstance;
+	public static Windows.Devices.Midi.IMidiOutPortStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Midi.IMidiOutPortStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.IMidiOutPort) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.IMidiOutPort) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Midi.IMidiOutPortStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Midi.IMidiOutPortStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
 	}
 }
 
@@ -808,6 +846,31 @@ extern(Windows):
 	final void Close()
 	{
 		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+	}
+
+	private static Windows.Devices.Midi.IMidiSynthesizerStatics _staticInstance;
+	public static Windows.Devices.Midi.IMidiSynthesizerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Midi.IMidiSynthesizerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiSynthesizer) CreateAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiSynthesizer) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Midi.IMidiSynthesizerStatics).abi_CreateAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiSynthesizer) CreateFromAudioDeviceAsync(Windows.Devices.Enumeration.DeviceInformation audioDevice)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiSynthesizer) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Midi.IMidiSynthesizerStatics).abi_CreateFromAudioDeviceAsync(audioDevice, &_ret));
+		return _ret;
+	}
+	static bool IsSynthesizer(Windows.Devices.Enumeration.DeviceInformation midiDevice)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Midi.IMidiSynthesizerStatics).abi_IsSynthesizer(midiDevice, &_ret));
+		return _ret;
 	}
 }
 

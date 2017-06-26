@@ -361,6 +361,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothAdapter).abi_GetRadioAsync(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Devices.Bluetooth.IBluetoothAdapterStatics _staticInstance;
+	public static Windows.Devices.Bluetooth.IBluetoothAdapterStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Bluetooth.IBluetoothAdapterStatics);
+		return _staticInstance;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothAdapterStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothAdapter) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothAdapter) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothAdapterStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothAdapter) GetDefaultAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothAdapter) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothAdapterStatics).abi_GetDefaultAsync(&_ret));
+		return _ret;
+	}
 }
 
 interface BluetoothClassOfDevice : Windows.Devices.Bluetooth.IBluetoothClassOfDevice
@@ -388,6 +413,25 @@ extern(Windows):
 	{
 		Windows.Devices.Bluetooth.BluetoothServiceCapabilities _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothClassOfDevice).get_ServiceCapabilities(&_ret));
+		return _ret;
+	}
+
+	private static Windows.Devices.Bluetooth.IBluetoothClassOfDeviceStatics _staticInstance;
+	public static Windows.Devices.Bluetooth.IBluetoothClassOfDeviceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Bluetooth.IBluetoothClassOfDeviceStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.Bluetooth.BluetoothClassOfDevice FromRawValue(UINT32 rawValue)
+	{
+		Windows.Devices.Bluetooth.BluetoothClassOfDevice _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothClassOfDeviceStatics).abi_FromRawValue(rawValue, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Bluetooth.BluetoothClassOfDevice FromParts(Windows.Devices.Bluetooth.BluetoothMajorClass majorClass, Windows.Devices.Bluetooth.BluetoothMinorClass minorClass, Windows.Devices.Bluetooth.BluetoothServiceCapabilities serviceCapabilities)
+	{
+		Windows.Devices.Bluetooth.BluetoothClassOfDevice _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothClassOfDeviceStatics).abi_FromParts(majorClass, minorClass, serviceCapabilities, &_ret));
 		return _ret;
 	}
 }
@@ -447,32 +491,32 @@ extern(Windows):
 	final EventRegistrationToken OnNameChanged(void delegate(Windows.Devices.Bluetooth.BluetoothDevice, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_NameChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothDevice, IInspectable), Windows.Devices.Bluetooth.BluetoothDevice, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice).add_NameChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothDevice, IInspectable), Windows.Devices.Bluetooth.BluetoothDevice, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeNameChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_NameChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice).remove_NameChanged(token));
 	}
 	final EventRegistrationToken OnSdpRecordsChanged(void delegate(Windows.Devices.Bluetooth.BluetoothDevice, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_SdpRecordsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothDevice, IInspectable), Windows.Devices.Bluetooth.BluetoothDevice, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice).add_SdpRecordsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothDevice, IInspectable), Windows.Devices.Bluetooth.BluetoothDevice, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSdpRecordsChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SdpRecordsChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice).remove_SdpRecordsChanged(token));
 	}
 	final EventRegistrationToken OnConnectionStatusChanged(void delegate(Windows.Devices.Bluetooth.BluetoothDevice, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ConnectionStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothDevice, IInspectable), Windows.Devices.Bluetooth.BluetoothDevice, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice).add_ConnectionStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothDevice, IInspectable), Windows.Devices.Bluetooth.BluetoothDevice, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeConnectionStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ConnectionStatusChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice).remove_ConnectionStatusChanged(token));
 	}
 	final void Close()
 	{
@@ -518,6 +562,37 @@ extern(Windows):
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult) _ret;
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothDevice3).abi_GetRfcommServicesForIdWithCacheModeAsync(serviceId, cacheMode, &_ret));
+		return _ret;
+	}
+
+	private static Windows.Devices.Bluetooth.IBluetoothDeviceStatics _staticInstance;
+	public static Windows.Devices.Bluetooth.IBluetoothDeviceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Bluetooth.IBluetoothDeviceStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothDevice) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothDevice) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothDeviceStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothDevice) FromHostNameAsync(Windows.Networking.HostName hostName)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothDevice) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothDeviceStatics).abi_FromHostNameAsync(hostName, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothDevice) FromBluetoothAddressAsync(ulong address)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothDevice) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothDeviceStatics).abi_FromBluetoothAddressAsync(address, &_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothDeviceStatics).abi_GetDeviceSelector(&_ret));
 		return _ret;
 	}
 }
@@ -566,14 +641,345 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearance).get_SubCategory(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Devices.Bluetooth.IBluetoothLEAppearanceStatics _staticInstance;
+	public static Windows.Devices.Bluetooth.IBluetoothLEAppearanceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceStatics);
+		return _staticInstance;
+	}
+	static Windows.Devices.Bluetooth.BluetoothLEAppearance FromRawValue(UINT16 rawValue)
+	{
+		Windows.Devices.Bluetooth.BluetoothLEAppearance _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceStatics).abi_FromRawValue(rawValue, &_ret));
+		return _ret;
+	}
+	static Windows.Devices.Bluetooth.BluetoothLEAppearance FromParts(UINT16 appearanceCategory, UINT16 appearanceSubCategory)
+	{
+		Windows.Devices.Bluetooth.BluetoothLEAppearance _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceStatics).abi_FromParts(appearanceCategory, appearanceSubCategory, &_ret));
+		return _ret;
+	}
 }
 
 interface BluetoothLEAppearanceCategories
 {
+	private static Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics _staticInstance;
+	public static Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics);
+		return _staticInstance;
+	}
+	static UINT16 Uncategorized()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics).get_Uncategorized(&_ret));
+		return _ret;
+	}
+	static UINT16 Phone()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics).get_Phone(&_ret));
+		return _ret;
+	}
+	static UINT16 Computer()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics).get_Computer(&_ret));
+		return _ret;
+	}
+	static UINT16 Watch()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics).get_Watch(&_ret));
+		return _ret;
+	}
+	static UINT16 Clock()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics).get_Clock(&_ret));
+		return _ret;
+	}
+	static UINT16 Display()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics).get_Display(&_ret));
+		return _ret;
+	}
+	static UINT16 RemoteControl()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics).get_RemoteControl(&_ret));
+		return _ret;
+	}
+	static UINT16 EyeGlasses()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics).get_EyeGlasses(&_ret));
+		return _ret;
+	}
+	static UINT16 Tag()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics).get_Tag(&_ret));
+		return _ret;
+	}
+	static UINT16 Keyring()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics).get_Keyring(&_ret));
+		return _ret;
+	}
+	static UINT16 MediaPlayer()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics).get_MediaPlayer(&_ret));
+		return _ret;
+	}
+	static UINT16 BarcodeScanner()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics).get_BarcodeScanner(&_ret));
+		return _ret;
+	}
+	static UINT16 Thermometer()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics).get_Thermometer(&_ret));
+		return _ret;
+	}
+	static UINT16 HeartRate()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics).get_HeartRate(&_ret));
+		return _ret;
+	}
+	static UINT16 BloodPressure()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics).get_BloodPressure(&_ret));
+		return _ret;
+	}
+	static UINT16 HumanInterfaceDevice()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics).get_HumanInterfaceDevice(&_ret));
+		return _ret;
+	}
+	static UINT16 GlucoseMeter()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics).get_GlucoseMeter(&_ret));
+		return _ret;
+	}
+	static UINT16 RunningWalking()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics).get_RunningWalking(&_ret));
+		return _ret;
+	}
+	static UINT16 Cycling()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics).get_Cycling(&_ret));
+		return _ret;
+	}
+	static UINT16 PulseOximeter()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics).get_PulseOximeter(&_ret));
+		return _ret;
+	}
+	static UINT16 WeightScale()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics).get_WeightScale(&_ret));
+		return _ret;
+	}
+	static UINT16 OutdoorSportActivity()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceCategoriesStatics).get_OutdoorSportActivity(&_ret));
+		return _ret;
+	}
 }
 
 interface BluetoothLEAppearanceSubcategories
 {
+	private static Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics _staticInstance;
+	public static Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics);
+		return _staticInstance;
+	}
+	static UINT16 Generic()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_Generic(&_ret));
+		return _ret;
+	}
+	static UINT16 SportsWatch()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_SportsWatch(&_ret));
+		return _ret;
+	}
+	static UINT16 ThermometerEar()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_ThermometerEar(&_ret));
+		return _ret;
+	}
+	static UINT16 HeartRateBelt()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_HeartRateBelt(&_ret));
+		return _ret;
+	}
+	static UINT16 BloodPressureArm()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_BloodPressureArm(&_ret));
+		return _ret;
+	}
+	static UINT16 BloodPressureWrist()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_BloodPressureWrist(&_ret));
+		return _ret;
+	}
+	static UINT16 Keyboard()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_Keyboard(&_ret));
+		return _ret;
+	}
+	static UINT16 Mouse()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_Mouse(&_ret));
+		return _ret;
+	}
+	static UINT16 Joystick()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_Joystick(&_ret));
+		return _ret;
+	}
+	static UINT16 Gamepad()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_Gamepad(&_ret));
+		return _ret;
+	}
+	static UINT16 DigitizerTablet()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_DigitizerTablet(&_ret));
+		return _ret;
+	}
+	static UINT16 CardReader()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_CardReader(&_ret));
+		return _ret;
+	}
+	static UINT16 DigitalPen()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_DigitalPen(&_ret));
+		return _ret;
+	}
+	static UINT16 BarcodeScanner()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_BarcodeScanner(&_ret));
+		return _ret;
+	}
+	static UINT16 RunningWalkingInShoe()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_RunningWalkingInShoe(&_ret));
+		return _ret;
+	}
+	static UINT16 RunningWalkingOnShoe()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_RunningWalkingOnShoe(&_ret));
+		return _ret;
+	}
+	static UINT16 RunningWalkingOnHip()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_RunningWalkingOnHip(&_ret));
+		return _ret;
+	}
+	static UINT16 CyclingComputer()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_CyclingComputer(&_ret));
+		return _ret;
+	}
+	static UINT16 CyclingSpeedSensor()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_CyclingSpeedSensor(&_ret));
+		return _ret;
+	}
+	static UINT16 CyclingCadenceSensor()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_CyclingCadenceSensor(&_ret));
+		return _ret;
+	}
+	static UINT16 CyclingPowerSensor()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_CyclingPowerSensor(&_ret));
+		return _ret;
+	}
+	static UINT16 CyclingSpeedCadenceSensor()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_CyclingSpeedCadenceSensor(&_ret));
+		return _ret;
+	}
+	static UINT16 OximeterFingertip()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_OximeterFingertip(&_ret));
+		return _ret;
+	}
+	static UINT16 OximeterWristWorn()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_OximeterWristWorn(&_ret));
+		return _ret;
+	}
+	static UINT16 LocationDisplay()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_LocationDisplay(&_ret));
+		return _ret;
+	}
+	static UINT16 LocationNavigationDisplay()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_LocationNavigationDisplay(&_ret));
+		return _ret;
+	}
+	static UINT16 LocationPod()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_LocationPod(&_ret));
+		return _ret;
+	}
+	static UINT16 LocationNavigationPod()
+	{
+		UINT16 _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEAppearanceSubcategoriesStatics).get_LocationNavigationPod(&_ret));
+		return _ret;
+	}
 }
 
 interface BluetoothLEDevice : Windows.Devices.Bluetooth.IBluetoothLEDevice, Windows.Foundation.IClosable, Windows.Devices.Bluetooth.IBluetoothLEDevice2, Windows.Devices.Bluetooth.IBluetoothLEDevice3
@@ -620,32 +1026,32 @@ extern(Windows):
 	final EventRegistrationToken OnNameChanged(void delegate(Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_NameChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable), Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice).add_NameChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable), Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeNameChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_NameChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice).remove_NameChanged(token));
 	}
 	final EventRegistrationToken OnGattServicesChanged(void delegate(Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_GattServicesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable), Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice).add_GattServicesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable), Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeGattServicesChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_GattServicesChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice).remove_GattServicesChanged(token));
 	}
 	final EventRegistrationToken OnConnectionStatusChanged(void delegate(Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ConnectionStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable), Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice).add_ConnectionStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable), Windows.Devices.Bluetooth.BluetoothLEDevice, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeConnectionStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ConnectionStatusChanged(token));
+		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice).remove_ConnectionStatusChanged(token));
 	}
 	final void Close()
 	{
@@ -705,6 +1111,31 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Devices.Bluetooth.IBluetoothLEDevice3).abi_GetGattServicesForUuidWithCacheModeAsync(serviceUuid, cacheMode, &_ret));
 		return _ret;
 	}
+
+	private static Windows.Devices.Bluetooth.IBluetoothLEDeviceStatics _staticInstance;
+	public static Windows.Devices.Bluetooth.IBluetoothLEDeviceStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Bluetooth.IBluetoothLEDeviceStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothLEDevice) FromIdAsync(HSTRING deviceId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothLEDevice) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEDeviceStatics).abi_FromIdAsync(deviceId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothLEDevice) FromBluetoothAddressAsync(ulong bluetoothAddress)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothLEDevice) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEDeviceStatics).abi_FromBluetoothAddressAsync(bluetoothAddress, &_ret));
+		return _ret;
+	}
+	static HSTRING GetDeviceSelector()
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothLEDeviceStatics).abi_GetDeviceSelector(&_ret));
+		return _ret;
+	}
 }
 
 interface BluetoothSignalStrengthFilter : Windows.Devices.Bluetooth.IBluetoothSignalStrengthFilter
@@ -754,6 +1185,24 @@ extern(Windows):
 
 interface BluetoothUuidHelper
 {
+	private static Windows.Devices.Bluetooth.IBluetoothUuidHelperStatics _staticInstance;
+	public static Windows.Devices.Bluetooth.IBluetoothUuidHelperStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Bluetooth.IBluetoothUuidHelperStatics);
+		return _staticInstance;
+	}
+	static GUID FromShortId(UINT32 shortId)
+	{
+		GUID _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothUuidHelperStatics).abi_FromShortId(shortId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IReference!(UINT32) TryGetShortId(GUID uuid)
+	{
+		Windows.Foundation.IReference!(UINT32) _ret;
+		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.IBluetoothUuidHelperStatics).abi_TryGetShortId(uuid, &_ret));
+		return _ret;
+	}
 }
 
 enum BluetoothAddressType

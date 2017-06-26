@@ -74,4 +74,17 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Security.Authentication.Identity.IEnterpriseKeyCredentialRegistrationManager).abi_GetRegistrationsAsync(&_ret));
 		return _ret;
 	}
+
+	private static Windows.Security.Authentication.Identity.IEnterpriseKeyCredentialRegistrationManagerStatics _staticInstance;
+	public static Windows.Security.Authentication.Identity.IEnterpriseKeyCredentialRegistrationManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Authentication.Identity.IEnterpriseKeyCredentialRegistrationManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationManager Current()
+	{
+		Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationManager _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Identity.IEnterpriseKeyCredentialRegistrationManagerStatics).get_Current(&_ret));
+		return _ret;
+	}
 }

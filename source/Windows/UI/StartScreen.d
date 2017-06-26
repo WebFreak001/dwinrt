@@ -275,6 +275,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpList).abi_SaveAsync(&_ret));
 		return _ret;
 	}
+
+	private static Windows.UI.StartScreen.IJumpListStatics _staticInstance;
+	public static Windows.UI.StartScreen.IJumpListStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.StartScreen.IJumpListStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.UI.StartScreen.JumpList) LoadCurrentAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.UI.StartScreen.JumpList) _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.StartScreen.IJumpListStatics).abi_LoadCurrentAsync(&_ret));
+		return _ret;
+	}
+	static bool IsSupported()
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.StartScreen.IJumpListStatics).abi_IsSupported(&_ret));
+		return _ret;
+	}
 }
 
 interface JumpListItem : Windows.UI.StartScreen.IJumpListItem
@@ -337,6 +356,25 @@ extern(Windows):
 	final void Logo(Windows.Foundation.Uri value)
 	{
 		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpListItem).set_Logo(value));
+	}
+
+	private static Windows.UI.StartScreen.IJumpListItemStatics _staticInstance;
+	public static Windows.UI.StartScreen.IJumpListItemStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.StartScreen.IJumpListItemStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.StartScreen.JumpListItem CreateWithArguments(HSTRING arguments, HSTRING displayName)
+	{
+		Windows.UI.StartScreen.JumpListItem _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.StartScreen.IJumpListItemStatics).abi_CreateWithArguments(arguments, displayName, &_ret));
+		return _ret;
+	}
+	static Windows.UI.StartScreen.JumpListItem CreateSeparator()
+	{
+		Windows.UI.StartScreen.JumpListItem _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.StartScreen.IJumpListItemStatics).abi_CreateSeparator(&_ret));
+		return _ret;
 	}
 }
 
@@ -560,12 +598,43 @@ extern(Windows):
 	final EventRegistrationToken OnVisualElementsRequested(void delegate(Windows.UI.StartScreen.SecondaryTile, Windows.UI.StartScreen.VisualElementsRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_VisualElementsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.StartScreen.SecondaryTile, Windows.UI.StartScreen.VisualElementsRequestedEventArgs), Windows.UI.StartScreen.SecondaryTile, Windows.UI.StartScreen.VisualElementsRequestedEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile2).add_VisualElementsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.StartScreen.SecondaryTile, Windows.UI.StartScreen.VisualElementsRequestedEventArgs), Windows.UI.StartScreen.SecondaryTile, Windows.UI.StartScreen.VisualElementsRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeVisualElementsRequested(EventRegistrationToken token)
 	{
-		Debug.OK(remove_VisualElementsRequested(token));
+		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile2).remove_VisualElementsRequested(token));
+	}
+
+	private static Windows.UI.StartScreen.ISecondaryTileStatics _staticInstance;
+	public static Windows.UI.StartScreen.ISecondaryTileStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.StartScreen.ISecondaryTileStatics);
+		return _staticInstance;
+	}
+	static bool Exists(HSTRING tileId)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.StartScreen.ISecondaryTileStatics).abi_Exists(tileId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTile)) FindAllAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTile)) _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.StartScreen.ISecondaryTileStatics).abi_FindAllAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTile)) FindAllForApplicationAsync(HSTRING applicationId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTile)) _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.StartScreen.ISecondaryTileStatics).abi_FindAllForApplicationAsync(applicationId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTile)) FindAllForPackageAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTile)) _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.StartScreen.ISecondaryTileStatics).abi_FindAllForPackageAsync(&_ret));
+		return _ret;
 	}
 }
 
@@ -723,6 +792,25 @@ extern(Windows):
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
 		Debug.OK(this.as!(Windows.UI.StartScreen.IStartScreenManager).abi_RequestAddAppListEntryAsync(appListEntry, &_ret));
+		return _ret;
+	}
+
+	private static Windows.UI.StartScreen.IStartScreenManagerStatics _staticInstance;
+	public static Windows.UI.StartScreen.IStartScreenManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.StartScreen.IStartScreenManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.StartScreen.StartScreenManager GetDefault()
+	{
+		Windows.UI.StartScreen.StartScreenManager _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.StartScreen.IStartScreenManagerStatics).abi_GetDefault(&_ret));
+		return _ret;
+	}
+	static Windows.UI.StartScreen.StartScreenManager GetForUser(Windows.System.User user)
+	{
+		Windows.UI.StartScreen.StartScreenManager _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.StartScreen.IStartScreenManagerStatics).abi_GetForUser(user, &_ret));
 		return _ret;
 	}
 }

@@ -263,6 +263,72 @@ extern(Windows):
 
 interface WebAccountManager
 {
+	private static Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics _staticInstance;
+	public static Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncAction UpdateWebAccountPropertiesAsync(Windows.Security.Credentials.WebAccount webAccount, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) additionalProperties)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics).abi_UpdateWebAccountPropertiesAsync(webAccount, webAccountUserName, additionalProperties, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount) AddWebAccountAsync(HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) props)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics).abi_AddWebAccountAsync(webAccountId, webAccountUserName, props, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction DeleteWebAccountAsync(Windows.Security.Credentials.WebAccount webAccount)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics).abi_DeleteWebAccountAsync(webAccount, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.WebAccount)) FindAllProviderWebAccountsAsync()
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.WebAccount)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics).abi_FindAllProviderWebAccountsAsync(&_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction PushCookiesAsync(Windows.Foundation.Uri uri, Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.HttpCookie) cookies)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics).abi_PushCookiesAsync(uri, cookies, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction SetViewAsync(Windows.Security.Credentials.WebAccount webAccount, Windows.Security.Authentication.Web.Provider.WebAccountClientView view)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics).abi_SetViewAsync(webAccount, view, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction ClearViewAsync(Windows.Security.Credentials.WebAccount webAccount, Windows.Foundation.Uri applicationCallbackUri)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics).abi_ClearViewAsync(webAccount, applicationCallbackUri, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Authentication.Web.Provider.WebAccountClientView)) GetViewsAsync(Windows.Security.Credentials.WebAccount webAccount)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Authentication.Web.Provider.WebAccountClientView)) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics).abi_GetViewsAsync(webAccount, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction SetWebAccountPictureAsync(Windows.Security.Credentials.WebAccount webAccount, Windows.Storage.Streams.IRandomAccessStream webAccountPicture)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics).abi_SetWebAccountPictureAsync(webAccount, webAccountPicture, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncAction ClearWebAccountPictureAsync(Windows.Security.Credentials.WebAccount webAccount)
+	{
+		Windows.Foundation.IAsyncAction _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics).abi_ClearWebAccountPictureAsync(webAccount, &_ret));
+		return _ret;
+	}
 }
 
 interface WebAccountProviderAddAccountOperation : Windows.Security.Authentication.Web.Provider.IWebAccountProviderAddAccountOperation, Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation

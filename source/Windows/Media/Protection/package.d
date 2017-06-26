@@ -165,6 +165,18 @@ extern(Windows):
 
 interface ComponentRenewal
 {
+	private static Windows.Media.Protection.IComponentRenewalStatics _staticInstance;
+	public static Windows.Media.Protection.IComponentRenewalStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Protection.IComponentRenewalStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Protection.RenewalStatus, UINT32) RenewSystemComponentsAsync(Windows.Media.Protection.RevocationAndRenewalInformation information)
+	{
+		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Protection.RenewalStatus, UINT32) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Protection.IComponentRenewalStatics).abi_RenewSystemComponentsAsync(information, &_ret));
+		return _ret;
+	}
 }
 
 interface HdcpSession : Windows.Media.Protection.IHdcpSession, Windows.Foundation.IClosable
@@ -191,12 +203,12 @@ extern(Windows):
 	final EventRegistrationToken OnProtectionChanged(void delegate(Windows.Media.Protection.HdcpSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_ProtectionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.HdcpSession, IInspectable), Windows.Media.Protection.HdcpSession, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Media.Protection.IHdcpSession).add_ProtectionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.HdcpSession, IInspectable), Windows.Media.Protection.HdcpSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeProtectionChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ProtectionChanged(token));
+		Debug.OK(this.as!(Windows.Media.Protection.IHdcpSession).remove_ProtectionChanged(token));
 	}
 	final void Close()
 	{
@@ -209,15 +221,15 @@ interface MediaProtectionManager : Windows.Media.Protection.IMediaProtectionMana
 extern(Windows):
 	final void removeServiceRequested(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_ServiceRequested(cookie));
+		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionManager).remove_ServiceRequested(cookie));
 	}
 	final void removeRebootNeeded(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_RebootNeeded(cookie));
+		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionManager).remove_RebootNeeded(cookie));
 	}
 	final void removeComponentLoadFailed(EventRegistrationToken cookie)
 	{
-		Debug.OK(remove_ComponentLoadFailed(cookie));
+		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionManager).remove_ComponentLoadFailed(cookie));
 	}
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{

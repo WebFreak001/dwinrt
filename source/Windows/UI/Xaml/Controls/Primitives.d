@@ -1343,7 +1343,44 @@ extern(Windows):
 	}
 	final void removeClick(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Click(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IButtonBase).remove_Click(token));
+	}
+
+	private static Windows.UI.Xaml.Controls.Primitives.IButtonBaseStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Primitives.IButtonBaseStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Primitives.IButtonBaseStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty ClickModeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IButtonBaseStatics).get_ClickModeProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsPointerOverProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IButtonBaseStatics).get_IsPointerOverProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsPressedProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IButtonBaseStatics).get_IsPressedProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty CommandProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IButtonBaseStatics).get_CommandProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty CommandParameterProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IButtonBaseStatics).get_CommandParameterProperty(&_ret));
+		return _ret;
 	}
 }
 @makable!(ButtonBase, ButtonBase, Windows.UI.Xaml.Controls.Primitives.IButtonBaseFactory)
@@ -1616,22 +1653,22 @@ extern(Windows):
 	final EventRegistrationToken OnHorizontalSnapPointsChanged(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_HorizontalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).add_HorizontalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeHorizontalSnapPointsChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_HorizontalSnapPointsChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).remove_HorizontalSnapPointsChanged(token));
 	}
 	final EventRegistrationToken OnVerticalSnapPointsChanged(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_VerticalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).add_VerticalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeVerticalSnapPointsChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_VerticalSnapPointsChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).remove_VerticalSnapPointsChanged(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(float) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
 	{
@@ -1913,32 +1950,32 @@ extern(Windows):
 	final EventRegistrationToken OnOpened(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Opened(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase).add_Opened(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeOpened(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Opened(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase).remove_Opened(token));
 	}
 	final EventRegistrationToken OnClosed(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Closed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase).add_Closed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeClosed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Closed(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase).remove_Closed(token));
 	}
 	final EventRegistrationToken OnOpening(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Opening(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase).add_Opening(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeOpening(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Opening(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase).remove_Opening(token));
 	}
 	final void ShowAt(Windows.UI.Xaml.FrameworkElement placementTarget)
 	{
@@ -1997,12 +2034,12 @@ extern(Windows):
 	final EventRegistrationToken OnClosing(void delegate(Windows.UI.Xaml.Controls.Primitives.FlyoutBase, Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Closing(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Primitives.FlyoutBase, Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs), Windows.UI.Xaml.Controls.Primitives.FlyoutBase, Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase2).add_Closing(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Controls.Primitives.FlyoutBase, Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs), Windows.UI.Xaml.Controls.Primitives.FlyoutBase, Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeClosing(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Closing(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase2).remove_Closing(token));
 	}
 	final Windows.UI.Xaml.DependencyObject OverlayInputPassThroughElement()
 	{
@@ -2013,6 +2050,39 @@ extern(Windows):
 	final void OverlayInputPassThroughElement(Windows.UI.Xaml.DependencyObject value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBase3).set_OverlayInputPassThroughElement(value));
+	}
+
+	private static Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty PlacementProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics).get_PlacementProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty AttachedFlyoutProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics).get_AttachedFlyoutProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.Controls.Primitives.FlyoutBase GetAttachedFlyout(Windows.UI.Xaml.FrameworkElement element)
+	{
+		Windows.UI.Xaml.Controls.Primitives.FlyoutBase _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics).abi_GetAttachedFlyout(element, &_ret));
+		return _ret;
+	}
+	static void SetAttachedFlyout(Windows.UI.Xaml.FrameworkElement element, Windows.UI.Xaml.Controls.Primitives.FlyoutBase value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics).abi_SetAttachedFlyout(element, value));
+	}
+	static void ShowAttachedFlyout(Windows.UI.Xaml.FrameworkElement flyoutOwner)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseStatics).abi_ShowAttachedFlyout(flyoutOwner));
 	}
 }
 @makable!(FlyoutBase, FlyoutBase, Windows.UI.Xaml.Controls.Primitives.IFlyoutBaseFactory)
@@ -2075,6 +2145,18 @@ extern(Windows):
 
 interface GeneratorPositionHelper : Windows.UI.Xaml.Controls.Primitives.IGeneratorPositionHelper
 {
+	private static Windows.UI.Xaml.Controls.Primitives.IGeneratorPositionHelperStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Primitives.IGeneratorPositionHelperStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Primitives.IGeneratorPositionHelperStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.Controls.Primitives.GeneratorPosition FromIndexAndOffset(INT32 index, INT32 offset)
+	{
+		Windows.UI.Xaml.Controls.Primitives.GeneratorPosition _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGeneratorPositionHelperStatics).abi_FromIndexAndOffset(index, offset, &_ret));
+		return _ret;
+	}
 }
 
 interface GridViewItemPresenter : Windows.UI.Xaml.Controls.ContentPresenter, Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter
@@ -2306,6 +2388,148 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenter).set_ContentMargin(value));
 	}
+
+	private static Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty SelectionCheckMarkVisualEnabledProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics).get_SelectionCheckMarkVisualEnabledProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty CheckHintBrushProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics).get_CheckHintBrushProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty CheckSelectingBrushProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics).get_CheckSelectingBrushProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty CheckBrushProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics).get_CheckBrushProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty DragBackgroundProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics).get_DragBackgroundProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty DragForegroundProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics).get_DragForegroundProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty FocusBorderBrushProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics).get_FocusBorderBrushProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty PlaceholderBackgroundProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics).get_PlaceholderBackgroundProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty PointerOverBackgroundProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics).get_PointerOverBackgroundProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty SelectedBackgroundProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics).get_SelectedBackgroundProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty SelectedForegroundProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics).get_SelectedForegroundProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty SelectedPointerOverBackgroundProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics).get_SelectedPointerOverBackgroundProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty SelectedPointerOverBorderBrushProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics).get_SelectedPointerOverBorderBrushProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty SelectedBorderThicknessProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics).get_SelectedBorderThicknessProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty DisabledOpacityProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics).get_DisabledOpacityProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty DragOpacityProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics).get_DragOpacityProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ReorderHintOffsetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics).get_ReorderHintOffsetProperty(&_ret));
+		return _ret;
+	}
+	deprecated("Use ContentPresenter.HorizontalContentAlignment instead of GridViewItemPresenterHorizontalContentAlignment. For more info, see MSDN.")
+	static Windows.UI.Xaml.DependencyProperty GridViewItemPresenterHorizontalContentAlignmentProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics).get_GridViewItemPresenterHorizontalContentAlignmentProperty(&_ret));
+		return _ret;
+	}
+	deprecated("Use ContentPresenter.VerticalContentAlignment instead of GridViewItemPresenterVerticalContentAlignment. For more info, see MSDN.")
+	static Windows.UI.Xaml.DependencyProperty GridViewItemPresenterVerticalContentAlignmentProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics).get_GridViewItemPresenterVerticalContentAlignmentProperty(&_ret));
+		return _ret;
+	}
+	deprecated("Use ContentPresenter.Padding instead of GridViewItemPresenterPadding. For more info, see MSDN.")
+	static Windows.UI.Xaml.DependencyProperty GridViewItemPresenterPaddingProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics).get_GridViewItemPresenterPaddingProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty PointerOverBackgroundMarginProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics).get_PointerOverBackgroundMarginProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ContentMarginProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterStatics).get_ContentMarginProperty(&_ret));
+		return _ret;
+	}
 }
 @makable!(GridViewItemPresenter, GridViewItemPresenter, Windows.UI.Xaml.Controls.Primitives.IGridViewItemPresenterFactory)
 class GridViewItemPresenterT(Base) : AgileObject!Base, GridViewItemPresenter
@@ -2447,6 +2671,25 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Data.IValueConverter).abi_ConvertBack(value, targetType, parameter, language, &_ret));
 		return _ret;
 	}
+
+	private static Windows.UI.Xaml.Controls.Primitives.IJumpListItemBackgroundConverterStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Primitives.IJumpListItemBackgroundConverterStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Primitives.IJumpListItemBackgroundConverterStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty EnabledProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IJumpListItemBackgroundConverterStatics).get_EnabledProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty DisabledProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IJumpListItemBackgroundConverterStatics).get_DisabledProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface JumpListItemForegroundConverter : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Primitives.IJumpListItemForegroundConverter, Windows.UI.Xaml.Data.IValueConverter
@@ -2484,10 +2727,47 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.UI.Xaml.Data.IValueConverter).abi_ConvertBack(value, targetType, parameter, language, &_ret));
 		return _ret;
 	}
+
+	private static Windows.UI.Xaml.Controls.Primitives.IJumpListItemForegroundConverterStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Primitives.IJumpListItemForegroundConverterStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Primitives.IJumpListItemForegroundConverterStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty EnabledProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IJumpListItemForegroundConverterStatics).get_EnabledProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty DisabledProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IJumpListItemForegroundConverterStatics).get_DisabledProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface LayoutInformation : Windows.UI.Xaml.Controls.Primitives.ILayoutInformation
 {
+	private static Windows.UI.Xaml.Controls.Primitives.ILayoutInformationStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Primitives.ILayoutInformationStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Primitives.ILayoutInformationStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.UIElement GetLayoutExceptionElement(IInspectable dispatcher)
+	{
+		Windows.UI.Xaml.UIElement _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.ILayoutInformationStatics).abi_GetLayoutExceptionElement(dispatcher, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.Rect GetLayoutSlot(Windows.UI.Xaml.FrameworkElement element)
+	{
+		Windows.Foundation.Rect _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.ILayoutInformationStatics).abi_GetLayoutSlot(element, &_ret));
+		return _ret;
+	}
 }
 
 interface ListViewItemPresenter : Windows.UI.Xaml.Controls.ContentPresenter, Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter, Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter2
@@ -2779,6 +3059,148 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenter2).set_PointerOverForeground(value));
 	}
+
+	private static Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty SelectionCheckMarkVisualEnabledProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics).get_SelectionCheckMarkVisualEnabledProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty CheckHintBrushProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics).get_CheckHintBrushProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty CheckSelectingBrushProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics).get_CheckSelectingBrushProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty CheckBrushProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics).get_CheckBrushProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty DragBackgroundProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics).get_DragBackgroundProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty DragForegroundProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics).get_DragForegroundProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty FocusBorderBrushProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics).get_FocusBorderBrushProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty PlaceholderBackgroundProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics).get_PlaceholderBackgroundProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty PointerOverBackgroundProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics).get_PointerOverBackgroundProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty SelectedBackgroundProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics).get_SelectedBackgroundProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty SelectedForegroundProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics).get_SelectedForegroundProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty SelectedPointerOverBackgroundProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics).get_SelectedPointerOverBackgroundProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty SelectedPointerOverBorderBrushProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics).get_SelectedPointerOverBorderBrushProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty SelectedBorderThicknessProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics).get_SelectedBorderThicknessProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty DisabledOpacityProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics).get_DisabledOpacityProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty DragOpacityProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics).get_DragOpacityProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ReorderHintOffsetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics).get_ReorderHintOffsetProperty(&_ret));
+		return _ret;
+	}
+	deprecated("Use ContentPresenter.HorizontalContentAlignment instead of ListViewItemPresenterHorizontalContentAlignment. For more info, see MSDN.")
+	static Windows.UI.Xaml.DependencyProperty ListViewItemPresenterHorizontalContentAlignmentProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics).get_ListViewItemPresenterHorizontalContentAlignmentProperty(&_ret));
+		return _ret;
+	}
+	deprecated("Use ContentPresenter.VerticalContentAlignment instead of ListViewItemPresenterVerticalContentAlignment. For more info, see MSDN.")
+	static Windows.UI.Xaml.DependencyProperty ListViewItemPresenterVerticalContentAlignmentProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics).get_ListViewItemPresenterVerticalContentAlignmentProperty(&_ret));
+		return _ret;
+	}
+	deprecated("Use ContentPresenter.Padding instead of GridViewItemPresenterPadding. For more info, see MSDN.")
+	static Windows.UI.Xaml.DependencyProperty ListViewItemPresenterPaddingProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics).get_ListViewItemPresenterPaddingProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty PointerOverBackgroundMarginProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics).get_PointerOverBackgroundMarginProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ContentMarginProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterStatics).get_ContentMarginProperty(&_ret));
+		return _ret;
+	}
 }
 @makable!(ListViewItemPresenter, ListViewItemPresenter, Windows.UI.Xaml.Controls.Primitives.IListViewItemPresenterFactory)
 class ListViewItemPresenterT(Base) : AgileObject!Base, ListViewItemPresenter
@@ -2938,7 +3360,56 @@ extern(Windows):
 	}
 	final void removeSelectionChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SelectionChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelector).remove_SelectionChanged(token));
+	}
+
+	private static Windows.UI.Xaml.Controls.Primitives.ILoopingSelectorStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Primitives.ILoopingSelectorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelectorStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty ShouldLoopProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelectorStatics).get_ShouldLoopProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ItemsProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelectorStatics).get_ItemsProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty SelectedIndexProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelectorStatics).get_SelectedIndexProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty SelectedItemProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelectorStatics).get_SelectedItemProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ItemWidthProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelectorStatics).get_ItemWidthProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ItemHeightProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelectorStatics).get_ItemHeightProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ItemTemplateProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.ILoopingSelectorStatics).get_ItemTemplateProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -2964,22 +3435,22 @@ extern(Windows):
 	final EventRegistrationToken OnHorizontalSnapPointsChanged(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_HorizontalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).add_HorizontalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeHorizontalSnapPointsChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_HorizontalSnapPointsChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).remove_HorizontalSnapPointsChanged(token));
 	}
 	final EventRegistrationToken OnVerticalSnapPointsChanged(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_VerticalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).add_VerticalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeVerticalSnapPointsChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_VerticalSnapPointsChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).remove_VerticalSnapPointsChanged(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(float) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
 	{
@@ -3152,22 +3623,22 @@ extern(Windows):
 	final EventRegistrationToken OnHorizontalSnapPointsChanged(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_HorizontalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).add_HorizontalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeHorizontalSnapPointsChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_HorizontalSnapPointsChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).remove_HorizontalSnapPointsChanged(token));
 	}
 	final EventRegistrationToken OnVerticalSnapPointsChanged(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_VerticalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).add_VerticalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeVerticalSnapPointsChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_VerticalSnapPointsChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).remove_VerticalSnapPointsChanged(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(float) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
 	{
@@ -3241,6 +3712,28 @@ class OrientedVirtualizingPanelT(Base) : AgileObject!Base, OrientedVirtualizingP
 
 interface PickerFlyoutBase : Windows.UI.Xaml.Controls.Primitives.FlyoutBase, Windows.UI.Xaml.Controls.Primitives.IPickerFlyoutBase, Windows.UI.Xaml.Controls.Primitives.IPickerFlyoutBaseOverrides
 {
+	private static Windows.UI.Xaml.Controls.Primitives.IPickerFlyoutBaseStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Primitives.IPickerFlyoutBaseStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Primitives.IPickerFlyoutBaseStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty TitleProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IPickerFlyoutBaseStatics).get_TitleProperty(&_ret));
+		return _ret;
+	}
+	static HSTRING GetTitle(Windows.UI.Xaml.DependencyObject element)
+	{
+		HSTRING _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IPickerFlyoutBaseStatics).abi_GetTitle(element, &_ret));
+		return _ret;
+	}
+	static void SetTitle(Windows.UI.Xaml.DependencyObject element, HSTRING value)
+	{
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IPickerFlyoutBaseStatics).abi_SetTitle(element, value));
+	}
 }
 @makable!(PickerFlyoutBase, PickerFlyoutBase, Windows.UI.Xaml.Controls.Primitives.IPickerFlyoutBaseFactory)
 class PickerFlyoutBaseT(Base) : AgileObject!Base, PickerFlyoutBase
@@ -3302,22 +3795,22 @@ extern(Windows):
 	final EventRegistrationToken OnHorizontalSnapPointsChanged(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_HorizontalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).add_HorizontalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeHorizontalSnapPointsChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_HorizontalSnapPointsChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).remove_HorizontalSnapPointsChanged(token));
 	}
 	final EventRegistrationToken OnVerticalSnapPointsChanged(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_VerticalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).add_VerticalSnapPointsChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeVerticalSnapPointsChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_VerticalSnapPointsChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollSnapPointsInfo).remove_VerticalSnapPointsChanged(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(float) GetIrregularSnapPoints(Windows.UI.Xaml.Controls.Orientation orientation, Windows.UI.Xaml.Controls.Primitives.SnapPointsAlignment alignment)
 	{
@@ -3399,22 +3892,22 @@ extern(Windows):
 	final EventRegistrationToken OnOpened(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Opened(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IPopup).add_Opened(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeOpened(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Opened(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IPopup).remove_Opened(token));
 	}
 	final EventRegistrationToken OnClosed(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Closed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IPopup).add_Closed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeClosed(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Closed(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IPopup).remove_Closed(token));
 	}
 	final Windows.UI.Xaml.Controls.LightDismissOverlayMode LightDismissOverlayMode()
 	{
@@ -3425,6 +3918,49 @@ extern(Windows):
 	final void LightDismissOverlayMode(Windows.UI.Xaml.Controls.LightDismissOverlayMode value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IPopup2).set_LightDismissOverlayMode(value));
+	}
+
+	private static Windows.UI.Xaml.Controls.Primitives.IPopupStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Primitives.IPopupStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Primitives.IPopupStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty ChildProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IPopupStatics).get_ChildProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsOpenProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IPopupStatics).get_IsOpenProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty HorizontalOffsetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IPopupStatics).get_HorizontalOffsetProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty VerticalOffsetProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IPopupStatics).get_VerticalOffsetProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ChildTransitionsProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IPopupStatics).get_ChildTransitionsProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsLightDismissEnabledProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IPopupStatics).get_IsLightDismissEnabledProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -3553,7 +4089,44 @@ extern(Windows):
 	}
 	final void removeValueChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_ValueChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBase).remove_ValueChanged(token));
+	}
+
+	private static Windows.UI.Xaml.Controls.Primitives.IRangeBaseStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Primitives.IRangeBaseStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Primitives.IRangeBaseStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty MinimumProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBaseStatics).get_MinimumProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty MaximumProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBaseStatics).get_MaximumProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty SmallChangeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBaseStatics).get_SmallChangeProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty LargeChangeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBaseStatics).get_LargeChangeProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ValueProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IRangeBaseStatics).get_ValueProperty(&_ret));
+		return _ret;
 	}
 }
 @makable!(RangeBase, RangeBase, Windows.UI.Xaml.Controls.Primitives.IRangeBaseFactory)
@@ -3630,6 +4203,25 @@ extern(Windows):
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IRepeatButton).set_Interval(value));
 	}
+
+	private static Windows.UI.Xaml.Controls.Primitives.IRepeatButtonStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Primitives.IRepeatButtonStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Primitives.IRepeatButtonStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty DelayProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IRepeatButtonStatics).get_DelayProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IntervalProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IRepeatButtonStatics).get_IntervalProperty(&_ret));
+		return _ret;
+	}
 }
 
 interface ScrollBar : Windows.UI.Xaml.Controls.Primitives.RangeBase, Windows.UI.Xaml.Controls.Primitives.IScrollBar
@@ -3667,7 +4259,32 @@ extern(Windows):
 	}
 	final void removeScroll(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Scroll(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IScrollBar).remove_Scroll(token));
+	}
+
+	private static Windows.UI.Xaml.Controls.Primitives.IScrollBarStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Primitives.IScrollBarStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Primitives.IScrollBarStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty OrientationProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IScrollBarStatics).get_OrientationProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty ViewportSizeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IScrollBarStatics).get_ViewportSizeProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IndicatorModeProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IScrollBarStatics).get_IndicatorModeProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -3743,7 +4360,50 @@ extern(Windows):
 	}
 	final void removeSelectionChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_SelectionChanged(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISelector).remove_SelectionChanged(token));
+	}
+
+	private static Windows.UI.Xaml.Controls.Primitives.ISelectorStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Primitives.ISelectorStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Primitives.ISelectorStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty SelectedIndexProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.ISelectorStatics).get_SelectedIndexProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty SelectedItemProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.ISelectorStatics).get_SelectedItemProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty SelectedValueProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.ISelectorStatics).get_SelectedValueProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty SelectedValuePathProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.ISelectorStatics).get_SelectedValuePathProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsSynchronizedWithCurrentItemProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.ISelectorStatics).get_IsSynchronizedWithCurrentItemProperty(&_ret));
+		return _ret;
+	}
+	static bool GetIsSelectionActive(Windows.UI.Xaml.DependencyObject element)
+	{
+		bool _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.ISelectorStatics).abi_GetIsSelectionActive(element, &_ret));
+		return _ret;
 	}
 }
 @makable!(Selector, Selector, Windows.UI.Xaml.Controls.Primitives.ISelectorFactory)
@@ -3785,6 +4445,19 @@ extern(Windows):
 	final void IsSelected(bool value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ISelectorItem).set_IsSelected(value));
+	}
+
+	private static Windows.UI.Xaml.Controls.Primitives.ISelectorItemStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Primitives.ISelectorItemStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Primitives.ISelectorItemStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsSelectedProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.ISelectorItemStatics).get_IsSelectedProperty(&_ret));
+		return _ret;
 	}
 }
 @makable!(SelectorItem, SelectorItem, Windows.UI.Xaml.Controls.Primitives.ISelectorItemFactory)
@@ -3897,19 +4570,32 @@ extern(Windows):
 	}
 	final void removeDragStarted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DragStarted(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IThumb).remove_DragStarted(token));
 	}
 	final void removeDragDelta(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DragDelta(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IThumb).remove_DragDelta(token));
 	}
 	final void removeDragCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DragCompleted(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IThumb).remove_DragCompleted(token));
 	}
 	final void CancelDrag()
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IThumb).abi_CancelDrag());
+	}
+
+	private static Windows.UI.Xaml.Controls.Primitives.IThumbStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Primitives.IThumbStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Primitives.IThumbStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsDraggingProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IThumbStatics).get_IsDraggingProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -3925,6 +4611,19 @@ extern(Windows):
 	final void Fill(Windows.UI.Xaml.Media.Brush value)
 	{
 		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.ITickBar).set_Fill(value));
+	}
+
+	private static Windows.UI.Xaml.Controls.Primitives.ITickBarStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Primitives.ITickBarStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Primitives.ITickBarStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty FillProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.ITickBarStatics).get_FillProperty(&_ret));
+		return _ret;
 	}
 }
 
@@ -3953,15 +4652,34 @@ extern(Windows):
 	}
 	final void removeChecked(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Checked(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToggleButton).remove_Checked(token));
 	}
 	final void removeUnchecked(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Unchecked(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToggleButton).remove_Unchecked(token));
 	}
 	final void removeIndeterminate(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Indeterminate(token));
+		Debug.OK(this.as!(Windows.UI.Xaml.Controls.Primitives.IToggleButton).remove_Indeterminate(token));
+	}
+
+	private static Windows.UI.Xaml.Controls.Primitives.IToggleButtonStatics _staticInstance;
+	public static Windows.UI.Xaml.Controls.Primitives.IToggleButtonStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Controls.Primitives.IToggleButtonStatics);
+		return _staticInstance;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsCheckedProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IToggleButtonStatics).get_IsCheckedProperty(&_ret));
+		return _ret;
+	}
+	static Windows.UI.Xaml.DependencyProperty IsThreeStateProperty()
+	{
+		Windows.UI.Xaml.DependencyProperty _ret;
+		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Controls.Primitives.IToggleButtonStatics).get_IsThreeStateProperty(&_ret));
+		return _ret;
 	}
 }
 @makable!(ToggleButton, ToggleButton, Windows.UI.Xaml.Controls.Primitives.IToggleButtonFactory)

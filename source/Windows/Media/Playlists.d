@@ -48,6 +48,19 @@ extern(Windows):
 		Debug.OK(this.as!(Windows.Media.Playlists.IPlaylist).abi_SaveAsWithFormatAsync(saveLocation, desiredName, option, playlistFormat, &_ret));
 		return _ret;
 	}
+
+	private static Windows.Media.Playlists.IPlaylistStatics _staticInstance;
+	public static Windows.Media.Playlists.IPlaylistStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Playlists.IPlaylistStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Playlists.Playlist) LoadAsync(Windows.Storage.IStorageFile file)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Media.Playlists.Playlist) _ret;
+		Debug.OK(staticInstance.as!(Windows.Media.Playlists.IPlaylistStatics).abi_LoadAsync(file, &_ret));
+		return _ret;
+	}
 }
 
 enum PlaylistFormat

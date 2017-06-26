@@ -166,37 +166,85 @@ extern(Windows):
 	final EventRegistrationToken OnUpdated(void delegate(Windows.Security.Authentication.Web.Core.WebAccountMonitor, Windows.Security.Authentication.Web.Core.WebAccountEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.Security.Authentication.Web.Core.WebAccountMonitor, Windows.Security.Authentication.Web.Core.WebAccountEventArgs), Windows.Security.Authentication.Web.Core.WebAccountMonitor, Windows.Security.Authentication.Web.Core.WebAccountEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebAccountMonitor).add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.Security.Authentication.Web.Core.WebAccountMonitor, Windows.Security.Authentication.Web.Core.WebAccountEventArgs), Windows.Security.Authentication.Web.Core.WebAccountMonitor, Windows.Security.Authentication.Web.Core.WebAccountEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Updated(token));
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebAccountMonitor).remove_Updated(token));
 	}
 	final EventRegistrationToken OnRemoved(void delegate(Windows.Security.Authentication.Web.Core.WebAccountMonitor, Windows.Security.Authentication.Web.Core.WebAccountEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.Security.Authentication.Web.Core.WebAccountMonitor, Windows.Security.Authentication.Web.Core.WebAccountEventArgs), Windows.Security.Authentication.Web.Core.WebAccountMonitor, Windows.Security.Authentication.Web.Core.WebAccountEventArgs)(fn), &tok));
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebAccountMonitor).add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.Security.Authentication.Web.Core.WebAccountMonitor, Windows.Security.Authentication.Web.Core.WebAccountEventArgs), Windows.Security.Authentication.Web.Core.WebAccountMonitor, Windows.Security.Authentication.Web.Core.WebAccountEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(remove_Removed(token));
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebAccountMonitor).remove_Removed(token));
 	}
 	final EventRegistrationToken OnDefaultSignInAccountChanged(void delegate(Windows.Security.Authentication.Web.Core.WebAccountMonitor, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(add_DefaultSignInAccountChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Security.Authentication.Web.Core.WebAccountMonitor, IInspectable), Windows.Security.Authentication.Web.Core.WebAccountMonitor, IInspectable)(fn), &tok));
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebAccountMonitor).add_DefaultSignInAccountChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Security.Authentication.Web.Core.WebAccountMonitor, IInspectable), Windows.Security.Authentication.Web.Core.WebAccountMonitor, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeDefaultSignInAccountChanged(EventRegistrationToken token)
 	{
-		Debug.OK(remove_DefaultSignInAccountChanged(token));
+		Debug.OK(this.as!(Windows.Security.Authentication.Web.Core.IWebAccountMonitor).remove_DefaultSignInAccountChanged(token));
 	}
 }
 
 interface WebAuthenticationCoreManager
 {
+	private static Windows.Security.Authentication.Web.Core.IWebAuthenticationCoreManagerStatics _staticInstance;
+	public static Windows.Security.Authentication.Web.Core.IWebAuthenticationCoreManagerStatics staticInstance()
+	{
+		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Authentication.Web.Core.IWebAuthenticationCoreManagerStatics);
+		return _staticInstance;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) GetTokenSilentlyAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Core.IWebAuthenticationCoreManagerStatics).abi_GetTokenSilentlyAsync(request, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) GetTokenSilentlyWithWebAccountAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.Security.Credentials.WebAccount webAccount)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Core.IWebAuthenticationCoreManagerStatics).abi_GetTokenSilentlyWithWebAccountAsync(request, webAccount, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) RequestTokenAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Core.IWebAuthenticationCoreManagerStatics).abi_RequestTokenAsync(request, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) RequestTokenWithWebAccountAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.Security.Credentials.WebAccount webAccount)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Core.IWebAuthenticationCoreManagerStatics).abi_RequestTokenWithWebAccountAsync(request, webAccount, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount) FindAccountAsync(Windows.Security.Credentials.WebAccountProvider provider, HSTRING webAccountId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Core.IWebAuthenticationCoreManagerStatics).abi_FindAccountAsync(provider, webAccountId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccountProvider) FindAccountProviderAsync(HSTRING webAccountProviderId)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccountProvider) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Core.IWebAuthenticationCoreManagerStatics).abi_FindAccountProviderAsync(webAccountProviderId, &_ret));
+		return _ret;
+	}
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccountProvider) FindAccountProviderWithAuthorityAsync(HSTRING webAccountProviderId, HSTRING authority)
+	{
+		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccountProvider) _ret;
+		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Core.IWebAuthenticationCoreManagerStatics).abi_FindAccountProviderWithAuthorityAsync(webAccountProviderId, authority, &_ret));
+		return _ret;
+	}
 }
 
 interface WebProviderError : Windows.Security.Authentication.Web.Core.IWebProviderError
