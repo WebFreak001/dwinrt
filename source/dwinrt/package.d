@@ -600,7 +600,7 @@ interface IMarshal : IUnknown
 	HRESULT DisconnectObject(DWORD);
 }
 
-class Marshaler(T) : Inspectable!T, IMarshal
+class AgileObject(T) : Inspectable!T, IMarshal, IAgileObject
 {
 extern (Windows):
 	final HRESULT GetUnmarshalClass(REFIID riid, void* pv, DWORD dwDestContext,
@@ -683,8 +683,8 @@ extern (Windows):
 	}
 }
 
-final class GenericMarshaledHandler(T, Args...)
-	: Marshaler!(GenericMarshaledHandler!(T, Args)), T, IAgileObject
+final class GenericAgileHandler(T, Args...)
+	: AgileObject!(GenericAgileHandler!(T, Args)), T
 {
 extern (Windows):
 	override HRESULT abi_Invoke(Args args)
@@ -705,7 +705,7 @@ extern (D):
 Handler handler(Handler, Args...)(void delegate(Args) cb)
 		if (__traits(hasMember, Handler.init, "abi_Invoke"))
 {
-	return cast(Handler) new GenericMarshaledHandler!(Handler, Args)(cb);
+	return cast(Handler) new GenericAgileHandler!(Handler, Args)(cb);
 }
 
 auto yield(Async)(Async async)
