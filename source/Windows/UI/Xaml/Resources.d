@@ -69,7 +69,6 @@ class CustomXamlResourceLoaderT(Base) : AgileObject!Base, CustomXamlResourceLoad
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-
 	override HRESULT abi_GetResource(HSTRING resourceId, HSTRING objectType, HSTRING propertyName, HSTRING propertyType, IInspectable* return_returnValue) { this.GetResource(resourceId, objectType, propertyName, propertyType, return_returnValue); return S_OK; }
 	void GetResource(HSTRING resourceId, HSTRING objectType, HSTRING propertyName, HSTRING propertyType, IInspectable* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Resources.ICustomXamlResourceLoaderOverrides)m_inner.asInterface(uuid("f851e991-af02-46e8-9af8-427b7ebfe9f8"))).abi_GetResource(resourceId, objectType, propertyName, propertyType, return_returnValue)); }
 

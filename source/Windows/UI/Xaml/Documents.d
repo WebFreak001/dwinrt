@@ -691,6 +691,71 @@ class BlockT(Base) : AgileObject!Base, Block
 	override HRESULT get_Margin(Windows.UI.Xaml.Thickness* return_value) { return (cast(Windows.UI.Xaml.Documents.IBlock)m_inner.asInterface(uuid("4bce0016-dd47-4350-8cb0-e171600ac896"))).get_Margin(return_value); }
 	override HRESULT set_Margin(Windows.UI.Xaml.Thickness value) { return (cast(Windows.UI.Xaml.Documents.IBlock)m_inner.asInterface(uuid("4bce0016-dd47-4350-8cb0-e171600ac896"))).set_Margin(value); }
 
+	override HRESULT get_Name(HSTRING* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_Name(return_value); }
+	override HRESULT get_FontSize(double* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontSize(return_value); }
+	override HRESULT set_FontSize(double value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontSize(value); }
+	override HRESULT get_FontFamily(Windows.UI.Xaml.Media.FontFamily* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontFamily(return_value); }
+	override HRESULT set_FontFamily(Windows.UI.Xaml.Media.FontFamily value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontFamily(value); }
+	override HRESULT get_FontWeight(Windows.UI.Text.FontWeight* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontWeight(return_value); }
+	override HRESULT set_FontWeight(Windows.UI.Text.FontWeight value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontWeight(value); }
+	override HRESULT get_FontStyle(Windows.UI.Text.FontStyle* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontStyle(return_value); }
+	override HRESULT set_FontStyle(Windows.UI.Text.FontStyle value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontStyle(value); }
+	override HRESULT get_FontStretch(Windows.UI.Text.FontStretch* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontStretch(return_value); }
+	override HRESULT set_FontStretch(Windows.UI.Text.FontStretch value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontStretch(value); }
+	override HRESULT get_CharacterSpacing(INT32* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_CharacterSpacing(return_value); }
+	override HRESULT set_CharacterSpacing(INT32 value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_CharacterSpacing(value); }
+	override HRESULT get_Foreground(Windows.UI.Xaml.Media.Brush* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_Foreground(return_value); }
+	override HRESULT set_Foreground(Windows.UI.Xaml.Media.Brush value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_Foreground(value); }
+	override HRESULT get_Language(HSTRING* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_Language(return_value); }
+	override HRESULT set_Language(HSTRING value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_Language(value); }
+	override HRESULT get_ContentStart(Windows.UI.Xaml.Documents.TextPointer* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_ContentStart(return_value); }
+	override HRESULT get_ContentEnd(Windows.UI.Xaml.Documents.TextPointer* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_ContentEnd(return_value); }
+	override HRESULT get_ElementStart(Windows.UI.Xaml.Documents.TextPointer* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_ElementStart(return_value); }
+	override HRESULT get_ElementEnd(Windows.UI.Xaml.Documents.TextPointer* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_ElementEnd(return_value); }
+	override HRESULT abi_FindName(HSTRING name, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).abi_FindName(name, return_returnValue); }
+
+	override HRESULT abi_OnDisconnectVisualChildren() { this.OnDisconnectVisualChildren(); return S_OK; }
+	void OnDisconnectVisualChildren() { Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElementOverrides)m_inner.asInterface(uuid("0ce21ee7-4f76-4dd9-bf91-163beccf84bc"))).abi_OnDisconnectVisualChildren()); }
+
+	override HRESULT get_IsTextScaleFactorEnabled(bool* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement2)m_inner.asInterface(uuid("a8076aa8-f892-49f6-8cd2-89addaf06d2d"))).get_IsTextScaleFactorEnabled(return_value); }
+	override HRESULT set_IsTextScaleFactorEnabled(bool value) { return (cast(Windows.UI.Xaml.Documents.ITextElement2)m_inner.asInterface(uuid("a8076aa8-f892-49f6-8cd2-89addaf06d2d"))).set_IsTextScaleFactorEnabled(value); }
+
+	override HRESULT get_AllowFocusOnInteraction(bool* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).get_AllowFocusOnInteraction(return_value); }
+	override HRESULT set_AllowFocusOnInteraction(bool value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).set_AllowFocusOnInteraction(value); }
+	override HRESULT get_AccessKey(HSTRING* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).get_AccessKey(return_value); }
+	override HRESULT set_AccessKey(HSTRING value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).set_AccessKey(value); }
+	override HRESULT get_ExitDisplayModeOnAccessKeyInvoked(bool* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).get_ExitDisplayModeOnAccessKeyInvoked(return_value); }
+	override HRESULT set_ExitDisplayModeOnAccessKeyInvoked(bool value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).set_ExitDisplayModeOnAccessKeyInvoked(value); }
+
+	override HRESULT get_TextDecorations(Windows.UI.Text.TextDecorations* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_TextDecorations(return_value); }
+	override HRESULT set_TextDecorations(Windows.UI.Text.TextDecorations value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_TextDecorations(value); }
+	override HRESULT get_IsAccessKeyScope(bool* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_IsAccessKeyScope(return_value); }
+	override HRESULT set_IsAccessKeyScope(bool value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_IsAccessKeyScope(value); }
+	override HRESULT get_AccessKeyScopeOwner(Windows.UI.Xaml.DependencyObject* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_AccessKeyScopeOwner(return_value); }
+	override HRESULT set_AccessKeyScopeOwner(Windows.UI.Xaml.DependencyObject value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_AccessKeyScopeOwner(value); }
+	override HRESULT get_KeyTipPlacementMode(Windows.UI.Xaml.Input.KeyTipPlacementMode* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_KeyTipPlacementMode(return_value); }
+	override HRESULT set_KeyTipPlacementMode(Windows.UI.Xaml.Input.KeyTipPlacementMode value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_KeyTipPlacementMode(value); }
+	override HRESULT get_KeyTipHorizontalOffset(double* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_KeyTipHorizontalOffset(return_value); }
+	override HRESULT set_KeyTipHorizontalOffset(double value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_KeyTipHorizontalOffset(value); }
+	override HRESULT get_KeyTipVerticalOffset(double* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_KeyTipVerticalOffset(return_value); }
+	override HRESULT set_KeyTipVerticalOffset(double value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_KeyTipVerticalOffset(value); }
+	override HRESULT add_AccessKeyDisplayRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).add_AccessKeyDisplayRequested(value, return_token); }
+	override HRESULT remove_AccessKeyDisplayRequested(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).remove_AccessKeyDisplayRequested(token); }
+	override HRESULT add_AccessKeyDisplayDismissed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).add_AccessKeyDisplayDismissed(value, return_token); }
+	override HRESULT remove_AccessKeyDisplayDismissed(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).remove_AccessKeyDisplayDismissed(token); }
+	override HRESULT add_AccessKeyInvoked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).add_AccessKeyInvoked(value, return_token); }
+	override HRESULT remove_AccessKeyInvoked(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).remove_AccessKeyInvoked(token); }
+
+	override HRESULT abi_GetValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_GetValue(dp, return_returnValue); }
+	override HRESULT abi_SetValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable value) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_SetValue(dp, value); }
+	override HRESULT abi_ClearValue(Windows.UI.Xaml.DependencyProperty dp) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_ClearValue(dp); }
+	override HRESULT abi_ReadLocalValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_ReadLocalValue(dp, return_returnValue); }
+	override HRESULT abi_GetAnimationBaseValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_GetAnimationBaseValue(dp, return_returnValue); }
+	override HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).get_Dispatcher(return_value); }
+
+	override HRESULT abi_RegisterPropertyChangedCallback(Windows.UI.Xaml.DependencyProperty dp, Windows.UI.Xaml.DependencyPropertyChangedCallback callback, INT64* return_returnValue) { return (cast(Windows.UI.Xaml.IDependencyObject2)m_inner.asInterface(uuid("29fed85d-3d22-43a1-add0-17027c08b212"))).abi_RegisterPropertyChangedCallback(dp, callback, return_returnValue); }
+	override HRESULT abi_UnregisterPropertyChangedCallback(Windows.UI.Xaml.DependencyProperty dp, INT64 token) { return (cast(Windows.UI.Xaml.IDependencyObject2)m_inner.asInterface(uuid("29fed85d-3d22-43a1-add0-17027c08b212"))).abi_UnregisterPropertyChangedCallback(dp, token); }
+
 	this() {}
 	IInspectable m_inner;
 }
@@ -1134,6 +1199,70 @@ class InlineT(Base) : AgileObject!Base, Inline
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
+	override HRESULT get_Name(HSTRING* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_Name(return_value); }
+	override HRESULT get_FontSize(double* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontSize(return_value); }
+	override HRESULT set_FontSize(double value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontSize(value); }
+	override HRESULT get_FontFamily(Windows.UI.Xaml.Media.FontFamily* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontFamily(return_value); }
+	override HRESULT set_FontFamily(Windows.UI.Xaml.Media.FontFamily value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontFamily(value); }
+	override HRESULT get_FontWeight(Windows.UI.Text.FontWeight* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontWeight(return_value); }
+	override HRESULT set_FontWeight(Windows.UI.Text.FontWeight value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontWeight(value); }
+	override HRESULT get_FontStyle(Windows.UI.Text.FontStyle* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontStyle(return_value); }
+	override HRESULT set_FontStyle(Windows.UI.Text.FontStyle value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontStyle(value); }
+	override HRESULT get_FontStretch(Windows.UI.Text.FontStretch* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontStretch(return_value); }
+	override HRESULT set_FontStretch(Windows.UI.Text.FontStretch value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontStretch(value); }
+	override HRESULT get_CharacterSpacing(INT32* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_CharacterSpacing(return_value); }
+	override HRESULT set_CharacterSpacing(INT32 value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_CharacterSpacing(value); }
+	override HRESULT get_Foreground(Windows.UI.Xaml.Media.Brush* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_Foreground(return_value); }
+	override HRESULT set_Foreground(Windows.UI.Xaml.Media.Brush value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_Foreground(value); }
+	override HRESULT get_Language(HSTRING* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_Language(return_value); }
+	override HRESULT set_Language(HSTRING value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_Language(value); }
+	override HRESULT get_ContentStart(Windows.UI.Xaml.Documents.TextPointer* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_ContentStart(return_value); }
+	override HRESULT get_ContentEnd(Windows.UI.Xaml.Documents.TextPointer* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_ContentEnd(return_value); }
+	override HRESULT get_ElementStart(Windows.UI.Xaml.Documents.TextPointer* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_ElementStart(return_value); }
+	override HRESULT get_ElementEnd(Windows.UI.Xaml.Documents.TextPointer* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_ElementEnd(return_value); }
+	override HRESULT abi_FindName(HSTRING name, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).abi_FindName(name, return_returnValue); }
+
+	override HRESULT abi_OnDisconnectVisualChildren() { this.OnDisconnectVisualChildren(); return S_OK; }
+	void OnDisconnectVisualChildren() { Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElementOverrides)m_inner.asInterface(uuid("0ce21ee7-4f76-4dd9-bf91-163beccf84bc"))).abi_OnDisconnectVisualChildren()); }
+
+	override HRESULT get_IsTextScaleFactorEnabled(bool* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement2)m_inner.asInterface(uuid("a8076aa8-f892-49f6-8cd2-89addaf06d2d"))).get_IsTextScaleFactorEnabled(return_value); }
+	override HRESULT set_IsTextScaleFactorEnabled(bool value) { return (cast(Windows.UI.Xaml.Documents.ITextElement2)m_inner.asInterface(uuid("a8076aa8-f892-49f6-8cd2-89addaf06d2d"))).set_IsTextScaleFactorEnabled(value); }
+
+	override HRESULT get_AllowFocusOnInteraction(bool* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).get_AllowFocusOnInteraction(return_value); }
+	override HRESULT set_AllowFocusOnInteraction(bool value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).set_AllowFocusOnInteraction(value); }
+	override HRESULT get_AccessKey(HSTRING* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).get_AccessKey(return_value); }
+	override HRESULT set_AccessKey(HSTRING value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).set_AccessKey(value); }
+	override HRESULT get_ExitDisplayModeOnAccessKeyInvoked(bool* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).get_ExitDisplayModeOnAccessKeyInvoked(return_value); }
+	override HRESULT set_ExitDisplayModeOnAccessKeyInvoked(bool value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).set_ExitDisplayModeOnAccessKeyInvoked(value); }
+
+	override HRESULT get_TextDecorations(Windows.UI.Text.TextDecorations* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_TextDecorations(return_value); }
+	override HRESULT set_TextDecorations(Windows.UI.Text.TextDecorations value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_TextDecorations(value); }
+	override HRESULT get_IsAccessKeyScope(bool* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_IsAccessKeyScope(return_value); }
+	override HRESULT set_IsAccessKeyScope(bool value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_IsAccessKeyScope(value); }
+	override HRESULT get_AccessKeyScopeOwner(Windows.UI.Xaml.DependencyObject* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_AccessKeyScopeOwner(return_value); }
+	override HRESULT set_AccessKeyScopeOwner(Windows.UI.Xaml.DependencyObject value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_AccessKeyScopeOwner(value); }
+	override HRESULT get_KeyTipPlacementMode(Windows.UI.Xaml.Input.KeyTipPlacementMode* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_KeyTipPlacementMode(return_value); }
+	override HRESULT set_KeyTipPlacementMode(Windows.UI.Xaml.Input.KeyTipPlacementMode value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_KeyTipPlacementMode(value); }
+	override HRESULT get_KeyTipHorizontalOffset(double* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_KeyTipHorizontalOffset(return_value); }
+	override HRESULT set_KeyTipHorizontalOffset(double value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_KeyTipHorizontalOffset(value); }
+	override HRESULT get_KeyTipVerticalOffset(double* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_KeyTipVerticalOffset(return_value); }
+	override HRESULT set_KeyTipVerticalOffset(double value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_KeyTipVerticalOffset(value); }
+	override HRESULT add_AccessKeyDisplayRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).add_AccessKeyDisplayRequested(value, return_token); }
+	override HRESULT remove_AccessKeyDisplayRequested(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).remove_AccessKeyDisplayRequested(token); }
+	override HRESULT add_AccessKeyDisplayDismissed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).add_AccessKeyDisplayDismissed(value, return_token); }
+	override HRESULT remove_AccessKeyDisplayDismissed(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).remove_AccessKeyDisplayDismissed(token); }
+	override HRESULT add_AccessKeyInvoked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).add_AccessKeyInvoked(value, return_token); }
+	override HRESULT remove_AccessKeyInvoked(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).remove_AccessKeyInvoked(token); }
+
+	override HRESULT abi_GetValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_GetValue(dp, return_returnValue); }
+	override HRESULT abi_SetValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable value) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_SetValue(dp, value); }
+	override HRESULT abi_ClearValue(Windows.UI.Xaml.DependencyProperty dp) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_ClearValue(dp); }
+	override HRESULT abi_ReadLocalValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_ReadLocalValue(dp, return_returnValue); }
+	override HRESULT abi_GetAnimationBaseValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_GetAnimationBaseValue(dp, return_returnValue); }
+	override HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).get_Dispatcher(return_value); }
+
+	override HRESULT abi_RegisterPropertyChangedCallback(Windows.UI.Xaml.DependencyProperty dp, Windows.UI.Xaml.DependencyPropertyChangedCallback callback, INT64* return_returnValue) { return (cast(Windows.UI.Xaml.IDependencyObject2)m_inner.asInterface(uuid("29fed85d-3d22-43a1-add0-17027c08b212"))).abi_RegisterPropertyChangedCallback(dp, callback, return_returnValue); }
+	override HRESULT abi_UnregisterPropertyChangedCallback(Windows.UI.Xaml.DependencyProperty dp, INT64 token) { return (cast(Windows.UI.Xaml.IDependencyObject2)m_inner.asInterface(uuid("29fed85d-3d22-43a1-add0-17027c08b212"))).abi_UnregisterPropertyChangedCallback(dp, token); }
 
 	this() {}
 	IInspectable m_inner;
@@ -1360,6 +1489,71 @@ class SpanT(Base) : AgileObject!Base, Span
 	}
 	override HRESULT get_Inlines(Windows.UI.Xaml.Documents.InlineCollection* return_value) { return (cast(Windows.UI.Xaml.Documents.ISpan)m_inner.asInterface(uuid("9839d4a9-02af-4811-aa15-6bef3acac97a"))).get_Inlines(return_value); }
 	override HRESULT set_Inlines(Windows.UI.Xaml.Documents.InlineCollection value) { return (cast(Windows.UI.Xaml.Documents.ISpan)m_inner.asInterface(uuid("9839d4a9-02af-4811-aa15-6bef3acac97a"))).set_Inlines(value); }
+
+	override HRESULT get_Name(HSTRING* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_Name(return_value); }
+	override HRESULT get_FontSize(double* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontSize(return_value); }
+	override HRESULT set_FontSize(double value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontSize(value); }
+	override HRESULT get_FontFamily(Windows.UI.Xaml.Media.FontFamily* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontFamily(return_value); }
+	override HRESULT set_FontFamily(Windows.UI.Xaml.Media.FontFamily value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontFamily(value); }
+	override HRESULT get_FontWeight(Windows.UI.Text.FontWeight* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontWeight(return_value); }
+	override HRESULT set_FontWeight(Windows.UI.Text.FontWeight value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontWeight(value); }
+	override HRESULT get_FontStyle(Windows.UI.Text.FontStyle* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontStyle(return_value); }
+	override HRESULT set_FontStyle(Windows.UI.Text.FontStyle value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontStyle(value); }
+	override HRESULT get_FontStretch(Windows.UI.Text.FontStretch* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontStretch(return_value); }
+	override HRESULT set_FontStretch(Windows.UI.Text.FontStretch value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontStretch(value); }
+	override HRESULT get_CharacterSpacing(INT32* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_CharacterSpacing(return_value); }
+	override HRESULT set_CharacterSpacing(INT32 value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_CharacterSpacing(value); }
+	override HRESULT get_Foreground(Windows.UI.Xaml.Media.Brush* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_Foreground(return_value); }
+	override HRESULT set_Foreground(Windows.UI.Xaml.Media.Brush value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_Foreground(value); }
+	override HRESULT get_Language(HSTRING* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_Language(return_value); }
+	override HRESULT set_Language(HSTRING value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_Language(value); }
+	override HRESULT get_ContentStart(Windows.UI.Xaml.Documents.TextPointer* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_ContentStart(return_value); }
+	override HRESULT get_ContentEnd(Windows.UI.Xaml.Documents.TextPointer* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_ContentEnd(return_value); }
+	override HRESULT get_ElementStart(Windows.UI.Xaml.Documents.TextPointer* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_ElementStart(return_value); }
+	override HRESULT get_ElementEnd(Windows.UI.Xaml.Documents.TextPointer* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_ElementEnd(return_value); }
+	override HRESULT abi_FindName(HSTRING name, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).abi_FindName(name, return_returnValue); }
+
+	override HRESULT abi_OnDisconnectVisualChildren() { this.OnDisconnectVisualChildren(); return S_OK; }
+	void OnDisconnectVisualChildren() { Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElementOverrides)m_inner.asInterface(uuid("0ce21ee7-4f76-4dd9-bf91-163beccf84bc"))).abi_OnDisconnectVisualChildren()); }
+
+	override HRESULT get_IsTextScaleFactorEnabled(bool* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement2)m_inner.asInterface(uuid("a8076aa8-f892-49f6-8cd2-89addaf06d2d"))).get_IsTextScaleFactorEnabled(return_value); }
+	override HRESULT set_IsTextScaleFactorEnabled(bool value) { return (cast(Windows.UI.Xaml.Documents.ITextElement2)m_inner.asInterface(uuid("a8076aa8-f892-49f6-8cd2-89addaf06d2d"))).set_IsTextScaleFactorEnabled(value); }
+
+	override HRESULT get_AllowFocusOnInteraction(bool* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).get_AllowFocusOnInteraction(return_value); }
+	override HRESULT set_AllowFocusOnInteraction(bool value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).set_AllowFocusOnInteraction(value); }
+	override HRESULT get_AccessKey(HSTRING* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).get_AccessKey(return_value); }
+	override HRESULT set_AccessKey(HSTRING value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).set_AccessKey(value); }
+	override HRESULT get_ExitDisplayModeOnAccessKeyInvoked(bool* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).get_ExitDisplayModeOnAccessKeyInvoked(return_value); }
+	override HRESULT set_ExitDisplayModeOnAccessKeyInvoked(bool value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).set_ExitDisplayModeOnAccessKeyInvoked(value); }
+
+	override HRESULT get_TextDecorations(Windows.UI.Text.TextDecorations* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_TextDecorations(return_value); }
+	override HRESULT set_TextDecorations(Windows.UI.Text.TextDecorations value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_TextDecorations(value); }
+	override HRESULT get_IsAccessKeyScope(bool* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_IsAccessKeyScope(return_value); }
+	override HRESULT set_IsAccessKeyScope(bool value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_IsAccessKeyScope(value); }
+	override HRESULT get_AccessKeyScopeOwner(Windows.UI.Xaml.DependencyObject* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_AccessKeyScopeOwner(return_value); }
+	override HRESULT set_AccessKeyScopeOwner(Windows.UI.Xaml.DependencyObject value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_AccessKeyScopeOwner(value); }
+	override HRESULT get_KeyTipPlacementMode(Windows.UI.Xaml.Input.KeyTipPlacementMode* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_KeyTipPlacementMode(return_value); }
+	override HRESULT set_KeyTipPlacementMode(Windows.UI.Xaml.Input.KeyTipPlacementMode value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_KeyTipPlacementMode(value); }
+	override HRESULT get_KeyTipHorizontalOffset(double* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_KeyTipHorizontalOffset(return_value); }
+	override HRESULT set_KeyTipHorizontalOffset(double value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_KeyTipHorizontalOffset(value); }
+	override HRESULT get_KeyTipVerticalOffset(double* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_KeyTipVerticalOffset(return_value); }
+	override HRESULT set_KeyTipVerticalOffset(double value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_KeyTipVerticalOffset(value); }
+	override HRESULT add_AccessKeyDisplayRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).add_AccessKeyDisplayRequested(value, return_token); }
+	override HRESULT remove_AccessKeyDisplayRequested(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).remove_AccessKeyDisplayRequested(token); }
+	override HRESULT add_AccessKeyDisplayDismissed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).add_AccessKeyDisplayDismissed(value, return_token); }
+	override HRESULT remove_AccessKeyDisplayDismissed(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).remove_AccessKeyDisplayDismissed(token); }
+	override HRESULT add_AccessKeyInvoked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).add_AccessKeyInvoked(value, return_token); }
+	override HRESULT remove_AccessKeyInvoked(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).remove_AccessKeyInvoked(token); }
+
+	override HRESULT abi_GetValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_GetValue(dp, return_returnValue); }
+	override HRESULT abi_SetValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable value) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_SetValue(dp, value); }
+	override HRESULT abi_ClearValue(Windows.UI.Xaml.DependencyProperty dp) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_ClearValue(dp); }
+	override HRESULT abi_ReadLocalValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_ReadLocalValue(dp, return_returnValue); }
+	override HRESULT abi_GetAnimationBaseValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_GetAnimationBaseValue(dp, return_returnValue); }
+	override HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).get_Dispatcher(return_value); }
+
+	override HRESULT abi_RegisterPropertyChangedCallback(Windows.UI.Xaml.DependencyProperty dp, Windows.UI.Xaml.DependencyPropertyChangedCallback callback, INT64* return_returnValue) { return (cast(Windows.UI.Xaml.IDependencyObject2)m_inner.asInterface(uuid("29fed85d-3d22-43a1-add0-17027c08b212"))).abi_RegisterPropertyChangedCallback(dp, callback, return_returnValue); }
+	override HRESULT abi_UnregisterPropertyChangedCallback(Windows.UI.Xaml.DependencyProperty dp, INT64 token) { return (cast(Windows.UI.Xaml.IDependencyObject2)m_inner.asInterface(uuid("29fed85d-3d22-43a1-add0-17027c08b212"))).abi_UnregisterPropertyChangedCallback(dp, token); }
 
 	this() {}
 	IInspectable m_inner;
@@ -1734,6 +1928,16 @@ class TextElementT(Base) : AgileObject!Base, TextElement
 	override HRESULT remove_AccessKeyDisplayDismissed(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).remove_AccessKeyDisplayDismissed(token); }
 	override HRESULT add_AccessKeyInvoked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).add_AccessKeyInvoked(value, return_token); }
 	override HRESULT remove_AccessKeyInvoked(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).remove_AccessKeyInvoked(token); }
+
+	override HRESULT abi_GetValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_GetValue(dp, return_returnValue); }
+	override HRESULT abi_SetValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable value) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_SetValue(dp, value); }
+	override HRESULT abi_ClearValue(Windows.UI.Xaml.DependencyProperty dp) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_ClearValue(dp); }
+	override HRESULT abi_ReadLocalValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_ReadLocalValue(dp, return_returnValue); }
+	override HRESULT abi_GetAnimationBaseValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_GetAnimationBaseValue(dp, return_returnValue); }
+	override HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).get_Dispatcher(return_value); }
+
+	override HRESULT abi_RegisterPropertyChangedCallback(Windows.UI.Xaml.DependencyProperty dp, Windows.UI.Xaml.DependencyPropertyChangedCallback callback, INT64* return_returnValue) { return (cast(Windows.UI.Xaml.IDependencyObject2)m_inner.asInterface(uuid("29fed85d-3d22-43a1-add0-17027c08b212"))).abi_RegisterPropertyChangedCallback(dp, callback, return_returnValue); }
+	override HRESULT abi_UnregisterPropertyChangedCallback(Windows.UI.Xaml.DependencyProperty dp, INT64 token) { return (cast(Windows.UI.Xaml.IDependencyObject2)m_inner.asInterface(uuid("29fed85d-3d22-43a1-add0-17027c08b212"))).abi_UnregisterPropertyChangedCallback(dp, token); }
 
 	this() {}
 	IInspectable m_inner;

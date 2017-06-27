@@ -1038,6 +1038,20 @@ class CompositionAnimationT(Base) : AgileObject!Base, CompositionAnimation
 	override HRESULT get_Target(HSTRING* return_value) { return (cast(Windows.UI.Composition.ICompositionAnimation2)m_inner.asInterface(uuid("369b603e-a80f-4948-93e3-ed23fb38c6cb"))).get_Target(return_value); }
 	override HRESULT set_Target(HSTRING value) { return (cast(Windows.UI.Composition.ICompositionAnimation2)m_inner.asInterface(uuid("369b603e-a80f-4948-93e3-ed23fb38c6cb"))).set_Target(value); }
 
+	override HRESULT get_Compositor(Windows.UI.Composition.Compositor* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Compositor(return_value); }
+	override HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Dispatcher(return_value); }
+	override HRESULT get_Properties(Windows.UI.Composition.CompositionPropertySet* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Properties(return_value); }
+	override HRESULT abi_StartAnimation(HSTRING propertyName, Windows.UI.Composition.CompositionAnimation animation) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StartAnimation(propertyName, animation); }
+	override HRESULT abi_StopAnimation(HSTRING propertyName) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StopAnimation(propertyName); }
+
+	override HRESULT abi_Close() { return (cast(Windows.Foundation.IClosable)m_inner.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close(); }
+
+	override HRESULT get_Comment(HSTRING* return_value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).get_Comment(return_value); }
+	override HRESULT set_Comment(HSTRING value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_Comment(value); }
+	override HRESULT get_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection* return_value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).get_ImplicitAnimations(return_value); }
+	override HRESULT set_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_ImplicitAnimations(value); }
+	override HRESULT abi_StartAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).abi_StartAnimationGroup(value); }
+	override HRESULT abi_StopAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).abi_StopAnimationGroup(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -1091,6 +1105,20 @@ class CompositionBrushT(Base) : AgileObject!Base, CompositionBrush
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
+	override HRESULT get_Compositor(Windows.UI.Composition.Compositor* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Compositor(return_value); }
+	override HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Dispatcher(return_value); }
+	override HRESULT get_Properties(Windows.UI.Composition.CompositionPropertySet* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Properties(return_value); }
+	override HRESULT abi_StartAnimation(HSTRING propertyName, Windows.UI.Composition.CompositionAnimation animation) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StartAnimation(propertyName, animation); }
+	override HRESULT abi_StopAnimation(HSTRING propertyName) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StopAnimation(propertyName); }
+
+	override HRESULT abi_Close() { return (cast(Windows.Foundation.IClosable)m_inner.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close(); }
+
+	override HRESULT get_Comment(HSTRING* return_value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).get_Comment(return_value); }
+	override HRESULT set_Comment(HSTRING value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_Comment(value); }
+	override HRESULT get_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection* return_value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).get_ImplicitAnimations(return_value); }
+	override HRESULT set_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_ImplicitAnimations(value); }
+	override HRESULT abi_StartAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).abi_StartAnimationGroup(value); }
+	override HRESULT abi_StopAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).abi_StopAnimationGroup(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -1220,7 +1248,6 @@ class CompositionClipT(Base) : AgileObject!Base, CompositionClip
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-
 	override HRESULT get_AnchorPoint(Windows.Foundation.Numerics.Vector2* return_value) { return (cast(Windows.UI.Composition.ICompositionClip2)m_inner.asInterface(uuid("5893e069-3516-40e1-89e0-5ba924927235"))).get_AnchorPoint(return_value); }
 	override HRESULT set_AnchorPoint(Windows.Foundation.Numerics.Vector2 value) { return (cast(Windows.UI.Composition.ICompositionClip2)m_inner.asInterface(uuid("5893e069-3516-40e1-89e0-5ba924927235"))).set_AnchorPoint(value); }
 	override HRESULT get_CenterPoint(Windows.Foundation.Numerics.Vector2* return_value) { return (cast(Windows.UI.Composition.ICompositionClip2)m_inner.asInterface(uuid("5893e069-3516-40e1-89e0-5ba924927235"))).get_CenterPoint(return_value); }
@@ -1235,6 +1262,21 @@ class CompositionClipT(Base) : AgileObject!Base, CompositionClip
 	override HRESULT set_Scale(Windows.Foundation.Numerics.Vector2 value) { return (cast(Windows.UI.Composition.ICompositionClip2)m_inner.asInterface(uuid("5893e069-3516-40e1-89e0-5ba924927235"))).set_Scale(value); }
 	override HRESULT get_TransformMatrix(Windows.Foundation.Numerics.Matrix3x2* return_value) { return (cast(Windows.UI.Composition.ICompositionClip2)m_inner.asInterface(uuid("5893e069-3516-40e1-89e0-5ba924927235"))).get_TransformMatrix(return_value); }
 	override HRESULT set_TransformMatrix(Windows.Foundation.Numerics.Matrix3x2 value) { return (cast(Windows.UI.Composition.ICompositionClip2)m_inner.asInterface(uuid("5893e069-3516-40e1-89e0-5ba924927235"))).set_TransformMatrix(value); }
+
+	override HRESULT get_Compositor(Windows.UI.Composition.Compositor* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Compositor(return_value); }
+	override HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Dispatcher(return_value); }
+	override HRESULT get_Properties(Windows.UI.Composition.CompositionPropertySet* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Properties(return_value); }
+	override HRESULT abi_StartAnimation(HSTRING propertyName, Windows.UI.Composition.CompositionAnimation animation) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StartAnimation(propertyName, animation); }
+	override HRESULT abi_StopAnimation(HSTRING propertyName) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StopAnimation(propertyName); }
+
+	override HRESULT abi_Close() { return (cast(Windows.Foundation.IClosable)m_inner.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close(); }
+
+	override HRESULT get_Comment(HSTRING* return_value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).get_Comment(return_value); }
+	override HRESULT set_Comment(HSTRING value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_Comment(value); }
+	override HRESULT get_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection* return_value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).get_ImplicitAnimations(return_value); }
+	override HRESULT set_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_ImplicitAnimations(value); }
+	override HRESULT abi_StartAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).abi_StartAnimationGroup(value); }
+	override HRESULT abi_StopAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).abi_StopAnimationGroup(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -1344,13 +1386,27 @@ class CompositionDrawingSurfaceT(Base) : AgileObject!Base, CompositionDrawingSur
 	override HRESULT get_PixelFormat(Windows.Graphics.DirectX.DirectXPixelFormat* return_value) { return (cast(Windows.UI.Composition.ICompositionDrawingSurface)m_inner.asInterface(uuid("a166c300-fad0-4d11-9e67-e433162ff49e"))).get_PixelFormat(return_value); }
 	override HRESULT get_Size(Windows.Foundation.Size* return_value) { return (cast(Windows.UI.Composition.ICompositionDrawingSurface)m_inner.asInterface(uuid("a166c300-fad0-4d11-9e67-e433162ff49e"))).get_Size(return_value); }
 
-
 	override HRESULT get_SizeInt32(Windows.Graphics.SizeInt32* return_value) { return (cast(Windows.UI.Composition.ICompositionDrawingSurface2)m_inner.asInterface(uuid("fad0e88b-e354-44e8-8e3d-c4880d5a213f"))).get_SizeInt32(return_value); }
 	override HRESULT abi_Resize(Windows.Graphics.SizeInt32 sizePixels) { return (cast(Windows.UI.Composition.ICompositionDrawingSurface2)m_inner.asInterface(uuid("fad0e88b-e354-44e8-8e3d-c4880d5a213f"))).abi_Resize(sizePixels); }
 	override HRESULT abi_Scroll(Windows.Graphics.PointInt32 offset) { return (cast(Windows.UI.Composition.ICompositionDrawingSurface2)m_inner.asInterface(uuid("fad0e88b-e354-44e8-8e3d-c4880d5a213f"))).abi_Scroll(offset); }
 	override HRESULT abi_ScrollRect(Windows.Graphics.PointInt32 offset, Windows.Graphics.RectInt32 scrollRect) { return (cast(Windows.UI.Composition.ICompositionDrawingSurface2)m_inner.asInterface(uuid("fad0e88b-e354-44e8-8e3d-c4880d5a213f"))).abi_ScrollRect(offset, scrollRect); }
 	override HRESULT abi_ScrollWithClip(Windows.Graphics.PointInt32 offset, Windows.Graphics.RectInt32 clipRect) { return (cast(Windows.UI.Composition.ICompositionDrawingSurface2)m_inner.asInterface(uuid("fad0e88b-e354-44e8-8e3d-c4880d5a213f"))).abi_ScrollWithClip(offset, clipRect); }
 	override HRESULT abi_ScrollRectWithClip(Windows.Graphics.PointInt32 offset, Windows.Graphics.RectInt32 clipRect, Windows.Graphics.RectInt32 scrollRect) { return (cast(Windows.UI.Composition.ICompositionDrawingSurface2)m_inner.asInterface(uuid("fad0e88b-e354-44e8-8e3d-c4880d5a213f"))).abi_ScrollRectWithClip(offset, clipRect, scrollRect); }
+
+	override HRESULT get_Compositor(Windows.UI.Composition.Compositor* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Compositor(return_value); }
+	override HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Dispatcher(return_value); }
+	override HRESULT get_Properties(Windows.UI.Composition.CompositionPropertySet* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Properties(return_value); }
+	override HRESULT abi_StartAnimation(HSTRING propertyName, Windows.UI.Composition.CompositionAnimation animation) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StartAnimation(propertyName, animation); }
+	override HRESULT abi_StopAnimation(HSTRING propertyName) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StopAnimation(propertyName); }
+
+	override HRESULT abi_Close() { return (cast(Windows.Foundation.IClosable)m_inner.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close(); }
+
+	override HRESULT get_Comment(HSTRING* return_value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).get_Comment(return_value); }
+	override HRESULT set_Comment(HSTRING value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_Comment(value); }
+	override HRESULT get_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection* return_value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).get_ImplicitAnimations(return_value); }
+	override HRESULT set_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_ImplicitAnimations(value); }
+	override HRESULT abi_StartAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).abi_StartAnimationGroup(value); }
+	override HRESULT abi_StopAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).abi_StopAnimationGroup(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -1369,6 +1425,20 @@ class CompositionEasingFunctionT(Base) : AgileObject!Base, CompositionEasingFunc
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
+	override HRESULT get_Compositor(Windows.UI.Composition.Compositor* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Compositor(return_value); }
+	override HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Dispatcher(return_value); }
+	override HRESULT get_Properties(Windows.UI.Composition.CompositionPropertySet* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Properties(return_value); }
+	override HRESULT abi_StartAnimation(HSTRING propertyName, Windows.UI.Composition.CompositionAnimation animation) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StartAnimation(propertyName, animation); }
+	override HRESULT abi_StopAnimation(HSTRING propertyName) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StopAnimation(propertyName); }
+
+	override HRESULT abi_Close() { return (cast(Windows.Foundation.IClosable)m_inner.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close(); }
+
+	override HRESULT get_Comment(HSTRING* return_value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).get_Comment(return_value); }
+	override HRESULT set_Comment(HSTRING value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_Comment(value); }
+	override HRESULT get_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection* return_value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).get_ImplicitAnimations(return_value); }
+	override HRESULT set_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_ImplicitAnimations(value); }
+	override HRESULT abi_StartAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).abi_StartAnimationGroup(value); }
+	override HRESULT abi_StopAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).abi_StopAnimationGroup(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -1484,6 +1554,21 @@ class CompositionLightT(Base) : AgileObject!Base, CompositionLight
 		return ret;
 	}
 	override HRESULT get_Targets(Windows.UI.Composition.VisualUnorderedCollection* return_value) { return (cast(Windows.UI.Composition.ICompositionLight)m_inner.asInterface(uuid("41a6d7c2-2e5d-4bc1-b09e-8f0a03e3d8d3"))).get_Targets(return_value); }
+
+	override HRESULT get_Compositor(Windows.UI.Composition.Compositor* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Compositor(return_value); }
+	override HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Dispatcher(return_value); }
+	override HRESULT get_Properties(Windows.UI.Composition.CompositionPropertySet* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Properties(return_value); }
+	override HRESULT abi_StartAnimation(HSTRING propertyName, Windows.UI.Composition.CompositionAnimation animation) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StartAnimation(propertyName, animation); }
+	override HRESULT abi_StopAnimation(HSTRING propertyName) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StopAnimation(propertyName); }
+
+	override HRESULT abi_Close() { return (cast(Windows.Foundation.IClosable)m_inner.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close(); }
+
+	override HRESULT get_Comment(HSTRING* return_value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).get_Comment(return_value); }
+	override HRESULT set_Comment(HSTRING value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_Comment(value); }
+	override HRESULT get_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection* return_value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).get_ImplicitAnimations(return_value); }
+	override HRESULT set_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_ImplicitAnimations(value); }
+	override HRESULT abi_StartAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).abi_StartAnimationGroup(value); }
+	override HRESULT abi_StopAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).abi_StopAnimationGroup(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -1873,6 +1958,20 @@ class CompositionShadowT(Base) : AgileObject!Base, CompositionShadow
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
+	override HRESULT get_Compositor(Windows.UI.Composition.Compositor* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Compositor(return_value); }
+	override HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Dispatcher(return_value); }
+	override HRESULT get_Properties(Windows.UI.Composition.CompositionPropertySet* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Properties(return_value); }
+	override HRESULT abi_StartAnimation(HSTRING propertyName, Windows.UI.Composition.CompositionAnimation animation) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StartAnimation(propertyName, animation); }
+	override HRESULT abi_StopAnimation(HSTRING propertyName) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StopAnimation(propertyName); }
+
+	override HRESULT abi_Close() { return (cast(Windows.Foundation.IClosable)m_inner.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close(); }
+
+	override HRESULT get_Comment(HSTRING* return_value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).get_Comment(return_value); }
+	override HRESULT set_Comment(HSTRING value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_Comment(value); }
+	override HRESULT get_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection* return_value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).get_ImplicitAnimations(return_value); }
+	override HRESULT set_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_ImplicitAnimations(value); }
+	override HRESULT abi_StartAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).abi_StartAnimationGroup(value); }
+	override HRESULT abi_StopAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).abi_StopAnimationGroup(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2037,6 +2136,32 @@ class CompositionVirtualDrawingSurfaceT(Base) : AgileObject!Base, CompositionVir
 		return ret;
 	}
 	override HRESULT abi_Trim(UINT32 __rectsSize, Windows.Graphics.RectInt32* rects) { return (cast(Windows.UI.Composition.ICompositionVirtualDrawingSurface)m_inner.asInterface(uuid("a9c384db-8740-4f94-8b9d-b68521e7863d"))).abi_Trim(__rectsSize, rects); }
+
+	override HRESULT get_AlphaMode(Windows.Graphics.DirectX.DirectXAlphaMode* return_value) { return (cast(Windows.UI.Composition.ICompositionDrawingSurface)m_inner.asInterface(uuid("a166c300-fad0-4d11-9e67-e433162ff49e"))).get_AlphaMode(return_value); }
+	override HRESULT get_PixelFormat(Windows.Graphics.DirectX.DirectXPixelFormat* return_value) { return (cast(Windows.UI.Composition.ICompositionDrawingSurface)m_inner.asInterface(uuid("a166c300-fad0-4d11-9e67-e433162ff49e"))).get_PixelFormat(return_value); }
+	override HRESULT get_Size(Windows.Foundation.Size* return_value) { return (cast(Windows.UI.Composition.ICompositionDrawingSurface)m_inner.asInterface(uuid("a166c300-fad0-4d11-9e67-e433162ff49e"))).get_Size(return_value); }
+
+	override HRESULT get_SizeInt32(Windows.Graphics.SizeInt32* return_value) { return (cast(Windows.UI.Composition.ICompositionDrawingSurface2)m_inner.asInterface(uuid("fad0e88b-e354-44e8-8e3d-c4880d5a213f"))).get_SizeInt32(return_value); }
+	override HRESULT abi_Resize(Windows.Graphics.SizeInt32 sizePixels) { return (cast(Windows.UI.Composition.ICompositionDrawingSurface2)m_inner.asInterface(uuid("fad0e88b-e354-44e8-8e3d-c4880d5a213f"))).abi_Resize(sizePixels); }
+	override HRESULT abi_Scroll(Windows.Graphics.PointInt32 offset) { return (cast(Windows.UI.Composition.ICompositionDrawingSurface2)m_inner.asInterface(uuid("fad0e88b-e354-44e8-8e3d-c4880d5a213f"))).abi_Scroll(offset); }
+	override HRESULT abi_ScrollRect(Windows.Graphics.PointInt32 offset, Windows.Graphics.RectInt32 scrollRect) { return (cast(Windows.UI.Composition.ICompositionDrawingSurface2)m_inner.asInterface(uuid("fad0e88b-e354-44e8-8e3d-c4880d5a213f"))).abi_ScrollRect(offset, scrollRect); }
+	override HRESULT abi_ScrollWithClip(Windows.Graphics.PointInt32 offset, Windows.Graphics.RectInt32 clipRect) { return (cast(Windows.UI.Composition.ICompositionDrawingSurface2)m_inner.asInterface(uuid("fad0e88b-e354-44e8-8e3d-c4880d5a213f"))).abi_ScrollWithClip(offset, clipRect); }
+	override HRESULT abi_ScrollRectWithClip(Windows.Graphics.PointInt32 offset, Windows.Graphics.RectInt32 clipRect, Windows.Graphics.RectInt32 scrollRect) { return (cast(Windows.UI.Composition.ICompositionDrawingSurface2)m_inner.asInterface(uuid("fad0e88b-e354-44e8-8e3d-c4880d5a213f"))).abi_ScrollRectWithClip(offset, clipRect, scrollRect); }
+
+	override HRESULT get_Compositor(Windows.UI.Composition.Compositor* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Compositor(return_value); }
+	override HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Dispatcher(return_value); }
+	override HRESULT get_Properties(Windows.UI.Composition.CompositionPropertySet* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Properties(return_value); }
+	override HRESULT abi_StartAnimation(HSTRING propertyName, Windows.UI.Composition.CompositionAnimation animation) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StartAnimation(propertyName, animation); }
+	override HRESULT abi_StopAnimation(HSTRING propertyName) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StopAnimation(propertyName); }
+
+	override HRESULT abi_Close() { return (cast(Windows.Foundation.IClosable)m_inner.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close(); }
+
+	override HRESULT get_Comment(HSTRING* return_value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).get_Comment(return_value); }
+	override HRESULT set_Comment(HSTRING value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_Comment(value); }
+	override HRESULT get_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection* return_value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).get_ImplicitAnimations(return_value); }
+	override HRESULT set_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_ImplicitAnimations(value); }
+	override HRESULT abi_StartAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).abi_StartAnimationGroup(value); }
+	override HRESULT abi_StopAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).abi_StopAnimationGroup(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2306,6 +2431,62 @@ class ContainerVisualT(Base) : AgileObject!Base, ContainerVisual
 		return ret;
 	}
 	override HRESULT get_Children(Windows.UI.Composition.VisualCollection* return_value) { return (cast(Windows.UI.Composition.IContainerVisual)m_inner.asInterface(uuid("02f6bc74-ed20-4773-afe6-d49b4a93db32"))).get_Children(return_value); }
+
+	override HRESULT get_AnchorPoint(Windows.Foundation.Numerics.Vector2* return_value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).get_AnchorPoint(return_value); }
+	override HRESULT set_AnchorPoint(Windows.Foundation.Numerics.Vector2 value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).set_AnchorPoint(value); }
+	override HRESULT get_BackfaceVisibility(Windows.UI.Composition.CompositionBackfaceVisibility* return_value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).get_BackfaceVisibility(return_value); }
+	override HRESULT set_BackfaceVisibility(Windows.UI.Composition.CompositionBackfaceVisibility value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).set_BackfaceVisibility(value); }
+	override HRESULT get_BorderMode(Windows.UI.Composition.CompositionBorderMode* return_value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).get_BorderMode(return_value); }
+	override HRESULT set_BorderMode(Windows.UI.Composition.CompositionBorderMode value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).set_BorderMode(value); }
+	override HRESULT get_CenterPoint(Windows.Foundation.Numerics.Vector3* return_value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).get_CenterPoint(return_value); }
+	override HRESULT set_CenterPoint(Windows.Foundation.Numerics.Vector3 value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).set_CenterPoint(value); }
+	override HRESULT get_Clip(Windows.UI.Composition.CompositionClip* return_value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).get_Clip(return_value); }
+	override HRESULT set_Clip(Windows.UI.Composition.CompositionClip value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).set_Clip(value); }
+	override HRESULT get_CompositeMode(Windows.UI.Composition.CompositionCompositeMode* return_value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).get_CompositeMode(return_value); }
+	override HRESULT set_CompositeMode(Windows.UI.Composition.CompositionCompositeMode value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).set_CompositeMode(value); }
+	override HRESULT get_IsVisible(bool* return_value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).get_IsVisible(return_value); }
+	override HRESULT set_IsVisible(bool value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).set_IsVisible(value); }
+	override HRESULT get_Offset(Windows.Foundation.Numerics.Vector3* return_value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).get_Offset(return_value); }
+	override HRESULT set_Offset(Windows.Foundation.Numerics.Vector3 value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).set_Offset(value); }
+	override HRESULT get_Opacity(float* return_value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).get_Opacity(return_value); }
+	override HRESULT set_Opacity(float value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).set_Opacity(value); }
+	override HRESULT get_Orientation(Windows.Foundation.Numerics.Quaternion* return_value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).get_Orientation(return_value); }
+	override HRESULT set_Orientation(Windows.Foundation.Numerics.Quaternion value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).set_Orientation(value); }
+	override HRESULT get_Parent(Windows.UI.Composition.ContainerVisual* return_value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).get_Parent(return_value); }
+	override HRESULT get_RotationAngle(float* return_value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).get_RotationAngle(return_value); }
+	override HRESULT set_RotationAngle(float value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).set_RotationAngle(value); }
+	override HRESULT get_RotationAngleInDegrees(float* return_value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).get_RotationAngleInDegrees(return_value); }
+	override HRESULT set_RotationAngleInDegrees(float value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).set_RotationAngleInDegrees(value); }
+	override HRESULT get_RotationAxis(Windows.Foundation.Numerics.Vector3* return_value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).get_RotationAxis(return_value); }
+	override HRESULT set_RotationAxis(Windows.Foundation.Numerics.Vector3 value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).set_RotationAxis(value); }
+	override HRESULT get_Scale(Windows.Foundation.Numerics.Vector3* return_value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).get_Scale(return_value); }
+	override HRESULT set_Scale(Windows.Foundation.Numerics.Vector3 value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).set_Scale(value); }
+	override HRESULT get_Size(Windows.Foundation.Numerics.Vector2* return_value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).get_Size(return_value); }
+	override HRESULT set_Size(Windows.Foundation.Numerics.Vector2 value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).set_Size(value); }
+	override HRESULT get_TransformMatrix(Windows.Foundation.Numerics.Matrix4x4* return_value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).get_TransformMatrix(return_value); }
+	override HRESULT set_TransformMatrix(Windows.Foundation.Numerics.Matrix4x4 value) { return (cast(Windows.UI.Composition.IVisual)m_inner.asInterface(uuid("117e202d-a859-4c89-873b-c2aa566788e3"))).set_TransformMatrix(value); }
+
+	override HRESULT get_ParentForTransform(Windows.UI.Composition.Visual* return_value) { return (cast(Windows.UI.Composition.IVisual2)m_inner.asInterface(uuid("3052b611-56c3-4c3e-8bf3-f6e1ad473f06"))).get_ParentForTransform(return_value); }
+	override HRESULT set_ParentForTransform(Windows.UI.Composition.Visual value) { return (cast(Windows.UI.Composition.IVisual2)m_inner.asInterface(uuid("3052b611-56c3-4c3e-8bf3-f6e1ad473f06"))).set_ParentForTransform(value); }
+	override HRESULT get_RelativeOffsetAdjustment(Windows.Foundation.Numerics.Vector3* return_value) { return (cast(Windows.UI.Composition.IVisual2)m_inner.asInterface(uuid("3052b611-56c3-4c3e-8bf3-f6e1ad473f06"))).get_RelativeOffsetAdjustment(return_value); }
+	override HRESULT set_RelativeOffsetAdjustment(Windows.Foundation.Numerics.Vector3 value) { return (cast(Windows.UI.Composition.IVisual2)m_inner.asInterface(uuid("3052b611-56c3-4c3e-8bf3-f6e1ad473f06"))).set_RelativeOffsetAdjustment(value); }
+	override HRESULT get_RelativeSizeAdjustment(Windows.Foundation.Numerics.Vector2* return_value) { return (cast(Windows.UI.Composition.IVisual2)m_inner.asInterface(uuid("3052b611-56c3-4c3e-8bf3-f6e1ad473f06"))).get_RelativeSizeAdjustment(return_value); }
+	override HRESULT set_RelativeSizeAdjustment(Windows.Foundation.Numerics.Vector2 value) { return (cast(Windows.UI.Composition.IVisual2)m_inner.asInterface(uuid("3052b611-56c3-4c3e-8bf3-f6e1ad473f06"))).set_RelativeSizeAdjustment(value); }
+
+	override HRESULT get_Compositor(Windows.UI.Composition.Compositor* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Compositor(return_value); }
+	override HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Dispatcher(return_value); }
+	override HRESULT get_Properties(Windows.UI.Composition.CompositionPropertySet* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Properties(return_value); }
+	override HRESULT abi_StartAnimation(HSTRING propertyName, Windows.UI.Composition.CompositionAnimation animation) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StartAnimation(propertyName, animation); }
+	override HRESULT abi_StopAnimation(HSTRING propertyName) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StopAnimation(propertyName); }
+
+	override HRESULT abi_Close() { return (cast(Windows.Foundation.IClosable)m_inner.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close(); }
+
+	override HRESULT get_Comment(HSTRING* return_value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).get_Comment(return_value); }
+	override HRESULT set_Comment(HSTRING value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_Comment(value); }
+	override HRESULT get_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection* return_value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).get_ImplicitAnimations(return_value); }
+	override HRESULT set_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_ImplicitAnimations(value); }
+	override HRESULT abi_StartAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).abi_StartAnimationGroup(value); }
+	override HRESULT abi_StopAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).abi_StopAnimationGroup(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2642,6 +2823,37 @@ class KeyFrameAnimationT(Base) : AgileObject!Base, KeyFrameAnimation
 
 	override HRESULT get_DelayBehavior(Windows.UI.Composition.AnimationDelayBehavior* return_value) { return (cast(Windows.UI.Composition.IKeyFrameAnimation3)m_inner.asInterface(uuid("845bf0b4-d8de-462f-8753-c80d43c6ff5a"))).get_DelayBehavior(return_value); }
 	override HRESULT set_DelayBehavior(Windows.UI.Composition.AnimationDelayBehavior value) { return (cast(Windows.UI.Composition.IKeyFrameAnimation3)m_inner.asInterface(uuid("845bf0b4-d8de-462f-8753-c80d43c6ff5a"))).set_DelayBehavior(value); }
+
+	override HRESULT abi_ClearAllParameters() { return (cast(Windows.UI.Composition.ICompositionAnimation)m_inner.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_ClearAllParameters(); }
+	override HRESULT abi_ClearParameter(HSTRING key) { return (cast(Windows.UI.Composition.ICompositionAnimation)m_inner.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_ClearParameter(key); }
+	override HRESULT abi_SetColorParameter(HSTRING key, Windows.UI.Color value) { return (cast(Windows.UI.Composition.ICompositionAnimation)m_inner.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetColorParameter(key, value); }
+	override HRESULT abi_SetMatrix3x2Parameter(HSTRING key, Windows.Foundation.Numerics.Matrix3x2 value) { return (cast(Windows.UI.Composition.ICompositionAnimation)m_inner.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetMatrix3x2Parameter(key, value); }
+	override HRESULT abi_SetMatrix4x4Parameter(HSTRING key, Windows.Foundation.Numerics.Matrix4x4 value) { return (cast(Windows.UI.Composition.ICompositionAnimation)m_inner.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetMatrix4x4Parameter(key, value); }
+	override HRESULT abi_SetQuaternionParameter(HSTRING key, Windows.Foundation.Numerics.Quaternion value) { return (cast(Windows.UI.Composition.ICompositionAnimation)m_inner.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetQuaternionParameter(key, value); }
+	override HRESULT abi_SetReferenceParameter(HSTRING key, Windows.UI.Composition.CompositionObject compositionObject) { return (cast(Windows.UI.Composition.ICompositionAnimation)m_inner.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetReferenceParameter(key, compositionObject); }
+	override HRESULT abi_SetScalarParameter(HSTRING key, float value) { return (cast(Windows.UI.Composition.ICompositionAnimation)m_inner.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetScalarParameter(key, value); }
+	override HRESULT abi_SetVector2Parameter(HSTRING key, Windows.Foundation.Numerics.Vector2 value) { return (cast(Windows.UI.Composition.ICompositionAnimation)m_inner.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetVector2Parameter(key, value); }
+	override HRESULT abi_SetVector3Parameter(HSTRING key, Windows.Foundation.Numerics.Vector3 value) { return (cast(Windows.UI.Composition.ICompositionAnimation)m_inner.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetVector3Parameter(key, value); }
+	override HRESULT abi_SetVector4Parameter(HSTRING key, Windows.Foundation.Numerics.Vector4 value) { return (cast(Windows.UI.Composition.ICompositionAnimation)m_inner.asInterface(uuid("464c4c2c-1caa-4061-9b40-e13fde1503ca"))).abi_SetVector4Parameter(key, value); }
+
+	override HRESULT abi_SetBooleanParameter(HSTRING key, bool value) { return (cast(Windows.UI.Composition.ICompositionAnimation2)m_inner.asInterface(uuid("369b603e-a80f-4948-93e3-ed23fb38c6cb"))).abi_SetBooleanParameter(key, value); }
+	override HRESULT get_Target(HSTRING* return_value) { return (cast(Windows.UI.Composition.ICompositionAnimation2)m_inner.asInterface(uuid("369b603e-a80f-4948-93e3-ed23fb38c6cb"))).get_Target(return_value); }
+	override HRESULT set_Target(HSTRING value) { return (cast(Windows.UI.Composition.ICompositionAnimation2)m_inner.asInterface(uuid("369b603e-a80f-4948-93e3-ed23fb38c6cb"))).set_Target(value); }
+
+	override HRESULT get_Compositor(Windows.UI.Composition.Compositor* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Compositor(return_value); }
+	override HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Dispatcher(return_value); }
+	override HRESULT get_Properties(Windows.UI.Composition.CompositionPropertySet* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Properties(return_value); }
+	override HRESULT abi_StartAnimation(HSTRING propertyName, Windows.UI.Composition.CompositionAnimation animation) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StartAnimation(propertyName, animation); }
+	override HRESULT abi_StopAnimation(HSTRING propertyName) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StopAnimation(propertyName); }
+
+	override HRESULT abi_Close() { return (cast(Windows.Foundation.IClosable)m_inner.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close(); }
+
+	override HRESULT get_Comment(HSTRING* return_value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).get_Comment(return_value); }
+	override HRESULT set_Comment(HSTRING value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_Comment(value); }
+	override HRESULT get_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection* return_value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).get_ImplicitAnimations(return_value); }
+	override HRESULT set_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_ImplicitAnimations(value); }
+	override HRESULT abi_StartAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).abi_StartAnimationGroup(value); }
+	override HRESULT abi_StopAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).abi_StopAnimationGroup(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -3262,6 +3474,21 @@ class VisualT(Base) : AgileObject!Base, Visual
 	override HRESULT set_RelativeOffsetAdjustment(Windows.Foundation.Numerics.Vector3 value) { return (cast(Windows.UI.Composition.IVisual2)m_inner.asInterface(uuid("3052b611-56c3-4c3e-8bf3-f6e1ad473f06"))).set_RelativeOffsetAdjustment(value); }
 	override HRESULT get_RelativeSizeAdjustment(Windows.Foundation.Numerics.Vector2* return_value) { return (cast(Windows.UI.Composition.IVisual2)m_inner.asInterface(uuid("3052b611-56c3-4c3e-8bf3-f6e1ad473f06"))).get_RelativeSizeAdjustment(return_value); }
 	override HRESULT set_RelativeSizeAdjustment(Windows.Foundation.Numerics.Vector2 value) { return (cast(Windows.UI.Composition.IVisual2)m_inner.asInterface(uuid("3052b611-56c3-4c3e-8bf3-f6e1ad473f06"))).set_RelativeSizeAdjustment(value); }
+
+	override HRESULT get_Compositor(Windows.UI.Composition.Compositor* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Compositor(return_value); }
+	override HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Dispatcher(return_value); }
+	override HRESULT get_Properties(Windows.UI.Composition.CompositionPropertySet* return_value) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).get_Properties(return_value); }
+	override HRESULT abi_StartAnimation(HSTRING propertyName, Windows.UI.Composition.CompositionAnimation animation) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StartAnimation(propertyName, animation); }
+	override HRESULT abi_StopAnimation(HSTRING propertyName) { return (cast(Windows.UI.Composition.ICompositionObject)m_inner.asInterface(uuid("bcb4ad45-7609-4550-934f-16002a68fded"))).abi_StopAnimation(propertyName); }
+
+	override HRESULT abi_Close() { return (cast(Windows.Foundation.IClosable)m_inner.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close(); }
+
+	override HRESULT get_Comment(HSTRING* return_value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).get_Comment(return_value); }
+	override HRESULT set_Comment(HSTRING value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_Comment(value); }
+	override HRESULT get_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection* return_value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).get_ImplicitAnimations(return_value); }
+	override HRESULT set_ImplicitAnimations(Windows.UI.Composition.ImplicitAnimationCollection value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).set_ImplicitAnimations(value); }
+	override HRESULT abi_StartAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).abi_StartAnimationGroup(value); }
+	override HRESULT abi_StopAnimationGroup(Windows.UI.Composition.ICompositionAnimationBase value) { return (cast(Windows.UI.Composition.ICompositionObject2)m_inner.asInterface(uuid("ef874ea1-5cff-4b68-9e30-a1519d08ba03"))).abi_StopAnimationGroup(value); }
 
 	this() {}
 	IInspectable m_inner;

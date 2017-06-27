@@ -1615,13 +1615,39 @@ struct Interface
 			ret ~= "\t\t\treturn m_inner.QueryInterface(riid, ppv);\n";
 			ret ~= "\t\treturn ret;\n";
 			ret ~= "\t}\n";
-			foreach (implement; implements)
+			void makeT(in Implement[] implements, in string[] inherits)
 			{
-				auto obj = findInterface(implement.type);
-				foreach (method; obj.methods)
-					ret ~= method.toComposeString(implement.type, implement.overridable).indent ~ "\n";
-				ret ~= "\n";
+				foreach (implement; implements)
+				{
+					auto obj = findInterface(implement.type);
+					bool found = false;
+					foreach (method; obj.methods)
+						if (!method.implementation.length)
+						{
+							ret ~= method.toComposeString(implement.type, implement.overridable).indent ~ "\n";
+							found = true;
+						}
+					if (found)
+						ret ~= "\n";
+					makeT(obj.implements, obj.inherits);
+				}
+				foreach (inherit; inherits)
+				{
+					auto obj = findInterface(inherit);
+					bool found = false;
+					foreach (method; obj.methods)
+						if (!method.implementation.length)
+						{
+							ret ~= method.toComposeString(inherit, false).indent ~ "\n";
+							found = true;
+						}
+					if (found)
+						ret ~= "\n";
+					makeT(obj.implements, obj.inherits);
+				}
 			}
+
+			makeT(implements, inherits);
 			ret ~= "\tthis() {}\n";
 			ret ~= "\tIInspectable m_inner;\n";
 			ret ~= "}";

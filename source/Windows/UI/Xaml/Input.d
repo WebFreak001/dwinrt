@@ -1344,6 +1344,8 @@ class ManipulationStartedRoutedEventArgsT(Base) : AgileObject!Base, Manipulation
 	override HRESULT get_Cumulative(Windows.UI.Input.ManipulationDelta* return_value) { return (cast(Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgs)m_inner.asInterface(uuid("5db1aa05-9f80-48b6-ae6c-4f119de8ff13"))).get_Cumulative(return_value); }
 	override HRESULT abi_Complete() { return (cast(Windows.UI.Xaml.Input.IManipulationStartedRoutedEventArgs)m_inner.asInterface(uuid("5db1aa05-9f80-48b6-ae6c-4f119de8ff13"))).abi_Complete(); }
 
+	override HRESULT get_OriginalSource(IInspectable* return_value) { return (cast(Windows.UI.Xaml.IRoutedEventArgs)m_inner.asInterface(uuid("5c985ac6-d802-4b38-a223-bf070c43fedf"))).get_OriginalSource(return_value); }
+
 	this() {}
 	IInspectable m_inner;
 }
