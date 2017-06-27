@@ -770,106 +770,106 @@ extern(Windows):
 	final HSTRING FileName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailAttachment).get_FileName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailAttachment)this.asInterface(uuid("f353caf9-57c8-4adb-b992-60fceb584f54"))).get_FileName(&_ret));
 		return _ret;
 	}
 	final void FileName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailAttachment).set_FileName(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailAttachment)this.asInterface(uuid("f353caf9-57c8-4adb-b992-60fceb584f54"))).set_FileName(value));
 	}
 	final Windows.Storage.Streams.IRandomAccessStreamReference Data()
 	{
 		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailAttachment).get_Data(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailAttachment)this.asInterface(uuid("f353caf9-57c8-4adb-b992-60fceb584f54"))).get_Data(&_ret));
 		return _ret;
 	}
 	final void Data(Windows.Storage.Streams.IRandomAccessStreamReference value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailAttachment).set_Data(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailAttachment)this.asInterface(uuid("f353caf9-57c8-4adb-b992-60fceb584f54"))).set_Data(value));
 	}
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailAttachment2).get_Id(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailAttachment2)this.asInterface(uuid("225f1070-b0ff-4571-9d54-a706c48d55c6"))).get_Id(&_ret));
 		return _ret;
 	}
 	final HSTRING ContentId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailAttachment2).get_ContentId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailAttachment2)this.asInterface(uuid("225f1070-b0ff-4571-9d54-a706c48d55c6"))).get_ContentId(&_ret));
 		return _ret;
 	}
 	final void ContentId(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailAttachment2).set_ContentId(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailAttachment2)this.asInterface(uuid("225f1070-b0ff-4571-9d54-a706c48d55c6"))).set_ContentId(value));
 	}
 	final HSTRING ContentLocation()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailAttachment2).get_ContentLocation(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailAttachment2)this.asInterface(uuid("225f1070-b0ff-4571-9d54-a706c48d55c6"))).get_ContentLocation(&_ret));
 		return _ret;
 	}
 	final void ContentLocation(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailAttachment2).set_ContentLocation(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailAttachment2)this.asInterface(uuid("225f1070-b0ff-4571-9d54-a706c48d55c6"))).set_ContentLocation(value));
 	}
 	final Windows.ApplicationModel.Email.EmailAttachmentDownloadState DownloadState()
 	{
 		Windows.ApplicationModel.Email.EmailAttachmentDownloadState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailAttachment2).get_DownloadState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailAttachment2)this.asInterface(uuid("225f1070-b0ff-4571-9d54-a706c48d55c6"))).get_DownloadState(&_ret));
 		return _ret;
 	}
 	final void DownloadState(Windows.ApplicationModel.Email.EmailAttachmentDownloadState value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailAttachment2).set_DownloadState(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailAttachment2)this.asInterface(uuid("225f1070-b0ff-4571-9d54-a706c48d55c6"))).set_DownloadState(value));
 	}
 	final ulong EstimatedDownloadSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailAttachment2).get_EstimatedDownloadSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailAttachment2)this.asInterface(uuid("225f1070-b0ff-4571-9d54-a706c48d55c6"))).get_EstimatedDownloadSizeInBytes(&_ret));
 		return _ret;
 	}
 	final void EstimatedDownloadSizeInBytes(ulong value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailAttachment2).set_EstimatedDownloadSizeInBytes(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailAttachment2)this.asInterface(uuid("225f1070-b0ff-4571-9d54-a706c48d55c6"))).set_EstimatedDownloadSizeInBytes(value));
 	}
 	final bool IsFromBaseMessage()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailAttachment2).get_IsFromBaseMessage(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailAttachment2)this.asInterface(uuid("225f1070-b0ff-4571-9d54-a706c48d55c6"))).get_IsFromBaseMessage(&_ret));
 		return _ret;
 	}
 	final bool IsInline()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailAttachment2).get_IsInline(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailAttachment2)this.asInterface(uuid("225f1070-b0ff-4571-9d54-a706c48d55c6"))).get_IsInline(&_ret));
 		return _ret;
 	}
 	final void IsInline(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailAttachment2).set_IsInline(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailAttachment2)this.asInterface(uuid("225f1070-b0ff-4571-9d54-a706c48d55c6"))).set_IsInline(value));
 	}
 	final HSTRING MimeType()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailAttachment2).get_MimeType(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailAttachment2)this.asInterface(uuid("225f1070-b0ff-4571-9d54-a706c48d55c6"))).get_MimeType(&_ret));
 		return _ret;
 	}
 	final void MimeType(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailAttachment2).set_MimeType(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailAttachment2)this.asInterface(uuid("225f1070-b0ff-4571-9d54-a706c48d55c6"))).set_MimeType(value));
 	}
 	static EmailAttachment New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(EmailAttachment).abi_ActivateInstance(&ret));
-		return ret.as!(EmailAttachment);
+		return cast(EmailAttachment) ret;
 	}
 	static Windows.ApplicationModel.Email.EmailAttachment New(HSTRING fileName, Windows.Storage.Streams.IRandomAccessStreamReference data)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Email.IEmailAttachmentFactory);
 		Windows.ApplicationModel.Email.EmailAttachment _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Email.IEmailAttachmentFactory).abi_Create(fileName, data, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailAttachmentFactory)factory.asInterface(uuid("796eac46-ed56-4979-8708-abb8bc854b7d"))).abi_Create(fileName, data, &_ret));
 		return _ret;
 	}
 }
@@ -880,91 +880,91 @@ extern(Windows):
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailConversation).get_Id(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailConversation)this.asInterface(uuid("da18c248-a0bc-4349-902d-90f66389f51b"))).get_Id(&_ret));
 		return _ret;
 	}
 	final HSTRING MailboxId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailConversation).get_MailboxId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailConversation)this.asInterface(uuid("da18c248-a0bc-4349-902d-90f66389f51b"))).get_MailboxId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailFlagState FlagState()
 	{
 		Windows.ApplicationModel.Email.EmailFlagState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailConversation).get_FlagState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailConversation)this.asInterface(uuid("da18c248-a0bc-4349-902d-90f66389f51b"))).get_FlagState(&_ret));
 		return _ret;
 	}
 	final bool HasAttachment()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailConversation).get_HasAttachment(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailConversation)this.asInterface(uuid("da18c248-a0bc-4349-902d-90f66389f51b"))).get_HasAttachment(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailImportance Importance()
 	{
 		Windows.ApplicationModel.Email.EmailImportance _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailConversation).get_Importance(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailConversation)this.asInterface(uuid("da18c248-a0bc-4349-902d-90f66389f51b"))).get_Importance(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailMessageResponseKind LastEmailResponseKind()
 	{
 		Windows.ApplicationModel.Email.EmailMessageResponseKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailConversation).get_LastEmailResponseKind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailConversation)this.asInterface(uuid("da18c248-a0bc-4349-902d-90f66389f51b"))).get_LastEmailResponseKind(&_ret));
 		return _ret;
 	}
 	final UINT32 MessageCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailConversation).get_MessageCount(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailConversation)this.asInterface(uuid("da18c248-a0bc-4349-902d-90f66389f51b"))).get_MessageCount(&_ret));
 		return _ret;
 	}
 	final HSTRING MostRecentMessageId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailConversation).get_MostRecentMessageId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailConversation)this.asInterface(uuid("da18c248-a0bc-4349-902d-90f66389f51b"))).get_MostRecentMessageId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime MostRecentMessageTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailConversation).get_MostRecentMessageTime(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailConversation)this.asInterface(uuid("da18c248-a0bc-4349-902d-90f66389f51b"))).get_MostRecentMessageTime(&_ret));
 		return _ret;
 	}
 	final HSTRING Preview()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailConversation).get_Preview(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailConversation)this.asInterface(uuid("da18c248-a0bc-4349-902d-90f66389f51b"))).get_Preview(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailRecipient LatestSender()
 	{
 		Windows.ApplicationModel.Email.EmailRecipient _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailConversation).get_LatestSender(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailConversation)this.asInterface(uuid("da18c248-a0bc-4349-902d-90f66389f51b"))).get_LatestSender(&_ret));
 		return _ret;
 	}
 	final HSTRING Subject()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailConversation).get_Subject(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailConversation)this.asInterface(uuid("da18c248-a0bc-4349-902d-90f66389f51b"))).get_Subject(&_ret));
 		return _ret;
 	}
 	final UINT32 UnreadMessageCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailConversation).get_UnreadMessageCount(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailConversation)this.asInterface(uuid("da18c248-a0bc-4349-902d-90f66389f51b"))).get_UnreadMessageCount(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailMessage)) FindMessagesAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailMessage)) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailConversation).abi_FindMessagesAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailConversation)this.asInterface(uuid("da18c248-a0bc-4349-902d-90f66389f51b"))).abi_FindMessagesAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailMessage)) FindMessagesWithCountAsync(UINT32 count)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailMessage)) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailConversation).abi_FindMessagesWithCountAsync(count, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailConversation)this.asInterface(uuid("da18c248-a0bc-4349-902d-90f66389f51b"))).abi_FindMessagesWithCountAsync(count, &_ret));
 		return _ret;
 	}
 }
@@ -975,13 +975,13 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailConversation) Conversations()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailConversation) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailConversationBatch).get_Conversations(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailConversationBatch)this.asInterface(uuid("b8c1ab81-01c5-432a-9df1-fe85d98a279a"))).get_Conversations(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailBatchStatus Status()
 	{
 		Windows.ApplicationModel.Email.EmailBatchStatus _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailConversationBatch).get_Status(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailConversationBatch)this.asInterface(uuid("b8c1ab81-01c5-432a-9df1-fe85d98a279a"))).get_Status(&_ret));
 		return _ret;
 	}
 }
@@ -992,7 +992,7 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailConversationBatch) ReadBatchAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailConversationBatch) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailConversationReader).abi_ReadBatchAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailConversationReader)this.asInterface(uuid("b4630f82-2875-44c8-9b8c-85beb3a3c653"))).abi_ReadBatchAsync(&_ret));
 		return _ret;
 	}
 }
@@ -1003,143 +1003,143 @@ extern(Windows):
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).get_Id(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).get_Id(&_ret));
 		return _ret;
 	}
 	final HSTRING RemoteId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).get_RemoteId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).get_RemoteId(&_ret));
 		return _ret;
 	}
 	final void RemoteId(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).set_RemoteId(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).set_RemoteId(value));
 	}
 	final HSTRING MailboxId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).get_MailboxId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).get_MailboxId(&_ret));
 		return _ret;
 	}
 	final HSTRING ParentFolderId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).get_ParentFolderId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).get_ParentFolderId(&_ret));
 		return _ret;
 	}
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final void DisplayName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).set_DisplayName(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).set_DisplayName(value));
 	}
 	final bool IsSyncEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).get_IsSyncEnabled(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).get_IsSyncEnabled(&_ret));
 		return _ret;
 	}
 	final void IsSyncEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).set_IsSyncEnabled(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).set_IsSyncEnabled(value));
 	}
 	final Windows.Foundation.DateTime LastSuccessfulSyncTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).get_LastSuccessfulSyncTime(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).get_LastSuccessfulSyncTime(&_ret));
 		return _ret;
 	}
 	final void LastSuccessfulSyncTime(Windows.Foundation.DateTime value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).set_LastSuccessfulSyncTime(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).set_LastSuccessfulSyncTime(value));
 	}
 	final Windows.ApplicationModel.Email.EmailSpecialFolderKind Kind()
 	{
 		Windows.ApplicationModel.Email.EmailSpecialFolderKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailFolder) CreateFolderAsync(HSTRING name)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailFolder) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).abi_CreateFolderAsync(name, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).abi_CreateFolderAsync(name, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction DeleteAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).abi_DeleteAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).abi_DeleteAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailFolder)) FindChildFoldersAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailFolder)) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).abi_FindChildFoldersAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).abi_FindChildFoldersAsync(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailConversationReader GetConversationReader()
 	{
 		Windows.ApplicationModel.Email.EmailConversationReader _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).abi_GetConversationReader(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).abi_GetConversationReader(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailConversationReader GetConversationReaderWithOptions(Windows.ApplicationModel.Email.EmailQueryOptions options)
 	{
 		Windows.ApplicationModel.Email.EmailConversationReader _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).abi_GetConversationReaderWithOptions(options, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).abi_GetConversationReaderWithOptions(options, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMessage) GetMessageAsync(HSTRING id)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMessage) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).abi_GetMessageAsync(id, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).abi_GetMessageAsync(id, &_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailMessageReader GetMessageReader()
 	{
 		Windows.ApplicationModel.Email.EmailMessageReader _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).abi_GetMessageReader(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).abi_GetMessageReader(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailMessageReader GetMessageReaderWithOptions(Windows.ApplicationModel.Email.EmailQueryOptions options)
 	{
 		Windows.ApplicationModel.Email.EmailMessageReader _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).abi_GetMessageReaderWithOptions(options, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).abi_GetMessageReaderWithOptions(options, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailItemCounts) GetMessageCountsAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailItemCounts) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).abi_GetMessageCountsAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).abi_GetMessageCountsAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TryMoveAsync(Windows.ApplicationModel.Email.EmailFolder newParentFolder)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).abi_TryMoveAsync(newParentFolder, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).abi_TryMoveAsync(newParentFolder, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TryMoveWithNewNameAsync(Windows.ApplicationModel.Email.EmailFolder newParentFolder, HSTRING newFolderName)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).abi_TryMoveWithNewNameAsync(newParentFolder, newFolderName, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).abi_TryMoveWithNewNameAsync(newParentFolder, newFolderName, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TrySaveAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).abi_TrySaveAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).abi_TrySaveAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction SaveMessageAsync(Windows.ApplicationModel.Email.EmailMessage message)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailFolder).abi_SaveMessageAsync(message, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).abi_SaveMessageAsync(message, &_ret));
 		return _ret;
 	}
 }
@@ -1150,134 +1150,134 @@ extern(Windows):
 	final bool CanEdit()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).get_CanEdit(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).get_CanEdit(&_ret));
 		return _ret;
 	}
 	final void CanEdit(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).set_CanEdit(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).set_CanEdit(value));
 	}
 	final bool CanExtractData()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).get_CanExtractData(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).get_CanExtractData(&_ret));
 		return _ret;
 	}
 	final void CanExtractData(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).set_CanExtractData(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).set_CanExtractData(value));
 	}
 	final bool CanForward()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).get_CanForward(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).get_CanForward(&_ret));
 		return _ret;
 	}
 	final void CanForward(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).set_CanForward(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).set_CanForward(value));
 	}
 	final bool CanModifyRecipientsOnResponse()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).get_CanModifyRecipientsOnResponse(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).get_CanModifyRecipientsOnResponse(&_ret));
 		return _ret;
 	}
 	final void CanModifyRecipientsOnResponse(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).set_CanModifyRecipientsOnResponse(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).set_CanModifyRecipientsOnResponse(value));
 	}
 	final bool CanPrintData()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).get_CanPrintData(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).get_CanPrintData(&_ret));
 		return _ret;
 	}
 	final void CanPrintData(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).set_CanPrintData(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).set_CanPrintData(value));
 	}
 	final bool CanRemoveIrmOnResponse()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).get_CanRemoveIrmOnResponse(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).get_CanRemoveIrmOnResponse(&_ret));
 		return _ret;
 	}
 	final void CanRemoveIrmOnResponse(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).set_CanRemoveIrmOnResponse(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).set_CanRemoveIrmOnResponse(value));
 	}
 	final bool CanReply()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).get_CanReply(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).get_CanReply(&_ret));
 		return _ret;
 	}
 	final void CanReply(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).set_CanReply(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).set_CanReply(value));
 	}
 	final bool CanReplyAll()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).get_CanReplyAll(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).get_CanReplyAll(&_ret));
 		return _ret;
 	}
 	final void CanReplyAll(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).set_CanReplyAll(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).set_CanReplyAll(value));
 	}
 	final Windows.Foundation.DateTime ExpirationDate()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).get_ExpirationDate(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).get_ExpirationDate(&_ret));
 		return _ret;
 	}
 	final void ExpirationDate(Windows.Foundation.DateTime value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).set_ExpirationDate(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).set_ExpirationDate(value));
 	}
 	final bool IsIrmOriginator()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).get_IsIrmOriginator(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).get_IsIrmOriginator(&_ret));
 		return _ret;
 	}
 	final void IsIrmOriginator(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).set_IsIrmOriginator(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).set_IsIrmOriginator(value));
 	}
 	final bool IsProgramaticAccessAllowed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).get_IsProgramaticAccessAllowed(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).get_IsProgramaticAccessAllowed(&_ret));
 		return _ret;
 	}
 	final void IsProgramaticAccessAllowed(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).set_IsProgramaticAccessAllowed(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).set_IsProgramaticAccessAllowed(value));
 	}
 	final Windows.ApplicationModel.Email.EmailIrmTemplate Template()
 	{
 		Windows.ApplicationModel.Email.EmailIrmTemplate _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).get_Template(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).get_Template(&_ret));
 		return _ret;
 	}
 	final void Template(Windows.ApplicationModel.Email.EmailIrmTemplate value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmInfo).set_Template(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfo)this.asInterface(uuid("90f52193-b1a0-4ebd-a6b6-ddca55606e0e"))).set_Template(value));
 	}
 	static EmailIrmInfo New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(EmailIrmInfo).abi_ActivateInstance(&ret));
-		return ret.as!(EmailIrmInfo);
+		return cast(EmailIrmInfo) ret;
 	}
 	static Windows.ApplicationModel.Email.EmailIrmInfo New(Windows.Foundation.DateTime expiration, Windows.ApplicationModel.Email.EmailIrmTemplate irmTemplate)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Email.IEmailIrmInfoFactory);
 		Windows.ApplicationModel.Email.EmailIrmInfo _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Email.IEmailIrmInfoFactory).abi_Create(expiration, irmTemplate, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmInfoFactory)factory.asInterface(uuid("314bb18c-e3e6-4d7b-be8d-91a96311b01b"))).abi_Create(expiration, irmTemplate, &_ret));
 		return _ret;
 	}
 }
@@ -1288,44 +1288,44 @@ extern(Windows):
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmTemplate).get_Id(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmTemplate)this.asInterface(uuid("f327758d-546d-4bea-a963-54a38b2cc016"))).get_Id(&_ret));
 		return _ret;
 	}
 	final void Id(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmTemplate).set_Id(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmTemplate)this.asInterface(uuid("f327758d-546d-4bea-a963-54a38b2cc016"))).set_Id(value));
 	}
 	final HSTRING Description()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmTemplate).get_Description(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmTemplate)this.asInterface(uuid("f327758d-546d-4bea-a963-54a38b2cc016"))).get_Description(&_ret));
 		return _ret;
 	}
 	final void Description(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmTemplate).set_Description(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmTemplate)this.asInterface(uuid("f327758d-546d-4bea-a963-54a38b2cc016"))).set_Description(value));
 	}
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmTemplate).get_Name(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmTemplate)this.asInterface(uuid("f327758d-546d-4bea-a963-54a38b2cc016"))).get_Name(&_ret));
 		return _ret;
 	}
 	final void Name(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailIrmTemplate).set_Name(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmTemplate)this.asInterface(uuid("f327758d-546d-4bea-a963-54a38b2cc016"))).set_Name(value));
 	}
 	static EmailIrmTemplate New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(EmailIrmTemplate).abi_ActivateInstance(&ret));
-		return ret.as!(EmailIrmTemplate);
+		return cast(EmailIrmTemplate) ret;
 	}
 	static Windows.ApplicationModel.Email.EmailIrmTemplate New(HSTRING id, HSTRING name, HSTRING description)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Email.IEmailIrmTemplateFactory);
 		Windows.ApplicationModel.Email.EmailIrmTemplate _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Email.IEmailIrmTemplateFactory).abi_Create(id, name, description, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailIrmTemplateFactory)factory.asInterface(uuid("3da31876-8738-4418-b9cb-471b936fe71e"))).abi_Create(id, name, description, &_ret));
 		return _ret;
 	}
 }
@@ -1336,25 +1336,25 @@ extern(Windows):
 	final UINT32 Flagged()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailItemCounts).get_Flagged(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailItemCounts)this.asInterface(uuid("5bd13321-fec8-4bab-83ba-0baf3c1f6cbd"))).get_Flagged(&_ret));
 		return _ret;
 	}
 	final UINT32 Important()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailItemCounts).get_Important(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailItemCounts)this.asInterface(uuid("5bd13321-fec8-4bab-83ba-0baf3c1f6cbd"))).get_Important(&_ret));
 		return _ret;
 	}
 	final UINT32 Total()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailItemCounts).get_Total(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailItemCounts)this.asInterface(uuid("5bd13321-fec8-4bab-83ba-0baf3c1f6cbd"))).get_Total(&_ret));
 		return _ret;
 	}
 	final UINT32 Unread()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailItemCounts).get_Unread(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailItemCounts)this.asInterface(uuid("5bd13321-fec8-4bab-83ba-0baf3c1f6cbd"))).get_Unread(&_ret));
 		return _ret;
 	}
 }
@@ -1365,345 +1365,345 @@ extern(Windows):
 	final Windows.ApplicationModel.Email.EmailMailboxCapabilities Capabilities()
 	{
 		Windows.ApplicationModel.Email.EmailMailboxCapabilities _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).get_Capabilities(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).get_Capabilities(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailMailboxChangeTracker ChangeTracker()
 	{
 		Windows.ApplicationModel.Email.EmailMailboxChangeTracker _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).get_ChangeTracker(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).get_ChangeTracker(&_ret));
 		return _ret;
 	}
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final void DisplayName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).set_DisplayName(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).set_DisplayName(value));
 	}
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).get_Id(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).get_Id(&_ret));
 		return _ret;
 	}
 	final bool IsOwnedByCurrentApp()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).get_IsOwnedByCurrentApp(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).get_IsOwnedByCurrentApp(&_ret));
 		return _ret;
 	}
 	final bool IsDataEncryptedUnderLock()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).get_IsDataEncryptedUnderLock(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).get_IsDataEncryptedUnderLock(&_ret));
 		return _ret;
 	}
 	final HSTRING MailAddress()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).get_MailAddress(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).get_MailAddress(&_ret));
 		return _ret;
 	}
 	final void MailAddress(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).set_MailAddress(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).set_MailAddress(value));
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) MailAddressAliases()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).get_MailAddressAliases(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).get_MailAddressAliases(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailMailboxOtherAppReadAccess OtherAppReadAccess()
 	{
 		Windows.ApplicationModel.Email.EmailMailboxOtherAppReadAccess _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).get_OtherAppReadAccess(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).get_OtherAppReadAccess(&_ret));
 		return _ret;
 	}
 	final void OtherAppReadAccess(Windows.ApplicationModel.Email.EmailMailboxOtherAppReadAccess value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).set_OtherAppReadAccess(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).set_OtherAppReadAccess(value));
 	}
 	final Windows.ApplicationModel.Email.EmailMailboxOtherAppWriteAccess OtherAppWriteAccess()
 	{
 		Windows.ApplicationModel.Email.EmailMailboxOtherAppWriteAccess _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).get_OtherAppWriteAccess(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).get_OtherAppWriteAccess(&_ret));
 		return _ret;
 	}
 	final void OtherAppWriteAccess(Windows.ApplicationModel.Email.EmailMailboxOtherAppWriteAccess value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).set_OtherAppWriteAccess(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).set_OtherAppWriteAccess(value));
 	}
 	final Windows.ApplicationModel.Email.EmailMailboxPolicies Policies()
 	{
 		Windows.ApplicationModel.Email.EmailMailboxPolicies _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).get_Policies(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).get_Policies(&_ret));
 		return _ret;
 	}
 	final HSTRING SourceDisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).get_SourceDisplayName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).get_SourceDisplayName(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailMailboxSyncManager SyncManager()
 	{
 		Windows.ApplicationModel.Email.EmailMailboxSyncManager _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).get_SyncManager(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).get_SyncManager(&_ret));
 		return _ret;
 	}
 	final HSTRING UserDataAccountId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).get_UserDataAccountId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).get_UserDataAccountId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailConversationReader GetConversationReader()
 	{
 		Windows.ApplicationModel.Email.EmailConversationReader _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_GetConversationReader(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_GetConversationReader(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailConversationReader GetConversationReaderWithOptions(Windows.ApplicationModel.Email.EmailQueryOptions options)
 	{
 		Windows.ApplicationModel.Email.EmailConversationReader _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_GetConversationReaderWithOptions(options, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_GetConversationReaderWithOptions(options, &_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailMessageReader GetMessageReader()
 	{
 		Windows.ApplicationModel.Email.EmailMessageReader _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_GetMessageReader(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_GetMessageReader(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailMessageReader GetMessageReaderWithOptions(Windows.ApplicationModel.Email.EmailQueryOptions options)
 	{
 		Windows.ApplicationModel.Email.EmailMessageReader _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_GetMessageReaderWithOptions(options, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_GetMessageReaderWithOptions(options, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction DeleteAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_DeleteAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_DeleteAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailConversation) GetConversationAsync(HSTRING id)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailConversation) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_GetConversationAsync(id, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_GetConversationAsync(id, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailFolder) GetFolderAsync(HSTRING id)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailFolder) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_GetFolderAsync(id, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_GetFolderAsync(id, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMessage) GetMessageAsync(HSTRING id)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMessage) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_GetMessageAsync(id, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_GetMessageAsync(id, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailFolder) GetSpecialFolderAsync(Windows.ApplicationModel.Email.EmailSpecialFolderKind folderType)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailFolder) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_GetSpecialFolderAsync(folderType, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_GetSpecialFolderAsync(folderType, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction SaveAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_SaveAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_SaveAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction MarkMessageAsSeenAsync(HSTRING messageId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_MarkMessageAsSeenAsync(messageId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_MarkMessageAsSeenAsync(messageId, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction MarkFolderAsSeenAsync(HSTRING folderId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_MarkFolderAsSeenAsync(folderId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_MarkFolderAsSeenAsync(folderId, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction MarkMessageReadAsync(HSTRING messageId, bool isRead)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_MarkMessageReadAsync(messageId, isRead, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_MarkMessageReadAsync(messageId, isRead, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ChangeMessageFlagStateAsync(HSTRING messageId, Windows.ApplicationModel.Email.EmailFlagState flagState)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_ChangeMessageFlagStateAsync(messageId, flagState, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_ChangeMessageFlagStateAsync(messageId, flagState, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TryMoveMessageAsync(HSTRING messageId, HSTRING newParentFolderId)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_TryMoveMessageAsync(messageId, newParentFolderId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_TryMoveMessageAsync(messageId, newParentFolderId, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TryMoveFolderAsync(HSTRING folderId, HSTRING newParentFolderId)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_TryMoveFolderAsync(folderId, newParentFolderId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_TryMoveFolderAsync(folderId, newParentFolderId, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TryMoveFolderWithNewNameAsync(HSTRING folderId, HSTRING newParentFolderId, HSTRING newFolderName)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_TryMoveFolderWithNewNameAsync(folderId, newParentFolderId, newFolderName, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_TryMoveFolderWithNewNameAsync(folderId, newParentFolderId, newFolderName, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction DeleteMessageAsync(HSTRING messageId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_DeleteMessageAsync(messageId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_DeleteMessageAsync(messageId, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction MarkFolderSyncEnabledAsync(HSTRING folderId, bool isSyncEnabled)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_MarkFolderSyncEnabledAsync(folderId, isSyncEnabled, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_MarkFolderSyncEnabledAsync(folderId, isSyncEnabled, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction SendMessageAsync(Windows.ApplicationModel.Email.EmailMessage message)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_SendMessageAsync(message, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_SendMessageAsync(message, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction SaveDraftAsync(Windows.ApplicationModel.Email.EmailMessage message)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_SaveDraftAsync(message, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_SaveDraftAsync(message, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction DownloadMessageAsync(HSTRING messageId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_DownloadMessageAsync(messageId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_DownloadMessageAsync(messageId, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction DownloadAttachmentAsync(HSTRING attachmentId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_DownloadAttachmentAsync(attachmentId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_DownloadAttachmentAsync(attachmentId, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMessage) CreateResponseMessageAsync(HSTRING messageId, Windows.ApplicationModel.Email.EmailMessageResponseKind responseType, HSTRING subject, Windows.ApplicationModel.Email.EmailMessageBodyKind responseHeaderType, HSTRING responseHeader)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMessage) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_CreateResponseMessageAsync(messageId, responseType, subject, responseHeaderType, responseHeader, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_CreateResponseMessageAsync(messageId, responseType, subject, responseHeaderType, responseHeader, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TryUpdateMeetingResponseAsync(Windows.ApplicationModel.Email.EmailMessage meeting, Windows.ApplicationModel.Email.EmailMeetingResponseType response, HSTRING subject, HSTRING comment, bool sendUpdate)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_TryUpdateMeetingResponseAsync(meeting, response, subject, comment, sendUpdate, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_TryUpdateMeetingResponseAsync(meeting, response, subject, comment, sendUpdate, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TryForwardMeetingAsync(Windows.ApplicationModel.Email.EmailMessage meeting, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Email.EmailRecipient) recipients, HSTRING subject, Windows.ApplicationModel.Email.EmailMessageBodyKind forwardHeaderType, HSTRING forwardHeader, HSTRING comment)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_TryForwardMeetingAsync(meeting, recipients, subject, forwardHeaderType, forwardHeader, comment, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_TryForwardMeetingAsync(meeting, recipients, subject, forwardHeaderType, forwardHeader, comment, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TryProposeNewTimeForMeetingAsync(Windows.ApplicationModel.Email.EmailMessage meeting, Windows.Foundation.DateTime newStartTime, Windows.Foundation.TimeSpan newDuration, HSTRING subject, HSTRING comment)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_TryProposeNewTimeForMeetingAsync(meeting, newStartTime, newDuration, subject, comment, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_TryProposeNewTimeForMeetingAsync(meeting, newStartTime, newDuration, subject, comment, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnMailboxChanged(void delegate(Windows.ApplicationModel.Email.EmailMailbox, Windows.ApplicationModel.Email.EmailMailboxChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).add_MailboxChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.EmailMailbox, Windows.ApplicationModel.Email.EmailMailboxChangedEventArgs), Windows.ApplicationModel.Email.EmailMailbox, Windows.ApplicationModel.Email.EmailMailboxChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).add_MailboxChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.EmailMailbox, Windows.ApplicationModel.Email.EmailMailboxChangedEventArgs), Windows.ApplicationModel.Email.EmailMailbox, Windows.ApplicationModel.Email.EmailMailboxChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMailboxChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).remove_MailboxChanged(token));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).remove_MailboxChanged(token));
 	}
 	final Windows.Foundation.IAsyncAction SmartSendMessageAsync(Windows.ApplicationModel.Email.EmailMessage message, bool smartSend)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_SmartSendMessageAsync(message, smartSend, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_SmartSendMessageAsync(message, smartSend, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TrySetAutoReplySettingsAsync(Windows.ApplicationModel.Email.EmailMailboxAutoReplySettings autoReplySettings)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_TrySetAutoReplySettingsAsync(autoReplySettings, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_TrySetAutoReplySettingsAsync(autoReplySettings, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMailboxAutoReplySettings) TryGetAutoReplySettingsAsync(Windows.ApplicationModel.Email.EmailMailboxAutoReplyMessageResponseKind requestedFormat)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMailboxAutoReplySettings) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox).abi_TryGetAutoReplySettingsAsync(requestedFormat, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_TryGetAutoReplySettingsAsync(requestedFormat, &_ret));
 		return _ret;
 	}
 	final HSTRING LinkedMailboxId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox2).get_LinkedMailboxId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox2)this.asInterface(uuid("14f8e404-6ca2-4ab2-9241-79cd7bf46346"))).get_LinkedMailboxId(&_ret));
 		return _ret;
 	}
 	final HSTRING NetworkAccountId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox2).get_NetworkAccountId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox2)this.asInterface(uuid("14f8e404-6ca2-4ab2-9241-79cd7bf46346"))).get_NetworkAccountId(&_ret));
 		return _ret;
 	}
 	final HSTRING NetworkId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox2).get_NetworkId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox2)this.asInterface(uuid("14f8e404-6ca2-4ab2-9241-79cd7bf46346"))).get_NetworkId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailRecipientResolutionResult)) ResolveRecipientsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) recipients)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailRecipientResolutionResult)) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox3).abi_ResolveRecipientsAsync(recipients, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox3)this.asInterface(uuid("3da5897b-458b-408a-8e37-ac8b05d8af56"))).abi_ResolveRecipientsAsync(recipients, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailCertificateValidationStatus)) ValidateCertificatesAsync(Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.Certificate) certificates)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailCertificateValidationStatus)) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox3).abi_ValidateCertificatesAsync(certificates, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox3)this.asInterface(uuid("3da5897b-458b-408a-8e37-ac8b05d8af56"))).abi_ValidateCertificatesAsync(certificates, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMailboxEmptyFolderStatus) TryEmptyFolderAsync(HSTRING folderId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMailboxEmptyFolderStatus) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox3).abi_TryEmptyFolderAsync(folderId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox3)this.asInterface(uuid("3da5897b-458b-408a-8e37-ac8b05d8af56"))).abi_TryEmptyFolderAsync(folderId, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMailboxCreateFolderResult) TryCreateFolderAsync(HSTRING parentFolderId, HSTRING name)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMailboxCreateFolderResult) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox3).abi_TryCreateFolderAsync(parentFolderId, name, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox3)this.asInterface(uuid("3da5897b-458b-408a-8e37-ac8b05d8af56"))).abi_TryCreateFolderAsync(parentFolderId, name, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMailboxDeleteFolderStatus) TryDeleteFolderAsync(HSTRING folderId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMailboxDeleteFolderStatus) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox3).abi_TryDeleteFolderAsync(folderId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox3)this.asInterface(uuid("3da5897b-458b-408a-8e37-ac8b05d8af56"))).abi_TryDeleteFolderAsync(folderId, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction RegisterSyncManagerAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailbox4).abi_RegisterSyncManagerAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox4)this.asInterface(uuid("5d1f301b-f222-48a7-b7b6-716356cd26a1"))).abi_RegisterSyncManagerAsync(&_ret));
 		return _ret;
 	}
 }
@@ -1714,13 +1714,13 @@ extern(Windows):
 	final Windows.ApplicationModel.Email.EmailMailboxActionKind Kind()
 	{
 		Windows.ApplicationModel.Email.EmailMailboxActionKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxAction).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxAction)this.asInterface(uuid("ac9889fa-21fa-4927-9210-d410582fdf3e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final ulong ChangeNumber()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxAction).get_ChangeNumber(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxAction)this.asInterface(uuid("ac9889fa-21fa-4927-9210-d410582fdf3e"))).get_ChangeNumber(&_ret));
 		return _ret;
 	}
 }
@@ -1731,22 +1731,22 @@ extern(Windows):
 	final bool IsEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxAutoReply).get_IsEnabled(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxAutoReply)this.asInterface(uuid("e223254c-8ab4-485b-b31f-04d15476bd59"))).get_IsEnabled(&_ret));
 		return _ret;
 	}
 	final void IsEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxAutoReply).set_IsEnabled(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxAutoReply)this.asInterface(uuid("e223254c-8ab4-485b-b31f-04d15476bd59"))).set_IsEnabled(value));
 	}
 	final HSTRING Response()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxAutoReply).get_Response(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxAutoReply)this.asInterface(uuid("e223254c-8ab4-485b-b31f-04d15476bd59"))).get_Response(&_ret));
 		return _ret;
 	}
 	final void Response(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxAutoReply).set_Response(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxAutoReply)this.asInterface(uuid("e223254c-8ab4-485b-b31f-04d15476bd59"))).set_Response(value));
 	}
 }
 
@@ -1756,66 +1756,66 @@ extern(Windows):
 	final bool IsEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings).get_IsEnabled(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings)this.asInterface(uuid("a87a9fa8-0ac6-4b77-ba77-a6b99e9a27b8"))).get_IsEnabled(&_ret));
 		return _ret;
 	}
 	final void IsEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings).set_IsEnabled(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings)this.asInterface(uuid("a87a9fa8-0ac6-4b77-ba77-a6b99e9a27b8"))).set_IsEnabled(value));
 	}
 	final Windows.ApplicationModel.Email.EmailMailboxAutoReplyMessageResponseKind ResponseKind()
 	{
 		Windows.ApplicationModel.Email.EmailMailboxAutoReplyMessageResponseKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings).get_ResponseKind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings)this.asInterface(uuid("a87a9fa8-0ac6-4b77-ba77-a6b99e9a27b8"))).get_ResponseKind(&_ret));
 		return _ret;
 	}
 	final void ResponseKind(Windows.ApplicationModel.Email.EmailMailboxAutoReplyMessageResponseKind value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings).set_ResponseKind(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings)this.asInterface(uuid("a87a9fa8-0ac6-4b77-ba77-a6b99e9a27b8"))).set_ResponseKind(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) StartTime()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings).get_StartTime(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings)this.asInterface(uuid("a87a9fa8-0ac6-4b77-ba77-a6b99e9a27b8"))).get_StartTime(&_ret));
 		return _ret;
 	}
 	final void StartTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings).set_StartTime(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings)this.asInterface(uuid("a87a9fa8-0ac6-4b77-ba77-a6b99e9a27b8"))).set_StartTime(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) EndTime()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings).get_EndTime(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings)this.asInterface(uuid("a87a9fa8-0ac6-4b77-ba77-a6b99e9a27b8"))).get_EndTime(&_ret));
 		return _ret;
 	}
 	final void EndTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings).set_EndTime(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings)this.asInterface(uuid("a87a9fa8-0ac6-4b77-ba77-a6b99e9a27b8"))).set_EndTime(value));
 	}
 	final Windows.ApplicationModel.Email.EmailMailboxAutoReply InternalReply()
 	{
 		Windows.ApplicationModel.Email.EmailMailboxAutoReply _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings).get_InternalReply(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings)this.asInterface(uuid("a87a9fa8-0ac6-4b77-ba77-a6b99e9a27b8"))).get_InternalReply(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailMailboxAutoReply KnownExternalReply()
 	{
 		Windows.ApplicationModel.Email.EmailMailboxAutoReply _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings).get_KnownExternalReply(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings)this.asInterface(uuid("a87a9fa8-0ac6-4b77-ba77-a6b99e9a27b8"))).get_KnownExternalReply(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailMailboxAutoReply UnknownExternalReply()
 	{
 		Windows.ApplicationModel.Email.EmailMailboxAutoReply _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings).get_UnknownExternalReply(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxAutoReplySettings)this.asInterface(uuid("a87a9fa8-0ac6-4b77-ba77-a6b99e9a27b8"))).get_UnknownExternalReply(&_ret));
 		return _ret;
 	}
 	static EmailMailboxAutoReplySettings New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(EmailMailboxAutoReplySettings).abi_ActivateInstance(&ret));
-		return ret.as!(EmailMailboxAutoReplySettings);
+		return cast(EmailMailboxAutoReplySettings) ret;
 	}
 }
 
@@ -1825,142 +1825,142 @@ extern(Windows):
 	final bool CanForwardMeetings()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities).get_CanForwardMeetings(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities)this.asInterface(uuid("eedec3a6-89db-4305-82c4-439e0a33da11"))).get_CanForwardMeetings(&_ret));
 		return _ret;
 	}
 	final bool CanGetAndSetExternalAutoReplies()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities).get_CanGetAndSetExternalAutoReplies(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities)this.asInterface(uuid("eedec3a6-89db-4305-82c4-439e0a33da11"))).get_CanGetAndSetExternalAutoReplies(&_ret));
 		return _ret;
 	}
 	final bool CanGetAndSetInternalAutoReplies()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities).get_CanGetAndSetInternalAutoReplies(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities)this.asInterface(uuid("eedec3a6-89db-4305-82c4-439e0a33da11"))).get_CanGetAndSetInternalAutoReplies(&_ret));
 		return _ret;
 	}
 	final bool CanUpdateMeetingResponses()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities).get_CanUpdateMeetingResponses(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities)this.asInterface(uuid("eedec3a6-89db-4305-82c4-439e0a33da11"))).get_CanUpdateMeetingResponses(&_ret));
 		return _ret;
 	}
 	final bool CanServerSearchFolders()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities).get_CanServerSearchFolders(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities)this.asInterface(uuid("eedec3a6-89db-4305-82c4-439e0a33da11"))).get_CanServerSearchFolders(&_ret));
 		return _ret;
 	}
 	final bool CanServerSearchMailbox()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities).get_CanServerSearchMailbox(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities)this.asInterface(uuid("eedec3a6-89db-4305-82c4-439e0a33da11"))).get_CanServerSearchMailbox(&_ret));
 		return _ret;
 	}
 	final bool CanProposeNewTimeForMeetings()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities).get_CanProposeNewTimeForMeetings(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities)this.asInterface(uuid("eedec3a6-89db-4305-82c4-439e0a33da11"))).get_CanProposeNewTimeForMeetings(&_ret));
 		return _ret;
 	}
 	final bool CanSmartSend()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities).get_CanSmartSend(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities)this.asInterface(uuid("eedec3a6-89db-4305-82c4-439e0a33da11"))).get_CanSmartSend(&_ret));
 		return _ret;
 	}
 	final bool CanResolveRecipients()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities2).get_CanResolveRecipients(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities2)this.asInterface(uuid("69723ee4-2f21-4cbc-88ab-2e7602a4806b"))).get_CanResolveRecipients(&_ret));
 		return _ret;
 	}
 	final bool CanValidateCertificates()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities2).get_CanValidateCertificates(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities2)this.asInterface(uuid("69723ee4-2f21-4cbc-88ab-2e7602a4806b"))).get_CanValidateCertificates(&_ret));
 		return _ret;
 	}
 	final bool CanEmptyFolder()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities2).get_CanEmptyFolder(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities2)this.asInterface(uuid("69723ee4-2f21-4cbc-88ab-2e7602a4806b"))).get_CanEmptyFolder(&_ret));
 		return _ret;
 	}
 	final bool CanCreateFolder()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities2).get_CanCreateFolder(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities2)this.asInterface(uuid("69723ee4-2f21-4cbc-88ab-2e7602a4806b"))).get_CanCreateFolder(&_ret));
 		return _ret;
 	}
 	final bool CanDeleteFolder()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities2).get_CanDeleteFolder(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities2)this.asInterface(uuid("69723ee4-2f21-4cbc-88ab-2e7602a4806b"))).get_CanDeleteFolder(&_ret));
 		return _ret;
 	}
 	final bool CanMoveFolder()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities2).get_CanMoveFolder(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities2)this.asInterface(uuid("69723ee4-2f21-4cbc-88ab-2e7602a4806b"))).get_CanMoveFolder(&_ret));
 		return _ret;
 	}
 	final void CanForwardMeetings(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3).set_CanForwardMeetings(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3)this.asInterface(uuid("f690e944-56f2-45aa-872c-0ce9f3db0b5c"))).set_CanForwardMeetings(value));
 	}
 	final void CanGetAndSetExternalAutoReplies(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3).set_CanGetAndSetExternalAutoReplies(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3)this.asInterface(uuid("f690e944-56f2-45aa-872c-0ce9f3db0b5c"))).set_CanGetAndSetExternalAutoReplies(value));
 	}
 	final void CanGetAndSetInternalAutoReplies(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3).set_CanGetAndSetInternalAutoReplies(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3)this.asInterface(uuid("f690e944-56f2-45aa-872c-0ce9f3db0b5c"))).set_CanGetAndSetInternalAutoReplies(value));
 	}
 	final void CanUpdateMeetingResponses(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3).set_CanUpdateMeetingResponses(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3)this.asInterface(uuid("f690e944-56f2-45aa-872c-0ce9f3db0b5c"))).set_CanUpdateMeetingResponses(value));
 	}
 	final void CanServerSearchFolders(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3).set_CanServerSearchFolders(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3)this.asInterface(uuid("f690e944-56f2-45aa-872c-0ce9f3db0b5c"))).set_CanServerSearchFolders(value));
 	}
 	final void CanServerSearchMailbox(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3).set_CanServerSearchMailbox(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3)this.asInterface(uuid("f690e944-56f2-45aa-872c-0ce9f3db0b5c"))).set_CanServerSearchMailbox(value));
 	}
 	final void CanProposeNewTimeForMeetings(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3).set_CanProposeNewTimeForMeetings(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3)this.asInterface(uuid("f690e944-56f2-45aa-872c-0ce9f3db0b5c"))).set_CanProposeNewTimeForMeetings(value));
 	}
 	final void CanSmartSend(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3).set_CanSmartSend(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3)this.asInterface(uuid("f690e944-56f2-45aa-872c-0ce9f3db0b5c"))).set_CanSmartSend(value));
 	}
 	final void CanResolveRecipients(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3).set_CanResolveRecipients(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3)this.asInterface(uuid("f690e944-56f2-45aa-872c-0ce9f3db0b5c"))).set_CanResolveRecipients(value));
 	}
 	final void CanValidateCertificates(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3).set_CanValidateCertificates(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3)this.asInterface(uuid("f690e944-56f2-45aa-872c-0ce9f3db0b5c"))).set_CanValidateCertificates(value));
 	}
 	final void CanEmptyFolder(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3).set_CanEmptyFolder(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3)this.asInterface(uuid("f690e944-56f2-45aa-872c-0ce9f3db0b5c"))).set_CanEmptyFolder(value));
 	}
 	final void CanCreateFolder(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3).set_CanCreateFolder(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3)this.asInterface(uuid("f690e944-56f2-45aa-872c-0ce9f3db0b5c"))).set_CanCreateFolder(value));
 	}
 	final void CanDeleteFolder(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3).set_CanDeleteFolder(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3)this.asInterface(uuid("f690e944-56f2-45aa-872c-0ce9f3db0b5c"))).set_CanDeleteFolder(value));
 	}
 	final void CanMoveFolder(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3).set_CanMoveFolder(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCapabilities3)this.asInterface(uuid("f690e944-56f2-45aa-872c-0ce9f3db0b5c"))).set_CanMoveFolder(value));
 	}
 }
 
@@ -1970,25 +1970,25 @@ extern(Windows):
 	final Windows.ApplicationModel.Email.EmailMailboxChangeType ChangeType()
 	{
 		Windows.ApplicationModel.Email.EmailMailboxChangeType _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxChange).get_ChangeType(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxChange)this.asInterface(uuid("61edf54b-11ef-400c-adde-8cde65c85e66"))).get_ChangeType(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Email.EmailMailboxAction) MailboxActions()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Email.EmailMailboxAction) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxChange).get_MailboxActions(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxChange)this.asInterface(uuid("61edf54b-11ef-400c-adde-8cde65c85e66"))).get_MailboxActions(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailMessage Message()
 	{
 		Windows.ApplicationModel.Email.EmailMessage _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxChange).get_Message(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxChange)this.asInterface(uuid("61edf54b-11ef-400c-adde-8cde65c85e66"))).get_Message(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailFolder Folder()
 	{
 		Windows.ApplicationModel.Email.EmailFolder _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxChange).get_Folder(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxChange)this.asInterface(uuid("61edf54b-11ef-400c-adde-8cde65c85e66"))).get_Folder(&_ret));
 		return _ret;
 	}
 }
@@ -1998,16 +1998,16 @@ interface EmailMailboxChangeReader : Windows.ApplicationModel.Email.IEmailMailbo
 extern(Windows):
 	final void AcceptChanges()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxChangeReader).abi_AcceptChanges());
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxChangeReader)this.asInterface(uuid("bdbd0ebb-c53d-4331-97be-be75a2146a75"))).abi_AcceptChanges());
 	}
 	final void AcceptChangesThrough(Windows.ApplicationModel.Email.EmailMailboxChange lastChangeToAcknowledge)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxChangeReader).abi_AcceptChangesThrough(lastChangeToAcknowledge));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxChangeReader)this.asInterface(uuid("bdbd0ebb-c53d-4331-97be-be75a2146a75"))).abi_AcceptChangesThrough(lastChangeToAcknowledge));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailMailboxChange)) ReadBatchAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailMailboxChange)) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxChangeReader).abi_ReadBatchAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxChangeReader)this.asInterface(uuid("bdbd0ebb-c53d-4331-97be-be75a2146a75"))).abi_ReadBatchAsync(&_ret));
 		return _ret;
 	}
 }
@@ -2018,22 +2018,22 @@ extern(Windows):
 	final bool IsTracking()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxChangeTracker).get_IsTracking(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxChangeTracker)this.asInterface(uuid("7ae48638-5166-42b7-8882-fd21c92bdd4b"))).get_IsTracking(&_ret));
 		return _ret;
 	}
 	final void Enable()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxChangeTracker).abi_Enable());
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxChangeTracker)this.asInterface(uuid("7ae48638-5166-42b7-8882-fd21c92bdd4b"))).abi_Enable());
 	}
 	final Windows.ApplicationModel.Email.EmailMailboxChangeReader GetChangeReader()
 	{
 		Windows.ApplicationModel.Email.EmailMailboxChangeReader _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxChangeTracker).abi_GetChangeReader(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxChangeTracker)this.asInterface(uuid("7ae48638-5166-42b7-8882-fd21c92bdd4b"))).abi_GetChangeReader(&_ret));
 		return _ret;
 	}
 	final void Reset()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxChangeTracker).abi_Reset());
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxChangeTracker)this.asInterface(uuid("7ae48638-5166-42b7-8882-fd21c92bdd4b"))).abi_Reset());
 	}
 }
 
@@ -2042,7 +2042,7 @@ interface EmailMailboxChangedDeferral : Windows.ApplicationModel.Email.IEmailMai
 extern(Windows):
 	final void Complete()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxChangedDeferral).abi_Complete());
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxChangedDeferral)this.asInterface(uuid("779a74c1-97c5-4b54-b30d-306232623e6d"))).abi_Complete());
 	}
 }
 
@@ -2052,7 +2052,7 @@ extern(Windows):
 	final Windows.ApplicationModel.Email.EmailMailboxChangedDeferral GetDeferral()
 	{
 		Windows.ApplicationModel.Email.EmailMailboxChangedDeferral _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxChangedEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxChangedEventArgs)this.asInterface(uuid("3cfd5f6e-01d4-4e4a-a44c-b22dd42ec207"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -2063,13 +2063,13 @@ extern(Windows):
 	final Windows.ApplicationModel.Email.EmailMailboxCreateFolderStatus Status()
 	{
 		Windows.ApplicationModel.Email.EmailMailboxCreateFolderStatus _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCreateFolderResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCreateFolderResult)this.asInterface(uuid("b228557f-2885-4998-b595-8a2d374ce950"))).get_Status(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailFolder Folder()
 	{
 		Windows.ApplicationModel.Email.EmailFolder _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxCreateFolderResult).get_Folder(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxCreateFolderResult)this.asInterface(uuid("b228557f-2885-4998-b595-8a2d374ce950"))).get_Folder(&_ret));
 		return _ret;
 	}
 }
@@ -2080,62 +2080,62 @@ extern(Windows):
 	final Windows.ApplicationModel.Email.EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation AllowedSmimeEncryptionAlgorithmNegotiation()
 	{
 		Windows.ApplicationModel.Email.EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxPolicies).get_AllowedSmimeEncryptionAlgorithmNegotiation(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxPolicies)this.asInterface(uuid("1f3345c5-1c3b-4dc7-b410-6373783e545d"))).get_AllowedSmimeEncryptionAlgorithmNegotiation(&_ret));
 		return _ret;
 	}
 	final bool AllowSmimeSoftCertificates()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxPolicies).get_AllowSmimeSoftCertificates(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxPolicies)this.asInterface(uuid("1f3345c5-1c3b-4dc7-b410-6373783e545d"))).get_AllowSmimeSoftCertificates(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.ApplicationModel.Email.EmailMailboxSmimeEncryptionAlgorithm) RequiredSmimeEncryptionAlgorithm()
 	{
 		Windows.Foundation.IReference!(Windows.ApplicationModel.Email.EmailMailboxSmimeEncryptionAlgorithm) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxPolicies).get_RequiredSmimeEncryptionAlgorithm(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxPolicies)this.asInterface(uuid("1f3345c5-1c3b-4dc7-b410-6373783e545d"))).get_RequiredSmimeEncryptionAlgorithm(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.ApplicationModel.Email.EmailMailboxSmimeSigningAlgorithm) RequiredSmimeSigningAlgorithm()
 	{
 		Windows.Foundation.IReference!(Windows.ApplicationModel.Email.EmailMailboxSmimeSigningAlgorithm) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxPolicies).get_RequiredSmimeSigningAlgorithm(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxPolicies)this.asInterface(uuid("1f3345c5-1c3b-4dc7-b410-6373783e545d"))).get_RequiredSmimeSigningAlgorithm(&_ret));
 		return _ret;
 	}
 	final bool MustEncryptSmimeMessages()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxPolicies2).get_MustEncryptSmimeMessages(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxPolicies2)this.asInterface(uuid("bab58afb-a14b-497c-a8e2-55eac29cc4b5"))).get_MustEncryptSmimeMessages(&_ret));
 		return _ret;
 	}
 	final bool MustSignSmimeMessages()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxPolicies2).get_MustSignSmimeMessages(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxPolicies2)this.asInterface(uuid("bab58afb-a14b-497c-a8e2-55eac29cc4b5"))).get_MustSignSmimeMessages(&_ret));
 		return _ret;
 	}
 	final void AllowedSmimeEncryptionAlgorithmNegotiation(Windows.ApplicationModel.Email.EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxPolicies3).set_AllowedSmimeEncryptionAlgorithmNegotiation(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxPolicies3)this.asInterface(uuid("bdd4a01f-4867-414a-81a2-803919c44191"))).set_AllowedSmimeEncryptionAlgorithmNegotiation(value));
 	}
 	final void AllowSmimeSoftCertificates(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxPolicies3).set_AllowSmimeSoftCertificates(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxPolicies3)this.asInterface(uuid("bdd4a01f-4867-414a-81a2-803919c44191"))).set_AllowSmimeSoftCertificates(value));
 	}
 	final void RequiredSmimeEncryptionAlgorithm(Windows.Foundation.IReference!(Windows.ApplicationModel.Email.EmailMailboxSmimeEncryptionAlgorithm) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxPolicies3).set_RequiredSmimeEncryptionAlgorithm(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxPolicies3)this.asInterface(uuid("bdd4a01f-4867-414a-81a2-803919c44191"))).set_RequiredSmimeEncryptionAlgorithm(value));
 	}
 	final void RequiredSmimeSigningAlgorithm(Windows.Foundation.IReference!(Windows.ApplicationModel.Email.EmailMailboxSmimeSigningAlgorithm) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxPolicies3).set_RequiredSmimeSigningAlgorithm(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxPolicies3)this.asInterface(uuid("bdd4a01f-4867-414a-81a2-803919c44191"))).set_RequiredSmimeSigningAlgorithm(value));
 	}
 	final void MustEncryptSmimeMessages(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxPolicies3).set_MustEncryptSmimeMessages(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxPolicies3)this.asInterface(uuid("bdd4a01f-4867-414a-81a2-803919c44191"))).set_MustEncryptSmimeMessages(value));
 	}
 	final void MustSignSmimeMessages(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxPolicies3).set_MustSignSmimeMessages(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxPolicies3)this.asInterface(uuid("bdd4a01f-4867-414a-81a2-803919c44191"))).set_MustSignSmimeMessages(value));
 	}
 }
 
@@ -2145,48 +2145,48 @@ extern(Windows):
 	final Windows.ApplicationModel.Email.EmailMailboxSyncStatus Status()
 	{
 		Windows.ApplicationModel.Email.EmailMailboxSyncStatus _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxSyncManager).get_Status(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxSyncManager)this.asInterface(uuid("517ac55a-3591-4b5d-85bc-c71dde862263"))).get_Status(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime LastSuccessfulSyncTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxSyncManager).get_LastSuccessfulSyncTime(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxSyncManager)this.asInterface(uuid("517ac55a-3591-4b5d-85bc-c71dde862263"))).get_LastSuccessfulSyncTime(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime LastAttemptedSyncTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxSyncManager).get_LastAttemptedSyncTime(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxSyncManager)this.asInterface(uuid("517ac55a-3591-4b5d-85bc-c71dde862263"))).get_LastAttemptedSyncTime(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) SyncAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxSyncManager).abi_SyncAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxSyncManager)this.asInterface(uuid("517ac55a-3591-4b5d-85bc-c71dde862263"))).abi_SyncAsync(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnSyncStatusChanged(void delegate(Windows.ApplicationModel.Email.EmailMailboxSyncManager, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxSyncManager).add_SyncStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.EmailMailboxSyncManager, IInspectable), Windows.ApplicationModel.Email.EmailMailboxSyncManager, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxSyncManager)this.asInterface(uuid("517ac55a-3591-4b5d-85bc-c71dde862263"))).add_SyncStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Email.EmailMailboxSyncManager, IInspectable), Windows.ApplicationModel.Email.EmailMailboxSyncManager, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSyncStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxSyncManager).remove_SyncStatusChanged(token));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxSyncManager)this.asInterface(uuid("517ac55a-3591-4b5d-85bc-c71dde862263"))).remove_SyncStatusChanged(token));
 	}
 	final void Status(Windows.ApplicationModel.Email.EmailMailboxSyncStatus value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxSyncManager2).set_Status(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxSyncManager2)this.asInterface(uuid("cd8dc97e-95c1-4f89-81b7-e6aecb6695fc"))).set_Status(value));
 	}
 	final void LastSuccessfulSyncTime(Windows.Foundation.DateTime value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxSyncManager2).set_LastSuccessfulSyncTime(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxSyncManager2)this.asInterface(uuid("cd8dc97e-95c1-4f89-81b7-e6aecb6695fc"))).set_LastSuccessfulSyncTime(value));
 	}
 	final void LastAttemptedSyncTime(Windows.Foundation.DateTime value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMailboxSyncManager2).set_LastAttemptedSyncTime(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailboxSyncManager2)this.asInterface(uuid("cd8dc97e-95c1-4f89-81b7-e6aecb6695fc"))).set_LastAttemptedSyncTime(value));
 	}
 }
 
@@ -2201,7 +2201,7 @@ interface EmailManager
 	static Windows.Foundation.IAsyncAction ShowComposeNewEmailAsync(Windows.ApplicationModel.Email.EmailMessage message)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Email.IEmailManagerStatics).abi_ShowComposeNewEmailAsync(message, &_ret));
+		Debug.OK(staticInstance.abi_ShowComposeNewEmailAsync(message, &_ret));
 		return _ret;
 	}
 }
@@ -2212,19 +2212,19 @@ extern(Windows):
 	final Windows.Foundation.IAsyncAction ShowComposeNewEmailAsync(Windows.ApplicationModel.Email.EmailMessage message)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailManagerForUser).abi_ShowComposeNewEmailAsync(message, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailManagerForUser)this.asInterface(uuid("f773de9f-3ca5-4b0f-90c1-156e40174ce5"))).abi_ShowComposeNewEmailAsync(message, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailStore) RequestStoreAsync(Windows.ApplicationModel.Email.EmailStoreAccessType accessType)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailStore) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailManagerForUser).abi_RequestStoreAsync(accessType, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailManagerForUser)this.asInterface(uuid("f773de9f-3ca5-4b0f-90c1-156e40174ce5"))).abi_RequestStoreAsync(accessType, &_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailManagerForUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailManagerForUser)this.asInterface(uuid("f773de9f-3ca5-4b0f-90c1-156e40174ce5"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -2235,144 +2235,144 @@ extern(Windows):
 	final bool AllowNewTimeProposal()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).get_AllowNewTimeProposal(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).get_AllowNewTimeProposal(&_ret));
 		return _ret;
 	}
 	final void AllowNewTimeProposal(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).set_AllowNewTimeProposal(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).set_AllowNewTimeProposal(value));
 	}
 	final HSTRING AppointmentRoamingId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).get_AppointmentRoamingId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).get_AppointmentRoamingId(&_ret));
 		return _ret;
 	}
 	final void AppointmentRoamingId(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).set_AppointmentRoamingId(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).set_AppointmentRoamingId(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) AppointmentOriginalStartTime()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).get_AppointmentOriginalStartTime(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).get_AppointmentOriginalStartTime(&_ret));
 		return _ret;
 	}
 	final void AppointmentOriginalStartTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).set_AppointmentOriginalStartTime(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).set_AppointmentOriginalStartTime(value));
 	}
 	final Windows.Foundation.TimeSpan Duration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).get_Duration(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).get_Duration(&_ret));
 		return _ret;
 	}
 	final void Duration(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).set_Duration(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).set_Duration(value));
 	}
 	final bool IsAllDay()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).get_IsAllDay(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).get_IsAllDay(&_ret));
 		return _ret;
 	}
 	final void IsAllDay(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).set_IsAllDay(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).set_IsAllDay(value));
 	}
 	final bool IsResponseRequested()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).get_IsResponseRequested(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).get_IsResponseRequested(&_ret));
 		return _ret;
 	}
 	final void IsResponseRequested(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).set_IsResponseRequested(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).set_IsResponseRequested(value));
 	}
 	final HSTRING Location()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).get_Location(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).get_Location(&_ret));
 		return _ret;
 	}
 	final void Location(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).set_Location(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).set_Location(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) ProposedStartTime()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).get_ProposedStartTime(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).get_ProposedStartTime(&_ret));
 		return _ret;
 	}
 	final void ProposedStartTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) proposedStartTime)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).set_ProposedStartTime(proposedStartTime));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).set_ProposedStartTime(proposedStartTime));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) ProposedDuration()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).get_ProposedDuration(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).get_ProposedDuration(&_ret));
 		return _ret;
 	}
 	final void ProposedDuration(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) duration)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).set_ProposedDuration(duration));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).set_ProposedDuration(duration));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) RecurrenceStartTime()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).get_RecurrenceStartTime(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).get_RecurrenceStartTime(&_ret));
 		return _ret;
 	}
 	final void RecurrenceStartTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).set_RecurrenceStartTime(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).set_RecurrenceStartTime(value));
 	}
 	final Windows.ApplicationModel.Appointments.AppointmentRecurrence Recurrence()
 	{
 		Windows.ApplicationModel.Appointments.AppointmentRecurrence _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).get_Recurrence(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).get_Recurrence(&_ret));
 		return _ret;
 	}
 	final void Recurrence(Windows.ApplicationModel.Appointments.AppointmentRecurrence value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).set_Recurrence(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).set_Recurrence(value));
 	}
 	final ulong RemoteChangeNumber()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).get_RemoteChangeNumber(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).get_RemoteChangeNumber(&_ret));
 		return _ret;
 	}
 	final void RemoteChangeNumber(ulong value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).set_RemoteChangeNumber(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).set_RemoteChangeNumber(value));
 	}
 	final Windows.Foundation.DateTime StartTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).get_StartTime(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).get_StartTime(&_ret));
 		return _ret;
 	}
 	final void StartTime(Windows.Foundation.DateTime value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo).set_StartTime(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo)this.asInterface(uuid("31c03fa9-7933-415f-a275-d165ba07026b"))).set_StartTime(value));
 	}
 	final bool IsReportedOutOfDateByServer()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMeetingInfo2).get_IsReportedOutOfDateByServer(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMeetingInfo2)this.asInterface(uuid("7e59386d-b0d9-4fe5-867c-e31ed2b588b8"))).get_IsReportedOutOfDateByServer(&_ret));
 		return _ret;
 	}
 	static EmailMeetingInfo New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(EmailMeetingInfo).abi_ActivateInstance(&ret));
-		return ret.as!(EmailMeetingInfo);
+		return cast(EmailMeetingInfo) ret;
 	}
 }
 
@@ -2382,324 +2382,324 @@ extern(Windows):
 	final HSTRING Subject()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage).get_Subject(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage)this.asInterface(uuid("6c6d948d-80b5-48f8-b0b1-e04e430f44e5"))).get_Subject(&_ret));
 		return _ret;
 	}
 	final void Subject(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage).set_Subject(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage)this.asInterface(uuid("6c6d948d-80b5-48f8-b0b1-e04e430f44e5"))).set_Subject(value));
 	}
 	final HSTRING Body()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage).get_Body(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage)this.asInterface(uuid("6c6d948d-80b5-48f8-b0b1-e04e430f44e5"))).get_Body(&_ret));
 		return _ret;
 	}
 	final void Body(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage).set_Body(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage)this.asInterface(uuid("6c6d948d-80b5-48f8-b0b1-e04e430f44e5"))).set_Body(value));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Email.EmailRecipient) To()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Email.EmailRecipient) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage).get_To(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage)this.asInterface(uuid("6c6d948d-80b5-48f8-b0b1-e04e430f44e5"))).get_To(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Email.EmailRecipient) CC()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Email.EmailRecipient) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage).get_CC(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage)this.asInterface(uuid("6c6d948d-80b5-48f8-b0b1-e04e430f44e5"))).get_CC(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Email.EmailRecipient) Bcc()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Email.EmailRecipient) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage).get_Bcc(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage)this.asInterface(uuid("6c6d948d-80b5-48f8-b0b1-e04e430f44e5"))).get_Bcc(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Email.EmailAttachment) Attachments()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Email.EmailAttachment) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage).get_Attachments(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage)this.asInterface(uuid("6c6d948d-80b5-48f8-b0b1-e04e430f44e5"))).get_Attachments(&_ret));
 		return _ret;
 	}
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_Id(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_Id(&_ret));
 		return _ret;
 	}
 	final HSTRING RemoteId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_RemoteId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_RemoteId(&_ret));
 		return _ret;
 	}
 	final void RemoteId(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).set_RemoteId(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).set_RemoteId(value));
 	}
 	final HSTRING MailboxId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_MailboxId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_MailboxId(&_ret));
 		return _ret;
 	}
 	final HSTRING ConversationId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_ConversationId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_ConversationId(&_ret));
 		return _ret;
 	}
 	final HSTRING FolderId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_FolderId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_FolderId(&_ret));
 		return _ret;
 	}
 	final bool AllowInternetImages()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_AllowInternetImages(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_AllowInternetImages(&_ret));
 		return _ret;
 	}
 	final void AllowInternetImages(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).set_AllowInternetImages(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).set_AllowInternetImages(value));
 	}
 	final ulong ChangeNumber()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_ChangeNumber(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_ChangeNumber(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailMessageDownloadState DownloadState()
 	{
 		Windows.ApplicationModel.Email.EmailMessageDownloadState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_DownloadState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_DownloadState(&_ret));
 		return _ret;
 	}
 	final void DownloadState(Windows.ApplicationModel.Email.EmailMessageDownloadState value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).set_DownloadState(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).set_DownloadState(value));
 	}
 	final UINT32 EstimatedDownloadSizeInBytes()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_EstimatedDownloadSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_EstimatedDownloadSizeInBytes(&_ret));
 		return _ret;
 	}
 	final void EstimatedDownloadSizeInBytes(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).set_EstimatedDownloadSizeInBytes(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).set_EstimatedDownloadSizeInBytes(value));
 	}
 	final Windows.ApplicationModel.Email.EmailFlagState FlagState()
 	{
 		Windows.ApplicationModel.Email.EmailFlagState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_FlagState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_FlagState(&_ret));
 		return _ret;
 	}
 	final void FlagState(Windows.ApplicationModel.Email.EmailFlagState value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).set_FlagState(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).set_FlagState(value));
 	}
 	final bool HasPartialBodies()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_HasPartialBodies(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_HasPartialBodies(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailImportance Importance()
 	{
 		Windows.ApplicationModel.Email.EmailImportance _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_Importance(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_Importance(&_ret));
 		return _ret;
 	}
 	final void Importance(Windows.ApplicationModel.Email.EmailImportance value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).set_Importance(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).set_Importance(value));
 	}
 	final HSTRING InResponseToMessageId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_InResponseToMessageId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_InResponseToMessageId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailIrmInfo IrmInfo()
 	{
 		Windows.ApplicationModel.Email.EmailIrmInfo _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_IrmInfo(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_IrmInfo(&_ret));
 		return _ret;
 	}
 	final void IrmInfo(Windows.ApplicationModel.Email.EmailIrmInfo value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).set_IrmInfo(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).set_IrmInfo(value));
 	}
 	final bool IsDraftMessage()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_IsDraftMessage(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_IsDraftMessage(&_ret));
 		return _ret;
 	}
 	final bool IsRead()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_IsRead(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_IsRead(&_ret));
 		return _ret;
 	}
 	final void IsRead(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).set_IsRead(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).set_IsRead(value));
 	}
 	final bool IsSeen()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_IsSeen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_IsSeen(&_ret));
 		return _ret;
 	}
 	final void IsSeen(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).set_IsSeen(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).set_IsSeen(value));
 	}
 	final bool IsServerSearchMessage()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_IsServerSearchMessage(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_IsServerSearchMessage(&_ret));
 		return _ret;
 	}
 	final bool IsSmartSendable()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_IsSmartSendable(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_IsSmartSendable(&_ret));
 		return _ret;
 	}
 	final HSTRING MessageClass()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_MessageClass(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_MessageClass(&_ret));
 		return _ret;
 	}
 	final void MessageClass(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).set_MessageClass(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).set_MessageClass(value));
 	}
 	final HSTRING NormalizedSubject()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_NormalizedSubject(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_NormalizedSubject(&_ret));
 		return _ret;
 	}
 	final INT32 OriginalCodePage()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_OriginalCodePage(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_OriginalCodePage(&_ret));
 		return _ret;
 	}
 	final void OriginalCodePage(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).set_OriginalCodePage(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).set_OriginalCodePage(value));
 	}
 	final HSTRING Preview()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_Preview(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_Preview(&_ret));
 		return _ret;
 	}
 	final void Preview(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).set_Preview(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).set_Preview(value));
 	}
 	final Windows.ApplicationModel.Email.EmailMessageResponseKind LastResponseKind()
 	{
 		Windows.ApplicationModel.Email.EmailMessageResponseKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_LastResponseKind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_LastResponseKind(&_ret));
 		return _ret;
 	}
 	final void LastResponseKind(Windows.ApplicationModel.Email.EmailMessageResponseKind value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).set_LastResponseKind(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).set_LastResponseKind(value));
 	}
 	final Windows.ApplicationModel.Email.EmailRecipient Sender()
 	{
 		Windows.ApplicationModel.Email.EmailRecipient _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_Sender(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_Sender(&_ret));
 		return _ret;
 	}
 	final void Sender(Windows.ApplicationModel.Email.EmailRecipient value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).set_Sender(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).set_Sender(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) SentTime()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_SentTime(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_SentTime(&_ret));
 		return _ret;
 	}
 	final void SentTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).set_SentTime(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).set_SentTime(value));
 	}
 	final Windows.ApplicationModel.Email.EmailMeetingInfo MeetingInfo()
 	{
 		Windows.ApplicationModel.Email.EmailMeetingInfo _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).get_MeetingInfo(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).get_MeetingInfo(&_ret));
 		return _ret;
 	}
 	final void MeetingInfo(Windows.ApplicationModel.Email.EmailMeetingInfo value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).set_MeetingInfo(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).set_MeetingInfo(value));
 	}
 	final Windows.Storage.Streams.IRandomAccessStreamReference GetBodyStream(Windows.ApplicationModel.Email.EmailMessageBodyKind type)
 	{
 		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).abi_GetBodyStream(type, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).abi_GetBodyStream(type, &_ret));
 		return _ret;
 	}
 	final void SetBodyStream(Windows.ApplicationModel.Email.EmailMessageBodyKind type, Windows.Storage.Streams.IRandomAccessStreamReference stream)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage2).abi_SetBodyStream(type, stream));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage2)this.asInterface(uuid("fdc8248b-9f1a-44db-bd3c-65c384770f86"))).abi_SetBodyStream(type, stream));
 	}
 	final Windows.Storage.Streams.IRandomAccessStreamReference SmimeData()
 	{
 		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage3).get_SmimeData(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage3)this.asInterface(uuid("a1ea675c-e598-4d29-a018-fc7b7eece0a1"))).get_SmimeData(&_ret));
 		return _ret;
 	}
 	final void SmimeData(Windows.Storage.Streams.IRandomAccessStreamReference value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage3).set_SmimeData(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage3)this.asInterface(uuid("a1ea675c-e598-4d29-a018-fc7b7eece0a1"))).set_SmimeData(value));
 	}
 	final Windows.ApplicationModel.Email.EmailMessageSmimeKind SmimeKind()
 	{
 		Windows.ApplicationModel.Email.EmailMessageSmimeKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage3).get_SmimeKind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage3)this.asInterface(uuid("a1ea675c-e598-4d29-a018-fc7b7eece0a1"))).get_SmimeKind(&_ret));
 		return _ret;
 	}
 	final void SmimeKind(Windows.ApplicationModel.Email.EmailMessageSmimeKind value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage3).set_SmimeKind(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage3)this.asInterface(uuid("a1ea675c-e598-4d29-a018-fc7b7eece0a1"))).set_SmimeKind(value));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Email.EmailRecipient) ReplyTo()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Email.EmailRecipient) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage4).get_ReplyTo(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage4)this.asInterface(uuid("317cf181-3e7f-4a05-8394-3e10336dd435"))).get_ReplyTo(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailRecipient SentRepresenting()
 	{
 		Windows.ApplicationModel.Email.EmailRecipient _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage4).get_SentRepresenting(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage4)this.asInterface(uuid("317cf181-3e7f-4a05-8394-3e10336dd435"))).get_SentRepresenting(&_ret));
 		return _ret;
 	}
 	final void SentRepresenting(Windows.ApplicationModel.Email.EmailRecipient value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessage4).set_SentRepresenting(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessage4)this.asInterface(uuid("317cf181-3e7f-4a05-8394-3e10336dd435"))).set_SentRepresenting(value));
 	}
 	static EmailMessage New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(EmailMessage).abi_ActivateInstance(&ret));
-		return ret.as!(EmailMessage);
+		return cast(EmailMessage) ret;
 	}
 }
 
@@ -2709,13 +2709,13 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailMessage) Messages()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailMessage) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessageBatch).get_Messages(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessageBatch)this.asInterface(uuid("605cd08f-25d9-4f1b-9e51-0514c0149653"))).get_Messages(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailBatchStatus Status()
 	{
 		Windows.ApplicationModel.Email.EmailBatchStatus _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessageBatch).get_Status(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessageBatch)this.asInterface(uuid("605cd08f-25d9-4f1b-9e51-0514c0149653"))).get_Status(&_ret));
 		return _ret;
 	}
 }
@@ -2726,7 +2726,7 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMessageBatch) ReadBatchAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMessageBatch) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailMessageReader).abi_ReadBatchAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMessageReader)this.asInterface(uuid("2f4abe9f-6213-4a85-a3b0-f92d1a839d19"))).abi_ReadBatchAsync(&_ret));
 		return _ret;
 	}
 }
@@ -2737,63 +2737,63 @@ extern(Windows):
 	final Windows.ApplicationModel.Email.EmailQueryTextSearch TextSearch()
 	{
 		Windows.ApplicationModel.Email.EmailQueryTextSearch _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailQueryOptions).get_TextSearch(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailQueryOptions)this.asInterface(uuid("45504b9b-3e7f-4d52-b6dd-d6fd4e1fbd9a"))).get_TextSearch(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailQuerySortDirection SortDirection()
 	{
 		Windows.ApplicationModel.Email.EmailQuerySortDirection _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailQueryOptions).get_SortDirection(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailQueryOptions)this.asInterface(uuid("45504b9b-3e7f-4d52-b6dd-d6fd4e1fbd9a"))).get_SortDirection(&_ret));
 		return _ret;
 	}
 	final void SortDirection(Windows.ApplicationModel.Email.EmailQuerySortDirection value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailQueryOptions).set_SortDirection(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailQueryOptions)this.asInterface(uuid("45504b9b-3e7f-4d52-b6dd-d6fd4e1fbd9a"))).set_SortDirection(value));
 	}
 	final Windows.ApplicationModel.Email.EmailQuerySortProperty SortProperty()
 	{
 		Windows.ApplicationModel.Email.EmailQuerySortProperty _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailQueryOptions).get_SortProperty(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailQueryOptions)this.asInterface(uuid("45504b9b-3e7f-4d52-b6dd-d6fd4e1fbd9a"))).get_SortProperty(&_ret));
 		return _ret;
 	}
 	final void SortProperty(Windows.ApplicationModel.Email.EmailQuerySortProperty value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailQueryOptions).set_SortProperty(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailQueryOptions)this.asInterface(uuid("45504b9b-3e7f-4d52-b6dd-d6fd4e1fbd9a"))).set_SortProperty(value));
 	}
 	final Windows.ApplicationModel.Email.EmailQueryKind Kind()
 	{
 		Windows.ApplicationModel.Email.EmailQueryKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailQueryOptions).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailQueryOptions)this.asInterface(uuid("45504b9b-3e7f-4d52-b6dd-d6fd4e1fbd9a"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final void Kind(Windows.ApplicationModel.Email.EmailQueryKind value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailQueryOptions).set_Kind(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailQueryOptions)this.asInterface(uuid("45504b9b-3e7f-4d52-b6dd-d6fd4e1fbd9a"))).set_Kind(value));
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) FolderIds()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailQueryOptions).get_FolderIds(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailQueryOptions)this.asInterface(uuid("45504b9b-3e7f-4d52-b6dd-d6fd4e1fbd9a"))).get_FolderIds(&_ret));
 		return _ret;
 	}
 	static EmailQueryOptions New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(EmailQueryOptions).abi_ActivateInstance(&ret));
-		return ret.as!(EmailQueryOptions);
+		return cast(EmailQueryOptions) ret;
 	}
 	static Windows.ApplicationModel.Email.EmailQueryOptions New(HSTRING text)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Email.IEmailQueryOptionsFactory);
 		Windows.ApplicationModel.Email.EmailQueryOptions _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Email.IEmailQueryOptionsFactory).abi_CreateWithText(text, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailQueryOptionsFactory)factory.asInterface(uuid("88f1a1b8-78ab-4ee8-b4e3-046d6e2fe5e2"))).abi_CreateWithText(text, &_ret));
 		return _ret;
 	}
 	static Windows.ApplicationModel.Email.EmailQueryOptions New(HSTRING text, Windows.ApplicationModel.Email.EmailQuerySearchFields fields)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Email.IEmailQueryOptionsFactory);
 		Windows.ApplicationModel.Email.EmailQueryOptions _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Email.IEmailQueryOptionsFactory).abi_CreateWithTextAndFields(text, fields, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailQueryOptionsFactory)factory.asInterface(uuid("88f1a1b8-78ab-4ee8-b4e3-046d6e2fe5e2"))).abi_CreateWithTextAndFields(text, fields, &_ret));
 		return _ret;
 	}
 }
@@ -2804,32 +2804,32 @@ extern(Windows):
 	final Windows.ApplicationModel.Email.EmailQuerySearchFields Fields()
 	{
 		Windows.ApplicationModel.Email.EmailQuerySearchFields _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailQueryTextSearch).get_Fields(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailQueryTextSearch)this.asInterface(uuid("9fa0a288-3c5d-46a5-a6e2-31d6fd17e540"))).get_Fields(&_ret));
 		return _ret;
 	}
 	final void Fields(Windows.ApplicationModel.Email.EmailQuerySearchFields value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailQueryTextSearch).set_Fields(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailQueryTextSearch)this.asInterface(uuid("9fa0a288-3c5d-46a5-a6e2-31d6fd17e540"))).set_Fields(value));
 	}
 	final Windows.ApplicationModel.Email.EmailQuerySearchScope SearchScope()
 	{
 		Windows.ApplicationModel.Email.EmailQuerySearchScope _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailQueryTextSearch).get_SearchScope(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailQueryTextSearch)this.asInterface(uuid("9fa0a288-3c5d-46a5-a6e2-31d6fd17e540"))).get_SearchScope(&_ret));
 		return _ret;
 	}
 	final void SearchScope(Windows.ApplicationModel.Email.EmailQuerySearchScope value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailQueryTextSearch).set_SearchScope(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailQueryTextSearch)this.asInterface(uuid("9fa0a288-3c5d-46a5-a6e2-31d6fd17e540"))).set_SearchScope(value));
 	}
 	final HSTRING Text()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailQueryTextSearch).get_Text(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailQueryTextSearch)this.asInterface(uuid("9fa0a288-3c5d-46a5-a6e2-31d6fd17e540"))).get_Text(&_ret));
 		return _ret;
 	}
 	final void Text(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailQueryTextSearch).set_Text(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailQueryTextSearch)this.asInterface(uuid("9fa0a288-3c5d-46a5-a6e2-31d6fd17e540"))).set_Text(value));
 	}
 }
 
@@ -2839,41 +2839,41 @@ extern(Windows):
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailRecipient).get_Name(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailRecipient)this.asInterface(uuid("cae825b3-4478-4814-b900-c902b5e19b53"))).get_Name(&_ret));
 		return _ret;
 	}
 	final void Name(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailRecipient).set_Name(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailRecipient)this.asInterface(uuid("cae825b3-4478-4814-b900-c902b5e19b53"))).set_Name(value));
 	}
 	final HSTRING Address()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailRecipient).get_Address(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailRecipient)this.asInterface(uuid("cae825b3-4478-4814-b900-c902b5e19b53"))).get_Address(&_ret));
 		return _ret;
 	}
 	final void Address(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailRecipient).set_Address(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailRecipient)this.asInterface(uuid("cae825b3-4478-4814-b900-c902b5e19b53"))).set_Address(value));
 	}
 	static EmailRecipient New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(EmailRecipient).abi_ActivateInstance(&ret));
-		return ret.as!(EmailRecipient);
+		return cast(EmailRecipient) ret;
 	}
 	static Windows.ApplicationModel.Email.EmailRecipient New(HSTRING address)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Email.IEmailRecipientFactory);
 		Windows.ApplicationModel.Email.EmailRecipient _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Email.IEmailRecipientFactory).abi_Create(address, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailRecipientFactory)factory.asInterface(uuid("5500b84d-c79a-4ef8-b909-722e18e3935d"))).abi_Create(address, &_ret));
 		return _ret;
 	}
 	static Windows.ApplicationModel.Email.EmailRecipient New(HSTRING address, HSTRING name)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Email.IEmailRecipientFactory);
 		Windows.ApplicationModel.Email.EmailRecipient _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Email.IEmailRecipientFactory).abi_CreateWithName(address, name, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailRecipientFactory)factory.asInterface(uuid("5500b84d-c79a-4ef8-b909-722e18e3935d"))).abi_CreateWithName(address, name, &_ret));
 		return _ret;
 	}
 }
@@ -2884,28 +2884,28 @@ extern(Windows):
 	final Windows.ApplicationModel.Email.EmailRecipientResolutionStatus Status()
 	{
 		Windows.ApplicationModel.Email.EmailRecipientResolutionStatus _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailRecipientResolutionResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailRecipientResolutionResult)this.asInterface(uuid("918338fa-8d8d-4573-80d1-07172a34b98d"))).get_Status(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) PublicKeys()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailRecipientResolutionResult).get_PublicKeys(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailRecipientResolutionResult)this.asInterface(uuid("918338fa-8d8d-4573-80d1-07172a34b98d"))).get_PublicKeys(&_ret));
 		return _ret;
 	}
 	final void Status(Windows.ApplicationModel.Email.EmailRecipientResolutionStatus value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailRecipientResolutionResult2).set_Status(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailRecipientResolutionResult2)this.asInterface(uuid("5e420bb6-ce5b-4bde-b9d4-e16da0b09fca"))).set_Status(value));
 	}
 	final void SetPublicKeys(Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.Certificate) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailRecipientResolutionResult2).abi_SetPublicKeys(value));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailRecipientResolutionResult2)this.asInterface(uuid("5e420bb6-ce5b-4bde-b9d4-e16da0b09fca"))).abi_SetPublicKeys(value));
 	}
 	static EmailRecipientResolutionResult New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(EmailRecipientResolutionResult).abi_ActivateInstance(&ret));
-		return ret.as!(EmailRecipientResolutionResult);
+		return cast(EmailRecipientResolutionResult) ret;
 	}
 }
 
@@ -2915,67 +2915,67 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailMailbox)) FindMailboxesAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailMailbox)) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailStore).abi_FindMailboxesAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailStore)this.asInterface(uuid("f803226e-9137-4f8b-a470-279ac3058eb6"))).abi_FindMailboxesAsync(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailConversationReader GetConversationReader()
 	{
 		Windows.ApplicationModel.Email.EmailConversationReader _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailStore).abi_GetConversationReader(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailStore)this.asInterface(uuid("f803226e-9137-4f8b-a470-279ac3058eb6"))).abi_GetConversationReader(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailConversationReader GetConversationReaderWithOptions(Windows.ApplicationModel.Email.EmailQueryOptions options)
 	{
 		Windows.ApplicationModel.Email.EmailConversationReader _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailStore).abi_GetConversationReaderWithOptions(options, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailStore)this.asInterface(uuid("f803226e-9137-4f8b-a470-279ac3058eb6"))).abi_GetConversationReaderWithOptions(options, &_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailMessageReader GetMessageReader()
 	{
 		Windows.ApplicationModel.Email.EmailMessageReader _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailStore).abi_GetMessageReader(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailStore)this.asInterface(uuid("f803226e-9137-4f8b-a470-279ac3058eb6"))).abi_GetMessageReader(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Email.EmailMessageReader GetMessageReaderWithOptions(Windows.ApplicationModel.Email.EmailQueryOptions options)
 	{
 		Windows.ApplicationModel.Email.EmailMessageReader _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailStore).abi_GetMessageReaderWithOptions(options, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailStore)this.asInterface(uuid("f803226e-9137-4f8b-a470-279ac3058eb6"))).abi_GetMessageReaderWithOptions(options, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMailbox) GetMailboxAsync(HSTRING id)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMailbox) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailStore).abi_GetMailboxAsync(id, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailStore)this.asInterface(uuid("f803226e-9137-4f8b-a470-279ac3058eb6"))).abi_GetMailboxAsync(id, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailConversation) GetConversationAsync(HSTRING id)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailConversation) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailStore).abi_GetConversationAsync(id, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailStore)this.asInterface(uuid("f803226e-9137-4f8b-a470-279ac3058eb6"))).abi_GetConversationAsync(id, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailFolder) GetFolderAsync(HSTRING id)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailFolder) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailStore).abi_GetFolderAsync(id, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailStore)this.asInterface(uuid("f803226e-9137-4f8b-a470-279ac3058eb6"))).abi_GetFolderAsync(id, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMessage) GetMessageAsync(HSTRING id)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMessage) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailStore).abi_GetMessageAsync(id, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailStore)this.asInterface(uuid("f803226e-9137-4f8b-a470-279ac3058eb6"))).abi_GetMessageAsync(id, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMailbox) CreateMailboxAsync(HSTRING accountName, HSTRING accountAddress)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMailbox) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailStore).abi_CreateMailboxAsync(accountName, accountAddress, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailStore)this.asInterface(uuid("f803226e-9137-4f8b-a470-279ac3058eb6"))).abi_CreateMailboxAsync(accountName, accountAddress, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMailbox) CreateMailboxInAccountAsync(HSTRING accountName, HSTRING accountAddress, HSTRING userDataAccountId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMailbox) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Email.IEmailStore).abi_CreateMailboxInAccountAsync(accountName, accountAddress, userDataAccountId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailStore)this.asInterface(uuid("f803226e-9137-4f8b-a470-279ac3058eb6"))).abi_CreateMailboxInAccountAsync(accountName, accountAddress, userDataAccountId, &_ret));
 		return _ret;
 	}
 }

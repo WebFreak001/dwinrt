@@ -124,55 +124,55 @@ interface PropertySet : Windows.Foundation.Collections.IPropertySet, Windows.Fou
 extern(Windows):
 	final void removeMapChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable)).remove_MapChanged(token));
+		Debug.OK((cast(Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable))this).remove_MapChanged(token));
 	}
 	final  IInspectable Lookup(HSTRING key)
 	{
 		 IInspectable _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)).abi_Lookup(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_Lookup(key, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).get_Size(&_ret));
 		return _ret;
 	}
 	final bool HasKey(HSTRING key)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)).abi_HasKey(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_HasKey(key, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) GetView()
 	{
 		Windows.Foundation.Collections.IMapView!(HSTRING,  IInspectable) _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)).abi_GetView(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_GetView(&_ret));
 		return _ret;
 	}
 	final bool Insert(HSTRING key,	IInspectable value)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)).abi_Insert(key, value, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_Insert(key, value, &_ret));
 		return _ret;
 	}
 	final void Remove(HSTRING key)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)).abi_Remove(key));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_Remove(key));
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_Clear());
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)))this).abi_First(out_first));
 	}
 	static PropertySet New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PropertySet).abi_ActivateInstance(&ret));
-		return ret.as!(PropertySet);
+		return cast(PropertySet) ret;
 	}
 }
 
@@ -182,54 +182,54 @@ extern(Windows):
 	final  HSTRING Lookup(HSTRING key)
 	{
 		 HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_Lookup(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING))this).abi_Lookup(key, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING))this).get_Size(&_ret));
 		return _ret;
 	}
 	final bool HasKey(HSTRING key)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_HasKey(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING))this).abi_HasKey(key, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMapView!(HSTRING,	 HSTRING) GetView()
 	{
 		Windows.Foundation.Collections.IMapView!(HSTRING,  HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_GetView(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING))this).abi_GetView(&_ret));
 		return _ret;
 	}
 	final bool Insert(HSTRING key,	HSTRING value)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_Insert(key, value, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING))this).abi_Insert(key, value, &_ret));
 		return _ret;
 	}
 	final void Remove(HSTRING key)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_Remove(key));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING))this).abi_Remove(key));
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING))this).abi_Clear());
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING))* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING))).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)))this).abi_First(out_first));
 	}
 	final void removeMapChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IObservableMap!(HSTRING, HSTRING)).remove_MapChanged(token));
+		Debug.OK((cast(Windows.Foundation.Collections.IObservableMap!(HSTRING, HSTRING))this).remove_MapChanged(token));
 	}
 	static StringMap New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(StringMap).abi_ActivateInstance(&ret));
-		return ret.as!(StringMap);
+		return cast(StringMap) ret;
 	}
 }
 
@@ -238,55 +238,55 @@ interface ValueSet : Windows.Foundation.Collections.IPropertySet, Windows.Founda
 extern(Windows):
 	final void removeMapChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable)).remove_MapChanged(token));
+		Debug.OK((cast(Windows.Foundation.Collections.IObservableMap!(HSTRING, IInspectable))this).remove_MapChanged(token));
 	}
 	final  IInspectable Lookup(HSTRING key)
 	{
 		 IInspectable _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)).abi_Lookup(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_Lookup(key, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).get_Size(&_ret));
 		return _ret;
 	}
 	final bool HasKey(HSTRING key)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)).abi_HasKey(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_HasKey(key, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) GetView()
 	{
 		Windows.Foundation.Collections.IMapView!(HSTRING,  IInspectable) _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)).abi_GetView(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_GetView(&_ret));
 		return _ret;
 	}
 	final bool Insert(HSTRING key,	IInspectable value)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)).abi_Insert(key, value, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_Insert(key, value, &_ret));
 		return _ret;
 	}
 	final void Remove(HSTRING key)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)).abi_Remove(key));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_Remove(key));
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))this).abi_Clear());
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)))this).abi_First(out_first));
 	}
 	static ValueSet New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ValueSet).abi_ActivateInstance(&ret));
-		return ret.as!(ValueSet);
+		return cast(ValueSet) ret;
 	}
 }
 

@@ -23,17 +23,17 @@ interface SoundLevelBroker
 	static Windows.Media.SoundLevel SoundLevel()
 	{
 		Windows.Media.SoundLevel _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Core.Preview.ISoundLevelBrokerStatics).get_SoundLevel(&_ret));
+		Debug.OK(staticInstance.get_SoundLevel(&_ret));
 		return _ret;
 	}
 	static EventRegistrationToken OnSoundLevelChanged(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Media.Core.Preview.ISoundLevelBrokerStatics).add_SoundLevelChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_SoundLevelChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	static void removeSoundLevelChanged(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.Media.Core.Preview.ISoundLevelBrokerStatics).remove_SoundLevelChanged(token));
+		Debug.OK(staticInstance.remove_SoundLevelChanged(token));
 	}
 }

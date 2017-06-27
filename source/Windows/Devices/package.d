@@ -42,38 +42,38 @@ extern(Windows):
 	final Windows.Devices.Adc.Provider.IAdcControllerProvider AdcControllerProvider()
 	{
 		Windows.Devices.Adc.Provider.IAdcControllerProvider _ret;
-		Debug.OK(this.as!(Windows.Devices.ILowLevelDevicesAggregateProvider).get_AdcControllerProvider(&_ret));
+		Debug.OK((cast(Windows.Devices.ILowLevelDevicesAggregateProvider)this.asInterface(uuid("a73e561c-aac1-4ec7-a852-479f7060d01f"))).get_AdcControllerProvider(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Pwm.Provider.IPwmControllerProvider PwmControllerProvider()
 	{
 		Windows.Devices.Pwm.Provider.IPwmControllerProvider _ret;
-		Debug.OK(this.as!(Windows.Devices.ILowLevelDevicesAggregateProvider).get_PwmControllerProvider(&_ret));
+		Debug.OK((cast(Windows.Devices.ILowLevelDevicesAggregateProvider)this.asInterface(uuid("a73e561c-aac1-4ec7-a852-479f7060d01f"))).get_PwmControllerProvider(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Gpio.Provider.IGpioControllerProvider GpioControllerProvider()
 	{
 		Windows.Devices.Gpio.Provider.IGpioControllerProvider _ret;
-		Debug.OK(this.as!(Windows.Devices.ILowLevelDevicesAggregateProvider).get_GpioControllerProvider(&_ret));
+		Debug.OK((cast(Windows.Devices.ILowLevelDevicesAggregateProvider)this.asInterface(uuid("a73e561c-aac1-4ec7-a852-479f7060d01f"))).get_GpioControllerProvider(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.I2c.Provider.II2cControllerProvider I2cControllerProvider()
 	{
 		Windows.Devices.I2c.Provider.II2cControllerProvider _ret;
-		Debug.OK(this.as!(Windows.Devices.ILowLevelDevicesAggregateProvider).get_I2cControllerProvider(&_ret));
+		Debug.OK((cast(Windows.Devices.ILowLevelDevicesAggregateProvider)this.asInterface(uuid("a73e561c-aac1-4ec7-a852-479f7060d01f"))).get_I2cControllerProvider(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Spi.Provider.ISpiControllerProvider SpiControllerProvider()
 	{
 		Windows.Devices.Spi.Provider.ISpiControllerProvider _ret;
-		Debug.OK(this.as!(Windows.Devices.ILowLevelDevicesAggregateProvider).get_SpiControllerProvider(&_ret));
+		Debug.OK((cast(Windows.Devices.ILowLevelDevicesAggregateProvider)this.asInterface(uuid("a73e561c-aac1-4ec7-a852-479f7060d01f"))).get_SpiControllerProvider(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.LowLevelDevicesAggregateProvider New(Windows.Devices.Adc.Provider.IAdcControllerProvider adc, Windows.Devices.Pwm.Provider.IPwmControllerProvider pwm, Windows.Devices.Gpio.Provider.IGpioControllerProvider gpio, Windows.Devices.I2c.Provider.II2cControllerProvider i2c, Windows.Devices.Spi.Provider.ISpiControllerProvider spi)
 	{
 		auto factory = factory!(Windows.Devices.ILowLevelDevicesAggregateProviderFactory);
 		Windows.Devices.LowLevelDevicesAggregateProvider _ret;
-		Debug.OK(factory.as!(Windows.Devices.ILowLevelDevicesAggregateProviderFactory).abi_Create(adc, pwm, gpio, i2c, spi, &_ret));
+		Debug.OK((cast(Windows.Devices.ILowLevelDevicesAggregateProviderFactory)factory.asInterface(uuid("9ac4aaf6-3473-465e-96d5-36281a2c57af"))).abi_Create(adc, pwm, gpio, i2c, spi, &_ret));
 		return _ret;
 	}
 }
@@ -89,11 +89,11 @@ interface LowLevelDevicesController : Windows.Devices.ILowLevelDevicesController
 	static Windows.Devices.ILowLevelDevicesAggregateProvider DefaultProvider()
 	{
 		Windows.Devices.ILowLevelDevicesAggregateProvider _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.ILowLevelDevicesControllerStatics).get_DefaultProvider(&_ret));
+		Debug.OK(staticInstance.get_DefaultProvider(&_ret));
 		return _ret;
 	}
 	static void DefaultProvider(Windows.Devices.ILowLevelDevicesAggregateProvider value)
 	{
-		Debug.OK(staticInstance.as!(Windows.Devices.ILowLevelDevicesControllerStatics).set_DefaultProvider(value));
+		Debug.OK(staticInstance.set_DefaultProvider(value));
 	}
 }

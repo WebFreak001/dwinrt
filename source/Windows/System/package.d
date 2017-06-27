@@ -450,7 +450,7 @@ extern(Windows):
 	final Windows.ApplicationModel.AppInfo AppInfo()
 	{
 		Windows.ApplicationModel.AppInfo _ret;
-		Debug.OK(this.as!(Windows.System.IAppDiagnosticInfo).get_AppInfo(&_ret));
+		Debug.OK((cast(Windows.System.IAppDiagnosticInfo)this.asInterface(uuid("e348a69a-8889-4ca3-be07-d5ffff5f0804"))).get_AppInfo(&_ret));
 		return _ret;
 	}
 
@@ -463,7 +463,7 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.System.AppDiagnosticInfo)) RequestInfoAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.System.AppDiagnosticInfo)) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IAppDiagnosticInfoStatics).abi_RequestInfoAsync(&_ret));
+		Debug.OK(staticInstance.abi_RequestInfoAsync(&_ret));
 		return _ret;
 	}
 }
@@ -474,25 +474,25 @@ extern(Windows):
 	final ulong PrivateCommitUsage()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.System.IAppMemoryReport).get_PrivateCommitUsage(&_ret));
+		Debug.OK((cast(Windows.System.IAppMemoryReport)this.asInterface(uuid("6d65339b-4d6f-45bc-9c5e-e49b3ff2758d"))).get_PrivateCommitUsage(&_ret));
 		return _ret;
 	}
 	final ulong PeakPrivateCommitUsage()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.System.IAppMemoryReport).get_PeakPrivateCommitUsage(&_ret));
+		Debug.OK((cast(Windows.System.IAppMemoryReport)this.asInterface(uuid("6d65339b-4d6f-45bc-9c5e-e49b3ff2758d"))).get_PeakPrivateCommitUsage(&_ret));
 		return _ret;
 	}
 	final ulong TotalCommitUsage()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.System.IAppMemoryReport).get_TotalCommitUsage(&_ret));
+		Debug.OK((cast(Windows.System.IAppMemoryReport)this.asInterface(uuid("6d65339b-4d6f-45bc-9c5e-e49b3ff2758d"))).get_TotalCommitUsage(&_ret));
 		return _ret;
 	}
 	final ulong TotalCommitLimit()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.System.IAppMemoryReport).get_TotalCommitLimit(&_ret));
+		Debug.OK((cast(Windows.System.IAppMemoryReport)this.asInterface(uuid("6d65339b-4d6f-45bc-9c5e-e49b3ff2758d"))).get_TotalCommitLimit(&_ret));
 		return _ret;
 	}
 }
@@ -503,13 +503,13 @@ extern(Windows):
 	final ulong OldLimit()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.System.IAppMemoryUsageLimitChangingEventArgs).get_OldLimit(&_ret));
+		Debug.OK((cast(Windows.System.IAppMemoryUsageLimitChangingEventArgs)this.asInterface(uuid("79f86664-feca-4da5-9e40-2bc63efdc979"))).get_OldLimit(&_ret));
 		return _ret;
 	}
 	final ulong NewLimit()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.System.IAppMemoryUsageLimitChangingEventArgs).get_NewLimit(&_ret));
+		Debug.OK((cast(Windows.System.IAppMemoryUsageLimitChangingEventArgs)this.asInterface(uuid("79f86664-feca-4da5-9e40-2bc63efdc979"))).get_NewLimit(&_ret));
 		return _ret;
 	}
 }
@@ -520,24 +520,24 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVector!(Windows.Storage.IStorageItem) ItemsToSelect()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Storage.IStorageItem) _ret;
-		Debug.OK(this.as!(Windows.System.IFolderLauncherOptions).get_ItemsToSelect(&_ret));
+		Debug.OK((cast(Windows.System.IFolderLauncherOptions)this.asInterface(uuid("bb91c27d-6b87-432a-bd04-776c6f5fb2ab"))).get_ItemsToSelect(&_ret));
 		return _ret;
 	}
 	final Windows.UI.ViewManagement.ViewSizePreference DesiredRemainingView()
 	{
 		Windows.UI.ViewManagement.ViewSizePreference _ret;
-		Debug.OK(this.as!(Windows.System.ILauncherViewOptions).get_DesiredRemainingView(&_ret));
+		Debug.OK((cast(Windows.System.ILauncherViewOptions)this.asInterface(uuid("8a9b29f1-7ca7-49de-9bd3-3c5b7184f616"))).get_DesiredRemainingView(&_ret));
 		return _ret;
 	}
 	final void DesiredRemainingView(Windows.UI.ViewManagement.ViewSizePreference value)
 	{
-		Debug.OK(this.as!(Windows.System.ILauncherViewOptions).set_DesiredRemainingView(value));
+		Debug.OK((cast(Windows.System.ILauncherViewOptions)this.asInterface(uuid("8a9b29f1-7ca7-49de-9bd3-3c5b7184f616"))).set_DesiredRemainingView(value));
 	}
 	static FolderLauncherOptions New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(FolderLauncherOptions).abi_ActivateInstance(&ret));
-		return ret.as!(FolderLauncherOptions);
+		return cast(FolderLauncherOptions) ret;
 	}
 }
 
@@ -552,55 +552,55 @@ interface KnownUserProperties
 	static HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IKnownUserPropertiesStatics).get_DisplayName(&_ret));
+		Debug.OK(staticInstance.get_DisplayName(&_ret));
 		return _ret;
 	}
 	static HSTRING FirstName()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IKnownUserPropertiesStatics).get_FirstName(&_ret));
+		Debug.OK(staticInstance.get_FirstName(&_ret));
 		return _ret;
 	}
 	static HSTRING LastName()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IKnownUserPropertiesStatics).get_LastName(&_ret));
+		Debug.OK(staticInstance.get_LastName(&_ret));
 		return _ret;
 	}
 	static HSTRING ProviderName()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IKnownUserPropertiesStatics).get_ProviderName(&_ret));
+		Debug.OK(staticInstance.get_ProviderName(&_ret));
 		return _ret;
 	}
 	static HSTRING AccountName()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IKnownUserPropertiesStatics).get_AccountName(&_ret));
+		Debug.OK(staticInstance.get_AccountName(&_ret));
 		return _ret;
 	}
 	static HSTRING GuestHost()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IKnownUserPropertiesStatics).get_GuestHost(&_ret));
+		Debug.OK(staticInstance.get_GuestHost(&_ret));
 		return _ret;
 	}
 	static HSTRING PrincipalName()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IKnownUserPropertiesStatics).get_PrincipalName(&_ret));
+		Debug.OK(staticInstance.get_PrincipalName(&_ret));
 		return _ret;
 	}
 	static HSTRING DomainName()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IKnownUserPropertiesStatics).get_DomainName(&_ret));
+		Debug.OK(staticInstance.get_DomainName(&_ret));
 		return _ret;
 	}
 	static HSTRING SessionInitiationProtocolUri()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IKnownUserPropertiesStatics).get_SessionInitiationProtocolUri(&_ret));
+		Debug.OK(staticInstance.get_SessionInitiationProtocolUri(&_ret));
 		return _ret;
 	}
 }
@@ -611,13 +611,13 @@ extern(Windows):
 	final Windows.System.LaunchUriStatus Status()
 	{
 		Windows.System.LaunchUriStatus _ret;
-		Debug.OK(this.as!(Windows.System.ILaunchUriResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.System.ILaunchUriResult)this.asInterface(uuid("ec27a8df-f6d5-45ca-913a-70a40c5c8221"))).get_Status(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.ValueSet Result()
 	{
 		Windows.Foundation.Collections.ValueSet _ret;
-		Debug.OK(this.as!(Windows.System.ILaunchUriResult).get_Result(&_ret));
+		Debug.OK((cast(Windows.System.ILaunchUriResult)this.asInterface(uuid("ec27a8df-f6d5-45ca-913a-70a40c5c8221"))).get_Result(&_ret));
 		return _ret;
 	}
 }
@@ -633,25 +633,25 @@ interface Launcher
 	static Windows.Foundation.IAsyncOperation!(bool) LaunchFileAsync(Windows.Storage.IStorageFile file)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.ILauncherStatics).abi_LaunchFileAsync(file, &_ret));
+		Debug.OK(staticInstance.abi_LaunchFileAsync(file, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(bool) LaunchFileWithOptionsAsync(Windows.Storage.IStorageFile file, Windows.System.LauncherOptions options)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.ILauncherStatics).abi_LaunchFileWithOptionsAsync(file, options, &_ret));
+		Debug.OK(staticInstance.abi_LaunchFileWithOptionsAsync(file, options, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(bool) LaunchUriAsync(Windows.Foundation.Uri uri)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.ILauncherStatics).abi_LaunchUriAsync(uri, &_ret));
+		Debug.OK(staticInstance.abi_LaunchUriAsync(uri, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(bool) LaunchUriWithOptionsAsync(Windows.Foundation.Uri uri, Windows.System.LauncherOptions options)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.ILauncherStatics).abi_LaunchUriWithOptionsAsync(uri, options, &_ret));
+		Debug.OK(staticInstance.abi_LaunchUriWithOptionsAsync(uri, options, &_ret));
 		return _ret;
 	}
 }
@@ -662,124 +662,124 @@ extern(Windows):
 	final bool TreatAsUntrusted()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.System.ILauncherOptions).get_TreatAsUntrusted(&_ret));
+		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).get_TreatAsUntrusted(&_ret));
 		return _ret;
 	}
 	final void TreatAsUntrusted(bool value)
 	{
-		Debug.OK(this.as!(Windows.System.ILauncherOptions).set_TreatAsUntrusted(value));
+		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).set_TreatAsUntrusted(value));
 	}
 	final bool DisplayApplicationPicker()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.System.ILauncherOptions).get_DisplayApplicationPicker(&_ret));
+		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).get_DisplayApplicationPicker(&_ret));
 		return _ret;
 	}
 	final void DisplayApplicationPicker(bool value)
 	{
-		Debug.OK(this.as!(Windows.System.ILauncherOptions).set_DisplayApplicationPicker(value));
+		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).set_DisplayApplicationPicker(value));
 	}
 	final Windows.System.LauncherUIOptions UI()
 	{
 		Windows.System.LauncherUIOptions _ret;
-		Debug.OK(this.as!(Windows.System.ILauncherOptions).get_UI(&_ret));
+		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).get_UI(&_ret));
 		return _ret;
 	}
 	final HSTRING PreferredApplicationPackageFamilyName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.System.ILauncherOptions).get_PreferredApplicationPackageFamilyName(&_ret));
+		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).get_PreferredApplicationPackageFamilyName(&_ret));
 		return _ret;
 	}
 	final void PreferredApplicationPackageFamilyName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.System.ILauncherOptions).set_PreferredApplicationPackageFamilyName(value));
+		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).set_PreferredApplicationPackageFamilyName(value));
 	}
 	final HSTRING PreferredApplicationDisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.System.ILauncherOptions).get_PreferredApplicationDisplayName(&_ret));
+		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).get_PreferredApplicationDisplayName(&_ret));
 		return _ret;
 	}
 	final void PreferredApplicationDisplayName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.System.ILauncherOptions).set_PreferredApplicationDisplayName(value));
+		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).set_PreferredApplicationDisplayName(value));
 	}
 	final Windows.Foundation.Uri FallbackUri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.System.ILauncherOptions).get_FallbackUri(&_ret));
+		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).get_FallbackUri(&_ret));
 		return _ret;
 	}
 	final void FallbackUri(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.System.ILauncherOptions).set_FallbackUri(value));
+		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).set_FallbackUri(value));
 	}
 	final HSTRING ContentType()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.System.ILauncherOptions).get_ContentType(&_ret));
+		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).get_ContentType(&_ret));
 		return _ret;
 	}
 	final void ContentType(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.System.ILauncherOptions).set_ContentType(value));
+		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).set_ContentType(value));
 	}
 	final Windows.UI.ViewManagement.ViewSizePreference DesiredRemainingView()
 	{
 		Windows.UI.ViewManagement.ViewSizePreference _ret;
-		Debug.OK(this.as!(Windows.System.ILauncherViewOptions).get_DesiredRemainingView(&_ret));
+		Debug.OK((cast(Windows.System.ILauncherViewOptions)this.asInterface(uuid("8a9b29f1-7ca7-49de-9bd3-3c5b7184f616"))).get_DesiredRemainingView(&_ret));
 		return _ret;
 	}
 	final void DesiredRemainingView(Windows.UI.ViewManagement.ViewSizePreference value)
 	{
-		Debug.OK(this.as!(Windows.System.ILauncherViewOptions).set_DesiredRemainingView(value));
+		Debug.OK((cast(Windows.System.ILauncherViewOptions)this.asInterface(uuid("8a9b29f1-7ca7-49de-9bd3-3c5b7184f616"))).set_DesiredRemainingView(value));
 	}
 	final HSTRING TargetApplicationPackageFamilyName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.System.ILauncherOptions2).get_TargetApplicationPackageFamilyName(&_ret));
+		Debug.OK((cast(Windows.System.ILauncherOptions2)this.asInterface(uuid("3ba08eb4-6e40-4dce-a1a3-2f53950afb49"))).get_TargetApplicationPackageFamilyName(&_ret));
 		return _ret;
 	}
 	final void TargetApplicationPackageFamilyName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.System.ILauncherOptions2).set_TargetApplicationPackageFamilyName(value));
+		Debug.OK((cast(Windows.System.ILauncherOptions2)this.asInterface(uuid("3ba08eb4-6e40-4dce-a1a3-2f53950afb49"))).set_TargetApplicationPackageFamilyName(value));
 	}
 	final Windows.Storage.Search.StorageFileQueryResult NeighboringFilesQuery()
 	{
 		Windows.Storage.Search.StorageFileQueryResult _ret;
-		Debug.OK(this.as!(Windows.System.ILauncherOptions2).get_NeighboringFilesQuery(&_ret));
+		Debug.OK((cast(Windows.System.ILauncherOptions2)this.asInterface(uuid("3ba08eb4-6e40-4dce-a1a3-2f53950afb49"))).get_NeighboringFilesQuery(&_ret));
 		return _ret;
 	}
 	final void NeighboringFilesQuery(Windows.Storage.Search.StorageFileQueryResult value)
 	{
-		Debug.OK(this.as!(Windows.System.ILauncherOptions2).set_NeighboringFilesQuery(value));
+		Debug.OK((cast(Windows.System.ILauncherOptions2)this.asInterface(uuid("3ba08eb4-6e40-4dce-a1a3-2f53950afb49"))).set_NeighboringFilesQuery(value));
 	}
 	final bool IgnoreAppUriHandlers()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.System.ILauncherOptions3).get_IgnoreAppUriHandlers(&_ret));
+		Debug.OK((cast(Windows.System.ILauncherOptions3)this.asInterface(uuid("f0770655-4b63-4e3a-9107-4e687841923a"))).get_IgnoreAppUriHandlers(&_ret));
 		return _ret;
 	}
 	final void IgnoreAppUriHandlers(bool value)
 	{
-		Debug.OK(this.as!(Windows.System.ILauncherOptions3).set_IgnoreAppUriHandlers(value));
+		Debug.OK((cast(Windows.System.ILauncherOptions3)this.asInterface(uuid("f0770655-4b63-4e3a-9107-4e687841923a"))).set_IgnoreAppUriHandlers(value));
 	}
 	final bool LimitPickerToCurrentAppAndAppUriHandlers()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.System.ILauncherOptions4).get_LimitPickerToCurrentAppAndAppUriHandlers(&_ret));
+		Debug.OK((cast(Windows.System.ILauncherOptions4)this.asInterface(uuid("ef6fd10e-e6fb-4814-a44e-57e8b9d9a01b"))).get_LimitPickerToCurrentAppAndAppUriHandlers(&_ret));
 		return _ret;
 	}
 	final void LimitPickerToCurrentAppAndAppUriHandlers(bool value)
 	{
-		Debug.OK(this.as!(Windows.System.ILauncherOptions4).set_LimitPickerToCurrentAppAndAppUriHandlers(value));
+		Debug.OK((cast(Windows.System.ILauncherOptions4)this.asInterface(uuid("ef6fd10e-e6fb-4814-a44e-57e8b9d9a01b"))).set_LimitPickerToCurrentAppAndAppUriHandlers(value));
 	}
 	static LauncherOptions New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(LauncherOptions).abi_ActivateInstance(&ret));
-		return ret.as!(LauncherOptions);
+		return cast(LauncherOptions) ret;
 	}
 }
 
@@ -789,32 +789,32 @@ extern(Windows):
 	final Windows.Foundation.IReference!(Windows.Foundation.Point) InvocationPoint()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.Point) _ret;
-		Debug.OK(this.as!(Windows.System.ILauncherUIOptions).get_InvocationPoint(&_ret));
+		Debug.OK((cast(Windows.System.ILauncherUIOptions)this.asInterface(uuid("1b25da6e-8aa6-41e9-8251-4165f5985f49"))).get_InvocationPoint(&_ret));
 		return _ret;
 	}
 	final void InvocationPoint(Windows.Foundation.IReference!(Windows.Foundation.Point) value)
 	{
-		Debug.OK(this.as!(Windows.System.ILauncherUIOptions).set_InvocationPoint(value));
+		Debug.OK((cast(Windows.System.ILauncherUIOptions)this.asInterface(uuid("1b25da6e-8aa6-41e9-8251-4165f5985f49"))).set_InvocationPoint(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.Rect) SelectionRect()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.Rect) _ret;
-		Debug.OK(this.as!(Windows.System.ILauncherUIOptions).get_SelectionRect(&_ret));
+		Debug.OK((cast(Windows.System.ILauncherUIOptions)this.asInterface(uuid("1b25da6e-8aa6-41e9-8251-4165f5985f49"))).get_SelectionRect(&_ret));
 		return _ret;
 	}
 	final void SelectionRect(Windows.Foundation.IReference!(Windows.Foundation.Rect) value)
 	{
-		Debug.OK(this.as!(Windows.System.ILauncherUIOptions).set_SelectionRect(value));
+		Debug.OK((cast(Windows.System.ILauncherUIOptions)this.asInterface(uuid("1b25da6e-8aa6-41e9-8251-4165f5985f49"))).set_SelectionRect(value));
 	}
 	final Windows.UI.Popups.Placement PreferredPlacement()
 	{
 		Windows.UI.Popups.Placement _ret;
-		Debug.OK(this.as!(Windows.System.ILauncherUIOptions).get_PreferredPlacement(&_ret));
+		Debug.OK((cast(Windows.System.ILauncherUIOptions)this.asInterface(uuid("1b25da6e-8aa6-41e9-8251-4165f5985f49"))).get_PreferredPlacement(&_ret));
 		return _ret;
 	}
 	final void PreferredPlacement(Windows.UI.Popups.Placement value)
 	{
-		Debug.OK(this.as!(Windows.System.ILauncherUIOptions).set_PreferredPlacement(value));
+		Debug.OK((cast(Windows.System.ILauncherUIOptions)this.asInterface(uuid("1b25da6e-8aa6-41e9-8251-4165f5985f49"))).set_PreferredPlacement(value));
 	}
 }
 
@@ -829,50 +829,50 @@ interface MemoryManager
 	static ulong AppMemoryUsage()
 	{
 		ulong _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IMemoryManagerStatics).get_AppMemoryUsage(&_ret));
+		Debug.OK(staticInstance.get_AppMemoryUsage(&_ret));
 		return _ret;
 	}
 	static ulong AppMemoryUsageLimit()
 	{
 		ulong _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IMemoryManagerStatics).get_AppMemoryUsageLimit(&_ret));
+		Debug.OK(staticInstance.get_AppMemoryUsageLimit(&_ret));
 		return _ret;
 	}
 	static Windows.System.AppMemoryUsageLevel AppMemoryUsageLevel()
 	{
 		Windows.System.AppMemoryUsageLevel _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IMemoryManagerStatics).get_AppMemoryUsageLevel(&_ret));
+		Debug.OK(staticInstance.get_AppMemoryUsageLevel(&_ret));
 		return _ret;
 	}
 	static EventRegistrationToken OnAppMemoryUsageIncreased(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.System.IMemoryManagerStatics).add_AppMemoryUsageIncreased(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_AppMemoryUsageIncreased(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	static void removeAppMemoryUsageIncreased(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.System.IMemoryManagerStatics).remove_AppMemoryUsageIncreased(token));
+		Debug.OK(staticInstance.remove_AppMemoryUsageIncreased(token));
 	}
 	static EventRegistrationToken OnAppMemoryUsageDecreased(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.System.IMemoryManagerStatics).add_AppMemoryUsageDecreased(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_AppMemoryUsageDecreased(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	static void removeAppMemoryUsageDecreased(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.System.IMemoryManagerStatics).remove_AppMemoryUsageDecreased(token));
+		Debug.OK(staticInstance.remove_AppMemoryUsageDecreased(token));
 	}
 	static EventRegistrationToken OnAppMemoryUsageLimitChanging(void delegate(IInspectable, Windows.System.AppMemoryUsageLimitChangingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.System.IMemoryManagerStatics).add_AppMemoryUsageLimitChanging(event!(Windows.Foundation.EventHandler!(Windows.System.AppMemoryUsageLimitChangingEventArgs), IInspectable, Windows.System.AppMemoryUsageLimitChangingEventArgs)(fn), &tok));
+		Debug.OK(staticInstance.add_AppMemoryUsageLimitChanging(event!(Windows.Foundation.EventHandler!(Windows.System.AppMemoryUsageLimitChangingEventArgs), IInspectable, Windows.System.AppMemoryUsageLimitChangingEventArgs)(fn), &tok));
 		return tok;
 	}
 	static void removeAppMemoryUsageLimitChanging(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.System.IMemoryManagerStatics).remove_AppMemoryUsageLimitChanging(token));
+		Debug.OK(staticInstance.remove_AppMemoryUsageLimitChanging(token));
 	}
 }
 
@@ -887,13 +887,13 @@ interface ProcessLauncher
 	static Windows.Foundation.IAsyncOperation!(Windows.System.ProcessLauncherResult) RunToCompletionAsync(HSTRING fileName, HSTRING args)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.System.ProcessLauncherResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IProcessLauncherStatics).abi_RunToCompletionAsync(fileName, args, &_ret));
+		Debug.OK(staticInstance.abi_RunToCompletionAsync(fileName, args, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.System.ProcessLauncherResult) RunToCompletionAsyncWithOptions(HSTRING fileName, HSTRING args, Windows.System.ProcessLauncherOptions options)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.System.ProcessLauncherResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IProcessLauncherStatics).abi_RunToCompletionAsyncWithOptions(fileName, args, options, &_ret));
+		Debug.OK(staticInstance.abi_RunToCompletionAsyncWithOptions(fileName, args, options, &_ret));
 		return _ret;
 	}
 }
@@ -904,48 +904,48 @@ extern(Windows):
 	final Windows.Storage.Streams.IInputStream StandardInput()
 	{
 		Windows.Storage.Streams.IInputStream _ret;
-		Debug.OK(this.as!(Windows.System.IProcessLauncherOptions).get_StandardInput(&_ret));
+		Debug.OK((cast(Windows.System.IProcessLauncherOptions)this.asInterface(uuid("3080b9cf-f444-4a83-beaf-a549a0f3229c"))).get_StandardInput(&_ret));
 		return _ret;
 	}
 	final void StandardInput(Windows.Storage.Streams.IInputStream value)
 	{
-		Debug.OK(this.as!(Windows.System.IProcessLauncherOptions).set_StandardInput(value));
+		Debug.OK((cast(Windows.System.IProcessLauncherOptions)this.asInterface(uuid("3080b9cf-f444-4a83-beaf-a549a0f3229c"))).set_StandardInput(value));
 	}
 	final Windows.Storage.Streams.IOutputStream StandardOutput()
 	{
 		Windows.Storage.Streams.IOutputStream _ret;
-		Debug.OK(this.as!(Windows.System.IProcessLauncherOptions).get_StandardOutput(&_ret));
+		Debug.OK((cast(Windows.System.IProcessLauncherOptions)this.asInterface(uuid("3080b9cf-f444-4a83-beaf-a549a0f3229c"))).get_StandardOutput(&_ret));
 		return _ret;
 	}
 	final void StandardOutput(Windows.Storage.Streams.IOutputStream value)
 	{
-		Debug.OK(this.as!(Windows.System.IProcessLauncherOptions).set_StandardOutput(value));
+		Debug.OK((cast(Windows.System.IProcessLauncherOptions)this.asInterface(uuid("3080b9cf-f444-4a83-beaf-a549a0f3229c"))).set_StandardOutput(value));
 	}
 	final Windows.Storage.Streams.IOutputStream StandardError()
 	{
 		Windows.Storage.Streams.IOutputStream _ret;
-		Debug.OK(this.as!(Windows.System.IProcessLauncherOptions).get_StandardError(&_ret));
+		Debug.OK((cast(Windows.System.IProcessLauncherOptions)this.asInterface(uuid("3080b9cf-f444-4a83-beaf-a549a0f3229c"))).get_StandardError(&_ret));
 		return _ret;
 	}
 	final void StandardError(Windows.Storage.Streams.IOutputStream value)
 	{
-		Debug.OK(this.as!(Windows.System.IProcessLauncherOptions).set_StandardError(value));
+		Debug.OK((cast(Windows.System.IProcessLauncherOptions)this.asInterface(uuid("3080b9cf-f444-4a83-beaf-a549a0f3229c"))).set_StandardError(value));
 	}
 	final HSTRING WorkingDirectory()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.System.IProcessLauncherOptions).get_WorkingDirectory(&_ret));
+		Debug.OK((cast(Windows.System.IProcessLauncherOptions)this.asInterface(uuid("3080b9cf-f444-4a83-beaf-a549a0f3229c"))).get_WorkingDirectory(&_ret));
 		return _ret;
 	}
 	final void WorkingDirectory(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.System.IProcessLauncherOptions).set_WorkingDirectory(value));
+		Debug.OK((cast(Windows.System.IProcessLauncherOptions)this.asInterface(uuid("3080b9cf-f444-4a83-beaf-a549a0f3229c"))).set_WorkingDirectory(value));
 	}
 	static ProcessLauncherOptions New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ProcessLauncherOptions).abi_ActivateInstance(&ret));
-		return ret.as!(ProcessLauncherOptions);
+		return cast(ProcessLauncherOptions) ret;
 	}
 }
 
@@ -955,7 +955,7 @@ extern(Windows):
 	final UINT32 ExitCode()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.System.IProcessLauncherResult).get_ExitCode(&_ret));
+		Debug.OK((cast(Windows.System.IProcessLauncherResult)this.asInterface(uuid("544c8934-86d8-4991-8e75-ece8a43b6b6d"))).get_ExitCode(&_ret));
 		return _ret;
 	}
 }
@@ -966,13 +966,13 @@ extern(Windows):
 	final ulong PrivateWorkingSetUsage()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.System.IProcessMemoryReport).get_PrivateWorkingSetUsage(&_ret));
+		Debug.OK((cast(Windows.System.IProcessMemoryReport)this.asInterface(uuid("087305a8-9b70-4782-8741-3a982b6ce5e4"))).get_PrivateWorkingSetUsage(&_ret));
 		return _ret;
 	}
 	final ulong TotalWorkingSetUsage()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.System.IProcessMemoryReport).get_TotalWorkingSetUsage(&_ret));
+		Debug.OK((cast(Windows.System.IProcessMemoryReport)this.asInterface(uuid("087305a8-9b70-4782-8741-3a982b6ce5e4"))).get_TotalWorkingSetUsage(&_ret));
 		return _ret;
 	}
 }
@@ -982,7 +982,7 @@ interface ProtocolForResultsOperation : Windows.System.IProtocolForResultsOperat
 extern(Windows):
 	final void ReportCompleted(Windows.Foundation.Collections.ValueSet data)
 	{
-		Debug.OK(this.as!(Windows.System.IProtocolForResultsOperation).abi_ReportCompleted(data));
+		Debug.OK((cast(Windows.System.IProtocolForResultsOperation)this.asInterface(uuid("d581293a-6de9-4d28-9378-f86782e182bb"))).abi_ReportCompleted(data));
 	}
 }
 
@@ -997,19 +997,19 @@ interface RemoteLauncher
 	static Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus) LaunchUriAsync(Windows.System.RemoteSystems.RemoteSystemConnectionRequest remoteSystemConnectionRequest, Windows.Foundation.Uri uri)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IRemoteLauncherStatics).abi_LaunchUriAsync(remoteSystemConnectionRequest, uri, &_ret));
+		Debug.OK(staticInstance.abi_LaunchUriAsync(remoteSystemConnectionRequest, uri, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus) LaunchUriWithOptionsAsync(Windows.System.RemoteSystems.RemoteSystemConnectionRequest remoteSystemConnectionRequest, Windows.Foundation.Uri uri, Windows.System.RemoteLauncherOptions options)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IRemoteLauncherStatics).abi_LaunchUriWithOptionsAsync(remoteSystemConnectionRequest, uri, options, &_ret));
+		Debug.OK(staticInstance.abi_LaunchUriWithOptionsAsync(remoteSystemConnectionRequest, uri, options, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus) LaunchUriWithDataAsync(Windows.System.RemoteSystems.RemoteSystemConnectionRequest remoteSystemConnectionRequest, Windows.Foundation.Uri uri, Windows.System.RemoteLauncherOptions options, Windows.Foundation.Collections.ValueSet inputData)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IRemoteLauncherStatics).abi_LaunchUriWithDataAsync(remoteSystemConnectionRequest, uri, options, inputData, &_ret));
+		Debug.OK(staticInstance.abi_LaunchUriWithDataAsync(remoteSystemConnectionRequest, uri, options, inputData, &_ret));
 		return _ret;
 	}
 }
@@ -1020,24 +1020,24 @@ extern(Windows):
 	final Windows.Foundation.Uri FallbackUri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.System.IRemoteLauncherOptions).get_FallbackUri(&_ret));
+		Debug.OK((cast(Windows.System.IRemoteLauncherOptions)this.asInterface(uuid("9e3a2788-2891-4cdf-a2d6-9dff7d02e693"))).get_FallbackUri(&_ret));
 		return _ret;
 	}
 	final void FallbackUri(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.System.IRemoteLauncherOptions).set_FallbackUri(value));
+		Debug.OK((cast(Windows.System.IRemoteLauncherOptions)this.asInterface(uuid("9e3a2788-2891-4cdf-a2d6-9dff7d02e693"))).set_FallbackUri(value));
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) PreferredAppIds()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.System.IRemoteLauncherOptions).get_PreferredAppIds(&_ret));
+		Debug.OK((cast(Windows.System.IRemoteLauncherOptions)this.asInterface(uuid("9e3a2788-2891-4cdf-a2d6-9dff7d02e693"))).get_PreferredAppIds(&_ret));
 		return _ret;
 	}
 	static RemoteLauncherOptions New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(RemoteLauncherOptions).abi_ActivateInstance(&ret));
-		return ret.as!(RemoteLauncherOptions);
+		return cast(RemoteLauncherOptions) ret;
 	}
 }
 
@@ -1051,11 +1051,11 @@ interface ShutdownManager
 	}
 	static void BeginShutdown(Windows.System.ShutdownKind shutdownKind, Windows.Foundation.TimeSpan timeout)
 	{
-		Debug.OK(staticInstance.as!(Windows.System.IShutdownManagerStatics).abi_BeginShutdown(shutdownKind, timeout));
+		Debug.OK(staticInstance.abi_BeginShutdown(shutdownKind, timeout));
 	}
 	static void CancelShutdown()
 	{
-		Debug.OK(staticInstance.as!(Windows.System.IShutdownManagerStatics).abi_CancelShutdown());
+		Debug.OK(staticInstance.abi_CancelShutdown());
 	}
 }
 
@@ -1070,24 +1070,24 @@ interface TimeZoneSettings
 	static HSTRING CurrentTimeZoneDisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.ITimeZoneSettingsStatics).get_CurrentTimeZoneDisplayName(&_ret));
+		Debug.OK(staticInstance.get_CurrentTimeZoneDisplayName(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(HSTRING) SupportedTimeZoneDisplayNames()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.ITimeZoneSettingsStatics).get_SupportedTimeZoneDisplayNames(&_ret));
+		Debug.OK(staticInstance.get_SupportedTimeZoneDisplayNames(&_ret));
 		return _ret;
 	}
 	static bool CanChangeTimeZone()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.System.ITimeZoneSettingsStatics).get_CanChangeTimeZone(&_ret));
+		Debug.OK(staticInstance.get_CanChangeTimeZone(&_ret));
 		return _ret;
 	}
 	static void ChangeTimeZoneByDisplayName(HSTRING timeZoneDisplayName)
 	{
-		Debug.OK(staticInstance.as!(Windows.System.ITimeZoneSettingsStatics).abi_ChangeTimeZoneByDisplayName(timeZoneDisplayName));
+		Debug.OK(staticInstance.abi_ChangeTimeZoneByDisplayName(timeZoneDisplayName));
 	}
 }
 
@@ -1097,37 +1097,37 @@ extern(Windows):
 	final HSTRING NonRoamableId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.System.IUser).get_NonRoamableId(&_ret));
+		Debug.OK((cast(Windows.System.IUser)this.asInterface(uuid("df9a26c6-e746-4bcd-b5d4-120103c4209b"))).get_NonRoamableId(&_ret));
 		return _ret;
 	}
 	final Windows.System.UserAuthenticationStatus AuthenticationStatus()
 	{
 		Windows.System.UserAuthenticationStatus _ret;
-		Debug.OK(this.as!(Windows.System.IUser).get_AuthenticationStatus(&_ret));
+		Debug.OK((cast(Windows.System.IUser)this.asInterface(uuid("df9a26c6-e746-4bcd-b5d4-120103c4209b"))).get_AuthenticationStatus(&_ret));
 		return _ret;
 	}
 	final Windows.System.UserType Type()
 	{
 		Windows.System.UserType _ret;
-		Debug.OK(this.as!(Windows.System.IUser).get_Type(&_ret));
+		Debug.OK((cast(Windows.System.IUser)this.asInterface(uuid("df9a26c6-e746-4bcd-b5d4-120103c4209b"))).get_Type(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(IInspectable) GetPropertyAsync(HSTRING value)
 	{
 		Windows.Foundation.IAsyncOperation!(IInspectable) _ret;
-		Debug.OK(this.as!(Windows.System.IUser).abi_GetPropertyAsync(value, &_ret));
+		Debug.OK((cast(Windows.System.IUser)this.asInterface(uuid("df9a26c6-e746-4bcd-b5d4-120103c4209b"))).abi_GetPropertyAsync(value, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IPropertySet) GetPropertiesAsync(Windows.Foundation.Collections.IVectorView!(HSTRING) values)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IPropertySet) _ret;
-		Debug.OK(this.as!(Windows.System.IUser).abi_GetPropertiesAsync(values, &_ret));
+		Debug.OK((cast(Windows.System.IUser)this.asInterface(uuid("df9a26c6-e746-4bcd-b5d4-120103c4209b"))).abi_GetPropertiesAsync(values, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamReference) GetPictureAsync(Windows.System.UserPictureSize desiredSize)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamReference) _ret;
-		Debug.OK(this.as!(Windows.System.IUser).abi_GetPictureAsync(desiredSize, &_ret));
+		Debug.OK((cast(Windows.System.IUser)this.asInterface(uuid("df9a26c6-e746-4bcd-b5d4-120103c4209b"))).abi_GetPictureAsync(desiredSize, &_ret));
 		return _ret;
 	}
 
@@ -1140,31 +1140,31 @@ extern(Windows):
 	static Windows.System.UserWatcher CreateWatcher()
 	{
 		Windows.System.UserWatcher _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IUserStatics).abi_CreateWatcher(&_ret));
+		Debug.OK(staticInstance.abi_CreateWatcher(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User)) FindAllAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User)) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IUserStatics).abi_FindAllAsync(&_ret));
+		Debug.OK(staticInstance.abi_FindAllAsync(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User)) FindAllAsyncByType(Windows.System.UserType type)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User)) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IUserStatics).abi_FindAllAsyncByType(type, &_ret));
+		Debug.OK(staticInstance.abi_FindAllAsyncByType(type, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User)) FindAllAsyncByTypeAndStatus(Windows.System.UserType type, Windows.System.UserAuthenticationStatus status)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User)) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IUserStatics).abi_FindAllAsyncByTypeAndStatus(type, status, &_ret));
+		Debug.OK(staticInstance.abi_FindAllAsyncByTypeAndStatus(type, status, &_ret));
 		return _ret;
 	}
 	static Windows.System.User GetFromId(HSTRING nonRoamableId)
 	{
 		Windows.System.User _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IUserStatics).abi_GetFromId(nonRoamableId, &_ret));
+		Debug.OK(staticInstance.abi_GetFromId(nonRoamableId, &_ret));
 		return _ret;
 	}
 }
@@ -1174,7 +1174,7 @@ interface UserAuthenticationStatusChangeDeferral : Windows.System.IUserAuthentic
 extern(Windows):
 	final void Complete()
 	{
-		Debug.OK(this.as!(Windows.System.IUserAuthenticationStatusChangeDeferral).abi_Complete());
+		Debug.OK((cast(Windows.System.IUserAuthenticationStatusChangeDeferral)this.asInterface(uuid("88b59568-bb30-42fb-a270-e9902e40efa7"))).abi_Complete());
 	}
 }
 
@@ -1184,25 +1184,25 @@ extern(Windows):
 	final Windows.System.UserAuthenticationStatusChangeDeferral GetDeferral()
 	{
 		Windows.System.UserAuthenticationStatusChangeDeferral _ret;
-		Debug.OK(this.as!(Windows.System.IUserAuthenticationStatusChangingEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.System.IUserAuthenticationStatusChangingEventArgs)this.asInterface(uuid("8c030f28-a711-4c1e-ab48-04179c15938f"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.System.IUserAuthenticationStatusChangingEventArgs).get_User(&_ret));
+		Debug.OK((cast(Windows.System.IUserAuthenticationStatusChangingEventArgs)this.asInterface(uuid("8c030f28-a711-4c1e-ab48-04179c15938f"))).get_User(&_ret));
 		return _ret;
 	}
 	final Windows.System.UserAuthenticationStatus NewStatus()
 	{
 		Windows.System.UserAuthenticationStatus _ret;
-		Debug.OK(this.as!(Windows.System.IUserAuthenticationStatusChangingEventArgs).get_NewStatus(&_ret));
+		Debug.OK((cast(Windows.System.IUserAuthenticationStatusChangingEventArgs)this.asInterface(uuid("8c030f28-a711-4c1e-ab48-04179c15938f"))).get_NewStatus(&_ret));
 		return _ret;
 	}
 	final Windows.System.UserAuthenticationStatus CurrentStatus()
 	{
 		Windows.System.UserAuthenticationStatus _ret;
-		Debug.OK(this.as!(Windows.System.IUserAuthenticationStatusChangingEventArgs).get_CurrentStatus(&_ret));
+		Debug.OK((cast(Windows.System.IUserAuthenticationStatusChangingEventArgs)this.asInterface(uuid("8c030f28-a711-4c1e-ab48-04179c15938f"))).get_CurrentStatus(&_ret));
 		return _ret;
 	}
 }
@@ -1213,7 +1213,7 @@ extern(Windows):
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.System.IUserChangedEventArgs).get_User(&_ret));
+		Debug.OK((cast(Windows.System.IUserChangedEventArgs)this.asInterface(uuid("086459dc-18c6-48db-bc99-724fb9203ccc"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -1229,18 +1229,18 @@ interface UserDeviceAssociation
 	static Windows.System.User FindUserFromDeviceId(HSTRING deviceId)
 	{
 		Windows.System.User _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IUserDeviceAssociationStatics).abi_FindUserFromDeviceId(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FindUserFromDeviceId(deviceId, &_ret));
 		return _ret;
 	}
 	static EventRegistrationToken OnUserDeviceAssociationChanged(void delegate(IInspectable, Windows.System.UserDeviceAssociationChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.System.IUserDeviceAssociationStatics).add_UserDeviceAssociationChanged(event!(Windows.Foundation.EventHandler!(Windows.System.UserDeviceAssociationChangedEventArgs), IInspectable, Windows.System.UserDeviceAssociationChangedEventArgs)(fn), &tok));
+		Debug.OK(staticInstance.add_UserDeviceAssociationChanged(event!(Windows.Foundation.EventHandler!(Windows.System.UserDeviceAssociationChangedEventArgs), IInspectable, Windows.System.UserDeviceAssociationChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	static void removeUserDeviceAssociationChanged(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.System.IUserDeviceAssociationStatics).remove_UserDeviceAssociationChanged(token));
+		Debug.OK(staticInstance.remove_UserDeviceAssociationChanged(token));
 	}
 }
 
@@ -1250,19 +1250,19 @@ extern(Windows):
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.System.IUserDeviceAssociationChangedEventArgs).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.System.IUserDeviceAssociationChangedEventArgs)this.asInterface(uuid("bd1f6f6c-bb5d-4d7b-a5f0-c8cd11a38d42"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final Windows.System.User NewUser()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.System.IUserDeviceAssociationChangedEventArgs).get_NewUser(&_ret));
+		Debug.OK((cast(Windows.System.IUserDeviceAssociationChangedEventArgs)this.asInterface(uuid("bd1f6f6c-bb5d-4d7b-a5f0-c8cd11a38d42"))).get_NewUser(&_ret));
 		return _ret;
 	}
 	final Windows.System.User OldUser()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.System.IUserDeviceAssociationChangedEventArgs).get_OldUser(&_ret));
+		Debug.OK((cast(Windows.System.IUserDeviceAssociationChangedEventArgs)this.asInterface(uuid("bd1f6f6c-bb5d-4d7b-a5f0-c8cd11a38d42"))).get_OldUser(&_ret));
 		return _ret;
 	}
 }
@@ -1273,27 +1273,27 @@ extern(Windows):
 	final bool AllowGuestAccounts()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.System.IUserPicker).get_AllowGuestAccounts(&_ret));
+		Debug.OK((cast(Windows.System.IUserPicker)this.asInterface(uuid("7d548008-f1e3-4a6c-8ddc-a9bb0f488aed"))).get_AllowGuestAccounts(&_ret));
 		return _ret;
 	}
 	final void AllowGuestAccounts(bool value)
 	{
-		Debug.OK(this.as!(Windows.System.IUserPicker).set_AllowGuestAccounts(value));
+		Debug.OK((cast(Windows.System.IUserPicker)this.asInterface(uuid("7d548008-f1e3-4a6c-8ddc-a9bb0f488aed"))).set_AllowGuestAccounts(value));
 	}
 	final Windows.System.User SuggestedSelectedUser()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.System.IUserPicker).get_SuggestedSelectedUser(&_ret));
+		Debug.OK((cast(Windows.System.IUserPicker)this.asInterface(uuid("7d548008-f1e3-4a6c-8ddc-a9bb0f488aed"))).get_SuggestedSelectedUser(&_ret));
 		return _ret;
 	}
 	final void SuggestedSelectedUser(Windows.System.User value)
 	{
-		Debug.OK(this.as!(Windows.System.IUserPicker).set_SuggestedSelectedUser(value));
+		Debug.OK((cast(Windows.System.IUserPicker)this.asInterface(uuid("7d548008-f1e3-4a6c-8ddc-a9bb0f488aed"))).set_SuggestedSelectedUser(value));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.System.User) PickSingleUserAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.System.User) _ret;
-		Debug.OK(this.as!(Windows.System.IUserPicker).abi_PickSingleUserAsync(&_ret));
+		Debug.OK((cast(Windows.System.IUserPicker)this.asInterface(uuid("7d548008-f1e3-4a6c-8ddc-a9bb0f488aed"))).abi_PickSingleUserAsync(&_ret));
 		return _ret;
 	}
 
@@ -1306,14 +1306,14 @@ extern(Windows):
 	static bool IsSupported()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.System.IUserPickerStatics).abi_IsSupported(&_ret));
+		Debug.OK(staticInstance.abi_IsSupported(&_ret));
 		return _ret;
 	}
 	static UserPicker New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(UserPicker).abi_ActivateInstance(&ret));
-		return ret.as!(UserPicker);
+		return cast(UserPicker) ret;
 	}
 }
 
@@ -1323,86 +1323,86 @@ extern(Windows):
 	final Windows.System.UserWatcherStatus Status()
 	{
 		Windows.System.UserWatcherStatus _ret;
-		Debug.OK(this.as!(Windows.System.IUserWatcher).get_Status(&_ret));
+		Debug.OK((cast(Windows.System.IUserWatcher)this.asInterface(uuid("155eb23b-242a-45e0-a2e9-3171fc6a7fbb"))).get_Status(&_ret));
 		return _ret;
 	}
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.System.IUserWatcher).abi_Start());
+		Debug.OK((cast(Windows.System.IUserWatcher)this.asInterface(uuid("155eb23b-242a-45e0-a2e9-3171fc6a7fbb"))).abi_Start());
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.System.IUserWatcher).abi_Stop());
+		Debug.OK((cast(Windows.System.IUserWatcher)this.asInterface(uuid("155eb23b-242a-45e0-a2e9-3171fc6a7fbb"))).abi_Stop());
 	}
 	final EventRegistrationToken OnAdded(void delegate(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.System.IUserWatcher).add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs), Windows.System.UserWatcher, Windows.System.UserChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.System.IUserWatcher)this.asInterface(uuid("155eb23b-242a-45e0-a2e9-3171fc6a7fbb"))).add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs), Windows.System.UserWatcher, Windows.System.UserChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAdded(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.System.IUserWatcher).remove_Added(token));
+		Debug.OK((cast(Windows.System.IUserWatcher)this.asInterface(uuid("155eb23b-242a-45e0-a2e9-3171fc6a7fbb"))).remove_Added(token));
 	}
 	final EventRegistrationToken OnRemoved(void delegate(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.System.IUserWatcher).add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs), Windows.System.UserWatcher, Windows.System.UserChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.System.IUserWatcher)this.asInterface(uuid("155eb23b-242a-45e0-a2e9-3171fc6a7fbb"))).add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs), Windows.System.UserWatcher, Windows.System.UserChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.System.IUserWatcher).remove_Removed(token));
+		Debug.OK((cast(Windows.System.IUserWatcher)this.asInterface(uuid("155eb23b-242a-45e0-a2e9-3171fc6a7fbb"))).remove_Removed(token));
 	}
 	final EventRegistrationToken OnUpdated(void delegate(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.System.IUserWatcher).add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs), Windows.System.UserWatcher, Windows.System.UserChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.System.IUserWatcher)this.asInterface(uuid("155eb23b-242a-45e0-a2e9-3171fc6a7fbb"))).add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs), Windows.System.UserWatcher, Windows.System.UserChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.System.IUserWatcher).remove_Updated(token));
+		Debug.OK((cast(Windows.System.IUserWatcher)this.asInterface(uuid("155eb23b-242a-45e0-a2e9-3171fc6a7fbb"))).remove_Updated(token));
 	}
 	final EventRegistrationToken OnAuthenticationStatusChanged(void delegate(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.System.IUserWatcher).add_AuthenticationStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs), Windows.System.UserWatcher, Windows.System.UserChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.System.IUserWatcher)this.asInterface(uuid("155eb23b-242a-45e0-a2e9-3171fc6a7fbb"))).add_AuthenticationStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserChangedEventArgs), Windows.System.UserWatcher, Windows.System.UserChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAuthenticationStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.System.IUserWatcher).remove_AuthenticationStatusChanged(token));
+		Debug.OK((cast(Windows.System.IUserWatcher)this.asInterface(uuid("155eb23b-242a-45e0-a2e9-3171fc6a7fbb"))).remove_AuthenticationStatusChanged(token));
 	}
 	final EventRegistrationToken OnAuthenticationStatusChanging(void delegate(Windows.System.UserWatcher, Windows.System.UserAuthenticationStatusChangingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.System.IUserWatcher).add_AuthenticationStatusChanging(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserAuthenticationStatusChangingEventArgs), Windows.System.UserWatcher, Windows.System.UserAuthenticationStatusChangingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.System.IUserWatcher)this.asInterface(uuid("155eb23b-242a-45e0-a2e9-3171fc6a7fbb"))).add_AuthenticationStatusChanging(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, Windows.System.UserAuthenticationStatusChangingEventArgs), Windows.System.UserWatcher, Windows.System.UserAuthenticationStatusChangingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAuthenticationStatusChanging(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.System.IUserWatcher).remove_AuthenticationStatusChanging(token));
+		Debug.OK((cast(Windows.System.IUserWatcher)this.asInterface(uuid("155eb23b-242a-45e0-a2e9-3171fc6a7fbb"))).remove_AuthenticationStatusChanging(token));
 	}
 	final EventRegistrationToken OnEnumerationCompleted(void delegate(Windows.System.UserWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.System.IUserWatcher).add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, IInspectable), Windows.System.UserWatcher, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.System.IUserWatcher)this.asInterface(uuid("155eb23b-242a-45e0-a2e9-3171fc6a7fbb"))).add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, IInspectable), Windows.System.UserWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeEnumerationCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.System.IUserWatcher).remove_EnumerationCompleted(token));
+		Debug.OK((cast(Windows.System.IUserWatcher)this.asInterface(uuid("155eb23b-242a-45e0-a2e9-3171fc6a7fbb"))).remove_EnumerationCompleted(token));
 	}
 	final EventRegistrationToken OnStopped(void delegate(Windows.System.UserWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.System.IUserWatcher).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, IInspectable), Windows.System.UserWatcher, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.System.IUserWatcher)this.asInterface(uuid("155eb23b-242a-45e0-a2e9-3171fc6a7fbb"))).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.System.UserWatcher, IInspectable), Windows.System.UserWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeStopped(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.System.IUserWatcher).remove_Stopped(token));
+		Debug.OK((cast(Windows.System.IUserWatcher)this.asInterface(uuid("155eb23b-242a-45e0-a2e9-3171fc6a7fbb"))).remove_Stopped(token));
 	}
 }
 

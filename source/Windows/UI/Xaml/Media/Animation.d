@@ -1409,7 +1409,7 @@ interface AddDeleteThemeTransition : Windows.UI.Xaml.Media.Animation.Transition,
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(AddDeleteThemeTransition).abi_ActivateInstance(&ret));
-		return ret.as!(AddDeleteThemeTransition);
+		return cast(AddDeleteThemeTransition) ret;
 	}
 }
 
@@ -1419,12 +1419,12 @@ extern(Windows):
 	final double Amplitude()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IBackEase).get_Amplitude(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IBackEase)this.asInterface(uuid("e47796e7-f805-4a8f-81c9-38e6472caa94"))).get_Amplitude(&_ret));
 		return _ret;
 	}
 	final void Amplitude(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IBackEase).set_Amplitude(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IBackEase)this.asInterface(uuid("e47796e7-f805-4a8f-81c9-38e6472caa94"))).set_Amplitude(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IBackEaseStatics _staticInstance;
@@ -1436,14 +1436,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty AmplitudeProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IBackEaseStatics).get_AmplitudeProperty(&_ret));
+		Debug.OK(staticInstance.get_AmplitudeProperty(&_ret));
 		return _ret;
 	}
 	static BackEase New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(BackEase).abi_ActivateInstance(&ret));
-		return ret.as!(BackEase);
+		return cast(BackEase) ret;
 	}
 }
 
@@ -1453,12 +1453,12 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Animation.Storyboard Storyboard()
 	{
 		Windows.UI.Xaml.Media.Animation.Storyboard _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IBeginStoryboard).get_Storyboard(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IBeginStoryboard)this.asInterface(uuid("64189fcd-49ec-4e52-a6f6-55324c921053"))).get_Storyboard(&_ret));
 		return _ret;
 	}
 	final void Storyboard(Windows.UI.Xaml.Media.Animation.Storyboard value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IBeginStoryboard).set_Storyboard(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IBeginStoryboard)this.asInterface(uuid("64189fcd-49ec-4e52-a6f6-55324c921053"))).set_Storyboard(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IBeginStoryboardStatics _staticInstance;
@@ -1470,14 +1470,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty StoryboardProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IBeginStoryboardStatics).get_StoryboardProperty(&_ret));
+		Debug.OK(staticInstance.get_StoryboardProperty(&_ret));
 		return _ret;
 	}
 	static BeginStoryboard New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(BeginStoryboard).abi_ActivateInstance(&ret));
-		return ret.as!(BeginStoryboard);
+		return cast(BeginStoryboard) ret;
 	}
 }
 
@@ -1487,22 +1487,22 @@ extern(Windows):
 	final INT32 Bounces()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IBounceEase).get_Bounces(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IBounceEase)this.asInterface(uuid("2bf1464e-fc71-47ed-85a1-3ba9577718b4"))).get_Bounces(&_ret));
 		return _ret;
 	}
 	final void Bounces(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IBounceEase).set_Bounces(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IBounceEase)this.asInterface(uuid("2bf1464e-fc71-47ed-85a1-3ba9577718b4"))).set_Bounces(value));
 	}
 	final double Bounciness()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IBounceEase).get_Bounciness(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IBounceEase)this.asInterface(uuid("2bf1464e-fc71-47ed-85a1-3ba9577718b4"))).get_Bounciness(&_ret));
 		return _ret;
 	}
 	final void Bounciness(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IBounceEase).set_Bounciness(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IBounceEase)this.asInterface(uuid("2bf1464e-fc71-47ed-85a1-3ba9577718b4"))).set_Bounciness(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IBounceEaseStatics _staticInstance;
@@ -1514,20 +1514,20 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty BouncesProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IBounceEaseStatics).get_BouncesProperty(&_ret));
+		Debug.OK(staticInstance.get_BouncesProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty BouncinessProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IBounceEaseStatics).get_BouncinessProperty(&_ret));
+		Debug.OK(staticInstance.get_BouncinessProperty(&_ret));
 		return _ret;
 	}
 	static BounceEase New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(BounceEase).abi_ActivateInstance(&ret));
-		return ret.as!(BounceEase);
+		return cast(BounceEase) ret;
 	}
 }
 
@@ -1537,7 +1537,7 @@ interface CircleEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windo
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(CircleEase).abi_ActivateInstance(&ret));
-		return ret.as!(CircleEase);
+		return cast(CircleEase) ret;
 	}
 }
 
@@ -1547,52 +1547,52 @@ extern(Windows):
 	final Windows.Foundation.IReference!(Windows.UI.Color) From()
 	{
 		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimation).get_From(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IColorAnimation)this.asInterface(uuid("b8ae8a15-0f63-4694-9467-bdafac1253ea"))).get_From(&_ret));
 		return _ret;
 	}
 	final void From(Windows.Foundation.IReference!(Windows.UI.Color) value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimation).set_From(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IColorAnimation)this.asInterface(uuid("b8ae8a15-0f63-4694-9467-bdafac1253ea"))).set_From(value));
 	}
 	final Windows.Foundation.IReference!(Windows.UI.Color) To()
 	{
 		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimation).get_To(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IColorAnimation)this.asInterface(uuid("b8ae8a15-0f63-4694-9467-bdafac1253ea"))).get_To(&_ret));
 		return _ret;
 	}
 	final void To(Windows.Foundation.IReference!(Windows.UI.Color) value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimation).set_To(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IColorAnimation)this.asInterface(uuid("b8ae8a15-0f63-4694-9467-bdafac1253ea"))).set_To(value));
 	}
 	final Windows.Foundation.IReference!(Windows.UI.Color) By()
 	{
 		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimation).get_By(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IColorAnimation)this.asInterface(uuid("b8ae8a15-0f63-4694-9467-bdafac1253ea"))).get_By(&_ret));
 		return _ret;
 	}
 	final void By(Windows.Foundation.IReference!(Windows.UI.Color) value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimation).set_By(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IColorAnimation)this.asInterface(uuid("b8ae8a15-0f63-4694-9467-bdafac1253ea"))).set_By(value));
 	}
 	final Windows.UI.Xaml.Media.Animation.EasingFunctionBase EasingFunction()
 	{
 		Windows.UI.Xaml.Media.Animation.EasingFunctionBase _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimation).get_EasingFunction(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IColorAnimation)this.asInterface(uuid("b8ae8a15-0f63-4694-9467-bdafac1253ea"))).get_EasingFunction(&_ret));
 		return _ret;
 	}
 	final void EasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimation).set_EasingFunction(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IColorAnimation)this.asInterface(uuid("b8ae8a15-0f63-4694-9467-bdafac1253ea"))).set_EasingFunction(value));
 	}
 	final bool EnableDependentAnimation()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimation).get_EnableDependentAnimation(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IColorAnimation)this.asInterface(uuid("b8ae8a15-0f63-4694-9467-bdafac1253ea"))).get_EnableDependentAnimation(&_ret));
 		return _ret;
 	}
 	final void EnableDependentAnimation(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimation).set_EnableDependentAnimation(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IColorAnimation)this.asInterface(uuid("b8ae8a15-0f63-4694-9467-bdafac1253ea"))).set_EnableDependentAnimation(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IColorAnimationStatics _staticInstance;
@@ -1604,38 +1604,38 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty FromProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IColorAnimationStatics).get_FromProperty(&_ret));
+		Debug.OK(staticInstance.get_FromProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ToProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IColorAnimationStatics).get_ToProperty(&_ret));
+		Debug.OK(staticInstance.get_ToProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ByProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IColorAnimationStatics).get_ByProperty(&_ret));
+		Debug.OK(staticInstance.get_ByProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty EasingFunctionProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IColorAnimationStatics).get_EasingFunctionProperty(&_ret));
+		Debug.OK(staticInstance.get_EasingFunctionProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty EnableDependentAnimationProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IColorAnimationStatics).get_EnableDependentAnimationProperty(&_ret));
+		Debug.OK(staticInstance.get_EnableDependentAnimationProperty(&_ret));
 		return _ret;
 	}
 	static ColorAnimation New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ColorAnimation).abi_ActivateInstance(&ret));
-		return ret.as!(ColorAnimation);
+		return cast(ColorAnimation) ret;
 	}
 }
 
@@ -1645,18 +1645,18 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Animation.ColorKeyFrameCollection KeyFrames()
 	{
 		Windows.UI.Xaml.Media.Animation.ColorKeyFrameCollection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimationUsingKeyFrames).get_KeyFrames(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IColorAnimationUsingKeyFrames)this.asInterface(uuid("f5c82640-13c3-42aa-9ae2-7e6b51c92f95"))).get_KeyFrames(&_ret));
 		return _ret;
 	}
 	final bool EnableDependentAnimation()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimationUsingKeyFrames).get_EnableDependentAnimation(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IColorAnimationUsingKeyFrames)this.asInterface(uuid("f5c82640-13c3-42aa-9ae2-7e6b51c92f95"))).get_EnableDependentAnimation(&_ret));
 		return _ret;
 	}
 	final void EnableDependentAnimation(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorAnimationUsingKeyFrames).set_EnableDependentAnimation(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IColorAnimationUsingKeyFrames)this.asInterface(uuid("f5c82640-13c3-42aa-9ae2-7e6b51c92f95"))).set_EnableDependentAnimation(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IColorAnimationUsingKeyFramesStatics _staticInstance;
@@ -1668,14 +1668,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty EnableDependentAnimationProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IColorAnimationUsingKeyFramesStatics).get_EnableDependentAnimationProperty(&_ret));
+		Debug.OK(staticInstance.get_EnableDependentAnimationProperty(&_ret));
 		return _ret;
 	}
 	static ColorAnimationUsingKeyFrames New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ColorAnimationUsingKeyFrames).abi_ActivateInstance(&ret));
-		return ret.as!(ColorAnimationUsingKeyFrames);
+		return cast(ColorAnimationUsingKeyFrames) ret;
 	}
 }
 
@@ -1685,22 +1685,22 @@ extern(Windows):
 	final Windows.UI.Color Value()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorKeyFrame).get_Value(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IColorKeyFrame)this.asInterface(uuid("b51d82d9-0910-4589-a284-b0c9205858e9"))).get_Value(&_ret));
 		return _ret;
 	}
 	final void Value(Windows.UI.Color value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorKeyFrame).set_Value(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IColorKeyFrame)this.asInterface(uuid("b51d82d9-0910-4589-a284-b0c9205858e9"))).set_Value(value));
 	}
 	final Windows.UI.Xaml.Media.Animation.KeyTime KeyTime()
 	{
 		Windows.UI.Xaml.Media.Animation.KeyTime _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorKeyFrame).get_KeyTime(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IColorKeyFrame)this.asInterface(uuid("b51d82d9-0910-4589-a284-b0c9205858e9"))).get_KeyTime(&_ret));
 		return _ret;
 	}
 	final void KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IColorKeyFrame).set_KeyTime(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IColorKeyFrame)this.asInterface(uuid("b51d82d9-0910-4589-a284-b0c9205858e9"))).set_KeyTime(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IColorKeyFrameStatics _staticInstance;
@@ -1712,13 +1712,13 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty ValueProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IColorKeyFrameStatics).get_ValueProperty(&_ret));
+		Debug.OK(staticInstance.get_ValueProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty KeyTimeProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IColorKeyFrameStatics).get_KeyTimeProperty(&_ret));
+		Debug.OK(staticInstance.get_KeyTimeProperty(&_ret));
 		return _ret;
 	}
 	static ColorKeyFrame New()
@@ -1739,10 +1739,10 @@ class ColorKeyFrameT(Base) : AgileObject!Base, ColorKeyFrame
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_Value(Windows.UI.Color* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IColorKeyFrame).get_Value(return_value); }
-	override HRESULT set_Value(Windows.UI.Color value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IColorKeyFrame).set_Value(value); }
-	override HRESULT get_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IColorKeyFrame).get_KeyTime(return_value); }
-	override HRESULT set_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IColorKeyFrame).set_KeyTime(value); }
+	override HRESULT get_Value(Windows.UI.Color* return_value) { return (cast(Windows.UI.Xaml.Media.Animation.IColorKeyFrame)m_inner.asInterface(uuid("b51d82d9-0910-4589-a284-b0c9205858e9"))).get_Value(return_value); }
+	override HRESULT set_Value(Windows.UI.Color value) { return (cast(Windows.UI.Xaml.Media.Animation.IColorKeyFrame)m_inner.asInterface(uuid("b51d82d9-0910-4589-a284-b0c9205858e9"))).set_Value(value); }
+	override HRESULT get_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime* return_value) { return (cast(Windows.UI.Xaml.Media.Animation.IColorKeyFrame)m_inner.asInterface(uuid("b51d82d9-0910-4589-a284-b0c9205858e9"))).get_KeyTime(return_value); }
+	override HRESULT set_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value) { return (cast(Windows.UI.Xaml.Media.Animation.IColorKeyFrame)m_inner.asInterface(uuid("b51d82d9-0910-4589-a284-b0c9205858e9"))).set_KeyTime(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -1754,66 +1754,66 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Animation.ColorKeyFrame GetAt(uint index)
 	{
 		Windows.UI.Xaml.Media.Animation.ColorKeyFrame _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).get_GetAt(index, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame))this).get_GetAt(index, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame))this).get_Size(&_ret));
 		return _ret;
 	}
 	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)* out_view)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).abi_GetView(out_view));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame))this).abi_GetView(out_view));
 	}
 	final uint IndexOf(Windows.UI.Xaml.Media.Animation.ColorKeyFrame value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void SetAt(uint index, Windows.UI.Xaml.Media.Animation.ColorKeyFrame item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).abi_SetAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame))this).abi_SetAt(index, item));
 	}
 	final void InsertAt(uint index, Windows.UI.Xaml.Media.Animation.ColorKeyFrame item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).abi_InsertAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame))this).abi_InsertAt(index, item));
 	}
 	final void RemoveAt(uint index)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).abi_RemoveAt(index));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame))this).abi_RemoveAt(index));
 	}
 	final void Append(Windows.UI.Xaml.Media.Animation.ColorKeyFrame item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).abi_Append(item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame))this).abi_Append(item));
 	}
 	final void RemoveAtEnd()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).abi_RemoveAtEnd());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame))this).abi_RemoveAtEnd());
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame))this).abi_Clear());
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.Media.Animation.ColorKeyFrame* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void ReplaceAll(uint count, Windows.UI.Xaml.Media.Animation.ColorKeyFrame* out_value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).abi_ReplaceAll(count, out_value));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame))this).abi_ReplaceAll(count, out_value));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.ColorKeyFrame))this).abi_First(out_first));
 	}
 	static ColorKeyFrameCollection New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ColorKeyFrameCollection).abi_ActivateInstance(&ret));
-		return ret.as!(ColorKeyFrameCollection);
+		return cast(ColorKeyFrameCollection) ret;
 	}
 }
 
@@ -1823,12 +1823,12 @@ extern(Windows):
 	final bool IsStaggeringEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ICommonNavigationTransitionInfo).get_IsStaggeringEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ICommonNavigationTransitionInfo)this.asInterface(uuid("50345692-a555-4624-a361-0a91c1706473"))).get_IsStaggeringEnabled(&_ret));
 		return _ret;
 	}
 	final void IsStaggeringEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ICommonNavigationTransitionInfo).set_IsStaggeringEnabled(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ICommonNavigationTransitionInfo)this.asInterface(uuid("50345692-a555-4624-a361-0a91c1706473"))).set_IsStaggeringEnabled(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.ICommonNavigationTransitionInfoStatics _staticInstance;
@@ -1840,30 +1840,30 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty IsStaggeringEnabledProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ICommonNavigationTransitionInfoStatics).get_IsStaggeringEnabledProperty(&_ret));
+		Debug.OK(staticInstance.get_IsStaggeringEnabledProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty IsStaggerElementProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ICommonNavigationTransitionInfoStatics).get_IsStaggerElementProperty(&_ret));
+		Debug.OK(staticInstance.get_IsStaggerElementProperty(&_ret));
 		return _ret;
 	}
 	static bool GetIsStaggerElement(Windows.UI.Xaml.UIElement element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ICommonNavigationTransitionInfoStatics).abi_GetIsStaggerElement(element, &_ret));
+		Debug.OK(staticInstance.abi_GetIsStaggerElement(element, &_ret));
 		return _ret;
 	}
 	static void SetIsStaggerElement(Windows.UI.Xaml.UIElement element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ICommonNavigationTransitionInfoStatics).abi_SetIsStaggerElement(element, value));
+		Debug.OK(staticInstance.abi_SetIsStaggerElement(element, value));
 	}
 	static CommonNavigationTransitionInfo New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(CommonNavigationTransitionInfo).abi_ActivateInstance(&ret));
-		return ret.as!(CommonNavigationTransitionInfo);
+		return cast(CommonNavigationTransitionInfo) ret;
 	}
 }
 
@@ -1873,42 +1873,42 @@ extern(Windows):
 	final EventRegistrationToken OnCompleted(void delegate(Windows.UI.Xaml.Media.Animation.ConnectedAnimation, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimation).add_Completed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Animation.ConnectedAnimation, IInspectable), Windows.UI.Xaml.Media.Animation.ConnectedAnimation, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimation)this.asInterface(uuid("3518628c-f387-4c25-ac98-44e86c3cadf0"))).add_Completed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Animation.ConnectedAnimation, IInspectable), Windows.UI.Xaml.Media.Animation.ConnectedAnimation, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimation).remove_Completed(token));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimation)this.asInterface(uuid("3518628c-f387-4c25-ac98-44e86c3cadf0"))).remove_Completed(token));
 	}
 	final bool TryStart(Windows.UI.Xaml.UIElement destination)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimation).abi_TryStart(destination, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimation)this.asInterface(uuid("3518628c-f387-4c25-ac98-44e86c3cadf0"))).abi_TryStart(destination, &_ret));
 		return _ret;
 	}
 	final void Cancel()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimation).abi_Cancel());
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimation)this.asInterface(uuid("3518628c-f387-4c25-ac98-44e86c3cadf0"))).abi_Cancel());
 	}
 	final bool IsScaleAnimationEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimation2).get_IsScaleAnimationEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimation2)this.asInterface(uuid("5d2f8e5c-584b-4ddd-b668-973891431459"))).get_IsScaleAnimationEnabled(&_ret));
 		return _ret;
 	}
 	final void IsScaleAnimationEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimation2).set_IsScaleAnimationEnabled(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimation2)this.asInterface(uuid("5d2f8e5c-584b-4ddd-b668-973891431459"))).set_IsScaleAnimationEnabled(value));
 	}
 	final bool TryStartWithCoordinatedElements(Windows.UI.Xaml.UIElement destination, Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) coordinatedElements)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimation2).abi_TryStartWithCoordinatedElements(destination, coordinatedElements, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimation2)this.asInterface(uuid("5d2f8e5c-584b-4ddd-b668-973891431459"))).abi_TryStartWithCoordinatedElements(destination, coordinatedElements, &_ret));
 		return _ret;
 	}
 	final void SetAnimationComponent(Windows.UI.Xaml.Media.Animation.ConnectedAnimationComponent component, Windows.UI.Composition.ICompositionAnimationBase animation)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimation2).abi_SetAnimationComponent(component, animation));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimation2)this.asInterface(uuid("5d2f8e5c-584b-4ddd-b668-973891431459"))).abi_SetAnimationComponent(component, animation));
 	}
 }
 
@@ -1918,33 +1918,33 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan DefaultDuration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService).get_DefaultDuration(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService)this.asInterface(uuid("1c6875c9-19bb-4d47-b9aa-66c802dcb9ff"))).get_DefaultDuration(&_ret));
 		return _ret;
 	}
 	final void DefaultDuration(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService).set_DefaultDuration(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService)this.asInterface(uuid("1c6875c9-19bb-4d47-b9aa-66c802dcb9ff"))).set_DefaultDuration(value));
 	}
 	final Windows.UI.Composition.CompositionEasingFunction DefaultEasingFunction()
 	{
 		Windows.UI.Composition.CompositionEasingFunction _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService).get_DefaultEasingFunction(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService)this.asInterface(uuid("1c6875c9-19bb-4d47-b9aa-66c802dcb9ff"))).get_DefaultEasingFunction(&_ret));
 		return _ret;
 	}
 	final void DefaultEasingFunction(Windows.UI.Composition.CompositionEasingFunction value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService).set_DefaultEasingFunction(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService)this.asInterface(uuid("1c6875c9-19bb-4d47-b9aa-66c802dcb9ff"))).set_DefaultEasingFunction(value));
 	}
 	final Windows.UI.Xaml.Media.Animation.ConnectedAnimation PrepareToAnimate(HSTRING key, Windows.UI.Xaml.UIElement source)
 	{
 		Windows.UI.Xaml.Media.Animation.ConnectedAnimation _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService).abi_PrepareToAnimate(key, source, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService)this.asInterface(uuid("1c6875c9-19bb-4d47-b9aa-66c802dcb9ff"))).abi_PrepareToAnimate(key, source, &_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Media.Animation.ConnectedAnimation GetAnimation(HSTRING key)
 	{
 		Windows.UI.Xaml.Media.Animation.ConnectedAnimation _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService).abi_GetAnimation(key, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimationService)this.asInterface(uuid("1c6875c9-19bb-4d47-b9aa-66c802dcb9ff"))).abi_GetAnimation(key, &_ret));
 		return _ret;
 	}
 
@@ -1957,7 +1957,7 @@ extern(Windows):
 	static Windows.UI.Xaml.Media.Animation.ConnectedAnimationService GetForCurrentView()
 	{
 		Windows.UI.Xaml.Media.Animation.ConnectedAnimationService _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IConnectedAnimationServiceStatics).abi_GetForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 }
@@ -1968,22 +1968,22 @@ extern(Windows):
 	final double HorizontalOffset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IContentThemeTransition).get_HorizontalOffset(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IContentThemeTransition)this.asInterface(uuid("f66fc5c3-5915-437d-8e3b-adf8e7f0ab57"))).get_HorizontalOffset(&_ret));
 		return _ret;
 	}
 	final void HorizontalOffset(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IContentThemeTransition).set_HorizontalOffset(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IContentThemeTransition)this.asInterface(uuid("f66fc5c3-5915-437d-8e3b-adf8e7f0ab57"))).set_HorizontalOffset(value));
 	}
 	final double VerticalOffset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IContentThemeTransition).get_VerticalOffset(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IContentThemeTransition)this.asInterface(uuid("f66fc5c3-5915-437d-8e3b-adf8e7f0ab57"))).get_VerticalOffset(&_ret));
 		return _ret;
 	}
 	final void VerticalOffset(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IContentThemeTransition).set_VerticalOffset(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IContentThemeTransition)this.asInterface(uuid("f66fc5c3-5915-437d-8e3b-adf8e7f0ab57"))).set_VerticalOffset(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IContentThemeTransitionStatics _staticInstance;
@@ -1995,20 +1995,20 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty HorizontalOffsetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContentThemeTransitionStatics).get_HorizontalOffsetProperty(&_ret));
+		Debug.OK(staticInstance.get_HorizontalOffsetProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty VerticalOffsetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContentThemeTransitionStatics).get_VerticalOffsetProperty(&_ret));
+		Debug.OK(staticInstance.get_VerticalOffsetProperty(&_ret));
 		return _ret;
 	}
 	static ContentThemeTransition New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ContentThemeTransition).abi_ActivateInstance(&ret));
-		return ret.as!(ContentThemeTransition);
+		return cast(ContentThemeTransition) ret;
 	}
 }
 
@@ -2018,12 +2018,12 @@ extern(Windows):
 	final Windows.UI.Xaml.UIElement ExitElement()
 	{
 		Windows.UI.Xaml.UIElement _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfo).get_ExitElement(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfo)this.asInterface(uuid("4be1dbad-8ba6-4004-8438-8a9017978543"))).get_ExitElement(&_ret));
 		return _ret;
 	}
 	final void ExitElement(Windows.UI.Xaml.UIElement value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfo).set_ExitElement(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfo)this.asInterface(uuid("4be1dbad-8ba6-4004-8438-8a9017978543"))).set_ExitElement(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics _staticInstance;
@@ -2035,62 +2035,62 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty ExitElementProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics).get_ExitElementProperty(&_ret));
+		Debug.OK(staticInstance.get_ExitElementProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty IsEntranceElementProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics).get_IsEntranceElementProperty(&_ret));
+		Debug.OK(staticInstance.get_IsEntranceElementProperty(&_ret));
 		return _ret;
 	}
 	static bool GetIsEntranceElement(Windows.UI.Xaml.UIElement element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics).abi_GetIsEntranceElement(element, &_ret));
+		Debug.OK(staticInstance.abi_GetIsEntranceElement(element, &_ret));
 		return _ret;
 	}
 	static void SetIsEntranceElement(Windows.UI.Xaml.UIElement element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics).abi_SetIsEntranceElement(element, value));
+		Debug.OK(staticInstance.abi_SetIsEntranceElement(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty IsExitElementProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics).get_IsExitElementProperty(&_ret));
+		Debug.OK(staticInstance.get_IsExitElementProperty(&_ret));
 		return _ret;
 	}
 	static bool GetIsExitElement(Windows.UI.Xaml.UIElement element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics).abi_GetIsExitElement(element, &_ret));
+		Debug.OK(staticInstance.abi_GetIsExitElement(element, &_ret));
 		return _ret;
 	}
 	static void SetIsExitElement(Windows.UI.Xaml.UIElement element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics).abi_SetIsExitElement(element, value));
+		Debug.OK(staticInstance.abi_SetIsExitElement(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty ExitElementContainerProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics).get_ExitElementContainerProperty(&_ret));
+		Debug.OK(staticInstance.get_ExitElementContainerProperty(&_ret));
 		return _ret;
 	}
 	static bool GetExitElementContainer(Windows.UI.Xaml.Controls.ListViewBase element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics).abi_GetExitElementContainer(element, &_ret));
+		Debug.OK(staticInstance.abi_GetExitElementContainer(element, &_ret));
 		return _ret;
 	}
 	static void SetExitElementContainer(Windows.UI.Xaml.Controls.ListViewBase element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IContinuumNavigationTransitionInfoStatics).abi_SetExitElementContainer(element, value));
+		Debug.OK(staticInstance.abi_SetExitElementContainer(element, value));
 	}
 	static ContinuumNavigationTransitionInfo New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ContinuumNavigationTransitionInfo).abi_ActivateInstance(&ret));
-		return ret.as!(ContinuumNavigationTransitionInfo);
+		return cast(ContinuumNavigationTransitionInfo) ret;
 	}
 }
 
@@ -2100,7 +2100,7 @@ interface CubicEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Window
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(CubicEase).abi_ActivateInstance(&ret));
-		return ret.as!(CubicEase);
+		return cast(CubicEase) ret;
 	}
 }
 
@@ -2110,7 +2110,7 @@ interface DiscreteColorKeyFrame : Windows.UI.Xaml.Media.Animation.ColorKeyFrame,
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(DiscreteColorKeyFrame).abi_ActivateInstance(&ret));
-		return ret.as!(DiscreteColorKeyFrame);
+		return cast(DiscreteColorKeyFrame) ret;
 	}
 }
 
@@ -2120,7 +2120,7 @@ interface DiscreteDoubleKeyFrame : Windows.UI.Xaml.Media.Animation.DoubleKeyFram
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(DiscreteDoubleKeyFrame).abi_ActivateInstance(&ret));
-		return ret.as!(DiscreteDoubleKeyFrame);
+		return cast(DiscreteDoubleKeyFrame) ret;
 	}
 }
 
@@ -2130,7 +2130,7 @@ interface DiscreteObjectKeyFrame : Windows.UI.Xaml.Media.Animation.ObjectKeyFram
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(DiscreteObjectKeyFrame).abi_ActivateInstance(&ret));
-		return ret.as!(DiscreteObjectKeyFrame);
+		return cast(DiscreteObjectKeyFrame) ret;
 	}
 }
 
@@ -2140,7 +2140,7 @@ interface DiscretePointKeyFrame : Windows.UI.Xaml.Media.Animation.PointKeyFrame,
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(DiscretePointKeyFrame).abi_ActivateInstance(&ret));
-		return ret.as!(DiscretePointKeyFrame);
+		return cast(DiscretePointKeyFrame) ret;
 	}
 }
 
@@ -2150,52 +2150,52 @@ extern(Windows):
 	final Windows.Foundation.IReference!(double) From()
 	{
 		Windows.Foundation.IReference!(double) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimation).get_From(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDoubleAnimation)this.asInterface(uuid("7e9f3d59-0f07-4bc9-977d-03763ff8154f"))).get_From(&_ret));
 		return _ret;
 	}
 	final void From(Windows.Foundation.IReference!(double) value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimation).set_From(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDoubleAnimation)this.asInterface(uuid("7e9f3d59-0f07-4bc9-977d-03763ff8154f"))).set_From(value));
 	}
 	final Windows.Foundation.IReference!(double) To()
 	{
 		Windows.Foundation.IReference!(double) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimation).get_To(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDoubleAnimation)this.asInterface(uuid("7e9f3d59-0f07-4bc9-977d-03763ff8154f"))).get_To(&_ret));
 		return _ret;
 	}
 	final void To(Windows.Foundation.IReference!(double) value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimation).set_To(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDoubleAnimation)this.asInterface(uuid("7e9f3d59-0f07-4bc9-977d-03763ff8154f"))).set_To(value));
 	}
 	final Windows.Foundation.IReference!(double) By()
 	{
 		Windows.Foundation.IReference!(double) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimation).get_By(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDoubleAnimation)this.asInterface(uuid("7e9f3d59-0f07-4bc9-977d-03763ff8154f"))).get_By(&_ret));
 		return _ret;
 	}
 	final void By(Windows.Foundation.IReference!(double) value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimation).set_By(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDoubleAnimation)this.asInterface(uuid("7e9f3d59-0f07-4bc9-977d-03763ff8154f"))).set_By(value));
 	}
 	final Windows.UI.Xaml.Media.Animation.EasingFunctionBase EasingFunction()
 	{
 		Windows.UI.Xaml.Media.Animation.EasingFunctionBase _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimation).get_EasingFunction(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDoubleAnimation)this.asInterface(uuid("7e9f3d59-0f07-4bc9-977d-03763ff8154f"))).get_EasingFunction(&_ret));
 		return _ret;
 	}
 	final void EasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimation).set_EasingFunction(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDoubleAnimation)this.asInterface(uuid("7e9f3d59-0f07-4bc9-977d-03763ff8154f"))).set_EasingFunction(value));
 	}
 	final bool EnableDependentAnimation()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimation).get_EnableDependentAnimation(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDoubleAnimation)this.asInterface(uuid("7e9f3d59-0f07-4bc9-977d-03763ff8154f"))).get_EnableDependentAnimation(&_ret));
 		return _ret;
 	}
 	final void EnableDependentAnimation(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimation).set_EnableDependentAnimation(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDoubleAnimation)this.asInterface(uuid("7e9f3d59-0f07-4bc9-977d-03763ff8154f"))).set_EnableDependentAnimation(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IDoubleAnimationStatics _staticInstance;
@@ -2207,38 +2207,38 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty FromProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimationStatics).get_FromProperty(&_ret));
+		Debug.OK(staticInstance.get_FromProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ToProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimationStatics).get_ToProperty(&_ret));
+		Debug.OK(staticInstance.get_ToProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ByProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimationStatics).get_ByProperty(&_ret));
+		Debug.OK(staticInstance.get_ByProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty EasingFunctionProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimationStatics).get_EasingFunctionProperty(&_ret));
+		Debug.OK(staticInstance.get_EasingFunctionProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty EnableDependentAnimationProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimationStatics).get_EnableDependentAnimationProperty(&_ret));
+		Debug.OK(staticInstance.get_EnableDependentAnimationProperty(&_ret));
 		return _ret;
 	}
 	static DoubleAnimation New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(DoubleAnimation).abi_ActivateInstance(&ret));
-		return ret.as!(DoubleAnimation);
+		return cast(DoubleAnimation) ret;
 	}
 }
 
@@ -2248,18 +2248,18 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Animation.DoubleKeyFrameCollection KeyFrames()
 	{
 		Windows.UI.Xaml.Media.Animation.DoubleKeyFrameCollection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimationUsingKeyFrames).get_KeyFrames(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDoubleAnimationUsingKeyFrames)this.asInterface(uuid("4fee628f-bfee-4f75-83c2-a93b39488473"))).get_KeyFrames(&_ret));
 		return _ret;
 	}
 	final bool EnableDependentAnimation()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimationUsingKeyFrames).get_EnableDependentAnimation(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDoubleAnimationUsingKeyFrames)this.asInterface(uuid("4fee628f-bfee-4f75-83c2-a93b39488473"))).get_EnableDependentAnimation(&_ret));
 		return _ret;
 	}
 	final void EnableDependentAnimation(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimationUsingKeyFrames).set_EnableDependentAnimation(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDoubleAnimationUsingKeyFrames)this.asInterface(uuid("4fee628f-bfee-4f75-83c2-a93b39488473"))).set_EnableDependentAnimation(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IDoubleAnimationUsingKeyFramesStatics _staticInstance;
@@ -2271,14 +2271,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty EnableDependentAnimationProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDoubleAnimationUsingKeyFramesStatics).get_EnableDependentAnimationProperty(&_ret));
+		Debug.OK(staticInstance.get_EnableDependentAnimationProperty(&_ret));
 		return _ret;
 	}
 	static DoubleAnimationUsingKeyFrames New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(DoubleAnimationUsingKeyFrames).abi_ActivateInstance(&ret));
-		return ret.as!(DoubleAnimationUsingKeyFrames);
+		return cast(DoubleAnimationUsingKeyFrames) ret;
 	}
 }
 
@@ -2288,22 +2288,22 @@ extern(Windows):
 	final double Value()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame).get_Value(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame)this.asInterface(uuid("674456fd-e81e-4f4e-b4ad-0acfed9ecd68"))).get_Value(&_ret));
 		return _ret;
 	}
 	final void Value(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame).set_Value(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame)this.asInterface(uuid("674456fd-e81e-4f4e-b4ad-0acfed9ecd68"))).set_Value(value));
 	}
 	final Windows.UI.Xaml.Media.Animation.KeyTime KeyTime()
 	{
 		Windows.UI.Xaml.Media.Animation.KeyTime _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame).get_KeyTime(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame)this.asInterface(uuid("674456fd-e81e-4f4e-b4ad-0acfed9ecd68"))).get_KeyTime(&_ret));
 		return _ret;
 	}
 	final void KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame).set_KeyTime(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame)this.asInterface(uuid("674456fd-e81e-4f4e-b4ad-0acfed9ecd68"))).set_KeyTime(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IDoubleKeyFrameStatics _staticInstance;
@@ -2315,13 +2315,13 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty ValueProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrameStatics).get_ValueProperty(&_ret));
+		Debug.OK(staticInstance.get_ValueProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty KeyTimeProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrameStatics).get_KeyTimeProperty(&_ret));
+		Debug.OK(staticInstance.get_KeyTimeProperty(&_ret));
 		return _ret;
 	}
 	static DoubleKeyFrame New()
@@ -2342,10 +2342,10 @@ class DoubleKeyFrameT(Base) : AgileObject!Base, DoubleKeyFrame
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_Value(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame).get_Value(return_value); }
-	override HRESULT set_Value(double value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame).set_Value(value); }
-	override HRESULT get_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame).get_KeyTime(return_value); }
-	override HRESULT set_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame).set_KeyTime(value); }
+	override HRESULT get_Value(double* return_value) { return (cast(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame)m_inner.asInterface(uuid("674456fd-e81e-4f4e-b4ad-0acfed9ecd68"))).get_Value(return_value); }
+	override HRESULT set_Value(double value) { return (cast(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame)m_inner.asInterface(uuid("674456fd-e81e-4f4e-b4ad-0acfed9ecd68"))).set_Value(value); }
+	override HRESULT get_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime* return_value) { return (cast(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame)m_inner.asInterface(uuid("674456fd-e81e-4f4e-b4ad-0acfed9ecd68"))).get_KeyTime(return_value); }
+	override HRESULT set_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value) { return (cast(Windows.UI.Xaml.Media.Animation.IDoubleKeyFrame)m_inner.asInterface(uuid("674456fd-e81e-4f4e-b4ad-0acfed9ecd68"))).set_KeyTime(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2357,66 +2357,66 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Animation.DoubleKeyFrame GetAt(uint index)
 	{
 		Windows.UI.Xaml.Media.Animation.DoubleKeyFrame _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).get_GetAt(index, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame))this).get_GetAt(index, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame))this).get_Size(&_ret));
 		return _ret;
 	}
 	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)* out_view)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).abi_GetView(out_view));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame))this).abi_GetView(out_view));
 	}
 	final uint IndexOf(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void SetAt(uint index, Windows.UI.Xaml.Media.Animation.DoubleKeyFrame item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).abi_SetAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame))this).abi_SetAt(index, item));
 	}
 	final void InsertAt(uint index, Windows.UI.Xaml.Media.Animation.DoubleKeyFrame item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).abi_InsertAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame))this).abi_InsertAt(index, item));
 	}
 	final void RemoveAt(uint index)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).abi_RemoveAt(index));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame))this).abi_RemoveAt(index));
 	}
 	final void Append(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).abi_Append(item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame))this).abi_Append(item));
 	}
 	final void RemoveAtEnd()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).abi_RemoveAtEnd());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame))this).abi_RemoveAtEnd());
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame))this).abi_Clear());
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.Media.Animation.DoubleKeyFrame* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void ReplaceAll(uint count, Windows.UI.Xaml.Media.Animation.DoubleKeyFrame* out_value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).abi_ReplaceAll(count, out_value));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame))this).abi_ReplaceAll(count, out_value));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.DoubleKeyFrame))this).abi_First(out_first));
 	}
 	static DoubleKeyFrameCollection New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(DoubleKeyFrameCollection).abi_ActivateInstance(&ret));
-		return ret.as!(DoubleKeyFrameCollection);
+		return cast(DoubleKeyFrameCollection) ret;
 	}
 }
 
@@ -2426,12 +2426,12 @@ extern(Windows):
 	final HSTRING TargetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDragItemThemeAnimation).get_TargetName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDragItemThemeAnimation)this.asInterface(uuid("0c7d5db5-7ed6-4949-b4e6-a78c9f4f978d"))).get_TargetName(&_ret));
 		return _ret;
 	}
 	final void TargetName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDragItemThemeAnimation).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDragItemThemeAnimation)this.asInterface(uuid("0c7d5db5-7ed6-4949-b4e6-a78c9f4f978d"))).set_TargetName(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IDragItemThemeAnimationStatics _staticInstance;
@@ -2443,14 +2443,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDragItemThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		Debug.OK(staticInstance.get_TargetNameProperty(&_ret));
 		return _ret;
 	}
 	static DragItemThemeAnimation New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(DragItemThemeAnimation).abi_ActivateInstance(&ret));
-		return ret.as!(DragItemThemeAnimation);
+		return cast(DragItemThemeAnimation) ret;
 	}
 }
 
@@ -2460,32 +2460,32 @@ extern(Windows):
 	final HSTRING TargetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation).get_TargetName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation)this.asInterface(uuid("72f762f7-7e51-4a6b-b937-dc4b4c1c5458"))).get_TargetName(&_ret));
 		return _ret;
 	}
 	final void TargetName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation)this.asInterface(uuid("72f762f7-7e51-4a6b-b937-dc4b4c1c5458"))).set_TargetName(value));
 	}
 	final double ToOffset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation).get_ToOffset(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation)this.asInterface(uuid("72f762f7-7e51-4a6b-b937-dc4b4c1c5458"))).get_ToOffset(&_ret));
 		return _ret;
 	}
 	final void ToOffset(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation).set_ToOffset(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation)this.asInterface(uuid("72f762f7-7e51-4a6b-b937-dc4b4c1c5458"))).set_ToOffset(value));
 	}
 	final Windows.UI.Xaml.Controls.Primitives.AnimationDirection Direction()
 	{
 		Windows.UI.Xaml.Controls.Primitives.AnimationDirection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation).get_Direction(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation)this.asInterface(uuid("72f762f7-7e51-4a6b-b937-dc4b4c1c5458"))).get_Direction(&_ret));
 		return _ret;
 	}
 	final void Direction(Windows.UI.Xaml.Controls.Primitives.AnimationDirection value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation).set_Direction(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimation)this.asInterface(uuid("72f762f7-7e51-4a6b-b937-dc4b4c1c5458"))).set_Direction(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimationStatics _staticInstance;
@@ -2497,26 +2497,26 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		Debug.OK(staticInstance.get_TargetNameProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ToOffsetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimationStatics).get_ToOffsetProperty(&_ret));
+		Debug.OK(staticInstance.get_ToOffsetProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty DirectionProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDragOverThemeAnimationStatics).get_DirectionProperty(&_ret));
+		Debug.OK(staticInstance.get_DirectionProperty(&_ret));
 		return _ret;
 	}
 	static DragOverThemeAnimation New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(DragOverThemeAnimation).abi_ActivateInstance(&ret));
-		return ret.as!(DragOverThemeAnimation);
+		return cast(DragOverThemeAnimation) ret;
 	}
 }
 
@@ -2526,7 +2526,7 @@ interface DrillInNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.Navi
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(DrillInNavigationTransitionInfo).abi_ActivateInstance(&ret));
-		return ret.as!(DrillInNavigationTransitionInfo);
+		return cast(DrillInNavigationTransitionInfo) ret;
 	}
 }
 
@@ -2536,42 +2536,42 @@ extern(Windows):
 	final HSTRING EntranceTargetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation).get_EntranceTargetName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation)this.asInterface(uuid("b090b824-f1d2-41b8-87ba-78034126594c"))).get_EntranceTargetName(&_ret));
 		return _ret;
 	}
 	final void EntranceTargetName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation).set_EntranceTargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation)this.asInterface(uuid("b090b824-f1d2-41b8-87ba-78034126594c"))).set_EntranceTargetName(value));
 	}
 	final Windows.UI.Xaml.DependencyObject EntranceTarget()
 	{
 		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation).get_EntranceTarget(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation)this.asInterface(uuid("b090b824-f1d2-41b8-87ba-78034126594c"))).get_EntranceTarget(&_ret));
 		return _ret;
 	}
 	final void EntranceTarget(Windows.UI.Xaml.DependencyObject value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation).set_EntranceTarget(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation)this.asInterface(uuid("b090b824-f1d2-41b8-87ba-78034126594c"))).set_EntranceTarget(value));
 	}
 	final HSTRING ExitTargetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation).get_ExitTargetName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation)this.asInterface(uuid("b090b824-f1d2-41b8-87ba-78034126594c"))).get_ExitTargetName(&_ret));
 		return _ret;
 	}
 	final void ExitTargetName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation).set_ExitTargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation)this.asInterface(uuid("b090b824-f1d2-41b8-87ba-78034126594c"))).set_ExitTargetName(value));
 	}
 	final Windows.UI.Xaml.DependencyObject ExitTarget()
 	{
 		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation).get_ExitTarget(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation)this.asInterface(uuid("b090b824-f1d2-41b8-87ba-78034126594c"))).get_ExitTarget(&_ret));
 		return _ret;
 	}
 	final void ExitTarget(Windows.UI.Xaml.DependencyObject value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation).set_ExitTarget(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimation)this.asInterface(uuid("b090b824-f1d2-41b8-87ba-78034126594c"))).set_ExitTarget(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimationStatics _staticInstance;
@@ -2583,32 +2583,32 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty EntranceTargetNameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimationStatics).get_EntranceTargetNameProperty(&_ret));
+		Debug.OK(staticInstance.get_EntranceTargetNameProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty EntranceTargetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimationStatics).get_EntranceTargetProperty(&_ret));
+		Debug.OK(staticInstance.get_EntranceTargetProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ExitTargetNameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimationStatics).get_ExitTargetNameProperty(&_ret));
+		Debug.OK(staticInstance.get_ExitTargetNameProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ExitTargetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDrillInThemeAnimationStatics).get_ExitTargetProperty(&_ret));
+		Debug.OK(staticInstance.get_ExitTargetProperty(&_ret));
 		return _ret;
 	}
 	static DrillInThemeAnimation New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(DrillInThemeAnimation).abi_ActivateInstance(&ret));
-		return ret.as!(DrillInThemeAnimation);
+		return cast(DrillInThemeAnimation) ret;
 	}
 }
 
@@ -2618,42 +2618,42 @@ extern(Windows):
 	final HSTRING EntranceTargetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation).get_EntranceTargetName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation)this.asInterface(uuid("d890ccdf-06d3-4f7e-8e4a-4fb76e256139"))).get_EntranceTargetName(&_ret));
 		return _ret;
 	}
 	final void EntranceTargetName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation).set_EntranceTargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation)this.asInterface(uuid("d890ccdf-06d3-4f7e-8e4a-4fb76e256139"))).set_EntranceTargetName(value));
 	}
 	final Windows.UI.Xaml.DependencyObject EntranceTarget()
 	{
 		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation).get_EntranceTarget(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation)this.asInterface(uuid("d890ccdf-06d3-4f7e-8e4a-4fb76e256139"))).get_EntranceTarget(&_ret));
 		return _ret;
 	}
 	final void EntranceTarget(Windows.UI.Xaml.DependencyObject value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation).set_EntranceTarget(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation)this.asInterface(uuid("d890ccdf-06d3-4f7e-8e4a-4fb76e256139"))).set_EntranceTarget(value));
 	}
 	final HSTRING ExitTargetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation).get_ExitTargetName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation)this.asInterface(uuid("d890ccdf-06d3-4f7e-8e4a-4fb76e256139"))).get_ExitTargetName(&_ret));
 		return _ret;
 	}
 	final void ExitTargetName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation).set_ExitTargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation)this.asInterface(uuid("d890ccdf-06d3-4f7e-8e4a-4fb76e256139"))).set_ExitTargetName(value));
 	}
 	final Windows.UI.Xaml.DependencyObject ExitTarget()
 	{
 		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation).get_ExitTarget(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation)this.asInterface(uuid("d890ccdf-06d3-4f7e-8e4a-4fb76e256139"))).get_ExitTarget(&_ret));
 		return _ret;
 	}
 	final void ExitTarget(Windows.UI.Xaml.DependencyObject value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation).set_ExitTarget(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimation)this.asInterface(uuid("d890ccdf-06d3-4f7e-8e4a-4fb76e256139"))).set_ExitTarget(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimationStatics _staticInstance;
@@ -2665,32 +2665,32 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty EntranceTargetNameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimationStatics).get_EntranceTargetNameProperty(&_ret));
+		Debug.OK(staticInstance.get_EntranceTargetNameProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty EntranceTargetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimationStatics).get_EntranceTargetProperty(&_ret));
+		Debug.OK(staticInstance.get_EntranceTargetProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ExitTargetNameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimationStatics).get_ExitTargetNameProperty(&_ret));
+		Debug.OK(staticInstance.get_ExitTargetNameProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ExitTargetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDrillOutThemeAnimationStatics).get_ExitTargetProperty(&_ret));
+		Debug.OK(staticInstance.get_ExitTargetProperty(&_ret));
 		return _ret;
 	}
 	static DrillOutThemeAnimation New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(DrillOutThemeAnimation).abi_ActivateInstance(&ret));
-		return ret.as!(DrillOutThemeAnimation);
+		return cast(DrillOutThemeAnimation) ret;
 	}
 }
 
@@ -2700,12 +2700,12 @@ extern(Windows):
 	final HSTRING TargetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDropTargetItemThemeAnimation).get_TargetName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDropTargetItemThemeAnimation)this.asInterface(uuid("1881c968-1824-462b-87e8-c357212b977b"))).get_TargetName(&_ret));
 		return _ret;
 	}
 	final void TargetName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IDropTargetItemThemeAnimation).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IDropTargetItemThemeAnimation)this.asInterface(uuid("1881c968-1824-462b-87e8-c357212b977b"))).set_TargetName(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IDropTargetItemThemeAnimationStatics _staticInstance;
@@ -2717,14 +2717,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IDropTargetItemThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		Debug.OK(staticInstance.get_TargetNameProperty(&_ret));
 		return _ret;
 	}
 	static DropTargetItemThemeAnimation New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(DropTargetItemThemeAnimation).abi_ActivateInstance(&ret));
-		return ret.as!(DropTargetItemThemeAnimation);
+		return cast(DropTargetItemThemeAnimation) ret;
 	}
 }
 
@@ -2734,12 +2734,12 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Animation.EasingFunctionBase EasingFunction()
 	{
 		Windows.UI.Xaml.Media.Animation.EasingFunctionBase _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEasingColorKeyFrame).get_EasingFunction(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IEasingColorKeyFrame)this.asInterface(uuid("c733d630-f4b9-4934-9bdd-27ac5ed1cfd8"))).get_EasingFunction(&_ret));
 		return _ret;
 	}
 	final void EasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEasingColorKeyFrame).set_EasingFunction(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IEasingColorKeyFrame)this.asInterface(uuid("c733d630-f4b9-4934-9bdd-27ac5ed1cfd8"))).set_EasingFunction(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IEasingColorKeyFrameStatics _staticInstance;
@@ -2751,14 +2751,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty EasingFunctionProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEasingColorKeyFrameStatics).get_EasingFunctionProperty(&_ret));
+		Debug.OK(staticInstance.get_EasingFunctionProperty(&_ret));
 		return _ret;
 	}
 	static EasingColorKeyFrame New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(EasingColorKeyFrame).abi_ActivateInstance(&ret));
-		return ret.as!(EasingColorKeyFrame);
+		return cast(EasingColorKeyFrame) ret;
 	}
 }
 
@@ -2768,12 +2768,12 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Animation.EasingFunctionBase EasingFunction()
 	{
 		Windows.UI.Xaml.Media.Animation.EasingFunctionBase _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEasingDoubleKeyFrame).get_EasingFunction(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IEasingDoubleKeyFrame)this.asInterface(uuid("965adb8d-9a54-4108-b4ff-b5a5212cb338"))).get_EasingFunction(&_ret));
 		return _ret;
 	}
 	final void EasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEasingDoubleKeyFrame).set_EasingFunction(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IEasingDoubleKeyFrame)this.asInterface(uuid("965adb8d-9a54-4108-b4ff-b5a5212cb338"))).set_EasingFunction(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IEasingDoubleKeyFrameStatics _staticInstance;
@@ -2785,14 +2785,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty EasingFunctionProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEasingDoubleKeyFrameStatics).get_EasingFunctionProperty(&_ret));
+		Debug.OK(staticInstance.get_EasingFunctionProperty(&_ret));
 		return _ret;
 	}
 	static EasingDoubleKeyFrame New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(EasingDoubleKeyFrame).abi_ActivateInstance(&ret));
-		return ret.as!(EasingDoubleKeyFrame);
+		return cast(EasingDoubleKeyFrame) ret;
 	}
 }
 
@@ -2802,17 +2802,17 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Animation.EasingMode EasingMode()
 	{
 		Windows.UI.Xaml.Media.Animation.EasingMode _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEasingFunctionBase).get_EasingMode(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IEasingFunctionBase)this.asInterface(uuid("c108383f-2c02-4151-8ecd-68ddaa3f0d9b"))).get_EasingMode(&_ret));
 		return _ret;
 	}
 	final void EasingMode(Windows.UI.Xaml.Media.Animation.EasingMode value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEasingFunctionBase).set_EasingMode(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IEasingFunctionBase)this.asInterface(uuid("c108383f-2c02-4151-8ecd-68ddaa3f0d9b"))).set_EasingMode(value));
 	}
 	final double Ease(double normalizedTime)
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEasingFunctionBase).abi_Ease(normalizedTime, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IEasingFunctionBase)this.asInterface(uuid("c108383f-2c02-4151-8ecd-68ddaa3f0d9b"))).abi_Ease(normalizedTime, &_ret));
 		return _ret;
 	}
 
@@ -2825,7 +2825,7 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty EasingModeProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEasingFunctionBaseStatics).get_EasingModeProperty(&_ret));
+		Debug.OK(staticInstance.get_EasingModeProperty(&_ret));
 		return _ret;
 	}
 }
@@ -2839,9 +2839,9 @@ class EasingFunctionBaseT(Base) : AgileObject!Base, EasingFunctionBase
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_EasingMode(Windows.UI.Xaml.Media.Animation.EasingMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IEasingFunctionBase).get_EasingMode(return_value); }
-	override HRESULT set_EasingMode(Windows.UI.Xaml.Media.Animation.EasingMode value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IEasingFunctionBase).set_EasingMode(value); }
-	override HRESULT abi_Ease(double normalizedTime, double* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IEasingFunctionBase).abi_Ease(normalizedTime, return_returnValue); }
+	override HRESULT get_EasingMode(Windows.UI.Xaml.Media.Animation.EasingMode* return_value) { return (cast(Windows.UI.Xaml.Media.Animation.IEasingFunctionBase)m_inner.asInterface(uuid("c108383f-2c02-4151-8ecd-68ddaa3f0d9b"))).get_EasingMode(return_value); }
+	override HRESULT set_EasingMode(Windows.UI.Xaml.Media.Animation.EasingMode value) { return (cast(Windows.UI.Xaml.Media.Animation.IEasingFunctionBase)m_inner.asInterface(uuid("c108383f-2c02-4151-8ecd-68ddaa3f0d9b"))).set_EasingMode(value); }
+	override HRESULT abi_Ease(double normalizedTime, double* return_returnValue) { return (cast(Windows.UI.Xaml.Media.Animation.IEasingFunctionBase)m_inner.asInterface(uuid("c108383f-2c02-4151-8ecd-68ddaa3f0d9b"))).abi_Ease(normalizedTime, return_returnValue); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2853,12 +2853,12 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Animation.EasingFunctionBase EasingFunction()
 	{
 		Windows.UI.Xaml.Media.Animation.EasingFunctionBase _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEasingPointKeyFrame).get_EasingFunction(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IEasingPointKeyFrame)this.asInterface(uuid("b3c91380-6868-4225-a70b-3981cc0b2947"))).get_EasingFunction(&_ret));
 		return _ret;
 	}
 	final void EasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEasingPointKeyFrame).set_EasingFunction(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IEasingPointKeyFrame)this.asInterface(uuid("b3c91380-6868-4225-a70b-3981cc0b2947"))).set_EasingFunction(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IEasingPointKeyFrameStatics _staticInstance;
@@ -2870,14 +2870,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty EasingFunctionProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEasingPointKeyFrameStatics).get_EasingFunctionProperty(&_ret));
+		Debug.OK(staticInstance.get_EasingFunctionProperty(&_ret));
 		return _ret;
 	}
 	static EasingPointKeyFrame New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(EasingPointKeyFrame).abi_ActivateInstance(&ret));
-		return ret.as!(EasingPointKeyFrame);
+		return cast(EasingPointKeyFrame) ret;
 	}
 }
 
@@ -2887,12 +2887,12 @@ extern(Windows):
 	final Windows.UI.Xaml.Controls.Primitives.EdgeTransitionLocation Edge()
 	{
 		Windows.UI.Xaml.Controls.Primitives.EdgeTransitionLocation _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEdgeUIThemeTransition).get_Edge(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IEdgeUIThemeTransition)this.asInterface(uuid("5c86c19b-49d7-19ec-cf19-83a73c6de75e"))).get_Edge(&_ret));
 		return _ret;
 	}
 	final void Edge(Windows.UI.Xaml.Controls.Primitives.EdgeTransitionLocation value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEdgeUIThemeTransition).set_Edge(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IEdgeUIThemeTransition)this.asInterface(uuid("5c86c19b-49d7-19ec-cf19-83a73c6de75e"))).set_Edge(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IEdgeUIThemeTransitionStatics _staticInstance;
@@ -2904,14 +2904,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty EdgeProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEdgeUIThemeTransitionStatics).get_EdgeProperty(&_ret));
+		Debug.OK(staticInstance.get_EdgeProperty(&_ret));
 		return _ret;
 	}
 	static EdgeUIThemeTransition New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(EdgeUIThemeTransition).abi_ActivateInstance(&ret));
-		return ret.as!(EdgeUIThemeTransition);
+		return cast(EdgeUIThemeTransition) ret;
 	}
 }
 
@@ -2921,22 +2921,22 @@ extern(Windows):
 	final INT32 Oscillations()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IElasticEase).get_Oscillations(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IElasticEase)this.asInterface(uuid("ef5ba58c-b0b6-4a6c-9ca8-fb4233f12459"))).get_Oscillations(&_ret));
 		return _ret;
 	}
 	final void Oscillations(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IElasticEase).set_Oscillations(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IElasticEase)this.asInterface(uuid("ef5ba58c-b0b6-4a6c-9ca8-fb4233f12459"))).set_Oscillations(value));
 	}
 	final double Springiness()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IElasticEase).get_Springiness(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IElasticEase)this.asInterface(uuid("ef5ba58c-b0b6-4a6c-9ca8-fb4233f12459"))).get_Springiness(&_ret));
 		return _ret;
 	}
 	final void Springiness(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IElasticEase).set_Springiness(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IElasticEase)this.asInterface(uuid("ef5ba58c-b0b6-4a6c-9ca8-fb4233f12459"))).set_Springiness(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IElasticEaseStatics _staticInstance;
@@ -2948,20 +2948,20 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty OscillationsProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IElasticEaseStatics).get_OscillationsProperty(&_ret));
+		Debug.OK(staticInstance.get_OscillationsProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty SpringinessProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IElasticEaseStatics).get_SpringinessProperty(&_ret));
+		Debug.OK(staticInstance.get_SpringinessProperty(&_ret));
 		return _ret;
 	}
 	static ElasticEase New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ElasticEase).abi_ActivateInstance(&ret));
-		return ret.as!(ElasticEase);
+		return cast(ElasticEase) ret;
 	}
 }
 
@@ -2976,24 +2976,24 @@ interface EntranceNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.Nav
 	static Windows.UI.Xaml.DependencyProperty IsTargetElementProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEntranceNavigationTransitionInfoStatics).get_IsTargetElementProperty(&_ret));
+		Debug.OK(staticInstance.get_IsTargetElementProperty(&_ret));
 		return _ret;
 	}
 	static bool GetIsTargetElement(Windows.UI.Xaml.UIElement element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEntranceNavigationTransitionInfoStatics).abi_GetIsTargetElement(element, &_ret));
+		Debug.OK(staticInstance.abi_GetIsTargetElement(element, &_ret));
 		return _ret;
 	}
 	static void SetIsTargetElement(Windows.UI.Xaml.UIElement element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEntranceNavigationTransitionInfoStatics).abi_SetIsTargetElement(element, value));
+		Debug.OK(staticInstance.abi_SetIsTargetElement(element, value));
 	}
 	static EntranceNavigationTransitionInfo New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(EntranceNavigationTransitionInfo).abi_ActivateInstance(&ret));
-		return ret.as!(EntranceNavigationTransitionInfo);
+		return cast(EntranceNavigationTransitionInfo) ret;
 	}
 }
 
@@ -3003,32 +3003,32 @@ extern(Windows):
 	final double FromHorizontalOffset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransition).get_FromHorizontalOffset(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransition)this.asInterface(uuid("07698c09-a8e3-419a-a01d-7410a0ae8ec8"))).get_FromHorizontalOffset(&_ret));
 		return _ret;
 	}
 	final void FromHorizontalOffset(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransition).set_FromHorizontalOffset(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransition)this.asInterface(uuid("07698c09-a8e3-419a-a01d-7410a0ae8ec8"))).set_FromHorizontalOffset(value));
 	}
 	final double FromVerticalOffset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransition).get_FromVerticalOffset(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransition)this.asInterface(uuid("07698c09-a8e3-419a-a01d-7410a0ae8ec8"))).get_FromVerticalOffset(&_ret));
 		return _ret;
 	}
 	final void FromVerticalOffset(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransition).set_FromVerticalOffset(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransition)this.asInterface(uuid("07698c09-a8e3-419a-a01d-7410a0ae8ec8"))).set_FromVerticalOffset(value));
 	}
 	final bool IsStaggeringEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransition).get_IsStaggeringEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransition)this.asInterface(uuid("07698c09-a8e3-419a-a01d-7410a0ae8ec8"))).get_IsStaggeringEnabled(&_ret));
 		return _ret;
 	}
 	final void IsStaggeringEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransition).set_IsStaggeringEnabled(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransition)this.asInterface(uuid("07698c09-a8e3-419a-a01d-7410a0ae8ec8"))).set_IsStaggeringEnabled(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IEntranceThemeTransitionStatics _staticInstance;
@@ -3040,26 +3040,26 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty FromHorizontalOffsetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransitionStatics).get_FromHorizontalOffsetProperty(&_ret));
+		Debug.OK(staticInstance.get_FromHorizontalOffsetProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty FromVerticalOffsetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransitionStatics).get_FromVerticalOffsetProperty(&_ret));
+		Debug.OK(staticInstance.get_FromVerticalOffsetProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty IsStaggeringEnabledProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IEntranceThemeTransitionStatics).get_IsStaggeringEnabledProperty(&_ret));
+		Debug.OK(staticInstance.get_IsStaggeringEnabledProperty(&_ret));
 		return _ret;
 	}
 	static EntranceThemeTransition New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(EntranceThemeTransition).abi_ActivateInstance(&ret));
-		return ret.as!(EntranceThemeTransition);
+		return cast(EntranceThemeTransition) ret;
 	}
 }
 
@@ -3069,12 +3069,12 @@ extern(Windows):
 	final double Exponent()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IExponentialEase).get_Exponent(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IExponentialEase)this.asInterface(uuid("7cb9e41d-f0bb-4bca-9da5-9ba3a11734c4"))).get_Exponent(&_ret));
 		return _ret;
 	}
 	final void Exponent(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IExponentialEase).set_Exponent(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IExponentialEase)this.asInterface(uuid("7cb9e41d-f0bb-4bca-9da5-9ba3a11734c4"))).set_Exponent(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IExponentialEaseStatics _staticInstance;
@@ -3086,14 +3086,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty ExponentProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IExponentialEaseStatics).get_ExponentProperty(&_ret));
+		Debug.OK(staticInstance.get_ExponentProperty(&_ret));
 		return _ret;
 	}
 	static ExponentialEase New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ExponentialEase).abi_ActivateInstance(&ret));
-		return ret.as!(ExponentialEase);
+		return cast(ExponentialEase) ret;
 	}
 }
 
@@ -3103,12 +3103,12 @@ extern(Windows):
 	final HSTRING TargetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IFadeInThemeAnimation).get_TargetName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IFadeInThemeAnimation)this.asInterface(uuid("6d4bc8f5-a918-4477-8078-554c68812ab8"))).get_TargetName(&_ret));
 		return _ret;
 	}
 	final void TargetName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IFadeInThemeAnimation).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IFadeInThemeAnimation)this.asInterface(uuid("6d4bc8f5-a918-4477-8078-554c68812ab8"))).set_TargetName(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IFadeInThemeAnimationStatics _staticInstance;
@@ -3120,14 +3120,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IFadeInThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		Debug.OK(staticInstance.get_TargetNameProperty(&_ret));
 		return _ret;
 	}
 	static FadeInThemeAnimation New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(FadeInThemeAnimation).abi_ActivateInstance(&ret));
-		return ret.as!(FadeInThemeAnimation);
+		return cast(FadeInThemeAnimation) ret;
 	}
 }
 
@@ -3137,12 +3137,12 @@ extern(Windows):
 	final HSTRING TargetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IFadeOutThemeAnimation).get_TargetName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IFadeOutThemeAnimation)this.asInterface(uuid("89276ba9-ffd4-45b6-9b9a-ced48951e712"))).get_TargetName(&_ret));
 		return _ret;
 	}
 	final void TargetName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IFadeOutThemeAnimation).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IFadeOutThemeAnimation)this.asInterface(uuid("89276ba9-ffd4-45b6-9b9a-ced48951e712"))).set_TargetName(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IFadeOutThemeAnimationStatics _staticInstance;
@@ -3154,14 +3154,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IFadeOutThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		Debug.OK(staticInstance.get_TargetNameProperty(&_ret));
 		return _ret;
 	}
 	static FadeOutThemeAnimation New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(FadeOutThemeAnimation).abi_ActivateInstance(&ret));
-		return ret.as!(FadeOutThemeAnimation);
+		return cast(FadeOutThemeAnimation) ret;
 	}
 }
 
@@ -3171,28 +3171,28 @@ extern(Windows):
 	final Windows.Foundation.Point ControlPoint1()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IKeySpline).get_ControlPoint1(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IKeySpline)this.asInterface(uuid("77a163bb-d5ca-4a32-ba0b-7dff988e58a0"))).get_ControlPoint1(&_ret));
 		return _ret;
 	}
 	final void ControlPoint1(Windows.Foundation.Point value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IKeySpline).set_ControlPoint1(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IKeySpline)this.asInterface(uuid("77a163bb-d5ca-4a32-ba0b-7dff988e58a0"))).set_ControlPoint1(value));
 	}
 	final Windows.Foundation.Point ControlPoint2()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IKeySpline).get_ControlPoint2(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IKeySpline)this.asInterface(uuid("77a163bb-d5ca-4a32-ba0b-7dff988e58a0"))).get_ControlPoint2(&_ret));
 		return _ret;
 	}
 	final void ControlPoint2(Windows.Foundation.Point value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IKeySpline).set_ControlPoint2(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IKeySpline)this.asInterface(uuid("77a163bb-d5ca-4a32-ba0b-7dff988e58a0"))).set_ControlPoint2(value));
 	}
 	static KeySpline New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(KeySpline).abi_ActivateInstance(&ret));
-		return ret.as!(KeySpline);
+		return cast(KeySpline) ret;
 	}
 }
 
@@ -3207,7 +3207,7 @@ interface KeyTimeHelper : Windows.UI.Xaml.Media.Animation.IKeyTimeHelper
 	static Windows.UI.Xaml.Media.Animation.KeyTime FromTimeSpan(Windows.Foundation.TimeSpan timeSpan)
 	{
 		Windows.UI.Xaml.Media.Animation.KeyTime _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IKeyTimeHelperStatics).abi_FromTimeSpan(timeSpan, &_ret));
+		Debug.OK(staticInstance.abi_FromTimeSpan(timeSpan, &_ret));
 		return _ret;
 	}
 }
@@ -3218,7 +3218,7 @@ interface LinearColorKeyFrame : Windows.UI.Xaml.Media.Animation.ColorKeyFrame, W
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(LinearColorKeyFrame).abi_ActivateInstance(&ret));
-		return ret.as!(LinearColorKeyFrame);
+		return cast(LinearColorKeyFrame) ret;
 	}
 }
 
@@ -3228,7 +3228,7 @@ interface LinearDoubleKeyFrame : Windows.UI.Xaml.Media.Animation.DoubleKeyFrame,
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(LinearDoubleKeyFrame).abi_ActivateInstance(&ret));
-		return ret.as!(LinearDoubleKeyFrame);
+		return cast(LinearDoubleKeyFrame) ret;
 	}
 }
 
@@ -3238,7 +3238,7 @@ interface LinearPointKeyFrame : Windows.UI.Xaml.Media.Animation.PointKeyFrame, W
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(LinearPointKeyFrame).abi_ActivateInstance(&ret));
-		return ret.as!(LinearPointKeyFrame);
+		return cast(LinearPointKeyFrame) ret;
 	}
 }
 
@@ -3248,12 +3248,12 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo DefaultNavigationTransitionInfo()
 	{
 		Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.INavigationThemeTransition).get_DefaultNavigationTransitionInfo(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.INavigationThemeTransition)this.asInterface(uuid("8833848c-4eb7-41f2-8799-9eef0a213b73"))).get_DefaultNavigationTransitionInfo(&_ret));
 		return _ret;
 	}
 	final void DefaultNavigationTransitionInfo(Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.INavigationThemeTransition).set_DefaultNavigationTransitionInfo(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.INavigationThemeTransition)this.asInterface(uuid("8833848c-4eb7-41f2-8799-9eef0a213b73"))).set_DefaultNavigationTransitionInfo(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.INavigationThemeTransitionStatics _staticInstance;
@@ -3265,14 +3265,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty DefaultNavigationTransitionInfoProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.INavigationThemeTransitionStatics).get_DefaultNavigationTransitionInfoProperty(&_ret));
+		Debug.OK(staticInstance.get_DefaultNavigationTransitionInfoProperty(&_ret));
 		return _ret;
 	}
 	static NavigationThemeTransition New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(NavigationThemeTransition).abi_ActivateInstance(&ret));
-		return ret.as!(NavigationThemeTransition);
+		return cast(NavigationThemeTransition) ret;
 	}
 }
 
@@ -3298,9 +3298,9 @@ class NavigationTransitionInfoT(Base) : AgileObject!Base, NavigationTransitionIn
 	}
 
 	override HRESULT abi_GetNavigationStateCore(HSTRING* return_returnValue) { this.GetNavigationStateCore(return_returnValue); return S_OK; }
-	void GetNavigationStateCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Media.Animation.INavigationTransitionInfoOverrides).abi_GetNavigationStateCore(return_returnValue)); }
+	void GetNavigationStateCore(HSTRING* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Media.Animation.INavigationTransitionInfoOverrides)m_inner.asInterface(uuid("d9517e6a-a9d0-4bf7-9db0-4633a69daff2"))).abi_GetNavigationStateCore(return_returnValue)); }
 	override HRESULT abi_SetNavigationStateCore(HSTRING navigationState) { this.SetNavigationStateCore(navigationState); return S_OK; }
-	void SetNavigationStateCore(HSTRING navigationState) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Media.Animation.INavigationTransitionInfoOverrides).abi_SetNavigationStateCore(navigationState)); }
+	void SetNavigationStateCore(HSTRING navigationState) { Debug.OK((cast(Windows.UI.Xaml.Media.Animation.INavigationTransitionInfoOverrides)m_inner.asInterface(uuid("d9517e6a-a9d0-4bf7-9db0-4633a69daff2"))).abi_SetNavigationStateCore(navigationState)); }
 
 	this() {}
 	IInspectable m_inner;
@@ -3312,18 +3312,18 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Animation.ObjectKeyFrameCollection KeyFrames()
 	{
 		Windows.UI.Xaml.Media.Animation.ObjectKeyFrameCollection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IObjectAnimationUsingKeyFrames).get_KeyFrames(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IObjectAnimationUsingKeyFrames)this.asInterface(uuid("334a2d92-b74a-4c64-b9a6-58bcfa314f22"))).get_KeyFrames(&_ret));
 		return _ret;
 	}
 	final bool EnableDependentAnimation()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IObjectAnimationUsingKeyFrames).get_EnableDependentAnimation(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IObjectAnimationUsingKeyFrames)this.asInterface(uuid("334a2d92-b74a-4c64-b9a6-58bcfa314f22"))).get_EnableDependentAnimation(&_ret));
 		return _ret;
 	}
 	final void EnableDependentAnimation(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IObjectAnimationUsingKeyFrames).set_EnableDependentAnimation(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IObjectAnimationUsingKeyFrames)this.asInterface(uuid("334a2d92-b74a-4c64-b9a6-58bcfa314f22"))).set_EnableDependentAnimation(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IObjectAnimationUsingKeyFramesStatics _staticInstance;
@@ -3335,14 +3335,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty EnableDependentAnimationProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IObjectAnimationUsingKeyFramesStatics).get_EnableDependentAnimationProperty(&_ret));
+		Debug.OK(staticInstance.get_EnableDependentAnimationProperty(&_ret));
 		return _ret;
 	}
 	static ObjectAnimationUsingKeyFrames New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ObjectAnimationUsingKeyFrames).abi_ActivateInstance(&ret));
-		return ret.as!(ObjectAnimationUsingKeyFrames);
+		return cast(ObjectAnimationUsingKeyFrames) ret;
 	}
 }
 
@@ -3352,22 +3352,22 @@ extern(Windows):
 	final IInspectable Value()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame).get_Value(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame)this.asInterface(uuid("9852a851-8593-48ee-a6a4-d5d4720f029a"))).get_Value(&_ret));
 		return _ret;
 	}
 	final void Value(IInspectable value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame).set_Value(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame)this.asInterface(uuid("9852a851-8593-48ee-a6a4-d5d4720f029a"))).set_Value(value));
 	}
 	final Windows.UI.Xaml.Media.Animation.KeyTime KeyTime()
 	{
 		Windows.UI.Xaml.Media.Animation.KeyTime _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame).get_KeyTime(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame)this.asInterface(uuid("9852a851-8593-48ee-a6a4-d5d4720f029a"))).get_KeyTime(&_ret));
 		return _ret;
 	}
 	final void KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame).set_KeyTime(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame)this.asInterface(uuid("9852a851-8593-48ee-a6a4-d5d4720f029a"))).set_KeyTime(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IObjectKeyFrameStatics _staticInstance;
@@ -3379,13 +3379,13 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty ValueProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrameStatics).get_ValueProperty(&_ret));
+		Debug.OK(staticInstance.get_ValueProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty KeyTimeProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrameStatics).get_KeyTimeProperty(&_ret));
+		Debug.OK(staticInstance.get_KeyTimeProperty(&_ret));
 		return _ret;
 	}
 	static ObjectKeyFrame New()
@@ -3406,10 +3406,10 @@ class ObjectKeyFrameT(Base) : AgileObject!Base, ObjectKeyFrame
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_Value(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame).get_Value(return_value); }
-	override HRESULT set_Value(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame).set_Value(value); }
-	override HRESULT get_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame).get_KeyTime(return_value); }
-	override HRESULT set_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame).set_KeyTime(value); }
+	override HRESULT get_Value(IInspectable* return_value) { return (cast(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame)m_inner.asInterface(uuid("9852a851-8593-48ee-a6a4-d5d4720f029a"))).get_Value(return_value); }
+	override HRESULT set_Value(IInspectable value) { return (cast(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame)m_inner.asInterface(uuid("9852a851-8593-48ee-a6a4-d5d4720f029a"))).set_Value(value); }
+	override HRESULT get_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime* return_value) { return (cast(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame)m_inner.asInterface(uuid("9852a851-8593-48ee-a6a4-d5d4720f029a"))).get_KeyTime(return_value); }
+	override HRESULT set_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value) { return (cast(Windows.UI.Xaml.Media.Animation.IObjectKeyFrame)m_inner.asInterface(uuid("9852a851-8593-48ee-a6a4-d5d4720f029a"))).set_KeyTime(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -3421,66 +3421,66 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Animation.ObjectKeyFrame GetAt(uint index)
 	{
 		Windows.UI.Xaml.Media.Animation.ObjectKeyFrame _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).get_GetAt(index, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame))this).get_GetAt(index, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame))this).get_Size(&_ret));
 		return _ret;
 	}
 	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)* out_view)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).abi_GetView(out_view));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame))this).abi_GetView(out_view));
 	}
 	final uint IndexOf(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void SetAt(uint index, Windows.UI.Xaml.Media.Animation.ObjectKeyFrame item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).abi_SetAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame))this).abi_SetAt(index, item));
 	}
 	final void InsertAt(uint index, Windows.UI.Xaml.Media.Animation.ObjectKeyFrame item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).abi_InsertAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame))this).abi_InsertAt(index, item));
 	}
 	final void RemoveAt(uint index)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).abi_RemoveAt(index));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame))this).abi_RemoveAt(index));
 	}
 	final void Append(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).abi_Append(item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame))this).abi_Append(item));
 	}
 	final void RemoveAtEnd()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).abi_RemoveAtEnd());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame))this).abi_RemoveAtEnd());
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame))this).abi_Clear());
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.Media.Animation.ObjectKeyFrame* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void ReplaceAll(uint count, Windows.UI.Xaml.Media.Animation.ObjectKeyFrame* out_value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).abi_ReplaceAll(count, out_value));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame))this).abi_ReplaceAll(count, out_value));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.ObjectKeyFrame))this).abi_First(out_first));
 	}
 	static ObjectKeyFrameCollection New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ObjectKeyFrameCollection).abi_ActivateInstance(&ret));
-		return ret.as!(ObjectKeyFrameCollection);
+		return cast(ObjectKeyFrameCollection) ret;
 	}
 }
 
@@ -3490,12 +3490,12 @@ extern(Windows):
 	final Windows.UI.Xaml.Controls.Primitives.EdgeTransitionLocation Edge()
 	{
 		Windows.UI.Xaml.Controls.Primitives.EdgeTransitionLocation _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPaneThemeTransition).get_Edge(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPaneThemeTransition)this.asInterface(uuid("4708eb8e-4bfc-ee46-d4f9-708def3fbb2b"))).get_Edge(&_ret));
 		return _ret;
 	}
 	final void Edge(Windows.UI.Xaml.Controls.Primitives.EdgeTransitionLocation value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPaneThemeTransition).set_Edge(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPaneThemeTransition)this.asInterface(uuid("4708eb8e-4bfc-ee46-d4f9-708def3fbb2b"))).set_Edge(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IPaneThemeTransitionStatics _staticInstance;
@@ -3507,14 +3507,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty EdgeProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPaneThemeTransitionStatics).get_EdgeProperty(&_ret));
+		Debug.OK(staticInstance.get_EdgeProperty(&_ret));
 		return _ret;
 	}
 	static PaneThemeTransition New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PaneThemeTransition).abi_ActivateInstance(&ret));
-		return ret.as!(PaneThemeTransition);
+		return cast(PaneThemeTransition) ret;
 	}
 }
 
@@ -3524,52 +3524,52 @@ extern(Windows):
 	final Windows.Foundation.IReference!(Windows.Foundation.Point) From()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.Point) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimation).get_From(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointAnimation)this.asInterface(uuid("30f04312-7726-4f88-b8e2-2fa54518963b"))).get_From(&_ret));
 		return _ret;
 	}
 	final void From(Windows.Foundation.IReference!(Windows.Foundation.Point) value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimation).set_From(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointAnimation)this.asInterface(uuid("30f04312-7726-4f88-b8e2-2fa54518963b"))).set_From(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.Point) To()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.Point) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimation).get_To(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointAnimation)this.asInterface(uuid("30f04312-7726-4f88-b8e2-2fa54518963b"))).get_To(&_ret));
 		return _ret;
 	}
 	final void To(Windows.Foundation.IReference!(Windows.Foundation.Point) value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimation).set_To(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointAnimation)this.asInterface(uuid("30f04312-7726-4f88-b8e2-2fa54518963b"))).set_To(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.Point) By()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.Point) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimation).get_By(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointAnimation)this.asInterface(uuid("30f04312-7726-4f88-b8e2-2fa54518963b"))).get_By(&_ret));
 		return _ret;
 	}
 	final void By(Windows.Foundation.IReference!(Windows.Foundation.Point) value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimation).set_By(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointAnimation)this.asInterface(uuid("30f04312-7726-4f88-b8e2-2fa54518963b"))).set_By(value));
 	}
 	final Windows.UI.Xaml.Media.Animation.EasingFunctionBase EasingFunction()
 	{
 		Windows.UI.Xaml.Media.Animation.EasingFunctionBase _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimation).get_EasingFunction(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointAnimation)this.asInterface(uuid("30f04312-7726-4f88-b8e2-2fa54518963b"))).get_EasingFunction(&_ret));
 		return _ret;
 	}
 	final void EasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimation).set_EasingFunction(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointAnimation)this.asInterface(uuid("30f04312-7726-4f88-b8e2-2fa54518963b"))).set_EasingFunction(value));
 	}
 	final bool EnableDependentAnimation()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimation).get_EnableDependentAnimation(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointAnimation)this.asInterface(uuid("30f04312-7726-4f88-b8e2-2fa54518963b"))).get_EnableDependentAnimation(&_ret));
 		return _ret;
 	}
 	final void EnableDependentAnimation(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimation).set_EnableDependentAnimation(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointAnimation)this.asInterface(uuid("30f04312-7726-4f88-b8e2-2fa54518963b"))).set_EnableDependentAnimation(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IPointAnimationStatics _staticInstance;
@@ -3581,38 +3581,38 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty FromProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointAnimationStatics).get_FromProperty(&_ret));
+		Debug.OK(staticInstance.get_FromProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ToProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointAnimationStatics).get_ToProperty(&_ret));
+		Debug.OK(staticInstance.get_ToProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ByProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointAnimationStatics).get_ByProperty(&_ret));
+		Debug.OK(staticInstance.get_ByProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty EasingFunctionProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointAnimationStatics).get_EasingFunctionProperty(&_ret));
+		Debug.OK(staticInstance.get_EasingFunctionProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty EnableDependentAnimationProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointAnimationStatics).get_EnableDependentAnimationProperty(&_ret));
+		Debug.OK(staticInstance.get_EnableDependentAnimationProperty(&_ret));
 		return _ret;
 	}
 	static PointAnimation New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PointAnimation).abi_ActivateInstance(&ret));
-		return ret.as!(PointAnimation);
+		return cast(PointAnimation) ret;
 	}
 }
 
@@ -3622,18 +3622,18 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Animation.PointKeyFrameCollection KeyFrames()
 	{
 		Windows.UI.Xaml.Media.Animation.PointKeyFrameCollection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimationUsingKeyFrames).get_KeyFrames(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointAnimationUsingKeyFrames)this.asInterface(uuid("9b944f72-446a-41d0-a129-41a620f4595d"))).get_KeyFrames(&_ret));
 		return _ret;
 	}
 	final bool EnableDependentAnimation()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimationUsingKeyFrames).get_EnableDependentAnimation(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointAnimationUsingKeyFrames)this.asInterface(uuid("9b944f72-446a-41d0-a129-41a620f4595d"))).get_EnableDependentAnimation(&_ret));
 		return _ret;
 	}
 	final void EnableDependentAnimation(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointAnimationUsingKeyFrames).set_EnableDependentAnimation(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointAnimationUsingKeyFrames)this.asInterface(uuid("9b944f72-446a-41d0-a129-41a620f4595d"))).set_EnableDependentAnimation(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IPointAnimationUsingKeyFramesStatics _staticInstance;
@@ -3645,14 +3645,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty EnableDependentAnimationProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointAnimationUsingKeyFramesStatics).get_EnableDependentAnimationProperty(&_ret));
+		Debug.OK(staticInstance.get_EnableDependentAnimationProperty(&_ret));
 		return _ret;
 	}
 	static PointAnimationUsingKeyFrames New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PointAnimationUsingKeyFrames).abi_ActivateInstance(&ret));
-		return ret.as!(PointAnimationUsingKeyFrames);
+		return cast(PointAnimationUsingKeyFrames) ret;
 	}
 }
 
@@ -3662,22 +3662,22 @@ extern(Windows):
 	final Windows.Foundation.Point Value()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointKeyFrame).get_Value(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointKeyFrame)this.asInterface(uuid("fcc88d01-7f82-4dae-8026-7b7e086878b3"))).get_Value(&_ret));
 		return _ret;
 	}
 	final void Value(Windows.Foundation.Point value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointKeyFrame).set_Value(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointKeyFrame)this.asInterface(uuid("fcc88d01-7f82-4dae-8026-7b7e086878b3"))).set_Value(value));
 	}
 	final Windows.UI.Xaml.Media.Animation.KeyTime KeyTime()
 	{
 		Windows.UI.Xaml.Media.Animation.KeyTime _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointKeyFrame).get_KeyTime(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointKeyFrame)this.asInterface(uuid("fcc88d01-7f82-4dae-8026-7b7e086878b3"))).get_KeyTime(&_ret));
 		return _ret;
 	}
 	final void KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointKeyFrame).set_KeyTime(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointKeyFrame)this.asInterface(uuid("fcc88d01-7f82-4dae-8026-7b7e086878b3"))).set_KeyTime(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IPointKeyFrameStatics _staticInstance;
@@ -3689,13 +3689,13 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty ValueProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointKeyFrameStatics).get_ValueProperty(&_ret));
+		Debug.OK(staticInstance.get_ValueProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty KeyTimeProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointKeyFrameStatics).get_KeyTimeProperty(&_ret));
+		Debug.OK(staticInstance.get_KeyTimeProperty(&_ret));
 		return _ret;
 	}
 	static PointKeyFrame New()
@@ -3716,10 +3716,10 @@ class PointKeyFrameT(Base) : AgileObject!Base, PointKeyFrame
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_Value(Windows.Foundation.Point* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IPointKeyFrame).get_Value(return_value); }
-	override HRESULT set_Value(Windows.Foundation.Point value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IPointKeyFrame).set_Value(value); }
-	override HRESULT get_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IPointKeyFrame).get_KeyTime(return_value); }
-	override HRESULT set_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.IPointKeyFrame).set_KeyTime(value); }
+	override HRESULT get_Value(Windows.Foundation.Point* return_value) { return (cast(Windows.UI.Xaml.Media.Animation.IPointKeyFrame)m_inner.asInterface(uuid("fcc88d01-7f82-4dae-8026-7b7e086878b3"))).get_Value(return_value); }
+	override HRESULT set_Value(Windows.Foundation.Point value) { return (cast(Windows.UI.Xaml.Media.Animation.IPointKeyFrame)m_inner.asInterface(uuid("fcc88d01-7f82-4dae-8026-7b7e086878b3"))).set_Value(value); }
+	override HRESULT get_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime* return_value) { return (cast(Windows.UI.Xaml.Media.Animation.IPointKeyFrame)m_inner.asInterface(uuid("fcc88d01-7f82-4dae-8026-7b7e086878b3"))).get_KeyTime(return_value); }
+	override HRESULT set_KeyTime(Windows.UI.Xaml.Media.Animation.KeyTime value) { return (cast(Windows.UI.Xaml.Media.Animation.IPointKeyFrame)m_inner.asInterface(uuid("fcc88d01-7f82-4dae-8026-7b7e086878b3"))).set_KeyTime(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -3731,66 +3731,66 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Animation.PointKeyFrame GetAt(uint index)
 	{
 		Windows.UI.Xaml.Media.Animation.PointKeyFrame _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).get_GetAt(index, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame))this).get_GetAt(index, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame))this).get_Size(&_ret));
 		return _ret;
 	}
 	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)* out_view)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).abi_GetView(out_view));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame))this).abi_GetView(out_view));
 	}
 	final uint IndexOf(Windows.UI.Xaml.Media.Animation.PointKeyFrame value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void SetAt(uint index, Windows.UI.Xaml.Media.Animation.PointKeyFrame item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).abi_SetAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame))this).abi_SetAt(index, item));
 	}
 	final void InsertAt(uint index, Windows.UI.Xaml.Media.Animation.PointKeyFrame item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).abi_InsertAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame))this).abi_InsertAt(index, item));
 	}
 	final void RemoveAt(uint index)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).abi_RemoveAt(index));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame))this).abi_RemoveAt(index));
 	}
 	final void Append(Windows.UI.Xaml.Media.Animation.PointKeyFrame item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).abi_Append(item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame))this).abi_Append(item));
 	}
 	final void RemoveAtEnd()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).abi_RemoveAtEnd());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame))this).abi_RemoveAtEnd());
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame))this).abi_Clear());
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.Media.Animation.PointKeyFrame* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void ReplaceAll(uint count, Windows.UI.Xaml.Media.Animation.PointKeyFrame* out_value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).abi_ReplaceAll(count, out_value));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.PointKeyFrame))this).abi_ReplaceAll(count, out_value));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.PointKeyFrame)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.PointKeyFrame))this).abi_First(out_first));
 	}
 	static PointKeyFrameCollection New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PointKeyFrameCollection).abi_ActivateInstance(&ret));
-		return ret.as!(PointKeyFrameCollection);
+		return cast(PointKeyFrameCollection) ret;
 	}
 }
 
@@ -3800,12 +3800,12 @@ extern(Windows):
 	final HSTRING TargetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointerDownThemeAnimation).get_TargetName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointerDownThemeAnimation)this.asInterface(uuid("b58e714e-c49d-4788-a233-0ae85d99dd5a"))).get_TargetName(&_ret));
 		return _ret;
 	}
 	final void TargetName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointerDownThemeAnimation).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointerDownThemeAnimation)this.asInterface(uuid("b58e714e-c49d-4788-a233-0ae85d99dd5a"))).set_TargetName(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IPointerDownThemeAnimationStatics _staticInstance;
@@ -3817,14 +3817,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointerDownThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		Debug.OK(staticInstance.get_TargetNameProperty(&_ret));
 		return _ret;
 	}
 	static PointerDownThemeAnimation New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PointerDownThemeAnimation).abi_ActivateInstance(&ret));
-		return ret.as!(PointerDownThemeAnimation);
+		return cast(PointerDownThemeAnimation) ret;
 	}
 }
 
@@ -3834,12 +3834,12 @@ extern(Windows):
 	final HSTRING TargetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointerUpThemeAnimation).get_TargetName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointerUpThemeAnimation)this.asInterface(uuid("e9e9d07d-6340-4828-ad12-690694b9910b"))).get_TargetName(&_ret));
 		return _ret;
 	}
 	final void TargetName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPointerUpThemeAnimation).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPointerUpThemeAnimation)this.asInterface(uuid("e9e9d07d-6340-4828-ad12-690694b9910b"))).set_TargetName(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IPointerUpThemeAnimationStatics _staticInstance;
@@ -3851,14 +3851,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPointerUpThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		Debug.OK(staticInstance.get_TargetNameProperty(&_ret));
 		return _ret;
 	}
 	static PointerUpThemeAnimation New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PointerUpThemeAnimation).abi_ActivateInstance(&ret));
-		return ret.as!(PointerUpThemeAnimation);
+		return cast(PointerUpThemeAnimation) ret;
 	}
 }
 
@@ -3868,32 +3868,32 @@ extern(Windows):
 	final HSTRING TargetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation).get_TargetName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation)this.asInterface(uuid("196938c1-1c07-4c28-8847-f9f055b32855"))).get_TargetName(&_ret));
 		return _ret;
 	}
 	final void TargetName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation)this.asInterface(uuid("196938c1-1c07-4c28-8847-f9f055b32855"))).set_TargetName(value));
 	}
 	final double FromHorizontalOffset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation).get_FromHorizontalOffset(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation)this.asInterface(uuid("196938c1-1c07-4c28-8847-f9f055b32855"))).get_FromHorizontalOffset(&_ret));
 		return _ret;
 	}
 	final void FromHorizontalOffset(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation).set_FromHorizontalOffset(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation)this.asInterface(uuid("196938c1-1c07-4c28-8847-f9f055b32855"))).set_FromHorizontalOffset(value));
 	}
 	final double FromVerticalOffset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation).get_FromVerticalOffset(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation)this.asInterface(uuid("196938c1-1c07-4c28-8847-f9f055b32855"))).get_FromVerticalOffset(&_ret));
 		return _ret;
 	}
 	final void FromVerticalOffset(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation).set_FromVerticalOffset(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimation)this.asInterface(uuid("196938c1-1c07-4c28-8847-f9f055b32855"))).set_FromVerticalOffset(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IPopInThemeAnimationStatics _staticInstance;
@@ -3905,26 +3905,26 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		Debug.OK(staticInstance.get_TargetNameProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty FromHorizontalOffsetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimationStatics).get_FromHorizontalOffsetProperty(&_ret));
+		Debug.OK(staticInstance.get_FromHorizontalOffsetProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty FromVerticalOffsetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPopInThemeAnimationStatics).get_FromVerticalOffsetProperty(&_ret));
+		Debug.OK(staticInstance.get_FromVerticalOffsetProperty(&_ret));
 		return _ret;
 	}
 	static PopInThemeAnimation New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PopInThemeAnimation).abi_ActivateInstance(&ret));
-		return ret.as!(PopInThemeAnimation);
+		return cast(PopInThemeAnimation) ret;
 	}
 }
 
@@ -3934,12 +3934,12 @@ extern(Windows):
 	final HSTRING TargetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopOutThemeAnimation).get_TargetName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPopOutThemeAnimation)this.asInterface(uuid("4786ab49-0e48-4e81-a2e5-cc5aa19e48d3"))).get_TargetName(&_ret));
 		return _ret;
 	}
 	final void TargetName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopOutThemeAnimation).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPopOutThemeAnimation)this.asInterface(uuid("4786ab49-0e48-4e81-a2e5-cc5aa19e48d3"))).set_TargetName(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IPopOutThemeAnimationStatics _staticInstance;
@@ -3951,14 +3951,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPopOutThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		Debug.OK(staticInstance.get_TargetNameProperty(&_ret));
 		return _ret;
 	}
 	static PopOutThemeAnimation New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PopOutThemeAnimation).abi_ActivateInstance(&ret));
-		return ret.as!(PopOutThemeAnimation);
+		return cast(PopOutThemeAnimation) ret;
 	}
 }
 
@@ -3968,22 +3968,22 @@ extern(Windows):
 	final double FromHorizontalOffset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopupThemeTransition).get_FromHorizontalOffset(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPopupThemeTransition)this.asInterface(uuid("47843552-4283-545e-c791-268dca22ce4b"))).get_FromHorizontalOffset(&_ret));
 		return _ret;
 	}
 	final void FromHorizontalOffset(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopupThemeTransition).set_FromHorizontalOffset(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPopupThemeTransition)this.asInterface(uuid("47843552-4283-545e-c791-268dca22ce4b"))).set_FromHorizontalOffset(value));
 	}
 	final double FromVerticalOffset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopupThemeTransition).get_FromVerticalOffset(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPopupThemeTransition)this.asInterface(uuid("47843552-4283-545e-c791-268dca22ce4b"))).get_FromVerticalOffset(&_ret));
 		return _ret;
 	}
 	final void FromVerticalOffset(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPopupThemeTransition).set_FromVerticalOffset(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPopupThemeTransition)this.asInterface(uuid("47843552-4283-545e-c791-268dca22ce4b"))).set_FromVerticalOffset(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IPopupThemeTransitionStatics _staticInstance;
@@ -3995,20 +3995,20 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty FromHorizontalOffsetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPopupThemeTransitionStatics).get_FromHorizontalOffsetProperty(&_ret));
+		Debug.OK(staticInstance.get_FromHorizontalOffsetProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty FromVerticalOffsetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPopupThemeTransitionStatics).get_FromVerticalOffsetProperty(&_ret));
+		Debug.OK(staticInstance.get_FromVerticalOffsetProperty(&_ret));
 		return _ret;
 	}
 	static PopupThemeTransition New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PopupThemeTransition).abi_ActivateInstance(&ret));
-		return ret.as!(PopupThemeTransition);
+		return cast(PopupThemeTransition) ret;
 	}
 }
 
@@ -4018,12 +4018,12 @@ extern(Windows):
 	final double Power()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPowerEase).get_Power(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPowerEase)this.asInterface(uuid("69c80579-eedf-405b-8680-d9606880c937"))).get_Power(&_ret));
 		return _ret;
 	}
 	final void Power(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IPowerEase).set_Power(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IPowerEase)this.asInterface(uuid("69c80579-eedf-405b-8680-d9606880c937"))).set_Power(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IPowerEaseStatics _staticInstance;
@@ -4035,14 +4035,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty PowerProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IPowerEaseStatics).get_PowerProperty(&_ret));
+		Debug.OK(staticInstance.get_PowerProperty(&_ret));
 		return _ret;
 	}
 	static PowerEase New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PowerEase).abi_ActivateInstance(&ret));
-		return ret.as!(PowerEase);
+		return cast(PowerEase) ret;
 	}
 }
 
@@ -4052,7 +4052,7 @@ interface QuadraticEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Wi
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(QuadraticEase).abi_ActivateInstance(&ret));
-		return ret.as!(QuadraticEase);
+		return cast(QuadraticEase) ret;
 	}
 }
 
@@ -4062,7 +4062,7 @@ interface QuarticEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Wind
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(QuarticEase).abi_ActivateInstance(&ret));
-		return ret.as!(QuarticEase);
+		return cast(QuarticEase) ret;
 	}
 }
 
@@ -4072,7 +4072,7 @@ interface QuinticEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Wind
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(QuinticEase).abi_ActivateInstance(&ret));
-		return ret.as!(QuinticEase);
+		return cast(QuinticEase) ret;
 	}
 }
 
@@ -4082,7 +4082,7 @@ interface ReorderThemeTransition : Windows.UI.Xaml.Media.Animation.Transition, W
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ReorderThemeTransition).abi_ActivateInstance(&ret));
-		return ret.as!(ReorderThemeTransition);
+		return cast(ReorderThemeTransition) ret;
 	}
 }
 
@@ -4097,37 +4097,37 @@ interface RepeatBehaviorHelper : Windows.UI.Xaml.Media.Animation.IRepeatBehavior
 	static Windows.UI.Xaml.Media.Animation.RepeatBehavior Forever()
 	{
 		Windows.UI.Xaml.Media.Animation.RepeatBehavior _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IRepeatBehaviorHelperStatics).get_Forever(&_ret));
+		Debug.OK(staticInstance.get_Forever(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Media.Animation.RepeatBehavior FromCount(double count)
 	{
 		Windows.UI.Xaml.Media.Animation.RepeatBehavior _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IRepeatBehaviorHelperStatics).abi_FromCount(count, &_ret));
+		Debug.OK(staticInstance.abi_FromCount(count, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Media.Animation.RepeatBehavior FromDuration(Windows.Foundation.TimeSpan duration)
 	{
 		Windows.UI.Xaml.Media.Animation.RepeatBehavior _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IRepeatBehaviorHelperStatics).abi_FromDuration(duration, &_ret));
+		Debug.OK(staticInstance.abi_FromDuration(duration, &_ret));
 		return _ret;
 	}
 	static bool GetHasCount(Windows.UI.Xaml.Media.Animation.RepeatBehavior target)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IRepeatBehaviorHelperStatics).abi_GetHasCount(target, &_ret));
+		Debug.OK(staticInstance.abi_GetHasCount(target, &_ret));
 		return _ret;
 	}
 	static bool GetHasDuration(Windows.UI.Xaml.Media.Animation.RepeatBehavior target)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IRepeatBehaviorHelperStatics).abi_GetHasDuration(target, &_ret));
+		Debug.OK(staticInstance.abi_GetHasDuration(target, &_ret));
 		return _ret;
 	}
 	static bool Equals(Windows.UI.Xaml.Media.Animation.RepeatBehavior target, Windows.UI.Xaml.Media.Animation.RepeatBehavior value)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IRepeatBehaviorHelperStatics).abi_Equals(target, value, &_ret));
+		Debug.OK(staticInstance.abi_Equals(target, value, &_ret));
 		return _ret;
 	}
 }
@@ -4138,32 +4138,32 @@ extern(Windows):
 	final HSTRING TargetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation).get_TargetName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation)this.asInterface(uuid("ecda24e8-8945-4949-a1bf-62109965a7e9"))).get_TargetName(&_ret));
 		return _ret;
 	}
 	final void TargetName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation)this.asInterface(uuid("ecda24e8-8945-4949-a1bf-62109965a7e9"))).set_TargetName(value));
 	}
 	final double FromHorizontalOffset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation).get_FromHorizontalOffset(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation)this.asInterface(uuid("ecda24e8-8945-4949-a1bf-62109965a7e9"))).get_FromHorizontalOffset(&_ret));
 		return _ret;
 	}
 	final void FromHorizontalOffset(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation).set_FromHorizontalOffset(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation)this.asInterface(uuid("ecda24e8-8945-4949-a1bf-62109965a7e9"))).set_FromHorizontalOffset(value));
 	}
 	final double FromVerticalOffset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation).get_FromVerticalOffset(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation)this.asInterface(uuid("ecda24e8-8945-4949-a1bf-62109965a7e9"))).get_FromVerticalOffset(&_ret));
 		return _ret;
 	}
 	final void FromVerticalOffset(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation).set_FromVerticalOffset(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimation)this.asInterface(uuid("ecda24e8-8945-4949-a1bf-62109965a7e9"))).set_FromVerticalOffset(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimationStatics _staticInstance;
@@ -4175,26 +4175,26 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		Debug.OK(staticInstance.get_TargetNameProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty FromHorizontalOffsetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimationStatics).get_FromHorizontalOffsetProperty(&_ret));
+		Debug.OK(staticInstance.get_FromHorizontalOffsetProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty FromVerticalOffsetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeAnimationStatics).get_FromVerticalOffsetProperty(&_ret));
+		Debug.OK(staticInstance.get_FromVerticalOffsetProperty(&_ret));
 		return _ret;
 	}
 	static RepositionThemeAnimation New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(RepositionThemeAnimation).abi_ActivateInstance(&ret));
-		return ret.as!(RepositionThemeAnimation);
+		return cast(RepositionThemeAnimation) ret;
 	}
 }
 
@@ -4204,12 +4204,12 @@ extern(Windows):
 	final bool IsStaggeringEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeTransition2).get_IsStaggeringEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IRepositionThemeTransition2)this.asInterface(uuid("cebfe864-dbea-4404-8e6e-de55ada75239"))).get_IsStaggeringEnabled(&_ret));
 		return _ret;
 	}
 	final void IsStaggeringEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeTransition2).set_IsStaggeringEnabled(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IRepositionThemeTransition2)this.asInterface(uuid("cebfe864-dbea-4404-8e6e-de55ada75239"))).set_IsStaggeringEnabled(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IRepositionThemeTransitionStatics2 _staticInstance;
@@ -4221,14 +4221,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty IsStaggeringEnabledProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IRepositionThemeTransitionStatics2).get_IsStaggeringEnabledProperty(&_ret));
+		Debug.OK(staticInstance.get_IsStaggeringEnabledProperty(&_ret));
 		return _ret;
 	}
 	static RepositionThemeTransition New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(RepositionThemeTransition).abi_ActivateInstance(&ret));
-		return ret.as!(RepositionThemeTransition);
+		return cast(RepositionThemeTransition) ret;
 	}
 }
 
@@ -4238,7 +4238,7 @@ interface SineEase : Windows.UI.Xaml.Media.Animation.EasingFunctionBase, Windows
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(SineEase).abi_ActivateInstance(&ret));
-		return ret.as!(SineEase);
+		return cast(SineEase) ret;
 	}
 }
 
@@ -4248,7 +4248,7 @@ interface SlideNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.Naviga
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(SlideNavigationTransitionInfo).abi_ActivateInstance(&ret));
-		return ret.as!(SlideNavigationTransitionInfo);
+		return cast(SlideNavigationTransitionInfo) ret;
 	}
 }
 
@@ -4258,12 +4258,12 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Animation.KeySpline KeySpline()
 	{
 		Windows.UI.Xaml.Media.Animation.KeySpline _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplineColorKeyFrame).get_KeySpline(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplineColorKeyFrame)this.asInterface(uuid("1a4a5941-1fe0-473a-8efe-4316d8c86229"))).get_KeySpline(&_ret));
 		return _ret;
 	}
 	final void KeySpline(Windows.UI.Xaml.Media.Animation.KeySpline value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplineColorKeyFrame).set_KeySpline(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplineColorKeyFrame)this.asInterface(uuid("1a4a5941-1fe0-473a-8efe-4316d8c86229"))).set_KeySpline(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.ISplineColorKeyFrameStatics _staticInstance;
@@ -4275,14 +4275,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty KeySplineProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplineColorKeyFrameStatics).get_KeySplineProperty(&_ret));
+		Debug.OK(staticInstance.get_KeySplineProperty(&_ret));
 		return _ret;
 	}
 	static SplineColorKeyFrame New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(SplineColorKeyFrame).abi_ActivateInstance(&ret));
-		return ret.as!(SplineColorKeyFrame);
+		return cast(SplineColorKeyFrame) ret;
 	}
 }
 
@@ -4292,12 +4292,12 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Animation.KeySpline KeySpline()
 	{
 		Windows.UI.Xaml.Media.Animation.KeySpline _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplineDoubleKeyFrame).get_KeySpline(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplineDoubleKeyFrame)this.asInterface(uuid("00d72d38-6b2b-4843-838e-c8b115eec801"))).get_KeySpline(&_ret));
 		return _ret;
 	}
 	final void KeySpline(Windows.UI.Xaml.Media.Animation.KeySpline value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplineDoubleKeyFrame).set_KeySpline(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplineDoubleKeyFrame)this.asInterface(uuid("00d72d38-6b2b-4843-838e-c8b115eec801"))).set_KeySpline(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.ISplineDoubleKeyFrameStatics _staticInstance;
@@ -4309,14 +4309,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty KeySplineProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplineDoubleKeyFrameStatics).get_KeySplineProperty(&_ret));
+		Debug.OK(staticInstance.get_KeySplineProperty(&_ret));
 		return _ret;
 	}
 	static SplineDoubleKeyFrame New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(SplineDoubleKeyFrame).abi_ActivateInstance(&ret));
-		return ret.as!(SplineDoubleKeyFrame);
+		return cast(SplineDoubleKeyFrame) ret;
 	}
 }
 
@@ -4326,12 +4326,12 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Animation.KeySpline KeySpline()
 	{
 		Windows.UI.Xaml.Media.Animation.KeySpline _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplinePointKeyFrame).get_KeySpline(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplinePointKeyFrame)this.asInterface(uuid("0f19f306-7036-494f-bc3c-780df0cc524a"))).get_KeySpline(&_ret));
 		return _ret;
 	}
 	final void KeySpline(Windows.UI.Xaml.Media.Animation.KeySpline value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplinePointKeyFrame).set_KeySpline(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplinePointKeyFrame)this.asInterface(uuid("0f19f306-7036-494f-bc3c-780df0cc524a"))).set_KeySpline(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.ISplinePointKeyFrameStatics _staticInstance;
@@ -4343,14 +4343,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty KeySplineProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplinePointKeyFrameStatics).get_KeySplineProperty(&_ret));
+		Debug.OK(staticInstance.get_KeySplineProperty(&_ret));
 		return _ret;
 	}
 	static SplinePointKeyFrame New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(SplinePointKeyFrame).abi_ActivateInstance(&ret));
-		return ret.as!(SplinePointKeyFrame);
+		return cast(SplinePointKeyFrame) ret;
 	}
 }
 
@@ -4360,112 +4360,112 @@ extern(Windows):
 	final HSTRING OpenedTargetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).get_OpenedTargetName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).get_OpenedTargetName(&_ret));
 		return _ret;
 	}
 	final void OpenedTargetName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).set_OpenedTargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).set_OpenedTargetName(value));
 	}
 	final Windows.UI.Xaml.DependencyObject OpenedTarget()
 	{
 		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).get_OpenedTarget(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).get_OpenedTarget(&_ret));
 		return _ret;
 	}
 	final void OpenedTarget(Windows.UI.Xaml.DependencyObject value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).set_OpenedTarget(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).set_OpenedTarget(value));
 	}
 	final HSTRING ClosedTargetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).get_ClosedTargetName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).get_ClosedTargetName(&_ret));
 		return _ret;
 	}
 	final void ClosedTargetName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).set_ClosedTargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).set_ClosedTargetName(value));
 	}
 	final Windows.UI.Xaml.DependencyObject ClosedTarget()
 	{
 		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).get_ClosedTarget(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).get_ClosedTarget(&_ret));
 		return _ret;
 	}
 	final void ClosedTarget(Windows.UI.Xaml.DependencyObject value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).set_ClosedTarget(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).set_ClosedTarget(value));
 	}
 	final HSTRING ContentTargetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).get_ContentTargetName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).get_ContentTargetName(&_ret));
 		return _ret;
 	}
 	final void ContentTargetName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).set_ContentTargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).set_ContentTargetName(value));
 	}
 	final Windows.UI.Xaml.DependencyObject ContentTarget()
 	{
 		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).get_ContentTarget(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).get_ContentTarget(&_ret));
 		return _ret;
 	}
 	final void ContentTarget(Windows.UI.Xaml.DependencyObject value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).set_ContentTarget(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).set_ContentTarget(value));
 	}
 	final double OpenedLength()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).get_OpenedLength(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).get_OpenedLength(&_ret));
 		return _ret;
 	}
 	final void OpenedLength(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).set_OpenedLength(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).set_OpenedLength(value));
 	}
 	final double ClosedLength()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).get_ClosedLength(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).get_ClosedLength(&_ret));
 		return _ret;
 	}
 	final void ClosedLength(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).set_ClosedLength(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).set_ClosedLength(value));
 	}
 	final double OffsetFromCenter()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).get_OffsetFromCenter(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).get_OffsetFromCenter(&_ret));
 		return _ret;
 	}
 	final void OffsetFromCenter(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).set_OffsetFromCenter(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).set_OffsetFromCenter(value));
 	}
 	final Windows.UI.Xaml.Controls.Primitives.AnimationDirection ContentTranslationDirection()
 	{
 		Windows.UI.Xaml.Controls.Primitives.AnimationDirection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).get_ContentTranslationDirection(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).get_ContentTranslationDirection(&_ret));
 		return _ret;
 	}
 	final void ContentTranslationDirection(Windows.UI.Xaml.Controls.Primitives.AnimationDirection value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).set_ContentTranslationDirection(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).set_ContentTranslationDirection(value));
 	}
 	final double ContentTranslationOffset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).get_ContentTranslationOffset(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).get_ContentTranslationOffset(&_ret));
 		return _ret;
 	}
 	final void ContentTranslationOffset(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation).set_ContentTranslationOffset(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimation)this.asInterface(uuid("4f799518-ff39-4e90-bb74-2abd56027402"))).set_ContentTranslationOffset(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics _staticInstance;
@@ -4477,74 +4477,74 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty OpenedTargetNameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics).get_OpenedTargetNameProperty(&_ret));
+		Debug.OK(staticInstance.get_OpenedTargetNameProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty OpenedTargetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics).get_OpenedTargetProperty(&_ret));
+		Debug.OK(staticInstance.get_OpenedTargetProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ClosedTargetNameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics).get_ClosedTargetNameProperty(&_ret));
+		Debug.OK(staticInstance.get_ClosedTargetNameProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ClosedTargetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics).get_ClosedTargetProperty(&_ret));
+		Debug.OK(staticInstance.get_ClosedTargetProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ContentTargetNameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics).get_ContentTargetNameProperty(&_ret));
+		Debug.OK(staticInstance.get_ContentTargetNameProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ContentTargetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics).get_ContentTargetProperty(&_ret));
+		Debug.OK(staticInstance.get_ContentTargetProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty OpenedLengthProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics).get_OpenedLengthProperty(&_ret));
+		Debug.OK(staticInstance.get_OpenedLengthProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ClosedLengthProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics).get_ClosedLengthProperty(&_ret));
+		Debug.OK(staticInstance.get_ClosedLengthProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty OffsetFromCenterProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics).get_OffsetFromCenterProperty(&_ret));
+		Debug.OK(staticInstance.get_OffsetFromCenterProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ContentTranslationDirectionProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics).get_ContentTranslationDirectionProperty(&_ret));
+		Debug.OK(staticInstance.get_ContentTranslationDirectionProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ContentTranslationOffsetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitCloseThemeAnimationStatics).get_ContentTranslationOffsetProperty(&_ret));
+		Debug.OK(staticInstance.get_ContentTranslationOffsetProperty(&_ret));
 		return _ret;
 	}
 	static SplitCloseThemeAnimation New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(SplitCloseThemeAnimation).abi_ActivateInstance(&ret));
-		return ret.as!(SplitCloseThemeAnimation);
+		return cast(SplitCloseThemeAnimation) ret;
 	}
 }
 
@@ -4554,112 +4554,112 @@ extern(Windows):
 	final HSTRING OpenedTargetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).get_OpenedTargetName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).get_OpenedTargetName(&_ret));
 		return _ret;
 	}
 	final void OpenedTargetName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).set_OpenedTargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).set_OpenedTargetName(value));
 	}
 	final Windows.UI.Xaml.DependencyObject OpenedTarget()
 	{
 		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).get_OpenedTarget(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).get_OpenedTarget(&_ret));
 		return _ret;
 	}
 	final void OpenedTarget(Windows.UI.Xaml.DependencyObject value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).set_OpenedTarget(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).set_OpenedTarget(value));
 	}
 	final HSTRING ClosedTargetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).get_ClosedTargetName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).get_ClosedTargetName(&_ret));
 		return _ret;
 	}
 	final void ClosedTargetName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).set_ClosedTargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).set_ClosedTargetName(value));
 	}
 	final Windows.UI.Xaml.DependencyObject ClosedTarget()
 	{
 		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).get_ClosedTarget(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).get_ClosedTarget(&_ret));
 		return _ret;
 	}
 	final void ClosedTarget(Windows.UI.Xaml.DependencyObject value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).set_ClosedTarget(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).set_ClosedTarget(value));
 	}
 	final HSTRING ContentTargetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).get_ContentTargetName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).get_ContentTargetName(&_ret));
 		return _ret;
 	}
 	final void ContentTargetName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).set_ContentTargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).set_ContentTargetName(value));
 	}
 	final Windows.UI.Xaml.DependencyObject ContentTarget()
 	{
 		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).get_ContentTarget(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).get_ContentTarget(&_ret));
 		return _ret;
 	}
 	final void ContentTarget(Windows.UI.Xaml.DependencyObject value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).set_ContentTarget(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).set_ContentTarget(value));
 	}
 	final double OpenedLength()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).get_OpenedLength(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).get_OpenedLength(&_ret));
 		return _ret;
 	}
 	final void OpenedLength(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).set_OpenedLength(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).set_OpenedLength(value));
 	}
 	final double ClosedLength()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).get_ClosedLength(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).get_ClosedLength(&_ret));
 		return _ret;
 	}
 	final void ClosedLength(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).set_ClosedLength(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).set_ClosedLength(value));
 	}
 	final double OffsetFromCenter()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).get_OffsetFromCenter(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).get_OffsetFromCenter(&_ret));
 		return _ret;
 	}
 	final void OffsetFromCenter(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).set_OffsetFromCenter(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).set_OffsetFromCenter(value));
 	}
 	final Windows.UI.Xaml.Controls.Primitives.AnimationDirection ContentTranslationDirection()
 	{
 		Windows.UI.Xaml.Controls.Primitives.AnimationDirection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).get_ContentTranslationDirection(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).get_ContentTranslationDirection(&_ret));
 		return _ret;
 	}
 	final void ContentTranslationDirection(Windows.UI.Xaml.Controls.Primitives.AnimationDirection value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).set_ContentTranslationDirection(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).set_ContentTranslationDirection(value));
 	}
 	final double ContentTranslationOffset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).get_ContentTranslationOffset(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).get_ContentTranslationOffset(&_ret));
 		return _ret;
 	}
 	final void ContentTranslationOffset(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation).set_ContentTranslationOffset(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimation)this.asInterface(uuid("785fd7aa-5456-4639-8fd2-26bae6a5ffe4"))).set_ContentTranslationOffset(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics _staticInstance;
@@ -4671,74 +4671,74 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty OpenedTargetNameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics).get_OpenedTargetNameProperty(&_ret));
+		Debug.OK(staticInstance.get_OpenedTargetNameProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty OpenedTargetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics).get_OpenedTargetProperty(&_ret));
+		Debug.OK(staticInstance.get_OpenedTargetProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ClosedTargetNameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics).get_ClosedTargetNameProperty(&_ret));
+		Debug.OK(staticInstance.get_ClosedTargetNameProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ClosedTargetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics).get_ClosedTargetProperty(&_ret));
+		Debug.OK(staticInstance.get_ClosedTargetProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ContentTargetNameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics).get_ContentTargetNameProperty(&_ret));
+		Debug.OK(staticInstance.get_ContentTargetNameProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ContentTargetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics).get_ContentTargetProperty(&_ret));
+		Debug.OK(staticInstance.get_ContentTargetProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty OpenedLengthProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics).get_OpenedLengthProperty(&_ret));
+		Debug.OK(staticInstance.get_OpenedLengthProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ClosedLengthProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics).get_ClosedLengthProperty(&_ret));
+		Debug.OK(staticInstance.get_ClosedLengthProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty OffsetFromCenterProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics).get_OffsetFromCenterProperty(&_ret));
+		Debug.OK(staticInstance.get_OffsetFromCenterProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ContentTranslationDirectionProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics).get_ContentTranslationDirectionProperty(&_ret));
+		Debug.OK(staticInstance.get_ContentTranslationDirectionProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ContentTranslationOffsetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISplitOpenThemeAnimationStatics).get_ContentTranslationOffsetProperty(&_ret));
+		Debug.OK(staticInstance.get_ContentTranslationOffsetProperty(&_ret));
 		return _ret;
 	}
 	static SplitOpenThemeAnimation New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(SplitOpenThemeAnimation).abi_ActivateInstance(&ret));
-		return ret.as!(SplitOpenThemeAnimation);
+		return cast(SplitOpenThemeAnimation) ret;
 	}
 }
 
@@ -4748,48 +4748,48 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Animation.TimelineCollection Children()
 	{
 		Windows.UI.Xaml.Media.Animation.TimelineCollection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IStoryboard).get_Children(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IStoryboard)this.asInterface(uuid("d45c1e6e-3594-460e-981a-32271bd3aa06"))).get_Children(&_ret));
 		return _ret;
 	}
 	final void Seek(Windows.Foundation.TimeSpan offset)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IStoryboard).abi_Seek(offset));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IStoryboard)this.asInterface(uuid("d45c1e6e-3594-460e-981a-32271bd3aa06"))).abi_Seek(offset));
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IStoryboard).abi_Stop());
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IStoryboard)this.asInterface(uuid("d45c1e6e-3594-460e-981a-32271bd3aa06"))).abi_Stop());
 	}
 	final void Begin()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IStoryboard).abi_Begin());
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IStoryboard)this.asInterface(uuid("d45c1e6e-3594-460e-981a-32271bd3aa06"))).abi_Begin());
 	}
 	final void Pause()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IStoryboard).abi_Pause());
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IStoryboard)this.asInterface(uuid("d45c1e6e-3594-460e-981a-32271bd3aa06"))).abi_Pause());
 	}
 	final void Resume()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IStoryboard).abi_Resume());
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IStoryboard)this.asInterface(uuid("d45c1e6e-3594-460e-981a-32271bd3aa06"))).abi_Resume());
 	}
 	final Windows.UI.Xaml.Media.Animation.ClockState GetCurrentState()
 	{
 		Windows.UI.Xaml.Media.Animation.ClockState _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IStoryboard).abi_GetCurrentState(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IStoryboard)this.asInterface(uuid("d45c1e6e-3594-460e-981a-32271bd3aa06"))).abi_GetCurrentState(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan GetCurrentTime()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IStoryboard).abi_GetCurrentTime(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IStoryboard)this.asInterface(uuid("d45c1e6e-3594-460e-981a-32271bd3aa06"))).abi_GetCurrentTime(&_ret));
 		return _ret;
 	}
 	final void SeekAlignedToLastTick(Windows.Foundation.TimeSpan offset)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IStoryboard).abi_SeekAlignedToLastTick(offset));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IStoryboard)this.asInterface(uuid("d45c1e6e-3594-460e-981a-32271bd3aa06"))).abi_SeekAlignedToLastTick(offset));
 	}
 	final void SkipToFill()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.IStoryboard).abi_SkipToFill());
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IStoryboard)this.asInterface(uuid("d45c1e6e-3594-460e-981a-32271bd3aa06"))).abi_SkipToFill());
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.IStoryboardStatics _staticInstance;
@@ -4801,44 +4801,44 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty TargetPropertyProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IStoryboardStatics).get_TargetPropertyProperty(&_ret));
+		Debug.OK(staticInstance.get_TargetPropertyProperty(&_ret));
 		return _ret;
 	}
 	static HSTRING GetTargetProperty(Windows.UI.Xaml.Media.Animation.Timeline element)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IStoryboardStatics).abi_GetTargetProperty(element, &_ret));
+		Debug.OK(staticInstance.abi_GetTargetProperty(element, &_ret));
 		return _ret;
 	}
 	static void SetTargetProperty(Windows.UI.Xaml.Media.Animation.Timeline element, HSTRING path)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IStoryboardStatics).abi_SetTargetProperty(element, path));
+		Debug.OK(staticInstance.abi_SetTargetProperty(element, path));
 	}
 	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IStoryboardStatics).get_TargetNameProperty(&_ret));
+		Debug.OK(staticInstance.get_TargetNameProperty(&_ret));
 		return _ret;
 	}
 	static HSTRING GetTargetName(Windows.UI.Xaml.Media.Animation.Timeline element)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IStoryboardStatics).abi_GetTargetName(element, &_ret));
+		Debug.OK(staticInstance.abi_GetTargetName(element, &_ret));
 		return _ret;
 	}
 	static void SetTargetName(Windows.UI.Xaml.Media.Animation.Timeline element, HSTRING name)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IStoryboardStatics).abi_SetTargetName(element, name));
+		Debug.OK(staticInstance.abi_SetTargetName(element, name));
 	}
 	static void SetTarget(Windows.UI.Xaml.Media.Animation.Timeline timeline, Windows.UI.Xaml.DependencyObject target)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.IStoryboardStatics).abi_SetTarget(timeline, target));
+		Debug.OK(staticInstance.abi_SetTarget(timeline, target));
 	}
 	static Storyboard New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Storyboard).abi_ActivateInstance(&ret));
-		return ret.as!(Storyboard);
+		return cast(Storyboard) ret;
 	}
 }
 
@@ -4848,7 +4848,7 @@ interface SuppressNavigationTransitionInfo : Windows.UI.Xaml.Media.Animation.Nav
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(SuppressNavigationTransitionInfo).abi_ActivateInstance(&ret));
-		return ret.as!(SuppressNavigationTransitionInfo);
+		return cast(SuppressNavigationTransitionInfo) ret;
 	}
 }
 
@@ -4858,32 +4858,32 @@ extern(Windows):
 	final HSTRING TargetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation).get_TargetName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation)this.asInterface(uuid("a38a4214-0bca-4d2d-95f7-ceba57fbaf60"))).get_TargetName(&_ret));
 		return _ret;
 	}
 	final void TargetName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation)this.asInterface(uuid("a38a4214-0bca-4d2d-95f7-ceba57fbaf60"))).set_TargetName(value));
 	}
 	final double FromHorizontalOffset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation).get_FromHorizontalOffset(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation)this.asInterface(uuid("a38a4214-0bca-4d2d-95f7-ceba57fbaf60"))).get_FromHorizontalOffset(&_ret));
 		return _ret;
 	}
 	final void FromHorizontalOffset(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation).set_FromHorizontalOffset(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation)this.asInterface(uuid("a38a4214-0bca-4d2d-95f7-ceba57fbaf60"))).set_FromHorizontalOffset(value));
 	}
 	final double FromVerticalOffset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation).get_FromVerticalOffset(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation)this.asInterface(uuid("a38a4214-0bca-4d2d-95f7-ceba57fbaf60"))).get_FromVerticalOffset(&_ret));
 		return _ret;
 	}
 	final void FromVerticalOffset(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation).set_FromVerticalOffset(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimation)this.asInterface(uuid("a38a4214-0bca-4d2d-95f7-ceba57fbaf60"))).set_FromVerticalOffset(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimationStatics _staticInstance;
@@ -4895,26 +4895,26 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		Debug.OK(staticInstance.get_TargetNameProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty FromHorizontalOffsetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimationStatics).get_FromHorizontalOffsetProperty(&_ret));
+		Debug.OK(staticInstance.get_FromHorizontalOffsetProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty FromVerticalOffsetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISwipeBackThemeAnimationStatics).get_FromVerticalOffsetProperty(&_ret));
+		Debug.OK(staticInstance.get_FromVerticalOffsetProperty(&_ret));
 		return _ret;
 	}
 	static SwipeBackThemeAnimation New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(SwipeBackThemeAnimation).abi_ActivateInstance(&ret));
-		return ret.as!(SwipeBackThemeAnimation);
+		return cast(SwipeBackThemeAnimation) ret;
 	}
 }
 
@@ -4924,32 +4924,32 @@ extern(Windows):
 	final HSTRING TargetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation).get_TargetName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation)this.asInterface(uuid("cdd067c0-580e-4e40-be98-f202d3d84365"))).get_TargetName(&_ret));
 		return _ret;
 	}
 	final void TargetName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation).set_TargetName(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation)this.asInterface(uuid("cdd067c0-580e-4e40-be98-f202d3d84365"))).set_TargetName(value));
 	}
 	final double ToHorizontalOffset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation).get_ToHorizontalOffset(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation)this.asInterface(uuid("cdd067c0-580e-4e40-be98-f202d3d84365"))).get_ToHorizontalOffset(&_ret));
 		return _ret;
 	}
 	final void ToHorizontalOffset(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation).set_ToHorizontalOffset(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation)this.asInterface(uuid("cdd067c0-580e-4e40-be98-f202d3d84365"))).set_ToHorizontalOffset(value));
 	}
 	final double ToVerticalOffset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation).get_ToVerticalOffset(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation)this.asInterface(uuid("cdd067c0-580e-4e40-be98-f202d3d84365"))).get_ToVerticalOffset(&_ret));
 		return _ret;
 	}
 	final void ToVerticalOffset(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation).set_ToVerticalOffset(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimation)this.asInterface(uuid("cdd067c0-580e-4e40-be98-f202d3d84365"))).set_ToVerticalOffset(value));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimationStatics _staticInstance;
@@ -4961,26 +4961,26 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty TargetNameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimationStatics).get_TargetNameProperty(&_ret));
+		Debug.OK(staticInstance.get_TargetNameProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ToHorizontalOffsetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimationStatics).get_ToHorizontalOffsetProperty(&_ret));
+		Debug.OK(staticInstance.get_ToHorizontalOffsetProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ToVerticalOffsetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ISwipeHintThemeAnimationStatics).get_ToVerticalOffsetProperty(&_ret));
+		Debug.OK(staticInstance.get_ToVerticalOffsetProperty(&_ret));
 		return _ret;
 	}
 	static SwipeHintThemeAnimation New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(SwipeHintThemeAnimation).abi_ActivateInstance(&ret));
-		return ret.as!(SwipeHintThemeAnimation);
+		return cast(SwipeHintThemeAnimation) ret;
 	}
 }
 
@@ -4990,72 +4990,72 @@ extern(Windows):
 	final bool AutoReverse()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_AutoReverse(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ITimeline)this.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).get_AutoReverse(&_ret));
 		return _ret;
 	}
 	final void AutoReverse(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_AutoReverse(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ITimeline)this.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).set_AutoReverse(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) BeginTime()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_BeginTime(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ITimeline)this.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).get_BeginTime(&_ret));
 		return _ret;
 	}
 	final void BeginTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_BeginTime(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ITimeline)this.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).set_BeginTime(value));
 	}
 	final Windows.UI.Xaml.Duration Duration()
 	{
 		Windows.UI.Xaml.Duration _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_Duration(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ITimeline)this.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).get_Duration(&_ret));
 		return _ret;
 	}
 	final void Duration(Windows.UI.Xaml.Duration value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_Duration(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ITimeline)this.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).set_Duration(value));
 	}
 	final double SpeedRatio()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_SpeedRatio(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ITimeline)this.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).get_SpeedRatio(&_ret));
 		return _ret;
 	}
 	final void SpeedRatio(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_SpeedRatio(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ITimeline)this.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).set_SpeedRatio(value));
 	}
 	final Windows.UI.Xaml.Media.Animation.FillBehavior FillBehavior()
 	{
 		Windows.UI.Xaml.Media.Animation.FillBehavior _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_FillBehavior(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ITimeline)this.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).get_FillBehavior(&_ret));
 		return _ret;
 	}
 	final void FillBehavior(Windows.UI.Xaml.Media.Animation.FillBehavior value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_FillBehavior(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ITimeline)this.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).set_FillBehavior(value));
 	}
 	final Windows.UI.Xaml.Media.Animation.RepeatBehavior RepeatBehavior()
 	{
 		Windows.UI.Xaml.Media.Animation.RepeatBehavior _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_RepeatBehavior(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ITimeline)this.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).get_RepeatBehavior(&_ret));
 		return _ret;
 	}
 	final void RepeatBehavior(Windows.UI.Xaml.Media.Animation.RepeatBehavior value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_RepeatBehavior(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ITimeline)this.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).set_RepeatBehavior(value));
 	}
 	final EventRegistrationToken OnCompleted(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).add_Completed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ITimeline)this.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).add_Completed(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Animation.ITimeline).remove_Completed(token));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.ITimeline)this.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).remove_Completed(token));
 	}
 
 	private static Windows.UI.Xaml.Media.Animation.ITimelineStatics _staticInstance;
@@ -5067,47 +5067,47 @@ extern(Windows):
 	static bool AllowDependentAnimations()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ITimelineStatics).get_AllowDependentAnimations(&_ret));
+		Debug.OK(staticInstance.get_AllowDependentAnimations(&_ret));
 		return _ret;
 	}
 	static void AllowDependentAnimations(bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ITimelineStatics).set_AllowDependentAnimations(value));
+		Debug.OK(staticInstance.set_AllowDependentAnimations(value));
 	}
 	static Windows.UI.Xaml.DependencyProperty AutoReverseProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ITimelineStatics).get_AutoReverseProperty(&_ret));
+		Debug.OK(staticInstance.get_AutoReverseProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty BeginTimeProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ITimelineStatics).get_BeginTimeProperty(&_ret));
+		Debug.OK(staticInstance.get_BeginTimeProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty DurationProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ITimelineStatics).get_DurationProperty(&_ret));
+		Debug.OK(staticInstance.get_DurationProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty SpeedRatioProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ITimelineStatics).get_SpeedRatioProperty(&_ret));
+		Debug.OK(staticInstance.get_SpeedRatioProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty FillBehaviorProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ITimelineStatics).get_FillBehaviorProperty(&_ret));
+		Debug.OK(staticInstance.get_FillBehaviorProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty RepeatBehaviorProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Animation.ITimelineStatics).get_RepeatBehaviorProperty(&_ret));
+		Debug.OK(staticInstance.get_RepeatBehaviorProperty(&_ret));
 		return _ret;
 	}
 	static Timeline New()
@@ -5128,20 +5128,20 @@ class TimelineT(Base) : AgileObject!Base, Timeline
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_AutoReverse(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_AutoReverse(return_value); }
-	override HRESULT set_AutoReverse(bool value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_AutoReverse(value); }
-	override HRESULT get_BeginTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_BeginTime(return_value); }
-	override HRESULT set_BeginTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_BeginTime(value); }
-	override HRESULT get_Duration(Windows.UI.Xaml.Duration* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_Duration(return_value); }
-	override HRESULT set_Duration(Windows.UI.Xaml.Duration value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_Duration(value); }
-	override HRESULT get_SpeedRatio(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_SpeedRatio(return_value); }
-	override HRESULT set_SpeedRatio(double value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_SpeedRatio(value); }
-	override HRESULT get_FillBehavior(Windows.UI.Xaml.Media.Animation.FillBehavior* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_FillBehavior(return_value); }
-	override HRESULT set_FillBehavior(Windows.UI.Xaml.Media.Animation.FillBehavior value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_FillBehavior(value); }
-	override HRESULT get_RepeatBehavior(Windows.UI.Xaml.Media.Animation.RepeatBehavior* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).get_RepeatBehavior(return_value); }
-	override HRESULT set_RepeatBehavior(Windows.UI.Xaml.Media.Animation.RepeatBehavior value) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).set_RepeatBehavior(value); }
-	override HRESULT add_Completed(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).add_Completed(value, return_token); }
-	override HRESULT remove_Completed(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Media.Animation.ITimeline).remove_Completed(token); }
+	override HRESULT get_AutoReverse(bool* return_value) { return (cast(Windows.UI.Xaml.Media.Animation.ITimeline)m_inner.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).get_AutoReverse(return_value); }
+	override HRESULT set_AutoReverse(bool value) { return (cast(Windows.UI.Xaml.Media.Animation.ITimeline)m_inner.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).set_AutoReverse(value); }
+	override HRESULT get_BeginTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan)* return_value) { return (cast(Windows.UI.Xaml.Media.Animation.ITimeline)m_inner.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).get_BeginTime(return_value); }
+	override HRESULT set_BeginTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value) { return (cast(Windows.UI.Xaml.Media.Animation.ITimeline)m_inner.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).set_BeginTime(value); }
+	override HRESULT get_Duration(Windows.UI.Xaml.Duration* return_value) { return (cast(Windows.UI.Xaml.Media.Animation.ITimeline)m_inner.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).get_Duration(return_value); }
+	override HRESULT set_Duration(Windows.UI.Xaml.Duration value) { return (cast(Windows.UI.Xaml.Media.Animation.ITimeline)m_inner.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).set_Duration(value); }
+	override HRESULT get_SpeedRatio(double* return_value) { return (cast(Windows.UI.Xaml.Media.Animation.ITimeline)m_inner.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).get_SpeedRatio(return_value); }
+	override HRESULT set_SpeedRatio(double value) { return (cast(Windows.UI.Xaml.Media.Animation.ITimeline)m_inner.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).set_SpeedRatio(value); }
+	override HRESULT get_FillBehavior(Windows.UI.Xaml.Media.Animation.FillBehavior* return_value) { return (cast(Windows.UI.Xaml.Media.Animation.ITimeline)m_inner.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).get_FillBehavior(return_value); }
+	override HRESULT set_FillBehavior(Windows.UI.Xaml.Media.Animation.FillBehavior value) { return (cast(Windows.UI.Xaml.Media.Animation.ITimeline)m_inner.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).set_FillBehavior(value); }
+	override HRESULT get_RepeatBehavior(Windows.UI.Xaml.Media.Animation.RepeatBehavior* return_value) { return (cast(Windows.UI.Xaml.Media.Animation.ITimeline)m_inner.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).get_RepeatBehavior(return_value); }
+	override HRESULT set_RepeatBehavior(Windows.UI.Xaml.Media.Animation.RepeatBehavior value) { return (cast(Windows.UI.Xaml.Media.Animation.ITimeline)m_inner.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).set_RepeatBehavior(value); }
+	override HRESULT add_Completed(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.Media.Animation.ITimeline)m_inner.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).add_Completed(value, return_token); }
+	override HRESULT remove_Completed(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.Media.Animation.ITimeline)m_inner.asInterface(uuid("0bc465dc-be4d-4d0d-9549-2208b715f40d"))).remove_Completed(token); }
 
 	this() {}
 	IInspectable m_inner;
@@ -5153,66 +5153,66 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Animation.Timeline GetAt(uint index)
 	{
 		Windows.UI.Xaml.Media.Animation.Timeline _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline)).get_GetAt(index, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline))this).get_GetAt(index, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline))this).get_Size(&_ret));
 		return _ret;
 	}
 	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Media.Animation.Timeline)* out_view)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline)).abi_GetView(out_view));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline))this).abi_GetView(out_view));
 	}
 	final uint IndexOf(Windows.UI.Xaml.Media.Animation.Timeline value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void SetAt(uint index, Windows.UI.Xaml.Media.Animation.Timeline item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline)).abi_SetAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline))this).abi_SetAt(index, item));
 	}
 	final void InsertAt(uint index, Windows.UI.Xaml.Media.Animation.Timeline item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline)).abi_InsertAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline))this).abi_InsertAt(index, item));
 	}
 	final void RemoveAt(uint index)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline)).abi_RemoveAt(index));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline))this).abi_RemoveAt(index));
 	}
 	final void Append(Windows.UI.Xaml.Media.Animation.Timeline item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline)).abi_Append(item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline))this).abi_Append(item));
 	}
 	final void RemoveAtEnd()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline)).abi_RemoveAtEnd());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline))this).abi_RemoveAtEnd());
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline))this).abi_Clear());
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.Media.Animation.Timeline* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void ReplaceAll(uint count, Windows.UI.Xaml.Media.Animation.Timeline* out_value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline)).abi_ReplaceAll(count, out_value));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Timeline))this).abi_ReplaceAll(count, out_value));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Media.Animation.Timeline)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.Timeline)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.Timeline))this).abi_First(out_first));
 	}
 	static TimelineCollection New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(TimelineCollection).abi_ActivateInstance(&ret));
-		return ret.as!(TimelineCollection);
+		return cast(TimelineCollection) ret;
 	}
 }
 
@@ -5240,66 +5240,66 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Animation.Transition GetAt(uint index)
 	{
 		Windows.UI.Xaml.Media.Animation.Transition _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition)).get_GetAt(index, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition))this).get_GetAt(index, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition))this).get_Size(&_ret));
 		return _ret;
 	}
 	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Media.Animation.Transition)* out_view)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition)).abi_GetView(out_view));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition))this).abi_GetView(out_view));
 	}
 	final uint IndexOf(Windows.UI.Xaml.Media.Animation.Transition value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void SetAt(uint index, Windows.UI.Xaml.Media.Animation.Transition item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition)).abi_SetAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition))this).abi_SetAt(index, item));
 	}
 	final void InsertAt(uint index, Windows.UI.Xaml.Media.Animation.Transition item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition)).abi_InsertAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition))this).abi_InsertAt(index, item));
 	}
 	final void RemoveAt(uint index)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition)).abi_RemoveAt(index));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition))this).abi_RemoveAt(index));
 	}
 	final void Append(Windows.UI.Xaml.Media.Animation.Transition item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition)).abi_Append(item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition))this).abi_Append(item));
 	}
 	final void RemoveAtEnd()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition)).abi_RemoveAtEnd());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition))this).abi_RemoveAtEnd());
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition))this).abi_Clear());
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.Media.Animation.Transition* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void ReplaceAll(uint count, Windows.UI.Xaml.Media.Animation.Transition* out_value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition)).abi_ReplaceAll(count, out_value));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Animation.Transition))this).abi_ReplaceAll(count, out_value));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Media.Animation.Transition)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.Transition)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Animation.Transition))this).abi_First(out_first));
 	}
 	static TransitionCollection New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(TransitionCollection).abi_ActivateInstance(&ret));
-		return ret.as!(TransitionCollection);
+		return cast(TransitionCollection) ret;
 	}
 }
 

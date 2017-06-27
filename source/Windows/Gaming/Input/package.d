@@ -312,67 +312,67 @@ extern(Windows):
 	final Windows.Gaming.Input.GameControllerButtonLabel GetButtonLabel(Windows.Gaming.Input.ArcadeStickButtons button)
 	{
 		Windows.Gaming.Input.GameControllerButtonLabel _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IArcadeStick).abi_GetButtonLabel(button, &_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IArcadeStick)this.asInterface(uuid("b14a539d-befb-4c81-8051-15ecf3b13036"))).abi_GetButtonLabel(button, &_ret));
 		return _ret;
 	}
 	final Windows.Gaming.Input.ArcadeStickReading GetCurrentReading()
 	{
 		Windows.Gaming.Input.ArcadeStickReading _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IArcadeStick).abi_GetCurrentReading(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IArcadeStick)this.asInterface(uuid("b14a539d-befb-4c81-8051-15ecf3b13036"))).abi_GetCurrentReading(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnHeadsetConnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).add_HeadsetConnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).add_HeadsetConnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
 		return tok;
 	}
 	final void removeHeadsetConnected(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).remove_HeadsetConnected(token));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).remove_HeadsetConnected(token));
 	}
 	final EventRegistrationToken OnHeadsetDisconnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).add_HeadsetDisconnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).add_HeadsetDisconnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
 		return tok;
 	}
 	final void removeHeadsetDisconnected(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).remove_HeadsetDisconnected(token));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).remove_HeadsetDisconnected(token));
 	}
 	final EventRegistrationToken OnUserChanged(void delegate(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).add_UserChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs), Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).add_UserChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs), Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeUserChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).remove_UserChanged(token));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).remove_UserChanged(token));
 	}
 	final Windows.Gaming.Input.Headset Headset()
 	{
 		Windows.Gaming.Input.Headset _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_Headset(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).get_Headset(&_ret));
 		return _ret;
 	}
 	final bool IsWireless()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_IsWireless(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).get_IsWireless(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_User(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).get_User(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Power.BatteryReport TryGetBatteryReport()
 	{
 		Windows.Devices.Power.BatteryReport _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameControllerBatteryInfo).abi_TryGetBatteryReport(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameControllerBatteryInfo)this.asInterface(uuid("dcecc681-3963-4da6-955d-553f3b6f6161"))).abi_TryGetBatteryReport(&_ret));
 		return _ret;
 	}
 
@@ -385,27 +385,27 @@ extern(Windows):
 	static EventRegistrationToken OnArcadeStickAdded(void delegate(IInspectable, Windows.Gaming.Input.ArcadeStick) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IArcadeStickStatics).add_ArcadeStickAdded(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.ArcadeStick), IInspectable, Windows.Gaming.Input.ArcadeStick)(fn), &tok));
+		Debug.OK(staticInstance.add_ArcadeStickAdded(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.ArcadeStick), IInspectable, Windows.Gaming.Input.ArcadeStick)(fn), &tok));
 		return tok;
 	}
 	static void removeArcadeStickAdded(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IArcadeStickStatics).remove_ArcadeStickAdded(token));
+		Debug.OK(staticInstance.remove_ArcadeStickAdded(token));
 	}
 	static EventRegistrationToken OnArcadeStickRemoved(void delegate(IInspectable, Windows.Gaming.Input.ArcadeStick) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IArcadeStickStatics).add_ArcadeStickRemoved(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.ArcadeStick), IInspectable, Windows.Gaming.Input.ArcadeStick)(fn), &tok));
+		Debug.OK(staticInstance.add_ArcadeStickRemoved(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.ArcadeStick), IInspectable, Windows.Gaming.Input.ArcadeStick)(fn), &tok));
 		return tok;
 	}
 	static void removeArcadeStickRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IArcadeStickStatics).remove_ArcadeStickRemoved(token));
+		Debug.OK(staticInstance.remove_ArcadeStickRemoved(token));
 	}
 	static Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Input.ArcadeStick) ArcadeSticks()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Input.ArcadeStick) _ret;
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IArcadeStickStatics).get_ArcadeSticks(&_ret));
+		Debug.OK(staticInstance.get_ArcadeSticks(&_ret));
 		return _ret;
 	}
 }
@@ -416,73 +416,73 @@ extern(Windows):
 	final Windows.Gaming.Input.GameControllerSwitchKind HatSwitchKind()
 	{
 		Windows.Gaming.Input.GameControllerSwitchKind _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IFlightStick).get_HatSwitchKind(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IFlightStick)this.asInterface(uuid("b4a2c01c-b83b-4459-a1a9-97b03c33da7c"))).get_HatSwitchKind(&_ret));
 		return _ret;
 	}
 	final Windows.Gaming.Input.GameControllerButtonLabel GetButtonLabel(Windows.Gaming.Input.FlightStickButtons button)
 	{
 		Windows.Gaming.Input.GameControllerButtonLabel _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IFlightStick).abi_GetButtonLabel(button, &_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IFlightStick)this.asInterface(uuid("b4a2c01c-b83b-4459-a1a9-97b03c33da7c"))).abi_GetButtonLabel(button, &_ret));
 		return _ret;
 	}
 	final Windows.Gaming.Input.FlightStickReading GetCurrentReading()
 	{
 		Windows.Gaming.Input.FlightStickReading _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IFlightStick).abi_GetCurrentReading(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IFlightStick)this.asInterface(uuid("b4a2c01c-b83b-4459-a1a9-97b03c33da7c"))).abi_GetCurrentReading(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnHeadsetConnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).add_HeadsetConnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).add_HeadsetConnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
 		return tok;
 	}
 	final void removeHeadsetConnected(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).remove_HeadsetConnected(token));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).remove_HeadsetConnected(token));
 	}
 	final EventRegistrationToken OnHeadsetDisconnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).add_HeadsetDisconnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).add_HeadsetDisconnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
 		return tok;
 	}
 	final void removeHeadsetDisconnected(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).remove_HeadsetDisconnected(token));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).remove_HeadsetDisconnected(token));
 	}
 	final EventRegistrationToken OnUserChanged(void delegate(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).add_UserChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs), Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).add_UserChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs), Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeUserChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).remove_UserChanged(token));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).remove_UserChanged(token));
 	}
 	final Windows.Gaming.Input.Headset Headset()
 	{
 		Windows.Gaming.Input.Headset _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_Headset(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).get_Headset(&_ret));
 		return _ret;
 	}
 	final bool IsWireless()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_IsWireless(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).get_IsWireless(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_User(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).get_User(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Power.BatteryReport TryGetBatteryReport()
 	{
 		Windows.Devices.Power.BatteryReport _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameControllerBatteryInfo).abi_TryGetBatteryReport(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameControllerBatteryInfo)this.asInterface(uuid("dcecc681-3963-4da6-955d-553f3b6f6161"))).abi_TryGetBatteryReport(&_ret));
 		return _ret;
 	}
 
@@ -495,33 +495,33 @@ extern(Windows):
 	static EventRegistrationToken OnFlightStickAdded(void delegate(IInspectable, Windows.Gaming.Input.FlightStick) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IFlightStickStatics).add_FlightStickAdded(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.FlightStick), IInspectable, Windows.Gaming.Input.FlightStick)(fn), &tok));
+		Debug.OK(staticInstance.add_FlightStickAdded(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.FlightStick), IInspectable, Windows.Gaming.Input.FlightStick)(fn), &tok));
 		return tok;
 	}
 	static void removeFlightStickAdded(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IFlightStickStatics).remove_FlightStickAdded(token));
+		Debug.OK(staticInstance.remove_FlightStickAdded(token));
 	}
 	static EventRegistrationToken OnFlightStickRemoved(void delegate(IInspectable, Windows.Gaming.Input.FlightStick) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IFlightStickStatics).add_FlightStickRemoved(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.FlightStick), IInspectable, Windows.Gaming.Input.FlightStick)(fn), &tok));
+		Debug.OK(staticInstance.add_FlightStickRemoved(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.FlightStick), IInspectable, Windows.Gaming.Input.FlightStick)(fn), &tok));
 		return tok;
 	}
 	static void removeFlightStickRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IFlightStickStatics).remove_FlightStickRemoved(token));
+		Debug.OK(staticInstance.remove_FlightStickRemoved(token));
 	}
 	static Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Input.FlightStick) FlightSticks()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Input.FlightStick) _ret;
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IFlightStickStatics).get_FlightSticks(&_ret));
+		Debug.OK(staticInstance.get_FlightSticks(&_ret));
 		return _ret;
 	}
 	static Windows.Gaming.Input.FlightStick FromGameController(Windows.Gaming.Input.IGameController gameController)
 	{
 		Windows.Gaming.Input.FlightStick _ret;
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IFlightStickStatics).abi_FromGameController(gameController, &_ret));
+		Debug.OK(staticInstance.abi_FromGameController(gameController, &_ret));
 		return _ret;
 	}
 }
@@ -532,77 +532,77 @@ extern(Windows):
 	final Windows.Gaming.Input.GamepadVibration Vibration()
 	{
 		Windows.Gaming.Input.GamepadVibration _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGamepad).get_Vibration(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGamepad)this.asInterface(uuid("bc7bb43c-0a69-3903-9e9d-a50f86a45de5"))).get_Vibration(&_ret));
 		return _ret;
 	}
 	final void Vibration(Windows.Gaming.Input.GamepadVibration value)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.IGamepad).set_Vibration(value));
+		Debug.OK((cast(Windows.Gaming.Input.IGamepad)this.asInterface(uuid("bc7bb43c-0a69-3903-9e9d-a50f86a45de5"))).set_Vibration(value));
 	}
 	final Windows.Gaming.Input.GamepadReading GetCurrentReading()
 	{
 		Windows.Gaming.Input.GamepadReading _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGamepad).abi_GetCurrentReading(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGamepad)this.asInterface(uuid("bc7bb43c-0a69-3903-9e9d-a50f86a45de5"))).abi_GetCurrentReading(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnHeadsetConnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).add_HeadsetConnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).add_HeadsetConnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
 		return tok;
 	}
 	final void removeHeadsetConnected(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).remove_HeadsetConnected(token));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).remove_HeadsetConnected(token));
 	}
 	final EventRegistrationToken OnHeadsetDisconnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).add_HeadsetDisconnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).add_HeadsetDisconnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
 		return tok;
 	}
 	final void removeHeadsetDisconnected(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).remove_HeadsetDisconnected(token));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).remove_HeadsetDisconnected(token));
 	}
 	final EventRegistrationToken OnUserChanged(void delegate(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).add_UserChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs), Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).add_UserChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs), Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeUserChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).remove_UserChanged(token));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).remove_UserChanged(token));
 	}
 	final Windows.Gaming.Input.Headset Headset()
 	{
 		Windows.Gaming.Input.Headset _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_Headset(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).get_Headset(&_ret));
 		return _ret;
 	}
 	final bool IsWireless()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_IsWireless(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).get_IsWireless(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_User(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).get_User(&_ret));
 		return _ret;
 	}
 	final Windows.Gaming.Input.GameControllerButtonLabel GetButtonLabel(Windows.Gaming.Input.GamepadButtons button)
 	{
 		Windows.Gaming.Input.GameControllerButtonLabel _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGamepad2).abi_GetButtonLabel(button, &_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGamepad2)this.asInterface(uuid("3c1689bd-5915-4245-b0c0-c89fae0308ff"))).abi_GetButtonLabel(button, &_ret));
 		return _ret;
 	}
 	final Windows.Devices.Power.BatteryReport TryGetBatteryReport()
 	{
 		Windows.Devices.Power.BatteryReport _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameControllerBatteryInfo).abi_TryGetBatteryReport(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameControllerBatteryInfo)this.asInterface(uuid("dcecc681-3963-4da6-955d-553f3b6f6161"))).abi_TryGetBatteryReport(&_ret));
 		return _ret;
 	}
 
@@ -615,27 +615,27 @@ extern(Windows):
 	static EventRegistrationToken OnGamepadAdded(void delegate(IInspectable, Windows.Gaming.Input.Gamepad) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IGamepadStatics).add_GamepadAdded(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.Gamepad), IInspectable, Windows.Gaming.Input.Gamepad)(fn), &tok));
+		Debug.OK(staticInstance.add_GamepadAdded(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.Gamepad), IInspectable, Windows.Gaming.Input.Gamepad)(fn), &tok));
 		return tok;
 	}
 	static void removeGamepadAdded(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IGamepadStatics).remove_GamepadAdded(token));
+		Debug.OK(staticInstance.remove_GamepadAdded(token));
 	}
 	static EventRegistrationToken OnGamepadRemoved(void delegate(IInspectable, Windows.Gaming.Input.Gamepad) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IGamepadStatics).add_GamepadRemoved(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.Gamepad), IInspectable, Windows.Gaming.Input.Gamepad)(fn), &tok));
+		Debug.OK(staticInstance.add_GamepadRemoved(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.Gamepad), IInspectable, Windows.Gaming.Input.Gamepad)(fn), &tok));
 		return tok;
 	}
 	static void removeGamepadRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IGamepadStatics).remove_GamepadRemoved(token));
+		Debug.OK(staticInstance.remove_GamepadRemoved(token));
 	}
 	static Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Input.Gamepad) Gamepads()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Input.Gamepad) _ret;
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IGamepadStatics).get_Gamepads(&_ret));
+		Debug.OK(staticInstance.get_Gamepads(&_ret));
 		return _ret;
 	}
 }
@@ -646,19 +646,19 @@ extern(Windows):
 	final HSTRING CaptureDeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IHeadset).get_CaptureDeviceId(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IHeadset)this.asInterface(uuid("3fd156ef-6925-3fa8-9181-029c5223ae3b"))).get_CaptureDeviceId(&_ret));
 		return _ret;
 	}
 	final HSTRING RenderDeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IHeadset).get_RenderDeviceId(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IHeadset)this.asInterface(uuid("3fd156ef-6925-3fa8-9181-029c5223ae3b"))).get_RenderDeviceId(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Power.BatteryReport TryGetBatteryReport()
 	{
 		Windows.Devices.Power.BatteryReport _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameControllerBatteryInfo).abi_TryGetBatteryReport(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameControllerBatteryInfo)this.asInterface(uuid("dcecc681-3963-4da6-955d-553f3b6f6161"))).abi_TryGetBatteryReport(&_ret));
 		return _ret;
 	}
 }
@@ -669,103 +669,103 @@ extern(Windows):
 	final bool HasClutch()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IRacingWheel).get_HasClutch(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IRacingWheel)this.asInterface(uuid("f546656f-e106-4c82-a90f-554012904b85"))).get_HasClutch(&_ret));
 		return _ret;
 	}
 	final bool HasHandbrake()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IRacingWheel).get_HasHandbrake(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IRacingWheel)this.asInterface(uuid("f546656f-e106-4c82-a90f-554012904b85"))).get_HasHandbrake(&_ret));
 		return _ret;
 	}
 	final bool HasPatternShifter()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IRacingWheel).get_HasPatternShifter(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IRacingWheel)this.asInterface(uuid("f546656f-e106-4c82-a90f-554012904b85"))).get_HasPatternShifter(&_ret));
 		return _ret;
 	}
 	final INT32 MaxPatternShifterGear()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IRacingWheel).get_MaxPatternShifterGear(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IRacingWheel)this.asInterface(uuid("f546656f-e106-4c82-a90f-554012904b85"))).get_MaxPatternShifterGear(&_ret));
 		return _ret;
 	}
 	final double MaxWheelAngle()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IRacingWheel).get_MaxWheelAngle(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IRacingWheel)this.asInterface(uuid("f546656f-e106-4c82-a90f-554012904b85"))).get_MaxWheelAngle(&_ret));
 		return _ret;
 	}
 	final Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor WheelMotor()
 	{
 		Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IRacingWheel).get_WheelMotor(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IRacingWheel)this.asInterface(uuid("f546656f-e106-4c82-a90f-554012904b85"))).get_WheelMotor(&_ret));
 		return _ret;
 	}
 	final Windows.Gaming.Input.GameControllerButtonLabel GetButtonLabel(Windows.Gaming.Input.RacingWheelButtons button)
 	{
 		Windows.Gaming.Input.GameControllerButtonLabel _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IRacingWheel).abi_GetButtonLabel(button, &_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IRacingWheel)this.asInterface(uuid("f546656f-e106-4c82-a90f-554012904b85"))).abi_GetButtonLabel(button, &_ret));
 		return _ret;
 	}
 	final Windows.Gaming.Input.RacingWheelReading GetCurrentReading()
 	{
 		Windows.Gaming.Input.RacingWheelReading _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IRacingWheel).abi_GetCurrentReading(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IRacingWheel)this.asInterface(uuid("f546656f-e106-4c82-a90f-554012904b85"))).abi_GetCurrentReading(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnHeadsetConnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).add_HeadsetConnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).add_HeadsetConnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
 		return tok;
 	}
 	final void removeHeadsetConnected(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).remove_HeadsetConnected(token));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).remove_HeadsetConnected(token));
 	}
 	final EventRegistrationToken OnHeadsetDisconnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).add_HeadsetDisconnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).add_HeadsetDisconnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
 		return tok;
 	}
 	final void removeHeadsetDisconnected(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).remove_HeadsetDisconnected(token));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).remove_HeadsetDisconnected(token));
 	}
 	final EventRegistrationToken OnUserChanged(void delegate(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).add_UserChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs), Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).add_UserChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs), Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeUserChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).remove_UserChanged(token));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).remove_UserChanged(token));
 	}
 	final Windows.Gaming.Input.Headset Headset()
 	{
 		Windows.Gaming.Input.Headset _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_Headset(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).get_Headset(&_ret));
 		return _ret;
 	}
 	final bool IsWireless()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_IsWireless(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).get_IsWireless(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_User(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).get_User(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Power.BatteryReport TryGetBatteryReport()
 	{
 		Windows.Devices.Power.BatteryReport _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameControllerBatteryInfo).abi_TryGetBatteryReport(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameControllerBatteryInfo)this.asInterface(uuid("dcecc681-3963-4da6-955d-553f3b6f6161"))).abi_TryGetBatteryReport(&_ret));
 		return _ret;
 	}
 
@@ -778,27 +778,27 @@ extern(Windows):
 	static EventRegistrationToken OnRacingWheelAdded(void delegate(IInspectable, Windows.Gaming.Input.RacingWheel) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IRacingWheelStatics).add_RacingWheelAdded(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.RacingWheel), IInspectable, Windows.Gaming.Input.RacingWheel)(fn), &tok));
+		Debug.OK(staticInstance.add_RacingWheelAdded(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.RacingWheel), IInspectable, Windows.Gaming.Input.RacingWheel)(fn), &tok));
 		return tok;
 	}
 	static void removeRacingWheelAdded(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IRacingWheelStatics).remove_RacingWheelAdded(token));
+		Debug.OK(staticInstance.remove_RacingWheelAdded(token));
 	}
 	static EventRegistrationToken OnRacingWheelRemoved(void delegate(IInspectable, Windows.Gaming.Input.RacingWheel) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IRacingWheelStatics).add_RacingWheelRemoved(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.RacingWheel), IInspectable, Windows.Gaming.Input.RacingWheel)(fn), &tok));
+		Debug.OK(staticInstance.add_RacingWheelRemoved(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.RacingWheel), IInspectable, Windows.Gaming.Input.RacingWheel)(fn), &tok));
 		return tok;
 	}
 	static void removeRacingWheelRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IRacingWheelStatics).remove_RacingWheelRemoved(token));
+		Debug.OK(staticInstance.remove_RacingWheelRemoved(token));
 	}
 	static Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Input.RacingWheel) RacingWheels()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Input.RacingWheel) _ret;
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IRacingWheelStatics).get_RacingWheels(&_ret));
+		Debug.OK(staticInstance.get_RacingWheels(&_ret));
 		return _ret;
 	}
 }
@@ -809,109 +809,109 @@ extern(Windows):
 	final INT32 AxisCount()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IRawGameController).get_AxisCount(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IRawGameController)this.asInterface(uuid("7cad6d91-a7e1-4f71-9a78-33e9c5dfea62"))).get_AxisCount(&_ret));
 		return _ret;
 	}
 	final INT32 ButtonCount()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IRawGameController).get_ButtonCount(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IRawGameController)this.asInterface(uuid("7cad6d91-a7e1-4f71-9a78-33e9c5dfea62"))).get_ButtonCount(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor) ForceFeedbackMotors()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor) _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IRawGameController).get_ForceFeedbackMotors(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IRawGameController)this.asInterface(uuid("7cad6d91-a7e1-4f71-9a78-33e9c5dfea62"))).get_ForceFeedbackMotors(&_ret));
 		return _ret;
 	}
 	final UINT16 HardwareProductId()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IRawGameController).get_HardwareProductId(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IRawGameController)this.asInterface(uuid("7cad6d91-a7e1-4f71-9a78-33e9c5dfea62"))).get_HardwareProductId(&_ret));
 		return _ret;
 	}
 	final UINT16 HardwareVendorId()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IRawGameController).get_HardwareVendorId(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IRawGameController)this.asInterface(uuid("7cad6d91-a7e1-4f71-9a78-33e9c5dfea62"))).get_HardwareVendorId(&_ret));
 		return _ret;
 	}
 	final INT32 SwitchCount()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IRawGameController).get_SwitchCount(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IRawGameController)this.asInterface(uuid("7cad6d91-a7e1-4f71-9a78-33e9c5dfea62"))).get_SwitchCount(&_ret));
 		return _ret;
 	}
 	final Windows.Gaming.Input.GameControllerButtonLabel GetButtonLabel(INT32 buttonIndex)
 	{
 		Windows.Gaming.Input.GameControllerButtonLabel _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IRawGameController).abi_GetButtonLabel(buttonIndex, &_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IRawGameController)this.asInterface(uuid("7cad6d91-a7e1-4f71-9a78-33e9c5dfea62"))).abi_GetButtonLabel(buttonIndex, &_ret));
 		return _ret;
 	}
 	final ulong GetCurrentReading(UINT32 __buttonArraySize, bool* out_buttonArray, UINT32 __switchArraySize, Windows.Gaming.Input.GameControllerSwitchPosition* out_switchArray, UINT32 __axisArraySize, double* out_axisArray)
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IRawGameController).abi_GetCurrentReading(__buttonArraySize, out_buttonArray, __switchArraySize, out_switchArray, __axisArraySize, out_axisArray, &_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IRawGameController)this.asInterface(uuid("7cad6d91-a7e1-4f71-9a78-33e9c5dfea62"))).abi_GetCurrentReading(__buttonArraySize, out_buttonArray, __switchArraySize, out_switchArray, __axisArraySize, out_axisArray, &_ret));
 		return _ret;
 	}
 	final Windows.Gaming.Input.GameControllerSwitchKind GetSwitchKind(INT32 switchIndex)
 	{
 		Windows.Gaming.Input.GameControllerSwitchKind _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IRawGameController).abi_GetSwitchKind(switchIndex, &_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IRawGameController)this.asInterface(uuid("7cad6d91-a7e1-4f71-9a78-33e9c5dfea62"))).abi_GetSwitchKind(switchIndex, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnHeadsetConnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).add_HeadsetConnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).add_HeadsetConnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
 		return tok;
 	}
 	final void removeHeadsetConnected(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).remove_HeadsetConnected(token));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).remove_HeadsetConnected(token));
 	}
 	final EventRegistrationToken OnHeadsetDisconnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).add_HeadsetDisconnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).add_HeadsetDisconnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
 		return tok;
 	}
 	final void removeHeadsetDisconnected(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).remove_HeadsetDisconnected(token));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).remove_HeadsetDisconnected(token));
 	}
 	final EventRegistrationToken OnUserChanged(void delegate(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).add_UserChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs), Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).add_UserChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs), Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeUserChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).remove_UserChanged(token));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).remove_UserChanged(token));
 	}
 	final Windows.Gaming.Input.Headset Headset()
 	{
 		Windows.Gaming.Input.Headset _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_Headset(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).get_Headset(&_ret));
 		return _ret;
 	}
 	final bool IsWireless()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_IsWireless(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).get_IsWireless(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_User(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).get_User(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Power.BatteryReport TryGetBatteryReport()
 	{
 		Windows.Devices.Power.BatteryReport _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameControllerBatteryInfo).abi_TryGetBatteryReport(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameControllerBatteryInfo)this.asInterface(uuid("dcecc681-3963-4da6-955d-553f3b6f6161"))).abi_TryGetBatteryReport(&_ret));
 		return _ret;
 	}
 
@@ -924,33 +924,33 @@ extern(Windows):
 	static EventRegistrationToken OnRawGameControllerAdded(void delegate(IInspectable, Windows.Gaming.Input.RawGameController) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IRawGameControllerStatics).add_RawGameControllerAdded(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.RawGameController), IInspectable, Windows.Gaming.Input.RawGameController)(fn), &tok));
+		Debug.OK(staticInstance.add_RawGameControllerAdded(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.RawGameController), IInspectable, Windows.Gaming.Input.RawGameController)(fn), &tok));
 		return tok;
 	}
 	static void removeRawGameControllerAdded(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IRawGameControllerStatics).remove_RawGameControllerAdded(token));
+		Debug.OK(staticInstance.remove_RawGameControllerAdded(token));
 	}
 	static EventRegistrationToken OnRawGameControllerRemoved(void delegate(IInspectable, Windows.Gaming.Input.RawGameController) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IRawGameControllerStatics).add_RawGameControllerRemoved(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.RawGameController), IInspectable, Windows.Gaming.Input.RawGameController)(fn), &tok));
+		Debug.OK(staticInstance.add_RawGameControllerRemoved(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.RawGameController), IInspectable, Windows.Gaming.Input.RawGameController)(fn), &tok));
 		return tok;
 	}
 	static void removeRawGameControllerRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IRawGameControllerStatics).remove_RawGameControllerRemoved(token));
+		Debug.OK(staticInstance.remove_RawGameControllerRemoved(token));
 	}
 	static Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Input.RawGameController) RawGameControllers()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Input.RawGameController) _ret;
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IRawGameControllerStatics).get_RawGameControllers(&_ret));
+		Debug.OK(staticInstance.get_RawGameControllers(&_ret));
 		return _ret;
 	}
 	static Windows.Gaming.Input.RawGameController FromGameController(Windows.Gaming.Input.IGameController gameController)
 	{
 		Windows.Gaming.Input.RawGameController _ret;
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IRawGameControllerStatics).abi_FromGameController(gameController, &_ret));
+		Debug.OK(staticInstance.abi_FromGameController(gameController, &_ret));
 		return _ret;
 	}
 }
@@ -961,73 +961,73 @@ extern(Windows):
 	final Windows.Gaming.Input.UINavigationReading GetCurrentReading()
 	{
 		Windows.Gaming.Input.UINavigationReading _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IUINavigationController).abi_GetCurrentReading(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IUINavigationController)this.asInterface(uuid("e5aeefdd-f50e-4a55-8cdc-d33229548175"))).abi_GetCurrentReading(&_ret));
 		return _ret;
 	}
 	final Windows.Gaming.Input.GameControllerButtonLabel GetOptionalButtonLabel(Windows.Gaming.Input.OptionalUINavigationButtons button)
 	{
 		Windows.Gaming.Input.GameControllerButtonLabel _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IUINavigationController).abi_GetOptionalButtonLabel(button, &_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IUINavigationController)this.asInterface(uuid("e5aeefdd-f50e-4a55-8cdc-d33229548175"))).abi_GetOptionalButtonLabel(button, &_ret));
 		return _ret;
 	}
 	final Windows.Gaming.Input.GameControllerButtonLabel GetRequiredButtonLabel(Windows.Gaming.Input.RequiredUINavigationButtons button)
 	{
 		Windows.Gaming.Input.GameControllerButtonLabel _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IUINavigationController).abi_GetRequiredButtonLabel(button, &_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IUINavigationController)this.asInterface(uuid("e5aeefdd-f50e-4a55-8cdc-d33229548175"))).abi_GetRequiredButtonLabel(button, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnHeadsetConnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).add_HeadsetConnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).add_HeadsetConnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
 		return tok;
 	}
 	final void removeHeadsetConnected(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).remove_HeadsetConnected(token));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).remove_HeadsetConnected(token));
 	}
 	final EventRegistrationToken OnHeadsetDisconnected(void delegate(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).add_HeadsetDisconnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).add_HeadsetDisconnected(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset), Windows.Gaming.Input.IGameController, Windows.Gaming.Input.Headset)(fn), &tok));
 		return tok;
 	}
 	final void removeHeadsetDisconnected(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).remove_HeadsetDisconnected(token));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).remove_HeadsetDisconnected(token));
 	}
 	final EventRegistrationToken OnUserChanged(void delegate(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).add_UserChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs), Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).add_UserChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs), Windows.Gaming.Input.IGameController, Windows.System.UserChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeUserChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).remove_UserChanged(token));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).remove_UserChanged(token));
 	}
 	final Windows.Gaming.Input.Headset Headset()
 	{
 		Windows.Gaming.Input.Headset _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_Headset(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).get_Headset(&_ret));
 		return _ret;
 	}
 	final bool IsWireless()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_IsWireless(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).get_IsWireless(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameController).get_User(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameController)this.asInterface(uuid("1baf6522-5f64-42c5-8267-b9fe2215bfbd"))).get_User(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Power.BatteryReport TryGetBatteryReport()
 	{
 		Windows.Devices.Power.BatteryReport _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.IGameControllerBatteryInfo).abi_TryGetBatteryReport(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.IGameControllerBatteryInfo)this.asInterface(uuid("dcecc681-3963-4da6-955d-553f3b6f6161"))).abi_TryGetBatteryReport(&_ret));
 		return _ret;
 	}
 
@@ -1040,27 +1040,27 @@ extern(Windows):
 	static EventRegistrationToken OnUINavigationControllerAdded(void delegate(IInspectable, Windows.Gaming.Input.UINavigationController) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IUINavigationControllerStatics).add_UINavigationControllerAdded(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.UINavigationController), IInspectable, Windows.Gaming.Input.UINavigationController)(fn), &tok));
+		Debug.OK(staticInstance.add_UINavigationControllerAdded(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.UINavigationController), IInspectable, Windows.Gaming.Input.UINavigationController)(fn), &tok));
 		return tok;
 	}
 	static void removeUINavigationControllerAdded(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IUINavigationControllerStatics).remove_UINavigationControllerAdded(token));
+		Debug.OK(staticInstance.remove_UINavigationControllerAdded(token));
 	}
 	static EventRegistrationToken OnUINavigationControllerRemoved(void delegate(IInspectable, Windows.Gaming.Input.UINavigationController) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IUINavigationControllerStatics).add_UINavigationControllerRemoved(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.UINavigationController), IInspectable, Windows.Gaming.Input.UINavigationController)(fn), &tok));
+		Debug.OK(staticInstance.add_UINavigationControllerRemoved(event!(Windows.Foundation.EventHandler!(Windows.Gaming.Input.UINavigationController), IInspectable, Windows.Gaming.Input.UINavigationController)(fn), &tok));
 		return tok;
 	}
 	static void removeUINavigationControllerRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IUINavigationControllerStatics).remove_UINavigationControllerRemoved(token));
+		Debug.OK(staticInstance.remove_UINavigationControllerRemoved(token));
 	}
 	static Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Input.UINavigationController) UINavigationControllers()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Input.UINavigationController) _ret;
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.IUINavigationControllerStatics).get_UINavigationControllers(&_ret));
+		Debug.OK(staticInstance.get_UINavigationControllers(&_ret));
 		return _ret;
 	}
 }

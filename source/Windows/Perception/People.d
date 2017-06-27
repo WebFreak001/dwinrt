@@ -18,19 +18,19 @@ extern(Windows):
 	final Windows.Foundation.Numerics.Vector3 Position()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.Perception.People.IHeadPose).get_Position(&_ret));
+		Debug.OK((cast(Windows.Perception.People.IHeadPose)this.asInterface(uuid("7f5ac5a5-49db-379f-9429-32a2faf34fa6"))).get_Position(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Numerics.Vector3 ForwardDirection()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.Perception.People.IHeadPose).get_ForwardDirection(&_ret));
+		Debug.OK((cast(Windows.Perception.People.IHeadPose)this.asInterface(uuid("7f5ac5a5-49db-379f-9429-32a2faf34fa6"))).get_ForwardDirection(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Numerics.Vector3 UpDirection()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.Perception.People.IHeadPose).get_UpDirection(&_ret));
+		Debug.OK((cast(Windows.Perception.People.IHeadPose)this.asInterface(uuid("7f5ac5a5-49db-379f-9429-32a2faf34fa6"))).get_UpDirection(&_ret));
 		return _ret;
 	}
 }

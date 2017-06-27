@@ -256,23 +256,23 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVector!(Windows.UI.StartScreen.JumpListItem) Items()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.StartScreen.JumpListItem) _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpList).get_Items(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.IJumpList)this.asInterface(uuid("b0234c3e-cd6f-4cb6-a611-61fd505f3ed1"))).get_Items(&_ret));
 		return _ret;
 	}
 	final Windows.UI.StartScreen.JumpListSystemGroupKind SystemGroupKind()
 	{
 		Windows.UI.StartScreen.JumpListSystemGroupKind _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpList).get_SystemGroupKind(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.IJumpList)this.asInterface(uuid("b0234c3e-cd6f-4cb6-a611-61fd505f3ed1"))).get_SystemGroupKind(&_ret));
 		return _ret;
 	}
 	final void SystemGroupKind(Windows.UI.StartScreen.JumpListSystemGroupKind value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpList).set_SystemGroupKind(value));
+		Debug.OK((cast(Windows.UI.StartScreen.IJumpList)this.asInterface(uuid("b0234c3e-cd6f-4cb6-a611-61fd505f3ed1"))).set_SystemGroupKind(value));
 	}
 	final Windows.Foundation.IAsyncAction SaveAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpList).abi_SaveAsync(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.IJumpList)this.asInterface(uuid("b0234c3e-cd6f-4cb6-a611-61fd505f3ed1"))).abi_SaveAsync(&_ret));
 		return _ret;
 	}
 
@@ -285,13 +285,13 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.UI.StartScreen.JumpList) LoadCurrentAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.UI.StartScreen.JumpList) _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.StartScreen.IJumpListStatics).abi_LoadCurrentAsync(&_ret));
+		Debug.OK(staticInstance.abi_LoadCurrentAsync(&_ret));
 		return _ret;
 	}
 	static bool IsSupported()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.StartScreen.IJumpListStatics).abi_IsSupported(&_ret));
+		Debug.OK(staticInstance.abi_IsSupported(&_ret));
 		return _ret;
 	}
 }
@@ -302,60 +302,60 @@ extern(Windows):
 	final Windows.UI.StartScreen.JumpListItemKind Kind()
 	{
 		Windows.UI.StartScreen.JumpListItemKind _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpListItem).get_Kind(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.IJumpListItem)this.asInterface(uuid("7adb6717-8b5d-4820-995b-9b418dbe48b0"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final HSTRING Arguments()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpListItem).get_Arguments(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.IJumpListItem)this.asInterface(uuid("7adb6717-8b5d-4820-995b-9b418dbe48b0"))).get_Arguments(&_ret));
 		return _ret;
 	}
 	final bool RemovedByUser()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpListItem).get_RemovedByUser(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.IJumpListItem)this.asInterface(uuid("7adb6717-8b5d-4820-995b-9b418dbe48b0"))).get_RemovedByUser(&_ret));
 		return _ret;
 	}
 	final HSTRING Description()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpListItem).get_Description(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.IJumpListItem)this.asInterface(uuid("7adb6717-8b5d-4820-995b-9b418dbe48b0"))).get_Description(&_ret));
 		return _ret;
 	}
 	final void Description(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpListItem).set_Description(value));
+		Debug.OK((cast(Windows.UI.StartScreen.IJumpListItem)this.asInterface(uuid("7adb6717-8b5d-4820-995b-9b418dbe48b0"))).set_Description(value));
 	}
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpListItem).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.IJumpListItem)this.asInterface(uuid("7adb6717-8b5d-4820-995b-9b418dbe48b0"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final void DisplayName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpListItem).set_DisplayName(value));
+		Debug.OK((cast(Windows.UI.StartScreen.IJumpListItem)this.asInterface(uuid("7adb6717-8b5d-4820-995b-9b418dbe48b0"))).set_DisplayName(value));
 	}
 	final HSTRING GroupName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpListItem).get_GroupName(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.IJumpListItem)this.asInterface(uuid("7adb6717-8b5d-4820-995b-9b418dbe48b0"))).get_GroupName(&_ret));
 		return _ret;
 	}
 	final void GroupName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpListItem).set_GroupName(value));
+		Debug.OK((cast(Windows.UI.StartScreen.IJumpListItem)this.asInterface(uuid("7adb6717-8b5d-4820-995b-9b418dbe48b0"))).set_GroupName(value));
 	}
 	final Windows.Foundation.Uri Logo()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpListItem).get_Logo(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.IJumpListItem)this.asInterface(uuid("7adb6717-8b5d-4820-995b-9b418dbe48b0"))).get_Logo(&_ret));
 		return _ret;
 	}
 	final void Logo(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.IJumpListItem).set_Logo(value));
+		Debug.OK((cast(Windows.UI.StartScreen.IJumpListItem)this.asInterface(uuid("7adb6717-8b5d-4820-995b-9b418dbe48b0"))).set_Logo(value));
 	}
 
 	private static Windows.UI.StartScreen.IJumpListItemStatics _staticInstance;
@@ -367,13 +367,13 @@ extern(Windows):
 	static Windows.UI.StartScreen.JumpListItem CreateWithArguments(HSTRING arguments, HSTRING displayName)
 	{
 		Windows.UI.StartScreen.JumpListItem _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.StartScreen.IJumpListItemStatics).abi_CreateWithArguments(arguments, displayName, &_ret));
+		Debug.OK(staticInstance.abi_CreateWithArguments(arguments, displayName, &_ret));
 		return _ret;
 	}
 	static Windows.UI.StartScreen.JumpListItem CreateSeparator()
 	{
 		Windows.UI.StartScreen.JumpListItem _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.StartScreen.IJumpListItemStatics).abi_CreateSeparator(&_ret));
+		Debug.OK(staticInstance.abi_CreateSeparator(&_ret));
 		return _ret;
 	}
 }
@@ -383,227 +383,227 @@ interface SecondaryTile : Windows.UI.StartScreen.ISecondaryTile, Windows.UI.Star
 extern(Windows):
 	final void TileId(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_TileId(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).set_TileId(value));
 	}
 	final HSTRING TileId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_TileId(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).get_TileId(&_ret));
 		return _ret;
 	}
 	final void Arguments(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_Arguments(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).set_Arguments(value));
 	}
 	final HSTRING Arguments()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_Arguments(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).get_Arguments(&_ret));
 		return _ret;
 	}
 	deprecated("ShortName may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayName.")
 	final void ShortName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_ShortName(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).set_ShortName(value));
 	}
 	deprecated("ShortName may be altered or unavailable for releases after Windows 8.1. Instead, use DisplayName.")
 	final HSTRING ShortName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_ShortName(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).get_ShortName(&_ret));
 		return _ret;
 	}
 	final void DisplayName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_DisplayName(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).set_DisplayName(value));
 	}
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	deprecated("Logo may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.Square150x150Logo.")
 	final void Logo(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_Logo(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).set_Logo(value));
 	}
 	deprecated("Logo may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.Square150x150Logo.")
 	final Windows.Foundation.Uri Logo()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_Logo(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).get_Logo(&_ret));
 		return _ret;
 	}
 	deprecated("SmallLogo may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.Square30x30Logo.")
 	final void SmallLogo(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_SmallLogo(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).set_SmallLogo(value));
 	}
 	deprecated("SmallLogo may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.Square30x30Logo.")
 	final Windows.Foundation.Uri SmallLogo()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_SmallLogo(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).get_SmallLogo(&_ret));
 		return _ret;
 	}
 	deprecated("WideLogo may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.Wide310x150Logo.")
 	final void WideLogo(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_WideLogo(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).set_WideLogo(value));
 	}
 	deprecated("WideLogo may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.Wide310x150Logo.")
 	final Windows.Foundation.Uri WideLogo()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_WideLogo(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).get_WideLogo(&_ret));
 		return _ret;
 	}
 	final void LockScreenBadgeLogo(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_LockScreenBadgeLogo(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).set_LockScreenBadgeLogo(value));
 	}
 	final Windows.Foundation.Uri LockScreenBadgeLogo()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_LockScreenBadgeLogo(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).get_LockScreenBadgeLogo(&_ret));
 		return _ret;
 	}
 	final void LockScreenDisplayBadgeAndTileText(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_LockScreenDisplayBadgeAndTileText(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).set_LockScreenDisplayBadgeAndTileText(value));
 	}
 	final bool LockScreenDisplayBadgeAndTileText()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_LockScreenDisplayBadgeAndTileText(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).get_LockScreenDisplayBadgeAndTileText(&_ret));
 		return _ret;
 	}
 	deprecated("TileOptions may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.ShowNameOnSquare150x150Logo, VisualElements.ShowNameOnWide310x150Logo, and RoamingEnabled.")
 	final void TileOptions(Windows.UI.StartScreen.TileOptions value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_TileOptions(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).set_TileOptions(value));
 	}
 	deprecated("TileOptions may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.ShowNameOnSquare150x150Logo, VisualElements.ShowNameOnWide310x150Logo, and RoamingEnabled.")
 	final Windows.UI.StartScreen.TileOptions TileOptions()
 	{
 		Windows.UI.StartScreen.TileOptions _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_TileOptions(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).get_TileOptions(&_ret));
 		return _ret;
 	}
 	deprecated("TileOptions may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.ShowNameOnSquare150x150Logo, VisualElements.ShowNameOnWide310x150Logo, and RoamingEnabled.")
 	final void ForegroundText(Windows.UI.StartScreen.ForegroundText value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_ForegroundText(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).set_ForegroundText(value));
 	}
 	deprecated("ForegroundText may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.ForegroundText.")
 	final Windows.UI.StartScreen.ForegroundText ForegroundText()
 	{
 		Windows.UI.StartScreen.ForegroundText _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_ForegroundText(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).get_ForegroundText(&_ret));
 		return _ret;
 	}
 	deprecated("BackgroundColor may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.BackgroundColor.")
 	final void BackgroundColor(Windows.UI.Color value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).set_BackgroundColor(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).set_BackgroundColor(value));
 	}
 	deprecated("BackgroundColor may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.BackgroundColor.")
 	final Windows.UI.Color BackgroundColor()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).get_BackgroundColor(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).get_BackgroundColor(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) RequestCreateAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).abi_RequestCreateAsync(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).abi_RequestCreateAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) RequestCreateAsyncWithPoint(Windows.Foundation.Point invocationPoint)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).abi_RequestCreateAsyncWithPoint(invocationPoint, &_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).abi_RequestCreateAsyncWithPoint(invocationPoint, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) RequestCreateAsyncWithRect(Windows.Foundation.Rect selection)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).abi_RequestCreateAsyncWithRect(selection, &_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).abi_RequestCreateAsyncWithRect(selection, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) RequestCreateAsyncWithRectAndPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).abi_RequestCreateAsyncWithRectAndPlacement(selection, preferredPlacement, &_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).abi_RequestCreateAsyncWithRectAndPlacement(selection, preferredPlacement, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) RequestDeleteAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).abi_RequestDeleteAsync(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).abi_RequestDeleteAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) RequestDeleteAsyncWithPoint(Windows.Foundation.Point invocationPoint)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).abi_RequestDeleteAsyncWithPoint(invocationPoint, &_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).abi_RequestDeleteAsyncWithPoint(invocationPoint, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) RequestDeleteAsyncWithRect(Windows.Foundation.Rect selection)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).abi_RequestDeleteAsyncWithRect(selection, &_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).abi_RequestDeleteAsyncWithRect(selection, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) RequestDeleteAsyncWithRectAndPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).abi_RequestDeleteAsyncWithRectAndPlacement(selection, preferredPlacement, &_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).abi_RequestDeleteAsyncWithRectAndPlacement(selection, preferredPlacement, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) UpdateAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile).abi_UpdateAsync(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).abi_UpdateAsync(&_ret));
 		return _ret;
 	}
 	final void PhoneticName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile2).set_PhoneticName(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile2)this.asInterface(uuid("b2f6cc35-3250-4990-923c-294ab4b694dd"))).set_PhoneticName(value));
 	}
 	final HSTRING PhoneticName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile2).get_PhoneticName(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile2)this.asInterface(uuid("b2f6cc35-3250-4990-923c-294ab4b694dd"))).get_PhoneticName(&_ret));
 		return _ret;
 	}
 	final Windows.UI.StartScreen.SecondaryTileVisualElements VisualElements()
 	{
 		Windows.UI.StartScreen.SecondaryTileVisualElements _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile2).get_VisualElements(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile2)this.asInterface(uuid("b2f6cc35-3250-4990-923c-294ab4b694dd"))).get_VisualElements(&_ret));
 		return _ret;
 	}
 	final void RoamingEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile2).set_RoamingEnabled(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile2)this.asInterface(uuid("b2f6cc35-3250-4990-923c-294ab4b694dd"))).set_RoamingEnabled(value));
 	}
 	final bool RoamingEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile2).get_RoamingEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile2)this.asInterface(uuid("b2f6cc35-3250-4990-923c-294ab4b694dd"))).get_RoamingEnabled(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnVisualElementsRequested(void delegate(Windows.UI.StartScreen.SecondaryTile, Windows.UI.StartScreen.VisualElementsRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile2).add_VisualElementsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.StartScreen.SecondaryTile, Windows.UI.StartScreen.VisualElementsRequestedEventArgs), Windows.UI.StartScreen.SecondaryTile, Windows.UI.StartScreen.VisualElementsRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile2)this.asInterface(uuid("b2f6cc35-3250-4990-923c-294ab4b694dd"))).add_VisualElementsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.StartScreen.SecondaryTile, Windows.UI.StartScreen.VisualElementsRequestedEventArgs), Windows.UI.StartScreen.SecondaryTile, Windows.UI.StartScreen.VisualElementsRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeVisualElementsRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTile2).remove_VisualElementsRequested(token));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile2)this.asInterface(uuid("b2f6cc35-3250-4990-923c-294ab4b694dd"))).remove_VisualElementsRequested(token));
 	}
 
 	private static Windows.UI.StartScreen.ISecondaryTileStatics _staticInstance;
@@ -615,39 +615,39 @@ extern(Windows):
 	static bool Exists(HSTRING tileId)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.StartScreen.ISecondaryTileStatics).abi_Exists(tileId, &_ret));
+		Debug.OK(staticInstance.abi_Exists(tileId, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTile)) FindAllAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTile)) _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.StartScreen.ISecondaryTileStatics).abi_FindAllAsync(&_ret));
+		Debug.OK(staticInstance.abi_FindAllAsync(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTile)) FindAllForApplicationAsync(HSTRING applicationId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTile)) _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.StartScreen.ISecondaryTileStatics).abi_FindAllForApplicationAsync(applicationId, &_ret));
+		Debug.OK(staticInstance.abi_FindAllForApplicationAsync(applicationId, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTile)) FindAllForPackageAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTile)) _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.StartScreen.ISecondaryTileStatics).abi_FindAllForPackageAsync(&_ret));
+		Debug.OK(staticInstance.abi_FindAllForPackageAsync(&_ret));
 		return _ret;
 	}
 	static SecondaryTile New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(SecondaryTile).abi_ActivateInstance(&ret));
-		return ret.as!(SecondaryTile);
+		return cast(SecondaryTile) ret;
 	}
 	deprecated("SecondaryTile(string, string, string, string, Windows.UI.StartScreen.TileOptions, Windows.Foundation.Uri) may be altered or unavailable for releases after Windows Phone 8.1. Instead, use SecondaryTile(string, string, string, Windows.Foundation.Uri, Windows.UI.StartScreen.TileSize).")
 	static Windows.UI.StartScreen.SecondaryTile New(HSTRING tileId, HSTRING shortName, HSTRING displayName, HSTRING arguments, Windows.UI.StartScreen.TileOptions tileOptions, Windows.Foundation.Uri logoReference)
 	{
 		auto factory = factory!(Windows.UI.StartScreen.ISecondaryTileFactory);
 		Windows.UI.StartScreen.SecondaryTile _ret;
-		Debug.OK(factory.as!(Windows.UI.StartScreen.ISecondaryTileFactory).abi_CreateTile(tileId, shortName, displayName, arguments, tileOptions, logoReference, &_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileFactory)factory.asInterface(uuid("57f52ca0-51bc-4abf-8ebf-627a0398b05a"))).abi_CreateTile(tileId, shortName, displayName, arguments, tileOptions, logoReference, &_ret));
 		return _ret;
 	}
 	deprecated("SecondaryTile(string, string, string, string, Windows.UI.StartScreen.TileOptions, Windows.Foundation.Uri, Windows.Foundation.Uri) may be altered or unavailable for releases after Windows Phone 8.1. Instead, use SecondaryTile(string, string, string, Windows.Foundation.Uri, Windows.UI.StartScreen.TileSize).")
@@ -655,14 +655,14 @@ extern(Windows):
 	{
 		auto factory = factory!(Windows.UI.StartScreen.ISecondaryTileFactory);
 		Windows.UI.StartScreen.SecondaryTile _ret;
-		Debug.OK(factory.as!(Windows.UI.StartScreen.ISecondaryTileFactory).abi_CreateWideTile(tileId, shortName, displayName, arguments, tileOptions, logoReference, wideLogoReference, &_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileFactory)factory.asInterface(uuid("57f52ca0-51bc-4abf-8ebf-627a0398b05a"))).abi_CreateWideTile(tileId, shortName, displayName, arguments, tileOptions, logoReference, wideLogoReference, &_ret));
 		return _ret;
 	}
 	static Windows.UI.StartScreen.SecondaryTile New(HSTRING tileId)
 	{
 		auto factory = factory!(Windows.UI.StartScreen.ISecondaryTileFactory);
 		Windows.UI.StartScreen.SecondaryTile _ret;
-		Debug.OK(factory.as!(Windows.UI.StartScreen.ISecondaryTileFactory).abi_CreateWithId(tileId, &_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileFactory)factory.asInterface(uuid("57f52ca0-51bc-4abf-8ebf-627a0398b05a"))).abi_CreateWithId(tileId, &_ret));
 		return _ret;
 	}
 }
@@ -673,125 +673,125 @@ extern(Windows):
 	deprecated("SecondaryTileVisualElements.Square30x30Logo may be altered or unavailable for release after Windows 10.")
 	final void Square30x30Logo(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).set_Square30x30Logo(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements)this.asInterface(uuid("1d8df333-815e-413f-9f50-a81da70a96b2"))).set_Square30x30Logo(value));
 	}
 	deprecated("SecondaryTileVisualElements.Square30x30Logo may be altered or unavailable for release after Windows 10.")
 	final Windows.Foundation.Uri Square30x30Logo()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).get_Square30x30Logo(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements)this.asInterface(uuid("1d8df333-815e-413f-9f50-a81da70a96b2"))).get_Square30x30Logo(&_ret));
 		return _ret;
 	}
 	deprecated("SecondaryTileVisualElements.Square70x70Logo may be altered or unavailable for release after Windows Phone 8.1.")
 	final void Square70x70Logo(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).set_Square70x70Logo(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements)this.asInterface(uuid("1d8df333-815e-413f-9f50-a81da70a96b2"))).set_Square70x70Logo(value));
 	}
 	deprecated("SecondaryTileVisualElements.Square70x70Logo may be altered or unavailable for release after Windows Phone 8.1.")
 	final Windows.Foundation.Uri Square70x70Logo()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).get_Square70x70Logo(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements)this.asInterface(uuid("1d8df333-815e-413f-9f50-a81da70a96b2"))).get_Square70x70Logo(&_ret));
 		return _ret;
 	}
 	final void Square150x150Logo(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).set_Square150x150Logo(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements)this.asInterface(uuid("1d8df333-815e-413f-9f50-a81da70a96b2"))).set_Square150x150Logo(value));
 	}
 	final Windows.Foundation.Uri Square150x150Logo()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).get_Square150x150Logo(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements)this.asInterface(uuid("1d8df333-815e-413f-9f50-a81da70a96b2"))).get_Square150x150Logo(&_ret));
 		return _ret;
 	}
 	final void Wide310x150Logo(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).set_Wide310x150Logo(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements)this.asInterface(uuid("1d8df333-815e-413f-9f50-a81da70a96b2"))).set_Wide310x150Logo(value));
 	}
 	final Windows.Foundation.Uri Wide310x150Logo()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).get_Wide310x150Logo(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements)this.asInterface(uuid("1d8df333-815e-413f-9f50-a81da70a96b2"))).get_Wide310x150Logo(&_ret));
 		return _ret;
 	}
 	final void Square310x310Logo(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).set_Square310x310Logo(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements)this.asInterface(uuid("1d8df333-815e-413f-9f50-a81da70a96b2"))).set_Square310x310Logo(value));
 	}
 	final Windows.Foundation.Uri Square310x310Logo()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).get_Square310x310Logo(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements)this.asInterface(uuid("1d8df333-815e-413f-9f50-a81da70a96b2"))).get_Square310x310Logo(&_ret));
 		return _ret;
 	}
 	final void ForegroundText(Windows.UI.StartScreen.ForegroundText value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).set_ForegroundText(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements)this.asInterface(uuid("1d8df333-815e-413f-9f50-a81da70a96b2"))).set_ForegroundText(value));
 	}
 	final Windows.UI.StartScreen.ForegroundText ForegroundText()
 	{
 		Windows.UI.StartScreen.ForegroundText _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).get_ForegroundText(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements)this.asInterface(uuid("1d8df333-815e-413f-9f50-a81da70a96b2"))).get_ForegroundText(&_ret));
 		return _ret;
 	}
 	final void BackgroundColor(Windows.UI.Color value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).set_BackgroundColor(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements)this.asInterface(uuid("1d8df333-815e-413f-9f50-a81da70a96b2"))).set_BackgroundColor(value));
 	}
 	final Windows.UI.Color BackgroundColor()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).get_BackgroundColor(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements)this.asInterface(uuid("1d8df333-815e-413f-9f50-a81da70a96b2"))).get_BackgroundColor(&_ret));
 		return _ret;
 	}
 	final void ShowNameOnSquare150x150Logo(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).set_ShowNameOnSquare150x150Logo(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements)this.asInterface(uuid("1d8df333-815e-413f-9f50-a81da70a96b2"))).set_ShowNameOnSquare150x150Logo(value));
 	}
 	final bool ShowNameOnSquare150x150Logo()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).get_ShowNameOnSquare150x150Logo(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements)this.asInterface(uuid("1d8df333-815e-413f-9f50-a81da70a96b2"))).get_ShowNameOnSquare150x150Logo(&_ret));
 		return _ret;
 	}
 	final void ShowNameOnWide310x150Logo(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).set_ShowNameOnWide310x150Logo(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements)this.asInterface(uuid("1d8df333-815e-413f-9f50-a81da70a96b2"))).set_ShowNameOnWide310x150Logo(value));
 	}
 	final bool ShowNameOnWide310x150Logo()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).get_ShowNameOnWide310x150Logo(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements)this.asInterface(uuid("1d8df333-815e-413f-9f50-a81da70a96b2"))).get_ShowNameOnWide310x150Logo(&_ret));
 		return _ret;
 	}
 	final void ShowNameOnSquare310x310Logo(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).set_ShowNameOnSquare310x310Logo(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements)this.asInterface(uuid("1d8df333-815e-413f-9f50-a81da70a96b2"))).set_ShowNameOnSquare310x310Logo(value));
 	}
 	final bool ShowNameOnSquare310x310Logo()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements).get_ShowNameOnSquare310x310Logo(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements)this.asInterface(uuid("1d8df333-815e-413f-9f50-a81da70a96b2"))).get_ShowNameOnSquare310x310Logo(&_ret));
 		return _ret;
 	}
 	final void Square71x71Logo(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements2).set_Square71x71Logo(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements2)this.asInterface(uuid("fd2e31d0-57dc-4794-8ecf-5682f5f3e6ef"))).set_Square71x71Logo(value));
 	}
 	final Windows.Foundation.Uri Square71x71Logo()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements2).get_Square71x71Logo(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements2)this.asInterface(uuid("fd2e31d0-57dc-4794-8ecf-5682f5f3e6ef"))).get_Square71x71Logo(&_ret));
 		return _ret;
 	}
 	final void Square44x44Logo(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements3).set_Square44x44Logo(value));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements3)this.asInterface(uuid("56b55ad6-d15c-40f4-81e7-57ffd8f8a4e9"))).set_Square44x44Logo(value));
 	}
 	final Windows.Foundation.Uri Square44x44Logo()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.ISecondaryTileVisualElements3).get_Square44x44Logo(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTileVisualElements3)this.asInterface(uuid("56b55ad6-d15c-40f4-81e7-57ffd8f8a4e9"))).get_Square44x44Logo(&_ret));
 		return _ret;
 	}
 }
@@ -802,25 +802,25 @@ extern(Windows):
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.IStartScreenManager).get_User(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.IStartScreenManager)this.asInterface(uuid("4a1dcbcb-26e9-4eb4-8933-859eb6ecdb29"))).get_User(&_ret));
 		return _ret;
 	}
 	final bool SupportsAppListEntry(Windows.ApplicationModel.Core.AppListEntry appListEntry)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.IStartScreenManager).abi_SupportsAppListEntry(appListEntry, &_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.IStartScreenManager)this.asInterface(uuid("4a1dcbcb-26e9-4eb4-8933-859eb6ecdb29"))).abi_SupportsAppListEntry(appListEntry, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) ContainsAppListEntryAsync(Windows.ApplicationModel.Core.AppListEntry appListEntry)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.IStartScreenManager).abi_ContainsAppListEntryAsync(appListEntry, &_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.IStartScreenManager)this.asInterface(uuid("4a1dcbcb-26e9-4eb4-8933-859eb6ecdb29"))).abi_ContainsAppListEntryAsync(appListEntry, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) RequestAddAppListEntryAsync(Windows.ApplicationModel.Core.AppListEntry appListEntry)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.IStartScreenManager).abi_RequestAddAppListEntryAsync(appListEntry, &_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.IStartScreenManager)this.asInterface(uuid("4a1dcbcb-26e9-4eb4-8933-859eb6ecdb29"))).abi_RequestAddAppListEntryAsync(appListEntry, &_ret));
 		return _ret;
 	}
 
@@ -833,13 +833,13 @@ extern(Windows):
 	static Windows.UI.StartScreen.StartScreenManager GetDefault()
 	{
 		Windows.UI.StartScreen.StartScreenManager _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.StartScreen.IStartScreenManagerStatics).abi_GetDefault(&_ret));
+		Debug.OK(staticInstance.abi_GetDefault(&_ret));
 		return _ret;
 	}
 	static Windows.UI.StartScreen.StartScreenManager GetForUser(Windows.System.User user)
 	{
 		Windows.UI.StartScreen.StartScreenManager _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.StartScreen.IStartScreenManagerStatics).abi_GetForUser(user, &_ret));
+		Debug.OK(staticInstance.abi_GetForUser(user, &_ret));
 		return _ret;
 	}
 }
@@ -850,25 +850,25 @@ extern(Windows):
 	final Windows.UI.StartScreen.SecondaryTileVisualElements VisualElements()
 	{
 		Windows.UI.StartScreen.SecondaryTileVisualElements _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.IVisualElementsRequest).get_VisualElements(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.IVisualElementsRequest)this.asInterface(uuid("c138333a-9308-4072-88cc-d068db347c68"))).get_VisualElements(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTileVisualElements) AlternateVisualElements()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTileVisualElements) _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.IVisualElementsRequest).get_AlternateVisualElements(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.IVisualElementsRequest)this.asInterface(uuid("c138333a-9308-4072-88cc-d068db347c68"))).get_AlternateVisualElements(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime Deadline()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.IVisualElementsRequest).get_Deadline(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.IVisualElementsRequest)this.asInterface(uuid("c138333a-9308-4072-88cc-d068db347c68"))).get_Deadline(&_ret));
 		return _ret;
 	}
 	final Windows.UI.StartScreen.VisualElementsRequestDeferral GetDeferral()
 	{
 		Windows.UI.StartScreen.VisualElementsRequestDeferral _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.IVisualElementsRequest).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.IVisualElementsRequest)this.asInterface(uuid("c138333a-9308-4072-88cc-d068db347c68"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -878,7 +878,7 @@ interface VisualElementsRequestDeferral : Windows.UI.StartScreen.IVisualElements
 extern(Windows):
 	final void Complete()
 	{
-		Debug.OK(this.as!(Windows.UI.StartScreen.IVisualElementsRequestDeferral).abi_Complete());
+		Debug.OK((cast(Windows.UI.StartScreen.IVisualElementsRequestDeferral)this.asInterface(uuid("a1656eb0-0126-4357-8204-bd82bb2a046d"))).abi_Complete());
 	}
 }
 
@@ -888,7 +888,7 @@ extern(Windows):
 	final Windows.UI.StartScreen.VisualElementsRequest Request()
 	{
 		Windows.UI.StartScreen.VisualElementsRequest _ret;
-		Debug.OK(this.as!(Windows.UI.StartScreen.IVisualElementsRequestedEventArgs).get_Request(&_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.IVisualElementsRequestedEventArgs)this.asInterface(uuid("7b6fc982-3a0d-4ece-af96-cd17e1b00b2d"))).get_Request(&_ret));
 		return _ret;
 	}
 }

@@ -594,28 +594,28 @@ extern(Windows):
 	final Windows.Networking.Vpn.VpnAppIdType Type()
 	{
 		Windows.Networking.Vpn.VpnAppIdType _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnAppId).get_Type(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnAppId)this.asInterface(uuid("7b06a635-5c58-41d9-94a7-bfbcf1d8ca54"))).get_Type(&_ret));
 		return _ret;
 	}
 	final void Type(Windows.Networking.Vpn.VpnAppIdType value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnAppId).set_Type(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnAppId)this.asInterface(uuid("7b06a635-5c58-41d9-94a7-bfbcf1d8ca54"))).set_Type(value));
 	}
 	final HSTRING Value()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnAppId).get_Value(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnAppId)this.asInterface(uuid("7b06a635-5c58-41d9-94a7-bfbcf1d8ca54"))).get_Value(&_ret));
 		return _ret;
 	}
 	final void Value(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnAppId).set_Value(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnAppId)this.asInterface(uuid("7b06a635-5c58-41d9-94a7-bfbcf1d8ca54"))).set_Value(value));
 	}
 	static Windows.Networking.Vpn.VpnAppId New(Windows.Networking.Vpn.VpnAppIdType type, HSTRING value)
 	{
 		auto factory = factory!(Windows.Networking.Vpn.IVpnAppIdFactory);
 		Windows.Networking.Vpn.VpnAppId _ret;
-		Debug.OK(factory.as!(Windows.Networking.Vpn.IVpnAppIdFactory).abi_Create(type, value, &_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnAppIdFactory)factory.asInterface(uuid("46adfd2a-0aab-4fdb-821d-d3ddc919788b"))).abi_Create(type, value, &_ret));
 		return _ret;
 	}
 }
@@ -625,141 +625,141 @@ interface VpnChannel : Windows.Networking.Vpn.IVpnChannel, Windows.Networking.Vp
 extern(Windows):
 	final void AssociateTransport(IInspectable mainOuterTunnelTransport, IInspectable optionalOuterTunnelTransport)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).abi_AssociateTransport(mainOuterTunnelTransport, optionalOuterTunnelTransport));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel)this.asInterface(uuid("4ac78d07-d1a8-4303-a091-c8d2e0915bc3"))).abi_AssociateTransport(mainOuterTunnelTransport, optionalOuterTunnelTransport));
 	}
 	final void Start(Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv4list, Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv6list, Windows.Networking.Vpn.VpnInterfaceId vpnInterfaceId, Windows.Networking.Vpn.VpnRouteAssignment routeScope, Windows.Networking.Vpn.VpnNamespaceAssignment namespaceScope, UINT32 mtuSize, UINT32 maxFrameSize, bool optimizeForLowCostNetwork, IInspectable mainOuterTunnelTransport, IInspectable optionalOuterTunnelTransport)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).abi_Start(assignedClientIPv4list, assignedClientIPv6list, vpnInterfaceId, routeScope, namespaceScope, mtuSize, maxFrameSize, optimizeForLowCostNetwork, mainOuterTunnelTransport, optionalOuterTunnelTransport));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel)this.asInterface(uuid("4ac78d07-d1a8-4303-a091-c8d2e0915bc3"))).abi_Start(assignedClientIPv4list, assignedClientIPv6list, vpnInterfaceId, routeScope, namespaceScope, mtuSize, maxFrameSize, optimizeForLowCostNetwork, mainOuterTunnelTransport, optionalOuterTunnelTransport));
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).abi_Stop());
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel)this.asInterface(uuid("4ac78d07-d1a8-4303-a091-c8d2e0915bc3"))).abi_Stop());
 	}
 	final Windows.Networking.Vpn.VpnPickedCredential RequestCredentials(Windows.Networking.Vpn.VpnCredentialType credType, bool isRetry, bool isSingleSignOnCredential, Windows.Security.Cryptography.Certificates.Certificate certificate)
 	{
 		Windows.Networking.Vpn.VpnPickedCredential _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).abi_RequestCredentials(credType, isRetry, isSingleSignOnCredential, certificate, &_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel)this.asInterface(uuid("4ac78d07-d1a8-4303-a091-c8d2e0915bc3"))).abi_RequestCredentials(credType, isRetry, isSingleSignOnCredential, certificate, &_ret));
 		return _ret;
 	}
 	final void RequestVpnPacketBuffer(Windows.Networking.Vpn.VpnDataPathType type, Windows.Networking.Vpn.VpnPacketBuffer* out_vpnPacketBuffer)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).abi_RequestVpnPacketBuffer(type, out_vpnPacketBuffer));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel)this.asInterface(uuid("4ac78d07-d1a8-4303-a091-c8d2e0915bc3"))).abi_RequestVpnPacketBuffer(type, out_vpnPacketBuffer));
 	}
 	final void LogDiagnosticMessage(HSTRING message)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).abi_LogDiagnosticMessage(message));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel)this.asInterface(uuid("4ac78d07-d1a8-4303-a091-c8d2e0915bc3"))).abi_LogDiagnosticMessage(message));
 	}
 	final UINT32 Id()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).get_Id(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel)this.asInterface(uuid("4ac78d07-d1a8-4303-a091-c8d2e0915bc3"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Vpn.VpnChannelConfiguration Configuration()
 	{
 		Windows.Networking.Vpn.VpnChannelConfiguration _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).get_Configuration(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel)this.asInterface(uuid("4ac78d07-d1a8-4303-a091-c8d2e0915bc3"))).get_Configuration(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnActivityChange(void delegate(Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).add_ActivityChange(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityEventArgs), Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel)this.asInterface(uuid("4ac78d07-d1a8-4303-a091-c8d2e0915bc3"))).add_ActivityChange(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityEventArgs), Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeActivityChange(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).remove_ActivityChange(token));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel)this.asInterface(uuid("4ac78d07-d1a8-4303-a091-c8d2e0915bc3"))).remove_ActivityChange(token));
 	}
 	final void PlugInContext(IInspectable value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).set_PlugInContext(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel)this.asInterface(uuid("4ac78d07-d1a8-4303-a091-c8d2e0915bc3"))).set_PlugInContext(value));
 	}
 	final IInspectable PlugInContext()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).get_PlugInContext(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel)this.asInterface(uuid("4ac78d07-d1a8-4303-a091-c8d2e0915bc3"))).get_PlugInContext(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Vpn.VpnSystemHealth SystemHealth()
 	{
 		Windows.Networking.Vpn.VpnSystemHealth _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).get_SystemHealth(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel)this.asInterface(uuid("4ac78d07-d1a8-4303-a091-c8d2e0915bc3"))).get_SystemHealth(&_ret));
 		return _ret;
 	}
 	final void RequestCustomPrompt(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Vpn.IVpnCustomPrompt) customPrompt)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).abi_RequestCustomPrompt(customPrompt));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel)this.asInterface(uuid("4ac78d07-d1a8-4303-a091-c8d2e0915bc3"))).abi_RequestCustomPrompt(customPrompt));
 	}
 	final void SetErrorMessage(HSTRING message)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).abi_SetErrorMessage(message));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel)this.asInterface(uuid("4ac78d07-d1a8-4303-a091-c8d2e0915bc3"))).abi_SetErrorMessage(message));
 	}
 	final void SetAllowedSslTlsVersions(IInspectable tunnelTransport, bool useTls12)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel).abi_SetAllowedSslTlsVersions(tunnelTransport, useTls12));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel)this.asInterface(uuid("4ac78d07-d1a8-4303-a091-c8d2e0915bc3"))).abi_SetAllowedSslTlsVersions(tunnelTransport, useTls12));
 	}
 	final void StartWithMainTransport(Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv4list, Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv6list, Windows.Networking.Vpn.VpnInterfaceId vpnInterfaceId, Windows.Networking.Vpn.VpnRouteAssignment assignedRoutes, Windows.Networking.Vpn.VpnDomainNameAssignment assignedDomainName, UINT32 mtuSize, UINT32 maxFrameSize, bool Reserved, IInspectable mainOuterTunnelTransport)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).abi_StartWithMainTransport(assignedClientIPv4list, assignedClientIPv6list, vpnInterfaceId, assignedRoutes, assignedDomainName, mtuSize, maxFrameSize, Reserved, mainOuterTunnelTransport));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel2)this.asInterface(uuid("2255d165-993b-4629-ad60-f1c3f3537f50"))).abi_StartWithMainTransport(assignedClientIPv4list, assignedClientIPv6list, vpnInterfaceId, assignedRoutes, assignedDomainName, mtuSize, maxFrameSize, Reserved, mainOuterTunnelTransport));
 	}
 	final void StartExistingTransports(Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv4list, Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIPv6list, Windows.Networking.Vpn.VpnInterfaceId vpnInterfaceId, Windows.Networking.Vpn.VpnRouteAssignment assignedRoutes, Windows.Networking.Vpn.VpnDomainNameAssignment assignedDomainName, UINT32 mtuSize, UINT32 maxFrameSize, bool Reserved)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).abi_StartExistingTransports(assignedClientIPv4list, assignedClientIPv6list, vpnInterfaceId, assignedRoutes, assignedDomainName, mtuSize, maxFrameSize, Reserved));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel2)this.asInterface(uuid("2255d165-993b-4629-ad60-f1c3f3537f50"))).abi_StartExistingTransports(assignedClientIPv4list, assignedClientIPv6list, vpnInterfaceId, assignedRoutes, assignedDomainName, mtuSize, maxFrameSize, Reserved));
 	}
 	final EventRegistrationToken OnActivityStateChange(void delegate(Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityStateChangedArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).add_ActivityStateChange(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityStateChangedArgs), Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityStateChangedArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel2)this.asInterface(uuid("2255d165-993b-4629-ad60-f1c3f3537f50"))).add_ActivityStateChange(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityStateChangedArgs), Windows.Networking.Vpn.VpnChannel, Windows.Networking.Vpn.VpnChannelActivityStateChangedArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeActivityStateChange(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).remove_ActivityStateChange(token));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel2)this.asInterface(uuid("2255d165-993b-4629-ad60-f1c3f3537f50"))).remove_ActivityStateChange(token));
 	}
 	final Windows.Networking.Vpn.VpnPacketBuffer GetVpnSendPacketBuffer()
 	{
 		Windows.Networking.Vpn.VpnPacketBuffer _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).abi_GetVpnSendPacketBuffer(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel2)this.asInterface(uuid("2255d165-993b-4629-ad60-f1c3f3537f50"))).abi_GetVpnSendPacketBuffer(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Vpn.VpnPacketBuffer GetVpnReceivePacketBuffer()
 	{
 		Windows.Networking.Vpn.VpnPacketBuffer _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).abi_GetVpnReceivePacketBuffer(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel2)this.asInterface(uuid("2255d165-993b-4629-ad60-f1c3f3537f50"))).abi_GetVpnReceivePacketBuffer(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction RequestCustomPromptAsync(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Vpn.IVpnCustomPromptElement) customPromptElement)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).abi_RequestCustomPromptAsync(customPromptElement, &_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel2)this.asInterface(uuid("2255d165-993b-4629-ad60-f1c3f3537f50"))).abi_RequestCustomPromptAsync(customPromptElement, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) RequestCredentialsWithCertificateAsync(Windows.Networking.Vpn.VpnCredentialType credType, UINT32 credOptions, Windows.Security.Cryptography.Certificates.Certificate certificate)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).abi_RequestCredentialsWithCertificateAsync(credType, credOptions, certificate, &_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel2)this.asInterface(uuid("2255d165-993b-4629-ad60-f1c3f3537f50"))).abi_RequestCredentialsWithCertificateAsync(credType, credOptions, certificate, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) RequestCredentialsWithOptionsAsync(Windows.Networking.Vpn.VpnCredentialType credType, UINT32 credOptions)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).abi_RequestCredentialsWithOptionsAsync(credType, credOptions, &_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel2)this.asInterface(uuid("2255d165-993b-4629-ad60-f1c3f3537f50"))).abi_RequestCredentialsWithOptionsAsync(credType, credOptions, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) RequestCredentialsSimpleAsync(Windows.Networking.Vpn.VpnCredentialType credType)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).abi_RequestCredentialsSimpleAsync(credType, &_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel2)this.asInterface(uuid("2255d165-993b-4629-ad60-f1c3f3537f50"))).abi_RequestCredentialsSimpleAsync(credType, &_ret));
 		return _ret;
 	}
 	final void TerminateConnection(HSTRING message)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).abi_TerminateConnection(message));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel2)this.asInterface(uuid("2255d165-993b-4629-ad60-f1c3f3537f50"))).abi_TerminateConnection(message));
 	}
 	final void StartWithTrafficFilter(Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIpv4List, Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIpv6List, Windows.Networking.Vpn.VpnInterfaceId vpnInterfaceId, Windows.Networking.Vpn.VpnRouteAssignment assignedRoutes, Windows.Networking.Vpn.VpnDomainNameAssignment assignedNamespace, UINT32 mtuSize, UINT32 maxFrameSize, bool reserved, IInspectable mainOuterTunnelTransport, IInspectable optionalOuterTunnelTransport, Windows.Networking.Vpn.VpnTrafficFilterAssignment assignedTrafficFilters)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannel2).abi_StartWithTrafficFilter(assignedClientIpv4List, assignedClientIpv6List, vpnInterfaceId, assignedRoutes, assignedNamespace, mtuSize, maxFrameSize, reserved, mainOuterTunnelTransport, optionalOuterTunnelTransport, assignedTrafficFilters));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel2)this.asInterface(uuid("2255d165-993b-4629-ad60-f1c3f3537f50"))).abi_StartWithTrafficFilter(assignedClientIpv4List, assignedClientIpv6List, vpnInterfaceId, assignedRoutes, assignedNamespace, mtuSize, maxFrameSize, reserved, mainOuterTunnelTransport, optionalOuterTunnelTransport, assignedTrafficFilters));
 	}
 
 	private static Windows.Networking.Vpn.IVpnChannelStatics _staticInstance;
@@ -770,7 +770,7 @@ extern(Windows):
 	}
 	static void ProcessEventAsync(IInspectable thirdPartyPlugIn, IInspectable event)
 	{
-		Debug.OK(staticInstance.as!(Windows.Networking.Vpn.IVpnChannelStatics).abi_ProcessEventAsync(thirdPartyPlugIn, event));
+		Debug.OK(staticInstance.abi_ProcessEventAsync(thirdPartyPlugIn, event));
 	}
 }
 
@@ -780,7 +780,7 @@ extern(Windows):
 	final Windows.Networking.Vpn.VpnChannelActivityEventType Type()
 	{
 		Windows.Networking.Vpn.VpnChannelActivityEventType _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannelActivityEventArgs).get_Type(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannelActivityEventArgs)this.asInterface(uuid("a36c88f2-afdc-4775-855d-d4ac0a35fc55"))).get_Type(&_ret));
 		return _ret;
 	}
 }
@@ -791,7 +791,7 @@ extern(Windows):
 	final Windows.Networking.Vpn.VpnChannelActivityEventType ActivityState()
 	{
 		Windows.Networking.Vpn.VpnChannelActivityEventType _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannelActivityStateChangedArgs).get_ActivityState(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannelActivityStateChangedArgs)this.asInterface(uuid("3d750565-fdc0-4bbe-a23b-45fffc6d97a1"))).get_ActivityState(&_ret));
 		return _ret;
 	}
 }
@@ -802,25 +802,25 @@ extern(Windows):
 	final HSTRING ServerServiceName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannelConfiguration).get_ServerServiceName(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannelConfiguration)this.asInterface(uuid("0e2ddca2-2012-4fe4-b179-8c652c6d107e"))).get_ServerServiceName(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) ServerHostNameList()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannelConfiguration).get_ServerHostNameList(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannelConfiguration)this.asInterface(uuid("0e2ddca2-2012-4fe4-b179-8c652c6d107e"))).get_ServerHostNameList(&_ret));
 		return _ret;
 	}
 	final HSTRING CustomField()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannelConfiguration).get_CustomField(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannelConfiguration)this.asInterface(uuid("0e2ddca2-2012-4fe4-b179-8c652c6d107e"))).get_CustomField(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Uri) ServerUris()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Uri) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnChannelConfiguration2).get_ServerUris(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannelConfiguration2)this.asInterface(uuid("f30b574c-7824-471c-a118-63dbc93ae4c7"))).get_ServerUris(&_ret));
 		return _ret;
 	}
 }
@@ -831,25 +831,25 @@ extern(Windows):
 	final Windows.Security.Credentials.PasswordCredential PasskeyCredential()
 	{
 		Windows.Security.Credentials.PasswordCredential _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCredential).get_PasskeyCredential(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCredential)this.asInterface(uuid("b7e78af3-a46d-404b-8729-1832522853ac"))).get_PasskeyCredential(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Cryptography.Certificates.Certificate CertificateCredential()
 	{
 		Windows.Security.Cryptography.Certificates.Certificate _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCredential).get_CertificateCredential(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCredential)this.asInterface(uuid("b7e78af3-a46d-404b-8729-1832522853ac"))).get_CertificateCredential(&_ret));
 		return _ret;
 	}
 	final HSTRING AdditionalPin()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCredential).get_AdditionalPin(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCredential)this.asInterface(uuid("b7e78af3-a46d-404b-8729-1832522853ac"))).get_AdditionalPin(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Credentials.PasswordCredential OldPasswordCredential()
 	{
 		Windows.Security.Credentials.PasswordCredential _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCredential).get_OldPasswordCredential(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCredential)this.asInterface(uuid("b7e78af3-a46d-404b-8729-1832522853ac"))).get_OldPasswordCredential(&_ret));
 		return _ret;
 	}
 }
@@ -859,55 +859,55 @@ interface VpnCustomCheckBox : Windows.Networking.Vpn.IVpnCustomCheckBox, Windows
 extern(Windows):
 	final void InitialCheckState(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomCheckBox).set_InitialCheckState(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomCheckBox)this.asInterface(uuid("43878753-03c5-4e61-93d7-a957714c4282"))).set_InitialCheckState(value));
 	}
 	final bool InitialCheckState()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomCheckBox).get_InitialCheckState(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomCheckBox)this.asInterface(uuid("43878753-03c5-4e61-93d7-a957714c4282"))).get_InitialCheckState(&_ret));
 		return _ret;
 	}
 	final bool Checked()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomCheckBox).get_Checked(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomCheckBox)this.asInterface(uuid("43878753-03c5-4e61-93d7-a957714c4282"))).get_Checked(&_ret));
 		return _ret;
 	}
 	final void Label(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Label(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).set_Label(value));
 	}
 	final HSTRING Label()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Label(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).get_Label(&_ret));
 		return _ret;
 	}
 	final void Compulsory(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Compulsory(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).set_Compulsory(value));
 	}
 	final bool Compulsory()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Compulsory(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).get_Compulsory(&_ret));
 		return _ret;
 	}
 	final void Bordered(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Bordered(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).set_Bordered(value));
 	}
 	final bool Bordered()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Bordered(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).get_Bordered(&_ret));
 		return _ret;
 	}
 	static VpnCustomCheckBox New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(VpnCustomCheckBox).abi_ActivateInstance(&ret));
-		return ret.as!(VpnCustomCheckBox);
+		return cast(VpnCustomCheckBox) ret;
 	}
 }
 
@@ -916,55 +916,55 @@ interface VpnCustomComboBox : Windows.Networking.Vpn.IVpnCustomComboBox, Windows
 extern(Windows):
 	final void OptionsText(Windows.Foundation.Collections.IVectorView!(HSTRING) value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomComboBox).set_OptionsText(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomComboBox)this.asInterface(uuid("9a24158e-dba1-4c6f-8270-dcf3c9761c4c"))).set_OptionsText(value));
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) OptionsText()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomComboBox).get_OptionsText(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomComboBox)this.asInterface(uuid("9a24158e-dba1-4c6f-8270-dcf3c9761c4c"))).get_OptionsText(&_ret));
 		return _ret;
 	}
 	final UINT32 Selected()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomComboBox).get_Selected(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomComboBox)this.asInterface(uuid("9a24158e-dba1-4c6f-8270-dcf3c9761c4c"))).get_Selected(&_ret));
 		return _ret;
 	}
 	final void Label(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Label(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).set_Label(value));
 	}
 	final HSTRING Label()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Label(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).get_Label(&_ret));
 		return _ret;
 	}
 	final void Compulsory(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Compulsory(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).set_Compulsory(value));
 	}
 	final bool Compulsory()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Compulsory(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).get_Compulsory(&_ret));
 		return _ret;
 	}
 	final void Bordered(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Bordered(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).set_Bordered(value));
 	}
 	final bool Bordered()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Bordered(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).get_Bordered(&_ret));
 		return _ret;
 	}
 	static VpnCustomComboBox New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(VpnCustomComboBox).abi_ActivateInstance(&ret));
-		return ret.as!(VpnCustomComboBox);
+		return cast(VpnCustomComboBox) ret;
 	}
 }
 
@@ -973,65 +973,65 @@ interface VpnCustomEditBox : Windows.Networking.Vpn.IVpnCustomEditBox, Windows.N
 extern(Windows):
 	final void DefaultText(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomEditBox).set_DefaultText(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomEditBox)this.asInterface(uuid("3002d9a0-cfbf-4c0b-8f3c-66f503c20b39"))).set_DefaultText(value));
 	}
 	final HSTRING DefaultText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomEditBox).get_DefaultText(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomEditBox)this.asInterface(uuid("3002d9a0-cfbf-4c0b-8f3c-66f503c20b39"))).get_DefaultText(&_ret));
 		return _ret;
 	}
 	final void NoEcho(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomEditBox).set_NoEcho(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomEditBox)this.asInterface(uuid("3002d9a0-cfbf-4c0b-8f3c-66f503c20b39"))).set_NoEcho(value));
 	}
 	final bool NoEcho()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomEditBox).get_NoEcho(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomEditBox)this.asInterface(uuid("3002d9a0-cfbf-4c0b-8f3c-66f503c20b39"))).get_NoEcho(&_ret));
 		return _ret;
 	}
 	final HSTRING Text()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomEditBox).get_Text(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomEditBox)this.asInterface(uuid("3002d9a0-cfbf-4c0b-8f3c-66f503c20b39"))).get_Text(&_ret));
 		return _ret;
 	}
 	final void Label(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Label(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).set_Label(value));
 	}
 	final HSTRING Label()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Label(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).get_Label(&_ret));
 		return _ret;
 	}
 	final void Compulsory(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Compulsory(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).set_Compulsory(value));
 	}
 	final bool Compulsory()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Compulsory(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).get_Compulsory(&_ret));
 		return _ret;
 	}
 	final void Bordered(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Bordered(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).set_Bordered(value));
 	}
 	final bool Bordered()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Bordered(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).get_Bordered(&_ret));
 		return _ret;
 	}
 	static VpnCustomEditBox New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(VpnCustomEditBox).abi_ActivateInstance(&ret));
-		return ret.as!(VpnCustomEditBox);
+		return cast(VpnCustomEditBox) ret;
 	}
 }
 
@@ -1040,39 +1040,39 @@ interface VpnCustomErrorBox : Windows.Networking.Vpn.IVpnCustomErrorBox, Windows
 extern(Windows):
 	final void Label(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Label(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).set_Label(value));
 	}
 	final HSTRING Label()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Label(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).get_Label(&_ret));
 		return _ret;
 	}
 	final void Compulsory(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Compulsory(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).set_Compulsory(value));
 	}
 	final bool Compulsory()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Compulsory(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).get_Compulsory(&_ret));
 		return _ret;
 	}
 	final void Bordered(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Bordered(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).set_Bordered(value));
 	}
 	final bool Bordered()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Bordered(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).get_Bordered(&_ret));
 		return _ret;
 	}
 	static VpnCustomErrorBox New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(VpnCustomErrorBox).abi_ActivateInstance(&ret));
-		return ret.as!(VpnCustomErrorBox);
+		return cast(VpnCustomErrorBox) ret;
 	}
 }
 
@@ -1081,55 +1081,55 @@ interface VpnCustomPromptBooleanInput : Windows.Networking.Vpn.IVpnCustomPromptB
 extern(Windows):
 	final void InitialValue(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptBooleanInput).set_InitialValue(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptBooleanInput)this.asInterface(uuid("c4c9a69e-ff47-4527-9f27-a49292019979"))).set_InitialValue(value));
 	}
 	final bool InitialValue()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptBooleanInput).get_InitialValue(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptBooleanInput)this.asInterface(uuid("c4c9a69e-ff47-4527-9f27-a49292019979"))).get_InitialValue(&_ret));
 		return _ret;
 	}
 	final bool Value()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptBooleanInput).get_Value(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptBooleanInput)this.asInterface(uuid("c4c9a69e-ff47-4527-9f27-a49292019979"))).get_Value(&_ret));
 		return _ret;
 	}
 	final void DisplayName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_DisplayName(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).set_DisplayName(value));
 	}
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final void Compulsory(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_Compulsory(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).set_Compulsory(value));
 	}
 	final bool Compulsory()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_Compulsory(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).get_Compulsory(&_ret));
 		return _ret;
 	}
 	final void Emphasized(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_Emphasized(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).set_Emphasized(value));
 	}
 	final bool Emphasized()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_Emphasized(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).get_Emphasized(&_ret));
 		return _ret;
 	}
 	static VpnCustomPromptBooleanInput New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(VpnCustomPromptBooleanInput).abi_ActivateInstance(&ret));
-		return ret.as!(VpnCustomPromptBooleanInput);
+		return cast(VpnCustomPromptBooleanInput) ret;
 	}
 }
 
@@ -1139,50 +1139,50 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVector!(HSTRING) Options()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptOptionSelector).get_Options(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptOptionSelector)this.asInterface(uuid("3b8f34d9-8ec1-4e95-9a4e-7ba64d38f330"))).get_Options(&_ret));
 		return _ret;
 	}
 	final UINT32 SelectedIndex()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptOptionSelector).get_SelectedIndex(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptOptionSelector)this.asInterface(uuid("3b8f34d9-8ec1-4e95-9a4e-7ba64d38f330"))).get_SelectedIndex(&_ret));
 		return _ret;
 	}
 	final void DisplayName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_DisplayName(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).set_DisplayName(value));
 	}
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final void Compulsory(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_Compulsory(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).set_Compulsory(value));
 	}
 	final bool Compulsory()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_Compulsory(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).get_Compulsory(&_ret));
 		return _ret;
 	}
 	final void Emphasized(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_Emphasized(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).set_Emphasized(value));
 	}
 	final bool Emphasized()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_Emphasized(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).get_Emphasized(&_ret));
 		return _ret;
 	}
 	static VpnCustomPromptOptionSelector New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(VpnCustomPromptOptionSelector).abi_ActivateInstance(&ret));
-		return ret.as!(VpnCustomPromptOptionSelector);
+		return cast(VpnCustomPromptOptionSelector) ret;
 	}
 }
 
@@ -1191,49 +1191,49 @@ interface VpnCustomPromptText : Windows.Networking.Vpn.IVpnCustomPromptText, Win
 extern(Windows):
 	final void Text(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptText).set_Text(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptText)this.asInterface(uuid("3bc8bdee-3a42-49a3-abdd-07b2edea752d"))).set_Text(value));
 	}
 	final HSTRING Text()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptText).get_Text(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptText)this.asInterface(uuid("3bc8bdee-3a42-49a3-abdd-07b2edea752d"))).get_Text(&_ret));
 		return _ret;
 	}
 	final void DisplayName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_DisplayName(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).set_DisplayName(value));
 	}
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final void Compulsory(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_Compulsory(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).set_Compulsory(value));
 	}
 	final bool Compulsory()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_Compulsory(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).get_Compulsory(&_ret));
 		return _ret;
 	}
 	final void Emphasized(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_Emphasized(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).set_Emphasized(value));
 	}
 	final bool Emphasized()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_Emphasized(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).get_Emphasized(&_ret));
 		return _ret;
 	}
 	static VpnCustomPromptText New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(VpnCustomPromptText).abi_ActivateInstance(&ret));
-		return ret.as!(VpnCustomPromptText);
+		return cast(VpnCustomPromptText) ret;
 	}
 }
 
@@ -1242,65 +1242,65 @@ interface VpnCustomPromptTextInput : Windows.Networking.Vpn.IVpnCustomPromptText
 extern(Windows):
 	final void PlaceholderText(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptTextInput).set_PlaceholderText(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptTextInput)this.asInterface(uuid("c9da9c75-913c-47d5-88ba-48fc48930235"))).set_PlaceholderText(value));
 	}
 	final HSTRING PlaceholderText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptTextInput).get_PlaceholderText(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptTextInput)this.asInterface(uuid("c9da9c75-913c-47d5-88ba-48fc48930235"))).get_PlaceholderText(&_ret));
 		return _ret;
 	}
 	final void IsTextHidden(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptTextInput).set_IsTextHidden(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptTextInput)this.asInterface(uuid("c9da9c75-913c-47d5-88ba-48fc48930235"))).set_IsTextHidden(value));
 	}
 	final bool IsTextHidden()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptTextInput).get_IsTextHidden(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptTextInput)this.asInterface(uuid("c9da9c75-913c-47d5-88ba-48fc48930235"))).get_IsTextHidden(&_ret));
 		return _ret;
 	}
 	final HSTRING Text()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptTextInput).get_Text(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptTextInput)this.asInterface(uuid("c9da9c75-913c-47d5-88ba-48fc48930235"))).get_Text(&_ret));
 		return _ret;
 	}
 	final void DisplayName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_DisplayName(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).set_DisplayName(value));
 	}
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final void Compulsory(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_Compulsory(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).set_Compulsory(value));
 	}
 	final bool Compulsory()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_Compulsory(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).get_Compulsory(&_ret));
 		return _ret;
 	}
 	final void Emphasized(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).set_Emphasized(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).set_Emphasized(value));
 	}
 	final bool Emphasized()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPromptElement).get_Emphasized(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPromptElement)this.asInterface(uuid("73bd5638-6f04-404d-93dd-50a44924a38b"))).get_Emphasized(&_ret));
 		return _ret;
 	}
 	static VpnCustomPromptTextInput New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(VpnCustomPromptTextInput).abi_ActivateInstance(&ret));
-		return ret.as!(VpnCustomPromptTextInput);
+		return cast(VpnCustomPromptTextInput) ret;
 	}
 }
 
@@ -1309,49 +1309,49 @@ interface VpnCustomTextBox : Windows.Networking.Vpn.IVpnCustomTextBox, Windows.N
 extern(Windows):
 	final void DisplayText(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomTextBox).set_DisplayText(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomTextBox)this.asInterface(uuid("daa4c3ca-8f23-4d36-91f1-76d937827942"))).set_DisplayText(value));
 	}
 	final HSTRING DisplayText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomTextBox).get_DisplayText(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomTextBox)this.asInterface(uuid("daa4c3ca-8f23-4d36-91f1-76d937827942"))).get_DisplayText(&_ret));
 		return _ret;
 	}
 	final void Label(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Label(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).set_Label(value));
 	}
 	final HSTRING Label()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Label(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).get_Label(&_ret));
 		return _ret;
 	}
 	final void Compulsory(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Compulsory(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).set_Compulsory(value));
 	}
 	final bool Compulsory()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Compulsory(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).get_Compulsory(&_ret));
 		return _ret;
 	}
 	final void Bordered(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).set_Bordered(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).set_Bordered(value));
 	}
 	final bool Bordered()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnCustomPrompt).get_Bordered(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnCustomPrompt)this.asInterface(uuid("9b2ebe7b-87d5-433c-b4f6-eee6aa68a244"))).get_Bordered(&_ret));
 		return _ret;
 	}
 	static VpnCustomTextBox New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(VpnCustomTextBox).abi_ActivateInstance(&ret));
-		return ret.as!(VpnCustomTextBox);
+		return cast(VpnCustomTextBox) ret;
 	}
 }
 
@@ -1361,24 +1361,24 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnDomainNameInfo) DomainNameList()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnDomainNameInfo) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnDomainNameAssignment).get_DomainNameList(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnDomainNameAssignment)this.asInterface(uuid("4135b141-ccdb-49b5-9401-039a8ae767e9"))).get_DomainNameList(&_ret));
 		return _ret;
 	}
 	final void ProxyAutoConfigurationUri(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnDomainNameAssignment).set_ProxyAutoConfigurationUri(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnDomainNameAssignment)this.asInterface(uuid("4135b141-ccdb-49b5-9401-039a8ae767e9"))).set_ProxyAutoConfigurationUri(value));
 	}
 	final Windows.Foundation.Uri ProxyAutoConfigurationUri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnDomainNameAssignment).get_ProxyAutoConfigurationUri(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnDomainNameAssignment)this.asInterface(uuid("4135b141-ccdb-49b5-9401-039a8ae767e9"))).get_ProxyAutoConfigurationUri(&_ret));
 		return _ret;
 	}
 	static VpnDomainNameAssignment New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(VpnDomainNameAssignment).abi_ActivateInstance(&ret));
-		return ret.as!(VpnDomainNameAssignment);
+		return cast(VpnDomainNameAssignment) ret;
 	}
 }
 
@@ -1387,47 +1387,47 @@ interface VpnDomainNameInfo : Windows.Networking.Vpn.IVpnDomainNameInfo, Windows
 extern(Windows):
 	final void DomainName(Windows.Networking.HostName value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnDomainNameInfo).set_DomainName(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnDomainNameInfo)this.asInterface(uuid("ad2eb82f-ea8e-4f7a-843e-1a87e32e1b9a"))).set_DomainName(value));
 	}
 	final Windows.Networking.HostName DomainName()
 	{
 		Windows.Networking.HostName _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnDomainNameInfo).get_DomainName(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnDomainNameInfo)this.asInterface(uuid("ad2eb82f-ea8e-4f7a-843e-1a87e32e1b9a"))).get_DomainName(&_ret));
 		return _ret;
 	}
 	final void DomainNameType(Windows.Networking.Vpn.VpnDomainNameType value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnDomainNameInfo).set_DomainNameType(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnDomainNameInfo)this.asInterface(uuid("ad2eb82f-ea8e-4f7a-843e-1a87e32e1b9a"))).set_DomainNameType(value));
 	}
 	final Windows.Networking.Vpn.VpnDomainNameType DomainNameType()
 	{
 		Windows.Networking.Vpn.VpnDomainNameType _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnDomainNameInfo).get_DomainNameType(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnDomainNameInfo)this.asInterface(uuid("ad2eb82f-ea8e-4f7a-843e-1a87e32e1b9a"))).get_DomainNameType(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) DnsServers()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnDomainNameInfo).get_DnsServers(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnDomainNameInfo)this.asInterface(uuid("ad2eb82f-ea8e-4f7a-843e-1a87e32e1b9a"))).get_DnsServers(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) WebProxyServers()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnDomainNameInfo).get_WebProxyServers(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnDomainNameInfo)this.asInterface(uuid("ad2eb82f-ea8e-4f7a-843e-1a87e32e1b9a"))).get_WebProxyServers(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Foundation.Uri) WebProxyUris()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Foundation.Uri) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnDomainNameInfo2).get_WebProxyUris(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnDomainNameInfo2)this.asInterface(uuid("ab871151-6c53-4828-9883-d886de104407"))).get_WebProxyUris(&_ret));
 		return _ret;
 	}
 	static Windows.Networking.Vpn.VpnDomainNameInfo New(HSTRING name, Windows.Networking.Vpn.VpnDomainNameType nameType, Windows.Foundation.Collections.IIterable!(Windows.Networking.HostName) dnsServerList, Windows.Foundation.Collections.IIterable!(Windows.Networking.HostName) proxyServerList)
 	{
 		auto factory = factory!(Windows.Networking.Vpn.IVpnDomainNameInfoFactory);
 		Windows.Networking.Vpn.VpnDomainNameInfo _ret;
-		Debug.OK(factory.as!(Windows.Networking.Vpn.IVpnDomainNameInfoFactory).abi_CreateVpnDomainNameInfo(name, nameType, dnsServerList, proxyServerList, &_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnDomainNameInfoFactory)factory.asInterface(uuid("2507bb75-028f-4688-8d3a-c4531df37da8"))).abi_CreateVpnDomainNameInfo(name, nameType, dnsServerList, proxyServerList, &_ret));
 		return _ret;
 	}
 }
@@ -1437,13 +1437,13 @@ interface VpnInterfaceId : Windows.Networking.Vpn.IVpnInterfaceId
 extern(Windows):
 	final void GetAddressInfo(UINT32* out___idSize, ubyte** out_id)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnInterfaceId).abi_GetAddressInfo(out___idSize, out_id));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnInterfaceId)this.asInterface(uuid("9e2ddca2-1712-4ce4-b179-8c652c6d1011"))).abi_GetAddressInfo(out___idSize, out_id));
 	}
 	static Windows.Networking.Vpn.VpnInterfaceId New(UINT32 __addressSize, ubyte* address)
 	{
 		auto factory = factory!(Windows.Networking.Vpn.IVpnInterfaceIdFactory);
 		Windows.Networking.Vpn.VpnInterfaceId _ret;
-		Debug.OK(factory.as!(Windows.Networking.Vpn.IVpnInterfaceIdFactory).abi_CreateVpnInterfaceId(__addressSize, address, &_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnInterfaceIdFactory)factory.asInterface(uuid("9e2ddca2-1712-4ce4-b179-8c652c6d1000"))).abi_CreateVpnInterfaceId(__addressSize, address, &_ret));
 		return _ret;
 	}
 }
@@ -1454,62 +1454,62 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) AddProfileFromXmlAsync(HSTRING xml)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnManagementAgent).abi_AddProfileFromXmlAsync(xml, &_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnManagementAgent)this.asInterface(uuid("193696cd-a5c4-4abe-852b-785be4cb3e34"))).abi_AddProfileFromXmlAsync(xml, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) AddProfileFromObjectAsync(Windows.Networking.Vpn.IVpnProfile profile)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnManagementAgent).abi_AddProfileFromObjectAsync(profile, &_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnManagementAgent)this.asInterface(uuid("193696cd-a5c4-4abe-852b-785be4cb3e34"))).abi_AddProfileFromObjectAsync(profile, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) UpdateProfileFromXmlAsync(HSTRING xml)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnManagementAgent).abi_UpdateProfileFromXmlAsync(xml, &_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnManagementAgent)this.asInterface(uuid("193696cd-a5c4-4abe-852b-785be4cb3e34"))).abi_UpdateProfileFromXmlAsync(xml, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) UpdateProfileFromObjectAsync(Windows.Networking.Vpn.IVpnProfile profile)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnManagementAgent).abi_UpdateProfileFromObjectAsync(profile, &_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnManagementAgent)this.asInterface(uuid("193696cd-a5c4-4abe-852b-785be4cb3e34"))).abi_UpdateProfileFromObjectAsync(profile, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Vpn.IVpnProfile)) GetProfilesAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Vpn.IVpnProfile)) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnManagementAgent).abi_GetProfilesAsync(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnManagementAgent)this.asInterface(uuid("193696cd-a5c4-4abe-852b-785be4cb3e34"))).abi_GetProfilesAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) DeleteProfileAsync(Windows.Networking.Vpn.IVpnProfile profile)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnManagementAgent).abi_DeleteProfileAsync(profile, &_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnManagementAgent)this.asInterface(uuid("193696cd-a5c4-4abe-852b-785be4cb3e34"))).abi_DeleteProfileAsync(profile, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) ConnectProfileAsync(Windows.Networking.Vpn.IVpnProfile profile)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnManagementAgent).abi_ConnectProfileAsync(profile, &_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnManagementAgent)this.asInterface(uuid("193696cd-a5c4-4abe-852b-785be4cb3e34"))).abi_ConnectProfileAsync(profile, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) ConnectProfileWithPasswordCredentialAsync(Windows.Networking.Vpn.IVpnProfile profile, Windows.Security.Credentials.PasswordCredential passwordCredential)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnManagementAgent).abi_ConnectProfileWithPasswordCredentialAsync(profile, passwordCredential, &_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnManagementAgent)this.asInterface(uuid("193696cd-a5c4-4abe-852b-785be4cb3e34"))).abi_ConnectProfileWithPasswordCredentialAsync(profile, passwordCredential, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) DisconnectProfileAsync(Windows.Networking.Vpn.IVpnProfile profile)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnManagementErrorStatus) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnManagementAgent).abi_DisconnectProfileAsync(profile, &_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnManagementAgent)this.asInterface(uuid("193696cd-a5c4-4abe-852b-785be4cb3e34"))).abi_DisconnectProfileAsync(profile, &_ret));
 		return _ret;
 	}
 	static VpnManagementAgent New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(VpnManagementAgent).abi_ActivateInstance(&ret));
-		return ret.as!(VpnManagementAgent);
+		return cast(VpnManagementAgent) ret;
 	}
 }
 
@@ -1518,29 +1518,29 @@ interface VpnNamespaceAssignment : Windows.Networking.Vpn.IVpnNamespaceAssignmen
 extern(Windows):
 	final void NamespaceList(Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnNamespaceInfo) value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNamespaceAssignment).set_NamespaceList(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNamespaceAssignment)this.asInterface(uuid("d7f7db18-307d-4c0e-bd62-8fa270bbadd6"))).set_NamespaceList(value));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnNamespaceInfo) NamespaceList()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnNamespaceInfo) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNamespaceAssignment).get_NamespaceList(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNamespaceAssignment)this.asInterface(uuid("d7f7db18-307d-4c0e-bd62-8fa270bbadd6"))).get_NamespaceList(&_ret));
 		return _ret;
 	}
 	final void ProxyAutoConfigUri(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNamespaceAssignment).set_ProxyAutoConfigUri(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNamespaceAssignment)this.asInterface(uuid("d7f7db18-307d-4c0e-bd62-8fa270bbadd6"))).set_ProxyAutoConfigUri(value));
 	}
 	final Windows.Foundation.Uri ProxyAutoConfigUri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNamespaceAssignment).get_ProxyAutoConfigUri(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNamespaceAssignment)this.asInterface(uuid("d7f7db18-307d-4c0e-bd62-8fa270bbadd6"))).get_ProxyAutoConfigUri(&_ret));
 		return _ret;
 	}
 	static VpnNamespaceAssignment New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(VpnNamespaceAssignment).abi_ActivateInstance(&ret));
-		return ret.as!(VpnNamespaceAssignment);
+		return cast(VpnNamespaceAssignment) ret;
 	}
 }
 
@@ -1549,39 +1549,39 @@ interface VpnNamespaceInfo : Windows.Networking.Vpn.IVpnNamespaceInfo
 extern(Windows):
 	final void Namespace(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNamespaceInfo).set_Namespace(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNamespaceInfo)this.asInterface(uuid("30edfb43-444f-44c5-8167-a35a91f1af94"))).set_Namespace(value));
 	}
 	final HSTRING Namespace()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNamespaceInfo).get_Namespace(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNamespaceInfo)this.asInterface(uuid("30edfb43-444f-44c5-8167-a35a91f1af94"))).get_Namespace(&_ret));
 		return _ret;
 	}
 	final void DnsServers(Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNamespaceInfo).set_DnsServers(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNamespaceInfo)this.asInterface(uuid("30edfb43-444f-44c5-8167-a35a91f1af94"))).set_DnsServers(value));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) DnsServers()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNamespaceInfo).get_DnsServers(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNamespaceInfo)this.asInterface(uuid("30edfb43-444f-44c5-8167-a35a91f1af94"))).get_DnsServers(&_ret));
 		return _ret;
 	}
 	final void WebProxyServers(Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNamespaceInfo).set_WebProxyServers(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNamespaceInfo)this.asInterface(uuid("30edfb43-444f-44c5-8167-a35a91f1af94"))).set_WebProxyServers(value));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) WebProxyServers()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNamespaceInfo).get_WebProxyServers(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNamespaceInfo)this.asInterface(uuid("30edfb43-444f-44c5-8167-a35a91f1af94"))).get_WebProxyServers(&_ret));
 		return _ret;
 	}
 	static Windows.Networking.Vpn.VpnNamespaceInfo New(HSTRING name, Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) dnsServerList, Windows.Foundation.Collections.IVector!(Windows.Networking.HostName) proxyServerList)
 	{
 		auto factory = factory!(Windows.Networking.Vpn.IVpnNamespaceInfoFactory);
 		Windows.Networking.Vpn.VpnNamespaceInfo _ret;
-		Debug.OK(factory.as!(Windows.Networking.Vpn.IVpnNamespaceInfoFactory).abi_CreateVpnNamespaceInfo(name, dnsServerList, proxyServerList, &_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNamespaceInfoFactory)factory.asInterface(uuid("cb3e951a-b0ce-442b-acbb-5f99b202c31c"))).abi_CreateVpnNamespaceInfo(name, dnsServerList, proxyServerList, &_ret));
 		return _ret;
 	}
 }
@@ -1592,134 +1592,134 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVector!(HSTRING) Servers()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile).get_Servers(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNativeProfile)this.asInterface(uuid("a4aee29e-6417-4333-9842-f0a66db69802"))).get_Servers(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Vpn.VpnRoutingPolicyType RoutingPolicyType()
 	{
 		Windows.Networking.Vpn.VpnRoutingPolicyType _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile).get_RoutingPolicyType(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNativeProfile)this.asInterface(uuid("a4aee29e-6417-4333-9842-f0a66db69802"))).get_RoutingPolicyType(&_ret));
 		return _ret;
 	}
 	final void RoutingPolicyType(Windows.Networking.Vpn.VpnRoutingPolicyType value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile).set_RoutingPolicyType(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNativeProfile)this.asInterface(uuid("a4aee29e-6417-4333-9842-f0a66db69802"))).set_RoutingPolicyType(value));
 	}
 	final Windows.Networking.Vpn.VpnNativeProtocolType NativeProtocolType()
 	{
 		Windows.Networking.Vpn.VpnNativeProtocolType _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile).get_NativeProtocolType(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNativeProfile)this.asInterface(uuid("a4aee29e-6417-4333-9842-f0a66db69802"))).get_NativeProtocolType(&_ret));
 		return _ret;
 	}
 	final void NativeProtocolType(Windows.Networking.Vpn.VpnNativeProtocolType value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile).set_NativeProtocolType(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNativeProfile)this.asInterface(uuid("a4aee29e-6417-4333-9842-f0a66db69802"))).set_NativeProtocolType(value));
 	}
 	final Windows.Networking.Vpn.VpnAuthenticationMethod UserAuthenticationMethod()
 	{
 		Windows.Networking.Vpn.VpnAuthenticationMethod _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile).get_UserAuthenticationMethod(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNativeProfile)this.asInterface(uuid("a4aee29e-6417-4333-9842-f0a66db69802"))).get_UserAuthenticationMethod(&_ret));
 		return _ret;
 	}
 	final void UserAuthenticationMethod(Windows.Networking.Vpn.VpnAuthenticationMethod value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile).set_UserAuthenticationMethod(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNativeProfile)this.asInterface(uuid("a4aee29e-6417-4333-9842-f0a66db69802"))).set_UserAuthenticationMethod(value));
 	}
 	final Windows.Networking.Vpn.VpnAuthenticationMethod TunnelAuthenticationMethod()
 	{
 		Windows.Networking.Vpn.VpnAuthenticationMethod _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile).get_TunnelAuthenticationMethod(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNativeProfile)this.asInterface(uuid("a4aee29e-6417-4333-9842-f0a66db69802"))).get_TunnelAuthenticationMethod(&_ret));
 		return _ret;
 	}
 	final void TunnelAuthenticationMethod(Windows.Networking.Vpn.VpnAuthenticationMethod value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile).set_TunnelAuthenticationMethod(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNativeProfile)this.asInterface(uuid("a4aee29e-6417-4333-9842-f0a66db69802"))).set_TunnelAuthenticationMethod(value));
 	}
 	final HSTRING EapConfiguration()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile).get_EapConfiguration(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNativeProfile)this.asInterface(uuid("a4aee29e-6417-4333-9842-f0a66db69802"))).get_EapConfiguration(&_ret));
 		return _ret;
 	}
 	final void EapConfiguration(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile).set_EapConfiguration(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNativeProfile)this.asInterface(uuid("a4aee29e-6417-4333-9842-f0a66db69802"))).set_EapConfiguration(value));
 	}
 	final HSTRING ProfileName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_ProfileName(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnProfile)this.asInterface(uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a"))).get_ProfileName(&_ret));
 		return _ret;
 	}
 	final void ProfileName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).set_ProfileName(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnProfile)this.asInterface(uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a"))).set_ProfileName(value));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnAppId) AppTriggers()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnAppId) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_AppTriggers(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnProfile)this.asInterface(uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a"))).get_AppTriggers(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) Routes()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_Routes(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnProfile)this.asInterface(uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a"))).get_Routes(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnDomainNameInfo) DomainNameInfoList()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnDomainNameInfo) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_DomainNameInfoList(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnProfile)this.asInterface(uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a"))).get_DomainNameInfoList(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnTrafficFilter) TrafficFilters()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnTrafficFilter) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_TrafficFilters(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnProfile)this.asInterface(uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a"))).get_TrafficFilters(&_ret));
 		return _ret;
 	}
 	final bool RememberCredentials()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_RememberCredentials(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnProfile)this.asInterface(uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a"))).get_RememberCredentials(&_ret));
 		return _ret;
 	}
 	final void RememberCredentials(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).set_RememberCredentials(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnProfile)this.asInterface(uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a"))).set_RememberCredentials(value));
 	}
 	final bool AlwaysOn()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_AlwaysOn(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnProfile)this.asInterface(uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a"))).get_AlwaysOn(&_ret));
 		return _ret;
 	}
 	final void AlwaysOn(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).set_AlwaysOn(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnProfile)this.asInterface(uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a"))).set_AlwaysOn(value));
 	}
 	final bool RequireVpnClientAppUI()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile2).get_RequireVpnClientAppUI(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNativeProfile2)this.asInterface(uuid("0fec2467-cdb5-4ac7-b5a3-0afb5ec47682"))).get_RequireVpnClientAppUI(&_ret));
 		return _ret;
 	}
 	final void RequireVpnClientAppUI(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile2).set_RequireVpnClientAppUI(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNativeProfile2)this.asInterface(uuid("0fec2467-cdb5-4ac7-b5a3-0afb5ec47682"))).set_RequireVpnClientAppUI(value));
 	}
 	final Windows.Networking.Vpn.VpnManagementConnectionStatus ConnectionStatus()
 	{
 		Windows.Networking.Vpn.VpnManagementConnectionStatus _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnNativeProfile2).get_ConnectionStatus(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnNativeProfile2)this.asInterface(uuid("0fec2467-cdb5-4ac7-b5a3-0afb5ec47682"))).get_ConnectionStatus(&_ret));
 		return _ret;
 	}
 	static VpnNativeProfile New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(VpnNativeProfile).abi_ActivateInstance(&ret));
-		return ret.as!(VpnNativeProfile);
+		return cast(VpnNativeProfile) ret;
 	}
 }
 
@@ -1729,40 +1729,40 @@ extern(Windows):
 	final Windows.Storage.Streams.Buffer Buffer()
 	{
 		Windows.Storage.Streams.Buffer _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBuffer).get_Buffer(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPacketBuffer)this.asInterface(uuid("c2f891fc-4d5c-4a63-b70d-4e307eacce55"))).get_Buffer(&_ret));
 		return _ret;
 	}
 	final void Status(Windows.Networking.Vpn.VpnPacketBufferStatus value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBuffer).set_Status(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPacketBuffer)this.asInterface(uuid("c2f891fc-4d5c-4a63-b70d-4e307eacce55"))).set_Status(value));
 	}
 	final Windows.Networking.Vpn.VpnPacketBufferStatus Status()
 	{
 		Windows.Networking.Vpn.VpnPacketBufferStatus _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBuffer).get_Status(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPacketBuffer)this.asInterface(uuid("c2f891fc-4d5c-4a63-b70d-4e307eacce55"))).get_Status(&_ret));
 		return _ret;
 	}
 	final void TransportAffinity(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBuffer).set_TransportAffinity(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPacketBuffer)this.asInterface(uuid("c2f891fc-4d5c-4a63-b70d-4e307eacce55"))).set_TransportAffinity(value));
 	}
 	final UINT32 TransportAffinity()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBuffer).get_TransportAffinity(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPacketBuffer)this.asInterface(uuid("c2f891fc-4d5c-4a63-b70d-4e307eacce55"))).get_TransportAffinity(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Vpn.VpnAppId AppId()
 	{
 		Windows.Networking.Vpn.VpnAppId _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBuffer2).get_AppId(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPacketBuffer2)this.asInterface(uuid("665e91f0-8805-4bf5-a619-2e84882e6b4f"))).get_AppId(&_ret));
 		return _ret;
 	}
 	static Windows.Networking.Vpn.VpnPacketBuffer New(Windows.Networking.Vpn.VpnPacketBuffer parentBuffer, UINT32 offset, UINT32 length)
 	{
 		auto factory = factory!(Windows.Networking.Vpn.IVpnPacketBufferFactory);
 		Windows.Networking.Vpn.VpnPacketBuffer _ret;
-		Debug.OK(factory.as!(Windows.Networking.Vpn.IVpnPacketBufferFactory).abi_CreateVpnPacketBuffer(parentBuffer, offset, length, &_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPacketBufferFactory)factory.asInterface(uuid("9e2ddca2-1712-4ce4-b179-8c652c6d9999"))).abi_CreateVpnPacketBuffer(parentBuffer, offset, length, &_ret));
 		return _ret;
 	}
 }
@@ -1772,47 +1772,47 @@ interface VpnPacketBufferList : Windows.Networking.Vpn.IVpnPacketBufferList, Win
 extern(Windows):
 	final void Append(Windows.Networking.Vpn.VpnPacketBuffer nextVpnPacketBuffer)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBufferList).abi_Append(nextVpnPacketBuffer));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPacketBufferList)this.asInterface(uuid("c2f891fc-4d5c-4a63-b70d-4e307eacce77"))).abi_Append(nextVpnPacketBuffer));
 	}
 	final void AddAtBegin(Windows.Networking.Vpn.VpnPacketBuffer nextVpnPacketBuffer)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBufferList).abi_AddAtBegin(nextVpnPacketBuffer));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPacketBufferList)this.asInterface(uuid("c2f891fc-4d5c-4a63-b70d-4e307eacce77"))).abi_AddAtBegin(nextVpnPacketBuffer));
 	}
 	final Windows.Networking.Vpn.VpnPacketBuffer RemoveAtEnd()
 	{
 		Windows.Networking.Vpn.VpnPacketBuffer _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBufferList).abi_RemoveAtEnd(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPacketBufferList)this.asInterface(uuid("c2f891fc-4d5c-4a63-b70d-4e307eacce77"))).abi_RemoveAtEnd(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Vpn.VpnPacketBuffer RemoveAtBegin()
 	{
 		Windows.Networking.Vpn.VpnPacketBuffer _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBufferList).abi_RemoveAtBegin(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPacketBufferList)this.asInterface(uuid("c2f891fc-4d5c-4a63-b70d-4e307eacce77"))).abi_RemoveAtBegin(&_ret));
 		return _ret;
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBufferList).abi_Clear());
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPacketBufferList)this.asInterface(uuid("c2f891fc-4d5c-4a63-b70d-4e307eacce77"))).abi_Clear());
 	}
 	final void Status(Windows.Networking.Vpn.VpnPacketBufferStatus value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBufferList).set_Status(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPacketBufferList)this.asInterface(uuid("c2f891fc-4d5c-4a63-b70d-4e307eacce77"))).set_Status(value));
 	}
 	final Windows.Networking.Vpn.VpnPacketBufferStatus Status()
 	{
 		Windows.Networking.Vpn.VpnPacketBufferStatus _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBufferList).get_Status(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPacketBufferList)this.asInterface(uuid("c2f891fc-4d5c-4a63-b70d-4e307eacce77"))).get_Status(&_ret));
 		return _ret;
 	}
 	final UINT32 Size()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPacketBufferList).get_Size(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPacketBufferList)this.asInterface(uuid("c2f891fc-4d5c-4a63-b70d-4e307eacce77"))).get_Size(&_ret));
 		return _ret;
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Networking.Vpn.VpnPacketBuffer)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Networking.Vpn.VpnPacketBuffer)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.Networking.Vpn.VpnPacketBuffer))this).abi_First(out_first));
 	}
 }
 
@@ -1822,19 +1822,19 @@ extern(Windows):
 	final Windows.Security.Credentials.PasswordCredential PasskeyCredential()
 	{
 		Windows.Security.Credentials.PasswordCredential _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPickedCredential).get_PasskeyCredential(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPickedCredential)this.asInterface(uuid("9a793ac7-8854-4e52-ad97-24dd9a842bce"))).get_PasskeyCredential(&_ret));
 		return _ret;
 	}
 	final HSTRING AdditionalPin()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPickedCredential).get_AdditionalPin(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPickedCredential)this.asInterface(uuid("9a793ac7-8854-4e52-ad97-24dd9a842bce"))).get_AdditionalPin(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Credentials.PasswordCredential OldPasswordCredential()
 	{
 		Windows.Security.Credentials.PasswordCredential _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPickedCredential).get_OldPasswordCredential(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPickedCredential)this.asInterface(uuid("9a793ac7-8854-4e52-ad97-24dd9a842bce"))).get_OldPasswordCredential(&_ret));
 		return _ret;
 	}
 }
@@ -1845,104 +1845,104 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVector!(Windows.Foundation.Uri) ServerUris()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Foundation.Uri) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPlugInProfile).get_ServerUris(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPlugInProfile)this.asInterface(uuid("0edf0da4-4f00-4589-8d7b-4bf988f6542c"))).get_ServerUris(&_ret));
 		return _ret;
 	}
 	final HSTRING CustomConfiguration()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPlugInProfile).get_CustomConfiguration(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPlugInProfile)this.asInterface(uuid("0edf0da4-4f00-4589-8d7b-4bf988f6542c"))).get_CustomConfiguration(&_ret));
 		return _ret;
 	}
 	final void CustomConfiguration(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPlugInProfile).set_CustomConfiguration(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPlugInProfile)this.asInterface(uuid("0edf0da4-4f00-4589-8d7b-4bf988f6542c"))).set_CustomConfiguration(value));
 	}
 	final HSTRING VpnPluginPackageFamilyName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPlugInProfile).get_VpnPluginPackageFamilyName(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPlugInProfile)this.asInterface(uuid("0edf0da4-4f00-4589-8d7b-4bf988f6542c"))).get_VpnPluginPackageFamilyName(&_ret));
 		return _ret;
 	}
 	final void VpnPluginPackageFamilyName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPlugInProfile).set_VpnPluginPackageFamilyName(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPlugInProfile)this.asInterface(uuid("0edf0da4-4f00-4589-8d7b-4bf988f6542c"))).set_VpnPluginPackageFamilyName(value));
 	}
 	final HSTRING ProfileName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_ProfileName(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnProfile)this.asInterface(uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a"))).get_ProfileName(&_ret));
 		return _ret;
 	}
 	final void ProfileName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).set_ProfileName(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnProfile)this.asInterface(uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a"))).set_ProfileName(value));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnAppId) AppTriggers()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnAppId) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_AppTriggers(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnProfile)this.asInterface(uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a"))).get_AppTriggers(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) Routes()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_Routes(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnProfile)this.asInterface(uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a"))).get_Routes(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnDomainNameInfo) DomainNameInfoList()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnDomainNameInfo) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_DomainNameInfoList(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnProfile)this.asInterface(uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a"))).get_DomainNameInfoList(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnTrafficFilter) TrafficFilters()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnTrafficFilter) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_TrafficFilters(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnProfile)this.asInterface(uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a"))).get_TrafficFilters(&_ret));
 		return _ret;
 	}
 	final bool RememberCredentials()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_RememberCredentials(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnProfile)this.asInterface(uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a"))).get_RememberCredentials(&_ret));
 		return _ret;
 	}
 	final void RememberCredentials(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).set_RememberCredentials(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnProfile)this.asInterface(uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a"))).set_RememberCredentials(value));
 	}
 	final bool AlwaysOn()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).get_AlwaysOn(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnProfile)this.asInterface(uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a"))).get_AlwaysOn(&_ret));
 		return _ret;
 	}
 	final void AlwaysOn(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnProfile).set_AlwaysOn(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnProfile)this.asInterface(uuid("7875b751-b0d7-43db-8a93-d3fe2479e56a"))).set_AlwaysOn(value));
 	}
 	final bool RequireVpnClientAppUI()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPlugInProfile2).get_RequireVpnClientAppUI(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPlugInProfile2)this.asInterface(uuid("611c4892-cf94-4ad6-ba99-00f4ff34565e"))).get_RequireVpnClientAppUI(&_ret));
 		return _ret;
 	}
 	final void RequireVpnClientAppUI(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPlugInProfile2).set_RequireVpnClientAppUI(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPlugInProfile2)this.asInterface(uuid("611c4892-cf94-4ad6-ba99-00f4ff34565e"))).set_RequireVpnClientAppUI(value));
 	}
 	final Windows.Networking.Vpn.VpnManagementConnectionStatus ConnectionStatus()
 	{
 		Windows.Networking.Vpn.VpnManagementConnectionStatus _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnPlugInProfile2).get_ConnectionStatus(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnPlugInProfile2)this.asInterface(uuid("611c4892-cf94-4ad6-ba99-00f4ff34565e"))).get_ConnectionStatus(&_ret));
 		return _ret;
 	}
 	static VpnPlugInProfile New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(VpnPlugInProfile).abi_ActivateInstance(&ret));
-		return ret.as!(VpnPlugInProfile);
+		return cast(VpnPlugInProfile) ret;
 	}
 }
 
@@ -1951,29 +1951,29 @@ interface VpnRoute : Windows.Networking.Vpn.IVpnRoute
 extern(Windows):
 	final void Address(Windows.Networking.HostName value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRoute).set_Address(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnRoute)this.asInterface(uuid("b5731b83-0969-4699-938e-7776db29cfb3"))).set_Address(value));
 	}
 	final Windows.Networking.HostName Address()
 	{
 		Windows.Networking.HostName _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRoute).get_Address(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnRoute)this.asInterface(uuid("b5731b83-0969-4699-938e-7776db29cfb3"))).get_Address(&_ret));
 		return _ret;
 	}
 	final void PrefixSize(ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRoute).set_PrefixSize(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnRoute)this.asInterface(uuid("b5731b83-0969-4699-938e-7776db29cfb3"))).set_PrefixSize(value));
 	}
 	final ubyte PrefixSize()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRoute).get_PrefixSize(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnRoute)this.asInterface(uuid("b5731b83-0969-4699-938e-7776db29cfb3"))).get_PrefixSize(&_ret));
 		return _ret;
 	}
 	static Windows.Networking.Vpn.VpnRoute New(Windows.Networking.HostName address, ubyte prefixSize)
 	{
 		auto factory = factory!(Windows.Networking.Vpn.IVpnRouteFactory);
 		Windows.Networking.Vpn.VpnRoute _ret;
-		Debug.OK(factory.as!(Windows.Networking.Vpn.IVpnRouteFactory).abi_CreateVpnRoute(address, prefixSize, &_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnRouteFactory)factory.asInterface(uuid("bdeab5ff-45cf-4b99-83fb-db3bc2672b02"))).abi_CreateVpnRoute(address, prefixSize, &_ret));
 		return _ret;
 	}
 }
@@ -1983,59 +1983,59 @@ interface VpnRouteAssignment : Windows.Networking.Vpn.IVpnRouteAssignment
 extern(Windows):
 	final void Ipv4InclusionRoutes(Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRouteAssignment).set_Ipv4InclusionRoutes(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnRouteAssignment)this.asInterface(uuid("db64de22-ce39-4a76-9550-f61039f80e48"))).set_Ipv4InclusionRoutes(value));
 	}
 	final void Ipv6InclusionRoutes(Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRouteAssignment).set_Ipv6InclusionRoutes(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnRouteAssignment)this.asInterface(uuid("db64de22-ce39-4a76-9550-f61039f80e48"))).set_Ipv6InclusionRoutes(value));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) Ipv4InclusionRoutes()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRouteAssignment).get_Ipv4InclusionRoutes(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnRouteAssignment)this.asInterface(uuid("db64de22-ce39-4a76-9550-f61039f80e48"))).get_Ipv4InclusionRoutes(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) Ipv6InclusionRoutes()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRouteAssignment).get_Ipv6InclusionRoutes(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnRouteAssignment)this.asInterface(uuid("db64de22-ce39-4a76-9550-f61039f80e48"))).get_Ipv6InclusionRoutes(&_ret));
 		return _ret;
 	}
 	final void Ipv4ExclusionRoutes(Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRouteAssignment).set_Ipv4ExclusionRoutes(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnRouteAssignment)this.asInterface(uuid("db64de22-ce39-4a76-9550-f61039f80e48"))).set_Ipv4ExclusionRoutes(value));
 	}
 	final void Ipv6ExclusionRoutes(Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRouteAssignment).set_Ipv6ExclusionRoutes(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnRouteAssignment)this.asInterface(uuid("db64de22-ce39-4a76-9550-f61039f80e48"))).set_Ipv6ExclusionRoutes(value));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) Ipv4ExclusionRoutes()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRouteAssignment).get_Ipv4ExclusionRoutes(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnRouteAssignment)this.asInterface(uuid("db64de22-ce39-4a76-9550-f61039f80e48"))).get_Ipv4ExclusionRoutes(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) Ipv6ExclusionRoutes()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnRoute) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRouteAssignment).get_Ipv6ExclusionRoutes(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnRouteAssignment)this.asInterface(uuid("db64de22-ce39-4a76-9550-f61039f80e48"))).get_Ipv6ExclusionRoutes(&_ret));
 		return _ret;
 	}
 	final void ExcludeLocalSubnets(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRouteAssignment).set_ExcludeLocalSubnets(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnRouteAssignment)this.asInterface(uuid("db64de22-ce39-4a76-9550-f61039f80e48"))).set_ExcludeLocalSubnets(value));
 	}
 	final bool ExcludeLocalSubnets()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnRouteAssignment).get_ExcludeLocalSubnets(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnRouteAssignment)this.asInterface(uuid("db64de22-ce39-4a76-9550-f61039f80e48"))).get_ExcludeLocalSubnets(&_ret));
 		return _ret;
 	}
 	static VpnRouteAssignment New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(VpnRouteAssignment).abi_ActivateInstance(&ret));
-		return ret.as!(VpnRouteAssignment);
+		return cast(VpnRouteAssignment) ret;
 	}
 }
 
@@ -2045,7 +2045,7 @@ extern(Windows):
 	final Windows.Storage.Streams.Buffer StatementOfHealth()
 	{
 		Windows.Storage.Streams.Buffer _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnSystemHealth).get_StatementOfHealth(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnSystemHealth)this.asInterface(uuid("99a8f8af-c0ee-4e75-817a-f231aee5123d"))).get_StatementOfHealth(&_ret));
 		return _ret;
 	}
 }
@@ -2056,68 +2056,68 @@ extern(Windows):
 	final Windows.Networking.Vpn.VpnAppId AppId()
 	{
 		Windows.Networking.Vpn.VpnAppId _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilter).get_AppId(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnTrafficFilter)this.asInterface(uuid("2f691b60-6c9f-47f5-ac36-bb1b042e2c50"))).get_AppId(&_ret));
 		return _ret;
 	}
 	final void AppId(Windows.Networking.Vpn.VpnAppId value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilter).set_AppId(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnTrafficFilter)this.asInterface(uuid("2f691b60-6c9f-47f5-ac36-bb1b042e2c50"))).set_AppId(value));
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) AppClaims()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilter).get_AppClaims(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnTrafficFilter)this.asInterface(uuid("2f691b60-6c9f-47f5-ac36-bb1b042e2c50"))).get_AppClaims(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Vpn.VpnIPProtocol Protocol()
 	{
 		Windows.Networking.Vpn.VpnIPProtocol _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilter).get_Protocol(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnTrafficFilter)this.asInterface(uuid("2f691b60-6c9f-47f5-ac36-bb1b042e2c50"))).get_Protocol(&_ret));
 		return _ret;
 	}
 	final void Protocol(Windows.Networking.Vpn.VpnIPProtocol value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilter).set_Protocol(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnTrafficFilter)this.asInterface(uuid("2f691b60-6c9f-47f5-ac36-bb1b042e2c50"))).set_Protocol(value));
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) LocalPortRanges()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilter).get_LocalPortRanges(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnTrafficFilter)this.asInterface(uuid("2f691b60-6c9f-47f5-ac36-bb1b042e2c50"))).get_LocalPortRanges(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) RemotePortRanges()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilter).get_RemotePortRanges(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnTrafficFilter)this.asInterface(uuid("2f691b60-6c9f-47f5-ac36-bb1b042e2c50"))).get_RemotePortRanges(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) LocalAddressRanges()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilter).get_LocalAddressRanges(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnTrafficFilter)this.asInterface(uuid("2f691b60-6c9f-47f5-ac36-bb1b042e2c50"))).get_LocalAddressRanges(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) RemoteAddressRanges()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilter).get_RemoteAddressRanges(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnTrafficFilter)this.asInterface(uuid("2f691b60-6c9f-47f5-ac36-bb1b042e2c50"))).get_RemoteAddressRanges(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Vpn.VpnRoutingPolicyType RoutingPolicyType()
 	{
 		Windows.Networking.Vpn.VpnRoutingPolicyType _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilter).get_RoutingPolicyType(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnTrafficFilter)this.asInterface(uuid("2f691b60-6c9f-47f5-ac36-bb1b042e2c50"))).get_RoutingPolicyType(&_ret));
 		return _ret;
 	}
 	final void RoutingPolicyType(Windows.Networking.Vpn.VpnRoutingPolicyType value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilter).set_RoutingPolicyType(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnTrafficFilter)this.asInterface(uuid("2f691b60-6c9f-47f5-ac36-bb1b042e2c50"))).set_RoutingPolicyType(value));
 	}
 	static Windows.Networking.Vpn.VpnTrafficFilter New(Windows.Networking.Vpn.VpnAppId appId)
 	{
 		auto factory = factory!(Windows.Networking.Vpn.IVpnTrafficFilterFactory);
 		Windows.Networking.Vpn.VpnTrafficFilter _ret;
-		Debug.OK(factory.as!(Windows.Networking.Vpn.IVpnTrafficFilterFactory).abi_Create(appId, &_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnTrafficFilterFactory)factory.asInterface(uuid("480d41d5-7f99-474c-86ee-96df168318f1"))).abi_Create(appId, &_ret));
 		return _ret;
 	}
 }
@@ -2128,34 +2128,34 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnTrafficFilter) TrafficFilterList()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Networking.Vpn.VpnTrafficFilter) _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilterAssignment).get_TrafficFilterList(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnTrafficFilterAssignment)this.asInterface(uuid("56ccd45c-e664-471e-89cd-601603b9e0f3"))).get_TrafficFilterList(&_ret));
 		return _ret;
 	}
 	final bool AllowOutbound()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilterAssignment).get_AllowOutbound(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnTrafficFilterAssignment)this.asInterface(uuid("56ccd45c-e664-471e-89cd-601603b9e0f3"))).get_AllowOutbound(&_ret));
 		return _ret;
 	}
 	final void AllowOutbound(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilterAssignment).set_AllowOutbound(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnTrafficFilterAssignment)this.asInterface(uuid("56ccd45c-e664-471e-89cd-601603b9e0f3"))).set_AllowOutbound(value));
 	}
 	final bool AllowInbound()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilterAssignment).get_AllowInbound(&_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnTrafficFilterAssignment)this.asInterface(uuid("56ccd45c-e664-471e-89cd-601603b9e0f3"))).get_AllowInbound(&_ret));
 		return _ret;
 	}
 	final void AllowInbound(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Vpn.IVpnTrafficFilterAssignment).set_AllowInbound(value));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnTrafficFilterAssignment)this.asInterface(uuid("56ccd45c-e664-471e-89cd-601603b9e0f3"))).set_AllowInbound(value));
 	}
 	static VpnTrafficFilterAssignment New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(VpnTrafficFilterAssignment).abi_ActivateInstance(&ret));
-		return ret.as!(VpnTrafficFilterAssignment);
+		return cast(VpnTrafficFilterAssignment) ret;
 	}
 }
 

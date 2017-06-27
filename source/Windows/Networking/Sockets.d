@@ -614,83 +614,83 @@ extern(Windows):
 	final HSTRING ControlChannelTriggerId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger).get_ControlChannelTriggerId(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IControlChannelTrigger)this.asInterface(uuid("7d1431a7-ee96-40e8-a199-8703cd969ec3"))).get_ControlChannelTriggerId(&_ret));
 		return _ret;
 	}
 	final UINT32 ServerKeepAliveIntervalInMinutes()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger).get_ServerKeepAliveIntervalInMinutes(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IControlChannelTrigger)this.asInterface(uuid("7d1431a7-ee96-40e8-a199-8703cd969ec3"))).get_ServerKeepAliveIntervalInMinutes(&_ret));
 		return _ret;
 	}
 	final void ServerKeepAliveIntervalInMinutes(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger).set_ServerKeepAliveIntervalInMinutes(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IControlChannelTrigger)this.asInterface(uuid("7d1431a7-ee96-40e8-a199-8703cd969ec3"))).set_ServerKeepAliveIntervalInMinutes(value));
 	}
 	final UINT32 CurrentKeepAliveIntervalInMinutes()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger).get_CurrentKeepAliveIntervalInMinutes(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IControlChannelTrigger)this.asInterface(uuid("7d1431a7-ee96-40e8-a199-8703cd969ec3"))).get_CurrentKeepAliveIntervalInMinutes(&_ret));
 		return _ret;
 	}
 	final IInspectable TransportObject()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger).get_TransportObject(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IControlChannelTrigger)this.asInterface(uuid("7d1431a7-ee96-40e8-a199-8703cd969ec3"))).get_TransportObject(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Background.IBackgroundTrigger KeepAliveTrigger()
 	{
 		Windows.ApplicationModel.Background.IBackgroundTrigger _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger).get_KeepAliveTrigger(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IControlChannelTrigger)this.asInterface(uuid("7d1431a7-ee96-40e8-a199-8703cd969ec3"))).get_KeepAliveTrigger(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Background.IBackgroundTrigger PushNotificationTrigger()
 	{
 		Windows.ApplicationModel.Background.IBackgroundTrigger _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger).get_PushNotificationTrigger(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IControlChannelTrigger)this.asInterface(uuid("7d1431a7-ee96-40e8-a199-8703cd969ec3"))).get_PushNotificationTrigger(&_ret));
 		return _ret;
 	}
 	final void UsingTransport(IInspectable transport)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger).abi_UsingTransport(transport));
+		Debug.OK((cast(Windows.Networking.Sockets.IControlChannelTrigger)this.asInterface(uuid("7d1431a7-ee96-40e8-a199-8703cd969ec3"))).abi_UsingTransport(transport));
 	}
 	final Windows.Networking.Sockets.ControlChannelTriggerStatus WaitForPushEnabled()
 	{
 		Windows.Networking.Sockets.ControlChannelTriggerStatus _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger).abi_WaitForPushEnabled(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IControlChannelTrigger)this.asInterface(uuid("7d1431a7-ee96-40e8-a199-8703cd969ec3"))).abi_WaitForPushEnabled(&_ret));
 		return _ret;
 	}
 	final void DecreaseNetworkKeepAliveInterval()
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger).abi_DecreaseNetworkKeepAliveInterval());
+		Debug.OK((cast(Windows.Networking.Sockets.IControlChannelTrigger)this.asInterface(uuid("7d1431a7-ee96-40e8-a199-8703cd969ec3"))).abi_DecreaseNetworkKeepAliveInterval());
 	}
 	final void FlushTransport()
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger).abi_FlushTransport());
+		Debug.OK((cast(Windows.Networking.Sockets.IControlChannelTrigger)this.asInterface(uuid("7d1431a7-ee96-40e8-a199-8703cd969ec3"))).abi_FlushTransport());
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	final bool IsWakeFromLowPowerSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IControlChannelTrigger2).get_IsWakeFromLowPowerSupported(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IControlChannelTrigger2)this.asInterface(uuid("af00d237-51be-4514-9725-3556e1879580"))).get_IsWakeFromLowPowerSupported(&_ret));
 		return _ret;
 	}
 	static Windows.Networking.Sockets.ControlChannelTrigger New(HSTRING channelId, UINT32 serverKeepAliveIntervalInMinutes)
 	{
 		auto factory = factory!(Windows.Networking.Sockets.IControlChannelTriggerFactory);
 		Windows.Networking.Sockets.ControlChannelTrigger _ret;
-		Debug.OK(factory.as!(Windows.Networking.Sockets.IControlChannelTriggerFactory).abi_CreateControlChannelTrigger(channelId, serverKeepAliveIntervalInMinutes, &_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IControlChannelTriggerFactory)factory.asInterface(uuid("da4b7cf0-8d71-446f-88c3-b95184a2d6cd"))).abi_CreateControlChannelTrigger(channelId, serverKeepAliveIntervalInMinutes, &_ret));
 		return _ret;
 	}
 	static Windows.Networking.Sockets.ControlChannelTrigger New(HSTRING channelId, UINT32 serverKeepAliveIntervalInMinutes, Windows.Networking.Sockets.ControlChannelTriggerResourceType resourceRequestType)
 	{
 		auto factory = factory!(Windows.Networking.Sockets.IControlChannelTriggerFactory);
 		Windows.Networking.Sockets.ControlChannelTrigger _ret;
-		Debug.OK(factory.as!(Windows.Networking.Sockets.IControlChannelTriggerFactory).abi_CreateControlChannelTriggerEx(channelId, serverKeepAliveIntervalInMinutes, resourceRequestType, &_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IControlChannelTriggerFactory)factory.asInterface(uuid("da4b7cf0-8d71-446f-88c3-b95184a2d6cd"))).abi_CreateControlChannelTriggerEx(channelId, serverKeepAliveIntervalInMinutes, resourceRequestType, &_ret));
 		return _ret;
 	}
 }
@@ -701,106 +701,106 @@ extern(Windows):
 	final Windows.Networking.Sockets.DatagramSocketControl Control()
 	{
 		Windows.Networking.Sockets.DatagramSocketControl _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).get_Control(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocket)this.asInterface(uuid("7fe25bbb-c3bc-4677-8446-ca28a465a3af"))).get_Control(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.DatagramSocketInformation Information()
 	{
 		Windows.Networking.Sockets.DatagramSocketInformation _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).get_Information(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocket)this.asInterface(uuid("7fe25bbb-c3bc-4677-8446-ca28a465a3af"))).get_Information(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IOutputStream OutputStream()
 	{
 		Windows.Storage.Streams.IOutputStream _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).get_OutputStream(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocket)this.asInterface(uuid("7fe25bbb-c3bc-4677-8446-ca28a465a3af"))).get_OutputStream(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ConnectAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).abi_ConnectAsync(remoteHostName, remoteServiceName, &_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocket)this.asInterface(uuid("7fe25bbb-c3bc-4677-8446-ca28a465a3af"))).abi_ConnectAsync(remoteHostName, remoteServiceName, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ConnectWithEndpointPairAsync(Windows.Networking.EndpointPair endpointPair)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).abi_ConnectWithEndpointPairAsync(endpointPair, &_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocket)this.asInterface(uuid("7fe25bbb-c3bc-4677-8446-ca28a465a3af"))).abi_ConnectWithEndpointPairAsync(endpointPair, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction BindServiceNameAsync(HSTRING localServiceName)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).abi_BindServiceNameAsync(localServiceName, &_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocket)this.asInterface(uuid("7fe25bbb-c3bc-4677-8446-ca28a465a3af"))).abi_BindServiceNameAsync(localServiceName, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction BindEndpointAsync(Windows.Networking.HostName localHostName, HSTRING localServiceName)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).abi_BindEndpointAsync(localHostName, localServiceName, &_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocket)this.asInterface(uuid("7fe25bbb-c3bc-4677-8446-ca28a465a3af"))).abi_BindEndpointAsync(localHostName, localServiceName, &_ret));
 		return _ret;
 	}
 	final void JoinMulticastGroup(Windows.Networking.HostName host)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).abi_JoinMulticastGroup(host));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocket)this.asInterface(uuid("7fe25bbb-c3bc-4677-8446-ca28a465a3af"))).abi_JoinMulticastGroup(host));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IOutputStream) GetOutputStreamAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IOutputStream) _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).abi_GetOutputStreamAsync(remoteHostName, remoteServiceName, &_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocket)this.asInterface(uuid("7fe25bbb-c3bc-4677-8446-ca28a465a3af"))).abi_GetOutputStreamAsync(remoteHostName, remoteServiceName, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IOutputStream) GetOutputStreamWithEndpointPairAsync(Windows.Networking.EndpointPair endpointPair)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IOutputStream) _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).abi_GetOutputStreamWithEndpointPairAsync(endpointPair, &_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocket)this.asInterface(uuid("7fe25bbb-c3bc-4677-8446-ca28a465a3af"))).abi_GetOutputStreamWithEndpointPairAsync(endpointPair, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnMessageReceived(void delegate(Windows.Networking.Sockets.DatagramSocket, Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.DatagramSocket, Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs), Windows.Networking.Sockets.DatagramSocket, Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocket)this.asInterface(uuid("7fe25bbb-c3bc-4677-8446-ca28a465a3af"))).add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.DatagramSocket, Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs), Windows.Networking.Sockets.DatagramSocket, Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMessageReceived(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket).remove_MessageReceived(eventCookie));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocket)this.asInterface(uuid("7fe25bbb-c3bc-4677-8446-ca28a465a3af"))).remove_MessageReceived(eventCookie));
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	final Windows.Foundation.IAsyncAction BindServiceNameAndAdapterAsync(HSTRING localServiceName, Windows.Networking.Connectivity.NetworkAdapter adapter)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket2).abi_BindServiceNameAndAdapterAsync(localServiceName, adapter, &_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocket2)this.asInterface(uuid("d83ba354-9a9d-4185-a20a-1424c9c2a7cd"))).abi_BindServiceNameAndAdapterAsync(localServiceName, adapter, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction CancelIOAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket3).abi_CancelIOAsync(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocket3)this.asInterface(uuid("37544f09-ab92-4306-9ac1-0c381283d9c6"))).abi_CancelIOAsync(&_ret));
 		return _ret;
 	}
 	final void EnableTransferOwnership(GUID taskId)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket3).abi_EnableTransferOwnership(taskId));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocket3)this.asInterface(uuid("37544f09-ab92-4306-9ac1-0c381283d9c6"))).abi_EnableTransferOwnership(taskId));
 	}
 	final void EnableTransferOwnershipWithConnectedStandbyAction(GUID taskId, Windows.Networking.Sockets.SocketActivityConnectedStandbyAction connectedStandbyAction)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket3).abi_EnableTransferOwnershipWithConnectedStandbyAction(taskId, connectedStandbyAction));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocket3)this.asInterface(uuid("37544f09-ab92-4306-9ac1-0c381283d9c6"))).abi_EnableTransferOwnershipWithConnectedStandbyAction(taskId, connectedStandbyAction));
 	}
 	final void TransferOwnership(HSTRING socketId)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket3).abi_TransferOwnership(socketId));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocket3)this.asInterface(uuid("37544f09-ab92-4306-9ac1-0c381283d9c6"))).abi_TransferOwnership(socketId));
 	}
 	final void TransferOwnershipWithContext(HSTRING socketId, Windows.Networking.Sockets.SocketActivityContext data)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket3).abi_TransferOwnershipWithContext(socketId, data));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocket3)this.asInterface(uuid("37544f09-ab92-4306-9ac1-0c381283d9c6"))).abi_TransferOwnershipWithContext(socketId, data));
 	}
 	final void TransferOwnershipWithContextAndKeepAliveTime(HSTRING socketId, Windows.Networking.Sockets.SocketActivityContext data, Windows.Foundation.TimeSpan keepAliveTime)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocket3).abi_TransferOwnershipWithContextAndKeepAliveTime(socketId, data, keepAliveTime));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocket3)this.asInterface(uuid("37544f09-ab92-4306-9ac1-0c381283d9c6"))).abi_TransferOwnershipWithContextAndKeepAliveTime(socketId, data, keepAliveTime));
 	}
 
 	private static Windows.Networking.Sockets.IDatagramSocketStatics _staticInstance;
@@ -812,20 +812,20 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair)) GetEndpointPairsAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Sockets.IDatagramSocketStatics).abi_GetEndpointPairsAsync(remoteHostName, remoteServiceName, &_ret));
+		Debug.OK(staticInstance.abi_GetEndpointPairsAsync(remoteHostName, remoteServiceName, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair)) GetEndpointPairsWithSortOptionsAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName, Windows.Networking.HostNameSortOptions sortOptions)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Sockets.IDatagramSocketStatics).abi_GetEndpointPairsWithSortOptionsAsync(remoteHostName, remoteServiceName, sortOptions, &_ret));
+		Debug.OK(staticInstance.abi_GetEndpointPairsWithSortOptionsAsync(remoteHostName, remoteServiceName, sortOptions, &_ret));
 		return _ret;
 	}
 	static DatagramSocket New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(DatagramSocket).abi_ActivateInstance(&ret));
-		return ret.as!(DatagramSocket);
+		return cast(DatagramSocket) ret;
 	}
 }
 
@@ -835,52 +835,52 @@ extern(Windows):
 	final Windows.Networking.Sockets.SocketQualityOfService QualityOfService()
 	{
 		Windows.Networking.Sockets.SocketQualityOfService _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketControl).get_QualityOfService(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocketControl)this.asInterface(uuid("52ac3f2e-349a-4135-bb58-b79b2647d390"))).get_QualityOfService(&_ret));
 		return _ret;
 	}
 	final void QualityOfService(Windows.Networking.Sockets.SocketQualityOfService value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketControl).set_QualityOfService(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocketControl)this.asInterface(uuid("52ac3f2e-349a-4135-bb58-b79b2647d390"))).set_QualityOfService(value));
 	}
 	final ubyte OutboundUnicastHopLimit()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketControl).get_OutboundUnicastHopLimit(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocketControl)this.asInterface(uuid("52ac3f2e-349a-4135-bb58-b79b2647d390"))).get_OutboundUnicastHopLimit(&_ret));
 		return _ret;
 	}
 	final void OutboundUnicastHopLimit(ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketControl).set_OutboundUnicastHopLimit(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocketControl)this.asInterface(uuid("52ac3f2e-349a-4135-bb58-b79b2647d390"))).set_OutboundUnicastHopLimit(value));
 	}
 	final UINT32 InboundBufferSizeInBytes()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketControl2).get_InboundBufferSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocketControl2)this.asInterface(uuid("33ead5c2-979c-4415-82a1-3cfaf646c192"))).get_InboundBufferSizeInBytes(&_ret));
 		return _ret;
 	}
 	final void InboundBufferSizeInBytes(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketControl2).set_InboundBufferSizeInBytes(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocketControl2)this.asInterface(uuid("33ead5c2-979c-4415-82a1-3cfaf646c192"))).set_InboundBufferSizeInBytes(value));
 	}
 	final bool DontFragment()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketControl2).get_DontFragment(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocketControl2)this.asInterface(uuid("33ead5c2-979c-4415-82a1-3cfaf646c192"))).get_DontFragment(&_ret));
 		return _ret;
 	}
 	final void DontFragment(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketControl2).set_DontFragment(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocketControl2)this.asInterface(uuid("33ead5c2-979c-4415-82a1-3cfaf646c192"))).set_DontFragment(value));
 	}
 	final bool MulticastOnly()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketControl3).get_MulticastOnly(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocketControl3)this.asInterface(uuid("d4eb8256-1f6d-4598-9b57-d42a001df349"))).get_MulticastOnly(&_ret));
 		return _ret;
 	}
 	final void MulticastOnly(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketControl3).set_MulticastOnly(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocketControl3)this.asInterface(uuid("d4eb8256-1f6d-4598-9b57-d42a001df349"))).set_MulticastOnly(value));
 	}
 }
 
@@ -890,25 +890,25 @@ extern(Windows):
 	final Windows.Networking.HostName LocalAddress()
 	{
 		Windows.Networking.HostName _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketInformation).get_LocalAddress(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocketInformation)this.asInterface(uuid("5f1a569a-55fb-48cd-9706-7a974f7b1585"))).get_LocalAddress(&_ret));
 		return _ret;
 	}
 	final HSTRING LocalPort()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketInformation).get_LocalPort(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocketInformation)this.asInterface(uuid("5f1a569a-55fb-48cd-9706-7a974f7b1585"))).get_LocalPort(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.HostName RemoteAddress()
 	{
 		Windows.Networking.HostName _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketInformation).get_RemoteAddress(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocketInformation)this.asInterface(uuid("5f1a569a-55fb-48cd-9706-7a974f7b1585"))).get_RemoteAddress(&_ret));
 		return _ret;
 	}
 	final HSTRING RemotePort()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketInformation).get_RemotePort(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocketInformation)this.asInterface(uuid("5f1a569a-55fb-48cd-9706-7a974f7b1585"))).get_RemotePort(&_ret));
 		return _ret;
 	}
 }
@@ -919,31 +919,31 @@ extern(Windows):
 	final Windows.Networking.HostName RemoteAddress()
 	{
 		Windows.Networking.HostName _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketMessageReceivedEventArgs).get_RemoteAddress(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocketMessageReceivedEventArgs)this.asInterface(uuid("9e2ddca2-1712-4ce4-b179-8c652c6d107e"))).get_RemoteAddress(&_ret));
 		return _ret;
 	}
 	final HSTRING RemotePort()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketMessageReceivedEventArgs).get_RemotePort(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocketMessageReceivedEventArgs)this.asInterface(uuid("9e2ddca2-1712-4ce4-b179-8c652c6d107e"))).get_RemotePort(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.HostName LocalAddress()
 	{
 		Windows.Networking.HostName _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketMessageReceivedEventArgs).get_LocalAddress(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocketMessageReceivedEventArgs)this.asInterface(uuid("9e2ddca2-1712-4ce4-b179-8c652c6d107e"))).get_LocalAddress(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.DataReader GetDataReader()
 	{
 		Windows.Storage.Streams.DataReader _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketMessageReceivedEventArgs).abi_GetDataReader(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocketMessageReceivedEventArgs)this.asInterface(uuid("9e2ddca2-1712-4ce4-b179-8c652c6d107e"))).abi_GetDataReader(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IInputStream GetDataStream()
 	{
 		Windows.Storage.Streams.IInputStream _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IDatagramSocketMessageReceivedEventArgs).abi_GetDataStream(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IDatagramSocketMessageReceivedEventArgs)this.asInterface(uuid("9e2ddca2-1712-4ce4-b179-8c652c6d107e"))).abi_GetDataStream(&_ret));
 		return _ret;
 	}
 }
@@ -954,74 +954,74 @@ extern(Windows):
 	final Windows.Networking.Sockets.MessageWebSocketControl Control()
 	{
 		Windows.Networking.Sockets.MessageWebSocketControl _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocket).get_Control(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IMessageWebSocket)this.asInterface(uuid("33727d08-34d5-4746-ad7b-8dde5bc2ef88"))).get_Control(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.MessageWebSocketInformation Information()
 	{
 		Windows.Networking.Sockets.MessageWebSocketInformation _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocket).get_Information(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IMessageWebSocket)this.asInterface(uuid("33727d08-34d5-4746-ad7b-8dde5bc2ef88"))).get_Information(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnMessageReceived(void delegate(Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocket).add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs), Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.Sockets.IMessageWebSocket)this.asInterface(uuid("33727d08-34d5-4746-ad7b-8dde5bc2ef88"))).add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs), Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMessageReceived(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocket).remove_MessageReceived(eventCookie));
+		Debug.OK((cast(Windows.Networking.Sockets.IMessageWebSocket)this.asInterface(uuid("33727d08-34d5-4746-ad7b-8dde5bc2ef88"))).remove_MessageReceived(eventCookie));
 	}
 	final Windows.Storage.Streams.IOutputStream OutputStream()
 	{
 		Windows.Storage.Streams.IOutputStream _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).get_OutputStream(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocket)this.asInterface(uuid("f877396f-99b1-4e18-bc08-850c9adf156e"))).get_OutputStream(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ConnectAsync(Windows.Foundation.Uri uri)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).abi_ConnectAsync(uri, &_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocket)this.asInterface(uuid("f877396f-99b1-4e18-bc08-850c9adf156e"))).abi_ConnectAsync(uri, &_ret));
 		return _ret;
 	}
 	final void SetRequestHeader(HSTRING headerName, HSTRING headerValue)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).abi_SetRequestHeader(headerName, headerValue));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocket)this.asInterface(uuid("f877396f-99b1-4e18-bc08-850c9adf156e"))).abi_SetRequestHeader(headerName, headerValue));
 	}
 	final EventRegistrationToken OnClosed(void delegate(Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs), Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocket)this.asInterface(uuid("f877396f-99b1-4e18-bc08-850c9adf156e"))).add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs), Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeClosed(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).remove_Closed(eventCookie));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocket)this.asInterface(uuid("f877396f-99b1-4e18-bc08-850c9adf156e"))).remove_Closed(eventCookie));
 	}
 	final void CloseWithStatus(UINT16 code, HSTRING reason)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).abi_CloseWithStatus(code, reason));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocket)this.asInterface(uuid("f877396f-99b1-4e18-bc08-850c9adf156e"))).abi_CloseWithStatus(code, reason));
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	final EventRegistrationToken OnServerCustomValidationRequested(void delegate(Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocket2).add_ServerCustomValidationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs), Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.Sockets.IMessageWebSocket2)this.asInterface(uuid("bed0cee7-f9c8-440a-9ad5-737281d9742e"))).add_ServerCustomValidationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs), Windows.Networking.Sockets.MessageWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeServerCustomValidationRequested(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocket2).remove_ServerCustomValidationRequested(eventCookie));
+		Debug.OK((cast(Windows.Networking.Sockets.IMessageWebSocket2)this.asInterface(uuid("bed0cee7-f9c8-440a-9ad5-737281d9742e"))).remove_ServerCustomValidationRequested(eventCookie));
 	}
 	static MessageWebSocket New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MessageWebSocket).abi_ActivateInstance(&ret));
-		return ret.as!(MessageWebSocket);
+		return cast(MessageWebSocket) ret;
 	}
 }
 
@@ -1031,63 +1031,63 @@ extern(Windows):
 	final UINT32 MaxMessageSize()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocketControl).get_MaxMessageSize(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IMessageWebSocketControl)this.asInterface(uuid("8118388a-c629-4f0a-80fb-81fc05538862"))).get_MaxMessageSize(&_ret));
 		return _ret;
 	}
 	final void MaxMessageSize(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocketControl).set_MaxMessageSize(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IMessageWebSocketControl)this.asInterface(uuid("8118388a-c629-4f0a-80fb-81fc05538862"))).set_MaxMessageSize(value));
 	}
 	final Windows.Networking.Sockets.SocketMessageType MessageType()
 	{
 		Windows.Networking.Sockets.SocketMessageType _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocketControl).get_MessageType(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IMessageWebSocketControl)this.asInterface(uuid("8118388a-c629-4f0a-80fb-81fc05538862"))).get_MessageType(&_ret));
 		return _ret;
 	}
 	final void MessageType(Windows.Networking.Sockets.SocketMessageType value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocketControl).set_MessageType(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IMessageWebSocketControl)this.asInterface(uuid("8118388a-c629-4f0a-80fb-81fc05538862"))).set_MessageType(value));
 	}
 	final UINT32 OutboundBufferSizeInBytes()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).get_OutboundBufferSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketControl)this.asInterface(uuid("2ec4bdc3-d9a5-455a-9811-de24d45337e9"))).get_OutboundBufferSizeInBytes(&_ret));
 		return _ret;
 	}
 	final void OutboundBufferSizeInBytes(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).set_OutboundBufferSizeInBytes(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketControl)this.asInterface(uuid("2ec4bdc3-d9a5-455a-9811-de24d45337e9"))).set_OutboundBufferSizeInBytes(value));
 	}
 	final Windows.Security.Credentials.PasswordCredential ServerCredential()
 	{
 		Windows.Security.Credentials.PasswordCredential _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).get_ServerCredential(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketControl)this.asInterface(uuid("2ec4bdc3-d9a5-455a-9811-de24d45337e9"))).get_ServerCredential(&_ret));
 		return _ret;
 	}
 	final void ServerCredential(Windows.Security.Credentials.PasswordCredential value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).set_ServerCredential(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketControl)this.asInterface(uuid("2ec4bdc3-d9a5-455a-9811-de24d45337e9"))).set_ServerCredential(value));
 	}
 	final Windows.Security.Credentials.PasswordCredential ProxyCredential()
 	{
 		Windows.Security.Credentials.PasswordCredential _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).get_ProxyCredential(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketControl)this.asInterface(uuid("2ec4bdc3-d9a5-455a-9811-de24d45337e9"))).get_ProxyCredential(&_ret));
 		return _ret;
 	}
 	final void ProxyCredential(Windows.Security.Credentials.PasswordCredential value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).set_ProxyCredential(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketControl)this.asInterface(uuid("2ec4bdc3-d9a5-455a-9811-de24d45337e9"))).set_ProxyCredential(value));
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) SupportedProtocols()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).get_SupportedProtocols(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketControl)this.asInterface(uuid("2ec4bdc3-d9a5-455a-9811-de24d45337e9"))).get_SupportedProtocols(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.ChainValidationResult) IgnorableServerCertificateErrors()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.ChainValidationResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl2).get_IgnorableServerCertificateErrors(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketControl2)this.asInterface(uuid("79c3be03-f2ca-461e-af4e-9665bc2d0620"))).get_IgnorableServerCertificateErrors(&_ret));
 		return _ret;
 	}
 }
@@ -1098,43 +1098,43 @@ extern(Windows):
 	final Windows.Networking.HostName LocalAddress()
 	{
 		Windows.Networking.HostName _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation).get_LocalAddress(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketInformation)this.asInterface(uuid("5e01e316-c92a-47a5-b25f-07847639d181"))).get_LocalAddress(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.BandwidthStatistics BandwidthStatistics()
 	{
 		Windows.Networking.Sockets.BandwidthStatistics _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation).get_BandwidthStatistics(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketInformation)this.asInterface(uuid("5e01e316-c92a-47a5-b25f-07847639d181"))).get_BandwidthStatistics(&_ret));
 		return _ret;
 	}
 	final HSTRING Protocol()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation).get_Protocol(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketInformation)this.asInterface(uuid("5e01e316-c92a-47a5-b25f-07847639d181"))).get_Protocol(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Cryptography.Certificates.Certificate ServerCertificate()
 	{
 		Windows.Security.Cryptography.Certificates.Certificate _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation2).get_ServerCertificate(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketInformation2)this.asInterface(uuid("ce1d39ce-a1b7-4d43-8269-8d5b981bd47a"))).get_ServerCertificate(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.SocketSslErrorSeverity ServerCertificateErrorSeverity()
 	{
 		Windows.Networking.Sockets.SocketSslErrorSeverity _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation2).get_ServerCertificateErrorSeverity(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketInformation2)this.asInterface(uuid("ce1d39ce-a1b7-4d43-8269-8d5b981bd47a"))).get_ServerCertificateErrorSeverity(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) ServerCertificateErrors()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation2).get_ServerCertificateErrors(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketInformation2)this.asInterface(uuid("ce1d39ce-a1b7-4d43-8269-8d5b981bd47a"))).get_ServerCertificateErrors(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) ServerIntermediateCertificates()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation2).get_ServerIntermediateCertificates(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketInformation2)this.asInterface(uuid("ce1d39ce-a1b7-4d43-8269-8d5b981bd47a"))).get_ServerIntermediateCertificates(&_ret));
 		return _ret;
 	}
 }
@@ -1145,19 +1145,19 @@ extern(Windows):
 	final Windows.Networking.Sockets.SocketMessageType MessageType()
 	{
 		Windows.Networking.Sockets.SocketMessageType _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocketMessageReceivedEventArgs).get_MessageType(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IMessageWebSocketMessageReceivedEventArgs)this.asInterface(uuid("478c22ac-4c4b-42ed-9ed7-1ef9f94fa3d5"))).get_MessageType(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.DataReader GetDataReader()
 	{
 		Windows.Storage.Streams.DataReader _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocketMessageReceivedEventArgs).abi_GetDataReader(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IMessageWebSocketMessageReceivedEventArgs)this.asInterface(uuid("478c22ac-4c4b-42ed-9ed7-1ef9f94fa3d5"))).abi_GetDataReader(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IInputStream GetDataStream()
 	{
 		Windows.Storage.Streams.IInputStream _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IMessageWebSocketMessageReceivedEventArgs).abi_GetDataStream(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IMessageWebSocketMessageReceivedEventArgs)this.asInterface(uuid("478c22ac-4c4b-42ed-9ed7-1ef9f94fa3d5"))).abi_GetDataStream(&_ret));
 		return _ret;
 	}
 }
@@ -1168,14 +1168,14 @@ extern(Windows):
 	final Windows.Storage.Streams.IBuffer Data()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.ISocketActivityContext).get_Data(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.ISocketActivityContext)this.asInterface(uuid("43b04d64-4c85-4396-a637-1d973f6ebd49"))).get_Data(&_ret));
 		return _ret;
 	}
 	static Windows.Networking.Sockets.SocketActivityContext New(Windows.Storage.Streams.IBuffer data)
 	{
 		auto factory = factory!(Windows.Networking.Sockets.ISocketActivityContextFactory);
 		Windows.Networking.Sockets.SocketActivityContext _ret;
-		Debug.OK(factory.as!(Windows.Networking.Sockets.ISocketActivityContextFactory).abi_Create(data, &_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.ISocketActivityContextFactory)factory.asInterface(uuid("b99fc3c3-088c-4388-83ae-2525138e049a"))).abi_Create(data, &_ret));
 		return _ret;
 	}
 }
@@ -1186,43 +1186,43 @@ extern(Windows):
 	final GUID TaskId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.ISocketActivityInformation).get_TaskId(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.ISocketActivityInformation)this.asInterface(uuid("8d8a42e4-a87e-4b74-9968-185b2511defe"))).get_TaskId(&_ret));
 		return _ret;
 	}
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.ISocketActivityInformation).get_Id(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.ISocketActivityInformation)this.asInterface(uuid("8d8a42e4-a87e-4b74-9968-185b2511defe"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.SocketActivityKind SocketKind()
 	{
 		Windows.Networking.Sockets.SocketActivityKind _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.ISocketActivityInformation).get_SocketKind(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.ISocketActivityInformation)this.asInterface(uuid("8d8a42e4-a87e-4b74-9968-185b2511defe"))).get_SocketKind(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.SocketActivityContext Context()
 	{
 		Windows.Networking.Sockets.SocketActivityContext _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.ISocketActivityInformation).get_Context(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.ISocketActivityInformation)this.asInterface(uuid("8d8a42e4-a87e-4b74-9968-185b2511defe"))).get_Context(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.DatagramSocket DatagramSocket()
 	{
 		Windows.Networking.Sockets.DatagramSocket _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.ISocketActivityInformation).get_DatagramSocket(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.ISocketActivityInformation)this.asInterface(uuid("8d8a42e4-a87e-4b74-9968-185b2511defe"))).get_DatagramSocket(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.StreamSocket StreamSocket()
 	{
 		Windows.Networking.Sockets.StreamSocket _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.ISocketActivityInformation).get_StreamSocket(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.ISocketActivityInformation)this.asInterface(uuid("8d8a42e4-a87e-4b74-9968-185b2511defe"))).get_StreamSocket(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.StreamSocketListener StreamSocketListener()
 	{
 		Windows.Networking.Sockets.StreamSocketListener _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.ISocketActivityInformation).get_StreamSocketListener(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.ISocketActivityInformation)this.asInterface(uuid("8d8a42e4-a87e-4b74-9968-185b2511defe"))).get_StreamSocketListener(&_ret));
 		return _ret;
 	}
 
@@ -1235,7 +1235,7 @@ extern(Windows):
 	static Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Networking.Sockets.SocketActivityInformation) AllSockets()
 	{
 		Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Networking.Sockets.SocketActivityInformation) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Sockets.ISocketActivityInformationStatics).get_AllSockets(&_ret));
+		Debug.OK(staticInstance.get_AllSockets(&_ret));
 		return _ret;
 	}
 }
@@ -1246,13 +1246,13 @@ extern(Windows):
 	final Windows.Networking.Sockets.SocketActivityTriggerReason Reason()
 	{
 		Windows.Networking.Sockets.SocketActivityTriggerReason _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.ISocketActivityTriggerDetails).get_Reason(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.ISocketActivityTriggerDetails)this.asInterface(uuid("45f406a7-fc9f-4f81-acad-355fef51e67b"))).get_Reason(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.SocketActivityInformation SocketInformation()
 	{
 		Windows.Networking.Sockets.SocketActivityInformation _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.ISocketActivityTriggerDetails).get_SocketInformation(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.ISocketActivityTriggerDetails)this.asInterface(uuid("45f406a7-fc9f-4f81-acad-355fef51e67b"))).get_SocketInformation(&_ret));
 		return _ret;
 	}
 }
@@ -1268,7 +1268,7 @@ interface SocketError
 	static Windows.Networking.Sockets.SocketErrorStatus GetStatus(INT32 hresult)
 	{
 		Windows.Networking.Sockets.SocketErrorStatus _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Sockets.ISocketErrorStatics).abi_GetStatus(hresult, &_ret));
+		Debug.OK(staticInstance.abi_GetStatus(hresult, &_ret));
 		return _ret;
 	}
 }
@@ -1279,92 +1279,92 @@ extern(Windows):
 	final Windows.Networking.Sockets.StreamSocketControl Control()
 	{
 		Windows.Networking.Sockets.StreamSocketControl _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket).get_Control(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocket)this.asInterface(uuid("69a22cf3-fc7b-4857-af38-f6e7de6a5b49"))).get_Control(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.StreamSocketInformation Information()
 	{
 		Windows.Networking.Sockets.StreamSocketInformation _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket).get_Information(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocket)this.asInterface(uuid("69a22cf3-fc7b-4857-af38-f6e7de6a5b49"))).get_Information(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IInputStream InputStream()
 	{
 		Windows.Storage.Streams.IInputStream _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket).get_InputStream(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocket)this.asInterface(uuid("69a22cf3-fc7b-4857-af38-f6e7de6a5b49"))).get_InputStream(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IOutputStream OutputStream()
 	{
 		Windows.Storage.Streams.IOutputStream _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket).get_OutputStream(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocket)this.asInterface(uuid("69a22cf3-fc7b-4857-af38-f6e7de6a5b49"))).get_OutputStream(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ConnectWithEndpointPairAsync(Windows.Networking.EndpointPair endpointPair)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket).abi_ConnectWithEndpointPairAsync(endpointPair, &_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocket)this.asInterface(uuid("69a22cf3-fc7b-4857-af38-f6e7de6a5b49"))).abi_ConnectWithEndpointPairAsync(endpointPair, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ConnectAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket).abi_ConnectAsync(remoteHostName, remoteServiceName, &_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocket)this.asInterface(uuid("69a22cf3-fc7b-4857-af38-f6e7de6a5b49"))).abi_ConnectAsync(remoteHostName, remoteServiceName, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ConnectWithEndpointPairAndProtectionLevelAsync(Windows.Networking.EndpointPair endpointPair, Windows.Networking.Sockets.SocketProtectionLevel protectionLevel)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket).abi_ConnectWithEndpointPairAndProtectionLevelAsync(endpointPair, protectionLevel, &_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocket)this.asInterface(uuid("69a22cf3-fc7b-4857-af38-f6e7de6a5b49"))).abi_ConnectWithEndpointPairAndProtectionLevelAsync(endpointPair, protectionLevel, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ConnectWithProtectionLevelAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName, Windows.Networking.Sockets.SocketProtectionLevel protectionLevel)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket).abi_ConnectWithProtectionLevelAsync(remoteHostName, remoteServiceName, protectionLevel, &_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocket)this.asInterface(uuid("69a22cf3-fc7b-4857-af38-f6e7de6a5b49"))).abi_ConnectWithProtectionLevelAsync(remoteHostName, remoteServiceName, protectionLevel, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction UpgradeToSslAsync(Windows.Networking.Sockets.SocketProtectionLevel protectionLevel, Windows.Networking.HostName validationHostName)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket).abi_UpgradeToSslAsync(protectionLevel, validationHostName, &_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocket)this.asInterface(uuid("69a22cf3-fc7b-4857-af38-f6e7de6a5b49"))).abi_UpgradeToSslAsync(protectionLevel, validationHostName, &_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	final Windows.Foundation.IAsyncAction ConnectWithProtectionLevelAndAdapterAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName, Windows.Networking.Sockets.SocketProtectionLevel protectionLevel, Windows.Networking.Connectivity.NetworkAdapter adapter)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket2).abi_ConnectWithProtectionLevelAndAdapterAsync(remoteHostName, remoteServiceName, protectionLevel, adapter, &_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocket2)this.asInterface(uuid("29d0e575-f314-4d09-adf0-0fbd967fbd9f"))).abi_ConnectWithProtectionLevelAndAdapterAsync(remoteHostName, remoteServiceName, protectionLevel, adapter, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction CancelIOAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket3).abi_CancelIOAsync(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocket3)this.asInterface(uuid("3f430b00-9d28-4854-bac3-2301941ec223"))).abi_CancelIOAsync(&_ret));
 		return _ret;
 	}
 	final void EnableTransferOwnership(GUID taskId)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket3).abi_EnableTransferOwnership(taskId));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocket3)this.asInterface(uuid("3f430b00-9d28-4854-bac3-2301941ec223"))).abi_EnableTransferOwnership(taskId));
 	}
 	final void EnableTransferOwnershipWithConnectedStandbyAction(GUID taskId, Windows.Networking.Sockets.SocketActivityConnectedStandbyAction connectedStandbyAction)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket3).abi_EnableTransferOwnershipWithConnectedStandbyAction(taskId, connectedStandbyAction));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocket3)this.asInterface(uuid("3f430b00-9d28-4854-bac3-2301941ec223"))).abi_EnableTransferOwnershipWithConnectedStandbyAction(taskId, connectedStandbyAction));
 	}
 	final void TransferOwnership(HSTRING socketId)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket3).abi_TransferOwnership(socketId));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocket3)this.asInterface(uuid("3f430b00-9d28-4854-bac3-2301941ec223"))).abi_TransferOwnership(socketId));
 	}
 	final void TransferOwnershipWithContext(HSTRING socketId, Windows.Networking.Sockets.SocketActivityContext data)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket3).abi_TransferOwnershipWithContext(socketId, data));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocket3)this.asInterface(uuid("3f430b00-9d28-4854-bac3-2301941ec223"))).abi_TransferOwnershipWithContext(socketId, data));
 	}
 	final void TransferOwnershipWithContextAndKeepAliveTime(HSTRING socketId, Windows.Networking.Sockets.SocketActivityContext data, Windows.Foundation.TimeSpan keepAliveTime)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocket3).abi_TransferOwnershipWithContextAndKeepAliveTime(socketId, data, keepAliveTime));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocket3)this.asInterface(uuid("3f430b00-9d28-4854-bac3-2301941ec223"))).abi_TransferOwnershipWithContextAndKeepAliveTime(socketId, data, keepAliveTime));
 	}
 
 	private static Windows.Networking.Sockets.IStreamSocketStatics _staticInstance;
@@ -1376,20 +1376,20 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair)) GetEndpointPairsAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Sockets.IStreamSocketStatics).abi_GetEndpointPairsAsync(remoteHostName, remoteServiceName, &_ret));
+		Debug.OK(staticInstance.abi_GetEndpointPairsAsync(remoteHostName, remoteServiceName, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair)) GetEndpointPairsWithSortOptionsAsync(Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName, Windows.Networking.HostNameSortOptions sortOptions)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Sockets.IStreamSocketStatics).abi_GetEndpointPairsWithSortOptionsAsync(remoteHostName, remoteServiceName, sortOptions, &_ret));
+		Debug.OK(staticInstance.abi_GetEndpointPairsWithSortOptionsAsync(remoteHostName, remoteServiceName, sortOptions, &_ret));
 		return _ret;
 	}
 	static StreamSocket New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(StreamSocket).abi_ActivateInstance(&ret));
-		return ret.as!(StreamSocket);
+		return cast(StreamSocket) ret;
 	}
 }
 
@@ -1399,78 +1399,78 @@ extern(Windows):
 	final bool NoDelay()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl).get_NoDelay(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketControl)this.asInterface(uuid("fe25adf1-92ab-4af3-9992-0f4c85e36cc4"))).get_NoDelay(&_ret));
 		return _ret;
 	}
 	final void NoDelay(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl).set_NoDelay(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketControl)this.asInterface(uuid("fe25adf1-92ab-4af3-9992-0f4c85e36cc4"))).set_NoDelay(value));
 	}
 	final bool KeepAlive()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl).get_KeepAlive(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketControl)this.asInterface(uuid("fe25adf1-92ab-4af3-9992-0f4c85e36cc4"))).get_KeepAlive(&_ret));
 		return _ret;
 	}
 	final void KeepAlive(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl).set_KeepAlive(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketControl)this.asInterface(uuid("fe25adf1-92ab-4af3-9992-0f4c85e36cc4"))).set_KeepAlive(value));
 	}
 	final UINT32 OutboundBufferSizeInBytes()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl).get_OutboundBufferSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketControl)this.asInterface(uuid("fe25adf1-92ab-4af3-9992-0f4c85e36cc4"))).get_OutboundBufferSizeInBytes(&_ret));
 		return _ret;
 	}
 	final void OutboundBufferSizeInBytes(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl).set_OutboundBufferSizeInBytes(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketControl)this.asInterface(uuid("fe25adf1-92ab-4af3-9992-0f4c85e36cc4"))).set_OutboundBufferSizeInBytes(value));
 	}
 	final Windows.Networking.Sockets.SocketQualityOfService QualityOfService()
 	{
 		Windows.Networking.Sockets.SocketQualityOfService _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl).get_QualityOfService(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketControl)this.asInterface(uuid("fe25adf1-92ab-4af3-9992-0f4c85e36cc4"))).get_QualityOfService(&_ret));
 		return _ret;
 	}
 	final void QualityOfService(Windows.Networking.Sockets.SocketQualityOfService value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl).set_QualityOfService(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketControl)this.asInterface(uuid("fe25adf1-92ab-4af3-9992-0f4c85e36cc4"))).set_QualityOfService(value));
 	}
 	final ubyte OutboundUnicastHopLimit()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl).get_OutboundUnicastHopLimit(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketControl)this.asInterface(uuid("fe25adf1-92ab-4af3-9992-0f4c85e36cc4"))).get_OutboundUnicastHopLimit(&_ret));
 		return _ret;
 	}
 	final void OutboundUnicastHopLimit(ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl).set_OutboundUnicastHopLimit(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketControl)this.asInterface(uuid("fe25adf1-92ab-4af3-9992-0f4c85e36cc4"))).set_OutboundUnicastHopLimit(value));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.ChainValidationResult) IgnorableServerCertificateErrors()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.ChainValidationResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl2).get_IgnorableServerCertificateErrors(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketControl2)this.asInterface(uuid("c2d09a56-060f-44c1-b8e2-1fbf60bd62c5"))).get_IgnorableServerCertificateErrors(&_ret));
 		return _ret;
 	}
 	final bool SerializeConnectionAttempts()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl3).get_SerializeConnectionAttempts(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketControl3)this.asInterface(uuid("c56a444c-4e74-403e-894c-b31cae5c7342"))).get_SerializeConnectionAttempts(&_ret));
 		return _ret;
 	}
 	final void SerializeConnectionAttempts(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl3).set_SerializeConnectionAttempts(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketControl3)this.asInterface(uuid("c56a444c-4e74-403e-894c-b31cae5c7342"))).set_SerializeConnectionAttempts(value));
 	}
 	final Windows.Security.Cryptography.Certificates.Certificate ClientCertificate()
 	{
 		Windows.Security.Cryptography.Certificates.Certificate _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl3).get_ClientCertificate(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketControl3)this.asInterface(uuid("c56a444c-4e74-403e-894c-b31cae5c7342"))).get_ClientCertificate(&_ret));
 		return _ret;
 	}
 	final void ClientCertificate(Windows.Security.Cryptography.Certificates.Certificate value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketControl3).set_ClientCertificate(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketControl3)this.asInterface(uuid("c56a444c-4e74-403e-894c-b31cae5c7342"))).set_ClientCertificate(value));
 	}
 }
 
@@ -1480,85 +1480,85 @@ extern(Windows):
 	final Windows.Networking.HostName LocalAddress()
 	{
 		Windows.Networking.HostName _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation).get_LocalAddress(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketInformation)this.asInterface(uuid("3b80ae30-5e68-4205-88f0-dc85d2e25ded"))).get_LocalAddress(&_ret));
 		return _ret;
 	}
 	final HSTRING LocalPort()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation).get_LocalPort(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketInformation)this.asInterface(uuid("3b80ae30-5e68-4205-88f0-dc85d2e25ded"))).get_LocalPort(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.HostName RemoteHostName()
 	{
 		Windows.Networking.HostName _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation).get_RemoteHostName(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketInformation)this.asInterface(uuid("3b80ae30-5e68-4205-88f0-dc85d2e25ded"))).get_RemoteHostName(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.HostName RemoteAddress()
 	{
 		Windows.Networking.HostName _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation).get_RemoteAddress(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketInformation)this.asInterface(uuid("3b80ae30-5e68-4205-88f0-dc85d2e25ded"))).get_RemoteAddress(&_ret));
 		return _ret;
 	}
 	final HSTRING RemoteServiceName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation).get_RemoteServiceName(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketInformation)this.asInterface(uuid("3b80ae30-5e68-4205-88f0-dc85d2e25ded"))).get_RemoteServiceName(&_ret));
 		return _ret;
 	}
 	final HSTRING RemotePort()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation).get_RemotePort(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketInformation)this.asInterface(uuid("3b80ae30-5e68-4205-88f0-dc85d2e25ded"))).get_RemotePort(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.RoundTripTimeStatistics RoundTripTimeStatistics()
 	{
 		Windows.Networking.Sockets.RoundTripTimeStatistics _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation).get_RoundTripTimeStatistics(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketInformation)this.asInterface(uuid("3b80ae30-5e68-4205-88f0-dc85d2e25ded"))).get_RoundTripTimeStatistics(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.BandwidthStatistics BandwidthStatistics()
 	{
 		Windows.Networking.Sockets.BandwidthStatistics _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation).get_BandwidthStatistics(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketInformation)this.asInterface(uuid("3b80ae30-5e68-4205-88f0-dc85d2e25ded"))).get_BandwidthStatistics(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.SocketProtectionLevel ProtectionLevel()
 	{
 		Windows.Networking.Sockets.SocketProtectionLevel _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation).get_ProtectionLevel(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketInformation)this.asInterface(uuid("3b80ae30-5e68-4205-88f0-dc85d2e25ded"))).get_ProtectionLevel(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer SessionKey()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation).get_SessionKey(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketInformation)this.asInterface(uuid("3b80ae30-5e68-4205-88f0-dc85d2e25ded"))).get_SessionKey(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.SocketSslErrorSeverity ServerCertificateErrorSeverity()
 	{
 		Windows.Networking.Sockets.SocketSslErrorSeverity _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation2).get_ServerCertificateErrorSeverity(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketInformation2)this.asInterface(uuid("12c28452-4bdc-4ee4-976a-cf130e9d92e3"))).get_ServerCertificateErrorSeverity(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) ServerCertificateErrors()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation2).get_ServerCertificateErrors(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketInformation2)this.asInterface(uuid("12c28452-4bdc-4ee4-976a-cf130e9d92e3"))).get_ServerCertificateErrors(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Cryptography.Certificates.Certificate ServerCertificate()
 	{
 		Windows.Security.Cryptography.Certificates.Certificate _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation2).get_ServerCertificate(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketInformation2)this.asInterface(uuid("12c28452-4bdc-4ee4-976a-cf130e9d92e3"))).get_ServerCertificate(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) ServerIntermediateCertificates()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketInformation2).get_ServerIntermediateCertificates(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketInformation2)this.asInterface(uuid("12c28452-4bdc-4ee4-976a-cf130e9d92e3"))).get_ServerIntermediateCertificates(&_ret));
 		return _ret;
 	}
 }
@@ -1569,80 +1569,80 @@ extern(Windows):
 	final Windows.Networking.Sockets.StreamSocketListenerControl Control()
 	{
 		Windows.Networking.Sockets.StreamSocketListenerControl _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener).get_Control(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListener)this.asInterface(uuid("ff513437-df9f-4df0-bf82-0ec5d7b35aae"))).get_Control(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.StreamSocketListenerInformation Information()
 	{
 		Windows.Networking.Sockets.StreamSocketListenerInformation _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener).get_Information(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListener)this.asInterface(uuid("ff513437-df9f-4df0-bf82-0ec5d7b35aae"))).get_Information(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction BindServiceNameAsync(HSTRING localServiceName)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener).abi_BindServiceNameAsync(localServiceName, &_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListener)this.asInterface(uuid("ff513437-df9f-4df0-bf82-0ec5d7b35aae"))).abi_BindServiceNameAsync(localServiceName, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction BindEndpointAsync(Windows.Networking.HostName localHostName, HSTRING localServiceName)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener).abi_BindEndpointAsync(localHostName, localServiceName, &_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListener)this.asInterface(uuid("ff513437-df9f-4df0-bf82-0ec5d7b35aae"))).abi_BindEndpointAsync(localHostName, localServiceName, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnConnectionReceived(void delegate(Windows.Networking.Sockets.StreamSocketListener, Windows.Networking.Sockets.StreamSocketListenerConnectionReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener).add_ConnectionReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.StreamSocketListener, Windows.Networking.Sockets.StreamSocketListenerConnectionReceivedEventArgs), Windows.Networking.Sockets.StreamSocketListener, Windows.Networking.Sockets.StreamSocketListenerConnectionReceivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListener)this.asInterface(uuid("ff513437-df9f-4df0-bf82-0ec5d7b35aae"))).add_ConnectionReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.StreamSocketListener, Windows.Networking.Sockets.StreamSocketListenerConnectionReceivedEventArgs), Windows.Networking.Sockets.StreamSocketListener, Windows.Networking.Sockets.StreamSocketListenerConnectionReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeConnectionReceived(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener).remove_ConnectionReceived(eventCookie));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListener)this.asInterface(uuid("ff513437-df9f-4df0-bf82-0ec5d7b35aae"))).remove_ConnectionReceived(eventCookie));
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	final Windows.Foundation.IAsyncAction BindServiceNameWithProtectionLevelAsync(HSTRING localServiceName, Windows.Networking.Sockets.SocketProtectionLevel protectionLevel)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener2).abi_BindServiceNameWithProtectionLevelAsync(localServiceName, protectionLevel, &_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListener2)this.asInterface(uuid("658dc13e-bb3e-4458-b232-ed1088694b98"))).abi_BindServiceNameWithProtectionLevelAsync(localServiceName, protectionLevel, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction BindServiceNameWithProtectionLevelAndAdapterAsync(HSTRING localServiceName, Windows.Networking.Sockets.SocketProtectionLevel protectionLevel, Windows.Networking.Connectivity.NetworkAdapter adapter)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener2).abi_BindServiceNameWithProtectionLevelAndAdapterAsync(localServiceName, protectionLevel, adapter, &_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListener2)this.asInterface(uuid("658dc13e-bb3e-4458-b232-ed1088694b98"))).abi_BindServiceNameWithProtectionLevelAndAdapterAsync(localServiceName, protectionLevel, adapter, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction CancelIOAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener3).abi_CancelIOAsync(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListener3)this.asInterface(uuid("4798201c-bdf8-4919-8542-28d450e74507"))).abi_CancelIOAsync(&_ret));
 		return _ret;
 	}
 	final void EnableTransferOwnership(GUID taskId)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener3).abi_EnableTransferOwnership(taskId));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListener3)this.asInterface(uuid("4798201c-bdf8-4919-8542-28d450e74507"))).abi_EnableTransferOwnership(taskId));
 	}
 	final void EnableTransferOwnershipWithConnectedStandbyAction(GUID taskId, Windows.Networking.Sockets.SocketActivityConnectedStandbyAction connectedStandbyAction)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener3).abi_EnableTransferOwnershipWithConnectedStandbyAction(taskId, connectedStandbyAction));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListener3)this.asInterface(uuid("4798201c-bdf8-4919-8542-28d450e74507"))).abi_EnableTransferOwnershipWithConnectedStandbyAction(taskId, connectedStandbyAction));
 	}
 	final void TransferOwnership(HSTRING socketId)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener3).abi_TransferOwnership(socketId));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListener3)this.asInterface(uuid("4798201c-bdf8-4919-8542-28d450e74507"))).abi_TransferOwnership(socketId));
 	}
 	final void TransferOwnershipWithContext(HSTRING socketId, Windows.Networking.Sockets.SocketActivityContext data)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListener3).abi_TransferOwnershipWithContext(socketId, data));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListener3)this.asInterface(uuid("4798201c-bdf8-4919-8542-28d450e74507"))).abi_TransferOwnershipWithContext(socketId, data));
 	}
 	static StreamSocketListener New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(StreamSocketListener).abi_ActivateInstance(&ret));
-		return ret.as!(StreamSocketListener);
+		return cast(StreamSocketListener) ret;
 	}
 }
 
@@ -1652,7 +1652,7 @@ extern(Windows):
 	final Windows.Networking.Sockets.StreamSocket Socket()
 	{
 		Windows.Networking.Sockets.StreamSocket _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerConnectionReceivedEventArgs).get_Socket(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListenerConnectionReceivedEventArgs)this.asInterface(uuid("0c472ea9-373f-447b-85b1-ddd4548803ba"))).get_Socket(&_ret));
 		return _ret;
 	}
 }
@@ -1663,52 +1663,52 @@ extern(Windows):
 	final Windows.Networking.Sockets.SocketQualityOfService QualityOfService()
 	{
 		Windows.Networking.Sockets.SocketQualityOfService _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerControl).get_QualityOfService(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListenerControl)this.asInterface(uuid("20d8c576-8d8a-4dba-9722-a16c4d984980"))).get_QualityOfService(&_ret));
 		return _ret;
 	}
 	final void QualityOfService(Windows.Networking.Sockets.SocketQualityOfService value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerControl).set_QualityOfService(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListenerControl)this.asInterface(uuid("20d8c576-8d8a-4dba-9722-a16c4d984980"))).set_QualityOfService(value));
 	}
 	final bool NoDelay()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerControl2).get_NoDelay(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListenerControl2)this.asInterface(uuid("948bb665-2c3e-404b-b8b0-8eb249a2b0a1"))).get_NoDelay(&_ret));
 		return _ret;
 	}
 	final void NoDelay(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerControl2).set_NoDelay(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListenerControl2)this.asInterface(uuid("948bb665-2c3e-404b-b8b0-8eb249a2b0a1"))).set_NoDelay(value));
 	}
 	final bool KeepAlive()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerControl2).get_KeepAlive(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListenerControl2)this.asInterface(uuid("948bb665-2c3e-404b-b8b0-8eb249a2b0a1"))).get_KeepAlive(&_ret));
 		return _ret;
 	}
 	final void KeepAlive(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerControl2).set_KeepAlive(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListenerControl2)this.asInterface(uuid("948bb665-2c3e-404b-b8b0-8eb249a2b0a1"))).set_KeepAlive(value));
 	}
 	final UINT32 OutboundBufferSizeInBytes()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerControl2).get_OutboundBufferSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListenerControl2)this.asInterface(uuid("948bb665-2c3e-404b-b8b0-8eb249a2b0a1"))).get_OutboundBufferSizeInBytes(&_ret));
 		return _ret;
 	}
 	final void OutboundBufferSizeInBytes(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerControl2).set_OutboundBufferSizeInBytes(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListenerControl2)this.asInterface(uuid("948bb665-2c3e-404b-b8b0-8eb249a2b0a1"))).set_OutboundBufferSizeInBytes(value));
 	}
 	final ubyte OutboundUnicastHopLimit()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerControl2).get_OutboundUnicastHopLimit(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListenerControl2)this.asInterface(uuid("948bb665-2c3e-404b-b8b0-8eb249a2b0a1"))).get_OutboundUnicastHopLimit(&_ret));
 		return _ret;
 	}
 	final void OutboundUnicastHopLimit(ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerControl2).set_OutboundUnicastHopLimit(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListenerControl2)this.asInterface(uuid("948bb665-2c3e-404b-b8b0-8eb249a2b0a1"))).set_OutboundUnicastHopLimit(value));
 	}
 }
 
@@ -1718,7 +1718,7 @@ extern(Windows):
 	final HSTRING LocalPort()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamSocketListenerInformation).get_LocalPort(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamSocketListenerInformation)this.asInterface(uuid("e62ba82f-a63a-430b-bf62-29e93e5633b4"))).get_LocalPort(&_ret));
 		return _ret;
 	}
 }
@@ -1729,70 +1729,70 @@ extern(Windows):
 	final Windows.Networking.Sockets.StreamWebSocketControl Control()
 	{
 		Windows.Networking.Sockets.StreamWebSocketControl _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamWebSocket).get_Control(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamWebSocket)this.asInterface(uuid("bd4a49d8-b289-45bb-97eb-c7525205a843"))).get_Control(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.StreamWebSocketInformation Information()
 	{
 		Windows.Networking.Sockets.StreamWebSocketInformation _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamWebSocket).get_Information(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamWebSocket)this.asInterface(uuid("bd4a49d8-b289-45bb-97eb-c7525205a843"))).get_Information(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IInputStream InputStream()
 	{
 		Windows.Storage.Streams.IInputStream _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamWebSocket).get_InputStream(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamWebSocket)this.asInterface(uuid("bd4a49d8-b289-45bb-97eb-c7525205a843"))).get_InputStream(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IOutputStream OutputStream()
 	{
 		Windows.Storage.Streams.IOutputStream _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).get_OutputStream(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocket)this.asInterface(uuid("f877396f-99b1-4e18-bc08-850c9adf156e"))).get_OutputStream(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ConnectAsync(Windows.Foundation.Uri uri)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).abi_ConnectAsync(uri, &_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocket)this.asInterface(uuid("f877396f-99b1-4e18-bc08-850c9adf156e"))).abi_ConnectAsync(uri, &_ret));
 		return _ret;
 	}
 	final void SetRequestHeader(HSTRING headerName, HSTRING headerValue)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).abi_SetRequestHeader(headerName, headerValue));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocket)this.asInterface(uuid("f877396f-99b1-4e18-bc08-850c9adf156e"))).abi_SetRequestHeader(headerName, headerValue));
 	}
 	final EventRegistrationToken OnClosed(void delegate(Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs), Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocket)this.asInterface(uuid("f877396f-99b1-4e18-bc08-850c9adf156e"))).add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs), Windows.Networking.Sockets.IWebSocket, Windows.Networking.Sockets.WebSocketClosedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeClosed(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).remove_Closed(eventCookie));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocket)this.asInterface(uuid("f877396f-99b1-4e18-bc08-850c9adf156e"))).remove_Closed(eventCookie));
 	}
 	final void CloseWithStatus(UINT16 code, HSTRING reason)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocket).abi_CloseWithStatus(code, reason));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocket)this.asInterface(uuid("f877396f-99b1-4e18-bc08-850c9adf156e"))).abi_CloseWithStatus(code, reason));
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	final EventRegistrationToken OnServerCustomValidationRequested(void delegate(Windows.Networking.Sockets.StreamWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamWebSocket2).add_ServerCustomValidationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.StreamWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs), Windows.Networking.Sockets.StreamWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamWebSocket2)this.asInterface(uuid("aa4d08cb-93f5-4678-8236-57cce5417ed5"))).add_ServerCustomValidationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Sockets.StreamWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs), Windows.Networking.Sockets.StreamWebSocket, Windows.Networking.Sockets.WebSocketServerCustomValidationRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeServerCustomValidationRequested(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamWebSocket2).remove_ServerCustomValidationRequested(eventCookie));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamWebSocket2)this.asInterface(uuid("aa4d08cb-93f5-4678-8236-57cce5417ed5"))).remove_ServerCustomValidationRequested(eventCookie));
 	}
 	static StreamWebSocket New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(StreamWebSocket).abi_ActivateInstance(&ret));
-		return ret.as!(StreamWebSocket);
+		return cast(StreamWebSocket) ret;
 	}
 }
 
@@ -1802,53 +1802,53 @@ extern(Windows):
 	final bool NoDelay()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamWebSocketControl).get_NoDelay(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamWebSocketControl)this.asInterface(uuid("b4f478b1-a45a-48db-953a-645b7d964c07"))).get_NoDelay(&_ret));
 		return _ret;
 	}
 	final void NoDelay(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IStreamWebSocketControl).set_NoDelay(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IStreamWebSocketControl)this.asInterface(uuid("b4f478b1-a45a-48db-953a-645b7d964c07"))).set_NoDelay(value));
 	}
 	final UINT32 OutboundBufferSizeInBytes()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).get_OutboundBufferSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketControl)this.asInterface(uuid("2ec4bdc3-d9a5-455a-9811-de24d45337e9"))).get_OutboundBufferSizeInBytes(&_ret));
 		return _ret;
 	}
 	final void OutboundBufferSizeInBytes(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).set_OutboundBufferSizeInBytes(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketControl)this.asInterface(uuid("2ec4bdc3-d9a5-455a-9811-de24d45337e9"))).set_OutboundBufferSizeInBytes(value));
 	}
 	final Windows.Security.Credentials.PasswordCredential ServerCredential()
 	{
 		Windows.Security.Credentials.PasswordCredential _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).get_ServerCredential(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketControl)this.asInterface(uuid("2ec4bdc3-d9a5-455a-9811-de24d45337e9"))).get_ServerCredential(&_ret));
 		return _ret;
 	}
 	final void ServerCredential(Windows.Security.Credentials.PasswordCredential value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).set_ServerCredential(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketControl)this.asInterface(uuid("2ec4bdc3-d9a5-455a-9811-de24d45337e9"))).set_ServerCredential(value));
 	}
 	final Windows.Security.Credentials.PasswordCredential ProxyCredential()
 	{
 		Windows.Security.Credentials.PasswordCredential _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).get_ProxyCredential(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketControl)this.asInterface(uuid("2ec4bdc3-d9a5-455a-9811-de24d45337e9"))).get_ProxyCredential(&_ret));
 		return _ret;
 	}
 	final void ProxyCredential(Windows.Security.Credentials.PasswordCredential value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).set_ProxyCredential(value));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketControl)this.asInterface(uuid("2ec4bdc3-d9a5-455a-9811-de24d45337e9"))).set_ProxyCredential(value));
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) SupportedProtocols()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl).get_SupportedProtocols(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketControl)this.asInterface(uuid("2ec4bdc3-d9a5-455a-9811-de24d45337e9"))).get_SupportedProtocols(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.ChainValidationResult) IgnorableServerCertificateErrors()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.ChainValidationResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketControl2).get_IgnorableServerCertificateErrors(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketControl2)this.asInterface(uuid("79c3be03-f2ca-461e-af4e-9665bc2d0620"))).get_IgnorableServerCertificateErrors(&_ret));
 		return _ret;
 	}
 }
@@ -1859,43 +1859,43 @@ extern(Windows):
 	final Windows.Networking.HostName LocalAddress()
 	{
 		Windows.Networking.HostName _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation).get_LocalAddress(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketInformation)this.asInterface(uuid("5e01e316-c92a-47a5-b25f-07847639d181"))).get_LocalAddress(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.BandwidthStatistics BandwidthStatistics()
 	{
 		Windows.Networking.Sockets.BandwidthStatistics _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation).get_BandwidthStatistics(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketInformation)this.asInterface(uuid("5e01e316-c92a-47a5-b25f-07847639d181"))).get_BandwidthStatistics(&_ret));
 		return _ret;
 	}
 	final HSTRING Protocol()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation).get_Protocol(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketInformation)this.asInterface(uuid("5e01e316-c92a-47a5-b25f-07847639d181"))).get_Protocol(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Cryptography.Certificates.Certificate ServerCertificate()
 	{
 		Windows.Security.Cryptography.Certificates.Certificate _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation2).get_ServerCertificate(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketInformation2)this.asInterface(uuid("ce1d39ce-a1b7-4d43-8269-8d5b981bd47a"))).get_ServerCertificate(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.SocketSslErrorSeverity ServerCertificateErrorSeverity()
 	{
 		Windows.Networking.Sockets.SocketSslErrorSeverity _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation2).get_ServerCertificateErrorSeverity(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketInformation2)this.asInterface(uuid("ce1d39ce-a1b7-4d43-8269-8d5b981bd47a"))).get_ServerCertificateErrorSeverity(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) ServerCertificateErrors()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation2).get_ServerCertificateErrors(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketInformation2)this.asInterface(uuid("ce1d39ce-a1b7-4d43-8269-8d5b981bd47a"))).get_ServerCertificateErrors(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) ServerIntermediateCertificates()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketInformation2).get_ServerIntermediateCertificates(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketInformation2)this.asInterface(uuid("ce1d39ce-a1b7-4d43-8269-8d5b981bd47a"))).get_ServerIntermediateCertificates(&_ret));
 		return _ret;
 	}
 }
@@ -1906,13 +1906,13 @@ extern(Windows):
 	final UINT16 Code()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketClosedEventArgs).get_Code(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketClosedEventArgs)this.asInterface(uuid("ceb78d07-d0a8-4703-a091-c8c2c0915bc3"))).get_Code(&_ret));
 		return _ret;
 	}
 	final HSTRING Reason()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketClosedEventArgs).get_Reason(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketClosedEventArgs)this.asInterface(uuid("ceb78d07-d0a8-4703-a091-c8c2c0915bc3"))).get_Reason(&_ret));
 		return _ret;
 	}
 }
@@ -1928,7 +1928,7 @@ interface WebSocketError
 	static Windows.Web.WebErrorStatus GetStatus(INT32 hresult)
 	{
 		Windows.Web.WebErrorStatus _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Sockets.IWebSocketErrorStatics).abi_GetStatus(hresult, &_ret));
+		Debug.OK(staticInstance.abi_GetStatus(hresult, &_ret));
 		return _ret;
 	}
 }
@@ -1938,13 +1938,13 @@ interface WebSocketKeepAlive : Windows.ApplicationModel.Background.IBackgroundTa
 extern(Windows):
 	final void Run(Windows.ApplicationModel.Background.IBackgroundTaskInstance taskInstance)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Background.IBackgroundTask).abi_Run(taskInstance));
+		Debug.OK((cast(Windows.ApplicationModel.Background.IBackgroundTask)this.asInterface(uuid("7d13d534-fd12-43ce-8c22-ea1ff13c06df"))).abi_Run(taskInstance));
 	}
 	static WebSocketKeepAlive New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(WebSocketKeepAlive).abi_ActivateInstance(&ret));
-		return ret.as!(WebSocketKeepAlive);
+		return cast(WebSocketKeepAlive) ret;
 	}
 }
 
@@ -1954,35 +1954,35 @@ extern(Windows):
 	final Windows.Security.Cryptography.Certificates.Certificate ServerCertificate()
 	{
 		Windows.Security.Cryptography.Certificates.Certificate _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketServerCustomValidationRequestedEventArgs).get_ServerCertificate(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketServerCustomValidationRequestedEventArgs)this.asInterface(uuid("ffeffe48-022a-4ab7-8b36-e10af4640e6b"))).get_ServerCertificate(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.SocketSslErrorSeverity ServerCertificateErrorSeverity()
 	{
 		Windows.Networking.Sockets.SocketSslErrorSeverity _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketServerCustomValidationRequestedEventArgs).get_ServerCertificateErrorSeverity(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketServerCustomValidationRequestedEventArgs)this.asInterface(uuid("ffeffe48-022a-4ab7-8b36-e10af4640e6b"))).get_ServerCertificateErrorSeverity(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) ServerCertificateErrors()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketServerCustomValidationRequestedEventArgs).get_ServerCertificateErrors(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketServerCustomValidationRequestedEventArgs)this.asInterface(uuid("ffeffe48-022a-4ab7-8b36-e10af4640e6b"))).get_ServerCertificateErrors(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) ServerIntermediateCertificates()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketServerCustomValidationRequestedEventArgs).get_ServerIntermediateCertificates(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketServerCustomValidationRequestedEventArgs)this.asInterface(uuid("ffeffe48-022a-4ab7-8b36-e10af4640e6b"))).get_ServerIntermediateCertificates(&_ret));
 		return _ret;
 	}
 	final void Reject()
 	{
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketServerCustomValidationRequestedEventArgs).abi_Reject());
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketServerCustomValidationRequestedEventArgs)this.asInterface(uuid("ffeffe48-022a-4ab7-8b36-e10af4640e6b"))).abi_Reject());
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.Networking.Sockets.IWebSocketServerCustomValidationRequestedEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.Networking.Sockets.IWebSocketServerCustomValidationRequestedEventArgs)this.asInterface(uuid("ffeffe48-022a-4ab7-8b36-e10af4640e6b"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }

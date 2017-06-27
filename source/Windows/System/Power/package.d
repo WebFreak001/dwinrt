@@ -71,70 +71,70 @@ interface BackgroundEnergyManager
 	static UINT32 LowUsageLevel()
 	{
 		UINT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IBackgroundEnergyManagerStatics).get_LowUsageLevel(&_ret));
+		Debug.OK(staticInstance.get_LowUsageLevel(&_ret));
 		return _ret;
 	}
 	static UINT32 NearMaxAcceptableUsageLevel()
 	{
 		UINT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IBackgroundEnergyManagerStatics).get_NearMaxAcceptableUsageLevel(&_ret));
+		Debug.OK(staticInstance.get_NearMaxAcceptableUsageLevel(&_ret));
 		return _ret;
 	}
 	static UINT32 MaxAcceptableUsageLevel()
 	{
 		UINT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IBackgroundEnergyManagerStatics).get_MaxAcceptableUsageLevel(&_ret));
+		Debug.OK(staticInstance.get_MaxAcceptableUsageLevel(&_ret));
 		return _ret;
 	}
 	static UINT32 ExcessiveUsageLevel()
 	{
 		UINT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IBackgroundEnergyManagerStatics).get_ExcessiveUsageLevel(&_ret));
+		Debug.OK(staticInstance.get_ExcessiveUsageLevel(&_ret));
 		return _ret;
 	}
 	static UINT32 NearTerminationUsageLevel()
 	{
 		UINT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IBackgroundEnergyManagerStatics).get_NearTerminationUsageLevel(&_ret));
+		Debug.OK(staticInstance.get_NearTerminationUsageLevel(&_ret));
 		return _ret;
 	}
 	static UINT32 TerminationUsageLevel()
 	{
 		UINT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IBackgroundEnergyManagerStatics).get_TerminationUsageLevel(&_ret));
+		Debug.OK(staticInstance.get_TerminationUsageLevel(&_ret));
 		return _ret;
 	}
 	static UINT32 RecentEnergyUsage()
 	{
 		UINT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IBackgroundEnergyManagerStatics).get_RecentEnergyUsage(&_ret));
+		Debug.OK(staticInstance.get_RecentEnergyUsage(&_ret));
 		return _ret;
 	}
 	static UINT32 RecentEnergyUsageLevel()
 	{
 		UINT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IBackgroundEnergyManagerStatics).get_RecentEnergyUsageLevel(&_ret));
+		Debug.OK(staticInstance.get_RecentEnergyUsageLevel(&_ret));
 		return _ret;
 	}
 	static EventRegistrationToken OnRecentEnergyUsageIncreased(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IBackgroundEnergyManagerStatics).add_RecentEnergyUsageIncreased(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_RecentEnergyUsageIncreased(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	static void removeRecentEnergyUsageIncreased(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.System.Power.IBackgroundEnergyManagerStatics).remove_RecentEnergyUsageIncreased(token));
+		Debug.OK(staticInstance.remove_RecentEnergyUsageIncreased(token));
 	}
 	static EventRegistrationToken OnRecentEnergyUsageReturnedToLow(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IBackgroundEnergyManagerStatics).add_RecentEnergyUsageReturnedToLow(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_RecentEnergyUsageReturnedToLow(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	static void removeRecentEnergyUsageReturnedToLow(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.System.Power.IBackgroundEnergyManagerStatics).remove_RecentEnergyUsageReturnedToLow(token));
+		Debug.OK(staticInstance.remove_RecentEnergyUsageReturnedToLow(token));
 	}
 }
 
@@ -149,58 +149,58 @@ interface ForegroundEnergyManager
 	static UINT32 LowUsageLevel()
 	{
 		UINT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IForegroundEnergyManagerStatics).get_LowUsageLevel(&_ret));
+		Debug.OK(staticInstance.get_LowUsageLevel(&_ret));
 		return _ret;
 	}
 	static UINT32 NearMaxAcceptableUsageLevel()
 	{
 		UINT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IForegroundEnergyManagerStatics).get_NearMaxAcceptableUsageLevel(&_ret));
+		Debug.OK(staticInstance.get_NearMaxAcceptableUsageLevel(&_ret));
 		return _ret;
 	}
 	static UINT32 MaxAcceptableUsageLevel()
 	{
 		UINT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IForegroundEnergyManagerStatics).get_MaxAcceptableUsageLevel(&_ret));
+		Debug.OK(staticInstance.get_MaxAcceptableUsageLevel(&_ret));
 		return _ret;
 	}
 	static UINT32 ExcessiveUsageLevel()
 	{
 		UINT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IForegroundEnergyManagerStatics).get_ExcessiveUsageLevel(&_ret));
+		Debug.OK(staticInstance.get_ExcessiveUsageLevel(&_ret));
 		return _ret;
 	}
 	static UINT32 RecentEnergyUsage()
 	{
 		UINT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IForegroundEnergyManagerStatics).get_RecentEnergyUsage(&_ret));
+		Debug.OK(staticInstance.get_RecentEnergyUsage(&_ret));
 		return _ret;
 	}
 	static UINT32 RecentEnergyUsageLevel()
 	{
 		UINT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IForegroundEnergyManagerStatics).get_RecentEnergyUsageLevel(&_ret));
+		Debug.OK(staticInstance.get_RecentEnergyUsageLevel(&_ret));
 		return _ret;
 	}
 	static EventRegistrationToken OnRecentEnergyUsageIncreased(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IForegroundEnergyManagerStatics).add_RecentEnergyUsageIncreased(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_RecentEnergyUsageIncreased(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	static void removeRecentEnergyUsageIncreased(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.System.Power.IForegroundEnergyManagerStatics).remove_RecentEnergyUsageIncreased(token));
+		Debug.OK(staticInstance.remove_RecentEnergyUsageIncreased(token));
 	}
 	static EventRegistrationToken OnRecentEnergyUsageReturnedToLow(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IForegroundEnergyManagerStatics).add_RecentEnergyUsageReturnedToLow(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_RecentEnergyUsageReturnedToLow(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	static void removeRecentEnergyUsageReturnedToLow(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.System.Power.IForegroundEnergyManagerStatics).remove_RecentEnergyUsageReturnedToLow(token));
+		Debug.OK(staticInstance.remove_RecentEnergyUsageReturnedToLow(token));
 	}
 }
 
@@ -215,82 +215,82 @@ interface PowerManager
 	static Windows.System.Power.EnergySaverStatus EnergySaverStatus()
 	{
 		Windows.System.Power.EnergySaverStatus _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IPowerManagerStatics).get_EnergySaverStatus(&_ret));
+		Debug.OK(staticInstance.get_EnergySaverStatus(&_ret));
 		return _ret;
 	}
 	static EventRegistrationToken OnEnergySaverStatusChanged(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IPowerManagerStatics).add_EnergySaverStatusChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_EnergySaverStatusChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	static void removeEnergySaverStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.System.Power.IPowerManagerStatics).remove_EnergySaverStatusChanged(token));
+		Debug.OK(staticInstance.remove_EnergySaverStatusChanged(token));
 	}
 	static Windows.System.Power.BatteryStatus BatteryStatus()
 	{
 		Windows.System.Power.BatteryStatus _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IPowerManagerStatics).get_BatteryStatus(&_ret));
+		Debug.OK(staticInstance.get_BatteryStatus(&_ret));
 		return _ret;
 	}
 	static EventRegistrationToken OnBatteryStatusChanged(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IPowerManagerStatics).add_BatteryStatusChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_BatteryStatusChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	static void removeBatteryStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.System.Power.IPowerManagerStatics).remove_BatteryStatusChanged(token));
+		Debug.OK(staticInstance.remove_BatteryStatusChanged(token));
 	}
 	static Windows.System.Power.PowerSupplyStatus PowerSupplyStatus()
 	{
 		Windows.System.Power.PowerSupplyStatus _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IPowerManagerStatics).get_PowerSupplyStatus(&_ret));
+		Debug.OK(staticInstance.get_PowerSupplyStatus(&_ret));
 		return _ret;
 	}
 	static EventRegistrationToken OnPowerSupplyStatusChanged(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IPowerManagerStatics).add_PowerSupplyStatusChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_PowerSupplyStatusChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	static void removePowerSupplyStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.System.Power.IPowerManagerStatics).remove_PowerSupplyStatusChanged(token));
+		Debug.OK(staticInstance.remove_PowerSupplyStatusChanged(token));
 	}
 	static INT32 RemainingChargePercent()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IPowerManagerStatics).get_RemainingChargePercent(&_ret));
+		Debug.OK(staticInstance.get_RemainingChargePercent(&_ret));
 		return _ret;
 	}
 	static EventRegistrationToken OnRemainingChargePercentChanged(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IPowerManagerStatics).add_RemainingChargePercentChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_RemainingChargePercentChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	static void removeRemainingChargePercentChanged(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.System.Power.IPowerManagerStatics).remove_RemainingChargePercentChanged(token));
+		Debug.OK(staticInstance.remove_RemainingChargePercentChanged(token));
 	}
 	static Windows.Foundation.TimeSpan RemainingDischargeTime()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IPowerManagerStatics).get_RemainingDischargeTime(&_ret));
+		Debug.OK(staticInstance.get_RemainingDischargeTime(&_ret));
 		return _ret;
 	}
 	static EventRegistrationToken OnRemainingDischargeTimeChanged(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.System.Power.IPowerManagerStatics).add_RemainingDischargeTimeChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_RemainingDischargeTimeChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	static void removeRemainingDischargeTimeChanged(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.System.Power.IPowerManagerStatics).remove_RemainingDischargeTimeChanged(token));
+		Debug.OK(staticInstance.remove_RemainingDischargeTimeChanged(token));
 	}
 }
 

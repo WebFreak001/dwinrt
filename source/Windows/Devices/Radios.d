@@ -32,35 +32,35 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Radios.RadioAccessStatus) SetStateAsync(Windows.Devices.Radios.RadioState value)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Radios.RadioAccessStatus) _ret;
-		Debug.OK(this.as!(Windows.Devices.Radios.IRadio).abi_SetStateAsync(value, &_ret));
+		Debug.OK((cast(Windows.Devices.Radios.IRadio)this.asInterface(uuid("252118df-b33e-416a-875f-1cf38ae2d83e"))).abi_SetStateAsync(value, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnStateChanged(void delegate(Windows.Devices.Radios.Radio, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Radios.IRadio).add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Radios.Radio, IInspectable), Windows.Devices.Radios.Radio, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Radios.IRadio)this.asInterface(uuid("252118df-b33e-416a-875f-1cf38ae2d83e"))).add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Radios.Radio, IInspectable), Windows.Devices.Radios.Radio, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeStateChanged(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Devices.Radios.IRadio).remove_StateChanged(eventCookie));
+		Debug.OK((cast(Windows.Devices.Radios.IRadio)this.asInterface(uuid("252118df-b33e-416a-875f-1cf38ae2d83e"))).remove_StateChanged(eventCookie));
 	}
 	final Windows.Devices.Radios.RadioState State()
 	{
 		Windows.Devices.Radios.RadioState _ret;
-		Debug.OK(this.as!(Windows.Devices.Radios.IRadio).get_State(&_ret));
+		Debug.OK((cast(Windows.Devices.Radios.IRadio)this.asInterface(uuid("252118df-b33e-416a-875f-1cf38ae2d83e"))).get_State(&_ret));
 		return _ret;
 	}
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Radios.IRadio).get_Name(&_ret));
+		Debug.OK((cast(Windows.Devices.Radios.IRadio)this.asInterface(uuid("252118df-b33e-416a-875f-1cf38ae2d83e"))).get_Name(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Radios.RadioKind Kind()
 	{
 		Windows.Devices.Radios.RadioKind _ret;
-		Debug.OK(this.as!(Windows.Devices.Radios.IRadio).get_Kind(&_ret));
+		Debug.OK((cast(Windows.Devices.Radios.IRadio)this.asInterface(uuid("252118df-b33e-416a-875f-1cf38ae2d83e"))).get_Kind(&_ret));
 		return _ret;
 	}
 
@@ -73,25 +73,25 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Radios.Radio)) GetRadiosAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Radios.Radio)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Radios.IRadioStatics).abi_GetRadiosAsync(&_ret));
+		Debug.OK(staticInstance.abi_GetRadiosAsync(&_ret));
 		return _ret;
 	}
 	static HSTRING GetDeviceSelector()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Radios.IRadioStatics).abi_GetDeviceSelector(&_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Radios.Radio) FromIdAsync(HSTRING deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Radios.Radio) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Radios.IRadioStatics).abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Radios.RadioAccessStatus) RequestAccessAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Radios.RadioAccessStatus) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Radios.IRadioStatics).abi_RequestAccessAsync(&_ret));
+		Debug.OK(staticInstance.abi_RequestAccessAsync(&_ret));
 		return _ret;
 	}
 }

@@ -596,42 +596,42 @@ extern(Windows):
 	final Windows.UI.Xaml.TextAlignment TextAlignment()
 	{
 		Windows.UI.Xaml.TextAlignment _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IBlock).get_TextAlignment(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IBlock)this.asInterface(uuid("4bce0016-dd47-4350-8cb0-e171600ac896"))).get_TextAlignment(&_ret));
 		return _ret;
 	}
 	final void TextAlignment(Windows.UI.Xaml.TextAlignment value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IBlock).set_TextAlignment(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IBlock)this.asInterface(uuid("4bce0016-dd47-4350-8cb0-e171600ac896"))).set_TextAlignment(value));
 	}
 	final double LineHeight()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IBlock).get_LineHeight(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IBlock)this.asInterface(uuid("4bce0016-dd47-4350-8cb0-e171600ac896"))).get_LineHeight(&_ret));
 		return _ret;
 	}
 	final void LineHeight(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IBlock).set_LineHeight(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IBlock)this.asInterface(uuid("4bce0016-dd47-4350-8cb0-e171600ac896"))).set_LineHeight(value));
 	}
 	final Windows.UI.Xaml.LineStackingStrategy LineStackingStrategy()
 	{
 		Windows.UI.Xaml.LineStackingStrategy _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IBlock).get_LineStackingStrategy(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IBlock)this.asInterface(uuid("4bce0016-dd47-4350-8cb0-e171600ac896"))).get_LineStackingStrategy(&_ret));
 		return _ret;
 	}
 	final void LineStackingStrategy(Windows.UI.Xaml.LineStackingStrategy value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IBlock).set_LineStackingStrategy(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IBlock)this.asInterface(uuid("4bce0016-dd47-4350-8cb0-e171600ac896"))).set_LineStackingStrategy(value));
 	}
 	final Windows.UI.Xaml.Thickness Margin()
 	{
 		Windows.UI.Xaml.Thickness _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IBlock).get_Margin(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IBlock)this.asInterface(uuid("4bce0016-dd47-4350-8cb0-e171600ac896"))).get_Margin(&_ret));
 		return _ret;
 	}
 	final void Margin(Windows.UI.Xaml.Thickness value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IBlock).set_Margin(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IBlock)this.asInterface(uuid("4bce0016-dd47-4350-8cb0-e171600ac896"))).set_Margin(value));
 	}
 
 	private static Windows.UI.Xaml.Documents.IBlockStatics _staticInstance;
@@ -643,25 +643,25 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty TextAlignmentProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IBlockStatics).get_TextAlignmentProperty(&_ret));
+		Debug.OK(staticInstance.get_TextAlignmentProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty LineHeightProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IBlockStatics).get_LineHeightProperty(&_ret));
+		Debug.OK(staticInstance.get_LineHeightProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty LineStackingStrategyProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IBlockStatics).get_LineStackingStrategyProperty(&_ret));
+		Debug.OK(staticInstance.get_LineStackingStrategyProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty MarginProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IBlockStatics).get_MarginProperty(&_ret));
+		Debug.OK(staticInstance.get_MarginProperty(&_ret));
 		return _ret;
 	}
 	static Block New()
@@ -682,14 +682,14 @@ class BlockT(Base) : AgileObject!Base, Block
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_TextAlignment(Windows.UI.Xaml.TextAlignment* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.IBlock).get_TextAlignment(return_value); }
-	override HRESULT set_TextAlignment(Windows.UI.Xaml.TextAlignment value) { return m_inner.as!(Windows.UI.Xaml.Documents.IBlock).set_TextAlignment(value); }
-	override HRESULT get_LineHeight(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.IBlock).get_LineHeight(return_value); }
-	override HRESULT set_LineHeight(double value) { return m_inner.as!(Windows.UI.Xaml.Documents.IBlock).set_LineHeight(value); }
-	override HRESULT get_LineStackingStrategy(Windows.UI.Xaml.LineStackingStrategy* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.IBlock).get_LineStackingStrategy(return_value); }
-	override HRESULT set_LineStackingStrategy(Windows.UI.Xaml.LineStackingStrategy value) { return m_inner.as!(Windows.UI.Xaml.Documents.IBlock).set_LineStackingStrategy(value); }
-	override HRESULT get_Margin(Windows.UI.Xaml.Thickness* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.IBlock).get_Margin(return_value); }
-	override HRESULT set_Margin(Windows.UI.Xaml.Thickness value) { return m_inner.as!(Windows.UI.Xaml.Documents.IBlock).set_Margin(value); }
+	override HRESULT get_TextAlignment(Windows.UI.Xaml.TextAlignment* return_value) { return (cast(Windows.UI.Xaml.Documents.IBlock)m_inner.asInterface(uuid("4bce0016-dd47-4350-8cb0-e171600ac896"))).get_TextAlignment(return_value); }
+	override HRESULT set_TextAlignment(Windows.UI.Xaml.TextAlignment value) { return (cast(Windows.UI.Xaml.Documents.IBlock)m_inner.asInterface(uuid("4bce0016-dd47-4350-8cb0-e171600ac896"))).set_TextAlignment(value); }
+	override HRESULT get_LineHeight(double* return_value) { return (cast(Windows.UI.Xaml.Documents.IBlock)m_inner.asInterface(uuid("4bce0016-dd47-4350-8cb0-e171600ac896"))).get_LineHeight(return_value); }
+	override HRESULT set_LineHeight(double value) { return (cast(Windows.UI.Xaml.Documents.IBlock)m_inner.asInterface(uuid("4bce0016-dd47-4350-8cb0-e171600ac896"))).set_LineHeight(value); }
+	override HRESULT get_LineStackingStrategy(Windows.UI.Xaml.LineStackingStrategy* return_value) { return (cast(Windows.UI.Xaml.Documents.IBlock)m_inner.asInterface(uuid("4bce0016-dd47-4350-8cb0-e171600ac896"))).get_LineStackingStrategy(return_value); }
+	override HRESULT set_LineStackingStrategy(Windows.UI.Xaml.LineStackingStrategy value) { return (cast(Windows.UI.Xaml.Documents.IBlock)m_inner.asInterface(uuid("4bce0016-dd47-4350-8cb0-e171600ac896"))).set_LineStackingStrategy(value); }
+	override HRESULT get_Margin(Windows.UI.Xaml.Thickness* return_value) { return (cast(Windows.UI.Xaml.Documents.IBlock)m_inner.asInterface(uuid("4bce0016-dd47-4350-8cb0-e171600ac896"))).get_Margin(return_value); }
+	override HRESULT set_Margin(Windows.UI.Xaml.Thickness value) { return (cast(Windows.UI.Xaml.Documents.IBlock)m_inner.asInterface(uuid("4bce0016-dd47-4350-8cb0-e171600ac896"))).set_Margin(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -701,60 +701,60 @@ extern(Windows):
 	final Windows.UI.Xaml.Documents.Block GetAt(uint index)
 	{
 		Windows.UI.Xaml.Documents.Block _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).get_GetAt(index, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block))this).get_GetAt(index, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block))this).get_Size(&_ret));
 		return _ret;
 	}
 	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Documents.Block)* out_view)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).abi_GetView(out_view));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block))this).abi_GetView(out_view));
 	}
 	final uint IndexOf(Windows.UI.Xaml.Documents.Block value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void SetAt(uint index, Windows.UI.Xaml.Documents.Block item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).abi_SetAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block))this).abi_SetAt(index, item));
 	}
 	final void InsertAt(uint index, Windows.UI.Xaml.Documents.Block item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).abi_InsertAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block))this).abi_InsertAt(index, item));
 	}
 	final void RemoveAt(uint index)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).abi_RemoveAt(index));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block))this).abi_RemoveAt(index));
 	}
 	final void Append(Windows.UI.Xaml.Documents.Block item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).abi_Append(item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block))this).abi_Append(item));
 	}
 	final void RemoveAtEnd()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).abi_RemoveAtEnd());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block))this).abi_RemoveAtEnd());
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block))this).abi_Clear());
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.Documents.Block* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void ReplaceAll(uint count, Windows.UI.Xaml.Documents.Block* out_value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block)).abi_ReplaceAll(count, out_value));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Block))this).abi_ReplaceAll(count, out_value));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Documents.Block)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Documents.Block)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Documents.Block))this).abi_First(out_first));
 	}
 }
 
@@ -764,7 +764,7 @@ interface Bold : Windows.UI.Xaml.Documents.Span, Windows.UI.Xaml.Documents.IBold
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Bold).abi_ActivateInstance(&ret));
-		return ret.as!(Bold);
+		return cast(Bold) ret;
 	}
 }
 
@@ -774,102 +774,102 @@ extern(Windows):
 	final HSTRING UnicodeString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).get_UnicodeString(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs)this.asInterface(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5"))).get_UnicodeString(&_ret));
 		return _ret;
 	}
 	final void UnicodeString(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).set_UnicodeString(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs)this.asInterface(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5"))).set_UnicodeString(value));
 	}
 	final HSTRING Indices()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).get_Indices(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs)this.asInterface(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5"))).get_Indices(&_ret));
 		return _ret;
 	}
 	final void Indices(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).set_Indices(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs)this.asInterface(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5"))).set_Indices(value));
 	}
 	final Windows.Foundation.Uri FontUri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).get_FontUri(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs)this.asInterface(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5"))).get_FontUri(&_ret));
 		return _ret;
 	}
 	final void FontUri(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).set_FontUri(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs)this.asInterface(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5"))).set_FontUri(value));
 	}
 	final Windows.UI.Xaml.Media.StyleSimulations StyleSimulations()
 	{
 		Windows.UI.Xaml.Media.StyleSimulations _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).get_StyleSimulations(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs)this.asInterface(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5"))).get_StyleSimulations(&_ret));
 		return _ret;
 	}
 	final void StyleSimulations(Windows.UI.Xaml.Media.StyleSimulations value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).set_StyleSimulations(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs)this.asInterface(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5"))).set_StyleSimulations(value));
 	}
 	final double FontRenderingEmSize()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).get_FontRenderingEmSize(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs)this.asInterface(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5"))).get_FontRenderingEmSize(&_ret));
 		return _ret;
 	}
 	final void FontRenderingEmSize(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).set_FontRenderingEmSize(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs)this.asInterface(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5"))).set_FontRenderingEmSize(value));
 	}
 	final double OriginX()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).get_OriginX(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs)this.asInterface(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5"))).get_OriginX(&_ret));
 		return _ret;
 	}
 	final void OriginX(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).set_OriginX(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs)this.asInterface(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5"))).set_OriginX(value));
 	}
 	final double OriginY()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).get_OriginY(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs)this.asInterface(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5"))).get_OriginY(&_ret));
 		return _ret;
 	}
 	final void OriginY(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).set_OriginY(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs)this.asInterface(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5"))).set_OriginY(value));
 	}
 	final Windows.UI.Xaml.Media.Brush Fill()
 	{
 		Windows.UI.Xaml.Media.Brush _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).get_Fill(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs)this.asInterface(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5"))).get_Fill(&_ret));
 		return _ret;
 	}
 	final void Fill(Windows.UI.Xaml.Media.Brush value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs).set_Fill(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs)this.asInterface(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5"))).set_Fill(value));
 	}
 	final bool IsColorFontEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs2).get_IsColorFontEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs2)this.asInterface(uuid("aa8bfe5c-3754-4bee-bbe1-4403ee9b86f0"))).get_IsColorFontEnabled(&_ret));
 		return _ret;
 	}
 	final void IsColorFontEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs2).set_IsColorFontEnabled(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs2)this.asInterface(uuid("aa8bfe5c-3754-4bee-bbe1-4403ee9b86f0"))).set_IsColorFontEnabled(value));
 	}
 	final INT32 ColorFontPaletteIndex()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs2).get_ColorFontPaletteIndex(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs2)this.asInterface(uuid("aa8bfe5c-3754-4bee-bbe1-4403ee9b86f0"))).get_ColorFontPaletteIndex(&_ret));
 		return _ret;
 	}
 	final void ColorFontPaletteIndex(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IGlyphs2).set_ColorFontPaletteIndex(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs2)this.asInterface(uuid("aa8bfe5c-3754-4bee-bbe1-4403ee9b86f0"))).set_ColorFontPaletteIndex(value));
 	}
 
 	private static Windows.UI.Xaml.Documents.IGlyphsStatics _staticInstance;
@@ -881,56 +881,56 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty UnicodeStringProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IGlyphsStatics).get_UnicodeStringProperty(&_ret));
+		Debug.OK(staticInstance.get_UnicodeStringProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty IndicesProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IGlyphsStatics).get_IndicesProperty(&_ret));
+		Debug.OK(staticInstance.get_IndicesProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty FontUriProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IGlyphsStatics).get_FontUriProperty(&_ret));
+		Debug.OK(staticInstance.get_FontUriProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty StyleSimulationsProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IGlyphsStatics).get_StyleSimulationsProperty(&_ret));
+		Debug.OK(staticInstance.get_StyleSimulationsProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty FontRenderingEmSizeProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IGlyphsStatics).get_FontRenderingEmSizeProperty(&_ret));
+		Debug.OK(staticInstance.get_FontRenderingEmSizeProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty OriginXProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IGlyphsStatics).get_OriginXProperty(&_ret));
+		Debug.OK(staticInstance.get_OriginXProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty OriginYProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IGlyphsStatics).get_OriginYProperty(&_ret));
+		Debug.OK(staticInstance.get_OriginYProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty FillProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IGlyphsStatics).get_FillProperty(&_ret));
+		Debug.OK(staticInstance.get_FillProperty(&_ret));
 		return _ret;
 	}
 	static Glyphs New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Glyphs).abi_ActivateInstance(&ret));
-		return ret.as!(Glyphs);
+		return cast(Glyphs) ret;
 	}
 }
 
@@ -940,153 +940,153 @@ extern(Windows):
 	final Windows.Foundation.Uri NavigateUri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink).get_NavigateUri(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink)this.asInterface(uuid("0fe2363b-14e9-4152-9e58-5aea5b21f08d"))).get_NavigateUri(&_ret));
 		return _ret;
 	}
 	final void NavigateUri(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink).set_NavigateUri(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink)this.asInterface(uuid("0fe2363b-14e9-4152-9e58-5aea5b21f08d"))).set_NavigateUri(value));
 	}
 	final EventRegistrationToken OnClick(void delegate(Windows.UI.Xaml.Documents.Hyperlink, Windows.UI.Xaml.Documents.HyperlinkClickEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink).add_Click(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.Hyperlink, Windows.UI.Xaml.Documents.HyperlinkClickEventArgs), Windows.UI.Xaml.Documents.Hyperlink, Windows.UI.Xaml.Documents.HyperlinkClickEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink)this.asInterface(uuid("0fe2363b-14e9-4152-9e58-5aea5b21f08d"))).add_Click(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.Hyperlink, Windows.UI.Xaml.Documents.HyperlinkClickEventArgs), Windows.UI.Xaml.Documents.Hyperlink, Windows.UI.Xaml.Documents.HyperlinkClickEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeClick(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink).remove_Click(token));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink)this.asInterface(uuid("0fe2363b-14e9-4152-9e58-5aea5b21f08d"))).remove_Click(token));
 	}
 	final Windows.UI.Xaml.Documents.UnderlineStyle UnderlineStyle()
 	{
 		Windows.UI.Xaml.Documents.UnderlineStyle _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink2).get_UnderlineStyle(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink2)this.asInterface(uuid("4ce9da5f-7cff-4291-b78f-dfec72490576"))).get_UnderlineStyle(&_ret));
 		return _ret;
 	}
 	final void UnderlineStyle(Windows.UI.Xaml.Documents.UnderlineStyle value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink2).set_UnderlineStyle(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink2)this.asInterface(uuid("4ce9da5f-7cff-4291-b78f-dfec72490576"))).set_UnderlineStyle(value));
 	}
 	final Windows.UI.Xaml.DependencyObject XYFocusLeft()
 	{
 		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink3).get_XYFocusLeft(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink3)this.asInterface(uuid("c3f157d9-e5d3-4fb7-8702-4f6d85dd9e0a"))).get_XYFocusLeft(&_ret));
 		return _ret;
 	}
 	final void XYFocusLeft(Windows.UI.Xaml.DependencyObject value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink3).set_XYFocusLeft(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink3)this.asInterface(uuid("c3f157d9-e5d3-4fb7-8702-4f6d85dd9e0a"))).set_XYFocusLeft(value));
 	}
 	final Windows.UI.Xaml.DependencyObject XYFocusRight()
 	{
 		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink3).get_XYFocusRight(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink3)this.asInterface(uuid("c3f157d9-e5d3-4fb7-8702-4f6d85dd9e0a"))).get_XYFocusRight(&_ret));
 		return _ret;
 	}
 	final void XYFocusRight(Windows.UI.Xaml.DependencyObject value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink3).set_XYFocusRight(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink3)this.asInterface(uuid("c3f157d9-e5d3-4fb7-8702-4f6d85dd9e0a"))).set_XYFocusRight(value));
 	}
 	final Windows.UI.Xaml.DependencyObject XYFocusUp()
 	{
 		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink3).get_XYFocusUp(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink3)this.asInterface(uuid("c3f157d9-e5d3-4fb7-8702-4f6d85dd9e0a"))).get_XYFocusUp(&_ret));
 		return _ret;
 	}
 	final void XYFocusUp(Windows.UI.Xaml.DependencyObject value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink3).set_XYFocusUp(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink3)this.asInterface(uuid("c3f157d9-e5d3-4fb7-8702-4f6d85dd9e0a"))).set_XYFocusUp(value));
 	}
 	final Windows.UI.Xaml.DependencyObject XYFocusDown()
 	{
 		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink3).get_XYFocusDown(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink3)this.asInterface(uuid("c3f157d9-e5d3-4fb7-8702-4f6d85dd9e0a"))).get_XYFocusDown(&_ret));
 		return _ret;
 	}
 	final void XYFocusDown(Windows.UI.Xaml.DependencyObject value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink3).set_XYFocusDown(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink3)this.asInterface(uuid("c3f157d9-e5d3-4fb7-8702-4f6d85dd9e0a"))).set_XYFocusDown(value));
 	}
 	final Windows.UI.Xaml.ElementSoundMode ElementSoundMode()
 	{
 		Windows.UI.Xaml.ElementSoundMode _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink3).get_ElementSoundMode(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink3)this.asInterface(uuid("c3f157d9-e5d3-4fb7-8702-4f6d85dd9e0a"))).get_ElementSoundMode(&_ret));
 		return _ret;
 	}
 	final void ElementSoundMode(Windows.UI.Xaml.ElementSoundMode value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink3).set_ElementSoundMode(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink3)this.asInterface(uuid("c3f157d9-e5d3-4fb7-8702-4f6d85dd9e0a"))).set_ElementSoundMode(value));
 	}
 	final Windows.UI.Xaml.FocusState FocusState()
 	{
 		Windows.UI.Xaml.FocusState _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).get_FocusState(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink4)this.asInterface(uuid("f7d02959-82fb-400a-a407-5a4ee677988a"))).get_FocusState(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Input.XYFocusNavigationStrategy XYFocusUpNavigationStrategy()
 	{
 		Windows.UI.Xaml.Input.XYFocusNavigationStrategy _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).get_XYFocusUpNavigationStrategy(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink4)this.asInterface(uuid("f7d02959-82fb-400a-a407-5a4ee677988a"))).get_XYFocusUpNavigationStrategy(&_ret));
 		return _ret;
 	}
 	final void XYFocusUpNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).set_XYFocusUpNavigationStrategy(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink4)this.asInterface(uuid("f7d02959-82fb-400a-a407-5a4ee677988a"))).set_XYFocusUpNavigationStrategy(value));
 	}
 	final Windows.UI.Xaml.Input.XYFocusNavigationStrategy XYFocusDownNavigationStrategy()
 	{
 		Windows.UI.Xaml.Input.XYFocusNavigationStrategy _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).get_XYFocusDownNavigationStrategy(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink4)this.asInterface(uuid("f7d02959-82fb-400a-a407-5a4ee677988a"))).get_XYFocusDownNavigationStrategy(&_ret));
 		return _ret;
 	}
 	final void XYFocusDownNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).set_XYFocusDownNavigationStrategy(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink4)this.asInterface(uuid("f7d02959-82fb-400a-a407-5a4ee677988a"))).set_XYFocusDownNavigationStrategy(value));
 	}
 	final Windows.UI.Xaml.Input.XYFocusNavigationStrategy XYFocusLeftNavigationStrategy()
 	{
 		Windows.UI.Xaml.Input.XYFocusNavigationStrategy _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).get_XYFocusLeftNavigationStrategy(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink4)this.asInterface(uuid("f7d02959-82fb-400a-a407-5a4ee677988a"))).get_XYFocusLeftNavigationStrategy(&_ret));
 		return _ret;
 	}
 	final void XYFocusLeftNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).set_XYFocusLeftNavigationStrategy(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink4)this.asInterface(uuid("f7d02959-82fb-400a-a407-5a4ee677988a"))).set_XYFocusLeftNavigationStrategy(value));
 	}
 	final Windows.UI.Xaml.Input.XYFocusNavigationStrategy XYFocusRightNavigationStrategy()
 	{
 		Windows.UI.Xaml.Input.XYFocusNavigationStrategy _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).get_XYFocusRightNavigationStrategy(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink4)this.asInterface(uuid("f7d02959-82fb-400a-a407-5a4ee677988a"))).get_XYFocusRightNavigationStrategy(&_ret));
 		return _ret;
 	}
 	final void XYFocusRightNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).set_XYFocusRightNavigationStrategy(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink4)this.asInterface(uuid("f7d02959-82fb-400a-a407-5a4ee677988a"))).set_XYFocusRightNavigationStrategy(value));
 	}
 	final EventRegistrationToken OnGotFocus(void delegate(IInspectable, Windows.UI.Xaml.RoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).add_GotFocus(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink4)this.asInterface(uuid("f7d02959-82fb-400a-a407-5a4ee677988a"))).add_GotFocus(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeGotFocus(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).remove_GotFocus(token));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink4)this.asInterface(uuid("f7d02959-82fb-400a-a407-5a4ee677988a"))).remove_GotFocus(token));
 	}
 	final EventRegistrationToken OnLostFocus(void delegate(IInspectable, Windows.UI.Xaml.RoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).add_LostFocus(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink4)this.asInterface(uuid("f7d02959-82fb-400a-a407-5a4ee677988a"))).add_LostFocus(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeLostFocus(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).remove_LostFocus(token));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink4)this.asInterface(uuid("f7d02959-82fb-400a-a407-5a4ee677988a"))).remove_LostFocus(token));
 	}
 	final bool Focus(Windows.UI.Xaml.FocusState value)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IHyperlink4).abi_Focus(value, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IHyperlink4)this.asInterface(uuid("f7d02959-82fb-400a-a407-5a4ee677988a"))).abi_Focus(value, &_ret));
 		return _ret;
 	}
 
@@ -1099,14 +1099,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty NavigateUriProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IHyperlinkStatics).get_NavigateUriProperty(&_ret));
+		Debug.OK(staticInstance.get_NavigateUriProperty(&_ret));
 		return _ret;
 	}
 	static Hyperlink New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Hyperlink).abi_ActivateInstance(&ret));
-		return ret.as!(Hyperlink);
+		return cast(Hyperlink) ret;
 	}
 }
 
@@ -1145,60 +1145,60 @@ extern(Windows):
 	final Windows.UI.Xaml.Documents.Inline GetAt(uint index)
 	{
 		Windows.UI.Xaml.Documents.Inline _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).get_GetAt(index, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline))this).get_GetAt(index, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline))this).get_Size(&_ret));
 		return _ret;
 	}
 	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Documents.Inline)* out_view)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).abi_GetView(out_view));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline))this).abi_GetView(out_view));
 	}
 	final uint IndexOf(Windows.UI.Xaml.Documents.Inline value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void SetAt(uint index, Windows.UI.Xaml.Documents.Inline item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).abi_SetAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline))this).abi_SetAt(index, item));
 	}
 	final void InsertAt(uint index, Windows.UI.Xaml.Documents.Inline item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).abi_InsertAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline))this).abi_InsertAt(index, item));
 	}
 	final void RemoveAt(uint index)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).abi_RemoveAt(index));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline))this).abi_RemoveAt(index));
 	}
 	final void Append(Windows.UI.Xaml.Documents.Inline item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).abi_Append(item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline))this).abi_Append(item));
 	}
 	final void RemoveAtEnd()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).abi_RemoveAtEnd());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline))this).abi_RemoveAtEnd());
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline))this).abi_Clear());
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.Documents.Inline* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void ReplaceAll(uint count, Windows.UI.Xaml.Documents.Inline* out_value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline)).abi_ReplaceAll(count, out_value));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Documents.Inline))this).abi_ReplaceAll(count, out_value));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Documents.Inline)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Documents.Inline)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Documents.Inline))this).abi_First(out_first));
 	}
 }
 
@@ -1208,18 +1208,18 @@ extern(Windows):
 	final Windows.UI.Xaml.UIElement Child()
 	{
 		Windows.UI.Xaml.UIElement _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IInlineUIContainer).get_Child(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IInlineUIContainer)this.asInterface(uuid("1416ce81-28ee-452e-b121-5fc4f60b86a6"))).get_Child(&_ret));
 		return _ret;
 	}
 	final void Child(Windows.UI.Xaml.UIElement value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IInlineUIContainer).set_Child(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IInlineUIContainer)this.asInterface(uuid("1416ce81-28ee-452e-b121-5fc4f60b86a6"))).set_Child(value));
 	}
 	static InlineUIContainer New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(InlineUIContainer).abi_ActivateInstance(&ret));
-		return ret.as!(InlineUIContainer);
+		return cast(InlineUIContainer) ret;
 	}
 }
 
@@ -1229,7 +1229,7 @@ interface Italic : Windows.UI.Xaml.Documents.Span, Windows.UI.Xaml.Documents.IIt
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Italic).abi_ActivateInstance(&ret));
-		return ret.as!(Italic);
+		return cast(Italic) ret;
 	}
 }
 
@@ -1239,7 +1239,7 @@ interface LineBreak : Windows.UI.Xaml.Documents.Inline, Windows.UI.Xaml.Document
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(LineBreak).abi_ActivateInstance(&ret));
-		return ret.as!(LineBreak);
+		return cast(LineBreak) ret;
 	}
 }
 
@@ -1249,18 +1249,18 @@ extern(Windows):
 	final Windows.UI.Xaml.Documents.InlineCollection Inlines()
 	{
 		Windows.UI.Xaml.Documents.InlineCollection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IParagraph).get_Inlines(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IParagraph)this.asInterface(uuid("f83ef59a-fa61-4bef-ae33-0b0ad756a84d"))).get_Inlines(&_ret));
 		return _ret;
 	}
 	final double TextIndent()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IParagraph).get_TextIndent(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IParagraph)this.asInterface(uuid("f83ef59a-fa61-4bef-ae33-0b0ad756a84d"))).get_TextIndent(&_ret));
 		return _ret;
 	}
 	final void TextIndent(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IParagraph).set_TextIndent(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IParagraph)this.asInterface(uuid("f83ef59a-fa61-4bef-ae33-0b0ad756a84d"))).set_TextIndent(value));
 	}
 
 	private static Windows.UI.Xaml.Documents.IParagraphStatics _staticInstance;
@@ -1272,14 +1272,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty TextIndentProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IParagraphStatics).get_TextIndentProperty(&_ret));
+		Debug.OK(staticInstance.get_TextIndentProperty(&_ret));
 		return _ret;
 	}
 	static Paragraph New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Paragraph).abi_ActivateInstance(&ret));
-		return ret.as!(Paragraph);
+		return cast(Paragraph) ret;
 	}
 }
 
@@ -1289,22 +1289,22 @@ extern(Windows):
 	final HSTRING Text()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IRun).get_Text(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IRun)this.asInterface(uuid("59553c83-0e14-49bd-b84b-c526f3034349"))).get_Text(&_ret));
 		return _ret;
 	}
 	final void Text(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IRun).set_Text(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IRun)this.asInterface(uuid("59553c83-0e14-49bd-b84b-c526f3034349"))).set_Text(value));
 	}
 	final Windows.UI.Xaml.FlowDirection FlowDirection()
 	{
 		Windows.UI.Xaml.FlowDirection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IRun).get_FlowDirection(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IRun)this.asInterface(uuid("59553c83-0e14-49bd-b84b-c526f3034349"))).get_FlowDirection(&_ret));
 		return _ret;
 	}
 	final void FlowDirection(Windows.UI.Xaml.FlowDirection value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.IRun).set_FlowDirection(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IRun)this.asInterface(uuid("59553c83-0e14-49bd-b84b-c526f3034349"))).set_FlowDirection(value));
 	}
 
 	private static Windows.UI.Xaml.Documents.IRunStatics _staticInstance;
@@ -1316,14 +1316,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty FlowDirectionProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.IRunStatics).get_FlowDirectionProperty(&_ret));
+		Debug.OK(staticInstance.get_FlowDirectionProperty(&_ret));
 		return _ret;
 	}
 	static Run New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Run).abi_ActivateInstance(&ret));
-		return ret.as!(Run);
+		return cast(Run) ret;
 	}
 }
 
@@ -1333,12 +1333,12 @@ extern(Windows):
 	final Windows.UI.Xaml.Documents.InlineCollection Inlines()
 	{
 		Windows.UI.Xaml.Documents.InlineCollection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ISpan).get_Inlines(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ISpan)this.asInterface(uuid("9839d4a9-02af-4811-aa15-6bef3acac97a"))).get_Inlines(&_ret));
 		return _ret;
 	}
 	final void Inlines(Windows.UI.Xaml.Documents.InlineCollection value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ISpan).set_Inlines(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ISpan)this.asInterface(uuid("9839d4a9-02af-4811-aa15-6bef3acac97a"))).set_Inlines(value));
 	}
 	static Span New()
 	{
@@ -1358,8 +1358,8 @@ class SpanT(Base) : AgileObject!Base, Span
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_Inlines(Windows.UI.Xaml.Documents.InlineCollection* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ISpan).get_Inlines(return_value); }
-	override HRESULT set_Inlines(Windows.UI.Xaml.Documents.InlineCollection value) { return m_inner.as!(Windows.UI.Xaml.Documents.ISpan).set_Inlines(value); }
+	override HRESULT get_Inlines(Windows.UI.Xaml.Documents.InlineCollection* return_value) { return (cast(Windows.UI.Xaml.Documents.ISpan)m_inner.asInterface(uuid("9839d4a9-02af-4811-aa15-6bef3acac97a"))).get_Inlines(return_value); }
+	override HRESULT set_Inlines(Windows.UI.Xaml.Documents.InlineCollection value) { return (cast(Windows.UI.Xaml.Documents.ISpan)m_inner.asInterface(uuid("9839d4a9-02af-4811-aa15-6bef3acac97a"))).set_Inlines(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -1371,248 +1371,248 @@ extern(Windows):
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_Name(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_Name(&_ret));
 		return _ret;
 	}
 	final double FontSize()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_FontSize(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontSize(&_ret));
 		return _ret;
 	}
 	final void FontSize(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).set_FontSize(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontSize(value));
 	}
 	final Windows.UI.Xaml.Media.FontFamily FontFamily()
 	{
 		Windows.UI.Xaml.Media.FontFamily _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_FontFamily(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontFamily(&_ret));
 		return _ret;
 	}
 	final void FontFamily(Windows.UI.Xaml.Media.FontFamily value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).set_FontFamily(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontFamily(value));
 	}
 	final Windows.UI.Text.FontWeight FontWeight()
 	{
 		Windows.UI.Text.FontWeight _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_FontWeight(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontWeight(&_ret));
 		return _ret;
 	}
 	final void FontWeight(Windows.UI.Text.FontWeight value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).set_FontWeight(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontWeight(value));
 	}
 	final Windows.UI.Text.FontStyle FontStyle()
 	{
 		Windows.UI.Text.FontStyle _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_FontStyle(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontStyle(&_ret));
 		return _ret;
 	}
 	final void FontStyle(Windows.UI.Text.FontStyle value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).set_FontStyle(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontStyle(value));
 	}
 	final Windows.UI.Text.FontStretch FontStretch()
 	{
 		Windows.UI.Text.FontStretch _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_FontStretch(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontStretch(&_ret));
 		return _ret;
 	}
 	final void FontStretch(Windows.UI.Text.FontStretch value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).set_FontStretch(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontStretch(value));
 	}
 	final INT32 CharacterSpacing()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_CharacterSpacing(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_CharacterSpacing(&_ret));
 		return _ret;
 	}
 	final void CharacterSpacing(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).set_CharacterSpacing(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_CharacterSpacing(value));
 	}
 	final Windows.UI.Xaml.Media.Brush Foreground()
 	{
 		Windows.UI.Xaml.Media.Brush _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_Foreground(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_Foreground(&_ret));
 		return _ret;
 	}
 	final void Foreground(Windows.UI.Xaml.Media.Brush value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).set_Foreground(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_Foreground(value));
 	}
 	final HSTRING Language()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_Language(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_Language(&_ret));
 		return _ret;
 	}
 	final void Language(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).set_Language(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_Language(value));
 	}
 	final Windows.UI.Xaml.Documents.TextPointer ContentStart()
 	{
 		Windows.UI.Xaml.Documents.TextPointer _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_ContentStart(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_ContentStart(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Documents.TextPointer ContentEnd()
 	{
 		Windows.UI.Xaml.Documents.TextPointer _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_ContentEnd(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_ContentEnd(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Documents.TextPointer ElementStart()
 	{
 		Windows.UI.Xaml.Documents.TextPointer _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_ElementStart(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_ElementStart(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Documents.TextPointer ElementEnd()
 	{
 		Windows.UI.Xaml.Documents.TextPointer _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).get_ElementEnd(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_ElementEnd(&_ret));
 		return _ret;
 	}
 	final IInspectable FindName(HSTRING name)
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement).abi_FindName(name, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).abi_FindName(name, &_ret));
 		return _ret;
 	}
 	final bool IsTextScaleFactorEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement2).get_IsTextScaleFactorEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement2)this.asInterface(uuid("a8076aa8-f892-49f6-8cd2-89addaf06d2d"))).get_IsTextScaleFactorEnabled(&_ret));
 		return _ret;
 	}
 	final void IsTextScaleFactorEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement2).set_IsTextScaleFactorEnabled(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement2)this.asInterface(uuid("a8076aa8-f892-49f6-8cd2-89addaf06d2d"))).set_IsTextScaleFactorEnabled(value));
 	}
 	final bool AllowFocusOnInteraction()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement3).get_AllowFocusOnInteraction(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement3)this.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).get_AllowFocusOnInteraction(&_ret));
 		return _ret;
 	}
 	final void AllowFocusOnInteraction(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement3).set_AllowFocusOnInteraction(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement3)this.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).set_AllowFocusOnInteraction(value));
 	}
 	final HSTRING AccessKey()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement3).get_AccessKey(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement3)this.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).get_AccessKey(&_ret));
 		return _ret;
 	}
 	final void AccessKey(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement3).set_AccessKey(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement3)this.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).set_AccessKey(value));
 	}
 	final bool ExitDisplayModeOnAccessKeyInvoked()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement3).get_ExitDisplayModeOnAccessKeyInvoked(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement3)this.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).get_ExitDisplayModeOnAccessKeyInvoked(&_ret));
 		return _ret;
 	}
 	final void ExitDisplayModeOnAccessKeyInvoked(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement3).set_ExitDisplayModeOnAccessKeyInvoked(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement3)this.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).set_ExitDisplayModeOnAccessKeyInvoked(value));
 	}
 	final Windows.UI.Text.TextDecorations TextDecorations()
 	{
 		Windows.UI.Text.TextDecorations _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).get_TextDecorations(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement4)this.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_TextDecorations(&_ret));
 		return _ret;
 	}
 	final void TextDecorations(Windows.UI.Text.TextDecorations value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).set_TextDecorations(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement4)this.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_TextDecorations(value));
 	}
 	final bool IsAccessKeyScope()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).get_IsAccessKeyScope(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement4)this.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_IsAccessKeyScope(&_ret));
 		return _ret;
 	}
 	final void IsAccessKeyScope(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).set_IsAccessKeyScope(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement4)this.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_IsAccessKeyScope(value));
 	}
 	final Windows.UI.Xaml.DependencyObject AccessKeyScopeOwner()
 	{
 		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).get_AccessKeyScopeOwner(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement4)this.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_AccessKeyScopeOwner(&_ret));
 		return _ret;
 	}
 	final void AccessKeyScopeOwner(Windows.UI.Xaml.DependencyObject value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).set_AccessKeyScopeOwner(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement4)this.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_AccessKeyScopeOwner(value));
 	}
 	final Windows.UI.Xaml.Input.KeyTipPlacementMode KeyTipPlacementMode()
 	{
 		Windows.UI.Xaml.Input.KeyTipPlacementMode _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).get_KeyTipPlacementMode(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement4)this.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_KeyTipPlacementMode(&_ret));
 		return _ret;
 	}
 	final void KeyTipPlacementMode(Windows.UI.Xaml.Input.KeyTipPlacementMode value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).set_KeyTipPlacementMode(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement4)this.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_KeyTipPlacementMode(value));
 	}
 	final double KeyTipHorizontalOffset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).get_KeyTipHorizontalOffset(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement4)this.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_KeyTipHorizontalOffset(&_ret));
 		return _ret;
 	}
 	final void KeyTipHorizontalOffset(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).set_KeyTipHorizontalOffset(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement4)this.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_KeyTipHorizontalOffset(value));
 	}
 	final double KeyTipVerticalOffset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).get_KeyTipVerticalOffset(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement4)this.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_KeyTipVerticalOffset(&_ret));
 		return _ret;
 	}
 	final void KeyTipVerticalOffset(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).set_KeyTipVerticalOffset(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement4)this.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_KeyTipVerticalOffset(value));
 	}
 	final EventRegistrationToken OnAccessKeyDisplayRequested(void delegate(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).add_AccessKeyDisplayRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs), Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement4)this.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).add_AccessKeyDisplayRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs), Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAccessKeyDisplayRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).remove_AccessKeyDisplayRequested(token));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement4)this.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).remove_AccessKeyDisplayRequested(token));
 	}
 	final EventRegistrationToken OnAccessKeyDisplayDismissed(void delegate(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).add_AccessKeyDisplayDismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs), Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement4)this.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).add_AccessKeyDisplayDismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs), Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAccessKeyDisplayDismissed(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).remove_AccessKeyDisplayDismissed(token));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement4)this.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).remove_AccessKeyDisplayDismissed(token));
 	}
 	final EventRegistrationToken OnAccessKeyInvoked(void delegate(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).add_AccessKeyInvoked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs), Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement4)this.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).add_AccessKeyInvoked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs), Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAccessKeyInvoked(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextElement4).remove_AccessKeyInvoked(token));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement4)this.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).remove_AccessKeyInvoked(token));
 	}
 
 	private static Windows.UI.Xaml.Documents.ITextElementStatics _staticInstance;
@@ -1624,49 +1624,49 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty FontSizeProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITextElementStatics).get_FontSizeProperty(&_ret));
+		Debug.OK(staticInstance.get_FontSizeProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty FontFamilyProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITextElementStatics).get_FontFamilyProperty(&_ret));
+		Debug.OK(staticInstance.get_FontFamilyProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty FontWeightProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITextElementStatics).get_FontWeightProperty(&_ret));
+		Debug.OK(staticInstance.get_FontWeightProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty FontStyleProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITextElementStatics).get_FontStyleProperty(&_ret));
+		Debug.OK(staticInstance.get_FontStyleProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty FontStretchProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITextElementStatics).get_FontStretchProperty(&_ret));
+		Debug.OK(staticInstance.get_FontStretchProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty CharacterSpacingProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITextElementStatics).get_CharacterSpacingProperty(&_ret));
+		Debug.OK(staticInstance.get_CharacterSpacingProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ForegroundProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITextElementStatics).get_ForegroundProperty(&_ret));
+		Debug.OK(staticInstance.get_ForegroundProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty LanguageProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITextElementStatics).get_LanguageProperty(&_ret));
+		Debug.OK(staticInstance.get_LanguageProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1680,60 +1680,60 @@ class TextElementT(Base) : AgileObject!Base, TextElement
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_Name(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_Name(return_value); }
-	override HRESULT get_FontSize(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_FontSize(return_value); }
-	override HRESULT set_FontSize(double value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).set_FontSize(value); }
-	override HRESULT get_FontFamily(Windows.UI.Xaml.Media.FontFamily* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_FontFamily(return_value); }
-	override HRESULT set_FontFamily(Windows.UI.Xaml.Media.FontFamily value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).set_FontFamily(value); }
-	override HRESULT get_FontWeight(Windows.UI.Text.FontWeight* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_FontWeight(return_value); }
-	override HRESULT set_FontWeight(Windows.UI.Text.FontWeight value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).set_FontWeight(value); }
-	override HRESULT get_FontStyle(Windows.UI.Text.FontStyle* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_FontStyle(return_value); }
-	override HRESULT set_FontStyle(Windows.UI.Text.FontStyle value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).set_FontStyle(value); }
-	override HRESULT get_FontStretch(Windows.UI.Text.FontStretch* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_FontStretch(return_value); }
-	override HRESULT set_FontStretch(Windows.UI.Text.FontStretch value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).set_FontStretch(value); }
-	override HRESULT get_CharacterSpacing(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_CharacterSpacing(return_value); }
-	override HRESULT set_CharacterSpacing(INT32 value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).set_CharacterSpacing(value); }
-	override HRESULT get_Foreground(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_Foreground(return_value); }
-	override HRESULT set_Foreground(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).set_Foreground(value); }
-	override HRESULT get_Language(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_Language(return_value); }
-	override HRESULT set_Language(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).set_Language(value); }
-	override HRESULT get_ContentStart(Windows.UI.Xaml.Documents.TextPointer* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_ContentStart(return_value); }
-	override HRESULT get_ContentEnd(Windows.UI.Xaml.Documents.TextPointer* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_ContentEnd(return_value); }
-	override HRESULT get_ElementStart(Windows.UI.Xaml.Documents.TextPointer* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_ElementStart(return_value); }
-	override HRESULT get_ElementEnd(Windows.UI.Xaml.Documents.TextPointer* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).get_ElementEnd(return_value); }
-	override HRESULT abi_FindName(HSTRING name, IInspectable* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement).abi_FindName(name, return_returnValue); }
+	override HRESULT get_Name(HSTRING* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_Name(return_value); }
+	override HRESULT get_FontSize(double* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontSize(return_value); }
+	override HRESULT set_FontSize(double value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontSize(value); }
+	override HRESULT get_FontFamily(Windows.UI.Xaml.Media.FontFamily* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontFamily(return_value); }
+	override HRESULT set_FontFamily(Windows.UI.Xaml.Media.FontFamily value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontFamily(value); }
+	override HRESULT get_FontWeight(Windows.UI.Text.FontWeight* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontWeight(return_value); }
+	override HRESULT set_FontWeight(Windows.UI.Text.FontWeight value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontWeight(value); }
+	override HRESULT get_FontStyle(Windows.UI.Text.FontStyle* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontStyle(return_value); }
+	override HRESULT set_FontStyle(Windows.UI.Text.FontStyle value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontStyle(value); }
+	override HRESULT get_FontStretch(Windows.UI.Text.FontStretch* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_FontStretch(return_value); }
+	override HRESULT set_FontStretch(Windows.UI.Text.FontStretch value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_FontStretch(value); }
+	override HRESULT get_CharacterSpacing(INT32* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_CharacterSpacing(return_value); }
+	override HRESULT set_CharacterSpacing(INT32 value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_CharacterSpacing(value); }
+	override HRESULT get_Foreground(Windows.UI.Xaml.Media.Brush* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_Foreground(return_value); }
+	override HRESULT set_Foreground(Windows.UI.Xaml.Media.Brush value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_Foreground(value); }
+	override HRESULT get_Language(HSTRING* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_Language(return_value); }
+	override HRESULT set_Language(HSTRING value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_Language(value); }
+	override HRESULT get_ContentStart(Windows.UI.Xaml.Documents.TextPointer* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_ContentStart(return_value); }
+	override HRESULT get_ContentEnd(Windows.UI.Xaml.Documents.TextPointer* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_ContentEnd(return_value); }
+	override HRESULT get_ElementStart(Windows.UI.Xaml.Documents.TextPointer* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_ElementStart(return_value); }
+	override HRESULT get_ElementEnd(Windows.UI.Xaml.Documents.TextPointer* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_ElementEnd(return_value); }
+	override HRESULT abi_FindName(HSTRING name, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.Documents.ITextElement)m_inner.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).abi_FindName(name, return_returnValue); }
 
 	override HRESULT abi_OnDisconnectVisualChildren() { this.OnDisconnectVisualChildren(); return S_OK; }
-	void OnDisconnectVisualChildren() { Debug.OK(m_inner.as!(Windows.UI.Xaml.Documents.ITextElementOverrides).abi_OnDisconnectVisualChildren()); }
+	void OnDisconnectVisualChildren() { Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElementOverrides)m_inner.asInterface(uuid("0ce21ee7-4f76-4dd9-bf91-163beccf84bc"))).abi_OnDisconnectVisualChildren()); }
 
-	override HRESULT get_IsTextScaleFactorEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement2).get_IsTextScaleFactorEnabled(return_value); }
-	override HRESULT set_IsTextScaleFactorEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement2).set_IsTextScaleFactorEnabled(value); }
+	override HRESULT get_IsTextScaleFactorEnabled(bool* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement2)m_inner.asInterface(uuid("a8076aa8-f892-49f6-8cd2-89addaf06d2d"))).get_IsTextScaleFactorEnabled(return_value); }
+	override HRESULT set_IsTextScaleFactorEnabled(bool value) { return (cast(Windows.UI.Xaml.Documents.ITextElement2)m_inner.asInterface(uuid("a8076aa8-f892-49f6-8cd2-89addaf06d2d"))).set_IsTextScaleFactorEnabled(value); }
 
-	override HRESULT get_AllowFocusOnInteraction(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement3).get_AllowFocusOnInteraction(return_value); }
-	override HRESULT set_AllowFocusOnInteraction(bool value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement3).set_AllowFocusOnInteraction(value); }
-	override HRESULT get_AccessKey(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement3).get_AccessKey(return_value); }
-	override HRESULT set_AccessKey(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement3).set_AccessKey(value); }
-	override HRESULT get_ExitDisplayModeOnAccessKeyInvoked(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement3).get_ExitDisplayModeOnAccessKeyInvoked(return_value); }
-	override HRESULT set_ExitDisplayModeOnAccessKeyInvoked(bool value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement3).set_ExitDisplayModeOnAccessKeyInvoked(value); }
+	override HRESULT get_AllowFocusOnInteraction(bool* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).get_AllowFocusOnInteraction(return_value); }
+	override HRESULT set_AllowFocusOnInteraction(bool value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).set_AllowFocusOnInteraction(value); }
+	override HRESULT get_AccessKey(HSTRING* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).get_AccessKey(return_value); }
+	override HRESULT set_AccessKey(HSTRING value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).set_AccessKey(value); }
+	override HRESULT get_ExitDisplayModeOnAccessKeyInvoked(bool* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).get_ExitDisplayModeOnAccessKeyInvoked(return_value); }
+	override HRESULT set_ExitDisplayModeOnAccessKeyInvoked(bool value) { return (cast(Windows.UI.Xaml.Documents.ITextElement3)m_inner.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).set_ExitDisplayModeOnAccessKeyInvoked(value); }
 
-	override HRESULT get_TextDecorations(Windows.UI.Text.TextDecorations* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).get_TextDecorations(return_value); }
-	override HRESULT set_TextDecorations(Windows.UI.Text.TextDecorations value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).set_TextDecorations(value); }
-	override HRESULT get_IsAccessKeyScope(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).get_IsAccessKeyScope(return_value); }
-	override HRESULT set_IsAccessKeyScope(bool value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).set_IsAccessKeyScope(value); }
-	override HRESULT get_AccessKeyScopeOwner(Windows.UI.Xaml.DependencyObject* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).get_AccessKeyScopeOwner(return_value); }
-	override HRESULT set_AccessKeyScopeOwner(Windows.UI.Xaml.DependencyObject value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).set_AccessKeyScopeOwner(value); }
-	override HRESULT get_KeyTipPlacementMode(Windows.UI.Xaml.Input.KeyTipPlacementMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).get_KeyTipPlacementMode(return_value); }
-	override HRESULT set_KeyTipPlacementMode(Windows.UI.Xaml.Input.KeyTipPlacementMode value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).set_KeyTipPlacementMode(value); }
-	override HRESULT get_KeyTipHorizontalOffset(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).get_KeyTipHorizontalOffset(return_value); }
-	override HRESULT set_KeyTipHorizontalOffset(double value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).set_KeyTipHorizontalOffset(value); }
-	override HRESULT get_KeyTipVerticalOffset(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).get_KeyTipVerticalOffset(return_value); }
-	override HRESULT set_KeyTipVerticalOffset(double value) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).set_KeyTipVerticalOffset(value); }
-	override HRESULT add_AccessKeyDisplayRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).add_AccessKeyDisplayRequested(value, return_token); }
-	override HRESULT remove_AccessKeyDisplayRequested(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).remove_AccessKeyDisplayRequested(token); }
-	override HRESULT add_AccessKeyDisplayDismissed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).add_AccessKeyDisplayDismissed(value, return_token); }
-	override HRESULT remove_AccessKeyDisplayDismissed(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).remove_AccessKeyDisplayDismissed(token); }
-	override HRESULT add_AccessKeyInvoked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).add_AccessKeyInvoked(value, return_token); }
-	override HRESULT remove_AccessKeyInvoked(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Documents.ITextElement4).remove_AccessKeyInvoked(token); }
+	override HRESULT get_TextDecorations(Windows.UI.Text.TextDecorations* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_TextDecorations(return_value); }
+	override HRESULT set_TextDecorations(Windows.UI.Text.TextDecorations value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_TextDecorations(value); }
+	override HRESULT get_IsAccessKeyScope(bool* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_IsAccessKeyScope(return_value); }
+	override HRESULT set_IsAccessKeyScope(bool value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_IsAccessKeyScope(value); }
+	override HRESULT get_AccessKeyScopeOwner(Windows.UI.Xaml.DependencyObject* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_AccessKeyScopeOwner(return_value); }
+	override HRESULT set_AccessKeyScopeOwner(Windows.UI.Xaml.DependencyObject value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_AccessKeyScopeOwner(value); }
+	override HRESULT get_KeyTipPlacementMode(Windows.UI.Xaml.Input.KeyTipPlacementMode* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_KeyTipPlacementMode(return_value); }
+	override HRESULT set_KeyTipPlacementMode(Windows.UI.Xaml.Input.KeyTipPlacementMode value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_KeyTipPlacementMode(value); }
+	override HRESULT get_KeyTipHorizontalOffset(double* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_KeyTipHorizontalOffset(return_value); }
+	override HRESULT set_KeyTipHorizontalOffset(double value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_KeyTipHorizontalOffset(value); }
+	override HRESULT get_KeyTipVerticalOffset(double* return_value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).get_KeyTipVerticalOffset(return_value); }
+	override HRESULT set_KeyTipVerticalOffset(double value) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).set_KeyTipVerticalOffset(value); }
+	override HRESULT add_AccessKeyDisplayRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).add_AccessKeyDisplayRequested(value, return_token); }
+	override HRESULT remove_AccessKeyDisplayRequested(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).remove_AccessKeyDisplayRequested(token); }
+	override HRESULT add_AccessKeyDisplayDismissed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).add_AccessKeyDisplayDismissed(value, return_token); }
+	override HRESULT remove_AccessKeyDisplayDismissed(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).remove_AccessKeyDisplayDismissed(token); }
+	override HRESULT add_AccessKeyInvoked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Documents.TextElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).add_AccessKeyInvoked(value, return_token); }
+	override HRESULT remove_AccessKeyInvoked(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.Documents.ITextElement4)m_inner.asInterface(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7"))).remove_AccessKeyInvoked(token); }
 
 	this() {}
 	IInspectable m_inner;
@@ -1745,37 +1745,37 @@ extern(Windows):
 	final Windows.UI.Xaml.DependencyObject Parent()
 	{
 		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextPointer).get_Parent(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextPointer)this.asInterface(uuid("ac687aa1-6a41-43ff-851e-45348aa2cf7b"))).get_Parent(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.FrameworkElement VisualParent()
 	{
 		Windows.UI.Xaml.FrameworkElement _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextPointer).get_VisualParent(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextPointer)this.asInterface(uuid("ac687aa1-6a41-43ff-851e-45348aa2cf7b"))).get_VisualParent(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Documents.LogicalDirection LogicalDirection()
 	{
 		Windows.UI.Xaml.Documents.LogicalDirection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextPointer).get_LogicalDirection(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextPointer)this.asInterface(uuid("ac687aa1-6a41-43ff-851e-45348aa2cf7b"))).get_LogicalDirection(&_ret));
 		return _ret;
 	}
 	final INT32 Offset()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextPointer).get_Offset(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextPointer)this.asInterface(uuid("ac687aa1-6a41-43ff-851e-45348aa2cf7b"))).get_Offset(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect GetCharacterRect(Windows.UI.Xaml.Documents.LogicalDirection direction)
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextPointer).abi_GetCharacterRect(direction, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextPointer)this.asInterface(uuid("ac687aa1-6a41-43ff-851e-45348aa2cf7b"))).abi_GetCharacterRect(direction, &_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Documents.TextPointer GetPositionAtOffset(INT32 offset, Windows.UI.Xaml.Documents.LogicalDirection direction)
 	{
 		Windows.UI.Xaml.Documents.TextPointer _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Documents.ITextPointer).abi_GetPositionAtOffset(offset, direction, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextPointer)this.asInterface(uuid("ac687aa1-6a41-43ff-851e-45348aa2cf7b"))).abi_GetPositionAtOffset(offset, direction, &_ret));
 		return _ret;
 	}
 }
@@ -1791,690 +1791,690 @@ interface Typography : Windows.UI.Xaml.Documents.ITypography
 	static Windows.UI.Xaml.DependencyProperty AnnotationAlternatesProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_AnnotationAlternatesProperty(&_ret));
+		Debug.OK(staticInstance.get_AnnotationAlternatesProperty(&_ret));
 		return _ret;
 	}
 	static INT32 GetAnnotationAlternates(Windows.UI.Xaml.DependencyObject element)
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetAnnotationAlternates(element, &_ret));
+		Debug.OK(staticInstance.abi_GetAnnotationAlternates(element, &_ret));
 		return _ret;
 	}
 	static void SetAnnotationAlternates(Windows.UI.Xaml.DependencyObject element, INT32 value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetAnnotationAlternates(element, value));
+		Debug.OK(staticInstance.abi_SetAnnotationAlternates(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty EastAsianExpertFormsProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_EastAsianExpertFormsProperty(&_ret));
+		Debug.OK(staticInstance.get_EastAsianExpertFormsProperty(&_ret));
 		return _ret;
 	}
 	static bool GetEastAsianExpertForms(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetEastAsianExpertForms(element, &_ret));
+		Debug.OK(staticInstance.abi_GetEastAsianExpertForms(element, &_ret));
 		return _ret;
 	}
 	static void SetEastAsianExpertForms(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetEastAsianExpertForms(element, value));
+		Debug.OK(staticInstance.abi_SetEastAsianExpertForms(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty EastAsianLanguageProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_EastAsianLanguageProperty(&_ret));
+		Debug.OK(staticInstance.get_EastAsianLanguageProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.FontEastAsianLanguage GetEastAsianLanguage(Windows.UI.Xaml.DependencyObject element)
 	{
 		Windows.UI.Xaml.FontEastAsianLanguage _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetEastAsianLanguage(element, &_ret));
+		Debug.OK(staticInstance.abi_GetEastAsianLanguage(element, &_ret));
 		return _ret;
 	}
 	static void SetEastAsianLanguage(Windows.UI.Xaml.DependencyObject element, Windows.UI.Xaml.FontEastAsianLanguage value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetEastAsianLanguage(element, value));
+		Debug.OK(staticInstance.abi_SetEastAsianLanguage(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty EastAsianWidthsProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_EastAsianWidthsProperty(&_ret));
+		Debug.OK(staticInstance.get_EastAsianWidthsProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.FontEastAsianWidths GetEastAsianWidths(Windows.UI.Xaml.DependencyObject element)
 	{
 		Windows.UI.Xaml.FontEastAsianWidths _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetEastAsianWidths(element, &_ret));
+		Debug.OK(staticInstance.abi_GetEastAsianWidths(element, &_ret));
 		return _ret;
 	}
 	static void SetEastAsianWidths(Windows.UI.Xaml.DependencyObject element, Windows.UI.Xaml.FontEastAsianWidths value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetEastAsianWidths(element, value));
+		Debug.OK(staticInstance.abi_SetEastAsianWidths(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty StandardLigaturesProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StandardLigaturesProperty(&_ret));
+		Debug.OK(staticInstance.get_StandardLigaturesProperty(&_ret));
 		return _ret;
 	}
 	static bool GetStandardLigatures(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStandardLigatures(element, &_ret));
+		Debug.OK(staticInstance.abi_GetStandardLigatures(element, &_ret));
 		return _ret;
 	}
 	static void SetStandardLigatures(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStandardLigatures(element, value));
+		Debug.OK(staticInstance.abi_SetStandardLigatures(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty ContextualLigaturesProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_ContextualLigaturesProperty(&_ret));
+		Debug.OK(staticInstance.get_ContextualLigaturesProperty(&_ret));
 		return _ret;
 	}
 	static bool GetContextualLigatures(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetContextualLigatures(element, &_ret));
+		Debug.OK(staticInstance.abi_GetContextualLigatures(element, &_ret));
 		return _ret;
 	}
 	static void SetContextualLigatures(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetContextualLigatures(element, value));
+		Debug.OK(staticInstance.abi_SetContextualLigatures(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty DiscretionaryLigaturesProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_DiscretionaryLigaturesProperty(&_ret));
+		Debug.OK(staticInstance.get_DiscretionaryLigaturesProperty(&_ret));
 		return _ret;
 	}
 	static bool GetDiscretionaryLigatures(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetDiscretionaryLigatures(element, &_ret));
+		Debug.OK(staticInstance.abi_GetDiscretionaryLigatures(element, &_ret));
 		return _ret;
 	}
 	static void SetDiscretionaryLigatures(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetDiscretionaryLigatures(element, value));
+		Debug.OK(staticInstance.abi_SetDiscretionaryLigatures(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty HistoricalLigaturesProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_HistoricalLigaturesProperty(&_ret));
+		Debug.OK(staticInstance.get_HistoricalLigaturesProperty(&_ret));
 		return _ret;
 	}
 	static bool GetHistoricalLigatures(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetHistoricalLigatures(element, &_ret));
+		Debug.OK(staticInstance.abi_GetHistoricalLigatures(element, &_ret));
 		return _ret;
 	}
 	static void SetHistoricalLigatures(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetHistoricalLigatures(element, value));
+		Debug.OK(staticInstance.abi_SetHistoricalLigatures(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty StandardSwashesProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StandardSwashesProperty(&_ret));
+		Debug.OK(staticInstance.get_StandardSwashesProperty(&_ret));
 		return _ret;
 	}
 	static INT32 GetStandardSwashes(Windows.UI.Xaml.DependencyObject element)
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStandardSwashes(element, &_ret));
+		Debug.OK(staticInstance.abi_GetStandardSwashes(element, &_ret));
 		return _ret;
 	}
 	static void SetStandardSwashes(Windows.UI.Xaml.DependencyObject element, INT32 value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStandardSwashes(element, value));
+		Debug.OK(staticInstance.abi_SetStandardSwashes(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty ContextualSwashesProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_ContextualSwashesProperty(&_ret));
+		Debug.OK(staticInstance.get_ContextualSwashesProperty(&_ret));
 		return _ret;
 	}
 	static INT32 GetContextualSwashes(Windows.UI.Xaml.DependencyObject element)
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetContextualSwashes(element, &_ret));
+		Debug.OK(staticInstance.abi_GetContextualSwashes(element, &_ret));
 		return _ret;
 	}
 	static void SetContextualSwashes(Windows.UI.Xaml.DependencyObject element, INT32 value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetContextualSwashes(element, value));
+		Debug.OK(staticInstance.abi_SetContextualSwashes(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty ContextualAlternatesProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_ContextualAlternatesProperty(&_ret));
+		Debug.OK(staticInstance.get_ContextualAlternatesProperty(&_ret));
 		return _ret;
 	}
 	static bool GetContextualAlternates(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetContextualAlternates(element, &_ret));
+		Debug.OK(staticInstance.abi_GetContextualAlternates(element, &_ret));
 		return _ret;
 	}
 	static void SetContextualAlternates(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetContextualAlternates(element, value));
+		Debug.OK(staticInstance.abi_SetContextualAlternates(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty StylisticAlternatesProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticAlternatesProperty(&_ret));
+		Debug.OK(staticInstance.get_StylisticAlternatesProperty(&_ret));
 		return _ret;
 	}
 	static INT32 GetStylisticAlternates(Windows.UI.Xaml.DependencyObject element)
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticAlternates(element, &_ret));
+		Debug.OK(staticInstance.abi_GetStylisticAlternates(element, &_ret));
 		return _ret;
 	}
 	static void SetStylisticAlternates(Windows.UI.Xaml.DependencyObject element, INT32 value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticAlternates(element, value));
+		Debug.OK(staticInstance.abi_SetStylisticAlternates(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty StylisticSet1Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet1Property(&_ret));
+		Debug.OK(staticInstance.get_StylisticSet1Property(&_ret));
 		return _ret;
 	}
 	static bool GetStylisticSet1(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet1(element, &_ret));
+		Debug.OK(staticInstance.abi_GetStylisticSet1(element, &_ret));
 		return _ret;
 	}
 	static void SetStylisticSet1(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet1(element, value));
+		Debug.OK(staticInstance.abi_SetStylisticSet1(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty StylisticSet2Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet2Property(&_ret));
+		Debug.OK(staticInstance.get_StylisticSet2Property(&_ret));
 		return _ret;
 	}
 	static bool GetStylisticSet2(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet2(element, &_ret));
+		Debug.OK(staticInstance.abi_GetStylisticSet2(element, &_ret));
 		return _ret;
 	}
 	static void SetStylisticSet2(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet2(element, value));
+		Debug.OK(staticInstance.abi_SetStylisticSet2(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty StylisticSet3Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet3Property(&_ret));
+		Debug.OK(staticInstance.get_StylisticSet3Property(&_ret));
 		return _ret;
 	}
 	static bool GetStylisticSet3(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet3(element, &_ret));
+		Debug.OK(staticInstance.abi_GetStylisticSet3(element, &_ret));
 		return _ret;
 	}
 	static void SetStylisticSet3(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet3(element, value));
+		Debug.OK(staticInstance.abi_SetStylisticSet3(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty StylisticSet4Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet4Property(&_ret));
+		Debug.OK(staticInstance.get_StylisticSet4Property(&_ret));
 		return _ret;
 	}
 	static bool GetStylisticSet4(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet4(element, &_ret));
+		Debug.OK(staticInstance.abi_GetStylisticSet4(element, &_ret));
 		return _ret;
 	}
 	static void SetStylisticSet4(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet4(element, value));
+		Debug.OK(staticInstance.abi_SetStylisticSet4(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty StylisticSet5Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet5Property(&_ret));
+		Debug.OK(staticInstance.get_StylisticSet5Property(&_ret));
 		return _ret;
 	}
 	static bool GetStylisticSet5(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet5(element, &_ret));
+		Debug.OK(staticInstance.abi_GetStylisticSet5(element, &_ret));
 		return _ret;
 	}
 	static void SetStylisticSet5(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet5(element, value));
+		Debug.OK(staticInstance.abi_SetStylisticSet5(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty StylisticSet6Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet6Property(&_ret));
+		Debug.OK(staticInstance.get_StylisticSet6Property(&_ret));
 		return _ret;
 	}
 	static bool GetStylisticSet6(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet6(element, &_ret));
+		Debug.OK(staticInstance.abi_GetStylisticSet6(element, &_ret));
 		return _ret;
 	}
 	static void SetStylisticSet6(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet6(element, value));
+		Debug.OK(staticInstance.abi_SetStylisticSet6(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty StylisticSet7Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet7Property(&_ret));
+		Debug.OK(staticInstance.get_StylisticSet7Property(&_ret));
 		return _ret;
 	}
 	static bool GetStylisticSet7(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet7(element, &_ret));
+		Debug.OK(staticInstance.abi_GetStylisticSet7(element, &_ret));
 		return _ret;
 	}
 	static void SetStylisticSet7(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet7(element, value));
+		Debug.OK(staticInstance.abi_SetStylisticSet7(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty StylisticSet8Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet8Property(&_ret));
+		Debug.OK(staticInstance.get_StylisticSet8Property(&_ret));
 		return _ret;
 	}
 	static bool GetStylisticSet8(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet8(element, &_ret));
+		Debug.OK(staticInstance.abi_GetStylisticSet8(element, &_ret));
 		return _ret;
 	}
 	static void SetStylisticSet8(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet8(element, value));
+		Debug.OK(staticInstance.abi_SetStylisticSet8(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty StylisticSet9Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet9Property(&_ret));
+		Debug.OK(staticInstance.get_StylisticSet9Property(&_ret));
 		return _ret;
 	}
 	static bool GetStylisticSet9(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet9(element, &_ret));
+		Debug.OK(staticInstance.abi_GetStylisticSet9(element, &_ret));
 		return _ret;
 	}
 	static void SetStylisticSet9(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet9(element, value));
+		Debug.OK(staticInstance.abi_SetStylisticSet9(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty StylisticSet10Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet10Property(&_ret));
+		Debug.OK(staticInstance.get_StylisticSet10Property(&_ret));
 		return _ret;
 	}
 	static bool GetStylisticSet10(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet10(element, &_ret));
+		Debug.OK(staticInstance.abi_GetStylisticSet10(element, &_ret));
 		return _ret;
 	}
 	static void SetStylisticSet10(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet10(element, value));
+		Debug.OK(staticInstance.abi_SetStylisticSet10(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty StylisticSet11Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet11Property(&_ret));
+		Debug.OK(staticInstance.get_StylisticSet11Property(&_ret));
 		return _ret;
 	}
 	static bool GetStylisticSet11(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet11(element, &_ret));
+		Debug.OK(staticInstance.abi_GetStylisticSet11(element, &_ret));
 		return _ret;
 	}
 	static void SetStylisticSet11(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet11(element, value));
+		Debug.OK(staticInstance.abi_SetStylisticSet11(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty StylisticSet12Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet12Property(&_ret));
+		Debug.OK(staticInstance.get_StylisticSet12Property(&_ret));
 		return _ret;
 	}
 	static bool GetStylisticSet12(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet12(element, &_ret));
+		Debug.OK(staticInstance.abi_GetStylisticSet12(element, &_ret));
 		return _ret;
 	}
 	static void SetStylisticSet12(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet12(element, value));
+		Debug.OK(staticInstance.abi_SetStylisticSet12(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty StylisticSet13Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet13Property(&_ret));
+		Debug.OK(staticInstance.get_StylisticSet13Property(&_ret));
 		return _ret;
 	}
 	static bool GetStylisticSet13(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet13(element, &_ret));
+		Debug.OK(staticInstance.abi_GetStylisticSet13(element, &_ret));
 		return _ret;
 	}
 	static void SetStylisticSet13(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet13(element, value));
+		Debug.OK(staticInstance.abi_SetStylisticSet13(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty StylisticSet14Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet14Property(&_ret));
+		Debug.OK(staticInstance.get_StylisticSet14Property(&_ret));
 		return _ret;
 	}
 	static bool GetStylisticSet14(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet14(element, &_ret));
+		Debug.OK(staticInstance.abi_GetStylisticSet14(element, &_ret));
 		return _ret;
 	}
 	static void SetStylisticSet14(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet14(element, value));
+		Debug.OK(staticInstance.abi_SetStylisticSet14(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty StylisticSet15Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet15Property(&_ret));
+		Debug.OK(staticInstance.get_StylisticSet15Property(&_ret));
 		return _ret;
 	}
 	static bool GetStylisticSet15(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet15(element, &_ret));
+		Debug.OK(staticInstance.abi_GetStylisticSet15(element, &_ret));
 		return _ret;
 	}
 	static void SetStylisticSet15(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet15(element, value));
+		Debug.OK(staticInstance.abi_SetStylisticSet15(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty StylisticSet16Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet16Property(&_ret));
+		Debug.OK(staticInstance.get_StylisticSet16Property(&_ret));
 		return _ret;
 	}
 	static bool GetStylisticSet16(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet16(element, &_ret));
+		Debug.OK(staticInstance.abi_GetStylisticSet16(element, &_ret));
 		return _ret;
 	}
 	static void SetStylisticSet16(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet16(element, value));
+		Debug.OK(staticInstance.abi_SetStylisticSet16(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty StylisticSet17Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet17Property(&_ret));
+		Debug.OK(staticInstance.get_StylisticSet17Property(&_ret));
 		return _ret;
 	}
 	static bool GetStylisticSet17(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet17(element, &_ret));
+		Debug.OK(staticInstance.abi_GetStylisticSet17(element, &_ret));
 		return _ret;
 	}
 	static void SetStylisticSet17(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet17(element, value));
+		Debug.OK(staticInstance.abi_SetStylisticSet17(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty StylisticSet18Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet18Property(&_ret));
+		Debug.OK(staticInstance.get_StylisticSet18Property(&_ret));
 		return _ret;
 	}
 	static bool GetStylisticSet18(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet18(element, &_ret));
+		Debug.OK(staticInstance.abi_GetStylisticSet18(element, &_ret));
 		return _ret;
 	}
 	static void SetStylisticSet18(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet18(element, value));
+		Debug.OK(staticInstance.abi_SetStylisticSet18(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty StylisticSet19Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet19Property(&_ret));
+		Debug.OK(staticInstance.get_StylisticSet19Property(&_ret));
 		return _ret;
 	}
 	static bool GetStylisticSet19(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet19(element, &_ret));
+		Debug.OK(staticInstance.abi_GetStylisticSet19(element, &_ret));
 		return _ret;
 	}
 	static void SetStylisticSet19(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet19(element, value));
+		Debug.OK(staticInstance.abi_SetStylisticSet19(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty StylisticSet20Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_StylisticSet20Property(&_ret));
+		Debug.OK(staticInstance.get_StylisticSet20Property(&_ret));
 		return _ret;
 	}
 	static bool GetStylisticSet20(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetStylisticSet20(element, &_ret));
+		Debug.OK(staticInstance.abi_GetStylisticSet20(element, &_ret));
 		return _ret;
 	}
 	static void SetStylisticSet20(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetStylisticSet20(element, value));
+		Debug.OK(staticInstance.abi_SetStylisticSet20(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty CapitalsProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_CapitalsProperty(&_ret));
+		Debug.OK(staticInstance.get_CapitalsProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.FontCapitals GetCapitals(Windows.UI.Xaml.DependencyObject element)
 	{
 		Windows.UI.Xaml.FontCapitals _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetCapitals(element, &_ret));
+		Debug.OK(staticInstance.abi_GetCapitals(element, &_ret));
 		return _ret;
 	}
 	static void SetCapitals(Windows.UI.Xaml.DependencyObject element, Windows.UI.Xaml.FontCapitals value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetCapitals(element, value));
+		Debug.OK(staticInstance.abi_SetCapitals(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty CapitalSpacingProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_CapitalSpacingProperty(&_ret));
+		Debug.OK(staticInstance.get_CapitalSpacingProperty(&_ret));
 		return _ret;
 	}
 	static bool GetCapitalSpacing(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetCapitalSpacing(element, &_ret));
+		Debug.OK(staticInstance.abi_GetCapitalSpacing(element, &_ret));
 		return _ret;
 	}
 	static void SetCapitalSpacing(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetCapitalSpacing(element, value));
+		Debug.OK(staticInstance.abi_SetCapitalSpacing(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty KerningProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_KerningProperty(&_ret));
+		Debug.OK(staticInstance.get_KerningProperty(&_ret));
 		return _ret;
 	}
 	static bool GetKerning(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetKerning(element, &_ret));
+		Debug.OK(staticInstance.abi_GetKerning(element, &_ret));
 		return _ret;
 	}
 	static void SetKerning(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetKerning(element, value));
+		Debug.OK(staticInstance.abi_SetKerning(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty CaseSensitiveFormsProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_CaseSensitiveFormsProperty(&_ret));
+		Debug.OK(staticInstance.get_CaseSensitiveFormsProperty(&_ret));
 		return _ret;
 	}
 	static bool GetCaseSensitiveForms(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetCaseSensitiveForms(element, &_ret));
+		Debug.OK(staticInstance.abi_GetCaseSensitiveForms(element, &_ret));
 		return _ret;
 	}
 	static void SetCaseSensitiveForms(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetCaseSensitiveForms(element, value));
+		Debug.OK(staticInstance.abi_SetCaseSensitiveForms(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty HistoricalFormsProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_HistoricalFormsProperty(&_ret));
+		Debug.OK(staticInstance.get_HistoricalFormsProperty(&_ret));
 		return _ret;
 	}
 	static bool GetHistoricalForms(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetHistoricalForms(element, &_ret));
+		Debug.OK(staticInstance.abi_GetHistoricalForms(element, &_ret));
 		return _ret;
 	}
 	static void SetHistoricalForms(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetHistoricalForms(element, value));
+		Debug.OK(staticInstance.abi_SetHistoricalForms(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty FractionProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_FractionProperty(&_ret));
+		Debug.OK(staticInstance.get_FractionProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.FontFraction GetFraction(Windows.UI.Xaml.DependencyObject element)
 	{
 		Windows.UI.Xaml.FontFraction _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetFraction(element, &_ret));
+		Debug.OK(staticInstance.abi_GetFraction(element, &_ret));
 		return _ret;
 	}
 	static void SetFraction(Windows.UI.Xaml.DependencyObject element, Windows.UI.Xaml.FontFraction value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetFraction(element, value));
+		Debug.OK(staticInstance.abi_SetFraction(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty NumeralStyleProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_NumeralStyleProperty(&_ret));
+		Debug.OK(staticInstance.get_NumeralStyleProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.FontNumeralStyle GetNumeralStyle(Windows.UI.Xaml.DependencyObject element)
 	{
 		Windows.UI.Xaml.FontNumeralStyle _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetNumeralStyle(element, &_ret));
+		Debug.OK(staticInstance.abi_GetNumeralStyle(element, &_ret));
 		return _ret;
 	}
 	static void SetNumeralStyle(Windows.UI.Xaml.DependencyObject element, Windows.UI.Xaml.FontNumeralStyle value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetNumeralStyle(element, value));
+		Debug.OK(staticInstance.abi_SetNumeralStyle(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty NumeralAlignmentProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_NumeralAlignmentProperty(&_ret));
+		Debug.OK(staticInstance.get_NumeralAlignmentProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.FontNumeralAlignment GetNumeralAlignment(Windows.UI.Xaml.DependencyObject element)
 	{
 		Windows.UI.Xaml.FontNumeralAlignment _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetNumeralAlignment(element, &_ret));
+		Debug.OK(staticInstance.abi_GetNumeralAlignment(element, &_ret));
 		return _ret;
 	}
 	static void SetNumeralAlignment(Windows.UI.Xaml.DependencyObject element, Windows.UI.Xaml.FontNumeralAlignment value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetNumeralAlignment(element, value));
+		Debug.OK(staticInstance.abi_SetNumeralAlignment(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty SlashedZeroProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_SlashedZeroProperty(&_ret));
+		Debug.OK(staticInstance.get_SlashedZeroProperty(&_ret));
 		return _ret;
 	}
 	static bool GetSlashedZero(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetSlashedZero(element, &_ret));
+		Debug.OK(staticInstance.abi_GetSlashedZero(element, &_ret));
 		return _ret;
 	}
 	static void SetSlashedZero(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetSlashedZero(element, value));
+		Debug.OK(staticInstance.abi_SetSlashedZero(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty MathematicalGreekProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_MathematicalGreekProperty(&_ret));
+		Debug.OK(staticInstance.get_MathematicalGreekProperty(&_ret));
 		return _ret;
 	}
 	static bool GetMathematicalGreek(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetMathematicalGreek(element, &_ret));
+		Debug.OK(staticInstance.abi_GetMathematicalGreek(element, &_ret));
 		return _ret;
 	}
 	static void SetMathematicalGreek(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetMathematicalGreek(element, value));
+		Debug.OK(staticInstance.abi_SetMathematicalGreek(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty VariantsProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).get_VariantsProperty(&_ret));
+		Debug.OK(staticInstance.get_VariantsProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.FontVariants GetVariants(Windows.UI.Xaml.DependencyObject element)
 	{
 		Windows.UI.Xaml.FontVariants _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_GetVariants(element, &_ret));
+		Debug.OK(staticInstance.abi_GetVariants(element, &_ret));
 		return _ret;
 	}
 	static void SetVariants(Windows.UI.Xaml.DependencyObject element, Windows.UI.Xaml.FontVariants value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Documents.ITypographyStatics).abi_SetVariants(element, value));
+		Debug.OK(staticInstance.abi_SetVariants(element, value));
 	}
 }
 
@@ -2484,7 +2484,7 @@ interface Underline : Windows.UI.Xaml.Documents.Span, Windows.UI.Xaml.Documents.
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Underline).abi_ActivateInstance(&ret));
-		return ret.as!(Underline);
+		return cast(Underline) ret;
 	}
 }
 

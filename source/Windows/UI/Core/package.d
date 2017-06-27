@@ -32,13 +32,13 @@ extern(Windows):
 	final Windows.UI.Core.CoreWindow CreateCoreWindow(HSTRING windowTitle)
 	{
 		Windows.UI.Core.CoreWindow _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFactory).abi_CreateCoreWindow(windowTitle, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFactory)this.asInterface(uuid("cd292360-2763-4085-8a9f-74b224a29175"))).abi_CreateCoreWindow(windowTitle, &_ret));
 		return _ret;
 	}
 	final bool WindowReuseAllowed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFactory).get_WindowReuseAllowed(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFactory)this.asInterface(uuid("cd292360-2763-4085-8a9f-74b224a29175"))).get_WindowReuseAllowed(&_ret));
 		return _ret;
 	}
 }
@@ -49,13 +49,13 @@ extern(Windows):
 	final Windows.UI.Core.CoreWindow CreateCoreWindow(HSTRING windowTitle)
 	{
 		Windows.UI.Core.CoreWindow _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFactory).abi_CreateCoreWindow(windowTitle, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFactory)this.asInterface(uuid("cd292360-2763-4085-8a9f-74b224a29175"))).abi_CreateCoreWindow(windowTitle, &_ret));
 		return _ret;
 	}
 	final bool WindowReuseAllowed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFactory).get_WindowReuseAllowed(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFactory)this.asInterface(uuid("cd292360-2763-4085-8a9f-74b224a29175"))).get_WindowReuseAllowed(&_ret));
 		return _ret;
 	}
 }
@@ -66,13 +66,13 @@ extern(Windows):
 	final Windows.UI.Core.CoreWindow CreateCoreWindow(HSTRING windowTitle)
 	{
 		Windows.UI.Core.CoreWindow _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFactory).abi_CreateCoreWindow(windowTitle, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFactory)this.asInterface(uuid("cd292360-2763-4085-8a9f-74b224a29175"))).abi_CreateCoreWindow(windowTitle, &_ret));
 		return _ret;
 	}
 	final bool WindowReuseAllowed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFactory).get_WindowReuseAllowed(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFactory)this.asInterface(uuid("cd292360-2763-4085-8a9f-74b224a29175"))).get_WindowReuseAllowed(&_ret));
 		return _ret;
 	}
 }
@@ -660,35 +660,35 @@ extern(Windows):
 	final Windows.UI.Core.CoreAcceleratorKeyEventType EventType()
 	{
 		Windows.UI.Core.CoreAcceleratorKeyEventType _ret;
-		Debug.OK(this.as!(Windows.UI.Core.IAcceleratorKeyEventArgs).get_EventType(&_ret));
+		Debug.OK((cast(Windows.UI.Core.IAcceleratorKeyEventArgs)this.asInterface(uuid("ff1c4c4a-9287-470b-836e-9086e3126ade"))).get_EventType(&_ret));
 		return _ret;
 	}
 	final Windows.System.VirtualKey VirtualKey()
 	{
 		Windows.System.VirtualKey _ret;
-		Debug.OK(this.as!(Windows.UI.Core.IAcceleratorKeyEventArgs).get_VirtualKey(&_ret));
+		Debug.OK((cast(Windows.UI.Core.IAcceleratorKeyEventArgs)this.asInterface(uuid("ff1c4c4a-9287-470b-836e-9086e3126ade"))).get_VirtualKey(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Core.CorePhysicalKeyStatus KeyStatus()
 	{
 		Windows.UI.Core.CorePhysicalKeyStatus _ret;
-		Debug.OK(this.as!(Windows.UI.Core.IAcceleratorKeyEventArgs).get_KeyStatus(&_ret));
+		Debug.OK((cast(Windows.UI.Core.IAcceleratorKeyEventArgs)this.asInterface(uuid("ff1c4c4a-9287-470b-836e-9086e3126ade"))).get_KeyStatus(&_ret));
 		return _ret;
 	}
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).set_Handled(value));
 	}
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Core.IAcceleratorKeyEventArgs2).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.UI.Core.IAcceleratorKeyEventArgs2)this.asInterface(uuid("d300a9f6-2f7e-4873-a555-166e596ee1c5"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 }
@@ -699,22 +699,22 @@ extern(Windows):
 	final IInspectable AutomationProvider()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Core.IAutomationProviderRequestedEventArgs).get_AutomationProvider(&_ret));
+		Debug.OK((cast(Windows.UI.Core.IAutomationProviderRequestedEventArgs)this.asInterface(uuid("961ff258-21bf-4b42-a298-fa479d4c52e2"))).get_AutomationProvider(&_ret));
 		return _ret;
 	}
 	final void AutomationProvider(IInspectable value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.IAutomationProviderRequestedEventArgs).set_AutomationProvider(value));
+		Debug.OK((cast(Windows.UI.Core.IAutomationProviderRequestedEventArgs)this.asInterface(uuid("961ff258-21bf-4b42-a298-fa479d4c52e2"))).set_AutomationProvider(value));
 	}
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).set_Handled(value));
 	}
 }
 
@@ -724,12 +724,12 @@ extern(Windows):
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.IBackRequestedEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.UI.Core.IBackRequestedEventArgs)this.asInterface(uuid("d603d28a-e411-4a4e-ba41-6a327a8675bc"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.IBackRequestedEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.UI.Core.IBackRequestedEventArgs)this.asInterface(uuid("d603d28a-e411-4a4e-ba41-6a327a8675bc"))).set_Handled(value));
 	}
 }
 
@@ -739,24 +739,24 @@ extern(Windows):
 	final UINT32 KeyCode()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICharacterReceivedEventArgs).get_KeyCode(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICharacterReceivedEventArgs)this.asInterface(uuid("c584659f-99b2-4bcc-bd33-04e63f42902e"))).get_KeyCode(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Core.CorePhysicalKeyStatus KeyStatus()
 	{
 		Windows.UI.Core.CorePhysicalKeyStatus _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICharacterReceivedEventArgs).get_KeyStatus(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICharacterReceivedEventArgs)this.asInterface(uuid("c584659f-99b2-4bcc-bd33-04e63f42902e"))).get_KeyStatus(&_ret));
 		return _ret;
 	}
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).set_Handled(value));
 	}
 }
 
@@ -766,24 +766,24 @@ extern(Windows):
 	final Windows.Foundation.Point PointerPosition()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Core.IClosestInteractiveBoundsRequestedEventArgs).get_PointerPosition(&_ret));
+		Debug.OK((cast(Windows.UI.Core.IClosestInteractiveBoundsRequestedEventArgs)this.asInterface(uuid("347c11d7-f6f8-40e3-b29f-ae50d3e86486"))).get_PointerPosition(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect SearchBounds()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Core.IClosestInteractiveBoundsRequestedEventArgs).get_SearchBounds(&_ret));
+		Debug.OK((cast(Windows.UI.Core.IClosestInteractiveBoundsRequestedEventArgs)this.asInterface(uuid("347c11d7-f6f8-40e3-b29f-ae50d3e86486"))).get_SearchBounds(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect ClosestInteractiveBounds()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Core.IClosestInteractiveBoundsRequestedEventArgs).get_ClosestInteractiveBounds(&_ret));
+		Debug.OK((cast(Windows.UI.Core.IClosestInteractiveBoundsRequestedEventArgs)this.asInterface(uuid("347c11d7-f6f8-40e3-b29f-ae50d3e86486"))).get_ClosestInteractiveBounds(&_ret));
 		return _ret;
 	}
 	final void ClosestInteractiveBounds(Windows.Foundation.Rect value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.IClosestInteractiveBoundsRequestedEventArgs).set_ClosestInteractiveBounds(value));
+		Debug.OK((cast(Windows.UI.Core.IClosestInteractiveBoundsRequestedEventArgs)this.asInterface(uuid("347c11d7-f6f8-40e3-b29f-ae50d3e86486"))).set_ClosestInteractiveBounds(value));
 	}
 }
 
@@ -793,12 +793,12 @@ extern(Windows):
 	final EventRegistrationToken OnAcceleratorKeyActivated(void delegate(Windows.UI.Core.CoreDispatcher, Windows.UI.Core.AcceleratorKeyEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreAcceleratorKeys).add_AcceleratorKeyActivated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreDispatcher, Windows.UI.Core.AcceleratorKeyEventArgs), Windows.UI.Core.CoreDispatcher, Windows.UI.Core.AcceleratorKeyEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreAcceleratorKeys)this.asInterface(uuid("9ffdf7f5-b8c9-4ef0-b7d2-1de626561fc8"))).add_AcceleratorKeyActivated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreDispatcher, Windows.UI.Core.AcceleratorKeyEventArgs), Windows.UI.Core.CoreDispatcher, Windows.UI.Core.AcceleratorKeyEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAcceleratorKeyActivated(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreAcceleratorKeys).remove_AcceleratorKeyActivated(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreAcceleratorKeys)this.asInterface(uuid("9ffdf7f5-b8c9-4ef0-b7d2-1de626561fc8"))).remove_AcceleratorKeyActivated(cookie));
 	}
 }
 
@@ -808,215 +808,215 @@ extern(Windows):
 	final Windows.UI.Core.CoreDispatcher Dispatcher()
 	{
 		Windows.UI.Core.CoreDispatcher _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreInputSourceBase).get_Dispatcher(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreInputSourceBase)this.asInterface(uuid("9f488807-4580-4be8-be68-92a9311713bb"))).get_Dispatcher(&_ret));
 		return _ret;
 	}
 	final bool IsInputEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreInputSourceBase).get_IsInputEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreInputSourceBase)this.asInterface(uuid("9f488807-4580-4be8-be68-92a9311713bb"))).get_IsInputEnabled(&_ret));
 		return _ret;
 	}
 	final void IsInputEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreInputSourceBase).set_IsInputEnabled(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreInputSourceBase)this.asInterface(uuid("9f488807-4580-4be8-be68-92a9311713bb"))).set_IsInputEnabled(value));
 	}
 	final EventRegistrationToken OnInputEnabled(void delegate(IInspectable, Windows.UI.Core.InputEnabledEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreInputSourceBase).add_InputEnabled(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.InputEnabledEventArgs), IInspectable, Windows.UI.Core.InputEnabledEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreInputSourceBase)this.asInterface(uuid("9f488807-4580-4be8-be68-92a9311713bb"))).add_InputEnabled(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.InputEnabledEventArgs), IInspectable, Windows.UI.Core.InputEnabledEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeInputEnabled(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreInputSourceBase).remove_InputEnabled(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreInputSourceBase)this.asInterface(uuid("9f488807-4580-4be8-be68-92a9311713bb"))).remove_InputEnabled(cookie));
 	}
 	final void ReleasePointerCapture()
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).abi_ReleasePointerCapture());
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).abi_ReleasePointerCapture());
 	}
 	final void SetPointerCapture()
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).abi_SetPointerCapture());
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).abi_SetPointerCapture());
 	}
 	final bool HasCapture()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).get_HasCapture(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).get_HasCapture(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point PointerPosition()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).get_PointerPosition(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).get_PointerPosition(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Core.CoreCursor PointerCursor()
 	{
 		Windows.UI.Core.CoreCursor _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).get_PointerCursor(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).get_PointerCursor(&_ret));
 		return _ret;
 	}
 	final void PointerCursor(Windows.UI.Core.CoreCursor value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).set_PointerCursor(value));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).set_PointerCursor(value));
 	}
 	final EventRegistrationToken OnPointerCaptureLost(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerCaptureLost(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).add_PointerCaptureLost(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerCaptureLost(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerCaptureLost(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).remove_PointerCaptureLost(cookie));
 	}
 	final EventRegistrationToken OnPointerEntered(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerEntered(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).add_PointerEntered(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerEntered(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerEntered(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).remove_PointerEntered(cookie));
 	}
 	final EventRegistrationToken OnPointerExited(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerExited(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).add_PointerExited(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerExited(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerExited(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).remove_PointerExited(cookie));
 	}
 	final EventRegistrationToken OnPointerMoved(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerMoved(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).add_PointerMoved(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerMoved(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerMoved(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).remove_PointerMoved(cookie));
 	}
 	final EventRegistrationToken OnPointerPressed(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerPressed(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).add_PointerPressed(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerPressed(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerPressed(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).remove_PointerPressed(cookie));
 	}
 	final EventRegistrationToken OnPointerReleased(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerReleased(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).add_PointerReleased(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerReleased(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerReleased(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).remove_PointerReleased(cookie));
 	}
 	final EventRegistrationToken OnPointerWheelChanged(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerWheelChanged(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).add_PointerWheelChanged(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerWheelChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerWheelChanged(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).remove_PointerWheelChanged(cookie));
 	}
 	final Windows.UI.Core.CoreVirtualKeyStates GetCurrentKeyState(Windows.System.VirtualKey virtualKey)
 	{
 		Windows.UI.Core.CoreVirtualKeyStates _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreKeyboardInputSource).abi_GetCurrentKeyState(virtualKey, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreKeyboardInputSource)this.asInterface(uuid("231c9088-e469-4df1-b208-6e490d71cb90"))).abi_GetCurrentKeyState(virtualKey, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnCharacterReceived(void delegate(IInspectable, Windows.UI.Core.CharacterReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreKeyboardInputSource).add_CharacterReceived(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.CharacterReceivedEventArgs), IInspectable, Windows.UI.Core.CharacterReceivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreKeyboardInputSource)this.asInterface(uuid("231c9088-e469-4df1-b208-6e490d71cb90"))).add_CharacterReceived(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.CharacterReceivedEventArgs), IInspectable, Windows.UI.Core.CharacterReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCharacterReceived(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreKeyboardInputSource).remove_CharacterReceived(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreKeyboardInputSource)this.asInterface(uuid("231c9088-e469-4df1-b208-6e490d71cb90"))).remove_CharacterReceived(cookie));
 	}
 	final EventRegistrationToken OnKeyDown(void delegate(IInspectable, Windows.UI.Core.KeyEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreKeyboardInputSource).add_KeyDown(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.KeyEventArgs), IInspectable, Windows.UI.Core.KeyEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreKeyboardInputSource)this.asInterface(uuid("231c9088-e469-4df1-b208-6e490d71cb90"))).add_KeyDown(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.KeyEventArgs), IInspectable, Windows.UI.Core.KeyEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeKeyDown(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreKeyboardInputSource).remove_KeyDown(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreKeyboardInputSource)this.asInterface(uuid("231c9088-e469-4df1-b208-6e490d71cb90"))).remove_KeyDown(cookie));
 	}
 	final EventRegistrationToken OnKeyUp(void delegate(IInspectable, Windows.UI.Core.KeyEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreKeyboardInputSource).add_KeyUp(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.KeyEventArgs), IInspectable, Windows.UI.Core.KeyEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreKeyboardInputSource)this.asInterface(uuid("231c9088-e469-4df1-b208-6e490d71cb90"))).add_KeyUp(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.KeyEventArgs), IInspectable, Windows.UI.Core.KeyEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeKeyUp(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreKeyboardInputSource).remove_KeyUp(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreKeyboardInputSource)this.asInterface(uuid("231c9088-e469-4df1-b208-6e490d71cb90"))).remove_KeyUp(cookie));
 	}
 	final bool HasFocus()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreComponentFocusable).get_HasFocus(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreComponentFocusable)this.asInterface(uuid("52f96fa3-8742-4411-ae69-79a85f29ac8b"))).get_HasFocus(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnGotFocus(void delegate(IInspectable, Windows.UI.Core.CoreWindowEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreComponentFocusable).add_GotFocus(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.CoreWindowEventArgs), IInspectable, Windows.UI.Core.CoreWindowEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreComponentFocusable)this.asInterface(uuid("52f96fa3-8742-4411-ae69-79a85f29ac8b"))).add_GotFocus(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.CoreWindowEventArgs), IInspectable, Windows.UI.Core.CoreWindowEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeGotFocus(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreComponentFocusable).remove_GotFocus(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreComponentFocusable)this.asInterface(uuid("52f96fa3-8742-4411-ae69-79a85f29ac8b"))).remove_GotFocus(cookie));
 	}
 	final EventRegistrationToken OnLostFocus(void delegate(IInspectable, Windows.UI.Core.CoreWindowEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreComponentFocusable).add_LostFocus(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.CoreWindowEventArgs), IInspectable, Windows.UI.Core.CoreWindowEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreComponentFocusable)this.asInterface(uuid("52f96fa3-8742-4411-ae69-79a85f29ac8b"))).add_LostFocus(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.CoreWindowEventArgs), IInspectable, Windows.UI.Core.CoreWindowEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeLostFocus(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreComponentFocusable).remove_LostFocus(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreComponentFocusable)this.asInterface(uuid("52f96fa3-8742-4411-ae69-79a85f29ac8b"))).remove_LostFocus(cookie));
 	}
 	final EventRegistrationToken OnTouchHitTesting(void delegate(IInspectable, Windows.UI.Core.TouchHitTestingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreTouchHitTesting).add_TouchHitTesting(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.TouchHitTestingEventArgs), IInspectable, Windows.UI.Core.TouchHitTestingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreTouchHitTesting)this.asInterface(uuid("b1d8a289-3acf-4124-9fa3-ea8aba353c21"))).add_TouchHitTesting(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.TouchHitTestingEventArgs), IInspectable, Windows.UI.Core.TouchHitTestingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTouchHitTesting(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreTouchHitTesting).remove_TouchHitTesting(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreTouchHitTesting)this.asInterface(uuid("b1d8a289-3acf-4124-9fa3-ea8aba353c21"))).remove_TouchHitTesting(cookie));
 	}
 	final EventRegistrationToken OnClosestInteractiveBoundsRequested(void delegate(Windows.UI.Core.CoreComponentInputSource, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreClosestInteractiveBoundsRequested).add_ClosestInteractiveBoundsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreComponentInputSource, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs), Windows.UI.Core.CoreComponentInputSource, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreClosestInteractiveBoundsRequested)this.asInterface(uuid("f303043a-e8bf-4e8e-ae69-c9dadd57a114"))).add_ClosestInteractiveBoundsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreComponentInputSource, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs), Windows.UI.Core.CoreComponentInputSource, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeClosestInteractiveBoundsRequested(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreClosestInteractiveBoundsRequested).remove_ClosestInteractiveBoundsRequested(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreClosestInteractiveBoundsRequested)this.asInterface(uuid("f303043a-e8bf-4e8e-ae69-c9dadd57a114"))).remove_ClosestInteractiveBoundsRequested(cookie));
 	}
 	final HSTRING GetCurrentKeyEventDeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreKeyboardInputSource2).abi_GetCurrentKeyEventDeviceId(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreKeyboardInputSource2)this.asInterface(uuid("fa24cb94-f963-47a5-8778-207c482b0afd"))).abi_GetCurrentKeyEventDeviceId(&_ret));
 		return _ret;
 	}
 }
@@ -1027,20 +1027,20 @@ extern(Windows):
 	final UINT32 Id()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreCursor).get_Id(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreCursor)this.asInterface(uuid("96893acf-111d-442c-8a77-b87992f8e2d6"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Core.CoreCursorType Type()
 	{
 		Windows.UI.Core.CoreCursorType _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreCursor).get_Type(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreCursor)this.asInterface(uuid("96893acf-111d-442c-8a77-b87992f8e2d6"))).get_Type(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Core.CoreCursor New(Windows.UI.Core.CoreCursorType type, UINT32 id)
 	{
 		auto factory = factory!(Windows.UI.Core.ICoreCursorFactory);
 		Windows.UI.Core.CoreCursor _ret;
-		Debug.OK(factory.as!(Windows.UI.Core.ICoreCursorFactory).abi_CreateCursor(type, id, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreCursorFactory)factory.asInterface(uuid("f6359621-a79d-4ed3-8c32-a9ef9d6b76a4"))).abi_CreateCursor(type, id, &_ret));
 		return _ret;
 	}
 }
@@ -1051,71 +1051,71 @@ extern(Windows):
 	final bool HasThreadAccess()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreDispatcher).get_HasThreadAccess(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreDispatcher)this.asInterface(uuid("60db2fa8-b705-4fde-a7d6-ebbb1891d39e"))).get_HasThreadAccess(&_ret));
 		return _ret;
 	}
 	final void ProcessEvents(Windows.UI.Core.CoreProcessEventsOption options)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreDispatcher).abi_ProcessEvents(options));
+		Debug.OK((cast(Windows.UI.Core.ICoreDispatcher)this.asInterface(uuid("60db2fa8-b705-4fde-a7d6-ebbb1891d39e"))).abi_ProcessEvents(options));
 	}
 	final Windows.Foundation.IAsyncAction RunAsync(Windows.UI.Core.CoreDispatcherPriority priority, Windows.UI.Core.DispatchedHandler agileCallback)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreDispatcher).abi_RunAsync(priority, agileCallback, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreDispatcher)this.asInterface(uuid("60db2fa8-b705-4fde-a7d6-ebbb1891d39e"))).abi_RunAsync(priority, agileCallback, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction RunIdleAsync(Windows.UI.Core.IdleDispatchedHandler agileCallback)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreDispatcher).abi_RunIdleAsync(agileCallback, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreDispatcher)this.asInterface(uuid("60db2fa8-b705-4fde-a7d6-ebbb1891d39e"))).abi_RunIdleAsync(agileCallback, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnAcceleratorKeyActivated(void delegate(Windows.UI.Core.CoreDispatcher, Windows.UI.Core.AcceleratorKeyEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreAcceleratorKeys).add_AcceleratorKeyActivated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreDispatcher, Windows.UI.Core.AcceleratorKeyEventArgs), Windows.UI.Core.CoreDispatcher, Windows.UI.Core.AcceleratorKeyEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreAcceleratorKeys)this.asInterface(uuid("9ffdf7f5-b8c9-4ef0-b7d2-1de626561fc8"))).add_AcceleratorKeyActivated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreDispatcher, Windows.UI.Core.AcceleratorKeyEventArgs), Windows.UI.Core.CoreDispatcher, Windows.UI.Core.AcceleratorKeyEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAcceleratorKeyActivated(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreAcceleratorKeys).remove_AcceleratorKeyActivated(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreAcceleratorKeys)this.asInterface(uuid("9ffdf7f5-b8c9-4ef0-b7d2-1de626561fc8"))).remove_AcceleratorKeyActivated(cookie));
 	}
 	final Windows.UI.Core.CoreDispatcherPriority CurrentPriority()
 	{
 		Windows.UI.Core.CoreDispatcherPriority _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreDispatcherWithTaskPriority).get_CurrentPriority(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreDispatcherWithTaskPriority)this.asInterface(uuid("bafaecad-484d-41be-ba80-1d58c65263ea"))).get_CurrentPriority(&_ret));
 		return _ret;
 	}
 	final void CurrentPriority(Windows.UI.Core.CoreDispatcherPriority value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreDispatcherWithTaskPriority).set_CurrentPriority(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreDispatcherWithTaskPriority)this.asInterface(uuid("bafaecad-484d-41be-ba80-1d58c65263ea"))).set_CurrentPriority(value));
 	}
 	final bool ShouldYield()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreDispatcherWithTaskPriority).abi_ShouldYield(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreDispatcherWithTaskPriority)this.asInterface(uuid("bafaecad-484d-41be-ba80-1d58c65263ea"))).abi_ShouldYield(&_ret));
 		return _ret;
 	}
 	final bool ShouldYieldToPriority(Windows.UI.Core.CoreDispatcherPriority priority)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreDispatcherWithTaskPriority).abi_ShouldYieldToPriority(priority, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreDispatcherWithTaskPriority)this.asInterface(uuid("bafaecad-484d-41be-ba80-1d58c65263ea"))).abi_ShouldYieldToPriority(priority, &_ret));
 		return _ret;
 	}
 	final void StopProcessEvents()
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreDispatcherWithTaskPriority).abi_StopProcessEvents());
+		Debug.OK((cast(Windows.UI.Core.ICoreDispatcherWithTaskPriority)this.asInterface(uuid("bafaecad-484d-41be-ba80-1d58c65263ea"))).abi_StopProcessEvents());
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TryRunAsync(Windows.UI.Core.CoreDispatcherPriority priority, Windows.UI.Core.DispatchedHandler agileCallback)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreDispatcher2).abi_TryRunAsync(priority, agileCallback, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreDispatcher2)this.asInterface(uuid("6f5e63c7-e3aa-4eae-b0e0-dcf321ca4b2f"))).abi_TryRunAsync(priority, agileCallback, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TryRunIdleAsync(Windows.UI.Core.IdleDispatchedHandler agileCallback)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreDispatcher2).abi_TryRunIdleAsync(agileCallback, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreDispatcher2)this.asInterface(uuid("6f5e63c7-e3aa-4eae-b0e0-dcf321ca4b2f"))).abi_TryRunIdleAsync(agileCallback, &_ret));
 		return _ret;
 	}
 }
@@ -1126,128 +1126,128 @@ extern(Windows):
 	final Windows.UI.Core.CoreDispatcher Dispatcher()
 	{
 		Windows.UI.Core.CoreDispatcher _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreInputSourceBase).get_Dispatcher(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreInputSourceBase)this.asInterface(uuid("9f488807-4580-4be8-be68-92a9311713bb"))).get_Dispatcher(&_ret));
 		return _ret;
 	}
 	final bool IsInputEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreInputSourceBase).get_IsInputEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreInputSourceBase)this.asInterface(uuid("9f488807-4580-4be8-be68-92a9311713bb"))).get_IsInputEnabled(&_ret));
 		return _ret;
 	}
 	final void IsInputEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreInputSourceBase).set_IsInputEnabled(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreInputSourceBase)this.asInterface(uuid("9f488807-4580-4be8-be68-92a9311713bb"))).set_IsInputEnabled(value));
 	}
 	final EventRegistrationToken OnInputEnabled(void delegate(IInspectable, Windows.UI.Core.InputEnabledEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreInputSourceBase).add_InputEnabled(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.InputEnabledEventArgs), IInspectable, Windows.UI.Core.InputEnabledEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreInputSourceBase)this.asInterface(uuid("9f488807-4580-4be8-be68-92a9311713bb"))).add_InputEnabled(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.InputEnabledEventArgs), IInspectable, Windows.UI.Core.InputEnabledEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeInputEnabled(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreInputSourceBase).remove_InputEnabled(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreInputSourceBase)this.asInterface(uuid("9f488807-4580-4be8-be68-92a9311713bb"))).remove_InputEnabled(cookie));
 	}
 	final void ReleasePointerCapture()
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).abi_ReleasePointerCapture());
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).abi_ReleasePointerCapture());
 	}
 	final void SetPointerCapture()
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).abi_SetPointerCapture());
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).abi_SetPointerCapture());
 	}
 	final bool HasCapture()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).get_HasCapture(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).get_HasCapture(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point PointerPosition()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).get_PointerPosition(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).get_PointerPosition(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Core.CoreCursor PointerCursor()
 	{
 		Windows.UI.Core.CoreCursor _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).get_PointerCursor(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).get_PointerCursor(&_ret));
 		return _ret;
 	}
 	final void PointerCursor(Windows.UI.Core.CoreCursor value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).set_PointerCursor(value));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).set_PointerCursor(value));
 	}
 	final EventRegistrationToken OnPointerCaptureLost(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerCaptureLost(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).add_PointerCaptureLost(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerCaptureLost(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerCaptureLost(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).remove_PointerCaptureLost(cookie));
 	}
 	final EventRegistrationToken OnPointerEntered(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerEntered(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).add_PointerEntered(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerEntered(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerEntered(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).remove_PointerEntered(cookie));
 	}
 	final EventRegistrationToken OnPointerExited(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerExited(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).add_PointerExited(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerExited(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerExited(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).remove_PointerExited(cookie));
 	}
 	final EventRegistrationToken OnPointerMoved(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerMoved(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).add_PointerMoved(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerMoved(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerMoved(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).remove_PointerMoved(cookie));
 	}
 	final EventRegistrationToken OnPointerPressed(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerPressed(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).add_PointerPressed(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerPressed(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerPressed(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).remove_PointerPressed(cookie));
 	}
 	final EventRegistrationToken OnPointerReleased(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerReleased(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).add_PointerReleased(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerReleased(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerReleased(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).remove_PointerReleased(cookie));
 	}
 	final EventRegistrationToken OnPointerWheelChanged(void delegate(IInspectable, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).add_PointerWheelChanged(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).add_PointerWheelChanged(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.UI.Core.PointerEventArgs), IInspectable, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerWheelChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerInputSource).remove_PointerWheelChanged(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerInputSource)this.asInterface(uuid("bbf1bb18-e47a-48eb-8807-f8f8d3ea4551"))).remove_PointerWheelChanged(cookie));
 	}
 }
 
@@ -1257,336 +1257,336 @@ extern(Windows):
 	final IInspectable AutomationHostProvider()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).get_AutomationHostProvider(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).get_AutomationHostProvider(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect Bounds()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).get_Bounds(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).get_Bounds(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IPropertySet CustomProperties()
 	{
 		Windows.Foundation.Collections.IPropertySet _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).get_CustomProperties(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).get_CustomProperties(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Core.CoreDispatcher Dispatcher()
 	{
 		Windows.UI.Core.CoreDispatcher _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).get_Dispatcher(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).get_Dispatcher(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Core.CoreWindowFlowDirection FlowDirection()
 	{
 		Windows.UI.Core.CoreWindowFlowDirection _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).get_FlowDirection(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).get_FlowDirection(&_ret));
 		return _ret;
 	}
 	final void FlowDirection(Windows.UI.Core.CoreWindowFlowDirection value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).set_FlowDirection(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).set_FlowDirection(value));
 	}
 	final bool IsInputEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).get_IsInputEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).get_IsInputEnabled(&_ret));
 		return _ret;
 	}
 	final void IsInputEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).set_IsInputEnabled(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).set_IsInputEnabled(value));
 	}
 	final Windows.UI.Core.CoreCursor PointerCursor()
 	{
 		Windows.UI.Core.CoreCursor _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).get_PointerCursor(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).get_PointerCursor(&_ret));
 		return _ret;
 	}
 	final void PointerCursor(Windows.UI.Core.CoreCursor value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).set_PointerCursor(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).set_PointerCursor(value));
 	}
 	final Windows.Foundation.Point PointerPosition()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).get_PointerPosition(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).get_PointerPosition(&_ret));
 		return _ret;
 	}
 	final bool Visible()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).get_Visible(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).get_Visible(&_ret));
 		return _ret;
 	}
 	final void Activate()
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).abi_Activate());
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).abi_Activate());
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).abi_Close());
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).abi_Close());
 	}
 	final Windows.UI.Core.CoreVirtualKeyStates GetAsyncKeyState(Windows.System.VirtualKey virtualKey)
 	{
 		Windows.UI.Core.CoreVirtualKeyStates _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).abi_GetAsyncKeyState(virtualKey, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).abi_GetAsyncKeyState(virtualKey, &_ret));
 		return _ret;
 	}
 	final Windows.UI.Core.CoreVirtualKeyStates GetKeyState(Windows.System.VirtualKey virtualKey)
 	{
 		Windows.UI.Core.CoreVirtualKeyStates _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).abi_GetKeyState(virtualKey, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).abi_GetKeyState(virtualKey, &_ret));
 		return _ret;
 	}
 	final void ReleasePointerCapture()
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).abi_ReleasePointerCapture());
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).abi_ReleasePointerCapture());
 	}
 	final void SetPointerCapture()
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).abi_SetPointerCapture());
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).abi_SetPointerCapture());
 	}
 	final EventRegistrationToken OnActivated(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.WindowActivatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_Activated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.WindowActivatedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.WindowActivatedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).add_Activated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.WindowActivatedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.WindowActivatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeActivated(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_Activated(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).remove_Activated(cookie));
 	}
 	final EventRegistrationToken OnAutomationProviderRequested(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.AutomationProviderRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_AutomationProviderRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.AutomationProviderRequestedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.AutomationProviderRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).add_AutomationProviderRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.AutomationProviderRequestedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.AutomationProviderRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAutomationProviderRequested(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_AutomationProviderRequested(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).remove_AutomationProviderRequested(cookie));
 	}
 	final EventRegistrationToken OnCharacterReceived(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.CharacterReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_CharacterReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.CharacterReceivedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.CharacterReceivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).add_CharacterReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.CharacterReceivedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.CharacterReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCharacterReceived(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_CharacterReceived(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).remove_CharacterReceived(cookie));
 	}
 	final EventRegistrationToken OnClosed(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeClosed(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_Closed(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).remove_Closed(cookie));
 	}
 	final EventRegistrationToken OnInputEnabled(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.InputEnabledEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_InputEnabled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.InputEnabledEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.InputEnabledEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).add_InputEnabled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.InputEnabledEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.InputEnabledEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeInputEnabled(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_InputEnabled(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).remove_InputEnabled(cookie));
 	}
 	final EventRegistrationToken OnKeyDown(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.KeyEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_KeyDown(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.KeyEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.KeyEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).add_KeyDown(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.KeyEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.KeyEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeKeyDown(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_KeyDown(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).remove_KeyDown(cookie));
 	}
 	final EventRegistrationToken OnKeyUp(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.KeyEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_KeyUp(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.KeyEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.KeyEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).add_KeyUp(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.KeyEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.KeyEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeKeyUp(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_KeyUp(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).remove_KeyUp(cookie));
 	}
 	final EventRegistrationToken OnPointerCaptureLost(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_PointerCaptureLost(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).add_PointerCaptureLost(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerCaptureLost(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_PointerCaptureLost(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).remove_PointerCaptureLost(cookie));
 	}
 	final EventRegistrationToken OnPointerEntered(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_PointerEntered(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).add_PointerEntered(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerEntered(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_PointerEntered(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).remove_PointerEntered(cookie));
 	}
 	final EventRegistrationToken OnPointerExited(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_PointerExited(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).add_PointerExited(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerExited(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_PointerExited(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).remove_PointerExited(cookie));
 	}
 	final EventRegistrationToken OnPointerMoved(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_PointerMoved(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).add_PointerMoved(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerMoved(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_PointerMoved(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).remove_PointerMoved(cookie));
 	}
 	final EventRegistrationToken OnPointerPressed(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_PointerPressed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).add_PointerPressed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerPressed(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_PointerPressed(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).remove_PointerPressed(cookie));
 	}
 	final EventRegistrationToken OnPointerReleased(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_PointerReleased(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).add_PointerReleased(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerReleased(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_PointerReleased(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).remove_PointerReleased(cookie));
 	}
 	final EventRegistrationToken OnTouchHitTesting(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.TouchHitTestingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_TouchHitTesting(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.TouchHitTestingEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.TouchHitTestingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).add_TouchHitTesting(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.TouchHitTestingEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.TouchHitTestingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTouchHitTesting(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_TouchHitTesting(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).remove_TouchHitTesting(cookie));
 	}
 	final EventRegistrationToken OnPointerWheelChanged(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_PointerWheelChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).add_PointerWheelChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerWheelChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_PointerWheelChanged(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).remove_PointerWheelChanged(cookie));
 	}
 	final EventRegistrationToken OnSizeChanged(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.WindowSizeChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_SizeChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.WindowSizeChangedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.WindowSizeChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).add_SizeChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.WindowSizeChangedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.WindowSizeChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSizeChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_SizeChanged(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).remove_SizeChanged(cookie));
 	}
 	final EventRegistrationToken OnVisibilityChanged(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.VisibilityChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).add_VisibilityChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.VisibilityChangedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.VisibilityChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).add_VisibilityChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.VisibilityChangedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.VisibilityChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeVisibilityChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow).remove_VisibilityChanged(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow)this.asInterface(uuid("79b9d5f2-879e-4b89-b798-79e47598030c"))).remove_VisibilityChanged(cookie));
 	}
 	final void PointerPosition(Windows.Foundation.Point value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow2).set_PointerPosition(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow2)this.asInterface(uuid("7c2b1b85-6917-4361-9c02-0d9e3a420b95"))).set_PointerPosition(value));
 	}
 	final EventRegistrationToken OnPointerRoutedAway(void delegate(Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerRedirector).add_PointerRoutedAway(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerRedirector)this.asInterface(uuid("8f9d0c94-5688-4b0c-a9f1-f931f7fa3dc3"))).add_PointerRoutedAway(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerRoutedAway(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerRedirector).remove_PointerRoutedAway(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerRedirector)this.asInterface(uuid("8f9d0c94-5688-4b0c-a9f1-f931f7fa3dc3"))).remove_PointerRoutedAway(cookie));
 	}
 	final EventRegistrationToken OnPointerRoutedTo(void delegate(Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerRedirector).add_PointerRoutedTo(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerRedirector)this.asInterface(uuid("8f9d0c94-5688-4b0c-a9f1-f931f7fa3dc3"))).add_PointerRoutedTo(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerRoutedTo(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerRedirector).remove_PointerRoutedTo(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerRedirector)this.asInterface(uuid("8f9d0c94-5688-4b0c-a9f1-f931f7fa3dc3"))).remove_PointerRoutedTo(cookie));
 	}
 	final EventRegistrationToken OnPointerRoutedReleased(void delegate(Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerRedirector).add_PointerRoutedReleased(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerRedirector)this.asInterface(uuid("8f9d0c94-5688-4b0c-a9f1-f931f7fa3dc3"))).add_PointerRoutedReleased(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs), Windows.UI.Core.ICorePointerRedirector, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerRoutedReleased(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICorePointerRedirector).remove_PointerRoutedReleased(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICorePointerRedirector)this.asInterface(uuid("8f9d0c94-5688-4b0c-a9f1-f931f7fa3dc3"))).remove_PointerRoutedReleased(cookie));
 	}
 	final EventRegistrationToken OnClosestInteractiveBoundsRequested(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow3).add_ClosestInteractiveBoundsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow3)this.asInterface(uuid("32c20dd8-faef-4375-a2ab-32640e4815c7"))).add_ClosestInteractiveBoundsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeClosestInteractiveBoundsRequested(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow3).remove_ClosestInteractiveBoundsRequested(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow3)this.asInterface(uuid("32c20dd8-faef-4375-a2ab-32640e4815c7"))).remove_ClosestInteractiveBoundsRequested(cookie));
 	}
 	final HSTRING GetCurrentKeyEventDeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow3).abi_GetCurrentKeyEventDeviceId(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow3)this.asInterface(uuid("32c20dd8-faef-4375-a2ab-32640e4815c7"))).abi_GetCurrentKeyEventDeviceId(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnResizeStarted(void delegate(Windows.UI.Core.CoreWindow, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow4).add_ResizeStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, IInspectable), Windows.UI.Core.CoreWindow, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow4)this.asInterface(uuid("35caf0d0-47f0-436c-af97-0dd88f6f5f02"))).add_ResizeStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, IInspectable), Windows.UI.Core.CoreWindow, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeResizeStarted(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow4).remove_ResizeStarted(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow4)this.asInterface(uuid("35caf0d0-47f0-436c-af97-0dd88f6f5f02"))).remove_ResizeStarted(cookie));
 	}
 	final EventRegistrationToken OnResizeCompleted(void delegate(Windows.UI.Core.CoreWindow, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow4).add_ResizeCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, IInspectable), Windows.UI.Core.CoreWindow, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow4)this.asInterface(uuid("35caf0d0-47f0-436c-af97-0dd88f6f5f02"))).add_ResizeCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, IInspectable), Windows.UI.Core.CoreWindow, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeResizeCompleted(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindow4).remove_ResizeCompleted(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindow4)this.asInterface(uuid("35caf0d0-47f0-436c-af97-0dd88f6f5f02"))).remove_ResizeCompleted(cookie));
 	}
 
 	private static Windows.UI.Core.ICoreWindowStatic _staticInstance;
@@ -1598,7 +1598,7 @@ extern(Windows):
 	static Windows.UI.Core.CoreWindow GetForCurrentThread()
 	{
 		Windows.UI.Core.CoreWindow _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Core.ICoreWindowStatic).abi_GetForCurrentThread(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentThread(&_ret));
 		return _ret;
 	}
 }
@@ -1609,98 +1609,98 @@ extern(Windows):
 	final EventRegistrationToken OnShowing(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).add_Showing(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowDialog)this.asInterface(uuid("e7392ce0-c78d-427e-8b2c-01ff420c69d5"))).add_Showing(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeShowing(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).remove_Showing(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowDialog)this.asInterface(uuid("e7392ce0-c78d-427e-8b2c-01ff420c69d5"))).remove_Showing(cookie));
 	}
 	final Windows.Foundation.Size MaxSize()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).get_MaxSize(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowDialog)this.asInterface(uuid("e7392ce0-c78d-427e-8b2c-01ff420c69d5"))).get_MaxSize(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Size MinSize()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).get_MinSize(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowDialog)this.asInterface(uuid("e7392ce0-c78d-427e-8b2c-01ff420c69d5"))).get_MinSize(&_ret));
 		return _ret;
 	}
 	final HSTRING Title()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).get_Title(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowDialog)this.asInterface(uuid("e7392ce0-c78d-427e-8b2c-01ff420c69d5"))).get_Title(&_ret));
 		return _ret;
 	}
 	final void Title(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).set_Title(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowDialog)this.asInterface(uuid("e7392ce0-c78d-427e-8b2c-01ff420c69d5"))).set_Title(value));
 	}
 	final INT32 IsInteractionDelayed()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).get_IsInteractionDelayed(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowDialog)this.asInterface(uuid("e7392ce0-c78d-427e-8b2c-01ff420c69d5"))).get_IsInteractionDelayed(&_ret));
 		return _ret;
 	}
 	final void IsInteractionDelayed(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).set_IsInteractionDelayed(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowDialog)this.asInterface(uuid("e7392ce0-c78d-427e-8b2c-01ff420c69d5"))).set_IsInteractionDelayed(value));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.UI.Popups.IUICommand) Commands()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.Popups.IUICommand) _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).get_Commands(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowDialog)this.asInterface(uuid("e7392ce0-c78d-427e-8b2c-01ff420c69d5"))).get_Commands(&_ret));
 		return _ret;
 	}
 	final UINT32 DefaultCommandIndex()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).get_DefaultCommandIndex(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowDialog)this.asInterface(uuid("e7392ce0-c78d-427e-8b2c-01ff420c69d5"))).get_DefaultCommandIndex(&_ret));
 		return _ret;
 	}
 	final void DefaultCommandIndex(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).set_DefaultCommandIndex(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowDialog)this.asInterface(uuid("e7392ce0-c78d-427e-8b2c-01ff420c69d5"))).set_DefaultCommandIndex(value));
 	}
 	final UINT32 CancelCommandIndex()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).get_CancelCommandIndex(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowDialog)this.asInterface(uuid("e7392ce0-c78d-427e-8b2c-01ff420c69d5"))).get_CancelCommandIndex(&_ret));
 		return _ret;
 	}
 	final void CancelCommandIndex(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).set_CancelCommandIndex(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowDialog)this.asInterface(uuid("e7392ce0-c78d-427e-8b2c-01ff420c69d5"))).set_CancelCommandIndex(value));
 	}
 	final Windows.UI.Popups.UICommandInvokedHandler BackButtonCommand()
 	{
 		Windows.UI.Popups.UICommandInvokedHandler _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).get_BackButtonCommand(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowDialog)this.asInterface(uuid("e7392ce0-c78d-427e-8b2c-01ff420c69d5"))).get_BackButtonCommand(&_ret));
 		return _ret;
 	}
 	final void BackButtonCommand(Windows.UI.Popups.UICommandInvokedHandler value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).set_BackButtonCommand(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowDialog)this.asInterface(uuid("e7392ce0-c78d-427e-8b2c-01ff420c69d5"))).set_BackButtonCommand(value));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) ShowAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowDialog).abi_ShowAsync(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowDialog)this.asInterface(uuid("e7392ce0-c78d-427e-8b2c-01ff420c69d5"))).abi_ShowAsync(&_ret));
 		return _ret;
 	}
 	static CoreWindowDialog New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(CoreWindowDialog).abi_ActivateInstance(&ret));
-		return ret.as!(CoreWindowDialog);
+		return cast(CoreWindowDialog) ret;
 	}
 	static Windows.UI.Core.CoreWindowDialog New(HSTRING title)
 	{
 		auto factory = factory!(Windows.UI.Core.ICoreWindowDialogFactory);
 		Windows.UI.Core.CoreWindowDialog _ret;
-		Debug.OK(factory.as!(Windows.UI.Core.ICoreWindowDialogFactory).abi_CreateWithTitle(title, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowDialogFactory)factory.asInterface(uuid("cfb2a855-1c59-4b13-b1e5-16e29805f7c4"))).abi_CreateWithTitle(title, &_ret));
 		return _ret;
 	}
 }
@@ -1711,12 +1711,12 @@ extern(Windows):
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).set_Handled(value));
 	}
 }
 
@@ -1726,89 +1726,89 @@ extern(Windows):
 	final EventRegistrationToken OnShowing(void delegate(Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).add_Showing(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFlyout)this.asInterface(uuid("e89d854d-2050-40bb-b344-f6f355eeb314"))).add_Showing(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs), Windows.UI.Core.CoreWindow, Windows.UI.Core.CoreWindowPopupShowingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeShowing(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).remove_Showing(cookie));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFlyout)this.asInterface(uuid("e89d854d-2050-40bb-b344-f6f355eeb314"))).remove_Showing(cookie));
 	}
 	final Windows.Foundation.Size MaxSize()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).get_MaxSize(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFlyout)this.asInterface(uuid("e89d854d-2050-40bb-b344-f6f355eeb314"))).get_MaxSize(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Size MinSize()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).get_MinSize(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFlyout)this.asInterface(uuid("e89d854d-2050-40bb-b344-f6f355eeb314"))).get_MinSize(&_ret));
 		return _ret;
 	}
 	final HSTRING Title()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).get_Title(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFlyout)this.asInterface(uuid("e89d854d-2050-40bb-b344-f6f355eeb314"))).get_Title(&_ret));
 		return _ret;
 	}
 	final void Title(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).set_Title(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFlyout)this.asInterface(uuid("e89d854d-2050-40bb-b344-f6f355eeb314"))).set_Title(value));
 	}
 	final INT32 IsInteractionDelayed()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).get_IsInteractionDelayed(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFlyout)this.asInterface(uuid("e89d854d-2050-40bb-b344-f6f355eeb314"))).get_IsInteractionDelayed(&_ret));
 		return _ret;
 	}
 	final void IsInteractionDelayed(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).set_IsInteractionDelayed(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFlyout)this.asInterface(uuid("e89d854d-2050-40bb-b344-f6f355eeb314"))).set_IsInteractionDelayed(value));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.UI.Popups.IUICommand) Commands()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.Popups.IUICommand) _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).get_Commands(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFlyout)this.asInterface(uuid("e89d854d-2050-40bb-b344-f6f355eeb314"))).get_Commands(&_ret));
 		return _ret;
 	}
 	final UINT32 DefaultCommandIndex()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).get_DefaultCommandIndex(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFlyout)this.asInterface(uuid("e89d854d-2050-40bb-b344-f6f355eeb314"))).get_DefaultCommandIndex(&_ret));
 		return _ret;
 	}
 	final void DefaultCommandIndex(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).set_DefaultCommandIndex(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFlyout)this.asInterface(uuid("e89d854d-2050-40bb-b344-f6f355eeb314"))).set_DefaultCommandIndex(value));
 	}
 	final Windows.UI.Popups.UICommandInvokedHandler BackButtonCommand()
 	{
 		Windows.UI.Popups.UICommandInvokedHandler _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).get_BackButtonCommand(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFlyout)this.asInterface(uuid("e89d854d-2050-40bb-b344-f6f355eeb314"))).get_BackButtonCommand(&_ret));
 		return _ret;
 	}
 	final void BackButtonCommand(Windows.UI.Popups.UICommandInvokedHandler value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).set_BackButtonCommand(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFlyout)this.asInterface(uuid("e89d854d-2050-40bb-b344-f6f355eeb314"))).set_BackButtonCommand(value));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) ShowAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowFlyout).abi_ShowAsync(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFlyout)this.asInterface(uuid("e89d854d-2050-40bb-b344-f6f355eeb314"))).abi_ShowAsync(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Core.CoreWindowFlyout New(Windows.Foundation.Point position)
 	{
 		auto factory = factory!(Windows.UI.Core.ICoreWindowFlyoutFactory);
 		Windows.UI.Core.CoreWindowFlyout _ret;
-		Debug.OK(factory.as!(Windows.UI.Core.ICoreWindowFlyoutFactory).abi_Create(position, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFlyoutFactory)factory.asInterface(uuid("dec4c6c4-93e8-4f7c-be27-cefaa1af68a7"))).abi_Create(position, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Core.CoreWindowFlyout New(Windows.Foundation.Point position, HSTRING title)
 	{
 		auto factory = factory!(Windows.UI.Core.ICoreWindowFlyoutFactory);
 		Windows.UI.Core.CoreWindowFlyout _ret;
-		Debug.OK(factory.as!(Windows.UI.Core.ICoreWindowFlyoutFactory).abi_CreateWithTitle(position, title, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFlyoutFactory)factory.asInterface(uuid("dec4c6c4-93e8-4f7c-be27-cefaa1af68a7"))).abi_CreateWithTitle(position, title, &_ret));
 		return _ret;
 	}
 }
@@ -1818,7 +1818,7 @@ interface CoreWindowPopupShowingEventArgs : Windows.UI.Core.ICoreWindowPopupShow
 extern(Windows):
 	final void SetDesiredSize(Windows.Foundation.Size value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowPopupShowingEventArgs).abi_SetDesiredSize(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowPopupShowingEventArgs)this.asInterface(uuid("26155fa2-5ba5-4ea4-a3b4-2dc7d63c8e26"))).abi_SetDesiredSize(value));
 	}
 }
 
@@ -1827,16 +1827,16 @@ interface CoreWindowResizeManager : Windows.UI.Core.ICoreWindowResizeManager, Wi
 extern(Windows):
 	final void NotifyLayoutCompleted()
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowResizeManager).abi_NotifyLayoutCompleted());
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowResizeManager)this.asInterface(uuid("b8f0b925-b350-48b3-a198-5c1a84700243"))).abi_NotifyLayoutCompleted());
 	}
 	final void ShouldWaitForLayoutCompletion(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowResizeManagerLayoutCapability).set_ShouldWaitForLayoutCompletion(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowResizeManagerLayoutCapability)this.asInterface(uuid("bb74f27b-a544-4301-80e6-0ae033ef4536"))).set_ShouldWaitForLayoutCompletion(value));
 	}
 	final bool ShouldWaitForLayoutCompletion()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowResizeManagerLayoutCapability).get_ShouldWaitForLayoutCompletion(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowResizeManagerLayoutCapability)this.asInterface(uuid("bb74f27b-a544-4301-80e6-0ae033ef4536"))).get_ShouldWaitForLayoutCompletion(&_ret));
 		return _ret;
 	}
 
@@ -1849,7 +1849,7 @@ extern(Windows):
 	static Windows.UI.Core.CoreWindowResizeManager GetForCurrentView()
 	{
 		Windows.UI.Core.CoreWindowResizeManager _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Core.ICoreWindowResizeManagerStatics).abi_GetForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 }
@@ -1860,7 +1860,7 @@ extern(Windows):
 	final bool IsDispatcherIdle()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.IIdleDispatchedHandlerArgs).get_IsDispatcherIdle(&_ret));
+		Debug.OK((cast(Windows.UI.Core.IIdleDispatchedHandlerArgs)this.asInterface(uuid("98bb6a24-dc1c-43cb-b4ed-d1c0eb2391f3"))).get_IsDispatcherIdle(&_ret));
 		return _ret;
 	}
 }
@@ -1871,18 +1871,18 @@ extern(Windows):
 	final bool InputEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.IInputEnabledEventArgs).get_InputEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Core.IInputEnabledEventArgs)this.asInterface(uuid("80371d4f-2fd8-4c24-aa86-3163a87b4e5a"))).get_InputEnabled(&_ret));
 		return _ret;
 	}
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).set_Handled(value));
 	}
 }
 
@@ -1892,29 +1892,29 @@ extern(Windows):
 	final Windows.System.VirtualKey VirtualKey()
 	{
 		Windows.System.VirtualKey _ret;
-		Debug.OK(this.as!(Windows.UI.Core.IKeyEventArgs).get_VirtualKey(&_ret));
+		Debug.OK((cast(Windows.UI.Core.IKeyEventArgs)this.asInterface(uuid("5ff5e930-2544-4a17-bd78-1f2fdebb106b"))).get_VirtualKey(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Core.CorePhysicalKeyStatus KeyStatus()
 	{
 		Windows.UI.Core.CorePhysicalKeyStatus _ret;
-		Debug.OK(this.as!(Windows.UI.Core.IKeyEventArgs).get_KeyStatus(&_ret));
+		Debug.OK((cast(Windows.UI.Core.IKeyEventArgs)this.asInterface(uuid("5ff5e930-2544-4a17-bd78-1f2fdebb106b"))).get_KeyStatus(&_ret));
 		return _ret;
 	}
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).set_Handled(value));
 	}
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Core.IKeyEventArgs2).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.UI.Core.IKeyEventArgs2)this.asInterface(uuid("583add98-0790-4571-9b12-645ef9d79e42"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 }
@@ -1925,30 +1925,30 @@ extern(Windows):
 	final Windows.UI.Input.PointerPoint CurrentPoint()
 	{
 		Windows.UI.Input.PointerPoint _ret;
-		Debug.OK(this.as!(Windows.UI.Core.IPointerEventArgs).get_CurrentPoint(&_ret));
+		Debug.OK((cast(Windows.UI.Core.IPointerEventArgs)this.asInterface(uuid("920d9cb1-a5fc-4a21-8c09-49dfe6ffe25f"))).get_CurrentPoint(&_ret));
 		return _ret;
 	}
 	final Windows.System.VirtualKeyModifiers KeyModifiers()
 	{
 		Windows.System.VirtualKeyModifiers _ret;
-		Debug.OK(this.as!(Windows.UI.Core.IPointerEventArgs).get_KeyModifiers(&_ret));
+		Debug.OK((cast(Windows.UI.Core.IPointerEventArgs)this.asInterface(uuid("920d9cb1-a5fc-4a21-8c09-49dfe6ffe25f"))).get_KeyModifiers(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint) GetIntermediatePoints()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint) _ret;
-		Debug.OK(this.as!(Windows.UI.Core.IPointerEventArgs).abi_GetIntermediatePoints(&_ret));
+		Debug.OK((cast(Windows.UI.Core.IPointerEventArgs)this.asInterface(uuid("920d9cb1-a5fc-4a21-8c09-49dfe6ffe25f"))).abi_GetIntermediatePoints(&_ret));
 		return _ret;
 	}
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).set_Handled(value));
 	}
 }
 
@@ -1958,22 +1958,22 @@ extern(Windows):
 	final EventRegistrationToken OnBackRequested(void delegate(IInspectable, Windows.UI.Core.BackRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.ISystemNavigationManager).add_BackRequested(event!(Windows.Foundation.EventHandler!(Windows.UI.Core.BackRequestedEventArgs), IInspectable, Windows.UI.Core.BackRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.ISystemNavigationManager)this.asInterface(uuid("93023118-cf50-42a6-9706-69107fa122e1"))).add_BackRequested(event!(Windows.Foundation.EventHandler!(Windows.UI.Core.BackRequestedEventArgs), IInspectable, Windows.UI.Core.BackRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeBackRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ISystemNavigationManager).remove_BackRequested(token));
+		Debug.OK((cast(Windows.UI.Core.ISystemNavigationManager)this.asInterface(uuid("93023118-cf50-42a6-9706-69107fa122e1"))).remove_BackRequested(token));
 	}
 	final Windows.UI.Core.AppViewBackButtonVisibility AppViewBackButtonVisibility()
 	{
 		Windows.UI.Core.AppViewBackButtonVisibility _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ISystemNavigationManager2).get_AppViewBackButtonVisibility(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ISystemNavigationManager2)this.asInterface(uuid("8c510401-67be-49ae-9509-671c1e54a389"))).get_AppViewBackButtonVisibility(&_ret));
 		return _ret;
 	}
 	final void AppViewBackButtonVisibility(Windows.UI.Core.AppViewBackButtonVisibility value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ISystemNavigationManager2).set_AppViewBackButtonVisibility(value));
+		Debug.OK((cast(Windows.UI.Core.ISystemNavigationManager2)this.asInterface(uuid("8c510401-67be-49ae-9509-671c1e54a389"))).set_AppViewBackButtonVisibility(value));
 	}
 
 	private static Windows.UI.Core.ISystemNavigationManagerStatics _staticInstance;
@@ -1985,7 +1985,7 @@ extern(Windows):
 	static Windows.UI.Core.SystemNavigationManager GetForCurrentView()
 	{
 		Windows.UI.Core.SystemNavigationManager _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Core.ISystemNavigationManagerStatics).abi_GetForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 }
@@ -1996,46 +1996,46 @@ extern(Windows):
 	final Windows.UI.Core.CoreProximityEvaluation ProximityEvaluation()
 	{
 		Windows.UI.Core.CoreProximityEvaluation _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ITouchHitTestingEventArgs).get_ProximityEvaluation(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ITouchHitTestingEventArgs)this.asInterface(uuid("22f3b823-0b7c-424e-9df7-33d4f962931b"))).get_ProximityEvaluation(&_ret));
 		return _ret;
 	}
 	final void ProximityEvaluation(Windows.UI.Core.CoreProximityEvaluation value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ITouchHitTestingEventArgs).set_ProximityEvaluation(value));
+		Debug.OK((cast(Windows.UI.Core.ITouchHitTestingEventArgs)this.asInterface(uuid("22f3b823-0b7c-424e-9df7-33d4f962931b"))).set_ProximityEvaluation(value));
 	}
 	final Windows.Foundation.Point Point()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ITouchHitTestingEventArgs).get_Point(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ITouchHitTestingEventArgs)this.asInterface(uuid("22f3b823-0b7c-424e-9df7-33d4f962931b"))).get_Point(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect BoundingBox()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ITouchHitTestingEventArgs).get_BoundingBox(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ITouchHitTestingEventArgs)this.asInterface(uuid("22f3b823-0b7c-424e-9df7-33d4f962931b"))).get_BoundingBox(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Core.CoreProximityEvaluation EvaluateProximityToRect(Windows.Foundation.Rect controlBoundingBox)
 	{
 		Windows.UI.Core.CoreProximityEvaluation _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ITouchHitTestingEventArgs).abi_EvaluateProximityToRect(controlBoundingBox, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ITouchHitTestingEventArgs)this.asInterface(uuid("22f3b823-0b7c-424e-9df7-33d4f962931b"))).abi_EvaluateProximityToRect(controlBoundingBox, &_ret));
 		return _ret;
 	}
 	final Windows.UI.Core.CoreProximityEvaluation EvaluateProximityToPolygon(UINT32 __controlVerticesSize, Windows.Foundation.Point* controlVertices)
 	{
 		Windows.UI.Core.CoreProximityEvaluation _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ITouchHitTestingEventArgs).abi_EvaluateProximityToPolygon(__controlVerticesSize, controlVertices, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ITouchHitTestingEventArgs)this.asInterface(uuid("22f3b823-0b7c-424e-9df7-33d4f962931b"))).abi_EvaluateProximityToPolygon(__controlVerticesSize, controlVertices, &_ret));
 		return _ret;
 	}
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).set_Handled(value));
 	}
 }
 
@@ -2045,18 +2045,18 @@ extern(Windows):
 	final bool Visible()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.IVisibilityChangedEventArgs).get_Visible(&_ret));
+		Debug.OK((cast(Windows.UI.Core.IVisibilityChangedEventArgs)this.asInterface(uuid("bf9918ea-d801-4564-a495-b1e84f8ad085"))).get_Visible(&_ret));
 		return _ret;
 	}
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).set_Handled(value));
 	}
 }
 
@@ -2066,18 +2066,18 @@ extern(Windows):
 	final Windows.UI.Core.CoreWindowActivationState WindowActivationState()
 	{
 		Windows.UI.Core.CoreWindowActivationState _ret;
-		Debug.OK(this.as!(Windows.UI.Core.IWindowActivatedEventArgs).get_WindowActivationState(&_ret));
+		Debug.OK((cast(Windows.UI.Core.IWindowActivatedEventArgs)this.asInterface(uuid("179d65e7-4658-4cb6-aa13-41d094ea255e"))).get_WindowActivationState(&_ret));
 		return _ret;
 	}
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).set_Handled(value));
 	}
 }
 
@@ -2087,18 +2087,18 @@ extern(Windows):
 	final Windows.Foundation.Size Size()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.UI.Core.IWindowSizeChangedEventArgs).get_Size(&_ret));
+		Debug.OK((cast(Windows.UI.Core.IWindowSizeChangedEventArgs)this.asInterface(uuid("5a200ec7-0426-47dc-b86c-6f475915e451"))).get_Size(&_ret));
 		return _ret;
 	}
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.ICoreWindowEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).set_Handled(value));
 	}
 }
 

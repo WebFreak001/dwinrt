@@ -41,24 +41,24 @@ extern(Windows):
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Power.IBattery).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Power.IBattery)this.asInterface(uuid("bc894fc6-0072-47c8-8b5d-614aaa7a437e"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Power.BatteryReport GetReport()
 	{
 		Windows.Devices.Power.BatteryReport _ret;
-		Debug.OK(this.as!(Windows.Devices.Power.IBattery).abi_GetReport(&_ret));
+		Debug.OK((cast(Windows.Devices.Power.IBattery)this.asInterface(uuid("bc894fc6-0072-47c8-8b5d-614aaa7a437e"))).abi_GetReport(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnReportUpdated(void delegate(Windows.Devices.Power.Battery, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Power.IBattery).add_ReportUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Power.Battery, IInspectable), Windows.Devices.Power.Battery, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Power.IBattery)this.asInterface(uuid("bc894fc6-0072-47c8-8b5d-614aaa7a437e"))).add_ReportUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Power.Battery, IInspectable), Windows.Devices.Power.Battery, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeReportUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Power.IBattery).remove_ReportUpdated(token));
+		Debug.OK((cast(Windows.Devices.Power.IBattery)this.asInterface(uuid("bc894fc6-0072-47c8-8b5d-614aaa7a437e"))).remove_ReportUpdated(token));
 	}
 
 	private static Windows.Devices.Power.IBatteryStatics _staticInstance;
@@ -70,19 +70,19 @@ extern(Windows):
 	static Windows.Devices.Power.Battery AggregateBattery()
 	{
 		Windows.Devices.Power.Battery _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Power.IBatteryStatics).get_AggregateBattery(&_ret));
+		Debug.OK(staticInstance.get_AggregateBattery(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Power.Battery) FromIdAsync(HSTRING deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Power.Battery) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Power.IBatteryStatics).abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
 		return _ret;
 	}
 	static HSTRING GetDeviceSelector()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Power.IBatteryStatics).abi_GetDeviceSelector(&_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
 		return _ret;
 	}
 }
@@ -93,31 +93,31 @@ extern(Windows):
 	final Windows.Foundation.IReference!(INT32) ChargeRateInMilliwatts()
 	{
 		Windows.Foundation.IReference!(INT32) _ret;
-		Debug.OK(this.as!(Windows.Devices.Power.IBatteryReport).get_ChargeRateInMilliwatts(&_ret));
+		Debug.OK((cast(Windows.Devices.Power.IBatteryReport)this.asInterface(uuid("c9858c3a-4e13-420a-a8d0-24f18f395401"))).get_ChargeRateInMilliwatts(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(INT32) DesignCapacityInMilliwattHours()
 	{
 		Windows.Foundation.IReference!(INT32) _ret;
-		Debug.OK(this.as!(Windows.Devices.Power.IBatteryReport).get_DesignCapacityInMilliwattHours(&_ret));
+		Debug.OK((cast(Windows.Devices.Power.IBatteryReport)this.asInterface(uuid("c9858c3a-4e13-420a-a8d0-24f18f395401"))).get_DesignCapacityInMilliwattHours(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(INT32) FullChargeCapacityInMilliwattHours()
 	{
 		Windows.Foundation.IReference!(INT32) _ret;
-		Debug.OK(this.as!(Windows.Devices.Power.IBatteryReport).get_FullChargeCapacityInMilliwattHours(&_ret));
+		Debug.OK((cast(Windows.Devices.Power.IBatteryReport)this.asInterface(uuid("c9858c3a-4e13-420a-a8d0-24f18f395401"))).get_FullChargeCapacityInMilliwattHours(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(INT32) RemainingCapacityInMilliwattHours()
 	{
 		Windows.Foundation.IReference!(INT32) _ret;
-		Debug.OK(this.as!(Windows.Devices.Power.IBatteryReport).get_RemainingCapacityInMilliwattHours(&_ret));
+		Debug.OK((cast(Windows.Devices.Power.IBatteryReport)this.asInterface(uuid("c9858c3a-4e13-420a-a8d0-24f18f395401"))).get_RemainingCapacityInMilliwattHours(&_ret));
 		return _ret;
 	}
 	final Windows.System.Power.BatteryStatus Status()
 	{
 		Windows.System.Power.BatteryStatus _ret;
-		Debug.OK(this.as!(Windows.Devices.Power.IBatteryReport).get_Status(&_ret));
+		Debug.OK((cast(Windows.Devices.Power.IBatteryReport)this.asInterface(uuid("c9858c3a-4e13-420a-a8d0-24f18f395401"))).get_Status(&_ret));
 		return _ret;
 	}
 }

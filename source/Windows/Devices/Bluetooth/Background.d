@@ -104,13 +104,13 @@ extern(Windows):
 	final Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisherStatus Status()
 	{
 		Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisherStatus _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IBluetoothLEAdvertisementPublisherTriggerDetails).get_Status(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IBluetoothLEAdvertisementPublisherTriggerDetails)this.asInterface(uuid("610eca86-3480-41c9-a918-7ddadf207e00"))).get_Status(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Bluetooth.BluetoothError Error()
 	{
 		Windows.Devices.Bluetooth.BluetoothError _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IBluetoothLEAdvertisementPublisherTriggerDetails).get_Error(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IBluetoothLEAdvertisementPublisherTriggerDetails)this.asInterface(uuid("610eca86-3480-41c9-a918-7ddadf207e00"))).get_Error(&_ret));
 		return _ret;
 	}
 }
@@ -121,19 +121,19 @@ extern(Windows):
 	final Windows.Devices.Bluetooth.BluetoothError Error()
 	{
 		Windows.Devices.Bluetooth.BluetoothError _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IBluetoothLEAdvertisementWatcherTriggerDetails).get_Error(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IBluetoothLEAdvertisementWatcherTriggerDetails)this.asInterface(uuid("a7db5ad7-2257-4e69-9784-fee645c1dce0"))).get_Error(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementReceivedEventArgs) Advertisements()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementReceivedEventArgs) _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IBluetoothLEAdvertisementWatcherTriggerDetails).get_Advertisements(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IBluetoothLEAdvertisementWatcherTriggerDetails)this.asInterface(uuid("a7db5ad7-2257-4e69-9784-fee645c1dce0"))).get_Advertisements(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Bluetooth.BluetoothSignalStrengthFilter SignalStrengthFilter()
 	{
 		Windows.Devices.Bluetooth.BluetoothSignalStrengthFilter _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IBluetoothLEAdvertisementWatcherTriggerDetails).get_SignalStrengthFilter(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IBluetoothLEAdvertisementWatcherTriggerDetails)this.asInterface(uuid("a7db5ad7-2257-4e69-9784-fee645c1dce0"))).get_SignalStrengthFilter(&_ret));
 		return _ret;
 	}
 }
@@ -144,31 +144,31 @@ extern(Windows):
 	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic Characteristic()
 	{
 		Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IGattCharacteristicNotificationTriggerDetails).get_Characteristic(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IGattCharacteristicNotificationTriggerDetails)this.asInterface(uuid("9ba03b18-0fec-436a-93b1-f46c697532a2"))).get_Characteristic(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer Value()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IGattCharacteristicNotificationTriggerDetails).get_Value(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IGattCharacteristicNotificationTriggerDetails)this.asInterface(uuid("9ba03b18-0fec-436a-93b1-f46c697532a2"))).get_Value(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Bluetooth.BluetoothError Error()
 	{
 		Windows.Devices.Bluetooth.BluetoothError _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IGattCharacteristicNotificationTriggerDetails2).get_Error(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IGattCharacteristicNotificationTriggerDetails2)this.asInterface(uuid("727a50dc-949d-454a-b192-983467e3d50f"))).get_Error(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Bluetooth.Background.BluetoothEventTriggeringMode EventTriggeringMode()
 	{
 		Windows.Devices.Bluetooth.Background.BluetoothEventTriggeringMode _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IGattCharacteristicNotificationTriggerDetails2).get_EventTriggeringMode(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IGattCharacteristicNotificationTriggerDetails2)this.asInterface(uuid("727a50dc-949d-454a-b192-983467e3d50f"))).get_EventTriggeringMode(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattValueChangedEventArgs) ValueChangedEvents()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattValueChangedEventArgs) _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IGattCharacteristicNotificationTriggerDetails2).get_ValueChangedEvents(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IGattCharacteristicNotificationTriggerDetails2)this.asInterface(uuid("727a50dc-949d-454a-b192-983467e3d50f"))).get_ValueChangedEvents(&_ret));
 		return _ret;
 	}
 }
@@ -179,18 +179,18 @@ extern(Windows):
 	final HSTRING TriggerId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IGattServiceProviderConnection).get_TriggerId(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IGattServiceProviderConnection)this.asInterface(uuid("7fa1b9b9-2f13-40b5-9582-8eb78e98ef13"))).get_TriggerId(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalService Service()
 	{
 		Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalService _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IGattServiceProviderConnection).get_Service(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IGattServiceProviderConnection)this.asInterface(uuid("7fa1b9b9-2f13-40b5-9582-8eb78e98ef13"))).get_Service(&_ret));
 		return _ret;
 	}
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IGattServiceProviderConnection).abi_Start());
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IGattServiceProviderConnection)this.asInterface(uuid("7fa1b9b9-2f13-40b5-9582-8eb78e98ef13"))).abi_Start());
 	}
 
 	private static Windows.Devices.Bluetooth.Background.IGattServiceProviderConnectionStatics _staticInstance;
@@ -202,7 +202,7 @@ extern(Windows):
 	static Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Devices.Bluetooth.Background.GattServiceProviderConnection) AllServices()
 	{
 		Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Devices.Bluetooth.Background.GattServiceProviderConnection) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Background.IGattServiceProviderConnectionStatics).get_AllServices(&_ret));
+		Debug.OK(staticInstance.get_AllServices(&_ret));
 		return _ret;
 	}
 }
@@ -213,7 +213,7 @@ extern(Windows):
 	final Windows.Devices.Bluetooth.Background.GattServiceProviderConnection Connection()
 	{
 		Windows.Devices.Bluetooth.Background.GattServiceProviderConnection _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IGattServiceProviderTriggerDetails).get_Connection(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IGattServiceProviderTriggerDetails)this.asInterface(uuid("ae8c0625-05ff-4afb-b16a-de95f3cf0158"))).get_Connection(&_ret));
 		return _ret;
 	}
 }
@@ -224,19 +224,19 @@ extern(Windows):
 	final Windows.Networking.Sockets.StreamSocket Socket()
 	{
 		Windows.Networking.Sockets.StreamSocket _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IRfcommConnectionTriggerDetails).get_Socket(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IRfcommConnectionTriggerDetails)this.asInterface(uuid("f922734d-2e3c-4efc-ab59-fc5cf96f97e3"))).get_Socket(&_ret));
 		return _ret;
 	}
 	final bool Incoming()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IRfcommConnectionTriggerDetails).get_Incoming(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IRfcommConnectionTriggerDetails)this.asInterface(uuid("f922734d-2e3c-4efc-ab59-fc5cf96f97e3"))).get_Incoming(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Bluetooth.BluetoothDevice RemoteDevice()
 	{
 		Windows.Devices.Bluetooth.BluetoothDevice _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IRfcommConnectionTriggerDetails).get_RemoteDevice(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IRfcommConnectionTriggerDetails)this.asInterface(uuid("f922734d-2e3c-4efc-ab59-fc5cf96f97e3"))).get_RemoteDevice(&_ret));
 		return _ret;
 	}
 }
@@ -247,32 +247,32 @@ extern(Windows):
 	final Windows.Storage.Streams.IBuffer SdpRecord()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IRfcommInboundConnectionInformation).get_SdpRecord(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IRfcommInboundConnectionInformation)this.asInterface(uuid("6d3e75a8-5429-4059-92e3-1e8b65528707"))).get_SdpRecord(&_ret));
 		return _ret;
 	}
 	final void SdpRecord(Windows.Storage.Streams.IBuffer value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IRfcommInboundConnectionInformation).set_SdpRecord(value));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IRfcommInboundConnectionInformation)this.asInterface(uuid("6d3e75a8-5429-4059-92e3-1e8b65528707"))).set_SdpRecord(value));
 	}
 	final Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId LocalServiceId()
 	{
 		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IRfcommInboundConnectionInformation).get_LocalServiceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IRfcommInboundConnectionInformation)this.asInterface(uuid("6d3e75a8-5429-4059-92e3-1e8b65528707"))).get_LocalServiceId(&_ret));
 		return _ret;
 	}
 	final void LocalServiceId(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IRfcommInboundConnectionInformation).set_LocalServiceId(value));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IRfcommInboundConnectionInformation)this.asInterface(uuid("6d3e75a8-5429-4059-92e3-1e8b65528707"))).set_LocalServiceId(value));
 	}
 	final Windows.Devices.Bluetooth.BluetoothServiceCapabilities ServiceCapabilities()
 	{
 		Windows.Devices.Bluetooth.BluetoothServiceCapabilities _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IRfcommInboundConnectionInformation).get_ServiceCapabilities(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IRfcommInboundConnectionInformation)this.asInterface(uuid("6d3e75a8-5429-4059-92e3-1e8b65528707"))).get_ServiceCapabilities(&_ret));
 		return _ret;
 	}
 	final void ServiceCapabilities(Windows.Devices.Bluetooth.BluetoothServiceCapabilities value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IRfcommInboundConnectionInformation).set_ServiceCapabilities(value));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IRfcommInboundConnectionInformation)this.asInterface(uuid("6d3e75a8-5429-4059-92e3-1e8b65528707"))).set_ServiceCapabilities(value));
 	}
 }
 
@@ -282,12 +282,12 @@ extern(Windows):
 	final Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId RemoteServiceId()
 	{
 		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IRfcommOutboundConnectionInformation).get_RemoteServiceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IRfcommOutboundConnectionInformation)this.asInterface(uuid("b091227b-f434-4cb0-99b1-4ab8cedaedd7"))).get_RemoteServiceId(&_ret));
 		return _ret;
 	}
 	final void RemoteServiceId(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Background.IRfcommOutboundConnectionInformation).set_RemoteServiceId(value));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Background.IRfcommOutboundConnectionInformation)this.asInterface(uuid("b091227b-f434-4cb0-99b1-4ab8cedaedd7"))).set_RemoteServiceId(value));
 	}
 }
 

@@ -1266,25 +1266,25 @@ extern(Windows):
 	final Windows.Media.Capture.CapturedFrame Frame()
 	{
 		Windows.Media.Capture.CapturedFrame _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAdvancedCapturedPhoto).get_Frame(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAdvancedCapturedPhoto)this.asInterface(uuid("f072728b-b292-4491-9d41-99807a550bbf"))).get_Frame(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Devices.AdvancedPhotoMode Mode()
 	{
 		Windows.Media.Devices.AdvancedPhotoMode _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAdvancedCapturedPhoto).get_Mode(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAdvancedCapturedPhoto)this.asInterface(uuid("f072728b-b292-4491-9d41-99807a550bbf"))).get_Mode(&_ret));
 		return _ret;
 	}
 	final IInspectable Context()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAdvancedCapturedPhoto).get_Context(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAdvancedCapturedPhoto)this.asInterface(uuid("f072728b-b292-4491-9d41-99807a550bbf"))).get_Context(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.Rect) FrameBoundsRelativeToReferencePhoto()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.Rect) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAdvancedCapturedPhoto2).get_FrameBoundsRelativeToReferencePhoto(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAdvancedCapturedPhoto2)this.asInterface(uuid("18cf6cd8-cffe-42d8-8104-017bb318f4a1"))).get_FrameBoundsRelativeToReferencePhoto(&_ret));
 		return _ret;
 	}
 }
@@ -1295,39 +1295,39 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.AdvancedCapturedPhoto) CaptureAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.AdvancedCapturedPhoto) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAdvancedPhotoCapture).abi_CaptureAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAdvancedPhotoCapture)this.asInterface(uuid("83ffaafa-6667-44dc-973c-a6bce596aa0f"))).abi_CaptureAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.AdvancedCapturedPhoto) CaptureWithContextAsync(IInspectable context)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.AdvancedCapturedPhoto) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAdvancedPhotoCapture).abi_CaptureWithContextAsync(context, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAdvancedPhotoCapture)this.asInterface(uuid("83ffaafa-6667-44dc-973c-a6bce596aa0f"))).abi_CaptureWithContextAsync(context, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnOptionalReferencePhotoCaptured(void delegate(Windows.Media.Capture.AdvancedPhotoCapture, Windows.Media.Capture.OptionalReferencePhotoCapturedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IAdvancedPhotoCapture).add_OptionalReferencePhotoCaptured(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AdvancedPhotoCapture, Windows.Media.Capture.OptionalReferencePhotoCapturedEventArgs), Windows.Media.Capture.AdvancedPhotoCapture, Windows.Media.Capture.OptionalReferencePhotoCapturedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IAdvancedPhotoCapture)this.asInterface(uuid("83ffaafa-6667-44dc-973c-a6bce596aa0f"))).add_OptionalReferencePhotoCaptured(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AdvancedPhotoCapture, Windows.Media.Capture.OptionalReferencePhotoCapturedEventArgs), Windows.Media.Capture.AdvancedPhotoCapture, Windows.Media.Capture.OptionalReferencePhotoCapturedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeOptionalReferencePhotoCaptured(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAdvancedPhotoCapture).remove_OptionalReferencePhotoCaptured(token));
+		Debug.OK((cast(Windows.Media.Capture.IAdvancedPhotoCapture)this.asInterface(uuid("83ffaafa-6667-44dc-973c-a6bce596aa0f"))).remove_OptionalReferencePhotoCaptured(token));
 	}
 	final EventRegistrationToken OnAllPhotosCaptured(void delegate(Windows.Media.Capture.AdvancedPhotoCapture, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IAdvancedPhotoCapture).add_AllPhotosCaptured(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AdvancedPhotoCapture, IInspectable), Windows.Media.Capture.AdvancedPhotoCapture, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IAdvancedPhotoCapture)this.asInterface(uuid("83ffaafa-6667-44dc-973c-a6bce596aa0f"))).add_AllPhotosCaptured(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AdvancedPhotoCapture, IInspectable), Windows.Media.Capture.AdvancedPhotoCapture, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeAllPhotosCaptured(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAdvancedPhotoCapture).remove_AllPhotosCaptured(token));
+		Debug.OK((cast(Windows.Media.Capture.IAdvancedPhotoCapture)this.asInterface(uuid("83ffaafa-6667-44dc-973c-a6bce596aa0f"))).remove_AllPhotosCaptured(token));
 	}
 	final Windows.Foundation.IAsyncAction FinishAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAdvancedPhotoCapture).abi_FinishAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAdvancedPhotoCapture)this.asInterface(uuid("83ffaafa-6667-44dc-973c-a6bce596aa0f"))).abi_FinishAsync(&_ret));
 		return _ret;
 	}
 }
@@ -1337,74 +1337,74 @@ interface AppBroadcastBackgroundService : Windows.Media.Capture.IAppBroadcastBac
 extern(Windows):
 	final void PlugInState(Windows.Media.Capture.AppBroadcastPlugInState value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).set_PlugInState(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundService)this.asInterface(uuid("bad1e72a-fa94-46f9-95fc-d71511cda70b"))).set_PlugInState(value));
 	}
 	final Windows.Media.Capture.AppBroadcastPlugInState PlugInState()
 	{
 		Windows.Media.Capture.AppBroadcastPlugInState _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).get_PlugInState(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundService)this.asInterface(uuid("bad1e72a-fa94-46f9-95fc-d71511cda70b"))).get_PlugInState(&_ret));
 		return _ret;
 	}
 	final void SignInInfo(Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).set_SignInInfo(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundService)this.asInterface(uuid("bad1e72a-fa94-46f9-95fc-d71511cda70b"))).set_SignInInfo(value));
 	}
 	final Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo SignInInfo()
 	{
 		Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).get_SignInInfo(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundService)this.asInterface(uuid("bad1e72a-fa94-46f9-95fc-d71511cda70b"))).get_SignInInfo(&_ret));
 		return _ret;
 	}
 	final void StreamInfo(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).set_StreamInfo(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundService)this.asInterface(uuid("bad1e72a-fa94-46f9-95fc-d71511cda70b"))).set_StreamInfo(value));
 	}
 	final Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo StreamInfo()
 	{
 		Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).get_StreamInfo(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundService)this.asInterface(uuid("bad1e72a-fa94-46f9-95fc-d71511cda70b"))).get_StreamInfo(&_ret));
 		return _ret;
 	}
 	final HSTRING AppId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).get_AppId(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundService)this.asInterface(uuid("bad1e72a-fa94-46f9-95fc-d71511cda70b"))).get_AppId(&_ret));
 		return _ret;
 	}
 	final HSTRING BroadcastTitle()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).get_BroadcastTitle(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundService)this.asInterface(uuid("bad1e72a-fa94-46f9-95fc-d71511cda70b"))).get_BroadcastTitle(&_ret));
 		return _ret;
 	}
 	final void ViewerCount(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).set_ViewerCount(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundService)this.asInterface(uuid("bad1e72a-fa94-46f9-95fc-d71511cda70b"))).set_ViewerCount(value));
 	}
 	final UINT32 ViewerCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).get_ViewerCount(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundService)this.asInterface(uuid("bad1e72a-fa94-46f9-95fc-d71511cda70b"))).get_ViewerCount(&_ret));
 		return _ret;
 	}
 	final void TerminateBroadcast(Windows.Media.Capture.AppBroadcastTerminationReason reason, UINT32 providerSpecificReason)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).abi_TerminateBroadcast(reason, providerSpecificReason));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundService)this.asInterface(uuid("bad1e72a-fa94-46f9-95fc-d71511cda70b"))).abi_TerminateBroadcast(reason, providerSpecificReason));
 	}
 	final EventRegistrationToken OnHeartbeatRequested(void delegate(Windows.Media.Capture.AppBroadcastBackgroundService, Windows.Media.Capture.AppBroadcastHeartbeatRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).add_HeartbeatRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundService, Windows.Media.Capture.AppBroadcastHeartbeatRequestedEventArgs), Windows.Media.Capture.AppBroadcastBackgroundService, Windows.Media.Capture.AppBroadcastHeartbeatRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundService)this.asInterface(uuid("bad1e72a-fa94-46f9-95fc-d71511cda70b"))).add_HeartbeatRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundService, Windows.Media.Capture.AppBroadcastHeartbeatRequestedEventArgs), Windows.Media.Capture.AppBroadcastBackgroundService, Windows.Media.Capture.AppBroadcastHeartbeatRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeHeartbeatRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).remove_HeartbeatRequested(token));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundService)this.asInterface(uuid("bad1e72a-fa94-46f9-95fc-d71511cda70b"))).remove_HeartbeatRequested(token));
 	}
 	final HSTRING TitleId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundService).get_TitleId(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundService)this.asInterface(uuid("bad1e72a-fa94-46f9-95fc-d71511cda70b"))).get_TitleId(&_ret));
 		return _ret;
 	}
 }
@@ -1415,54 +1415,54 @@ extern(Windows):
 	final Windows.Media.Capture.AppBroadcastSignInState SignInState()
 	{
 		Windows.Media.Capture.AppBroadcastSignInState _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo).get_SignInState(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo)this.asInterface(uuid("5e735275-88c8-4eca-89ba-4825985db880"))).get_SignInState(&_ret));
 		return _ret;
 	}
 	final void OAuthRequestUri(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo).set_OAuthRequestUri(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo)this.asInterface(uuid("5e735275-88c8-4eca-89ba-4825985db880"))).set_OAuthRequestUri(value));
 	}
 	final Windows.Foundation.Uri OAuthRequestUri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo).get_OAuthRequestUri(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo)this.asInterface(uuid("5e735275-88c8-4eca-89ba-4825985db880"))).get_OAuthRequestUri(&_ret));
 		return _ret;
 	}
 	final void OAuthCallbackUri(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo).set_OAuthCallbackUri(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo)this.asInterface(uuid("5e735275-88c8-4eca-89ba-4825985db880"))).set_OAuthCallbackUri(value));
 	}
 	final Windows.Foundation.Uri OAuthCallbackUri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo).get_OAuthCallbackUri(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo)this.asInterface(uuid("5e735275-88c8-4eca-89ba-4825985db880"))).get_OAuthCallbackUri(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Authentication.Web.WebAuthenticationResult AuthenticationResult()
 	{
 		Windows.Security.Authentication.Web.WebAuthenticationResult _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo).get_AuthenticationResult(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo)this.asInterface(uuid("5e735275-88c8-4eca-89ba-4825985db880"))).get_AuthenticationResult(&_ret));
 		return _ret;
 	}
 	final void UserName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo).set_UserName(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo)this.asInterface(uuid("5e735275-88c8-4eca-89ba-4825985db880"))).set_UserName(value));
 	}
 	final HSTRING UserName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo).get_UserName(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo)this.asInterface(uuid("5e735275-88c8-4eca-89ba-4825985db880"))).get_UserName(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnSignInStateChanged(void delegate(Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo, Windows.Media.Capture.AppBroadcastSignInStateChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo).add_SignInStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo, Windows.Media.Capture.AppBroadcastSignInStateChangedEventArgs), Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo, Windows.Media.Capture.AppBroadcastSignInStateChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo)this.asInterface(uuid("5e735275-88c8-4eca-89ba-4825985db880"))).add_SignInStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo, Windows.Media.Capture.AppBroadcastSignInStateChangedEventArgs), Windows.Media.Capture.AppBroadcastBackgroundServiceSignInInfo, Windows.Media.Capture.AppBroadcastSignInStateChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSignInStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo).remove_SignInStateChanged(token));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceSignInInfo)this.asInterface(uuid("5e735275-88c8-4eca-89ba-4825985db880"))).remove_SignInStateChanged(token));
 	}
 }
 
@@ -1472,74 +1472,74 @@ extern(Windows):
 	final Windows.Media.Capture.AppBroadcastStreamState StreamState()
 	{
 		Windows.Media.Capture.AppBroadcastStreamState _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).get_StreamState(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo)this.asInterface(uuid("31dc02bc-990a-4904-aa96-fe364381f136"))).get_StreamState(&_ret));
 		return _ret;
 	}
 	final void DesiredVideoEncodingBitrate(ulong value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).set_DesiredVideoEncodingBitrate(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo)this.asInterface(uuid("31dc02bc-990a-4904-aa96-fe364381f136"))).set_DesiredVideoEncodingBitrate(value));
 	}
 	final ulong DesiredVideoEncodingBitrate()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).get_DesiredVideoEncodingBitrate(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo)this.asInterface(uuid("31dc02bc-990a-4904-aa96-fe364381f136"))).get_DesiredVideoEncodingBitrate(&_ret));
 		return _ret;
 	}
 	final void BandwidthTestBitrate(ulong value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).set_BandwidthTestBitrate(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo)this.asInterface(uuid("31dc02bc-990a-4904-aa96-fe364381f136"))).set_BandwidthTestBitrate(value));
 	}
 	final ulong BandwidthTestBitrate()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).get_BandwidthTestBitrate(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo)this.asInterface(uuid("31dc02bc-990a-4904-aa96-fe364381f136"))).get_BandwidthTestBitrate(&_ret));
 		return _ret;
 	}
 	final void AudioCodec(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).set_AudioCodec(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo)this.asInterface(uuid("31dc02bc-990a-4904-aa96-fe364381f136"))).set_AudioCodec(value));
 	}
 	final HSTRING AudioCodec()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).get_AudioCodec(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo)this.asInterface(uuid("31dc02bc-990a-4904-aa96-fe364381f136"))).get_AudioCodec(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.AppBroadcastStreamReader BroadcastStreamReader()
 	{
 		Windows.Media.Capture.AppBroadcastStreamReader _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).get_BroadcastStreamReader(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo)this.asInterface(uuid("31dc02bc-990a-4904-aa96-fe364381f136"))).get_BroadcastStreamReader(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnStreamStateChanged(void delegate(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, Windows.Media.Capture.AppBroadcastStreamStateChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).add_StreamStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, Windows.Media.Capture.AppBroadcastStreamStateChangedEventArgs), Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, Windows.Media.Capture.AppBroadcastStreamStateChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo)this.asInterface(uuid("31dc02bc-990a-4904-aa96-fe364381f136"))).add_StreamStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, Windows.Media.Capture.AppBroadcastStreamStateChangedEventArgs), Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, Windows.Media.Capture.AppBroadcastStreamStateChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStreamStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).remove_StreamStateChanged(token));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo)this.asInterface(uuid("31dc02bc-990a-4904-aa96-fe364381f136"))).remove_StreamStateChanged(token));
 	}
 	final EventRegistrationToken OnVideoEncodingResolutionChanged(void delegate(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).add_VideoEncodingResolutionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, IInspectable), Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo)this.asInterface(uuid("31dc02bc-990a-4904-aa96-fe364381f136"))).add_VideoEncodingResolutionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, IInspectable), Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeVideoEncodingResolutionChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).remove_VideoEncodingResolutionChanged(token));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo)this.asInterface(uuid("31dc02bc-990a-4904-aa96-fe364381f136"))).remove_VideoEncodingResolutionChanged(token));
 	}
 	final EventRegistrationToken OnVideoEncodingBitrateChanged(void delegate(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).add_VideoEncodingBitrateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, IInspectable), Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo)this.asInterface(uuid("31dc02bc-990a-4904-aa96-fe364381f136"))).add_VideoEncodingBitrateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, IInspectable), Windows.Media.Capture.AppBroadcastBackgroundServiceStreamInfo, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeVideoEncodingBitrateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo).remove_VideoEncodingBitrateChanged(token));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastBackgroundServiceStreamInfo)this.asInterface(uuid("31dc02bc-990a-4904-aa96-fe364381f136"))).remove_VideoEncodingBitrateChanged(token));
 	}
 }
 
@@ -1549,13 +1549,13 @@ extern(Windows):
 	final Windows.Media.Capture.AppBroadcastCameraCaptureState State()
 	{
 		Windows.Media.Capture.AppBroadcastCameraCaptureState _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastCameraCaptureStateChangedEventArgs).get_State(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastCameraCaptureStateChangedEventArgs)this.asInterface(uuid("1e334cd0-b882-4b88-8692-05999aceb70f"))).get_State(&_ret));
 		return _ret;
 	}
 	final UINT32 ErrorCode()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastCameraCaptureStateChangedEventArgs).get_ErrorCode(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastCameraCaptureStateChangedEventArgs)this.asInterface(uuid("1e334cd0-b882-4b88-8692-05999aceb70f"))).get_ErrorCode(&_ret));
 		return _ret;
 	}
 }
@@ -1566,125 +1566,125 @@ extern(Windows):
 	final bool IsBroadcastEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_IsBroadcastEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).get_IsBroadcastEnabled(&_ret));
 		return _ret;
 	}
 	final bool IsDisabledByPolicy()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_IsDisabledByPolicy(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).get_IsDisabledByPolicy(&_ret));
 		return _ret;
 	}
 	final bool IsGpuConstrained()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_IsGpuConstrained(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).get_IsGpuConstrained(&_ret));
 		return _ret;
 	}
 	final bool HasHardwareEncoder()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_HasHardwareEncoder(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).get_HasHardwareEncoder(&_ret));
 		return _ret;
 	}
 	final void IsAudioCaptureEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).set_IsAudioCaptureEnabled(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).set_IsAudioCaptureEnabled(value));
 	}
 	final bool IsAudioCaptureEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_IsAudioCaptureEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).get_IsAudioCaptureEnabled(&_ret));
 		return _ret;
 	}
 	final void IsMicrophoneCaptureEnabledByDefault(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).set_IsMicrophoneCaptureEnabledByDefault(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).set_IsMicrophoneCaptureEnabledByDefault(value));
 	}
 	final bool IsMicrophoneCaptureEnabledByDefault()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_IsMicrophoneCaptureEnabledByDefault(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).get_IsMicrophoneCaptureEnabledByDefault(&_ret));
 		return _ret;
 	}
 	final void IsEchoCancellationEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).set_IsEchoCancellationEnabled(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).set_IsEchoCancellationEnabled(value));
 	}
 	final bool IsEchoCancellationEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_IsEchoCancellationEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).get_IsEchoCancellationEnabled(&_ret));
 		return _ret;
 	}
 	final void SystemAudioGain(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).set_SystemAudioGain(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).set_SystemAudioGain(value));
 	}
 	final double SystemAudioGain()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_SystemAudioGain(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).get_SystemAudioGain(&_ret));
 		return _ret;
 	}
 	final void MicrophoneGain(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).set_MicrophoneGain(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).set_MicrophoneGain(value));
 	}
 	final double MicrophoneGain()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_MicrophoneGain(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).get_MicrophoneGain(&_ret));
 		return _ret;
 	}
 	final void IsCameraCaptureEnabledByDefault(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).set_IsCameraCaptureEnabledByDefault(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).set_IsCameraCaptureEnabledByDefault(value));
 	}
 	final bool IsCameraCaptureEnabledByDefault()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_IsCameraCaptureEnabledByDefault(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).get_IsCameraCaptureEnabledByDefault(&_ret));
 		return _ret;
 	}
 	final void SelectedCameraId(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).set_SelectedCameraId(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).set_SelectedCameraId(value));
 	}
 	final HSTRING SelectedCameraId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_SelectedCameraId(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).get_SelectedCameraId(&_ret));
 		return _ret;
 	}
 	final void CameraOverlayLocation(Windows.Media.Capture.AppBroadcastCameraOverlayLocation value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).set_CameraOverlayLocation(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).set_CameraOverlayLocation(value));
 	}
 	final Windows.Media.Capture.AppBroadcastCameraOverlayLocation CameraOverlayLocation()
 	{
 		Windows.Media.Capture.AppBroadcastCameraOverlayLocation _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_CameraOverlayLocation(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).get_CameraOverlayLocation(&_ret));
 		return _ret;
 	}
 	final void CameraOverlaySize(Windows.Media.Capture.AppBroadcastCameraOverlaySize value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).set_CameraOverlaySize(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).set_CameraOverlaySize(value));
 	}
 	final Windows.Media.Capture.AppBroadcastCameraOverlaySize CameraOverlaySize()
 	{
 		Windows.Media.Capture.AppBroadcastCameraOverlaySize _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_CameraOverlaySize(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).get_CameraOverlaySize(&_ret));
 		return _ret;
 	}
 	final void IsCursorImageCaptureEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).set_IsCursorImageCaptureEnabled(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).set_IsCursorImageCaptureEnabled(value));
 	}
 	final bool IsCursorImageCaptureEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastGlobalSettings).get_IsCursorImageCaptureEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastGlobalSettings)this.asInterface(uuid("b2cb27a5-70fc-4e17-80bd-6ba0fd3ff3a0"))).get_IsCursorImageCaptureEnabled(&_ret));
 		return _ret;
 	}
 }
@@ -1694,12 +1694,12 @@ interface AppBroadcastHeartbeatRequestedEventArgs : Windows.Media.Capture.IAppBr
 extern(Windows):
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastHeartbeatRequestedEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastHeartbeatRequestedEventArgs)this.asInterface(uuid("cea54283-ee51-4dbf-9472-79a9ed4e2165"))).set_Handled(value));
 	}
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastHeartbeatRequestedEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastHeartbeatRequestedEventArgs)this.asInterface(uuid("cea54283-ee51-4dbf-9472-79a9ed4e2165"))).get_Handled(&_ret));
 		return _ret;
 	}
 }
@@ -1715,22 +1715,22 @@ interface AppBroadcastManager
 	static Windows.Media.Capture.AppBroadcastGlobalSettings GetGlobalSettings()
 	{
 		Windows.Media.Capture.AppBroadcastGlobalSettings _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Capture.IAppBroadcastManagerStatics).abi_GetGlobalSettings(&_ret));
+		Debug.OK(staticInstance.abi_GetGlobalSettings(&_ret));
 		return _ret;
 	}
 	static void ApplyGlobalSettings(Windows.Media.Capture.AppBroadcastGlobalSettings value)
 	{
-		Debug.OK(staticInstance.as!(Windows.Media.Capture.IAppBroadcastManagerStatics).abi_ApplyGlobalSettings(value));
+		Debug.OK(staticInstance.abi_ApplyGlobalSettings(value));
 	}
 	static Windows.Media.Capture.AppBroadcastProviderSettings GetProviderSettings()
 	{
 		Windows.Media.Capture.AppBroadcastProviderSettings _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Capture.IAppBroadcastManagerStatics).abi_GetProviderSettings(&_ret));
+		Debug.OK(staticInstance.abi_GetProviderSettings(&_ret));
 		return _ret;
 	}
 	static void ApplyProviderSettings(Windows.Media.Capture.AppBroadcastProviderSettings value)
 	{
-		Debug.OK(staticInstance.as!(Windows.Media.Capture.IAppBroadcastManagerStatics).abi_ApplyProviderSettings(value));
+		Debug.OK(staticInstance.abi_ApplyProviderSettings(value));
 	}
 }
 
@@ -1740,13 +1740,13 @@ extern(Windows):
 	final Windows.Media.Capture.AppBroadcastMicrophoneCaptureState State()
 	{
 		Windows.Media.Capture.AppBroadcastMicrophoneCaptureState _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastMicrophoneCaptureStateChangedEventArgs).get_State(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastMicrophoneCaptureStateChangedEventArgs)this.asInterface(uuid("a86ad5e9-9440-4908-9d09-65b7e315d795"))).get_State(&_ret));
 		return _ret;
 	}
 	final UINT32 ErrorCode()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastMicrophoneCaptureStateChangedEventArgs).get_ErrorCode(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastMicrophoneCaptureStateChangedEventArgs)this.asInterface(uuid("a86ad5e9-9440-4908-9d09-65b7e315d795"))).get_ErrorCode(&_ret));
 		return _ret;
 	}
 }
@@ -1757,25 +1757,25 @@ extern(Windows):
 	final HSTRING AppId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPlugIn).get_AppId(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPlugIn)this.asInterface(uuid("520c1e66-6513-4574-ac54-23b79729615b"))).get_AppId(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.AppBroadcastProviderSettings ProviderSettings()
 	{
 		Windows.Media.Capture.AppBroadcastProviderSettings _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPlugIn).get_ProviderSettings(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPlugIn)this.asInterface(uuid("520c1e66-6513-4574-ac54-23b79729615b"))).get_ProviderSettings(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IRandomAccessStreamReference Logo()
 	{
 		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPlugIn).get_Logo(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPlugIn)this.asInterface(uuid("520c1e66-6513-4574-ac54-23b79729615b"))).get_Logo(&_ret));
 		return _ret;
 	}
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPlugIn).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPlugIn)this.asInterface(uuid("520c1e66-6513-4574-ac54-23b79729615b"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 }
@@ -1786,24 +1786,24 @@ extern(Windows):
 	final bool IsBroadcastProviderAvailable()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPlugInManager).get_IsBroadcastProviderAvailable(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPlugInManager)this.asInterface(uuid("e550d979-27a1-49a7-bbf4-d7a9e9d07668"))).get_IsBroadcastProviderAvailable(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.AppBroadcastPlugIn) PlugInList()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.AppBroadcastPlugIn) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPlugInManager).get_PlugInList(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPlugInManager)this.asInterface(uuid("e550d979-27a1-49a7-bbf4-d7a9e9d07668"))).get_PlugInList(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.AppBroadcastPlugIn DefaultPlugIn()
 	{
 		Windows.Media.Capture.AppBroadcastPlugIn _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPlugInManager).get_DefaultPlugIn(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPlugInManager)this.asInterface(uuid("e550d979-27a1-49a7-bbf4-d7a9e9d07668"))).get_DefaultPlugIn(&_ret));
 		return _ret;
 	}
 	final void DefaultPlugIn(Windows.Media.Capture.AppBroadcastPlugIn value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPlugInManager).set_DefaultPlugIn(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPlugInManager)this.asInterface(uuid("e550d979-27a1-49a7-bbf4-d7a9e9d07668"))).set_DefaultPlugIn(value));
 	}
 
 	private static Windows.Media.Capture.IAppBroadcastPlugInManagerStatics _staticInstance;
@@ -1815,13 +1815,13 @@ extern(Windows):
 	static Windows.Media.Capture.AppBroadcastPlugInManager GetDefault()
 	{
 		Windows.Media.Capture.AppBroadcastPlugInManager _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Capture.IAppBroadcastPlugInManagerStatics).abi_GetDefault(&_ret));
+		Debug.OK(staticInstance.abi_GetDefault(&_ret));
 		return _ret;
 	}
 	static Windows.Media.Capture.AppBroadcastPlugInManager GetForUser(Windows.System.User user)
 	{
 		Windows.Media.Capture.AppBroadcastPlugInManager _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Capture.IAppBroadcastPlugInManagerStatics).abi_GetForUser(user, &_ret));
+		Debug.OK(staticInstance.abi_GetForUser(user, &_ret));
 		return _ret;
 	}
 }
@@ -1832,7 +1832,7 @@ extern(Windows):
 	final Windows.Media.Capture.AppBroadcastPlugInState PlugInState()
 	{
 		Windows.Media.Capture.AppBroadcastPlugInState _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPlugInStateChangedEventArgs).get_PlugInState(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPlugInStateChangedEventArgs)this.asInterface(uuid("4881d0f2-abc5-4fc6-84b0-89370bb47212"))).get_PlugInState(&_ret));
 		return _ret;
 	}
 }
@@ -1842,34 +1842,34 @@ interface AppBroadcastPreview : Windows.Media.Capture.IAppBroadcastPreview
 extern(Windows):
 	final void StopPreview()
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreview).abi_StopPreview());
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPreview)this.asInterface(uuid("14b60f5a-6e4a-4b80-a14f-67ee77d153e7"))).abi_StopPreview());
 	}
 	final Windows.Media.Capture.AppBroadcastPreviewState PreviewState()
 	{
 		Windows.Media.Capture.AppBroadcastPreviewState _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreview).get_PreviewState(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPreview)this.asInterface(uuid("14b60f5a-6e4a-4b80-a14f-67ee77d153e7"))).get_PreviewState(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(UINT32) ErrorCode()
 	{
 		Windows.Foundation.IReference!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreview).get_ErrorCode(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPreview)this.asInterface(uuid("14b60f5a-6e4a-4b80-a14f-67ee77d153e7"))).get_ErrorCode(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnPreviewStateChanged(void delegate(Windows.Media.Capture.AppBroadcastPreview, Windows.Media.Capture.AppBroadcastPreviewStateChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreview).add_PreviewStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastPreview, Windows.Media.Capture.AppBroadcastPreviewStateChangedEventArgs), Windows.Media.Capture.AppBroadcastPreview, Windows.Media.Capture.AppBroadcastPreviewStateChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPreview)this.asInterface(uuid("14b60f5a-6e4a-4b80-a14f-67ee77d153e7"))).add_PreviewStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastPreview, Windows.Media.Capture.AppBroadcastPreviewStateChangedEventArgs), Windows.Media.Capture.AppBroadcastPreview, Windows.Media.Capture.AppBroadcastPreviewStateChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePreviewStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreview).remove_PreviewStateChanged(token));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPreview)this.asInterface(uuid("14b60f5a-6e4a-4b80-a14f-67ee77d153e7"))).remove_PreviewStateChanged(token));
 	}
 	final Windows.Media.Capture.AppBroadcastPreviewStreamReader PreviewStreamReader()
 	{
 		Windows.Media.Capture.AppBroadcastPreviewStreamReader _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreview).get_PreviewStreamReader(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPreview)this.asInterface(uuid("14b60f5a-6e4a-4b80-a14f-67ee77d153e7"))).get_PreviewStreamReader(&_ret));
 		return _ret;
 	}
 }
@@ -1880,13 +1880,13 @@ extern(Windows):
 	final Windows.Media.Capture.AppBroadcastPreviewState PreviewState()
 	{
 		Windows.Media.Capture.AppBroadcastPreviewState _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStateChangedEventArgs).get_PreviewState(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPreviewStateChangedEventArgs)this.asInterface(uuid("5a57f2de-8dea-4e86-90ad-03fc26b9653c"))).get_PreviewState(&_ret));
 		return _ret;
 	}
 	final UINT32 ErrorCode()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStateChangedEventArgs).get_ErrorCode(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPreviewStateChangedEventArgs)this.asInterface(uuid("5a57f2de-8dea-4e86-90ad-03fc26b9653c"))).get_ErrorCode(&_ret));
 		return _ret;
 	}
 }
@@ -1897,48 +1897,48 @@ extern(Windows):
 	final UINT32 VideoWidth()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamReader).get_VideoWidth(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPreviewStreamReader)this.asInterface(uuid("92228d50-db3f-40a8-8cd4-f4e371ddab37"))).get_VideoWidth(&_ret));
 		return _ret;
 	}
 	final UINT32 VideoHeight()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamReader).get_VideoHeight(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPreviewStreamReader)this.asInterface(uuid("92228d50-db3f-40a8-8cd4-f4e371ddab37"))).get_VideoHeight(&_ret));
 		return _ret;
 	}
 	final UINT32 VideoStride()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamReader).get_VideoStride(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPreviewStreamReader)this.asInterface(uuid("92228d50-db3f-40a8-8cd4-f4e371ddab37"))).get_VideoStride(&_ret));
 		return _ret;
 	}
 	final Windows.Graphics.Imaging.BitmapPixelFormat VideoBitmapPixelFormat()
 	{
 		Windows.Graphics.Imaging.BitmapPixelFormat _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamReader).get_VideoBitmapPixelFormat(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPreviewStreamReader)this.asInterface(uuid("92228d50-db3f-40a8-8cd4-f4e371ddab37"))).get_VideoBitmapPixelFormat(&_ret));
 		return _ret;
 	}
 	final Windows.Graphics.Imaging.BitmapAlphaMode VideoBitmapAlphaMode()
 	{
 		Windows.Graphics.Imaging.BitmapAlphaMode _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamReader).get_VideoBitmapAlphaMode(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPreviewStreamReader)this.asInterface(uuid("92228d50-db3f-40a8-8cd4-f4e371ddab37"))).get_VideoBitmapAlphaMode(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.AppBroadcastPreviewStreamVideoFrame TryGetNextVideoFrame()
 	{
 		Windows.Media.Capture.AppBroadcastPreviewStreamVideoFrame _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamReader).abi_TryGetNextVideoFrame(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPreviewStreamReader)this.asInterface(uuid("92228d50-db3f-40a8-8cd4-f4e371ddab37"))).abi_TryGetNextVideoFrame(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnVideoFrameArrived(void delegate(Windows.Media.Capture.AppBroadcastPreviewStreamReader, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamReader).add_VideoFrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastPreviewStreamReader, IInspectable), Windows.Media.Capture.AppBroadcastPreviewStreamReader, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPreviewStreamReader)this.asInterface(uuid("92228d50-db3f-40a8-8cd4-f4e371ddab37"))).add_VideoFrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastPreviewStreamReader, IInspectable), Windows.Media.Capture.AppBroadcastPreviewStreamReader, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeVideoFrameArrived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamReader).remove_VideoFrameArrived(token));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPreviewStreamReader)this.asInterface(uuid("92228d50-db3f-40a8-8cd4-f4e371ddab37"))).remove_VideoFrameArrived(token));
 	}
 }
 
@@ -1948,13 +1948,13 @@ extern(Windows):
 	final Windows.Media.Capture.AppBroadcastPreviewStreamVideoHeader VideoHeader()
 	{
 		Windows.Media.Capture.AppBroadcastPreviewStreamVideoHeader _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamVideoFrame).get_VideoHeader(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPreviewStreamVideoFrame)this.asInterface(uuid("010fbea1-94fe-4499-b8c0-8d244279fb12"))).get_VideoHeader(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer VideoBuffer()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamVideoFrame).get_VideoBuffer(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPreviewStreamVideoFrame)this.asInterface(uuid("010fbea1-94fe-4499-b8c0-8d244279fb12"))).get_VideoBuffer(&_ret));
 		return _ret;
 	}
 }
@@ -1965,25 +1965,25 @@ extern(Windows):
 	final Windows.Foundation.DateTime AbsoluteTimestamp()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamVideoHeader).get_AbsoluteTimestamp(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPreviewStreamVideoHeader)this.asInterface(uuid("8bef6113-da84-4499-a7ab-87118cb4a157"))).get_AbsoluteTimestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan RelativeTimestamp()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamVideoHeader).get_RelativeTimestamp(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPreviewStreamVideoHeader)this.asInterface(uuid("8bef6113-da84-4499-a7ab-87118cb4a157"))).get_RelativeTimestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Duration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamVideoHeader).get_Duration(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPreviewStreamVideoHeader)this.asInterface(uuid("8bef6113-da84-4499-a7ab-87118cb4a157"))).get_Duration(&_ret));
 		return _ret;
 	}
 	final ulong FrameId()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastPreviewStreamVideoHeader).get_FrameId(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastPreviewStreamVideoHeader)this.asInterface(uuid("8bef6113-da84-4499-a7ab-87118cb4a157"))).get_FrameId(&_ret));
 		return _ret;
 	}
 }
@@ -1993,72 +1993,72 @@ interface AppBroadcastProviderSettings : Windows.Media.Capture.IAppBroadcastProv
 extern(Windows):
 	final void DefaultBroadcastTitle(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).set_DefaultBroadcastTitle(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastProviderSettings)this.asInterface(uuid("c30bdf62-9948-458f-ad50-aa06ec03da08"))).set_DefaultBroadcastTitle(value));
 	}
 	final HSTRING DefaultBroadcastTitle()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).get_DefaultBroadcastTitle(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastProviderSettings)this.asInterface(uuid("c30bdf62-9948-458f-ad50-aa06ec03da08"))).get_DefaultBroadcastTitle(&_ret));
 		return _ret;
 	}
 	final void AudioEncodingBitrate(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).set_AudioEncodingBitrate(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastProviderSettings)this.asInterface(uuid("c30bdf62-9948-458f-ad50-aa06ec03da08"))).set_AudioEncodingBitrate(value));
 	}
 	final UINT32 AudioEncodingBitrate()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).get_AudioEncodingBitrate(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastProviderSettings)this.asInterface(uuid("c30bdf62-9948-458f-ad50-aa06ec03da08"))).get_AudioEncodingBitrate(&_ret));
 		return _ret;
 	}
 	final void CustomVideoEncodingBitrate(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).set_CustomVideoEncodingBitrate(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastProviderSettings)this.asInterface(uuid("c30bdf62-9948-458f-ad50-aa06ec03da08"))).set_CustomVideoEncodingBitrate(value));
 	}
 	final UINT32 CustomVideoEncodingBitrate()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).get_CustomVideoEncodingBitrate(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastProviderSettings)this.asInterface(uuid("c30bdf62-9948-458f-ad50-aa06ec03da08"))).get_CustomVideoEncodingBitrate(&_ret));
 		return _ret;
 	}
 	final void CustomVideoEncodingHeight(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).set_CustomVideoEncodingHeight(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastProviderSettings)this.asInterface(uuid("c30bdf62-9948-458f-ad50-aa06ec03da08"))).set_CustomVideoEncodingHeight(value));
 	}
 	final UINT32 CustomVideoEncodingHeight()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).get_CustomVideoEncodingHeight(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastProviderSettings)this.asInterface(uuid("c30bdf62-9948-458f-ad50-aa06ec03da08"))).get_CustomVideoEncodingHeight(&_ret));
 		return _ret;
 	}
 	final void CustomVideoEncodingWidth(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).set_CustomVideoEncodingWidth(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastProviderSettings)this.asInterface(uuid("c30bdf62-9948-458f-ad50-aa06ec03da08"))).set_CustomVideoEncodingWidth(value));
 	}
 	final UINT32 CustomVideoEncodingWidth()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).get_CustomVideoEncodingWidth(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastProviderSettings)this.asInterface(uuid("c30bdf62-9948-458f-ad50-aa06ec03da08"))).get_CustomVideoEncodingWidth(&_ret));
 		return _ret;
 	}
 	final void VideoEncodingBitrateMode(Windows.Media.Capture.AppBroadcastVideoEncodingBitrateMode value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).set_VideoEncodingBitrateMode(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastProviderSettings)this.asInterface(uuid("c30bdf62-9948-458f-ad50-aa06ec03da08"))).set_VideoEncodingBitrateMode(value));
 	}
 	final Windows.Media.Capture.AppBroadcastVideoEncodingBitrateMode VideoEncodingBitrateMode()
 	{
 		Windows.Media.Capture.AppBroadcastVideoEncodingBitrateMode _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).get_VideoEncodingBitrateMode(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastProviderSettings)this.asInterface(uuid("c30bdf62-9948-458f-ad50-aa06ec03da08"))).get_VideoEncodingBitrateMode(&_ret));
 		return _ret;
 	}
 	final void VideoEncodingResolutionMode(Windows.Media.Capture.AppBroadcastVideoEncodingResolutionMode value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).set_VideoEncodingResolutionMode(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastProviderSettings)this.asInterface(uuid("c30bdf62-9948-458f-ad50-aa06ec03da08"))).set_VideoEncodingResolutionMode(value));
 	}
 	final Windows.Media.Capture.AppBroadcastVideoEncodingResolutionMode VideoEncodingResolutionMode()
 	{
 		Windows.Media.Capture.AppBroadcastVideoEncodingResolutionMode _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastProviderSettings).get_VideoEncodingResolutionMode(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastProviderSettings)this.asInterface(uuid("c30bdf62-9948-458f-ad50-aa06ec03da08"))).get_VideoEncodingResolutionMode(&_ret));
 		return _ret;
 	}
 }
@@ -2069,77 +2069,77 @@ extern(Windows):
 	final Windows.Media.Capture.AppBroadcastCaptureTargetType CaptureTargetType()
 	{
 		Windows.Media.Capture.AppBroadcastCaptureTargetType _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).get_CaptureTargetType(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastServices)this.asInterface(uuid("8660b4d6-969b-4e3c-ac3a-8b042ee4ee63"))).get_CaptureTargetType(&_ret));
 		return _ret;
 	}
 	final void CaptureTargetType(Windows.Media.Capture.AppBroadcastCaptureTargetType value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).set_CaptureTargetType(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastServices)this.asInterface(uuid("8660b4d6-969b-4e3c-ac3a-8b042ee4ee63"))).set_CaptureTargetType(value));
 	}
 	final HSTRING BroadcastTitle()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).get_BroadcastTitle(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastServices)this.asInterface(uuid("8660b4d6-969b-4e3c-ac3a-8b042ee4ee63"))).get_BroadcastTitle(&_ret));
 		return _ret;
 	}
 	final void BroadcastTitle(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).set_BroadcastTitle(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastServices)this.asInterface(uuid("8660b4d6-969b-4e3c-ac3a-8b042ee4ee63"))).set_BroadcastTitle(value));
 	}
 	final HSTRING BroadcastLanguage()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).get_BroadcastLanguage(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastServices)this.asInterface(uuid("8660b4d6-969b-4e3c-ac3a-8b042ee4ee63"))).get_BroadcastLanguage(&_ret));
 		return _ret;
 	}
 	final void BroadcastLanguage(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).set_BroadcastLanguage(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastServices)this.asInterface(uuid("8660b4d6-969b-4e3c-ac3a-8b042ee4ee63"))).set_BroadcastLanguage(value));
 	}
 	final HSTRING UserName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).get_UserName(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastServices)this.asInterface(uuid("8660b4d6-969b-4e3c-ac3a-8b042ee4ee63"))).get_UserName(&_ret));
 		return _ret;
 	}
 	final bool CanCapture()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).get_CanCapture(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastServices)this.asInterface(uuid("8660b4d6-969b-4e3c-ac3a-8b042ee4ee63"))).get_CanCapture(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(UINT32) EnterBroadcastModeAsync(Windows.Media.Capture.AppBroadcastPlugIn plugIn)
 	{
 		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).abi_EnterBroadcastModeAsync(plugIn, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastServices)this.asInterface(uuid("8660b4d6-969b-4e3c-ac3a-8b042ee4ee63"))).abi_EnterBroadcastModeAsync(plugIn, &_ret));
 		return _ret;
 	}
 	final void ExitBroadcastMode(Windows.Media.Capture.AppBroadcastExitBroadcastModeReason reason)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).abi_ExitBroadcastMode(reason));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastServices)this.asInterface(uuid("8660b4d6-969b-4e3c-ac3a-8b042ee4ee63"))).abi_ExitBroadcastMode(reason));
 	}
 	final void StartBroadcast()
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).abi_StartBroadcast());
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastServices)this.asInterface(uuid("8660b4d6-969b-4e3c-ac3a-8b042ee4ee63"))).abi_StartBroadcast());
 	}
 	final void PauseBroadcast()
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).abi_PauseBroadcast());
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastServices)this.asInterface(uuid("8660b4d6-969b-4e3c-ac3a-8b042ee4ee63"))).abi_PauseBroadcast());
 	}
 	final void ResumeBroadcast()
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).abi_ResumeBroadcast());
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastServices)this.asInterface(uuid("8660b4d6-969b-4e3c-ac3a-8b042ee4ee63"))).abi_ResumeBroadcast());
 	}
 	final Windows.Media.Capture.AppBroadcastPreview StartPreview(Windows.Foundation.Size desiredSize)
 	{
 		Windows.Media.Capture.AppBroadcastPreview _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).abi_StartPreview(desiredSize, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastServices)this.asInterface(uuid("8660b4d6-969b-4e3c-ac3a-8b042ee4ee63"))).abi_StartPreview(desiredSize, &_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.AppBroadcastState State()
 	{
 		Windows.Media.Capture.AppBroadcastState _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastServices).get_State(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastServices)this.asInterface(uuid("8660b4d6-969b-4e3c-ac3a-8b042ee4ee63"))).get_State(&_ret));
 		return _ret;
 	}
 }
@@ -2150,13 +2150,13 @@ extern(Windows):
 	final Windows.Media.Capture.AppBroadcastSignInState SignInState()
 	{
 		Windows.Media.Capture.AppBroadcastSignInState _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastSignInStateChangedEventArgs).get_SignInState(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastSignInStateChangedEventArgs)this.asInterface(uuid("02b692a4-5919-4a9e-8d5e-c9bb0dd3377a"))).get_SignInState(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.AppBroadcastSignInResult Result()
 	{
 		Windows.Media.Capture.AppBroadcastSignInResult _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastSignInStateChangedEventArgs).get_Result(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastSignInStateChangedEventArgs)this.asInterface(uuid("02b692a4-5919-4a9e-8d5e-c9bb0dd3377a"))).get_Result(&_ret));
 		return _ret;
 	}
 }
@@ -2167,188 +2167,188 @@ extern(Windows):
 	final bool IsCaptureTargetRunning()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_IsCaptureTargetRunning(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).get_IsCaptureTargetRunning(&_ret));
 		return _ret;
 	}
 	final UINT32 ViewerCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_ViewerCount(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).get_ViewerCount(&_ret));
 		return _ret;
 	}
 	final bool ShouldCaptureMicrophone()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_ShouldCaptureMicrophone(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).get_ShouldCaptureMicrophone(&_ret));
 		return _ret;
 	}
 	final void ShouldCaptureMicrophone(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).set_ShouldCaptureMicrophone(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).set_ShouldCaptureMicrophone(value));
 	}
 	final void RestartMicrophoneCapture()
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).abi_RestartMicrophoneCapture());
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).abi_RestartMicrophoneCapture());
 	}
 	final bool ShouldCaptureCamera()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_ShouldCaptureCamera(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).get_ShouldCaptureCamera(&_ret));
 		return _ret;
 	}
 	final void ShouldCaptureCamera(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).set_ShouldCaptureCamera(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).set_ShouldCaptureCamera(value));
 	}
 	final void RestartCameraCapture()
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).abi_RestartCameraCapture());
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).abi_RestartCameraCapture());
 	}
 	final Windows.Foundation.Size EncodedVideoSize()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_EncodedVideoSize(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).get_EncodedVideoSize(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.AppBroadcastMicrophoneCaptureState MicrophoneCaptureState()
 	{
 		Windows.Media.Capture.AppBroadcastMicrophoneCaptureState _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_MicrophoneCaptureState(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).get_MicrophoneCaptureState(&_ret));
 		return _ret;
 	}
 	final UINT32 MicrophoneCaptureError()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_MicrophoneCaptureError(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).get_MicrophoneCaptureError(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.AppBroadcastCameraCaptureState CameraCaptureState()
 	{
 		Windows.Media.Capture.AppBroadcastCameraCaptureState _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_CameraCaptureState(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).get_CameraCaptureState(&_ret));
 		return _ret;
 	}
 	final UINT32 CameraCaptureError()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_CameraCaptureError(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).get_CameraCaptureError(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.AppBroadcastStreamState StreamState()
 	{
 		Windows.Media.Capture.AppBroadcastStreamState _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_StreamState(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).get_StreamState(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.AppBroadcastPlugInState PlugInState()
 	{
 		Windows.Media.Capture.AppBroadcastPlugInState _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_PlugInState(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).get_PlugInState(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Uri OAuthRequestUri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_OAuthRequestUri(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).get_OAuthRequestUri(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Uri OAuthCallbackUri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_OAuthCallbackUri(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).get_OAuthCallbackUri(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Authentication.Web.WebAuthenticationResult AuthenticationResult()
 	{
 		Windows.Security.Authentication.Web.WebAuthenticationResult _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_AuthenticationResult(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).get_AuthenticationResult(&_ret));
 		return _ret;
 	}
 	final void AuthenticationResult(Windows.Security.Authentication.Web.WebAuthenticationResult value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).set_AuthenticationResult(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).set_AuthenticationResult(value));
 	}
 	final void SignInState(Windows.Media.Capture.AppBroadcastSignInState value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).set_SignInState(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).set_SignInState(value));
 	}
 	final Windows.Media.Capture.AppBroadcastSignInState SignInState()
 	{
 		Windows.Media.Capture.AppBroadcastSignInState _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_SignInState(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).get_SignInState(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.AppBroadcastTerminationReason TerminationReason()
 	{
 		Windows.Media.Capture.AppBroadcastTerminationReason _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_TerminationReason(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).get_TerminationReason(&_ret));
 		return _ret;
 	}
 	final UINT32 TerminationReasonPlugInSpecific()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).get_TerminationReasonPlugInSpecific(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).get_TerminationReasonPlugInSpecific(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnViewerCountChanged(void delegate(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastViewerCountChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).add_ViewerCountChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastViewerCountChangedEventArgs), Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastViewerCountChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).add_ViewerCountChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastViewerCountChangedEventArgs), Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastViewerCountChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeViewerCountChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).remove_ViewerCountChanged(token));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).remove_ViewerCountChanged(token));
 	}
 	final EventRegistrationToken OnMicrophoneCaptureStateChanged(void delegate(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastMicrophoneCaptureStateChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).add_MicrophoneCaptureStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastMicrophoneCaptureStateChangedEventArgs), Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastMicrophoneCaptureStateChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).add_MicrophoneCaptureStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastMicrophoneCaptureStateChangedEventArgs), Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastMicrophoneCaptureStateChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMicrophoneCaptureStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).remove_MicrophoneCaptureStateChanged(token));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).remove_MicrophoneCaptureStateChanged(token));
 	}
 	final EventRegistrationToken OnCameraCaptureStateChanged(void delegate(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastCameraCaptureStateChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).add_CameraCaptureStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastCameraCaptureStateChangedEventArgs), Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastCameraCaptureStateChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).add_CameraCaptureStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastCameraCaptureStateChangedEventArgs), Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastCameraCaptureStateChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCameraCaptureStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).remove_CameraCaptureStateChanged(token));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).remove_CameraCaptureStateChanged(token));
 	}
 	final EventRegistrationToken OnPlugInStateChanged(void delegate(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastPlugInStateChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).add_PlugInStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastPlugInStateChangedEventArgs), Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastPlugInStateChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).add_PlugInStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastPlugInStateChangedEventArgs), Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastPlugInStateChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePlugInStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).remove_PlugInStateChanged(token));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).remove_PlugInStateChanged(token));
 	}
 	final EventRegistrationToken OnStreamStateChanged(void delegate(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastStreamStateChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).add_StreamStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastStreamStateChangedEventArgs), Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastStreamStateChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).add_StreamStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastStreamStateChangedEventArgs), Windows.Media.Capture.AppBroadcastState, Windows.Media.Capture.AppBroadcastStreamStateChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStreamStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).remove_StreamStateChanged(token));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).remove_StreamStateChanged(token));
 	}
 	final EventRegistrationToken OnCaptureTargetClosed(void delegate(Windows.Media.Capture.AppBroadcastState, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).add_CaptureTargetClosed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, IInspectable), Windows.Media.Capture.AppBroadcastState, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).add_CaptureTargetClosed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastState, IInspectable), Windows.Media.Capture.AppBroadcastState, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeCaptureTargetClosed(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastState).remove_CaptureTargetClosed(token));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastState)this.asInterface(uuid("ee08056d-8099-4ddd-922e-c56dac58abfb"))).remove_CaptureTargetClosed(token));
 	}
 }
 
@@ -2358,13 +2358,13 @@ extern(Windows):
 	final Windows.Media.Capture.AppBroadcastStreamAudioHeader AudioHeader()
 	{
 		Windows.Media.Capture.AppBroadcastStreamAudioHeader _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamAudioFrame).get_AudioHeader(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamAudioFrame)this.asInterface(uuid("efab4ac8-21ba-453f-8bb7-5e938a2e9a74"))).get_AudioHeader(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer AudioBuffer()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamAudioFrame).get_AudioBuffer(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamAudioFrame)this.asInterface(uuid("efab4ac8-21ba-453f-8bb7-5e938a2e9a74"))).get_AudioBuffer(&_ret));
 		return _ret;
 	}
 }
@@ -2375,31 +2375,31 @@ extern(Windows):
 	final Windows.Foundation.DateTime AbsoluteTimestamp()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamAudioHeader).get_AbsoluteTimestamp(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamAudioHeader)this.asInterface(uuid("bf21a570-6b78-4216-9f07-5aff5256f1b7"))).get_AbsoluteTimestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan RelativeTimestamp()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamAudioHeader).get_RelativeTimestamp(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamAudioHeader)this.asInterface(uuid("bf21a570-6b78-4216-9f07-5aff5256f1b7"))).get_RelativeTimestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Duration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamAudioHeader).get_Duration(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamAudioHeader)this.asInterface(uuid("bf21a570-6b78-4216-9f07-5aff5256f1b7"))).get_Duration(&_ret));
 		return _ret;
 	}
 	final bool HasDiscontinuity()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamAudioHeader).get_HasDiscontinuity(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamAudioHeader)this.asInterface(uuid("bf21a570-6b78-4216-9f07-5aff5256f1b7"))).get_HasDiscontinuity(&_ret));
 		return _ret;
 	}
 	final ulong FrameId()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamAudioHeader).get_FrameId(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamAudioHeader)this.asInterface(uuid("bf21a570-6b78-4216-9f07-5aff5256f1b7"))).get_FrameId(&_ret));
 		return _ret;
 	}
 }
@@ -2410,76 +2410,76 @@ extern(Windows):
 	final UINT32 AudioChannels()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamReader).get_AudioChannels(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamReader)this.asInterface(uuid("b338bcf9-3364-4460-b5f1-3cc2796a8aa2"))).get_AudioChannels(&_ret));
 		return _ret;
 	}
 	final UINT32 AudioSampleRate()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamReader).get_AudioSampleRate(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamReader)this.asInterface(uuid("b338bcf9-3364-4460-b5f1-3cc2796a8aa2"))).get_AudioSampleRate(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer AudioAacSequence()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamReader).get_AudioAacSequence(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamReader)this.asInterface(uuid("b338bcf9-3364-4460-b5f1-3cc2796a8aa2"))).get_AudioAacSequence(&_ret));
 		return _ret;
 	}
 	final UINT32 AudioBitrate()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamReader).get_AudioBitrate(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamReader)this.asInterface(uuid("b338bcf9-3364-4460-b5f1-3cc2796a8aa2"))).get_AudioBitrate(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.AppBroadcastStreamAudioFrame TryGetNextAudioFrame()
 	{
 		Windows.Media.Capture.AppBroadcastStreamAudioFrame _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamReader).abi_TryGetNextAudioFrame(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamReader)this.asInterface(uuid("b338bcf9-3364-4460-b5f1-3cc2796a8aa2"))).abi_TryGetNextAudioFrame(&_ret));
 		return _ret;
 	}
 	final UINT32 VideoWidth()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamReader).get_VideoWidth(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamReader)this.asInterface(uuid("b338bcf9-3364-4460-b5f1-3cc2796a8aa2"))).get_VideoWidth(&_ret));
 		return _ret;
 	}
 	final UINT32 VideoHeight()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamReader).get_VideoHeight(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamReader)this.asInterface(uuid("b338bcf9-3364-4460-b5f1-3cc2796a8aa2"))).get_VideoHeight(&_ret));
 		return _ret;
 	}
 	final UINT32 VideoBitrate()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamReader).get_VideoBitrate(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamReader)this.asInterface(uuid("b338bcf9-3364-4460-b5f1-3cc2796a8aa2"))).get_VideoBitrate(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.AppBroadcastStreamVideoFrame TryGetNextVideoFrame()
 	{
 		Windows.Media.Capture.AppBroadcastStreamVideoFrame _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamReader).abi_TryGetNextVideoFrame(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamReader)this.asInterface(uuid("b338bcf9-3364-4460-b5f1-3cc2796a8aa2"))).abi_TryGetNextVideoFrame(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnAudioFrameArrived(void delegate(Windows.Media.Capture.AppBroadcastStreamReader, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamReader).add_AudioFrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastStreamReader, IInspectable), Windows.Media.Capture.AppBroadcastStreamReader, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamReader)this.asInterface(uuid("b338bcf9-3364-4460-b5f1-3cc2796a8aa2"))).add_AudioFrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastStreamReader, IInspectable), Windows.Media.Capture.AppBroadcastStreamReader, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeAudioFrameArrived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamReader).remove_AudioFrameArrived(token));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamReader)this.asInterface(uuid("b338bcf9-3364-4460-b5f1-3cc2796a8aa2"))).remove_AudioFrameArrived(token));
 	}
 	final EventRegistrationToken OnVideoFrameArrived(void delegate(Windows.Media.Capture.AppBroadcastStreamReader, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamReader).add_VideoFrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastStreamReader, IInspectable), Windows.Media.Capture.AppBroadcastStreamReader, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamReader)this.asInterface(uuid("b338bcf9-3364-4460-b5f1-3cc2796a8aa2"))).add_VideoFrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppBroadcastStreamReader, IInspectable), Windows.Media.Capture.AppBroadcastStreamReader, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeVideoFrameArrived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamReader).remove_VideoFrameArrived(token));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamReader)this.asInterface(uuid("b338bcf9-3364-4460-b5f1-3cc2796a8aa2"))).remove_VideoFrameArrived(token));
 	}
 }
 
@@ -2489,7 +2489,7 @@ extern(Windows):
 	final Windows.Media.Capture.AppBroadcastStreamState StreamState()
 	{
 		Windows.Media.Capture.AppBroadcastStreamState _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamStateChangedEventArgs).get_StreamState(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamStateChangedEventArgs)this.asInterface(uuid("5108a733-d008-4a89-93be-58aed961374e"))).get_StreamState(&_ret));
 		return _ret;
 	}
 }
@@ -2500,13 +2500,13 @@ extern(Windows):
 	final Windows.Media.Capture.AppBroadcastStreamVideoHeader VideoHeader()
 	{
 		Windows.Media.Capture.AppBroadcastStreamVideoHeader _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamVideoFrame).get_VideoHeader(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamVideoFrame)this.asInterface(uuid("0f97cf2b-c9e4-4e88-8194-d814cbd585d8"))).get_VideoHeader(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer VideoBuffer()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamVideoFrame).get_VideoBuffer(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamVideoFrame)this.asInterface(uuid("0f97cf2b-c9e4-4e88-8194-d814cbd585d8"))).get_VideoBuffer(&_ret));
 		return _ret;
 	}
 }
@@ -2517,37 +2517,37 @@ extern(Windows):
 	final Windows.Foundation.DateTime AbsoluteTimestamp()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamVideoHeader).get_AbsoluteTimestamp(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamVideoHeader)this.asInterface(uuid("0b9ebece-7e32-432d-8ca2-36bf10b9f462"))).get_AbsoluteTimestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan RelativeTimestamp()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamVideoHeader).get_RelativeTimestamp(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamVideoHeader)this.asInterface(uuid("0b9ebece-7e32-432d-8ca2-36bf10b9f462"))).get_RelativeTimestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Duration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamVideoHeader).get_Duration(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamVideoHeader)this.asInterface(uuid("0b9ebece-7e32-432d-8ca2-36bf10b9f462"))).get_Duration(&_ret));
 		return _ret;
 	}
 	final bool IsKeyFrame()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamVideoHeader).get_IsKeyFrame(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamVideoHeader)this.asInterface(uuid("0b9ebece-7e32-432d-8ca2-36bf10b9f462"))).get_IsKeyFrame(&_ret));
 		return _ret;
 	}
 	final bool HasDiscontinuity()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamVideoHeader).get_HasDiscontinuity(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamVideoHeader)this.asInterface(uuid("0b9ebece-7e32-432d-8ca2-36bf10b9f462"))).get_HasDiscontinuity(&_ret));
 		return _ret;
 	}
 	final ulong FrameId()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastStreamVideoHeader).get_FrameId(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastStreamVideoHeader)this.asInterface(uuid("0b9ebece-7e32-432d-8ca2-36bf10b9f462"))).get_FrameId(&_ret));
 		return _ret;
 	}
 }
@@ -2558,7 +2558,7 @@ extern(Windows):
 	final Windows.Media.Capture.AppBroadcastBackgroundService BackgroundService()
 	{
 		Windows.Media.Capture.AppBroadcastBackgroundService _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastTriggerDetails).get_BackgroundService(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastTriggerDetails)this.asInterface(uuid("deebab35-ec5e-4d8f-b1c0-5da6e8c75638"))).get_BackgroundService(&_ret));
 		return _ret;
 	}
 }
@@ -2569,7 +2569,7 @@ extern(Windows):
 	final UINT32 ViewerCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppBroadcastViewerCountChangedEventArgs).get_ViewerCount(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppBroadcastViewerCountChangedEventArgs)this.asInterface(uuid("e6e11825-5401-4ade-8bd2-c14ecee6807d"))).get_ViewerCount(&_ret));
 		return _ret;
 	}
 }
@@ -2580,24 +2580,24 @@ extern(Windows):
 	final bool IsCapturingAudio()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCapture).get_IsCapturingAudio(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCapture)this.asInterface(uuid("9749d453-a29a-45ed-8f29-22d09942cff7"))).get_IsCapturingAudio(&_ret));
 		return _ret;
 	}
 	final bool IsCapturingVideo()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCapture).get_IsCapturingVideo(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCapture)this.asInterface(uuid("9749d453-a29a-45ed-8f29-22d09942cff7"))).get_IsCapturingVideo(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnCapturingChanged(void delegate(Windows.Media.Capture.AppCapture, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCapture).add_CapturingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCapture, IInspectable), Windows.Media.Capture.AppCapture, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IAppCapture)this.asInterface(uuid("9749d453-a29a-45ed-8f29-22d09942cff7"))).add_CapturingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCapture, IInspectable), Windows.Media.Capture.AppCapture, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeCapturingChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCapture).remove_CapturingChanged(token));
+		Debug.OK((cast(Windows.Media.Capture.IAppCapture)this.asInterface(uuid("9749d453-a29a-45ed-8f29-22d09942cff7"))).remove_CapturingChanged(token));
 	}
 
 	private static Windows.Media.Capture.IAppCaptureStatics _staticInstance;
@@ -2609,7 +2609,7 @@ extern(Windows):
 	static Windows.Media.Capture.AppCapture GetForCurrentView()
 	{
 		Windows.Media.Capture.AppCapture _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Capture.IAppCaptureStatics).abi_GetForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 }
@@ -2619,162 +2619,162 @@ interface AppCaptureAlternateShortcutKeys : Windows.Media.Capture.IAppCaptureAlt
 extern(Windows):
 	final void ToggleGameBarKey(Windows.System.VirtualKey value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).set_ToggleGameBarKey(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys)this.asInterface(uuid("19e8e0ef-236c-40f9-b38f-9b7dd65d1ccc"))).set_ToggleGameBarKey(value));
 	}
 	final Windows.System.VirtualKey ToggleGameBarKey()
 	{
 		Windows.System.VirtualKey _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).get_ToggleGameBarKey(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys)this.asInterface(uuid("19e8e0ef-236c-40f9-b38f-9b7dd65d1ccc"))).get_ToggleGameBarKey(&_ret));
 		return _ret;
 	}
 	final void ToggleGameBarKeyModifiers(Windows.System.VirtualKeyModifiers value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).set_ToggleGameBarKeyModifiers(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys)this.asInterface(uuid("19e8e0ef-236c-40f9-b38f-9b7dd65d1ccc"))).set_ToggleGameBarKeyModifiers(value));
 	}
 	final Windows.System.VirtualKeyModifiers ToggleGameBarKeyModifiers()
 	{
 		Windows.System.VirtualKeyModifiers _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).get_ToggleGameBarKeyModifiers(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys)this.asInterface(uuid("19e8e0ef-236c-40f9-b38f-9b7dd65d1ccc"))).get_ToggleGameBarKeyModifiers(&_ret));
 		return _ret;
 	}
 	final void SaveHistoricalVideoKey(Windows.System.VirtualKey value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).set_SaveHistoricalVideoKey(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys)this.asInterface(uuid("19e8e0ef-236c-40f9-b38f-9b7dd65d1ccc"))).set_SaveHistoricalVideoKey(value));
 	}
 	final Windows.System.VirtualKey SaveHistoricalVideoKey()
 	{
 		Windows.System.VirtualKey _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).get_SaveHistoricalVideoKey(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys)this.asInterface(uuid("19e8e0ef-236c-40f9-b38f-9b7dd65d1ccc"))).get_SaveHistoricalVideoKey(&_ret));
 		return _ret;
 	}
 	final void SaveHistoricalVideoKeyModifiers(Windows.System.VirtualKeyModifiers value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).set_SaveHistoricalVideoKeyModifiers(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys)this.asInterface(uuid("19e8e0ef-236c-40f9-b38f-9b7dd65d1ccc"))).set_SaveHistoricalVideoKeyModifiers(value));
 	}
 	final Windows.System.VirtualKeyModifiers SaveHistoricalVideoKeyModifiers()
 	{
 		Windows.System.VirtualKeyModifiers _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).get_SaveHistoricalVideoKeyModifiers(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys)this.asInterface(uuid("19e8e0ef-236c-40f9-b38f-9b7dd65d1ccc"))).get_SaveHistoricalVideoKeyModifiers(&_ret));
 		return _ret;
 	}
 	final void ToggleRecordingKey(Windows.System.VirtualKey value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).set_ToggleRecordingKey(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys)this.asInterface(uuid("19e8e0ef-236c-40f9-b38f-9b7dd65d1ccc"))).set_ToggleRecordingKey(value));
 	}
 	final Windows.System.VirtualKey ToggleRecordingKey()
 	{
 		Windows.System.VirtualKey _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).get_ToggleRecordingKey(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys)this.asInterface(uuid("19e8e0ef-236c-40f9-b38f-9b7dd65d1ccc"))).get_ToggleRecordingKey(&_ret));
 		return _ret;
 	}
 	final void ToggleRecordingKeyModifiers(Windows.System.VirtualKeyModifiers value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).set_ToggleRecordingKeyModifiers(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys)this.asInterface(uuid("19e8e0ef-236c-40f9-b38f-9b7dd65d1ccc"))).set_ToggleRecordingKeyModifiers(value));
 	}
 	final Windows.System.VirtualKeyModifiers ToggleRecordingKeyModifiers()
 	{
 		Windows.System.VirtualKeyModifiers _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).get_ToggleRecordingKeyModifiers(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys)this.asInterface(uuid("19e8e0ef-236c-40f9-b38f-9b7dd65d1ccc"))).get_ToggleRecordingKeyModifiers(&_ret));
 		return _ret;
 	}
 	final void TakeScreenshotKey(Windows.System.VirtualKey value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).set_TakeScreenshotKey(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys)this.asInterface(uuid("19e8e0ef-236c-40f9-b38f-9b7dd65d1ccc"))).set_TakeScreenshotKey(value));
 	}
 	final Windows.System.VirtualKey TakeScreenshotKey()
 	{
 		Windows.System.VirtualKey _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).get_TakeScreenshotKey(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys)this.asInterface(uuid("19e8e0ef-236c-40f9-b38f-9b7dd65d1ccc"))).get_TakeScreenshotKey(&_ret));
 		return _ret;
 	}
 	final void TakeScreenshotKeyModifiers(Windows.System.VirtualKeyModifiers value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).set_TakeScreenshotKeyModifiers(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys)this.asInterface(uuid("19e8e0ef-236c-40f9-b38f-9b7dd65d1ccc"))).set_TakeScreenshotKeyModifiers(value));
 	}
 	final Windows.System.VirtualKeyModifiers TakeScreenshotKeyModifiers()
 	{
 		Windows.System.VirtualKeyModifiers _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).get_TakeScreenshotKeyModifiers(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys)this.asInterface(uuid("19e8e0ef-236c-40f9-b38f-9b7dd65d1ccc"))).get_TakeScreenshotKeyModifiers(&_ret));
 		return _ret;
 	}
 	final void ToggleRecordingIndicatorKey(Windows.System.VirtualKey value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).set_ToggleRecordingIndicatorKey(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys)this.asInterface(uuid("19e8e0ef-236c-40f9-b38f-9b7dd65d1ccc"))).set_ToggleRecordingIndicatorKey(value));
 	}
 	final Windows.System.VirtualKey ToggleRecordingIndicatorKey()
 	{
 		Windows.System.VirtualKey _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).get_ToggleRecordingIndicatorKey(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys)this.asInterface(uuid("19e8e0ef-236c-40f9-b38f-9b7dd65d1ccc"))).get_ToggleRecordingIndicatorKey(&_ret));
 		return _ret;
 	}
 	final void ToggleRecordingIndicatorKeyModifiers(Windows.System.VirtualKeyModifiers value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).set_ToggleRecordingIndicatorKeyModifiers(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys)this.asInterface(uuid("19e8e0ef-236c-40f9-b38f-9b7dd65d1ccc"))).set_ToggleRecordingIndicatorKeyModifiers(value));
 	}
 	final Windows.System.VirtualKeyModifiers ToggleRecordingIndicatorKeyModifiers()
 	{
 		Windows.System.VirtualKeyModifiers _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys).get_ToggleRecordingIndicatorKeyModifiers(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys)this.asInterface(uuid("19e8e0ef-236c-40f9-b38f-9b7dd65d1ccc"))).get_ToggleRecordingIndicatorKeyModifiers(&_ret));
 		return _ret;
 	}
 	final void ToggleMicrophoneCaptureKey(Windows.System.VirtualKey value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys2).set_ToggleMicrophoneCaptureKey(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys2)this.asInterface(uuid("c3669090-dd17-47f0-95e5-ce42286cf338"))).set_ToggleMicrophoneCaptureKey(value));
 	}
 	final Windows.System.VirtualKey ToggleMicrophoneCaptureKey()
 	{
 		Windows.System.VirtualKey _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys2).get_ToggleMicrophoneCaptureKey(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys2)this.asInterface(uuid("c3669090-dd17-47f0-95e5-ce42286cf338"))).get_ToggleMicrophoneCaptureKey(&_ret));
 		return _ret;
 	}
 	final void ToggleMicrophoneCaptureKeyModifiers(Windows.System.VirtualKeyModifiers value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys2).set_ToggleMicrophoneCaptureKeyModifiers(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys2)this.asInterface(uuid("c3669090-dd17-47f0-95e5-ce42286cf338"))).set_ToggleMicrophoneCaptureKeyModifiers(value));
 	}
 	final Windows.System.VirtualKeyModifiers ToggleMicrophoneCaptureKeyModifiers()
 	{
 		Windows.System.VirtualKeyModifiers _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys2).get_ToggleMicrophoneCaptureKeyModifiers(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys2)this.asInterface(uuid("c3669090-dd17-47f0-95e5-ce42286cf338"))).get_ToggleMicrophoneCaptureKeyModifiers(&_ret));
 		return _ret;
 	}
 	final void ToggleCameraCaptureKey(Windows.System.VirtualKey value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3).set_ToggleCameraCaptureKey(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3)this.asInterface(uuid("7b81448c-418e-469c-a49a-45b597c826b6"))).set_ToggleCameraCaptureKey(value));
 	}
 	final Windows.System.VirtualKey ToggleCameraCaptureKey()
 	{
 		Windows.System.VirtualKey _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3).get_ToggleCameraCaptureKey(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3)this.asInterface(uuid("7b81448c-418e-469c-a49a-45b597c826b6"))).get_ToggleCameraCaptureKey(&_ret));
 		return _ret;
 	}
 	final void ToggleCameraCaptureKeyModifiers(Windows.System.VirtualKeyModifiers value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3).set_ToggleCameraCaptureKeyModifiers(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3)this.asInterface(uuid("7b81448c-418e-469c-a49a-45b597c826b6"))).set_ToggleCameraCaptureKeyModifiers(value));
 	}
 	final Windows.System.VirtualKeyModifiers ToggleCameraCaptureKeyModifiers()
 	{
 		Windows.System.VirtualKeyModifiers _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3).get_ToggleCameraCaptureKeyModifiers(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3)this.asInterface(uuid("7b81448c-418e-469c-a49a-45b597c826b6"))).get_ToggleCameraCaptureKeyModifiers(&_ret));
 		return _ret;
 	}
 	final void ToggleBroadcastKey(Windows.System.VirtualKey value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3).set_ToggleBroadcastKey(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3)this.asInterface(uuid("7b81448c-418e-469c-a49a-45b597c826b6"))).set_ToggleBroadcastKey(value));
 	}
 	final Windows.System.VirtualKey ToggleBroadcastKey()
 	{
 		Windows.System.VirtualKey _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3).get_ToggleBroadcastKey(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3)this.asInterface(uuid("7b81448c-418e-469c-a49a-45b597c826b6"))).get_ToggleBroadcastKey(&_ret));
 		return _ret;
 	}
 	final void ToggleBroadcastKeyModifiers(Windows.System.VirtualKeyModifiers value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3).set_ToggleBroadcastKeyModifiers(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3)this.asInterface(uuid("7b81448c-418e-469c-a49a-45b597c826b6"))).set_ToggleBroadcastKeyModifiers(value));
 	}
 	final Windows.System.VirtualKeyModifiers ToggleBroadcastKeyModifiers()
 	{
 		Windows.System.VirtualKeyModifiers _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3).get_ToggleBroadcastKeyModifiers(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureAlternateShortcutKeys3)this.asInterface(uuid("7b81448c-418e-469c-a49a-45b597c826b6"))).get_ToggleBroadcastKeyModifiers(&_ret));
 		return _ret;
 	}
 }
@@ -2785,7 +2785,7 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan Duration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureDurationGeneratedEventArgs).get_Duration(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureDurationGeneratedEventArgs)this.asInterface(uuid("c1f5563b-ffa1-44c9-975f-27fbeb553b35"))).get_Duration(&_ret));
 		return _ret;
 	}
 }
@@ -2796,7 +2796,7 @@ extern(Windows):
 	final Windows.Storage.StorageFile File()
 	{
 		Windows.Storage.StorageFile _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureFileGeneratedEventArgs).get_File(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureFileGeneratedEventArgs)this.asInterface(uuid("4189fbf4-465e-45bf-907f-165b3fb23758"))).get_File(&_ret));
 		return _ret;
 	}
 }
@@ -2812,12 +2812,12 @@ interface AppCaptureManager
 	static Windows.Media.Capture.AppCaptureSettings GetCurrentSettings()
 	{
 		Windows.Media.Capture.AppCaptureSettings _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Capture.IAppCaptureManagerStatics).abi_GetCurrentSettings(&_ret));
+		Debug.OK(staticInstance.abi_GetCurrentSettings(&_ret));
 		return _ret;
 	}
 	static void ApplySettings(Windows.Media.Capture.AppCaptureSettings appCaptureSettings)
 	{
-		Debug.OK(staticInstance.as!(Windows.Media.Capture.IAppCaptureManagerStatics).abi_ApplySettings(appCaptureSettings));
+		Debug.OK(staticInstance.abi_ApplySettings(appCaptureSettings));
 	}
 }
 
@@ -2827,13 +2827,13 @@ extern(Windows):
 	final Windows.Media.Capture.AppCaptureMicrophoneCaptureState State()
 	{
 		Windows.Media.Capture.AppCaptureMicrophoneCaptureState _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureMicrophoneCaptureStateChangedEventArgs).get_State(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureMicrophoneCaptureStateChangedEventArgs)this.asInterface(uuid("324d249e-45bc-4c35-bc35-e469fc7a69e0"))).get_State(&_ret));
 		return _ret;
 	}
 	final UINT32 ErrorCode()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureMicrophoneCaptureStateChangedEventArgs).get_ErrorCode(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureMicrophoneCaptureStateChangedEventArgs)this.asInterface(uuid("324d249e-45bc-4c35-bc35-e469fc7a69e0"))).get_ErrorCode(&_ret));
 		return _ret;
 	}
 }
@@ -2843,67 +2843,67 @@ interface AppCaptureRecordOperation : Windows.Media.Capture.IAppCaptureRecordOpe
 extern(Windows):
 	final void StopRecording()
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureRecordOperation).abi_StopRecording());
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureRecordOperation)this.asInterface(uuid("c66020a9-1538-495c-9bbb-2ba870ec5861"))).abi_StopRecording());
 	}
 	final Windows.Media.Capture.AppCaptureRecordingState State()
 	{
 		Windows.Media.Capture.AppCaptureRecordingState _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureRecordOperation).get_State(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureRecordOperation)this.asInterface(uuid("c66020a9-1538-495c-9bbb-2ba870ec5861"))).get_State(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(UINT32) ErrorCode()
 	{
 		Windows.Foundation.IReference!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureRecordOperation).get_ErrorCode(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureRecordOperation)this.asInterface(uuid("c66020a9-1538-495c-9bbb-2ba870ec5861"))).get_ErrorCode(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) Duration()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureRecordOperation).get_Duration(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureRecordOperation)this.asInterface(uuid("c66020a9-1538-495c-9bbb-2ba870ec5861"))).get_Duration(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.StorageFile File()
 	{
 		Windows.Storage.StorageFile _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureRecordOperation).get_File(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureRecordOperation)this.asInterface(uuid("c66020a9-1538-495c-9bbb-2ba870ec5861"))).get_File(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(bool) IsFileTruncated()
 	{
 		Windows.Foundation.IReference!(bool) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureRecordOperation).get_IsFileTruncated(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureRecordOperation)this.asInterface(uuid("c66020a9-1538-495c-9bbb-2ba870ec5861"))).get_IsFileTruncated(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnStateChanged(void delegate(Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureRecordingStateChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureRecordOperation).add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureRecordingStateChangedEventArgs), Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureRecordingStateChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureRecordOperation)this.asInterface(uuid("c66020a9-1538-495c-9bbb-2ba870ec5861"))).add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureRecordingStateChangedEventArgs), Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureRecordingStateChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureRecordOperation).remove_StateChanged(token));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureRecordOperation)this.asInterface(uuid("c66020a9-1538-495c-9bbb-2ba870ec5861"))).remove_StateChanged(token));
 	}
 	final EventRegistrationToken OnDurationGenerated(void delegate(Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureDurationGeneratedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureRecordOperation).add_DurationGenerated(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureDurationGeneratedEventArgs), Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureDurationGeneratedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureRecordOperation)this.asInterface(uuid("c66020a9-1538-495c-9bbb-2ba870ec5861"))).add_DurationGenerated(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureDurationGeneratedEventArgs), Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureDurationGeneratedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDurationGenerated(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureRecordOperation).remove_DurationGenerated(token));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureRecordOperation)this.asInterface(uuid("c66020a9-1538-495c-9bbb-2ba870ec5861"))).remove_DurationGenerated(token));
 	}
 	final EventRegistrationToken OnFileGenerated(void delegate(Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureFileGeneratedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureRecordOperation).add_FileGenerated(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureFileGeneratedEventArgs), Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureFileGeneratedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureRecordOperation)this.asInterface(uuid("c66020a9-1538-495c-9bbb-2ba870ec5861"))).add_FileGenerated(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureFileGeneratedEventArgs), Windows.Media.Capture.AppCaptureRecordOperation, Windows.Media.Capture.AppCaptureFileGeneratedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeFileGenerated(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureRecordOperation).remove_FileGenerated(token));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureRecordOperation)this.asInterface(uuid("c66020a9-1538-495c-9bbb-2ba870ec5861"))).remove_FileGenerated(token));
 	}
 }
 
@@ -2913,13 +2913,13 @@ extern(Windows):
 	final Windows.Media.Capture.AppCaptureRecordingState State()
 	{
 		Windows.Media.Capture.AppCaptureRecordingState _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureRecordingStateChangedEventArgs).get_State(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureRecordingStateChangedEventArgs)this.asInterface(uuid("24fc8712-e305-490d-b415-6b1c9049736b"))).get_State(&_ret));
 		return _ret;
 	}
 	final UINT32 ErrorCode()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureRecordingStateChangedEventArgs).get_ErrorCode(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureRecordingStateChangedEventArgs)this.asInterface(uuid("24fc8712-e305-490d-b415-6b1c9049736b"))).get_ErrorCode(&_ret));
 		return _ret;
 	}
 }
@@ -2930,25 +2930,25 @@ extern(Windows):
 	final Windows.Media.Capture.AppCaptureRecordOperation Record()
 	{
 		Windows.Media.Capture.AppCaptureRecordOperation _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureServices).abi_Record(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureServices)this.asInterface(uuid("44fec0b5-34f5-4f18-ae8c-b9123abbfc0d"))).abi_Record(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.AppCaptureRecordOperation RecordTimeSpan(Windows.Foundation.DateTime startTime, Windows.Foundation.TimeSpan duration)
 	{
 		Windows.Media.Capture.AppCaptureRecordOperation _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureServices).abi_RecordTimeSpan(startTime, duration, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureServices)this.asInterface(uuid("44fec0b5-34f5-4f18-ae8c-b9123abbfc0d"))).abi_RecordTimeSpan(startTime, duration, &_ret));
 		return _ret;
 	}
 	final bool CanCapture()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureServices).get_CanCapture(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureServices)this.asInterface(uuid("44fec0b5-34f5-4f18-ae8c-b9123abbfc0d"))).get_CanCapture(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.AppCaptureState State()
 	{
 		Windows.Media.Capture.AppCaptureState _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureServices).get_State(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureServices)this.asInterface(uuid("44fec0b5-34f5-4f18-ae8c-b9123abbfc0d"))).get_State(&_ret));
 		return _ret;
 	}
 }
@@ -2958,268 +2958,268 @@ interface AppCaptureSettings : Windows.Media.Capture.IAppCaptureSettings, Window
 extern(Windows):
 	final void AppCaptureDestinationFolder(Windows.Storage.StorageFolder value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_AppCaptureDestinationFolder(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).set_AppCaptureDestinationFolder(value));
 	}
 	final Windows.Storage.StorageFolder AppCaptureDestinationFolder()
 	{
 		Windows.Storage.StorageFolder _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_AppCaptureDestinationFolder(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).get_AppCaptureDestinationFolder(&_ret));
 		return _ret;
 	}
 	final void AudioEncodingBitrate(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_AudioEncodingBitrate(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).set_AudioEncodingBitrate(value));
 	}
 	final UINT32 AudioEncodingBitrate()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_AudioEncodingBitrate(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).get_AudioEncodingBitrate(&_ret));
 		return _ret;
 	}
 	final void IsAudioCaptureEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_IsAudioCaptureEnabled(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).set_IsAudioCaptureEnabled(value));
 	}
 	final bool IsAudioCaptureEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_IsAudioCaptureEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).get_IsAudioCaptureEnabled(&_ret));
 		return _ret;
 	}
 	final void CustomVideoEncodingBitrate(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_CustomVideoEncodingBitrate(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).set_CustomVideoEncodingBitrate(value));
 	}
 	final UINT32 CustomVideoEncodingBitrate()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_CustomVideoEncodingBitrate(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).get_CustomVideoEncodingBitrate(&_ret));
 		return _ret;
 	}
 	final void CustomVideoEncodingHeight(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_CustomVideoEncodingHeight(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).set_CustomVideoEncodingHeight(value));
 	}
 	final UINT32 CustomVideoEncodingHeight()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_CustomVideoEncodingHeight(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).get_CustomVideoEncodingHeight(&_ret));
 		return _ret;
 	}
 	final void CustomVideoEncodingWidth(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_CustomVideoEncodingWidth(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).set_CustomVideoEncodingWidth(value));
 	}
 	final UINT32 CustomVideoEncodingWidth()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_CustomVideoEncodingWidth(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).get_CustomVideoEncodingWidth(&_ret));
 		return _ret;
 	}
 	final void HistoricalBufferLength(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_HistoricalBufferLength(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).set_HistoricalBufferLength(value));
 	}
 	final UINT32 HistoricalBufferLength()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_HistoricalBufferLength(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).get_HistoricalBufferLength(&_ret));
 		return _ret;
 	}
 	final void HistoricalBufferLengthUnit(Windows.Media.Capture.AppCaptureHistoricalBufferLengthUnit value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_HistoricalBufferLengthUnit(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).set_HistoricalBufferLengthUnit(value));
 	}
 	final Windows.Media.Capture.AppCaptureHistoricalBufferLengthUnit HistoricalBufferLengthUnit()
 	{
 		Windows.Media.Capture.AppCaptureHistoricalBufferLengthUnit _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_HistoricalBufferLengthUnit(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).get_HistoricalBufferLengthUnit(&_ret));
 		return _ret;
 	}
 	final void IsHistoricalCaptureEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_IsHistoricalCaptureEnabled(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).set_IsHistoricalCaptureEnabled(value));
 	}
 	final bool IsHistoricalCaptureEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_IsHistoricalCaptureEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).get_IsHistoricalCaptureEnabled(&_ret));
 		return _ret;
 	}
 	final void IsHistoricalCaptureOnBatteryAllowed(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_IsHistoricalCaptureOnBatteryAllowed(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).set_IsHistoricalCaptureOnBatteryAllowed(value));
 	}
 	final bool IsHistoricalCaptureOnBatteryAllowed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_IsHistoricalCaptureOnBatteryAllowed(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).get_IsHistoricalCaptureOnBatteryAllowed(&_ret));
 		return _ret;
 	}
 	final void IsHistoricalCaptureOnWirelessDisplayAllowed(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_IsHistoricalCaptureOnWirelessDisplayAllowed(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).set_IsHistoricalCaptureOnWirelessDisplayAllowed(value));
 	}
 	final bool IsHistoricalCaptureOnWirelessDisplayAllowed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_IsHistoricalCaptureOnWirelessDisplayAllowed(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).get_IsHistoricalCaptureOnWirelessDisplayAllowed(&_ret));
 		return _ret;
 	}
 	final void MaximumRecordLength(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_MaximumRecordLength(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).set_MaximumRecordLength(value));
 	}
 	final Windows.Foundation.TimeSpan MaximumRecordLength()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_MaximumRecordLength(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).get_MaximumRecordLength(&_ret));
 		return _ret;
 	}
 	final void ScreenshotDestinationFolder(Windows.Storage.StorageFolder value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_ScreenshotDestinationFolder(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).set_ScreenshotDestinationFolder(value));
 	}
 	final Windows.Storage.StorageFolder ScreenshotDestinationFolder()
 	{
 		Windows.Storage.StorageFolder _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_ScreenshotDestinationFolder(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).get_ScreenshotDestinationFolder(&_ret));
 		return _ret;
 	}
 	final void VideoEncodingBitrateMode(Windows.Media.Capture.AppCaptureVideoEncodingBitrateMode value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_VideoEncodingBitrateMode(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).set_VideoEncodingBitrateMode(value));
 	}
 	final Windows.Media.Capture.AppCaptureVideoEncodingBitrateMode VideoEncodingBitrateMode()
 	{
 		Windows.Media.Capture.AppCaptureVideoEncodingBitrateMode _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_VideoEncodingBitrateMode(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).get_VideoEncodingBitrateMode(&_ret));
 		return _ret;
 	}
 	final void VideoEncodingResolutionMode(Windows.Media.Capture.AppCaptureVideoEncodingResolutionMode value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_VideoEncodingResolutionMode(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).set_VideoEncodingResolutionMode(value));
 	}
 	final Windows.Media.Capture.AppCaptureVideoEncodingResolutionMode VideoEncodingResolutionMode()
 	{
 		Windows.Media.Capture.AppCaptureVideoEncodingResolutionMode _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_VideoEncodingResolutionMode(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).get_VideoEncodingResolutionMode(&_ret));
 		return _ret;
 	}
 	final void IsAppCaptureEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).set_IsAppCaptureEnabled(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).set_IsAppCaptureEnabled(value));
 	}
 	final bool IsAppCaptureEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_IsAppCaptureEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).get_IsAppCaptureEnabled(&_ret));
 		return _ret;
 	}
 	final bool IsCpuConstrained()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_IsCpuConstrained(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).get_IsCpuConstrained(&_ret));
 		return _ret;
 	}
 	final bool IsDisabledByPolicy()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_IsDisabledByPolicy(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).get_IsDisabledByPolicy(&_ret));
 		return _ret;
 	}
 	final bool IsMemoryConstrained()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_IsMemoryConstrained(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).get_IsMemoryConstrained(&_ret));
 		return _ret;
 	}
 	final bool HasHardwareEncoder()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings).get_HasHardwareEncoder(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings)this.asInterface(uuid("14683a86-8807-48d3-883a-970ee4532a39"))).get_HasHardwareEncoder(&_ret));
 		return _ret;
 	}
 	final bool IsGpuConstrained()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings2).get_IsGpuConstrained(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings2)this.asInterface(uuid("fcb8cee7-e26b-476f-9b1a-ec342d2a8fde"))).get_IsGpuConstrained(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.AppCaptureAlternateShortcutKeys AlternateShortcutKeys()
 	{
 		Windows.Media.Capture.AppCaptureAlternateShortcutKeys _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings2).get_AlternateShortcutKeys(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings2)this.asInterface(uuid("fcb8cee7-e26b-476f-9b1a-ec342d2a8fde"))).get_AlternateShortcutKeys(&_ret));
 		return _ret;
 	}
 	final void IsMicrophoneCaptureEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings3).set_IsMicrophoneCaptureEnabled(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings3)this.asInterface(uuid("a93502fe-88c2-42d6-aaaa-40feffd75aec"))).set_IsMicrophoneCaptureEnabled(value));
 	}
 	final bool IsMicrophoneCaptureEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings3).get_IsMicrophoneCaptureEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings3)this.asInterface(uuid("a93502fe-88c2-42d6-aaaa-40feffd75aec"))).get_IsMicrophoneCaptureEnabled(&_ret));
 		return _ret;
 	}
 	final void IsMicrophoneCaptureEnabledByDefault(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings4).set_IsMicrophoneCaptureEnabledByDefault(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings4)this.asInterface(uuid("07c2774c-1a81-482f-a244-049d95f25b0b"))).set_IsMicrophoneCaptureEnabledByDefault(value));
 	}
 	final bool IsMicrophoneCaptureEnabledByDefault()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings4).get_IsMicrophoneCaptureEnabledByDefault(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings4)this.asInterface(uuid("07c2774c-1a81-482f-a244-049d95f25b0b"))).get_IsMicrophoneCaptureEnabledByDefault(&_ret));
 		return _ret;
 	}
 	final void SystemAudioGain(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings4).set_SystemAudioGain(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings4)this.asInterface(uuid("07c2774c-1a81-482f-a244-049d95f25b0b"))).set_SystemAudioGain(value));
 	}
 	final double SystemAudioGain()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings4).get_SystemAudioGain(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings4)this.asInterface(uuid("07c2774c-1a81-482f-a244-049d95f25b0b"))).get_SystemAudioGain(&_ret));
 		return _ret;
 	}
 	final void MicrophoneGain(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings4).set_MicrophoneGain(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings4)this.asInterface(uuid("07c2774c-1a81-482f-a244-049d95f25b0b"))).set_MicrophoneGain(value));
 	}
 	final double MicrophoneGain()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings4).get_MicrophoneGain(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings4)this.asInterface(uuid("07c2774c-1a81-482f-a244-049d95f25b0b"))).get_MicrophoneGain(&_ret));
 		return _ret;
 	}
 	final void VideoEncodingFrameRateMode(Windows.Media.Capture.AppCaptureVideoEncodingFrameRateMode value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings4).set_VideoEncodingFrameRateMode(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings4)this.asInterface(uuid("07c2774c-1a81-482f-a244-049d95f25b0b"))).set_VideoEncodingFrameRateMode(value));
 	}
 	final Windows.Media.Capture.AppCaptureVideoEncodingFrameRateMode VideoEncodingFrameRateMode()
 	{
 		Windows.Media.Capture.AppCaptureVideoEncodingFrameRateMode _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings4).get_VideoEncodingFrameRateMode(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings4)this.asInterface(uuid("07c2774c-1a81-482f-a244-049d95f25b0b"))).get_VideoEncodingFrameRateMode(&_ret));
 		return _ret;
 	}
 	final void IsEchoCancellationEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings5).set_IsEchoCancellationEnabled(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings5)this.asInterface(uuid("18894522-b0e8-4ba0-8f13-3eaa5fa4013b"))).set_IsEchoCancellationEnabled(value));
 	}
 	final bool IsEchoCancellationEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings5).get_IsEchoCancellationEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings5)this.asInterface(uuid("18894522-b0e8-4ba0-8f13-3eaa5fa4013b"))).get_IsEchoCancellationEnabled(&_ret));
 		return _ret;
 	}
 	final void IsCursorImageCaptureEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings5).set_IsCursorImageCaptureEnabled(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings5)this.asInterface(uuid("18894522-b0e8-4ba0-8f13-3eaa5fa4013b"))).set_IsCursorImageCaptureEnabled(value));
 	}
 	final bool IsCursorImageCaptureEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureSettings5).get_IsCursorImageCaptureEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureSettings5)this.asInterface(uuid("18894522-b0e8-4ba0-8f13-3eaa5fa4013b"))).get_IsCursorImageCaptureEnabled(&_ret));
 		return _ret;
 	}
 }
@@ -3230,60 +3230,60 @@ extern(Windows):
 	final bool IsTargetRunning()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureState).get_IsTargetRunning(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureState)this.asInterface(uuid("73134372-d4eb-44ce-9538-465f506ac4ea"))).get_IsTargetRunning(&_ret));
 		return _ret;
 	}
 	final bool IsHistoricalCaptureEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureState).get_IsHistoricalCaptureEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureState)this.asInterface(uuid("73134372-d4eb-44ce-9538-465f506ac4ea"))).get_IsHistoricalCaptureEnabled(&_ret));
 		return _ret;
 	}
 	final bool ShouldCaptureMicrophone()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureState).get_ShouldCaptureMicrophone(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureState)this.asInterface(uuid("73134372-d4eb-44ce-9538-465f506ac4ea"))).get_ShouldCaptureMicrophone(&_ret));
 		return _ret;
 	}
 	final void ShouldCaptureMicrophone(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureState).set_ShouldCaptureMicrophone(value));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureState)this.asInterface(uuid("73134372-d4eb-44ce-9538-465f506ac4ea"))).set_ShouldCaptureMicrophone(value));
 	}
 	final void RestartMicrophoneCapture()
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureState).abi_RestartMicrophoneCapture());
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureState)this.asInterface(uuid("73134372-d4eb-44ce-9538-465f506ac4ea"))).abi_RestartMicrophoneCapture());
 	}
 	final Windows.Media.Capture.AppCaptureMicrophoneCaptureState MicrophoneCaptureState()
 	{
 		Windows.Media.Capture.AppCaptureMicrophoneCaptureState _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureState).get_MicrophoneCaptureState(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureState)this.asInterface(uuid("73134372-d4eb-44ce-9538-465f506ac4ea"))).get_MicrophoneCaptureState(&_ret));
 		return _ret;
 	}
 	final UINT32 MicrophoneCaptureError()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureState).get_MicrophoneCaptureError(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureState)this.asInterface(uuid("73134372-d4eb-44ce-9538-465f506ac4ea"))).get_MicrophoneCaptureError(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnMicrophoneCaptureStateChanged(void delegate(Windows.Media.Capture.AppCaptureState, Windows.Media.Capture.AppCaptureMicrophoneCaptureStateChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureState).add_MicrophoneCaptureStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureState, Windows.Media.Capture.AppCaptureMicrophoneCaptureStateChangedEventArgs), Windows.Media.Capture.AppCaptureState, Windows.Media.Capture.AppCaptureMicrophoneCaptureStateChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureState)this.asInterface(uuid("73134372-d4eb-44ce-9538-465f506ac4ea"))).add_MicrophoneCaptureStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureState, Windows.Media.Capture.AppCaptureMicrophoneCaptureStateChangedEventArgs), Windows.Media.Capture.AppCaptureState, Windows.Media.Capture.AppCaptureMicrophoneCaptureStateChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMicrophoneCaptureStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureState).remove_MicrophoneCaptureStateChanged(token));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureState)this.asInterface(uuid("73134372-d4eb-44ce-9538-465f506ac4ea"))).remove_MicrophoneCaptureStateChanged(token));
 	}
 	final EventRegistrationToken OnCaptureTargetClosed(void delegate(Windows.Media.Capture.AppCaptureState, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureState).add_CaptureTargetClosed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureState, IInspectable), Windows.Media.Capture.AppCaptureState, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureState)this.asInterface(uuid("73134372-d4eb-44ce-9538-465f506ac4ea"))).add_CaptureTargetClosed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AppCaptureState, IInspectable), Windows.Media.Capture.AppCaptureState, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeCaptureTargetClosed(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IAppCaptureState).remove_CaptureTargetClosed(token));
+		Debug.OK((cast(Windows.Media.Capture.IAppCaptureState)this.asInterface(uuid("73134372-d4eb-44ce-9538-465f506ac4ea"))).remove_CaptureTargetClosed(token));
 	}
 }
 
@@ -3293,26 +3293,26 @@ extern(Windows):
 	final Windows.Media.Capture.CameraCaptureUIPhotoCaptureSettings PhotoSettings()
 	{
 		Windows.Media.Capture.CameraCaptureUIPhotoCaptureSettings _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUI).get_PhotoSettings(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICameraCaptureUI)this.asInterface(uuid("48587540-6f93-4bb4-b8f3-e89e48948c91"))).get_PhotoSettings(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.CameraCaptureUIVideoCaptureSettings VideoSettings()
 	{
 		Windows.Media.Capture.CameraCaptureUIVideoCaptureSettings _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUI).get_VideoSettings(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICameraCaptureUI)this.asInterface(uuid("48587540-6f93-4bb4-b8f3-e89e48948c91"))).get_VideoSettings(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) CaptureFileAsync(Windows.Media.Capture.CameraCaptureUIMode mode)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUI).abi_CaptureFileAsync(mode, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICameraCaptureUI)this.asInterface(uuid("48587540-6f93-4bb4-b8f3-e89e48948c91"))).abi_CaptureFileAsync(mode, &_ret));
 		return _ret;
 	}
 	static CameraCaptureUI New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(CameraCaptureUI).abi_ActivateInstance(&ret));
-		return ret.as!(CameraCaptureUI);
+		return cast(CameraCaptureUI) ret;
 	}
 }
 
@@ -3322,52 +3322,52 @@ extern(Windows):
 	final Windows.Media.Capture.CameraCaptureUIPhotoFormat Format()
 	{
 		Windows.Media.Capture.CameraCaptureUIPhotoFormat _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings).get_Format(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings)this.asInterface(uuid("b9f5be97-3472-46a8-8a9e-04ce42ccc97d"))).get_Format(&_ret));
 		return _ret;
 	}
 	final void Format(Windows.Media.Capture.CameraCaptureUIPhotoFormat value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings).set_Format(value));
+		Debug.OK((cast(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings)this.asInterface(uuid("b9f5be97-3472-46a8-8a9e-04ce42ccc97d"))).set_Format(value));
 	}
 	final Windows.Media.Capture.CameraCaptureUIMaxPhotoResolution MaxResolution()
 	{
 		Windows.Media.Capture.CameraCaptureUIMaxPhotoResolution _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings).get_MaxResolution(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings)this.asInterface(uuid("b9f5be97-3472-46a8-8a9e-04ce42ccc97d"))).get_MaxResolution(&_ret));
 		return _ret;
 	}
 	final void MaxResolution(Windows.Media.Capture.CameraCaptureUIMaxPhotoResolution value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings).set_MaxResolution(value));
+		Debug.OK((cast(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings)this.asInterface(uuid("b9f5be97-3472-46a8-8a9e-04ce42ccc97d"))).set_MaxResolution(value));
 	}
 	final Windows.Foundation.Size CroppedSizeInPixels()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings).get_CroppedSizeInPixels(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings)this.asInterface(uuid("b9f5be97-3472-46a8-8a9e-04ce42ccc97d"))).get_CroppedSizeInPixels(&_ret));
 		return _ret;
 	}
 	final void CroppedSizeInPixels(Windows.Foundation.Size value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings).set_CroppedSizeInPixels(value));
+		Debug.OK((cast(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings)this.asInterface(uuid("b9f5be97-3472-46a8-8a9e-04ce42ccc97d"))).set_CroppedSizeInPixels(value));
 	}
 	final Windows.Foundation.Size CroppedAspectRatio()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings).get_CroppedAspectRatio(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings)this.asInterface(uuid("b9f5be97-3472-46a8-8a9e-04ce42ccc97d"))).get_CroppedAspectRatio(&_ret));
 		return _ret;
 	}
 	final void CroppedAspectRatio(Windows.Foundation.Size value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings).set_CroppedAspectRatio(value));
+		Debug.OK((cast(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings)this.asInterface(uuid("b9f5be97-3472-46a8-8a9e-04ce42ccc97d"))).set_CroppedAspectRatio(value));
 	}
 	final bool AllowCropping()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings).get_AllowCropping(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings)this.asInterface(uuid("b9f5be97-3472-46a8-8a9e-04ce42ccc97d"))).get_AllowCropping(&_ret));
 		return _ret;
 	}
 	final void AllowCropping(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings).set_AllowCropping(value));
+		Debug.OK((cast(Windows.Media.Capture.ICameraCaptureUIPhotoCaptureSettings)this.asInterface(uuid("b9f5be97-3472-46a8-8a9e-04ce42ccc97d"))).set_AllowCropping(value));
 	}
 }
 
@@ -3377,42 +3377,42 @@ extern(Windows):
 	final Windows.Media.Capture.CameraCaptureUIVideoFormat Format()
 	{
 		Windows.Media.Capture.CameraCaptureUIVideoFormat _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings).get_Format(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings)this.asInterface(uuid("64e92d1f-a28d-425a-b84f-e568335ff24e"))).get_Format(&_ret));
 		return _ret;
 	}
 	final void Format(Windows.Media.Capture.CameraCaptureUIVideoFormat value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings).set_Format(value));
+		Debug.OK((cast(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings)this.asInterface(uuid("64e92d1f-a28d-425a-b84f-e568335ff24e"))).set_Format(value));
 	}
 	final Windows.Media.Capture.CameraCaptureUIMaxVideoResolution MaxResolution()
 	{
 		Windows.Media.Capture.CameraCaptureUIMaxVideoResolution _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings).get_MaxResolution(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings)this.asInterface(uuid("64e92d1f-a28d-425a-b84f-e568335ff24e"))).get_MaxResolution(&_ret));
 		return _ret;
 	}
 	final void MaxResolution(Windows.Media.Capture.CameraCaptureUIMaxVideoResolution value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings).set_MaxResolution(value));
+		Debug.OK((cast(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings)this.asInterface(uuid("64e92d1f-a28d-425a-b84f-e568335ff24e"))).set_MaxResolution(value));
 	}
 	final float MaxDurationInSeconds()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings).get_MaxDurationInSeconds(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings)this.asInterface(uuid("64e92d1f-a28d-425a-b84f-e568335ff24e"))).get_MaxDurationInSeconds(&_ret));
 		return _ret;
 	}
 	final void MaxDurationInSeconds(float value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings).set_MaxDurationInSeconds(value));
+		Debug.OK((cast(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings)this.asInterface(uuid("64e92d1f-a28d-425a-b84f-e568335ff24e"))).set_MaxDurationInSeconds(value));
 	}
 	final bool AllowTrimming()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings).get_AllowTrimming(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings)this.asInterface(uuid("64e92d1f-a28d-425a-b84f-e568335ff24e"))).get_AllowTrimming(&_ret));
 		return _ret;
 	}
 	final void AllowTrimming(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings).set_AllowTrimming(value));
+		Debug.OK((cast(Windows.Media.Capture.ICameraCaptureUIVideoCaptureSettings)this.asInterface(uuid("64e92d1f-a28d-425a-b84f-e568335ff24e"))).set_AllowTrimming(value));
 	}
 }
 
@@ -3426,7 +3426,7 @@ interface CameraOptionsUI
 	}
 	static void Show(Windows.Media.Capture.MediaCapture mediaCapture)
 	{
-		Debug.OK(staticInstance.as!(Windows.Media.Capture.ICameraOptionsUIStatics).abi_Show(mediaCapture));
+		Debug.OK(staticInstance.abi_Show(mediaCapture));
 	}
 }
 
@@ -3436,97 +3436,97 @@ extern(Windows):
 	final UINT32 Width()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrame).get_Width(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICapturedFrame)this.asInterface(uuid("1dd2de1f-571b-44d8-8e80-a08a1578766e"))).get_Width(&_ret));
 		return _ret;
 	}
 	final UINT32 Height()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrame).get_Height(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICapturedFrame)this.asInterface(uuid("1dd2de1f-571b-44d8-8e80-a08a1578766e"))).get_Height(&_ret));
 		return _ret;
 	}
 	final HSTRING ContentType()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Storage.Streams.IContentTypeProvider).get_ContentType(&_ret));
+		Debug.OK((cast(Windows.Storage.Streams.IContentTypeProvider)this.asInterface(uuid("97d098a5-3b99-4de9-88a5-e11d2f50c795"))).get_ContentType(&_ret));
 		return _ret;
 	}
 	final ulong Size()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Size(&_ret));
+		Debug.OK((cast(Windows.Storage.Streams.IRandomAccessStream)this.asInterface(uuid("905a0fe1-bc53-11df-8c49-001e4fc686da"))).get_Size(&_ret));
 		return _ret;
 	}
 	final void Size(ulong value)
 	{
-		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).set_Size(value));
+		Debug.OK((cast(Windows.Storage.Streams.IRandomAccessStream)this.asInterface(uuid("905a0fe1-bc53-11df-8c49-001e4fc686da"))).set_Size(value));
 	}
 	final Windows.Storage.Streams.IInputStream GetInputStreamAt(ulong position)
 	{
 		Windows.Storage.Streams.IInputStream _ret;
-		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetInputStreamAt(position, &_ret));
+		Debug.OK((cast(Windows.Storage.Streams.IRandomAccessStream)this.asInterface(uuid("905a0fe1-bc53-11df-8c49-001e4fc686da"))).abi_GetInputStreamAt(position, &_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IOutputStream GetOutputStreamAt(ulong position)
 	{
 		Windows.Storage.Streams.IOutputStream _ret;
-		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_GetOutputStreamAt(position, &_ret));
+		Debug.OK((cast(Windows.Storage.Streams.IRandomAccessStream)this.asInterface(uuid("905a0fe1-bc53-11df-8c49-001e4fc686da"))).abi_GetOutputStreamAt(position, &_ret));
 		return _ret;
 	}
 	final ulong Position()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_Position(&_ret));
+		Debug.OK((cast(Windows.Storage.Streams.IRandomAccessStream)this.asInterface(uuid("905a0fe1-bc53-11df-8c49-001e4fc686da"))).get_Position(&_ret));
 		return _ret;
 	}
 	final void Seek(ulong position)
 	{
-		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_Seek(position));
+		Debug.OK((cast(Windows.Storage.Streams.IRandomAccessStream)this.asInterface(uuid("905a0fe1-bc53-11df-8c49-001e4fc686da"))).abi_Seek(position));
 	}
 	final Windows.Storage.Streams.IRandomAccessStream CloneStream()
 	{
 		Windows.Storage.Streams.IRandomAccessStream _ret;
-		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).abi_CloneStream(&_ret));
+		Debug.OK((cast(Windows.Storage.Streams.IRandomAccessStream)this.asInterface(uuid("905a0fe1-bc53-11df-8c49-001e4fc686da"))).abi_CloneStream(&_ret));
 		return _ret;
 	}
 	final bool CanRead()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_CanRead(&_ret));
+		Debug.OK((cast(Windows.Storage.Streams.IRandomAccessStream)this.asInterface(uuid("905a0fe1-bc53-11df-8c49-001e4fc686da"))).get_CanRead(&_ret));
 		return _ret;
 	}
 	final bool CanWrite()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Storage.Streams.IRandomAccessStream).get_CanWrite(&_ret));
+		Debug.OK((cast(Windows.Storage.Streams.IRandomAccessStream)this.asInterface(uuid("905a0fe1-bc53-11df-8c49-001e4fc686da"))).get_CanWrite(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) WriteAsync(Windows.Storage.Streams.IBuffer buffer)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) _ret;
-		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_WriteAsync(buffer, &_ret));
+		Debug.OK((cast(Windows.Storage.Streams.IOutputStream)this.asInterface(uuid("905a0fe6-bc53-11df-8c49-001e4fc686da"))).abi_WriteAsync(buffer, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) FlushAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_FlushAsync(&_ret));
+		Debug.OK((cast(Windows.Storage.Streams.IOutputStream)this.asInterface(uuid("905a0fe6-bc53-11df-8c49-001e4fc686da"))).abi_FlushAsync(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) ReadAsync(Windows.Storage.Streams.IBuffer buffer, UINT32 count, Windows.Storage.Streams.InputStreamOptions options)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) _ret;
-		Debug.OK(this.as!(Windows.Storage.Streams.IInputStream).abi_ReadAsync(buffer, count, options, &_ret));
+		Debug.OK((cast(Windows.Storage.Streams.IInputStream)this.asInterface(uuid("905a0fe2-bc53-11df-8c49-001e4fc686da"))).abi_ReadAsync(buffer, count, options, &_ret));
 		return _ret;
 	}
 	final Windows.Graphics.Imaging.SoftwareBitmap SoftwareBitmap()
 	{
 		Windows.Graphics.Imaging.SoftwareBitmap _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameWithSoftwareBitmap).get_SoftwareBitmap(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICapturedFrameWithSoftwareBitmap)this.asInterface(uuid("b58e8b6e-8503-49b5-9e86-897d26a3ff3d"))).get_SoftwareBitmap(&_ret));
 		return _ret;
 	}
 }
@@ -3537,85 +3537,85 @@ extern(Windows):
 	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) Exposure()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_Exposure(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICapturedFrameControlValues)this.asInterface(uuid("90c65b7f-4e0d-4ca4-882d-7a144fed0a90"))).get_Exposure(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(float) ExposureCompensation()
 	{
 		Windows.Foundation.IReference!(float) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_ExposureCompensation(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICapturedFrameControlValues)this.asInterface(uuid("90c65b7f-4e0d-4ca4-882d-7a144fed0a90"))).get_ExposureCompensation(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(UINT32) IsoSpeed()
 	{
 		Windows.Foundation.IReference!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_IsoSpeed(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICapturedFrameControlValues)this.asInterface(uuid("90c65b7f-4e0d-4ca4-882d-7a144fed0a90"))).get_IsoSpeed(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(UINT32) Focus()
 	{
 		Windows.Foundation.IReference!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_Focus(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICapturedFrameControlValues)this.asInterface(uuid("90c65b7f-4e0d-4ca4-882d-7a144fed0a90"))).get_Focus(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Media.Devices.CaptureSceneMode) SceneMode()
 	{
 		Windows.Foundation.IReference!(Windows.Media.Devices.CaptureSceneMode) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_SceneMode(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICapturedFrameControlValues)this.asInterface(uuid("90c65b7f-4e0d-4ca4-882d-7a144fed0a90"))).get_SceneMode(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(bool) Flashed()
 	{
 		Windows.Foundation.IReference!(bool) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_Flashed(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICapturedFrameControlValues)this.asInterface(uuid("90c65b7f-4e0d-4ca4-882d-7a144fed0a90"))).get_Flashed(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(float) FlashPowerPercent()
 	{
 		Windows.Foundation.IReference!(float) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_FlashPowerPercent(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICapturedFrameControlValues)this.asInterface(uuid("90c65b7f-4e0d-4ca4-882d-7a144fed0a90"))).get_FlashPowerPercent(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(UINT32) WhiteBalance()
 	{
 		Windows.Foundation.IReference!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_WhiteBalance(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICapturedFrameControlValues)this.asInterface(uuid("90c65b7f-4e0d-4ca4-882d-7a144fed0a90"))).get_WhiteBalance(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(float) ZoomFactor()
 	{
 		Windows.Foundation.IReference!(float) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues).get_ZoomFactor(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICapturedFrameControlValues)this.asInterface(uuid("90c65b7f-4e0d-4ca4-882d-7a144fed0a90"))).get_ZoomFactor(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Media.Devices.MediaCaptureFocusState) FocusState()
 	{
 		Windows.Foundation.IReference!(Windows.Media.Devices.MediaCaptureFocusState) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues2).get_FocusState(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICapturedFrameControlValues2)this.asInterface(uuid("500b2b88-06d2-4aa7-a7db-d37af73321d8"))).get_FocusState(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(double) IsoDigitalGain()
 	{
 		Windows.Foundation.IReference!(double) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues2).get_IsoDigitalGain(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICapturedFrameControlValues2)this.asInterface(uuid("500b2b88-06d2-4aa7-a7db-d37af73321d8"))).get_IsoDigitalGain(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(double) IsoAnalogGain()
 	{
 		Windows.Foundation.IReference!(double) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues2).get_IsoAnalogGain(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICapturedFrameControlValues2)this.asInterface(uuid("500b2b88-06d2-4aa7-a7db-d37af73321d8"))).get_IsoAnalogGain(&_ret));
 		return _ret;
 	}
 	final Windows.Media.MediaProperties.MediaRatio SensorFrameRate()
 	{
 		Windows.Media.MediaProperties.MediaRatio _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues2).get_SensorFrameRate(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICapturedFrameControlValues2)this.asInterface(uuid("500b2b88-06d2-4aa7-a7db-d37af73321d8"))).get_SensorFrameRate(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Media.Capture.WhiteBalanceGain) WhiteBalanceGain()
 	{
 		Windows.Foundation.IReference!(Windows.Media.Capture.WhiteBalanceGain) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICapturedFrameControlValues2).get_WhiteBalanceGain(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICapturedFrameControlValues2)this.asInterface(uuid("500b2b88-06d2-4aa7-a7db-d37af73321d8"))).get_WhiteBalanceGain(&_ret));
 		return _ret;
 	}
 }
@@ -3626,13 +3626,13 @@ extern(Windows):
 	final Windows.Media.Capture.CapturedFrame Frame()
 	{
 		Windows.Media.Capture.CapturedFrame _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICapturedPhoto).get_Frame(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICapturedPhoto)this.asInterface(uuid("b0ce7e5a-cfcc-4d6c-8ad1-0869208aca16"))).get_Frame(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.CapturedFrame Thumbnail()
 	{
 		Windows.Media.Capture.CapturedFrame _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ICapturedPhoto).get_Thumbnail(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ICapturedPhoto)this.asInterface(uuid("b0ce7e5a-cfcc-4d6c-8ad1-0869208aca16"))).get_Thumbnail(&_ret));
 		return _ret;
 	}
 }
@@ -3643,50 +3643,50 @@ extern(Windows):
 	final Windows.Media.Capture.GameBarTargetCapturePolicy TargetCapturePolicy()
 	{
 		Windows.Media.Capture.GameBarTargetCapturePolicy _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServices).get_TargetCapturePolicy(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IGameBarServices)this.asInterface(uuid("2dbead57-50a6-499e-8c6c-d330a7311796"))).get_TargetCapturePolicy(&_ret));
 		return _ret;
 	}
 	final void EnableCapture()
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServices).abi_EnableCapture());
+		Debug.OK((cast(Windows.Media.Capture.IGameBarServices)this.asInterface(uuid("2dbead57-50a6-499e-8c6c-d330a7311796"))).abi_EnableCapture());
 	}
 	final void DisableCapture()
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServices).abi_DisableCapture());
+		Debug.OK((cast(Windows.Media.Capture.IGameBarServices)this.asInterface(uuid("2dbead57-50a6-499e-8c6c-d330a7311796"))).abi_DisableCapture());
 	}
 	final Windows.Media.Capture.GameBarServicesTargetInfo TargetInfo()
 	{
 		Windows.Media.Capture.GameBarServicesTargetInfo _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServices).get_TargetInfo(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IGameBarServices)this.asInterface(uuid("2dbead57-50a6-499e-8c6c-d330a7311796"))).get_TargetInfo(&_ret));
 		return _ret;
 	}
 	final HSTRING SessionId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServices).get_SessionId(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IGameBarServices)this.asInterface(uuid("2dbead57-50a6-499e-8c6c-d330a7311796"))).get_SessionId(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.AppBroadcastServices AppBroadcastServices()
 	{
 		Windows.Media.Capture.AppBroadcastServices _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServices).get_AppBroadcastServices(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IGameBarServices)this.asInterface(uuid("2dbead57-50a6-499e-8c6c-d330a7311796"))).get_AppBroadcastServices(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.AppCaptureServices AppCaptureServices()
 	{
 		Windows.Media.Capture.AppCaptureServices _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServices).get_AppCaptureServices(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IGameBarServices)this.asInterface(uuid("2dbead57-50a6-499e-8c6c-d330a7311796"))).get_AppCaptureServices(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnCommandReceived(void delegate(Windows.Media.Capture.GameBarServices, Windows.Media.Capture.GameBarServicesCommandEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServices).add_CommandReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.GameBarServices, Windows.Media.Capture.GameBarServicesCommandEventArgs), Windows.Media.Capture.GameBarServices, Windows.Media.Capture.GameBarServicesCommandEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IGameBarServices)this.asInterface(uuid("2dbead57-50a6-499e-8c6c-d330a7311796"))).add_CommandReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.GameBarServices, Windows.Media.Capture.GameBarServicesCommandEventArgs), Windows.Media.Capture.GameBarServices, Windows.Media.Capture.GameBarServicesCommandEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCommandReceived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServices).remove_CommandReceived(token));
+		Debug.OK((cast(Windows.Media.Capture.IGameBarServices)this.asInterface(uuid("2dbead57-50a6-499e-8c6c-d330a7311796"))).remove_CommandReceived(token));
 	}
 }
 
@@ -3696,13 +3696,13 @@ extern(Windows):
 	final Windows.Media.Capture.GameBarCommand Command()
 	{
 		Windows.Media.Capture.GameBarCommand _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServicesCommandEventArgs).get_Command(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IGameBarServicesCommandEventArgs)this.asInterface(uuid("a74226b2-f176-4fcf-8fbb-cf698b2eb8e0"))).get_Command(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.GameBarCommandOrigin Origin()
 	{
 		Windows.Media.Capture.GameBarCommandOrigin _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServicesCommandEventArgs).get_Origin(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IGameBarServicesCommandEventArgs)this.asInterface(uuid("a74226b2-f176-4fcf-8fbb-cf698b2eb8e0"))).get_Origin(&_ret));
 		return _ret;
 	}
 }
@@ -3713,12 +3713,12 @@ extern(Windows):
 	final EventRegistrationToken OnGameBarServicesCreated(void delegate(Windows.Media.Capture.GameBarServicesManager, Windows.Media.Capture.GameBarServicesManagerGameBarServicesCreatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServicesManager).add_GameBarServicesCreated(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.GameBarServicesManager, Windows.Media.Capture.GameBarServicesManagerGameBarServicesCreatedEventArgs), Windows.Media.Capture.GameBarServicesManager, Windows.Media.Capture.GameBarServicesManagerGameBarServicesCreatedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IGameBarServicesManager)this.asInterface(uuid("3a4b9cfa-7f8b-4c60-9dbb-0bcd262dffc6"))).add_GameBarServicesCreated(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.GameBarServicesManager, Windows.Media.Capture.GameBarServicesManagerGameBarServicesCreatedEventArgs), Windows.Media.Capture.GameBarServicesManager, Windows.Media.Capture.GameBarServicesManagerGameBarServicesCreatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeGameBarServicesCreated(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServicesManager).remove_GameBarServicesCreated(token));
+		Debug.OK((cast(Windows.Media.Capture.IGameBarServicesManager)this.asInterface(uuid("3a4b9cfa-7f8b-4c60-9dbb-0bcd262dffc6"))).remove_GameBarServicesCreated(token));
 	}
 
 	private static Windows.Media.Capture.IGameBarServicesManagerStatics _staticInstance;
@@ -3730,7 +3730,7 @@ extern(Windows):
 	static Windows.Media.Capture.GameBarServicesManager GetDefault()
 	{
 		Windows.Media.Capture.GameBarServicesManager _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Capture.IGameBarServicesManagerStatics).abi_GetDefault(&_ret));
+		Debug.OK(staticInstance.abi_GetDefault(&_ret));
 		return _ret;
 	}
 }
@@ -3741,7 +3741,7 @@ extern(Windows):
 	final Windows.Media.Capture.GameBarServices GameBarServices()
 	{
 		Windows.Media.Capture.GameBarServices _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServicesManagerGameBarServicesCreatedEventArgs).get_GameBarServices(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IGameBarServicesManagerGameBarServicesCreatedEventArgs)this.asInterface(uuid("ededbd9c-143e-49a3-a5ea-0b1995c8d46e"))).get_GameBarServices(&_ret));
 		return _ret;
 	}
 }
@@ -3752,25 +3752,25 @@ extern(Windows):
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServicesTargetInfo).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IGameBarServicesTargetInfo)this.asInterface(uuid("b4202f92-1611-4e05-b6ef-dfd737ae33b0"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final HSTRING AppId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServicesTargetInfo).get_AppId(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IGameBarServicesTargetInfo)this.asInterface(uuid("b4202f92-1611-4e05-b6ef-dfd737ae33b0"))).get_AppId(&_ret));
 		return _ret;
 	}
 	final HSTRING TitleId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServicesTargetInfo).get_TitleId(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IGameBarServicesTargetInfo)this.asInterface(uuid("b4202f92-1611-4e05-b6ef-dfd737ae33b0"))).get_TitleId(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.GameBarServicesDisplayMode DisplayMode()
 	{
 		Windows.Media.Capture.GameBarServicesDisplayMode _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IGameBarServicesTargetInfo).get_DisplayMode(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IGameBarServicesTargetInfo)this.asInterface(uuid("b4202f92-1611-4e05-b6ef-dfd737ae33b0"))).get_DisplayMode(&_ret));
 		return _ret;
 	}
 }
@@ -3781,43 +3781,43 @@ extern(Windows):
 	final Windows.Foundation.IAsyncAction StartAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ILowLagMediaRecording).abi_StartAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ILowLagMediaRecording)this.asInterface(uuid("41c8baf7-ff3f-49f0-a477-f195e3ce5108"))).abi_StartAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction StopAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ILowLagMediaRecording).abi_StopAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ILowLagMediaRecording)this.asInterface(uuid("41c8baf7-ff3f-49f0-a477-f195e3ce5108"))).abi_StopAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction FinishAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ILowLagMediaRecording).abi_FinishAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ILowLagMediaRecording)this.asInterface(uuid("41c8baf7-ff3f-49f0-a477-f195e3ce5108"))).abi_FinishAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction PauseAsync(Windows.Media.Devices.MediaCapturePauseBehavior behavior)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ILowLagMediaRecording2).abi_PauseAsync(behavior, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.ILowLagMediaRecording2)this.asInterface(uuid("6369c758-5644-41e2-97af-8ef56a25e225"))).abi_PauseAsync(behavior, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ResumeAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ILowLagMediaRecording2).abi_ResumeAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ILowLagMediaRecording2)this.asInterface(uuid("6369c758-5644-41e2-97af-8ef56a25e225"))).abi_ResumeAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.MediaCapturePauseResult) PauseWithResultAsync(Windows.Media.Devices.MediaCapturePauseBehavior behavior)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.MediaCapturePauseResult) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ILowLagMediaRecording3).abi_PauseWithResultAsync(behavior, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.ILowLagMediaRecording3)this.asInterface(uuid("5c33ab12-48f7-47da-b41e-90880a5fe0ec"))).abi_PauseWithResultAsync(behavior, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.MediaCaptureStopResult) StopWithResultAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.MediaCaptureStopResult) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ILowLagMediaRecording3).abi_StopWithResultAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ILowLagMediaRecording3)this.asInterface(uuid("5c33ab12-48f7-47da-b41e-90880a5fe0ec"))).abi_StopWithResultAsync(&_ret));
 		return _ret;
 	}
 }
@@ -3828,13 +3828,13 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.CapturedPhoto) CaptureAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.CapturedPhoto) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ILowLagPhotoCapture).abi_CaptureAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ILowLagPhotoCapture)this.asInterface(uuid("a37251b7-6b44-473d-8f24-f703d6c0ec44"))).abi_CaptureAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction FinishAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ILowLagPhotoCapture).abi_FinishAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ILowLagPhotoCapture)this.asInterface(uuid("a37251b7-6b44-473d-8f24-f703d6c0ec44"))).abi_FinishAsync(&_ret));
 		return _ret;
 	}
 }
@@ -3845,30 +3845,30 @@ extern(Windows):
 	final Windows.Foundation.IAsyncAction StartAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ILowLagPhotoSequenceCapture).abi_StartAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ILowLagPhotoSequenceCapture)this.asInterface(uuid("7cc346bb-b9a9-4c91-8ffa-287e9c668669"))).abi_StartAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction StopAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ILowLagPhotoSequenceCapture).abi_StopAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ILowLagPhotoSequenceCapture)this.asInterface(uuid("7cc346bb-b9a9-4c91-8ffa-287e9c668669"))).abi_StopAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction FinishAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.ILowLagPhotoSequenceCapture).abi_FinishAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.ILowLagPhotoSequenceCapture)this.asInterface(uuid("7cc346bb-b9a9-4c91-8ffa-287e9c668669"))).abi_FinishAsync(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnPhotoCaptured(void delegate(Windows.Media.Capture.LowLagPhotoSequenceCapture, Windows.Media.Capture.PhotoCapturedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.ILowLagPhotoSequenceCapture).add_PhotoCaptured(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.LowLagPhotoSequenceCapture, Windows.Media.Capture.PhotoCapturedEventArgs), Windows.Media.Capture.LowLagPhotoSequenceCapture, Windows.Media.Capture.PhotoCapturedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.ILowLagPhotoSequenceCapture)this.asInterface(uuid("7cc346bb-b9a9-4c91-8ffa-287e9c668669"))).add_PhotoCaptured(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.LowLagPhotoSequenceCapture, Windows.Media.Capture.PhotoCapturedEventArgs), Windows.Media.Capture.LowLagPhotoSequenceCapture, Windows.Media.Capture.PhotoCapturedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePhotoCaptured(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.ILowLagPhotoSequenceCapture).remove_PhotoCaptured(token));
+		Debug.OK((cast(Windows.Media.Capture.ILowLagPhotoSequenceCapture)this.asInterface(uuid("7cc346bb-b9a9-4c91-8ffa-287e9c668669"))).remove_PhotoCaptured(token));
 	}
 }
 
@@ -3878,374 +3878,374 @@ extern(Windows):
 	final Windows.Foundation.IAsyncAction InitializeAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_InitializeAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_InitializeAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction InitializeWithSettingsAsync(Windows.Media.Capture.MediaCaptureInitializationSettings mediaCaptureInitializationSettings)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_InitializeWithSettingsAsync(mediaCaptureInitializationSettings, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_InitializeWithSettingsAsync(mediaCaptureInitializationSettings, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction StartRecordToStorageFileAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Storage.IStorageFile file)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_StartRecordToStorageFileAsync(encodingProfile, file, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_StartRecordToStorageFileAsync(encodingProfile, file, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction StartRecordToStreamAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Storage.Streams.IRandomAccessStream stream)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_StartRecordToStreamAsync(encodingProfile, stream, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_StartRecordToStreamAsync(encodingProfile, stream, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction StartRecordToCustomSinkAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Media.IMediaExtension customMediaSink)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_StartRecordToCustomSinkAsync(encodingProfile, customMediaSink, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_StartRecordToCustomSinkAsync(encodingProfile, customMediaSink, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction StartRecordToCustomSinkIdAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, HSTRING customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_StartRecordToCustomSinkIdAsync(encodingProfile, customSinkActivationId, customSinkSettings, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_StartRecordToCustomSinkIdAsync(encodingProfile, customSinkActivationId, customSinkSettings, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction StopRecordAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_StopRecordAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_StopRecordAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction CapturePhotoToStorageFileAsync(Windows.Media.MediaProperties.ImageEncodingProperties type, Windows.Storage.IStorageFile file)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_CapturePhotoToStorageFileAsync(type, file, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_CapturePhotoToStorageFileAsync(type, file, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction CapturePhotoToStreamAsync(Windows.Media.MediaProperties.ImageEncodingProperties type, Windows.Storage.Streams.IRandomAccessStream stream)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_CapturePhotoToStreamAsync(type, stream, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_CapturePhotoToStreamAsync(type, stream, &_ret));
 		return _ret;
 	}
 	deprecated("AddEffectAsync might not be available in future versions of Windows. Starting with Windows Threshold, use AddAudioEffectAsync and AddVideoEffectAsync instead")
 	final Windows.Foundation.IAsyncAction AddEffectAsync(Windows.Media.Capture.MediaStreamType mediaStreamType, HSTRING effectActivationID, Windows.Foundation.Collections.IPropertySet effectSettings)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_AddEffectAsync(mediaStreamType, effectActivationID, effectSettings, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_AddEffectAsync(mediaStreamType, effectActivationID, effectSettings, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ClearEffectsAsync(Windows.Media.Capture.MediaStreamType mediaStreamType)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_ClearEffectsAsync(mediaStreamType, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_ClearEffectsAsync(mediaStreamType, &_ret));
 		return _ret;
 	}
 	final void SetEncoderProperty(Windows.Media.Capture.MediaStreamType mediaStreamType, GUID propertyId, IInspectable propertyValue)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_SetEncoderProperty(mediaStreamType, propertyId, propertyValue));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_SetEncoderProperty(mediaStreamType, propertyId, propertyValue));
 	}
 	final IInspectable GetEncoderProperty(Windows.Media.Capture.MediaStreamType mediaStreamType, GUID propertyId)
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_GetEncoderProperty(mediaStreamType, propertyId, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_GetEncoderProperty(mediaStreamType, propertyId, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnFailed(void delegate(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureFailedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).add_Failed(event!(Windows.Media.Capture.MediaCaptureFailedEventHandler, Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureFailedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).add_Failed(event!(Windows.Media.Capture.MediaCaptureFailedEventHandler, Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureFailedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeFailed(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).remove_Failed(eventCookie));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).remove_Failed(eventCookie));
 	}
 	final EventRegistrationToken OnRecordLimitationExceeded(void delegate(Windows.Media.Capture.MediaCapture) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).add_RecordLimitationExceeded(event!(Windows.Media.Capture.RecordLimitationExceededEventHandler, Windows.Media.Capture.MediaCapture)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).add_RecordLimitationExceeded(event!(Windows.Media.Capture.RecordLimitationExceededEventHandler, Windows.Media.Capture.MediaCapture)(fn), &tok));
 		return tok;
 	}
 	final void removeRecordLimitationExceeded(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).remove_RecordLimitationExceeded(eventCookie));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).remove_RecordLimitationExceeded(eventCookie));
 	}
 	final Windows.Media.Capture.MediaCaptureSettings MediaCaptureSettings()
 	{
 		Windows.Media.Capture.MediaCaptureSettings _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).get_MediaCaptureSettings(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).get_MediaCaptureSettings(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Devices.AudioDeviceController AudioDeviceController()
 	{
 		Windows.Media.Devices.AudioDeviceController _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).get_AudioDeviceController(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).get_AudioDeviceController(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Devices.VideoDeviceController VideoDeviceController()
 	{
 		Windows.Media.Devices.VideoDeviceController _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).get_VideoDeviceController(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).get_VideoDeviceController(&_ret));
 		return _ret;
 	}
 	final void SetPreviewMirroring(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_SetPreviewMirroring(value));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_SetPreviewMirroring(value));
 	}
 	final bool GetPreviewMirroring()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_GetPreviewMirroring(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_GetPreviewMirroring(&_ret));
 		return _ret;
 	}
 	final void SetPreviewRotation(Windows.Media.Capture.VideoRotation value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_SetPreviewRotation(value));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_SetPreviewRotation(value));
 	}
 	final Windows.Media.Capture.VideoRotation GetPreviewRotation()
 	{
 		Windows.Media.Capture.VideoRotation _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_GetPreviewRotation(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_GetPreviewRotation(&_ret));
 		return _ret;
 	}
 	final void SetRecordRotation(Windows.Media.Capture.VideoRotation value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_SetRecordRotation(value));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_SetRecordRotation(value));
 	}
 	final Windows.Media.Capture.VideoRotation GetRecordRotation()
 	{
 		Windows.Media.Capture.VideoRotation _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture).abi_GetRecordRotation(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_GetRecordRotation(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction StartPreviewAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoPreview).abi_StartPreviewAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoPreview)this.asInterface(uuid("27727073-549e-447f-a20a-4f03c479d8c0"))).abi_StartPreviewAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction StartPreviewToCustomSinkAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Media.IMediaExtension customMediaSink)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoPreview).abi_StartPreviewToCustomSinkAsync(encodingProfile, customMediaSink, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoPreview)this.asInterface(uuid("27727073-549e-447f-a20a-4f03c479d8c0"))).abi_StartPreviewToCustomSinkAsync(encodingProfile, customMediaSink, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction StartPreviewToCustomSinkIdAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, HSTRING customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoPreview).abi_StartPreviewToCustomSinkIdAsync(encodingProfile, customSinkActivationId, customSinkSettings, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoPreview)this.asInterface(uuid("27727073-549e-447f-a20a-4f03c479d8c0"))).abi_StartPreviewToCustomSinkIdAsync(encodingProfile, customSinkActivationId, customSinkSettings, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction StopPreviewAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoPreview).abi_StopPreviewAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoPreview)this.asInterface(uuid("27727073-549e-447f-a20a-4f03c479d8c0"))).abi_StopPreviewAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording) PrepareLowLagRecordToStorageFileAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Storage.IStorageFile file)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture2).abi_PrepareLowLagRecordToStorageFileAsync(encodingProfile, file, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture2)this.asInterface(uuid("9cc68260-7da1-4043-b652-21b8878daff9"))).abi_PrepareLowLagRecordToStorageFileAsync(encodingProfile, file, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording) PrepareLowLagRecordToStreamAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Storage.Streams.IRandomAccessStream stream)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture2).abi_PrepareLowLagRecordToStreamAsync(encodingProfile, stream, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture2)this.asInterface(uuid("9cc68260-7da1-4043-b652-21b8878daff9"))).abi_PrepareLowLagRecordToStreamAsync(encodingProfile, stream, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording) PrepareLowLagRecordToCustomSinkAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Media.IMediaExtension customMediaSink)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture2).abi_PrepareLowLagRecordToCustomSinkAsync(encodingProfile, customMediaSink, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture2)this.asInterface(uuid("9cc68260-7da1-4043-b652-21b8878daff9"))).abi_PrepareLowLagRecordToCustomSinkAsync(encodingProfile, customMediaSink, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording) PrepareLowLagRecordToCustomSinkIdAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, HSTRING customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture2).abi_PrepareLowLagRecordToCustomSinkIdAsync(encodingProfile, customSinkActivationId, customSinkSettings, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture2)this.asInterface(uuid("9cc68260-7da1-4043-b652-21b8878daff9"))).abi_PrepareLowLagRecordToCustomSinkIdAsync(encodingProfile, customSinkActivationId, customSinkSettings, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagPhotoCapture) PrepareLowLagPhotoCaptureAsync(Windows.Media.MediaProperties.ImageEncodingProperties type)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagPhotoCapture) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture2).abi_PrepareLowLagPhotoCaptureAsync(type, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture2)this.asInterface(uuid("9cc68260-7da1-4043-b652-21b8878daff9"))).abi_PrepareLowLagPhotoCaptureAsync(type, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagPhotoSequenceCapture) PrepareLowLagPhotoSequenceCaptureAsync(Windows.Media.MediaProperties.ImageEncodingProperties type)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagPhotoSequenceCapture) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture2).abi_PrepareLowLagPhotoSequenceCaptureAsync(type, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture2)this.asInterface(uuid("9cc68260-7da1-4043-b652-21b8878daff9"))).abi_PrepareLowLagPhotoSequenceCaptureAsync(type, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction SetEncodingPropertiesAsync(Windows.Media.Capture.MediaStreamType mediaStreamType, Windows.Media.MediaProperties.IMediaEncodingProperties mediaEncodingProperties, Windows.Media.MediaProperties.MediaPropertySet encoderProperties)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture2).abi_SetEncodingPropertiesAsync(mediaStreamType, mediaEncodingProperties, encoderProperties, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture2)this.asInterface(uuid("9cc68260-7da1-4043-b652-21b8878daff9"))).abi_SetEncodingPropertiesAsync(mediaStreamType, mediaEncodingProperties, encoderProperties, &_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Core.VariablePhotoSequenceCapture) PrepareVariablePhotoSequenceCaptureAsync(Windows.Media.MediaProperties.ImageEncodingProperties type)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Core.VariablePhotoSequenceCapture) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture3).abi_PrepareVariablePhotoSequenceCaptureAsync(type, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture3)this.asInterface(uuid("d4136f30-1564-466e-bc0a-af94e02ab016"))).abi_PrepareVariablePhotoSequenceCaptureAsync(type, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnFocusChanged(void delegate(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureFocusChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture3).add_FocusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureFocusChangedEventArgs), Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureFocusChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture3)this.asInterface(uuid("d4136f30-1564-466e-bc0a-af94e02ab016"))).add_FocusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureFocusChangedEventArgs), Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureFocusChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeFocusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture3).remove_FocusChanged(token));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture3)this.asInterface(uuid("d4136f30-1564-466e-bc0a-af94e02ab016"))).remove_FocusChanged(token));
 	}
 	final EventRegistrationToken OnPhotoConfirmationCaptured(void delegate(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.PhotoConfirmationCapturedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture3).add_PhotoConfirmationCaptured(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.PhotoConfirmationCapturedEventArgs), Windows.Media.Capture.MediaCapture, Windows.Media.Capture.PhotoConfirmationCapturedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture3)this.asInterface(uuid("d4136f30-1564-466e-bc0a-af94e02ab016"))).add_PhotoConfirmationCaptured(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.PhotoConfirmationCapturedEventArgs), Windows.Media.Capture.MediaCapture, Windows.Media.Capture.PhotoConfirmationCapturedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePhotoConfirmationCaptured(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture3).remove_PhotoConfirmationCaptured(token));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture3)this.asInterface(uuid("d4136f30-1564-466e-bc0a-af94e02ab016"))).remove_PhotoConfirmationCaptured(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.IMediaExtension) AddAudioEffectAsync(Windows.Media.Effects.IAudioEffectDefinition definition)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.IMediaExtension) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).abi_AddAudioEffectAsync(definition, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture4)this.asInterface(uuid("bacd6fd6-fb08-4947-aea2-ce14eff0ce13"))).abi_AddAudioEffectAsync(definition, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.IMediaExtension) AddVideoEffectAsync(Windows.Media.Effects.IVideoEffectDefinition definition, Windows.Media.Capture.MediaStreamType mediaStreamType)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.IMediaExtension) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).abi_AddVideoEffectAsync(definition, mediaStreamType, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture4)this.asInterface(uuid("bacd6fd6-fb08-4947-aea2-ce14eff0ce13"))).abi_AddVideoEffectAsync(definition, mediaStreamType, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction PauseRecordAsync(Windows.Media.Devices.MediaCapturePauseBehavior behavior)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).abi_PauseRecordAsync(behavior, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture4)this.asInterface(uuid("bacd6fd6-fb08-4947-aea2-ce14eff0ce13"))).abi_PauseRecordAsync(behavior, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ResumeRecordAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).abi_ResumeRecordAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture4)this.asInterface(uuid("bacd6fd6-fb08-4947-aea2-ce14eff0ce13"))).abi_ResumeRecordAsync(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnCameraStreamStateChanged(void delegate(Windows.Media.Capture.MediaCapture, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).add_CameraStreamStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture, IInspectable), Windows.Media.Capture.MediaCapture, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture4)this.asInterface(uuid("bacd6fd6-fb08-4947-aea2-ce14eff0ce13"))).add_CameraStreamStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture, IInspectable), Windows.Media.Capture.MediaCapture, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeCameraStreamStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).remove_CameraStreamStateChanged(token));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture4)this.asInterface(uuid("bacd6fd6-fb08-4947-aea2-ce14eff0ce13"))).remove_CameraStreamStateChanged(token));
 	}
 	final Windows.Media.Devices.CameraStreamState CameraStreamState()
 	{
 		Windows.Media.Devices.CameraStreamState _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).get_CameraStreamState(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture4)this.asInterface(uuid("bacd6fd6-fb08-4947-aea2-ce14eff0ce13"))).get_CameraStreamState(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.VideoFrame) GetPreviewFrameAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.VideoFrame) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).abi_GetPreviewFrameAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture4)this.asInterface(uuid("bacd6fd6-fb08-4947-aea2-ce14eff0ce13"))).abi_GetPreviewFrameAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.VideoFrame) GetPreviewFrameCopyAsync(Windows.Media.VideoFrame destination)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.VideoFrame) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).abi_GetPreviewFrameCopyAsync(destination, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture4)this.asInterface(uuid("bacd6fd6-fb08-4947-aea2-ce14eff0ce13"))).abi_GetPreviewFrameCopyAsync(destination, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnThermalStatusChanged(void delegate(Windows.Media.Capture.MediaCapture, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).add_ThermalStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture, IInspectable), Windows.Media.Capture.MediaCapture, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture4)this.asInterface(uuid("bacd6fd6-fb08-4947-aea2-ce14eff0ce13"))).add_ThermalStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture, IInspectable), Windows.Media.Capture.MediaCapture, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeThermalStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).remove_ThermalStatusChanged(token));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture4)this.asInterface(uuid("bacd6fd6-fb08-4947-aea2-ce14eff0ce13"))).remove_ThermalStatusChanged(token));
 	}
 	final Windows.Media.Capture.MediaCaptureThermalStatus ThermalStatus()
 	{
 		Windows.Media.Capture.MediaCaptureThermalStatus _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).get_ThermalStatus(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture4)this.asInterface(uuid("bacd6fd6-fb08-4947-aea2-ce14eff0ce13"))).get_ThermalStatus(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.AdvancedPhotoCapture) PrepareAdvancedPhotoCaptureAsync(Windows.Media.MediaProperties.ImageEncodingProperties encodingProperties)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.AdvancedPhotoCapture) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture4).abi_PrepareAdvancedPhotoCaptureAsync(encodingProperties, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture4)this.asInterface(uuid("bacd6fd6-fb08-4947-aea2-ce14eff0ce13"))).abi_PrepareAdvancedPhotoCaptureAsync(encodingProperties, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction RemoveEffectAsync(Windows.Media.IMediaExtension effect)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture5).abi_RemoveEffectAsync(effect, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture5)this.asInterface(uuid("da787c22-3a9b-4720-a71e-97900a316e5a"))).abi_RemoveEffectAsync(effect, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.MediaCapturePauseResult) PauseRecordWithResultAsync(Windows.Media.Devices.MediaCapturePauseBehavior behavior)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.MediaCapturePauseResult) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture5).abi_PauseRecordWithResultAsync(behavior, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture5)this.asInterface(uuid("da787c22-3a9b-4720-a71e-97900a316e5a"))).abi_PauseRecordWithResultAsync(behavior, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.MediaCaptureStopResult) StopRecordWithResultAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.MediaCaptureStopResult) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture5).abi_StopRecordWithResultAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture5)this.asInterface(uuid("da787c22-3a9b-4720-a71e-97900a316e5a"))).abi_StopRecordWithResultAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Media.Capture.Frames.MediaFrameSource) FrameSources()
 	{
 		Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Media.Capture.Frames.MediaFrameSource) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture5).get_FrameSources(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture5)this.asInterface(uuid("da787c22-3a9b-4720-a71e-97900a316e5a"))).get_FrameSources(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) CreateFrameReaderAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture5).abi_CreateFrameReaderAsync(inputSource, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture5)this.asInterface(uuid("da787c22-3a9b-4720-a71e-97900a316e5a"))).abi_CreateFrameReaderAsync(inputSource, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) CreateFrameReaderWithSubtypeAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, HSTRING outputSubtype)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture5).abi_CreateFrameReaderWithSubtypeAsync(inputSource, outputSubtype, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture5)this.asInterface(uuid("da787c22-3a9b-4720-a71e-97900a316e5a"))).abi_CreateFrameReaderWithSubtypeAsync(inputSource, outputSubtype, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) CreateFrameReaderWithSubtypeAndSizeAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, HSTRING outputSubtype, Windows.Graphics.Imaging.BitmapSize outputSize)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture5).abi_CreateFrameReaderWithSubtypeAndSizeAsync(inputSource, outputSubtype, outputSize, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture5)this.asInterface(uuid("da787c22-3a9b-4720-a71e-97900a316e5a"))).abi_CreateFrameReaderWithSubtypeAndSizeAsync(inputSource, outputSubtype, outputSize, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnCaptureDeviceExclusiveControlStatusChanged(void delegate(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureDeviceExclusiveControlStatusChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture6).add_CaptureDeviceExclusiveControlStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureDeviceExclusiveControlStatusChangedEventArgs), Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureDeviceExclusiveControlStatusChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture6)this.asInterface(uuid("228948bd-4b20-4bb1-9fd6-a583212a1012"))).add_CaptureDeviceExclusiveControlStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureDeviceExclusiveControlStatusChangedEventArgs), Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureDeviceExclusiveControlStatusChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCaptureDeviceExclusiveControlStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture6).remove_CaptureDeviceExclusiveControlStatusChanged(token));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture6)this.asInterface(uuid("228948bd-4b20-4bb1-9fd6-a583212a1012"))).remove_CaptureDeviceExclusiveControlStatusChanged(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MultiSourceMediaFrameReader) CreateMultiSourceFrameReaderAsync(Windows.Foundation.Collections.IIterable!(Windows.Media.Capture.Frames.MediaFrameSource) inputSources)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MultiSourceMediaFrameReader) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapture6).abi_CreateMultiSourceFrameReaderAsync(inputSources, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture6)this.asInterface(uuid("228948bd-4b20-4bb1-9fd6-a583212a1012"))).abi_CreateMultiSourceFrameReaderAsync(inputSources, &_ret));
 		return _ret;
 	}
 
@@ -4258,32 +4258,32 @@ extern(Windows):
 	static bool IsVideoProfileSupported(HSTRING videoDeviceId)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Capture.IMediaCaptureStatics).abi_IsVideoProfileSupported(videoDeviceId, &_ret));
+		Debug.OK(staticInstance.abi_IsVideoProfileSupported(videoDeviceId, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfile) FindAllVideoProfiles(HSTRING videoDeviceId)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfile) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Capture.IMediaCaptureStatics).abi_FindAllVideoProfiles(videoDeviceId, &_ret));
+		Debug.OK(staticInstance.abi_FindAllVideoProfiles(videoDeviceId, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfile) FindConcurrentProfiles(HSTRING videoDeviceId)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfile) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Capture.IMediaCaptureStatics).abi_FindConcurrentProfiles(videoDeviceId, &_ret));
+		Debug.OK(staticInstance.abi_FindConcurrentProfiles(videoDeviceId, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfile) FindKnownVideoProfiles(HSTRING videoDeviceId, Windows.Media.Capture.KnownVideoProfile name)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfile) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Capture.IMediaCaptureStatics).abi_FindKnownVideoProfiles(videoDeviceId, name, &_ret));
+		Debug.OK(staticInstance.abi_FindKnownVideoProfiles(videoDeviceId, name, &_ret));
 		return _ret;
 	}
 	static MediaCapture New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MediaCapture).abi_ActivateInstance(&ret));
-		return ret.as!(MediaCapture);
+		return cast(MediaCapture) ret;
 	}
 }
 
@@ -4293,13 +4293,13 @@ extern(Windows):
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs)this.asInterface(uuid("9d2f920d-a588-43c6-89d6-5ad322af006a"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.MediaCaptureDeviceExclusiveControlStatus Status()
 	{
 		Windows.Media.Capture.MediaCaptureDeviceExclusiveControlStatus _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs).get_Status(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs)this.asInterface(uuid("9d2f920d-a588-43c6-89d6-5ad322af006a"))).get_Status(&_ret));
 		return _ret;
 	}
 }
@@ -4310,13 +4310,13 @@ extern(Windows):
 	final HSTRING Message()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureFailedEventArgs).get_Message(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureFailedEventArgs)this.asInterface(uuid("80fde3f4-54c4-42c0-8d19-cea1a87ca18b"))).get_Message(&_ret));
 		return _ret;
 	}
 	final UINT32 Code()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureFailedEventArgs).get_Code(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureFailedEventArgs)this.asInterface(uuid("80fde3f4-54c4-42c0-8d19-cea1a87ca18b"))).get_Code(&_ret));
 		return _ret;
 	}
 }
@@ -4327,7 +4327,7 @@ extern(Windows):
 	final Windows.Media.Devices.MediaCaptureFocusState FocusState()
 	{
 		Windows.Media.Devices.MediaCaptureFocusState _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureFocusChangedEventArgs).get_FocusState(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureFocusChangedEventArgs)this.asInterface(uuid("81e1bc7f-2277-493e-abee-d3f44ff98c04"))).get_FocusState(&_ret));
 		return _ret;
 	}
 }
@@ -4337,169 +4337,169 @@ interface MediaCaptureInitializationSettings : Windows.Media.Capture.IMediaCaptu
 extern(Windows):
 	final void AudioDeviceId(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings).set_AudioDeviceId(value));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings)this.asInterface(uuid("9782ba70-ea65-4900-9356-8ca887726884"))).set_AudioDeviceId(value));
 	}
 	final HSTRING AudioDeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings).get_AudioDeviceId(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings)this.asInterface(uuid("9782ba70-ea65-4900-9356-8ca887726884"))).get_AudioDeviceId(&_ret));
 		return _ret;
 	}
 	final void VideoDeviceId(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings).set_VideoDeviceId(value));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings)this.asInterface(uuid("9782ba70-ea65-4900-9356-8ca887726884"))).set_VideoDeviceId(value));
 	}
 	final HSTRING VideoDeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings).get_VideoDeviceId(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings)this.asInterface(uuid("9782ba70-ea65-4900-9356-8ca887726884"))).get_VideoDeviceId(&_ret));
 		return _ret;
 	}
 	final void StreamingCaptureMode(Windows.Media.Capture.StreamingCaptureMode value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings).set_StreamingCaptureMode(value));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings)this.asInterface(uuid("9782ba70-ea65-4900-9356-8ca887726884"))).set_StreamingCaptureMode(value));
 	}
 	final Windows.Media.Capture.StreamingCaptureMode StreamingCaptureMode()
 	{
 		Windows.Media.Capture.StreamingCaptureMode _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings).get_StreamingCaptureMode(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings)this.asInterface(uuid("9782ba70-ea65-4900-9356-8ca887726884"))).get_StreamingCaptureMode(&_ret));
 		return _ret;
 	}
 	final void PhotoCaptureSource(Windows.Media.Capture.PhotoCaptureSource value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings).set_PhotoCaptureSource(value));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings)this.asInterface(uuid("9782ba70-ea65-4900-9356-8ca887726884"))).set_PhotoCaptureSource(value));
 	}
 	final Windows.Media.Capture.PhotoCaptureSource PhotoCaptureSource()
 	{
 		Windows.Media.Capture.PhotoCaptureSource _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings).get_PhotoCaptureSource(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings)this.asInterface(uuid("9782ba70-ea65-4900-9356-8ca887726884"))).get_PhotoCaptureSource(&_ret));
 		return _ret;
 	}
 	final void MediaCategory(Windows.Media.Capture.MediaCategory value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings2).set_MediaCategory(value));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings2)this.asInterface(uuid("404e0626-c9dc-43e9-aee4-e6bf1b57b44c"))).set_MediaCategory(value));
 	}
 	final Windows.Media.Capture.MediaCategory MediaCategory()
 	{
 		Windows.Media.Capture.MediaCategory _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings2).get_MediaCategory(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings2)this.asInterface(uuid("404e0626-c9dc-43e9-aee4-e6bf1b57b44c"))).get_MediaCategory(&_ret));
 		return _ret;
 	}
 	final void AudioProcessing(Windows.Media.AudioProcessing value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings2).set_AudioProcessing(value));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings2)this.asInterface(uuid("404e0626-c9dc-43e9-aee4-e6bf1b57b44c"))).set_AudioProcessing(value));
 	}
 	final Windows.Media.AudioProcessing AudioProcessing()
 	{
 		Windows.Media.AudioProcessing _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings2).get_AudioProcessing(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings2)this.asInterface(uuid("404e0626-c9dc-43e9-aee4-e6bf1b57b44c"))).get_AudioProcessing(&_ret));
 		return _ret;
 	}
 	final void AudioSource(Windows.Media.Core.IMediaSource value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings3).set_AudioSource(value));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings3)this.asInterface(uuid("4160519d-be48-4730-8104-0cf6e9e97948"))).set_AudioSource(value));
 	}
 	final Windows.Media.Core.IMediaSource AudioSource()
 	{
 		Windows.Media.Core.IMediaSource _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings3).get_AudioSource(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings3)this.asInterface(uuid("4160519d-be48-4730-8104-0cf6e9e97948"))).get_AudioSource(&_ret));
 		return _ret;
 	}
 	final void VideoSource(Windows.Media.Core.IMediaSource value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings3).set_VideoSource(value));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings3)this.asInterface(uuid("4160519d-be48-4730-8104-0cf6e9e97948"))).set_VideoSource(value));
 	}
 	final Windows.Media.Core.IMediaSource VideoSource()
 	{
 		Windows.Media.Core.IMediaSource _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings3).get_VideoSource(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings3)this.asInterface(uuid("4160519d-be48-4730-8104-0cf6e9e97948"))).get_VideoSource(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.MediaCaptureVideoProfile VideoProfile()
 	{
 		Windows.Media.Capture.MediaCaptureVideoProfile _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings4).get_VideoProfile(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings4)this.asInterface(uuid("f502a537-4cb7-4d28-95ed-4f9f012e0518"))).get_VideoProfile(&_ret));
 		return _ret;
 	}
 	final void VideoProfile(Windows.Media.Capture.MediaCaptureVideoProfile value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings4).set_VideoProfile(value));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings4)this.asInterface(uuid("f502a537-4cb7-4d28-95ed-4f9f012e0518"))).set_VideoProfile(value));
 	}
 	final Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription PreviewMediaDescription()
 	{
 		Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings4).get_PreviewMediaDescription(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings4)this.asInterface(uuid("f502a537-4cb7-4d28-95ed-4f9f012e0518"))).get_PreviewMediaDescription(&_ret));
 		return _ret;
 	}
 	final void PreviewMediaDescription(Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings4).set_PreviewMediaDescription(value));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings4)this.asInterface(uuid("f502a537-4cb7-4d28-95ed-4f9f012e0518"))).set_PreviewMediaDescription(value));
 	}
 	final Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription RecordMediaDescription()
 	{
 		Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings4).get_RecordMediaDescription(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings4)this.asInterface(uuid("f502a537-4cb7-4d28-95ed-4f9f012e0518"))).get_RecordMediaDescription(&_ret));
 		return _ret;
 	}
 	final void RecordMediaDescription(Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings4).set_RecordMediaDescription(value));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings4)this.asInterface(uuid("f502a537-4cb7-4d28-95ed-4f9f012e0518"))).set_RecordMediaDescription(value));
 	}
 	final Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription PhotoMediaDescription()
 	{
 		Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings4).get_PhotoMediaDescription(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings4)this.asInterface(uuid("f502a537-4cb7-4d28-95ed-4f9f012e0518"))).get_PhotoMediaDescription(&_ret));
 		return _ret;
 	}
 	final void PhotoMediaDescription(Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings4).set_PhotoMediaDescription(value));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings4)this.asInterface(uuid("f502a537-4cb7-4d28-95ed-4f9f012e0518"))).set_PhotoMediaDescription(value));
 	}
 	final Windows.Media.Capture.Frames.MediaFrameSourceGroup SourceGroup()
 	{
 		Windows.Media.Capture.Frames.MediaFrameSourceGroup _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings5).get_SourceGroup(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings5)this.asInterface(uuid("d5a2e3b8-2626-4e94-b7b3-5308a0f64b1a"))).get_SourceGroup(&_ret));
 		return _ret;
 	}
 	final void SourceGroup(Windows.Media.Capture.Frames.MediaFrameSourceGroup value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings5).set_SourceGroup(value));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings5)this.asInterface(uuid("d5a2e3b8-2626-4e94-b7b3-5308a0f64b1a"))).set_SourceGroup(value));
 	}
 	final Windows.Media.Capture.MediaCaptureSharingMode SharingMode()
 	{
 		Windows.Media.Capture.MediaCaptureSharingMode _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings5).get_SharingMode(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings5)this.asInterface(uuid("d5a2e3b8-2626-4e94-b7b3-5308a0f64b1a"))).get_SharingMode(&_ret));
 		return _ret;
 	}
 	final void SharingMode(Windows.Media.Capture.MediaCaptureSharingMode value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings5).set_SharingMode(value));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings5)this.asInterface(uuid("d5a2e3b8-2626-4e94-b7b3-5308a0f64b1a"))).set_SharingMode(value));
 	}
 	final Windows.Media.Capture.MediaCaptureMemoryPreference MemoryPreference()
 	{
 		Windows.Media.Capture.MediaCaptureMemoryPreference _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings5).get_MemoryPreference(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings5)this.asInterface(uuid("d5a2e3b8-2626-4e94-b7b3-5308a0f64b1a"))).get_MemoryPreference(&_ret));
 		return _ret;
 	}
 	final void MemoryPreference(Windows.Media.Capture.MediaCaptureMemoryPreference value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings5).set_MemoryPreference(value));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings5)this.asInterface(uuid("d5a2e3b8-2626-4e94-b7b3-5308a0f64b1a"))).set_MemoryPreference(value));
 	}
 	final bool AlwaysPlaySystemShutterSound()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings6).get_AlwaysPlaySystemShutterSound(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings6)this.asInterface(uuid("b2e26b47-3db1-4d33-ab63-0ffa09056585"))).get_AlwaysPlaySystemShutterSound(&_ret));
 		return _ret;
 	}
 	final void AlwaysPlaySystemShutterSound(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureInitializationSettings6).set_AlwaysPlaySystemShutterSound(value));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureInitializationSettings6)this.asInterface(uuid("b2e26b47-3db1-4d33-ab63-0ffa09056585"))).set_AlwaysPlaySystemShutterSound(value));
 	}
 	static MediaCaptureInitializationSettings New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MediaCaptureInitializationSettings).abi_ActivateInstance(&ret));
-		return ret.as!(MediaCaptureInitializationSettings);
+		return cast(MediaCaptureInitializationSettings) ret;
 	}
 }
 
@@ -4509,18 +4509,18 @@ extern(Windows):
 	final Windows.Media.VideoFrame LastFrame()
 	{
 		Windows.Media.VideoFrame _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapturePauseResult).get_LastFrame(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapturePauseResult)this.asInterface(uuid("aec47ca3-4477-4b04-a06f-2c1c5182fe9d"))).get_LastFrame(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan RecordDuration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCapturePauseResult).get_RecordDuration(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapturePauseResult)this.asInterface(uuid("aec47ca3-4477-4b04-a06f-2c1c5182fe9d"))).get_RecordDuration(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 }
 
@@ -4530,79 +4530,79 @@ extern(Windows):
 	final HSTRING AudioDeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings).get_AudioDeviceId(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureSettings)this.asInterface(uuid("1d83aafe-6d45-4477-8dc4-ac5bc01c4091"))).get_AudioDeviceId(&_ret));
 		return _ret;
 	}
 	final HSTRING VideoDeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings).get_VideoDeviceId(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureSettings)this.asInterface(uuid("1d83aafe-6d45-4477-8dc4-ac5bc01c4091"))).get_VideoDeviceId(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.StreamingCaptureMode StreamingCaptureMode()
 	{
 		Windows.Media.Capture.StreamingCaptureMode _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings).get_StreamingCaptureMode(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureSettings)this.asInterface(uuid("1d83aafe-6d45-4477-8dc4-ac5bc01c4091"))).get_StreamingCaptureMode(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.PhotoCaptureSource PhotoCaptureSource()
 	{
 		Windows.Media.Capture.PhotoCaptureSource _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings).get_PhotoCaptureSource(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureSettings)this.asInterface(uuid("1d83aafe-6d45-4477-8dc4-ac5bc01c4091"))).get_PhotoCaptureSource(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.VideoDeviceCharacteristic VideoDeviceCharacteristic()
 	{
 		Windows.Media.Capture.VideoDeviceCharacteristic _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings).get_VideoDeviceCharacteristic(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureSettings)this.asInterface(uuid("1d83aafe-6d45-4477-8dc4-ac5bc01c4091"))).get_VideoDeviceCharacteristic(&_ret));
 		return _ret;
 	}
 	final bool ConcurrentRecordAndPhotoSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings2).get_ConcurrentRecordAndPhotoSupported(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureSettings2)this.asInterface(uuid("6f9e7cfb-fa9f-4b13-9cbe-5ab94f1f3493"))).get_ConcurrentRecordAndPhotoSupported(&_ret));
 		return _ret;
 	}
 	final bool ConcurrentRecordAndPhotoSequenceSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings2).get_ConcurrentRecordAndPhotoSequenceSupported(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureSettings2)this.asInterface(uuid("6f9e7cfb-fa9f-4b13-9cbe-5ab94f1f3493"))).get_ConcurrentRecordAndPhotoSequenceSupported(&_ret));
 		return _ret;
 	}
 	final bool CameraSoundRequiredForRegion()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings2).get_CameraSoundRequiredForRegion(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureSettings2)this.asInterface(uuid("6f9e7cfb-fa9f-4b13-9cbe-5ab94f1f3493"))).get_CameraSoundRequiredForRegion(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(UINT32) Horizontal35mmEquivalentFocalLength()
 	{
 		Windows.Foundation.IReference!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings2).get_Horizontal35mmEquivalentFocalLength(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureSettings2)this.asInterface(uuid("6f9e7cfb-fa9f-4b13-9cbe-5ab94f1f3493"))).get_Horizontal35mmEquivalentFocalLength(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(INT32) PitchOffsetDegrees()
 	{
 		Windows.Foundation.IReference!(INT32) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings2).get_PitchOffsetDegrees(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureSettings2)this.asInterface(uuid("6f9e7cfb-fa9f-4b13-9cbe-5ab94f1f3493"))).get_PitchOffsetDegrees(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(UINT32) Vertical35mmEquivalentFocalLength()
 	{
 		Windows.Foundation.IReference!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings2).get_Vertical35mmEquivalentFocalLength(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureSettings2)this.asInterface(uuid("6f9e7cfb-fa9f-4b13-9cbe-5ab94f1f3493"))).get_Vertical35mmEquivalentFocalLength(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.MediaCategory MediaCategory()
 	{
 		Windows.Media.Capture.MediaCategory _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings2).get_MediaCategory(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureSettings2)this.asInterface(uuid("6f9e7cfb-fa9f-4b13-9cbe-5ab94f1f3493"))).get_MediaCategory(&_ret));
 		return _ret;
 	}
 	final Windows.Media.AudioProcessing AudioProcessing()
 	{
 		Windows.Media.AudioProcessing _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureSettings2).get_AudioProcessing(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureSettings2)this.asInterface(uuid("6f9e7cfb-fa9f-4b13-9cbe-5ab94f1f3493"))).get_AudioProcessing(&_ret));
 		return _ret;
 	}
 }
@@ -4613,18 +4613,18 @@ extern(Windows):
 	final Windows.Media.VideoFrame LastFrame()
 	{
 		Windows.Media.VideoFrame _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureStopResult).get_LastFrame(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureStopResult)this.asInterface(uuid("f9db6a2a-a092-4ad1-97d4-f201f9d082db"))).get_LastFrame(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan RecordDuration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureStopResult).get_RecordDuration(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureStopResult)this.asInterface(uuid("f9db6a2a-a092-4ad1-97d4-f201f9d082db"))).get_RecordDuration(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 }
 
@@ -4634,37 +4634,37 @@ extern(Windows):
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoProfile).get_Id(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoProfile)this.asInterface(uuid("21a073bf-a3ee-4ecf-9ef6-50b0bc4e1305"))).get_Id(&_ret));
 		return _ret;
 	}
 	final HSTRING VideoDeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoProfile).get_VideoDeviceId(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoProfile)this.asInterface(uuid("21a073bf-a3ee-4ecf-9ef6-50b0bc4e1305"))).get_VideoDeviceId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription) SupportedPreviewMediaDescription()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoProfile).get_SupportedPreviewMediaDescription(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoProfile)this.asInterface(uuid("21a073bf-a3ee-4ecf-9ef6-50b0bc4e1305"))).get_SupportedPreviewMediaDescription(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription) SupportedRecordMediaDescription()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoProfile).get_SupportedRecordMediaDescription(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoProfile)this.asInterface(uuid("21a073bf-a3ee-4ecf-9ef6-50b0bc4e1305"))).get_SupportedRecordMediaDescription(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription) SupportedPhotoMediaDescription()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoProfile).get_SupportedPhotoMediaDescription(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoProfile)this.asInterface(uuid("21a073bf-a3ee-4ecf-9ef6-50b0bc4e1305"))).get_SupportedPhotoMediaDescription(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfile) GetConcurrency()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.MediaCaptureVideoProfile) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoProfile).abi_GetConcurrency(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoProfile)this.asInterface(uuid("21a073bf-a3ee-4ecf-9ef6-50b0bc4e1305"))).abi_GetConcurrency(&_ret));
 		return _ret;
 	}
 }
@@ -4675,31 +4675,31 @@ extern(Windows):
 	final UINT32 Width()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoProfileMediaDescription).get_Width(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoProfileMediaDescription)this.asInterface(uuid("8012afef-b691-49ff-83f2-c1e76eaaea1b"))).get_Width(&_ret));
 		return _ret;
 	}
 	final UINT32 Height()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoProfileMediaDescription).get_Height(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoProfileMediaDescription)this.asInterface(uuid("8012afef-b691-49ff-83f2-c1e76eaaea1b"))).get_Height(&_ret));
 		return _ret;
 	}
 	final double FrameRate()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoProfileMediaDescription).get_FrameRate(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoProfileMediaDescription)this.asInterface(uuid("8012afef-b691-49ff-83f2-c1e76eaaea1b"))).get_FrameRate(&_ret));
 		return _ret;
 	}
 	final bool IsVariablePhotoSequenceSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoProfileMediaDescription).get_IsVariablePhotoSequenceSupported(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoProfileMediaDescription)this.asInterface(uuid("8012afef-b691-49ff-83f2-c1e76eaaea1b"))).get_IsVariablePhotoSequenceSupported(&_ret));
 		return _ret;
 	}
 	final bool IsHdrVideoSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IMediaCaptureVideoProfileMediaDescription).get_IsHdrVideoSupported(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoProfileMediaDescription)this.asInterface(uuid("8012afef-b691-49ff-83f2-c1e76eaaea1b"))).get_IsHdrVideoSupported(&_ret));
 		return _ret;
 	}
 }
@@ -4710,13 +4710,13 @@ extern(Windows):
 	final Windows.Media.Capture.CapturedFrame Frame()
 	{
 		Windows.Media.Capture.CapturedFrame _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IOptionalReferencePhotoCapturedEventArgs).get_Frame(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IOptionalReferencePhotoCapturedEventArgs)this.asInterface(uuid("470f88b3-1e6d-4051-9c8b-f1d85af047b7"))).get_Frame(&_ret));
 		return _ret;
 	}
 	final IInspectable Context()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IOptionalReferencePhotoCapturedEventArgs).get_Context(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IOptionalReferencePhotoCapturedEventArgs)this.asInterface(uuid("470f88b3-1e6d-4051-9c8b-f1d85af047b7"))).get_Context(&_ret));
 		return _ret;
 	}
 }
@@ -4727,19 +4727,19 @@ extern(Windows):
 	final Windows.Media.Capture.CapturedFrame Frame()
 	{
 		Windows.Media.Capture.CapturedFrame _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IPhotoCapturedEventArgs).get_Frame(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IPhotoCapturedEventArgs)this.asInterface(uuid("373bfbc1-984e-4ff0-bf85-1c00aabc5a45"))).get_Frame(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.CapturedFrame Thumbnail()
 	{
 		Windows.Media.Capture.CapturedFrame _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IPhotoCapturedEventArgs).get_Thumbnail(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IPhotoCapturedEventArgs)this.asInterface(uuid("373bfbc1-984e-4ff0-bf85-1c00aabc5a45"))).get_Thumbnail(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan CaptureTimeOffset()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IPhotoCapturedEventArgs).get_CaptureTimeOffset(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IPhotoCapturedEventArgs)this.asInterface(uuid("373bfbc1-984e-4ff0-bf85-1c00aabc5a45"))).get_CaptureTimeOffset(&_ret));
 		return _ret;
 	}
 }
@@ -4750,13 +4750,13 @@ extern(Windows):
 	final Windows.Media.Capture.CapturedFrame Frame()
 	{
 		Windows.Media.Capture.CapturedFrame _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IPhotoConfirmationCapturedEventArgs).get_Frame(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IPhotoConfirmationCapturedEventArgs)this.asInterface(uuid("ab473672-c28a-4827-8f8d-3636d3beb51e"))).get_Frame(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan CaptureTimeOffset()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IPhotoConfirmationCapturedEventArgs).get_CaptureTimeOffset(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IPhotoConfirmationCapturedEventArgs)this.asInterface(uuid("ab473672-c28a-4827-8f8d-3636d3beb51e"))).get_CaptureTimeOffset(&_ret));
 		return _ret;
 	}
 }
@@ -4767,13 +4767,13 @@ extern(Windows):
 	final Windows.Media.MediaProperties.VideoEncodingProperties InputProperties()
 	{
 		Windows.Media.MediaProperties.VideoEncodingProperties _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IVideoStreamConfiguration).get_InputProperties(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IVideoStreamConfiguration)this.asInterface(uuid("d8770a6f-4390-4b5e-ad3e-0f8af0963490"))).get_InputProperties(&_ret));
 		return _ret;
 	}
 	final Windows.Media.MediaProperties.VideoEncodingProperties OutputProperties()
 	{
 		Windows.Media.MediaProperties.VideoEncodingProperties _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.IVideoStreamConfiguration).get_OutputProperties(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.IVideoStreamConfiguration)this.asInterface(uuid("d8770a6f-4390-4b5e-ad3e-0f8af0963490"))).get_OutputProperties(&_ret));
 		return _ret;
 	}
 }

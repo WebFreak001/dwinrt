@@ -677,53 +677,53 @@ extern(Windows):
 	final ubyte* WirelessNetworkId(UINT32* out___valueSize)
 	{
 		ubyte* _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IHotspotAuthenticationContext).get_WirelessNetworkId(out___valueSize, &_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IHotspotAuthenticationContext)this.asInterface(uuid("e756c791-1003-4de5-83c7-de61d88831d0"))).get_WirelessNetworkId(out___valueSize, &_ret));
 		return _ret;
 	}
 	final Windows.Networking.Connectivity.NetworkAdapter NetworkAdapter()
 	{
 		Windows.Networking.Connectivity.NetworkAdapter _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IHotspotAuthenticationContext).get_NetworkAdapter(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IHotspotAuthenticationContext)this.asInterface(uuid("e756c791-1003-4de5-83c7-de61d88831d0"))).get_NetworkAdapter(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Uri RedirectMessageUrl()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IHotspotAuthenticationContext).get_RedirectMessageUrl(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IHotspotAuthenticationContext)this.asInterface(uuid("e756c791-1003-4de5-83c7-de61d88831d0"))).get_RedirectMessageUrl(&_ret));
 		return _ret;
 	}
 	final Windows.Data.Xml.Dom.XmlDocument RedirectMessageXml()
 	{
 		Windows.Data.Xml.Dom.XmlDocument _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IHotspotAuthenticationContext).get_RedirectMessageXml(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IHotspotAuthenticationContext)this.asInterface(uuid("e756c791-1003-4de5-83c7-de61d88831d0"))).get_RedirectMessageXml(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Uri AuthenticationUrl()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IHotspotAuthenticationContext).get_AuthenticationUrl(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IHotspotAuthenticationContext)this.asInterface(uuid("e756c791-1003-4de5-83c7-de61d88831d0"))).get_AuthenticationUrl(&_ret));
 		return _ret;
 	}
 	final void IssueCredentials(HSTRING userName, HSTRING password, HSTRING extraParameters, bool markAsManualConnectOnFailure)
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IHotspotAuthenticationContext).abi_IssueCredentials(userName, password, extraParameters, markAsManualConnectOnFailure));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IHotspotAuthenticationContext)this.asInterface(uuid("e756c791-1003-4de5-83c7-de61d88831d0"))).abi_IssueCredentials(userName, password, extraParameters, markAsManualConnectOnFailure));
 	}
 	final void AbortAuthentication(bool markAsManual)
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IHotspotAuthenticationContext).abi_AbortAuthentication(markAsManual));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IHotspotAuthenticationContext)this.asInterface(uuid("e756c791-1003-4de5-83c7-de61d88831d0"))).abi_AbortAuthentication(markAsManual));
 	}
 	final void SkipAuthentication()
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IHotspotAuthenticationContext).abi_SkipAuthentication());
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IHotspotAuthenticationContext)this.asInterface(uuid("e756c791-1003-4de5-83c7-de61d88831d0"))).abi_SkipAuthentication());
 	}
 	final void TriggerAttentionRequired(HSTRING packageRelativeApplicationId, HSTRING applicationParameters)
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IHotspotAuthenticationContext).abi_TriggerAttentionRequired(packageRelativeApplicationId, applicationParameters));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IHotspotAuthenticationContext)this.asInterface(uuid("e756c791-1003-4de5-83c7-de61d88831d0"))).abi_TriggerAttentionRequired(packageRelativeApplicationId, applicationParameters));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.HotspotCredentialsAuthenticationResult) IssueCredentialsAsync(HSTRING userName, HSTRING password, HSTRING extraParameters, bool markAsManualConnectOnFailure)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.HotspotCredentialsAuthenticationResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IHotspotAuthenticationContext2).abi_IssueCredentialsAsync(userName, password, extraParameters, markAsManualConnectOnFailure, &_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IHotspotAuthenticationContext2)this.asInterface(uuid("e756c791-1004-4de5-83c7-de61d88831d0"))).abi_IssueCredentialsAsync(userName, password, extraParameters, markAsManualConnectOnFailure, &_ret));
 		return _ret;
 	}
 
@@ -736,7 +736,7 @@ extern(Windows):
 	static bool TryGetAuthenticationContext(HSTRING evenToken, Windows.Networking.NetworkOperators.HotspotAuthenticationContext* out_context)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IHotspotAuthenticationContextStatics).abi_TryGetAuthenticationContext(evenToken, out_context, &_ret));
+		Debug.OK(staticInstance.abi_TryGetAuthenticationContext(evenToken, out_context, &_ret));
 		return _ret;
 	}
 }
@@ -747,7 +747,7 @@ extern(Windows):
 	final HSTRING EventToken()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IHotspotAuthenticationEventDetails).get_EventToken(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IHotspotAuthenticationEventDetails)this.asInterface(uuid("e756c791-1001-4de5-83c7-de61d88831d0"))).get_EventToken(&_ret));
 		return _ret;
 	}
 }
@@ -758,25 +758,25 @@ extern(Windows):
 	final bool HasNetworkErrorOccurred()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IHotspotCredentialsAuthenticationResult).get_HasNetworkErrorOccurred(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IHotspotCredentialsAuthenticationResult)this.asInterface(uuid("e756c791-1005-4de5-83c7-de61d88831d0"))).get_HasNetworkErrorOccurred(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.HotspotAuthenticationResponseCode ResponseCode()
 	{
 		Windows.Networking.NetworkOperators.HotspotAuthenticationResponseCode _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IHotspotCredentialsAuthenticationResult).get_ResponseCode(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IHotspotCredentialsAuthenticationResult)this.asInterface(uuid("e756c791-1005-4de5-83c7-de61d88831d0"))).get_ResponseCode(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Uri LogoffUrl()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IHotspotCredentialsAuthenticationResult).get_LogoffUrl(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IHotspotCredentialsAuthenticationResult)this.asInterface(uuid("e756c791-1005-4de5-83c7-de61d88831d0"))).get_LogoffUrl(&_ret));
 		return _ret;
 	}
 	final Windows.Data.Xml.Dom.XmlDocument AuthenticationReplyXml()
 	{
 		Windows.Data.Xml.Dom.XmlDocument _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IHotspotCredentialsAuthenticationResult).get_AuthenticationReplyXml(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IHotspotCredentialsAuthenticationResult)this.asInterface(uuid("e756c791-1005-4de5-83c7-de61d88831d0"))).get_AuthenticationReplyXml(&_ret));
 		return _ret;
 	}
 }
@@ -792,19 +792,19 @@ interface KnownCSimFilePaths
 	static Windows.Foundation.Collections.IVectorView!(UINT32) EFSpn()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownCSimFilePathsStatics).get_EFSpn(&_ret));
+		Debug.OK(staticInstance.get_EFSpn(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(UINT32) Gid1()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownCSimFilePathsStatics).get_Gid1(&_ret));
+		Debug.OK(staticInstance.get_Gid1(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(UINT32) Gid2()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownCSimFilePathsStatics).get_Gid2(&_ret));
+		Debug.OK(staticInstance.get_Gid2(&_ret));
 		return _ret;
 	}
 }
@@ -820,19 +820,19 @@ interface KnownRuimFilePaths
 	static Windows.Foundation.Collections.IVectorView!(UINT32) EFSpn()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownRuimFilePathsStatics).get_EFSpn(&_ret));
+		Debug.OK(staticInstance.get_EFSpn(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(UINT32) Gid1()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownRuimFilePathsStatics).get_Gid1(&_ret));
+		Debug.OK(staticInstance.get_Gid1(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(UINT32) Gid2()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownRuimFilePathsStatics).get_Gid2(&_ret));
+		Debug.OK(staticInstance.get_Gid2(&_ret));
 		return _ret;
 	}
 }
@@ -848,25 +848,25 @@ interface KnownSimFilePaths
 	static Windows.Foundation.Collections.IVectorView!(UINT32) EFOns()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownSimFilePathsStatics).get_EFOns(&_ret));
+		Debug.OK(staticInstance.get_EFOns(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(UINT32) EFSpn()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownSimFilePathsStatics).get_EFSpn(&_ret));
+		Debug.OK(staticInstance.get_EFSpn(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(UINT32) Gid1()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownSimFilePathsStatics).get_Gid1(&_ret));
+		Debug.OK(staticInstance.get_Gid1(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(UINT32) Gid2()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownSimFilePathsStatics).get_Gid2(&_ret));
+		Debug.OK(staticInstance.get_Gid2(&_ret));
 		return _ret;
 	}
 }
@@ -882,31 +882,31 @@ interface KnownUSimFilePaths
 	static Windows.Foundation.Collections.IVectorView!(UINT32) EFSpn()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownUSimFilePathsStatics).get_EFSpn(&_ret));
+		Debug.OK(staticInstance.get_EFSpn(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(UINT32) EFOpl()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownUSimFilePathsStatics).get_EFOpl(&_ret));
+		Debug.OK(staticInstance.get_EFOpl(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(UINT32) EFPnn()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownUSimFilePathsStatics).get_EFPnn(&_ret));
+		Debug.OK(staticInstance.get_EFPnn(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(UINT32) Gid1()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownUSimFilePathsStatics).get_Gid1(&_ret));
+		Debug.OK(staticInstance.get_Gid1(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(UINT32) Gid2()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IKnownUSimFilePathsStatics).get_Gid2(&_ret));
+		Debug.OK(staticInstance.get_Gid2(&_ret));
 		return _ret;
 	}
 }
@@ -917,43 +917,43 @@ extern(Windows):
 	final HSTRING NetworkAccountId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccount).get_NetworkAccountId(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccount)this.asInterface(uuid("36c24ccd-cee2-43e0-a603-ee86a36d6570"))).get_NetworkAccountId(&_ret));
 		return _ret;
 	}
 	final GUID ServiceProviderGuid()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccount).get_ServiceProviderGuid(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccount)this.asInterface(uuid("36c24ccd-cee2-43e0-a603-ee86a36d6570"))).get_ServiceProviderGuid(&_ret));
 		return _ret;
 	}
 	final HSTRING ServiceProviderName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccount).get_ServiceProviderName(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccount)this.asInterface(uuid("36c24ccd-cee2-43e0-a603-ee86a36d6570"))).get_ServiceProviderName(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.MobileBroadbandNetwork CurrentNetwork()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandNetwork _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccount).get_CurrentNetwork(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccount)this.asInterface(uuid("36c24ccd-cee2-43e0-a603-ee86a36d6570"))).get_CurrentNetwork(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.MobileBroadbandDeviceInformation CurrentDeviceInformation()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandDeviceInformation _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccount).get_CurrentDeviceInformation(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccount)this.asInterface(uuid("36c24ccd-cee2-43e0-a603-ee86a36d6570"))).get_CurrentDeviceInformation(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Networking.Connectivity.ConnectionProfile) GetConnectionProfiles()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Networking.Connectivity.ConnectionProfile) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccount2).abi_GetConnectionProfiles(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccount2)this.asInterface(uuid("38f52f1c-1136-4257-959f-b658a352b6d4"))).abi_GetConnectionProfiles(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Uri AccountExperienceUrl()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccount3).get_AccountExperienceUrl(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccount3)this.asInterface(uuid("092a1e21-9379-4b9b-ad31-d5fee2f748c6"))).get_AccountExperienceUrl(&_ret));
 		return _ret;
 	}
 
@@ -966,13 +966,13 @@ extern(Windows):
 	static Windows.Foundation.Collections.IVectorView!(HSTRING) AvailableNetworkAccountIds()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountStatics).get_AvailableNetworkAccountIds(&_ret));
+		Debug.OK(staticInstance.get_AvailableNetworkAccountIds(&_ret));
 		return _ret;
 	}
 	static Windows.Networking.NetworkOperators.MobileBroadbandAccount CreateFromNetworkAccountId(HSTRING networkAccountId)
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandAccount _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountStatics).abi_CreateFromNetworkAccountId(networkAccountId, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromNetworkAccountId(networkAccountId, &_ret));
 		return _ret;
 	}
 }
@@ -983,7 +983,7 @@ extern(Windows):
 	final HSTRING NetworkAccountId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountEventArgs).get_NetworkAccountId(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccountEventArgs)this.asInterface(uuid("3853c880-77de-4c04-bead-a123b08c9f59"))).get_NetworkAccountId(&_ret));
 		return _ret;
 	}
 }
@@ -994,19 +994,19 @@ extern(Windows):
 	final HSTRING NetworkAccountId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountUpdatedEventArgs).get_NetworkAccountId(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccountUpdatedEventArgs)this.asInterface(uuid("7bc31d88-a6bd-49e1-80ab-6b91354a57d4"))).get_NetworkAccountId(&_ret));
 		return _ret;
 	}
 	final bool HasDeviceInformationChanged()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountUpdatedEventArgs).get_HasDeviceInformationChanged(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccountUpdatedEventArgs)this.asInterface(uuid("7bc31d88-a6bd-49e1-80ab-6b91354a57d4"))).get_HasDeviceInformationChanged(&_ret));
 		return _ret;
 	}
 	final bool HasNetworkChanged()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountUpdatedEventArgs).get_HasNetworkChanged(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccountUpdatedEventArgs)this.asInterface(uuid("7bc31d88-a6bd-49e1-80ab-6b91354a57d4"))).get_HasNetworkChanged(&_ret));
 		return _ret;
 	}
 }
@@ -1017,72 +1017,72 @@ extern(Windows):
 	final EventRegistrationToken OnAccountAdded(void delegate(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).add_AccountAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher)this.asInterface(uuid("6bf3335e-23b5-449f-928d-5e0d3e04471d"))).add_AccountAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAccountAdded(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).remove_AccountAdded(cookie));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher)this.asInterface(uuid("6bf3335e-23b5-449f-928d-5e0d3e04471d"))).remove_AccountAdded(cookie));
 	}
 	final EventRegistrationToken OnAccountUpdated(void delegate(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountUpdatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).add_AccountUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountUpdatedEventArgs), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountUpdatedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher)this.asInterface(uuid("6bf3335e-23b5-449f-928d-5e0d3e04471d"))).add_AccountUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountUpdatedEventArgs), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountUpdatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAccountUpdated(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).remove_AccountUpdated(cookie));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher)this.asInterface(uuid("6bf3335e-23b5-449f-928d-5e0d3e04471d"))).remove_AccountUpdated(cookie));
 	}
 	final EventRegistrationToken OnAccountRemoved(void delegate(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).add_AccountRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher)this.asInterface(uuid("6bf3335e-23b5-449f-928d-5e0d3e04471d"))).add_AccountRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, Windows.Networking.NetworkOperators.MobileBroadbandAccountEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAccountRemoved(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).remove_AccountRemoved(cookie));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher)this.asInterface(uuid("6bf3335e-23b5-449f-928d-5e0d3e04471d"))).remove_AccountRemoved(cookie));
 	}
 	final EventRegistrationToken OnEnumerationCompleted(void delegate(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher)this.asInterface(uuid("6bf3335e-23b5-449f-928d-5e0d3e04471d"))).add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeEnumerationCompleted(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).remove_EnumerationCompleted(cookie));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher)this.asInterface(uuid("6bf3335e-23b5-449f-928d-5e0d3e04471d"))).remove_EnumerationCompleted(cookie));
 	}
 	final EventRegistrationToken OnStopped(void delegate(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher)this.asInterface(uuid("6bf3335e-23b5-449f-928d-5e0d3e04471d"))).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable), Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeStopped(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).remove_Stopped(cookie));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher)this.asInterface(uuid("6bf3335e-23b5-449f-928d-5e0d3e04471d"))).remove_Stopped(cookie));
 	}
 	final Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcherStatus Status()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandAccountWatcherStatus _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).get_Status(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher)this.asInterface(uuid("6bf3335e-23b5-449f-928d-5e0d3e04471d"))).get_Status(&_ret));
 		return _ret;
 	}
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).abi_Start());
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher)this.asInterface(uuid("6bf3335e-23b5-449f-928d-5e0d3e04471d"))).abi_Start());
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher).abi_Stop());
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandAccountWatcher)this.asInterface(uuid("6bf3335e-23b5-449f-928d-5e0d3e04471d"))).abi_Stop());
 	}
 	static MobileBroadbandAccountWatcher New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MobileBroadbandAccountWatcher).abi_ActivateInstance(&ret));
-		return ret.as!(MobileBroadbandAccountWatcher);
+		return cast(MobileBroadbandAccountWatcher) ret;
 	}
 }
 
@@ -1092,121 +1092,121 @@ extern(Windows):
 	final Windows.Networking.NetworkOperators.NetworkDeviceStatus NetworkDeviceStatus()
 	{
 		Windows.Networking.NetworkOperators.NetworkDeviceStatus _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation).get_NetworkDeviceStatus(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation)this.asInterface(uuid("e6d08168-e381-4c6e-9be8-fe156969a446"))).get_NetworkDeviceStatus(&_ret));
 		return _ret;
 	}
 	final HSTRING Manufacturer()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation).get_Manufacturer(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation)this.asInterface(uuid("e6d08168-e381-4c6e-9be8-fe156969a446"))).get_Manufacturer(&_ret));
 		return _ret;
 	}
 	final HSTRING Model()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation).get_Model(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation)this.asInterface(uuid("e6d08168-e381-4c6e-9be8-fe156969a446"))).get_Model(&_ret));
 		return _ret;
 	}
 	final HSTRING FirmwareInformation()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation).get_FirmwareInformation(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation)this.asInterface(uuid("e6d08168-e381-4c6e-9be8-fe156969a446"))).get_FirmwareInformation(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.CellularClass CellularClass()
 	{
 		Windows.Devices.Sms.CellularClass _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation).get_CellularClass(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation)this.asInterface(uuid("e6d08168-e381-4c6e-9be8-fe156969a446"))).get_CellularClass(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.DataClasses DataClasses()
 	{
 		Windows.Networking.NetworkOperators.DataClasses _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation).get_DataClasses(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation)this.asInterface(uuid("e6d08168-e381-4c6e-9be8-fe156969a446"))).get_DataClasses(&_ret));
 		return _ret;
 	}
 	final HSTRING CustomDataClass()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation).get_CustomDataClass(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation)this.asInterface(uuid("e6d08168-e381-4c6e-9be8-fe156969a446"))).get_CustomDataClass(&_ret));
 		return _ret;
 	}
 	final HSTRING MobileEquipmentId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation).get_MobileEquipmentId(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation)this.asInterface(uuid("e6d08168-e381-4c6e-9be8-fe156969a446"))).get_MobileEquipmentId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) TelephoneNumbers()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation).get_TelephoneNumbers(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation)this.asInterface(uuid("e6d08168-e381-4c6e-9be8-fe156969a446"))).get_TelephoneNumbers(&_ret));
 		return _ret;
 	}
 	final HSTRING SubscriberId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation).get_SubscriberId(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation)this.asInterface(uuid("e6d08168-e381-4c6e-9be8-fe156969a446"))).get_SubscriberId(&_ret));
 		return _ret;
 	}
 	final HSTRING SimIccId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation).get_SimIccId(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation)this.asInterface(uuid("e6d08168-e381-4c6e-9be8-fe156969a446"))).get_SimIccId(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.MobileBroadbandDeviceType DeviceType()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandDeviceType _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation).get_DeviceType(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation)this.asInterface(uuid("e6d08168-e381-4c6e-9be8-fe156969a446"))).get_DeviceType(&_ret));
 		return _ret;
 	}
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation)this.asInterface(uuid("e6d08168-e381-4c6e-9be8-fe156969a446"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.MobileBroadbandRadioState CurrentRadioState()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandRadioState _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation).get_CurrentRadioState(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation)this.asInterface(uuid("e6d08168-e381-4c6e-9be8-fe156969a446"))).get_CurrentRadioState(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.MobileBroadbandPinManager PinManager()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandPinManager _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation2).get_PinManager(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation2)this.asInterface(uuid("2e467af1-f932-4737-a722-03ba72370cb8"))).get_PinManager(&_ret));
 		return _ret;
 	}
 	final HSTRING Revision()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation2).get_Revision(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation2)this.asInterface(uuid("2e467af1-f932-4737-a722-03ba72370cb8"))).get_Revision(&_ret));
 		return _ret;
 	}
 	final HSTRING SerialNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation2).get_SerialNumber(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation2)this.asInterface(uuid("2e467af1-f932-4737-a722-03ba72370cb8"))).get_SerialNumber(&_ret));
 		return _ret;
 	}
 	final HSTRING SimSpn()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation3).get_SimSpn(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation3)this.asInterface(uuid("e08bb4bd-5d30-4b5a-92cc-d54df881d49e"))).get_SimSpn(&_ret));
 		return _ret;
 	}
 	final HSTRING SimPnn()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation3).get_SimPnn(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation3)this.asInterface(uuid("e08bb4bd-5d30-4b5a-92cc-d54df881d49e"))).get_SimPnn(&_ret));
 		return _ret;
 	}
 	final HSTRING SimGid1()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation3).get_SimGid1(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceInformation3)this.asInterface(uuid("e08bb4bd-5d30-4b5a-92cc-d54df881d49e"))).get_SimGid1(&_ret));
 		return _ret;
 	}
 }
@@ -1217,25 +1217,25 @@ extern(Windows):
 	final GUID DeviceServiceId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceService).get_DeviceServiceId(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceService)this.asInterface(uuid("22be1a52-bd80-40ac-8e1f-2e07836a3dbd"))).get_DeviceServiceId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(UINT32) SupportedCommands()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceService).get_SupportedCommands(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceService)this.asInterface(uuid("22be1a52-bd80-40ac-8e1f-2e07836a3dbd"))).get_SupportedCommands(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataSession OpenDataSession()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataSession _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceService).abi_OpenDataSession(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceService)this.asInterface(uuid("22be1a52-bd80-40ac-8e1f-2e07836a3dbd"))).abi_OpenDataSession(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceCommandSession OpenCommandSession()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceCommandSession _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceService).abi_OpenCommandSession(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceService)this.asInterface(uuid("22be1a52-bd80-40ac-8e1f-2e07836a3dbd"))).abi_OpenCommandSession(&_ret));
 		return _ret;
 	}
 }
@@ -1246,13 +1246,13 @@ extern(Windows):
 	final UINT32 StatusCode()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceCommandResult).get_StatusCode(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceCommandResult)this.asInterface(uuid("b0f46abb-94d6-44b9-a538-f0810b645389"))).get_StatusCode(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer ResponseData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceCommandResult).get_ResponseData(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceCommandResult)this.asInterface(uuid("b0f46abb-94d6-44b9-a538-f0810b645389"))).get_ResponseData(&_ret));
 		return _ret;
 	}
 }
@@ -1263,18 +1263,18 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceCommandResult) SendQueryCommandAsync(UINT32 commandId, Windows.Storage.Streams.IBuffer data)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceCommandResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceCommandSession).abi_SendQueryCommandAsync(commandId, data, &_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceCommandSession)this.asInterface(uuid("fc098a45-913b-4914-b6c3-ae6304593e75"))).abi_SendQueryCommandAsync(commandId, data, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceCommandResult) SendSetCommandAsync(UINT32 commandId, Windows.Storage.Streams.IBuffer data)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceCommandResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceCommandSession).abi_SendSetCommandAsync(commandId, data, &_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceCommandSession)this.asInterface(uuid("fc098a45-913b-4914-b6c3-ae6304593e75"))).abi_SendSetCommandAsync(commandId, data, &_ret));
 		return _ret;
 	}
 	final void CloseSession()
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceCommandSession).abi_CloseSession());
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceCommandSession)this.asInterface(uuid("fc098a45-913b-4914-b6c3-ae6304593e75"))).abi_CloseSession());
 	}
 }
 
@@ -1284,7 +1284,7 @@ extern(Windows):
 	final Windows.Storage.Streams.IBuffer ReceivedData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceDataReceivedEventArgs).get_ReceivedData(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceDataReceivedEventArgs)this.asInterface(uuid("b6aa13de-1380-40e3-8618-73cbca48138c"))).get_ReceivedData(&_ret));
 		return _ret;
 	}
 }
@@ -1295,22 +1295,22 @@ extern(Windows):
 	final Windows.Foundation.IAsyncAction WriteDataAsync(Windows.Storage.Streams.IBuffer value)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceDataSession).abi_WriteDataAsync(value, &_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceDataSession)this.asInterface(uuid("dad62333-8bcf-4289-8a37-045c2169486a"))).abi_WriteDataAsync(value, &_ret));
 		return _ret;
 	}
 	final void CloseSession()
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceDataSession).abi_CloseSession());
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceDataSession)this.asInterface(uuid("dad62333-8bcf-4289-8a37-045c2169486a"))).abi_CloseSession());
 	}
 	final EventRegistrationToken OnDataReceived(void delegate(Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataSession, Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceDataSession).add_DataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataSession, Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataReceivedEventArgs), Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataSession, Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataReceivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceDataSession)this.asInterface(uuid("dad62333-8bcf-4289-8a37-045c2169486a"))).add_DataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataSession, Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataReceivedEventArgs), Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataSession, Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceDataReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDataReceived(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceDataSession).remove_DataReceived(eventCookie));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceDataSession)this.asInterface(uuid("dad62333-8bcf-4289-8a37-045c2169486a"))).remove_DataReceived(eventCookie));
 	}
 }
 
@@ -1320,19 +1320,19 @@ extern(Windows):
 	final GUID DeviceServiceId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceInformation).get_DeviceServiceId(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceInformation)this.asInterface(uuid("53d69b5b-c4ed-45f0-803a-d9417a6d9846"))).get_DeviceServiceId(&_ret));
 		return _ret;
 	}
 	final bool IsDataReadSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceInformation).get_IsDataReadSupported(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceInformation)this.asInterface(uuid("53d69b5b-c4ed-45f0-803a-d9417a6d9846"))).get_IsDataReadSupported(&_ret));
 		return _ret;
 	}
 	final bool IsDataWriteSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceInformation).get_IsDataWriteSupported(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceInformation)this.asInterface(uuid("53d69b5b-c4ed-45f0-803a-d9417a6d9846"))).get_IsDataWriteSupported(&_ret));
 		return _ret;
 	}
 }
@@ -1343,19 +1343,19 @@ extern(Windows):
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceTriggerDetails).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceTriggerDetails)this.asInterface(uuid("4a055b70-b9ae-4458-9241-a6a5fbf18a0c"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final GUID DeviceServiceId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceTriggerDetails).get_DeviceServiceId(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceTriggerDetails)this.asInterface(uuid("4a055b70-b9ae-4458-9241-a6a5fbf18a0c"))).get_DeviceServiceId(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer ReceivedData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceTriggerDetails).get_ReceivedData(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandDeviceServiceTriggerDetails)this.asInterface(uuid("4a055b70-b9ae-4458-9241-a6a5fbf18a0c"))).get_ReceivedData(&_ret));
 		return _ret;
 	}
 }
@@ -1366,61 +1366,61 @@ extern(Windows):
 	final Windows.Networking.NetworkOperators.MobileBroadbandAccount CurrentAccount()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandAccount _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandModem).get_CurrentAccount(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandModem)this.asInterface(uuid("d0356912-e9f9-4f67-a03d-43189a316bf1"))).get_CurrentAccount(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.MobileBroadbandDeviceInformation DeviceInformation()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandDeviceInformation _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandModem).get_DeviceInformation(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandModem)this.asInterface(uuid("d0356912-e9f9-4f67-a03d-43189a316bf1"))).get_DeviceInformation(&_ret));
 		return _ret;
 	}
 	final UINT32 MaxDeviceServiceCommandSizeInBytes()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandModem).get_MaxDeviceServiceCommandSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandModem)this.asInterface(uuid("d0356912-e9f9-4f67-a03d-43189a316bf1"))).get_MaxDeviceServiceCommandSizeInBytes(&_ret));
 		return _ret;
 	}
 	final UINT32 MaxDeviceServiceDataSizeInBytes()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandModem).get_MaxDeviceServiceDataSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandModem)this.asInterface(uuid("d0356912-e9f9-4f67-a03d-43189a316bf1"))).get_MaxDeviceServiceDataSizeInBytes(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceInformation) DeviceServices()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Networking.NetworkOperators.MobileBroadbandDeviceServiceInformation) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandModem).get_DeviceServices(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandModem)this.asInterface(uuid("d0356912-e9f9-4f67-a03d-43189a316bf1"))).get_DeviceServices(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.MobileBroadbandDeviceService GetDeviceService(GUID deviceServiceId)
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandDeviceService _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandModem).abi_GetDeviceService(deviceServiceId, &_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandModem)this.asInterface(uuid("d0356912-e9f9-4f67-a03d-43189a316bf1"))).abi_GetDeviceService(deviceServiceId, &_ret));
 		return _ret;
 	}
 	final bool IsResetSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandModem).get_IsResetSupported(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandModem)this.asInterface(uuid("d0356912-e9f9-4f67-a03d-43189a316bf1"))).get_IsResetSupported(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ResetAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandModem).abi_ResetAsync(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandModem)this.asInterface(uuid("d0356912-e9f9-4f67-a03d-43189a316bf1"))).abi_ResetAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandModemConfiguration) GetCurrentConfigurationAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandModemConfiguration) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandModem).abi_GetCurrentConfigurationAsync(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandModem)this.asInterface(uuid("d0356912-e9f9-4f67-a03d-43189a316bf1"))).abi_GetCurrentConfigurationAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.MobileBroadbandNetwork CurrentNetwork()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandNetwork _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandModem).get_CurrentNetwork(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandModem)this.asInterface(uuid("d0356912-e9f9-4f67-a03d-43189a316bf1"))).get_CurrentNetwork(&_ret));
 		return _ret;
 	}
 
@@ -1433,19 +1433,19 @@ extern(Windows):
 	static HSTRING GetDeviceSelector()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IMobileBroadbandModemStatics).abi_GetDeviceSelector(&_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
 		return _ret;
 	}
 	static Windows.Networking.NetworkOperators.MobileBroadbandModem FromId(HSTRING deviceId)
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandModem _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IMobileBroadbandModemStatics).abi_FromId(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromId(deviceId, &_ret));
 		return _ret;
 	}
 	static Windows.Networking.NetworkOperators.MobileBroadbandModem GetDefault()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandModem _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IMobileBroadbandModemStatics).abi_GetDefault(&_ret));
+		Debug.OK(staticInstance.abi_GetDefault(&_ret));
 		return _ret;
 	}
 }
@@ -1456,19 +1456,19 @@ extern(Windows):
 	final Windows.Networking.NetworkOperators.MobileBroadbandUicc Uicc()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandUicc _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandModemConfiguration).get_Uicc(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandModemConfiguration)this.asInterface(uuid("fce035a3-d6cd-4320-b982-be9d3ec7890f"))).get_Uicc(&_ret));
 		return _ret;
 	}
 	final HSTRING HomeProviderId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandModemConfiguration).get_HomeProviderId(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandModemConfiguration)this.asInterface(uuid("fce035a3-d6cd-4320-b982-be9d3ec7890f"))).get_HomeProviderId(&_ret));
 		return _ret;
 	}
 	final HSTRING HomeProviderName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandModemConfiguration).get_HomeProviderName(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandModemConfiguration)this.asInterface(uuid("fce035a3-d6cd-4320-b982-be9d3ec7890f"))).get_HomeProviderName(&_ret));
 		return _ret;
 	}
 }
@@ -1479,71 +1479,71 @@ extern(Windows):
 	final Windows.Networking.Connectivity.NetworkAdapter NetworkAdapter()
 	{
 		Windows.Networking.Connectivity.NetworkAdapter _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork).get_NetworkAdapter(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork)this.asInterface(uuid("cb63928c-0309-4cb6-a8c1-6a5a3c8e1ff6"))).get_NetworkAdapter(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.NetworkRegistrationState NetworkRegistrationState()
 	{
 		Windows.Networking.NetworkOperators.NetworkRegistrationState _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork).get_NetworkRegistrationState(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork)this.asInterface(uuid("cb63928c-0309-4cb6-a8c1-6a5a3c8e1ff6"))).get_NetworkRegistrationState(&_ret));
 		return _ret;
 	}
 	final UINT32 RegistrationNetworkError()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork).get_RegistrationNetworkError(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork)this.asInterface(uuid("cb63928c-0309-4cb6-a8c1-6a5a3c8e1ff6"))).get_RegistrationNetworkError(&_ret));
 		return _ret;
 	}
 	final UINT32 PacketAttachNetworkError()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork).get_PacketAttachNetworkError(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork)this.asInterface(uuid("cb63928c-0309-4cb6-a8c1-6a5a3c8e1ff6"))).get_PacketAttachNetworkError(&_ret));
 		return _ret;
 	}
 	final UINT32 ActivationNetworkError()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork).get_ActivationNetworkError(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork)this.asInterface(uuid("cb63928c-0309-4cb6-a8c1-6a5a3c8e1ff6"))).get_ActivationNetworkError(&_ret));
 		return _ret;
 	}
 	final HSTRING AccessPointName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork).get_AccessPointName(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork)this.asInterface(uuid("cb63928c-0309-4cb6-a8c1-6a5a3c8e1ff6"))).get_AccessPointName(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.DataClasses RegisteredDataClass()
 	{
 		Windows.Networking.NetworkOperators.DataClasses _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork).get_RegisteredDataClass(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork)this.asInterface(uuid("cb63928c-0309-4cb6-a8c1-6a5a3c8e1ff6"))).get_RegisteredDataClass(&_ret));
 		return _ret;
 	}
 	final HSTRING RegisteredProviderId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork).get_RegisteredProviderId(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork)this.asInterface(uuid("cb63928c-0309-4cb6-a8c1-6a5a3c8e1ff6"))).get_RegisteredProviderId(&_ret));
 		return _ret;
 	}
 	final HSTRING RegisteredProviderName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork).get_RegisteredProviderName(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork)this.asInterface(uuid("cb63928c-0309-4cb6-a8c1-6a5a3c8e1ff6"))).get_RegisteredProviderName(&_ret));
 		return _ret;
 	}
 	final void ShowConnectionUI()
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork).abi_ShowConnectionUI());
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork)this.asInterface(uuid("cb63928c-0309-4cb6-a8c1-6a5a3c8e1ff6"))).abi_ShowConnectionUI());
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) GetVoiceCallSupportAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork2).abi_GetVoiceCallSupportAsync(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork2)this.asInterface(uuid("5a55db22-62f7-4bdd-ba1d-477441960ba0"))).abi_GetVoiceCallSupportAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Networking.NetworkOperators.MobileBroadbandUiccApp) RegistrationUiccApps()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Networking.NetworkOperators.MobileBroadbandUiccApp) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork2).get_RegistrationUiccApps(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandNetwork2)this.asInterface(uuid("5a55db22-62f7-4bdd-ba1d-477441960ba0"))).get_RegistrationUiccApps(&_ret));
 		return _ret;
 	}
 }
@@ -1554,13 +1554,13 @@ extern(Windows):
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandNetworkRegistrationStateChange).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandNetworkRegistrationStateChange)this.asInterface(uuid("beaf94e1-960f-49b4-a08d-7d85e968c7ec"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.MobileBroadbandNetwork Network()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandNetwork _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandNetworkRegistrationStateChange).get_Network(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandNetworkRegistrationStateChange)this.asInterface(uuid("beaf94e1-960f-49b4-a08d-7d85e968c7ec"))).get_Network(&_ret));
 		return _ret;
 	}
 }
@@ -1571,7 +1571,7 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Networking.NetworkOperators.MobileBroadbandNetworkRegistrationStateChange) NetworkRegistrationStateChanges()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Networking.NetworkOperators.MobileBroadbandNetworkRegistrationStateChange) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails).get_NetworkRegistrationStateChanges(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails)this.asInterface(uuid("89135cff-28b8-46aa-b137-1c4b0f21edfe"))).get_NetworkRegistrationStateChanges(&_ret));
 		return _ret;
 	}
 }
@@ -1582,73 +1582,73 @@ extern(Windows):
 	final Windows.Networking.NetworkOperators.MobileBroadbandPinType Type()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandPinType _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandPin).get_Type(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandPin)this.asInterface(uuid("e661d709-e779-45bf-8281-75323df9e321"))).get_Type(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.MobileBroadbandPinLockState LockState()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandPinLockState _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandPin).get_LockState(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandPin)this.asInterface(uuid("e661d709-e779-45bf-8281-75323df9e321"))).get_LockState(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.MobileBroadbandPinFormat Format()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandPinFormat _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandPin).get_Format(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandPin)this.asInterface(uuid("e661d709-e779-45bf-8281-75323df9e321"))).get_Format(&_ret));
 		return _ret;
 	}
 	final bool Enabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandPin).get_Enabled(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandPin)this.asInterface(uuid("e661d709-e779-45bf-8281-75323df9e321"))).get_Enabled(&_ret));
 		return _ret;
 	}
 	final UINT32 MaxLength()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandPin).get_MaxLength(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandPin)this.asInterface(uuid("e661d709-e779-45bf-8281-75323df9e321"))).get_MaxLength(&_ret));
 		return _ret;
 	}
 	final UINT32 MinLength()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandPin).get_MinLength(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandPin)this.asInterface(uuid("e661d709-e779-45bf-8281-75323df9e321"))).get_MinLength(&_ret));
 		return _ret;
 	}
 	final UINT32 AttemptsRemaining()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandPin).get_AttemptsRemaining(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandPin)this.asInterface(uuid("e661d709-e779-45bf-8281-75323df9e321"))).get_AttemptsRemaining(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandPinOperationResult) EnableAsync(HSTRING currentPin)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandPinOperationResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandPin).abi_EnableAsync(currentPin, &_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandPin)this.asInterface(uuid("e661d709-e779-45bf-8281-75323df9e321"))).abi_EnableAsync(currentPin, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandPinOperationResult) DisableAsync(HSTRING currentPin)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandPinOperationResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandPin).abi_DisableAsync(currentPin, &_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandPin)this.asInterface(uuid("e661d709-e779-45bf-8281-75323df9e321"))).abi_DisableAsync(currentPin, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandPinOperationResult) EnterAsync(HSTRING currentPin)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandPinOperationResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandPin).abi_EnterAsync(currentPin, &_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandPin)this.asInterface(uuid("e661d709-e779-45bf-8281-75323df9e321"))).abi_EnterAsync(currentPin, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandPinOperationResult) ChangeAsync(HSTRING currentPin, HSTRING newPin)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandPinOperationResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandPin).abi_ChangeAsync(currentPin, newPin, &_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandPin)this.asInterface(uuid("e661d709-e779-45bf-8281-75323df9e321"))).abi_ChangeAsync(currentPin, newPin, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandPinOperationResult) UnblockAsync(HSTRING pinUnblockKey, HSTRING newPin)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandPinOperationResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandPin).abi_UnblockAsync(pinUnblockKey, newPin, &_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandPin)this.asInterface(uuid("e661d709-e779-45bf-8281-75323df9e321"))).abi_UnblockAsync(pinUnblockKey, newPin, &_ret));
 		return _ret;
 	}
 }
@@ -1659,19 +1659,19 @@ extern(Windows):
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandPinLockStateChange).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandPinLockStateChange)this.asInterface(uuid("be16673e-1f04-4f95-8b90-e7f559dde7e5"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.MobileBroadbandPinType PinType()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandPinType _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandPinLockStateChange).get_PinType(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandPinLockStateChange)this.asInterface(uuid("be16673e-1f04-4f95-8b90-e7f559dde7e5"))).get_PinType(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.MobileBroadbandPinLockState PinLockState()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandPinLockState _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandPinLockStateChange).get_PinLockState(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandPinLockStateChange)this.asInterface(uuid("be16673e-1f04-4f95-8b90-e7f559dde7e5"))).get_PinLockState(&_ret));
 		return _ret;
 	}
 }
@@ -1682,7 +1682,7 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Networking.NetworkOperators.MobileBroadbandPinLockStateChange) PinLockStateChanges()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Networking.NetworkOperators.MobileBroadbandPinLockStateChange) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandPinLockStateChangeTriggerDetails).get_PinLockStateChanges(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandPinLockStateChangeTriggerDetails)this.asInterface(uuid("d338c091-3e91-4d38-9036-aee83a6e79ad"))).get_PinLockStateChanges(&_ret));
 		return _ret;
 	}
 }
@@ -1693,13 +1693,13 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Networking.NetworkOperators.MobileBroadbandPinType) SupportedPins()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Networking.NetworkOperators.MobileBroadbandPinType) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandPinManager).get_SupportedPins(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandPinManager)this.asInterface(uuid("83567edd-6e1f-4b9b-a413-2b1f50cc36df"))).get_SupportedPins(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.MobileBroadbandPin GetPin(Windows.Networking.NetworkOperators.MobileBroadbandPinType pinType)
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandPin _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandPinManager).abi_GetPin(pinType, &_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandPinManager)this.asInterface(uuid("83567edd-6e1f-4b9b-a413-2b1f50cc36df"))).abi_GetPin(pinType, &_ret));
 		return _ret;
 	}
 }
@@ -1710,13 +1710,13 @@ extern(Windows):
 	final bool IsSuccessful()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandPinOperationResult).get_IsSuccessful(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandPinOperationResult)this.asInterface(uuid("11dddc32-31e7-49f5-b663-123d3bef0362"))).get_IsSuccessful(&_ret));
 		return _ret;
 	}
 	final UINT32 AttemptsRemaining()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandPinOperationResult).get_AttemptsRemaining(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandPinOperationResult)this.asInterface(uuid("11dddc32-31e7-49f5-b663-123d3bef0362"))).get_AttemptsRemaining(&_ret));
 		return _ret;
 	}
 }
@@ -1727,13 +1727,13 @@ extern(Windows):
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandRadioStateChange).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandRadioStateChange)this.asInterface(uuid("b054a561-9833-4aed-9717-4348b21a24b3"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.MobileBroadbandRadioState RadioState()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandRadioState _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandRadioStateChange).get_RadioState(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandRadioStateChange)this.asInterface(uuid("b054a561-9833-4aed-9717-4348b21a24b3"))).get_RadioState(&_ret));
 		return _ret;
 	}
 }
@@ -1744,7 +1744,7 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Networking.NetworkOperators.MobileBroadbandRadioStateChange) RadioStateChanges()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Networking.NetworkOperators.MobileBroadbandRadioStateChange) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandRadioStateChangeTriggerDetails).get_RadioStateChanges(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandRadioStateChangeTriggerDetails)this.asInterface(uuid("71301ace-093c-42c6-b0db-ad1f75a65445"))).get_RadioStateChanges(&_ret));
 		return _ret;
 	}
 }
@@ -1755,13 +1755,13 @@ extern(Windows):
 	final HSTRING SimIccId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandUicc).get_SimIccId(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandUicc)this.asInterface(uuid("e634f691-525a-4ce2-8fce-aa4162579154"))).get_SimIccId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandUiccAppsResult) GetUiccAppsAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandUiccAppsResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandUicc).abi_GetUiccAppsAsync(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandUicc)this.asInterface(uuid("e634f691-525a-4ce2-8fce-aa4162579154"))).abi_GetUiccAppsAsync(&_ret));
 		return _ret;
 	}
 }
@@ -1772,25 +1772,25 @@ extern(Windows):
 	final Windows.Storage.Streams.IBuffer Id()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandUiccApp).get_Id(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandUiccApp)this.asInterface(uuid("4d170556-98a1-43dd-b2ec-50c90cf248df"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.UiccAppKind Kind()
 	{
 		Windows.Networking.NetworkOperators.UiccAppKind _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandUiccApp).get_Kind(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandUiccApp)this.asInterface(uuid("4d170556-98a1-43dd-b2ec-50c90cf248df"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandUiccAppRecordDetailsResult) GetRecordDetailsAsync(Windows.Foundation.Collections.IIterable!(UINT32) uiccFilePath)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandUiccAppRecordDetailsResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandUiccApp).abi_GetRecordDetailsAsync(uiccFilePath, &_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandUiccApp)this.asInterface(uuid("4d170556-98a1-43dd-b2ec-50c90cf248df"))).abi_GetRecordDetailsAsync(uiccFilePath, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandUiccAppReadRecordResult) ReadRecordAsync(Windows.Foundation.Collections.IIterable!(UINT32) uiccFilePath, INT32 recordIndex)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.MobileBroadbandUiccAppReadRecordResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandUiccApp).abi_ReadRecordAsync(uiccFilePath, recordIndex, &_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandUiccApp)this.asInterface(uuid("4d170556-98a1-43dd-b2ec-50c90cf248df"))).abi_ReadRecordAsync(uiccFilePath, recordIndex, &_ret));
 		return _ret;
 	}
 }
@@ -1801,13 +1801,13 @@ extern(Windows):
 	final Windows.Networking.NetworkOperators.MobileBroadbandUiccAppOperationStatus Status()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandUiccAppOperationStatus _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandUiccAppReadRecordResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandUiccAppReadRecordResult)this.asInterface(uuid("64c95285-358e-47c5-8249-695f383b2bdb"))).get_Status(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer Data()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandUiccAppReadRecordResult).get_Data(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandUiccAppReadRecordResult)this.asInterface(uuid("64c95285-358e-47c5-8249-695f383b2bdb"))).get_Data(&_ret));
 		return _ret;
 	}
 }
@@ -1818,37 +1818,37 @@ extern(Windows):
 	final Windows.Networking.NetworkOperators.MobileBroadbandUiccAppOperationStatus Status()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandUiccAppOperationStatus _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandUiccAppRecordDetailsResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandUiccAppRecordDetailsResult)this.asInterface(uuid("d919682f-be14-4934-981d-2f57b9ed83e6"))).get_Status(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.UiccAppRecordKind Kind()
 	{
 		Windows.Networking.NetworkOperators.UiccAppRecordKind _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandUiccAppRecordDetailsResult).get_Kind(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandUiccAppRecordDetailsResult)this.asInterface(uuid("d919682f-be14-4934-981d-2f57b9ed83e6"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final INT32 RecordCount()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandUiccAppRecordDetailsResult).get_RecordCount(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandUiccAppRecordDetailsResult)this.asInterface(uuid("d919682f-be14-4934-981d-2f57b9ed83e6"))).get_RecordCount(&_ret));
 		return _ret;
 	}
 	final INT32 RecordSize()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandUiccAppRecordDetailsResult).get_RecordSize(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandUiccAppRecordDetailsResult)this.asInterface(uuid("d919682f-be14-4934-981d-2f57b9ed83e6"))).get_RecordSize(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.UiccAccessCondition ReadAccessCondition()
 	{
 		Windows.Networking.NetworkOperators.UiccAccessCondition _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandUiccAppRecordDetailsResult).get_ReadAccessCondition(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandUiccAppRecordDetailsResult)this.asInterface(uuid("d919682f-be14-4934-981d-2f57b9ed83e6"))).get_ReadAccessCondition(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.UiccAccessCondition WriteAccessCondition()
 	{
 		Windows.Networking.NetworkOperators.UiccAccessCondition _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandUiccAppRecordDetailsResult).get_WriteAccessCondition(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandUiccAppRecordDetailsResult)this.asInterface(uuid("d919682f-be14-4934-981d-2f57b9ed83e6"))).get_WriteAccessCondition(&_ret));
 		return _ret;
 	}
 }
@@ -1859,13 +1859,13 @@ extern(Windows):
 	final Windows.Networking.NetworkOperators.MobileBroadbandUiccAppOperationStatus Status()
 	{
 		Windows.Networking.NetworkOperators.MobileBroadbandUiccAppOperationStatus _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandUiccAppsResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandUiccAppsResult)this.asInterface(uuid("744930eb-8157-4a41-8494-6bf54c9b1d2b"))).get_Status(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Networking.NetworkOperators.MobileBroadbandUiccApp) UiccApps()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Networking.NetworkOperators.MobileBroadbandUiccApp) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IMobileBroadbandUiccAppsResult).get_UiccApps(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IMobileBroadbandUiccAppsResult)this.asInterface(uuid("744930eb-8157-4a41-8494-6bf54c9b1d2b"))).get_UiccApps(&_ret));
 		return _ret;
 	}
 }
@@ -1876,42 +1876,42 @@ extern(Windows):
 	final Windows.Networking.NetworkOperators.NetworkOperatorEventMessageType NotificationType()
 	{
 		Windows.Networking.NetworkOperators.NetworkOperatorEventMessageType _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorNotificationEventDetails).get_NotificationType(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.INetworkOperatorNotificationEventDetails)this.asInterface(uuid("bc68a9d1-82e1-4488-9f2c-1276c2468fac"))).get_NotificationType(&_ret));
 		return _ret;
 	}
 	final HSTRING NetworkAccountId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorNotificationEventDetails).get_NetworkAccountId(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.INetworkOperatorNotificationEventDetails)this.asInterface(uuid("bc68a9d1-82e1-4488-9f2c-1276c2468fac"))).get_NetworkAccountId(&_ret));
 		return _ret;
 	}
 	final ubyte EncodingType()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorNotificationEventDetails).get_EncodingType(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.INetworkOperatorNotificationEventDetails)this.asInterface(uuid("bc68a9d1-82e1-4488-9f2c-1276c2468fac"))).get_EncodingType(&_ret));
 		return _ret;
 	}
 	final HSTRING Message()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorNotificationEventDetails).get_Message(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.INetworkOperatorNotificationEventDetails)this.asInterface(uuid("bc68a9d1-82e1-4488-9f2c-1276c2468fac"))).get_Message(&_ret));
 		return _ret;
 	}
 	final HSTRING RuleId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorNotificationEventDetails).get_RuleId(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.INetworkOperatorNotificationEventDetails)this.asInterface(uuid("bc68a9d1-82e1-4488-9f2c-1276c2468fac"))).get_RuleId(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.ISmsMessage SmsMessage()
 	{
 		Windows.Devices.Sms.ISmsMessage _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorNotificationEventDetails).get_SmsMessage(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.INetworkOperatorNotificationEventDetails)this.asInterface(uuid("bc68a9d1-82e1-4488-9f2c-1276c2468fac"))).get_SmsMessage(&_ret));
 		return _ret;
 	}
 	final void AuthorizeTethering(bool allow, HSTRING entitlementFailureReason)
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringEntitlementCheck).abi_AuthorizeTethering(allow, entitlementFailureReason));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.INetworkOperatorTetheringEntitlementCheck)this.asInterface(uuid("0108916d-9e9a-4af6-8da3-60493b19c204"))).abi_AuthorizeTethering(allow, entitlementFailureReason));
 	}
 }
 
@@ -1921,28 +1921,28 @@ extern(Windows):
 	final HSTRING Ssid()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringAccessPointConfiguration).get_Ssid(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.INetworkOperatorTetheringAccessPointConfiguration)this.asInterface(uuid("0bcc0284-412e-403d-acc6-b757e34774a4"))).get_Ssid(&_ret));
 		return _ret;
 	}
 	final void Ssid(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringAccessPointConfiguration).set_Ssid(value));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.INetworkOperatorTetheringAccessPointConfiguration)this.asInterface(uuid("0bcc0284-412e-403d-acc6-b757e34774a4"))).set_Ssid(value));
 	}
 	final HSTRING Passphrase()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringAccessPointConfiguration).get_Passphrase(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.INetworkOperatorTetheringAccessPointConfiguration)this.asInterface(uuid("0bcc0284-412e-403d-acc6-b757e34774a4"))).get_Passphrase(&_ret));
 		return _ret;
 	}
 	final void Passphrase(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringAccessPointConfiguration).set_Passphrase(value));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.INetworkOperatorTetheringAccessPointConfiguration)this.asInterface(uuid("0bcc0284-412e-403d-acc6-b757e34774a4"))).set_Passphrase(value));
 	}
 	static NetworkOperatorTetheringAccessPointConfiguration New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(NetworkOperatorTetheringAccessPointConfiguration).abi_ActivateInstance(&ret));
-		return ret.as!(NetworkOperatorTetheringAccessPointConfiguration);
+		return cast(NetworkOperatorTetheringAccessPointConfiguration) ret;
 	}
 }
 
@@ -1952,13 +1952,13 @@ extern(Windows):
 	final HSTRING MacAddress()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringClient).get_MacAddress(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.INetworkOperatorTetheringClient)this.asInterface(uuid("709d254c-595f-4847-bb30-646935542918"))).get_MacAddress(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) HostNames()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringClient).get_HostNames(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.INetworkOperatorTetheringClient)this.asInterface(uuid("709d254c-595f-4847-bb30-646935542918"))).get_HostNames(&_ret));
 		return _ret;
 	}
 }
@@ -1969,49 +1969,49 @@ extern(Windows):
 	final UINT32 MaxClientCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringManager).get_MaxClientCount(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.INetworkOperatorTetheringManager)this.asInterface(uuid("d45a8da0-0e86-4d98-8ba4-dd70d4b764d3"))).get_MaxClientCount(&_ret));
 		return _ret;
 	}
 	final UINT32 ClientCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringManager).get_ClientCount(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.INetworkOperatorTetheringManager)this.asInterface(uuid("d45a8da0-0e86-4d98-8ba4-dd70d4b764d3"))).get_ClientCount(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.TetheringOperationalState TetheringOperationalState()
 	{
 		Windows.Networking.NetworkOperators.TetheringOperationalState _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringManager).get_TetheringOperationalState(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.INetworkOperatorTetheringManager)this.asInterface(uuid("d45a8da0-0e86-4d98-8ba4-dd70d4b764d3"))).get_TetheringOperationalState(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.NetworkOperatorTetheringAccessPointConfiguration GetCurrentAccessPointConfiguration()
 	{
 		Windows.Networking.NetworkOperators.NetworkOperatorTetheringAccessPointConfiguration _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringManager).abi_GetCurrentAccessPointConfiguration(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.INetworkOperatorTetheringManager)this.asInterface(uuid("d45a8da0-0e86-4d98-8ba4-dd70d4b764d3"))).abi_GetCurrentAccessPointConfiguration(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ConfigureAccessPointAsync(Windows.Networking.NetworkOperators.NetworkOperatorTetheringAccessPointConfiguration configuration)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringManager).abi_ConfigureAccessPointAsync(configuration, &_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.INetworkOperatorTetheringManager)this.asInterface(uuid("d45a8da0-0e86-4d98-8ba4-dd70d4b764d3"))).abi_ConfigureAccessPointAsync(configuration, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.NetworkOperatorTetheringOperationResult) StartTetheringAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.NetworkOperatorTetheringOperationResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringManager).abi_StartTetheringAsync(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.INetworkOperatorTetheringManager)this.asInterface(uuid("d45a8da0-0e86-4d98-8ba4-dd70d4b764d3"))).abi_StartTetheringAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.NetworkOperatorTetheringOperationResult) StopTetheringAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.NetworkOperatorTetheringOperationResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringManager).abi_StopTetheringAsync(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.INetworkOperatorTetheringManager)this.asInterface(uuid("d45a8da0-0e86-4d98-8ba4-dd70d4b764d3"))).abi_StopTetheringAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Networking.NetworkOperators.NetworkOperatorTetheringClient) GetTetheringClients()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Networking.NetworkOperators.NetworkOperatorTetheringClient) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringClientManager).abi_GetTetheringClients(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.INetworkOperatorTetheringClientManager)this.asInterface(uuid("91b14016-8dca-4225-bbed-eef8b8d718d7"))).abi_GetTetheringClients(&_ret));
 		return _ret;
 	}
 
@@ -2024,13 +2024,13 @@ extern(Windows):
 	static Windows.Networking.NetworkOperators.TetheringCapability GetTetheringCapability(HSTRING networkAccountId)
 	{
 		Windows.Networking.NetworkOperators.TetheringCapability _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringManagerStatics).abi_GetTetheringCapability(networkAccountId, &_ret));
+		Debug.OK(staticInstance.abi_GetTetheringCapability(networkAccountId, &_ret));
 		return _ret;
 	}
 	static Windows.Networking.NetworkOperators.NetworkOperatorTetheringManager CreateFromNetworkAccountId(HSTRING networkAccountId)
 	{
 		Windows.Networking.NetworkOperators.NetworkOperatorTetheringManager _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringManagerStatics).abi_CreateFromNetworkAccountId(networkAccountId, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromNetworkAccountId(networkAccountId, &_ret));
 		return _ret;
 	}
 }
@@ -2041,13 +2041,13 @@ extern(Windows):
 	final Windows.Networking.NetworkOperators.TetheringOperationStatus Status()
 	{
 		Windows.Networking.NetworkOperators.TetheringOperationStatus _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringOperationResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.INetworkOperatorTetheringOperationResult)this.asInterface(uuid("ebd203a1-01ba-476d-b4b3-bf3d12c8f80c"))).get_Status(&_ret));
 		return _ret;
 	}
 	final HSTRING AdditionalErrorMessage()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.INetworkOperatorTetheringOperationResult).get_AdditionalErrorMessage(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.INetworkOperatorTetheringOperationResult)this.asInterface(uuid("ebd203a1-01ba-476d-b4b3-bf3d12c8f80c"))).get_AdditionalErrorMessage(&_ret));
 		return _ret;
 	}
 }
@@ -2058,13 +2058,13 @@ extern(Windows):
 	final bool AllElementsProvisioned()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IProvisionFromXmlDocumentResults).get_AllElementsProvisioned(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IProvisionFromXmlDocumentResults)this.asInterface(uuid("217700e0-8203-11df-adb9-f4ce462d9137"))).get_AllElementsProvisioned(&_ret));
 		return _ret;
 	}
 	final HSTRING ProvisionResultsXml()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IProvisionFromXmlDocumentResults).get_ProvisionResultsXml(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IProvisionFromXmlDocumentResults)this.asInterface(uuid("217700e0-8203-11df-adb9-f4ce462d9137"))).get_ProvisionResultsXml(&_ret));
 		return _ret;
 	}
 }
@@ -2074,11 +2074,11 @@ interface ProvisionedProfile : Windows.Networking.NetworkOperators.IProvisionedP
 extern(Windows):
 	final void UpdateCost(Windows.Networking.Connectivity.NetworkCostType value)
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IProvisionedProfile).abi_UpdateCost(value));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IProvisionedProfile)this.asInterface(uuid("217700e0-8202-11df-adb9-f4ce462d9137"))).abi_UpdateCost(value));
 	}
 	final void UpdateUsage(Windows.Networking.NetworkOperators.ProfileUsage value)
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IProvisionedProfile).abi_UpdateUsage(value));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IProvisionedProfile)this.asInterface(uuid("217700e0-8202-11df-adb9-f4ce462d9137"))).abi_UpdateUsage(value));
 	}
 }
 
@@ -2088,13 +2088,13 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.ProvisionFromXmlDocumentResults) ProvisionFromXmlDocumentAsync(HSTRING provisioningXmlDocument)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.ProvisionFromXmlDocumentResults) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IProvisioningAgent).abi_ProvisionFromXmlDocumentAsync(provisioningXmlDocument, &_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IProvisioningAgent)this.asInterface(uuid("217700e0-8201-11df-adb9-f4ce462d9137"))).abi_ProvisionFromXmlDocumentAsync(provisioningXmlDocument, &_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.ProvisionedProfile GetProvisionedProfile(Windows.Networking.NetworkOperators.ProfileMediaType mediaType, HSTRING profileName)
 	{
 		Windows.Networking.NetworkOperators.ProvisionedProfile _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IProvisioningAgent).abi_GetProvisionedProfile(mediaType, profileName, &_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IProvisioningAgent)this.asInterface(uuid("217700e0-8201-11df-adb9-f4ce462d9137"))).abi_GetProvisionedProfile(mediaType, profileName, &_ret));
 		return _ret;
 	}
 
@@ -2107,14 +2107,14 @@ extern(Windows):
 	static Windows.Networking.NetworkOperators.ProvisioningAgent CreateFromNetworkAccountId(HSTRING networkAccountId)
 	{
 		Windows.Networking.NetworkOperators.ProvisioningAgent _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IProvisioningAgentStaticMethods).abi_CreateFromNetworkAccountId(networkAccountId, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromNetworkAccountId(networkAccountId, &_ret));
 		return _ret;
 	}
 	static ProvisioningAgent New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ProvisioningAgent).abi_ActivateInstance(&ret));
-		return ret.as!(ProvisioningAgent);
+		return cast(ProvisioningAgent) ret;
 	}
 }
 
@@ -2124,38 +2124,38 @@ extern(Windows):
 	final ubyte DataCodingScheme()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IUssdMessage).get_DataCodingScheme(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IUssdMessage)this.asInterface(uuid("2f9acf82-2004-4d5d-bf81-2aba1b4be4a8"))).get_DataCodingScheme(&_ret));
 		return _ret;
 	}
 	final void DataCodingScheme(ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IUssdMessage).set_DataCodingScheme(value));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IUssdMessage)this.asInterface(uuid("2f9acf82-2004-4d5d-bf81-2aba1b4be4a8"))).set_DataCodingScheme(value));
 	}
 	final ubyte* GetPayload(UINT32* out___valueSize)
 	{
 		ubyte* _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IUssdMessage).abi_GetPayload(out___valueSize, &_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IUssdMessage)this.asInterface(uuid("2f9acf82-2004-4d5d-bf81-2aba1b4be4a8"))).abi_GetPayload(out___valueSize, &_ret));
 		return _ret;
 	}
 	final void SetPayload(UINT32 __valueSize, ubyte* value)
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IUssdMessage).abi_SetPayload(__valueSize, value));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IUssdMessage)this.asInterface(uuid("2f9acf82-2004-4d5d-bf81-2aba1b4be4a8"))).abi_SetPayload(__valueSize, value));
 	}
 	final HSTRING PayloadAsText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IUssdMessage).get_PayloadAsText(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IUssdMessage)this.asInterface(uuid("2f9acf82-2004-4d5d-bf81-2aba1b4be4a8"))).get_PayloadAsText(&_ret));
 		return _ret;
 	}
 	final void PayloadAsText(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IUssdMessage).set_PayloadAsText(value));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IUssdMessage)this.asInterface(uuid("2f9acf82-2004-4d5d-bf81-2aba1b4be4a8"))).set_PayloadAsText(value));
 	}
 	static Windows.Networking.NetworkOperators.UssdMessage New(HSTRING messageText)
 	{
 		auto factory = factory!(Windows.Networking.NetworkOperators.IUssdMessageFactory);
 		Windows.Networking.NetworkOperators.UssdMessage _ret;
-		Debug.OK(factory.as!(Windows.Networking.NetworkOperators.IUssdMessageFactory).abi_CreateMessage(messageText, &_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IUssdMessageFactory)factory.asInterface(uuid("2f9acf82-1003-4d5d-bf81-2aba1b4be4a8"))).abi_CreateMessage(messageText, &_ret));
 		return _ret;
 	}
 }
@@ -2166,13 +2166,13 @@ extern(Windows):
 	final Windows.Networking.NetworkOperators.UssdResultCode ResultCode()
 	{
 		Windows.Networking.NetworkOperators.UssdResultCode _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IUssdReply).get_ResultCode(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IUssdReply)this.asInterface(uuid("2f9acf82-2005-4d5d-bf81-2aba1b4be4a8"))).get_ResultCode(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.NetworkOperators.UssdMessage Message()
 	{
 		Windows.Networking.NetworkOperators.UssdMessage _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IUssdReply).get_Message(&_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IUssdReply)this.asInterface(uuid("2f9acf82-2005-4d5d-bf81-2aba1b4be4a8"))).get_Message(&_ret));
 		return _ret;
 	}
 }
@@ -2183,12 +2183,12 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.UssdReply) SendMessageAndGetReplyAsync(Windows.Networking.NetworkOperators.UssdMessage message)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.NetworkOperators.UssdReply) _ret;
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IUssdSession).abi_SendMessageAndGetReplyAsync(message, &_ret));
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IUssdSession)this.asInterface(uuid("2f9acf82-2002-4d5d-bf81-2aba1b4be4a8"))).abi_SendMessageAndGetReplyAsync(message, &_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Networking.NetworkOperators.IUssdSession).abi_Close());
+		Debug.OK((cast(Windows.Networking.NetworkOperators.IUssdSession)this.asInterface(uuid("2f9acf82-2002-4d5d-bf81-2aba1b4be4a8"))).abi_Close());
 	}
 
 	private static Windows.Networking.NetworkOperators.IUssdSessionStatics _staticInstance;
@@ -2200,13 +2200,13 @@ extern(Windows):
 	static Windows.Networking.NetworkOperators.UssdSession CreateFromNetworkAccountId(HSTRING networkAccountId)
 	{
 		Windows.Networking.NetworkOperators.UssdSession _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IUssdSessionStatics).abi_CreateFromNetworkAccountId(networkAccountId, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromNetworkAccountId(networkAccountId, &_ret));
 		return _ret;
 	}
 	static Windows.Networking.NetworkOperators.UssdSession CreateFromNetworkInterfaceId(HSTRING networkInterfaceId)
 	{
 		Windows.Networking.NetworkOperators.UssdSession _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.NetworkOperators.IUssdSessionStatics).abi_CreateFromNetworkInterfaceId(networkInterfaceId, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromNetworkInterfaceId(networkInterfaceId, &_ret));
 		return _ret;
 	}
 }

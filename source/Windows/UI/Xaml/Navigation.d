@@ -121,35 +121,35 @@ extern(Windows):
 	final bool Cancel()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs).get_Cancel(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs)this.asInterface(uuid("fd1d67ae-eafb-4079-be80-6dc92a03aedf"))).get_Cancel(&_ret));
 		return _ret;
 	}
 	final void Cancel(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs).set_Cancel(value));
+		Debug.OK((cast(Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs)this.asInterface(uuid("fd1d67ae-eafb-4079-be80-6dc92a03aedf"))).set_Cancel(value));
 	}
 	final Windows.UI.Xaml.Navigation.NavigationMode NavigationMode()
 	{
 		Windows.UI.Xaml.Navigation.NavigationMode _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs).get_NavigationMode(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs)this.asInterface(uuid("fd1d67ae-eafb-4079-be80-6dc92a03aedf"))).get_NavigationMode(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Interop.TypeName SourcePageType()
 	{
 		Windows.UI.Xaml.Interop.TypeName _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs).get_SourcePageType(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs)this.asInterface(uuid("fd1d67ae-eafb-4079-be80-6dc92a03aedf"))).get_SourcePageType(&_ret));
 		return _ret;
 	}
 	final IInspectable Parameter()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs2).get_Parameter(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs2)this.asInterface(uuid("5407b704-8147-4343-838f-dd1ee908c137"))).get_Parameter(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo NavigationTransitionInfo()
 	{
 		Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs2).get_NavigationTransitionInfo(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Navigation.INavigatingCancelEventArgs2)this.asInterface(uuid("5407b704-8147-4343-838f-dd1ee908c137"))).get_NavigationTransitionInfo(&_ret));
 		return _ret;
 	}
 }
@@ -160,41 +160,41 @@ extern(Windows):
 	final IInspectable Content()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigationEventArgs).get_Content(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Navigation.INavigationEventArgs)this.asInterface(uuid("b6aa9834-6691-44d1-bdf7-58820c27b0d0"))).get_Content(&_ret));
 		return _ret;
 	}
 	final IInspectable Parameter()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigationEventArgs).get_Parameter(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Navigation.INavigationEventArgs)this.asInterface(uuid("b6aa9834-6691-44d1-bdf7-58820c27b0d0"))).get_Parameter(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Interop.TypeName SourcePageType()
 	{
 		Windows.UI.Xaml.Interop.TypeName _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigationEventArgs).get_SourcePageType(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Navigation.INavigationEventArgs)this.asInterface(uuid("b6aa9834-6691-44d1-bdf7-58820c27b0d0"))).get_SourcePageType(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Navigation.NavigationMode NavigationMode()
 	{
 		Windows.UI.Xaml.Navigation.NavigationMode _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigationEventArgs).get_NavigationMode(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Navigation.INavigationEventArgs)this.asInterface(uuid("b6aa9834-6691-44d1-bdf7-58820c27b0d0"))).get_NavigationMode(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Uri Uri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigationEventArgs).get_Uri(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Navigation.INavigationEventArgs)this.asInterface(uuid("b6aa9834-6691-44d1-bdf7-58820c27b0d0"))).get_Uri(&_ret));
 		return _ret;
 	}
 	final void Uri(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigationEventArgs).set_Uri(value));
+		Debug.OK((cast(Windows.UI.Xaml.Navigation.INavigationEventArgs)this.asInterface(uuid("b6aa9834-6691-44d1-bdf7-58820c27b0d0"))).set_Uri(value));
 	}
 	final Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo NavigationTransitionInfo()
 	{
 		Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigationEventArgs2).get_NavigationTransitionInfo(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Navigation.INavigationEventArgs2)this.asInterface(uuid("dbff71d9-979a-4b2e-a49b-3bb17fdef574"))).get_NavigationTransitionInfo(&_ret));
 		return _ret;
 	}
 }
@@ -205,23 +205,23 @@ extern(Windows):
 	final HRESULT Exception()
 	{
 		HRESULT _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigationFailedEventArgs).get_Exception(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Navigation.INavigationFailedEventArgs)this.asInterface(uuid("11c1dff7-36c2-4102-b2ef-0217a97289b3"))).get_Exception(&_ret));
 		return _ret;
 	}
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigationFailedEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Navigation.INavigationFailedEventArgs)this.asInterface(uuid("11c1dff7-36c2-4102-b2ef-0217a97289b3"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigationFailedEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.UI.Xaml.Navigation.INavigationFailedEventArgs)this.asInterface(uuid("11c1dff7-36c2-4102-b2ef-0217a97289b3"))).set_Handled(value));
 	}
 	final Windows.UI.Xaml.Interop.TypeName SourcePageType()
 	{
 		Windows.UI.Xaml.Interop.TypeName _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.INavigationFailedEventArgs).get_SourcePageType(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Navigation.INavigationFailedEventArgs)this.asInterface(uuid("11c1dff7-36c2-4102-b2ef-0217a97289b3"))).get_SourcePageType(&_ret));
 		return _ret;
 	}
 }
@@ -232,19 +232,19 @@ extern(Windows):
 	final Windows.UI.Xaml.Interop.TypeName SourcePageType()
 	{
 		Windows.UI.Xaml.Interop.TypeName _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.IPageStackEntry).get_SourcePageType(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Navigation.IPageStackEntry)this.asInterface(uuid("ef8814a6-9388-4aca-8572-405194069080"))).get_SourcePageType(&_ret));
 		return _ret;
 	}
 	final IInspectable Parameter()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.IPageStackEntry).get_Parameter(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Navigation.IPageStackEntry)this.asInterface(uuid("ef8814a6-9388-4aca-8572-405194069080"))).get_Parameter(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo NavigationTransitionInfo()
 	{
 		Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Navigation.IPageStackEntry).get_NavigationTransitionInfo(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Navigation.IPageStackEntry)this.asInterface(uuid("ef8814a6-9388-4aca-8572-405194069080"))).get_NavigationTransitionInfo(&_ret));
 		return _ret;
 	}
 
@@ -257,14 +257,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty SourcePageTypeProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Navigation.IPageStackEntryStatics).get_SourcePageTypeProperty(&_ret));
+		Debug.OK(staticInstance.get_SourcePageTypeProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Navigation.PageStackEntry New(Windows.UI.Xaml.Interop.TypeName sourcePageType, IInspectable parameter, Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo navigationTransitionInfo)
 	{
 		auto factory = factory!(Windows.UI.Xaml.Navigation.IPageStackEntryFactory);
 		Windows.UI.Xaml.Navigation.PageStackEntry _ret;
-		Debug.OK(factory.as!(Windows.UI.Xaml.Navigation.IPageStackEntryFactory).abi_CreateInstance(sourcePageType, parameter, navigationTransitionInfo, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Navigation.IPageStackEntryFactory)factory.asInterface(uuid("4454048a-a8b9-4f78-9b84-1f51f58851ff"))).abi_CreateInstance(sourcePageType, parameter, navigationTransitionInfo, &_ret));
 		return _ret;
 	}
 }

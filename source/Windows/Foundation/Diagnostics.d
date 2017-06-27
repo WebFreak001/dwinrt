@@ -377,33 +377,33 @@ interface AsyncCausalityTracer
 	}
 	static void TraceOperationCreation(Windows.Foundation.Diagnostics.CausalityTraceLevel traceLevel, Windows.Foundation.Diagnostics.CausalitySource source, GUID platformId, ulong operationId, HSTRING operationName, ulong relatedContext)
 	{
-		Debug.OK(staticInstance.as!(Windows.Foundation.Diagnostics.IAsyncCausalityTracerStatics).abi_TraceOperationCreation(traceLevel, source, platformId, operationId, operationName, relatedContext));
+		Debug.OK(staticInstance.abi_TraceOperationCreation(traceLevel, source, platformId, operationId, operationName, relatedContext));
 	}
 	static void TraceOperationCompletion(Windows.Foundation.Diagnostics.CausalityTraceLevel traceLevel, Windows.Foundation.Diagnostics.CausalitySource source, GUID platformId, ulong operationId, AsyncStatus status)
 	{
-		Debug.OK(staticInstance.as!(Windows.Foundation.Diagnostics.IAsyncCausalityTracerStatics).abi_TraceOperationCompletion(traceLevel, source, platformId, operationId, status));
+		Debug.OK(staticInstance.abi_TraceOperationCompletion(traceLevel, source, platformId, operationId, status));
 	}
 	static void TraceOperationRelation(Windows.Foundation.Diagnostics.CausalityTraceLevel traceLevel, Windows.Foundation.Diagnostics.CausalitySource source, GUID platformId, ulong operationId, Windows.Foundation.Diagnostics.CausalityRelation relation)
 	{
-		Debug.OK(staticInstance.as!(Windows.Foundation.Diagnostics.IAsyncCausalityTracerStatics).abi_TraceOperationRelation(traceLevel, source, platformId, operationId, relation));
+		Debug.OK(staticInstance.abi_TraceOperationRelation(traceLevel, source, platformId, operationId, relation));
 	}
 	static void TraceSynchronousWorkStart(Windows.Foundation.Diagnostics.CausalityTraceLevel traceLevel, Windows.Foundation.Diagnostics.CausalitySource source, GUID platformId, ulong operationId, Windows.Foundation.Diagnostics.CausalitySynchronousWork work)
 	{
-		Debug.OK(staticInstance.as!(Windows.Foundation.Diagnostics.IAsyncCausalityTracerStatics).abi_TraceSynchronousWorkStart(traceLevel, source, platformId, operationId, work));
+		Debug.OK(staticInstance.abi_TraceSynchronousWorkStart(traceLevel, source, platformId, operationId, work));
 	}
 	static void TraceSynchronousWorkCompletion(Windows.Foundation.Diagnostics.CausalityTraceLevel traceLevel, Windows.Foundation.Diagnostics.CausalitySource source, Windows.Foundation.Diagnostics.CausalitySynchronousWork work)
 	{
-		Debug.OK(staticInstance.as!(Windows.Foundation.Diagnostics.IAsyncCausalityTracerStatics).abi_TraceSynchronousWorkCompletion(traceLevel, source, work));
+		Debug.OK(staticInstance.abi_TraceSynchronousWorkCompletion(traceLevel, source, work));
 	}
 	static EventRegistrationToken OnTracingStatusChanged(void delegate(IInspectable, Windows.Foundation.Diagnostics.TracingStatusChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Foundation.Diagnostics.IAsyncCausalityTracerStatics).add_TracingStatusChanged(event!(Windows.Foundation.EventHandler!(Windows.Foundation.Diagnostics.TracingStatusChangedEventArgs), IInspectable, Windows.Foundation.Diagnostics.TracingStatusChangedEventArgs)(fn), &tok));
+		Debug.OK(staticInstance.add_TracingStatusChanged(event!(Windows.Foundation.EventHandler!(Windows.Foundation.Diagnostics.TracingStatusChangedEventArgs), IInspectable, Windows.Foundation.Diagnostics.TracingStatusChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	static void removeTracingStatusChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(staticInstance.as!(Windows.Foundation.Diagnostics.IAsyncCausalityTracerStatics).remove_TracingStatusChanged(cookie));
+		Debug.OK(staticInstance.remove_TracingStatusChanged(cookie));
 	}
 }
 
@@ -413,19 +413,19 @@ extern(Windows):
 	final HSTRING Description()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IErrorDetails).get_Description(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.IErrorDetails)this.asInterface(uuid("378cbb01-2cc9-428f-8c55-2c990d463e8f"))).get_Description(&_ret));
 		return _ret;
 	}
 	final HSTRING LongDescription()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IErrorDetails).get_LongDescription(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.IErrorDetails)this.asInterface(uuid("378cbb01-2cc9-428f-8c55-2c990d463e8f"))).get_LongDescription(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Uri HelpUri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IErrorDetails).get_HelpUri(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.IErrorDetails)this.asInterface(uuid("378cbb01-2cc9-428f-8c55-2c990d463e8f"))).get_HelpUri(&_ret));
 		return _ret;
 	}
 
@@ -438,7 +438,7 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Diagnostics.ErrorDetails) CreateFromHResultAsync(INT32 errorCode)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Diagnostics.ErrorDetails) _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.Diagnostics.IErrorDetailsStatics).abi_CreateFromHResultAsync(errorCode, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromHResultAsync(errorCode, &_ret));
 		return _ret;
 	}
 }
@@ -449,46 +449,46 @@ extern(Windows):
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IFileLoggingSession).get_Name(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.IFileLoggingSession)this.asInterface(uuid("24c74216-fed2-404c-895f-1f9699cb02f7"))).get_Name(&_ret));
 		return _ret;
 	}
 	final void AddLoggingChannel(Windows.Foundation.Diagnostics.ILoggingChannel loggingChannel)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IFileLoggingSession).abi_AddLoggingChannel(loggingChannel));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.IFileLoggingSession)this.asInterface(uuid("24c74216-fed2-404c-895f-1f9699cb02f7"))).abi_AddLoggingChannel(loggingChannel));
 	}
 	final void AddLoggingChannelWithLevel(Windows.Foundation.Diagnostics.ILoggingChannel loggingChannel, Windows.Foundation.Diagnostics.LoggingLevel maxLevel)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IFileLoggingSession).abi_AddLoggingChannelWithLevel(loggingChannel, maxLevel));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.IFileLoggingSession)this.asInterface(uuid("24c74216-fed2-404c-895f-1f9699cb02f7"))).abi_AddLoggingChannelWithLevel(loggingChannel, maxLevel));
 	}
 	final void RemoveLoggingChannel(Windows.Foundation.Diagnostics.ILoggingChannel loggingChannel)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IFileLoggingSession).abi_RemoveLoggingChannel(loggingChannel));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.IFileLoggingSession)this.asInterface(uuid("24c74216-fed2-404c-895f-1f9699cb02f7"))).abi_RemoveLoggingChannel(loggingChannel));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) CloseAndSaveToFileAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IFileLoggingSession).abi_CloseAndSaveToFileAsync(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.IFileLoggingSession)this.asInterface(uuid("24c74216-fed2-404c-895f-1f9699cb02f7"))).abi_CloseAndSaveToFileAsync(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnLogFileGenerated(void delegate(Windows.Foundation.Diagnostics.IFileLoggingSession, Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IFileLoggingSession).add_LogFileGenerated(event!(Windows.Foundation.TypedEventHandler!(Windows.Foundation.Diagnostics.IFileLoggingSession, Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs), Windows.Foundation.Diagnostics.IFileLoggingSession, Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.IFileLoggingSession)this.asInterface(uuid("24c74216-fed2-404c-895f-1f9699cb02f7"))).add_LogFileGenerated(event!(Windows.Foundation.TypedEventHandler!(Windows.Foundation.Diagnostics.IFileLoggingSession, Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs), Windows.Foundation.Diagnostics.IFileLoggingSession, Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeLogFileGenerated(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IFileLoggingSession).remove_LogFileGenerated(token));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.IFileLoggingSession)this.asInterface(uuid("24c74216-fed2-404c-895f-1f9699cb02f7"))).remove_LogFileGenerated(token));
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	static Windows.Foundation.Diagnostics.FileLoggingSession New(HSTRING name)
 	{
 		auto factory = factory!(Windows.Foundation.Diagnostics.IFileLoggingSessionFactory);
 		Windows.Foundation.Diagnostics.FileLoggingSession _ret;
-		Debug.OK(factory.as!(Windows.Foundation.Diagnostics.IFileLoggingSessionFactory).abi_Create(name, &_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.IFileLoggingSessionFactory)factory.asInterface(uuid("eea08dce-8447-4daa-9133-12eb46f697d4"))).abi_Create(name, &_ret));
 		return _ret;
 	}
 }
@@ -499,7 +499,7 @@ extern(Windows):
 	final Windows.Storage.StorageFile File()
 	{
 		Windows.Storage.StorageFile _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILogFileGeneratedEventArgs).get_File(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILogFileGeneratedEventArgs)this.asInterface(uuid("269e976f-0d38-4c1a-b53f-b395d881df84"))).get_File(&_ret));
 		return _ret;
 	}
 }
@@ -510,107 +510,107 @@ extern(Windows):
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingActivity).get_Name(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingActivity)this.asInterface(uuid("bc032941-b766-4cb5-9848-97ac6ba6d60c"))).get_Name(&_ret));
 		return _ret;
 	}
 	final GUID Id()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingActivity).get_Id(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingActivity)this.asInterface(uuid("bc032941-b766-4cb5-9848-97ac6ba6d60c"))).get_Id(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	final Windows.Foundation.Diagnostics.LoggingChannel Channel()
 	{
 		Windows.Foundation.Diagnostics.LoggingChannel _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingActivity2).get_Channel(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingActivity2)this.asInterface(uuid("26c29808-6322-456a-af82-80c8642f178b"))).get_Channel(&_ret));
 		return _ret;
 	}
 	final void StopActivity(HSTRING stopEventName)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingActivity2).abi_StopActivity(stopEventName));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingActivity2)this.asInterface(uuid("26c29808-6322-456a-af82-80c8642f178b"))).abi_StopActivity(stopEventName));
 	}
 	final void StopActivityWithFields(HSTRING stopEventName, Windows.Foundation.Diagnostics.LoggingFields fields)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingActivity2).abi_StopActivityWithFields(stopEventName, fields));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingActivity2)this.asInterface(uuid("26c29808-6322-456a-af82-80c8642f178b"))).abi_StopActivityWithFields(stopEventName, fields));
 	}
 	final void StopActivityWithFieldsAndOptions(HSTRING stopEventName, Windows.Foundation.Diagnostics.LoggingFields fields, Windows.Foundation.Diagnostics.LoggingOptions options)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingActivity2).abi_StopActivityWithFieldsAndOptions(stopEventName, fields, options));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingActivity2)this.asInterface(uuid("26c29808-6322-456a-af82-80c8642f178b"))).abi_StopActivityWithFieldsAndOptions(stopEventName, fields, options));
 	}
 	final bool IsEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_IsEnabled(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingTarget)this.asInterface(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916"))).abi_IsEnabled(&_ret));
 		return _ret;
 	}
 	final bool IsEnabledWithLevel(Windows.Foundation.Diagnostics.LoggingLevel level)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_IsEnabledWithLevel(level, &_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingTarget)this.asInterface(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916"))).abi_IsEnabledWithLevel(level, &_ret));
 		return _ret;
 	}
 	final bool IsEnabledWithLevelAndKeywords(Windows.Foundation.Diagnostics.LoggingLevel level, INT64 keywords)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_IsEnabledWithLevelAndKeywords(level, keywords, &_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingTarget)this.asInterface(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916"))).abi_IsEnabledWithLevelAndKeywords(level, keywords, &_ret));
 		return _ret;
 	}
 	final void LogEvent(HSTRING eventName)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_LogEvent(eventName));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingTarget)this.asInterface(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916"))).abi_LogEvent(eventName));
 	}
 	final void LogEventWithFields(HSTRING eventName, Windows.Foundation.Diagnostics.LoggingFields fields)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_LogEventWithFields(eventName, fields));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingTarget)this.asInterface(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916"))).abi_LogEventWithFields(eventName, fields));
 	}
 	final void LogEventWithFieldsAndLevel(HSTRING eventName, Windows.Foundation.Diagnostics.LoggingFields fields, Windows.Foundation.Diagnostics.LoggingLevel level)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_LogEventWithFieldsAndLevel(eventName, fields, level));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingTarget)this.asInterface(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916"))).abi_LogEventWithFieldsAndLevel(eventName, fields, level));
 	}
 	final void LogEventWithFieldsAndOptions(HSTRING eventName, Windows.Foundation.Diagnostics.LoggingFields fields, Windows.Foundation.Diagnostics.LoggingLevel level, Windows.Foundation.Diagnostics.LoggingOptions options)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_LogEventWithFieldsAndOptions(eventName, fields, level, options));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingTarget)this.asInterface(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916"))).abi_LogEventWithFieldsAndOptions(eventName, fields, level, options));
 	}
 	final Windows.Foundation.Diagnostics.LoggingActivity StartActivity(HSTRING startEventName)
 	{
 		Windows.Foundation.Diagnostics.LoggingActivity _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_StartActivity(startEventName, &_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingTarget)this.asInterface(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916"))).abi_StartActivity(startEventName, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Diagnostics.LoggingActivity StartActivityWithFields(HSTRING startEventName, Windows.Foundation.Diagnostics.LoggingFields fields)
 	{
 		Windows.Foundation.Diagnostics.LoggingActivity _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_StartActivityWithFields(startEventName, fields, &_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingTarget)this.asInterface(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916"))).abi_StartActivityWithFields(startEventName, fields, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Diagnostics.LoggingActivity StartActivityWithFieldsAndLevel(HSTRING startEventName, Windows.Foundation.Diagnostics.LoggingFields fields, Windows.Foundation.Diagnostics.LoggingLevel level)
 	{
 		Windows.Foundation.Diagnostics.LoggingActivity _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_StartActivityWithFieldsAndLevel(startEventName, fields, level, &_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingTarget)this.asInterface(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916"))).abi_StartActivityWithFieldsAndLevel(startEventName, fields, level, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Diagnostics.LoggingActivity StartActivityWithFieldsAndOptions(HSTRING startEventName, Windows.Foundation.Diagnostics.LoggingFields fields, Windows.Foundation.Diagnostics.LoggingLevel level, Windows.Foundation.Diagnostics.LoggingOptions options)
 	{
 		Windows.Foundation.Diagnostics.LoggingActivity _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_StartActivityWithFieldsAndOptions(startEventName, fields, level, options, &_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingTarget)this.asInterface(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916"))).abi_StartActivityWithFieldsAndOptions(startEventName, fields, level, options, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Diagnostics.LoggingActivity New(HSTRING activityName, Windows.Foundation.Diagnostics.ILoggingChannel loggingChannel)
 	{
 		auto factory = factory!(Windows.Foundation.Diagnostics.ILoggingActivityFactory);
 		Windows.Foundation.Diagnostics.LoggingActivity _ret;
-		Debug.OK(factory.as!(Windows.Foundation.Diagnostics.ILoggingActivityFactory).abi_CreateLoggingActivity(activityName, loggingChannel, &_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingActivityFactory)factory.asInterface(uuid("6b33b483-e10a-4c58-97d5-10fb451074fb"))).abi_CreateLoggingActivity(activityName, loggingChannel, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Diagnostics.LoggingActivity New(HSTRING activityName, Windows.Foundation.Diagnostics.ILoggingChannel loggingChannel, Windows.Foundation.Diagnostics.LoggingLevel level)
 	{
 		auto factory = factory!(Windows.Foundation.Diagnostics.ILoggingActivityFactory);
 		Windows.Foundation.Diagnostics.LoggingActivity _ret;
-		Debug.OK(factory.as!(Windows.Foundation.Diagnostics.ILoggingActivityFactory).abi_CreateLoggingActivityWithLevel(activityName, loggingChannel, level, &_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingActivityFactory)factory.asInterface(uuid("6b33b483-e10a-4c58-97d5-10fb451074fb"))).abi_CreateLoggingActivityWithLevel(activityName, loggingChannel, level, &_ret));
 		return _ret;
 	}
 }
@@ -621,113 +621,113 @@ extern(Windows):
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannel).get_Name(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingChannel)this.asInterface(uuid("e9a50343-11d7-4f01-b5ca-cf495278c0a8"))).get_Name(&_ret));
 		return _ret;
 	}
 	final bool Enabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannel).get_Enabled(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingChannel)this.asInterface(uuid("e9a50343-11d7-4f01-b5ca-cf495278c0a8"))).get_Enabled(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Diagnostics.LoggingLevel Level()
 	{
 		Windows.Foundation.Diagnostics.LoggingLevel _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannel).get_Level(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingChannel)this.asInterface(uuid("e9a50343-11d7-4f01-b5ca-cf495278c0a8"))).get_Level(&_ret));
 		return _ret;
 	}
 	final void LogMessage(HSTRING eventString)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannel).abi_LogMessage(eventString));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingChannel)this.asInterface(uuid("e9a50343-11d7-4f01-b5ca-cf495278c0a8"))).abi_LogMessage(eventString));
 	}
 	final void LogMessageWithLevel(HSTRING eventString, Windows.Foundation.Diagnostics.LoggingLevel level)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannel).abi_LogMessageWithLevel(eventString, level));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingChannel)this.asInterface(uuid("e9a50343-11d7-4f01-b5ca-cf495278c0a8"))).abi_LogMessageWithLevel(eventString, level));
 	}
 	final void LogValuePair(HSTRING value1, INT32 value2)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannel).abi_LogValuePair(value1, value2));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingChannel)this.asInterface(uuid("e9a50343-11d7-4f01-b5ca-cf495278c0a8"))).abi_LogValuePair(value1, value2));
 	}
 	final void LogValuePairWithLevel(HSTRING value1, INT32 value2, Windows.Foundation.Diagnostics.LoggingLevel level)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannel).abi_LogValuePairWithLevel(value1, value2, level));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingChannel)this.asInterface(uuid("e9a50343-11d7-4f01-b5ca-cf495278c0a8"))).abi_LogValuePairWithLevel(value1, value2, level));
 	}
 	final EventRegistrationToken OnLoggingEnabled(void delegate(Windows.Foundation.Diagnostics.ILoggingChannel, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannel).add_LoggingEnabled(event!(Windows.Foundation.TypedEventHandler!(Windows.Foundation.Diagnostics.ILoggingChannel, IInspectable), Windows.Foundation.Diagnostics.ILoggingChannel, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingChannel)this.asInterface(uuid("e9a50343-11d7-4f01-b5ca-cf495278c0a8"))).add_LoggingEnabled(event!(Windows.Foundation.TypedEventHandler!(Windows.Foundation.Diagnostics.ILoggingChannel, IInspectable), Windows.Foundation.Diagnostics.ILoggingChannel, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeLoggingEnabled(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannel).remove_LoggingEnabled(token));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingChannel)this.asInterface(uuid("e9a50343-11d7-4f01-b5ca-cf495278c0a8"))).remove_LoggingEnabled(token));
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	final GUID Id()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannel2).get_Id(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingChannel2)this.asInterface(uuid("9f4c3cf3-0bac-45a5-9e33-baf3f3a246a5"))).get_Id(&_ret));
 		return _ret;
 	}
 	final bool IsEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_IsEnabled(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingTarget)this.asInterface(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916"))).abi_IsEnabled(&_ret));
 		return _ret;
 	}
 	final bool IsEnabledWithLevel(Windows.Foundation.Diagnostics.LoggingLevel level)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_IsEnabledWithLevel(level, &_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingTarget)this.asInterface(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916"))).abi_IsEnabledWithLevel(level, &_ret));
 		return _ret;
 	}
 	final bool IsEnabledWithLevelAndKeywords(Windows.Foundation.Diagnostics.LoggingLevel level, INT64 keywords)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_IsEnabledWithLevelAndKeywords(level, keywords, &_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingTarget)this.asInterface(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916"))).abi_IsEnabledWithLevelAndKeywords(level, keywords, &_ret));
 		return _ret;
 	}
 	final void LogEvent(HSTRING eventName)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_LogEvent(eventName));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingTarget)this.asInterface(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916"))).abi_LogEvent(eventName));
 	}
 	final void LogEventWithFields(HSTRING eventName, Windows.Foundation.Diagnostics.LoggingFields fields)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_LogEventWithFields(eventName, fields));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingTarget)this.asInterface(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916"))).abi_LogEventWithFields(eventName, fields));
 	}
 	final void LogEventWithFieldsAndLevel(HSTRING eventName, Windows.Foundation.Diagnostics.LoggingFields fields, Windows.Foundation.Diagnostics.LoggingLevel level)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_LogEventWithFieldsAndLevel(eventName, fields, level));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingTarget)this.asInterface(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916"))).abi_LogEventWithFieldsAndLevel(eventName, fields, level));
 	}
 	final void LogEventWithFieldsAndOptions(HSTRING eventName, Windows.Foundation.Diagnostics.LoggingFields fields, Windows.Foundation.Diagnostics.LoggingLevel level, Windows.Foundation.Diagnostics.LoggingOptions options)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_LogEventWithFieldsAndOptions(eventName, fields, level, options));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingTarget)this.asInterface(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916"))).abi_LogEventWithFieldsAndOptions(eventName, fields, level, options));
 	}
 	final Windows.Foundation.Diagnostics.LoggingActivity StartActivity(HSTRING startEventName)
 	{
 		Windows.Foundation.Diagnostics.LoggingActivity _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_StartActivity(startEventName, &_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingTarget)this.asInterface(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916"))).abi_StartActivity(startEventName, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Diagnostics.LoggingActivity StartActivityWithFields(HSTRING startEventName, Windows.Foundation.Diagnostics.LoggingFields fields)
 	{
 		Windows.Foundation.Diagnostics.LoggingActivity _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_StartActivityWithFields(startEventName, fields, &_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingTarget)this.asInterface(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916"))).abi_StartActivityWithFields(startEventName, fields, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Diagnostics.LoggingActivity StartActivityWithFieldsAndLevel(HSTRING startEventName, Windows.Foundation.Diagnostics.LoggingFields fields, Windows.Foundation.Diagnostics.LoggingLevel level)
 	{
 		Windows.Foundation.Diagnostics.LoggingActivity _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_StartActivityWithFieldsAndLevel(startEventName, fields, level, &_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingTarget)this.asInterface(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916"))).abi_StartActivityWithFieldsAndLevel(startEventName, fields, level, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Diagnostics.LoggingActivity StartActivityWithFieldsAndOptions(HSTRING startEventName, Windows.Foundation.Diagnostics.LoggingFields fields, Windows.Foundation.Diagnostics.LoggingLevel level, Windows.Foundation.Diagnostics.LoggingOptions options)
 	{
 		Windows.Foundation.Diagnostics.LoggingActivity _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingTarget).abi_StartActivityWithFieldsAndOptions(startEventName, fields, level, options, &_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingTarget)this.asInterface(uuid("65f16c35-e388-4e26-b17a-f51cd3a83916"))).abi_StartActivityWithFieldsAndOptions(startEventName, fields, level, options, &_ret));
 		return _ret;
 	}
 	deprecated("This constructor creates a LoggingChannel in Windows 8.1 compatibility mode. Prefer the two-parameter constructor.")
@@ -735,7 +735,7 @@ extern(Windows):
 	{
 		auto factory = factory!(Windows.Foundation.Diagnostics.ILoggingChannelFactory);
 		Windows.Foundation.Diagnostics.LoggingChannel _ret;
-		Debug.OK(factory.as!(Windows.Foundation.Diagnostics.ILoggingChannelFactory).abi_Create(name, &_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingChannelFactory)factory.asInterface(uuid("4edc5b9c-af80-4a9b-b0dc-398f9ae5207b"))).abi_Create(name, &_ret));
 		return _ret;
 	}
 }
@@ -746,24 +746,24 @@ extern(Windows):
 	final GUID Group()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannelOptions).get_Group(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingChannelOptions)this.asInterface(uuid("c3e847ff-0ebb-4a53-8c54-dec24926cb2c"))).get_Group(&_ret));
 		return _ret;
 	}
 	final void Group(GUID value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingChannelOptions).set_Group(value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingChannelOptions)this.asInterface(uuid("c3e847ff-0ebb-4a53-8c54-dec24926cb2c"))).set_Group(value));
 	}
 	static LoggingChannelOptions New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(LoggingChannelOptions).abi_ActivateInstance(&ret));
-		return ret.as!(LoggingChannelOptions);
+		return cast(LoggingChannelOptions) ret;
 	}
 	static Windows.Foundation.Diagnostics.LoggingChannelOptions New(GUID group)
 	{
 		auto factory = factory!(Windows.Foundation.Diagnostics.ILoggingChannelOptionsFactory);
 		Windows.Foundation.Diagnostics.LoggingChannelOptions _ret;
-		Debug.OK(factory.as!(Windows.Foundation.Diagnostics.ILoggingChannelOptionsFactory).abi_Create(group, &_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingChannelOptionsFactory)factory.asInterface(uuid("a93151da-7faf-4191-8755-5e86dc65d896"))).abi_Create(group, &_ret));
 		return _ret;
 	}
 }
@@ -773,469 +773,469 @@ interface LoggingFields : Windows.Foundation.Diagnostics.ILoggingFields
 extern(Windows):
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_Clear());
 	}
 	final void BeginStruct(HSTRING name)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_BeginStruct(name));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_BeginStruct(name));
 	}
 	final void BeginStructWithTags(HSTRING name, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_BeginStructWithTags(name, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_BeginStructWithTags(name, tags));
 	}
 	final void EndStruct()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_EndStruct());
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_EndStruct());
 	}
 	final void AddEmpty(HSTRING name)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddEmpty(name));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddEmpty(name));
 	}
 	final void AddEmptyWithFormat(HSTRING name, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddEmptyWithFormat(name, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddEmptyWithFormat(name, format));
 	}
 	final void AddEmptyWithFormatAndTags(HSTRING name, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddEmptyWithFormatAndTags(name, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddEmptyWithFormatAndTags(name, format, tags));
 	}
 	final void AddUInt8(HSTRING name, ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt8(name, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt8(name, value));
 	}
 	final void AddUInt8WithFormat(HSTRING name, ubyte value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt8WithFormat(name, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt8WithFormat(name, value, format));
 	}
 	final void AddUInt8WithFormatAndTags(HSTRING name, ubyte value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt8WithFormatAndTags(name, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt8WithFormatAndTags(name, value, format, tags));
 	}
 	final void AddUInt8Array(HSTRING name, UINT32 __valueSize, ubyte* value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt8Array(name, __valueSize, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt8Array(name, __valueSize, value));
 	}
 	final void AddUInt8ArrayWithFormat(HSTRING name, UINT32 __valueSize, ubyte* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt8ArrayWithFormat(name, __valueSize, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt8ArrayWithFormat(name, __valueSize, value, format));
 	}
 	final void AddUInt8ArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, ubyte* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt8ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt8ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
 	}
 	final void AddInt16(HSTRING name, INT16 value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt16(name, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddInt16(name, value));
 	}
 	final void AddInt16WithFormat(HSTRING name, INT16 value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt16WithFormat(name, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddInt16WithFormat(name, value, format));
 	}
 	final void AddInt16WithFormatAndTags(HSTRING name, INT16 value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt16WithFormatAndTags(name, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddInt16WithFormatAndTags(name, value, format, tags));
 	}
 	final void AddInt16Array(HSTRING name, UINT32 __valueSize, INT16* value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt16Array(name, __valueSize, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddInt16Array(name, __valueSize, value));
 	}
 	final void AddInt16ArrayWithFormat(HSTRING name, UINT32 __valueSize, INT16* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt16ArrayWithFormat(name, __valueSize, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddInt16ArrayWithFormat(name, __valueSize, value, format));
 	}
 	final void AddInt16ArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, INT16* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt16ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddInt16ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
 	}
 	final void AddUInt16(HSTRING name, UINT16 value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt16(name, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt16(name, value));
 	}
 	final void AddUInt16WithFormat(HSTRING name, UINT16 value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt16WithFormat(name, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt16WithFormat(name, value, format));
 	}
 	final void AddUInt16WithFormatAndTags(HSTRING name, UINT16 value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt16WithFormatAndTags(name, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt16WithFormatAndTags(name, value, format, tags));
 	}
 	final void AddUInt16Array(HSTRING name, UINT32 __valueSize, UINT16* value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt16Array(name, __valueSize, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt16Array(name, __valueSize, value));
 	}
 	final void AddUInt16ArrayWithFormat(HSTRING name, UINT32 __valueSize, UINT16* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt16ArrayWithFormat(name, __valueSize, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt16ArrayWithFormat(name, __valueSize, value, format));
 	}
 	final void AddUInt16ArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, UINT16* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt16ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt16ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
 	}
 	final void AddInt32(HSTRING name, INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt32(name, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddInt32(name, value));
 	}
 	final void AddInt32WithFormat(HSTRING name, INT32 value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt32WithFormat(name, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddInt32WithFormat(name, value, format));
 	}
 	final void AddInt32WithFormatAndTags(HSTRING name, INT32 value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt32WithFormatAndTags(name, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddInt32WithFormatAndTags(name, value, format, tags));
 	}
 	final void AddInt32Array(HSTRING name, UINT32 __valueSize, INT32* value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt32Array(name, __valueSize, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddInt32Array(name, __valueSize, value));
 	}
 	final void AddInt32ArrayWithFormat(HSTRING name, UINT32 __valueSize, INT32* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt32ArrayWithFormat(name, __valueSize, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddInt32ArrayWithFormat(name, __valueSize, value, format));
 	}
 	final void AddInt32ArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, INT32* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt32ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddInt32ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
 	}
 	final void AddUInt32(HSTRING name, UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt32(name, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt32(name, value));
 	}
 	final void AddUInt32WithFormat(HSTRING name, UINT32 value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt32WithFormat(name, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt32WithFormat(name, value, format));
 	}
 	final void AddUInt32WithFormatAndTags(HSTRING name, UINT32 value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt32WithFormatAndTags(name, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt32WithFormatAndTags(name, value, format, tags));
 	}
 	final void AddUInt32Array(HSTRING name, UINT32 __valueSize, UINT32* value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt32Array(name, __valueSize, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt32Array(name, __valueSize, value));
 	}
 	final void AddUInt32ArrayWithFormat(HSTRING name, UINT32 __valueSize, UINT32* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt32ArrayWithFormat(name, __valueSize, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt32ArrayWithFormat(name, __valueSize, value, format));
 	}
 	final void AddUInt32ArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, UINT32* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt32ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt32ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
 	}
 	final void AddInt64(HSTRING name, INT64 value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt64(name, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddInt64(name, value));
 	}
 	final void AddInt64WithFormat(HSTRING name, INT64 value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt64WithFormat(name, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddInt64WithFormat(name, value, format));
 	}
 	final void AddInt64WithFormatAndTags(HSTRING name, INT64 value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt64WithFormatAndTags(name, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddInt64WithFormatAndTags(name, value, format, tags));
 	}
 	final void AddInt64Array(HSTRING name, UINT32 __valueSize, INT64* value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt64Array(name, __valueSize, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddInt64Array(name, __valueSize, value));
 	}
 	final void AddInt64ArrayWithFormat(HSTRING name, UINT32 __valueSize, INT64* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt64ArrayWithFormat(name, __valueSize, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddInt64ArrayWithFormat(name, __valueSize, value, format));
 	}
 	final void AddInt64ArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, INT64* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddInt64ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddInt64ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
 	}
 	final void AddUInt64(HSTRING name, ulong value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt64(name, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt64(name, value));
 	}
 	final void AddUInt64WithFormat(HSTRING name, ulong value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt64WithFormat(name, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt64WithFormat(name, value, format));
 	}
 	final void AddUInt64WithFormatAndTags(HSTRING name, ulong value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt64WithFormatAndTags(name, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt64WithFormatAndTags(name, value, format, tags));
 	}
 	final void AddUInt64Array(HSTRING name, UINT32 __valueSize, ulong* value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt64Array(name, __valueSize, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt64Array(name, __valueSize, value));
 	}
 	final void AddUInt64ArrayWithFormat(HSTRING name, UINT32 __valueSize, ulong* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt64ArrayWithFormat(name, __valueSize, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt64ArrayWithFormat(name, __valueSize, value, format));
 	}
 	final void AddUInt64ArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, ulong* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddUInt64ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddUInt64ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
 	}
 	final void AddSingle(HSTRING name, float value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSingle(name, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddSingle(name, value));
 	}
 	final void AddSingleWithFormat(HSTRING name, float value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSingleWithFormat(name, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddSingleWithFormat(name, value, format));
 	}
 	final void AddSingleWithFormatAndTags(HSTRING name, float value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSingleWithFormatAndTags(name, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddSingleWithFormatAndTags(name, value, format, tags));
 	}
 	final void AddSingleArray(HSTRING name, UINT32 __valueSize, float* value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSingleArray(name, __valueSize, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddSingleArray(name, __valueSize, value));
 	}
 	final void AddSingleArrayWithFormat(HSTRING name, UINT32 __valueSize, float* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSingleArrayWithFormat(name, __valueSize, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddSingleArrayWithFormat(name, __valueSize, value, format));
 	}
 	final void AddSingleArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, float* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSingleArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddSingleArrayWithFormatAndTags(name, __valueSize, value, format, tags));
 	}
 	final void AddDouble(HSTRING name, double value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDouble(name, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddDouble(name, value));
 	}
 	final void AddDoubleWithFormat(HSTRING name, double value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDoubleWithFormat(name, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddDoubleWithFormat(name, value, format));
 	}
 	final void AddDoubleWithFormatAndTags(HSTRING name, double value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDoubleWithFormatAndTags(name, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddDoubleWithFormatAndTags(name, value, format, tags));
 	}
 	final void AddDoubleArray(HSTRING name, UINT32 __valueSize, double* value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDoubleArray(name, __valueSize, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddDoubleArray(name, __valueSize, value));
 	}
 	final void AddDoubleArrayWithFormat(HSTRING name, UINT32 __valueSize, double* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDoubleArrayWithFormat(name, __valueSize, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddDoubleArrayWithFormat(name, __valueSize, value, format));
 	}
 	final void AddDoubleArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, double* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDoubleArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddDoubleArrayWithFormatAndTags(name, __valueSize, value, format, tags));
 	}
 	final void AddChar16(HSTRING name, wchar value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddChar16(name, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddChar16(name, value));
 	}
 	final void AddChar16WithFormat(HSTRING name, wchar value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddChar16WithFormat(name, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddChar16WithFormat(name, value, format));
 	}
 	final void AddChar16WithFormatAndTags(HSTRING name, wchar value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddChar16WithFormatAndTags(name, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddChar16WithFormatAndTags(name, value, format, tags));
 	}
 	final void AddChar16Array(HSTRING name, UINT32 __valueSize, wchar* value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddChar16Array(name, __valueSize, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddChar16Array(name, __valueSize, value));
 	}
 	final void AddChar16ArrayWithFormat(HSTRING name, UINT32 __valueSize, wchar* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddChar16ArrayWithFormat(name, __valueSize, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddChar16ArrayWithFormat(name, __valueSize, value, format));
 	}
 	final void AddChar16ArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, wchar* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddChar16ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddChar16ArrayWithFormatAndTags(name, __valueSize, value, format, tags));
 	}
 	final void AddBoolean(HSTRING name, bool value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddBoolean(name, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddBoolean(name, value));
 	}
 	final void AddBooleanWithFormat(HSTRING name, bool value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddBooleanWithFormat(name, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddBooleanWithFormat(name, value, format));
 	}
 	final void AddBooleanWithFormatAndTags(HSTRING name, bool value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddBooleanWithFormatAndTags(name, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddBooleanWithFormatAndTags(name, value, format, tags));
 	}
 	final void AddBooleanArray(HSTRING name, UINT32 __valueSize, bool* value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddBooleanArray(name, __valueSize, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddBooleanArray(name, __valueSize, value));
 	}
 	final void AddBooleanArrayWithFormat(HSTRING name, UINT32 __valueSize, bool* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddBooleanArrayWithFormat(name, __valueSize, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddBooleanArrayWithFormat(name, __valueSize, value, format));
 	}
 	final void AddBooleanArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, bool* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddBooleanArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddBooleanArrayWithFormatAndTags(name, __valueSize, value, format, tags));
 	}
 	final void AddString(HSTRING name, HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddString(name, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddString(name, value));
 	}
 	final void AddStringWithFormat(HSTRING name, HSTRING value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddStringWithFormat(name, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddStringWithFormat(name, value, format));
 	}
 	final void AddStringWithFormatAndTags(HSTRING name, HSTRING value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddStringWithFormatAndTags(name, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddStringWithFormatAndTags(name, value, format, tags));
 	}
 	final void AddStringArray(HSTRING name, UINT32 __valueSize, HSTRING* value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddStringArray(name, __valueSize, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddStringArray(name, __valueSize, value));
 	}
 	final void AddStringArrayWithFormat(HSTRING name, UINT32 __valueSize, HSTRING* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddStringArrayWithFormat(name, __valueSize, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddStringArrayWithFormat(name, __valueSize, value, format));
 	}
 	final void AddStringArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, HSTRING* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddStringArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddStringArrayWithFormatAndTags(name, __valueSize, value, format, tags));
 	}
 	final void AddGuid(HSTRING name, GUID value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddGuid(name, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddGuid(name, value));
 	}
 	final void AddGuidWithFormat(HSTRING name, GUID value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddGuidWithFormat(name, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddGuidWithFormat(name, value, format));
 	}
 	final void AddGuidWithFormatAndTags(HSTRING name, GUID value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddGuidWithFormatAndTags(name, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddGuidWithFormatAndTags(name, value, format, tags));
 	}
 	final void AddGuidArray(HSTRING name, UINT32 __valueSize, GUID* value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddGuidArray(name, __valueSize, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddGuidArray(name, __valueSize, value));
 	}
 	final void AddGuidArrayWithFormat(HSTRING name, UINT32 __valueSize, GUID* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddGuidArrayWithFormat(name, __valueSize, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddGuidArrayWithFormat(name, __valueSize, value, format));
 	}
 	final void AddGuidArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, GUID* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddGuidArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddGuidArrayWithFormatAndTags(name, __valueSize, value, format, tags));
 	}
 	final void AddDateTime(HSTRING name, Windows.Foundation.DateTime value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDateTime(name, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddDateTime(name, value));
 	}
 	final void AddDateTimeWithFormat(HSTRING name, Windows.Foundation.DateTime value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDateTimeWithFormat(name, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddDateTimeWithFormat(name, value, format));
 	}
 	final void AddDateTimeWithFormatAndTags(HSTRING name, Windows.Foundation.DateTime value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDateTimeWithFormatAndTags(name, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddDateTimeWithFormatAndTags(name, value, format, tags));
 	}
 	final void AddDateTimeArray(HSTRING name, UINT32 __valueSize, Windows.Foundation.DateTime* value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDateTimeArray(name, __valueSize, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddDateTimeArray(name, __valueSize, value));
 	}
 	final void AddDateTimeArrayWithFormat(HSTRING name, UINT32 __valueSize, Windows.Foundation.DateTime* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDateTimeArrayWithFormat(name, __valueSize, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddDateTimeArrayWithFormat(name, __valueSize, value, format));
 	}
 	final void AddDateTimeArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, Windows.Foundation.DateTime* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddDateTimeArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddDateTimeArrayWithFormatAndTags(name, __valueSize, value, format, tags));
 	}
 	final void AddTimeSpan(HSTRING name, Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddTimeSpan(name, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddTimeSpan(name, value));
 	}
 	final void AddTimeSpanWithFormat(HSTRING name, Windows.Foundation.TimeSpan value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddTimeSpanWithFormat(name, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddTimeSpanWithFormat(name, value, format));
 	}
 	final void AddTimeSpanWithFormatAndTags(HSTRING name, Windows.Foundation.TimeSpan value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddTimeSpanWithFormatAndTags(name, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddTimeSpanWithFormatAndTags(name, value, format, tags));
 	}
 	final void AddTimeSpanArray(HSTRING name, UINT32 __valueSize, Windows.Foundation.TimeSpan* value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddTimeSpanArray(name, __valueSize, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddTimeSpanArray(name, __valueSize, value));
 	}
 	final void AddTimeSpanArrayWithFormat(HSTRING name, UINT32 __valueSize, Windows.Foundation.TimeSpan* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddTimeSpanArrayWithFormat(name, __valueSize, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddTimeSpanArrayWithFormat(name, __valueSize, value, format));
 	}
 	final void AddTimeSpanArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, Windows.Foundation.TimeSpan* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddTimeSpanArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddTimeSpanArrayWithFormatAndTags(name, __valueSize, value, format, tags));
 	}
 	final void AddPoint(HSTRING name, Windows.Foundation.Point value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddPoint(name, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddPoint(name, value));
 	}
 	final void AddPointWithFormat(HSTRING name, Windows.Foundation.Point value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddPointWithFormat(name, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddPointWithFormat(name, value, format));
 	}
 	final void AddPointWithFormatAndTags(HSTRING name, Windows.Foundation.Point value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddPointWithFormatAndTags(name, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddPointWithFormatAndTags(name, value, format, tags));
 	}
 	final void AddPointArray(HSTRING name, UINT32 __valueSize, Windows.Foundation.Point* value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddPointArray(name, __valueSize, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddPointArray(name, __valueSize, value));
 	}
 	final void AddPointArrayWithFormat(HSTRING name, UINT32 __valueSize, Windows.Foundation.Point* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddPointArrayWithFormat(name, __valueSize, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddPointArrayWithFormat(name, __valueSize, value, format));
 	}
 	final void AddPointArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, Windows.Foundation.Point* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddPointArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddPointArrayWithFormatAndTags(name, __valueSize, value, format, tags));
 	}
 	final void AddSize(HSTRING name, Windows.Foundation.Size value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSize(name, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddSize(name, value));
 	}
 	final void AddSizeWithFormat(HSTRING name, Windows.Foundation.Size value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSizeWithFormat(name, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddSizeWithFormat(name, value, format));
 	}
 	final void AddSizeWithFormatAndTags(HSTRING name, Windows.Foundation.Size value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSizeWithFormatAndTags(name, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddSizeWithFormatAndTags(name, value, format, tags));
 	}
 	final void AddSizeArray(HSTRING name, UINT32 __valueSize, Windows.Foundation.Size* value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSizeArray(name, __valueSize, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddSizeArray(name, __valueSize, value));
 	}
 	final void AddSizeArrayWithFormat(HSTRING name, UINT32 __valueSize, Windows.Foundation.Size* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSizeArrayWithFormat(name, __valueSize, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddSizeArrayWithFormat(name, __valueSize, value, format));
 	}
 	final void AddSizeArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, Windows.Foundation.Size* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddSizeArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddSizeArrayWithFormatAndTags(name, __valueSize, value, format, tags));
 	}
 	final void AddRect(HSTRING name, Windows.Foundation.Rect value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddRect(name, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddRect(name, value));
 	}
 	final void AddRectWithFormat(HSTRING name, Windows.Foundation.Rect value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddRectWithFormat(name, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddRectWithFormat(name, value, format));
 	}
 	final void AddRectWithFormatAndTags(HSTRING name, Windows.Foundation.Rect value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddRectWithFormatAndTags(name, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddRectWithFormatAndTags(name, value, format, tags));
 	}
 	final void AddRectArray(HSTRING name, UINT32 __valueSize, Windows.Foundation.Rect* value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddRectArray(name, __valueSize, value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddRectArray(name, __valueSize, value));
 	}
 	final void AddRectArrayWithFormat(HSTRING name, UINT32 __valueSize, Windows.Foundation.Rect* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddRectArrayWithFormat(name, __valueSize, value, format));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddRectArrayWithFormat(name, __valueSize, value, format));
 	}
 	final void AddRectArrayWithFormatAndTags(HSTRING name, UINT32 __valueSize, Windows.Foundation.Rect* value, Windows.Foundation.Diagnostics.LoggingFieldFormat format, INT32 tags)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingFields).abi_AddRectArrayWithFormatAndTags(name, __valueSize, value, format, tags));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingFields)this.asInterface(uuid("d7f6b7af-762d-4579-83bd-52c23bc333bc"))).abi_AddRectArrayWithFormatAndTags(name, __valueSize, value, format, tags));
 	}
 	static LoggingFields New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(LoggingFields).abi_ActivateInstance(&ret));
-		return ret.as!(LoggingFields);
+		return cast(LoggingFields) ret;
 	}
 }
 
@@ -1245,74 +1245,74 @@ extern(Windows):
 	final INT64 Keywords()
 	{
 		INT64 _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).get_Keywords(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingOptions)this.asInterface(uuid("90bc7850-0192-4f5d-ac26-006adaca12d8"))).get_Keywords(&_ret));
 		return _ret;
 	}
 	final void Keywords(INT64 value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).set_Keywords(value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingOptions)this.asInterface(uuid("90bc7850-0192-4f5d-ac26-006adaca12d8"))).set_Keywords(value));
 	}
 	final INT32 Tags()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).get_Tags(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingOptions)this.asInterface(uuid("90bc7850-0192-4f5d-ac26-006adaca12d8"))).get_Tags(&_ret));
 		return _ret;
 	}
 	final void Tags(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).set_Tags(value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingOptions)this.asInterface(uuid("90bc7850-0192-4f5d-ac26-006adaca12d8"))).set_Tags(value));
 	}
 	final INT16 Task()
 	{
 		INT16 _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).get_Task(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingOptions)this.asInterface(uuid("90bc7850-0192-4f5d-ac26-006adaca12d8"))).get_Task(&_ret));
 		return _ret;
 	}
 	final void Task(INT16 value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).set_Task(value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingOptions)this.asInterface(uuid("90bc7850-0192-4f5d-ac26-006adaca12d8"))).set_Task(value));
 	}
 	final Windows.Foundation.Diagnostics.LoggingOpcode Opcode()
 	{
 		Windows.Foundation.Diagnostics.LoggingOpcode _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).get_Opcode(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingOptions)this.asInterface(uuid("90bc7850-0192-4f5d-ac26-006adaca12d8"))).get_Opcode(&_ret));
 		return _ret;
 	}
 	final void Opcode(Windows.Foundation.Diagnostics.LoggingOpcode value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).set_Opcode(value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingOptions)this.asInterface(uuid("90bc7850-0192-4f5d-ac26-006adaca12d8"))).set_Opcode(value));
 	}
 	final GUID ActivityId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).get_ActivityId(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingOptions)this.asInterface(uuid("90bc7850-0192-4f5d-ac26-006adaca12d8"))).get_ActivityId(&_ret));
 		return _ret;
 	}
 	final void ActivityId(GUID value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).set_ActivityId(value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingOptions)this.asInterface(uuid("90bc7850-0192-4f5d-ac26-006adaca12d8"))).set_ActivityId(value));
 	}
 	final GUID RelatedActivityId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).get_RelatedActivityId(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingOptions)this.asInterface(uuid("90bc7850-0192-4f5d-ac26-006adaca12d8"))).get_RelatedActivityId(&_ret));
 		return _ret;
 	}
 	final void RelatedActivityId(GUID value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingOptions).set_RelatedActivityId(value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingOptions)this.asInterface(uuid("90bc7850-0192-4f5d-ac26-006adaca12d8"))).set_RelatedActivityId(value));
 	}
 	static LoggingOptions New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(LoggingOptions).abi_ActivateInstance(&ret));
-		return ret.as!(LoggingOptions);
+		return cast(LoggingOptions) ret;
 	}
 	static Windows.Foundation.Diagnostics.LoggingOptions New(INT64 keywords)
 	{
 		auto factory = factory!(Windows.Foundation.Diagnostics.ILoggingOptionsFactory);
 		Windows.Foundation.Diagnostics.LoggingOptions _ret;
-		Debug.OK(factory.as!(Windows.Foundation.Diagnostics.ILoggingOptionsFactory).abi_CreateWithKeywords(keywords, &_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingOptionsFactory)factory.asInterface(uuid("d713c6cb-98ab-464b-9f22-a3268478368a"))).abi_CreateWithKeywords(keywords, &_ret));
 		return _ret;
 	}
 }
@@ -1323,36 +1323,36 @@ extern(Windows):
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingSession).get_Name(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingSession)this.asInterface(uuid("6221f306-9380-4ad7-baf5-41ea9310d768"))).get_Name(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) SaveToFileAsync(Windows.Storage.IStorageFolder folder, HSTRING fileName)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingSession).abi_SaveToFileAsync(folder, fileName, &_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingSession)this.asInterface(uuid("6221f306-9380-4ad7-baf5-41ea9310d768"))).abi_SaveToFileAsync(folder, fileName, &_ret));
 		return _ret;
 	}
 	final void AddLoggingChannel(Windows.Foundation.Diagnostics.ILoggingChannel loggingChannel)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingSession).abi_AddLoggingChannel(loggingChannel));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingSession)this.asInterface(uuid("6221f306-9380-4ad7-baf5-41ea9310d768"))).abi_AddLoggingChannel(loggingChannel));
 	}
 	final void AddLoggingChannelWithLevel(Windows.Foundation.Diagnostics.ILoggingChannel loggingChannel, Windows.Foundation.Diagnostics.LoggingLevel maxLevel)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingSession).abi_AddLoggingChannelWithLevel(loggingChannel, maxLevel));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingSession)this.asInterface(uuid("6221f306-9380-4ad7-baf5-41ea9310d768"))).abi_AddLoggingChannelWithLevel(loggingChannel, maxLevel));
 	}
 	final void RemoveLoggingChannel(Windows.Foundation.Diagnostics.ILoggingChannel loggingChannel)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ILoggingSession).abi_RemoveLoggingChannel(loggingChannel));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingSession)this.asInterface(uuid("6221f306-9380-4ad7-baf5-41ea9310d768"))).abi_RemoveLoggingChannel(loggingChannel));
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	static Windows.Foundation.Diagnostics.LoggingSession New(HSTRING name)
 	{
 		auto factory = factory!(Windows.Foundation.Diagnostics.ILoggingSessionFactory);
 		Windows.Foundation.Diagnostics.LoggingSession _ret;
-		Debug.OK(factory.as!(Windows.Foundation.Diagnostics.ILoggingSessionFactory).abi_Create(name, &_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ILoggingSessionFactory)factory.asInterface(uuid("4e937ee5-58fd-45e0-8c2f-a132eff95c1e"))).abi_Create(name, &_ret));
 		return _ret;
 	}
 }
@@ -1362,19 +1362,19 @@ interface RuntimeBrokerErrorSettings : Windows.Foundation.Diagnostics.IErrorRepo
 extern(Windows):
 	final void SetErrorOptions(Windows.Foundation.Diagnostics.ErrorOptions value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IErrorReportingSettings).abi_SetErrorOptions(value));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.IErrorReportingSettings)this.asInterface(uuid("16369792-b03e-4ba1-8bb8-d28f4ab4d2c0"))).abi_SetErrorOptions(value));
 	}
 	final Windows.Foundation.Diagnostics.ErrorOptions GetErrorOptions()
 	{
 		Windows.Foundation.Diagnostics.ErrorOptions _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.IErrorReportingSettings).abi_GetErrorOptions(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.IErrorReportingSettings)this.asInterface(uuid("16369792-b03e-4ba1-8bb8-d28f4ab4d2c0"))).abi_GetErrorOptions(&_ret));
 		return _ret;
 	}
 	static RuntimeBrokerErrorSettings New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(RuntimeBrokerErrorSettings).abi_ActivateInstance(&ret));
-		return ret.as!(RuntimeBrokerErrorSettings);
+		return cast(RuntimeBrokerErrorSettings) ret;
 	}
 }
 
@@ -1384,13 +1384,13 @@ extern(Windows):
 	final bool Enabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ITracingStatusChangedEventArgs).get_Enabled(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ITracingStatusChangedEventArgs)this.asInterface(uuid("410b7711-ff3b-477f-9c9a-d2efda302dc3"))).get_Enabled(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Diagnostics.CausalityTraceLevel TraceLevel()
 	{
 		Windows.Foundation.Diagnostics.CausalityTraceLevel _ret;
-		Debug.OK(this.as!(Windows.Foundation.Diagnostics.ITracingStatusChangedEventArgs).get_TraceLevel(&_ret));
+		Debug.OK((cast(Windows.Foundation.Diagnostics.ITracingStatusChangedEventArgs)this.asInterface(uuid("410b7711-ff3b-477f-9c9a-d2efda302dc3"))).get_TraceLevel(&_ret));
 		return _ret;
 	}
 }

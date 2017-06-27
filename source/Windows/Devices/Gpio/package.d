@@ -134,49 +134,49 @@ interface GpioChangeCounter : Windows.Devices.Gpio.IGpioChangeCounter, Windows.F
 extern(Windows):
 	final void Polarity(Windows.Devices.Gpio.GpioChangePolarity value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeCounter).set_Polarity(value));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeCounter)this.asInterface(uuid("cb5ec0de-6801-43ff-803d-4576628a8b26"))).set_Polarity(value));
 	}
 	final Windows.Devices.Gpio.GpioChangePolarity Polarity()
 	{
 		Windows.Devices.Gpio.GpioChangePolarity _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeCounter).get_Polarity(&_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeCounter)this.asInterface(uuid("cb5ec0de-6801-43ff-803d-4576628a8b26"))).get_Polarity(&_ret));
 		return _ret;
 	}
 	final bool IsStarted()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeCounter).get_IsStarted(&_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeCounter)this.asInterface(uuid("cb5ec0de-6801-43ff-803d-4576628a8b26"))).get_IsStarted(&_ret));
 		return _ret;
 	}
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeCounter).abi_Start());
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeCounter)this.asInterface(uuid("cb5ec0de-6801-43ff-803d-4576628a8b26"))).abi_Start());
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeCounter).abi_Stop());
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeCounter)this.asInterface(uuid("cb5ec0de-6801-43ff-803d-4576628a8b26"))).abi_Stop());
 	}
 	final Windows.Devices.Gpio.GpioChangeCount Read()
 	{
 		Windows.Devices.Gpio.GpioChangeCount _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeCounter).abi_Read(&_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeCounter)this.asInterface(uuid("cb5ec0de-6801-43ff-803d-4576628a8b26"))).abi_Read(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Gpio.GpioChangeCount Reset()
 	{
 		Windows.Devices.Gpio.GpioChangeCount _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeCounter).abi_Reset(&_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeCounter)this.asInterface(uuid("cb5ec0de-6801-43ff-803d-4576628a8b26"))).abi_Reset(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	static Windows.Devices.Gpio.GpioChangeCounter New(Windows.Devices.Gpio.GpioPin pin)
 	{
 		auto factory = factory!(Windows.Devices.Gpio.IGpioChangeCounterFactory);
 		Windows.Devices.Gpio.GpioChangeCounter _ret;
-		Debug.OK(factory.as!(Windows.Devices.Gpio.IGpioChangeCounterFactory).abi_Create(pin, &_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeCounterFactory)factory.asInterface(uuid("147d94b6-0a9e-410c-b4fa-f89f4052084d"))).abi_Create(pin, &_ret));
 		return _ret;
 	}
 }
@@ -187,95 +187,95 @@ extern(Windows):
 	final INT32 Capacity()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).get_Capacity(&_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeReader)this.asInterface(uuid("0abc885f-e031-48e8-8590-70de78363c6d"))).get_Capacity(&_ret));
 		return _ret;
 	}
 	final INT32 Length()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).get_Length(&_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeReader)this.asInterface(uuid("0abc885f-e031-48e8-8590-70de78363c6d"))).get_Length(&_ret));
 		return _ret;
 	}
 	final bool IsEmpty()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).get_IsEmpty(&_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeReader)this.asInterface(uuid("0abc885f-e031-48e8-8590-70de78363c6d"))).get_IsEmpty(&_ret));
 		return _ret;
 	}
 	final bool IsOverflowed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).get_IsOverflowed(&_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeReader)this.asInterface(uuid("0abc885f-e031-48e8-8590-70de78363c6d"))).get_IsOverflowed(&_ret));
 		return _ret;
 	}
 	final void Polarity(Windows.Devices.Gpio.GpioChangePolarity value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).set_Polarity(value));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeReader)this.asInterface(uuid("0abc885f-e031-48e8-8590-70de78363c6d"))).set_Polarity(value));
 	}
 	final Windows.Devices.Gpio.GpioChangePolarity Polarity()
 	{
 		Windows.Devices.Gpio.GpioChangePolarity _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).get_Polarity(&_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeReader)this.asInterface(uuid("0abc885f-e031-48e8-8590-70de78363c6d"))).get_Polarity(&_ret));
 		return _ret;
 	}
 	final bool IsStarted()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).get_IsStarted(&_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeReader)this.asInterface(uuid("0abc885f-e031-48e8-8590-70de78363c6d"))).get_IsStarted(&_ret));
 		return _ret;
 	}
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).abi_Start());
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeReader)this.asInterface(uuid("0abc885f-e031-48e8-8590-70de78363c6d"))).abi_Start());
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).abi_Stop());
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeReader)this.asInterface(uuid("0abc885f-e031-48e8-8590-70de78363c6d"))).abi_Stop());
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).abi_Clear());
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeReader)this.asInterface(uuid("0abc885f-e031-48e8-8590-70de78363c6d"))).abi_Clear());
 	}
 	final Windows.Devices.Gpio.GpioChangeRecord GetNextItem()
 	{
 		Windows.Devices.Gpio.GpioChangeRecord _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).abi_GetNextItem(&_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeReader)this.asInterface(uuid("0abc885f-e031-48e8-8590-70de78363c6d"))).abi_GetNextItem(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Gpio.GpioChangeRecord PeekNextItem()
 	{
 		Windows.Devices.Gpio.GpioChangeRecord _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).abi_PeekNextItem(&_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeReader)this.asInterface(uuid("0abc885f-e031-48e8-8590-70de78363c6d"))).abi_PeekNextItem(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Devices.Gpio.GpioChangeRecord) GetAllItems()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Devices.Gpio.GpioChangeRecord) _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).abi_GetAllItems(&_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeReader)this.asInterface(uuid("0abc885f-e031-48e8-8590-70de78363c6d"))).abi_GetAllItems(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction WaitForItemsAsync(INT32 count)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioChangeReader).abi_WaitForItemsAsync(count, &_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeReader)this.asInterface(uuid("0abc885f-e031-48e8-8590-70de78363c6d"))).abi_WaitForItemsAsync(count, &_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	static Windows.Devices.Gpio.GpioChangeReader New(Windows.Devices.Gpio.GpioPin pin)
 	{
 		auto factory = factory!(Windows.Devices.Gpio.IGpioChangeReaderFactory);
 		Windows.Devices.Gpio.GpioChangeReader _ret;
-		Debug.OK(factory.as!(Windows.Devices.Gpio.IGpioChangeReaderFactory).abi_Create(pin, &_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeReaderFactory)factory.asInterface(uuid("a9598ef3-390e-441a-9d1c-e8de0b2df0df"))).abi_Create(pin, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Gpio.GpioChangeReader New(Windows.Devices.Gpio.GpioPin pin, INT32 minCapacity)
 	{
 		auto factory = factory!(Windows.Devices.Gpio.IGpioChangeReaderFactory);
 		Windows.Devices.Gpio.GpioChangeReader _ret;
-		Debug.OK(factory.as!(Windows.Devices.Gpio.IGpioChangeReaderFactory).abi_CreateWithCapacity(pin, minCapacity, &_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioChangeReaderFactory)factory.asInterface(uuid("a9598ef3-390e-441a-9d1c-e8de0b2df0df"))).abi_CreateWithCapacity(pin, minCapacity, &_ret));
 		return _ret;
 	}
 }
@@ -286,25 +286,25 @@ extern(Windows):
 	final INT32 PinCount()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioController).get_PinCount(&_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioController)this.asInterface(uuid("284012e3-7461-469c-a8bc-61d69d08a53c"))).get_PinCount(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Gpio.GpioPin OpenPin(INT32 pinNumber)
 	{
 		Windows.Devices.Gpio.GpioPin _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioController).abi_OpenPin(pinNumber, &_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioController)this.asInterface(uuid("284012e3-7461-469c-a8bc-61d69d08a53c"))).abi_OpenPin(pinNumber, &_ret));
 		return _ret;
 	}
 	final Windows.Devices.Gpio.GpioPin OpenPinWithSharingMode(INT32 pinNumber, Windows.Devices.Gpio.GpioSharingMode sharingMode)
 	{
 		Windows.Devices.Gpio.GpioPin _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioController).abi_OpenPinWithSharingMode(pinNumber, sharingMode, &_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioController)this.asInterface(uuid("284012e3-7461-469c-a8bc-61d69d08a53c"))).abi_OpenPinWithSharingMode(pinNumber, sharingMode, &_ret));
 		return _ret;
 	}
 	final bool TryOpenPin(INT32 pinNumber, Windows.Devices.Gpio.GpioSharingMode sharingMode, Windows.Devices.Gpio.GpioPin* out_pin, Windows.Devices.Gpio.GpioOpenStatus* out_openStatus)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioController).abi_TryOpenPin(pinNumber, sharingMode, out_pin, out_openStatus, &_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioController)this.asInterface(uuid("284012e3-7461-469c-a8bc-61d69d08a53c"))).abi_TryOpenPin(pinNumber, sharingMode, out_pin, out_openStatus, &_ret));
 		return _ret;
 	}
 
@@ -317,7 +317,7 @@ extern(Windows):
 	static Windows.Devices.Gpio.GpioController GetDefault()
 	{
 		Windows.Devices.Gpio.GpioController _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Gpio.IGpioControllerStatics).abi_GetDefault(&_ret));
+		Debug.OK(staticInstance.abi_GetDefault(&_ret));
 		return _ret;
 	}
 }
@@ -328,64 +328,64 @@ extern(Windows):
 	final EventRegistrationToken OnValueChanged(void delegate(Windows.Devices.Gpio.GpioPin, Windows.Devices.Gpio.GpioPinValueChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPin).add_ValueChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Gpio.GpioPin, Windows.Devices.Gpio.GpioPinValueChangedEventArgs), Windows.Devices.Gpio.GpioPin, Windows.Devices.Gpio.GpioPinValueChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioPin)this.asInterface(uuid("11d9b087-afae-4790-9ee9-e0eac942d201"))).add_ValueChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Gpio.GpioPin, Windows.Devices.Gpio.GpioPinValueChangedEventArgs), Windows.Devices.Gpio.GpioPin, Windows.Devices.Gpio.GpioPinValueChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeValueChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPin).remove_ValueChanged(token));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioPin)this.asInterface(uuid("11d9b087-afae-4790-9ee9-e0eac942d201"))).remove_ValueChanged(token));
 	}
 	final Windows.Foundation.TimeSpan DebounceTimeout()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPin).get_DebounceTimeout(&_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioPin)this.asInterface(uuid("11d9b087-afae-4790-9ee9-e0eac942d201"))).get_DebounceTimeout(&_ret));
 		return _ret;
 	}
 	final void DebounceTimeout(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPin).set_DebounceTimeout(value));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioPin)this.asInterface(uuid("11d9b087-afae-4790-9ee9-e0eac942d201"))).set_DebounceTimeout(value));
 	}
 	final INT32 PinNumber()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPin).get_PinNumber(&_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioPin)this.asInterface(uuid("11d9b087-afae-4790-9ee9-e0eac942d201"))).get_PinNumber(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Gpio.GpioSharingMode SharingMode()
 	{
 		Windows.Devices.Gpio.GpioSharingMode _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPin).get_SharingMode(&_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioPin)this.asInterface(uuid("11d9b087-afae-4790-9ee9-e0eac942d201"))).get_SharingMode(&_ret));
 		return _ret;
 	}
 	final bool IsDriveModeSupported(Windows.Devices.Gpio.GpioPinDriveMode driveMode)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPin).abi_IsDriveModeSupported(driveMode, &_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioPin)this.asInterface(uuid("11d9b087-afae-4790-9ee9-e0eac942d201"))).abi_IsDriveModeSupported(driveMode, &_ret));
 		return _ret;
 	}
 	final Windows.Devices.Gpio.GpioPinDriveMode GetDriveMode()
 	{
 		Windows.Devices.Gpio.GpioPinDriveMode _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPin).abi_GetDriveMode(&_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioPin)this.asInterface(uuid("11d9b087-afae-4790-9ee9-e0eac942d201"))).abi_GetDriveMode(&_ret));
 		return _ret;
 	}
 	final void SetDriveMode(Windows.Devices.Gpio.GpioPinDriveMode value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPin).abi_SetDriveMode(value));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioPin)this.asInterface(uuid("11d9b087-afae-4790-9ee9-e0eac942d201"))).abi_SetDriveMode(value));
 	}
 	final void Write(Windows.Devices.Gpio.GpioPinValue value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPin).abi_Write(value));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioPin)this.asInterface(uuid("11d9b087-afae-4790-9ee9-e0eac942d201"))).abi_Write(value));
 	}
 	final Windows.Devices.Gpio.GpioPinValue Read()
 	{
 		Windows.Devices.Gpio.GpioPinValue _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPin).abi_Read(&_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioPin)this.asInterface(uuid("11d9b087-afae-4790-9ee9-e0eac942d201"))).abi_Read(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 }
 
@@ -395,7 +395,7 @@ extern(Windows):
 	final Windows.Devices.Gpio.GpioPinEdge Edge()
 	{
 		Windows.Devices.Gpio.GpioPinEdge _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.IGpioPinValueChangedEventArgs).get_Edge(&_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioPinValueChangedEventArgs)this.asInterface(uuid("3137aae1-703d-4059-bd24-b5b25dffb84e"))).get_Edge(&_ret));
 		return _ret;
 	}
 }

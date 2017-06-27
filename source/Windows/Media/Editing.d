@@ -171,77 +171,77 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan TrimTimeFromStart()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).get_TrimTimeFromStart(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IBackgroundAudioTrack)this.asInterface(uuid("4b91b3bd-9e21-4266-a9c2-67dd011a2357"))).get_TrimTimeFromStart(&_ret));
 		return _ret;
 	}
 	final void TrimTimeFromStart(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).set_TrimTimeFromStart(value));
+		Debug.OK((cast(Windows.Media.Editing.IBackgroundAudioTrack)this.asInterface(uuid("4b91b3bd-9e21-4266-a9c2-67dd011a2357"))).set_TrimTimeFromStart(value));
 	}
 	final Windows.Foundation.TimeSpan TrimTimeFromEnd()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).get_TrimTimeFromEnd(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IBackgroundAudioTrack)this.asInterface(uuid("4b91b3bd-9e21-4266-a9c2-67dd011a2357"))).get_TrimTimeFromEnd(&_ret));
 		return _ret;
 	}
 	final void TrimTimeFromEnd(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).set_TrimTimeFromEnd(value));
+		Debug.OK((cast(Windows.Media.Editing.IBackgroundAudioTrack)this.asInterface(uuid("4b91b3bd-9e21-4266-a9c2-67dd011a2357"))).set_TrimTimeFromEnd(value));
 	}
 	final Windows.Foundation.TimeSpan OriginalDuration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).get_OriginalDuration(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IBackgroundAudioTrack)this.asInterface(uuid("4b91b3bd-9e21-4266-a9c2-67dd011a2357"))).get_OriginalDuration(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan TrimmedDuration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).get_TrimmedDuration(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IBackgroundAudioTrack)this.asInterface(uuid("4b91b3bd-9e21-4266-a9c2-67dd011a2357"))).get_TrimmedDuration(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) UserData()
 	{
 		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).get_UserData(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IBackgroundAudioTrack)this.asInterface(uuid("4b91b3bd-9e21-4266-a9c2-67dd011a2357"))).get_UserData(&_ret));
 		return _ret;
 	}
 	final void Delay(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).set_Delay(value));
+		Debug.OK((cast(Windows.Media.Editing.IBackgroundAudioTrack)this.asInterface(uuid("4b91b3bd-9e21-4266-a9c2-67dd011a2357"))).set_Delay(value));
 	}
 	final Windows.Foundation.TimeSpan Delay()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).get_Delay(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IBackgroundAudioTrack)this.asInterface(uuid("4b91b3bd-9e21-4266-a9c2-67dd011a2357"))).get_Delay(&_ret));
 		return _ret;
 	}
 	final void Volume(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).set_Volume(value));
+		Debug.OK((cast(Windows.Media.Editing.IBackgroundAudioTrack)this.asInterface(uuid("4b91b3bd-9e21-4266-a9c2-67dd011a2357"))).set_Volume(value));
 	}
 	final double Volume()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).get_Volume(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IBackgroundAudioTrack)this.asInterface(uuid("4b91b3bd-9e21-4266-a9c2-67dd011a2357"))).get_Volume(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Editing.BackgroundAudioTrack Clone()
 	{
 		Windows.Media.Editing.BackgroundAudioTrack _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).abi_Clone(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IBackgroundAudioTrack)this.asInterface(uuid("4b91b3bd-9e21-4266-a9c2-67dd011a2357"))).abi_Clone(&_ret));
 		return _ret;
 	}
 	final Windows.Media.MediaProperties.AudioEncodingProperties GetAudioEncodingProperties()
 	{
 		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).abi_GetAudioEncodingProperties(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IBackgroundAudioTrack)this.asInterface(uuid("4b91b3bd-9e21-4266-a9c2-67dd011a2357"))).abi_GetAudioEncodingProperties(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) AudioEffectDefinitions()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IBackgroundAudioTrack).get_AudioEffectDefinitions(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IBackgroundAudioTrack)this.asInterface(uuid("4b91b3bd-9e21-4266-a9c2-67dd011a2357"))).get_AudioEffectDefinitions(&_ret));
 		return _ret;
 	}
 
@@ -254,13 +254,13 @@ extern(Windows):
 	static Windows.Media.Editing.BackgroundAudioTrack CreateFromEmbeddedAudioTrack(Windows.Media.Editing.EmbeddedAudioTrack embeddedAudioTrack)
 	{
 		Windows.Media.Editing.BackgroundAudioTrack _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Editing.IBackgroundAudioTrackStatics).abi_CreateFromEmbeddedAudioTrack(embeddedAudioTrack, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromEmbeddedAudioTrack(embeddedAudioTrack, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Media.Editing.BackgroundAudioTrack) CreateFromFileAsync(Windows.Storage.IStorageFile file)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Editing.BackgroundAudioTrack) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Editing.IBackgroundAudioTrackStatics).abi_CreateFromFileAsync(file, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromFileAsync(file, &_ret));
 		return _ret;
 	}
 }
@@ -271,7 +271,7 @@ extern(Windows):
 	final Windows.Media.MediaProperties.AudioEncodingProperties GetAudioEncodingProperties()
 	{
 		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IEmbeddedAudioTrack).abi_GetAudioEncodingProperties(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IEmbeddedAudioTrack)this.asInterface(uuid("55ee5a7a-2d30-3fba-a190-4f1a6454f88f"))).abi_GetAudioEncodingProperties(&_ret));
 		return _ret;
 	}
 }
@@ -282,101 +282,101 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan TrimTimeFromStart()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_TrimTimeFromStart(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaClip)this.asInterface(uuid("53f25366-5fba-3ea4-8693-24761811140a"))).get_TrimTimeFromStart(&_ret));
 		return _ret;
 	}
 	final void TrimTimeFromStart(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).set_TrimTimeFromStart(value));
+		Debug.OK((cast(Windows.Media.Editing.IMediaClip)this.asInterface(uuid("53f25366-5fba-3ea4-8693-24761811140a"))).set_TrimTimeFromStart(value));
 	}
 	final Windows.Foundation.TimeSpan TrimTimeFromEnd()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_TrimTimeFromEnd(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaClip)this.asInterface(uuid("53f25366-5fba-3ea4-8693-24761811140a"))).get_TrimTimeFromEnd(&_ret));
 		return _ret;
 	}
 	final void TrimTimeFromEnd(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).set_TrimTimeFromEnd(value));
+		Debug.OK((cast(Windows.Media.Editing.IMediaClip)this.asInterface(uuid("53f25366-5fba-3ea4-8693-24761811140a"))).set_TrimTimeFromEnd(value));
 	}
 	final Windows.Foundation.TimeSpan OriginalDuration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_OriginalDuration(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaClip)this.asInterface(uuid("53f25366-5fba-3ea4-8693-24761811140a"))).get_OriginalDuration(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan TrimmedDuration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_TrimmedDuration(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaClip)this.asInterface(uuid("53f25366-5fba-3ea4-8693-24761811140a"))).get_TrimmedDuration(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) UserData()
 	{
 		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_UserData(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaClip)this.asInterface(uuid("53f25366-5fba-3ea4-8693-24761811140a"))).get_UserData(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Editing.MediaClip Clone()
 	{
 		Windows.Media.Editing.MediaClip _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).abi_Clone(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaClip)this.asInterface(uuid("53f25366-5fba-3ea4-8693-24761811140a"))).abi_Clone(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan StartTimeInComposition()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_StartTimeInComposition(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaClip)this.asInterface(uuid("53f25366-5fba-3ea4-8693-24761811140a"))).get_StartTimeInComposition(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan EndTimeInComposition()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_EndTimeInComposition(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaClip)this.asInterface(uuid("53f25366-5fba-3ea4-8693-24761811140a"))).get_EndTimeInComposition(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Editing.EmbeddedAudioTrack) EmbeddedAudioTracks()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Editing.EmbeddedAudioTrack) _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_EmbeddedAudioTracks(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaClip)this.asInterface(uuid("53f25366-5fba-3ea4-8693-24761811140a"))).get_EmbeddedAudioTracks(&_ret));
 		return _ret;
 	}
 	final UINT32 SelectedEmbeddedAudioTrackIndex()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_SelectedEmbeddedAudioTrackIndex(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaClip)this.asInterface(uuid("53f25366-5fba-3ea4-8693-24761811140a"))).get_SelectedEmbeddedAudioTrackIndex(&_ret));
 		return _ret;
 	}
 	final void SelectedEmbeddedAudioTrackIndex(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).set_SelectedEmbeddedAudioTrackIndex(value));
+		Debug.OK((cast(Windows.Media.Editing.IMediaClip)this.asInterface(uuid("53f25366-5fba-3ea4-8693-24761811140a"))).set_SelectedEmbeddedAudioTrackIndex(value));
 	}
 	final void Volume(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).set_Volume(value));
+		Debug.OK((cast(Windows.Media.Editing.IMediaClip)this.asInterface(uuid("53f25366-5fba-3ea4-8693-24761811140a"))).set_Volume(value));
 	}
 	final double Volume()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_Volume(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaClip)this.asInterface(uuid("53f25366-5fba-3ea4-8693-24761811140a"))).get_Volume(&_ret));
 		return _ret;
 	}
 	final Windows.Media.MediaProperties.VideoEncodingProperties GetVideoEncodingProperties()
 	{
 		Windows.Media.MediaProperties.VideoEncodingProperties _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).abi_GetVideoEncodingProperties(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaClip)this.asInterface(uuid("53f25366-5fba-3ea4-8693-24761811140a"))).abi_GetVideoEncodingProperties(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) AudioEffectDefinitions()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_AudioEffectDefinitions(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaClip)this.asInterface(uuid("53f25366-5fba-3ea4-8693-24761811140a"))).get_AudioEffectDefinitions(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IVideoEffectDefinition) VideoEffectDefinitions()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IVideoEffectDefinition) _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaClip).get_VideoEffectDefinitions(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaClip)this.asInterface(uuid("53f25366-5fba-3ea4-8693-24761811140a"))).get_VideoEffectDefinitions(&_ret));
 		return _ret;
 	}
 
@@ -389,19 +389,19 @@ extern(Windows):
 	static Windows.Media.Editing.MediaClip CreateFromColor(Windows.UI.Color color, Windows.Foundation.TimeSpan originalDuration)
 	{
 		Windows.Media.Editing.MediaClip _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Editing.IMediaClipStatics).abi_CreateFromColor(color, originalDuration, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromColor(color, originalDuration, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Media.Editing.MediaClip) CreateFromFileAsync(Windows.Storage.IStorageFile file)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Editing.MediaClip) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Editing.IMediaClipStatics).abi_CreateFromFileAsync(file, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromFileAsync(file, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Media.Editing.MediaClip) CreateFromImageFileAsync(Windows.Storage.IStorageFile file, Windows.Foundation.TimeSpan originalDuration)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Editing.MediaClip) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Editing.IMediaClipStatics).abi_CreateFromImageFileAsync(file, originalDuration, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromImageFileAsync(file, originalDuration, &_ret));
 		return _ret;
 	}
 }
@@ -412,97 +412,97 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan Duration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).get_Duration(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).get_Duration(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Media.Editing.MediaClip) Clips()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Media.Editing.MediaClip) _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).get_Clips(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).get_Clips(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Media.Editing.BackgroundAudioTrack) BackgroundAudioTracks()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Media.Editing.BackgroundAudioTrack) _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).get_BackgroundAudioTracks(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).get_BackgroundAudioTracks(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) UserData()
 	{
 		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).get_UserData(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).get_UserData(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Editing.MediaComposition Clone()
 	{
 		Windows.Media.Editing.MediaComposition _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).abi_Clone(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).abi_Clone(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction SaveAsync(Windows.Storage.IStorageFile file)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).abi_SaveAsync(file, &_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).abi_SaveAsync(file, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.ImageStream) GetThumbnailAsync(Windows.Foundation.TimeSpan timeFromStart, INT32 scaledWidth, INT32 scaledHeight, Windows.Media.Editing.VideoFramePrecision framePrecision)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.ImageStream) _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).abi_GetThumbnailAsync(timeFromStart, scaledWidth, scaledHeight, framePrecision, &_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).abi_GetThumbnailAsync(timeFromStart, scaledWidth, scaledHeight, framePrecision, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Imaging.ImageStream)) GetThumbnailsAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.TimeSpan) timesFromStart, INT32 scaledWidth, INT32 scaledHeight, Windows.Media.Editing.VideoFramePrecision framePrecision)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Imaging.ImageStream)) _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).abi_GetThumbnailsAsync(timesFromStart, scaledWidth, scaledHeight, framePrecision, &_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).abi_GetThumbnailsAsync(timesFromStart, scaledWidth, scaledHeight, framePrecision, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double) RenderToFileAsync(Windows.Storage.IStorageFile destination)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double) _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).abi_RenderToFileAsync(destination, &_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).abi_RenderToFileAsync(destination, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double) RenderToFileWithTrimmingPreferenceAsync(Windows.Storage.IStorageFile destination, Windows.Media.Editing.MediaTrimmingPreference trimmingPreference)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double) _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).abi_RenderToFileWithTrimmingPreferenceAsync(destination, trimmingPreference, &_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).abi_RenderToFileWithTrimmingPreferenceAsync(destination, trimmingPreference, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double) RenderToFileWithProfileAsync(Windows.Storage.IStorageFile destination, Windows.Media.Editing.MediaTrimmingPreference trimmingPreference, Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double) _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).abi_RenderToFileWithProfileAsync(destination, trimmingPreference, encodingProfile, &_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).abi_RenderToFileWithProfileAsync(destination, trimmingPreference, encodingProfile, &_ret));
 		return _ret;
 	}
 	final Windows.Media.MediaProperties.MediaEncodingProfile CreateDefaultEncodingProfile()
 	{
 		Windows.Media.MediaProperties.MediaEncodingProfile _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).abi_CreateDefaultEncodingProfile(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).abi_CreateDefaultEncodingProfile(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Core.MediaStreamSource GenerateMediaStreamSource()
 	{
 		Windows.Media.Core.MediaStreamSource _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).abi_GenerateMediaStreamSource(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).abi_GenerateMediaStreamSource(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Core.MediaStreamSource GenerateMediaStreamSourceWithProfile(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile)
 	{
 		Windows.Media.Core.MediaStreamSource _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).abi_GenerateMediaStreamSourceWithProfile(encodingProfile, &_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).abi_GenerateMediaStreamSourceWithProfile(encodingProfile, &_ret));
 		return _ret;
 	}
 	final Windows.Media.Core.MediaStreamSource GeneratePreviewMediaStreamSource(INT32 scaledWidth, INT32 scaledHeight)
 	{
 		Windows.Media.Core.MediaStreamSource _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition).abi_GeneratePreviewMediaStreamSource(scaledWidth, scaledHeight, &_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).abi_GeneratePreviewMediaStreamSource(scaledWidth, scaledHeight, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Media.Editing.MediaOverlayLayer) OverlayLayers()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Media.Editing.MediaOverlayLayer) _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaComposition2).get_OverlayLayers(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaComposition2)this.asInterface(uuid("a59e5372-2366-492c-bec8-e6dfba6d0281"))).get_OverlayLayers(&_ret));
 		return _ret;
 	}
 
@@ -515,14 +515,14 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Media.Editing.MediaComposition) LoadAsync(Windows.Storage.StorageFile file)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Editing.MediaComposition) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Editing.IMediaCompositionStatics).abi_LoadAsync(file, &_ret));
+		Debug.OK(staticInstance.abi_LoadAsync(file, &_ret));
 		return _ret;
 	}
 	static MediaComposition New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MediaComposition).abi_ActivateInstance(&ret));
-		return ret.as!(MediaComposition);
+		return cast(MediaComposition) ret;
 	}
 }
 
@@ -532,67 +532,67 @@ extern(Windows):
 	final Windows.Foundation.Rect Position()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlay).get_Position(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaOverlay)this.asInterface(uuid("a902ae5d-7869-4830-8ab1-94dc01c05fa4"))).get_Position(&_ret));
 		return _ret;
 	}
 	final void Position(Windows.Foundation.Rect value)
 	{
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlay).set_Position(value));
+		Debug.OK((cast(Windows.Media.Editing.IMediaOverlay)this.asInterface(uuid("a902ae5d-7869-4830-8ab1-94dc01c05fa4"))).set_Position(value));
 	}
 	final void Delay(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlay).set_Delay(value));
+		Debug.OK((cast(Windows.Media.Editing.IMediaOverlay)this.asInterface(uuid("a902ae5d-7869-4830-8ab1-94dc01c05fa4"))).set_Delay(value));
 	}
 	final Windows.Foundation.TimeSpan Delay()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlay).get_Delay(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaOverlay)this.asInterface(uuid("a902ae5d-7869-4830-8ab1-94dc01c05fa4"))).get_Delay(&_ret));
 		return _ret;
 	}
 	final double Opacity()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlay).get_Opacity(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaOverlay)this.asInterface(uuid("a902ae5d-7869-4830-8ab1-94dc01c05fa4"))).get_Opacity(&_ret));
 		return _ret;
 	}
 	final void Opacity(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlay).set_Opacity(value));
+		Debug.OK((cast(Windows.Media.Editing.IMediaOverlay)this.asInterface(uuid("a902ae5d-7869-4830-8ab1-94dc01c05fa4"))).set_Opacity(value));
 	}
 	final Windows.Media.Editing.MediaOverlay Clone()
 	{
 		Windows.Media.Editing.MediaOverlay _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlay).abi_Clone(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaOverlay)this.asInterface(uuid("a902ae5d-7869-4830-8ab1-94dc01c05fa4"))).abi_Clone(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Editing.MediaClip Clip()
 	{
 		Windows.Media.Editing.MediaClip _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlay).get_Clip(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaOverlay)this.asInterface(uuid("a902ae5d-7869-4830-8ab1-94dc01c05fa4"))).get_Clip(&_ret));
 		return _ret;
 	}
 	final bool AudioEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlay).get_AudioEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaOverlay)this.asInterface(uuid("a902ae5d-7869-4830-8ab1-94dc01c05fa4"))).get_AudioEnabled(&_ret));
 		return _ret;
 	}
 	final void AudioEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlay).set_AudioEnabled(value));
+		Debug.OK((cast(Windows.Media.Editing.IMediaOverlay)this.asInterface(uuid("a902ae5d-7869-4830-8ab1-94dc01c05fa4"))).set_AudioEnabled(value));
 	}
 	static Windows.Media.Editing.MediaOverlay New(Windows.Media.Editing.MediaClip clip)
 	{
 		auto factory = factory!(Windows.Media.Editing.IMediaOverlayFactory);
 		Windows.Media.Editing.MediaOverlay _ret;
-		Debug.OK(factory.as!(Windows.Media.Editing.IMediaOverlayFactory).abi_Create(clip, &_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaOverlayFactory)factory.asInterface(uuid("b584828a-6188-4f8f-a2e0-aa552d598e18"))).abi_Create(clip, &_ret));
 		return _ret;
 	}
 	static Windows.Media.Editing.MediaOverlay New(Windows.Media.Editing.MediaClip clip, Windows.Foundation.Rect position, double opacity)
 	{
 		auto factory = factory!(Windows.Media.Editing.IMediaOverlayFactory);
 		Windows.Media.Editing.MediaOverlay _ret;
-		Debug.OK(factory.as!(Windows.Media.Editing.IMediaOverlayFactory).abi_CreateWithPositionAndOpacity(clip, position, opacity, &_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaOverlayFactory)factory.asInterface(uuid("b584828a-6188-4f8f-a2e0-aa552d598e18"))).abi_CreateWithPositionAndOpacity(clip, position, opacity, &_ret));
 		return _ret;
 	}
 }
@@ -603,32 +603,32 @@ extern(Windows):
 	final Windows.Media.Editing.MediaOverlayLayer Clone()
 	{
 		Windows.Media.Editing.MediaOverlayLayer _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlayLayer).abi_Clone(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaOverlayLayer)this.asInterface(uuid("a6d9ba57-eeda-46c6-bbe5-e398c84168ac"))).abi_Clone(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Media.Editing.MediaOverlay) Overlays()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Media.Editing.MediaOverlay) _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlayLayer).get_Overlays(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaOverlayLayer)this.asInterface(uuid("a6d9ba57-eeda-46c6-bbe5-e398c84168ac"))).get_Overlays(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Effects.IVideoCompositorDefinition CustomCompositorDefinition()
 	{
 		Windows.Media.Effects.IVideoCompositorDefinition _ret;
-		Debug.OK(this.as!(Windows.Media.Editing.IMediaOverlayLayer).get_CustomCompositorDefinition(&_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaOverlayLayer)this.asInterface(uuid("a6d9ba57-eeda-46c6-bbe5-e398c84168ac"))).get_CustomCompositorDefinition(&_ret));
 		return _ret;
 	}
 	static MediaOverlayLayer New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MediaOverlayLayer).abi_ActivateInstance(&ret));
-		return ret.as!(MediaOverlayLayer);
+		return cast(MediaOverlayLayer) ret;
 	}
 	static Windows.Media.Editing.MediaOverlayLayer New(Windows.Media.Effects.IVideoCompositorDefinition compositorDefinition)
 	{
 		auto factory = factory!(Windows.Media.Editing.IMediaOverlayLayerFactory);
 		Windows.Media.Editing.MediaOverlayLayer _ret;
-		Debug.OK(factory.as!(Windows.Media.Editing.IMediaOverlayLayerFactory).abi_CreateWithCompositorDefinition(compositorDefinition, &_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaOverlayLayerFactory)factory.asInterface(uuid("947cb473-a39e-4362-abbf-9f8b5070a062"))).abi_CreateWithCompositorDefinition(compositorDefinition, &_ret));
 		return _ret;
 	}
 }

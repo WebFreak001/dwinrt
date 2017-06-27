@@ -655,40 +655,40 @@ extern(Windows):
 	final HSTRING Text()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IAdaptiveNotificationText).get_Text(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IAdaptiveNotificationText)this.asInterface(uuid("46d4a3be-609a-4326-a40b-bfde872034a3"))).get_Text(&_ret));
 		return _ret;
 	}
 	final void Text(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IAdaptiveNotificationText).set_Text(value));
+		Debug.OK((cast(Windows.UI.Notifications.IAdaptiveNotificationText)this.asInterface(uuid("46d4a3be-609a-4326-a40b-bfde872034a3"))).set_Text(value));
 	}
 	final HSTRING Language()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IAdaptiveNotificationText).get_Language(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IAdaptiveNotificationText)this.asInterface(uuid("46d4a3be-609a-4326-a40b-bfde872034a3"))).get_Language(&_ret));
 		return _ret;
 	}
 	final void Language(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IAdaptiveNotificationText).set_Language(value));
+		Debug.OK((cast(Windows.UI.Notifications.IAdaptiveNotificationText)this.asInterface(uuid("46d4a3be-609a-4326-a40b-bfde872034a3"))).set_Language(value));
 	}
 	final Windows.UI.Notifications.AdaptiveNotificationContentKind Kind()
 	{
 		Windows.UI.Notifications.AdaptiveNotificationContentKind _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IAdaptiveNotificationContent).get_Kind(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IAdaptiveNotificationContent)this.asInterface(uuid("eb0dbe66-7448-448d-9db8-d78acd2abba9"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) Hints()
 	{
 		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IAdaptiveNotificationContent).get_Hints(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IAdaptiveNotificationContent)this.asInterface(uuid("eb0dbe66-7448-448d-9db8-d78acd2abba9"))).get_Hints(&_ret));
 		return _ret;
 	}
 	static AdaptiveNotificationText New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(AdaptiveNotificationText).abi_ActivateInstance(&ret));
-		return ret.as!(AdaptiveNotificationText);
+		return cast(AdaptiveNotificationText) ret;
 	}
 }
 
@@ -698,24 +698,24 @@ extern(Windows):
 	final Windows.Data.Xml.Dom.XmlDocument Content()
 	{
 		Windows.Data.Xml.Dom.XmlDocument _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeNotification).get_Content(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IBadgeNotification)this.asInterface(uuid("075cb4ca-d08a-4e2f-9233-7e289c1f7722"))).get_Content(&_ret));
 		return _ret;
 	}
 	final void ExpirationTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeNotification).set_ExpirationTime(value));
+		Debug.OK((cast(Windows.UI.Notifications.IBadgeNotification)this.asInterface(uuid("075cb4ca-d08a-4e2f-9233-7e289c1f7722"))).set_ExpirationTime(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) ExpirationTime()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeNotification).get_ExpirationTime(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IBadgeNotification)this.asInterface(uuid("075cb4ca-d08a-4e2f-9233-7e289c1f7722"))).get_ExpirationTime(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Notifications.BadgeNotification New(Windows.Data.Xml.Dom.XmlDocument content)
 	{
 		auto factory = factory!(Windows.UI.Notifications.IBadgeNotificationFactory);
 		Windows.UI.Notifications.BadgeNotification _ret;
-		Debug.OK(factory.as!(Windows.UI.Notifications.IBadgeNotificationFactory).abi_CreateBadgeNotification(content, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IBadgeNotificationFactory)factory.asInterface(uuid("edf255ce-0618-4d59-948a-5a61040c52f9"))).abi_CreateBadgeNotification(content, &_ret));
 		return _ret;
 	}
 }
@@ -731,25 +731,25 @@ interface BadgeUpdateManager
 	static Windows.UI.Notifications.BadgeUpdater CreateBadgeUpdaterForApplication()
 	{
 		Windows.UI.Notifications.BadgeUpdater _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IBadgeUpdateManagerStatics).abi_CreateBadgeUpdaterForApplication(&_ret));
+		Debug.OK(staticInstance.abi_CreateBadgeUpdaterForApplication(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Notifications.BadgeUpdater CreateBadgeUpdaterForApplicationWithId(HSTRING applicationId)
 	{
 		Windows.UI.Notifications.BadgeUpdater _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IBadgeUpdateManagerStatics).abi_CreateBadgeUpdaterForApplicationWithId(applicationId, &_ret));
+		Debug.OK(staticInstance.abi_CreateBadgeUpdaterForApplicationWithId(applicationId, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Notifications.BadgeUpdater CreateBadgeUpdaterForSecondaryTile(HSTRING tileId)
 	{
 		Windows.UI.Notifications.BadgeUpdater _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IBadgeUpdateManagerStatics).abi_CreateBadgeUpdaterForSecondaryTile(tileId, &_ret));
+		Debug.OK(staticInstance.abi_CreateBadgeUpdaterForSecondaryTile(tileId, &_ret));
 		return _ret;
 	}
 	static Windows.Data.Xml.Dom.XmlDocument GetTemplateContent(Windows.UI.Notifications.BadgeTemplateType type)
 	{
 		Windows.Data.Xml.Dom.XmlDocument _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IBadgeUpdateManagerStatics).abi_GetTemplateContent(type, &_ret));
+		Debug.OK(staticInstance.abi_GetTemplateContent(type, &_ret));
 		return _ret;
 	}
 }
@@ -760,25 +760,25 @@ extern(Windows):
 	final Windows.UI.Notifications.BadgeUpdater CreateBadgeUpdaterForApplication()
 	{
 		Windows.UI.Notifications.BadgeUpdater _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeUpdateManagerForUser).abi_CreateBadgeUpdaterForApplication(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IBadgeUpdateManagerForUser)this.asInterface(uuid("996b21bc-0386-44e5-ba8d-0c1077a62e92"))).abi_CreateBadgeUpdaterForApplication(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Notifications.BadgeUpdater CreateBadgeUpdaterForApplicationWithId(HSTRING applicationId)
 	{
 		Windows.UI.Notifications.BadgeUpdater _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeUpdateManagerForUser).abi_CreateBadgeUpdaterForApplicationWithId(applicationId, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IBadgeUpdateManagerForUser)this.asInterface(uuid("996b21bc-0386-44e5-ba8d-0c1077a62e92"))).abi_CreateBadgeUpdaterForApplicationWithId(applicationId, &_ret));
 		return _ret;
 	}
 	final Windows.UI.Notifications.BadgeUpdater CreateBadgeUpdaterForSecondaryTile(HSTRING tileId)
 	{
 		Windows.UI.Notifications.BadgeUpdater _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeUpdateManagerForUser).abi_CreateBadgeUpdaterForSecondaryTile(tileId, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IBadgeUpdateManagerForUser)this.asInterface(uuid("996b21bc-0386-44e5-ba8d-0c1077a62e92"))).abi_CreateBadgeUpdaterForSecondaryTile(tileId, &_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeUpdateManagerForUser).get_User(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IBadgeUpdateManagerForUser)this.asInterface(uuid("996b21bc-0386-44e5-ba8d-0c1077a62e92"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -788,23 +788,23 @@ interface BadgeUpdater : Windows.UI.Notifications.IBadgeUpdater
 extern(Windows):
 	final void Update(Windows.UI.Notifications.BadgeNotification notification)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeUpdater).abi_Update(notification));
+		Debug.OK((cast(Windows.UI.Notifications.IBadgeUpdater)this.asInterface(uuid("b5fa1fd4-7562-4f6c-bfa3-1b6ed2e57f2f"))).abi_Update(notification));
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeUpdater).abi_Clear());
+		Debug.OK((cast(Windows.UI.Notifications.IBadgeUpdater)this.asInterface(uuid("b5fa1fd4-7562-4f6c-bfa3-1b6ed2e57f2f"))).abi_Clear());
 	}
 	final void StartPeriodicUpdate(Windows.Foundation.Uri badgeContent, Windows.UI.Notifications.PeriodicUpdateRecurrence requestedInterval)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeUpdater).abi_StartPeriodicUpdate(badgeContent, requestedInterval));
+		Debug.OK((cast(Windows.UI.Notifications.IBadgeUpdater)this.asInterface(uuid("b5fa1fd4-7562-4f6c-bfa3-1b6ed2e57f2f"))).abi_StartPeriodicUpdate(badgeContent, requestedInterval));
 	}
 	final void StartPeriodicUpdateAtTime(Windows.Foundation.Uri badgeContent, Windows.Foundation.DateTime startTime, Windows.UI.Notifications.PeriodicUpdateRecurrence requestedInterval)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeUpdater).abi_StartPeriodicUpdateAtTime(badgeContent, startTime, requestedInterval));
+		Debug.OK((cast(Windows.UI.Notifications.IBadgeUpdater)this.asInterface(uuid("b5fa1fd4-7562-4f6c-bfa3-1b6ed2e57f2f"))).abi_StartPeriodicUpdateAtTime(badgeContent, startTime, requestedInterval));
 	}
 	final void StopPeriodicUpdate()
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IBadgeUpdater).abi_StopPeriodicUpdate());
+		Debug.OK((cast(Windows.UI.Notifications.IBadgeUpdater)this.asInterface(uuid("b5fa1fd4-7562-4f6c-bfa3-1b6ed2e57f2f"))).abi_StopPeriodicUpdate());
 	}
 }
 
@@ -819,37 +819,37 @@ interface KnownAdaptiveNotificationHints
 	static HSTRING Style()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationHintsStatics).get_Style(&_ret));
+		Debug.OK(staticInstance.get_Style(&_ret));
 		return _ret;
 	}
 	static HSTRING Wrap()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationHintsStatics).get_Wrap(&_ret));
+		Debug.OK(staticInstance.get_Wrap(&_ret));
 		return _ret;
 	}
 	static HSTRING MaxLines()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationHintsStatics).get_MaxLines(&_ret));
+		Debug.OK(staticInstance.get_MaxLines(&_ret));
 		return _ret;
 	}
 	static HSTRING MinLines()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationHintsStatics).get_MinLines(&_ret));
+		Debug.OK(staticInstance.get_MinLines(&_ret));
 		return _ret;
 	}
 	static HSTRING TextStacking()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationHintsStatics).get_TextStacking(&_ret));
+		Debug.OK(staticInstance.get_TextStacking(&_ret));
 		return _ret;
 	}
 	static HSTRING Align()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationHintsStatics).get_Align(&_ret));
+		Debug.OK(staticInstance.get_Align(&_ret));
 		return _ret;
 	}
 }
@@ -865,115 +865,115 @@ interface KnownAdaptiveNotificationTextStyles
 	static HSTRING Caption()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_Caption(&_ret));
+		Debug.OK(staticInstance.get_Caption(&_ret));
 		return _ret;
 	}
 	static HSTRING Body()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_Body(&_ret));
+		Debug.OK(staticInstance.get_Body(&_ret));
 		return _ret;
 	}
 	static HSTRING Base()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_Base(&_ret));
+		Debug.OK(staticInstance.get_Base(&_ret));
 		return _ret;
 	}
 	static HSTRING Subtitle()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_Subtitle(&_ret));
+		Debug.OK(staticInstance.get_Subtitle(&_ret));
 		return _ret;
 	}
 	static HSTRING Title()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_Title(&_ret));
+		Debug.OK(staticInstance.get_Title(&_ret));
 		return _ret;
 	}
 	static HSTRING Subheader()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_Subheader(&_ret));
+		Debug.OK(staticInstance.get_Subheader(&_ret));
 		return _ret;
 	}
 	static HSTRING Header()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_Header(&_ret));
+		Debug.OK(staticInstance.get_Header(&_ret));
 		return _ret;
 	}
 	static HSTRING TitleNumeral()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_TitleNumeral(&_ret));
+		Debug.OK(staticInstance.get_TitleNumeral(&_ret));
 		return _ret;
 	}
 	static HSTRING SubheaderNumeral()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_SubheaderNumeral(&_ret));
+		Debug.OK(staticInstance.get_SubheaderNumeral(&_ret));
 		return _ret;
 	}
 	static HSTRING HeaderNumeral()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_HeaderNumeral(&_ret));
+		Debug.OK(staticInstance.get_HeaderNumeral(&_ret));
 		return _ret;
 	}
 	static HSTRING CaptionSubtle()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_CaptionSubtle(&_ret));
+		Debug.OK(staticInstance.get_CaptionSubtle(&_ret));
 		return _ret;
 	}
 	static HSTRING BodySubtle()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_BodySubtle(&_ret));
+		Debug.OK(staticInstance.get_BodySubtle(&_ret));
 		return _ret;
 	}
 	static HSTRING BaseSubtle()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_BaseSubtle(&_ret));
+		Debug.OK(staticInstance.get_BaseSubtle(&_ret));
 		return _ret;
 	}
 	static HSTRING SubtitleSubtle()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_SubtitleSubtle(&_ret));
+		Debug.OK(staticInstance.get_SubtitleSubtle(&_ret));
 		return _ret;
 	}
 	static HSTRING TitleSubtle()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_TitleSubtle(&_ret));
+		Debug.OK(staticInstance.get_TitleSubtle(&_ret));
 		return _ret;
 	}
 	static HSTRING SubheaderSubtle()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_SubheaderSubtle(&_ret));
+		Debug.OK(staticInstance.get_SubheaderSubtle(&_ret));
 		return _ret;
 	}
 	static HSTRING SubheaderNumeralSubtle()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_SubheaderNumeralSubtle(&_ret));
+		Debug.OK(staticInstance.get_SubheaderNumeralSubtle(&_ret));
 		return _ret;
 	}
 	static HSTRING HeaderSubtle()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_HeaderSubtle(&_ret));
+		Debug.OK(staticInstance.get_HeaderSubtle(&_ret));
 		return _ret;
 	}
 	static HSTRING HeaderNumeralSubtle()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownAdaptiveNotificationTextStylesStatics).get_HeaderNumeralSubtle(&_ret));
+		Debug.OK(staticInstance.get_HeaderNumeralSubtle(&_ret));
 		return _ret;
 	}
 }
@@ -989,7 +989,7 @@ interface KnownNotificationBindings
 	static HSTRING ToastGeneric()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IKnownNotificationBindingsStatics).get_ToastGeneric(&_ret));
+		Debug.OK(staticInstance.get_ToastGeneric(&_ret));
 		return _ret;
 	}
 }
@@ -1000,28 +1000,28 @@ extern(Windows):
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) ExpirationTime()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.INotification).get_ExpirationTime(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.INotification)this.asInterface(uuid("108037fe-eb76-4f82-97bc-da07530a2e20"))).get_ExpirationTime(&_ret));
 		return _ret;
 	}
 	final void ExpirationTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.INotification).set_ExpirationTime(value));
+		Debug.OK((cast(Windows.UI.Notifications.INotification)this.asInterface(uuid("108037fe-eb76-4f82-97bc-da07530a2e20"))).set_ExpirationTime(value));
 	}
 	final Windows.UI.Notifications.NotificationVisual Visual()
 	{
 		Windows.UI.Notifications.NotificationVisual _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.INotification).get_Visual(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.INotification)this.asInterface(uuid("108037fe-eb76-4f82-97bc-da07530a2e20"))).get_Visual(&_ret));
 		return _ret;
 	}
 	final void Visual(Windows.UI.Notifications.NotificationVisual value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.INotification).set_Visual(value));
+		Debug.OK((cast(Windows.UI.Notifications.INotification)this.asInterface(uuid("108037fe-eb76-4f82-97bc-da07530a2e20"))).set_Visual(value));
 	}
 	static Notification New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Notification).abi_ActivateInstance(&ret));
-		return ret.as!(Notification);
+		return cast(Notification) ret;
 	}
 }
 
@@ -1031,33 +1031,33 @@ extern(Windows):
 	final HSTRING Template()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.INotificationBinding).get_Template(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.INotificationBinding)this.asInterface(uuid("f29e4b85-0370-4ad3-b4ea-da9e35e7eabf"))).get_Template(&_ret));
 		return _ret;
 	}
 	final void Template(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.INotificationBinding).set_Template(value));
+		Debug.OK((cast(Windows.UI.Notifications.INotificationBinding)this.asInterface(uuid("f29e4b85-0370-4ad3-b4ea-da9e35e7eabf"))).set_Template(value));
 	}
 	final HSTRING Language()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.INotificationBinding).get_Language(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.INotificationBinding)this.asInterface(uuid("f29e4b85-0370-4ad3-b4ea-da9e35e7eabf"))).get_Language(&_ret));
 		return _ret;
 	}
 	final void Language(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.INotificationBinding).set_Language(value));
+		Debug.OK((cast(Windows.UI.Notifications.INotificationBinding)this.asInterface(uuid("f29e4b85-0370-4ad3-b4ea-da9e35e7eabf"))).set_Language(value));
 	}
 	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) Hints()
 	{
 		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.INotificationBinding).get_Hints(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.INotificationBinding)this.asInterface(uuid("f29e4b85-0370-4ad3-b4ea-da9e35e7eabf"))).get_Hints(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.AdaptiveNotificationText) GetTextElements()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.AdaptiveNotificationText) _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.INotificationBinding).abi_GetTextElements(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.INotificationBinding)this.asInterface(uuid("f29e4b85-0370-4ad3-b4ea-da9e35e7eabf"))).abi_GetTextElements(&_ret));
 		return _ret;
 	}
 }
@@ -1068,37 +1068,37 @@ extern(Windows):
 	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) Values()
 	{
 		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.INotificationData).get_Values(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.INotificationData)this.asInterface(uuid("9ffd2312-9d6a-4aaf-b6ac-ff17f0c1f280"))).get_Values(&_ret));
 		return _ret;
 	}
 	final UINT32 SequenceNumber()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.INotificationData).get_SequenceNumber(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.INotificationData)this.asInterface(uuid("9ffd2312-9d6a-4aaf-b6ac-ff17f0c1f280"))).get_SequenceNumber(&_ret));
 		return _ret;
 	}
 	final void SequenceNumber(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.INotificationData).set_SequenceNumber(value));
+		Debug.OK((cast(Windows.UI.Notifications.INotificationData)this.asInterface(uuid("9ffd2312-9d6a-4aaf-b6ac-ff17f0c1f280"))).set_SequenceNumber(value));
 	}
 	static NotificationData New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(NotificationData).abi_ActivateInstance(&ret));
-		return ret.as!(NotificationData);
+		return cast(NotificationData) ret;
 	}
 	static Windows.UI.Notifications.NotificationData New(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) initialValues, UINT32 sequenceNumber)
 	{
 		auto factory = factory!(Windows.UI.Notifications.INotificationDataFactory);
 		Windows.UI.Notifications.NotificationData _ret;
-		Debug.OK(factory.as!(Windows.UI.Notifications.INotificationDataFactory).abi_CreateNotificationDataWithValuesAndSequenceNumber(initialValues, sequenceNumber, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.INotificationDataFactory)factory.asInterface(uuid("23c1e33a-1c10-46fb-8040-dec384621cf8"))).abi_CreateNotificationDataWithValuesAndSequenceNumber(initialValues, sequenceNumber, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Notifications.NotificationData New(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) initialValues)
 	{
 		auto factory = factory!(Windows.UI.Notifications.INotificationDataFactory);
 		Windows.UI.Notifications.NotificationData _ret;
-		Debug.OK(factory.as!(Windows.UI.Notifications.INotificationDataFactory).abi_CreateNotificationDataWithValues(initialValues, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.INotificationDataFactory)factory.asInterface(uuid("23c1e33a-1c10-46fb-8040-dec384621cf8"))).abi_CreateNotificationDataWithValues(initialValues, &_ret));
 		return _ret;
 	}
 }
@@ -1109,23 +1109,23 @@ extern(Windows):
 	final HSTRING Language()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.INotificationVisual).get_Language(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.INotificationVisual)this.asInterface(uuid("68835b8e-aa56-4e11-86d3-5f9a6957bc5b"))).get_Language(&_ret));
 		return _ret;
 	}
 	final void Language(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.INotificationVisual).set_Language(value));
+		Debug.OK((cast(Windows.UI.Notifications.INotificationVisual)this.asInterface(uuid("68835b8e-aa56-4e11-86d3-5f9a6957bc5b"))).set_Language(value));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.UI.Notifications.NotificationBinding) Bindings()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.Notifications.NotificationBinding) _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.INotificationVisual).get_Bindings(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.INotificationVisual)this.asInterface(uuid("68835b8e-aa56-4e11-86d3-5f9a6957bc5b"))).get_Bindings(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Notifications.NotificationBinding GetBinding(HSTRING templateName)
 	{
 		Windows.UI.Notifications.NotificationBinding _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.INotificationVisual).abi_GetBinding(templateName, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.INotificationVisual)this.asInterface(uuid("68835b8e-aa56-4e11-86d3-5f9a6957bc5b"))).abi_GetBinding(templateName, &_ret));
 		return _ret;
 	}
 }
@@ -1136,50 +1136,50 @@ extern(Windows):
 	final Windows.Data.Xml.Dom.XmlDocument Content()
 	{
 		Windows.Data.Xml.Dom.XmlDocument _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledTileNotification).get_Content(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledTileNotification)this.asInterface(uuid("0abca6d5-99dc-4c78-a11c-c9e7f86d7ef7"))).get_Content(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime DeliveryTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledTileNotification).get_DeliveryTime(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledTileNotification)this.asInterface(uuid("0abca6d5-99dc-4c78-a11c-c9e7f86d7ef7"))).get_DeliveryTime(&_ret));
 		return _ret;
 	}
 	final void ExpirationTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledTileNotification).set_ExpirationTime(value));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledTileNotification)this.asInterface(uuid("0abca6d5-99dc-4c78-a11c-c9e7f86d7ef7"))).set_ExpirationTime(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) ExpirationTime()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledTileNotification).get_ExpirationTime(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledTileNotification)this.asInterface(uuid("0abca6d5-99dc-4c78-a11c-c9e7f86d7ef7"))).get_ExpirationTime(&_ret));
 		return _ret;
 	}
 	final void Tag(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledTileNotification).set_Tag(value));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledTileNotification)this.asInterface(uuid("0abca6d5-99dc-4c78-a11c-c9e7f86d7ef7"))).set_Tag(value));
 	}
 	final HSTRING Tag()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledTileNotification).get_Tag(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledTileNotification)this.asInterface(uuid("0abca6d5-99dc-4c78-a11c-c9e7f86d7ef7"))).get_Tag(&_ret));
 		return _ret;
 	}
 	final void Id(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledTileNotification).set_Id(value));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledTileNotification)this.asInterface(uuid("0abca6d5-99dc-4c78-a11c-c9e7f86d7ef7"))).set_Id(value));
 	}
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledTileNotification).get_Id(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledTileNotification)this.asInterface(uuid("0abca6d5-99dc-4c78-a11c-c9e7f86d7ef7"))).get_Id(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Notifications.ScheduledTileNotification New(Windows.Data.Xml.Dom.XmlDocument content, Windows.Foundation.DateTime deliveryTime)
 	{
 		auto factory = factory!(Windows.UI.Notifications.IScheduledTileNotificationFactory);
 		Windows.UI.Notifications.ScheduledTileNotification _ret;
-		Debug.OK(factory.as!(Windows.UI.Notifications.IScheduledTileNotificationFactory).abi_CreateScheduledTileNotification(content, deliveryTime, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledTileNotificationFactory)factory.asInterface(uuid("3383138a-98c0-4c3b-bbd6-4a633c7cfc29"))).abi_CreateScheduledTileNotification(content, deliveryTime, &_ret));
 		return _ret;
 	}
 }
@@ -1190,99 +1190,99 @@ extern(Windows):
 	final Windows.Data.Xml.Dom.XmlDocument Content()
 	{
 		Windows.Data.Xml.Dom.XmlDocument _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification).get_Content(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledToastNotification)this.asInterface(uuid("79f577f8-0de7-48cd-9740-9b370490c838"))).get_Content(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime DeliveryTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification).get_DeliveryTime(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledToastNotification)this.asInterface(uuid("79f577f8-0de7-48cd-9740-9b370490c838"))).get_DeliveryTime(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) SnoozeInterval()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification).get_SnoozeInterval(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledToastNotification)this.asInterface(uuid("79f577f8-0de7-48cd-9740-9b370490c838"))).get_SnoozeInterval(&_ret));
 		return _ret;
 	}
 	final UINT32 MaximumSnoozeCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification).get_MaximumSnoozeCount(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledToastNotification)this.asInterface(uuid("79f577f8-0de7-48cd-9740-9b370490c838"))).get_MaximumSnoozeCount(&_ret));
 		return _ret;
 	}
 	final void Id(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification).set_Id(value));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledToastNotification)this.asInterface(uuid("79f577f8-0de7-48cd-9740-9b370490c838"))).set_Id(value));
 	}
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification).get_Id(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledToastNotification)this.asInterface(uuid("79f577f8-0de7-48cd-9740-9b370490c838"))).get_Id(&_ret));
 		return _ret;
 	}
 	final void Tag(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification2).set_Tag(value));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledToastNotification2)this.asInterface(uuid("a66ea09c-31b4-43b0-b5dd-7a40e85363b1"))).set_Tag(value));
 	}
 	final HSTRING Tag()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification2).get_Tag(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledToastNotification2)this.asInterface(uuid("a66ea09c-31b4-43b0-b5dd-7a40e85363b1"))).get_Tag(&_ret));
 		return _ret;
 	}
 	final void Group(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification2).set_Group(value));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledToastNotification2)this.asInterface(uuid("a66ea09c-31b4-43b0-b5dd-7a40e85363b1"))).set_Group(value));
 	}
 	final HSTRING Group()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification2).get_Group(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledToastNotification2)this.asInterface(uuid("a66ea09c-31b4-43b0-b5dd-7a40e85363b1"))).get_Group(&_ret));
 		return _ret;
 	}
 	final void SuppressPopup(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification2).set_SuppressPopup(value));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledToastNotification2)this.asInterface(uuid("a66ea09c-31b4-43b0-b5dd-7a40e85363b1"))).set_SuppressPopup(value));
 	}
 	final bool SuppressPopup()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification2).get_SuppressPopup(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledToastNotification2)this.asInterface(uuid("a66ea09c-31b4-43b0-b5dd-7a40e85363b1"))).get_SuppressPopup(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Notifications.NotificationMirroring NotificationMirroring()
 	{
 		Windows.UI.Notifications.NotificationMirroring _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification3).get_NotificationMirroring(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledToastNotification3)this.asInterface(uuid("98429e8b-bd32-4a3b-9d15-22aea49462a1"))).get_NotificationMirroring(&_ret));
 		return _ret;
 	}
 	final void NotificationMirroring(Windows.UI.Notifications.NotificationMirroring value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification3).set_NotificationMirroring(value));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledToastNotification3)this.asInterface(uuid("98429e8b-bd32-4a3b-9d15-22aea49462a1"))).set_NotificationMirroring(value));
 	}
 	final HSTRING RemoteId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification3).get_RemoteId(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledToastNotification3)this.asInterface(uuid("98429e8b-bd32-4a3b-9d15-22aea49462a1"))).get_RemoteId(&_ret));
 		return _ret;
 	}
 	final void RemoteId(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IScheduledToastNotification3).set_RemoteId(value));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledToastNotification3)this.asInterface(uuid("98429e8b-bd32-4a3b-9d15-22aea49462a1"))).set_RemoteId(value));
 	}
 	static Windows.UI.Notifications.ScheduledToastNotification New(Windows.Data.Xml.Dom.XmlDocument content, Windows.Foundation.DateTime deliveryTime)
 	{
 		auto factory = factory!(Windows.UI.Notifications.IScheduledToastNotificationFactory);
 		Windows.UI.Notifications.ScheduledToastNotification _ret;
-		Debug.OK(factory.as!(Windows.UI.Notifications.IScheduledToastNotificationFactory).abi_CreateScheduledToastNotification(content, deliveryTime, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledToastNotificationFactory)factory.asInterface(uuid("e7bed191-0bb9-4189-8394-31761b476fd7"))).abi_CreateScheduledToastNotification(content, deliveryTime, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Notifications.ScheduledToastNotification New(Windows.Data.Xml.Dom.XmlDocument content, Windows.Foundation.DateTime deliveryTime, Windows.Foundation.TimeSpan snoozeInterval, UINT32 maximumSnoozeCount)
 	{
 		auto factory = factory!(Windows.UI.Notifications.IScheduledToastNotificationFactory);
 		Windows.UI.Notifications.ScheduledToastNotification _ret;
-		Debug.OK(factory.as!(Windows.UI.Notifications.IScheduledToastNotificationFactory).abi_CreateScheduledToastNotificationRecurring(content, deliveryTime, snoozeInterval, maximumSnoozeCount, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IScheduledToastNotificationFactory)factory.asInterface(uuid("e7bed191-0bb9-4189-8394-31761b476fd7"))).abi_CreateScheduledToastNotificationRecurring(content, deliveryTime, snoozeInterval, maximumSnoozeCount, &_ret));
 		return _ret;
 	}
 }
@@ -1293,7 +1293,7 @@ extern(Windows):
 	final HSTRING Arguments()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IShownTileNotification).get_Arguments(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IShownTileNotification)this.asInterface(uuid("342d8988-5af2-481a-a6a3-f2fdc78de88e"))).get_Arguments(&_ret));
 		return _ret;
 	}
 }
@@ -1304,24 +1304,24 @@ extern(Windows):
 	final Windows.Data.Xml.Dom.XmlDocument Content()
 	{
 		Windows.Data.Xml.Dom.XmlDocument _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileFlyoutNotification).get_Content(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.ITileFlyoutNotification)this.asInterface(uuid("9a53b261-c70c-42be-b2f3-f42aa97d34e5"))).get_Content(&_ret));
 		return _ret;
 	}
 	final void ExpirationTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileFlyoutNotification).set_ExpirationTime(value));
+		Debug.OK((cast(Windows.UI.Notifications.ITileFlyoutNotification)this.asInterface(uuid("9a53b261-c70c-42be-b2f3-f42aa97d34e5"))).set_ExpirationTime(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) ExpirationTime()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileFlyoutNotification).get_ExpirationTime(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.ITileFlyoutNotification)this.asInterface(uuid("9a53b261-c70c-42be-b2f3-f42aa97d34e5"))).get_ExpirationTime(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Notifications.TileFlyoutNotification New(Windows.Data.Xml.Dom.XmlDocument content)
 	{
 		auto factory = factory!(Windows.UI.Notifications.ITileFlyoutNotificationFactory);
 		Windows.UI.Notifications.TileFlyoutNotification _ret;
-		Debug.OK(factory.as!(Windows.UI.Notifications.ITileFlyoutNotificationFactory).abi_CreateTileFlyoutNotification(content, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.ITileFlyoutNotificationFactory)factory.asInterface(uuid("ef556ff5-5226-4f2b-b278-88a35dfe569f"))).abi_CreateTileFlyoutNotification(content, &_ret));
 		return _ret;
 	}
 }
@@ -1337,25 +1337,25 @@ interface TileFlyoutUpdateManager
 	static Windows.UI.Notifications.TileFlyoutUpdater CreateTileFlyoutUpdaterForApplication()
 	{
 		Windows.UI.Notifications.TileFlyoutUpdater _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.ITileFlyoutUpdateManagerStatics).abi_CreateTileFlyoutUpdaterForApplication(&_ret));
+		Debug.OK(staticInstance.abi_CreateTileFlyoutUpdaterForApplication(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Notifications.TileFlyoutUpdater CreateTileFlyoutUpdaterForApplicationWithId(HSTRING applicationId)
 	{
 		Windows.UI.Notifications.TileFlyoutUpdater _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.ITileFlyoutUpdateManagerStatics).abi_CreateTileFlyoutUpdaterForApplicationWithId(applicationId, &_ret));
+		Debug.OK(staticInstance.abi_CreateTileFlyoutUpdaterForApplicationWithId(applicationId, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Notifications.TileFlyoutUpdater CreateTileFlyoutUpdaterForSecondaryTile(HSTRING tileId)
 	{
 		Windows.UI.Notifications.TileFlyoutUpdater _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.ITileFlyoutUpdateManagerStatics).abi_CreateTileFlyoutUpdaterForSecondaryTile(tileId, &_ret));
+		Debug.OK(staticInstance.abi_CreateTileFlyoutUpdaterForSecondaryTile(tileId, &_ret));
 		return _ret;
 	}
 	static Windows.Data.Xml.Dom.XmlDocument GetTemplateContent(Windows.UI.Notifications.TileFlyoutTemplateType type)
 	{
 		Windows.Data.Xml.Dom.XmlDocument _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.ITileFlyoutUpdateManagerStatics).abi_GetTemplateContent(type, &_ret));
+		Debug.OK(staticInstance.abi_GetTemplateContent(type, &_ret));
 		return _ret;
 	}
 }
@@ -1365,28 +1365,28 @@ interface TileFlyoutUpdater : Windows.UI.Notifications.ITileFlyoutUpdater
 extern(Windows):
 	final void Update(Windows.UI.Notifications.TileFlyoutNotification notification)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileFlyoutUpdater).abi_Update(notification));
+		Debug.OK((cast(Windows.UI.Notifications.ITileFlyoutUpdater)this.asInterface(uuid("8d40c76a-c465-4052-a740-5c2654c1a089"))).abi_Update(notification));
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileFlyoutUpdater).abi_Clear());
+		Debug.OK((cast(Windows.UI.Notifications.ITileFlyoutUpdater)this.asInterface(uuid("8d40c76a-c465-4052-a740-5c2654c1a089"))).abi_Clear());
 	}
 	final void StartPeriodicUpdate(Windows.Foundation.Uri tileFlyoutContent, Windows.UI.Notifications.PeriodicUpdateRecurrence requestedInterval)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileFlyoutUpdater).abi_StartPeriodicUpdate(tileFlyoutContent, requestedInterval));
+		Debug.OK((cast(Windows.UI.Notifications.ITileFlyoutUpdater)this.asInterface(uuid("8d40c76a-c465-4052-a740-5c2654c1a089"))).abi_StartPeriodicUpdate(tileFlyoutContent, requestedInterval));
 	}
 	final void StartPeriodicUpdateAtTime(Windows.Foundation.Uri tileFlyoutContent, Windows.Foundation.DateTime startTime, Windows.UI.Notifications.PeriodicUpdateRecurrence requestedInterval)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileFlyoutUpdater).abi_StartPeriodicUpdateAtTime(tileFlyoutContent, startTime, requestedInterval));
+		Debug.OK((cast(Windows.UI.Notifications.ITileFlyoutUpdater)this.asInterface(uuid("8d40c76a-c465-4052-a740-5c2654c1a089"))).abi_StartPeriodicUpdateAtTime(tileFlyoutContent, startTime, requestedInterval));
 	}
 	final void StopPeriodicUpdate()
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileFlyoutUpdater).abi_StopPeriodicUpdate());
+		Debug.OK((cast(Windows.UI.Notifications.ITileFlyoutUpdater)this.asInterface(uuid("8d40c76a-c465-4052-a740-5c2654c1a089"))).abi_StopPeriodicUpdate());
 	}
 	final Windows.UI.Notifications.NotificationSetting Setting()
 	{
 		Windows.UI.Notifications.NotificationSetting _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileFlyoutUpdater).get_Setting(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.ITileFlyoutUpdater)this.asInterface(uuid("8d40c76a-c465-4052-a740-5c2654c1a089"))).get_Setting(&_ret));
 		return _ret;
 	}
 }
@@ -1397,34 +1397,34 @@ extern(Windows):
 	final Windows.Data.Xml.Dom.XmlDocument Content()
 	{
 		Windows.Data.Xml.Dom.XmlDocument _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileNotification).get_Content(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.ITileNotification)this.asInterface(uuid("ebaec8fa-50ec-4c18-b4d0-3af02e5540ab"))).get_Content(&_ret));
 		return _ret;
 	}
 	final void ExpirationTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileNotification).set_ExpirationTime(value));
+		Debug.OK((cast(Windows.UI.Notifications.ITileNotification)this.asInterface(uuid("ebaec8fa-50ec-4c18-b4d0-3af02e5540ab"))).set_ExpirationTime(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) ExpirationTime()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileNotification).get_ExpirationTime(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.ITileNotification)this.asInterface(uuid("ebaec8fa-50ec-4c18-b4d0-3af02e5540ab"))).get_ExpirationTime(&_ret));
 		return _ret;
 	}
 	final void Tag(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileNotification).set_Tag(value));
+		Debug.OK((cast(Windows.UI.Notifications.ITileNotification)this.asInterface(uuid("ebaec8fa-50ec-4c18-b4d0-3af02e5540ab"))).set_Tag(value));
 	}
 	final HSTRING Tag()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileNotification).get_Tag(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.ITileNotification)this.asInterface(uuid("ebaec8fa-50ec-4c18-b4d0-3af02e5540ab"))).get_Tag(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Notifications.TileNotification New(Windows.Data.Xml.Dom.XmlDocument content)
 	{
 		auto factory = factory!(Windows.UI.Notifications.ITileNotificationFactory);
 		Windows.UI.Notifications.TileNotification _ret;
-		Debug.OK(factory.as!(Windows.UI.Notifications.ITileNotificationFactory).abi_CreateTileNotification(content, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.ITileNotificationFactory)factory.asInterface(uuid("c6abdd6e-4928-46c8-bdbf-81a047dea0d4"))).abi_CreateTileNotification(content, &_ret));
 		return _ret;
 	}
 }
@@ -1440,25 +1440,25 @@ interface TileUpdateManager
 	static Windows.UI.Notifications.TileUpdater CreateTileUpdaterForApplication()
 	{
 		Windows.UI.Notifications.TileUpdater _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.ITileUpdateManagerStatics).abi_CreateTileUpdaterForApplication(&_ret));
+		Debug.OK(staticInstance.abi_CreateTileUpdaterForApplication(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Notifications.TileUpdater CreateTileUpdaterForApplicationWithId(HSTRING applicationId)
 	{
 		Windows.UI.Notifications.TileUpdater _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.ITileUpdateManagerStatics).abi_CreateTileUpdaterForApplicationWithId(applicationId, &_ret));
+		Debug.OK(staticInstance.abi_CreateTileUpdaterForApplicationWithId(applicationId, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Notifications.TileUpdater CreateTileUpdaterForSecondaryTile(HSTRING tileId)
 	{
 		Windows.UI.Notifications.TileUpdater _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.ITileUpdateManagerStatics).abi_CreateTileUpdaterForSecondaryTile(tileId, &_ret));
+		Debug.OK(staticInstance.abi_CreateTileUpdaterForSecondaryTile(tileId, &_ret));
 		return _ret;
 	}
 	static Windows.Data.Xml.Dom.XmlDocument GetTemplateContent(Windows.UI.Notifications.TileTemplateType type)
 	{
 		Windows.Data.Xml.Dom.XmlDocument _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.ITileUpdateManagerStatics).abi_GetTemplateContent(type, &_ret));
+		Debug.OK(staticInstance.abi_GetTemplateContent(type, &_ret));
 		return _ret;
 	}
 }
@@ -1469,25 +1469,25 @@ extern(Windows):
 	final Windows.UI.Notifications.TileUpdater CreateTileUpdaterForApplication()
 	{
 		Windows.UI.Notifications.TileUpdater _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdateManagerForUser).abi_CreateTileUpdaterForApplication(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.ITileUpdateManagerForUser)this.asInterface(uuid("55141348-2ee2-4e2d-9cc1-216a20decc9f"))).abi_CreateTileUpdaterForApplication(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Notifications.TileUpdater CreateTileUpdaterForApplicationWithId(HSTRING applicationId)
 	{
 		Windows.UI.Notifications.TileUpdater _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdateManagerForUser).abi_CreateTileUpdaterForApplicationWithId(applicationId, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.ITileUpdateManagerForUser)this.asInterface(uuid("55141348-2ee2-4e2d-9cc1-216a20decc9f"))).abi_CreateTileUpdaterForApplicationWithId(applicationId, &_ret));
 		return _ret;
 	}
 	final Windows.UI.Notifications.TileUpdater CreateTileUpdaterForSecondaryTile(HSTRING tileId)
 	{
 		Windows.UI.Notifications.TileUpdater _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdateManagerForUser).abi_CreateTileUpdaterForSecondaryTile(tileId, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.ITileUpdateManagerForUser)this.asInterface(uuid("55141348-2ee2-4e2d-9cc1-216a20decc9f"))).abi_CreateTileUpdaterForSecondaryTile(tileId, &_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdateManagerForUser).get_User(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.ITileUpdateManagerForUser)this.asInterface(uuid("55141348-2ee2-4e2d-9cc1-216a20decc9f"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -1497,67 +1497,67 @@ interface TileUpdater : Windows.UI.Notifications.ITileUpdater, Windows.UI.Notifi
 extern(Windows):
 	final void Update(Windows.UI.Notifications.TileNotification notification)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).abi_Update(notification));
+		Debug.OK((cast(Windows.UI.Notifications.ITileUpdater)this.asInterface(uuid("0942a48b-1d91-44ec-9243-c1e821c29a20"))).abi_Update(notification));
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).abi_Clear());
+		Debug.OK((cast(Windows.UI.Notifications.ITileUpdater)this.asInterface(uuid("0942a48b-1d91-44ec-9243-c1e821c29a20"))).abi_Clear());
 	}
 	final void EnableNotificationQueue(bool enable)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).abi_EnableNotificationQueue(enable));
+		Debug.OK((cast(Windows.UI.Notifications.ITileUpdater)this.asInterface(uuid("0942a48b-1d91-44ec-9243-c1e821c29a20"))).abi_EnableNotificationQueue(enable));
 	}
 	final Windows.UI.Notifications.NotificationSetting Setting()
 	{
 		Windows.UI.Notifications.NotificationSetting _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).get_Setting(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.ITileUpdater)this.asInterface(uuid("0942a48b-1d91-44ec-9243-c1e821c29a20"))).get_Setting(&_ret));
 		return _ret;
 	}
 	final void AddToSchedule(Windows.UI.Notifications.ScheduledTileNotification scheduledTile)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).abi_AddToSchedule(scheduledTile));
+		Debug.OK((cast(Windows.UI.Notifications.ITileUpdater)this.asInterface(uuid("0942a48b-1d91-44ec-9243-c1e821c29a20"))).abi_AddToSchedule(scheduledTile));
 	}
 	final void RemoveFromSchedule(Windows.UI.Notifications.ScheduledTileNotification scheduledTile)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).abi_RemoveFromSchedule(scheduledTile));
+		Debug.OK((cast(Windows.UI.Notifications.ITileUpdater)this.asInterface(uuid("0942a48b-1d91-44ec-9243-c1e821c29a20"))).abi_RemoveFromSchedule(scheduledTile));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ScheduledTileNotification) GetScheduledTileNotifications()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ScheduledTileNotification) _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).abi_GetScheduledTileNotifications(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.ITileUpdater)this.asInterface(uuid("0942a48b-1d91-44ec-9243-c1e821c29a20"))).abi_GetScheduledTileNotifications(&_ret));
 		return _ret;
 	}
 	final void StartPeriodicUpdate(Windows.Foundation.Uri tileContent, Windows.UI.Notifications.PeriodicUpdateRecurrence requestedInterval)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).abi_StartPeriodicUpdate(tileContent, requestedInterval));
+		Debug.OK((cast(Windows.UI.Notifications.ITileUpdater)this.asInterface(uuid("0942a48b-1d91-44ec-9243-c1e821c29a20"))).abi_StartPeriodicUpdate(tileContent, requestedInterval));
 	}
 	final void StartPeriodicUpdateAtTime(Windows.Foundation.Uri tileContent, Windows.Foundation.DateTime startTime, Windows.UI.Notifications.PeriodicUpdateRecurrence requestedInterval)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).abi_StartPeriodicUpdateAtTime(tileContent, startTime, requestedInterval));
+		Debug.OK((cast(Windows.UI.Notifications.ITileUpdater)this.asInterface(uuid("0942a48b-1d91-44ec-9243-c1e821c29a20"))).abi_StartPeriodicUpdateAtTime(tileContent, startTime, requestedInterval));
 	}
 	final void StopPeriodicUpdate()
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).abi_StopPeriodicUpdate());
+		Debug.OK((cast(Windows.UI.Notifications.ITileUpdater)this.asInterface(uuid("0942a48b-1d91-44ec-9243-c1e821c29a20"))).abi_StopPeriodicUpdate());
 	}
 	final void StartPeriodicUpdateBatch(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Uri) tileContents, Windows.UI.Notifications.PeriodicUpdateRecurrence requestedInterval)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).abi_StartPeriodicUpdateBatch(tileContents, requestedInterval));
+		Debug.OK((cast(Windows.UI.Notifications.ITileUpdater)this.asInterface(uuid("0942a48b-1d91-44ec-9243-c1e821c29a20"))).abi_StartPeriodicUpdateBatch(tileContents, requestedInterval));
 	}
 	final void StartPeriodicUpdateBatchAtTime(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Uri) tileContents, Windows.Foundation.DateTime startTime, Windows.UI.Notifications.PeriodicUpdateRecurrence requestedInterval)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater).abi_StartPeriodicUpdateBatchAtTime(tileContents, startTime, requestedInterval));
+		Debug.OK((cast(Windows.UI.Notifications.ITileUpdater)this.asInterface(uuid("0942a48b-1d91-44ec-9243-c1e821c29a20"))).abi_StartPeriodicUpdateBatchAtTime(tileContents, startTime, requestedInterval));
 	}
 	final void EnableNotificationQueueForSquare150x150(bool enable)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater2).abi_EnableNotificationQueueForSquare150x150(enable));
+		Debug.OK((cast(Windows.UI.Notifications.ITileUpdater2)this.asInterface(uuid("a2266e12-15ee-43ed-83f5-65b352bb1a84"))).abi_EnableNotificationQueueForSquare150x150(enable));
 	}
 	final void EnableNotificationQueueForWide310x150(bool enable)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater2).abi_EnableNotificationQueueForWide310x150(enable));
+		Debug.OK((cast(Windows.UI.Notifications.ITileUpdater2)this.asInterface(uuid("a2266e12-15ee-43ed-83f5-65b352bb1a84"))).abi_EnableNotificationQueueForWide310x150(enable));
 	}
 	final void EnableNotificationQueueForSquare310x310(bool enable)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.ITileUpdater2).abi_EnableNotificationQueueForSquare310x310(enable));
+		Debug.OK((cast(Windows.UI.Notifications.ITileUpdater2)this.asInterface(uuid("a2266e12-15ee-43ed-83f5-65b352bb1a84"))).abi_EnableNotificationQueueForSquare310x310(enable));
 	}
 }
 
@@ -1567,7 +1567,7 @@ extern(Windows):
 	final HSTRING Arguments()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastActivatedEventArgs).get_Arguments(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastActivatedEventArgs)this.asInterface(uuid("e3bf92f3-c197-436f-8265-0625824f8dac"))).get_Arguments(&_ret));
 		return _ret;
 	}
 }
@@ -1578,44 +1578,44 @@ extern(Windows):
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollection).get_Id(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastCollection)this.asInterface(uuid("0a8bc3b0-e0be-4858-bc2a-89dfe0b32863"))).get_Id(&_ret));
 		return _ret;
 	}
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollection).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastCollection)this.asInterface(uuid("0a8bc3b0-e0be-4858-bc2a-89dfe0b32863"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final void DisplayName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollection).set_DisplayName(value));
+		Debug.OK((cast(Windows.UI.Notifications.IToastCollection)this.asInterface(uuid("0a8bc3b0-e0be-4858-bc2a-89dfe0b32863"))).set_DisplayName(value));
 	}
 	final HSTRING LaunchArgs()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollection).get_LaunchArgs(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastCollection)this.asInterface(uuid("0a8bc3b0-e0be-4858-bc2a-89dfe0b32863"))).get_LaunchArgs(&_ret));
 		return _ret;
 	}
 	final void LaunchArgs(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollection).set_LaunchArgs(value));
+		Debug.OK((cast(Windows.UI.Notifications.IToastCollection)this.asInterface(uuid("0a8bc3b0-e0be-4858-bc2a-89dfe0b32863"))).set_LaunchArgs(value));
 	}
 	final Windows.Foundation.Uri Icon()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollection).get_Icon(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastCollection)this.asInterface(uuid("0a8bc3b0-e0be-4858-bc2a-89dfe0b32863"))).get_Icon(&_ret));
 		return _ret;
 	}
 	final void Icon(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollection).set_Icon(value));
+		Debug.OK((cast(Windows.UI.Notifications.IToastCollection)this.asInterface(uuid("0a8bc3b0-e0be-4858-bc2a-89dfe0b32863"))).set_Icon(value));
 	}
 	static Windows.UI.Notifications.ToastCollection New(HSTRING collectionId, HSTRING displayName, HSTRING launchArgs, Windows.Foundation.Uri iconUri)
 	{
 		auto factory = factory!(Windows.UI.Notifications.IToastCollectionFactory);
 		Windows.UI.Notifications.ToastCollection _ret;
-		Debug.OK(factory.as!(Windows.UI.Notifications.IToastCollectionFactory).abi_CreateInstance(collectionId, displayName, launchArgs, iconUri, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastCollectionFactory)factory.asInterface(uuid("164dd3d7-73c4-44f7-b4ff-fb6d4bf1f4c6"))).abi_CreateInstance(collectionId, displayName, launchArgs, iconUri, &_ret));
 		return _ret;
 	}
 }
@@ -1626,43 +1626,43 @@ extern(Windows):
 	final Windows.Foundation.IAsyncAction SaveToastCollectionAsync(Windows.UI.Notifications.ToastCollection collection)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollectionManager).abi_SaveToastCollectionAsync(collection, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastCollectionManager)this.asInterface(uuid("2a1821fe-179d-49bc-b79d-a527920d3665"))).abi_SaveToastCollectionAsync(collection, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ToastCollection)) FindAllToastCollectionsAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ToastCollection)) _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollectionManager).abi_FindAllToastCollectionsAsync(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastCollectionManager)this.asInterface(uuid("2a1821fe-179d-49bc-b79d-a527920d3665"))).abi_FindAllToastCollectionsAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.UI.Notifications.ToastCollection) GetToastCollectionAsync(HSTRING collectionId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.UI.Notifications.ToastCollection) _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollectionManager).abi_GetToastCollectionAsync(collectionId, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastCollectionManager)this.asInterface(uuid("2a1821fe-179d-49bc-b79d-a527920d3665"))).abi_GetToastCollectionAsync(collectionId, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction RemoveToastCollectionAsync(HSTRING collectionId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollectionManager).abi_RemoveToastCollectionAsync(collectionId, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastCollectionManager)this.asInterface(uuid("2a1821fe-179d-49bc-b79d-a527920d3665"))).abi_RemoveToastCollectionAsync(collectionId, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction RemoveAllToastCollectionsAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollectionManager).abi_RemoveAllToastCollectionsAsync(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastCollectionManager)this.asInterface(uuid("2a1821fe-179d-49bc-b79d-a527920d3665"))).abi_RemoveAllToastCollectionsAsync(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollectionManager).get_User(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastCollectionManager)this.asInterface(uuid("2a1821fe-179d-49bc-b79d-a527920d3665"))).get_User(&_ret));
 		return _ret;
 	}
 	final HSTRING AppId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastCollectionManager).get_AppId(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastCollectionManager)this.asInterface(uuid("2a1821fe-179d-49bc-b79d-a527920d3665"))).get_AppId(&_ret));
 		return _ret;
 	}
 }
@@ -1673,7 +1673,7 @@ extern(Windows):
 	final Windows.UI.Notifications.ToastDismissalReason Reason()
 	{
 		Windows.UI.Notifications.ToastDismissalReason _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastDismissedEventArgs).get_Reason(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastDismissedEventArgs)this.asInterface(uuid("3f89d935-d9cb-4538-a0f0-ffe7659938f8"))).get_Reason(&_ret));
 		return _ret;
 	}
 }
@@ -1684,7 +1684,7 @@ extern(Windows):
 	final HRESULT ErrorCode()
 	{
 		HRESULT _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastFailedEventArgs).get_ErrorCode(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastFailedEventArgs)this.asInterface(uuid("35176862-cfd4-44f8-ad64-f500fd896c3b"))).get_ErrorCode(&_ret));
 		return _ret;
 	}
 }
@@ -1695,124 +1695,124 @@ extern(Windows):
 	final Windows.Data.Xml.Dom.XmlDocument Content()
 	{
 		Windows.Data.Xml.Dom.XmlDocument _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification).get_Content(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotification)this.asInterface(uuid("997e2675-059e-4e60-8b06-1760917c8b80"))).get_Content(&_ret));
 		return _ret;
 	}
 	final void ExpirationTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification).set_ExpirationTime(value));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotification)this.asInterface(uuid("997e2675-059e-4e60-8b06-1760917c8b80"))).set_ExpirationTime(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) ExpirationTime()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification).get_ExpirationTime(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotification)this.asInterface(uuid("997e2675-059e-4e60-8b06-1760917c8b80"))).get_ExpirationTime(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnDismissed(void delegate(Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastDismissedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification).add_Dismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastDismissedEventArgs), Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastDismissedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotification)this.asInterface(uuid("997e2675-059e-4e60-8b06-1760917c8b80"))).add_Dismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastDismissedEventArgs), Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastDismissedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDismissed(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification).remove_Dismissed(cookie));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotification)this.asInterface(uuid("997e2675-059e-4e60-8b06-1760917c8b80"))).remove_Dismissed(cookie));
 	}
 	final EventRegistrationToken OnActivated(void delegate(Windows.UI.Notifications.ToastNotification, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification).add_Activated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.ToastNotification, IInspectable), Windows.UI.Notifications.ToastNotification, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotification)this.asInterface(uuid("997e2675-059e-4e60-8b06-1760917c8b80"))).add_Activated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.ToastNotification, IInspectable), Windows.UI.Notifications.ToastNotification, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeActivated(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification).remove_Activated(cookie));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotification)this.asInterface(uuid("997e2675-059e-4e60-8b06-1760917c8b80"))).remove_Activated(cookie));
 	}
 	final EventRegistrationToken OnFailed(void delegate(Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastFailedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification).add_Failed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastFailedEventArgs), Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastFailedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotification)this.asInterface(uuid("997e2675-059e-4e60-8b06-1760917c8b80"))).add_Failed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastFailedEventArgs), Windows.UI.Notifications.ToastNotification, Windows.UI.Notifications.ToastFailedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeFailed(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification).remove_Failed(token));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotification)this.asInterface(uuid("997e2675-059e-4e60-8b06-1760917c8b80"))).remove_Failed(token));
 	}
 	final void Tag(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification2).set_Tag(value));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotification2)this.asInterface(uuid("9dfb9fd1-143a-490e-90bf-b9fba7132de7"))).set_Tag(value));
 	}
 	final HSTRING Tag()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification2).get_Tag(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotification2)this.asInterface(uuid("9dfb9fd1-143a-490e-90bf-b9fba7132de7"))).get_Tag(&_ret));
 		return _ret;
 	}
 	final void Group(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification2).set_Group(value));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotification2)this.asInterface(uuid("9dfb9fd1-143a-490e-90bf-b9fba7132de7"))).set_Group(value));
 	}
 	final HSTRING Group()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification2).get_Group(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotification2)this.asInterface(uuid("9dfb9fd1-143a-490e-90bf-b9fba7132de7"))).get_Group(&_ret));
 		return _ret;
 	}
 	final void SuppressPopup(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification2).set_SuppressPopup(value));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotification2)this.asInterface(uuid("9dfb9fd1-143a-490e-90bf-b9fba7132de7"))).set_SuppressPopup(value));
 	}
 	final bool SuppressPopup()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification2).get_SuppressPopup(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotification2)this.asInterface(uuid("9dfb9fd1-143a-490e-90bf-b9fba7132de7"))).get_SuppressPopup(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Notifications.NotificationMirroring NotificationMirroring()
 	{
 		Windows.UI.Notifications.NotificationMirroring _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification3).get_NotificationMirroring(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotification3)this.asInterface(uuid("31e8aed8-8141-4f99-bc0a-c4ed21297d77"))).get_NotificationMirroring(&_ret));
 		return _ret;
 	}
 	final void NotificationMirroring(Windows.UI.Notifications.NotificationMirroring value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification3).set_NotificationMirroring(value));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotification3)this.asInterface(uuid("31e8aed8-8141-4f99-bc0a-c4ed21297d77"))).set_NotificationMirroring(value));
 	}
 	final HSTRING RemoteId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification3).get_RemoteId(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotification3)this.asInterface(uuid("31e8aed8-8141-4f99-bc0a-c4ed21297d77"))).get_RemoteId(&_ret));
 		return _ret;
 	}
 	final void RemoteId(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification3).set_RemoteId(value));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotification3)this.asInterface(uuid("31e8aed8-8141-4f99-bc0a-c4ed21297d77"))).set_RemoteId(value));
 	}
 	final Windows.UI.Notifications.NotificationData Data()
 	{
 		Windows.UI.Notifications.NotificationData _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification4).get_Data(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotification4)this.asInterface(uuid("15154935-28ea-4727-88e9-c58680e2d118"))).get_Data(&_ret));
 		return _ret;
 	}
 	final void Data(Windows.UI.Notifications.NotificationData value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification4).set_Data(value));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotification4)this.asInterface(uuid("15154935-28ea-4727-88e9-c58680e2d118"))).set_Data(value));
 	}
 	final Windows.UI.Notifications.ToastNotificationPriority Priority()
 	{
 		Windows.UI.Notifications.ToastNotificationPriority _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification4).get_Priority(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotification4)this.asInterface(uuid("15154935-28ea-4727-88e9-c58680e2d118"))).get_Priority(&_ret));
 		return _ret;
 	}
 	final void Priority(Windows.UI.Notifications.ToastNotificationPriority value)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotification4).set_Priority(value));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotification4)this.asInterface(uuid("15154935-28ea-4727-88e9-c58680e2d118"))).set_Priority(value));
 	}
 	static Windows.UI.Notifications.ToastNotification New(Windows.Data.Xml.Dom.XmlDocument content)
 	{
 		auto factory = factory!(Windows.UI.Notifications.IToastNotificationFactory);
 		Windows.UI.Notifications.ToastNotification _ret;
-		Debug.OK(factory.as!(Windows.UI.Notifications.IToastNotificationFactory).abi_CreateToastNotification(content, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationFactory)factory.asInterface(uuid("04124b20-82c6-4229-b109-fd9ed4662b53"))).abi_CreateToastNotification(content, &_ret));
 		return _ret;
 	}
 }
@@ -1823,13 +1823,13 @@ extern(Windows):
 	final HSTRING Argument()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationActionTriggerDetail).get_Argument(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationActionTriggerDetail)this.asInterface(uuid("9445135a-38f3-42f6-96aa-7955b0f03da2"))).get_Argument(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.ValueSet UserInput()
 	{
 		Windows.Foundation.Collections.ValueSet _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationActionTriggerDetail).get_UserInput(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationActionTriggerDetail)this.asInterface(uuid("9445135a-38f3-42f6-96aa-7955b0f03da2"))).get_UserInput(&_ret));
 		return _ret;
 	}
 }
@@ -1839,42 +1839,42 @@ interface ToastNotificationHistory : Windows.UI.Notifications.IToastNotification
 extern(Windows):
 	final void RemoveGroup(HSTRING group)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationHistory).abi_RemoveGroup(group));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationHistory)this.asInterface(uuid("5caddc63-01d3-4c97-986f-0533483fee14"))).abi_RemoveGroup(group));
 	}
 	final void RemoveGroupWithId(HSTRING group, HSTRING applicationId)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationHistory).abi_RemoveGroupWithId(group, applicationId));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationHistory)this.asInterface(uuid("5caddc63-01d3-4c97-986f-0533483fee14"))).abi_RemoveGroupWithId(group, applicationId));
 	}
 	final void RemoveGroupedTagWithId(HSTRING tag, HSTRING group, HSTRING applicationId)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationHistory).abi_RemoveGroupedTagWithId(tag, group, applicationId));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationHistory)this.asInterface(uuid("5caddc63-01d3-4c97-986f-0533483fee14"))).abi_RemoveGroupedTagWithId(tag, group, applicationId));
 	}
 	final void RemoveGroupedTag(HSTRING tag, HSTRING group)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationHistory).abi_RemoveGroupedTag(tag, group));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationHistory)this.asInterface(uuid("5caddc63-01d3-4c97-986f-0533483fee14"))).abi_RemoveGroupedTag(tag, group));
 	}
 	final void Remove(HSTRING tag)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationHistory).abi_Remove(tag));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationHistory)this.asInterface(uuid("5caddc63-01d3-4c97-986f-0533483fee14"))).abi_Remove(tag));
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationHistory).abi_Clear());
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationHistory)this.asInterface(uuid("5caddc63-01d3-4c97-986f-0533483fee14"))).abi_Clear());
 	}
 	final void ClearWithId(HSTRING applicationId)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationHistory).abi_ClearWithId(applicationId));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationHistory)this.asInterface(uuid("5caddc63-01d3-4c97-986f-0533483fee14"))).abi_ClearWithId(applicationId));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ToastNotification) GetHistory()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ToastNotification) _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationHistory2).abi_GetHistory(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationHistory2)this.asInterface(uuid("3bc3d253-2f31-4092-9129-8ad5abf067da"))).abi_GetHistory(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ToastNotification) GetHistoryWithId(HSTRING applicationId)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ToastNotification) _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationHistory2).abi_GetHistoryWithId(applicationId, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationHistory2)this.asInterface(uuid("3bc3d253-2f31-4092-9129-8ad5abf067da"))).abi_GetHistoryWithId(applicationId, &_ret));
 		return _ret;
 	}
 }
@@ -1885,13 +1885,13 @@ extern(Windows):
 	final Windows.UI.Notifications.ToastHistoryChangedType ChangeType()
 	{
 		Windows.UI.Notifications.ToastHistoryChangedType _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationHistoryChangedTriggerDetail).get_ChangeType(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationHistoryChangedTriggerDetail)this.asInterface(uuid("db037ffa-0068-412c-9c83-267c37f65670"))).get_ChangeType(&_ret));
 		return _ret;
 	}
 	final HSTRING CollectionId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationHistoryChangedTriggerDetail2).get_CollectionId(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationHistoryChangedTriggerDetail2)this.asInterface(uuid("0b36e982-c871-49fb-babb-25bdbc4cc45b"))).get_CollectionId(&_ret));
 		return _ret;
 	}
 }
@@ -1907,19 +1907,19 @@ interface ToastNotificationManager
 	static Windows.UI.Notifications.ToastNotifier CreateToastNotifier()
 	{
 		Windows.UI.Notifications.ToastNotifier _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IToastNotificationManagerStatics).abi_CreateToastNotifier(&_ret));
+		Debug.OK(staticInstance.abi_CreateToastNotifier(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Notifications.ToastNotifier CreateToastNotifierWithId(HSTRING applicationId)
 	{
 		Windows.UI.Notifications.ToastNotifier _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IToastNotificationManagerStatics).abi_CreateToastNotifierWithId(applicationId, &_ret));
+		Debug.OK(staticInstance.abi_CreateToastNotifierWithId(applicationId, &_ret));
 		return _ret;
 	}
 	static Windows.Data.Xml.Dom.XmlDocument GetTemplateContent(Windows.UI.Notifications.ToastTemplateType type)
 	{
 		Windows.Data.Xml.Dom.XmlDocument _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.IToastNotificationManagerStatics).abi_GetTemplateContent(type, &_ret));
+		Debug.OK(staticInstance.abi_GetTemplateContent(type, &_ret));
 		return _ret;
 	}
 }
@@ -1930,49 +1930,49 @@ extern(Windows):
 	final Windows.UI.Notifications.ToastNotifier CreateToastNotifier()
 	{
 		Windows.UI.Notifications.ToastNotifier _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationManagerForUser).abi_CreateToastNotifier(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationManagerForUser)this.asInterface(uuid("79ab57f6-43fe-487b-8a7f-99567200ae94"))).abi_CreateToastNotifier(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Notifications.ToastNotifier CreateToastNotifierWithId(HSTRING applicationId)
 	{
 		Windows.UI.Notifications.ToastNotifier _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationManagerForUser).abi_CreateToastNotifierWithId(applicationId, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationManagerForUser)this.asInterface(uuid("79ab57f6-43fe-487b-8a7f-99567200ae94"))).abi_CreateToastNotifierWithId(applicationId, &_ret));
 		return _ret;
 	}
 	final Windows.UI.Notifications.ToastNotificationHistory History()
 	{
 		Windows.UI.Notifications.ToastNotificationHistory _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationManagerForUser).get_History(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationManagerForUser)this.asInterface(uuid("79ab57f6-43fe-487b-8a7f-99567200ae94"))).get_History(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationManagerForUser).get_User(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationManagerForUser)this.asInterface(uuid("79ab57f6-43fe-487b-8a7f-99567200ae94"))).get_User(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.UI.Notifications.ToastNotifier) GetToastNotifierForToastCollectionIdAsync(HSTRING collectionId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.UI.Notifications.ToastNotifier) _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationManagerForUser2).abi_GetToastNotifierForToastCollectionIdAsync(collectionId, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationManagerForUser2)this.asInterface(uuid("679c64b7-81ab-42c2-8819-c958767753f4"))).abi_GetToastNotifierForToastCollectionIdAsync(collectionId, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.UI.Notifications.ToastNotificationHistory) GetHistoryForToastCollectionIdAsync(HSTRING collectionId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.UI.Notifications.ToastNotificationHistory) _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationManagerForUser2).abi_GetHistoryForToastCollectionIdAsync(collectionId, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationManagerForUser2)this.asInterface(uuid("679c64b7-81ab-42c2-8819-c958767753f4"))).abi_GetHistoryForToastCollectionIdAsync(collectionId, &_ret));
 		return _ret;
 	}
 	final Windows.UI.Notifications.ToastCollectionManager GetToastCollectionManager()
 	{
 		Windows.UI.Notifications.ToastCollectionManager _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationManagerForUser2).abi_GetToastCollectionManager(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationManagerForUser2)this.asInterface(uuid("679c64b7-81ab-42c2-8819-c958767753f4"))).abi_GetToastCollectionManager(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Notifications.ToastCollectionManager GetToastCollectionManagerWithAppId(HSTRING appId)
 	{
 		Windows.UI.Notifications.ToastCollectionManager _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotificationManagerForUser2).abi_GetToastCollectionManagerWithAppId(appId, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationManagerForUser2)this.asInterface(uuid("679c64b7-81ab-42c2-8819-c958767753f4"))).abi_GetToastCollectionManagerWithAppId(appId, &_ret));
 		return _ret;
 	}
 }
@@ -1982,42 +1982,42 @@ interface ToastNotifier : Windows.UI.Notifications.IToastNotifier, Windows.UI.No
 extern(Windows):
 	final void Show(Windows.UI.Notifications.ToastNotification notification)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotifier).abi_Show(notification));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotifier)this.asInterface(uuid("75927b93-03f3-41ec-91d3-6e5bac1b38e7"))).abi_Show(notification));
 	}
 	final void Hide(Windows.UI.Notifications.ToastNotification notification)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotifier).abi_Hide(notification));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotifier)this.asInterface(uuid("75927b93-03f3-41ec-91d3-6e5bac1b38e7"))).abi_Hide(notification));
 	}
 	final Windows.UI.Notifications.NotificationSetting Setting()
 	{
 		Windows.UI.Notifications.NotificationSetting _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotifier).get_Setting(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotifier)this.asInterface(uuid("75927b93-03f3-41ec-91d3-6e5bac1b38e7"))).get_Setting(&_ret));
 		return _ret;
 	}
 	final void AddToSchedule(Windows.UI.Notifications.ScheduledToastNotification scheduledToast)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotifier).abi_AddToSchedule(scheduledToast));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotifier)this.asInterface(uuid("75927b93-03f3-41ec-91d3-6e5bac1b38e7"))).abi_AddToSchedule(scheduledToast));
 	}
 	final void RemoveFromSchedule(Windows.UI.Notifications.ScheduledToastNotification scheduledToast)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotifier).abi_RemoveFromSchedule(scheduledToast));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotifier)this.asInterface(uuid("75927b93-03f3-41ec-91d3-6e5bac1b38e7"))).abi_RemoveFromSchedule(scheduledToast));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ScheduledToastNotification) GetScheduledToastNotifications()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ScheduledToastNotification) _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotifier).abi_GetScheduledToastNotifications(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotifier)this.asInterface(uuid("75927b93-03f3-41ec-91d3-6e5bac1b38e7"))).abi_GetScheduledToastNotifications(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Notifications.NotificationUpdateResult UpdateWithTagAndGroup(Windows.UI.Notifications.NotificationData data, HSTRING tag, HSTRING group)
 	{
 		Windows.UI.Notifications.NotificationUpdateResult _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotifier2).abi_UpdateWithTagAndGroup(data, tag, group, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotifier2)this.asInterface(uuid("354389c6-7c01-4bd5-9c20-604340cd2b74"))).abi_UpdateWithTagAndGroup(data, tag, group, &_ret));
 		return _ret;
 	}
 	final Windows.UI.Notifications.NotificationUpdateResult UpdateWithTag(Windows.UI.Notifications.NotificationData data, HSTRING tag)
 	{
 		Windows.UI.Notifications.NotificationUpdateResult _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IToastNotifier2).abi_UpdateWithTag(data, tag, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IToastNotifier2)this.asInterface(uuid("354389c6-7c01-4bd5-9c20-604340cd2b74"))).abi_UpdateWithTag(data, tag, &_ret));
 		return _ret;
 	}
 }
@@ -2028,25 +2028,25 @@ extern(Windows):
 	final Windows.UI.Notifications.Notification Notification()
 	{
 		Windows.UI.Notifications.Notification _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IUserNotification).get_Notification(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IUserNotification)this.asInterface(uuid("adf7e52f-4e53-42d5-9c33-eb5ea515b23e"))).get_Notification(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.AppInfo AppInfo()
 	{
 		Windows.ApplicationModel.AppInfo _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IUserNotification).get_AppInfo(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IUserNotification)this.asInterface(uuid("adf7e52f-4e53-42d5-9c33-eb5ea515b23e"))).get_AppInfo(&_ret));
 		return _ret;
 	}
 	final UINT32 Id()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IUserNotification).get_Id(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IUserNotification)this.asInterface(uuid("adf7e52f-4e53-42d5-9c33-eb5ea515b23e"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime CreationTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IUserNotification).get_CreationTime(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IUserNotification)this.asInterface(uuid("adf7e52f-4e53-42d5-9c33-eb5ea515b23e"))).get_CreationTime(&_ret));
 		return _ret;
 	}
 }
@@ -2057,13 +2057,13 @@ extern(Windows):
 	final Windows.UI.Notifications.UserNotificationChangedKind ChangeKind()
 	{
 		Windows.UI.Notifications.UserNotificationChangedKind _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IUserNotificationChangedEventArgs).get_ChangeKind(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IUserNotificationChangedEventArgs)this.asInterface(uuid("b6bd6839-79cf-4b25-82c0-0ce1eef81f8c"))).get_ChangeKind(&_ret));
 		return _ret;
 	}
 	final UINT32 UserNotificationId()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.IUserNotificationChangedEventArgs).get_UserNotificationId(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.IUserNotificationChangedEventArgs)this.asInterface(uuid("b6bd6839-79cf-4b25-82c0-0ce1eef81f8c"))).get_UserNotificationId(&_ret));
 		return _ret;
 	}
 }

@@ -176,49 +176,49 @@ extern(Windows):
 	final HSTRING AppointmentCalendarLocalId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest).get_AppointmentCalendarLocalId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest)this.asInterface(uuid("49460f8d-6434-40d7-ad46-6297419314d1"))).get_AppointmentCalendarLocalId(&_ret));
 		return _ret;
 	}
 	final HSTRING AppointmentLocalId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest).get_AppointmentLocalId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest)this.asInterface(uuid("49460f8d-6434-40d7-ad46-6297419314d1"))).get_AppointmentLocalId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) AppointmentOriginalStartTime()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest).get_AppointmentOriginalStartTime(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest)this.asInterface(uuid("49460f8d-6434-40d7-ad46-6297419314d1"))).get_AppointmentOriginalStartTime(&_ret));
 		return _ret;
 	}
 	final HSTRING Subject()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest).get_Subject(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest)this.asInterface(uuid("49460f8d-6434-40d7-ad46-6297419314d1"))).get_Subject(&_ret));
 		return _ret;
 	}
 	final HSTRING Comment()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest).get_Comment(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest)this.asInterface(uuid("49460f8d-6434-40d7-ad46-6297419314d1"))).get_Comment(&_ret));
 		return _ret;
 	}
 	final bool NotifyInvitees()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest).get_NotifyInvitees(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest)this.asInterface(uuid("49460f8d-6434-40d7-ad46-6297419314d1"))).get_NotifyInvitees(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest).abi_ReportCompletedAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest)this.asInterface(uuid("49460f8d-6434-40d7-ad46-6297419314d1"))).abi_ReportCompletedAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ReportFailedAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest).abi_ReportFailedAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest)this.asInterface(uuid("49460f8d-6434-40d7-ad46-6297419314d1"))).abi_ReportFailedAsync(&_ret));
 		return _ret;
 	}
 }
@@ -229,13 +229,13 @@ extern(Windows):
 	final Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequest Request()
 	{
 		Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequest _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequestEventArgs).get_Request(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequestEventArgs)this.asInterface(uuid("1a79be16-7f30-4e35-beef-9d2c7b6dcae1"))).get_Request(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequestEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequestEventArgs)this.asInterface(uuid("1a79be16-7f30-4e35-beef-9d2c7b6dcae1"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -246,37 +246,37 @@ extern(Windows):
 	final HSTRING AppointmentCalendarLocalId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequest).get_AppointmentCalendarLocalId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequest)this.asInterface(uuid("2e62f2b2-ca96-48ac-9124-406b19fefa70"))).get_AppointmentCalendarLocalId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Appointments.Appointment Appointment()
 	{
 		Windows.ApplicationModel.Appointments.Appointment _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequest).get_Appointment(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequest)this.asInterface(uuid("2e62f2b2-ca96-48ac-9124-406b19fefa70"))).get_Appointment(&_ret));
 		return _ret;
 	}
 	final bool NotifyInvitees()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequest).get_NotifyInvitees(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequest)this.asInterface(uuid("2e62f2b2-ca96-48ac-9124-406b19fefa70"))).get_NotifyInvitees(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) ChangedProperties()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequest).get_ChangedProperties(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequest)this.asInterface(uuid("2e62f2b2-ca96-48ac-9124-406b19fefa70"))).get_ChangedProperties(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync(Windows.ApplicationModel.Appointments.Appointment createdOrUpdatedAppointment)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequest).abi_ReportCompletedAsync(createdOrUpdatedAppointment, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequest)this.asInterface(uuid("2e62f2b2-ca96-48ac-9124-406b19fefa70"))).abi_ReportCompletedAsync(createdOrUpdatedAppointment, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ReportFailedAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequest).abi_ReportFailedAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequest)this.asInterface(uuid("2e62f2b2-ca96-48ac-9124-406b19fefa70"))).abi_ReportFailedAsync(&_ret));
 		return _ret;
 	}
 }
@@ -287,13 +287,13 @@ extern(Windows):
 	final Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequest Request()
 	{
 		Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequest _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs).get_Request(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs)this.asInterface(uuid("cf8ded28-002e-4bf7-8e9d-5e20d49aa3ba"))).get_Request(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs)this.asInterface(uuid("cf8ded28-002e-4bf7-8e9d-5e20d49aa3ba"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -304,55 +304,55 @@ extern(Windows):
 	final HSTRING AppointmentCalendarLocalId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest).get_AppointmentCalendarLocalId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest)this.asInterface(uuid("82e5ee56-26b6-4253-8a8f-6cf5f2ff7884"))).get_AppointmentCalendarLocalId(&_ret));
 		return _ret;
 	}
 	final HSTRING AppointmentLocalId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest).get_AppointmentLocalId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest)this.asInterface(uuid("82e5ee56-26b6-4253-8a8f-6cf5f2ff7884"))).get_AppointmentLocalId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) AppointmentOriginalStartTime()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest).get_AppointmentOriginalStartTime(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest)this.asInterface(uuid("82e5ee56-26b6-4253-8a8f-6cf5f2ff7884"))).get_AppointmentOriginalStartTime(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.AppointmentInvitee) Invitees()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.AppointmentInvitee) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest).get_Invitees(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest)this.asInterface(uuid("82e5ee56-26b6-4253-8a8f-6cf5f2ff7884"))).get_Invitees(&_ret));
 		return _ret;
 	}
 	final HSTRING Subject()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest).get_Subject(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest)this.asInterface(uuid("82e5ee56-26b6-4253-8a8f-6cf5f2ff7884"))).get_Subject(&_ret));
 		return _ret;
 	}
 	final HSTRING ForwardHeader()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest).get_ForwardHeader(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest)this.asInterface(uuid("82e5ee56-26b6-4253-8a8f-6cf5f2ff7884"))).get_ForwardHeader(&_ret));
 		return _ret;
 	}
 	final HSTRING Comment()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest).get_Comment(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest)this.asInterface(uuid("82e5ee56-26b6-4253-8a8f-6cf5f2ff7884"))).get_Comment(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest).abi_ReportCompletedAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest)this.asInterface(uuid("82e5ee56-26b6-4253-8a8f-6cf5f2ff7884"))).abi_ReportCompletedAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ReportFailedAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest).abi_ReportFailedAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest)this.asInterface(uuid("82e5ee56-26b6-4253-8a8f-6cf5f2ff7884"))).abi_ReportFailedAsync(&_ret));
 		return _ret;
 	}
 }
@@ -363,13 +363,13 @@ extern(Windows):
 	final Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequest Request()
 	{
 		Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequest _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequestEventArgs).get_Request(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequestEventArgs)this.asInterface(uuid("3109151a-23a2-42fd-9c82-c9a60d59f8a8"))).get_Request(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequestEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequestEventArgs)this.asInterface(uuid("3109151a-23a2-42fd-9c82-c9a60d59f8a8"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -380,55 +380,55 @@ extern(Windows):
 	final HSTRING AppointmentCalendarLocalId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest).get_AppointmentCalendarLocalId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest)this.asInterface(uuid("ce1c63f5-edf6-43c3-82b7-be6b368c6900"))).get_AppointmentCalendarLocalId(&_ret));
 		return _ret;
 	}
 	final HSTRING AppointmentLocalId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest).get_AppointmentLocalId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest)this.asInterface(uuid("ce1c63f5-edf6-43c3-82b7-be6b368c6900"))).get_AppointmentLocalId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) AppointmentOriginalStartTime()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest).get_AppointmentOriginalStartTime(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest)this.asInterface(uuid("ce1c63f5-edf6-43c3-82b7-be6b368c6900"))).get_AppointmentOriginalStartTime(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime NewStartTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest).get_NewStartTime(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest)this.asInterface(uuid("ce1c63f5-edf6-43c3-82b7-be6b368c6900"))).get_NewStartTime(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan NewDuration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest).get_NewDuration(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest)this.asInterface(uuid("ce1c63f5-edf6-43c3-82b7-be6b368c6900"))).get_NewDuration(&_ret));
 		return _ret;
 	}
 	final HSTRING Subject()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest).get_Subject(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest)this.asInterface(uuid("ce1c63f5-edf6-43c3-82b7-be6b368c6900"))).get_Subject(&_ret));
 		return _ret;
 	}
 	final HSTRING Comment()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest).get_Comment(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest)this.asInterface(uuid("ce1c63f5-edf6-43c3-82b7-be6b368c6900"))).get_Comment(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest).abi_ReportCompletedAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest)this.asInterface(uuid("ce1c63f5-edf6-43c3-82b7-be6b368c6900"))).abi_ReportCompletedAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ReportFailedAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest).abi_ReportFailedAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest)this.asInterface(uuid("ce1c63f5-edf6-43c3-82b7-be6b368c6900"))).abi_ReportFailedAsync(&_ret));
 		return _ret;
 	}
 }
@@ -439,13 +439,13 @@ extern(Windows):
 	final Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequest Request()
 	{
 		Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequest _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs).get_Request(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs)this.asInterface(uuid("d2d777d8-fed1-4280-a3ba-2e1f47609aa2"))).get_Request(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs)this.asInterface(uuid("d2d777d8-fed1-4280-a3ba-2e1f47609aa2"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -456,19 +456,19 @@ extern(Windows):
 	final HSTRING AppointmentCalendarLocalId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarSyncManagerSyncRequest).get_AppointmentCalendarLocalId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarSyncManagerSyncRequest)this.asInterface(uuid("12ab382b-7163-4a56-9a4e-7223a84adf46"))).get_AppointmentCalendarLocalId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarSyncManagerSyncRequest).abi_ReportCompletedAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarSyncManagerSyncRequest)this.asInterface(uuid("12ab382b-7163-4a56-9a4e-7223a84adf46"))).abi_ReportCompletedAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ReportFailedAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarSyncManagerSyncRequest).abi_ReportFailedAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarSyncManagerSyncRequest)this.asInterface(uuid("12ab382b-7163-4a56-9a4e-7223a84adf46"))).abi_ReportFailedAsync(&_ret));
 		return _ret;
 	}
 }
@@ -479,13 +479,13 @@ extern(Windows):
 	final Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequest Request()
 	{
 		Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequest _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarSyncManagerSyncRequestEventArgs).get_Request(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarSyncManagerSyncRequestEventArgs)this.asInterface(uuid("ca17c6f7-0284-4edd-87ba-4d8f69dcf5c0"))).get_Request(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarSyncManagerSyncRequestEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarSyncManagerSyncRequestEventArgs)this.asInterface(uuid("ca17c6f7-0284-4edd-87ba-4d8f69dcf5c0"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -496,55 +496,55 @@ extern(Windows):
 	final HSTRING AppointmentCalendarLocalId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest).get_AppointmentCalendarLocalId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest)this.asInterface(uuid("a36d608c-c29d-4b94-b086-7e9ff7bd84a0"))).get_AppointmentCalendarLocalId(&_ret));
 		return _ret;
 	}
 	final HSTRING AppointmentLocalId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest).get_AppointmentLocalId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest)this.asInterface(uuid("a36d608c-c29d-4b94-b086-7e9ff7bd84a0"))).get_AppointmentLocalId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) AppointmentOriginalStartTime()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest).get_AppointmentOriginalStartTime(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest)this.asInterface(uuid("a36d608c-c29d-4b94-b086-7e9ff7bd84a0"))).get_AppointmentOriginalStartTime(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Appointments.AppointmentParticipantResponse Response()
 	{
 		Windows.ApplicationModel.Appointments.AppointmentParticipantResponse _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest).get_Response(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest)this.asInterface(uuid("a36d608c-c29d-4b94-b086-7e9ff7bd84a0"))).get_Response(&_ret));
 		return _ret;
 	}
 	final HSTRING Subject()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest).get_Subject(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest)this.asInterface(uuid("a36d608c-c29d-4b94-b086-7e9ff7bd84a0"))).get_Subject(&_ret));
 		return _ret;
 	}
 	final HSTRING Comment()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest).get_Comment(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest)this.asInterface(uuid("a36d608c-c29d-4b94-b086-7e9ff7bd84a0"))).get_Comment(&_ret));
 		return _ret;
 	}
 	final bool SendUpdate()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest).get_SendUpdate(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest)this.asInterface(uuid("a36d608c-c29d-4b94-b086-7e9ff7bd84a0"))).get_SendUpdate(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest).abi_ReportCompletedAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest)this.asInterface(uuid("a36d608c-c29d-4b94-b086-7e9ff7bd84a0"))).abi_ReportCompletedAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ReportFailedAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest).abi_ReportFailedAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest)this.asInterface(uuid("a36d608c-c29d-4b94-b086-7e9ff7bd84a0"))).abi_ReportFailedAsync(&_ret));
 		return _ret;
 	}
 }
@@ -555,13 +555,13 @@ extern(Windows):
 	final Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeetingResponseRequest Request()
 	{
 		Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeetingResponseRequest _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequestEventArgs).get_Request(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequestEventArgs)this.asInterface(uuid("88759883-97bf-479d-aed5-0be8ce567d1e"))).get_Request(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequestEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequestEventArgs)this.asInterface(uuid("88759883-97bf-479d-aed5-0be8ce567d1e"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -572,66 +572,66 @@ extern(Windows):
 	final EventRegistrationToken OnSyncRequested(void delegate(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequestEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).add_SyncRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequestEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection)this.asInterface(uuid("f3dd9d83-3254-465f-abdb-928046552cf4"))).add_SyncRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarSyncManagerSyncRequestEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSyncRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).remove_SyncRequested(token));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection)this.asInterface(uuid("f3dd9d83-3254-465f-abdb-928046552cf4"))).remove_SyncRequested(token));
 	}
 	final EventRegistrationToken OnCreateOrUpdateAppointmentRequested(void delegate(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).add_CreateOrUpdateAppointmentRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection)this.asInterface(uuid("f3dd9d83-3254-465f-abdb-928046552cf4"))).add_CreateOrUpdateAppointmentRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCreateOrUpdateAppointmentRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).remove_CreateOrUpdateAppointmentRequested(token));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection)this.asInterface(uuid("f3dd9d83-3254-465f-abdb-928046552cf4"))).remove_CreateOrUpdateAppointmentRequested(token));
 	}
 	final EventRegistrationToken OnCancelMeetingRequested(void delegate(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequestEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).add_CancelMeetingRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequestEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection)this.asInterface(uuid("f3dd9d83-3254-465f-abdb-928046552cf4"))).add_CancelMeetingRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarCancelMeetingRequestEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCancelMeetingRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).remove_CancelMeetingRequested(token));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection)this.asInterface(uuid("f3dd9d83-3254-465f-abdb-928046552cf4"))).remove_CancelMeetingRequested(token));
 	}
 	final EventRegistrationToken OnForwardMeetingRequested(void delegate(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequestEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).add_ForwardMeetingRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequestEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection)this.asInterface(uuid("f3dd9d83-3254-465f-abdb-928046552cf4"))).add_ForwardMeetingRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarForwardMeetingRequestEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeForwardMeetingRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).remove_ForwardMeetingRequested(token));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection)this.asInterface(uuid("f3dd9d83-3254-465f-abdb-928046552cf4"))).remove_ForwardMeetingRequested(token));
 	}
 	final EventRegistrationToken OnProposeNewTimeForMeetingRequested(void delegate(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequestEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).add_ProposeNewTimeForMeetingRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequestEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection)this.asInterface(uuid("f3dd9d83-3254-465f-abdb-928046552cf4"))).add_ProposeNewTimeForMeetingRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarProposeNewTimeForMeetingRequestEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeProposeNewTimeForMeetingRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).remove_ProposeNewTimeForMeetingRequested(token));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection)this.asInterface(uuid("f3dd9d83-3254-465f-abdb-928046552cf4"))).remove_ProposeNewTimeForMeetingRequested(token));
 	}
 	final EventRegistrationToken OnUpdateMeetingResponseRequested(void delegate(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeetingResponseRequestEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).add_UpdateMeetingResponseRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeetingResponseRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeetingResponseRequestEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection)this.asInterface(uuid("f3dd9d83-3254-465f-abdb-928046552cf4"))).add_UpdateMeetingResponseRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeetingResponseRequestEventArgs), Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection, Windows.ApplicationModel.Appointments.DataProvider.AppointmentCalendarUpdateMeetingResponseRequestEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeUpdateMeetingResponseRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).remove_UpdateMeetingResponseRequested(token));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection)this.asInterface(uuid("f3dd9d83-3254-465f-abdb-928046552cf4"))).remove_UpdateMeetingResponseRequested(token));
 	}
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection).abi_Start());
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderConnection)this.asInterface(uuid("f3dd9d83-3254-465f-abdb-928046552cf4"))).abi_Start());
 	}
 }
 
@@ -641,7 +641,7 @@ extern(Windows):
 	final Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection Connection()
 	{
 		Windows.ApplicationModel.Appointments.DataProvider.AppointmentDataProviderConnection _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderTriggerDetails).get_Connection(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentDataProviderTriggerDetails)this.asInterface(uuid("b3283c01-7e12-4e5e-b1ef-74fb68ac6f2a"))).get_Connection(&_ret));
 		return _ret;
 	}
 }

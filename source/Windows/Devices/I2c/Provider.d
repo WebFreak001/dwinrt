@@ -56,32 +56,32 @@ extern(Windows):
 	final INT32 SlaveAddress()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.I2c.Provider.IProviderI2cConnectionSettings).get_SlaveAddress(&_ret));
+		Debug.OK((cast(Windows.Devices.I2c.Provider.IProviderI2cConnectionSettings)this.asInterface(uuid("e9db4e34-e510-44b7-809d-f2f85b555339"))).get_SlaveAddress(&_ret));
 		return _ret;
 	}
 	final void SlaveAddress(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Devices.I2c.Provider.IProviderI2cConnectionSettings).set_SlaveAddress(value));
+		Debug.OK((cast(Windows.Devices.I2c.Provider.IProviderI2cConnectionSettings)this.asInterface(uuid("e9db4e34-e510-44b7-809d-f2f85b555339"))).set_SlaveAddress(value));
 	}
 	final Windows.Devices.I2c.Provider.ProviderI2cBusSpeed BusSpeed()
 	{
 		Windows.Devices.I2c.Provider.ProviderI2cBusSpeed _ret;
-		Debug.OK(this.as!(Windows.Devices.I2c.Provider.IProviderI2cConnectionSettings).get_BusSpeed(&_ret));
+		Debug.OK((cast(Windows.Devices.I2c.Provider.IProviderI2cConnectionSettings)this.asInterface(uuid("e9db4e34-e510-44b7-809d-f2f85b555339"))).get_BusSpeed(&_ret));
 		return _ret;
 	}
 	final void BusSpeed(Windows.Devices.I2c.Provider.ProviderI2cBusSpeed value)
 	{
-		Debug.OK(this.as!(Windows.Devices.I2c.Provider.IProviderI2cConnectionSettings).set_BusSpeed(value));
+		Debug.OK((cast(Windows.Devices.I2c.Provider.IProviderI2cConnectionSettings)this.asInterface(uuid("e9db4e34-e510-44b7-809d-f2f85b555339"))).set_BusSpeed(value));
 	}
 	final Windows.Devices.I2c.Provider.ProviderI2cSharingMode SharingMode()
 	{
 		Windows.Devices.I2c.Provider.ProviderI2cSharingMode _ret;
-		Debug.OK(this.as!(Windows.Devices.I2c.Provider.IProviderI2cConnectionSettings).get_SharingMode(&_ret));
+		Debug.OK((cast(Windows.Devices.I2c.Provider.IProviderI2cConnectionSettings)this.asInterface(uuid("e9db4e34-e510-44b7-809d-f2f85b555339"))).get_SharingMode(&_ret));
 		return _ret;
 	}
 	final void SharingMode(Windows.Devices.I2c.Provider.ProviderI2cSharingMode value)
 	{
-		Debug.OK(this.as!(Windows.Devices.I2c.Provider.IProviderI2cConnectionSettings).set_SharingMode(value));
+		Debug.OK((cast(Windows.Devices.I2c.Provider.IProviderI2cConnectionSettings)this.asInterface(uuid("e9db4e34-e510-44b7-809d-f2f85b555339"))).set_SharingMode(value));
 	}
 }
 

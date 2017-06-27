@@ -365,131 +365,131 @@ extern(Windows):
 	final Windows.Networking.BackgroundTransfer.DownloadOperation CreateDownload(Windows.Foundation.Uri uri, Windows.Storage.IStorageFile resultFile)
 	{
 		Windows.Networking.BackgroundTransfer.DownloadOperation _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader).abi_CreateDownload(uri, resultFile, &_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundDownloader)this.asInterface(uuid("c1c79333-6649-4b1d-a826-a4b3dd234d0b"))).abi_CreateDownload(uri, resultFile, &_ret));
 		return _ret;
 	}
 	final Windows.Networking.BackgroundTransfer.DownloadOperation CreateDownloadFromFile(Windows.Foundation.Uri uri, Windows.Storage.IStorageFile resultFile, Windows.Storage.IStorageFile requestBodyFile)
 	{
 		Windows.Networking.BackgroundTransfer.DownloadOperation _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader).abi_CreateDownloadFromFile(uri, resultFile, requestBodyFile, &_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundDownloader)this.asInterface(uuid("c1c79333-6649-4b1d-a826-a4b3dd234d0b"))).abi_CreateDownloadFromFile(uri, resultFile, requestBodyFile, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.DownloadOperation) CreateDownloadAsync(Windows.Foundation.Uri uri, Windows.Storage.IStorageFile resultFile, Windows.Storage.Streams.IInputStream requestBodyStream)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.DownloadOperation) _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader).abi_CreateDownloadAsync(uri, resultFile, requestBodyStream, &_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundDownloader)this.asInterface(uuid("c1c79333-6649-4b1d-a826-a4b3dd234d0b"))).abi_CreateDownloadAsync(uri, resultFile, requestBodyStream, &_ret));
 		return _ret;
 	}
 	final void SetRequestHeader(HSTRING headerName, HSTRING headerValue)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).abi_SetRequestHeader(headerName, headerValue));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase)this.asInterface(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef"))).abi_SetRequestHeader(headerName, headerValue));
 	}
 	final Windows.Security.Credentials.PasswordCredential ServerCredential()
 	{
 		Windows.Security.Credentials.PasswordCredential _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).get_ServerCredential(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase)this.asInterface(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef"))).get_ServerCredential(&_ret));
 		return _ret;
 	}
 	final void ServerCredential(Windows.Security.Credentials.PasswordCredential credential)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).set_ServerCredential(credential));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase)this.asInterface(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef"))).set_ServerCredential(credential));
 	}
 	final Windows.Security.Credentials.PasswordCredential ProxyCredential()
 	{
 		Windows.Security.Credentials.PasswordCredential _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).get_ProxyCredential(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase)this.asInterface(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef"))).get_ProxyCredential(&_ret));
 		return _ret;
 	}
 	final void ProxyCredential(Windows.Security.Credentials.PasswordCredential credential)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).set_ProxyCredential(credential));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase)this.asInterface(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef"))).set_ProxyCredential(credential));
 	}
 	final HSTRING Method()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).get_Method(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase)this.asInterface(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef"))).get_Method(&_ret));
 		return _ret;
 	}
 	final void Method(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).set_Method(value));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase)this.asInterface(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef"))).set_Method(value));
 	}
 	deprecated("Group may be altered or unavailable for releases after Windows 8.1. Instead, use TransferGroup.")
 	final HSTRING Group()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).get_Group(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase)this.asInterface(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef"))).get_Group(&_ret));
 		return _ret;
 	}
 	deprecated("Group may be altered or unavailable for releases after Windows 8.1. Instead, use TransferGroup.")
 	final void Group(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).set_Group(value));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase)this.asInterface(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef"))).set_Group(value));
 	}
 	final Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy CostPolicy()
 	{
 		Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).get_CostPolicy(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase)this.asInterface(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef"))).get_CostPolicy(&_ret));
 		return _ret;
 	}
 	final void CostPolicy(Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy value)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).set_CostPolicy(value));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase)this.asInterface(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef"))).set_CostPolicy(value));
 	}
 	final Windows.Networking.BackgroundTransfer.BackgroundTransferGroup TransferGroup()
 	{
 		Windows.Networking.BackgroundTransfer.BackgroundTransferGroup _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2).get_TransferGroup(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2)this.asInterface(uuid("a94a5847-348d-4a35-890e-8a1ef3798479"))).get_TransferGroup(&_ret));
 		return _ret;
 	}
 	final void TransferGroup(Windows.Networking.BackgroundTransfer.BackgroundTransferGroup value)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2).set_TransferGroup(value));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2)this.asInterface(uuid("a94a5847-348d-4a35-890e-8a1ef3798479"))).set_TransferGroup(value));
 	}
 	final Windows.UI.Notifications.ToastNotification SuccessToastNotification()
 	{
 		Windows.UI.Notifications.ToastNotification _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2).get_SuccessToastNotification(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2)this.asInterface(uuid("a94a5847-348d-4a35-890e-8a1ef3798479"))).get_SuccessToastNotification(&_ret));
 		return _ret;
 	}
 	final void SuccessToastNotification(Windows.UI.Notifications.ToastNotification value)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2).set_SuccessToastNotification(value));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2)this.asInterface(uuid("a94a5847-348d-4a35-890e-8a1ef3798479"))).set_SuccessToastNotification(value));
 	}
 	final Windows.UI.Notifications.ToastNotification FailureToastNotification()
 	{
 		Windows.UI.Notifications.ToastNotification _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2).get_FailureToastNotification(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2)this.asInterface(uuid("a94a5847-348d-4a35-890e-8a1ef3798479"))).get_FailureToastNotification(&_ret));
 		return _ret;
 	}
 	final void FailureToastNotification(Windows.UI.Notifications.ToastNotification value)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2).set_FailureToastNotification(value));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2)this.asInterface(uuid("a94a5847-348d-4a35-890e-8a1ef3798479"))).set_FailureToastNotification(value));
 	}
 	final Windows.UI.Notifications.TileNotification SuccessTileNotification()
 	{
 		Windows.UI.Notifications.TileNotification _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2).get_SuccessTileNotification(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2)this.asInterface(uuid("a94a5847-348d-4a35-890e-8a1ef3798479"))).get_SuccessTileNotification(&_ret));
 		return _ret;
 	}
 	final void SuccessTileNotification(Windows.UI.Notifications.TileNotification value)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2).set_SuccessTileNotification(value));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2)this.asInterface(uuid("a94a5847-348d-4a35-890e-8a1ef3798479"))).set_SuccessTileNotification(value));
 	}
 	final Windows.UI.Notifications.TileNotification FailureTileNotification()
 	{
 		Windows.UI.Notifications.TileNotification _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2).get_FailureTileNotification(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2)this.asInterface(uuid("a94a5847-348d-4a35-890e-8a1ef3798479"))).get_FailureTileNotification(&_ret));
 		return _ret;
 	}
 	final void FailureTileNotification(Windows.UI.Notifications.TileNotification value)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2).set_FailureTileNotification(value));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundDownloader2)this.asInterface(uuid("a94a5847-348d-4a35-890e-8a1ef3798479"))).set_FailureTileNotification(value));
 	}
 	final Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroup CompletionGroup()
 	{
 		Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroup _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloader3).get_CompletionGroup(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundDownloader3)this.asInterface(uuid("d11a8c48-86e8-48e2-b615-6976aabf861d"))).get_CompletionGroup(&_ret));
 		return _ret;
 	}
 
@@ -502,27 +502,27 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.DownloadOperation)) GetCurrentDownloadsAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.DownloadOperation)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloaderStaticMethods).abi_GetCurrentDownloadsAsync(&_ret));
+		Debug.OK(staticInstance.abi_GetCurrentDownloadsAsync(&_ret));
 		return _ret;
 	}
 	deprecated("GetCurrentDownloadsAsync(group) may be altered or unavailable for releases after Windows 8.1. Instead, use GetCurrentDownloadsForTransferGroupAsync.")
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.DownloadOperation)) GetCurrentDownloadsForGroupAsync(HSTRING group)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.DownloadOperation)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloaderStaticMethods).abi_GetCurrentDownloadsForGroupAsync(group, &_ret));
+		Debug.OK(staticInstance.abi_GetCurrentDownloadsForGroupAsync(group, &_ret));
 		return _ret;
 	}
 	static BackgroundDownloader New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(BackgroundDownloader).abi_ActivateInstance(&ret));
-		return ret.as!(BackgroundDownloader);
+		return cast(BackgroundDownloader) ret;
 	}
 	static Windows.Networking.BackgroundTransfer.BackgroundDownloader New(Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroup completionGroup)
 	{
 		auto factory = factory!(Windows.Networking.BackgroundTransfer.IBackgroundDownloaderFactory);
 		Windows.Networking.BackgroundTransfer.BackgroundDownloader _ret;
-		Debug.OK(factory.as!(Windows.Networking.BackgroundTransfer.IBackgroundDownloaderFactory).abi_CreateWithCompletionGroup(completionGroup, &_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundDownloaderFactory)factory.asInterface(uuid("26836c24-d89e-46f4-a29a-4f4d4f144155"))).abi_CreateWithCompletionGroup(completionGroup, &_ret));
 		return _ret;
 	}
 }
@@ -533,24 +533,24 @@ extern(Windows):
 	final Windows.ApplicationModel.Background.IBackgroundTrigger Trigger()
 	{
 		Windows.ApplicationModel.Background.IBackgroundTrigger _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferCompletionGroup).get_Trigger(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferCompletionGroup)this.asInterface(uuid("2d930225-986b-574d-7950-0add47f5d706"))).get_Trigger(&_ret));
 		return _ret;
 	}
 	final bool IsEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferCompletionGroup).get_IsEnabled(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferCompletionGroup)this.asInterface(uuid("2d930225-986b-574d-7950-0add47f5d706"))).get_IsEnabled(&_ret));
 		return _ret;
 	}
 	final void Enable()
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferCompletionGroup).abi_Enable());
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferCompletionGroup)this.asInterface(uuid("2d930225-986b-574d-7950-0add47f5d706"))).abi_Enable());
 	}
 	static BackgroundTransferCompletionGroup New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(BackgroundTransferCompletionGroup).abi_ActivateInstance(&ret));
-		return ret.as!(BackgroundTransferCompletionGroup);
+		return cast(BackgroundTransferCompletionGroup) ret;
 	}
 }
 
@@ -560,13 +560,13 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.DownloadOperation) Downloads()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.DownloadOperation) _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferCompletionGroupTriggerDetails).get_Downloads(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferCompletionGroupTriggerDetails)this.asInterface(uuid("7b6be286-6e47-5136-7fcb-fa4389f46f5b"))).get_Downloads(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.UploadOperation) Uploads()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.UploadOperation) _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferCompletionGroupTriggerDetails).get_Uploads(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferCompletionGroupTriggerDetails)this.asInterface(uuid("7b6be286-6e47-5136-7fcb-fa4389f46f5b"))).get_Uploads(&_ret));
 		return _ret;
 	}
 }
@@ -576,34 +576,34 @@ interface BackgroundTransferContentPart : Windows.Networking.BackgroundTransfer.
 extern(Windows):
 	final void SetHeader(HSTRING headerName, HSTRING headerValue)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferContentPart).abi_SetHeader(headerName, headerValue));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferContentPart)this.asInterface(uuid("e8e15657-d7d1-4ed8-838e-674ac217ace6"))).abi_SetHeader(headerName, headerValue));
 	}
 	final void SetText(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferContentPart).abi_SetText(value));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferContentPart)this.asInterface(uuid("e8e15657-d7d1-4ed8-838e-674ac217ace6"))).abi_SetText(value));
 	}
 	final void SetFile(Windows.Storage.IStorageFile value)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferContentPart).abi_SetFile(value));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferContentPart)this.asInterface(uuid("e8e15657-d7d1-4ed8-838e-674ac217ace6"))).abi_SetFile(value));
 	}
 	static BackgroundTransferContentPart New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(BackgroundTransferContentPart).abi_ActivateInstance(&ret));
-		return ret.as!(BackgroundTransferContentPart);
+		return cast(BackgroundTransferContentPart) ret;
 	}
 	static Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart New(HSTRING name)
 	{
 		auto factory = factory!(Windows.Networking.BackgroundTransfer.IBackgroundTransferContentPartFactory);
 		Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart _ret;
-		Debug.OK(factory.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferContentPartFactory).abi_CreateWithName(name, &_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferContentPartFactory)factory.asInterface(uuid("90ef98a9-7a01-4a0b-9f80-a0b0bb370f8d"))).abi_CreateWithName(name, &_ret));
 		return _ret;
 	}
 	static Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart New(HSTRING name, HSTRING fileName)
 	{
 		auto factory = factory!(Windows.Networking.BackgroundTransfer.IBackgroundTransferContentPartFactory);
 		Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart _ret;
-		Debug.OK(factory.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferContentPartFactory).abi_CreateWithNameAndFileName(name, fileName, &_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferContentPartFactory)factory.asInterface(uuid("90ef98a9-7a01-4a0b-9f80-a0b0bb370f8d"))).abi_CreateWithNameAndFileName(name, fileName, &_ret));
 		return _ret;
 	}
 }
@@ -619,7 +619,7 @@ interface BackgroundTransferError
 	static Windows.Web.WebErrorStatus GetStatus(INT32 hresult)
 	{
 		Windows.Web.WebErrorStatus _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferErrorStaticMethods).abi_GetStatus(hresult, &_ret));
+		Debug.OK(staticInstance.abi_GetStatus(hresult, &_ret));
 		return _ret;
 	}
 }
@@ -630,18 +630,18 @@ extern(Windows):
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferGroup).get_Name(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferGroup)this.asInterface(uuid("d8c3e3e4-6459-4540-85eb-aaa1c8903677"))).get_Name(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.BackgroundTransfer.BackgroundTransferBehavior TransferBehavior()
 	{
 		Windows.Networking.BackgroundTransfer.BackgroundTransferBehavior _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferGroup).get_TransferBehavior(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferGroup)this.asInterface(uuid("d8c3e3e4-6459-4540-85eb-aaa1c8903677"))).get_TransferBehavior(&_ret));
 		return _ret;
 	}
 	final void TransferBehavior(Windows.Networking.BackgroundTransfer.BackgroundTransferBehavior value)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferGroup).set_TransferBehavior(value));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferGroup)this.asInterface(uuid("d8c3e3e4-6459-4540-85eb-aaa1c8903677"))).set_TransferBehavior(value));
 	}
 
 	private static Windows.Networking.BackgroundTransfer.IBackgroundTransferGroupStatics _staticInstance;
@@ -653,7 +653,7 @@ extern(Windows):
 	static Windows.Networking.BackgroundTransfer.BackgroundTransferGroup CreateGroup(HSTRING name)
 	{
 		Windows.Networking.BackgroundTransfer.BackgroundTransferGroup _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferGroupStatics).abi_CreateGroup(name, &_ret));
+		Debug.OK(staticInstance.abi_CreateGroup(name, &_ret));
 		return _ret;
 	}
 }
@@ -664,143 +664,143 @@ extern(Windows):
 	final Windows.Networking.BackgroundTransfer.UploadOperation CreateUpload(Windows.Foundation.Uri uri, Windows.Storage.IStorageFile sourceFile)
 	{
 		Windows.Networking.BackgroundTransfer.UploadOperation _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader).abi_CreateUpload(uri, sourceFile, &_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploader)this.asInterface(uuid("c595c9ae-cead-465b-8801-c55ac90a01ce"))).abi_CreateUpload(uri, sourceFile, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) CreateUploadFromStreamAsync(Windows.Foundation.Uri uri, Windows.Storage.Streams.IInputStream sourceStream)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader).abi_CreateUploadFromStreamAsync(uri, sourceStream, &_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploader)this.asInterface(uuid("c595c9ae-cead-465b-8801-c55ac90a01ce"))).abi_CreateUploadFromStreamAsync(uri, sourceStream, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) CreateUploadWithFormDataAndAutoBoundaryAsync(Windows.Foundation.Uri uri, Windows.Foundation.Collections.IIterable!(Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart) parts)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader).abi_CreateUploadWithFormDataAndAutoBoundaryAsync(uri, parts, &_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploader)this.asInterface(uuid("c595c9ae-cead-465b-8801-c55ac90a01ce"))).abi_CreateUploadWithFormDataAndAutoBoundaryAsync(uri, parts, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) CreateUploadWithSubTypeAsync(Windows.Foundation.Uri uri, Windows.Foundation.Collections.IIterable!(Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart) parts, HSTRING subType)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader).abi_CreateUploadWithSubTypeAsync(uri, parts, subType, &_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploader)this.asInterface(uuid("c595c9ae-cead-465b-8801-c55ac90a01ce"))).abi_CreateUploadWithSubTypeAsync(uri, parts, subType, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) CreateUploadWithSubTypeAndBoundaryAsync(Windows.Foundation.Uri uri, Windows.Foundation.Collections.IIterable!(Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart) parts, HSTRING subType, HSTRING boundary)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader).abi_CreateUploadWithSubTypeAndBoundaryAsync(uri, parts, subType, boundary, &_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploader)this.asInterface(uuid("c595c9ae-cead-465b-8801-c55ac90a01ce"))).abi_CreateUploadWithSubTypeAndBoundaryAsync(uri, parts, subType, boundary, &_ret));
 		return _ret;
 	}
 	final void SetRequestHeader(HSTRING headerName, HSTRING headerValue)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).abi_SetRequestHeader(headerName, headerValue));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase)this.asInterface(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef"))).abi_SetRequestHeader(headerName, headerValue));
 	}
 	final Windows.Security.Credentials.PasswordCredential ServerCredential()
 	{
 		Windows.Security.Credentials.PasswordCredential _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).get_ServerCredential(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase)this.asInterface(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef"))).get_ServerCredential(&_ret));
 		return _ret;
 	}
 	final void ServerCredential(Windows.Security.Credentials.PasswordCredential credential)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).set_ServerCredential(credential));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase)this.asInterface(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef"))).set_ServerCredential(credential));
 	}
 	final Windows.Security.Credentials.PasswordCredential ProxyCredential()
 	{
 		Windows.Security.Credentials.PasswordCredential _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).get_ProxyCredential(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase)this.asInterface(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef"))).get_ProxyCredential(&_ret));
 		return _ret;
 	}
 	final void ProxyCredential(Windows.Security.Credentials.PasswordCredential credential)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).set_ProxyCredential(credential));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase)this.asInterface(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef"))).set_ProxyCredential(credential));
 	}
 	final HSTRING Method()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).get_Method(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase)this.asInterface(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef"))).get_Method(&_ret));
 		return _ret;
 	}
 	final void Method(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).set_Method(value));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase)this.asInterface(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef"))).set_Method(value));
 	}
 	deprecated("Group may be altered or unavailable for releases after Windows 8.1. Instead, use TransferGroup.")
 	final HSTRING Group()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).get_Group(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase)this.asInterface(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef"))).get_Group(&_ret));
 		return _ret;
 	}
 	deprecated("Group may be altered or unavailable for releases after Windows 8.1. Instead, use TransferGroup.")
 	final void Group(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).set_Group(value));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase)this.asInterface(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef"))).set_Group(value));
 	}
 	final Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy CostPolicy()
 	{
 		Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).get_CostPolicy(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase)this.asInterface(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef"))).get_CostPolicy(&_ret));
 		return _ret;
 	}
 	final void CostPolicy(Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy value)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase).set_CostPolicy(value));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferBase)this.asInterface(uuid("2a9da250-c769-458c-afe8-feb8d4d3b2ef"))).set_CostPolicy(value));
 	}
 	final Windows.Networking.BackgroundTransfer.BackgroundTransferGroup TransferGroup()
 	{
 		Windows.Networking.BackgroundTransfer.BackgroundTransferGroup _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader2).get_TransferGroup(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploader2)this.asInterface(uuid("8e0612ce-0c34-4463-807f-198a1b8bd4ad"))).get_TransferGroup(&_ret));
 		return _ret;
 	}
 	final void TransferGroup(Windows.Networking.BackgroundTransfer.BackgroundTransferGroup value)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader2).set_TransferGroup(value));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploader2)this.asInterface(uuid("8e0612ce-0c34-4463-807f-198a1b8bd4ad"))).set_TransferGroup(value));
 	}
 	final Windows.UI.Notifications.ToastNotification SuccessToastNotification()
 	{
 		Windows.UI.Notifications.ToastNotification _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader2).get_SuccessToastNotification(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploader2)this.asInterface(uuid("8e0612ce-0c34-4463-807f-198a1b8bd4ad"))).get_SuccessToastNotification(&_ret));
 		return _ret;
 	}
 	final void SuccessToastNotification(Windows.UI.Notifications.ToastNotification value)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader2).set_SuccessToastNotification(value));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploader2)this.asInterface(uuid("8e0612ce-0c34-4463-807f-198a1b8bd4ad"))).set_SuccessToastNotification(value));
 	}
 	final Windows.UI.Notifications.ToastNotification FailureToastNotification()
 	{
 		Windows.UI.Notifications.ToastNotification _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader2).get_FailureToastNotification(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploader2)this.asInterface(uuid("8e0612ce-0c34-4463-807f-198a1b8bd4ad"))).get_FailureToastNotification(&_ret));
 		return _ret;
 	}
 	final void FailureToastNotification(Windows.UI.Notifications.ToastNotification value)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader2).set_FailureToastNotification(value));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploader2)this.asInterface(uuid("8e0612ce-0c34-4463-807f-198a1b8bd4ad"))).set_FailureToastNotification(value));
 	}
 	final Windows.UI.Notifications.TileNotification SuccessTileNotification()
 	{
 		Windows.UI.Notifications.TileNotification _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader2).get_SuccessTileNotification(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploader2)this.asInterface(uuid("8e0612ce-0c34-4463-807f-198a1b8bd4ad"))).get_SuccessTileNotification(&_ret));
 		return _ret;
 	}
 	final void SuccessTileNotification(Windows.UI.Notifications.TileNotification value)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader2).set_SuccessTileNotification(value));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploader2)this.asInterface(uuid("8e0612ce-0c34-4463-807f-198a1b8bd4ad"))).set_SuccessTileNotification(value));
 	}
 	final Windows.UI.Notifications.TileNotification FailureTileNotification()
 	{
 		Windows.UI.Notifications.TileNotification _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader2).get_FailureTileNotification(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploader2)this.asInterface(uuid("8e0612ce-0c34-4463-807f-198a1b8bd4ad"))).get_FailureTileNotification(&_ret));
 		return _ret;
 	}
 	final void FailureTileNotification(Windows.UI.Notifications.TileNotification value)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader2).set_FailureTileNotification(value));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploader2)this.asInterface(uuid("8e0612ce-0c34-4463-807f-198a1b8bd4ad"))).set_FailureTileNotification(value));
 	}
 	final Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroup CompletionGroup()
 	{
 		Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroup _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploader3).get_CompletionGroup(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploader3)this.asInterface(uuid("b95e9439-5bf0-4b3a-8c47-2c6199a854b9"))).get_CompletionGroup(&_ret));
 		return _ret;
 	}
 
@@ -813,27 +813,27 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.UploadOperation)) GetCurrentUploadsAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.UploadOperation)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploaderStaticMethods).abi_GetCurrentUploadsAsync(&_ret));
+		Debug.OK(staticInstance.abi_GetCurrentUploadsAsync(&_ret));
 		return _ret;
 	}
 	deprecated("GetCurrentUploadsAsync(group) may be altered or unavailable for releases after Windows 8.1. Instead, use GetCurrentUploadsForTransferGroupAsync.")
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.UploadOperation)) GetCurrentUploadsForGroupAsync(HSTRING group)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.UploadOperation)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploaderStaticMethods).abi_GetCurrentUploadsForGroupAsync(group, &_ret));
+		Debug.OK(staticInstance.abi_GetCurrentUploadsForGroupAsync(group, &_ret));
 		return _ret;
 	}
 	static BackgroundUploader New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(BackgroundUploader).abi_ActivateInstance(&ret));
-		return ret.as!(BackgroundUploader);
+		return cast(BackgroundUploader) ret;
 	}
 	static Windows.Networking.BackgroundTransfer.BackgroundUploader New(Windows.Networking.BackgroundTransfer.BackgroundTransferCompletionGroup completionGroup)
 	{
 		auto factory = factory!(Windows.Networking.BackgroundTransfer.IBackgroundUploaderFactory);
 		Windows.Networking.BackgroundTransfer.BackgroundUploader _ret;
-		Debug.OK(factory.as!(Windows.Networking.BackgroundTransfer.IBackgroundUploaderFactory).abi_CreateWithCompletionGroup(completionGroup, &_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploaderFactory)factory.asInterface(uuid("736203c7-10e7-48a0-ac3c-1ac71095ec57"))).abi_CreateWithCompletionGroup(completionGroup, &_ret));
 		return _ret;
 	}
 }
@@ -849,17 +849,17 @@ interface ContentPrefetcher
 	static Windows.Foundation.Collections.IVector!(Windows.Foundation.Uri) ContentUris()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Foundation.Uri) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.BackgroundTransfer.IContentPrefetcher).get_ContentUris(&_ret));
+		Debug.OK(staticInstance.get_ContentUris(&_ret));
 		return _ret;
 	}
 	static void IndirectContentUri(Windows.Foundation.Uri value)
 	{
-		Debug.OK(staticInstance.as!(Windows.Networking.BackgroundTransfer.IContentPrefetcher).set_IndirectContentUri(value));
+		Debug.OK(staticInstance.set_IndirectContentUri(value));
 	}
 	static Windows.Foundation.Uri IndirectContentUri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.BackgroundTransfer.IContentPrefetcher).get_IndirectContentUri(&_ret));
+		Debug.OK(staticInstance.get_IndirectContentUri(&_ret));
 		return _ret;
 	}
 }
@@ -870,96 +870,96 @@ extern(Windows):
 	final Windows.Storage.IStorageFile ResultFile()
 	{
 		Windows.Storage.IStorageFile _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IDownloadOperation).get_ResultFile(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IDownloadOperation)this.asInterface(uuid("bd87ebb0-5714-4e09-ba68-bef73903b0d7"))).get_ResultFile(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.BackgroundTransfer.BackgroundDownloadProgress Progress()
 	{
 		Windows.Networking.BackgroundTransfer.BackgroundDownloadProgress _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IDownloadOperation).get_Progress(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IDownloadOperation)this.asInterface(uuid("bd87ebb0-5714-4e09-ba68-bef73903b0d7"))).get_Progress(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.DownloadOperation, Windows.Networking.BackgroundTransfer.DownloadOperation) StartAsync()
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.DownloadOperation, Windows.Networking.BackgroundTransfer.DownloadOperation) _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IDownloadOperation).abi_StartAsync(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IDownloadOperation)this.asInterface(uuid("bd87ebb0-5714-4e09-ba68-bef73903b0d7"))).abi_StartAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.DownloadOperation, Windows.Networking.BackgroundTransfer.DownloadOperation) AttachAsync()
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.DownloadOperation, Windows.Networking.BackgroundTransfer.DownloadOperation) _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IDownloadOperation).abi_AttachAsync(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IDownloadOperation)this.asInterface(uuid("bd87ebb0-5714-4e09-ba68-bef73903b0d7"))).abi_AttachAsync(&_ret));
 		return _ret;
 	}
 	final void Pause()
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IDownloadOperation).abi_Pause());
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IDownloadOperation)this.asInterface(uuid("bd87ebb0-5714-4e09-ba68-bef73903b0d7"))).abi_Pause());
 	}
 	final void Resume()
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IDownloadOperation).abi_Resume());
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IDownloadOperation)this.asInterface(uuid("bd87ebb0-5714-4e09-ba68-bef73903b0d7"))).abi_Resume());
 	}
 	final GUID Guid()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).get_Guid(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation)this.asInterface(uuid("ded06846-90ca-44fb-8fb1-124154c0d539"))).get_Guid(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Uri RequestedUri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).get_RequestedUri(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation)this.asInterface(uuid("ded06846-90ca-44fb-8fb1-124154c0d539"))).get_RequestedUri(&_ret));
 		return _ret;
 	}
 	final HSTRING Method()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).get_Method(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation)this.asInterface(uuid("ded06846-90ca-44fb-8fb1-124154c0d539"))).get_Method(&_ret));
 		return _ret;
 	}
 	deprecated("Group may be altered or unavailable for releases after Windows 8.1. Instead, use TransferGroup.")
 	final HSTRING Group()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).get_Group(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation)this.asInterface(uuid("ded06846-90ca-44fb-8fb1-124154c0d539"))).get_Group(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy CostPolicy()
 	{
 		Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).get_CostPolicy(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation)this.asInterface(uuid("ded06846-90ca-44fb-8fb1-124154c0d539"))).get_CostPolicy(&_ret));
 		return _ret;
 	}
 	final void CostPolicy(Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy value)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).set_CostPolicy(value));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation)this.asInterface(uuid("ded06846-90ca-44fb-8fb1-124154c0d539"))).set_CostPolicy(value));
 	}
 	final Windows.Storage.Streams.IInputStream GetResultStreamAt(ulong position)
 	{
 		Windows.Storage.Streams.IInputStream _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).abi_GetResultStreamAt(position, &_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation)this.asInterface(uuid("ded06846-90ca-44fb-8fb1-124154c0d539"))).abi_GetResultStreamAt(position, &_ret));
 		return _ret;
 	}
 	final Windows.Networking.BackgroundTransfer.ResponseInformation GetResponseInformation()
 	{
 		Windows.Networking.BackgroundTransfer.ResponseInformation _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).abi_GetResponseInformation(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation)this.asInterface(uuid("ded06846-90ca-44fb-8fb1-124154c0d539"))).abi_GetResponseInformation(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.BackgroundTransfer.BackgroundTransferPriority Priority()
 	{
 		Windows.Networking.BackgroundTransfer.BackgroundTransferPriority _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperationPriority).get_Priority(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperationPriority)this.asInterface(uuid("04854327-5254-4b3a-915e-0aa49275c0f9"))).get_Priority(&_ret));
 		return _ret;
 	}
 	final void Priority(Windows.Networking.BackgroundTransfer.BackgroundTransferPriority value)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperationPriority).set_Priority(value));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperationPriority)this.asInterface(uuid("04854327-5254-4b3a-915e-0aa49275c0f9"))).set_Priority(value));
 	}
 	final Windows.Networking.BackgroundTransfer.BackgroundTransferGroup TransferGroup()
 	{
 		Windows.Networking.BackgroundTransfer.BackgroundTransferGroup _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IDownloadOperation2).get_TransferGroup(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IDownloadOperation2)this.asInterface(uuid("a3cced40-8f9c-4353-9cd4-290dee387c38"))).get_TransferGroup(&_ret));
 		return _ret;
 	}
 }
@@ -970,25 +970,25 @@ extern(Windows):
 	final bool IsResumable()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IResponseInformation).get_IsResumable(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IResponseInformation)this.asInterface(uuid("f8bb9a12-f713-4792-8b68-d9d297f91d2e"))).get_IsResumable(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Uri ActualUri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IResponseInformation).get_ActualUri(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IResponseInformation)this.asInterface(uuid("f8bb9a12-f713-4792-8b68-d9d297f91d2e"))).get_ActualUri(&_ret));
 		return _ret;
 	}
 	final UINT32 StatusCode()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IResponseInformation).get_StatusCode(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IResponseInformation)this.asInterface(uuid("f8bb9a12-f713-4792-8b68-d9d297f91d2e"))).get_StatusCode(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) Headers()
 	{
 		Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IResponseInformation).get_Headers(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IResponseInformation)this.asInterface(uuid("f8bb9a12-f713-4792-8b68-d9d297f91d2e"))).get_Headers(&_ret));
 		return _ret;
 	}
 }
@@ -1000,7 +1000,7 @@ extern(Windows):
 	final bool IsUnconstrained()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IUnconstrainedTransferRequestResult).get_IsUnconstrained(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IUnconstrainedTransferRequestResult)this.asInterface(uuid("4c24b81f-d944-4112-a98e-6a69522b7ebb"))).get_IsUnconstrained(&_ret));
 		return _ret;
 	}
 }
@@ -1011,88 +1011,88 @@ extern(Windows):
 	final Windows.Storage.IStorageFile SourceFile()
 	{
 		Windows.Storage.IStorageFile _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IUploadOperation).get_SourceFile(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IUploadOperation)this.asInterface(uuid("3e5624e0-7389-434c-8b35-427fd36bbdae"))).get_SourceFile(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.BackgroundTransfer.BackgroundUploadProgress Progress()
 	{
 		Windows.Networking.BackgroundTransfer.BackgroundUploadProgress _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IUploadOperation).get_Progress(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IUploadOperation)this.asInterface(uuid("3e5624e0-7389-434c-8b35-427fd36bbdae"))).get_Progress(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.UploadOperation, Windows.Networking.BackgroundTransfer.UploadOperation) StartAsync()
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.UploadOperation, Windows.Networking.BackgroundTransfer.UploadOperation) _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IUploadOperation).abi_StartAsync(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IUploadOperation)this.asInterface(uuid("3e5624e0-7389-434c-8b35-427fd36bbdae"))).abi_StartAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.UploadOperation, Windows.Networking.BackgroundTransfer.UploadOperation) AttachAsync()
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Networking.BackgroundTransfer.UploadOperation, Windows.Networking.BackgroundTransfer.UploadOperation) _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IUploadOperation).abi_AttachAsync(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IUploadOperation)this.asInterface(uuid("3e5624e0-7389-434c-8b35-427fd36bbdae"))).abi_AttachAsync(&_ret));
 		return _ret;
 	}
 	final GUID Guid()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).get_Guid(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation)this.asInterface(uuid("ded06846-90ca-44fb-8fb1-124154c0d539"))).get_Guid(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Uri RequestedUri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).get_RequestedUri(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation)this.asInterface(uuid("ded06846-90ca-44fb-8fb1-124154c0d539"))).get_RequestedUri(&_ret));
 		return _ret;
 	}
 	final HSTRING Method()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).get_Method(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation)this.asInterface(uuid("ded06846-90ca-44fb-8fb1-124154c0d539"))).get_Method(&_ret));
 		return _ret;
 	}
 	deprecated("Group may be altered or unavailable for releases after Windows 8.1. Instead, use TransferGroup.")
 	final HSTRING Group()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).get_Group(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation)this.asInterface(uuid("ded06846-90ca-44fb-8fb1-124154c0d539"))).get_Group(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy CostPolicy()
 	{
 		Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).get_CostPolicy(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation)this.asInterface(uuid("ded06846-90ca-44fb-8fb1-124154c0d539"))).get_CostPolicy(&_ret));
 		return _ret;
 	}
 	final void CostPolicy(Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy value)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).set_CostPolicy(value));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation)this.asInterface(uuid("ded06846-90ca-44fb-8fb1-124154c0d539"))).set_CostPolicy(value));
 	}
 	final Windows.Storage.Streams.IInputStream GetResultStreamAt(ulong position)
 	{
 		Windows.Storage.Streams.IInputStream _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).abi_GetResultStreamAt(position, &_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation)this.asInterface(uuid("ded06846-90ca-44fb-8fb1-124154c0d539"))).abi_GetResultStreamAt(position, &_ret));
 		return _ret;
 	}
 	final Windows.Networking.BackgroundTransfer.ResponseInformation GetResponseInformation()
 	{
 		Windows.Networking.BackgroundTransfer.ResponseInformation _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation).abi_GetResponseInformation(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperation)this.asInterface(uuid("ded06846-90ca-44fb-8fb1-124154c0d539"))).abi_GetResponseInformation(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.BackgroundTransfer.BackgroundTransferPriority Priority()
 	{
 		Windows.Networking.BackgroundTransfer.BackgroundTransferPriority _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperationPriority).get_Priority(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperationPriority)this.asInterface(uuid("04854327-5254-4b3a-915e-0aa49275c0f9"))).get_Priority(&_ret));
 		return _ret;
 	}
 	final void Priority(Windows.Networking.BackgroundTransfer.BackgroundTransferPriority value)
 	{
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperationPriority).set_Priority(value));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundTransferOperationPriority)this.asInterface(uuid("04854327-5254-4b3a-915e-0aa49275c0f9"))).set_Priority(value));
 	}
 	final Windows.Networking.BackgroundTransfer.BackgroundTransferGroup TransferGroup()
 	{
 		Windows.Networking.BackgroundTransfer.BackgroundTransferGroup _ret;
-		Debug.OK(this.as!(Windows.Networking.BackgroundTransfer.IUploadOperation2).get_TransferGroup(&_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IUploadOperation2)this.asInterface(uuid("556189f2-2774-4df6-9fa5-209f2bfb12f7"))).get_TransferGroup(&_ret));
 		return _ret;
 	}
 }

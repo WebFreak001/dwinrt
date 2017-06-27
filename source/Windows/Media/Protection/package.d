@@ -152,13 +152,13 @@ extern(Windows):
 	final Windows.Media.Protection.RevocationAndRenewalInformation Information()
 	{
 		Windows.Media.Protection.RevocationAndRenewalInformation _ret;
-		Debug.OK(this.as!(Windows.Media.Protection.IComponentLoadFailedEventArgs).get_Information(&_ret));
+		Debug.OK((cast(Windows.Media.Protection.IComponentLoadFailedEventArgs)this.asInterface(uuid("95972e93-7746-417e-8495-f031bbc5862c"))).get_Information(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Protection.MediaProtectionServiceCompletion Completion()
 	{
 		Windows.Media.Protection.MediaProtectionServiceCompletion _ret;
-		Debug.OK(this.as!(Windows.Media.Protection.IComponentLoadFailedEventArgs).get_Completion(&_ret));
+		Debug.OK((cast(Windows.Media.Protection.IComponentLoadFailedEventArgs)this.asInterface(uuid("95972e93-7746-417e-8495-f031bbc5862c"))).get_Completion(&_ret));
 		return _ret;
 	}
 }
@@ -174,7 +174,7 @@ interface ComponentRenewal
 	static Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Protection.RenewalStatus, UINT32) RenewSystemComponentsAsync(Windows.Media.Protection.RevocationAndRenewalInformation information)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Protection.RenewalStatus, UINT32) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Protection.IComponentRenewalStatics).abi_RenewSystemComponentsAsync(information, &_ret));
+		Debug.OK(staticInstance.abi_RenewSystemComponentsAsync(information, &_ret));
 		return _ret;
 	}
 }
@@ -185,40 +185,40 @@ extern(Windows):
 	final bool IsEffectiveProtectionAtLeast(Windows.Media.Protection.HdcpProtection protection)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Protection.IHdcpSession).abi_IsEffectiveProtectionAtLeast(protection, &_ret));
+		Debug.OK((cast(Windows.Media.Protection.IHdcpSession)this.asInterface(uuid("718845e9-64d7-426d-809b-1be461941a2a"))).abi_IsEffectiveProtectionAtLeast(protection, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Media.Protection.HdcpProtection) GetEffectiveProtection()
 	{
 		Windows.Foundation.IReference!(Windows.Media.Protection.HdcpProtection) _ret;
-		Debug.OK(this.as!(Windows.Media.Protection.IHdcpSession).abi_GetEffectiveProtection(&_ret));
+		Debug.OK((cast(Windows.Media.Protection.IHdcpSession)this.asInterface(uuid("718845e9-64d7-426d-809b-1be461941a2a"))).abi_GetEffectiveProtection(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.HdcpSetProtectionResult) SetDesiredMinProtectionAsync(Windows.Media.Protection.HdcpProtection protection)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Protection.HdcpSetProtectionResult) _ret;
-		Debug.OK(this.as!(Windows.Media.Protection.IHdcpSession).abi_SetDesiredMinProtectionAsync(protection, &_ret));
+		Debug.OK((cast(Windows.Media.Protection.IHdcpSession)this.asInterface(uuid("718845e9-64d7-426d-809b-1be461941a2a"))).abi_SetDesiredMinProtectionAsync(protection, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnProtectionChanged(void delegate(Windows.Media.Protection.HdcpSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Protection.IHdcpSession).add_ProtectionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.HdcpSession, IInspectable), Windows.Media.Protection.HdcpSession, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Protection.IHdcpSession)this.asInterface(uuid("718845e9-64d7-426d-809b-1be461941a2a"))).add_ProtectionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Protection.HdcpSession, IInspectable), Windows.Media.Protection.HdcpSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeProtectionChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Protection.IHdcpSession).remove_ProtectionChanged(token));
+		Debug.OK((cast(Windows.Media.Protection.IHdcpSession)this.asInterface(uuid("718845e9-64d7-426d-809b-1be461941a2a"))).remove_ProtectionChanged(token));
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	static HdcpSession New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(HdcpSession).abi_ActivateInstance(&ret));
-		return ret.as!(HdcpSession);
+		return cast(HdcpSession) ret;
 	}
 }
 
@@ -228,44 +228,44 @@ extern(Windows):
 	final EventRegistrationToken OnServiceRequested(void delegate(Windows.Media.Protection.MediaProtectionManager, Windows.Media.Protection.ServiceRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionManager).add_ServiceRequested(event!(Windows.Media.Protection.ServiceRequestedEventHandler, Windows.Media.Protection.MediaProtectionManager, Windows.Media.Protection.ServiceRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Protection.IMediaProtectionManager)this.asInterface(uuid("45694947-c741-434b-a79e-474c12d93d2f"))).add_ServiceRequested(event!(Windows.Media.Protection.ServiceRequestedEventHandler, Windows.Media.Protection.MediaProtectionManager, Windows.Media.Protection.ServiceRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeServiceRequested(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionManager).remove_ServiceRequested(cookie));
+		Debug.OK((cast(Windows.Media.Protection.IMediaProtectionManager)this.asInterface(uuid("45694947-c741-434b-a79e-474c12d93d2f"))).remove_ServiceRequested(cookie));
 	}
 	final EventRegistrationToken OnRebootNeeded(void delegate(Windows.Media.Protection.MediaProtectionManager) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionManager).add_RebootNeeded(event!(Windows.Media.Protection.RebootNeededEventHandler, Windows.Media.Protection.MediaProtectionManager)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Protection.IMediaProtectionManager)this.asInterface(uuid("45694947-c741-434b-a79e-474c12d93d2f"))).add_RebootNeeded(event!(Windows.Media.Protection.RebootNeededEventHandler, Windows.Media.Protection.MediaProtectionManager)(fn), &tok));
 		return tok;
 	}
 	final void removeRebootNeeded(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionManager).remove_RebootNeeded(cookie));
+		Debug.OK((cast(Windows.Media.Protection.IMediaProtectionManager)this.asInterface(uuid("45694947-c741-434b-a79e-474c12d93d2f"))).remove_RebootNeeded(cookie));
 	}
 	final EventRegistrationToken OnComponentLoadFailed(void delegate(Windows.Media.Protection.MediaProtectionManager, Windows.Media.Protection.ComponentLoadFailedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionManager).add_ComponentLoadFailed(event!(Windows.Media.Protection.ComponentLoadFailedEventHandler, Windows.Media.Protection.MediaProtectionManager, Windows.Media.Protection.ComponentLoadFailedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Protection.IMediaProtectionManager)this.asInterface(uuid("45694947-c741-434b-a79e-474c12d93d2f"))).add_ComponentLoadFailed(event!(Windows.Media.Protection.ComponentLoadFailedEventHandler, Windows.Media.Protection.MediaProtectionManager, Windows.Media.Protection.ComponentLoadFailedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeComponentLoadFailed(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionManager).remove_ComponentLoadFailed(cookie));
+		Debug.OK((cast(Windows.Media.Protection.IMediaProtectionManager)this.asInterface(uuid("45694947-c741-434b-a79e-474c12d93d2f"))).remove_ComponentLoadFailed(cookie));
 	}
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{
 		Windows.Foundation.Collections.IPropertySet _ret;
-		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionManager).get_Properties(&_ret));
+		Debug.OK((cast(Windows.Media.Protection.IMediaProtectionManager)this.asInterface(uuid("45694947-c741-434b-a79e-474c12d93d2f"))).get_Properties(&_ret));
 		return _ret;
 	}
 	static MediaProtectionManager New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MediaProtectionManager).abi_ActivateInstance(&ret));
-		return ret.as!(MediaProtectionManager);
+		return cast(MediaProtectionManager) ret;
 	}
 }
 
@@ -275,14 +275,14 @@ extern(Windows):
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{
 		Windows.Foundation.Collections.IPropertySet _ret;
-		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionPMPServer).get_Properties(&_ret));
+		Debug.OK((cast(Windows.Media.Protection.IMediaProtectionPMPServer)this.asInterface(uuid("0c111226-7b26-4d31-95bb-9c1b08ef7fc0"))).get_Properties(&_ret));
 		return _ret;
 	}
 	static Windows.Media.Protection.MediaProtectionPMPServer New(Windows.Foundation.Collections.IPropertySet pProperties)
 	{
 		auto factory = factory!(Windows.Media.Protection.IMediaProtectionPMPServerFactory);
 		Windows.Media.Protection.MediaProtectionPMPServer _ret;
-		Debug.OK(factory.as!(Windows.Media.Protection.IMediaProtectionPMPServerFactory).abi_CreatePMPServer(pProperties, &_ret));
+		Debug.OK((cast(Windows.Media.Protection.IMediaProtectionPMPServerFactory)factory.asInterface(uuid("602c8e5e-f7d2-487e-af91-dbc4252b2182"))).abi_CreatePMPServer(pProperties, &_ret));
 		return _ret;
 	}
 }
@@ -292,7 +292,7 @@ interface MediaProtectionServiceCompletion : Windows.Media.Protection.IMediaProt
 extern(Windows):
 	final void Complete(bool success)
 	{
-		Debug.OK(this.as!(Windows.Media.Protection.IMediaProtectionServiceCompletion).abi_Complete(success));
+		Debug.OK((cast(Windows.Media.Protection.IMediaProtectionServiceCompletion)this.asInterface(uuid("8b5cca18-cfd5-44ee-a2ed-df76010c14b5"))).abi_Complete(success));
 	}
 }
 
@@ -302,14 +302,14 @@ extern(Windows):
 	final Windows.Media.Protection.ProtectionCapabilityResult IsTypeSupported(HSTRING type, HSTRING keySystem)
 	{
 		Windows.Media.Protection.ProtectionCapabilityResult _ret;
-		Debug.OK(this.as!(Windows.Media.Protection.IProtectionCapabilities).abi_IsTypeSupported(type, keySystem, &_ret));
+		Debug.OK((cast(Windows.Media.Protection.IProtectionCapabilities)this.asInterface(uuid("c7ac5d7e-7480-4d29-a464-7bcd913dd8e4"))).abi_IsTypeSupported(type, keySystem, &_ret));
 		return _ret;
 	}
 	static ProtectionCapabilities New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ProtectionCapabilities).abi_ActivateInstance(&ret));
-		return ret.as!(ProtectionCapabilities);
+		return cast(ProtectionCapabilities) ret;
 	}
 }
 
@@ -319,7 +319,7 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVector!(Windows.Media.Protection.RevocationAndRenewalItem) Items()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Media.Protection.RevocationAndRenewalItem) _ret;
-		Debug.OK(this.as!(Windows.Media.Protection.IRevocationAndRenewalInformation).get_Items(&_ret));
+		Debug.OK((cast(Windows.Media.Protection.IRevocationAndRenewalInformation)this.asInterface(uuid("f3a1937b-2501-439e-a6e7-6fc95e175fcf"))).get_Items(&_ret));
 		return _ret;
 	}
 }
@@ -330,31 +330,31 @@ extern(Windows):
 	final Windows.Media.Protection.RevocationAndRenewalReasons Reasons()
 	{
 		Windows.Media.Protection.RevocationAndRenewalReasons _ret;
-		Debug.OK(this.as!(Windows.Media.Protection.IRevocationAndRenewalItem).get_Reasons(&_ret));
+		Debug.OK((cast(Windows.Media.Protection.IRevocationAndRenewalItem)this.asInterface(uuid("3099c20c-3cf0-49ea-902d-caf32d2dde2c"))).get_Reasons(&_ret));
 		return _ret;
 	}
 	final HSTRING HeaderHash()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Protection.IRevocationAndRenewalItem).get_HeaderHash(&_ret));
+		Debug.OK((cast(Windows.Media.Protection.IRevocationAndRenewalItem)this.asInterface(uuid("3099c20c-3cf0-49ea-902d-caf32d2dde2c"))).get_HeaderHash(&_ret));
 		return _ret;
 	}
 	final HSTRING PublicKeyHash()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Protection.IRevocationAndRenewalItem).get_PublicKeyHash(&_ret));
+		Debug.OK((cast(Windows.Media.Protection.IRevocationAndRenewalItem)this.asInterface(uuid("3099c20c-3cf0-49ea-902d-caf32d2dde2c"))).get_PublicKeyHash(&_ret));
 		return _ret;
 	}
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Protection.IRevocationAndRenewalItem).get_Name(&_ret));
+		Debug.OK((cast(Windows.Media.Protection.IRevocationAndRenewalItem)this.asInterface(uuid("3099c20c-3cf0-49ea-902d-caf32d2dde2c"))).get_Name(&_ret));
 		return _ret;
 	}
 	final HSTRING RenewalId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Protection.IRevocationAndRenewalItem).get_RenewalId(&_ret));
+		Debug.OK((cast(Windows.Media.Protection.IRevocationAndRenewalItem)this.asInterface(uuid("3099c20c-3cf0-49ea-902d-caf32d2dde2c"))).get_RenewalId(&_ret));
 		return _ret;
 	}
 }
@@ -365,19 +365,19 @@ extern(Windows):
 	final Windows.Media.Protection.IMediaProtectionServiceRequest Request()
 	{
 		Windows.Media.Protection.IMediaProtectionServiceRequest _ret;
-		Debug.OK(this.as!(Windows.Media.Protection.IServiceRequestedEventArgs).get_Request(&_ret));
+		Debug.OK((cast(Windows.Media.Protection.IServiceRequestedEventArgs)this.asInterface(uuid("34283baf-abb4-4fc1-bd89-93f106573a49"))).get_Request(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Protection.MediaProtectionServiceCompletion Completion()
 	{
 		Windows.Media.Protection.MediaProtectionServiceCompletion _ret;
-		Debug.OK(this.as!(Windows.Media.Protection.IServiceRequestedEventArgs).get_Completion(&_ret));
+		Debug.OK((cast(Windows.Media.Protection.IServiceRequestedEventArgs)this.asInterface(uuid("34283baf-abb4-4fc1-bd89-93f106573a49"))).get_Completion(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlaybackItem MediaPlaybackItem()
 	{
 		Windows.Media.Playback.MediaPlaybackItem _ret;
-		Debug.OK(this.as!(Windows.Media.Protection.IServiceRequestedEventArgs2).get_MediaPlaybackItem(&_ret));
+		Debug.OK((cast(Windows.Media.Protection.IServiceRequestedEventArgs2)this.asInterface(uuid("553c69d6-fafe-4128-8dfa-130e398a13a7"))).get_MediaPlaybackItem(&_ret));
 		return _ret;
 	}
 }

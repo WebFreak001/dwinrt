@@ -79,38 +79,38 @@ extern(Windows):
 	final INT32 SlaveAddress()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.I2c.II2cConnectionSettings).get_SlaveAddress(&_ret));
+		Debug.OK((cast(Windows.Devices.I2c.II2cConnectionSettings)this.asInterface(uuid("f2db1307-ab6f-4639-a767-54536dc3460f"))).get_SlaveAddress(&_ret));
 		return _ret;
 	}
 	final void SlaveAddress(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Devices.I2c.II2cConnectionSettings).set_SlaveAddress(value));
+		Debug.OK((cast(Windows.Devices.I2c.II2cConnectionSettings)this.asInterface(uuid("f2db1307-ab6f-4639-a767-54536dc3460f"))).set_SlaveAddress(value));
 	}
 	final Windows.Devices.I2c.I2cBusSpeed BusSpeed()
 	{
 		Windows.Devices.I2c.I2cBusSpeed _ret;
-		Debug.OK(this.as!(Windows.Devices.I2c.II2cConnectionSettings).get_BusSpeed(&_ret));
+		Debug.OK((cast(Windows.Devices.I2c.II2cConnectionSettings)this.asInterface(uuid("f2db1307-ab6f-4639-a767-54536dc3460f"))).get_BusSpeed(&_ret));
 		return _ret;
 	}
 	final void BusSpeed(Windows.Devices.I2c.I2cBusSpeed value)
 	{
-		Debug.OK(this.as!(Windows.Devices.I2c.II2cConnectionSettings).set_BusSpeed(value));
+		Debug.OK((cast(Windows.Devices.I2c.II2cConnectionSettings)this.asInterface(uuid("f2db1307-ab6f-4639-a767-54536dc3460f"))).set_BusSpeed(value));
 	}
 	final Windows.Devices.I2c.I2cSharingMode SharingMode()
 	{
 		Windows.Devices.I2c.I2cSharingMode _ret;
-		Debug.OK(this.as!(Windows.Devices.I2c.II2cConnectionSettings).get_SharingMode(&_ret));
+		Debug.OK((cast(Windows.Devices.I2c.II2cConnectionSettings)this.asInterface(uuid("f2db1307-ab6f-4639-a767-54536dc3460f"))).get_SharingMode(&_ret));
 		return _ret;
 	}
 	final void SharingMode(Windows.Devices.I2c.I2cSharingMode value)
 	{
-		Debug.OK(this.as!(Windows.Devices.I2c.II2cConnectionSettings).set_SharingMode(value));
+		Debug.OK((cast(Windows.Devices.I2c.II2cConnectionSettings)this.asInterface(uuid("f2db1307-ab6f-4639-a767-54536dc3460f"))).set_SharingMode(value));
 	}
 	static Windows.Devices.I2c.I2cConnectionSettings New(INT32 slaveAddress)
 	{
 		auto factory = factory!(Windows.Devices.I2c.II2cConnectionSettingsFactory);
 		Windows.Devices.I2c.I2cConnectionSettings _ret;
-		Debug.OK(factory.as!(Windows.Devices.I2c.II2cConnectionSettingsFactory).abi_Create(slaveAddress, &_ret));
+		Debug.OK((cast(Windows.Devices.I2c.II2cConnectionSettingsFactory)factory.asInterface(uuid("81b586b3-9693-41b1-a243-ded4f6e66926"))).abi_Create(slaveAddress, &_ret));
 		return _ret;
 	}
 }
@@ -121,7 +121,7 @@ extern(Windows):
 	final Windows.Devices.I2c.I2cDevice GetDevice(Windows.Devices.I2c.I2cConnectionSettings settings)
 	{
 		Windows.Devices.I2c.I2cDevice _ret;
-		Debug.OK(this.as!(Windows.Devices.I2c.II2cController).abi_GetDevice(settings, &_ret));
+		Debug.OK((cast(Windows.Devices.I2c.II2cController)this.asInterface(uuid("c48ab1b2-87a0-4166-8e3e-b4b8f97cd729"))).abi_GetDevice(settings, &_ret));
 		return _ret;
 	}
 
@@ -134,13 +134,13 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.I2c.I2cController)) GetControllersAsync(Windows.Devices.I2c.Provider.II2cProvider provider)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.I2c.I2cController)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.I2c.II2cControllerStatics).abi_GetControllersAsync(provider, &_ret));
+		Debug.OK(staticInstance.abi_GetControllersAsync(provider, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.I2c.I2cController) GetDefaultAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.I2c.I2cController) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.I2c.II2cControllerStatics).abi_GetDefaultAsync(&_ret));
+		Debug.OK(staticInstance.abi_GetDefaultAsync(&_ret));
 		return _ret;
 	}
 }
@@ -151,48 +151,48 @@ extern(Windows):
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.I2c.II2cDevice).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.I2c.II2cDevice)this.asInterface(uuid("8636c136-b9c5-4f70-9449-cc46dc6f57eb"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.I2c.I2cConnectionSettings ConnectionSettings()
 	{
 		Windows.Devices.I2c.I2cConnectionSettings _ret;
-		Debug.OK(this.as!(Windows.Devices.I2c.II2cDevice).get_ConnectionSettings(&_ret));
+		Debug.OK((cast(Windows.Devices.I2c.II2cDevice)this.asInterface(uuid("8636c136-b9c5-4f70-9449-cc46dc6f57eb"))).get_ConnectionSettings(&_ret));
 		return _ret;
 	}
 	final void Write(UINT32 __bufferSize, ubyte* buffer)
 	{
-		Debug.OK(this.as!(Windows.Devices.I2c.II2cDevice).abi_Write(__bufferSize, buffer));
+		Debug.OK((cast(Windows.Devices.I2c.II2cDevice)this.asInterface(uuid("8636c136-b9c5-4f70-9449-cc46dc6f57eb"))).abi_Write(__bufferSize, buffer));
 	}
 	final Windows.Devices.I2c.I2cTransferResult WritePartial(UINT32 __bufferSize, ubyte* buffer)
 	{
 		Windows.Devices.I2c.I2cTransferResult _ret;
-		Debug.OK(this.as!(Windows.Devices.I2c.II2cDevice).abi_WritePartial(__bufferSize, buffer, &_ret));
+		Debug.OK((cast(Windows.Devices.I2c.II2cDevice)this.asInterface(uuid("8636c136-b9c5-4f70-9449-cc46dc6f57eb"))).abi_WritePartial(__bufferSize, buffer, &_ret));
 		return _ret;
 	}
 	final void Read(UINT32 __bufferSize, ubyte* out_buffer)
 	{
-		Debug.OK(this.as!(Windows.Devices.I2c.II2cDevice).abi_Read(__bufferSize, out_buffer));
+		Debug.OK((cast(Windows.Devices.I2c.II2cDevice)this.asInterface(uuid("8636c136-b9c5-4f70-9449-cc46dc6f57eb"))).abi_Read(__bufferSize, out_buffer));
 	}
 	final Windows.Devices.I2c.I2cTransferResult ReadPartial(UINT32 __bufferSize, ubyte* out_buffer)
 	{
 		Windows.Devices.I2c.I2cTransferResult _ret;
-		Debug.OK(this.as!(Windows.Devices.I2c.II2cDevice).abi_ReadPartial(__bufferSize, out_buffer, &_ret));
+		Debug.OK((cast(Windows.Devices.I2c.II2cDevice)this.asInterface(uuid("8636c136-b9c5-4f70-9449-cc46dc6f57eb"))).abi_ReadPartial(__bufferSize, out_buffer, &_ret));
 		return _ret;
 	}
 	final void WriteRead(UINT32 __writeBufferSize, ubyte* writeBuffer, UINT32 __readBufferSize, ubyte* out_readBuffer)
 	{
-		Debug.OK(this.as!(Windows.Devices.I2c.II2cDevice).abi_WriteRead(__writeBufferSize, writeBuffer, __readBufferSize, out_readBuffer));
+		Debug.OK((cast(Windows.Devices.I2c.II2cDevice)this.asInterface(uuid("8636c136-b9c5-4f70-9449-cc46dc6f57eb"))).abi_WriteRead(__writeBufferSize, writeBuffer, __readBufferSize, out_readBuffer));
 	}
 	final Windows.Devices.I2c.I2cTransferResult WriteReadPartial(UINT32 __writeBufferSize, ubyte* writeBuffer, UINT32 __readBufferSize, ubyte* out_readBuffer)
 	{
 		Windows.Devices.I2c.I2cTransferResult _ret;
-		Debug.OK(this.as!(Windows.Devices.I2c.II2cDevice).abi_WriteReadPartial(__writeBufferSize, writeBuffer, __readBufferSize, out_readBuffer, &_ret));
+		Debug.OK((cast(Windows.Devices.I2c.II2cDevice)this.asInterface(uuid("8636c136-b9c5-4f70-9449-cc46dc6f57eb"))).abi_WriteReadPartial(__writeBufferSize, writeBuffer, __readBufferSize, out_readBuffer, &_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 
 	private static Windows.Devices.I2c.II2cDeviceStatics _staticInstance;
@@ -204,19 +204,19 @@ extern(Windows):
 	static HSTRING GetDeviceSelector()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.I2c.II2cDeviceStatics).abi_GetDeviceSelector(&_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
 		return _ret;
 	}
 	static HSTRING GetDeviceSelectorFromFriendlyName(HSTRING friendlyName)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.I2c.II2cDeviceStatics).abi_GetDeviceSelectorFromFriendlyName(friendlyName, &_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelectorFromFriendlyName(friendlyName, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.I2c.I2cDevice) FromIdAsync(HSTRING deviceId, Windows.Devices.I2c.I2cConnectionSettings settings)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.I2c.I2cDevice) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.I2c.II2cDeviceStatics).abi_FromIdAsync(deviceId, settings, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, settings, &_ret));
 		return _ret;
 	}
 }

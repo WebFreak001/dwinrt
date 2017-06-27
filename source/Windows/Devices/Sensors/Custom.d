@@ -48,40 +48,40 @@ extern(Windows):
 	final Windows.Devices.Sensors.Custom.CustomSensorReading GetCurrentReading()
 	{
 		Windows.Devices.Sensors.Custom.CustomSensorReading _ret;
-		Debug.OK(this.as!(Windows.Devices.Sensors.Custom.ICustomSensor).abi_GetCurrentReading(&_ret));
+		Debug.OK((cast(Windows.Devices.Sensors.Custom.ICustomSensor)this.asInterface(uuid("a136f9ad-4034-4b4d-99dd-531aac649c09"))).abi_GetCurrentReading(&_ret));
 		return _ret;
 	}
 	final UINT32 MinimumReportInterval()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sensors.Custom.ICustomSensor).get_MinimumReportInterval(&_ret));
+		Debug.OK((cast(Windows.Devices.Sensors.Custom.ICustomSensor)this.asInterface(uuid("a136f9ad-4034-4b4d-99dd-531aac649c09"))).get_MinimumReportInterval(&_ret));
 		return _ret;
 	}
 	final void ReportInterval(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sensors.Custom.ICustomSensor).set_ReportInterval(value));
+		Debug.OK((cast(Windows.Devices.Sensors.Custom.ICustomSensor)this.asInterface(uuid("a136f9ad-4034-4b4d-99dd-531aac649c09"))).set_ReportInterval(value));
 	}
 	final UINT32 ReportInterval()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sensors.Custom.ICustomSensor).get_ReportInterval(&_ret));
+		Debug.OK((cast(Windows.Devices.Sensors.Custom.ICustomSensor)this.asInterface(uuid("a136f9ad-4034-4b4d-99dd-531aac649c09"))).get_ReportInterval(&_ret));
 		return _ret;
 	}
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sensors.Custom.ICustomSensor).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Sensors.Custom.ICustomSensor)this.asInterface(uuid("a136f9ad-4034-4b4d-99dd-531aac649c09"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnReadingChanged(void delegate(Windows.Devices.Sensors.Custom.CustomSensor, Windows.Devices.Sensors.Custom.CustomSensorReadingChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Sensors.Custom.ICustomSensor).add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Custom.CustomSensor, Windows.Devices.Sensors.Custom.CustomSensorReadingChangedEventArgs), Windows.Devices.Sensors.Custom.CustomSensor, Windows.Devices.Sensors.Custom.CustomSensorReadingChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Sensors.Custom.ICustomSensor)this.asInterface(uuid("a136f9ad-4034-4b4d-99dd-531aac649c09"))).add_ReadingChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sensors.Custom.CustomSensor, Windows.Devices.Sensors.Custom.CustomSensorReadingChangedEventArgs), Windows.Devices.Sensors.Custom.CustomSensor, Windows.Devices.Sensors.Custom.CustomSensorReadingChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeReadingChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sensors.Custom.ICustomSensor).remove_ReadingChanged(token));
+		Debug.OK((cast(Windows.Devices.Sensors.Custom.ICustomSensor)this.asInterface(uuid("a136f9ad-4034-4b4d-99dd-531aac649c09"))).remove_ReadingChanged(token));
 	}
 
 	private static Windows.Devices.Sensors.Custom.ICustomSensorStatics _staticInstance;
@@ -93,13 +93,13 @@ extern(Windows):
 	static HSTRING GetDeviceSelector(GUID interfaceId)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.Custom.ICustomSensorStatics).abi_GetDeviceSelector(interfaceId, &_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(interfaceId, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.Custom.CustomSensor) FromIdAsync(HSTRING sensorId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.Custom.CustomSensor) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Sensors.Custom.ICustomSensorStatics).abi_FromIdAsync(sensorId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(sensorId, &_ret));
 		return _ret;
 	}
 }
@@ -110,13 +110,13 @@ extern(Windows):
 	final Windows.Foundation.DateTime Timestamp()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Devices.Sensors.Custom.ICustomSensorReading).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Sensors.Custom.ICustomSensorReading)this.asInterface(uuid("64004f4d-446a-4366-a87a-5f963268ec53"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) Properties()
 	{
 		Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) _ret;
-		Debug.OK(this.as!(Windows.Devices.Sensors.Custom.ICustomSensorReading).get_Properties(&_ret));
+		Debug.OK((cast(Windows.Devices.Sensors.Custom.ICustomSensorReading)this.asInterface(uuid("64004f4d-446a-4366-a87a-5f963268ec53"))).get_Properties(&_ret));
 		return _ret;
 	}
 }
@@ -127,7 +127,7 @@ extern(Windows):
 	final Windows.Devices.Sensors.Custom.CustomSensorReading Reading()
 	{
 		Windows.Devices.Sensors.Custom.CustomSensorReading _ret;
-		Debug.OK(this.as!(Windows.Devices.Sensors.Custom.ICustomSensorReadingChangedEventArgs).get_Reading(&_ret));
+		Debug.OK((cast(Windows.Devices.Sensors.Custom.ICustomSensorReadingChangedEventArgs)this.asInterface(uuid("6b202023-cffd-4cc1-8ff0-e21823d76fcc"))).get_Reading(&_ret));
 		return _ret;
 	}
 }

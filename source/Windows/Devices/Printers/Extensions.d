@@ -104,44 +104,44 @@ extern(Windows):
 	final HSTRING DeviceID()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflow).get_DeviceID(&_ret));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrint3DWorkflow)this.asInterface(uuid("c56f74bd-3669-4a66-ab42-c8151930cd34"))).get_DeviceID(&_ret));
 		return _ret;
 	}
 	final IInspectable GetPrintModelPackage()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflow).abi_GetPrintModelPackage(&_ret));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrint3DWorkflow)this.asInterface(uuid("c56f74bd-3669-4a66-ab42-c8151930cd34"))).abi_GetPrintModelPackage(&_ret));
 		return _ret;
 	}
 	final bool IsPrintReady()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflow).get_IsPrintReady(&_ret));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrint3DWorkflow)this.asInterface(uuid("c56f74bd-3669-4a66-ab42-c8151930cd34"))).get_IsPrintReady(&_ret));
 		return _ret;
 	}
 	final void IsPrintReady(bool value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflow).set_IsPrintReady(value));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrint3DWorkflow)this.asInterface(uuid("c56f74bd-3669-4a66-ab42-c8151930cd34"))).set_IsPrintReady(value));
 	}
 	final EventRegistrationToken OnPrintRequested(void delegate(Windows.Devices.Printers.Extensions.Print3DWorkflow, Windows.Devices.Printers.Extensions.Print3DWorkflowPrintRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflow).add_PrintRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Printers.Extensions.Print3DWorkflow, Windows.Devices.Printers.Extensions.Print3DWorkflowPrintRequestedEventArgs), Windows.Devices.Printers.Extensions.Print3DWorkflow, Windows.Devices.Printers.Extensions.Print3DWorkflowPrintRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrint3DWorkflow)this.asInterface(uuid("c56f74bd-3669-4a66-ab42-c8151930cd34"))).add_PrintRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Printers.Extensions.Print3DWorkflow, Windows.Devices.Printers.Extensions.Print3DWorkflowPrintRequestedEventArgs), Windows.Devices.Printers.Extensions.Print3DWorkflow, Windows.Devices.Printers.Extensions.Print3DWorkflowPrintRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePrintRequested(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflow).remove_PrintRequested(eventCookie));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrint3DWorkflow)this.asInterface(uuid("c56f74bd-3669-4a66-ab42-c8151930cd34"))).remove_PrintRequested(eventCookie));
 	}
 	final EventRegistrationToken OnPrinterChanged(void delegate(Windows.Devices.Printers.Extensions.Print3DWorkflow, Windows.Devices.Printers.Extensions.Print3DWorkflowPrinterChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflow2).add_PrinterChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Printers.Extensions.Print3DWorkflow, Windows.Devices.Printers.Extensions.Print3DWorkflowPrinterChangedEventArgs), Windows.Devices.Printers.Extensions.Print3DWorkflow, Windows.Devices.Printers.Extensions.Print3DWorkflowPrinterChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrint3DWorkflow2)this.asInterface(uuid("a2a6c54f-8ac1-4918-9741-e34f3004239e"))).add_PrinterChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Printers.Extensions.Print3DWorkflow, Windows.Devices.Printers.Extensions.Print3DWorkflowPrinterChangedEventArgs), Windows.Devices.Printers.Extensions.Print3DWorkflow, Windows.Devices.Printers.Extensions.Print3DWorkflowPrinterChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePrinterChanged(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflow2).remove_PrinterChanged(eventCookie));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrint3DWorkflow2)this.asInterface(uuid("a2a6c54f-8ac1-4918-9741-e34f3004239e"))).remove_PrinterChanged(eventCookie));
 	}
 }
 
@@ -151,20 +151,20 @@ extern(Windows):
 	final Windows.Devices.Printers.Extensions.Print3DWorkflowStatus Status()
 	{
 		Windows.Devices.Printers.Extensions.Print3DWorkflowStatus _ret;
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflowPrintRequestedEventArgs).get_Status(&_ret));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrint3DWorkflowPrintRequestedEventArgs)this.asInterface(uuid("19f8c858-5ac8-4b55-8a5f-e61567dafb4d"))).get_Status(&_ret));
 		return _ret;
 	}
 	final void SetExtendedStatus(Windows.Devices.Printers.Extensions.Print3DWorkflowDetail value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflowPrintRequestedEventArgs).abi_SetExtendedStatus(value));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrint3DWorkflowPrintRequestedEventArgs)this.asInterface(uuid("19f8c858-5ac8-4b55-8a5f-e61567dafb4d"))).abi_SetExtendedStatus(value));
 	}
 	final void SetSource(IInspectable source)
 	{
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflowPrintRequestedEventArgs).abi_SetSource(source));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrint3DWorkflowPrintRequestedEventArgs)this.asInterface(uuid("19f8c858-5ac8-4b55-8a5f-e61567dafb4d"))).abi_SetSource(source));
 	}
 	final void SetSourceChanged(bool value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflowPrintRequestedEventArgs).abi_SetSourceChanged(value));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrint3DWorkflowPrintRequestedEventArgs)this.asInterface(uuid("19f8c858-5ac8-4b55-8a5f-e61567dafb4d"))).abi_SetSourceChanged(value));
 	}
 }
 
@@ -174,7 +174,7 @@ extern(Windows):
 	final HSTRING NewDeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrint3DWorkflowPrinterChangedEventArgs).get_NewDeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrint3DWorkflowPrinterChangedEventArgs)this.asInterface(uuid("45226402-95fc-4847-93b3-134dbf5c60f7"))).get_NewDeviceId(&_ret));
 		return _ret;
 	}
 }
@@ -190,7 +190,7 @@ interface PrintExtensionContext
 	static IInspectable FromDeviceId(HSTRING deviceId)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Printers.Extensions.IPrintExtensionContextStatic).abi_FromDeviceId(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromDeviceId(deviceId, &_ret));
 		return _ret;
 	}
 }
@@ -201,18 +201,18 @@ extern(Windows):
 	final HSTRING PrinterName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintNotificationEventDetails).get_PrinterName(&_ret));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrintNotificationEventDetails)this.asInterface(uuid("e00e4c8a-4828-4da1-8bb8-8672df8515e7"))).get_PrinterName(&_ret));
 		return _ret;
 	}
 	final HSTRING EventData()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintNotificationEventDetails).get_EventData(&_ret));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrintNotificationEventDetails)this.asInterface(uuid("e00e4c8a-4828-4da1-8bb8-8672df8515e7"))).get_EventData(&_ret));
 		return _ret;
 	}
 	final void EventData(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintNotificationEventDetails).set_EventData(value));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrintNotificationEventDetails)this.asInterface(uuid("e00e4c8a-4828-4da1-8bb8-8672df8515e7"))).set_EventData(value));
 	}
 }
 
@@ -222,18 +222,18 @@ extern(Windows):
 	final IInspectable PrinterExtensionContext()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintTaskConfiguration).get_PrinterExtensionContext(&_ret));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrintTaskConfiguration)this.asInterface(uuid("e3c22451-3aa4-4885-9240-311f5f8fbe9d"))).get_PrinterExtensionContext(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnSaveRequested(void delegate(Windows.Devices.Printers.Extensions.PrintTaskConfiguration, Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintTaskConfiguration).add_SaveRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Printers.Extensions.PrintTaskConfiguration, Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequestedEventArgs), Windows.Devices.Printers.Extensions.PrintTaskConfiguration, Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrintTaskConfiguration)this.asInterface(uuid("e3c22451-3aa4-4885-9240-311f5f8fbe9d"))).add_SaveRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Printers.Extensions.PrintTaskConfiguration, Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequestedEventArgs), Windows.Devices.Printers.Extensions.PrintTaskConfiguration, Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSaveRequested(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintTaskConfiguration).remove_SaveRequested(eventCookie));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrintTaskConfiguration)this.asInterface(uuid("e3c22451-3aa4-4885-9240-311f5f8fbe9d"))).remove_SaveRequested(eventCookie));
 	}
 }
 
@@ -242,22 +242,22 @@ interface PrintTaskConfigurationSaveRequest : Windows.Devices.Printers.Extension
 extern(Windows):
 	final void Cancel()
 	{
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequest).abi_Cancel());
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequest)this.asInterface(uuid("eeaf2fcb-621e-4b62-ac77-b281cce08d60"))).abi_Cancel());
 	}
 	final void Save(IInspectable printerExtensionContext)
 	{
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequest).abi_Save(printerExtensionContext));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequest)this.asInterface(uuid("eeaf2fcb-621e-4b62-ac77-b281cce08d60"))).abi_Save(printerExtensionContext));
 	}
 	final Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequestedDeferral GetDeferral()
 	{
 		Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequestedDeferral _ret;
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequest).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequest)this.asInterface(uuid("eeaf2fcb-621e-4b62-ac77-b281cce08d60"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime Deadline()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequest).get_Deadline(&_ret));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequest)this.asInterface(uuid("eeaf2fcb-621e-4b62-ac77-b281cce08d60"))).get_Deadline(&_ret));
 		return _ret;
 	}
 }
@@ -267,7 +267,7 @@ interface PrintTaskConfigurationSaveRequestedDeferral : Windows.Devices.Printers
 extern(Windows):
 	final void Complete()
 	{
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequestedDeferral).abi_Complete());
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequestedDeferral)this.asInterface(uuid("e959d568-f729-44a4-871d-bd0628696a33"))).abi_Complete());
 	}
 }
 
@@ -277,7 +277,7 @@ extern(Windows):
 	final Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequest Request()
 	{
 		Windows.Devices.Printers.Extensions.PrintTaskConfigurationSaveRequest _ret;
-		Debug.OK(this.as!(Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequestedEventArgs).get_Request(&_ret));
+		Debug.OK((cast(Windows.Devices.Printers.Extensions.IPrintTaskConfigurationSaveRequestedEventArgs)this.asInterface(uuid("e06c2879-0d61-4938-91d0-96a45bee8479"))).get_Request(&_ret));
 		return _ret;
 	}
 }

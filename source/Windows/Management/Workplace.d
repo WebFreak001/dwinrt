@@ -40,25 +40,25 @@ interface MdmPolicy
 	static bool IsBrowserAllowed()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Management.Workplace.IMdmAllowPolicyStatics).abi_IsBrowserAllowed(&_ret));
+		Debug.OK(staticInstance.abi_IsBrowserAllowed(&_ret));
 		return _ret;
 	}
 	static bool IsCameraAllowed()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Management.Workplace.IMdmAllowPolicyStatics).abi_IsCameraAllowed(&_ret));
+		Debug.OK(staticInstance.abi_IsCameraAllowed(&_ret));
 		return _ret;
 	}
 	static bool IsMicrosoftAccountAllowed()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Management.Workplace.IMdmAllowPolicyStatics).abi_IsMicrosoftAccountAllowed(&_ret));
+		Debug.OK(staticInstance.abi_IsMicrosoftAccountAllowed(&_ret));
 		return _ret;
 	}
 	static bool IsStoreAllowed()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Management.Workplace.IMdmAllowPolicyStatics).abi_IsStoreAllowed(&_ret));
+		Debug.OK(staticInstance.abi_IsStoreAllowed(&_ret));
 		return _ret;
 	}
 }
@@ -74,7 +74,7 @@ interface WorkplaceSettings
 	static bool IsMicrosoftAccountOptional()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Management.Workplace.IWorkplaceSettingsStatics).get_IsMicrosoftAccountOptional(&_ret));
+		Debug.OK(staticInstance.get_IsMicrosoftAccountOptional(&_ret));
 		return _ret;
 	}
 }

@@ -21,7 +21,7 @@ interface SmbiosInformation
 	static HSTRING SerialNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.SystemManufacturers.ISmbiosInformationStatics).get_SerialNumber(&_ret));
+		Debug.OK(staticInstance.get_SerialNumber(&_ret));
 		return _ret;
 	}
 }

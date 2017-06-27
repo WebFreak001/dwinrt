@@ -45,19 +45,19 @@ interface WebAuthenticationBroker
 	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult) AuthenticateWithCallbackUriAsync(Windows.Security.Authentication.Web.WebAuthenticationOptions options, Windows.Foundation.Uri requestUri, Windows.Foundation.Uri callbackUri)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.IWebAuthenticationBrokerStatics).abi_AuthenticateWithCallbackUriAsync(options, requestUri, callbackUri, &_ret));
+		Debug.OK(staticInstance.abi_AuthenticateWithCallbackUriAsync(options, requestUri, callbackUri, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult) AuthenticateWithoutCallbackUriAsync(Windows.Security.Authentication.Web.WebAuthenticationOptions options, Windows.Foundation.Uri requestUri)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.IWebAuthenticationBrokerStatics).abi_AuthenticateWithoutCallbackUriAsync(options, requestUri, &_ret));
+		Debug.OK(staticInstance.abi_AuthenticateWithoutCallbackUriAsync(options, requestUri, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Uri GetCurrentApplicationCallbackUri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.IWebAuthenticationBrokerStatics).abi_GetCurrentApplicationCallbackUri(&_ret));
+		Debug.OK(staticInstance.abi_GetCurrentApplicationCallbackUri(&_ret));
 		return _ret;
 	}
 }
@@ -68,19 +68,19 @@ extern(Windows):
 	final HSTRING ResponseData()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.IWebAuthenticationResult).get_ResponseData(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.IWebAuthenticationResult)this.asInterface(uuid("64002b4b-ede9-470a-a5cd-0323faf6e262"))).get_ResponseData(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Authentication.Web.WebAuthenticationStatus ResponseStatus()
 	{
 		Windows.Security.Authentication.Web.WebAuthenticationStatus _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.IWebAuthenticationResult).get_ResponseStatus(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.IWebAuthenticationResult)this.asInterface(uuid("64002b4b-ede9-470a-a5cd-0323faf6e262"))).get_ResponseStatus(&_ret));
 		return _ret;
 	}
 	final UINT32 ResponseErrorDetail()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.IWebAuthenticationResult).get_ResponseErrorDetail(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.IWebAuthenticationResult)this.asInterface(uuid("64002b4b-ede9-470a-a5cd-0323faf6e262"))).get_ResponseErrorDetail(&_ret));
 		return _ret;
 	}
 }

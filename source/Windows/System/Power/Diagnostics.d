@@ -33,18 +33,18 @@ interface BackgroundEnergyDiagnostics
 	static double DeviceSpecificConversionFactor()
 	{
 		double _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Power.Diagnostics.IBackgroundEnergyDiagnosticsStatics).get_DeviceSpecificConversionFactor(&_ret));
+		Debug.OK(staticInstance.get_DeviceSpecificConversionFactor(&_ret));
 		return _ret;
 	}
 	static ulong ComputeTotalEnergyUsage()
 	{
 		ulong _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Power.Diagnostics.IBackgroundEnergyDiagnosticsStatics).abi_ComputeTotalEnergyUsage(&_ret));
+		Debug.OK(staticInstance.abi_ComputeTotalEnergyUsage(&_ret));
 		return _ret;
 	}
 	static void ResetTotalEnergyUsage()
 	{
-		Debug.OK(staticInstance.as!(Windows.System.Power.Diagnostics.IBackgroundEnergyDiagnosticsStatics).abi_ResetTotalEnergyUsage());
+		Debug.OK(staticInstance.abi_ResetTotalEnergyUsage());
 	}
 }
 
@@ -59,17 +59,17 @@ interface ForegroundEnergyDiagnostics
 	static double DeviceSpecificConversionFactor()
 	{
 		double _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Power.Diagnostics.IForegroundEnergyDiagnosticsStatics).get_DeviceSpecificConversionFactor(&_ret));
+		Debug.OK(staticInstance.get_DeviceSpecificConversionFactor(&_ret));
 		return _ret;
 	}
 	static ulong ComputeTotalEnergyUsage()
 	{
 		ulong _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Power.Diagnostics.IForegroundEnergyDiagnosticsStatics).abi_ComputeTotalEnergyUsage(&_ret));
+		Debug.OK(staticInstance.abi_ComputeTotalEnergyUsage(&_ret));
 		return _ret;
 	}
 	static void ResetTotalEnergyUsage()
 	{
-		Debug.OK(staticInstance.as!(Windows.System.Power.Diagnostics.IForegroundEnergyDiagnosticsStatics).abi_ResetTotalEnergyUsage());
+		Debug.OK(staticInstance.abi_ResetTotalEnergyUsage());
 	}
 }

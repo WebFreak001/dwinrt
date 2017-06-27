@@ -197,7 +197,7 @@ interface ColorHelper : Windows.UI.IColorHelper
 	static Windows.UI.Color FromArgb(ubyte a, ubyte r, ubyte g, ubyte b)
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorHelperStatics).abi_FromArgb(a, r, g, b, &_ret));
+		Debug.OK(staticInstance.abi_FromArgb(a, r, g, b, &_ret));
 		return _ret;
 	}
 }
@@ -213,847 +213,847 @@ interface Colors : Windows.UI.IColors
 	static Windows.UI.Color AliceBlue()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_AliceBlue(&_ret));
+		Debug.OK(staticInstance.get_AliceBlue(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color AntiqueWhite()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_AntiqueWhite(&_ret));
+		Debug.OK(staticInstance.get_AntiqueWhite(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Aqua()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Aqua(&_ret));
+		Debug.OK(staticInstance.get_Aqua(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Aquamarine()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Aquamarine(&_ret));
+		Debug.OK(staticInstance.get_Aquamarine(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Azure()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Azure(&_ret));
+		Debug.OK(staticInstance.get_Azure(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Beige()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Beige(&_ret));
+		Debug.OK(staticInstance.get_Beige(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Bisque()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Bisque(&_ret));
+		Debug.OK(staticInstance.get_Bisque(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Black()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Black(&_ret));
+		Debug.OK(staticInstance.get_Black(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color BlanchedAlmond()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_BlanchedAlmond(&_ret));
+		Debug.OK(staticInstance.get_BlanchedAlmond(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Blue()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Blue(&_ret));
+		Debug.OK(staticInstance.get_Blue(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color BlueViolet()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_BlueViolet(&_ret));
+		Debug.OK(staticInstance.get_BlueViolet(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Brown()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Brown(&_ret));
+		Debug.OK(staticInstance.get_Brown(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color BurlyWood()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_BurlyWood(&_ret));
+		Debug.OK(staticInstance.get_BurlyWood(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color CadetBlue()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_CadetBlue(&_ret));
+		Debug.OK(staticInstance.get_CadetBlue(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Chartreuse()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Chartreuse(&_ret));
+		Debug.OK(staticInstance.get_Chartreuse(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Chocolate()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Chocolate(&_ret));
+		Debug.OK(staticInstance.get_Chocolate(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Coral()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Coral(&_ret));
+		Debug.OK(staticInstance.get_Coral(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color CornflowerBlue()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_CornflowerBlue(&_ret));
+		Debug.OK(staticInstance.get_CornflowerBlue(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Cornsilk()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Cornsilk(&_ret));
+		Debug.OK(staticInstance.get_Cornsilk(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Crimson()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Crimson(&_ret));
+		Debug.OK(staticInstance.get_Crimson(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Cyan()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Cyan(&_ret));
+		Debug.OK(staticInstance.get_Cyan(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color DarkBlue()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_DarkBlue(&_ret));
+		Debug.OK(staticInstance.get_DarkBlue(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color DarkCyan()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_DarkCyan(&_ret));
+		Debug.OK(staticInstance.get_DarkCyan(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color DarkGoldenrod()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_DarkGoldenrod(&_ret));
+		Debug.OK(staticInstance.get_DarkGoldenrod(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color DarkGray()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_DarkGray(&_ret));
+		Debug.OK(staticInstance.get_DarkGray(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color DarkGreen()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_DarkGreen(&_ret));
+		Debug.OK(staticInstance.get_DarkGreen(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color DarkKhaki()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_DarkKhaki(&_ret));
+		Debug.OK(staticInstance.get_DarkKhaki(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color DarkMagenta()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_DarkMagenta(&_ret));
+		Debug.OK(staticInstance.get_DarkMagenta(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color DarkOliveGreen()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_DarkOliveGreen(&_ret));
+		Debug.OK(staticInstance.get_DarkOliveGreen(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color DarkOrange()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_DarkOrange(&_ret));
+		Debug.OK(staticInstance.get_DarkOrange(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color DarkOrchid()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_DarkOrchid(&_ret));
+		Debug.OK(staticInstance.get_DarkOrchid(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color DarkRed()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_DarkRed(&_ret));
+		Debug.OK(staticInstance.get_DarkRed(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color DarkSalmon()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_DarkSalmon(&_ret));
+		Debug.OK(staticInstance.get_DarkSalmon(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color DarkSeaGreen()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_DarkSeaGreen(&_ret));
+		Debug.OK(staticInstance.get_DarkSeaGreen(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color DarkSlateBlue()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_DarkSlateBlue(&_ret));
+		Debug.OK(staticInstance.get_DarkSlateBlue(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color DarkSlateGray()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_DarkSlateGray(&_ret));
+		Debug.OK(staticInstance.get_DarkSlateGray(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color DarkTurquoise()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_DarkTurquoise(&_ret));
+		Debug.OK(staticInstance.get_DarkTurquoise(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color DarkViolet()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_DarkViolet(&_ret));
+		Debug.OK(staticInstance.get_DarkViolet(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color DeepPink()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_DeepPink(&_ret));
+		Debug.OK(staticInstance.get_DeepPink(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color DeepSkyBlue()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_DeepSkyBlue(&_ret));
+		Debug.OK(staticInstance.get_DeepSkyBlue(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color DimGray()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_DimGray(&_ret));
+		Debug.OK(staticInstance.get_DimGray(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color DodgerBlue()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_DodgerBlue(&_ret));
+		Debug.OK(staticInstance.get_DodgerBlue(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Firebrick()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Firebrick(&_ret));
+		Debug.OK(staticInstance.get_Firebrick(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color FloralWhite()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_FloralWhite(&_ret));
+		Debug.OK(staticInstance.get_FloralWhite(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color ForestGreen()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_ForestGreen(&_ret));
+		Debug.OK(staticInstance.get_ForestGreen(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Fuchsia()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Fuchsia(&_ret));
+		Debug.OK(staticInstance.get_Fuchsia(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Gainsboro()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Gainsboro(&_ret));
+		Debug.OK(staticInstance.get_Gainsboro(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color GhostWhite()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_GhostWhite(&_ret));
+		Debug.OK(staticInstance.get_GhostWhite(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Gold()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Gold(&_ret));
+		Debug.OK(staticInstance.get_Gold(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Goldenrod()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Goldenrod(&_ret));
+		Debug.OK(staticInstance.get_Goldenrod(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Gray()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Gray(&_ret));
+		Debug.OK(staticInstance.get_Gray(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Green()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Green(&_ret));
+		Debug.OK(staticInstance.get_Green(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color GreenYellow()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_GreenYellow(&_ret));
+		Debug.OK(staticInstance.get_GreenYellow(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Honeydew()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Honeydew(&_ret));
+		Debug.OK(staticInstance.get_Honeydew(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color HotPink()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_HotPink(&_ret));
+		Debug.OK(staticInstance.get_HotPink(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color IndianRed()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_IndianRed(&_ret));
+		Debug.OK(staticInstance.get_IndianRed(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Indigo()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Indigo(&_ret));
+		Debug.OK(staticInstance.get_Indigo(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Ivory()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Ivory(&_ret));
+		Debug.OK(staticInstance.get_Ivory(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Khaki()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Khaki(&_ret));
+		Debug.OK(staticInstance.get_Khaki(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Lavender()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Lavender(&_ret));
+		Debug.OK(staticInstance.get_Lavender(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color LavenderBlush()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_LavenderBlush(&_ret));
+		Debug.OK(staticInstance.get_LavenderBlush(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color LawnGreen()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_LawnGreen(&_ret));
+		Debug.OK(staticInstance.get_LawnGreen(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color LemonChiffon()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_LemonChiffon(&_ret));
+		Debug.OK(staticInstance.get_LemonChiffon(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color LightBlue()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_LightBlue(&_ret));
+		Debug.OK(staticInstance.get_LightBlue(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color LightCoral()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_LightCoral(&_ret));
+		Debug.OK(staticInstance.get_LightCoral(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color LightCyan()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_LightCyan(&_ret));
+		Debug.OK(staticInstance.get_LightCyan(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color LightGoldenrodYellow()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_LightGoldenrodYellow(&_ret));
+		Debug.OK(staticInstance.get_LightGoldenrodYellow(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color LightGreen()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_LightGreen(&_ret));
+		Debug.OK(staticInstance.get_LightGreen(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color LightGray()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_LightGray(&_ret));
+		Debug.OK(staticInstance.get_LightGray(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color LightPink()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_LightPink(&_ret));
+		Debug.OK(staticInstance.get_LightPink(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color LightSalmon()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_LightSalmon(&_ret));
+		Debug.OK(staticInstance.get_LightSalmon(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color LightSeaGreen()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_LightSeaGreen(&_ret));
+		Debug.OK(staticInstance.get_LightSeaGreen(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color LightSkyBlue()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_LightSkyBlue(&_ret));
+		Debug.OK(staticInstance.get_LightSkyBlue(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color LightSlateGray()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_LightSlateGray(&_ret));
+		Debug.OK(staticInstance.get_LightSlateGray(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color LightSteelBlue()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_LightSteelBlue(&_ret));
+		Debug.OK(staticInstance.get_LightSteelBlue(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color LightYellow()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_LightYellow(&_ret));
+		Debug.OK(staticInstance.get_LightYellow(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Lime()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Lime(&_ret));
+		Debug.OK(staticInstance.get_Lime(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color LimeGreen()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_LimeGreen(&_ret));
+		Debug.OK(staticInstance.get_LimeGreen(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Linen()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Linen(&_ret));
+		Debug.OK(staticInstance.get_Linen(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Magenta()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Magenta(&_ret));
+		Debug.OK(staticInstance.get_Magenta(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Maroon()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Maroon(&_ret));
+		Debug.OK(staticInstance.get_Maroon(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color MediumAquamarine()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_MediumAquamarine(&_ret));
+		Debug.OK(staticInstance.get_MediumAquamarine(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color MediumBlue()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_MediumBlue(&_ret));
+		Debug.OK(staticInstance.get_MediumBlue(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color MediumOrchid()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_MediumOrchid(&_ret));
+		Debug.OK(staticInstance.get_MediumOrchid(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color MediumPurple()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_MediumPurple(&_ret));
+		Debug.OK(staticInstance.get_MediumPurple(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color MediumSeaGreen()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_MediumSeaGreen(&_ret));
+		Debug.OK(staticInstance.get_MediumSeaGreen(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color MediumSlateBlue()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_MediumSlateBlue(&_ret));
+		Debug.OK(staticInstance.get_MediumSlateBlue(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color MediumSpringGreen()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_MediumSpringGreen(&_ret));
+		Debug.OK(staticInstance.get_MediumSpringGreen(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color MediumTurquoise()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_MediumTurquoise(&_ret));
+		Debug.OK(staticInstance.get_MediumTurquoise(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color MediumVioletRed()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_MediumVioletRed(&_ret));
+		Debug.OK(staticInstance.get_MediumVioletRed(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color MidnightBlue()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_MidnightBlue(&_ret));
+		Debug.OK(staticInstance.get_MidnightBlue(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color MintCream()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_MintCream(&_ret));
+		Debug.OK(staticInstance.get_MintCream(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color MistyRose()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_MistyRose(&_ret));
+		Debug.OK(staticInstance.get_MistyRose(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Moccasin()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Moccasin(&_ret));
+		Debug.OK(staticInstance.get_Moccasin(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color NavajoWhite()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_NavajoWhite(&_ret));
+		Debug.OK(staticInstance.get_NavajoWhite(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Navy()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Navy(&_ret));
+		Debug.OK(staticInstance.get_Navy(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color OldLace()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_OldLace(&_ret));
+		Debug.OK(staticInstance.get_OldLace(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Olive()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Olive(&_ret));
+		Debug.OK(staticInstance.get_Olive(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color OliveDrab()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_OliveDrab(&_ret));
+		Debug.OK(staticInstance.get_OliveDrab(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Orange()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Orange(&_ret));
+		Debug.OK(staticInstance.get_Orange(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color OrangeRed()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_OrangeRed(&_ret));
+		Debug.OK(staticInstance.get_OrangeRed(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Orchid()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Orchid(&_ret));
+		Debug.OK(staticInstance.get_Orchid(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color PaleGoldenrod()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_PaleGoldenrod(&_ret));
+		Debug.OK(staticInstance.get_PaleGoldenrod(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color PaleGreen()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_PaleGreen(&_ret));
+		Debug.OK(staticInstance.get_PaleGreen(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color PaleTurquoise()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_PaleTurquoise(&_ret));
+		Debug.OK(staticInstance.get_PaleTurquoise(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color PaleVioletRed()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_PaleVioletRed(&_ret));
+		Debug.OK(staticInstance.get_PaleVioletRed(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color PapayaWhip()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_PapayaWhip(&_ret));
+		Debug.OK(staticInstance.get_PapayaWhip(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color PeachPuff()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_PeachPuff(&_ret));
+		Debug.OK(staticInstance.get_PeachPuff(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Peru()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Peru(&_ret));
+		Debug.OK(staticInstance.get_Peru(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Pink()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Pink(&_ret));
+		Debug.OK(staticInstance.get_Pink(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Plum()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Plum(&_ret));
+		Debug.OK(staticInstance.get_Plum(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color PowderBlue()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_PowderBlue(&_ret));
+		Debug.OK(staticInstance.get_PowderBlue(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Purple()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Purple(&_ret));
+		Debug.OK(staticInstance.get_Purple(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Red()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Red(&_ret));
+		Debug.OK(staticInstance.get_Red(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color RosyBrown()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_RosyBrown(&_ret));
+		Debug.OK(staticInstance.get_RosyBrown(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color RoyalBlue()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_RoyalBlue(&_ret));
+		Debug.OK(staticInstance.get_RoyalBlue(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color SaddleBrown()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_SaddleBrown(&_ret));
+		Debug.OK(staticInstance.get_SaddleBrown(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Salmon()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Salmon(&_ret));
+		Debug.OK(staticInstance.get_Salmon(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color SandyBrown()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_SandyBrown(&_ret));
+		Debug.OK(staticInstance.get_SandyBrown(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color SeaGreen()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_SeaGreen(&_ret));
+		Debug.OK(staticInstance.get_SeaGreen(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color SeaShell()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_SeaShell(&_ret));
+		Debug.OK(staticInstance.get_SeaShell(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Sienna()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Sienna(&_ret));
+		Debug.OK(staticInstance.get_Sienna(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Silver()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Silver(&_ret));
+		Debug.OK(staticInstance.get_Silver(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color SkyBlue()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_SkyBlue(&_ret));
+		Debug.OK(staticInstance.get_SkyBlue(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color SlateBlue()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_SlateBlue(&_ret));
+		Debug.OK(staticInstance.get_SlateBlue(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color SlateGray()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_SlateGray(&_ret));
+		Debug.OK(staticInstance.get_SlateGray(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Snow()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Snow(&_ret));
+		Debug.OK(staticInstance.get_Snow(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color SpringGreen()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_SpringGreen(&_ret));
+		Debug.OK(staticInstance.get_SpringGreen(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color SteelBlue()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_SteelBlue(&_ret));
+		Debug.OK(staticInstance.get_SteelBlue(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Tan()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Tan(&_ret));
+		Debug.OK(staticInstance.get_Tan(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Teal()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Teal(&_ret));
+		Debug.OK(staticInstance.get_Teal(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Thistle()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Thistle(&_ret));
+		Debug.OK(staticInstance.get_Thistle(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Tomato()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Tomato(&_ret));
+		Debug.OK(staticInstance.get_Tomato(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Transparent()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Transparent(&_ret));
+		Debug.OK(staticInstance.get_Transparent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Turquoise()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Turquoise(&_ret));
+		Debug.OK(staticInstance.get_Turquoise(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Violet()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Violet(&_ret));
+		Debug.OK(staticInstance.get_Violet(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Wheat()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Wheat(&_ret));
+		Debug.OK(staticInstance.get_Wheat(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color White()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_White(&_ret));
+		Debug.OK(staticInstance.get_White(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color WhiteSmoke()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_WhiteSmoke(&_ret));
+		Debug.OK(staticInstance.get_WhiteSmoke(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color Yellow()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_Yellow(&_ret));
+		Debug.OK(staticInstance.get_Yellow(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color YellowGreen()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.IColorsStatics).get_YellowGreen(&_ret));
+		Debug.OK(staticInstance.get_YellowGreen(&_ret));
 		return _ret;
 	}
 }

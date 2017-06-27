@@ -152,72 +152,72 @@ extern(Windows):
 	final bool IsSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).get_IsSupported(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.IBrightnessOverride)this.asInterface(uuid("96c9621a-c143-4392-bedd-4a7e9574c8fd"))).get_IsSupported(&_ret));
 		return _ret;
 	}
 	final bool IsOverrideActive()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).get_IsOverrideActive(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.IBrightnessOverride)this.asInterface(uuid("96c9621a-c143-4392-bedd-4a7e9574c8fd"))).get_IsOverrideActive(&_ret));
 		return _ret;
 	}
 	final double BrightnessLevel()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).get_BrightnessLevel(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.IBrightnessOverride)this.asInterface(uuid("96c9621a-c143-4392-bedd-4a7e9574c8fd"))).get_BrightnessLevel(&_ret));
 		return _ret;
 	}
 	final void SetBrightnessLevel(double brightnessLevel, Windows.Graphics.Display.DisplayBrightnessOverrideOptions options)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).abi_SetBrightnessLevel(brightnessLevel, options));
+		Debug.OK((cast(Windows.Graphics.Display.IBrightnessOverride)this.asInterface(uuid("96c9621a-c143-4392-bedd-4a7e9574c8fd"))).abi_SetBrightnessLevel(brightnessLevel, options));
 	}
 	final void SetBrightnessScenario(Windows.Graphics.Display.DisplayBrightnessScenario scenario, Windows.Graphics.Display.DisplayBrightnessOverrideOptions options)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).abi_SetBrightnessScenario(scenario, options));
+		Debug.OK((cast(Windows.Graphics.Display.IBrightnessOverride)this.asInterface(uuid("96c9621a-c143-4392-bedd-4a7e9574c8fd"))).abi_SetBrightnessScenario(scenario, options));
 	}
 	final double GetLevelForScenario(Windows.Graphics.Display.DisplayBrightnessScenario scenario)
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).abi_GetLevelForScenario(scenario, &_ret));
+		Debug.OK((cast(Windows.Graphics.Display.IBrightnessOverride)this.asInterface(uuid("96c9621a-c143-4392-bedd-4a7e9574c8fd"))).abi_GetLevelForScenario(scenario, &_ret));
 		return _ret;
 	}
 	final void StartOverride()
 	{
-		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).abi_StartOverride());
+		Debug.OK((cast(Windows.Graphics.Display.IBrightnessOverride)this.asInterface(uuid("96c9621a-c143-4392-bedd-4a7e9574c8fd"))).abi_StartOverride());
 	}
 	final void StopOverride()
 	{
-		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).abi_StopOverride());
+		Debug.OK((cast(Windows.Graphics.Display.IBrightnessOverride)this.asInterface(uuid("96c9621a-c143-4392-bedd-4a7e9574c8fd"))).abi_StopOverride());
 	}
 	final EventRegistrationToken OnIsSupportedChanged(void delegate(Windows.Graphics.Display.BrightnessOverride, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).add_IsSupportedChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.BrightnessOverride, IInspectable), Windows.Graphics.Display.BrightnessOverride, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Graphics.Display.IBrightnessOverride)this.asInterface(uuid("96c9621a-c143-4392-bedd-4a7e9574c8fd"))).add_IsSupportedChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.BrightnessOverride, IInspectable), Windows.Graphics.Display.BrightnessOverride, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeIsSupportedChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).remove_IsSupportedChanged(token));
+		Debug.OK((cast(Windows.Graphics.Display.IBrightnessOverride)this.asInterface(uuid("96c9621a-c143-4392-bedd-4a7e9574c8fd"))).remove_IsSupportedChanged(token));
 	}
 	final EventRegistrationToken OnIsOverrideActiveChanged(void delegate(Windows.Graphics.Display.BrightnessOverride, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).add_IsOverrideActiveChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.BrightnessOverride, IInspectable), Windows.Graphics.Display.BrightnessOverride, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Graphics.Display.IBrightnessOverride)this.asInterface(uuid("96c9621a-c143-4392-bedd-4a7e9574c8fd"))).add_IsOverrideActiveChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.BrightnessOverride, IInspectable), Windows.Graphics.Display.BrightnessOverride, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeIsOverrideActiveChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).remove_IsOverrideActiveChanged(token));
+		Debug.OK((cast(Windows.Graphics.Display.IBrightnessOverride)this.asInterface(uuid("96c9621a-c143-4392-bedd-4a7e9574c8fd"))).remove_IsOverrideActiveChanged(token));
 	}
 	final EventRegistrationToken OnBrightnessLevelChanged(void delegate(Windows.Graphics.Display.BrightnessOverride, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).add_BrightnessLevelChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.BrightnessOverride, IInspectable), Windows.Graphics.Display.BrightnessOverride, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Graphics.Display.IBrightnessOverride)this.asInterface(uuid("96c9621a-c143-4392-bedd-4a7e9574c8fd"))).add_BrightnessLevelChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.BrightnessOverride, IInspectable), Windows.Graphics.Display.BrightnessOverride, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeBrightnessLevelChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Display.IBrightnessOverride).remove_BrightnessLevelChanged(token));
+		Debug.OK((cast(Windows.Graphics.Display.IBrightnessOverride)this.asInterface(uuid("96c9621a-c143-4392-bedd-4a7e9574c8fd"))).remove_BrightnessLevelChanged(token));
 	}
 
 	private static Windows.Graphics.Display.IBrightnessOverrideStatics _staticInstance;
@@ -229,19 +229,19 @@ extern(Windows):
 	static Windows.Graphics.Display.BrightnessOverride GetDefaultForSystem()
 	{
 		Windows.Graphics.Display.BrightnessOverride _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IBrightnessOverrideStatics).abi_GetDefaultForSystem(&_ret));
+		Debug.OK(staticInstance.abi_GetDefaultForSystem(&_ret));
 		return _ret;
 	}
 	static Windows.Graphics.Display.BrightnessOverride GetForCurrentView()
 	{
 		Windows.Graphics.Display.BrightnessOverride _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IBrightnessOverrideStatics).abi_GetForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(bool) SaveForSystemAsync(Windows.Graphics.Display.BrightnessOverride value)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IBrightnessOverrideStatics).abi_SaveForSystemAsync(value, &_ret));
+		Debug.OK(staticInstance.abi_SaveForSystemAsync(value, &_ret));
 		return _ret;
 	}
 }
@@ -252,113 +252,113 @@ extern(Windows):
 	final Windows.Graphics.Display.DisplayOrientations CurrentOrientation()
 	{
 		Windows.Graphics.Display.DisplayOrientations _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_CurrentOrientation(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.IDisplayInformation)this.asInterface(uuid("bed112ae-adc3-4dc9-ae65-851f4d7d4799"))).get_CurrentOrientation(&_ret));
 		return _ret;
 	}
 	final Windows.Graphics.Display.DisplayOrientations NativeOrientation()
 	{
 		Windows.Graphics.Display.DisplayOrientations _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_NativeOrientation(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.IDisplayInformation)this.asInterface(uuid("bed112ae-adc3-4dc9-ae65-851f4d7d4799"))).get_NativeOrientation(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnOrientationChanged(void delegate(Windows.Graphics.Display.DisplayInformation, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).add_OrientationChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation, IInspectable), Windows.Graphics.Display.DisplayInformation, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Graphics.Display.IDisplayInformation)this.asInterface(uuid("bed112ae-adc3-4dc9-ae65-851f4d7d4799"))).add_OrientationChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation, IInspectable), Windows.Graphics.Display.DisplayInformation, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeOrientationChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).remove_OrientationChanged(token));
+		Debug.OK((cast(Windows.Graphics.Display.IDisplayInformation)this.asInterface(uuid("bed112ae-adc3-4dc9-ae65-851f4d7d4799"))).remove_OrientationChanged(token));
 	}
 	final Windows.Graphics.Display.ResolutionScale ResolutionScale()
 	{
 		Windows.Graphics.Display.ResolutionScale _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_ResolutionScale(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.IDisplayInformation)this.asInterface(uuid("bed112ae-adc3-4dc9-ae65-851f4d7d4799"))).get_ResolutionScale(&_ret));
 		return _ret;
 	}
 	final float LogicalDpi()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_LogicalDpi(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.IDisplayInformation)this.asInterface(uuid("bed112ae-adc3-4dc9-ae65-851f4d7d4799"))).get_LogicalDpi(&_ret));
 		return _ret;
 	}
 	final float RawDpiX()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_RawDpiX(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.IDisplayInformation)this.asInterface(uuid("bed112ae-adc3-4dc9-ae65-851f4d7d4799"))).get_RawDpiX(&_ret));
 		return _ret;
 	}
 	final float RawDpiY()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_RawDpiY(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.IDisplayInformation)this.asInterface(uuid("bed112ae-adc3-4dc9-ae65-851f4d7d4799"))).get_RawDpiY(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnDpiChanged(void delegate(Windows.Graphics.Display.DisplayInformation, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).add_DpiChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation, IInspectable), Windows.Graphics.Display.DisplayInformation, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Graphics.Display.IDisplayInformation)this.asInterface(uuid("bed112ae-adc3-4dc9-ae65-851f4d7d4799"))).add_DpiChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation, IInspectable), Windows.Graphics.Display.DisplayInformation, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeDpiChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).remove_DpiChanged(token));
+		Debug.OK((cast(Windows.Graphics.Display.IDisplayInformation)this.asInterface(uuid("bed112ae-adc3-4dc9-ae65-851f4d7d4799"))).remove_DpiChanged(token));
 	}
 	final bool StereoEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).get_StereoEnabled(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.IDisplayInformation)this.asInterface(uuid("bed112ae-adc3-4dc9-ae65-851f4d7d4799"))).get_StereoEnabled(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnStereoEnabledChanged(void delegate(Windows.Graphics.Display.DisplayInformation, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).add_StereoEnabledChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation, IInspectable), Windows.Graphics.Display.DisplayInformation, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Graphics.Display.IDisplayInformation)this.asInterface(uuid("bed112ae-adc3-4dc9-ae65-851f4d7d4799"))).add_StereoEnabledChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation, IInspectable), Windows.Graphics.Display.DisplayInformation, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeStereoEnabledChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).remove_StereoEnabledChanged(token));
+		Debug.OK((cast(Windows.Graphics.Display.IDisplayInformation)this.asInterface(uuid("bed112ae-adc3-4dc9-ae65-851f4d7d4799"))).remove_StereoEnabledChanged(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream) GetColorProfileAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).abi_GetColorProfileAsync(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.IDisplayInformation)this.asInterface(uuid("bed112ae-adc3-4dc9-ae65-851f4d7d4799"))).abi_GetColorProfileAsync(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnColorProfileChanged(void delegate(Windows.Graphics.Display.DisplayInformation, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).add_ColorProfileChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation, IInspectable), Windows.Graphics.Display.DisplayInformation, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Graphics.Display.IDisplayInformation)this.asInterface(uuid("bed112ae-adc3-4dc9-ae65-851f4d7d4799"))).add_ColorProfileChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation, IInspectable), Windows.Graphics.Display.DisplayInformation, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeColorProfileChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation).remove_ColorProfileChanged(token));
+		Debug.OK((cast(Windows.Graphics.Display.IDisplayInformation)this.asInterface(uuid("bed112ae-adc3-4dc9-ae65-851f4d7d4799"))).remove_ColorProfileChanged(token));
 	}
 	final double RawPixelsPerViewPixel()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation2).get_RawPixelsPerViewPixel(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.IDisplayInformation2)this.asInterface(uuid("4dcd0021-fad1-4b8e-8edf-775887b8bf19"))).get_RawPixelsPerViewPixel(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(double) DiagonalSizeInInches()
 	{
 		Windows.Foundation.IReference!(double) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation3).get_DiagonalSizeInInches(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.IDisplayInformation3)this.asInterface(uuid("db15011d-0f09-4466-8ff3-11de9a3c929a"))).get_DiagonalSizeInInches(&_ret));
 		return _ret;
 	}
 	final UINT32 ScreenWidthInRawPixels()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation4).get_ScreenWidthInRawPixels(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.IDisplayInformation4)this.asInterface(uuid("c972ce2f-1242-46be-b536-e1aafe9e7acf"))).get_ScreenWidthInRawPixels(&_ret));
 		return _ret;
 	}
 	final UINT32 ScreenHeightInRawPixels()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.IDisplayInformation4).get_ScreenHeightInRawPixels(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.IDisplayInformation4)this.asInterface(uuid("c972ce2f-1242-46be-b536-e1aafe9e7acf"))).get_ScreenHeightInRawPixels(&_ret));
 		return _ret;
 	}
 
@@ -371,28 +371,28 @@ extern(Windows):
 	static Windows.Graphics.Display.DisplayInformation GetForCurrentView()
 	{
 		Windows.Graphics.Display.DisplayInformation _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayInformationStatics).abi_GetForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 	static Windows.Graphics.Display.DisplayOrientations AutoRotationPreferences()
 	{
 		Windows.Graphics.Display.DisplayOrientations _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayInformationStatics).get_AutoRotationPreferences(&_ret));
+		Debug.OK(staticInstance.get_AutoRotationPreferences(&_ret));
 		return _ret;
 	}
 	static void AutoRotationPreferences(Windows.Graphics.Display.DisplayOrientations value)
 	{
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayInformationStatics).set_AutoRotationPreferences(value));
+		Debug.OK(staticInstance.set_AutoRotationPreferences(value));
 	}
 	static EventRegistrationToken OnDisplayContentsInvalidated(void delegate(Windows.Graphics.Display.DisplayInformation, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayInformationStatics).add_DisplayContentsInvalidated(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation, IInspectable), Windows.Graphics.Display.DisplayInformation, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_DisplayContentsInvalidated(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.DisplayInformation, IInspectable), Windows.Graphics.Display.DisplayInformation, IInspectable)(fn), &tok));
 		return tok;
 	}
 	static void removeDisplayContentsInvalidated(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayInformationStatics).remove_DisplayContentsInvalidated(token));
+		Debug.OK(staticInstance.remove_DisplayContentsInvalidated(token));
 	}
 }
 
@@ -408,115 +408,115 @@ interface DisplayProperties
 	static Windows.Graphics.Display.DisplayOrientations CurrentOrientation()
 	{
 		Windows.Graphics.Display.DisplayOrientations _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).get_CurrentOrientation(&_ret));
+		Debug.OK(staticInstance.get_CurrentOrientation(&_ret));
 		return _ret;
 	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	static Windows.Graphics.Display.DisplayOrientations NativeOrientation()
 	{
 		Windows.Graphics.Display.DisplayOrientations _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).get_NativeOrientation(&_ret));
+		Debug.OK(staticInstance.get_NativeOrientation(&_ret));
 		return _ret;
 	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	static Windows.Graphics.Display.DisplayOrientations AutoRotationPreferences()
 	{
 		Windows.Graphics.Display.DisplayOrientations _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).get_AutoRotationPreferences(&_ret));
+		Debug.OK(staticInstance.get_AutoRotationPreferences(&_ret));
 		return _ret;
 	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	static void AutoRotationPreferences(Windows.Graphics.Display.DisplayOrientations value)
 	{
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).set_AutoRotationPreferences(value));
+		Debug.OK(staticInstance.set_AutoRotationPreferences(value));
 	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	static EventRegistrationToken OnOrientationChanged(void delegate(IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).add_OrientationChanged(event!(Windows.Graphics.Display.DisplayPropertiesEventHandler, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_OrientationChanged(event!(Windows.Graphics.Display.DisplayPropertiesEventHandler, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	static void removeOrientationChanged(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).remove_OrientationChanged(token));
+		Debug.OK(staticInstance.remove_OrientationChanged(token));
 	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	static Windows.Graphics.Display.ResolutionScale ResolutionScale()
 	{
 		Windows.Graphics.Display.ResolutionScale _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).get_ResolutionScale(&_ret));
+		Debug.OK(staticInstance.get_ResolutionScale(&_ret));
 		return _ret;
 	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	static float LogicalDpi()
 	{
 		float _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).get_LogicalDpi(&_ret));
+		Debug.OK(staticInstance.get_LogicalDpi(&_ret));
 		return _ret;
 	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	static EventRegistrationToken OnLogicalDpiChanged(void delegate(IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).add_LogicalDpiChanged(event!(Windows.Graphics.Display.DisplayPropertiesEventHandler, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_LogicalDpiChanged(event!(Windows.Graphics.Display.DisplayPropertiesEventHandler, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	static void removeLogicalDpiChanged(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).remove_LogicalDpiChanged(token));
+		Debug.OK(staticInstance.remove_LogicalDpiChanged(token));
 	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	static bool StereoEnabled()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).get_StereoEnabled(&_ret));
+		Debug.OK(staticInstance.get_StereoEnabled(&_ret));
 		return _ret;
 	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	static EventRegistrationToken OnStereoEnabledChanged(void delegate(IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).add_StereoEnabledChanged(event!(Windows.Graphics.Display.DisplayPropertiesEventHandler, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_StereoEnabledChanged(event!(Windows.Graphics.Display.DisplayPropertiesEventHandler, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	static void removeStereoEnabledChanged(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).remove_StereoEnabledChanged(token));
+		Debug.OK(staticInstance.remove_StereoEnabledChanged(token));
 	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	static Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream) GetColorProfileAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream) _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).abi_GetColorProfileAsync(&_ret));
+		Debug.OK(staticInstance.abi_GetColorProfileAsync(&_ret));
 		return _ret;
 	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	static EventRegistrationToken OnColorProfileChanged(void delegate(IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).add_ColorProfileChanged(event!(Windows.Graphics.Display.DisplayPropertiesEventHandler, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_ColorProfileChanged(event!(Windows.Graphics.Display.DisplayPropertiesEventHandler, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	static void removeColorProfileChanged(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).remove_ColorProfileChanged(token));
+		Debug.OK(staticInstance.remove_ColorProfileChanged(token));
 	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	static EventRegistrationToken OnDisplayContentsInvalidated(void delegate(IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).add_DisplayContentsInvalidated(event!(Windows.Graphics.Display.DisplayPropertiesEventHandler, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_DisplayContentsInvalidated(event!(Windows.Graphics.Display.DisplayPropertiesEventHandler, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")
 	static void removeDisplayContentsInvalidated(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.IDisplayPropertiesStatics).remove_DisplayContentsInvalidated(token));
+		Debug.OK(staticInstance.remove_DisplayContentsInvalidated(token));
 	}
 }
 

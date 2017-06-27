@@ -280,10 +280,10 @@ shared static this() {
 	extraMethods = [
 		"IAsyncAction": [
 			InterfaceMethod("Completed", "Windows.Foundation.AsyncActionCompletedHandler", "", InterfaceType.propget, [
-			], true, "Windows.Foundation.AsyncActionCompletedHandler ret;\nDebug.OK(this.as!(IAsyncAction).get_Completed(&ret));\nreturn ret;"),
+			], true, "Windows.Foundation.AsyncActionCompletedHandler ret;\nDebug.OK((cast(IAsyncAction)this.asInterface(uuid(\"5a648006-843a-4da9-865b-9d26e5dfad7b\"))).get_Completed(&ret));\nreturn ret;"),
 			InterfaceMethod("Completed", "void", "", InterfaceType.propset, [
 				InterfaceArgument(ArgumentDirection.in_, "Windows.Foundation.AsyncActionCompletedHandler", "handler")
-			], true, "Debug.OK(this.as!(IAsyncAction).set_Completed(handler));"),
+			], true, "Debug.OK((cast(IAsyncAction)this.asInterface(uuid(\"5a648006-843a-4da9-865b-9d26e5dfad7b\"))).set_Completed(handler));"),
 		]
 	];
 }
@@ -1530,7 +1530,7 @@ struct Interface
 			auto base = findInterface(staticBase);
 			foreach (method; base.methods)
 			{
-				method.implement(staticBase);
+				method.implement(staticBase, false);
 				method.implementation = method.implementation.replace("this.", "staticInstance.");
 				ret ~= "\n" ~ method.toString("static ").indent;
 			}
@@ -1542,7 +1542,7 @@ struct Interface
 			ret ~= "\t{\n";
 			ret ~= "\t\tIInspectable ret;\n";
 			ret ~= "\t\tDebug.OK(activationFactory!(" ~ name ~ ").abi_ActivateInstance(&ret));\n";
-			ret ~= "\t\treturn ret.as!(" ~ name ~ ");\n";
+			ret ~= "\t\treturn cast(" ~ name ~ ") ret;\n";
 			ret ~= "\t}\n";
 		}
 		if (activatable.length)
@@ -1647,8 +1647,9 @@ struct InterfaceMethod
 	bool typeFixed;
 	string implementation, documentation;
 
-	void implement(string baseName)
+	void implement(string baseName, bool needsAs = true)
 	{
+		auto self = needsAs ? "this".as(baseName) : "this";
 		if (type == InterfaceType.eventadd)
 		{
 			enforce(arguments.length == 2);
@@ -1671,8 +1672,8 @@ struct InterfaceMethod
 				arguments = [InterfaceArgument(ArgumentDirection.in_, "void delegate(" ~ args ~ ")", "fn")];
 				name = "On" ~ name;
 				returnType = "EventRegistrationToken";
-				string registerCall = "Debug.OK(this.as!(" ~ baseName ~ ")." ~ fname
-					~ "(event!(" ~ type ~ ", " ~ args ~ ")(fn), &tok));";
+				string registerCall = "Debug.OK(" ~ self ~ "." ~ fname ~ "(event!(" ~ type
+					~ ", " ~ args ~ ")(fn), &tok));";
 				implementation = "EventRegistrationToken tok;\n" ~ registerCall ~ "\nreturn tok;";
 			}
 			else
@@ -1686,8 +1687,7 @@ struct InterfaceMethod
 			string fname = fullName;
 			name = "remove" ~ name;
 			returnType = "void";
-			implementation = "Debug.OK(this.as!(" ~ baseName ~ ")." ~ fname ~ "("
-				~ arguments[0].fullName ~ "));";
+			implementation = "Debug.OK(" ~ self ~ "." ~ fname ~ "(" ~ arguments[0].fullName ~ "));";
 		}
 		else
 		{
@@ -1716,14 +1716,13 @@ struct InterfaceMethod
 				if (argsPost.length)
 					args ~= ", " ~ argsPost;
 				string post = "\nreturn _ret;";
-				implementation = pre ~ "Debug.OK(this.as!(" ~ baseName ~ ")." ~ fname
-					~ "(" ~ args ~ "));" ~ post;
+				implementation = pre ~ "Debug.OK(" ~ self ~ "." ~ fname ~ "(" ~ args ~ "));" ~ post;
 			}
 			else
 			{
 				string args = arguments.map!"a.fullName".join(", ");
 				returnType = "void";
-				implementation = "Debug.OK(this.as!(" ~ baseName ~ ")." ~ fname ~ "(" ~ args ~ "));";
+				implementation = "Debug.OK(" ~ self ~ "." ~ fname ~ "(" ~ args ~ "));";
 			}
 		}
 	}
@@ -1806,9 +1805,8 @@ struct InterfaceMethod
 		else
 			ret ~= " return ";
 
-		ret ~= "m_inner.as!(";
-		ret ~= as;
-		ret ~= ")." ~ fullName ~ "(";
+		ret ~= "m_inner".as(as);
+		ret ~= "." ~ fullName ~ "(";
 		ret ~= arguments.map!"a.fullName".join(", ");
 		if (overridable)
 			ret ~= "));";
@@ -1816,6 +1814,26 @@ struct InterfaceMethod
 			ret ~= ");";
 		ret ~= " }";
 		return ret;
+	}
+}
+
+string as(string var, string type)
+{
+	Interface obj;
+	try
+	{
+		obj = findInterface(type);
+	}
+	catch (Exception)
+	{
+	}
+	if (obj.uuid.length)
+		return "(cast(" ~ type ~ ")" ~ var ~ ".asInterface(uuid(\"" ~ obj.uuid ~ "\")))";
+	else
+	{
+		if (!type.canFind("!"))
+			writeln("No .as! for type ", type);
+		return "(cast(" ~ type ~ ")" ~ var ~ ")";
 	}
 }
 

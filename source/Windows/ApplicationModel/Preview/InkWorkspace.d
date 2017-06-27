@@ -24,7 +24,7 @@ extern(Windows):
 	final Windows.Foundation.IAsyncAction SetThumbnailAsync(Windows.Graphics.Imaging.SoftwareBitmap bitmap)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.InkWorkspace.IInkWorkspaceHostedAppManager).abi_SetThumbnailAsync(bitmap, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.InkWorkspace.IInkWorkspaceHostedAppManager)this.asInterface(uuid("fe0a7990-5e59-4bb7-8a63-7d218cd96300"))).abi_SetThumbnailAsync(bitmap, &_ret));
 		return _ret;
 	}
 
@@ -37,7 +37,7 @@ extern(Windows):
 	static Windows.ApplicationModel.Preview.InkWorkspace.InkWorkspaceHostedAppManager GetForCurrentApp()
 	{
 		Windows.ApplicationModel.Preview.InkWorkspace.InkWorkspaceHostedAppManager _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Preview.InkWorkspace.IInkWorkspaceHostedAppManagerStatics).abi_GetForCurrentApp(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentApp(&_ret));
 		return _ret;
 	}
 }

@@ -130,55 +130,55 @@ extern(Windows):
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScanner).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScanner)this.asInterface(uuid("53a88f78-5298-48a0-8da3-8087519665e0"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Scanners.ImageScannerScanSource DefaultScanSource()
 	{
 		Windows.Devices.Scanners.ImageScannerScanSource _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScanner).get_DefaultScanSource(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScanner)this.asInterface(uuid("53a88f78-5298-48a0-8da3-8087519665e0"))).get_DefaultScanSource(&_ret));
 		return _ret;
 	}
 	final bool IsScanSourceSupported(Windows.Devices.Scanners.ImageScannerScanSource value)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScanner).abi_IsScanSourceSupported(value, &_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScanner)this.asInterface(uuid("53a88f78-5298-48a0-8da3-8087519665e0"))).abi_IsScanSourceSupported(value, &_ret));
 		return _ret;
 	}
 	final Windows.Devices.Scanners.ImageScannerFlatbedConfiguration FlatbedConfiguration()
 	{
 		Windows.Devices.Scanners.ImageScannerFlatbedConfiguration _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScanner).get_FlatbedConfiguration(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScanner)this.asInterface(uuid("53a88f78-5298-48a0-8da3-8087519665e0"))).get_FlatbedConfiguration(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Scanners.ImageScannerFeederConfiguration FeederConfiguration()
 	{
 		Windows.Devices.Scanners.ImageScannerFeederConfiguration _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScanner).get_FeederConfiguration(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScanner)this.asInterface(uuid("53a88f78-5298-48a0-8da3-8087519665e0"))).get_FeederConfiguration(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Scanners.ImageScannerAutoConfiguration AutoConfiguration()
 	{
 		Windows.Devices.Scanners.ImageScannerAutoConfiguration _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScanner).get_AutoConfiguration(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScanner)this.asInterface(uuid("53a88f78-5298-48a0-8da3-8087519665e0"))).get_AutoConfiguration(&_ret));
 		return _ret;
 	}
 	final bool IsPreviewSupported(Windows.Devices.Scanners.ImageScannerScanSource scanSource)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScanner).abi_IsPreviewSupported(scanSource, &_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScanner)this.asInterface(uuid("53a88f78-5298-48a0-8da3-8087519665e0"))).abi_IsPreviewSupported(scanSource, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Scanners.ImageScannerPreviewResult) ScanPreviewToStreamAsync(Windows.Devices.Scanners.ImageScannerScanSource scanSource, Windows.Storage.Streams.IRandomAccessStream targetStream)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Scanners.ImageScannerPreviewResult) _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScanner).abi_ScanPreviewToStreamAsync(scanSource, targetStream, &_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScanner)this.asInterface(uuid("53a88f78-5298-48a0-8da3-8087519665e0"))).abi_ScanPreviewToStreamAsync(scanSource, targetStream, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Devices.Scanners.ImageScannerScanResult, UINT32) ScanFilesToFolderAsync(Windows.Devices.Scanners.ImageScannerScanSource scanSource, Windows.Storage.StorageFolder storageFolder)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Devices.Scanners.ImageScannerScanResult, UINT32) _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScanner).abi_ScanFilesToFolderAsync(scanSource, storageFolder, &_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScanner)this.asInterface(uuid("53a88f78-5298-48a0-8da3-8087519665e0"))).abi_ScanFilesToFolderAsync(scanSource, storageFolder, &_ret));
 		return _ret;
 	}
 
@@ -191,13 +191,13 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Scanners.ImageScanner) FromIdAsync(HSTRING deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Scanners.ImageScanner) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Scanners.IImageScannerStatics).abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
 		return _ret;
 	}
 	static HSTRING GetDeviceSelector()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Scanners.IImageScannerStatics).abi_GetDeviceSelector(&_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
 		return _ret;
 	}
 }
@@ -208,23 +208,23 @@ extern(Windows):
 	final Windows.Devices.Scanners.ImageScannerFormat DefaultFormat()
 	{
 		Windows.Devices.Scanners.ImageScannerFormat _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).get_DefaultFormat(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFormatConfiguration)this.asInterface(uuid("ae275d11-dadf-4010-bf10-cca5c83dcbb0"))).get_DefaultFormat(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Scanners.ImageScannerFormat Format()
 	{
 		Windows.Devices.Scanners.ImageScannerFormat _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).get_Format(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFormatConfiguration)this.asInterface(uuid("ae275d11-dadf-4010-bf10-cca5c83dcbb0"))).get_Format(&_ret));
 		return _ret;
 	}
 	final void Format(Windows.Devices.Scanners.ImageScannerFormat value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).set_Format(value));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFormatConfiguration)this.asInterface(uuid("ae275d11-dadf-4010-bf10-cca5c83dcbb0"))).set_Format(value));
 	}
 	final bool IsFormatSupported(Windows.Devices.Scanners.ImageScannerFormat value)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).abi_IsFormatSupported(value, &_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFormatConfiguration)this.asInterface(uuid("ae275d11-dadf-4010-bf10-cca5c83dcbb0"))).abi_IsFormatSupported(value, &_ret));
 		return _ret;
 	}
 }
@@ -235,276 +235,276 @@ extern(Windows):
 	final Windows.Devices.Scanners.ImageScannerFormat DefaultFormat()
 	{
 		Windows.Devices.Scanners.ImageScannerFormat _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).get_DefaultFormat(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFormatConfiguration)this.asInterface(uuid("ae275d11-dadf-4010-bf10-cca5c83dcbb0"))).get_DefaultFormat(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Scanners.ImageScannerFormat Format()
 	{
 		Windows.Devices.Scanners.ImageScannerFormat _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).get_Format(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFormatConfiguration)this.asInterface(uuid("ae275d11-dadf-4010-bf10-cca5c83dcbb0"))).get_Format(&_ret));
 		return _ret;
 	}
 	final void Format(Windows.Devices.Scanners.ImageScannerFormat value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).set_Format(value));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFormatConfiguration)this.asInterface(uuid("ae275d11-dadf-4010-bf10-cca5c83dcbb0"))).set_Format(value));
 	}
 	final bool IsFormatSupported(Windows.Devices.Scanners.ImageScannerFormat value)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).abi_IsFormatSupported(value, &_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFormatConfiguration)this.asInterface(uuid("ae275d11-dadf-4010-bf10-cca5c83dcbb0"))).abi_IsFormatSupported(value, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Size MinScanArea()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MinScanArea(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_MinScanArea(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Size MaxScanArea()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MaxScanArea(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_MaxScanArea(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect SelectedScanRegion()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_SelectedScanRegion(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_SelectedScanRegion(&_ret));
 		return _ret;
 	}
 	final void SelectedScanRegion(Windows.Foundation.Rect value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_SelectedScanRegion(value));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).set_SelectedScanRegion(value));
 	}
 	final Windows.Devices.Scanners.ImageScannerAutoCroppingMode AutoCroppingMode()
 	{
 		Windows.Devices.Scanners.ImageScannerAutoCroppingMode _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_AutoCroppingMode(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_AutoCroppingMode(&_ret));
 		return _ret;
 	}
 	final void AutoCroppingMode(Windows.Devices.Scanners.ImageScannerAutoCroppingMode value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_AutoCroppingMode(value));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).set_AutoCroppingMode(value));
 	}
 	final bool IsAutoCroppingModeSupported(Windows.Devices.Scanners.ImageScannerAutoCroppingMode value)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).abi_IsAutoCroppingModeSupported(value, &_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).abi_IsAutoCroppingModeSupported(value, &_ret));
 		return _ret;
 	}
 	final Windows.Devices.Scanners.ImageScannerResolution MinResolution()
 	{
 		Windows.Devices.Scanners.ImageScannerResolution _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MinResolution(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_MinResolution(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Scanners.ImageScannerResolution MaxResolution()
 	{
 		Windows.Devices.Scanners.ImageScannerResolution _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MaxResolution(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_MaxResolution(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Scanners.ImageScannerResolution OpticalResolution()
 	{
 		Windows.Devices.Scanners.ImageScannerResolution _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_OpticalResolution(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_OpticalResolution(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Scanners.ImageScannerResolution DesiredResolution()
 	{
 		Windows.Devices.Scanners.ImageScannerResolution _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_DesiredResolution(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_DesiredResolution(&_ret));
 		return _ret;
 	}
 	final void DesiredResolution(Windows.Devices.Scanners.ImageScannerResolution value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_DesiredResolution(value));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).set_DesiredResolution(value));
 	}
 	final Windows.Devices.Scanners.ImageScannerResolution ActualResolution()
 	{
 		Windows.Devices.Scanners.ImageScannerResolution _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_ActualResolution(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_ActualResolution(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Scanners.ImageScannerColorMode DefaultColorMode()
 	{
 		Windows.Devices.Scanners.ImageScannerColorMode _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_DefaultColorMode(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_DefaultColorMode(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Scanners.ImageScannerColorMode ColorMode()
 	{
 		Windows.Devices.Scanners.ImageScannerColorMode _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_ColorMode(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_ColorMode(&_ret));
 		return _ret;
 	}
 	final void ColorMode(Windows.Devices.Scanners.ImageScannerColorMode value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_ColorMode(value));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).set_ColorMode(value));
 	}
 	final bool IsColorModeSupported(Windows.Devices.Scanners.ImageScannerColorMode value)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).abi_IsColorModeSupported(value, &_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).abi_IsColorModeSupported(value, &_ret));
 		return _ret;
 	}
 	final INT32 MinBrightness()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MinBrightness(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_MinBrightness(&_ret));
 		return _ret;
 	}
 	final INT32 MaxBrightness()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MaxBrightness(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_MaxBrightness(&_ret));
 		return _ret;
 	}
 	final UINT32 BrightnessStep()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_BrightnessStep(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_BrightnessStep(&_ret));
 		return _ret;
 	}
 	final INT32 DefaultBrightness()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_DefaultBrightness(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_DefaultBrightness(&_ret));
 		return _ret;
 	}
 	final INT32 Brightness()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_Brightness(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_Brightness(&_ret));
 		return _ret;
 	}
 	final void Brightness(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_Brightness(value));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).set_Brightness(value));
 	}
 	final INT32 MinContrast()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MinContrast(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_MinContrast(&_ret));
 		return _ret;
 	}
 	final INT32 MaxContrast()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MaxContrast(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_MaxContrast(&_ret));
 		return _ret;
 	}
 	final UINT32 ContrastStep()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_ContrastStep(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_ContrastStep(&_ret));
 		return _ret;
 	}
 	final INT32 DefaultContrast()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_DefaultContrast(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_DefaultContrast(&_ret));
 		return _ret;
 	}
 	final INT32 Contrast()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_Contrast(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_Contrast(&_ret));
 		return _ret;
 	}
 	final void Contrast(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_Contrast(value));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).set_Contrast(value));
 	}
 	final bool CanAutoDetectPageSize()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).get_CanAutoDetectPageSize(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFeederConfiguration)this.asInterface(uuid("74bdacee-fa97-4c17-8280-40e39c6dcc67"))).get_CanAutoDetectPageSize(&_ret));
 		return _ret;
 	}
 	final bool AutoDetectPageSize()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).get_AutoDetectPageSize(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFeederConfiguration)this.asInterface(uuid("74bdacee-fa97-4c17-8280-40e39c6dcc67"))).get_AutoDetectPageSize(&_ret));
 		return _ret;
 	}
 	final void AutoDetectPageSize(bool value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).set_AutoDetectPageSize(value));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFeederConfiguration)this.asInterface(uuid("74bdacee-fa97-4c17-8280-40e39c6dcc67"))).set_AutoDetectPageSize(value));
 	}
 	final Windows.Graphics.Printing.PrintMediaSize PageSize()
 	{
 		Windows.Graphics.Printing.PrintMediaSize _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).get_PageSize(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFeederConfiguration)this.asInterface(uuid("74bdacee-fa97-4c17-8280-40e39c6dcc67"))).get_PageSize(&_ret));
 		return _ret;
 	}
 	final void PageSize(Windows.Graphics.Printing.PrintMediaSize value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).set_PageSize(value));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFeederConfiguration)this.asInterface(uuid("74bdacee-fa97-4c17-8280-40e39c6dcc67"))).set_PageSize(value));
 	}
 	final Windows.Graphics.Printing.PrintOrientation PageOrientation()
 	{
 		Windows.Graphics.Printing.PrintOrientation _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).get_PageOrientation(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFeederConfiguration)this.asInterface(uuid("74bdacee-fa97-4c17-8280-40e39c6dcc67"))).get_PageOrientation(&_ret));
 		return _ret;
 	}
 	final void PageOrientation(Windows.Graphics.Printing.PrintOrientation value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).set_PageOrientation(value));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFeederConfiguration)this.asInterface(uuid("74bdacee-fa97-4c17-8280-40e39c6dcc67"))).set_PageOrientation(value));
 	}
 	final Windows.Foundation.Size PageSizeDimensions()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).get_PageSizeDimensions(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFeederConfiguration)this.asInterface(uuid("74bdacee-fa97-4c17-8280-40e39c6dcc67"))).get_PageSizeDimensions(&_ret));
 		return _ret;
 	}
 	final bool IsPageSizeSupported(Windows.Graphics.Printing.PrintMediaSize pageSize, Windows.Graphics.Printing.PrintOrientation pageOrientation)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).abi_IsPageSizeSupported(pageSize, pageOrientation, &_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFeederConfiguration)this.asInterface(uuid("74bdacee-fa97-4c17-8280-40e39c6dcc67"))).abi_IsPageSizeSupported(pageSize, pageOrientation, &_ret));
 		return _ret;
 	}
 	final UINT32 MaxNumberOfPages()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).get_MaxNumberOfPages(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFeederConfiguration)this.asInterface(uuid("74bdacee-fa97-4c17-8280-40e39c6dcc67"))).get_MaxNumberOfPages(&_ret));
 		return _ret;
 	}
 	final void MaxNumberOfPages(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).set_MaxNumberOfPages(value));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFeederConfiguration)this.asInterface(uuid("74bdacee-fa97-4c17-8280-40e39c6dcc67"))).set_MaxNumberOfPages(value));
 	}
 	final bool CanScanDuplex()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).get_CanScanDuplex(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFeederConfiguration)this.asInterface(uuid("74bdacee-fa97-4c17-8280-40e39c6dcc67"))).get_CanScanDuplex(&_ret));
 		return _ret;
 	}
 	final bool Duplex()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).get_Duplex(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFeederConfiguration)this.asInterface(uuid("74bdacee-fa97-4c17-8280-40e39c6dcc67"))).get_Duplex(&_ret));
 		return _ret;
 	}
 	final void Duplex(bool value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).set_Duplex(value));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFeederConfiguration)this.asInterface(uuid("74bdacee-fa97-4c17-8280-40e39c6dcc67"))).set_Duplex(value));
 	}
 	final bool CanScanAhead()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).get_CanScanAhead(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFeederConfiguration)this.asInterface(uuid("74bdacee-fa97-4c17-8280-40e39c6dcc67"))).get_CanScanAhead(&_ret));
 		return _ret;
 	}
 	final bool ScanAhead()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).get_ScanAhead(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFeederConfiguration)this.asInterface(uuid("74bdacee-fa97-4c17-8280-40e39c6dcc67"))).get_ScanAhead(&_ret));
 		return _ret;
 	}
 	final void ScanAhead(bool value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFeederConfiguration).set_ScanAhead(value));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFeederConfiguration)this.asInterface(uuid("74bdacee-fa97-4c17-8280-40e39c6dcc67"))).set_ScanAhead(value));
 	}
 }
 
@@ -514,186 +514,186 @@ extern(Windows):
 	final Windows.Devices.Scanners.ImageScannerFormat DefaultFormat()
 	{
 		Windows.Devices.Scanners.ImageScannerFormat _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).get_DefaultFormat(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFormatConfiguration)this.asInterface(uuid("ae275d11-dadf-4010-bf10-cca5c83dcbb0"))).get_DefaultFormat(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Scanners.ImageScannerFormat Format()
 	{
 		Windows.Devices.Scanners.ImageScannerFormat _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).get_Format(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFormatConfiguration)this.asInterface(uuid("ae275d11-dadf-4010-bf10-cca5c83dcbb0"))).get_Format(&_ret));
 		return _ret;
 	}
 	final void Format(Windows.Devices.Scanners.ImageScannerFormat value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).set_Format(value));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFormatConfiguration)this.asInterface(uuid("ae275d11-dadf-4010-bf10-cca5c83dcbb0"))).set_Format(value));
 	}
 	final bool IsFormatSupported(Windows.Devices.Scanners.ImageScannerFormat value)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerFormatConfiguration).abi_IsFormatSupported(value, &_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerFormatConfiguration)this.asInterface(uuid("ae275d11-dadf-4010-bf10-cca5c83dcbb0"))).abi_IsFormatSupported(value, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Size MinScanArea()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MinScanArea(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_MinScanArea(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Size MaxScanArea()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MaxScanArea(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_MaxScanArea(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect SelectedScanRegion()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_SelectedScanRegion(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_SelectedScanRegion(&_ret));
 		return _ret;
 	}
 	final void SelectedScanRegion(Windows.Foundation.Rect value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_SelectedScanRegion(value));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).set_SelectedScanRegion(value));
 	}
 	final Windows.Devices.Scanners.ImageScannerAutoCroppingMode AutoCroppingMode()
 	{
 		Windows.Devices.Scanners.ImageScannerAutoCroppingMode _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_AutoCroppingMode(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_AutoCroppingMode(&_ret));
 		return _ret;
 	}
 	final void AutoCroppingMode(Windows.Devices.Scanners.ImageScannerAutoCroppingMode value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_AutoCroppingMode(value));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).set_AutoCroppingMode(value));
 	}
 	final bool IsAutoCroppingModeSupported(Windows.Devices.Scanners.ImageScannerAutoCroppingMode value)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).abi_IsAutoCroppingModeSupported(value, &_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).abi_IsAutoCroppingModeSupported(value, &_ret));
 		return _ret;
 	}
 	final Windows.Devices.Scanners.ImageScannerResolution MinResolution()
 	{
 		Windows.Devices.Scanners.ImageScannerResolution _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MinResolution(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_MinResolution(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Scanners.ImageScannerResolution MaxResolution()
 	{
 		Windows.Devices.Scanners.ImageScannerResolution _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MaxResolution(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_MaxResolution(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Scanners.ImageScannerResolution OpticalResolution()
 	{
 		Windows.Devices.Scanners.ImageScannerResolution _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_OpticalResolution(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_OpticalResolution(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Scanners.ImageScannerResolution DesiredResolution()
 	{
 		Windows.Devices.Scanners.ImageScannerResolution _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_DesiredResolution(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_DesiredResolution(&_ret));
 		return _ret;
 	}
 	final void DesiredResolution(Windows.Devices.Scanners.ImageScannerResolution value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_DesiredResolution(value));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).set_DesiredResolution(value));
 	}
 	final Windows.Devices.Scanners.ImageScannerResolution ActualResolution()
 	{
 		Windows.Devices.Scanners.ImageScannerResolution _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_ActualResolution(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_ActualResolution(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Scanners.ImageScannerColorMode DefaultColorMode()
 	{
 		Windows.Devices.Scanners.ImageScannerColorMode _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_DefaultColorMode(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_DefaultColorMode(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Scanners.ImageScannerColorMode ColorMode()
 	{
 		Windows.Devices.Scanners.ImageScannerColorMode _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_ColorMode(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_ColorMode(&_ret));
 		return _ret;
 	}
 	final void ColorMode(Windows.Devices.Scanners.ImageScannerColorMode value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_ColorMode(value));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).set_ColorMode(value));
 	}
 	final bool IsColorModeSupported(Windows.Devices.Scanners.ImageScannerColorMode value)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).abi_IsColorModeSupported(value, &_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).abi_IsColorModeSupported(value, &_ret));
 		return _ret;
 	}
 	final INT32 MinBrightness()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MinBrightness(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_MinBrightness(&_ret));
 		return _ret;
 	}
 	final INT32 MaxBrightness()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MaxBrightness(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_MaxBrightness(&_ret));
 		return _ret;
 	}
 	final UINT32 BrightnessStep()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_BrightnessStep(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_BrightnessStep(&_ret));
 		return _ret;
 	}
 	final INT32 DefaultBrightness()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_DefaultBrightness(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_DefaultBrightness(&_ret));
 		return _ret;
 	}
 	final INT32 Brightness()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_Brightness(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_Brightness(&_ret));
 		return _ret;
 	}
 	final void Brightness(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_Brightness(value));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).set_Brightness(value));
 	}
 	final INT32 MinContrast()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MinContrast(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_MinContrast(&_ret));
 		return _ret;
 	}
 	final INT32 MaxContrast()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_MaxContrast(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_MaxContrast(&_ret));
 		return _ret;
 	}
 	final UINT32 ContrastStep()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_ContrastStep(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_ContrastStep(&_ret));
 		return _ret;
 	}
 	final INT32 DefaultContrast()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_DefaultContrast(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_DefaultContrast(&_ret));
 		return _ret;
 	}
 	final INT32 Contrast()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).get_Contrast(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).get_Contrast(&_ret));
 		return _ret;
 	}
 	final void Contrast(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerSourceConfiguration).set_Contrast(value));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerSourceConfiguration)this.asInterface(uuid("bfb50055-0b44-4c82-9e89-205f9c234e59"))).set_Contrast(value));
 	}
 }
 
@@ -703,13 +703,13 @@ extern(Windows):
 	final bool Succeeded()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerPreviewResult).get_Succeeded(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerPreviewResult)this.asInterface(uuid("08b7fe8e-8891-441d-be9c-176fa109c8bb"))).get_Succeeded(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Scanners.ImageScannerFormat Format()
 	{
 		Windows.Devices.Scanners.ImageScannerFormat _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerPreviewResult).get_Format(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerPreviewResult)this.asInterface(uuid("08b7fe8e-8891-441d-be9c-176fa109c8bb"))).get_Format(&_ret));
 		return _ret;
 	}
 }
@@ -720,7 +720,7 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile) ScannedFiles()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile) _ret;
-		Debug.OK(this.as!(Windows.Devices.Scanners.IImageScannerScanResult).get_ScannedFiles(&_ret));
+		Debug.OK((cast(Windows.Devices.Scanners.IImageScannerScanResult)this.asInterface(uuid("c91624cd-9037-4e48-84c1-ac0975076bc5"))).get_ScannedFiles(&_ret));
 		return _ret;
 	}
 }

@@ -27,19 +27,19 @@ extern(Windows):
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Background.IDeviceServicingDetails).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Background.IDeviceServicingDetails)this.asInterface(uuid("4aabee29-2344-4ac4-8527-4a8ef6905645"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final HSTRING Arguments()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Background.IDeviceServicingDetails).get_Arguments(&_ret));
+		Debug.OK((cast(Windows.Devices.Background.IDeviceServicingDetails)this.asInterface(uuid("4aabee29-2344-4ac4-8527-4a8ef6905645"))).get_Arguments(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan ExpectedDuration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Background.IDeviceServicingDetails).get_ExpectedDuration(&_ret));
+		Debug.OK((cast(Windows.Devices.Background.IDeviceServicingDetails)this.asInterface(uuid("4aabee29-2344-4ac4-8527-4a8ef6905645"))).get_ExpectedDuration(&_ret));
 		return _ret;
 	}
 }
@@ -50,13 +50,13 @@ extern(Windows):
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Background.IDeviceUseDetails).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Background.IDeviceUseDetails)this.asInterface(uuid("7d565141-557e-4154-b994-e4f7a11fb323"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final HSTRING Arguments()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Background.IDeviceUseDetails).get_Arguments(&_ret));
+		Debug.OK((cast(Windows.Devices.Background.IDeviceUseDetails)this.asInterface(uuid("7d565141-557e-4154-b994-e4f7a11fb323"))).get_Arguments(&_ret));
 		return _ret;
 	}
 }

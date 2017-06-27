@@ -41,25 +41,25 @@ extern(Windows):
 	final Windows.Media.Capture.CapturedFrame Frame()
 	{
 		Windows.Media.Capture.CapturedFrame _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoCapturedEventArgs).get_Frame(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.Core.IVariablePhotoCapturedEventArgs)this.asInterface(uuid("d1eb4c5c-1b53-4e4a-8b5c-db7887ac949b"))).get_Frame(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan CaptureTimeOffset()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoCapturedEventArgs).get_CaptureTimeOffset(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.Core.IVariablePhotoCapturedEventArgs)this.asInterface(uuid("d1eb4c5c-1b53-4e4a-8b5c-db7887ac949b"))).get_CaptureTimeOffset(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(UINT32) UsedFrameControllerIndex()
 	{
 		Windows.Foundation.IReference!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoCapturedEventArgs).get_UsedFrameControllerIndex(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.Core.IVariablePhotoCapturedEventArgs)this.asInterface(uuid("d1eb4c5c-1b53-4e4a-8b5c-db7887ac949b"))).get_UsedFrameControllerIndex(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Capture.CapturedFrameControlValues CapturedFrameControlValues()
 	{
 		Windows.Media.Capture.CapturedFrameControlValues _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoCapturedEventArgs).get_CapturedFrameControlValues(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.Core.IVariablePhotoCapturedEventArgs)this.asInterface(uuid("d1eb4c5c-1b53-4e4a-8b5c-db7887ac949b"))).get_CapturedFrameControlValues(&_ret));
 		return _ret;
 	}
 }
@@ -70,45 +70,45 @@ extern(Windows):
 	final Windows.Foundation.IAsyncAction StartAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture).abi_StartAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture)this.asInterface(uuid("d0112d1d-031e-4041-a6d6-bd742476a8ee"))).abi_StartAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction StopAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture).abi_StopAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture)this.asInterface(uuid("d0112d1d-031e-4041-a6d6-bd742476a8ee"))).abi_StopAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction FinishAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture).abi_FinishAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture)this.asInterface(uuid("d0112d1d-031e-4041-a6d6-bd742476a8ee"))).abi_FinishAsync(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnPhotoCaptured(void delegate(Windows.Media.Capture.Core.VariablePhotoSequenceCapture, Windows.Media.Capture.Core.VariablePhotoCapturedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture).add_PhotoCaptured(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Core.VariablePhotoSequenceCapture, Windows.Media.Capture.Core.VariablePhotoCapturedEventArgs), Windows.Media.Capture.Core.VariablePhotoSequenceCapture, Windows.Media.Capture.Core.VariablePhotoCapturedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture)this.asInterface(uuid("d0112d1d-031e-4041-a6d6-bd742476a8ee"))).add_PhotoCaptured(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Core.VariablePhotoSequenceCapture, Windows.Media.Capture.Core.VariablePhotoCapturedEventArgs), Windows.Media.Capture.Core.VariablePhotoSequenceCapture, Windows.Media.Capture.Core.VariablePhotoCapturedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePhotoCaptured(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture).remove_PhotoCaptured(token));
+		Debug.OK((cast(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture)this.asInterface(uuid("d0112d1d-031e-4041-a6d6-bd742476a8ee"))).remove_PhotoCaptured(token));
 	}
 	final EventRegistrationToken OnStopped(void delegate(Windows.Media.Capture.Core.VariablePhotoSequenceCapture, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Core.VariablePhotoSequenceCapture, IInspectable), Windows.Media.Capture.Core.VariablePhotoSequenceCapture, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture)this.asInterface(uuid("d0112d1d-031e-4041-a6d6-bd742476a8ee"))).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.Core.VariablePhotoSequenceCapture, IInspectable), Windows.Media.Capture.Core.VariablePhotoSequenceCapture, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeStopped(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture).remove_Stopped(token));
+		Debug.OK((cast(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture)this.asInterface(uuid("d0112d1d-031e-4041-a6d6-bd742476a8ee"))).remove_Stopped(token));
 	}
 	final Windows.Foundation.IAsyncAction UpdateSettingsAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture2).abi_UpdateSettingsAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Capture.Core.IVariablePhotoSequenceCapture2)this.asInterface(uuid("fe2c62bc-50b0-43e3-917c-e3b92798942f"))).abi_UpdateSettingsAsync(&_ret));
 		return _ret;
 	}
 }

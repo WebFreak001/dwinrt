@@ -67,71 +67,71 @@ extern(Windows):
 	final Windows.Foundation.DateTime StartTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofence).get_StartTime(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofence)this.asInterface(uuid("9c090823-edb8-47e0-8245-5bf61d321f2d"))).get_StartTime(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Duration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofence).get_Duration(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofence)this.asInterface(uuid("9c090823-edb8-47e0-8245-5bf61d321f2d"))).get_Duration(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan DwellTime()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofence).get_DwellTime(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofence)this.asInterface(uuid("9c090823-edb8-47e0-8245-5bf61d321f2d"))).get_DwellTime(&_ret));
 		return _ret;
 	}
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofence).get_Id(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofence)this.asInterface(uuid("9c090823-edb8-47e0-8245-5bf61d321f2d"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.Geofencing.MonitoredGeofenceStates MonitoredStates()
 	{
 		Windows.Devices.Geolocation.Geofencing.MonitoredGeofenceStates _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofence).get_MonitoredStates(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofence)this.asInterface(uuid("9c090823-edb8-47e0-8245-5bf61d321f2d"))).get_MonitoredStates(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.IGeoshape Geoshape()
 	{
 		Windows.Devices.Geolocation.IGeoshape _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofence).get_Geoshape(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofence)this.asInterface(uuid("9c090823-edb8-47e0-8245-5bf61d321f2d"))).get_Geoshape(&_ret));
 		return _ret;
 	}
 	final bool SingleUse()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofence).get_SingleUse(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofence)this.asInterface(uuid("9c090823-edb8-47e0-8245-5bf61d321f2d"))).get_SingleUse(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Geolocation.Geofencing.Geofence New(HSTRING id, Windows.Devices.Geolocation.IGeoshape geoshape)
 	{
 		auto factory = factory!(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory);
 		Windows.Devices.Geolocation.Geofencing.Geofence _ret;
-		Debug.OK(factory.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory).abi_Create(id, geoshape, &_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory)factory.asInterface(uuid("841f624b-325f-4b90-bca7-2b8022a93796"))).abi_Create(id, geoshape, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Geolocation.Geofencing.Geofence New(HSTRING id, Windows.Devices.Geolocation.IGeoshape geoshape, Windows.Devices.Geolocation.Geofencing.MonitoredGeofenceStates monitoredStates, bool singleUse)
 	{
 		auto factory = factory!(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory);
 		Windows.Devices.Geolocation.Geofencing.Geofence _ret;
-		Debug.OK(factory.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory).abi_CreateWithMonitorStates(id, geoshape, monitoredStates, singleUse, &_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory)factory.asInterface(uuid("841f624b-325f-4b90-bca7-2b8022a93796"))).abi_CreateWithMonitorStates(id, geoshape, monitoredStates, singleUse, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Geolocation.Geofencing.Geofence New(HSTRING id, Windows.Devices.Geolocation.IGeoshape geoshape, Windows.Devices.Geolocation.Geofencing.MonitoredGeofenceStates monitoredStates, bool singleUse, Windows.Foundation.TimeSpan dwellTime)
 	{
 		auto factory = factory!(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory);
 		Windows.Devices.Geolocation.Geofencing.Geofence _ret;
-		Debug.OK(factory.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory).abi_CreateWithMonitorStatesAndDwellTime(id, geoshape, monitoredStates, singleUse, dwellTime, &_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory)factory.asInterface(uuid("841f624b-325f-4b90-bca7-2b8022a93796"))).abi_CreateWithMonitorStatesAndDwellTime(id, geoshape, monitoredStates, singleUse, dwellTime, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Geolocation.Geofencing.Geofence New(HSTRING id, Windows.Devices.Geolocation.IGeoshape geoshape, Windows.Devices.Geolocation.Geofencing.MonitoredGeofenceStates monitoredStates, bool singleUse, Windows.Foundation.TimeSpan dwellTime, Windows.Foundation.DateTime startTime, Windows.Foundation.TimeSpan duration)
 	{
 		auto factory = factory!(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory);
 		Windows.Devices.Geolocation.Geofencing.Geofence _ret;
-		Debug.OK(factory.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory).abi_CreateWithMonitorStatesDwellTimeStartTimeAndDuration(id, geoshape, monitoredStates, singleUse, dwellTime, startTime, duration, &_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory)factory.asInterface(uuid("841f624b-325f-4b90-bca7-2b8022a93796"))).abi_CreateWithMonitorStatesDwellTimeStartTimeAndDuration(id, geoshape, monitoredStates, singleUse, dwellTime, startTime, duration, &_ret));
 		return _ret;
 	}
 }
@@ -142,46 +142,46 @@ extern(Windows):
 	final Windows.Devices.Geolocation.Geofencing.GeofenceMonitorStatus Status()
 	{
 		Windows.Devices.Geolocation.Geofencing.GeofenceMonitorStatus _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor).get_Status(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor)this.asInterface(uuid("4c0f5f78-1c1f-4621-bbbd-833b92247226"))).get_Status(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Devices.Geolocation.Geofencing.Geofence) Geofences()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Devices.Geolocation.Geofencing.Geofence) _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor).get_Geofences(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor)this.asInterface(uuid("4c0f5f78-1c1f-4621-bbbd-833b92247226"))).get_Geofences(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.Geoposition LastKnownGeoposition()
 	{
 		Windows.Devices.Geolocation.Geoposition _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor).get_LastKnownGeoposition(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor)this.asInterface(uuid("4c0f5f78-1c1f-4621-bbbd-833b92247226"))).get_LastKnownGeoposition(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnGeofenceStateChanged(void delegate(Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor).add_GeofenceStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable), Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor)this.asInterface(uuid("4c0f5f78-1c1f-4621-bbbd-833b92247226"))).add_GeofenceStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable), Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeGeofenceStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor).remove_GeofenceStateChanged(token));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor)this.asInterface(uuid("4c0f5f78-1c1f-4621-bbbd-833b92247226"))).remove_GeofenceStateChanged(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geofencing.GeofenceStateChangeReport) ReadReports()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geofencing.GeofenceStateChangeReport) _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor).abi_ReadReports(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor)this.asInterface(uuid("4c0f5f78-1c1f-4621-bbbd-833b92247226"))).abi_ReadReports(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnStatusChanged(void delegate(Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor).add_StatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable), Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor)this.asInterface(uuid("4c0f5f78-1c1f-4621-bbbd-833b92247226"))).add_StatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable), Windows.Devices.Geolocation.Geofencing.GeofenceMonitor, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor).remove_StatusChanged(token));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitor)this.asInterface(uuid("4c0f5f78-1c1f-4621-bbbd-833b92247226"))).remove_StatusChanged(token));
 	}
 
 	private static Windows.Devices.Geolocation.Geofencing.IGeofenceMonitorStatics _staticInstance;
@@ -193,7 +193,7 @@ extern(Windows):
 	static Windows.Devices.Geolocation.Geofencing.GeofenceMonitor Current()
 	{
 		Windows.Devices.Geolocation.Geofencing.GeofenceMonitor _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceMonitorStatics).get_Current(&_ret));
+		Debug.OK(staticInstance.get_Current(&_ret));
 		return _ret;
 	}
 }
@@ -204,25 +204,25 @@ extern(Windows):
 	final Windows.Devices.Geolocation.Geofencing.GeofenceState NewState()
 	{
 		Windows.Devices.Geolocation.Geofencing.GeofenceState _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceStateChangeReport).get_NewState(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceStateChangeReport)this.asInterface(uuid("9a243c18-2464-4c89-be05-b3ffff5babc5"))).get_NewState(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.Geofencing.Geofence Geofence()
 	{
 		Windows.Devices.Geolocation.Geofencing.Geofence _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceStateChangeReport).get_Geofence(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceStateChangeReport)this.asInterface(uuid("9a243c18-2464-4c89-be05-b3ffff5babc5"))).get_Geofence(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.Geoposition Geoposition()
 	{
 		Windows.Devices.Geolocation.Geoposition _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceStateChangeReport).get_Geoposition(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceStateChangeReport)this.asInterface(uuid("9a243c18-2464-4c89-be05-b3ffff5babc5"))).get_Geoposition(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.Geofencing.GeofenceRemovalReason RemovalReason()
 	{
 		Windows.Devices.Geolocation.Geofencing.GeofenceRemovalReason _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.Geofencing.IGeofenceStateChangeReport).get_RemovalReason(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceStateChangeReport)this.asInterface(uuid("9a243c18-2464-4c89-be05-b3ffff5babc5"))).get_RemovalReason(&_ret));
 		return _ret;
 	}
 }

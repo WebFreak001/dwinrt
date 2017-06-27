@@ -65,48 +65,48 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Display.Core.HdmiDisplayMode) GetSupportedDisplayModes()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Display.Core.HdmiDisplayMode) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayInformation).abi_GetSupportedDisplayModes(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayInformation)this.asInterface(uuid("130b3c0a-f565-476e-abd5-ea05aee74c69"))).abi_GetSupportedDisplayModes(&_ret));
 		return _ret;
 	}
 	final Windows.Graphics.Display.Core.HdmiDisplayMode GetCurrentDisplayMode()
 	{
 		Windows.Graphics.Display.Core.HdmiDisplayMode _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayInformation).abi_GetCurrentDisplayMode(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayInformation)this.asInterface(uuid("130b3c0a-f565-476e-abd5-ea05aee74c69"))).abi_GetCurrentDisplayMode(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction SetDefaultDisplayModeAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayInformation).abi_SetDefaultDisplayModeAsync(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayInformation)this.asInterface(uuid("130b3c0a-f565-476e-abd5-ea05aee74c69"))).abi_SetDefaultDisplayModeAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) RequestSetCurrentDisplayModeAsync(Windows.Graphics.Display.Core.HdmiDisplayMode mode)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayInformation).abi_RequestSetCurrentDisplayModeAsync(mode, &_ret));
+		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayInformation)this.asInterface(uuid("130b3c0a-f565-476e-abd5-ea05aee74c69"))).abi_RequestSetCurrentDisplayModeAsync(mode, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) RequestSetCurrentDisplayModeWithHdrAsync(Windows.Graphics.Display.Core.HdmiDisplayMode mode, Windows.Graphics.Display.Core.HdmiDisplayHdrOption hdrOption)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayInformation).abi_RequestSetCurrentDisplayModeWithHdrAsync(mode, hdrOption, &_ret));
+		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayInformation)this.asInterface(uuid("130b3c0a-f565-476e-abd5-ea05aee74c69"))).abi_RequestSetCurrentDisplayModeWithHdrAsync(mode, hdrOption, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) RequestSetCurrentDisplayModeWithHdrAndMetadataAsync(Windows.Graphics.Display.Core.HdmiDisplayMode mode, Windows.Graphics.Display.Core.HdmiDisplayHdrOption hdrOption, Windows.Graphics.Display.Core.HdmiDisplayHdr2086Metadata hdrMetadata)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayInformation).abi_RequestSetCurrentDisplayModeWithHdrAndMetadataAsync(mode, hdrOption, hdrMetadata, &_ret));
+		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayInformation)this.asInterface(uuid("130b3c0a-f565-476e-abd5-ea05aee74c69"))).abi_RequestSetCurrentDisplayModeWithHdrAndMetadataAsync(mode, hdrOption, hdrMetadata, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnDisplayModesChanged(void delegate(Windows.Graphics.Display.Core.HdmiDisplayInformation, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayInformation).add_DisplayModesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.Core.HdmiDisplayInformation, IInspectable), Windows.Graphics.Display.Core.HdmiDisplayInformation, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayInformation)this.asInterface(uuid("130b3c0a-f565-476e-abd5-ea05aee74c69"))).add_DisplayModesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.Core.HdmiDisplayInformation, IInspectable), Windows.Graphics.Display.Core.HdmiDisplayInformation, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeDisplayModesChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayInformation).remove_DisplayModesChanged(token));
+		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayInformation)this.asInterface(uuid("130b3c0a-f565-476e-abd5-ea05aee74c69"))).remove_DisplayModesChanged(token));
 	}
 
 	private static Windows.Graphics.Display.Core.IHdmiDisplayInformationStatics _staticInstance;
@@ -118,7 +118,7 @@ extern(Windows):
 	static Windows.Graphics.Display.Core.HdmiDisplayInformation GetForCurrentView()
 	{
 		Windows.Graphics.Display.Core.HdmiDisplayInformation _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Display.Core.IHdmiDisplayInformationStatics).abi_GetForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 }
@@ -129,67 +129,67 @@ extern(Windows):
 	final UINT32 ResolutionWidthInRawPixels()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayMode).get_ResolutionWidthInRawPixels(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayMode)this.asInterface(uuid("0c06d5ad-1b90-4f51-9981-ef5a1c0ddf66"))).get_ResolutionWidthInRawPixels(&_ret));
 		return _ret;
 	}
 	final UINT32 ResolutionHeightInRawPixels()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayMode).get_ResolutionHeightInRawPixels(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayMode)this.asInterface(uuid("0c06d5ad-1b90-4f51-9981-ef5a1c0ddf66"))).get_ResolutionHeightInRawPixels(&_ret));
 		return _ret;
 	}
 	final double RefreshRate()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayMode).get_RefreshRate(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayMode)this.asInterface(uuid("0c06d5ad-1b90-4f51-9981-ef5a1c0ddf66"))).get_RefreshRate(&_ret));
 		return _ret;
 	}
 	final bool StereoEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayMode).get_StereoEnabled(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayMode)this.asInterface(uuid("0c06d5ad-1b90-4f51-9981-ef5a1c0ddf66"))).get_StereoEnabled(&_ret));
 		return _ret;
 	}
 	final UINT16 BitsPerPixel()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayMode).get_BitsPerPixel(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayMode)this.asInterface(uuid("0c06d5ad-1b90-4f51-9981-ef5a1c0ddf66"))).get_BitsPerPixel(&_ret));
 		return _ret;
 	}
 	final bool IsEqual(Windows.Graphics.Display.Core.HdmiDisplayMode mode)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayMode).abi_IsEqual(mode, &_ret));
+		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayMode)this.asInterface(uuid("0c06d5ad-1b90-4f51-9981-ef5a1c0ddf66"))).abi_IsEqual(mode, &_ret));
 		return _ret;
 	}
 	final Windows.Graphics.Display.Core.HdmiDisplayColorSpace ColorSpace()
 	{
 		Windows.Graphics.Display.Core.HdmiDisplayColorSpace _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayMode).get_ColorSpace(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayMode)this.asInterface(uuid("0c06d5ad-1b90-4f51-9981-ef5a1c0ddf66"))).get_ColorSpace(&_ret));
 		return _ret;
 	}
 	final Windows.Graphics.Display.Core.HdmiDisplayPixelEncoding PixelEncoding()
 	{
 		Windows.Graphics.Display.Core.HdmiDisplayPixelEncoding _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayMode).get_PixelEncoding(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayMode)this.asInterface(uuid("0c06d5ad-1b90-4f51-9981-ef5a1c0ddf66"))).get_PixelEncoding(&_ret));
 		return _ret;
 	}
 	final bool IsSdrLuminanceSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayMode).get_IsSdrLuminanceSupported(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayMode)this.asInterface(uuid("0c06d5ad-1b90-4f51-9981-ef5a1c0ddf66"))).get_IsSdrLuminanceSupported(&_ret));
 		return _ret;
 	}
 	final bool IsSmpte2084Supported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayMode).get_IsSmpte2084Supported(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayMode)this.asInterface(uuid("0c06d5ad-1b90-4f51-9981-ef5a1c0ddf66"))).get_IsSmpte2084Supported(&_ret));
 		return _ret;
 	}
 	final bool Is2086MetadataSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Graphics.Display.Core.IHdmiDisplayMode).get_Is2086MetadataSupported(&_ret));
+		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayMode)this.asInterface(uuid("0c06d5ad-1b90-4f51-9981-ef5a1c0ddf66"))).get_Is2086MetadataSupported(&_ret));
 		return _ret;
 	}
 }

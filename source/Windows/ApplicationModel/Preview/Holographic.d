@@ -22,13 +22,13 @@ interface HolographicApplicationPreview
 	static bool IsCurrentViewPresentedOnHolographicDisplay()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Preview.Holographic.IHolographicApplicationPreviewStatics).abi_IsCurrentViewPresentedOnHolographicDisplay(&_ret));
+		Debug.OK(staticInstance.abi_IsCurrentViewPresentedOnHolographicDisplay(&_ret));
 		return _ret;
 	}
 	static bool IsHolographicActivation(Windows.ApplicationModel.Activation.IActivatedEventArgs activatedEventArgs)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Preview.Holographic.IHolographicApplicationPreviewStatics).abi_IsHolographicActivation(activatedEventArgs, &_ret));
+		Debug.OK(staticInstance.abi_IsHolographicActivation(activatedEventArgs, &_ret));
 		return _ret;
 	}
 }

@@ -31,44 +31,44 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.UI.Notifications.Management.UserNotificationListenerAccessStatus) RequestAccessAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.UI.Notifications.Management.UserNotificationListenerAccessStatus) _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.Management.IUserNotificationListener).abi_RequestAccessAsync(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.Management.IUserNotificationListener)this.asInterface(uuid("62553e41-8a06-4cef-8215-6033a5be4b03"))).abi_RequestAccessAsync(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Notifications.Management.UserNotificationListenerAccessStatus GetAccessStatus()
 	{
 		Windows.UI.Notifications.Management.UserNotificationListenerAccessStatus _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.Management.IUserNotificationListener).abi_GetAccessStatus(&_ret));
+		Debug.OK((cast(Windows.UI.Notifications.Management.IUserNotificationListener)this.asInterface(uuid("62553e41-8a06-4cef-8215-6033a5be4b03"))).abi_GetAccessStatus(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnNotificationChanged(void delegate(Windows.UI.Notifications.Management.UserNotificationListener, Windows.UI.Notifications.UserNotificationChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Notifications.Management.IUserNotificationListener).add_NotificationChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.Management.UserNotificationListener, Windows.UI.Notifications.UserNotificationChangedEventArgs), Windows.UI.Notifications.Management.UserNotificationListener, Windows.UI.Notifications.UserNotificationChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Notifications.Management.IUserNotificationListener)this.asInterface(uuid("62553e41-8a06-4cef-8215-6033a5be4b03"))).add_NotificationChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Notifications.Management.UserNotificationListener, Windows.UI.Notifications.UserNotificationChangedEventArgs), Windows.UI.Notifications.Management.UserNotificationListener, Windows.UI.Notifications.UserNotificationChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeNotificationChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.Management.IUserNotificationListener).remove_NotificationChanged(token));
+		Debug.OK((cast(Windows.UI.Notifications.Management.IUserNotificationListener)this.asInterface(uuid("62553e41-8a06-4cef-8215-6033a5be4b03"))).remove_NotificationChanged(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.UserNotification)) GetNotificationsAsync(Windows.UI.Notifications.NotificationKinds kinds)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.UserNotification)) _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.Management.IUserNotificationListener).abi_GetNotificationsAsync(kinds, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.Management.IUserNotificationListener)this.asInterface(uuid("62553e41-8a06-4cef-8215-6033a5be4b03"))).abi_GetNotificationsAsync(kinds, &_ret));
 		return _ret;
 	}
 	final Windows.UI.Notifications.UserNotification GetNotification(UINT32 notificationId)
 	{
 		Windows.UI.Notifications.UserNotification _ret;
-		Debug.OK(this.as!(Windows.UI.Notifications.Management.IUserNotificationListener).abi_GetNotification(notificationId, &_ret));
+		Debug.OK((cast(Windows.UI.Notifications.Management.IUserNotificationListener)this.asInterface(uuid("62553e41-8a06-4cef-8215-6033a5be4b03"))).abi_GetNotification(notificationId, &_ret));
 		return _ret;
 	}
 	final void ClearNotifications()
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.Management.IUserNotificationListener).abi_ClearNotifications());
+		Debug.OK((cast(Windows.UI.Notifications.Management.IUserNotificationListener)this.asInterface(uuid("62553e41-8a06-4cef-8215-6033a5be4b03"))).abi_ClearNotifications());
 	}
 	final void RemoveNotification(UINT32 notificationId)
 	{
-		Debug.OK(this.as!(Windows.UI.Notifications.Management.IUserNotificationListener).abi_RemoveNotification(notificationId));
+		Debug.OK((cast(Windows.UI.Notifications.Management.IUserNotificationListener)this.asInterface(uuid("62553e41-8a06-4cef-8215-6033a5be4b03"))).abi_RemoveNotification(notificationId));
 	}
 
 	private static Windows.UI.Notifications.Management.IUserNotificationListenerStatics _staticInstance;
@@ -80,7 +80,7 @@ extern(Windows):
 	static Windows.UI.Notifications.Management.UserNotificationListener Current()
 	{
 		Windows.UI.Notifications.Management.UserNotificationListener _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Notifications.Management.IUserNotificationListenerStatics).get_Current(&_ret));
+		Debug.OK(staticInstance.get_Current(&_ret));
 		return _ret;
 	}
 }

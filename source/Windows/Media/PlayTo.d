@@ -265,7 +265,7 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan Time()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.ICurrentTimeChangeRequestedEventArgs).get_Time(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.ICurrentTimeChangeRequestedEventArgs)this.asInterface(uuid("99711324-edc7-4bf5-91f6-3c8627db59e5"))).get_Time(&_ret));
 		return _ret;
 	}
 }
@@ -276,7 +276,7 @@ extern(Windows):
 	final bool Mute()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IMuteChangeRequestedEventArgs).get_Mute(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IMuteChangeRequestedEventArgs)this.asInterface(uuid("e4b4f5f6-af1f-4f1e-b437-7da32400e1d4"))).get_Mute(&_ret));
 		return _ret;
 	}
 }
@@ -288,44 +288,44 @@ extern(Windows):
 	final Windows.Media.PlayTo.PlayToConnectionState State()
 	{
 		Windows.Media.PlayTo.PlayToConnectionState _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToConnection).get_State(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToConnection)this.asInterface(uuid("112fbfc8-f235-4fde-8d41-9bf27c9e9a40"))).get_State(&_ret));
 		return _ret;
 	}
 	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
 	final EventRegistrationToken OnStateChanged(void delegate(Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionStateChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToConnection).add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionStateChangedEventArgs), Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionStateChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToConnection)this.asInterface(uuid("112fbfc8-f235-4fde-8d41-9bf27c9e9a40"))).add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionStateChangedEventArgs), Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionStateChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
 	final void removeStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToConnection).remove_StateChanged(token));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToConnection)this.asInterface(uuid("112fbfc8-f235-4fde-8d41-9bf27c9e9a40"))).remove_StateChanged(token));
 	}
 	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
 	final EventRegistrationToken OnTransferred(void delegate(Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionTransferredEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToConnection).add_Transferred(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionTransferredEventArgs), Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionTransferredEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToConnection)this.asInterface(uuid("112fbfc8-f235-4fde-8d41-9bf27c9e9a40"))).add_Transferred(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionTransferredEventArgs), Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionTransferredEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
 	final void removeTransferred(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToConnection).remove_Transferred(token));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToConnection)this.asInterface(uuid("112fbfc8-f235-4fde-8d41-9bf27c9e9a40"))).remove_Transferred(token));
 	}
 	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
 	final EventRegistrationToken OnError(void delegate(Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionErrorEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToConnection).add_Error(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionErrorEventArgs), Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionErrorEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToConnection)this.asInterface(uuid("112fbfc8-f235-4fde-8d41-9bf27c9e9a40"))).add_Error(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionErrorEventArgs), Windows.Media.PlayTo.PlayToConnection, Windows.Media.PlayTo.PlayToConnectionErrorEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")
 	final void removeError(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToConnection).remove_Error(token));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToConnection)this.asInterface(uuid("112fbfc8-f235-4fde-8d41-9bf27c9e9a40"))).remove_Error(token));
 	}
 }
 
@@ -336,14 +336,14 @@ extern(Windows):
 	final Windows.Media.PlayTo.PlayToConnectionError Code()
 	{
 		Windows.Media.PlayTo.PlayToConnectionError _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToConnectionErrorEventArgs).get_Code(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToConnectionErrorEventArgs)this.asInterface(uuid("bf5eada6-88e6-445f-9d40-d9b9f8939896"))).get_Code(&_ret));
 		return _ret;
 	}
 	deprecated("PlayToConnectionErrorEventArgs may be altered or unavailable for releases after Windows 10. Instead, use CastingConnectionErrorOccurredEventArgs.")
 	final HSTRING Message()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToConnectionErrorEventArgs).get_Message(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToConnectionErrorEventArgs)this.asInterface(uuid("bf5eada6-88e6-445f-9d40-d9b9f8939896"))).get_Message(&_ret));
 		return _ret;
 	}
 }
@@ -355,14 +355,14 @@ extern(Windows):
 	final Windows.Media.PlayTo.PlayToConnectionState PreviousState()
 	{
 		Windows.Media.PlayTo.PlayToConnectionState _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToConnectionStateChangedEventArgs).get_PreviousState(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToConnectionStateChangedEventArgs)this.asInterface(uuid("68c4b50f-0c20-4980-8602-58c62238d423"))).get_PreviousState(&_ret));
 		return _ret;
 	}
 	deprecated("PlayToConnectionStateChangedEventArgs may be altered or unavailable for releases after Windows 10.")
 	final Windows.Media.PlayTo.PlayToConnectionState CurrentState()
 	{
 		Windows.Media.PlayTo.PlayToConnectionState _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToConnectionStateChangedEventArgs).get_CurrentState(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToConnectionStateChangedEventArgs)this.asInterface(uuid("68c4b50f-0c20-4980-8602-58c62238d423"))).get_CurrentState(&_ret));
 		return _ret;
 	}
 }
@@ -374,14 +374,14 @@ extern(Windows):
 	final Windows.Media.PlayTo.PlayToSource PreviousSource()
 	{
 		Windows.Media.PlayTo.PlayToSource _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToConnectionTransferredEventArgs).get_PreviousSource(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToConnectionTransferredEventArgs)this.asInterface(uuid("fae3193a-0683-47d9-8df0-18cbb48984d8"))).get_PreviousSource(&_ret));
 		return _ret;
 	}
 	deprecated("PlayToConnectionTransferredEventArgs may be altered or unavailable for releases after Windows 10.")
 	final Windows.Media.PlayTo.PlayToSource CurrentSource()
 	{
 		Windows.Media.PlayTo.PlayToSource _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToConnectionTransferredEventArgs).get_CurrentSource(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToConnectionTransferredEventArgs)this.asInterface(uuid("fae3193a-0683-47d9-8df0-18cbb48984d8"))).get_CurrentSource(&_ret));
 		return _ret;
 	}
 }
@@ -393,36 +393,36 @@ extern(Windows):
 	final EventRegistrationToken OnSourceRequested(void delegate(Windows.Media.PlayTo.PlayToManager, Windows.Media.PlayTo.PlayToSourceRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToManager).add_SourceRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToManager, Windows.Media.PlayTo.PlayToSourceRequestedEventArgs), Windows.Media.PlayTo.PlayToManager, Windows.Media.PlayTo.PlayToSourceRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToManager)this.asInterface(uuid("f56a206e-1b77-42ef-8f0d-b949f8d9b260"))).add_SourceRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToManager, Windows.Media.PlayTo.PlayToSourceRequestedEventArgs), Windows.Media.PlayTo.PlayToManager, Windows.Media.PlayTo.PlayToSourceRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")
 	final void removeSourceRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToManager).remove_SourceRequested(token));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToManager)this.asInterface(uuid("f56a206e-1b77-42ef-8f0d-b949f8d9b260"))).remove_SourceRequested(token));
 	}
 	deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")
 	final EventRegistrationToken OnSourceSelected(void delegate(Windows.Media.PlayTo.PlayToManager, Windows.Media.PlayTo.PlayToSourceSelectedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToManager).add_SourceSelected(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToManager, Windows.Media.PlayTo.PlayToSourceSelectedEventArgs), Windows.Media.PlayTo.PlayToManager, Windows.Media.PlayTo.PlayToSourceSelectedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToManager)this.asInterface(uuid("f56a206e-1b77-42ef-8f0d-b949f8d9b260"))).add_SourceSelected(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToManager, Windows.Media.PlayTo.PlayToSourceSelectedEventArgs), Windows.Media.PlayTo.PlayToManager, Windows.Media.PlayTo.PlayToSourceSelectedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")
 	final void removeSourceSelected(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToManager).remove_SourceSelected(token));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToManager)this.asInterface(uuid("f56a206e-1b77-42ef-8f0d-b949f8d9b260"))).remove_SourceSelected(token));
 	}
 	deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")
 	final void DefaultSourceSelection(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToManager).set_DefaultSourceSelection(value));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToManager)this.asInterface(uuid("f56a206e-1b77-42ef-8f0d-b949f8d9b260"))).set_DefaultSourceSelection(value));
 	}
 	deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")
 	final bool DefaultSourceSelection()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToManager).get_DefaultSourceSelection(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToManager)this.asInterface(uuid("f56a206e-1b77-42ef-8f0d-b949f8d9b260"))).get_DefaultSourceSelection(&_ret));
 		return _ret;
 	}
 
@@ -436,13 +436,13 @@ extern(Windows):
 	static Windows.Media.PlayTo.PlayToManager GetForCurrentView()
 	{
 		Windows.Media.PlayTo.PlayToManager _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.PlayTo.IPlayToManagerStatics).abi_GetForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 	deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")
 	static void ShowPlayToUI()
 	{
-		Debug.OK(staticInstance.as!(Windows.Media.PlayTo.IPlayToManagerStatics).abi_ShowPlayToUI());
+		Debug.OK(staticInstance.abi_ShowPlayToUI());
 	}
 }
 
@@ -452,204 +452,204 @@ extern(Windows):
 	final EventRegistrationToken OnPlayRequested(void delegate(Windows.Media.PlayTo.PlayToReceiver, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).add_PlayRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, IInspectable), Windows.Media.PlayTo.PlayToReceiver, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).add_PlayRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, IInspectable), Windows.Media.PlayTo.PlayToReceiver, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removePlayRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).remove_PlayRequested(token));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).remove_PlayRequested(token));
 	}
 	final EventRegistrationToken OnPauseRequested(void delegate(Windows.Media.PlayTo.PlayToReceiver, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).add_PauseRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, IInspectable), Windows.Media.PlayTo.PlayToReceiver, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).add_PauseRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, IInspectable), Windows.Media.PlayTo.PlayToReceiver, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removePauseRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).remove_PauseRequested(token));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).remove_PauseRequested(token));
 	}
 	final EventRegistrationToken OnSourceChangeRequested(void delegate(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.SourceChangeRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).add_SourceChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.SourceChangeRequestedEventArgs), Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.SourceChangeRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).add_SourceChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.SourceChangeRequestedEventArgs), Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.SourceChangeRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSourceChangeRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).remove_SourceChangeRequested(token));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).remove_SourceChangeRequested(token));
 	}
 	final EventRegistrationToken OnPlaybackRateChangeRequested(void delegate(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.PlaybackRateChangeRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).add_PlaybackRateChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.PlaybackRateChangeRequestedEventArgs), Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.PlaybackRateChangeRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).add_PlaybackRateChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.PlaybackRateChangeRequestedEventArgs), Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.PlaybackRateChangeRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePlaybackRateChangeRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).remove_PlaybackRateChangeRequested(token));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).remove_PlaybackRateChangeRequested(token));
 	}
 	final EventRegistrationToken OnCurrentTimeChangeRequested(void delegate(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.CurrentTimeChangeRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).add_CurrentTimeChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.CurrentTimeChangeRequestedEventArgs), Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.CurrentTimeChangeRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).add_CurrentTimeChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.CurrentTimeChangeRequestedEventArgs), Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.CurrentTimeChangeRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCurrentTimeChangeRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).remove_CurrentTimeChangeRequested(token));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).remove_CurrentTimeChangeRequested(token));
 	}
 	final EventRegistrationToken OnMuteChangeRequested(void delegate(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.MuteChangeRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).add_MuteChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.MuteChangeRequestedEventArgs), Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.MuteChangeRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).add_MuteChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.MuteChangeRequestedEventArgs), Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.MuteChangeRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMuteChangeRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).remove_MuteChangeRequested(token));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).remove_MuteChangeRequested(token));
 	}
 	final EventRegistrationToken OnVolumeChangeRequested(void delegate(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.VolumeChangeRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).add_VolumeChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.VolumeChangeRequestedEventArgs), Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.VolumeChangeRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).add_VolumeChangeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.VolumeChangeRequestedEventArgs), Windows.Media.PlayTo.PlayToReceiver, Windows.Media.PlayTo.VolumeChangeRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeVolumeChangeRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).remove_VolumeChangeRequested(token));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).remove_VolumeChangeRequested(token));
 	}
 	final EventRegistrationToken OnTimeUpdateRequested(void delegate(Windows.Media.PlayTo.PlayToReceiver, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).add_TimeUpdateRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, IInspectable), Windows.Media.PlayTo.PlayToReceiver, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).add_TimeUpdateRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, IInspectable), Windows.Media.PlayTo.PlayToReceiver, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeTimeUpdateRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).remove_TimeUpdateRequested(token));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).remove_TimeUpdateRequested(token));
 	}
 	final EventRegistrationToken OnStopRequested(void delegate(Windows.Media.PlayTo.PlayToReceiver, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).add_StopRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, IInspectable), Windows.Media.PlayTo.PlayToReceiver, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).add_StopRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.PlayTo.PlayToReceiver, IInspectable), Windows.Media.PlayTo.PlayToReceiver, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeStopRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).remove_StopRequested(token));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).remove_StopRequested(token));
 	}
 	final void NotifyVolumeChange(double volume, bool mute)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifyVolumeChange(volume, mute));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).abi_NotifyVolumeChange(volume, mute));
 	}
 	final void NotifyRateChange(double rate)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifyRateChange(rate));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).abi_NotifyRateChange(rate));
 	}
 	final void NotifyLoadedMetadata()
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifyLoadedMetadata());
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).abi_NotifyLoadedMetadata());
 	}
 	final void NotifyTimeUpdate(Windows.Foundation.TimeSpan currentTime)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifyTimeUpdate(currentTime));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).abi_NotifyTimeUpdate(currentTime));
 	}
 	final void NotifyDurationChange(Windows.Foundation.TimeSpan duration)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifyDurationChange(duration));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).abi_NotifyDurationChange(duration));
 	}
 	final void NotifySeeking()
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifySeeking());
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).abi_NotifySeeking());
 	}
 	final void NotifySeeked()
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifySeeked());
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).abi_NotifySeeked());
 	}
 	final void NotifyPaused()
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifyPaused());
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).abi_NotifyPaused());
 	}
 	final void NotifyPlaying()
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifyPlaying());
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).abi_NotifyPlaying());
 	}
 	final void NotifyEnded()
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifyEnded());
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).abi_NotifyEnded());
 	}
 	final void NotifyError()
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifyError());
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).abi_NotifyError());
 	}
 	final void NotifyStopped()
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_NotifyStopped());
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).abi_NotifyStopped());
 	}
 	final HSTRING FriendlyName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).get_FriendlyName(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).get_FriendlyName(&_ret));
 		return _ret;
 	}
 	final void FriendlyName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).set_FriendlyName(value));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).set_FriendlyName(value));
 	}
 	final void SupportsImage(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).set_SupportsImage(value));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).set_SupportsImage(value));
 	}
 	final bool SupportsImage()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).get_SupportsImage(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).get_SupportsImage(&_ret));
 		return _ret;
 	}
 	final void SupportsAudio(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).set_SupportsAudio(value));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).set_SupportsAudio(value));
 	}
 	final bool SupportsAudio()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).get_SupportsAudio(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).get_SupportsAudio(&_ret));
 		return _ret;
 	}
 	final void SupportsVideo(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).set_SupportsVideo(value));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).set_SupportsVideo(value));
 	}
 	final bool SupportsVideo()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).get_SupportsVideo(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).get_SupportsVideo(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{
 		Windows.Foundation.Collections.IPropertySet _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).get_Properties(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).get_Properties(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction StartAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_StartAsync(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).abi_StartAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction StopAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToReceiver).abi_StopAsync(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToReceiver)this.asInterface(uuid("ac15cf47-a162-4aa6-af1b-3aa35f3b9069"))).abi_StopAsync(&_ret));
 		return _ret;
 	}
 	static PlayToReceiver New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PlayToReceiver).abi_ActivateInstance(&ret));
-		return ret.as!(PlayToReceiver);
+		return cast(PlayToReceiver) ret;
 	}
 }
 
@@ -660,37 +660,37 @@ extern(Windows):
 	final Windows.Media.PlayTo.PlayToConnection Connection()
 	{
 		Windows.Media.PlayTo.PlayToConnection _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSource).get_Connection(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToSource)this.asInterface(uuid("7f138a08-fbb7-4b09-8356-aa5f4e335c31"))).get_Connection(&_ret));
 		return _ret;
 	}
 	deprecated("PlayToSource may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")
 	final Windows.Media.PlayTo.PlayToSource Next()
 	{
 		Windows.Media.PlayTo.PlayToSource _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSource).get_Next(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToSource)this.asInterface(uuid("7f138a08-fbb7-4b09-8356-aa5f4e335c31"))).get_Next(&_ret));
 		return _ret;
 	}
 	deprecated("PlayToSource may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")
 	final void Next(Windows.Media.PlayTo.PlayToSource value)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSource).set_Next(value));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToSource)this.asInterface(uuid("7f138a08-fbb7-4b09-8356-aa5f4e335c31"))).set_Next(value));
 	}
 	deprecated("PlayToSource may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")
 	final void PlayNext()
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSource).abi_PlayNext());
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToSource)this.asInterface(uuid("7f138a08-fbb7-4b09-8356-aa5f4e335c31"))).abi_PlayNext());
 	}
 	deprecated("PlayToSourceWithPreferredSourceUri may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")
 	final Windows.Foundation.Uri PreferredSourceUri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceWithPreferredSourceUri).get_PreferredSourceUri(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToSourceWithPreferredSourceUri)this.asInterface(uuid("aab253eb-3301-4dc4-afba-b2f2ed9635a0"))).get_PreferredSourceUri(&_ret));
 		return _ret;
 	}
 	deprecated("PlayToSourceWithPreferredSourceUri may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")
 	final void PreferredSourceUri(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceWithPreferredSourceUri).set_PreferredSourceUri(value));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToSourceWithPreferredSourceUri)this.asInterface(uuid("aab253eb-3301-4dc4-afba-b2f2ed9635a0"))).set_PreferredSourceUri(value));
 	}
 }
 
@@ -700,7 +700,7 @@ extern(Windows):
 	deprecated("PlayToSourceDeferral may be altered or unavailable for releases after Windows 10.")
 	final void Complete()
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceDeferral).abi_Complete());
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToSourceDeferral)this.asInterface(uuid("4100891d-278e-4f29-859b-a9e501053e7d"))).abi_Complete());
 	}
 }
 
@@ -711,25 +711,25 @@ extern(Windows):
 	final Windows.Foundation.DateTime Deadline()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceRequest).get_Deadline(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToSourceRequest)this.asInterface(uuid("f8584665-64f4-44a0-ac0d-468d2b8fda83"))).get_Deadline(&_ret));
 		return _ret;
 	}
 	deprecated("PlayToSourceRequest may be altered or unavailable for releases after Windows 10.")
 	final void DisplayErrorString(HSTRING errorString)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceRequest).abi_DisplayErrorString(errorString));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToSourceRequest)this.asInterface(uuid("f8584665-64f4-44a0-ac0d-468d2b8fda83"))).abi_DisplayErrorString(errorString));
 	}
 	deprecated("PlayToSourceRequest may be altered or unavailable for releases after Windows 10.")
 	final Windows.Media.PlayTo.PlayToSourceDeferral GetDeferral()
 	{
 		Windows.Media.PlayTo.PlayToSourceDeferral _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceRequest).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToSourceRequest)this.asInterface(uuid("f8584665-64f4-44a0-ac0d-468d2b8fda83"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 	deprecated("PlayToSourceRequest may be altered or unavailable for releases after Windows 10.")
 	final void SetSource(Windows.Media.PlayTo.PlayToSource value)
 	{
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceRequest).abi_SetSource(value));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToSourceRequest)this.asInterface(uuid("f8584665-64f4-44a0-ac0d-468d2b8fda83"))).abi_SetSource(value));
 	}
 }
 
@@ -740,7 +740,7 @@ extern(Windows):
 	final Windows.Media.PlayTo.PlayToSourceRequest SourceRequest()
 	{
 		Windows.Media.PlayTo.PlayToSourceRequest _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceRequestedEventArgs).get_SourceRequest(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToSourceRequestedEventArgs)this.asInterface(uuid("c5cdc330-29df-4ec6-9da9-9fbdfcfc1b3e"))).get_SourceRequest(&_ret));
 		return _ret;
 	}
 }
@@ -752,35 +752,35 @@ extern(Windows):
 	final HSTRING FriendlyName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceSelectedEventArgs).get_FriendlyName(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToSourceSelectedEventArgs)this.asInterface(uuid("0c9d8511-5202-4dcb-8c67-abda12bb3c12"))).get_FriendlyName(&_ret));
 		return _ret;
 	}
 	deprecated("PlayToSourceSelectedEventArgs may be altered or unavailable for releases after Windows 10.")
 	final Windows.Storage.Streams.IRandomAccessStreamWithContentType Icon()
 	{
 		Windows.Storage.Streams.IRandomAccessStreamWithContentType _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceSelectedEventArgs).get_Icon(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToSourceSelectedEventArgs)this.asInterface(uuid("0c9d8511-5202-4dcb-8c67-abda12bb3c12"))).get_Icon(&_ret));
 		return _ret;
 	}
 	deprecated("PlayToSourceSelectedEventArgs may be altered or unavailable for releases after Windows 10.")
 	final bool SupportsImage()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceSelectedEventArgs).get_SupportsImage(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToSourceSelectedEventArgs)this.asInterface(uuid("0c9d8511-5202-4dcb-8c67-abda12bb3c12"))).get_SupportsImage(&_ret));
 		return _ret;
 	}
 	deprecated("PlayToSourceSelectedEventArgs may be altered or unavailable for releases after Windows 10.")
 	final bool SupportsAudio()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceSelectedEventArgs).get_SupportsAudio(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToSourceSelectedEventArgs)this.asInterface(uuid("0c9d8511-5202-4dcb-8c67-abda12bb3c12"))).get_SupportsAudio(&_ret));
 		return _ret;
 	}
 	deprecated("PlayToSourceSelectedEventArgs may be altered or unavailable for releases after Windows 10.")
 	final bool SupportsVideo()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlayToSourceSelectedEventArgs).get_SupportsVideo(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlayToSourceSelectedEventArgs)this.asInterface(uuid("0c9d8511-5202-4dcb-8c67-abda12bb3c12"))).get_SupportsVideo(&_ret));
 		return _ret;
 	}
 }
@@ -791,7 +791,7 @@ extern(Windows):
 	final double Rate()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IPlaybackRateChangeRequestedEventArgs).get_Rate(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IPlaybackRateChangeRequestedEventArgs)this.asInterface(uuid("0f5661ae-2c88-4cca-8540-d586095d13a5"))).get_Rate(&_ret));
 		return _ret;
 	}
 }
@@ -802,61 +802,61 @@ extern(Windows):
 	final Windows.Storage.Streams.IRandomAccessStreamWithContentType Stream()
 	{
 		Windows.Storage.Streams.IRandomAccessStreamWithContentType _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs).get_Stream(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs)this.asInterface(uuid("fb3f3a96-7aa6-4a8b-86e7-54f6c6d34f64"))).get_Stream(&_ret));
 		return _ret;
 	}
 	final HSTRING Title()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs).get_Title(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs)this.asInterface(uuid("fb3f3a96-7aa6-4a8b-86e7-54f6c6d34f64"))).get_Title(&_ret));
 		return _ret;
 	}
 	final HSTRING Author()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs).get_Author(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs)this.asInterface(uuid("fb3f3a96-7aa6-4a8b-86e7-54f6c6d34f64"))).get_Author(&_ret));
 		return _ret;
 	}
 	final HSTRING Album()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs).get_Album(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs)this.asInterface(uuid("fb3f3a96-7aa6-4a8b-86e7-54f6c6d34f64"))).get_Album(&_ret));
 		return _ret;
 	}
 	final HSTRING Genre()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs).get_Genre(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs)this.asInterface(uuid("fb3f3a96-7aa6-4a8b-86e7-54f6c6d34f64"))).get_Genre(&_ret));
 		return _ret;
 	}
 	final HSTRING Description()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs).get_Description(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs)this.asInterface(uuid("fb3f3a96-7aa6-4a8b-86e7-54f6c6d34f64"))).get_Description(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) Date()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs).get_Date(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs)this.asInterface(uuid("fb3f3a96-7aa6-4a8b-86e7-54f6c6d34f64"))).get_Date(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IRandomAccessStreamReference Thumbnail()
 	{
 		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs).get_Thumbnail(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs)this.asInterface(uuid("fb3f3a96-7aa6-4a8b-86e7-54f6c6d34f64"))).get_Thumbnail(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(UINT32) Rating()
 	{
 		Windows.Foundation.IReference!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs).get_Rating(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs)this.asInterface(uuid("fb3f3a96-7aa6-4a8b-86e7-54f6c6d34f64"))).get_Rating(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) Properties()
 	{
 		Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs).get_Properties(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.ISourceChangeRequestedEventArgs)this.asInterface(uuid("fb3f3a96-7aa6-4a8b-86e7-54f6c6d34f64"))).get_Properties(&_ret));
 		return _ret;
 	}
 }
@@ -867,7 +867,7 @@ extern(Windows):
 	final double Volume()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.PlayTo.IVolumeChangeRequestedEventArgs).get_Volume(&_ret));
+		Debug.OK((cast(Windows.Media.PlayTo.IVolumeChangeRequestedEventArgs)this.asInterface(uuid("6f026d5c-cf75-4c2b-913e-6d7c6c329179"))).get_Volume(&_ret));
 		return _ret;
 	}
 }

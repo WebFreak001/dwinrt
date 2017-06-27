@@ -446,25 +446,25 @@ interface KnownRemoteSystemCapabilities
 	static HSTRING AppService()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.RemoteSystems.IKnownRemoteSystemCapabilitiesStatics).get_AppService(&_ret));
+		Debug.OK(staticInstance.get_AppService(&_ret));
 		return _ret;
 	}
 	static HSTRING LaunchUri()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.RemoteSystems.IKnownRemoteSystemCapabilitiesStatics).get_LaunchUri(&_ret));
+		Debug.OK(staticInstance.get_LaunchUri(&_ret));
 		return _ret;
 	}
 	static HSTRING RemoteSession()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.RemoteSystems.IKnownRemoteSystemCapabilitiesStatics).get_RemoteSession(&_ret));
+		Debug.OK(staticInstance.get_RemoteSession(&_ret));
 		return _ret;
 	}
 	static HSTRING SpatialEntity()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.RemoteSystems.IKnownRemoteSystemCapabilitiesStatics).get_SpatialEntity(&_ret));
+		Debug.OK(staticInstance.get_SpatialEntity(&_ret));
 		return _ret;
 	}
 }
@@ -475,43 +475,43 @@ extern(Windows):
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystem).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystem)this.asInterface(uuid("ed5838cd-1e10-4a8c-b4a6-4e5fd6f97721"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystem).get_Id(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystem)this.asInterface(uuid("ed5838cd-1e10-4a8c-b4a6-4e5fd6f97721"))).get_Id(&_ret));
 		return _ret;
 	}
 	final HSTRING Kind()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystem).get_Kind(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystem)this.asInterface(uuid("ed5838cd-1e10-4a8c-b4a6-4e5fd6f97721"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.System.RemoteSystems.RemoteSystemStatus Status()
 	{
 		Windows.System.RemoteSystems.RemoteSystemStatus _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystem).get_Status(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystem)this.asInterface(uuid("ed5838cd-1e10-4a8c-b4a6-4e5fd6f97721"))).get_Status(&_ret));
 		return _ret;
 	}
 	final bool IsAvailableByProximity()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystem).get_IsAvailableByProximity(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystem)this.asInterface(uuid("ed5838cd-1e10-4a8c-b4a6-4e5fd6f97721"))).get_IsAvailableByProximity(&_ret));
 		return _ret;
 	}
 	final bool IsAvailableBySpatialProximity()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystem2).get_IsAvailableBySpatialProximity(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystem2)this.asInterface(uuid("09dfe4ec-fb8b-4a08-a758-6876435d769e"))).get_IsAvailableBySpatialProximity(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) GetCapabilitySupportedAsync(HSTRING capabilityName)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystem2).abi_GetCapabilitySupportedAsync(capabilityName, &_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystem2)this.asInterface(uuid("09dfe4ec-fb8b-4a08-a758-6876435d769e"))).abi_GetCapabilitySupportedAsync(capabilityName, &_ret));
 		return _ret;
 	}
 
@@ -524,25 +524,25 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.System.RemoteSystems.RemoteSystem) FindByHostNameAsync(Windows.Networking.HostName hostName)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.System.RemoteSystems.RemoteSystem) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.RemoteSystems.IRemoteSystemStatics).abi_FindByHostNameAsync(hostName, &_ret));
+		Debug.OK(staticInstance.abi_FindByHostNameAsync(hostName, &_ret));
 		return _ret;
 	}
 	static Windows.System.RemoteSystems.RemoteSystemWatcher CreateWatcher()
 	{
 		Windows.System.RemoteSystems.RemoteSystemWatcher _ret;
-		Debug.OK(staticInstance.as!(Windows.System.RemoteSystems.IRemoteSystemStatics).abi_CreateWatcher(&_ret));
+		Debug.OK(staticInstance.abi_CreateWatcher(&_ret));
 		return _ret;
 	}
 	static Windows.System.RemoteSystems.RemoteSystemWatcher CreateWatcherWithFilters(Windows.Foundation.Collections.IIterable!(Windows.System.RemoteSystems.IRemoteSystemFilter) filters)
 	{
 		Windows.System.RemoteSystems.RemoteSystemWatcher _ret;
-		Debug.OK(staticInstance.as!(Windows.System.RemoteSystems.IRemoteSystemStatics).abi_CreateWatcherWithFilters(filters, &_ret));
+		Debug.OK(staticInstance.abi_CreateWatcherWithFilters(filters, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.System.RemoteSystems.RemoteSystemAccessStatus) RequestAccessAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.System.RemoteSystems.RemoteSystemAccessStatus) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.RemoteSystems.IRemoteSystemStatics).abi_RequestAccessAsync(&_ret));
+		Debug.OK(staticInstance.abi_RequestAccessAsync(&_ret));
 		return _ret;
 	}
 }
@@ -553,7 +553,7 @@ extern(Windows):
 	final Windows.System.RemoteSystems.RemoteSystem RemoteSystem()
 	{
 		Windows.System.RemoteSystems.RemoteSystem _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemAddedEventArgs).get_RemoteSystem(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemAddedEventArgs)this.asInterface(uuid("8f39560f-e534-4697-8836-7abea151516e"))).get_RemoteSystem(&_ret));
 		return _ret;
 	}
 }
@@ -564,14 +564,14 @@ extern(Windows):
 	final Windows.System.RemoteSystems.RemoteSystemAuthorizationKind RemoteSystemAuthorizationKind()
 	{
 		Windows.System.RemoteSystems.RemoteSystemAuthorizationKind _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemAuthorizationKindFilter).get_RemoteSystemAuthorizationKind(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemAuthorizationKindFilter)this.asInterface(uuid("6b0dde8e-04d0-40f4-a27f-c2acbbd6b734"))).get_RemoteSystemAuthorizationKind(&_ret));
 		return _ret;
 	}
 	static Windows.System.RemoteSystems.RemoteSystemAuthorizationKindFilter New(Windows.System.RemoteSystems.RemoteSystemAuthorizationKind remoteSystemAuthorizationKind)
 	{
 		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemAuthorizationKindFilterFactory);
 		Windows.System.RemoteSystems.RemoteSystemAuthorizationKindFilter _ret;
-		Debug.OK(factory.as!(Windows.System.RemoteSystems.IRemoteSystemAuthorizationKindFilterFactory).abi_Create(remoteSystemAuthorizationKind, &_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemAuthorizationKindFilterFactory)factory.asInterface(uuid("ad65df4d-b66a-45a4-8177-8caed75d9e5a"))).abi_Create(remoteSystemAuthorizationKind, &_ret));
 		return _ret;
 	}
 }
@@ -582,14 +582,14 @@ extern(Windows):
 	final Windows.System.RemoteSystems.RemoteSystem RemoteSystem()
 	{
 		Windows.System.RemoteSystems.RemoteSystem _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemConnectionRequest).get_RemoteSystem(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemConnectionRequest)this.asInterface(uuid("84ed4104-8d5e-4d72-8238-7621576c7a67"))).get_RemoteSystem(&_ret));
 		return _ret;
 	}
 	static Windows.System.RemoteSystems.RemoteSystemConnectionRequest New(Windows.System.RemoteSystems.RemoteSystem remoteSystem)
 	{
 		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemConnectionRequestFactory);
 		Windows.System.RemoteSystems.RemoteSystemConnectionRequest _ret;
-		Debug.OK(factory.as!(Windows.System.RemoteSystems.IRemoteSystemConnectionRequestFactory).abi_Create(remoteSystem, &_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemConnectionRequestFactory)factory.asInterface(uuid("aa0a0a20-baeb-4575-b530-810bb9786334"))).abi_Create(remoteSystem, &_ret));
 		return _ret;
 	}
 }
@@ -600,14 +600,14 @@ extern(Windows):
 	final Windows.System.RemoteSystems.RemoteSystemDiscoveryType RemoteSystemDiscoveryType()
 	{
 		Windows.System.RemoteSystems.RemoteSystemDiscoveryType _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemDiscoveryTypeFilter).get_RemoteSystemDiscoveryType(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemDiscoveryTypeFilter)this.asInterface(uuid("42d9041f-ee5a-43da-ac6a-6fee25460741"))).get_RemoteSystemDiscoveryType(&_ret));
 		return _ret;
 	}
 	static Windows.System.RemoteSystems.RemoteSystemDiscoveryTypeFilter New(Windows.System.RemoteSystems.RemoteSystemDiscoveryType discoveryType)
 	{
 		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemDiscoveryTypeFilterFactory);
 		Windows.System.RemoteSystems.RemoteSystemDiscoveryTypeFilter _ret;
-		Debug.OK(factory.as!(Windows.System.RemoteSystems.IRemoteSystemDiscoveryTypeFilterFactory).abi_Create(discoveryType, &_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemDiscoveryTypeFilterFactory)factory.asInterface(uuid("9f9eb993-c260-4161-92f2-9c021f23fe5d"))).abi_Create(discoveryType, &_ret));
 		return _ret;
 	}
 }
@@ -618,14 +618,14 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) RemoteSystemKinds()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemKindFilter).get_RemoteSystemKinds(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemKindFilter)this.asInterface(uuid("38e1c9ec-22c3-4ef6-901a-bbb1c7aad4ed"))).get_RemoteSystemKinds(&_ret));
 		return _ret;
 	}
 	static Windows.System.RemoteSystems.RemoteSystemKindFilter New(Windows.Foundation.Collections.IIterable!(HSTRING) remoteSystemKinds)
 	{
 		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemKindFilterFactory);
 		Windows.System.RemoteSystems.RemoteSystemKindFilter _ret;
-		Debug.OK(factory.as!(Windows.System.RemoteSystems.IRemoteSystemKindFilterFactory).abi_Create(remoteSystemKinds, &_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemKindFilterFactory)factory.asInterface(uuid("a1fb18ee-99ea-40bc-9a39-c670aa804a28"))).abi_Create(remoteSystemKinds, &_ret));
 		return _ret;
 	}
 }
@@ -641,31 +641,31 @@ interface RemoteSystemKinds
 	static HSTRING Phone()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.RemoteSystems.IRemoteSystemKindStatics).get_Phone(&_ret));
+		Debug.OK(staticInstance.get_Phone(&_ret));
 		return _ret;
 	}
 	static HSTRING Hub()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.RemoteSystems.IRemoteSystemKindStatics).get_Hub(&_ret));
+		Debug.OK(staticInstance.get_Hub(&_ret));
 		return _ret;
 	}
 	static HSTRING Holographic()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.RemoteSystems.IRemoteSystemKindStatics).get_Holographic(&_ret));
+		Debug.OK(staticInstance.get_Holographic(&_ret));
 		return _ret;
 	}
 	static HSTRING Desktop()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.RemoteSystems.IRemoteSystemKindStatics).get_Desktop(&_ret));
+		Debug.OK(staticInstance.get_Desktop(&_ret));
 		return _ret;
 	}
 	static HSTRING Xbox()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.RemoteSystems.IRemoteSystemKindStatics).get_Xbox(&_ret));
+		Debug.OK(staticInstance.get_Xbox(&_ret));
 		return _ret;
 	}
 }
@@ -676,7 +676,7 @@ extern(Windows):
 	final HSTRING RemoteSystemId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemRemovedEventArgs).get_RemoteSystemId(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemRemovedEventArgs)this.asInterface(uuid("8b3d16bb-7306-49ea-b7df-67d5714cb013"))).get_RemoteSystemId(&_ret));
 		return _ret;
 	}
 }
@@ -687,46 +687,46 @@ extern(Windows):
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSession).get_Id(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSession)this.asInterface(uuid("69476a01-9ada-490f-9549-d31cb14c9e95"))).get_Id(&_ret));
 		return _ret;
 	}
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSession).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSession)this.asInterface(uuid("69476a01-9ada-490f-9549-d31cb14c9e95"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final HSTRING ControllerDisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSession).get_ControllerDisplayName(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSession)this.asInterface(uuid("69476a01-9ada-490f-9549-d31cb14c9e95"))).get_ControllerDisplayName(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnDisconnected(void delegate(Windows.System.RemoteSystems.RemoteSystemSession, Windows.System.RemoteSystems.RemoteSystemSessionDisconnectedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSession).add_Disconnected(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSession, Windows.System.RemoteSystems.RemoteSystemSessionDisconnectedEventArgs), Windows.System.RemoteSystems.RemoteSystemSession, Windows.System.RemoteSystems.RemoteSystemSessionDisconnectedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSession)this.asInterface(uuid("69476a01-9ada-490f-9549-d31cb14c9e95"))).add_Disconnected(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSession, Windows.System.RemoteSystems.RemoteSystemSessionDisconnectedEventArgs), Windows.System.RemoteSystems.RemoteSystemSession, Windows.System.RemoteSystems.RemoteSystemSessionDisconnectedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDisconnected(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSession).remove_Disconnected(token));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSession)this.asInterface(uuid("69476a01-9ada-490f-9549-d31cb14c9e95"))).remove_Disconnected(token));
 	}
 	final Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher CreateParticipantWatcher()
 	{
 		Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSession).abi_CreateParticipantWatcher(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSession)this.asInterface(uuid("69476a01-9ada-490f-9549-d31cb14c9e95"))).abi_CreateParticipantWatcher(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) SendInvitationAsync(Windows.System.RemoteSystems.RemoteSystem invitee)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSession).abi_SendInvitationAsync(invitee, &_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSession)this.asInterface(uuid("69476a01-9ada-490f-9549-d31cb14c9e95"))).abi_SendInvitationAsync(invitee, &_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 
 	private static Windows.System.RemoteSystems.IRemoteSystemSessionStatics _staticInstance;
@@ -738,7 +738,7 @@ extern(Windows):
 	static Windows.System.RemoteSystems.RemoteSystemSessionWatcher CreateWatcher()
 	{
 		Windows.System.RemoteSystems.RemoteSystemSessionWatcher _ret;
-		Debug.OK(staticInstance.as!(Windows.System.RemoteSystems.IRemoteSystemSessionStatics).abi_CreateWatcher(&_ret));
+		Debug.OK(staticInstance.abi_CreateWatcher(&_ret));
 		return _ret;
 	}
 }
@@ -749,7 +749,7 @@ extern(Windows):
 	final Windows.System.RemoteSystems.RemoteSystemSessionInfo SessionInfo()
 	{
 		Windows.System.RemoteSystems.RemoteSystemSessionInfo _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionAddedEventArgs).get_SessionInfo(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionAddedEventArgs)this.asInterface(uuid("d585d754-bc97-4c39-99b4-beca76e04c3f"))).get_SessionInfo(&_ret));
 		return _ret;
 	}
 }
@@ -760,37 +760,37 @@ extern(Windows):
 	final EventRegistrationToken OnJoinRequested(void delegate(Windows.System.RemoteSystems.RemoteSystemSessionController, Windows.System.RemoteSystems.RemoteSystemSessionJoinRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionController).add_JoinRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionController, Windows.System.RemoteSystems.RemoteSystemSessionJoinRequestedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionController, Windows.System.RemoteSystems.RemoteSystemSessionJoinRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionController)this.asInterface(uuid("e48b2dd2-6820-4867-b425-d89c0a3ef7ba"))).add_JoinRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionController, Windows.System.RemoteSystems.RemoteSystemSessionJoinRequestedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionController, Windows.System.RemoteSystems.RemoteSystemSessionJoinRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeJoinRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionController).remove_JoinRequested(token));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionController)this.asInterface(uuid("e48b2dd2-6820-4867-b425-d89c0a3ef7ba"))).remove_JoinRequested(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) RemoveParticipantAsync(Windows.System.RemoteSystems.RemoteSystemSessionParticipant pParticipant)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionController).abi_RemoveParticipantAsync(pParticipant, &_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionController)this.asInterface(uuid("e48b2dd2-6820-4867-b425-d89c0a3ef7ba"))).abi_RemoveParticipantAsync(pParticipant, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.System.RemoteSystems.RemoteSystemSessionCreationResult) CreateSessionAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.System.RemoteSystems.RemoteSystemSessionCreationResult) _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionController).abi_CreateSessionAsync(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionController)this.asInterface(uuid("e48b2dd2-6820-4867-b425-d89c0a3ef7ba"))).abi_CreateSessionAsync(&_ret));
 		return _ret;
 	}
 	static Windows.System.RemoteSystems.RemoteSystemSessionController New(HSTRING displayName)
 	{
 		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemSessionControllerFactory);
 		Windows.System.RemoteSystems.RemoteSystemSessionController _ret;
-		Debug.OK(factory.as!(Windows.System.RemoteSystems.IRemoteSystemSessionControllerFactory).abi_CreateController(displayName, &_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionControllerFactory)factory.asInterface(uuid("bfcc2f6b-ac3d-4199-82cd-6670a773ef2e"))).abi_CreateController(displayName, &_ret));
 		return _ret;
 	}
 	static Windows.System.RemoteSystems.RemoteSystemSessionController New(HSTRING displayName, Windows.System.RemoteSystems.RemoteSystemSessionOptions options)
 	{
 		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemSessionControllerFactory);
 		Windows.System.RemoteSystems.RemoteSystemSessionController _ret;
-		Debug.OK(factory.as!(Windows.System.RemoteSystems.IRemoteSystemSessionControllerFactory).abi_CreateControllerWithSessionOptions(displayName, options, &_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionControllerFactory)factory.asInterface(uuid("bfcc2f6b-ac3d-4199-82cd-6670a773ef2e"))).abi_CreateControllerWithSessionOptions(displayName, options, &_ret));
 		return _ret;
 	}
 }
@@ -801,13 +801,13 @@ extern(Windows):
 	final Windows.System.RemoteSystems.RemoteSystemSessionCreationStatus Status()
 	{
 		Windows.System.RemoteSystems.RemoteSystemSessionCreationStatus _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionCreationResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionCreationResult)this.asInterface(uuid("a79812c2-37de-448c-8b83-a30aa3c4ead6"))).get_Status(&_ret));
 		return _ret;
 	}
 	final Windows.System.RemoteSystems.RemoteSystemSession Session()
 	{
 		Windows.System.RemoteSystems.RemoteSystemSession _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionCreationResult).get_Session(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionCreationResult)this.asInterface(uuid("a79812c2-37de-448c-8b83-a30aa3c4ead6"))).get_Session(&_ret));
 		return _ret;
 	}
 }
@@ -818,7 +818,7 @@ extern(Windows):
 	final Windows.System.RemoteSystems.RemoteSystemSessionDisconnectedReason Reason()
 	{
 		Windows.System.RemoteSystems.RemoteSystemSessionDisconnectedReason _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionDisconnectedEventArgs).get_Reason(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionDisconnectedEventArgs)this.asInterface(uuid("de0bc69b-77c5-461c-8209-7c6c5d3111ab"))).get_Reason(&_ret));
 		return _ret;
 	}
 }
@@ -829,19 +829,19 @@ extern(Windows):
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionInfo).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionInfo)this.asInterface(uuid("ff4df648-8b0a-4e9a-9905-69e4b841c588"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final HSTRING ControllerDisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionInfo).get_ControllerDisplayName(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionInfo)this.asInterface(uuid("ff4df648-8b0a-4e9a-9905-69e4b841c588"))).get_ControllerDisplayName(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.System.RemoteSystems.RemoteSystemSessionJoinResult) JoinAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.System.RemoteSystems.RemoteSystemSessionJoinResult) _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionInfo).abi_JoinAsync(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionInfo)this.asInterface(uuid("ff4df648-8b0a-4e9a-9905-69e4b841c588"))).abi_JoinAsync(&_ret));
 		return _ret;
 	}
 }
@@ -852,13 +852,13 @@ extern(Windows):
 	final Windows.System.RemoteSystems.RemoteSystem Sender()
 	{
 		Windows.System.RemoteSystems.RemoteSystem _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionInvitation).get_Sender(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionInvitation)this.asInterface(uuid("3e32cc91-51d7-4766-a121-25516c3b8294"))).get_Sender(&_ret));
 		return _ret;
 	}
 	final Windows.System.RemoteSystems.RemoteSystemSessionInfo SessionInfo()
 	{
 		Windows.System.RemoteSystems.RemoteSystemSessionInfo _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionInvitation).get_SessionInfo(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionInvitation)this.asInterface(uuid("3e32cc91-51d7-4766-a121-25516c3b8294"))).get_SessionInfo(&_ret));
 		return _ret;
 	}
 }
@@ -869,18 +869,18 @@ extern(Windows):
 	final EventRegistrationToken OnInvitationReceived(void delegate(Windows.System.RemoteSystems.RemoteSystemSessionInvitationListener, Windows.System.RemoteSystems.RemoteSystemSessionInvitationReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionInvitationListener).add_InvitationReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionInvitationListener, Windows.System.RemoteSystems.RemoteSystemSessionInvitationReceivedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionInvitationListener, Windows.System.RemoteSystems.RemoteSystemSessionInvitationReceivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionInvitationListener)this.asInterface(uuid("08f4003f-bc71-49e1-874a-31ddff9a27b9"))).add_InvitationReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionInvitationListener, Windows.System.RemoteSystems.RemoteSystemSessionInvitationReceivedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionInvitationListener, Windows.System.RemoteSystems.RemoteSystemSessionInvitationReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeInvitationReceived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionInvitationListener).remove_InvitationReceived(token));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionInvitationListener)this.asInterface(uuid("08f4003f-bc71-49e1-874a-31ddff9a27b9"))).remove_InvitationReceived(token));
 	}
 	static RemoteSystemSessionInvitationListener New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(RemoteSystemSessionInvitationListener).abi_ActivateInstance(&ret));
-		return ret.as!(RemoteSystemSessionInvitationListener);
+		return cast(RemoteSystemSessionInvitationListener) ret;
 	}
 }
 
@@ -890,7 +890,7 @@ extern(Windows):
 	final Windows.System.RemoteSystems.RemoteSystemSessionInvitation Invitation()
 	{
 		Windows.System.RemoteSystems.RemoteSystemSessionInvitation _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionInvitationReceivedEventArgs).get_Invitation(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionInvitationReceivedEventArgs)this.asInterface(uuid("5e964a2d-a10d-4edb-8dea-54d20ac19543"))).get_Invitation(&_ret));
 		return _ret;
 	}
 }
@@ -901,12 +901,12 @@ extern(Windows):
 	final Windows.System.RemoteSystems.RemoteSystemSessionParticipant Participant()
 	{
 		Windows.System.RemoteSystems.RemoteSystemSessionParticipant _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionJoinRequest).get_Participant(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionJoinRequest)this.asInterface(uuid("20600068-7994-4331-86d1-d89d882585ee"))).get_Participant(&_ret));
 		return _ret;
 	}
 	final void Accept()
 	{
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionJoinRequest).abi_Accept());
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionJoinRequest)this.asInterface(uuid("20600068-7994-4331-86d1-d89d882585ee"))).abi_Accept());
 	}
 }
 
@@ -916,13 +916,13 @@ extern(Windows):
 	final Windows.System.RemoteSystems.RemoteSystemSessionJoinRequest JoinRequest()
 	{
 		Windows.System.RemoteSystems.RemoteSystemSessionJoinRequest _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionJoinRequestedEventArgs).get_JoinRequest(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionJoinRequestedEventArgs)this.asInterface(uuid("dbca4fc3-82b9-4816-9c24-e40e61774bd8"))).get_JoinRequest(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionJoinRequestedEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionJoinRequestedEventArgs)this.asInterface(uuid("dbca4fc3-82b9-4816-9c24-e40e61774bd8"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -933,13 +933,13 @@ extern(Windows):
 	final Windows.System.RemoteSystems.RemoteSystemSessionJoinStatus Status()
 	{
 		Windows.System.RemoteSystems.RemoteSystemSessionJoinStatus _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionJoinResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionJoinResult)this.asInterface(uuid("ce7b1f04-a03e-41a4-900b-1e79328c1267"))).get_Status(&_ret));
 		return _ret;
 	}
 	final Windows.System.RemoteSystems.RemoteSystemSession Session()
 	{
 		Windows.System.RemoteSystems.RemoteSystemSession _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionJoinResult).get_Session(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionJoinResult)this.asInterface(uuid("ce7b1f04-a03e-41a4-900b-1e79328c1267"))).get_Session(&_ret));
 		return _ret;
 	}
 }
@@ -950,49 +950,49 @@ extern(Windows):
 	final Windows.System.RemoteSystems.RemoteSystemSession Session()
 	{
 		Windows.System.RemoteSystems.RemoteSystemSession _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannel).get_Session(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannel)this.asInterface(uuid("9524d12a-73d9-4c10-b751-c26784437127"))).get_Session(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) BroadcastValueSetAsync(Windows.Foundation.Collections.ValueSet messageData)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannel).abi_BroadcastValueSetAsync(messageData, &_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannel)this.asInterface(uuid("9524d12a-73d9-4c10-b751-c26784437127"))).abi_BroadcastValueSetAsync(messageData, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) SendValueSetAsync(Windows.Foundation.Collections.ValueSet messageData, Windows.System.RemoteSystems.RemoteSystemSessionParticipant participant)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannel).abi_SendValueSetAsync(messageData, participant, &_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannel)this.asInterface(uuid("9524d12a-73d9-4c10-b751-c26784437127"))).abi_SendValueSetAsync(messageData, participant, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) SendValueSetToParticipantsAsync(Windows.Foundation.Collections.ValueSet messageData, Windows.Foundation.Collections.IIterable!(Windows.System.RemoteSystems.RemoteSystemSessionParticipant) participants)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannel).abi_SendValueSetToParticipantsAsync(messageData, participants, &_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannel)this.asInterface(uuid("9524d12a-73d9-4c10-b751-c26784437127"))).abi_SendValueSetToParticipantsAsync(messageData, participants, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnValueSetReceived(void delegate(Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel, Windows.System.RemoteSystems.RemoteSystemSessionValueSetReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannel).add_ValueSetReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel, Windows.System.RemoteSystems.RemoteSystemSessionValueSetReceivedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel, Windows.System.RemoteSystems.RemoteSystemSessionValueSetReceivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannel)this.asInterface(uuid("9524d12a-73d9-4c10-b751-c26784437127"))).add_ValueSetReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel, Windows.System.RemoteSystems.RemoteSystemSessionValueSetReceivedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel, Windows.System.RemoteSystems.RemoteSystemSessionValueSetReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeValueSetReceived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannel).remove_ValueSetReceived(token));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannel)this.asInterface(uuid("9524d12a-73d9-4c10-b751-c26784437127"))).remove_ValueSetReceived(token));
 	}
 	static Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel New(Windows.System.RemoteSystems.RemoteSystemSession session, HSTRING channelName)
 	{
 		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannelFactory);
 		Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel _ret;
-		Debug.OK(factory.as!(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannelFactory).abi_Create(session, channelName, &_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannelFactory)factory.asInterface(uuid("295e1c4a-bd16-4298-b7ce-415482b0e11d"))).abi_Create(session, channelName, &_ret));
 		return _ret;
 	}
 	static Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel New(Windows.System.RemoteSystems.RemoteSystemSession session, HSTRING channelName, Windows.System.RemoteSystems.RemoteSystemSessionMessageChannelReliability reliability)
 	{
 		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannelFactory);
 		Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel _ret;
-		Debug.OK(factory.as!(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannelFactory).abi_CreateWithReliability(session, channelName, reliability, &_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannelFactory)factory.asInterface(uuid("295e1c4a-bd16-4298-b7ce-415482b0e11d"))).abi_CreateWithReliability(session, channelName, reliability, &_ret));
 		return _ret;
 	}
 }
@@ -1003,18 +1003,18 @@ extern(Windows):
 	final bool IsInviteOnly()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionOptions).get_IsInviteOnly(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionOptions)this.asInterface(uuid("740ed755-8418-4f01-9353-e21c9ecc6cfc"))).get_IsInviteOnly(&_ret));
 		return _ret;
 	}
 	final void IsInviteOnly(bool value)
 	{
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionOptions).set_IsInviteOnly(value));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionOptions)this.asInterface(uuid("740ed755-8418-4f01-9353-e21c9ecc6cfc"))).set_IsInviteOnly(value));
 	}
 	static RemoteSystemSessionOptions New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(RemoteSystemSessionOptions).abi_ActivateInstance(&ret));
-		return ret.as!(RemoteSystemSessionOptions);
+		return cast(RemoteSystemSessionOptions) ret;
 	}
 }
 
@@ -1024,13 +1024,13 @@ extern(Windows):
 	final Windows.System.RemoteSystems.RemoteSystem RemoteSystem()
 	{
 		Windows.System.RemoteSystems.RemoteSystem _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionParticipant).get_RemoteSystem(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionParticipant)this.asInterface(uuid("7e90058c-acf9-4729-8a17-44e7baed5dcc"))).get_RemoteSystem(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) GetHostNames()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionParticipant).abi_GetHostNames(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionParticipant)this.asInterface(uuid("7e90058c-acf9-4729-8a17-44e7baed5dcc"))).abi_GetHostNames(&_ret));
 		return _ret;
 	}
 }
@@ -1041,7 +1041,7 @@ extern(Windows):
 	final Windows.System.RemoteSystems.RemoteSystemSessionParticipant Participant()
 	{
 		Windows.System.RemoteSystems.RemoteSystemSessionParticipant _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantAddedEventArgs).get_Participant(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantAddedEventArgs)this.asInterface(uuid("d35a57d8-c9a1-4bb7-b6b0-79bb91adf93d"))).get_Participant(&_ret));
 		return _ret;
 	}
 }
@@ -1052,7 +1052,7 @@ extern(Windows):
 	final Windows.System.RemoteSystems.RemoteSystemSessionParticipant Participant()
 	{
 		Windows.System.RemoteSystems.RemoteSystemSessionParticipant _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantRemovedEventArgs).get_Participant(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantRemovedEventArgs)this.asInterface(uuid("866ef088-de68-4abf-88a1-f90d16274192"))).get_Participant(&_ret));
 		return _ret;
 	}
 }
@@ -1062,47 +1062,47 @@ interface RemoteSystemSessionParticipantWatcher : Windows.System.RemoteSystems.I
 extern(Windows):
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantWatcher).abi_Start());
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantWatcher)this.asInterface(uuid("dcdd02cc-aa87-4d79-b6cc-4459b3e92075"))).abi_Start());
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantWatcher).abi_Stop());
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantWatcher)this.asInterface(uuid("dcdd02cc-aa87-4d79-b6cc-4459b3e92075"))).abi_Stop());
 	}
 	final Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcherStatus Status()
 	{
 		Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcherStatus _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantWatcher).get_Status(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantWatcher)this.asInterface(uuid("dcdd02cc-aa87-4d79-b6cc-4459b3e92075"))).get_Status(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnAdded(void delegate(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, Windows.System.RemoteSystems.RemoteSystemSessionParticipantAddedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantWatcher).add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, Windows.System.RemoteSystems.RemoteSystemSessionParticipantAddedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, Windows.System.RemoteSystems.RemoteSystemSessionParticipantAddedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantWatcher)this.asInterface(uuid("dcdd02cc-aa87-4d79-b6cc-4459b3e92075"))).add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, Windows.System.RemoteSystems.RemoteSystemSessionParticipantAddedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, Windows.System.RemoteSystems.RemoteSystemSessionParticipantAddedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAdded(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantWatcher).remove_Added(token));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantWatcher)this.asInterface(uuid("dcdd02cc-aa87-4d79-b6cc-4459b3e92075"))).remove_Added(token));
 	}
 	final EventRegistrationToken OnRemoved(void delegate(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, Windows.System.RemoteSystems.RemoteSystemSessionParticipantRemovedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantWatcher).add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, Windows.System.RemoteSystems.RemoteSystemSessionParticipantRemovedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, Windows.System.RemoteSystems.RemoteSystemSessionParticipantRemovedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantWatcher)this.asInterface(uuid("dcdd02cc-aa87-4d79-b6cc-4459b3e92075"))).add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, Windows.System.RemoteSystems.RemoteSystemSessionParticipantRemovedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, Windows.System.RemoteSystems.RemoteSystemSessionParticipantRemovedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantWatcher).remove_Removed(token));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantWatcher)this.asInterface(uuid("dcdd02cc-aa87-4d79-b6cc-4459b3e92075"))).remove_Removed(token));
 	}
 	final EventRegistrationToken OnEnumerationCompleted(void delegate(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantWatcher).add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, IInspectable), Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantWatcher)this.asInterface(uuid("dcdd02cc-aa87-4d79-b6cc-4459b3e92075"))).add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, IInspectable), Windows.System.RemoteSystems.RemoteSystemSessionParticipantWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeEnumerationCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantWatcher).remove_EnumerationCompleted(token));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionParticipantWatcher)this.asInterface(uuid("dcdd02cc-aa87-4d79-b6cc-4459b3e92075"))).remove_EnumerationCompleted(token));
 	}
 }
 
@@ -1112,7 +1112,7 @@ extern(Windows):
 	final Windows.System.RemoteSystems.RemoteSystemSessionInfo SessionInfo()
 	{
 		Windows.System.RemoteSystems.RemoteSystemSessionInfo _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionRemovedEventArgs).get_SessionInfo(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionRemovedEventArgs)this.asInterface(uuid("af82914e-39a1-4dea-9d63-43798d5bbbd0"))).get_SessionInfo(&_ret));
 		return _ret;
 	}
 }
@@ -1123,7 +1123,7 @@ extern(Windows):
 	final Windows.System.RemoteSystems.RemoteSystemSessionInfo SessionInfo()
 	{
 		Windows.System.RemoteSystems.RemoteSystemSessionInfo _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionUpdatedEventArgs).get_SessionInfo(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionUpdatedEventArgs)this.asInterface(uuid("16875069-231e-4c91-8ec8-b3a39d9e55a3"))).get_SessionInfo(&_ret));
 		return _ret;
 	}
 }
@@ -1134,13 +1134,13 @@ extern(Windows):
 	final Windows.System.RemoteSystems.RemoteSystemSessionParticipant Sender()
 	{
 		Windows.System.RemoteSystems.RemoteSystemSessionParticipant _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionValueSetReceivedEventArgs).get_Sender(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionValueSetReceivedEventArgs)this.asInterface(uuid("06f31785-2da5-4e58-a78f-9e8d0784ee25"))).get_Sender(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.ValueSet Message()
 	{
 		Windows.Foundation.Collections.ValueSet _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionValueSetReceivedEventArgs).get_Message(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionValueSetReceivedEventArgs)this.asInterface(uuid("06f31785-2da5-4e58-a78f-9e8d0784ee25"))).get_Message(&_ret));
 		return _ret;
 	}
 }
@@ -1150,47 +1150,47 @@ interface RemoteSystemSessionWatcher : Windows.System.RemoteSystems.IRemoteSyste
 extern(Windows):
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionWatcher).abi_Start());
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionWatcher)this.asInterface(uuid("8003e340-0c41-4a62-b6d7-bdbe2b19be2d"))).abi_Start());
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionWatcher).abi_Stop());
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionWatcher)this.asInterface(uuid("8003e340-0c41-4a62-b6d7-bdbe2b19be2d"))).abi_Stop());
 	}
 	final Windows.System.RemoteSystems.RemoteSystemSessionWatcherStatus Status()
 	{
 		Windows.System.RemoteSystems.RemoteSystemSessionWatcherStatus _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionWatcher).get_Status(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionWatcher)this.asInterface(uuid("8003e340-0c41-4a62-b6d7-bdbe2b19be2d"))).get_Status(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnAdded(void delegate(Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionAddedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionWatcher).add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionAddedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionAddedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionWatcher)this.asInterface(uuid("8003e340-0c41-4a62-b6d7-bdbe2b19be2d"))).add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionAddedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionAddedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAdded(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionWatcher).remove_Added(token));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionWatcher)this.asInterface(uuid("8003e340-0c41-4a62-b6d7-bdbe2b19be2d"))).remove_Added(token));
 	}
 	final EventRegistrationToken OnUpdated(void delegate(Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionUpdatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionWatcher).add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionUpdatedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionUpdatedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionWatcher)this.asInterface(uuid("8003e340-0c41-4a62-b6d7-bdbe2b19be2d"))).add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionUpdatedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionUpdatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionWatcher).remove_Updated(token));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionWatcher)this.asInterface(uuid("8003e340-0c41-4a62-b6d7-bdbe2b19be2d"))).remove_Updated(token));
 	}
 	final EventRegistrationToken OnRemoved(void delegate(Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionRemovedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionWatcher).add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionRemovedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionRemovedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionWatcher)this.asInterface(uuid("8003e340-0c41-4a62-b6d7-bdbe2b19be2d"))).add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionRemovedEventArgs), Windows.System.RemoteSystems.RemoteSystemSessionWatcher, Windows.System.RemoteSystems.RemoteSystemSessionRemovedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemSessionWatcher).remove_Removed(token));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionWatcher)this.asInterface(uuid("8003e340-0c41-4a62-b6d7-bdbe2b19be2d"))).remove_Removed(token));
 	}
 }
 
@@ -1200,14 +1200,14 @@ extern(Windows):
 	final Windows.System.RemoteSystems.RemoteSystemStatusType RemoteSystemStatusType()
 	{
 		Windows.System.RemoteSystems.RemoteSystemStatusType _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemStatusTypeFilter).get_RemoteSystemStatusType(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemStatusTypeFilter)this.asInterface(uuid("0c39514e-cbb6-4777-8534-2e0c521affa2"))).get_RemoteSystemStatusType(&_ret));
 		return _ret;
 	}
 	static Windows.System.RemoteSystems.RemoteSystemStatusTypeFilter New(Windows.System.RemoteSystems.RemoteSystemStatusType remoteSystemStatusType)
 	{
 		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemStatusTypeFilterFactory);
 		Windows.System.RemoteSystems.RemoteSystemStatusTypeFilter _ret;
-		Debug.OK(factory.as!(Windows.System.RemoteSystems.IRemoteSystemStatusTypeFilterFactory).abi_Create(remoteSystemStatusType, &_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemStatusTypeFilterFactory)factory.asInterface(uuid("33cf78fa-d724-4125-ac7a-8d281e44c949"))).abi_Create(remoteSystemStatusType, &_ret));
 		return _ret;
 	}
 }
@@ -1218,7 +1218,7 @@ extern(Windows):
 	final Windows.System.RemoteSystems.RemoteSystem RemoteSystem()
 	{
 		Windows.System.RemoteSystems.RemoteSystem _ret;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemUpdatedEventArgs).get_RemoteSystem(&_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemUpdatedEventArgs)this.asInterface(uuid("7502ff0e-dbcb-4155-b4ca-b30a04f27627"))).get_RemoteSystem(&_ret));
 		return _ret;
 	}
 }
@@ -1228,41 +1228,41 @@ interface RemoteSystemWatcher : Windows.System.RemoteSystems.IRemoteSystemWatche
 extern(Windows):
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemWatcher).abi_Start());
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemWatcher)this.asInterface(uuid("5d600c7e-2c07-48c5-889c-455d2b099771"))).abi_Start());
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemWatcher).abi_Stop());
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemWatcher)this.asInterface(uuid("5d600c7e-2c07-48c5-889c-455d2b099771"))).abi_Stop());
 	}
 	final EventRegistrationToken OnRemoteSystemAdded(void delegate(Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemAddedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemWatcher).add_RemoteSystemAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemAddedEventArgs), Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemAddedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemWatcher)this.asInterface(uuid("5d600c7e-2c07-48c5-889c-455d2b099771"))).add_RemoteSystemAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemAddedEventArgs), Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemAddedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRemoteSystemAdded(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemWatcher).remove_RemoteSystemAdded(token));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemWatcher)this.asInterface(uuid("5d600c7e-2c07-48c5-889c-455d2b099771"))).remove_RemoteSystemAdded(token));
 	}
 	final EventRegistrationToken OnRemoteSystemUpdated(void delegate(Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemUpdatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemWatcher).add_RemoteSystemUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemUpdatedEventArgs), Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemUpdatedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemWatcher)this.asInterface(uuid("5d600c7e-2c07-48c5-889c-455d2b099771"))).add_RemoteSystemUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemUpdatedEventArgs), Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemUpdatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRemoteSystemUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemWatcher).remove_RemoteSystemUpdated(token));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemWatcher)this.asInterface(uuid("5d600c7e-2c07-48c5-889c-455d2b099771"))).remove_RemoteSystemUpdated(token));
 	}
 	final EventRegistrationToken OnRemoteSystemRemoved(void delegate(Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemRemovedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemWatcher).add_RemoteSystemRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemRemovedEventArgs), Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemRemovedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemWatcher)this.asInterface(uuid("5d600c7e-2c07-48c5-889c-455d2b099771"))).add_RemoteSystemRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemRemovedEventArgs), Windows.System.RemoteSystems.RemoteSystemWatcher, Windows.System.RemoteSystems.RemoteSystemRemovedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRemoteSystemRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.System.RemoteSystems.IRemoteSystemWatcher).remove_RemoteSystemRemoved(token));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemWatcher)this.asInterface(uuid("5d600c7e-2c07-48c5-889c-455d2b099771"))).remove_RemoteSystemRemoved(token));
 	}
 }
 

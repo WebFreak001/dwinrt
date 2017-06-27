@@ -56,14 +56,14 @@ extern(Windows):
 	final Windows.Devices.Gpio.Provider.ProviderGpioPinEdge Edge()
 	{
 		Windows.Devices.Gpio.Provider.ProviderGpioPinEdge _ret;
-		Debug.OK(this.as!(Windows.Devices.Gpio.Provider.IGpioPinProviderValueChangedEventArgs).get_Edge(&_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.Provider.IGpioPinProviderValueChangedEventArgs)this.asInterface(uuid("32a6d6f2-3d5b-44cd-8fbe-13a69f2edb24"))).get_Edge(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Gpio.Provider.GpioPinProviderValueChangedEventArgs New(Windows.Devices.Gpio.Provider.ProviderGpioPinEdge edge)
 	{
 		auto factory = factory!(Windows.Devices.Gpio.Provider.IGpioPinProviderValueChangedEventArgsFactory);
 		Windows.Devices.Gpio.Provider.GpioPinProviderValueChangedEventArgs _ret;
-		Debug.OK(factory.as!(Windows.Devices.Gpio.Provider.IGpioPinProviderValueChangedEventArgsFactory).abi_Create(edge, &_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.Provider.IGpioPinProviderValueChangedEventArgsFactory)factory.asInterface(uuid("3ecb0b59-568c-4392-b24a-8a59a902b1f1"))).abi_Create(edge, &_ret));
 		return _ret;
 	}
 }

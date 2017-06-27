@@ -73,31 +73,31 @@ interface KnownSimpleHapticsControllerWaveforms
 	static UINT16 Click()
 	{
 		UINT16 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Haptics.IKnownSimpleHapticsControllerWaveformsStatics).get_Click(&_ret));
+		Debug.OK(staticInstance.get_Click(&_ret));
 		return _ret;
 	}
 	static UINT16 BuzzContinuous()
 	{
 		UINT16 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Haptics.IKnownSimpleHapticsControllerWaveformsStatics).get_BuzzContinuous(&_ret));
+		Debug.OK(staticInstance.get_BuzzContinuous(&_ret));
 		return _ret;
 	}
 	static UINT16 RumbleContinuous()
 	{
 		UINT16 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Haptics.IKnownSimpleHapticsControllerWaveformsStatics).get_RumbleContinuous(&_ret));
+		Debug.OK(staticInstance.get_RumbleContinuous(&_ret));
 		return _ret;
 	}
 	static UINT16 Press()
 	{
 		UINT16 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Haptics.IKnownSimpleHapticsControllerWaveformsStatics).get_Press(&_ret));
+		Debug.OK(staticInstance.get_Press(&_ret));
 		return _ret;
 	}
 	static UINT16 Release()
 	{
 		UINT16 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Haptics.IKnownSimpleHapticsControllerWaveformsStatics).get_Release(&_ret));
+		Debug.OK(staticInstance.get_Release(&_ret));
 		return _ret;
 	}
 }
@@ -108,58 +108,58 @@ extern(Windows):
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsController).get_Id(&_ret));
+		Debug.OK((cast(Windows.Devices.Haptics.ISimpleHapticsController)this.asInterface(uuid("3d577ef9-4cee-11e6-b535-001bdc06ab3b"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Haptics.SimpleHapticsControllerFeedback) SupportedFeedback()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Haptics.SimpleHapticsControllerFeedback) _ret;
-		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsController).get_SupportedFeedback(&_ret));
+		Debug.OK((cast(Windows.Devices.Haptics.ISimpleHapticsController)this.asInterface(uuid("3d577ef9-4cee-11e6-b535-001bdc06ab3b"))).get_SupportedFeedback(&_ret));
 		return _ret;
 	}
 	final bool IsIntensitySupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsController).get_IsIntensitySupported(&_ret));
+		Debug.OK((cast(Windows.Devices.Haptics.ISimpleHapticsController)this.asInterface(uuid("3d577ef9-4cee-11e6-b535-001bdc06ab3b"))).get_IsIntensitySupported(&_ret));
 		return _ret;
 	}
 	final bool IsPlayCountSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsController).get_IsPlayCountSupported(&_ret));
+		Debug.OK((cast(Windows.Devices.Haptics.ISimpleHapticsController)this.asInterface(uuid("3d577ef9-4cee-11e6-b535-001bdc06ab3b"))).get_IsPlayCountSupported(&_ret));
 		return _ret;
 	}
 	final bool IsPlayDurationSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsController).get_IsPlayDurationSupported(&_ret));
+		Debug.OK((cast(Windows.Devices.Haptics.ISimpleHapticsController)this.asInterface(uuid("3d577ef9-4cee-11e6-b535-001bdc06ab3b"))).get_IsPlayDurationSupported(&_ret));
 		return _ret;
 	}
 	final bool IsReplayPauseIntervalSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsController).get_IsReplayPauseIntervalSupported(&_ret));
+		Debug.OK((cast(Windows.Devices.Haptics.ISimpleHapticsController)this.asInterface(uuid("3d577ef9-4cee-11e6-b535-001bdc06ab3b"))).get_IsReplayPauseIntervalSupported(&_ret));
 		return _ret;
 	}
 	final void StopFeedback()
 	{
-		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsController).abi_StopFeedback());
+		Debug.OK((cast(Windows.Devices.Haptics.ISimpleHapticsController)this.asInterface(uuid("3d577ef9-4cee-11e6-b535-001bdc06ab3b"))).abi_StopFeedback());
 	}
 	final void SendHapticFeedback(Windows.Devices.Haptics.SimpleHapticsControllerFeedback feedback)
 	{
-		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsController).abi_SendHapticFeedback(feedback));
+		Debug.OK((cast(Windows.Devices.Haptics.ISimpleHapticsController)this.asInterface(uuid("3d577ef9-4cee-11e6-b535-001bdc06ab3b"))).abi_SendHapticFeedback(feedback));
 	}
 	final void SendHapticFeedbackWithIntensity(Windows.Devices.Haptics.SimpleHapticsControllerFeedback feedback, double intensity)
 	{
-		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsController).abi_SendHapticFeedbackWithIntensity(feedback, intensity));
+		Debug.OK((cast(Windows.Devices.Haptics.ISimpleHapticsController)this.asInterface(uuid("3d577ef9-4cee-11e6-b535-001bdc06ab3b"))).abi_SendHapticFeedbackWithIntensity(feedback, intensity));
 	}
 	final void SendHapticFeedbackForDuration(Windows.Devices.Haptics.SimpleHapticsControllerFeedback feedback, double intensity, Windows.Foundation.TimeSpan playDuration)
 	{
-		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsController).abi_SendHapticFeedbackForDuration(feedback, intensity, playDuration));
+		Debug.OK((cast(Windows.Devices.Haptics.ISimpleHapticsController)this.asInterface(uuid("3d577ef9-4cee-11e6-b535-001bdc06ab3b"))).abi_SendHapticFeedbackForDuration(feedback, intensity, playDuration));
 	}
 	final void SendHapticFeedbackForPlayCount(Windows.Devices.Haptics.SimpleHapticsControllerFeedback feedback, double intensity, INT32 playCount, Windows.Foundation.TimeSpan replayPauseInterval)
 	{
-		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsController).abi_SendHapticFeedbackForPlayCount(feedback, intensity, playCount, replayPauseInterval));
+		Debug.OK((cast(Windows.Devices.Haptics.ISimpleHapticsController)this.asInterface(uuid("3d577ef9-4cee-11e6-b535-001bdc06ab3b"))).abi_SendHapticFeedbackForPlayCount(feedback, intensity, playCount, replayPauseInterval));
 	}
 }
 
@@ -169,13 +169,13 @@ extern(Windows):
 	final UINT16 Waveform()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsControllerFeedback).get_Waveform(&_ret));
+		Debug.OK((cast(Windows.Devices.Haptics.ISimpleHapticsControllerFeedback)this.asInterface(uuid("3d577ef8-4cee-11e6-b535-001bdc06ab3b"))).get_Waveform(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Duration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Haptics.ISimpleHapticsControllerFeedback).get_Duration(&_ret));
+		Debug.OK((cast(Windows.Devices.Haptics.ISimpleHapticsControllerFeedback)this.asInterface(uuid("3d577ef8-4cee-11e6-b535-001bdc06ab3b"))).get_Duration(&_ret));
 		return _ret;
 	}
 }
@@ -186,13 +186,13 @@ extern(Windows):
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Haptics.IVibrationDevice).get_Id(&_ret));
+		Debug.OK((cast(Windows.Devices.Haptics.IVibrationDevice)this.asInterface(uuid("40f21a3e-8844-47ff-b312-06185a3844da"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Haptics.SimpleHapticsController SimpleHapticsController()
 	{
 		Windows.Devices.Haptics.SimpleHapticsController _ret;
-		Debug.OK(this.as!(Windows.Devices.Haptics.IVibrationDevice).get_SimpleHapticsController(&_ret));
+		Debug.OK((cast(Windows.Devices.Haptics.IVibrationDevice)this.asInterface(uuid("40f21a3e-8844-47ff-b312-06185a3844da"))).get_SimpleHapticsController(&_ret));
 		return _ret;
 	}
 
@@ -205,31 +205,31 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Haptics.VibrationAccessStatus) RequestAccessAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Haptics.VibrationAccessStatus) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Haptics.IVibrationDeviceStatics).abi_RequestAccessAsync(&_ret));
+		Debug.OK(staticInstance.abi_RequestAccessAsync(&_ret));
 		return _ret;
 	}
 	static HSTRING GetDeviceSelector()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Haptics.IVibrationDeviceStatics).abi_GetDeviceSelector(&_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Haptics.VibrationDevice) FromIdAsync(HSTRING deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Haptics.VibrationDevice) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Haptics.IVibrationDeviceStatics).abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Haptics.VibrationDevice) GetDefaultAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Haptics.VibrationDevice) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Haptics.IVibrationDeviceStatics).abi_GetDefaultAsync(&_ret));
+		Debug.OK(staticInstance.abi_GetDefaultAsync(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Haptics.VibrationDevice)) FindAllAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Haptics.VibrationDevice)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Haptics.IVibrationDeviceStatics).abi_FindAllAsync(&_ret));
+		Debug.OK(staticInstance.abi_FindAllAsync(&_ret));
 		return _ret;
 	}
 }

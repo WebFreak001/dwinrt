@@ -146,7 +146,7 @@ interface AdvertisingManager
 	static HSTRING AdvertisingId()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IAdvertisingManagerStatics).get_AdvertisingId(&_ret));
+		Debug.OK(staticInstance.get_AdvertisingId(&_ret));
 		return _ret;
 	}
 }
@@ -157,13 +157,13 @@ extern(Windows):
 	final HSTRING AdvertisingId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.System.UserProfile.IAdvertisingManagerForUser).get_AdvertisingId(&_ret));
+		Debug.OK((cast(Windows.System.UserProfile.IAdvertisingManagerForUser)this.asInterface(uuid("928bf3d0-cf7c-4ab0-a7dc-6dc5bcd44252"))).get_AdvertisingId(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.System.UserProfile.IAdvertisingManagerForUser).get_User(&_ret));
+		Debug.OK((cast(Windows.System.UserProfile.IAdvertisingManagerForUser)this.asInterface(uuid("928bf3d0-cf7c-4ab0-a7dc-6dc5bcd44252"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -174,13 +174,13 @@ extern(Windows):
 	final bool CanUseDiagnosticsToTailorExperiences()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.System.UserProfile.IDiagnosticsSettings).get_CanUseDiagnosticsToTailorExperiences(&_ret));
+		Debug.OK((cast(Windows.System.UserProfile.IDiagnosticsSettings)this.asInterface(uuid("e5e9eccd-2711-44e0-973c-491d78048d24"))).get_CanUseDiagnosticsToTailorExperiences(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.System.UserProfile.IDiagnosticsSettings).get_User(&_ret));
+		Debug.OK((cast(Windows.System.UserProfile.IDiagnosticsSettings)this.asInterface(uuid("e5e9eccd-2711-44e0-973c-491d78048d24"))).get_User(&_ret));
 		return _ret;
 	}
 
@@ -193,13 +193,13 @@ extern(Windows):
 	static Windows.System.UserProfile.DiagnosticsSettings GetDefault()
 	{
 		Windows.System.UserProfile.DiagnosticsSettings _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IDiagnosticsSettingsStatics).abi_GetDefault(&_ret));
+		Debug.OK(staticInstance.abi_GetDefault(&_ret));
 		return _ret;
 	}
 	static Windows.System.UserProfile.DiagnosticsSettings GetForUser(Windows.System.User user)
 	{
 		Windows.System.UserProfile.DiagnosticsSettings _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IDiagnosticsSettingsStatics).abi_GetForUser(user, &_ret));
+		Debug.OK(staticInstance.abi_GetForUser(user, &_ret));
 		return _ret;
 	}
 }
@@ -210,28 +210,28 @@ extern(Windows):
 	final  IInspectable Lookup(HSTRING key)
 	{
 		 IInspectable _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)).abi_Lookup(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable))this).abi_Lookup(key, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable))this).get_Size(&_ret));
 		return _ret;
 	}
 	final bool HasKey(HSTRING key)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)).abi_HasKey(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable))this).abi_HasKey(key, &_ret));
 		return _ret;
 	}
 	final void Split(Windows.Foundation.Collections.IMapView!(HSTRING,	IInspectable) out_firstPartition, Windows.Foundation.Collections.IMapView!(HSTRING,	 IInspectable) out_secondPartition)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable)).abi_Split(out_firstPartition, out_secondPartition));
+		Debug.OK((cast(Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable))this).abi_Split(out_firstPartition, out_secondPartition));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable))).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)))this).abi_First(out_first));
 	}
 
 	private static Windows.System.UserProfile.IFirstSignInSettingsStatics _staticInstance;
@@ -243,7 +243,7 @@ extern(Windows):
 	static Windows.System.UserProfile.FirstSignInSettings GetDefault()
 	{
 		Windows.System.UserProfile.FirstSignInSettings _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IFirstSignInSettingsStatics).abi_GetDefault(&_ret));
+		Debug.OK(staticInstance.abi_GetDefault(&_ret));
 		return _ret;
 	}
 }
@@ -259,37 +259,37 @@ interface GlobalizationPreferences
 	static Windows.Foundation.Collections.IVectorView!(HSTRING) Calendars()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IGlobalizationPreferencesStatics).get_Calendars(&_ret));
+		Debug.OK(staticInstance.get_Calendars(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(HSTRING) Clocks()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IGlobalizationPreferencesStatics).get_Clocks(&_ret));
+		Debug.OK(staticInstance.get_Clocks(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(HSTRING) Currencies()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IGlobalizationPreferencesStatics).get_Currencies(&_ret));
+		Debug.OK(staticInstance.get_Currencies(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(HSTRING) Languages()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IGlobalizationPreferencesStatics).get_Languages(&_ret));
+		Debug.OK(staticInstance.get_Languages(&_ret));
 		return _ret;
 	}
 	static HSTRING HomeGeographicRegion()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IGlobalizationPreferencesStatics).get_HomeGeographicRegion(&_ret));
+		Debug.OK(staticInstance.get_HomeGeographicRegion(&_ret));
 		return _ret;
 	}
 	static Windows.Globalization.DayOfWeek WeekStartsOn()
 	{
 		Windows.Globalization.DayOfWeek _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IGlobalizationPreferencesStatics).get_WeekStartsOn(&_ret));
+		Debug.OK(staticInstance.get_WeekStartsOn(&_ret));
 		return _ret;
 	}
 }
@@ -305,13 +305,13 @@ interface LockScreen
 	static Windows.Foundation.IAsyncOperation!(Windows.System.UserProfile.SetImageFeedResult) RequestSetImageFeedAsync(Windows.Foundation.Uri syndicationFeedUri)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.System.UserProfile.SetImageFeedResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.ILockScreenImageFeedStatics).abi_RequestSetImageFeedAsync(syndicationFeedUri, &_ret));
+		Debug.OK(staticInstance.abi_RequestSetImageFeedAsync(syndicationFeedUri, &_ret));
 		return _ret;
 	}
 	static bool TryRemoveImageFeed()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.ILockScreenImageFeedStatics).abi_TryRemoveImageFeed(&_ret));
+		Debug.OK(staticInstance.abi_TryRemoveImageFeed(&_ret));
 		return _ret;
 	}
 }
@@ -327,89 +327,89 @@ interface UserInformation
 	static bool AccountPictureChangeEnabled()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IUserInformationStatics).get_AccountPictureChangeEnabled(&_ret));
+		Debug.OK(staticInstance.get_AccountPictureChangeEnabled(&_ret));
 		return _ret;
 	}
 	static bool NameAccessAllowed()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IUserInformationStatics).get_NameAccessAllowed(&_ret));
+		Debug.OK(staticInstance.get_NameAccessAllowed(&_ret));
 		return _ret;
 	}
 	static Windows.Storage.IStorageFile GetAccountPicture(Windows.System.UserProfile.AccountPictureKind kind)
 	{
 		Windows.Storage.IStorageFile _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IUserInformationStatics).abi_GetAccountPicture(kind, &_ret));
+		Debug.OK(staticInstance.abi_GetAccountPicture(kind, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.System.UserProfile.SetAccountPictureResult) SetAccountPictureAsync(Windows.Storage.IStorageFile image)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.System.UserProfile.SetAccountPictureResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IUserInformationStatics).abi_SetAccountPictureAsync(image, &_ret));
+		Debug.OK(staticInstance.abi_SetAccountPictureAsync(image, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.System.UserProfile.SetAccountPictureResult) SetAccountPicturesAsync(Windows.Storage.IStorageFile smallImage, Windows.Storage.IStorageFile largeImage, Windows.Storage.IStorageFile video)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.System.UserProfile.SetAccountPictureResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IUserInformationStatics).abi_SetAccountPicturesAsync(smallImage, largeImage, video, &_ret));
+		Debug.OK(staticInstance.abi_SetAccountPicturesAsync(smallImage, largeImage, video, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.System.UserProfile.SetAccountPictureResult) SetAccountPictureFromStreamAsync(Windows.Storage.Streams.IRandomAccessStream image)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.System.UserProfile.SetAccountPictureResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IUserInformationStatics).abi_SetAccountPictureFromStreamAsync(image, &_ret));
+		Debug.OK(staticInstance.abi_SetAccountPictureFromStreamAsync(image, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.System.UserProfile.SetAccountPictureResult) SetAccountPicturesFromStreamsAsync(Windows.Storage.Streams.IRandomAccessStream smallImage, Windows.Storage.Streams.IRandomAccessStream largeImage, Windows.Storage.Streams.IRandomAccessStream video)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.System.UserProfile.SetAccountPictureResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IUserInformationStatics).abi_SetAccountPicturesFromStreamsAsync(smallImage, largeImage, video, &_ret));
+		Debug.OK(staticInstance.abi_SetAccountPicturesFromStreamsAsync(smallImage, largeImage, video, &_ret));
 		return _ret;
 	}
 	static EventRegistrationToken OnAccountPictureChanged(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IUserInformationStatics).add_AccountPictureChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_AccountPictureChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	static void removeAccountPictureChanged(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IUserInformationStatics).remove_AccountPictureChanged(token));
+		Debug.OK(staticInstance.remove_AccountPictureChanged(token));
 	}
 	static Windows.Foundation.IAsyncOperation!(HSTRING) GetDisplayNameAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IUserInformationStatics).abi_GetDisplayNameAsync(&_ret));
+		Debug.OK(staticInstance.abi_GetDisplayNameAsync(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(HSTRING) GetFirstNameAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IUserInformationStatics).abi_GetFirstNameAsync(&_ret));
+		Debug.OK(staticInstance.abi_GetFirstNameAsync(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(HSTRING) GetLastNameAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IUserInformationStatics).abi_GetLastNameAsync(&_ret));
+		Debug.OK(staticInstance.abi_GetLastNameAsync(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(HSTRING) GetPrincipalNameAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IUserInformationStatics).abi_GetPrincipalNameAsync(&_ret));
+		Debug.OK(staticInstance.abi_GetPrincipalNameAsync(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Uri) GetSessionInitiationProtocolUriAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Uri) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IUserInformationStatics).abi_GetSessionInitiationProtocolUriAsync(&_ret));
+		Debug.OK(staticInstance.abi_GetSessionInitiationProtocolUriAsync(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(HSTRING) GetDomainNameAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IUserInformationStatics).abi_GetDomainNameAsync(&_ret));
+		Debug.OK(staticInstance.abi_GetDomainNameAsync(&_ret));
 		return _ret;
 	}
 }
@@ -420,13 +420,13 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(bool) TrySetLockScreenImageAsync(Windows.Storage.StorageFile imageFile)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.System.UserProfile.IUserProfilePersonalizationSettings).abi_TrySetLockScreenImageAsync(imageFile, &_ret));
+		Debug.OK((cast(Windows.System.UserProfile.IUserProfilePersonalizationSettings)this.asInterface(uuid("8ceddab4-7998-46d5-8dd3-184f1c5f9ab9"))).abi_TrySetLockScreenImageAsync(imageFile, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TrySetWallpaperImageAsync(Windows.Storage.StorageFile imageFile)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.System.UserProfile.IUserProfilePersonalizationSettings).abi_TrySetWallpaperImageAsync(imageFile, &_ret));
+		Debug.OK((cast(Windows.System.UserProfile.IUserProfilePersonalizationSettings)this.asInterface(uuid("8ceddab4-7998-46d5-8dd3-184f1c5f9ab9"))).abi_TrySetWallpaperImageAsync(imageFile, &_ret));
 		return _ret;
 	}
 
@@ -439,13 +439,13 @@ extern(Windows):
 	static Windows.System.UserProfile.UserProfilePersonalizationSettings Current()
 	{
 		Windows.System.UserProfile.UserProfilePersonalizationSettings _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IUserProfilePersonalizationSettingsStatics).get_Current(&_ret));
+		Debug.OK(staticInstance.get_Current(&_ret));
 		return _ret;
 	}
 	static bool IsSupported()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.System.UserProfile.IUserProfilePersonalizationSettingsStatics).abi_IsSupported(&_ret));
+		Debug.OK(staticInstance.abi_IsSupported(&_ret));
 		return _ret;
 	}
 }

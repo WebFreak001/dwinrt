@@ -75,7 +75,7 @@ extern(Windows):
 	final INT32 ViewId()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotePlacementChangedPreviewEventArgs).get_ViewId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotePlacementChangedPreviewEventArgs)this.asInterface(uuid("491d57b7-f780-4e7f-a939-9a4caf965214"))).get_ViewId(&_ret));
 		return _ret;
 	}
 }
@@ -86,13 +86,13 @@ extern(Windows):
 	final INT32 ViewId()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INoteVisibilityChangedPreviewEventArgs).get_ViewId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INoteVisibilityChangedPreviewEventArgs)this.asInterface(uuid("0e34649e-3815-4ff6-83b3-a14d17120e24"))).get_ViewId(&_ret));
 		return _ret;
 	}
 	final bool IsVisible()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INoteVisibilityChangedPreviewEventArgs).get_IsVisible(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INoteVisibilityChangedPreviewEventArgs)this.asInterface(uuid("0e34649e-3815-4ff6-83b3-a14d17120e24"))).get_IsVisible(&_ret));
 		return _ret;
 	}
 }
@@ -103,93 +103,93 @@ extern(Windows):
 	final bool IsScreenLocked()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).get_IsScreenLocked(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview)this.asInterface(uuid("dc2ac23e-4850-4f13-9cc7-ff487efdfcde"))).get_IsScreenLocked(&_ret));
 		return _ret;
 	}
 	final void ShowNote(INT32 noteViewId)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).abi_ShowNote(noteViewId));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview)this.asInterface(uuid("dc2ac23e-4850-4f13-9cc7-ff487efdfcde"))).abi_ShowNote(noteViewId));
 	}
 	final void ShowNoteRelativeTo(INT32 noteViewId, INT32 anchorNoteViewId)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).abi_ShowNoteRelativeTo(noteViewId, anchorNoteViewId));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview)this.asInterface(uuid("dc2ac23e-4850-4f13-9cc7-ff487efdfcde"))).abi_ShowNoteRelativeTo(noteViewId, anchorNoteViewId));
 	}
 	final void ShowNoteWithPlacement(INT32 noteViewId, Windows.Storage.Streams.IBuffer data)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).abi_ShowNoteWithPlacement(noteViewId, data));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview)this.asInterface(uuid("dc2ac23e-4850-4f13-9cc7-ff487efdfcde"))).abi_ShowNoteWithPlacement(noteViewId, data));
 	}
 	final void HideNote(INT32 noteViewId)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).abi_HideNote(noteViewId));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview)this.asInterface(uuid("dc2ac23e-4850-4f13-9cc7-ff487efdfcde"))).abi_HideNote(noteViewId));
 	}
 	final Windows.Storage.Streams.IBuffer GetNotePlacement(INT32 noteViewId)
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).abi_GetNotePlacement(noteViewId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview)this.asInterface(uuid("dc2ac23e-4850-4f13-9cc7-ff487efdfcde"))).abi_GetNotePlacement(noteViewId, &_ret));
 		return _ret;
 	}
 	final bool TrySetNoteSize(INT32 noteViewId, Windows.Foundation.Size size)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).abi_TrySetNoteSize(noteViewId, size, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview)this.asInterface(uuid("dc2ac23e-4850-4f13-9cc7-ff487efdfcde"))).abi_TrySetNoteSize(noteViewId, size, &_ret));
 		return _ret;
 	}
 	final void SetFocusToNextView()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).abi_SetFocusToNextView());
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview)this.asInterface(uuid("dc2ac23e-4850-4f13-9cc7-ff487efdfcde"))).abi_SetFocusToNextView());
 	}
 	final Windows.Foundation.IAsyncAction SetNotesThumbnailAsync(Windows.Storage.Streams.IBuffer thumbnail)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).abi_SetNotesThumbnailAsync(thumbnail, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview)this.asInterface(uuid("dc2ac23e-4850-4f13-9cc7-ff487efdfcde"))).abi_SetNotesThumbnailAsync(thumbnail, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnSystemLockStateChanged(void delegate(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).add_SystemLockStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, IInspectable), Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview)this.asInterface(uuid("dc2ac23e-4850-4f13-9cc7-ff487efdfcde"))).add_SystemLockStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, IInspectable), Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSystemLockStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).remove_SystemLockStateChanged(token));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview)this.asInterface(uuid("dc2ac23e-4850-4f13-9cc7-ff487efdfcde"))).remove_SystemLockStateChanged(token));
 	}
 	final EventRegistrationToken OnNotePlacementChanged(void delegate(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NotePlacementChangedPreviewEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).add_NotePlacementChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NotePlacementChangedPreviewEventArgs), Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NotePlacementChangedPreviewEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview)this.asInterface(uuid("dc2ac23e-4850-4f13-9cc7-ff487efdfcde"))).add_NotePlacementChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NotePlacementChangedPreviewEventArgs), Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NotePlacementChangedPreviewEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeNotePlacementChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).remove_NotePlacementChanged(token));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview)this.asInterface(uuid("dc2ac23e-4850-4f13-9cc7-ff487efdfcde"))).remove_NotePlacementChanged(token));
 	}
 	final EventRegistrationToken OnNoteVisibilityChanged(void delegate(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NoteVisibilityChangedPreviewEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).add_NoteVisibilityChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NoteVisibilityChangedPreviewEventArgs), Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NoteVisibilityChangedPreviewEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview)this.asInterface(uuid("dc2ac23e-4850-4f13-9cc7-ff487efdfcde"))).add_NoteVisibilityChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NoteVisibilityChangedPreviewEventArgs), Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview, Windows.ApplicationModel.Preview.Notes.NoteVisibilityChangedPreviewEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeNoteVisibilityChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview).remove_NoteVisibilityChanged(token));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview)this.asInterface(uuid("dc2ac23e-4850-4f13-9cc7-ff487efdfcde"))).remove_NoteVisibilityChanged(token));
 	}
 	final void ShowNoteRelativeToWithOptions(INT32 noteViewId, INT32 anchorNoteViewId, Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreviewShowNoteOptions options)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2).abi_ShowNoteRelativeToWithOptions(noteViewId, anchorNoteViewId, options));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2)this.asInterface(uuid("edfe864a-1f54-4b09-9823-ff477f6fa3bc"))).abi_ShowNoteRelativeToWithOptions(noteViewId, anchorNoteViewId, options));
 	}
 	final void ShowNoteWithPlacementWithOptions(INT32 noteViewId, Windows.Storage.Streams.IBuffer data, Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreviewShowNoteOptions options)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2).abi_ShowNoteWithPlacementWithOptions(noteViewId, data, options));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2)this.asInterface(uuid("edfe864a-1f54-4b09-9823-ff477f6fa3bc"))).abi_ShowNoteWithPlacementWithOptions(noteViewId, data, options));
 	}
 	final void SetFocusToPreviousView()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2).abi_SetFocusToPreviousView());
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2)this.asInterface(uuid("edfe864a-1f54-4b09-9823-ff477f6fa3bc"))).abi_SetFocusToPreviousView());
 	}
 	final Windows.Foundation.IAsyncAction SetThumbnailImageForTaskSwitcherAsync(Windows.Graphics.Imaging.SoftwareBitmap bitmap)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2).abi_SetThumbnailImageForTaskSwitcherAsync(bitmap, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2)this.asInterface(uuid("edfe864a-1f54-4b09-9823-ff477f6fa3bc"))).abi_SetThumbnailImageForTaskSwitcherAsync(bitmap, &_ret));
 		return _ret;
 	}
 
@@ -202,7 +202,7 @@ extern(Windows):
 	static Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview GetForCurrentApp()
 	{
 		Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreview _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreviewStatics).abi_GetForCurrentApp(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentApp(&_ret));
 		return _ret;
 	}
 }
@@ -213,17 +213,17 @@ extern(Windows):
 	final bool ShowWithFocus()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreviewShowNoteOptions).get_ShowWithFocus(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreviewShowNoteOptions)this.asInterface(uuid("886b09d6-a6ae-4007-a56d-1ca70c84c0d2"))).get_ShowWithFocus(&_ret));
 		return _ret;
 	}
 	final void ShowWithFocus(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreviewShowNoteOptions).set_ShowWithFocus(value));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreviewShowNoteOptions)this.asInterface(uuid("886b09d6-a6ae-4007-a56d-1ca70c84c0d2"))).set_ShowWithFocus(value));
 	}
 	static NotesWindowManagerPreviewShowNoteOptions New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(NotesWindowManagerPreviewShowNoteOptions).abi_ActivateInstance(&ret));
-		return ret.as!(NotesWindowManagerPreviewShowNoteOptions);
+		return cast(NotesWindowManagerPreviewShowNoteOptions) ret;
 	}
 }

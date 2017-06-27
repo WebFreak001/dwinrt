@@ -1722,22 +1722,22 @@ extern(Windows):
 	final double MinWindowWidth()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IAdaptiveTrigger).get_MinWindowWidth(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IAdaptiveTrigger)this.asInterface(uuid("a5f04119-0cd9-49f1-a23f-44e547ab9f1a"))).get_MinWindowWidth(&_ret));
 		return _ret;
 	}
 	final void MinWindowWidth(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IAdaptiveTrigger).set_MinWindowWidth(value));
+		Debug.OK((cast(Windows.UI.Xaml.IAdaptiveTrigger)this.asInterface(uuid("a5f04119-0cd9-49f1-a23f-44e547ab9f1a"))).set_MinWindowWidth(value));
 	}
 	final double MinWindowHeight()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IAdaptiveTrigger).get_MinWindowHeight(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IAdaptiveTrigger)this.asInterface(uuid("a5f04119-0cd9-49f1-a23f-44e547ab9f1a"))).get_MinWindowHeight(&_ret));
 		return _ret;
 	}
 	final void MinWindowHeight(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IAdaptiveTrigger).set_MinWindowHeight(value));
+		Debug.OK((cast(Windows.UI.Xaml.IAdaptiveTrigger)this.asInterface(uuid("a5f04119-0cd9-49f1-a23f-44e547ab9f1a"))).set_MinWindowHeight(value));
 	}
 
 	private static Windows.UI.Xaml.IAdaptiveTriggerStatics _staticInstance;
@@ -1749,13 +1749,13 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty MinWindowWidthProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IAdaptiveTriggerStatics).get_MinWindowWidthProperty(&_ret));
+		Debug.OK(staticInstance.get_MinWindowWidthProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty MinWindowHeightProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IAdaptiveTriggerStatics).get_MinWindowHeightProperty(&_ret));
+		Debug.OK(staticInstance.get_MinWindowHeightProperty(&_ret));
 		return _ret;
 	}
 	static AdaptiveTrigger New()
@@ -1776,10 +1776,10 @@ class AdaptiveTriggerT(Base) : AgileObject!Base, AdaptiveTrigger
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_MinWindowWidth(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IAdaptiveTrigger).get_MinWindowWidth(return_value); }
-	override HRESULT set_MinWindowWidth(double value) { return m_inner.as!(Windows.UI.Xaml.IAdaptiveTrigger).set_MinWindowWidth(value); }
-	override HRESULT get_MinWindowHeight(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IAdaptiveTrigger).get_MinWindowHeight(return_value); }
-	override HRESULT set_MinWindowHeight(double value) { return m_inner.as!(Windows.UI.Xaml.IAdaptiveTrigger).set_MinWindowHeight(value); }
+	override HRESULT get_MinWindowWidth(double* return_value) { return (cast(Windows.UI.Xaml.IAdaptiveTrigger)m_inner.asInterface(uuid("a5f04119-0cd9-49f1-a23f-44e547ab9f1a"))).get_MinWindowWidth(return_value); }
+	override HRESULT set_MinWindowWidth(double value) { return (cast(Windows.UI.Xaml.IAdaptiveTrigger)m_inner.asInterface(uuid("a5f04119-0cd9-49f1-a23f-44e547ab9f1a"))).set_MinWindowWidth(value); }
+	override HRESULT get_MinWindowHeight(double* return_value) { return (cast(Windows.UI.Xaml.IAdaptiveTrigger)m_inner.asInterface(uuid("a5f04119-0cd9-49f1-a23f-44e547ab9f1a"))).get_MinWindowHeight(return_value); }
+	override HRESULT set_MinWindowHeight(double value) { return (cast(Windows.UI.Xaml.IAdaptiveTrigger)m_inner.asInterface(uuid("a5f04119-0cd9-49f1-a23f-44e547ab9f1a"))).set_MinWindowHeight(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -1791,112 +1791,112 @@ extern(Windows):
 	final Windows.UI.Xaml.ResourceDictionary Resources()
 	{
 		Windows.UI.Xaml.ResourceDictionary _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplication).get_Resources(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IApplication)this.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).get_Resources(&_ret));
 		return _ret;
 	}
 	final void Resources(Windows.UI.Xaml.ResourceDictionary value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplication).set_Resources(value));
+		Debug.OK((cast(Windows.UI.Xaml.IApplication)this.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).set_Resources(value));
 	}
 	final Windows.UI.Xaml.DebugSettings DebugSettings()
 	{
 		Windows.UI.Xaml.DebugSettings _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplication).get_DebugSettings(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IApplication)this.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).get_DebugSettings(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.ApplicationTheme RequestedTheme()
 	{
 		Windows.UI.Xaml.ApplicationTheme _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplication).get_RequestedTheme(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IApplication)this.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).get_RequestedTheme(&_ret));
 		return _ret;
 	}
 	final void RequestedTheme(Windows.UI.Xaml.ApplicationTheme value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplication).set_RequestedTheme(value));
+		Debug.OK((cast(Windows.UI.Xaml.IApplication)this.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).set_RequestedTheme(value));
 	}
 	final EventRegistrationToken OnUnhandledException(void delegate(IInspectable, Windows.UI.Xaml.UnhandledExceptionEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplication).add_UnhandledException(event!(Windows.UI.Xaml.UnhandledExceptionEventHandler, IInspectable, Windows.UI.Xaml.UnhandledExceptionEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IApplication)this.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).add_UnhandledException(event!(Windows.UI.Xaml.UnhandledExceptionEventHandler, IInspectable, Windows.UI.Xaml.UnhandledExceptionEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeUnhandledException(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplication).remove_UnhandledException(token));
+		Debug.OK((cast(Windows.UI.Xaml.IApplication)this.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).remove_UnhandledException(token));
 	}
 	final EventRegistrationToken OnSuspending(void delegate(IInspectable, Windows.ApplicationModel.SuspendingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplication).add_Suspending(event!(Windows.UI.Xaml.SuspendingEventHandler, IInspectable, Windows.ApplicationModel.SuspendingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IApplication)this.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).add_Suspending(event!(Windows.UI.Xaml.SuspendingEventHandler, IInspectable, Windows.ApplicationModel.SuspendingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSuspending(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplication).remove_Suspending(token));
+		Debug.OK((cast(Windows.UI.Xaml.IApplication)this.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).remove_Suspending(token));
 	}
 	final EventRegistrationToken OnResuming(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplication).add_Resuming(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IApplication)this.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).add_Resuming(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeResuming(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplication).remove_Resuming(token));
+		Debug.OK((cast(Windows.UI.Xaml.IApplication)this.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).remove_Resuming(token));
 	}
 	final void Exit()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplication).abi_Exit());
+		Debug.OK((cast(Windows.UI.Xaml.IApplication)this.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).abi_Exit());
 	}
 	final Windows.UI.Xaml.FocusVisualKind FocusVisualKind()
 	{
 		Windows.UI.Xaml.FocusVisualKind _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplication2).get_FocusVisualKind(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IApplication2)this.asInterface(uuid("019104be-522a-5904-f52f-de72010429e0"))).get_FocusVisualKind(&_ret));
 		return _ret;
 	}
 	final void FocusVisualKind(Windows.UI.Xaml.FocusVisualKind value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplication2).set_FocusVisualKind(value));
+		Debug.OK((cast(Windows.UI.Xaml.IApplication2)this.asInterface(uuid("019104be-522a-5904-f52f-de72010429e0"))).set_FocusVisualKind(value));
 	}
 	final Windows.UI.Xaml.ApplicationRequiresPointerMode RequiresPointerMode()
 	{
 		Windows.UI.Xaml.ApplicationRequiresPointerMode _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplication2).get_RequiresPointerMode(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IApplication2)this.asInterface(uuid("019104be-522a-5904-f52f-de72010429e0"))).get_RequiresPointerMode(&_ret));
 		return _ret;
 	}
 	final void RequiresPointerMode(Windows.UI.Xaml.ApplicationRequiresPointerMode value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplication2).set_RequiresPointerMode(value));
+		Debug.OK((cast(Windows.UI.Xaml.IApplication2)this.asInterface(uuid("019104be-522a-5904-f52f-de72010429e0"))).set_RequiresPointerMode(value));
 	}
 	final EventRegistrationToken OnLeavingBackground(void delegate(IInspectable, Windows.ApplicationModel.LeavingBackgroundEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplication2).add_LeavingBackground(event!(Windows.UI.Xaml.LeavingBackgroundEventHandler, IInspectable, Windows.ApplicationModel.LeavingBackgroundEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IApplication2)this.asInterface(uuid("019104be-522a-5904-f52f-de72010429e0"))).add_LeavingBackground(event!(Windows.UI.Xaml.LeavingBackgroundEventHandler, IInspectable, Windows.ApplicationModel.LeavingBackgroundEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeLeavingBackground(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplication2).remove_LeavingBackground(token));
+		Debug.OK((cast(Windows.UI.Xaml.IApplication2)this.asInterface(uuid("019104be-522a-5904-f52f-de72010429e0"))).remove_LeavingBackground(token));
 	}
 	final EventRegistrationToken OnEnteredBackground(void delegate(IInspectable, Windows.ApplicationModel.EnteredBackgroundEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplication2).add_EnteredBackground(event!(Windows.UI.Xaml.EnteredBackgroundEventHandler, IInspectable, Windows.ApplicationModel.EnteredBackgroundEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IApplication2)this.asInterface(uuid("019104be-522a-5904-f52f-de72010429e0"))).add_EnteredBackground(event!(Windows.UI.Xaml.EnteredBackgroundEventHandler, IInspectable, Windows.ApplicationModel.EnteredBackgroundEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeEnteredBackground(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplication2).remove_EnteredBackground(token));
+		Debug.OK((cast(Windows.UI.Xaml.IApplication2)this.asInterface(uuid("019104be-522a-5904-f52f-de72010429e0"))).remove_EnteredBackground(token));
 	}
 	final Windows.UI.Xaml.ApplicationHighContrastAdjustment HighContrastAdjustment()
 	{
 		Windows.UI.Xaml.ApplicationHighContrastAdjustment _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplication3).get_HighContrastAdjustment(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IApplication3)this.asInterface(uuid("b775ad7c-18b8-45ca-a1b0-dc483e4b1028"))).get_HighContrastAdjustment(&_ret));
 		return _ret;
 	}
 	final void HighContrastAdjustment(Windows.UI.Xaml.ApplicationHighContrastAdjustment value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IApplication3).set_HighContrastAdjustment(value));
+		Debug.OK((cast(Windows.UI.Xaml.IApplication3)this.asInterface(uuid("b775ad7c-18b8-45ca-a1b0-dc483e4b1028"))).set_HighContrastAdjustment(value));
 	}
 
 	private static Windows.UI.Xaml.IApplicationStatics _staticInstance;
@@ -1908,20 +1908,20 @@ extern(Windows):
 	static Windows.UI.Xaml.Application Current()
 	{
 		Windows.UI.Xaml.Application _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IApplicationStatics).get_Current(&_ret));
+		Debug.OK(staticInstance.get_Current(&_ret));
 		return _ret;
 	}
 	static void Start(Windows.UI.Xaml.ApplicationInitializationCallback callback)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IApplicationStatics).abi_Start(callback));
+		Debug.OK(staticInstance.abi_Start(callback));
 	}
 	static void LoadComponent(IInspectable component, Windows.Foundation.Uri resourceLocator)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IApplicationStatics).abi_LoadComponent(component, resourceLocator));
+		Debug.OK(staticInstance.abi_LoadComponent(component, resourceLocator));
 	}
 	static void LoadComponentWithResourceLocation(IInspectable component, Windows.Foundation.Uri resourceLocator, Windows.UI.Xaml.Controls.Primitives.ComponentResourceLocation componentResourceLocation)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IApplicationStatics).abi_LoadComponentWithResourceLocation(component, resourceLocator, componentResourceLocation));
+		Debug.OK(staticInstance.abi_LoadComponentWithResourceLocation(component, resourceLocator, componentResourceLocation));
 	}
 	static Application New()
 	{
@@ -1941,52 +1941,52 @@ class ApplicationT(Base) : AgileObject!Base, Application
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_Resources(Windows.UI.Xaml.ResourceDictionary* return_value) { return m_inner.as!(Windows.UI.Xaml.IApplication).get_Resources(return_value); }
-	override HRESULT set_Resources(Windows.UI.Xaml.ResourceDictionary value) { return m_inner.as!(Windows.UI.Xaml.IApplication).set_Resources(value); }
-	override HRESULT get_DebugSettings(Windows.UI.Xaml.DebugSettings* return_value) { return m_inner.as!(Windows.UI.Xaml.IApplication).get_DebugSettings(return_value); }
-	override HRESULT get_RequestedTheme(Windows.UI.Xaml.ApplicationTheme* return_value) { return m_inner.as!(Windows.UI.Xaml.IApplication).get_RequestedTheme(return_value); }
-	override HRESULT set_RequestedTheme(Windows.UI.Xaml.ApplicationTheme value) { return m_inner.as!(Windows.UI.Xaml.IApplication).set_RequestedTheme(value); }
-	override HRESULT add_UnhandledException(Windows.UI.Xaml.UnhandledExceptionEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IApplication).add_UnhandledException(value, return_token); }
-	override HRESULT remove_UnhandledException(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IApplication).remove_UnhandledException(token); }
-	override HRESULT add_Suspending(Windows.UI.Xaml.SuspendingEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IApplication).add_Suspending(value, return_token); }
-	override HRESULT remove_Suspending(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IApplication).remove_Suspending(token); }
-	override HRESULT add_Resuming(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IApplication).add_Resuming(value, return_token); }
-	override HRESULT remove_Resuming(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IApplication).remove_Resuming(token); }
-	override HRESULT abi_Exit() { return m_inner.as!(Windows.UI.Xaml.IApplication).abi_Exit(); }
+	override HRESULT get_Resources(Windows.UI.Xaml.ResourceDictionary* return_value) { return (cast(Windows.UI.Xaml.IApplication)m_inner.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).get_Resources(return_value); }
+	override HRESULT set_Resources(Windows.UI.Xaml.ResourceDictionary value) { return (cast(Windows.UI.Xaml.IApplication)m_inner.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).set_Resources(value); }
+	override HRESULT get_DebugSettings(Windows.UI.Xaml.DebugSettings* return_value) { return (cast(Windows.UI.Xaml.IApplication)m_inner.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).get_DebugSettings(return_value); }
+	override HRESULT get_RequestedTheme(Windows.UI.Xaml.ApplicationTheme* return_value) { return (cast(Windows.UI.Xaml.IApplication)m_inner.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).get_RequestedTheme(return_value); }
+	override HRESULT set_RequestedTheme(Windows.UI.Xaml.ApplicationTheme value) { return (cast(Windows.UI.Xaml.IApplication)m_inner.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).set_RequestedTheme(value); }
+	override HRESULT add_UnhandledException(Windows.UI.Xaml.UnhandledExceptionEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IApplication)m_inner.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).add_UnhandledException(value, return_token); }
+	override HRESULT remove_UnhandledException(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IApplication)m_inner.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).remove_UnhandledException(token); }
+	override HRESULT add_Suspending(Windows.UI.Xaml.SuspendingEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IApplication)m_inner.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).add_Suspending(value, return_token); }
+	override HRESULT remove_Suspending(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IApplication)m_inner.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).remove_Suspending(token); }
+	override HRESULT add_Resuming(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IApplication)m_inner.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).add_Resuming(value, return_token); }
+	override HRESULT remove_Resuming(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IApplication)m_inner.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).remove_Resuming(token); }
+	override HRESULT abi_Exit() { return (cast(Windows.UI.Xaml.IApplication)m_inner.asInterface(uuid("74b861a1-7487-46a9-9a6e-c78b512726c5"))).abi_Exit(); }
 
 	override HRESULT abi_OnActivated(Windows.ApplicationModel.Activation.IActivatedEventArgs args) { this.OnActivated(args); return S_OK; }
-	void OnActivated(Windows.ApplicationModel.Activation.IActivatedEventArgs args) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnActivated(args)); }
+	void OnActivated(Windows.ApplicationModel.Activation.IActivatedEventArgs args) { Debug.OK((cast(Windows.UI.Xaml.IApplicationOverrides)m_inner.asInterface(uuid("25f99ff7-9347-459a-9fac-b2d0e11c1a0f"))).abi_OnActivated(args)); }
 	override HRESULT abi_OnLaunched(Windows.ApplicationModel.Activation.LaunchActivatedEventArgs args) { this.OnLaunched(args); return S_OK; }
-	void OnLaunched(Windows.ApplicationModel.Activation.LaunchActivatedEventArgs args) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnLaunched(args)); }
+	void OnLaunched(Windows.ApplicationModel.Activation.LaunchActivatedEventArgs args) { Debug.OK((cast(Windows.UI.Xaml.IApplicationOverrides)m_inner.asInterface(uuid("25f99ff7-9347-459a-9fac-b2d0e11c1a0f"))).abi_OnLaunched(args)); }
 	override HRESULT abi_OnFileActivated(Windows.ApplicationModel.Activation.FileActivatedEventArgs args) { this.OnFileActivated(args); return S_OK; }
-	void OnFileActivated(Windows.ApplicationModel.Activation.FileActivatedEventArgs args) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnFileActivated(args)); }
+	void OnFileActivated(Windows.ApplicationModel.Activation.FileActivatedEventArgs args) { Debug.OK((cast(Windows.UI.Xaml.IApplicationOverrides)m_inner.asInterface(uuid("25f99ff7-9347-459a-9fac-b2d0e11c1a0f"))).abi_OnFileActivated(args)); }
 	override HRESULT abi_OnSearchActivated(Windows.ApplicationModel.Activation.SearchActivatedEventArgs args) { this.OnSearchActivated(args); return S_OK; }
-	void OnSearchActivated(Windows.ApplicationModel.Activation.SearchActivatedEventArgs args) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnSearchActivated(args)); }
+	void OnSearchActivated(Windows.ApplicationModel.Activation.SearchActivatedEventArgs args) { Debug.OK((cast(Windows.UI.Xaml.IApplicationOverrides)m_inner.asInterface(uuid("25f99ff7-9347-459a-9fac-b2d0e11c1a0f"))).abi_OnSearchActivated(args)); }
 	override HRESULT abi_OnShareTargetActivated(Windows.ApplicationModel.Activation.ShareTargetActivatedEventArgs args) { this.OnShareTargetActivated(args); return S_OK; }
-	void OnShareTargetActivated(Windows.ApplicationModel.Activation.ShareTargetActivatedEventArgs args) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnShareTargetActivated(args)); }
+	void OnShareTargetActivated(Windows.ApplicationModel.Activation.ShareTargetActivatedEventArgs args) { Debug.OK((cast(Windows.UI.Xaml.IApplicationOverrides)m_inner.asInterface(uuid("25f99ff7-9347-459a-9fac-b2d0e11c1a0f"))).abi_OnShareTargetActivated(args)); }
 	override HRESULT abi_OnFileOpenPickerActivated(Windows.ApplicationModel.Activation.FileOpenPickerActivatedEventArgs args) { this.OnFileOpenPickerActivated(args); return S_OK; }
-	void OnFileOpenPickerActivated(Windows.ApplicationModel.Activation.FileOpenPickerActivatedEventArgs args) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnFileOpenPickerActivated(args)); }
+	void OnFileOpenPickerActivated(Windows.ApplicationModel.Activation.FileOpenPickerActivatedEventArgs args) { Debug.OK((cast(Windows.UI.Xaml.IApplicationOverrides)m_inner.asInterface(uuid("25f99ff7-9347-459a-9fac-b2d0e11c1a0f"))).abi_OnFileOpenPickerActivated(args)); }
 	override HRESULT abi_OnFileSavePickerActivated(Windows.ApplicationModel.Activation.FileSavePickerActivatedEventArgs args) { this.OnFileSavePickerActivated(args); return S_OK; }
-	void OnFileSavePickerActivated(Windows.ApplicationModel.Activation.FileSavePickerActivatedEventArgs args) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnFileSavePickerActivated(args)); }
+	void OnFileSavePickerActivated(Windows.ApplicationModel.Activation.FileSavePickerActivatedEventArgs args) { Debug.OK((cast(Windows.UI.Xaml.IApplicationOverrides)m_inner.asInterface(uuid("25f99ff7-9347-459a-9fac-b2d0e11c1a0f"))).abi_OnFileSavePickerActivated(args)); }
 	override HRESULT abi_OnCachedFileUpdaterActivated(Windows.ApplicationModel.Activation.CachedFileUpdaterActivatedEventArgs args) { this.OnCachedFileUpdaterActivated(args); return S_OK; }
-	void OnCachedFileUpdaterActivated(Windows.ApplicationModel.Activation.CachedFileUpdaterActivatedEventArgs args) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnCachedFileUpdaterActivated(args)); }
+	void OnCachedFileUpdaterActivated(Windows.ApplicationModel.Activation.CachedFileUpdaterActivatedEventArgs args) { Debug.OK((cast(Windows.UI.Xaml.IApplicationOverrides)m_inner.asInterface(uuid("25f99ff7-9347-459a-9fac-b2d0e11c1a0f"))).abi_OnCachedFileUpdaterActivated(args)); }
 	override HRESULT abi_OnWindowCreated(Windows.UI.Xaml.WindowCreatedEventArgs args) { this.OnWindowCreated(args); return S_OK; }
-	void OnWindowCreated(Windows.UI.Xaml.WindowCreatedEventArgs args) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IApplicationOverrides).abi_OnWindowCreated(args)); }
+	void OnWindowCreated(Windows.UI.Xaml.WindowCreatedEventArgs args) { Debug.OK((cast(Windows.UI.Xaml.IApplicationOverrides)m_inner.asInterface(uuid("25f99ff7-9347-459a-9fac-b2d0e11c1a0f"))).abi_OnWindowCreated(args)); }
 
-	override HRESULT get_FocusVisualKind(Windows.UI.Xaml.FocusVisualKind* return_value) { return m_inner.as!(Windows.UI.Xaml.IApplication2).get_FocusVisualKind(return_value); }
-	override HRESULT set_FocusVisualKind(Windows.UI.Xaml.FocusVisualKind value) { return m_inner.as!(Windows.UI.Xaml.IApplication2).set_FocusVisualKind(value); }
-	override HRESULT get_RequiresPointerMode(Windows.UI.Xaml.ApplicationRequiresPointerMode* return_value) { return m_inner.as!(Windows.UI.Xaml.IApplication2).get_RequiresPointerMode(return_value); }
-	override HRESULT set_RequiresPointerMode(Windows.UI.Xaml.ApplicationRequiresPointerMode value) { return m_inner.as!(Windows.UI.Xaml.IApplication2).set_RequiresPointerMode(value); }
-	override HRESULT add_LeavingBackground(Windows.UI.Xaml.LeavingBackgroundEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IApplication2).add_LeavingBackground(value, return_token); }
-	override HRESULT remove_LeavingBackground(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IApplication2).remove_LeavingBackground(token); }
-	override HRESULT add_EnteredBackground(Windows.UI.Xaml.EnteredBackgroundEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IApplication2).add_EnteredBackground(value, return_token); }
-	override HRESULT remove_EnteredBackground(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IApplication2).remove_EnteredBackground(token); }
+	override HRESULT get_FocusVisualKind(Windows.UI.Xaml.FocusVisualKind* return_value) { return (cast(Windows.UI.Xaml.IApplication2)m_inner.asInterface(uuid("019104be-522a-5904-f52f-de72010429e0"))).get_FocusVisualKind(return_value); }
+	override HRESULT set_FocusVisualKind(Windows.UI.Xaml.FocusVisualKind value) { return (cast(Windows.UI.Xaml.IApplication2)m_inner.asInterface(uuid("019104be-522a-5904-f52f-de72010429e0"))).set_FocusVisualKind(value); }
+	override HRESULT get_RequiresPointerMode(Windows.UI.Xaml.ApplicationRequiresPointerMode* return_value) { return (cast(Windows.UI.Xaml.IApplication2)m_inner.asInterface(uuid("019104be-522a-5904-f52f-de72010429e0"))).get_RequiresPointerMode(return_value); }
+	override HRESULT set_RequiresPointerMode(Windows.UI.Xaml.ApplicationRequiresPointerMode value) { return (cast(Windows.UI.Xaml.IApplication2)m_inner.asInterface(uuid("019104be-522a-5904-f52f-de72010429e0"))).set_RequiresPointerMode(value); }
+	override HRESULT add_LeavingBackground(Windows.UI.Xaml.LeavingBackgroundEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IApplication2)m_inner.asInterface(uuid("019104be-522a-5904-f52f-de72010429e0"))).add_LeavingBackground(value, return_token); }
+	override HRESULT remove_LeavingBackground(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IApplication2)m_inner.asInterface(uuid("019104be-522a-5904-f52f-de72010429e0"))).remove_LeavingBackground(token); }
+	override HRESULT add_EnteredBackground(Windows.UI.Xaml.EnteredBackgroundEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IApplication2)m_inner.asInterface(uuid("019104be-522a-5904-f52f-de72010429e0"))).add_EnteredBackground(value, return_token); }
+	override HRESULT remove_EnteredBackground(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IApplication2)m_inner.asInterface(uuid("019104be-522a-5904-f52f-de72010429e0"))).remove_EnteredBackground(token); }
 
 	override HRESULT abi_OnBackgroundActivated(Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs args) { this.OnBackgroundActivated(args); return S_OK; }
-	void OnBackgroundActivated(Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs args) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IApplicationOverrides2).abi_OnBackgroundActivated(args)); }
+	void OnBackgroundActivated(Windows.ApplicationModel.Activation.BackgroundActivatedEventArgs args) { Debug.OK((cast(Windows.UI.Xaml.IApplicationOverrides2)m_inner.asInterface(uuid("db5cd2b9-d3b4-558c-c64e-0434fd1bd889"))).abi_OnBackgroundActivated(args)); }
 
-	override HRESULT get_HighContrastAdjustment(Windows.UI.Xaml.ApplicationHighContrastAdjustment* return_value) { return m_inner.as!(Windows.UI.Xaml.IApplication3).get_HighContrastAdjustment(return_value); }
-	override HRESULT set_HighContrastAdjustment(Windows.UI.Xaml.ApplicationHighContrastAdjustment value) { return m_inner.as!(Windows.UI.Xaml.IApplication3).set_HighContrastAdjustment(value); }
+	override HRESULT get_HighContrastAdjustment(Windows.UI.Xaml.ApplicationHighContrastAdjustment* return_value) { return (cast(Windows.UI.Xaml.IApplication3)m_inner.asInterface(uuid("b775ad7c-18b8-45ca-a1b0-dc483e4b1028"))).get_HighContrastAdjustment(return_value); }
+	override HRESULT set_HighContrastAdjustment(Windows.UI.Xaml.ApplicationHighContrastAdjustment value) { return (cast(Windows.UI.Xaml.IApplication3)m_inner.asInterface(uuid("b775ad7c-18b8-45ca-a1b0-dc483e4b1028"))).set_HighContrastAdjustment(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2002,7 +2002,7 @@ extern(Windows):
 	final HSTRING Message()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IBindingFailedEventArgs).get_Message(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IBindingFailedEventArgs)this.asInterface(uuid("32c1d013-4dbd-446d-bbb8-0de35048a449"))).get_Message(&_ret));
 		return _ret;
 	}
 }
@@ -2013,28 +2013,28 @@ extern(Windows):
 	final bool AnimationDesired()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IBringIntoViewOptions).get_AnimationDesired(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IBringIntoViewOptions)this.asInterface(uuid("19bdd1b5-c7cb-46d9-a4dd-a1bbe83ef2fb"))).get_AnimationDesired(&_ret));
 		return _ret;
 	}
 	final void AnimationDesired(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IBringIntoViewOptions).set_AnimationDesired(value));
+		Debug.OK((cast(Windows.UI.Xaml.IBringIntoViewOptions)this.asInterface(uuid("19bdd1b5-c7cb-46d9-a4dd-a1bbe83ef2fb"))).set_AnimationDesired(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.Rect) TargetRect()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.Rect) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IBringIntoViewOptions).get_TargetRect(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IBringIntoViewOptions)this.asInterface(uuid("19bdd1b5-c7cb-46d9-a4dd-a1bbe83ef2fb"))).get_TargetRect(&_ret));
 		return _ret;
 	}
 	final void TargetRect(Windows.Foundation.IReference!(Windows.Foundation.Rect) value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IBringIntoViewOptions).set_TargetRect(value));
+		Debug.OK((cast(Windows.UI.Xaml.IBringIntoViewOptions)this.asInterface(uuid("19bdd1b5-c7cb-46d9-a4dd-a1bbe83ef2fb"))).set_TargetRect(value));
 	}
 	static BringIntoViewOptions New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(BringIntoViewOptions).abi_ActivateInstance(&ret));
-		return ret.as!(BringIntoViewOptions);
+		return cast(BringIntoViewOptions) ret;
 	}
 }
 
@@ -2049,13 +2049,13 @@ interface CornerRadiusHelper : Windows.UI.Xaml.ICornerRadiusHelper
 	static Windows.UI.Xaml.CornerRadius FromRadii(double topLeft, double topRight, double bottomRight, double bottomLeft)
 	{
 		Windows.UI.Xaml.CornerRadius _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.ICornerRadiusHelperStatics).abi_FromRadii(topLeft, topRight, bottomRight, bottomLeft, &_ret));
+		Debug.OK(staticInstance.abi_FromRadii(topLeft, topRight, bottomRight, bottomLeft, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.CornerRadius FromUniformRadius(double uniformRadius)
 	{
 		Windows.UI.Xaml.CornerRadius _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.ICornerRadiusHelperStatics).abi_FromUniformRadius(uniformRadius, &_ret));
+		Debug.OK(staticInstance.abi_FromUniformRadius(uniformRadius, &_ret));
 		return _ret;
 	}
 }
@@ -2066,18 +2066,18 @@ extern(Windows):
 	final IInspectable NewValue()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDataContextChangedEventArgs).get_NewValue(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDataContextChangedEventArgs)this.asInterface(uuid("7da68e21-0b8f-4f9f-a143-f8e7780136a2"))).get_NewValue(&_ret));
 		return _ret;
 	}
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDataContextChangedEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDataContextChangedEventArgs)this.asInterface(uuid("7da68e21-0b8f-4f9f-a143-f8e7780136a2"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDataContextChangedEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.UI.Xaml.IDataContextChangedEventArgs)this.asInterface(uuid("7da68e21-0b8f-4f9f-a143-f8e7780136a2"))).set_Handled(value));
 	}
 }
 
@@ -2087,7 +2087,7 @@ extern(Windows):
 	final Windows.UI.Xaml.DependencyObject LoadContent()
 	{
 		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDataTemplate).abi_LoadContent(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDataTemplate)this.asInterface(uuid("9910aec7-8ab5-4118-9bc6-09f45a35073d"))).abi_LoadContent(&_ret));
 		return _ret;
 	}
 
@@ -2100,18 +2100,18 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty ExtensionInstanceProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDataTemplateStatics2).get_ExtensionInstanceProperty(&_ret));
+		Debug.OK(staticInstance.get_ExtensionInstanceProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.IDataTemplateExtension GetExtensionInstance(Windows.UI.Xaml.FrameworkElement element)
 	{
 		Windows.UI.Xaml.IDataTemplateExtension _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDataTemplateStatics2).abi_GetExtensionInstance(element, &_ret));
+		Debug.OK(staticInstance.abi_GetExtensionInstance(element, &_ret));
 		return _ret;
 	}
 	static void SetExtensionInstance(Windows.UI.Xaml.FrameworkElement element, Windows.UI.Xaml.IDataTemplateExtension value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDataTemplateStatics2).abi_SetExtensionInstance(element, value));
+		Debug.OK(staticInstance.abi_SetExtensionInstance(element, value));
 	}
 	static DataTemplate New()
 	{
@@ -2131,7 +2131,7 @@ class DataTemplateT(Base) : AgileObject!Base, DataTemplate
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT abi_LoadContent(Windows.UI.Xaml.DependencyObject* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.IDataTemplate).abi_LoadContent(return_returnValue); }
+	override HRESULT abi_LoadContent(Windows.UI.Xaml.DependencyObject* return_returnValue) { return (cast(Windows.UI.Xaml.IDataTemplate)m_inner.asInterface(uuid("9910aec7-8ab5-4118-9bc6-09f45a35073d"))).abi_LoadContent(return_returnValue); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2143,12 +2143,12 @@ extern(Windows):
 	final IInspectable DataType()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDataTemplateKey).get_DataType(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDataTemplateKey)this.asInterface(uuid("873b6c28-cceb-4b61-86fa-b2cec39cc2fa"))).get_DataType(&_ret));
 		return _ret;
 	}
 	final void DataType(IInspectable value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDataTemplateKey).set_DataType(value));
+		Debug.OK((cast(Windows.UI.Xaml.IDataTemplateKey)this.asInterface(uuid("873b6c28-cceb-4b61-86fa-b2cec39cc2fa"))).set_DataType(value));
 	}
 	static DataTemplateKey New()
 	{
@@ -2168,8 +2168,8 @@ class DataTemplateKeyT(Base) : AgileObject!Base, DataTemplateKey
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_DataType(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.IDataTemplateKey).get_DataType(return_value); }
-	override HRESULT set_DataType(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.IDataTemplateKey).set_DataType(value); }
+	override HRESULT get_DataType(IInspectable* return_value) { return (cast(Windows.UI.Xaml.IDataTemplateKey)m_inner.asInterface(uuid("873b6c28-cceb-4b61-86fa-b2cec39cc2fa"))).get_DataType(return_value); }
+	override HRESULT set_DataType(IInspectable value) { return (cast(Windows.UI.Xaml.IDataTemplateKey)m_inner.asInterface(uuid("873b6c28-cceb-4b61-86fa-b2cec39cc2fa"))).set_DataType(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2181,62 +2181,62 @@ extern(Windows):
 	final bool EnableFrameRateCounter()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDebugSettings).get_EnableFrameRateCounter(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDebugSettings)this.asInterface(uuid("3d451f98-c6a7-4d17-8398-d83a067183d8"))).get_EnableFrameRateCounter(&_ret));
 		return _ret;
 	}
 	final void EnableFrameRateCounter(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDebugSettings).set_EnableFrameRateCounter(value));
+		Debug.OK((cast(Windows.UI.Xaml.IDebugSettings)this.asInterface(uuid("3d451f98-c6a7-4d17-8398-d83a067183d8"))).set_EnableFrameRateCounter(value));
 	}
 	final bool IsBindingTracingEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDebugSettings).get_IsBindingTracingEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDebugSettings)this.asInterface(uuid("3d451f98-c6a7-4d17-8398-d83a067183d8"))).get_IsBindingTracingEnabled(&_ret));
 		return _ret;
 	}
 	final void IsBindingTracingEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDebugSettings).set_IsBindingTracingEnabled(value));
+		Debug.OK((cast(Windows.UI.Xaml.IDebugSettings)this.asInterface(uuid("3d451f98-c6a7-4d17-8398-d83a067183d8"))).set_IsBindingTracingEnabled(value));
 	}
 	final bool IsOverdrawHeatMapEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDebugSettings).get_IsOverdrawHeatMapEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDebugSettings)this.asInterface(uuid("3d451f98-c6a7-4d17-8398-d83a067183d8"))).get_IsOverdrawHeatMapEnabled(&_ret));
 		return _ret;
 	}
 	final void IsOverdrawHeatMapEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDebugSettings).set_IsOverdrawHeatMapEnabled(value));
+		Debug.OK((cast(Windows.UI.Xaml.IDebugSettings)this.asInterface(uuid("3d451f98-c6a7-4d17-8398-d83a067183d8"))).set_IsOverdrawHeatMapEnabled(value));
 	}
 	final EventRegistrationToken OnBindingFailed(void delegate(IInspectable, Windows.UI.Xaml.BindingFailedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDebugSettings).add_BindingFailed(event!(Windows.UI.Xaml.BindingFailedEventHandler, IInspectable, Windows.UI.Xaml.BindingFailedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IDebugSettings)this.asInterface(uuid("3d451f98-c6a7-4d17-8398-d83a067183d8"))).add_BindingFailed(event!(Windows.UI.Xaml.BindingFailedEventHandler, IInspectable, Windows.UI.Xaml.BindingFailedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeBindingFailed(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDebugSettings).remove_BindingFailed(token));
+		Debug.OK((cast(Windows.UI.Xaml.IDebugSettings)this.asInterface(uuid("3d451f98-c6a7-4d17-8398-d83a067183d8"))).remove_BindingFailed(token));
 	}
 	final bool EnableRedrawRegions()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDebugSettings2).get_EnableRedrawRegions(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDebugSettings2)this.asInterface(uuid("48d37585-e1a6-469b-83c8-30825037119e"))).get_EnableRedrawRegions(&_ret));
 		return _ret;
 	}
 	final void EnableRedrawRegions(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDebugSettings2).set_EnableRedrawRegions(value));
+		Debug.OK((cast(Windows.UI.Xaml.IDebugSettings2)this.asInterface(uuid("48d37585-e1a6-469b-83c8-30825037119e"))).set_EnableRedrawRegions(value));
 	}
 	final bool IsTextPerformanceVisualizationEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDebugSettings3).get_IsTextPerformanceVisualizationEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDebugSettings3)this.asInterface(uuid("e6bb5022-0625-479f-8e32-4b583d73b7ac"))).get_IsTextPerformanceVisualizationEnabled(&_ret));
 		return _ret;
 	}
 	final void IsTextPerformanceVisualizationEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDebugSettings3).set_IsTextPerformanceVisualizationEnabled(value));
+		Debug.OK((cast(Windows.UI.Xaml.IDebugSettings3)this.asInterface(uuid("e6bb5022-0625-479f-8e32-4b583d73b7ac"))).set_IsTextPerformanceVisualizationEnabled(value));
 	}
 }
 
@@ -2246,44 +2246,44 @@ extern(Windows):
 	final IInspectable GetValue(Windows.UI.Xaml.DependencyProperty dp)
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDependencyObject).abi_GetValue(dp, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDependencyObject)this.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_GetValue(dp, &_ret));
 		return _ret;
 	}
 	final void SetValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDependencyObject).abi_SetValue(dp, value));
+		Debug.OK((cast(Windows.UI.Xaml.IDependencyObject)this.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_SetValue(dp, value));
 	}
 	final void ClearValue(Windows.UI.Xaml.DependencyProperty dp)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDependencyObject).abi_ClearValue(dp));
+		Debug.OK((cast(Windows.UI.Xaml.IDependencyObject)this.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_ClearValue(dp));
 	}
 	final IInspectable ReadLocalValue(Windows.UI.Xaml.DependencyProperty dp)
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDependencyObject).abi_ReadLocalValue(dp, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDependencyObject)this.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_ReadLocalValue(dp, &_ret));
 		return _ret;
 	}
 	final IInspectable GetAnimationBaseValue(Windows.UI.Xaml.DependencyProperty dp)
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDependencyObject).abi_GetAnimationBaseValue(dp, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDependencyObject)this.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_GetAnimationBaseValue(dp, &_ret));
 		return _ret;
 	}
 	final Windows.UI.Core.CoreDispatcher Dispatcher()
 	{
 		Windows.UI.Core.CoreDispatcher _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDependencyObject).get_Dispatcher(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDependencyObject)this.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).get_Dispatcher(&_ret));
 		return _ret;
 	}
 	final INT64 RegisterPropertyChangedCallback(Windows.UI.Xaml.DependencyProperty dp, Windows.UI.Xaml.DependencyPropertyChangedCallback callback)
 	{
 		INT64 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDependencyObject2).abi_RegisterPropertyChangedCallback(dp, callback, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDependencyObject2)this.asInterface(uuid("29fed85d-3d22-43a1-add0-17027c08b212"))).abi_RegisterPropertyChangedCallback(dp, callback, &_ret));
 		return _ret;
 	}
 	final void UnregisterPropertyChangedCallback(Windows.UI.Xaml.DependencyProperty dp, INT64 token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDependencyObject2).abi_UnregisterPropertyChangedCallback(dp, token));
+		Debug.OK((cast(Windows.UI.Xaml.IDependencyObject2)this.asInterface(uuid("29fed85d-3d22-43a1-add0-17027c08b212"))).abi_UnregisterPropertyChangedCallback(dp, token));
 	}
 	static DependencyObject New()
 	{
@@ -2303,15 +2303,15 @@ class DependencyObjectT(Base) : AgileObject!Base, DependencyObject
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT abi_GetValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.IDependencyObject).abi_GetValue(dp, return_returnValue); }
-	override HRESULT abi_SetValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable value) { return m_inner.as!(Windows.UI.Xaml.IDependencyObject).abi_SetValue(dp, value); }
-	override HRESULT abi_ClearValue(Windows.UI.Xaml.DependencyProperty dp) { return m_inner.as!(Windows.UI.Xaml.IDependencyObject).abi_ClearValue(dp); }
-	override HRESULT abi_ReadLocalValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.IDependencyObject).abi_ReadLocalValue(dp, return_returnValue); }
-	override HRESULT abi_GetAnimationBaseValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.IDependencyObject).abi_GetAnimationBaseValue(dp, return_returnValue); }
-	override HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value) { return m_inner.as!(Windows.UI.Xaml.IDependencyObject).get_Dispatcher(return_value); }
+	override HRESULT abi_GetValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_GetValue(dp, return_returnValue); }
+	override HRESULT abi_SetValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable value) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_SetValue(dp, value); }
+	override HRESULT abi_ClearValue(Windows.UI.Xaml.DependencyProperty dp) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_ClearValue(dp); }
+	override HRESULT abi_ReadLocalValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_ReadLocalValue(dp, return_returnValue); }
+	override HRESULT abi_GetAnimationBaseValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_GetAnimationBaseValue(dp, return_returnValue); }
+	override HRESULT get_Dispatcher(Windows.UI.Core.CoreDispatcher* return_value) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).get_Dispatcher(return_value); }
 
-	override HRESULT abi_RegisterPropertyChangedCallback(Windows.UI.Xaml.DependencyProperty dp, Windows.UI.Xaml.DependencyPropertyChangedCallback callback, INT64* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.IDependencyObject2).abi_RegisterPropertyChangedCallback(dp, callback, return_returnValue); }
-	override HRESULT abi_UnregisterPropertyChangedCallback(Windows.UI.Xaml.DependencyProperty dp, INT64 token) { return m_inner.as!(Windows.UI.Xaml.IDependencyObject2).abi_UnregisterPropertyChangedCallback(dp, token); }
+	override HRESULT abi_RegisterPropertyChangedCallback(Windows.UI.Xaml.DependencyProperty dp, Windows.UI.Xaml.DependencyPropertyChangedCallback callback, INT64* return_returnValue) { return (cast(Windows.UI.Xaml.IDependencyObject2)m_inner.asInterface(uuid("29fed85d-3d22-43a1-add0-17027c08b212"))).abi_RegisterPropertyChangedCallback(dp, callback, return_returnValue); }
+	override HRESULT abi_UnregisterPropertyChangedCallback(Windows.UI.Xaml.DependencyProperty dp, INT64 token) { return (cast(Windows.UI.Xaml.IDependencyObject2)m_inner.asInterface(uuid("29fed85d-3d22-43a1-add0-17027c08b212"))).abi_UnregisterPropertyChangedCallback(dp, token); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2322,65 +2322,65 @@ interface DependencyObjectCollection : Windows.UI.Xaml.DependencyObject, Windows
 extern(Windows):
 	final void removeVectorChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IObservableVector!(Windows.UI.Xaml.DependencyObject)).remove_VectorChanged(token));
+		Debug.OK((cast(Windows.Foundation.Collections.IObservableVector!(Windows.UI.Xaml.DependencyObject))this).remove_VectorChanged(token));
 	}
 	final Windows.UI.Xaml.DependencyObject GetAt(uint index)
 	{
 		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).get_GetAt(index, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))this).get_GetAt(index, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))this).get_Size(&_ret));
 		return _ret;
 	}
 	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.DependencyObject)* out_view)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_GetView(out_view));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))this).abi_GetView(out_view));
 	}
 	final uint IndexOf(Windows.UI.Xaml.DependencyObject value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void SetAt(uint index, Windows.UI.Xaml.DependencyObject item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_SetAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))this).abi_SetAt(index, item));
 	}
 	final void InsertAt(uint index, Windows.UI.Xaml.DependencyObject item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_InsertAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))this).abi_InsertAt(index, item));
 	}
 	final void RemoveAt(uint index)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_RemoveAt(index));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))this).abi_RemoveAt(index));
 	}
 	final void Append(Windows.UI.Xaml.DependencyObject item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_Append(item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))this).abi_Append(item));
 	}
 	final void RemoveAtEnd()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_RemoveAtEnd());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))this).abi_RemoveAtEnd());
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))this).abi_Clear());
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.DependencyObject* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void ReplaceAll(uint count, Windows.UI.Xaml.DependencyObject* out_value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_ReplaceAll(count, out_value));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))this).abi_ReplaceAll(count, out_value));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.DependencyObject)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.DependencyObject)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.DependencyObject))this).abi_First(out_first));
 	}
 	static DependencyObjectCollection New()
 	{
@@ -2400,23 +2400,23 @@ class DependencyObjectCollectionT(Base) : AgileObject!Base, DependencyObjectColl
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT add_VectorChanged(Windows.Foundation.Collections.VectorChangedEventHandler!(Windows.UI.Xaml.DependencyObject) handler, EventRegistrationToken* return_token) { return m_inner.as!(Windows.Foundation.Collections.IObservableVector!(Windows.UI.Xaml.DependencyObject)).add_VectorChanged(handler, return_token); }
-	override HRESULT remove_VectorChanged(EventRegistrationToken token) { return m_inner.as!(Windows.Foundation.Collections.IObservableVector!(Windows.UI.Xaml.DependencyObject)).remove_VectorChanged(token); }
+	override HRESULT add_VectorChanged(Windows.Foundation.Collections.VectorChangedEventHandler!(Windows.UI.Xaml.DependencyObject) handler, EventRegistrationToken* return_token) { return (cast(Windows.Foundation.Collections.IObservableVector!(Windows.UI.Xaml.DependencyObject))m_inner).add_VectorChanged(handler, return_token); }
+	override HRESULT remove_VectorChanged(EventRegistrationToken token) { return (cast(Windows.Foundation.Collections.IObservableVector!(Windows.UI.Xaml.DependencyObject))m_inner).remove_VectorChanged(token); }
 
-	override HRESULT get_GetAt(uint index, Windows.UI.Xaml.DependencyObject* return_item) { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).get_GetAt(index, return_item); }
-	override HRESULT get_Size(uint* return_size) { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).get_Size(return_size); }
-	override HRESULT abi_GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.DependencyObject)* out_view) { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_GetView(out_view); }
-	override HRESULT get_IndexOf(Windows.UI.Xaml.DependencyObject value, uint* return_index, bool* out_found) { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).get_IndexOf(value, return_index, out_found); }
-	override HRESULT abi_SetAt(uint index, Windows.UI.Xaml.DependencyObject item) { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_SetAt(index, item); }
-	override HRESULT abi_InsertAt(uint index, Windows.UI.Xaml.DependencyObject item) { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_InsertAt(index, item); }
-	override HRESULT abi_RemoveAt(uint index) { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_RemoveAt(index); }
-	override HRESULT abi_Append(Windows.UI.Xaml.DependencyObject item) { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_Append(item); }
-	override HRESULT abi_RemoveAtEnd() { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_RemoveAtEnd(); }
-	override HRESULT abi_Clear() { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_Clear(); }
-	override HRESULT abi_GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.DependencyObject* out_value, uint* out_actual) { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_GetMany(startIndex, capacity, out_value, out_actual); }
-	override HRESULT abi_ReplaceAll(uint count, Windows.UI.Xaml.DependencyObject* out_value) { return m_inner.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject)).abi_ReplaceAll(count, out_value); }
+	override HRESULT get_GetAt(uint index, Windows.UI.Xaml.DependencyObject* return_item) { return (cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))m_inner).get_GetAt(index, return_item); }
+	override HRESULT get_Size(uint* return_size) { return (cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))m_inner).get_Size(return_size); }
+	override HRESULT abi_GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.DependencyObject)* out_view) { return (cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))m_inner).abi_GetView(out_view); }
+	override HRESULT get_IndexOf(Windows.UI.Xaml.DependencyObject value, uint* return_index, bool* out_found) { return (cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))m_inner).get_IndexOf(value, return_index, out_found); }
+	override HRESULT abi_SetAt(uint index, Windows.UI.Xaml.DependencyObject item) { return (cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))m_inner).abi_SetAt(index, item); }
+	override HRESULT abi_InsertAt(uint index, Windows.UI.Xaml.DependencyObject item) { return (cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))m_inner).abi_InsertAt(index, item); }
+	override HRESULT abi_RemoveAt(uint index) { return (cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))m_inner).abi_RemoveAt(index); }
+	override HRESULT abi_Append(Windows.UI.Xaml.DependencyObject item) { return (cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))m_inner).abi_Append(item); }
+	override HRESULT abi_RemoveAtEnd() { return (cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))m_inner).abi_RemoveAtEnd(); }
+	override HRESULT abi_Clear() { return (cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))m_inner).abi_Clear(); }
+	override HRESULT abi_GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.DependencyObject* out_value, uint* out_actual) { return (cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))m_inner).abi_GetMany(startIndex, capacity, out_value, out_actual); }
+	override HRESULT abi_ReplaceAll(uint count, Windows.UI.Xaml.DependencyObject* out_value) { return (cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.DependencyObject))m_inner).abi_ReplaceAll(count, out_value); }
 
-	override HRESULT abi_First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.DependencyObject)* out_first) { return m_inner.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.DependencyObject)).abi_First(out_first); }
+	override HRESULT abi_First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.DependencyObject)* out_first) { return (cast(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.DependencyObject))m_inner).abi_First(out_first); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2428,7 +2428,7 @@ extern(Windows):
 	final Windows.UI.Xaml.PropertyMetadata GetMetadata(Windows.UI.Xaml.Interop.TypeName forType)
 	{
 		Windows.UI.Xaml.PropertyMetadata _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDependencyProperty).abi_GetMetadata(forType, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDependencyProperty)this.asInterface(uuid("85b13970-9bc4-4e96-acf1-30c8fd3d55c8"))).abi_GetMetadata(forType, &_ret));
 		return _ret;
 	}
 
@@ -2441,19 +2441,19 @@ extern(Windows):
 	static IInspectable UnsetValue()
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDependencyPropertyStatics).get_UnsetValue(&_ret));
+		Debug.OK(staticInstance.get_UnsetValue(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty Register(HSTRING name, Windows.UI.Xaml.Interop.TypeName propertyType, Windows.UI.Xaml.Interop.TypeName ownerType, Windows.UI.Xaml.PropertyMetadata typeMetadata)
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDependencyPropertyStatics).abi_Register(name, propertyType, ownerType, typeMetadata, &_ret));
+		Debug.OK(staticInstance.abi_Register(name, propertyType, ownerType, typeMetadata, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty RegisterAttached(HSTRING name, Windows.UI.Xaml.Interop.TypeName propertyType, Windows.UI.Xaml.Interop.TypeName ownerType, Windows.UI.Xaml.PropertyMetadata defaultMetadata)
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDependencyPropertyStatics).abi_RegisterAttached(name, propertyType, ownerType, defaultMetadata, &_ret));
+		Debug.OK(staticInstance.abi_RegisterAttached(name, propertyType, ownerType, defaultMetadata, &_ret));
 		return _ret;
 	}
 }
@@ -2464,19 +2464,19 @@ extern(Windows):
 	final Windows.UI.Xaml.DependencyProperty Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDependencyPropertyChangedEventArgs).get_Property(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDependencyPropertyChangedEventArgs)this.asInterface(uuid("81212c2b-24d0-4957-abc3-224470a93a4e"))).get_Property(&_ret));
 		return _ret;
 	}
 	final IInspectable OldValue()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDependencyPropertyChangedEventArgs).get_OldValue(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDependencyPropertyChangedEventArgs)this.asInterface(uuid("81212c2b-24d0-4957-abc3-224470a93a4e"))).get_OldValue(&_ret));
 		return _ret;
 	}
 	final IInspectable NewValue()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDependencyPropertyChangedEventArgs).get_NewValue(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDependencyPropertyChangedEventArgs)this.asInterface(uuid("81212c2b-24d0-4957-abc3-224470a93a4e"))).get_NewValue(&_ret));
 		return _ret;
 	}
 }
@@ -2487,36 +2487,36 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan Interval()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDispatcherTimer).get_Interval(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDispatcherTimer)this.asInterface(uuid("d160ce46-cd22-4f5f-8c97-40e61da3e2dc"))).get_Interval(&_ret));
 		return _ret;
 	}
 	final void Interval(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDispatcherTimer).set_Interval(value));
+		Debug.OK((cast(Windows.UI.Xaml.IDispatcherTimer)this.asInterface(uuid("d160ce46-cd22-4f5f-8c97-40e61da3e2dc"))).set_Interval(value));
 	}
 	final bool IsEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDispatcherTimer).get_IsEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDispatcherTimer)this.asInterface(uuid("d160ce46-cd22-4f5f-8c97-40e61da3e2dc"))).get_IsEnabled(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnTick(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDispatcherTimer).add_Tick(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IDispatcherTimer)this.asInterface(uuid("d160ce46-cd22-4f5f-8c97-40e61da3e2dc"))).add_Tick(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeTick(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDispatcherTimer).remove_Tick(token));
+		Debug.OK((cast(Windows.UI.Xaml.IDispatcherTimer)this.asInterface(uuid("d160ce46-cd22-4f5f-8c97-40e61da3e2dc"))).remove_Tick(token));
 	}
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDispatcherTimer).abi_Start());
+		Debug.OK((cast(Windows.UI.Xaml.IDispatcherTimer)this.asInterface(uuid("d160ce46-cd22-4f5f-8c97-40e61da3e2dc"))).abi_Start());
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDispatcherTimer).abi_Stop());
+		Debug.OK((cast(Windows.UI.Xaml.IDispatcherTimer)this.asInterface(uuid("d160ce46-cd22-4f5f-8c97-40e61da3e2dc"))).abi_Stop());
 	}
 	static DispatcherTimer New()
 	{
@@ -2536,13 +2536,13 @@ class DispatcherTimerT(Base) : AgileObject!Base, DispatcherTimer
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_Interval(Windows.Foundation.TimeSpan* return_value) { return m_inner.as!(Windows.UI.Xaml.IDispatcherTimer).get_Interval(return_value); }
-	override HRESULT set_Interval(Windows.Foundation.TimeSpan value) { return m_inner.as!(Windows.UI.Xaml.IDispatcherTimer).set_Interval(value); }
-	override HRESULT get_IsEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IDispatcherTimer).get_IsEnabled(return_value); }
-	override HRESULT add_Tick(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IDispatcherTimer).add_Tick(value, return_token); }
-	override HRESULT remove_Tick(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IDispatcherTimer).remove_Tick(token); }
-	override HRESULT abi_Start() { return m_inner.as!(Windows.UI.Xaml.IDispatcherTimer).abi_Start(); }
-	override HRESULT abi_Stop() { return m_inner.as!(Windows.UI.Xaml.IDispatcherTimer).abi_Stop(); }
+	override HRESULT get_Interval(Windows.Foundation.TimeSpan* return_value) { return (cast(Windows.UI.Xaml.IDispatcherTimer)m_inner.asInterface(uuid("d160ce46-cd22-4f5f-8c97-40e61da3e2dc"))).get_Interval(return_value); }
+	override HRESULT set_Interval(Windows.Foundation.TimeSpan value) { return (cast(Windows.UI.Xaml.IDispatcherTimer)m_inner.asInterface(uuid("d160ce46-cd22-4f5f-8c97-40e61da3e2dc"))).set_Interval(value); }
+	override HRESULT get_IsEnabled(bool* return_value) { return (cast(Windows.UI.Xaml.IDispatcherTimer)m_inner.asInterface(uuid("d160ce46-cd22-4f5f-8c97-40e61da3e2dc"))).get_IsEnabled(return_value); }
+	override HRESULT add_Tick(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IDispatcherTimer)m_inner.asInterface(uuid("d160ce46-cd22-4f5f-8c97-40e61da3e2dc"))).add_Tick(value, return_token); }
+	override HRESULT remove_Tick(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IDispatcherTimer)m_inner.asInterface(uuid("d160ce46-cd22-4f5f-8c97-40e61da3e2dc"))).remove_Tick(token); }
+	override HRESULT abi_Start() { return (cast(Windows.UI.Xaml.IDispatcherTimer)m_inner.asInterface(uuid("d160ce46-cd22-4f5f-8c97-40e61da3e2dc"))).abi_Start(); }
+	override HRESULT abi_Stop() { return (cast(Windows.UI.Xaml.IDispatcherTimer)m_inner.asInterface(uuid("d160ce46-cd22-4f5f-8c97-40e61da3e2dc"))).abi_Stop(); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2554,67 +2554,67 @@ extern(Windows):
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDragEventArgs)this.asInterface(uuid("b440c7c3-02b4-4980-9342-25dae1c0f188"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.UI.Xaml.IDragEventArgs)this.asInterface(uuid("b440c7c3-02b4-4980-9342-25dae1c0f188"))).set_Handled(value));
 	}
 	final Windows.ApplicationModel.DataTransfer.DataPackage Data()
 	{
 		Windows.ApplicationModel.DataTransfer.DataPackage _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragEventArgs).get_Data(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDragEventArgs)this.asInterface(uuid("b440c7c3-02b4-4980-9342-25dae1c0f188"))).get_Data(&_ret));
 		return _ret;
 	}
 	final void Data(Windows.ApplicationModel.DataTransfer.DataPackage value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragEventArgs).set_Data(value));
+		Debug.OK((cast(Windows.UI.Xaml.IDragEventArgs)this.asInterface(uuid("b440c7c3-02b4-4980-9342-25dae1c0f188"))).set_Data(value));
 	}
 	final Windows.Foundation.Point GetPosition(Windows.UI.Xaml.UIElement relativeTo)
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragEventArgs).abi_GetPosition(relativeTo, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDragEventArgs)this.asInterface(uuid("b440c7c3-02b4-4980-9342-25dae1c0f188"))).abi_GetPosition(relativeTo, &_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.DataTransfer.DataPackageView DataView()
 	{
 		Windows.ApplicationModel.DataTransfer.DataPackageView _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragEventArgs2).get_DataView(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDragEventArgs2)this.asInterface(uuid("26336658-2917-411d-bfc3-2f22471cbbe7"))).get_DataView(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.DragUIOverride DragUIOverride()
 	{
 		Windows.UI.Xaml.DragUIOverride _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragEventArgs2).get_DragUIOverride(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDragEventArgs2)this.asInterface(uuid("26336658-2917-411d-bfc3-2f22471cbbe7"))).get_DragUIOverride(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.DataTransfer.DragDrop.DragDropModifiers Modifiers()
 	{
 		Windows.ApplicationModel.DataTransfer.DragDrop.DragDropModifiers _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragEventArgs2).get_Modifiers(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDragEventArgs2)this.asInterface(uuid("26336658-2917-411d-bfc3-2f22471cbbe7"))).get_Modifiers(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.DataTransfer.DataPackageOperation AcceptedOperation()
 	{
 		Windows.ApplicationModel.DataTransfer.DataPackageOperation _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragEventArgs2).get_AcceptedOperation(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDragEventArgs2)this.asInterface(uuid("26336658-2917-411d-bfc3-2f22471cbbe7"))).get_AcceptedOperation(&_ret));
 		return _ret;
 	}
 	final void AcceptedOperation(Windows.ApplicationModel.DataTransfer.DataPackageOperation value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragEventArgs2).set_AcceptedOperation(value));
+		Debug.OK((cast(Windows.UI.Xaml.IDragEventArgs2)this.asInterface(uuid("26336658-2917-411d-bfc3-2f22471cbbe7"))).set_AcceptedOperation(value));
 	}
 	final Windows.UI.Xaml.DragOperationDeferral GetDeferral()
 	{
 		Windows.UI.Xaml.DragOperationDeferral _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragEventArgs2).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDragEventArgs2)this.asInterface(uuid("26336658-2917-411d-bfc3-2f22471cbbe7"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.DataTransfer.DataPackageOperation AllowedOperations()
 	{
 		Windows.ApplicationModel.DataTransfer.DataPackageOperation _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragEventArgs3).get_AllowedOperations(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDragEventArgs3)this.asInterface(uuid("d04fc3c6-8119-427a-8152-5f9550cc0416"))).get_AllowedOperations(&_ret));
 		return _ret;
 	}
 }
@@ -2624,7 +2624,7 @@ interface DragOperationDeferral : Windows.UI.Xaml.IDragOperationDeferral
 extern(Windows):
 	final void Complete()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragOperationDeferral).abi_Complete());
+		Debug.OK((cast(Windows.UI.Xaml.IDragOperationDeferral)this.asInterface(uuid("ba73ecba-1b73-4086-b3d3-c223beea1633"))).abi_Complete());
 	}
 }
 
@@ -2634,46 +2634,46 @@ extern(Windows):
 	final bool Cancel()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragStartingEventArgs).get_Cancel(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDragStartingEventArgs)this.asInterface(uuid("6800d3fa-90b8-46f9-8e30-5ac25f73f0f9"))).get_Cancel(&_ret));
 		return _ret;
 	}
 	final void Cancel(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragStartingEventArgs).set_Cancel(value));
+		Debug.OK((cast(Windows.UI.Xaml.IDragStartingEventArgs)this.asInterface(uuid("6800d3fa-90b8-46f9-8e30-5ac25f73f0f9"))).set_Cancel(value));
 	}
 	final Windows.ApplicationModel.DataTransfer.DataPackage Data()
 	{
 		Windows.ApplicationModel.DataTransfer.DataPackage _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragStartingEventArgs).get_Data(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDragStartingEventArgs)this.asInterface(uuid("6800d3fa-90b8-46f9-8e30-5ac25f73f0f9"))).get_Data(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.DragUI DragUI()
 	{
 		Windows.UI.Xaml.DragUI _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragStartingEventArgs).get_DragUI(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDragStartingEventArgs)this.asInterface(uuid("6800d3fa-90b8-46f9-8e30-5ac25f73f0f9"))).get_DragUI(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.DragOperationDeferral GetDeferral()
 	{
 		Windows.UI.Xaml.DragOperationDeferral _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragStartingEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDragStartingEventArgs)this.asInterface(uuid("6800d3fa-90b8-46f9-8e30-5ac25f73f0f9"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point GetPosition(Windows.UI.Xaml.UIElement relativeTo)
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragStartingEventArgs).abi_GetPosition(relativeTo, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDragStartingEventArgs)this.asInterface(uuid("6800d3fa-90b8-46f9-8e30-5ac25f73f0f9"))).abi_GetPosition(relativeTo, &_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.DataTransfer.DataPackageOperation AllowedOperations()
 	{
 		Windows.ApplicationModel.DataTransfer.DataPackageOperation _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragStartingEventArgs2).get_AllowedOperations(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDragStartingEventArgs2)this.asInterface(uuid("d855e08e-44b6-4211-bd0b-7fddbb6e8231"))).get_AllowedOperations(&_ret));
 		return _ret;
 	}
 	final void AllowedOperations(Windows.ApplicationModel.DataTransfer.DataPackageOperation value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragStartingEventArgs2).set_AllowedOperations(value));
+		Debug.OK((cast(Windows.UI.Xaml.IDragStartingEventArgs2)this.asInterface(uuid("d855e08e-44b6-4211-bd0b-7fddbb6e8231"))).set_AllowedOperations(value));
 	}
 }
 
@@ -2682,23 +2682,23 @@ interface DragUI : Windows.UI.Xaml.IDragUI
 extern(Windows):
 	final void SetContentFromBitmapImage(Windows.UI.Xaml.Media.Imaging.BitmapImage bitmapImage)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragUI).abi_SetContentFromBitmapImage(bitmapImage));
+		Debug.OK((cast(Windows.UI.Xaml.IDragUI)this.asInterface(uuid("2d9bd838-7c60-4842-9170-346fe10a226a"))).abi_SetContentFromBitmapImage(bitmapImage));
 	}
 	final void SetContentFromBitmapImageWithAnchorPoint(Windows.UI.Xaml.Media.Imaging.BitmapImage bitmapImage, Windows.Foundation.Point anchorPoint)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragUI).abi_SetContentFromBitmapImageWithAnchorPoint(bitmapImage, anchorPoint));
+		Debug.OK((cast(Windows.UI.Xaml.IDragUI)this.asInterface(uuid("2d9bd838-7c60-4842-9170-346fe10a226a"))).abi_SetContentFromBitmapImageWithAnchorPoint(bitmapImage, anchorPoint));
 	}
 	final void SetContentFromSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragUI).abi_SetContentFromSoftwareBitmap(softwareBitmap));
+		Debug.OK((cast(Windows.UI.Xaml.IDragUI)this.asInterface(uuid("2d9bd838-7c60-4842-9170-346fe10a226a"))).abi_SetContentFromSoftwareBitmap(softwareBitmap));
 	}
 	final void SetContentFromSoftwareBitmapWithAnchorPoint(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap, Windows.Foundation.Point anchorPoint)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragUI).abi_SetContentFromSoftwareBitmapWithAnchorPoint(softwareBitmap, anchorPoint));
+		Debug.OK((cast(Windows.UI.Xaml.IDragUI)this.asInterface(uuid("2d9bd838-7c60-4842-9170-346fe10a226a"))).abi_SetContentFromSoftwareBitmapWithAnchorPoint(softwareBitmap, anchorPoint));
 	}
 	final void SetContentFromDataPackage()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragUI).abi_SetContentFromDataPackage());
+		Debug.OK((cast(Windows.UI.Xaml.IDragUI)this.asInterface(uuid("2d9bd838-7c60-4842-9170-346fe10a226a"))).abi_SetContentFromDataPackage());
 	}
 }
 
@@ -2708,62 +2708,62 @@ extern(Windows):
 	final HSTRING Caption()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragUIOverride).get_Caption(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).get_Caption(&_ret));
 		return _ret;
 	}
 	final void Caption(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragUIOverride).set_Caption(value));
+		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).set_Caption(value));
 	}
 	final bool IsContentVisible()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragUIOverride).get_IsContentVisible(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).get_IsContentVisible(&_ret));
 		return _ret;
 	}
 	final void IsContentVisible(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragUIOverride).set_IsContentVisible(value));
+		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).set_IsContentVisible(value));
 	}
 	final bool IsCaptionVisible()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragUIOverride).get_IsCaptionVisible(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).get_IsCaptionVisible(&_ret));
 		return _ret;
 	}
 	final void IsCaptionVisible(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragUIOverride).set_IsCaptionVisible(value));
+		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).set_IsCaptionVisible(value));
 	}
 	final bool IsGlyphVisible()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragUIOverride).get_IsGlyphVisible(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).get_IsGlyphVisible(&_ret));
 		return _ret;
 	}
 	final void IsGlyphVisible(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragUIOverride).set_IsGlyphVisible(value));
+		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).set_IsGlyphVisible(value));
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragUIOverride).abi_Clear());
+		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).abi_Clear());
 	}
 	final void SetContentFromBitmapImage(Windows.UI.Xaml.Media.Imaging.BitmapImage bitmapImage)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragUIOverride).abi_SetContentFromBitmapImage(bitmapImage));
+		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).abi_SetContentFromBitmapImage(bitmapImage));
 	}
 	final void SetContentFromBitmapImageWithAnchorPoint(Windows.UI.Xaml.Media.Imaging.BitmapImage bitmapImage, Windows.Foundation.Point anchorPoint)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragUIOverride).abi_SetContentFromBitmapImageWithAnchorPoint(bitmapImage, anchorPoint));
+		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).abi_SetContentFromBitmapImageWithAnchorPoint(bitmapImage, anchorPoint));
 	}
 	final void SetContentFromSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragUIOverride).abi_SetContentFromSoftwareBitmap(softwareBitmap));
+		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).abi_SetContentFromSoftwareBitmap(softwareBitmap));
 	}
 	final void SetContentFromSoftwareBitmapWithAnchorPoint(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap, Windows.Foundation.Point anchorPoint)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IDragUIOverride).abi_SetContentFromSoftwareBitmapWithAnchorPoint(softwareBitmap, anchorPoint));
+		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).abi_SetContentFromSoftwareBitmapWithAnchorPoint(softwareBitmap, anchorPoint));
 	}
 }
 
@@ -2773,7 +2773,7 @@ extern(Windows):
 	final Windows.ApplicationModel.DataTransfer.DataPackageOperation DropResult()
 	{
 		Windows.ApplicationModel.DataTransfer.DataPackageOperation _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IDropCompletedEventArgs).get_DropResult(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IDropCompletedEventArgs)this.asInterface(uuid("6c4fc188-95bc-4261-9ec5-21cab677b734"))).get_DropResult(&_ret));
 		return _ret;
 	}
 }
@@ -2789,49 +2789,49 @@ interface DurationHelper : Windows.UI.Xaml.IDurationHelper
 	static Windows.UI.Xaml.Duration Automatic()
 	{
 		Windows.UI.Xaml.Duration _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDurationHelperStatics).get_Automatic(&_ret));
+		Debug.OK(staticInstance.get_Automatic(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Duration Forever()
 	{
 		Windows.UI.Xaml.Duration _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDurationHelperStatics).get_Forever(&_ret));
+		Debug.OK(staticInstance.get_Forever(&_ret));
 		return _ret;
 	}
 	static INT32 Compare(Windows.UI.Xaml.Duration duration1, Windows.UI.Xaml.Duration duration2)
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDurationHelperStatics).abi_Compare(duration1, duration2, &_ret));
+		Debug.OK(staticInstance.abi_Compare(duration1, duration2, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Duration FromTimeSpan(Windows.Foundation.TimeSpan timeSpan)
 	{
 		Windows.UI.Xaml.Duration _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDurationHelperStatics).abi_FromTimeSpan(timeSpan, &_ret));
+		Debug.OK(staticInstance.abi_FromTimeSpan(timeSpan, &_ret));
 		return _ret;
 	}
 	static bool GetHasTimeSpan(Windows.UI.Xaml.Duration target)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDurationHelperStatics).abi_GetHasTimeSpan(target, &_ret));
+		Debug.OK(staticInstance.abi_GetHasTimeSpan(target, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Duration Add(Windows.UI.Xaml.Duration target, Windows.UI.Xaml.Duration duration)
 	{
 		Windows.UI.Xaml.Duration _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDurationHelperStatics).abi_Add(target, duration, &_ret));
+		Debug.OK(staticInstance.abi_Add(target, duration, &_ret));
 		return _ret;
 	}
 	static bool Equals(Windows.UI.Xaml.Duration target, Windows.UI.Xaml.Duration value)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDurationHelperStatics).abi_Equals(target, value, &_ret));
+		Debug.OK(staticInstance.abi_Equals(target, value, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Duration Subtract(Windows.UI.Xaml.Duration target, Windows.UI.Xaml.Duration duration)
 	{
 		Windows.UI.Xaml.Duration _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IDurationHelperStatics).abi_Subtract(target, duration, &_ret));
+		Debug.OK(staticInstance.abi_Subtract(target, duration, &_ret));
 		return _ret;
 	}
 }
@@ -2847,26 +2847,26 @@ interface ElementSoundPlayer : Windows.UI.Xaml.IElementSoundPlayer
 	static double Volume()
 	{
 		double _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IElementSoundPlayerStatics).get_Volume(&_ret));
+		Debug.OK(staticInstance.get_Volume(&_ret));
 		return _ret;
 	}
 	static void Volume(double value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IElementSoundPlayerStatics).set_Volume(value));
+		Debug.OK(staticInstance.set_Volume(value));
 	}
 	static Windows.UI.Xaml.ElementSoundPlayerState State()
 	{
 		Windows.UI.Xaml.ElementSoundPlayerState _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IElementSoundPlayerStatics).get_State(&_ret));
+		Debug.OK(staticInstance.get_State(&_ret));
 		return _ret;
 	}
 	static void State(Windows.UI.Xaml.ElementSoundPlayerState value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IElementSoundPlayerStatics).set_State(value));
+		Debug.OK(staticInstance.set_State(value));
 	}
 	static void Play(Windows.UI.Xaml.ElementSoundKind sound)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IElementSoundPlayerStatics).abi_Play(sound));
+		Debug.OK(staticInstance.abi_Play(sound));
 	}
 }
 
@@ -2876,24 +2876,24 @@ extern(Windows):
 	final Windows.UI.Xaml.RoutedEvent RoutedEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IEventTrigger).get_RoutedEvent(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IEventTrigger)this.asInterface(uuid("def8f855-0b49-4087-b1a9-b8b38488f786"))).get_RoutedEvent(&_ret));
 		return _ret;
 	}
 	final void RoutedEvent(Windows.UI.Xaml.RoutedEvent value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IEventTrigger).set_RoutedEvent(value));
+		Debug.OK((cast(Windows.UI.Xaml.IEventTrigger)this.asInterface(uuid("def8f855-0b49-4087-b1a9-b8b38488f786"))).set_RoutedEvent(value));
 	}
 	final Windows.UI.Xaml.TriggerActionCollection Actions()
 	{
 		Windows.UI.Xaml.TriggerActionCollection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IEventTrigger).get_Actions(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IEventTrigger)this.asInterface(uuid("def8f855-0b49-4087-b1a9-b8b38488f786"))).get_Actions(&_ret));
 		return _ret;
 	}
 	static EventTrigger New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(EventTrigger).abi_ActivateInstance(&ret));
-		return ret.as!(EventTrigger);
+		return cast(EventTrigger) ret;
 	}
 }
 
@@ -2903,7 +2903,7 @@ extern(Windows):
 	final HSTRING ErrorMessage()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IExceptionRoutedEventArgs).get_ErrorMessage(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IExceptionRoutedEventArgs)this.asInterface(uuid("dd9ff16a-4b62-4a6c-a49d-0671ef6136be"))).get_ErrorMessage(&_ret));
 		return _ret;
 	}
 }
@@ -2917,7 +2917,7 @@ class ExceptionRoutedEventArgsT(Base) : AgileObject!Base, ExceptionRoutedEventAr
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_ErrorMessage(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.IExceptionRoutedEventArgs).get_ErrorMessage(return_value); }
+	override HRESULT get_ErrorMessage(HSTRING* return_value) { return (cast(Windows.UI.Xaml.IExceptionRoutedEventArgs)m_inner.asInterface(uuid("dd9ff16a-4b62-4a6c-a49d-0671ef6136be"))).get_ErrorMessage(return_value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2929,348 +2929,348 @@ extern(Windows):
 	final Windows.UI.Xaml.TriggerCollection Triggers()
 	{
 		Windows.UI.Xaml.TriggerCollection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).get_Triggers(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_Triggers(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.ResourceDictionary Resources()
 	{
 		Windows.UI.Xaml.ResourceDictionary _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).get_Resources(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_Resources(&_ret));
 		return _ret;
 	}
 	final void Resources(Windows.UI.Xaml.ResourceDictionary value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).set_Resources(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_Resources(value));
 	}
 	final IInspectable Tag()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).get_Tag(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_Tag(&_ret));
 		return _ret;
 	}
 	final void Tag(IInspectable value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).set_Tag(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_Tag(value));
 	}
 	final HSTRING Language()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).get_Language(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_Language(&_ret));
 		return _ret;
 	}
 	final void Language(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).set_Language(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_Language(value));
 	}
 	final double ActualWidth()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).get_ActualWidth(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_ActualWidth(&_ret));
 		return _ret;
 	}
 	final double ActualHeight()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).get_ActualHeight(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_ActualHeight(&_ret));
 		return _ret;
 	}
 	final double Width()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).get_Width(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_Width(&_ret));
 		return _ret;
 	}
 	final void Width(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).set_Width(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_Width(value));
 	}
 	final double Height()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).get_Height(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_Height(&_ret));
 		return _ret;
 	}
 	final void Height(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).set_Height(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_Height(value));
 	}
 	final double MinWidth()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).get_MinWidth(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_MinWidth(&_ret));
 		return _ret;
 	}
 	final void MinWidth(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).set_MinWidth(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_MinWidth(value));
 	}
 	final double MaxWidth()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).get_MaxWidth(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_MaxWidth(&_ret));
 		return _ret;
 	}
 	final void MaxWidth(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).set_MaxWidth(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_MaxWidth(value));
 	}
 	final double MinHeight()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).get_MinHeight(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_MinHeight(&_ret));
 		return _ret;
 	}
 	final void MinHeight(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).set_MinHeight(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_MinHeight(value));
 	}
 	final double MaxHeight()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).get_MaxHeight(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_MaxHeight(&_ret));
 		return _ret;
 	}
 	final void MaxHeight(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).set_MaxHeight(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_MaxHeight(value));
 	}
 	final Windows.UI.Xaml.HorizontalAlignment HorizontalAlignment()
 	{
 		Windows.UI.Xaml.HorizontalAlignment _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).get_HorizontalAlignment(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_HorizontalAlignment(&_ret));
 		return _ret;
 	}
 	final void HorizontalAlignment(Windows.UI.Xaml.HorizontalAlignment value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).set_HorizontalAlignment(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_HorizontalAlignment(value));
 	}
 	final Windows.UI.Xaml.VerticalAlignment VerticalAlignment()
 	{
 		Windows.UI.Xaml.VerticalAlignment _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).get_VerticalAlignment(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_VerticalAlignment(&_ret));
 		return _ret;
 	}
 	final void VerticalAlignment(Windows.UI.Xaml.VerticalAlignment value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).set_VerticalAlignment(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_VerticalAlignment(value));
 	}
 	final Windows.UI.Xaml.Thickness Margin()
 	{
 		Windows.UI.Xaml.Thickness _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).get_Margin(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_Margin(&_ret));
 		return _ret;
 	}
 	final void Margin(Windows.UI.Xaml.Thickness value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).set_Margin(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_Margin(value));
 	}
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).get_Name(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_Name(&_ret));
 		return _ret;
 	}
 	final void Name(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).set_Name(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_Name(value));
 	}
 	final Windows.Foundation.Uri BaseUri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).get_BaseUri(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_BaseUri(&_ret));
 		return _ret;
 	}
 	final IInspectable DataContext()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).get_DataContext(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_DataContext(&_ret));
 		return _ret;
 	}
 	final void DataContext(IInspectable value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).set_DataContext(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_DataContext(value));
 	}
 	final Windows.UI.Xaml.Style Style()
 	{
 		Windows.UI.Xaml.Style _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).get_Style(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_Style(&_ret));
 		return _ret;
 	}
 	final void Style(Windows.UI.Xaml.Style value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).set_Style(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_Style(value));
 	}
 	final Windows.UI.Xaml.DependencyObject Parent()
 	{
 		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).get_Parent(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_Parent(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.FlowDirection FlowDirection()
 	{
 		Windows.UI.Xaml.FlowDirection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).get_FlowDirection(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_FlowDirection(&_ret));
 		return _ret;
 	}
 	final void FlowDirection(Windows.UI.Xaml.FlowDirection value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).set_FlowDirection(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_FlowDirection(value));
 	}
 	final EventRegistrationToken OnLoaded(void delegate(IInspectable, Windows.UI.Xaml.RoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).add_Loaded(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).add_Loaded(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeLoaded(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).remove_Loaded(token));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).remove_Loaded(token));
 	}
 	final EventRegistrationToken OnUnloaded(void delegate(IInspectable, Windows.UI.Xaml.RoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).add_Unloaded(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).add_Unloaded(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeUnloaded(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).remove_Unloaded(token));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).remove_Unloaded(token));
 	}
 	final EventRegistrationToken OnSizeChanged(void delegate(IInspectable, Windows.UI.Xaml.SizeChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).add_SizeChanged(event!(Windows.UI.Xaml.SizeChangedEventHandler, IInspectable, Windows.UI.Xaml.SizeChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).add_SizeChanged(event!(Windows.UI.Xaml.SizeChangedEventHandler, IInspectable, Windows.UI.Xaml.SizeChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSizeChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).remove_SizeChanged(token));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).remove_SizeChanged(token));
 	}
 	final EventRegistrationToken OnLayoutUpdated(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).add_LayoutUpdated(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).add_LayoutUpdated(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeLayoutUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).remove_LayoutUpdated(token));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).remove_LayoutUpdated(token));
 	}
 	final IInspectable FindName(HSTRING name)
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).abi_FindName(name, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).abi_FindName(name, &_ret));
 		return _ret;
 	}
 	final void SetBinding(Windows.UI.Xaml.DependencyProperty dp, Windows.UI.Xaml.Data.BindingBase binding)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement).abi_SetBinding(dp, binding));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement)this.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).abi_SetBinding(dp, binding));
 	}
 	final Windows.UI.Xaml.ElementTheme RequestedTheme()
 	{
 		Windows.UI.Xaml.ElementTheme _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement2).get_RequestedTheme(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement2)this.asInterface(uuid("f19104be-422a-4904-a52f-ee72010429e5"))).get_RequestedTheme(&_ret));
 		return _ret;
 	}
 	final void RequestedTheme(Windows.UI.Xaml.ElementTheme value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement2).set_RequestedTheme(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement2)this.asInterface(uuid("f19104be-422a-4904-a52f-ee72010429e5"))).set_RequestedTheme(value));
 	}
 	final EventRegistrationToken OnDataContextChanged(void delegate(Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.DataContextChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement2).add_DataContextChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.DataContextChangedEventArgs), Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.DataContextChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement2)this.asInterface(uuid("f19104be-422a-4904-a52f-ee72010429e5"))).add_DataContextChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.DataContextChangedEventArgs), Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.DataContextChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDataContextChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement2).remove_DataContextChanged(token));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement2)this.asInterface(uuid("f19104be-422a-4904-a52f-ee72010429e5"))).remove_DataContextChanged(token));
 	}
 	final Windows.UI.Xaml.Data.BindingExpression GetBindingExpression(Windows.UI.Xaml.DependencyProperty dp)
 	{
 		Windows.UI.Xaml.Data.BindingExpression _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement2).abi_GetBindingExpression(dp, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement2)this.asInterface(uuid("f19104be-422a-4904-a52f-ee72010429e5"))).abi_GetBindingExpression(dp, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnLoading(void delegate(Windows.UI.Xaml.FrameworkElement, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement3).add_Loading(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.FrameworkElement, IInspectable), Windows.UI.Xaml.FrameworkElement, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement3)this.asInterface(uuid("c81c2720-5c52-4bbe-a199-2b1e34f00f70"))).add_Loading(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.FrameworkElement, IInspectable), Windows.UI.Xaml.FrameworkElement, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeLoading(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement3).remove_Loading(token));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement3)this.asInterface(uuid("c81c2720-5c52-4bbe-a199-2b1e34f00f70"))).remove_Loading(token));
 	}
 	final bool AllowFocusOnInteraction()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement4).get_AllowFocusOnInteraction(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement4)this.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).get_AllowFocusOnInteraction(&_ret));
 		return _ret;
 	}
 	final void AllowFocusOnInteraction(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement4).set_AllowFocusOnInteraction(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement4)this.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).set_AllowFocusOnInteraction(value));
 	}
 	final Windows.UI.Xaml.Thickness FocusVisualMargin()
 	{
 		Windows.UI.Xaml.Thickness _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement4).get_FocusVisualMargin(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement4)this.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).get_FocusVisualMargin(&_ret));
 		return _ret;
 	}
 	final void FocusVisualMargin(Windows.UI.Xaml.Thickness value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement4).set_FocusVisualMargin(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement4)this.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).set_FocusVisualMargin(value));
 	}
 	final Windows.UI.Xaml.Thickness FocusVisualSecondaryThickness()
 	{
 		Windows.UI.Xaml.Thickness _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement4).get_FocusVisualSecondaryThickness(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement4)this.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).get_FocusVisualSecondaryThickness(&_ret));
 		return _ret;
 	}
 	final void FocusVisualSecondaryThickness(Windows.UI.Xaml.Thickness value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement4).set_FocusVisualSecondaryThickness(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement4)this.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).set_FocusVisualSecondaryThickness(value));
 	}
 	final Windows.UI.Xaml.Thickness FocusVisualPrimaryThickness()
 	{
 		Windows.UI.Xaml.Thickness _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement4).get_FocusVisualPrimaryThickness(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement4)this.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).get_FocusVisualPrimaryThickness(&_ret));
 		return _ret;
 	}
 	final void FocusVisualPrimaryThickness(Windows.UI.Xaml.Thickness value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement4).set_FocusVisualPrimaryThickness(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement4)this.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).set_FocusVisualPrimaryThickness(value));
 	}
 	final Windows.UI.Xaml.Media.Brush FocusVisualSecondaryBrush()
 	{
 		Windows.UI.Xaml.Media.Brush _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement4).get_FocusVisualSecondaryBrush(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement4)this.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).get_FocusVisualSecondaryBrush(&_ret));
 		return _ret;
 	}
 	final void FocusVisualSecondaryBrush(Windows.UI.Xaml.Media.Brush value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement4).set_FocusVisualSecondaryBrush(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement4)this.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).set_FocusVisualSecondaryBrush(value));
 	}
 	final Windows.UI.Xaml.Media.Brush FocusVisualPrimaryBrush()
 	{
 		Windows.UI.Xaml.Media.Brush _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement4).get_FocusVisualPrimaryBrush(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement4)this.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).get_FocusVisualPrimaryBrush(&_ret));
 		return _ret;
 	}
 	final void FocusVisualPrimaryBrush(Windows.UI.Xaml.Media.Brush value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement4).set_FocusVisualPrimaryBrush(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement4)this.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).set_FocusVisualPrimaryBrush(value));
 	}
 	final bool AllowFocusWhenDisabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement4).get_AllowFocusWhenDisabled(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement4)this.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).get_AllowFocusWhenDisabled(&_ret));
 		return _ret;
 	}
 	final void AllowFocusWhenDisabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IFrameworkElement4).set_AllowFocusWhenDisabled(value));
+		Debug.OK((cast(Windows.UI.Xaml.IFrameworkElement4)this.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).set_AllowFocusWhenDisabled(value));
 	}
 
 	private static Windows.UI.Xaml.IFrameworkElementStatics _staticInstance;
@@ -3282,103 +3282,103 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty TagProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_TagProperty(&_ret));
+		Debug.OK(staticInstance.get_TagProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty LanguageProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_LanguageProperty(&_ret));
+		Debug.OK(staticInstance.get_LanguageProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ActualWidthProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_ActualWidthProperty(&_ret));
+		Debug.OK(staticInstance.get_ActualWidthProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ActualHeightProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_ActualHeightProperty(&_ret));
+		Debug.OK(staticInstance.get_ActualHeightProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty WidthProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_WidthProperty(&_ret));
+		Debug.OK(staticInstance.get_WidthProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty HeightProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_HeightProperty(&_ret));
+		Debug.OK(staticInstance.get_HeightProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty MinWidthProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_MinWidthProperty(&_ret));
+		Debug.OK(staticInstance.get_MinWidthProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty MaxWidthProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_MaxWidthProperty(&_ret));
+		Debug.OK(staticInstance.get_MaxWidthProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty MinHeightProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_MinHeightProperty(&_ret));
+		Debug.OK(staticInstance.get_MinHeightProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty MaxHeightProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_MaxHeightProperty(&_ret));
+		Debug.OK(staticInstance.get_MaxHeightProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty HorizontalAlignmentProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_HorizontalAlignmentProperty(&_ret));
+		Debug.OK(staticInstance.get_HorizontalAlignmentProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty VerticalAlignmentProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_VerticalAlignmentProperty(&_ret));
+		Debug.OK(staticInstance.get_VerticalAlignmentProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty MarginProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_MarginProperty(&_ret));
+		Debug.OK(staticInstance.get_MarginProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty NameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_NameProperty(&_ret));
+		Debug.OK(staticInstance.get_NameProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty DataContextProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_DataContextProperty(&_ret));
+		Debug.OK(staticInstance.get_DataContextProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty StyleProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_StyleProperty(&_ret));
+		Debug.OK(staticInstance.get_StyleProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty FlowDirectionProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IFrameworkElementStatics).get_FlowDirectionProperty(&_ret));
+		Debug.OK(staticInstance.get_FlowDirectionProperty(&_ret));
 		return _ret;
 	}
 	static FrameworkElement New()
@@ -3399,87 +3399,87 @@ class FrameworkElementT(Base) : AgileObject!Base, FrameworkElement
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_Triggers(Windows.UI.Xaml.TriggerCollection* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_Triggers(return_value); }
-	override HRESULT get_Resources(Windows.UI.Xaml.ResourceDictionary* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_Resources(return_value); }
-	override HRESULT set_Resources(Windows.UI.Xaml.ResourceDictionary value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_Resources(value); }
-	override HRESULT get_Tag(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_Tag(return_value); }
-	override HRESULT set_Tag(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_Tag(value); }
-	override HRESULT get_Language(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_Language(return_value); }
-	override HRESULT set_Language(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_Language(value); }
-	override HRESULT get_ActualWidth(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_ActualWidth(return_value); }
-	override HRESULT get_ActualHeight(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_ActualHeight(return_value); }
-	override HRESULT get_Width(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_Width(return_value); }
-	override HRESULT set_Width(double value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_Width(value); }
-	override HRESULT get_Height(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_Height(return_value); }
-	override HRESULT set_Height(double value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_Height(value); }
-	override HRESULT get_MinWidth(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_MinWidth(return_value); }
-	override HRESULT set_MinWidth(double value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_MinWidth(value); }
-	override HRESULT get_MaxWidth(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_MaxWidth(return_value); }
-	override HRESULT set_MaxWidth(double value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_MaxWidth(value); }
-	override HRESULT get_MinHeight(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_MinHeight(return_value); }
-	override HRESULT set_MinHeight(double value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_MinHeight(value); }
-	override HRESULT get_MaxHeight(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_MaxHeight(return_value); }
-	override HRESULT set_MaxHeight(double value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_MaxHeight(value); }
-	override HRESULT get_HorizontalAlignment(Windows.UI.Xaml.HorizontalAlignment* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_HorizontalAlignment(return_value); }
-	override HRESULT set_HorizontalAlignment(Windows.UI.Xaml.HorizontalAlignment value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_HorizontalAlignment(value); }
-	override HRESULT get_VerticalAlignment(Windows.UI.Xaml.VerticalAlignment* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_VerticalAlignment(return_value); }
-	override HRESULT set_VerticalAlignment(Windows.UI.Xaml.VerticalAlignment value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_VerticalAlignment(value); }
-	override HRESULT get_Margin(Windows.UI.Xaml.Thickness* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_Margin(return_value); }
-	override HRESULT set_Margin(Windows.UI.Xaml.Thickness value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_Margin(value); }
-	override HRESULT get_Name(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_Name(return_value); }
-	override HRESULT set_Name(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_Name(value); }
-	override HRESULT get_BaseUri(Windows.Foundation.Uri* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_BaseUri(return_value); }
-	override HRESULT get_DataContext(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_DataContext(return_value); }
-	override HRESULT set_DataContext(IInspectable value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_DataContext(value); }
-	override HRESULT get_Style(Windows.UI.Xaml.Style* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_Style(return_value); }
-	override HRESULT set_Style(Windows.UI.Xaml.Style value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_Style(value); }
-	override HRESULT get_Parent(Windows.UI.Xaml.DependencyObject* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_Parent(return_value); }
-	override HRESULT get_FlowDirection(Windows.UI.Xaml.FlowDirection* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).get_FlowDirection(return_value); }
-	override HRESULT set_FlowDirection(Windows.UI.Xaml.FlowDirection value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).set_FlowDirection(value); }
-	override HRESULT add_Loaded(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).add_Loaded(value, return_token); }
-	override HRESULT remove_Loaded(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).remove_Loaded(token); }
-	override HRESULT add_Unloaded(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).add_Unloaded(value, return_token); }
-	override HRESULT remove_Unloaded(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).remove_Unloaded(token); }
-	override HRESULT add_SizeChanged(Windows.UI.Xaml.SizeChangedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).add_SizeChanged(value, return_token); }
-	override HRESULT remove_SizeChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).remove_SizeChanged(token); }
-	override HRESULT add_LayoutUpdated(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).add_LayoutUpdated(value, return_token); }
-	override HRESULT remove_LayoutUpdated(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).remove_LayoutUpdated(token); }
-	override HRESULT abi_FindName(HSTRING name, IInspectable* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).abi_FindName(name, return_returnValue); }
-	override HRESULT abi_SetBinding(Windows.UI.Xaml.DependencyProperty dp, Windows.UI.Xaml.Data.BindingBase binding) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement).abi_SetBinding(dp, binding); }
+	override HRESULT get_Triggers(Windows.UI.Xaml.TriggerCollection* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_Triggers(return_value); }
+	override HRESULT get_Resources(Windows.UI.Xaml.ResourceDictionary* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_Resources(return_value); }
+	override HRESULT set_Resources(Windows.UI.Xaml.ResourceDictionary value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_Resources(value); }
+	override HRESULT get_Tag(IInspectable* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_Tag(return_value); }
+	override HRESULT set_Tag(IInspectable value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_Tag(value); }
+	override HRESULT get_Language(HSTRING* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_Language(return_value); }
+	override HRESULT set_Language(HSTRING value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_Language(value); }
+	override HRESULT get_ActualWidth(double* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_ActualWidth(return_value); }
+	override HRESULT get_ActualHeight(double* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_ActualHeight(return_value); }
+	override HRESULT get_Width(double* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_Width(return_value); }
+	override HRESULT set_Width(double value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_Width(value); }
+	override HRESULT get_Height(double* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_Height(return_value); }
+	override HRESULT set_Height(double value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_Height(value); }
+	override HRESULT get_MinWidth(double* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_MinWidth(return_value); }
+	override HRESULT set_MinWidth(double value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_MinWidth(value); }
+	override HRESULT get_MaxWidth(double* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_MaxWidth(return_value); }
+	override HRESULT set_MaxWidth(double value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_MaxWidth(value); }
+	override HRESULT get_MinHeight(double* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_MinHeight(return_value); }
+	override HRESULT set_MinHeight(double value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_MinHeight(value); }
+	override HRESULT get_MaxHeight(double* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_MaxHeight(return_value); }
+	override HRESULT set_MaxHeight(double value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_MaxHeight(value); }
+	override HRESULT get_HorizontalAlignment(Windows.UI.Xaml.HorizontalAlignment* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_HorizontalAlignment(return_value); }
+	override HRESULT set_HorizontalAlignment(Windows.UI.Xaml.HorizontalAlignment value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_HorizontalAlignment(value); }
+	override HRESULT get_VerticalAlignment(Windows.UI.Xaml.VerticalAlignment* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_VerticalAlignment(return_value); }
+	override HRESULT set_VerticalAlignment(Windows.UI.Xaml.VerticalAlignment value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_VerticalAlignment(value); }
+	override HRESULT get_Margin(Windows.UI.Xaml.Thickness* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_Margin(return_value); }
+	override HRESULT set_Margin(Windows.UI.Xaml.Thickness value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_Margin(value); }
+	override HRESULT get_Name(HSTRING* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_Name(return_value); }
+	override HRESULT set_Name(HSTRING value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_Name(value); }
+	override HRESULT get_BaseUri(Windows.Foundation.Uri* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_BaseUri(return_value); }
+	override HRESULT get_DataContext(IInspectable* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_DataContext(return_value); }
+	override HRESULT set_DataContext(IInspectable value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_DataContext(value); }
+	override HRESULT get_Style(Windows.UI.Xaml.Style* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_Style(return_value); }
+	override HRESULT set_Style(Windows.UI.Xaml.Style value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_Style(value); }
+	override HRESULT get_Parent(Windows.UI.Xaml.DependencyObject* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_Parent(return_value); }
+	override HRESULT get_FlowDirection(Windows.UI.Xaml.FlowDirection* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).get_FlowDirection(return_value); }
+	override HRESULT set_FlowDirection(Windows.UI.Xaml.FlowDirection value) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).set_FlowDirection(value); }
+	override HRESULT add_Loaded(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).add_Loaded(value, return_token); }
+	override HRESULT remove_Loaded(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).remove_Loaded(token); }
+	override HRESULT add_Unloaded(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).add_Unloaded(value, return_token); }
+	override HRESULT remove_Unloaded(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).remove_Unloaded(token); }
+	override HRESULT add_SizeChanged(Windows.UI.Xaml.SizeChangedEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).add_SizeChanged(value, return_token); }
+	override HRESULT remove_SizeChanged(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).remove_SizeChanged(token); }
+	override HRESULT add_LayoutUpdated(Windows.Foundation.EventHandler!(IInspectable) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).add_LayoutUpdated(value, return_token); }
+	override HRESULT remove_LayoutUpdated(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).remove_LayoutUpdated(token); }
+	override HRESULT abi_FindName(HSTRING name, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).abi_FindName(name, return_returnValue); }
+	override HRESULT abi_SetBinding(Windows.UI.Xaml.DependencyProperty dp, Windows.UI.Xaml.Data.BindingBase binding) { return (cast(Windows.UI.Xaml.IFrameworkElement)m_inner.asInterface(uuid("a391d09b-4a99-4b7c-9d8d-6fa5d01f6fbf"))).abi_SetBinding(dp, binding); }
 
 	override HRESULT abi_MeasureOverride(Windows.Foundation.Size availableSize, Windows.Foundation.Size* return_returnValue) { this.MeasureOverride(availableSize, return_returnValue); return S_OK; }
-	void MeasureOverride(Windows.Foundation.Size availableSize, Windows.Foundation.Size* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IFrameworkElementOverrides).abi_MeasureOverride(availableSize, return_returnValue)); }
+	void MeasureOverride(Windows.Foundation.Size availableSize, Windows.Foundation.Size* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.IFrameworkElementOverrides)m_inner.asInterface(uuid("da007e54-b3c2-4b9a-aa8e-d3f071262b97"))).abi_MeasureOverride(availableSize, return_returnValue)); }
 	override HRESULT abi_ArrangeOverride(Windows.Foundation.Size finalSize, Windows.Foundation.Size* return_returnValue) { this.ArrangeOverride(finalSize, return_returnValue); return S_OK; }
-	void ArrangeOverride(Windows.Foundation.Size finalSize, Windows.Foundation.Size* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IFrameworkElementOverrides).abi_ArrangeOverride(finalSize, return_returnValue)); }
+	void ArrangeOverride(Windows.Foundation.Size finalSize, Windows.Foundation.Size* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.IFrameworkElementOverrides)m_inner.asInterface(uuid("da007e54-b3c2-4b9a-aa8e-d3f071262b97"))).abi_ArrangeOverride(finalSize, return_returnValue)); }
 	override HRESULT abi_OnApplyTemplate() { this.OnApplyTemplate(); return S_OK; }
-	void OnApplyTemplate() { Debug.OK(m_inner.as!(Windows.UI.Xaml.IFrameworkElementOverrides).abi_OnApplyTemplate()); }
+	void OnApplyTemplate() { Debug.OK((cast(Windows.UI.Xaml.IFrameworkElementOverrides)m_inner.asInterface(uuid("da007e54-b3c2-4b9a-aa8e-d3f071262b97"))).abi_OnApplyTemplate()); }
 
-	override HRESULT get_RequestedTheme(Windows.UI.Xaml.ElementTheme* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement2).get_RequestedTheme(return_value); }
-	override HRESULT set_RequestedTheme(Windows.UI.Xaml.ElementTheme value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement2).set_RequestedTheme(value); }
-	override HRESULT add_DataContextChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.DataContextChangedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement2).add_DataContextChanged(value, return_token); }
-	override HRESULT remove_DataContextChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement2).remove_DataContextChanged(token); }
-	override HRESULT abi_GetBindingExpression(Windows.UI.Xaml.DependencyProperty dp, Windows.UI.Xaml.Data.BindingExpression* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement2).abi_GetBindingExpression(dp, return_returnValue); }
+	override HRESULT get_RequestedTheme(Windows.UI.Xaml.ElementTheme* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement2)m_inner.asInterface(uuid("f19104be-422a-4904-a52f-ee72010429e5"))).get_RequestedTheme(return_value); }
+	override HRESULT set_RequestedTheme(Windows.UI.Xaml.ElementTheme value) { return (cast(Windows.UI.Xaml.IFrameworkElement2)m_inner.asInterface(uuid("f19104be-422a-4904-a52f-ee72010429e5"))).set_RequestedTheme(value); }
+	override HRESULT add_DataContextChanged(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.DataContextChangedEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IFrameworkElement2)m_inner.asInterface(uuid("f19104be-422a-4904-a52f-ee72010429e5"))).add_DataContextChanged(value, return_token); }
+	override HRESULT remove_DataContextChanged(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IFrameworkElement2)m_inner.asInterface(uuid("f19104be-422a-4904-a52f-ee72010429e5"))).remove_DataContextChanged(token); }
+	override HRESULT abi_GetBindingExpression(Windows.UI.Xaml.DependencyProperty dp, Windows.UI.Xaml.Data.BindingExpression* return_returnValue) { return (cast(Windows.UI.Xaml.IFrameworkElement2)m_inner.asInterface(uuid("f19104be-422a-4904-a52f-ee72010429e5"))).abi_GetBindingExpression(dp, return_returnValue); }
 
 	override HRESULT abi_GoToElementStateCore(HSTRING stateName, bool useTransitions, bool* return_returnValue) { this.GoToElementStateCore(stateName, useTransitions, return_returnValue); return S_OK; }
-	void GoToElementStateCore(HSTRING stateName, bool useTransitions, bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IFrameworkElementOverrides2).abi_GoToElementStateCore(stateName, useTransitions, return_returnValue)); }
+	void GoToElementStateCore(HSTRING stateName, bool useTransitions, bool* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.IFrameworkElementOverrides2)m_inner.asInterface(uuid("cb5cd2b9-e3b4-458c-b64e-1434fd1bd88a"))).abi_GoToElementStateCore(stateName, useTransitions, return_returnValue)); }
 
-	override HRESULT add_Loading(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.FrameworkElement, IInspectable) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement3).add_Loading(value, return_token); }
-	override HRESULT remove_Loading(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement3).remove_Loading(token); }
+	override HRESULT add_Loading(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.FrameworkElement, IInspectable) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IFrameworkElement3)m_inner.asInterface(uuid("c81c2720-5c52-4bbe-a199-2b1e34f00f70"))).add_Loading(value, return_token); }
+	override HRESULT remove_Loading(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IFrameworkElement3)m_inner.asInterface(uuid("c81c2720-5c52-4bbe-a199-2b1e34f00f70"))).remove_Loading(token); }
 
-	override HRESULT get_AllowFocusOnInteraction(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).get_AllowFocusOnInteraction(return_value); }
-	override HRESULT set_AllowFocusOnInteraction(bool value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).set_AllowFocusOnInteraction(value); }
-	override HRESULT get_FocusVisualMargin(Windows.UI.Xaml.Thickness* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).get_FocusVisualMargin(return_value); }
-	override HRESULT set_FocusVisualMargin(Windows.UI.Xaml.Thickness value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).set_FocusVisualMargin(value); }
-	override HRESULT get_FocusVisualSecondaryThickness(Windows.UI.Xaml.Thickness* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).get_FocusVisualSecondaryThickness(return_value); }
-	override HRESULT set_FocusVisualSecondaryThickness(Windows.UI.Xaml.Thickness value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).set_FocusVisualSecondaryThickness(value); }
-	override HRESULT get_FocusVisualPrimaryThickness(Windows.UI.Xaml.Thickness* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).get_FocusVisualPrimaryThickness(return_value); }
-	override HRESULT set_FocusVisualPrimaryThickness(Windows.UI.Xaml.Thickness value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).set_FocusVisualPrimaryThickness(value); }
-	override HRESULT get_FocusVisualSecondaryBrush(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).get_FocusVisualSecondaryBrush(return_value); }
-	override HRESULT set_FocusVisualSecondaryBrush(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).set_FocusVisualSecondaryBrush(value); }
-	override HRESULT get_FocusVisualPrimaryBrush(Windows.UI.Xaml.Media.Brush* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).get_FocusVisualPrimaryBrush(return_value); }
-	override HRESULT set_FocusVisualPrimaryBrush(Windows.UI.Xaml.Media.Brush value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).set_FocusVisualPrimaryBrush(value); }
-	override HRESULT get_AllowFocusWhenDisabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).get_AllowFocusWhenDisabled(return_value); }
-	override HRESULT set_AllowFocusWhenDisabled(bool value) { return m_inner.as!(Windows.UI.Xaml.IFrameworkElement4).set_AllowFocusWhenDisabled(value); }
+	override HRESULT get_AllowFocusOnInteraction(bool* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement4)m_inner.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).get_AllowFocusOnInteraction(return_value); }
+	override HRESULT set_AllowFocusOnInteraction(bool value) { return (cast(Windows.UI.Xaml.IFrameworkElement4)m_inner.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).set_AllowFocusOnInteraction(value); }
+	override HRESULT get_FocusVisualMargin(Windows.UI.Xaml.Thickness* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement4)m_inner.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).get_FocusVisualMargin(return_value); }
+	override HRESULT set_FocusVisualMargin(Windows.UI.Xaml.Thickness value) { return (cast(Windows.UI.Xaml.IFrameworkElement4)m_inner.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).set_FocusVisualMargin(value); }
+	override HRESULT get_FocusVisualSecondaryThickness(Windows.UI.Xaml.Thickness* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement4)m_inner.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).get_FocusVisualSecondaryThickness(return_value); }
+	override HRESULT set_FocusVisualSecondaryThickness(Windows.UI.Xaml.Thickness value) { return (cast(Windows.UI.Xaml.IFrameworkElement4)m_inner.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).set_FocusVisualSecondaryThickness(value); }
+	override HRESULT get_FocusVisualPrimaryThickness(Windows.UI.Xaml.Thickness* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement4)m_inner.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).get_FocusVisualPrimaryThickness(return_value); }
+	override HRESULT set_FocusVisualPrimaryThickness(Windows.UI.Xaml.Thickness value) { return (cast(Windows.UI.Xaml.IFrameworkElement4)m_inner.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).set_FocusVisualPrimaryThickness(value); }
+	override HRESULT get_FocusVisualSecondaryBrush(Windows.UI.Xaml.Media.Brush* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement4)m_inner.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).get_FocusVisualSecondaryBrush(return_value); }
+	override HRESULT set_FocusVisualSecondaryBrush(Windows.UI.Xaml.Media.Brush value) { return (cast(Windows.UI.Xaml.IFrameworkElement4)m_inner.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).set_FocusVisualSecondaryBrush(value); }
+	override HRESULT get_FocusVisualPrimaryBrush(Windows.UI.Xaml.Media.Brush* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement4)m_inner.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).get_FocusVisualPrimaryBrush(return_value); }
+	override HRESULT set_FocusVisualPrimaryBrush(Windows.UI.Xaml.Media.Brush value) { return (cast(Windows.UI.Xaml.IFrameworkElement4)m_inner.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).set_FocusVisualPrimaryBrush(value); }
+	override HRESULT get_AllowFocusWhenDisabled(bool* return_value) { return (cast(Windows.UI.Xaml.IFrameworkElement4)m_inner.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).get_AllowFocusWhenDisabled(return_value); }
+	override HRESULT set_AllowFocusWhenDisabled(bool value) { return (cast(Windows.UI.Xaml.IFrameworkElement4)m_inner.asInterface(uuid("6b765bb3-fba3-4404-bdee-1a45d1ca5f21"))).set_AllowFocusWhenDisabled(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -3515,29 +3515,29 @@ interface FrameworkView : Windows.UI.Xaml.IFrameworkView, Windows.ApplicationMod
 extern(Windows):
 	final void Initialize(Windows.ApplicationModel.Core.CoreApplicationView applicationView)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.IFrameworkView).abi_Initialize(applicationView));
+		Debug.OK((cast(Windows.ApplicationModel.Core.IFrameworkView)this.asInterface(uuid("faab5cd0-8924-45ac-ad0f-a08fae5d0324"))).abi_Initialize(applicationView));
 	}
 	final void SetWindow(Windows.UI.Core.CoreWindow window)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.IFrameworkView).abi_SetWindow(window));
+		Debug.OK((cast(Windows.ApplicationModel.Core.IFrameworkView)this.asInterface(uuid("faab5cd0-8924-45ac-ad0f-a08fae5d0324"))).abi_SetWindow(window));
 	}
 	final void Load(HSTRING entryPoint)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.IFrameworkView).abi_Load(entryPoint));
+		Debug.OK((cast(Windows.ApplicationModel.Core.IFrameworkView)this.asInterface(uuid("faab5cd0-8924-45ac-ad0f-a08fae5d0324"))).abi_Load(entryPoint));
 	}
 	final void Run()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.IFrameworkView).abi_Run());
+		Debug.OK((cast(Windows.ApplicationModel.Core.IFrameworkView)this.asInterface(uuid("faab5cd0-8924-45ac-ad0f-a08fae5d0324"))).abi_Run());
 	}
 	final void Uninitialize()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.IFrameworkView).abi_Uninitialize());
+		Debug.OK((cast(Windows.ApplicationModel.Core.IFrameworkView)this.asInterface(uuid("faab5cd0-8924-45ac-ad0f-a08fae5d0324"))).abi_Uninitialize());
 	}
 	static FrameworkView New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(FrameworkView).abi_ActivateInstance(&ret));
-		return ret.as!(FrameworkView);
+		return cast(FrameworkView) ret;
 	}
 }
 
@@ -3547,14 +3547,14 @@ extern(Windows):
 	final Windows.ApplicationModel.Core.IFrameworkView CreateView()
 	{
 		Windows.ApplicationModel.Core.IFrameworkView _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.IFrameworkViewSource).abi_CreateView(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Core.IFrameworkViewSource)this.asInterface(uuid("cd770614-65c4-426c-9494-34fc43554862"))).abi_CreateView(&_ret));
 		return _ret;
 	}
 	static FrameworkViewSource New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(FrameworkViewSource).abi_ActivateInstance(&ret));
-		return ret.as!(FrameworkViewSource);
+		return cast(FrameworkViewSource) ret;
 	}
 }
 
@@ -3569,43 +3569,43 @@ interface GridLengthHelper : Windows.UI.Xaml.IGridLengthHelper
 	static Windows.UI.Xaml.GridLength Auto()
 	{
 		Windows.UI.Xaml.GridLength _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IGridLengthHelperStatics).get_Auto(&_ret));
+		Debug.OK(staticInstance.get_Auto(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.GridLength FromPixels(double pixels)
 	{
 		Windows.UI.Xaml.GridLength _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IGridLengthHelperStatics).abi_FromPixels(pixels, &_ret));
+		Debug.OK(staticInstance.abi_FromPixels(pixels, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.GridLength FromValueAndType(double value, Windows.UI.Xaml.GridUnitType type)
 	{
 		Windows.UI.Xaml.GridLength _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IGridLengthHelperStatics).abi_FromValueAndType(value, type, &_ret));
+		Debug.OK(staticInstance.abi_FromValueAndType(value, type, &_ret));
 		return _ret;
 	}
 	static bool GetIsAbsolute(Windows.UI.Xaml.GridLength target)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IGridLengthHelperStatics).abi_GetIsAbsolute(target, &_ret));
+		Debug.OK(staticInstance.abi_GetIsAbsolute(target, &_ret));
 		return _ret;
 	}
 	static bool GetIsAuto(Windows.UI.Xaml.GridLength target)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IGridLengthHelperStatics).abi_GetIsAuto(target, &_ret));
+		Debug.OK(staticInstance.abi_GetIsAuto(target, &_ret));
 		return _ret;
 	}
 	static bool GetIsStar(Windows.UI.Xaml.GridLength target)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IGridLengthHelperStatics).abi_GetIsStar(target, &_ret));
+		Debug.OK(staticInstance.abi_GetIsStar(target, &_ret));
 		return _ret;
 	}
 	static bool Equals(Windows.UI.Xaml.GridLength target, Windows.UI.Xaml.GridLength value)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IGridLengthHelperStatics).abi_Equals(target, value, &_ret));
+		Debug.OK(staticInstance.abi_Equals(target, value, &_ret));
 		return _ret;
 	}
 }
@@ -3616,7 +3616,7 @@ extern(Windows):
 	final HSTRING ErrorTrace()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IMediaFailedRoutedEventArgs).get_ErrorTrace(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IMediaFailedRoutedEventArgs)this.asInterface(uuid("46d1fa8d-5149-4153-ba3c-b03e64ee531e"))).get_ErrorTrace(&_ret));
 		return _ret;
 	}
 }
@@ -3632,7 +3632,7 @@ interface PointHelper : Windows.UI.Xaml.IPointHelper
 	static Windows.Foundation.Point FromCoordinates(float x, float y)
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IPointHelperStatics).abi_FromCoordinates(x, y, &_ret));
+		Debug.OK(staticInstance.abi_FromCoordinates(x, y, &_ret));
 		return _ret;
 	}
 }
@@ -3643,13 +3643,13 @@ extern(Windows):
 	final IInspectable DefaultValue()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IPropertyMetadata).get_DefaultValue(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IPropertyMetadata)this.asInterface(uuid("814ef30d-8d18-448a-8644-f2cb51e70380"))).get_DefaultValue(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.CreateDefaultValueCallback CreateDefaultValueCallback()
 	{
 		Windows.UI.Xaml.CreateDefaultValueCallback _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IPropertyMetadata).get_CreateDefaultValueCallback(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IPropertyMetadata)this.asInterface(uuid("814ef30d-8d18-448a-8644-f2cb51e70380"))).get_CreateDefaultValueCallback(&_ret));
 		return _ret;
 	}
 
@@ -3662,25 +3662,25 @@ extern(Windows):
 	static Windows.UI.Xaml.PropertyMetadata CreateWithDefaultValue(IInspectable defaultValue)
 	{
 		Windows.UI.Xaml.PropertyMetadata _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IPropertyMetadataStatics).abi_CreateWithDefaultValue(defaultValue, &_ret));
+		Debug.OK(staticInstance.abi_CreateWithDefaultValue(defaultValue, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.PropertyMetadata CreateWithDefaultValueAndCallback(IInspectable defaultValue, Windows.UI.Xaml.PropertyChangedCallback propertyChangedCallback)
 	{
 		Windows.UI.Xaml.PropertyMetadata _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IPropertyMetadataStatics).abi_CreateWithDefaultValueAndCallback(defaultValue, propertyChangedCallback, &_ret));
+		Debug.OK(staticInstance.abi_CreateWithDefaultValueAndCallback(defaultValue, propertyChangedCallback, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.PropertyMetadata CreateWithFactory(Windows.UI.Xaml.CreateDefaultValueCallback createDefaultValueCallback)
 	{
 		Windows.UI.Xaml.PropertyMetadata _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IPropertyMetadataStatics).abi_CreateWithFactory(createDefaultValueCallback, &_ret));
+		Debug.OK(staticInstance.abi_CreateWithFactory(createDefaultValueCallback, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.PropertyMetadata CreateWithFactoryAndCallback(Windows.UI.Xaml.CreateDefaultValueCallback createDefaultValueCallback, Windows.UI.Xaml.PropertyChangedCallback propertyChangedCallback)
 	{
 		Windows.UI.Xaml.PropertyMetadata _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IPropertyMetadataStatics).abi_CreateWithFactoryAndCallback(createDefaultValueCallback, propertyChangedCallback, &_ret));
+		Debug.OK(staticInstance.abi_CreateWithFactoryAndCallback(createDefaultValueCallback, propertyChangedCallback, &_ret));
 		return _ret;
 	}
 }
@@ -3694,8 +3694,8 @@ class PropertyMetadataT(Base) : AgileObject!Base, PropertyMetadata
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_DefaultValue(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.IPropertyMetadata).get_DefaultValue(return_value); }
-	override HRESULT get_CreateDefaultValueCallback(Windows.UI.Xaml.CreateDefaultValueCallback* return_value) { return m_inner.as!(Windows.UI.Xaml.IPropertyMetadata).get_CreateDefaultValueCallback(return_value); }
+	override HRESULT get_DefaultValue(IInspectable* return_value) { return (cast(Windows.UI.Xaml.IPropertyMetadata)m_inner.asInterface(uuid("814ef30d-8d18-448a-8644-f2cb51e70380"))).get_DefaultValue(return_value); }
+	override HRESULT get_CreateDefaultValueCallback(Windows.UI.Xaml.CreateDefaultValueCallback* return_value) { return (cast(Windows.UI.Xaml.IPropertyMetadata)m_inner.asInterface(uuid("814ef30d-8d18-448a-8644-f2cb51e70380"))).get_CreateDefaultValueCallback(return_value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -3707,14 +3707,14 @@ extern(Windows):
 	final HSTRING Path()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IPropertyPath).get_Path(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IPropertyPath)this.asInterface(uuid("300e5d8a-1ff3-4d2c-95ec-27f81debacb8"))).get_Path(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.PropertyPath New(HSTRING path)
 	{
 		auto factory = factory!(Windows.UI.Xaml.IPropertyPathFactory);
 		Windows.UI.Xaml.PropertyPath _ret;
-		Debug.OK(factory.as!(Windows.UI.Xaml.IPropertyPathFactory).abi_CreateInstance(path, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IPropertyPathFactory)factory.asInterface(uuid("4e4cdf99-9826-4e56-847c-ca055f162905"))).abi_CreateInstance(path, &_ret));
 		return _ret;
 	}
 }
@@ -3730,85 +3730,85 @@ interface RectHelper : Windows.UI.Xaml.IRectHelper
 	static Windows.Foundation.Rect Empty()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).get_Empty(&_ret));
+		Debug.OK(staticInstance.get_Empty(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Rect FromCoordinatesAndDimensions(float x, float y, float width, float height)
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_FromCoordinatesAndDimensions(x, y, width, height, &_ret));
+		Debug.OK(staticInstance.abi_FromCoordinatesAndDimensions(x, y, width, height, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Rect FromPoints(Windows.Foundation.Point point1, Windows.Foundation.Point point2)
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_FromPoints(point1, point2, &_ret));
+		Debug.OK(staticInstance.abi_FromPoints(point1, point2, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Rect FromLocationAndSize(Windows.Foundation.Point location, Windows.Foundation.Size size)
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_FromLocationAndSize(location, size, &_ret));
+		Debug.OK(staticInstance.abi_FromLocationAndSize(location, size, &_ret));
 		return _ret;
 	}
 	static bool GetIsEmpty(Windows.Foundation.Rect target)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_GetIsEmpty(target, &_ret));
+		Debug.OK(staticInstance.abi_GetIsEmpty(target, &_ret));
 		return _ret;
 	}
 	static float GetBottom(Windows.Foundation.Rect target)
 	{
 		float _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_GetBottom(target, &_ret));
+		Debug.OK(staticInstance.abi_GetBottom(target, &_ret));
 		return _ret;
 	}
 	static float GetLeft(Windows.Foundation.Rect target)
 	{
 		float _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_GetLeft(target, &_ret));
+		Debug.OK(staticInstance.abi_GetLeft(target, &_ret));
 		return _ret;
 	}
 	static float GetRight(Windows.Foundation.Rect target)
 	{
 		float _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_GetRight(target, &_ret));
+		Debug.OK(staticInstance.abi_GetRight(target, &_ret));
 		return _ret;
 	}
 	static float GetTop(Windows.Foundation.Rect target)
 	{
 		float _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_GetTop(target, &_ret));
+		Debug.OK(staticInstance.abi_GetTop(target, &_ret));
 		return _ret;
 	}
 	static bool Contains(Windows.Foundation.Rect target, Windows.Foundation.Point point)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_Contains(target, point, &_ret));
+		Debug.OK(staticInstance.abi_Contains(target, point, &_ret));
 		return _ret;
 	}
 	static bool Equals(Windows.Foundation.Rect target, Windows.Foundation.Rect value)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_Equals(target, value, &_ret));
+		Debug.OK(staticInstance.abi_Equals(target, value, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Rect Intersect(Windows.Foundation.Rect target, Windows.Foundation.Rect rect)
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_Intersect(target, rect, &_ret));
+		Debug.OK(staticInstance.abi_Intersect(target, rect, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Rect UnionWithPoint(Windows.Foundation.Rect target, Windows.Foundation.Point point)
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_UnionWithPoint(target, point, &_ret));
+		Debug.OK(staticInstance.abi_UnionWithPoint(target, point, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Rect UnionWithRect(Windows.Foundation.Rect target, Windows.Foundation.Rect rect)
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IRectHelperStatics).abi_UnionWithRect(target, rect, &_ret));
+		Debug.OK(staticInstance.abi_UnionWithRect(target, rect, &_ret));
 		return _ret;
 	}
 }
@@ -3819,66 +3819,66 @@ extern(Windows):
 	final Windows.Foundation.Uri Source()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IResourceDictionary).get_Source(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IResourceDictionary)this.asInterface(uuid("c1ea4f24-d6de-4191-8e3a-f48601f7489c"))).get_Source(&_ret));
 		return _ret;
 	}
 	final void Source(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IResourceDictionary).set_Source(value));
+		Debug.OK((cast(Windows.UI.Xaml.IResourceDictionary)this.asInterface(uuid("c1ea4f24-d6de-4191-8e3a-f48601f7489c"))).set_Source(value));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.ResourceDictionary) MergedDictionaries()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.ResourceDictionary) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IResourceDictionary).get_MergedDictionaries(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IResourceDictionary)this.asInterface(uuid("c1ea4f24-d6de-4191-8e3a-f48601f7489c"))).get_MergedDictionaries(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMap!(IInspectable, IInspectable) ThemeDictionaries()
 	{
 		Windows.Foundation.Collections.IMap!(IInspectable, IInspectable) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IResourceDictionary).get_ThemeDictionaries(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IResourceDictionary)this.asInterface(uuid("c1ea4f24-d6de-4191-8e3a-f48601f7489c"))).get_ThemeDictionaries(&_ret));
 		return _ret;
 	}
 	final  IInspectable Lookup(IInspectable key)
 	{
 		 IInspectable _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_Lookup(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable))this).abi_Lookup(key, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable))this).get_Size(&_ret));
 		return _ret;
 	}
 	final bool HasKey(IInspectable key)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_HasKey(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable))this).abi_HasKey(key, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMapView!(IInspectable,  IInspectable) GetView()
 	{
 		Windows.Foundation.Collections.IMapView!(IInspectable,	IInspectable) _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_GetView(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable))this).abi_GetView(&_ret));
 		return _ret;
 	}
 	final bool Insert(IInspectable key,	 IInspectable value)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_Insert(key, value, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable))this).abi_Insert(key, value, &_ret));
 		return _ret;
 	}
 	final void Remove(IInspectable key)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_Remove(key));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable))this).abi_Remove(key));
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable))this).abi_Clear());
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(IInspectable, IInspectable))* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(IInspectable, IInspectable))).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(IInspectable, IInspectable)))this).abi_First(out_first));
 	}
 	static ResourceDictionary New()
 	{
@@ -3898,20 +3898,20 @@ class ResourceDictionaryT(Base) : AgileObject!Base, ResourceDictionary
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_Source(Windows.Foundation.Uri* return_value) { return m_inner.as!(Windows.UI.Xaml.IResourceDictionary).get_Source(return_value); }
-	override HRESULT set_Source(Windows.Foundation.Uri value) { return m_inner.as!(Windows.UI.Xaml.IResourceDictionary).set_Source(value); }
-	override HRESULT get_MergedDictionaries(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.ResourceDictionary)* return_value) { return m_inner.as!(Windows.UI.Xaml.IResourceDictionary).get_MergedDictionaries(return_value); }
-	override HRESULT get_ThemeDictionaries(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)* return_value) { return m_inner.as!(Windows.UI.Xaml.IResourceDictionary).get_ThemeDictionaries(return_value); }
+	override HRESULT get_Source(Windows.Foundation.Uri* return_value) { return (cast(Windows.UI.Xaml.IResourceDictionary)m_inner.asInterface(uuid("c1ea4f24-d6de-4191-8e3a-f48601f7489c"))).get_Source(return_value); }
+	override HRESULT set_Source(Windows.Foundation.Uri value) { return (cast(Windows.UI.Xaml.IResourceDictionary)m_inner.asInterface(uuid("c1ea4f24-d6de-4191-8e3a-f48601f7489c"))).set_Source(value); }
+	override HRESULT get_MergedDictionaries(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.ResourceDictionary)* return_value) { return (cast(Windows.UI.Xaml.IResourceDictionary)m_inner.asInterface(uuid("c1ea4f24-d6de-4191-8e3a-f48601f7489c"))).get_MergedDictionaries(return_value); }
+	override HRESULT get_ThemeDictionaries(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)* return_value) { return (cast(Windows.UI.Xaml.IResourceDictionary)m_inner.asInterface(uuid("c1ea4f24-d6de-4191-8e3a-f48601f7489c"))).get_ThemeDictionaries(return_value); }
 
-	override HRESULT abi_Lookup(IInspectable key,  IInspectable* return_value) { return m_inner.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_Lookup(key, return_value); }
-	override HRESULT get_Size(uint* return_size) { return m_inner.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).get_Size(return_size); }
-	override HRESULT abi_HasKey(IInspectable key, bool* return_found) { return m_inner.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_HasKey(key, return_found); }
-	override HRESULT abi_GetView(Windows.Foundation.Collections.IMapView!(IInspectable,	 IInspectable)* return_view) { return m_inner.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_GetView(return_view); }
-	override HRESULT abi_Insert(IInspectable key,  IInspectable value, bool* return_replaced) { return m_inner.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_Insert(key, value, return_replaced); }
-	override HRESULT abi_Remove(IInspectable key) { return m_inner.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_Remove(key); }
-	override HRESULT abi_Clear() { return m_inner.as!(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable)).abi_Clear(); }
+	override HRESULT abi_Lookup(IInspectable key,  IInspectable* return_value) { return (cast(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable))m_inner).abi_Lookup(key, return_value); }
+	override HRESULT get_Size(uint* return_size) { return (cast(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable))m_inner).get_Size(return_size); }
+	override HRESULT abi_HasKey(IInspectable key, bool* return_found) { return (cast(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable))m_inner).abi_HasKey(key, return_found); }
+	override HRESULT abi_GetView(Windows.Foundation.Collections.IMapView!(IInspectable,	 IInspectable)* return_view) { return (cast(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable))m_inner).abi_GetView(return_view); }
+	override HRESULT abi_Insert(IInspectable key,  IInspectable value, bool* return_replaced) { return (cast(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable))m_inner).abi_Insert(key, value, return_replaced); }
+	override HRESULT abi_Remove(IInspectable key) { return (cast(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable))m_inner).abi_Remove(key); }
+	override HRESULT abi_Clear() { return (cast(Windows.Foundation.Collections.IMap!(IInspectable, IInspectable))m_inner).abi_Clear(); }
 
-	override HRESULT abi_First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(IInspectable, IInspectable))* out_first) { return m_inner.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(IInspectable, IInspectable))).abi_First(out_first); }
+	override HRESULT abi_First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(IInspectable, IInspectable))* out_first) { return (cast(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(IInspectable, IInspectable)))m_inner).abi_First(out_first); }
 
 	this() {}
 	IInspectable m_inner;
@@ -3927,7 +3927,7 @@ extern(Windows):
 	final IInspectable OriginalSource()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IRoutedEventArgs).get_OriginalSource(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IRoutedEventArgs)this.asInterface(uuid("5c985ac6-d802-4b38-a223-bf070c43fedf"))).get_OriginalSource(&_ret));
 		return _ret;
 	}
 	static RoutedEventArgs New()
@@ -3948,7 +3948,7 @@ class RoutedEventArgsT(Base) : AgileObject!Base, RoutedEventArgs
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_OriginalSource(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.IRoutedEventArgs).get_OriginalSource(return_value); }
+	override HRESULT get_OriginalSource(IInspectable* return_value) { return (cast(Windows.UI.Xaml.IRoutedEventArgs)m_inner.asInterface(uuid("5c985ac6-d802-4b38-a223-bf070c43fedf"))).get_OriginalSource(return_value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -3960,44 +3960,44 @@ extern(Windows):
 	final Windows.UI.Xaml.DependencyProperty Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.ISetter).get_Property(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.ISetter)this.asInterface(uuid("a73ded29-b4ae-4a81-be85-e690ba0d3b6e"))).get_Property(&_ret));
 		return _ret;
 	}
 	final void Property(Windows.UI.Xaml.DependencyProperty value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.ISetter).set_Property(value));
+		Debug.OK((cast(Windows.UI.Xaml.ISetter)this.asInterface(uuid("a73ded29-b4ae-4a81-be85-e690ba0d3b6e"))).set_Property(value));
 	}
 	final IInspectable Value()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.ISetter).get_Value(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.ISetter)this.asInterface(uuid("a73ded29-b4ae-4a81-be85-e690ba0d3b6e"))).get_Value(&_ret));
 		return _ret;
 	}
 	final void Value(IInspectable value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.ISetter).set_Value(value));
+		Debug.OK((cast(Windows.UI.Xaml.ISetter)this.asInterface(uuid("a73ded29-b4ae-4a81-be85-e690ba0d3b6e"))).set_Value(value));
 	}
 	final Windows.UI.Xaml.TargetPropertyPath Target()
 	{
 		Windows.UI.Xaml.TargetPropertyPath _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.ISetter2).get_Target(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.ISetter2)this.asInterface(uuid("70169561-05b1-4fa3-9d53-8e0c8c747afc"))).get_Target(&_ret));
 		return _ret;
 	}
 	final void Target(Windows.UI.Xaml.TargetPropertyPath value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.ISetter2).set_Target(value));
+		Debug.OK((cast(Windows.UI.Xaml.ISetter2)this.asInterface(uuid("70169561-05b1-4fa3-9d53-8e0c8c747afc"))).set_Target(value));
 	}
 	static Setter New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Setter).abi_ActivateInstance(&ret));
-		return ret.as!(Setter);
+		return cast(Setter) ret;
 	}
 	static Windows.UI.Xaml.Setter New(Windows.UI.Xaml.DependencyProperty targetProperty, IInspectable value)
 	{
 		auto factory = factory!(Windows.UI.Xaml.ISetterFactory);
 		Windows.UI.Xaml.Setter _ret;
-		Debug.OK(factory.as!(Windows.UI.Xaml.ISetterFactory).abi_CreateInstance(targetProperty, value, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.ISetterFactory)factory.asInterface(uuid("d3ca3d42-09b1-49d5-8891-e7b5648e02a2"))).abi_CreateInstance(targetProperty, value, &_ret));
 		return _ret;
 	}
 }
@@ -4008,7 +4008,7 @@ extern(Windows):
 	final bool IsSealed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.ISetterBase).get_IsSealed(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.ISetterBase)this.asInterface(uuid("418be27c-2ac4-4f22-8097-dea3aeeb2fb3"))).get_IsSealed(&_ret));
 		return _ret;
 	}
 }
@@ -4022,7 +4022,7 @@ class SetterBaseT(Base) : AgileObject!Base, SetterBase
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_IsSealed(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.ISetterBase).get_IsSealed(return_value); }
+	override HRESULT get_IsSealed(bool* return_value) { return (cast(Windows.UI.Xaml.ISetterBase)m_inner.asInterface(uuid("418be27c-2ac4-4f22-8097-dea3aeeb2fb3"))).get_IsSealed(return_value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -4034,72 +4034,72 @@ extern(Windows):
 	final bool IsSealed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.ISetterBaseCollection).get_IsSealed(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.ISetterBaseCollection)this.asInterface(uuid("03c40ca8-909e-4117-811c-a4529496bdf1"))).get_IsSealed(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.SetterBase GetAt(uint index)
 	{
 		Windows.UI.Xaml.SetterBase _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase)).get_GetAt(index, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase))this).get_GetAt(index, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase))this).get_Size(&_ret));
 		return _ret;
 	}
 	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.SetterBase)* out_view)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase)).abi_GetView(out_view));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase))this).abi_GetView(out_view));
 	}
 	final uint IndexOf(Windows.UI.Xaml.SetterBase value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void SetAt(uint index, Windows.UI.Xaml.SetterBase item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase)).abi_SetAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase))this).abi_SetAt(index, item));
 	}
 	final void InsertAt(uint index, Windows.UI.Xaml.SetterBase item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase)).abi_InsertAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase))this).abi_InsertAt(index, item));
 	}
 	final void RemoveAt(uint index)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase)).abi_RemoveAt(index));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase))this).abi_RemoveAt(index));
 	}
 	final void Append(Windows.UI.Xaml.SetterBase item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase)).abi_Append(item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase))this).abi_Append(item));
 	}
 	final void RemoveAtEnd()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase)).abi_RemoveAtEnd());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase))this).abi_RemoveAtEnd());
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase))this).abi_Clear());
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.SetterBase* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void ReplaceAll(uint count, Windows.UI.Xaml.SetterBase* out_value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase)).abi_ReplaceAll(count, out_value));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.SetterBase))this).abi_ReplaceAll(count, out_value));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.SetterBase)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.SetterBase)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.SetterBase))this).abi_First(out_first));
 	}
 	static SetterBaseCollection New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(SetterBaseCollection).abi_ActivateInstance(&ret));
-		return ret.as!(SetterBaseCollection);
+		return cast(SetterBaseCollection) ret;
 	}
 }
 
@@ -4109,13 +4109,13 @@ extern(Windows):
 	final Windows.Foundation.Size PreviousSize()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.ISizeChangedEventArgs).get_PreviousSize(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.ISizeChangedEventArgs)this.asInterface(uuid("d5312e60-5cc1-42a1-920c-1af46be2f986"))).get_PreviousSize(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Size NewSize()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.ISizeChangedEventArgs).get_NewSize(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.ISizeChangedEventArgs)this.asInterface(uuid("d5312e60-5cc1-42a1-920c-1af46be2f986"))).get_NewSize(&_ret));
 		return _ret;
 	}
 }
@@ -4131,25 +4131,25 @@ interface SizeHelper : Windows.UI.Xaml.ISizeHelper
 	static Windows.Foundation.Size Empty()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.ISizeHelperStatics).get_Empty(&_ret));
+		Debug.OK(staticInstance.get_Empty(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Size FromDimensions(float width, float height)
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.ISizeHelperStatics).abi_FromDimensions(width, height, &_ret));
+		Debug.OK(staticInstance.abi_FromDimensions(width, height, &_ret));
 		return _ret;
 	}
 	static bool GetIsEmpty(Windows.Foundation.Size target)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.ISizeHelperStatics).abi_GetIsEmpty(target, &_ret));
+		Debug.OK(staticInstance.abi_GetIsEmpty(target, &_ret));
 		return _ret;
 	}
 	static bool Equals(Windows.Foundation.Size target, Windows.Foundation.Size value)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.ISizeHelperStatics).abi_Equals(target, value, &_ret));
+		Debug.OK(staticInstance.abi_Equals(target, value, &_ret));
 		return _ret;
 	}
 }
@@ -4160,12 +4160,12 @@ extern(Windows):
 	final bool IsActive()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IStateTrigger).get_IsActive(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IStateTrigger)this.asInterface(uuid("67adef2e-d8d9-49f7-a1fd-2e35eedd23cd"))).get_IsActive(&_ret));
 		return _ret;
 	}
 	final void IsActive(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IStateTrigger).set_IsActive(value));
+		Debug.OK((cast(Windows.UI.Xaml.IStateTrigger)this.asInterface(uuid("67adef2e-d8d9-49f7-a1fd-2e35eedd23cd"))).set_IsActive(value));
 	}
 
 	private static Windows.UI.Xaml.IStateTriggerStatics _staticInstance;
@@ -4177,14 +4177,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty IsActiveProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IStateTriggerStatics).get_IsActiveProperty(&_ret));
+		Debug.OK(staticInstance.get_IsActiveProperty(&_ret));
 		return _ret;
 	}
 	static StateTrigger New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(StateTrigger).abi_ActivateInstance(&ret));
-		return ret.as!(StateTrigger);
+		return cast(StateTrigger) ret;
 	}
 }
 
@@ -4193,7 +4193,7 @@ interface StateTriggerBase : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.I
 extern(Windows):
 	final void SetActive(bool IsActive)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IStateTriggerBaseProtected).abi_SetActive(IsActive));
+		Debug.OK((cast(Windows.UI.Xaml.IStateTriggerBaseProtected)this.asInterface(uuid("3c41e253-8d14-4216-994c-f9930429f6e5"))).abi_SetActive(IsActive));
 	}
 	static StateTriggerBase New()
 	{
@@ -4214,7 +4214,7 @@ class StateTriggerBaseT(Base) : AgileObject!Base, StateTriggerBase
 		return ret;
 	}
 
-	override HRESULT abi_SetActive(bool IsActive) { return m_inner.as!(Windows.UI.Xaml.IStateTriggerBaseProtected).abi_SetActive(IsActive); }
+	override HRESULT abi_SetActive(bool IsActive) { return (cast(Windows.UI.Xaml.IStateTriggerBaseProtected)m_inner.asInterface(uuid("3c41e253-8d14-4216-994c-f9930429f6e5"))).abi_SetActive(IsActive); }
 
 	this() {}
 	IInspectable m_inner;
@@ -4226,50 +4226,50 @@ extern(Windows):
 	final bool IsSealed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IStyle).get_IsSealed(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IStyle)this.asInterface(uuid("c4a9f225-9db7-4a7d-b6d1-f74edb9293c2"))).get_IsSealed(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.SetterBaseCollection Setters()
 	{
 		Windows.UI.Xaml.SetterBaseCollection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IStyle).get_Setters(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IStyle)this.asInterface(uuid("c4a9f225-9db7-4a7d-b6d1-f74edb9293c2"))).get_Setters(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Interop.TypeName TargetType()
 	{
 		Windows.UI.Xaml.Interop.TypeName _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IStyle).get_TargetType(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IStyle)this.asInterface(uuid("c4a9f225-9db7-4a7d-b6d1-f74edb9293c2"))).get_TargetType(&_ret));
 		return _ret;
 	}
 	final void TargetType(Windows.UI.Xaml.Interop.TypeName value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IStyle).set_TargetType(value));
+		Debug.OK((cast(Windows.UI.Xaml.IStyle)this.asInterface(uuid("c4a9f225-9db7-4a7d-b6d1-f74edb9293c2"))).set_TargetType(value));
 	}
 	final Windows.UI.Xaml.Style BasedOn()
 	{
 		Windows.UI.Xaml.Style _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IStyle).get_BasedOn(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IStyle)this.asInterface(uuid("c4a9f225-9db7-4a7d-b6d1-f74edb9293c2"))).get_BasedOn(&_ret));
 		return _ret;
 	}
 	final void BasedOn(Windows.UI.Xaml.Style value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IStyle).set_BasedOn(value));
+		Debug.OK((cast(Windows.UI.Xaml.IStyle)this.asInterface(uuid("c4a9f225-9db7-4a7d-b6d1-f74edb9293c2"))).set_BasedOn(value));
 	}
 	final void Seal()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IStyle).abi_Seal());
+		Debug.OK((cast(Windows.UI.Xaml.IStyle)this.asInterface(uuid("c4a9f225-9db7-4a7d-b6d1-f74edb9293c2"))).abi_Seal());
 	}
 	static Style New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Style).abi_ActivateInstance(&ret));
-		return ret.as!(Style);
+		return cast(Style) ret;
 	}
 	static Windows.UI.Xaml.Style New(Windows.UI.Xaml.Interop.TypeName targetType)
 	{
 		auto factory = factory!(Windows.UI.Xaml.IStyleFactory);
 		Windows.UI.Xaml.Style _ret;
-		Debug.OK(factory.as!(Windows.UI.Xaml.IStyleFactory).abi_CreateInstance(targetType, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IStyleFactory)factory.asInterface(uuid("a36824e3-3d81-4ce5-aa51-8b410f602fcd"))).abi_CreateInstance(targetType, &_ret));
 		return _ret;
 	}
 }
@@ -4280,34 +4280,34 @@ extern(Windows):
 	final Windows.UI.Xaml.PropertyPath Path()
 	{
 		Windows.UI.Xaml.PropertyPath _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.ITargetPropertyPath).get_Path(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.ITargetPropertyPath)this.asInterface(uuid("40740f8e-085f-4ced-be70-6f47acf15ad0"))).get_Path(&_ret));
 		return _ret;
 	}
 	final void Path(Windows.UI.Xaml.PropertyPath value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.ITargetPropertyPath).set_Path(value));
+		Debug.OK((cast(Windows.UI.Xaml.ITargetPropertyPath)this.asInterface(uuid("40740f8e-085f-4ced-be70-6f47acf15ad0"))).set_Path(value));
 	}
 	final IInspectable Target()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.ITargetPropertyPath).get_Target(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.ITargetPropertyPath)this.asInterface(uuid("40740f8e-085f-4ced-be70-6f47acf15ad0"))).get_Target(&_ret));
 		return _ret;
 	}
 	final void Target(IInspectable value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.ITargetPropertyPath).set_Target(value));
+		Debug.OK((cast(Windows.UI.Xaml.ITargetPropertyPath)this.asInterface(uuid("40740f8e-085f-4ced-be70-6f47acf15ad0"))).set_Target(value));
 	}
 	static TargetPropertyPath New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(TargetPropertyPath).abi_ActivateInstance(&ret));
-		return ret.as!(TargetPropertyPath);
+		return cast(TargetPropertyPath) ret;
 	}
 	static Windows.UI.Xaml.TargetPropertyPath New(Windows.UI.Xaml.DependencyProperty targetProperty)
 	{
 		auto factory = factory!(Windows.UI.Xaml.ITargetPropertyPathFactory);
 		Windows.UI.Xaml.TargetPropertyPath _ret;
-		Debug.OK(factory.as!(Windows.UI.Xaml.ITargetPropertyPathFactory).abi_CreateInstance(targetProperty, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.ITargetPropertyPathFactory)factory.asInterface(uuid("88eeccc8-99e2-4a44-9907-b44bc86e2bbe"))).abi_CreateInstance(targetProperty, &_ret));
 		return _ret;
 	}
 }
@@ -4323,13 +4323,13 @@ interface ThicknessHelper : Windows.UI.Xaml.IThicknessHelper
 	static Windows.UI.Xaml.Thickness FromLengths(double left, double top, double right, double bottom)
 	{
 		Windows.UI.Xaml.Thickness _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IThicknessHelperStatics).abi_FromLengths(left, top, right, bottom, &_ret));
+		Debug.OK(staticInstance.abi_FromLengths(left, top, right, bottom, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Thickness FromUniformLength(double uniformLength)
 	{
 		Windows.UI.Xaml.Thickness _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IThicknessHelperStatics).abi_FromUniformLength(uniformLength, &_ret));
+		Debug.OK(staticInstance.abi_FromUniformLength(uniformLength, &_ret));
 		return _ret;
 	}
 }
@@ -4358,66 +4358,66 @@ extern(Windows):
 	final Windows.UI.Xaml.TriggerAction GetAt(uint index)
 	{
 		Windows.UI.Xaml.TriggerAction _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction)).get_GetAt(index, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction))this).get_GetAt(index, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction))this).get_Size(&_ret));
 		return _ret;
 	}
 	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.TriggerAction)* out_view)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction)).abi_GetView(out_view));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction))this).abi_GetView(out_view));
 	}
 	final uint IndexOf(Windows.UI.Xaml.TriggerAction value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void SetAt(uint index, Windows.UI.Xaml.TriggerAction item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction)).abi_SetAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction))this).abi_SetAt(index, item));
 	}
 	final void InsertAt(uint index, Windows.UI.Xaml.TriggerAction item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction)).abi_InsertAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction))this).abi_InsertAt(index, item));
 	}
 	final void RemoveAt(uint index)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction)).abi_RemoveAt(index));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction))this).abi_RemoveAt(index));
 	}
 	final void Append(Windows.UI.Xaml.TriggerAction item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction)).abi_Append(item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction))this).abi_Append(item));
 	}
 	final void RemoveAtEnd()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction)).abi_RemoveAtEnd());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction))this).abi_RemoveAtEnd());
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction))this).abi_Clear());
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.TriggerAction* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void ReplaceAll(uint count, Windows.UI.Xaml.TriggerAction* out_value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction)).abi_ReplaceAll(count, out_value));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerAction))this).abi_ReplaceAll(count, out_value));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.TriggerAction)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.TriggerAction)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.TriggerAction))this).abi_First(out_first));
 	}
 	static TriggerActionCollection New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(TriggerActionCollection).abi_ActivateInstance(&ret));
-		return ret.as!(TriggerActionCollection);
+		return cast(TriggerActionCollection) ret;
 	}
 }
 
@@ -4445,60 +4445,60 @@ extern(Windows):
 	final Windows.UI.Xaml.TriggerBase GetAt(uint index)
 	{
 		Windows.UI.Xaml.TriggerBase _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase)).get_GetAt(index, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase))this).get_GetAt(index, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase))this).get_Size(&_ret));
 		return _ret;
 	}
 	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.TriggerBase)* out_view)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase)).abi_GetView(out_view));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase))this).abi_GetView(out_view));
 	}
 	final uint IndexOf(Windows.UI.Xaml.TriggerBase value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void SetAt(uint index, Windows.UI.Xaml.TriggerBase item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase)).abi_SetAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase))this).abi_SetAt(index, item));
 	}
 	final void InsertAt(uint index, Windows.UI.Xaml.TriggerBase item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase)).abi_InsertAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase))this).abi_InsertAt(index, item));
 	}
 	final void RemoveAt(uint index)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase)).abi_RemoveAt(index));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase))this).abi_RemoveAt(index));
 	}
 	final void Append(Windows.UI.Xaml.TriggerBase item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase)).abi_Append(item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase))this).abi_Append(item));
 	}
 	final void RemoveAtEnd()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase)).abi_RemoveAtEnd());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase))this).abi_RemoveAtEnd());
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase))this).abi_Clear());
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.TriggerBase* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void ReplaceAll(uint count, Windows.UI.Xaml.TriggerBase* out_value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase)).abi_ReplaceAll(count, out_value));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.TriggerBase))this).abi_ReplaceAll(count, out_value));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.TriggerBase)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.TriggerBase)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.TriggerBase))this).abi_First(out_first));
 	}
 }
 
@@ -4508,784 +4508,784 @@ extern(Windows):
 	final Windows.Foundation.Size DesiredSize()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).get_DesiredSize(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_DesiredSize(&_ret));
 		return _ret;
 	}
 	final bool AllowDrop()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).get_AllowDrop(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_AllowDrop(&_ret));
 		return _ret;
 	}
 	final void AllowDrop(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).set_AllowDrop(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_AllowDrop(value));
 	}
 	final double Opacity()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).get_Opacity(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_Opacity(&_ret));
 		return _ret;
 	}
 	final void Opacity(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).set_Opacity(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_Opacity(value));
 	}
 	final Windows.UI.Xaml.Media.RectangleGeometry Clip()
 	{
 		Windows.UI.Xaml.Media.RectangleGeometry _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).get_Clip(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_Clip(&_ret));
 		return _ret;
 	}
 	final void Clip(Windows.UI.Xaml.Media.RectangleGeometry value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).set_Clip(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_Clip(value));
 	}
 	final Windows.UI.Xaml.Media.Transform RenderTransform()
 	{
 		Windows.UI.Xaml.Media.Transform _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).get_RenderTransform(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_RenderTransform(&_ret));
 		return _ret;
 	}
 	final void RenderTransform(Windows.UI.Xaml.Media.Transform value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).set_RenderTransform(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_RenderTransform(value));
 	}
 	final Windows.UI.Xaml.Media.Projection Projection()
 	{
 		Windows.UI.Xaml.Media.Projection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).get_Projection(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_Projection(&_ret));
 		return _ret;
 	}
 	final void Projection(Windows.UI.Xaml.Media.Projection value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).set_Projection(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_Projection(value));
 	}
 	final Windows.Foundation.Point RenderTransformOrigin()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).get_RenderTransformOrigin(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_RenderTransformOrigin(&_ret));
 		return _ret;
 	}
 	final void RenderTransformOrigin(Windows.Foundation.Point value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).set_RenderTransformOrigin(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_RenderTransformOrigin(value));
 	}
 	final bool IsHitTestVisible()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).get_IsHitTestVisible(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_IsHitTestVisible(&_ret));
 		return _ret;
 	}
 	final void IsHitTestVisible(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).set_IsHitTestVisible(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_IsHitTestVisible(value));
 	}
 	final Windows.UI.Xaml.Visibility Visibility()
 	{
 		Windows.UI.Xaml.Visibility _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).get_Visibility(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_Visibility(&_ret));
 		return _ret;
 	}
 	final void Visibility(Windows.UI.Xaml.Visibility value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).set_Visibility(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_Visibility(value));
 	}
 	final Windows.Foundation.Size RenderSize()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).get_RenderSize(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_RenderSize(&_ret));
 		return _ret;
 	}
 	final bool UseLayoutRounding()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).get_UseLayoutRounding(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_UseLayoutRounding(&_ret));
 		return _ret;
 	}
 	final void UseLayoutRounding(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).set_UseLayoutRounding(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_UseLayoutRounding(value));
 	}
 	final Windows.UI.Xaml.Media.Animation.TransitionCollection Transitions()
 	{
 		Windows.UI.Xaml.Media.Animation.TransitionCollection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).get_Transitions(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_Transitions(&_ret));
 		return _ret;
 	}
 	final void Transitions(Windows.UI.Xaml.Media.Animation.TransitionCollection value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).set_Transitions(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_Transitions(value));
 	}
 	final Windows.UI.Xaml.Media.CacheMode CacheMode()
 	{
 		Windows.UI.Xaml.Media.CacheMode _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).get_CacheMode(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_CacheMode(&_ret));
 		return _ret;
 	}
 	final void CacheMode(Windows.UI.Xaml.Media.CacheMode value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).set_CacheMode(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_CacheMode(value));
 	}
 	final bool IsTapEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).get_IsTapEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_IsTapEnabled(&_ret));
 		return _ret;
 	}
 	final void IsTapEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).set_IsTapEnabled(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_IsTapEnabled(value));
 	}
 	final bool IsDoubleTapEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).get_IsDoubleTapEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_IsDoubleTapEnabled(&_ret));
 		return _ret;
 	}
 	final void IsDoubleTapEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).set_IsDoubleTapEnabled(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_IsDoubleTapEnabled(value));
 	}
 	final bool IsRightTapEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).get_IsRightTapEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_IsRightTapEnabled(&_ret));
 		return _ret;
 	}
 	final void IsRightTapEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).set_IsRightTapEnabled(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_IsRightTapEnabled(value));
 	}
 	final bool IsHoldingEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).get_IsHoldingEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_IsHoldingEnabled(&_ret));
 		return _ret;
 	}
 	final void IsHoldingEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).set_IsHoldingEnabled(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_IsHoldingEnabled(value));
 	}
 	final Windows.UI.Xaml.Input.ManipulationModes ManipulationMode()
 	{
 		Windows.UI.Xaml.Input.ManipulationModes _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).get_ManipulationMode(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_ManipulationMode(&_ret));
 		return _ret;
 	}
 	final void ManipulationMode(Windows.UI.Xaml.Input.ManipulationModes value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).set_ManipulationMode(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_ManipulationMode(value));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Input.Pointer) PointerCaptures()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Input.Pointer) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).get_PointerCaptures(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_PointerCaptures(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnKeyUp(void delegate(IInspectable, Windows.UI.Xaml.Input.KeyRoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_KeyUp(event!(Windows.UI.Xaml.Input.KeyEventHandler, IInspectable, Windows.UI.Xaml.Input.KeyRoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_KeyUp(event!(Windows.UI.Xaml.Input.KeyEventHandler, IInspectable, Windows.UI.Xaml.Input.KeyRoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeKeyUp(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_KeyUp(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_KeyUp(token));
 	}
 	final EventRegistrationToken OnKeyDown(void delegate(IInspectable, Windows.UI.Xaml.Input.KeyRoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_KeyDown(event!(Windows.UI.Xaml.Input.KeyEventHandler, IInspectable, Windows.UI.Xaml.Input.KeyRoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_KeyDown(event!(Windows.UI.Xaml.Input.KeyEventHandler, IInspectable, Windows.UI.Xaml.Input.KeyRoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeKeyDown(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_KeyDown(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_KeyDown(token));
 	}
 	final EventRegistrationToken OnGotFocus(void delegate(IInspectable, Windows.UI.Xaml.RoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_GotFocus(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_GotFocus(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeGotFocus(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_GotFocus(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_GotFocus(token));
 	}
 	final EventRegistrationToken OnLostFocus(void delegate(IInspectable, Windows.UI.Xaml.RoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_LostFocus(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_LostFocus(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeLostFocus(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_LostFocus(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_LostFocus(token));
 	}
 	final EventRegistrationToken OnDragEnter(void delegate(IInspectable, Windows.UI.Xaml.DragEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_DragEnter(event!(Windows.UI.Xaml.DragEventHandler, IInspectable, Windows.UI.Xaml.DragEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_DragEnter(event!(Windows.UI.Xaml.DragEventHandler, IInspectable, Windows.UI.Xaml.DragEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDragEnter(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_DragEnter(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_DragEnter(token));
 	}
 	final EventRegistrationToken OnDragLeave(void delegate(IInspectable, Windows.UI.Xaml.DragEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_DragLeave(event!(Windows.UI.Xaml.DragEventHandler, IInspectable, Windows.UI.Xaml.DragEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_DragLeave(event!(Windows.UI.Xaml.DragEventHandler, IInspectable, Windows.UI.Xaml.DragEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDragLeave(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_DragLeave(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_DragLeave(token));
 	}
 	final EventRegistrationToken OnDragOver(void delegate(IInspectable, Windows.UI.Xaml.DragEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_DragOver(event!(Windows.UI.Xaml.DragEventHandler, IInspectable, Windows.UI.Xaml.DragEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_DragOver(event!(Windows.UI.Xaml.DragEventHandler, IInspectable, Windows.UI.Xaml.DragEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDragOver(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_DragOver(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_DragOver(token));
 	}
 	final EventRegistrationToken OnDrop(void delegate(IInspectable, Windows.UI.Xaml.DragEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_Drop(event!(Windows.UI.Xaml.DragEventHandler, IInspectable, Windows.UI.Xaml.DragEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_Drop(event!(Windows.UI.Xaml.DragEventHandler, IInspectable, Windows.UI.Xaml.DragEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDrop(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_Drop(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_Drop(token));
 	}
 	final EventRegistrationToken OnPointerPressed(void delegate(IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_PointerPressed(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_PointerPressed(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerPressed(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerPressed(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_PointerPressed(token));
 	}
 	final EventRegistrationToken OnPointerMoved(void delegate(IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_PointerMoved(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_PointerMoved(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerMoved(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerMoved(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_PointerMoved(token));
 	}
 	final EventRegistrationToken OnPointerReleased(void delegate(IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_PointerReleased(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_PointerReleased(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerReleased(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerReleased(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_PointerReleased(token));
 	}
 	final EventRegistrationToken OnPointerEntered(void delegate(IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_PointerEntered(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_PointerEntered(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerEntered(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerEntered(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_PointerEntered(token));
 	}
 	final EventRegistrationToken OnPointerExited(void delegate(IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_PointerExited(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_PointerExited(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerExited(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerExited(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_PointerExited(token));
 	}
 	final EventRegistrationToken OnPointerCaptureLost(void delegate(IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_PointerCaptureLost(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_PointerCaptureLost(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerCaptureLost(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerCaptureLost(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_PointerCaptureLost(token));
 	}
 	final EventRegistrationToken OnPointerCanceled(void delegate(IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_PointerCanceled(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_PointerCanceled(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerCanceled(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerCanceled(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_PointerCanceled(token));
 	}
 	final EventRegistrationToken OnPointerWheelChanged(void delegate(IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_PointerWheelChanged(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_PointerWheelChanged(event!(Windows.UI.Xaml.Input.PointerEventHandler, IInspectable, Windows.UI.Xaml.Input.PointerRoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerWheelChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_PointerWheelChanged(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_PointerWheelChanged(token));
 	}
 	final EventRegistrationToken OnTapped(void delegate(IInspectable, Windows.UI.Xaml.Input.TappedRoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_Tapped(event!(Windows.UI.Xaml.Input.TappedEventHandler, IInspectable, Windows.UI.Xaml.Input.TappedRoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_Tapped(event!(Windows.UI.Xaml.Input.TappedEventHandler, IInspectable, Windows.UI.Xaml.Input.TappedRoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTapped(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_Tapped(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_Tapped(token));
 	}
 	final EventRegistrationToken OnDoubleTapped(void delegate(IInspectable, Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_DoubleTapped(event!(Windows.UI.Xaml.Input.DoubleTappedEventHandler, IInspectable, Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_DoubleTapped(event!(Windows.UI.Xaml.Input.DoubleTappedEventHandler, IInspectable, Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDoubleTapped(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_DoubleTapped(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_DoubleTapped(token));
 	}
 	final EventRegistrationToken OnHolding(void delegate(IInspectable, Windows.UI.Xaml.Input.HoldingRoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_Holding(event!(Windows.UI.Xaml.Input.HoldingEventHandler, IInspectable, Windows.UI.Xaml.Input.HoldingRoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_Holding(event!(Windows.UI.Xaml.Input.HoldingEventHandler, IInspectable, Windows.UI.Xaml.Input.HoldingRoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeHolding(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_Holding(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_Holding(token));
 	}
 	final EventRegistrationToken OnRightTapped(void delegate(IInspectable, Windows.UI.Xaml.Input.RightTappedRoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_RightTapped(event!(Windows.UI.Xaml.Input.RightTappedEventHandler, IInspectable, Windows.UI.Xaml.Input.RightTappedRoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_RightTapped(event!(Windows.UI.Xaml.Input.RightTappedEventHandler, IInspectable, Windows.UI.Xaml.Input.RightTappedRoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRightTapped(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_RightTapped(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_RightTapped(token));
 	}
 	final EventRegistrationToken OnManipulationStarting(void delegate(IInspectable, Windows.UI.Xaml.Input.ManipulationStartingRoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_ManipulationStarting(event!(Windows.UI.Xaml.Input.ManipulationStartingEventHandler, IInspectable, Windows.UI.Xaml.Input.ManipulationStartingRoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_ManipulationStarting(event!(Windows.UI.Xaml.Input.ManipulationStartingEventHandler, IInspectable, Windows.UI.Xaml.Input.ManipulationStartingRoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeManipulationStarting(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationStarting(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_ManipulationStarting(token));
 	}
 	final EventRegistrationToken OnManipulationInertiaStarting(void delegate(IInspectable, Windows.UI.Xaml.Input.ManipulationInertiaStartingRoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_ManipulationInertiaStarting(event!(Windows.UI.Xaml.Input.ManipulationInertiaStartingEventHandler, IInspectable, Windows.UI.Xaml.Input.ManipulationInertiaStartingRoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_ManipulationInertiaStarting(event!(Windows.UI.Xaml.Input.ManipulationInertiaStartingEventHandler, IInspectable, Windows.UI.Xaml.Input.ManipulationInertiaStartingRoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeManipulationInertiaStarting(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationInertiaStarting(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_ManipulationInertiaStarting(token));
 	}
 	final EventRegistrationToken OnManipulationStarted(void delegate(IInspectable, Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_ManipulationStarted(event!(Windows.UI.Xaml.Input.ManipulationStartedEventHandler, IInspectable, Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_ManipulationStarted(event!(Windows.UI.Xaml.Input.ManipulationStartedEventHandler, IInspectable, Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeManipulationStarted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationStarted(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_ManipulationStarted(token));
 	}
 	final EventRegistrationToken OnManipulationDelta(void delegate(IInspectable, Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_ManipulationDelta(event!(Windows.UI.Xaml.Input.ManipulationDeltaEventHandler, IInspectable, Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_ManipulationDelta(event!(Windows.UI.Xaml.Input.ManipulationDeltaEventHandler, IInspectable, Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeManipulationDelta(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationDelta(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_ManipulationDelta(token));
 	}
 	final EventRegistrationToken OnManipulationCompleted(void delegate(IInspectable, Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).add_ManipulationCompleted(event!(Windows.UI.Xaml.Input.ManipulationCompletedEventHandler, IInspectable, Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_ManipulationCompleted(event!(Windows.UI.Xaml.Input.ManipulationCompletedEventHandler, IInspectable, Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeManipulationCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationCompleted(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_ManipulationCompleted(token));
 	}
 	final void Measure(Windows.Foundation.Size availableSize)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).abi_Measure(availableSize));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).abi_Measure(availableSize));
 	}
 	final void Arrange(Windows.Foundation.Rect finalRect)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).abi_Arrange(finalRect));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).abi_Arrange(finalRect));
 	}
 	final bool CapturePointer(Windows.UI.Xaml.Input.Pointer value)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).abi_CapturePointer(value, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).abi_CapturePointer(value, &_ret));
 		return _ret;
 	}
 	final void ReleasePointerCapture(Windows.UI.Xaml.Input.Pointer value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).abi_ReleasePointerCapture(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).abi_ReleasePointerCapture(value));
 	}
 	final void ReleasePointerCaptures()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).abi_ReleasePointerCaptures());
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).abi_ReleasePointerCaptures());
 	}
 	final void AddHandler(Windows.UI.Xaml.RoutedEvent routedEvent, IInspectable handler, bool handledEventsToo)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).abi_AddHandler(routedEvent, handler, handledEventsToo));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).abi_AddHandler(routedEvent, handler, handledEventsToo));
 	}
 	final void RemoveHandler(Windows.UI.Xaml.RoutedEvent routedEvent, IInspectable handler)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).abi_RemoveHandler(routedEvent, handler));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).abi_RemoveHandler(routedEvent, handler));
 	}
 	final Windows.UI.Xaml.Media.GeneralTransform TransformToVisual(Windows.UI.Xaml.UIElement visual)
 	{
 		Windows.UI.Xaml.Media.GeneralTransform _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).abi_TransformToVisual(visual, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).abi_TransformToVisual(visual, &_ret));
 		return _ret;
 	}
 	final void InvalidateMeasure()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).abi_InvalidateMeasure());
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).abi_InvalidateMeasure());
 	}
 	final void InvalidateArrange()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).abi_InvalidateArrange());
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).abi_InvalidateArrange());
 	}
 	final void UpdateLayout()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement).abi_UpdateLayout());
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement)this.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).abi_UpdateLayout());
 	}
 	final Windows.UI.Xaml.Media.ElementCompositeMode CompositeMode()
 	{
 		Windows.UI.Xaml.Media.ElementCompositeMode _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement2).get_CompositeMode(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement2)this.asInterface(uuid("676d0bf9-b66c-41d6-ba50-58cf87f201d1"))).get_CompositeMode(&_ret));
 		return _ret;
 	}
 	final void CompositeMode(Windows.UI.Xaml.Media.ElementCompositeMode value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement2).set_CompositeMode(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement2)this.asInterface(uuid("676d0bf9-b66c-41d6-ba50-58cf87f201d1"))).set_CompositeMode(value));
 	}
 	final bool CancelDirectManipulations()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement2).abi_CancelDirectManipulations(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement2)this.asInterface(uuid("676d0bf9-b66c-41d6-ba50-58cf87f201d1"))).abi_CancelDirectManipulations(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Media.Media3D.Transform3D Transform3D()
 	{
 		Windows.UI.Xaml.Media.Media3D.Transform3D _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement3).get_Transform3D(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement3)this.asInterface(uuid("bc2b28f1-26f2-4aab-b256-3b5350881e37"))).get_Transform3D(&_ret));
 		return _ret;
 	}
 	final void Transform3D(Windows.UI.Xaml.Media.Media3D.Transform3D value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement3).set_Transform3D(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement3)this.asInterface(uuid("bc2b28f1-26f2-4aab-b256-3b5350881e37"))).set_Transform3D(value));
 	}
 	final bool CanDrag()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement3).get_CanDrag(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement3)this.asInterface(uuid("bc2b28f1-26f2-4aab-b256-3b5350881e37"))).get_CanDrag(&_ret));
 		return _ret;
 	}
 	final void CanDrag(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement3).set_CanDrag(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement3)this.asInterface(uuid("bc2b28f1-26f2-4aab-b256-3b5350881e37"))).set_CanDrag(value));
 	}
 	final EventRegistrationToken OnDragStarting(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DragStartingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement3).add_DragStarting(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DragStartingEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DragStartingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement3)this.asInterface(uuid("bc2b28f1-26f2-4aab-b256-3b5350881e37"))).add_DragStarting(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DragStartingEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DragStartingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDragStarting(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement3).remove_DragStarting(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement3)this.asInterface(uuid("bc2b28f1-26f2-4aab-b256-3b5350881e37"))).remove_DragStarting(token));
 	}
 	final EventRegistrationToken OnDropCompleted(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DropCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement3).add_DropCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DropCompletedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DropCompletedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement3)this.asInterface(uuid("bc2b28f1-26f2-4aab-b256-3b5350881e37"))).add_DropCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DropCompletedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DropCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDropCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement3).remove_DropCompleted(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement3)this.asInterface(uuid("bc2b28f1-26f2-4aab-b256-3b5350881e37"))).remove_DropCompleted(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.DataTransfer.DataPackageOperation) StartDragAsync(Windows.UI.Input.PointerPoint pointerPoint)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.DataTransfer.DataPackageOperation) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement3).abi_StartDragAsync(pointerPoint, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement3)this.asInterface(uuid("bc2b28f1-26f2-4aab-b256-3b5350881e37"))).abi_StartDragAsync(pointerPoint, &_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Controls.Primitives.FlyoutBase ContextFlyout()
 	{
 		Windows.UI.Xaml.Controls.Primitives.FlyoutBase _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).get_ContextFlyout(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).get_ContextFlyout(&_ret));
 		return _ret;
 	}
 	final void ContextFlyout(Windows.UI.Xaml.Controls.Primitives.FlyoutBase value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).set_ContextFlyout(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).set_ContextFlyout(value));
 	}
 	final bool ExitDisplayModeOnAccessKeyInvoked()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).get_ExitDisplayModeOnAccessKeyInvoked(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).get_ExitDisplayModeOnAccessKeyInvoked(&_ret));
 		return _ret;
 	}
 	final void ExitDisplayModeOnAccessKeyInvoked(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).set_ExitDisplayModeOnAccessKeyInvoked(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).set_ExitDisplayModeOnAccessKeyInvoked(value));
 	}
 	final bool IsAccessKeyScope()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).get_IsAccessKeyScope(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).get_IsAccessKeyScope(&_ret));
 		return _ret;
 	}
 	final void IsAccessKeyScope(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).set_IsAccessKeyScope(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).set_IsAccessKeyScope(value));
 	}
 	final Windows.UI.Xaml.DependencyObject AccessKeyScopeOwner()
 	{
 		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).get_AccessKeyScopeOwner(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).get_AccessKeyScopeOwner(&_ret));
 		return _ret;
 	}
 	final void AccessKeyScopeOwner(Windows.UI.Xaml.DependencyObject value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).set_AccessKeyScopeOwner(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).set_AccessKeyScopeOwner(value));
 	}
 	final HSTRING AccessKey()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).get_AccessKey(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).get_AccessKey(&_ret));
 		return _ret;
 	}
 	final void AccessKey(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).set_AccessKey(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).set_AccessKey(value));
 	}
 	final EventRegistrationToken OnContextRequested(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.ContextRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).add_ContextRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.ContextRequestedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.ContextRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).add_ContextRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.ContextRequestedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.ContextRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeContextRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).remove_ContextRequested(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).remove_ContextRequested(token));
 	}
 	final EventRegistrationToken OnContextCanceled(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.RoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).add_ContextCanceled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.RoutedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).add_ContextCanceled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.RoutedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeContextCanceled(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).remove_ContextCanceled(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).remove_ContextCanceled(token));
 	}
 	final EventRegistrationToken OnAccessKeyDisplayRequested(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).add_AccessKeyDisplayRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).add_AccessKeyDisplayRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAccessKeyDisplayRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).remove_AccessKeyDisplayRequested(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).remove_AccessKeyDisplayRequested(token));
 	}
 	final EventRegistrationToken OnAccessKeyDisplayDismissed(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).add_AccessKeyDisplayDismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).add_AccessKeyDisplayDismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAccessKeyDisplayDismissed(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).remove_AccessKeyDisplayDismissed(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).remove_AccessKeyDisplayDismissed(token));
 	}
 	final EventRegistrationToken OnAccessKeyInvoked(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).add_AccessKeyInvoked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).add_AccessKeyInvoked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAccessKeyInvoked(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement4).remove_AccessKeyInvoked(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement4)this.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).remove_AccessKeyInvoked(token));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.XamlLight) Lights()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.XamlLight) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).get_Lights(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).get_Lights(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Input.KeyTipPlacementMode KeyTipPlacementMode()
 	{
 		Windows.UI.Xaml.Input.KeyTipPlacementMode _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).get_KeyTipPlacementMode(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).get_KeyTipPlacementMode(&_ret));
 		return _ret;
 	}
 	final void KeyTipPlacementMode(Windows.UI.Xaml.Input.KeyTipPlacementMode value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).set_KeyTipPlacementMode(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).set_KeyTipPlacementMode(value));
 	}
 	final double KeyTipHorizontalOffset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).get_KeyTipHorizontalOffset(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).get_KeyTipHorizontalOffset(&_ret));
 		return _ret;
 	}
 	final void KeyTipHorizontalOffset(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).set_KeyTipHorizontalOffset(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).set_KeyTipHorizontalOffset(value));
 	}
 	final double KeyTipVerticalOffset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).get_KeyTipVerticalOffset(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).get_KeyTipVerticalOffset(&_ret));
 		return _ret;
 	}
 	final void KeyTipVerticalOffset(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).set_KeyTipVerticalOffset(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).set_KeyTipVerticalOffset(value));
 	}
 	final Windows.UI.Xaml.Input.XYFocusKeyboardNavigationMode XYFocusKeyboardNavigation()
 	{
 		Windows.UI.Xaml.Input.XYFocusKeyboardNavigationMode _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).get_XYFocusKeyboardNavigation(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).get_XYFocusKeyboardNavigation(&_ret));
 		return _ret;
 	}
 	final void XYFocusKeyboardNavigation(Windows.UI.Xaml.Input.XYFocusKeyboardNavigationMode value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).set_XYFocusKeyboardNavigation(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).set_XYFocusKeyboardNavigation(value));
 	}
 	final Windows.UI.Xaml.Input.XYFocusNavigationStrategy XYFocusUpNavigationStrategy()
 	{
 		Windows.UI.Xaml.Input.XYFocusNavigationStrategy _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).get_XYFocusUpNavigationStrategy(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).get_XYFocusUpNavigationStrategy(&_ret));
 		return _ret;
 	}
 	final void XYFocusUpNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).set_XYFocusUpNavigationStrategy(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).set_XYFocusUpNavigationStrategy(value));
 	}
 	final Windows.UI.Xaml.Input.XYFocusNavigationStrategy XYFocusDownNavigationStrategy()
 	{
 		Windows.UI.Xaml.Input.XYFocusNavigationStrategy _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).get_XYFocusDownNavigationStrategy(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).get_XYFocusDownNavigationStrategy(&_ret));
 		return _ret;
 	}
 	final void XYFocusDownNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).set_XYFocusDownNavigationStrategy(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).set_XYFocusDownNavigationStrategy(value));
 	}
 	final Windows.UI.Xaml.Input.XYFocusNavigationStrategy XYFocusLeftNavigationStrategy()
 	{
 		Windows.UI.Xaml.Input.XYFocusNavigationStrategy _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).get_XYFocusLeftNavigationStrategy(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).get_XYFocusLeftNavigationStrategy(&_ret));
 		return _ret;
 	}
 	final void XYFocusLeftNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).set_XYFocusLeftNavigationStrategy(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).set_XYFocusLeftNavigationStrategy(value));
 	}
 	final Windows.UI.Xaml.Input.XYFocusNavigationStrategy XYFocusRightNavigationStrategy()
 	{
 		Windows.UI.Xaml.Input.XYFocusNavigationStrategy _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).get_XYFocusRightNavigationStrategy(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).get_XYFocusRightNavigationStrategy(&_ret));
 		return _ret;
 	}
 	final void XYFocusRightNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).set_XYFocusRightNavigationStrategy(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).set_XYFocusRightNavigationStrategy(value));
 	}
 	final Windows.UI.Xaml.ElementHighContrastAdjustment HighContrastAdjustment()
 	{
 		Windows.UI.Xaml.ElementHighContrastAdjustment _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).get_HighContrastAdjustment(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).get_HighContrastAdjustment(&_ret));
 		return _ret;
 	}
 	final void HighContrastAdjustment(Windows.UI.Xaml.ElementHighContrastAdjustment value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).set_HighContrastAdjustment(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).set_HighContrastAdjustment(value));
 	}
 	final Windows.UI.Xaml.Input.KeyboardNavigationMode TabFocusNavigation()
 	{
 		Windows.UI.Xaml.Input.KeyboardNavigationMode _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).get_TabFocusNavigation(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).get_TabFocusNavigation(&_ret));
 		return _ret;
 	}
 	final void TabFocusNavigation(Windows.UI.Xaml.Input.KeyboardNavigationMode value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).set_TabFocusNavigation(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).set_TabFocusNavigation(value));
 	}
 	final EventRegistrationToken OnGettingFocus(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.GettingFocusEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).add_GettingFocus(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.GettingFocusEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.GettingFocusEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).add_GettingFocus(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.GettingFocusEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.GettingFocusEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeGettingFocus(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).remove_GettingFocus(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).remove_GettingFocus(token));
 	}
 	final EventRegistrationToken OnLosingFocus(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.LosingFocusEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).add_LosingFocus(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.LosingFocusEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.LosingFocusEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).add_LosingFocus(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.LosingFocusEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.LosingFocusEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeLosingFocus(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).remove_LosingFocus(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).remove_LosingFocus(token));
 	}
 	final EventRegistrationToken OnNoFocusCandidateFound(void delegate(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).add_NoFocusCandidateFound(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).add_NoFocusCandidateFound(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs), Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeNoFocusCandidateFound(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).remove_NoFocusCandidateFound(token));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).remove_NoFocusCandidateFound(token));
 	}
 	final void StartBringIntoView()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).abi_StartBringIntoView());
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).abi_StartBringIntoView());
 	}
 	final void StartBringIntoViewWithOptions(Windows.UI.Xaml.BringIntoViewOptions options)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUIElement5).abi_StartBringIntoViewWithOptions(options));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).abi_StartBringIntoViewWithOptions(options));
 	}
 
 	private static Windows.UI.Xaml.IUIElementStatics _staticInstance;
@@ -5297,241 +5297,241 @@ extern(Windows):
 	static Windows.UI.Xaml.RoutedEvent KeyDownEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_KeyDownEvent(&_ret));
+		Debug.OK(staticInstance.get_KeyDownEvent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.RoutedEvent KeyUpEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_KeyUpEvent(&_ret));
+		Debug.OK(staticInstance.get_KeyUpEvent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.RoutedEvent PointerEnteredEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_PointerEnteredEvent(&_ret));
+		Debug.OK(staticInstance.get_PointerEnteredEvent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.RoutedEvent PointerPressedEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_PointerPressedEvent(&_ret));
+		Debug.OK(staticInstance.get_PointerPressedEvent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.RoutedEvent PointerMovedEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_PointerMovedEvent(&_ret));
+		Debug.OK(staticInstance.get_PointerMovedEvent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.RoutedEvent PointerReleasedEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_PointerReleasedEvent(&_ret));
+		Debug.OK(staticInstance.get_PointerReleasedEvent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.RoutedEvent PointerExitedEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_PointerExitedEvent(&_ret));
+		Debug.OK(staticInstance.get_PointerExitedEvent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.RoutedEvent PointerCaptureLostEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_PointerCaptureLostEvent(&_ret));
+		Debug.OK(staticInstance.get_PointerCaptureLostEvent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.RoutedEvent PointerCanceledEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_PointerCanceledEvent(&_ret));
+		Debug.OK(staticInstance.get_PointerCanceledEvent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.RoutedEvent PointerWheelChangedEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_PointerWheelChangedEvent(&_ret));
+		Debug.OK(staticInstance.get_PointerWheelChangedEvent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.RoutedEvent TappedEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_TappedEvent(&_ret));
+		Debug.OK(staticInstance.get_TappedEvent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.RoutedEvent DoubleTappedEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_DoubleTappedEvent(&_ret));
+		Debug.OK(staticInstance.get_DoubleTappedEvent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.RoutedEvent HoldingEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_HoldingEvent(&_ret));
+		Debug.OK(staticInstance.get_HoldingEvent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.RoutedEvent RightTappedEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_RightTappedEvent(&_ret));
+		Debug.OK(staticInstance.get_RightTappedEvent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.RoutedEvent ManipulationStartingEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_ManipulationStartingEvent(&_ret));
+		Debug.OK(staticInstance.get_ManipulationStartingEvent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.RoutedEvent ManipulationInertiaStartingEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_ManipulationInertiaStartingEvent(&_ret));
+		Debug.OK(staticInstance.get_ManipulationInertiaStartingEvent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.RoutedEvent ManipulationStartedEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_ManipulationStartedEvent(&_ret));
+		Debug.OK(staticInstance.get_ManipulationStartedEvent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.RoutedEvent ManipulationDeltaEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_ManipulationDeltaEvent(&_ret));
+		Debug.OK(staticInstance.get_ManipulationDeltaEvent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.RoutedEvent ManipulationCompletedEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_ManipulationCompletedEvent(&_ret));
+		Debug.OK(staticInstance.get_ManipulationCompletedEvent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.RoutedEvent DragEnterEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_DragEnterEvent(&_ret));
+		Debug.OK(staticInstance.get_DragEnterEvent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.RoutedEvent DragLeaveEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_DragLeaveEvent(&_ret));
+		Debug.OK(staticInstance.get_DragLeaveEvent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.RoutedEvent DragOverEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_DragOverEvent(&_ret));
+		Debug.OK(staticInstance.get_DragOverEvent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.RoutedEvent DropEvent()
 	{
 		Windows.UI.Xaml.RoutedEvent _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_DropEvent(&_ret));
+		Debug.OK(staticInstance.get_DropEvent(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty AllowDropProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_AllowDropProperty(&_ret));
+		Debug.OK(staticInstance.get_AllowDropProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty OpacityProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_OpacityProperty(&_ret));
+		Debug.OK(staticInstance.get_OpacityProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ClipProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_ClipProperty(&_ret));
+		Debug.OK(staticInstance.get_ClipProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty RenderTransformProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_RenderTransformProperty(&_ret));
+		Debug.OK(staticInstance.get_RenderTransformProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ProjectionProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_ProjectionProperty(&_ret));
+		Debug.OK(staticInstance.get_ProjectionProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty RenderTransformOriginProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_RenderTransformOriginProperty(&_ret));
+		Debug.OK(staticInstance.get_RenderTransformOriginProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty IsHitTestVisibleProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_IsHitTestVisibleProperty(&_ret));
+		Debug.OK(staticInstance.get_IsHitTestVisibleProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty VisibilityProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_VisibilityProperty(&_ret));
+		Debug.OK(staticInstance.get_VisibilityProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty UseLayoutRoundingProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_UseLayoutRoundingProperty(&_ret));
+		Debug.OK(staticInstance.get_UseLayoutRoundingProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty TransitionsProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_TransitionsProperty(&_ret));
+		Debug.OK(staticInstance.get_TransitionsProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty CacheModeProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_CacheModeProperty(&_ret));
+		Debug.OK(staticInstance.get_CacheModeProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty IsTapEnabledProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_IsTapEnabledProperty(&_ret));
+		Debug.OK(staticInstance.get_IsTapEnabledProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty IsDoubleTapEnabledProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_IsDoubleTapEnabledProperty(&_ret));
+		Debug.OK(staticInstance.get_IsDoubleTapEnabledProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty IsRightTapEnabledProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_IsRightTapEnabledProperty(&_ret));
+		Debug.OK(staticInstance.get_IsRightTapEnabledProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty IsHoldingEnabledProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_IsHoldingEnabledProperty(&_ret));
+		Debug.OK(staticInstance.get_IsHoldingEnabledProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ManipulationModeProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_ManipulationModeProperty(&_ret));
+		Debug.OK(staticInstance.get_ManipulationModeProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty PointerCapturesProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IUIElementStatics).get_PointerCapturesProperty(&_ret));
+		Debug.OK(staticInstance.get_PointerCapturesProperty(&_ret));
 		return _ret;
 	}
 }
@@ -5545,174 +5545,174 @@ class UIElementT(Base) : AgileObject!Base, UIElement
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_DesiredSize(Windows.Foundation.Size* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_DesiredSize(return_value); }
-	override HRESULT get_AllowDrop(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_AllowDrop(return_value); }
-	override HRESULT set_AllowDrop(bool value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_AllowDrop(value); }
-	override HRESULT get_Opacity(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_Opacity(return_value); }
-	override HRESULT set_Opacity(double value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_Opacity(value); }
-	override HRESULT get_Clip(Windows.UI.Xaml.Media.RectangleGeometry* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_Clip(return_value); }
-	override HRESULT set_Clip(Windows.UI.Xaml.Media.RectangleGeometry value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_Clip(value); }
-	override HRESULT get_RenderTransform(Windows.UI.Xaml.Media.Transform* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_RenderTransform(return_value); }
-	override HRESULT set_RenderTransform(Windows.UI.Xaml.Media.Transform value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_RenderTransform(value); }
-	override HRESULT get_Projection(Windows.UI.Xaml.Media.Projection* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_Projection(return_value); }
-	override HRESULT set_Projection(Windows.UI.Xaml.Media.Projection value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_Projection(value); }
-	override HRESULT get_RenderTransformOrigin(Windows.Foundation.Point* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_RenderTransformOrigin(return_value); }
-	override HRESULT set_RenderTransformOrigin(Windows.Foundation.Point value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_RenderTransformOrigin(value); }
-	override HRESULT get_IsHitTestVisible(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_IsHitTestVisible(return_value); }
-	override HRESULT set_IsHitTestVisible(bool value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_IsHitTestVisible(value); }
-	override HRESULT get_Visibility(Windows.UI.Xaml.Visibility* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_Visibility(return_value); }
-	override HRESULT set_Visibility(Windows.UI.Xaml.Visibility value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_Visibility(value); }
-	override HRESULT get_RenderSize(Windows.Foundation.Size* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_RenderSize(return_value); }
-	override HRESULT get_UseLayoutRounding(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_UseLayoutRounding(return_value); }
-	override HRESULT set_UseLayoutRounding(bool value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_UseLayoutRounding(value); }
-	override HRESULT get_Transitions(Windows.UI.Xaml.Media.Animation.TransitionCollection* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_Transitions(return_value); }
-	override HRESULT set_Transitions(Windows.UI.Xaml.Media.Animation.TransitionCollection value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_Transitions(value); }
-	override HRESULT get_CacheMode(Windows.UI.Xaml.Media.CacheMode* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_CacheMode(return_value); }
-	override HRESULT set_CacheMode(Windows.UI.Xaml.Media.CacheMode value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_CacheMode(value); }
-	override HRESULT get_IsTapEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_IsTapEnabled(return_value); }
-	override HRESULT set_IsTapEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_IsTapEnabled(value); }
-	override HRESULT get_IsDoubleTapEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_IsDoubleTapEnabled(return_value); }
-	override HRESULT set_IsDoubleTapEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_IsDoubleTapEnabled(value); }
-	override HRESULT get_IsRightTapEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_IsRightTapEnabled(return_value); }
-	override HRESULT set_IsRightTapEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_IsRightTapEnabled(value); }
-	override HRESULT get_IsHoldingEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_IsHoldingEnabled(return_value); }
-	override HRESULT set_IsHoldingEnabled(bool value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_IsHoldingEnabled(value); }
-	override HRESULT get_ManipulationMode(Windows.UI.Xaml.Input.ManipulationModes* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_ManipulationMode(return_value); }
-	override HRESULT set_ManipulationMode(Windows.UI.Xaml.Input.ManipulationModes value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).set_ManipulationMode(value); }
-	override HRESULT get_PointerCaptures(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Input.Pointer)* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).get_PointerCaptures(return_value); }
-	override HRESULT add_KeyUp(Windows.UI.Xaml.Input.KeyEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_KeyUp(value, return_token); }
-	override HRESULT remove_KeyUp(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_KeyUp(token); }
-	override HRESULT add_KeyDown(Windows.UI.Xaml.Input.KeyEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_KeyDown(value, return_token); }
-	override HRESULT remove_KeyDown(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_KeyDown(token); }
-	override HRESULT add_GotFocus(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_GotFocus(value, return_token); }
-	override HRESULT remove_GotFocus(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_GotFocus(token); }
-	override HRESULT add_LostFocus(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_LostFocus(value, return_token); }
-	override HRESULT remove_LostFocus(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_LostFocus(token); }
-	override HRESULT add_DragEnter(Windows.UI.Xaml.DragEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_DragEnter(value, return_token); }
-	override HRESULT remove_DragEnter(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_DragEnter(token); }
-	override HRESULT add_DragLeave(Windows.UI.Xaml.DragEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_DragLeave(value, return_token); }
-	override HRESULT remove_DragLeave(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_DragLeave(token); }
-	override HRESULT add_DragOver(Windows.UI.Xaml.DragEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_DragOver(value, return_token); }
-	override HRESULT remove_DragOver(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_DragOver(token); }
-	override HRESULT add_Drop(Windows.UI.Xaml.DragEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_Drop(value, return_token); }
-	override HRESULT remove_Drop(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_Drop(token); }
-	override HRESULT add_PointerPressed(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_PointerPressed(value, return_token); }
-	override HRESULT remove_PointerPressed(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_PointerPressed(token); }
-	override HRESULT add_PointerMoved(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_PointerMoved(value, return_token); }
-	override HRESULT remove_PointerMoved(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_PointerMoved(token); }
-	override HRESULT add_PointerReleased(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_PointerReleased(value, return_token); }
-	override HRESULT remove_PointerReleased(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_PointerReleased(token); }
-	override HRESULT add_PointerEntered(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_PointerEntered(value, return_token); }
-	override HRESULT remove_PointerEntered(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_PointerEntered(token); }
-	override HRESULT add_PointerExited(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_PointerExited(value, return_token); }
-	override HRESULT remove_PointerExited(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_PointerExited(token); }
-	override HRESULT add_PointerCaptureLost(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_PointerCaptureLost(value, return_token); }
-	override HRESULT remove_PointerCaptureLost(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_PointerCaptureLost(token); }
-	override HRESULT add_PointerCanceled(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_PointerCanceled(value, return_token); }
-	override HRESULT remove_PointerCanceled(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_PointerCanceled(token); }
-	override HRESULT add_PointerWheelChanged(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_PointerWheelChanged(value, return_token); }
-	override HRESULT remove_PointerWheelChanged(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_PointerWheelChanged(token); }
-	override HRESULT add_Tapped(Windows.UI.Xaml.Input.TappedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_Tapped(value, return_token); }
-	override HRESULT remove_Tapped(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_Tapped(token); }
-	override HRESULT add_DoubleTapped(Windows.UI.Xaml.Input.DoubleTappedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_DoubleTapped(value, return_token); }
-	override HRESULT remove_DoubleTapped(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_DoubleTapped(token); }
-	override HRESULT add_Holding(Windows.UI.Xaml.Input.HoldingEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_Holding(value, return_token); }
-	override HRESULT remove_Holding(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_Holding(token); }
-	override HRESULT add_RightTapped(Windows.UI.Xaml.Input.RightTappedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_RightTapped(value, return_token); }
-	override HRESULT remove_RightTapped(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_RightTapped(token); }
-	override HRESULT add_ManipulationStarting(Windows.UI.Xaml.Input.ManipulationStartingEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_ManipulationStarting(value, return_token); }
-	override HRESULT remove_ManipulationStarting(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationStarting(token); }
-	override HRESULT add_ManipulationInertiaStarting(Windows.UI.Xaml.Input.ManipulationInertiaStartingEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_ManipulationInertiaStarting(value, return_token); }
-	override HRESULT remove_ManipulationInertiaStarting(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationInertiaStarting(token); }
-	override HRESULT add_ManipulationStarted(Windows.UI.Xaml.Input.ManipulationStartedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_ManipulationStarted(value, return_token); }
-	override HRESULT remove_ManipulationStarted(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationStarted(token); }
-	override HRESULT add_ManipulationDelta(Windows.UI.Xaml.Input.ManipulationDeltaEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_ManipulationDelta(value, return_token); }
-	override HRESULT remove_ManipulationDelta(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationDelta(token); }
-	override HRESULT add_ManipulationCompleted(Windows.UI.Xaml.Input.ManipulationCompletedEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).add_ManipulationCompleted(value, return_token); }
-	override HRESULT remove_ManipulationCompleted(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement).remove_ManipulationCompleted(token); }
-	override HRESULT abi_Measure(Windows.Foundation.Size availableSize) { return m_inner.as!(Windows.UI.Xaml.IUIElement).abi_Measure(availableSize); }
-	override HRESULT abi_Arrange(Windows.Foundation.Rect finalRect) { return m_inner.as!(Windows.UI.Xaml.IUIElement).abi_Arrange(finalRect); }
-	override HRESULT abi_CapturePointer(Windows.UI.Xaml.Input.Pointer value, bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.IUIElement).abi_CapturePointer(value, return_returnValue); }
-	override HRESULT abi_ReleasePointerCapture(Windows.UI.Xaml.Input.Pointer value) { return m_inner.as!(Windows.UI.Xaml.IUIElement).abi_ReleasePointerCapture(value); }
-	override HRESULT abi_ReleasePointerCaptures() { return m_inner.as!(Windows.UI.Xaml.IUIElement).abi_ReleasePointerCaptures(); }
-	override HRESULT abi_AddHandler(Windows.UI.Xaml.RoutedEvent routedEvent, IInspectable handler, bool handledEventsToo) { return m_inner.as!(Windows.UI.Xaml.IUIElement).abi_AddHandler(routedEvent, handler, handledEventsToo); }
-	override HRESULT abi_RemoveHandler(Windows.UI.Xaml.RoutedEvent routedEvent, IInspectable handler) { return m_inner.as!(Windows.UI.Xaml.IUIElement).abi_RemoveHandler(routedEvent, handler); }
-	override HRESULT abi_TransformToVisual(Windows.UI.Xaml.UIElement visual, Windows.UI.Xaml.Media.GeneralTransform* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.IUIElement).abi_TransformToVisual(visual, return_returnValue); }
-	override HRESULT abi_InvalidateMeasure() { return m_inner.as!(Windows.UI.Xaml.IUIElement).abi_InvalidateMeasure(); }
-	override HRESULT abi_InvalidateArrange() { return m_inner.as!(Windows.UI.Xaml.IUIElement).abi_InvalidateArrange(); }
-	override HRESULT abi_UpdateLayout() { return m_inner.as!(Windows.UI.Xaml.IUIElement).abi_UpdateLayout(); }
+	override HRESULT get_DesiredSize(Windows.Foundation.Size* return_value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_DesiredSize(return_value); }
+	override HRESULT get_AllowDrop(bool* return_value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_AllowDrop(return_value); }
+	override HRESULT set_AllowDrop(bool value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_AllowDrop(value); }
+	override HRESULT get_Opacity(double* return_value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_Opacity(return_value); }
+	override HRESULT set_Opacity(double value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_Opacity(value); }
+	override HRESULT get_Clip(Windows.UI.Xaml.Media.RectangleGeometry* return_value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_Clip(return_value); }
+	override HRESULT set_Clip(Windows.UI.Xaml.Media.RectangleGeometry value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_Clip(value); }
+	override HRESULT get_RenderTransform(Windows.UI.Xaml.Media.Transform* return_value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_RenderTransform(return_value); }
+	override HRESULT set_RenderTransform(Windows.UI.Xaml.Media.Transform value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_RenderTransform(value); }
+	override HRESULT get_Projection(Windows.UI.Xaml.Media.Projection* return_value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_Projection(return_value); }
+	override HRESULT set_Projection(Windows.UI.Xaml.Media.Projection value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_Projection(value); }
+	override HRESULT get_RenderTransformOrigin(Windows.Foundation.Point* return_value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_RenderTransformOrigin(return_value); }
+	override HRESULT set_RenderTransformOrigin(Windows.Foundation.Point value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_RenderTransformOrigin(value); }
+	override HRESULT get_IsHitTestVisible(bool* return_value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_IsHitTestVisible(return_value); }
+	override HRESULT set_IsHitTestVisible(bool value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_IsHitTestVisible(value); }
+	override HRESULT get_Visibility(Windows.UI.Xaml.Visibility* return_value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_Visibility(return_value); }
+	override HRESULT set_Visibility(Windows.UI.Xaml.Visibility value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_Visibility(value); }
+	override HRESULT get_RenderSize(Windows.Foundation.Size* return_value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_RenderSize(return_value); }
+	override HRESULT get_UseLayoutRounding(bool* return_value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_UseLayoutRounding(return_value); }
+	override HRESULT set_UseLayoutRounding(bool value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_UseLayoutRounding(value); }
+	override HRESULT get_Transitions(Windows.UI.Xaml.Media.Animation.TransitionCollection* return_value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_Transitions(return_value); }
+	override HRESULT set_Transitions(Windows.UI.Xaml.Media.Animation.TransitionCollection value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_Transitions(value); }
+	override HRESULT get_CacheMode(Windows.UI.Xaml.Media.CacheMode* return_value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_CacheMode(return_value); }
+	override HRESULT set_CacheMode(Windows.UI.Xaml.Media.CacheMode value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_CacheMode(value); }
+	override HRESULT get_IsTapEnabled(bool* return_value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_IsTapEnabled(return_value); }
+	override HRESULT set_IsTapEnabled(bool value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_IsTapEnabled(value); }
+	override HRESULT get_IsDoubleTapEnabled(bool* return_value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_IsDoubleTapEnabled(return_value); }
+	override HRESULT set_IsDoubleTapEnabled(bool value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_IsDoubleTapEnabled(value); }
+	override HRESULT get_IsRightTapEnabled(bool* return_value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_IsRightTapEnabled(return_value); }
+	override HRESULT set_IsRightTapEnabled(bool value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_IsRightTapEnabled(value); }
+	override HRESULT get_IsHoldingEnabled(bool* return_value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_IsHoldingEnabled(return_value); }
+	override HRESULT set_IsHoldingEnabled(bool value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_IsHoldingEnabled(value); }
+	override HRESULT get_ManipulationMode(Windows.UI.Xaml.Input.ManipulationModes* return_value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_ManipulationMode(return_value); }
+	override HRESULT set_ManipulationMode(Windows.UI.Xaml.Input.ManipulationModes value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).set_ManipulationMode(value); }
+	override HRESULT get_PointerCaptures(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Input.Pointer)* return_value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).get_PointerCaptures(return_value); }
+	override HRESULT add_KeyUp(Windows.UI.Xaml.Input.KeyEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_KeyUp(value, return_token); }
+	override HRESULT remove_KeyUp(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_KeyUp(token); }
+	override HRESULT add_KeyDown(Windows.UI.Xaml.Input.KeyEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_KeyDown(value, return_token); }
+	override HRESULT remove_KeyDown(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_KeyDown(token); }
+	override HRESULT add_GotFocus(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_GotFocus(value, return_token); }
+	override HRESULT remove_GotFocus(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_GotFocus(token); }
+	override HRESULT add_LostFocus(Windows.UI.Xaml.RoutedEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_LostFocus(value, return_token); }
+	override HRESULT remove_LostFocus(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_LostFocus(token); }
+	override HRESULT add_DragEnter(Windows.UI.Xaml.DragEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_DragEnter(value, return_token); }
+	override HRESULT remove_DragEnter(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_DragEnter(token); }
+	override HRESULT add_DragLeave(Windows.UI.Xaml.DragEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_DragLeave(value, return_token); }
+	override HRESULT remove_DragLeave(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_DragLeave(token); }
+	override HRESULT add_DragOver(Windows.UI.Xaml.DragEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_DragOver(value, return_token); }
+	override HRESULT remove_DragOver(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_DragOver(token); }
+	override HRESULT add_Drop(Windows.UI.Xaml.DragEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_Drop(value, return_token); }
+	override HRESULT remove_Drop(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_Drop(token); }
+	override HRESULT add_PointerPressed(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_PointerPressed(value, return_token); }
+	override HRESULT remove_PointerPressed(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_PointerPressed(token); }
+	override HRESULT add_PointerMoved(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_PointerMoved(value, return_token); }
+	override HRESULT remove_PointerMoved(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_PointerMoved(token); }
+	override HRESULT add_PointerReleased(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_PointerReleased(value, return_token); }
+	override HRESULT remove_PointerReleased(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_PointerReleased(token); }
+	override HRESULT add_PointerEntered(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_PointerEntered(value, return_token); }
+	override HRESULT remove_PointerEntered(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_PointerEntered(token); }
+	override HRESULT add_PointerExited(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_PointerExited(value, return_token); }
+	override HRESULT remove_PointerExited(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_PointerExited(token); }
+	override HRESULT add_PointerCaptureLost(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_PointerCaptureLost(value, return_token); }
+	override HRESULT remove_PointerCaptureLost(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_PointerCaptureLost(token); }
+	override HRESULT add_PointerCanceled(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_PointerCanceled(value, return_token); }
+	override HRESULT remove_PointerCanceled(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_PointerCanceled(token); }
+	override HRESULT add_PointerWheelChanged(Windows.UI.Xaml.Input.PointerEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_PointerWheelChanged(value, return_token); }
+	override HRESULT remove_PointerWheelChanged(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_PointerWheelChanged(token); }
+	override HRESULT add_Tapped(Windows.UI.Xaml.Input.TappedEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_Tapped(value, return_token); }
+	override HRESULT remove_Tapped(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_Tapped(token); }
+	override HRESULT add_DoubleTapped(Windows.UI.Xaml.Input.DoubleTappedEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_DoubleTapped(value, return_token); }
+	override HRESULT remove_DoubleTapped(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_DoubleTapped(token); }
+	override HRESULT add_Holding(Windows.UI.Xaml.Input.HoldingEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_Holding(value, return_token); }
+	override HRESULT remove_Holding(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_Holding(token); }
+	override HRESULT add_RightTapped(Windows.UI.Xaml.Input.RightTappedEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_RightTapped(value, return_token); }
+	override HRESULT remove_RightTapped(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_RightTapped(token); }
+	override HRESULT add_ManipulationStarting(Windows.UI.Xaml.Input.ManipulationStartingEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_ManipulationStarting(value, return_token); }
+	override HRESULT remove_ManipulationStarting(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_ManipulationStarting(token); }
+	override HRESULT add_ManipulationInertiaStarting(Windows.UI.Xaml.Input.ManipulationInertiaStartingEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_ManipulationInertiaStarting(value, return_token); }
+	override HRESULT remove_ManipulationInertiaStarting(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_ManipulationInertiaStarting(token); }
+	override HRESULT add_ManipulationStarted(Windows.UI.Xaml.Input.ManipulationStartedEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_ManipulationStarted(value, return_token); }
+	override HRESULT remove_ManipulationStarted(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_ManipulationStarted(token); }
+	override HRESULT add_ManipulationDelta(Windows.UI.Xaml.Input.ManipulationDeltaEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_ManipulationDelta(value, return_token); }
+	override HRESULT remove_ManipulationDelta(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_ManipulationDelta(token); }
+	override HRESULT add_ManipulationCompleted(Windows.UI.Xaml.Input.ManipulationCompletedEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).add_ManipulationCompleted(value, return_token); }
+	override HRESULT remove_ManipulationCompleted(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).remove_ManipulationCompleted(token); }
+	override HRESULT abi_Measure(Windows.Foundation.Size availableSize) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).abi_Measure(availableSize); }
+	override HRESULT abi_Arrange(Windows.Foundation.Rect finalRect) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).abi_Arrange(finalRect); }
+	override HRESULT abi_CapturePointer(Windows.UI.Xaml.Input.Pointer value, bool* return_returnValue) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).abi_CapturePointer(value, return_returnValue); }
+	override HRESULT abi_ReleasePointerCapture(Windows.UI.Xaml.Input.Pointer value) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).abi_ReleasePointerCapture(value); }
+	override HRESULT abi_ReleasePointerCaptures() { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).abi_ReleasePointerCaptures(); }
+	override HRESULT abi_AddHandler(Windows.UI.Xaml.RoutedEvent routedEvent, IInspectable handler, bool handledEventsToo) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).abi_AddHandler(routedEvent, handler, handledEventsToo); }
+	override HRESULT abi_RemoveHandler(Windows.UI.Xaml.RoutedEvent routedEvent, IInspectable handler) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).abi_RemoveHandler(routedEvent, handler); }
+	override HRESULT abi_TransformToVisual(Windows.UI.Xaml.UIElement visual, Windows.UI.Xaml.Media.GeneralTransform* return_returnValue) { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).abi_TransformToVisual(visual, return_returnValue); }
+	override HRESULT abi_InvalidateMeasure() { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).abi_InvalidateMeasure(); }
+	override HRESULT abi_InvalidateArrange() { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).abi_InvalidateArrange(); }
+	override HRESULT abi_UpdateLayout() { return (cast(Windows.UI.Xaml.IUIElement)m_inner.asInterface(uuid("676d0be9-b65c-41c6-ba40-58cf87f201c1"))).abi_UpdateLayout(); }
 
 	override HRESULT abi_OnCreateAutomationPeer(Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { this.OnCreateAutomationPeer(return_returnValue); return S_OK; }
-	void OnCreateAutomationPeer(Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IUIElementOverrides).abi_OnCreateAutomationPeer(return_returnValue)); }
+	void OnCreateAutomationPeer(Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.IUIElementOverrides)m_inner.asInterface(uuid("608d2f1d-7858-4aeb-89e4-b54e2c7ed3d3"))).abi_OnCreateAutomationPeer(return_returnValue)); }
 	override HRESULT abi_OnDisconnectVisualChildren() { this.OnDisconnectVisualChildren(); return S_OK; }
-	void OnDisconnectVisualChildren() { Debug.OK(m_inner.as!(Windows.UI.Xaml.IUIElementOverrides).abi_OnDisconnectVisualChildren()); }
+	void OnDisconnectVisualChildren() { Debug.OK((cast(Windows.UI.Xaml.IUIElementOverrides)m_inner.asInterface(uuid("608d2f1d-7858-4aeb-89e4-b54e2c7ed3d3"))).abi_OnDisconnectVisualChildren()); }
 	override HRESULT abi_FindSubElementsForTouchTargeting(Windows.Foundation.Point point, Windows.Foundation.Rect boundingRect, Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Point))* return_returnValue) { this.FindSubElementsForTouchTargeting(point, boundingRect, return_returnValue); return S_OK; }
-	void FindSubElementsForTouchTargeting(Windows.Foundation.Point point, Windows.Foundation.Rect boundingRect, Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Point))* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IUIElementOverrides).abi_FindSubElementsForTouchTargeting(point, boundingRect, return_returnValue)); }
+	void FindSubElementsForTouchTargeting(Windows.Foundation.Point point, Windows.Foundation.Rect boundingRect, Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Point))* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.IUIElementOverrides)m_inner.asInterface(uuid("608d2f1d-7858-4aeb-89e4-b54e2c7ed3d3"))).abi_FindSubElementsForTouchTargeting(point, boundingRect, return_returnValue)); }
 
-	override HRESULT get_CompositeMode(Windows.UI.Xaml.Media.ElementCompositeMode* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement2).get_CompositeMode(return_value); }
-	override HRESULT set_CompositeMode(Windows.UI.Xaml.Media.ElementCompositeMode value) { return m_inner.as!(Windows.UI.Xaml.IUIElement2).set_CompositeMode(value); }
-	override HRESULT abi_CancelDirectManipulations(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.IUIElement2).abi_CancelDirectManipulations(return_returnValue); }
+	override HRESULT get_CompositeMode(Windows.UI.Xaml.Media.ElementCompositeMode* return_value) { return (cast(Windows.UI.Xaml.IUIElement2)m_inner.asInterface(uuid("676d0bf9-b66c-41d6-ba50-58cf87f201d1"))).get_CompositeMode(return_value); }
+	override HRESULT set_CompositeMode(Windows.UI.Xaml.Media.ElementCompositeMode value) { return (cast(Windows.UI.Xaml.IUIElement2)m_inner.asInterface(uuid("676d0bf9-b66c-41d6-ba50-58cf87f201d1"))).set_CompositeMode(value); }
+	override HRESULT abi_CancelDirectManipulations(bool* return_returnValue) { return (cast(Windows.UI.Xaml.IUIElement2)m_inner.asInterface(uuid("676d0bf9-b66c-41d6-ba50-58cf87f201d1"))).abi_CancelDirectManipulations(return_returnValue); }
 
-	override HRESULT get_Transform3D(Windows.UI.Xaml.Media.Media3D.Transform3D* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement3).get_Transform3D(return_value); }
-	override HRESULT set_Transform3D(Windows.UI.Xaml.Media.Media3D.Transform3D value) { return m_inner.as!(Windows.UI.Xaml.IUIElement3).set_Transform3D(value); }
-	override HRESULT get_CanDrag(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement3).get_CanDrag(return_value); }
-	override HRESULT set_CanDrag(bool value) { return m_inner.as!(Windows.UI.Xaml.IUIElement3).set_CanDrag(value); }
-	override HRESULT add_DragStarting(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DragStartingEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement3).add_DragStarting(value, return_token); }
-	override HRESULT remove_DragStarting(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement3).remove_DragStarting(token); }
-	override HRESULT add_DropCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DropCompletedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement3).add_DropCompleted(value, return_token); }
-	override HRESULT remove_DropCompleted(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement3).remove_DropCompleted(token); }
-	override HRESULT abi_StartDragAsync(Windows.UI.Input.PointerPoint pointerPoint, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.DataTransfer.DataPackageOperation)* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.IUIElement3).abi_StartDragAsync(pointerPoint, return_returnValue); }
+	override HRESULT get_Transform3D(Windows.UI.Xaml.Media.Media3D.Transform3D* return_value) { return (cast(Windows.UI.Xaml.IUIElement3)m_inner.asInterface(uuid("bc2b28f1-26f2-4aab-b256-3b5350881e37"))).get_Transform3D(return_value); }
+	override HRESULT set_Transform3D(Windows.UI.Xaml.Media.Media3D.Transform3D value) { return (cast(Windows.UI.Xaml.IUIElement3)m_inner.asInterface(uuid("bc2b28f1-26f2-4aab-b256-3b5350881e37"))).set_Transform3D(value); }
+	override HRESULT get_CanDrag(bool* return_value) { return (cast(Windows.UI.Xaml.IUIElement3)m_inner.asInterface(uuid("bc2b28f1-26f2-4aab-b256-3b5350881e37"))).get_CanDrag(return_value); }
+	override HRESULT set_CanDrag(bool value) { return (cast(Windows.UI.Xaml.IUIElement3)m_inner.asInterface(uuid("bc2b28f1-26f2-4aab-b256-3b5350881e37"))).set_CanDrag(value); }
+	override HRESULT add_DragStarting(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DragStartingEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement3)m_inner.asInterface(uuid("bc2b28f1-26f2-4aab-b256-3b5350881e37"))).add_DragStarting(value, return_token); }
+	override HRESULT remove_DragStarting(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement3)m_inner.asInterface(uuid("bc2b28f1-26f2-4aab-b256-3b5350881e37"))).remove_DragStarting(token); }
+	override HRESULT add_DropCompleted(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.DropCompletedEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement3)m_inner.asInterface(uuid("bc2b28f1-26f2-4aab-b256-3b5350881e37"))).add_DropCompleted(value, return_token); }
+	override HRESULT remove_DropCompleted(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement3)m_inner.asInterface(uuid("bc2b28f1-26f2-4aab-b256-3b5350881e37"))).remove_DropCompleted(token); }
+	override HRESULT abi_StartDragAsync(Windows.UI.Input.PointerPoint pointerPoint, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.DataTransfer.DataPackageOperation)* return_returnValue) { return (cast(Windows.UI.Xaml.IUIElement3)m_inner.asInterface(uuid("bc2b28f1-26f2-4aab-b256-3b5350881e37"))).abi_StartDragAsync(pointerPoint, return_returnValue); }
 
-	override HRESULT get_ContextFlyout(Windows.UI.Xaml.Controls.Primitives.FlyoutBase* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).get_ContextFlyout(return_value); }
-	override HRESULT set_ContextFlyout(Windows.UI.Xaml.Controls.Primitives.FlyoutBase value) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).set_ContextFlyout(value); }
-	override HRESULT get_ExitDisplayModeOnAccessKeyInvoked(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).get_ExitDisplayModeOnAccessKeyInvoked(return_value); }
-	override HRESULT set_ExitDisplayModeOnAccessKeyInvoked(bool value) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).set_ExitDisplayModeOnAccessKeyInvoked(value); }
-	override HRESULT get_IsAccessKeyScope(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).get_IsAccessKeyScope(return_value); }
-	override HRESULT set_IsAccessKeyScope(bool value) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).set_IsAccessKeyScope(value); }
-	override HRESULT get_AccessKeyScopeOwner(Windows.UI.Xaml.DependencyObject* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).get_AccessKeyScopeOwner(return_value); }
-	override HRESULT set_AccessKeyScopeOwner(Windows.UI.Xaml.DependencyObject value) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).set_AccessKeyScopeOwner(value); }
-	override HRESULT get_AccessKey(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).get_AccessKey(return_value); }
-	override HRESULT set_AccessKey(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).set_AccessKey(value); }
-	override HRESULT add_ContextRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.ContextRequestedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).add_ContextRequested(value, return_token); }
-	override HRESULT remove_ContextRequested(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).remove_ContextRequested(token); }
-	override HRESULT add_ContextCanceled(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.RoutedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).add_ContextCanceled(value, return_token); }
-	override HRESULT remove_ContextCanceled(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).remove_ContextCanceled(token); }
-	override HRESULT add_AccessKeyDisplayRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).add_AccessKeyDisplayRequested(value, return_token); }
-	override HRESULT remove_AccessKeyDisplayRequested(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).remove_AccessKeyDisplayRequested(token); }
-	override HRESULT add_AccessKeyDisplayDismissed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).add_AccessKeyDisplayDismissed(value, return_token); }
-	override HRESULT remove_AccessKeyDisplayDismissed(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).remove_AccessKeyDisplayDismissed(token); }
-	override HRESULT add_AccessKeyInvoked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).add_AccessKeyInvoked(value, return_token); }
-	override HRESULT remove_AccessKeyInvoked(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement4).remove_AccessKeyInvoked(token); }
+	override HRESULT get_ContextFlyout(Windows.UI.Xaml.Controls.Primitives.FlyoutBase* return_value) { return (cast(Windows.UI.Xaml.IUIElement4)m_inner.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).get_ContextFlyout(return_value); }
+	override HRESULT set_ContextFlyout(Windows.UI.Xaml.Controls.Primitives.FlyoutBase value) { return (cast(Windows.UI.Xaml.IUIElement4)m_inner.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).set_ContextFlyout(value); }
+	override HRESULT get_ExitDisplayModeOnAccessKeyInvoked(bool* return_value) { return (cast(Windows.UI.Xaml.IUIElement4)m_inner.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).get_ExitDisplayModeOnAccessKeyInvoked(return_value); }
+	override HRESULT set_ExitDisplayModeOnAccessKeyInvoked(bool value) { return (cast(Windows.UI.Xaml.IUIElement4)m_inner.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).set_ExitDisplayModeOnAccessKeyInvoked(value); }
+	override HRESULT get_IsAccessKeyScope(bool* return_value) { return (cast(Windows.UI.Xaml.IUIElement4)m_inner.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).get_IsAccessKeyScope(return_value); }
+	override HRESULT set_IsAccessKeyScope(bool value) { return (cast(Windows.UI.Xaml.IUIElement4)m_inner.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).set_IsAccessKeyScope(value); }
+	override HRESULT get_AccessKeyScopeOwner(Windows.UI.Xaml.DependencyObject* return_value) { return (cast(Windows.UI.Xaml.IUIElement4)m_inner.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).get_AccessKeyScopeOwner(return_value); }
+	override HRESULT set_AccessKeyScopeOwner(Windows.UI.Xaml.DependencyObject value) { return (cast(Windows.UI.Xaml.IUIElement4)m_inner.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).set_AccessKeyScopeOwner(value); }
+	override HRESULT get_AccessKey(HSTRING* return_value) { return (cast(Windows.UI.Xaml.IUIElement4)m_inner.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).get_AccessKey(return_value); }
+	override HRESULT set_AccessKey(HSTRING value) { return (cast(Windows.UI.Xaml.IUIElement4)m_inner.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).set_AccessKey(value); }
+	override HRESULT add_ContextRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.ContextRequestedEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement4)m_inner.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).add_ContextRequested(value, return_token); }
+	override HRESULT remove_ContextRequested(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement4)m_inner.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).remove_ContextRequested(token); }
+	override HRESULT add_ContextCanceled(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.RoutedEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement4)m_inner.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).add_ContextCanceled(value, return_token); }
+	override HRESULT remove_ContextCanceled(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement4)m_inner.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).remove_ContextCanceled(token); }
+	override HRESULT add_AccessKeyDisplayRequested(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayRequestedEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement4)m_inner.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).add_AccessKeyDisplayRequested(value, return_token); }
+	override HRESULT remove_AccessKeyDisplayRequested(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement4)m_inner.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).remove_AccessKeyDisplayRequested(token); }
+	override HRESULT add_AccessKeyDisplayDismissed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyDisplayDismissedEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement4)m_inner.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).add_AccessKeyDisplayDismissed(value, return_token); }
+	override HRESULT remove_AccessKeyDisplayDismissed(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement4)m_inner.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).remove_AccessKeyDisplayDismissed(token); }
+	override HRESULT add_AccessKeyInvoked(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.AccessKeyInvokedEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement4)m_inner.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).add_AccessKeyInvoked(value, return_token); }
+	override HRESULT remove_AccessKeyInvoked(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement4)m_inner.asInterface(uuid("69145cd4-199a-4657-9e57-e99e8f136712"))).remove_AccessKeyInvoked(token); }
 
-	override HRESULT get_Lights(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.XamlLight)* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).get_Lights(return_value); }
-	override HRESULT get_KeyTipPlacementMode(Windows.UI.Xaml.Input.KeyTipPlacementMode* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).get_KeyTipPlacementMode(return_value); }
-	override HRESULT set_KeyTipPlacementMode(Windows.UI.Xaml.Input.KeyTipPlacementMode value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).set_KeyTipPlacementMode(value); }
-	override HRESULT get_KeyTipHorizontalOffset(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).get_KeyTipHorizontalOffset(return_value); }
-	override HRESULT set_KeyTipHorizontalOffset(double value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).set_KeyTipHorizontalOffset(value); }
-	override HRESULT get_KeyTipVerticalOffset(double* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).get_KeyTipVerticalOffset(return_value); }
-	override HRESULT set_KeyTipVerticalOffset(double value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).set_KeyTipVerticalOffset(value); }
-	override HRESULT get_XYFocusKeyboardNavigation(Windows.UI.Xaml.Input.XYFocusKeyboardNavigationMode* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).get_XYFocusKeyboardNavigation(return_value); }
-	override HRESULT set_XYFocusKeyboardNavigation(Windows.UI.Xaml.Input.XYFocusKeyboardNavigationMode value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).set_XYFocusKeyboardNavigation(value); }
-	override HRESULT get_XYFocusUpNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).get_XYFocusUpNavigationStrategy(return_value); }
-	override HRESULT set_XYFocusUpNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).set_XYFocusUpNavigationStrategy(value); }
-	override HRESULT get_XYFocusDownNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).get_XYFocusDownNavigationStrategy(return_value); }
-	override HRESULT set_XYFocusDownNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).set_XYFocusDownNavigationStrategy(value); }
-	override HRESULT get_XYFocusLeftNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).get_XYFocusLeftNavigationStrategy(return_value); }
-	override HRESULT set_XYFocusLeftNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).set_XYFocusLeftNavigationStrategy(value); }
-	override HRESULT get_XYFocusRightNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).get_XYFocusRightNavigationStrategy(return_value); }
-	override HRESULT set_XYFocusRightNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).set_XYFocusRightNavigationStrategy(value); }
-	override HRESULT get_HighContrastAdjustment(Windows.UI.Xaml.ElementHighContrastAdjustment* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).get_HighContrastAdjustment(return_value); }
-	override HRESULT set_HighContrastAdjustment(Windows.UI.Xaml.ElementHighContrastAdjustment value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).set_HighContrastAdjustment(value); }
-	override HRESULT get_TabFocusNavigation(Windows.UI.Xaml.Input.KeyboardNavigationMode* return_value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).get_TabFocusNavigation(return_value); }
-	override HRESULT set_TabFocusNavigation(Windows.UI.Xaml.Input.KeyboardNavigationMode value) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).set_TabFocusNavigation(value); }
-	override HRESULT add_GettingFocus(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.GettingFocusEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).add_GettingFocus(value, return_token); }
-	override HRESULT remove_GettingFocus(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).remove_GettingFocus(token); }
-	override HRESULT add_LosingFocus(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.LosingFocusEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).add_LosingFocus(value, return_token); }
-	override HRESULT remove_LosingFocus(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).remove_LosingFocus(token); }
-	override HRESULT add_NoFocusCandidateFound(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).add_NoFocusCandidateFound(value, return_token); }
-	override HRESULT remove_NoFocusCandidateFound(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).remove_NoFocusCandidateFound(token); }
-	override HRESULT abi_StartBringIntoView() { return m_inner.as!(Windows.UI.Xaml.IUIElement5).abi_StartBringIntoView(); }
-	override HRESULT abi_StartBringIntoViewWithOptions(Windows.UI.Xaml.BringIntoViewOptions options) { return m_inner.as!(Windows.UI.Xaml.IUIElement5).abi_StartBringIntoViewWithOptions(options); }
+	override HRESULT get_Lights(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.XamlLight)* return_value) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).get_Lights(return_value); }
+	override HRESULT get_KeyTipPlacementMode(Windows.UI.Xaml.Input.KeyTipPlacementMode* return_value) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).get_KeyTipPlacementMode(return_value); }
+	override HRESULT set_KeyTipPlacementMode(Windows.UI.Xaml.Input.KeyTipPlacementMode value) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).set_KeyTipPlacementMode(value); }
+	override HRESULT get_KeyTipHorizontalOffset(double* return_value) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).get_KeyTipHorizontalOffset(return_value); }
+	override HRESULT set_KeyTipHorizontalOffset(double value) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).set_KeyTipHorizontalOffset(value); }
+	override HRESULT get_KeyTipVerticalOffset(double* return_value) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).get_KeyTipVerticalOffset(return_value); }
+	override HRESULT set_KeyTipVerticalOffset(double value) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).set_KeyTipVerticalOffset(value); }
+	override HRESULT get_XYFocusKeyboardNavigation(Windows.UI.Xaml.Input.XYFocusKeyboardNavigationMode* return_value) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).get_XYFocusKeyboardNavigation(return_value); }
+	override HRESULT set_XYFocusKeyboardNavigation(Windows.UI.Xaml.Input.XYFocusKeyboardNavigationMode value) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).set_XYFocusKeyboardNavigation(value); }
+	override HRESULT get_XYFocusUpNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy* return_value) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).get_XYFocusUpNavigationStrategy(return_value); }
+	override HRESULT set_XYFocusUpNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).set_XYFocusUpNavigationStrategy(value); }
+	override HRESULT get_XYFocusDownNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy* return_value) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).get_XYFocusDownNavigationStrategy(return_value); }
+	override HRESULT set_XYFocusDownNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).set_XYFocusDownNavigationStrategy(value); }
+	override HRESULT get_XYFocusLeftNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy* return_value) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).get_XYFocusLeftNavigationStrategy(return_value); }
+	override HRESULT set_XYFocusLeftNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).set_XYFocusLeftNavigationStrategy(value); }
+	override HRESULT get_XYFocusRightNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy* return_value) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).get_XYFocusRightNavigationStrategy(return_value); }
+	override HRESULT set_XYFocusRightNavigationStrategy(Windows.UI.Xaml.Input.XYFocusNavigationStrategy value) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).set_XYFocusRightNavigationStrategy(value); }
+	override HRESULT get_HighContrastAdjustment(Windows.UI.Xaml.ElementHighContrastAdjustment* return_value) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).get_HighContrastAdjustment(return_value); }
+	override HRESULT set_HighContrastAdjustment(Windows.UI.Xaml.ElementHighContrastAdjustment value) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).set_HighContrastAdjustment(value); }
+	override HRESULT get_TabFocusNavigation(Windows.UI.Xaml.Input.KeyboardNavigationMode* return_value) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).get_TabFocusNavigation(return_value); }
+	override HRESULT set_TabFocusNavigation(Windows.UI.Xaml.Input.KeyboardNavigationMode value) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).set_TabFocusNavigation(value); }
+	override HRESULT add_GettingFocus(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.GettingFocusEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).add_GettingFocus(value, return_token); }
+	override HRESULT remove_GettingFocus(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).remove_GettingFocus(token); }
+	override HRESULT add_LosingFocus(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.LosingFocusEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).add_LosingFocus(value, return_token); }
+	override HRESULT remove_LosingFocus(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).remove_LosingFocus(token); }
+	override HRESULT add_NoFocusCandidateFound(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).add_NoFocusCandidateFound(value, return_token); }
+	override HRESULT remove_NoFocusCandidateFound(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).remove_NoFocusCandidateFound(token); }
+	override HRESULT abi_StartBringIntoView() { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).abi_StartBringIntoView(); }
+	override HRESULT abi_StartBringIntoViewWithOptions(Windows.UI.Xaml.BringIntoViewOptions options) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).abi_StartBringIntoViewWithOptions(options); }
 
 	this() {}
 	IInspectable m_inner;
@@ -5724,24 +5724,24 @@ extern(Windows):
 	final HRESULT Exception()
 	{
 		HRESULT _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUnhandledExceptionEventArgs).get_Exception(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUnhandledExceptionEventArgs)this.asInterface(uuid("7230269c-054e-4cf3-86c5-be90eb6863d5"))).get_Exception(&_ret));
 		return _ret;
 	}
 	final HSTRING Message()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUnhandledExceptionEventArgs).get_Message(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUnhandledExceptionEventArgs)this.asInterface(uuid("7230269c-054e-4cf3-86c5-be90eb6863d5"))).get_Message(&_ret));
 		return _ret;
 	}
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IUnhandledExceptionEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IUnhandledExceptionEventArgs)this.asInterface(uuid("7230269c-054e-4cf3-86c5-be90eb6863d5"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IUnhandledExceptionEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.UI.Xaml.IUnhandledExceptionEventArgs)this.asInterface(uuid("7230269c-054e-4cf3-86c5-be90eb6863d5"))).set_Handled(value));
 	}
 }
 
@@ -5751,36 +5751,36 @@ extern(Windows):
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualState).get_Name(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualState)this.asInterface(uuid("6320affc-c31a-4450-afde-f6ea7bd1f586"))).get_Name(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Media.Animation.Storyboard Storyboard()
 	{
 		Windows.UI.Xaml.Media.Animation.Storyboard _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualState).get_Storyboard(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualState)this.asInterface(uuid("6320affc-c31a-4450-afde-f6ea7bd1f586"))).get_Storyboard(&_ret));
 		return _ret;
 	}
 	final void Storyboard(Windows.UI.Xaml.Media.Animation.Storyboard value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualState).set_Storyboard(value));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualState)this.asInterface(uuid("6320affc-c31a-4450-afde-f6ea7bd1f586"))).set_Storyboard(value));
 	}
 	final Windows.UI.Xaml.SetterBaseCollection Setters()
 	{
 		Windows.UI.Xaml.SetterBaseCollection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualState2).get_Setters(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualState2)this.asInterface(uuid("0fa0f896-64c0-45fb-8d24-fb83298c0d93"))).get_Setters(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.StateTriggerBase) StateTriggers()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.StateTriggerBase) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualState2).get_StateTriggers(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualState2)this.asInterface(uuid("0fa0f896-64c0-45fb-8d24-fb83298c0d93"))).get_StateTriggers(&_ret));
 		return _ret;
 	}
 	static VisualState New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(VisualState).abi_ActivateInstance(&ret));
-		return ret.as!(VisualState);
+		return cast(VisualState) ret;
 	}
 }
 
@@ -5790,38 +5790,38 @@ extern(Windows):
 	final Windows.UI.Xaml.VisualState OldState()
 	{
 		Windows.UI.Xaml.VisualState _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateChangedEventArgs).get_OldState(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualStateChangedEventArgs)this.asInterface(uuid("fe216ab1-f31f-4791-8989-c70e1d9b59ff"))).get_OldState(&_ret));
 		return _ret;
 	}
 	final void OldState(Windows.UI.Xaml.VisualState value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateChangedEventArgs).set_OldState(value));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualStateChangedEventArgs)this.asInterface(uuid("fe216ab1-f31f-4791-8989-c70e1d9b59ff"))).set_OldState(value));
 	}
 	final Windows.UI.Xaml.VisualState NewState()
 	{
 		Windows.UI.Xaml.VisualState _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateChangedEventArgs).get_NewState(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualStateChangedEventArgs)this.asInterface(uuid("fe216ab1-f31f-4791-8989-c70e1d9b59ff"))).get_NewState(&_ret));
 		return _ret;
 	}
 	final void NewState(Windows.UI.Xaml.VisualState value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateChangedEventArgs).set_NewState(value));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualStateChangedEventArgs)this.asInterface(uuid("fe216ab1-f31f-4791-8989-c70e1d9b59ff"))).set_NewState(value));
 	}
 	final Windows.UI.Xaml.Controls.Control Control()
 	{
 		Windows.UI.Xaml.Controls.Control _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateChangedEventArgs).get_Control(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualStateChangedEventArgs)this.asInterface(uuid("fe216ab1-f31f-4791-8989-c70e1d9b59ff"))).get_Control(&_ret));
 		return _ret;
 	}
 	final void Control(Windows.UI.Xaml.Controls.Control value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateChangedEventArgs).set_Control(value));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualStateChangedEventArgs)this.asInterface(uuid("fe216ab1-f31f-4791-8989-c70e1d9b59ff"))).set_Control(value));
 	}
 	static VisualStateChangedEventArgs New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(VisualStateChangedEventArgs).abi_ActivateInstance(&ret));
-		return ret.as!(VisualStateChangedEventArgs);
+		return cast(VisualStateChangedEventArgs) ret;
 	}
 }
 
@@ -5831,52 +5831,52 @@ extern(Windows):
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateGroup).get_Name(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualStateGroup)this.asInterface(uuid("e4f9d9a4-e028-44de-9b15-4929ae0a26c2"))).get_Name(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.VisualTransition) Transitions()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.VisualTransition) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateGroup).get_Transitions(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualStateGroup)this.asInterface(uuid("e4f9d9a4-e028-44de-9b15-4929ae0a26c2"))).get_Transitions(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.VisualState) States()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.VisualState) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateGroup).get_States(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualStateGroup)this.asInterface(uuid("e4f9d9a4-e028-44de-9b15-4929ae0a26c2"))).get_States(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.VisualState CurrentState()
 	{
 		Windows.UI.Xaml.VisualState _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateGroup).get_CurrentState(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualStateGroup)this.asInterface(uuid("e4f9d9a4-e028-44de-9b15-4929ae0a26c2"))).get_CurrentState(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnCurrentStateChanged(void delegate(IInspectable, Windows.UI.Xaml.VisualStateChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateGroup).add_CurrentStateChanged(event!(Windows.UI.Xaml.VisualStateChangedEventHandler, IInspectable, Windows.UI.Xaml.VisualStateChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualStateGroup)this.asInterface(uuid("e4f9d9a4-e028-44de-9b15-4929ae0a26c2"))).add_CurrentStateChanged(event!(Windows.UI.Xaml.VisualStateChangedEventHandler, IInspectable, Windows.UI.Xaml.VisualStateChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCurrentStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateGroup).remove_CurrentStateChanged(token));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualStateGroup)this.asInterface(uuid("e4f9d9a4-e028-44de-9b15-4929ae0a26c2"))).remove_CurrentStateChanged(token));
 	}
 	final EventRegistrationToken OnCurrentStateChanging(void delegate(IInspectable, Windows.UI.Xaml.VisualStateChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateGroup).add_CurrentStateChanging(event!(Windows.UI.Xaml.VisualStateChangedEventHandler, IInspectable, Windows.UI.Xaml.VisualStateChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualStateGroup)this.asInterface(uuid("e4f9d9a4-e028-44de-9b15-4929ae0a26c2"))).add_CurrentStateChanging(event!(Windows.UI.Xaml.VisualStateChangedEventHandler, IInspectable, Windows.UI.Xaml.VisualStateChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCurrentStateChanging(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateGroup).remove_CurrentStateChanging(token));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualStateGroup)this.asInterface(uuid("e4f9d9a4-e028-44de-9b15-4929ae0a26c2"))).remove_CurrentStateChanging(token));
 	}
 	static VisualStateGroup New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(VisualStateGroup).abi_ActivateInstance(&ret));
-		return ret.as!(VisualStateGroup);
+		return cast(VisualStateGroup) ret;
 	}
 }
 
@@ -5885,11 +5885,11 @@ interface VisualStateManager : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml
 extern(Windows):
 	final void RaiseCurrentStateChanging(Windows.UI.Xaml.VisualStateGroup stateGroup, Windows.UI.Xaml.VisualState oldState, Windows.UI.Xaml.VisualState newState, Windows.UI.Xaml.Controls.Control control)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateManagerProtected).abi_RaiseCurrentStateChanging(stateGroup, oldState, newState, control));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualStateManagerProtected)this.asInterface(uuid("4b3b8640-b0b7-404c-9ef4-d949640e245d"))).abi_RaiseCurrentStateChanging(stateGroup, oldState, newState, control));
 	}
 	final void RaiseCurrentStateChanged(Windows.UI.Xaml.VisualStateGroup stateGroup, Windows.UI.Xaml.VisualState oldState, Windows.UI.Xaml.VisualState newState, Windows.UI.Xaml.Controls.Control control)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualStateManagerProtected).abi_RaiseCurrentStateChanged(stateGroup, oldState, newState, control));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualStateManagerProtected)this.asInterface(uuid("4b3b8640-b0b7-404c-9ef4-d949640e245d"))).abi_RaiseCurrentStateChanged(stateGroup, oldState, newState, control));
 	}
 
 	private static Windows.UI.Xaml.IVisualStateManagerStatics _staticInstance;
@@ -5901,29 +5901,29 @@ extern(Windows):
 	static Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.VisualStateGroup) GetVisualStateGroups(Windows.UI.Xaml.FrameworkElement obj)
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.VisualStateGroup) _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IVisualStateManagerStatics).abi_GetVisualStateGroups(obj, &_ret));
+		Debug.OK(staticInstance.abi_GetVisualStateGroups(obj, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty CustomVisualStateManagerProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IVisualStateManagerStatics).get_CustomVisualStateManagerProperty(&_ret));
+		Debug.OK(staticInstance.get_CustomVisualStateManagerProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.VisualStateManager GetCustomVisualStateManager(Windows.UI.Xaml.FrameworkElement obj)
 	{
 		Windows.UI.Xaml.VisualStateManager _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IVisualStateManagerStatics).abi_GetCustomVisualStateManager(obj, &_ret));
+		Debug.OK(staticInstance.abi_GetCustomVisualStateManager(obj, &_ret));
 		return _ret;
 	}
 	static void SetCustomVisualStateManager(Windows.UI.Xaml.FrameworkElement obj, Windows.UI.Xaml.VisualStateManager value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IVisualStateManagerStatics).abi_SetCustomVisualStateManager(obj, value));
+		Debug.OK(staticInstance.abi_SetCustomVisualStateManager(obj, value));
 	}
 	static bool GoToState(Windows.UI.Xaml.Controls.Control control, HSTRING stateName, bool useTransitions)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IVisualStateManagerStatics).abi_GoToState(control, stateName, useTransitions, &_ret));
+		Debug.OK(staticInstance.abi_GoToState(control, stateName, useTransitions, &_ret));
 		return _ret;
 	}
 	static VisualStateManager New()
@@ -5946,10 +5946,10 @@ class VisualStateManagerT(Base) : AgileObject!Base, VisualStateManager
 	}
 
 	override HRESULT abi_GoToStateCore(Windows.UI.Xaml.Controls.Control control, Windows.UI.Xaml.FrameworkElement templateRoot, HSTRING stateName, Windows.UI.Xaml.VisualStateGroup group, Windows.UI.Xaml.VisualState state, bool useTransitions, bool* return_returnValue) { this.GoToStateCore(control, templateRoot, stateName, group, state, useTransitions, return_returnValue); return S_OK; }
-	void GoToStateCore(Windows.UI.Xaml.Controls.Control control, Windows.UI.Xaml.FrameworkElement templateRoot, HSTRING stateName, Windows.UI.Xaml.VisualStateGroup group, Windows.UI.Xaml.VisualState state, bool useTransitions, bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.IVisualStateManagerOverrides).abi_GoToStateCore(control, templateRoot, stateName, group, state, useTransitions, return_returnValue)); }
+	void GoToStateCore(Windows.UI.Xaml.Controls.Control control, Windows.UI.Xaml.FrameworkElement templateRoot, HSTRING stateName, Windows.UI.Xaml.VisualStateGroup group, Windows.UI.Xaml.VisualState state, bool useTransitions, bool* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.IVisualStateManagerOverrides)m_inner.asInterface(uuid("4a66910e-7979-43c8-8ff4-ec6122750006"))).abi_GoToStateCore(control, templateRoot, stateName, group, state, useTransitions, return_returnValue)); }
 
-	override HRESULT abi_RaiseCurrentStateChanging(Windows.UI.Xaml.VisualStateGroup stateGroup, Windows.UI.Xaml.VisualState oldState, Windows.UI.Xaml.VisualState newState, Windows.UI.Xaml.Controls.Control control) { return m_inner.as!(Windows.UI.Xaml.IVisualStateManagerProtected).abi_RaiseCurrentStateChanging(stateGroup, oldState, newState, control); }
-	override HRESULT abi_RaiseCurrentStateChanged(Windows.UI.Xaml.VisualStateGroup stateGroup, Windows.UI.Xaml.VisualState oldState, Windows.UI.Xaml.VisualState newState, Windows.UI.Xaml.Controls.Control control) { return m_inner.as!(Windows.UI.Xaml.IVisualStateManagerProtected).abi_RaiseCurrentStateChanged(stateGroup, oldState, newState, control); }
+	override HRESULT abi_RaiseCurrentStateChanging(Windows.UI.Xaml.VisualStateGroup stateGroup, Windows.UI.Xaml.VisualState oldState, Windows.UI.Xaml.VisualState newState, Windows.UI.Xaml.Controls.Control control) { return (cast(Windows.UI.Xaml.IVisualStateManagerProtected)m_inner.asInterface(uuid("4b3b8640-b0b7-404c-9ef4-d949640e245d"))).abi_RaiseCurrentStateChanging(stateGroup, oldState, newState, control); }
+	override HRESULT abi_RaiseCurrentStateChanged(Windows.UI.Xaml.VisualStateGroup stateGroup, Windows.UI.Xaml.VisualState oldState, Windows.UI.Xaml.VisualState newState, Windows.UI.Xaml.Controls.Control control) { return (cast(Windows.UI.Xaml.IVisualStateManagerProtected)m_inner.asInterface(uuid("4b3b8640-b0b7-404c-9ef4-d949640e245d"))).abi_RaiseCurrentStateChanged(stateGroup, oldState, newState, control); }
 
 	this() {}
 	IInspectable m_inner;
@@ -5961,52 +5961,52 @@ extern(Windows):
 	final Windows.UI.Xaml.Duration GeneratedDuration()
 	{
 		Windows.UI.Xaml.Duration _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualTransition).get_GeneratedDuration(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualTransition)this.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).get_GeneratedDuration(&_ret));
 		return _ret;
 	}
 	final void GeneratedDuration(Windows.UI.Xaml.Duration value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualTransition).set_GeneratedDuration(value));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualTransition)this.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).set_GeneratedDuration(value));
 	}
 	final Windows.UI.Xaml.Media.Animation.EasingFunctionBase GeneratedEasingFunction()
 	{
 		Windows.UI.Xaml.Media.Animation.EasingFunctionBase _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualTransition).get_GeneratedEasingFunction(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualTransition)this.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).get_GeneratedEasingFunction(&_ret));
 		return _ret;
 	}
 	final void GeneratedEasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualTransition).set_GeneratedEasingFunction(value));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualTransition)this.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).set_GeneratedEasingFunction(value));
 	}
 	final HSTRING To()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualTransition).get_To(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualTransition)this.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).get_To(&_ret));
 		return _ret;
 	}
 	final void To(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualTransition).set_To(value));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualTransition)this.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).set_To(value));
 	}
 	final HSTRING From()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualTransition).get_From(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualTransition)this.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).get_From(&_ret));
 		return _ret;
 	}
 	final void From(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualTransition).set_From(value));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualTransition)this.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).set_From(value));
 	}
 	final Windows.UI.Xaml.Media.Animation.Storyboard Storyboard()
 	{
 		Windows.UI.Xaml.Media.Animation.Storyboard _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualTransition).get_Storyboard(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualTransition)this.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).get_Storyboard(&_ret));
 		return _ret;
 	}
 	final void Storyboard(Windows.UI.Xaml.Media.Animation.Storyboard value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IVisualTransition).set_Storyboard(value));
+		Debug.OK((cast(Windows.UI.Xaml.IVisualTransition)this.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).set_Storyboard(value));
 	}
 	static VisualTransition New()
 	{
@@ -6026,16 +6026,16 @@ class VisualTransitionT(Base) : AgileObject!Base, VisualTransition
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_GeneratedDuration(Windows.UI.Xaml.Duration* return_value) { return m_inner.as!(Windows.UI.Xaml.IVisualTransition).get_GeneratedDuration(return_value); }
-	override HRESULT set_GeneratedDuration(Windows.UI.Xaml.Duration value) { return m_inner.as!(Windows.UI.Xaml.IVisualTransition).set_GeneratedDuration(value); }
-	override HRESULT get_GeneratedEasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase* return_value) { return m_inner.as!(Windows.UI.Xaml.IVisualTransition).get_GeneratedEasingFunction(return_value); }
-	override HRESULT set_GeneratedEasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase value) { return m_inner.as!(Windows.UI.Xaml.IVisualTransition).set_GeneratedEasingFunction(value); }
-	override HRESULT get_To(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.IVisualTransition).get_To(return_value); }
-	override HRESULT set_To(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.IVisualTransition).set_To(value); }
-	override HRESULT get_From(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.IVisualTransition).get_From(return_value); }
-	override HRESULT set_From(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.IVisualTransition).set_From(value); }
-	override HRESULT get_Storyboard(Windows.UI.Xaml.Media.Animation.Storyboard* return_value) { return m_inner.as!(Windows.UI.Xaml.IVisualTransition).get_Storyboard(return_value); }
-	override HRESULT set_Storyboard(Windows.UI.Xaml.Media.Animation.Storyboard value) { return m_inner.as!(Windows.UI.Xaml.IVisualTransition).set_Storyboard(value); }
+	override HRESULT get_GeneratedDuration(Windows.UI.Xaml.Duration* return_value) { return (cast(Windows.UI.Xaml.IVisualTransition)m_inner.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).get_GeneratedDuration(return_value); }
+	override HRESULT set_GeneratedDuration(Windows.UI.Xaml.Duration value) { return (cast(Windows.UI.Xaml.IVisualTransition)m_inner.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).set_GeneratedDuration(value); }
+	override HRESULT get_GeneratedEasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase* return_value) { return (cast(Windows.UI.Xaml.IVisualTransition)m_inner.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).get_GeneratedEasingFunction(return_value); }
+	override HRESULT set_GeneratedEasingFunction(Windows.UI.Xaml.Media.Animation.EasingFunctionBase value) { return (cast(Windows.UI.Xaml.IVisualTransition)m_inner.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).set_GeneratedEasingFunction(value); }
+	override HRESULT get_To(HSTRING* return_value) { return (cast(Windows.UI.Xaml.IVisualTransition)m_inner.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).get_To(return_value); }
+	override HRESULT set_To(HSTRING value) { return (cast(Windows.UI.Xaml.IVisualTransition)m_inner.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).set_To(value); }
+	override HRESULT get_From(HSTRING* return_value) { return (cast(Windows.UI.Xaml.IVisualTransition)m_inner.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).get_From(return_value); }
+	override HRESULT set_From(HSTRING value) { return (cast(Windows.UI.Xaml.IVisualTransition)m_inner.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).set_From(value); }
+	override HRESULT get_Storyboard(Windows.UI.Xaml.Media.Animation.Storyboard* return_value) { return (cast(Windows.UI.Xaml.IVisualTransition)m_inner.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).get_Storyboard(return_value); }
+	override HRESULT set_Storyboard(Windows.UI.Xaml.Media.Animation.Storyboard value) { return (cast(Windows.UI.Xaml.IVisualTransition)m_inner.asInterface(uuid("55c5905e-2bc7-400d-aaa4-1a2981491ee0"))).set_Storyboard(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -6047,93 +6047,93 @@ extern(Windows):
 	final Windows.Foundation.Rect Bounds()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).get_Bounds(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IWindow)this.asInterface(uuid("3276167d-c9f6-462d-9de2-ae4c1fd8c2e5"))).get_Bounds(&_ret));
 		return _ret;
 	}
 	final bool Visible()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).get_Visible(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IWindow)this.asInterface(uuid("3276167d-c9f6-462d-9de2-ae4c1fd8c2e5"))).get_Visible(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.UIElement Content()
 	{
 		Windows.UI.Xaml.UIElement _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).get_Content(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IWindow)this.asInterface(uuid("3276167d-c9f6-462d-9de2-ae4c1fd8c2e5"))).get_Content(&_ret));
 		return _ret;
 	}
 	final void Content(Windows.UI.Xaml.UIElement value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).set_Content(value));
+		Debug.OK((cast(Windows.UI.Xaml.IWindow)this.asInterface(uuid("3276167d-c9f6-462d-9de2-ae4c1fd8c2e5"))).set_Content(value));
 	}
 	final Windows.UI.Core.CoreWindow CoreWindow()
 	{
 		Windows.UI.Core.CoreWindow _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).get_CoreWindow(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IWindow)this.asInterface(uuid("3276167d-c9f6-462d-9de2-ae4c1fd8c2e5"))).get_CoreWindow(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Core.CoreDispatcher Dispatcher()
 	{
 		Windows.UI.Core.CoreDispatcher _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).get_Dispatcher(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IWindow)this.asInterface(uuid("3276167d-c9f6-462d-9de2-ae4c1fd8c2e5"))).get_Dispatcher(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnActivated(void delegate(IInspectable, Windows.UI.Core.WindowActivatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).add_Activated(event!(Windows.UI.Xaml.WindowActivatedEventHandler, IInspectable, Windows.UI.Core.WindowActivatedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IWindow)this.asInterface(uuid("3276167d-c9f6-462d-9de2-ae4c1fd8c2e5"))).add_Activated(event!(Windows.UI.Xaml.WindowActivatedEventHandler, IInspectable, Windows.UI.Core.WindowActivatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeActivated(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).remove_Activated(token));
+		Debug.OK((cast(Windows.UI.Xaml.IWindow)this.asInterface(uuid("3276167d-c9f6-462d-9de2-ae4c1fd8c2e5"))).remove_Activated(token));
 	}
 	final EventRegistrationToken OnClosed(void delegate(IInspectable, Windows.UI.Core.CoreWindowEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).add_Closed(event!(Windows.UI.Xaml.WindowClosedEventHandler, IInspectable, Windows.UI.Core.CoreWindowEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IWindow)this.asInterface(uuid("3276167d-c9f6-462d-9de2-ae4c1fd8c2e5"))).add_Closed(event!(Windows.UI.Xaml.WindowClosedEventHandler, IInspectable, Windows.UI.Core.CoreWindowEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeClosed(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).remove_Closed(token));
+		Debug.OK((cast(Windows.UI.Xaml.IWindow)this.asInterface(uuid("3276167d-c9f6-462d-9de2-ae4c1fd8c2e5"))).remove_Closed(token));
 	}
 	final EventRegistrationToken OnSizeChanged(void delegate(IInspectable, Windows.UI.Core.WindowSizeChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).add_SizeChanged(event!(Windows.UI.Xaml.WindowSizeChangedEventHandler, IInspectable, Windows.UI.Core.WindowSizeChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IWindow)this.asInterface(uuid("3276167d-c9f6-462d-9de2-ae4c1fd8c2e5"))).add_SizeChanged(event!(Windows.UI.Xaml.WindowSizeChangedEventHandler, IInspectable, Windows.UI.Core.WindowSizeChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSizeChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).remove_SizeChanged(token));
+		Debug.OK((cast(Windows.UI.Xaml.IWindow)this.asInterface(uuid("3276167d-c9f6-462d-9de2-ae4c1fd8c2e5"))).remove_SizeChanged(token));
 	}
 	final EventRegistrationToken OnVisibilityChanged(void delegate(IInspectable, Windows.UI.Core.VisibilityChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).add_VisibilityChanged(event!(Windows.UI.Xaml.WindowVisibilityChangedEventHandler, IInspectable, Windows.UI.Core.VisibilityChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.IWindow)this.asInterface(uuid("3276167d-c9f6-462d-9de2-ae4c1fd8c2e5"))).add_VisibilityChanged(event!(Windows.UI.Xaml.WindowVisibilityChangedEventHandler, IInspectable, Windows.UI.Core.VisibilityChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeVisibilityChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).remove_VisibilityChanged(token));
+		Debug.OK((cast(Windows.UI.Xaml.IWindow)this.asInterface(uuid("3276167d-c9f6-462d-9de2-ae4c1fd8c2e5"))).remove_VisibilityChanged(token));
 	}
 	final void Activate()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).abi_Activate());
+		Debug.OK((cast(Windows.UI.Xaml.IWindow)this.asInterface(uuid("3276167d-c9f6-462d-9de2-ae4c1fd8c2e5"))).abi_Activate());
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IWindow).abi_Close());
+		Debug.OK((cast(Windows.UI.Xaml.IWindow)this.asInterface(uuid("3276167d-c9f6-462d-9de2-ae4c1fd8c2e5"))).abi_Close());
 	}
 	final void SetTitleBar(Windows.UI.Xaml.UIElement value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.IWindow2).abi_SetTitleBar(value));
+		Debug.OK((cast(Windows.UI.Xaml.IWindow2)this.asInterface(uuid("d384759f-34f6-4482-8435-f552f9b24cc8"))).abi_SetTitleBar(value));
 	}
 	final Windows.UI.Composition.Compositor Compositor()
 	{
 		Windows.UI.Composition.Compositor _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IWindow3).get_Compositor(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IWindow3)this.asInterface(uuid("b70bdc9d-1c35-462a-9b97-808d5af9f28e"))).get_Compositor(&_ret));
 		return _ret;
 	}
 
@@ -6146,7 +6146,7 @@ extern(Windows):
 	static Windows.UI.Xaml.Window Current()
 	{
 		Windows.UI.Xaml.Window _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.IWindowStatics).get_Current(&_ret));
+		Debug.OK(staticInstance.get_Current(&_ret));
 		return _ret;
 	}
 }
@@ -6157,7 +6157,7 @@ extern(Windows):
 	final Windows.UI.Xaml.Window Window()
 	{
 		Windows.UI.Xaml.Window _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.IWindowCreatedEventArgs).get_Window(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.IWindowCreatedEventArgs)this.asInterface(uuid("31b71470-feff-4654-af48-9b398ab5772b"))).get_Window(&_ret));
 		return _ret;
 	}
 }

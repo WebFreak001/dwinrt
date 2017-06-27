@@ -235,214 +235,214 @@ extern(Windows):
 	final UINT32 MaxVolume()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IActiveBasicDevice).get_MaxVolume(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IActiveBasicDevice)this.asInterface(uuid("b64d6974-6e79-49af-9933-908b6e9a160c"))).get_MaxVolume(&_ret));
 		return _ret;
 	}
 	final bool IsMuteSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IActiveBasicDevice).get_IsMuteSupported(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IActiveBasicDevice)this.asInterface(uuid("b64d6974-6e79-49af-9933-908b6e9a160c"))).get_IsMuteSupported(&_ret));
 		return _ret;
 	}
 	final bool IsSetNextSourceSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IActiveBasicDevice).get_IsSetNextSourceSupported(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IActiveBasicDevice)this.asInterface(uuid("b64d6974-6e79-49af-9933-908b6e9a160c"))).get_IsSetNextSourceSupported(&_ret));
 		return _ret;
 	}
 	final bool IsAudioSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IActiveBasicDevice).get_IsAudioSupported(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IActiveBasicDevice)this.asInterface(uuid("b64d6974-6e79-49af-9933-908b6e9a160c"))).get_IsAudioSupported(&_ret));
 		return _ret;
 	}
 	final bool IsVideoSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IActiveBasicDevice).get_IsVideoSupported(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IActiveBasicDevice)this.asInterface(uuid("b64d6974-6e79-49af-9933-908b6e9a160c"))).get_IsVideoSupported(&_ret));
 		return _ret;
 	}
 	final bool IsImageSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IActiveBasicDevice).get_IsImageSupported(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IActiveBasicDevice)this.asInterface(uuid("b64d6974-6e79-49af-9933-908b6e9a160c"))).get_IsImageSupported(&_ret));
 		return _ret;
 	}
 	final bool IsSearchSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IActiveBasicDevice).get_IsSearchSupported(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IActiveBasicDevice)this.asInterface(uuid("b64d6974-6e79-49af-9933-908b6e9a160c"))).get_IsSearchSupported(&_ret));
 		return _ret;
 	}
 	final HSTRING GetCachedSinkProtocolInfo()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IActiveBasicDevice).abi_GetCachedSinkProtocolInfo(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IActiveBasicDevice)this.asInterface(uuid("b64d6974-6e79-49af-9933-908b6e9a160c"))).abi_GetCachedSinkProtocolInfo(&_ret));
 		return _ret;
 	}
 	final void SetCachedSinkProtocolInfo(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.Streaming.IActiveBasicDevice).abi_SetCachedSinkProtocolInfo(value));
+		Debug.OK((cast(Windows.Media.Streaming.IActiveBasicDevice)this.asInterface(uuid("b64d6974-6e79-49af-9933-908b6e9a160c"))).abi_SetCachedSinkProtocolInfo(value));
 	}
 	final HSTRING GetCachedExtraSinkProtocolInfo()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IActiveBasicDevice).abi_GetCachedExtraSinkProtocolInfo(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IActiveBasicDevice)this.asInterface(uuid("b64d6974-6e79-49af-9933-908b6e9a160c"))).abi_GetCachedExtraSinkProtocolInfo(&_ret));
 		return _ret;
 	}
 	final ulong GetEffectiveBandwidth(bool transmitSpeed)
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IActiveBasicDevice).abi_GetEffectiveBandwidth(transmitSpeed, &_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IActiveBasicDevice)this.asInterface(uuid("b64d6974-6e79-49af-9933-908b6e9a160c"))).abi_GetEffectiveBandwidth(transmitSpeed, &_ret));
 		return _ret;
 	}
 	final ulong GetCachedBitrateMeasurement(GUID physicalNetworkInterface)
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IActiveBasicDevice).abi_GetCachedBitrateMeasurement(physicalNetworkInterface, &_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IActiveBasicDevice)this.asInterface(uuid("b64d6974-6e79-49af-9933-908b6e9a160c"))).abi_GetCachedBitrateMeasurement(physicalNetworkInterface, &_ret));
 		return _ret;
 	}
 	final void SetCachedBitrateMeasurement(GUID physicalNetworkInterface, ulong bitrate)
 	{
-		Debug.OK(this.as!(Windows.Media.Streaming.IActiveBasicDevice).abi_SetCachedBitrateMeasurement(physicalNetworkInterface, bitrate));
+		Debug.OK((cast(Windows.Media.Streaming.IActiveBasicDevice)this.asInterface(uuid("b64d6974-6e79-49af-9933-908b6e9a160c"))).abi_SetCachedBitrateMeasurement(physicalNetworkInterface, bitrate));
 	}
 	final GUID LogicalNetworkInterface()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IActiveBasicDevice).get_LogicalNetworkInterface(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IActiveBasicDevice)this.asInterface(uuid("b64d6974-6e79-49af-9933-908b6e9a160c"))).get_LogicalNetworkInterface(&_ret));
 		return _ret;
 	}
 	final GUID PhysicalNetworkInterface()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IActiveBasicDevice).get_PhysicalNetworkInterface(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IActiveBasicDevice)this.asInterface(uuid("b64d6974-6e79-49af-9933-908b6e9a160c"))).get_PhysicalNetworkInterface(&_ret));
 		return _ret;
 	}
 	final void NotifyStreamingStatus(bool fIsStreaming)
 	{
-		Debug.OK(this.as!(Windows.Media.Streaming.IActiveBasicDevice).abi_NotifyStreamingStatus(fIsStreaming));
+		Debug.OK((cast(Windows.Media.Streaming.IActiveBasicDevice)this.asInterface(uuid("b64d6974-6e79-49af-9933-908b6e9a160c"))).abi_NotifyStreamingStatus(fIsStreaming));
 	}
 	final HSTRING FriendlyName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_FriendlyName(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_FriendlyName(&_ret));
 		return _ret;
 	}
 	final void FriendlyName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).set_FriendlyName(value));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).set_FriendlyName(value));
 	}
 	final HSTRING ManufacturerName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_ManufacturerName(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_ManufacturerName(&_ret));
 		return _ret;
 	}
 	final HSTRING ManufacturerUrl()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_ManufacturerUrl(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_ManufacturerUrl(&_ret));
 		return _ret;
 	}
 	final HSTRING UniqueDeviceName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_UniqueDeviceName(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_UniqueDeviceName(&_ret));
 		return _ret;
 	}
 	final HSTRING ModelName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_ModelName(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_ModelName(&_ret));
 		return _ret;
 	}
 	final HSTRING ModelNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_ModelNumber(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_ModelNumber(&_ret));
 		return _ret;
 	}
 	final HSTRING ModelUrl()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_ModelUrl(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_ModelUrl(&_ret));
 		return _ret;
 	}
 	final HSTRING Description()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_Description(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_Description(&_ret));
 		return _ret;
 	}
 	final HSTRING SerialNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_SerialNumber(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_SerialNumber(&_ret));
 		return _ret;
 	}
 	final HSTRING PresentationUrl()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_PresentationUrl(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_PresentationUrl(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) RemoteStreamingUrls()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_RemoteStreamingUrls(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_RemoteStreamingUrls(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) PhysicalAddresses()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_PhysicalAddresses(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_PhysicalAddresses(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) IpAddresses()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_IpAddresses(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_IpAddresses(&_ret));
 		return _ret;
 	}
 	final bool CanWakeDevices()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_CanWakeDevices(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_CanWakeDevices(&_ret));
 		return _ret;
 	}
 	final bool DiscoveredOnCurrentNetwork()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_DiscoveredOnCurrentNetwork(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_DiscoveredOnCurrentNetwork(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Streaming.DeviceTypes Type()
 	{
 		Windows.Media.Streaming.DeviceTypes _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_Type(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_Type(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Media.Streaming.IDeviceIcon) Icons()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Media.Streaming.IDeviceIcon) _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_Icons(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_Icons(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Streaming.ConnectionStatus ConnectionStatus()
 	{
 		Windows.Media.Streaming.ConnectionStatus _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_ConnectionStatus(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_ConnectionStatus(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnConnectionStatusChanged(void delegate(Windows.Media.Streaming.IBasicDevice, Windows.Media.Streaming.ConnectionStatus) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).add_ConnectionStatusChanged(event!(Windows.Media.Streaming.ConnectionStatusHandler, Windows.Media.Streaming.IBasicDevice, Windows.Media.Streaming.ConnectionStatus)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).add_ConnectionStatusChanged(event!(Windows.Media.Streaming.ConnectionStatusHandler, Windows.Media.Streaming.IBasicDevice, Windows.Media.Streaming.ConnectionStatus)(fn), &tok));
 		return tok;
 	}
 	final void removeConnectionStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).remove_ConnectionStatusChanged(token));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).remove_ConnectionStatusChanged(token));
 	}
 
 	private static Windows.Media.Streaming.IActiveBasicDeviceStatics _staticInstance;
@@ -454,32 +454,32 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.ActiveBasicDevice) CreateBasicDeviceAsync(HSTRING deviceIdentifier, Windows.Media.Streaming.DeviceTypes type)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.ActiveBasicDevice) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Streaming.IActiveBasicDeviceStatics).abi_CreateBasicDeviceAsync(deviceIdentifier, type, &_ret));
+		Debug.OK(staticInstance.abi_CreateBasicDeviceAsync(deviceIdentifier, type, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.ActiveBasicDevice) CloneBasicDeviceAsync(Windows.Media.Streaming.IBasicDevice basicDevice)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.ActiveBasicDevice) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Streaming.IActiveBasicDeviceStatics).abi_CloneBasicDeviceAsync(basicDevice, &_ret));
+		Debug.OK(staticInstance.abi_CloneBasicDeviceAsync(basicDevice, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.DevicePair) GetDevicesOnMatchingNetworkAsync(Windows.Media.Streaming.IActiveBasicDevice server, Windows.Media.Streaming.IActiveBasicDevice renderer, bool optimizeForProxying, bool allowChangeRendererNetwork)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.DevicePair) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Streaming.IActiveBasicDeviceStatics).abi_GetDevicesOnMatchingNetworkAsync(server, renderer, optimizeForProxying, allowChangeRendererNetwork, &_ret));
+		Debug.OK(staticInstance.abi_GetDevicesOnMatchingNetworkAsync(server, renderer, optimizeForProxying, allowChangeRendererNetwork, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.DevicePair) CreateDevicesOnMatchingNetworkAsync(HSTRING serverUDN, Windows.Media.Streaming.IActiveBasicDevice renderer, bool optimizeForProxying, bool allowChangeRendererNetwork)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.DevicePair) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Streaming.IActiveBasicDeviceStatics).abi_CreateDevicesOnMatchingNetworkAsync(serverUDN, renderer, optimizeForProxying, allowChangeRendererNetwork, &_ret));
+		Debug.OK(staticInstance.abi_CreateDevicesOnMatchingNetworkAsync(serverUDN, renderer, optimizeForProxying, allowChangeRendererNetwork, &_ret));
 		return _ret;
 	}
 	static ActiveBasicDevice New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ActiveBasicDevice).abi_ActivateInstance(&ret));
-		return ret.as!(ActiveBasicDevice);
+		return cast(ActiveBasicDevice) ret;
 	}
 }
 
@@ -489,130 +489,130 @@ extern(Windows):
 	final HSTRING FriendlyName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_FriendlyName(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_FriendlyName(&_ret));
 		return _ret;
 	}
 	final void FriendlyName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).set_FriendlyName(value));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).set_FriendlyName(value));
 	}
 	final HSTRING ManufacturerName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_ManufacturerName(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_ManufacturerName(&_ret));
 		return _ret;
 	}
 	final HSTRING ManufacturerUrl()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_ManufacturerUrl(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_ManufacturerUrl(&_ret));
 		return _ret;
 	}
 	final HSTRING UniqueDeviceName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_UniqueDeviceName(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_UniqueDeviceName(&_ret));
 		return _ret;
 	}
 	final HSTRING ModelName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_ModelName(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_ModelName(&_ret));
 		return _ret;
 	}
 	final HSTRING ModelNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_ModelNumber(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_ModelNumber(&_ret));
 		return _ret;
 	}
 	final HSTRING ModelUrl()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_ModelUrl(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_ModelUrl(&_ret));
 		return _ret;
 	}
 	final HSTRING Description()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_Description(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_Description(&_ret));
 		return _ret;
 	}
 	final HSTRING SerialNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_SerialNumber(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_SerialNumber(&_ret));
 		return _ret;
 	}
 	final HSTRING PresentationUrl()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_PresentationUrl(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_PresentationUrl(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) RemoteStreamingUrls()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_RemoteStreamingUrls(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_RemoteStreamingUrls(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) PhysicalAddresses()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_PhysicalAddresses(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_PhysicalAddresses(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) IpAddresses()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_IpAddresses(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_IpAddresses(&_ret));
 		return _ret;
 	}
 	final bool CanWakeDevices()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_CanWakeDevices(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_CanWakeDevices(&_ret));
 		return _ret;
 	}
 	final bool DiscoveredOnCurrentNetwork()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_DiscoveredOnCurrentNetwork(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_DiscoveredOnCurrentNetwork(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Streaming.DeviceTypes Type()
 	{
 		Windows.Media.Streaming.DeviceTypes _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_Type(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_Type(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Media.Streaming.IDeviceIcon) Icons()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Media.Streaming.IDeviceIcon) _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_Icons(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_Icons(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Streaming.ConnectionStatus ConnectionStatus()
 	{
 		Windows.Media.Streaming.ConnectionStatus _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_ConnectionStatus(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_ConnectionStatus(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnConnectionStatusChanged(void delegate(Windows.Media.Streaming.IBasicDevice, Windows.Media.Streaming.ConnectionStatus) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).add_ConnectionStatusChanged(event!(Windows.Media.Streaming.ConnectionStatusHandler, Windows.Media.Streaming.IBasicDevice, Windows.Media.Streaming.ConnectionStatus)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).add_ConnectionStatusChanged(event!(Windows.Media.Streaming.ConnectionStatusHandler, Windows.Media.Streaming.IBasicDevice, Windows.Media.Streaming.ConnectionStatus)(fn), &tok));
 		return tok;
 	}
 	final void removeConnectionStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).remove_ConnectionStatusChanged(token));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).remove_ConnectionStatusChanged(token));
 	}
 	static BasicDevice New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(BasicDevice).abi_ActivateInstance(&ret));
-		return ret.as!(BasicDevice);
+		return cast(BasicDevice) ret;
 	}
 }
 
@@ -621,18 +621,18 @@ interface CreateMediaRendererOperation : Windows.Foundation.IAsyncOperation!(Win
 extern(Windows):
 	final void Completed(Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Media.Streaming.MediaRenderer) handler)
 	{
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.MediaRenderer)).set_Completed(handler));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.MediaRenderer))this).set_Completed(handler));
 	}
 	final Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Media.Streaming.MediaRenderer) Completed()
 	{
 		Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Media.Streaming.MediaRenderer) _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.MediaRenderer)).get_Completed(&_ret));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.MediaRenderer))this).get_Completed(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Streaming.MediaRenderer Results()
 	{
 		Windows.Media.Streaming.MediaRenderer _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.MediaRenderer)).get_Results(&_ret));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.MediaRenderer))this).get_Results(&_ret));
 		return _ret;
 	}
 }
@@ -643,42 +643,42 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVector!(Windows.Media.Streaming.IBasicDevice) CachedDevices()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Media.Streaming.IBasicDevice) _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IDeviceController).get_CachedDevices(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IDeviceController)this.asInterface(uuid("4feeb26d-50a7-402b-896a-be95064d6bff"))).get_CachedDevices(&_ret));
 		return _ret;
 	}
 	final void AddDevice(HSTRING uniqueDeviceName)
 	{
-		Debug.OK(this.as!(Windows.Media.Streaming.IDeviceController).abi_AddDevice(uniqueDeviceName));
+		Debug.OK((cast(Windows.Media.Streaming.IDeviceController)this.asInterface(uuid("4feeb26d-50a7-402b-896a-be95064d6bff"))).abi_AddDevice(uniqueDeviceName));
 	}
 	final void RemoveDevice(Windows.Media.Streaming.IBasicDevice device)
 	{
-		Debug.OK(this.as!(Windows.Media.Streaming.IDeviceController).abi_RemoveDevice(device));
+		Debug.OK((cast(Windows.Media.Streaming.IDeviceController)this.asInterface(uuid("4feeb26d-50a7-402b-896a-be95064d6bff"))).abi_RemoveDevice(device));
 	}
 	final EventRegistrationToken OnDeviceArrival(void delegate(Windows.Media.Streaming.IDeviceController, HSTRING, Windows.Media.Streaming.IBasicDevice) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Streaming.IDeviceController).add_DeviceArrival(event!(Windows.Media.Streaming.DeviceControllerFinderHandler, Windows.Media.Streaming.IDeviceController, HSTRING, Windows.Media.Streaming.IBasicDevice)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Streaming.IDeviceController)this.asInterface(uuid("4feeb26d-50a7-402b-896a-be95064d6bff"))).add_DeviceArrival(event!(Windows.Media.Streaming.DeviceControllerFinderHandler, Windows.Media.Streaming.IDeviceController, HSTRING, Windows.Media.Streaming.IBasicDevice)(fn), &tok));
 		return tok;
 	}
 	final void removeDeviceArrival(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Streaming.IDeviceController).remove_DeviceArrival(token));
+		Debug.OK((cast(Windows.Media.Streaming.IDeviceController)this.asInterface(uuid("4feeb26d-50a7-402b-896a-be95064d6bff"))).remove_DeviceArrival(token));
 	}
 	final EventRegistrationToken OnDeviceDeparture(void delegate(Windows.Media.Streaming.IDeviceController, HSTRING, Windows.Media.Streaming.IBasicDevice) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Streaming.IDeviceController).add_DeviceDeparture(event!(Windows.Media.Streaming.DeviceControllerFinderHandler, Windows.Media.Streaming.IDeviceController, HSTRING, Windows.Media.Streaming.IBasicDevice)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Streaming.IDeviceController)this.asInterface(uuid("4feeb26d-50a7-402b-896a-be95064d6bff"))).add_DeviceDeparture(event!(Windows.Media.Streaming.DeviceControllerFinderHandler, Windows.Media.Streaming.IDeviceController, HSTRING, Windows.Media.Streaming.IBasicDevice)(fn), &tok));
 		return tok;
 	}
 	final void removeDeviceDeparture(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Streaming.IDeviceController).remove_DeviceDeparture(token));
+		Debug.OK((cast(Windows.Media.Streaming.IDeviceController)this.asInterface(uuid("4feeb26d-50a7-402b-896a-be95064d6bff"))).remove_DeviceDeparture(token));
 	}
 	static DeviceController New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(DeviceController).abi_ActivateInstance(&ret));
-		return ret.as!(DeviceController);
+		return cast(DeviceController) ret;
 	}
 }
 
@@ -688,13 +688,13 @@ extern(Windows):
 	final Windows.Media.Streaming.ActiveBasicDevice Server()
 	{
 		Windows.Media.Streaming.ActiveBasicDevice _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IDevicePair).get_Server(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IDevicePair)this.asInterface(uuid("f1a423f1-b7b4-449c-a90d-aea8e17c5e5f"))).get_Server(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Streaming.ActiveBasicDevice Renderer()
 	{
 		Windows.Media.Streaming.ActiveBasicDevice _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IDevicePair).get_Renderer(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IDevicePair)this.asInterface(uuid("f1a423f1-b7b4-449c-a90d-aea8e17c5e5f"))).get_Renderer(&_ret));
 		return _ret;
 	}
 }
@@ -705,276 +705,276 @@ extern(Windows):
 	final bool IsAudioSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).get_IsAudioSupported(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).get_IsAudioSupported(&_ret));
 		return _ret;
 	}
 	final bool IsVideoSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).get_IsVideoSupported(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).get_IsVideoSupported(&_ret));
 		return _ret;
 	}
 	final bool IsImageSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).get_IsImageSupported(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).get_IsImageSupported(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Streaming.IMediaRendererActionInformation ActionInformation()
 	{
 		Windows.Media.Streaming.IMediaRendererActionInformation _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).get_ActionInformation(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).get_ActionInformation(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(UINT32) SetSourceFromUriAsync(HSTRING URI)
 	{
 		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).abi_SetSourceFromUriAsync(URI, &_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).abi_SetSourceFromUriAsync(URI, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(UINT32) SetSourceFromStreamAsync(IInspectable stream)
 	{
 		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).abi_SetSourceFromStreamAsync(stream, &_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).abi_SetSourceFromStreamAsync(stream, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(UINT32) SetSourceFromMediaSourceAsync(IInspectable mediaSource)
 	{
 		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).abi_SetSourceFromMediaSourceAsync(mediaSource, &_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).abi_SetSourceFromMediaSourceAsync(mediaSource, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(UINT32) SetNextSourceFromUriAsync(HSTRING URI)
 	{
 		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).abi_SetNextSourceFromUriAsync(URI, &_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).abi_SetNextSourceFromUriAsync(URI, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(UINT32) SetNextSourceFromStreamAsync(IInspectable stream)
 	{
 		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).abi_SetNextSourceFromStreamAsync(stream, &_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).abi_SetNextSourceFromStreamAsync(stream, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(UINT32) SetNextSourceFromMediaSourceAsync(IInspectable mediaSource)
 	{
 		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).abi_SetNextSourceFromMediaSourceAsync(mediaSource, &_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).abi_SetNextSourceFromMediaSourceAsync(mediaSource, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction PlayAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).abi_PlayAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).abi_PlayAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction PlayAtSpeedAsync(Windows.Media.Streaming.PlaySpeed playSpeed)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).abi_PlayAtSpeedAsync(playSpeed, &_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).abi_PlayAtSpeedAsync(playSpeed, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction StopAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).abi_StopAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).abi_StopAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction PauseAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).abi_PauseAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).abi_PauseAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) GetMuteAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).abi_GetMuteAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).abi_GetMuteAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction SetMuteAsync(bool mute)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).abi_SetMuteAsync(mute, &_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).abi_SetMuteAsync(mute, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(UINT32) GetVolumeAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).abi_GetVolumeAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).abi_GetVolumeAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction SetVolumeAsync(UINT32 volume)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).abi_SetVolumeAsync(volume, &_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).abi_SetVolumeAsync(volume, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction SeekAsync(Windows.Foundation.TimeSpan target)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).abi_SeekAsync(target, &_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).abi_SeekAsync(target, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.TransportInformation) GetTransportInformationAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.TransportInformation) _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).abi_GetTransportInformationAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).abi_GetTransportInformationAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.PositionInformation) GetPositionInformationAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.PositionInformation) _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).abi_GetPositionInformationAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).abi_GetPositionInformationAsync(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnTransportParametersUpdate(void delegate(Windows.Media.Streaming.IMediaRenderer, Windows.Media.Streaming.ITransportParameters) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).add_TransportParametersUpdate(event!(Windows.Media.Streaming.TransportParametersUpdateHandler, Windows.Media.Streaming.IMediaRenderer, Windows.Media.Streaming.ITransportParameters)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).add_TransportParametersUpdate(event!(Windows.Media.Streaming.TransportParametersUpdateHandler, Windows.Media.Streaming.IMediaRenderer, Windows.Media.Streaming.ITransportParameters)(fn), &tok));
 		return tok;
 	}
 	final void removeTransportParametersUpdate(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).remove_TransportParametersUpdate(token));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).remove_TransportParametersUpdate(token));
 	}
 	final EventRegistrationToken OnRenderingParametersUpdate(void delegate(Windows.Media.Streaming.IMediaRenderer, Windows.Media.Streaming.RenderingParameters) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).add_RenderingParametersUpdate(event!(Windows.Media.Streaming.RenderingParametersUpdateHandler, Windows.Media.Streaming.IMediaRenderer, Windows.Media.Streaming.RenderingParameters)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).add_RenderingParametersUpdate(event!(Windows.Media.Streaming.RenderingParametersUpdateHandler, Windows.Media.Streaming.IMediaRenderer, Windows.Media.Streaming.RenderingParameters)(fn), &tok));
 		return tok;
 	}
 	final void removeRenderingParametersUpdate(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).remove_RenderingParametersUpdate(token));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).remove_RenderingParametersUpdate(token));
 	}
 	final Windows.Foundation.IAsyncAction NextAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IMediaRenderer).abi_NextAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IMediaRenderer)this.asInterface(uuid("2c012ec3-d975-47fb-96ac-a6418b326d2b"))).abi_NextAsync(&_ret));
 		return _ret;
 	}
 	final HSTRING FriendlyName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_FriendlyName(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_FriendlyName(&_ret));
 		return _ret;
 	}
 	final void FriendlyName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).set_FriendlyName(value));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).set_FriendlyName(value));
 	}
 	final HSTRING ManufacturerName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_ManufacturerName(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_ManufacturerName(&_ret));
 		return _ret;
 	}
 	final HSTRING ManufacturerUrl()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_ManufacturerUrl(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_ManufacturerUrl(&_ret));
 		return _ret;
 	}
 	final HSTRING UniqueDeviceName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_UniqueDeviceName(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_UniqueDeviceName(&_ret));
 		return _ret;
 	}
 	final HSTRING ModelName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_ModelName(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_ModelName(&_ret));
 		return _ret;
 	}
 	final HSTRING ModelNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_ModelNumber(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_ModelNumber(&_ret));
 		return _ret;
 	}
 	final HSTRING ModelUrl()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_ModelUrl(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_ModelUrl(&_ret));
 		return _ret;
 	}
 	final HSTRING Description()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_Description(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_Description(&_ret));
 		return _ret;
 	}
 	final HSTRING SerialNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_SerialNumber(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_SerialNumber(&_ret));
 		return _ret;
 	}
 	final HSTRING PresentationUrl()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_PresentationUrl(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_PresentationUrl(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) RemoteStreamingUrls()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_RemoteStreamingUrls(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_RemoteStreamingUrls(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) PhysicalAddresses()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_PhysicalAddresses(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_PhysicalAddresses(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) IpAddresses()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_IpAddresses(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_IpAddresses(&_ret));
 		return _ret;
 	}
 	final bool CanWakeDevices()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_CanWakeDevices(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_CanWakeDevices(&_ret));
 		return _ret;
 	}
 	final bool DiscoveredOnCurrentNetwork()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_DiscoveredOnCurrentNetwork(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_DiscoveredOnCurrentNetwork(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Streaming.DeviceTypes Type()
 	{
 		Windows.Media.Streaming.DeviceTypes _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_Type(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_Type(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Media.Streaming.IDeviceIcon) Icons()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Media.Streaming.IDeviceIcon) _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_Icons(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_Icons(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Streaming.ConnectionStatus ConnectionStatus()
 	{
 		Windows.Media.Streaming.ConnectionStatus _ret;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).get_ConnectionStatus(&_ret));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).get_ConnectionStatus(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnConnectionStatusChanged(void delegate(Windows.Media.Streaming.IBasicDevice, Windows.Media.Streaming.ConnectionStatus) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).add_ConnectionStatusChanged(event!(Windows.Media.Streaming.ConnectionStatusHandler, Windows.Media.Streaming.IBasicDevice, Windows.Media.Streaming.ConnectionStatus)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).add_ConnectionStatusChanged(event!(Windows.Media.Streaming.ConnectionStatusHandler, Windows.Media.Streaming.IBasicDevice, Windows.Media.Streaming.ConnectionStatus)(fn), &tok));
 		return tok;
 	}
 	final void removeConnectionStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Streaming.IBasicDevice).remove_ConnectionStatusChanged(token));
+		Debug.OK((cast(Windows.Media.Streaming.IBasicDevice)this.asInterface(uuid("f4f26cbb-7962-48b7-80f7-c3a5d753bcb0"))).remove_ConnectionStatusChanged(token));
 	}
 
 	private static Windows.Media.Streaming.IMediaRendererFactory _staticInstance;
@@ -986,20 +986,20 @@ extern(Windows):
 	static Windows.Media.Streaming.CreateMediaRendererOperation CreateMediaRendererAsync(HSTRING deviceIdentifier)
 	{
 		Windows.Media.Streaming.CreateMediaRendererOperation _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Streaming.IMediaRendererFactory).abi_CreateMediaRendererAsync(deviceIdentifier, &_ret));
+		Debug.OK(staticInstance.abi_CreateMediaRendererAsync(deviceIdentifier, &_ret));
 		return _ret;
 	}
 	static Windows.Media.Streaming.CreateMediaRendererOperation CreateMediaRendererFromBasicDeviceAsync(Windows.Media.Streaming.IBasicDevice basicDevice)
 	{
 		Windows.Media.Streaming.CreateMediaRendererOperation _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Streaming.IMediaRendererFactory).abi_CreateMediaRendererFromBasicDeviceAsync(basicDevice, &_ret));
+		Debug.OK(staticInstance.abi_CreateMediaRendererFromBasicDeviceAsync(basicDevice, &_ret));
 		return _ret;
 	}
 	static MediaRenderer New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MediaRenderer).abi_ActivateInstance(&ret));
-		return ret.as!(MediaRenderer);
+		return cast(MediaRenderer) ret;
 	}
 }
 
@@ -1014,25 +1014,25 @@ interface StreamSelector
 	static Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) SelectBestStreamAsync(Windows.Storage.StorageFile storageFile, Windows.Foundation.Collections.IPropertySet selectorProperties)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Streaming.IStreamSelectorStatics).abi_SelectBestStreamAsync(storageFile, selectorProperties, &_ret));
+		Debug.OK(staticInstance.abi_SelectBestStreamAsync(storageFile, selectorProperties, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Collections.IPropertySet)) GetStreamPropertiesAsync(Windows.Storage.StorageFile storageFile, Windows.Foundation.Collections.IPropertySet selectorProperties)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Collections.IPropertySet)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Streaming.IStreamSelectorStatics).abi_GetStreamPropertiesAsync(storageFile, selectorProperties, &_ret));
+		Debug.OK(staticInstance.abi_GetStreamPropertiesAsync(storageFile, selectorProperties, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) SelectBestStreamFromStreamAsync(Windows.Storage.Streams.IRandomAccessStream stream, Windows.Foundation.Collections.IPropertySet selectorProperties)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Streaming.IStreamSelectorStatics).abi_SelectBestStreamFromStreamAsync(stream, selectorProperties, &_ret));
+		Debug.OK(staticInstance.abi_SelectBestStreamFromStreamAsync(stream, selectorProperties, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Collections.IPropertySet)) GetStreamPropertiesFromStreamAsync(Windows.Storage.Streams.IRandomAccessStream stream, Windows.Foundation.Collections.IPropertySet selectorProperties)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Collections.IPropertySet)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Streaming.IStreamSelectorStatics).abi_GetStreamPropertiesFromStreamAsync(stream, selectorProperties, &_ret));
+		Debug.OK(staticInstance.abi_GetStreamPropertiesFromStreamAsync(stream, selectorProperties, &_ret));
 		return _ret;
 	}
 }

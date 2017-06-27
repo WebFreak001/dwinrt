@@ -49,41 +49,41 @@ extern(Windows):
 	final Windows.Services.Maps.OfflineMaps.OfflineMapPackageStatus Status()
 	{
 		Windows.Services.Maps.OfflineMaps.OfflineMapPackageStatus _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage).get_Status(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage)this.asInterface(uuid("a797673b-a5b5-4144-b525-e68c8862664b"))).get_Status(&_ret));
 		return _ret;
 	}
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage)this.asInterface(uuid("a797673b-a5b5-4144-b525-e68c8862664b"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final HSTRING EnclosingRegionName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage).get_EnclosingRegionName(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage)this.asInterface(uuid("a797673b-a5b5-4144-b525-e68c8862664b"))).get_EnclosingRegionName(&_ret));
 		return _ret;
 	}
 	final ulong EstimatedSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage).get_EstimatedSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage)this.asInterface(uuid("a797673b-a5b5-4144-b525-e68c8862664b"))).get_EstimatedSizeInBytes(&_ret));
 		return _ret;
 	}
 	final void removeStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage).remove_StatusChanged(token));
+		Debug.OK((cast(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage)this.asInterface(uuid("a797673b-a5b5-4144-b525-e68c8862664b"))).remove_StatusChanged(token));
 	}
 	final EventRegistrationToken OnStatusChanged(void delegate(Windows.Services.Maps.OfflineMaps.OfflineMapPackage, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage).add_StatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.OfflineMaps.OfflineMapPackage, IInspectable), Windows.Services.Maps.OfflineMaps.OfflineMapPackage, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage)this.asInterface(uuid("a797673b-a5b5-4144-b525-e68c8862664b"))).add_StatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.OfflineMaps.OfflineMapPackage, IInspectable), Windows.Services.Maps.OfflineMaps.OfflineMapPackage, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageStartDownloadResult) RequestStartDownloadAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageStartDownloadResult) _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage).abi_RequestStartDownloadAsync(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.OfflineMaps.IOfflineMapPackage)this.asInterface(uuid("a797673b-a5b5-4144-b525-e68c8862664b"))).abi_RequestStartDownloadAsync(&_ret));
 		return _ret;
 	}
 
@@ -96,19 +96,19 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageQueryResult) FindPackagesAsync(Windows.Devices.Geolocation.Geopoint queryPoint)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageQueryResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackageStatics).abi_FindPackagesAsync(queryPoint, &_ret));
+		Debug.OK(staticInstance.abi_FindPackagesAsync(queryPoint, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageQueryResult) FindPackagesInBoundingBoxAsync(Windows.Devices.Geolocation.GeoboundingBox queryBoundingBox)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageQueryResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackageStatics).abi_FindPackagesInBoundingBoxAsync(queryBoundingBox, &_ret));
+		Debug.OK(staticInstance.abi_FindPackagesInBoundingBoxAsync(queryBoundingBox, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageQueryResult) FindPackagesInGeocircleAsync(Windows.Devices.Geolocation.Geocircle queryCircle)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.OfflineMaps.OfflineMapPackageQueryResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackageStatics).abi_FindPackagesInGeocircleAsync(queryCircle, &_ret));
+		Debug.OK(staticInstance.abi_FindPackagesInGeocircleAsync(queryCircle, &_ret));
 		return _ret;
 	}
 }
@@ -119,13 +119,13 @@ extern(Windows):
 	final Windows.Services.Maps.OfflineMaps.OfflineMapPackageQueryStatus Status()
 	{
 		Windows.Services.Maps.OfflineMaps.OfflineMapPackageQueryStatus _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackageQueryResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.OfflineMaps.IOfflineMapPackageQueryResult)this.asInterface(uuid("55585411-39e1-4e41-a4e1-5f4872bee199"))).get_Status(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.OfflineMaps.OfflineMapPackage) Packages()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.OfflineMaps.OfflineMapPackage) _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackageQueryResult).get_Packages(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.OfflineMaps.IOfflineMapPackageQueryResult)this.asInterface(uuid("55585411-39e1-4e41-a4e1-5f4872bee199"))).get_Packages(&_ret));
 		return _ret;
 	}
 }
@@ -136,7 +136,7 @@ extern(Windows):
 	final Windows.Services.Maps.OfflineMaps.OfflineMapPackageStartDownloadStatus Status()
 	{
 		Windows.Services.Maps.OfflineMaps.OfflineMapPackageStartDownloadStatus _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.OfflineMaps.IOfflineMapPackageStartDownloadResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.OfflineMaps.IOfflineMapPackageStartDownloadResult)this.asInterface(uuid("d965b918-d4d6-4afe-9378-3ec71ef11c3d"))).get_Status(&_ret));
 		return _ret;
 	}
 }

@@ -21,7 +21,7 @@ interface InteractiveSession
 	static bool IsRemote()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.System.RemoteDesktop.IInteractiveSessionStatics).get_IsRemote(&_ret));
+		Debug.OK(staticInstance.get_IsRemote(&_ret));
 		return _ret;
 	}
 }

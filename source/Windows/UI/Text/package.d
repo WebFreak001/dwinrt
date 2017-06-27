@@ -290,67 +290,67 @@ interface FontWeights : Windows.UI.Text.IFontWeights
 	static Windows.UI.Text.FontWeight Black()
 	{
 		Windows.UI.Text.FontWeight _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Text.IFontWeightsStatics).get_Black(&_ret));
+		Debug.OK(staticInstance.get_Black(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Text.FontWeight Bold()
 	{
 		Windows.UI.Text.FontWeight _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Text.IFontWeightsStatics).get_Bold(&_ret));
+		Debug.OK(staticInstance.get_Bold(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Text.FontWeight ExtraBlack()
 	{
 		Windows.UI.Text.FontWeight _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Text.IFontWeightsStatics).get_ExtraBlack(&_ret));
+		Debug.OK(staticInstance.get_ExtraBlack(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Text.FontWeight ExtraBold()
 	{
 		Windows.UI.Text.FontWeight _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Text.IFontWeightsStatics).get_ExtraBold(&_ret));
+		Debug.OK(staticInstance.get_ExtraBold(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Text.FontWeight ExtraLight()
 	{
 		Windows.UI.Text.FontWeight _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Text.IFontWeightsStatics).get_ExtraLight(&_ret));
+		Debug.OK(staticInstance.get_ExtraLight(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Text.FontWeight Light()
 	{
 		Windows.UI.Text.FontWeight _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Text.IFontWeightsStatics).get_Light(&_ret));
+		Debug.OK(staticInstance.get_Light(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Text.FontWeight Medium()
 	{
 		Windows.UI.Text.FontWeight _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Text.IFontWeightsStatics).get_Medium(&_ret));
+		Debug.OK(staticInstance.get_Medium(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Text.FontWeight Normal()
 	{
 		Windows.UI.Text.FontWeight _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Text.IFontWeightsStatics).get_Normal(&_ret));
+		Debug.OK(staticInstance.get_Normal(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Text.FontWeight SemiBold()
 	{
 		Windows.UI.Text.FontWeight _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Text.IFontWeightsStatics).get_SemiBold(&_ret));
+		Debug.OK(staticInstance.get_SemiBold(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Text.FontWeight SemiLight()
 	{
 		Windows.UI.Text.FontWeight _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Text.IFontWeightsStatics).get_SemiLight(&_ret));
+		Debug.OK(staticInstance.get_SemiLight(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Text.FontWeight Thin()
 	{
 		Windows.UI.Text.FontWeight _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Text.IFontWeightsStatics).get_Thin(&_ret));
+		Debug.OK(staticInstance.get_Thin(&_ret));
 		return _ret;
 	}
 }
@@ -361,158 +361,158 @@ extern(Windows):
 	final Windows.UI.Text.CaretType CaretType()
 	{
 		Windows.UI.Text.CaretType _ret;
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).get_CaretType(&_ret));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).get_CaretType(&_ret));
 		return _ret;
 	}
 	final void CaretType(Windows.UI.Text.CaretType value)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).set_CaretType(value));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).set_CaretType(value));
 	}
 	final float DefaultTabStop()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).get_DefaultTabStop(&_ret));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).get_DefaultTabStop(&_ret));
 		return _ret;
 	}
 	final void DefaultTabStop(float value)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).set_DefaultTabStop(value));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).set_DefaultTabStop(value));
 	}
 	final Windows.UI.Text.ITextSelection Selection()
 	{
 		Windows.UI.Text.ITextSelection _ret;
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).get_Selection(&_ret));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).get_Selection(&_ret));
 		return _ret;
 	}
 	final UINT32 UndoLimit()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).get_UndoLimit(&_ret));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).get_UndoLimit(&_ret));
 		return _ret;
 	}
 	final void UndoLimit(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).set_UndoLimit(value));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).set_UndoLimit(value));
 	}
 	final bool CanCopy()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_CanCopy(&_ret));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).abi_CanCopy(&_ret));
 		return _ret;
 	}
 	final bool CanPaste()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_CanPaste(&_ret));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).abi_CanPaste(&_ret));
 		return _ret;
 	}
 	final bool CanRedo()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_CanRedo(&_ret));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).abi_CanRedo(&_ret));
 		return _ret;
 	}
 	final bool CanUndo()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_CanUndo(&_ret));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).abi_CanUndo(&_ret));
 		return _ret;
 	}
 	final INT32 ApplyDisplayUpdates()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_ApplyDisplayUpdates(&_ret));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).abi_ApplyDisplayUpdates(&_ret));
 		return _ret;
 	}
 	final INT32 BatchDisplayUpdates()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_BatchDisplayUpdates(&_ret));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).abi_BatchDisplayUpdates(&_ret));
 		return _ret;
 	}
 	final void BeginUndoGroup()
 	{
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_BeginUndoGroup());
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).abi_BeginUndoGroup());
 	}
 	final void EndUndoGroup()
 	{
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_EndUndoGroup());
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).abi_EndUndoGroup());
 	}
 	final Windows.UI.Text.ITextCharacterFormat GetDefaultCharacterFormat()
 	{
 		Windows.UI.Text.ITextCharacterFormat _ret;
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_GetDefaultCharacterFormat(&_ret));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).abi_GetDefaultCharacterFormat(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Text.ITextParagraphFormat GetDefaultParagraphFormat()
 	{
 		Windows.UI.Text.ITextParagraphFormat _ret;
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_GetDefaultParagraphFormat(&_ret));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).abi_GetDefaultParagraphFormat(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Text.ITextRange GetRange(INT32 startPosition, INT32 endPosition)
 	{
 		Windows.UI.Text.ITextRange _ret;
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_GetRange(startPosition, endPosition, &_ret));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).abi_GetRange(startPosition, endPosition, &_ret));
 		return _ret;
 	}
 	final Windows.UI.Text.ITextRange GetRangeFromPoint(Windows.Foundation.Point point, Windows.UI.Text.PointOptions options)
 	{
 		Windows.UI.Text.ITextRange _ret;
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_GetRangeFromPoint(point, options, &_ret));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).abi_GetRangeFromPoint(point, options, &_ret));
 		return _ret;
 	}
 	final void GetText(Windows.UI.Text.TextGetOptions options, HSTRING* out_value)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_GetText(options, out_value));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).abi_GetText(options, out_value));
 	}
 	final void LoadFromStream(Windows.UI.Text.TextSetOptions options, Windows.Storage.Streams.IRandomAccessStream value)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_LoadFromStream(options, value));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).abi_LoadFromStream(options, value));
 	}
 	final void Redo()
 	{
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_Redo());
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).abi_Redo());
 	}
 	final void SaveToStream(Windows.UI.Text.TextGetOptions options, Windows.Storage.Streams.IRandomAccessStream value)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_SaveToStream(options, value));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).abi_SaveToStream(options, value));
 	}
 	final void SetDefaultCharacterFormat(Windows.UI.Text.ITextCharacterFormat value)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_SetDefaultCharacterFormat(value));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).abi_SetDefaultCharacterFormat(value));
 	}
 	final void SetDefaultParagraphFormat(Windows.UI.Text.ITextParagraphFormat value)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_SetDefaultParagraphFormat(value));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).abi_SetDefaultParagraphFormat(value));
 	}
 	final void SetText(Windows.UI.Text.TextSetOptions options, HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_SetText(options, value));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).abi_SetText(options, value));
 	}
 	final void Undo()
 	{
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument).abi_Undo());
+		Debug.OK((cast(Windows.UI.Text.ITextDocument)this.asInterface(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4"))).abi_Undo());
 	}
 	final bool AlignmentIncludesTrailingWhitespace()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument2).get_AlignmentIncludesTrailingWhitespace(&_ret));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument2)this.asInterface(uuid("f2311112-8c89-49c9-9118-f057cbb814ee"))).get_AlignmentIncludesTrailingWhitespace(&_ret));
 		return _ret;
 	}
 	final void AlignmentIncludesTrailingWhitespace(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument2).set_AlignmentIncludesTrailingWhitespace(value));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument2)this.asInterface(uuid("f2311112-8c89-49c9-9118-f057cbb814ee"))).set_AlignmentIncludesTrailingWhitespace(value));
 	}
 	final bool IgnoreTrailingCharacterSpacing()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument2).get_IgnoreTrailingCharacterSpacing(&_ret));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument2)this.asInterface(uuid("f2311112-8c89-49c9-9118-f057cbb814ee"))).get_IgnoreTrailingCharacterSpacing(&_ret));
 		return _ret;
 	}
 	final void IgnoreTrailingCharacterSpacing(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.ITextDocument2).set_IgnoreTrailingCharacterSpacing(value));
+		Debug.OK((cast(Windows.UI.Text.ITextDocument2)this.asInterface(uuid("f2311112-8c89-49c9-9118-f057cbb814ee"))).set_IgnoreTrailingCharacterSpacing(value));
 	}
 }
 
@@ -527,49 +527,49 @@ interface TextConstants
 	static Windows.UI.Color AutoColor()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Text.ITextConstantsStatics).get_AutoColor(&_ret));
+		Debug.OK(staticInstance.get_AutoColor(&_ret));
 		return _ret;
 	}
 	static INT32 MinUnitCount()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Text.ITextConstantsStatics).get_MinUnitCount(&_ret));
+		Debug.OK(staticInstance.get_MinUnitCount(&_ret));
 		return _ret;
 	}
 	static INT32 MaxUnitCount()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Text.ITextConstantsStatics).get_MaxUnitCount(&_ret));
+		Debug.OK(staticInstance.get_MaxUnitCount(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Color UndefinedColor()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Text.ITextConstantsStatics).get_UndefinedColor(&_ret));
+		Debug.OK(staticInstance.get_UndefinedColor(&_ret));
 		return _ret;
 	}
 	static float UndefinedFloatValue()
 	{
 		float _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Text.ITextConstantsStatics).get_UndefinedFloatValue(&_ret));
+		Debug.OK(staticInstance.get_UndefinedFloatValue(&_ret));
 		return _ret;
 	}
 	static INT32 UndefinedInt32Value()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Text.ITextConstantsStatics).get_UndefinedInt32Value(&_ret));
+		Debug.OK(staticInstance.get_UndefinedInt32Value(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Text.FontStretch UndefinedFontStretch()
 	{
 		Windows.UI.Text.FontStretch _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Text.ITextConstantsStatics).get_UndefinedFontStretch(&_ret));
+		Debug.OK(staticInstance.get_UndefinedFontStretch(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Text.FontStyle UndefinedFontStyle()
 	{
 		Windows.UI.Text.FontStyle _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Text.ITextConstantsStatics).get_UndefinedFontStyle(&_ret));
+		Debug.OK(staticInstance.get_UndefinedFontStyle(&_ret));
 		return _ret;
 	}
 }

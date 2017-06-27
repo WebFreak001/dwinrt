@@ -76,77 +76,77 @@ extern(Windows):
 	final HSTRING Title()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).get_Title(&_ret));
+		Debug.OK((cast(Windows.UI.Popups.IMessageDialog)this.asInterface(uuid("33f59b01-5325-43ab-9ab3-bdae440e4121"))).get_Title(&_ret));
 		return _ret;
 	}
 	final void Title(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).set_Title(value));
+		Debug.OK((cast(Windows.UI.Popups.IMessageDialog)this.asInterface(uuid("33f59b01-5325-43ab-9ab3-bdae440e4121"))).set_Title(value));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.UI.Popups.IUICommand) Commands()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.Popups.IUICommand) _ret;
-		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).get_Commands(&_ret));
+		Debug.OK((cast(Windows.UI.Popups.IMessageDialog)this.asInterface(uuid("33f59b01-5325-43ab-9ab3-bdae440e4121"))).get_Commands(&_ret));
 		return _ret;
 	}
 	final UINT32 DefaultCommandIndex()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).get_DefaultCommandIndex(&_ret));
+		Debug.OK((cast(Windows.UI.Popups.IMessageDialog)this.asInterface(uuid("33f59b01-5325-43ab-9ab3-bdae440e4121"))).get_DefaultCommandIndex(&_ret));
 		return _ret;
 	}
 	final void DefaultCommandIndex(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).set_DefaultCommandIndex(value));
+		Debug.OK((cast(Windows.UI.Popups.IMessageDialog)this.asInterface(uuid("33f59b01-5325-43ab-9ab3-bdae440e4121"))).set_DefaultCommandIndex(value));
 	}
 	final UINT32 CancelCommandIndex()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).get_CancelCommandIndex(&_ret));
+		Debug.OK((cast(Windows.UI.Popups.IMessageDialog)this.asInterface(uuid("33f59b01-5325-43ab-9ab3-bdae440e4121"))).get_CancelCommandIndex(&_ret));
 		return _ret;
 	}
 	final void CancelCommandIndex(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).set_CancelCommandIndex(value));
+		Debug.OK((cast(Windows.UI.Popups.IMessageDialog)this.asInterface(uuid("33f59b01-5325-43ab-9ab3-bdae440e4121"))).set_CancelCommandIndex(value));
 	}
 	final HSTRING Content()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).get_Content(&_ret));
+		Debug.OK((cast(Windows.UI.Popups.IMessageDialog)this.asInterface(uuid("33f59b01-5325-43ab-9ab3-bdae440e4121"))).get_Content(&_ret));
 		return _ret;
 	}
 	final void Content(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).set_Content(value));
+		Debug.OK((cast(Windows.UI.Popups.IMessageDialog)this.asInterface(uuid("33f59b01-5325-43ab-9ab3-bdae440e4121"))).set_Content(value));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) ShowAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) _ret;
-		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).abi_ShowAsync(&_ret));
+		Debug.OK((cast(Windows.UI.Popups.IMessageDialog)this.asInterface(uuid("33f59b01-5325-43ab-9ab3-bdae440e4121"))).abi_ShowAsync(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Popups.MessageDialogOptions Options()
 	{
 		Windows.UI.Popups.MessageDialogOptions _ret;
-		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).get_Options(&_ret));
+		Debug.OK((cast(Windows.UI.Popups.IMessageDialog)this.asInterface(uuid("33f59b01-5325-43ab-9ab3-bdae440e4121"))).get_Options(&_ret));
 		return _ret;
 	}
 	final void Options(Windows.UI.Popups.MessageDialogOptions value)
 	{
-		Debug.OK(this.as!(Windows.UI.Popups.IMessageDialog).set_Options(value));
+		Debug.OK((cast(Windows.UI.Popups.IMessageDialog)this.asInterface(uuid("33f59b01-5325-43ab-9ab3-bdae440e4121"))).set_Options(value));
 	}
 	static Windows.UI.Popups.MessageDialog New(HSTRING content)
 	{
 		auto factory = factory!(Windows.UI.Popups.IMessageDialogFactory);
 		Windows.UI.Popups.MessageDialog _ret;
-		Debug.OK(factory.as!(Windows.UI.Popups.IMessageDialogFactory).abi_Create(content, &_ret));
+		Debug.OK((cast(Windows.UI.Popups.IMessageDialogFactory)factory.asInterface(uuid("2d161777-a66f-4ea5-bb87-793ffa4941f2"))).abi_Create(content, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Popups.MessageDialog New(HSTRING content, HSTRING title)
 	{
 		auto factory = factory!(Windows.UI.Popups.IMessageDialogFactory);
 		Windows.UI.Popups.MessageDialog _ret;
-		Debug.OK(factory.as!(Windows.UI.Popups.IMessageDialogFactory).abi_CreateWithTitle(content, title, &_ret));
+		Debug.OK((cast(Windows.UI.Popups.IMessageDialogFactory)factory.asInterface(uuid("2d161777-a66f-4ea5-bb87-793ffa4941f2"))).abi_CreateWithTitle(content, title, &_ret));
 		return _ret;
 	}
 }
@@ -157,32 +157,32 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVector!(Windows.UI.Popups.IUICommand) Commands()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.Popups.IUICommand) _ret;
-		Debug.OK(this.as!(Windows.UI.Popups.IPopupMenu).get_Commands(&_ret));
+		Debug.OK((cast(Windows.UI.Popups.IPopupMenu)this.asInterface(uuid("4e9bc6dc-880d-47fc-a0a1-72b639e62559"))).get_Commands(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) ShowAsync(Windows.Foundation.Point invocationPoint)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) _ret;
-		Debug.OK(this.as!(Windows.UI.Popups.IPopupMenu).abi_ShowAsync(invocationPoint, &_ret));
+		Debug.OK((cast(Windows.UI.Popups.IPopupMenu)this.asInterface(uuid("4e9bc6dc-880d-47fc-a0a1-72b639e62559"))).abi_ShowAsync(invocationPoint, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) ShowAsyncWithRect(Windows.Foundation.Rect selection)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) _ret;
-		Debug.OK(this.as!(Windows.UI.Popups.IPopupMenu).abi_ShowAsyncWithRect(selection, &_ret));
+		Debug.OK((cast(Windows.UI.Popups.IPopupMenu)this.asInterface(uuid("4e9bc6dc-880d-47fc-a0a1-72b639e62559"))).abi_ShowAsyncWithRect(selection, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) ShowAsyncWithRectAndPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) _ret;
-		Debug.OK(this.as!(Windows.UI.Popups.IPopupMenu).abi_ShowAsyncWithRectAndPlacement(selection, preferredPlacement, &_ret));
+		Debug.OK((cast(Windows.UI.Popups.IPopupMenu)this.asInterface(uuid("4e9bc6dc-880d-47fc-a0a1-72b639e62559"))).abi_ShowAsyncWithRectAndPlacement(selection, preferredPlacement, &_ret));
 		return _ret;
 	}
 	static PopupMenu New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PopupMenu).abi_ActivateInstance(&ret));
-		return ret.as!(PopupMenu);
+		return cast(PopupMenu) ret;
 	}
 }
 
@@ -192,58 +192,58 @@ extern(Windows):
 	final HSTRING Label()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).get_Label(&_ret));
+		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).get_Label(&_ret));
 		return _ret;
 	}
 	final void Label(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).set_Label(value));
+		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).set_Label(value));
 	}
 	final Windows.UI.Popups.UICommandInvokedHandler Invoked()
 	{
 		Windows.UI.Popups.UICommandInvokedHandler _ret;
-		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).get_Invoked(&_ret));
+		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).get_Invoked(&_ret));
 		return _ret;
 	}
 	final void Invoked(Windows.UI.Popups.UICommandInvokedHandler value)
 	{
-		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).set_Invoked(value));
+		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).set_Invoked(value));
 	}
 	final IInspectable Id()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).get_Id(&_ret));
+		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).get_Id(&_ret));
 		return _ret;
 	}
 	final void Id(IInspectable value)
 	{
-		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).set_Id(value));
+		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).set_Id(value));
 	}
 	static UICommand New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(UICommand).abi_ActivateInstance(&ret));
-		return ret.as!(UICommand);
+		return cast(UICommand) ret;
 	}
 	static Windows.UI.Popups.UICommand New(HSTRING label)
 	{
 		auto factory = factory!(Windows.UI.Popups.IUICommandFactory);
 		Windows.UI.Popups.UICommand _ret;
-		Debug.OK(factory.as!(Windows.UI.Popups.IUICommandFactory).abi_Create(label, &_ret));
+		Debug.OK((cast(Windows.UI.Popups.IUICommandFactory)factory.asInterface(uuid("a21a8189-26b0-4676-ae94-54041bc125e8"))).abi_Create(label, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Popups.UICommand New(HSTRING label, Windows.UI.Popups.UICommandInvokedHandler action)
 	{
 		auto factory = factory!(Windows.UI.Popups.IUICommandFactory);
 		Windows.UI.Popups.UICommand _ret;
-		Debug.OK(factory.as!(Windows.UI.Popups.IUICommandFactory).abi_CreateWithHandler(label, action, &_ret));
+		Debug.OK((cast(Windows.UI.Popups.IUICommandFactory)factory.asInterface(uuid("a21a8189-26b0-4676-ae94-54041bc125e8"))).abi_CreateWithHandler(label, action, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Popups.UICommand New(HSTRING label, Windows.UI.Popups.UICommandInvokedHandler action, IInspectable commandId)
 	{
 		auto factory = factory!(Windows.UI.Popups.IUICommandFactory);
 		Windows.UI.Popups.UICommand _ret;
-		Debug.OK(factory.as!(Windows.UI.Popups.IUICommandFactory).abi_CreateWithHandlerAndId(label, action, commandId, &_ret));
+		Debug.OK((cast(Windows.UI.Popups.IUICommandFactory)factory.asInterface(uuid("a21a8189-26b0-4676-ae94-54041bc125e8"))).abi_CreateWithHandlerAndId(label, action, commandId, &_ret));
 		return _ret;
 	}
 }
@@ -254,38 +254,38 @@ extern(Windows):
 	final HSTRING Label()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).get_Label(&_ret));
+		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).get_Label(&_ret));
 		return _ret;
 	}
 	final void Label(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).set_Label(value));
+		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).set_Label(value));
 	}
 	final Windows.UI.Popups.UICommandInvokedHandler Invoked()
 	{
 		Windows.UI.Popups.UICommandInvokedHandler _ret;
-		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).get_Invoked(&_ret));
+		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).get_Invoked(&_ret));
 		return _ret;
 	}
 	final void Invoked(Windows.UI.Popups.UICommandInvokedHandler value)
 	{
-		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).set_Invoked(value));
+		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).set_Invoked(value));
 	}
 	final IInspectable Id()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).get_Id(&_ret));
+		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).get_Id(&_ret));
 		return _ret;
 	}
 	final void Id(IInspectable value)
 	{
-		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).set_Id(value));
+		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).set_Id(value));
 	}
 	static UICommandSeparator New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(UICommandSeparator).abi_ActivateInstance(&ret));
-		return ret.as!(UICommandSeparator);
+		return cast(UICommandSeparator) ret;
 	}
 }
 

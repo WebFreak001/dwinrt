@@ -764,28 +764,28 @@ interface KnownCameraIntrinsicsProperties
 	static HSTRING FocalLength()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownCameraIntrinsicsPropertiesStatics).get_FocalLength(&_ret));
+		Debug.OK(staticInstance.get_FocalLength(&_ret));
 		return _ret;
 	}
 	deprecated("KnownCameraIntrinsicsProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	static HSTRING PrincipalPoint()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownCameraIntrinsicsPropertiesStatics).get_PrincipalPoint(&_ret));
+		Debug.OK(staticInstance.get_PrincipalPoint(&_ret));
 		return _ret;
 	}
 	deprecated("KnownCameraIntrinsicsProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	static HSTRING RadialDistortion()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownCameraIntrinsicsPropertiesStatics).get_RadialDistortion(&_ret));
+		Debug.OK(staticInstance.get_RadialDistortion(&_ret));
 		return _ret;
 	}
 	deprecated("KnownCameraIntrinsicsProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	static HSTRING TangentialDistortion()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownCameraIntrinsicsPropertiesStatics).get_TangentialDistortion(&_ret));
+		Debug.OK(staticInstance.get_TangentialDistortion(&_ret));
 		return _ret;
 	}
 }
@@ -802,21 +802,21 @@ interface KnownPerceptionColorFrameSourceProperties
 	static HSTRING Exposure()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionColorFrameSourcePropertiesStatics).get_Exposure(&_ret));
+		Debug.OK(staticInstance.get_Exposure(&_ret));
 		return _ret;
 	}
 	deprecated("KnownPerceptionColorFrameSourceProperties may be unavailable after Windows Creator Update.	Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	static HSTRING AutoExposureEnabled()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionColorFrameSourcePropertiesStatics).get_AutoExposureEnabled(&_ret));
+		Debug.OK(staticInstance.get_AutoExposureEnabled(&_ret));
 		return _ret;
 	}
 	deprecated("KnownPerceptionColorFrameSourceProperties may be unavailable after Windows Creator Update.	Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	static HSTRING ExposureCompensation()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionColorFrameSourcePropertiesStatics).get_ExposureCompensation(&_ret));
+		Debug.OK(staticInstance.get_ExposureCompensation(&_ret));
 		return _ret;
 	}
 }
@@ -833,14 +833,14 @@ interface KnownPerceptionDepthFrameSourceProperties
 	static HSTRING MinDepth()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionDepthFrameSourcePropertiesStatics).get_MinDepth(&_ret));
+		Debug.OK(staticInstance.get_MinDepth(&_ret));
 		return _ret;
 	}
 	deprecated("KnownPerceptionDepthFrameSourceProperties may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.DepthMediaFrame instead.")
 	static HSTRING MaxDepth()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionDepthFrameSourcePropertiesStatics).get_MaxDepth(&_ret));
+		Debug.OK(staticInstance.get_MaxDepth(&_ret));
 		return _ret;
 	}
 }
@@ -857,35 +857,35 @@ interface KnownPerceptionFrameSourceProperties
 	static HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionFrameSourcePropertiesStatics).get_Id(&_ret));
+		Debug.OK(staticInstance.get_Id(&_ret));
 		return _ret;
 	}
 	deprecated("KnownPerceptionFrameSourceProperties may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation instead.")
 	static HSTRING PhysicalDeviceIds()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionFrameSourcePropertiesStatics).get_PhysicalDeviceIds(&_ret));
+		Debug.OK(staticInstance.get_PhysicalDeviceIds(&_ret));
 		return _ret;
 	}
 	deprecated("KnownPerceptionFrameSourceProperties may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation instead.")
 	static HSTRING FrameKind()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionFrameSourcePropertiesStatics).get_FrameKind(&_ret));
+		Debug.OK(staticInstance.get_FrameKind(&_ret));
 		return _ret;
 	}
 	deprecated("KnownPerceptionFrameSourceProperties may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation instead.")
 	static HSTRING DeviceModelVersion()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionFrameSourcePropertiesStatics).get_DeviceModelVersion(&_ret));
+		Debug.OK(staticInstance.get_DeviceModelVersion(&_ret));
 		return _ret;
 	}
 	deprecated("KnownPerceptionFrameSourceProperties may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation instead.")
 	static HSTRING EnclosureLocation()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionFrameSourcePropertiesStatics).get_EnclosureLocation(&_ret));
+		Debug.OK(staticInstance.get_EnclosureLocation(&_ret));
 		return _ret;
 	}
 }
@@ -902,49 +902,49 @@ interface KnownPerceptionInfraredFrameSourceProperties
 	static HSTRING Exposure()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionInfraredFrameSourcePropertiesStatics).get_Exposure(&_ret));
+		Debug.OK(staticInstance.get_Exposure(&_ret));
 		return _ret;
 	}
 	deprecated("KnownPerceptionInfraredFrameSourceProperties.AutoExposureEnabled may be unavailable after Windows Creator Update.  Use Windows.Media.Devices.ExposureControl.Auto instead.")
 	static HSTRING AutoExposureEnabled()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionInfraredFrameSourcePropertiesStatics).get_AutoExposureEnabled(&_ret));
+		Debug.OK(staticInstance.get_AutoExposureEnabled(&_ret));
 		return _ret;
 	}
 	deprecated("KnownPerceptionInfraredFrameSourceProperties.ExposureCompensation may be unavailable after Windows Creator Update.	Use Windows.Media.Devices.ExposureCompensationControl instead.")
 	static HSTRING ExposureCompensation()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionInfraredFrameSourcePropertiesStatics).get_ExposureCompensation(&_ret));
+		Debug.OK(staticInstance.get_ExposureCompensation(&_ret));
 		return _ret;
 	}
 	deprecated("KnownPerceptionInfraredFrameSourceProperties.ActiveIlluminationEnabled may be unavailable after Windows Creator Update.	 Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	static HSTRING ActiveIlluminationEnabled()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionInfraredFrameSourcePropertiesStatics).get_ActiveIlluminationEnabled(&_ret));
+		Debug.OK(staticInstance.get_ActiveIlluminationEnabled(&_ret));
 		return _ret;
 	}
 	deprecated("KnownPerceptionInfraredFrameSourceProperties.AmbientSubtractionEnabled may be unavailable after Windows Creator Update.	 Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	static HSTRING AmbientSubtractionEnabled()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionInfraredFrameSourcePropertiesStatics).get_AmbientSubtractionEnabled(&_ret));
+		Debug.OK(staticInstance.get_AmbientSubtractionEnabled(&_ret));
 		return _ret;
 	}
 	deprecated("KnownPerceptionInfraredFrameSourceProperties.StructureLightPatternEnabled may be unavailable after Windows Creator Update.	Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	static HSTRING StructureLightPatternEnabled()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionInfraredFrameSourcePropertiesStatics).get_StructureLightPatternEnabled(&_ret));
+		Debug.OK(staticInstance.get_StructureLightPatternEnabled(&_ret));
 		return _ret;
 	}
 	deprecated("KnownPerceptionInfraredFrameSourceProperties.InterleavedIlluminationEnabled may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	static HSTRING InterleavedIlluminationEnabled()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionInfraredFrameSourcePropertiesStatics).get_InterleavedIlluminationEnabled(&_ret));
+		Debug.OK(staticInstance.get_InterleavedIlluminationEnabled(&_ret));
 		return _ret;
 	}
 }
@@ -961,35 +961,35 @@ interface KnownPerceptionVideoFrameSourceProperties
 	static HSTRING VideoProfile()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionVideoFrameSourcePropertiesStatics).get_VideoProfile(&_ret));
+		Debug.OK(staticInstance.get_VideoProfile(&_ret));
 		return _ret;
 	}
 	deprecated("KnownPerceptionVideoFrameSourceProperties may be unavailable after Windows Creator Update.	Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	static HSTRING SupportedVideoProfiles()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionVideoFrameSourcePropertiesStatics).get_SupportedVideoProfiles(&_ret));
+		Debug.OK(staticInstance.get_SupportedVideoProfiles(&_ret));
 		return _ret;
 	}
 	deprecated("KnownPerceptionVideoFrameSourceProperties may be unavailable after Windows Creator Update.	Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	static HSTRING AvailableVideoProfiles()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionVideoFrameSourcePropertiesStatics).get_AvailableVideoProfiles(&_ret));
+		Debug.OK(staticInstance.get_AvailableVideoProfiles(&_ret));
 		return _ret;
 	}
 	deprecated("KnownPerceptionVideoFrameSourceProperties may be unavailable after Windows Creator Update.	Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	static HSTRING IsMirrored()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionVideoFrameSourcePropertiesStatics).get_IsMirrored(&_ret));
+		Debug.OK(staticInstance.get_IsMirrored(&_ret));
 		return _ret;
 	}
 	deprecated("KnownPerceptionVideoFrameSourceProperties may be unavailable after Windows Creator Update.	Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	static HSTRING CameraIntrinsics()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionVideoFrameSourcePropertiesStatics).get_CameraIntrinsics(&_ret));
+		Debug.OK(staticInstance.get_CameraIntrinsics(&_ret));
 		return _ret;
 	}
 }
@@ -1006,35 +1006,35 @@ interface KnownPerceptionVideoProfileProperties
 	static HSTRING BitmapPixelFormat()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionVideoProfilePropertiesStatics).get_BitmapPixelFormat(&_ret));
+		Debug.OK(staticInstance.get_BitmapPixelFormat(&_ret));
 		return _ret;
 	}
 	deprecated("KnownPerceptionVideoProfileProperties may be unavailable after Windows Creator Update.	Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	static HSTRING BitmapAlphaMode()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionVideoProfilePropertiesStatics).get_BitmapAlphaMode(&_ret));
+		Debug.OK(staticInstance.get_BitmapAlphaMode(&_ret));
 		return _ret;
 	}
 	deprecated("KnownPerceptionVideoProfileProperties may be unavailable after Windows Creator Update.	Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	static HSTRING Width()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionVideoProfilePropertiesStatics).get_Width(&_ret));
+		Debug.OK(staticInstance.get_Width(&_ret));
 		return _ret;
 	}
 	deprecated("KnownPerceptionVideoProfileProperties may be unavailable after Windows Creator Update.	Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	static HSTRING Height()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionVideoProfilePropertiesStatics).get_Height(&_ret));
+		Debug.OK(staticInstance.get_Height(&_ret));
 		return _ret;
 	}
 	deprecated("KnownPerceptionVideoProfileProperties may be unavailable after Windows Creator Update.	Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	static HSTRING FrameDuration()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IKnownPerceptionVideoProfilePropertiesStatics).get_FrameDuration(&_ret));
+		Debug.OK(staticInstance.get_FrameDuration(&_ret));
 		return _ret;
 	}
 }
@@ -1046,12 +1046,12 @@ extern(Windows):
 	final Windows.Media.VideoFrame VideoFrame()
 	{
 		Windows.Media.VideoFrame _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrame).get_VideoFrame(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrame)this.asInterface(uuid("fe621549-2cbf-4f94-9861-f817ea317747"))).get_VideoFrame(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 }
 
@@ -1062,14 +1062,14 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan RelativeTime()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameArrivedEventArgs).get_RelativeTime(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameArrivedEventArgs)this.asInterface(uuid("8fad02d5-86f7-4d8d-b966-5a3761ba9f59"))).get_RelativeTime(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")
 	final Windows.Devices.Perception.PerceptionColorFrame TryOpenFrame()
 	{
 		Windows.Devices.Perception.PerceptionColorFrame _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameArrivedEventArgs).abi_TryOpenFrame(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameArrivedEventArgs)this.asInterface(uuid("8fad02d5-86f7-4d8d-b966-5a3761ba9f59"))).abi_TryOpenFrame(&_ret));
 		return _ret;
 	}
 }
@@ -1081,43 +1081,43 @@ extern(Windows):
 	final EventRegistrationToken OnFrameArrived(void delegate(Windows.Devices.Perception.PerceptionColorFrameReader, Windows.Devices.Perception.PerceptionColorFrameArrivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameReader).add_FrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameReader, Windows.Devices.Perception.PerceptionColorFrameArrivedEventArgs), Windows.Devices.Perception.PerceptionColorFrameReader, Windows.Devices.Perception.PerceptionColorFrameArrivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameReader)this.asInterface(uuid("7650f56e-b9f5-461b-83ad-f222af2aaadc"))).add_FrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameReader, Windows.Devices.Perception.PerceptionColorFrameArrivedEventArgs), Windows.Devices.Perception.PerceptionColorFrameReader, Windows.Devices.Perception.PerceptionColorFrameArrivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionColorFrameReader may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	final void removeFrameArrived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameReader).remove_FrameArrived(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameReader)this.asInterface(uuid("7650f56e-b9f5-461b-83ad-f222af2aaadc"))).remove_FrameArrived(token));
 	}
 	deprecated("PerceptionColorFrameReader may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	final Windows.Devices.Perception.PerceptionColorFrameSource Source()
 	{
 		Windows.Devices.Perception.PerceptionColorFrameSource _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameReader).get_Source(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameReader)this.asInterface(uuid("7650f56e-b9f5-461b-83ad-f222af2aaadc"))).get_Source(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameReader may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	final bool IsPaused()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameReader).get_IsPaused(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameReader)this.asInterface(uuid("7650f56e-b9f5-461b-83ad-f222af2aaadc"))).get_IsPaused(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameReader may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	final void IsPaused(bool value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameReader).set_IsPaused(value));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameReader)this.asInterface(uuid("7650f56e-b9f5-461b-83ad-f222af2aaadc"))).set_IsPaused(value));
 	}
 	deprecated("PerceptionColorFrameReader may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	final Windows.Devices.Perception.PerceptionColorFrame TryReadLatestFrame()
 	{
 		Windows.Devices.Perception.PerceptionColorFrame _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameReader).abi_TryReadLatestFrame(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameReader)this.asInterface(uuid("7650f56e-b9f5-461b-83ad-f222af2aaadc"))).abi_TryReadLatestFrame(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 }
 
@@ -1128,200 +1128,200 @@ extern(Windows):
 	final EventRegistrationToken OnAvailableChanged(void delegate(Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).add_AvailableChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable), Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).add_AvailableChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable), Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeAvailableChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).remove_AvailableChanged(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).remove_AvailableChanged(token));
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final EventRegistrationToken OnActiveChanged(void delegate(Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).add_ActiveChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable), Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).add_ActiveChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable), Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeActiveChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).remove_ActiveChanged(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).remove_ActiveChanged(token));
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final EventRegistrationToken OnPropertiesChanged(void delegate(Windows.Devices.Perception.PerceptionColorFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).add_PropertiesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs), Windows.Devices.Perception.PerceptionColorFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).add_PropertiesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs), Windows.Devices.Perception.PerceptionColorFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removePropertiesChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).remove_PropertiesChanged(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).remove_PropertiesChanged(token));
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final EventRegistrationToken OnVideoProfileChanged(void delegate(Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).add_VideoProfileChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable), Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).add_VideoProfileChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable), Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeVideoProfileChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).remove_VideoProfileChanged(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).remove_VideoProfileChanged(token));
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final EventRegistrationToken OnCameraIntrinsicsChanged(void delegate(Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).add_CameraIntrinsicsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable), Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).add_CameraIntrinsicsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable), Windows.Devices.Perception.PerceptionColorFrameSource, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeCameraIntrinsicsChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).remove_CameraIntrinsicsChanged(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).remove_CameraIntrinsicsChanged(token));
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).get_Id(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).get_Id(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final HSTRING DeviceKind()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).get_DeviceKind(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).get_DeviceKind(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final bool Available()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).get_Available(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).get_Available(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final bool Active()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).get_Active(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).get_Active(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final bool IsControlled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).get_IsControlled(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).get_IsControlled(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) Properties()
 	{
 		Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).get_Properties(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).get_Properties(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Perception.PerceptionVideoProfile) SupportedVideoProfiles()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Perception.PerceptionVideoProfile) _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).get_SupportedVideoProfiles(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).get_SupportedVideoProfiles(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Perception.PerceptionVideoProfile) AvailableVideoProfiles()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Perception.PerceptionVideoProfile) _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).get_AvailableVideoProfiles(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).get_AvailableVideoProfiles(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Devices.Perception.PerceptionVideoProfile VideoProfile()
 	{
 		Windows.Devices.Perception.PerceptionVideoProfile _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).get_VideoProfile(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).get_VideoProfile(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Media.Devices.Core.CameraIntrinsics CameraIntrinsics()
 	{
 		Windows.Media.Devices.Core.CameraIntrinsics _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).get_CameraIntrinsics(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).get_CameraIntrinsics(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Devices.Perception.PerceptionControlSession AcquireControlSession()
 	{
 		Windows.Devices.Perception.PerceptionControlSession _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).abi_AcquireControlSession(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).abi_AcquireControlSession(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final bool CanControlIndependentlyFrom(HSTRING targetId)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).abi_CanControlIndependentlyFrom(targetId, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).abi_CanControlIndependentlyFrom(targetId, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final bool IsCorrelatedWith(HSTRING targetId)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).abi_IsCorrelatedWith(targetId, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).abi_IsCorrelatedWith(targetId, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final bool TryGetTransformTo(HSTRING targetId, Windows.Foundation.Numerics.Matrix4x4* out_result)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).abi_TryGetTransformTo(targetId, out_result, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).abi_TryGetTransformTo(targetId, out_result, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionDepthCorrelatedCameraIntrinsics) TryGetDepthCorrelatedCameraIntrinsicsAsync(Windows.Devices.Perception.PerceptionDepthFrameSource correlatedDepthFrameSource)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionDepthCorrelatedCameraIntrinsics) _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(correlatedDepthFrameSource, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(correlatedDepthFrameSource, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionDepthCorrelatedCoordinateMapper) TryGetDepthCorrelatedCoordinateMapperAsync(HSTRING targetSourceId, Windows.Devices.Perception.PerceptionDepthFrameSource correlatedDepthFrameSource)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionDepthCorrelatedCoordinateMapper) _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).abi_TryGetDepthCorrelatedCoordinateMapperAsync(targetSourceId, correlatedDepthFrameSource, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).abi_TryGetDepthCorrelatedCoordinateMapperAsync(targetSourceId, correlatedDepthFrameSource, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionFrameSourcePropertyChangeResult) TrySetVideoProfileAsync(Windows.Devices.Perception.PerceptionControlSession controlSession, Windows.Devices.Perception.PerceptionVideoProfile profile)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionFrameSourcePropertyChangeResult) _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).abi_TrySetVideoProfileAsync(controlSession, profile, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).abi_TrySetVideoProfileAsync(controlSession, profile, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Devices.Perception.PerceptionColorFrameReader OpenReader()
 	{
 		Windows.Devices.Perception.PerceptionColorFrameReader _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource).abi_OpenReader(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource)this.asInterface(uuid("dc6dba7c-0b58-468d-9ca1-6db04cc0477c"))).abi_OpenReader(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSource2).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSource2)this.asInterface(uuid("f88008e5-5631-45ed-ad98-8c6aa04cfb91"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 
@@ -1335,28 +1335,28 @@ extern(Windows):
 	static Windows.Devices.Perception.PerceptionColorFrameSourceWatcher CreateWatcher()
 	{
 		Windows.Devices.Perception.PerceptionColorFrameSourceWatcher _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IPerceptionColorFrameSourceStatics).abi_CreateWatcher(&_ret));
+		Debug.OK(staticInstance.abi_CreateWatcher(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameSource.FindAllAsync may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation.FindAllAsync instead.")
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Perception.PerceptionColorFrameSource)) FindAllAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Perception.PerceptionColorFrameSource)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IPerceptionColorFrameSourceStatics).abi_FindAllAsync(&_ret));
+		Debug.OK(staticInstance.abi_FindAllAsync(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameSource.FromIdAsync may be unavailable after Windows Creator Update.	 Use Windows.Devices.Enumeration.DeviceInformation.FromIdAsync instead.")
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionColorFrameSource) FromIdAsync(HSTRING id)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionColorFrameSource) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IPerceptionColorFrameSourceStatics).abi_FromIdAsync(id, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(id, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameSource.RequestAccessAsync may be unavailable after Windows Creator Update.	Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionFrameSourceAccessStatus) RequestAccessAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionFrameSourceAccessStatus) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IPerceptionColorFrameSourceStatics).abi_RequestAccessAsync(&_ret));
+		Debug.OK(staticInstance.abi_RequestAccessAsync(&_ret));
 		return _ret;
 	}
 }
@@ -1368,7 +1368,7 @@ extern(Windows):
 	final Windows.Devices.Perception.PerceptionColorFrameSource FrameSource()
 	{
 		Windows.Devices.Perception.PerceptionColorFrameSource _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSourceAddedEventArgs).get_FrameSource(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSourceAddedEventArgs)this.asInterface(uuid("d16bf4e6-da24-442c-bbd5-55549b5b94f3"))).get_FrameSource(&_ret));
 		return _ret;
 	}
 }
@@ -1380,7 +1380,7 @@ extern(Windows):
 	final Windows.Devices.Perception.PerceptionColorFrameSource FrameSource()
 	{
 		Windows.Devices.Perception.PerceptionColorFrameSource _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSourceRemovedEventArgs).get_FrameSource(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSourceRemovedEventArgs)this.asInterface(uuid("d277fa69-eb4c-42ef-ba4f-288f615c93c1"))).get_FrameSource(&_ret));
 		return _ret;
 	}
 }
@@ -1392,66 +1392,66 @@ extern(Windows):
 	final EventRegistrationToken OnSourceAdded(void delegate(Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, Windows.Devices.Perception.PerceptionColorFrameSourceAddedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSourceWatcher).add_SourceAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, Windows.Devices.Perception.PerceptionColorFrameSourceAddedEventArgs), Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, Windows.Devices.Perception.PerceptionColorFrameSourceAddedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSourceWatcher)this.asInterface(uuid("96bd1392-e667-40c4-89f9-1462dea6a9cc"))).add_SourceAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, Windows.Devices.Perception.PerceptionColorFrameSourceAddedEventArgs), Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, Windows.Devices.Perception.PerceptionColorFrameSourceAddedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeSourceAdded(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSourceWatcher).remove_SourceAdded(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSourceWatcher)this.asInterface(uuid("96bd1392-e667-40c4-89f9-1462dea6a9cc"))).remove_SourceAdded(token));
 	}
 	deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final EventRegistrationToken OnSourceRemoved(void delegate(Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, Windows.Devices.Perception.PerceptionColorFrameSourceRemovedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSourceWatcher).add_SourceRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, Windows.Devices.Perception.PerceptionColorFrameSourceRemovedEventArgs), Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, Windows.Devices.Perception.PerceptionColorFrameSourceRemovedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSourceWatcher)this.asInterface(uuid("96bd1392-e667-40c4-89f9-1462dea6a9cc"))).add_SourceRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, Windows.Devices.Perception.PerceptionColorFrameSourceRemovedEventArgs), Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, Windows.Devices.Perception.PerceptionColorFrameSourceRemovedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeSourceRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSourceWatcher).remove_SourceRemoved(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSourceWatcher)this.asInterface(uuid("96bd1392-e667-40c4-89f9-1462dea6a9cc"))).remove_SourceRemoved(token));
 	}
 	deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final EventRegistrationToken OnStopped(void delegate(Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSourceWatcher).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, IInspectable), Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSourceWatcher)this.asInterface(uuid("96bd1392-e667-40c4-89f9-1462dea6a9cc"))).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, IInspectable), Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeStopped(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSourceWatcher).remove_Stopped(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSourceWatcher)this.asInterface(uuid("96bd1392-e667-40c4-89f9-1462dea6a9cc"))).remove_Stopped(token));
 	}
 	deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final EventRegistrationToken OnEnumerationCompleted(void delegate(Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSourceWatcher).add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, IInspectable), Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSourceWatcher)this.asInterface(uuid("96bd1392-e667-40c4-89f9-1462dea6a9cc"))).add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, IInspectable), Windows.Devices.Perception.PerceptionColorFrameSourceWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeEnumerationCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSourceWatcher).remove_EnumerationCompleted(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSourceWatcher)this.asInterface(uuid("96bd1392-e667-40c4-89f9-1462dea6a9cc"))).remove_EnumerationCompleted(token));
 	}
 	deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final Windows.Devices.Enumeration.DeviceWatcherStatus Status()
 	{
 		Windows.Devices.Enumeration.DeviceWatcherStatus _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSourceWatcher).get_Status(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSourceWatcher)this.asInterface(uuid("96bd1392-e667-40c4-89f9-1462dea6a9cc"))).get_Status(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSourceWatcher).abi_Start());
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSourceWatcher)this.asInterface(uuid("96bd1392-e667-40c4-89f9-1462dea6a9cc"))).abi_Start());
 	}
 	deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionColorFrameSourceWatcher).abi_Stop());
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionColorFrameSourceWatcher)this.asInterface(uuid("96bd1392-e667-40c4-89f9-1462dea6a9cc"))).abi_Stop());
 	}
 }
 
@@ -1462,24 +1462,24 @@ extern(Windows):
 	final EventRegistrationToken OnControlLost(void delegate(Windows.Devices.Perception.PerceptionControlSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionControlSession).add_ControlLost(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionControlSession, IInspectable), Windows.Devices.Perception.PerceptionControlSession, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionControlSession)this.asInterface(uuid("99998653-5a3d-417f-9239-f1889e548b48"))).add_ControlLost(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionControlSession, IInspectable), Windows.Devices.Perception.PerceptionControlSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionControlSession may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	final void removeControlLost(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionControlSession).remove_ControlLost(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionControlSession)this.asInterface(uuid("99998653-5a3d-417f-9239-f1889e548b48"))).remove_ControlLost(token));
 	}
 	deprecated("PerceptionControlSession may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionFrameSourcePropertyChangeResult) TrySetPropertyAsync(HSTRING name, IInspectable value)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionFrameSourcePropertyChangeResult) _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionControlSession).abi_TrySetPropertyAsync(name, value, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionControlSession)this.asInterface(uuid("99998653-5a3d-417f-9239-f1889e548b48"))).abi_TrySetPropertyAsync(name, value, &_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 }
 
@@ -1490,26 +1490,26 @@ extern(Windows):
 	final Windows.Foundation.Numerics.Vector3 UnprojectPixelAtCorrelatedDepth(Windows.Foundation.Point pixelCoordinate, Windows.Devices.Perception.PerceptionDepthFrame depthFrame)
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthCorrelatedCameraIntrinsics).abi_UnprojectPixelAtCorrelatedDepth(pixelCoordinate, depthFrame, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthCorrelatedCameraIntrinsics)this.asInterface(uuid("6548ca01-86de-5be1-6582-807fcf4c95cf"))).abi_UnprojectPixelAtCorrelatedDepth(pixelCoordinate, depthFrame, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthCorrelatedCameraIntrinsics may be unavailable after Windows Creator Update.	Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")
 	final void UnprojectPixelsAtCorrelatedDepth(UINT32 __sourceCoordinatesSize, Windows.Foundation.Point* sourceCoordinates, Windows.Devices.Perception.PerceptionDepthFrame depthFrame, UINT32 __resultsSize, Windows.Foundation.Numerics.Vector3* out_results)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthCorrelatedCameraIntrinsics).abi_UnprojectPixelsAtCorrelatedDepth(__sourceCoordinatesSize, sourceCoordinates, depthFrame, __resultsSize, out_results));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthCorrelatedCameraIntrinsics)this.asInterface(uuid("6548ca01-86de-5be1-6582-807fcf4c95cf"))).abi_UnprojectPixelsAtCorrelatedDepth(__sourceCoordinatesSize, sourceCoordinates, depthFrame, __resultsSize, out_results));
 	}
 	deprecated("PerceptionDepthCorrelatedCameraIntrinsics may be unavailable after Windows Creator Update.	Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")
 	final Windows.Foundation.IAsyncAction UnprojectRegionPixelsAtCorrelatedDepthAsync(Windows.Foundation.Rect region, Windows.Devices.Perception.PerceptionDepthFrame depthFrame, UINT32 __resultsSize, Windows.Foundation.Numerics.Vector3* out_results)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthCorrelatedCameraIntrinsics).abi_UnprojectRegionPixelsAtCorrelatedDepthAsync(region, depthFrame, __resultsSize, out_results, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthCorrelatedCameraIntrinsics)this.asInterface(uuid("6548ca01-86de-5be1-6582-807fcf4c95cf"))).abi_UnprojectRegionPixelsAtCorrelatedDepthAsync(region, depthFrame, __resultsSize, out_results, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthCorrelatedCameraIntrinsics may be unavailable after Windows Creator Update.	Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")
 	final Windows.Foundation.IAsyncAction UnprojectAllPixelsAtCorrelatedDepthAsync(Windows.Devices.Perception.PerceptionDepthFrame depthFrame, UINT32 __resultsSize, Windows.Foundation.Numerics.Vector3* out_results)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthCorrelatedCameraIntrinsics).abi_UnprojectAllPixelsAtCorrelatedDepthAsync(depthFrame, __resultsSize, out_results, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthCorrelatedCameraIntrinsics)this.asInterface(uuid("6548ca01-86de-5be1-6582-807fcf4c95cf"))).abi_UnprojectAllPixelsAtCorrelatedDepthAsync(depthFrame, __resultsSize, out_results, &_ret));
 		return _ret;
 	}
 }
@@ -1521,26 +1521,26 @@ extern(Windows):
 	final Windows.Foundation.Point MapPixelToTarget(Windows.Foundation.Point sourcePixelCoordinate, Windows.Devices.Perception.PerceptionDepthFrame depthFrame)
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthCorrelatedCoordinateMapper).abi_MapPixelToTarget(sourcePixelCoordinate, depthFrame, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthCorrelatedCoordinateMapper)this.asInterface(uuid("5b4d9d1d-b5f6-469c-b8c2-b97a45e6863b"))).abi_MapPixelToTarget(sourcePixelCoordinate, depthFrame, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthCorrelatedCoordinateMapper may be unavailable after Windows Creator Update.	Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")
 	final void MapPixelsToTarget(UINT32 __sourceCoordinatesSize, Windows.Foundation.Point* sourceCoordinates, Windows.Devices.Perception.PerceptionDepthFrame depthFrame, UINT32 __resultsSize, Windows.Foundation.Point* out_results)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthCorrelatedCoordinateMapper).abi_MapPixelsToTarget(__sourceCoordinatesSize, sourceCoordinates, depthFrame, __resultsSize, out_results));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthCorrelatedCoordinateMapper)this.asInterface(uuid("5b4d9d1d-b5f6-469c-b8c2-b97a45e6863b"))).abi_MapPixelsToTarget(__sourceCoordinatesSize, sourceCoordinates, depthFrame, __resultsSize, out_results));
 	}
 	deprecated("PerceptionDepthCorrelatedCoordinateMapper may be unavailable after Windows Creator Update.	Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")
 	final Windows.Foundation.IAsyncAction MapRegionOfPixelsToTargetAsync(Windows.Foundation.Rect region, Windows.Devices.Perception.PerceptionDepthFrame depthFrame, UINT32 __targetCoordinatesSize, Windows.Foundation.Point* out_targetCoordinates)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthCorrelatedCoordinateMapper).abi_MapRegionOfPixelsToTargetAsync(region, depthFrame, __targetCoordinatesSize, out_targetCoordinates, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthCorrelatedCoordinateMapper)this.asInterface(uuid("5b4d9d1d-b5f6-469c-b8c2-b97a45e6863b"))).abi_MapRegionOfPixelsToTargetAsync(region, depthFrame, __targetCoordinatesSize, out_targetCoordinates, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthCorrelatedCoordinateMapper may be unavailable after Windows Creator Update.	Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")
 	final Windows.Foundation.IAsyncAction MapAllPixelsToTargetAsync(Windows.Devices.Perception.PerceptionDepthFrame depthFrame, UINT32 __targetCoordinatesSize, Windows.Foundation.Point* out_targetCoordinates)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthCorrelatedCoordinateMapper).abi_MapAllPixelsToTargetAsync(depthFrame, __targetCoordinatesSize, out_targetCoordinates, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthCorrelatedCoordinateMapper)this.asInterface(uuid("5b4d9d1d-b5f6-469c-b8c2-b97a45e6863b"))).abi_MapAllPixelsToTargetAsync(depthFrame, __targetCoordinatesSize, out_targetCoordinates, &_ret));
 		return _ret;
 	}
 }
@@ -1552,12 +1552,12 @@ extern(Windows):
 	final Windows.Media.VideoFrame VideoFrame()
 	{
 		Windows.Media.VideoFrame _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrame).get_VideoFrame(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrame)this.asInterface(uuid("a37b81fc-9906-4ffd-9161-0024b360b657"))).get_VideoFrame(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 }
 
@@ -1568,14 +1568,14 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan RelativeTime()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameArrivedEventArgs).get_RelativeTime(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameArrivedEventArgs)this.asInterface(uuid("443d25b2-b282-4637-9173-ac978435c985"))).get_RelativeTime(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")
 	final Windows.Devices.Perception.PerceptionDepthFrame TryOpenFrame()
 	{
 		Windows.Devices.Perception.PerceptionDepthFrame _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameArrivedEventArgs).abi_TryOpenFrame(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameArrivedEventArgs)this.asInterface(uuid("443d25b2-b282-4637-9173-ac978435c985"))).abi_TryOpenFrame(&_ret));
 		return _ret;
 	}
 }
@@ -1587,43 +1587,43 @@ extern(Windows):
 	final EventRegistrationToken OnFrameArrived(void delegate(Windows.Devices.Perception.PerceptionDepthFrameReader, Windows.Devices.Perception.PerceptionDepthFrameArrivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameReader).add_FrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameReader, Windows.Devices.Perception.PerceptionDepthFrameArrivedEventArgs), Windows.Devices.Perception.PerceptionDepthFrameReader, Windows.Devices.Perception.PerceptionDepthFrameArrivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameReader)this.asInterface(uuid("b1a3c09f-299b-4612-a4f7-270f25a096ec"))).add_FrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameReader, Windows.Devices.Perception.PerceptionDepthFrameArrivedEventArgs), Windows.Devices.Perception.PerceptionDepthFrameReader, Windows.Devices.Perception.PerceptionDepthFrameArrivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionDepthFrameReader may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	final void removeFrameArrived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameReader).remove_FrameArrived(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameReader)this.asInterface(uuid("b1a3c09f-299b-4612-a4f7-270f25a096ec"))).remove_FrameArrived(token));
 	}
 	deprecated("PerceptionDepthFrameReader may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	final Windows.Devices.Perception.PerceptionDepthFrameSource Source()
 	{
 		Windows.Devices.Perception.PerceptionDepthFrameSource _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameReader).get_Source(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameReader)this.asInterface(uuid("b1a3c09f-299b-4612-a4f7-270f25a096ec"))).get_Source(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameReader may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	final bool IsPaused()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameReader).get_IsPaused(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameReader)this.asInterface(uuid("b1a3c09f-299b-4612-a4f7-270f25a096ec"))).get_IsPaused(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameReader may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	final void IsPaused(bool value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameReader).set_IsPaused(value));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameReader)this.asInterface(uuid("b1a3c09f-299b-4612-a4f7-270f25a096ec"))).set_IsPaused(value));
 	}
 	deprecated("PerceptionDepthFrameReader may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	final Windows.Devices.Perception.PerceptionDepthFrame TryReadLatestFrame()
 	{
 		Windows.Devices.Perception.PerceptionDepthFrame _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameReader).abi_TryReadLatestFrame(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameReader)this.asInterface(uuid("b1a3c09f-299b-4612-a4f7-270f25a096ec"))).abi_TryReadLatestFrame(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 }
 
@@ -1634,200 +1634,200 @@ extern(Windows):
 	final EventRegistrationToken OnAvailableChanged(void delegate(Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).add_AvailableChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable), Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).add_AvailableChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable), Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeAvailableChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).remove_AvailableChanged(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).remove_AvailableChanged(token));
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final EventRegistrationToken OnActiveChanged(void delegate(Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).add_ActiveChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable), Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).add_ActiveChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable), Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeActiveChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).remove_ActiveChanged(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).remove_ActiveChanged(token));
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final EventRegistrationToken OnPropertiesChanged(void delegate(Windows.Devices.Perception.PerceptionDepthFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).add_PropertiesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs), Windows.Devices.Perception.PerceptionDepthFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).add_PropertiesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs), Windows.Devices.Perception.PerceptionDepthFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removePropertiesChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).remove_PropertiesChanged(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).remove_PropertiesChanged(token));
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final EventRegistrationToken OnVideoProfileChanged(void delegate(Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).add_VideoProfileChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable), Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).add_VideoProfileChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable), Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeVideoProfileChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).remove_VideoProfileChanged(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).remove_VideoProfileChanged(token));
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final EventRegistrationToken OnCameraIntrinsicsChanged(void delegate(Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).add_CameraIntrinsicsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable), Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).add_CameraIntrinsicsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable), Windows.Devices.Perception.PerceptionDepthFrameSource, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeCameraIntrinsicsChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).remove_CameraIntrinsicsChanged(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).remove_CameraIntrinsicsChanged(token));
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).get_Id(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).get_Id(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final HSTRING DeviceKind()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).get_DeviceKind(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).get_DeviceKind(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final bool Available()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).get_Available(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).get_Available(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final bool Active()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).get_Active(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).get_Active(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final bool IsControlled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).get_IsControlled(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).get_IsControlled(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) Properties()
 	{
 		Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).get_Properties(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).get_Properties(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Perception.PerceptionVideoProfile) SupportedVideoProfiles()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Perception.PerceptionVideoProfile) _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).get_SupportedVideoProfiles(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).get_SupportedVideoProfiles(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Perception.PerceptionVideoProfile) AvailableVideoProfiles()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Perception.PerceptionVideoProfile) _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).get_AvailableVideoProfiles(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).get_AvailableVideoProfiles(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Devices.Perception.PerceptionVideoProfile VideoProfile()
 	{
 		Windows.Devices.Perception.PerceptionVideoProfile _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).get_VideoProfile(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).get_VideoProfile(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Media.Devices.Core.CameraIntrinsics CameraIntrinsics()
 	{
 		Windows.Media.Devices.Core.CameraIntrinsics _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).get_CameraIntrinsics(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).get_CameraIntrinsics(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Devices.Perception.PerceptionControlSession AcquireControlSession()
 	{
 		Windows.Devices.Perception.PerceptionControlSession _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).abi_AcquireControlSession(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).abi_AcquireControlSession(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final bool CanControlIndependentlyFrom(HSTRING targetId)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).abi_CanControlIndependentlyFrom(targetId, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).abi_CanControlIndependentlyFrom(targetId, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final bool IsCorrelatedWith(HSTRING targetId)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).abi_IsCorrelatedWith(targetId, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).abi_IsCorrelatedWith(targetId, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final bool TryGetTransformTo(HSTRING targetId, Windows.Foundation.Numerics.Matrix4x4* out_result)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).abi_TryGetTransformTo(targetId, out_result, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).abi_TryGetTransformTo(targetId, out_result, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionDepthCorrelatedCameraIntrinsics) TryGetDepthCorrelatedCameraIntrinsicsAsync(Windows.Devices.Perception.PerceptionDepthFrameSource target)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionDepthCorrelatedCameraIntrinsics) _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(target, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(target, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionDepthCorrelatedCoordinateMapper) TryGetDepthCorrelatedCoordinateMapperAsync(HSTRING targetId, Windows.Devices.Perception.PerceptionDepthFrameSource depthFrameSourceToMapWith)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionDepthCorrelatedCoordinateMapper) _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).abi_TryGetDepthCorrelatedCoordinateMapperAsync(targetId, depthFrameSourceToMapWith, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).abi_TryGetDepthCorrelatedCoordinateMapperAsync(targetId, depthFrameSourceToMapWith, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionFrameSourcePropertyChangeResult) TrySetVideoProfileAsync(Windows.Devices.Perception.PerceptionControlSession controlSession, Windows.Devices.Perception.PerceptionVideoProfile profile)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionFrameSourcePropertyChangeResult) _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).abi_TrySetVideoProfileAsync(controlSession, profile, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).abi_TrySetVideoProfileAsync(controlSession, profile, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Devices.Perception.PerceptionDepthFrameReader OpenReader()
 	{
 		Windows.Devices.Perception.PerceptionDepthFrameReader _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource).abi_OpenReader(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource)this.asInterface(uuid("79d433d6-47fb-4df1-bfc9-f01d40bd9942"))).abi_OpenReader(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSource2).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSource2)this.asInterface(uuid("e3d23d2e-6e2c-4e6d-91d9-704cd8dff79d"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 
@@ -1841,28 +1841,28 @@ extern(Windows):
 	static Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher CreateWatcher()
 	{
 		Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IPerceptionDepthFrameSourceStatics).abi_CreateWatcher(&_ret));
+		Debug.OK(staticInstance.abi_CreateWatcher(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameSource.FindAllAsync may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation.FindAllAsync instead.")
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Perception.PerceptionDepthFrameSource)) FindAllAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Perception.PerceptionDepthFrameSource)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IPerceptionDepthFrameSourceStatics).abi_FindAllAsync(&_ret));
+		Debug.OK(staticInstance.abi_FindAllAsync(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameSource.FromIdAsync may be unavailable after Windows Creator Update.	 Use Windows.Devices.Enumeration.DeviceInformation.FromIdAsync instead.")
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionDepthFrameSource) FromIdAsync(HSTRING id)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionDepthFrameSource) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IPerceptionDepthFrameSourceStatics).abi_FromIdAsync(id, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(id, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameSource.RequestAccessAsync may be unavailable after Windows Creator Update.	Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionFrameSourceAccessStatus) RequestAccessAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionFrameSourceAccessStatus) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IPerceptionDepthFrameSourceStatics).abi_RequestAccessAsync(&_ret));
+		Debug.OK(staticInstance.abi_RequestAccessAsync(&_ret));
 		return _ret;
 	}
 }
@@ -1874,7 +1874,7 @@ extern(Windows):
 	final Windows.Devices.Perception.PerceptionDepthFrameSource FrameSource()
 	{
 		Windows.Devices.Perception.PerceptionDepthFrameSource _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSourceAddedEventArgs).get_FrameSource(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSourceAddedEventArgs)this.asInterface(uuid("93a48168-8bf8-45d2-a2f8-4ac0931cc7a6"))).get_FrameSource(&_ret));
 		return _ret;
 	}
 }
@@ -1886,7 +1886,7 @@ extern(Windows):
 	final Windows.Devices.Perception.PerceptionDepthFrameSource FrameSource()
 	{
 		Windows.Devices.Perception.PerceptionDepthFrameSource _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSourceRemovedEventArgs).get_FrameSource(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSourceRemovedEventArgs)this.asInterface(uuid("a0c0cc4d-e96c-4d81-86dd-38b95e49c6df"))).get_FrameSource(&_ret));
 		return _ret;
 	}
 }
@@ -1898,66 +1898,66 @@ extern(Windows):
 	final EventRegistrationToken OnSourceAdded(void delegate(Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, Windows.Devices.Perception.PerceptionDepthFrameSourceAddedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSourceWatcher).add_SourceAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, Windows.Devices.Perception.PerceptionDepthFrameSourceAddedEventArgs), Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, Windows.Devices.Perception.PerceptionDepthFrameSourceAddedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSourceWatcher)this.asInterface(uuid("780e96d1-8d02-4d2b-ada4-5ba624a0eb10"))).add_SourceAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, Windows.Devices.Perception.PerceptionDepthFrameSourceAddedEventArgs), Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, Windows.Devices.Perception.PerceptionDepthFrameSourceAddedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeSourceAdded(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSourceWatcher).remove_SourceAdded(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSourceWatcher)this.asInterface(uuid("780e96d1-8d02-4d2b-ada4-5ba624a0eb10"))).remove_SourceAdded(token));
 	}
 	deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final EventRegistrationToken OnSourceRemoved(void delegate(Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, Windows.Devices.Perception.PerceptionDepthFrameSourceRemovedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSourceWatcher).add_SourceRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, Windows.Devices.Perception.PerceptionDepthFrameSourceRemovedEventArgs), Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, Windows.Devices.Perception.PerceptionDepthFrameSourceRemovedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSourceWatcher)this.asInterface(uuid("780e96d1-8d02-4d2b-ada4-5ba624a0eb10"))).add_SourceRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, Windows.Devices.Perception.PerceptionDepthFrameSourceRemovedEventArgs), Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, Windows.Devices.Perception.PerceptionDepthFrameSourceRemovedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeSourceRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSourceWatcher).remove_SourceRemoved(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSourceWatcher)this.asInterface(uuid("780e96d1-8d02-4d2b-ada4-5ba624a0eb10"))).remove_SourceRemoved(token));
 	}
 	deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final EventRegistrationToken OnStopped(void delegate(Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSourceWatcher).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, IInspectable), Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSourceWatcher)this.asInterface(uuid("780e96d1-8d02-4d2b-ada4-5ba624a0eb10"))).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, IInspectable), Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeStopped(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSourceWatcher).remove_Stopped(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSourceWatcher)this.asInterface(uuid("780e96d1-8d02-4d2b-ada4-5ba624a0eb10"))).remove_Stopped(token));
 	}
 	deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final EventRegistrationToken OnEnumerationCompleted(void delegate(Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSourceWatcher).add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, IInspectable), Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSourceWatcher)this.asInterface(uuid("780e96d1-8d02-4d2b-ada4-5ba624a0eb10"))).add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, IInspectable), Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeEnumerationCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSourceWatcher).remove_EnumerationCompleted(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSourceWatcher)this.asInterface(uuid("780e96d1-8d02-4d2b-ada4-5ba624a0eb10"))).remove_EnumerationCompleted(token));
 	}
 	deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final Windows.Devices.Enumeration.DeviceWatcherStatus Status()
 	{
 		Windows.Devices.Enumeration.DeviceWatcherStatus _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSourceWatcher).get_Status(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSourceWatcher)this.asInterface(uuid("780e96d1-8d02-4d2b-ada4-5ba624a0eb10"))).get_Status(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSourceWatcher).abi_Start());
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSourceWatcher)this.asInterface(uuid("780e96d1-8d02-4d2b-ada4-5ba624a0eb10"))).abi_Start());
 	}
 	deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionDepthFrameSourceWatcher).abi_Stop());
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionDepthFrameSourceWatcher)this.asInterface(uuid("780e96d1-8d02-4d2b-ada4-5ba624a0eb10"))).abi_Stop());
 	}
 }
 
@@ -1968,14 +1968,14 @@ extern(Windows):
 	final Windows.Foundation.Collections.CollectionChange CollectionChange()
 	{
 		Windows.Foundation.Collections.CollectionChange _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionFrameSourcePropertiesChangedEventArgs).get_CollectionChange(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionFrameSourcePropertiesChangedEventArgs)this.asInterface(uuid("6c68e068-bcf1-4ecc-b891-7625d1244b6b"))).get_CollectionChange(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionFrameSourcePropertiesChangedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	final HSTRING Key()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionFrameSourcePropertiesChangedEventArgs).get_Key(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionFrameSourcePropertiesChangedEventArgs)this.asInterface(uuid("6c68e068-bcf1-4ecc-b891-7625d1244b6b"))).get_Key(&_ret));
 		return _ret;
 	}
 }
@@ -1987,14 +1987,14 @@ extern(Windows):
 	final Windows.Devices.Perception.PerceptionFrameSourcePropertyChangeStatus Status()
 	{
 		Windows.Devices.Perception.PerceptionFrameSourcePropertyChangeStatus _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionFrameSourcePropertyChangeResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionFrameSourcePropertyChangeResult)this.asInterface(uuid("1e33390a-3c90-4d22-b898-f42bba6418ff"))).get_Status(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionFrameSourcePropertyChangeResult may be unavailable after Windows Creator Update.	Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	final IInspectable NewValue()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionFrameSourcePropertyChangeResult).get_NewValue(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionFrameSourcePropertyChangeResult)this.asInterface(uuid("1e33390a-3c90-4d22-b898-f42bba6418ff"))).get_NewValue(&_ret));
 		return _ret;
 	}
 }
@@ -2006,12 +2006,12 @@ extern(Windows):
 	final Windows.Media.VideoFrame VideoFrame()
 	{
 		Windows.Media.VideoFrame _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrame).get_VideoFrame(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrame)this.asInterface(uuid("b0886276-849e-4c7a-8ae6-b56064532153"))).get_VideoFrame(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 }
 
@@ -2022,14 +2022,14 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan RelativeTime()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameArrivedEventArgs).get_RelativeTime(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameArrivedEventArgs)this.asInterface(uuid("9f77fac7-b4bd-4857-9d50-be8ef075daef"))).get_RelativeTime(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")
 	final Windows.Devices.Perception.PerceptionInfraredFrame TryOpenFrame()
 	{
 		Windows.Devices.Perception.PerceptionInfraredFrame _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameArrivedEventArgs).abi_TryOpenFrame(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameArrivedEventArgs)this.asInterface(uuid("9f77fac7-b4bd-4857-9d50-be8ef075daef"))).abi_TryOpenFrame(&_ret));
 		return _ret;
 	}
 }
@@ -2041,43 +2041,43 @@ extern(Windows):
 	final EventRegistrationToken OnFrameArrived(void delegate(Windows.Devices.Perception.PerceptionInfraredFrameReader, Windows.Devices.Perception.PerceptionInfraredFrameArrivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameReader).add_FrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameReader, Windows.Devices.Perception.PerceptionInfraredFrameArrivedEventArgs), Windows.Devices.Perception.PerceptionInfraredFrameReader, Windows.Devices.Perception.PerceptionInfraredFrameArrivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameReader)this.asInterface(uuid("7960ce18-d39b-4fc8-a04a-929734c6756c"))).add_FrameArrived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameReader, Windows.Devices.Perception.PerceptionInfraredFrameArrivedEventArgs), Windows.Devices.Perception.PerceptionInfraredFrameReader, Windows.Devices.Perception.PerceptionInfraredFrameArrivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionInfraredFrameReader may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	final void removeFrameArrived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameReader).remove_FrameArrived(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameReader)this.asInterface(uuid("7960ce18-d39b-4fc8-a04a-929734c6756c"))).remove_FrameArrived(token));
 	}
 	deprecated("PerceptionInfraredFrameReader may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	final Windows.Devices.Perception.PerceptionInfraredFrameSource Source()
 	{
 		Windows.Devices.Perception.PerceptionInfraredFrameSource _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameReader).get_Source(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameReader)this.asInterface(uuid("7960ce18-d39b-4fc8-a04a-929734c6756c"))).get_Source(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameReader may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	final bool IsPaused()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameReader).get_IsPaused(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameReader)this.asInterface(uuid("7960ce18-d39b-4fc8-a04a-929734c6756c"))).get_IsPaused(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameReader may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	final void IsPaused(bool value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameReader).set_IsPaused(value));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameReader)this.asInterface(uuid("7960ce18-d39b-4fc8-a04a-929734c6756c"))).set_IsPaused(value));
 	}
 	deprecated("PerceptionInfraredFrameReader may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameReader instead.")
 	final Windows.Devices.Perception.PerceptionInfraredFrame TryReadLatestFrame()
 	{
 		Windows.Devices.Perception.PerceptionInfraredFrame _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameReader).abi_TryReadLatestFrame(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameReader)this.asInterface(uuid("7960ce18-d39b-4fc8-a04a-929734c6756c"))).abi_TryReadLatestFrame(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 }
 
@@ -2088,200 +2088,200 @@ extern(Windows):
 	final EventRegistrationToken OnAvailableChanged(void delegate(Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).add_AvailableChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable), Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).add_AvailableChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable), Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeAvailableChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).remove_AvailableChanged(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).remove_AvailableChanged(token));
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final EventRegistrationToken OnActiveChanged(void delegate(Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).add_ActiveChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable), Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).add_ActiveChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable), Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeActiveChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).remove_ActiveChanged(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).remove_ActiveChanged(token));
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final EventRegistrationToken OnPropertiesChanged(void delegate(Windows.Devices.Perception.PerceptionInfraredFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).add_PropertiesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs), Windows.Devices.Perception.PerceptionInfraredFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).add_PropertiesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs), Windows.Devices.Perception.PerceptionInfraredFrameSource, Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removePropertiesChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).remove_PropertiesChanged(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).remove_PropertiesChanged(token));
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final EventRegistrationToken OnVideoProfileChanged(void delegate(Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).add_VideoProfileChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable), Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).add_VideoProfileChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable), Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeVideoProfileChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).remove_VideoProfileChanged(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).remove_VideoProfileChanged(token));
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final EventRegistrationToken OnCameraIntrinsicsChanged(void delegate(Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).add_CameraIntrinsicsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable), Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).add_CameraIntrinsicsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable), Windows.Devices.Perception.PerceptionInfraredFrameSource, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final void removeCameraIntrinsicsChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).remove_CameraIntrinsicsChanged(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).remove_CameraIntrinsicsChanged(token));
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).get_Id(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).get_Id(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final HSTRING DeviceKind()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).get_DeviceKind(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).get_DeviceKind(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final bool Available()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).get_Available(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).get_Available(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final bool Active()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).get_Active(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).get_Active(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final bool IsControlled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).get_IsControlled(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).get_IsControlled(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) Properties()
 	{
 		Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).get_Properties(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).get_Properties(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Perception.PerceptionVideoProfile) SupportedVideoProfiles()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Perception.PerceptionVideoProfile) _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).get_SupportedVideoProfiles(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).get_SupportedVideoProfiles(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Perception.PerceptionVideoProfile) AvailableVideoProfiles()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Perception.PerceptionVideoProfile) _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).get_AvailableVideoProfiles(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).get_AvailableVideoProfiles(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Devices.Perception.PerceptionVideoProfile VideoProfile()
 	{
 		Windows.Devices.Perception.PerceptionVideoProfile _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).get_VideoProfile(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).get_VideoProfile(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Media.Devices.Core.CameraIntrinsics CameraIntrinsics()
 	{
 		Windows.Media.Devices.Core.CameraIntrinsics _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).get_CameraIntrinsics(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).get_CameraIntrinsics(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Devices.Perception.PerceptionControlSession AcquireControlSession()
 	{
 		Windows.Devices.Perception.PerceptionControlSession _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).abi_AcquireControlSession(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).abi_AcquireControlSession(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final bool CanControlIndependentlyFrom(HSTRING targetId)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).abi_CanControlIndependentlyFrom(targetId, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).abi_CanControlIndependentlyFrom(targetId, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final bool IsCorrelatedWith(HSTRING targetId)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).abi_IsCorrelatedWith(targetId, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).abi_IsCorrelatedWith(targetId, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final bool TryGetTransformTo(HSTRING targetId, Windows.Foundation.Numerics.Matrix4x4* out_result)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).abi_TryGetTransformTo(targetId, out_result, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).abi_TryGetTransformTo(targetId, out_result, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionDepthCorrelatedCameraIntrinsics) TryGetDepthCorrelatedCameraIntrinsicsAsync(Windows.Devices.Perception.PerceptionDepthFrameSource target)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionDepthCorrelatedCameraIntrinsics) _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(target, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).abi_TryGetDepthCorrelatedCameraIntrinsicsAsync(target, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionDepthCorrelatedCoordinateMapper) TryGetDepthCorrelatedCoordinateMapperAsync(HSTRING targetId, Windows.Devices.Perception.PerceptionDepthFrameSource depthFrameSourceToMapWith)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionDepthCorrelatedCoordinateMapper) _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).abi_TryGetDepthCorrelatedCoordinateMapperAsync(targetId, depthFrameSourceToMapWith, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).abi_TryGetDepthCorrelatedCoordinateMapperAsync(targetId, depthFrameSourceToMapWith, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionFrameSourcePropertyChangeResult) TrySetVideoProfileAsync(Windows.Devices.Perception.PerceptionControlSession controlSession, Windows.Devices.Perception.PerceptionVideoProfile profile)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionFrameSourcePropertyChangeResult) _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).abi_TrySetVideoProfileAsync(controlSession, profile, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).abi_TrySetVideoProfileAsync(controlSession, profile, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final Windows.Devices.Perception.PerceptionInfraredFrameReader OpenReader()
 	{
 		Windows.Devices.Perception.PerceptionInfraredFrameReader _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource).abi_OpenReader(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource)this.asInterface(uuid("55b08742-1808-494e-9e30-9d2a7be8f700"))).abi_OpenReader(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.	Use Windows.Media.Capture.Frames.MediaFrameSource instead.")
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSource2).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSource2)this.asInterface(uuid("dcd4d798-4b0b-4300-8d85-410817faa032"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 
@@ -2295,28 +2295,28 @@ extern(Windows):
 	static Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher CreateWatcher()
 	{
 		Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSourceStatics).abi_CreateWatcher(&_ret));
+		Debug.OK(staticInstance.abi_CreateWatcher(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameSource.FindAllAsync may be unavailable after Windows Creator Update.	 Use Windows.Devices.Enumeration.DeviceInformation.FindAllAsync instead.")
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Perception.PerceptionInfraredFrameSource)) FindAllAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Perception.PerceptionInfraredFrameSource)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSourceStatics).abi_FindAllAsync(&_ret));
+		Debug.OK(staticInstance.abi_FindAllAsync(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameSource.FromIdAsync may be unavailable after Windows Creator Update.	Use Windows.Devices.Enumeration.DeviceInformation.FromIdAsync instead.")
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionInfraredFrameSource) FromIdAsync(HSTRING id)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionInfraredFrameSource) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSourceStatics).abi_FromIdAsync(id, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(id, &_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameSource.RequestAccessAsync may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionFrameSourceAccessStatus) RequestAccessAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Perception.PerceptionFrameSourceAccessStatus) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSourceStatics).abi_RequestAccessAsync(&_ret));
+		Debug.OK(staticInstance.abi_RequestAccessAsync(&_ret));
 		return _ret;
 	}
 }
@@ -2328,7 +2328,7 @@ extern(Windows):
 	final Windows.Devices.Perception.PerceptionInfraredFrameSource FrameSource()
 	{
 		Windows.Devices.Perception.PerceptionInfraredFrameSource _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSourceAddedEventArgs).get_FrameSource(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSourceAddedEventArgs)this.asInterface(uuid("6d334120-95ce-4660-907a-d98035aa2b7c"))).get_FrameSource(&_ret));
 		return _ret;
 	}
 }
@@ -2340,7 +2340,7 @@ extern(Windows):
 	final Windows.Devices.Perception.PerceptionInfraredFrameSource FrameSource()
 	{
 		Windows.Devices.Perception.PerceptionInfraredFrameSource _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSourceRemovedEventArgs).get_FrameSource(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSourceRemovedEventArgs)this.asInterface(uuid("ea1a8071-7a70-4a61-af94-07303853f695"))).get_FrameSource(&_ret));
 		return _ret;
 	}
 }
@@ -2352,66 +2352,66 @@ extern(Windows):
 	final EventRegistrationToken OnSourceAdded(void delegate(Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, Windows.Devices.Perception.PerceptionInfraredFrameSourceAddedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSourceWatcher).add_SourceAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, Windows.Devices.Perception.PerceptionInfraredFrameSourceAddedEventArgs), Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, Windows.Devices.Perception.PerceptionInfraredFrameSourceAddedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSourceWatcher)this.asInterface(uuid("383cff99-d70c-444d-a8b0-720c2e66fe3b"))).add_SourceAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, Windows.Devices.Perception.PerceptionInfraredFrameSourceAddedEventArgs), Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, Windows.Devices.Perception.PerceptionInfraredFrameSourceAddedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeSourceAdded(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSourceWatcher).remove_SourceAdded(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSourceWatcher)this.asInterface(uuid("383cff99-d70c-444d-a8b0-720c2e66fe3b"))).remove_SourceAdded(token));
 	}
 	deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final EventRegistrationToken OnSourceRemoved(void delegate(Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, Windows.Devices.Perception.PerceptionInfraredFrameSourceRemovedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSourceWatcher).add_SourceRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, Windows.Devices.Perception.PerceptionInfraredFrameSourceRemovedEventArgs), Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, Windows.Devices.Perception.PerceptionInfraredFrameSourceRemovedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSourceWatcher)this.asInterface(uuid("383cff99-d70c-444d-a8b0-720c2e66fe3b"))).add_SourceRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, Windows.Devices.Perception.PerceptionInfraredFrameSourceRemovedEventArgs), Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, Windows.Devices.Perception.PerceptionInfraredFrameSourceRemovedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeSourceRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSourceWatcher).remove_SourceRemoved(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSourceWatcher)this.asInterface(uuid("383cff99-d70c-444d-a8b0-720c2e66fe3b"))).remove_SourceRemoved(token));
 	}
 	deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final EventRegistrationToken OnStopped(void delegate(Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSourceWatcher).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, IInspectable), Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSourceWatcher)this.asInterface(uuid("383cff99-d70c-444d-a8b0-720c2e66fe3b"))).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, IInspectable), Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeStopped(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSourceWatcher).remove_Stopped(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSourceWatcher)this.asInterface(uuid("383cff99-d70c-444d-a8b0-720c2e66fe3b"))).remove_Stopped(token));
 	}
 	deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final EventRegistrationToken OnEnumerationCompleted(void delegate(Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSourceWatcher).add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, IInspectable), Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSourceWatcher)this.asInterface(uuid("383cff99-d70c-444d-a8b0-720c2e66fe3b"))).add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, IInspectable), Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void removeEnumerationCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSourceWatcher).remove_EnumerationCompleted(token));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSourceWatcher)this.asInterface(uuid("383cff99-d70c-444d-a8b0-720c2e66fe3b"))).remove_EnumerationCompleted(token));
 	}
 	deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final Windows.Devices.Enumeration.DeviceWatcherStatus Status()
 	{
 		Windows.Devices.Enumeration.DeviceWatcherStatus _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSourceWatcher).get_Status(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSourceWatcher)this.asInterface(uuid("383cff99-d70c-444d-a8b0-720c2e66fe3b"))).get_Status(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSourceWatcher).abi_Start());
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSourceWatcher)this.asInterface(uuid("383cff99-d70c-444d-a8b0-720c2e66fe3b"))).abi_Start());
 	}
 	deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionInfraredFrameSourceWatcher).abi_Stop());
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionInfraredFrameSourceWatcher)this.asInterface(uuid("383cff99-d70c-444d-a8b0-720c2e66fe3b"))).abi_Stop());
 	}
 }
 
@@ -2422,42 +2422,42 @@ extern(Windows):
 	final Windows.Graphics.Imaging.BitmapPixelFormat BitmapPixelFormat()
 	{
 		Windows.Graphics.Imaging.BitmapPixelFormat _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionVideoProfile).get_BitmapPixelFormat(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionVideoProfile)this.asInterface(uuid("75763ea3-011a-470e-8225-6f05ade25648"))).get_BitmapPixelFormat(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionVideoProfile may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameFormat instead.")
 	final Windows.Graphics.Imaging.BitmapAlphaMode BitmapAlphaMode()
 	{
 		Windows.Graphics.Imaging.BitmapAlphaMode _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionVideoProfile).get_BitmapAlphaMode(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionVideoProfile)this.asInterface(uuid("75763ea3-011a-470e-8225-6f05ade25648"))).get_BitmapAlphaMode(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionVideoProfile may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameFormat instead.")
 	final INT32 Width()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionVideoProfile).get_Width(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionVideoProfile)this.asInterface(uuid("75763ea3-011a-470e-8225-6f05ade25648"))).get_Width(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionVideoProfile may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameFormat instead.")
 	final INT32 Height()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionVideoProfile).get_Height(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionVideoProfile)this.asInterface(uuid("75763ea3-011a-470e-8225-6f05ade25648"))).get_Height(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionVideoProfile may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameFormat instead.")
 	final Windows.Foundation.TimeSpan FrameDuration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionVideoProfile).get_FrameDuration(&_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionVideoProfile)this.asInterface(uuid("75763ea3-011a-470e-8225-6f05ade25648"))).get_FrameDuration(&_ret));
 		return _ret;
 	}
 	deprecated("PerceptionVideoProfile may be unavailable after Windows Creator Update.	 Use Windows.Media.Capture.Frames.MediaFrameFormat instead.")
 	final bool IsEqual(Windows.Devices.Perception.PerceptionVideoProfile other)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Perception.IPerceptionVideoProfile).abi_IsEqual(other, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.IPerceptionVideoProfile)this.asInterface(uuid("75763ea3-011a-470e-8225-6f05ade25648"))).abi_IsEqual(other, &_ret));
 		return _ret;
 	}
 }

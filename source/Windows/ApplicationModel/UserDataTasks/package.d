@@ -189,146 +189,146 @@ extern(Windows):
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_Id(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).get_Id(&_ret));
 		return _ret;
 	}
 	final HSTRING ListId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_ListId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).get_ListId(&_ret));
 		return _ret;
 	}
 	final HSTRING RemoteId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_RemoteId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).get_RemoteId(&_ret));
 		return _ret;
 	}
 	final void RemoteId(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_RemoteId(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).set_RemoteId(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) CompletedDate()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_CompletedDate(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).get_CompletedDate(&_ret));
 		return _ret;
 	}
 	final void CompletedDate(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_CompletedDate(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).set_CompletedDate(value));
 	}
 	final HSTRING Details()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_Details(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).get_Details(&_ret));
 		return _ret;
 	}
 	final void Details(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_Details(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).set_Details(value));
 	}
 	final Windows.ApplicationModel.UserDataTasks.UserDataTaskDetailsKind DetailsKind()
 	{
 		Windows.ApplicationModel.UserDataTasks.UserDataTaskDetailsKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_DetailsKind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).get_DetailsKind(&_ret));
 		return _ret;
 	}
 	final void DetailsKind(Windows.ApplicationModel.UserDataTasks.UserDataTaskDetailsKind value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_DetailsKind(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).set_DetailsKind(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) DueDate()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_DueDate(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).get_DueDate(&_ret));
 		return _ret;
 	}
 	final void DueDate(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_DueDate(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).set_DueDate(value));
 	}
 	final Windows.ApplicationModel.UserDataTasks.UserDataTaskKind Kind()
 	{
 		Windows.ApplicationModel.UserDataTasks.UserDataTaskKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.UserDataTasks.UserDataTaskPriority Priority()
 	{
 		Windows.ApplicationModel.UserDataTasks.UserDataTaskPriority _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_Priority(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).get_Priority(&_ret));
 		return _ret;
 	}
 	final void Priority(Windows.ApplicationModel.UserDataTasks.UserDataTaskPriority value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_Priority(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).set_Priority(value));
 	}
 	final Windows.ApplicationModel.UserDataTasks.UserDataTaskRecurrenceProperties RecurrenceProperties()
 	{
 		Windows.ApplicationModel.UserDataTasks.UserDataTaskRecurrenceProperties _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_RecurrenceProperties(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).get_RecurrenceProperties(&_ret));
 		return _ret;
 	}
 	final void RecurrenceProperties(Windows.ApplicationModel.UserDataTasks.UserDataTaskRecurrenceProperties value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_RecurrenceProperties(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).set_RecurrenceProperties(value));
 	}
 	final Windows.ApplicationModel.UserDataTasks.UserDataTaskRegenerationProperties RegenerationProperties()
 	{
 		Windows.ApplicationModel.UserDataTasks.UserDataTaskRegenerationProperties _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_RegenerationProperties(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).get_RegenerationProperties(&_ret));
 		return _ret;
 	}
 	final void RegenerationProperties(Windows.ApplicationModel.UserDataTasks.UserDataTaskRegenerationProperties value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_RegenerationProperties(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).set_RegenerationProperties(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) Reminder()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_Reminder(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).get_Reminder(&_ret));
 		return _ret;
 	}
 	final void Reminder(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_Reminder(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).set_Reminder(value));
 	}
 	final Windows.ApplicationModel.UserDataTasks.UserDataTaskSensitivity Sensitivity()
 	{
 		Windows.ApplicationModel.UserDataTasks.UserDataTaskSensitivity _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_Sensitivity(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).get_Sensitivity(&_ret));
 		return _ret;
 	}
 	final void Sensitivity(Windows.ApplicationModel.UserDataTasks.UserDataTaskSensitivity value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_Sensitivity(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).set_Sensitivity(value));
 	}
 	final HSTRING Subject()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_Subject(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).get_Subject(&_ret));
 		return _ret;
 	}
 	final void Subject(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_Subject(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).set_Subject(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) StartDate()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).get_StartDate(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).get_StartDate(&_ret));
 		return _ret;
 	}
 	final void StartDate(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTask).set_StartDate(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTask)this.asInterface(uuid("7c6585d1-e0d4-4f99-aee2-bc2d5ddadf4c"))).set_StartDate(value));
 	}
 	static UserDataTask New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(UserDataTask).abi_ActivateInstance(&ret));
-		return ret.as!(UserDataTask);
+		return cast(UserDataTask) ret;
 	}
 }
 
@@ -338,7 +338,7 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.UserDataTasks.UserDataTask) Tasks()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.UserDataTasks.UserDataTask) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskBatch).get_Tasks(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskBatch)this.asInterface(uuid("382da5fe-20b5-431c-8f42-a5d292ec930c"))).get_Tasks(&_ret));
 		return _ret;
 	}
 }
@@ -349,109 +349,109 @@ extern(Windows):
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).get_Id(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).get_Id(&_ret));
 		return _ret;
 	}
 	final HSTRING UserDataAccountId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).get_UserDataAccountId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).get_UserDataAccountId(&_ret));
 		return _ret;
 	}
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final void DisplayName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).set_DisplayName(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).set_DisplayName(value));
 	}
 	final HSTRING SourceDisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).get_SourceDisplayName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).get_SourceDisplayName(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.UserDataTasks.UserDataTaskListOtherAppReadAccess OtherAppReadAccess()
 	{
 		Windows.ApplicationModel.UserDataTasks.UserDataTaskListOtherAppReadAccess _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).get_OtherAppReadAccess(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).get_OtherAppReadAccess(&_ret));
 		return _ret;
 	}
 	final void OtherAppReadAccess(Windows.ApplicationModel.UserDataTasks.UserDataTaskListOtherAppReadAccess value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).set_OtherAppReadAccess(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).set_OtherAppReadAccess(value));
 	}
 	final Windows.ApplicationModel.UserDataTasks.UserDataTaskListOtherAppWriteAccess OtherAppWriteAccess()
 	{
 		Windows.ApplicationModel.UserDataTasks.UserDataTaskListOtherAppWriteAccess _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).get_OtherAppWriteAccess(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).get_OtherAppWriteAccess(&_ret));
 		return _ret;
 	}
 	final void OtherAppWriteAccess(Windows.ApplicationModel.UserDataTasks.UserDataTaskListOtherAppWriteAccess value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).set_OtherAppWriteAccess(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).set_OtherAppWriteAccess(value));
 	}
 	final Windows.ApplicationModel.UserDataTasks.UserDataTaskListLimitedWriteOperations LimitedWriteOperations()
 	{
 		Windows.ApplicationModel.UserDataTasks.UserDataTaskListLimitedWriteOperations _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).get_LimitedWriteOperations(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).get_LimitedWriteOperations(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncManager SyncManager()
 	{
 		Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncManager _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).get_SyncManager(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).get_SyncManager(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction RegisterSyncManagerAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).abi_RegisterSyncManagerAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).abi_RegisterSyncManagerAsync(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.UserDataTasks.UserDataTaskReader GetTaskReader()
 	{
 		Windows.ApplicationModel.UserDataTasks.UserDataTaskReader _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).abi_GetTaskReader(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).abi_GetTaskReader(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.UserDataTasks.UserDataTaskReader GetTaskReaderWithOptions(Windows.ApplicationModel.UserDataTasks.UserDataTaskQueryOptions options)
 	{
 		Windows.ApplicationModel.UserDataTasks.UserDataTaskReader _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).abi_GetTaskReaderWithOptions(options, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).abi_GetTaskReaderWithOptions(options, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTask) GetTaskAsync(HSTRING userDataTask)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTask) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).abi_GetTaskAsync(userDataTask, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).abi_GetTaskAsync(userDataTask, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction SaveTaskAsync(Windows.ApplicationModel.UserDataTasks.UserDataTask userDataTask)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).abi_SaveTaskAsync(userDataTask, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).abi_SaveTaskAsync(userDataTask, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction DeleteTaskAsync(HSTRING userDataTaskId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).abi_DeleteTaskAsync(userDataTaskId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).abi_DeleteTaskAsync(userDataTaskId, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction DeleteAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).abi_DeleteAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).abi_DeleteAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction SaveAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList).abi_SaveAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).abi_SaveAsync(&_ret));
 		return _ret;
 	}
 }
@@ -462,25 +462,25 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(HSTRING) TryCompleteTaskAsync(HSTRING userDataTaskId)
 	{
 		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListLimitedWriteOperations).abi_TryCompleteTaskAsync(userDataTaskId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListLimitedWriteOperations)this.asInterface(uuid("7aa267f2-6078-4183-919e-4f29f19cfae9"))).abi_TryCompleteTaskAsync(userDataTaskId, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TryCreateOrUpdateTaskAsync(Windows.ApplicationModel.UserDataTasks.UserDataTask userDataTask)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListLimitedWriteOperations).abi_TryCreateOrUpdateTaskAsync(userDataTask, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListLimitedWriteOperations)this.asInterface(uuid("7aa267f2-6078-4183-919e-4f29f19cfae9"))).abi_TryCreateOrUpdateTaskAsync(userDataTask, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TryDeleteTaskAsync(HSTRING userDataTaskId)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListLimitedWriteOperations).abi_TryDeleteTaskAsync(userDataTaskId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListLimitedWriteOperations)this.asInterface(uuid("7aa267f2-6078-4183-919e-4f29f19cfae9"))).abi_TryDeleteTaskAsync(userDataTaskId, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TrySkipOccurrenceAsync(HSTRING userDataTaskId)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListLimitedWriteOperations).abi_TrySkipOccurrenceAsync(userDataTaskId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListLimitedWriteOperations)this.asInterface(uuid("7aa267f2-6078-4183-919e-4f29f19cfae9"))).abi_TrySkipOccurrenceAsync(userDataTaskId, &_ret));
 		return _ret;
 	}
 }
@@ -491,48 +491,48 @@ extern(Windows):
 	final Windows.Foundation.DateTime LastAttemptedSyncTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager).get_LastAttemptedSyncTime(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager)this.asInterface(uuid("8e591a95-1dcf-469f-93ec-ba48bb553c6b"))).get_LastAttemptedSyncTime(&_ret));
 		return _ret;
 	}
 	final void LastAttemptedSyncTime(Windows.Foundation.DateTime value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager).set_LastAttemptedSyncTime(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager)this.asInterface(uuid("8e591a95-1dcf-469f-93ec-ba48bb553c6b"))).set_LastAttemptedSyncTime(value));
 	}
 	final Windows.Foundation.DateTime LastSuccessfulSyncTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager).get_LastSuccessfulSyncTime(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager)this.asInterface(uuid("8e591a95-1dcf-469f-93ec-ba48bb553c6b"))).get_LastSuccessfulSyncTime(&_ret));
 		return _ret;
 	}
 	final void LastSuccessfulSyncTime(Windows.Foundation.DateTime value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager).set_LastSuccessfulSyncTime(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager)this.asInterface(uuid("8e591a95-1dcf-469f-93ec-ba48bb553c6b"))).set_LastSuccessfulSyncTime(value));
 	}
 	final Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncStatus Status()
 	{
 		Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncStatus _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager).get_Status(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager)this.asInterface(uuid("8e591a95-1dcf-469f-93ec-ba48bb553c6b"))).get_Status(&_ret));
 		return _ret;
 	}
 	final void Status(Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncStatus value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager).set_Status(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager)this.asInterface(uuid("8e591a95-1dcf-469f-93ec-ba48bb553c6b"))).set_Status(value));
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) SyncAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager).abi_SyncAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager)this.asInterface(uuid("8e591a95-1dcf-469f-93ec-ba48bb553c6b"))).abi_SyncAsync(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnSyncStatusChanged(void delegate(Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncManager, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager).add_SyncStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncManager, IInspectable), Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncManager, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager)this.asInterface(uuid("8e591a95-1dcf-469f-93ec-ba48bb553c6b"))).add_SyncStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncManager, IInspectable), Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncManager, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSyncStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager).remove_SyncStatusChanged(token));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskListSyncManager)this.asInterface(uuid("8e591a95-1dcf-469f-93ec-ba48bb553c6b"))).remove_SyncStatusChanged(token));
 	}
 }
 
@@ -542,13 +542,13 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskStore) RequestStoreAsync(Windows.ApplicationModel.UserDataTasks.UserDataTaskStoreAccessType accessType)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskStore) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskManager).abi_RequestStoreAsync(accessType, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskManager)this.asInterface(uuid("8451c914-e60b-48a9-9211-7fb8a56cb84c"))).abi_RequestStoreAsync(accessType, &_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskManager).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskManager)this.asInterface(uuid("8451c914-e60b-48a9-9211-7fb8a56cb84c"))).get_User(&_ret));
 		return _ret;
 	}
 
@@ -561,13 +561,13 @@ extern(Windows):
 	static Windows.ApplicationModel.UserDataTasks.UserDataTaskManager GetDefault()
 	{
 		Windows.ApplicationModel.UserDataTasks.UserDataTaskManager _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskManagerStatics).abi_GetDefault(&_ret));
+		Debug.OK(staticInstance.abi_GetDefault(&_ret));
 		return _ret;
 	}
 	static Windows.ApplicationModel.UserDataTasks.UserDataTaskManager GetForUser(Windows.System.User user)
 	{
 		Windows.ApplicationModel.UserDataTasks.UserDataTaskManager _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskManagerStatics).abi_GetForUser(user, &_ret));
+		Debug.OK(staticInstance.abi_GetForUser(user, &_ret));
 		return _ret;
 	}
 }
@@ -578,28 +578,28 @@ extern(Windows):
 	final Windows.ApplicationModel.UserDataTasks.UserDataTaskQuerySortProperty SortProperty()
 	{
 		Windows.ApplicationModel.UserDataTasks.UserDataTaskQuerySortProperty _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskQueryOptions).get_SortProperty(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskQueryOptions)this.asInterface(uuid("959f27ed-909a-4d30-8c1b-331d8fe667e2"))).get_SortProperty(&_ret));
 		return _ret;
 	}
 	final void SortProperty(Windows.ApplicationModel.UserDataTasks.UserDataTaskQuerySortProperty value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskQueryOptions).set_SortProperty(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskQueryOptions)this.asInterface(uuid("959f27ed-909a-4d30-8c1b-331d8fe667e2"))).set_SortProperty(value));
 	}
 	final Windows.ApplicationModel.UserDataTasks.UserDataTaskQueryKind Kind()
 	{
 		Windows.ApplicationModel.UserDataTasks.UserDataTaskQueryKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskQueryOptions).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskQueryOptions)this.asInterface(uuid("959f27ed-909a-4d30-8c1b-331d8fe667e2"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final void Kind(Windows.ApplicationModel.UserDataTasks.UserDataTaskQueryKind value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskQueryOptions).set_Kind(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskQueryOptions)this.asInterface(uuid("959f27ed-909a-4d30-8c1b-331d8fe667e2"))).set_Kind(value));
 	}
 	static UserDataTaskQueryOptions New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(UserDataTaskQueryOptions).abi_ActivateInstance(&ret));
-		return ret.as!(UserDataTaskQueryOptions);
+		return cast(UserDataTaskQueryOptions) ret;
 	}
 }
 
@@ -609,7 +609,7 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskBatch) ReadBatchAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskBatch) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskReader).abi_ReadBatchAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskReader)this.asInterface(uuid("03e688b1-4ccf-4500-883b-e76290cfed63"))).abi_ReadBatchAsync(&_ret));
 		return _ret;
 	}
 }
@@ -620,88 +620,88 @@ extern(Windows):
 	final Windows.ApplicationModel.UserDataTasks.UserDataTaskRecurrenceUnit Unit()
 	{
 		Windows.ApplicationModel.UserDataTasks.UserDataTaskRecurrenceUnit _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).get_Unit(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties)this.asInterface(uuid("73df80b0-27c6-40ce-b149-9cd41485a69e"))).get_Unit(&_ret));
 		return _ret;
 	}
 	final void Unit(Windows.ApplicationModel.UserDataTasks.UserDataTaskRecurrenceUnit value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).set_Unit(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties)this.asInterface(uuid("73df80b0-27c6-40ce-b149-9cd41485a69e"))).set_Unit(value));
 	}
 	final Windows.Foundation.IReference!(INT32) Occurrences()
 	{
 		Windows.Foundation.IReference!(INT32) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).get_Occurrences(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties)this.asInterface(uuid("73df80b0-27c6-40ce-b149-9cd41485a69e"))).get_Occurrences(&_ret));
 		return _ret;
 	}
 	final void Occurrences(Windows.Foundation.IReference!(INT32) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).set_Occurrences(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties)this.asInterface(uuid("73df80b0-27c6-40ce-b149-9cd41485a69e"))).set_Occurrences(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) Until()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).get_Until(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties)this.asInterface(uuid("73df80b0-27c6-40ce-b149-9cd41485a69e"))).get_Until(&_ret));
 		return _ret;
 	}
 	final void Until(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).set_Until(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties)this.asInterface(uuid("73df80b0-27c6-40ce-b149-9cd41485a69e"))).set_Until(value));
 	}
 	final INT32 Interval()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).get_Interval(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties)this.asInterface(uuid("73df80b0-27c6-40ce-b149-9cd41485a69e"))).get_Interval(&_ret));
 		return _ret;
 	}
 	final void Interval(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).set_Interval(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties)this.asInterface(uuid("73df80b0-27c6-40ce-b149-9cd41485a69e"))).set_Interval(value));
 	}
 	final Windows.Foundation.IReference!(Windows.ApplicationModel.UserDataTasks.UserDataTaskDaysOfWeek) DaysOfWeek()
 	{
 		Windows.Foundation.IReference!(Windows.ApplicationModel.UserDataTasks.UserDataTaskDaysOfWeek) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).get_DaysOfWeek(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties)this.asInterface(uuid("73df80b0-27c6-40ce-b149-9cd41485a69e"))).get_DaysOfWeek(&_ret));
 		return _ret;
 	}
 	final void DaysOfWeek(Windows.Foundation.IReference!(Windows.ApplicationModel.UserDataTasks.UserDataTaskDaysOfWeek) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).set_DaysOfWeek(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties)this.asInterface(uuid("73df80b0-27c6-40ce-b149-9cd41485a69e"))).set_DaysOfWeek(value));
 	}
 	final Windows.Foundation.IReference!(Windows.ApplicationModel.UserDataTasks.UserDataTaskWeekOfMonth) WeekOfMonth()
 	{
 		Windows.Foundation.IReference!(Windows.ApplicationModel.UserDataTasks.UserDataTaskWeekOfMonth) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).get_WeekOfMonth(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties)this.asInterface(uuid("73df80b0-27c6-40ce-b149-9cd41485a69e"))).get_WeekOfMonth(&_ret));
 		return _ret;
 	}
 	final void WeekOfMonth(Windows.Foundation.IReference!(Windows.ApplicationModel.UserDataTasks.UserDataTaskWeekOfMonth) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).set_WeekOfMonth(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties)this.asInterface(uuid("73df80b0-27c6-40ce-b149-9cd41485a69e"))).set_WeekOfMonth(value));
 	}
 	final Windows.Foundation.IReference!(INT32) Month()
 	{
 		Windows.Foundation.IReference!(INT32) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).get_Month(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties)this.asInterface(uuid("73df80b0-27c6-40ce-b149-9cd41485a69e"))).get_Month(&_ret));
 		return _ret;
 	}
 	final void Month(Windows.Foundation.IReference!(INT32) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).set_Month(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties)this.asInterface(uuid("73df80b0-27c6-40ce-b149-9cd41485a69e"))).set_Month(value));
 	}
 	final Windows.Foundation.IReference!(INT32) Day()
 	{
 		Windows.Foundation.IReference!(INT32) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).get_Day(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties)this.asInterface(uuid("73df80b0-27c6-40ce-b149-9cd41485a69e"))).get_Day(&_ret));
 		return _ret;
 	}
 	final void Day(Windows.Foundation.IReference!(INT32) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties).set_Day(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRecurrenceProperties)this.asInterface(uuid("73df80b0-27c6-40ce-b149-9cd41485a69e"))).set_Day(value));
 	}
 	static UserDataTaskRecurrenceProperties New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(UserDataTaskRecurrenceProperties).abi_ActivateInstance(&ret));
-		return ret.as!(UserDataTaskRecurrenceProperties);
+		return cast(UserDataTaskRecurrenceProperties) ret;
 	}
 }
 
@@ -711,48 +711,48 @@ extern(Windows):
 	final Windows.ApplicationModel.UserDataTasks.UserDataTaskRegenerationUnit Unit()
 	{
 		Windows.ApplicationModel.UserDataTasks.UserDataTaskRegenerationUnit _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties).get_Unit(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties)this.asInterface(uuid("92ab0007-090e-4704-bb5c-84fc0b0d9c31"))).get_Unit(&_ret));
 		return _ret;
 	}
 	final void Unit(Windows.ApplicationModel.UserDataTasks.UserDataTaskRegenerationUnit value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties).set_Unit(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties)this.asInterface(uuid("92ab0007-090e-4704-bb5c-84fc0b0d9c31"))).set_Unit(value));
 	}
 	final Windows.Foundation.IReference!(INT32) Occurrences()
 	{
 		Windows.Foundation.IReference!(INT32) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties).get_Occurrences(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties)this.asInterface(uuid("92ab0007-090e-4704-bb5c-84fc0b0d9c31"))).get_Occurrences(&_ret));
 		return _ret;
 	}
 	final void Occurrences(Windows.Foundation.IReference!(INT32) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties).set_Occurrences(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties)this.asInterface(uuid("92ab0007-090e-4704-bb5c-84fc0b0d9c31"))).set_Occurrences(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) Until()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties).get_Until(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties)this.asInterface(uuid("92ab0007-090e-4704-bb5c-84fc0b0d9c31"))).get_Until(&_ret));
 		return _ret;
 	}
 	final void Until(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties).set_Until(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties)this.asInterface(uuid("92ab0007-090e-4704-bb5c-84fc0b0d9c31"))).set_Until(value));
 	}
 	final INT32 Interval()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties).get_Interval(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties)this.asInterface(uuid("92ab0007-090e-4704-bb5c-84fc0b0d9c31"))).get_Interval(&_ret));
 		return _ret;
 	}
 	final void Interval(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties).set_Interval(value));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskRegenerationProperties)this.asInterface(uuid("92ab0007-090e-4704-bb5c-84fc0b0d9c31"))).set_Interval(value));
 	}
 	static UserDataTaskRegenerationProperties New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(UserDataTaskRegenerationProperties).abi_ActivateInstance(&ret));
-		return ret.as!(UserDataTaskRegenerationProperties);
+		return cast(UserDataTaskRegenerationProperties) ret;
 	}
 }
 
@@ -762,25 +762,25 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) CreateListAsync(HSTRING name)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore).abi_CreateListAsync(name, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore)this.asInterface(uuid("f06a9cb0-f1db-45ba-8a62-086004c0213d"))).abi_CreateListAsync(name, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) CreateListInAccountAsync(HSTRING name, HSTRING userDataAccountId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore).abi_CreateListInAccountAsync(name, userDataAccountId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore)this.asInterface(uuid("f06a9cb0-f1db-45ba-8a62-086004c0213d"))).abi_CreateListInAccountAsync(name, userDataAccountId, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList)) FindListsAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList)) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore).abi_FindListsAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore)this.asInterface(uuid("f06a9cb0-f1db-45ba-8a62-086004c0213d"))).abi_FindListsAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) GetListAsync(HSTRING taskListId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore).abi_GetListAsync(taskListId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore)this.asInterface(uuid("f06a9cb0-f1db-45ba-8a62-086004c0213d"))).abi_GetListAsync(taskListId, &_ret));
 		return _ret;
 	}
 }

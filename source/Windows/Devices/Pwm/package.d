@@ -65,37 +65,37 @@ extern(Windows):
 	final INT32 PinCount()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Pwm.IPwmController).get_PinCount(&_ret));
+		Debug.OK((cast(Windows.Devices.Pwm.IPwmController)this.asInterface(uuid("c45f5c85-d2e8-42cf-9bd6-cf5ed029e6a7"))).get_PinCount(&_ret));
 		return _ret;
 	}
 	final double ActualFrequency()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Devices.Pwm.IPwmController).get_ActualFrequency(&_ret));
+		Debug.OK((cast(Windows.Devices.Pwm.IPwmController)this.asInterface(uuid("c45f5c85-d2e8-42cf-9bd6-cf5ed029e6a7"))).get_ActualFrequency(&_ret));
 		return _ret;
 	}
 	final double SetDesiredFrequency(double desiredFrequency)
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Devices.Pwm.IPwmController).abi_SetDesiredFrequency(desiredFrequency, &_ret));
+		Debug.OK((cast(Windows.Devices.Pwm.IPwmController)this.asInterface(uuid("c45f5c85-d2e8-42cf-9bd6-cf5ed029e6a7"))).abi_SetDesiredFrequency(desiredFrequency, &_ret));
 		return _ret;
 	}
 	final double MinFrequency()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Devices.Pwm.IPwmController).get_MinFrequency(&_ret));
+		Debug.OK((cast(Windows.Devices.Pwm.IPwmController)this.asInterface(uuid("c45f5c85-d2e8-42cf-9bd6-cf5ed029e6a7"))).get_MinFrequency(&_ret));
 		return _ret;
 	}
 	final double MaxFrequency()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Devices.Pwm.IPwmController).get_MaxFrequency(&_ret));
+		Debug.OK((cast(Windows.Devices.Pwm.IPwmController)this.asInterface(uuid("c45f5c85-d2e8-42cf-9bd6-cf5ed029e6a7"))).get_MaxFrequency(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Pwm.PwmPin OpenPin(INT32 pinNumber)
 	{
 		Windows.Devices.Pwm.PwmPin _ret;
-		Debug.OK(this.as!(Windows.Devices.Pwm.IPwmController).abi_OpenPin(pinNumber, &_ret));
+		Debug.OK((cast(Windows.Devices.Pwm.IPwmController)this.asInterface(uuid("c45f5c85-d2e8-42cf-9bd6-cf5ed029e6a7"))).abi_OpenPin(pinNumber, &_ret));
 		return _ret;
 	}
 
@@ -108,7 +108,7 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Pwm.PwmController)) GetControllersAsync(Windows.Devices.Pwm.Provider.IPwmProvider provider)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Pwm.PwmController)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Pwm.IPwmControllerStatics).abi_GetControllersAsync(provider, &_ret));
+		Debug.OK(staticInstance.abi_GetControllersAsync(provider, &_ret));
 		return _ret;
 	}
 }
@@ -119,46 +119,46 @@ extern(Windows):
 	final Windows.Devices.Pwm.PwmController Controller()
 	{
 		Windows.Devices.Pwm.PwmController _ret;
-		Debug.OK(this.as!(Windows.Devices.Pwm.IPwmPin).get_Controller(&_ret));
+		Debug.OK((cast(Windows.Devices.Pwm.IPwmPin)this.asInterface(uuid("22972dc8-c6cf-4821-b7f9-c6454fb6af79"))).get_Controller(&_ret));
 		return _ret;
 	}
 	final double GetActiveDutyCyclePercentage()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Devices.Pwm.IPwmPin).abi_GetActiveDutyCyclePercentage(&_ret));
+		Debug.OK((cast(Windows.Devices.Pwm.IPwmPin)this.asInterface(uuid("22972dc8-c6cf-4821-b7f9-c6454fb6af79"))).abi_GetActiveDutyCyclePercentage(&_ret));
 		return _ret;
 	}
 	final void SetActiveDutyCyclePercentage(double dutyCyclePercentage)
 	{
-		Debug.OK(this.as!(Windows.Devices.Pwm.IPwmPin).abi_SetActiveDutyCyclePercentage(dutyCyclePercentage));
+		Debug.OK((cast(Windows.Devices.Pwm.IPwmPin)this.asInterface(uuid("22972dc8-c6cf-4821-b7f9-c6454fb6af79"))).abi_SetActiveDutyCyclePercentage(dutyCyclePercentage));
 	}
 	final Windows.Devices.Pwm.PwmPulsePolarity Polarity()
 	{
 		Windows.Devices.Pwm.PwmPulsePolarity _ret;
-		Debug.OK(this.as!(Windows.Devices.Pwm.IPwmPin).get_Polarity(&_ret));
+		Debug.OK((cast(Windows.Devices.Pwm.IPwmPin)this.asInterface(uuid("22972dc8-c6cf-4821-b7f9-c6454fb6af79"))).get_Polarity(&_ret));
 		return _ret;
 	}
 	final void Polarity(Windows.Devices.Pwm.PwmPulsePolarity value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Pwm.IPwmPin).set_Polarity(value));
+		Debug.OK((cast(Windows.Devices.Pwm.IPwmPin)this.asInterface(uuid("22972dc8-c6cf-4821-b7f9-c6454fb6af79"))).set_Polarity(value));
 	}
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.Devices.Pwm.IPwmPin).abi_Start());
+		Debug.OK((cast(Windows.Devices.Pwm.IPwmPin)this.asInterface(uuid("22972dc8-c6cf-4821-b7f9-c6454fb6af79"))).abi_Start());
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.Devices.Pwm.IPwmPin).abi_Stop());
+		Debug.OK((cast(Windows.Devices.Pwm.IPwmPin)this.asInterface(uuid("22972dc8-c6cf-4821-b7f9-c6454fb6af79"))).abi_Stop());
 	}
 	final bool IsStarted()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Pwm.IPwmPin).get_IsStarted(&_ret));
+		Debug.OK((cast(Windows.Devices.Pwm.IPwmPin)this.asInterface(uuid("22972dc8-c6cf-4821-b7f9-c6454fb6af79"))).get_IsStarted(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 }
 

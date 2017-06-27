@@ -32,20 +32,20 @@ extern(Windows):
 	final HSTRING TransformToString(Windows.Data.Xml.Dom.IXmlNode inputNode)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Data.Xml.Xsl.IXsltProcessor).abi_TransformToString(inputNode, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Xsl.IXsltProcessor)this.asInterface(uuid("7b64703f-550c-48c6-a90f-93a5b964518f"))).abi_TransformToString(inputNode, &_ret));
 		return _ret;
 	}
 	final Windows.Data.Xml.Dom.XmlDocument TransformToDocument(Windows.Data.Xml.Dom.IXmlNode inputNode)
 	{
 		Windows.Data.Xml.Dom.XmlDocument _ret;
-		Debug.OK(this.as!(Windows.Data.Xml.Xsl.IXsltProcessor2).abi_TransformToDocument(inputNode, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Xsl.IXsltProcessor2)this.asInterface(uuid("8da45c56-97a5-44cb-a8be-27d86280c70a"))).abi_TransformToDocument(inputNode, &_ret));
 		return _ret;
 	}
 	static Windows.Data.Xml.Xsl.XsltProcessor New(Windows.Data.Xml.Dom.XmlDocument document)
 	{
 		auto factory = factory!(Windows.Data.Xml.Xsl.IXsltProcessorFactory);
 		Windows.Data.Xml.Xsl.XsltProcessor _ret;
-		Debug.OK(factory.as!(Windows.Data.Xml.Xsl.IXsltProcessorFactory).abi_CreateInstance(document, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Xsl.IXsltProcessorFactory)factory.asInterface(uuid("274146c0-9a51-4663-bf30-0ef742146f20"))).abi_CreateInstance(document, &_ret));
 		return _ret;
 	}
 }

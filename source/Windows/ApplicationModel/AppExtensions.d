@@ -96,43 +96,43 @@ extern(Windows):
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtension).get_Id(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtension)this.asInterface(uuid("8450902c-15ed-4faf-93ea-2237bbf8cbd6"))).get_Id(&_ret));
 		return _ret;
 	}
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtension).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtension)this.asInterface(uuid("8450902c-15ed-4faf-93ea-2237bbf8cbd6"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final HSTRING Description()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtension).get_Description(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtension)this.asInterface(uuid("8450902c-15ed-4faf-93ea-2237bbf8cbd6"))).get_Description(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Package Package()
 	{
 		Windows.ApplicationModel.Package _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtension).get_Package(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtension)this.asInterface(uuid("8450902c-15ed-4faf-93ea-2237bbf8cbd6"))).get_Package(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.AppInfo AppInfo()
 	{
 		Windows.ApplicationModel.AppInfo _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtension).get_AppInfo(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtension)this.asInterface(uuid("8450902c-15ed-4faf-93ea-2237bbf8cbd6"))).get_AppInfo(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IPropertySet) GetExtensionPropertiesAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IPropertySet) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtension).abi_GetExtensionPropertiesAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtension)this.asInterface(uuid("8450902c-15ed-4faf-93ea-2237bbf8cbd6"))).abi_GetExtensionPropertiesAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) GetPublicFolderAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtension).abi_GetPublicFolderAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtension)this.asInterface(uuid("8450902c-15ed-4faf-93ea-2237bbf8cbd6"))).abi_GetPublicFolderAsync(&_ret));
 		return _ret;
 	}
 }
@@ -143,64 +143,64 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppExtensions.AppExtension)) FindAllAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppExtensions.AppExtension)) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).abi_FindAllAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog)this.asInterface(uuid("97872032-8426-4ad1-9084-92e88c2da200"))).abi_FindAllAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) RequestRemovePackageAsync(HSTRING packageFullName)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).abi_RequestRemovePackageAsync(packageFullName, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog)this.asInterface(uuid("97872032-8426-4ad1-9084-92e88c2da200"))).abi_RequestRemovePackageAsync(packageFullName, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnPackageInstalled(void delegate(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageInstalledEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).add_PackageInstalled(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageInstalledEventArgs), Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageInstalledEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog)this.asInterface(uuid("97872032-8426-4ad1-9084-92e88c2da200"))).add_PackageInstalled(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageInstalledEventArgs), Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageInstalledEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePackageInstalled(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).remove_PackageInstalled(token));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog)this.asInterface(uuid("97872032-8426-4ad1-9084-92e88c2da200"))).remove_PackageInstalled(token));
 	}
 	final EventRegistrationToken OnPackageUpdating(void delegate(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).add_PackageUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatingEventArgs), Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog)this.asInterface(uuid("97872032-8426-4ad1-9084-92e88c2da200"))).add_PackageUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatingEventArgs), Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePackageUpdating(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).remove_PackageUpdating(token));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog)this.asInterface(uuid("97872032-8426-4ad1-9084-92e88c2da200"))).remove_PackageUpdating(token));
 	}
 	final EventRegistrationToken OnPackageUpdated(void delegate(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).add_PackageUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatedEventArgs), Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog)this.asInterface(uuid("97872032-8426-4ad1-9084-92e88c2da200"))).add_PackageUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatedEventArgs), Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePackageUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).remove_PackageUpdated(token));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog)this.asInterface(uuid("97872032-8426-4ad1-9084-92e88c2da200"))).remove_PackageUpdated(token));
 	}
 	final EventRegistrationToken OnPackageUninstalling(void delegate(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUninstallingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).add_PackageUninstalling(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUninstallingEventArgs), Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUninstallingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog)this.asInterface(uuid("97872032-8426-4ad1-9084-92e88c2da200"))).add_PackageUninstalling(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUninstallingEventArgs), Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageUninstallingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePackageUninstalling(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).remove_PackageUninstalling(token));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog)this.asInterface(uuid("97872032-8426-4ad1-9084-92e88c2da200"))).remove_PackageUninstalling(token));
 	}
 	final EventRegistrationToken OnPackageStatusChanged(void delegate(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageStatusChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).add_PackageStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageStatusChangedEventArgs), Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageStatusChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog)this.asInterface(uuid("97872032-8426-4ad1-9084-92e88c2da200"))).add_PackageStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageStatusChangedEventArgs), Windows.ApplicationModel.AppExtensions.AppExtensionCatalog, Windows.ApplicationModel.AppExtensions.AppExtensionPackageStatusChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePackageStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog).remove_PackageStatusChanged(token));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalog)this.asInterface(uuid("97872032-8426-4ad1-9084-92e88c2da200"))).remove_PackageStatusChanged(token));
 	}
 
 	private static Windows.ApplicationModel.AppExtensions.IAppExtensionCatalogStatics _staticInstance;
@@ -212,7 +212,7 @@ extern(Windows):
 	static Windows.ApplicationModel.AppExtensions.AppExtensionCatalog Open(HSTRING appExtensionName)
 	{
 		Windows.ApplicationModel.AppExtensions.AppExtensionCatalog _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionCatalogStatics).abi_Open(appExtensionName, &_ret));
+		Debug.OK(staticInstance.abi_Open(appExtensionName, &_ret));
 		return _ret;
 	}
 }
@@ -223,19 +223,19 @@ extern(Windows):
 	final HSTRING AppExtensionName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageInstalledEventArgs).get_AppExtensionName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageInstalledEventArgs)this.asInterface(uuid("39e59234-3351-4a8d-9745-e7d3dd45bc48"))).get_AppExtensionName(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Package Package()
 	{
 		Windows.ApplicationModel.Package _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageInstalledEventArgs).get_Package(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageInstalledEventArgs)this.asInterface(uuid("39e59234-3351-4a8d-9745-e7d3dd45bc48"))).get_Package(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppExtensions.AppExtension) Extensions()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppExtensions.AppExtension) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageInstalledEventArgs).get_Extensions(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageInstalledEventArgs)this.asInterface(uuid("39e59234-3351-4a8d-9745-e7d3dd45bc48"))).get_Extensions(&_ret));
 		return _ret;
 	}
 }
@@ -246,13 +246,13 @@ extern(Windows):
 	final HSTRING AppExtensionName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageStatusChangedEventArgs).get_AppExtensionName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageStatusChangedEventArgs)this.asInterface(uuid("1ce17433-1153-44fd-87b1-8ae1050303df"))).get_AppExtensionName(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Package Package()
 	{
 		Windows.ApplicationModel.Package _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageStatusChangedEventArgs).get_Package(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageStatusChangedEventArgs)this.asInterface(uuid("1ce17433-1153-44fd-87b1-8ae1050303df"))).get_Package(&_ret));
 		return _ret;
 	}
 }
@@ -263,13 +263,13 @@ extern(Windows):
 	final HSTRING AppExtensionName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUninstallingEventArgs).get_AppExtensionName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUninstallingEventArgs)this.asInterface(uuid("60f160c5-171e-40ff-ae98-ab2c20dd4d75"))).get_AppExtensionName(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Package Package()
 	{
 		Windows.ApplicationModel.Package _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUninstallingEventArgs).get_Package(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUninstallingEventArgs)this.asInterface(uuid("60f160c5-171e-40ff-ae98-ab2c20dd4d75"))).get_Package(&_ret));
 		return _ret;
 	}
 }
@@ -280,19 +280,19 @@ extern(Windows):
 	final HSTRING AppExtensionName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUpdatedEventArgs).get_AppExtensionName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUpdatedEventArgs)this.asInterface(uuid("3a83c43f-797e-44b5-ba24-a4c8b5a543d7"))).get_AppExtensionName(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Package Package()
 	{
 		Windows.ApplicationModel.Package _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUpdatedEventArgs).get_Package(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUpdatedEventArgs)this.asInterface(uuid("3a83c43f-797e-44b5-ba24-a4c8b5a543d7"))).get_Package(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppExtensions.AppExtension) Extensions()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppExtensions.AppExtension) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUpdatedEventArgs).get_Extensions(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUpdatedEventArgs)this.asInterface(uuid("3a83c43f-797e-44b5-ba24-a4c8b5a543d7"))).get_Extensions(&_ret));
 		return _ret;
 	}
 }
@@ -303,13 +303,13 @@ extern(Windows):
 	final HSTRING AppExtensionName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUpdatingEventArgs).get_AppExtensionName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUpdatingEventArgs)this.asInterface(uuid("7ed59329-1a65-4800-a700-b321009e306a"))).get_AppExtensionName(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Package Package()
 	{
 		Windows.ApplicationModel.Package _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUpdatingEventArgs).get_Package(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppExtensions.IAppExtensionPackageUpdatingEventArgs)this.asInterface(uuid("7ed59329-1a65-4800-a700-b321009e306a"))).get_Package(&_ret));
 		return _ret;
 	}
 }

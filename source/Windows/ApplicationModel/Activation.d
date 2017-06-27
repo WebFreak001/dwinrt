@@ -552,37 +552,37 @@ extern(Windows):
 	final Windows.ApplicationModel.Appointments.AppointmentsProvider.AddAppointmentOperation AddAppointmentOperation()
 	{
 		Windows.ApplicationModel.Appointments.AppointmentsProvider.AddAppointmentOperation _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderAddAppointmentActivatedEventArgs).get_AddAppointmentOperation(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderAddAppointmentActivatedEventArgs)this.asInterface(uuid("a2861367-cee5-4e4d-9ed7-41c34ec18b02"))).get_AddAppointmentOperation(&_ret));
 		return _ret;
 	}
 	final HSTRING Verb()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs).get_Verb(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs)this.asInterface(uuid("3364c405-933c-4e7d-a034-500fb8dcd9f3"))).get_Verb(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -593,37 +593,37 @@ extern(Windows):
 	final Windows.ApplicationModel.Appointments.AppointmentsProvider.RemoveAppointmentOperation RemoveAppointmentOperation()
 	{
 		Windows.ApplicationModel.Appointments.AppointmentsProvider.RemoveAppointmentOperation _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderRemoveAppointmentActivatedEventArgs).get_RemoveAppointmentOperation(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderRemoveAppointmentActivatedEventArgs)this.asInterface(uuid("751f3ab8-0b8e-451c-9f15-966e699bac25"))).get_RemoveAppointmentOperation(&_ret));
 		return _ret;
 	}
 	final HSTRING Verb()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs).get_Verb(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs)this.asInterface(uuid("3364c405-933c-4e7d-a034-500fb8dcd9f3"))).get_Verb(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -634,37 +634,37 @@ extern(Windows):
 	final Windows.ApplicationModel.Appointments.AppointmentsProvider.ReplaceAppointmentOperation ReplaceAppointmentOperation()
 	{
 		Windows.ApplicationModel.Appointments.AppointmentsProvider.ReplaceAppointmentOperation _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderReplaceAppointmentActivatedEventArgs).get_ReplaceAppointmentOperation(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderReplaceAppointmentActivatedEventArgs)this.asInterface(uuid("1551b7d4-a981-4067-8a62-0524e4ade121"))).get_ReplaceAppointmentOperation(&_ret));
 		return _ret;
 	}
 	final HSTRING Verb()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs).get_Verb(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs)this.asInterface(uuid("3364c405-933c-4e7d-a034-500fb8dcd9f3"))).get_Verb(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -675,49 +675,49 @@ extern(Windows):
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) InstanceStartDate()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs).get_InstanceStartDate(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs)this.asInterface(uuid("3958f065-9841-4ca5-999b-885198b9ef2a"))).get_InstanceStartDate(&_ret));
 		return _ret;
 	}
 	final HSTRING LocalId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs).get_LocalId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs)this.asInterface(uuid("3958f065-9841-4ca5-999b-885198b9ef2a"))).get_LocalId(&_ret));
 		return _ret;
 	}
 	final HSTRING RoamingId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs).get_RoamingId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs)this.asInterface(uuid("3958f065-9841-4ca5-999b-885198b9ef2a"))).get_RoamingId(&_ret));
 		return _ret;
 	}
 	final HSTRING Verb()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs).get_Verb(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs)this.asInterface(uuid("3364c405-933c-4e7d-a034-500fb8dcd9f3"))).get_Verb(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -728,43 +728,43 @@ extern(Windows):
 	final Windows.Foundation.DateTime TimeToShow()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderShowTimeFrameActivatedEventArgs).get_TimeToShow(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderShowTimeFrameActivatedEventArgs)this.asInterface(uuid("9baeaba6-0e0b-49aa-babc-12b1dc774986"))).get_TimeToShow(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Duration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderShowTimeFrameActivatedEventArgs).get_Duration(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderShowTimeFrameActivatedEventArgs)this.asInterface(uuid("9baeaba6-0e0b-49aa-babc-12b1dc774986"))).get_Duration(&_ret));
 		return _ret;
 	}
 	final HSTRING Verb()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs).get_Verb(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs)this.asInterface(uuid("3364c405-933c-4e7d-a034-500fb8dcd9f3"))).get_Verb(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -775,7 +775,7 @@ extern(Windows):
 	final Windows.ApplicationModel.Background.IBackgroundTaskInstance TaskInstance()
 	{
 		Windows.ApplicationModel.Background.IBackgroundTaskInstance _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IBackgroundActivatedEventArgs).get_TaskInstance(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IBackgroundActivatedEventArgs)this.asInterface(uuid("ab14bee0-e760-440e-a91c-44796de3a92d"))).get_TaskInstance(&_ret));
 		return _ret;
 	}
 }
@@ -786,31 +786,31 @@ extern(Windows):
 	final Windows.Storage.Provider.CachedFileUpdaterUI CachedFileUpdaterUI()
 	{
 		Windows.Storage.Provider.CachedFileUpdaterUI _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ICachedFileUpdaterActivatedEventArgs).get_CachedFileUpdaterUI(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.ICachedFileUpdaterActivatedEventArgs)this.asInterface(uuid("d06eb1c7-3805-4ecb-b757-6cf15e26fef3"))).get_CachedFileUpdaterUI(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -821,31 +821,31 @@ extern(Windows):
 	final IInspectable VideoDeviceController()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ICameraSettingsActivatedEventArgs).get_VideoDeviceController(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.ICameraSettingsActivatedEventArgs)this.asInterface(uuid("fb67a508-2dad-490a-9170-dca036eb114b"))).get_VideoDeviceController(&_ret));
 		return _ret;
 	}
 	final IInspectable VideoDeviceExtension()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ICameraSettingsActivatedEventArgs).get_VideoDeviceExtension(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.ICameraSettingsActivatedEventArgs)this.asInterface(uuid("fb67a508-2dad-490a-9170-dca036eb114b"))).get_VideoDeviceExtension(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 }
@@ -856,43 +856,43 @@ extern(Windows):
 	final HSTRING ServiceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactCallActivatedEventArgs).get_ServiceId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactCallActivatedEventArgs)this.asInterface(uuid("c2df14c7-30eb-41c6-b3bc-5b1694f9dab3"))).get_ServiceId(&_ret));
 		return _ret;
 	}
 	final HSTRING ServiceUserId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactCallActivatedEventArgs).get_ServiceUserId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactCallActivatedEventArgs)this.asInterface(uuid("c2df14c7-30eb-41c6-b3bc-5b1694f9dab3"))).get_ServiceUserId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Contacts.Contact Contact()
 	{
 		Windows.ApplicationModel.Contacts.Contact _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactCallActivatedEventArgs).get_Contact(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactCallActivatedEventArgs)this.asInterface(uuid("c2df14c7-30eb-41c6-b3bc-5b1694f9dab3"))).get_Contact(&_ret));
 		return _ret;
 	}
 	final HSTRING Verb()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactActivatedEventArgs).get_Verb(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactActivatedEventArgs)this.asInterface(uuid("d627a1c4-c025-4c41-9def-f1eafad075e7"))).get_Verb(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 }
@@ -903,37 +903,37 @@ extern(Windows):
 	final Windows.ApplicationModel.Contacts.ContactAddress Address()
 	{
 		Windows.ApplicationModel.Contacts.ContactAddress _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactMapActivatedEventArgs).get_Address(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactMapActivatedEventArgs)this.asInterface(uuid("b32bf870-eee7-4ad2-aaf1-a87effcf00a4"))).get_Address(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Contacts.Contact Contact()
 	{
 		Windows.ApplicationModel.Contacts.Contact _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactMapActivatedEventArgs).get_Contact(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactMapActivatedEventArgs)this.asInterface(uuid("b32bf870-eee7-4ad2-aaf1-a87effcf00a4"))).get_Contact(&_ret));
 		return _ret;
 	}
 	final HSTRING Verb()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactActivatedEventArgs).get_Verb(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactActivatedEventArgs)this.asInterface(uuid("d627a1c4-c025-4c41-9def-f1eafad075e7"))).get_Verb(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 }
@@ -944,43 +944,43 @@ extern(Windows):
 	final HSTRING ServiceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactMessageActivatedEventArgs).get_ServiceId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactMessageActivatedEventArgs)this.asInterface(uuid("de598db2-0e03-43b0-bf56-bcc40b3162df"))).get_ServiceId(&_ret));
 		return _ret;
 	}
 	final HSTRING ServiceUserId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactMessageActivatedEventArgs).get_ServiceUserId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactMessageActivatedEventArgs)this.asInterface(uuid("de598db2-0e03-43b0-bf56-bcc40b3162df"))).get_ServiceUserId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Contacts.Contact Contact()
 	{
 		Windows.ApplicationModel.Contacts.Contact _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactMessageActivatedEventArgs).get_Contact(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactMessageActivatedEventArgs)this.asInterface(uuid("de598db2-0e03-43b0-bf56-bcc40b3162df"))).get_Contact(&_ret));
 		return _ret;
 	}
 	final HSTRING Verb()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactActivatedEventArgs).get_Verb(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactActivatedEventArgs)this.asInterface(uuid("d627a1c4-c025-4c41-9def-f1eafad075e7"))).get_Verb(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 }
@@ -991,37 +991,37 @@ extern(Windows):
 	final Windows.ApplicationModel.Contacts.ContactPanel ContactPanel()
 	{
 		Windows.ApplicationModel.Contacts.ContactPanel _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactPanelActivatedEventArgs).get_ContactPanel(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactPanelActivatedEventArgs)this.asInterface(uuid("52bb63e4-d3d4-4b63-8051-4af2082cab80"))).get_ContactPanel(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Contacts.Contact Contact()
 	{
 		Windows.ApplicationModel.Contacts.Contact _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactPanelActivatedEventArgs).get_Contact(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactPanelActivatedEventArgs)this.asInterface(uuid("52bb63e4-d3d4-4b63-8051-4af2082cab80"))).get_Contact(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -1032,25 +1032,25 @@ extern(Windows):
 	final Windows.ApplicationModel.Contacts.Provider.ContactPickerUI ContactPickerUI()
 	{
 		Windows.ApplicationModel.Contacts.Provider.ContactPickerUI _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactPickerActivatedEventArgs).get_ContactPickerUI(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactPickerActivatedEventArgs)this.asInterface(uuid("ce57aae7-6449-45a7-971f-d113be7a8936"))).get_ContactPickerUI(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 }
@@ -1061,43 +1061,43 @@ extern(Windows):
 	final HSTRING ServiceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactPostActivatedEventArgs).get_ServiceId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactPostActivatedEventArgs)this.asInterface(uuid("b35a3c67-f1e7-4655-ad6e-4857588f552f"))).get_ServiceId(&_ret));
 		return _ret;
 	}
 	final HSTRING ServiceUserId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactPostActivatedEventArgs).get_ServiceUserId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactPostActivatedEventArgs)this.asInterface(uuid("b35a3c67-f1e7-4655-ad6e-4857588f552f"))).get_ServiceUserId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Contacts.Contact Contact()
 	{
 		Windows.ApplicationModel.Contacts.Contact _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactPostActivatedEventArgs).get_Contact(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactPostActivatedEventArgs)this.asInterface(uuid("b35a3c67-f1e7-4655-ad6e-4857588f552f"))).get_Contact(&_ret));
 		return _ret;
 	}
 	final HSTRING Verb()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactActivatedEventArgs).get_Verb(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactActivatedEventArgs)this.asInterface(uuid("d627a1c4-c025-4c41-9def-f1eafad075e7"))).get_Verb(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 }
@@ -1108,43 +1108,43 @@ extern(Windows):
 	final HSTRING ServiceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactVideoCallActivatedEventArgs).get_ServiceId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactVideoCallActivatedEventArgs)this.asInterface(uuid("61079db8-e3e7-4b4f-858d-5c63a96ef684"))).get_ServiceId(&_ret));
 		return _ret;
 	}
 	final HSTRING ServiceUserId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactVideoCallActivatedEventArgs).get_ServiceUserId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactVideoCallActivatedEventArgs)this.asInterface(uuid("61079db8-e3e7-4b4f-858d-5c63a96ef684"))).get_ServiceUserId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Contacts.Contact Contact()
 	{
 		Windows.ApplicationModel.Contacts.Contact _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactVideoCallActivatedEventArgs).get_Contact(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactVideoCallActivatedEventArgs)this.asInterface(uuid("61079db8-e3e7-4b4f-858d-5c63a96ef684"))).get_Contact(&_ret));
 		return _ret;
 	}
 	final HSTRING Verb()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContactActivatedEventArgs).get_Verb(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactActivatedEventArgs)this.asInterface(uuid("d627a1c4-c025-4c41-9def-f1eafad075e7"))).get_Verb(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 }
@@ -1155,49 +1155,49 @@ extern(Windows):
 	final HSTRING DeviceInformationId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IDeviceActivatedEventArgs).get_DeviceInformationId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IDeviceActivatedEventArgs)this.asInterface(uuid("cd50b9a9-ce10-44d2-8234-c355a073ef33"))).get_DeviceInformationId(&_ret));
 		return _ret;
 	}
 	final HSTRING Verb()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IDeviceActivatedEventArgs).get_Verb(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IDeviceActivatedEventArgs)this.asInterface(uuid("cd50b9a9-ce10-44d2-8234-c355a073ef33"))).get_Verb(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final INT32 CurrentlyShownApplicationViewId()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs).get_CurrentlyShownApplicationViewId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs)this.asInterface(uuid("930cef4b-b829-40fc-88f4-8513e8a64738"))).get_CurrentlyShownApplicationViewId(&_ret));
 		return _ret;
 	}
 	final Windows.UI.ViewManagement.ActivationViewSwitcher ViewSwitcher()
 	{
 		Windows.UI.ViewManagement.ActivationViewSwitcher _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IViewSwitcherProvider).get_ViewSwitcher(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IViewSwitcherProvider)this.asInterface(uuid("33f288a6-5c2c-4d27-bac7-7536088f1219"))).get_ViewSwitcher(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -1208,31 +1208,31 @@ extern(Windows):
 	final Windows.Devices.Enumeration.DeviceInformation DeviceInformation()
 	{
 		Windows.Devices.Enumeration.DeviceInformation _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IDevicePairingActivatedEventArgs).get_DeviceInformation(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IDevicePairingActivatedEventArgs)this.asInterface(uuid("eba0d1e4-ecc6-4148-94ed-f4b37ec05b3e"))).get_DeviceInformation(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -1243,55 +1243,55 @@ extern(Windows):
 	final HSTRING AppName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IDialReceiverActivatedEventArgs).get_AppName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IDialReceiverActivatedEventArgs)this.asInterface(uuid("fb777ed7-85ee-456e-a44d-85d730e70aed"))).get_AppName(&_ret));
 		return _ret;
 	}
 	final HSTRING Arguments()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs).get_Arguments(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs)this.asInterface(uuid("fbc93e26-a14a-4b4f-82b0-33bed920af52"))).get_Arguments(&_ret));
 		return _ret;
 	}
 	final HSTRING TileId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs).get_TileId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs)this.asInterface(uuid("fbc93e26-a14a-4b4f-82b0-33bed920af52"))).get_TileId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final INT32 CurrentlyShownApplicationViewId()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs).get_CurrentlyShownApplicationViewId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs)this.asInterface(uuid("930cef4b-b829-40fc-88f4-8513e8a64738"))).get_CurrentlyShownApplicationViewId(&_ret));
 		return _ret;
 	}
 	final Windows.UI.ViewManagement.ActivationViewSwitcher ViewSwitcher()
 	{
 		Windows.UI.ViewManagement.ActivationViewSwitcher _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IViewSwitcherProvider).get_ViewSwitcher(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IViewSwitcherProvider)this.asInterface(uuid("33f288a6-5c2c-4d27-bac7-7536088f1219"))).get_ViewSwitcher(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -1302,61 +1302,61 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem) Files()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFileActivatedEventArgs).get_Files(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IFileActivatedEventArgs)this.asInterface(uuid("bb2afc33-93b1-42ed-8b26-236dd9c78496"))).get_Files(&_ret));
 		return _ret;
 	}
 	final HSTRING Verb()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFileActivatedEventArgs).get_Verb(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IFileActivatedEventArgs)this.asInterface(uuid("bb2afc33-93b1-42ed-8b26-236dd9c78496"))).get_Verb(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Search.StorageFileQueryResult NeighboringFilesQuery()
 	{
 		Windows.Storage.Search.StorageFileQueryResult _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFileActivatedEventArgsWithNeighboringFiles).get_NeighboringFilesQuery(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IFileActivatedEventArgsWithNeighboringFiles)this.asInterface(uuid("433ba1a4-e1e2-48fd-b7fc-b5d6eee65033"))).get_NeighboringFilesQuery(&_ret));
 		return _ret;
 	}
 	final HSTRING CallerPackageFamilyName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFileActivatedEventArgsWithCallerPackageFamilyName).get_CallerPackageFamilyName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IFileActivatedEventArgsWithCallerPackageFamilyName)this.asInterface(uuid("2d60f06b-d25f-4d25-8653-e1c5e1108309"))).get_CallerPackageFamilyName(&_ret));
 		return _ret;
 	}
 	final INT32 CurrentlyShownApplicationViewId()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs).get_CurrentlyShownApplicationViewId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs)this.asInterface(uuid("930cef4b-b829-40fc-88f4-8513e8a64738"))).get_CurrentlyShownApplicationViewId(&_ret));
 		return _ret;
 	}
 	final Windows.UI.ViewManagement.ActivationViewSwitcher ViewSwitcher()
 	{
 		Windows.UI.ViewManagement.ActivationViewSwitcher _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IViewSwitcherProvider).get_ViewSwitcher(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IViewSwitcherProvider)this.asInterface(uuid("33f288a6-5c2c-4d27-bac7-7536088f1219"))).get_ViewSwitcher(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -1367,37 +1367,37 @@ extern(Windows):
 	final Windows.Storage.Pickers.Provider.FileOpenPickerUI FileOpenPickerUI()
 	{
 		Windows.Storage.Pickers.Provider.FileOpenPickerUI _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFileOpenPickerActivatedEventArgs).get_FileOpenPickerUI(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IFileOpenPickerActivatedEventArgs)this.asInterface(uuid("72827082-5525-4bf2-bc09-1f5095d4964d"))).get_FileOpenPickerUI(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final HSTRING CallerPackageFamilyName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFileOpenPickerActivatedEventArgs2).get_CallerPackageFamilyName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IFileOpenPickerActivatedEventArgs2)this.asInterface(uuid("5e731f66-8d1f-45fb-af1d-73205c8fc7a1"))).get_CallerPackageFamilyName(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -1408,37 +1408,37 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile) Files()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFile) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFileOpenPickerContinuationEventArgs).get_Files(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IFileOpenPickerContinuationEventArgs)this.asInterface(uuid("f0fa3f3a-d4e8-4ad3-9c34-2308f32fcec9"))).get_Files(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.ValueSet ContinuationData()
 	{
 		Windows.Foundation.Collections.ValueSet _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContinuationActivatedEventArgs).get_ContinuationData(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContinuationActivatedEventArgs)this.asInterface(uuid("e58106b5-155f-4a94-a742-c7e08f4e188c"))).get_ContinuationData(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -1449,43 +1449,43 @@ extern(Windows):
 	final Windows.Storage.Pickers.Provider.FileSavePickerUI FileSavePickerUI()
 	{
 		Windows.Storage.Pickers.Provider.FileSavePickerUI _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFileSavePickerActivatedEventArgs).get_FileSavePickerUI(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IFileSavePickerActivatedEventArgs)this.asInterface(uuid("81c19cf1-74e6-4387-82eb-bb8fd64b4346"))).get_FileSavePickerUI(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final HSTRING CallerPackageFamilyName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFileSavePickerActivatedEventArgs2).get_CallerPackageFamilyName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IFileSavePickerActivatedEventArgs2)this.asInterface(uuid("6b73fe13-2cf2-4d48-8cbc-af67d23f1ce7"))).get_CallerPackageFamilyName(&_ret));
 		return _ret;
 	}
 	final HSTRING EnterpriseId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFileSavePickerActivatedEventArgs2).get_EnterpriseId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IFileSavePickerActivatedEventArgs2)this.asInterface(uuid("6b73fe13-2cf2-4d48-8cbc-af67d23f1ce7"))).get_EnterpriseId(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -1496,37 +1496,37 @@ extern(Windows):
 	final Windows.Storage.StorageFile File()
 	{
 		Windows.Storage.StorageFile _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFileSavePickerContinuationEventArgs).get_File(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IFileSavePickerContinuationEventArgs)this.asInterface(uuid("2c846fe1-3bad-4f33-8c8b-e46fae824b4b"))).get_File(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.ValueSet ContinuationData()
 	{
 		Windows.Foundation.Collections.ValueSet _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContinuationActivatedEventArgs).get_ContinuationData(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContinuationActivatedEventArgs)this.asInterface(uuid("e58106b5-155f-4a94-a742-c7e08f4e188c"))).get_ContinuationData(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -1537,37 +1537,37 @@ extern(Windows):
 	final Windows.Storage.StorageFolder Folder()
 	{
 		Windows.Storage.StorageFolder _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IFolderPickerContinuationEventArgs).get_Folder(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IFolderPickerContinuationEventArgs)this.asInterface(uuid("51882366-9f4b-498f-beb0-42684f6e1c29"))).get_Folder(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.ValueSet ContinuationData()
 	{
 		Windows.Foundation.Collections.ValueSet _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContinuationActivatedEventArgs).get_ContinuationData(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContinuationActivatedEventArgs)this.asInterface(uuid("e58106b5-155f-4a94-a742-c7e08f4e188c"))).get_ContinuationData(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -1578,61 +1578,61 @@ extern(Windows):
 	final HSTRING Arguments()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs).get_Arguments(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs)this.asInterface(uuid("fbc93e26-a14a-4b4f-82b0-33bed920af52"))).get_Arguments(&_ret));
 		return _ret;
 	}
 	final HSTRING TileId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs).get_TileId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs)this.asInterface(uuid("fbc93e26-a14a-4b4f-82b0-33bed920af52"))).get_TileId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final INT32 CurrentlyShownApplicationViewId()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs).get_CurrentlyShownApplicationViewId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs)this.asInterface(uuid("930cef4b-b829-40fc-88f4-8513e8a64738"))).get_CurrentlyShownApplicationViewId(&_ret));
 		return _ret;
 	}
 	final bool PrelaunchActivated()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IPrelaunchActivatedEventArgs).get_PrelaunchActivated(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IPrelaunchActivatedEventArgs)this.asInterface(uuid("0c44717b-19f7-48d6-b046-cf22826eaa74"))).get_PrelaunchActivated(&_ret));
 		return _ret;
 	}
 	final Windows.UI.ViewManagement.ActivationViewSwitcher ViewSwitcher()
 	{
 		Windows.UI.ViewManagement.ActivationViewSwitcher _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IViewSwitcherProvider).get_ViewSwitcher(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IViewSwitcherProvider)this.asInterface(uuid("33f288a6-5c2c-4d27-bac7-7536088f1219"))).get_ViewSwitcher(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.TileActivatedInfo TileActivatedInfo()
 	{
 		Windows.ApplicationModel.Activation.TileActivatedInfo _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs2).get_TileActivatedInfo(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs2)this.asInterface(uuid("0fd37ebc-9dc9-46b5-9ace-bd95d4565345"))).get_TileActivatedInfo(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -1643,31 +1643,31 @@ extern(Windows):
 	final IInspectable Info()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ILockScreenActivatedEventArgs).get_Info(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.ILockScreenActivatedEventArgs)this.asInterface(uuid("3ca77966-6108-4a41-8220-ee7d133c8532"))).get_Info(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -1678,49 +1678,49 @@ extern(Windows):
 	final Windows.ApplicationModel.Calls.LockScreenCallUI CallUI()
 	{
 		Windows.ApplicationModel.Calls.LockScreenCallUI _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ILockScreenCallActivatedEventArgs).get_CallUI(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.ILockScreenCallActivatedEventArgs)this.asInterface(uuid("06f37fbe-b5f2-448b-b13e-e328ac1c516a"))).get_CallUI(&_ret));
 		return _ret;
 	}
 	final HSTRING Arguments()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs).get_Arguments(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs)this.asInterface(uuid("fbc93e26-a14a-4b4f-82b0-33bed920af52"))).get_Arguments(&_ret));
 		return _ret;
 	}
 	final HSTRING TileId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs).get_TileId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs)this.asInterface(uuid("fbc93e26-a14a-4b4f-82b0-33bed920af52"))).get_TileId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final INT32 CurrentlyShownApplicationViewId()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs).get_CurrentlyShownApplicationViewId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs)this.asInterface(uuid("930cef4b-b829-40fc-88f4-8513e8a64738"))).get_CurrentlyShownApplicationViewId(&_ret));
 		return _ret;
 	}
 	final Windows.UI.ViewManagement.ActivationViewSwitcher ViewSwitcher()
 	{
 		Windows.UI.ViewManagement.ActivationViewSwitcher _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IViewSwitcherProvider).get_ViewSwitcher(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IViewSwitcherProvider)this.asInterface(uuid("33f288a6-5c2c-4d27-bac7-7536088f1219"))).get_ViewSwitcher(&_ret));
 		return _ret;
 	}
 }
@@ -1731,19 +1731,19 @@ extern(Windows):
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 }
@@ -1754,25 +1754,25 @@ extern(Windows):
 	final HSTRING PickerOperationId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IPickerReturnedActivatedEventArgs).get_PickerOperationId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IPickerReturnedActivatedEventArgs)this.asInterface(uuid("360defb9-a9d3-4984-a4ed-9ec734604921"))).get_PickerOperationId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 }
@@ -1783,25 +1783,25 @@ extern(Windows):
 	final Windows.Devices.Printers.Extensions.Print3DWorkflow Workflow()
 	{
 		Windows.Devices.Printers.Extensions.Print3DWorkflow _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IPrint3DWorkflowActivatedEventArgs).get_Workflow(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IPrint3DWorkflowActivatedEventArgs)this.asInterface(uuid("3f57e78b-f2ac-4619-8302-ef855e1c9b90"))).get_Workflow(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 }
@@ -1812,25 +1812,25 @@ extern(Windows):
 	final Windows.Devices.Printers.Extensions.PrintTaskConfiguration Configuration()
 	{
 		Windows.Devices.Printers.Extensions.PrintTaskConfiguration _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IPrintTaskSettingsActivatedEventArgs).get_Configuration(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IPrintTaskSettingsActivatedEventArgs)this.asInterface(uuid("ee30a0c9-ce56-4865-ba8e-8954ac271107"))).get_Configuration(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 }
@@ -1841,55 +1841,55 @@ extern(Windows):
 	final Windows.Foundation.Uri Uri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IProtocolActivatedEventArgs).get_Uri(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IProtocolActivatedEventArgs)this.asInterface(uuid("6095f4dd-b7c0-46ab-81fe-d90f36d00d24"))).get_Uri(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final HSTRING CallerPackageFamilyName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData).get_CallerPackageFamilyName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData)this.asInterface(uuid("d84a0c12-5c8f-438c-83cb-c28fcc0b2fdb"))).get_CallerPackageFamilyName(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.ValueSet Data()
 	{
 		Windows.Foundation.Collections.ValueSet _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData).get_Data(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData)this.asInterface(uuid("d84a0c12-5c8f-438c-83cb-c28fcc0b2fdb"))).get_Data(&_ret));
 		return _ret;
 	}
 	final INT32 CurrentlyShownApplicationViewId()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs).get_CurrentlyShownApplicationViewId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs)this.asInterface(uuid("930cef4b-b829-40fc-88f4-8513e8a64738"))).get_CurrentlyShownApplicationViewId(&_ret));
 		return _ret;
 	}
 	final Windows.UI.ViewManagement.ActivationViewSwitcher ViewSwitcher()
 	{
 		Windows.UI.ViewManagement.ActivationViewSwitcher _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IViewSwitcherProvider).get_ViewSwitcher(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IViewSwitcherProvider)this.asInterface(uuid("33f288a6-5c2c-4d27-bac7-7536088f1219"))).get_ViewSwitcher(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -1900,61 +1900,61 @@ extern(Windows):
 	final Windows.System.ProtocolForResultsOperation ProtocolForResultsOperation()
 	{
 		Windows.System.ProtocolForResultsOperation _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IProtocolForResultsActivatedEventArgs).get_ProtocolForResultsOperation(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IProtocolForResultsActivatedEventArgs)this.asInterface(uuid("e75132c2-7ae7-4517-80ac-dbe8d7cc5b9c"))).get_ProtocolForResultsOperation(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Uri Uri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IProtocolActivatedEventArgs).get_Uri(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IProtocolActivatedEventArgs)this.asInterface(uuid("6095f4dd-b7c0-46ab-81fe-d90f36d00d24"))).get_Uri(&_ret));
 		return _ret;
 	}
 	final HSTRING CallerPackageFamilyName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData).get_CallerPackageFamilyName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData)this.asInterface(uuid("d84a0c12-5c8f-438c-83cb-c28fcc0b2fdb"))).get_CallerPackageFamilyName(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.ValueSet Data()
 	{
 		Windows.Foundation.Collections.ValueSet _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData).get_Data(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData)this.asInterface(uuid("d84a0c12-5c8f-438c-83cb-c28fcc0b2fdb"))).get_Data(&_ret));
 		return _ret;
 	}
 	final INT32 CurrentlyShownApplicationViewId()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs).get_CurrentlyShownApplicationViewId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs)this.asInterface(uuid("930cef4b-b829-40fc-88f4-8513e8a64738"))).get_CurrentlyShownApplicationViewId(&_ret));
 		return _ret;
 	}
 	final Windows.UI.ViewManagement.ActivationViewSwitcher ViewSwitcher()
 	{
 		Windows.UI.ViewManagement.ActivationViewSwitcher _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IViewSwitcherProvider).get_ViewSwitcher(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IViewSwitcherProvider)this.asInterface(uuid("33f288a6-5c2c-4d27-bac7-7536088f1219"))).get_ViewSwitcher(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -1965,31 +1965,31 @@ extern(Windows):
 	final IInspectable SharedContext()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IRestrictedLaunchActivatedEventArgs).get_SharedContext(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IRestrictedLaunchActivatedEventArgs)this.asInterface(uuid("e0b7ac81-bfc3-4344-a5da-19fd5a27baae"))).get_SharedContext(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -2000,55 +2000,55 @@ extern(Windows):
 	final HSTRING QueryText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ISearchActivatedEventArgs).get_QueryText(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.ISearchActivatedEventArgs)this.asInterface(uuid("8cb36951-58c8-43e3-94bc-41d33f8b630e"))).get_QueryText(&_ret));
 		return _ret;
 	}
 	final HSTRING Language()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ISearchActivatedEventArgs).get_Language(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.ISearchActivatedEventArgs)this.asInterface(uuid("8cb36951-58c8-43e3-94bc-41d33f8b630e"))).get_Language(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final INT32 CurrentlyShownApplicationViewId()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs).get_CurrentlyShownApplicationViewId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs)this.asInterface(uuid("930cef4b-b829-40fc-88f4-8513e8a64738"))).get_CurrentlyShownApplicationViewId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Search.SearchPaneQueryLinguisticDetails LinguisticDetails()
 	{
 		Windows.ApplicationModel.Search.SearchPaneQueryLinguisticDetails _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ISearchActivatedEventArgsWithLinguisticDetails).get_LinguisticDetails(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.ISearchActivatedEventArgsWithLinguisticDetails)this.asInterface(uuid("c09f33da-08ab-4931-9b7c-451025f21f81"))).get_LinguisticDetails(&_ret));
 		return _ret;
 	}
 	final Windows.UI.ViewManagement.ActivationViewSwitcher ViewSwitcher()
 	{
 		Windows.UI.ViewManagement.ActivationViewSwitcher _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IViewSwitcherProvider).get_ViewSwitcher(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IViewSwitcherProvider)this.asInterface(uuid("33f288a6-5c2c-4d27-bac7-7536088f1219"))).get_ViewSwitcher(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -2059,31 +2059,31 @@ extern(Windows):
 	final Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation ShareOperation()
 	{
 		Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IShareTargetActivatedEventArgs).get_ShareOperation(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IShareTargetActivatedEventArgs)this.asInterface(uuid("4bdaf9c8-cdb2-4acb-bfc3-6648563378ec"))).get_ShareOperation(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -2094,18 +2094,18 @@ extern(Windows):
 	final Windows.Foundation.Rect ImageLocation()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ISplashScreen).get_ImageLocation(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.ISplashScreen)this.asInterface(uuid("ca4d975c-d4d6-43f0-97c0-0833c6391c24"))).get_ImageLocation(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnDismissed(void delegate(Windows.ApplicationModel.Activation.SplashScreen, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ISplashScreen).add_Dismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Activation.SplashScreen, IInspectable), Windows.ApplicationModel.Activation.SplashScreen, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.ISplashScreen)this.asInterface(uuid("ca4d975c-d4d6-43f0-97c0-0833c6391c24"))).add_Dismissed(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Activation.SplashScreen, IInspectable), Windows.ApplicationModel.Activation.SplashScreen, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeDismissed(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ISplashScreen).remove_Dismissed(cookie));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.ISplashScreen)this.asInterface(uuid("ca4d975c-d4d6-43f0-97c0-0833c6391c24"))).remove_Dismissed(cookie));
 	}
 }
 
@@ -2115,7 +2115,7 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ShownTileNotification) RecentlyShownNotifications()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ShownTileNotification) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.ITileActivatedInfo).get_RecentlyShownNotifications(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.ITileActivatedInfo)this.asInterface(uuid("80e4a3b1-3980-4f17-b738-89194e0b8f65"))).get_RecentlyShownNotifications(&_ret));
 		return _ret;
 	}
 }
@@ -2126,43 +2126,43 @@ extern(Windows):
 	final HSTRING Argument()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IToastNotificationActivatedEventArgs).get_Argument(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IToastNotificationActivatedEventArgs)this.asInterface(uuid("92a86f82-5290-431d-be85-c4aaeeb8685f"))).get_Argument(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.ValueSet UserInput()
 	{
 		Windows.Foundation.Collections.ValueSet _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IToastNotificationActivatedEventArgs).get_UserInput(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IToastNotificationActivatedEventArgs)this.asInterface(uuid("92a86f82-5290-431d-be85-c4aaeeb8685f"))).get_UserInput(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 	final INT32 CurrentlyShownApplicationViewId()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs).get_CurrentlyShownApplicationViewId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs)this.asInterface(uuid("930cef4b-b829-40fc-88f4-8513e8a64738"))).get_CurrentlyShownApplicationViewId(&_ret));
 		return _ret;
 	}
 }
@@ -2173,25 +2173,25 @@ extern(Windows):
 	final Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation Operation()
 	{
 		Windows.ApplicationModel.UserDataAccounts.Provider.IUserDataAccountProviderOperation _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IUserDataAccountProviderActivatedEventArgs).get_Operation(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IUserDataAccountProviderActivatedEventArgs)this.asInterface(uuid("1bc9f723-8ef1-4a51-a63a-fe711eeab607"))).get_Operation(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 }
@@ -2202,31 +2202,31 @@ extern(Windows):
 	final Windows.Media.SpeechRecognition.SpeechRecognitionResult Result()
 	{
 		Windows.Media.SpeechRecognition.SpeechRecognitionResult _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IVoiceCommandActivatedEventArgs).get_Result(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IVoiceCommandActivatedEventArgs)this.asInterface(uuid("ab92dcfd-8d43-4de6-9775-20704b581b00"))).get_Result(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -2237,37 +2237,37 @@ extern(Windows):
 	final HSTRING ItemId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IWalletActionActivatedEventArgs).get_ItemId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IWalletActionActivatedEventArgs)this.asInterface(uuid("fcfc027b-1a1a-4d22-923f-ae6f45fa52d9"))).get_ItemId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Wallet.WalletActionKind ActionKind()
 	{
 		Windows.ApplicationModel.Wallet.WalletActionKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IWalletActionActivatedEventArgs).get_ActionKind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IWalletActionActivatedEventArgs)this.asInterface(uuid("fcfc027b-1a1a-4d22-923f-ae6f45fa52d9"))).get_ActionKind(&_ret));
 		return _ret;
 	}
 	final HSTRING ActionId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IWalletActionActivatedEventArgs).get_ActionId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IWalletActionActivatedEventArgs)this.asInterface(uuid("fcfc027b-1a1a-4d22-923f-ae6f45fa52d9"))).get_ActionId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 }
@@ -2278,31 +2278,31 @@ extern(Windows):
 	final Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation Operation()
 	{
 		Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IWebAccountProviderActivatedEventArgs).get_Operation(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IWebAccountProviderActivatedEventArgs)this.asInterface(uuid("72b71774-98ea-4ccf-9752-46d9051004f1"))).get_Operation(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser)this.asInterface(uuid("1cf09b9e-9962-4936-80ff-afc8e8ae5c8c"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -2313,31 +2313,31 @@ extern(Windows):
 	final Windows.Security.Authentication.Web.WebAuthenticationResult WebAuthenticationResult()
 	{
 		Windows.Security.Authentication.Web.WebAuthenticationResult _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IWebAuthenticationBrokerContinuationEventArgs).get_WebAuthenticationResult(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IWebAuthenticationBrokerContinuationEventArgs)this.asInterface(uuid("75dda3d4-7714-453d-b7ff-b95e3a1709da"))).get_WebAuthenticationResult(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.ValueSet ContinuationData()
 	{
 		Windows.Foundation.Collections.ValueSet _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IContinuationActivatedEventArgs).get_ContinuationData(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IContinuationActivatedEventArgs)this.asInterface(uuid("e58106b5-155f-4a94-a742-c7e08f4e188c"))).get_ContinuationData(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
 		Windows.ApplicationModel.Activation.ActivationKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.ApplicationExecutionState PreviousExecutionState()
 	{
 		Windows.ApplicationModel.Activation.ApplicationExecutionState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_PreviousExecutionState(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_PreviousExecutionState(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Activation.SplashScreen SplashScreen()
 	{
 		Windows.ApplicationModel.Activation.SplashScreen _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Activation.IActivatedEventArgs).get_SplashScreen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
 }

@@ -65,7 +65,7 @@ extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, TArgs args);
 	final void Invoke(IInspectable sender, TArgs args)
 	{
-		Debug.OK(this.as!(Windows.Foundation.EventHandler!(TArgs)).abi_Invoke(sender, args));
+		Debug.OK((cast(Windows.Foundation.EventHandler!(TArgs))this).abi_Invoke(sender, args));
 	}
 }
 
@@ -75,7 +75,7 @@ extern(Windows):
 	HRESULT abi_Invoke(TSender sender, TArgs args);
 	final void Invoke(TSender sender, TArgs args)
 	{
-		Debug.OK(this.as!(Windows.Foundation.TypedEventHandler!(TSender, TArgs)).abi_Invoke(sender, args));
+		Debug.OK((cast(Windows.Foundation.TypedEventHandler!(TSender, TArgs))this).abi_Invoke(sender, args));
 	}
 }
 
@@ -86,12 +86,12 @@ extern(Windows):
 	HRESULT get_Progress(Windows.Foundation.AsyncActionProgressHandler!(TProgress)* return_handler);
 	final void Progress(Windows.Foundation.AsyncActionProgressHandler!(TProgress) handler)
 	{
-		Debug.OK(this.as!(Windows.Foundation.IAsyncActionWithProgress!(TProgress)).set_Progress(handler));
+		Debug.OK((cast(Windows.Foundation.IAsyncActionWithProgress!(TProgress))this).set_Progress(handler));
 	}
 	final Windows.Foundation.AsyncActionProgressHandler!(TProgress) Progress()
 	{
 		Windows.Foundation.AsyncActionProgressHandler!(TProgress) _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncActionWithProgress!(TProgress)).get_Progress(&_ret));
+		Debug.OK((cast(Windows.Foundation.IAsyncActionWithProgress!(TProgress))this).get_Progress(&_ret));
 		return _ret;
 	}
 }
@@ -102,7 +102,7 @@ extern(Windows):
 	HRESULT abi_Invoke(Windows.Foundation.IAsyncActionWithProgress!(TProgress) asyncInfo, TProgress progressInfo);
 	final void Invoke(Windows.Foundation.IAsyncActionWithProgress!(TProgress) asyncInfo, TProgress progressInfo)
 	{
-		Debug.OK(this.as!(Windows.Foundation.AsyncActionProgressHandler!(TProgress)).abi_Invoke(asyncInfo, progressInfo));
+		Debug.OK((cast(Windows.Foundation.AsyncActionProgressHandler!(TProgress))this).abi_Invoke(asyncInfo, progressInfo));
 	}
 }
 
@@ -112,7 +112,7 @@ extern(Windows):
 	HRESULT abi_Invoke(Windows.Foundation.IAsyncActionWithProgress!(TProgress) asyncInfo, AsyncStatus status);
 	final void Invoke(Windows.Foundation.IAsyncActionWithProgress!(TProgress) asyncInfo, AsyncStatus status)
 	{
-		Debug.OK(this.as!(Windows.Foundation.AsyncActionWithProgressCompletedHandler!(TProgress)).abi_Invoke(asyncInfo, status));
+		Debug.OK((cast(Windows.Foundation.AsyncActionWithProgressCompletedHandler!(TProgress))this).abi_Invoke(asyncInfo, status));
 	}
 }
 
@@ -124,18 +124,18 @@ extern(Windows):
 	HRESULT get_Results(TResult* return_results);
 	final void Completed(Windows.Foundation.AsyncOperationCompletedHandler!(TResult) handler)
 	{
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(TResult)).set_Completed(handler));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperation!(TResult))this).set_Completed(handler));
 	}
 	final Windows.Foundation.AsyncOperationCompletedHandler!(TResult) Completed()
 	{
 		Windows.Foundation.AsyncOperationCompletedHandler!(TResult) _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(TResult)).get_Completed(&_ret));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperation!(TResult))this).get_Completed(&_ret));
 		return _ret;
 	}
 	final TResult Results()
 	{
 		TResult _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(TResult)).get_Results(&_ret));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperation!(TResult))this).get_Results(&_ret));
 		return _ret;
 	}
 }
@@ -147,7 +147,7 @@ extern(Windows):
 	HRESULT abi_Invoke(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, TProgress progressInfo);
 	final void Invoke(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, TProgress progressInfo)
 	{
-		Debug.OK(this.as!(Windows.Foundation.AsyncOperationProgressHandler!(TResult, TProgress)).abi_Invoke(asyncInfo, progressInfo));
+		Debug.OK((cast(Windows.Foundation.AsyncOperationProgressHandler!(TResult, TProgress))this).abi_Invoke(asyncInfo, progressInfo));
 	}
 }
 
@@ -157,7 +157,7 @@ extern(Windows):
 	HRESULT abi_Invoke(Windows.Foundation.IAsyncOperation!(TResult) asyncInfo, AsyncStatus status);
 	final void Invoke(Windows.Foundation.IAsyncOperation!(TResult) asyncInfo, AsyncStatus status)
 	{
-		Debug.OK(this.as!(Windows.Foundation.AsyncOperationCompletedHandler!(TResult)).abi_Invoke(asyncInfo, status));
+		Debug.OK((cast(Windows.Foundation.AsyncOperationCompletedHandler!(TResult))this).abi_Invoke(asyncInfo, status));
 	}
 }
 
@@ -171,28 +171,28 @@ extern(Windows):
 	HRESULT get_Results(TResult* return_results);
 	final void Progress(Windows.Foundation.AsyncOperationProgressHandler!(TResult, TProgress) handler)
 	{
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress)).set_Progress(handler));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress))this).set_Progress(handler));
 	}
 	final Windows.Foundation.AsyncOperationProgressHandler!(TResult, TProgress) Progress()
 	{
 		Windows.Foundation.AsyncOperationProgressHandler!(TResult, TProgress) _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress)).get_Progress(&_ret));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress))this).get_Progress(&_ret));
 		return _ret;
 	}
 	final void Completed(Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(TResult, TProgress) handler)
 	{
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress)).set_Completed(handler));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress))this).set_Completed(handler));
 	}
 	final Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(TResult, TProgress) Completed()
 	{
 		Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(TResult, TProgress) _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress)).get_Completed(&_ret));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress))this).get_Completed(&_ret));
 		return _ret;
 	}
 	final TResult Results()
 	{
 		TResult _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress)).get_Results(&_ret));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress))this).get_Results(&_ret));
 		return _ret;
 	}
 }
@@ -203,7 +203,7 @@ extern(Windows):
 	HRESULT abi_Invoke(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, AsyncStatus status);
 	final void Invoke(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, AsyncStatus status)
 	{
-		Debug.OK(this.as!(Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(TResult, TProgress)).abi_Invoke(asyncInfo, status));
+		Debug.OK((cast(Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(TResult, TProgress))this).abi_Invoke(asyncInfo, status));
 	}
 }
 
@@ -214,7 +214,7 @@ extern(Windows):
 	final Type Value()
 	{
 		Type _ret;
-		Debug.OK(this.as!(Windows.Foundation.IReference!(Type)).get_Value(&_ret));
+		Debug.OK((cast(Windows.Foundation.IReference!(Type))this).get_Value(&_ret));
 		return _ret;
 	}
 }
@@ -392,12 +392,12 @@ extern(Windows):
 	final Windows.Foundation.AsyncActionCompletedHandler Completed()
 	{
 		Windows.Foundation.AsyncActionCompletedHandler ret;
-		Debug.OK(this.as!(IAsyncAction).get_Completed(&ret));
+		Debug.OK((cast(IAsyncAction)this.asInterface(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b"))).get_Completed(&ret));
 		return ret;
 	}
 	final void Completed(Windows.Foundation.AsyncActionCompletedHandler handler)
 	{
-		Debug.OK(this.as!(IAsyncAction).set_Completed(handler));
+		Debug.OK((cast(IAsyncAction)this.asInterface(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b"))).set_Completed(handler));
 	}
 }
 @uuid("5a648006-843a-4da9-865b-9d26e5dfad7b")
@@ -645,17 +645,17 @@ interface Deferral : Windows.Foundation.IDeferral, Windows.Foundation.IClosable
 extern(Windows):
 	final void Complete()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IDeferral).abi_Complete());
+		Debug.OK((cast(Windows.Foundation.IDeferral)this.asInterface(uuid("d6269732-3b7f-46a7-b40b-4fdca2a2c693"))).abi_Complete());
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	static Windows.Foundation.Deferral New(Windows.Foundation.DeferralCompletedHandler handler)
 	{
 		auto factory = factory!(Windows.Foundation.IDeferralFactory);
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(factory.as!(Windows.Foundation.IDeferralFactory).abi_Create(handler, &_ret));
+		Debug.OK((cast(Windows.Foundation.IDeferralFactory)factory.asInterface(uuid("65a1ecc5-3fb5-4832-8ca9-f061b281d13a"))).abi_Create(handler, &_ret));
 		return _ret;
 	}
 }
@@ -666,18 +666,18 @@ extern(Windows):
 	final Windows.Foundation.IMemoryBufferReference CreateReference()
 	{
 		Windows.Foundation.IMemoryBufferReference _ret;
-		Debug.OK(this.as!(Windows.Foundation.IMemoryBuffer).abi_CreateReference(&_ret));
+		Debug.OK((cast(Windows.Foundation.IMemoryBuffer)this.asInterface(uuid("fbc4dd2a-245b-11e4-af98-689423260cf8"))).abi_CreateReference(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	static Windows.Foundation.MemoryBuffer New(UINT32 capacity)
 	{
 		auto factory = factory!(Windows.Foundation.IMemoryBufferFactory);
 		Windows.Foundation.MemoryBuffer _ret;
-		Debug.OK(factory.as!(Windows.Foundation.IMemoryBufferFactory).abi_Create(capacity, &_ret));
+		Debug.OK((cast(Windows.Foundation.IMemoryBufferFactory)factory.asInterface(uuid("fbc4dd2b-245b-11e4-af98-689423260cf8"))).abi_Create(capacity, &_ret));
 		return _ret;
 	}
 }
@@ -693,235 +693,235 @@ interface PropertyValue
 	static IInspectable CreateEmpty()
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateEmpty(&_ret));
+		Debug.OK(staticInstance.abi_CreateEmpty(&_ret));
 		return _ret;
 	}
 	static IInspectable CreateUInt8(ubyte value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateUInt8(value, &_ret));
+		Debug.OK(staticInstance.abi_CreateUInt8(value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateInt16(INT16 value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateInt16(value, &_ret));
+		Debug.OK(staticInstance.abi_CreateInt16(value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateUInt16(UINT16 value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateUInt16(value, &_ret));
+		Debug.OK(staticInstance.abi_CreateUInt16(value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateInt32(INT32 value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateInt32(value, &_ret));
+		Debug.OK(staticInstance.abi_CreateInt32(value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateUInt32(UINT32 value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateUInt32(value, &_ret));
+		Debug.OK(staticInstance.abi_CreateUInt32(value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateInt64(INT64 value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateInt64(value, &_ret));
+		Debug.OK(staticInstance.abi_CreateInt64(value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateUInt64(ulong value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateUInt64(value, &_ret));
+		Debug.OK(staticInstance.abi_CreateUInt64(value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateSingle(float value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateSingle(value, &_ret));
+		Debug.OK(staticInstance.abi_CreateSingle(value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateDouble(double value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateDouble(value, &_ret));
+		Debug.OK(staticInstance.abi_CreateDouble(value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateChar16(wchar value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateChar16(value, &_ret));
+		Debug.OK(staticInstance.abi_CreateChar16(value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateBoolean(bool value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateBoolean(value, &_ret));
+		Debug.OK(staticInstance.abi_CreateBoolean(value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateString(HSTRING value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateString(value, &_ret));
+		Debug.OK(staticInstance.abi_CreateString(value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateInspectable(IInspectable value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateInspectable(value, &_ret));
+		Debug.OK(staticInstance.abi_CreateInspectable(value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateGuid(GUID value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateGuid(value, &_ret));
+		Debug.OK(staticInstance.abi_CreateGuid(value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateDateTime(Windows.Foundation.DateTime value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateDateTime(value, &_ret));
+		Debug.OK(staticInstance.abi_CreateDateTime(value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateTimeSpan(Windows.Foundation.TimeSpan value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateTimeSpan(value, &_ret));
+		Debug.OK(staticInstance.abi_CreateTimeSpan(value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreatePoint(Windows.Foundation.Point value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreatePoint(value, &_ret));
+		Debug.OK(staticInstance.abi_CreatePoint(value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateSize(Windows.Foundation.Size value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateSize(value, &_ret));
+		Debug.OK(staticInstance.abi_CreateSize(value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateRect(Windows.Foundation.Rect value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateRect(value, &_ret));
+		Debug.OK(staticInstance.abi_CreateRect(value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateUInt8Array(UINT32 __valueSize, ubyte* value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateUInt8Array(__valueSize, value, &_ret));
+		Debug.OK(staticInstance.abi_CreateUInt8Array(__valueSize, value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateInt16Array(UINT32 __valueSize, INT16* value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateInt16Array(__valueSize, value, &_ret));
+		Debug.OK(staticInstance.abi_CreateInt16Array(__valueSize, value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateUInt16Array(UINT32 __valueSize, UINT16* value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateUInt16Array(__valueSize, value, &_ret));
+		Debug.OK(staticInstance.abi_CreateUInt16Array(__valueSize, value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateInt32Array(UINT32 __valueSize, INT32* value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateInt32Array(__valueSize, value, &_ret));
+		Debug.OK(staticInstance.abi_CreateInt32Array(__valueSize, value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateUInt32Array(UINT32 __valueSize, UINT32* value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateUInt32Array(__valueSize, value, &_ret));
+		Debug.OK(staticInstance.abi_CreateUInt32Array(__valueSize, value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateInt64Array(UINT32 __valueSize, INT64* value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateInt64Array(__valueSize, value, &_ret));
+		Debug.OK(staticInstance.abi_CreateInt64Array(__valueSize, value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateUInt64Array(UINT32 __valueSize, ulong* value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateUInt64Array(__valueSize, value, &_ret));
+		Debug.OK(staticInstance.abi_CreateUInt64Array(__valueSize, value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateSingleArray(UINT32 __valueSize, float* value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateSingleArray(__valueSize, value, &_ret));
+		Debug.OK(staticInstance.abi_CreateSingleArray(__valueSize, value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateDoubleArray(UINT32 __valueSize, double* value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateDoubleArray(__valueSize, value, &_ret));
+		Debug.OK(staticInstance.abi_CreateDoubleArray(__valueSize, value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateChar16Array(UINT32 __valueSize, wchar* value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateChar16Array(__valueSize, value, &_ret));
+		Debug.OK(staticInstance.abi_CreateChar16Array(__valueSize, value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateBooleanArray(UINT32 __valueSize, bool* value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateBooleanArray(__valueSize, value, &_ret));
+		Debug.OK(staticInstance.abi_CreateBooleanArray(__valueSize, value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateStringArray(UINT32 __valueSize, HSTRING* value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateStringArray(__valueSize, value, &_ret));
+		Debug.OK(staticInstance.abi_CreateStringArray(__valueSize, value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateInspectableArray(UINT32 __valueSize, IInspectable* value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateInspectableArray(__valueSize, value, &_ret));
+		Debug.OK(staticInstance.abi_CreateInspectableArray(__valueSize, value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateGuidArray(UINT32 __valueSize, GUID* value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateGuidArray(__valueSize, value, &_ret));
+		Debug.OK(staticInstance.abi_CreateGuidArray(__valueSize, value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateDateTimeArray(UINT32 __valueSize, Windows.Foundation.DateTime* value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateDateTimeArray(__valueSize, value, &_ret));
+		Debug.OK(staticInstance.abi_CreateDateTimeArray(__valueSize, value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateTimeSpanArray(UINT32 __valueSize, Windows.Foundation.TimeSpan* value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateTimeSpanArray(__valueSize, value, &_ret));
+		Debug.OK(staticInstance.abi_CreateTimeSpanArray(__valueSize, value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreatePointArray(UINT32 __valueSize, Windows.Foundation.Point* value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreatePointArray(__valueSize, value, &_ret));
+		Debug.OK(staticInstance.abi_CreatePointArray(__valueSize, value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateSizeArray(UINT32 __valueSize, Windows.Foundation.Size* value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateSizeArray(__valueSize, value, &_ret));
+		Debug.OK(staticInstance.abi_CreateSizeArray(__valueSize, value, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateRectArray(UINT32 __valueSize, Windows.Foundation.Rect* value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IPropertyValueStatics).abi_CreateRectArray(__valueSize, value, &_ret));
+		Debug.OK(staticInstance.abi_CreateRectArray(__valueSize, value, &_ret));
 		return _ret;
 	}
 }
@@ -932,121 +932,121 @@ extern(Windows):
 	final HSTRING AbsoluteUri()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_AbsoluteUri(&_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_AbsoluteUri(&_ret));
 		return _ret;
 	}
 	final HSTRING DisplayUri()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_DisplayUri(&_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_DisplayUri(&_ret));
 		return _ret;
 	}
 	final HSTRING Domain()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_Domain(&_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_Domain(&_ret));
 		return _ret;
 	}
 	final HSTRING Extension()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_Extension(&_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_Extension(&_ret));
 		return _ret;
 	}
 	final HSTRING Fragment()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_Fragment(&_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_Fragment(&_ret));
 		return _ret;
 	}
 	final HSTRING Host()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_Host(&_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_Host(&_ret));
 		return _ret;
 	}
 	final HSTRING Password()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_Password(&_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_Password(&_ret));
 		return _ret;
 	}
 	final HSTRING Path()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_Path(&_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_Path(&_ret));
 		return _ret;
 	}
 	final HSTRING Query()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_Query(&_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_Query(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.WwwFormUrlDecoder QueryParsed()
 	{
 		Windows.Foundation.WwwFormUrlDecoder _ret;
-		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_QueryParsed(&_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_QueryParsed(&_ret));
 		return _ret;
 	}
 	final HSTRING RawUri()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_RawUri(&_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_RawUri(&_ret));
 		return _ret;
 	}
 	final HSTRING SchemeName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_SchemeName(&_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_SchemeName(&_ret));
 		return _ret;
 	}
 	final HSTRING UserName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_UserName(&_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_UserName(&_ret));
 		return _ret;
 	}
 	final INT32 Port()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_Port(&_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_Port(&_ret));
 		return _ret;
 	}
 	final bool Suspicious()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).get_Suspicious(&_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_Suspicious(&_ret));
 		return _ret;
 	}
 	final bool Equals(Windows.Foundation.Uri pUri)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).abi_Equals(pUri, &_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).abi_Equals(pUri, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Uri CombineUri(HSTRING relativeUri)
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClass).abi_CombineUri(relativeUri, &_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).abi_CombineUri(relativeUri, &_ret));
 		return _ret;
 	}
 	final HSTRING AbsoluteCanonicalUri()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClassWithAbsoluteCanonicalUri).get_AbsoluteCanonicalUri(&_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClassWithAbsoluteCanonicalUri)this.asInterface(uuid("758d9661-221c-480f-a339-50656673f46f"))).get_AbsoluteCanonicalUri(&_ret));
 		return _ret;
 	}
 	final HSTRING DisplayIri()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IUriRuntimeClassWithAbsoluteCanonicalUri).get_DisplayIri(&_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClassWithAbsoluteCanonicalUri)this.asInterface(uuid("758d9661-221c-480f-a339-50656673f46f"))).get_DisplayIri(&_ret));
 		return _ret;
 	}
 	final HSTRING ToString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		Debug.OK((cast(Windows.Foundation.IStringable)this.asInterface(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3"))).abi_ToString(&_ret));
 		return _ret;
 	}
 
@@ -1059,27 +1059,27 @@ extern(Windows):
 	static HSTRING UnescapeComponent(HSTRING toUnescape)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IUriEscapeStatics).abi_UnescapeComponent(toUnescape, &_ret));
+		Debug.OK(staticInstance.abi_UnescapeComponent(toUnescape, &_ret));
 		return _ret;
 	}
 	static HSTRING EscapeComponent(HSTRING toEscape)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Foundation.IUriEscapeStatics).abi_EscapeComponent(toEscape, &_ret));
+		Debug.OK(staticInstance.abi_EscapeComponent(toEscape, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Uri New(HSTRING uri)
 	{
 		auto factory = factory!(Windows.Foundation.IUriRuntimeClassFactory);
 		Windows.Foundation.Uri _ret;
-		Debug.OK(factory.as!(Windows.Foundation.IUriRuntimeClassFactory).abi_CreateUri(uri, &_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClassFactory)factory.asInterface(uuid("44a9796f-723e-4fdf-a218-033e75b0c084"))).abi_CreateUri(uri, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Uri New(HSTRING baseUri, HSTRING relativeUri)
 	{
 		auto factory = factory!(Windows.Foundation.IUriRuntimeClassFactory);
 		Windows.Foundation.Uri _ret;
-		Debug.OK(factory.as!(Windows.Foundation.IUriRuntimeClassFactory).abi_CreateWithRelativeUri(baseUri, relativeUri, &_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClassFactory)factory.asInterface(uuid("44a9796f-723e-4fdf-a218-033e75b0c084"))).abi_CreateWithRelativeUri(baseUri, relativeUri, &_ret));
 		return _ret;
 	}
 }
@@ -1090,38 +1090,38 @@ extern(Windows):
 	final HSTRING GetFirstValueByName(HSTRING name)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IWwwFormUrlDecoderRuntimeClass).abi_GetFirstValueByName(name, &_ret));
+		Debug.OK((cast(Windows.Foundation.IWwwFormUrlDecoderRuntimeClass)this.asInterface(uuid("d45a0451-f225-4542-9296-0e1df5d254df"))).abi_GetFirstValueByName(name, &_ret));
 		return _ret;
 	}
 	final void GetAt(uint index, Windows.Foundation.IWwwFormUrlDecoderEntry* out_item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.IWwwFormUrlDecoderEntry)).abi_GetAt(index, out_item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.IWwwFormUrlDecoderEntry))this).abi_GetAt(index, out_item));
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.IWwwFormUrlDecoderEntry)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.IWwwFormUrlDecoderEntry))this).get_Size(&_ret));
 		return _ret;
 	}
 	final uint IndexOf(Windows.Foundation.IWwwFormUrlDecoderEntry value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.IWwwFormUrlDecoderEntry)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.IWwwFormUrlDecoderEntry))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.Foundation.IWwwFormUrlDecoderEntry* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.IWwwFormUrlDecoderEntry)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.IWwwFormUrlDecoderEntry))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.IWwwFormUrlDecoderEntry)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.IWwwFormUrlDecoderEntry)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.Foundation.IWwwFormUrlDecoderEntry))this).abi_First(out_first));
 	}
 	static Windows.Foundation.WwwFormUrlDecoder New(HSTRING query)
 	{
 		auto factory = factory!(Windows.Foundation.IWwwFormUrlDecoderRuntimeClassFactory);
 		Windows.Foundation.WwwFormUrlDecoder _ret;
-		Debug.OK(factory.as!(Windows.Foundation.IWwwFormUrlDecoderRuntimeClassFactory).abi_CreateWwwFormUrlDecoder(query, &_ret));
+		Debug.OK((cast(Windows.Foundation.IWwwFormUrlDecoderRuntimeClassFactory)factory.asInterface(uuid("5b8c6b3d-24ae-41b5-a1bf-f0c3d544845b"))).abi_CreateWwwFormUrlDecoder(query, &_ret));
 		return _ret;
 	}
 }
@@ -1132,13 +1132,13 @@ extern(Windows):
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IWwwFormUrlDecoderEntry).get_Name(&_ret));
+		Debug.OK((cast(Windows.Foundation.IWwwFormUrlDecoderEntry)this.asInterface(uuid("125e7431-f678-4e8e-b670-20a9b06c512d"))).get_Name(&_ret));
 		return _ret;
 	}
 	final HSTRING Value()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IWwwFormUrlDecoderEntry).get_Value(&_ret));
+		Debug.OK((cast(Windows.Foundation.IWwwFormUrlDecoderEntry)this.asInterface(uuid("125e7431-f678-4e8e-b670-20a9b06c512d"))).get_Value(&_ret));
 		return _ret;
 	}
 }

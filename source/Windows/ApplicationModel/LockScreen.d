@@ -73,17 +73,17 @@ interface LockApplicationHost : Windows.ApplicationModel.LockScreen.ILockApplica
 extern(Windows):
 	final void RequestUnlock()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockApplicationHost).abi_RequestUnlock());
+		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockApplicationHost)this.asInterface(uuid("38ee31ad-d94f-4e7c-81fa-4f4436506281"))).abi_RequestUnlock());
 	}
 	final EventRegistrationToken OnUnlocking(void delegate(Windows.ApplicationModel.LockScreen.LockApplicationHost, Windows.ApplicationModel.LockScreen.LockScreenUnlockingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockApplicationHost).add_Unlocking(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockApplicationHost, Windows.ApplicationModel.LockScreen.LockScreenUnlockingEventArgs), Windows.ApplicationModel.LockScreen.LockApplicationHost, Windows.ApplicationModel.LockScreen.LockScreenUnlockingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockApplicationHost)this.asInterface(uuid("38ee31ad-d94f-4e7c-81fa-4f4436506281"))).add_Unlocking(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockApplicationHost, Windows.ApplicationModel.LockScreen.LockScreenUnlockingEventArgs), Windows.ApplicationModel.LockScreen.LockApplicationHost, Windows.ApplicationModel.LockScreen.LockScreenUnlockingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeUnlocking(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockApplicationHost).remove_Unlocking(token));
+		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockApplicationHost)this.asInterface(uuid("38ee31ad-d94f-4e7c-81fa-4f4436506281"))).remove_Unlocking(token));
 	}
 
 	private static Windows.ApplicationModel.LockScreen.ILockApplicationHostStatics _staticInstance;
@@ -95,7 +95,7 @@ extern(Windows):
 	static Windows.ApplicationModel.LockScreen.LockApplicationHost GetForCurrentView()
 	{
 		Windows.ApplicationModel.LockScreen.LockApplicationHost _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.LockScreen.ILockApplicationHostStatics).abi_GetForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 }
@@ -106,30 +106,30 @@ extern(Windows):
 	final Windows.Storage.Streams.IRandomAccessStream Logo()
 	{
 		Windows.Storage.Streams.IRandomAccessStream _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenBadge).get_Logo(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockScreenBadge)this.asInterface(uuid("e95105d9-2bff-4db0-9b4f-3824778b9c9a"))).get_Logo(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IRandomAccessStream Glyph()
 	{
 		Windows.Storage.Streams.IRandomAccessStream _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenBadge).get_Glyph(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockScreenBadge)this.asInterface(uuid("e95105d9-2bff-4db0-9b4f-3824778b9c9a"))).get_Glyph(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(UINT32) Number()
 	{
 		Windows.Foundation.IReference!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenBadge).get_Number(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockScreenBadge)this.asInterface(uuid("e95105d9-2bff-4db0-9b4f-3824778b9c9a"))).get_Number(&_ret));
 		return _ret;
 	}
 	final HSTRING AutomationName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenBadge).get_AutomationName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockScreenBadge)this.asInterface(uuid("e95105d9-2bff-4db0-9b4f-3824778b9c9a"))).get_AutomationName(&_ret));
 		return _ret;
 	}
 	final void LaunchApp()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenBadge).abi_LaunchApp());
+		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockScreenBadge)this.asInterface(uuid("e95105d9-2bff-4db0-9b4f-3824778b9c9a"))).abi_LaunchApp());
 	}
 }
 
@@ -139,65 +139,65 @@ extern(Windows):
 	final EventRegistrationToken OnLockScreenImageChanged(void delegate(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).add_LockScreenImageChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable), Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockScreenInfo)this.asInterface(uuid("f59aa65c-9711-4dc9-a630-95b6cb8cdad0"))).add_LockScreenImageChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable), Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeLockScreenImageChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).remove_LockScreenImageChanged(token));
+		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockScreenInfo)this.asInterface(uuid("f59aa65c-9711-4dc9-a630-95b6cb8cdad0"))).remove_LockScreenImageChanged(token));
 	}
 	final Windows.Storage.Streams.IRandomAccessStream LockScreenImage()
 	{
 		Windows.Storage.Streams.IRandomAccessStream _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).get_LockScreenImage(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockScreenInfo)this.asInterface(uuid("f59aa65c-9711-4dc9-a630-95b6cb8cdad0"))).get_LockScreenImage(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnBadgesChanged(void delegate(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).add_BadgesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable), Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockScreenInfo)this.asInterface(uuid("f59aa65c-9711-4dc9-a630-95b6cb8cdad0"))).add_BadgesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable), Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeBadgesChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).remove_BadgesChanged(token));
+		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockScreenInfo)this.asInterface(uuid("f59aa65c-9711-4dc9-a630-95b6cb8cdad0"))).remove_BadgesChanged(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.LockScreen.LockScreenBadge) Badges()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.LockScreen.LockScreenBadge) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).get_Badges(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockScreenInfo)this.asInterface(uuid("f59aa65c-9711-4dc9-a630-95b6cb8cdad0"))).get_Badges(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnDetailTextChanged(void delegate(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).add_DetailTextChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable), Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockScreenInfo)this.asInterface(uuid("f59aa65c-9711-4dc9-a630-95b6cb8cdad0"))).add_DetailTextChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable), Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeDetailTextChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).remove_DetailTextChanged(token));
+		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockScreenInfo)this.asInterface(uuid("f59aa65c-9711-4dc9-a630-95b6cb8cdad0"))).remove_DetailTextChanged(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) DetailText()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).get_DetailText(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockScreenInfo)this.asInterface(uuid("f59aa65c-9711-4dc9-a630-95b6cb8cdad0"))).get_DetailText(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnAlarmIconChanged(void delegate(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).add_AlarmIconChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable), Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockScreenInfo)this.asInterface(uuid("f59aa65c-9711-4dc9-a630-95b6cb8cdad0"))).add_AlarmIconChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable), Windows.ApplicationModel.LockScreen.LockScreenInfo, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeAlarmIconChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).remove_AlarmIconChanged(token));
+		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockScreenInfo)this.asInterface(uuid("f59aa65c-9711-4dc9-a630-95b6cb8cdad0"))).remove_AlarmIconChanged(token));
 	}
 	final Windows.Storage.Streams.IRandomAccessStream AlarmIcon()
 	{
 		Windows.Storage.Streams.IRandomAccessStream _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenInfo).get_AlarmIcon(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockScreenInfo)this.asInterface(uuid("f59aa65c-9711-4dc9-a630-95b6cb8cdad0"))).get_AlarmIcon(&_ret));
 		return _ret;
 	}
 }
@@ -207,7 +207,7 @@ interface LockScreenUnlockingDeferral : Windows.ApplicationModel.LockScreen.ILoc
 extern(Windows):
 	final void Complete()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenUnlockingDeferral).abi_Complete());
+		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockScreenUnlockingDeferral)this.asInterface(uuid("7e7d1ad6-5203-43e7-9bd6-7c3947d1e3fe"))).abi_Complete());
 	}
 }
 
@@ -217,13 +217,13 @@ extern(Windows):
 	final Windows.ApplicationModel.LockScreen.LockScreenUnlockingDeferral GetDeferral()
 	{
 		Windows.ApplicationModel.LockScreen.LockScreenUnlockingDeferral _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenUnlockingEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockScreenUnlockingEventArgs)this.asInterface(uuid("44e6c007-75fb-4abb-9f8b-824748900c71"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime Deadline()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.LockScreen.ILockScreenUnlockingEventArgs).get_Deadline(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.LockScreen.ILockScreenUnlockingEventArgs)this.asInterface(uuid("44e6c007-75fb-4abb-9f8b-824748900c71"))).get_Deadline(&_ret));
 		return _ret;
 	}
 }

@@ -315,124 +315,124 @@ extern(Windows):
 	final HSTRING Country()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_Country(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentAddress)this.asInterface(uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5"))).get_Country(&_ret));
 		return _ret;
 	}
 	final void Country(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).set_Country(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentAddress)this.asInterface(uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5"))).set_Country(value));
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) AddressLines()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_AddressLines(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentAddress)this.asInterface(uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5"))).get_AddressLines(&_ret));
 		return _ret;
 	}
 	final void AddressLines(Windows.Foundation.Collections.IVectorView!(HSTRING) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).set_AddressLines(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentAddress)this.asInterface(uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5"))).set_AddressLines(value));
 	}
 	final HSTRING Region()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_Region(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentAddress)this.asInterface(uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5"))).get_Region(&_ret));
 		return _ret;
 	}
 	final void Region(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).set_Region(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentAddress)this.asInterface(uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5"))).set_Region(value));
 	}
 	final HSTRING City()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_City(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentAddress)this.asInterface(uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5"))).get_City(&_ret));
 		return _ret;
 	}
 	final void City(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).set_City(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentAddress)this.asInterface(uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5"))).set_City(value));
 	}
 	final HSTRING DependentLocality()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_DependentLocality(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentAddress)this.asInterface(uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5"))).get_DependentLocality(&_ret));
 		return _ret;
 	}
 	final void DependentLocality(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).set_DependentLocality(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentAddress)this.asInterface(uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5"))).set_DependentLocality(value));
 	}
 	final HSTRING PostalCode()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_PostalCode(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentAddress)this.asInterface(uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5"))).get_PostalCode(&_ret));
 		return _ret;
 	}
 	final void PostalCode(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).set_PostalCode(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentAddress)this.asInterface(uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5"))).set_PostalCode(value));
 	}
 	final HSTRING SortingCode()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_SortingCode(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentAddress)this.asInterface(uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5"))).get_SortingCode(&_ret));
 		return _ret;
 	}
 	final void SortingCode(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).set_SortingCode(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentAddress)this.asInterface(uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5"))).set_SortingCode(value));
 	}
 	final HSTRING LanguageCode()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_LanguageCode(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentAddress)this.asInterface(uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5"))).get_LanguageCode(&_ret));
 		return _ret;
 	}
 	final void LanguageCode(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).set_LanguageCode(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentAddress)this.asInterface(uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5"))).set_LanguageCode(value));
 	}
 	final HSTRING Organization()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_Organization(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentAddress)this.asInterface(uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5"))).get_Organization(&_ret));
 		return _ret;
 	}
 	final void Organization(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).set_Organization(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentAddress)this.asInterface(uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5"))).set_Organization(value));
 	}
 	final HSTRING Recipient()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_Recipient(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentAddress)this.asInterface(uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5"))).get_Recipient(&_ret));
 		return _ret;
 	}
 	final void Recipient(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).set_Recipient(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentAddress)this.asInterface(uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5"))).set_Recipient(value));
 	}
 	final HSTRING PhoneNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_PhoneNumber(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentAddress)this.asInterface(uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5"))).get_PhoneNumber(&_ret));
 		return _ret;
 	}
 	final void PhoneNumber(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).set_PhoneNumber(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentAddress)this.asInterface(uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5"))).set_PhoneNumber(value));
 	}
 	final Windows.Foundation.Collections.ValueSet Properties()
 	{
 		Windows.Foundation.Collections.ValueSet _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentAddress).get_Properties(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentAddress)this.asInterface(uuid("5f2264e9-6f3a-4166-a018-0a0b06bb32b5"))).get_Properties(&_ret));
 		return _ret;
 	}
 	static PaymentAddress New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PaymentAddress).abi_ActivateInstance(&ret));
-		return ret.as!(PaymentAddress);
+		return cast(PaymentAddress) ret;
 	}
 }
 
@@ -442,45 +442,45 @@ extern(Windows):
 	final HSTRING Currency()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentCurrencyAmount).get_Currency(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentCurrencyAmount)this.asInterface(uuid("e3a3e9e0-b41f-4987-bdcb-071331f2daa4"))).get_Currency(&_ret));
 		return _ret;
 	}
 	final void Currency(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentCurrencyAmount).set_Currency(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentCurrencyAmount)this.asInterface(uuid("e3a3e9e0-b41f-4987-bdcb-071331f2daa4"))).set_Currency(value));
 	}
 	final HSTRING CurrencySystem()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentCurrencyAmount).get_CurrencySystem(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentCurrencyAmount)this.asInterface(uuid("e3a3e9e0-b41f-4987-bdcb-071331f2daa4"))).get_CurrencySystem(&_ret));
 		return _ret;
 	}
 	final void CurrencySystem(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentCurrencyAmount).set_CurrencySystem(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentCurrencyAmount)this.asInterface(uuid("e3a3e9e0-b41f-4987-bdcb-071331f2daa4"))).set_CurrencySystem(value));
 	}
 	final HSTRING Value()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentCurrencyAmount).get_Value(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentCurrencyAmount)this.asInterface(uuid("e3a3e9e0-b41f-4987-bdcb-071331f2daa4"))).get_Value(&_ret));
 		return _ret;
 	}
 	final void Value(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentCurrencyAmount).set_Value(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentCurrencyAmount)this.asInterface(uuid("e3a3e9e0-b41f-4987-bdcb-071331f2daa4"))).set_Value(value));
 	}
 	static Windows.ApplicationModel.Payments.PaymentCurrencyAmount New(HSTRING value, HSTRING currency)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentCurrencyAmountFactory);
 		Windows.ApplicationModel.Payments.PaymentCurrencyAmount _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentCurrencyAmountFactory).abi_Create(value, currency, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentCurrencyAmountFactory)factory.asInterface(uuid("3257d338-140c-4575-8535-f773178c09a7"))).abi_Create(value, currency, &_ret));
 		return _ret;
 	}
 	static Windows.ApplicationModel.Payments.PaymentCurrencyAmount New(HSTRING value, HSTRING currency, HSTRING currencySystem)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentCurrencyAmountFactory);
 		Windows.ApplicationModel.Payments.PaymentCurrencyAmount _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentCurrencyAmountFactory).abi_CreateWithCurrencySystem(value, currency, currencySystem, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentCurrencyAmountFactory)factory.asInterface(uuid("3257d338-140c-4575-8535-f773178c09a7"))).abi_CreateWithCurrencySystem(value, currency, currencySystem, &_ret));
 		return _ret;
 	}
 }
@@ -491,61 +491,61 @@ extern(Windows):
 	final Windows.ApplicationModel.Payments.PaymentItem Total()
 	{
 		Windows.ApplicationModel.Payments.PaymentItem _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetails).get_Total(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentDetails)this.asInterface(uuid("53bb2d7d-e0eb-4053-8eae-ce7c48e02945"))).get_Total(&_ret));
 		return _ret;
 	}
 	final void Total(Windows.ApplicationModel.Payments.PaymentItem value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetails).set_Total(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentDetails)this.asInterface(uuid("53bb2d7d-e0eb-4053-8eae-ce7c48e02945"))).set_Total(value));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentItem) DisplayItems()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentItem) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetails).get_DisplayItems(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentDetails)this.asInterface(uuid("53bb2d7d-e0eb-4053-8eae-ce7c48e02945"))).get_DisplayItems(&_ret));
 		return _ret;
 	}
 	final void DisplayItems(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentItem) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetails).set_DisplayItems(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentDetails)this.asInterface(uuid("53bb2d7d-e0eb-4053-8eae-ce7c48e02945"))).set_DisplayItems(value));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentShippingOption) ShippingOptions()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentShippingOption) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetails).get_ShippingOptions(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentDetails)this.asInterface(uuid("53bb2d7d-e0eb-4053-8eae-ce7c48e02945"))).get_ShippingOptions(&_ret));
 		return _ret;
 	}
 	final void ShippingOptions(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentShippingOption) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetails).set_ShippingOptions(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentDetails)this.asInterface(uuid("53bb2d7d-e0eb-4053-8eae-ce7c48e02945"))).set_ShippingOptions(value));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentDetailsModifier) Modifiers()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentDetailsModifier) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetails).get_Modifiers(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentDetails)this.asInterface(uuid("53bb2d7d-e0eb-4053-8eae-ce7c48e02945"))).get_Modifiers(&_ret));
 		return _ret;
 	}
 	final void Modifiers(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentDetailsModifier) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetails).set_Modifiers(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentDetails)this.asInterface(uuid("53bb2d7d-e0eb-4053-8eae-ce7c48e02945"))).set_Modifiers(value));
 	}
 	static PaymentDetails New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PaymentDetails).abi_ActivateInstance(&ret));
-		return ret.as!(PaymentDetails);
+		return cast(PaymentDetails) ret;
 	}
 	static Windows.ApplicationModel.Payments.PaymentDetails New(Windows.ApplicationModel.Payments.PaymentItem total)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentDetailsFactory);
 		Windows.ApplicationModel.Payments.PaymentDetails _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentDetailsFactory).abi_Create(total, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentDetailsFactory)factory.asInterface(uuid("cfe8afee-c0ea-4ca1-8bc7-6de67b1f3763"))).abi_Create(total, &_ret));
 		return _ret;
 	}
 	static Windows.ApplicationModel.Payments.PaymentDetails New(Windows.ApplicationModel.Payments.PaymentItem total, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Payments.PaymentItem) displayItems)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentDetailsFactory);
 		Windows.ApplicationModel.Payments.PaymentDetails _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentDetailsFactory).abi_CreateWithDisplayItems(total, displayItems, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentDetailsFactory)factory.asInterface(uuid("cfe8afee-c0ea-4ca1-8bc7-6de67b1f3763"))).abi_CreateWithDisplayItems(total, displayItems, &_ret));
 		return _ret;
 	}
 }
@@ -556,46 +556,46 @@ extern(Windows):
 	final HSTRING JsonData()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetailsModifier).get_JsonData(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentDetailsModifier)this.asInterface(uuid("be1c7d65-4323-41d7-b305-dfcb765f69de"))).get_JsonData(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) SupportedMethodIds()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetailsModifier).get_SupportedMethodIds(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentDetailsModifier)this.asInterface(uuid("be1c7d65-4323-41d7-b305-dfcb765f69de"))).get_SupportedMethodIds(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Payments.PaymentItem Total()
 	{
 		Windows.ApplicationModel.Payments.PaymentItem _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetailsModifier).get_Total(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentDetailsModifier)this.asInterface(uuid("be1c7d65-4323-41d7-b305-dfcb765f69de"))).get_Total(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentItem) AdditionalDisplayItems()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentItem) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentDetailsModifier).get_AdditionalDisplayItems(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentDetailsModifier)this.asInterface(uuid("be1c7d65-4323-41d7-b305-dfcb765f69de"))).get_AdditionalDisplayItems(&_ret));
 		return _ret;
 	}
 	static Windows.ApplicationModel.Payments.PaymentDetailsModifier New(Windows.Foundation.Collections.IIterable!(HSTRING) supportedMethodIds, Windows.ApplicationModel.Payments.PaymentItem total)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentDetailsModifierFactory);
 		Windows.ApplicationModel.Payments.PaymentDetailsModifier _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentDetailsModifierFactory).abi_Create(supportedMethodIds, total, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentDetailsModifierFactory)factory.asInterface(uuid("79005286-54de-429c-9e4f-5dce6e10ebce"))).abi_Create(supportedMethodIds, total, &_ret));
 		return _ret;
 	}
 	static Windows.ApplicationModel.Payments.PaymentDetailsModifier New(Windows.Foundation.Collections.IIterable!(HSTRING) supportedMethodIds, Windows.ApplicationModel.Payments.PaymentItem total, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Payments.PaymentItem) additionalDisplayItems)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentDetailsModifierFactory);
 		Windows.ApplicationModel.Payments.PaymentDetailsModifier _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentDetailsModifierFactory).abi_CreateWithAdditionalDisplayItems(supportedMethodIds, total, additionalDisplayItems, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentDetailsModifierFactory)factory.asInterface(uuid("79005286-54de-429c-9e4f-5dce6e10ebce"))).abi_CreateWithAdditionalDisplayItems(supportedMethodIds, total, additionalDisplayItems, &_ret));
 		return _ret;
 	}
 	static Windows.ApplicationModel.Payments.PaymentDetailsModifier New(Windows.Foundation.Collections.IIterable!(HSTRING) supportedMethodIds, Windows.ApplicationModel.Payments.PaymentItem total, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Payments.PaymentItem) additionalDisplayItems, HSTRING jsonData)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentDetailsModifierFactory);
 		Windows.ApplicationModel.Payments.PaymentDetailsModifier _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentDetailsModifierFactory).abi_CreateWithAdditionalDisplayItemsAndJsonData(supportedMethodIds, total, additionalDisplayItems, jsonData, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentDetailsModifierFactory)factory.asInterface(uuid("79005286-54de-429c-9e4f-5dce6e10ebce"))).abi_CreateWithAdditionalDisplayItemsAndJsonData(supportedMethodIds, total, additionalDisplayItems, jsonData, &_ret));
 		return _ret;
 	}
 }
@@ -606,38 +606,38 @@ extern(Windows):
 	final HSTRING Label()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentItem).get_Label(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentItem)this.asInterface(uuid("685ac88b-79b2-4b76-9e03-a876223dfe72"))).get_Label(&_ret));
 		return _ret;
 	}
 	final void Label(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentItem).set_Label(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentItem)this.asInterface(uuid("685ac88b-79b2-4b76-9e03-a876223dfe72"))).set_Label(value));
 	}
 	final Windows.ApplicationModel.Payments.PaymentCurrencyAmount Amount()
 	{
 		Windows.ApplicationModel.Payments.PaymentCurrencyAmount _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentItem).get_Amount(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentItem)this.asInterface(uuid("685ac88b-79b2-4b76-9e03-a876223dfe72"))).get_Amount(&_ret));
 		return _ret;
 	}
 	final void Amount(Windows.ApplicationModel.Payments.PaymentCurrencyAmount value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentItem).set_Amount(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentItem)this.asInterface(uuid("685ac88b-79b2-4b76-9e03-a876223dfe72"))).set_Amount(value));
 	}
 	final bool Pending()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentItem).get_Pending(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentItem)this.asInterface(uuid("685ac88b-79b2-4b76-9e03-a876223dfe72"))).get_Pending(&_ret));
 		return _ret;
 	}
 	final void Pending(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentItem).set_Pending(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentItem)this.asInterface(uuid("685ac88b-79b2-4b76-9e03-a876223dfe72"))).set_Pending(value));
 	}
 	static Windows.ApplicationModel.Payments.PaymentItem New(HSTRING label, Windows.ApplicationModel.Payments.PaymentCurrencyAmount amount)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentItemFactory);
 		Windows.ApplicationModel.Payments.PaymentItem _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentItemFactory).abi_Create(label, amount, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentItemFactory)factory.asInterface(uuid("c6ab7ad8-2503-4d1d-a778-02b2e5927b2c"))).abi_Create(label, amount, &_ret));
 		return _ret;
 	}
 }
@@ -648,26 +648,26 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) GetSupportedMethodIdsAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentMediator).abi_GetSupportedMethodIdsAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentMediator)this.asInterface(uuid("fb0ee829-ec0c-449a-83da-7ae3073365a2"))).abi_GetSupportedMethodIdsAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.PaymentRequestSubmitResult) SubmitPaymentRequestAsync(Windows.ApplicationModel.Payments.PaymentRequest paymentRequest)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.PaymentRequestSubmitResult) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentMediator).abi_SubmitPaymentRequestAsync(paymentRequest, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentMediator)this.asInterface(uuid("fb0ee829-ec0c-449a-83da-7ae3073365a2"))).abi_SubmitPaymentRequestAsync(paymentRequest, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.PaymentRequestSubmitResult) SubmitPaymentRequestWithChangeHandlerAsync(Windows.ApplicationModel.Payments.PaymentRequest paymentRequest, Windows.ApplicationModel.Payments.PaymentRequestChangedHandler changeHandler)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.PaymentRequestSubmitResult) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentMediator).abi_SubmitPaymentRequestWithChangeHandlerAsync(paymentRequest, changeHandler, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentMediator)this.asInterface(uuid("fb0ee829-ec0c-449a-83da-7ae3073365a2"))).abi_SubmitPaymentRequestWithChangeHandlerAsync(paymentRequest, changeHandler, &_ret));
 		return _ret;
 	}
 	static PaymentMediator New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PaymentMediator).abi_ActivateInstance(&ret));
-		return ret.as!(PaymentMediator);
+		return cast(PaymentMediator) ret;
 	}
 }
 
@@ -677,26 +677,26 @@ extern(Windows):
 	final HSTRING PackageFullName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentMerchantInfo).get_PackageFullName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentMerchantInfo)this.asInterface(uuid("63445050-0e94-4ed6-aacb-e6012bd327a7"))).get_PackageFullName(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Uri Uri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentMerchantInfo).get_Uri(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentMerchantInfo)this.asInterface(uuid("63445050-0e94-4ed6-aacb-e6012bd327a7"))).get_Uri(&_ret));
 		return _ret;
 	}
 	static PaymentMerchantInfo New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PaymentMerchantInfo).abi_ActivateInstance(&ret));
-		return ret.as!(PaymentMerchantInfo);
+		return cast(PaymentMerchantInfo) ret;
 	}
 	static Windows.ApplicationModel.Payments.PaymentMerchantInfo New(Windows.Foundation.Uri uri)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentMerchantInfoFactory);
 		Windows.ApplicationModel.Payments.PaymentMerchantInfo _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentMerchantInfoFactory).abi_Create(uri, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentMerchantInfoFactory)factory.asInterface(uuid("9e89ced3-ccb7-4167-a8ec-e10ae96dbcd1"))).abi_Create(uri, &_ret));
 		return _ret;
 	}
 }
@@ -707,27 +707,27 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) SupportedMethodIds()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentMethodData).get_SupportedMethodIds(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentMethodData)this.asInterface(uuid("d1d3caf4-de98-4129-b1b7-c3ad86237bf4"))).get_SupportedMethodIds(&_ret));
 		return _ret;
 	}
 	final HSTRING JsonData()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentMethodData).get_JsonData(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentMethodData)this.asInterface(uuid("d1d3caf4-de98-4129-b1b7-c3ad86237bf4"))).get_JsonData(&_ret));
 		return _ret;
 	}
 	static Windows.ApplicationModel.Payments.PaymentMethodData New(Windows.Foundation.Collections.IIterable!(HSTRING) supportedMethodIds)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentMethodDataFactory);
 		Windows.ApplicationModel.Payments.PaymentMethodData _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentMethodDataFactory).abi_Create(supportedMethodIds, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentMethodDataFactory)factory.asInterface(uuid("8addd27f-9baa-4a82-8342-a8210992a36b"))).abi_Create(supportedMethodIds, &_ret));
 		return _ret;
 	}
 	static Windows.ApplicationModel.Payments.PaymentMethodData New(Windows.Foundation.Collections.IIterable!(HSTRING) supportedMethodIds, HSTRING jsonData)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentMethodDataFactory);
 		Windows.ApplicationModel.Payments.PaymentMethodData _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentMethodDataFactory).abi_CreateWithJsonData(supportedMethodIds, jsonData, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentMethodDataFactory)factory.asInterface(uuid("8addd27f-9baa-4a82-8342-a8210992a36b"))).abi_CreateWithJsonData(supportedMethodIds, jsonData, &_ret));
 		return _ret;
 	}
 }
@@ -738,58 +738,58 @@ extern(Windows):
 	final Windows.ApplicationModel.Payments.PaymentOptionPresence RequestPayerEmail()
 	{
 		Windows.ApplicationModel.Payments.PaymentOptionPresence _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentOptions).get_RequestPayerEmail(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentOptions)this.asInterface(uuid("aaa30854-1f2b-4365-8251-01b58915a5bc"))).get_RequestPayerEmail(&_ret));
 		return _ret;
 	}
 	final void RequestPayerEmail(Windows.ApplicationModel.Payments.PaymentOptionPresence value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentOptions).set_RequestPayerEmail(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentOptions)this.asInterface(uuid("aaa30854-1f2b-4365-8251-01b58915a5bc"))).set_RequestPayerEmail(value));
 	}
 	final Windows.ApplicationModel.Payments.PaymentOptionPresence RequestPayerName()
 	{
 		Windows.ApplicationModel.Payments.PaymentOptionPresence _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentOptions).get_RequestPayerName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentOptions)this.asInterface(uuid("aaa30854-1f2b-4365-8251-01b58915a5bc"))).get_RequestPayerName(&_ret));
 		return _ret;
 	}
 	final void RequestPayerName(Windows.ApplicationModel.Payments.PaymentOptionPresence value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentOptions).set_RequestPayerName(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentOptions)this.asInterface(uuid("aaa30854-1f2b-4365-8251-01b58915a5bc"))).set_RequestPayerName(value));
 	}
 	final Windows.ApplicationModel.Payments.PaymentOptionPresence RequestPayerPhoneNumber()
 	{
 		Windows.ApplicationModel.Payments.PaymentOptionPresence _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentOptions).get_RequestPayerPhoneNumber(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentOptions)this.asInterface(uuid("aaa30854-1f2b-4365-8251-01b58915a5bc"))).get_RequestPayerPhoneNumber(&_ret));
 		return _ret;
 	}
 	final void RequestPayerPhoneNumber(Windows.ApplicationModel.Payments.PaymentOptionPresence value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentOptions).set_RequestPayerPhoneNumber(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentOptions)this.asInterface(uuid("aaa30854-1f2b-4365-8251-01b58915a5bc"))).set_RequestPayerPhoneNumber(value));
 	}
 	final bool RequestShipping()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentOptions).get_RequestShipping(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentOptions)this.asInterface(uuid("aaa30854-1f2b-4365-8251-01b58915a5bc"))).get_RequestShipping(&_ret));
 		return _ret;
 	}
 	final void RequestShipping(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentOptions).set_RequestShipping(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentOptions)this.asInterface(uuid("aaa30854-1f2b-4365-8251-01b58915a5bc"))).set_RequestShipping(value));
 	}
 	final Windows.ApplicationModel.Payments.PaymentShippingType ShippingType()
 	{
 		Windows.ApplicationModel.Payments.PaymentShippingType _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentOptions).get_ShippingType(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentOptions)this.asInterface(uuid("aaa30854-1f2b-4365-8251-01b58915a5bc"))).get_ShippingType(&_ret));
 		return _ret;
 	}
 	final void ShippingType(Windows.ApplicationModel.Payments.PaymentShippingType value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentOptions).set_ShippingType(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentOptions)this.asInterface(uuid("aaa30854-1f2b-4365-8251-01b58915a5bc"))).set_ShippingType(value));
 	}
 	static PaymentOptions New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PaymentOptions).abi_ActivateInstance(&ret));
-		return ret.as!(PaymentOptions);
+		return cast(PaymentOptions) ret;
 	}
 }
 
@@ -799,46 +799,46 @@ extern(Windows):
 	final Windows.ApplicationModel.Payments.PaymentMerchantInfo MerchantInfo()
 	{
 		Windows.ApplicationModel.Payments.PaymentMerchantInfo _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequest).get_MerchantInfo(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentRequest)this.asInterface(uuid("b74942e1-ed7b-47eb-bc08-78cc5d6896b6"))).get_MerchantInfo(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Payments.PaymentDetails Details()
 	{
 		Windows.ApplicationModel.Payments.PaymentDetails _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequest).get_Details(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentRequest)this.asInterface(uuid("b74942e1-ed7b-47eb-bc08-78cc5d6896b6"))).get_Details(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentMethodData) MethodData()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Payments.PaymentMethodData) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequest).get_MethodData(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentRequest)this.asInterface(uuid("b74942e1-ed7b-47eb-bc08-78cc5d6896b6"))).get_MethodData(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Payments.PaymentOptions Options()
 	{
 		Windows.ApplicationModel.Payments.PaymentOptions _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequest).get_Options(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentRequest)this.asInterface(uuid("b74942e1-ed7b-47eb-bc08-78cc5d6896b6"))).get_Options(&_ret));
 		return _ret;
 	}
 	static Windows.ApplicationModel.Payments.PaymentRequest New(Windows.ApplicationModel.Payments.PaymentDetails details, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Payments.PaymentMethodData) methodData)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentRequestFactory);
 		Windows.ApplicationModel.Payments.PaymentRequest _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentRequestFactory).abi_Create(details, methodData, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentRequestFactory)factory.asInterface(uuid("3e8a79dc-6b74-42d3-b103-f0de35fb1848"))).abi_Create(details, methodData, &_ret));
 		return _ret;
 	}
 	static Windows.ApplicationModel.Payments.PaymentRequest New(Windows.ApplicationModel.Payments.PaymentDetails details, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Payments.PaymentMethodData) methodData, Windows.ApplicationModel.Payments.PaymentMerchantInfo merchantInfo)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentRequestFactory);
 		Windows.ApplicationModel.Payments.PaymentRequest _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentRequestFactory).abi_CreateWithMerchantInfo(details, methodData, merchantInfo, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentRequestFactory)factory.asInterface(uuid("3e8a79dc-6b74-42d3-b103-f0de35fb1848"))).abi_CreateWithMerchantInfo(details, methodData, merchantInfo, &_ret));
 		return _ret;
 	}
 	static Windows.ApplicationModel.Payments.PaymentRequest New(Windows.ApplicationModel.Payments.PaymentDetails details, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Payments.PaymentMethodData) methodData, Windows.ApplicationModel.Payments.PaymentMerchantInfo merchantInfo, Windows.ApplicationModel.Payments.PaymentOptions options)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentRequestFactory);
 		Windows.ApplicationModel.Payments.PaymentRequest _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentRequestFactory).abi_CreateWithMerchantInfoAndOptions(details, methodData, merchantInfo, options, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentRequestFactory)factory.asInterface(uuid("3e8a79dc-6b74-42d3-b103-f0de35fb1848"))).abi_CreateWithMerchantInfoAndOptions(details, methodData, merchantInfo, options, &_ret));
 		return _ret;
 	}
 }
@@ -849,24 +849,24 @@ extern(Windows):
 	final Windows.ApplicationModel.Payments.PaymentRequestChangeKind ChangeKind()
 	{
 		Windows.ApplicationModel.Payments.PaymentRequestChangeKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedArgs).get_ChangeKind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentRequestChangedArgs)this.asInterface(uuid("c6145e44-cd8b-4be4-b555-27c99194c0c5"))).get_ChangeKind(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Payments.PaymentAddress ShippingAddress()
 	{
 		Windows.ApplicationModel.Payments.PaymentAddress _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedArgs).get_ShippingAddress(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentRequestChangedArgs)this.asInterface(uuid("c6145e44-cd8b-4be4-b555-27c99194c0c5"))).get_ShippingAddress(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Payments.PaymentShippingOption SelectedShippingOption()
 	{
 		Windows.ApplicationModel.Payments.PaymentShippingOption _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedArgs).get_SelectedShippingOption(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentRequestChangedArgs)this.asInterface(uuid("c6145e44-cd8b-4be4-b555-27c99194c0c5"))).get_SelectedShippingOption(&_ret));
 		return _ret;
 	}
 	final void Acknowledge(Windows.ApplicationModel.Payments.PaymentRequestChangedResult changeResult)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedArgs).abi_Acknowledge(changeResult));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentRequestChangedArgs)this.asInterface(uuid("c6145e44-cd8b-4be4-b555-27c99194c0c5"))).abi_Acknowledge(changeResult));
 	}
 }
 
@@ -876,45 +876,45 @@ extern(Windows):
 	final bool ChangeAcceptedByMerchant()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedResult).get_ChangeAcceptedByMerchant(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentRequestChangedResult)this.asInterface(uuid("df699e5c-16c4-47ad-9401-8440ec0757db"))).get_ChangeAcceptedByMerchant(&_ret));
 		return _ret;
 	}
 	final void ChangeAcceptedByMerchant(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedResult).set_ChangeAcceptedByMerchant(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentRequestChangedResult)this.asInterface(uuid("df699e5c-16c4-47ad-9401-8440ec0757db"))).set_ChangeAcceptedByMerchant(value));
 	}
 	final HSTRING Message()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedResult).get_Message(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentRequestChangedResult)this.asInterface(uuid("df699e5c-16c4-47ad-9401-8440ec0757db"))).get_Message(&_ret));
 		return _ret;
 	}
 	final void Message(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedResult).set_Message(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentRequestChangedResult)this.asInterface(uuid("df699e5c-16c4-47ad-9401-8440ec0757db"))).set_Message(value));
 	}
 	final Windows.ApplicationModel.Payments.PaymentDetails UpdatedPaymentDetails()
 	{
 		Windows.ApplicationModel.Payments.PaymentDetails _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedResult).get_UpdatedPaymentDetails(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentRequestChangedResult)this.asInterface(uuid("df699e5c-16c4-47ad-9401-8440ec0757db"))).get_UpdatedPaymentDetails(&_ret));
 		return _ret;
 	}
 	final void UpdatedPaymentDetails(Windows.ApplicationModel.Payments.PaymentDetails value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedResult).set_UpdatedPaymentDetails(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentRequestChangedResult)this.asInterface(uuid("df699e5c-16c4-47ad-9401-8440ec0757db"))).set_UpdatedPaymentDetails(value));
 	}
 	static Windows.ApplicationModel.Payments.PaymentRequestChangedResult New(bool changeAcceptedByMerchant)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentRequestChangedResultFactory);
 		Windows.ApplicationModel.Payments.PaymentRequestChangedResult _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedResultFactory).abi_Create(changeAcceptedByMerchant, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentRequestChangedResultFactory)factory.asInterface(uuid("08740f56-1d33-4431-814b-67ea24bf21db"))).abi_Create(changeAcceptedByMerchant, &_ret));
 		return _ret;
 	}
 	static Windows.ApplicationModel.Payments.PaymentRequestChangedResult New(bool changeAcceptedByMerchant, Windows.ApplicationModel.Payments.PaymentDetails updatedPaymentDetails)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentRequestChangedResultFactory);
 		Windows.ApplicationModel.Payments.PaymentRequestChangedResult _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentRequestChangedResultFactory).abi_CreateWithPaymentDetails(changeAcceptedByMerchant, updatedPaymentDetails, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentRequestChangedResultFactory)factory.asInterface(uuid("08740f56-1d33-4431-814b-67ea24bf21db"))).abi_CreateWithPaymentDetails(changeAcceptedByMerchant, updatedPaymentDetails, &_ret));
 		return _ret;
 	}
 }
@@ -925,13 +925,13 @@ extern(Windows):
 	final Windows.ApplicationModel.Payments.PaymentRequestStatus Status()
 	{
 		Windows.ApplicationModel.Payments.PaymentRequestStatus _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestSubmitResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentRequestSubmitResult)this.asInterface(uuid("7b9c3912-30f2-4e90-b249-8ce7d78ffe56"))).get_Status(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Payments.PaymentResponse Response()
 	{
 		Windows.ApplicationModel.Payments.PaymentResponse _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentRequestSubmitResult).get_Response(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentRequestSubmitResult)this.asInterface(uuid("7b9c3912-30f2-4e90-b249-8ce7d78ffe56"))).get_Response(&_ret));
 		return _ret;
 	}
 }
@@ -942,43 +942,43 @@ extern(Windows):
 	final Windows.ApplicationModel.Payments.PaymentToken PaymentToken()
 	{
 		Windows.ApplicationModel.Payments.PaymentToken _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentResponse).get_PaymentToken(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentResponse)this.asInterface(uuid("e1389457-8bd2-4888-9fa8-97985545108e"))).get_PaymentToken(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Payments.PaymentShippingOption ShippingOption()
 	{
 		Windows.ApplicationModel.Payments.PaymentShippingOption _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentResponse).get_ShippingOption(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentResponse)this.asInterface(uuid("e1389457-8bd2-4888-9fa8-97985545108e"))).get_ShippingOption(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Payments.PaymentAddress ShippingAddress()
 	{
 		Windows.ApplicationModel.Payments.PaymentAddress _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentResponse).get_ShippingAddress(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentResponse)this.asInterface(uuid("e1389457-8bd2-4888-9fa8-97985545108e"))).get_ShippingAddress(&_ret));
 		return _ret;
 	}
 	final HSTRING PayerEmail()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentResponse).get_PayerEmail(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentResponse)this.asInterface(uuid("e1389457-8bd2-4888-9fa8-97985545108e"))).get_PayerEmail(&_ret));
 		return _ret;
 	}
 	final HSTRING PayerName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentResponse).get_PayerName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentResponse)this.asInterface(uuid("e1389457-8bd2-4888-9fa8-97985545108e"))).get_PayerName(&_ret));
 		return _ret;
 	}
 	final HSTRING PayerPhoneNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentResponse).get_PayerPhoneNumber(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentResponse)this.asInterface(uuid("e1389457-8bd2-4888-9fa8-97985545108e"))).get_PayerPhoneNumber(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction CompleteAsync(Windows.ApplicationModel.Payments.PaymentRequestCompletionStatus status)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentResponse).abi_CompleteAsync(status, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentResponse)this.asInterface(uuid("e1389457-8bd2-4888-9fa8-97985545108e"))).abi_CompleteAsync(status, &_ret));
 		return _ret;
 	}
 }
@@ -989,62 +989,62 @@ extern(Windows):
 	final HSTRING Label()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentShippingOption).get_Label(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentShippingOption)this.asInterface(uuid("13372ada-9753-4574-8966-93145a76c7f9"))).get_Label(&_ret));
 		return _ret;
 	}
 	final void Label(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentShippingOption).set_Label(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentShippingOption)this.asInterface(uuid("13372ada-9753-4574-8966-93145a76c7f9"))).set_Label(value));
 	}
 	final Windows.ApplicationModel.Payments.PaymentCurrencyAmount Amount()
 	{
 		Windows.ApplicationModel.Payments.PaymentCurrencyAmount _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentShippingOption).get_Amount(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentShippingOption)this.asInterface(uuid("13372ada-9753-4574-8966-93145a76c7f9"))).get_Amount(&_ret));
 		return _ret;
 	}
 	final void Amount(Windows.ApplicationModel.Payments.PaymentCurrencyAmount value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentShippingOption).set_Amount(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentShippingOption)this.asInterface(uuid("13372ada-9753-4574-8966-93145a76c7f9"))).set_Amount(value));
 	}
 	final HSTRING Tag()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentShippingOption).get_Tag(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentShippingOption)this.asInterface(uuid("13372ada-9753-4574-8966-93145a76c7f9"))).get_Tag(&_ret));
 		return _ret;
 	}
 	final void Tag(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentShippingOption).set_Tag(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentShippingOption)this.asInterface(uuid("13372ada-9753-4574-8966-93145a76c7f9"))).set_Tag(value));
 	}
 	final bool IsSelected()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentShippingOption).get_IsSelected(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentShippingOption)this.asInterface(uuid("13372ada-9753-4574-8966-93145a76c7f9"))).get_IsSelected(&_ret));
 		return _ret;
 	}
 	final void IsSelected(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentShippingOption).set_IsSelected(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentShippingOption)this.asInterface(uuid("13372ada-9753-4574-8966-93145a76c7f9"))).set_IsSelected(value));
 	}
 	static Windows.ApplicationModel.Payments.PaymentShippingOption New(HSTRING label, Windows.ApplicationModel.Payments.PaymentCurrencyAmount amount)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentShippingOptionFactory);
 		Windows.ApplicationModel.Payments.PaymentShippingOption _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentShippingOptionFactory).abi_Create(label, amount, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentShippingOptionFactory)factory.asInterface(uuid("5de5f917-b2d7-446b-9d73-6123fbca3bc6"))).abi_Create(label, amount, &_ret));
 		return _ret;
 	}
 	static Windows.ApplicationModel.Payments.PaymentShippingOption New(HSTRING label, Windows.ApplicationModel.Payments.PaymentCurrencyAmount amount, bool selected)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentShippingOptionFactory);
 		Windows.ApplicationModel.Payments.PaymentShippingOption _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentShippingOptionFactory).abi_CreateWithSelected(label, amount, selected, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentShippingOptionFactory)factory.asInterface(uuid("5de5f917-b2d7-446b-9d73-6123fbca3bc6"))).abi_CreateWithSelected(label, amount, selected, &_ret));
 		return _ret;
 	}
 	static Windows.ApplicationModel.Payments.PaymentShippingOption New(HSTRING label, Windows.ApplicationModel.Payments.PaymentCurrencyAmount amount, bool selected, HSTRING tag)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentShippingOptionFactory);
 		Windows.ApplicationModel.Payments.PaymentShippingOption _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentShippingOptionFactory).abi_CreateWithSelectedAndTag(label, amount, selected, tag, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentShippingOptionFactory)factory.asInterface(uuid("5de5f917-b2d7-446b-9d73-6123fbca3bc6"))).abi_CreateWithSelectedAndTag(label, amount, selected, tag, &_ret));
 		return _ret;
 	}
 }
@@ -1055,27 +1055,27 @@ extern(Windows):
 	final HSTRING PaymentMethodId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentToken).get_PaymentMethodId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentToken)this.asInterface(uuid("bbcac013-ccd0-41f2-b2a1-0a2e4b5dce25"))).get_PaymentMethodId(&_ret));
 		return _ret;
 	}
 	final HSTRING JsonDetails()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.IPaymentToken).get_JsonDetails(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentToken)this.asInterface(uuid("bbcac013-ccd0-41f2-b2a1-0a2e4b5dce25"))).get_JsonDetails(&_ret));
 		return _ret;
 	}
 	static Windows.ApplicationModel.Payments.PaymentToken New(HSTRING paymentMethodId)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentTokenFactory);
 		Windows.ApplicationModel.Payments.PaymentToken _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentTokenFactory).abi_Create(paymentMethodId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentTokenFactory)factory.asInterface(uuid("988cd7aa-4753-4904-8373-dd7b08b995c1"))).abi_Create(paymentMethodId, &_ret));
 		return _ret;
 	}
 	static Windows.ApplicationModel.Payments.PaymentToken New(HSTRING paymentMethodId, HSTRING jsonDetails)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Payments.IPaymentTokenFactory);
 		Windows.ApplicationModel.Payments.PaymentToken _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Payments.IPaymentTokenFactory).abi_CreateWithJsonDetails(paymentMethodId, jsonDetails, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentTokenFactory)factory.asInterface(uuid("988cd7aa-4753-4904-8373-dd7b08b995c1"))).abi_CreateWithJsonDetails(paymentMethodId, jsonDetails, &_ret));
 		return _ret;
 	}
 }

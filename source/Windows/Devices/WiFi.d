@@ -70,52 +70,52 @@ extern(Windows):
 	final Windows.Networking.Connectivity.NetworkAdapter NetworkAdapter()
 	{
 		Windows.Networking.Connectivity.NetworkAdapter _ret;
-		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAdapter).get_NetworkAdapter(&_ret));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAdapter)this.asInterface(uuid("a6c4e423-3d75-43a4-b9de-11e26b72d9b0"))).get_NetworkAdapter(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ScanAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAdapter).abi_ScanAsync(&_ret));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAdapter)this.asInterface(uuid("a6c4e423-3d75-43a4-b9de-11e26b72d9b0"))).abi_ScanAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.WiFi.WiFiNetworkReport NetworkReport()
 	{
 		Windows.Devices.WiFi.WiFiNetworkReport _ret;
-		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAdapter).get_NetworkReport(&_ret));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAdapter)this.asInterface(uuid("a6c4e423-3d75-43a4-b9de-11e26b72d9b0"))).get_NetworkReport(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnAvailableNetworksChanged(void delegate(Windows.Devices.WiFi.WiFiAdapter, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAdapter).add_AvailableNetworksChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFi.WiFiAdapter, IInspectable), Windows.Devices.WiFi.WiFiAdapter, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAdapter)this.asInterface(uuid("a6c4e423-3d75-43a4-b9de-11e26b72d9b0"))).add_AvailableNetworksChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFi.WiFiAdapter, IInspectable), Windows.Devices.WiFi.WiFiAdapter, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeAvailableNetworksChanged(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAdapter).remove_AvailableNetworksChanged(eventCookie));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAdapter)this.asInterface(uuid("a6c4e423-3d75-43a4-b9de-11e26b72d9b0"))).remove_AvailableNetworksChanged(eventCookie));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) ConnectAsync(Windows.Devices.WiFi.WiFiAvailableNetwork availableNetwork, Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) _ret;
-		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAdapter).abi_ConnectAsync(availableNetwork, reconnectionKind, &_ret));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAdapter)this.asInterface(uuid("a6c4e423-3d75-43a4-b9de-11e26b72d9b0"))).abi_ConnectAsync(availableNetwork, reconnectionKind, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) ConnectWithPasswordCredentialAsync(Windows.Devices.WiFi.WiFiAvailableNetwork availableNetwork, Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind, Windows.Security.Credentials.PasswordCredential passwordCredential)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) _ret;
-		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAdapter).abi_ConnectWithPasswordCredentialAsync(availableNetwork, reconnectionKind, passwordCredential, &_ret));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAdapter)this.asInterface(uuid("a6c4e423-3d75-43a4-b9de-11e26b72d9b0"))).abi_ConnectWithPasswordCredentialAsync(availableNetwork, reconnectionKind, passwordCredential, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) ConnectWithPasswordCredentialAndSsidAsync(Windows.Devices.WiFi.WiFiAvailableNetwork availableNetwork, Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind, Windows.Security.Credentials.PasswordCredential passwordCredential, HSTRING ssid)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) _ret;
-		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAdapter).abi_ConnectWithPasswordCredentialAndSsidAsync(availableNetwork, reconnectionKind, passwordCredential, ssid, &_ret));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAdapter)this.asInterface(uuid("a6c4e423-3d75-43a4-b9de-11e26b72d9b0"))).abi_ConnectWithPasswordCredentialAndSsidAsync(availableNetwork, reconnectionKind, passwordCredential, ssid, &_ret));
 		return _ret;
 	}
 	final void Disconnect()
 	{
-		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAdapter).abi_Disconnect());
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAdapter)this.asInterface(uuid("a6c4e423-3d75-43a4-b9de-11e26b72d9b0"))).abi_Disconnect());
 	}
 
 	private static Windows.Devices.WiFi.IWiFiAdapterStatics _staticInstance;
@@ -127,25 +127,25 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.WiFi.WiFiAdapter)) FindAllAdaptersAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.WiFi.WiFiAdapter)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.WiFi.IWiFiAdapterStatics).abi_FindAllAdaptersAsync(&_ret));
+		Debug.OK(staticInstance.abi_FindAllAdaptersAsync(&_ret));
 		return _ret;
 	}
 	static HSTRING GetDeviceSelector()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.WiFi.IWiFiAdapterStatics).abi_GetDeviceSelector(&_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiAdapter) FromIdAsync(HSTRING deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiAdapter) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.WiFi.IWiFiAdapterStatics).abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiAccessStatus) RequestAccessAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiAccessStatus) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.WiFi.IWiFiAdapterStatics).abi_RequestAccessAsync(&_ret));
+		Debug.OK(staticInstance.abi_RequestAccessAsync(&_ret));
 		return _ret;
 	}
 }
@@ -156,67 +156,67 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan Uptime()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_Uptime(&_ret));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAvailableNetwork)this.asInterface(uuid("26e96246-183e-4704-9826-71b4a2f0f668"))).get_Uptime(&_ret));
 		return _ret;
 	}
 	final HSTRING Ssid()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_Ssid(&_ret));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAvailableNetwork)this.asInterface(uuid("26e96246-183e-4704-9826-71b4a2f0f668"))).get_Ssid(&_ret));
 		return _ret;
 	}
 	final HSTRING Bssid()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_Bssid(&_ret));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAvailableNetwork)this.asInterface(uuid("26e96246-183e-4704-9826-71b4a2f0f668"))).get_Bssid(&_ret));
 		return _ret;
 	}
 	final INT32 ChannelCenterFrequencyInKilohertz()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_ChannelCenterFrequencyInKilohertz(&_ret));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAvailableNetwork)this.asInterface(uuid("26e96246-183e-4704-9826-71b4a2f0f668"))).get_ChannelCenterFrequencyInKilohertz(&_ret));
 		return _ret;
 	}
 	final double NetworkRssiInDecibelMilliwatts()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_NetworkRssiInDecibelMilliwatts(&_ret));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAvailableNetwork)this.asInterface(uuid("26e96246-183e-4704-9826-71b4a2f0f668"))).get_NetworkRssiInDecibelMilliwatts(&_ret));
 		return _ret;
 	}
 	final ubyte SignalBars()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_SignalBars(&_ret));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAvailableNetwork)this.asInterface(uuid("26e96246-183e-4704-9826-71b4a2f0f668"))).get_SignalBars(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.WiFi.WiFiNetworkKind NetworkKind()
 	{
 		Windows.Devices.WiFi.WiFiNetworkKind _ret;
-		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_NetworkKind(&_ret));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAvailableNetwork)this.asInterface(uuid("26e96246-183e-4704-9826-71b4a2f0f668"))).get_NetworkKind(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.WiFi.WiFiPhyKind PhyKind()
 	{
 		Windows.Devices.WiFi.WiFiPhyKind _ret;
-		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_PhyKind(&_ret));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAvailableNetwork)this.asInterface(uuid("26e96246-183e-4704-9826-71b4a2f0f668"))).get_PhyKind(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Connectivity.NetworkSecuritySettings SecuritySettings()
 	{
 		Windows.Networking.Connectivity.NetworkSecuritySettings _ret;
-		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_SecuritySettings(&_ret));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAvailableNetwork)this.asInterface(uuid("26e96246-183e-4704-9826-71b4a2f0f668"))).get_SecuritySettings(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan BeaconInterval()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_BeaconInterval(&_ret));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAvailableNetwork)this.asInterface(uuid("26e96246-183e-4704-9826-71b4a2f0f668"))).get_BeaconInterval(&_ret));
 		return _ret;
 	}
 	final bool IsWiFiDirect()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiAvailableNetwork).get_IsWiFiDirect(&_ret));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAvailableNetwork)this.asInterface(uuid("26e96246-183e-4704-9826-71b4a2f0f668"))).get_IsWiFiDirect(&_ret));
 		return _ret;
 	}
 }
@@ -227,7 +227,7 @@ extern(Windows):
 	final Windows.Devices.WiFi.WiFiConnectionStatus ConnectionStatus()
 	{
 		Windows.Devices.WiFi.WiFiConnectionStatus _ret;
-		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiConnectionResult).get_ConnectionStatus(&_ret));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiConnectionResult)this.asInterface(uuid("143bdfd9-c37d-40be-a5c8-857bce85a931"))).get_ConnectionStatus(&_ret));
 		return _ret;
 	}
 }
@@ -238,13 +238,13 @@ extern(Windows):
 	final Windows.Foundation.DateTime Timestamp()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiNetworkReport).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiNetworkReport)this.asInterface(uuid("9524ded2-5911-445e-8194-be4f1a704895"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.WiFi.WiFiAvailableNetwork) AvailableNetworks()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.WiFi.WiFiAvailableNetwork) _ret;
-		Debug.OK(this.as!(Windows.Devices.WiFi.IWiFiNetworkReport).get_AvailableNetworks(&_ret));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiNetworkReport)this.asInterface(uuid("9524ded2-5911-445e-8194-be4f1a704895"))).get_AvailableNetworks(&_ret));
 		return _ret;
 	}
 }

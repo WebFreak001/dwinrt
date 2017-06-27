@@ -33,7 +33,7 @@ extern(Windows):
 	final Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundRevokedReason Reason()
 	{
 		Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundRevokedReason _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundRevokedEventArgs).get_Reason(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundRevokedEventArgs)this.asInterface(uuid("b07cd940-9557-aea4-2c99-bdd56d9be461"))).get_Reason(&_ret));
 		return _ret;
 	}
 }
@@ -44,48 +44,48 @@ extern(Windows):
 	final HSTRING Description()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession).get_Description(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession)this.asInterface(uuid("fbf440e1-9d10-4201-b01e-c83275296f2e"))).get_Description(&_ret));
 		return _ret;
 	}
 	final void Description(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession).set_Description(value));
+		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession)this.asInterface(uuid("fbf440e1-9d10-4201-b01e-c83275296f2e"))).set_Description(value));
 	}
 	final EventRegistrationToken OnRevoked(void delegate(IInspectable, Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundRevokedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession).add_Revoked(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundRevokedEventArgs), IInspectable, Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundRevokedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession)this.asInterface(uuid("fbf440e1-9d10-4201-b01e-c83275296f2e"))).add_Revoked(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundRevokedEventArgs), IInspectable, Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundRevokedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRevoked(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession).remove_Revoked(token));
+		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession)this.asInterface(uuid("fbf440e1-9d10-4201-b01e-c83275296f2e"))).remove_Revoked(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundResult) RequestExtensionAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundResult) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession).abi_RequestExtensionAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession)this.asInterface(uuid("fbf440e1-9d10-4201-b01e-c83275296f2e"))).abi_RequestExtensionAsync(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundReason Reason()
 	{
 		Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundReason _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession).get_Reason(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession)this.asInterface(uuid("fbf440e1-9d10-4201-b01e-c83275296f2e"))).get_Reason(&_ret));
 		return _ret;
 	}
 	final void Reason(Windows.ApplicationModel.ExtendedExecution.Foreground.ExtendedExecutionForegroundReason value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession).set_Reason(value));
+		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.Foreground.IExtendedExecutionForegroundSession)this.asInterface(uuid("fbf440e1-9d10-4201-b01e-c83275296f2e"))).set_Reason(value));
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	static ExtendedExecutionForegroundSession New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ExtendedExecutionForegroundSession).abi_ActivateInstance(&ret));
-		return ret.as!(ExtendedExecutionForegroundSession);
+		return cast(ExtendedExecutionForegroundSession) ret;
 	}
 }
 

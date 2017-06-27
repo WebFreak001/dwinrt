@@ -152,15 +152,15 @@ interface GameControllerFactoryManager
 	}
 	static void RegisterCustomFactoryForGipInterface(Windows.Gaming.Input.Custom.ICustomGameControllerFactory factory, GUID interfaceId)
 	{
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.Custom.IGameControllerFactoryManagerStatics).abi_RegisterCustomFactoryForGipInterface(factory, interfaceId));
+		Debug.OK(staticInstance.abi_RegisterCustomFactoryForGipInterface(factory, interfaceId));
 	}
 	static void RegisterCustomFactoryForHardwareId(Windows.Gaming.Input.Custom.ICustomGameControllerFactory factory, UINT16 hardwareVendorId, UINT16 hardwareProductId)
 	{
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.Custom.IGameControllerFactoryManagerStatics).abi_RegisterCustomFactoryForHardwareId(factory, hardwareVendorId, hardwareProductId));
+		Debug.OK(staticInstance.abi_RegisterCustomFactoryForHardwareId(factory, hardwareVendorId, hardwareProductId));
 	}
 	static void RegisterCustomFactoryForXusbType(Windows.Gaming.Input.Custom.ICustomGameControllerFactory factory, Windows.Gaming.Input.Custom.XusbDeviceType xusbType, Windows.Gaming.Input.Custom.XusbDeviceSubtype xusbSubtype)
 	{
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.Custom.IGameControllerFactoryManagerStatics).abi_RegisterCustomFactoryForXusbType(factory, xusbType, xusbSubtype));
+		Debug.OK(staticInstance.abi_RegisterCustomFactoryForXusbType(factory, xusbType, xusbSubtype));
 	}
 }
 
@@ -170,19 +170,19 @@ extern(Windows):
 	final UINT32 ExtendedErrorCode()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGipFirmwareUpdateResult).get_ExtendedErrorCode(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IGipFirmwareUpdateResult)this.asInterface(uuid("6b794d32-8553-4292-8e03-e16651a2f8bc"))).get_ExtendedErrorCode(&_ret));
 		return _ret;
 	}
 	final UINT32 FinalComponentId()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGipFirmwareUpdateResult).get_FinalComponentId(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IGipFirmwareUpdateResult)this.asInterface(uuid("6b794d32-8553-4292-8e03-e16651a2f8bc"))).get_FinalComponentId(&_ret));
 		return _ret;
 	}
 	final Windows.Gaming.Input.Custom.GipFirmwareUpdateStatus Status()
 	{
 		Windows.Gaming.Input.Custom.GipFirmwareUpdateStatus _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGipFirmwareUpdateResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IGipFirmwareUpdateResult)this.asInterface(uuid("6b794d32-8553-4292-8e03-e16651a2f8bc"))).get_Status(&_ret));
 		return _ret;
 	}
 }
@@ -192,46 +192,46 @@ interface GipGameControllerProvider : Windows.Gaming.Input.Custom.IGipGameContro
 extern(Windows):
 	final void SendMessage(Windows.Gaming.Input.Custom.GipMessageClass messageClass, ubyte messageId, UINT32 __messageBufferSize, ubyte* messageBuffer)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGipGameControllerProvider).abi_SendMessage(messageClass, messageId, __messageBufferSize, messageBuffer));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IGipGameControllerProvider)this.asInterface(uuid("dbcf1e19-1af5-45a8-bf02-a0ee50c823fc"))).abi_SendMessage(messageClass, messageId, __messageBufferSize, messageBuffer));
 	}
 	final void SendReceiveMessage(Windows.Gaming.Input.Custom.GipMessageClass messageClass, ubyte messageId, UINT32 __requestMessageBufferSize, ubyte* requestMessageBuffer, UINT32 __responseMessageBufferSize, ubyte* out_responseMessageBuffer)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGipGameControllerProvider).abi_SendReceiveMessage(messageClass, messageId, __requestMessageBufferSize, requestMessageBuffer, __responseMessageBufferSize, out_responseMessageBuffer));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IGipGameControllerProvider)this.asInterface(uuid("dbcf1e19-1af5-45a8-bf02-a0ee50c823fc"))).abi_SendReceiveMessage(messageClass, messageId, __requestMessageBufferSize, requestMessageBuffer, __responseMessageBufferSize, out_responseMessageBuffer));
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Gaming.Input.Custom.GipFirmwareUpdateResult, Windows.Gaming.Input.Custom.GipFirmwareUpdateProgress) UpdateFirmwareAsync(Windows.Storage.Streams.IInputStream firmwareImage)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Gaming.Input.Custom.GipFirmwareUpdateResult, Windows.Gaming.Input.Custom.GipFirmwareUpdateProgress) _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGipGameControllerProvider).abi_UpdateFirmwareAsync(firmwareImage, &_ret));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IGipGameControllerProvider)this.asInterface(uuid("dbcf1e19-1af5-45a8-bf02-a0ee50c823fc"))).abi_UpdateFirmwareAsync(firmwareImage, &_ret));
 		return _ret;
 	}
 	final Windows.Gaming.Input.Custom.GameControllerVersionInfo FirmwareVersionInfo()
 	{
 		Windows.Gaming.Input.Custom.GameControllerVersionInfo _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_FirmwareVersionInfo(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IGameControllerProvider)this.asInterface(uuid("e6d73982-2996-4559-b16c-3e57d46e58d6"))).get_FirmwareVersionInfo(&_ret));
 		return _ret;
 	}
 	final UINT16 HardwareProductId()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_HardwareProductId(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IGameControllerProvider)this.asInterface(uuid("e6d73982-2996-4559-b16c-3e57d46e58d6"))).get_HardwareProductId(&_ret));
 		return _ret;
 	}
 	final UINT16 HardwareVendorId()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_HardwareVendorId(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IGameControllerProvider)this.asInterface(uuid("e6d73982-2996-4559-b16c-3e57d46e58d6"))).get_HardwareVendorId(&_ret));
 		return _ret;
 	}
 	final Windows.Gaming.Input.Custom.GameControllerVersionInfo HardwareVersionInfo()
 	{
 		Windows.Gaming.Input.Custom.GameControllerVersionInfo _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_HardwareVersionInfo(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IGameControllerProvider)this.asInterface(uuid("e6d73982-2996-4559-b16c-3e57d46e58d6"))).get_HardwareVersionInfo(&_ret));
 		return _ret;
 	}
 	final bool IsConnected()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_IsConnected(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IGameControllerProvider)this.asInterface(uuid("e6d73982-2996-4559-b16c-3e57d46e58d6"))).get_IsConnected(&_ret));
 		return _ret;
 	}
 }
@@ -242,55 +242,55 @@ extern(Windows):
 	final UINT16 UsageId()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IHidGameControllerProvider).get_UsageId(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IHidGameControllerProvider)this.asInterface(uuid("95ce3af4-abf0-4b68-a081-3b7de73ff0e7"))).get_UsageId(&_ret));
 		return _ret;
 	}
 	final UINT16 UsagePage()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IHidGameControllerProvider).get_UsagePage(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IHidGameControllerProvider)this.asInterface(uuid("95ce3af4-abf0-4b68-a081-3b7de73ff0e7"))).get_UsagePage(&_ret));
 		return _ret;
 	}
 	final void GetFeatureReport(ubyte reportId, UINT32 __reportBufferSize, ubyte* out_reportBuffer)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IHidGameControllerProvider).abi_GetFeatureReport(reportId, __reportBufferSize, out_reportBuffer));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IHidGameControllerProvider)this.asInterface(uuid("95ce3af4-abf0-4b68-a081-3b7de73ff0e7"))).abi_GetFeatureReport(reportId, __reportBufferSize, out_reportBuffer));
 	}
 	final void SendFeatureReport(ubyte reportId, UINT32 __reportBufferSize, ubyte* reportBuffer)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IHidGameControllerProvider).abi_SendFeatureReport(reportId, __reportBufferSize, reportBuffer));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IHidGameControllerProvider)this.asInterface(uuid("95ce3af4-abf0-4b68-a081-3b7de73ff0e7"))).abi_SendFeatureReport(reportId, __reportBufferSize, reportBuffer));
 	}
 	final void SendOutputReport(ubyte reportId, UINT32 __reportBufferSize, ubyte* reportBuffer)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IHidGameControllerProvider).abi_SendOutputReport(reportId, __reportBufferSize, reportBuffer));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IHidGameControllerProvider)this.asInterface(uuid("95ce3af4-abf0-4b68-a081-3b7de73ff0e7"))).abi_SendOutputReport(reportId, __reportBufferSize, reportBuffer));
 	}
 	final Windows.Gaming.Input.Custom.GameControllerVersionInfo FirmwareVersionInfo()
 	{
 		Windows.Gaming.Input.Custom.GameControllerVersionInfo _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_FirmwareVersionInfo(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IGameControllerProvider)this.asInterface(uuid("e6d73982-2996-4559-b16c-3e57d46e58d6"))).get_FirmwareVersionInfo(&_ret));
 		return _ret;
 	}
 	final UINT16 HardwareProductId()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_HardwareProductId(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IGameControllerProvider)this.asInterface(uuid("e6d73982-2996-4559-b16c-3e57d46e58d6"))).get_HardwareProductId(&_ret));
 		return _ret;
 	}
 	final UINT16 HardwareVendorId()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_HardwareVendorId(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IGameControllerProvider)this.asInterface(uuid("e6d73982-2996-4559-b16c-3e57d46e58d6"))).get_HardwareVendorId(&_ret));
 		return _ret;
 	}
 	final Windows.Gaming.Input.Custom.GameControllerVersionInfo HardwareVersionInfo()
 	{
 		Windows.Gaming.Input.Custom.GameControllerVersionInfo _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_HardwareVersionInfo(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IGameControllerProvider)this.asInterface(uuid("e6d73982-2996-4559-b16c-3e57d46e58d6"))).get_HardwareVersionInfo(&_ret));
 		return _ret;
 	}
 	final bool IsConnected()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_IsConnected(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IGameControllerProvider)this.asInterface(uuid("e6d73982-2996-4559-b16c-3e57d46e58d6"))).get_IsConnected(&_ret));
 		return _ret;
 	}
 }
@@ -300,36 +300,36 @@ interface XusbGameControllerProvider : Windows.Gaming.Input.Custom.IXusbGameCont
 extern(Windows):
 	final void SetVibration(double lowFrequencyMotorSpeed, double highFrequencyMotorSpeed)
 	{
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IXusbGameControllerProvider).abi_SetVibration(lowFrequencyMotorSpeed, highFrequencyMotorSpeed));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IXusbGameControllerProvider)this.asInterface(uuid("6e2971eb-0efb-48b4-808b-837643b2f216"))).abi_SetVibration(lowFrequencyMotorSpeed, highFrequencyMotorSpeed));
 	}
 	final Windows.Gaming.Input.Custom.GameControllerVersionInfo FirmwareVersionInfo()
 	{
 		Windows.Gaming.Input.Custom.GameControllerVersionInfo _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_FirmwareVersionInfo(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IGameControllerProvider)this.asInterface(uuid("e6d73982-2996-4559-b16c-3e57d46e58d6"))).get_FirmwareVersionInfo(&_ret));
 		return _ret;
 	}
 	final UINT16 HardwareProductId()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_HardwareProductId(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IGameControllerProvider)this.asInterface(uuid("e6d73982-2996-4559-b16c-3e57d46e58d6"))).get_HardwareProductId(&_ret));
 		return _ret;
 	}
 	final UINT16 HardwareVendorId()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_HardwareVendorId(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IGameControllerProvider)this.asInterface(uuid("e6d73982-2996-4559-b16c-3e57d46e58d6"))).get_HardwareVendorId(&_ret));
 		return _ret;
 	}
 	final Windows.Gaming.Input.Custom.GameControllerVersionInfo HardwareVersionInfo()
 	{
 		Windows.Gaming.Input.Custom.GameControllerVersionInfo _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_HardwareVersionInfo(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IGameControllerProvider)this.asInterface(uuid("e6d73982-2996-4559-b16c-3e57d46e58d6"))).get_HardwareVersionInfo(&_ret));
 		return _ret;
 	}
 	final bool IsConnected()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Gaming.Input.Custom.IGameControllerProvider).get_IsConnected(&_ret));
+		Debug.OK((cast(Windows.Gaming.Input.Custom.IGameControllerProvider)this.asInterface(uuid("e6d73982-2996-4559-b16c-3e57d46e58d6"))).get_IsConnected(&_ret));
 		return _ret;
 	}
 }

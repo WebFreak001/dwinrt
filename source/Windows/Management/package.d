@@ -54,74 +54,74 @@ extern(Windows):
 	final HSTRING Data()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Management.IMdmAlert).get_Data(&_ret));
+		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).get_Data(&_ret));
 		return _ret;
 	}
 	final void Data(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Management.IMdmAlert).set_Data(value));
+		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).set_Data(value));
 	}
 	final Windows.Management.MdmAlertDataType Format()
 	{
 		Windows.Management.MdmAlertDataType _ret;
-		Debug.OK(this.as!(Windows.Management.IMdmAlert).get_Format(&_ret));
+		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).get_Format(&_ret));
 		return _ret;
 	}
 	final void Format(Windows.Management.MdmAlertDataType value)
 	{
-		Debug.OK(this.as!(Windows.Management.IMdmAlert).set_Format(value));
+		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).set_Format(value));
 	}
 	final Windows.Management.MdmAlertMark Mark()
 	{
 		Windows.Management.MdmAlertMark _ret;
-		Debug.OK(this.as!(Windows.Management.IMdmAlert).get_Mark(&_ret));
+		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).get_Mark(&_ret));
 		return _ret;
 	}
 	final void Mark(Windows.Management.MdmAlertMark value)
 	{
-		Debug.OK(this.as!(Windows.Management.IMdmAlert).set_Mark(value));
+		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).set_Mark(value));
 	}
 	final HSTRING Source()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Management.IMdmAlert).get_Source(&_ret));
+		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).get_Source(&_ret));
 		return _ret;
 	}
 	final void Source(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Management.IMdmAlert).set_Source(value));
+		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).set_Source(value));
 	}
 	final UINT32 Status()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Management.IMdmAlert).get_Status(&_ret));
+		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).get_Status(&_ret));
 		return _ret;
 	}
 	final HSTRING Target()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Management.IMdmAlert).get_Target(&_ret));
+		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).get_Target(&_ret));
 		return _ret;
 	}
 	final void Target(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Management.IMdmAlert).set_Target(value));
+		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).set_Target(value));
 	}
 	final HSTRING Type()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Management.IMdmAlert).get_Type(&_ret));
+		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).get_Type(&_ret));
 		return _ret;
 	}
 	final void Type(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Management.IMdmAlert).set_Type(value));
+		Debug.OK((cast(Windows.Management.IMdmAlert)this.asInterface(uuid("b0fbc327-28c1-4b52-a548-c5807caf70b6"))).set_Type(value));
 	}
 	static MdmAlert New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MdmAlert).abi_ActivateInstance(&ret));
-		return ret.as!(MdmAlert);
+		return cast(MdmAlert) ret;
 	}
 }
 
@@ -131,47 +131,47 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Management.MdmAlert) Alerts()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Management.MdmAlert) _ret;
-		Debug.OK(this.as!(Windows.Management.IMdmSession).get_Alerts(&_ret));
+		Debug.OK((cast(Windows.Management.IMdmSession)this.asInterface(uuid("fe89314c-8f64-4797-a9d7-9d88f86ae166"))).get_Alerts(&_ret));
 		return _ret;
 	}
 	final HRESULT ExtendedError()
 	{
 		HRESULT _ret;
-		Debug.OK(this.as!(Windows.Management.IMdmSession).get_ExtendedError(&_ret));
+		Debug.OK((cast(Windows.Management.IMdmSession)this.asInterface(uuid("fe89314c-8f64-4797-a9d7-9d88f86ae166"))).get_ExtendedError(&_ret));
 		return _ret;
 	}
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Management.IMdmSession).get_Id(&_ret));
+		Debug.OK((cast(Windows.Management.IMdmSession)this.asInterface(uuid("fe89314c-8f64-4797-a9d7-9d88f86ae166"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.Management.MdmSessionState State()
 	{
 		Windows.Management.MdmSessionState _ret;
-		Debug.OK(this.as!(Windows.Management.IMdmSession).get_State(&_ret));
+		Debug.OK((cast(Windows.Management.IMdmSession)this.asInterface(uuid("fe89314c-8f64-4797-a9d7-9d88f86ae166"))).get_State(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction AttachAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Management.IMdmSession).abi_AttachAsync(&_ret));
+		Debug.OK((cast(Windows.Management.IMdmSession)this.asInterface(uuid("fe89314c-8f64-4797-a9d7-9d88f86ae166"))).abi_AttachAsync(&_ret));
 		return _ret;
 	}
 	final void Delete()
 	{
-		Debug.OK(this.as!(Windows.Management.IMdmSession).abi_Delete());
+		Debug.OK((cast(Windows.Management.IMdmSession)this.asInterface(uuid("fe89314c-8f64-4797-a9d7-9d88f86ae166"))).abi_Delete());
 	}
 	final Windows.Foundation.IAsyncAction StartAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Management.IMdmSession).abi_StartAsync(&_ret));
+		Debug.OK((cast(Windows.Management.IMdmSession)this.asInterface(uuid("fe89314c-8f64-4797-a9d7-9d88f86ae166"))).abi_StartAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction StartWithAlertsAsync(Windows.Foundation.Collections.IIterable!(Windows.Management.MdmAlert) alerts)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Management.IMdmSession).abi_StartWithAlertsAsync(alerts, &_ret));
+		Debug.OK((cast(Windows.Management.IMdmSession)this.asInterface(uuid("fe89314c-8f64-4797-a9d7-9d88f86ae166"))).abi_StartWithAlertsAsync(alerts, &_ret));
 		return _ret;
 	}
 }
@@ -187,23 +187,23 @@ interface MdmSessionManager
 	static Windows.Foundation.Collections.IVectorView!(HSTRING) SessionIds()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(staticInstance.as!(Windows.Management.IMdmSessionManagerStatics).get_SessionIds(&_ret));
+		Debug.OK(staticInstance.get_SessionIds(&_ret));
 		return _ret;
 	}
 	static Windows.Management.MdmSession TryCreateSession()
 	{
 		Windows.Management.MdmSession _ret;
-		Debug.OK(staticInstance.as!(Windows.Management.IMdmSessionManagerStatics).abi_TryCreateSession(&_ret));
+		Debug.OK(staticInstance.abi_TryCreateSession(&_ret));
 		return _ret;
 	}
 	static void DeleteSessionById(HSTRING sessionId)
 	{
-		Debug.OK(staticInstance.as!(Windows.Management.IMdmSessionManagerStatics).abi_DeleteSessionById(sessionId));
+		Debug.OK(staticInstance.abi_DeleteSessionById(sessionId));
 	}
 	static Windows.Management.MdmSession GetSessionById(HSTRING sessionId)
 	{
 		Windows.Management.MdmSession _ret;
-		Debug.OK(staticInstance.as!(Windows.Management.IMdmSessionManagerStatics).abi_GetSessionById(sessionId, &_ret));
+		Debug.OK(staticInstance.abi_GetSessionById(sessionId, &_ret));
 		return _ret;
 	}
 }

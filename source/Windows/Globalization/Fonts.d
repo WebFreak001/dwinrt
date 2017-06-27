@@ -46,31 +46,31 @@ extern(Windows):
 	final HSTRING FontFamily()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.Fonts.ILanguageFont).get_FontFamily(&_ret));
+		Debug.OK((cast(Windows.Globalization.Fonts.ILanguageFont)this.asInterface(uuid("b12e5c3a-b76d-459b-beeb-901151cd77d1"))).get_FontFamily(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Text.FontWeight FontWeight()
 	{
 		Windows.UI.Text.FontWeight _ret;
-		Debug.OK(this.as!(Windows.Globalization.Fonts.ILanguageFont).get_FontWeight(&_ret));
+		Debug.OK((cast(Windows.Globalization.Fonts.ILanguageFont)this.asInterface(uuid("b12e5c3a-b76d-459b-beeb-901151cd77d1"))).get_FontWeight(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Text.FontStretch FontStretch()
 	{
 		Windows.UI.Text.FontStretch _ret;
-		Debug.OK(this.as!(Windows.Globalization.Fonts.ILanguageFont).get_FontStretch(&_ret));
+		Debug.OK((cast(Windows.Globalization.Fonts.ILanguageFont)this.asInterface(uuid("b12e5c3a-b76d-459b-beeb-901151cd77d1"))).get_FontStretch(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Text.FontStyle FontStyle()
 	{
 		Windows.UI.Text.FontStyle _ret;
-		Debug.OK(this.as!(Windows.Globalization.Fonts.ILanguageFont).get_FontStyle(&_ret));
+		Debug.OK((cast(Windows.Globalization.Fonts.ILanguageFont)this.asInterface(uuid("b12e5c3a-b76d-459b-beeb-901151cd77d1"))).get_FontStyle(&_ret));
 		return _ret;
 	}
 	final double ScaleFactor()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Globalization.Fonts.ILanguageFont).get_ScaleFactor(&_ret));
+		Debug.OK((cast(Windows.Globalization.Fonts.ILanguageFont)this.asInterface(uuid("b12e5c3a-b76d-459b-beeb-901151cd77d1"))).get_ScaleFactor(&_ret));
 		return _ret;
 	}
 }
@@ -81,74 +81,74 @@ extern(Windows):
 	final Windows.Globalization.Fonts.LanguageFont UITextFont()
 	{
 		Windows.Globalization.Fonts.LanguageFont _ret;
-		Debug.OK(this.as!(Windows.Globalization.Fonts.ILanguageFontGroup).get_UITextFont(&_ret));
+		Debug.OK((cast(Windows.Globalization.Fonts.ILanguageFontGroup)this.asInterface(uuid("f33a7fc3-3a5c-4aea-b9ff-b39fb242f7f6"))).get_UITextFont(&_ret));
 		return _ret;
 	}
 	final Windows.Globalization.Fonts.LanguageFont UIHeadingFont()
 	{
 		Windows.Globalization.Fonts.LanguageFont _ret;
-		Debug.OK(this.as!(Windows.Globalization.Fonts.ILanguageFontGroup).get_UIHeadingFont(&_ret));
+		Debug.OK((cast(Windows.Globalization.Fonts.ILanguageFontGroup)this.asInterface(uuid("f33a7fc3-3a5c-4aea-b9ff-b39fb242f7f6"))).get_UIHeadingFont(&_ret));
 		return _ret;
 	}
 	final Windows.Globalization.Fonts.LanguageFont UITitleFont()
 	{
 		Windows.Globalization.Fonts.LanguageFont _ret;
-		Debug.OK(this.as!(Windows.Globalization.Fonts.ILanguageFontGroup).get_UITitleFont(&_ret));
+		Debug.OK((cast(Windows.Globalization.Fonts.ILanguageFontGroup)this.asInterface(uuid("f33a7fc3-3a5c-4aea-b9ff-b39fb242f7f6"))).get_UITitleFont(&_ret));
 		return _ret;
 	}
 	final Windows.Globalization.Fonts.LanguageFont UICaptionFont()
 	{
 		Windows.Globalization.Fonts.LanguageFont _ret;
-		Debug.OK(this.as!(Windows.Globalization.Fonts.ILanguageFontGroup).get_UICaptionFont(&_ret));
+		Debug.OK((cast(Windows.Globalization.Fonts.ILanguageFontGroup)this.asInterface(uuid("f33a7fc3-3a5c-4aea-b9ff-b39fb242f7f6"))).get_UICaptionFont(&_ret));
 		return _ret;
 	}
 	final Windows.Globalization.Fonts.LanguageFont UINotificationHeadingFont()
 	{
 		Windows.Globalization.Fonts.LanguageFont _ret;
-		Debug.OK(this.as!(Windows.Globalization.Fonts.ILanguageFontGroup).get_UINotificationHeadingFont(&_ret));
+		Debug.OK((cast(Windows.Globalization.Fonts.ILanguageFontGroup)this.asInterface(uuid("f33a7fc3-3a5c-4aea-b9ff-b39fb242f7f6"))).get_UINotificationHeadingFont(&_ret));
 		return _ret;
 	}
 	final Windows.Globalization.Fonts.LanguageFont TraditionalDocumentFont()
 	{
 		Windows.Globalization.Fonts.LanguageFont _ret;
-		Debug.OK(this.as!(Windows.Globalization.Fonts.ILanguageFontGroup).get_TraditionalDocumentFont(&_ret));
+		Debug.OK((cast(Windows.Globalization.Fonts.ILanguageFontGroup)this.asInterface(uuid("f33a7fc3-3a5c-4aea-b9ff-b39fb242f7f6"))).get_TraditionalDocumentFont(&_ret));
 		return _ret;
 	}
 	final Windows.Globalization.Fonts.LanguageFont ModernDocumentFont()
 	{
 		Windows.Globalization.Fonts.LanguageFont _ret;
-		Debug.OK(this.as!(Windows.Globalization.Fonts.ILanguageFontGroup).get_ModernDocumentFont(&_ret));
+		Debug.OK((cast(Windows.Globalization.Fonts.ILanguageFontGroup)this.asInterface(uuid("f33a7fc3-3a5c-4aea-b9ff-b39fb242f7f6"))).get_ModernDocumentFont(&_ret));
 		return _ret;
 	}
 	final Windows.Globalization.Fonts.LanguageFont DocumentHeadingFont()
 	{
 		Windows.Globalization.Fonts.LanguageFont _ret;
-		Debug.OK(this.as!(Windows.Globalization.Fonts.ILanguageFontGroup).get_DocumentHeadingFont(&_ret));
+		Debug.OK((cast(Windows.Globalization.Fonts.ILanguageFontGroup)this.asInterface(uuid("f33a7fc3-3a5c-4aea-b9ff-b39fb242f7f6"))).get_DocumentHeadingFont(&_ret));
 		return _ret;
 	}
 	final Windows.Globalization.Fonts.LanguageFont FixedWidthTextFont()
 	{
 		Windows.Globalization.Fonts.LanguageFont _ret;
-		Debug.OK(this.as!(Windows.Globalization.Fonts.ILanguageFontGroup).get_FixedWidthTextFont(&_ret));
+		Debug.OK((cast(Windows.Globalization.Fonts.ILanguageFontGroup)this.asInterface(uuid("f33a7fc3-3a5c-4aea-b9ff-b39fb242f7f6"))).get_FixedWidthTextFont(&_ret));
 		return _ret;
 	}
 	final Windows.Globalization.Fonts.LanguageFont DocumentAlternate1Font()
 	{
 		Windows.Globalization.Fonts.LanguageFont _ret;
-		Debug.OK(this.as!(Windows.Globalization.Fonts.ILanguageFontGroup).get_DocumentAlternate1Font(&_ret));
+		Debug.OK((cast(Windows.Globalization.Fonts.ILanguageFontGroup)this.asInterface(uuid("f33a7fc3-3a5c-4aea-b9ff-b39fb242f7f6"))).get_DocumentAlternate1Font(&_ret));
 		return _ret;
 	}
 	final Windows.Globalization.Fonts.LanguageFont DocumentAlternate2Font()
 	{
 		Windows.Globalization.Fonts.LanguageFont _ret;
-		Debug.OK(this.as!(Windows.Globalization.Fonts.ILanguageFontGroup).get_DocumentAlternate2Font(&_ret));
+		Debug.OK((cast(Windows.Globalization.Fonts.ILanguageFontGroup)this.asInterface(uuid("f33a7fc3-3a5c-4aea-b9ff-b39fb242f7f6"))).get_DocumentAlternate2Font(&_ret));
 		return _ret;
 	}
 	static Windows.Globalization.Fonts.LanguageFontGroup New(HSTRING languageTag)
 	{
 		auto factory = factory!(Windows.Globalization.Fonts.ILanguageFontGroupFactory);
 		Windows.Globalization.Fonts.LanguageFontGroup _ret;
-		Debug.OK(factory.as!(Windows.Globalization.Fonts.ILanguageFontGroupFactory).abi_CreateLanguageFontGroup(languageTag, &_ret));
+		Debug.OK((cast(Windows.Globalization.Fonts.ILanguageFontGroupFactory)factory.asInterface(uuid("fcaeac67-4e77-49c7-b856-dde934fc735b"))).abi_CreateLanguageFontGroup(languageTag, &_ret));
 		return _ret;
 	}
 }

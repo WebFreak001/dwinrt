@@ -63,31 +63,31 @@ extern(Windows):
 	final HSTRING Format(Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo number)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatter).abi_Format(number, &_ret));
+		Debug.OK((cast(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatter)this.asInterface(uuid("1556b49e-bad4-4b4a-900d-4407adb7c981"))).abi_Format(number, &_ret));
 		return _ret;
 	}
 	final HSTRING FormatWithOutputFormat(Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo number, Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormat numberFormat)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatter).abi_FormatWithOutputFormat(number, numberFormat, &_ret));
+		Debug.OK((cast(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatter)this.asInterface(uuid("1556b49e-bad4-4b4a-900d-4407adb7c981"))).abi_FormatWithOutputFormat(number, numberFormat, &_ret));
 		return _ret;
 	}
 	final HSTRING FormatPartialString(HSTRING number)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatter).abi_FormatPartialString(number, &_ret));
+		Debug.OK((cast(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatter)this.asInterface(uuid("1556b49e-bad4-4b4a-900d-4407adb7c981"))).abi_FormatPartialString(number, &_ret));
 		return _ret;
 	}
 	final HSTRING FormatString(HSTRING number)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatter).abi_FormatString(number, &_ret));
+		Debug.OK((cast(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatter)this.asInterface(uuid("1556b49e-bad4-4b4a-900d-4407adb7c981"))).abi_FormatString(number, &_ret));
 		return _ret;
 	}
 	final HSTRING FormatStringWithLeftToRightMarkers(HSTRING number)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatter).abi_FormatStringWithLeftToRightMarkers(number, &_ret));
+		Debug.OK((cast(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatter)this.asInterface(uuid("1556b49e-bad4-4b4a-900d-4407adb7c981"))).abi_FormatStringWithLeftToRightMarkers(number, &_ret));
 		return _ret;
 	}
 
@@ -99,31 +99,31 @@ extern(Windows):
 	}
 	static void TryCreate(HSTRING regionCode, Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormatter* out_phoneNumber)
 	{
-		Debug.OK(staticInstance.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatterStatics).abi_TryCreate(regionCode, out_phoneNumber));
+		Debug.OK(staticInstance.abi_TryCreate(regionCode, out_phoneNumber));
 	}
 	static INT32 GetCountryCodeForRegion(HSTRING regionCode)
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatterStatics).abi_GetCountryCodeForRegion(regionCode, &_ret));
+		Debug.OK(staticInstance.abi_GetCountryCodeForRegion(regionCode, &_ret));
 		return _ret;
 	}
 	static HSTRING GetNationalDirectDialingPrefixForRegion(HSTRING regionCode, bool stripNonDigit)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatterStatics).abi_GetNationalDirectDialingPrefixForRegion(regionCode, stripNonDigit, &_ret));
+		Debug.OK(staticInstance.abi_GetNationalDirectDialingPrefixForRegion(regionCode, stripNonDigit, &_ret));
 		return _ret;
 	}
 	static HSTRING WrapWithLeftToRightMarkers(HSTRING number)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatterStatics).abi_WrapWithLeftToRightMarkers(number, &_ret));
+		Debug.OK(staticInstance.abi_WrapWithLeftToRightMarkers(number, &_ret));
 		return _ret;
 	}
 	static PhoneNumberFormatter New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PhoneNumberFormatter).abi_ActivateInstance(&ret));
-		return ret.as!(PhoneNumberFormatter);
+		return cast(PhoneNumberFormatter) ret;
 	}
 }
 
@@ -133,55 +133,55 @@ extern(Windows):
 	final INT32 CountryCode()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo).get_CountryCode(&_ret));
+		Debug.OK((cast(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo)this.asInterface(uuid("1c7ce4dd-c8b4-4ea3-9aef-b342e2c5b417"))).get_CountryCode(&_ret));
 		return _ret;
 	}
 	final HSTRING PhoneNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo).get_PhoneNumber(&_ret));
+		Debug.OK((cast(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo)this.asInterface(uuid("1c7ce4dd-c8b4-4ea3-9aef-b342e2c5b417"))).get_PhoneNumber(&_ret));
 		return _ret;
 	}
 	final INT32 GetLengthOfGeographicalAreaCode()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo).abi_GetLengthOfGeographicalAreaCode(&_ret));
+		Debug.OK((cast(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo)this.asInterface(uuid("1c7ce4dd-c8b4-4ea3-9aef-b342e2c5b417"))).abi_GetLengthOfGeographicalAreaCode(&_ret));
 		return _ret;
 	}
 	final HSTRING GetNationalSignificantNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo).abi_GetNationalSignificantNumber(&_ret));
+		Debug.OK((cast(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo)this.asInterface(uuid("1c7ce4dd-c8b4-4ea3-9aef-b342e2c5b417"))).abi_GetNationalSignificantNumber(&_ret));
 		return _ret;
 	}
 	final INT32 GetLengthOfNationalDestinationCode()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo).abi_GetLengthOfNationalDestinationCode(&_ret));
+		Debug.OK((cast(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo)this.asInterface(uuid("1c7ce4dd-c8b4-4ea3-9aef-b342e2c5b417"))).abi_GetLengthOfNationalDestinationCode(&_ret));
 		return _ret;
 	}
 	final Windows.Globalization.PhoneNumberFormatting.PredictedPhoneNumberKind PredictNumberKind()
 	{
 		Windows.Globalization.PhoneNumberFormatting.PredictedPhoneNumberKind _ret;
-		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo).abi_PredictNumberKind(&_ret));
+		Debug.OK((cast(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo)this.asInterface(uuid("1c7ce4dd-c8b4-4ea3-9aef-b342e2c5b417"))).abi_PredictNumberKind(&_ret));
 		return _ret;
 	}
 	final HSTRING GetGeographicRegionCode()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo).abi_GetGeographicRegionCode(&_ret));
+		Debug.OK((cast(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo)this.asInterface(uuid("1c7ce4dd-c8b4-4ea3-9aef-b342e2c5b417"))).abi_GetGeographicRegionCode(&_ret));
 		return _ret;
 	}
 	final Windows.Globalization.PhoneNumberFormatting.PhoneNumberMatchResult CheckNumberMatch(Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo otherNumber)
 	{
 		Windows.Globalization.PhoneNumberFormatting.PhoneNumberMatchResult _ret;
-		Debug.OK(this.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo).abi_CheckNumberMatch(otherNumber, &_ret));
+		Debug.OK((cast(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfo)this.asInterface(uuid("1c7ce4dd-c8b4-4ea3-9aef-b342e2c5b417"))).abi_CheckNumberMatch(otherNumber, &_ret));
 		return _ret;
 	}
 	final HSTRING ToString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		Debug.OK((cast(Windows.Foundation.IStringable)this.asInterface(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3"))).abi_ToString(&_ret));
 		return _ret;
 	}
 
@@ -194,20 +194,20 @@ extern(Windows):
 	static Windows.Globalization.PhoneNumberFormatting.PhoneNumberParseResult TryParse(HSTRING input, Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo* out_phoneNumber)
 	{
 		Windows.Globalization.PhoneNumberFormatting.PhoneNumberParseResult _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfoStatics).abi_TryParse(input, out_phoneNumber, &_ret));
+		Debug.OK(staticInstance.abi_TryParse(input, out_phoneNumber, &_ret));
 		return _ret;
 	}
 	static Windows.Globalization.PhoneNumberFormatting.PhoneNumberParseResult TryParseWithRegion(HSTRING input, HSTRING regionCode, Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo* out_phoneNumber)
 	{
 		Windows.Globalization.PhoneNumberFormatting.PhoneNumberParseResult _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfoStatics).abi_TryParseWithRegion(input, regionCode, out_phoneNumber, &_ret));
+		Debug.OK(staticInstance.abi_TryParseWithRegion(input, regionCode, out_phoneNumber, &_ret));
 		return _ret;
 	}
 	static Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo New(HSTRING number)
 	{
 		auto factory = factory!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfoFactory);
 		Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo _ret;
-		Debug.OK(factory.as!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfoFactory).abi_Create(number, &_ret));
+		Debug.OK((cast(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfoFactory)factory.asInterface(uuid("8202b964-adaa-4cff-8fcf-17e7516a28ff"))).abi_Create(number, &_ret));
 		return _ret;
 	}
 }

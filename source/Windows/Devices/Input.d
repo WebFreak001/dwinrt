@@ -110,14 +110,14 @@ extern(Windows):
 	final INT32 KeyboardPresent()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Input.IKeyboardCapabilities).get_KeyboardPresent(&_ret));
+		Debug.OK((cast(Windows.Devices.Input.IKeyboardCapabilities)this.asInterface(uuid("3a3f9b56-6798-4bbc-833e-0f34b17c65ff"))).get_KeyboardPresent(&_ret));
 		return _ret;
 	}
 	static KeyboardCapabilities New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(KeyboardCapabilities).abi_ActivateInstance(&ret));
-		return ret.as!(KeyboardCapabilities);
+		return cast(KeyboardCapabilities) ret;
 	}
 }
 
@@ -127,38 +127,38 @@ extern(Windows):
 	final INT32 MousePresent()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Input.IMouseCapabilities).get_MousePresent(&_ret));
+		Debug.OK((cast(Windows.Devices.Input.IMouseCapabilities)this.asInterface(uuid("bca5e023-7dd9-4b6b-9a92-55d43cb38f73"))).get_MousePresent(&_ret));
 		return _ret;
 	}
 	final INT32 VerticalWheelPresent()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Input.IMouseCapabilities).get_VerticalWheelPresent(&_ret));
+		Debug.OK((cast(Windows.Devices.Input.IMouseCapabilities)this.asInterface(uuid("bca5e023-7dd9-4b6b-9a92-55d43cb38f73"))).get_VerticalWheelPresent(&_ret));
 		return _ret;
 	}
 	final INT32 HorizontalWheelPresent()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Input.IMouseCapabilities).get_HorizontalWheelPresent(&_ret));
+		Debug.OK((cast(Windows.Devices.Input.IMouseCapabilities)this.asInterface(uuid("bca5e023-7dd9-4b6b-9a92-55d43cb38f73"))).get_HorizontalWheelPresent(&_ret));
 		return _ret;
 	}
 	final INT32 SwapButtons()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Input.IMouseCapabilities).get_SwapButtons(&_ret));
+		Debug.OK((cast(Windows.Devices.Input.IMouseCapabilities)this.asInterface(uuid("bca5e023-7dd9-4b6b-9a92-55d43cb38f73"))).get_SwapButtons(&_ret));
 		return _ret;
 	}
 	final UINT32 NumberOfButtons()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Input.IMouseCapabilities).get_NumberOfButtons(&_ret));
+		Debug.OK((cast(Windows.Devices.Input.IMouseCapabilities)this.asInterface(uuid("bca5e023-7dd9-4b6b-9a92-55d43cb38f73"))).get_NumberOfButtons(&_ret));
 		return _ret;
 	}
 	static MouseCapabilities New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MouseCapabilities).abi_ActivateInstance(&ret));
-		return ret.as!(MouseCapabilities);
+		return cast(MouseCapabilities) ret;
 	}
 }
 
@@ -168,12 +168,12 @@ extern(Windows):
 	final EventRegistrationToken OnMouseMoved(void delegate(Windows.Devices.Input.MouseDevice, Windows.Devices.Input.MouseEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Input.IMouseDevice).add_MouseMoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Input.MouseDevice, Windows.Devices.Input.MouseEventArgs), Windows.Devices.Input.MouseDevice, Windows.Devices.Input.MouseEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Input.IMouseDevice)this.asInterface(uuid("88edf458-f2c8-49f4-be1f-c256b388bc11"))).add_MouseMoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Input.MouseDevice, Windows.Devices.Input.MouseEventArgs), Windows.Devices.Input.MouseDevice, Windows.Devices.Input.MouseEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMouseMoved(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.Devices.Input.IMouseDevice).remove_MouseMoved(cookie));
+		Debug.OK((cast(Windows.Devices.Input.IMouseDevice)this.asInterface(uuid("88edf458-f2c8-49f4-be1f-c256b388bc11"))).remove_MouseMoved(cookie));
 	}
 
 	private static Windows.Devices.Input.IMouseDeviceStatics _staticInstance;
@@ -185,7 +185,7 @@ extern(Windows):
 	static Windows.Devices.Input.MouseDevice GetForCurrentView()
 	{
 		Windows.Devices.Input.MouseDevice _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Input.IMouseDeviceStatics).abi_GetForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 }
@@ -196,7 +196,7 @@ extern(Windows):
 	final Windows.Devices.Input.MouseDelta MouseDelta()
 	{
 		Windows.Devices.Input.MouseDelta _ret;
-		Debug.OK(this.as!(Windows.Devices.Input.IMouseEventArgs).get_MouseDelta(&_ret));
+		Debug.OK((cast(Windows.Devices.Input.IMouseEventArgs)this.asInterface(uuid("f625aa5d-2354-4cc7-9230-96941c969fde"))).get_MouseDelta(&_ret));
 		return _ret;
 	}
 }
@@ -207,43 +207,43 @@ extern(Windows):
 	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
 	{
 		Windows.Devices.Input.PointerDeviceType _ret;
-		Debug.OK(this.as!(Windows.Devices.Input.IPointerDevice).get_PointerDeviceType(&_ret));
+		Debug.OK((cast(Windows.Devices.Input.IPointerDevice)this.asInterface(uuid("93c9bafc-ebcb-467e-82c6-276feae36b5a"))).get_PointerDeviceType(&_ret));
 		return _ret;
 	}
 	final bool IsIntegrated()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Input.IPointerDevice).get_IsIntegrated(&_ret));
+		Debug.OK((cast(Windows.Devices.Input.IPointerDevice)this.asInterface(uuid("93c9bafc-ebcb-467e-82c6-276feae36b5a"))).get_IsIntegrated(&_ret));
 		return _ret;
 	}
 	final UINT32 MaxContacts()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Input.IPointerDevice).get_MaxContacts(&_ret));
+		Debug.OK((cast(Windows.Devices.Input.IPointerDevice)this.asInterface(uuid("93c9bafc-ebcb-467e-82c6-276feae36b5a"))).get_MaxContacts(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect PhysicalDeviceRect()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.Devices.Input.IPointerDevice).get_PhysicalDeviceRect(&_ret));
+		Debug.OK((cast(Windows.Devices.Input.IPointerDevice)this.asInterface(uuid("93c9bafc-ebcb-467e-82c6-276feae36b5a"))).get_PhysicalDeviceRect(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect ScreenRect()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.Devices.Input.IPointerDevice).get_ScreenRect(&_ret));
+		Debug.OK((cast(Windows.Devices.Input.IPointerDevice)this.asInterface(uuid("93c9bafc-ebcb-467e-82c6-276feae36b5a"))).get_ScreenRect(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Input.PointerDeviceUsage) SupportedUsages()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Input.PointerDeviceUsage) _ret;
-		Debug.OK(this.as!(Windows.Devices.Input.IPointerDevice).get_SupportedUsages(&_ret));
+		Debug.OK((cast(Windows.Devices.Input.IPointerDevice)this.asInterface(uuid("93c9bafc-ebcb-467e-82c6-276feae36b5a"))).get_SupportedUsages(&_ret));
 		return _ret;
 	}
 	final UINT32 MaxPointersWithZDistance()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Input.IPointerDevice2).get_MaxPointersWithZDistance(&_ret));
+		Debug.OK((cast(Windows.Devices.Input.IPointerDevice2)this.asInterface(uuid("f8a6d2a0-c484-489f-ae3e-30d2ee1ffd3e"))).get_MaxPointersWithZDistance(&_ret));
 		return _ret;
 	}
 
@@ -256,13 +256,13 @@ extern(Windows):
 	static Windows.Devices.Input.PointerDevice GetPointerDevice(UINT32 pointerId)
 	{
 		Windows.Devices.Input.PointerDevice _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Input.IPointerDeviceStatics).abi_GetPointerDevice(pointerId, &_ret));
+		Debug.OK(staticInstance.abi_GetPointerDevice(pointerId, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(Windows.Devices.Input.PointerDevice) GetPointerDevices()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Input.PointerDevice) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Input.IPointerDeviceStatics).abi_GetPointerDevices(&_ret));
+		Debug.OK(staticInstance.abi_GetPointerDevices(&_ret));
 		return _ret;
 	}
 }
@@ -273,20 +273,20 @@ extern(Windows):
 	final INT32 TouchPresent()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Input.ITouchCapabilities).get_TouchPresent(&_ret));
+		Debug.OK((cast(Windows.Devices.Input.ITouchCapabilities)this.asInterface(uuid("20dd55f9-13f1-46c8-9285-2c05fa3eda6f"))).get_TouchPresent(&_ret));
 		return _ret;
 	}
 	final UINT32 Contacts()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Input.ITouchCapabilities).get_Contacts(&_ret));
+		Debug.OK((cast(Windows.Devices.Input.ITouchCapabilities)this.asInterface(uuid("20dd55f9-13f1-46c8-9285-2c05fa3eda6f"))).get_Contacts(&_ret));
 		return _ret;
 	}
 	static TouchCapabilities New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(TouchCapabilities).abi_ActivateInstance(&ret));
-		return ret.as!(TouchCapabilities);
+		return cast(TouchCapabilities) ret;
 	}
 }
 

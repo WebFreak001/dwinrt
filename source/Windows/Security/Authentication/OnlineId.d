@@ -104,48 +104,48 @@ extern(Windows):
 	final Windows.Security.Authentication.OnlineId.UserAuthenticationOperation AuthenticateUserAsync(Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest request)
 	{
 		Windows.Security.Authentication.OnlineId.UserAuthenticationOperation _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator).abi_AuthenticateUserAsync(request, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator)this.asInterface(uuid("a003f58a-29ab-4817-b884-d7516dad18b9"))).abi_AuthenticateUserAsync(request, &_ret));
 		return _ret;
 	}
 	final Windows.Security.Authentication.OnlineId.UserAuthenticationOperation AuthenticateUserAsyncAdvanced(Windows.Foundation.Collections.IIterable!(Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest) requests, Windows.Security.Authentication.OnlineId.CredentialPromptType credentialPromptType)
 	{
 		Windows.Security.Authentication.OnlineId.UserAuthenticationOperation _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator).abi_AuthenticateUserAsyncAdvanced(requests, credentialPromptType, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator)this.asInterface(uuid("a003f58a-29ab-4817-b884-d7516dad18b9"))).abi_AuthenticateUserAsyncAdvanced(requests, credentialPromptType, &_ret));
 		return _ret;
 	}
 	final Windows.Security.Authentication.OnlineId.SignOutUserOperation SignOutUserAsync()
 	{
 		Windows.Security.Authentication.OnlineId.SignOutUserOperation _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator).abi_SignOutUserAsync(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator)this.asInterface(uuid("a003f58a-29ab-4817-b884-d7516dad18b9"))).abi_SignOutUserAsync(&_ret));
 		return _ret;
 	}
 	final void ApplicationId(GUID value)
 	{
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator).set_ApplicationId(value));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator)this.asInterface(uuid("a003f58a-29ab-4817-b884-d7516dad18b9"))).set_ApplicationId(value));
 	}
 	final GUID ApplicationId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator).get_ApplicationId(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator)this.asInterface(uuid("a003f58a-29ab-4817-b884-d7516dad18b9"))).get_ApplicationId(&_ret));
 		return _ret;
 	}
 	final bool CanSignOut()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator).get_CanSignOut(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator)this.asInterface(uuid("a003f58a-29ab-4817-b884-d7516dad18b9"))).get_CanSignOut(&_ret));
 		return _ret;
 	}
 	final HSTRING AuthenticatedSafeCustomerId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator).get_AuthenticatedSafeCustomerId(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator)this.asInterface(uuid("a003f58a-29ab-4817-b884-d7516dad18b9"))).get_AuthenticatedSafeCustomerId(&_ret));
 		return _ret;
 	}
 	static OnlineIdAuthenticator New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(OnlineIdAuthenticator).abi_ActivateInstance(&ret));
-		return ret.as!(OnlineIdAuthenticator);
+		return cast(OnlineIdAuthenticator) ret;
 	}
 }
 
@@ -155,19 +155,19 @@ extern(Windows):
 	final HSTRING Value()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicket).get_Value(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicket)this.asInterface(uuid("c95c547f-d781-4a94-acb8-c59874238c26"))).get_Value(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest Request()
 	{
 		Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicket).get_Request(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicket)this.asInterface(uuid("c95c547f-d781-4a94-acb8-c59874238c26"))).get_Request(&_ret));
 		return _ret;
 	}
 	final INT32 ErrorCode()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicket).get_ErrorCode(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicket)this.asInterface(uuid("c95c547f-d781-4a94-acb8-c59874238c26"))).get_ErrorCode(&_ret));
 		return _ret;
 	}
 }
@@ -178,27 +178,27 @@ extern(Windows):
 	final HSTRING Service()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicketRequest).get_Service(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicketRequest)this.asInterface(uuid("297445d3-fb63-4135-8909-4e354c061466"))).get_Service(&_ret));
 		return _ret;
 	}
 	final HSTRING Policy()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicketRequest).get_Policy(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicketRequest)this.asInterface(uuid("297445d3-fb63-4135-8909-4e354c061466"))).get_Policy(&_ret));
 		return _ret;
 	}
 	static Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest New(HSTRING service, HSTRING policy)
 	{
 		auto factory = factory!(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicketRequestFactory);
 		Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest _ret;
-		Debug.OK(factory.as!(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicketRequestFactory).abi_CreateOnlineIdServiceTicketRequest(service, policy, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicketRequestFactory)factory.asInterface(uuid("bebb0a08-9e73-4077-9614-08614c0bc245"))).abi_CreateOnlineIdServiceTicketRequest(service, policy, &_ret));
 		return _ret;
 	}
 	static Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest New(HSTRING service)
 	{
 		auto factory = factory!(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicketRequestFactory);
 		Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest _ret;
-		Debug.OK(factory.as!(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicketRequestFactory).abi_CreateOnlineIdServiceTicketRequestAdvanced(service, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdServiceTicketRequestFactory)factory.asInterface(uuid("bebb0a08-9e73-4077-9614-08614c0bc245"))).abi_CreateOnlineIdServiceTicketRequestAdvanced(service, &_ret));
 		return _ret;
 	}
 }
@@ -214,13 +214,13 @@ interface OnlineIdSystemAuthenticator
 	static Windows.Security.Authentication.OnlineId.OnlineIdSystemAuthenticatorForUser Default()
 	{
 		Windows.Security.Authentication.OnlineId.OnlineIdSystemAuthenticatorForUser _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorStatics).get_Default(&_ret));
+		Debug.OK(staticInstance.get_Default(&_ret));
 		return _ret;
 	}
 	static Windows.Security.Authentication.OnlineId.OnlineIdSystemAuthenticatorForUser GetForUser(Windows.System.User user)
 	{
 		Windows.Security.Authentication.OnlineId.OnlineIdSystemAuthenticatorForUser _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorStatics).abi_GetForUser(user, &_ret));
+		Debug.OK(staticInstance.abi_GetForUser(user, &_ret));
 		return _ret;
 	}
 }
@@ -231,23 +231,23 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.OnlineId.OnlineIdSystemTicketResult) GetTicketAsync(Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest request)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.OnlineId.OnlineIdSystemTicketResult) _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorForUser).abi_GetTicketAsync(request, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorForUser)this.asInterface(uuid("5798befb-1de4-4186-a2e6-b563f86aaf44"))).abi_GetTicketAsync(request, &_ret));
 		return _ret;
 	}
 	final void ApplicationId(GUID value)
 	{
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorForUser).set_ApplicationId(value));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorForUser)this.asInterface(uuid("5798befb-1de4-4186-a2e6-b563f86aaf44"))).set_ApplicationId(value));
 	}
 	final GUID ApplicationId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorForUser).get_ApplicationId(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorForUser)this.asInterface(uuid("5798befb-1de4-4186-a2e6-b563f86aaf44"))).get_ApplicationId(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorForUser).get_User(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdSystemAuthenticatorForUser)this.asInterface(uuid("5798befb-1de4-4186-a2e6-b563f86aaf44"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -258,13 +258,13 @@ extern(Windows):
 	final Windows.Security.Authentication.OnlineId.OnlineIdServiceTicket Ticket()
 	{
 		Windows.Security.Authentication.OnlineId.OnlineIdServiceTicket _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdSystemIdentity).get_Ticket(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdSystemIdentity)this.asInterface(uuid("743cd20d-b6ca-434d-8124-53ea12685307"))).get_Ticket(&_ret));
 		return _ret;
 	}
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdSystemIdentity).get_Id(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdSystemIdentity)this.asInterface(uuid("743cd20d-b6ca-434d-8124-53ea12685307"))).get_Id(&_ret));
 		return _ret;
 	}
 }
@@ -275,19 +275,19 @@ extern(Windows):
 	final Windows.Security.Authentication.OnlineId.OnlineIdSystemIdentity Identity()
 	{
 		Windows.Security.Authentication.OnlineId.OnlineIdSystemIdentity _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdSystemTicketResult).get_Identity(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdSystemTicketResult)this.asInterface(uuid("db0a5ff8-b098-4acd-9d13-9e640652b5b6"))).get_Identity(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Authentication.OnlineId.OnlineIdSystemTicketStatus Status()
 	{
 		Windows.Security.Authentication.OnlineId.OnlineIdSystemTicketStatus _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdSystemTicketResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdSystemTicketResult)this.asInterface(uuid("db0a5ff8-b098-4acd-9d13-9e640652b5b6"))).get_Status(&_ret));
 		return _ret;
 	}
 	final HRESULT ExtendedError()
 	{
 		HRESULT _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IOnlineIdSystemTicketResult).get_ExtendedError(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdSystemTicketResult)this.asInterface(uuid("db0a5ff8-b098-4acd-9d13-9e640652b5b6"))).get_ExtendedError(&_ret));
 		return _ret;
 	}
 }
@@ -297,17 +297,17 @@ interface SignOutUserOperation : Windows.Foundation.IAsyncAction
 extern(Windows):
 	final void Completed(Windows.Foundation.AsyncActionCompletedHandler handler)
 	{
-		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).set_Completed(handler));
+		Debug.OK((cast(Windows.Foundation.IAsyncAction)this.asInterface(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b"))).set_Completed(handler));
 	}
 	final Windows.Foundation.AsyncActionCompletedHandler Completed()
 	{
 		Windows.Foundation.AsyncActionCompletedHandler _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).get_Completed(&_ret));
+		Debug.OK((cast(Windows.Foundation.IAsyncAction)this.asInterface(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b"))).get_Completed(&_ret));
 		return _ret;
 	}
 	final void GetResults()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).abi_GetResults());
+		Debug.OK((cast(Windows.Foundation.IAsyncAction)this.asInterface(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b"))).abi_GetResults());
 	}
 }
 
@@ -316,18 +316,18 @@ interface UserAuthenticationOperation : Windows.Foundation.IAsyncOperation!(Wind
 extern(Windows):
 	final void Completed(Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Security.Authentication.OnlineId.UserIdentity) handler)
 	{
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.OnlineId.UserIdentity)).set_Completed(handler));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.OnlineId.UserIdentity))this).set_Completed(handler));
 	}
 	final Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Security.Authentication.OnlineId.UserIdentity) Completed()
 	{
 		Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Security.Authentication.OnlineId.UserIdentity) _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.OnlineId.UserIdentity)).get_Completed(&_ret));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.OnlineId.UserIdentity))this).get_Completed(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Authentication.OnlineId.UserIdentity Results()
 	{
 		Windows.Security.Authentication.OnlineId.UserIdentity _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.OnlineId.UserIdentity)).get_Results(&_ret));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.OnlineId.UserIdentity))this).get_Results(&_ret));
 		return _ret;
 	}
 }
@@ -338,49 +338,49 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Authentication.OnlineId.OnlineIdServiceTicket) Tickets()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Security.Authentication.OnlineId.OnlineIdServiceTicket) _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IUserIdentity).get_Tickets(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IUserIdentity)this.asInterface(uuid("2146d9cd-0742-4be3-8a1c-7c7ae679aa88"))).get_Tickets(&_ret));
 		return _ret;
 	}
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IUserIdentity).get_Id(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IUserIdentity)this.asInterface(uuid("2146d9cd-0742-4be3-8a1c-7c7ae679aa88"))).get_Id(&_ret));
 		return _ret;
 	}
 	final HSTRING SafeCustomerId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IUserIdentity).get_SafeCustomerId(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IUserIdentity)this.asInterface(uuid("2146d9cd-0742-4be3-8a1c-7c7ae679aa88"))).get_SafeCustomerId(&_ret));
 		return _ret;
 	}
 	final HSTRING SignInName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IUserIdentity).get_SignInName(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IUserIdentity)this.asInterface(uuid("2146d9cd-0742-4be3-8a1c-7c7ae679aa88"))).get_SignInName(&_ret));
 		return _ret;
 	}
 	final HSTRING FirstName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IUserIdentity).get_FirstName(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IUserIdentity)this.asInterface(uuid("2146d9cd-0742-4be3-8a1c-7c7ae679aa88"))).get_FirstName(&_ret));
 		return _ret;
 	}
 	final HSTRING LastName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IUserIdentity).get_LastName(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IUserIdentity)this.asInterface(uuid("2146d9cd-0742-4be3-8a1c-7c7ae679aa88"))).get_LastName(&_ret));
 		return _ret;
 	}
 	final bool IsBetaAccount()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IUserIdentity).get_IsBetaAccount(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IUserIdentity)this.asInterface(uuid("2146d9cd-0742-4be3-8a1c-7c7ae679aa88"))).get_IsBetaAccount(&_ret));
 		return _ret;
 	}
 	final bool IsConfirmedPC()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.OnlineId.IUserIdentity).get_IsConfirmedPC(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IUserIdentity)this.asInterface(uuid("2146d9cd-0742-4be3-8a1c-7c7ae679aa88"))).get_IsConfirmedPC(&_ret));
 		return _ret;
 	}
 }

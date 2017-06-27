@@ -337,19 +337,19 @@ extern(Windows):
 	final UINT32 MaxPacketSize()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkInEndpointDescriptor).get_MaxPacketSize(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbBulkInEndpointDescriptor)this.asInterface(uuid("3c6e4846-06cf-42a9-9dc2-971c1b14b6e3"))).get_MaxPacketSize(&_ret));
 		return _ret;
 	}
 	final ubyte EndpointNumber()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkInEndpointDescriptor).get_EndpointNumber(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbBulkInEndpointDescriptor)this.asInterface(uuid("3c6e4846-06cf-42a9-9dc2-971c1b14b6e3"))).get_EndpointNumber(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Usb.UsbBulkInPipe Pipe()
 	{
 		Windows.Devices.Usb.UsbBulkInPipe _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkInEndpointDescriptor).get_Pipe(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbBulkInEndpointDescriptor)this.asInterface(uuid("3c6e4846-06cf-42a9-9dc2-971c1b14b6e3"))).get_Pipe(&_ret));
 		return _ret;
 	}
 }
@@ -360,39 +360,39 @@ extern(Windows):
 	final UINT32 MaxTransferSizeBytes()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkInPipe).get_MaxTransferSizeBytes(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbBulkInPipe)this.asInterface(uuid("f01d2d3b-4548-4d50-b326-d82cdabe1220"))).get_MaxTransferSizeBytes(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Usb.UsbBulkInEndpointDescriptor EndpointDescriptor()
 	{
 		Windows.Devices.Usb.UsbBulkInEndpointDescriptor _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkInPipe).get_EndpointDescriptor(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbBulkInPipe)this.asInterface(uuid("f01d2d3b-4548-4d50-b326-d82cdabe1220"))).get_EndpointDescriptor(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ClearStallAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkInPipe).abi_ClearStallAsync(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbBulkInPipe)this.asInterface(uuid("f01d2d3b-4548-4d50-b326-d82cdabe1220"))).abi_ClearStallAsync(&_ret));
 		return _ret;
 	}
 	final void ReadOptions(Windows.Devices.Usb.UsbReadOptions value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkInPipe).set_ReadOptions(value));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbBulkInPipe)this.asInterface(uuid("f01d2d3b-4548-4d50-b326-d82cdabe1220"))).set_ReadOptions(value));
 	}
 	final Windows.Devices.Usb.UsbReadOptions ReadOptions()
 	{
 		Windows.Devices.Usb.UsbReadOptions _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkInPipe).get_ReadOptions(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbBulkInPipe)this.asInterface(uuid("f01d2d3b-4548-4d50-b326-d82cdabe1220"))).get_ReadOptions(&_ret));
 		return _ret;
 	}
 	final void FlushBuffer()
 	{
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkInPipe).abi_FlushBuffer());
+		Debug.OK((cast(Windows.Devices.Usb.IUsbBulkInPipe)this.asInterface(uuid("f01d2d3b-4548-4d50-b326-d82cdabe1220"))).abi_FlushBuffer());
 	}
 	final Windows.Storage.Streams.IInputStream InputStream()
 	{
 		Windows.Storage.Streams.IInputStream _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkInPipe).get_InputStream(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbBulkInPipe)this.asInterface(uuid("f01d2d3b-4548-4d50-b326-d82cdabe1220"))).get_InputStream(&_ret));
 		return _ret;
 	}
 }
@@ -403,19 +403,19 @@ extern(Windows):
 	final UINT32 MaxPacketSize()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkOutEndpointDescriptor).get_MaxPacketSize(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbBulkOutEndpointDescriptor)this.asInterface(uuid("2820847a-ffee-4f60-9be1-956cac3ecb65"))).get_MaxPacketSize(&_ret));
 		return _ret;
 	}
 	final ubyte EndpointNumber()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkOutEndpointDescriptor).get_EndpointNumber(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbBulkOutEndpointDescriptor)this.asInterface(uuid("2820847a-ffee-4f60-9be1-956cac3ecb65"))).get_EndpointNumber(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Usb.UsbBulkOutPipe Pipe()
 	{
 		Windows.Devices.Usb.UsbBulkOutPipe _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkOutEndpointDescriptor).get_Pipe(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbBulkOutEndpointDescriptor)this.asInterface(uuid("2820847a-ffee-4f60-9be1-956cac3ecb65"))).get_Pipe(&_ret));
 		return _ret;
 	}
 }
@@ -426,29 +426,29 @@ extern(Windows):
 	final Windows.Devices.Usb.UsbBulkOutEndpointDescriptor EndpointDescriptor()
 	{
 		Windows.Devices.Usb.UsbBulkOutEndpointDescriptor _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkOutPipe).get_EndpointDescriptor(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbBulkOutPipe)this.asInterface(uuid("a8e9ee6e-0115-45aa-8b21-37b225bccee7"))).get_EndpointDescriptor(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ClearStallAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkOutPipe).abi_ClearStallAsync(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbBulkOutPipe)this.asInterface(uuid("a8e9ee6e-0115-45aa-8b21-37b225bccee7"))).abi_ClearStallAsync(&_ret));
 		return _ret;
 	}
 	final void WriteOptions(Windows.Devices.Usb.UsbWriteOptions value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkOutPipe).set_WriteOptions(value));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbBulkOutPipe)this.asInterface(uuid("a8e9ee6e-0115-45aa-8b21-37b225bccee7"))).set_WriteOptions(value));
 	}
 	final Windows.Devices.Usb.UsbWriteOptions WriteOptions()
 	{
 		Windows.Devices.Usb.UsbWriteOptions _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkOutPipe).get_WriteOptions(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbBulkOutPipe)this.asInterface(uuid("a8e9ee6e-0115-45aa-8b21-37b225bccee7"))).get_WriteOptions(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IOutputStream OutputStream()
 	{
 		Windows.Storage.Streams.IOutputStream _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbBulkOutPipe).get_OutputStream(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbBulkOutPipe)this.asInterface(uuid("a8e9ee6e-0115-45aa-8b21-37b225bccee7"))).get_OutputStream(&_ret));
 		return _ret;
 	}
 }
@@ -459,19 +459,19 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterface) UsbInterfaces()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterface) _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbConfiguration).get_UsbInterfaces(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbConfiguration)this.asInterface(uuid("68177429-36a9-46d7-b873-fc689251ec30"))).get_UsbInterfaces(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Usb.UsbConfigurationDescriptor ConfigurationDescriptor()
 	{
 		Windows.Devices.Usb.UsbConfigurationDescriptor _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbConfiguration).get_ConfigurationDescriptor(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbConfiguration)this.asInterface(uuid("68177429-36a9-46d7-b873-fc689251ec30"))).get_ConfigurationDescriptor(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbDescriptor) Descriptors()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbDescriptor) _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbConfiguration).get_Descriptors(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbConfiguration)this.asInterface(uuid("68177429-36a9-46d7-b873-fc689251ec30"))).get_Descriptors(&_ret));
 		return _ret;
 	}
 }
@@ -482,25 +482,25 @@ extern(Windows):
 	final ubyte ConfigurationValue()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbConfigurationDescriptor).get_ConfigurationValue(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbConfigurationDescriptor)this.asInterface(uuid("f2176d92-b442-407a-8207-7d646c0385f3"))).get_ConfigurationValue(&_ret));
 		return _ret;
 	}
 	final UINT32 MaxPowerMilliamps()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbConfigurationDescriptor).get_MaxPowerMilliamps(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbConfigurationDescriptor)this.asInterface(uuid("f2176d92-b442-407a-8207-7d646c0385f3"))).get_MaxPowerMilliamps(&_ret));
 		return _ret;
 	}
 	final bool SelfPowered()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbConfigurationDescriptor).get_SelfPowered(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbConfigurationDescriptor)this.asInterface(uuid("f2176d92-b442-407a-8207-7d646c0385f3"))).get_SelfPowered(&_ret));
 		return _ret;
 	}
 	final bool RemoteWakeup()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbConfigurationDescriptor).get_RemoteWakeup(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbConfigurationDescriptor)this.asInterface(uuid("f2176d92-b442-407a-8207-7d646c0385f3"))).get_RemoteWakeup(&_ret));
 		return _ret;
 	}
 
@@ -513,13 +513,13 @@ extern(Windows):
 	static bool TryParse(Windows.Devices.Usb.UsbDescriptor descriptor, Windows.Devices.Usb.UsbConfigurationDescriptor* out_parsed)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbConfigurationDescriptorStatics).abi_TryParse(descriptor, out_parsed, &_ret));
+		Debug.OK(staticInstance.abi_TryParse(descriptor, out_parsed, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Usb.UsbConfigurationDescriptor Parse(Windows.Devices.Usb.UsbDescriptor descriptor)
 	{
 		Windows.Devices.Usb.UsbConfigurationDescriptor _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbConfigurationDescriptorStatics).abi_Parse(descriptor, &_ret));
+		Debug.OK(staticInstance.abi_Parse(descriptor, &_ret));
 		return _ret;
 	}
 }
@@ -530,48 +530,48 @@ extern(Windows):
 	final Windows.Devices.Usb.UsbTransferDirection Direction()
 	{
 		Windows.Devices.Usb.UsbTransferDirection _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbControlRequestType).get_Direction(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbControlRequestType)this.asInterface(uuid("8e9465a6-d73d-46de-94be-aae7f07c0f5c"))).get_Direction(&_ret));
 		return _ret;
 	}
 	final void Direction(Windows.Devices.Usb.UsbTransferDirection value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbControlRequestType).set_Direction(value));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbControlRequestType)this.asInterface(uuid("8e9465a6-d73d-46de-94be-aae7f07c0f5c"))).set_Direction(value));
 	}
 	final Windows.Devices.Usb.UsbControlTransferType ControlTransferType()
 	{
 		Windows.Devices.Usb.UsbControlTransferType _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbControlRequestType).get_ControlTransferType(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbControlRequestType)this.asInterface(uuid("8e9465a6-d73d-46de-94be-aae7f07c0f5c"))).get_ControlTransferType(&_ret));
 		return _ret;
 	}
 	final void ControlTransferType(Windows.Devices.Usb.UsbControlTransferType value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbControlRequestType).set_ControlTransferType(value));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbControlRequestType)this.asInterface(uuid("8e9465a6-d73d-46de-94be-aae7f07c0f5c"))).set_ControlTransferType(value));
 	}
 	final Windows.Devices.Usb.UsbControlRecipient Recipient()
 	{
 		Windows.Devices.Usb.UsbControlRecipient _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbControlRequestType).get_Recipient(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbControlRequestType)this.asInterface(uuid("8e9465a6-d73d-46de-94be-aae7f07c0f5c"))).get_Recipient(&_ret));
 		return _ret;
 	}
 	final void Recipient(Windows.Devices.Usb.UsbControlRecipient value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbControlRequestType).set_Recipient(value));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbControlRequestType)this.asInterface(uuid("8e9465a6-d73d-46de-94be-aae7f07c0f5c"))).set_Recipient(value));
 	}
 	final ubyte AsByte()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbControlRequestType).get_AsByte(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbControlRequestType)this.asInterface(uuid("8e9465a6-d73d-46de-94be-aae7f07c0f5c"))).get_AsByte(&_ret));
 		return _ret;
 	}
 	final void AsByte(ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbControlRequestType).set_AsByte(value));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbControlRequestType)this.asInterface(uuid("8e9465a6-d73d-46de-94be-aae7f07c0f5c"))).set_AsByte(value));
 	}
 	static UsbControlRequestType New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(UsbControlRequestType).abi_ActivateInstance(&ret));
-		return ret.as!(UsbControlRequestType);
+		return cast(UsbControlRequestType) ret;
 	}
 }
 
@@ -581,18 +581,18 @@ extern(Windows):
 	final ubyte Length()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDescriptor).get_Length(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDescriptor)this.asInterface(uuid("0a89f216-5f9d-4874-8904-da9ad3f5528f"))).get_Length(&_ret));
 		return _ret;
 	}
 	final ubyte DescriptorType()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDescriptor).get_DescriptorType(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDescriptor)this.asInterface(uuid("0a89f216-5f9d-4874-8904-da9ad3f5528f"))).get_DescriptorType(&_ret));
 		return _ret;
 	}
 	final void ReadDescriptorBuffer(Windows.Storage.Streams.IBuffer buffer)
 	{
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDescriptor).abi_ReadDescriptorBuffer(buffer));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDescriptor)this.asInterface(uuid("0a89f216-5f9d-4874-8904-da9ad3f5528f"))).abi_ReadDescriptorBuffer(buffer));
 	}
 }
 
@@ -602,48 +602,48 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(UINT32) SendControlOutTransferAsync(Windows.Devices.Usb.UsbSetupPacket setupPacket, Windows.Storage.Streams.IBuffer buffer)
 	{
 		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDevice).abi_SendControlOutTransferAsync(setupPacket, buffer, &_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDevice)this.asInterface(uuid("5249b992-c456-44d5-ad5e-24f5a089f63b"))).abi_SendControlOutTransferAsync(setupPacket, buffer, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(UINT32) SendControlOutTransferAsyncNoBuffer(Windows.Devices.Usb.UsbSetupPacket setupPacket)
 	{
 		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDevice).abi_SendControlOutTransferAsyncNoBuffer(setupPacket, &_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDevice)this.asInterface(uuid("5249b992-c456-44d5-ad5e-24f5a089f63b"))).abi_SendControlOutTransferAsyncNoBuffer(setupPacket, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) SendControlInTransferAsync(Windows.Devices.Usb.UsbSetupPacket setupPacket, Windows.Storage.Streams.IBuffer buffer)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDevice).abi_SendControlInTransferAsync(setupPacket, buffer, &_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDevice)this.asInterface(uuid("5249b992-c456-44d5-ad5e-24f5a089f63b"))).abi_SendControlInTransferAsync(setupPacket, buffer, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) SendControlInTransferAsyncNoBuffer(Windows.Devices.Usb.UsbSetupPacket setupPacket)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDevice).abi_SendControlInTransferAsyncNoBuffer(setupPacket, &_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDevice)this.asInterface(uuid("5249b992-c456-44d5-ad5e-24f5a089f63b"))).abi_SendControlInTransferAsyncNoBuffer(setupPacket, &_ret));
 		return _ret;
 	}
 	final Windows.Devices.Usb.UsbInterface DefaultInterface()
 	{
 		Windows.Devices.Usb.UsbInterface _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDevice).get_DefaultInterface(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDevice)this.asInterface(uuid("5249b992-c456-44d5-ad5e-24f5a089f63b"))).get_DefaultInterface(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Usb.UsbDeviceDescriptor DeviceDescriptor()
 	{
 		Windows.Devices.Usb.UsbDeviceDescriptor _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDevice).get_DeviceDescriptor(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDevice)this.asInterface(uuid("5249b992-c456-44d5-ad5e-24f5a089f63b"))).get_DeviceDescriptor(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Usb.UsbConfiguration Configuration()
 	{
 		Windows.Devices.Usb.UsbConfiguration _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDevice).get_Configuration(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDevice)this.asInterface(uuid("5249b992-c456-44d5-ad5e-24f5a089f63b"))).get_Configuration(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 
 	private static Windows.Devices.Usb.IUsbDeviceStatics _staticInstance;
@@ -655,31 +655,31 @@ extern(Windows):
 	static HSTRING GetDeviceSelector(UINT32 vendorId, UINT32 productId, GUID winUsbInterfaceClass)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceStatics).abi_GetDeviceSelector(vendorId, productId, winUsbInterfaceClass, &_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(vendorId, productId, winUsbInterfaceClass, &_ret));
 		return _ret;
 	}
 	static HSTRING GetDeviceSelectorGuidOnly(GUID winUsbInterfaceClass)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceStatics).abi_GetDeviceSelectorGuidOnly(winUsbInterfaceClass, &_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelectorGuidOnly(winUsbInterfaceClass, &_ret));
 		return _ret;
 	}
 	static HSTRING GetDeviceSelectorVidPidOnly(UINT32 vendorId, UINT32 productId)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceStatics).abi_GetDeviceSelectorVidPidOnly(vendorId, productId, &_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelectorVidPidOnly(vendorId, productId, &_ret));
 		return _ret;
 	}
 	static HSTRING GetDeviceClassSelector(Windows.Devices.Usb.UsbDeviceClass usbClass)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceStatics).abi_GetDeviceClassSelector(usbClass, &_ret));
+		Debug.OK(staticInstance.abi_GetDeviceClassSelector(usbClass, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Usb.UsbDevice) FromIdAsync(HSTRING deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Usb.UsbDevice) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceStatics).abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
 		return _ret;
 	}
 }
@@ -690,38 +690,38 @@ extern(Windows):
 	final ubyte ClassCode()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceClass).get_ClassCode(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDeviceClass)this.asInterface(uuid("051942f9-845e-47eb-b12a-38f2f617afe7"))).get_ClassCode(&_ret));
 		return _ret;
 	}
 	final void ClassCode(ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceClass).set_ClassCode(value));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDeviceClass)this.asInterface(uuid("051942f9-845e-47eb-b12a-38f2f617afe7"))).set_ClassCode(value));
 	}
 	final Windows.Foundation.IReference!(ubyte) SubclassCode()
 	{
 		Windows.Foundation.IReference!(ubyte) _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceClass).get_SubclassCode(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDeviceClass)this.asInterface(uuid("051942f9-845e-47eb-b12a-38f2f617afe7"))).get_SubclassCode(&_ret));
 		return _ret;
 	}
 	final void SubclassCode(Windows.Foundation.IReference!(ubyte) value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceClass).set_SubclassCode(value));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDeviceClass)this.asInterface(uuid("051942f9-845e-47eb-b12a-38f2f617afe7"))).set_SubclassCode(value));
 	}
 	final Windows.Foundation.IReference!(ubyte) ProtocolCode()
 	{
 		Windows.Foundation.IReference!(ubyte) _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceClass).get_ProtocolCode(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDeviceClass)this.asInterface(uuid("051942f9-845e-47eb-b12a-38f2f617afe7"))).get_ProtocolCode(&_ret));
 		return _ret;
 	}
 	final void ProtocolCode(Windows.Foundation.IReference!(ubyte) value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceClass).set_ProtocolCode(value));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDeviceClass)this.asInterface(uuid("051942f9-845e-47eb-b12a-38f2f617afe7"))).set_ProtocolCode(value));
 	}
 	static UsbDeviceClass New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(UsbDeviceClass).abi_ActivateInstance(&ret));
-		return ret.as!(UsbDeviceClass);
+		return cast(UsbDeviceClass) ret;
 	}
 }
 
@@ -736,55 +736,55 @@ interface UsbDeviceClasses : Windows.Devices.Usb.IUsbDeviceClasses
 	static Windows.Devices.Usb.UsbDeviceClass CdcControl()
 	{
 		Windows.Devices.Usb.UsbDeviceClass _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceClassesStatics).get_CdcControl(&_ret));
+		Debug.OK(staticInstance.get_CdcControl(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Usb.UsbDeviceClass Physical()
 	{
 		Windows.Devices.Usb.UsbDeviceClass _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceClassesStatics).get_Physical(&_ret));
+		Debug.OK(staticInstance.get_Physical(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Usb.UsbDeviceClass PersonalHealthcare()
 	{
 		Windows.Devices.Usb.UsbDeviceClass _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceClassesStatics).get_PersonalHealthcare(&_ret));
+		Debug.OK(staticInstance.get_PersonalHealthcare(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Usb.UsbDeviceClass ActiveSync()
 	{
 		Windows.Devices.Usb.UsbDeviceClass _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceClassesStatics).get_ActiveSync(&_ret));
+		Debug.OK(staticInstance.get_ActiveSync(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Usb.UsbDeviceClass PalmSync()
 	{
 		Windows.Devices.Usb.UsbDeviceClass _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceClassesStatics).get_PalmSync(&_ret));
+		Debug.OK(staticInstance.get_PalmSync(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Usb.UsbDeviceClass DeviceFirmwareUpdate()
 	{
 		Windows.Devices.Usb.UsbDeviceClass _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceClassesStatics).get_DeviceFirmwareUpdate(&_ret));
+		Debug.OK(staticInstance.get_DeviceFirmwareUpdate(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Usb.UsbDeviceClass Irda()
 	{
 		Windows.Devices.Usb.UsbDeviceClass _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceClassesStatics).get_Irda(&_ret));
+		Debug.OK(staticInstance.get_Irda(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Usb.UsbDeviceClass Measurement()
 	{
 		Windows.Devices.Usb.UsbDeviceClass _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceClassesStatics).get_Measurement(&_ret));
+		Debug.OK(staticInstance.get_Measurement(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Usb.UsbDeviceClass VendorSpecific()
 	{
 		Windows.Devices.Usb.UsbDeviceClass _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbDeviceClassesStatics).get_VendorSpecific(&_ret));
+		Debug.OK(staticInstance.get_VendorSpecific(&_ret));
 		return _ret;
 	}
 }
@@ -795,37 +795,37 @@ extern(Windows):
 	final UINT32 BcdUsb()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceDescriptor).get_BcdUsb(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDeviceDescriptor)this.asInterface(uuid("1f48d1f6-ba97-4322-b92c-b5b189216588"))).get_BcdUsb(&_ret));
 		return _ret;
 	}
 	final ubyte MaxPacketSize0()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceDescriptor).get_MaxPacketSize0(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDeviceDescriptor)this.asInterface(uuid("1f48d1f6-ba97-4322-b92c-b5b189216588"))).get_MaxPacketSize0(&_ret));
 		return _ret;
 	}
 	final UINT32 VendorId()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceDescriptor).get_VendorId(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDeviceDescriptor)this.asInterface(uuid("1f48d1f6-ba97-4322-b92c-b5b189216588"))).get_VendorId(&_ret));
 		return _ret;
 	}
 	final UINT32 ProductId()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceDescriptor).get_ProductId(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDeviceDescriptor)this.asInterface(uuid("1f48d1f6-ba97-4322-b92c-b5b189216588"))).get_ProductId(&_ret));
 		return _ret;
 	}
 	final UINT32 BcdDeviceRevision()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceDescriptor).get_BcdDeviceRevision(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDeviceDescriptor)this.asInterface(uuid("1f48d1f6-ba97-4322-b92c-b5b189216588"))).get_BcdDeviceRevision(&_ret));
 		return _ret;
 	}
 	final ubyte NumberOfConfigurations()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbDeviceDescriptor).get_NumberOfConfigurations(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDeviceDescriptor)this.asInterface(uuid("1f48d1f6-ba97-4322-b92c-b5b189216588"))).get_NumberOfConfigurations(&_ret));
 		return _ret;
 	}
 }
@@ -836,43 +836,43 @@ extern(Windows):
 	final ubyte EndpointNumber()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbEndpointDescriptor).get_EndpointNumber(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbEndpointDescriptor)this.asInterface(uuid("6b4862d9-8df7-4b40-ac83-578f139f0575"))).get_EndpointNumber(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Usb.UsbTransferDirection Direction()
 	{
 		Windows.Devices.Usb.UsbTransferDirection _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbEndpointDescriptor).get_Direction(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbEndpointDescriptor)this.asInterface(uuid("6b4862d9-8df7-4b40-ac83-578f139f0575"))).get_Direction(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Usb.UsbEndpointType EndpointType()
 	{
 		Windows.Devices.Usb.UsbEndpointType _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbEndpointDescriptor).get_EndpointType(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbEndpointDescriptor)this.asInterface(uuid("6b4862d9-8df7-4b40-ac83-578f139f0575"))).get_EndpointType(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Usb.UsbBulkInEndpointDescriptor AsBulkInEndpointDescriptor()
 	{
 		Windows.Devices.Usb.UsbBulkInEndpointDescriptor _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbEndpointDescriptor).get_AsBulkInEndpointDescriptor(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbEndpointDescriptor)this.asInterface(uuid("6b4862d9-8df7-4b40-ac83-578f139f0575"))).get_AsBulkInEndpointDescriptor(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Usb.UsbInterruptInEndpointDescriptor AsInterruptInEndpointDescriptor()
 	{
 		Windows.Devices.Usb.UsbInterruptInEndpointDescriptor _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbEndpointDescriptor).get_AsInterruptInEndpointDescriptor(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbEndpointDescriptor)this.asInterface(uuid("6b4862d9-8df7-4b40-ac83-578f139f0575"))).get_AsInterruptInEndpointDescriptor(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Usb.UsbBulkOutEndpointDescriptor AsBulkOutEndpointDescriptor()
 	{
 		Windows.Devices.Usb.UsbBulkOutEndpointDescriptor _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbEndpointDescriptor).get_AsBulkOutEndpointDescriptor(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbEndpointDescriptor)this.asInterface(uuid("6b4862d9-8df7-4b40-ac83-578f139f0575"))).get_AsBulkOutEndpointDescriptor(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor AsInterruptOutEndpointDescriptor()
 	{
 		Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbEndpointDescriptor).get_AsInterruptOutEndpointDescriptor(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbEndpointDescriptor)this.asInterface(uuid("6b4862d9-8df7-4b40-ac83-578f139f0575"))).get_AsInterruptOutEndpointDescriptor(&_ret));
 		return _ret;
 	}
 
@@ -885,13 +885,13 @@ extern(Windows):
 	static bool TryParse(Windows.Devices.Usb.UsbDescriptor descriptor, Windows.Devices.Usb.UsbEndpointDescriptor* out_parsed)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbEndpointDescriptorStatics).abi_TryParse(descriptor, out_parsed, &_ret));
+		Debug.OK(staticInstance.abi_TryParse(descriptor, out_parsed, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Usb.UsbEndpointDescriptor Parse(Windows.Devices.Usb.UsbDescriptor descriptor)
 	{
 		Windows.Devices.Usb.UsbEndpointDescriptor _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbEndpointDescriptorStatics).abi_Parse(descriptor, &_ret));
+		Debug.OK(staticInstance.abi_Parse(descriptor, &_ret));
 		return _ret;
 	}
 }
@@ -902,43 +902,43 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbBulkInPipe) BulkInPipes()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbBulkInPipe) _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterface).get_BulkInPipes(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterface)this.asInterface(uuid("a0322b95-7f47-48ab-a727-678c25be2112"))).get_BulkInPipes(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterruptInPipe) InterruptInPipes()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterruptInPipe) _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterface).get_InterruptInPipes(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterface)this.asInterface(uuid("a0322b95-7f47-48ab-a727-678c25be2112"))).get_InterruptInPipes(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbBulkOutPipe) BulkOutPipes()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbBulkOutPipe) _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterface).get_BulkOutPipes(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterface)this.asInterface(uuid("a0322b95-7f47-48ab-a727-678c25be2112"))).get_BulkOutPipes(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterruptOutPipe) InterruptOutPipes()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterruptOutPipe) _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterface).get_InterruptOutPipes(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterface)this.asInterface(uuid("a0322b95-7f47-48ab-a727-678c25be2112"))).get_InterruptOutPipes(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterfaceSetting) InterfaceSettings()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterfaceSetting) _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterface).get_InterfaceSettings(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterface)this.asInterface(uuid("a0322b95-7f47-48ab-a727-678c25be2112"))).get_InterfaceSettings(&_ret));
 		return _ret;
 	}
 	final ubyte InterfaceNumber()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterface).get_InterfaceNumber(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterface)this.asInterface(uuid("a0322b95-7f47-48ab-a727-678c25be2112"))).get_InterfaceNumber(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbDescriptor) Descriptors()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbDescriptor) _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterface).get_Descriptors(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterface)this.asInterface(uuid("a0322b95-7f47-48ab-a727-678c25be2112"))).get_Descriptors(&_ret));
 		return _ret;
 	}
 }
@@ -949,31 +949,31 @@ extern(Windows):
 	final ubyte ClassCode()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceDescriptor).get_ClassCode(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterfaceDescriptor)this.asInterface(uuid("199670c7-b7ee-4f90-8cd5-94a2e257598a"))).get_ClassCode(&_ret));
 		return _ret;
 	}
 	final ubyte SubclassCode()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceDescriptor).get_SubclassCode(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterfaceDescriptor)this.asInterface(uuid("199670c7-b7ee-4f90-8cd5-94a2e257598a"))).get_SubclassCode(&_ret));
 		return _ret;
 	}
 	final ubyte ProtocolCode()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceDescriptor).get_ProtocolCode(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterfaceDescriptor)this.asInterface(uuid("199670c7-b7ee-4f90-8cd5-94a2e257598a"))).get_ProtocolCode(&_ret));
 		return _ret;
 	}
 	final ubyte AlternateSettingNumber()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceDescriptor).get_AlternateSettingNumber(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterfaceDescriptor)this.asInterface(uuid("199670c7-b7ee-4f90-8cd5-94a2e257598a"))).get_AlternateSettingNumber(&_ret));
 		return _ret;
 	}
 	final ubyte InterfaceNumber()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceDescriptor).get_InterfaceNumber(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterfaceDescriptor)this.asInterface(uuid("199670c7-b7ee-4f90-8cd5-94a2e257598a"))).get_InterfaceNumber(&_ret));
 		return _ret;
 	}
 
@@ -986,13 +986,13 @@ extern(Windows):
 	static bool TryParse(Windows.Devices.Usb.UsbDescriptor descriptor, Windows.Devices.Usb.UsbInterfaceDescriptor* out_parsed)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbInterfaceDescriptorStatics).abi_TryParse(descriptor, out_parsed, &_ret));
+		Debug.OK(staticInstance.abi_TryParse(descriptor, out_parsed, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Usb.UsbInterfaceDescriptor Parse(Windows.Devices.Usb.UsbDescriptor descriptor)
 	{
 		Windows.Devices.Usb.UsbInterfaceDescriptor _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Usb.IUsbInterfaceDescriptorStatics).abi_Parse(descriptor, &_ret));
+		Debug.OK(staticInstance.abi_Parse(descriptor, &_ret));
 		return _ret;
 	}
 }
@@ -1003,49 +1003,49 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbBulkInEndpointDescriptor) BulkInEndpoints()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbBulkInEndpointDescriptor) _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceSetting).get_BulkInEndpoints(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterfaceSetting)this.asInterface(uuid("1827bba7-8da7-4af7-8f4c-7f3032e781f5"))).get_BulkInEndpoints(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterruptInEndpointDescriptor) InterruptInEndpoints()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterruptInEndpointDescriptor) _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceSetting).get_InterruptInEndpoints(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterfaceSetting)this.asInterface(uuid("1827bba7-8da7-4af7-8f4c-7f3032e781f5"))).get_InterruptInEndpoints(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbBulkOutEndpointDescriptor) BulkOutEndpoints()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbBulkOutEndpointDescriptor) _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceSetting).get_BulkOutEndpoints(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterfaceSetting)this.asInterface(uuid("1827bba7-8da7-4af7-8f4c-7f3032e781f5"))).get_BulkOutEndpoints(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor) InterruptOutEndpoints()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor) _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceSetting).get_InterruptOutEndpoints(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterfaceSetting)this.asInterface(uuid("1827bba7-8da7-4af7-8f4c-7f3032e781f5"))).get_InterruptOutEndpoints(&_ret));
 		return _ret;
 	}
 	final bool Selected()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceSetting).get_Selected(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterfaceSetting)this.asInterface(uuid("1827bba7-8da7-4af7-8f4c-7f3032e781f5"))).get_Selected(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction SelectSettingAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceSetting).abi_SelectSettingAsync(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterfaceSetting)this.asInterface(uuid("1827bba7-8da7-4af7-8f4c-7f3032e781f5"))).abi_SelectSettingAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Usb.UsbInterfaceDescriptor InterfaceDescriptor()
 	{
 		Windows.Devices.Usb.UsbInterfaceDescriptor _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceSetting).get_InterfaceDescriptor(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterfaceSetting)this.asInterface(uuid("1827bba7-8da7-4af7-8f4c-7f3032e781f5"))).get_InterfaceDescriptor(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbDescriptor) Descriptors()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Usb.UsbDescriptor) _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterfaceSetting).get_Descriptors(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterfaceSetting)this.asInterface(uuid("1827bba7-8da7-4af7-8f4c-7f3032e781f5"))).get_Descriptors(&_ret));
 		return _ret;
 	}
 }
@@ -1056,25 +1056,25 @@ extern(Windows):
 	final UINT32 MaxPacketSize()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptInEndpointDescriptor).get_MaxPacketSize(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterruptInEndpointDescriptor)this.asInterface(uuid("c0528967-c911-4c3a-86b2-419c2da89039"))).get_MaxPacketSize(&_ret));
 		return _ret;
 	}
 	final ubyte EndpointNumber()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptInEndpointDescriptor).get_EndpointNumber(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterruptInEndpointDescriptor)this.asInterface(uuid("c0528967-c911-4c3a-86b2-419c2da89039"))).get_EndpointNumber(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Interval()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptInEndpointDescriptor).get_Interval(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterruptInEndpointDescriptor)this.asInterface(uuid("c0528967-c911-4c3a-86b2-419c2da89039"))).get_Interval(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Usb.UsbInterruptInPipe Pipe()
 	{
 		Windows.Devices.Usb.UsbInterruptInPipe _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptInEndpointDescriptor).get_Pipe(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterruptInEndpointDescriptor)this.asInterface(uuid("c0528967-c911-4c3a-86b2-419c2da89039"))).get_Pipe(&_ret));
 		return _ret;
 	}
 }
@@ -1085,7 +1085,7 @@ extern(Windows):
 	final Windows.Storage.Streams.IBuffer InterruptData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptInEventArgs).get_InterruptData(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterruptInEventArgs)this.asInterface(uuid("b7b04092-1418-4936-8209-299cf5605583"))).get_InterruptData(&_ret));
 		return _ret;
 	}
 }
@@ -1096,24 +1096,24 @@ extern(Windows):
 	final Windows.Devices.Usb.UsbInterruptInEndpointDescriptor EndpointDescriptor()
 	{
 		Windows.Devices.Usb.UsbInterruptInEndpointDescriptor _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptInPipe).get_EndpointDescriptor(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterruptInPipe)this.asInterface(uuid("fa007116-84d7-48c7-8a3f-4c0b235f2ea6"))).get_EndpointDescriptor(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ClearStallAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptInPipe).abi_ClearStallAsync(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterruptInPipe)this.asInterface(uuid("fa007116-84d7-48c7-8a3f-4c0b235f2ea6"))).abi_ClearStallAsync(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnDataReceived(void delegate(Windows.Devices.Usb.UsbInterruptInPipe, Windows.Devices.Usb.UsbInterruptInEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptInPipe).add_DataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Usb.UsbInterruptInPipe, Windows.Devices.Usb.UsbInterruptInEventArgs), Windows.Devices.Usb.UsbInterruptInPipe, Windows.Devices.Usb.UsbInterruptInEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterruptInPipe)this.asInterface(uuid("fa007116-84d7-48c7-8a3f-4c0b235f2ea6"))).add_DataReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Usb.UsbInterruptInPipe, Windows.Devices.Usb.UsbInterruptInEventArgs), Windows.Devices.Usb.UsbInterruptInPipe, Windows.Devices.Usb.UsbInterruptInEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDataReceived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptInPipe).remove_DataReceived(token));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterruptInPipe)this.asInterface(uuid("fa007116-84d7-48c7-8a3f-4c0b235f2ea6"))).remove_DataReceived(token));
 	}
 }
 
@@ -1123,25 +1123,25 @@ extern(Windows):
 	final UINT32 MaxPacketSize()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptOutEndpointDescriptor).get_MaxPacketSize(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterruptOutEndpointDescriptor)this.asInterface(uuid("cc9fed81-10ca-4533-952d-9e278341e80f"))).get_MaxPacketSize(&_ret));
 		return _ret;
 	}
 	final ubyte EndpointNumber()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptOutEndpointDescriptor).get_EndpointNumber(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterruptOutEndpointDescriptor)this.asInterface(uuid("cc9fed81-10ca-4533-952d-9e278341e80f"))).get_EndpointNumber(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Interval()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptOutEndpointDescriptor).get_Interval(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterruptOutEndpointDescriptor)this.asInterface(uuid("cc9fed81-10ca-4533-952d-9e278341e80f"))).get_Interval(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Usb.UsbInterruptOutPipe Pipe()
 	{
 		Windows.Devices.Usb.UsbInterruptOutPipe _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptOutEndpointDescriptor).get_Pipe(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterruptOutEndpointDescriptor)this.asInterface(uuid("cc9fed81-10ca-4533-952d-9e278341e80f"))).get_Pipe(&_ret));
 		return _ret;
 	}
 }
@@ -1152,29 +1152,29 @@ extern(Windows):
 	final Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor EndpointDescriptor()
 	{
 		Windows.Devices.Usb.UsbInterruptOutEndpointDescriptor _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptOutPipe).get_EndpointDescriptor(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterruptOutPipe)this.asInterface(uuid("e984c8a9-aaf9-49d0-b96c-f661ab4a7f95"))).get_EndpointDescriptor(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ClearStallAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptOutPipe).abi_ClearStallAsync(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterruptOutPipe)this.asInterface(uuid("e984c8a9-aaf9-49d0-b96c-f661ab4a7f95"))).abi_ClearStallAsync(&_ret));
 		return _ret;
 	}
 	final void WriteOptions(Windows.Devices.Usb.UsbWriteOptions value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptOutPipe).set_WriteOptions(value));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterruptOutPipe)this.asInterface(uuid("e984c8a9-aaf9-49d0-b96c-f661ab4a7f95"))).set_WriteOptions(value));
 	}
 	final Windows.Devices.Usb.UsbWriteOptions WriteOptions()
 	{
 		Windows.Devices.Usb.UsbWriteOptions _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptOutPipe).get_WriteOptions(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterruptOutPipe)this.asInterface(uuid("e984c8a9-aaf9-49d0-b96c-f661ab4a7f95"))).get_WriteOptions(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IOutputStream OutputStream()
 	{
 		Windows.Storage.Streams.IOutputStream _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbInterruptOutPipe).get_OutputStream(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbInterruptOutPipe)this.asInterface(uuid("e984c8a9-aaf9-49d0-b96c-f661ab4a7f95"))).get_OutputStream(&_ret));
 		return _ret;
 	}
 }
@@ -1185,64 +1185,64 @@ extern(Windows):
 	final Windows.Devices.Usb.UsbControlRequestType RequestType()
 	{
 		Windows.Devices.Usb.UsbControlRequestType _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).get_RequestType(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbSetupPacket)this.asInterface(uuid("104ba132-c78f-4c51-b654-e49d02f2cb03"))).get_RequestType(&_ret));
 		return _ret;
 	}
 	final void RequestType(Windows.Devices.Usb.UsbControlRequestType value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).set_RequestType(value));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbSetupPacket)this.asInterface(uuid("104ba132-c78f-4c51-b654-e49d02f2cb03"))).set_RequestType(value));
 	}
 	final ubyte Request()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).get_Request(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbSetupPacket)this.asInterface(uuid("104ba132-c78f-4c51-b654-e49d02f2cb03"))).get_Request(&_ret));
 		return _ret;
 	}
 	final void Request(ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).set_Request(value));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbSetupPacket)this.asInterface(uuid("104ba132-c78f-4c51-b654-e49d02f2cb03"))).set_Request(value));
 	}
 	final UINT32 Value()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).get_Value(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbSetupPacket)this.asInterface(uuid("104ba132-c78f-4c51-b654-e49d02f2cb03"))).get_Value(&_ret));
 		return _ret;
 	}
 	final void Value(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).set_Value(value));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbSetupPacket)this.asInterface(uuid("104ba132-c78f-4c51-b654-e49d02f2cb03"))).set_Value(value));
 	}
 	final UINT32 Index()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).get_Index(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbSetupPacket)this.asInterface(uuid("104ba132-c78f-4c51-b654-e49d02f2cb03"))).get_Index(&_ret));
 		return _ret;
 	}
 	final void Index(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).set_Index(value));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbSetupPacket)this.asInterface(uuid("104ba132-c78f-4c51-b654-e49d02f2cb03"))).set_Index(value));
 	}
 	final UINT32 Length()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).get_Length(&_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbSetupPacket)this.asInterface(uuid("104ba132-c78f-4c51-b654-e49d02f2cb03"))).get_Length(&_ret));
 		return _ret;
 	}
 	final void Length(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Usb.IUsbSetupPacket).set_Length(value));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbSetupPacket)this.asInterface(uuid("104ba132-c78f-4c51-b654-e49d02f2cb03"))).set_Length(value));
 	}
 	static UsbSetupPacket New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(UsbSetupPacket).abi_ActivateInstance(&ret));
-		return ret.as!(UsbSetupPacket);
+		return cast(UsbSetupPacket) ret;
 	}
 	static Windows.Devices.Usb.UsbSetupPacket New(Windows.Storage.Streams.IBuffer eightByteBuffer)
 	{
 		auto factory = factory!(Windows.Devices.Usb.IUsbSetupPacketFactory);
 		Windows.Devices.Usb.UsbSetupPacket _ret;
-		Debug.OK(factory.as!(Windows.Devices.Usb.IUsbSetupPacketFactory).abi_CreateWithEightByteBuffer(eightByteBuffer, &_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbSetupPacketFactory)factory.asInterface(uuid("c9257d50-1b2e-4a41-a2a7-338f0cef3c14"))).abi_CreateWithEightByteBuffer(eightByteBuffer, &_ret));
 		return _ret;
 	}
 }

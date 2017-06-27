@@ -222,19 +222,19 @@ extern(Windows):
 	final Windows.Services.Maps.Guidance.GuidanceAudioNotificationKind AudioNotification()
 	{
 		Windows.Services.Maps.Guidance.GuidanceAudioNotificationKind _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceAudioNotificationRequestedEventArgs).get_AudioNotification(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceAudioNotificationRequestedEventArgs)this.asInterface(uuid("ca2aa24a-c7c2-4d4c-9d7c-499576bceddb"))).get_AudioNotification(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) AudioFilePaths()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceAudioNotificationRequestedEventArgs).get_AudioFilePaths(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceAudioNotificationRequestedEventArgs)this.asInterface(uuid("ca2aa24a-c7c2-4d4c-9d7c-499576bceddb"))).get_AudioFilePaths(&_ret));
 		return _ret;
 	}
 	final HSTRING AudioText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceAudioNotificationRequestedEventArgs).get_AudioText(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceAudioNotificationRequestedEventArgs)this.asInterface(uuid("ca2aa24a-c7c2-4d4c-9d7c-499576bceddb"))).get_AudioText(&_ret));
 		return _ret;
 	}
 }
@@ -245,13 +245,13 @@ extern(Windows):
 	final Windows.Services.Maps.Guidance.GuidanceLaneMarkers LaneMarkers()
 	{
 		Windows.Services.Maps.Guidance.GuidanceLaneMarkers _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceLaneInfo).get_LaneMarkers(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceLaneInfo)this.asInterface(uuid("8404d114-6581-43b7-ac15-c9079bf90df1"))).get_LaneMarkers(&_ret));
 		return _ret;
 	}
 	final bool IsOnRoute()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceLaneInfo).get_IsOnRoute(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceLaneInfo)this.asInterface(uuid("8404d114-6581-43b7-ac15-c9079bf90df1"))).get_IsOnRoute(&_ret));
 		return _ret;
 	}
 }
@@ -262,73 +262,73 @@ extern(Windows):
 	final Windows.Devices.Geolocation.Geopoint StartLocation()
 	{
 		Windows.Devices.Geolocation.Geopoint _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_StartLocation(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceManeuver)this.asInterface(uuid("fc09326c-ecc9-4928-a2a1-7232b99b94a1"))).get_StartLocation(&_ret));
 		return _ret;
 	}
 	final INT32 DistanceFromRouteStart()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_DistanceFromRouteStart(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceManeuver)this.asInterface(uuid("fc09326c-ecc9-4928-a2a1-7232b99b94a1"))).get_DistanceFromRouteStart(&_ret));
 		return _ret;
 	}
 	final INT32 DistanceFromPreviousManeuver()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_DistanceFromPreviousManeuver(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceManeuver)this.asInterface(uuid("fc09326c-ecc9-4928-a2a1-7232b99b94a1"))).get_DistanceFromPreviousManeuver(&_ret));
 		return _ret;
 	}
 	final HSTRING DepartureRoadName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_DepartureRoadName(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceManeuver)this.asInterface(uuid("fc09326c-ecc9-4928-a2a1-7232b99b94a1"))).get_DepartureRoadName(&_ret));
 		return _ret;
 	}
 	final HSTRING NextRoadName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_NextRoadName(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceManeuver)this.asInterface(uuid("fc09326c-ecc9-4928-a2a1-7232b99b94a1"))).get_NextRoadName(&_ret));
 		return _ret;
 	}
 	final HSTRING DepartureShortRoadName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_DepartureShortRoadName(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceManeuver)this.asInterface(uuid("fc09326c-ecc9-4928-a2a1-7232b99b94a1"))).get_DepartureShortRoadName(&_ret));
 		return _ret;
 	}
 	final HSTRING NextShortRoadName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_NextShortRoadName(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceManeuver)this.asInterface(uuid("fc09326c-ecc9-4928-a2a1-7232b99b94a1"))).get_NextShortRoadName(&_ret));
 		return _ret;
 	}
 	final Windows.Services.Maps.Guidance.GuidanceManeuverKind Kind()
 	{
 		Windows.Services.Maps.Guidance.GuidanceManeuverKind _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_Kind(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceManeuver)this.asInterface(uuid("fc09326c-ecc9-4928-a2a1-7232b99b94a1"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final INT32 StartAngle()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_StartAngle(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceManeuver)this.asInterface(uuid("fc09326c-ecc9-4928-a2a1-7232b99b94a1"))).get_StartAngle(&_ret));
 		return _ret;
 	}
 	final INT32 EndAngle()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_EndAngle(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceManeuver)this.asInterface(uuid("fc09326c-ecc9-4928-a2a1-7232b99b94a1"))).get_EndAngle(&_ret));
 		return _ret;
 	}
 	final Windows.Services.Maps.Guidance.GuidanceRoadSignpost RoadSignpost()
 	{
 		Windows.Services.Maps.Guidance.GuidanceRoadSignpost _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_RoadSignpost(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceManeuver)this.asInterface(uuid("fc09326c-ecc9-4928-a2a1-7232b99b94a1"))).get_RoadSignpost(&_ret));
 		return _ret;
 	}
 	final HSTRING InstructionText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceManeuver).get_InstructionText(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceManeuver)this.asInterface(uuid("fc09326c-ecc9-4928-a2a1-7232b99b94a1"))).get_InstructionText(&_ret));
 		return _ret;
 	}
 }
@@ -339,31 +339,31 @@ extern(Windows):
 	final Windows.Devices.Geolocation.Geopoint Location()
 	{
 		Windows.Devices.Geolocation.Geopoint _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceMapMatchedCoordinate).get_Location(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceMapMatchedCoordinate)this.asInterface(uuid("b7acb168-2912-4a99-aff1-798609b981fe"))).get_Location(&_ret));
 		return _ret;
 	}
 	final double CurrentHeading()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceMapMatchedCoordinate).get_CurrentHeading(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceMapMatchedCoordinate)this.asInterface(uuid("b7acb168-2912-4a99-aff1-798609b981fe"))).get_CurrentHeading(&_ret));
 		return _ret;
 	}
 	final double CurrentSpeed()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceMapMatchedCoordinate).get_CurrentSpeed(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceMapMatchedCoordinate)this.asInterface(uuid("b7acb168-2912-4a99-aff1-798609b981fe"))).get_CurrentSpeed(&_ret));
 		return _ret;
 	}
 	final bool IsOnStreet()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceMapMatchedCoordinate).get_IsOnStreet(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceMapMatchedCoordinate)this.asInterface(uuid("b7acb168-2912-4a99-aff1-798609b981fe"))).get_IsOnStreet(&_ret));
 		return _ret;
 	}
 	final Windows.Services.Maps.Guidance.GuidanceRoadSegment Road()
 	{
 		Windows.Services.Maps.Guidance.GuidanceRoadSegment _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceMapMatchedCoordinate).get_Road(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceMapMatchedCoordinate)this.asInterface(uuid("b7acb168-2912-4a99-aff1-798609b981fe"))).get_Road(&_ret));
 		return _ret;
 	}
 }
@@ -373,153 +373,153 @@ interface GuidanceNavigator : Windows.Services.Maps.Guidance.IGuidanceNavigator,
 extern(Windows):
 	final void StartNavigating(Windows.Services.Maps.Guidance.GuidanceRoute route)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).abi_StartNavigating(route));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).abi_StartNavigating(route));
 	}
 	final void StartSimulating(Windows.Services.Maps.Guidance.GuidanceRoute route, INT32 speedInMetersPerSecond)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).abi_StartSimulating(route, speedInMetersPerSecond));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).abi_StartSimulating(route, speedInMetersPerSecond));
 	}
 	final void StartTracking()
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).abi_StartTracking());
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).abi_StartTracking());
 	}
 	final void Pause()
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).abi_Pause());
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).abi_Pause());
 	}
 	final void Resume()
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).abi_Resume());
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).abi_Resume());
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).abi_Stop());
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).abi_Stop());
 	}
 	final void RepeatLastAudioNotification()
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).abi_RepeatLastAudioNotification());
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).abi_RepeatLastAudioNotification());
 	}
 	final Windows.Services.Maps.Guidance.GuidanceAudioMeasurementSystem AudioMeasurementSystem()
 	{
 		Windows.Services.Maps.Guidance.GuidanceAudioMeasurementSystem _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).get_AudioMeasurementSystem(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).get_AudioMeasurementSystem(&_ret));
 		return _ret;
 	}
 	final void AudioMeasurementSystem(Windows.Services.Maps.Guidance.GuidanceAudioMeasurementSystem value)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).set_AudioMeasurementSystem(value));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).set_AudioMeasurementSystem(value));
 	}
 	final Windows.Services.Maps.Guidance.GuidanceAudioNotifications AudioNotifications()
 	{
 		Windows.Services.Maps.Guidance.GuidanceAudioNotifications _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).get_AudioNotifications(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).get_AudioNotifications(&_ret));
 		return _ret;
 	}
 	final void AudioNotifications(Windows.Services.Maps.Guidance.GuidanceAudioNotifications value)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).set_AudioNotifications(value));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).set_AudioNotifications(value));
 	}
 	final EventRegistrationToken OnGuidanceUpdated(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceUpdatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).add_GuidanceUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceUpdatedEventArgs), Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceUpdatedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).add_GuidanceUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceUpdatedEventArgs), Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceUpdatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeGuidanceUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).remove_GuidanceUpdated(token));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).remove_GuidanceUpdated(token));
 	}
 	final EventRegistrationToken OnDestinationReached(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).add_DestinationReached(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).add_DestinationReached(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeDestinationReached(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).remove_DestinationReached(token));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).remove_DestinationReached(token));
 	}
 	final EventRegistrationToken OnRerouting(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).add_Rerouting(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).add_Rerouting(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeRerouting(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).remove_Rerouting(token));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).remove_Rerouting(token));
 	}
 	final EventRegistrationToken OnRerouted(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceReroutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).add_Rerouted(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceReroutedEventArgs), Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceReroutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).add_Rerouted(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceReroutedEventArgs), Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceReroutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRerouted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).remove_Rerouted(token));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).remove_Rerouted(token));
 	}
 	final EventRegistrationToken OnRerouteFailed(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).add_RerouteFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).add_RerouteFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeRerouteFailed(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).remove_RerouteFailed(token));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).remove_RerouteFailed(token));
 	}
 	final EventRegistrationToken OnUserLocationLost(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).add_UserLocationLost(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).add_UserLocationLost(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeUserLocationLost(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).remove_UserLocationLost(token));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).remove_UserLocationLost(token));
 	}
 	final EventRegistrationToken OnUserLocationRestored(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).add_UserLocationRestored(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).add_UserLocationRestored(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable), Windows.Services.Maps.Guidance.GuidanceNavigator, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeUserLocationRestored(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).remove_UserLocationRestored(token));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).remove_UserLocationRestored(token));
 	}
 	final void SetGuidanceVoice(INT32 voiceId, HSTRING voiceFolder)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).abi_SetGuidanceVoice(voiceId, voiceFolder));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).abi_SetGuidanceVoice(voiceId, voiceFolder));
 	}
 	final void UpdateUserLocation(Windows.Devices.Geolocation.Geocoordinate userLocation)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).abi_UpdateUserLocation(userLocation));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).abi_UpdateUserLocation(userLocation));
 	}
 	final void UpdateUserLocationWithPositionOverride(Windows.Devices.Geolocation.Geocoordinate userLocation, Windows.Devices.Geolocation.BasicGeoposition positionOverride)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator).abi_UpdateUserLocationWithPositionOverride(userLocation, positionOverride));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).abi_UpdateUserLocationWithPositionOverride(userLocation, positionOverride));
 	}
 	final EventRegistrationToken OnAudioNotificationRequested(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceAudioNotificationRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator2).add_AudioNotificationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceAudioNotificationRequestedEventArgs), Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceAudioNotificationRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator2)this.asInterface(uuid("6cdc50d1-041c-4bf3-b633-a101fc2f6b57"))).add_AudioNotificationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceAudioNotificationRequestedEventArgs), Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceAudioNotificationRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAudioNotificationRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator2).remove_AudioNotificationRequested(token));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator2)this.asInterface(uuid("6cdc50d1-041c-4bf3-b633-a101fc2f6b57"))).remove_AudioNotificationRequested(token));
 	}
 	final bool IsGuidanceAudioMuted()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator2).get_IsGuidanceAudioMuted(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator2)this.asInterface(uuid("6cdc50d1-041c-4bf3-b633-a101fc2f6b57"))).get_IsGuidanceAudioMuted(&_ret));
 		return _ret;
 	}
 	final void IsGuidanceAudioMuted(bool value)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceNavigator2).set_IsGuidanceAudioMuted(value));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator2)this.asInterface(uuid("6cdc50d1-041c-4bf3-b633-a101fc2f6b57"))).set_IsGuidanceAudioMuted(value));
 	}
 
 	private static Windows.Services.Maps.Guidance.IGuidanceNavigatorStatics _staticInstance;
@@ -531,7 +531,7 @@ extern(Windows):
 	static Windows.Services.Maps.Guidance.GuidanceNavigator GetCurrent()
 	{
 		Windows.Services.Maps.Guidance.GuidanceNavigator _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.Guidance.IGuidanceNavigatorStatics).abi_GetCurrent(&_ret));
+		Debug.OK(staticInstance.abi_GetCurrent(&_ret));
 		return _ret;
 	}
 }
@@ -542,7 +542,7 @@ extern(Windows):
 	final Windows.Services.Maps.Guidance.GuidanceRoute Route()
 	{
 		Windows.Services.Maps.Guidance.GuidanceRoute _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceReroutedEventArgs).get_Route(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceReroutedEventArgs)this.asInterface(uuid("115d4008-d528-454e-bb94-a50341d2c9f1"))).get_Route(&_ret));
 		return _ret;
 	}
 }
@@ -553,55 +553,55 @@ extern(Windows):
 	final HSTRING RoadName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSegment).get_RoadName(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoadSegment)this.asInterface(uuid("b32758a6-be78-4c63-afe7-6c2957479b3e"))).get_RoadName(&_ret));
 		return _ret;
 	}
 	final HSTRING ShortRoadName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSegment).get_ShortRoadName(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoadSegment)this.asInterface(uuid("b32758a6-be78-4c63-afe7-6c2957479b3e"))).get_ShortRoadName(&_ret));
 		return _ret;
 	}
 	final double SpeedLimit()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSegment).get_SpeedLimit(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoadSegment)this.asInterface(uuid("b32758a6-be78-4c63-afe7-6c2957479b3e"))).get_SpeedLimit(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan TravelTime()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSegment).get_TravelTime(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoadSegment)this.asInterface(uuid("b32758a6-be78-4c63-afe7-6c2957479b3e"))).get_TravelTime(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.Geopath Path()
 	{
 		Windows.Devices.Geolocation.Geopath _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSegment).get_Path(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoadSegment)this.asInterface(uuid("b32758a6-be78-4c63-afe7-6c2957479b3e"))).get_Path(&_ret));
 		return _ret;
 	}
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSegment).get_Id(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoadSegment)this.asInterface(uuid("b32758a6-be78-4c63-afe7-6c2957479b3e"))).get_Id(&_ret));
 		return _ret;
 	}
 	final bool IsHighway()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSegment).get_IsHighway(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoadSegment)this.asInterface(uuid("b32758a6-be78-4c63-afe7-6c2957479b3e"))).get_IsHighway(&_ret));
 		return _ret;
 	}
 	final bool IsTunnel()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSegment).get_IsTunnel(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoadSegment)this.asInterface(uuid("b32758a6-be78-4c63-afe7-6c2957479b3e"))).get_IsTunnel(&_ret));
 		return _ret;
 	}
 	final bool IsTollRoad()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSegment).get_IsTollRoad(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoadSegment)this.asInterface(uuid("b32758a6-be78-4c63-afe7-6c2957479b3e"))).get_IsTollRoad(&_ret));
 		return _ret;
 	}
 }
@@ -612,31 +612,31 @@ extern(Windows):
 	final HSTRING ExitNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSignpost).get_ExitNumber(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoadSignpost)this.asInterface(uuid("f1a728b6-f77a-4742-8312-53300f9845f0"))).get_ExitNumber(&_ret));
 		return _ret;
 	}
 	final HSTRING Exit()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSignpost).get_Exit(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoadSignpost)this.asInterface(uuid("f1a728b6-f77a-4742-8312-53300f9845f0"))).get_Exit(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Color BackgroundColor()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSignpost).get_BackgroundColor(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoadSignpost)this.asInterface(uuid("f1a728b6-f77a-4742-8312-53300f9845f0"))).get_BackgroundColor(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Color ForegroundColor()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSignpost).get_ForegroundColor(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoadSignpost)this.asInterface(uuid("f1a728b6-f77a-4742-8312-53300f9845f0"))).get_ForegroundColor(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) ExitDirections()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoadSignpost).get_ExitDirections(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoadSignpost)this.asInterface(uuid("f1a728b6-f77a-4742-8312-53300f9845f0"))).get_ExitDirections(&_ret));
 		return _ret;
 	}
 }
@@ -647,43 +647,43 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan Duration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoute).get_Duration(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoute)this.asInterface(uuid("3a14545d-801a-40bd-a286-afb2010cce6c"))).get_Duration(&_ret));
 		return _ret;
 	}
 	final INT32 Distance()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoute).get_Distance(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoute)this.asInterface(uuid("3a14545d-801a-40bd-a286-afb2010cce6c"))).get_Distance(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.Guidance.GuidanceManeuver) Maneuvers()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.Guidance.GuidanceManeuver) _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoute).get_Maneuvers(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoute)this.asInterface(uuid("3a14545d-801a-40bd-a286-afb2010cce6c"))).get_Maneuvers(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.GeoboundingBox BoundingBox()
 	{
 		Windows.Devices.Geolocation.GeoboundingBox _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoute).get_BoundingBox(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoute)this.asInterface(uuid("3a14545d-801a-40bd-a286-afb2010cce6c"))).get_BoundingBox(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.Geopath Path()
 	{
 		Windows.Devices.Geolocation.Geopath _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoute).get_Path(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoute)this.asInterface(uuid("3a14545d-801a-40bd-a286-afb2010cce6c"))).get_Path(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.Guidance.GuidanceRoadSegment) RoadSegments()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.Guidance.GuidanceRoadSegment) _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoute).get_RoadSegments(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoute)this.asInterface(uuid("3a14545d-801a-40bd-a286-afb2010cce6c"))).get_RoadSegments(&_ret));
 		return _ret;
 	}
 	final Windows.Services.Maps.MapRoute ConvertToMapRoute()
 	{
 		Windows.Services.Maps.MapRoute _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceRoute).abi_ConvertToMapRoute(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoute)this.asInterface(uuid("3a14545d-801a-40bd-a286-afb2010cce6c"))).abi_ConvertToMapRoute(&_ret));
 		return _ret;
 	}
 
@@ -696,13 +696,13 @@ extern(Windows):
 	static bool CanCreateFromMapRoute(Windows.Services.Maps.MapRoute mapRoute)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.Guidance.IGuidanceRouteStatics).abi_CanCreateFromMapRoute(mapRoute, &_ret));
+		Debug.OK(staticInstance.abi_CanCreateFromMapRoute(mapRoute, &_ret));
 		return _ret;
 	}
 	static Windows.Services.Maps.Guidance.GuidanceRoute TryCreateFromMapRoute(Windows.Services.Maps.MapRoute mapRoute)
 	{
 		Windows.Services.Maps.Guidance.GuidanceRoute _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.Guidance.IGuidanceRouteStatics).abi_TryCreateFromMapRoute(mapRoute, &_ret));
+		Debug.OK(staticInstance.abi_TryCreateFromMapRoute(mapRoute, &_ret));
 		return _ret;
 	}
 }
@@ -713,36 +713,36 @@ extern(Windows):
 	final bool Enabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector).get_Enabled(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector)this.asInterface(uuid("db1f8da5-b878-4d92-98dd-347d23d38262"))).get_Enabled(&_ret));
 		return _ret;
 	}
 	final void Enabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector).set_Enabled(value));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector)this.asInterface(uuid("db1f8da5-b878-4d92-98dd-347d23d38262"))).set_Enabled(value));
 	}
 	final void ClearLocalData()
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector).abi_ClearLocalData());
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector)this.asInterface(uuid("db1f8da5-b878-4d92-98dd-347d23d38262"))).abi_ClearLocalData());
 	}
 	final double SpeedTrigger()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector).get_SpeedTrigger(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector)this.asInterface(uuid("db1f8da5-b878-4d92-98dd-347d23d38262"))).get_SpeedTrigger(&_ret));
 		return _ret;
 	}
 	final void SpeedTrigger(double value)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector).set_SpeedTrigger(value));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector)this.asInterface(uuid("db1f8da5-b878-4d92-98dd-347d23d38262"))).set_SpeedTrigger(value));
 	}
 	final INT32 UploadFrequency()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector).get_UploadFrequency(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector)this.asInterface(uuid("db1f8da5-b878-4d92-98dd-347d23d38262"))).get_UploadFrequency(&_ret));
 		return _ret;
 	}
 	final void UploadFrequency(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector).set_UploadFrequency(value));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollector)this.asInterface(uuid("db1f8da5-b878-4d92-98dd-347d23d38262"))).set_UploadFrequency(value));
 	}
 
 	private static Windows.Services.Maps.Guidance.IGuidanceTelemetryCollectorStatics _staticInstance;
@@ -754,7 +754,7 @@ extern(Windows):
 	static Windows.Services.Maps.Guidance.GuidanceTelemetryCollector GetCurrent()
 	{
 		Windows.Services.Maps.Guidance.GuidanceTelemetryCollector _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.Guidance.IGuidanceTelemetryCollectorStatics).abi_GetCurrent(&_ret));
+		Debug.OK(staticInstance.abi_GetCurrent(&_ret));
 		return _ret;
 	}
 }
@@ -765,85 +765,85 @@ extern(Windows):
 	final Windows.Services.Maps.Guidance.GuidanceMode Mode()
 	{
 		Windows.Services.Maps.Guidance.GuidanceMode _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_Mode(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs)this.asInterface(uuid("fdac160b-9e8d-4de3-a9fa-b06321d18db9"))).get_Mode(&_ret));
 		return _ret;
 	}
 	final Windows.Services.Maps.Guidance.GuidanceManeuver NextManeuver()
 	{
 		Windows.Services.Maps.Guidance.GuidanceManeuver _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_NextManeuver(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs)this.asInterface(uuid("fdac160b-9e8d-4de3-a9fa-b06321d18db9"))).get_NextManeuver(&_ret));
 		return _ret;
 	}
 	final INT32 NextManeuverDistance()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_NextManeuverDistance(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs)this.asInterface(uuid("fdac160b-9e8d-4de3-a9fa-b06321d18db9"))).get_NextManeuverDistance(&_ret));
 		return _ret;
 	}
 	final Windows.Services.Maps.Guidance.GuidanceManeuver AfterNextManeuver()
 	{
 		Windows.Services.Maps.Guidance.GuidanceManeuver _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_AfterNextManeuver(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs)this.asInterface(uuid("fdac160b-9e8d-4de3-a9fa-b06321d18db9"))).get_AfterNextManeuver(&_ret));
 		return _ret;
 	}
 	final INT32 AfterNextManeuverDistance()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_AfterNextManeuverDistance(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs)this.asInterface(uuid("fdac160b-9e8d-4de3-a9fa-b06321d18db9"))).get_AfterNextManeuverDistance(&_ret));
 		return _ret;
 	}
 	final INT32 DistanceToDestination()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_DistanceToDestination(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs)this.asInterface(uuid("fdac160b-9e8d-4de3-a9fa-b06321d18db9"))).get_DistanceToDestination(&_ret));
 		return _ret;
 	}
 	final INT32 ElapsedDistance()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_ElapsedDistance(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs)this.asInterface(uuid("fdac160b-9e8d-4de3-a9fa-b06321d18db9"))).get_ElapsedDistance(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan ElapsedTime()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_ElapsedTime(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs)this.asInterface(uuid("fdac160b-9e8d-4de3-a9fa-b06321d18db9"))).get_ElapsedTime(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan TimeToDestination()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_TimeToDestination(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs)this.asInterface(uuid("fdac160b-9e8d-4de3-a9fa-b06321d18db9"))).get_TimeToDestination(&_ret));
 		return _ret;
 	}
 	final HSTRING RoadName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_RoadName(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs)this.asInterface(uuid("fdac160b-9e8d-4de3-a9fa-b06321d18db9"))).get_RoadName(&_ret));
 		return _ret;
 	}
 	final Windows.Services.Maps.Guidance.GuidanceRoute Route()
 	{
 		Windows.Services.Maps.Guidance.GuidanceRoute _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_Route(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs)this.asInterface(uuid("fdac160b-9e8d-4de3-a9fa-b06321d18db9"))).get_Route(&_ret));
 		return _ret;
 	}
 	final Windows.Services.Maps.Guidance.GuidanceMapMatchedCoordinate CurrentLocation()
 	{
 		Windows.Services.Maps.Guidance.GuidanceMapMatchedCoordinate _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_CurrentLocation(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs)this.asInterface(uuid("fdac160b-9e8d-4de3-a9fa-b06321d18db9"))).get_CurrentLocation(&_ret));
 		return _ret;
 	}
 	final bool IsNewManeuver()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_IsNewManeuver(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs)this.asInterface(uuid("fdac160b-9e8d-4de3-a9fa-b06321d18db9"))).get_IsNewManeuver(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.Guidance.GuidanceLaneInfo) LaneInfo()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.Guidance.GuidanceLaneInfo) _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs).get_LaneInfo(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs)this.asInterface(uuid("fdac160b-9e8d-4de3-a9fa-b06321d18db9"))).get_LaneInfo(&_ret));
 		return _ret;
 	}
 }

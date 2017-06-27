@@ -66,33 +66,33 @@ interface GameBar
 	static EventRegistrationToken OnVisibilityChanged(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Gaming.UI.IGameBarStatics).add_VisibilityChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_VisibilityChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	static void removeVisibilityChanged(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.Gaming.UI.IGameBarStatics).remove_VisibilityChanged(token));
+		Debug.OK(staticInstance.remove_VisibilityChanged(token));
 	}
 	static EventRegistrationToken OnIsInputRedirectedChanged(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Gaming.UI.IGameBarStatics).add_IsInputRedirectedChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_IsInputRedirectedChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	static void removeIsInputRedirectedChanged(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.Gaming.UI.IGameBarStatics).remove_IsInputRedirectedChanged(token));
+		Debug.OK(staticInstance.remove_IsInputRedirectedChanged(token));
 	}
 	static bool Visible()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Gaming.UI.IGameBarStatics).get_Visible(&_ret));
+		Debug.OK(staticInstance.get_Visible(&_ret));
 		return _ret;
 	}
 	static bool IsInputRedirected()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Gaming.UI.IGameBarStatics).get_IsInputRedirected(&_ret));
+		Debug.OK(staticInstance.get_IsInputRedirected(&_ret));
 		return _ret;
 	}
 }
@@ -103,31 +103,31 @@ extern(Windows):
 	final HSTRING AppId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatMessageReceivedEventArgs).get_AppId(&_ret));
+		Debug.OK((cast(Windows.Gaming.UI.IGameChatMessageReceivedEventArgs)this.asInterface(uuid("a28201f1-3fb9-4e42-a403-7afce2023b1e"))).get_AppId(&_ret));
 		return _ret;
 	}
 	final HSTRING AppDisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatMessageReceivedEventArgs).get_AppDisplayName(&_ret));
+		Debug.OK((cast(Windows.Gaming.UI.IGameChatMessageReceivedEventArgs)this.asInterface(uuid("a28201f1-3fb9-4e42-a403-7afce2023b1e"))).get_AppDisplayName(&_ret));
 		return _ret;
 	}
 	final HSTRING SenderName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatMessageReceivedEventArgs).get_SenderName(&_ret));
+		Debug.OK((cast(Windows.Gaming.UI.IGameChatMessageReceivedEventArgs)this.asInterface(uuid("a28201f1-3fb9-4e42-a403-7afce2023b1e"))).get_SenderName(&_ret));
 		return _ret;
 	}
 	final HSTRING Message()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatMessageReceivedEventArgs).get_Message(&_ret));
+		Debug.OK((cast(Windows.Gaming.UI.IGameChatMessageReceivedEventArgs)this.asInterface(uuid("a28201f1-3fb9-4e42-a403-7afce2023b1e"))).get_Message(&_ret));
 		return _ret;
 	}
 	final Windows.Gaming.UI.GameChatMessageOrigin Origin()
 	{
 		Windows.Gaming.UI.GameChatMessageOrigin _ret;
-		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatMessageReceivedEventArgs).get_Origin(&_ret));
+		Debug.OK((cast(Windows.Gaming.UI.IGameChatMessageReceivedEventArgs)this.asInterface(uuid("a28201f1-3fb9-4e42-a403-7afce2023b1e"))).get_Origin(&_ret));
 		return _ret;
 	}
 }
@@ -138,16 +138,16 @@ extern(Windows):
 	final Windows.Gaming.UI.GameChatOverlayPosition DesiredPosition()
 	{
 		Windows.Gaming.UI.GameChatOverlayPosition _ret;
-		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatOverlay).get_DesiredPosition(&_ret));
+		Debug.OK((cast(Windows.Gaming.UI.IGameChatOverlay)this.asInterface(uuid("fbc64865-f6fc-4a48-ae07-03ac6ed43704"))).get_DesiredPosition(&_ret));
 		return _ret;
 	}
 	final void DesiredPosition(Windows.Gaming.UI.GameChatOverlayPosition value)
 	{
-		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatOverlay).set_DesiredPosition(value));
+		Debug.OK((cast(Windows.Gaming.UI.IGameChatOverlay)this.asInterface(uuid("fbc64865-f6fc-4a48-ae07-03ac6ed43704"))).set_DesiredPosition(value));
 	}
 	final void AddMessage(HSTRING sender, HSTRING message, Windows.Gaming.UI.GameChatMessageOrigin origin)
 	{
-		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatOverlay).abi_AddMessage(sender, message, origin));
+		Debug.OK((cast(Windows.Gaming.UI.IGameChatOverlay)this.asInterface(uuid("fbc64865-f6fc-4a48-ae07-03ac6ed43704"))).abi_AddMessage(sender, message, origin));
 	}
 
 	private static Windows.Gaming.UI.IGameChatOverlayStatics _staticInstance;
@@ -159,7 +159,7 @@ extern(Windows):
 	static Windows.Gaming.UI.GameChatOverlay GetDefault()
 	{
 		Windows.Gaming.UI.GameChatOverlay _ret;
-		Debug.OK(staticInstance.as!(Windows.Gaming.UI.IGameChatOverlayStatics).abi_GetDefault(&_ret));
+		Debug.OK(staticInstance.abi_GetDefault(&_ret));
 		return _ret;
 	}
 }
@@ -170,22 +170,22 @@ extern(Windows):
 	final EventRegistrationToken OnMessageReceived(void delegate(Windows.Gaming.UI.GameChatOverlayMessageSource, Windows.Gaming.UI.GameChatMessageReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatOverlayMessageSource).add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.UI.GameChatOverlayMessageSource, Windows.Gaming.UI.GameChatMessageReceivedEventArgs), Windows.Gaming.UI.GameChatOverlayMessageSource, Windows.Gaming.UI.GameChatMessageReceivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Gaming.UI.IGameChatOverlayMessageSource)this.asInterface(uuid("1e177397-59fb-4f4f-8e9a-80acf817743c"))).add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Gaming.UI.GameChatOverlayMessageSource, Windows.Gaming.UI.GameChatMessageReceivedEventArgs), Windows.Gaming.UI.GameChatOverlayMessageSource, Windows.Gaming.UI.GameChatMessageReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMessageReceived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatOverlayMessageSource).remove_MessageReceived(token));
+		Debug.OK((cast(Windows.Gaming.UI.IGameChatOverlayMessageSource)this.asInterface(uuid("1e177397-59fb-4f4f-8e9a-80acf817743c"))).remove_MessageReceived(token));
 	}
 	final void SetDelayBeforeClosingAfterMessageReceived(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.Gaming.UI.IGameChatOverlayMessageSource).abi_SetDelayBeforeClosingAfterMessageReceived(value));
+		Debug.OK((cast(Windows.Gaming.UI.IGameChatOverlayMessageSource)this.asInterface(uuid("1e177397-59fb-4f4f-8e9a-80acf817743c"))).abi_SetDelayBeforeClosingAfterMessageReceived(value));
 	}
 	static GameChatOverlayMessageSource New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(GameChatOverlayMessageSource).abi_ActivateInstance(&ret));
-		return ret.as!(GameChatOverlayMessageSource);
+		return cast(GameChatOverlayMessageSource) ret;
 	}
 }
 

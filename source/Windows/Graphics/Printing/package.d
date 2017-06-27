@@ -251,12 +251,12 @@ extern(Windows):
 	final EventRegistrationToken OnPrintTaskRequested(void delegate(Windows.Graphics.Printing.PrintManager, Windows.Graphics.Printing.PrintTaskRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintManager).add_PrintTaskRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintManager, Windows.Graphics.Printing.PrintTaskRequestedEventArgs), Windows.Graphics.Printing.PrintManager, Windows.Graphics.Printing.PrintTaskRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintManager)this.asInterface(uuid("ff2a9694-8c99-44fd-ae4a-19d9aa9a0f0a"))).add_PrintTaskRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintManager, Windows.Graphics.Printing.PrintTaskRequestedEventArgs), Windows.Graphics.Printing.PrintManager, Windows.Graphics.Printing.PrintTaskRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePrintTaskRequested(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintManager).remove_PrintTaskRequested(eventCookie));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintManager)this.asInterface(uuid("ff2a9694-8c99-44fd-ae4a-19d9aa9a0f0a"))).remove_PrintTaskRequested(eventCookie));
 	}
 
 	private static Windows.Graphics.Printing.IPrintManagerStatic _staticInstance;
@@ -268,13 +268,13 @@ extern(Windows):
 	static Windows.Graphics.Printing.PrintManager GetForCurrentView()
 	{
 		Windows.Graphics.Printing.PrintManager _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IPrintManagerStatic).abi_GetForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(bool) ShowPrintUIAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IPrintManagerStatic).abi_ShowPrintUIAsync(&_ret));
+		Debug.OK(staticInstance.abi_ShowPrintUIAsync(&_ret));
 		return _ret;
 	}
 }
@@ -284,59 +284,59 @@ interface PrintPageInfo : Windows.Graphics.Printing.IPrintPageInfo
 extern(Windows):
 	final void MediaSize(Windows.Graphics.Printing.PrintMediaSize value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintPageInfo).set_MediaSize(value));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintPageInfo)this.asInterface(uuid("dd4be9c9-a6a1-4ada-930e-da872a4f23d3"))).set_MediaSize(value));
 	}
 	final Windows.Graphics.Printing.PrintMediaSize MediaSize()
 	{
 		Windows.Graphics.Printing.PrintMediaSize _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintPageInfo).get_MediaSize(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintPageInfo)this.asInterface(uuid("dd4be9c9-a6a1-4ada-930e-da872a4f23d3"))).get_MediaSize(&_ret));
 		return _ret;
 	}
 	final void PageSize(Windows.Foundation.Size value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintPageInfo).set_PageSize(value));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintPageInfo)this.asInterface(uuid("dd4be9c9-a6a1-4ada-930e-da872a4f23d3"))).set_PageSize(value));
 	}
 	final Windows.Foundation.Size PageSize()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintPageInfo).get_PageSize(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintPageInfo)this.asInterface(uuid("dd4be9c9-a6a1-4ada-930e-da872a4f23d3"))).get_PageSize(&_ret));
 		return _ret;
 	}
 	final void DpiX(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintPageInfo).set_DpiX(value));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintPageInfo)this.asInterface(uuid("dd4be9c9-a6a1-4ada-930e-da872a4f23d3"))).set_DpiX(value));
 	}
 	final UINT32 DpiX()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintPageInfo).get_DpiX(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintPageInfo)this.asInterface(uuid("dd4be9c9-a6a1-4ada-930e-da872a4f23d3"))).get_DpiX(&_ret));
 		return _ret;
 	}
 	final void DpiY(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintPageInfo).set_DpiY(value));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintPageInfo)this.asInterface(uuid("dd4be9c9-a6a1-4ada-930e-da872a4f23d3"))).set_DpiY(value));
 	}
 	final UINT32 DpiY()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintPageInfo).get_DpiY(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintPageInfo)this.asInterface(uuid("dd4be9c9-a6a1-4ada-930e-da872a4f23d3"))).get_DpiY(&_ret));
 		return _ret;
 	}
 	final void Orientation(Windows.Graphics.Printing.PrintOrientation value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintPageInfo).set_Orientation(value));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintPageInfo)this.asInterface(uuid("dd4be9c9-a6a1-4ada-930e-da872a4f23d3"))).set_Orientation(value));
 	}
 	final Windows.Graphics.Printing.PrintOrientation Orientation()
 	{
 		Windows.Graphics.Printing.PrintOrientation _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintPageInfo).get_Orientation(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintPageInfo)this.asInterface(uuid("dd4be9c9-a6a1-4ada-930e-da872a4f23d3"))).get_Orientation(&_ret));
 		return _ret;
 	}
 	static PrintPageInfo New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PrintPageInfo).abi_ActivateInstance(&ret));
-		return ret.as!(PrintPageInfo);
+		return cast(PrintPageInfo) ret;
 	}
 }
 
@@ -346,89 +346,89 @@ extern(Windows):
 	final Windows.ApplicationModel.DataTransfer.DataPackagePropertySet Properties()
 	{
 		Windows.ApplicationModel.DataTransfer.DataPackagePropertySet _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTask).get_Properties(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTask)this.asInterface(uuid("61d80247-6cf6-4fad-84e2-a5e82e2d4ceb"))).get_Properties(&_ret));
 		return _ret;
 	}
 	final Windows.Graphics.Printing.IPrintDocumentSource Source()
 	{
 		Windows.Graphics.Printing.IPrintDocumentSource _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTask).get_Source(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTask)this.asInterface(uuid("61d80247-6cf6-4fad-84e2-a5e82e2d4ceb"))).get_Source(&_ret));
 		return _ret;
 	}
 	final Windows.Graphics.Printing.PrintTaskOptions Options()
 	{
 		Windows.Graphics.Printing.PrintTaskOptions _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTask).get_Options(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTask)this.asInterface(uuid("61d80247-6cf6-4fad-84e2-a5e82e2d4ceb"))).get_Options(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnPreviewing(void delegate(Windows.Graphics.Printing.PrintTask, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTask).add_Previewing(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, IInspectable), Windows.Graphics.Printing.PrintTask, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTask)this.asInterface(uuid("61d80247-6cf6-4fad-84e2-a5e82e2d4ceb"))).add_Previewing(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, IInspectable), Windows.Graphics.Printing.PrintTask, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removePreviewing(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTask).remove_Previewing(eventCookie));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTask)this.asInterface(uuid("61d80247-6cf6-4fad-84e2-a5e82e2d4ceb"))).remove_Previewing(eventCookie));
 	}
 	final EventRegistrationToken OnSubmitting(void delegate(Windows.Graphics.Printing.PrintTask, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTask).add_Submitting(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, IInspectable), Windows.Graphics.Printing.PrintTask, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTask)this.asInterface(uuid("61d80247-6cf6-4fad-84e2-a5e82e2d4ceb"))).add_Submitting(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, IInspectable), Windows.Graphics.Printing.PrintTask, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSubmitting(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTask).remove_Submitting(eventCookie));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTask)this.asInterface(uuid("61d80247-6cf6-4fad-84e2-a5e82e2d4ceb"))).remove_Submitting(eventCookie));
 	}
 	final EventRegistrationToken OnProgressing(void delegate(Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskProgressingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTask).add_Progressing(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskProgressingEventArgs), Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskProgressingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTask)this.asInterface(uuid("61d80247-6cf6-4fad-84e2-a5e82e2d4ceb"))).add_Progressing(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskProgressingEventArgs), Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskProgressingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeProgressing(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTask).remove_Progressing(eventCookie));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTask)this.asInterface(uuid("61d80247-6cf6-4fad-84e2-a5e82e2d4ceb"))).remove_Progressing(eventCookie));
 	}
 	final EventRegistrationToken OnCompleted(void delegate(Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTask).add_Completed(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskCompletedEventArgs), Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskCompletedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTask)this.asInterface(uuid("61d80247-6cf6-4fad-84e2-a5e82e2d4ceb"))).add_Completed(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskCompletedEventArgs), Windows.Graphics.Printing.PrintTask, Windows.Graphics.Printing.PrintTaskCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCompleted(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTask).remove_Completed(eventCookie));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTask)this.asInterface(uuid("61d80247-6cf6-4fad-84e2-a5e82e2d4ceb"))).remove_Completed(eventCookie));
 	}
 	final void IsPrinterTargetEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskTargetDeviceSupport).set_IsPrinterTargetEnabled(value));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskTargetDeviceSupport)this.asInterface(uuid("295d70c0-c2cb-4b7d-b0ea-93095091a220"))).set_IsPrinterTargetEnabled(value));
 	}
 	final bool IsPrinterTargetEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskTargetDeviceSupport).get_IsPrinterTargetEnabled(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskTargetDeviceSupport)this.asInterface(uuid("295d70c0-c2cb-4b7d-b0ea-93095091a220"))).get_IsPrinterTargetEnabled(&_ret));
 		return _ret;
 	}
 	final void Is3DManufacturingTargetEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskTargetDeviceSupport).set_Is3DManufacturingTargetEnabled(value));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskTargetDeviceSupport)this.asInterface(uuid("295d70c0-c2cb-4b7d-b0ea-93095091a220"))).set_Is3DManufacturingTargetEnabled(value));
 	}
 	final bool Is3DManufacturingTargetEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskTargetDeviceSupport).get_Is3DManufacturingTargetEnabled(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskTargetDeviceSupport)this.asInterface(uuid("295d70c0-c2cb-4b7d-b0ea-93095091a220"))).get_Is3DManufacturingTargetEnabled(&_ret));
 		return _ret;
 	}
 	final void IsPreviewEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTask2).set_IsPreviewEnabled(value));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTask2)this.asInterface(uuid("36234877-3e53-4d9d-8f5e-316ac8dedae1"))).set_IsPreviewEnabled(value));
 	}
 	final bool IsPreviewEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTask2).get_IsPreviewEnabled(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTask2)this.asInterface(uuid("36234877-3e53-4d9d-8f5e-316ac8dedae1"))).get_IsPreviewEnabled(&_ret));
 		return _ret;
 	}
 }
@@ -439,7 +439,7 @@ extern(Windows):
 	final Windows.Graphics.Printing.PrintTaskCompletion Completion()
 	{
 		Windows.Graphics.Printing.PrintTaskCompletion _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskCompletedEventArgs).get_Completion(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskCompletedEventArgs)this.asInterface(uuid("5bcd34af-24e9-4c10-8d07-14c346ba3fce"))).get_Completion(&_ret));
 		return _ret;
 	}
 }
@@ -450,151 +450,151 @@ extern(Windows):
 	final Windows.Graphics.Printing.PrintPageDescription GetPageDescription(UINT32 jobPageNumber)
 	{
 		Windows.Graphics.Printing.PrintPageDescription _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCore).abi_GetPageDescription(jobPageNumber, &_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCore)this.asInterface(uuid("1bdbb474-4ed1-41eb-be3c-72d18ed67337"))).abi_GetPageDescription(jobPageNumber, &_ret));
 		return _ret;
 	}
 	final void MediaSize(Windows.Graphics.Printing.PrintMediaSize value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).set_MediaSize(value));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).set_MediaSize(value));
 	}
 	final Windows.Graphics.Printing.PrintMediaSize MediaSize()
 	{
 		Windows.Graphics.Printing.PrintMediaSize _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).get_MediaSize(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).get_MediaSize(&_ret));
 		return _ret;
 	}
 	final void MediaType(Windows.Graphics.Printing.PrintMediaType value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).set_MediaType(value));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).set_MediaType(value));
 	}
 	final Windows.Graphics.Printing.PrintMediaType MediaType()
 	{
 		Windows.Graphics.Printing.PrintMediaType _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).get_MediaType(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).get_MediaType(&_ret));
 		return _ret;
 	}
 	final void Orientation(Windows.Graphics.Printing.PrintOrientation value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).set_Orientation(value));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).set_Orientation(value));
 	}
 	final Windows.Graphics.Printing.PrintOrientation Orientation()
 	{
 		Windows.Graphics.Printing.PrintOrientation _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).get_Orientation(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).get_Orientation(&_ret));
 		return _ret;
 	}
 	final void PrintQuality(Windows.Graphics.Printing.PrintQuality value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).set_PrintQuality(value));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).set_PrintQuality(value));
 	}
 	final Windows.Graphics.Printing.PrintQuality PrintQuality()
 	{
 		Windows.Graphics.Printing.PrintQuality _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).get_PrintQuality(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).get_PrintQuality(&_ret));
 		return _ret;
 	}
 	final void ColorMode(Windows.Graphics.Printing.PrintColorMode value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).set_ColorMode(value));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).set_ColorMode(value));
 	}
 	final Windows.Graphics.Printing.PrintColorMode ColorMode()
 	{
 		Windows.Graphics.Printing.PrintColorMode _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).get_ColorMode(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).get_ColorMode(&_ret));
 		return _ret;
 	}
 	final void Duplex(Windows.Graphics.Printing.PrintDuplex value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).set_Duplex(value));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).set_Duplex(value));
 	}
 	final Windows.Graphics.Printing.PrintDuplex Duplex()
 	{
 		Windows.Graphics.Printing.PrintDuplex _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).get_Duplex(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).get_Duplex(&_ret));
 		return _ret;
 	}
 	final void Collation(Windows.Graphics.Printing.PrintCollation value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).set_Collation(value));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).set_Collation(value));
 	}
 	final Windows.Graphics.Printing.PrintCollation Collation()
 	{
 		Windows.Graphics.Printing.PrintCollation _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).get_Collation(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).get_Collation(&_ret));
 		return _ret;
 	}
 	final void Staple(Windows.Graphics.Printing.PrintStaple value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).set_Staple(value));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).set_Staple(value));
 	}
 	final Windows.Graphics.Printing.PrintStaple Staple()
 	{
 		Windows.Graphics.Printing.PrintStaple _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).get_Staple(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).get_Staple(&_ret));
 		return _ret;
 	}
 	final void HolePunch(Windows.Graphics.Printing.PrintHolePunch value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).set_HolePunch(value));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).set_HolePunch(value));
 	}
 	final Windows.Graphics.Printing.PrintHolePunch HolePunch()
 	{
 		Windows.Graphics.Printing.PrintHolePunch _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).get_HolePunch(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).get_HolePunch(&_ret));
 		return _ret;
 	}
 	final void Binding(Windows.Graphics.Printing.PrintBinding value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).set_Binding(value));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).set_Binding(value));
 	}
 	final Windows.Graphics.Printing.PrintBinding Binding()
 	{
 		Windows.Graphics.Printing.PrintBinding _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).get_Binding(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).get_Binding(&_ret));
 		return _ret;
 	}
 	final UINT32 MinCopies()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).get_MinCopies(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).get_MinCopies(&_ret));
 		return _ret;
 	}
 	final UINT32 MaxCopies()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).get_MaxCopies(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).get_MaxCopies(&_ret));
 		return _ret;
 	}
 	final void NumberOfCopies(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).set_NumberOfCopies(value));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).set_NumberOfCopies(value));
 	}
 	final UINT32 NumberOfCopies()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties).get_NumberOfCopies(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreProperties)this.asInterface(uuid("c1b71832-9e93-4e55-814b-3326a59efce1"))).get_NumberOfCopies(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) DisplayedOptions()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptionsCoreUIConfiguration).get_DisplayedOptions(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptionsCoreUIConfiguration)this.asInterface(uuid("62e69e23-9a1e-4336-b74f-3cc7f4cff709"))).get_DisplayedOptions(&_ret));
 		return _ret;
 	}
 	final void Bordering(Windows.Graphics.Printing.PrintBordering value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptions).set_Bordering(value));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptions)this.asInterface(uuid("5a0a66bb-d289-41bb-96dd-57e28338ae3f"))).set_Bordering(value));
 	}
 	final Windows.Graphics.Printing.PrintBordering Bordering()
 	{
 		Windows.Graphics.Printing.PrintBordering _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptions).get_Bordering(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptions)this.asInterface(uuid("5a0a66bb-d289-41bb-96dd-57e28338ae3f"))).get_Bordering(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IRandomAccessStream GetPagePrintTicket(Windows.Graphics.Printing.PrintPageInfo printPageInfo)
 	{
 		Windows.Storage.Streams.IRandomAccessStream _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskOptions).abi_GetPagePrintTicket(printPageInfo, &_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskOptions)this.asInterface(uuid("5a0a66bb-d289-41bb-96dd-57e28338ae3f"))).abi_GetPagePrintTicket(printPageInfo, &_ret));
 		return _ret;
 	}
 }
@@ -605,7 +605,7 @@ extern(Windows):
 	final UINT32 DocumentPageCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskProgressingEventArgs).get_DocumentPageCount(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskProgressingEventArgs)this.asInterface(uuid("810cd3cb-b410-4282-a073-5ac378234174"))).get_DocumentPageCount(&_ret));
 		return _ret;
 	}
 }
@@ -616,19 +616,19 @@ extern(Windows):
 	final Windows.Foundation.DateTime Deadline()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskRequest).get_Deadline(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskRequest)this.asInterface(uuid("6ff61e2e-2722-4240-a67c-f364849a17f3"))).get_Deadline(&_ret));
 		return _ret;
 	}
 	final Windows.Graphics.Printing.PrintTask CreatePrintTask(HSTRING title, Windows.Graphics.Printing.PrintTaskSourceRequestedHandler handler)
 	{
 		Windows.Graphics.Printing.PrintTask _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskRequest).abi_CreatePrintTask(title, handler, &_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskRequest)this.asInterface(uuid("6ff61e2e-2722-4240-a67c-f364849a17f3"))).abi_CreatePrintTask(title, handler, &_ret));
 		return _ret;
 	}
 	final Windows.Graphics.Printing.PrintTaskRequestedDeferral GetDeferral()
 	{
 		Windows.Graphics.Printing.PrintTaskRequestedDeferral _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskRequest).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskRequest)this.asInterface(uuid("6ff61e2e-2722-4240-a67c-f364849a17f3"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -638,7 +638,7 @@ interface PrintTaskRequestedDeferral : Windows.Graphics.Printing.IPrintTaskReque
 extern(Windows):
 	final void Complete()
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskRequestedDeferral).abi_Complete());
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskRequestedDeferral)this.asInterface(uuid("cfefb3f0-ce3e-42c7-9496-64800c622c44"))).abi_Complete());
 	}
 }
 
@@ -648,7 +648,7 @@ extern(Windows):
 	final Windows.Graphics.Printing.PrintTaskRequest Request()
 	{
 		Windows.Graphics.Printing.PrintTaskRequest _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskRequestedEventArgs).get_Request(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskRequestedEventArgs)this.asInterface(uuid("d0aff924-a31b-454c-a7b6-5d0cc522fc16"))).get_Request(&_ret));
 		return _ret;
 	}
 }
@@ -659,17 +659,17 @@ extern(Windows):
 	final Windows.Foundation.DateTime Deadline()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskSourceRequestedArgs).get_Deadline(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskSourceRequestedArgs)this.asInterface(uuid("f9f067be-f456-41f0-9c98-5ce73e851410"))).get_Deadline(&_ret));
 		return _ret;
 	}
 	final void SetSource(Windows.Graphics.Printing.IPrintDocumentSource source)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskSourceRequestedArgs).abi_SetSource(source));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskSourceRequestedArgs)this.asInterface(uuid("f9f067be-f456-41f0-9c98-5ce73e851410"))).abi_SetSource(source));
 	}
 	final Windows.Graphics.Printing.PrintTaskSourceRequestedDeferral GetDeferral()
 	{
 		Windows.Graphics.Printing.PrintTaskSourceRequestedDeferral _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskSourceRequestedArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskSourceRequestedArgs)this.asInterface(uuid("f9f067be-f456-41f0-9c98-5ce73e851410"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -679,7 +679,7 @@ interface PrintTaskSourceRequestedDeferral : Windows.Graphics.Printing.IPrintTas
 extern(Windows):
 	final void Complete()
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing.IPrintTaskSourceRequestedDeferral).abi_Complete());
+		Debug.OK((cast(Windows.Graphics.Printing.IPrintTaskSourceRequestedDeferral)this.asInterface(uuid("4a1560d1-6992-4d9d-8555-4ca4563fb166"))).abi_Complete());
 	}
 }
 
@@ -694,79 +694,79 @@ interface StandardPrintTaskOptions
 	static HSTRING MediaSize()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_MediaSize(&_ret));
+		Debug.OK(staticInstance.get_MediaSize(&_ret));
 		return _ret;
 	}
 	static HSTRING MediaType()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_MediaType(&_ret));
+		Debug.OK(staticInstance.get_MediaType(&_ret));
 		return _ret;
 	}
 	static HSTRING Orientation()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_Orientation(&_ret));
+		Debug.OK(staticInstance.get_Orientation(&_ret));
 		return _ret;
 	}
 	static HSTRING PrintQuality()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_PrintQuality(&_ret));
+		Debug.OK(staticInstance.get_PrintQuality(&_ret));
 		return _ret;
 	}
 	static HSTRING ColorMode()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_ColorMode(&_ret));
+		Debug.OK(staticInstance.get_ColorMode(&_ret));
 		return _ret;
 	}
 	static HSTRING Duplex()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_Duplex(&_ret));
+		Debug.OK(staticInstance.get_Duplex(&_ret));
 		return _ret;
 	}
 	static HSTRING Collation()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_Collation(&_ret));
+		Debug.OK(staticInstance.get_Collation(&_ret));
 		return _ret;
 	}
 	static HSTRING Staple()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_Staple(&_ret));
+		Debug.OK(staticInstance.get_Staple(&_ret));
 		return _ret;
 	}
 	static HSTRING HolePunch()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_HolePunch(&_ret));
+		Debug.OK(staticInstance.get_HolePunch(&_ret));
 		return _ret;
 	}
 	static HSTRING Binding()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_Binding(&_ret));
+		Debug.OK(staticInstance.get_Binding(&_ret));
 		return _ret;
 	}
 	static HSTRING Copies()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_Copies(&_ret));
+		Debug.OK(staticInstance.get_Copies(&_ret));
 		return _ret;
 	}
 	static HSTRING NUp()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_NUp(&_ret));
+		Debug.OK(staticInstance.get_NUp(&_ret));
 		return _ret;
 	}
 	static HSTRING InputBin()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Printing.IStandardPrintTaskOptionsStatic).get_InputBin(&_ret));
+		Debug.OK(staticInstance.get_InputBin(&_ret));
 		return _ret;
 	}
 }

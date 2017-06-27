@@ -408,168 +408,168 @@ extern(Windows):
 	final EventRegistrationToken OnRecognitionStarted(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialRecognitionStartedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).add_RecognitionStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialRecognitionStartedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialRecognitionStartedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).add_RecognitionStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialRecognitionStartedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialRecognitionStartedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRecognitionStarted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).remove_RecognitionStarted(token));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).remove_RecognitionStarted(token));
 	}
 	final EventRegistrationToken OnRecognitionEnded(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialRecognitionEndedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).add_RecognitionEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialRecognitionEndedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialRecognitionEndedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).add_RecognitionEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialRecognitionEndedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialRecognitionEndedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRecognitionEnded(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).remove_RecognitionEnded(token));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).remove_RecognitionEnded(token));
 	}
 	final EventRegistrationToken OnTapped(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialTappedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).add_Tapped(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialTappedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialTappedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).add_Tapped(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialTappedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialTappedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTapped(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).remove_Tapped(token));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).remove_Tapped(token));
 	}
 	final EventRegistrationToken OnHoldStarted(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldStartedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).add_HoldStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldStartedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldStartedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).add_HoldStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldStartedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldStartedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeHoldStarted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).remove_HoldStarted(token));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).remove_HoldStarted(token));
 	}
 	final EventRegistrationToken OnHoldCompleted(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).add_HoldCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldCompletedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldCompletedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).add_HoldCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldCompletedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeHoldCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).remove_HoldCompleted(token));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).remove_HoldCompleted(token));
 	}
 	final EventRegistrationToken OnHoldCanceled(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldCanceledEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).add_HoldCanceled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldCanceledEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldCanceledEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).add_HoldCanceled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldCanceledEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialHoldCanceledEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeHoldCanceled(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).remove_HoldCanceled(token));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).remove_HoldCanceled(token));
 	}
 	final EventRegistrationToken OnManipulationStarted(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationStartedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).add_ManipulationStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationStartedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationStartedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).add_ManipulationStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationStartedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationStartedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeManipulationStarted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).remove_ManipulationStarted(token));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).remove_ManipulationStarted(token));
 	}
 	final EventRegistrationToken OnManipulationUpdated(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationUpdatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).add_ManipulationUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationUpdatedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationUpdatedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).add_ManipulationUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationUpdatedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationUpdatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeManipulationUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).remove_ManipulationUpdated(token));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).remove_ManipulationUpdated(token));
 	}
 	final EventRegistrationToken OnManipulationCompleted(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).add_ManipulationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationCompletedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationCompletedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).add_ManipulationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationCompletedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeManipulationCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).remove_ManipulationCompleted(token));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).remove_ManipulationCompleted(token));
 	}
 	final EventRegistrationToken OnManipulationCanceled(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationCanceledEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).add_ManipulationCanceled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationCanceledEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationCanceledEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).add_ManipulationCanceled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationCanceledEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialManipulationCanceledEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeManipulationCanceled(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).remove_ManipulationCanceled(token));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).remove_ManipulationCanceled(token));
 	}
 	final EventRegistrationToken OnNavigationStarted(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationStartedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).add_NavigationStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationStartedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationStartedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).add_NavigationStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationStartedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationStartedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeNavigationStarted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).remove_NavigationStarted(token));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).remove_NavigationStarted(token));
 	}
 	final EventRegistrationToken OnNavigationUpdated(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationUpdatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).add_NavigationUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationUpdatedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationUpdatedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).add_NavigationUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationUpdatedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationUpdatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeNavigationUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).remove_NavigationUpdated(token));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).remove_NavigationUpdated(token));
 	}
 	final EventRegistrationToken OnNavigationCompleted(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).add_NavigationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationCompletedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationCompletedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).add_NavigationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationCompletedEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeNavigationCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).remove_NavigationCompleted(token));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).remove_NavigationCompleted(token));
 	}
 	final EventRegistrationToken OnNavigationCanceled(void delegate(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationCanceledEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).add_NavigationCanceled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationCanceledEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationCanceledEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).add_NavigationCanceled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationCanceledEventArgs), Windows.UI.Input.Spatial.SpatialGestureRecognizer, Windows.UI.Input.Spatial.SpatialNavigationCanceledEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeNavigationCanceled(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).remove_NavigationCanceled(token));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).remove_NavigationCanceled(token));
 	}
 	final void CaptureInteraction(Windows.UI.Input.Spatial.SpatialInteraction interaction)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).abi_CaptureInteraction(interaction));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).abi_CaptureInteraction(interaction));
 	}
 	final void CancelPendingGestures()
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).abi_CancelPendingGestures());
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).abi_CancelPendingGestures());
 	}
 	final bool TrySetGestureSettings(Windows.UI.Input.Spatial.SpatialGestureSettings settings)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).abi_TrySetGestureSettings(settings, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).abi_TrySetGestureSettings(settings, &_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Spatial.SpatialGestureSettings GestureSettings()
 	{
 		Windows.UI.Input.Spatial.SpatialGestureSettings _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizer).get_GestureSettings(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizer)this.asInterface(uuid("71605bcc-0c35-4673-adbd-cc04caa6ef45"))).get_GestureSettings(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Input.Spatial.SpatialGestureRecognizer New(Windows.UI.Input.Spatial.SpatialGestureSettings settings)
 	{
 		auto factory = factory!(Windows.UI.Input.Spatial.ISpatialGestureRecognizerFactory);
 		Windows.UI.Input.Spatial.SpatialGestureRecognizer _ret;
-		Debug.OK(factory.as!(Windows.UI.Input.Spatial.ISpatialGestureRecognizerFactory).abi_Create(settings, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialGestureRecognizerFactory)factory.asInterface(uuid("77214186-57b9-3150-8382-698b24e264d0"))).abi_Create(settings, &_ret));
 		return _ret;
 	}
 }
@@ -580,7 +580,7 @@ extern(Windows):
 	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialHoldCanceledEventArgs).get_InteractionSourceKind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialHoldCanceledEventArgs)this.asInterface(uuid("5dfcb667-4caa-4093-8c35-b601a839f31b"))).get_InteractionSourceKind(&_ret));
 		return _ret;
 	}
 }
@@ -591,7 +591,7 @@ extern(Windows):
 	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialHoldCompletedEventArgs).get_InteractionSourceKind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialHoldCompletedEventArgs)this.asInterface(uuid("3f64470b-4cfd-43da-8dc4-e64552173971"))).get_InteractionSourceKind(&_ret));
 		return _ret;
 	}
 }
@@ -602,13 +602,13 @@ extern(Windows):
 	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialHoldStartedEventArgs).get_InteractionSourceKind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialHoldStartedEventArgs)this.asInterface(uuid("8e343d79-acb6-4144-8615-2cfba8a3cb3f"))).get_InteractionSourceKind(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Spatial.SpatialPointerPose TryGetPointerPose(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
 	{
 		Windows.UI.Input.Spatial.SpatialPointerPose _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialHoldStartedEventArgs).abi_TryGetPointerPose(coordinateSystem, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialHoldStartedEventArgs)this.asInterface(uuid("8e343d79-acb6-4144-8615-2cfba8a3cb3f"))).abi_TryGetPointerPose(coordinateSystem, &_ret));
 		return _ret;
 	}
 }
@@ -619,7 +619,7 @@ extern(Windows):
 	final Windows.UI.Input.Spatial.SpatialInteractionSourceState SourceState()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionSourceState _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteraction).get_SourceState(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteraction)this.asInterface(uuid("fc967639-88e6-4646-9112-4344aaec9dfa"))).get_SourceState(&_ret));
 		return _ret;
 	}
 }
@@ -630,37 +630,37 @@ extern(Windows):
 	final bool HasTouchpad()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionController).get_HasTouchpad(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionController)this.asInterface(uuid("5f0e5ba3-0954-4e97-86c5-e7f30b114dfd"))).get_HasTouchpad(&_ret));
 		return _ret;
 	}
 	final bool HasThumbstick()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionController).get_HasThumbstick(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionController)this.asInterface(uuid("5f0e5ba3-0954-4e97-86c5-e7f30b114dfd"))).get_HasThumbstick(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Haptics.SimpleHapticsController SimpleHapticsController()
 	{
 		Windows.Devices.Haptics.SimpleHapticsController _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionController).get_SimpleHapticsController(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionController)this.asInterface(uuid("5f0e5ba3-0954-4e97-86c5-e7f30b114dfd"))).get_SimpleHapticsController(&_ret));
 		return _ret;
 	}
 	final UINT16 VendorId()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionController).get_VendorId(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionController)this.asInterface(uuid("5f0e5ba3-0954-4e97-86c5-e7f30b114dfd"))).get_VendorId(&_ret));
 		return _ret;
 	}
 	final UINT16 ProductId()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionController).get_ProductId(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionController)this.asInterface(uuid("5f0e5ba3-0954-4e97-86c5-e7f30b114dfd"))).get_ProductId(&_ret));
 		return _ret;
 	}
 	final UINT16 Version()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionController).get_Version(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionController)this.asInterface(uuid("5f0e5ba3-0954-4e97-86c5-e7f30b114dfd"))).get_Version(&_ret));
 		return _ret;
 	}
 }
@@ -671,43 +671,43 @@ extern(Windows):
 	final bool IsTouchpadTouched()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties).get_IsTouchpadTouched(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties)this.asInterface(uuid("61056fb1-7ba9-4e35-b93f-9272cba9b28b"))).get_IsTouchpadTouched(&_ret));
 		return _ret;
 	}
 	final bool IsTouchpadPressed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties).get_IsTouchpadPressed(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties)this.asInterface(uuid("61056fb1-7ba9-4e35-b93f-9272cba9b28b"))).get_IsTouchpadPressed(&_ret));
 		return _ret;
 	}
 	final bool IsThumbstickPressed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties).get_IsThumbstickPressed(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties)this.asInterface(uuid("61056fb1-7ba9-4e35-b93f-9272cba9b28b"))).get_IsThumbstickPressed(&_ret));
 		return _ret;
 	}
 	final double ThumbstickX()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties).get_ThumbstickX(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties)this.asInterface(uuid("61056fb1-7ba9-4e35-b93f-9272cba9b28b"))).get_ThumbstickX(&_ret));
 		return _ret;
 	}
 	final double ThumbstickY()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties).get_ThumbstickY(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties)this.asInterface(uuid("61056fb1-7ba9-4e35-b93f-9272cba9b28b"))).get_ThumbstickY(&_ret));
 		return _ret;
 	}
 	final double TouchpadX()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties).get_TouchpadX(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties)this.asInterface(uuid("61056fb1-7ba9-4e35-b93f-9272cba9b28b"))).get_TouchpadX(&_ret));
 		return _ret;
 	}
 	final double TouchpadY()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties).get_TouchpadY(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionControllerProperties)this.asInterface(uuid("61056fb1-7ba9-4e35-b93f-9272cba9b28b"))).get_TouchpadY(&_ret));
 		return _ret;
 	}
 }
@@ -718,25 +718,25 @@ extern(Windows):
 	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionDetectedEventArgs).get_InteractionSourceKind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionDetectedEventArgs)this.asInterface(uuid("075878e4-5961-3b41-9dfb-cea5d89cc38a"))).get_InteractionSourceKind(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Spatial.SpatialPointerPose TryGetPointerPose(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
 	{
 		Windows.UI.Input.Spatial.SpatialPointerPose _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionDetectedEventArgs).abi_TryGetPointerPose(coordinateSystem, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionDetectedEventArgs)this.asInterface(uuid("075878e4-5961-3b41-9dfb-cea5d89cc38a"))).abi_TryGetPointerPose(coordinateSystem, &_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Spatial.SpatialInteraction Interaction()
 	{
 		Windows.UI.Input.Spatial.SpatialInteraction _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionDetectedEventArgs).get_Interaction(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionDetectedEventArgs)this.asInterface(uuid("075878e4-5961-3b41-9dfb-cea5d89cc38a"))).get_Interaction(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Spatial.SpatialInteractionSource InteractionSource()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionSource _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionDetectedEventArgs2).get_InteractionSource(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionDetectedEventArgs2)this.asInterface(uuid("7b263e93-5f13-419c-97d5-834678266aa6"))).get_InteractionSource(&_ret));
 		return _ret;
 	}
 }
@@ -747,67 +747,67 @@ extern(Windows):
 	final EventRegistrationToken OnSourceDetected(void delegate(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionManager).add_SourceDetected(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs), Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionManager)this.asInterface(uuid("32a64ea8-a15a-3995-b8bd-80513cb5adef"))).add_SourceDetected(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs), Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSourceDetected(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionManager).remove_SourceDetected(token));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionManager)this.asInterface(uuid("32a64ea8-a15a-3995-b8bd-80513cb5adef"))).remove_SourceDetected(token));
 	}
 	final EventRegistrationToken OnSourceLost(void delegate(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionManager).add_SourceLost(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs), Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionManager)this.asInterface(uuid("32a64ea8-a15a-3995-b8bd-80513cb5adef"))).add_SourceLost(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs), Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSourceLost(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionManager).remove_SourceLost(token));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionManager)this.asInterface(uuid("32a64ea8-a15a-3995-b8bd-80513cb5adef"))).remove_SourceLost(token));
 	}
 	final EventRegistrationToken OnSourceUpdated(void delegate(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionManager).add_SourceUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs), Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionManager)this.asInterface(uuid("32a64ea8-a15a-3995-b8bd-80513cb5adef"))).add_SourceUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs), Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSourceUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionManager).remove_SourceUpdated(token));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionManager)this.asInterface(uuid("32a64ea8-a15a-3995-b8bd-80513cb5adef"))).remove_SourceUpdated(token));
 	}
 	final EventRegistrationToken OnSourcePressed(void delegate(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionManager).add_SourcePressed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs), Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionManager)this.asInterface(uuid("32a64ea8-a15a-3995-b8bd-80513cb5adef"))).add_SourcePressed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs), Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSourcePressed(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionManager).remove_SourcePressed(token));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionManager)this.asInterface(uuid("32a64ea8-a15a-3995-b8bd-80513cb5adef"))).remove_SourcePressed(token));
 	}
 	final EventRegistrationToken OnSourceReleased(void delegate(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionManager).add_SourceReleased(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs), Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionManager)this.asInterface(uuid("32a64ea8-a15a-3995-b8bd-80513cb5adef"))).add_SourceReleased(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs), Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSourceReleased(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionManager).remove_SourceReleased(token));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionManager)this.asInterface(uuid("32a64ea8-a15a-3995-b8bd-80513cb5adef"))).remove_SourceReleased(token));
 	}
 	final EventRegistrationToken OnInteractionDetected(void delegate(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionDetectedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionManager).add_InteractionDetected(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionDetectedEventArgs), Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionDetectedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionManager)this.asInterface(uuid("32a64ea8-a15a-3995-b8bd-80513cb5adef"))).add_InteractionDetected(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionDetectedEventArgs), Windows.UI.Input.Spatial.SpatialInteractionManager, Windows.UI.Input.Spatial.SpatialInteractionDetectedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeInteractionDetected(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionManager).remove_InteractionDetected(token));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionManager)this.asInterface(uuid("32a64ea8-a15a-3995-b8bd-80513cb5adef"))).remove_InteractionDetected(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Spatial.SpatialInteractionSourceState) GetDetectedSourcesAtTimestamp(Windows.Perception.PerceptionTimestamp timeStamp)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Spatial.SpatialInteractionSourceState) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionManager).abi_GetDetectedSourcesAtTimestamp(timeStamp, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionManager)this.asInterface(uuid("32a64ea8-a15a-3995-b8bd-80513cb5adef"))).abi_GetDetectedSourcesAtTimestamp(timeStamp, &_ret));
 		return _ret;
 	}
 
@@ -820,7 +820,7 @@ extern(Windows):
 	static Windows.UI.Input.Spatial.SpatialInteractionManager GetForCurrentView()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionManager _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Input.Spatial.ISpatialInteractionManagerStatics).abi_GetForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 }
@@ -831,43 +831,43 @@ extern(Windows):
 	final UINT32 Id()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSource).get_Id(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSource)this.asInterface(uuid("fb5433ba-b0b3-3148-9f3b-e9f5de568f5d"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind Kind()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSource).get_Kind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSource)this.asInterface(uuid("fb5433ba-b0b3-3148-9f3b-e9f5de568f5d"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final bool IsPointingSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSource2).get_IsPointingSupported(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSource2)this.asInterface(uuid("e4c5b70c-0470-4028-88c0-a0eb44d34efe"))).get_IsPointingSupported(&_ret));
 		return _ret;
 	}
 	final bool IsMenuSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSource2).get_IsMenuSupported(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSource2)this.asInterface(uuid("e4c5b70c-0470-4028-88c0-a0eb44d34efe"))).get_IsMenuSupported(&_ret));
 		return _ret;
 	}
 	final bool IsGraspSupported()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSource2).get_IsGraspSupported(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSource2)this.asInterface(uuid("e4c5b70c-0470-4028-88c0-a0eb44d34efe"))).get_IsGraspSupported(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Spatial.SpatialInteractionController Controller()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionController _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSource2).get_Controller(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSource2)this.asInterface(uuid("e4c5b70c-0470-4028-88c0-a0eb44d34efe"))).get_Controller(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Spatial.SpatialInteractionSourceState TryGetStateAtTimestamp(Windows.Perception.PerceptionTimestamp timestamp)
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionSourceState _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSource2).abi_TryGetStateAtTimestamp(timestamp, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSource2)this.asInterface(uuid("e4c5b70c-0470-4028-88c0-a0eb44d34efe"))).abi_TryGetStateAtTimestamp(timestamp, &_ret));
 		return _ret;
 	}
 }
@@ -878,13 +878,13 @@ extern(Windows):
 	final Windows.UI.Input.Spatial.SpatialInteractionSourceState State()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionSourceState _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceEventArgs).get_State(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSourceEventArgs)this.asInterface(uuid("23b786cf-ec23-3979-b27c-eb0e12feb7c7"))).get_State(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Spatial.SpatialInteractionPressKind PressKind()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionPressKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceEventArgs2).get_PressKind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSourceEventArgs2)this.asInterface(uuid("d8b4b467-e648-4d52-ab49-e0d227199f63"))).get_PressKind(&_ret));
 		return _ret;
 	}
 }
@@ -895,19 +895,19 @@ extern(Windows):
 	final Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3) Position()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceLocation).get_Position(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSourceLocation)this.asInterface(uuid("ea4696c4-7e8b-30ca-bcc5-c77189cea30a"))).get_Position(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3) Velocity()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceLocation).get_Velocity(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSourceLocation)this.asInterface(uuid("ea4696c4-7e8b-30ca-bcc5-c77189cea30a"))).get_Velocity(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.Numerics.Quaternion) Orientation()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.Numerics.Quaternion) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceLocation2).get_Orientation(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSourceLocation2)this.asInterface(uuid("4c671045-3917-40fc-a9ac-31c9cf5ff91b"))).get_Orientation(&_ret));
 		return _ret;
 	}
 }
@@ -918,19 +918,19 @@ extern(Windows):
 	final Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3) TryGetSourceLossMitigationDirection(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceProperties).abi_TryGetSourceLossMitigationDirection(coordinateSystem, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSourceProperties)this.asInterface(uuid("05604542-3ef7-3222-9f53-63c9cb7e3bc7"))).abi_TryGetSourceLossMitigationDirection(coordinateSystem, &_ret));
 		return _ret;
 	}
 	final double SourceLossRisk()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceProperties).get_SourceLossRisk(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSourceProperties)this.asInterface(uuid("05604542-3ef7-3222-9f53-63c9cb7e3bc7"))).get_SourceLossRisk(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Spatial.SpatialInteractionSourceLocation TryGetLocation(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionSourceLocation _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceProperties).abi_TryGetLocation(coordinateSystem, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSourceProperties)this.asInterface(uuid("05604542-3ef7-3222-9f53-63c9cb7e3bc7"))).abi_TryGetLocation(coordinateSystem, &_ret));
 		return _ret;
 	}
 }
@@ -941,61 +941,61 @@ extern(Windows):
 	final Windows.UI.Input.Spatial.SpatialInteractionSource Source()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionSource _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceState).get_Source(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSourceState)this.asInterface(uuid("d5c475ef-4b63-37ec-98b9-9fc652b9d2f2"))).get_Source(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Spatial.SpatialInteractionSourceProperties Properties()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionSourceProperties _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceState).get_Properties(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSourceState)this.asInterface(uuid("d5c475ef-4b63-37ec-98b9-9fc652b9d2f2"))).get_Properties(&_ret));
 		return _ret;
 	}
 	final bool IsPressed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceState).get_IsPressed(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSourceState)this.asInterface(uuid("d5c475ef-4b63-37ec-98b9-9fc652b9d2f2"))).get_IsPressed(&_ret));
 		return _ret;
 	}
 	final Windows.Perception.PerceptionTimestamp Timestamp()
 	{
 		Windows.Perception.PerceptionTimestamp _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceState).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSourceState)this.asInterface(uuid("d5c475ef-4b63-37ec-98b9-9fc652b9d2f2"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Spatial.SpatialPointerPose TryGetPointerPose(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
 	{
 		Windows.UI.Input.Spatial.SpatialPointerPose _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceState).abi_TryGetPointerPose(coordinateSystem, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSourceState)this.asInterface(uuid("d5c475ef-4b63-37ec-98b9-9fc652b9d2f2"))).abi_TryGetPointerPose(coordinateSystem, &_ret));
 		return _ret;
 	}
 	final bool IsSelectPressed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceState2).get_IsSelectPressed(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSourceState2)this.asInterface(uuid("45f6d0bd-1773-492e-9ba3-8ac1cbe77c08"))).get_IsSelectPressed(&_ret));
 		return _ret;
 	}
 	final bool IsMenuPressed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceState2).get_IsMenuPressed(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSourceState2)this.asInterface(uuid("45f6d0bd-1773-492e-9ba3-8ac1cbe77c08"))).get_IsMenuPressed(&_ret));
 		return _ret;
 	}
 	final bool IsGrasped()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceState2).get_IsGrasped(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSourceState2)this.asInterface(uuid("45f6d0bd-1773-492e-9ba3-8ac1cbe77c08"))).get_IsGrasped(&_ret));
 		return _ret;
 	}
 	final double SelectPressedValue()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceState2).get_SelectPressedValue(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSourceState2)this.asInterface(uuid("45f6d0bd-1773-492e-9ba3-8ac1cbe77c08"))).get_SelectPressedValue(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Spatial.SpatialInteractionControllerProperties ControllerProperties()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionControllerProperties _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialInteractionSourceState2).get_ControllerProperties(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialInteractionSourceState2)this.asInterface(uuid("45f6d0bd-1773-492e-9ba3-8ac1cbe77c08"))).get_ControllerProperties(&_ret));
 		return _ret;
 	}
 }
@@ -1006,7 +1006,7 @@ extern(Windows):
 	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialManipulationCanceledEventArgs).get_InteractionSourceKind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialManipulationCanceledEventArgs)this.asInterface(uuid("2d40d1cb-e7da-4220-b0bf-819301674780"))).get_InteractionSourceKind(&_ret));
 		return _ret;
 	}
 }
@@ -1017,13 +1017,13 @@ extern(Windows):
 	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialManipulationCompletedEventArgs).get_InteractionSourceKind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialManipulationCompletedEventArgs)this.asInterface(uuid("05086802-f301-4343-9250-2fbaa5f87a37"))).get_InteractionSourceKind(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Spatial.SpatialManipulationDelta TryGetCumulativeDelta(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
 	{
 		Windows.UI.Input.Spatial.SpatialManipulationDelta _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialManipulationCompletedEventArgs).abi_TryGetCumulativeDelta(coordinateSystem, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialManipulationCompletedEventArgs)this.asInterface(uuid("05086802-f301-4343-9250-2fbaa5f87a37"))).abi_TryGetCumulativeDelta(coordinateSystem, &_ret));
 		return _ret;
 	}
 }
@@ -1034,7 +1034,7 @@ extern(Windows):
 	final Windows.Foundation.Numerics.Vector3 Translation()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialManipulationDelta).get_Translation(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialManipulationDelta)this.asInterface(uuid("a7ec967a-d123-3a81-a15b-992923dcbe91"))).get_Translation(&_ret));
 		return _ret;
 	}
 }
@@ -1045,13 +1045,13 @@ extern(Windows):
 	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialManipulationStartedEventArgs).get_InteractionSourceKind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialManipulationStartedEventArgs)this.asInterface(uuid("a1d6bbce-42a5-377b-ada6-d28e3d384737"))).get_InteractionSourceKind(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Spatial.SpatialPointerPose TryGetPointerPose(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
 	{
 		Windows.UI.Input.Spatial.SpatialPointerPose _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialManipulationStartedEventArgs).abi_TryGetPointerPose(coordinateSystem, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialManipulationStartedEventArgs)this.asInterface(uuid("a1d6bbce-42a5-377b-ada6-d28e3d384737"))).abi_TryGetPointerPose(coordinateSystem, &_ret));
 		return _ret;
 	}
 }
@@ -1062,13 +1062,13 @@ extern(Windows):
 	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialManipulationUpdatedEventArgs).get_InteractionSourceKind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialManipulationUpdatedEventArgs)this.asInterface(uuid("5f230b9b-60c6-4dc6-bdc9-9f4a6f15fe49"))).get_InteractionSourceKind(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Spatial.SpatialManipulationDelta TryGetCumulativeDelta(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
 	{
 		Windows.UI.Input.Spatial.SpatialManipulationDelta _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialManipulationUpdatedEventArgs).abi_TryGetCumulativeDelta(coordinateSystem, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialManipulationUpdatedEventArgs)this.asInterface(uuid("5f230b9b-60c6-4dc6-bdc9-9f4a6f15fe49"))).abi_TryGetCumulativeDelta(coordinateSystem, &_ret));
 		return _ret;
 	}
 }
@@ -1079,7 +1079,7 @@ extern(Windows):
 	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialNavigationCanceledEventArgs).get_InteractionSourceKind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialNavigationCanceledEventArgs)this.asInterface(uuid("ce503edc-e8a5-46f0-92d4-3c122b35112a"))).get_InteractionSourceKind(&_ret));
 		return _ret;
 	}
 }
@@ -1090,13 +1090,13 @@ extern(Windows):
 	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialNavigationCompletedEventArgs).get_InteractionSourceKind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialNavigationCompletedEventArgs)this.asInterface(uuid("012e80b7-af3b-42c2-9e41-baaa0e721f3a"))).get_InteractionSourceKind(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Numerics.Vector3 NormalizedOffset()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialNavigationCompletedEventArgs).get_NormalizedOffset(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialNavigationCompletedEventArgs)this.asInterface(uuid("012e80b7-af3b-42c2-9e41-baaa0e721f3a"))).get_NormalizedOffset(&_ret));
 		return _ret;
 	}
 }
@@ -1107,31 +1107,31 @@ extern(Windows):
 	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialNavigationStartedEventArgs).get_InteractionSourceKind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialNavigationStartedEventArgs)this.asInterface(uuid("754a348a-fb64-4656-8ebd-9deecaafe475"))).get_InteractionSourceKind(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Spatial.SpatialPointerPose TryGetPointerPose(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
 	{
 		Windows.UI.Input.Spatial.SpatialPointerPose _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialNavigationStartedEventArgs).abi_TryGetPointerPose(coordinateSystem, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialNavigationStartedEventArgs)this.asInterface(uuid("754a348a-fb64-4656-8ebd-9deecaafe475"))).abi_TryGetPointerPose(coordinateSystem, &_ret));
 		return _ret;
 	}
 	final bool IsNavigatingX()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialNavigationStartedEventArgs).get_IsNavigatingX(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialNavigationStartedEventArgs)this.asInterface(uuid("754a348a-fb64-4656-8ebd-9deecaafe475"))).get_IsNavigatingX(&_ret));
 		return _ret;
 	}
 	final bool IsNavigatingY()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialNavigationStartedEventArgs).get_IsNavigatingY(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialNavigationStartedEventArgs)this.asInterface(uuid("754a348a-fb64-4656-8ebd-9deecaafe475"))).get_IsNavigatingY(&_ret));
 		return _ret;
 	}
 	final bool IsNavigatingZ()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialNavigationStartedEventArgs).get_IsNavigatingZ(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialNavigationStartedEventArgs)this.asInterface(uuid("754a348a-fb64-4656-8ebd-9deecaafe475"))).get_IsNavigatingZ(&_ret));
 		return _ret;
 	}
 }
@@ -1142,13 +1142,13 @@ extern(Windows):
 	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialNavigationUpdatedEventArgs).get_InteractionSourceKind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialNavigationUpdatedEventArgs)this.asInterface(uuid("9b713fd7-839d-4a74-8732-45466fc044b5"))).get_InteractionSourceKind(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Numerics.Vector3 NormalizedOffset()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialNavigationUpdatedEventArgs).get_NormalizedOffset(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialNavigationUpdatedEventArgs)this.asInterface(uuid("9b713fd7-839d-4a74-8732-45466fc044b5"))).get_NormalizedOffset(&_ret));
 		return _ret;
 	}
 }
@@ -1159,19 +1159,19 @@ extern(Windows):
 	final Windows.Foundation.Numerics.Vector3 Position()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialPointerInteractionSourcePose).get_Position(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialPointerInteractionSourcePose)this.asInterface(uuid("a7104307-2c2b-4d3a-92a7-80ced7c4a0d0"))).get_Position(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Numerics.Vector3 ForwardDirection()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialPointerInteractionSourcePose).get_ForwardDirection(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialPointerInteractionSourcePose)this.asInterface(uuid("a7104307-2c2b-4d3a-92a7-80ced7c4a0d0"))).get_ForwardDirection(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Numerics.Vector3 UpDirection()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialPointerInteractionSourcePose).get_UpDirection(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialPointerInteractionSourcePose)this.asInterface(uuid("a7104307-2c2b-4d3a-92a7-80ced7c4a0d0"))).get_UpDirection(&_ret));
 		return _ret;
 	}
 }
@@ -1182,19 +1182,19 @@ extern(Windows):
 	final Windows.Perception.PerceptionTimestamp Timestamp()
 	{
 		Windows.Perception.PerceptionTimestamp _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialPointerPose).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialPointerPose)this.asInterface(uuid("6953a42e-c17e-357d-97a1-7269d0ed2d10"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Perception.People.HeadPose Head()
 	{
 		Windows.Perception.People.HeadPose _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialPointerPose).get_Head(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialPointerPose)this.asInterface(uuid("6953a42e-c17e-357d-97a1-7269d0ed2d10"))).get_Head(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Spatial.SpatialPointerInteractionSourcePose TryGetInteractionSourcePose(Windows.UI.Input.Spatial.SpatialInteractionSource source)
 	{
 		Windows.UI.Input.Spatial.SpatialPointerInteractionSourcePose _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialPointerPose2).abi_TryGetInteractionSourcePose(source, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialPointerPose2)this.asInterface(uuid("9d202b17-954e-4e0c-96d1-b6790b6fc2fd"))).abi_TryGetInteractionSourcePose(source, &_ret));
 		return _ret;
 	}
 
@@ -1207,7 +1207,7 @@ extern(Windows):
 	static Windows.UI.Input.Spatial.SpatialPointerPose TryGetAtTimestamp(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Perception.PerceptionTimestamp timestamp)
 	{
 		Windows.UI.Input.Spatial.SpatialPointerPose _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Input.Spatial.ISpatialPointerPoseStatics).abi_TryGetAtTimestamp(coordinateSystem, timestamp, &_ret));
+		Debug.OK(staticInstance.abi_TryGetAtTimestamp(coordinateSystem, timestamp, &_ret));
 		return _ret;
 	}
 }
@@ -1218,7 +1218,7 @@ extern(Windows):
 	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialRecognitionEndedEventArgs).get_InteractionSourceKind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialRecognitionEndedEventArgs)this.asInterface(uuid("0e35f5cb-3f75-43f3-ac81-d1dc2df9b1fb"))).get_InteractionSourceKind(&_ret));
 		return _ret;
 	}
 }
@@ -1229,19 +1229,19 @@ extern(Windows):
 	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialRecognitionStartedEventArgs).get_InteractionSourceKind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialRecognitionStartedEventArgs)this.asInterface(uuid("24da128f-0008-4a6d-aa50-2a76f9cfb264"))).get_InteractionSourceKind(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Spatial.SpatialPointerPose TryGetPointerPose(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
 	{
 		Windows.UI.Input.Spatial.SpatialPointerPose _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialRecognitionStartedEventArgs).abi_TryGetPointerPose(coordinateSystem, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialRecognitionStartedEventArgs)this.asInterface(uuid("24da128f-0008-4a6d-aa50-2a76f9cfb264"))).abi_TryGetPointerPose(coordinateSystem, &_ret));
 		return _ret;
 	}
 	final bool IsGesturePossible(Windows.UI.Input.Spatial.SpatialGestureSettings gesture)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialRecognitionStartedEventArgs).abi_IsGesturePossible(gesture, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialRecognitionStartedEventArgs)this.asInterface(uuid("24da128f-0008-4a6d-aa50-2a76f9cfb264"))).abi_IsGesturePossible(gesture, &_ret));
 		return _ret;
 	}
 }
@@ -1252,19 +1252,19 @@ extern(Windows):
 	final Windows.UI.Input.Spatial.SpatialInteractionSourceKind InteractionSourceKind()
 	{
 		Windows.UI.Input.Spatial.SpatialInteractionSourceKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialTappedEventArgs).get_InteractionSourceKind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialTappedEventArgs)this.asInterface(uuid("296d83de-f444-4aa1-b2bf-9dc88d567da6"))).get_InteractionSourceKind(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Spatial.SpatialPointerPose TryGetPointerPose(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
 	{
 		Windows.UI.Input.Spatial.SpatialPointerPose _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialTappedEventArgs).abi_TryGetPointerPose(coordinateSystem, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialTappedEventArgs)this.asInterface(uuid("296d83de-f444-4aa1-b2bf-9dc88d567da6"))).abi_TryGetPointerPose(coordinateSystem, &_ret));
 		return _ret;
 	}
 	final UINT32 TapCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Spatial.ISpatialTappedEventArgs).get_TapCount(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Spatial.ISpatialTappedEventArgs)this.asInterface(uuid("296d83de-f444-4aa1-b2bf-9dc88d567da6"))).get_TapCount(&_ret));
 		return _ret;
 	}
 }

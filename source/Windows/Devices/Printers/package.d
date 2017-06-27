@@ -35,7 +35,7 @@ extern(Windows):
 	final Windows.Devices.Printers.PrintSchema PrintSchema()
 	{
 		Windows.Devices.Printers.PrintSchema _ret;
-		Debug.OK(this.as!(Windows.Devices.Printers.IPrint3DDevice).get_PrintSchema(&_ret));
+		Debug.OK((cast(Windows.Devices.Printers.IPrint3DDevice)this.asInterface(uuid("041c3d19-9713-42a2-9813-7dc3337428d3"))).get_PrintSchema(&_ret));
 		return _ret;
 	}
 
@@ -48,13 +48,13 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Printers.Print3DDevice) FromIdAsync(HSTRING deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Printers.Print3DDevice) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Printers.IPrint3DDeviceStatics).abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
 		return _ret;
 	}
 	static HSTRING GetDeviceSelector()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Printers.IPrint3DDeviceStatics).abi_GetDeviceSelector(&_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
 		return _ret;
 	}
 }
@@ -65,19 +65,19 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) GetDefaultPrintTicketAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) _ret;
-		Debug.OK(this.as!(Windows.Devices.Printers.IPrintSchema).abi_GetDefaultPrintTicketAsync(&_ret));
+		Debug.OK((cast(Windows.Devices.Printers.IPrintSchema)this.asInterface(uuid("c2b98316-26b8-4bfb-8138-9f962c22a35b"))).abi_GetDefaultPrintTicketAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) GetCapabilitiesAsync(const Windows.Storage.Streams.IRandomAccessStreamWithContentType rainTicket)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) _ret;
-		Debug.OK(this.as!(Windows.Devices.Printers.IPrintSchema).abi_GetCapabilitiesAsync(rainTicket, &_ret));
+		Debug.OK((cast(Windows.Devices.Printers.IPrintSchema)this.asInterface(uuid("c2b98316-26b8-4bfb-8138-9f962c22a35b"))).abi_GetCapabilitiesAsync(rainTicket, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) MergeAndValidateWithDefaultPrintTicketAsync(Windows.Storage.Streams.IRandomAccessStreamWithContentType deltaTicket)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) _ret;
-		Debug.OK(this.as!(Windows.Devices.Printers.IPrintSchema).abi_MergeAndValidateWithDefaultPrintTicketAsync(deltaTicket, &_ret));
+		Debug.OK((cast(Windows.Devices.Printers.IPrintSchema)this.asInterface(uuid("c2b98316-26b8-4bfb-8138-9f962c22a35b"))).abi_MergeAndValidateWithDefaultPrintTicketAsync(deltaTicket, &_ret));
 		return _ret;
 	}
 }

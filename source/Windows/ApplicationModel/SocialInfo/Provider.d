@@ -68,58 +68,58 @@ extern(Windows):
 	final HSTRING OwnerRemoteId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater).get_OwnerRemoteId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater)this.asInterface(uuid("3cde9dc9-4800-46cd-869b-1973ec685bde"))).get_OwnerRemoteId(&_ret));
 		return _ret;
 	}
 	deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final Windows.ApplicationModel.SocialInfo.SocialFeedContent Content()
 	{
 		Windows.ApplicationModel.SocialInfo.SocialFeedContent _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater).get_Content(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater)this.asInterface(uuid("3cde9dc9-4800-46cd-869b-1973ec685bde"))).get_Content(&_ret));
 		return _ret;
 	}
 	deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final Windows.Foundation.DateTime Timestamp()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater)this.asInterface(uuid("3cde9dc9-4800-46cd-869b-1973ec685bde"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final void Timestamp(Windows.Foundation.DateTime value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater).set_Timestamp(value));
+		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater)this.asInterface(uuid("3cde9dc9-4800-46cd-869b-1973ec685bde"))).set_Timestamp(value));
 	}
 	deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final void Thumbnail(Windows.ApplicationModel.SocialInfo.SocialItemThumbnail value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater).set_Thumbnail(value));
+		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater)this.asInterface(uuid("3cde9dc9-4800-46cd-869b-1973ec685bde"))).set_Thumbnail(value));
 	}
 	deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final Windows.ApplicationModel.SocialInfo.SocialItemThumbnail Thumbnail()
 	{
 		Windows.ApplicationModel.SocialInfo.SocialItemThumbnail _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater).get_Thumbnail(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater)this.asInterface(uuid("3cde9dc9-4800-46cd-869b-1973ec685bde"))).get_Thumbnail(&_ret));
 		return _ret;
 	}
 	deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final Windows.Foundation.IAsyncAction CommitAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater).abi_CommitAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater)this.asInterface(uuid("3cde9dc9-4800-46cd-869b-1973ec685bde"))).abi_CommitAsync(&_ret));
 		return _ret;
 	}
 	deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final Windows.Foundation.Uri TargetUri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater).get_TargetUri(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater)this.asInterface(uuid("3cde9dc9-4800-46cd-869b-1973ec685bde"))).get_TargetUri(&_ret));
 		return _ret;
 	}
 	deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final void TargetUri(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater).set_TargetUri(value));
+		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater)this.asInterface(uuid("3cde9dc9-4800-46cd-869b-1973ec685bde"))).set_TargetUri(value));
 	}
 }
 
@@ -130,28 +130,28 @@ extern(Windows):
 	final HSTRING OwnerRemoteId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialFeedUpdater).get_OwnerRemoteId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.Provider.ISocialFeedUpdater)this.asInterface(uuid("7a0c0aa7-ed89-4bd5-a8d9-15f4d9861c10"))).get_OwnerRemoteId(&_ret));
 		return _ret;
 	}
 	deprecated("ISocialFeedUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final Windows.ApplicationModel.SocialInfo.SocialFeedKind Kind()
 	{
 		Windows.ApplicationModel.SocialInfo.SocialFeedKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialFeedUpdater).get_Kind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.Provider.ISocialFeedUpdater)this.asInterface(uuid("7a0c0aa7-ed89-4bd5-a8d9-15f4d9861c10"))).get_Kind(&_ret));
 		return _ret;
 	}
 	deprecated("ISocialFeedUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.SocialInfo.SocialFeedItem) Items()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.SocialInfo.SocialFeedItem) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialFeedUpdater).get_Items(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.Provider.ISocialFeedUpdater)this.asInterface(uuid("7a0c0aa7-ed89-4bd5-a8d9-15f4d9861c10"))).get_Items(&_ret));
 		return _ret;
 	}
 	deprecated("ISocialFeedUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final Windows.Foundation.IAsyncAction CommitAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialFeedUpdater).abi_CommitAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.Provider.ISocialFeedUpdater)this.asInterface(uuid("7a0c0aa7-ed89-4bd5-a8d9-15f4d9861c10"))).abi_CommitAsync(&_ret));
 		return _ret;
 	}
 }
@@ -168,38 +168,38 @@ interface SocialInfoProviderManager
 	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.SocialInfo.Provider.SocialFeedUpdater) CreateSocialFeedUpdaterAsync(Windows.ApplicationModel.SocialInfo.SocialFeedKind kind, Windows.ApplicationModel.SocialInfo.SocialFeedUpdateMode mode, HSTRING ownerRemoteId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.SocialInfo.Provider.SocialFeedUpdater) _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialInfoProviderManagerStatics).abi_CreateSocialFeedUpdaterAsync(kind, mode, ownerRemoteId, &_ret));
+		Debug.OK(staticInstance.abi_CreateSocialFeedUpdaterAsync(kind, mode, ownerRemoteId, &_ret));
 		return _ret;
 	}
 	deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")
 	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.SocialInfo.Provider.SocialDashboardItemUpdater) CreateDashboardItemUpdaterAsync(HSTRING ownerRemoteId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.SocialInfo.Provider.SocialDashboardItemUpdater) _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialInfoProviderManagerStatics).abi_CreateDashboardItemUpdaterAsync(ownerRemoteId, &_ret));
+		Debug.OK(staticInstance.abi_CreateDashboardItemUpdaterAsync(ownerRemoteId, &_ret));
 		return _ret;
 	}
 	deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")
 	static void UpdateBadgeCountValue(HSTRING itemRemoteId, INT32 newCount)
 	{
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialInfoProviderManagerStatics).abi_UpdateBadgeCountValue(itemRemoteId, newCount));
+		Debug.OK(staticInstance.abi_UpdateBadgeCountValue(itemRemoteId, newCount));
 	}
 	deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")
 	static void ReportNewContentAvailable(HSTRING contactRemoteId, Windows.ApplicationModel.SocialInfo.SocialFeedKind kind)
 	{
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialInfoProviderManagerStatics).abi_ReportNewContentAvailable(contactRemoteId, kind));
+		Debug.OK(staticInstance.abi_ReportNewContentAvailable(contactRemoteId, kind));
 	}
 	deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")
 	static Windows.Foundation.IAsyncOperation!(bool) ProvisionAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialInfoProviderManagerStatics).abi_ProvisionAsync(&_ret));
+		Debug.OK(staticInstance.abi_ProvisionAsync(&_ret));
 		return _ret;
 	}
 	deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")
 	static Windows.Foundation.IAsyncAction DeprovisionAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.SocialInfo.Provider.ISocialInfoProviderManagerStatics).abi_DeprovisionAsync(&_ret));
+		Debug.OK(staticInstance.abi_DeprovisionAsync(&_ret));
 		return _ret;
 	}
 }

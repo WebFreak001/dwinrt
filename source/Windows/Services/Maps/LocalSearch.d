@@ -89,49 +89,49 @@ interface LocalCategories
 	static HSTRING BankAndCreditUnions()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.LocalSearch.ILocalCategoriesStatics).get_BankAndCreditUnions(&_ret));
+		Debug.OK(staticInstance.get_BankAndCreditUnions(&_ret));
 		return _ret;
 	}
 	static HSTRING EatDrink()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.LocalSearch.ILocalCategoriesStatics).get_EatDrink(&_ret));
+		Debug.OK(staticInstance.get_EatDrink(&_ret));
 		return _ret;
 	}
 	static HSTRING Hospitals()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.LocalSearch.ILocalCategoriesStatics).get_Hospitals(&_ret));
+		Debug.OK(staticInstance.get_Hospitals(&_ret));
 		return _ret;
 	}
 	static HSTRING HotelsAndMotels()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.LocalSearch.ILocalCategoriesStatics).get_HotelsAndMotels(&_ret));
+		Debug.OK(staticInstance.get_HotelsAndMotels(&_ret));
 		return _ret;
 	}
 	static HSTRING All()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.LocalSearch.ILocalCategoriesStatics).get_All(&_ret));
+		Debug.OK(staticInstance.get_All(&_ret));
 		return _ret;
 	}
 	static HSTRING Parking()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.LocalSearch.ILocalCategoriesStatics).get_Parking(&_ret));
+		Debug.OK(staticInstance.get_Parking(&_ret));
 		return _ret;
 	}
 	static HSTRING SeeDo()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.LocalSearch.ILocalCategoriesStatics).get_SeeDo(&_ret));
+		Debug.OK(staticInstance.get_SeeDo(&_ret));
 		return _ret;
 	}
 	static HSTRING Shop()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.LocalSearch.ILocalCategoriesStatics).get_Shop(&_ret));
+		Debug.OK(staticInstance.get_Shop(&_ret));
 		return _ret;
 	}
 }
@@ -142,61 +142,61 @@ extern(Windows):
 	final Windows.Services.Maps.MapAddress Address()
 	{
 		Windows.Services.Maps.MapAddress _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocation).get_Address(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocation)this.asInterface(uuid("bb0fe9ab-4502-4f2c-94a9-0d60de0e2163"))).get_Address(&_ret));
 		return _ret;
 	}
 	final HSTRING Identifier()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocation).get_Identifier(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocation)this.asInterface(uuid("bb0fe9ab-4502-4f2c-94a9-0d60de0e2163"))).get_Identifier(&_ret));
 		return _ret;
 	}
 	final HSTRING Description()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocation).get_Description(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocation)this.asInterface(uuid("bb0fe9ab-4502-4f2c-94a9-0d60de0e2163"))).get_Description(&_ret));
 		return _ret;
 	}
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocation).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocation)this.asInterface(uuid("bb0fe9ab-4502-4f2c-94a9-0d60de0e2163"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.Geopoint Point()
 	{
 		Windows.Devices.Geolocation.Geopoint _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocation).get_Point(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocation)this.asInterface(uuid("bb0fe9ab-4502-4f2c-94a9-0d60de0e2163"))).get_Point(&_ret));
 		return _ret;
 	}
 	final HSTRING PhoneNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocation).get_PhoneNumber(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocation)this.asInterface(uuid("bb0fe9ab-4502-4f2c-94a9-0d60de0e2163"))).get_PhoneNumber(&_ret));
 		return _ret;
 	}
 	final HSTRING DataAttribution()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocation).get_DataAttribution(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocation)this.asInterface(uuid("bb0fe9ab-4502-4f2c-94a9-0d60de0e2163"))).get_DataAttribution(&_ret));
 		return _ret;
 	}
 	final HSTRING Category()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocation2).get_Category(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocation2)this.asInterface(uuid("6e9e307c-ecb5-4ffc-bb8c-ba50ba8c2dc6"))).get_Category(&_ret));
 		return _ret;
 	}
 	final Windows.Services.Maps.LocalSearch.LocalLocationRatingInfo RatingInfo()
 	{
 		Windows.Services.Maps.LocalSearch.LocalLocationRatingInfo _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocation2).get_RatingInfo(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocation2)this.asInterface(uuid("6e9e307c-ecb5-4ffc-bb8c-ba50ba8c2dc6"))).get_RatingInfo(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.LocalSearch.LocalLocationHoursOfOperationItem) HoursOfOperation()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.LocalSearch.LocalLocationHoursOfOperationItem) _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocation2).get_HoursOfOperation(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocation2)this.asInterface(uuid("6e9e307c-ecb5-4ffc-bb8c-ba50ba8c2dc6"))).get_HoursOfOperation(&_ret));
 		return _ret;
 	}
 }
@@ -212,7 +212,7 @@ interface LocalLocationFinder
 	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.LocalSearch.LocalLocationFinderResult) FindLocalLocationsAsync(HSTRING searchTerm, Windows.Devices.Geolocation.Geocircle searchArea, HSTRING localCategory, UINT32 maxResults)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.LocalSearch.LocalLocationFinderResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.LocalSearch.ILocalLocationFinderStatics).abi_FindLocalLocationsAsync(searchTerm, searchArea, localCategory, maxResults, &_ret));
+		Debug.OK(staticInstance.abi_FindLocalLocationsAsync(searchTerm, searchArea, localCategory, maxResults, &_ret));
 		return _ret;
 	}
 }
@@ -223,13 +223,13 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.LocalSearch.LocalLocation) LocalLocations()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.LocalSearch.LocalLocation) _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocationFinderResult).get_LocalLocations(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocationFinderResult)this.asInterface(uuid("d09b6cc6-f338-4191-9fd8-5440b9a68f52"))).get_LocalLocations(&_ret));
 		return _ret;
 	}
 	final Windows.Services.Maps.LocalSearch.LocalLocationFinderStatus Status()
 	{
 		Windows.Services.Maps.LocalSearch.LocalLocationFinderStatus _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocationFinderResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocationFinderResult)this.asInterface(uuid("d09b6cc6-f338-4191-9fd8-5440b9a68f52"))).get_Status(&_ret));
 		return _ret;
 	}
 }
@@ -240,19 +240,19 @@ extern(Windows):
 	final Windows.Globalization.DayOfWeek Day()
 	{
 		Windows.Globalization.DayOfWeek _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocationHoursOfOperationItem).get_Day(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocationHoursOfOperationItem)this.asInterface(uuid("23548c72-a1c7-43f1-a4f0-1091c39ec640"))).get_Day(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Start()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocationHoursOfOperationItem).get_Start(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocationHoursOfOperationItem)this.asInterface(uuid("23548c72-a1c7-43f1-a4f0-1091c39ec640"))).get_Start(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Span()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocationHoursOfOperationItem).get_Span(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocationHoursOfOperationItem)this.asInterface(uuid("23548c72-a1c7-43f1-a4f0-1091c39ec640"))).get_Span(&_ret));
 		return _ret;
 	}
 }
@@ -263,19 +263,19 @@ extern(Windows):
 	final Windows.Foundation.IReference!(double) AggregateRating()
 	{
 		Windows.Foundation.IReference!(double) _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocationRatingInfo).get_AggregateRating(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocationRatingInfo)this.asInterface(uuid("cb1dab56-3354-4311-8bc0-a2d4d5eb806e"))).get_AggregateRating(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(INT32) RatingCount()
 	{
 		Windows.Foundation.IReference!(INT32) _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocationRatingInfo).get_RatingCount(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocationRatingInfo)this.asInterface(uuid("cb1dab56-3354-4311-8bc0-a2d4d5eb806e"))).get_RatingCount(&_ret));
 		return _ret;
 	}
 	final HSTRING ProviderIdentifier()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.LocalSearch.ILocalLocationRatingInfo).get_ProviderIdentifier(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.LocalSearch.ILocalLocationRatingInfo)this.asInterface(uuid("cb1dab56-3354-4311-8bc0-a2d4d5eb806e"))).get_ProviderIdentifier(&_ret));
 		return _ret;
 	}
 }

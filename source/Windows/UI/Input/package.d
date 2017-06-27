@@ -598,19 +598,19 @@ extern(Windows):
 	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
 	{
 		Windows.Devices.Input.PointerDeviceType _ret;
-		Debug.OK(this.as!(Windows.UI.Input.ICrossSlidingEventArgs).get_PointerDeviceType(&_ret));
+		Debug.OK((cast(Windows.UI.Input.ICrossSlidingEventArgs)this.asInterface(uuid("e9374738-6f88-41d9-8720-78e08e398349"))).get_PointerDeviceType(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point Position()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Input.ICrossSlidingEventArgs).get_Position(&_ret));
+		Debug.OK((cast(Windows.UI.Input.ICrossSlidingEventArgs)this.asInterface(uuid("e9374738-6f88-41d9-8720-78e08e398349"))).get_Position(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.CrossSlidingState CrossSlidingState()
 	{
 		Windows.UI.Input.CrossSlidingState _ret;
-		Debug.OK(this.as!(Windows.UI.Input.ICrossSlidingEventArgs).get_CrossSlidingState(&_ret));
+		Debug.OK((cast(Windows.UI.Input.ICrossSlidingEventArgs)this.asInterface(uuid("e9374738-6f88-41d9-8720-78e08e398349"))).get_CrossSlidingState(&_ret));
 		return _ret;
 	}
 }
@@ -621,19 +621,19 @@ extern(Windows):
 	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
 	{
 		Windows.Devices.Input.PointerDeviceType _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IDraggingEventArgs).get_PointerDeviceType(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IDraggingEventArgs)this.asInterface(uuid("1c905384-083c-4bd3-b559-179cddeb33ec"))).get_PointerDeviceType(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point Position()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IDraggingEventArgs).get_Position(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IDraggingEventArgs)this.asInterface(uuid("1c905384-083c-4bd3-b559-179cddeb33ec"))).get_Position(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.DraggingState DraggingState()
 	{
 		Windows.UI.Input.DraggingState _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IDraggingEventArgs).get_DraggingState(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IDraggingEventArgs)this.asInterface(uuid("1c905384-083c-4bd3-b559-179cddeb33ec"))).get_DraggingState(&_ret));
 		return _ret;
 	}
 }
@@ -644,32 +644,32 @@ extern(Windows):
 	final EventRegistrationToken OnStarting(void delegate(Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IEdgeGesture).add_Starting(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs), Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IEdgeGesture)this.asInterface(uuid("580d5292-2ab1-49aa-a7f0-33bd3f8df9f1"))).add_Starting(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs), Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStarting(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IEdgeGesture).remove_Starting(token));
+		Debug.OK((cast(Windows.UI.Input.IEdgeGesture)this.asInterface(uuid("580d5292-2ab1-49aa-a7f0-33bd3f8df9f1"))).remove_Starting(token));
 	}
 	final EventRegistrationToken OnCompleted(void delegate(Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IEdgeGesture).add_Completed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs), Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IEdgeGesture)this.asInterface(uuid("580d5292-2ab1-49aa-a7f0-33bd3f8df9f1"))).add_Completed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs), Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IEdgeGesture).remove_Completed(token));
+		Debug.OK((cast(Windows.UI.Input.IEdgeGesture)this.asInterface(uuid("580d5292-2ab1-49aa-a7f0-33bd3f8df9f1"))).remove_Completed(token));
 	}
 	final EventRegistrationToken OnCanceled(void delegate(Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IEdgeGesture).add_Canceled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs), Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IEdgeGesture)this.asInterface(uuid("580d5292-2ab1-49aa-a7f0-33bd3f8df9f1"))).add_Canceled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs), Windows.UI.Input.EdgeGesture, Windows.UI.Input.EdgeGestureEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCanceled(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IEdgeGesture).remove_Canceled(token));
+		Debug.OK((cast(Windows.UI.Input.IEdgeGesture)this.asInterface(uuid("580d5292-2ab1-49aa-a7f0-33bd3f8df9f1"))).remove_Canceled(token));
 	}
 
 	private static Windows.UI.Input.IEdgeGestureStatics _staticInstance;
@@ -681,7 +681,7 @@ extern(Windows):
 	static Windows.UI.Input.EdgeGesture GetForCurrentView()
 	{
 		Windows.UI.Input.EdgeGesture _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Input.IEdgeGestureStatics).abi_GetForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 }
@@ -692,7 +692,7 @@ extern(Windows):
 	final Windows.UI.Input.EdgeGestureKind Kind()
 	{
 		Windows.UI.Input.EdgeGestureKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IEdgeGestureEventArgs).get_Kind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IEdgeGestureEventArgs)this.asInterface(uuid("44fa4a24-2d09-42e1-8b5e-368208796a4c"))).get_Kind(&_ret));
 		return _ret;
 	}
 }
@@ -703,296 +703,296 @@ extern(Windows):
 	final Windows.UI.Input.GestureSettings GestureSettings()
 	{
 		Windows.UI.Input.GestureSettings _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_GestureSettings(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).get_GestureSettings(&_ret));
 		return _ret;
 	}
 	final void GestureSettings(Windows.UI.Input.GestureSettings value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_GestureSettings(value));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).set_GestureSettings(value));
 	}
 	final bool IsInertial()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_IsInertial(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).get_IsInertial(&_ret));
 		return _ret;
 	}
 	final bool IsActive()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_IsActive(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).get_IsActive(&_ret));
 		return _ret;
 	}
 	final bool ShowGestureFeedback()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_ShowGestureFeedback(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).get_ShowGestureFeedback(&_ret));
 		return _ret;
 	}
 	final void ShowGestureFeedback(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_ShowGestureFeedback(value));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).set_ShowGestureFeedback(value));
 	}
 	final Windows.Foundation.Point PivotCenter()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_PivotCenter(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).get_PivotCenter(&_ret));
 		return _ret;
 	}
 	final void PivotCenter(Windows.Foundation.Point value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_PivotCenter(value));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).set_PivotCenter(value));
 	}
 	final float PivotRadius()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_PivotRadius(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).get_PivotRadius(&_ret));
 		return _ret;
 	}
 	final void PivotRadius(float value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_PivotRadius(value));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).set_PivotRadius(value));
 	}
 	final float InertiaTranslationDeceleration()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_InertiaTranslationDeceleration(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).get_InertiaTranslationDeceleration(&_ret));
 		return _ret;
 	}
 	final void InertiaTranslationDeceleration(float value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_InertiaTranslationDeceleration(value));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).set_InertiaTranslationDeceleration(value));
 	}
 	final float InertiaRotationDeceleration()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_InertiaRotationDeceleration(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).get_InertiaRotationDeceleration(&_ret));
 		return _ret;
 	}
 	final void InertiaRotationDeceleration(float value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_InertiaRotationDeceleration(value));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).set_InertiaRotationDeceleration(value));
 	}
 	final float InertiaExpansionDeceleration()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_InertiaExpansionDeceleration(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).get_InertiaExpansionDeceleration(&_ret));
 		return _ret;
 	}
 	final void InertiaExpansionDeceleration(float value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_InertiaExpansionDeceleration(value));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).set_InertiaExpansionDeceleration(value));
 	}
 	final float InertiaTranslationDisplacement()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_InertiaTranslationDisplacement(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).get_InertiaTranslationDisplacement(&_ret));
 		return _ret;
 	}
 	final void InertiaTranslationDisplacement(float value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_InertiaTranslationDisplacement(value));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).set_InertiaTranslationDisplacement(value));
 	}
 	final float InertiaRotationAngle()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_InertiaRotationAngle(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).get_InertiaRotationAngle(&_ret));
 		return _ret;
 	}
 	final void InertiaRotationAngle(float value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_InertiaRotationAngle(value));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).set_InertiaRotationAngle(value));
 	}
 	final float InertiaExpansion()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_InertiaExpansion(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).get_InertiaExpansion(&_ret));
 		return _ret;
 	}
 	final void InertiaExpansion(float value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_InertiaExpansion(value));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).set_InertiaExpansion(value));
 	}
 	final bool ManipulationExact()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_ManipulationExact(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).get_ManipulationExact(&_ret));
 		return _ret;
 	}
 	final void ManipulationExact(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_ManipulationExact(value));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).set_ManipulationExact(value));
 	}
 	final Windows.UI.Input.CrossSlideThresholds CrossSlideThresholds()
 	{
 		Windows.UI.Input.CrossSlideThresholds _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_CrossSlideThresholds(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).get_CrossSlideThresholds(&_ret));
 		return _ret;
 	}
 	final void CrossSlideThresholds(Windows.UI.Input.CrossSlideThresholds value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_CrossSlideThresholds(value));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).set_CrossSlideThresholds(value));
 	}
 	final bool CrossSlideHorizontally()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_CrossSlideHorizontally(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).get_CrossSlideHorizontally(&_ret));
 		return _ret;
 	}
 	final void CrossSlideHorizontally(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_CrossSlideHorizontally(value));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).set_CrossSlideHorizontally(value));
 	}
 	final bool CrossSlideExact()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_CrossSlideExact(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).get_CrossSlideExact(&_ret));
 		return _ret;
 	}
 	final void CrossSlideExact(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_CrossSlideExact(value));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).set_CrossSlideExact(value));
 	}
 	final bool AutoProcessInertia()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_AutoProcessInertia(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).get_AutoProcessInertia(&_ret));
 		return _ret;
 	}
 	final void AutoProcessInertia(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).set_AutoProcessInertia(value));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).set_AutoProcessInertia(value));
 	}
 	final Windows.UI.Input.MouseWheelParameters MouseWheelParameters()
 	{
 		Windows.UI.Input.MouseWheelParameters _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).get_MouseWheelParameters(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).get_MouseWheelParameters(&_ret));
 		return _ret;
 	}
 	final bool CanBeDoubleTap(Windows.UI.Input.PointerPoint value)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).abi_CanBeDoubleTap(value, &_ret));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).abi_CanBeDoubleTap(value, &_ret));
 		return _ret;
 	}
 	final void ProcessDownEvent(Windows.UI.Input.PointerPoint value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).abi_ProcessDownEvent(value));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).abi_ProcessDownEvent(value));
 	}
 	final void ProcessMoveEvents(Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint) value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).abi_ProcessMoveEvents(value));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).abi_ProcessMoveEvents(value));
 	}
 	final void ProcessUpEvent(Windows.UI.Input.PointerPoint value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).abi_ProcessUpEvent(value));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).abi_ProcessUpEvent(value));
 	}
 	final void ProcessMouseWheelEvent(Windows.UI.Input.PointerPoint value, bool isShiftKeyDown, bool isControlKeyDown)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).abi_ProcessMouseWheelEvent(value, isShiftKeyDown, isControlKeyDown));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).abi_ProcessMouseWheelEvent(value, isShiftKeyDown, isControlKeyDown));
 	}
 	final void ProcessInertia()
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).abi_ProcessInertia());
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).abi_ProcessInertia());
 	}
 	final void CompleteGesture()
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).abi_CompleteGesture());
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).abi_CompleteGesture());
 	}
 	final EventRegistrationToken OnTapped(void delegate(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.TappedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).add_Tapped(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.TappedEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.TappedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).add_Tapped(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.TappedEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.TappedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTapped(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).remove_Tapped(cookie));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).remove_Tapped(cookie));
 	}
 	final EventRegistrationToken OnRightTapped(void delegate(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.RightTappedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).add_RightTapped(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.RightTappedEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.RightTappedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).add_RightTapped(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.RightTappedEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.RightTappedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRightTapped(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).remove_RightTapped(cookie));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).remove_RightTapped(cookie));
 	}
 	final EventRegistrationToken OnHolding(void delegate(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.HoldingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).add_Holding(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.HoldingEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.HoldingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).add_Holding(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.HoldingEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.HoldingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeHolding(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).remove_Holding(cookie));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).remove_Holding(cookie));
 	}
 	final EventRegistrationToken OnDragging(void delegate(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.DraggingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).add_Dragging(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.DraggingEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.DraggingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).add_Dragging(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.DraggingEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.DraggingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDragging(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).remove_Dragging(cookie));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).remove_Dragging(cookie));
 	}
 	final EventRegistrationToken OnManipulationStarted(void delegate(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationStartedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).add_ManipulationStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationStartedEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationStartedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).add_ManipulationStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationStartedEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationStartedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeManipulationStarted(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).remove_ManipulationStarted(cookie));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).remove_ManipulationStarted(cookie));
 	}
 	final EventRegistrationToken OnManipulationUpdated(void delegate(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationUpdatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).add_ManipulationUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationUpdatedEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationUpdatedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).add_ManipulationUpdated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationUpdatedEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationUpdatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeManipulationUpdated(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).remove_ManipulationUpdated(cookie));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).remove_ManipulationUpdated(cookie));
 	}
 	final EventRegistrationToken OnManipulationInertiaStarting(void delegate(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationInertiaStartingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).add_ManipulationInertiaStarting(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationInertiaStartingEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationInertiaStartingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).add_ManipulationInertiaStarting(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationInertiaStartingEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationInertiaStartingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeManipulationInertiaStarting(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).remove_ManipulationInertiaStarting(cookie));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).remove_ManipulationInertiaStarting(cookie));
 	}
 	final EventRegistrationToken OnManipulationCompleted(void delegate(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).add_ManipulationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationCompletedEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationCompletedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).add_ManipulationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationCompletedEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.ManipulationCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeManipulationCompleted(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).remove_ManipulationCompleted(cookie));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).remove_ManipulationCompleted(cookie));
 	}
 	final EventRegistrationToken OnCrossSliding(void delegate(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.CrossSlidingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).add_CrossSliding(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.CrossSlidingEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.CrossSlidingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).add_CrossSliding(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.GestureRecognizer, Windows.UI.Input.CrossSlidingEventArgs), Windows.UI.Input.GestureRecognizer, Windows.UI.Input.CrossSlidingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCrossSliding(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IGestureRecognizer).remove_CrossSliding(cookie));
+		Debug.OK((cast(Windows.UI.Input.IGestureRecognizer)this.asInterface(uuid("b47a37bf-3d6b-4f88-83e8-6dcb4012ffb0"))).remove_CrossSliding(cookie));
 	}
 	static GestureRecognizer New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(GestureRecognizer).abi_ActivateInstance(&ret));
-		return ret.as!(GestureRecognizer);
+		return cast(GestureRecognizer) ret;
 	}
 }
 
@@ -1002,19 +1002,19 @@ extern(Windows):
 	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
 	{
 		Windows.Devices.Input.PointerDeviceType _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IHoldingEventArgs).get_PointerDeviceType(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IHoldingEventArgs)this.asInterface(uuid("2bf755c5-e799-41b4-bb40-242f40959b71"))).get_PointerDeviceType(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point Position()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IHoldingEventArgs).get_Position(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IHoldingEventArgs)this.asInterface(uuid("2bf755c5-e799-41b4-bb40-242f40959b71"))).get_Position(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.HoldingState HoldingState()
 	{
 		Windows.UI.Input.HoldingState _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IHoldingEventArgs).get_HoldingState(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IHoldingEventArgs)this.asInterface(uuid("2bf755c5-e799-41b4-bb40-242f40959b71"))).get_HoldingState(&_ret));
 		return _ret;
 	}
 }
@@ -1025,32 +1025,32 @@ extern(Windows):
 	final bool IsInterceptionEnabledWhenInForeground()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IKeyboardDeliveryInterceptor).get_IsInterceptionEnabledWhenInForeground(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IKeyboardDeliveryInterceptor)this.asInterface(uuid("b4baf068-8f49-446c-8db5-8c0ffe85cc9e"))).get_IsInterceptionEnabledWhenInForeground(&_ret));
 		return _ret;
 	}
 	final void IsInterceptionEnabledWhenInForeground(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IKeyboardDeliveryInterceptor).set_IsInterceptionEnabledWhenInForeground(value));
+		Debug.OK((cast(Windows.UI.Input.IKeyboardDeliveryInterceptor)this.asInterface(uuid("b4baf068-8f49-446c-8db5-8c0ffe85cc9e"))).set_IsInterceptionEnabledWhenInForeground(value));
 	}
 	final EventRegistrationToken OnKeyDown(void delegate(Windows.UI.Input.KeyboardDeliveryInterceptor, Windows.UI.Core.KeyEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IKeyboardDeliveryInterceptor).add_KeyDown(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.KeyboardDeliveryInterceptor, Windows.UI.Core.KeyEventArgs), Windows.UI.Input.KeyboardDeliveryInterceptor, Windows.UI.Core.KeyEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IKeyboardDeliveryInterceptor)this.asInterface(uuid("b4baf068-8f49-446c-8db5-8c0ffe85cc9e"))).add_KeyDown(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.KeyboardDeliveryInterceptor, Windows.UI.Core.KeyEventArgs), Windows.UI.Input.KeyboardDeliveryInterceptor, Windows.UI.Core.KeyEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeKeyDown(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IKeyboardDeliveryInterceptor).remove_KeyDown(token));
+		Debug.OK((cast(Windows.UI.Input.IKeyboardDeliveryInterceptor)this.asInterface(uuid("b4baf068-8f49-446c-8db5-8c0ffe85cc9e"))).remove_KeyDown(token));
 	}
 	final EventRegistrationToken OnKeyUp(void delegate(Windows.UI.Input.KeyboardDeliveryInterceptor, Windows.UI.Core.KeyEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IKeyboardDeliveryInterceptor).add_KeyUp(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.KeyboardDeliveryInterceptor, Windows.UI.Core.KeyEventArgs), Windows.UI.Input.KeyboardDeliveryInterceptor, Windows.UI.Core.KeyEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IKeyboardDeliveryInterceptor)this.asInterface(uuid("b4baf068-8f49-446c-8db5-8c0ffe85cc9e"))).add_KeyUp(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.KeyboardDeliveryInterceptor, Windows.UI.Core.KeyEventArgs), Windows.UI.Input.KeyboardDeliveryInterceptor, Windows.UI.Core.KeyEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeKeyUp(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IKeyboardDeliveryInterceptor).remove_KeyUp(token));
+		Debug.OK((cast(Windows.UI.Input.IKeyboardDeliveryInterceptor)this.asInterface(uuid("b4baf068-8f49-446c-8db5-8c0ffe85cc9e"))).remove_KeyUp(token));
 	}
 
 	private static Windows.UI.Input.IKeyboardDeliveryInterceptorStatics _staticInstance;
@@ -1062,7 +1062,7 @@ extern(Windows):
 	static Windows.UI.Input.KeyboardDeliveryInterceptor GetForCurrentView()
 	{
 		Windows.UI.Input.KeyboardDeliveryInterceptor _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Input.IKeyboardDeliveryInterceptorStatics).abi_GetForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 }
@@ -1073,25 +1073,25 @@ extern(Windows):
 	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
 	{
 		Windows.Devices.Input.PointerDeviceType _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IManipulationCompletedEventArgs).get_PointerDeviceType(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IManipulationCompletedEventArgs)this.asInterface(uuid("b34ab22b-d19b-46ff-9f38-dec7754bb9e7"))).get_PointerDeviceType(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point Position()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IManipulationCompletedEventArgs).get_Position(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IManipulationCompletedEventArgs)this.asInterface(uuid("b34ab22b-d19b-46ff-9f38-dec7754bb9e7"))).get_Position(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.ManipulationDelta Cumulative()
 	{
 		Windows.UI.Input.ManipulationDelta _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IManipulationCompletedEventArgs).get_Cumulative(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IManipulationCompletedEventArgs)this.asInterface(uuid("b34ab22b-d19b-46ff-9f38-dec7754bb9e7"))).get_Cumulative(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.ManipulationVelocities Velocities()
 	{
 		Windows.UI.Input.ManipulationVelocities _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IManipulationCompletedEventArgs).get_Velocities(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IManipulationCompletedEventArgs)this.asInterface(uuid("b34ab22b-d19b-46ff-9f38-dec7754bb9e7"))).get_Velocities(&_ret));
 		return _ret;
 	}
 }
@@ -1102,31 +1102,31 @@ extern(Windows):
 	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
 	{
 		Windows.Devices.Input.PointerDeviceType _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IManipulationInertiaStartingEventArgs).get_PointerDeviceType(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IManipulationInertiaStartingEventArgs)this.asInterface(uuid("dd37a898-26bf-467a-9ce5-ccf3fb11371e"))).get_PointerDeviceType(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point Position()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IManipulationInertiaStartingEventArgs).get_Position(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IManipulationInertiaStartingEventArgs)this.asInterface(uuid("dd37a898-26bf-467a-9ce5-ccf3fb11371e"))).get_Position(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.ManipulationDelta Delta()
 	{
 		Windows.UI.Input.ManipulationDelta _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IManipulationInertiaStartingEventArgs).get_Delta(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IManipulationInertiaStartingEventArgs)this.asInterface(uuid("dd37a898-26bf-467a-9ce5-ccf3fb11371e"))).get_Delta(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.ManipulationDelta Cumulative()
 	{
 		Windows.UI.Input.ManipulationDelta _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IManipulationInertiaStartingEventArgs).get_Cumulative(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IManipulationInertiaStartingEventArgs)this.asInterface(uuid("dd37a898-26bf-467a-9ce5-ccf3fb11371e"))).get_Cumulative(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.ManipulationVelocities Velocities()
 	{
 		Windows.UI.Input.ManipulationVelocities _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IManipulationInertiaStartingEventArgs).get_Velocities(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IManipulationInertiaStartingEventArgs)this.asInterface(uuid("dd37a898-26bf-467a-9ce5-ccf3fb11371e"))).get_Velocities(&_ret));
 		return _ret;
 	}
 }
@@ -1137,19 +1137,19 @@ extern(Windows):
 	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
 	{
 		Windows.Devices.Input.PointerDeviceType _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IManipulationStartedEventArgs).get_PointerDeviceType(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IManipulationStartedEventArgs)this.asInterface(uuid("ddec873e-cfce-4932-8c1d-3c3d011a34c0"))).get_PointerDeviceType(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point Position()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IManipulationStartedEventArgs).get_Position(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IManipulationStartedEventArgs)this.asInterface(uuid("ddec873e-cfce-4932-8c1d-3c3d011a34c0"))).get_Position(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.ManipulationDelta Cumulative()
 	{
 		Windows.UI.Input.ManipulationDelta _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IManipulationStartedEventArgs).get_Cumulative(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IManipulationStartedEventArgs)this.asInterface(uuid("ddec873e-cfce-4932-8c1d-3c3d011a34c0"))).get_Cumulative(&_ret));
 		return _ret;
 	}
 }
@@ -1160,31 +1160,31 @@ extern(Windows):
 	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
 	{
 		Windows.Devices.Input.PointerDeviceType _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IManipulationUpdatedEventArgs).get_PointerDeviceType(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IManipulationUpdatedEventArgs)this.asInterface(uuid("cb354ce5-abb8-4f9f-b3ce-8181aa61ad82"))).get_PointerDeviceType(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point Position()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IManipulationUpdatedEventArgs).get_Position(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IManipulationUpdatedEventArgs)this.asInterface(uuid("cb354ce5-abb8-4f9f-b3ce-8181aa61ad82"))).get_Position(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.ManipulationDelta Delta()
 	{
 		Windows.UI.Input.ManipulationDelta _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IManipulationUpdatedEventArgs).get_Delta(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IManipulationUpdatedEventArgs)this.asInterface(uuid("cb354ce5-abb8-4f9f-b3ce-8181aa61ad82"))).get_Delta(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.ManipulationDelta Cumulative()
 	{
 		Windows.UI.Input.ManipulationDelta _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IManipulationUpdatedEventArgs).get_Cumulative(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IManipulationUpdatedEventArgs)this.asInterface(uuid("cb354ce5-abb8-4f9f-b3ce-8181aa61ad82"))).get_Cumulative(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.ManipulationVelocities Velocities()
 	{
 		Windows.UI.Input.ManipulationVelocities _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IManipulationUpdatedEventArgs).get_Velocities(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IManipulationUpdatedEventArgs)this.asInterface(uuid("cb354ce5-abb8-4f9f-b3ce-8181aa61ad82"))).get_Velocities(&_ret));
 		return _ret;
 	}
 }
@@ -1195,42 +1195,42 @@ extern(Windows):
 	final Windows.Foundation.Point CharTranslation()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IMouseWheelParameters).get_CharTranslation(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IMouseWheelParameters)this.asInterface(uuid("ead0ca44-9ded-4037-8149-5e4cc2564468"))).get_CharTranslation(&_ret));
 		return _ret;
 	}
 	final void CharTranslation(Windows.Foundation.Point value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IMouseWheelParameters).set_CharTranslation(value));
+		Debug.OK((cast(Windows.UI.Input.IMouseWheelParameters)this.asInterface(uuid("ead0ca44-9ded-4037-8149-5e4cc2564468"))).set_CharTranslation(value));
 	}
 	final float DeltaScale()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IMouseWheelParameters).get_DeltaScale(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IMouseWheelParameters)this.asInterface(uuid("ead0ca44-9ded-4037-8149-5e4cc2564468"))).get_DeltaScale(&_ret));
 		return _ret;
 	}
 	final void DeltaScale(float value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IMouseWheelParameters).set_DeltaScale(value));
+		Debug.OK((cast(Windows.UI.Input.IMouseWheelParameters)this.asInterface(uuid("ead0ca44-9ded-4037-8149-5e4cc2564468"))).set_DeltaScale(value));
 	}
 	final float DeltaRotationAngle()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IMouseWheelParameters).get_DeltaRotationAngle(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IMouseWheelParameters)this.asInterface(uuid("ead0ca44-9ded-4037-8149-5e4cc2564468"))).get_DeltaRotationAngle(&_ret));
 		return _ret;
 	}
 	final void DeltaRotationAngle(float value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IMouseWheelParameters).set_DeltaRotationAngle(value));
+		Debug.OK((cast(Windows.UI.Input.IMouseWheelParameters)this.asInterface(uuid("ead0ca44-9ded-4037-8149-5e4cc2564468"))).set_DeltaRotationAngle(value));
 	}
 	final Windows.Foundation.Point PageTranslation()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IMouseWheelParameters).get_PageTranslation(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IMouseWheelParameters)this.asInterface(uuid("ead0ca44-9ded-4037-8149-5e4cc2564468"))).get_PageTranslation(&_ret));
 		return _ret;
 	}
 	final void PageTranslation(Windows.Foundation.Point value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IMouseWheelParameters).set_PageTranslation(value));
+		Debug.OK((cast(Windows.UI.Input.IMouseWheelParameters)this.asInterface(uuid("ead0ca44-9ded-4037-8149-5e4cc2564468"))).set_PageTranslation(value));
 	}
 }
 
@@ -1240,49 +1240,49 @@ extern(Windows):
 	final Windows.Devices.Input.PointerDevice PointerDevice()
 	{
 		Windows.Devices.Input.PointerDevice _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPoint).get_PointerDevice(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPoint)this.asInterface(uuid("e995317d-7296-42d9-8233-c5be73b74a4a"))).get_PointerDevice(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point Position()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPoint).get_Position(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPoint)this.asInterface(uuid("e995317d-7296-42d9-8233-c5be73b74a4a"))).get_Position(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point RawPosition()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPoint).get_RawPosition(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPoint)this.asInterface(uuid("e995317d-7296-42d9-8233-c5be73b74a4a"))).get_RawPosition(&_ret));
 		return _ret;
 	}
 	final UINT32 PointerId()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPoint).get_PointerId(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPoint)this.asInterface(uuid("e995317d-7296-42d9-8233-c5be73b74a4a"))).get_PointerId(&_ret));
 		return _ret;
 	}
 	final UINT32 FrameId()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPoint).get_FrameId(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPoint)this.asInterface(uuid("e995317d-7296-42d9-8233-c5be73b74a4a"))).get_FrameId(&_ret));
 		return _ret;
 	}
 	final ulong Timestamp()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPoint).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPoint)this.asInterface(uuid("e995317d-7296-42d9-8233-c5be73b74a4a"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final bool IsInContact()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPoint).get_IsInContact(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPoint)this.asInterface(uuid("e995317d-7296-42d9-8233-c5be73b74a4a"))).get_IsInContact(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.PointerPointProperties Properties()
 	{
 		Windows.UI.Input.PointerPointProperties _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPoint).get_Properties(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPoint)this.asInterface(uuid("e995317d-7296-42d9-8233-c5be73b74a4a"))).get_Properties(&_ret));
 		return _ret;
 	}
 
@@ -1295,25 +1295,25 @@ extern(Windows):
 	static Windows.UI.Input.PointerPoint GetCurrentPoint(UINT32 pointerId)
 	{
 		Windows.UI.Input.PointerPoint _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Input.IPointerPointStatics).abi_GetCurrentPoint(pointerId, &_ret));
+		Debug.OK(staticInstance.abi_GetCurrentPoint(pointerId, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint) GetIntermediatePoints(UINT32 pointerId)
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint) _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Input.IPointerPointStatics).abi_GetIntermediatePoints(pointerId, &_ret));
+		Debug.OK(staticInstance.abi_GetIntermediatePoints(pointerId, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Input.PointerPoint GetCurrentPointTransformed(UINT32 pointerId, Windows.UI.Input.IPointerPointTransform transform)
 	{
 		Windows.UI.Input.PointerPoint _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Input.IPointerPointStatics).abi_GetCurrentPointTransformed(pointerId, transform, &_ret));
+		Debug.OK(staticInstance.abi_GetCurrentPointTransformed(pointerId, transform, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint) GetIntermediatePointsTransformed(UINT32 pointerId, Windows.UI.Input.IPointerPointTransform transform)
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint) _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Input.IPointerPointStatics).abi_GetIntermediatePointsTransformed(pointerId, transform, &_ret));
+		Debug.OK(staticInstance.abi_GetIntermediatePointsTransformed(pointerId, transform, &_ret));
 		return _ret;
 	}
 }
@@ -1324,151 +1324,151 @@ extern(Windows):
 	final float Pressure()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_Pressure(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).get_Pressure(&_ret));
 		return _ret;
 	}
 	final bool IsInverted()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsInverted(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).get_IsInverted(&_ret));
 		return _ret;
 	}
 	final bool IsEraser()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsEraser(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).get_IsEraser(&_ret));
 		return _ret;
 	}
 	final float Orientation()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_Orientation(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).get_Orientation(&_ret));
 		return _ret;
 	}
 	final float XTilt()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_XTilt(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).get_XTilt(&_ret));
 		return _ret;
 	}
 	final float YTilt()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_YTilt(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).get_YTilt(&_ret));
 		return _ret;
 	}
 	final float Twist()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_Twist(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).get_Twist(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect ContactRect()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_ContactRect(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).get_ContactRect(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect ContactRectRaw()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_ContactRectRaw(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).get_ContactRectRaw(&_ret));
 		return _ret;
 	}
 	final bool TouchConfidence()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_TouchConfidence(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).get_TouchConfidence(&_ret));
 		return _ret;
 	}
 	final bool IsLeftButtonPressed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsLeftButtonPressed(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).get_IsLeftButtonPressed(&_ret));
 		return _ret;
 	}
 	final bool IsRightButtonPressed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsRightButtonPressed(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).get_IsRightButtonPressed(&_ret));
 		return _ret;
 	}
 	final bool IsMiddleButtonPressed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsMiddleButtonPressed(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).get_IsMiddleButtonPressed(&_ret));
 		return _ret;
 	}
 	final INT32 MouseWheelDelta()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_MouseWheelDelta(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).get_MouseWheelDelta(&_ret));
 		return _ret;
 	}
 	final bool IsHorizontalMouseWheel()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsHorizontalMouseWheel(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).get_IsHorizontalMouseWheel(&_ret));
 		return _ret;
 	}
 	final bool IsPrimary()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsPrimary(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).get_IsPrimary(&_ret));
 		return _ret;
 	}
 	final bool IsInRange()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsInRange(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).get_IsInRange(&_ret));
 		return _ret;
 	}
 	final bool IsCanceled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsCanceled(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).get_IsCanceled(&_ret));
 		return _ret;
 	}
 	final bool IsBarrelButtonPressed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsBarrelButtonPressed(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).get_IsBarrelButtonPressed(&_ret));
 		return _ret;
 	}
 	final bool IsXButton1Pressed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsXButton1Pressed(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).get_IsXButton1Pressed(&_ret));
 		return _ret;
 	}
 	final bool IsXButton2Pressed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_IsXButton2Pressed(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).get_IsXButton2Pressed(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.PointerUpdateKind PointerUpdateKind()
 	{
 		Windows.UI.Input.PointerUpdateKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).get_PointerUpdateKind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).get_PointerUpdateKind(&_ret));
 		return _ret;
 	}
 	final bool HasUsage(UINT32 usagePage, UINT32 usageId)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).abi_HasUsage(usagePage, usageId, &_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).abi_HasUsage(usagePage, usageId, &_ret));
 		return _ret;
 	}
 	final INT32 GetUsageValue(UINT32 usagePage, UINT32 usageId)
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties).abi_GetUsageValue(usagePage, usageId, &_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties)this.asInterface(uuid("c79d8a4b-c163-4ee7-803f-67ce79f9972d"))).abi_GetUsageValue(usagePage, usageId, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(float) ZDistance()
 	{
 		Windows.Foundation.IReference!(float) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerPointProperties2).get_ZDistance(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerPointProperties2)this.asInterface(uuid("22c3433a-c83b-41c0-a296-5e232d64d6af"))).get_ZDistance(&_ret));
 		return _ret;
 	}
 }
@@ -1478,22 +1478,22 @@ interface PointerVisualizationSettings : Windows.UI.Input.IPointerVisualizationS
 extern(Windows):
 	final void IsContactFeedbackEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IPointerVisualizationSettings).set_IsContactFeedbackEnabled(value));
+		Debug.OK((cast(Windows.UI.Input.IPointerVisualizationSettings)this.asInterface(uuid("4d1e6461-84f7-499d-bd91-2a36e2b7aaa2"))).set_IsContactFeedbackEnabled(value));
 	}
 	final bool IsContactFeedbackEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerVisualizationSettings).get_IsContactFeedbackEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerVisualizationSettings)this.asInterface(uuid("4d1e6461-84f7-499d-bd91-2a36e2b7aaa2"))).get_IsContactFeedbackEnabled(&_ret));
 		return _ret;
 	}
 	final void IsBarrelButtonFeedbackEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IPointerVisualizationSettings).set_IsBarrelButtonFeedbackEnabled(value));
+		Debug.OK((cast(Windows.UI.Input.IPointerVisualizationSettings)this.asInterface(uuid("4d1e6461-84f7-499d-bd91-2a36e2b7aaa2"))).set_IsBarrelButtonFeedbackEnabled(value));
 	}
 	final bool IsBarrelButtonFeedbackEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IPointerVisualizationSettings).get_IsBarrelButtonFeedbackEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IPointerVisualizationSettings)this.asInterface(uuid("4d1e6461-84f7-499d-bd91-2a36e2b7aaa2"))).get_IsBarrelButtonFeedbackEnabled(&_ret));
 		return _ret;
 	}
 
@@ -1506,7 +1506,7 @@ extern(Windows):
 	static Windows.UI.Input.PointerVisualizationSettings GetForCurrentView()
 	{
 		Windows.UI.Input.PointerVisualizationSettings _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Input.IPointerVisualizationSettingsStatics).abi_GetForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 }
@@ -1517,128 +1517,128 @@ extern(Windows):
 	final Windows.UI.Input.RadialControllerMenu Menu()
 	{
 		Windows.UI.Input.RadialControllerMenu _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController).get_Menu(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialController)this.asInterface(uuid("3055d1c8-df51-43d4-b23b-0e1037467a09"))).get_Menu(&_ret));
 		return _ret;
 	}
 	final double RotationResolutionInDegrees()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController).get_RotationResolutionInDegrees(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialController)this.asInterface(uuid("3055d1c8-df51-43d4-b23b-0e1037467a09"))).get_RotationResolutionInDegrees(&_ret));
 		return _ret;
 	}
 	final void RotationResolutionInDegrees(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController).set_RotationResolutionInDegrees(value));
+		Debug.OK((cast(Windows.UI.Input.IRadialController)this.asInterface(uuid("3055d1c8-df51-43d4-b23b-0e1037467a09"))).set_RotationResolutionInDegrees(value));
 	}
 	final bool UseAutomaticHapticFeedback()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController).get_UseAutomaticHapticFeedback(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialController)this.asInterface(uuid("3055d1c8-df51-43d4-b23b-0e1037467a09"))).get_UseAutomaticHapticFeedback(&_ret));
 		return _ret;
 	}
 	final void UseAutomaticHapticFeedback(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController).set_UseAutomaticHapticFeedback(value));
+		Debug.OK((cast(Windows.UI.Input.IRadialController)this.asInterface(uuid("3055d1c8-df51-43d4-b23b-0e1037467a09"))).set_UseAutomaticHapticFeedback(value));
 	}
 	final EventRegistrationToken OnScreenContactStarted(void delegate(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerScreenContactStartedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController).add_ScreenContactStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerScreenContactStartedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IRadialController)this.asInterface(uuid("3055d1c8-df51-43d4-b23b-0e1037467a09"))).add_ScreenContactStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerScreenContactStartedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerScreenContactStartedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeScreenContactStarted(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController).remove_ScreenContactStarted(cookie));
+		Debug.OK((cast(Windows.UI.Input.IRadialController)this.asInterface(uuid("3055d1c8-df51-43d4-b23b-0e1037467a09"))).remove_ScreenContactStarted(cookie));
 	}
 	final EventRegistrationToken OnScreenContactEnded(void delegate(Windows.UI.Input.RadialController, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController).add_ScreenContactEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, IInspectable), Windows.UI.Input.RadialController, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IRadialController)this.asInterface(uuid("3055d1c8-df51-43d4-b23b-0e1037467a09"))).add_ScreenContactEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, IInspectable), Windows.UI.Input.RadialController, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeScreenContactEnded(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController).remove_ScreenContactEnded(cookie));
+		Debug.OK((cast(Windows.UI.Input.IRadialController)this.asInterface(uuid("3055d1c8-df51-43d4-b23b-0e1037467a09"))).remove_ScreenContactEnded(cookie));
 	}
 	final EventRegistrationToken OnScreenContactContinued(void delegate(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController).add_ScreenContactContinued(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IRadialController)this.asInterface(uuid("3055d1c8-df51-43d4-b23b-0e1037467a09"))).add_ScreenContactContinued(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeScreenContactContinued(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController).remove_ScreenContactContinued(cookie));
+		Debug.OK((cast(Windows.UI.Input.IRadialController)this.asInterface(uuid("3055d1c8-df51-43d4-b23b-0e1037467a09"))).remove_ScreenContactContinued(cookie));
 	}
 	final EventRegistrationToken OnControlLost(void delegate(Windows.UI.Input.RadialController, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController).add_ControlLost(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, IInspectable), Windows.UI.Input.RadialController, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IRadialController)this.asInterface(uuid("3055d1c8-df51-43d4-b23b-0e1037467a09"))).add_ControlLost(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, IInspectable), Windows.UI.Input.RadialController, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeControlLost(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController).remove_ControlLost(cookie));
+		Debug.OK((cast(Windows.UI.Input.IRadialController)this.asInterface(uuid("3055d1c8-df51-43d4-b23b-0e1037467a09"))).remove_ControlLost(cookie));
 	}
 	final EventRegistrationToken OnRotationChanged(void delegate(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerRotationChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController).add_RotationChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerRotationChangedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerRotationChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IRadialController)this.asInterface(uuid("3055d1c8-df51-43d4-b23b-0e1037467a09"))).add_RotationChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerRotationChangedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerRotationChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRotationChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController).remove_RotationChanged(token));
+		Debug.OK((cast(Windows.UI.Input.IRadialController)this.asInterface(uuid("3055d1c8-df51-43d4-b23b-0e1037467a09"))).remove_RotationChanged(token));
 	}
 	final EventRegistrationToken OnButtonClicked(void delegate(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonClickedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController).add_ButtonClicked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonClickedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonClickedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IRadialController)this.asInterface(uuid("3055d1c8-df51-43d4-b23b-0e1037467a09"))).add_ButtonClicked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonClickedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonClickedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeButtonClicked(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController).remove_ButtonClicked(token));
+		Debug.OK((cast(Windows.UI.Input.IRadialController)this.asInterface(uuid("3055d1c8-df51-43d4-b23b-0e1037467a09"))).remove_ButtonClicked(token));
 	}
 	final EventRegistrationToken OnControlAcquired(void delegate(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerControlAcquiredEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController).add_ControlAcquired(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerControlAcquiredEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerControlAcquiredEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IRadialController)this.asInterface(uuid("3055d1c8-df51-43d4-b23b-0e1037467a09"))).add_ControlAcquired(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerControlAcquiredEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerControlAcquiredEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeControlAcquired(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController).remove_ControlAcquired(cookie));
+		Debug.OK((cast(Windows.UI.Input.IRadialController)this.asInterface(uuid("3055d1c8-df51-43d4-b23b-0e1037467a09"))).remove_ControlAcquired(cookie));
 	}
 	final EventRegistrationToken OnButtonPressed(void delegate(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonPressedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController2).add_ButtonPressed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonPressedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonPressedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IRadialController2)this.asInterface(uuid("3d577eff-4cee-11e6-b535-001bdc06ab3b"))).add_ButtonPressed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonPressedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonPressedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeButtonPressed(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController2).remove_ButtonPressed(token));
+		Debug.OK((cast(Windows.UI.Input.IRadialController2)this.asInterface(uuid("3d577eff-4cee-11e6-b535-001bdc06ab3b"))).remove_ButtonPressed(token));
 	}
 	final EventRegistrationToken OnButtonHolding(void delegate(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonHoldingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController2).add_ButtonHolding(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonHoldingEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonHoldingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IRadialController2)this.asInterface(uuid("3d577eff-4cee-11e6-b535-001bdc06ab3b"))).add_ButtonHolding(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonHoldingEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonHoldingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeButtonHolding(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController2).remove_ButtonHolding(token));
+		Debug.OK((cast(Windows.UI.Input.IRadialController2)this.asInterface(uuid("3d577eff-4cee-11e6-b535-001bdc06ab3b"))).remove_ButtonHolding(token));
 	}
 	final EventRegistrationToken OnButtonReleased(void delegate(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonReleasedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController2).add_ButtonReleased(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonReleasedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonReleasedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IRadialController2)this.asInterface(uuid("3d577eff-4cee-11e6-b535-001bdc06ab3b"))).add_ButtonReleased(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonReleasedEventArgs), Windows.UI.Input.RadialController, Windows.UI.Input.RadialControllerButtonReleasedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeButtonReleased(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IRadialController2).remove_ButtonReleased(token));
+		Debug.OK((cast(Windows.UI.Input.IRadialController2)this.asInterface(uuid("3d577eff-4cee-11e6-b535-001bdc06ab3b"))).remove_ButtonReleased(token));
 	}
 
 	private static Windows.UI.Input.IRadialControllerStatics _staticInstance;
@@ -1650,13 +1650,13 @@ extern(Windows):
 	static bool IsSupported()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Input.IRadialControllerStatics).abi_IsSupported(&_ret));
+		Debug.OK(staticInstance.abi_IsSupported(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Input.RadialController CreateForCurrentView()
 	{
 		Windows.UI.Input.RadialController _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Input.IRadialControllerStatics).abi_CreateForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_CreateForCurrentView(&_ret));
 		return _ret;
 	}
 }
@@ -1667,13 +1667,13 @@ extern(Windows):
 	final Windows.UI.Input.RadialControllerScreenContact Contact()
 	{
 		Windows.UI.Input.RadialControllerScreenContact _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerButtonClickedEventArgs).get_Contact(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerButtonClickedEventArgs)this.asInterface(uuid("206aa438-e651-11e5-bf62-2c27d7404e85"))).get_Contact(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Haptics.SimpleHapticsController SimpleHapticsController()
 	{
 		Windows.Devices.Haptics.SimpleHapticsController _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerButtonClickedEventArgs2).get_SimpleHapticsController(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerButtonClickedEventArgs2)this.asInterface(uuid("3d577ef3-3cee-11e6-b535-001bdc06ab3b"))).get_SimpleHapticsController(&_ret));
 		return _ret;
 	}
 }
@@ -1684,13 +1684,13 @@ extern(Windows):
 	final Windows.UI.Input.RadialControllerScreenContact Contact()
 	{
 		Windows.UI.Input.RadialControllerScreenContact _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerButtonHoldingEventArgs).get_Contact(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerButtonHoldingEventArgs)this.asInterface(uuid("3d577eee-3cee-11e6-b535-001bdc06ab3b"))).get_Contact(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Haptics.SimpleHapticsController SimpleHapticsController()
 	{
 		Windows.Devices.Haptics.SimpleHapticsController _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerButtonHoldingEventArgs).get_SimpleHapticsController(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerButtonHoldingEventArgs)this.asInterface(uuid("3d577eee-3cee-11e6-b535-001bdc06ab3b"))).get_SimpleHapticsController(&_ret));
 		return _ret;
 	}
 }
@@ -1701,13 +1701,13 @@ extern(Windows):
 	final Windows.UI.Input.RadialControllerScreenContact Contact()
 	{
 		Windows.UI.Input.RadialControllerScreenContact _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerButtonPressedEventArgs).get_Contact(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerButtonPressedEventArgs)this.asInterface(uuid("3d577eed-4cee-11e6-b535-001bdc06ab3b"))).get_Contact(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Haptics.SimpleHapticsController SimpleHapticsController()
 	{
 		Windows.Devices.Haptics.SimpleHapticsController _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerButtonPressedEventArgs).get_SimpleHapticsController(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerButtonPressedEventArgs)this.asInterface(uuid("3d577eed-4cee-11e6-b535-001bdc06ab3b"))).get_SimpleHapticsController(&_ret));
 		return _ret;
 	}
 }
@@ -1718,13 +1718,13 @@ extern(Windows):
 	final Windows.UI.Input.RadialControllerScreenContact Contact()
 	{
 		Windows.UI.Input.RadialControllerScreenContact _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerButtonReleasedEventArgs).get_Contact(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerButtonReleasedEventArgs)this.asInterface(uuid("3d577eef-3cee-11e6-b535-001bdc06ab3b"))).get_Contact(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Haptics.SimpleHapticsController SimpleHapticsController()
 	{
 		Windows.Devices.Haptics.SimpleHapticsController _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerButtonReleasedEventArgs).get_SimpleHapticsController(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerButtonReleasedEventArgs)this.asInterface(uuid("3d577eef-3cee-11e6-b535-001bdc06ab3b"))).get_SimpleHapticsController(&_ret));
 		return _ret;
 	}
 }
@@ -1734,36 +1734,36 @@ interface RadialControllerConfiguration : Windows.UI.Input.IRadialControllerConf
 extern(Windows):
 	final void SetDefaultMenuItems(Windows.Foundation.Collections.IIterable!(Windows.UI.Input.RadialControllerSystemMenuItemKind) buttons)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerConfiguration).abi_SetDefaultMenuItems(buttons));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerConfiguration)this.asInterface(uuid("a6b79ecb-6a52-4430-910c-56370a9d6b42"))).abi_SetDefaultMenuItems(buttons));
 	}
 	final void ResetToDefaultMenuItems()
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerConfiguration).abi_ResetToDefaultMenuItems());
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerConfiguration)this.asInterface(uuid("a6b79ecb-6a52-4430-910c-56370a9d6b42"))).abi_ResetToDefaultMenuItems());
 	}
 	final bool TrySelectDefaultMenuItem(Windows.UI.Input.RadialControllerSystemMenuItemKind type)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerConfiguration).abi_TrySelectDefaultMenuItem(type, &_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerConfiguration)this.asInterface(uuid("a6b79ecb-6a52-4430-910c-56370a9d6b42"))).abi_TrySelectDefaultMenuItem(type, &_ret));
 		return _ret;
 	}
 	final void ActiveControllerWhenMenuIsSuppressed(Windows.UI.Input.RadialController value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerConfiguration2).set_ActiveControllerWhenMenuIsSuppressed(value));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerConfiguration2)this.asInterface(uuid("3d577ef7-3cee-11e6-b535-001bdc06ab3b"))).set_ActiveControllerWhenMenuIsSuppressed(value));
 	}
 	final Windows.UI.Input.RadialController ActiveControllerWhenMenuIsSuppressed()
 	{
 		Windows.UI.Input.RadialController _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerConfiguration2).get_ActiveControllerWhenMenuIsSuppressed(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerConfiguration2)this.asInterface(uuid("3d577ef7-3cee-11e6-b535-001bdc06ab3b"))).get_ActiveControllerWhenMenuIsSuppressed(&_ret));
 		return _ret;
 	}
 	final void IsMenuSuppressed(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerConfiguration2).set_IsMenuSuppressed(value));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerConfiguration2)this.asInterface(uuid("3d577ef7-3cee-11e6-b535-001bdc06ab3b"))).set_IsMenuSuppressed(value));
 	}
 	final bool IsMenuSuppressed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerConfiguration2).get_IsMenuSuppressed(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerConfiguration2)this.asInterface(uuid("3d577ef7-3cee-11e6-b535-001bdc06ab3b"))).get_IsMenuSuppressed(&_ret));
 		return _ret;
 	}
 
@@ -1776,7 +1776,7 @@ extern(Windows):
 	static Windows.UI.Input.RadialControllerConfiguration GetForCurrentView()
 	{
 		Windows.UI.Input.RadialControllerConfiguration _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Input.IRadialControllerConfigurationStatics).abi_GetForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 }
@@ -1787,19 +1787,19 @@ extern(Windows):
 	final Windows.UI.Input.RadialControllerScreenContact Contact()
 	{
 		Windows.UI.Input.RadialControllerScreenContact _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerControlAcquiredEventArgs).get_Contact(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerControlAcquiredEventArgs)this.asInterface(uuid("206aa439-e651-11e5-bf62-2c27d7404e85"))).get_Contact(&_ret));
 		return _ret;
 	}
 	final bool IsButtonPressed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerControlAcquiredEventArgs2).get_IsButtonPressed(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerControlAcquiredEventArgs2)this.asInterface(uuid("3d577ef4-3cee-11e6-b535-001bdc06ab3b"))).get_IsButtonPressed(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Haptics.SimpleHapticsController SimpleHapticsController()
 	{
 		Windows.Devices.Haptics.SimpleHapticsController _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerControlAcquiredEventArgs2).get_SimpleHapticsController(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerControlAcquiredEventArgs2)this.asInterface(uuid("3d577ef4-3cee-11e6-b535-001bdc06ab3b"))).get_SimpleHapticsController(&_ret));
 		return _ret;
 	}
 }
@@ -1810,33 +1810,33 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVector!(Windows.UI.Input.RadialControllerMenuItem) Items()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.Input.RadialControllerMenuItem) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerMenu).get_Items(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerMenu)this.asInterface(uuid("8506b35d-f640-4412-aba0-bad077e5ea8a"))).get_Items(&_ret));
 		return _ret;
 	}
 	final bool IsEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerMenu).get_IsEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerMenu)this.asInterface(uuid("8506b35d-f640-4412-aba0-bad077e5ea8a"))).get_IsEnabled(&_ret));
 		return _ret;
 	}
 	final void IsEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerMenu).set_IsEnabled(value));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerMenu)this.asInterface(uuid("8506b35d-f640-4412-aba0-bad077e5ea8a"))).set_IsEnabled(value));
 	}
 	final Windows.UI.Input.RadialControllerMenuItem GetSelectedMenuItem()
 	{
 		Windows.UI.Input.RadialControllerMenuItem _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerMenu).abi_GetSelectedMenuItem(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerMenu)this.asInterface(uuid("8506b35d-f640-4412-aba0-bad077e5ea8a"))).abi_GetSelectedMenuItem(&_ret));
 		return _ret;
 	}
 	final void SelectMenuItem(Windows.UI.Input.RadialControllerMenuItem menuItem)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerMenu).abi_SelectMenuItem(menuItem));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerMenu)this.asInterface(uuid("8506b35d-f640-4412-aba0-bad077e5ea8a"))).abi_SelectMenuItem(menuItem));
 	}
 	final bool TrySelectPreviouslySelectedMenuItem()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerMenu).abi_TrySelectPreviouslySelectedMenuItem(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerMenu)this.asInterface(uuid("8506b35d-f640-4412-aba0-bad077e5ea8a"))).abi_TrySelectPreviouslySelectedMenuItem(&_ret));
 		return _ret;
 	}
 }
@@ -1847,28 +1847,28 @@ extern(Windows):
 	final HSTRING DisplayText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerMenuItem).get_DisplayText(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerMenuItem)this.asInterface(uuid("c80fc98d-ad0b-4c9c-8f2f-136a2373a6ba"))).get_DisplayText(&_ret));
 		return _ret;
 	}
 	final IInspectable Tag()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerMenuItem).get_Tag(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerMenuItem)this.asInterface(uuid("c80fc98d-ad0b-4c9c-8f2f-136a2373a6ba"))).get_Tag(&_ret));
 		return _ret;
 	}
 	final void Tag(IInspectable value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerMenuItem).set_Tag(value));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerMenuItem)this.asInterface(uuid("c80fc98d-ad0b-4c9c-8f2f-136a2373a6ba"))).set_Tag(value));
 	}
 	final EventRegistrationToken OnInvoked(void delegate(Windows.UI.Input.RadialControllerMenuItem, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerMenuItem).add_Invoked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialControllerMenuItem, IInspectable), Windows.UI.Input.RadialControllerMenuItem, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerMenuItem)this.asInterface(uuid("c80fc98d-ad0b-4c9c-8f2f-136a2373a6ba"))).add_Invoked(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.RadialControllerMenuItem, IInspectable), Windows.UI.Input.RadialControllerMenuItem, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeInvoked(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerMenuItem).remove_Invoked(token));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerMenuItem)this.asInterface(uuid("c80fc98d-ad0b-4c9c-8f2f-136a2373a6ba"))).remove_Invoked(token));
 	}
 
 	private static Windows.UI.Input.IRadialControllerMenuItemStatics _staticInstance;
@@ -1880,13 +1880,13 @@ extern(Windows):
 	static Windows.UI.Input.RadialControllerMenuItem CreateFromIcon(HSTRING displayText, Windows.Storage.Streams.RandomAccessStreamReference icon)
 	{
 		Windows.UI.Input.RadialControllerMenuItem _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Input.IRadialControllerMenuItemStatics).abi_CreateFromIcon(displayText, icon, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromIcon(displayText, icon, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Input.RadialControllerMenuItem CreateFromKnownIcon(HSTRING displayText, Windows.UI.Input.RadialControllerMenuKnownIcon value)
 	{
 		Windows.UI.Input.RadialControllerMenuItem _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Input.IRadialControllerMenuItemStatics).abi_CreateFromKnownIcon(displayText, value, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromKnownIcon(displayText, value, &_ret));
 		return _ret;
 	}
 }
@@ -1897,25 +1897,25 @@ extern(Windows):
 	final double RotationDeltaInDegrees()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerRotationChangedEventArgs).get_RotationDeltaInDegrees(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerRotationChangedEventArgs)this.asInterface(uuid("206aa435-e651-11e5-bf62-2c27d7404e85"))).get_RotationDeltaInDegrees(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.RadialControllerScreenContact Contact()
 	{
 		Windows.UI.Input.RadialControllerScreenContact _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerRotationChangedEventArgs).get_Contact(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerRotationChangedEventArgs)this.asInterface(uuid("206aa435-e651-11e5-bf62-2c27d7404e85"))).get_Contact(&_ret));
 		return _ret;
 	}
 	final bool IsButtonPressed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerRotationChangedEventArgs2).get_IsButtonPressed(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerRotationChangedEventArgs2)this.asInterface(uuid("3d577eec-4cee-11e6-b535-001bdc06ab3b"))).get_IsButtonPressed(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Haptics.SimpleHapticsController SimpleHapticsController()
 	{
 		Windows.Devices.Haptics.SimpleHapticsController _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerRotationChangedEventArgs2).get_SimpleHapticsController(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerRotationChangedEventArgs2)this.asInterface(uuid("3d577eec-4cee-11e6-b535-001bdc06ab3b"))).get_SimpleHapticsController(&_ret));
 		return _ret;
 	}
 }
@@ -1926,13 +1926,13 @@ extern(Windows):
 	final Windows.Foundation.Rect Bounds()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerScreenContact).get_Bounds(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerScreenContact)this.asInterface(uuid("206aa434-e651-11e5-bf62-2c27d7404e85"))).get_Bounds(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point Position()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerScreenContact).get_Position(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerScreenContact)this.asInterface(uuid("206aa434-e651-11e5-bf62-2c27d7404e85"))).get_Position(&_ret));
 		return _ret;
 	}
 }
@@ -1943,19 +1943,19 @@ extern(Windows):
 	final Windows.UI.Input.RadialControllerScreenContact Contact()
 	{
 		Windows.UI.Input.RadialControllerScreenContact _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerScreenContactContinuedEventArgs).get_Contact(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerScreenContactContinuedEventArgs)this.asInterface(uuid("206aa437-e651-11e5-bf62-2c27d7404e85"))).get_Contact(&_ret));
 		return _ret;
 	}
 	final bool IsButtonPressed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerScreenContactContinuedEventArgs2).get_IsButtonPressed(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerScreenContactContinuedEventArgs2)this.asInterface(uuid("3d577ef1-3cee-11e6-b535-001bdc06ab3b"))).get_IsButtonPressed(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Haptics.SimpleHapticsController SimpleHapticsController()
 	{
 		Windows.Devices.Haptics.SimpleHapticsController _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerScreenContactContinuedEventArgs2).get_SimpleHapticsController(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerScreenContactContinuedEventArgs2)this.asInterface(uuid("3d577ef1-3cee-11e6-b535-001bdc06ab3b"))).get_SimpleHapticsController(&_ret));
 		return _ret;
 	}
 }
@@ -1966,13 +1966,13 @@ extern(Windows):
 	final bool IsButtonPressed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerScreenContactEndedEventArgs).get_IsButtonPressed(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerScreenContactEndedEventArgs)this.asInterface(uuid("3d577ef2-3cee-11e6-b535-001bdc06ab3b"))).get_IsButtonPressed(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Haptics.SimpleHapticsController SimpleHapticsController()
 	{
 		Windows.Devices.Haptics.SimpleHapticsController _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerScreenContactEndedEventArgs).get_SimpleHapticsController(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerScreenContactEndedEventArgs)this.asInterface(uuid("3d577ef2-3cee-11e6-b535-001bdc06ab3b"))).get_SimpleHapticsController(&_ret));
 		return _ret;
 	}
 }
@@ -1983,19 +1983,19 @@ extern(Windows):
 	final Windows.UI.Input.RadialControllerScreenContact Contact()
 	{
 		Windows.UI.Input.RadialControllerScreenContact _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerScreenContactStartedEventArgs).get_Contact(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerScreenContactStartedEventArgs)this.asInterface(uuid("206aa436-e651-11e5-bf62-2c27d7404e85"))).get_Contact(&_ret));
 		return _ret;
 	}
 	final bool IsButtonPressed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerScreenContactStartedEventArgs2).get_IsButtonPressed(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerScreenContactStartedEventArgs2)this.asInterface(uuid("3d577ef0-3cee-11e6-b535-001bdc06ab3b"))).get_IsButtonPressed(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Haptics.SimpleHapticsController SimpleHapticsController()
 	{
 		Windows.Devices.Haptics.SimpleHapticsController _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRadialControllerScreenContactStartedEventArgs2).get_SimpleHapticsController(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRadialControllerScreenContactStartedEventArgs2)this.asInterface(uuid("3d577ef0-3cee-11e6-b535-001bdc06ab3b"))).get_SimpleHapticsController(&_ret));
 		return _ret;
 	}
 }
@@ -2006,13 +2006,13 @@ extern(Windows):
 	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
 	{
 		Windows.Devices.Input.PointerDeviceType _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRightTappedEventArgs).get_PointerDeviceType(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRightTappedEventArgs)this.asInterface(uuid("4cbf40bd-af7a-4a36-9476-b1dce141709a"))).get_PointerDeviceType(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point Position()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Input.IRightTappedEventArgs).get_Position(&_ret));
+		Debug.OK((cast(Windows.UI.Input.IRightTappedEventArgs)this.asInterface(uuid("4cbf40bd-af7a-4a36-9476-b1dce141709a"))).get_Position(&_ret));
 		return _ret;
 	}
 }
@@ -2023,19 +2023,19 @@ extern(Windows):
 	final Windows.Devices.Input.PointerDeviceType PointerDeviceType()
 	{
 		Windows.Devices.Input.PointerDeviceType _ret;
-		Debug.OK(this.as!(Windows.UI.Input.ITappedEventArgs).get_PointerDeviceType(&_ret));
+		Debug.OK((cast(Windows.UI.Input.ITappedEventArgs)this.asInterface(uuid("cfa126e4-253a-4c3c-953b-395c37aed309"))).get_PointerDeviceType(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point Position()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Input.ITappedEventArgs).get_Position(&_ret));
+		Debug.OK((cast(Windows.UI.Input.ITappedEventArgs)this.asInterface(uuid("cfa126e4-253a-4c3c-953b-395c37aed309"))).get_Position(&_ret));
 		return _ret;
 	}
 	final UINT32 TapCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.ITappedEventArgs).get_TapCount(&_ret));
+		Debug.OK((cast(Windows.UI.Input.ITappedEventArgs)this.asInterface(uuid("cfa126e4-253a-4c3c-953b-395c37aed309"))).get_TapCount(&_ret));
 		return _ret;
 	}
 }

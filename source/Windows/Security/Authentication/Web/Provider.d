@@ -244,33 +244,33 @@ extern(Windows):
 	final Windows.Foundation.Uri ApplicationCallbackUri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountClientView).get_ApplicationCallbackUri(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountClientView)this.asInterface(uuid("e7bd66ba-0bc7-4c66-bfd4-65d3082cbca8"))).get_ApplicationCallbackUri(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Authentication.Web.Provider.WebAccountClientViewType Type()
 	{
 		Windows.Security.Authentication.Web.Provider.WebAccountClientViewType _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountClientView).get_Type(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountClientView)this.asInterface(uuid("e7bd66ba-0bc7-4c66-bfd4-65d3082cbca8"))).get_Type(&_ret));
 		return _ret;
 	}
 	final HSTRING AccountPairwiseId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountClientView).get_AccountPairwiseId(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountClientView)this.asInterface(uuid("e7bd66ba-0bc7-4c66-bfd4-65d3082cbca8"))).get_AccountPairwiseId(&_ret));
 		return _ret;
 	}
 	static Windows.Security.Authentication.Web.Provider.WebAccountClientView New(Windows.Security.Authentication.Web.Provider.WebAccountClientViewType viewType, Windows.Foundation.Uri applicationCallbackUri)
 	{
 		auto factory = factory!(Windows.Security.Authentication.Web.Provider.IWebAccountClientViewFactory);
 		Windows.Security.Authentication.Web.Provider.WebAccountClientView _ret;
-		Debug.OK(factory.as!(Windows.Security.Authentication.Web.Provider.IWebAccountClientViewFactory).abi_Create(viewType, applicationCallbackUri, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountClientViewFactory)factory.asInterface(uuid("616d16a4-de22-4855-a326-06cebf2a3f23"))).abi_Create(viewType, applicationCallbackUri, &_ret));
 		return _ret;
 	}
 	static Windows.Security.Authentication.Web.Provider.WebAccountClientView New(Windows.Security.Authentication.Web.Provider.WebAccountClientViewType viewType, Windows.Foundation.Uri applicationCallbackUri, HSTRING accountPairwiseId)
 	{
 		auto factory = factory!(Windows.Security.Authentication.Web.Provider.IWebAccountClientViewFactory);
 		Windows.Security.Authentication.Web.Provider.WebAccountClientView _ret;
-		Debug.OK(factory.as!(Windows.Security.Authentication.Web.Provider.IWebAccountClientViewFactory).abi_CreateWithPairwiseId(viewType, applicationCallbackUri, accountPairwiseId, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountClientViewFactory)factory.asInterface(uuid("616d16a4-de22-4855-a326-06cebf2a3f23"))).abi_CreateWithPairwiseId(viewType, applicationCallbackUri, accountPairwiseId, &_ret));
 		return _ret;
 	}
 }
@@ -286,61 +286,61 @@ interface WebAccountManager
 	static Windows.Foundation.IAsyncAction UpdateWebAccountPropertiesAsync(Windows.Security.Credentials.WebAccount webAccount, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) additionalProperties)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics).abi_UpdateWebAccountPropertiesAsync(webAccount, webAccountUserName, additionalProperties, &_ret));
+		Debug.OK(staticInstance.abi_UpdateWebAccountPropertiesAsync(webAccount, webAccountUserName, additionalProperties, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount) AddWebAccountAsync(HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) props)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount) _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics).abi_AddWebAccountAsync(webAccountId, webAccountUserName, props, &_ret));
+		Debug.OK(staticInstance.abi_AddWebAccountAsync(webAccountId, webAccountUserName, props, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncAction DeleteWebAccountAsync(Windows.Security.Credentials.WebAccount webAccount)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics).abi_DeleteWebAccountAsync(webAccount, &_ret));
+		Debug.OK(staticInstance.abi_DeleteWebAccountAsync(webAccount, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.WebAccount)) FindAllProviderWebAccountsAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.WebAccount)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics).abi_FindAllProviderWebAccountsAsync(&_ret));
+		Debug.OK(staticInstance.abi_FindAllProviderWebAccountsAsync(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncAction PushCookiesAsync(Windows.Foundation.Uri uri, Windows.Foundation.Collections.IVectorView!(Windows.Web.Http.HttpCookie) cookies)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics).abi_PushCookiesAsync(uri, cookies, &_ret));
+		Debug.OK(staticInstance.abi_PushCookiesAsync(uri, cookies, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncAction SetViewAsync(Windows.Security.Credentials.WebAccount webAccount, Windows.Security.Authentication.Web.Provider.WebAccountClientView view)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics).abi_SetViewAsync(webAccount, view, &_ret));
+		Debug.OK(staticInstance.abi_SetViewAsync(webAccount, view, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncAction ClearViewAsync(Windows.Security.Credentials.WebAccount webAccount, Windows.Foundation.Uri applicationCallbackUri)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics).abi_ClearViewAsync(webAccount, applicationCallbackUri, &_ret));
+		Debug.OK(staticInstance.abi_ClearViewAsync(webAccount, applicationCallbackUri, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Authentication.Web.Provider.WebAccountClientView)) GetViewsAsync(Windows.Security.Credentials.WebAccount webAccount)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Authentication.Web.Provider.WebAccountClientView)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics).abi_GetViewsAsync(webAccount, &_ret));
+		Debug.OK(staticInstance.abi_GetViewsAsync(webAccount, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncAction SetWebAccountPictureAsync(Windows.Security.Credentials.WebAccount webAccount, Windows.Storage.Streams.IRandomAccessStream webAccountPicture)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics).abi_SetWebAccountPictureAsync(webAccount, webAccountPicture, &_ret));
+		Debug.OK(staticInstance.abi_SetWebAccountPictureAsync(webAccount, webAccountPicture, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncAction ClearWebAccountPictureAsync(Windows.Security.Credentials.WebAccount webAccount)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Authentication.Web.Provider.IWebAccountManagerStatics).abi_ClearWebAccountPictureAsync(webAccount, &_ret));
+		Debug.OK(staticInstance.abi_ClearWebAccountPictureAsync(webAccount, &_ret));
 		return _ret;
 	}
 }
@@ -350,12 +350,12 @@ interface WebAccountProviderAddAccountOperation : Windows.Security.Authenticatio
 extern(Windows):
 	final void ReportCompleted()
 	{
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderAddAccountOperation).abi_ReportCompleted());
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderAddAccountOperation)this.asInterface(uuid("73ebdccf-4378-4c79-9335-a5d7ab81594e"))).abi_ReportCompleted());
 	}
 	final Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind Kind()
 	{
 		Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation).get_Kind(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation)this.asInterface(uuid("6d5d2426-10b1-419a-a44e-f9c5161574e6"))).get_Kind(&_ret));
 		return _ret;
 	}
 }
@@ -366,22 +366,22 @@ extern(Windows):
 	final Windows.Security.Credentials.WebAccount WebAccount()
 	{
 		Windows.Security.Credentials.WebAccount _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderDeleteAccountOperation).get_WebAccount(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderDeleteAccountOperation)this.asInterface(uuid("0abb48b8-9e01-49c9-a355-7d48caf7d6ca"))).get_WebAccount(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind Kind()
 	{
 		Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation).get_Kind(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation)this.asInterface(uuid("6d5d2426-10b1-419a-a44e-f9c5161574e6"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final void ReportCompleted()
 	{
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation).abi_ReportCompleted());
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation)this.asInterface(uuid("bba4acbb-993b-4d57-bbe4-1421e3668b4c"))).abi_ReportCompleted());
 	}
 	final void ReportError(Windows.Security.Authentication.Web.Core.WebProviderError value)
 	{
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation).abi_ReportError(value));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation)this.asInterface(uuid("bba4acbb-993b-4d57-bbe4-1421e3668b4c"))).abi_ReportError(value));
 	}
 }
 
@@ -391,46 +391,46 @@ extern(Windows):
 	final Windows.Security.Authentication.Web.Provider.WebProviderTokenRequest ProviderRequest()
 	{
 		Windows.Security.Authentication.Web.Provider.WebProviderTokenRequest _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation).get_ProviderRequest(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation)this.asInterface(uuid("95c613be-2034-4c38-9434-d26c14b2b4b2"))).get_ProviderRequest(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Security.Authentication.Web.Provider.WebProviderTokenResponse) ProviderResponses()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Security.Authentication.Web.Provider.WebProviderTokenResponse) _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation).get_ProviderResponses(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation)this.asInterface(uuid("95c613be-2034-4c38-9434-d26c14b2b4b2"))).get_ProviderResponses(&_ret));
 		return _ret;
 	}
 	final void CacheExpirationTime(Windows.Foundation.DateTime value)
 	{
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation).set_CacheExpirationTime(value));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation)this.asInterface(uuid("95c613be-2034-4c38-9434-d26c14b2b4b2"))).set_CacheExpirationTime(value));
 	}
 	final Windows.Foundation.DateTime CacheExpirationTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation).get_CacheExpirationTime(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation)this.asInterface(uuid("95c613be-2034-4c38-9434-d26c14b2b4b2"))).get_CacheExpirationTime(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind Kind()
 	{
 		Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation).get_Kind(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation)this.asInterface(uuid("6d5d2426-10b1-419a-a44e-f9c5161574e6"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final void ReportUserInteractionRequired()
 	{
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderSilentReportOperation).abi_ReportUserInteractionRequired());
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderSilentReportOperation)this.asInterface(uuid("e0b545f8-3b0f-44da-924c-7b18baaa62a9"))).abi_ReportUserInteractionRequired());
 	}
 	final void ReportUserInteractionRequiredWithError(Windows.Security.Authentication.Web.Core.WebProviderError value)
 	{
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderSilentReportOperation).abi_ReportUserInteractionRequiredWithError(value));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderSilentReportOperation)this.asInterface(uuid("e0b545f8-3b0f-44da-924c-7b18baaa62a9"))).abi_ReportUserInteractionRequiredWithError(value));
 	}
 	final void ReportCompleted()
 	{
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation).abi_ReportCompleted());
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation)this.asInterface(uuid("bba4acbb-993b-4d57-bbe4-1421e3668b4c"))).abi_ReportCompleted());
 	}
 	final void ReportError(Windows.Security.Authentication.Web.Core.WebProviderError value)
 	{
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation).abi_ReportError(value));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation)this.asInterface(uuid("bba4acbb-993b-4d57-bbe4-1421e3668b4c"))).abi_ReportError(value));
 	}
 }
 
@@ -440,17 +440,17 @@ extern(Windows):
 	final Windows.Security.Credentials.WebAccount WebAccount()
 	{
 		Windows.Security.Credentials.WebAccount _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderManageAccountOperation).get_WebAccount(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderManageAccountOperation)this.asInterface(uuid("ed20dc5c-d21b-463e-a9b7-c1fd0edae978"))).get_WebAccount(&_ret));
 		return _ret;
 	}
 	final void ReportCompleted()
 	{
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderManageAccountOperation).abi_ReportCompleted());
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderManageAccountOperation)this.asInterface(uuid("ed20dc5c-d21b-463e-a9b7-c1fd0edae978"))).abi_ReportCompleted());
 	}
 	final Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind Kind()
 	{
 		Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation).get_Kind(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation)this.asInterface(uuid("6d5d2426-10b1-419a-a44e-f9c5161574e6"))).get_Kind(&_ret));
 		return _ret;
 	}
 }
@@ -461,42 +461,42 @@ extern(Windows):
 	final Windows.Security.Authentication.Web.Provider.WebProviderTokenRequest ProviderRequest()
 	{
 		Windows.Security.Authentication.Web.Provider.WebProviderTokenRequest _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation).get_ProviderRequest(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation)this.asInterface(uuid("95c613be-2034-4c38-9434-d26c14b2b4b2"))).get_ProviderRequest(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Security.Authentication.Web.Provider.WebProviderTokenResponse) ProviderResponses()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Security.Authentication.Web.Provider.WebProviderTokenResponse) _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation).get_ProviderResponses(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation)this.asInterface(uuid("95c613be-2034-4c38-9434-d26c14b2b4b2"))).get_ProviderResponses(&_ret));
 		return _ret;
 	}
 	final void CacheExpirationTime(Windows.Foundation.DateTime value)
 	{
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation).set_CacheExpirationTime(value));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation)this.asInterface(uuid("95c613be-2034-4c38-9434-d26c14b2b4b2"))).set_CacheExpirationTime(value));
 	}
 	final Windows.Foundation.DateTime CacheExpirationTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation).get_CacheExpirationTime(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenOperation)this.asInterface(uuid("95c613be-2034-4c38-9434-d26c14b2b4b2"))).get_CacheExpirationTime(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind Kind()
 	{
 		Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation).get_Kind(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation)this.asInterface(uuid("6d5d2426-10b1-419a-a44e-f9c5161574e6"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final void ReportUserCanceled()
 	{
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderUIReportOperation).abi_ReportUserCanceled());
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderUIReportOperation)this.asInterface(uuid("28ff92d3-8f80-42fb-944f-b2107bbd42e6"))).abi_ReportUserCanceled());
 	}
 	final void ReportCompleted()
 	{
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation).abi_ReportCompleted());
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation)this.asInterface(uuid("bba4acbb-993b-4d57-bbe4-1421e3668b4c"))).abi_ReportCompleted());
 	}
 	final void ReportError(Windows.Security.Authentication.Web.Core.WebProviderError value)
 	{
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation).abi_ReportError(value));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation)this.asInterface(uuid("bba4acbb-993b-4d57-bbe4-1421e3668b4c"))).abi_ReportError(value));
 	}
 }
 
@@ -506,44 +506,44 @@ extern(Windows):
 	final Windows.Foundation.Uri Context()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderRetrieveCookiesOperation).get_Context(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderRetrieveCookiesOperation)this.asInterface(uuid("5a040441-0fa3-4ab1-a01c-20b110358594"))).get_Context(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Web.Http.HttpCookie) Cookies()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Web.Http.HttpCookie) _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderRetrieveCookiesOperation).get_Cookies(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderRetrieveCookiesOperation)this.asInterface(uuid("5a040441-0fa3-4ab1-a01c-20b110358594"))).get_Cookies(&_ret));
 		return _ret;
 	}
 	final void Uri(Windows.Foundation.Uri uri)
 	{
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderRetrieveCookiesOperation).set_Uri(uri));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderRetrieveCookiesOperation)this.asInterface(uuid("5a040441-0fa3-4ab1-a01c-20b110358594"))).set_Uri(uri));
 	}
 	final Windows.Foundation.Uri Uri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderRetrieveCookiesOperation).get_Uri(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderRetrieveCookiesOperation)this.asInterface(uuid("5a040441-0fa3-4ab1-a01c-20b110358594"))).get_Uri(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Uri ApplicationCallbackUri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderRetrieveCookiesOperation).get_ApplicationCallbackUri(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderRetrieveCookiesOperation)this.asInterface(uuid("5a040441-0fa3-4ab1-a01c-20b110358594"))).get_ApplicationCallbackUri(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind Kind()
 	{
 		Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation).get_Kind(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation)this.asInterface(uuid("6d5d2426-10b1-419a-a44e-f9c5161574e6"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final void ReportCompleted()
 	{
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation).abi_ReportCompleted());
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation)this.asInterface(uuid("bba4acbb-993b-4d57-bbe4-1421e3668b4c"))).abi_ReportCompleted());
 	}
 	final void ReportError(Windows.Security.Authentication.Web.Core.WebProviderError value)
 	{
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation).abi_ReportError(value));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation)this.asInterface(uuid("bba4acbb-993b-4d57-bbe4-1421e3668b4c"))).abi_ReportError(value));
 	}
 }
 
@@ -553,34 +553,34 @@ extern(Windows):
 	final Windows.Security.Credentials.WebAccount WebAccount()
 	{
 		Windows.Security.Credentials.WebAccount _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderSignOutAccountOperation).get_WebAccount(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderSignOutAccountOperation)this.asInterface(uuid("b890e21d-0c55-47bc-8c72-04a6fc7cac07"))).get_WebAccount(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Uri ApplicationCallbackUri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderSignOutAccountOperation).get_ApplicationCallbackUri(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderSignOutAccountOperation)this.asInterface(uuid("b890e21d-0c55-47bc-8c72-04a6fc7cac07"))).get_ApplicationCallbackUri(&_ret));
 		return _ret;
 	}
 	final HSTRING ClientId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderSignOutAccountOperation).get_ClientId(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderSignOutAccountOperation)this.asInterface(uuid("b890e21d-0c55-47bc-8c72-04a6fc7cac07"))).get_ClientId(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind Kind()
 	{
 		Windows.Security.Authentication.Web.Provider.WebAccountProviderOperationKind _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation).get_Kind(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation)this.asInterface(uuid("6d5d2426-10b1-419a-a44e-f9c5161574e6"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final void ReportCompleted()
 	{
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation).abi_ReportCompleted());
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation)this.asInterface(uuid("bba4acbb-993b-4d57-bbe4-1421e3668b4c"))).abi_ReportCompleted());
 	}
 	final void ReportError(Windows.Security.Authentication.Web.Core.WebProviderError value)
 	{
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation).abi_ReportError(value));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation)this.asInterface(uuid("bba4acbb-993b-4d57-bbe4-1421e3668b4c"))).abi_ReportError(value));
 	}
 }
 
@@ -590,13 +590,13 @@ extern(Windows):
 	final Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation Operation()
 	{
 		Windows.Security.Authentication.Web.Provider.IWebAccountProviderOperation _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenObjects).get_Operation(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenObjects)this.asInterface(uuid("408f284b-1328-42db-89a4-0bce7a717d8e"))).get_Operation(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenObjects2).get_User(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderTokenObjects2)this.asInterface(uuid("1020b893-5ca5-4fff-95fb-b820273fc395"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -607,37 +607,37 @@ extern(Windows):
 	final Windows.Security.Authentication.Web.Core.WebTokenRequest ClientRequest()
 	{
 		Windows.Security.Authentication.Web.Core.WebTokenRequest _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest).get_ClientRequest(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest)this.asInterface(uuid("1e18778b-8805-454b-9f11-468d2af1095a"))).get_ClientRequest(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.WebAccount) WebAccounts()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.WebAccount) _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest).get_WebAccounts(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest)this.asInterface(uuid("1e18778b-8805-454b-9f11-468d2af1095a"))).get_WebAccounts(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Authentication.Web.Provider.WebAccountSelectionOptions WebAccountSelectionOptions()
 	{
 		Windows.Security.Authentication.Web.Provider.WebAccountSelectionOptions _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest).get_WebAccountSelectionOptions(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest)this.asInterface(uuid("1e18778b-8805-454b-9f11-468d2af1095a"))).get_WebAccountSelectionOptions(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Uri ApplicationCallbackUri()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest).get_ApplicationCallbackUri(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest)this.asInterface(uuid("1e18778b-8805-454b-9f11-468d2af1095a"))).get_ApplicationCallbackUri(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Core.CryptographicKey) GetApplicationTokenBindingKeyAsync(Windows.Security.Authentication.Web.TokenBindingKeyType keyType, Windows.Foundation.Uri target)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Core.CryptographicKey) _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest).abi_GetApplicationTokenBindingKeyAsync(keyType, target, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest)this.asInterface(uuid("1e18778b-8805-454b-9f11-468d2af1095a"))).abi_GetApplicationTokenBindingKeyAsync(keyType, target, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) GetApplicationTokenBindingKeyIdAsync(Windows.Security.Authentication.Web.TokenBindingKeyType keyType, Windows.Foundation.Uri target)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest2).abi_GetApplicationTokenBindingKeyIdAsync(keyType, target, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebProviderTokenRequest2)this.asInterface(uuid("b5d72e4c-10b1-4aa6-88b1-0b6c9e0c1e46"))).abi_GetApplicationTokenBindingKeyIdAsync(keyType, target, &_ret));
 		return _ret;
 	}
 }
@@ -648,14 +648,14 @@ extern(Windows):
 	final Windows.Security.Authentication.Web.Core.WebTokenResponse ClientResponse()
 	{
 		Windows.Security.Authentication.Web.Core.WebTokenResponse _ret;
-		Debug.OK(this.as!(Windows.Security.Authentication.Web.Provider.IWebProviderTokenResponse).get_ClientResponse(&_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebProviderTokenResponse)this.asInterface(uuid("ef213793-ef55-4186-b7ce-8cb2e7f9849e"))).get_ClientResponse(&_ret));
 		return _ret;
 	}
 	static Windows.Security.Authentication.Web.Provider.WebProviderTokenResponse New(Windows.Security.Authentication.Web.Core.WebTokenResponse webTokenResponse)
 	{
 		auto factory = factory!(Windows.Security.Authentication.Web.Provider.IWebProviderTokenResponseFactory);
 		Windows.Security.Authentication.Web.Provider.WebProviderTokenResponse _ret;
-		Debug.OK(factory.as!(Windows.Security.Authentication.Web.Provider.IWebProviderTokenResponseFactory).abi_Create(webTokenResponse, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebProviderTokenResponseFactory)factory.asInterface(uuid("fa49d99a-25ba-4077-9cfa-9db4dea7b71a"))).abi_Create(webTokenResponse, &_ret));
 		return _ret;
 	}
 }

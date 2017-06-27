@@ -21,7 +21,7 @@ interface HtmlUtilities
 	static HSTRING ConvertToText(HSTRING html)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Html.IHtmlUtilities).abi_ConvertToText(html, &_ret));
+		Debug.OK(staticInstance.abi_ConvertToText(html, &_ret));
 		return _ret;
 	}
 }

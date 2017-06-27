@@ -277,7 +277,7 @@ extern(Windows):
 	final Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus Status()
 	{
 		Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionCompletedEventArgs).get_Status(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionCompletedEventArgs)this.asInterface(uuid("e3d069bb-e30c-5e18-424b-7fbe81f8fbd0"))).get_Status(&_ret));
 		return _ret;
 	}
 }
@@ -288,7 +288,7 @@ extern(Windows):
 	final Windows.Media.SpeechRecognition.SpeechRecognitionResult Result()
 	{
 		Windows.Media.SpeechRecognition.SpeechRecognitionResult _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionResultGeneratedEventArgs).get_Result(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionResultGeneratedEventArgs)this.asInterface(uuid("19091e1e-6e7e-5a46-40fb-76594f786504"))).get_Result(&_ret));
 		return _ret;
 	}
 }
@@ -299,66 +299,66 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan AutoStopSilenceTimeout()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession).get_AutoStopSilenceTimeout(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession)this.asInterface(uuid("6a213c04-6614-49f8-99a2-b5e9b3a085c8"))).get_AutoStopSilenceTimeout(&_ret));
 		return _ret;
 	}
 	final void AutoStopSilenceTimeout(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession).set_AutoStopSilenceTimeout(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession)this.asInterface(uuid("6a213c04-6614-49f8-99a2-b5e9b3a085c8"))).set_AutoStopSilenceTimeout(value));
 	}
 	final Windows.Foundation.IAsyncAction StartAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession).abi_StartAsync(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession)this.asInterface(uuid("6a213c04-6614-49f8-99a2-b5e9b3a085c8"))).abi_StartAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction StartWithModeAsync(Windows.Media.SpeechRecognition.SpeechContinuousRecognitionMode mode)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession).abi_StartWithModeAsync(mode, &_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession)this.asInterface(uuid("6a213c04-6614-49f8-99a2-b5e9b3a085c8"))).abi_StartWithModeAsync(mode, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction StopAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession).abi_StopAsync(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession)this.asInterface(uuid("6a213c04-6614-49f8-99a2-b5e9b3a085c8"))).abi_StopAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction CancelAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession).abi_CancelAsync(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession)this.asInterface(uuid("6a213c04-6614-49f8-99a2-b5e9b3a085c8"))).abi_CancelAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction PauseAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession).abi_PauseAsync(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession)this.asInterface(uuid("6a213c04-6614-49f8-99a2-b5e9b3a085c8"))).abi_PauseAsync(&_ret));
 		return _ret;
 	}
 	final void Resume()
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession).abi_Resume());
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession)this.asInterface(uuid("6a213c04-6614-49f8-99a2-b5e9b3a085c8"))).abi_Resume());
 	}
 	final EventRegistrationToken OnCompleted(void delegate(Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession, Windows.Media.SpeechRecognition.SpeechContinuousRecognitionCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession).add_Completed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession, Windows.Media.SpeechRecognition.SpeechContinuousRecognitionCompletedEventArgs), Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession, Windows.Media.SpeechRecognition.SpeechContinuousRecognitionCompletedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession)this.asInterface(uuid("6a213c04-6614-49f8-99a2-b5e9b3a085c8"))).add_Completed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession, Windows.Media.SpeechRecognition.SpeechContinuousRecognitionCompletedEventArgs), Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession, Windows.Media.SpeechRecognition.SpeechContinuousRecognitionCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCompleted(EventRegistrationToken value)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession).remove_Completed(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession)this.asInterface(uuid("6a213c04-6614-49f8-99a2-b5e9b3a085c8"))).remove_Completed(value));
 	}
 	final EventRegistrationToken OnResultGenerated(void delegate(Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession, Windows.Media.SpeechRecognition.SpeechContinuousRecognitionResultGeneratedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession).add_ResultGenerated(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession, Windows.Media.SpeechRecognition.SpeechContinuousRecognitionResultGeneratedEventArgs), Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession, Windows.Media.SpeechRecognition.SpeechContinuousRecognitionResultGeneratedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession)this.asInterface(uuid("6a213c04-6614-49f8-99a2-b5e9b3a085c8"))).add_ResultGenerated(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession, Windows.Media.SpeechRecognition.SpeechContinuousRecognitionResultGeneratedEventArgs), Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession, Windows.Media.SpeechRecognition.SpeechContinuousRecognitionResultGeneratedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeResultGenerated(EventRegistrationToken value)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession).remove_ResultGenerated(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession)this.asInterface(uuid("6a213c04-6614-49f8-99a2-b5e9b3a085c8"))).remove_ResultGenerated(value));
 	}
 }
 
@@ -368,7 +368,7 @@ extern(Windows):
 	final Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus Status()
 	{
 		Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionCompilationResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionCompilationResult)this.asInterface(uuid("407e6c5d-6ac7-4da4-9cc1-2fce32cf7489"))).get_Status(&_ret));
 		return _ret;
 	}
 }
@@ -379,57 +379,57 @@ extern(Windows):
 	final Windows.Storage.StorageFile GrammarFile()
 	{
 		Windows.Storage.StorageFile _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionGrammarFileConstraint).get_GrammarFile(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionGrammarFileConstraint)this.asInterface(uuid("b5031a8f-85ca-4fa4-b11a-474fc41b3835"))).get_GrammarFile(&_ret));
 		return _ret;
 	}
 	final bool IsEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_IsEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).get_IsEnabled(&_ret));
 		return _ret;
 	}
 	final void IsEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_IsEnabled(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_IsEnabled(value));
 	}
 	final HSTRING Tag()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Tag(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).get_Tag(&_ret));
 		return _ret;
 	}
 	final void Tag(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_Tag(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_Tag(value));
 	}
 	final Windows.Media.SpeechRecognition.SpeechRecognitionConstraintType Type()
 	{
 		Windows.Media.SpeechRecognition.SpeechRecognitionConstraintType _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Type(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).get_Type(&_ret));
 		return _ret;
 	}
 	final Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability Probability()
 	{
 		Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Probability(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).get_Probability(&_ret));
 		return _ret;
 	}
 	final void Probability(Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability value)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_Probability(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_Probability(value));
 	}
 	static auto New(Windows.Storage.StorageFile file)
 	{
 		auto factory = factory!(Windows.Media.SpeechRecognition.ISpeechRecognitionGrammarFileConstraintFactory);
 		const Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint _ret;
-		Debug.OK(factory.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionGrammarFileConstraintFactory).abi_Create(file, &_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionGrammarFileConstraintFactory)factory.asInterface(uuid("3da770eb-c479-4c27-9f19-89974ef392d1"))).abi_Create(file, &_ret));
 		return _ret;
 	}
 	static auto New(Windows.Storage.StorageFile file, HSTRING tag)
 	{
 		auto factory = factory!(Windows.Media.SpeechRecognition.ISpeechRecognitionGrammarFileConstraintFactory);
 		const Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint _ret;
-		Debug.OK(factory.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionGrammarFileConstraintFactory).abi_CreateWithTag(file, tag, &_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionGrammarFileConstraintFactory)factory.asInterface(uuid("3da770eb-c479-4c27-9f19-89974ef392d1"))).abi_CreateWithTag(file, tag, &_ret));
 		return _ret;
 	}
 }
@@ -440,7 +440,7 @@ extern(Windows):
 	final HSTRING Text()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionHypothesis).get_Text(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionHypothesis)this.asInterface(uuid("7a7b25b0-99c5-4f7d-bf84-10aa1302b634"))).get_Text(&_ret));
 		return _ret;
 	}
 }
@@ -451,7 +451,7 @@ extern(Windows):
 	final Windows.Media.SpeechRecognition.SpeechRecognitionHypothesis Hypothesis()
 	{
 		Windows.Media.SpeechRecognition.SpeechRecognitionHypothesis _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionHypothesisGeneratedEventArgs).get_Hypothesis(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionHypothesisGeneratedEventArgs)this.asInterface(uuid("55161a7a-8023-5866-411d-1213bb271476"))).get_Hypothesis(&_ret));
 		return _ret;
 	}
 }
@@ -462,57 +462,57 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVector!(HSTRING) Commands()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionListConstraint).get_Commands(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionListConstraint)this.asInterface(uuid("09c487e9-e4ad-4526-81f2-4946fb481d98"))).get_Commands(&_ret));
 		return _ret;
 	}
 	final bool IsEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_IsEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).get_IsEnabled(&_ret));
 		return _ret;
 	}
 	final void IsEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_IsEnabled(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_IsEnabled(value));
 	}
 	final HSTRING Tag()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Tag(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).get_Tag(&_ret));
 		return _ret;
 	}
 	final void Tag(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_Tag(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_Tag(value));
 	}
 	final Windows.Media.SpeechRecognition.SpeechRecognitionConstraintType Type()
 	{
 		Windows.Media.SpeechRecognition.SpeechRecognitionConstraintType _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Type(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).get_Type(&_ret));
 		return _ret;
 	}
 	final Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability Probability()
 	{
 		Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Probability(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).get_Probability(&_ret));
 		return _ret;
 	}
 	final void Probability(Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability value)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_Probability(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_Probability(value));
 	}
 	static auto New(Windows.Foundation.Collections.IIterable!(HSTRING) commands)
 	{
 		auto factory = factory!(Windows.Media.SpeechRecognition.ISpeechRecognitionListConstraintFactory);
 		const Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint _ret;
-		Debug.OK(factory.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionListConstraintFactory).abi_Create(commands, &_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionListConstraintFactory)factory.asInterface(uuid("40f3cdc7-562a-426a-9f3b-3b4e282be1d5"))).abi_Create(commands, &_ret));
 		return _ret;
 	}
 	static auto New(Windows.Foundation.Collections.IIterable!(HSTRING) commands, HSTRING tag)
 	{
 		auto factory = factory!(Windows.Media.SpeechRecognition.ISpeechRecognitionListConstraintFactory);
 		const Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint _ret;
-		Debug.OK(factory.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionListConstraintFactory).abi_CreateWithTag(commands, tag, &_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionListConstraintFactory)factory.asInterface(uuid("40f3cdc7-562a-426a-9f3b-3b4e282be1d5"))).abi_CreateWithTag(commands, tag, &_ret));
 		return _ret;
 	}
 }
@@ -523,7 +523,7 @@ extern(Windows):
 	final Windows.Media.SpeechRecognition.SpeechRecognitionAudioProblem Problem()
 	{
 		Windows.Media.SpeechRecognition.SpeechRecognitionAudioProblem _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionQualityDegradingEventArgs).get_Problem(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionQualityDegradingEventArgs)this.asInterface(uuid("4fe24105-8c3a-4c7e-8d0a-5bd4f5b14ad8"))).get_Problem(&_ret));
 		return _ret;
 	}
 }
@@ -534,61 +534,61 @@ extern(Windows):
 	final Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus Status()
 	{
 		Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionResult)this.asInterface(uuid("4e303157-034e-4652-857e-d0454cc4beec"))).get_Status(&_ret));
 		return _ret;
 	}
 	final HSTRING Text()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionResult).get_Text(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionResult)this.asInterface(uuid("4e303157-034e-4652-857e-d0454cc4beec"))).get_Text(&_ret));
 		return _ret;
 	}
 	final Windows.Media.SpeechRecognition.SpeechRecognitionConfidence Confidence()
 	{
 		Windows.Media.SpeechRecognition.SpeechRecognitionConfidence _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionResult).get_Confidence(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionResult)this.asInterface(uuid("4e303157-034e-4652-857e-d0454cc4beec"))).get_Confidence(&_ret));
 		return _ret;
 	}
 	final Windows.Media.SpeechRecognition.SpeechRecognitionSemanticInterpretation SemanticInterpretation()
 	{
 		Windows.Media.SpeechRecognition.SpeechRecognitionSemanticInterpretation _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionResult).get_SemanticInterpretation(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionResult)this.asInterface(uuid("4e303157-034e-4652-857e-d0454cc4beec"))).get_SemanticInterpretation(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.SpeechRecognition.SpeechRecognitionResult) GetAlternates(UINT32 maxAlternates)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.SpeechRecognition.SpeechRecognitionResult) _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionResult).abi_GetAlternates(maxAlternates, &_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionResult)this.asInterface(uuid("4e303157-034e-4652-857e-d0454cc4beec"))).abi_GetAlternates(maxAlternates, &_ret));
 		return _ret;
 	}
 	final Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint Constraint()
 	{
 		Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionResult).get_Constraint(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionResult)this.asInterface(uuid("4e303157-034e-4652-857e-d0454cc4beec"))).get_Constraint(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) RulePath()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionResult).get_RulePath(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionResult)this.asInterface(uuid("4e303157-034e-4652-857e-d0454cc4beec"))).get_RulePath(&_ret));
 		return _ret;
 	}
 	final double RawConfidence()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionResult).get_RawConfidence(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionResult)this.asInterface(uuid("4e303157-034e-4652-857e-d0454cc4beec"))).get_RawConfidence(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime PhraseStartTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionResult2).get_PhraseStartTime(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionResult2)this.asInterface(uuid("af7ed1ba-451b-4166-a0c1-1ffe84032d03"))).get_PhraseStartTime(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan PhraseDuration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionResult2).get_PhraseDuration(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionResult2)this.asInterface(uuid("af7ed1ba-451b-4166-a0c1-1ffe84032d03"))).get_PhraseDuration(&_ret));
 		return _ret;
 	}
 }
@@ -599,7 +599,7 @@ extern(Windows):
 	final Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Foundation.Collections.IVectorView!(HSTRING)) Properties()
 	{
 		Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionSemanticInterpretation).get_Properties(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionSemanticInterpretation)this.asInterface(uuid("aae1da9b-7e32-4c1f-89fe-0c65f486f52e"))).get_Properties(&_ret));
 		return _ret;
 	}
 }
@@ -610,63 +610,63 @@ extern(Windows):
 	final Windows.Media.SpeechRecognition.SpeechRecognitionScenario Scenario()
 	{
 		Windows.Media.SpeechRecognition.SpeechRecognitionScenario _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraint).get_Scenario(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraint)this.asInterface(uuid("bf6fdf19-825d-4e69-a681-36e48cf1c93e"))).get_Scenario(&_ret));
 		return _ret;
 	}
 	final HSTRING TopicHint()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraint).get_TopicHint(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraint)this.asInterface(uuid("bf6fdf19-825d-4e69-a681-36e48cf1c93e"))).get_TopicHint(&_ret));
 		return _ret;
 	}
 	final bool IsEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_IsEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).get_IsEnabled(&_ret));
 		return _ret;
 	}
 	final void IsEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_IsEnabled(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_IsEnabled(value));
 	}
 	final HSTRING Tag()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Tag(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).get_Tag(&_ret));
 		return _ret;
 	}
 	final void Tag(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_Tag(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_Tag(value));
 	}
 	final Windows.Media.SpeechRecognition.SpeechRecognitionConstraintType Type()
 	{
 		Windows.Media.SpeechRecognition.SpeechRecognitionConstraintType _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Type(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).get_Type(&_ret));
 		return _ret;
 	}
 	final Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability Probability()
 	{
 		Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Probability(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).get_Probability(&_ret));
 		return _ret;
 	}
 	final void Probability(Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability value)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_Probability(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_Probability(value));
 	}
 	static auto New(Windows.Media.SpeechRecognition.SpeechRecognitionScenario scenario, HSTRING topicHint)
 	{
 		auto factory = factory!(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraintFactory);
 		const Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint _ret;
-		Debug.OK(factory.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraintFactory).abi_Create(scenario, topicHint, &_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraintFactory)factory.asInterface(uuid("6e6863df-ec05-47d7-a5df-56a3431e58d2"))).abi_Create(scenario, topicHint, &_ret));
 		return _ret;
 	}
 	static auto New(Windows.Media.SpeechRecognition.SpeechRecognitionScenario scenario, HSTRING topicHint, HSTRING tag)
 	{
 		auto factory = factory!(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraintFactory);
 		const Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint _ret;
-		Debug.OK(factory.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraintFactory).abi_CreateWithTag(scenario, topicHint, tag, &_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionTopicConstraintFactory)factory.asInterface(uuid("6e6863df-ec05-47d7-a5df-56a3431e58d2"))).abi_CreateWithTag(scenario, topicHint, tag, &_ret));
 		return _ret;
 	}
 }
@@ -677,38 +677,38 @@ extern(Windows):
 	final bool IsEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_IsEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).get_IsEnabled(&_ret));
 		return _ret;
 	}
 	final void IsEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_IsEnabled(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_IsEnabled(value));
 	}
 	final HSTRING Tag()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Tag(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).get_Tag(&_ret));
 		return _ret;
 	}
 	final void Tag(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_Tag(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_Tag(value));
 	}
 	final Windows.Media.SpeechRecognition.SpeechRecognitionConstraintType Type()
 	{
 		Windows.Media.SpeechRecognition.SpeechRecognitionConstraintType _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Type(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).get_Type(&_ret));
 		return _ret;
 	}
 	final Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability Probability()
 	{
 		Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).get_Probability(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).get_Probability(&_ret));
 		return _ret;
 	}
 	final void Probability(Windows.Media.SpeechRecognition.SpeechRecognitionConstraintProbability value)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint).set_Probability(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint)this.asInterface(uuid("79ac1628-4d68-43c4-8911-40dc4101b55b"))).set_Probability(value));
 	}
 }
 
@@ -718,96 +718,96 @@ extern(Windows):
 	final Windows.Globalization.Language CurrentLanguage()
 	{
 		Windows.Globalization.Language _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer).get_CurrentLanguage(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizer)this.asInterface(uuid("0bc3c9cb-c26a-40f2-aeb5-8096b2e48073"))).get_CurrentLanguage(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint) Constraints()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Media.SpeechRecognition.ISpeechRecognitionConstraint) _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer).get_Constraints(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizer)this.asInterface(uuid("0bc3c9cb-c26a-40f2-aeb5-8096b2e48073"))).get_Constraints(&_ret));
 		return _ret;
 	}
 	final Windows.Media.SpeechRecognition.SpeechRecognizerTimeouts Timeouts()
 	{
 		Windows.Media.SpeechRecognition.SpeechRecognizerTimeouts _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer).get_Timeouts(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizer)this.asInterface(uuid("0bc3c9cb-c26a-40f2-aeb5-8096b2e48073"))).get_Timeouts(&_ret));
 		return _ret;
 	}
 	final Windows.Media.SpeechRecognition.SpeechRecognizerUIOptions UIOptions()
 	{
 		Windows.Media.SpeechRecognition.SpeechRecognizerUIOptions _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer).get_UIOptions(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizer)this.asInterface(uuid("0bc3c9cb-c26a-40f2-aeb5-8096b2e48073"))).get_UIOptions(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.SpeechRecognition.SpeechRecognitionCompilationResult) CompileConstraintsAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.SpeechRecognition.SpeechRecognitionCompilationResult) _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer).abi_CompileConstraintsAsync(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizer)this.asInterface(uuid("0bc3c9cb-c26a-40f2-aeb5-8096b2e48073"))).abi_CompileConstraintsAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.SpeechRecognition.SpeechRecognitionResult) RecognizeAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.SpeechRecognition.SpeechRecognitionResult) _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer).abi_RecognizeAsync(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizer)this.asInterface(uuid("0bc3c9cb-c26a-40f2-aeb5-8096b2e48073"))).abi_RecognizeAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.SpeechRecognition.SpeechRecognitionResult) RecognizeWithUIAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.SpeechRecognition.SpeechRecognitionResult) _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer).abi_RecognizeWithUIAsync(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizer)this.asInterface(uuid("0bc3c9cb-c26a-40f2-aeb5-8096b2e48073"))).abi_RecognizeWithUIAsync(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnRecognitionQualityDegrading(void delegate(Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer).add_RecognitionQualityDegrading(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs), Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizer)this.asInterface(uuid("0bc3c9cb-c26a-40f2-aeb5-8096b2e48073"))).add_RecognitionQualityDegrading(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs), Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRecognitionQualityDegrading(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer).remove_RecognitionQualityDegrading(cookie));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizer)this.asInterface(uuid("0bc3c9cb-c26a-40f2-aeb5-8096b2e48073"))).remove_RecognitionQualityDegrading(cookie));
 	}
 	final EventRegistrationToken OnStateChanged(void delegate(Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognizerStateChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer).add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognizerStateChangedEventArgs), Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognizerStateChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizer)this.asInterface(uuid("0bc3c9cb-c26a-40f2-aeb5-8096b2e48073"))).add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognizerStateChangedEventArgs), Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognizerStateChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStateChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer).remove_StateChanged(cookie));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizer)this.asInterface(uuid("0bc3c9cb-c26a-40f2-aeb5-8096b2e48073"))).remove_StateChanged(cookie));
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	final Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession ContinuousRecognitionSession()
 	{
 		Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer2).get_ContinuousRecognitionSession(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizer2)this.asInterface(uuid("63c9baf1-91e3-4ea4-86a1-7c3867d084a6"))).get_ContinuousRecognitionSession(&_ret));
 		return _ret;
 	}
 	final Windows.Media.SpeechRecognition.SpeechRecognizerState State()
 	{
 		Windows.Media.SpeechRecognition.SpeechRecognizerState _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer2).get_State(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizer2)this.asInterface(uuid("63c9baf1-91e3-4ea4-86a1-7c3867d084a6"))).get_State(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction StopRecognitionAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer2).abi_StopRecognitionAsync(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizer2)this.asInterface(uuid("63c9baf1-91e3-4ea4-86a1-7c3867d084a6"))).abi_StopRecognitionAsync(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnHypothesisGenerated(void delegate(Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognitionHypothesisGeneratedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer2).add_HypothesisGenerated(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognitionHypothesisGeneratedEventArgs), Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognitionHypothesisGeneratedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizer2)this.asInterface(uuid("63c9baf1-91e3-4ea4-86a1-7c3867d084a6"))).add_HypothesisGenerated(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognitionHypothesisGeneratedEventArgs), Windows.Media.SpeechRecognition.SpeechRecognizer, Windows.Media.SpeechRecognition.SpeechRecognitionHypothesisGeneratedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeHypothesisGenerated(EventRegistrationToken value)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizer2).remove_HypothesisGenerated(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizer2)this.asInterface(uuid("63c9baf1-91e3-4ea4-86a1-7c3867d084a6"))).remove_HypothesisGenerated(value));
 	}
 
 	private static Windows.Media.SpeechRecognition.ISpeechRecognizerStatics _staticInstance;
@@ -819,32 +819,32 @@ extern(Windows):
 	static Windows.Globalization.Language SystemSpeechLanguage()
 	{
 		Windows.Globalization.Language _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerStatics).get_SystemSpeechLanguage(&_ret));
+		Debug.OK(staticInstance.get_SystemSpeechLanguage(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(Windows.Globalization.Language) SupportedTopicLanguages()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Globalization.Language) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerStatics).get_SupportedTopicLanguages(&_ret));
+		Debug.OK(staticInstance.get_SupportedTopicLanguages(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(Windows.Globalization.Language) SupportedGrammarLanguages()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Globalization.Language) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerStatics).get_SupportedGrammarLanguages(&_ret));
+		Debug.OK(staticInstance.get_SupportedGrammarLanguages(&_ret));
 		return _ret;
 	}
 	static SpeechRecognizer New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(SpeechRecognizer).abi_ActivateInstance(&ret));
-		return ret.as!(SpeechRecognizer);
+		return cast(SpeechRecognizer) ret;
 	}
 	static Windows.Media.SpeechRecognition.SpeechRecognizer New(Windows.Globalization.Language language)
 	{
 		auto factory = factory!(Windows.Media.SpeechRecognition.ISpeechRecognizerFactory);
 		Windows.Media.SpeechRecognition.SpeechRecognizer _ret;
-		Debug.OK(factory.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerFactory).abi_Create(language, &_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizerFactory)factory.asInterface(uuid("60c488dd-7fb8-4033-ac70-d046f64818e1"))).abi_Create(language, &_ret));
 		return _ret;
 	}
 }
@@ -855,7 +855,7 @@ extern(Windows):
 	final Windows.Media.SpeechRecognition.SpeechRecognizerState State()
 	{
 		Windows.Media.SpeechRecognition.SpeechRecognizerState _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerStateChangedEventArgs).get_State(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizerStateChangedEventArgs)this.asInterface(uuid("563d4f09-ba03-4bad-ad81-ddc6c4dab0c3"))).get_State(&_ret));
 		return _ret;
 	}
 }
@@ -866,32 +866,32 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan InitialSilenceTimeout()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerTimeouts).get_InitialSilenceTimeout(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizerTimeouts)this.asInterface(uuid("2ef76fca-6a3c-4dca-a153-df1bc88a79af"))).get_InitialSilenceTimeout(&_ret));
 		return _ret;
 	}
 	final void InitialSilenceTimeout(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerTimeouts).set_InitialSilenceTimeout(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizerTimeouts)this.asInterface(uuid("2ef76fca-6a3c-4dca-a153-df1bc88a79af"))).set_InitialSilenceTimeout(value));
 	}
 	final Windows.Foundation.TimeSpan EndSilenceTimeout()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerTimeouts).get_EndSilenceTimeout(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizerTimeouts)this.asInterface(uuid("2ef76fca-6a3c-4dca-a153-df1bc88a79af"))).get_EndSilenceTimeout(&_ret));
 		return _ret;
 	}
 	final void EndSilenceTimeout(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerTimeouts).set_EndSilenceTimeout(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizerTimeouts)this.asInterface(uuid("2ef76fca-6a3c-4dca-a153-df1bc88a79af"))).set_EndSilenceTimeout(value));
 	}
 	final Windows.Foundation.TimeSpan BabbleTimeout()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerTimeouts).get_BabbleTimeout(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizerTimeouts)this.asInterface(uuid("2ef76fca-6a3c-4dca-a153-df1bc88a79af"))).get_BabbleTimeout(&_ret));
 		return _ret;
 	}
 	final void BabbleTimeout(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerTimeouts).set_BabbleTimeout(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizerTimeouts)this.asInterface(uuid("2ef76fca-6a3c-4dca-a153-df1bc88a79af"))).set_BabbleTimeout(value));
 	}
 }
 
@@ -901,42 +901,42 @@ extern(Windows):
 	final HSTRING ExampleText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions).get_ExampleText(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions)this.asInterface(uuid("7888d641-b92b-44ba-a25f-d1864630641f"))).get_ExampleText(&_ret));
 		return _ret;
 	}
 	final void ExampleText(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions).set_ExampleText(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions)this.asInterface(uuid("7888d641-b92b-44ba-a25f-d1864630641f"))).set_ExampleText(value));
 	}
 	final HSTRING AudiblePrompt()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions).get_AudiblePrompt(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions)this.asInterface(uuid("7888d641-b92b-44ba-a25f-d1864630641f"))).get_AudiblePrompt(&_ret));
 		return _ret;
 	}
 	final void AudiblePrompt(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions).set_AudiblePrompt(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions)this.asInterface(uuid("7888d641-b92b-44ba-a25f-d1864630641f"))).set_AudiblePrompt(value));
 	}
 	final bool IsReadBackEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions).get_IsReadBackEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions)this.asInterface(uuid("7888d641-b92b-44ba-a25f-d1864630641f"))).get_IsReadBackEnabled(&_ret));
 		return _ret;
 	}
 	final void IsReadBackEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions).set_IsReadBackEnabled(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions)this.asInterface(uuid("7888d641-b92b-44ba-a25f-d1864630641f"))).set_IsReadBackEnabled(value));
 	}
 	final bool ShowConfirmation()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions).get_ShowConfirmation(&_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions)this.asInterface(uuid("7888d641-b92b-44ba-a25f-d1864630641f"))).get_ShowConfirmation(&_ret));
 		return _ret;
 	}
 	final void ShowConfirmation(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions).set_ShowConfirmation(value));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechRecognizerUIOptions)this.asInterface(uuid("7888d641-b92b-44ba-a25f-d1864630641f"))).set_ShowConfirmation(value));
 	}
 }
 

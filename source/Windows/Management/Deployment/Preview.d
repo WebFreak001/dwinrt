@@ -30,7 +30,7 @@ interface ClassicAppManager
 	static Windows.Management.Deployment.Preview.InstalledClassicAppInfo FindInstalledApp(HSTRING appUninstallKey)
 	{
 		Windows.Management.Deployment.Preview.InstalledClassicAppInfo _ret;
-		Debug.OK(staticInstance.as!(Windows.Management.Deployment.Preview.IClassicAppManagerStatics).abi_FindInstalledApp(appUninstallKey, &_ret));
+		Debug.OK(staticInstance.abi_FindInstalledApp(appUninstallKey, &_ret));
 		return _ret;
 	}
 }
@@ -41,13 +41,13 @@ extern(Windows):
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Management.Deployment.Preview.IInstalledClassicAppInfo).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.Management.Deployment.Preview.IInstalledClassicAppInfo)this.asInterface(uuid("0a7d3da3-65d0-4086-80d6-0610d760207d"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final HSTRING DisplayVersion()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Management.Deployment.Preview.IInstalledClassicAppInfo).get_DisplayVersion(&_ret));
+		Debug.OK((cast(Windows.Management.Deployment.Preview.IInstalledClassicAppInfo)this.asInterface(uuid("0a7d3da3-65d0-4086-80d6-0610d760207d"))).get_DisplayVersion(&_ret));
 		return _ret;
 	}
 }

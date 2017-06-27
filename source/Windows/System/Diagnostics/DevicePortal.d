@@ -44,22 +44,22 @@ extern(Windows):
 	final EventRegistrationToken OnClosed(void delegate(Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionClosedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnection).add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionClosedEventArgs), Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionClosedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnection)this.asInterface(uuid("0f447f51-1198-4da1-8d54-bdef393e09b6"))).add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionClosedEventArgs), Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionClosedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeClosed(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnection).remove_Closed(token));
+		Debug.OK((cast(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnection)this.asInterface(uuid("0f447f51-1198-4da1-8d54-bdef393e09b6"))).remove_Closed(token));
 	}
 	final EventRegistrationToken OnRequestReceived(void delegate(Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionRequestReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnection).add_RequestReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionRequestReceivedEventArgs), Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionRequestReceivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnection)this.asInterface(uuid("0f447f51-1198-4da1-8d54-bdef393e09b6"))).add_RequestReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionRequestReceivedEventArgs), Windows.System.Diagnostics.DevicePortal.DevicePortalConnection, Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionRequestReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRequestReceived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnection).remove_RequestReceived(token));
+		Debug.OK((cast(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnection)this.asInterface(uuid("0f447f51-1198-4da1-8d54-bdef393e09b6"))).remove_RequestReceived(token));
 	}
 
 	private static Windows.System.Diagnostics.DevicePortal.IDevicePortalConnectionStatics _staticInstance;
@@ -71,7 +71,7 @@ extern(Windows):
 	static Windows.System.Diagnostics.DevicePortal.DevicePortalConnection GetForAppServiceConnection(Windows.ApplicationModel.AppService.AppServiceConnection appServiceConnection)
 	{
 		Windows.System.Diagnostics.DevicePortal.DevicePortalConnection _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnectionStatics).abi_GetForAppServiceConnection(appServiceConnection, &_ret));
+		Debug.OK(staticInstance.abi_GetForAppServiceConnection(appServiceConnection, &_ret));
 		return _ret;
 	}
 }
@@ -82,7 +82,7 @@ extern(Windows):
 	final Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionClosedReason Reason()
 	{
 		Windows.System.Diagnostics.DevicePortal.DevicePortalConnectionClosedReason _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnectionClosedEventArgs).get_Reason(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnectionClosedEventArgs)this.asInterface(uuid("fcf70e38-7032-428c-9f50-945c15a9f0cb"))).get_Reason(&_ret));
 		return _ret;
 	}
 }
@@ -93,13 +93,13 @@ extern(Windows):
 	final Windows.Web.Http.HttpRequestMessage RequestMessage()
 	{
 		Windows.Web.Http.HttpRequestMessage _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnectionRequestReceivedEventArgs).get_RequestMessage(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnectionRequestReceivedEventArgs)this.asInterface(uuid("64dae045-6fda-4459-9ebd-ecce22e38559"))).get_RequestMessage(&_ret));
 		return _ret;
 	}
 	final Windows.Web.Http.HttpResponseMessage ResponseMessage()
 	{
 		Windows.Web.Http.HttpResponseMessage _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnectionRequestReceivedEventArgs).get_ResponseMessage(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.DevicePortal.IDevicePortalConnectionRequestReceivedEventArgs)this.asInterface(uuid("64dae045-6fda-4459-9ebd-ecce22e38559"))).get_ResponseMessage(&_ret));
 		return _ret;
 	}
 }

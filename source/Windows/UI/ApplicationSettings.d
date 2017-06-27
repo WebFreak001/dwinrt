@@ -200,12 +200,12 @@ extern(Windows):
 	final EventRegistrationToken OnAccountCommandsRequested(void delegate(Windows.UI.ApplicationSettings.AccountsSettingsPane, Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPane).add_AccountCommandsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ApplicationSettings.AccountsSettingsPane, Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs), Windows.UI.ApplicationSettings.AccountsSettingsPane, Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.IAccountsSettingsPane)this.asInterface(uuid("81ea942c-4f09-4406-a538-838d9b14b7e6"))).add_AccountCommandsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ApplicationSettings.AccountsSettingsPane, Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs), Windows.UI.ApplicationSettings.AccountsSettingsPane, Windows.UI.ApplicationSettings.AccountsSettingsPaneCommandsRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAccountCommandsRequested(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPane).remove_AccountCommandsRequested(cookie));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.IAccountsSettingsPane)this.asInterface(uuid("81ea942c-4f09-4406-a538-838d9b14b7e6"))).remove_AccountCommandsRequested(cookie));
 	}
 
 	private static Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics _staticInstance;
@@ -217,12 +217,12 @@ extern(Windows):
 	static Windows.UI.ApplicationSettings.AccountsSettingsPane GetForCurrentView()
 	{
 		Windows.UI.ApplicationSettings.AccountsSettingsPane _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics).abi_GetForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 	static void Show()
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPaneStatics).abi_Show());
+		Debug.OK(staticInstance.abi_Show());
 	}
 }
 
@@ -232,41 +232,41 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVector!(Windows.UI.ApplicationSettings.WebAccountProviderCommand) WebAccountProviderCommands()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.ApplicationSettings.WebAccountProviderCommand) _ret;
-		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs).get_WebAccountProviderCommands(&_ret));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs)this.asInterface(uuid("3b68c099-db19-45d0-9abf-95d3773c9330"))).get_WebAccountProviderCommands(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.UI.ApplicationSettings.WebAccountCommand) WebAccountCommands()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.ApplicationSettings.WebAccountCommand) _ret;
-		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs).get_WebAccountCommands(&_ret));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs)this.asInterface(uuid("3b68c099-db19-45d0-9abf-95d3773c9330"))).get_WebAccountCommands(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.UI.ApplicationSettings.CredentialCommand) CredentialCommands()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.ApplicationSettings.CredentialCommand) _ret;
-		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs).get_CredentialCommands(&_ret));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs)this.asInterface(uuid("3b68c099-db19-45d0-9abf-95d3773c9330"))).get_CredentialCommands(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.UI.ApplicationSettings.SettingsCommand) Commands()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.ApplicationSettings.SettingsCommand) _ret;
-		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs).get_Commands(&_ret));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs)this.asInterface(uuid("3b68c099-db19-45d0-9abf-95d3773c9330"))).get_Commands(&_ret));
 		return _ret;
 	}
 	final HSTRING HeaderText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs).get_HeaderText(&_ret));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs)this.asInterface(uuid("3b68c099-db19-45d0-9abf-95d3773c9330"))).get_HeaderText(&_ret));
 		return _ret;
 	}
 	final void HeaderText(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs).set_HeaderText(value));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs)this.asInterface(uuid("3b68c099-db19-45d0-9abf-95d3773c9330"))).set_HeaderText(value));
 	}
 	final Windows.UI.ApplicationSettings.AccountsSettingsPaneEventDeferral GetDeferral()
 	{
 		Windows.UI.ApplicationSettings.AccountsSettingsPaneEventDeferral _ret;
-		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.IAccountsSettingsPaneCommandsRequestedEventArgs)this.asInterface(uuid("3b68c099-db19-45d0-9abf-95d3773c9330"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -276,7 +276,7 @@ interface AccountsSettingsPaneEventDeferral : Windows.UI.ApplicationSettings.IAc
 extern(Windows):
 	final void Complete()
 	{
-		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IAccountsSettingsPaneEventDeferral).abi_Complete());
+		Debug.OK((cast(Windows.UI.ApplicationSettings.IAccountsSettingsPaneEventDeferral)this.asInterface(uuid("cbf25d3f-e5ba-40ef-93da-65e096e5fb04"))).abi_Complete());
 	}
 }
 
@@ -286,27 +286,27 @@ extern(Windows):
 	final Windows.Security.Credentials.PasswordCredential PasswordCredential()
 	{
 		Windows.Security.Credentials.PasswordCredential _ret;
-		Debug.OK(this.as!(Windows.UI.ApplicationSettings.ICredentialCommand).get_PasswordCredential(&_ret));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.ICredentialCommand)this.asInterface(uuid("a5f665e6-6143-4a7a-a971-b017ba978ce2"))).get_PasswordCredential(&_ret));
 		return _ret;
 	}
 	final Windows.UI.ApplicationSettings.CredentialCommandCredentialDeletedHandler CredentialDeleted()
 	{
 		Windows.UI.ApplicationSettings.CredentialCommandCredentialDeletedHandler _ret;
-		Debug.OK(this.as!(Windows.UI.ApplicationSettings.ICredentialCommand).get_CredentialDeleted(&_ret));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.ICredentialCommand)this.asInterface(uuid("a5f665e6-6143-4a7a-a971-b017ba978ce2"))).get_CredentialDeleted(&_ret));
 		return _ret;
 	}
 	static Windows.UI.ApplicationSettings.CredentialCommand New(Windows.Security.Credentials.PasswordCredential passwordCredential)
 	{
 		auto factory = factory!(Windows.UI.ApplicationSettings.ICredentialCommandFactory);
 		Windows.UI.ApplicationSettings.CredentialCommand _ret;
-		Debug.OK(factory.as!(Windows.UI.ApplicationSettings.ICredentialCommandFactory).abi_CreateCredentialCommand(passwordCredential, &_ret));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.ICredentialCommandFactory)factory.asInterface(uuid("27e88c17-bc3e-4b80-9495-4ed720e48a91"))).abi_CreateCredentialCommand(passwordCredential, &_ret));
 		return _ret;
 	}
 	static Windows.UI.ApplicationSettings.CredentialCommand New(Windows.Security.Credentials.PasswordCredential passwordCredential, Windows.UI.ApplicationSettings.CredentialCommandCredentialDeletedHandler deleted)
 	{
 		auto factory = factory!(Windows.UI.ApplicationSettings.ICredentialCommandFactory);
 		Windows.UI.ApplicationSettings.CredentialCommand _ret;
-		Debug.OK(factory.as!(Windows.UI.ApplicationSettings.ICredentialCommandFactory).abi_CreateCredentialCommandWithHandler(passwordCredential, deleted, &_ret));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.ICredentialCommandFactory)factory.asInterface(uuid("27e88c17-bc3e-4b80-9495-4ed720e48a91"))).abi_CreateCredentialCommandWithHandler(passwordCredential, deleted, &_ret));
 		return _ret;
 	}
 }
@@ -317,32 +317,32 @@ extern(Windows):
 	final HSTRING Label()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).get_Label(&_ret));
+		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).get_Label(&_ret));
 		return _ret;
 	}
 	final void Label(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).set_Label(value));
+		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).set_Label(value));
 	}
 	final Windows.UI.Popups.UICommandInvokedHandler Invoked()
 	{
 		Windows.UI.Popups.UICommandInvokedHandler _ret;
-		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).get_Invoked(&_ret));
+		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).get_Invoked(&_ret));
 		return _ret;
 	}
 	final void Invoked(Windows.UI.Popups.UICommandInvokedHandler value)
 	{
-		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).set_Invoked(value));
+		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).set_Invoked(value));
 	}
 	final IInspectable Id()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).get_Id(&_ret));
+		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).get_Id(&_ret));
 		return _ret;
 	}
 	final void Id(IInspectable value)
 	{
-		Debug.OK(this.as!(Windows.UI.Popups.IUICommand).set_Id(value));
+		Debug.OK((cast(Windows.UI.Popups.IUICommand)this.asInterface(uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f"))).set_Id(value));
 	}
 
 	private static Windows.UI.ApplicationSettings.ISettingsCommandStatics _staticInstance;
@@ -354,14 +354,14 @@ extern(Windows):
 	static Windows.UI.ApplicationSettings.SettingsCommand AccountsCommand()
 	{
 		Windows.UI.ApplicationSettings.SettingsCommand _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.ApplicationSettings.ISettingsCommandStatics).get_AccountsCommand(&_ret));
+		Debug.OK(staticInstance.get_AccountsCommand(&_ret));
 		return _ret;
 	}
 	static Windows.UI.ApplicationSettings.SettingsCommand New(IInspectable settingsCommandId, HSTRING label, Windows.UI.Popups.UICommandInvokedHandler handler)
 	{
 		auto factory = factory!(Windows.UI.ApplicationSettings.ISettingsCommandFactory);
 		Windows.UI.ApplicationSettings.SettingsCommand _ret;
-		Debug.OK(factory.as!(Windows.UI.ApplicationSettings.ISettingsCommandFactory).abi_CreateSettingsCommand(settingsCommandId, label, handler, &_ret));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.ISettingsCommandFactory)factory.asInterface(uuid("68e15b33-1c83-433a-aa5a-ceeea5bd4764"))).abi_CreateSettingsCommand(settingsCommandId, label, handler, &_ret));
 		return _ret;
 	}
 }
@@ -373,13 +373,13 @@ extern(Windows):
 	final EventRegistrationToken OnCommandsRequested(void delegate(Windows.UI.ApplicationSettings.SettingsPane, Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.ApplicationSettings.ISettingsPane).add_CommandsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ApplicationSettings.SettingsPane, Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs), Windows.UI.ApplicationSettings.SettingsPane, Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.ISettingsPane)this.asInterface(uuid("b1cd0932-4570-4c69-8d38-89446561ace0"))).add_CommandsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ApplicationSettings.SettingsPane, Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs), Windows.UI.ApplicationSettings.SettingsPane, Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final void removeCommandsRequested(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.ApplicationSettings.ISettingsPane).remove_CommandsRequested(cookie));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.ISettingsPane)this.asInterface(uuid("b1cd0932-4570-4c69-8d38-89446561ace0"))).remove_CommandsRequested(cookie));
 	}
 
 	private static Windows.UI.ApplicationSettings.ISettingsPaneStatics _staticInstance;
@@ -392,19 +392,19 @@ extern(Windows):
 	static Windows.UI.ApplicationSettings.SettingsPane GetForCurrentView()
 	{
 		Windows.UI.ApplicationSettings.SettingsPane _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.ApplicationSettings.ISettingsPaneStatics).abi_GetForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 	deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
 	static void Show()
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.ApplicationSettings.ISettingsPaneStatics).abi_Show());
+		Debug.OK(staticInstance.abi_Show());
 	}
 	deprecated("SettingsPane is deprecated and might not work on all platforms. For more info, see MSDN.")
 	static Windows.UI.ApplicationSettings.SettingsEdgeLocation Edge()
 	{
 		Windows.UI.ApplicationSettings.SettingsEdgeLocation _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.ApplicationSettings.ISettingsPaneStatics).get_Edge(&_ret));
+		Debug.OK(staticInstance.get_Edge(&_ret));
 		return _ret;
 	}
 }
@@ -416,7 +416,7 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVector!(Windows.UI.ApplicationSettings.SettingsCommand) ApplicationCommands()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.ApplicationSettings.SettingsCommand) _ret;
-		Debug.OK(this.as!(Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequest).get_ApplicationCommands(&_ret));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequest)this.asInterface(uuid("44df23ae-5d6e-4068-a168-f47643182114"))).get_ApplicationCommands(&_ret));
 		return _ret;
 	}
 }
@@ -428,7 +428,7 @@ extern(Windows):
 	final Windows.UI.ApplicationSettings.SettingsPaneCommandsRequest Request()
 	{
 		Windows.UI.ApplicationSettings.SettingsPaneCommandsRequest _ret;
-		Debug.OK(this.as!(Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequestedEventArgs).get_Request(&_ret));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.ISettingsPaneCommandsRequestedEventArgs)this.asInterface(uuid("205f5d24-1b48-4629-a6ca-2fdfedafb75d"))).get_Request(&_ret));
 		return _ret;
 	}
 }
@@ -439,26 +439,26 @@ extern(Windows):
 	final Windows.Security.Credentials.WebAccount WebAccount()
 	{
 		Windows.Security.Credentials.WebAccount _ret;
-		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IWebAccountCommand).get_WebAccount(&_ret));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.IWebAccountCommand)this.asInterface(uuid("caa39398-9cfa-4246-b0c4-a913a3896541"))).get_WebAccount(&_ret));
 		return _ret;
 	}
 	final Windows.UI.ApplicationSettings.WebAccountCommandInvokedHandler Invoked()
 	{
 		Windows.UI.ApplicationSettings.WebAccountCommandInvokedHandler _ret;
-		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IWebAccountCommand).get_Invoked(&_ret));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.IWebAccountCommand)this.asInterface(uuid("caa39398-9cfa-4246-b0c4-a913a3896541"))).get_Invoked(&_ret));
 		return _ret;
 	}
 	final Windows.UI.ApplicationSettings.SupportedWebAccountActions Actions()
 	{
 		Windows.UI.ApplicationSettings.SupportedWebAccountActions _ret;
-		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IWebAccountCommand).get_Actions(&_ret));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.IWebAccountCommand)this.asInterface(uuid("caa39398-9cfa-4246-b0c4-a913a3896541"))).get_Actions(&_ret));
 		return _ret;
 	}
 	static Windows.UI.ApplicationSettings.WebAccountCommand New(Windows.Security.Credentials.WebAccount webAccount, Windows.UI.ApplicationSettings.WebAccountCommandInvokedHandler invoked, Windows.UI.ApplicationSettings.SupportedWebAccountActions actions)
 	{
 		auto factory = factory!(Windows.UI.ApplicationSettings.IWebAccountCommandFactory);
 		Windows.UI.ApplicationSettings.WebAccountCommand _ret;
-		Debug.OK(factory.as!(Windows.UI.ApplicationSettings.IWebAccountCommandFactory).abi_CreateWebAccountCommand(webAccount, invoked, actions, &_ret));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.IWebAccountCommandFactory)factory.asInterface(uuid("bfa6cdff-2f2d-42f5-81de-1d56bafc496d"))).abi_CreateWebAccountCommand(webAccount, invoked, actions, &_ret));
 		return _ret;
 	}
 }
@@ -469,7 +469,7 @@ extern(Windows):
 	final Windows.UI.ApplicationSettings.WebAccountAction Action()
 	{
 		Windows.UI.ApplicationSettings.WebAccountAction _ret;
-		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IWebAccountInvokedArgs).get_Action(&_ret));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.IWebAccountInvokedArgs)this.asInterface(uuid("e7abcc40-a1d8-4c5d-9a7f-1d34b2f90ad2"))).get_Action(&_ret));
 		return _ret;
 	}
 }
@@ -480,20 +480,20 @@ extern(Windows):
 	final Windows.Security.Credentials.WebAccountProvider WebAccountProvider()
 	{
 		Windows.Security.Credentials.WebAccountProvider _ret;
-		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IWebAccountProviderCommand).get_WebAccountProvider(&_ret));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.IWebAccountProviderCommand)this.asInterface(uuid("d69bdd9a-a0a6-4e9b-88dc-c71e757a3501"))).get_WebAccountProvider(&_ret));
 		return _ret;
 	}
 	final Windows.UI.ApplicationSettings.WebAccountProviderCommandInvokedHandler Invoked()
 	{
 		Windows.UI.ApplicationSettings.WebAccountProviderCommandInvokedHandler _ret;
-		Debug.OK(this.as!(Windows.UI.ApplicationSettings.IWebAccountProviderCommand).get_Invoked(&_ret));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.IWebAccountProviderCommand)this.asInterface(uuid("d69bdd9a-a0a6-4e9b-88dc-c71e757a3501"))).get_Invoked(&_ret));
 		return _ret;
 	}
 	static Windows.UI.ApplicationSettings.WebAccountProviderCommand New(Windows.Security.Credentials.WebAccountProvider webAccountProvider, Windows.UI.ApplicationSettings.WebAccountProviderCommandInvokedHandler invoked)
 	{
 		auto factory = factory!(Windows.UI.ApplicationSettings.IWebAccountProviderCommandFactory);
 		Windows.UI.ApplicationSettings.WebAccountProviderCommand _ret;
-		Debug.OK(factory.as!(Windows.UI.ApplicationSettings.IWebAccountProviderCommandFactory).abi_CreateWebAccountProviderCommand(webAccountProvider, invoked, &_ret));
+		Debug.OK((cast(Windows.UI.ApplicationSettings.IWebAccountProviderCommandFactory)factory.asInterface(uuid("d5658a1b-b176-4776-8469-a9d3ff0b3f59"))).abi_CreateWebAccountProviderCommand(webAccountProvider, invoked, &_ret));
 		return _ret;
 	}
 }

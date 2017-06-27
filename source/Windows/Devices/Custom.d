@@ -55,25 +55,25 @@ extern(Windows):
 	final Windows.Storage.Streams.IInputStream InputStream()
 	{
 		Windows.Storage.Streams.IInputStream _ret;
-		Debug.OK(this.as!(Windows.Devices.Custom.ICustomDevice).get_InputStream(&_ret));
+		Debug.OK((cast(Windows.Devices.Custom.ICustomDevice)this.asInterface(uuid("dd30251f-c48b-43bd-bcb1-dec88f15143e"))).get_InputStream(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IOutputStream OutputStream()
 	{
 		Windows.Storage.Streams.IOutputStream _ret;
-		Debug.OK(this.as!(Windows.Devices.Custom.ICustomDevice).get_OutputStream(&_ret));
+		Debug.OK((cast(Windows.Devices.Custom.ICustomDevice)this.asInterface(uuid("dd30251f-c48b-43bd-bcb1-dec88f15143e"))).get_OutputStream(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(UINT32) SendIOControlAsync(Windows.Devices.Custom.IIOControlCode ioControlCode, Windows.Storage.Streams.IBuffer inputBuffer, Windows.Storage.Streams.IBuffer outputBuffer)
 	{
 		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Devices.Custom.ICustomDevice).abi_SendIOControlAsync(ioControlCode, inputBuffer, outputBuffer, &_ret));
+		Debug.OK((cast(Windows.Devices.Custom.ICustomDevice)this.asInterface(uuid("dd30251f-c48b-43bd-bcb1-dec88f15143e"))).abi_SendIOControlAsync(ioControlCode, inputBuffer, outputBuffer, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TrySendIOControlAsync(Windows.Devices.Custom.IIOControlCode ioControlCode, Windows.Storage.Streams.IBuffer inputBuffer, Windows.Storage.Streams.IBuffer outputBuffer)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.Devices.Custom.ICustomDevice).abi_TrySendIOControlAsync(ioControlCode, inputBuffer, outputBuffer, &_ret));
+		Debug.OK((cast(Windows.Devices.Custom.ICustomDevice)this.asInterface(uuid("dd30251f-c48b-43bd-bcb1-dec88f15143e"))).abi_TrySendIOControlAsync(ioControlCode, inputBuffer, outputBuffer, &_ret));
 		return _ret;
 	}
 
@@ -86,13 +86,13 @@ extern(Windows):
 	static HSTRING GetDeviceSelector(GUID classGuid)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Custom.ICustomDeviceStatics).abi_GetDeviceSelector(classGuid, &_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(classGuid, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Custom.CustomDevice) FromIdAsync(HSTRING deviceId, Windows.Devices.Custom.DeviceAccessMode desiredAccess, Windows.Devices.Custom.DeviceSharingMode sharingMode)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Custom.CustomDevice) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Custom.ICustomDeviceStatics).abi_FromIdAsync(deviceId, desiredAccess, sharingMode, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, desiredAccess, sharingMode, &_ret));
 		return _ret;
 	}
 }
@@ -103,38 +103,38 @@ extern(Windows):
 	final Windows.Devices.Custom.IOControlAccessMode AccessMode()
 	{
 		Windows.Devices.Custom.IOControlAccessMode _ret;
-		Debug.OK(this.as!(Windows.Devices.Custom.IIOControlCode).get_AccessMode(&_ret));
+		Debug.OK((cast(Windows.Devices.Custom.IIOControlCode)this.asInterface(uuid("0e9559e7-60c8-4375-a761-7f8808066c60"))).get_AccessMode(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Custom.IOControlBufferingMethod BufferingMethod()
 	{
 		Windows.Devices.Custom.IOControlBufferingMethod _ret;
-		Debug.OK(this.as!(Windows.Devices.Custom.IIOControlCode).get_BufferingMethod(&_ret));
+		Debug.OK((cast(Windows.Devices.Custom.IIOControlCode)this.asInterface(uuid("0e9559e7-60c8-4375-a761-7f8808066c60"))).get_BufferingMethod(&_ret));
 		return _ret;
 	}
 	final UINT16 Function()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.Devices.Custom.IIOControlCode).get_Function(&_ret));
+		Debug.OK((cast(Windows.Devices.Custom.IIOControlCode)this.asInterface(uuid("0e9559e7-60c8-4375-a761-7f8808066c60"))).get_Function(&_ret));
 		return _ret;
 	}
 	final UINT16 DeviceType()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.Devices.Custom.IIOControlCode).get_DeviceType(&_ret));
+		Debug.OK((cast(Windows.Devices.Custom.IIOControlCode)this.asInterface(uuid("0e9559e7-60c8-4375-a761-7f8808066c60"))).get_DeviceType(&_ret));
 		return _ret;
 	}
 	final UINT32 ControlCode()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Custom.IIOControlCode).get_ControlCode(&_ret));
+		Debug.OK((cast(Windows.Devices.Custom.IIOControlCode)this.asInterface(uuid("0e9559e7-60c8-4375-a761-7f8808066c60"))).get_ControlCode(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Custom.IOControlCode New(UINT16 deviceType, UINT16 function_, Windows.Devices.Custom.IOControlAccessMode accessMode, Windows.Devices.Custom.IOControlBufferingMethod bufferingMethod)
 	{
 		auto factory = factory!(Windows.Devices.Custom.IIOControlCodeFactory);
 		Windows.Devices.Custom.IOControlCode _ret;
-		Debug.OK(factory.as!(Windows.Devices.Custom.IIOControlCodeFactory).abi_CreateIOControlCode(deviceType, function_, accessMode, bufferingMethod, &_ret));
+		Debug.OK((cast(Windows.Devices.Custom.IIOControlCodeFactory)factory.asInterface(uuid("856a7cf0-4c11-44ae-afc6-b8d4a212788f"))).abi_CreateIOControlCode(deviceType, function_, accessMode, bufferingMethod, &_ret));
 		return _ret;
 	}
 }
@@ -150,7 +150,7 @@ interface KnownDeviceTypes
 	static UINT16 Unknown()
 	{
 		UINT16 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Custom.IKnownDeviceTypesStatics).get_Unknown(&_ret));
+		Debug.OK(staticInstance.get_Unknown(&_ret));
 		return _ret;
 	}
 }

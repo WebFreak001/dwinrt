@@ -42,13 +42,13 @@ interface NamedPolicy
 	static Windows.Management.Policies.NamedPolicyData GetPolicyFromPath(HSTRING area, HSTRING name)
 	{
 		Windows.Management.Policies.NamedPolicyData _ret;
-		Debug.OK(staticInstance.as!(Windows.Management.Policies.INamedPolicyStatics).abi_GetPolicyFromPath(area, name, &_ret));
+		Debug.OK(staticInstance.abi_GetPolicyFromPath(area, name, &_ret));
 		return _ret;
 	}
 	static Windows.Management.Policies.NamedPolicyData GetPolicyFromPathForUser(Windows.System.User user, HSTRING area, HSTRING name)
 	{
 		Windows.Management.Policies.NamedPolicyData _ret;
-		Debug.OK(staticInstance.as!(Windows.Management.Policies.INamedPolicyStatics).abi_GetPolicyFromPathForUser(user, area, name, &_ret));
+		Debug.OK(staticInstance.abi_GetPolicyFromPathForUser(user, area, name, &_ret));
 		return _ret;
 	}
 }
@@ -59,78 +59,78 @@ extern(Windows):
 	final HSTRING Area()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).get_Area(&_ret));
+		Debug.OK((cast(Windows.Management.Policies.INamedPolicyData)this.asInterface(uuid("38dcb198-95ac-4077-a643-8078cae26400"))).get_Area(&_ret));
 		return _ret;
 	}
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).get_Name(&_ret));
+		Debug.OK((cast(Windows.Management.Policies.INamedPolicyData)this.asInterface(uuid("38dcb198-95ac-4077-a643-8078cae26400"))).get_Name(&_ret));
 		return _ret;
 	}
 	final Windows.Management.Policies.NamedPolicyKind Kind()
 	{
 		Windows.Management.Policies.NamedPolicyKind _ret;
-		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).get_Kind(&_ret));
+		Debug.OK((cast(Windows.Management.Policies.INamedPolicyData)this.asInterface(uuid("38dcb198-95ac-4077-a643-8078cae26400"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final bool IsManaged()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).get_IsManaged(&_ret));
+		Debug.OK((cast(Windows.Management.Policies.INamedPolicyData)this.asInterface(uuid("38dcb198-95ac-4077-a643-8078cae26400"))).get_IsManaged(&_ret));
 		return _ret;
 	}
 	final bool IsUserPolicy()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).get_IsUserPolicy(&_ret));
+		Debug.OK((cast(Windows.Management.Policies.INamedPolicyData)this.asInterface(uuid("38dcb198-95ac-4077-a643-8078cae26400"))).get_IsUserPolicy(&_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).get_User(&_ret));
+		Debug.OK((cast(Windows.Management.Policies.INamedPolicyData)this.asInterface(uuid("38dcb198-95ac-4077-a643-8078cae26400"))).get_User(&_ret));
 		return _ret;
 	}
 	final bool GetBoolean()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).abi_GetBoolean(&_ret));
+		Debug.OK((cast(Windows.Management.Policies.INamedPolicyData)this.asInterface(uuid("38dcb198-95ac-4077-a643-8078cae26400"))).abi_GetBoolean(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer GetBinary()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).abi_GetBinary(&_ret));
+		Debug.OK((cast(Windows.Management.Policies.INamedPolicyData)this.asInterface(uuid("38dcb198-95ac-4077-a643-8078cae26400"))).abi_GetBinary(&_ret));
 		return _ret;
 	}
 	final INT32 GetInt32()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).abi_GetInt32(&_ret));
+		Debug.OK((cast(Windows.Management.Policies.INamedPolicyData)this.asInterface(uuid("38dcb198-95ac-4077-a643-8078cae26400"))).abi_GetInt32(&_ret));
 		return _ret;
 	}
 	final INT64 GetInt64()
 	{
 		INT64 _ret;
-		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).abi_GetInt64(&_ret));
+		Debug.OK((cast(Windows.Management.Policies.INamedPolicyData)this.asInterface(uuid("38dcb198-95ac-4077-a643-8078cae26400"))).abi_GetInt64(&_ret));
 		return _ret;
 	}
 	final HSTRING GetString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).abi_GetString(&_ret));
+		Debug.OK((cast(Windows.Management.Policies.INamedPolicyData)this.asInterface(uuid("38dcb198-95ac-4077-a643-8078cae26400"))).abi_GetString(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnChanged(void delegate(Windows.Management.Policies.NamedPolicyData, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).add_Changed(event!(Windows.Foundation.TypedEventHandler!(Windows.Management.Policies.NamedPolicyData, IInspectable), Windows.Management.Policies.NamedPolicyData, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Management.Policies.INamedPolicyData)this.asInterface(uuid("38dcb198-95ac-4077-a643-8078cae26400"))).add_Changed(event!(Windows.Foundation.TypedEventHandler!(Windows.Management.Policies.NamedPolicyData, IInspectable), Windows.Management.Policies.NamedPolicyData, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.Management.Policies.INamedPolicyData).remove_Changed(cookie));
+		Debug.OK((cast(Windows.Management.Policies.INamedPolicyData)this.asInterface(uuid("38dcb198-95ac-4077-a643-8078cae26400"))).remove_Changed(cookie));
 	}
 }
 

@@ -42,52 +42,52 @@ extern(Windows):
 	final Windows.ApplicationModel.Contacts.Provider.AddContactResult AddContact(HSTRING id, Windows.ApplicationModel.Contacts.Contact contact)
 	{
 		Windows.ApplicationModel.Contacts.Provider.AddContactResult _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI).abi_AddContact(id, contact, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI)this.asInterface(uuid("e2cc1366-cf66-43c4-a96a-a5a112db4746"))).abi_AddContact(id, contact, &_ret));
 		return _ret;
 	}
 	final void RemoveContact(HSTRING id)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI).abi_RemoveContact(id));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI)this.asInterface(uuid("e2cc1366-cf66-43c4-a96a-a5a112db4746"))).abi_RemoveContact(id));
 	}
 	final bool ContainsContact(HSTRING id)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI).abi_ContainsContact(id, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI)this.asInterface(uuid("e2cc1366-cf66-43c4-a96a-a5a112db4746"))).abi_ContainsContact(id, &_ret));
 		return _ret;
 	}
 	deprecated("DesiredFields may be altered or unavailable for releases after Windows 8.1. Instead, use DesiredFieldsWithContactFieldType.")
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) DesiredFields()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI).get_DesiredFields(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI)this.asInterface(uuid("e2cc1366-cf66-43c4-a96a-a5a112db4746"))).get_DesiredFields(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Contacts.ContactSelectionMode SelectionMode()
 	{
 		Windows.ApplicationModel.Contacts.ContactSelectionMode _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI).get_SelectionMode(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI)this.asInterface(uuid("e2cc1366-cf66-43c4-a96a-a5a112db4746"))).get_SelectionMode(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnContactRemoved(void delegate(Windows.ApplicationModel.Contacts.Provider.ContactPickerUI, Windows.ApplicationModel.Contacts.Provider.ContactRemovedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI).add_ContactRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.Provider.ContactPickerUI, Windows.ApplicationModel.Contacts.Provider.ContactRemovedEventArgs), Windows.ApplicationModel.Contacts.Provider.ContactPickerUI, Windows.ApplicationModel.Contacts.Provider.ContactRemovedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI)this.asInterface(uuid("e2cc1366-cf66-43c4-a96a-a5a112db4746"))).add_ContactRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.Provider.ContactPickerUI, Windows.ApplicationModel.Contacts.Provider.ContactRemovedEventArgs), Windows.ApplicationModel.Contacts.Provider.ContactPickerUI, Windows.ApplicationModel.Contacts.Provider.ContactRemovedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeContactRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI).remove_ContactRemoved(token));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI)this.asInterface(uuid("e2cc1366-cf66-43c4-a96a-a5a112db4746"))).remove_ContactRemoved(token));
 	}
 	final Windows.ApplicationModel.Contacts.Provider.AddContactResult AddContact(Windows.ApplicationModel.Contacts.Contact contact)
 	{
 		Windows.ApplicationModel.Contacts.Provider.AddContactResult _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI2).abi_AddContact(contact, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI2)this.asInterface(uuid("6e449e28-7b25-4999-9b0b-875400a1e8c8"))).abi_AddContact(contact, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactFieldType) DesiredFieldsWithContactFieldType()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactFieldType) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI2).get_DesiredFieldsWithContactFieldType(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI2)this.asInterface(uuid("6e449e28-7b25-4999-9b0b-875400a1e8c8"))).get_DesiredFieldsWithContactFieldType(&_ret));
 		return _ret;
 	}
 }
@@ -98,7 +98,7 @@ extern(Windows):
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.Provider.IContactRemovedEventArgs).get_Id(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.Provider.IContactRemovedEventArgs)this.asInterface(uuid("6f354338-3302-4d13-ad8d-adcc0ff9e47c"))).get_Id(&_ret));
 		return _ret;
 	}
 }

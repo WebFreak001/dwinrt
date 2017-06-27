@@ -98,23 +98,23 @@ interface ElementCompositionPreview : Windows.UI.Xaml.Hosting.IElementCompositio
 	static Windows.UI.Composition.Visual GetElementVisual(Windows.UI.Xaml.UIElement element)
 	{
 		Windows.UI.Composition.Visual _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Hosting.IElementCompositionPreviewStatics).abi_GetElementVisual(element, &_ret));
+		Debug.OK(staticInstance.abi_GetElementVisual(element, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Composition.Visual GetElementChildVisual(Windows.UI.Xaml.UIElement element)
 	{
 		Windows.UI.Composition.Visual _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Hosting.IElementCompositionPreviewStatics).abi_GetElementChildVisual(element, &_ret));
+		Debug.OK(staticInstance.abi_GetElementChildVisual(element, &_ret));
 		return _ret;
 	}
 	static void SetElementChildVisual(Windows.UI.Xaml.UIElement element, Windows.UI.Composition.Visual visual)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Hosting.IElementCompositionPreviewStatics).abi_SetElementChildVisual(element, visual));
+		Debug.OK(staticInstance.abi_SetElementChildVisual(element, visual));
 	}
 	static Windows.UI.Composition.CompositionPropertySet GetScrollViewerManipulationPropertySet(Windows.UI.Xaml.Controls.ScrollViewer scrollViewer)
 	{
 		Windows.UI.Composition.CompositionPropertySet _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Hosting.IElementCompositionPreviewStatics).abi_GetScrollViewerManipulationPropertySet(scrollViewer, &_ret));
+		Debug.OK(staticInstance.abi_GetScrollViewerManipulationPropertySet(scrollViewer, &_ret));
 		return _ret;
 	}
 }
@@ -125,44 +125,44 @@ extern(Windows):
 	final Windows.UI.Xaml.UIElement RootElement()
 	{
 		Windows.UI.Xaml.UIElement _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenter).get_RootElement(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Hosting.IXamlUIPresenter)this.asInterface(uuid("a714944a-1619-4fc6-b31b-89512ef022a2"))).get_RootElement(&_ret));
 		return _ret;
 	}
 	final void RootElement(Windows.UI.Xaml.UIElement value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenter).set_RootElement(value));
+		Debug.OK((cast(Windows.UI.Xaml.Hosting.IXamlUIPresenter)this.asInterface(uuid("a714944a-1619-4fc6-b31b-89512ef022a2"))).set_RootElement(value));
 	}
 	final HSTRING ThemeKey()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenter).get_ThemeKey(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Hosting.IXamlUIPresenter)this.asInterface(uuid("a714944a-1619-4fc6-b31b-89512ef022a2"))).get_ThemeKey(&_ret));
 		return _ret;
 	}
 	final void ThemeKey(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenter).set_ThemeKey(value));
+		Debug.OK((cast(Windows.UI.Xaml.Hosting.IXamlUIPresenter)this.asInterface(uuid("a714944a-1619-4fc6-b31b-89512ef022a2"))).set_ThemeKey(value));
 	}
 	final HSTRING ThemeResourcesXaml()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenter).get_ThemeResourcesXaml(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Hosting.IXamlUIPresenter)this.asInterface(uuid("a714944a-1619-4fc6-b31b-89512ef022a2"))).get_ThemeResourcesXaml(&_ret));
 		return _ret;
 	}
 	final void ThemeResourcesXaml(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenter).set_ThemeResourcesXaml(value));
+		Debug.OK((cast(Windows.UI.Xaml.Hosting.IXamlUIPresenter)this.asInterface(uuid("a714944a-1619-4fc6-b31b-89512ef022a2"))).set_ThemeResourcesXaml(value));
 	}
 	final void SetSize(INT32 width, INT32 height)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenter).abi_SetSize(width, height));
+		Debug.OK((cast(Windows.UI.Xaml.Hosting.IXamlUIPresenter)this.asInterface(uuid("a714944a-1619-4fc6-b31b-89512ef022a2"))).abi_SetSize(width, height));
 	}
 	final void Render()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenter).abi_Render());
+		Debug.OK((cast(Windows.UI.Xaml.Hosting.IXamlUIPresenter)this.asInterface(uuid("a714944a-1619-4fc6-b31b-89512ef022a2"))).abi_Render());
 	}
 	final void Present()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenter).abi_Present());
+		Debug.OK((cast(Windows.UI.Xaml.Hosting.IXamlUIPresenter)this.asInterface(uuid("a714944a-1619-4fc6-b31b-89512ef022a2"))).abi_Present());
 	}
 
 	private static Windows.UI.Xaml.Hosting.IXamlUIPresenterStatics _staticInstance;
@@ -174,19 +174,19 @@ extern(Windows):
 	static bool CompleteTimelinesAutomatically()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenterStatics).get_CompleteTimelinesAutomatically(&_ret));
+		Debug.OK(staticInstance.get_CompleteTimelinesAutomatically(&_ret));
 		return _ret;
 	}
 	static void CompleteTimelinesAutomatically(bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenterStatics).set_CompleteTimelinesAutomatically(value));
+		Debug.OK(staticInstance.set_CompleteTimelinesAutomatically(value));
 	}
 	static void SetHost(Windows.UI.Xaml.Hosting.IXamlUIPresenterHost host)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenterStatics).abi_SetHost(host));
+		Debug.OK(staticInstance.abi_SetHost(host));
 	}
 	static void NotifyWindowSizeChanged()
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Hosting.IXamlUIPresenterStatics).abi_NotifyWindowSizeChanged());
+		Debug.OK(staticInstance.abi_NotifyWindowSizeChanged());
 	}
 }

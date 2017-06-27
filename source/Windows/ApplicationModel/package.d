@@ -374,19 +374,19 @@ extern(Windows):
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IAppDisplayInfo).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IAppDisplayInfo)this.asInterface(uuid("1aeb1103-e4d4-41aa-a4f6-c4a276e79eac"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final HSTRING Description()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IAppDisplayInfo).get_Description(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IAppDisplayInfo)this.asInterface(uuid("1aeb1103-e4d4-41aa-a4f6-c4a276e79eac"))).get_Description(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.RandomAccessStreamReference GetLogo(Windows.Foundation.Size size)
 	{
 		Windows.Storage.Streams.RandomAccessStreamReference _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IAppDisplayInfo).abi_GetLogo(size, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IAppDisplayInfo)this.asInterface(uuid("1aeb1103-e4d4-41aa-a4f6-c4a276e79eac"))).abi_GetLogo(size, &_ret));
 		return _ret;
 	}
 }
@@ -397,25 +397,25 @@ extern(Windows):
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IAppInfo).get_Id(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IAppInfo)this.asInterface(uuid("cf7f59b3-6a09-4de8-a6c0-5792d56880d1"))).get_Id(&_ret));
 		return _ret;
 	}
 	final HSTRING AppUserModelId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IAppInfo).get_AppUserModelId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IAppInfo)this.asInterface(uuid("cf7f59b3-6a09-4de8-a6c0-5792d56880d1"))).get_AppUserModelId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.AppDisplayInfo DisplayInfo()
 	{
 		Windows.ApplicationModel.AppDisplayInfo _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IAppInfo).get_DisplayInfo(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IAppInfo)this.asInterface(uuid("cf7f59b3-6a09-4de8-a6c0-5792d56880d1"))).get_DisplayInfo(&_ret));
 		return _ret;
 	}
 	final HSTRING PackageFamilyName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IAppInfo).get_PackageFamilyName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IAppInfo)this.asInterface(uuid("cf7f59b3-6a09-4de8-a6c0-5792d56880d1"))).get_PackageFamilyName(&_ret));
 		return _ret;
 	}
 }
@@ -431,7 +431,7 @@ interface DesignMode
 	static bool DesignModeEnabled()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.IDesignModeStatics).get_DesignModeEnabled(&_ret));
+		Debug.OK(staticInstance.get_DesignModeEnabled(&_ret));
 		return _ret;
 	}
 }
@@ -442,7 +442,7 @@ extern(Windows):
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IEnteredBackgroundEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IEnteredBackgroundEventArgs)this.asInterface(uuid("f722dcc2-9827-403d-aaed-ecca9ac17398"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -458,25 +458,25 @@ interface FullTrustProcessLauncher
 	static Windows.Foundation.IAsyncAction LaunchFullTrustProcessForCurrentAppAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.IFullTrustProcessLauncherStatics).abi_LaunchFullTrustProcessForCurrentAppAsync(&_ret));
+		Debug.OK(staticInstance.abi_LaunchFullTrustProcessForCurrentAppAsync(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncAction LaunchFullTrustProcessForCurrentAppWithParametersAsync(HSTRING parameterGroupId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.IFullTrustProcessLauncherStatics).abi_LaunchFullTrustProcessForCurrentAppWithParametersAsync(parameterGroupId, &_ret));
+		Debug.OK(staticInstance.abi_LaunchFullTrustProcessForCurrentAppWithParametersAsync(parameterGroupId, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncAction LaunchFullTrustProcessForAppAsync(HSTRING fullTrustPackageRelativeAppId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.IFullTrustProcessLauncherStatics).abi_LaunchFullTrustProcessForAppAsync(fullTrustPackageRelativeAppId, &_ret));
+		Debug.OK(staticInstance.abi_LaunchFullTrustProcessForAppAsync(fullTrustPackageRelativeAppId, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncAction LaunchFullTrustProcessForAppWithParametersAsync(HSTRING fullTrustPackageRelativeAppId, HSTRING parameterGroupId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.IFullTrustProcessLauncherStatics).abi_LaunchFullTrustProcessForAppWithParametersAsync(fullTrustPackageRelativeAppId, parameterGroupId, &_ret));
+		Debug.OK(staticInstance.abi_LaunchFullTrustProcessForAppWithParametersAsync(fullTrustPackageRelativeAppId, parameterGroupId, &_ret));
 		return _ret;
 	}
 }
@@ -487,7 +487,7 @@ extern(Windows):
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.ILeavingBackgroundEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.ILeavingBackgroundEventArgs)this.asInterface(uuid("39c6ec9a-ae6e-46f9-a07a-cfc23f88733e"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -498,150 +498,150 @@ extern(Windows):
 	final Windows.ApplicationModel.PackageId Id()
 	{
 		Windows.ApplicationModel.PackageId _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackage).get_Id(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackage)this.asInterface(uuid("163c792f-bd75-413c-bf23-b1fe7b95d825"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.StorageFolder InstalledLocation()
 	{
 		Windows.Storage.StorageFolder _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackage).get_InstalledLocation(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackage)this.asInterface(uuid("163c792f-bd75-413c-bf23-b1fe7b95d825"))).get_InstalledLocation(&_ret));
 		return _ret;
 	}
 	final bool IsFramework()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackage).get_IsFramework(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackage)this.asInterface(uuid("163c792f-bd75-413c-bf23-b1fe7b95d825"))).get_IsFramework(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Package) Dependencies()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Package) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackage).get_Dependencies(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackage)this.asInterface(uuid("163c792f-bd75-413c-bf23-b1fe7b95d825"))).get_Dependencies(&_ret));
 		return _ret;
 	}
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackage2).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackage2)this.asInterface(uuid("a6612fb6-7688-4ace-95fb-359538e7aa01"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final HSTRING PublisherDisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackage2).get_PublisherDisplayName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackage2)this.asInterface(uuid("a6612fb6-7688-4ace-95fb-359538e7aa01"))).get_PublisherDisplayName(&_ret));
 		return _ret;
 	}
 	final HSTRING Description()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackage2).get_Description(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackage2)this.asInterface(uuid("a6612fb6-7688-4ace-95fb-359538e7aa01"))).get_Description(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Uri Logo()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackage2).get_Logo(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackage2)this.asInterface(uuid("a6612fb6-7688-4ace-95fb-359538e7aa01"))).get_Logo(&_ret));
 		return _ret;
 	}
 	final bool IsResourcePackage()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackage2).get_IsResourcePackage(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackage2)this.asInterface(uuid("a6612fb6-7688-4ace-95fb-359538e7aa01"))).get_IsResourcePackage(&_ret));
 		return _ret;
 	}
 	final bool IsBundle()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackage2).get_IsBundle(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackage2)this.asInterface(uuid("a6612fb6-7688-4ace-95fb-359538e7aa01"))).get_IsBundle(&_ret));
 		return _ret;
 	}
 	final bool IsDevelopmentMode()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackage2).get_IsDevelopmentMode(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackage2)this.asInterface(uuid("a6612fb6-7688-4ace-95fb-359538e7aa01"))).get_IsDevelopmentMode(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.PackageStatus Status()
 	{
 		Windows.ApplicationModel.PackageStatus _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackage3).get_Status(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackage3)this.asInterface(uuid("5f738b61-f86a-4917-93d1-f1ee9d3b35d9"))).get_Status(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime InstalledDate()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackage3).get_InstalledDate(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackage3)this.asInterface(uuid("5f738b61-f86a-4917-93d1-f1ee9d3b35d9"))).get_InstalledDate(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Core.AppListEntry)) GetAppListEntriesAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Core.AppListEntry)) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackage3).abi_GetAppListEntriesAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackage3)this.asInterface(uuid("5f738b61-f86a-4917-93d1-f1ee9d3b35d9"))).abi_GetAppListEntriesAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime InstallDate()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageWithMetadata).get_InstallDate(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageWithMetadata)this.asInterface(uuid("95949780-1de9-40f2-b452-0de9f1910012"))).get_InstallDate(&_ret));
 		return _ret;
 	}
 	final HSTRING GetThumbnailToken()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageWithMetadata).abi_GetThumbnailToken(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageWithMetadata)this.asInterface(uuid("95949780-1de9-40f2-b452-0de9f1910012"))).abi_GetThumbnailToken(&_ret));
 		return _ret;
 	}
 	deprecated("Launch may be altered or unavailable for releases after Windows 8.1. Instead, for SmartCardTrigger scenarios use SmartCardTriggerDetails.TryLaunchSelfAsync")
 	final void Launch(HSTRING parameters)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageWithMetadata).abi_Launch(parameters));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageWithMetadata)this.asInterface(uuid("95949780-1de9-40f2-b452-0de9f1910012"))).abi_Launch(parameters));
 	}
 	final Windows.ApplicationModel.PackageSignatureKind SignatureKind()
 	{
 		Windows.ApplicationModel.PackageSignatureKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackage4).get_SignatureKind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackage4)this.asInterface(uuid("65aed1ae-b95b-450c-882b-6255187f397e"))).get_SignatureKind(&_ret));
 		return _ret;
 	}
 	final bool IsOptional()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackage4).get_IsOptional(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackage4)this.asInterface(uuid("65aed1ae-b95b-450c-882b-6255187f397e"))).get_IsOptional(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) VerifyContentIntegrityAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackage4).abi_VerifyContentIntegrityAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackage4)this.asInterface(uuid("65aed1ae-b95b-450c-882b-6255187f397e"))).abi_VerifyContentIntegrityAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.PackageContentGroup)) GetContentGroupsAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.PackageContentGroup)) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackage5).abi_GetContentGroupsAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackage5)this.asInterface(uuid("0e842dd4-d9ac-45ed-9a1e-74ce056b2635"))).abi_GetContentGroupsAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.PackageContentGroup) GetContentGroupAsync(HSTRING name)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.PackageContentGroup) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackage5).abi_GetContentGroupAsync(name, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackage5)this.asInterface(uuid("0e842dd4-d9ac-45ed-9a1e-74ce056b2635"))).abi_GetContentGroupAsync(name, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.PackageContentGroup)) StageContentGroupsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) names)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.PackageContentGroup)) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackage5).abi_StageContentGroupsAsync(names, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackage5)this.asInterface(uuid("0e842dd4-d9ac-45ed-9a1e-74ce056b2635"))).abi_StageContentGroupsAsync(names, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.PackageContentGroup)) StageContentGroupsWithPriorityAsync(Windows.Foundation.Collections.IIterable!(HSTRING) names, bool moveToHeadOfQueue)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.PackageContentGroup)) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackage5).abi_StageContentGroupsWithPriorityAsync(names, moveToHeadOfQueue, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackage5)this.asInterface(uuid("0e842dd4-d9ac-45ed-9a1e-74ce056b2635"))).abi_StageContentGroupsWithPriorityAsync(names, moveToHeadOfQueue, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) SetInUseAsync(bool inUse)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackage5).abi_SetInUseAsync(inUse, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackage5)this.asInterface(uuid("0e842dd4-d9ac-45ed-9a1e-74ce056b2635"))).abi_SetInUseAsync(inUse, &_ret));
 		return _ret;
 	}
 
@@ -654,7 +654,7 @@ extern(Windows):
 	static Windows.ApplicationModel.Package Current()
 	{
 		Windows.ApplicationModel.Package _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.IPackageStatics).get_Current(&_ret));
+		Debug.OK(staticInstance.get_Current(&_ret));
 		return _ret;
 	}
 }
@@ -665,67 +665,67 @@ extern(Windows):
 	final EventRegistrationToken OnPackageStaging(void delegate(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStagingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog).add_PackageStaging(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStagingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStagingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageCatalog)this.asInterface(uuid("230a3751-9de3-4445-be74-91fb325abefe"))).add_PackageStaging(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStagingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStagingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePackageStaging(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog).remove_PackageStaging(token));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageCatalog)this.asInterface(uuid("230a3751-9de3-4445-be74-91fb325abefe"))).remove_PackageStaging(token));
 	}
 	final EventRegistrationToken OnPackageInstalling(void delegate(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageInstallingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog).add_PackageInstalling(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageInstallingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageInstallingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageCatalog)this.asInterface(uuid("230a3751-9de3-4445-be74-91fb325abefe"))).add_PackageInstalling(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageInstallingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageInstallingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePackageInstalling(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog).remove_PackageInstalling(token));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageCatalog)this.asInterface(uuid("230a3751-9de3-4445-be74-91fb325abefe"))).remove_PackageInstalling(token));
 	}
 	final EventRegistrationToken OnPackageUpdating(void delegate(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUpdatingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog).add_PackageUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUpdatingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUpdatingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageCatalog)this.asInterface(uuid("230a3751-9de3-4445-be74-91fb325abefe"))).add_PackageUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUpdatingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUpdatingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePackageUpdating(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog).remove_PackageUpdating(token));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageCatalog)this.asInterface(uuid("230a3751-9de3-4445-be74-91fb325abefe"))).remove_PackageUpdating(token));
 	}
 	final EventRegistrationToken OnPackageUninstalling(void delegate(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUninstallingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog).add_PackageUninstalling(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUninstallingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUninstallingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageCatalog)this.asInterface(uuid("230a3751-9de3-4445-be74-91fb325abefe"))).add_PackageUninstalling(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUninstallingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageUninstallingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePackageUninstalling(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog).remove_PackageUninstalling(token));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageCatalog)this.asInterface(uuid("230a3751-9de3-4445-be74-91fb325abefe"))).remove_PackageUninstalling(token));
 	}
 	final EventRegistrationToken OnPackageStatusChanged(void delegate(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStatusChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog).add_PackageStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStatusChangedEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStatusChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageCatalog)this.asInterface(uuid("230a3751-9de3-4445-be74-91fb325abefe"))).add_PackageStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStatusChangedEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageStatusChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePackageStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog).remove_PackageStatusChanged(token));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageCatalog)this.asInterface(uuid("230a3751-9de3-4445-be74-91fb325abefe"))).remove_PackageStatusChanged(token));
 	}
 	final EventRegistrationToken OnPackageContentGroupStaging(void delegate(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageContentGroupStagingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog2).add_PackageContentGroupStaging(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageContentGroupStagingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageContentGroupStagingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageCatalog2)this.asInterface(uuid("96a60c36-8ff7-4344-b6bf-ee64c2207ed2"))).add_PackageContentGroupStaging(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageContentGroupStagingEventArgs), Windows.ApplicationModel.PackageCatalog, Windows.ApplicationModel.PackageContentGroupStagingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePackageContentGroupStaging(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog2).remove_PackageContentGroupStaging(token));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageCatalog2)this.asInterface(uuid("96a60c36-8ff7-4344-b6bf-ee64c2207ed2"))).remove_PackageContentGroupStaging(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.PackageCatalogAddOptionalPackageResult) AddOptionalPackageAsync(HSTRING optionalPackageFamilyName)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.PackageCatalogAddOptionalPackageResult) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalog2).abi_AddOptionalPackageAsync(optionalPackageFamilyName, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageCatalog2)this.asInterface(uuid("96a60c36-8ff7-4344-b6bf-ee64c2207ed2"))).abi_AddOptionalPackageAsync(optionalPackageFamilyName, &_ret));
 		return _ret;
 	}
 
@@ -738,13 +738,13 @@ extern(Windows):
 	static Windows.ApplicationModel.PackageCatalog OpenForCurrentPackage()
 	{
 		Windows.ApplicationModel.PackageCatalog _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.IPackageCatalogStatics).abi_OpenForCurrentPackage(&_ret));
+		Debug.OK(staticInstance.abi_OpenForCurrentPackage(&_ret));
 		return _ret;
 	}
 	static Windows.ApplicationModel.PackageCatalog OpenForCurrentUser()
 	{
 		Windows.ApplicationModel.PackageCatalog _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.IPackageCatalogStatics).abi_OpenForCurrentUser(&_ret));
+		Debug.OK(staticInstance.abi_OpenForCurrentUser(&_ret));
 		return _ret;
 	}
 }
@@ -755,13 +755,13 @@ extern(Windows):
 	final Windows.ApplicationModel.Package Package()
 	{
 		Windows.ApplicationModel.Package _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalogAddOptionalPackageResult).get_Package(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageCatalogAddOptionalPackageResult)this.asInterface(uuid("3bf10cd4-b4df-47b3-a963-e2fa832f7dd3"))).get_Package(&_ret));
 		return _ret;
 	}
 	final HRESULT ExtendedError()
 	{
 		HRESULT _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageCatalogAddOptionalPackageResult).get_ExtendedError(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageCatalogAddOptionalPackageResult)this.asInterface(uuid("3bf10cd4-b4df-47b3-a963-e2fa832f7dd3"))).get_ExtendedError(&_ret));
 		return _ret;
 	}
 }
@@ -772,25 +772,25 @@ extern(Windows):
 	final Windows.ApplicationModel.Package Package()
 	{
 		Windows.ApplicationModel.Package _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageContentGroup).get_Package(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageContentGroup)this.asInterface(uuid("8f62695d-120a-4798-b5e1-5800dda8f2e1"))).get_Package(&_ret));
 		return _ret;
 	}
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageContentGroup).get_Name(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageContentGroup)this.asInterface(uuid("8f62695d-120a-4798-b5e1-5800dda8f2e1"))).get_Name(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.PackageContentGroupState State()
 	{
 		Windows.ApplicationModel.PackageContentGroupState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageContentGroup).get_State(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageContentGroup)this.asInterface(uuid("8f62695d-120a-4798-b5e1-5800dda8f2e1"))).get_State(&_ret));
 		return _ret;
 	}
 	final bool IsRequired()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageContentGroup).get_IsRequired(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageContentGroup)this.asInterface(uuid("8f62695d-120a-4798-b5e1-5800dda8f2e1"))).get_IsRequired(&_ret));
 		return _ret;
 	}
 
@@ -803,7 +803,7 @@ extern(Windows):
 	static HSTRING RequiredGroupName()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.IPackageContentGroupStatics).get_RequiredGroupName(&_ret));
+		Debug.OK(staticInstance.get_RequiredGroupName(&_ret));
 		return _ret;
 	}
 }
@@ -814,43 +814,43 @@ extern(Windows):
 	final GUID ActivityId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageContentGroupStagingEventArgs).get_ActivityId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageContentGroupStagingEventArgs)this.asInterface(uuid("3d7bc27e-6f27-446c-986e-d4733d4d9113"))).get_ActivityId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Package Package()
 	{
 		Windows.ApplicationModel.Package _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageContentGroupStagingEventArgs).get_Package(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageContentGroupStagingEventArgs)this.asInterface(uuid("3d7bc27e-6f27-446c-986e-d4733d4d9113"))).get_Package(&_ret));
 		return _ret;
 	}
 	final double Progress()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageContentGroupStagingEventArgs).get_Progress(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageContentGroupStagingEventArgs)this.asInterface(uuid("3d7bc27e-6f27-446c-986e-d4733d4d9113"))).get_Progress(&_ret));
 		return _ret;
 	}
 	final bool IsComplete()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageContentGroupStagingEventArgs).get_IsComplete(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageContentGroupStagingEventArgs)this.asInterface(uuid("3d7bc27e-6f27-446c-986e-d4733d4d9113"))).get_IsComplete(&_ret));
 		return _ret;
 	}
 	final HRESULT ErrorCode()
 	{
 		HRESULT _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageContentGroupStagingEventArgs).get_ErrorCode(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageContentGroupStagingEventArgs)this.asInterface(uuid("3d7bc27e-6f27-446c-986e-d4733d4d9113"))).get_ErrorCode(&_ret));
 		return _ret;
 	}
 	final HSTRING ContentGroupName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageContentGroupStagingEventArgs).get_ContentGroupName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageContentGroupStagingEventArgs)this.asInterface(uuid("3d7bc27e-6f27-446c-986e-d4733d4d9113"))).get_ContentGroupName(&_ret));
 		return _ret;
 	}
 	final bool IsContentGroupRequired()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageContentGroupStagingEventArgs).get_IsContentGroupRequired(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageContentGroupStagingEventArgs)this.asInterface(uuid("3d7bc27e-6f27-446c-986e-d4733d4d9113"))).get_IsContentGroupRequired(&_ret));
 		return _ret;
 	}
 }
@@ -861,61 +861,61 @@ extern(Windows):
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageId).get_Name(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageId)this.asInterface(uuid("1adb665e-37c7-4790-9980-dd7ae74e8bb2"))).get_Name(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.PackageVersion Version()
 	{
 		Windows.ApplicationModel.PackageVersion _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageId).get_Version(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageId)this.asInterface(uuid("1adb665e-37c7-4790-9980-dd7ae74e8bb2"))).get_Version(&_ret));
 		return _ret;
 	}
 	final Windows.System.ProcessorArchitecture Architecture()
 	{
 		Windows.System.ProcessorArchitecture _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageId).get_Architecture(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageId)this.asInterface(uuid("1adb665e-37c7-4790-9980-dd7ae74e8bb2"))).get_Architecture(&_ret));
 		return _ret;
 	}
 	final HSTRING ResourceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageId).get_ResourceId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageId)this.asInterface(uuid("1adb665e-37c7-4790-9980-dd7ae74e8bb2"))).get_ResourceId(&_ret));
 		return _ret;
 	}
 	final HSTRING Publisher()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageId).get_Publisher(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageId)this.asInterface(uuid("1adb665e-37c7-4790-9980-dd7ae74e8bb2"))).get_Publisher(&_ret));
 		return _ret;
 	}
 	final HSTRING PublisherId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageId).get_PublisherId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageId)this.asInterface(uuid("1adb665e-37c7-4790-9980-dd7ae74e8bb2"))).get_PublisherId(&_ret));
 		return _ret;
 	}
 	final HSTRING FullName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageId).get_FullName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageId)this.asInterface(uuid("1adb665e-37c7-4790-9980-dd7ae74e8bb2"))).get_FullName(&_ret));
 		return _ret;
 	}
 	final HSTRING FamilyName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageId).get_FamilyName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageId)this.asInterface(uuid("1adb665e-37c7-4790-9980-dd7ae74e8bb2"))).get_FamilyName(&_ret));
 		return _ret;
 	}
 	final HSTRING ProductId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageIdWithMetadata).get_ProductId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageIdWithMetadata)this.asInterface(uuid("40577a7c-0c9e-443d-9074-855f5ce0a08d"))).get_ProductId(&_ret));
 		return _ret;
 	}
 	final HSTRING Author()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageIdWithMetadata).get_Author(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageIdWithMetadata)this.asInterface(uuid("40577a7c-0c9e-443d-9074-855f5ce0a08d"))).get_Author(&_ret));
 		return _ret;
 	}
 }
@@ -926,31 +926,31 @@ extern(Windows):
 	final GUID ActivityId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageInstallingEventArgs).get_ActivityId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageInstallingEventArgs)this.asInterface(uuid("97741eb7-ab7a-401a-8b61-eb0e7faff237"))).get_ActivityId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Package Package()
 	{
 		Windows.ApplicationModel.Package _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageInstallingEventArgs).get_Package(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageInstallingEventArgs)this.asInterface(uuid("97741eb7-ab7a-401a-8b61-eb0e7faff237"))).get_Package(&_ret));
 		return _ret;
 	}
 	final double Progress()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageInstallingEventArgs).get_Progress(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageInstallingEventArgs)this.asInterface(uuid("97741eb7-ab7a-401a-8b61-eb0e7faff237"))).get_Progress(&_ret));
 		return _ret;
 	}
 	final bool IsComplete()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageInstallingEventArgs).get_IsComplete(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageInstallingEventArgs)this.asInterface(uuid("97741eb7-ab7a-401a-8b61-eb0e7faff237"))).get_IsComplete(&_ret));
 		return _ret;
 	}
 	final HRESULT ErrorCode()
 	{
 		HRESULT _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageInstallingEventArgs).get_ErrorCode(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageInstallingEventArgs)this.asInterface(uuid("97741eb7-ab7a-401a-8b61-eb0e7faff237"))).get_ErrorCode(&_ret));
 		return _ret;
 	}
 }
@@ -961,31 +961,31 @@ extern(Windows):
 	final GUID ActivityId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStagingEventArgs).get_ActivityId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageStagingEventArgs)this.asInterface(uuid("1041682d-54e2-4f51-b828-9ef7046c210f"))).get_ActivityId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Package Package()
 	{
 		Windows.ApplicationModel.Package _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStagingEventArgs).get_Package(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageStagingEventArgs)this.asInterface(uuid("1041682d-54e2-4f51-b828-9ef7046c210f"))).get_Package(&_ret));
 		return _ret;
 	}
 	final double Progress()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStagingEventArgs).get_Progress(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageStagingEventArgs)this.asInterface(uuid("1041682d-54e2-4f51-b828-9ef7046c210f"))).get_Progress(&_ret));
 		return _ret;
 	}
 	final bool IsComplete()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStagingEventArgs).get_IsComplete(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageStagingEventArgs)this.asInterface(uuid("1041682d-54e2-4f51-b828-9ef7046c210f"))).get_IsComplete(&_ret));
 		return _ret;
 	}
 	final HRESULT ErrorCode()
 	{
 		HRESULT _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStagingEventArgs).get_ErrorCode(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageStagingEventArgs)this.asInterface(uuid("1041682d-54e2-4f51-b828-9ef7046c210f"))).get_ErrorCode(&_ret));
 		return _ret;
 	}
 }
@@ -996,79 +996,79 @@ extern(Windows):
 	final bool VerifyIsOK()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).abi_VerifyIsOK(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageStatus)this.asInterface(uuid("5fe74f71-a365-4c09-a02d-046d525ea1da"))).abi_VerifyIsOK(&_ret));
 		return _ret;
 	}
 	final bool NotAvailable()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).get_NotAvailable(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageStatus)this.asInterface(uuid("5fe74f71-a365-4c09-a02d-046d525ea1da"))).get_NotAvailable(&_ret));
 		return _ret;
 	}
 	final bool PackageOffline()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).get_PackageOffline(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageStatus)this.asInterface(uuid("5fe74f71-a365-4c09-a02d-046d525ea1da"))).get_PackageOffline(&_ret));
 		return _ret;
 	}
 	final bool DataOffline()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).get_DataOffline(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageStatus)this.asInterface(uuid("5fe74f71-a365-4c09-a02d-046d525ea1da"))).get_DataOffline(&_ret));
 		return _ret;
 	}
 	final bool Disabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).get_Disabled(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageStatus)this.asInterface(uuid("5fe74f71-a365-4c09-a02d-046d525ea1da"))).get_Disabled(&_ret));
 		return _ret;
 	}
 	final bool NeedsRemediation()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).get_NeedsRemediation(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageStatus)this.asInterface(uuid("5fe74f71-a365-4c09-a02d-046d525ea1da"))).get_NeedsRemediation(&_ret));
 		return _ret;
 	}
 	final bool LicenseIssue()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).get_LicenseIssue(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageStatus)this.asInterface(uuid("5fe74f71-a365-4c09-a02d-046d525ea1da"))).get_LicenseIssue(&_ret));
 		return _ret;
 	}
 	final bool Modified()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).get_Modified(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageStatus)this.asInterface(uuid("5fe74f71-a365-4c09-a02d-046d525ea1da"))).get_Modified(&_ret));
 		return _ret;
 	}
 	final bool Tampered()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).get_Tampered(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageStatus)this.asInterface(uuid("5fe74f71-a365-4c09-a02d-046d525ea1da"))).get_Tampered(&_ret));
 		return _ret;
 	}
 	final bool DependencyIssue()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).get_DependencyIssue(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageStatus)this.asInterface(uuid("5fe74f71-a365-4c09-a02d-046d525ea1da"))).get_DependencyIssue(&_ret));
 		return _ret;
 	}
 	final bool Servicing()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).get_Servicing(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageStatus)this.asInterface(uuid("5fe74f71-a365-4c09-a02d-046d525ea1da"))).get_Servicing(&_ret));
 		return _ret;
 	}
 	final bool DeploymentInProgress()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus).get_DeploymentInProgress(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageStatus)this.asInterface(uuid("5fe74f71-a365-4c09-a02d-046d525ea1da"))).get_DeploymentInProgress(&_ret));
 		return _ret;
 	}
 	final bool IsPartiallyStaged()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatus2).get_IsPartiallyStaged(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageStatus2)this.asInterface(uuid("f428fa93-7c56-4862-acfa-abaedcc0694d"))).get_IsPartiallyStaged(&_ret));
 		return _ret;
 	}
 }
@@ -1079,7 +1079,7 @@ extern(Windows):
 	final Windows.ApplicationModel.Package Package()
 	{
 		Windows.ApplicationModel.Package _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageStatusChangedEventArgs).get_Package(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageStatusChangedEventArgs)this.asInterface(uuid("437d714d-bd80-4a70-bc50-f6e796509575"))).get_Package(&_ret));
 		return _ret;
 	}
 }
@@ -1090,31 +1090,31 @@ extern(Windows):
 	final GUID ActivityId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageUninstallingEventArgs).get_ActivityId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageUninstallingEventArgs)this.asInterface(uuid("4443aa52-ab22-44cd-82bb-4ec9b827367a"))).get_ActivityId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Package Package()
 	{
 		Windows.ApplicationModel.Package _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageUninstallingEventArgs).get_Package(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageUninstallingEventArgs)this.asInterface(uuid("4443aa52-ab22-44cd-82bb-4ec9b827367a"))).get_Package(&_ret));
 		return _ret;
 	}
 	final double Progress()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageUninstallingEventArgs).get_Progress(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageUninstallingEventArgs)this.asInterface(uuid("4443aa52-ab22-44cd-82bb-4ec9b827367a"))).get_Progress(&_ret));
 		return _ret;
 	}
 	final bool IsComplete()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageUninstallingEventArgs).get_IsComplete(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageUninstallingEventArgs)this.asInterface(uuid("4443aa52-ab22-44cd-82bb-4ec9b827367a"))).get_IsComplete(&_ret));
 		return _ret;
 	}
 	final HRESULT ErrorCode()
 	{
 		HRESULT _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageUninstallingEventArgs).get_ErrorCode(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageUninstallingEventArgs)this.asInterface(uuid("4443aa52-ab22-44cd-82bb-4ec9b827367a"))).get_ErrorCode(&_ret));
 		return _ret;
 	}
 }
@@ -1125,37 +1125,37 @@ extern(Windows):
 	final GUID ActivityId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageUpdatingEventArgs).get_ActivityId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageUpdatingEventArgs)this.asInterface(uuid("cd7b4228-fd74-443e-b114-23e677b0e86f"))).get_ActivityId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Package SourcePackage()
 	{
 		Windows.ApplicationModel.Package _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageUpdatingEventArgs).get_SourcePackage(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageUpdatingEventArgs)this.asInterface(uuid("cd7b4228-fd74-443e-b114-23e677b0e86f"))).get_SourcePackage(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Package TargetPackage()
 	{
 		Windows.ApplicationModel.Package _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageUpdatingEventArgs).get_TargetPackage(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageUpdatingEventArgs)this.asInterface(uuid("cd7b4228-fd74-443e-b114-23e677b0e86f"))).get_TargetPackage(&_ret));
 		return _ret;
 	}
 	final double Progress()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageUpdatingEventArgs).get_Progress(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageUpdatingEventArgs)this.asInterface(uuid("cd7b4228-fd74-443e-b114-23e677b0e86f"))).get_Progress(&_ret));
 		return _ret;
 	}
 	final bool IsComplete()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageUpdatingEventArgs).get_IsComplete(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageUpdatingEventArgs)this.asInterface(uuid("cd7b4228-fd74-443e-b114-23e677b0e86f"))).get_IsComplete(&_ret));
 		return _ret;
 	}
 	final HRESULT ErrorCode()
 	{
 		HRESULT _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IPackageUpdatingEventArgs).get_ErrorCode(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackageUpdatingEventArgs)this.asInterface(uuid("cd7b4228-fd74-443e-b114-23e677b0e86f"))).get_ErrorCode(&_ret));
 		return _ret;
 	}
 }
@@ -1166,23 +1166,23 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.StartupTaskState) RequestEnableAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.StartupTaskState) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IStartupTask).abi_RequestEnableAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IStartupTask)this.asInterface(uuid("f75c23c8-b5f2-4f6c-88dd-36cb1d599d17"))).abi_RequestEnableAsync(&_ret));
 		return _ret;
 	}
 	final void Disable()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.IStartupTask).abi_Disable());
+		Debug.OK((cast(Windows.ApplicationModel.IStartupTask)this.asInterface(uuid("f75c23c8-b5f2-4f6c-88dd-36cb1d599d17"))).abi_Disable());
 	}
 	final Windows.ApplicationModel.StartupTaskState State()
 	{
 		Windows.ApplicationModel.StartupTaskState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IStartupTask).get_State(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IStartupTask)this.asInterface(uuid("f75c23c8-b5f2-4f6c-88dd-36cb1d599d17"))).get_State(&_ret));
 		return _ret;
 	}
 	final HSTRING TaskId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.IStartupTask).get_TaskId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IStartupTask)this.asInterface(uuid("f75c23c8-b5f2-4f6c-88dd-36cb1d599d17"))).get_TaskId(&_ret));
 		return _ret;
 	}
 
@@ -1195,13 +1195,13 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.StartupTask)) GetForCurrentPackageAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.StartupTask)) _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.IStartupTaskStatics).abi_GetForCurrentPackageAsync(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentPackageAsync(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.StartupTask) GetAsync(HSTRING taskId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.StartupTask) _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.IStartupTaskStatics).abi_GetAsync(taskId, &_ret));
+		Debug.OK(staticInstance.abi_GetAsync(taskId, &_ret));
 		return _ret;
 	}
 }
@@ -1211,7 +1211,7 @@ interface SuspendingDeferral : Windows.ApplicationModel.ISuspendingDeferral
 extern(Windows):
 	final void Complete()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.ISuspendingDeferral).abi_Complete());
+		Debug.OK((cast(Windows.ApplicationModel.ISuspendingDeferral)this.asInterface(uuid("59140509-8bc9-4eb4-b636-dabdc4f46f66"))).abi_Complete());
 	}
 }
 
@@ -1221,7 +1221,7 @@ extern(Windows):
 	final Windows.ApplicationModel.SuspendingOperation SuspendingOperation()
 	{
 		Windows.ApplicationModel.SuspendingOperation _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.ISuspendingEventArgs).get_SuspendingOperation(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.ISuspendingEventArgs)this.asInterface(uuid("96061c05-2dba-4d08-b0bd-2b30a131c6aa"))).get_SuspendingOperation(&_ret));
 		return _ret;
 	}
 }
@@ -1232,13 +1232,13 @@ extern(Windows):
 	final Windows.ApplicationModel.SuspendingDeferral GetDeferral()
 	{
 		Windows.ApplicationModel.SuspendingDeferral _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.ISuspendingOperation).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.ISuspendingOperation)this.asInterface(uuid("9da4ca41-20e1-4e9b-9f65-a9f435340c3a"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime Deadline()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.ISuspendingOperation).get_Deadline(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.ISuspendingOperation)this.asInterface(uuid("9da4ca41-20e1-4e9b-9f65-a9f435340c3a"))).get_Deadline(&_ret));
 		return _ret;
 	}
 }

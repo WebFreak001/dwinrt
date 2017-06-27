@@ -149,7 +149,7 @@ extern(Windows):
 	final Windows.System.Diagnostics.ProcessCpuUsageReport GetReport()
 	{
 		Windows.System.Diagnostics.ProcessCpuUsageReport _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessCpuUsage).abi_GetReport(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessCpuUsage)this.asInterface(uuid("0bbb2472-c8bf-423a-a810-b559ae4354e2"))).abi_GetReport(&_ret));
 		return _ret;
 	}
 }
@@ -160,13 +160,13 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan KernelTime()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessCpuUsageReport).get_KernelTime(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessCpuUsageReport)this.asInterface(uuid("8a6d9cac-3987-4e2f-a119-6b5fa214f1b4"))).get_KernelTime(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan UserTime()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessCpuUsageReport).get_UserTime(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessCpuUsageReport)this.asInterface(uuid("8a6d9cac-3987-4e2f-a119-6b5fa214f1b4"))).get_UserTime(&_ret));
 		return _ret;
 	}
 }
@@ -177,43 +177,43 @@ extern(Windows):
 	final UINT32 ProcessId()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiagnosticInfo).get_ProcessId(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessDiagnosticInfo)this.asInterface(uuid("e830b04b-300e-4ee6-a0ab-5b5f5231b434"))).get_ProcessId(&_ret));
 		return _ret;
 	}
 	final HSTRING ExecutableFileName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiagnosticInfo).get_ExecutableFileName(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessDiagnosticInfo)this.asInterface(uuid("e830b04b-300e-4ee6-a0ab-5b5f5231b434"))).get_ExecutableFileName(&_ret));
 		return _ret;
 	}
 	final Windows.System.Diagnostics.ProcessDiagnosticInfo Parent()
 	{
 		Windows.System.Diagnostics.ProcessDiagnosticInfo _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiagnosticInfo).get_Parent(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessDiagnosticInfo)this.asInterface(uuid("e830b04b-300e-4ee6-a0ab-5b5f5231b434"))).get_Parent(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime ProcessStartTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiagnosticInfo).get_ProcessStartTime(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessDiagnosticInfo)this.asInterface(uuid("e830b04b-300e-4ee6-a0ab-5b5f5231b434"))).get_ProcessStartTime(&_ret));
 		return _ret;
 	}
 	final Windows.System.Diagnostics.ProcessDiskUsage DiskUsage()
 	{
 		Windows.System.Diagnostics.ProcessDiskUsage _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiagnosticInfo).get_DiskUsage(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessDiagnosticInfo)this.asInterface(uuid("e830b04b-300e-4ee6-a0ab-5b5f5231b434"))).get_DiskUsage(&_ret));
 		return _ret;
 	}
 	final Windows.System.Diagnostics.ProcessMemoryUsage MemoryUsage()
 	{
 		Windows.System.Diagnostics.ProcessMemoryUsage _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiagnosticInfo).get_MemoryUsage(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessDiagnosticInfo)this.asInterface(uuid("e830b04b-300e-4ee6-a0ab-5b5f5231b434"))).get_MemoryUsage(&_ret));
 		return _ret;
 	}
 	final Windows.System.Diagnostics.ProcessCpuUsage CpuUsage()
 	{
 		Windows.System.Diagnostics.ProcessCpuUsage _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiagnosticInfo).get_CpuUsage(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessDiagnosticInfo)this.asInterface(uuid("e830b04b-300e-4ee6-a0ab-5b5f5231b434"))).get_CpuUsage(&_ret));
 		return _ret;
 	}
 
@@ -226,13 +226,13 @@ extern(Windows):
 	static Windows.Foundation.Collections.IVectorView!(Windows.System.Diagnostics.ProcessDiagnosticInfo) GetForProcesses()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.System.Diagnostics.ProcessDiagnosticInfo) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.IProcessDiagnosticInfoStatics).abi_GetForProcesses(&_ret));
+		Debug.OK(staticInstance.abi_GetForProcesses(&_ret));
 		return _ret;
 	}
 	static Windows.System.Diagnostics.ProcessDiagnosticInfo GetForCurrentProcess()
 	{
 		Windows.System.Diagnostics.ProcessDiagnosticInfo _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.IProcessDiagnosticInfoStatics).abi_GetForCurrentProcess(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentProcess(&_ret));
 		return _ret;
 	}
 }
@@ -243,7 +243,7 @@ extern(Windows):
 	final Windows.System.Diagnostics.ProcessDiskUsageReport GetReport()
 	{
 		Windows.System.Diagnostics.ProcessDiskUsageReport _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiskUsage).abi_GetReport(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessDiskUsage)this.asInterface(uuid("5ad78bfd-7e51-4e53-bfaa-5a6ee1aabbf8"))).abi_GetReport(&_ret));
 		return _ret;
 	}
 }
@@ -254,37 +254,37 @@ extern(Windows):
 	final INT64 ReadOperationCount()
 	{
 		INT64 _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiskUsageReport).get_ReadOperationCount(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessDiskUsageReport)this.asInterface(uuid("401627fd-535d-4c1f-81b8-da54e1be635e"))).get_ReadOperationCount(&_ret));
 		return _ret;
 	}
 	final INT64 WriteOperationCount()
 	{
 		INT64 _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiskUsageReport).get_WriteOperationCount(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessDiskUsageReport)this.asInterface(uuid("401627fd-535d-4c1f-81b8-da54e1be635e"))).get_WriteOperationCount(&_ret));
 		return _ret;
 	}
 	final INT64 OtherOperationCount()
 	{
 		INT64 _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiskUsageReport).get_OtherOperationCount(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessDiskUsageReport)this.asInterface(uuid("401627fd-535d-4c1f-81b8-da54e1be635e"))).get_OtherOperationCount(&_ret));
 		return _ret;
 	}
 	final INT64 BytesReadCount()
 	{
 		INT64 _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiskUsageReport).get_BytesReadCount(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessDiskUsageReport)this.asInterface(uuid("401627fd-535d-4c1f-81b8-da54e1be635e"))).get_BytesReadCount(&_ret));
 		return _ret;
 	}
 	final INT64 BytesWrittenCount()
 	{
 		INT64 _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiskUsageReport).get_BytesWrittenCount(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessDiskUsageReport)this.asInterface(uuid("401627fd-535d-4c1f-81b8-da54e1be635e"))).get_BytesWrittenCount(&_ret));
 		return _ret;
 	}
 	final INT64 OtherBytesCount()
 	{
 		INT64 _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessDiskUsageReport).get_OtherBytesCount(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessDiskUsageReport)this.asInterface(uuid("401627fd-535d-4c1f-81b8-da54e1be635e"))).get_OtherBytesCount(&_ret));
 		return _ret;
 	}
 }
@@ -295,7 +295,7 @@ extern(Windows):
 	final Windows.System.Diagnostics.ProcessMemoryUsageReport GetReport()
 	{
 		Windows.System.Diagnostics.ProcessMemoryUsageReport _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsage).abi_GetReport(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessMemoryUsage)this.asInterface(uuid("f50b229b-827c-42b7-b07c-0e32627e6b3e"))).abi_GetReport(&_ret));
 		return _ret;
 	}
 }
@@ -306,73 +306,73 @@ extern(Windows):
 	final ulong NonPagedPoolSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_NonPagedPoolSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessMemoryUsageReport)this.asInterface(uuid("c2c77cba-1951-4685-8532-7e749ecf8eeb"))).get_NonPagedPoolSizeInBytes(&_ret));
 		return _ret;
 	}
 	final UINT32 PageFaultCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PageFaultCount(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessMemoryUsageReport)this.asInterface(uuid("c2c77cba-1951-4685-8532-7e749ecf8eeb"))).get_PageFaultCount(&_ret));
 		return _ret;
 	}
 	final ulong PageFileSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PageFileSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessMemoryUsageReport)this.asInterface(uuid("c2c77cba-1951-4685-8532-7e749ecf8eeb"))).get_PageFileSizeInBytes(&_ret));
 		return _ret;
 	}
 	final ulong PagedPoolSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PagedPoolSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessMemoryUsageReport)this.asInterface(uuid("c2c77cba-1951-4685-8532-7e749ecf8eeb"))).get_PagedPoolSizeInBytes(&_ret));
 		return _ret;
 	}
 	final ulong PeakNonPagedPoolSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PeakNonPagedPoolSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessMemoryUsageReport)this.asInterface(uuid("c2c77cba-1951-4685-8532-7e749ecf8eeb"))).get_PeakNonPagedPoolSizeInBytes(&_ret));
 		return _ret;
 	}
 	final ulong PeakPageFileSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PeakPageFileSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessMemoryUsageReport)this.asInterface(uuid("c2c77cba-1951-4685-8532-7e749ecf8eeb"))).get_PeakPageFileSizeInBytes(&_ret));
 		return _ret;
 	}
 	final ulong PeakPagedPoolSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PeakPagedPoolSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessMemoryUsageReport)this.asInterface(uuid("c2c77cba-1951-4685-8532-7e749ecf8eeb"))).get_PeakPagedPoolSizeInBytes(&_ret));
 		return _ret;
 	}
 	final ulong PeakVirtualMemorySizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PeakVirtualMemorySizeInBytes(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessMemoryUsageReport)this.asInterface(uuid("c2c77cba-1951-4685-8532-7e749ecf8eeb"))).get_PeakVirtualMemorySizeInBytes(&_ret));
 		return _ret;
 	}
 	final ulong PeakWorkingSetSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PeakWorkingSetSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessMemoryUsageReport)this.asInterface(uuid("c2c77cba-1951-4685-8532-7e749ecf8eeb"))).get_PeakWorkingSetSizeInBytes(&_ret));
 		return _ret;
 	}
 	final ulong PrivatePageCount()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_PrivatePageCount(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessMemoryUsageReport)this.asInterface(uuid("c2c77cba-1951-4685-8532-7e749ecf8eeb"))).get_PrivatePageCount(&_ret));
 		return _ret;
 	}
 	final ulong VirtualMemorySizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_VirtualMemorySizeInBytes(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessMemoryUsageReport)this.asInterface(uuid("c2c77cba-1951-4685-8532-7e749ecf8eeb"))).get_VirtualMemorySizeInBytes(&_ret));
 		return _ret;
 	}
 	final ulong WorkingSetSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.IProcessMemoryUsageReport).get_WorkingSetSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.IProcessMemoryUsageReport)this.asInterface(uuid("c2c77cba-1951-4685-8532-7e749ecf8eeb"))).get_WorkingSetSizeInBytes(&_ret));
 		return _ret;
 	}
 }
@@ -383,7 +383,7 @@ extern(Windows):
 	final Windows.System.Diagnostics.SystemCpuUsageReport GetReport()
 	{
 		Windows.System.Diagnostics.SystemCpuUsageReport _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemCpuUsage).abi_GetReport(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.ISystemCpuUsage)this.asInterface(uuid("6037b3ac-02d6-4234-8362-7fe3adc81f5f"))).abi_GetReport(&_ret));
 		return _ret;
 	}
 }
@@ -394,19 +394,19 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan KernelTime()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemCpuUsageReport).get_KernelTime(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.ISystemCpuUsageReport)this.asInterface(uuid("2c26d0b2-9483-4f62-ab57-82b29d9719b8"))).get_KernelTime(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan UserTime()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemCpuUsageReport).get_UserTime(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.ISystemCpuUsageReport)this.asInterface(uuid("2c26d0b2-9483-4f62-ab57-82b29d9719b8"))).get_UserTime(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan IdleTime()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemCpuUsageReport).get_IdleTime(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.ISystemCpuUsageReport)this.asInterface(uuid("2c26d0b2-9483-4f62-ab57-82b29d9719b8"))).get_IdleTime(&_ret));
 		return _ret;
 	}
 }
@@ -417,13 +417,13 @@ extern(Windows):
 	final Windows.System.Diagnostics.SystemMemoryUsage MemoryUsage()
 	{
 		Windows.System.Diagnostics.SystemMemoryUsage _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemDiagnosticInfo).get_MemoryUsage(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.ISystemDiagnosticInfo)this.asInterface(uuid("a290fe05-dff3-407f-9a1b-0b2b317ca800"))).get_MemoryUsage(&_ret));
 		return _ret;
 	}
 	final Windows.System.Diagnostics.SystemCpuUsage CpuUsage()
 	{
 		Windows.System.Diagnostics.SystemCpuUsage _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemDiagnosticInfo).get_CpuUsage(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.ISystemDiagnosticInfo)this.asInterface(uuid("a290fe05-dff3-407f-9a1b-0b2b317ca800"))).get_CpuUsage(&_ret));
 		return _ret;
 	}
 
@@ -436,7 +436,7 @@ extern(Windows):
 	static Windows.System.Diagnostics.SystemDiagnosticInfo GetForCurrentSystem()
 	{
 		Windows.System.Diagnostics.SystemDiagnosticInfo _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.ISystemDiagnosticInfoStatics).abi_GetForCurrentSystem(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentSystem(&_ret));
 		return _ret;
 	}
 }
@@ -447,7 +447,7 @@ extern(Windows):
 	final Windows.System.Diagnostics.SystemMemoryUsageReport GetReport()
 	{
 		Windows.System.Diagnostics.SystemMemoryUsageReport _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemMemoryUsage).abi_GetReport(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.ISystemMemoryUsage)this.asInterface(uuid("17ffc595-1702-49cf-aa27-2f0a32591404"))).abi_GetReport(&_ret));
 		return _ret;
 	}
 }
@@ -458,19 +458,19 @@ extern(Windows):
 	final ulong TotalPhysicalSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemMemoryUsageReport).get_TotalPhysicalSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.ISystemMemoryUsageReport)this.asInterface(uuid("38663c87-2a9f-403a-bd19-2cf3e8169500"))).get_TotalPhysicalSizeInBytes(&_ret));
 		return _ret;
 	}
 	final ulong AvailableSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemMemoryUsageReport).get_AvailableSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.ISystemMemoryUsageReport)this.asInterface(uuid("38663c87-2a9f-403a-bd19-2cf3e8169500"))).get_AvailableSizeInBytes(&_ret));
 		return _ret;
 	}
 	final ulong CommittedSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.ISystemMemoryUsageReport).get_CommittedSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.ISystemMemoryUsageReport)this.asInterface(uuid("38663c87-2a9f-403a-bd19-2cf3e8169500"))).get_CommittedSizeInBytes(&_ret));
 		return _ret;
 	}
 }

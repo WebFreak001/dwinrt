@@ -65,19 +65,19 @@ interface ThreadPool
 	static Windows.Foundation.IAsyncAction RunAsync(Windows.System.Threading.WorkItemHandler handler)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Threading.IThreadPoolStatics).abi_RunAsync(handler, &_ret));
+		Debug.OK(staticInstance.abi_RunAsync(handler, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncAction RunWithPriorityAsync(Windows.System.Threading.WorkItemHandler handler, Windows.System.Threading.WorkItemPriority priority)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Threading.IThreadPoolStatics).abi_RunWithPriorityAsync(handler, priority, &_ret));
+		Debug.OK(staticInstance.abi_RunWithPriorityAsync(handler, priority, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncAction RunWithPriorityAndOptionsAsync(Windows.System.Threading.WorkItemHandler handler, Windows.System.Threading.WorkItemPriority priority, Windows.System.Threading.WorkItemOptions options)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Threading.IThreadPoolStatics).abi_RunWithPriorityAndOptionsAsync(handler, priority, options, &_ret));
+		Debug.OK(staticInstance.abi_RunWithPriorityAndOptionsAsync(handler, priority, options, &_ret));
 		return _ret;
 	}
 }
@@ -88,18 +88,18 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan Period()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.System.Threading.IThreadPoolTimer).get_Period(&_ret));
+		Debug.OK((cast(Windows.System.Threading.IThreadPoolTimer)this.asInterface(uuid("594ebe78-55ea-4a88-a50d-3402ae1f9cf2"))).get_Period(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Delay()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.System.Threading.IThreadPoolTimer).get_Delay(&_ret));
+		Debug.OK((cast(Windows.System.Threading.IThreadPoolTimer)this.asInterface(uuid("594ebe78-55ea-4a88-a50d-3402ae1f9cf2"))).get_Delay(&_ret));
 		return _ret;
 	}
 	final void Cancel()
 	{
-		Debug.OK(this.as!(Windows.System.Threading.IThreadPoolTimer).abi_Cancel());
+		Debug.OK((cast(Windows.System.Threading.IThreadPoolTimer)this.asInterface(uuid("594ebe78-55ea-4a88-a50d-3402ae1f9cf2"))).abi_Cancel());
 	}
 
 	private static Windows.System.Threading.IThreadPoolTimerStatics _staticInstance;
@@ -111,25 +111,25 @@ extern(Windows):
 	static Windows.System.Threading.ThreadPoolTimer CreatePeriodicTimer(Windows.System.Threading.TimerElapsedHandler handler, Windows.Foundation.TimeSpan period)
 	{
 		Windows.System.Threading.ThreadPoolTimer _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Threading.IThreadPoolTimerStatics).abi_CreatePeriodicTimer(handler, period, &_ret));
+		Debug.OK(staticInstance.abi_CreatePeriodicTimer(handler, period, &_ret));
 		return _ret;
 	}
 	static Windows.System.Threading.ThreadPoolTimer CreateTimer(Windows.System.Threading.TimerElapsedHandler handler, Windows.Foundation.TimeSpan delay)
 	{
 		Windows.System.Threading.ThreadPoolTimer _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Threading.IThreadPoolTimerStatics).abi_CreateTimer(handler, delay, &_ret));
+		Debug.OK(staticInstance.abi_CreateTimer(handler, delay, &_ret));
 		return _ret;
 	}
 	static Windows.System.Threading.ThreadPoolTimer CreatePeriodicTimerWithCompletion(Windows.System.Threading.TimerElapsedHandler handler, Windows.Foundation.TimeSpan period, Windows.System.Threading.TimerDestroyedHandler destroyed)
 	{
 		Windows.System.Threading.ThreadPoolTimer _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Threading.IThreadPoolTimerStatics).abi_CreatePeriodicTimerWithCompletion(handler, period, destroyed, &_ret));
+		Debug.OK(staticInstance.abi_CreatePeriodicTimerWithCompletion(handler, period, destroyed, &_ret));
 		return _ret;
 	}
 	static Windows.System.Threading.ThreadPoolTimer CreateTimerWithCompletion(Windows.System.Threading.TimerElapsedHandler handler, Windows.Foundation.TimeSpan delay, Windows.System.Threading.TimerDestroyedHandler destroyed)
 	{
 		Windows.System.Threading.ThreadPoolTimer _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Threading.IThreadPoolTimerStatics).abi_CreateTimerWithCompletion(handler, delay, destroyed, &_ret));
+		Debug.OK(staticInstance.abi_CreateTimerWithCompletion(handler, delay, destroyed, &_ret));
 		return _ret;
 	}
 }

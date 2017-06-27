@@ -87,25 +87,25 @@ extern(Windows):
 	final INT32 ChipSelectLineCount()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Spi.ISpiBusInfo).get_ChipSelectLineCount(&_ret));
+		Debug.OK((cast(Windows.Devices.Spi.ISpiBusInfo)this.asInterface(uuid("9929444a-54f2-48c6-b952-9c32fc02c669"))).get_ChipSelectLineCount(&_ret));
 		return _ret;
 	}
 	final INT32 MinClockFrequency()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Spi.ISpiBusInfo).get_MinClockFrequency(&_ret));
+		Debug.OK((cast(Windows.Devices.Spi.ISpiBusInfo)this.asInterface(uuid("9929444a-54f2-48c6-b952-9c32fc02c669"))).get_MinClockFrequency(&_ret));
 		return _ret;
 	}
 	final INT32 MaxClockFrequency()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Spi.ISpiBusInfo).get_MaxClockFrequency(&_ret));
+		Debug.OK((cast(Windows.Devices.Spi.ISpiBusInfo)this.asInterface(uuid("9929444a-54f2-48c6-b952-9c32fc02c669"))).get_MaxClockFrequency(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(INT32) SupportedDataBitLengths()
 	{
 		Windows.Foundation.Collections.IVectorView!(INT32) _ret;
-		Debug.OK(this.as!(Windows.Devices.Spi.ISpiBusInfo).get_SupportedDataBitLengths(&_ret));
+		Debug.OK((cast(Windows.Devices.Spi.ISpiBusInfo)this.asInterface(uuid("9929444a-54f2-48c6-b952-9c32fc02c669"))).get_SupportedDataBitLengths(&_ret));
 		return _ret;
 	}
 }
@@ -116,58 +116,58 @@ extern(Windows):
 	final INT32 ChipSelectLine()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Spi.ISpiConnectionSettings).get_ChipSelectLine(&_ret));
+		Debug.OK((cast(Windows.Devices.Spi.ISpiConnectionSettings)this.asInterface(uuid("5283a37f-f935-4b9f-a7a7-3a7890afa5ce"))).get_ChipSelectLine(&_ret));
 		return _ret;
 	}
 	final void ChipSelectLine(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Spi.ISpiConnectionSettings).set_ChipSelectLine(value));
+		Debug.OK((cast(Windows.Devices.Spi.ISpiConnectionSettings)this.asInterface(uuid("5283a37f-f935-4b9f-a7a7-3a7890afa5ce"))).set_ChipSelectLine(value));
 	}
 	final Windows.Devices.Spi.SpiMode Mode()
 	{
 		Windows.Devices.Spi.SpiMode _ret;
-		Debug.OK(this.as!(Windows.Devices.Spi.ISpiConnectionSettings).get_Mode(&_ret));
+		Debug.OK((cast(Windows.Devices.Spi.ISpiConnectionSettings)this.asInterface(uuid("5283a37f-f935-4b9f-a7a7-3a7890afa5ce"))).get_Mode(&_ret));
 		return _ret;
 	}
 	final void Mode(Windows.Devices.Spi.SpiMode value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Spi.ISpiConnectionSettings).set_Mode(value));
+		Debug.OK((cast(Windows.Devices.Spi.ISpiConnectionSettings)this.asInterface(uuid("5283a37f-f935-4b9f-a7a7-3a7890afa5ce"))).set_Mode(value));
 	}
 	final INT32 DataBitLength()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Spi.ISpiConnectionSettings).get_DataBitLength(&_ret));
+		Debug.OK((cast(Windows.Devices.Spi.ISpiConnectionSettings)this.asInterface(uuid("5283a37f-f935-4b9f-a7a7-3a7890afa5ce"))).get_DataBitLength(&_ret));
 		return _ret;
 	}
 	final void DataBitLength(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Spi.ISpiConnectionSettings).set_DataBitLength(value));
+		Debug.OK((cast(Windows.Devices.Spi.ISpiConnectionSettings)this.asInterface(uuid("5283a37f-f935-4b9f-a7a7-3a7890afa5ce"))).set_DataBitLength(value));
 	}
 	final INT32 ClockFrequency()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Spi.ISpiConnectionSettings).get_ClockFrequency(&_ret));
+		Debug.OK((cast(Windows.Devices.Spi.ISpiConnectionSettings)this.asInterface(uuid("5283a37f-f935-4b9f-a7a7-3a7890afa5ce"))).get_ClockFrequency(&_ret));
 		return _ret;
 	}
 	final void ClockFrequency(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Spi.ISpiConnectionSettings).set_ClockFrequency(value));
+		Debug.OK((cast(Windows.Devices.Spi.ISpiConnectionSettings)this.asInterface(uuid("5283a37f-f935-4b9f-a7a7-3a7890afa5ce"))).set_ClockFrequency(value));
 	}
 	final Windows.Devices.Spi.SpiSharingMode SharingMode()
 	{
 		Windows.Devices.Spi.SpiSharingMode _ret;
-		Debug.OK(this.as!(Windows.Devices.Spi.ISpiConnectionSettings).get_SharingMode(&_ret));
+		Debug.OK((cast(Windows.Devices.Spi.ISpiConnectionSettings)this.asInterface(uuid("5283a37f-f935-4b9f-a7a7-3a7890afa5ce"))).get_SharingMode(&_ret));
 		return _ret;
 	}
 	final void SharingMode(Windows.Devices.Spi.SpiSharingMode value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Spi.ISpiConnectionSettings).set_SharingMode(value));
+		Debug.OK((cast(Windows.Devices.Spi.ISpiConnectionSettings)this.asInterface(uuid("5283a37f-f935-4b9f-a7a7-3a7890afa5ce"))).set_SharingMode(value));
 	}
 	static Windows.Devices.Spi.SpiConnectionSettings New(INT32 chipSelectLine)
 	{
 		auto factory = factory!(Windows.Devices.Spi.ISpiConnectionSettingsFactory);
 		Windows.Devices.Spi.SpiConnectionSettings _ret;
-		Debug.OK(factory.as!(Windows.Devices.Spi.ISpiConnectionSettingsFactory).abi_Create(chipSelectLine, &_ret));
+		Debug.OK((cast(Windows.Devices.Spi.ISpiConnectionSettingsFactory)factory.asInterface(uuid("ff99081e-10c4-44b7-9fea-a748b5a46f31"))).abi_Create(chipSelectLine, &_ret));
 		return _ret;
 	}
 }
@@ -178,7 +178,7 @@ extern(Windows):
 	final Windows.Devices.Spi.SpiDevice GetDevice(Windows.Devices.Spi.SpiConnectionSettings settings)
 	{
 		Windows.Devices.Spi.SpiDevice _ret;
-		Debug.OK(this.as!(Windows.Devices.Spi.ISpiController).abi_GetDevice(settings, &_ret));
+		Debug.OK((cast(Windows.Devices.Spi.ISpiController)this.asInterface(uuid("a8d3c829-9895-4159-a934-8741f1ee6d27"))).abi_GetDevice(settings, &_ret));
 		return _ret;
 	}
 
@@ -191,13 +191,13 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Spi.SpiController) GetDefaultAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Spi.SpiController) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Spi.ISpiControllerStatics).abi_GetDefaultAsync(&_ret));
+		Debug.OK(staticInstance.abi_GetDefaultAsync(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Spi.SpiController)) GetControllersAsync(Windows.Devices.Spi.Provider.ISpiProvider provider)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Spi.SpiController)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Spi.ISpiControllerStatics).abi_GetControllersAsync(provider, &_ret));
+		Debug.OK(staticInstance.abi_GetControllersAsync(provider, &_ret));
 		return _ret;
 	}
 }
@@ -208,34 +208,34 @@ extern(Windows):
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Spi.ISpiDevice).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Spi.ISpiDevice)this.asInterface(uuid("05d5356d-11b6-4d39-84d5-95dfb4c9f2ce"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Spi.SpiConnectionSettings ConnectionSettings()
 	{
 		Windows.Devices.Spi.SpiConnectionSettings _ret;
-		Debug.OK(this.as!(Windows.Devices.Spi.ISpiDevice).get_ConnectionSettings(&_ret));
+		Debug.OK((cast(Windows.Devices.Spi.ISpiDevice)this.asInterface(uuid("05d5356d-11b6-4d39-84d5-95dfb4c9f2ce"))).get_ConnectionSettings(&_ret));
 		return _ret;
 	}
 	final void Write(UINT32 __bufferSize, ubyte* buffer)
 	{
-		Debug.OK(this.as!(Windows.Devices.Spi.ISpiDevice).abi_Write(__bufferSize, buffer));
+		Debug.OK((cast(Windows.Devices.Spi.ISpiDevice)this.asInterface(uuid("05d5356d-11b6-4d39-84d5-95dfb4c9f2ce"))).abi_Write(__bufferSize, buffer));
 	}
 	final void Read(UINT32 __bufferSize, ubyte* out_buffer)
 	{
-		Debug.OK(this.as!(Windows.Devices.Spi.ISpiDevice).abi_Read(__bufferSize, out_buffer));
+		Debug.OK((cast(Windows.Devices.Spi.ISpiDevice)this.asInterface(uuid("05d5356d-11b6-4d39-84d5-95dfb4c9f2ce"))).abi_Read(__bufferSize, out_buffer));
 	}
 	final void TransferSequential(UINT32 __writeBufferSize, ubyte* writeBuffer, UINT32 __readBufferSize, ubyte* out_readBuffer)
 	{
-		Debug.OK(this.as!(Windows.Devices.Spi.ISpiDevice).abi_TransferSequential(__writeBufferSize, writeBuffer, __readBufferSize, out_readBuffer));
+		Debug.OK((cast(Windows.Devices.Spi.ISpiDevice)this.asInterface(uuid("05d5356d-11b6-4d39-84d5-95dfb4c9f2ce"))).abi_TransferSequential(__writeBufferSize, writeBuffer, __readBufferSize, out_readBuffer));
 	}
 	final void TransferFullDuplex(UINT32 __writeBufferSize, ubyte* writeBuffer, UINT32 __readBufferSize, ubyte* out_readBuffer)
 	{
-		Debug.OK(this.as!(Windows.Devices.Spi.ISpiDevice).abi_TransferFullDuplex(__writeBufferSize, writeBuffer, __readBufferSize, out_readBuffer));
+		Debug.OK((cast(Windows.Devices.Spi.ISpiDevice)this.asInterface(uuid("05d5356d-11b6-4d39-84d5-95dfb4c9f2ce"))).abi_TransferFullDuplex(__writeBufferSize, writeBuffer, __readBufferSize, out_readBuffer));
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 
 	private static Windows.Devices.Spi.ISpiDeviceStatics _staticInstance;
@@ -247,25 +247,25 @@ extern(Windows):
 	static HSTRING GetDeviceSelector()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Spi.ISpiDeviceStatics).abi_GetDeviceSelector(&_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
 		return _ret;
 	}
 	static HSTRING GetDeviceSelectorFromFriendlyName(HSTRING friendlyName)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Spi.ISpiDeviceStatics).abi_GetDeviceSelectorFromFriendlyName(friendlyName, &_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelectorFromFriendlyName(friendlyName, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Spi.SpiBusInfo GetBusInfo(HSTRING busId)
 	{
 		Windows.Devices.Spi.SpiBusInfo _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Spi.ISpiDeviceStatics).abi_GetBusInfo(busId, &_ret));
+		Debug.OK(staticInstance.abi_GetBusInfo(busId, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Spi.SpiDevice) FromIdAsync(HSTRING busId, Windows.Devices.Spi.SpiConnectionSettings settings)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Spi.SpiDevice) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Spi.ISpiDeviceStatics).abi_FromIdAsync(busId, settings, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(busId, settings, &_ret));
 		return _ret;
 	}
 }

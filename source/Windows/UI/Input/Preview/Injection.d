@@ -123,38 +123,38 @@ extern(Windows):
 	final Windows.UI.Input.Preview.Injection.InjectedInputKeyOptions KeyOptions()
 	{
 		Windows.UI.Input.Preview.Injection.InjectedInputKeyOptions _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputKeyboardInfo).get_KeyOptions(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputKeyboardInfo)this.asInterface(uuid("4b46d140-2b6a-5ffa-7eae-bd077b052acd"))).get_KeyOptions(&_ret));
 		return _ret;
 	}
 	final void KeyOptions(Windows.UI.Input.Preview.Injection.InjectedInputKeyOptions value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputKeyboardInfo).set_KeyOptions(value));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputKeyboardInfo)this.asInterface(uuid("4b46d140-2b6a-5ffa-7eae-bd077b052acd"))).set_KeyOptions(value));
 	}
 	final UINT16 ScanCode()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputKeyboardInfo).get_ScanCode(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputKeyboardInfo)this.asInterface(uuid("4b46d140-2b6a-5ffa-7eae-bd077b052acd"))).get_ScanCode(&_ret));
 		return _ret;
 	}
 	final void ScanCode(UINT16 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputKeyboardInfo).set_ScanCode(value));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputKeyboardInfo)this.asInterface(uuid("4b46d140-2b6a-5ffa-7eae-bd077b052acd"))).set_ScanCode(value));
 	}
 	final UINT16 VirtualKey()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputKeyboardInfo).get_VirtualKey(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputKeyboardInfo)this.asInterface(uuid("4b46d140-2b6a-5ffa-7eae-bd077b052acd"))).get_VirtualKey(&_ret));
 		return _ret;
 	}
 	final void VirtualKey(UINT16 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputKeyboardInfo).set_VirtualKey(value));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputKeyboardInfo)this.asInterface(uuid("4b46d140-2b6a-5ffa-7eae-bd077b052acd"))).set_VirtualKey(value));
 	}
 	static InjectedInputKeyboardInfo New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(InjectedInputKeyboardInfo).abi_ActivateInstance(&ret));
-		return ret.as!(InjectedInputKeyboardInfo);
+		return cast(InjectedInputKeyboardInfo) ret;
 	}
 }
 
@@ -164,58 +164,58 @@ extern(Windows):
 	final Windows.UI.Input.Preview.Injection.InjectedInputMouseOptions MouseOptions()
 	{
 		Windows.UI.Input.Preview.Injection.InjectedInputMouseOptions _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo).get_MouseOptions(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo)this.asInterface(uuid("96f56e6b-e47a-5cf4-418d-8a5fb9670c7d"))).get_MouseOptions(&_ret));
 		return _ret;
 	}
 	final void MouseOptions(Windows.UI.Input.Preview.Injection.InjectedInputMouseOptions value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo).set_MouseOptions(value));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo)this.asInterface(uuid("96f56e6b-e47a-5cf4-418d-8a5fb9670c7d"))).set_MouseOptions(value));
 	}
 	final UINT32 MouseData()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo).get_MouseData(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo)this.asInterface(uuid("96f56e6b-e47a-5cf4-418d-8a5fb9670c7d"))).get_MouseData(&_ret));
 		return _ret;
 	}
 	final void MouseData(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo).set_MouseData(value));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo)this.asInterface(uuid("96f56e6b-e47a-5cf4-418d-8a5fb9670c7d"))).set_MouseData(value));
 	}
 	final INT32 DeltaY()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo).get_DeltaY(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo)this.asInterface(uuid("96f56e6b-e47a-5cf4-418d-8a5fb9670c7d"))).get_DeltaY(&_ret));
 		return _ret;
 	}
 	final void DeltaY(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo).set_DeltaY(value));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo)this.asInterface(uuid("96f56e6b-e47a-5cf4-418d-8a5fb9670c7d"))).set_DeltaY(value));
 	}
 	final INT32 DeltaX()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo).get_DeltaX(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo)this.asInterface(uuid("96f56e6b-e47a-5cf4-418d-8a5fb9670c7d"))).get_DeltaX(&_ret));
 		return _ret;
 	}
 	final void DeltaX(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo).set_DeltaX(value));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo)this.asInterface(uuid("96f56e6b-e47a-5cf4-418d-8a5fb9670c7d"))).set_DeltaX(value));
 	}
 	final UINT32 TimeOffsetInMilliseconds()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo).get_TimeOffsetInMilliseconds(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo)this.asInterface(uuid("96f56e6b-e47a-5cf4-418d-8a5fb9670c7d"))).get_TimeOffsetInMilliseconds(&_ret));
 		return _ret;
 	}
 	final void TimeOffsetInMilliseconds(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo).set_TimeOffsetInMilliseconds(value));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputMouseInfo)this.asInterface(uuid("96f56e6b-e47a-5cf4-418d-8a5fb9670c7d"))).set_TimeOffsetInMilliseconds(value));
 	}
 	static InjectedInputMouseInfo New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(InjectedInputMouseInfo).abi_ActivateInstance(&ret));
-		return ret.as!(InjectedInputMouseInfo);
+		return cast(InjectedInputMouseInfo) ret;
 	}
 }
 
@@ -225,78 +225,78 @@ extern(Windows):
 	final Windows.UI.Input.Preview.Injection.InjectedInputPointerInfo PointerInfo()
 	{
 		Windows.UI.Input.Preview.Injection.InjectedInputPointerInfo _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).get_PointerInfo(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo)this.asInterface(uuid("6b40ad03-ca1e-5527-7e02-2828540bb1d4"))).get_PointerInfo(&_ret));
 		return _ret;
 	}
 	final void PointerInfo(Windows.UI.Input.Preview.Injection.InjectedInputPointerInfo value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).set_PointerInfo(value));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo)this.asInterface(uuid("6b40ad03-ca1e-5527-7e02-2828540bb1d4"))).set_PointerInfo(value));
 	}
 	final Windows.UI.Input.Preview.Injection.InjectedInputPenButtons PenButtons()
 	{
 		Windows.UI.Input.Preview.Injection.InjectedInputPenButtons _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).get_PenButtons(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo)this.asInterface(uuid("6b40ad03-ca1e-5527-7e02-2828540bb1d4"))).get_PenButtons(&_ret));
 		return _ret;
 	}
 	final void PenButtons(Windows.UI.Input.Preview.Injection.InjectedInputPenButtons value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).set_PenButtons(value));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo)this.asInterface(uuid("6b40ad03-ca1e-5527-7e02-2828540bb1d4"))).set_PenButtons(value));
 	}
 	final Windows.UI.Input.Preview.Injection.InjectedInputPenParameters PenParameters()
 	{
 		Windows.UI.Input.Preview.Injection.InjectedInputPenParameters _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).get_PenParameters(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo)this.asInterface(uuid("6b40ad03-ca1e-5527-7e02-2828540bb1d4"))).get_PenParameters(&_ret));
 		return _ret;
 	}
 	final void PenParameters(Windows.UI.Input.Preview.Injection.InjectedInputPenParameters value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).set_PenParameters(value));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo)this.asInterface(uuid("6b40ad03-ca1e-5527-7e02-2828540bb1d4"))).set_PenParameters(value));
 	}
 	final double Pressure()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).get_Pressure(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo)this.asInterface(uuid("6b40ad03-ca1e-5527-7e02-2828540bb1d4"))).get_Pressure(&_ret));
 		return _ret;
 	}
 	final void Pressure(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).set_Pressure(value));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo)this.asInterface(uuid("6b40ad03-ca1e-5527-7e02-2828540bb1d4"))).set_Pressure(value));
 	}
 	final double Rotation()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).get_Rotation(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo)this.asInterface(uuid("6b40ad03-ca1e-5527-7e02-2828540bb1d4"))).get_Rotation(&_ret));
 		return _ret;
 	}
 	final void Rotation(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).set_Rotation(value));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo)this.asInterface(uuid("6b40ad03-ca1e-5527-7e02-2828540bb1d4"))).set_Rotation(value));
 	}
 	final INT32 TiltX()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).get_TiltX(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo)this.asInterface(uuid("6b40ad03-ca1e-5527-7e02-2828540bb1d4"))).get_TiltX(&_ret));
 		return _ret;
 	}
 	final void TiltX(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).set_TiltX(value));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo)this.asInterface(uuid("6b40ad03-ca1e-5527-7e02-2828540bb1d4"))).set_TiltX(value));
 	}
 	final INT32 TiltY()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).get_TiltY(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo)this.asInterface(uuid("6b40ad03-ca1e-5527-7e02-2828540bb1d4"))).get_TiltY(&_ret));
 		return _ret;
 	}
 	final void TiltY(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo).set_TiltY(value));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputPenInfo)this.asInterface(uuid("6b40ad03-ca1e-5527-7e02-2828540bb1d4"))).set_TiltY(value));
 	}
 	static InjectedInputPenInfo New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(InjectedInputPenInfo).abi_ActivateInstance(&ret));
-		return ret.as!(InjectedInputPenInfo);
+		return cast(InjectedInputPenInfo) ret;
 	}
 }
 
@@ -306,58 +306,58 @@ extern(Windows):
 	final Windows.UI.Input.Preview.Injection.InjectedInputRectangle Contact()
 	{
 		Windows.UI.Input.Preview.Injection.InjectedInputRectangle _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo).get_Contact(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo)this.asInterface(uuid("224fd1df-43e8-5ef5-510a-69ca8c9b4c28"))).get_Contact(&_ret));
 		return _ret;
 	}
 	final void Contact(Windows.UI.Input.Preview.Injection.InjectedInputRectangle value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo).set_Contact(value));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo)this.asInterface(uuid("224fd1df-43e8-5ef5-510a-69ca8c9b4c28"))).set_Contact(value));
 	}
 	final INT32 Orientation()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo).get_Orientation(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo)this.asInterface(uuid("224fd1df-43e8-5ef5-510a-69ca8c9b4c28"))).get_Orientation(&_ret));
 		return _ret;
 	}
 	final void Orientation(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo).set_Orientation(value));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo)this.asInterface(uuid("224fd1df-43e8-5ef5-510a-69ca8c9b4c28"))).set_Orientation(value));
 	}
 	final Windows.UI.Input.Preview.Injection.InjectedInputPointerInfo PointerInfo()
 	{
 		Windows.UI.Input.Preview.Injection.InjectedInputPointerInfo _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo).get_PointerInfo(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo)this.asInterface(uuid("224fd1df-43e8-5ef5-510a-69ca8c9b4c28"))).get_PointerInfo(&_ret));
 		return _ret;
 	}
 	final void PointerInfo(Windows.UI.Input.Preview.Injection.InjectedInputPointerInfo value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo).set_PointerInfo(value));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo)this.asInterface(uuid("224fd1df-43e8-5ef5-510a-69ca8c9b4c28"))).set_PointerInfo(value));
 	}
 	final double Pressure()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo).get_Pressure(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo)this.asInterface(uuid("224fd1df-43e8-5ef5-510a-69ca8c9b4c28"))).get_Pressure(&_ret));
 		return _ret;
 	}
 	final void Pressure(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo).set_Pressure(value));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo)this.asInterface(uuid("224fd1df-43e8-5ef5-510a-69ca8c9b4c28"))).set_Pressure(value));
 	}
 	final Windows.UI.Input.Preview.Injection.InjectedInputTouchParameters TouchParameters()
 	{
 		Windows.UI.Input.Preview.Injection.InjectedInputTouchParameters _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo).get_TouchParameters(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo)this.asInterface(uuid("224fd1df-43e8-5ef5-510a-69ca8c9b4c28"))).get_TouchParameters(&_ret));
 		return _ret;
 	}
 	final void TouchParameters(Windows.UI.Input.Preview.Injection.InjectedInputTouchParameters value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo).set_TouchParameters(value));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInjectedInputTouchInfo)this.asInterface(uuid("224fd1df-43e8-5ef5-510a-69ca8c9b4c28"))).set_TouchParameters(value));
 	}
 	static InjectedInputTouchInfo New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(InjectedInputTouchInfo).abi_ActivateInstance(&ret));
-		return ret.as!(InjectedInputTouchInfo);
+		return cast(InjectedInputTouchInfo) ret;
 	}
 }
 
@@ -366,39 +366,39 @@ interface InputInjector : Windows.UI.Input.Preview.Injection.IInputInjector
 extern(Windows):
 	final void InjectKeyboardInput(Windows.Foundation.Collections.IIterable!(Windows.UI.Input.Preview.Injection.InjectedInputKeyboardInfo) input)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInputInjector).abi_InjectKeyboardInput(input));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInputInjector)this.asInterface(uuid("8ec26f84-0b02-4bd2-ad7a-3d4658be3e18"))).abi_InjectKeyboardInput(input));
 	}
 	final void InjectMouseInput(Windows.Foundation.Collections.IIterable!(Windows.UI.Input.Preview.Injection.InjectedInputMouseInfo) input)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInputInjector).abi_InjectMouseInput(input));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInputInjector)this.asInterface(uuid("8ec26f84-0b02-4bd2-ad7a-3d4658be3e18"))).abi_InjectMouseInput(input));
 	}
 	final void InitializeTouchInjection(Windows.UI.Input.Preview.Injection.InjectedInputVisualizationMode visualMode)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInputInjector).abi_InitializeTouchInjection(visualMode));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInputInjector)this.asInterface(uuid("8ec26f84-0b02-4bd2-ad7a-3d4658be3e18"))).abi_InitializeTouchInjection(visualMode));
 	}
 	final void InjectTouchInput(Windows.Foundation.Collections.IIterable!(Windows.UI.Input.Preview.Injection.InjectedInputTouchInfo) input)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInputInjector).abi_InjectTouchInput(input));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInputInjector)this.asInterface(uuid("8ec26f84-0b02-4bd2-ad7a-3d4658be3e18"))).abi_InjectTouchInput(input));
 	}
 	final void UninitializeTouchInjection()
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInputInjector).abi_UninitializeTouchInjection());
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInputInjector)this.asInterface(uuid("8ec26f84-0b02-4bd2-ad7a-3d4658be3e18"))).abi_UninitializeTouchInjection());
 	}
 	final void InitializePenInjection(Windows.UI.Input.Preview.Injection.InjectedInputVisualizationMode visualMode)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInputInjector).abi_InitializePenInjection(visualMode));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInputInjector)this.asInterface(uuid("8ec26f84-0b02-4bd2-ad7a-3d4658be3e18"))).abi_InitializePenInjection(visualMode));
 	}
 	final void InjectPenInput(Windows.UI.Input.Preview.Injection.InjectedInputPenInfo input)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInputInjector).abi_InjectPenInput(input));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInputInjector)this.asInterface(uuid("8ec26f84-0b02-4bd2-ad7a-3d4658be3e18"))).abi_InjectPenInput(input));
 	}
 	final void UninitializePenInjection()
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInputInjector).abi_UninitializePenInjection());
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInputInjector)this.asInterface(uuid("8ec26f84-0b02-4bd2-ad7a-3d4658be3e18"))).abi_UninitializePenInjection());
 	}
 	final void InjectShortcut(Windows.UI.Input.Preview.Injection.InjectedInputShortcut shortcut)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Preview.Injection.IInputInjector).abi_InjectShortcut(shortcut));
+		Debug.OK((cast(Windows.UI.Input.Preview.Injection.IInputInjector)this.asInterface(uuid("8ec26f84-0b02-4bd2-ad7a-3d4658be3e18"))).abi_InjectShortcut(shortcut));
 	}
 
 	private static Windows.UI.Input.Preview.Injection.IInputInjectorStatics _staticInstance;
@@ -410,7 +410,7 @@ extern(Windows):
 	static Windows.UI.Input.Preview.Injection.InputInjector TryCreate()
 	{
 		Windows.UI.Input.Preview.Injection.InputInjector _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Input.Preview.Injection.IInputInjectorStatics).abi_TryCreate(&_ret));
+		Debug.OK(staticInstance.abi_TryCreate(&_ret));
 		return _ret;
 	}
 }

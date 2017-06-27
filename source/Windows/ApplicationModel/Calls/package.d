@@ -250,7 +250,7 @@ extern(Windows):
 	final Windows.ApplicationModel.Calls.VoipPhoneCallMedia AcceptedMedia()
 	{
 		Windows.ApplicationModel.Calls.VoipPhoneCallMedia _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ICallAnswerEventArgs).get_AcceptedMedia(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.ICallAnswerEventArgs)this.asInterface(uuid("fd789617-2dd7-4c8c-b2bd-95d17a5bb733"))).get_AcceptedMedia(&_ret));
 		return _ret;
 	}
 }
@@ -261,7 +261,7 @@ extern(Windows):
 	final Windows.ApplicationModel.Calls.VoipPhoneCallRejectReason RejectReason()
 	{
 		Windows.ApplicationModel.Calls.VoipPhoneCallRejectReason _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ICallRejectEventArgs).get_RejectReason(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.ICallRejectEventArgs)this.asInterface(uuid("da47fad7-13d4-4d92-a1c2-b77811ee37ec"))).get_RejectReason(&_ret));
 		return _ret;
 	}
 }
@@ -272,7 +272,7 @@ extern(Windows):
 	final Windows.ApplicationModel.Calls.VoipPhoneCallState State()
 	{
 		Windows.ApplicationModel.Calls.VoipPhoneCallState _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ICallStateChangeEventArgs).get_State(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.ICallStateChangeEventArgs)this.asInterface(uuid("eab2349e-66f5-47f9-9fb5-459c5198c720"))).get_State(&_ret));
 		return _ret;
 	}
 }
@@ -282,7 +282,7 @@ interface LockScreenCallEndCallDeferral : Windows.ApplicationModel.Calls.ILockSc
 extern(Windows):
 	final void Complete()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ILockScreenCallEndCallDeferral).abi_Complete());
+		Debug.OK((cast(Windows.ApplicationModel.Calls.ILockScreenCallEndCallDeferral)this.asInterface(uuid("2dd7ed0d-98ed-4041-9632-50ff812b773f"))).abi_Complete());
 	}
 }
 
@@ -292,13 +292,13 @@ extern(Windows):
 	final Windows.ApplicationModel.Calls.LockScreenCallEndCallDeferral GetDeferral()
 	{
 		Windows.ApplicationModel.Calls.LockScreenCallEndCallDeferral _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ILockScreenCallEndRequestedEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.ILockScreenCallEndRequestedEventArgs)this.asInterface(uuid("8190a363-6f27-46e9-aeb6-c0ae83e47dc7"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime Deadline()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ILockScreenCallEndRequestedEventArgs).get_Deadline(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.ILockScreenCallEndRequestedEventArgs)this.asInterface(uuid("8190a363-6f27-46e9-aeb6-c0ae83e47dc7"))).get_Deadline(&_ret));
 		return _ret;
 	}
 }
@@ -308,37 +308,37 @@ interface LockScreenCallUI : Windows.ApplicationModel.Calls.ILockScreenCallUI
 extern(Windows):
 	final void Dismiss()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ILockScreenCallUI).abi_Dismiss());
+		Debug.OK((cast(Windows.ApplicationModel.Calls.ILockScreenCallUI)this.asInterface(uuid("c596fd8d-73c9-4a14-b021-ec1c50a3b727"))).abi_Dismiss());
 	}
 	final EventRegistrationToken OnEndRequested(void delegate(Windows.ApplicationModel.Calls.LockScreenCallUI, Windows.ApplicationModel.Calls.LockScreenCallEndRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ILockScreenCallUI).add_EndRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.LockScreenCallUI, Windows.ApplicationModel.Calls.LockScreenCallEndRequestedEventArgs), Windows.ApplicationModel.Calls.LockScreenCallUI, Windows.ApplicationModel.Calls.LockScreenCallEndRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.ILockScreenCallUI)this.asInterface(uuid("c596fd8d-73c9-4a14-b021-ec1c50a3b727"))).add_EndRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.LockScreenCallUI, Windows.ApplicationModel.Calls.LockScreenCallEndRequestedEventArgs), Windows.ApplicationModel.Calls.LockScreenCallUI, Windows.ApplicationModel.Calls.LockScreenCallEndRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeEndRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ILockScreenCallUI).remove_EndRequested(token));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.ILockScreenCallUI)this.asInterface(uuid("c596fd8d-73c9-4a14-b021-ec1c50a3b727"))).remove_EndRequested(token));
 	}
 	final EventRegistrationToken OnClosed(void delegate(Windows.ApplicationModel.Calls.LockScreenCallUI, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ILockScreenCallUI).add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.LockScreenCallUI, IInspectable), Windows.ApplicationModel.Calls.LockScreenCallUI, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.ILockScreenCallUI)this.asInterface(uuid("c596fd8d-73c9-4a14-b021-ec1c50a3b727"))).add_Closed(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.LockScreenCallUI, IInspectable), Windows.ApplicationModel.Calls.LockScreenCallUI, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeClosed(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ILockScreenCallUI).remove_Closed(token));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.ILockScreenCallUI)this.asInterface(uuid("c596fd8d-73c9-4a14-b021-ec1c50a3b727"))).remove_Closed(token));
 	}
 	final HSTRING CallTitle()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ILockScreenCallUI).get_CallTitle(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.ILockScreenCallUI)this.asInterface(uuid("c596fd8d-73c9-4a14-b021-ec1c50a3b727"))).get_CallTitle(&_ret));
 		return _ret;
 	}
 	final void CallTitle(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.ILockScreenCallUI).set_CallTitle(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.ILockScreenCallUI)this.asInterface(uuid("c596fd8d-73c9-4a14-b021-ec1c50a3b727"))).set_CallTitle(value));
 	}
 }
 
@@ -348,7 +348,7 @@ extern(Windows):
 	final bool Muted()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IMuteChangeEventArgs).get_Muted(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IMuteChangeEventArgs)this.asInterface(uuid("8585e159-0c41-432c-814d-c5f1fdf530be"))).get_Muted(&_ret));
 		return _ret;
 	}
 }
@@ -359,180 +359,180 @@ extern(Windows):
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_Id(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Calls.PhoneCallHistoryEntryAddress Address()
 	{
 		Windows.ApplicationModel.Calls.PhoneCallHistoryEntryAddress _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_Address(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).get_Address(&_ret));
 		return _ret;
 	}
 	final void Address(Windows.ApplicationModel.Calls.PhoneCallHistoryEntryAddress value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_Address(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).set_Address(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) Duration()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_Duration(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).get_Duration(&_ret));
 		return _ret;
 	}
 	final void Duration(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_Duration(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).set_Duration(value));
 	}
 	final bool IsCallerIdBlocked()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_IsCallerIdBlocked(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).get_IsCallerIdBlocked(&_ret));
 		return _ret;
 	}
 	final void IsCallerIdBlocked(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_IsCallerIdBlocked(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).set_IsCallerIdBlocked(value));
 	}
 	final bool IsEmergency()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_IsEmergency(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).get_IsEmergency(&_ret));
 		return _ret;
 	}
 	final void IsEmergency(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_IsEmergency(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).set_IsEmergency(value));
 	}
 	final bool IsIncoming()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_IsIncoming(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).get_IsIncoming(&_ret));
 		return _ret;
 	}
 	final void IsIncoming(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_IsIncoming(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).set_IsIncoming(value));
 	}
 	final bool IsMissed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_IsMissed(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).get_IsMissed(&_ret));
 		return _ret;
 	}
 	final void IsMissed(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_IsMissed(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).set_IsMissed(value));
 	}
 	final bool IsRinging()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_IsRinging(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).get_IsRinging(&_ret));
 		return _ret;
 	}
 	final void IsRinging(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_IsRinging(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).set_IsRinging(value));
 	}
 	final bool IsSeen()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_IsSeen(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).get_IsSeen(&_ret));
 		return _ret;
 	}
 	final void IsSeen(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_IsSeen(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).set_IsSeen(value));
 	}
 	final bool IsSuppressed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_IsSuppressed(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).get_IsSuppressed(&_ret));
 		return _ret;
 	}
 	final void IsSuppressed(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_IsSuppressed(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).set_IsSuppressed(value));
 	}
 	final bool IsVoicemail()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_IsVoicemail(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).get_IsVoicemail(&_ret));
 		return _ret;
 	}
 	final void IsVoicemail(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_IsVoicemail(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).set_IsVoicemail(value));
 	}
 	final Windows.ApplicationModel.Calls.PhoneCallHistoryEntryMedia Media()
 	{
 		Windows.ApplicationModel.Calls.PhoneCallHistoryEntryMedia _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_Media(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).get_Media(&_ret));
 		return _ret;
 	}
 	final void Media(Windows.ApplicationModel.Calls.PhoneCallHistoryEntryMedia value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_Media(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).set_Media(value));
 	}
 	final Windows.ApplicationModel.Calls.PhoneCallHistoryEntryOtherAppReadAccess OtherAppReadAccess()
 	{
 		Windows.ApplicationModel.Calls.PhoneCallHistoryEntryOtherAppReadAccess _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_OtherAppReadAccess(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).get_OtherAppReadAccess(&_ret));
 		return _ret;
 	}
 	final void OtherAppReadAccess(Windows.ApplicationModel.Calls.PhoneCallHistoryEntryOtherAppReadAccess value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_OtherAppReadAccess(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).set_OtherAppReadAccess(value));
 	}
 	final HSTRING RemoteId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_RemoteId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).get_RemoteId(&_ret));
 		return _ret;
 	}
 	final void RemoteId(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_RemoteId(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).set_RemoteId(value));
 	}
 	final HSTRING SourceDisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_SourceDisplayName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).get_SourceDisplayName(&_ret));
 		return _ret;
 	}
 	final HSTRING SourceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_SourceId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).get_SourceId(&_ret));
 		return _ret;
 	}
 	final void SourceId(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_SourceId(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).set_SourceId(value));
 	}
 	final Windows.ApplicationModel.Calls.PhoneCallHistorySourceIdKind SourceIdKind()
 	{
 		Windows.ApplicationModel.Calls.PhoneCallHistorySourceIdKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_SourceIdKind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).get_SourceIdKind(&_ret));
 		return _ret;
 	}
 	final void SourceIdKind(Windows.ApplicationModel.Calls.PhoneCallHistorySourceIdKind value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_SourceIdKind(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).set_SourceIdKind(value));
 	}
 	final Windows.Foundation.DateTime StartTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).get_StartTime(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).get_StartTime(&_ret));
 		return _ret;
 	}
 	final void StartTime(Windows.Foundation.DateTime value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry).set_StartTime(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).set_StartTime(value));
 	}
 	static PhoneCallHistoryEntry New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PhoneCallHistoryEntry).abi_ActivateInstance(&ret));
-		return ret.as!(PhoneCallHistoryEntry);
+		return cast(PhoneCallHistoryEntry) ret;
 	}
 }
 
@@ -542,54 +542,54 @@ extern(Windows):
 	final HSTRING ContactId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress).get_ContactId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress)this.asInterface(uuid("30f159da-3955-4042-84e6-66eebf82e67f"))).get_ContactId(&_ret));
 		return _ret;
 	}
 	final void ContactId(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress).set_ContactId(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress)this.asInterface(uuid("30f159da-3955-4042-84e6-66eebf82e67f"))).set_ContactId(value));
 	}
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress)this.asInterface(uuid("30f159da-3955-4042-84e6-66eebf82e67f"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final void DisplayName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress).set_DisplayName(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress)this.asInterface(uuid("30f159da-3955-4042-84e6-66eebf82e67f"))).set_DisplayName(value));
 	}
 	final HSTRING RawAddress()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress).get_RawAddress(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress)this.asInterface(uuid("30f159da-3955-4042-84e6-66eebf82e67f"))).get_RawAddress(&_ret));
 		return _ret;
 	}
 	final void RawAddress(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress).set_RawAddress(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress)this.asInterface(uuid("30f159da-3955-4042-84e6-66eebf82e67f"))).set_RawAddress(value));
 	}
 	final Windows.ApplicationModel.Calls.PhoneCallHistoryEntryRawAddressKind RawAddressKind()
 	{
 		Windows.ApplicationModel.Calls.PhoneCallHistoryEntryRawAddressKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress).get_RawAddressKind(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress)this.asInterface(uuid("30f159da-3955-4042-84e6-66eebf82e67f"))).get_RawAddressKind(&_ret));
 		return _ret;
 	}
 	final void RawAddressKind(Windows.ApplicationModel.Calls.PhoneCallHistoryEntryRawAddressKind value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress).set_RawAddressKind(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress)this.asInterface(uuid("30f159da-3955-4042-84e6-66eebf82e67f"))).set_RawAddressKind(value));
 	}
 	static PhoneCallHistoryEntryAddress New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PhoneCallHistoryEntryAddress).abi_ActivateInstance(&ret));
-		return ret.as!(PhoneCallHistoryEntryAddress);
+		return cast(PhoneCallHistoryEntryAddress) ret;
 	}
 	static Windows.ApplicationModel.Calls.PhoneCallHistoryEntryAddress New(HSTRING rawAddress, Windows.ApplicationModel.Calls.PhoneCallHistoryEntryRawAddressKind rawAddressKind)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddressFactory);
 		Windows.ApplicationModel.Calls.PhoneCallHistoryEntryAddress _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddressFactory).abi_Create(rawAddress, rawAddressKind, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddressFactory)factory.asInterface(uuid("fb0fadba-c7f0-4bb6-9f6b-ba5d73209aca"))).abi_Create(rawAddress, rawAddressKind, &_ret));
 		return _ret;
 	}
 }
@@ -600,24 +600,24 @@ extern(Windows):
 	final Windows.ApplicationModel.Calls.PhoneCallHistoryEntryQueryDesiredMedia DesiredMedia()
 	{
 		Windows.ApplicationModel.Calls.PhoneCallHistoryEntryQueryDesiredMedia _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryQueryOptions).get_DesiredMedia(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryQueryOptions)this.asInterface(uuid("9c5fe15c-8bed-40ca-b06e-c4ca8eae5c87"))).get_DesiredMedia(&_ret));
 		return _ret;
 	}
 	final void DesiredMedia(Windows.ApplicationModel.Calls.PhoneCallHistoryEntryQueryDesiredMedia value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryQueryOptions).set_DesiredMedia(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryQueryOptions)this.asInterface(uuid("9c5fe15c-8bed-40ca-b06e-c4ca8eae5c87"))).set_DesiredMedia(value));
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) SourceIds()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryQueryOptions).get_SourceIds(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryQueryOptions)this.asInterface(uuid("9c5fe15c-8bed-40ca-b06e-c4ca8eae5c87"))).get_SourceIds(&_ret));
 		return _ret;
 	}
 	static PhoneCallHistoryEntryQueryOptions New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PhoneCallHistoryEntryQueryOptions).abi_ActivateInstance(&ret));
-		return ret.as!(PhoneCallHistoryEntryQueryOptions);
+		return cast(PhoneCallHistoryEntryQueryOptions) ret;
 	}
 }
 
@@ -627,7 +627,7 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry)) ReadBatchAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry)) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryReader).abi_ReadBatchAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryReader)this.asInterface(uuid("61ece4be-8d86-479f-8404-a9846920fee6"))).abi_ReadBatchAsync(&_ret));
 		return _ret;
 	}
 }
@@ -643,7 +643,7 @@ interface PhoneCallHistoryManager
 	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.PhoneCallHistoryStore) RequestStoreAsync(Windows.ApplicationModel.Calls.PhoneCallHistoryStoreAccessType accessType)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.PhoneCallHistoryStore) _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryManagerStatics).abi_RequestStoreAsync(accessType, &_ret));
+		Debug.OK(staticInstance.abi_RequestStoreAsync(accessType, &_ret));
 		return _ret;
 	}
 }
@@ -654,13 +654,13 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.PhoneCallHistoryStore) RequestStoreAsync(Windows.ApplicationModel.Calls.PhoneCallHistoryStoreAccessType accessType)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.PhoneCallHistoryStore) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryManagerForUser).abi_RequestStoreAsync(accessType, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryManagerForUser)this.asInterface(uuid("d925c523-f55f-4353-9db4-0205a5265a55"))).abi_RequestStoreAsync(accessType, &_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryManagerForUser).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryManagerForUser)this.asInterface(uuid("d925c523-f55f-4353-9db4-0205a5265a55"))).get_User(&_ret));
 		return _ret;
 	}
 }
@@ -671,73 +671,73 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry) GetEntryAsync(HSTRING callHistoryEntryId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_GetEntryAsync(callHistoryEntryId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore)this.asInterface(uuid("2f907db8-b40e-422b-8545-cb1910a61c52"))).abi_GetEntryAsync(callHistoryEntryId, &_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Calls.PhoneCallHistoryEntryReader GetEntryReader()
 	{
 		Windows.ApplicationModel.Calls.PhoneCallHistoryEntryReader _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_GetEntryReader(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore)this.asInterface(uuid("2f907db8-b40e-422b-8545-cb1910a61c52"))).abi_GetEntryReader(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Calls.PhoneCallHistoryEntryReader GetEntryReaderWithOptions(Windows.ApplicationModel.Calls.PhoneCallHistoryEntryQueryOptions queryOptions)
 	{
 		Windows.ApplicationModel.Calls.PhoneCallHistoryEntryReader _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_GetEntryReaderWithOptions(queryOptions, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore)this.asInterface(uuid("2f907db8-b40e-422b-8545-cb1910a61c52"))).abi_GetEntryReaderWithOptions(queryOptions, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction SaveEntryAsync(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry callHistoryEntry)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_SaveEntryAsync(callHistoryEntry, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore)this.asInterface(uuid("2f907db8-b40e-422b-8545-cb1910a61c52"))).abi_SaveEntryAsync(callHistoryEntry, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction DeleteEntryAsync(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry callHistoryEntry)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_DeleteEntryAsync(callHistoryEntry, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore)this.asInterface(uuid("2f907db8-b40e-422b-8545-cb1910a61c52"))).abi_DeleteEntryAsync(callHistoryEntry, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction DeleteEntriesAsync(Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry) callHistoryEntries)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_DeleteEntriesAsync(callHistoryEntries, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore)this.asInterface(uuid("2f907db8-b40e-422b-8545-cb1910a61c52"))).abi_DeleteEntriesAsync(callHistoryEntries, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction MarkEntryAsSeenAsync(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry callHistoryEntry)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_MarkEntryAsSeenAsync(callHistoryEntry, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore)this.asInterface(uuid("2f907db8-b40e-422b-8545-cb1910a61c52"))).abi_MarkEntryAsSeenAsync(callHistoryEntry, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction MarkEntriesAsSeenAsync(Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry) callHistoryEntries)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_MarkEntriesAsSeenAsync(callHistoryEntries, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore)this.asInterface(uuid("2f907db8-b40e-422b-8545-cb1910a61c52"))).abi_MarkEntriesAsSeenAsync(callHistoryEntries, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(UINT32) GetUnseenCountAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_GetUnseenCountAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore)this.asInterface(uuid("2f907db8-b40e-422b-8545-cb1910a61c52"))).abi_GetUnseenCountAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction MarkAllAsSeenAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_MarkAllAsSeenAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore)this.asInterface(uuid("2f907db8-b40e-422b-8545-cb1910a61c52"))).abi_MarkAllAsSeenAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(UINT32) GetSourcesUnseenCountAsync(Windows.Foundation.Collections.IIterable!(HSTRING) sourceIds)
 	{
 		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_GetSourcesUnseenCountAsync(sourceIds, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore)this.asInterface(uuid("2f907db8-b40e-422b-8545-cb1910a61c52"))).abi_GetSourcesUnseenCountAsync(sourceIds, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction MarkSourcesAsSeenAsync(Windows.Foundation.Collections.IIterable!(HSTRING) sourceIds)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore).abi_MarkSourcesAsSeenAsync(sourceIds, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore)this.asInterface(uuid("2f907db8-b40e-422b-8545-cb1910a61c52"))).abi_MarkSourcesAsSeenAsync(sourceIds, &_ret));
 		return _ret;
 	}
 }
@@ -748,58 +748,58 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.VoipPhoneCallResourceReservationStatus) ReserveCallResourcesAsync(HSTRING taskEntryPoint)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.VoipPhoneCallResourceReservationStatus) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipCallCoordinator).abi_ReserveCallResourcesAsync(taskEntryPoint, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipCallCoordinator)this.asInterface(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79"))).abi_ReserveCallResourcesAsync(taskEntryPoint, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnMuteStateChanged(void delegate(Windows.ApplicationModel.Calls.VoipCallCoordinator, Windows.ApplicationModel.Calls.MuteChangeEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipCallCoordinator).add_MuteStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipCallCoordinator, Windows.ApplicationModel.Calls.MuteChangeEventArgs), Windows.ApplicationModel.Calls.VoipCallCoordinator, Windows.ApplicationModel.Calls.MuteChangeEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipCallCoordinator)this.asInterface(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79"))).add_MuteStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipCallCoordinator, Windows.ApplicationModel.Calls.MuteChangeEventArgs), Windows.ApplicationModel.Calls.VoipCallCoordinator, Windows.ApplicationModel.Calls.MuteChangeEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMuteStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipCallCoordinator).remove_MuteStateChanged(token));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipCallCoordinator)this.asInterface(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79"))).remove_MuteStateChanged(token));
 	}
 	final Windows.ApplicationModel.Calls.VoipPhoneCall RequestNewIncomingCall(HSTRING context, HSTRING contactName, HSTRING contactNumber, Windows.Foundation.Uri contactImage, HSTRING serviceName, Windows.Foundation.Uri brandingImage, HSTRING callDetails, Windows.Foundation.Uri ringtone, Windows.ApplicationModel.Calls.VoipPhoneCallMedia media, Windows.Foundation.TimeSpan ringTimeout)
 	{
 		Windows.ApplicationModel.Calls.VoipPhoneCall _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipCallCoordinator).abi_RequestNewIncomingCall(context, contactName, contactNumber, contactImage, serviceName, brandingImage, callDetails, ringtone, media, ringTimeout, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipCallCoordinator)this.asInterface(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79"))).abi_RequestNewIncomingCall(context, contactName, contactNumber, contactImage, serviceName, brandingImage, callDetails, ringtone, media, ringTimeout, &_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Calls.VoipPhoneCall RequestNewOutgoingCall(HSTRING context, HSTRING contactName, HSTRING serviceName, Windows.ApplicationModel.Calls.VoipPhoneCallMedia media)
 	{
 		Windows.ApplicationModel.Calls.VoipPhoneCall _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipCallCoordinator).abi_RequestNewOutgoingCall(context, contactName, serviceName, media, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipCallCoordinator)this.asInterface(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79"))).abi_RequestNewOutgoingCall(context, contactName, serviceName, media, &_ret));
 		return _ret;
 	}
 	final void NotifyMuted()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipCallCoordinator).abi_NotifyMuted());
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipCallCoordinator)this.asInterface(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79"))).abi_NotifyMuted());
 	}
 	final void NotifyUnmuted()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipCallCoordinator).abi_NotifyUnmuted());
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipCallCoordinator)this.asInterface(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79"))).abi_NotifyUnmuted());
 	}
 	final Windows.ApplicationModel.Calls.VoipPhoneCall RequestOutgoingUpgradeToVideoCall(GUID callUpgradeGuid, HSTRING context, HSTRING contactName, HSTRING serviceName)
 	{
 		Windows.ApplicationModel.Calls.VoipPhoneCall _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipCallCoordinator).abi_RequestOutgoingUpgradeToVideoCall(callUpgradeGuid, context, contactName, serviceName, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipCallCoordinator)this.asInterface(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79"))).abi_RequestOutgoingUpgradeToVideoCall(callUpgradeGuid, context, contactName, serviceName, &_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Calls.VoipPhoneCall RequestIncomingUpgradeToVideoCall(HSTRING context, HSTRING contactName, HSTRING contactNumber, Windows.Foundation.Uri contactImage, HSTRING serviceName, Windows.Foundation.Uri brandingImage, HSTRING callDetails, Windows.Foundation.Uri ringtone, Windows.Foundation.TimeSpan ringTimeout)
 	{
 		Windows.ApplicationModel.Calls.VoipPhoneCall _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipCallCoordinator).abi_RequestIncomingUpgradeToVideoCall(context, contactName, contactNumber, contactImage, serviceName, brandingImage, callDetails, ringtone, ringTimeout, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipCallCoordinator)this.asInterface(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79"))).abi_RequestIncomingUpgradeToVideoCall(context, contactName, contactNumber, contactImage, serviceName, brandingImage, callDetails, ringtone, ringTimeout, &_ret));
 		return _ret;
 	}
 	final void TerminateCellularCall(GUID callUpgradeGuid)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipCallCoordinator).abi_TerminateCellularCall(callUpgradeGuid));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipCallCoordinator)this.asInterface(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79"))).abi_TerminateCellularCall(callUpgradeGuid));
 	}
 	final void CancelUpgrade(GUID callUpgradeGuid)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipCallCoordinator).abi_CancelUpgrade(callUpgradeGuid));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipCallCoordinator)this.asInterface(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79"))).abi_CancelUpgrade(callUpgradeGuid));
 	}
 
 	private static Windows.ApplicationModel.Calls.IVoipCallCoordinatorStatics _staticInstance;
@@ -811,7 +811,7 @@ extern(Windows):
 	static Windows.ApplicationModel.Calls.VoipCallCoordinator GetDefault()
 	{
 		Windows.ApplicationModel.Calls.VoipCallCoordinator _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Calls.IVoipCallCoordinatorStatics).abi_GetDefault(&_ret));
+		Debug.OK(staticInstance.abi_GetDefault(&_ret));
 		return _ret;
 	}
 }
@@ -822,98 +822,98 @@ extern(Windows):
 	final EventRegistrationToken OnEndRequested(void delegate(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).add_EndRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs), Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).add_EndRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs), Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeEndRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).remove_EndRequested(token));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).remove_EndRequested(token));
 	}
 	final EventRegistrationToken OnHoldRequested(void delegate(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).add_HoldRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs), Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).add_HoldRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs), Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeHoldRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).remove_HoldRequested(token));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).remove_HoldRequested(token));
 	}
 	final EventRegistrationToken OnResumeRequested(void delegate(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).add_ResumeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs), Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).add_ResumeRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs), Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallStateChangeEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeResumeRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).remove_ResumeRequested(token));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).remove_ResumeRequested(token));
 	}
 	final EventRegistrationToken OnAnswerRequested(void delegate(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallAnswerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).add_AnswerRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallAnswerEventArgs), Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallAnswerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).add_AnswerRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallAnswerEventArgs), Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallAnswerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAnswerRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).remove_AnswerRequested(token));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).remove_AnswerRequested(token));
 	}
 	final EventRegistrationToken OnRejectRequested(void delegate(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallRejectEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).add_RejectRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallRejectEventArgs), Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallRejectEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).add_RejectRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallRejectEventArgs), Windows.ApplicationModel.Calls.VoipPhoneCall, Windows.ApplicationModel.Calls.CallRejectEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRejectRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).remove_RejectRequested(token));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).remove_RejectRequested(token));
 	}
 	final void NotifyCallHeld()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).abi_NotifyCallHeld());
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).abi_NotifyCallHeld());
 	}
 	final void NotifyCallActive()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).abi_NotifyCallActive());
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).abi_NotifyCallActive());
 	}
 	final void NotifyCallEnded()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).abi_NotifyCallEnded());
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).abi_NotifyCallEnded());
 	}
 	final HSTRING ContactName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).get_ContactName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).get_ContactName(&_ret));
 		return _ret;
 	}
 	final void ContactName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).set_ContactName(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).set_ContactName(value));
 	}
 	final Windows.Foundation.DateTime StartTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).get_StartTime(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).get_StartTime(&_ret));
 		return _ret;
 	}
 	final void StartTime(Windows.Foundation.DateTime value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).set_StartTime(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).set_StartTime(value));
 	}
 	final Windows.ApplicationModel.Calls.VoipPhoneCallMedia CallMedia()
 	{
 		Windows.ApplicationModel.Calls.VoipPhoneCallMedia _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).get_CallMedia(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).get_CallMedia(&_ret));
 		return _ret;
 	}
 	final void CallMedia(Windows.ApplicationModel.Calls.VoipPhoneCallMedia value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).set_CallMedia(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).set_CallMedia(value));
 	}
 	final void NotifyCallReady()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.IVoipPhoneCall).abi_NotifyCallReady());
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).abi_NotifyCallReady());
 	}
 }
 

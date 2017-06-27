@@ -199,13 +199,13 @@ extern(Windows):
 	final Windows.ApplicationModel.AppDisplayInfo DisplayInfo()
 	{
 		Windows.ApplicationModel.AppDisplayInfo _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.IAppListEntry).get_DisplayInfo(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Core.IAppListEntry)this.asInterface(uuid("ef00f07f-2108-490a-877a-8a9f17c25fad"))).get_DisplayInfo(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) LaunchAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.IAppListEntry).abi_LaunchAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Core.IAppListEntry)this.asInterface(uuid("ef00f07f-2108-490a-877a-8a9f17c25fad"))).abi_LaunchAsync(&_ret));
 		return _ret;
 	}
 }
@@ -221,48 +221,48 @@ interface CoreApplication
 	static HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Core.ICoreApplication).get_Id(&_ret));
+		Debug.OK(staticInstance.get_Id(&_ret));
 		return _ret;
 	}
 	static EventRegistrationToken OnSuspending(void delegate(IInspectable, Windows.ApplicationModel.SuspendingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Core.ICoreApplication).add_Suspending(event!(Windows.Foundation.EventHandler!(Windows.ApplicationModel.SuspendingEventArgs), IInspectable, Windows.ApplicationModel.SuspendingEventArgs)(fn), &tok));
+		Debug.OK(staticInstance.add_Suspending(event!(Windows.Foundation.EventHandler!(Windows.ApplicationModel.SuspendingEventArgs), IInspectable, Windows.ApplicationModel.SuspendingEventArgs)(fn), &tok));
 		return tok;
 	}
 	static void removeSuspending(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Core.ICoreApplication).remove_Suspending(token));
+		Debug.OK(staticInstance.remove_Suspending(token));
 	}
 	static EventRegistrationToken OnResuming(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Core.ICoreApplication).add_Resuming(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_Resuming(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	static void removeResuming(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Core.ICoreApplication).remove_Resuming(token));
+		Debug.OK(staticInstance.remove_Resuming(token));
 	}
 	static Windows.Foundation.Collections.IPropertySet Properties()
 	{
 		Windows.Foundation.Collections.IPropertySet _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Core.ICoreApplication).get_Properties(&_ret));
+		Debug.OK(staticInstance.get_Properties(&_ret));
 		return _ret;
 	}
 	static Windows.ApplicationModel.Core.CoreApplicationView GetCurrentView()
 	{
 		Windows.ApplicationModel.Core.CoreApplicationView _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Core.ICoreApplication).abi_GetCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetCurrentView(&_ret));
 		return _ret;
 	}
 	static void Run(Windows.ApplicationModel.Core.IFrameworkViewSource viewSource)
 	{
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Core.ICoreApplication).abi_Run(viewSource));
+		Debug.OK(staticInstance.abi_Run(viewSource));
 	}
 	static void RunWithActivationFactories(Windows.Foundation.IGetActivationFactory activationFactoryCallback)
 	{
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Core.ICoreApplication).abi_RunWithActivationFactories(activationFactoryCallback));
+		Debug.OK(staticInstance.abi_RunWithActivationFactories(activationFactoryCallback));
 	}
 }
 
@@ -272,63 +272,63 @@ extern(Windows):
 	final Windows.UI.Core.CoreWindow CoreWindow()
 	{
 		Windows.UI.Core.CoreWindow _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView).get_CoreWindow(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Core.ICoreApplicationView)this.asInterface(uuid("638bb2db-451d-4661-b099-414f34ffb9f1"))).get_CoreWindow(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnActivated(void delegate(Windows.ApplicationModel.Core.CoreApplicationView, Windows.ApplicationModel.Activation.IActivatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView).add_Activated(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationView, Windows.ApplicationModel.Activation.IActivatedEventArgs), Windows.ApplicationModel.Core.CoreApplicationView, Windows.ApplicationModel.Activation.IActivatedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Core.ICoreApplicationView)this.asInterface(uuid("638bb2db-451d-4661-b099-414f34ffb9f1"))).add_Activated(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationView, Windows.ApplicationModel.Activation.IActivatedEventArgs), Windows.ApplicationModel.Core.CoreApplicationView, Windows.ApplicationModel.Activation.IActivatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeActivated(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView).remove_Activated(token));
+		Debug.OK((cast(Windows.ApplicationModel.Core.ICoreApplicationView)this.asInterface(uuid("638bb2db-451d-4661-b099-414f34ffb9f1"))).remove_Activated(token));
 	}
 	final bool IsMain()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView).get_IsMain(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Core.ICoreApplicationView)this.asInterface(uuid("638bb2db-451d-4661-b099-414f34ffb9f1"))).get_IsMain(&_ret));
 		return _ret;
 	}
 	final bool IsHosted()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView).get_IsHosted(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Core.ICoreApplicationView)this.asInterface(uuid("638bb2db-451d-4661-b099-414f34ffb9f1"))).get_IsHosted(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Core.CoreDispatcher Dispatcher()
 	{
 		Windows.UI.Core.CoreDispatcher _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView2).get_Dispatcher(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Core.ICoreApplicationView2)this.asInterface(uuid("68eb7adf-917f-48eb-9aeb-7de53e086ab1"))).get_Dispatcher(&_ret));
 		return _ret;
 	}
 	final bool IsComponent()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView3).get_IsComponent(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Core.ICoreApplicationView3)this.asInterface(uuid("07ebe1b3-a4cf-4550-ab70-b07e85330bc8"))).get_IsComponent(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Core.CoreApplicationViewTitleBar TitleBar()
 	{
 		Windows.ApplicationModel.Core.CoreApplicationViewTitleBar _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView3).get_TitleBar(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Core.ICoreApplicationView3)this.asInterface(uuid("07ebe1b3-a4cf-4550-ab70-b07e85330bc8"))).get_TitleBar(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnHostedViewClosing(void delegate(Windows.ApplicationModel.Core.CoreApplicationView, Windows.ApplicationModel.Core.HostedViewClosingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView3).add_HostedViewClosing(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationView, Windows.ApplicationModel.Core.HostedViewClosingEventArgs), Windows.ApplicationModel.Core.CoreApplicationView, Windows.ApplicationModel.Core.HostedViewClosingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Core.ICoreApplicationView3)this.asInterface(uuid("07ebe1b3-a4cf-4550-ab70-b07e85330bc8"))).add_HostedViewClosing(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationView, Windows.ApplicationModel.Core.HostedViewClosingEventArgs), Windows.ApplicationModel.Core.CoreApplicationView, Windows.ApplicationModel.Core.HostedViewClosingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeHostedViewClosing(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView3).remove_HostedViewClosing(token));
+		Debug.OK((cast(Windows.ApplicationModel.Core.ICoreApplicationView3)this.asInterface(uuid("07ebe1b3-a4cf-4550-ab70-b07e85330bc8"))).remove_HostedViewClosing(token));
 	}
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{
 		Windows.Foundation.Collections.IPropertySet _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationView5).get_Properties(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Core.ICoreApplicationView5)this.asInterface(uuid("2bc095a8-8ef0-446d-9e60-3a3e0428c671"))).get_Properties(&_ret));
 		return _ret;
 	}
 }
@@ -338,57 +338,57 @@ interface CoreApplicationViewTitleBar : Windows.ApplicationModel.Core.ICoreAppli
 extern(Windows):
 	final void ExtendViewIntoTitleBar(bool value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar).set_ExtendViewIntoTitleBar(value));
+		Debug.OK((cast(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar)this.asInterface(uuid("006d35e3-e1f1-431b-9508-29b96926ac53"))).set_ExtendViewIntoTitleBar(value));
 	}
 	final bool ExtendViewIntoTitleBar()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar).get_ExtendViewIntoTitleBar(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar)this.asInterface(uuid("006d35e3-e1f1-431b-9508-29b96926ac53"))).get_ExtendViewIntoTitleBar(&_ret));
 		return _ret;
 	}
 	final double SystemOverlayLeftInset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar).get_SystemOverlayLeftInset(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar)this.asInterface(uuid("006d35e3-e1f1-431b-9508-29b96926ac53"))).get_SystemOverlayLeftInset(&_ret));
 		return _ret;
 	}
 	final double SystemOverlayRightInset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar).get_SystemOverlayRightInset(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar)this.asInterface(uuid("006d35e3-e1f1-431b-9508-29b96926ac53"))).get_SystemOverlayRightInset(&_ret));
 		return _ret;
 	}
 	final double Height()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar).get_Height(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar)this.asInterface(uuid("006d35e3-e1f1-431b-9508-29b96926ac53"))).get_Height(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnLayoutMetricsChanged(void delegate(Windows.ApplicationModel.Core.CoreApplicationViewTitleBar, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar).add_LayoutMetricsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationViewTitleBar, IInspectable), Windows.ApplicationModel.Core.CoreApplicationViewTitleBar, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar)this.asInterface(uuid("006d35e3-e1f1-431b-9508-29b96926ac53"))).add_LayoutMetricsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationViewTitleBar, IInspectable), Windows.ApplicationModel.Core.CoreApplicationViewTitleBar, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeLayoutMetricsChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar).remove_LayoutMetricsChanged(token));
+		Debug.OK((cast(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar)this.asInterface(uuid("006d35e3-e1f1-431b-9508-29b96926ac53"))).remove_LayoutMetricsChanged(token));
 	}
 	final bool IsVisible()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar).get_IsVisible(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar)this.asInterface(uuid("006d35e3-e1f1-431b-9508-29b96926ac53"))).get_IsVisible(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnIsVisibleChanged(void delegate(Windows.ApplicationModel.Core.CoreApplicationViewTitleBar, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar).add_IsVisibleChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationViewTitleBar, IInspectable), Windows.ApplicationModel.Core.CoreApplicationViewTitleBar, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar)this.asInterface(uuid("006d35e3-e1f1-431b-9508-29b96926ac53"))).add_IsVisibleChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Core.CoreApplicationViewTitleBar, IInspectable), Windows.ApplicationModel.Core.CoreApplicationViewTitleBar, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeIsVisibleChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar).remove_IsVisibleChanged(token));
+		Debug.OK((cast(Windows.ApplicationModel.Core.ICoreApplicationViewTitleBar)this.asInterface(uuid("006d35e3-e1f1-431b-9508-29b96926ac53"))).remove_IsVisibleChanged(token));
 	}
 }
 
@@ -398,7 +398,7 @@ extern(Windows):
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.IHostedViewClosingEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Core.IHostedViewClosingEventArgs)this.asInterface(uuid("d238943c-b24e-4790-acb5-3e4243c4ff87"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -409,12 +409,12 @@ extern(Windows):
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.IUnhandledError).get_Handled(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Core.IUnhandledError)this.asInterface(uuid("9459b726-53b5-4686-9eaf-fa8162dc3980"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Propagate()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.IUnhandledError).abi_Propagate());
+		Debug.OK((cast(Windows.ApplicationModel.Core.IUnhandledError)this.asInterface(uuid("9459b726-53b5-4686-9eaf-fa8162dc3980"))).abi_Propagate());
 	}
 }
 
@@ -424,7 +424,7 @@ extern(Windows):
 	final Windows.ApplicationModel.Core.UnhandledError UnhandledError()
 	{
 		Windows.ApplicationModel.Core.UnhandledError _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Core.IUnhandledErrorDetectedEventArgs).get_UnhandledError(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Core.IUnhandledErrorDetectedEventArgs)this.asInterface(uuid("679ab78b-b336-4822-ac40-0d750f0b7a2b"))).get_UnhandledError(&_ret));
 		return _ret;
 	}
 }

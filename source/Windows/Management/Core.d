@@ -27,7 +27,7 @@ interface ApplicationDataManager : Windows.Management.Core.IApplicationDataManag
 	static Windows.Storage.ApplicationData CreateForPackageFamily(HSTRING packageFamilyName)
 	{
 		Windows.Storage.ApplicationData _ret;
-		Debug.OK(staticInstance.as!(Windows.Management.Core.IApplicationDataManagerStatics).abi_CreateForPackageFamily(packageFamilyName, &_ret));
+		Debug.OK(staticInstance.abi_CreateForPackageFamily(packageFamilyName, &_ret));
 		return _ret;
 	}
 }

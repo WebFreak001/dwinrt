@@ -229,19 +229,19 @@ extern(Windows):
 	final bool IsCanceled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextCompositionCompletedEventArgs).get_IsCanceled(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextCompositionCompletedEventArgs)this.asInterface(uuid("1f34ebb6-b79f-4121-a5e7-fda9b8616e30"))).get_IsCanceled(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Text.Core.CoreTextCompositionSegment) CompositionSegments()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Text.Core.CoreTextCompositionSegment) _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextCompositionCompletedEventArgs).get_CompositionSegments(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextCompositionCompletedEventArgs)this.asInterface(uuid("1f34ebb6-b79f-4121-a5e7-fda9b8616e30"))).get_CompositionSegments(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextCompositionCompletedEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextCompositionCompletedEventArgs)this.asInterface(uuid("1f34ebb6-b79f-4121-a5e7-fda9b8616e30"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -252,13 +252,13 @@ extern(Windows):
 	final HSTRING PreconversionString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextCompositionSegment).get_PreconversionString(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextCompositionSegment)this.asInterface(uuid("776c6bd9-4ead-4da7-8f47-3a88b523cc34"))).get_PreconversionString(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Text.Core.CoreTextRange Range()
 	{
 		Windows.UI.Text.Core.CoreTextRange _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextCompositionSegment).get_Range(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextCompositionSegment)this.asInterface(uuid("776c6bd9-4ead-4da7-8f47-3a88b523cc34"))).get_Range(&_ret));
 		return _ret;
 	}
 }
@@ -269,13 +269,13 @@ extern(Windows):
 	final bool IsCanceled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextCompositionStartedEventArgs).get_IsCanceled(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextCompositionStartedEventArgs)this.asInterface(uuid("276b16a9-64e7-4ab0-bc4b-a02d73835bfb"))).get_IsCanceled(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextCompositionStartedEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextCompositionStartedEventArgs)this.asInterface(uuid("276b16a9-64e7-4ab0-bc4b-a02d73835bfb"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -286,162 +286,162 @@ extern(Windows):
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).get_Name(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).get_Name(&_ret));
 		return _ret;
 	}
 	final void Name(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).set_Name(value));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).set_Name(value));
 	}
 	final Windows.UI.Text.Core.CoreTextInputScope InputScope()
 	{
 		Windows.UI.Text.Core.CoreTextInputScope _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).get_InputScope(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).get_InputScope(&_ret));
 		return _ret;
 	}
 	final void InputScope(Windows.UI.Text.Core.CoreTextInputScope value)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).set_InputScope(value));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).set_InputScope(value));
 	}
 	final bool IsReadOnly()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).get_IsReadOnly(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).get_IsReadOnly(&_ret));
 		return _ret;
 	}
 	final void IsReadOnly(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).set_IsReadOnly(value));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).set_IsReadOnly(value));
 	}
 	final Windows.UI.Text.Core.CoreTextInputPaneDisplayPolicy InputPaneDisplayPolicy()
 	{
 		Windows.UI.Text.Core.CoreTextInputPaneDisplayPolicy _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).get_InputPaneDisplayPolicy(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).get_InputPaneDisplayPolicy(&_ret));
 		return _ret;
 	}
 	final void InputPaneDisplayPolicy(Windows.UI.Text.Core.CoreTextInputPaneDisplayPolicy value)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).set_InputPaneDisplayPolicy(value));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).set_InputPaneDisplayPolicy(value));
 	}
 	final EventRegistrationToken OnTextRequested(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).add_TextRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextRequestedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).add_TextRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextRequestedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTextRequested(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).remove_TextRequested(cookie));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).remove_TextRequested(cookie));
 	}
 	final EventRegistrationToken OnSelectionRequested(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).add_SelectionRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionRequestedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).add_SelectionRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionRequestedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSelectionRequested(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).remove_SelectionRequested(cookie));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).remove_SelectionRequested(cookie));
 	}
 	final EventRegistrationToken OnLayoutRequested(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextLayoutRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).add_LayoutRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextLayoutRequestedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextLayoutRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).add_LayoutRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextLayoutRequestedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextLayoutRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeLayoutRequested(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).remove_LayoutRequested(cookie));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).remove_LayoutRequested(cookie));
 	}
 	final EventRegistrationToken OnTextUpdating(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).add_TextUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).add_TextUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTextUpdating(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).remove_TextUpdating(cookie));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).remove_TextUpdating(cookie));
 	}
 	final EventRegistrationToken OnSelectionUpdating(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionUpdatingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).add_SelectionUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionUpdatingEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionUpdatingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).add_SelectionUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionUpdatingEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextSelectionUpdatingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSelectionUpdating(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).remove_SelectionUpdating(cookie));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).remove_SelectionUpdating(cookie));
 	}
 	final EventRegistrationToken OnFormatUpdating(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextFormatUpdatingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).add_FormatUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextFormatUpdatingEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextFormatUpdatingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).add_FormatUpdating(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextFormatUpdatingEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextFormatUpdatingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeFormatUpdating(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).remove_FormatUpdating(cookie));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).remove_FormatUpdating(cookie));
 	}
 	final EventRegistrationToken OnCompositionStarted(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionStartedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).add_CompositionStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionStartedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionStartedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).add_CompositionStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionStartedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionStartedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCompositionStarted(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).remove_CompositionStarted(cookie));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).remove_CompositionStarted(cookie));
 	}
 	final EventRegistrationToken OnCompositionCompleted(void delegate(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).add_CompositionCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionCompletedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionCompletedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).add_CompositionCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionCompletedEventArgs), Windows.UI.Text.Core.CoreTextEditContext, Windows.UI.Text.Core.CoreTextCompositionCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCompositionCompleted(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).remove_CompositionCompleted(cookie));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).remove_CompositionCompleted(cookie));
 	}
 	final EventRegistrationToken OnFocusRemoved(void delegate(Windows.UI.Text.Core.CoreTextEditContext, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).add_FocusRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, IInspectable), Windows.UI.Text.Core.CoreTextEditContext, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).add_FocusRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, IInspectable), Windows.UI.Text.Core.CoreTextEditContext, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeFocusRemoved(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).remove_FocusRemoved(cookie));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).remove_FocusRemoved(cookie));
 	}
 	final void NotifyFocusEnter()
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).abi_NotifyFocusEnter());
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).abi_NotifyFocusEnter());
 	}
 	final void NotifyFocusLeave()
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).abi_NotifyFocusLeave());
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).abi_NotifyFocusLeave());
 	}
 	final void NotifyTextChanged(Windows.UI.Text.Core.CoreTextRange modifiedRange, INT32 newLength, Windows.UI.Text.Core.CoreTextRange newSelection)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).abi_NotifyTextChanged(modifiedRange, newLength, newSelection));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).abi_NotifyTextChanged(modifiedRange, newLength, newSelection));
 	}
 	final void NotifySelectionChanged(Windows.UI.Text.Core.CoreTextRange selection)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).abi_NotifySelectionChanged(selection));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).abi_NotifySelectionChanged(selection));
 	}
 	final void NotifyLayoutChanged()
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext).abi_NotifyLayoutChanged());
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).abi_NotifyLayoutChanged());
 	}
 	final EventRegistrationToken OnNotifyFocusLeaveCompleted(void delegate(Windows.UI.Text.Core.CoreTextEditContext, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext2).add_NotifyFocusLeaveCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, IInspectable), Windows.UI.Text.Core.CoreTextEditContext, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext2)this.asInterface(uuid("b1867dbb-083b-49e1-b281-2b35d62bf466"))).add_NotifyFocusLeaveCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextEditContext, IInspectable), Windows.UI.Text.Core.CoreTextEditContext, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeNotifyFocusLeaveCompleted(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextEditContext2).remove_NotifyFocusLeaveCompleted(cookie));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext2)this.asInterface(uuid("b1867dbb-083b-49e1-b281-2b35d62bf466"))).remove_NotifyFocusLeaveCompleted(cookie));
 	}
 }
 
@@ -451,59 +451,59 @@ extern(Windows):
 	final Windows.UI.Text.Core.CoreTextRange Range()
 	{
 		Windows.UI.Text.Core.CoreTextRange _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs).get_Range(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs)this.asInterface(uuid("7310bd33-b4a8-43b1-b37b-0724d4aca7ab"))).get_Range(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.UI.ViewManagement.UIElementType) TextColor()
 	{
 		Windows.Foundation.IReference!(Windows.UI.ViewManagement.UIElementType) _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs).get_TextColor(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs)this.asInterface(uuid("7310bd33-b4a8-43b1-b37b-0724d4aca7ab"))).get_TextColor(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.UI.ViewManagement.UIElementType) BackgroundColor()
 	{
 		Windows.Foundation.IReference!(Windows.UI.ViewManagement.UIElementType) _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs).get_BackgroundColor(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs)this.asInterface(uuid("7310bd33-b4a8-43b1-b37b-0724d4aca7ab"))).get_BackgroundColor(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.UI.ViewManagement.UIElementType) UnderlineColor()
 	{
 		Windows.Foundation.IReference!(Windows.UI.ViewManagement.UIElementType) _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs).get_UnderlineColor(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs)this.asInterface(uuid("7310bd33-b4a8-43b1-b37b-0724d4aca7ab"))).get_UnderlineColor(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.UI.Text.UnderlineType) UnderlineType()
 	{
 		Windows.Foundation.IReference!(Windows.UI.Text.UnderlineType) _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs).get_UnderlineType(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs)this.asInterface(uuid("7310bd33-b4a8-43b1-b37b-0724d4aca7ab"))).get_UnderlineType(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Text.Core.CoreTextFormatUpdatingReason Reason()
 	{
 		Windows.UI.Text.Core.CoreTextFormatUpdatingReason _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs).get_Reason(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs)this.asInterface(uuid("7310bd33-b4a8-43b1-b37b-0724d4aca7ab"))).get_Reason(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Text.Core.CoreTextFormatUpdatingResult Result()
 	{
 		Windows.UI.Text.Core.CoreTextFormatUpdatingResult _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs).get_Result(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs)this.asInterface(uuid("7310bd33-b4a8-43b1-b37b-0724d4aca7ab"))).get_Result(&_ret));
 		return _ret;
 	}
 	final void Result(Windows.UI.Text.Core.CoreTextFormatUpdatingResult value)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs).set_Result(value));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs)this.asInterface(uuid("7310bd33-b4a8-43b1-b37b-0724d4aca7ab"))).set_Result(value));
 	}
 	final bool IsCanceled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs).get_IsCanceled(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs)this.asInterface(uuid("7310bd33-b4a8-43b1-b37b-0724d4aca7ab"))).get_IsCanceled(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextFormatUpdatingEventArgs)this.asInterface(uuid("7310bd33-b4a8-43b1-b37b-0724d4aca7ab"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -514,22 +514,22 @@ extern(Windows):
 	final Windows.Foundation.Rect TextBounds()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextLayoutBounds).get_TextBounds(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextLayoutBounds)this.asInterface(uuid("e972c974-4436-4917-80d0-a525e4ca6780"))).get_TextBounds(&_ret));
 		return _ret;
 	}
 	final void TextBounds(Windows.Foundation.Rect value)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextLayoutBounds).set_TextBounds(value));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextLayoutBounds)this.asInterface(uuid("e972c974-4436-4917-80d0-a525e4ca6780"))).set_TextBounds(value));
 	}
 	final Windows.Foundation.Rect ControlBounds()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextLayoutBounds).get_ControlBounds(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextLayoutBounds)this.asInterface(uuid("e972c974-4436-4917-80d0-a525e4ca6780"))).get_ControlBounds(&_ret));
 		return _ret;
 	}
 	final void ControlBounds(Windows.Foundation.Rect value)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextLayoutBounds).set_ControlBounds(value));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextLayoutBounds)this.asInterface(uuid("e972c974-4436-4917-80d0-a525e4ca6780"))).set_ControlBounds(value));
 	}
 }
 
@@ -539,25 +539,25 @@ extern(Windows):
 	final Windows.UI.Text.Core.CoreTextRange Range()
 	{
 		Windows.UI.Text.Core.CoreTextRange _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextLayoutRequest).get_Range(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextLayoutRequest)this.asInterface(uuid("2555a8cc-51fd-4f03-98bf-ac78174d68e0"))).get_Range(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Text.Core.CoreTextLayoutBounds LayoutBounds()
 	{
 		Windows.UI.Text.Core.CoreTextLayoutBounds _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextLayoutRequest).get_LayoutBounds(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextLayoutRequest)this.asInterface(uuid("2555a8cc-51fd-4f03-98bf-ac78174d68e0"))).get_LayoutBounds(&_ret));
 		return _ret;
 	}
 	final bool IsCanceled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextLayoutRequest).get_IsCanceled(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextLayoutRequest)this.asInterface(uuid("2555a8cc-51fd-4f03-98bf-ac78174d68e0"))).get_IsCanceled(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextLayoutRequest).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextLayoutRequest)this.asInterface(uuid("2555a8cc-51fd-4f03-98bf-ac78174d68e0"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -568,7 +568,7 @@ extern(Windows):
 	final Windows.UI.Text.Core.CoreTextLayoutRequest Request()
 	{
 		Windows.UI.Text.Core.CoreTextLayoutRequest _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextLayoutRequestedEventArgs).get_Request(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextLayoutRequestedEventArgs)this.asInterface(uuid("b1dc6ae0-9a7b-4e9e-a566-4a6b5f8ad676"))).get_Request(&_ret));
 		return _ret;
 	}
 }
@@ -579,23 +579,23 @@ extern(Windows):
 	final Windows.UI.Text.Core.CoreTextRange Selection()
 	{
 		Windows.UI.Text.Core.CoreTextRange _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextSelectionRequest).get_Selection(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextSelectionRequest)this.asInterface(uuid("f0a70403-208b-4301-883c-74ca7485fd8d"))).get_Selection(&_ret));
 		return _ret;
 	}
 	final void Selection(Windows.UI.Text.Core.CoreTextRange value)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextSelectionRequest).set_Selection(value));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextSelectionRequest)this.asInterface(uuid("f0a70403-208b-4301-883c-74ca7485fd8d"))).set_Selection(value));
 	}
 	final bool IsCanceled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextSelectionRequest).get_IsCanceled(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextSelectionRequest)this.asInterface(uuid("f0a70403-208b-4301-883c-74ca7485fd8d"))).get_IsCanceled(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextSelectionRequest).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextSelectionRequest)this.asInterface(uuid("f0a70403-208b-4301-883c-74ca7485fd8d"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -606,7 +606,7 @@ extern(Windows):
 	final Windows.UI.Text.Core.CoreTextSelectionRequest Request()
 	{
 		Windows.UI.Text.Core.CoreTextSelectionRequest _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextSelectionRequestedEventArgs).get_Request(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextSelectionRequestedEventArgs)this.asInterface(uuid("13c6682b-f614-421a-8f4b-9ec8a5a37fcd"))).get_Request(&_ret));
 		return _ret;
 	}
 }
@@ -617,29 +617,29 @@ extern(Windows):
 	final Windows.UI.Text.Core.CoreTextRange Selection()
 	{
 		Windows.UI.Text.Core.CoreTextRange _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextSelectionUpdatingEventArgs).get_Selection(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextSelectionUpdatingEventArgs)this.asInterface(uuid("d445839f-fe7f-4bd5-8a26-0922c1b3e639"))).get_Selection(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Text.Core.CoreTextSelectionUpdatingResult Result()
 	{
 		Windows.UI.Text.Core.CoreTextSelectionUpdatingResult _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextSelectionUpdatingEventArgs).get_Result(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextSelectionUpdatingEventArgs)this.asInterface(uuid("d445839f-fe7f-4bd5-8a26-0922c1b3e639"))).get_Result(&_ret));
 		return _ret;
 	}
 	final void Result(Windows.UI.Text.Core.CoreTextSelectionUpdatingResult value)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextSelectionUpdatingEventArgs).set_Result(value));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextSelectionUpdatingEventArgs)this.asInterface(uuid("d445839f-fe7f-4bd5-8a26-0922c1b3e639"))).set_Result(value));
 	}
 	final bool IsCanceled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextSelectionUpdatingEventArgs).get_IsCanceled(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextSelectionUpdatingEventArgs)this.asInterface(uuid("d445839f-fe7f-4bd5-8a26-0922c1b3e639"))).get_IsCanceled(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextSelectionUpdatingEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextSelectionUpdatingEventArgs)this.asInterface(uuid("d445839f-fe7f-4bd5-8a26-0922c1b3e639"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -655,7 +655,7 @@ interface CoreTextServicesConstants
 	static wchar HiddenCharacter()
 	{
 		wchar _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Text.Core.ICoreTextServicesStatics).get_HiddenCharacter(&_ret));
+		Debug.OK(staticInstance.get_HiddenCharacter(&_ret));
 		return _ret;
 	}
 }
@@ -666,23 +666,23 @@ extern(Windows):
 	final Windows.Globalization.Language InputLanguage()
 	{
 		Windows.Globalization.Language _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextServicesManager).get_InputLanguage(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextServicesManager)this.asInterface(uuid("c2507d83-6e0a-4a8a-bdf8-1948874854ba"))).get_InputLanguage(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnInputLanguageChanged(void delegate(Windows.UI.Text.Core.CoreTextServicesManager, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextServicesManager).add_InputLanguageChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextServicesManager, IInspectable), Windows.UI.Text.Core.CoreTextServicesManager, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextServicesManager)this.asInterface(uuid("c2507d83-6e0a-4a8a-bdf8-1948874854ba"))).add_InputLanguageChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Text.Core.CoreTextServicesManager, IInspectable), Windows.UI.Text.Core.CoreTextServicesManager, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeInputLanguageChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextServicesManager).remove_InputLanguageChanged(cookie));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextServicesManager)this.asInterface(uuid("c2507d83-6e0a-4a8a-bdf8-1948874854ba"))).remove_InputLanguageChanged(cookie));
 	}
 	final Windows.UI.Text.Core.CoreTextEditContext CreateEditContext()
 	{
 		Windows.UI.Text.Core.CoreTextEditContext _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextServicesManager).abi_CreateEditContext(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextServicesManager)this.asInterface(uuid("c2507d83-6e0a-4a8a-bdf8-1948874854ba"))).abi_CreateEditContext(&_ret));
 		return _ret;
 	}
 
@@ -695,7 +695,7 @@ extern(Windows):
 	static Windows.UI.Text.Core.CoreTextServicesManager GetForCurrentView()
 	{
 		Windows.UI.Text.Core.CoreTextServicesManager _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Text.Core.ICoreTextServicesManagerStatics).abi_GetForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 }
@@ -706,29 +706,29 @@ extern(Windows):
 	final Windows.UI.Text.Core.CoreTextRange Range()
 	{
 		Windows.UI.Text.Core.CoreTextRange _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextRequest).get_Range(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextTextRequest)this.asInterface(uuid("50d950a9-f51e-4cc1-8ca1-e6346d1a61be"))).get_Range(&_ret));
 		return _ret;
 	}
 	final HSTRING Text()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextRequest).get_Text(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextTextRequest)this.asInterface(uuid("50d950a9-f51e-4cc1-8ca1-e6346d1a61be"))).get_Text(&_ret));
 		return _ret;
 	}
 	final void Text(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextRequest).set_Text(value));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextTextRequest)this.asInterface(uuid("50d950a9-f51e-4cc1-8ca1-e6346d1a61be"))).set_Text(value));
 	}
 	final bool IsCanceled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextRequest).get_IsCanceled(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextTextRequest)this.asInterface(uuid("50d950a9-f51e-4cc1-8ca1-e6346d1a61be"))).get_IsCanceled(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextRequest).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextTextRequest)this.asInterface(uuid("50d950a9-f51e-4cc1-8ca1-e6346d1a61be"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -739,7 +739,7 @@ extern(Windows):
 	final Windows.UI.Text.Core.CoreTextTextRequest Request()
 	{
 		Windows.UI.Text.Core.CoreTextTextRequest _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextRequestedEventArgs).get_Request(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextTextRequestedEventArgs)this.asInterface(uuid("f096a2d0-41c6-4c02-8b1a-d953b00cabb3"))).get_Request(&_ret));
 		return _ret;
 	}
 }
@@ -750,47 +750,47 @@ extern(Windows):
 	final Windows.UI.Text.Core.CoreTextRange Range()
 	{
 		Windows.UI.Text.Core.CoreTextRange _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs).get_Range(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs)this.asInterface(uuid("eea7918d-cc2b-4f03-8ff6-02fd217db450"))).get_Range(&_ret));
 		return _ret;
 	}
 	final HSTRING Text()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs).get_Text(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs)this.asInterface(uuid("eea7918d-cc2b-4f03-8ff6-02fd217db450"))).get_Text(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Text.Core.CoreTextRange NewSelection()
 	{
 		Windows.UI.Text.Core.CoreTextRange _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs).get_NewSelection(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs)this.asInterface(uuid("eea7918d-cc2b-4f03-8ff6-02fd217db450"))).get_NewSelection(&_ret));
 		return _ret;
 	}
 	final Windows.Globalization.Language InputLanguage()
 	{
 		Windows.Globalization.Language _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs).get_InputLanguage(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs)this.asInterface(uuid("eea7918d-cc2b-4f03-8ff6-02fd217db450"))).get_InputLanguage(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Text.Core.CoreTextTextUpdatingResult Result()
 	{
 		Windows.UI.Text.Core.CoreTextTextUpdatingResult _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs).get_Result(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs)this.asInterface(uuid("eea7918d-cc2b-4f03-8ff6-02fd217db450"))).get_Result(&_ret));
 		return _ret;
 	}
 	final void Result(Windows.UI.Text.Core.CoreTextTextUpdatingResult value)
 	{
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs).set_Result(value));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs)this.asInterface(uuid("eea7918d-cc2b-4f03-8ff6-02fd217db450"))).set_Result(value));
 	}
 	final bool IsCanceled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs).get_IsCanceled(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs)this.asInterface(uuid("eea7918d-cc2b-4f03-8ff6-02fd217db450"))).get_IsCanceled(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs)this.asInterface(uuid("eea7918d-cc2b-4f03-8ff6-02fd217db450"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }

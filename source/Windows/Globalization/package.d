@@ -529,23 +529,23 @@ interface ApplicationLanguages
 	static HSTRING PrimaryLanguageOverride()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.IApplicationLanguagesStatics).get_PrimaryLanguageOverride(&_ret));
+		Debug.OK(staticInstance.get_PrimaryLanguageOverride(&_ret));
 		return _ret;
 	}
 	static void PrimaryLanguageOverride(HSTRING value)
 	{
-		Debug.OK(staticInstance.as!(Windows.Globalization.IApplicationLanguagesStatics).set_PrimaryLanguageOverride(value));
+		Debug.OK(staticInstance.set_PrimaryLanguageOverride(value));
 	}
 	static Windows.Foundation.Collections.IVectorView!(HSTRING) Languages()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.IApplicationLanguagesStatics).get_Languages(&_ret));
+		Debug.OK(staticInstance.get_Languages(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(HSTRING) ManifestLanguages()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.IApplicationLanguagesStatics).get_ManifestLanguages(&_ret));
+		Debug.OK(staticInstance.get_ManifestLanguages(&_ret));
 		return _ret;
 	}
 }
@@ -556,577 +556,577 @@ extern(Windows):
 	final Windows.Globalization.Calendar Clone()
 	{
 		Windows.Globalization.Calendar _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_Clone(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_Clone(&_ret));
 		return _ret;
 	}
 	final void SetToMin()
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_SetToMin());
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_SetToMin());
 	}
 	final void SetToMax()
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_SetToMax());
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_SetToMax());
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) Languages()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_Languages(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_Languages(&_ret));
 		return _ret;
 	}
 	final HSTRING NumeralSystem()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_NumeralSystem(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_NumeralSystem(&_ret));
 		return _ret;
 	}
 	final void NumeralSystem(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).set_NumeralSystem(value));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).set_NumeralSystem(value));
 	}
 	final HSTRING GetCalendarSystem()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_GetCalendarSystem(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_GetCalendarSystem(&_ret));
 		return _ret;
 	}
 	final void ChangeCalendarSystem(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_ChangeCalendarSystem(value));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_ChangeCalendarSystem(value));
 	}
 	final HSTRING GetClock()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_GetClock(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_GetClock(&_ret));
 		return _ret;
 	}
 	final void ChangeClock(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_ChangeClock(value));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_ChangeClock(value));
 	}
 	final Windows.Foundation.DateTime GetDateTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_GetDateTime(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_GetDateTime(&_ret));
 		return _ret;
 	}
 	final void SetDateTime(Windows.Foundation.DateTime value)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_SetDateTime(value));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_SetDateTime(value));
 	}
 	final void SetToNow()
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_SetToNow());
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_SetToNow());
 	}
 	final INT32 FirstEra()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_FirstEra(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_FirstEra(&_ret));
 		return _ret;
 	}
 	final INT32 LastEra()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_LastEra(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_LastEra(&_ret));
 		return _ret;
 	}
 	final INT32 NumberOfEras()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_NumberOfEras(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_NumberOfEras(&_ret));
 		return _ret;
 	}
 	final INT32 Era()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_Era(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_Era(&_ret));
 		return _ret;
 	}
 	final void Era(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).set_Era(value));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).set_Era(value));
 	}
 	final void AddEras(INT32 eras)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_AddEras(eras));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_AddEras(eras));
 	}
 	final HSTRING EraAsFullString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_EraAsFullString(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_EraAsFullString(&_ret));
 		return _ret;
 	}
 	final HSTRING EraAsString(INT32 idealLength)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_EraAsString(idealLength, &_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_EraAsString(idealLength, &_ret));
 		return _ret;
 	}
 	final INT32 FirstYearInThisEra()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_FirstYearInThisEra(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_FirstYearInThisEra(&_ret));
 		return _ret;
 	}
 	final INT32 LastYearInThisEra()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_LastYearInThisEra(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_LastYearInThisEra(&_ret));
 		return _ret;
 	}
 	final INT32 NumberOfYearsInThisEra()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_NumberOfYearsInThisEra(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_NumberOfYearsInThisEra(&_ret));
 		return _ret;
 	}
 	final INT32 Year()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_Year(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_Year(&_ret));
 		return _ret;
 	}
 	final void Year(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).set_Year(value));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).set_Year(value));
 	}
 	final void AddYears(INT32 years)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_AddYears(years));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_AddYears(years));
 	}
 	final HSTRING YearAsString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_YearAsString(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_YearAsString(&_ret));
 		return _ret;
 	}
 	final HSTRING YearAsTruncatedString(INT32 remainingDigits)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_YearAsTruncatedString(remainingDigits, &_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_YearAsTruncatedString(remainingDigits, &_ret));
 		return _ret;
 	}
 	final HSTRING YearAsPaddedString(INT32 minDigits)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_YearAsPaddedString(minDigits, &_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_YearAsPaddedString(minDigits, &_ret));
 		return _ret;
 	}
 	final INT32 FirstMonthInThisYear()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_FirstMonthInThisYear(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_FirstMonthInThisYear(&_ret));
 		return _ret;
 	}
 	final INT32 LastMonthInThisYear()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_LastMonthInThisYear(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_LastMonthInThisYear(&_ret));
 		return _ret;
 	}
 	final INT32 NumberOfMonthsInThisYear()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_NumberOfMonthsInThisYear(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_NumberOfMonthsInThisYear(&_ret));
 		return _ret;
 	}
 	final INT32 Month()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_Month(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_Month(&_ret));
 		return _ret;
 	}
 	final void Month(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).set_Month(value));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).set_Month(value));
 	}
 	final void AddMonths(INT32 months)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_AddMonths(months));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_AddMonths(months));
 	}
 	final HSTRING MonthAsFullString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_MonthAsFullString(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_MonthAsFullString(&_ret));
 		return _ret;
 	}
 	final HSTRING MonthAsString(INT32 idealLength)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_MonthAsString(idealLength, &_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_MonthAsString(idealLength, &_ret));
 		return _ret;
 	}
 	final HSTRING MonthAsFullSoloString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_MonthAsFullSoloString(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_MonthAsFullSoloString(&_ret));
 		return _ret;
 	}
 	final HSTRING MonthAsSoloString(INT32 idealLength)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_MonthAsSoloString(idealLength, &_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_MonthAsSoloString(idealLength, &_ret));
 		return _ret;
 	}
 	final HSTRING MonthAsNumericString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_MonthAsNumericString(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_MonthAsNumericString(&_ret));
 		return _ret;
 	}
 	final HSTRING MonthAsPaddedNumericString(INT32 minDigits)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_MonthAsPaddedNumericString(minDigits, &_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_MonthAsPaddedNumericString(minDigits, &_ret));
 		return _ret;
 	}
 	final void AddWeeks(INT32 weeks)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_AddWeeks(weeks));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_AddWeeks(weeks));
 	}
 	final INT32 FirstDayInThisMonth()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_FirstDayInThisMonth(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_FirstDayInThisMonth(&_ret));
 		return _ret;
 	}
 	final INT32 LastDayInThisMonth()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_LastDayInThisMonth(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_LastDayInThisMonth(&_ret));
 		return _ret;
 	}
 	final INT32 NumberOfDaysInThisMonth()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_NumberOfDaysInThisMonth(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_NumberOfDaysInThisMonth(&_ret));
 		return _ret;
 	}
 	final INT32 Day()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_Day(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_Day(&_ret));
 		return _ret;
 	}
 	final void Day(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).set_Day(value));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).set_Day(value));
 	}
 	final void AddDays(INT32 days)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_AddDays(days));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_AddDays(days));
 	}
 	final HSTRING DayAsString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_DayAsString(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_DayAsString(&_ret));
 		return _ret;
 	}
 	final HSTRING DayAsPaddedString(INT32 minDigits)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_DayAsPaddedString(minDigits, &_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_DayAsPaddedString(minDigits, &_ret));
 		return _ret;
 	}
 	final Windows.Globalization.DayOfWeek DayOfWeek()
 	{
 		Windows.Globalization.DayOfWeek _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_DayOfWeek(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_DayOfWeek(&_ret));
 		return _ret;
 	}
 	final HSTRING DayOfWeekAsFullString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_DayOfWeekAsFullString(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_DayOfWeekAsFullString(&_ret));
 		return _ret;
 	}
 	final HSTRING DayOfWeekAsString(INT32 idealLength)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_DayOfWeekAsString(idealLength, &_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_DayOfWeekAsString(idealLength, &_ret));
 		return _ret;
 	}
 	final HSTRING DayOfWeekAsFullSoloString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_DayOfWeekAsFullSoloString(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_DayOfWeekAsFullSoloString(&_ret));
 		return _ret;
 	}
 	final HSTRING DayOfWeekAsSoloString(INT32 idealLength)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_DayOfWeekAsSoloString(idealLength, &_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_DayOfWeekAsSoloString(idealLength, &_ret));
 		return _ret;
 	}
 	final INT32 FirstPeriodInThisDay()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_FirstPeriodInThisDay(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_FirstPeriodInThisDay(&_ret));
 		return _ret;
 	}
 	final INT32 LastPeriodInThisDay()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_LastPeriodInThisDay(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_LastPeriodInThisDay(&_ret));
 		return _ret;
 	}
 	final INT32 NumberOfPeriodsInThisDay()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_NumberOfPeriodsInThisDay(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_NumberOfPeriodsInThisDay(&_ret));
 		return _ret;
 	}
 	final INT32 Period()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_Period(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_Period(&_ret));
 		return _ret;
 	}
 	final void Period(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).set_Period(value));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).set_Period(value));
 	}
 	final void AddPeriods(INT32 periods)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_AddPeriods(periods));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_AddPeriods(periods));
 	}
 	final HSTRING PeriodAsFullString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_PeriodAsFullString(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_PeriodAsFullString(&_ret));
 		return _ret;
 	}
 	final HSTRING PeriodAsString(INT32 idealLength)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_PeriodAsString(idealLength, &_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_PeriodAsString(idealLength, &_ret));
 		return _ret;
 	}
 	final INT32 FirstHourInThisPeriod()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_FirstHourInThisPeriod(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_FirstHourInThisPeriod(&_ret));
 		return _ret;
 	}
 	final INT32 LastHourInThisPeriod()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_LastHourInThisPeriod(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_LastHourInThisPeriod(&_ret));
 		return _ret;
 	}
 	final INT32 NumberOfHoursInThisPeriod()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_NumberOfHoursInThisPeriod(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_NumberOfHoursInThisPeriod(&_ret));
 		return _ret;
 	}
 	final INT32 Hour()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_Hour(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_Hour(&_ret));
 		return _ret;
 	}
 	final void Hour(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).set_Hour(value));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).set_Hour(value));
 	}
 	final void AddHours(INT32 hours)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_AddHours(hours));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_AddHours(hours));
 	}
 	final HSTRING HourAsString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_HourAsString(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_HourAsString(&_ret));
 		return _ret;
 	}
 	final HSTRING HourAsPaddedString(INT32 minDigits)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_HourAsPaddedString(minDigits, &_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_HourAsPaddedString(minDigits, &_ret));
 		return _ret;
 	}
 	final INT32 Minute()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_Minute(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_Minute(&_ret));
 		return _ret;
 	}
 	final void Minute(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).set_Minute(value));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).set_Minute(value));
 	}
 	final void AddMinutes(INT32 minutes)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_AddMinutes(minutes));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_AddMinutes(minutes));
 	}
 	final HSTRING MinuteAsString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_MinuteAsString(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_MinuteAsString(&_ret));
 		return _ret;
 	}
 	final HSTRING MinuteAsPaddedString(INT32 minDigits)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_MinuteAsPaddedString(minDigits, &_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_MinuteAsPaddedString(minDigits, &_ret));
 		return _ret;
 	}
 	final INT32 Second()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_Second(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_Second(&_ret));
 		return _ret;
 	}
 	final void Second(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).set_Second(value));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).set_Second(value));
 	}
 	final void AddSeconds(INT32 seconds)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_AddSeconds(seconds));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_AddSeconds(seconds));
 	}
 	final HSTRING SecondAsString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_SecondAsString(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_SecondAsString(&_ret));
 		return _ret;
 	}
 	final HSTRING SecondAsPaddedString(INT32 minDigits)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_SecondAsPaddedString(minDigits, &_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_SecondAsPaddedString(minDigits, &_ret));
 		return _ret;
 	}
 	final INT32 Nanosecond()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_Nanosecond(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_Nanosecond(&_ret));
 		return _ret;
 	}
 	final void Nanosecond(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).set_Nanosecond(value));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).set_Nanosecond(value));
 	}
 	final void AddNanoseconds(INT32 nanoseconds)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_AddNanoseconds(nanoseconds));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_AddNanoseconds(nanoseconds));
 	}
 	final HSTRING NanosecondAsString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_NanosecondAsString(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_NanosecondAsString(&_ret));
 		return _ret;
 	}
 	final HSTRING NanosecondAsPaddedString(INT32 minDigits)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_NanosecondAsPaddedString(minDigits, &_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_NanosecondAsPaddedString(minDigits, &_ret));
 		return _ret;
 	}
 	final INT32 Compare(Windows.Globalization.Calendar other)
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_Compare(other, &_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_Compare(other, &_ret));
 		return _ret;
 	}
 	final INT32 CompareDateTime(Windows.Foundation.DateTime other)
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_CompareDateTime(other, &_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_CompareDateTime(other, &_ret));
 		return _ret;
 	}
 	final void CopyTo(Windows.Globalization.Calendar other)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).abi_CopyTo(other));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_CopyTo(other));
 	}
 	final INT32 FirstMinuteInThisHour()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_FirstMinuteInThisHour(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_FirstMinuteInThisHour(&_ret));
 		return _ret;
 	}
 	final INT32 LastMinuteInThisHour()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_LastMinuteInThisHour(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_LastMinuteInThisHour(&_ret));
 		return _ret;
 	}
 	final INT32 NumberOfMinutesInThisHour()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_NumberOfMinutesInThisHour(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_NumberOfMinutesInThisHour(&_ret));
 		return _ret;
 	}
 	final INT32 FirstSecondInThisMinute()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_FirstSecondInThisMinute(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_FirstSecondInThisMinute(&_ret));
 		return _ret;
 	}
 	final INT32 LastSecondInThisMinute()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_LastSecondInThisMinute(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_LastSecondInThisMinute(&_ret));
 		return _ret;
 	}
 	final INT32 NumberOfSecondsInThisMinute()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_NumberOfSecondsInThisMinute(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_NumberOfSecondsInThisMinute(&_ret));
 		return _ret;
 	}
 	final HSTRING ResolvedLanguage()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_ResolvedLanguage(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_ResolvedLanguage(&_ret));
 		return _ret;
 	}
 	final bool IsDaylightSavingTime()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Globalization.ICalendar).get_IsDaylightSavingTime(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_IsDaylightSavingTime(&_ret));
 		return _ret;
 	}
 	final HSTRING GetTimeZone()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ITimeZoneOnCalendar).abi_GetTimeZone(&_ret));
+		Debug.OK((cast(Windows.Globalization.ITimeZoneOnCalendar)this.asInterface(uuid("bb3c25e5-46cf-4317-a3f5-02621ad54478"))).abi_GetTimeZone(&_ret));
 		return _ret;
 	}
 	final void ChangeTimeZone(HSTRING timeZoneId)
 	{
-		Debug.OK(this.as!(Windows.Globalization.ITimeZoneOnCalendar).abi_ChangeTimeZone(timeZoneId));
+		Debug.OK((cast(Windows.Globalization.ITimeZoneOnCalendar)this.asInterface(uuid("bb3c25e5-46cf-4317-a3f5-02621ad54478"))).abi_ChangeTimeZone(timeZoneId));
 	}
 	final HSTRING TimeZoneAsFullString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ITimeZoneOnCalendar).abi_TimeZoneAsFullString(&_ret));
+		Debug.OK((cast(Windows.Globalization.ITimeZoneOnCalendar)this.asInterface(uuid("bb3c25e5-46cf-4317-a3f5-02621ad54478"))).abi_TimeZoneAsFullString(&_ret));
 		return _ret;
 	}
 	final HSTRING TimeZoneAsString(INT32 idealLength)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ITimeZoneOnCalendar).abi_TimeZoneAsString(idealLength, &_ret));
+		Debug.OK((cast(Windows.Globalization.ITimeZoneOnCalendar)this.asInterface(uuid("bb3c25e5-46cf-4317-a3f5-02621ad54478"))).abi_TimeZoneAsString(idealLength, &_ret));
 		return _ret;
 	}
 	static Calendar New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Calendar).abi_ActivateInstance(&ret));
-		return ret.as!(Calendar);
+		return cast(Calendar) ret;
 	}
 	static Windows.Globalization.Calendar New(Windows.Foundation.Collections.IIterable!(HSTRING) languages)
 	{
 		auto factory = factory!(Windows.Globalization.ICalendarFactory);
 		Windows.Globalization.Calendar _ret;
-		Debug.OK(factory.as!(Windows.Globalization.ICalendarFactory).abi_CreateCalendarDefaultCalendarAndClock(languages, &_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendarFactory)factory.asInterface(uuid("83f58412-e56b-4c75-a66e-0f63d57758a6"))).abi_CreateCalendarDefaultCalendarAndClock(languages, &_ret));
 		return _ret;
 	}
 	static Windows.Globalization.Calendar New(Windows.Foundation.Collections.IIterable!(HSTRING) languages, HSTRING calendar, HSTRING clock)
 	{
 		auto factory = factory!(Windows.Globalization.ICalendarFactory);
 		Windows.Globalization.Calendar _ret;
-		Debug.OK(factory.as!(Windows.Globalization.ICalendarFactory).abi_CreateCalendar(languages, calendar, clock, &_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendarFactory)factory.asInterface(uuid("83f58412-e56b-4c75-a66e-0f63d57758a6"))).abi_CreateCalendar(languages, calendar, clock, &_ret));
 		return _ret;
 	}
 }
@@ -1142,55 +1142,55 @@ interface CalendarIdentifiers
 	static HSTRING Gregorian()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICalendarIdentifiersStatics).get_Gregorian(&_ret));
+		Debug.OK(staticInstance.get_Gregorian(&_ret));
 		return _ret;
 	}
 	static HSTRING Hebrew()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICalendarIdentifiersStatics).get_Hebrew(&_ret));
+		Debug.OK(staticInstance.get_Hebrew(&_ret));
 		return _ret;
 	}
 	static HSTRING Hijri()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICalendarIdentifiersStatics).get_Hijri(&_ret));
+		Debug.OK(staticInstance.get_Hijri(&_ret));
 		return _ret;
 	}
 	static HSTRING Japanese()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICalendarIdentifiersStatics).get_Japanese(&_ret));
+		Debug.OK(staticInstance.get_Japanese(&_ret));
 		return _ret;
 	}
 	static HSTRING Julian()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICalendarIdentifiersStatics).get_Julian(&_ret));
+		Debug.OK(staticInstance.get_Julian(&_ret));
 		return _ret;
 	}
 	static HSTRING Korean()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICalendarIdentifiersStatics).get_Korean(&_ret));
+		Debug.OK(staticInstance.get_Korean(&_ret));
 		return _ret;
 	}
 	static HSTRING Taiwan()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICalendarIdentifiersStatics).get_Taiwan(&_ret));
+		Debug.OK(staticInstance.get_Taiwan(&_ret));
 		return _ret;
 	}
 	static HSTRING Thai()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICalendarIdentifiersStatics).get_Thai(&_ret));
+		Debug.OK(staticInstance.get_Thai(&_ret));
 		return _ret;
 	}
 	static HSTRING UmAlQura()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICalendarIdentifiersStatics).get_UmAlQura(&_ret));
+		Debug.OK(staticInstance.get_UmAlQura(&_ret));
 		return _ret;
 	}
 }
@@ -1206,13 +1206,13 @@ interface ClockIdentifiers
 	static HSTRING TwelveHour()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.IClockIdentifiersStatics).get_TwelveHour(&_ret));
+		Debug.OK(staticInstance.get_TwelveHour(&_ret));
 		return _ret;
 	}
 	static HSTRING TwentyFourHour()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.IClockIdentifiersStatics).get_TwentyFourHour(&_ret));
+		Debug.OK(staticInstance.get_TwentyFourHour(&_ret));
 		return _ret;
 	}
 }
@@ -1228,943 +1228,943 @@ interface CurrencyIdentifiers
 	static HSTRING AED()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_AED(&_ret));
+		Debug.OK(staticInstance.get_AED(&_ret));
 		return _ret;
 	}
 	static HSTRING AFN()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_AFN(&_ret));
+		Debug.OK(staticInstance.get_AFN(&_ret));
 		return _ret;
 	}
 	static HSTRING ALL()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_ALL(&_ret));
+		Debug.OK(staticInstance.get_ALL(&_ret));
 		return _ret;
 	}
 	static HSTRING AMD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_AMD(&_ret));
+		Debug.OK(staticInstance.get_AMD(&_ret));
 		return _ret;
 	}
 	static HSTRING ANG()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_ANG(&_ret));
+		Debug.OK(staticInstance.get_ANG(&_ret));
 		return _ret;
 	}
 	static HSTRING AOA()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_AOA(&_ret));
+		Debug.OK(staticInstance.get_AOA(&_ret));
 		return _ret;
 	}
 	static HSTRING ARS()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_ARS(&_ret));
+		Debug.OK(staticInstance.get_ARS(&_ret));
 		return _ret;
 	}
 	static HSTRING AUD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_AUD(&_ret));
+		Debug.OK(staticInstance.get_AUD(&_ret));
 		return _ret;
 	}
 	static HSTRING AWG()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_AWG(&_ret));
+		Debug.OK(staticInstance.get_AWG(&_ret));
 		return _ret;
 	}
 	static HSTRING AZN()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_AZN(&_ret));
+		Debug.OK(staticInstance.get_AZN(&_ret));
 		return _ret;
 	}
 	static HSTRING BAM()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_BAM(&_ret));
+		Debug.OK(staticInstance.get_BAM(&_ret));
 		return _ret;
 	}
 	static HSTRING BBD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_BBD(&_ret));
+		Debug.OK(staticInstance.get_BBD(&_ret));
 		return _ret;
 	}
 	static HSTRING BDT()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_BDT(&_ret));
+		Debug.OK(staticInstance.get_BDT(&_ret));
 		return _ret;
 	}
 	static HSTRING BGN()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_BGN(&_ret));
+		Debug.OK(staticInstance.get_BGN(&_ret));
 		return _ret;
 	}
 	static HSTRING BHD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_BHD(&_ret));
+		Debug.OK(staticInstance.get_BHD(&_ret));
 		return _ret;
 	}
 	static HSTRING BIF()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_BIF(&_ret));
+		Debug.OK(staticInstance.get_BIF(&_ret));
 		return _ret;
 	}
 	static HSTRING BMD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_BMD(&_ret));
+		Debug.OK(staticInstance.get_BMD(&_ret));
 		return _ret;
 	}
 	static HSTRING BND()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_BND(&_ret));
+		Debug.OK(staticInstance.get_BND(&_ret));
 		return _ret;
 	}
 	static HSTRING BOB()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_BOB(&_ret));
+		Debug.OK(staticInstance.get_BOB(&_ret));
 		return _ret;
 	}
 	static HSTRING BRL()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_BRL(&_ret));
+		Debug.OK(staticInstance.get_BRL(&_ret));
 		return _ret;
 	}
 	static HSTRING BSD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_BSD(&_ret));
+		Debug.OK(staticInstance.get_BSD(&_ret));
 		return _ret;
 	}
 	static HSTRING BTN()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_BTN(&_ret));
+		Debug.OK(staticInstance.get_BTN(&_ret));
 		return _ret;
 	}
 	static HSTRING BWP()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_BWP(&_ret));
+		Debug.OK(staticInstance.get_BWP(&_ret));
 		return _ret;
 	}
 	static HSTRING BYR()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_BYR(&_ret));
+		Debug.OK(staticInstance.get_BYR(&_ret));
 		return _ret;
 	}
 	static HSTRING BZD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_BZD(&_ret));
+		Debug.OK(staticInstance.get_BZD(&_ret));
 		return _ret;
 	}
 	static HSTRING CAD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_CAD(&_ret));
+		Debug.OK(staticInstance.get_CAD(&_ret));
 		return _ret;
 	}
 	static HSTRING CDF()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_CDF(&_ret));
+		Debug.OK(staticInstance.get_CDF(&_ret));
 		return _ret;
 	}
 	static HSTRING CHF()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_CHF(&_ret));
+		Debug.OK(staticInstance.get_CHF(&_ret));
 		return _ret;
 	}
 	static HSTRING CLP()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_CLP(&_ret));
+		Debug.OK(staticInstance.get_CLP(&_ret));
 		return _ret;
 	}
 	static HSTRING CNY()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_CNY(&_ret));
+		Debug.OK(staticInstance.get_CNY(&_ret));
 		return _ret;
 	}
 	static HSTRING COP()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_COP(&_ret));
+		Debug.OK(staticInstance.get_COP(&_ret));
 		return _ret;
 	}
 	static HSTRING CRC()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_CRC(&_ret));
+		Debug.OK(staticInstance.get_CRC(&_ret));
 		return _ret;
 	}
 	static HSTRING CUP()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_CUP(&_ret));
+		Debug.OK(staticInstance.get_CUP(&_ret));
 		return _ret;
 	}
 	static HSTRING CVE()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_CVE(&_ret));
+		Debug.OK(staticInstance.get_CVE(&_ret));
 		return _ret;
 	}
 	static HSTRING CZK()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_CZK(&_ret));
+		Debug.OK(staticInstance.get_CZK(&_ret));
 		return _ret;
 	}
 	static HSTRING DJF()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_DJF(&_ret));
+		Debug.OK(staticInstance.get_DJF(&_ret));
 		return _ret;
 	}
 	static HSTRING DKK()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_DKK(&_ret));
+		Debug.OK(staticInstance.get_DKK(&_ret));
 		return _ret;
 	}
 	static HSTRING DOP()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_DOP(&_ret));
+		Debug.OK(staticInstance.get_DOP(&_ret));
 		return _ret;
 	}
 	static HSTRING DZD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_DZD(&_ret));
+		Debug.OK(staticInstance.get_DZD(&_ret));
 		return _ret;
 	}
 	static HSTRING EGP()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_EGP(&_ret));
+		Debug.OK(staticInstance.get_EGP(&_ret));
 		return _ret;
 	}
 	static HSTRING ERN()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_ERN(&_ret));
+		Debug.OK(staticInstance.get_ERN(&_ret));
 		return _ret;
 	}
 	static HSTRING ETB()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_ETB(&_ret));
+		Debug.OK(staticInstance.get_ETB(&_ret));
 		return _ret;
 	}
 	static HSTRING EUR()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_EUR(&_ret));
+		Debug.OK(staticInstance.get_EUR(&_ret));
 		return _ret;
 	}
 	static HSTRING FJD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_FJD(&_ret));
+		Debug.OK(staticInstance.get_FJD(&_ret));
 		return _ret;
 	}
 	static HSTRING FKP()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_FKP(&_ret));
+		Debug.OK(staticInstance.get_FKP(&_ret));
 		return _ret;
 	}
 	static HSTRING GBP()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_GBP(&_ret));
+		Debug.OK(staticInstance.get_GBP(&_ret));
 		return _ret;
 	}
 	static HSTRING GEL()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_GEL(&_ret));
+		Debug.OK(staticInstance.get_GEL(&_ret));
 		return _ret;
 	}
 	static HSTRING GHS()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_GHS(&_ret));
+		Debug.OK(staticInstance.get_GHS(&_ret));
 		return _ret;
 	}
 	static HSTRING GIP()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_GIP(&_ret));
+		Debug.OK(staticInstance.get_GIP(&_ret));
 		return _ret;
 	}
 	static HSTRING GMD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_GMD(&_ret));
+		Debug.OK(staticInstance.get_GMD(&_ret));
 		return _ret;
 	}
 	static HSTRING GNF()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_GNF(&_ret));
+		Debug.OK(staticInstance.get_GNF(&_ret));
 		return _ret;
 	}
 	static HSTRING GTQ()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_GTQ(&_ret));
+		Debug.OK(staticInstance.get_GTQ(&_ret));
 		return _ret;
 	}
 	static HSTRING GYD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_GYD(&_ret));
+		Debug.OK(staticInstance.get_GYD(&_ret));
 		return _ret;
 	}
 	static HSTRING HKD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_HKD(&_ret));
+		Debug.OK(staticInstance.get_HKD(&_ret));
 		return _ret;
 	}
 	static HSTRING HNL()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_HNL(&_ret));
+		Debug.OK(staticInstance.get_HNL(&_ret));
 		return _ret;
 	}
 	static HSTRING HRK()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_HRK(&_ret));
+		Debug.OK(staticInstance.get_HRK(&_ret));
 		return _ret;
 	}
 	static HSTRING HTG()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_HTG(&_ret));
+		Debug.OK(staticInstance.get_HTG(&_ret));
 		return _ret;
 	}
 	static HSTRING HUF()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_HUF(&_ret));
+		Debug.OK(staticInstance.get_HUF(&_ret));
 		return _ret;
 	}
 	static HSTRING IDR()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_IDR(&_ret));
+		Debug.OK(staticInstance.get_IDR(&_ret));
 		return _ret;
 	}
 	static HSTRING ILS()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_ILS(&_ret));
+		Debug.OK(staticInstance.get_ILS(&_ret));
 		return _ret;
 	}
 	static HSTRING INR()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_INR(&_ret));
+		Debug.OK(staticInstance.get_INR(&_ret));
 		return _ret;
 	}
 	static HSTRING IQD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_IQD(&_ret));
+		Debug.OK(staticInstance.get_IQD(&_ret));
 		return _ret;
 	}
 	static HSTRING IRR()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_IRR(&_ret));
+		Debug.OK(staticInstance.get_IRR(&_ret));
 		return _ret;
 	}
 	static HSTRING ISK()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_ISK(&_ret));
+		Debug.OK(staticInstance.get_ISK(&_ret));
 		return _ret;
 	}
 	static HSTRING JMD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_JMD(&_ret));
+		Debug.OK(staticInstance.get_JMD(&_ret));
 		return _ret;
 	}
 	static HSTRING JOD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_JOD(&_ret));
+		Debug.OK(staticInstance.get_JOD(&_ret));
 		return _ret;
 	}
 	static HSTRING JPY()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_JPY(&_ret));
+		Debug.OK(staticInstance.get_JPY(&_ret));
 		return _ret;
 	}
 	static HSTRING KES()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_KES(&_ret));
+		Debug.OK(staticInstance.get_KES(&_ret));
 		return _ret;
 	}
 	static HSTRING KGS()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_KGS(&_ret));
+		Debug.OK(staticInstance.get_KGS(&_ret));
 		return _ret;
 	}
 	static HSTRING KHR()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_KHR(&_ret));
+		Debug.OK(staticInstance.get_KHR(&_ret));
 		return _ret;
 	}
 	static HSTRING KMF()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_KMF(&_ret));
+		Debug.OK(staticInstance.get_KMF(&_ret));
 		return _ret;
 	}
 	static HSTRING KPW()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_KPW(&_ret));
+		Debug.OK(staticInstance.get_KPW(&_ret));
 		return _ret;
 	}
 	static HSTRING KRW()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_KRW(&_ret));
+		Debug.OK(staticInstance.get_KRW(&_ret));
 		return _ret;
 	}
 	static HSTRING KWD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_KWD(&_ret));
+		Debug.OK(staticInstance.get_KWD(&_ret));
 		return _ret;
 	}
 	static HSTRING KYD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_KYD(&_ret));
+		Debug.OK(staticInstance.get_KYD(&_ret));
 		return _ret;
 	}
 	static HSTRING KZT()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_KZT(&_ret));
+		Debug.OK(staticInstance.get_KZT(&_ret));
 		return _ret;
 	}
 	static HSTRING LAK()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_LAK(&_ret));
+		Debug.OK(staticInstance.get_LAK(&_ret));
 		return _ret;
 	}
 	static HSTRING LBP()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_LBP(&_ret));
+		Debug.OK(staticInstance.get_LBP(&_ret));
 		return _ret;
 	}
 	static HSTRING LKR()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_LKR(&_ret));
+		Debug.OK(staticInstance.get_LKR(&_ret));
 		return _ret;
 	}
 	static HSTRING LRD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_LRD(&_ret));
+		Debug.OK(staticInstance.get_LRD(&_ret));
 		return _ret;
 	}
 	static HSTRING LSL()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_LSL(&_ret));
+		Debug.OK(staticInstance.get_LSL(&_ret));
 		return _ret;
 	}
 	static HSTRING LTL()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_LTL(&_ret));
+		Debug.OK(staticInstance.get_LTL(&_ret));
 		return _ret;
 	}
 	static HSTRING LVL()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_LVL(&_ret));
+		Debug.OK(staticInstance.get_LVL(&_ret));
 		return _ret;
 	}
 	static HSTRING LYD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_LYD(&_ret));
+		Debug.OK(staticInstance.get_LYD(&_ret));
 		return _ret;
 	}
 	static HSTRING MAD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_MAD(&_ret));
+		Debug.OK(staticInstance.get_MAD(&_ret));
 		return _ret;
 	}
 	static HSTRING MDL()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_MDL(&_ret));
+		Debug.OK(staticInstance.get_MDL(&_ret));
 		return _ret;
 	}
 	static HSTRING MGA()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_MGA(&_ret));
+		Debug.OK(staticInstance.get_MGA(&_ret));
 		return _ret;
 	}
 	static HSTRING MKD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_MKD(&_ret));
+		Debug.OK(staticInstance.get_MKD(&_ret));
 		return _ret;
 	}
 	static HSTRING MMK()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_MMK(&_ret));
+		Debug.OK(staticInstance.get_MMK(&_ret));
 		return _ret;
 	}
 	static HSTRING MNT()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_MNT(&_ret));
+		Debug.OK(staticInstance.get_MNT(&_ret));
 		return _ret;
 	}
 	static HSTRING MOP()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_MOP(&_ret));
+		Debug.OK(staticInstance.get_MOP(&_ret));
 		return _ret;
 	}
 	static HSTRING MRO()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_MRO(&_ret));
+		Debug.OK(staticInstance.get_MRO(&_ret));
 		return _ret;
 	}
 	static HSTRING MUR()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_MUR(&_ret));
+		Debug.OK(staticInstance.get_MUR(&_ret));
 		return _ret;
 	}
 	static HSTRING MVR()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_MVR(&_ret));
+		Debug.OK(staticInstance.get_MVR(&_ret));
 		return _ret;
 	}
 	static HSTRING MWK()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_MWK(&_ret));
+		Debug.OK(staticInstance.get_MWK(&_ret));
 		return _ret;
 	}
 	static HSTRING MXN()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_MXN(&_ret));
+		Debug.OK(staticInstance.get_MXN(&_ret));
 		return _ret;
 	}
 	static HSTRING MYR()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_MYR(&_ret));
+		Debug.OK(staticInstance.get_MYR(&_ret));
 		return _ret;
 	}
 	static HSTRING MZN()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_MZN(&_ret));
+		Debug.OK(staticInstance.get_MZN(&_ret));
 		return _ret;
 	}
 	static HSTRING NAD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_NAD(&_ret));
+		Debug.OK(staticInstance.get_NAD(&_ret));
 		return _ret;
 	}
 	static HSTRING NGN()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_NGN(&_ret));
+		Debug.OK(staticInstance.get_NGN(&_ret));
 		return _ret;
 	}
 	static HSTRING NIO()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_NIO(&_ret));
+		Debug.OK(staticInstance.get_NIO(&_ret));
 		return _ret;
 	}
 	static HSTRING NOK()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_NOK(&_ret));
+		Debug.OK(staticInstance.get_NOK(&_ret));
 		return _ret;
 	}
 	static HSTRING NPR()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_NPR(&_ret));
+		Debug.OK(staticInstance.get_NPR(&_ret));
 		return _ret;
 	}
 	static HSTRING NZD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_NZD(&_ret));
+		Debug.OK(staticInstance.get_NZD(&_ret));
 		return _ret;
 	}
 	static HSTRING OMR()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_OMR(&_ret));
+		Debug.OK(staticInstance.get_OMR(&_ret));
 		return _ret;
 	}
 	static HSTRING PAB()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_PAB(&_ret));
+		Debug.OK(staticInstance.get_PAB(&_ret));
 		return _ret;
 	}
 	static HSTRING PEN()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_PEN(&_ret));
+		Debug.OK(staticInstance.get_PEN(&_ret));
 		return _ret;
 	}
 	static HSTRING PGK()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_PGK(&_ret));
+		Debug.OK(staticInstance.get_PGK(&_ret));
 		return _ret;
 	}
 	static HSTRING PHP()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_PHP(&_ret));
+		Debug.OK(staticInstance.get_PHP(&_ret));
 		return _ret;
 	}
 	static HSTRING PKR()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_PKR(&_ret));
+		Debug.OK(staticInstance.get_PKR(&_ret));
 		return _ret;
 	}
 	static HSTRING PLN()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_PLN(&_ret));
+		Debug.OK(staticInstance.get_PLN(&_ret));
 		return _ret;
 	}
 	static HSTRING PYG()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_PYG(&_ret));
+		Debug.OK(staticInstance.get_PYG(&_ret));
 		return _ret;
 	}
 	static HSTRING QAR()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_QAR(&_ret));
+		Debug.OK(staticInstance.get_QAR(&_ret));
 		return _ret;
 	}
 	static HSTRING RON()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_RON(&_ret));
+		Debug.OK(staticInstance.get_RON(&_ret));
 		return _ret;
 	}
 	static HSTRING RSD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_RSD(&_ret));
+		Debug.OK(staticInstance.get_RSD(&_ret));
 		return _ret;
 	}
 	static HSTRING RUB()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_RUB(&_ret));
+		Debug.OK(staticInstance.get_RUB(&_ret));
 		return _ret;
 	}
 	static HSTRING RWF()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_RWF(&_ret));
+		Debug.OK(staticInstance.get_RWF(&_ret));
 		return _ret;
 	}
 	static HSTRING SAR()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_SAR(&_ret));
+		Debug.OK(staticInstance.get_SAR(&_ret));
 		return _ret;
 	}
 	static HSTRING SBD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_SBD(&_ret));
+		Debug.OK(staticInstance.get_SBD(&_ret));
 		return _ret;
 	}
 	static HSTRING SCR()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_SCR(&_ret));
+		Debug.OK(staticInstance.get_SCR(&_ret));
 		return _ret;
 	}
 	static HSTRING SDG()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_SDG(&_ret));
+		Debug.OK(staticInstance.get_SDG(&_ret));
 		return _ret;
 	}
 	static HSTRING SEK()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_SEK(&_ret));
+		Debug.OK(staticInstance.get_SEK(&_ret));
 		return _ret;
 	}
 	static HSTRING SGD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_SGD(&_ret));
+		Debug.OK(staticInstance.get_SGD(&_ret));
 		return _ret;
 	}
 	static HSTRING SHP()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_SHP(&_ret));
+		Debug.OK(staticInstance.get_SHP(&_ret));
 		return _ret;
 	}
 	static HSTRING SLL()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_SLL(&_ret));
+		Debug.OK(staticInstance.get_SLL(&_ret));
 		return _ret;
 	}
 	static HSTRING SOS()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_SOS(&_ret));
+		Debug.OK(staticInstance.get_SOS(&_ret));
 		return _ret;
 	}
 	static HSTRING SRD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_SRD(&_ret));
+		Debug.OK(staticInstance.get_SRD(&_ret));
 		return _ret;
 	}
 	static HSTRING STD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_STD(&_ret));
+		Debug.OK(staticInstance.get_STD(&_ret));
 		return _ret;
 	}
 	static HSTRING SYP()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_SYP(&_ret));
+		Debug.OK(staticInstance.get_SYP(&_ret));
 		return _ret;
 	}
 	static HSTRING SZL()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_SZL(&_ret));
+		Debug.OK(staticInstance.get_SZL(&_ret));
 		return _ret;
 	}
 	static HSTRING THB()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_THB(&_ret));
+		Debug.OK(staticInstance.get_THB(&_ret));
 		return _ret;
 	}
 	static HSTRING TJS()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_TJS(&_ret));
+		Debug.OK(staticInstance.get_TJS(&_ret));
 		return _ret;
 	}
 	static HSTRING TMT()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_TMT(&_ret));
+		Debug.OK(staticInstance.get_TMT(&_ret));
 		return _ret;
 	}
 	static HSTRING TND()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_TND(&_ret));
+		Debug.OK(staticInstance.get_TND(&_ret));
 		return _ret;
 	}
 	static HSTRING TOP()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_TOP(&_ret));
+		Debug.OK(staticInstance.get_TOP(&_ret));
 		return _ret;
 	}
 	static HSTRING TRY()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_TRY(&_ret));
+		Debug.OK(staticInstance.get_TRY(&_ret));
 		return _ret;
 	}
 	static HSTRING TTD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_TTD(&_ret));
+		Debug.OK(staticInstance.get_TTD(&_ret));
 		return _ret;
 	}
 	static HSTRING TWD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_TWD(&_ret));
+		Debug.OK(staticInstance.get_TWD(&_ret));
 		return _ret;
 	}
 	static HSTRING TZS()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_TZS(&_ret));
+		Debug.OK(staticInstance.get_TZS(&_ret));
 		return _ret;
 	}
 	static HSTRING UAH()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_UAH(&_ret));
+		Debug.OK(staticInstance.get_UAH(&_ret));
 		return _ret;
 	}
 	static HSTRING UGX()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_UGX(&_ret));
+		Debug.OK(staticInstance.get_UGX(&_ret));
 		return _ret;
 	}
 	static HSTRING USD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_USD(&_ret));
+		Debug.OK(staticInstance.get_USD(&_ret));
 		return _ret;
 	}
 	static HSTRING UYU()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_UYU(&_ret));
+		Debug.OK(staticInstance.get_UYU(&_ret));
 		return _ret;
 	}
 	static HSTRING UZS()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_UZS(&_ret));
+		Debug.OK(staticInstance.get_UZS(&_ret));
 		return _ret;
 	}
 	static HSTRING VEF()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_VEF(&_ret));
+		Debug.OK(staticInstance.get_VEF(&_ret));
 		return _ret;
 	}
 	static HSTRING VND()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_VND(&_ret));
+		Debug.OK(staticInstance.get_VND(&_ret));
 		return _ret;
 	}
 	static HSTRING VUV()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_VUV(&_ret));
+		Debug.OK(staticInstance.get_VUV(&_ret));
 		return _ret;
 	}
 	static HSTRING WST()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_WST(&_ret));
+		Debug.OK(staticInstance.get_WST(&_ret));
 		return _ret;
 	}
 	static HSTRING XAF()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_XAF(&_ret));
+		Debug.OK(staticInstance.get_XAF(&_ret));
 		return _ret;
 	}
 	static HSTRING XCD()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_XCD(&_ret));
+		Debug.OK(staticInstance.get_XCD(&_ret));
 		return _ret;
 	}
 	static HSTRING XOF()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_XOF(&_ret));
+		Debug.OK(staticInstance.get_XOF(&_ret));
 		return _ret;
 	}
 	static HSTRING XPF()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_XPF(&_ret));
+		Debug.OK(staticInstance.get_XPF(&_ret));
 		return _ret;
 	}
 	static HSTRING XXX()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_XXX(&_ret));
+		Debug.OK(staticInstance.get_XXX(&_ret));
 		return _ret;
 	}
 	static HSTRING YER()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_YER(&_ret));
+		Debug.OK(staticInstance.get_YER(&_ret));
 		return _ret;
 	}
 	static HSTRING ZAR()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_ZAR(&_ret));
+		Debug.OK(staticInstance.get_ZAR(&_ret));
 		return _ret;
 	}
 	static HSTRING ZMW()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_ZMW(&_ret));
+		Debug.OK(staticInstance.get_ZMW(&_ret));
 		return _ret;
 	}
 	static HSTRING ZWL()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ICurrencyIdentifiersStatics).get_ZWL(&_ret));
+		Debug.OK(staticInstance.get_ZWL(&_ret));
 		return _ret;
 	}
 }
@@ -2175,43 +2175,43 @@ extern(Windows):
 	final HSTRING Code()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.IGeographicRegion).get_Code(&_ret));
+		Debug.OK((cast(Windows.Globalization.IGeographicRegion)this.asInterface(uuid("01e9a621-4a64-4ed9-954f-9edeb07bd903"))).get_Code(&_ret));
 		return _ret;
 	}
 	final HSTRING CodeTwoLetter()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.IGeographicRegion).get_CodeTwoLetter(&_ret));
+		Debug.OK((cast(Windows.Globalization.IGeographicRegion)this.asInterface(uuid("01e9a621-4a64-4ed9-954f-9edeb07bd903"))).get_CodeTwoLetter(&_ret));
 		return _ret;
 	}
 	final HSTRING CodeThreeLetter()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.IGeographicRegion).get_CodeThreeLetter(&_ret));
+		Debug.OK((cast(Windows.Globalization.IGeographicRegion)this.asInterface(uuid("01e9a621-4a64-4ed9-954f-9edeb07bd903"))).get_CodeThreeLetter(&_ret));
 		return _ret;
 	}
 	final HSTRING CodeThreeDigit()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.IGeographicRegion).get_CodeThreeDigit(&_ret));
+		Debug.OK((cast(Windows.Globalization.IGeographicRegion)this.asInterface(uuid("01e9a621-4a64-4ed9-954f-9edeb07bd903"))).get_CodeThreeDigit(&_ret));
 		return _ret;
 	}
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.IGeographicRegion).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.Globalization.IGeographicRegion)this.asInterface(uuid("01e9a621-4a64-4ed9-954f-9edeb07bd903"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final HSTRING NativeName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.IGeographicRegion).get_NativeName(&_ret));
+		Debug.OK((cast(Windows.Globalization.IGeographicRegion)this.asInterface(uuid("01e9a621-4a64-4ed9-954f-9edeb07bd903"))).get_NativeName(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) CurrenciesInUse()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Globalization.IGeographicRegion).get_CurrenciesInUse(&_ret));
+		Debug.OK((cast(Windows.Globalization.IGeographicRegion)this.asInterface(uuid("01e9a621-4a64-4ed9-954f-9edeb07bd903"))).get_CurrenciesInUse(&_ret));
 		return _ret;
 	}
 
@@ -2224,20 +2224,20 @@ extern(Windows):
 	static bool IsSupported(HSTRING geographicRegionCode)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.IGeographicRegionStatics).abi_IsSupported(geographicRegionCode, &_ret));
+		Debug.OK(staticInstance.abi_IsSupported(geographicRegionCode, &_ret));
 		return _ret;
 	}
 	static GeographicRegion New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(GeographicRegion).abi_ActivateInstance(&ret));
-		return ret.as!(GeographicRegion);
+		return cast(GeographicRegion) ret;
 	}
 	static Windows.Globalization.GeographicRegion New(HSTRING geographicRegionCode)
 	{
 		auto factory = factory!(Windows.Globalization.IGeographicRegionFactory);
 		Windows.Globalization.GeographicRegion _ret;
-		Debug.OK(factory.as!(Windows.Globalization.IGeographicRegionFactory).abi_CreateGeographicRegion(geographicRegionCode, &_ret));
+		Debug.OK((cast(Windows.Globalization.IGeographicRegionFactory)factory.asInterface(uuid("53425270-77b4-426b-859f-81e19d512546"))).abi_CreateGeographicRegion(geographicRegionCode, &_ret));
 		return _ret;
 	}
 }
@@ -2248,19 +2248,19 @@ extern(Windows):
 	final HSTRING DisplayText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.IJapanesePhoneme).get_DisplayText(&_ret));
+		Debug.OK((cast(Windows.Globalization.IJapanesePhoneme)this.asInterface(uuid("2f6a9300-e85b-43e6-897d-5d82f862df21"))).get_DisplayText(&_ret));
 		return _ret;
 	}
 	final HSTRING YomiText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.IJapanesePhoneme).get_YomiText(&_ret));
+		Debug.OK((cast(Windows.Globalization.IJapanesePhoneme)this.asInterface(uuid("2f6a9300-e85b-43e6-897d-5d82f862df21"))).get_YomiText(&_ret));
 		return _ret;
 	}
 	final bool IsPhraseStart()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Globalization.IJapanesePhoneme).get_IsPhraseStart(&_ret));
+		Debug.OK((cast(Windows.Globalization.IJapanesePhoneme)this.asInterface(uuid("2f6a9300-e85b-43e6-897d-5d82f862df21"))).get_IsPhraseStart(&_ret));
 		return _ret;
 	}
 }
@@ -2276,13 +2276,13 @@ interface JapanesePhoneticAnalyzer
 	static Windows.Foundation.Collections.IVectorView!(Windows.Globalization.JapanesePhoneme) GetWords(HSTRING input)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Globalization.JapanesePhoneme) _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.IJapanesePhoneticAnalyzerStatics).abi_GetWords(input, &_ret));
+		Debug.OK(staticInstance.abi_GetWords(input, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(Windows.Globalization.JapanesePhoneme) GetWordsWithMonoRubyOption(HSTRING input, bool monoRuby)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Globalization.JapanesePhoneme) _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.IJapanesePhoneticAnalyzerStatics).abi_GetWordsWithMonoRubyOption(input, monoRuby, &_ret));
+		Debug.OK(staticInstance.abi_GetWordsWithMonoRubyOption(input, monoRuby, &_ret));
 		return _ret;
 	}
 }
@@ -2293,31 +2293,31 @@ extern(Windows):
 	final HSTRING LanguageTag()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ILanguage).get_LanguageTag(&_ret));
+		Debug.OK((cast(Windows.Globalization.ILanguage)this.asInterface(uuid("ea79a752-f7c2-4265-b1bd-c4dec4e4f080"))).get_LanguageTag(&_ret));
 		return _ret;
 	}
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ILanguage).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.Globalization.ILanguage)this.asInterface(uuid("ea79a752-f7c2-4265-b1bd-c4dec4e4f080"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final HSTRING NativeName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ILanguage).get_NativeName(&_ret));
+		Debug.OK((cast(Windows.Globalization.ILanguage)this.asInterface(uuid("ea79a752-f7c2-4265-b1bd-c4dec4e4f080"))).get_NativeName(&_ret));
 		return _ret;
 	}
 	final HSTRING Script()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Globalization.ILanguage).get_Script(&_ret));
+		Debug.OK((cast(Windows.Globalization.ILanguage)this.asInterface(uuid("ea79a752-f7c2-4265-b1bd-c4dec4e4f080"))).get_Script(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) GetExtensionSubtags(HSTRING singleton)
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Globalization.ILanguageExtensionSubtags).abi_GetExtensionSubtags(singleton, &_ret));
+		Debug.OK((cast(Windows.Globalization.ILanguageExtensionSubtags)this.asInterface(uuid("7d7daf45-368d-4364-852b-dec927037b85"))).abi_GetExtensionSubtags(singleton, &_ret));
 		return _ret;
 	}
 
@@ -2330,20 +2330,20 @@ extern(Windows):
 	static bool IsWellFormed(HSTRING languageTag)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ILanguageStatics).abi_IsWellFormed(languageTag, &_ret));
+		Debug.OK(staticInstance.abi_IsWellFormed(languageTag, &_ret));
 		return _ret;
 	}
 	static HSTRING CurrentInputMethodLanguageTag()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.ILanguageStatics).get_CurrentInputMethodLanguageTag(&_ret));
+		Debug.OK(staticInstance.get_CurrentInputMethodLanguageTag(&_ret));
 		return _ret;
 	}
 	static Windows.Globalization.Language New(HSTRING languageTag)
 	{
 		auto factory = factory!(Windows.Globalization.ILanguageFactory);
 		Windows.Globalization.Language _ret;
-		Debug.OK(factory.as!(Windows.Globalization.ILanguageFactory).abi_CreateLanguage(languageTag, &_ret));
+		Debug.OK((cast(Windows.Globalization.ILanguageFactory)factory.asInterface(uuid("9b0252ac-0c27-44f8-b792-9793fb66c63e"))).abi_CreateLanguage(languageTag, &_ret));
 		return _ret;
 	}
 }
@@ -2359,217 +2359,217 @@ interface NumeralSystemIdentifiers
 	static HSTRING Arab()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Arab(&_ret));
+		Debug.OK(staticInstance.get_Arab(&_ret));
 		return _ret;
 	}
 	static HSTRING ArabExt()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_ArabExt(&_ret));
+		Debug.OK(staticInstance.get_ArabExt(&_ret));
 		return _ret;
 	}
 	static HSTRING Bali()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Bali(&_ret));
+		Debug.OK(staticInstance.get_Bali(&_ret));
 		return _ret;
 	}
 	static HSTRING Beng()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Beng(&_ret));
+		Debug.OK(staticInstance.get_Beng(&_ret));
 		return _ret;
 	}
 	static HSTRING Cham()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Cham(&_ret));
+		Debug.OK(staticInstance.get_Cham(&_ret));
 		return _ret;
 	}
 	static HSTRING Deva()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Deva(&_ret));
+		Debug.OK(staticInstance.get_Deva(&_ret));
 		return _ret;
 	}
 	static HSTRING FullWide()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_FullWide(&_ret));
+		Debug.OK(staticInstance.get_FullWide(&_ret));
 		return _ret;
 	}
 	static HSTRING Gujr()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Gujr(&_ret));
+		Debug.OK(staticInstance.get_Gujr(&_ret));
 		return _ret;
 	}
 	static HSTRING Guru()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Guru(&_ret));
+		Debug.OK(staticInstance.get_Guru(&_ret));
 		return _ret;
 	}
 	static HSTRING HaniDec()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_HaniDec(&_ret));
+		Debug.OK(staticInstance.get_HaniDec(&_ret));
 		return _ret;
 	}
 	static HSTRING Java()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Java(&_ret));
+		Debug.OK(staticInstance.get_Java(&_ret));
 		return _ret;
 	}
 	static HSTRING Kali()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Kali(&_ret));
+		Debug.OK(staticInstance.get_Kali(&_ret));
 		return _ret;
 	}
 	static HSTRING Khmr()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Khmr(&_ret));
+		Debug.OK(staticInstance.get_Khmr(&_ret));
 		return _ret;
 	}
 	static HSTRING Knda()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Knda(&_ret));
+		Debug.OK(staticInstance.get_Knda(&_ret));
 		return _ret;
 	}
 	static HSTRING Lana()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Lana(&_ret));
+		Debug.OK(staticInstance.get_Lana(&_ret));
 		return _ret;
 	}
 	static HSTRING LanaTham()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_LanaTham(&_ret));
+		Debug.OK(staticInstance.get_LanaTham(&_ret));
 		return _ret;
 	}
 	static HSTRING Laoo()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Laoo(&_ret));
+		Debug.OK(staticInstance.get_Laoo(&_ret));
 		return _ret;
 	}
 	static HSTRING Latn()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Latn(&_ret));
+		Debug.OK(staticInstance.get_Latn(&_ret));
 		return _ret;
 	}
 	static HSTRING Lepc()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Lepc(&_ret));
+		Debug.OK(staticInstance.get_Lepc(&_ret));
 		return _ret;
 	}
 	static HSTRING Limb()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Limb(&_ret));
+		Debug.OK(staticInstance.get_Limb(&_ret));
 		return _ret;
 	}
 	static HSTRING Mlym()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Mlym(&_ret));
+		Debug.OK(staticInstance.get_Mlym(&_ret));
 		return _ret;
 	}
 	static HSTRING Mong()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Mong(&_ret));
+		Debug.OK(staticInstance.get_Mong(&_ret));
 		return _ret;
 	}
 	static HSTRING Mtei()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Mtei(&_ret));
+		Debug.OK(staticInstance.get_Mtei(&_ret));
 		return _ret;
 	}
 	static HSTRING Mymr()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Mymr(&_ret));
+		Debug.OK(staticInstance.get_Mymr(&_ret));
 		return _ret;
 	}
 	static HSTRING MymrShan()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_MymrShan(&_ret));
+		Debug.OK(staticInstance.get_MymrShan(&_ret));
 		return _ret;
 	}
 	static HSTRING Nkoo()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Nkoo(&_ret));
+		Debug.OK(staticInstance.get_Nkoo(&_ret));
 		return _ret;
 	}
 	static HSTRING Olck()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Olck(&_ret));
+		Debug.OK(staticInstance.get_Olck(&_ret));
 		return _ret;
 	}
 	static HSTRING Orya()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Orya(&_ret));
+		Debug.OK(staticInstance.get_Orya(&_ret));
 		return _ret;
 	}
 	static HSTRING Saur()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Saur(&_ret));
+		Debug.OK(staticInstance.get_Saur(&_ret));
 		return _ret;
 	}
 	static HSTRING Sund()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Sund(&_ret));
+		Debug.OK(staticInstance.get_Sund(&_ret));
 		return _ret;
 	}
 	static HSTRING Talu()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Talu(&_ret));
+		Debug.OK(staticInstance.get_Talu(&_ret));
 		return _ret;
 	}
 	static HSTRING TamlDec()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_TamlDec(&_ret));
+		Debug.OK(staticInstance.get_TamlDec(&_ret));
 		return _ret;
 	}
 	static HSTRING Telu()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Telu(&_ret));
+		Debug.OK(staticInstance.get_Telu(&_ret));
 		return _ret;
 	}
 	static HSTRING Thai()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Thai(&_ret));
+		Debug.OK(staticInstance.get_Thai(&_ret));
 		return _ret;
 	}
 	static HSTRING Tibt()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Tibt(&_ret));
+		Debug.OK(staticInstance.get_Tibt(&_ret));
 		return _ret;
 	}
 	static HSTRING Vaii()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Globalization.INumeralSystemIdentifiersStatics).get_Vaii(&_ret));
+		Debug.OK(staticInstance.get_Vaii(&_ret));
 		return _ret;
 	}
 }

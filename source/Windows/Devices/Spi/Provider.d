@@ -61,58 +61,58 @@ extern(Windows):
 	final INT32 ChipSelectLine()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings).get_ChipSelectLine(&_ret));
+		Debug.OK((cast(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings)this.asInterface(uuid("f6034550-a542-4ec0-9601-a4dd68f8697b"))).get_ChipSelectLine(&_ret));
 		return _ret;
 	}
 	final void ChipSelectLine(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings).set_ChipSelectLine(value));
+		Debug.OK((cast(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings)this.asInterface(uuid("f6034550-a542-4ec0-9601-a4dd68f8697b"))).set_ChipSelectLine(value));
 	}
 	final Windows.Devices.Spi.Provider.ProviderSpiMode Mode()
 	{
 		Windows.Devices.Spi.Provider.ProviderSpiMode _ret;
-		Debug.OK(this.as!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings).get_Mode(&_ret));
+		Debug.OK((cast(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings)this.asInterface(uuid("f6034550-a542-4ec0-9601-a4dd68f8697b"))).get_Mode(&_ret));
 		return _ret;
 	}
 	final void Mode(Windows.Devices.Spi.Provider.ProviderSpiMode value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings).set_Mode(value));
+		Debug.OK((cast(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings)this.asInterface(uuid("f6034550-a542-4ec0-9601-a4dd68f8697b"))).set_Mode(value));
 	}
 	final INT32 DataBitLength()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings).get_DataBitLength(&_ret));
+		Debug.OK((cast(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings)this.asInterface(uuid("f6034550-a542-4ec0-9601-a4dd68f8697b"))).get_DataBitLength(&_ret));
 		return _ret;
 	}
 	final void DataBitLength(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings).set_DataBitLength(value));
+		Debug.OK((cast(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings)this.asInterface(uuid("f6034550-a542-4ec0-9601-a4dd68f8697b"))).set_DataBitLength(value));
 	}
 	final INT32 ClockFrequency()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings).get_ClockFrequency(&_ret));
+		Debug.OK((cast(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings)this.asInterface(uuid("f6034550-a542-4ec0-9601-a4dd68f8697b"))).get_ClockFrequency(&_ret));
 		return _ret;
 	}
 	final void ClockFrequency(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings).set_ClockFrequency(value));
+		Debug.OK((cast(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings)this.asInterface(uuid("f6034550-a542-4ec0-9601-a4dd68f8697b"))).set_ClockFrequency(value));
 	}
 	final Windows.Devices.Spi.Provider.ProviderSpiSharingMode SharingMode()
 	{
 		Windows.Devices.Spi.Provider.ProviderSpiSharingMode _ret;
-		Debug.OK(this.as!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings).get_SharingMode(&_ret));
+		Debug.OK((cast(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings)this.asInterface(uuid("f6034550-a542-4ec0-9601-a4dd68f8697b"))).get_SharingMode(&_ret));
 		return _ret;
 	}
 	final void SharingMode(Windows.Devices.Spi.Provider.ProviderSpiSharingMode value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings).set_SharingMode(value));
+		Debug.OK((cast(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettings)this.asInterface(uuid("f6034550-a542-4ec0-9601-a4dd68f8697b"))).set_SharingMode(value));
 	}
 	static Windows.Devices.Spi.Provider.ProviderSpiConnectionSettings New(INT32 chipSelectLine)
 	{
 		auto factory = factory!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettingsFactory);
 		Windows.Devices.Spi.Provider.ProviderSpiConnectionSettings _ret;
-		Debug.OK(factory.as!(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettingsFactory).abi_Create(chipSelectLine, &_ret));
+		Debug.OK((cast(Windows.Devices.Spi.Provider.IProviderSpiConnectionSettingsFactory)factory.asInterface(uuid("66456b5a-0c79-43e3-9f3c-e59780ac18fa"))).abi_Create(chipSelectLine, &_ret));
 		return _ret;
 	}
 }

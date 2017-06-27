@@ -112,7 +112,7 @@ interface AppServiceCatalog
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppInfo)) FindAppServiceProvidersAsync(HSTRING appServiceName)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppInfo)) _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.AppService.IAppServiceCatalogStatics).abi_FindAppServiceProvidersAsync(appServiceName, &_ret));
+		Debug.OK(staticInstance.abi_FindAppServiceProvidersAsync(appServiceName, &_ret));
 		return _ret;
 	}
 }
@@ -123,7 +123,7 @@ extern(Windows):
 	final Windows.ApplicationModel.AppService.AppServiceClosedStatus Status()
 	{
 		Windows.ApplicationModel.AppService.AppServiceClosedStatus _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceClosedEventArgs).get_Status(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceClosedEventArgs)this.asInterface(uuid("de6016f6-cb03-4d35-ac8d-cc6303239731"))).get_Status(&_ret));
 		return _ret;
 	}
 }
@@ -134,80 +134,80 @@ extern(Windows):
 	final HSTRING AppServiceName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection).get_AppServiceName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceConnection)this.asInterface(uuid("9dd474a2-871f-4d52-89a9-9e090531bd27"))).get_AppServiceName(&_ret));
 		return _ret;
 	}
 	final void AppServiceName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection).set_AppServiceName(value));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceConnection)this.asInterface(uuid("9dd474a2-871f-4d52-89a9-9e090531bd27"))).set_AppServiceName(value));
 	}
 	final HSTRING PackageFamilyName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection).get_PackageFamilyName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceConnection)this.asInterface(uuid("9dd474a2-871f-4d52-89a9-9e090531bd27"))).get_PackageFamilyName(&_ret));
 		return _ret;
 	}
 	final void PackageFamilyName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection).set_PackageFamilyName(value));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceConnection)this.asInterface(uuid("9dd474a2-871f-4d52-89a9-9e090531bd27"))).set_PackageFamilyName(value));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.AppService.AppServiceConnectionStatus) OpenAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.AppService.AppServiceConnectionStatus) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection).abi_OpenAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceConnection)this.asInterface(uuid("9dd474a2-871f-4d52-89a9-9e090531bd27"))).abi_OpenAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.AppService.AppServiceResponse) SendMessageAsync(Windows.Foundation.Collections.ValueSet message)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.AppService.AppServiceResponse) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection).abi_SendMessageAsync(message, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceConnection)this.asInterface(uuid("9dd474a2-871f-4d52-89a9-9e090531bd27"))).abi_SendMessageAsync(message, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnRequestReceived(void delegate(Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection).add_RequestReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs), Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceConnection)this.asInterface(uuid("9dd474a2-871f-4d52-89a9-9e090531bd27"))).add_RequestReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs), Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceRequestReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRequestReceived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection).remove_RequestReceived(token));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceConnection)this.asInterface(uuid("9dd474a2-871f-4d52-89a9-9e090531bd27"))).remove_RequestReceived(token));
 	}
 	final EventRegistrationToken OnServiceClosed(void delegate(Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceClosedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection).add_ServiceClosed(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceClosedEventArgs), Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceClosedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceConnection)this.asInterface(uuid("9dd474a2-871f-4d52-89a9-9e090531bd27"))).add_ServiceClosed(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceClosedEventArgs), Windows.ApplicationModel.AppService.AppServiceConnection, Windows.ApplicationModel.AppService.AppServiceClosedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeServiceClosed(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection).remove_ServiceClosed(token));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceConnection)this.asInterface(uuid("9dd474a2-871f-4d52-89a9-9e090531bd27"))).remove_ServiceClosed(token));
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.AppService.AppServiceConnectionStatus) OpenRemoteAsync(Windows.System.RemoteSystems.RemoteSystemConnectionRequest remoteSystemConnectionRequest)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.AppService.AppServiceConnectionStatus) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection2).abi_OpenRemoteAsync(remoteSystemConnectionRequest, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceConnection2)this.asInterface(uuid("8bdfcd5f-2302-4fbd-8061-52511c2f8bf9"))).abi_OpenRemoteAsync(remoteSystemConnectionRequest, &_ret));
 		return _ret;
 	}
 	final Windows.System.User User()
 	{
 		Windows.System.User _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection2).get_User(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceConnection2)this.asInterface(uuid("8bdfcd5f-2302-4fbd-8061-52511c2f8bf9"))).get_User(&_ret));
 		return _ret;
 	}
 	final void User(Windows.System.User value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceConnection2).set_User(value));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceConnection2)this.asInterface(uuid("8bdfcd5f-2302-4fbd-8061-52511c2f8bf9"))).set_User(value));
 	}
 	static AppServiceConnection New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(AppServiceConnection).abi_ActivateInstance(&ret));
-		return ret.as!(AppServiceConnection);
+		return cast(AppServiceConnection) ret;
 	}
 }
 
@@ -216,7 +216,7 @@ interface AppServiceDeferral : Windows.ApplicationModel.AppService.IAppServiceDe
 extern(Windows):
 	final void Complete()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceDeferral).abi_Complete());
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceDeferral)this.asInterface(uuid("7e1b5322-eab0-4248-ae04-fdf93838e472"))).abi_Complete());
 	}
 }
 
@@ -226,13 +226,13 @@ extern(Windows):
 	final Windows.Foundation.Collections.ValueSet Message()
 	{
 		Windows.Foundation.Collections.ValueSet _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceRequest).get_Message(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceRequest)this.asInterface(uuid("20e58d9d-18de-4b01-80ba-90a76204e3c8"))).get_Message(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.AppService.AppServiceResponseStatus) SendResponseAsync(Windows.Foundation.Collections.ValueSet message)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.AppService.AppServiceResponseStatus) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceRequest).abi_SendResponseAsync(message, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceRequest)this.asInterface(uuid("20e58d9d-18de-4b01-80ba-90a76204e3c8"))).abi_SendResponseAsync(message, &_ret));
 		return _ret;
 	}
 }
@@ -243,13 +243,13 @@ extern(Windows):
 	final Windows.ApplicationModel.AppService.AppServiceRequest Request()
 	{
 		Windows.ApplicationModel.AppService.AppServiceRequest _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceRequestReceivedEventArgs).get_Request(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceRequestReceivedEventArgs)this.asInterface(uuid("6e122360-ff65-44ae-9e45-857fe4180681"))).get_Request(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.AppService.AppServiceDeferral GetDeferral()
 	{
 		Windows.ApplicationModel.AppService.AppServiceDeferral _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceRequestReceivedEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceRequestReceivedEventArgs)this.asInterface(uuid("6e122360-ff65-44ae-9e45-857fe4180681"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -260,13 +260,13 @@ extern(Windows):
 	final Windows.Foundation.Collections.ValueSet Message()
 	{
 		Windows.Foundation.Collections.ValueSet _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceResponse).get_Message(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceResponse)this.asInterface(uuid("8d503cec-9aa3-4e68-9559-9de63e372ce4"))).get_Message(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.AppService.AppServiceResponseStatus Status()
 	{
 		Windows.ApplicationModel.AppService.AppServiceResponseStatus _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceResponse).get_Status(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceResponse)this.asInterface(uuid("8d503cec-9aa3-4e68-9559-9de63e372ce4"))).get_Status(&_ret));
 		return _ret;
 	}
 }
@@ -277,25 +277,25 @@ extern(Windows):
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceTriggerDetails).get_Name(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceTriggerDetails)this.asInterface(uuid("88a2dcac-ad28-41b8-80bb-bdf1b2169e19"))).get_Name(&_ret));
 		return _ret;
 	}
 	final HSTRING CallerPackageFamilyName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceTriggerDetails).get_CallerPackageFamilyName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceTriggerDetails)this.asInterface(uuid("88a2dcac-ad28-41b8-80bb-bdf1b2169e19"))).get_CallerPackageFamilyName(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.AppService.AppServiceConnection AppServiceConnection()
 	{
 		Windows.ApplicationModel.AppService.AppServiceConnection _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceTriggerDetails).get_AppServiceConnection(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceTriggerDetails)this.asInterface(uuid("88a2dcac-ad28-41b8-80bb-bdf1b2169e19"))).get_AppServiceConnection(&_ret));
 		return _ret;
 	}
 	final bool IsRemoteSystemConnection()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.AppService.IAppServiceTriggerDetails2).get_IsRemoteSystemConnection(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.AppService.IAppServiceTriggerDetails2)this.asInterface(uuid("e83d54b2-28cc-43f2-b465-c0482e59e2dc"))).get_IsRemoteSystemConnection(&_ret));
 		return _ret;
 	}
 }

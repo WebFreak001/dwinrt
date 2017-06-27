@@ -596,31 +596,31 @@ interface AnnotationPatternIdentifiers : Windows.UI.Xaml.Automation.IAnnotationP
 	static Windows.UI.Xaml.Automation.AutomationProperty AnnotationTypeIdProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAnnotationPatternIdentifiersStatics).get_AnnotationTypeIdProperty(&_ret));
+		Debug.OK(staticInstance.get_AnnotationTypeIdProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty AnnotationTypeNameProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAnnotationPatternIdentifiersStatics).get_AnnotationTypeNameProperty(&_ret));
+		Debug.OK(staticInstance.get_AnnotationTypeNameProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty AuthorProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAnnotationPatternIdentifiersStatics).get_AuthorProperty(&_ret));
+		Debug.OK(staticInstance.get_AuthorProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty DateTimeProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAnnotationPatternIdentifiersStatics).get_DateTimeProperty(&_ret));
+		Debug.OK(staticInstance.get_DateTimeProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty TargetProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAnnotationPatternIdentifiersStatics).get_TargetProperty(&_ret));
+		Debug.OK(staticInstance.get_TargetProperty(&_ret));
 		return _ret;
 	}
 }
@@ -631,22 +631,22 @@ extern(Windows):
 	final Windows.UI.Xaml.Automation.AnnotationType Type()
 	{
 		Windows.UI.Xaml.Automation.AnnotationType _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.IAutomationAnnotation).get_Type(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.IAutomationAnnotation)this.asInterface(uuid("fb3c30ca-03d8-4618-91bf-e4d84f4af318"))).get_Type(&_ret));
 		return _ret;
 	}
 	final void Type(Windows.UI.Xaml.Automation.AnnotationType value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.IAutomationAnnotation).set_Type(value));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.IAutomationAnnotation)this.asInterface(uuid("fb3c30ca-03d8-4618-91bf-e4d84f4af318"))).set_Type(value));
 	}
 	final Windows.UI.Xaml.UIElement Element()
 	{
 		Windows.UI.Xaml.UIElement _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.IAutomationAnnotation).get_Element(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.IAutomationAnnotation)this.asInterface(uuid("fb3c30ca-03d8-4618-91bf-e4d84f4af318"))).get_Element(&_ret));
 		return _ret;
 	}
 	final void Element(Windows.UI.Xaml.UIElement value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.IAutomationAnnotation).set_Element(value));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.IAutomationAnnotation)this.asInterface(uuid("fb3c30ca-03d8-4618-91bf-e4d84f4af318"))).set_Element(value));
 	}
 
 	private static Windows.UI.Xaml.Automation.IAutomationAnnotationStatics _staticInstance;
@@ -658,33 +658,33 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty TypeProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationAnnotationStatics).get_TypeProperty(&_ret));
+		Debug.OK(staticInstance.get_TypeProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ElementProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationAnnotationStatics).get_ElementProperty(&_ret));
+		Debug.OK(staticInstance.get_ElementProperty(&_ret));
 		return _ret;
 	}
 	static AutomationAnnotation New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(AutomationAnnotation).abi_ActivateInstance(&ret));
-		return ret.as!(AutomationAnnotation);
+		return cast(AutomationAnnotation) ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationAnnotation New(Windows.UI.Xaml.Automation.AnnotationType type)
 	{
 		auto factory = factory!(Windows.UI.Xaml.Automation.IAutomationAnnotationFactory);
 		Windows.UI.Xaml.Automation.AutomationAnnotation _ret;
-		Debug.OK(factory.as!(Windows.UI.Xaml.Automation.IAutomationAnnotationFactory).abi_CreateInstance(type, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.IAutomationAnnotationFactory)factory.asInterface(uuid("4906fa52-ddc0-4e69-b76b-019d928d822f"))).abi_CreateInstance(type, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationAnnotation New(Windows.UI.Xaml.Automation.AnnotationType type, Windows.UI.Xaml.UIElement element)
 	{
 		auto factory = factory!(Windows.UI.Xaml.Automation.IAutomationAnnotationFactory);
 		Windows.UI.Xaml.Automation.AutomationAnnotation _ret;
-		Debug.OK(factory.as!(Windows.UI.Xaml.Automation.IAutomationAnnotationFactory).abi_CreateWithElementParameter(type, element, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.IAutomationAnnotationFactory)factory.asInterface(uuid("4906fa52-ddc0-4e69-b76b-019d928d822f"))).abi_CreateWithElementParameter(type, element, &_ret));
 		return _ret;
 	}
 }
@@ -700,139 +700,139 @@ interface AutomationElementIdentifiers : Windows.UI.Xaml.Automation.IAutomationE
 	static Windows.UI.Xaml.Automation.AutomationProperty AcceleratorKeyProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics).get_AcceleratorKeyProperty(&_ret));
+		Debug.OK(staticInstance.get_AcceleratorKeyProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty AccessKeyProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics).get_AccessKeyProperty(&_ret));
+		Debug.OK(staticInstance.get_AccessKeyProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty AutomationIdProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics).get_AutomationIdProperty(&_ret));
+		Debug.OK(staticInstance.get_AutomationIdProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty BoundingRectangleProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics).get_BoundingRectangleProperty(&_ret));
+		Debug.OK(staticInstance.get_BoundingRectangleProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty ClassNameProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics).get_ClassNameProperty(&_ret));
+		Debug.OK(staticInstance.get_ClassNameProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty ClickablePointProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics).get_ClickablePointProperty(&_ret));
+		Debug.OK(staticInstance.get_ClickablePointProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty ControlTypeProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics).get_ControlTypeProperty(&_ret));
+		Debug.OK(staticInstance.get_ControlTypeProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty HasKeyboardFocusProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics).get_HasKeyboardFocusProperty(&_ret));
+		Debug.OK(staticInstance.get_HasKeyboardFocusProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty HelpTextProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics).get_HelpTextProperty(&_ret));
+		Debug.OK(staticInstance.get_HelpTextProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty IsContentElementProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics).get_IsContentElementProperty(&_ret));
+		Debug.OK(staticInstance.get_IsContentElementProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty IsControlElementProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics).get_IsControlElementProperty(&_ret));
+		Debug.OK(staticInstance.get_IsControlElementProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty IsEnabledProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics).get_IsEnabledProperty(&_ret));
+		Debug.OK(staticInstance.get_IsEnabledProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty IsKeyboardFocusableProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics).get_IsKeyboardFocusableProperty(&_ret));
+		Debug.OK(staticInstance.get_IsKeyboardFocusableProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty IsOffscreenProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics).get_IsOffscreenProperty(&_ret));
+		Debug.OK(staticInstance.get_IsOffscreenProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty IsPasswordProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics).get_IsPasswordProperty(&_ret));
+		Debug.OK(staticInstance.get_IsPasswordProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty IsRequiredForFormProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics).get_IsRequiredForFormProperty(&_ret));
+		Debug.OK(staticInstance.get_IsRequiredForFormProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty ItemStatusProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics).get_ItemStatusProperty(&_ret));
+		Debug.OK(staticInstance.get_ItemStatusProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty ItemTypeProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics).get_ItemTypeProperty(&_ret));
+		Debug.OK(staticInstance.get_ItemTypeProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty LabeledByProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics).get_LabeledByProperty(&_ret));
+		Debug.OK(staticInstance.get_LabeledByProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty LocalizedControlTypeProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics).get_LocalizedControlTypeProperty(&_ret));
+		Debug.OK(staticInstance.get_LocalizedControlTypeProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty NameProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics).get_NameProperty(&_ret));
+		Debug.OK(staticInstance.get_NameProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty OrientationProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics).get_OrientationProperty(&_ret));
+		Debug.OK(staticInstance.get_OrientationProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty LiveSettingProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationElementIdentifiersStatics).get_LiveSettingProperty(&_ret));
+		Debug.OK(staticInstance.get_LiveSettingProperty(&_ret));
 		return _ret;
 	}
 }
@@ -848,162 +848,162 @@ interface AutomationProperties : Windows.UI.Xaml.Automation.IAutomationPropertie
 	static Windows.UI.Xaml.DependencyProperty AcceleratorKeyProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).get_AcceleratorKeyProperty(&_ret));
+		Debug.OK(staticInstance.get_AcceleratorKeyProperty(&_ret));
 		return _ret;
 	}
 	static HSTRING GetAcceleratorKey(Windows.UI.Xaml.DependencyObject element)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).abi_GetAcceleratorKey(element, &_ret));
+		Debug.OK(staticInstance.abi_GetAcceleratorKey(element, &_ret));
 		return _ret;
 	}
 	static void SetAcceleratorKey(Windows.UI.Xaml.DependencyObject element, HSTRING value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).abi_SetAcceleratorKey(element, value));
+		Debug.OK(staticInstance.abi_SetAcceleratorKey(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty AccessKeyProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).get_AccessKeyProperty(&_ret));
+		Debug.OK(staticInstance.get_AccessKeyProperty(&_ret));
 		return _ret;
 	}
 	static HSTRING GetAccessKey(Windows.UI.Xaml.DependencyObject element)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).abi_GetAccessKey(element, &_ret));
+		Debug.OK(staticInstance.abi_GetAccessKey(element, &_ret));
 		return _ret;
 	}
 	static void SetAccessKey(Windows.UI.Xaml.DependencyObject element, HSTRING value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).abi_SetAccessKey(element, value));
+		Debug.OK(staticInstance.abi_SetAccessKey(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty AutomationIdProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).get_AutomationIdProperty(&_ret));
+		Debug.OK(staticInstance.get_AutomationIdProperty(&_ret));
 		return _ret;
 	}
 	static HSTRING GetAutomationId(Windows.UI.Xaml.DependencyObject element)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).abi_GetAutomationId(element, &_ret));
+		Debug.OK(staticInstance.abi_GetAutomationId(element, &_ret));
 		return _ret;
 	}
 	static void SetAutomationId(Windows.UI.Xaml.DependencyObject element, HSTRING value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).abi_SetAutomationId(element, value));
+		Debug.OK(staticInstance.abi_SetAutomationId(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty HelpTextProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).get_HelpTextProperty(&_ret));
+		Debug.OK(staticInstance.get_HelpTextProperty(&_ret));
 		return _ret;
 	}
 	static HSTRING GetHelpText(Windows.UI.Xaml.DependencyObject element)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).abi_GetHelpText(element, &_ret));
+		Debug.OK(staticInstance.abi_GetHelpText(element, &_ret));
 		return _ret;
 	}
 	static void SetHelpText(Windows.UI.Xaml.DependencyObject element, HSTRING value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).abi_SetHelpText(element, value));
+		Debug.OK(staticInstance.abi_SetHelpText(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty IsRequiredForFormProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).get_IsRequiredForFormProperty(&_ret));
+		Debug.OK(staticInstance.get_IsRequiredForFormProperty(&_ret));
 		return _ret;
 	}
 	static bool GetIsRequiredForForm(Windows.UI.Xaml.DependencyObject element)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).abi_GetIsRequiredForForm(element, &_ret));
+		Debug.OK(staticInstance.abi_GetIsRequiredForForm(element, &_ret));
 		return _ret;
 	}
 	static void SetIsRequiredForForm(Windows.UI.Xaml.DependencyObject element, bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).abi_SetIsRequiredForForm(element, value));
+		Debug.OK(staticInstance.abi_SetIsRequiredForForm(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty ItemStatusProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).get_ItemStatusProperty(&_ret));
+		Debug.OK(staticInstance.get_ItemStatusProperty(&_ret));
 		return _ret;
 	}
 	static HSTRING GetItemStatus(Windows.UI.Xaml.DependencyObject element)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).abi_GetItemStatus(element, &_ret));
+		Debug.OK(staticInstance.abi_GetItemStatus(element, &_ret));
 		return _ret;
 	}
 	static void SetItemStatus(Windows.UI.Xaml.DependencyObject element, HSTRING value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).abi_SetItemStatus(element, value));
+		Debug.OK(staticInstance.abi_SetItemStatus(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty ItemTypeProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).get_ItemTypeProperty(&_ret));
+		Debug.OK(staticInstance.get_ItemTypeProperty(&_ret));
 		return _ret;
 	}
 	static HSTRING GetItemType(Windows.UI.Xaml.DependencyObject element)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).abi_GetItemType(element, &_ret));
+		Debug.OK(staticInstance.abi_GetItemType(element, &_ret));
 		return _ret;
 	}
 	static void SetItemType(Windows.UI.Xaml.DependencyObject element, HSTRING value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).abi_SetItemType(element, value));
+		Debug.OK(staticInstance.abi_SetItemType(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty LabeledByProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).get_LabeledByProperty(&_ret));
+		Debug.OK(staticInstance.get_LabeledByProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.UIElement GetLabeledBy(Windows.UI.Xaml.DependencyObject element)
 	{
 		Windows.UI.Xaml.UIElement _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).abi_GetLabeledBy(element, &_ret));
+		Debug.OK(staticInstance.abi_GetLabeledBy(element, &_ret));
 		return _ret;
 	}
 	static void SetLabeledBy(Windows.UI.Xaml.DependencyObject element, Windows.UI.Xaml.UIElement value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).abi_SetLabeledBy(element, value));
+		Debug.OK(staticInstance.abi_SetLabeledBy(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty NameProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).get_NameProperty(&_ret));
+		Debug.OK(staticInstance.get_NameProperty(&_ret));
 		return _ret;
 	}
 	static HSTRING GetName(Windows.UI.Xaml.DependencyObject element)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).abi_GetName(element, &_ret));
+		Debug.OK(staticInstance.abi_GetName(element, &_ret));
 		return _ret;
 	}
 	static void SetName(Windows.UI.Xaml.DependencyObject element, HSTRING value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).abi_SetName(element, value));
+		Debug.OK(staticInstance.abi_SetName(element, value));
 	}
 	static Windows.UI.Xaml.DependencyProperty LiveSettingProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).get_LiveSettingProperty(&_ret));
+		Debug.OK(staticInstance.get_LiveSettingProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.Peers.AutomationLiveSetting GetLiveSetting(Windows.UI.Xaml.DependencyObject element)
 	{
 		Windows.UI.Xaml.Automation.Peers.AutomationLiveSetting _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).abi_GetLiveSetting(element, &_ret));
+		Debug.OK(staticInstance.abi_GetLiveSetting(element, &_ret));
 		return _ret;
 	}
 	static void SetLiveSetting(Windows.UI.Xaml.DependencyObject element, Windows.UI.Xaml.Automation.Peers.AutomationLiveSetting value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IAutomationPropertiesStatics).abi_SetLiveSetting(element, value));
+		Debug.OK(staticInstance.abi_SetLiveSetting(element, value));
 	}
 }
 
@@ -1022,7 +1022,7 @@ interface DockPatternIdentifiers : Windows.UI.Xaml.Automation.IDockPatternIdenti
 	static Windows.UI.Xaml.Automation.AutomationProperty DockPositionProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IDockPatternIdentifiersStatics).get_DockPositionProperty(&_ret));
+		Debug.OK(staticInstance.get_DockPositionProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1038,25 +1038,25 @@ interface DragPatternIdentifiers : Windows.UI.Xaml.Automation.IDragPatternIdenti
 	static Windows.UI.Xaml.Automation.AutomationProperty DropEffectProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IDragPatternIdentifiersStatics).get_DropEffectProperty(&_ret));
+		Debug.OK(staticInstance.get_DropEffectProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty DropEffectsProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IDragPatternIdentifiersStatics).get_DropEffectsProperty(&_ret));
+		Debug.OK(staticInstance.get_DropEffectsProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty GrabbedItemsProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IDragPatternIdentifiersStatics).get_GrabbedItemsProperty(&_ret));
+		Debug.OK(staticInstance.get_GrabbedItemsProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty IsGrabbedProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IDragPatternIdentifiersStatics).get_IsGrabbedProperty(&_ret));
+		Debug.OK(staticInstance.get_IsGrabbedProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1072,13 +1072,13 @@ interface DropTargetPatternIdentifiers : Windows.UI.Xaml.Automation.IDropTargetP
 	static Windows.UI.Xaml.Automation.AutomationProperty DropTargetEffectProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IDropTargetPatternIdentifiersStatics).get_DropTargetEffectProperty(&_ret));
+		Debug.OK(staticInstance.get_DropTargetEffectProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty DropTargetEffectsProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IDropTargetPatternIdentifiersStatics).get_DropTargetEffectsProperty(&_ret));
+		Debug.OK(staticInstance.get_DropTargetEffectsProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1094,7 +1094,7 @@ interface ExpandCollapsePatternIdentifiers : Windows.UI.Xaml.Automation.IExpandC
 	static Windows.UI.Xaml.Automation.AutomationProperty ExpandCollapseStateProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IExpandCollapsePatternIdentifiersStatics).get_ExpandCollapseStateProperty(&_ret));
+		Debug.OK(staticInstance.get_ExpandCollapseStateProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1110,31 +1110,31 @@ interface GridItemPatternIdentifiers : Windows.UI.Xaml.Automation.IGridItemPatte
 	static Windows.UI.Xaml.Automation.AutomationProperty ColumnProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IGridItemPatternIdentifiersStatics).get_ColumnProperty(&_ret));
+		Debug.OK(staticInstance.get_ColumnProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty ColumnSpanProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IGridItemPatternIdentifiersStatics).get_ColumnSpanProperty(&_ret));
+		Debug.OK(staticInstance.get_ColumnSpanProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty ContainingGridProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IGridItemPatternIdentifiersStatics).get_ContainingGridProperty(&_ret));
+		Debug.OK(staticInstance.get_ContainingGridProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty RowProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IGridItemPatternIdentifiersStatics).get_RowProperty(&_ret));
+		Debug.OK(staticInstance.get_RowProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty RowSpanProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IGridItemPatternIdentifiersStatics).get_RowSpanProperty(&_ret));
+		Debug.OK(staticInstance.get_RowSpanProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1150,13 +1150,13 @@ interface GridPatternIdentifiers : Windows.UI.Xaml.Automation.IGridPatternIdenti
 	static Windows.UI.Xaml.Automation.AutomationProperty ColumnCountProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IGridPatternIdentifiersStatics).get_ColumnCountProperty(&_ret));
+		Debug.OK(staticInstance.get_ColumnCountProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty RowCountProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IGridPatternIdentifiersStatics).get_RowCountProperty(&_ret));
+		Debug.OK(staticInstance.get_RowCountProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1172,13 +1172,13 @@ interface MultipleViewPatternIdentifiers : Windows.UI.Xaml.Automation.IMultipleV
 	static Windows.UI.Xaml.Automation.AutomationProperty CurrentViewProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IMultipleViewPatternIdentifiersStatics).get_CurrentViewProperty(&_ret));
+		Debug.OK(staticInstance.get_CurrentViewProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty SupportedViewsProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IMultipleViewPatternIdentifiersStatics).get_SupportedViewsProperty(&_ret));
+		Debug.OK(staticInstance.get_SupportedViewsProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1194,37 +1194,37 @@ interface RangeValuePatternIdentifiers : Windows.UI.Xaml.Automation.IRangeValueP
 	static Windows.UI.Xaml.Automation.AutomationProperty IsReadOnlyProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IRangeValuePatternIdentifiersStatics).get_IsReadOnlyProperty(&_ret));
+		Debug.OK(staticInstance.get_IsReadOnlyProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty LargeChangeProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IRangeValuePatternIdentifiersStatics).get_LargeChangeProperty(&_ret));
+		Debug.OK(staticInstance.get_LargeChangeProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty MaximumProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IRangeValuePatternIdentifiersStatics).get_MaximumProperty(&_ret));
+		Debug.OK(staticInstance.get_MaximumProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty MinimumProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IRangeValuePatternIdentifiersStatics).get_MinimumProperty(&_ret));
+		Debug.OK(staticInstance.get_MinimumProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty SmallChangeProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IRangeValuePatternIdentifiersStatics).get_SmallChangeProperty(&_ret));
+		Debug.OK(staticInstance.get_SmallChangeProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty ValueProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IRangeValuePatternIdentifiersStatics).get_ValueProperty(&_ret));
+		Debug.OK(staticInstance.get_ValueProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1240,43 +1240,43 @@ interface ScrollPatternIdentifiers : Windows.UI.Xaml.Automation.IScrollPatternId
 	static Windows.UI.Xaml.Automation.AutomationProperty HorizontallyScrollableProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IScrollPatternIdentifiersStatics).get_HorizontallyScrollableProperty(&_ret));
+		Debug.OK(staticInstance.get_HorizontallyScrollableProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty HorizontalScrollPercentProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IScrollPatternIdentifiersStatics).get_HorizontalScrollPercentProperty(&_ret));
+		Debug.OK(staticInstance.get_HorizontalScrollPercentProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty HorizontalViewSizeProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IScrollPatternIdentifiersStatics).get_HorizontalViewSizeProperty(&_ret));
+		Debug.OK(staticInstance.get_HorizontalViewSizeProperty(&_ret));
 		return _ret;
 	}
 	static double NoScroll()
 	{
 		double _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IScrollPatternIdentifiersStatics).get_NoScroll(&_ret));
+		Debug.OK(staticInstance.get_NoScroll(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty VerticallyScrollableProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IScrollPatternIdentifiersStatics).get_VerticallyScrollableProperty(&_ret));
+		Debug.OK(staticInstance.get_VerticallyScrollableProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty VerticalScrollPercentProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IScrollPatternIdentifiersStatics).get_VerticalScrollPercentProperty(&_ret));
+		Debug.OK(staticInstance.get_VerticalScrollPercentProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty VerticalViewSizeProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IScrollPatternIdentifiersStatics).get_VerticalViewSizeProperty(&_ret));
+		Debug.OK(staticInstance.get_VerticalViewSizeProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1292,13 +1292,13 @@ interface SelectionItemPatternIdentifiers : Windows.UI.Xaml.Automation.ISelectio
 	static Windows.UI.Xaml.Automation.AutomationProperty IsSelectedProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.ISelectionItemPatternIdentifiersStatics).get_IsSelectedProperty(&_ret));
+		Debug.OK(staticInstance.get_IsSelectedProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty SelectionContainerProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.ISelectionItemPatternIdentifiersStatics).get_SelectionContainerProperty(&_ret));
+		Debug.OK(staticInstance.get_SelectionContainerProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1314,19 +1314,19 @@ interface SelectionPatternIdentifiers : Windows.UI.Xaml.Automation.ISelectionPat
 	static Windows.UI.Xaml.Automation.AutomationProperty CanSelectMultipleProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.ISelectionPatternIdentifiersStatics).get_CanSelectMultipleProperty(&_ret));
+		Debug.OK(staticInstance.get_CanSelectMultipleProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty IsSelectionRequiredProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.ISelectionPatternIdentifiersStatics).get_IsSelectionRequiredProperty(&_ret));
+		Debug.OK(staticInstance.get_IsSelectionRequiredProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty SelectionProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.ISelectionPatternIdentifiersStatics).get_SelectionProperty(&_ret));
+		Debug.OK(staticInstance.get_SelectionProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1342,7 +1342,7 @@ interface SpreadsheetItemPatternIdentifiers : Windows.UI.Xaml.Automation.ISpread
 	static Windows.UI.Xaml.Automation.AutomationProperty FormulaProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.ISpreadsheetItemPatternIdentifiersStatics).get_FormulaProperty(&_ret));
+		Debug.OK(staticInstance.get_FormulaProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1358,43 +1358,43 @@ interface StylesPatternIdentifiers : Windows.UI.Xaml.Automation.IStylesPatternId
 	static Windows.UI.Xaml.Automation.AutomationProperty ExtendedPropertiesProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IStylesPatternIdentifiersStatics).get_ExtendedPropertiesProperty(&_ret));
+		Debug.OK(staticInstance.get_ExtendedPropertiesProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty FillColorProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IStylesPatternIdentifiersStatics).get_FillColorProperty(&_ret));
+		Debug.OK(staticInstance.get_FillColorProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty FillPatternColorProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IStylesPatternIdentifiersStatics).get_FillPatternColorProperty(&_ret));
+		Debug.OK(staticInstance.get_FillPatternColorProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty FillPatternStyleProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IStylesPatternIdentifiersStatics).get_FillPatternStyleProperty(&_ret));
+		Debug.OK(staticInstance.get_FillPatternStyleProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty ShapeProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IStylesPatternIdentifiersStatics).get_ShapeProperty(&_ret));
+		Debug.OK(staticInstance.get_ShapeProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty StyleIdProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IStylesPatternIdentifiersStatics).get_StyleIdProperty(&_ret));
+		Debug.OK(staticInstance.get_StyleIdProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty StyleNameProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IStylesPatternIdentifiersStatics).get_StyleNameProperty(&_ret));
+		Debug.OK(staticInstance.get_StyleNameProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1410,13 +1410,13 @@ interface TableItemPatternIdentifiers : Windows.UI.Xaml.Automation.ITableItemPat
 	static Windows.UI.Xaml.Automation.AutomationProperty ColumnHeaderItemsProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.ITableItemPatternIdentifiersStatics).get_ColumnHeaderItemsProperty(&_ret));
+		Debug.OK(staticInstance.get_ColumnHeaderItemsProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty RowHeaderItemsProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.ITableItemPatternIdentifiersStatics).get_RowHeaderItemsProperty(&_ret));
+		Debug.OK(staticInstance.get_RowHeaderItemsProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1432,19 +1432,19 @@ interface TablePatternIdentifiers : Windows.UI.Xaml.Automation.ITablePatternIden
 	static Windows.UI.Xaml.Automation.AutomationProperty ColumnHeadersProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.ITablePatternIdentifiersStatics).get_ColumnHeadersProperty(&_ret));
+		Debug.OK(staticInstance.get_ColumnHeadersProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty RowHeadersProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.ITablePatternIdentifiersStatics).get_RowHeadersProperty(&_ret));
+		Debug.OK(staticInstance.get_RowHeadersProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty RowOrColumnMajorProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.ITablePatternIdentifiersStatics).get_RowOrColumnMajorProperty(&_ret));
+		Debug.OK(staticInstance.get_RowOrColumnMajorProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1460,7 +1460,7 @@ interface TogglePatternIdentifiers : Windows.UI.Xaml.Automation.ITogglePatternId
 	static Windows.UI.Xaml.Automation.AutomationProperty ToggleStateProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.ITogglePatternIdentifiersStatics).get_ToggleStateProperty(&_ret));
+		Debug.OK(staticInstance.get_ToggleStateProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1476,25 +1476,25 @@ interface TransformPattern2Identifiers : Windows.UI.Xaml.Automation.ITransformPa
 	static Windows.UI.Xaml.Automation.AutomationProperty CanZoomProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.ITransformPattern2IdentifiersStatics).get_CanZoomProperty(&_ret));
+		Debug.OK(staticInstance.get_CanZoomProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty ZoomLevelProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.ITransformPattern2IdentifiersStatics).get_ZoomLevelProperty(&_ret));
+		Debug.OK(staticInstance.get_ZoomLevelProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty MaxZoomProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.ITransformPattern2IdentifiersStatics).get_MaxZoomProperty(&_ret));
+		Debug.OK(staticInstance.get_MaxZoomProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty MinZoomProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.ITransformPattern2IdentifiersStatics).get_MinZoomProperty(&_ret));
+		Debug.OK(staticInstance.get_MinZoomProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1510,19 +1510,19 @@ interface TransformPatternIdentifiers : Windows.UI.Xaml.Automation.ITransformPat
 	static Windows.UI.Xaml.Automation.AutomationProperty CanMoveProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.ITransformPatternIdentifiersStatics).get_CanMoveProperty(&_ret));
+		Debug.OK(staticInstance.get_CanMoveProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty CanResizeProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.ITransformPatternIdentifiersStatics).get_CanResizeProperty(&_ret));
+		Debug.OK(staticInstance.get_CanResizeProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty CanRotateProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.ITransformPatternIdentifiersStatics).get_CanRotateProperty(&_ret));
+		Debug.OK(staticInstance.get_CanRotateProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1538,13 +1538,13 @@ interface ValuePatternIdentifiers : Windows.UI.Xaml.Automation.IValuePatternIden
 	static Windows.UI.Xaml.Automation.AutomationProperty IsReadOnlyProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IValuePatternIdentifiersStatics).get_IsReadOnlyProperty(&_ret));
+		Debug.OK(staticInstance.get_IsReadOnlyProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty ValueProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IValuePatternIdentifiersStatics).get_ValueProperty(&_ret));
+		Debug.OK(staticInstance.get_ValueProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1560,37 +1560,37 @@ interface WindowPatternIdentifiers : Windows.UI.Xaml.Automation.IWindowPatternId
 	static Windows.UI.Xaml.Automation.AutomationProperty CanMaximizeProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IWindowPatternIdentifiersStatics).get_CanMaximizeProperty(&_ret));
+		Debug.OK(staticInstance.get_CanMaximizeProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty CanMinimizeProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IWindowPatternIdentifiersStatics).get_CanMinimizeProperty(&_ret));
+		Debug.OK(staticInstance.get_CanMinimizeProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty IsModalProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IWindowPatternIdentifiersStatics).get_IsModalProperty(&_ret));
+		Debug.OK(staticInstance.get_IsModalProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty IsTopmostProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IWindowPatternIdentifiersStatics).get_IsTopmostProperty(&_ret));
+		Debug.OK(staticInstance.get_IsTopmostProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty WindowInteractionStateProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IWindowPatternIdentifiersStatics).get_WindowInteractionStateProperty(&_ret));
+		Debug.OK(staticInstance.get_WindowInteractionStateProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.AutomationProperty WindowVisualStateProperty()
 	{
 		Windows.UI.Xaml.Automation.AutomationProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.IWindowPatternIdentifiersStatics).get_WindowVisualStateProperty(&_ret));
+		Debug.OK(staticInstance.get_WindowVisualStateProperty(&_ret));
 		return _ret;
 	}
 }

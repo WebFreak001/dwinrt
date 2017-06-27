@@ -53,28 +53,28 @@ extern(Windows):
 	final Windows.Foundation.IAsyncAction RunAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.System.Threading.Core.IPreallocatedWorkItem).abi_RunAsync(&_ret));
+		Debug.OK((cast(Windows.System.Threading.Core.IPreallocatedWorkItem)this.asInterface(uuid("b6daa9fc-bc5b-401a-a8b2-6e754d14daa6"))).abi_RunAsync(&_ret));
 		return _ret;
 	}
 	static Windows.System.Threading.Core.PreallocatedWorkItem New(Windows.System.Threading.WorkItemHandler handler)
 	{
 		auto factory = factory!(Windows.System.Threading.Core.IPreallocatedWorkItemFactory);
 		Windows.System.Threading.Core.PreallocatedWorkItem _ret;
-		Debug.OK(factory.as!(Windows.System.Threading.Core.IPreallocatedWorkItemFactory).abi_CreateWorkItem(handler, &_ret));
+		Debug.OK((cast(Windows.System.Threading.Core.IPreallocatedWorkItemFactory)factory.asInterface(uuid("e3d32b45-dfea-469b-82c5-f6e3cefdeafb"))).abi_CreateWorkItem(handler, &_ret));
 		return _ret;
 	}
 	static Windows.System.Threading.Core.PreallocatedWorkItem New(Windows.System.Threading.WorkItemHandler handler, Windows.System.Threading.WorkItemPriority priority)
 	{
 		auto factory = factory!(Windows.System.Threading.Core.IPreallocatedWorkItemFactory);
 		Windows.System.Threading.Core.PreallocatedWorkItem _ret;
-		Debug.OK(factory.as!(Windows.System.Threading.Core.IPreallocatedWorkItemFactory).abi_CreateWorkItemWithPriority(handler, priority, &_ret));
+		Debug.OK((cast(Windows.System.Threading.Core.IPreallocatedWorkItemFactory)factory.asInterface(uuid("e3d32b45-dfea-469b-82c5-f6e3cefdeafb"))).abi_CreateWorkItemWithPriority(handler, priority, &_ret));
 		return _ret;
 	}
 	static Windows.System.Threading.Core.PreallocatedWorkItem New(Windows.System.Threading.WorkItemHandler handler, Windows.System.Threading.WorkItemPriority priority, Windows.System.Threading.WorkItemOptions options)
 	{
 		auto factory = factory!(Windows.System.Threading.Core.IPreallocatedWorkItemFactory);
 		Windows.System.Threading.Core.PreallocatedWorkItem _ret;
-		Debug.OK(factory.as!(Windows.System.Threading.Core.IPreallocatedWorkItemFactory).abi_CreateWorkItemWithPriorityAndOptions(handler, priority, options, &_ret));
+		Debug.OK((cast(Windows.System.Threading.Core.IPreallocatedWorkItemFactory)factory.asInterface(uuid("e3d32b45-dfea-469b-82c5-f6e3cefdeafb"))).abi_CreateWorkItemWithPriorityAndOptions(handler, priority, options, &_ret));
 		return _ret;
 	}
 }
@@ -84,11 +84,11 @@ interface SignalNotifier : Windows.System.Threading.Core.ISignalNotifier
 extern(Windows):
 	final void Enable()
 	{
-		Debug.OK(this.as!(Windows.System.Threading.Core.ISignalNotifier).abi_Enable());
+		Debug.OK((cast(Windows.System.Threading.Core.ISignalNotifier)this.asInterface(uuid("14285e06-63a7-4713-b6d9-62f64b56fb8b"))).abi_Enable());
 	}
 	final void Terminate()
 	{
-		Debug.OK(this.as!(Windows.System.Threading.Core.ISignalNotifier).abi_Terminate());
+		Debug.OK((cast(Windows.System.Threading.Core.ISignalNotifier)this.asInterface(uuid("14285e06-63a7-4713-b6d9-62f64b56fb8b"))).abi_Terminate());
 	}
 
 	private static Windows.System.Threading.Core.ISignalNotifierStatics _staticInstance;
@@ -100,25 +100,25 @@ extern(Windows):
 	static Windows.System.Threading.Core.SignalNotifier AttachToEvent(HSTRING name, Windows.System.Threading.Core.SignalHandler handler)
 	{
 		Windows.System.Threading.Core.SignalNotifier _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Threading.Core.ISignalNotifierStatics).abi_AttachToEvent(name, handler, &_ret));
+		Debug.OK(staticInstance.abi_AttachToEvent(name, handler, &_ret));
 		return _ret;
 	}
 	static Windows.System.Threading.Core.SignalNotifier AttachToEventWithTimeout(HSTRING name, Windows.System.Threading.Core.SignalHandler handler, Windows.Foundation.TimeSpan timeout)
 	{
 		Windows.System.Threading.Core.SignalNotifier _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Threading.Core.ISignalNotifierStatics).abi_AttachToEventWithTimeout(name, handler, timeout, &_ret));
+		Debug.OK(staticInstance.abi_AttachToEventWithTimeout(name, handler, timeout, &_ret));
 		return _ret;
 	}
 	static Windows.System.Threading.Core.SignalNotifier AttachToSemaphore(HSTRING name, Windows.System.Threading.Core.SignalHandler handler)
 	{
 		Windows.System.Threading.Core.SignalNotifier _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Threading.Core.ISignalNotifierStatics).abi_AttachToSemaphore(name, handler, &_ret));
+		Debug.OK(staticInstance.abi_AttachToSemaphore(name, handler, &_ret));
 		return _ret;
 	}
 	static Windows.System.Threading.Core.SignalNotifier AttachToSemaphoreWithTimeout(HSTRING name, Windows.System.Threading.Core.SignalHandler handler, Windows.Foundation.TimeSpan timeout)
 	{
 		Windows.System.Threading.Core.SignalNotifier _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Threading.Core.ISignalNotifierStatics).abi_AttachToSemaphoreWithTimeout(name, handler, timeout, &_ret));
+		Debug.OK(staticInstance.abi_AttachToSemaphoreWithTimeout(name, handler, timeout, &_ret));
 		return _ret;
 	}
 }

@@ -85,56 +85,56 @@ extern(Windows):
 	final GUID Id()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation).get_Id(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation)this.asInterface(uuid("54dfd981-1968-4ca3-b958-e595d16505eb"))).get_Id(&_ret));
 		return _ret;
 	}
 	final HSTRING OperatingSystem()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation).get_OperatingSystem(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation)this.asInterface(uuid("54dfd981-1968-4ca3-b958-e595d16505eb"))).get_OperatingSystem(&_ret));
 		return _ret;
 	}
 	final HSTRING FriendlyName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation).get_FriendlyName(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation)this.asInterface(uuid("54dfd981-1968-4ca3-b958-e595d16505eb"))).get_FriendlyName(&_ret));
 		return _ret;
 	}
 	final HSTRING SystemManufacturer()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation).get_SystemManufacturer(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation)this.asInterface(uuid("54dfd981-1968-4ca3-b958-e595d16505eb"))).get_SystemManufacturer(&_ret));
 		return _ret;
 	}
 	final HSTRING SystemProductName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation).get_SystemProductName(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation)this.asInterface(uuid("54dfd981-1968-4ca3-b958-e595d16505eb"))).get_SystemProductName(&_ret));
 		return _ret;
 	}
 	final HSTRING SystemSku()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation).get_SystemSku(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation)this.asInterface(uuid("54dfd981-1968-4ca3-b958-e595d16505eb"))).get_SystemSku(&_ret));
 		return _ret;
 	}
 	final HSTRING SystemHardwareVersion()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation2).get_SystemHardwareVersion(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation2)this.asInterface(uuid("ffb35923-bb26-4d6a-81bc-165aee0ad754"))).get_SystemHardwareVersion(&_ret));
 		return _ret;
 	}
 	final HSTRING SystemFirmwareVersion()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation2).get_SystemFirmwareVersion(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientDeviceInformation2)this.asInterface(uuid("ffb35923-bb26-4d6a-81bc-165aee0ad754"))).get_SystemFirmwareVersion(&_ret));
 		return _ret;
 	}
 	static EasClientDeviceInformation New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(EasClientDeviceInformation).abi_ActivateInstance(&ret));
-		return ret.as!(EasClientDeviceInformation);
+		return cast(EasClientDeviceInformation) ret;
 	}
 }
 
@@ -144,100 +144,100 @@ extern(Windows):
 	final bool RequireEncryption()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).get_RequireEncryption(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy)this.asInterface(uuid("45b72362-dfba-4a9b-aced-6fe2adcb6420"))).get_RequireEncryption(&_ret));
 		return _ret;
 	}
 	final void RequireEncryption(bool value)
 	{
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).set_RequireEncryption(value));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy)this.asInterface(uuid("45b72362-dfba-4a9b-aced-6fe2adcb6420"))).set_RequireEncryption(value));
 	}
 	final ubyte MinPasswordLength()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).get_MinPasswordLength(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy)this.asInterface(uuid("45b72362-dfba-4a9b-aced-6fe2adcb6420"))).get_MinPasswordLength(&_ret));
 		return _ret;
 	}
 	final void MinPasswordLength(ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).set_MinPasswordLength(value));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy)this.asInterface(uuid("45b72362-dfba-4a9b-aced-6fe2adcb6420"))).set_MinPasswordLength(value));
 	}
 	final bool DisallowConvenienceLogon()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).get_DisallowConvenienceLogon(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy)this.asInterface(uuid("45b72362-dfba-4a9b-aced-6fe2adcb6420"))).get_DisallowConvenienceLogon(&_ret));
 		return _ret;
 	}
 	final void DisallowConvenienceLogon(bool value)
 	{
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).set_DisallowConvenienceLogon(value));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy)this.asInterface(uuid("45b72362-dfba-4a9b-aced-6fe2adcb6420"))).set_DisallowConvenienceLogon(value));
 	}
 	final ubyte MinPasswordComplexCharacters()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).get_MinPasswordComplexCharacters(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy)this.asInterface(uuid("45b72362-dfba-4a9b-aced-6fe2adcb6420"))).get_MinPasswordComplexCharacters(&_ret));
 		return _ret;
 	}
 	final void MinPasswordComplexCharacters(ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).set_MinPasswordComplexCharacters(value));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy)this.asInterface(uuid("45b72362-dfba-4a9b-aced-6fe2adcb6420"))).set_MinPasswordComplexCharacters(value));
 	}
 	final Windows.Foundation.TimeSpan PasswordExpiration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).get_PasswordExpiration(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy)this.asInterface(uuid("45b72362-dfba-4a9b-aced-6fe2adcb6420"))).get_PasswordExpiration(&_ret));
 		return _ret;
 	}
 	final void PasswordExpiration(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).set_PasswordExpiration(value));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy)this.asInterface(uuid("45b72362-dfba-4a9b-aced-6fe2adcb6420"))).set_PasswordExpiration(value));
 	}
 	final UINT32 PasswordHistory()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).get_PasswordHistory(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy)this.asInterface(uuid("45b72362-dfba-4a9b-aced-6fe2adcb6420"))).get_PasswordHistory(&_ret));
 		return _ret;
 	}
 	final void PasswordHistory(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).set_PasswordHistory(value));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy)this.asInterface(uuid("45b72362-dfba-4a9b-aced-6fe2adcb6420"))).set_PasswordHistory(value));
 	}
 	final ubyte MaxPasswordFailedAttempts()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).get_MaxPasswordFailedAttempts(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy)this.asInterface(uuid("45b72362-dfba-4a9b-aced-6fe2adcb6420"))).get_MaxPasswordFailedAttempts(&_ret));
 		return _ret;
 	}
 	final void MaxPasswordFailedAttempts(ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).set_MaxPasswordFailedAttempts(value));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy)this.asInterface(uuid("45b72362-dfba-4a9b-aced-6fe2adcb6420"))).set_MaxPasswordFailedAttempts(value));
 	}
 	final Windows.Foundation.TimeSpan MaxInactivityTimeLock()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).get_MaxInactivityTimeLock(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy)this.asInterface(uuid("45b72362-dfba-4a9b-aced-6fe2adcb6420"))).get_MaxInactivityTimeLock(&_ret));
 		return _ret;
 	}
 	final void MaxInactivityTimeLock(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).set_MaxInactivityTimeLock(value));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy)this.asInterface(uuid("45b72362-dfba-4a9b-aced-6fe2adcb6420"))).set_MaxInactivityTimeLock(value));
 	}
 	final Windows.Security.ExchangeActiveSyncProvisioning.EasComplianceResults CheckCompliance()
 	{
 		Windows.Security.ExchangeActiveSyncProvisioning.EasComplianceResults _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).abi_CheckCompliance(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy)this.asInterface(uuid("45b72362-dfba-4a9b-aced-6fe2adcb6420"))).abi_CheckCompliance(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Security.ExchangeActiveSyncProvisioning.EasComplianceResults) ApplyAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.ExchangeActiveSyncProvisioning.EasComplianceResults) _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy).abi_ApplyAsync(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasClientSecurityPolicy)this.asInterface(uuid("45b72362-dfba-4a9b-aced-6fe2adcb6420"))).abi_ApplyAsync(&_ret));
 		return _ret;
 	}
 	static EasClientSecurityPolicy New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(EasClientSecurityPolicy).abi_ActivateInstance(&ret));
-		return ret.as!(EasClientSecurityPolicy);
+		return cast(EasClientSecurityPolicy) ret;
 	}
 }
 
@@ -247,61 +247,61 @@ extern(Windows):
 	final bool Compliant()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults).get_Compliant(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults)this.asInterface(uuid("463c299c-7f19-4c66-b403-cb45dd57a2b3"))).get_Compliant(&_ret));
 		return _ret;
 	}
 	final Windows.Security.ExchangeActiveSyncProvisioning.EasRequireEncryptionResult RequireEncryptionResult()
 	{
 		Windows.Security.ExchangeActiveSyncProvisioning.EasRequireEncryptionResult _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults).get_RequireEncryptionResult(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults)this.asInterface(uuid("463c299c-7f19-4c66-b403-cb45dd57a2b3"))).get_RequireEncryptionResult(&_ret));
 		return _ret;
 	}
 	final Windows.Security.ExchangeActiveSyncProvisioning.EasMinPasswordLengthResult MinPasswordLengthResult()
 	{
 		Windows.Security.ExchangeActiveSyncProvisioning.EasMinPasswordLengthResult _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults).get_MinPasswordLengthResult(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults)this.asInterface(uuid("463c299c-7f19-4c66-b403-cb45dd57a2b3"))).get_MinPasswordLengthResult(&_ret));
 		return _ret;
 	}
 	final Windows.Security.ExchangeActiveSyncProvisioning.EasDisallowConvenienceLogonResult DisallowConvenienceLogonResult()
 	{
 		Windows.Security.ExchangeActiveSyncProvisioning.EasDisallowConvenienceLogonResult _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults).get_DisallowConvenienceLogonResult(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults)this.asInterface(uuid("463c299c-7f19-4c66-b403-cb45dd57a2b3"))).get_DisallowConvenienceLogonResult(&_ret));
 		return _ret;
 	}
 	final Windows.Security.ExchangeActiveSyncProvisioning.EasMinPasswordComplexCharactersResult MinPasswordComplexCharactersResult()
 	{
 		Windows.Security.ExchangeActiveSyncProvisioning.EasMinPasswordComplexCharactersResult _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults).get_MinPasswordComplexCharactersResult(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults)this.asInterface(uuid("463c299c-7f19-4c66-b403-cb45dd57a2b3"))).get_MinPasswordComplexCharactersResult(&_ret));
 		return _ret;
 	}
 	final Windows.Security.ExchangeActiveSyncProvisioning.EasPasswordExpirationResult PasswordExpirationResult()
 	{
 		Windows.Security.ExchangeActiveSyncProvisioning.EasPasswordExpirationResult _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults).get_PasswordExpirationResult(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults)this.asInterface(uuid("463c299c-7f19-4c66-b403-cb45dd57a2b3"))).get_PasswordExpirationResult(&_ret));
 		return _ret;
 	}
 	final Windows.Security.ExchangeActiveSyncProvisioning.EasPasswordHistoryResult PasswordHistoryResult()
 	{
 		Windows.Security.ExchangeActiveSyncProvisioning.EasPasswordHistoryResult _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults).get_PasswordHistoryResult(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults)this.asInterface(uuid("463c299c-7f19-4c66-b403-cb45dd57a2b3"))).get_PasswordHistoryResult(&_ret));
 		return _ret;
 	}
 	final Windows.Security.ExchangeActiveSyncProvisioning.EasMaxPasswordFailedAttemptsResult MaxPasswordFailedAttemptsResult()
 	{
 		Windows.Security.ExchangeActiveSyncProvisioning.EasMaxPasswordFailedAttemptsResult _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults).get_MaxPasswordFailedAttemptsResult(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults)this.asInterface(uuid("463c299c-7f19-4c66-b403-cb45dd57a2b3"))).get_MaxPasswordFailedAttemptsResult(&_ret));
 		return _ret;
 	}
 	final Windows.Security.ExchangeActiveSyncProvisioning.EasMaxInactivityTimeLockResult MaxInactivityTimeLockResult()
 	{
 		Windows.Security.ExchangeActiveSyncProvisioning.EasMaxInactivityTimeLockResult _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults).get_MaxInactivityTimeLockResult(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults)this.asInterface(uuid("463c299c-7f19-4c66-b403-cb45dd57a2b3"))).get_MaxInactivityTimeLockResult(&_ret));
 		return _ret;
 	}
 	final Windows.Security.ExchangeActiveSyncProvisioning.EasEncryptionProviderType EncryptionProviderType()
 	{
 		Windows.Security.ExchangeActiveSyncProvisioning.EasEncryptionProviderType _ret;
-		Debug.OK(this.as!(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults2).get_EncryptionProviderType(&_ret));
+		Debug.OK((cast(Windows.Security.ExchangeActiveSyncProvisioning.IEasComplianceResults2)this.asInterface(uuid("2fbe60c9-1aa8-47f5-88bb-cb3ef0bffb15"))).get_EncryptionProviderType(&_ret));
 		return _ret;
 	}
 }

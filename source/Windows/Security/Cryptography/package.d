@@ -31,65 +31,65 @@ interface CryptographicBuffer
 	static bool Compare(Windows.Storage.Streams.IBuffer object1, Windows.Storage.Streams.IBuffer object2)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.ICryptographicBufferStatics).abi_Compare(object1, object2, &_ret));
+		Debug.OK(staticInstance.abi_Compare(object1, object2, &_ret));
 		return _ret;
 	}
 	static Windows.Storage.Streams.IBuffer GenerateRandom(UINT32 length)
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.ICryptographicBufferStatics).abi_GenerateRandom(length, &_ret));
+		Debug.OK(staticInstance.abi_GenerateRandom(length, &_ret));
 		return _ret;
 	}
 	static UINT32 GenerateRandomNumber()
 	{
 		UINT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.ICryptographicBufferStatics).abi_GenerateRandomNumber(&_ret));
+		Debug.OK(staticInstance.abi_GenerateRandomNumber(&_ret));
 		return _ret;
 	}
 	static Windows.Storage.Streams.IBuffer CreateFromByteArray(UINT32 __valueSize, ubyte* value)
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.ICryptographicBufferStatics).abi_CreateFromByteArray(__valueSize, value, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromByteArray(__valueSize, value, &_ret));
 		return _ret;
 	}
 	static void CopyToByteArray(Windows.Storage.Streams.IBuffer buffer, UINT32* out___valueSize, ubyte** out_value)
 	{
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.ICryptographicBufferStatics).abi_CopyToByteArray(buffer, out___valueSize, out_value));
+		Debug.OK(staticInstance.abi_CopyToByteArray(buffer, out___valueSize, out_value));
 	}
 	static Windows.Storage.Streams.IBuffer DecodeFromHexString(HSTRING value)
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.ICryptographicBufferStatics).abi_DecodeFromHexString(value, &_ret));
+		Debug.OK(staticInstance.abi_DecodeFromHexString(value, &_ret));
 		return _ret;
 	}
 	static HSTRING EncodeToHexString(Windows.Storage.Streams.IBuffer buffer)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.ICryptographicBufferStatics).abi_EncodeToHexString(buffer, &_ret));
+		Debug.OK(staticInstance.abi_EncodeToHexString(buffer, &_ret));
 		return _ret;
 	}
 	static Windows.Storage.Streams.IBuffer DecodeFromBase64String(HSTRING value)
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.ICryptographicBufferStatics).abi_DecodeFromBase64String(value, &_ret));
+		Debug.OK(staticInstance.abi_DecodeFromBase64String(value, &_ret));
 		return _ret;
 	}
 	static HSTRING EncodeToBase64String(Windows.Storage.Streams.IBuffer buffer)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.ICryptographicBufferStatics).abi_EncodeToBase64String(buffer, &_ret));
+		Debug.OK(staticInstance.abi_EncodeToBase64String(buffer, &_ret));
 		return _ret;
 	}
 	static Windows.Storage.Streams.IBuffer ConvertStringToBinary(HSTRING value, Windows.Security.Cryptography.BinaryStringEncoding encoding)
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.ICryptographicBufferStatics).abi_ConvertStringToBinary(value, encoding, &_ret));
+		Debug.OK(staticInstance.abi_ConvertStringToBinary(value, encoding, &_ret));
 		return _ret;
 	}
 	static HSTRING ConvertBinaryToString(Windows.Security.Cryptography.BinaryStringEncoding encoding, Windows.Storage.Streams.IBuffer buffer)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.ICryptographicBufferStatics).abi_ConvertBinaryToString(encoding, buffer, &_ret));
+		Debug.OK(staticInstance.abi_ConvertBinaryToString(encoding, buffer, &_ret));
 		return _ret;
 	}
 }

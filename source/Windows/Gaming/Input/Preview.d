@@ -22,13 +22,13 @@ interface GameControllerProviderInfo
 	static HSTRING GetParentProviderId(Windows.Gaming.Input.Custom.IGameControllerProvider provider)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.Preview.IGameControllerProviderInfoStatics).abi_GetParentProviderId(provider, &_ret));
+		Debug.OK(staticInstance.abi_GetParentProviderId(provider, &_ret));
 		return _ret;
 	}
 	static HSTRING GetProviderId(Windows.Gaming.Input.Custom.IGameControllerProvider provider)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Gaming.Input.Preview.IGameControllerProviderInfoStatics).abi_GetProviderId(provider, &_ret));
+		Debug.OK(staticInstance.abi_GetProviderId(provider, &_ret));
 		return _ret;
 	}
 }

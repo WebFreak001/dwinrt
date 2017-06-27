@@ -28,7 +28,7 @@ interface WebError
 	static Windows.Web.WebErrorStatus GetStatus(INT32 hresult)
 	{
 		Windows.Web.WebErrorStatus _ret;
-		Debug.OK(staticInstance.as!(Windows.Web.IWebErrorStatics).abi_GetStatus(hresult, &_ret));
+		Debug.OK(staticInstance.abi_GetStatus(hresult, &_ret));
 		return _ret;
 	}
 }

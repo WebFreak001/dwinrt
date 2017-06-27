@@ -66,38 +66,38 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation) Animations()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation) _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IAnimationDescription).get_Animations(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IAnimationDescription)this.asInterface(uuid("7d11a549-be3d-41de-b081-05c149962f9b"))).get_Animations(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan StaggerDelay()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IAnimationDescription).get_StaggerDelay(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IAnimationDescription)this.asInterface(uuid("7d11a549-be3d-41de-b081-05c149962f9b"))).get_StaggerDelay(&_ret));
 		return _ret;
 	}
 	final float StaggerDelayFactor()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IAnimationDescription).get_StaggerDelayFactor(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IAnimationDescription)this.asInterface(uuid("7d11a549-be3d-41de-b081-05c149962f9b"))).get_StaggerDelayFactor(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan DelayLimit()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IAnimationDescription).get_DelayLimit(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IAnimationDescription)this.asInterface(uuid("7d11a549-be3d-41de-b081-05c149962f9b"))).get_DelayLimit(&_ret));
 		return _ret;
 	}
 	final INT32 ZOrder()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IAnimationDescription).get_ZOrder(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IAnimationDescription)this.asInterface(uuid("7d11a549-be3d-41de-b081-05c149962f9b"))).get_ZOrder(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Core.AnimationMetrics.AnimationDescription New(Windows.UI.Core.AnimationMetrics.AnimationEffect effect, Windows.UI.Core.AnimationMetrics.AnimationEffectTarget target)
 	{
 		auto factory = factory!(Windows.UI.Core.AnimationMetrics.IAnimationDescriptionFactory);
 		Windows.UI.Core.AnimationMetrics.AnimationDescription _ret;
-		Debug.OK(factory.as!(Windows.UI.Core.AnimationMetrics.IAnimationDescriptionFactory).abi_CreateInstance(effect, target, &_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IAnimationDescriptionFactory)factory.asInterface(uuid("c6e27abe-c1fb-48b5-9271-ecc70ac86ef0"))).abi_CreateInstance(effect, target, &_ret));
 		return _ret;
 	}
 }
@@ -108,43 +108,43 @@ extern(Windows):
 	final Windows.Foundation.IReference!(float) InitialOpacity()
 	{
 		Windows.Foundation.IReference!(float) _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IOpacityAnimation).get_InitialOpacity(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IOpacityAnimation)this.asInterface(uuid("803aabe5-ee7e-455f-84e9-2506afb8d2b4"))).get_InitialOpacity(&_ret));
 		return _ret;
 	}
 	final float FinalOpacity()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IOpacityAnimation).get_FinalOpacity(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IOpacityAnimation)this.asInterface(uuid("803aabe5-ee7e-455f-84e9-2506afb8d2b4"))).get_FinalOpacity(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Core.AnimationMetrics.PropertyAnimationType Type()
 	{
 		Windows.UI.Core.AnimationMetrics.PropertyAnimationType _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Type(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IPropertyAnimation)this.asInterface(uuid("3a01b4da-4d8c-411e-b615-1ade683a9903"))).get_Type(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Delay()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Delay(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IPropertyAnimation)this.asInterface(uuid("3a01b4da-4d8c-411e-b615-1ade683a9903"))).get_Delay(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Duration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Duration(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IPropertyAnimation)this.asInterface(uuid("3a01b4da-4d8c-411e-b615-1ade683a9903"))).get_Duration(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point Control1()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Control1(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IPropertyAnimation)this.asInterface(uuid("3a01b4da-4d8c-411e-b615-1ade683a9903"))).get_Control1(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point Control2()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Control2(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IPropertyAnimation)this.asInterface(uuid("3a01b4da-4d8c-411e-b615-1ade683a9903"))).get_Control2(&_ret));
 		return _ret;
 	}
 }
@@ -155,31 +155,31 @@ extern(Windows):
 	final Windows.UI.Core.AnimationMetrics.PropertyAnimationType Type()
 	{
 		Windows.UI.Core.AnimationMetrics.PropertyAnimationType _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Type(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IPropertyAnimation)this.asInterface(uuid("3a01b4da-4d8c-411e-b615-1ade683a9903"))).get_Type(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Delay()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Delay(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IPropertyAnimation)this.asInterface(uuid("3a01b4da-4d8c-411e-b615-1ade683a9903"))).get_Delay(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Duration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Duration(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IPropertyAnimation)this.asInterface(uuid("3a01b4da-4d8c-411e-b615-1ade683a9903"))).get_Duration(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point Control1()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Control1(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IPropertyAnimation)this.asInterface(uuid("3a01b4da-4d8c-411e-b615-1ade683a9903"))).get_Control1(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point Control2()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Control2(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IPropertyAnimation)this.asInterface(uuid("3a01b4da-4d8c-411e-b615-1ade683a9903"))).get_Control2(&_ret));
 		return _ret;
 	}
 }
@@ -190,61 +190,61 @@ extern(Windows):
 	final Windows.Foundation.IReference!(float) InitialScaleX()
 	{
 		Windows.Foundation.IReference!(float) _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IScaleAnimation).get_InitialScaleX(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IScaleAnimation)this.asInterface(uuid("023552c7-71ab-428c-9c9f-d31780964995"))).get_InitialScaleX(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(float) InitialScaleY()
 	{
 		Windows.Foundation.IReference!(float) _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IScaleAnimation).get_InitialScaleY(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IScaleAnimation)this.asInterface(uuid("023552c7-71ab-428c-9c9f-d31780964995"))).get_InitialScaleY(&_ret));
 		return _ret;
 	}
 	final float FinalScaleX()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IScaleAnimation).get_FinalScaleX(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IScaleAnimation)this.asInterface(uuid("023552c7-71ab-428c-9c9f-d31780964995"))).get_FinalScaleX(&_ret));
 		return _ret;
 	}
 	final float FinalScaleY()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IScaleAnimation).get_FinalScaleY(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IScaleAnimation)this.asInterface(uuid("023552c7-71ab-428c-9c9f-d31780964995"))).get_FinalScaleY(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point NormalizedOrigin()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IScaleAnimation).get_NormalizedOrigin(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IScaleAnimation)this.asInterface(uuid("023552c7-71ab-428c-9c9f-d31780964995"))).get_NormalizedOrigin(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Core.AnimationMetrics.PropertyAnimationType Type()
 	{
 		Windows.UI.Core.AnimationMetrics.PropertyAnimationType _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Type(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IPropertyAnimation)this.asInterface(uuid("3a01b4da-4d8c-411e-b615-1ade683a9903"))).get_Type(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Delay()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Delay(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IPropertyAnimation)this.asInterface(uuid("3a01b4da-4d8c-411e-b615-1ade683a9903"))).get_Delay(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Duration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Duration(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IPropertyAnimation)this.asInterface(uuid("3a01b4da-4d8c-411e-b615-1ade683a9903"))).get_Duration(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point Control1()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Control1(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IPropertyAnimation)this.asInterface(uuid("3a01b4da-4d8c-411e-b615-1ade683a9903"))).get_Control1(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point Control2()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Control2(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IPropertyAnimation)this.asInterface(uuid("3a01b4da-4d8c-411e-b615-1ade683a9903"))).get_Control2(&_ret));
 		return _ret;
 	}
 }
@@ -255,31 +255,31 @@ extern(Windows):
 	final Windows.UI.Core.AnimationMetrics.PropertyAnimationType Type()
 	{
 		Windows.UI.Core.AnimationMetrics.PropertyAnimationType _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Type(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IPropertyAnimation)this.asInterface(uuid("3a01b4da-4d8c-411e-b615-1ade683a9903"))).get_Type(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Delay()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Delay(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IPropertyAnimation)this.asInterface(uuid("3a01b4da-4d8c-411e-b615-1ade683a9903"))).get_Delay(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Duration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Duration(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IPropertyAnimation)this.asInterface(uuid("3a01b4da-4d8c-411e-b615-1ade683a9903"))).get_Duration(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point Control1()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Control1(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IPropertyAnimation)this.asInterface(uuid("3a01b4da-4d8c-411e-b615-1ade683a9903"))).get_Control1(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point Control2()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Core.AnimationMetrics.IPropertyAnimation).get_Control2(&_ret));
+		Debug.OK((cast(Windows.UI.Core.AnimationMetrics.IPropertyAnimation)this.asInterface(uuid("3a01b4da-4d8c-411e-b615-1ade683a9903"))).get_Control2(&_ret));
 		return _ret;
 	}
 }

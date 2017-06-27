@@ -64,32 +64,32 @@ extern(Windows):
 	final Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationStatus Status()
 	{
 		Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationStatus _ret;
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdRegistrationResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdRegistrationResult)this.asInterface(uuid("3d786ad2-e606-5350-73ea-7e97f066162f"))).get_Status(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.HostName IPAddress()
 	{
 		Windows.Networking.HostName _ret;
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdRegistrationResult).get_IPAddress(&_ret));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdRegistrationResult)this.asInterface(uuid("3d786ad2-e606-5350-73ea-7e97f066162f"))).get_IPAddress(&_ret));
 		return _ret;
 	}
 	final bool HasInstanceNameChanged()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdRegistrationResult).get_HasInstanceNameChanged(&_ret));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdRegistrationResult)this.asInterface(uuid("3d786ad2-e606-5350-73ea-7e97f066162f"))).get_HasInstanceNameChanged(&_ret));
 		return _ret;
 	}
 	final HSTRING ToString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		Debug.OK((cast(Windows.Foundation.IStringable)this.asInterface(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3"))).abi_ToString(&_ret));
 		return _ret;
 	}
 	static DnssdRegistrationResult New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(DnssdRegistrationResult).abi_ActivateInstance(&ret));
-		return ret.as!(DnssdRegistrationResult);
+		return cast(DnssdRegistrationResult) ret;
 	}
 }
 
@@ -99,94 +99,94 @@ extern(Windows):
 	final HSTRING DnssdServiceInstanceName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).get_DnssdServiceInstanceName(&_ret));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).get_DnssdServiceInstanceName(&_ret));
 		return _ret;
 	}
 	final void DnssdServiceInstanceName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).set_DnssdServiceInstanceName(value));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).set_DnssdServiceInstanceName(value));
 	}
 	final Windows.Networking.HostName HostName()
 	{
 		Windows.Networking.HostName _ret;
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).get_HostName(&_ret));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).get_HostName(&_ret));
 		return _ret;
 	}
 	final void HostName(Windows.Networking.HostName value)
 	{
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).set_HostName(value));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).set_HostName(value));
 	}
 	final UINT16 Port()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).get_Port(&_ret));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).get_Port(&_ret));
 		return _ret;
 	}
 	final void Port(UINT16 value)
 	{
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).set_Port(value));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).set_Port(value));
 	}
 	final UINT16 Priority()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).get_Priority(&_ret));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).get_Priority(&_ret));
 		return _ret;
 	}
 	final void Priority(UINT16 value)
 	{
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).set_Priority(value));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).set_Priority(value));
 	}
 	final UINT16 Weight()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).get_Weight(&_ret));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).get_Weight(&_ret));
 		return _ret;
 	}
 	final void Weight(UINT16 value)
 	{
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).set_Weight(value));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).set_Weight(value));
 	}
 	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) TextAttributes()
 	{
 		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).get_TextAttributes(&_ret));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).get_TextAttributes(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) RegisterStreamSocketListenerAsync1(Windows.Networking.Sockets.StreamSocketListener socket)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).abi_RegisterStreamSocketListenerAsync1(socket, &_ret));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).abi_RegisterStreamSocketListenerAsync1(socket, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) RegisterStreamSocketListenerAsync2(Windows.Networking.Sockets.StreamSocketListener socket, Windows.Networking.Connectivity.NetworkAdapter adapter)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).abi_RegisterStreamSocketListenerAsync2(socket, adapter, &_ret));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).abi_RegisterStreamSocketListenerAsync2(socket, adapter, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) RegisterDatagramSocketAsync1(Windows.Networking.Sockets.DatagramSocket socket)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).abi_RegisterDatagramSocketAsync1(socket, &_ret));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).abi_RegisterDatagramSocketAsync1(socket, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) RegisterDatagramSocketAsync2(Windows.Networking.Sockets.DatagramSocket socket, Windows.Networking.Connectivity.NetworkAdapter adapter)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) _ret;
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance).abi_RegisterDatagramSocketAsync2(socket, adapter, &_ret));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).abi_RegisterDatagramSocketAsync2(socket, adapter, &_ret));
 		return _ret;
 	}
 	final HSTRING ToString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		Debug.OK((cast(Windows.Foundation.IStringable)this.asInterface(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3"))).abi_ToString(&_ret));
 		return _ret;
 	}
 	static Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance New(HSTRING dnssdServiceInstanceName, Windows.Networking.HostName hostName, UINT16 port)
 	{
 		auto factory = factory!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstanceFactory);
 		Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance _ret;
-		Debug.OK(factory.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstanceFactory).abi_Create(dnssdServiceInstanceName, hostName, port, &_ret));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstanceFactory)factory.asInterface(uuid("6cb061a1-c478-4331-9684-4af2186c0a2b"))).abi_Create(dnssdServiceInstanceName, hostName, port, &_ret));
 		return _ret;
 	}
 }
@@ -196,27 +196,27 @@ interface DnssdServiceInstanceCollection : Windows.Foundation.Collections.IVecto
 extern(Windows):
 	final void GetAt(uint index, Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance* out_item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance)).abi_GetAt(index, out_item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVectorView!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance))this).abi_GetAt(index, out_item));
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVectorView!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance))this).get_Size(&_ret));
 		return _ret;
 	}
 	final uint IndexOf(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVectorView!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVectorView!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance))this).abi_First(out_first));
 	}
 }
 
@@ -226,46 +226,46 @@ extern(Windows):
 	final EventRegistrationToken OnAdded(void delegate(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher).add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance), Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher)this.asInterface(uuid("cc34d9c1-db7d-4b69-983d-c6f83f205682"))).add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance), Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceInstance)(fn), &tok));
 		return tok;
 	}
 	final void removeAdded(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher).remove_Added(token));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher)this.asInterface(uuid("cc34d9c1-db7d-4b69-983d-c6f83f205682"))).remove_Added(token));
 	}
 	final EventRegistrationToken OnEnumerationCompleted(void delegate(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher).add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, IInspectable), Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher)this.asInterface(uuid("cc34d9c1-db7d-4b69-983d-c6f83f205682"))).add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, IInspectable), Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeEnumerationCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher).remove_EnumerationCompleted(token));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher)this.asInterface(uuid("cc34d9c1-db7d-4b69-983d-c6f83f205682"))).remove_EnumerationCompleted(token));
 	}
 	final EventRegistrationToken OnStopped(void delegate(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, IInspectable), Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher)this.asInterface(uuid("cc34d9c1-db7d-4b69-983d-c6f83f205682"))).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, IInspectable), Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeStopped(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher).remove_Stopped(token));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher)this.asInterface(uuid("cc34d9c1-db7d-4b69-983d-c6f83f205682"))).remove_Stopped(token));
 	}
 	final Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcherStatus Status()
 	{
 		Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcherStatus _ret;
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher).get_Status(&_ret));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher)this.asInterface(uuid("cc34d9c1-db7d-4b69-983d-c6f83f205682"))).get_Status(&_ret));
 		return _ret;
 	}
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher).abi_Start());
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher)this.asInterface(uuid("cc34d9c1-db7d-4b69-983d-c6f83f205682"))).abi_Start());
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher).abi_Stop());
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceWatcher)this.asInterface(uuid("cc34d9c1-db7d-4b69-983d-c6f83f205682"))).abi_Stop());
 	}
 }
 

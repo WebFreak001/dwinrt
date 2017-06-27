@@ -37,42 +37,42 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Wallet.WalletItem)) GetItemsAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Wallet.WalletItem)) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore).abi_GetItemsAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore)this.asInterface(uuid("522e2bff-96a2-4a17-8d19-fe1d9f837561"))).abi_GetItemsAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction DeleteAsync(Windows.ApplicationModel.Wallet.WalletItem item)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore).abi_DeleteAsync(item, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore)this.asInterface(uuid("522e2bff-96a2-4a17-8d19-fe1d9f837561"))).abi_DeleteAsync(item, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.WalletItem) ImportItemAsync(Windows.Storage.Streams.IRandomAccessStreamReference stream)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.WalletItem) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore).abi_ImportItemAsync(stream, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore)this.asInterface(uuid("522e2bff-96a2-4a17-8d19-fe1d9f837561"))).abi_ImportItemAsync(stream, &_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Wallet.System.WalletItemAppAssociation GetAppStatusForItem(Windows.ApplicationModel.Wallet.WalletItem item)
 	{
 		Windows.ApplicationModel.Wallet.System.WalletItemAppAssociation _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore).abi_GetAppStatusForItem(item, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore)this.asInterface(uuid("522e2bff-96a2-4a17-8d19-fe1d9f837561"))).abi_GetAppStatusForItem(item, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) LaunchAppForItemAsync(Windows.ApplicationModel.Wallet.WalletItem item)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore).abi_LaunchAppForItemAsync(item, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore)this.asInterface(uuid("522e2bff-96a2-4a17-8d19-fe1d9f837561"))).abi_LaunchAppForItemAsync(item, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnItemsChanged(void delegate(Windows.ApplicationModel.Wallet.System.WalletItemSystemStore, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore2).add_ItemsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Wallet.System.WalletItemSystemStore, IInspectable), Windows.ApplicationModel.Wallet.System.WalletItemSystemStore, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore2)this.asInterface(uuid("f98d3a4e-be00-4fdd-9734-6c113c1ac1cb"))).add_ItemsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Wallet.System.WalletItemSystemStore, IInspectable), Windows.ApplicationModel.Wallet.System.WalletItemSystemStore, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeItemsChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore2).remove_ItemsChanged(cookie));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.System.IWalletItemSystemStore2)this.asInterface(uuid("f98d3a4e-be00-4fdd-9734-6c113c1ac1cb"))).remove_ItemsChanged(cookie));
 	}
 }
 
@@ -87,7 +87,7 @@ interface WalletManagerSystem
 	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.System.WalletItemSystemStore) RequestStoreAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.System.WalletItemSystemStore) _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Wallet.System.IWalletManagerSystemStatics).abi_RequestStoreAsync(&_ret));
+		Debug.OK(staticInstance.abi_RequestStoreAsync(&_ret));
 		return _ret;
 	}
 }

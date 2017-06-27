@@ -108,150 +108,150 @@ extern(Windows):
 	final bool AllowAutoRedirect()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).get_AllowAutoRedirect(&_ret));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter)this.asInterface(uuid("71c89b09-e131-4b54-a53c-eb43ff37e9bb"))).get_AllowAutoRedirect(&_ret));
 		return _ret;
 	}
 	final void AllowAutoRedirect(bool value)
 	{
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).set_AllowAutoRedirect(value));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter)this.asInterface(uuid("71c89b09-e131-4b54-a53c-eb43ff37e9bb"))).set_AllowAutoRedirect(value));
 	}
 	final bool AllowUI()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).get_AllowUI(&_ret));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter)this.asInterface(uuid("71c89b09-e131-4b54-a53c-eb43ff37e9bb"))).get_AllowUI(&_ret));
 		return _ret;
 	}
 	final void AllowUI(bool value)
 	{
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).set_AllowUI(value));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter)this.asInterface(uuid("71c89b09-e131-4b54-a53c-eb43ff37e9bb"))).set_AllowUI(value));
 	}
 	final bool AutomaticDecompression()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).get_AutomaticDecompression(&_ret));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter)this.asInterface(uuid("71c89b09-e131-4b54-a53c-eb43ff37e9bb"))).get_AutomaticDecompression(&_ret));
 		return _ret;
 	}
 	final void AutomaticDecompression(bool value)
 	{
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).set_AutomaticDecompression(value));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter)this.asInterface(uuid("71c89b09-e131-4b54-a53c-eb43ff37e9bb"))).set_AutomaticDecompression(value));
 	}
 	final Windows.Web.Http.Filters.HttpCacheControl CacheControl()
 	{
 		Windows.Web.Http.Filters.HttpCacheControl _ret;
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).get_CacheControl(&_ret));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter)this.asInterface(uuid("71c89b09-e131-4b54-a53c-eb43ff37e9bb"))).get_CacheControl(&_ret));
 		return _ret;
 	}
 	final Windows.Web.Http.HttpCookieManager CookieManager()
 	{
 		Windows.Web.Http.HttpCookieManager _ret;
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).get_CookieManager(&_ret));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter)this.asInterface(uuid("71c89b09-e131-4b54-a53c-eb43ff37e9bb"))).get_CookieManager(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Cryptography.Certificates.Certificate ClientCertificate()
 	{
 		Windows.Security.Cryptography.Certificates.Certificate _ret;
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).get_ClientCertificate(&_ret));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter)this.asInterface(uuid("71c89b09-e131-4b54-a53c-eb43ff37e9bb"))).get_ClientCertificate(&_ret));
 		return _ret;
 	}
 	final void ClientCertificate(Windows.Security.Cryptography.Certificates.Certificate value)
 	{
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).set_ClientCertificate(value));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter)this.asInterface(uuid("71c89b09-e131-4b54-a53c-eb43ff37e9bb"))).set_ClientCertificate(value));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.ChainValidationResult) IgnorableServerCertificateErrors()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Security.Cryptography.Certificates.ChainValidationResult) _ret;
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).get_IgnorableServerCertificateErrors(&_ret));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter)this.asInterface(uuid("71c89b09-e131-4b54-a53c-eb43ff37e9bb"))).get_IgnorableServerCertificateErrors(&_ret));
 		return _ret;
 	}
 	final UINT32 MaxConnectionsPerServer()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).get_MaxConnectionsPerServer(&_ret));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter)this.asInterface(uuid("71c89b09-e131-4b54-a53c-eb43ff37e9bb"))).get_MaxConnectionsPerServer(&_ret));
 		return _ret;
 	}
 	final void MaxConnectionsPerServer(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).set_MaxConnectionsPerServer(value));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter)this.asInterface(uuid("71c89b09-e131-4b54-a53c-eb43ff37e9bb"))).set_MaxConnectionsPerServer(value));
 	}
 	final Windows.Security.Credentials.PasswordCredential ProxyCredential()
 	{
 		Windows.Security.Credentials.PasswordCredential _ret;
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).get_ProxyCredential(&_ret));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter)this.asInterface(uuid("71c89b09-e131-4b54-a53c-eb43ff37e9bb"))).get_ProxyCredential(&_ret));
 		return _ret;
 	}
 	final void ProxyCredential(Windows.Security.Credentials.PasswordCredential value)
 	{
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).set_ProxyCredential(value));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter)this.asInterface(uuid("71c89b09-e131-4b54-a53c-eb43ff37e9bb"))).set_ProxyCredential(value));
 	}
 	final Windows.Security.Credentials.PasswordCredential ServerCredential()
 	{
 		Windows.Security.Credentials.PasswordCredential _ret;
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).get_ServerCredential(&_ret));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter)this.asInterface(uuid("71c89b09-e131-4b54-a53c-eb43ff37e9bb"))).get_ServerCredential(&_ret));
 		return _ret;
 	}
 	final void ServerCredential(Windows.Security.Credentials.PasswordCredential value)
 	{
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).set_ServerCredential(value));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter)this.asInterface(uuid("71c89b09-e131-4b54-a53c-eb43ff37e9bb"))).set_ServerCredential(value));
 	}
 	final bool UseProxy()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).get_UseProxy(&_ret));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter)this.asInterface(uuid("71c89b09-e131-4b54-a53c-eb43ff37e9bb"))).get_UseProxy(&_ret));
 		return _ret;
 	}
 	final void UseProxy(bool value)
 	{
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter).set_UseProxy(value));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter)this.asInterface(uuid("71c89b09-e131-4b54-a53c-eb43ff37e9bb"))).set_UseProxy(value));
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) SendRequestAsync(Windows.Web.Http.HttpRequestMessage request)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) _ret;
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpFilter).abi_SendRequestAsync(request, &_ret));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpFilter)this.asInterface(uuid("a4cb6dd5-0902-439e-bfd7-e12552b165ce"))).abi_SendRequestAsync(request, &_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	final Windows.Web.Http.HttpVersion MaxVersion()
 	{
 		Windows.Web.Http.HttpVersion _ret;
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter2).get_MaxVersion(&_ret));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter2)this.asInterface(uuid("2ec30013-9427-4900-a017-fa7da3b5c9ae"))).get_MaxVersion(&_ret));
 		return _ret;
 	}
 	final void MaxVersion(Windows.Web.Http.HttpVersion value)
 	{
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter2).set_MaxVersion(value));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter2)this.asInterface(uuid("2ec30013-9427-4900-a017-fa7da3b5c9ae"))).set_MaxVersion(value));
 	}
 	final Windows.Web.Http.Filters.HttpCookieUsageBehavior CookieUsageBehavior()
 	{
 		Windows.Web.Http.Filters.HttpCookieUsageBehavior _ret;
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter3).get_CookieUsageBehavior(&_ret));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter3)this.asInterface(uuid("d43f4d4c-bd42-43ae-8717-ad2c8f4b2937"))).get_CookieUsageBehavior(&_ret));
 		return _ret;
 	}
 	final void CookieUsageBehavior(Windows.Web.Http.Filters.HttpCookieUsageBehavior value)
 	{
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter3).set_CookieUsageBehavior(value));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter3)this.asInterface(uuid("d43f4d4c-bd42-43ae-8717-ad2c8f4b2937"))).set_CookieUsageBehavior(value));
 	}
 	final EventRegistrationToken OnServerCustomValidationRequested(void delegate(Windows.Web.Http.Filters.HttpBaseProtocolFilter, Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter4).add_ServerCustomValidationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Web.Http.Filters.HttpBaseProtocolFilter, Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs), Windows.Web.Http.Filters.HttpBaseProtocolFilter, Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter4)this.asInterface(uuid("9fe36ccf-2983-4893-941f-eb518ca8cef9"))).add_ServerCustomValidationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Web.Http.Filters.HttpBaseProtocolFilter, Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs), Windows.Web.Http.Filters.HttpBaseProtocolFilter, Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeServerCustomValidationRequested(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter4).remove_ServerCustomValidationRequested(eventCookie));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter4)this.asInterface(uuid("9fe36ccf-2983-4893-941f-eb518ca8cef9"))).remove_ServerCustomValidationRequested(eventCookie));
 	}
 	final void ClearAuthenticationCache()
 	{
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpBaseProtocolFilter4).abi_ClearAuthenticationCache());
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpBaseProtocolFilter4)this.asInterface(uuid("9fe36ccf-2983-4893-941f-eb518ca8cef9"))).abi_ClearAuthenticationCache());
 	}
 	static HttpBaseProtocolFilter New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(HttpBaseProtocolFilter).abi_ActivateInstance(&ret));
-		return ret.as!(HttpBaseProtocolFilter);
+		return cast(HttpBaseProtocolFilter) ret;
 	}
 }
 
@@ -261,22 +261,22 @@ extern(Windows):
 	final Windows.Web.Http.Filters.HttpCacheReadBehavior ReadBehavior()
 	{
 		Windows.Web.Http.Filters.HttpCacheReadBehavior _ret;
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpCacheControl).get_ReadBehavior(&_ret));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpCacheControl)this.asInterface(uuid("c77e1cb4-3cea-4eb5-ac85-04e186e63ab7"))).get_ReadBehavior(&_ret));
 		return _ret;
 	}
 	final void ReadBehavior(Windows.Web.Http.Filters.HttpCacheReadBehavior value)
 	{
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpCacheControl).set_ReadBehavior(value));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpCacheControl)this.asInterface(uuid("c77e1cb4-3cea-4eb5-ac85-04e186e63ab7"))).set_ReadBehavior(value));
 	}
 	final Windows.Web.Http.Filters.HttpCacheWriteBehavior WriteBehavior()
 	{
 		Windows.Web.Http.Filters.HttpCacheWriteBehavior _ret;
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpCacheControl).get_WriteBehavior(&_ret));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpCacheControl)this.asInterface(uuid("c77e1cb4-3cea-4eb5-ac85-04e186e63ab7"))).get_WriteBehavior(&_ret));
 		return _ret;
 	}
 	final void WriteBehavior(Windows.Web.Http.Filters.HttpCacheWriteBehavior value)
 	{
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpCacheControl).set_WriteBehavior(value));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpCacheControl)this.asInterface(uuid("c77e1cb4-3cea-4eb5-ac85-04e186e63ab7"))).set_WriteBehavior(value));
 	}
 }
 
@@ -286,41 +286,41 @@ extern(Windows):
 	final Windows.Web.Http.HttpRequestMessage RequestMessage()
 	{
 		Windows.Web.Http.HttpRequestMessage _ret;
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs).get_RequestMessage(&_ret));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs)this.asInterface(uuid("3165fe32-e7dd-48b7-a361-939c750e63cc"))).get_RequestMessage(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Cryptography.Certificates.Certificate ServerCertificate()
 	{
 		Windows.Security.Cryptography.Certificates.Certificate _ret;
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs).get_ServerCertificate(&_ret));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs)this.asInterface(uuid("3165fe32-e7dd-48b7-a361-939c750e63cc"))).get_ServerCertificate(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.SocketSslErrorSeverity ServerCertificateErrorSeverity()
 	{
 		Windows.Networking.Sockets.SocketSslErrorSeverity _ret;
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs).get_ServerCertificateErrorSeverity(&_ret));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs)this.asInterface(uuid("3165fe32-e7dd-48b7-a361-939c750e63cc"))).get_ServerCertificateErrorSeverity(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) ServerCertificateErrors()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) _ret;
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs).get_ServerCertificateErrors(&_ret));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs)this.asInterface(uuid("3165fe32-e7dd-48b7-a361-939c750e63cc"))).get_ServerCertificateErrors(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) ServerIntermediateCertificates()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) _ret;
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs).get_ServerIntermediateCertificates(&_ret));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs)this.asInterface(uuid("3165fe32-e7dd-48b7-a361-939c750e63cc"))).get_ServerIntermediateCertificates(&_ret));
 		return _ret;
 	}
 	final void Reject()
 	{
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs).abi_Reject());
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs)this.asInterface(uuid("3165fe32-e7dd-48b7-a361-939c750e63cc"))).abi_Reject());
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.Web.Http.Filters.IHttpServerCustomValidationRequestedEventArgs)this.asInterface(uuid("3165fe32-e7dd-48b7-a361-939c750e63cc"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }

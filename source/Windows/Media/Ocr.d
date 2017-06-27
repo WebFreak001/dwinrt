@@ -57,13 +57,13 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Ocr.OcrResult) RecognizeAsync(Windows.Graphics.Imaging.SoftwareBitmap bitmap)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Ocr.OcrResult) _ret;
-		Debug.OK(this.as!(Windows.Media.Ocr.IOcrEngine).abi_RecognizeAsync(bitmap, &_ret));
+		Debug.OK((cast(Windows.Media.Ocr.IOcrEngine)this.asInterface(uuid("5a14bc41-5b76-3140-b680-8825562683ac"))).abi_RecognizeAsync(bitmap, &_ret));
 		return _ret;
 	}
 	final Windows.Globalization.Language RecognizerLanguage()
 	{
 		Windows.Globalization.Language _ret;
-		Debug.OK(this.as!(Windows.Media.Ocr.IOcrEngine).get_RecognizerLanguage(&_ret));
+		Debug.OK((cast(Windows.Media.Ocr.IOcrEngine)this.asInterface(uuid("5a14bc41-5b76-3140-b680-8825562683ac"))).get_RecognizerLanguage(&_ret));
 		return _ret;
 	}
 
@@ -76,31 +76,31 @@ extern(Windows):
 	static UINT32 MaxImageDimension()
 	{
 		UINT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Ocr.IOcrEngineStatics).get_MaxImageDimension(&_ret));
+		Debug.OK(staticInstance.get_MaxImageDimension(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(Windows.Globalization.Language) AvailableRecognizerLanguages()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Globalization.Language) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Ocr.IOcrEngineStatics).get_AvailableRecognizerLanguages(&_ret));
+		Debug.OK(staticInstance.get_AvailableRecognizerLanguages(&_ret));
 		return _ret;
 	}
 	static bool IsLanguageSupported(Windows.Globalization.Language language)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Ocr.IOcrEngineStatics).abi_IsLanguageSupported(language, &_ret));
+		Debug.OK(staticInstance.abi_IsLanguageSupported(language, &_ret));
 		return _ret;
 	}
 	static Windows.Media.Ocr.OcrEngine TryCreateFromLanguage(Windows.Globalization.Language language)
 	{
 		Windows.Media.Ocr.OcrEngine _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Ocr.IOcrEngineStatics).abi_TryCreateFromLanguage(language, &_ret));
+		Debug.OK(staticInstance.abi_TryCreateFromLanguage(language, &_ret));
 		return _ret;
 	}
 	static Windows.Media.Ocr.OcrEngine TryCreateFromUserProfileLanguages()
 	{
 		Windows.Media.Ocr.OcrEngine _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Ocr.IOcrEngineStatics).abi_TryCreateFromUserProfileLanguages(&_ret));
+		Debug.OK(staticInstance.abi_TryCreateFromUserProfileLanguages(&_ret));
 		return _ret;
 	}
 }
@@ -111,13 +111,13 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Ocr.OcrWord) Words()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Ocr.OcrWord) _ret;
-		Debug.OK(this.as!(Windows.Media.Ocr.IOcrLine).get_Words(&_ret));
+		Debug.OK((cast(Windows.Media.Ocr.IOcrLine)this.asInterface(uuid("0043a16f-e31f-3a24-899c-d444bd088124"))).get_Words(&_ret));
 		return _ret;
 	}
 	final HSTRING Text()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Ocr.IOcrLine).get_Text(&_ret));
+		Debug.OK((cast(Windows.Media.Ocr.IOcrLine)this.asInterface(uuid("0043a16f-e31f-3a24-899c-d444bd088124"))).get_Text(&_ret));
 		return _ret;
 	}
 }
@@ -128,19 +128,19 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Ocr.OcrLine) Lines()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Ocr.OcrLine) _ret;
-		Debug.OK(this.as!(Windows.Media.Ocr.IOcrResult).get_Lines(&_ret));
+		Debug.OK((cast(Windows.Media.Ocr.IOcrResult)this.asInterface(uuid("9bd235b2-175b-3d6a-92e2-388c206e2f63"))).get_Lines(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(double) TextAngle()
 	{
 		Windows.Foundation.IReference!(double) _ret;
-		Debug.OK(this.as!(Windows.Media.Ocr.IOcrResult).get_TextAngle(&_ret));
+		Debug.OK((cast(Windows.Media.Ocr.IOcrResult)this.asInterface(uuid("9bd235b2-175b-3d6a-92e2-388c206e2f63"))).get_TextAngle(&_ret));
 		return _ret;
 	}
 	final HSTRING Text()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Ocr.IOcrResult).get_Text(&_ret));
+		Debug.OK((cast(Windows.Media.Ocr.IOcrResult)this.asInterface(uuid("9bd235b2-175b-3d6a-92e2-388c206e2f63"))).get_Text(&_ret));
 		return _ret;
 	}
 }
@@ -151,13 +151,13 @@ extern(Windows):
 	final Windows.Foundation.Rect BoundingRect()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.Media.Ocr.IOcrWord).get_BoundingRect(&_ret));
+		Debug.OK((cast(Windows.Media.Ocr.IOcrWord)this.asInterface(uuid("3c2a477a-5cd9-3525-ba2a-23d1e0a68a1d"))).get_BoundingRect(&_ret));
 		return _ret;
 	}
 	final HSTRING Text()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Ocr.IOcrWord).get_Text(&_ret));
+		Debug.OK((cast(Windows.Media.Ocr.IOcrWord)this.asInterface(uuid("3c2a477a-5cd9-3525-ba2a-23d1e0a68a1d"))).get_Text(&_ret));
 		return _ret;
 	}
 }

@@ -410,30 +410,30 @@ extern(Windows):
 	final bool HighContrast()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IAccessibilitySettings).get_HighContrast(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IAccessibilitySettings)this.asInterface(uuid("fe0e8147-c4c0-4562-b962-1327b52ad5b9"))).get_HighContrast(&_ret));
 		return _ret;
 	}
 	final HSTRING HighContrastScheme()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IAccessibilitySettings).get_HighContrastScheme(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IAccessibilitySettings)this.asInterface(uuid("fe0e8147-c4c0-4562-b962-1327b52ad5b9"))).get_HighContrastScheme(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnHighContrastChanged(void delegate(Windows.UI.ViewManagement.AccessibilitySettings, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IAccessibilitySettings).add_HighContrastChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.AccessibilitySettings, IInspectable), Windows.UI.ViewManagement.AccessibilitySettings, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.UI.ViewManagement.IAccessibilitySettings)this.asInterface(uuid("fe0e8147-c4c0-4562-b962-1327b52ad5b9"))).add_HighContrastChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.AccessibilitySettings, IInspectable), Windows.UI.ViewManagement.AccessibilitySettings, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeHighContrastChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IAccessibilitySettings).remove_HighContrastChanged(cookie));
+		Debug.OK((cast(Windows.UI.ViewManagement.IAccessibilitySettings)this.asInterface(uuid("fe0e8147-c4c0-4562-b962-1327b52ad5b9"))).remove_HighContrastChanged(cookie));
 	}
 	static AccessibilitySettings New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(AccessibilitySettings).abi_ActivateInstance(&ret));
-		return ret.as!(AccessibilitySettings);
+		return cast(AccessibilitySettings) ret;
 	}
 }
 
@@ -443,19 +443,19 @@ extern(Windows):
 	final Windows.Foundation.IAsyncAction ShowAsStandaloneAsync(INT32 viewId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IActivationViewSwitcher).abi_ShowAsStandaloneAsync(viewId, &_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IActivationViewSwitcher)this.asInterface(uuid("dca71bb6-7350-492b-aac7-c8a13d7224ad"))).abi_ShowAsStandaloneAsync(viewId, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ShowAsStandaloneWithSizePreferenceAsync(INT32 viewId, Windows.UI.ViewManagement.ViewSizePreference sizePreference)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IActivationViewSwitcher).abi_ShowAsStandaloneWithSizePreferenceAsync(viewId, sizePreference, &_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IActivationViewSwitcher)this.asInterface(uuid("dca71bb6-7350-492b-aac7-c8a13d7224ad"))).abi_ShowAsStandaloneWithSizePreferenceAsync(viewId, sizePreference, &_ret));
 		return _ret;
 	}
 	final bool IsViewPresentedOnActivationVirtualDesktop(INT32 viewId)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IActivationViewSwitcher).abi_IsViewPresentedOnActivationVirtualDesktop(viewId, &_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IActivationViewSwitcher)this.asInterface(uuid("dca71bb6-7350-492b-aac7-c8a13d7224ad"))).abi_IsViewPresentedOnActivationVirtualDesktop(viewId, &_ret));
 		return _ret;
 	}
 }
@@ -466,184 +466,184 @@ extern(Windows):
 	final Windows.UI.ViewManagement.ApplicationViewOrientation Orientation()
 	{
 		Windows.UI.ViewManagement.ApplicationViewOrientation _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).get_Orientation(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView)this.asInterface(uuid("d222d519-4361-451e-96c4-60f4f9742db0"))).get_Orientation(&_ret));
 		return _ret;
 	}
 	final bool AdjacentToLeftDisplayEdge()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).get_AdjacentToLeftDisplayEdge(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView)this.asInterface(uuid("d222d519-4361-451e-96c4-60f4f9742db0"))).get_AdjacentToLeftDisplayEdge(&_ret));
 		return _ret;
 	}
 	final bool AdjacentToRightDisplayEdge()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).get_AdjacentToRightDisplayEdge(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView)this.asInterface(uuid("d222d519-4361-451e-96c4-60f4f9742db0"))).get_AdjacentToRightDisplayEdge(&_ret));
 		return _ret;
 	}
 	deprecated("To check full screen mode, use IsFullScreenMode. To check if the view is adjacent to both edges, use AdjacentToLeftDisplayEdge and AdjacentToRightDisplayEdge. For more info, see MSDN.")
 	final bool IsFullScreen()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).get_IsFullScreen(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView)this.asInterface(uuid("d222d519-4361-451e-96c4-60f4f9742db0"))).get_IsFullScreen(&_ret));
 		return _ret;
 	}
 	final bool IsOnLockScreen()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).get_IsOnLockScreen(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView)this.asInterface(uuid("d222d519-4361-451e-96c4-60f4f9742db0"))).get_IsOnLockScreen(&_ret));
 		return _ret;
 	}
 	final bool IsScreenCaptureEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).get_IsScreenCaptureEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView)this.asInterface(uuid("d222d519-4361-451e-96c4-60f4f9742db0"))).get_IsScreenCaptureEnabled(&_ret));
 		return _ret;
 	}
 	final void IsScreenCaptureEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).set_IsScreenCaptureEnabled(value));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView)this.asInterface(uuid("d222d519-4361-451e-96c4-60f4f9742db0"))).set_IsScreenCaptureEnabled(value));
 	}
 	final void Title(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).set_Title(value));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView)this.asInterface(uuid("d222d519-4361-451e-96c4-60f4f9742db0"))).set_Title(value));
 	}
 	final HSTRING Title()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).get_Title(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView)this.asInterface(uuid("d222d519-4361-451e-96c4-60f4f9742db0"))).get_Title(&_ret));
 		return _ret;
 	}
 	final INT32 Id()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).get_Id(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView)this.asInterface(uuid("d222d519-4361-451e-96c4-60f4f9742db0"))).get_Id(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnConsolidated(void delegate(Windows.UI.ViewManagement.ApplicationView, Windows.UI.ViewManagement.ApplicationViewConsolidatedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).add_Consolidated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.ApplicationView, Windows.UI.ViewManagement.ApplicationViewConsolidatedEventArgs), Windows.UI.ViewManagement.ApplicationView, Windows.UI.ViewManagement.ApplicationViewConsolidatedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView)this.asInterface(uuid("d222d519-4361-451e-96c4-60f4f9742db0"))).add_Consolidated(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.ApplicationView, Windows.UI.ViewManagement.ApplicationViewConsolidatedEventArgs), Windows.UI.ViewManagement.ApplicationView, Windows.UI.ViewManagement.ApplicationViewConsolidatedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeConsolidated(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView).remove_Consolidated(token));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView)this.asInterface(uuid("d222d519-4361-451e-96c4-60f4f9742db0"))).remove_Consolidated(token));
 	}
 	deprecated("Use the TryEnterFullScreen method and IsFullScreenMode property instead of SuppressSystemOverlays. For more info, see MSDN.")
 	final bool SuppressSystemOverlays()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView2).get_SuppressSystemOverlays(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView2)this.asInterface(uuid("e876b196-a545-40dc-b594-450cba68cc00"))).get_SuppressSystemOverlays(&_ret));
 		return _ret;
 	}
 	deprecated("Use the TryEnterFullScreen method and IsFullScreenMode property instead of SuppressSystemOverlays. For more info, see MSDN.")
 	final void SuppressSystemOverlays(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView2).set_SuppressSystemOverlays(value));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView2)this.asInterface(uuid("e876b196-a545-40dc-b594-450cba68cc00"))).set_SuppressSystemOverlays(value));
 	}
 	final Windows.Foundation.Rect VisibleBounds()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView2).get_VisibleBounds(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView2)this.asInterface(uuid("e876b196-a545-40dc-b594-450cba68cc00"))).get_VisibleBounds(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnVisibleBoundsChanged(void delegate(Windows.UI.ViewManagement.ApplicationView, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView2).add_VisibleBoundsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.ApplicationView, IInspectable), Windows.UI.ViewManagement.ApplicationView, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView2)this.asInterface(uuid("e876b196-a545-40dc-b594-450cba68cc00"))).add_VisibleBoundsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.ApplicationView, IInspectable), Windows.UI.ViewManagement.ApplicationView, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeVisibleBoundsChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView2).remove_VisibleBoundsChanged(token));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView2)this.asInterface(uuid("e876b196-a545-40dc-b594-450cba68cc00"))).remove_VisibleBoundsChanged(token));
 	}
 	final bool SetDesiredBoundsMode(Windows.UI.ViewManagement.ApplicationViewBoundsMode boundsMode)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView2).abi_SetDesiredBoundsMode(boundsMode, &_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView2)this.asInterface(uuid("e876b196-a545-40dc-b594-450cba68cc00"))).abi_SetDesiredBoundsMode(boundsMode, &_ret));
 		return _ret;
 	}
 	final Windows.UI.ViewManagement.ApplicationViewBoundsMode DesiredBoundsMode()
 	{
 		Windows.UI.ViewManagement.ApplicationViewBoundsMode _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView2).get_DesiredBoundsMode(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView2)this.asInterface(uuid("e876b196-a545-40dc-b594-450cba68cc00"))).get_DesiredBoundsMode(&_ret));
 		return _ret;
 	}
 	final Windows.UI.ViewManagement.ApplicationViewTitleBar TitleBar()
 	{
 		Windows.UI.ViewManagement.ApplicationViewTitleBar _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView3).get_TitleBar(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView3)this.asInterface(uuid("903c9ce5-793a-4fdf-a2b2-af1ac21e3108"))).get_TitleBar(&_ret));
 		return _ret;
 	}
 	final Windows.UI.ViewManagement.FullScreenSystemOverlayMode FullScreenSystemOverlayMode()
 	{
 		Windows.UI.ViewManagement.FullScreenSystemOverlayMode _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView3).get_FullScreenSystemOverlayMode(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView3)this.asInterface(uuid("903c9ce5-793a-4fdf-a2b2-af1ac21e3108"))).get_FullScreenSystemOverlayMode(&_ret));
 		return _ret;
 	}
 	final void FullScreenSystemOverlayMode(Windows.UI.ViewManagement.FullScreenSystemOverlayMode value)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView3).set_FullScreenSystemOverlayMode(value));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView3)this.asInterface(uuid("903c9ce5-793a-4fdf-a2b2-af1ac21e3108"))).set_FullScreenSystemOverlayMode(value));
 	}
 	final bool IsFullScreenMode()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView3).get_IsFullScreenMode(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView3)this.asInterface(uuid("903c9ce5-793a-4fdf-a2b2-af1ac21e3108"))).get_IsFullScreenMode(&_ret));
 		return _ret;
 	}
 	final bool TryEnterFullScreenMode()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView3).abi_TryEnterFullScreenMode(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView3)this.asInterface(uuid("903c9ce5-793a-4fdf-a2b2-af1ac21e3108"))).abi_TryEnterFullScreenMode(&_ret));
 		return _ret;
 	}
 	final void ExitFullScreenMode()
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView3).abi_ExitFullScreenMode());
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView3)this.asInterface(uuid("903c9ce5-793a-4fdf-a2b2-af1ac21e3108"))).abi_ExitFullScreenMode());
 	}
 	final void ShowStandardSystemOverlays()
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView3).abi_ShowStandardSystemOverlays());
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView3)this.asInterface(uuid("903c9ce5-793a-4fdf-a2b2-af1ac21e3108"))).abi_ShowStandardSystemOverlays());
 	}
 	final bool TryResizeView(Windows.Foundation.Size value)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView3).abi_TryResizeView(value, &_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView3)this.asInterface(uuid("903c9ce5-793a-4fdf-a2b2-af1ac21e3108"))).abi_TryResizeView(value, &_ret));
 		return _ret;
 	}
 	final void SetPreferredMinSize(Windows.Foundation.Size minSize)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView3).abi_SetPreferredMinSize(minSize));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView3)this.asInterface(uuid("903c9ce5-793a-4fdf-a2b2-af1ac21e3108"))).abi_SetPreferredMinSize(minSize));
 	}
 	final Windows.UI.ViewManagement.ApplicationViewMode ViewMode()
 	{
 		Windows.UI.ViewManagement.ApplicationViewMode _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView4).get_ViewMode(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView4)this.asInterface(uuid("15e5cbec-9e0f-46b5-bc3f-9bf653e74b5e"))).get_ViewMode(&_ret));
 		return _ret;
 	}
 	final bool IsViewModeSupported(Windows.UI.ViewManagement.ApplicationViewMode viewMode)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView4).abi_IsViewModeSupported(viewMode, &_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView4)this.asInterface(uuid("15e5cbec-9e0f-46b5-bc3f-9bf653e74b5e"))).abi_IsViewModeSupported(viewMode, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TryEnterViewModeAsync(Windows.UI.ViewManagement.ApplicationViewMode viewMode)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView4).abi_TryEnterViewModeAsync(viewMode, &_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView4)this.asInterface(uuid("15e5cbec-9e0f-46b5-bc3f-9bf653e74b5e"))).abi_TryEnterViewModeAsync(viewMode, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TryEnterViewModeWithPreferencesAsync(Windows.UI.ViewManagement.ApplicationViewMode viewMode, Windows.UI.ViewManagement.ViewModePreferences viewModePreferences)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView4).abi_TryEnterViewModeWithPreferencesAsync(viewMode, viewModePreferences, &_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView4)this.asInterface(uuid("15e5cbec-9e0f-46b5-bc3f-9bf653e74b5e"))).abi_TryEnterViewModeWithPreferencesAsync(viewMode, viewModePreferences, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TryConsolidateAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationView4).abi_TryConsolidateAsync(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView4)this.asInterface(uuid("15e5cbec-9e0f-46b5-bc3f-9bf653e74b5e"))).abi_TryConsolidateAsync(&_ret));
 		return _ret;
 	}
 
@@ -657,7 +657,7 @@ extern(Windows):
 	static bool TryUnsnapToFullscreen()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewFullscreenStatics).abi_TryUnsnapToFullscreen(&_ret));
+		Debug.OK(staticInstance.abi_TryUnsnapToFullscreen(&_ret));
 		return _ret;
 	}
 }
@@ -668,13 +668,13 @@ extern(Windows):
 	final bool IsUserInitiated()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewConsolidatedEventArgs).get_IsUserInitiated(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewConsolidatedEventArgs)this.asInterface(uuid("514449ec-7ea2-4de7-a6a6-7dfbaaebb6fb"))).get_IsUserInitiated(&_ret));
 		return _ret;
 	}
 	final bool IsAppInitiated()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewConsolidatedEventArgs2).get_IsAppInitiated(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewConsolidatedEventArgs2)this.asInterface(uuid("1c199ecc-6dc1-40f4-afee-07d9ea296430"))).get_IsAppInitiated(&_ret));
 		return _ret;
 	}
 }
@@ -690,13 +690,13 @@ interface ApplicationViewScaling : Windows.UI.ViewManagement.IApplicationViewSca
 	static bool DisableLayoutScaling()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewScalingStatics).get_DisableLayoutScaling(&_ret));
+		Debug.OK(staticInstance.get_DisableLayoutScaling(&_ret));
 		return _ret;
 	}
 	static bool TrySetDisableLayoutScaling(bool disableLayoutScaling)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewScalingStatics).abi_TrySetDisableLayoutScaling(disableLayoutScaling, &_ret));
+		Debug.OK(staticInstance.abi_TrySetDisableLayoutScaling(disableLayoutScaling, &_ret));
 		return _ret;
 	}
 }
@@ -711,48 +711,48 @@ interface ApplicationViewSwitcher
 	}
 	static void DisableShowingMainViewOnActivation()
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewSwitcherStatics).abi_DisableShowingMainViewOnActivation());
+		Debug.OK(staticInstance.abi_DisableShowingMainViewOnActivation());
 	}
 	static Windows.Foundation.IAsyncOperation!(bool) TryShowAsStandaloneAsync(INT32 viewId)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewSwitcherStatics).abi_TryShowAsStandaloneAsync(viewId, &_ret));
+		Debug.OK(staticInstance.abi_TryShowAsStandaloneAsync(viewId, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(bool) TryShowAsStandaloneWithSizePreferenceAsync(INT32 viewId, Windows.UI.ViewManagement.ViewSizePreference sizePreference)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewSwitcherStatics).abi_TryShowAsStandaloneWithSizePreferenceAsync(viewId, sizePreference, &_ret));
+		Debug.OK(staticInstance.abi_TryShowAsStandaloneWithSizePreferenceAsync(viewId, sizePreference, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(bool) TryShowAsStandaloneWithAnchorViewAndSizePreferenceAsync(INT32 viewId, Windows.UI.ViewManagement.ViewSizePreference sizePreference, INT32 anchorViewId, Windows.UI.ViewManagement.ViewSizePreference anchorSizePreference)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewSwitcherStatics).abi_TryShowAsStandaloneWithAnchorViewAndSizePreferenceAsync(viewId, sizePreference, anchorViewId, anchorSizePreference, &_ret));
+		Debug.OK(staticInstance.abi_TryShowAsStandaloneWithAnchorViewAndSizePreferenceAsync(viewId, sizePreference, anchorViewId, anchorSizePreference, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncAction SwitchAsync(INT32 viewId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewSwitcherStatics).abi_SwitchAsync(viewId, &_ret));
+		Debug.OK(staticInstance.abi_SwitchAsync(viewId, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncAction SwitchFromViewAsync(INT32 toViewId, INT32 fromViewId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewSwitcherStatics).abi_SwitchFromViewAsync(toViewId, fromViewId, &_ret));
+		Debug.OK(staticInstance.abi_SwitchFromViewAsync(toViewId, fromViewId, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncAction SwitchFromViewWithOptionsAsync(INT32 toViewId, INT32 fromViewId, Windows.UI.ViewManagement.ApplicationViewSwitchingOptions options)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewSwitcherStatics).abi_SwitchFromViewWithOptionsAsync(toViewId, fromViewId, options, &_ret));
+		Debug.OK(staticInstance.abi_SwitchFromViewWithOptionsAsync(toViewId, fromViewId, options, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(bool) PrepareForCustomAnimatedSwitchAsync(INT32 toViewId, INT32 fromViewId, Windows.UI.ViewManagement.ApplicationViewSwitchingOptions options)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewSwitcherStatics).abi_PrepareForCustomAnimatedSwitchAsync(toViewId, fromViewId, options, &_ret));
+		Debug.OK(staticInstance.abi_PrepareForCustomAnimatedSwitchAsync(toViewId, fromViewId, options, &_ret));
 		return _ret;
 	}
 }
@@ -762,122 +762,122 @@ interface ApplicationViewTitleBar : Windows.UI.ViewManagement.IApplicationViewTi
 extern(Windows):
 	final void ForegroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_ForegroundColor(value));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).set_ForegroundColor(value));
 	}
 	final Windows.Foundation.IReference!(Windows.UI.Color) ForegroundColor()
 	{
 		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_ForegroundColor(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).get_ForegroundColor(&_ret));
 		return _ret;
 	}
 	final void BackgroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_BackgroundColor(value));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).set_BackgroundColor(value));
 	}
 	final Windows.Foundation.IReference!(Windows.UI.Color) BackgroundColor()
 	{
 		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_BackgroundColor(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).get_BackgroundColor(&_ret));
 		return _ret;
 	}
 	final void ButtonForegroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_ButtonForegroundColor(value));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).set_ButtonForegroundColor(value));
 	}
 	final Windows.Foundation.IReference!(Windows.UI.Color) ButtonForegroundColor()
 	{
 		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_ButtonForegroundColor(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).get_ButtonForegroundColor(&_ret));
 		return _ret;
 	}
 	final void ButtonBackgroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_ButtonBackgroundColor(value));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).set_ButtonBackgroundColor(value));
 	}
 	final Windows.Foundation.IReference!(Windows.UI.Color) ButtonBackgroundColor()
 	{
 		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_ButtonBackgroundColor(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).get_ButtonBackgroundColor(&_ret));
 		return _ret;
 	}
 	final void ButtonHoverForegroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_ButtonHoverForegroundColor(value));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).set_ButtonHoverForegroundColor(value));
 	}
 	final Windows.Foundation.IReference!(Windows.UI.Color) ButtonHoverForegroundColor()
 	{
 		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_ButtonHoverForegroundColor(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).get_ButtonHoverForegroundColor(&_ret));
 		return _ret;
 	}
 	final void ButtonHoverBackgroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_ButtonHoverBackgroundColor(value));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).set_ButtonHoverBackgroundColor(value));
 	}
 	final Windows.Foundation.IReference!(Windows.UI.Color) ButtonHoverBackgroundColor()
 	{
 		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_ButtonHoverBackgroundColor(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).get_ButtonHoverBackgroundColor(&_ret));
 		return _ret;
 	}
 	final void ButtonPressedForegroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_ButtonPressedForegroundColor(value));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).set_ButtonPressedForegroundColor(value));
 	}
 	final Windows.Foundation.IReference!(Windows.UI.Color) ButtonPressedForegroundColor()
 	{
 		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_ButtonPressedForegroundColor(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).get_ButtonPressedForegroundColor(&_ret));
 		return _ret;
 	}
 	final void ButtonPressedBackgroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_ButtonPressedBackgroundColor(value));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).set_ButtonPressedBackgroundColor(value));
 	}
 	final Windows.Foundation.IReference!(Windows.UI.Color) ButtonPressedBackgroundColor()
 	{
 		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_ButtonPressedBackgroundColor(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).get_ButtonPressedBackgroundColor(&_ret));
 		return _ret;
 	}
 	final void InactiveForegroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_InactiveForegroundColor(value));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).set_InactiveForegroundColor(value));
 	}
 	final Windows.Foundation.IReference!(Windows.UI.Color) InactiveForegroundColor()
 	{
 		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_InactiveForegroundColor(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).get_InactiveForegroundColor(&_ret));
 		return _ret;
 	}
 	final void InactiveBackgroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_InactiveBackgroundColor(value));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).set_InactiveBackgroundColor(value));
 	}
 	final Windows.Foundation.IReference!(Windows.UI.Color) InactiveBackgroundColor()
 	{
 		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_InactiveBackgroundColor(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).get_InactiveBackgroundColor(&_ret));
 		return _ret;
 	}
 	final void ButtonInactiveForegroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_ButtonInactiveForegroundColor(value));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).set_ButtonInactiveForegroundColor(value));
 	}
 	final Windows.Foundation.IReference!(Windows.UI.Color) ButtonInactiveForegroundColor()
 	{
 		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_ButtonInactiveForegroundColor(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).get_ButtonInactiveForegroundColor(&_ret));
 		return _ret;
 	}
 	final void ButtonInactiveBackgroundColor(Windows.Foundation.IReference!(Windows.UI.Color) value)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).set_ButtonInactiveBackgroundColor(value));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).set_ButtonInactiveBackgroundColor(value));
 	}
 	final Windows.Foundation.IReference!(Windows.UI.Color) ButtonInactiveBackgroundColor()
 	{
 		Windows.Foundation.IReference!(Windows.UI.Color) _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTitleBar).get_ButtonInactiveBackgroundColor(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTitleBar)this.asInterface(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce"))).get_ButtonInactiveBackgroundColor(&_ret));
 		return _ret;
 	}
 }
@@ -888,12 +888,12 @@ extern(Windows):
 	final INT32 ViewId()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTransferContext).get_ViewId(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTransferContext)this.asInterface(uuid("8574bc63-3c17-408e-9408-8a1a9ea81bfa"))).get_ViewId(&_ret));
 		return _ret;
 	}
 	final void ViewId(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IApplicationViewTransferContext).set_ViewId(value));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationViewTransferContext)this.asInterface(uuid("8574bc63-3c17-408e-9408-8a1a9ea81bfa"))).set_ViewId(value));
 	}
 
 	private static Windows.UI.ViewManagement.IApplicationViewTransferContextStatics _staticInstance;
@@ -905,14 +905,14 @@ extern(Windows):
 	static HSTRING DataPackageFormatId()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IApplicationViewTransferContextStatics).get_DataPackageFormatId(&_ret));
+		Debug.OK(staticInstance.get_DataPackageFormatId(&_ret));
 		return _ret;
 	}
 	static ApplicationViewTransferContext New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ApplicationViewTransferContext).abi_ActivateInstance(&ret));
-		return ret.as!(ApplicationViewTransferContext);
+		return cast(ApplicationViewTransferContext) ret;
 	}
 }
 
@@ -922,50 +922,50 @@ extern(Windows):
 	final EventRegistrationToken OnShowing(void delegate(Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPane).add_Showing(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs), Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.ViewManagement.IInputPane)this.asInterface(uuid("640ada70-06f3-4c87-a678-9829c9127c28"))).add_Showing(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs), Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeShowing(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPane).remove_Showing(token));
+		Debug.OK((cast(Windows.UI.ViewManagement.IInputPane)this.asInterface(uuid("640ada70-06f3-4c87-a678-9829c9127c28"))).remove_Showing(token));
 	}
 	final EventRegistrationToken OnHiding(void delegate(Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPane).add_Hiding(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs), Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.ViewManagement.IInputPane)this.asInterface(uuid("640ada70-06f3-4c87-a678-9829c9127c28"))).add_Hiding(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs), Windows.UI.ViewManagement.InputPane, Windows.UI.ViewManagement.InputPaneVisibilityEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeHiding(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPane).remove_Hiding(token));
+		Debug.OK((cast(Windows.UI.ViewManagement.IInputPane)this.asInterface(uuid("640ada70-06f3-4c87-a678-9829c9127c28"))).remove_Hiding(token));
 	}
 	final Windows.Foundation.Rect OccludedRect()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPane).get_OccludedRect(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IInputPane)this.asInterface(uuid("640ada70-06f3-4c87-a678-9829c9127c28"))).get_OccludedRect(&_ret));
 		return _ret;
 	}
 	final bool TryShow()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPane2).abi_TryShow(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IInputPane2)this.asInterface(uuid("8a6b3f26-7090-4793-944c-c3f2cde26276"))).abi_TryShow(&_ret));
 		return _ret;
 	}
 	final bool TryHide()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPane2).abi_TryHide(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IInputPane2)this.asInterface(uuid("8a6b3f26-7090-4793-944c-c3f2cde26276"))).abi_TryHide(&_ret));
 		return _ret;
 	}
 	final bool Visible()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPaneControl).get_Visible(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IInputPaneControl)this.asInterface(uuid("088bb24f-962f-489d-aa6e-c6be1a0a6e52"))).get_Visible(&_ret));
 		return _ret;
 	}
 	final void Visible(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPaneControl).set_Visible(value));
+		Debug.OK((cast(Windows.UI.ViewManagement.IInputPaneControl)this.asInterface(uuid("088bb24f-962f-489d-aa6e-c6be1a0a6e52"))).set_Visible(value));
 	}
 
 	private static Windows.UI.ViewManagement.IInputPaneStatics _staticInstance;
@@ -977,7 +977,7 @@ extern(Windows):
 	static Windows.UI.ViewManagement.InputPane GetForCurrentView()
 	{
 		Windows.UI.ViewManagement.InputPane _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IInputPaneStatics).abi_GetForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 }
@@ -988,17 +988,17 @@ extern(Windows):
 	final Windows.Foundation.Rect OccludedRect()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPaneVisibilityEventArgs).get_OccludedRect(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IInputPaneVisibilityEventArgs)this.asInterface(uuid("d243e016-d907-4fcc-bb8d-f77baa5028f1"))).get_OccludedRect(&_ret));
 		return _ret;
 	}
 	final void EnsuredFocusedElementInView(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPaneVisibilityEventArgs).set_EnsuredFocusedElementInView(value));
+		Debug.OK((cast(Windows.UI.ViewManagement.IInputPaneVisibilityEventArgs)this.asInterface(uuid("d243e016-d907-4fcc-bb8d-f77baa5028f1"))).set_EnsuredFocusedElementInView(value));
 	}
 	final bool EnsuredFocusedElementInView()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IInputPaneVisibilityEventArgs).get_EnsuredFocusedElementInView(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IInputPaneVisibilityEventArgs)this.asInterface(uuid("d243e016-d907-4fcc-bb8d-f77baa5028f1"))).get_EnsuredFocusedElementInView(&_ret));
 		return _ret;
 	}
 }
@@ -1014,36 +1014,36 @@ interface ProjectionManager
 	static Windows.Foundation.IAsyncAction StartProjectingAsync(INT32 projectionViewId, INT32 anchorViewId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IProjectionManagerStatics).abi_StartProjectingAsync(projectionViewId, anchorViewId, &_ret));
+		Debug.OK(staticInstance.abi_StartProjectingAsync(projectionViewId, anchorViewId, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncAction SwapDisplaysForViewsAsync(INT32 projectionViewId, INT32 anchorViewId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IProjectionManagerStatics).abi_SwapDisplaysForViewsAsync(projectionViewId, anchorViewId, &_ret));
+		Debug.OK(staticInstance.abi_SwapDisplaysForViewsAsync(projectionViewId, anchorViewId, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncAction StopProjectingAsync(INT32 projectionViewId, INT32 anchorViewId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IProjectionManagerStatics).abi_StopProjectingAsync(projectionViewId, anchorViewId, &_ret));
+		Debug.OK(staticInstance.abi_StopProjectingAsync(projectionViewId, anchorViewId, &_ret));
 		return _ret;
 	}
 	static bool ProjectionDisplayAvailable()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IProjectionManagerStatics).get_ProjectionDisplayAvailable(&_ret));
+		Debug.OK(staticInstance.get_ProjectionDisplayAvailable(&_ret));
 		return _ret;
 	}
 	static EventRegistrationToken OnProjectionDisplayAvailableChanged(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IProjectionManagerStatics).add_ProjectionDisplayAvailableChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_ProjectionDisplayAvailableChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	static void removeProjectionDisplayAvailableChanged(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IProjectionManagerStatics).remove_ProjectionDisplayAvailableChanged(token));
+		Debug.OK(staticInstance.remove_ProjectionDisplayAvailableChanged(token));
 	}
 }
 
@@ -1053,134 +1053,134 @@ extern(Windows):
 	final Windows.UI.ViewManagement.HandPreference HandPreference()
 	{
 		Windows.UI.ViewManagement.HandPreference _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_HandPreference(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IUISettings)this.asInterface(uuid("85361600-1c63-4627-bcb1-3a89e0bc9c55"))).get_HandPreference(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Size CursorSize()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_CursorSize(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IUISettings)this.asInterface(uuid("85361600-1c63-4627-bcb1-3a89e0bc9c55"))).get_CursorSize(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Size ScrollBarSize()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_ScrollBarSize(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IUISettings)this.asInterface(uuid("85361600-1c63-4627-bcb1-3a89e0bc9c55"))).get_ScrollBarSize(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Size ScrollBarArrowSize()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_ScrollBarArrowSize(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IUISettings)this.asInterface(uuid("85361600-1c63-4627-bcb1-3a89e0bc9c55"))).get_ScrollBarArrowSize(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Size ScrollBarThumbBoxSize()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_ScrollBarThumbBoxSize(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IUISettings)this.asInterface(uuid("85361600-1c63-4627-bcb1-3a89e0bc9c55"))).get_ScrollBarThumbBoxSize(&_ret));
 		return _ret;
 	}
 	final UINT32 MessageDuration()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_MessageDuration(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IUISettings)this.asInterface(uuid("85361600-1c63-4627-bcb1-3a89e0bc9c55"))).get_MessageDuration(&_ret));
 		return _ret;
 	}
 	final bool AnimationsEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_AnimationsEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IUISettings)this.asInterface(uuid("85361600-1c63-4627-bcb1-3a89e0bc9c55"))).get_AnimationsEnabled(&_ret));
 		return _ret;
 	}
 	final bool CaretBrowsingEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_CaretBrowsingEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IUISettings)this.asInterface(uuid("85361600-1c63-4627-bcb1-3a89e0bc9c55"))).get_CaretBrowsingEnabled(&_ret));
 		return _ret;
 	}
 	final UINT32 CaretBlinkRate()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_CaretBlinkRate(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IUISettings)this.asInterface(uuid("85361600-1c63-4627-bcb1-3a89e0bc9c55"))).get_CaretBlinkRate(&_ret));
 		return _ret;
 	}
 	final UINT32 CaretWidth()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_CaretWidth(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IUISettings)this.asInterface(uuid("85361600-1c63-4627-bcb1-3a89e0bc9c55"))).get_CaretWidth(&_ret));
 		return _ret;
 	}
 	final UINT32 DoubleClickTime()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_DoubleClickTime(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IUISettings)this.asInterface(uuid("85361600-1c63-4627-bcb1-3a89e0bc9c55"))).get_DoubleClickTime(&_ret));
 		return _ret;
 	}
 	final UINT32 MouseHoverTime()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).get_MouseHoverTime(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IUISettings)this.asInterface(uuid("85361600-1c63-4627-bcb1-3a89e0bc9c55"))).get_MouseHoverTime(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Color UIElementColor(Windows.UI.ViewManagement.UIElementType desiredElement)
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings).abi_UIElementColor(desiredElement, &_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IUISettings)this.asInterface(uuid("85361600-1c63-4627-bcb1-3a89e0bc9c55"))).abi_UIElementColor(desiredElement, &_ret));
 		return _ret;
 	}
 	final double TextScaleFactor()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings2).get_TextScaleFactor(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IUISettings2)this.asInterface(uuid("bad82401-2721-44f9-bb91-2bb228be442f"))).get_TextScaleFactor(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnTextScaleFactorChanged(void delegate(Windows.UI.ViewManagement.UISettings, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings2).add_TextScaleFactorChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings, IInspectable), Windows.UI.ViewManagement.UISettings, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.UI.ViewManagement.IUISettings2)this.asInterface(uuid("bad82401-2721-44f9-bb91-2bb228be442f"))).add_TextScaleFactorChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings, IInspectable), Windows.UI.ViewManagement.UISettings, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeTextScaleFactorChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings2).remove_TextScaleFactorChanged(cookie));
+		Debug.OK((cast(Windows.UI.ViewManagement.IUISettings2)this.asInterface(uuid("bad82401-2721-44f9-bb91-2bb228be442f"))).remove_TextScaleFactorChanged(cookie));
 	}
 	final Windows.UI.Color GetColorValue(Windows.UI.ViewManagement.UIColorType desiredColor)
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings3).abi_GetColorValue(desiredColor, &_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IUISettings3)this.asInterface(uuid("03021be4-5254-4781-8194-5168f7d06d7b"))).abi_GetColorValue(desiredColor, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnColorValuesChanged(void delegate(Windows.UI.ViewManagement.UISettings, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings3).add_ColorValuesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings, IInspectable), Windows.UI.ViewManagement.UISettings, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.UI.ViewManagement.IUISettings3)this.asInterface(uuid("03021be4-5254-4781-8194-5168f7d06d7b"))).add_ColorValuesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings, IInspectable), Windows.UI.ViewManagement.UISettings, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeColorValuesChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings3).remove_ColorValuesChanged(cookie));
+		Debug.OK((cast(Windows.UI.ViewManagement.IUISettings3)this.asInterface(uuid("03021be4-5254-4781-8194-5168f7d06d7b"))).remove_ColorValuesChanged(cookie));
 	}
 	final bool AdvancedEffectsEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings4).get_AdvancedEffectsEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IUISettings4)this.asInterface(uuid("52bb3002-919b-4d6b-9b78-8dd66ff4b93b"))).get_AdvancedEffectsEnabled(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnAdvancedEffectsEnabledChanged(void delegate(Windows.UI.ViewManagement.UISettings, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings4).add_AdvancedEffectsEnabledChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings, IInspectable), Windows.UI.ViewManagement.UISettings, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.UI.ViewManagement.IUISettings4)this.asInterface(uuid("52bb3002-919b-4d6b-9b78-8dd66ff4b93b"))).add_AdvancedEffectsEnabledChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.ViewManagement.UISettings, IInspectable), Windows.UI.ViewManagement.UISettings, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeAdvancedEffectsEnabledChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IUISettings4).remove_AdvancedEffectsEnabledChanged(cookie));
+		Debug.OK((cast(Windows.UI.ViewManagement.IUISettings4)this.asInterface(uuid("52bb3002-919b-4d6b-9b78-8dd66ff4b93b"))).remove_AdvancedEffectsEnabledChanged(cookie));
 	}
 	static UISettings New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(UISettings).abi_ActivateInstance(&ret));
-		return ret.as!(UISettings);
+		return cast(UISettings) ret;
 	}
 }
 
@@ -1190,7 +1190,7 @@ extern(Windows):
 	final Windows.UI.ViewManagement.UserInteractionMode UserInteractionMode()
 	{
 		Windows.UI.ViewManagement.UserInteractionMode _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IUIViewSettings).get_UserInteractionMode(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IUIViewSettings)this.asInterface(uuid("c63657f6-8850-470d-88f8-455e16ea2c26"))).get_UserInteractionMode(&_ret));
 		return _ret;
 	}
 
@@ -1203,7 +1203,7 @@ extern(Windows):
 	static Windows.UI.ViewManagement.UIViewSettings GetForCurrentView()
 	{
 		Windows.UI.ViewManagement.UIViewSettings _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IUIViewSettingsStatics).abi_GetForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 }
@@ -1214,22 +1214,22 @@ extern(Windows):
 	final Windows.UI.ViewManagement.ViewSizePreference ViewSizePreference()
 	{
 		Windows.UI.ViewManagement.ViewSizePreference _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IViewModePreferences).get_ViewSizePreference(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IViewModePreferences)this.asInterface(uuid("878fcd3a-0b99-42c9-84d0-d3f1d403554b"))).get_ViewSizePreference(&_ret));
 		return _ret;
 	}
 	final void ViewSizePreference(Windows.UI.ViewManagement.ViewSizePreference value)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IViewModePreferences).set_ViewSizePreference(value));
+		Debug.OK((cast(Windows.UI.ViewManagement.IViewModePreferences)this.asInterface(uuid("878fcd3a-0b99-42c9-84d0-d3f1d403554b"))).set_ViewSizePreference(value));
 	}
 	final Windows.Foundation.Size CustomSize()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IViewModePreferences).get_CustomSize(&_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IViewModePreferences)this.asInterface(uuid("878fcd3a-0b99-42c9-84d0-d3f1d403554b"))).get_CustomSize(&_ret));
 		return _ret;
 	}
 	final void CustomSize(Windows.Foundation.Size value)
 	{
-		Debug.OK(this.as!(Windows.UI.ViewManagement.IViewModePreferences).set_CustomSize(value));
+		Debug.OK((cast(Windows.UI.ViewManagement.IViewModePreferences)this.asInterface(uuid("878fcd3a-0b99-42c9-84d0-d3f1d403554b"))).set_CustomSize(value));
 	}
 
 	private static Windows.UI.ViewManagement.IViewModePreferencesStatics _staticInstance;
@@ -1241,7 +1241,7 @@ extern(Windows):
 	static Windows.UI.ViewManagement.ViewModePreferences CreateDefault(Windows.UI.ViewManagement.ApplicationViewMode mode)
 	{
 		Windows.UI.ViewManagement.ViewModePreferences _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.ViewManagement.IViewModePreferencesStatics).abi_CreateDefault(mode, &_ret));
+		Debug.OK(staticInstance.abi_CreateDefault(mode, &_ret));
 		return _ret;
 	}
 }

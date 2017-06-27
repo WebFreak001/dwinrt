@@ -60,48 +60,48 @@ extern(Windows):
 	final Windows.Networking.HostName LocalHostName()
 	{
 		Windows.Networking.HostName _ret;
-		Debug.OK(this.as!(Windows.Networking.IEndpointPair).get_LocalHostName(&_ret));
+		Debug.OK((cast(Windows.Networking.IEndpointPair)this.asInterface(uuid("33a0aa36-f8fa-4b30-b856-76517c3bd06d"))).get_LocalHostName(&_ret));
 		return _ret;
 	}
 	final void LocalHostName(Windows.Networking.HostName value)
 	{
-		Debug.OK(this.as!(Windows.Networking.IEndpointPair).set_LocalHostName(value));
+		Debug.OK((cast(Windows.Networking.IEndpointPair)this.asInterface(uuid("33a0aa36-f8fa-4b30-b856-76517c3bd06d"))).set_LocalHostName(value));
 	}
 	final HSTRING LocalServiceName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.IEndpointPair).get_LocalServiceName(&_ret));
+		Debug.OK((cast(Windows.Networking.IEndpointPair)this.asInterface(uuid("33a0aa36-f8fa-4b30-b856-76517c3bd06d"))).get_LocalServiceName(&_ret));
 		return _ret;
 	}
 	final void LocalServiceName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.IEndpointPair).set_LocalServiceName(value));
+		Debug.OK((cast(Windows.Networking.IEndpointPair)this.asInterface(uuid("33a0aa36-f8fa-4b30-b856-76517c3bd06d"))).set_LocalServiceName(value));
 	}
 	final Windows.Networking.HostName RemoteHostName()
 	{
 		Windows.Networking.HostName _ret;
-		Debug.OK(this.as!(Windows.Networking.IEndpointPair).get_RemoteHostName(&_ret));
+		Debug.OK((cast(Windows.Networking.IEndpointPair)this.asInterface(uuid("33a0aa36-f8fa-4b30-b856-76517c3bd06d"))).get_RemoteHostName(&_ret));
 		return _ret;
 	}
 	final void RemoteHostName(Windows.Networking.HostName value)
 	{
-		Debug.OK(this.as!(Windows.Networking.IEndpointPair).set_RemoteHostName(value));
+		Debug.OK((cast(Windows.Networking.IEndpointPair)this.asInterface(uuid("33a0aa36-f8fa-4b30-b856-76517c3bd06d"))).set_RemoteHostName(value));
 	}
 	final HSTRING RemoteServiceName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.IEndpointPair).get_RemoteServiceName(&_ret));
+		Debug.OK((cast(Windows.Networking.IEndpointPair)this.asInterface(uuid("33a0aa36-f8fa-4b30-b856-76517c3bd06d"))).get_RemoteServiceName(&_ret));
 		return _ret;
 	}
 	final void RemoteServiceName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.IEndpointPair).set_RemoteServiceName(value));
+		Debug.OK((cast(Windows.Networking.IEndpointPair)this.asInterface(uuid("33a0aa36-f8fa-4b30-b856-76517c3bd06d"))).set_RemoteServiceName(value));
 	}
 	static Windows.Networking.EndpointPair New(Windows.Networking.HostName localHostName, HSTRING localServiceName, Windows.Networking.HostName remoteHostName, HSTRING remoteServiceName)
 	{
 		auto factory = factory!(Windows.Networking.IEndpointPairFactory);
 		Windows.Networking.EndpointPair _ret;
-		Debug.OK(factory.as!(Windows.Networking.IEndpointPairFactory).abi_CreateEndpointPair(localHostName, localServiceName, remoteHostName, remoteServiceName, &_ret));
+		Debug.OK((cast(Windows.Networking.IEndpointPairFactory)factory.asInterface(uuid("b609d971-64e0-442b-aa6f-cc8c8f181f78"))).abi_CreateEndpointPair(localHostName, localServiceName, remoteHostName, remoteServiceName, &_ret));
 		return _ret;
 	}
 }
@@ -112,43 +112,43 @@ extern(Windows):
 	final Windows.Networking.Connectivity.IPInformation IPInformation()
 	{
 		Windows.Networking.Connectivity.IPInformation _ret;
-		Debug.OK(this.as!(Windows.Networking.IHostName).get_IPInformation(&_ret));
+		Debug.OK((cast(Windows.Networking.IHostName)this.asInterface(uuid("bf8ecaad-ed96-49a7-9084-d416cae88dcb"))).get_IPInformation(&_ret));
 		return _ret;
 	}
 	final HSTRING RawName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.IHostName).get_RawName(&_ret));
+		Debug.OK((cast(Windows.Networking.IHostName)this.asInterface(uuid("bf8ecaad-ed96-49a7-9084-d416cae88dcb"))).get_RawName(&_ret));
 		return _ret;
 	}
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.IHostName).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.Networking.IHostName)this.asInterface(uuid("bf8ecaad-ed96-49a7-9084-d416cae88dcb"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final HSTRING CanonicalName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.IHostName).get_CanonicalName(&_ret));
+		Debug.OK((cast(Windows.Networking.IHostName)this.asInterface(uuid("bf8ecaad-ed96-49a7-9084-d416cae88dcb"))).get_CanonicalName(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.HostNameType Type()
 	{
 		Windows.Networking.HostNameType _ret;
-		Debug.OK(this.as!(Windows.Networking.IHostName).get_Type(&_ret));
+		Debug.OK((cast(Windows.Networking.IHostName)this.asInterface(uuid("bf8ecaad-ed96-49a7-9084-d416cae88dcb"))).get_Type(&_ret));
 		return _ret;
 	}
 	final bool IsEqual(Windows.Networking.HostName hostName)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.IHostName).abi_IsEqual(hostName, &_ret));
+		Debug.OK((cast(Windows.Networking.IHostName)this.asInterface(uuid("bf8ecaad-ed96-49a7-9084-d416cae88dcb"))).abi_IsEqual(hostName, &_ret));
 		return _ret;
 	}
 	final HSTRING ToString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		Debug.OK((cast(Windows.Foundation.IStringable)this.asInterface(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3"))).abi_ToString(&_ret));
 		return _ret;
 	}
 
@@ -161,14 +161,14 @@ extern(Windows):
 	static INT32 Compare(HSTRING value1, HSTRING value2)
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.IHostNameStatics).abi_Compare(value1, value2, &_ret));
+		Debug.OK(staticInstance.abi_Compare(value1, value2, &_ret));
 		return _ret;
 	}
 	static Windows.Networking.HostName New(HSTRING hostName)
 	{
 		auto factory = factory!(Windows.Networking.IHostNameFactory);
 		Windows.Networking.HostName _ret;
-		Debug.OK(factory.as!(Windows.Networking.IHostNameFactory).abi_CreateHostName(hostName, &_ret));
+		Debug.OK((cast(Windows.Networking.IHostNameFactory)factory.asInterface(uuid("458c23ed-712f-4576-adf1-c20b2c643558"))).abi_CreateHostName(hostName, &_ret));
 		return _ret;
 	}
 }

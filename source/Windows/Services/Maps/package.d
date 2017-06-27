@@ -294,20 +294,20 @@ extern(Windows):
 	final Windows.Devices.Geolocation.Geopoint Point()
 	{
 		Windows.Devices.Geolocation.Geopoint _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IEnhancedWaypoint).get_Point(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IEnhancedWaypoint)this.asInterface(uuid("ed268c74-5913-11e6-8b77-86f30ca893d3"))).get_Point(&_ret));
 		return _ret;
 	}
 	final Windows.Services.Maps.WaypointKind Kind()
 	{
 		Windows.Services.Maps.WaypointKind _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IEnhancedWaypoint).get_Kind(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IEnhancedWaypoint)this.asInterface(uuid("ed268c74-5913-11e6-8b77-86f30ca893d3"))).get_Kind(&_ret));
 		return _ret;
 	}
 	static Windows.Services.Maps.EnhancedWaypoint New(Windows.Devices.Geolocation.Geopoint point, Windows.Services.Maps.WaypointKind kind)
 	{
 		auto factory = factory!(Windows.Services.Maps.IEnhancedWaypointFactory);
 		Windows.Services.Maps.EnhancedWaypoint _ret;
-		Debug.OK(factory.as!(Windows.Services.Maps.IEnhancedWaypointFactory).abi_Create(point, kind, &_ret));
+		Debug.OK((cast(Windows.Services.Maps.IEnhancedWaypointFactory)factory.asInterface(uuid("af868477-a2aa-46dd-b645-23b31b8aa6c7"))).abi_Create(point, kind, &_ret));
 		return _ret;
 	}
 }
@@ -318,13 +318,13 @@ extern(Windows):
 	final Windows.Services.Maps.ManeuverWarningKind Kind()
 	{
 		Windows.Services.Maps.ManeuverWarningKind _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IManeuverWarning).get_Kind(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IManeuverWarning)this.asInterface(uuid("c1a36d8a-2630-4378-9e4a-6e44253dceba"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.Services.Maps.ManeuverWarningSeverity Severity()
 	{
 		Windows.Services.Maps.ManeuverWarningSeverity _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IManeuverWarning).get_Severity(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IManeuverWarning)this.asInterface(uuid("c1a36d8a-2630-4378-9e4a-6e44253dceba"))).get_Severity(&_ret));
 		return _ret;
 	}
 }
@@ -335,97 +335,97 @@ extern(Windows):
 	final HSTRING BuildingName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_BuildingName(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_BuildingName(&_ret));
 		return _ret;
 	}
 	final HSTRING BuildingFloor()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_BuildingFloor(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_BuildingFloor(&_ret));
 		return _ret;
 	}
 	final HSTRING BuildingRoom()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_BuildingRoom(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_BuildingRoom(&_ret));
 		return _ret;
 	}
 	final HSTRING BuildingWing()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_BuildingWing(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_BuildingWing(&_ret));
 		return _ret;
 	}
 	final HSTRING StreetNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_StreetNumber(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_StreetNumber(&_ret));
 		return _ret;
 	}
 	final HSTRING Street()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_Street(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_Street(&_ret));
 		return _ret;
 	}
 	final HSTRING Neighborhood()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_Neighborhood(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_Neighborhood(&_ret));
 		return _ret;
 	}
 	final HSTRING District()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_District(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_District(&_ret));
 		return _ret;
 	}
 	final HSTRING Town()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_Town(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_Town(&_ret));
 		return _ret;
 	}
 	final HSTRING Region()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_Region(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_Region(&_ret));
 		return _ret;
 	}
 	final HSTRING RegionCode()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_RegionCode(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_RegionCode(&_ret));
 		return _ret;
 	}
 	final HSTRING Country()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_Country(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_Country(&_ret));
 		return _ret;
 	}
 	final HSTRING CountryCode()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_CountryCode(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_CountryCode(&_ret));
 		return _ret;
 	}
 	final HSTRING PostCode()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_PostCode(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_PostCode(&_ret));
 		return _ret;
 	}
 	final HSTRING Continent()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress).get_Continent(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_Continent(&_ret));
 		return _ret;
 	}
 	final HSTRING FormattedAddress()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapAddress2).get_FormattedAddress(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapAddress2)this.asInterface(uuid("75cd6df1-e5ad-45a9-bf40-6cf256c1dd13"))).get_FormattedAddress(&_ret));
 		return _ret;
 	}
 }
@@ -436,25 +436,25 @@ extern(Windows):
 	final Windows.Devices.Geolocation.Geopoint Point()
 	{
 		Windows.Devices.Geolocation.Geopoint _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapLocation).get_Point(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapLocation)this.asInterface(uuid("3c073f57-0da4-42e8-9ee2-a96fcf2371dc"))).get_Point(&_ret));
 		return _ret;
 	}
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapLocation).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapLocation)this.asInterface(uuid("3c073f57-0da4-42e8-9ee2-a96fcf2371dc"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final HSTRING Description()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapLocation).get_Description(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapLocation)this.asInterface(uuid("3c073f57-0da4-42e8-9ee2-a96fcf2371dc"))).get_Description(&_ret));
 		return _ret;
 	}
 	final Windows.Services.Maps.MapAddress Address()
 	{
 		Windows.Services.Maps.MapAddress _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapLocation).get_Address(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapLocation)this.asInterface(uuid("3c073f57-0da4-42e8-9ee2-a96fcf2371dc"))).get_Address(&_ret));
 		return _ret;
 	}
 }
@@ -470,19 +470,19 @@ interface MapLocationFinder
 	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult) FindLocationsAtAsync(Windows.Devices.Geolocation.Geopoint queryPoint)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.IMapLocationFinderStatics).abi_FindLocationsAtAsync(queryPoint, &_ret));
+		Debug.OK(staticInstance.abi_FindLocationsAtAsync(queryPoint, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult) FindLocationsAsync(HSTRING searchText, Windows.Devices.Geolocation.Geopoint referencePoint)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.IMapLocationFinderStatics).abi_FindLocationsAsync(searchText, referencePoint, &_ret));
+		Debug.OK(staticInstance.abi_FindLocationsAsync(searchText, referencePoint, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult) FindLocationsWithMaxCountAsync(HSTRING searchText, Windows.Devices.Geolocation.Geopoint referencePoint, UINT32 maxCount)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.IMapLocationFinderStatics).abi_FindLocationsWithMaxCountAsync(searchText, referencePoint, maxCount, &_ret));
+		Debug.OK(staticInstance.abi_FindLocationsWithMaxCountAsync(searchText, referencePoint, maxCount, &_ret));
 		return _ret;
 	}
 }
@@ -493,13 +493,13 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.MapLocation) Locations()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.MapLocation) _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapLocationFinderResult).get_Locations(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapLocationFinderResult)this.asInterface(uuid("43f1f179-e8cc-45f6-bed2-54ccbf965d9a"))).get_Locations(&_ret));
 		return _ret;
 	}
 	final Windows.Services.Maps.MapLocationFinderStatus Status()
 	{
 		Windows.Services.Maps.MapLocationFinderStatus _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapLocationFinderResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapLocationFinderResult)this.asInterface(uuid("43f1f179-e8cc-45f6-bed2-54ccbf965d9a"))).get_Status(&_ret));
 		return _ret;
 	}
 }
@@ -514,11 +514,11 @@ interface MapManager
 	}
 	static void ShowDownloadedMapsUI()
 	{
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.IMapManagerStatics).abi_ShowDownloadedMapsUI());
+		Debug.OK(staticInstance.abi_ShowDownloadedMapsUI());
 	}
 	static void ShowMapsUpdateUI()
 	{
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.IMapManagerStatics).abi_ShowMapsUpdateUI());
+		Debug.OK(staticInstance.abi_ShowMapsUpdateUI());
 	}
 }
 
@@ -528,61 +528,61 @@ extern(Windows):
 	final Windows.Devices.Geolocation.GeoboundingBox BoundingBox()
 	{
 		Windows.Devices.Geolocation.GeoboundingBox _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRoute).get_BoundingBox(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRoute)this.asInterface(uuid("fb07b732-584d-4583-9c60-641fea274349"))).get_BoundingBox(&_ret));
 		return _ret;
 	}
 	final double LengthInMeters()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRoute).get_LengthInMeters(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRoute)this.asInterface(uuid("fb07b732-584d-4583-9c60-641fea274349"))).get_LengthInMeters(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan EstimatedDuration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRoute).get_EstimatedDuration(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRoute)this.asInterface(uuid("fb07b732-584d-4583-9c60-641fea274349"))).get_EstimatedDuration(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.Geopath Path()
 	{
 		Windows.Devices.Geolocation.Geopath _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRoute).get_Path(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRoute)this.asInterface(uuid("fb07b732-584d-4583-9c60-641fea274349"))).get_Path(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.MapRouteLeg) Legs()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.MapRouteLeg) _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRoute).get_Legs(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRoute)this.asInterface(uuid("fb07b732-584d-4583-9c60-641fea274349"))).get_Legs(&_ret));
 		return _ret;
 	}
 	final bool IsTrafficBased()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRoute).get_IsTrafficBased(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRoute)this.asInterface(uuid("fb07b732-584d-4583-9c60-641fea274349"))).get_IsTrafficBased(&_ret));
 		return _ret;
 	}
 	final Windows.Services.Maps.MapRouteRestrictions ViolatedRestrictions()
 	{
 		Windows.Services.Maps.MapRouteRestrictions _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRoute2).get_ViolatedRestrictions(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRoute2)this.asInterface(uuid("d1c5d40c-2213-4ab0-a260-46b38169beac"))).get_ViolatedRestrictions(&_ret));
 		return _ret;
 	}
 	final bool HasBlockedRoads()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRoute2).get_HasBlockedRoads(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRoute2)this.asInterface(uuid("d1c5d40c-2213-4ab0-a260-46b38169beac"))).get_HasBlockedRoads(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan DurationWithoutTraffic()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRoute3).get_DurationWithoutTraffic(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRoute3)this.asInterface(uuid("858d1eae-f2ad-429f-bb37-cd21094ffc92"))).get_DurationWithoutTraffic(&_ret));
 		return _ret;
 	}
 	final Windows.Services.Maps.TrafficCongestion TrafficCongestion()
 	{
 		Windows.Services.Maps.TrafficCongestion _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRoute3).get_TrafficCongestion(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRoute3)this.asInterface(uuid("858d1eae-f2ad-429f-bb37-cd21094ffc92"))).get_TrafficCongestion(&_ret));
 		return _ret;
 	}
 }
@@ -593,48 +593,48 @@ extern(Windows):
 	final UINT32 MaxAlternateRouteCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteDrivingOptions).get_MaxAlternateRouteCount(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteDrivingOptions)this.asInterface(uuid("6815364d-c6dc-4697-a452-b18f8f0b67a1"))).get_MaxAlternateRouteCount(&_ret));
 		return _ret;
 	}
 	final void MaxAlternateRouteCount(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteDrivingOptions).set_MaxAlternateRouteCount(value));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteDrivingOptions)this.asInterface(uuid("6815364d-c6dc-4697-a452-b18f8f0b67a1"))).set_MaxAlternateRouteCount(value));
 	}
 	final Windows.Foundation.IReference!(double) InitialHeading()
 	{
 		Windows.Foundation.IReference!(double) _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteDrivingOptions).get_InitialHeading(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteDrivingOptions)this.asInterface(uuid("6815364d-c6dc-4697-a452-b18f8f0b67a1"))).get_InitialHeading(&_ret));
 		return _ret;
 	}
 	final void InitialHeading(Windows.Foundation.IReference!(double) value)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteDrivingOptions).set_InitialHeading(value));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteDrivingOptions)this.asInterface(uuid("6815364d-c6dc-4697-a452-b18f8f0b67a1"))).set_InitialHeading(value));
 	}
 	final Windows.Services.Maps.MapRouteOptimization RouteOptimization()
 	{
 		Windows.Services.Maps.MapRouteOptimization _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteDrivingOptions).get_RouteOptimization(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteDrivingOptions)this.asInterface(uuid("6815364d-c6dc-4697-a452-b18f8f0b67a1"))).get_RouteOptimization(&_ret));
 		return _ret;
 	}
 	final void RouteOptimization(Windows.Services.Maps.MapRouteOptimization value)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteDrivingOptions).set_RouteOptimization(value));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteDrivingOptions)this.asInterface(uuid("6815364d-c6dc-4697-a452-b18f8f0b67a1"))).set_RouteOptimization(value));
 	}
 	final Windows.Services.Maps.MapRouteRestrictions RouteRestrictions()
 	{
 		Windows.Services.Maps.MapRouteRestrictions _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteDrivingOptions).get_RouteRestrictions(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteDrivingOptions)this.asInterface(uuid("6815364d-c6dc-4697-a452-b18f8f0b67a1"))).get_RouteRestrictions(&_ret));
 		return _ret;
 	}
 	final void RouteRestrictions(Windows.Services.Maps.MapRouteRestrictions value)
 	{
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteDrivingOptions).set_RouteRestrictions(value));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteDrivingOptions)this.asInterface(uuid("6815364d-c6dc-4697-a452-b18f8f0b67a1"))).set_RouteRestrictions(value));
 	}
 	static MapRouteDrivingOptions New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MapRouteDrivingOptions).abi_ActivateInstance(&ret));
-		return ret.as!(MapRouteDrivingOptions);
+		return cast(MapRouteDrivingOptions) ret;
 	}
 }
 
@@ -649,61 +649,61 @@ interface MapRouteFinder
 	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetDrivingRouteAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.IMapRouteFinderStatics).abi_GetDrivingRouteAsync(startPoint, endPoint, &_ret));
+		Debug.OK(staticInstance.abi_GetDrivingRouteAsync(startPoint, endPoint, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetDrivingRouteWithOptimizationAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint, Windows.Services.Maps.MapRouteOptimization optimization)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.IMapRouteFinderStatics).abi_GetDrivingRouteWithOptimizationAsync(startPoint, endPoint, optimization, &_ret));
+		Debug.OK(staticInstance.abi_GetDrivingRouteWithOptimizationAsync(startPoint, endPoint, optimization, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetDrivingRouteWithOptimizationAndRestrictionsAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Services.Maps.MapRouteRestrictions restrictions)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.IMapRouteFinderStatics).abi_GetDrivingRouteWithOptimizationAndRestrictionsAsync(startPoint, endPoint, optimization, restrictions, &_ret));
+		Debug.OK(staticInstance.abi_GetDrivingRouteWithOptimizationAndRestrictionsAsync(startPoint, endPoint, optimization, restrictions, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetDrivingRouteWithOptimizationRestrictionsAndHeadingAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Services.Maps.MapRouteRestrictions restrictions, double headingInDegrees)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.IMapRouteFinderStatics).abi_GetDrivingRouteWithOptimizationRestrictionsAndHeadingAsync(startPoint, endPoint, optimization, restrictions, headingInDegrees, &_ret));
+		Debug.OK(staticInstance.abi_GetDrivingRouteWithOptimizationRestrictionsAndHeadingAsync(startPoint, endPoint, optimization, restrictions, headingInDegrees, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetDrivingRouteFromWaypointsAsync(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) wayPoints)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.IMapRouteFinderStatics).abi_GetDrivingRouteFromWaypointsAsync(wayPoints, &_ret));
+		Debug.OK(staticInstance.abi_GetDrivingRouteFromWaypointsAsync(wayPoints, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetDrivingRouteFromWaypointsAndOptimizationAsync(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) wayPoints, Windows.Services.Maps.MapRouteOptimization optimization)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.IMapRouteFinderStatics).abi_GetDrivingRouteFromWaypointsAndOptimizationAsync(wayPoints, optimization, &_ret));
+		Debug.OK(staticInstance.abi_GetDrivingRouteFromWaypointsAndOptimizationAsync(wayPoints, optimization, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetDrivingRouteFromWaypointsOptimizationAndRestrictionsAsync(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) wayPoints, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Services.Maps.MapRouteRestrictions restrictions)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.IMapRouteFinderStatics).abi_GetDrivingRouteFromWaypointsOptimizationAndRestrictionsAsync(wayPoints, optimization, restrictions, &_ret));
+		Debug.OK(staticInstance.abi_GetDrivingRouteFromWaypointsOptimizationAndRestrictionsAsync(wayPoints, optimization, restrictions, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetDrivingRouteFromWaypointsOptimizationRestrictionsAndHeadingAsync(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) wayPoints, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Services.Maps.MapRouteRestrictions restrictions, double headingInDegrees)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.IMapRouteFinderStatics).abi_GetDrivingRouteFromWaypointsOptimizationRestrictionsAndHeadingAsync(wayPoints, optimization, restrictions, headingInDegrees, &_ret));
+		Debug.OK(staticInstance.abi_GetDrivingRouteFromWaypointsOptimizationRestrictionsAndHeadingAsync(wayPoints, optimization, restrictions, headingInDegrees, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetWalkingRouteAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.IMapRouteFinderStatics).abi_GetWalkingRouteAsync(startPoint, endPoint, &_ret));
+		Debug.OK(staticInstance.abi_GetWalkingRouteAsync(startPoint, endPoint, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetWalkingRouteFromWaypointsAsync(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) wayPoints)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.IMapRouteFinderStatics).abi_GetWalkingRouteFromWaypointsAsync(wayPoints, &_ret));
+		Debug.OK(staticInstance.abi_GetWalkingRouteFromWaypointsAsync(wayPoints, &_ret));
 		return _ret;
 	}
 }
@@ -714,19 +714,19 @@ extern(Windows):
 	final Windows.Services.Maps.MapRoute Route()
 	{
 		Windows.Services.Maps.MapRoute _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteFinderResult).get_Route(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteFinderResult)this.asInterface(uuid("a868a31a-9422-46ac-8ca1-b1614d4bfbe2"))).get_Route(&_ret));
 		return _ret;
 	}
 	final Windows.Services.Maps.MapRouteFinderStatus Status()
 	{
 		Windows.Services.Maps.MapRouteFinderStatus _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteFinderResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteFinderResult)this.asInterface(uuid("a868a31a-9422-46ac-8ca1-b1614d4bfbe2"))).get_Status(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.MapRoute) AlternateRoutes()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.MapRoute) _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteFinderResult2).get_AlternateRoutes(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteFinderResult2)this.asInterface(uuid("20709c6d-d90c-46c8-91c6-7d4be4efb215"))).get_AlternateRoutes(&_ret));
 		return _ret;
 	}
 }
@@ -737,43 +737,43 @@ extern(Windows):
 	final Windows.Devices.Geolocation.GeoboundingBox BoundingBox()
 	{
 		Windows.Devices.Geolocation.GeoboundingBox _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteLeg).get_BoundingBox(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteLeg)this.asInterface(uuid("96f8b2f6-5bba-4d17-9db6-1a263fec7471"))).get_BoundingBox(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.Geopath Path()
 	{
 		Windows.Devices.Geolocation.Geopath _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteLeg).get_Path(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteLeg)this.asInterface(uuid("96f8b2f6-5bba-4d17-9db6-1a263fec7471"))).get_Path(&_ret));
 		return _ret;
 	}
 	final double LengthInMeters()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteLeg).get_LengthInMeters(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteLeg)this.asInterface(uuid("96f8b2f6-5bba-4d17-9db6-1a263fec7471"))).get_LengthInMeters(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan EstimatedDuration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteLeg).get_EstimatedDuration(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteLeg)this.asInterface(uuid("96f8b2f6-5bba-4d17-9db6-1a263fec7471"))).get_EstimatedDuration(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.MapRouteManeuver) Maneuvers()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.MapRouteManeuver) _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteLeg).get_Maneuvers(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteLeg)this.asInterface(uuid("96f8b2f6-5bba-4d17-9db6-1a263fec7471"))).get_Maneuvers(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan DurationWithoutTraffic()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteLeg2).get_DurationWithoutTraffic(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteLeg2)this.asInterface(uuid("02e2062d-c9c6-45b8-8e54-1a10b57a17e8"))).get_DurationWithoutTraffic(&_ret));
 		return _ret;
 	}
 	final Windows.Services.Maps.TrafficCongestion TrafficCongestion()
 	{
 		Windows.Services.Maps.TrafficCongestion _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteLeg2).get_TrafficCongestion(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteLeg2)this.asInterface(uuid("02e2062d-c9c6-45b8-8e54-1a10b57a17e8"))).get_TrafficCongestion(&_ret));
 		return _ret;
 	}
 }
@@ -784,61 +784,61 @@ extern(Windows):
 	final Windows.Devices.Geolocation.Geopoint StartingPoint()
 	{
 		Windows.Devices.Geolocation.Geopoint _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteManeuver).get_StartingPoint(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteManeuver)this.asInterface(uuid("ed5c17f0-a6ab-4d65-a086-fa8a7e340df2"))).get_StartingPoint(&_ret));
 		return _ret;
 	}
 	final double LengthInMeters()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteManeuver).get_LengthInMeters(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteManeuver)this.asInterface(uuid("ed5c17f0-a6ab-4d65-a086-fa8a7e340df2"))).get_LengthInMeters(&_ret));
 		return _ret;
 	}
 	final HSTRING InstructionText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteManeuver).get_InstructionText(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteManeuver)this.asInterface(uuid("ed5c17f0-a6ab-4d65-a086-fa8a7e340df2"))).get_InstructionText(&_ret));
 		return _ret;
 	}
 	final Windows.Services.Maps.MapRouteManeuverKind Kind()
 	{
 		Windows.Services.Maps.MapRouteManeuverKind _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteManeuver).get_Kind(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteManeuver)this.asInterface(uuid("ed5c17f0-a6ab-4d65-a086-fa8a7e340df2"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final HSTRING ExitNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteManeuver).get_ExitNumber(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteManeuver)this.asInterface(uuid("ed5c17f0-a6ab-4d65-a086-fa8a7e340df2"))).get_ExitNumber(&_ret));
 		return _ret;
 	}
 	final Windows.Services.Maps.MapManeuverNotices ManeuverNotices()
 	{
 		Windows.Services.Maps.MapManeuverNotices _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteManeuver).get_ManeuverNotices(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteManeuver)this.asInterface(uuid("ed5c17f0-a6ab-4d65-a086-fa8a7e340df2"))).get_ManeuverNotices(&_ret));
 		return _ret;
 	}
 	final double StartHeading()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteManeuver2).get_StartHeading(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteManeuver2)this.asInterface(uuid("5d7bcd9c-7c9b-41df-838b-eae21e4b05a9"))).get_StartHeading(&_ret));
 		return _ret;
 	}
 	final double EndHeading()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteManeuver2).get_EndHeading(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteManeuver2)this.asInterface(uuid("5d7bcd9c-7c9b-41df-838b-eae21e4b05a9"))).get_EndHeading(&_ret));
 		return _ret;
 	}
 	final HSTRING StreetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteManeuver2).get_StreetName(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteManeuver2)this.asInterface(uuid("5d7bcd9c-7c9b-41df-838b-eae21e4b05a9"))).get_StreetName(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.ManeuverWarning) Warnings()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.ManeuverWarning) _ret;
-		Debug.OK(this.as!(Windows.Services.Maps.IMapRouteManeuver3).get_Warnings(&_ret));
+		Debug.OK((cast(Windows.Services.Maps.IMapRouteManeuver3)this.asInterface(uuid("a6a138df-0483-4166-85be-b99336c11875"))).get_Warnings(&_ret));
 		return _ret;
 	}
 }
@@ -853,12 +853,12 @@ interface MapService
 	}
 	static void ServiceToken(HSTRING value)
 	{
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.IMapServiceStatics).set_ServiceToken(value));
+		Debug.OK(staticInstance.set_ServiceToken(value));
 	}
 	static HSTRING ServiceToken()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Services.Maps.IMapServiceStatics).get_ServiceToken(&_ret));
+		Debug.OK(staticInstance.get_ServiceToken(&_ret));
 		return _ret;
 	}
 }

@@ -35,17 +35,17 @@ extern(Windows):
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Core.Preview.ISystemNavigationCloseRequestedPreviewEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.UI.Core.Preview.ISystemNavigationCloseRequestedPreviewEventArgs)this.asInterface(uuid("83d00de1-cbe5-4f31-8414-361da046518f"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.Preview.ISystemNavigationCloseRequestedPreviewEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.UI.Core.Preview.ISystemNavigationCloseRequestedPreviewEventArgs)this.asInterface(uuid("83d00de1-cbe5-4f31-8414-361da046518f"))).set_Handled(value));
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.UI.Core.Preview.ISystemNavigationCloseRequestedPreviewEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.UI.Core.Preview.ISystemNavigationCloseRequestedPreviewEventArgs)this.asInterface(uuid("83d00de1-cbe5-4f31-8414-361da046518f"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -56,12 +56,12 @@ extern(Windows):
 	final EventRegistrationToken OnCloseRequested(void delegate(IInspectable, Windows.UI.Core.Preview.SystemNavigationCloseRequestedPreviewEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Core.Preview.ISystemNavigationManagerPreview).add_CloseRequested(event!(Windows.Foundation.EventHandler!(Windows.UI.Core.Preview.SystemNavigationCloseRequestedPreviewEventArgs), IInspectable, Windows.UI.Core.Preview.SystemNavigationCloseRequestedPreviewEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Core.Preview.ISystemNavigationManagerPreview)this.asInterface(uuid("ec5f0488-6425-4777-a536-cb5634427f0d"))).add_CloseRequested(event!(Windows.Foundation.EventHandler!(Windows.UI.Core.Preview.SystemNavigationCloseRequestedPreviewEventArgs), IInspectable, Windows.UI.Core.Preview.SystemNavigationCloseRequestedPreviewEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCloseRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Core.Preview.ISystemNavigationManagerPreview).remove_CloseRequested(token));
+		Debug.OK((cast(Windows.UI.Core.Preview.ISystemNavigationManagerPreview)this.asInterface(uuid("ec5f0488-6425-4777-a536-cb5634427f0d"))).remove_CloseRequested(token));
 	}
 
 	private static Windows.UI.Core.Preview.ISystemNavigationManagerPreviewStatics _staticInstance;
@@ -73,7 +73,7 @@ extern(Windows):
 	static Windows.UI.Core.Preview.SystemNavigationManagerPreview GetForCurrentView()
 	{
 		Windows.UI.Core.Preview.SystemNavigationManagerPreview _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Core.Preview.ISystemNavigationManagerPreviewStatics).abi_GetForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 }

@@ -70,26 +70,26 @@ extern(Windows):
 	final EventRegistrationToken OnSyncRequested(void delegate(Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection, Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequestEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderConnection).add_SyncRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection, Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequestEventArgs), Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection, Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequestEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderConnection)this.asInterface(uuid("1a398a52-8c9d-4d6f-a4e0-111e9a125a30"))).add_SyncRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection, Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequestEventArgs), Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection, Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequestEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSyncRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderConnection).remove_SyncRequested(token));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderConnection)this.asInterface(uuid("1a398a52-8c9d-4d6f-a4e0-111e9a125a30"))).remove_SyncRequested(token));
 	}
 	final EventRegistrationToken OnServerSearchReadBatchRequested(void delegate(Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection, Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequestEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderConnection).add_ServerSearchReadBatchRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection, Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequestEventArgs), Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection, Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequestEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderConnection)this.asInterface(uuid("1a398a52-8c9d-4d6f-a4e0-111e9a125a30"))).add_ServerSearchReadBatchRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection, Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequestEventArgs), Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection, Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequestEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeServerSearchReadBatchRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderConnection).remove_ServerSearchReadBatchRequested(token));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderConnection)this.asInterface(uuid("1a398a52-8c9d-4d6f-a4e0-111e9a125a30"))).remove_ServerSearchReadBatchRequested(token));
 	}
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderConnection).abi_Start());
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderConnection)this.asInterface(uuid("1a398a52-8c9d-4d6f-a4e0-111e9a125a30"))).abi_Start());
 	}
 }
 
@@ -99,7 +99,7 @@ extern(Windows):
 	final Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection Connection()
 	{
 		Windows.ApplicationModel.Contacts.DataProvider.ContactDataProviderConnection _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderTriggerDetails).get_Connection(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.DataProvider.IContactDataProviderTriggerDetails)this.asInterface(uuid("527104be-3c62-43c8-9ae7-db531685cd99"))).get_Connection(&_ret));
 		return _ret;
 	}
 }
@@ -110,43 +110,43 @@ extern(Windows):
 	final HSTRING SessionId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest).get_SessionId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest)this.asInterface(uuid("ba776a97-4030-4925-9fb4-143b295e653b"))).get_SessionId(&_ret));
 		return _ret;
 	}
 	final HSTRING ContactListId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest).get_ContactListId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest)this.asInterface(uuid("ba776a97-4030-4925-9fb4-143b295e653b"))).get_ContactListId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Contacts.ContactQueryOptions Options()
 	{
 		Windows.ApplicationModel.Contacts.ContactQueryOptions _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest).get_Options(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest)this.asInterface(uuid("ba776a97-4030-4925-9fb4-143b295e653b"))).get_Options(&_ret));
 		return _ret;
 	}
 	final UINT32 SuggestedBatchSize()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest).get_SuggestedBatchSize(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest)this.asInterface(uuid("ba776a97-4030-4925-9fb4-143b295e653b"))).get_SuggestedBatchSize(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction SaveContactAsync(Windows.ApplicationModel.Contacts.Contact contact)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest).abi_SaveContactAsync(contact, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest)this.asInterface(uuid("ba776a97-4030-4925-9fb4-143b295e653b"))).abi_SaveContactAsync(contact, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest).abi_ReportCompletedAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest)this.asInterface(uuid("ba776a97-4030-4925-9fb4-143b295e653b"))).abi_ReportCompletedAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ReportFailedAsync(Windows.ApplicationModel.Contacts.ContactBatchStatus batchStatus)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest).abi_ReportFailedAsync(batchStatus, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequest)this.asInterface(uuid("ba776a97-4030-4925-9fb4-143b295e653b"))).abi_ReportFailedAsync(batchStatus, &_ret));
 		return _ret;
 	}
 }
@@ -157,13 +157,13 @@ extern(Windows):
 	final Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequest Request()
 	{
 		Windows.ApplicationModel.Contacts.DataProvider.ContactListServerSearchReadBatchRequest _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequestEventArgs).get_Request(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequestEventArgs)this.asInterface(uuid("1a27e87b-69d7-4e4e-8042-861cba61471e"))).get_Request(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequestEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.DataProvider.IContactListServerSearchReadBatchRequestEventArgs)this.asInterface(uuid("1a27e87b-69d7-4e4e-8042-861cba61471e"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -174,19 +174,19 @@ extern(Windows):
 	final HSTRING ContactListId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListSyncManagerSyncRequest).get_ContactListId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.DataProvider.IContactListSyncManagerSyncRequest)this.asInterface(uuid("3c0e57a4-c4e7-4970-9a8f-9a66a2bb6c1a"))).get_ContactListId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListSyncManagerSyncRequest).abi_ReportCompletedAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.DataProvider.IContactListSyncManagerSyncRequest)this.asInterface(uuid("3c0e57a4-c4e7-4970-9a8f-9a66a2bb6c1a"))).abi_ReportCompletedAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ReportFailedAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListSyncManagerSyncRequest).abi_ReportFailedAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.DataProvider.IContactListSyncManagerSyncRequest)this.asInterface(uuid("3c0e57a4-c4e7-4970-9a8f-9a66a2bb6c1a"))).abi_ReportFailedAsync(&_ret));
 		return _ret;
 	}
 }
@@ -197,13 +197,13 @@ extern(Windows):
 	final Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequest Request()
 	{
 		Windows.ApplicationModel.Contacts.DataProvider.ContactListSyncManagerSyncRequest _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListSyncManagerSyncRequestEventArgs).get_Request(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.DataProvider.IContactListSyncManagerSyncRequestEventArgs)this.asInterface(uuid("158e4dac-446d-4f10-afc2-02683ec533a6"))).get_Request(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Contacts.DataProvider.IContactListSyncManagerSyncRequestEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.DataProvider.IContactListSyncManagerSyncRequestEventArgs)this.asInterface(uuid("158e4dac-446d-4f10-afc2-02683ec533a6"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }

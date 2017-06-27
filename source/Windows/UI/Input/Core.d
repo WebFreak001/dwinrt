@@ -25,13 +25,13 @@ extern(Windows):
 	final Windows.UI.Input.RadialController Controller()
 	{
 		Windows.UI.Input.RadialController _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Core.IRadialControllerIndependentInputSource).get_Controller(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Core.IRadialControllerIndependentInputSource)this.asInterface(uuid("3d577ef6-4cee-11e6-b535-001bdc06ab3b"))).get_Controller(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Core.CoreDispatcher Dispatcher()
 	{
 		Windows.UI.Core.CoreDispatcher _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Core.IRadialControllerIndependentInputSource).get_Dispatcher(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Core.IRadialControllerIndependentInputSource)this.asInterface(uuid("3d577ef6-4cee-11e6-b535-001bdc06ab3b"))).get_Dispatcher(&_ret));
 		return _ret;
 	}
 
@@ -44,7 +44,7 @@ extern(Windows):
 	static Windows.UI.Input.Core.RadialControllerIndependentInputSource CreateForView(Windows.ApplicationModel.Core.CoreApplicationView view)
 	{
 		Windows.UI.Input.Core.RadialControllerIndependentInputSource _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Input.Core.IRadialControllerIndependentInputSourceStatics).abi_CreateForView(view, &_ret));
+		Debug.OK(staticInstance.abi_CreateForView(view, &_ret));
 		return _ret;
 	}
 }

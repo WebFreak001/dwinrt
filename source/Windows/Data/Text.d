@@ -210,19 +210,19 @@ extern(Windows):
 	final Windows.Data.Text.TextSegment SourceTextSegment()
 	{
 		Windows.Data.Text.TextSegment _ret;
-		Debug.OK(this.as!(Windows.Data.Text.IAlternateWordForm).get_SourceTextSegment(&_ret));
+		Debug.OK((cast(Windows.Data.Text.IAlternateWordForm)this.asInterface(uuid("47396c1e-51b9-4207-9146-248e636a1d1d"))).get_SourceTextSegment(&_ret));
 		return _ret;
 	}
 	final HSTRING AlternateText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Data.Text.IAlternateWordForm).get_AlternateText(&_ret));
+		Debug.OK((cast(Windows.Data.Text.IAlternateWordForm)this.asInterface(uuid("47396c1e-51b9-4207-9146-248e636a1d1d"))).get_AlternateText(&_ret));
 		return _ret;
 	}
 	final Windows.Data.Text.AlternateNormalizationFormat NormalizationFormat()
 	{
 		Windows.Data.Text.AlternateNormalizationFormat _ret;
-		Debug.OK(this.as!(Windows.Data.Text.IAlternateWordForm).get_NormalizationFormat(&_ret));
+		Debug.OK((cast(Windows.Data.Text.IAlternateWordForm)this.asInterface(uuid("47396c1e-51b9-4207-9146-248e636a1d1d"))).get_NormalizationFormat(&_ret));
 		return _ret;
 	}
 }
@@ -233,13 +233,13 @@ extern(Windows):
 	final HSTRING Text()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Data.Text.ISelectableWordSegment).get_Text(&_ret));
+		Debug.OK((cast(Windows.Data.Text.ISelectableWordSegment)this.asInterface(uuid("916a4cb7-8aa7-4c78-b374-5dedb752e60b"))).get_Text(&_ret));
 		return _ret;
 	}
 	final Windows.Data.Text.TextSegment SourceTextSegment()
 	{
 		Windows.Data.Text.TextSegment _ret;
-		Debug.OK(this.as!(Windows.Data.Text.ISelectableWordSegment).get_SourceTextSegment(&_ret));
+		Debug.OK((cast(Windows.Data.Text.ISelectableWordSegment)this.asInterface(uuid("916a4cb7-8aa7-4c78-b374-5dedb752e60b"))).get_SourceTextSegment(&_ret));
 		return _ret;
 	}
 }
@@ -250,30 +250,30 @@ extern(Windows):
 	final HSTRING ResolvedLanguage()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Data.Text.ISelectableWordsSegmenter).get_ResolvedLanguage(&_ret));
+		Debug.OK((cast(Windows.Data.Text.ISelectableWordsSegmenter)this.asInterface(uuid("f6dc31e7-4b13-45c5-8897-7d71269e085d"))).get_ResolvedLanguage(&_ret));
 		return _ret;
 	}
 	final Windows.Data.Text.SelectableWordSegment GetTokenAt(HSTRING text, UINT32 startIndex)
 	{
 		Windows.Data.Text.SelectableWordSegment _ret;
-		Debug.OK(this.as!(Windows.Data.Text.ISelectableWordsSegmenter).abi_GetTokenAt(text, startIndex, &_ret));
+		Debug.OK((cast(Windows.Data.Text.ISelectableWordsSegmenter)this.asInterface(uuid("f6dc31e7-4b13-45c5-8897-7d71269e085d"))).abi_GetTokenAt(text, startIndex, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.SelectableWordSegment) GetTokens(HSTRING text)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.SelectableWordSegment) _ret;
-		Debug.OK(this.as!(Windows.Data.Text.ISelectableWordsSegmenter).abi_GetTokens(text, &_ret));
+		Debug.OK((cast(Windows.Data.Text.ISelectableWordsSegmenter)this.asInterface(uuid("f6dc31e7-4b13-45c5-8897-7d71269e085d"))).abi_GetTokens(text, &_ret));
 		return _ret;
 	}
 	final void Tokenize(HSTRING text, UINT32 startIndex, Windows.Data.Text.SelectableWordSegmentsTokenizingHandler handler)
 	{
-		Debug.OK(this.as!(Windows.Data.Text.ISelectableWordsSegmenter).abi_Tokenize(text, startIndex, handler));
+		Debug.OK((cast(Windows.Data.Text.ISelectableWordsSegmenter)this.asInterface(uuid("f6dc31e7-4b13-45c5-8897-7d71269e085d"))).abi_Tokenize(text, startIndex, handler));
 	}
 	static Windows.Data.Text.SelectableWordsSegmenter New(HSTRING language)
 	{
 		auto factory = factory!(Windows.Data.Text.ISelectableWordsSegmenterFactory);
 		Windows.Data.Text.SelectableWordsSegmenter _ret;
-		Debug.OK(factory.as!(Windows.Data.Text.ISelectableWordsSegmenterFactory).abi_CreateWithLanguage(language, &_ret));
+		Debug.OK((cast(Windows.Data.Text.ISelectableWordsSegmenterFactory)factory.asInterface(uuid("8c7a7648-6057-4339-bc70-f210010a4150"))).abi_CreateWithLanguage(language, &_ret));
 		return _ret;
 	}
 }
@@ -284,27 +284,27 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextSegment) Find(HSTRING content)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextSegment) _ret;
-		Debug.OK(this.as!(Windows.Data.Text.ISemanticTextQuery).abi_Find(content, &_ret));
+		Debug.OK((cast(Windows.Data.Text.ISemanticTextQuery)this.asInterface(uuid("6a1cab51-1fb2-4909-80b8-35731a2b3e7f"))).abi_Find(content, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextSegment) FindInProperty(HSTRING propertyContent, HSTRING propertyName)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextSegment) _ret;
-		Debug.OK(this.as!(Windows.Data.Text.ISemanticTextQuery).abi_FindInProperty(propertyContent, propertyName, &_ret));
+		Debug.OK((cast(Windows.Data.Text.ISemanticTextQuery)this.asInterface(uuid("6a1cab51-1fb2-4909-80b8-35731a2b3e7f"))).abi_FindInProperty(propertyContent, propertyName, &_ret));
 		return _ret;
 	}
 	static Windows.Data.Text.SemanticTextQuery New(HSTRING aqsFilter)
 	{
 		auto factory = factory!(Windows.Data.Text.ISemanticTextQueryFactory);
 		Windows.Data.Text.SemanticTextQuery _ret;
-		Debug.OK(factory.as!(Windows.Data.Text.ISemanticTextQueryFactory).abi_Create(aqsFilter, &_ret));
+		Debug.OK((cast(Windows.Data.Text.ISemanticTextQueryFactory)factory.asInterface(uuid("238c0503-f995-4587-8777-a2b7d80acfef"))).abi_Create(aqsFilter, &_ret));
 		return _ret;
 	}
 	static Windows.Data.Text.SemanticTextQuery New(HSTRING aqsFilter, HSTRING filterLanguage)
 	{
 		auto factory = factory!(Windows.Data.Text.ISemanticTextQueryFactory);
 		Windows.Data.Text.SemanticTextQuery _ret;
-		Debug.OK(factory.as!(Windows.Data.Text.ISemanticTextQueryFactory).abi_CreateWithLanguage(aqsFilter, filterLanguage, &_ret));
+		Debug.OK((cast(Windows.Data.Text.ISemanticTextQueryFactory)factory.asInterface(uuid("238c0503-f995-4587-8777-a2b7d80acfef"))).abi_CreateWithLanguage(aqsFilter, filterLanguage, &_ret));
 		return _ret;
 	}
 }
@@ -315,32 +315,32 @@ extern(Windows):
 	final HSTRING ResolvedLanguage()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Data.Text.ITextConversionGenerator).get_ResolvedLanguage(&_ret));
+		Debug.OK((cast(Windows.Data.Text.ITextConversionGenerator)this.asInterface(uuid("03606a5e-2aa9-4ab6-af8b-a562b63a8992"))).get_ResolvedLanguage(&_ret));
 		return _ret;
 	}
 	final bool LanguageAvailableButNotInstalled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Data.Text.ITextConversionGenerator).get_LanguageAvailableButNotInstalled(&_ret));
+		Debug.OK((cast(Windows.Data.Text.ITextConversionGenerator)this.asInterface(uuid("03606a5e-2aa9-4ab6-af8b-a562b63a8992"))).get_LanguageAvailableButNotInstalled(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) GetCandidatesAsync(HSTRING input)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
-		Debug.OK(this.as!(Windows.Data.Text.ITextConversionGenerator).abi_GetCandidatesAsync(input, &_ret));
+		Debug.OK((cast(Windows.Data.Text.ITextConversionGenerator)this.asInterface(uuid("03606a5e-2aa9-4ab6-af8b-a562b63a8992"))).abi_GetCandidatesAsync(input, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) GetCandidatesWithMaxCountAsync(HSTRING input, UINT32 maxCandidates)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
-		Debug.OK(this.as!(Windows.Data.Text.ITextConversionGenerator).abi_GetCandidatesWithMaxCountAsync(input, maxCandidates, &_ret));
+		Debug.OK((cast(Windows.Data.Text.ITextConversionGenerator)this.asInterface(uuid("03606a5e-2aa9-4ab6-af8b-a562b63a8992"))).abi_GetCandidatesWithMaxCountAsync(input, maxCandidates, &_ret));
 		return _ret;
 	}
 	static Windows.Data.Text.TextConversionGenerator New(HSTRING languageTag)
 	{
 		auto factory = factory!(Windows.Data.Text.ITextConversionGeneratorFactory);
 		Windows.Data.Text.TextConversionGenerator _ret;
-		Debug.OK(factory.as!(Windows.Data.Text.ITextConversionGeneratorFactory).abi_Create(languageTag, &_ret));
+		Debug.OK((cast(Windows.Data.Text.ITextConversionGeneratorFactory)factory.asInterface(uuid("fcaa3781-3083-49ab-be15-56dfbbb74d6f"))).abi_Create(languageTag, &_ret));
 		return _ret;
 	}
 }
@@ -351,13 +351,13 @@ extern(Windows):
 	final HSTRING DisplayText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Data.Text.ITextPhoneme).get_DisplayText(&_ret));
+		Debug.OK((cast(Windows.Data.Text.ITextPhoneme)this.asInterface(uuid("9362a40a-9b7a-4569-94cf-d84f2f38cf9b"))).get_DisplayText(&_ret));
 		return _ret;
 	}
 	final HSTRING ReadingText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Data.Text.ITextPhoneme).get_ReadingText(&_ret));
+		Debug.OK((cast(Windows.Data.Text.ITextPhoneme)this.asInterface(uuid("9362a40a-9b7a-4569-94cf-d84f2f38cf9b"))).get_ReadingText(&_ret));
 		return _ret;
 	}
 }
@@ -368,32 +368,32 @@ extern(Windows):
 	final HSTRING ResolvedLanguage()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Data.Text.ITextPredictionGenerator).get_ResolvedLanguage(&_ret));
+		Debug.OK((cast(Windows.Data.Text.ITextPredictionGenerator)this.asInterface(uuid("5eacab07-abf1-4cb6-9d9e-326f2b468756"))).get_ResolvedLanguage(&_ret));
 		return _ret;
 	}
 	final bool LanguageAvailableButNotInstalled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Data.Text.ITextPredictionGenerator).get_LanguageAvailableButNotInstalled(&_ret));
+		Debug.OK((cast(Windows.Data.Text.ITextPredictionGenerator)this.asInterface(uuid("5eacab07-abf1-4cb6-9d9e-326f2b468756"))).get_LanguageAvailableButNotInstalled(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) GetCandidatesAsync(HSTRING input)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
-		Debug.OK(this.as!(Windows.Data.Text.ITextPredictionGenerator).abi_GetCandidatesAsync(input, &_ret));
+		Debug.OK((cast(Windows.Data.Text.ITextPredictionGenerator)this.asInterface(uuid("5eacab07-abf1-4cb6-9d9e-326f2b468756"))).abi_GetCandidatesAsync(input, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) GetCandidatesWithMaxCountAsync(HSTRING input, UINT32 maxCandidates)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
-		Debug.OK(this.as!(Windows.Data.Text.ITextPredictionGenerator).abi_GetCandidatesWithMaxCountAsync(input, maxCandidates, &_ret));
+		Debug.OK((cast(Windows.Data.Text.ITextPredictionGenerator)this.asInterface(uuid("5eacab07-abf1-4cb6-9d9e-326f2b468756"))).abi_GetCandidatesWithMaxCountAsync(input, maxCandidates, &_ret));
 		return _ret;
 	}
 	static Windows.Data.Text.TextPredictionGenerator New(HSTRING languageTag)
 	{
 		auto factory = factory!(Windows.Data.Text.ITextPredictionGeneratorFactory);
 		Windows.Data.Text.TextPredictionGenerator _ret;
-		Debug.OK(factory.as!(Windows.Data.Text.ITextPredictionGeneratorFactory).abi_Create(languageTag, &_ret));
+		Debug.OK((cast(Windows.Data.Text.ITextPredictionGeneratorFactory)factory.asInterface(uuid("7257b416-8ba2-4751-9d30-9d85435653a2"))).abi_Create(languageTag, &_ret));
 		return _ret;
 	}
 }
@@ -404,32 +404,32 @@ extern(Windows):
 	final HSTRING ResolvedLanguage()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Data.Text.ITextReverseConversionGenerator).get_ResolvedLanguage(&_ret));
+		Debug.OK((cast(Windows.Data.Text.ITextReverseConversionGenerator)this.asInterface(uuid("51e7f514-9c51-4d86-ae1b-b498fbad8313"))).get_ResolvedLanguage(&_ret));
 		return _ret;
 	}
 	final bool LanguageAvailableButNotInstalled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Data.Text.ITextReverseConversionGenerator).get_LanguageAvailableButNotInstalled(&_ret));
+		Debug.OK((cast(Windows.Data.Text.ITextReverseConversionGenerator)this.asInterface(uuid("51e7f514-9c51-4d86-ae1b-b498fbad8313"))).get_LanguageAvailableButNotInstalled(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(HSTRING) ConvertBackAsync(HSTRING input)
 	{
 		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Data.Text.ITextReverseConversionGenerator).abi_ConvertBackAsync(input, &_ret));
+		Debug.OK((cast(Windows.Data.Text.ITextReverseConversionGenerator)this.asInterface(uuid("51e7f514-9c51-4d86-ae1b-b498fbad8313"))).abi_ConvertBackAsync(input, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextPhoneme)) GetPhonemesAsync(HSTRING input)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.TextPhoneme)) _ret;
-		Debug.OK(this.as!(Windows.Data.Text.ITextReverseConversionGenerator2).abi_GetPhonemesAsync(input, &_ret));
+		Debug.OK((cast(Windows.Data.Text.ITextReverseConversionGenerator2)this.asInterface(uuid("1aafd2ec-85d6-46fd-828a-3a4830fa6e18"))).abi_GetPhonemesAsync(input, &_ret));
 		return _ret;
 	}
 	static Windows.Data.Text.TextReverseConversionGenerator New(HSTRING languageTag)
 	{
 		auto factory = factory!(Windows.Data.Text.ITextReverseConversionGeneratorFactory);
 		Windows.Data.Text.TextReverseConversionGenerator _ret;
-		Debug.OK(factory.as!(Windows.Data.Text.ITextReverseConversionGeneratorFactory).abi_Create(languageTag, &_ret));
+		Debug.OK((cast(Windows.Data.Text.ITextReverseConversionGeneratorFactory)factory.asInterface(uuid("63bed326-1fda-41f6-89d5-23ddea3c729a"))).abi_Create(languageTag, &_ret));
 		return _ret;
 	}
 }
@@ -445,101 +445,101 @@ interface UnicodeCharacters
 	static UINT32 GetCodepointFromSurrogatePair(UINT32 highSurrogate, UINT32 lowSurrogate)
 	{
 		UINT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_GetCodepointFromSurrogatePair(highSurrogate, lowSurrogate, &_ret));
+		Debug.OK(staticInstance.abi_GetCodepointFromSurrogatePair(highSurrogate, lowSurrogate, &_ret));
 		return _ret;
 	}
 	static void GetSurrogatePairFromCodepoint(UINT32 codepoint, wchar* out_highSurrogate, wchar* out_lowSurrogate)
 	{
-		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_GetSurrogatePairFromCodepoint(codepoint, out_highSurrogate, out_lowSurrogate));
+		Debug.OK(staticInstance.abi_GetSurrogatePairFromCodepoint(codepoint, out_highSurrogate, out_lowSurrogate));
 	}
 	static bool IsHighSurrogate(UINT32 codepoint)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsHighSurrogate(codepoint, &_ret));
+		Debug.OK(staticInstance.abi_IsHighSurrogate(codepoint, &_ret));
 		return _ret;
 	}
 	static bool IsLowSurrogate(UINT32 codepoint)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsLowSurrogate(codepoint, &_ret));
+		Debug.OK(staticInstance.abi_IsLowSurrogate(codepoint, &_ret));
 		return _ret;
 	}
 	static bool IsSupplementary(UINT32 codepoint)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsSupplementary(codepoint, &_ret));
+		Debug.OK(staticInstance.abi_IsSupplementary(codepoint, &_ret));
 		return _ret;
 	}
 	static bool IsNoncharacter(UINT32 codepoint)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsNoncharacter(codepoint, &_ret));
+		Debug.OK(staticInstance.abi_IsNoncharacter(codepoint, &_ret));
 		return _ret;
 	}
 	static bool IsWhitespace(UINT32 codepoint)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsWhitespace(codepoint, &_ret));
+		Debug.OK(staticInstance.abi_IsWhitespace(codepoint, &_ret));
 		return _ret;
 	}
 	static bool IsAlphabetic(UINT32 codepoint)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsAlphabetic(codepoint, &_ret));
+		Debug.OK(staticInstance.abi_IsAlphabetic(codepoint, &_ret));
 		return _ret;
 	}
 	static bool IsCased(UINT32 codepoint)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsCased(codepoint, &_ret));
+		Debug.OK(staticInstance.abi_IsCased(codepoint, &_ret));
 		return _ret;
 	}
 	static bool IsUppercase(UINT32 codepoint)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsUppercase(codepoint, &_ret));
+		Debug.OK(staticInstance.abi_IsUppercase(codepoint, &_ret));
 		return _ret;
 	}
 	static bool IsLowercase(UINT32 codepoint)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsLowercase(codepoint, &_ret));
+		Debug.OK(staticInstance.abi_IsLowercase(codepoint, &_ret));
 		return _ret;
 	}
 	static bool IsIdStart(UINT32 codepoint)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsIdStart(codepoint, &_ret));
+		Debug.OK(staticInstance.abi_IsIdStart(codepoint, &_ret));
 		return _ret;
 	}
 	static bool IsIdContinue(UINT32 codepoint)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsIdContinue(codepoint, &_ret));
+		Debug.OK(staticInstance.abi_IsIdContinue(codepoint, &_ret));
 		return _ret;
 	}
 	static bool IsGraphemeBase(UINT32 codepoint)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsGraphemeBase(codepoint, &_ret));
+		Debug.OK(staticInstance.abi_IsGraphemeBase(codepoint, &_ret));
 		return _ret;
 	}
 	static bool IsGraphemeExtend(UINT32 codepoint)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_IsGraphemeExtend(codepoint, &_ret));
+		Debug.OK(staticInstance.abi_IsGraphemeExtend(codepoint, &_ret));
 		return _ret;
 	}
 	static Windows.Data.Text.UnicodeNumericType GetNumericType(UINT32 codepoint)
 	{
 		Windows.Data.Text.UnicodeNumericType _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_GetNumericType(codepoint, &_ret));
+		Debug.OK(staticInstance.abi_GetNumericType(codepoint, &_ret));
 		return _ret;
 	}
 	static Windows.Data.Text.UnicodeGeneralCategory GetGeneralCategory(UINT32 codepoint)
 	{
 		Windows.Data.Text.UnicodeGeneralCategory _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Text.IUnicodeCharactersStatics).abi_GetGeneralCategory(codepoint, &_ret));
+		Debug.OK(staticInstance.abi_GetGeneralCategory(codepoint, &_ret));
 		return _ret;
 	}
 }
@@ -550,19 +550,19 @@ extern(Windows):
 	final HSTRING Text()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Data.Text.IWordSegment).get_Text(&_ret));
+		Debug.OK((cast(Windows.Data.Text.IWordSegment)this.asInterface(uuid("d2d4ba6d-987c-4cc0-b6bd-d49a11b38f9a"))).get_Text(&_ret));
 		return _ret;
 	}
 	final Windows.Data.Text.TextSegment SourceTextSegment()
 	{
 		Windows.Data.Text.TextSegment _ret;
-		Debug.OK(this.as!(Windows.Data.Text.IWordSegment).get_SourceTextSegment(&_ret));
+		Debug.OK((cast(Windows.Data.Text.IWordSegment)this.asInterface(uuid("d2d4ba6d-987c-4cc0-b6bd-d49a11b38f9a"))).get_SourceTextSegment(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.AlternateWordForm) AlternateForms()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.AlternateWordForm) _ret;
-		Debug.OK(this.as!(Windows.Data.Text.IWordSegment).get_AlternateForms(&_ret));
+		Debug.OK((cast(Windows.Data.Text.IWordSegment)this.asInterface(uuid("d2d4ba6d-987c-4cc0-b6bd-d49a11b38f9a"))).get_AlternateForms(&_ret));
 		return _ret;
 	}
 }
@@ -573,30 +573,30 @@ extern(Windows):
 	final HSTRING ResolvedLanguage()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Data.Text.IWordsSegmenter).get_ResolvedLanguage(&_ret));
+		Debug.OK((cast(Windows.Data.Text.IWordsSegmenter)this.asInterface(uuid("86b4d4d1-b2fe-4e34-a81d-66640300454f"))).get_ResolvedLanguage(&_ret));
 		return _ret;
 	}
 	final Windows.Data.Text.WordSegment GetTokenAt(HSTRING text, UINT32 startIndex)
 	{
 		Windows.Data.Text.WordSegment _ret;
-		Debug.OK(this.as!(Windows.Data.Text.IWordsSegmenter).abi_GetTokenAt(text, startIndex, &_ret));
+		Debug.OK((cast(Windows.Data.Text.IWordsSegmenter)this.asInterface(uuid("86b4d4d1-b2fe-4e34-a81d-66640300454f"))).abi_GetTokenAt(text, startIndex, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.WordSegment) GetTokens(HSTRING text)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Data.Text.WordSegment) _ret;
-		Debug.OK(this.as!(Windows.Data.Text.IWordsSegmenter).abi_GetTokens(text, &_ret));
+		Debug.OK((cast(Windows.Data.Text.IWordsSegmenter)this.asInterface(uuid("86b4d4d1-b2fe-4e34-a81d-66640300454f"))).abi_GetTokens(text, &_ret));
 		return _ret;
 	}
 	final void Tokenize(HSTRING text, UINT32 startIndex, Windows.Data.Text.WordSegmentsTokenizingHandler handler)
 	{
-		Debug.OK(this.as!(Windows.Data.Text.IWordsSegmenter).abi_Tokenize(text, startIndex, handler));
+		Debug.OK((cast(Windows.Data.Text.IWordsSegmenter)this.asInterface(uuid("86b4d4d1-b2fe-4e34-a81d-66640300454f"))).abi_Tokenize(text, startIndex, handler));
 	}
 	static Windows.Data.Text.WordsSegmenter New(HSTRING language)
 	{
 		auto factory = factory!(Windows.Data.Text.IWordsSegmenterFactory);
 		Windows.Data.Text.WordsSegmenter _ret;
-		Debug.OK(factory.as!(Windows.Data.Text.IWordsSegmenterFactory).abi_CreateWithLanguage(language, &_ret));
+		Debug.OK((cast(Windows.Data.Text.IWordsSegmenterFactory)factory.asInterface(uuid("e6977274-fc35-455c-8bfb-6d7f4653ca97"))).abi_CreateWithLanguage(language, &_ret));
 		return _ret;
 	}
 }

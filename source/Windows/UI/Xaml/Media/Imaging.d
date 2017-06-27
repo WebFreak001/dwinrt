@@ -281,112 +281,112 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Imaging.BitmapCreateOptions CreateOptions()
 	{
 		Windows.UI.Xaml.Media.Imaging.BitmapCreateOptions _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).get_CreateOptions(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapImage)this.asInterface(uuid("31af3271-e3b4-442d-a341-4c0226b2725b"))).get_CreateOptions(&_ret));
 		return _ret;
 	}
 	final void CreateOptions(Windows.UI.Xaml.Media.Imaging.BitmapCreateOptions value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).set_CreateOptions(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapImage)this.asInterface(uuid("31af3271-e3b4-442d-a341-4c0226b2725b"))).set_CreateOptions(value));
 	}
 	final Windows.Foundation.Uri UriSource()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).get_UriSource(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapImage)this.asInterface(uuid("31af3271-e3b4-442d-a341-4c0226b2725b"))).get_UriSource(&_ret));
 		return _ret;
 	}
 	final void UriSource(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).set_UriSource(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapImage)this.asInterface(uuid("31af3271-e3b4-442d-a341-4c0226b2725b"))).set_UriSource(value));
 	}
 	final INT32 DecodePixelWidth()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).get_DecodePixelWidth(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapImage)this.asInterface(uuid("31af3271-e3b4-442d-a341-4c0226b2725b"))).get_DecodePixelWidth(&_ret));
 		return _ret;
 	}
 	final void DecodePixelWidth(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).set_DecodePixelWidth(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapImage)this.asInterface(uuid("31af3271-e3b4-442d-a341-4c0226b2725b"))).set_DecodePixelWidth(value));
 	}
 	final INT32 DecodePixelHeight()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).get_DecodePixelHeight(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapImage)this.asInterface(uuid("31af3271-e3b4-442d-a341-4c0226b2725b"))).get_DecodePixelHeight(&_ret));
 		return _ret;
 	}
 	final void DecodePixelHeight(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).set_DecodePixelHeight(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapImage)this.asInterface(uuid("31af3271-e3b4-442d-a341-4c0226b2725b"))).set_DecodePixelHeight(value));
 	}
 	final EventRegistrationToken OnDownloadProgress(void delegate(IInspectable, Windows.UI.Xaml.Media.Imaging.DownloadProgressEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).add_DownloadProgress(event!(Windows.UI.Xaml.Media.Imaging.DownloadProgressEventHandler, IInspectable, Windows.UI.Xaml.Media.Imaging.DownloadProgressEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapImage)this.asInterface(uuid("31af3271-e3b4-442d-a341-4c0226b2725b"))).add_DownloadProgress(event!(Windows.UI.Xaml.Media.Imaging.DownloadProgressEventHandler, IInspectable, Windows.UI.Xaml.Media.Imaging.DownloadProgressEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeDownloadProgress(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).remove_DownloadProgress(token));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapImage)this.asInterface(uuid("31af3271-e3b4-442d-a341-4c0226b2725b"))).remove_DownloadProgress(token));
 	}
 	final EventRegistrationToken OnImageOpened(void delegate(IInspectable, Windows.UI.Xaml.RoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).add_ImageOpened(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapImage)this.asInterface(uuid("31af3271-e3b4-442d-a341-4c0226b2725b"))).add_ImageOpened(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeImageOpened(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).remove_ImageOpened(token));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapImage)this.asInterface(uuid("31af3271-e3b4-442d-a341-4c0226b2725b"))).remove_ImageOpened(token));
 	}
 	final EventRegistrationToken OnImageFailed(void delegate(IInspectable, Windows.UI.Xaml.ExceptionRoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).add_ImageFailed(event!(Windows.UI.Xaml.ExceptionRoutedEventHandler, IInspectable, Windows.UI.Xaml.ExceptionRoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapImage)this.asInterface(uuid("31af3271-e3b4-442d-a341-4c0226b2725b"))).add_ImageFailed(event!(Windows.UI.Xaml.ExceptionRoutedEventHandler, IInspectable, Windows.UI.Xaml.ExceptionRoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeImageFailed(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage).remove_ImageFailed(token));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapImage)this.asInterface(uuid("31af3271-e3b4-442d-a341-4c0226b2725b"))).remove_ImageFailed(token));
 	}
 	final Windows.UI.Xaml.Media.Imaging.DecodePixelType DecodePixelType()
 	{
 		Windows.UI.Xaml.Media.Imaging.DecodePixelType _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage2).get_DecodePixelType(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapImage2)this.asInterface(uuid("1069c1b6-8c9b-4762-be3d-759f5698f2b3"))).get_DecodePixelType(&_ret));
 		return _ret;
 	}
 	final void DecodePixelType(Windows.UI.Xaml.Media.Imaging.DecodePixelType value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage2).set_DecodePixelType(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapImage2)this.asInterface(uuid("1069c1b6-8c9b-4762-be3d-759f5698f2b3"))).set_DecodePixelType(value));
 	}
 	final bool IsAnimatedBitmap()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage3).get_IsAnimatedBitmap(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapImage3)this.asInterface(uuid("f1de6f26-3c73-453f-a7ba-9b85c18b3733"))).get_IsAnimatedBitmap(&_ret));
 		return _ret;
 	}
 	final bool IsPlaying()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage3).get_IsPlaying(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapImage3)this.asInterface(uuid("f1de6f26-3c73-453f-a7ba-9b85c18b3733"))).get_IsPlaying(&_ret));
 		return _ret;
 	}
 	final bool AutoPlay()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage3).get_AutoPlay(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapImage3)this.asInterface(uuid("f1de6f26-3c73-453f-a7ba-9b85c18b3733"))).get_AutoPlay(&_ret));
 		return _ret;
 	}
 	final void AutoPlay(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage3).set_AutoPlay(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapImage3)this.asInterface(uuid("f1de6f26-3c73-453f-a7ba-9b85c18b3733"))).set_AutoPlay(value));
 	}
 	final void Play()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage3).abi_Play());
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapImage3)this.asInterface(uuid("f1de6f26-3c73-453f-a7ba-9b85c18b3733"))).abi_Play());
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImage3).abi_Stop());
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapImage3)this.asInterface(uuid("f1de6f26-3c73-453f-a7ba-9b85c18b3733"))).abi_Stop());
 	}
 
 	private static Windows.UI.Xaml.Media.Imaging.IBitmapImageStatics _staticInstance;
@@ -398,38 +398,38 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty CreateOptionsProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImageStatics).get_CreateOptionsProperty(&_ret));
+		Debug.OK(staticInstance.get_CreateOptionsProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty UriSourceProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImageStatics).get_UriSourceProperty(&_ret));
+		Debug.OK(staticInstance.get_UriSourceProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty DecodePixelWidthProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImageStatics).get_DecodePixelWidthProperty(&_ret));
+		Debug.OK(staticInstance.get_DecodePixelWidthProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty DecodePixelHeightProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImageStatics).get_DecodePixelHeightProperty(&_ret));
+		Debug.OK(staticInstance.get_DecodePixelHeightProperty(&_ret));
 		return _ret;
 	}
 	static BitmapImage New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(BitmapImage).abi_ActivateInstance(&ret));
-		return ret.as!(BitmapImage);
+		return cast(BitmapImage) ret;
 	}
 	static Windows.UI.Xaml.Media.Imaging.BitmapImage New(Windows.Foundation.Uri uriSource)
 	{
 		auto factory = factory!(Windows.UI.Xaml.Media.Imaging.IBitmapImageFactory);
 		Windows.UI.Xaml.Media.Imaging.BitmapImage _ret;
-		Debug.OK(factory.as!(Windows.UI.Xaml.Media.Imaging.IBitmapImageFactory).abi_CreateInstanceWithUriSource(uriSource, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapImageFactory)factory.asInterface(uuid("c9132978-4810-4e5e-8087-03671ee60d85"))).abi_CreateInstanceWithUriSource(uriSource, &_ret));
 		return _ret;
 	}
 }
@@ -440,23 +440,23 @@ extern(Windows):
 	final INT32 PixelWidth()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapSource).get_PixelWidth(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapSource)this.asInterface(uuid("23d86411-202f-41b2-8c5b-a8a3b333800b"))).get_PixelWidth(&_ret));
 		return _ret;
 	}
 	final INT32 PixelHeight()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapSource).get_PixelHeight(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapSource)this.asInterface(uuid("23d86411-202f-41b2-8c5b-a8a3b333800b"))).get_PixelHeight(&_ret));
 		return _ret;
 	}
 	final void SetSource(Windows.Storage.Streams.IRandomAccessStream streamSource)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapSource).abi_SetSource(streamSource));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapSource)this.asInterface(uuid("23d86411-202f-41b2-8c5b-a8a3b333800b"))).abi_SetSource(streamSource));
 	}
 	final Windows.Foundation.IAsyncAction SetSourceAsync(Windows.Storage.Streams.IRandomAccessStream streamSource)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IBitmapSource).abi_SetSourceAsync(streamSource, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IBitmapSource)this.asInterface(uuid("23d86411-202f-41b2-8c5b-a8a3b333800b"))).abi_SetSourceAsync(streamSource, &_ret));
 		return _ret;
 	}
 
@@ -469,13 +469,13 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty PixelWidthProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.IBitmapSourceStatics).get_PixelWidthProperty(&_ret));
+		Debug.OK(staticInstance.get_PixelWidthProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty PixelHeightProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.IBitmapSourceStatics).get_PixelHeightProperty(&_ret));
+		Debug.OK(staticInstance.get_PixelHeightProperty(&_ret));
 		return _ret;
 	}
 	static BitmapSource New()
@@ -496,10 +496,10 @@ class BitmapSourceT(Base) : AgileObject!Base, BitmapSource
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_PixelWidth(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.IBitmapSource).get_PixelWidth(return_value); }
-	override HRESULT get_PixelHeight(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.IBitmapSource).get_PixelHeight(return_value); }
-	override HRESULT abi_SetSource(Windows.Storage.Streams.IRandomAccessStream streamSource) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.IBitmapSource).abi_SetSource(streamSource); }
-	override HRESULT abi_SetSourceAsync(Windows.Storage.Streams.IRandomAccessStream streamSource, Windows.Foundation.IAsyncAction* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.IBitmapSource).abi_SetSourceAsync(streamSource, return_returnValue); }
+	override HRESULT get_PixelWidth(INT32* return_value) { return (cast(Windows.UI.Xaml.Media.Imaging.IBitmapSource)m_inner.asInterface(uuid("23d86411-202f-41b2-8c5b-a8a3b333800b"))).get_PixelWidth(return_value); }
+	override HRESULT get_PixelHeight(INT32* return_value) { return (cast(Windows.UI.Xaml.Media.Imaging.IBitmapSource)m_inner.asInterface(uuid("23d86411-202f-41b2-8c5b-a8a3b333800b"))).get_PixelHeight(return_value); }
+	override HRESULT abi_SetSource(Windows.Storage.Streams.IRandomAccessStream streamSource) { return (cast(Windows.UI.Xaml.Media.Imaging.IBitmapSource)m_inner.asInterface(uuid("23d86411-202f-41b2-8c5b-a8a3b333800b"))).abi_SetSource(streamSource); }
+	override HRESULT abi_SetSourceAsync(Windows.Storage.Streams.IRandomAccessStream streamSource, Windows.Foundation.IAsyncAction* return_returnValue) { return (cast(Windows.UI.Xaml.Media.Imaging.IBitmapSource)m_inner.asInterface(uuid("23d86411-202f-41b2-8c5b-a8a3b333800b"))).abi_SetSourceAsync(streamSource, return_returnValue); }
 
 	this() {}
 	IInspectable m_inner;
@@ -511,12 +511,12 @@ extern(Windows):
 	final INT32 Progress()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IDownloadProgressEventArgs).get_Progress(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IDownloadProgressEventArgs)this.asInterface(uuid("7311e0d4-fe94-4e70-9b90-cdd47ac23afb"))).get_Progress(&_ret));
 		return _ret;
 	}
 	final void Progress(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IDownloadProgressEventArgs).set_Progress(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IDownloadProgressEventArgs)this.asInterface(uuid("7311e0d4-fe94-4e70-9b90-cdd47ac23afb"))).set_Progress(value));
 	}
 }
 
@@ -526,31 +526,31 @@ extern(Windows):
 	final INT32 PixelWidth()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmap).get_PixelWidth(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmap)this.asInterface(uuid("500dee81-893c-4c0a-8fec-4678ac717589"))).get_PixelWidth(&_ret));
 		return _ret;
 	}
 	final INT32 PixelHeight()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmap).get_PixelHeight(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmap)this.asInterface(uuid("500dee81-893c-4c0a-8fec-4678ac717589"))).get_PixelHeight(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction RenderAsync(Windows.UI.Xaml.UIElement element)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmap).abi_RenderAsync(element, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmap)this.asInterface(uuid("500dee81-893c-4c0a-8fec-4678ac717589"))).abi_RenderAsync(element, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction RenderToSizeAsync(Windows.UI.Xaml.UIElement element, INT32 scaledWidth, INT32 scaledHeight)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmap).abi_RenderToSizeAsync(element, scaledWidth, scaledHeight, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmap)this.asInterface(uuid("500dee81-893c-4c0a-8fec-4678ac717589"))).abi_RenderToSizeAsync(element, scaledWidth, scaledHeight, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) GetPixelsAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmap).abi_GetPixelsAsync(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmap)this.asInterface(uuid("500dee81-893c-4c0a-8fec-4678ac717589"))).abi_GetPixelsAsync(&_ret));
 		return _ret;
 	}
 
@@ -563,20 +563,20 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty PixelWidthProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmapStatics).get_PixelWidthProperty(&_ret));
+		Debug.OK(staticInstance.get_PixelWidthProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty PixelHeightProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmapStatics).get_PixelHeightProperty(&_ret));
+		Debug.OK(staticInstance.get_PixelHeightProperty(&_ret));
 		return _ret;
 	}
 	static RenderTargetBitmap New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(RenderTargetBitmap).abi_ActivateInstance(&ret));
-		return ret.as!(RenderTargetBitmap);
+		return cast(RenderTargetBitmap) ret;
 	}
 }
 
@@ -586,18 +586,18 @@ extern(Windows):
 	final Windows.Foundation.IAsyncAction SetBitmapAsync(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISoftwareBitmapSource).abi_SetBitmapAsync(softwareBitmap, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.ISoftwareBitmapSource)this.asInterface(uuid("d2dd9ed0-d3c5-4056-91b5-b7c1d1e8130e"))).abi_SetBitmapAsync(softwareBitmap, &_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	static SoftwareBitmapSource New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(SoftwareBitmapSource).abi_ActivateInstance(&ret));
-		return ret.as!(SoftwareBitmapSource);
+		return cast(SoftwareBitmapSource) ret;
 	}
 }
 
@@ -625,57 +625,57 @@ extern(Windows):
 	final Windows.Foundation.Uri UriSource()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).get_UriSource(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.ISvgImageSource)this.asInterface(uuid("03e1cec3-0ca8-4a4e-8d7c-c808a0838586"))).get_UriSource(&_ret));
 		return _ret;
 	}
 	final void UriSource(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).set_UriSource(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.ISvgImageSource)this.asInterface(uuid("03e1cec3-0ca8-4a4e-8d7c-c808a0838586"))).set_UriSource(value));
 	}
 	final double RasterizePixelWidth()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).get_RasterizePixelWidth(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.ISvgImageSource)this.asInterface(uuid("03e1cec3-0ca8-4a4e-8d7c-c808a0838586"))).get_RasterizePixelWidth(&_ret));
 		return _ret;
 	}
 	final void RasterizePixelWidth(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).set_RasterizePixelWidth(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.ISvgImageSource)this.asInterface(uuid("03e1cec3-0ca8-4a4e-8d7c-c808a0838586"))).set_RasterizePixelWidth(value));
 	}
 	final double RasterizePixelHeight()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).get_RasterizePixelHeight(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.ISvgImageSource)this.asInterface(uuid("03e1cec3-0ca8-4a4e-8d7c-c808a0838586"))).get_RasterizePixelHeight(&_ret));
 		return _ret;
 	}
 	final void RasterizePixelHeight(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).set_RasterizePixelHeight(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.ISvgImageSource)this.asInterface(uuid("03e1cec3-0ca8-4a4e-8d7c-c808a0838586"))).set_RasterizePixelHeight(value));
 	}
 	final EventRegistrationToken OnOpened(void delegate(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceOpenedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).add_Opened(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceOpenedEventArgs), Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceOpenedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.ISvgImageSource)this.asInterface(uuid("03e1cec3-0ca8-4a4e-8d7c-c808a0838586"))).add_Opened(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceOpenedEventArgs), Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceOpenedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeOpened(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).remove_Opened(token));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.ISvgImageSource)this.asInterface(uuid("03e1cec3-0ca8-4a4e-8d7c-c808a0838586"))).remove_Opened(token));
 	}
 	final EventRegistrationToken OnOpenFailed(void delegate(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceFailedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).add_OpenFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceFailedEventArgs), Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceFailedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.ISvgImageSource)this.asInterface(uuid("03e1cec3-0ca8-4a4e-8d7c-c808a0838586"))).add_OpenFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceFailedEventArgs), Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceFailedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeOpenFailed(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).remove_OpenFailed(token));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.ISvgImageSource)this.asInterface(uuid("03e1cec3-0ca8-4a4e-8d7c-c808a0838586"))).remove_OpenFailed(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Media.Imaging.SvgImageSourceLoadStatus) SetSourceAsync(Windows.Storage.Streams.IRandomAccessStream streamSource)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Media.Imaging.SvgImageSourceLoadStatus) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).abi_SetSourceAsync(streamSource, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.ISvgImageSource)this.asInterface(uuid("03e1cec3-0ca8-4a4e-8d7c-c808a0838586"))).abi_SetSourceAsync(streamSource, &_ret));
 		return _ret;
 	}
 
@@ -688,19 +688,19 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty UriSourceProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSourceStatics).get_UriSourceProperty(&_ret));
+		Debug.OK(staticInstance.get_UriSourceProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty RasterizePixelWidthProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSourceStatics).get_RasterizePixelWidthProperty(&_ret));
+		Debug.OK(staticInstance.get_RasterizePixelWidthProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty RasterizePixelHeightProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSourceStatics).get_RasterizePixelHeightProperty(&_ret));
+		Debug.OK(staticInstance.get_RasterizePixelHeightProperty(&_ret));
 		return _ret;
 	}
 	static SvgImageSource New()
@@ -721,17 +721,17 @@ class SvgImageSourceT(Base) : AgileObject!Base, SvgImageSource
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_UriSource(Windows.Foundation.Uri* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).get_UriSource(return_value); }
-	override HRESULT set_UriSource(Windows.Foundation.Uri value) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).set_UriSource(value); }
-	override HRESULT get_RasterizePixelWidth(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).get_RasterizePixelWidth(return_value); }
-	override HRESULT set_RasterizePixelWidth(double value) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).set_RasterizePixelWidth(value); }
-	override HRESULT get_RasterizePixelHeight(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).get_RasterizePixelHeight(return_value); }
-	override HRESULT set_RasterizePixelHeight(double value) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).set_RasterizePixelHeight(value); }
-	override HRESULT add_Opened(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceOpenedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).add_Opened(value, return_token); }
-	override HRESULT remove_Opened(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).remove_Opened(token); }
-	override HRESULT add_OpenFailed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceFailedEventArgs) value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).add_OpenFailed(value, return_token); }
-	override HRESULT remove_OpenFailed(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).remove_OpenFailed(token); }
-	override HRESULT abi_SetSourceAsync(Windows.Storage.Streams.IRandomAccessStream streamSource, Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Media.Imaging.SvgImageSourceLoadStatus)* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSource).abi_SetSourceAsync(streamSource, return_returnValue); }
+	override HRESULT get_UriSource(Windows.Foundation.Uri* return_value) { return (cast(Windows.UI.Xaml.Media.Imaging.ISvgImageSource)m_inner.asInterface(uuid("03e1cec3-0ca8-4a4e-8d7c-c808a0838586"))).get_UriSource(return_value); }
+	override HRESULT set_UriSource(Windows.Foundation.Uri value) { return (cast(Windows.UI.Xaml.Media.Imaging.ISvgImageSource)m_inner.asInterface(uuid("03e1cec3-0ca8-4a4e-8d7c-c808a0838586"))).set_UriSource(value); }
+	override HRESULT get_RasterizePixelWidth(double* return_value) { return (cast(Windows.UI.Xaml.Media.Imaging.ISvgImageSource)m_inner.asInterface(uuid("03e1cec3-0ca8-4a4e-8d7c-c808a0838586"))).get_RasterizePixelWidth(return_value); }
+	override HRESULT set_RasterizePixelWidth(double value) { return (cast(Windows.UI.Xaml.Media.Imaging.ISvgImageSource)m_inner.asInterface(uuid("03e1cec3-0ca8-4a4e-8d7c-c808a0838586"))).set_RasterizePixelWidth(value); }
+	override HRESULT get_RasterizePixelHeight(double* return_value) { return (cast(Windows.UI.Xaml.Media.Imaging.ISvgImageSource)m_inner.asInterface(uuid("03e1cec3-0ca8-4a4e-8d7c-c808a0838586"))).get_RasterizePixelHeight(return_value); }
+	override HRESULT set_RasterizePixelHeight(double value) { return (cast(Windows.UI.Xaml.Media.Imaging.ISvgImageSource)m_inner.asInterface(uuid("03e1cec3-0ca8-4a4e-8d7c-c808a0838586"))).set_RasterizePixelHeight(value); }
+	override HRESULT add_Opened(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceOpenedEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.Media.Imaging.ISvgImageSource)m_inner.asInterface(uuid("03e1cec3-0ca8-4a4e-8d7c-c808a0838586"))).add_Opened(value, return_token); }
+	override HRESULT remove_Opened(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.Media.Imaging.ISvgImageSource)m_inner.asInterface(uuid("03e1cec3-0ca8-4a4e-8d7c-c808a0838586"))).remove_Opened(token); }
+	override HRESULT add_OpenFailed(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.Imaging.SvgImageSource, Windows.UI.Xaml.Media.Imaging.SvgImageSourceFailedEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.Media.Imaging.ISvgImageSource)m_inner.asInterface(uuid("03e1cec3-0ca8-4a4e-8d7c-c808a0838586"))).add_OpenFailed(value, return_token); }
+	override HRESULT remove_OpenFailed(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.Media.Imaging.ISvgImageSource)m_inner.asInterface(uuid("03e1cec3-0ca8-4a4e-8d7c-c808a0838586"))).remove_OpenFailed(token); }
+	override HRESULT abi_SetSourceAsync(Windows.Storage.Streams.IRandomAccessStream streamSource, Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Media.Imaging.SvgImageSourceLoadStatus)* return_returnValue) { return (cast(Windows.UI.Xaml.Media.Imaging.ISvgImageSource)m_inner.asInterface(uuid("03e1cec3-0ca8-4a4e-8d7c-c808a0838586"))).abi_SetSourceAsync(streamSource, return_returnValue); }
 
 	this() {}
 	IInspectable m_inner;
@@ -743,7 +743,7 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Imaging.SvgImageSourceLoadStatus Status()
 	{
 		Windows.UI.Xaml.Media.Imaging.SvgImageSourceLoadStatus _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.ISvgImageSourceFailedEventArgs).get_Status(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.ISvgImageSourceFailedEventArgs)this.asInterface(uuid("68bb3170-3ccc-4035-ac01-9834543d744e"))).get_Status(&_ret));
 		return _ret;
 	}
 }
@@ -758,14 +758,14 @@ interface VirtualSurfaceImageSource : Windows.UI.Xaml.Media.Imaging.SurfaceImage
 	{
 		auto factory = factory!(Windows.UI.Xaml.Media.Imaging.IVirtualSurfaceImageSourceFactory);
 		Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource _ret;
-		Debug.OK(factory.as!(Windows.UI.Xaml.Media.Imaging.IVirtualSurfaceImageSourceFactory).abi_CreateInstanceWithDimensions(pixelWidth, pixelHeight, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IVirtualSurfaceImageSourceFactory)factory.asInterface(uuid("3ab2212a-bfac-11e0-8a92-69e44724019b"))).abi_CreateInstanceWithDimensions(pixelWidth, pixelHeight, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource New(INT32 pixelWidth, INT32 pixelHeight, bool isOpaque)
 	{
 		auto factory = factory!(Windows.UI.Xaml.Media.Imaging.IVirtualSurfaceImageSourceFactory);
 		Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource _ret;
-		Debug.OK(factory.as!(Windows.UI.Xaml.Media.Imaging.IVirtualSurfaceImageSourceFactory).abi_CreateInstanceWithDimensionsAndOpacity(pixelWidth, pixelHeight, isOpaque, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IVirtualSurfaceImageSourceFactory)factory.asInterface(uuid("3ab2212a-bfac-11e0-8a92-69e44724019b"))).abi_CreateInstanceWithDimensionsAndOpacity(pixelWidth, pixelHeight, isOpaque, &_ret));
 		return _ret;
 	}
 }
@@ -776,18 +776,18 @@ extern(Windows):
 	final Windows.Storage.Streams.IBuffer PixelBuffer()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IWriteableBitmap).get_PixelBuffer(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IWriteableBitmap)this.asInterface(uuid("bf0b7e6f-df7c-4a85-8413-a1216285835c"))).get_PixelBuffer(&_ret));
 		return _ret;
 	}
 	final void Invalidate()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.Imaging.IWriteableBitmap).abi_Invalidate());
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IWriteableBitmap)this.asInterface(uuid("bf0b7e6f-df7c-4a85-8413-a1216285835c"))).abi_Invalidate());
 	}
 	static Windows.UI.Xaml.Media.Imaging.WriteableBitmap New(INT32 pixelWidth, INT32 pixelHeight)
 	{
 		auto factory = factory!(Windows.UI.Xaml.Media.Imaging.IWriteableBitmapFactory);
 		Windows.UI.Xaml.Media.Imaging.WriteableBitmap _ret;
-		Debug.OK(factory.as!(Windows.UI.Xaml.Media.Imaging.IWriteableBitmapFactory).abi_CreateInstanceWithDimensions(pixelWidth, pixelHeight, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IWriteableBitmapFactory)factory.asInterface(uuid("5563ebb1-3ef2-42c5-9c6d-1cf5dcc041ff"))).abi_CreateInstanceWithDimensions(pixelWidth, pixelHeight, &_ret));
 		return _ret;
 	}
 }
@@ -814,7 +814,7 @@ class XamlRenderingBackgroundTaskT(Base) : AgileObject!Base, XamlRenderingBackgr
 	}
 
 	override HRESULT abi_OnRun(Windows.ApplicationModel.Background.IBackgroundTaskInstance taskInstance) { this.OnRun(taskInstance); return S_OK; }
-	void OnRun(Windows.ApplicationModel.Background.IBackgroundTaskInstance taskInstance) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Media.Imaging.IXamlRenderingBackgroundTaskOverrides).abi_OnRun(taskInstance)); }
+	void OnRun(Windows.ApplicationModel.Background.IBackgroundTaskInstance taskInstance) { Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IXamlRenderingBackgroundTaskOverrides)m_inner.asInterface(uuid("9c2a6997-a908-4711-b4b2-a960db3d8e5a"))).abi_OnRun(taskInstance)); }
 
 	this() {}
 	IInspectable m_inner;

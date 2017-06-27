@@ -53,13 +53,13 @@ extern(Windows):
 	final HSTRING GetString(HSTRING resource)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Resources.IResourceLoader).abi_GetString(resource, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Resources.IResourceLoader)this.asInterface(uuid("08524908-16ef-45ad-a602-293637d7e61a"))).abi_GetString(resource, &_ret));
 		return _ret;
 	}
 	final HSTRING GetStringForUri(Windows.Foundation.Uri uri)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Resources.IResourceLoader2).abi_GetStringForUri(uri, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Resources.IResourceLoader2)this.asInterface(uuid("10eb6ec6-8138-48c1-bc65-e1f14207367c"))).abi_GetStringForUri(uri, &_ret));
 		return _ret;
 	}
 
@@ -73,21 +73,21 @@ extern(Windows):
 	static HSTRING GetStringForReference(Windows.Foundation.Uri uri)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Resources.IResourceLoaderStatics).abi_GetStringForReference(uri, &_ret));
+		Debug.OK(staticInstance.abi_GetStringForReference(uri, &_ret));
 		return _ret;
 	}
 	static ResourceLoader New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ResourceLoader).abi_ActivateInstance(&ret));
-		return ret.as!(ResourceLoader);
+		return cast(ResourceLoader) ret;
 	}
 	deprecated("ResourceLoader may be altered or unavailable for releases after Windows 8.1. Instead, use GetForCurrentView.")
 	static Windows.ApplicationModel.Resources.ResourceLoader New(HSTRING name)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Resources.IResourceLoaderFactory);
 		Windows.ApplicationModel.Resources.ResourceLoader _ret;
-		Debug.OK(factory.as!(Windows.ApplicationModel.Resources.IResourceLoaderFactory).abi_CreateResourceLoaderByName(name, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Resources.IResourceLoaderFactory)factory.asInterface(uuid("c33a3603-69dc-4285-a077-d5c0e47ccbe8"))).abi_CreateResourceLoaderByName(name, &_ret));
 		return _ret;
 	}
 }

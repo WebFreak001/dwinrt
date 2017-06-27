@@ -856,54 +856,54 @@ interface BackgroundMediaPlayer
 	static Windows.Media.Playback.MediaPlayer Current()
 	{
 		Windows.Media.Playback.MediaPlayer _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Playback.IBackgroundMediaPlayerStatics).get_Current(&_ret));
+		Debug.OK(staticInstance.get_Current(&_ret));
 		return _ret;
 	}
 	deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")
 	static EventRegistrationToken OnMessageReceivedFromBackground(void delegate(IInspectable, Windows.Media.Playback.MediaPlayerDataReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Media.Playback.IBackgroundMediaPlayerStatics).add_MessageReceivedFromBackground(event!(Windows.Foundation.EventHandler!(Windows.Media.Playback.MediaPlayerDataReceivedEventArgs), IInspectable, Windows.Media.Playback.MediaPlayerDataReceivedEventArgs)(fn), &tok));
+		Debug.OK(staticInstance.add_MessageReceivedFromBackground(event!(Windows.Foundation.EventHandler!(Windows.Media.Playback.MediaPlayerDataReceivedEventArgs), IInspectable, Windows.Media.Playback.MediaPlayerDataReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")
 	static void removeMessageReceivedFromBackground(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.Media.Playback.IBackgroundMediaPlayerStatics).remove_MessageReceivedFromBackground(token));
+		Debug.OK(staticInstance.remove_MessageReceivedFromBackground(token));
 	}
 	deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")
 	static EventRegistrationToken OnMessageReceivedFromForeground(void delegate(IInspectable, Windows.Media.Playback.MediaPlayerDataReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Media.Playback.IBackgroundMediaPlayerStatics).add_MessageReceivedFromForeground(event!(Windows.Foundation.EventHandler!(Windows.Media.Playback.MediaPlayerDataReceivedEventArgs), IInspectable, Windows.Media.Playback.MediaPlayerDataReceivedEventArgs)(fn), &tok));
+		Debug.OK(staticInstance.add_MessageReceivedFromForeground(event!(Windows.Foundation.EventHandler!(Windows.Media.Playback.MediaPlayerDataReceivedEventArgs), IInspectable, Windows.Media.Playback.MediaPlayerDataReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")
 	static void removeMessageReceivedFromForeground(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.Media.Playback.IBackgroundMediaPlayerStatics).remove_MessageReceivedFromForeground(token));
+		Debug.OK(staticInstance.remove_MessageReceivedFromForeground(token));
 	}
 	deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")
 	static void SendMessageToBackground(Windows.Foundation.Collections.ValueSet value)
 	{
-		Debug.OK(staticInstance.as!(Windows.Media.Playback.IBackgroundMediaPlayerStatics).abi_SendMessageToBackground(value));
+		Debug.OK(staticInstance.abi_SendMessageToBackground(value));
 	}
 	deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")
 	static void SendMessageToForeground(Windows.Foundation.Collections.ValueSet value)
 	{
-		Debug.OK(staticInstance.as!(Windows.Media.Playback.IBackgroundMediaPlayerStatics).abi_SendMessageToForeground(value));
+		Debug.OK(staticInstance.abi_SendMessageToForeground(value));
 	}
 	deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")
 	static bool IsMediaPlaying()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Playback.IBackgroundMediaPlayerStatics).abi_IsMediaPlaying(&_ret));
+		Debug.OK(staticInstance.abi_IsMediaPlaying(&_ret));
 		return _ret;
 	}
 	deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")
 	static void Shutdown()
 	{
-		Debug.OK(staticInstance.as!(Windows.Media.Playback.IBackgroundMediaPlayerStatics).abi_Shutdown());
+		Debug.OK(staticInstance.abi_Shutdown());
 	}
 }
 
@@ -913,19 +913,19 @@ extern(Windows):
 	final Windows.Media.Playback.MediaPlaybackItem NewItem()
 	{
 		Windows.Media.Playback.MediaPlaybackItem _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.ICurrentMediaPlaybackItemChangedEventArgs).get_NewItem(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.ICurrentMediaPlaybackItemChangedEventArgs)this.asInterface(uuid("1743a892-5c43-4a15-967a-572d2d0f26c6"))).get_NewItem(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlaybackItem OldItem()
 	{
 		Windows.Media.Playback.MediaPlaybackItem _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.ICurrentMediaPlaybackItemChangedEventArgs).get_OldItem(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.ICurrentMediaPlaybackItemChangedEventArgs)this.asInterface(uuid("1743a892-5c43-4a15-967a-572d2d0f26c6"))).get_OldItem(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlaybackItemChangedReason Reason()
 	{
 		Windows.Media.Playback.MediaPlaybackItemChangedReason _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.ICurrentMediaPlaybackItemChangedEventArgs2).get_Reason(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.ICurrentMediaPlaybackItemChangedEventArgs2)this.asInterface(uuid("1d80a51e-996e-40a9-be48-e66ec90b2b7d"))).get_Reason(&_ret));
 		return _ret;
 	}
 }
@@ -936,49 +936,49 @@ extern(Windows):
 	final Windows.Media.Playback.MediaPlaybackList PlaybackList()
 	{
 		Windows.Media.Playback.MediaPlaybackList _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreak).get_PlaybackList(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreak)this.asInterface(uuid("714be270-0def-4ebc-a489-6b34930e1558"))).get_PlaybackList(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) PresentationPosition()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreak).get_PresentationPosition(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreak)this.asInterface(uuid("714be270-0def-4ebc-a489-6b34930e1558"))).get_PresentationPosition(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaBreakInsertionMethod InsertionMethod()
 	{
 		Windows.Media.Playback.MediaBreakInsertionMethod _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreak).get_InsertionMethod(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreak)this.asInterface(uuid("714be270-0def-4ebc-a489-6b34930e1558"))).get_InsertionMethod(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.ValueSet CustomProperties()
 	{
 		Windows.Foundation.Collections.ValueSet _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreak).get_CustomProperties(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreak)this.asInterface(uuid("714be270-0def-4ebc-a489-6b34930e1558"))).get_CustomProperties(&_ret));
 		return _ret;
 	}
 	final bool CanStart()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreak).get_CanStart(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreak)this.asInterface(uuid("714be270-0def-4ebc-a489-6b34930e1558"))).get_CanStart(&_ret));
 		return _ret;
 	}
 	final void CanStart(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreak).set_CanStart(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreak)this.asInterface(uuid("714be270-0def-4ebc-a489-6b34930e1558"))).set_CanStart(value));
 	}
 	static Windows.Media.Playback.MediaBreak New(Windows.Media.Playback.MediaBreakInsertionMethod insertionMethod)
 	{
 		auto factory = factory!(Windows.Media.Playback.IMediaBreakFactory);
 		Windows.Media.Playback.MediaBreak _ret;
-		Debug.OK(factory.as!(Windows.Media.Playback.IMediaBreakFactory).abi_Create(insertionMethod, &_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakFactory)factory.asInterface(uuid("4516e002-18e0-4079-8b5f-d33495c15d2e"))).abi_Create(insertionMethod, &_ret));
 		return _ret;
 	}
 	static Windows.Media.Playback.MediaBreak New(Windows.Media.Playback.MediaBreakInsertionMethod insertionMethod, Windows.Foundation.TimeSpan presentationPosition)
 	{
 		auto factory = factory!(Windows.Media.Playback.IMediaBreakFactory);
 		Windows.Media.Playback.MediaBreak _ret;
-		Debug.OK(factory.as!(Windows.Media.Playback.IMediaBreakFactory).abi_CreateWithPresentationPosition(insertionMethod, presentationPosition, &_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakFactory)factory.asInterface(uuid("4516e002-18e0-4079-8b5f-d33495c15d2e"))).abi_CreateWithPresentationPosition(insertionMethod, presentationPosition, &_ret));
 		return _ret;
 	}
 }
@@ -989,7 +989,7 @@ extern(Windows):
 	final Windows.Media.Playback.MediaBreak MediaBreak()
 	{
 		Windows.Media.Playback.MediaBreak _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakEndedEventArgs).get_MediaBreak(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakEndedEventArgs)this.asInterface(uuid("32b93276-1c5d-4fee-8732-236dc3a88580"))).get_MediaBreak(&_ret));
 		return _ret;
 	}
 }
@@ -1000,62 +1000,62 @@ extern(Windows):
 	final EventRegistrationToken OnBreaksSeekedOver(void delegate(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakSeekedOverEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakManager).add_BreaksSeekedOver(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakSeekedOverEventArgs), Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakSeekedOverEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakManager)this.asInterface(uuid("a854ddb1-feb4-4d9b-9d97-0fdbe58e5e39"))).add_BreaksSeekedOver(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakSeekedOverEventArgs), Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakSeekedOverEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeBreaksSeekedOver(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakManager).remove_BreaksSeekedOver(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakManager)this.asInterface(uuid("a854ddb1-feb4-4d9b-9d97-0fdbe58e5e39"))).remove_BreaksSeekedOver(token));
 	}
 	final EventRegistrationToken OnBreakStarted(void delegate(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakStartedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakManager).add_BreakStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakStartedEventArgs), Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakStartedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakManager)this.asInterface(uuid("a854ddb1-feb4-4d9b-9d97-0fdbe58e5e39"))).add_BreakStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakStartedEventArgs), Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakStartedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeBreakStarted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakManager).remove_BreakStarted(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakManager)this.asInterface(uuid("a854ddb1-feb4-4d9b-9d97-0fdbe58e5e39"))).remove_BreakStarted(token));
 	}
 	final EventRegistrationToken OnBreakEnded(void delegate(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakEndedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakManager).add_BreakEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakEndedEventArgs), Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakEndedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakManager)this.asInterface(uuid("a854ddb1-feb4-4d9b-9d97-0fdbe58e5e39"))).add_BreakEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakEndedEventArgs), Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakEndedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeBreakEnded(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakManager).remove_BreakEnded(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakManager)this.asInterface(uuid("a854ddb1-feb4-4d9b-9d97-0fdbe58e5e39"))).remove_BreakEnded(token));
 	}
 	final EventRegistrationToken OnBreakSkipped(void delegate(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakSkippedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakManager).add_BreakSkipped(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakSkippedEventArgs), Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakSkippedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakManager)this.asInterface(uuid("a854ddb1-feb4-4d9b-9d97-0fdbe58e5e39"))).add_BreakSkipped(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakSkippedEventArgs), Windows.Media.Playback.MediaBreakManager, Windows.Media.Playback.MediaBreakSkippedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeBreakSkipped(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakManager).remove_BreakSkipped(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakManager)this.asInterface(uuid("a854ddb1-feb4-4d9b-9d97-0fdbe58e5e39"))).remove_BreakSkipped(token));
 	}
 	final Windows.Media.Playback.MediaBreak CurrentBreak()
 	{
 		Windows.Media.Playback.MediaBreak _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakManager).get_CurrentBreak(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakManager)this.asInterface(uuid("a854ddb1-feb4-4d9b-9d97-0fdbe58e5e39"))).get_CurrentBreak(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlaybackSession PlaybackSession()
 	{
 		Windows.Media.Playback.MediaPlaybackSession _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakManager).get_PlaybackSession(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakManager)this.asInterface(uuid("a854ddb1-feb4-4d9b-9d97-0fdbe58e5e39"))).get_PlaybackSession(&_ret));
 		return _ret;
 	}
 	final void PlayBreak(Windows.Media.Playback.MediaBreak value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakManager).abi_PlayBreak(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakManager)this.asInterface(uuid("a854ddb1-feb4-4d9b-9d97-0fdbe58e5e39"))).abi_PlayBreak(value));
 	}
 	final void SkipCurrentBreak()
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakManager).abi_SkipCurrentBreak());
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakManager)this.asInterface(uuid("a854ddb1-feb4-4d9b-9d97-0fdbe58e5e39"))).abi_SkipCurrentBreak());
 	}
 }
 
@@ -1065,51 +1065,51 @@ extern(Windows):
 	final EventRegistrationToken OnScheduleChanged(void delegate(Windows.Media.Playback.MediaBreakSchedule, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakSchedule).add_ScheduleChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakSchedule, IInspectable), Windows.Media.Playback.MediaBreakSchedule, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakSchedule)this.asInterface(uuid("a19a5813-98b6-41d8-83da-f971d22b7bba"))).add_ScheduleChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaBreakSchedule, IInspectable), Windows.Media.Playback.MediaBreakSchedule, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeScheduleChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakSchedule).remove_ScheduleChanged(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakSchedule)this.asInterface(uuid("a19a5813-98b6-41d8-83da-f971d22b7bba"))).remove_ScheduleChanged(token));
 	}
 	final void InsertMidrollBreak(Windows.Media.Playback.MediaBreak mediaBreak)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakSchedule).abi_InsertMidrollBreak(mediaBreak));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakSchedule)this.asInterface(uuid("a19a5813-98b6-41d8-83da-f971d22b7bba"))).abi_InsertMidrollBreak(mediaBreak));
 	}
 	final void RemoveMidrollBreak(Windows.Media.Playback.MediaBreak mediaBreak)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakSchedule).abi_RemoveMidrollBreak(mediaBreak));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakSchedule)this.asInterface(uuid("a19a5813-98b6-41d8-83da-f971d22b7bba"))).abi_RemoveMidrollBreak(mediaBreak));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Playback.MediaBreak) MidrollBreaks()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Playback.MediaBreak) _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakSchedule).get_MidrollBreaks(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakSchedule)this.asInterface(uuid("a19a5813-98b6-41d8-83da-f971d22b7bba"))).get_MidrollBreaks(&_ret));
 		return _ret;
 	}
 	final void PrerollBreak(Windows.Media.Playback.MediaBreak value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakSchedule).set_PrerollBreak(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakSchedule)this.asInterface(uuid("a19a5813-98b6-41d8-83da-f971d22b7bba"))).set_PrerollBreak(value));
 	}
 	final Windows.Media.Playback.MediaBreak PrerollBreak()
 	{
 		Windows.Media.Playback.MediaBreak _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakSchedule).get_PrerollBreak(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakSchedule)this.asInterface(uuid("a19a5813-98b6-41d8-83da-f971d22b7bba"))).get_PrerollBreak(&_ret));
 		return _ret;
 	}
 	final void PostrollBreak(Windows.Media.Playback.MediaBreak value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakSchedule).set_PostrollBreak(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakSchedule)this.asInterface(uuid("a19a5813-98b6-41d8-83da-f971d22b7bba"))).set_PostrollBreak(value));
 	}
 	final Windows.Media.Playback.MediaBreak PostrollBreak()
 	{
 		Windows.Media.Playback.MediaBreak _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakSchedule).get_PostrollBreak(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakSchedule)this.asInterface(uuid("a19a5813-98b6-41d8-83da-f971d22b7bba"))).get_PostrollBreak(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlaybackItem PlaybackItem()
 	{
 		Windows.Media.Playback.MediaPlaybackItem _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakSchedule).get_PlaybackItem(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakSchedule)this.asInterface(uuid("a19a5813-98b6-41d8-83da-f971d22b7bba"))).get_PlaybackItem(&_ret));
 		return _ret;
 	}
 }
@@ -1120,19 +1120,19 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Playback.MediaBreak) SeekedOverBreaks()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Playback.MediaBreak) _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakSeekedOverEventArgs).get_SeekedOverBreaks(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakSeekedOverEventArgs)this.asInterface(uuid("e5aa6746-0606-4492-b9d3-c3c8fde0a4ea"))).get_SeekedOverBreaks(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan OldPosition()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakSeekedOverEventArgs).get_OldPosition(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakSeekedOverEventArgs)this.asInterface(uuid("e5aa6746-0606-4492-b9d3-c3c8fde0a4ea"))).get_OldPosition(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan NewPosition()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakSeekedOverEventArgs).get_NewPosition(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakSeekedOverEventArgs)this.asInterface(uuid("e5aa6746-0606-4492-b9d3-c3c8fde0a4ea"))).get_NewPosition(&_ret));
 		return _ret;
 	}
 }
@@ -1143,7 +1143,7 @@ extern(Windows):
 	final Windows.Media.Playback.MediaBreak MediaBreak()
 	{
 		Windows.Media.Playback.MediaBreak _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakSkippedEventArgs).get_MediaBreak(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakSkippedEventArgs)this.asInterface(uuid("6ee94c05-2f54-4a3e-a3ab-24c3b270b4a3"))).get_MediaBreak(&_ret));
 		return _ret;
 	}
 }
@@ -1154,7 +1154,7 @@ extern(Windows):
 	final Windows.Media.Playback.MediaBreak MediaBreak()
 	{
 		Windows.Media.Playback.MediaBreak _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaBreakStartedEventArgs).get_MediaBreak(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaBreakStartedEventArgs)this.asInterface(uuid("a87efe71-dfd4-454a-956e-0a4a648395f8"))).get_MediaBreak(&_ret));
 		return _ret;
 	}
 }
@@ -1165,38 +1165,38 @@ extern(Windows):
 	final Windows.Media.MediaPlaybackType Type()
 	{
 		Windows.Media.MediaPlaybackType _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaItemDisplayProperties).get_Type(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaItemDisplayProperties)this.asInterface(uuid("1e3c1b48-7097-4384-a217-c1291dfa8c16"))).get_Type(&_ret));
 		return _ret;
 	}
 	final void Type(Windows.Media.MediaPlaybackType value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaItemDisplayProperties).set_Type(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaItemDisplayProperties)this.asInterface(uuid("1e3c1b48-7097-4384-a217-c1291dfa8c16"))).set_Type(value));
 	}
 	final Windows.Media.MusicDisplayProperties MusicProperties()
 	{
 		Windows.Media.MusicDisplayProperties _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaItemDisplayProperties).get_MusicProperties(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaItemDisplayProperties)this.asInterface(uuid("1e3c1b48-7097-4384-a217-c1291dfa8c16"))).get_MusicProperties(&_ret));
 		return _ret;
 	}
 	final Windows.Media.VideoDisplayProperties VideoProperties()
 	{
 		Windows.Media.VideoDisplayProperties _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaItemDisplayProperties).get_VideoProperties(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaItemDisplayProperties)this.asInterface(uuid("1e3c1b48-7097-4384-a217-c1291dfa8c16"))).get_VideoProperties(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.RandomAccessStreamReference Thumbnail()
 	{
 		Windows.Storage.Streams.RandomAccessStreamReference _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaItemDisplayProperties).get_Thumbnail(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaItemDisplayProperties)this.asInterface(uuid("1e3c1b48-7097-4384-a217-c1291dfa8c16"))).get_Thumbnail(&_ret));
 		return _ret;
 	}
 	final void Thumbnail(Windows.Storage.Streams.RandomAccessStreamReference value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaItemDisplayProperties).set_Thumbnail(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaItemDisplayProperties)this.asInterface(uuid("1e3c1b48-7097-4384-a217-c1291dfa8c16"))).set_Thumbnail(value));
 	}
 	final void ClearAll()
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaItemDisplayProperties).abi_ClearAll());
+		Debug.OK((cast(Windows.Media.Playback.IMediaItemDisplayProperties)this.asInterface(uuid("1e3c1b48-7097-4384-a217-c1291dfa8c16"))).abi_ClearAll());
 	}
 }
 
@@ -1205,46 +1205,46 @@ interface MediaPlaybackAudioTrackList : Windows.Foundation.Collections.IVectorVi
 extern(Windows):
 	final void GetAt(uint index, Windows.Media.Core.AudioTrack* out_item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.AudioTrack)).abi_GetAt(index, out_item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.AudioTrack))this).abi_GetAt(index, out_item));
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.AudioTrack)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.AudioTrack))this).get_Size(&_ret));
 		return _ret;
 	}
 	final uint IndexOf(Windows.Media.Core.AudioTrack value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.AudioTrack)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.AudioTrack))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.Media.Core.AudioTrack* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.AudioTrack)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.AudioTrack))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Media.Core.AudioTrack)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Media.Core.AudioTrack)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.Media.Core.AudioTrack))this).abi_First(out_first));
 	}
 	final EventRegistrationToken OnSelectedIndexChanged(void delegate(Windows.Media.Core.ISingleSelectMediaTrackList, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Core.ISingleSelectMediaTrackList).add_SelectedIndexChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.ISingleSelectMediaTrackList, IInspectable), Windows.Media.Core.ISingleSelectMediaTrackList, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Core.ISingleSelectMediaTrackList)this.asInterface(uuid("77206f1f-c34f-494f-8077-2bad9ff4ecf1"))).add_SelectedIndexChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.ISingleSelectMediaTrackList, IInspectable), Windows.Media.Core.ISingleSelectMediaTrackList, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSelectedIndexChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Core.ISingleSelectMediaTrackList).remove_SelectedIndexChanged(token));
+		Debug.OK((cast(Windows.Media.Core.ISingleSelectMediaTrackList)this.asInterface(uuid("77206f1f-c34f-494f-8077-2bad9ff4ecf1"))).remove_SelectedIndexChanged(token));
 	}
 	final void SelectedIndex(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.Core.ISingleSelectMediaTrackList).set_SelectedIndex(value));
+		Debug.OK((cast(Windows.Media.Core.ISingleSelectMediaTrackList)this.asInterface(uuid("77206f1f-c34f-494f-8077-2bad9ff4ecf1"))).set_SelectedIndex(value));
 	}
 	final INT32 SelectedIndex()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Core.ISingleSelectMediaTrackList).get_SelectedIndex(&_ret));
+		Debug.OK((cast(Windows.Media.Core.ISingleSelectMediaTrackList)this.asInterface(uuid("77206f1f-c34f-494f-8077-2bad9ff4ecf1"))).get_SelectedIndex(&_ret));
 		return _ret;
 	}
 }
@@ -1255,178 +1255,178 @@ extern(Windows):
 	final bool IsEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).get_IsEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).get_IsEnabled(&_ret));
 		return _ret;
 	}
 	final void IsEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).set_IsEnabled(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).set_IsEnabled(value));
 	}
 	final Windows.Media.Playback.MediaPlayer MediaPlayer()
 	{
 		Windows.Media.Playback.MediaPlayer _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).get_MediaPlayer(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).get_MediaPlayer(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior PlayBehavior()
 	{
 		Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).get_PlayBehavior(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).get_PlayBehavior(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior PauseBehavior()
 	{
 		Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).get_PauseBehavior(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).get_PauseBehavior(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior NextBehavior()
 	{
 		Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).get_NextBehavior(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).get_NextBehavior(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior PreviousBehavior()
 	{
 		Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).get_PreviousBehavior(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).get_PreviousBehavior(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior FastForwardBehavior()
 	{
 		Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).get_FastForwardBehavior(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).get_FastForwardBehavior(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior RewindBehavior()
 	{
 		Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).get_RewindBehavior(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).get_RewindBehavior(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior ShuffleBehavior()
 	{
 		Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).get_ShuffleBehavior(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).get_ShuffleBehavior(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior AutoRepeatModeBehavior()
 	{
 		Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).get_AutoRepeatModeBehavior(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).get_AutoRepeatModeBehavior(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior PositionBehavior()
 	{
 		Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).get_PositionBehavior(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).get_PositionBehavior(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior RateBehavior()
 	{
 		Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).get_RateBehavior(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).get_RateBehavior(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnPlayReceived(void delegate(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPlayReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).add_PlayReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPlayReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPlayReceivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).add_PlayReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPlayReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPlayReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePlayReceived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).remove_PlayReceived(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).remove_PlayReceived(token));
 	}
 	final EventRegistrationToken OnPauseReceived(void delegate(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPauseReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).add_PauseReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPauseReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPauseReceivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).add_PauseReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPauseReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPauseReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePauseReceived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).remove_PauseReceived(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).remove_PauseReceived(token));
 	}
 	final EventRegistrationToken OnNextReceived(void delegate(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerNextReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).add_NextReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerNextReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerNextReceivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).add_NextReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerNextReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerNextReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeNextReceived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).remove_NextReceived(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).remove_NextReceived(token));
 	}
 	final EventRegistrationToken OnPreviousReceived(void delegate(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).add_PreviousReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).add_PreviousReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePreviousReceived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).remove_PreviousReceived(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).remove_PreviousReceived(token));
 	}
 	final EventRegistrationToken OnFastForwardReceived(void delegate(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerFastForwardReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).add_FastForwardReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerFastForwardReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerFastForwardReceivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).add_FastForwardReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerFastForwardReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerFastForwardReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeFastForwardReceived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).remove_FastForwardReceived(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).remove_FastForwardReceived(token));
 	}
 	final EventRegistrationToken OnRewindReceived(void delegate(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerRewindReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).add_RewindReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerRewindReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerRewindReceivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).add_RewindReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerRewindReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerRewindReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRewindReceived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).remove_RewindReceived(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).remove_RewindReceived(token));
 	}
 	final EventRegistrationToken OnShuffleReceived(void delegate(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerShuffleReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).add_ShuffleReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerShuffleReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerShuffleReceivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).add_ShuffleReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerShuffleReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerShuffleReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeShuffleReceived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).remove_ShuffleReceived(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).remove_ShuffleReceived(token));
 	}
 	final EventRegistrationToken OnAutoRepeatModeReceived(void delegate(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).add_AutoRepeatModeReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).add_AutoRepeatModeReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAutoRepeatModeReceived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).remove_AutoRepeatModeReceived(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).remove_AutoRepeatModeReceived(token));
 	}
 	final EventRegistrationToken OnPositionReceived(void delegate(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPositionReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).add_PositionReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPositionReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPositionReceivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).add_PositionReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPositionReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerPositionReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePositionReceived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).remove_PositionReceived(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).remove_PositionReceived(token));
 	}
 	final EventRegistrationToken OnRateReceived(void delegate(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerRateReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).add_RateReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerRateReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerRateReceivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).add_RateReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerRateReceivedEventArgs), Windows.Media.Playback.MediaPlaybackCommandManager, Windows.Media.Playback.MediaPlaybackCommandManagerRateReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRateReceived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManager).remove_RateReceived(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManager)this.asInterface(uuid("5acee5a6-5cb6-4a5a-8521-cc86b1c1ed37"))).remove_RateReceived(token));
 	}
 }
 
@@ -1436,23 +1436,23 @@ extern(Windows):
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs)this.asInterface(uuid("3d6f4f23-5230-4411-a0e9-bad94c2a045c"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs)this.asInterface(uuid("3d6f4f23-5230-4411-a0e9-bad94c2a045c"))).set_Handled(value));
 	}
 	final Windows.Media.MediaPlaybackAutoRepeatMode AutoRepeatMode()
 	{
 		Windows.Media.MediaPlaybackAutoRepeatMode _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs).get_AutoRepeatMode(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs)this.asInterface(uuid("3d6f4f23-5230-4411-a0e9-bad94c2a045c"))).get_AutoRepeatMode(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs)this.asInterface(uuid("3d6f4f23-5230-4411-a0e9-bad94c2a045c"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -1463,34 +1463,34 @@ extern(Windows):
 	final Windows.Media.Playback.MediaPlaybackCommandManager CommandManager()
 	{
 		Windows.Media.Playback.MediaPlaybackCommandManager _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerCommandBehavior).get_CommandManager(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerCommandBehavior)this.asInterface(uuid("786c1e78-ce78-4a10-afd6-843fcbb90c2e"))).get_CommandManager(&_ret));
 		return _ret;
 	}
 	final bool IsEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerCommandBehavior).get_IsEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerCommandBehavior)this.asInterface(uuid("786c1e78-ce78-4a10-afd6-843fcbb90c2e"))).get_IsEnabled(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaCommandEnablingRule EnablingRule()
 	{
 		Windows.Media.Playback.MediaCommandEnablingRule _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerCommandBehavior).get_EnablingRule(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerCommandBehavior)this.asInterface(uuid("786c1e78-ce78-4a10-afd6-843fcbb90c2e"))).get_EnablingRule(&_ret));
 		return _ret;
 	}
 	final void EnablingRule(Windows.Media.Playback.MediaCommandEnablingRule value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerCommandBehavior).set_EnablingRule(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerCommandBehavior)this.asInterface(uuid("786c1e78-ce78-4a10-afd6-843fcbb90c2e"))).set_EnablingRule(value));
 	}
 	final EventRegistrationToken OnIsEnabledChanged(void delegate(Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerCommandBehavior).add_IsEnabledChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior, IInspectable), Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerCommandBehavior)this.asInterface(uuid("786c1e78-ce78-4a10-afd6-843fcbb90c2e"))).add_IsEnabledChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior, IInspectable), Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeIsEnabledChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerCommandBehavior).remove_IsEnabledChanged(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerCommandBehavior)this.asInterface(uuid("786c1e78-ce78-4a10-afd6-843fcbb90c2e"))).remove_IsEnabledChanged(token));
 	}
 }
 
@@ -1500,17 +1500,17 @@ extern(Windows):
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerFastForwardReceivedEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerFastForwardReceivedEventArgs)this.asInterface(uuid("30f064d9-b491-4d0a-bc21-3098bd1332e9"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerFastForwardReceivedEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerFastForwardReceivedEventArgs)this.asInterface(uuid("30f064d9-b491-4d0a-bc21-3098bd1332e9"))).set_Handled(value));
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerFastForwardReceivedEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerFastForwardReceivedEventArgs)this.asInterface(uuid("30f064d9-b491-4d0a-bc21-3098bd1332e9"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -1521,17 +1521,17 @@ extern(Windows):
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerNextReceivedEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerNextReceivedEventArgs)this.asInterface(uuid("e1504433-a2b0-45d4-b9de-5f42ac14a839"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerNextReceivedEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerNextReceivedEventArgs)this.asInterface(uuid("e1504433-a2b0-45d4-b9de-5f42ac14a839"))).set_Handled(value));
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerNextReceivedEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerNextReceivedEventArgs)this.asInterface(uuid("e1504433-a2b0-45d4-b9de-5f42ac14a839"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -1542,17 +1542,17 @@ extern(Windows):
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerPauseReceivedEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerPauseReceivedEventArgs)this.asInterface(uuid("5ceccd1c-c25c-4221-b16c-c3c98ce012d6"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerPauseReceivedEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerPauseReceivedEventArgs)this.asInterface(uuid("5ceccd1c-c25c-4221-b16c-c3c98ce012d6"))).set_Handled(value));
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerPauseReceivedEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerPauseReceivedEventArgs)this.asInterface(uuid("5ceccd1c-c25c-4221-b16c-c3c98ce012d6"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -1563,17 +1563,17 @@ extern(Windows):
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerPlayReceivedEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerPlayReceivedEventArgs)this.asInterface(uuid("9af0004e-578b-4c56-a006-16159d888a48"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerPlayReceivedEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerPlayReceivedEventArgs)this.asInterface(uuid("9af0004e-578b-4c56-a006-16159d888a48"))).set_Handled(value));
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerPlayReceivedEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerPlayReceivedEventArgs)this.asInterface(uuid("9af0004e-578b-4c56-a006-16159d888a48"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -1584,23 +1584,23 @@ extern(Windows):
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerPositionReceivedEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerPositionReceivedEventArgs)this.asInterface(uuid("5591a754-d627-4bdd-a90d-86a015b24902"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerPositionReceivedEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerPositionReceivedEventArgs)this.asInterface(uuid("5591a754-d627-4bdd-a90d-86a015b24902"))).set_Handled(value));
 	}
 	final Windows.Foundation.TimeSpan Position()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerPositionReceivedEventArgs).get_Position(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerPositionReceivedEventArgs)this.asInterface(uuid("5591a754-d627-4bdd-a90d-86a015b24902"))).get_Position(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerPositionReceivedEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerPositionReceivedEventArgs)this.asInterface(uuid("5591a754-d627-4bdd-a90d-86a015b24902"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -1611,17 +1611,17 @@ extern(Windows):
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerPreviousReceivedEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerPreviousReceivedEventArgs)this.asInterface(uuid("525e3081-4632-4f76-99b1-d771623f6287"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerPreviousReceivedEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerPreviousReceivedEventArgs)this.asInterface(uuid("525e3081-4632-4f76-99b1-d771623f6287"))).set_Handled(value));
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerPreviousReceivedEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerPreviousReceivedEventArgs)this.asInterface(uuid("525e3081-4632-4f76-99b1-d771623f6287"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -1632,23 +1632,23 @@ extern(Windows):
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerRateReceivedEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerRateReceivedEventArgs)this.asInterface(uuid("18ea3939-4a16-4169-8b05-3eb9f5ff78eb"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerRateReceivedEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerRateReceivedEventArgs)this.asInterface(uuid("18ea3939-4a16-4169-8b05-3eb9f5ff78eb"))).set_Handled(value));
 	}
 	final double PlaybackRate()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerRateReceivedEventArgs).get_PlaybackRate(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerRateReceivedEventArgs)this.asInterface(uuid("18ea3939-4a16-4169-8b05-3eb9f5ff78eb"))).get_PlaybackRate(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerRateReceivedEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerRateReceivedEventArgs)this.asInterface(uuid("18ea3939-4a16-4169-8b05-3eb9f5ff78eb"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -1659,17 +1659,17 @@ extern(Windows):
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerRewindReceivedEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerRewindReceivedEventArgs)this.asInterface(uuid("9f085947-a3c0-425d-aaef-97ba7898b141"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerRewindReceivedEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerRewindReceivedEventArgs)this.asInterface(uuid("9f085947-a3c0-425d-aaef-97ba7898b141"))).set_Handled(value));
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerRewindReceivedEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerRewindReceivedEventArgs)this.asInterface(uuid("9f085947-a3c0-425d-aaef-97ba7898b141"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -1680,23 +1680,23 @@ extern(Windows):
 	final bool Handled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerShuffleReceivedEventArgs).get_Handled(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerShuffleReceivedEventArgs)this.asInterface(uuid("50a05cef-63ee-4a96-b7b5-fee08b9ff90c"))).get_Handled(&_ret));
 		return _ret;
 	}
 	final void Handled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerShuffleReceivedEventArgs).set_Handled(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerShuffleReceivedEventArgs)this.asInterface(uuid("50a05cef-63ee-4a96-b7b5-fee08b9ff90c"))).set_Handled(value));
 	}
 	final bool IsShuffleRequested()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerShuffleReceivedEventArgs).get_IsShuffleRequested(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerShuffleReceivedEventArgs)this.asInterface(uuid("50a05cef-63ee-4a96-b7b5-fee08b9ff90c"))).get_IsShuffleRequested(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackCommandManagerShuffleReceivedEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackCommandManagerShuffleReceivedEventArgs)this.asInterface(uuid("50a05cef-63ee-4a96-b7b5-fee08b9ff90c"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -1707,120 +1707,120 @@ extern(Windows):
 	final EventRegistrationToken OnAudioTracksChanged(void delegate(Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem).add_AudioTracksChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs), Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItem)this.asInterface(uuid("047097d2-e4af-48ab-b283-6929e674ece2"))).add_AudioTracksChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs), Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAudioTracksChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem).remove_AudioTracksChanged(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItem)this.asInterface(uuid("047097d2-e4af-48ab-b283-6929e674ece2"))).remove_AudioTracksChanged(token));
 	}
 	final EventRegistrationToken OnVideoTracksChanged(void delegate(Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem).add_VideoTracksChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs), Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItem)this.asInterface(uuid("047097d2-e4af-48ab-b283-6929e674ece2"))).add_VideoTracksChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs), Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeVideoTracksChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem).remove_VideoTracksChanged(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItem)this.asInterface(uuid("047097d2-e4af-48ab-b283-6929e674ece2"))).remove_VideoTracksChanged(token));
 	}
 	final EventRegistrationToken OnTimedMetadataTracksChanged(void delegate(Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem).add_TimedMetadataTracksChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs), Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItem)this.asInterface(uuid("047097d2-e4af-48ab-b283-6929e674ece2"))).add_TimedMetadataTracksChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs), Windows.Media.Playback.MediaPlaybackItem, Windows.Foundation.Collections.IVectorChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTimedMetadataTracksChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem).remove_TimedMetadataTracksChanged(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItem)this.asInterface(uuid("047097d2-e4af-48ab-b283-6929e674ece2"))).remove_TimedMetadataTracksChanged(token));
 	}
 	final Windows.Media.Core.MediaSource Source()
 	{
 		Windows.Media.Core.MediaSource _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem).get_Source(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItem)this.asInterface(uuid("047097d2-e4af-48ab-b283-6929e674ece2"))).get_Source(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlaybackAudioTrackList AudioTracks()
 	{
 		Windows.Media.Playback.MediaPlaybackAudioTrackList _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem).get_AudioTracks(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItem)this.asInterface(uuid("047097d2-e4af-48ab-b283-6929e674ece2"))).get_AudioTracks(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlaybackVideoTrackList VideoTracks()
 	{
 		Windows.Media.Playback.MediaPlaybackVideoTrackList _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem).get_VideoTracks(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItem)this.asInterface(uuid("047097d2-e4af-48ab-b283-6929e674ece2"))).get_VideoTracks(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlaybackTimedMetadataTrackList TimedMetadataTracks()
 	{
 		Windows.Media.Playback.MediaPlaybackTimedMetadataTrackList _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem).get_TimedMetadataTracks(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItem)this.asInterface(uuid("047097d2-e4af-48ab-b283-6929e674ece2"))).get_TimedMetadataTracks(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaBreakSchedule BreakSchedule()
 	{
 		Windows.Media.Playback.MediaBreakSchedule _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem2).get_BreakSchedule(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItem2)this.asInterface(uuid("d859d171-d7ef-4b81-ac1f-f40493cbb091"))).get_BreakSchedule(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan StartTime()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem2).get_StartTime(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItem2)this.asInterface(uuid("d859d171-d7ef-4b81-ac1f-f40493cbb091"))).get_StartTime(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) DurationLimit()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem2).get_DurationLimit(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItem2)this.asInterface(uuid("d859d171-d7ef-4b81-ac1f-f40493cbb091"))).get_DurationLimit(&_ret));
 		return _ret;
 	}
 	final bool CanSkip()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem2).get_CanSkip(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItem2)this.asInterface(uuid("d859d171-d7ef-4b81-ac1f-f40493cbb091"))).get_CanSkip(&_ret));
 		return _ret;
 	}
 	final void CanSkip(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem2).set_CanSkip(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItem2)this.asInterface(uuid("d859d171-d7ef-4b81-ac1f-f40493cbb091"))).set_CanSkip(value));
 	}
 	final Windows.Media.Playback.MediaItemDisplayProperties GetDisplayProperties()
 	{
 		Windows.Media.Playback.MediaItemDisplayProperties _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem2).abi_GetDisplayProperties(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItem2)this.asInterface(uuid("d859d171-d7ef-4b81-ac1f-f40493cbb091"))).abi_GetDisplayProperties(&_ret));
 		return _ret;
 	}
 	final void ApplyDisplayProperties(Windows.Media.Playback.MediaItemDisplayProperties value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem2).abi_ApplyDisplayProperties(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItem2)this.asInterface(uuid("d859d171-d7ef-4b81-ac1f-f40493cbb091"))).abi_ApplyDisplayProperties(value));
 	}
 	final bool IsDisabledInPlaybackList()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem3).get_IsDisabledInPlaybackList(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItem3)this.asInterface(uuid("0d328220-b80a-4d09-9ff8-f87094a1c831"))).get_IsDisabledInPlaybackList(&_ret));
 		return _ret;
 	}
 	final void IsDisabledInPlaybackList(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem3).set_IsDisabledInPlaybackList(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItem3)this.asInterface(uuid("0d328220-b80a-4d09-9ff8-f87094a1c831"))).set_IsDisabledInPlaybackList(value));
 	}
 	final double TotalDownloadProgress()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem3).get_TotalDownloadProgress(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItem3)this.asInterface(uuid("0d328220-b80a-4d09-9ff8-f87094a1c831"))).get_TotalDownloadProgress(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.AutoLoadedDisplayPropertyKind AutoLoadedDisplayProperties()
 	{
 		Windows.Media.Playback.AutoLoadedDisplayPropertyKind _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem3).get_AutoLoadedDisplayProperties(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItem3)this.asInterface(uuid("0d328220-b80a-4d09-9ff8-f87094a1c831"))).get_AutoLoadedDisplayProperties(&_ret));
 		return _ret;
 	}
 	final void AutoLoadedDisplayProperties(Windows.Media.Playback.AutoLoadedDisplayPropertyKind value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItem3).set_AutoLoadedDisplayProperties(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItem3)this.asInterface(uuid("0d328220-b80a-4d09-9ff8-f87094a1c831"))).set_AutoLoadedDisplayProperties(value));
 	}
 
 	private static Windows.Media.Playback.IMediaPlaybackItemStatics _staticInstance;
@@ -1832,14 +1832,14 @@ extern(Windows):
 	static Windows.Media.Playback.MediaPlaybackItem FindFromMediaSource(Windows.Media.Core.MediaSource source)
 	{
 		Windows.Media.Playback.MediaPlaybackItem _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Playback.IMediaPlaybackItemStatics).abi_FindFromMediaSource(source, &_ret));
+		Debug.OK(staticInstance.abi_FindFromMediaSource(source, &_ret));
 		return _ret;
 	}
 	static Windows.Media.Playback.MediaPlaybackItem New(Windows.Media.Core.MediaSource source)
 	{
 		auto factory = factory!(Windows.Media.Playback.IMediaPlaybackItemFactory);
 		Windows.Media.Playback.MediaPlaybackItem _ret;
-		Debug.OK(factory.as!(Windows.Media.Playback.IMediaPlaybackItemFactory).abi_Create(source, &_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItemFactory)factory.asInterface(uuid("7133fce1-1769-4ff9-a7c1-38d2c4d42360"))).abi_Create(source, &_ret));
 		return _ret;
 	}
 }
@@ -1850,13 +1850,13 @@ extern(Windows):
 	final Windows.Media.Playback.MediaPlaybackItemErrorCode ErrorCode()
 	{
 		Windows.Media.Playback.MediaPlaybackItemErrorCode _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItemError).get_ErrorCode(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItemError)this.asInterface(uuid("69fbef2b-dcd6-4df9-a450-dbf4c6f1c2c2"))).get_ErrorCode(&_ret));
 		return _ret;
 	}
 	final HRESULT ExtendedError()
 	{
 		HRESULT _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItemError).get_ExtendedError(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItemError)this.asInterface(uuid("69fbef2b-dcd6-4df9-a450-dbf4c6f1c2c2"))).get_ExtendedError(&_ret));
 		return _ret;
 	}
 }
@@ -1867,13 +1867,13 @@ extern(Windows):
 	final Windows.Media.Playback.MediaPlaybackItem Item()
 	{
 		Windows.Media.Playback.MediaPlaybackItem _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItemFailedEventArgs).get_Item(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItemFailedEventArgs)this.asInterface(uuid("7703134a-e9a7-47c3-862c-c656d30683d4"))).get_Item(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlaybackItemError Error()
 	{
 		Windows.Media.Playback.MediaPlaybackItemError _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItemFailedEventArgs).get_Error(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItemFailedEventArgs)this.asInterface(uuid("7703134a-e9a7-47c3-862c-c656d30683d4"))).get_Error(&_ret));
 		return _ret;
 	}
 }
@@ -1884,7 +1884,7 @@ extern(Windows):
 	final Windows.Media.Playback.MediaPlaybackItem Item()
 	{
 		Windows.Media.Playback.MediaPlaybackItem _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackItemOpenedEventArgs).get_Item(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackItemOpenedEventArgs)this.asInterface(uuid("cbd9bd82-3037-4fbe-ae8f-39fc39edf4ef"))).get_Item(&_ret));
 		return _ret;
 	}
 }
@@ -1895,134 +1895,134 @@ extern(Windows):
 	final EventRegistrationToken OnItemFailed(void delegate(Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemFailedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList).add_ItemFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemFailedEventArgs), Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemFailedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList)this.asInterface(uuid("7f77ee9c-dc42-4e26-a98d-7850df8ec925"))).add_ItemFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemFailedEventArgs), Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemFailedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeItemFailed(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList).remove_ItemFailed(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList)this.asInterface(uuid("7f77ee9c-dc42-4e26-a98d-7850df8ec925"))).remove_ItemFailed(token));
 	}
 	final EventRegistrationToken OnCurrentItemChanged(void delegate(Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.CurrentMediaPlaybackItemChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList).add_CurrentItemChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.CurrentMediaPlaybackItemChangedEventArgs), Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.CurrentMediaPlaybackItemChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList)this.asInterface(uuid("7f77ee9c-dc42-4e26-a98d-7850df8ec925"))).add_CurrentItemChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.CurrentMediaPlaybackItemChangedEventArgs), Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.CurrentMediaPlaybackItemChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCurrentItemChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList).remove_CurrentItemChanged(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList)this.asInterface(uuid("7f77ee9c-dc42-4e26-a98d-7850df8ec925"))).remove_CurrentItemChanged(token));
 	}
 	final EventRegistrationToken OnItemOpened(void delegate(Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemOpenedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList).add_ItemOpened(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemOpenedEventArgs), Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemOpenedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList)this.asInterface(uuid("7f77ee9c-dc42-4e26-a98d-7850df8ec925"))).add_ItemOpened(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemOpenedEventArgs), Windows.Media.Playback.MediaPlaybackList, Windows.Media.Playback.MediaPlaybackItemOpenedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeItemOpened(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList).remove_ItemOpened(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList)this.asInterface(uuid("7f77ee9c-dc42-4e26-a98d-7850df8ec925"))).remove_ItemOpened(token));
 	}
 	final Windows.Foundation.Collections.IObservableVector!(Windows.Media.Playback.MediaPlaybackItem) Items()
 	{
 		Windows.Foundation.Collections.IObservableVector!(Windows.Media.Playback.MediaPlaybackItem) _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList).get_Items(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList)this.asInterface(uuid("7f77ee9c-dc42-4e26-a98d-7850df8ec925"))).get_Items(&_ret));
 		return _ret;
 	}
 	final bool AutoRepeatEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList).get_AutoRepeatEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList)this.asInterface(uuid("7f77ee9c-dc42-4e26-a98d-7850df8ec925"))).get_AutoRepeatEnabled(&_ret));
 		return _ret;
 	}
 	final void AutoRepeatEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList).set_AutoRepeatEnabled(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList)this.asInterface(uuid("7f77ee9c-dc42-4e26-a98d-7850df8ec925"))).set_AutoRepeatEnabled(value));
 	}
 	final bool ShuffleEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList).get_ShuffleEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList)this.asInterface(uuid("7f77ee9c-dc42-4e26-a98d-7850df8ec925"))).get_ShuffleEnabled(&_ret));
 		return _ret;
 	}
 	final void ShuffleEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList).set_ShuffleEnabled(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList)this.asInterface(uuid("7f77ee9c-dc42-4e26-a98d-7850df8ec925"))).set_ShuffleEnabled(value));
 	}
 	final Windows.Media.Playback.MediaPlaybackItem CurrentItem()
 	{
 		Windows.Media.Playback.MediaPlaybackItem _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList).get_CurrentItem(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList)this.asInterface(uuid("7f77ee9c-dc42-4e26-a98d-7850df8ec925"))).get_CurrentItem(&_ret));
 		return _ret;
 	}
 	final UINT32 CurrentItemIndex()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList).get_CurrentItemIndex(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList)this.asInterface(uuid("7f77ee9c-dc42-4e26-a98d-7850df8ec925"))).get_CurrentItemIndex(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlaybackItem MoveNext()
 	{
 		Windows.Media.Playback.MediaPlaybackItem _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList).abi_MoveNext(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList)this.asInterface(uuid("7f77ee9c-dc42-4e26-a98d-7850df8ec925"))).abi_MoveNext(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlaybackItem MovePrevious()
 	{
 		Windows.Media.Playback.MediaPlaybackItem _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList).abi_MovePrevious(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList)this.asInterface(uuid("7f77ee9c-dc42-4e26-a98d-7850df8ec925"))).abi_MovePrevious(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlaybackItem MoveTo(UINT32 itemIndex)
 	{
 		Windows.Media.Playback.MediaPlaybackItem _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList).abi_MoveTo(itemIndex, &_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList)this.asInterface(uuid("7f77ee9c-dc42-4e26-a98d-7850df8ec925"))).abi_MoveTo(itemIndex, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) MaxPrefetchTime()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList2).get_MaxPrefetchTime(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList2)this.asInterface(uuid("0e09b478-600a-4274-a14b-0b6723d0f48b"))).get_MaxPrefetchTime(&_ret));
 		return _ret;
 	}
 	final void MaxPrefetchTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList2).set_MaxPrefetchTime(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList2)this.asInterface(uuid("0e09b478-600a-4274-a14b-0b6723d0f48b"))).set_MaxPrefetchTime(value));
 	}
 	final Windows.Media.Playback.MediaPlaybackItem StartingItem()
 	{
 		Windows.Media.Playback.MediaPlaybackItem _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList2).get_StartingItem(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList2)this.asInterface(uuid("0e09b478-600a-4274-a14b-0b6723d0f48b"))).get_StartingItem(&_ret));
 		return _ret;
 	}
 	final void StartingItem(Windows.Media.Playback.MediaPlaybackItem value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList2).set_StartingItem(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList2)this.asInterface(uuid("0e09b478-600a-4274-a14b-0b6723d0f48b"))).set_StartingItem(value));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Playback.MediaPlaybackItem) ShuffledItems()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Playback.MediaPlaybackItem) _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList2).get_ShuffledItems(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList2)this.asInterface(uuid("0e09b478-600a-4274-a14b-0b6723d0f48b"))).get_ShuffledItems(&_ret));
 		return _ret;
 	}
 	final void SetShuffledItems(Windows.Foundation.Collections.IIterable!(Windows.Media.Playback.MediaPlaybackItem) value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList2).abi_SetShuffledItems(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList2)this.asInterface(uuid("0e09b478-600a-4274-a14b-0b6723d0f48b"))).abi_SetShuffledItems(value));
 	}
 	final Windows.Foundation.IReference!(UINT32) MaxPlayedItemsToKeepOpen()
 	{
 		Windows.Foundation.IReference!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList3).get_MaxPlayedItemsToKeepOpen(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList3)this.asInterface(uuid("dd24bba9-bc47-4463-aa90-c18b7e5ffde1"))).get_MaxPlayedItemsToKeepOpen(&_ret));
 		return _ret;
 	}
 	final void MaxPlayedItemsToKeepOpen(Windows.Foundation.IReference!(UINT32) value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackList3).set_MaxPlayedItemsToKeepOpen(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackList3)this.asInterface(uuid("dd24bba9-bc47-4463-aa90-c18b7e5ffde1"))).set_MaxPlayedItemsToKeepOpen(value));
 	}
 	static MediaPlaybackList New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MediaPlaybackList).abi_ActivateInstance(&ret));
-		return ret.as!(MediaPlaybackList);
+		return cast(MediaPlaybackList) ret;
 	}
 }
 
@@ -2032,281 +2032,281 @@ extern(Windows):
 	final EventRegistrationToken OnPlaybackStateChanged(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).add_PlaybackStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).add_PlaybackStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removePlaybackStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).remove_PlaybackStateChanged(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).remove_PlaybackStateChanged(token));
 	}
 	final EventRegistrationToken OnPlaybackRateChanged(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).add_PlaybackRateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).add_PlaybackRateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removePlaybackRateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).remove_PlaybackRateChanged(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).remove_PlaybackRateChanged(token));
 	}
 	final EventRegistrationToken OnSeekCompleted(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).add_SeekCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).add_SeekCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSeekCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).remove_SeekCompleted(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).remove_SeekCompleted(token));
 	}
 	final EventRegistrationToken OnBufferingStarted(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).add_BufferingStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).add_BufferingStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeBufferingStarted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).remove_BufferingStarted(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).remove_BufferingStarted(token));
 	}
 	final EventRegistrationToken OnBufferingEnded(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).add_BufferingEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).add_BufferingEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeBufferingEnded(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).remove_BufferingEnded(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).remove_BufferingEnded(token));
 	}
 	final EventRegistrationToken OnBufferingProgressChanged(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).add_BufferingProgressChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).add_BufferingProgressChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeBufferingProgressChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).remove_BufferingProgressChanged(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).remove_BufferingProgressChanged(token));
 	}
 	final EventRegistrationToken OnDownloadProgressChanged(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).add_DownloadProgressChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).add_DownloadProgressChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeDownloadProgressChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).remove_DownloadProgressChanged(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).remove_DownloadProgressChanged(token));
 	}
 	final EventRegistrationToken OnNaturalDurationChanged(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).add_NaturalDurationChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).add_NaturalDurationChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeNaturalDurationChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).remove_NaturalDurationChanged(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).remove_NaturalDurationChanged(token));
 	}
 	final EventRegistrationToken OnPositionChanged(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).add_PositionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).add_PositionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removePositionChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).remove_PositionChanged(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).remove_PositionChanged(token));
 	}
 	final EventRegistrationToken OnNaturalVideoSizeChanged(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).add_NaturalVideoSizeChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).add_NaturalVideoSizeChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeNaturalVideoSizeChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).remove_NaturalVideoSizeChanged(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).remove_NaturalVideoSizeChanged(token));
 	}
 	final Windows.Media.Playback.MediaPlayer MediaPlayer()
 	{
 		Windows.Media.Playback.MediaPlayer _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).get_MediaPlayer(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).get_MediaPlayer(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan NaturalDuration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).get_NaturalDuration(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).get_NaturalDuration(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Position()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).get_Position(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).get_Position(&_ret));
 		return _ret;
 	}
 	final void Position(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).set_Position(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).set_Position(value));
 	}
 	final Windows.Media.Playback.MediaPlaybackState PlaybackState()
 	{
 		Windows.Media.Playback.MediaPlaybackState _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).get_PlaybackState(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).get_PlaybackState(&_ret));
 		return _ret;
 	}
 	final bool CanSeek()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).get_CanSeek(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).get_CanSeek(&_ret));
 		return _ret;
 	}
 	final bool CanPause()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).get_CanPause(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).get_CanPause(&_ret));
 		return _ret;
 	}
 	final bool IsProtected()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).get_IsProtected(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).get_IsProtected(&_ret));
 		return _ret;
 	}
 	final double PlaybackRate()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).get_PlaybackRate(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).get_PlaybackRate(&_ret));
 		return _ret;
 	}
 	final void PlaybackRate(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).set_PlaybackRate(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).set_PlaybackRate(value));
 	}
 	final double BufferingProgress()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).get_BufferingProgress(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).get_BufferingProgress(&_ret));
 		return _ret;
 	}
 	final double DownloadProgress()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).get_DownloadProgress(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).get_DownloadProgress(&_ret));
 		return _ret;
 	}
 	final UINT32 NaturalVideoHeight()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).get_NaturalVideoHeight(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).get_NaturalVideoHeight(&_ret));
 		return _ret;
 	}
 	final UINT32 NaturalVideoWidth()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).get_NaturalVideoWidth(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).get_NaturalVideoWidth(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect NormalizedSourceRect()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).get_NormalizedSourceRect(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).get_NormalizedSourceRect(&_ret));
 		return _ret;
 	}
 	final void NormalizedSourceRect(Windows.Foundation.Rect value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).set_NormalizedSourceRect(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).set_NormalizedSourceRect(value));
 	}
 	final Windows.Media.MediaProperties.StereoscopicVideoPackingMode StereoscopicVideoPackingMode()
 	{
 		Windows.Media.MediaProperties.StereoscopicVideoPackingMode _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).get_StereoscopicVideoPackingMode(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).get_StereoscopicVideoPackingMode(&_ret));
 		return _ret;
 	}
 	final void StereoscopicVideoPackingMode(Windows.Media.MediaProperties.StereoscopicVideoPackingMode value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession).set_StereoscopicVideoPackingMode(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession)this.asInterface(uuid("c32b683d-0407-41ba-8946-8b345a5a5435"))).set_StereoscopicVideoPackingMode(value));
 	}
 	final EventRegistrationToken OnBufferedRangesChanged(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession2).add_BufferedRangesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession2)this.asInterface(uuid("f8ba7c79-1fc8-4097-ad70-c0fa18cc0050"))).add_BufferedRangesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeBufferedRangesChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession2).remove_BufferedRangesChanged(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession2)this.asInterface(uuid("f8ba7c79-1fc8-4097-ad70-c0fa18cc0050"))).remove_BufferedRangesChanged(token));
 	}
 	final EventRegistrationToken OnPlayedRangesChanged(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession2).add_PlayedRangesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession2)this.asInterface(uuid("f8ba7c79-1fc8-4097-ad70-c0fa18cc0050"))).add_PlayedRangesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removePlayedRangesChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession2).remove_PlayedRangesChanged(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession2)this.asInterface(uuid("f8ba7c79-1fc8-4097-ad70-c0fa18cc0050"))).remove_PlayedRangesChanged(token));
 	}
 	final EventRegistrationToken OnSeekableRangesChanged(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession2).add_SeekableRangesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession2)this.asInterface(uuid("f8ba7c79-1fc8-4097-ad70-c0fa18cc0050"))).add_SeekableRangesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSeekableRangesChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession2).remove_SeekableRangesChanged(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession2)this.asInterface(uuid("f8ba7c79-1fc8-4097-ad70-c0fa18cc0050"))).remove_SeekableRangesChanged(token));
 	}
 	final EventRegistrationToken OnSupportedPlaybackRatesChanged(void delegate(Windows.Media.Playback.MediaPlaybackSession, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession2).add_SupportedPlaybackRatesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession2)this.asInterface(uuid("f8ba7c79-1fc8-4097-ad70-c0fa18cc0050"))).add_SupportedPlaybackRatesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackSession, IInspectable), Windows.Media.Playback.MediaPlaybackSession, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSupportedPlaybackRatesChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession2).remove_SupportedPlaybackRatesChanged(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession2)this.asInterface(uuid("f8ba7c79-1fc8-4097-ad70-c0fa18cc0050"))).remove_SupportedPlaybackRatesChanged(token));
 	}
 	final Windows.Media.Playback.MediaPlaybackSphericalVideoProjection SphericalVideoProjection()
 	{
 		Windows.Media.Playback.MediaPlaybackSphericalVideoProjection _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession2).get_SphericalVideoProjection(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession2)this.asInterface(uuid("f8ba7c79-1fc8-4097-ad70-c0fa18cc0050"))).get_SphericalVideoProjection(&_ret));
 		return _ret;
 	}
 	final bool IsMirroring()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession2).get_IsMirroring(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession2)this.asInterface(uuid("f8ba7c79-1fc8-4097-ad70-c0fa18cc0050"))).get_IsMirroring(&_ret));
 		return _ret;
 	}
 	final void IsMirroring(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession2).set_IsMirroring(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession2)this.asInterface(uuid("f8ba7c79-1fc8-4097-ad70-c0fa18cc0050"))).set_IsMirroring(value));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.MediaTimeRange) GetBufferedRanges()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.MediaTimeRange) _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession2).abi_GetBufferedRanges(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession2)this.asInterface(uuid("f8ba7c79-1fc8-4097-ad70-c0fa18cc0050"))).abi_GetBufferedRanges(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.MediaTimeRange) GetPlayedRanges()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.MediaTimeRange) _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession2).abi_GetPlayedRanges(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession2)this.asInterface(uuid("f8ba7c79-1fc8-4097-ad70-c0fa18cc0050"))).abi_GetPlayedRanges(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.MediaTimeRange) GetSeekableRanges()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.MediaTimeRange) _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession2).abi_GetSeekableRanges(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession2)this.asInterface(uuid("f8ba7c79-1fc8-4097-ad70-c0fa18cc0050"))).abi_GetSeekableRanges(&_ret));
 		return _ret;
 	}
 	final bool IsSupportedPlaybackRateRange(double rate1, double rate2)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSession2).abi_IsSupportedPlaybackRateRange(rate1, rate2, &_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSession2)this.asInterface(uuid("f8ba7c79-1fc8-4097-ad70-c0fa18cc0050"))).abi_IsSupportedPlaybackRateRange(rate1, rate2, &_ret));
 		return _ret;
 	}
 }
@@ -2317,52 +2317,52 @@ extern(Windows):
 	final bool IsEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSphericalVideoProjection).get_IsEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSphericalVideoProjection)this.asInterface(uuid("d405b37c-6f0e-4661-b8ee-d487ba9752d5"))).get_IsEnabled(&_ret));
 		return _ret;
 	}
 	final void IsEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSphericalVideoProjection).set_IsEnabled(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSphericalVideoProjection)this.asInterface(uuid("d405b37c-6f0e-4661-b8ee-d487ba9752d5"))).set_IsEnabled(value));
 	}
 	final Windows.Media.MediaProperties.SphericalVideoFrameFormat FrameFormat()
 	{
 		Windows.Media.MediaProperties.SphericalVideoFrameFormat _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSphericalVideoProjection).get_FrameFormat(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSphericalVideoProjection)this.asInterface(uuid("d405b37c-6f0e-4661-b8ee-d487ba9752d5"))).get_FrameFormat(&_ret));
 		return _ret;
 	}
 	final void FrameFormat(Windows.Media.MediaProperties.SphericalVideoFrameFormat value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSphericalVideoProjection).set_FrameFormat(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSphericalVideoProjection)this.asInterface(uuid("d405b37c-6f0e-4661-b8ee-d487ba9752d5"))).set_FrameFormat(value));
 	}
 	final double HorizontalFieldOfViewInDegrees()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSphericalVideoProjection).get_HorizontalFieldOfViewInDegrees(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSphericalVideoProjection)this.asInterface(uuid("d405b37c-6f0e-4661-b8ee-d487ba9752d5"))).get_HorizontalFieldOfViewInDegrees(&_ret));
 		return _ret;
 	}
 	final void HorizontalFieldOfViewInDegrees(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSphericalVideoProjection).set_HorizontalFieldOfViewInDegrees(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSphericalVideoProjection)this.asInterface(uuid("d405b37c-6f0e-4661-b8ee-d487ba9752d5"))).set_HorizontalFieldOfViewInDegrees(value));
 	}
 	final Windows.Foundation.Numerics.Quaternion ViewOrientation()
 	{
 		Windows.Foundation.Numerics.Quaternion _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSphericalVideoProjection).get_ViewOrientation(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSphericalVideoProjection)this.asInterface(uuid("d405b37c-6f0e-4661-b8ee-d487ba9752d5"))).get_ViewOrientation(&_ret));
 		return _ret;
 	}
 	final void ViewOrientation(Windows.Foundation.Numerics.Quaternion value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSphericalVideoProjection).set_ViewOrientation(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSphericalVideoProjection)this.asInterface(uuid("d405b37c-6f0e-4661-b8ee-d487ba9752d5"))).set_ViewOrientation(value));
 	}
 	final Windows.Media.Playback.SphericalVideoProjectionMode ProjectionMode()
 	{
 		Windows.Media.Playback.SphericalVideoProjectionMode _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSphericalVideoProjection).get_ProjectionMode(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSphericalVideoProjection)this.asInterface(uuid("d405b37c-6f0e-4661-b8ee-d487ba9752d5"))).get_ProjectionMode(&_ret));
 		return _ret;
 	}
 	final void ProjectionMode(Windows.Media.Playback.SphericalVideoProjectionMode value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackSphericalVideoProjection).set_ProjectionMode(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackSphericalVideoProjection)this.asInterface(uuid("d405b37c-6f0e-4661-b8ee-d487ba9752d5"))).set_ProjectionMode(value));
 	}
 }
 
@@ -2371,47 +2371,47 @@ interface MediaPlaybackTimedMetadataTrackList : Windows.Foundation.Collections.I
 extern(Windows):
 	final void GetAt(uint index, Windows.Media.Core.TimedMetadataTrack* out_item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.TimedMetadataTrack)).abi_GetAt(index, out_item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.TimedMetadataTrack))this).abi_GetAt(index, out_item));
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.TimedMetadataTrack)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.TimedMetadataTrack))this).get_Size(&_ret));
 		return _ret;
 	}
 	final uint IndexOf(Windows.Media.Core.TimedMetadataTrack value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.TimedMetadataTrack)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.TimedMetadataTrack))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.Media.Core.TimedMetadataTrack* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.TimedMetadataTrack)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.TimedMetadataTrack))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Media.Core.TimedMetadataTrack)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Media.Core.TimedMetadataTrack)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.Media.Core.TimedMetadataTrack))this).abi_First(out_first));
 	}
 	final EventRegistrationToken OnPresentationModeChanged(void delegate(Windows.Media.Playback.MediaPlaybackTimedMetadataTrackList, Windows.Media.Playback.TimedMetadataPresentationModeChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackTimedMetadataTrackList).add_PresentationModeChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackTimedMetadataTrackList, Windows.Media.Playback.TimedMetadataPresentationModeChangedEventArgs), Windows.Media.Playback.MediaPlaybackTimedMetadataTrackList, Windows.Media.Playback.TimedMetadataPresentationModeChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackTimedMetadataTrackList)this.asInterface(uuid("72b41319-bbfb-46a3-9372-9c9c744b9438"))).add_PresentationModeChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlaybackTimedMetadataTrackList, Windows.Media.Playback.TimedMetadataPresentationModeChangedEventArgs), Windows.Media.Playback.MediaPlaybackTimedMetadataTrackList, Windows.Media.Playback.TimedMetadataPresentationModeChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePresentationModeChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackTimedMetadataTrackList).remove_PresentationModeChanged(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackTimedMetadataTrackList)this.asInterface(uuid("72b41319-bbfb-46a3-9372-9c9c744b9438"))).remove_PresentationModeChanged(token));
 	}
 	final Windows.Media.Playback.TimedMetadataTrackPresentationMode GetPresentationMode(UINT32 index)
 	{
 		Windows.Media.Playback.TimedMetadataTrackPresentationMode _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackTimedMetadataTrackList).abi_GetPresentationMode(index, &_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackTimedMetadataTrackList)this.asInterface(uuid("72b41319-bbfb-46a3-9372-9c9c744b9438"))).abi_GetPresentationMode(index, &_ret));
 		return _ret;
 	}
 	final void SetPresentationMode(UINT32 index, Windows.Media.Playback.TimedMetadataTrackPresentationMode value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlaybackTimedMetadataTrackList).abi_SetPresentationMode(index, value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlaybackTimedMetadataTrackList)this.asInterface(uuid("72b41319-bbfb-46a3-9372-9c9c744b9438"))).abi_SetPresentationMode(index, value));
 	}
 }
 
@@ -2420,46 +2420,46 @@ interface MediaPlaybackVideoTrackList : Windows.Foundation.Collections.IVectorVi
 extern(Windows):
 	final void GetAt(uint index, Windows.Media.Core.VideoTrack* out_item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.VideoTrack)).abi_GetAt(index, out_item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.VideoTrack))this).abi_GetAt(index, out_item));
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.VideoTrack)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.VideoTrack))this).get_Size(&_ret));
 		return _ret;
 	}
 	final uint IndexOf(Windows.Media.Core.VideoTrack value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.VideoTrack)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.VideoTrack))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.Media.Core.VideoTrack* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.VideoTrack)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVectorView!(Windows.Media.Core.VideoTrack))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Media.Core.VideoTrack)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Media.Core.VideoTrack)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.Media.Core.VideoTrack))this).abi_First(out_first));
 	}
 	final EventRegistrationToken OnSelectedIndexChanged(void delegate(Windows.Media.Core.ISingleSelectMediaTrackList, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Core.ISingleSelectMediaTrackList).add_SelectedIndexChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.ISingleSelectMediaTrackList, IInspectable), Windows.Media.Core.ISingleSelectMediaTrackList, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Core.ISingleSelectMediaTrackList)this.asInterface(uuid("77206f1f-c34f-494f-8077-2bad9ff4ecf1"))).add_SelectedIndexChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Core.ISingleSelectMediaTrackList, IInspectable), Windows.Media.Core.ISingleSelectMediaTrackList, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSelectedIndexChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Core.ISingleSelectMediaTrackList).remove_SelectedIndexChanged(token));
+		Debug.OK((cast(Windows.Media.Core.ISingleSelectMediaTrackList)this.asInterface(uuid("77206f1f-c34f-494f-8077-2bad9ff4ecf1"))).remove_SelectedIndexChanged(token));
 	}
 	final void SelectedIndex(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.Core.ISingleSelectMediaTrackList).set_SelectedIndex(value));
+		Debug.OK((cast(Windows.Media.Core.ISingleSelectMediaTrackList)this.asInterface(uuid("77206f1f-c34f-494f-8077-2bad9ff4ecf1"))).set_SelectedIndex(value));
 	}
 	final INT32 SelectedIndex()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Core.ISingleSelectMediaTrackList).get_SelectedIndex(&_ret));
+		Debug.OK((cast(Windows.Media.Core.ISingleSelectMediaTrackList)this.asInterface(uuid("77206f1f-c34f-494f-8077-2bad9ff4ecf1"))).get_SelectedIndex(&_ret));
 		return _ret;
 	}
 }
@@ -2470,477 +2470,477 @@ extern(Windows):
 	final bool AutoPlay()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).get_AutoPlay(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).get_AutoPlay(&_ret));
 		return _ret;
 	}
 	final void AutoPlay(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).set_AutoPlay(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).set_AutoPlay(value));
 	}
 	deprecated("Use PlaybackSession.NaturalDuration instead of NaturalDuration.	 For more info, see MSDN.")
 	final Windows.Foundation.TimeSpan NaturalDuration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).get_NaturalDuration(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).get_NaturalDuration(&_ret));
 		return _ret;
 	}
 	deprecated("Use PlaybackSession.Position instead of Position.  For more info, see MSDN.")
 	final Windows.Foundation.TimeSpan Position()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).get_Position(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).get_Position(&_ret));
 		return _ret;
 	}
 	deprecated("Use PlaybackSession.Position instead of Position.  For more info, see MSDN.")
 	final void Position(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).set_Position(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).set_Position(value));
 	}
 	deprecated("Use PlaybackSession.BufferingProgress instead of BufferingProgress.	 For more info, see MSDN.")
 	final double BufferingProgress()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).get_BufferingProgress(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).get_BufferingProgress(&_ret));
 		return _ret;
 	}
 	deprecated("Use PlaybackSession.State instead of CurrentState.	For more info, see MSDN.")
 	final Windows.Media.Playback.MediaPlayerState CurrentState()
 	{
 		Windows.Media.Playback.MediaPlayerState _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).get_CurrentState(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).get_CurrentState(&_ret));
 		return _ret;
 	}
 	deprecated("Use PlaybackSession.CanSeek instead of CanSeek.	 For more info, see MSDN.")
 	final bool CanSeek()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).get_CanSeek(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).get_CanSeek(&_ret));
 		return _ret;
 	}
 	deprecated("Use PlaybackSession.CanPause instead of CanPause.  For more info, see MSDN.")
 	final bool CanPause()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).get_CanPause(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).get_CanPause(&_ret));
 		return _ret;
 	}
 	final bool IsLoopingEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).get_IsLoopingEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).get_IsLoopingEnabled(&_ret));
 		return _ret;
 	}
 	final void IsLoopingEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).set_IsLoopingEnabled(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).set_IsLoopingEnabled(value));
 	}
 	deprecated("Use PlaybackSession.IsProtected instead of IsProtected.	 For more info, see MSDN.")
 	final bool IsProtected()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).get_IsProtected(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).get_IsProtected(&_ret));
 		return _ret;
 	}
 	final bool IsMuted()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).get_IsMuted(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).get_IsMuted(&_ret));
 		return _ret;
 	}
 	final void IsMuted(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).set_IsMuted(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).set_IsMuted(value));
 	}
 	deprecated("Use PlaybackSession.PlaybackRate instead of PlaybackRate.  For more info, see MSDN.")
 	final double PlaybackRate()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).get_PlaybackRate(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).get_PlaybackRate(&_ret));
 		return _ret;
 	}
 	deprecated("Use PlaybackSession.PlaybackRate instead of PlaybackRate.  For more info, see MSDN.")
 	final void PlaybackRate(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).set_PlaybackRate(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).set_PlaybackRate(value));
 	}
 	final double Volume()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).get_Volume(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).get_Volume(&_ret));
 		return _ret;
 	}
 	final void Volume(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).set_Volume(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).set_Volume(value));
 	}
 	deprecated("Use media tracks on MediaPlaybackItem instead of PlaybackMediaMarkers.	For more info, see MSDN.")
 	final Windows.Media.Playback.PlaybackMediaMarkerSequence PlaybackMediaMarkers()
 	{
 		Windows.Media.Playback.PlaybackMediaMarkerSequence _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).get_PlaybackMediaMarkers(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).get_PlaybackMediaMarkers(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnMediaOpened(void delegate(Windows.Media.Playback.MediaPlayer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).add_MediaOpened(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).add_MediaOpened(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeMediaOpened(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).remove_MediaOpened(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).remove_MediaOpened(token));
 	}
 	final EventRegistrationToken OnMediaEnded(void delegate(Windows.Media.Playback.MediaPlayer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).add_MediaEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).add_MediaEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeMediaEnded(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).remove_MediaEnded(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).remove_MediaEnded(token));
 	}
 	final EventRegistrationToken OnMediaFailed(void delegate(Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.MediaPlayerFailedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).add_MediaFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.MediaPlayerFailedEventArgs), Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.MediaPlayerFailedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).add_MediaFailed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.MediaPlayerFailedEventArgs), Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.MediaPlayerFailedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMediaFailed(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).remove_MediaFailed(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).remove_MediaFailed(token));
 	}
 	deprecated("Use PlaybackSession.PlaybackStateChanged instead of CurrentStateChanged.  For more info, see MSDN.")
 	final EventRegistrationToken OnCurrentStateChanged(void delegate(Windows.Media.Playback.MediaPlayer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).add_CurrentStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).add_CurrentStateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("Use PlaybackSession.PlaybackStateChanged instead of CurrentStateChanged.  For more info, see MSDN.")
 	final void removeCurrentStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).remove_CurrentStateChanged(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).remove_CurrentStateChanged(token));
 	}
 	deprecated("Use media tracks on MediaPlaybackItem instead of PlaybackMediaMarkers.	For more info, see MSDN.")
 	final EventRegistrationToken OnPlaybackMediaMarkerReached(void delegate(Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.PlaybackMediaMarkerReachedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).add_PlaybackMediaMarkerReached(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.PlaybackMediaMarkerReachedEventArgs), Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.PlaybackMediaMarkerReachedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).add_PlaybackMediaMarkerReached(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.PlaybackMediaMarkerReachedEventArgs), Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.PlaybackMediaMarkerReachedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("Use media tracks on MediaPlaybackItem instead of PlaybackMediaMarkers.	For more info, see MSDN.")
 	final void removePlaybackMediaMarkerReached(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).remove_PlaybackMediaMarkerReached(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).remove_PlaybackMediaMarkerReached(token));
 	}
 	deprecated("Use PlaybackSession.PlaybackRateChanged instead of MediaPlayerRateChanged.	For more info, see MSDN.")
 	final EventRegistrationToken OnMediaPlayerRateChanged(void delegate(Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.MediaPlayerRateChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).add_MediaPlayerRateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.MediaPlayerRateChangedEventArgs), Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.MediaPlayerRateChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).add_MediaPlayerRateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.MediaPlayerRateChangedEventArgs), Windows.Media.Playback.MediaPlayer, Windows.Media.Playback.MediaPlayerRateChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("Use PlaybackSession.PlaybackRateChanged instead of MediaPlayerRateChanged.	For more info, see MSDN.")
 	final void removeMediaPlayerRateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).remove_MediaPlayerRateChanged(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).remove_MediaPlayerRateChanged(token));
 	}
 	final EventRegistrationToken OnVolumeChanged(void delegate(Windows.Media.Playback.MediaPlayer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).add_VolumeChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).add_VolumeChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeVolumeChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).remove_VolumeChanged(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).remove_VolumeChanged(token));
 	}
 	deprecated("Use PlaybackSession.SeekCompleted instead of SeekCompleted.	 For more info, see MSDN.")
 	final EventRegistrationToken OnSeekCompleted(void delegate(Windows.Media.Playback.MediaPlayer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).add_SeekCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).add_SeekCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("Use PlaybackSession.SeekCompleted instead of SeekCompleted.	 For more info, see MSDN.")
 	final void removeSeekCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).remove_SeekCompleted(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).remove_SeekCompleted(token));
 	}
 	deprecated("Use PlaybackSession.BufferingStarted instead of BufferingStarted.  For more info, see MSDN.")
 	final EventRegistrationToken OnBufferingStarted(void delegate(Windows.Media.Playback.MediaPlayer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).add_BufferingStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).add_BufferingStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("Use PlaybackSession.BufferingStarted instead of BufferingStarted.  For more info, see MSDN.")
 	final void removeBufferingStarted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).remove_BufferingStarted(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).remove_BufferingStarted(token));
 	}
 	deprecated("Use PlaybackSession.BufferingEnded instead of BufferingEnded.  For more info, see MSDN.")
 	final EventRegistrationToken OnBufferingEnded(void delegate(Windows.Media.Playback.MediaPlayer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).add_BufferingEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).add_BufferingEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	deprecated("Use PlaybackSession.BufferingEnded instead of BufferingEnded.  For more info, see MSDN.")
 	final void removeBufferingEnded(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).remove_BufferingEnded(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).remove_BufferingEnded(token));
 	}
 	final void Play()
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).abi_Play());
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).abi_Play());
 	}
 	final void Pause()
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).abi_Pause());
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).abi_Pause());
 	}
 	deprecated("Use Source instead of SetUriSource.	 For more info, see MSDN.")
 	final void SetUriSource(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer).abi_SetUriSource(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer)this.asInterface(uuid("381a83cb-6fff-499b-8d64-2885dfc1249e"))).abi_SetUriSource(value));
 	}
 	final Windows.Media.Protection.MediaProtectionManager ProtectionManager()
 	{
 		Windows.Media.Protection.MediaProtectionManager _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayerSource).get_ProtectionManager(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerSource)this.asInterface(uuid("bd4f8897-1423-4c3e-82c5-0fb1af94f715"))).get_ProtectionManager(&_ret));
 		return _ret;
 	}
 	final void ProtectionManager(Windows.Media.Protection.MediaProtectionManager value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayerSource).set_ProtectionManager(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerSource)this.asInterface(uuid("bd4f8897-1423-4c3e-82c5-0fb1af94f715"))).set_ProtectionManager(value));
 	}
 	deprecated("Use Source instead of SetFileSource.  For more info, see MSDN.")
 	final void SetFileSource(Windows.Storage.IStorageFile file)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayerSource).abi_SetFileSource(file));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerSource)this.asInterface(uuid("bd4f8897-1423-4c3e-82c5-0fb1af94f715"))).abi_SetFileSource(file));
 	}
 	deprecated("Use Source instead of SetStreamSource.	For more info, see MSDN.")
 	final void SetStreamSource(Windows.Storage.Streams.IRandomAccessStream stream)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayerSource).abi_SetStreamSource(stream));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerSource)this.asInterface(uuid("bd4f8897-1423-4c3e-82c5-0fb1af94f715"))).abi_SetStreamSource(stream));
 	}
 	deprecated("Use Source instead of SetMediaSource.  For more info, see MSDN.")
 	final void SetMediaSource(Windows.Media.Core.IMediaSource source)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayerSource).abi_SetMediaSource(source));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerSource)this.asInterface(uuid("bd4f8897-1423-4c3e-82c5-0fb1af94f715"))).abi_SetMediaSource(source));
 	}
 	final Windows.Media.Playback.IMediaPlaybackSource Source()
 	{
 		Windows.Media.Playback.IMediaPlaybackSource _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayerSource2).get_Source(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerSource2)this.asInterface(uuid("82449b9f-7322-4c0b-b03b-3e69a48260c5"))).get_Source(&_ret));
 		return _ret;
 	}
 	final void Source(Windows.Media.Playback.IMediaPlaybackSource value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayerSource2).set_Source(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerSource2)this.asInterface(uuid("82449b9f-7322-4c0b-b03b-3e69a48260c5"))).set_Source(value));
 	}
 	final Windows.Media.SystemMediaTransportControls SystemMediaTransportControls()
 	{
 		Windows.Media.SystemMediaTransportControls _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer2).get_SystemMediaTransportControls(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer2)this.asInterface(uuid("3c841218-2123-4fc5-9082-2f883f77bdf5"))).get_SystemMediaTransportControls(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlayerAudioCategory AudioCategory()
 	{
 		Windows.Media.Playback.MediaPlayerAudioCategory _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer2).get_AudioCategory(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer2)this.asInterface(uuid("3c841218-2123-4fc5-9082-2f883f77bdf5"))).get_AudioCategory(&_ret));
 		return _ret;
 	}
 	final void AudioCategory(Windows.Media.Playback.MediaPlayerAudioCategory value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer2).set_AudioCategory(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer2)this.asInterface(uuid("3c841218-2123-4fc5-9082-2f883f77bdf5"))).set_AudioCategory(value));
 	}
 	final Windows.Media.Playback.MediaPlayerAudioDeviceType AudioDeviceType()
 	{
 		Windows.Media.Playback.MediaPlayerAudioDeviceType _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer2).get_AudioDeviceType(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer2)this.asInterface(uuid("3c841218-2123-4fc5-9082-2f883f77bdf5"))).get_AudioDeviceType(&_ret));
 		return _ret;
 	}
 	final void AudioDeviceType(Windows.Media.Playback.MediaPlayerAudioDeviceType value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer2).set_AudioDeviceType(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer2)this.asInterface(uuid("3c841218-2123-4fc5-9082-2f883f77bdf5"))).set_AudioDeviceType(value));
 	}
 	final void AddAudioEffect(HSTRING activatableClassId, bool effectOptional, Windows.Foundation.Collections.IPropertySet configuration)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayerEffects).abi_AddAudioEffect(activatableClassId, effectOptional, configuration));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerEffects)this.asInterface(uuid("85a1deda-cab6-4cc0-8be3-6035f4de2591"))).abi_AddAudioEffect(activatableClassId, effectOptional, configuration));
 	}
 	final void RemoveAllEffects()
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayerEffects).abi_RemoveAllEffects());
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerEffects)this.asInterface(uuid("85a1deda-cab6-4cc0-8be3-6035f4de2591"))).abi_RemoveAllEffects());
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	final EventRegistrationToken OnIsMutedChanged(void delegate(Windows.Media.Playback.MediaPlayer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).add_IsMutedChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer3)this.asInterface(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299"))).add_IsMutedChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeIsMutedChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).remove_IsMutedChanged(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer3)this.asInterface(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299"))).remove_IsMutedChanged(token));
 	}
 	final EventRegistrationToken OnSourceChanged(void delegate(Windows.Media.Playback.MediaPlayer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).add_SourceChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer3)this.asInterface(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299"))).add_SourceChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSourceChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).remove_SourceChanged(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer3)this.asInterface(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299"))).remove_SourceChanged(token));
 	}
 	final double AudioBalance()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).get_AudioBalance(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer3)this.asInterface(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299"))).get_AudioBalance(&_ret));
 		return _ret;
 	}
 	final void AudioBalance(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).set_AudioBalance(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer3)this.asInterface(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299"))).set_AudioBalance(value));
 	}
 	final bool RealTimePlayback()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).get_RealTimePlayback(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer3)this.asInterface(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299"))).get_RealTimePlayback(&_ret));
 		return _ret;
 	}
 	final void RealTimePlayback(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).set_RealTimePlayback(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer3)this.asInterface(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299"))).set_RealTimePlayback(value));
 	}
 	final Windows.Media.Playback.StereoscopicVideoRenderMode StereoscopicVideoRenderMode()
 	{
 		Windows.Media.Playback.StereoscopicVideoRenderMode _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).get_StereoscopicVideoRenderMode(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer3)this.asInterface(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299"))).get_StereoscopicVideoRenderMode(&_ret));
 		return _ret;
 	}
 	final void StereoscopicVideoRenderMode(Windows.Media.Playback.StereoscopicVideoRenderMode value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).set_StereoscopicVideoRenderMode(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer3)this.asInterface(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299"))).set_StereoscopicVideoRenderMode(value));
 	}
 	final Windows.Media.Playback.MediaBreakManager BreakManager()
 	{
 		Windows.Media.Playback.MediaBreakManager _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).get_BreakManager(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer3)this.asInterface(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299"))).get_BreakManager(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlaybackCommandManager CommandManager()
 	{
 		Windows.Media.Playback.MediaPlaybackCommandManager _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).get_CommandManager(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer3)this.asInterface(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299"))).get_CommandManager(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Enumeration.DeviceInformation AudioDevice()
 	{
 		Windows.Devices.Enumeration.DeviceInformation _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).get_AudioDevice(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer3)this.asInterface(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299"))).get_AudioDevice(&_ret));
 		return _ret;
 	}
 	final void AudioDevice(Windows.Devices.Enumeration.DeviceInformation value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).set_AudioDevice(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer3)this.asInterface(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299"))).set_AudioDevice(value));
 	}
 	final Windows.Media.MediaTimelineController TimelineController()
 	{
 		Windows.Media.MediaTimelineController _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).get_TimelineController(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer3)this.asInterface(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299"))).get_TimelineController(&_ret));
 		return _ret;
 	}
 	final void TimelineController(Windows.Media.MediaTimelineController value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).set_TimelineController(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer3)this.asInterface(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299"))).set_TimelineController(value));
 	}
 	final Windows.Foundation.TimeSpan TimelineControllerPositionOffset()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).get_TimelineControllerPositionOffset(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer3)this.asInterface(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299"))).get_TimelineControllerPositionOffset(&_ret));
 		return _ret;
 	}
 	final void TimelineControllerPositionOffset(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).set_TimelineControllerPositionOffset(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer3)this.asInterface(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299"))).set_TimelineControllerPositionOffset(value));
 	}
 	final Windows.Media.Playback.MediaPlaybackSession PlaybackSession()
 	{
 		Windows.Media.Playback.MediaPlaybackSession _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).get_PlaybackSession(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer3)this.asInterface(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299"))).get_PlaybackSession(&_ret));
 		return _ret;
 	}
 	final void StepForwardOneFrame()
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).abi_StepForwardOneFrame());
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer3)this.asInterface(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299"))).abi_StepForwardOneFrame());
 	}
 	final void StepBackwardOneFrame()
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).abi_StepBackwardOneFrame());
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer3)this.asInterface(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299"))).abi_StepBackwardOneFrame());
 	}
 	final Windows.Media.Casting.CastingSource GetAsCastingSource()
 	{
 		Windows.Media.Casting.CastingSource _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer3).abi_GetAsCastingSource(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer3)this.asInterface(uuid("ee0660da-031b-4feb-bd9b-92e0a0a8d299"))).abi_GetAsCastingSource(&_ret));
 		return _ret;
 	}
 	final void SetSurfaceSize(Windows.Foundation.Size size)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer4).abi_SetSurfaceSize(size));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer4)this.asInterface(uuid("80035db0-7448-4770-afcf-2a57450914c5"))).abi_SetSurfaceSize(size));
 	}
 	final Windows.Media.Playback.MediaPlayerSurface GetSurface(Windows.UI.Composition.Compositor compositor)
 	{
 		Windows.Media.Playback.MediaPlayerSurface _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer4).abi_GetSurface(compositor, &_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer4)this.asInterface(uuid("80035db0-7448-4770-afcf-2a57450914c5"))).abi_GetSurface(compositor, &_ret));
 		return _ret;
 	}
 	final void AddVideoEffect(HSTRING activatableClassId, bool effectOptional, Windows.Foundation.Collections.IPropertySet effectConfiguration)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayerEffects2).abi_AddVideoEffect(activatableClassId, effectOptional, effectConfiguration));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerEffects2)this.asInterface(uuid("fa419a79-1bbe-46c5-ae1f-8ee69fb3c2c7"))).abi_AddVideoEffect(activatableClassId, effectOptional, effectConfiguration));
 	}
 	final EventRegistrationToken OnVideoFrameAvailable(void delegate(Windows.Media.Playback.MediaPlayer, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer5).add_VideoFrameAvailable(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer5)this.asInterface(uuid("cfe537fd-f86a-4446-bf4d-c8e792b7b4b3"))).add_VideoFrameAvailable(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Playback.MediaPlayer, IInspectable), Windows.Media.Playback.MediaPlayer, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeVideoFrameAvailable(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer5).remove_VideoFrameAvailable(token));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer5)this.asInterface(uuid("cfe537fd-f86a-4446-bf4d-c8e792b7b4b3"))).remove_VideoFrameAvailable(token));
 	}
 	final bool IsVideoFrameServerEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer5).get_IsVideoFrameServerEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer5)this.asInterface(uuid("cfe537fd-f86a-4446-bf4d-c8e792b7b4b3"))).get_IsVideoFrameServerEnabled(&_ret));
 		return _ret;
 	}
 	final void IsVideoFrameServerEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer5).set_IsVideoFrameServerEnabled(value));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer5)this.asInterface(uuid("cfe537fd-f86a-4446-bf4d-c8e792b7b4b3"))).set_IsVideoFrameServerEnabled(value));
 	}
 	final void CopyFrameToVideoSurface(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface destination)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer5).abi_CopyFrameToVideoSurface(destination));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer5)this.asInterface(uuid("cfe537fd-f86a-4446-bf4d-c8e792b7b4b3"))).abi_CopyFrameToVideoSurface(destination));
 	}
 	final void CopyFrameToVideoSurfaceWithTargetRectangle(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface destination, Windows.Foundation.Rect targetRectangle)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer5).abi_CopyFrameToVideoSurfaceWithTargetRectangle(destination, targetRectangle));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer5)this.asInterface(uuid("cfe537fd-f86a-4446-bf4d-c8e792b7b4b3"))).abi_CopyFrameToVideoSurfaceWithTargetRectangle(destination, targetRectangle));
 	}
 	final void CopyFrameToStereoscopicVideoSurfaces(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface destinationLeftEye, Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface destinationRightEye)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayer5).abi_CopyFrameToStereoscopicVideoSurfaces(destinationLeftEye, destinationRightEye));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer5)this.asInterface(uuid("cfe537fd-f86a-4446-bf4d-c8e792b7b4b3"))).abi_CopyFrameToStereoscopicVideoSurfaces(destinationLeftEye, destinationRightEye));
 	}
 	static MediaPlayer New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MediaPlayer).abi_ActivateInstance(&ret));
-		return ret.as!(MediaPlayer);
+		return cast(MediaPlayer) ret;
 	}
 }
 
@@ -2950,7 +2950,7 @@ extern(Windows):
 	final Windows.Foundation.Collections.ValueSet Data()
 	{
 		Windows.Foundation.Collections.ValueSet _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayerDataReceivedEventArgs).get_Data(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerDataReceivedEventArgs)this.asInterface(uuid("c75a9405-c801-412a-835b-83fc0e622a8e"))).get_Data(&_ret));
 		return _ret;
 	}
 }
@@ -2961,19 +2961,19 @@ extern(Windows):
 	final Windows.Media.Playback.MediaPlayerError Error()
 	{
 		Windows.Media.Playback.MediaPlayerError _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayerFailedEventArgs).get_Error(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerFailedEventArgs)this.asInterface(uuid("2744e9b9-a7e3-4f16-bac4-7914ebc08301"))).get_Error(&_ret));
 		return _ret;
 	}
 	final HRESULT ExtendedErrorCode()
 	{
 		HRESULT _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayerFailedEventArgs).get_ExtendedErrorCode(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerFailedEventArgs)this.asInterface(uuid("2744e9b9-a7e3-4f16-bac4-7914ebc08301"))).get_ExtendedErrorCode(&_ret));
 		return _ret;
 	}
 	final HSTRING ErrorMessage()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayerFailedEventArgs).get_ErrorMessage(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerFailedEventArgs)this.asInterface(uuid("2744e9b9-a7e3-4f16-bac4-7914ebc08301"))).get_ErrorMessage(&_ret));
 		return _ret;
 	}
 }
@@ -2984,7 +2984,7 @@ extern(Windows):
 	final double NewRate()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayerRateChangedEventArgs).get_NewRate(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerRateChangedEventArgs)this.asInterface(uuid("40600d58-3b61-4bb2-989f-fc65608b6cab"))).get_NewRate(&_ret));
 		return _ret;
 	}
 }
@@ -2995,24 +2995,24 @@ extern(Windows):
 	final Windows.UI.Composition.ICompositionSurface CompositionSurface()
 	{
 		Windows.UI.Composition.ICompositionSurface _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayerSurface).get_CompositionSurface(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerSurface)this.asInterface(uuid("0ed653bc-b736-49c3-830b-764a3845313a"))).get_CompositionSurface(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Composition.Compositor Compositor()
 	{
 		Windows.UI.Composition.Compositor _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayerSurface).get_Compositor(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerSurface)this.asInterface(uuid("0ed653bc-b736-49c3-830b-764a3845313a"))).get_Compositor(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.MediaPlayer MediaPlayer()
 	{
 		Windows.Media.Playback.MediaPlayer _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IMediaPlayerSurface).get_MediaPlayer(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerSurface)this.asInterface(uuid("0ed653bc-b736-49c3-830b-764a3845313a"))).get_MediaPlayer(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 }
 
@@ -3022,33 +3022,33 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan Time()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IPlaybackMediaMarker).get_Time(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IPlaybackMediaMarker)this.asInterface(uuid("c4d22f5c-3c1c-4444-b6b9-778b0422d41a"))).get_Time(&_ret));
 		return _ret;
 	}
 	final HSTRING MediaMarkerType()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IPlaybackMediaMarker).get_MediaMarkerType(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IPlaybackMediaMarker)this.asInterface(uuid("c4d22f5c-3c1c-4444-b6b9-778b0422d41a"))).get_MediaMarkerType(&_ret));
 		return _ret;
 	}
 	final HSTRING Text()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IPlaybackMediaMarker).get_Text(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IPlaybackMediaMarker)this.asInterface(uuid("c4d22f5c-3c1c-4444-b6b9-778b0422d41a"))).get_Text(&_ret));
 		return _ret;
 	}
 	static Windows.Media.Playback.PlaybackMediaMarker New(Windows.Foundation.TimeSpan value)
 	{
 		auto factory = factory!(Windows.Media.Playback.IPlaybackMediaMarkerFactory);
 		Windows.Media.Playback.PlaybackMediaMarker _ret;
-		Debug.OK(factory.as!(Windows.Media.Playback.IPlaybackMediaMarkerFactory).abi_CreateFromTime(value, &_ret));
+		Debug.OK((cast(Windows.Media.Playback.IPlaybackMediaMarkerFactory)factory.asInterface(uuid("8c530a78-e0ae-4e1a-a8c8-e23f982a937b"))).abi_CreateFromTime(value, &_ret));
 		return _ret;
 	}
 	static Windows.Media.Playback.PlaybackMediaMarker New(Windows.Foundation.TimeSpan value, HSTRING mediaMarketType, HSTRING text)
 	{
 		auto factory = factory!(Windows.Media.Playback.IPlaybackMediaMarkerFactory);
 		Windows.Media.Playback.PlaybackMediaMarker _ret;
-		Debug.OK(factory.as!(Windows.Media.Playback.IPlaybackMediaMarkerFactory).abi_Create(value, mediaMarketType, text, &_ret));
+		Debug.OK((cast(Windows.Media.Playback.IPlaybackMediaMarkerFactory)factory.asInterface(uuid("8c530a78-e0ae-4e1a-a8c8-e23f982a937b"))).abi_Create(value, mediaMarketType, text, &_ret));
 		return _ret;
 	}
 }
@@ -3059,7 +3059,7 @@ extern(Windows):
 	final Windows.Media.Playback.PlaybackMediaMarker PlaybackMediaMarker()
 	{
 		Windows.Media.Playback.PlaybackMediaMarker _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IPlaybackMediaMarkerReachedEventArgs).get_PlaybackMediaMarker(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IPlaybackMediaMarkerReachedEventArgs)this.asInterface(uuid("578cd1b9-90e2-4e60-abc4-8740b01f6196"))).get_PlaybackMediaMarker(&_ret));
 		return _ret;
 	}
 }
@@ -3070,20 +3070,20 @@ extern(Windows):
 	final UINT32 Size()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.IPlaybackMediaMarkerSequence).get_Size(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.IPlaybackMediaMarkerSequence)this.asInterface(uuid("f2810cee-638b-46cf-8817-1d111fe9d8c4"))).get_Size(&_ret));
 		return _ret;
 	}
 	final void Insert(Windows.Media.Playback.PlaybackMediaMarker value)
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IPlaybackMediaMarkerSequence).abi_Insert(value));
+		Debug.OK((cast(Windows.Media.Playback.IPlaybackMediaMarkerSequence)this.asInterface(uuid("f2810cee-638b-46cf-8817-1d111fe9d8c4"))).abi_Insert(value));
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Media.Playback.IPlaybackMediaMarkerSequence).abi_Clear());
+		Debug.OK((cast(Windows.Media.Playback.IPlaybackMediaMarkerSequence)this.asInterface(uuid("f2810cee-638b-46cf-8817-1d111fe9d8c4"))).abi_Clear());
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Media.Playback.PlaybackMediaMarker)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Media.Playback.PlaybackMediaMarker)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.Media.Playback.PlaybackMediaMarker))this).abi_First(out_first));
 	}
 }
 
@@ -3093,19 +3093,19 @@ extern(Windows):
 	final Windows.Media.Core.TimedMetadataTrack Track()
 	{
 		Windows.Media.Core.TimedMetadataTrack _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.ITimedMetadataPresentationModeChangedEventArgs).get_Track(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.ITimedMetadataPresentationModeChangedEventArgs)this.asInterface(uuid("d1636099-65df-45ae-8cef-dc0b53fdc2bb"))).get_Track(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.TimedMetadataTrackPresentationMode OldPresentationMode()
 	{
 		Windows.Media.Playback.TimedMetadataTrackPresentationMode _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.ITimedMetadataPresentationModeChangedEventArgs).get_OldPresentationMode(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.ITimedMetadataPresentationModeChangedEventArgs)this.asInterface(uuid("d1636099-65df-45ae-8cef-dc0b53fdc2bb"))).get_OldPresentationMode(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Playback.TimedMetadataTrackPresentationMode NewPresentationMode()
 	{
 		Windows.Media.Playback.TimedMetadataTrackPresentationMode _ret;
-		Debug.OK(this.as!(Windows.Media.Playback.ITimedMetadataPresentationModeChangedEventArgs).get_NewPresentationMode(&_ret));
+		Debug.OK((cast(Windows.Media.Playback.ITimedMetadataPresentationModeChangedEventArgs)this.asInterface(uuid("d1636099-65df-45ae-8cef-dc0b53fdc2bb"))).get_NewPresentationMode(&_ret));
 		return _ret;
 	}
 }

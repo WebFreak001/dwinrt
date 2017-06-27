@@ -300,26 +300,26 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan Timestamp()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer RawData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_RawData(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Midi.MidiMessageType Type()
 	{
 		Windows.Devices.Midi.MidiMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Type(&_ret));
 		return _ret;
 	}
 	static MidiActiveSensingMessage New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MidiActiveSensingMessage).abi_ActivateInstance(&ret));
-		return ret.as!(MidiActiveSensingMessage);
+		return cast(MidiActiveSensingMessage) ret;
 	}
 }
 
@@ -329,38 +329,38 @@ extern(Windows):
 	final ubyte Channel()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiChannelPressureMessage).get_Channel(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiChannelPressureMessage)this.asInterface(uuid("be1fa860-62b4-4d52-a37e-92e54d35b909"))).get_Channel(&_ret));
 		return _ret;
 	}
 	final ubyte Pressure()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiChannelPressureMessage).get_Pressure(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiChannelPressureMessage)this.asInterface(uuid("be1fa860-62b4-4d52-a37e-92e54d35b909"))).get_Pressure(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Timestamp()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer RawData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_RawData(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Midi.MidiMessageType Type()
 	{
 		Windows.Devices.Midi.MidiMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Type(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Midi.MidiChannelPressureMessage New(ubyte channel, ubyte pressure)
 	{
 		auto factory = factory!(Windows.Devices.Midi.IMidiChannelPressureMessageFactory);
 		Windows.Devices.Midi.MidiChannelPressureMessage _ret;
-		Debug.OK(factory.as!(Windows.Devices.Midi.IMidiChannelPressureMessageFactory).abi_CreateMidiChannelPressureMessage(channel, pressure, &_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiChannelPressureMessageFactory)factory.asInterface(uuid("6218ed2f-2284-412a-94cf-10fb04842c6c"))).abi_CreateMidiChannelPressureMessage(channel, pressure, &_ret));
 		return _ret;
 	}
 }
@@ -371,26 +371,26 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan Timestamp()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer RawData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_RawData(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Midi.MidiMessageType Type()
 	{
 		Windows.Devices.Midi.MidiMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Type(&_ret));
 		return _ret;
 	}
 	static MidiContinueMessage New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MidiContinueMessage).abi_ActivateInstance(&ret));
-		return ret.as!(MidiContinueMessage);
+		return cast(MidiContinueMessage) ret;
 	}
 }
 
@@ -400,44 +400,44 @@ extern(Windows):
 	final ubyte Channel()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiControlChangeMessage).get_Channel(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiControlChangeMessage)this.asInterface(uuid("b7e15f83-780d-405f-b781-3e1598c97f40"))).get_Channel(&_ret));
 		return _ret;
 	}
 	final ubyte Controller()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiControlChangeMessage).get_Controller(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiControlChangeMessage)this.asInterface(uuid("b7e15f83-780d-405f-b781-3e1598c97f40"))).get_Controller(&_ret));
 		return _ret;
 	}
 	final ubyte ControlValue()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiControlChangeMessage).get_ControlValue(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiControlChangeMessage)this.asInterface(uuid("b7e15f83-780d-405f-b781-3e1598c97f40"))).get_ControlValue(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Timestamp()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer RawData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_RawData(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Midi.MidiMessageType Type()
 	{
 		Windows.Devices.Midi.MidiMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Type(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Midi.MidiControlChangeMessage New(ubyte channel, ubyte controller, ubyte controlValue)
 	{
 		auto factory = factory!(Windows.Devices.Midi.IMidiControlChangeMessageFactory);
 		Windows.Devices.Midi.MidiControlChangeMessage _ret;
-		Debug.OK(factory.as!(Windows.Devices.Midi.IMidiControlChangeMessageFactory).abi_CreateMidiControlChangeMessage(channel, controller, controlValue, &_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiControlChangeMessageFactory)factory.asInterface(uuid("2ab14321-956c-46ad-9752-f87f55052fe3"))).abi_CreateMidiControlChangeMessage(channel, controller, controlValue, &_ret));
 		return _ret;
 	}
 }
@@ -448,22 +448,22 @@ extern(Windows):
 	final EventRegistrationToken OnMessageReceived(void delegate(Windows.Devices.Midi.MidiInPort, Windows.Devices.Midi.MidiMessageReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiInPort).add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Midi.MidiInPort, Windows.Devices.Midi.MidiMessageReceivedEventArgs), Windows.Devices.Midi.MidiInPort, Windows.Devices.Midi.MidiMessageReceivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiInPort)this.asInterface(uuid("d5c1d9db-971a-4eaf-a23d-ea19fe607ff9"))).add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Midi.MidiInPort, Windows.Devices.Midi.MidiMessageReceivedEventArgs), Windows.Devices.Midi.MidiInPort, Windows.Devices.Midi.MidiMessageReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMessageReceived(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiInPort).remove_MessageReceived(token));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiInPort)this.asInterface(uuid("d5c1d9db-971a-4eaf-a23d-ea19fe607ff9"))).remove_MessageReceived(token));
 	}
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiInPort).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiInPort)this.asInterface(uuid("d5c1d9db-971a-4eaf-a23d-ea19fe607ff9"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 
 	private static Windows.Devices.Midi.IMidiInPortStatics _staticInstance;
@@ -475,13 +475,13 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiInPort) FromIdAsync(HSTRING deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiInPort) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Midi.IMidiInPortStatics).abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
 		return _ret;
 	}
 	static HSTRING GetDeviceSelector()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Midi.IMidiInPortStatics).abi_GetDeviceSelector(&_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
 		return _ret;
 	}
 }
@@ -492,7 +492,7 @@ extern(Windows):
 	final Windows.Devices.Midi.IMidiMessage Message()
 	{
 		Windows.Devices.Midi.IMidiMessage _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessageReceivedEventArgs).get_Message(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessageReceivedEventArgs)this.asInterface(uuid("76566e56-f328-4b51-907d-b3a8ce96bf80"))).get_Message(&_ret));
 		return _ret;
 	}
 }
@@ -503,44 +503,44 @@ extern(Windows):
 	final ubyte Channel()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiNoteOffMessage).get_Channel(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiNoteOffMessage)this.asInterface(uuid("16fd8af4-198e-4d8f-a654-d305a293548f"))).get_Channel(&_ret));
 		return _ret;
 	}
 	final ubyte Note()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiNoteOffMessage).get_Note(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiNoteOffMessage)this.asInterface(uuid("16fd8af4-198e-4d8f-a654-d305a293548f"))).get_Note(&_ret));
 		return _ret;
 	}
 	final ubyte Velocity()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiNoteOffMessage).get_Velocity(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiNoteOffMessage)this.asInterface(uuid("16fd8af4-198e-4d8f-a654-d305a293548f"))).get_Velocity(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Timestamp()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer RawData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_RawData(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Midi.MidiMessageType Type()
 	{
 		Windows.Devices.Midi.MidiMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Type(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Midi.MidiNoteOffMessage New(ubyte channel, ubyte note, ubyte velocity)
 	{
 		auto factory = factory!(Windows.Devices.Midi.IMidiNoteOffMessageFactory);
 		Windows.Devices.Midi.MidiNoteOffMessage _ret;
-		Debug.OK(factory.as!(Windows.Devices.Midi.IMidiNoteOffMessageFactory).abi_CreateMidiNoteOffMessage(channel, note, velocity, &_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiNoteOffMessageFactory)factory.asInterface(uuid("a6b240e0-a749-425f-8af4-a4d979cc15b5"))).abi_CreateMidiNoteOffMessage(channel, note, velocity, &_ret));
 		return _ret;
 	}
 }
@@ -551,44 +551,44 @@ extern(Windows):
 	final ubyte Channel()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiNoteOnMessage).get_Channel(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiNoteOnMessage)this.asInterface(uuid("e0224af5-6181-46dd-afa2-410004c057aa"))).get_Channel(&_ret));
 		return _ret;
 	}
 	final ubyte Note()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiNoteOnMessage).get_Note(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiNoteOnMessage)this.asInterface(uuid("e0224af5-6181-46dd-afa2-410004c057aa"))).get_Note(&_ret));
 		return _ret;
 	}
 	final ubyte Velocity()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiNoteOnMessage).get_Velocity(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiNoteOnMessage)this.asInterface(uuid("e0224af5-6181-46dd-afa2-410004c057aa"))).get_Velocity(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Timestamp()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer RawData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_RawData(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Midi.MidiMessageType Type()
 	{
 		Windows.Devices.Midi.MidiMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Type(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Midi.MidiNoteOnMessage New(ubyte channel, ubyte note, ubyte velocity)
 	{
 		auto factory = factory!(Windows.Devices.Midi.IMidiNoteOnMessageFactory);
 		Windows.Devices.Midi.MidiNoteOnMessage _ret;
-		Debug.OK(factory.as!(Windows.Devices.Midi.IMidiNoteOnMessageFactory).abi_CreateMidiNoteOnMessage(channel, note, velocity, &_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiNoteOnMessageFactory)factory.asInterface(uuid("9b4280a0-59c1-420e-b517-15a10aa9606b"))).abi_CreateMidiNoteOnMessage(channel, note, velocity, &_ret));
 		return _ret;
 	}
 }
@@ -598,21 +598,21 @@ interface MidiOutPort : Windows.Devices.Midi.IMidiOutPort, Windows.Foundation.IC
 extern(Windows):
 	final void SendMessage(Windows.Devices.Midi.IMidiMessage midiMessage)
 	{
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiOutPort).abi_SendMessage(midiMessage));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiOutPort)this.asInterface(uuid("931d6d9f-57a2-4a3a-adb8-4640886f6693"))).abi_SendMessage(midiMessage));
 	}
 	final void SendBuffer(Windows.Storage.Streams.IBuffer midiData)
 	{
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiOutPort).abi_SendBuffer(midiData));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiOutPort)this.asInterface(uuid("931d6d9f-57a2-4a3a-adb8-4640886f6693"))).abi_SendBuffer(midiData));
 	}
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiOutPort).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiOutPort)this.asInterface(uuid("931d6d9f-57a2-4a3a-adb8-4640886f6693"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 
 	private static Windows.Devices.Midi.IMidiOutPortStatics _staticInstance;
@@ -624,13 +624,13 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.IMidiOutPort) FromIdAsync(HSTRING deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.IMidiOutPort) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Midi.IMidiOutPortStatics).abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
 		return _ret;
 	}
 	static HSTRING GetDeviceSelector()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Midi.IMidiOutPortStatics).abi_GetDeviceSelector(&_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
 		return _ret;
 	}
 }
@@ -641,38 +641,38 @@ extern(Windows):
 	final ubyte Channel()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiPitchBendChangeMessage).get_Channel(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiPitchBendChangeMessage)this.asInterface(uuid("29df4cb1-2e9f-4faf-8c2b-9cb82a9079ca"))).get_Channel(&_ret));
 		return _ret;
 	}
 	final UINT16 Bend()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiPitchBendChangeMessage).get_Bend(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiPitchBendChangeMessage)this.asInterface(uuid("29df4cb1-2e9f-4faf-8c2b-9cb82a9079ca"))).get_Bend(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Timestamp()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer RawData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_RawData(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Midi.MidiMessageType Type()
 	{
 		Windows.Devices.Midi.MidiMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Type(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Midi.MidiPitchBendChangeMessage New(ubyte channel, UINT16 bend)
 	{
 		auto factory = factory!(Windows.Devices.Midi.IMidiPitchBendChangeMessageFactory);
 		Windows.Devices.Midi.MidiPitchBendChangeMessage _ret;
-		Debug.OK(factory.as!(Windows.Devices.Midi.IMidiPitchBendChangeMessageFactory).abi_CreateMidiPitchBendChangeMessage(channel, bend, &_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiPitchBendChangeMessageFactory)factory.asInterface(uuid("f5eedf55-cfc8-4926-b30e-a3622393306c"))).abi_CreateMidiPitchBendChangeMessage(channel, bend, &_ret));
 		return _ret;
 	}
 }
@@ -683,44 +683,44 @@ extern(Windows):
 	final ubyte Channel()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiPolyphonicKeyPressureMessage).get_Channel(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiPolyphonicKeyPressureMessage)this.asInterface(uuid("1f7337fe-ace8-48a0-868e-7cdbf20f04d6"))).get_Channel(&_ret));
 		return _ret;
 	}
 	final ubyte Note()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiPolyphonicKeyPressureMessage).get_Note(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiPolyphonicKeyPressureMessage)this.asInterface(uuid("1f7337fe-ace8-48a0-868e-7cdbf20f04d6"))).get_Note(&_ret));
 		return _ret;
 	}
 	final ubyte Pressure()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiPolyphonicKeyPressureMessage).get_Pressure(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiPolyphonicKeyPressureMessage)this.asInterface(uuid("1f7337fe-ace8-48a0-868e-7cdbf20f04d6"))).get_Pressure(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Timestamp()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer RawData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_RawData(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Midi.MidiMessageType Type()
 	{
 		Windows.Devices.Midi.MidiMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Type(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Midi.MidiPolyphonicKeyPressureMessage New(ubyte channel, ubyte note, ubyte pressure)
 	{
 		auto factory = factory!(Windows.Devices.Midi.IMidiPolyphonicKeyPressureMessageFactory);
 		Windows.Devices.Midi.MidiPolyphonicKeyPressureMessage _ret;
-		Debug.OK(factory.as!(Windows.Devices.Midi.IMidiPolyphonicKeyPressureMessageFactory).abi_CreateMidiPolyphonicKeyPressureMessage(channel, note, pressure, &_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiPolyphonicKeyPressureMessageFactory)factory.asInterface(uuid("e98f483e-c4b3-4dd2-917c-e349815a1b3b"))).abi_CreateMidiPolyphonicKeyPressureMessage(channel, note, pressure, &_ret));
 		return _ret;
 	}
 }
@@ -731,38 +731,38 @@ extern(Windows):
 	final ubyte Channel()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiProgramChangeMessage).get_Channel(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiProgramChangeMessage)this.asInterface(uuid("9cbb3c78-7a3e-4327-aa98-20b8e4485af8"))).get_Channel(&_ret));
 		return _ret;
 	}
 	final ubyte Program()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiProgramChangeMessage).get_Program(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiProgramChangeMessage)this.asInterface(uuid("9cbb3c78-7a3e-4327-aa98-20b8e4485af8"))).get_Program(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Timestamp()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer RawData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_RawData(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Midi.MidiMessageType Type()
 	{
 		Windows.Devices.Midi.MidiMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Type(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Midi.MidiProgramChangeMessage New(ubyte channel, ubyte program)
 	{
 		auto factory = factory!(Windows.Devices.Midi.IMidiProgramChangeMessageFactory);
 		Windows.Devices.Midi.MidiProgramChangeMessage _ret;
-		Debug.OK(factory.as!(Windows.Devices.Midi.IMidiProgramChangeMessageFactory).abi_CreateMidiProgramChangeMessage(channel, program, &_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiProgramChangeMessageFactory)factory.asInterface(uuid("d6b04387-524b-4104-9c99-6572bfd2e261"))).abi_CreateMidiProgramChangeMessage(channel, program, &_ret));
 		return _ret;
 	}
 }
@@ -773,32 +773,32 @@ extern(Windows):
 	final UINT16 Beats()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiSongPositionPointerMessage).get_Beats(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiSongPositionPointerMessage)this.asInterface(uuid("4ca50c56-ec5e-4ae4-a115-88dc57cc2b79"))).get_Beats(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Timestamp()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer RawData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_RawData(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Midi.MidiMessageType Type()
 	{
 		Windows.Devices.Midi.MidiMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Type(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Midi.MidiSongPositionPointerMessage New(UINT16 beats)
 	{
 		auto factory = factory!(Windows.Devices.Midi.IMidiSongPositionPointerMessageFactory);
 		Windows.Devices.Midi.MidiSongPositionPointerMessage _ret;
-		Debug.OK(factory.as!(Windows.Devices.Midi.IMidiSongPositionPointerMessageFactory).abi_CreateMidiSongPositionPointerMessage(beats, &_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiSongPositionPointerMessageFactory)factory.asInterface(uuid("9c00e996-f10b-4fea-b395-f5d6cf80f64e"))).abi_CreateMidiSongPositionPointerMessage(beats, &_ret));
 		return _ret;
 	}
 }
@@ -809,32 +809,32 @@ extern(Windows):
 	final ubyte Song()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiSongSelectMessage).get_Song(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiSongSelectMessage)this.asInterface(uuid("49f0f27f-6d83-4741-a5bf-4629f6be974f"))).get_Song(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Timestamp()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer RawData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_RawData(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Midi.MidiMessageType Type()
 	{
 		Windows.Devices.Midi.MidiMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Type(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Midi.MidiSongSelectMessage New(ubyte song)
 	{
 		auto factory = factory!(Windows.Devices.Midi.IMidiSongSelectMessageFactory);
 		Windows.Devices.Midi.MidiSongSelectMessage _ret;
-		Debug.OK(factory.as!(Windows.Devices.Midi.IMidiSongSelectMessageFactory).abi_CreateMidiSongSelectMessage(song, &_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiSongSelectMessageFactory)factory.asInterface(uuid("848878e4-8748-4129-a66c-a05493f75daa"))).abi_CreateMidiSongSelectMessage(song, &_ret));
 		return _ret;
 	}
 }
@@ -845,26 +845,26 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan Timestamp()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer RawData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_RawData(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Midi.MidiMessageType Type()
 	{
 		Windows.Devices.Midi.MidiMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Type(&_ret));
 		return _ret;
 	}
 	static MidiStartMessage New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MidiStartMessage).abi_ActivateInstance(&ret));
-		return ret.as!(MidiStartMessage);
+		return cast(MidiStartMessage) ret;
 	}
 }
 
@@ -874,26 +874,26 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan Timestamp()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer RawData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_RawData(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Midi.MidiMessageType Type()
 	{
 		Windows.Devices.Midi.MidiMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Type(&_ret));
 		return _ret;
 	}
 	static MidiStopMessage New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MidiStopMessage).abi_ActivateInstance(&ret));
-		return ret.as!(MidiStopMessage);
+		return cast(MidiStopMessage) ret;
 	}
 }
 
@@ -903,36 +903,36 @@ extern(Windows):
 	final Windows.Devices.Enumeration.DeviceInformation AudioDevice()
 	{
 		Windows.Devices.Enumeration.DeviceInformation _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiSynthesizer).get_AudioDevice(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiSynthesizer)this.asInterface(uuid("f0da155e-db90-405f-b8ae-21d2e17f2e45"))).get_AudioDevice(&_ret));
 		return _ret;
 	}
 	final double Volume()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiSynthesizer).get_Volume(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiSynthesizer)this.asInterface(uuid("f0da155e-db90-405f-b8ae-21d2e17f2e45"))).get_Volume(&_ret));
 		return _ret;
 	}
 	final void Volume(double value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiSynthesizer).set_Volume(value));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiSynthesizer)this.asInterface(uuid("f0da155e-db90-405f-b8ae-21d2e17f2e45"))).set_Volume(value));
 	}
 	final void SendMessage(Windows.Devices.Midi.IMidiMessage midiMessage)
 	{
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiOutPort).abi_SendMessage(midiMessage));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiOutPort)this.asInterface(uuid("931d6d9f-57a2-4a3a-adb8-4640886f6693"))).abi_SendMessage(midiMessage));
 	}
 	final void SendBuffer(Windows.Storage.Streams.IBuffer midiData)
 	{
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiOutPort).abi_SendBuffer(midiData));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiOutPort)this.asInterface(uuid("931d6d9f-57a2-4a3a-adb8-4640886f6693"))).abi_SendBuffer(midiData));
 	}
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiOutPort).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiOutPort)this.asInterface(uuid("931d6d9f-57a2-4a3a-adb8-4640886f6693"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 
 	private static Windows.Devices.Midi.IMidiSynthesizerStatics _staticInstance;
@@ -944,19 +944,19 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiSynthesizer) CreateAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiSynthesizer) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Midi.IMidiSynthesizerStatics).abi_CreateAsync(&_ret));
+		Debug.OK(staticInstance.abi_CreateAsync(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiSynthesizer) CreateFromAudioDeviceAsync(Windows.Devices.Enumeration.DeviceInformation audioDevice)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiSynthesizer) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Midi.IMidiSynthesizerStatics).abi_CreateFromAudioDeviceAsync(audioDevice, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromAudioDeviceAsync(audioDevice, &_ret));
 		return _ret;
 	}
 	static bool IsSynthesizer(Windows.Devices.Enumeration.DeviceInformation midiDevice)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Midi.IMidiSynthesizerStatics).abi_IsSynthesizer(midiDevice, &_ret));
+		Debug.OK(staticInstance.abi_IsSynthesizer(midiDevice, &_ret));
 		return _ret;
 	}
 }
@@ -967,26 +967,26 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan Timestamp()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer RawData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_RawData(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Midi.MidiMessageType Type()
 	{
 		Windows.Devices.Midi.MidiMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Type(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Midi.MidiSystemExclusiveMessage New(Windows.Storage.Streams.IBuffer rawData)
 	{
 		auto factory = factory!(Windows.Devices.Midi.IMidiSystemExclusiveMessageFactory);
 		Windows.Devices.Midi.MidiSystemExclusiveMessage _ret;
-		Debug.OK(factory.as!(Windows.Devices.Midi.IMidiSystemExclusiveMessageFactory).abi_CreateMidiSystemExclusiveMessage(rawData, &_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiSystemExclusiveMessageFactory)factory.asInterface(uuid("083de222-3b74-4320-9b42-0ca8545f8a24"))).abi_CreateMidiSystemExclusiveMessage(rawData, &_ret));
 		return _ret;
 	}
 }
@@ -997,26 +997,26 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan Timestamp()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer RawData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_RawData(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Midi.MidiMessageType Type()
 	{
 		Windows.Devices.Midi.MidiMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Type(&_ret));
 		return _ret;
 	}
 	static MidiSystemResetMessage New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MidiSystemResetMessage).abi_ActivateInstance(&ret));
-		return ret.as!(MidiSystemResetMessage);
+		return cast(MidiSystemResetMessage) ret;
 	}
 }
 
@@ -1026,38 +1026,38 @@ extern(Windows):
 	final ubyte FrameType()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiTimeCodeMessage).get_FrameType(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiTimeCodeMessage)this.asInterface(uuid("0bf7087d-fa63-4a1c-8deb-c0e87796a6d7"))).get_FrameType(&_ret));
 		return _ret;
 	}
 	final ubyte Values()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiTimeCodeMessage).get_Values(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiTimeCodeMessage)this.asInterface(uuid("0bf7087d-fa63-4a1c-8deb-c0e87796a6d7"))).get_Values(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Timestamp()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer RawData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_RawData(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Midi.MidiMessageType Type()
 	{
 		Windows.Devices.Midi.MidiMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Type(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Midi.MidiTimeCodeMessage New(ubyte frameType, ubyte values)
 	{
 		auto factory = factory!(Windows.Devices.Midi.IMidiTimeCodeMessageFactory);
 		Windows.Devices.Midi.MidiTimeCodeMessage _ret;
-		Debug.OK(factory.as!(Windows.Devices.Midi.IMidiTimeCodeMessageFactory).abi_CreateMidiTimeCodeMessage(frameType, values, &_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiTimeCodeMessageFactory)factory.asInterface(uuid("eb3099c5-771c-40de-b961-175a7489a85e"))).abi_CreateMidiTimeCodeMessage(frameType, values, &_ret));
 		return _ret;
 	}
 }
@@ -1068,26 +1068,26 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan Timestamp()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer RawData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_RawData(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Midi.MidiMessageType Type()
 	{
 		Windows.Devices.Midi.MidiMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Type(&_ret));
 		return _ret;
 	}
 	static MidiTimingClockMessage New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MidiTimingClockMessage).abi_ActivateInstance(&ret));
-		return ret.as!(MidiTimingClockMessage);
+		return cast(MidiTimingClockMessage) ret;
 	}
 }
 
@@ -1097,26 +1097,26 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan Timestamp()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer RawData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_RawData(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_RawData(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Midi.MidiMessageType Type()
 	{
 		Windows.Devices.Midi.MidiMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Midi.IMidiMessage).get_Type(&_ret));
+		Debug.OK((cast(Windows.Devices.Midi.IMidiMessage)this.asInterface(uuid("79767945-1094-4283-9be0-289fc0ee8334"))).get_Type(&_ret));
 		return _ret;
 	}
 	static MidiTuneRequestMessage New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MidiTuneRequestMessage).abi_ActivateInstance(&ret));
-		return ret.as!(MidiTuneRequestMessage);
+		return cast(MidiTuneRequestMessage) ret;
 	}
 }
 

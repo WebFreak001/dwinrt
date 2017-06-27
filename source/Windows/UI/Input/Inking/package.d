@@ -455,94 +455,94 @@ extern(Windows):
 	final Windows.UI.Color Color()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes).get_Color(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkDrawingAttributes)this.asInterface(uuid("97a2176c-6774-48ad-84f0-48f5a9be74f9"))).get_Color(&_ret));
 		return _ret;
 	}
 	final void Color(Windows.UI.Color value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes).set_Color(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkDrawingAttributes)this.asInterface(uuid("97a2176c-6774-48ad-84f0-48f5a9be74f9"))).set_Color(value));
 	}
 	final Windows.UI.Input.Inking.PenTipShape PenTip()
 	{
 		Windows.UI.Input.Inking.PenTipShape _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes).get_PenTip(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkDrawingAttributes)this.asInterface(uuid("97a2176c-6774-48ad-84f0-48f5a9be74f9"))).get_PenTip(&_ret));
 		return _ret;
 	}
 	final void PenTip(Windows.UI.Input.Inking.PenTipShape value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes).set_PenTip(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkDrawingAttributes)this.asInterface(uuid("97a2176c-6774-48ad-84f0-48f5a9be74f9"))).set_PenTip(value));
 	}
 	final Windows.Foundation.Size Size()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes).get_Size(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkDrawingAttributes)this.asInterface(uuid("97a2176c-6774-48ad-84f0-48f5a9be74f9"))).get_Size(&_ret));
 		return _ret;
 	}
 	final void Size(Windows.Foundation.Size value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes).set_Size(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkDrawingAttributes)this.asInterface(uuid("97a2176c-6774-48ad-84f0-48f5a9be74f9"))).set_Size(value));
 	}
 	final bool IgnorePressure()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes).get_IgnorePressure(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkDrawingAttributes)this.asInterface(uuid("97a2176c-6774-48ad-84f0-48f5a9be74f9"))).get_IgnorePressure(&_ret));
 		return _ret;
 	}
 	final void IgnorePressure(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes).set_IgnorePressure(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkDrawingAttributes)this.asInterface(uuid("97a2176c-6774-48ad-84f0-48f5a9be74f9"))).set_IgnorePressure(value));
 	}
 	final bool FitToCurve()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes).get_FitToCurve(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkDrawingAttributes)this.asInterface(uuid("97a2176c-6774-48ad-84f0-48f5a9be74f9"))).get_FitToCurve(&_ret));
 		return _ret;
 	}
 	final void FitToCurve(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes).set_FitToCurve(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkDrawingAttributes)this.asInterface(uuid("97a2176c-6774-48ad-84f0-48f5a9be74f9"))).set_FitToCurve(value));
 	}
 	final Windows.Foundation.Numerics.Matrix3x2 PenTipTransform()
 	{
 		Windows.Foundation.Numerics.Matrix3x2 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes2).get_PenTipTransform(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkDrawingAttributes2)this.asInterface(uuid("7cab6508-8ec4-42fd-a5a5-e4b7d1d5316d"))).get_PenTipTransform(&_ret));
 		return _ret;
 	}
 	final void PenTipTransform(Windows.Foundation.Numerics.Matrix3x2 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes2).set_PenTipTransform(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkDrawingAttributes2)this.asInterface(uuid("7cab6508-8ec4-42fd-a5a5-e4b7d1d5316d"))).set_PenTipTransform(value));
 	}
 	final bool DrawAsHighlighter()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes2).get_DrawAsHighlighter(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkDrawingAttributes2)this.asInterface(uuid("7cab6508-8ec4-42fd-a5a5-e4b7d1d5316d"))).get_DrawAsHighlighter(&_ret));
 		return _ret;
 	}
 	final void DrawAsHighlighter(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes2).set_DrawAsHighlighter(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkDrawingAttributes2)this.asInterface(uuid("7cab6508-8ec4-42fd-a5a5-e4b7d1d5316d"))).set_DrawAsHighlighter(value));
 	}
 	final Windows.UI.Input.Inking.InkDrawingAttributesKind Kind()
 	{
 		Windows.UI.Input.Inking.InkDrawingAttributesKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes3).get_Kind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkDrawingAttributes3)this.asInterface(uuid("72020002-7d5b-4690-8af4-e664cbe2b74f"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties PencilProperties()
 	{
 		Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes3).get_PencilProperties(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkDrawingAttributes3)this.asInterface(uuid("72020002-7d5b-4690-8af4-e664cbe2b74f"))).get_PencilProperties(&_ret));
 		return _ret;
 	}
 	final bool IgnoreTilt()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes4).get_IgnoreTilt(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkDrawingAttributes4)this.asInterface(uuid("ef65dc25-9f19-456d-91a3-bc3a3d91c5fb"))).get_IgnoreTilt(&_ret));
 		return _ret;
 	}
 	final void IgnoreTilt(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributes4).set_IgnoreTilt(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkDrawingAttributes4)this.asInterface(uuid("ef65dc25-9f19-456d-91a3-bc3a3d91c5fb"))).set_IgnoreTilt(value));
 	}
 
 	private static Windows.UI.Input.Inking.IInkDrawingAttributesStatics _staticInstance;
@@ -554,14 +554,14 @@ extern(Windows):
 	static Windows.UI.Input.Inking.InkDrawingAttributes CreateForPencil()
 	{
 		Windows.UI.Input.Inking.InkDrawingAttributes _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Input.Inking.IInkDrawingAttributesStatics).abi_CreateForPencil(&_ret));
+		Debug.OK(staticInstance.abi_CreateForPencil(&_ret));
 		return _ret;
 	}
 	static InkDrawingAttributes New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(InkDrawingAttributes).abi_ActivateInstance(&ret));
-		return ret.as!(InkDrawingAttributes);
+		return cast(InkDrawingAttributes) ret;
 	}
 }
 
@@ -571,12 +571,12 @@ extern(Windows):
 	final double Opacity()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributesPencilProperties).get_Opacity(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkDrawingAttributesPencilProperties)this.asInterface(uuid("4f2534cb-2d86-41bb-b0e8-e4c2a0253c52"))).get_Opacity(&_ret));
 		return _ret;
 	}
 	final void Opacity(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkDrawingAttributesPencilProperties).set_Opacity(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkDrawingAttributesPencilProperties)this.asInterface(uuid("4f2534cb-2d86-41bb-b0e8-e4c2a0253c52"))).set_Opacity(value));
 	}
 }
 
@@ -586,22 +586,22 @@ extern(Windows):
 	final Windows.UI.Input.Inking.InkInputProcessingMode Mode()
 	{
 		Windows.UI.Input.Inking.InkInputProcessingMode _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkInputProcessingConfiguration).get_Mode(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkInputProcessingConfiguration)this.asInterface(uuid("2778d85e-33ca-4b06-a6d3-ac3945116d37"))).get_Mode(&_ret));
 		return _ret;
 	}
 	final void Mode(Windows.UI.Input.Inking.InkInputProcessingMode value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkInputProcessingConfiguration).set_Mode(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkInputProcessingConfiguration)this.asInterface(uuid("2778d85e-33ca-4b06-a6d3-ac3945116d37"))).set_Mode(value));
 	}
 	final Windows.UI.Input.Inking.InkInputRightDragAction RightDragAction()
 	{
 		Windows.UI.Input.Inking.InkInputRightDragAction _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkInputProcessingConfiguration).get_RightDragAction(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkInputProcessingConfiguration)this.asInterface(uuid("2778d85e-33ca-4b06-a6d3-ac3945116d37"))).get_RightDragAction(&_ret));
 		return _ret;
 	}
 	final void RightDragAction(Windows.UI.Input.Inking.InkInputRightDragAction value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkInputProcessingConfiguration).set_RightDragAction(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkInputProcessingConfiguration)this.asInterface(uuid("2778d85e-33ca-4b06-a6d3-ac3945116d37"))).set_RightDragAction(value));
 	}
 }
 
@@ -611,138 +611,138 @@ extern(Windows):
 	final Windows.UI.Input.Inking.InkManipulationMode Mode()
 	{
 		Windows.UI.Input.Inking.InkManipulationMode _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkManager).get_Mode(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkManager)this.asInterface(uuid("4744737d-671b-4163-9c95-4e8d7a035fe1"))).get_Mode(&_ret));
 		return _ret;
 	}
 	final void Mode(Windows.UI.Input.Inking.InkManipulationMode value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkManager).set_Mode(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkManager)this.asInterface(uuid("4744737d-671b-4163-9c95-4e8d7a035fe1"))).set_Mode(value));
 	}
 	final void ProcessPointerDown(Windows.UI.Input.PointerPoint pointerPoint)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkManager).abi_ProcessPointerDown(pointerPoint));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkManager)this.asInterface(uuid("4744737d-671b-4163-9c95-4e8d7a035fe1"))).abi_ProcessPointerDown(pointerPoint));
 	}
 	final IInspectable ProcessPointerUpdate(Windows.UI.Input.PointerPoint pointerPoint)
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkManager).abi_ProcessPointerUpdate(pointerPoint, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkManager)this.asInterface(uuid("4744737d-671b-4163-9c95-4e8d7a035fe1"))).abi_ProcessPointerUpdate(pointerPoint, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect ProcessPointerUp(Windows.UI.Input.PointerPoint pointerPoint)
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkManager).abi_ProcessPointerUp(pointerPoint, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkManager)this.asInterface(uuid("4744737d-671b-4163-9c95-4e8d7a035fe1"))).abi_ProcessPointerUp(pointerPoint, &_ret));
 		return _ret;
 	}
 	final void SetDefaultDrawingAttributes(Windows.UI.Input.Inking.InkDrawingAttributes drawingAttributes)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkManager).abi_SetDefaultDrawingAttributes(drawingAttributes));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkManager)this.asInterface(uuid("4744737d-671b-4163-9c95-4e8d7a035fe1"))).abi_SetDefaultDrawingAttributes(drawingAttributes));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult)) RecognizeAsync2(Windows.UI.Input.Inking.InkRecognitionTarget recognitionTarget)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult)) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkManager).abi_RecognizeAsync2(recognitionTarget, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkManager)this.asInterface(uuid("4744737d-671b-4163-9c95-4e8d7a035fe1"))).abi_RecognizeAsync2(recognitionTarget, &_ret));
 		return _ret;
 	}
 	final void SetDefaultRecognizer(Windows.UI.Input.Inking.InkRecognizer recognizer)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkRecognizerContainer).abi_SetDefaultRecognizer(recognizer));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkRecognizerContainer)this.asInterface(uuid("a74d9a31-8047-4698-a912-f82a5085012f"))).abi_SetDefaultRecognizer(recognizer));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult)) RecognizeAsync(Windows.UI.Input.Inking.InkStrokeContainer strokeCollection, Windows.UI.Input.Inking.InkRecognitionTarget recognitionTarget)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult)) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkRecognizerContainer).abi_RecognizeAsync(strokeCollection, recognitionTarget, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkRecognizerContainer)this.asInterface(uuid("a74d9a31-8047-4698-a912-f82a5085012f"))).abi_RecognizeAsync(strokeCollection, recognitionTarget, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognizer) GetRecognizers()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognizer) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkRecognizerContainer).abi_GetRecognizers(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkRecognizerContainer)this.asInterface(uuid("a74d9a31-8047-4698-a912-f82a5085012f"))).abi_GetRecognizers(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect BoundingRect()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).get_BoundingRect(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).get_BoundingRect(&_ret));
 		return _ret;
 	}
 	final void AddStroke(Windows.UI.Input.Inking.InkStroke stroke)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_AddStroke(stroke));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_AddStroke(stroke));
 	}
 	final Windows.Foundation.Rect DeleteSelected()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_DeleteSelected(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_DeleteSelected(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect MoveSelected(Windows.Foundation.Point translation)
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_MoveSelected(translation, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_MoveSelected(translation, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect SelectWithPolyLine(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Point) polyline)
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_SelectWithPolyLine(polyline, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_SelectWithPolyLine(polyline, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect SelectWithLine(Windows.Foundation.Point from, Windows.Foundation.Point to)
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_SelectWithLine(from, to, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_SelectWithLine(from, to, &_ret));
 		return _ret;
 	}
 	final void CopySelectedToClipboard()
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_CopySelectedToClipboard());
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_CopySelectedToClipboard());
 	}
 	final Windows.Foundation.Rect PasteFromClipboard(Windows.Foundation.Point position)
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_PasteFromClipboard(position, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_PasteFromClipboard(position, &_ret));
 		return _ret;
 	}
 	final bool CanPasteFromClipboard()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_CanPasteFromClipboard(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_CanPasteFromClipboard(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncActionWithProgress!(ulong) LoadAsync(Windows.Storage.Streams.IInputStream inputStream)
 	{
 		Windows.Foundation.IAsyncActionWithProgress!(ulong) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_LoadAsync(inputStream, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_LoadAsync(inputStream, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) SaveAsync(Windows.Storage.Streams.IOutputStream outputStream)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_SaveAsync(outputStream, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_SaveAsync(outputStream, &_ret));
 		return _ret;
 	}
 	final void UpdateRecognitionResults(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult) recognitionResults)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_UpdateRecognitionResults(recognitionResults));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_UpdateRecognitionResults(recognitionResults));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) GetStrokes()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_GetStrokes(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_GetStrokes(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult) GetRecognitionResults()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_GetRecognitionResults(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_GetRecognitionResults(&_ret));
 		return _ret;
 	}
 	static InkManager New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(InkManager).abi_ActivateInstance(&ret));
-		return ret.as!(InkManager);
+		return cast(InkManager) ret;
 	}
 }
 
@@ -752,38 +752,38 @@ extern(Windows):
 	final Windows.Foundation.Point Position()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPoint).get_Position(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPoint)this.asInterface(uuid("9f87272b-858c-46a5-9b41-d195970459fd"))).get_Position(&_ret));
 		return _ret;
 	}
 	final float Pressure()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPoint).get_Pressure(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPoint)this.asInterface(uuid("9f87272b-858c-46a5-9b41-d195970459fd"))).get_Pressure(&_ret));
 		return _ret;
 	}
 	final float TiltX()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPoint2).get_TiltX(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPoint2)this.asInterface(uuid("fba9c3f7-ae56-4d5c-bd2f-0ac45f5e4af9"))).get_TiltX(&_ret));
 		return _ret;
 	}
 	final float TiltY()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPoint2).get_TiltY(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPoint2)this.asInterface(uuid("fba9c3f7-ae56-4d5c-bd2f-0ac45f5e4af9"))).get_TiltY(&_ret));
 		return _ret;
 	}
 	final ulong Timestamp()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPoint2).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPoint2)this.asInterface(uuid("fba9c3f7-ae56-4d5c-bd2f-0ac45f5e4af9"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Input.Inking.InkPoint New(Windows.Foundation.Point position, float pressure)
 	{
 		auto factory = factory!(Windows.UI.Input.Inking.IInkPointFactory);
 		Windows.UI.Input.Inking.InkPoint _ret;
-		Debug.OK(factory.as!(Windows.UI.Input.Inking.IInkPointFactory).abi_CreateInkPoint(position, pressure, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPointFactory)factory.asInterface(uuid("29e5d51c-c98f-405d-9f3b-e53e31068d4d"))).abi_CreateInkPoint(position, pressure, &_ret));
 		return _ret;
 	}
 }
@@ -794,100 +794,100 @@ extern(Windows):
 	final bool IsInputEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).get_IsInputEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenter)this.asInterface(uuid("a69b70e2-887b-458f-b173-4fe4438930a3"))).get_IsInputEnabled(&_ret));
 		return _ret;
 	}
 	final void IsInputEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).set_IsInputEnabled(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenter)this.asInterface(uuid("a69b70e2-887b-458f-b173-4fe4438930a3"))).set_IsInputEnabled(value));
 	}
 	final Windows.UI.Core.CoreInputDeviceTypes InputDeviceTypes()
 	{
 		Windows.UI.Core.CoreInputDeviceTypes _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).get_InputDeviceTypes(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenter)this.asInterface(uuid("a69b70e2-887b-458f-b173-4fe4438930a3"))).get_InputDeviceTypes(&_ret));
 		return _ret;
 	}
 	final void InputDeviceTypes(Windows.UI.Core.CoreInputDeviceTypes value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).set_InputDeviceTypes(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenter)this.asInterface(uuid("a69b70e2-887b-458f-b173-4fe4438930a3"))).set_InputDeviceTypes(value));
 	}
 	final Windows.UI.Input.Inking.InkUnprocessedInput UnprocessedInput()
 	{
 		Windows.UI.Input.Inking.InkUnprocessedInput _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).get_UnprocessedInput(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenter)this.asInterface(uuid("a69b70e2-887b-458f-b173-4fe4438930a3"))).get_UnprocessedInput(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.InkStrokeInput StrokeInput()
 	{
 		Windows.UI.Input.Inking.InkStrokeInput _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).get_StrokeInput(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenter)this.asInterface(uuid("a69b70e2-887b-458f-b173-4fe4438930a3"))).get_StrokeInput(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.InkInputProcessingConfiguration InputProcessingConfiguration()
 	{
 		Windows.UI.Input.Inking.InkInputProcessingConfiguration _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).get_InputProcessingConfiguration(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenter)this.asInterface(uuid("a69b70e2-887b-458f-b173-4fe4438930a3"))).get_InputProcessingConfiguration(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.InkStrokeContainer StrokeContainer()
 	{
 		Windows.UI.Input.Inking.InkStrokeContainer _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).get_StrokeContainer(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenter)this.asInterface(uuid("a69b70e2-887b-458f-b173-4fe4438930a3"))).get_StrokeContainer(&_ret));
 		return _ret;
 	}
 	final void StrokeContainer(Windows.UI.Input.Inking.InkStrokeContainer value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).set_StrokeContainer(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenter)this.asInterface(uuid("a69b70e2-887b-458f-b173-4fe4438930a3"))).set_StrokeContainer(value));
 	}
 	final Windows.UI.Input.Inking.InkDrawingAttributes CopyDefaultDrawingAttributes()
 	{
 		Windows.UI.Input.Inking.InkDrawingAttributes _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).abi_CopyDefaultDrawingAttributes(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenter)this.asInterface(uuid("a69b70e2-887b-458f-b173-4fe4438930a3"))).abi_CopyDefaultDrawingAttributes(&_ret));
 		return _ret;
 	}
 	final void UpdateDefaultDrawingAttributes(Windows.UI.Input.Inking.InkDrawingAttributes value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).abi_UpdateDefaultDrawingAttributes(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenter)this.asInterface(uuid("a69b70e2-887b-458f-b173-4fe4438930a3"))).abi_UpdateDefaultDrawingAttributes(value));
 	}
 	final Windows.UI.Input.Inking.InkSynchronizer ActivateCustomDrying()
 	{
 		Windows.UI.Input.Inking.InkSynchronizer _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).abi_ActivateCustomDrying(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenter)this.asInterface(uuid("a69b70e2-887b-458f-b173-4fe4438930a3"))).abi_ActivateCustomDrying(&_ret));
 		return _ret;
 	}
 	final void SetPredefinedConfiguration(Windows.UI.Input.Inking.InkPresenterPredefinedConfiguration value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).abi_SetPredefinedConfiguration(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenter)this.asInterface(uuid("a69b70e2-887b-458f-b173-4fe4438930a3"))).abi_SetPredefinedConfiguration(value));
 	}
 	final EventRegistrationToken OnStrokesCollected(void delegate(Windows.UI.Input.Inking.InkPresenter, Windows.UI.Input.Inking.InkStrokesCollectedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).add_StrokesCollected(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkPresenter, Windows.UI.Input.Inking.InkStrokesCollectedEventArgs), Windows.UI.Input.Inking.InkPresenter, Windows.UI.Input.Inking.InkStrokesCollectedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenter)this.asInterface(uuid("a69b70e2-887b-458f-b173-4fe4438930a3"))).add_StrokesCollected(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkPresenter, Windows.UI.Input.Inking.InkStrokesCollectedEventArgs), Windows.UI.Input.Inking.InkPresenter, Windows.UI.Input.Inking.InkStrokesCollectedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStrokesCollected(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).remove_StrokesCollected(cookie));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenter)this.asInterface(uuid("a69b70e2-887b-458f-b173-4fe4438930a3"))).remove_StrokesCollected(cookie));
 	}
 	final EventRegistrationToken OnStrokesErased(void delegate(Windows.UI.Input.Inking.InkPresenter, Windows.UI.Input.Inking.InkStrokesErasedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).add_StrokesErased(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkPresenter, Windows.UI.Input.Inking.InkStrokesErasedEventArgs), Windows.UI.Input.Inking.InkPresenter, Windows.UI.Input.Inking.InkStrokesErasedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenter)this.asInterface(uuid("a69b70e2-887b-458f-b173-4fe4438930a3"))).add_StrokesErased(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkPresenter, Windows.UI.Input.Inking.InkStrokesErasedEventArgs), Windows.UI.Input.Inking.InkPresenter, Windows.UI.Input.Inking.InkStrokesErasedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStrokesErased(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter).remove_StrokesErased(cookie));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenter)this.asInterface(uuid("a69b70e2-887b-458f-b173-4fe4438930a3"))).remove_StrokesErased(cookie));
 	}
 	final Windows.UI.Input.Inking.InkHighContrastAdjustment HighContrastAdjustment()
 	{
 		Windows.UI.Input.Inking.InkHighContrastAdjustment _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter2).get_HighContrastAdjustment(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenter2)this.asInterface(uuid("cf53e612-9a34-11e6-9f33-a24fc0d9649c"))).get_HighContrastAdjustment(&_ret));
 		return _ret;
 	}
 	final void HighContrastAdjustment(Windows.UI.Input.Inking.InkHighContrastAdjustment value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenter2).set_HighContrastAdjustment(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenter2)this.asInterface(uuid("cf53e612-9a34-11e6-9f33-a24fc0d9649c"))).set_HighContrastAdjustment(value));
 	}
 }
 
@@ -897,124 +897,124 @@ extern(Windows):
 	final bool AreTickMarksVisible()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).get_AreTickMarksVisible(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterProtractor)this.asInterface(uuid("7de3f2aa-ef6c-4e91-a73b-5b70d56fbd17"))).get_AreTickMarksVisible(&_ret));
 		return _ret;
 	}
 	final void AreTickMarksVisible(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).set_AreTickMarksVisible(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterProtractor)this.asInterface(uuid("7de3f2aa-ef6c-4e91-a73b-5b70d56fbd17"))).set_AreTickMarksVisible(value));
 	}
 	final bool AreRaysVisible()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).get_AreRaysVisible(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterProtractor)this.asInterface(uuid("7de3f2aa-ef6c-4e91-a73b-5b70d56fbd17"))).get_AreRaysVisible(&_ret));
 		return _ret;
 	}
 	final void AreRaysVisible(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).set_AreRaysVisible(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterProtractor)this.asInterface(uuid("7de3f2aa-ef6c-4e91-a73b-5b70d56fbd17"))).set_AreRaysVisible(value));
 	}
 	final bool IsCenterMarkerVisible()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).get_IsCenterMarkerVisible(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterProtractor)this.asInterface(uuid("7de3f2aa-ef6c-4e91-a73b-5b70d56fbd17"))).get_IsCenterMarkerVisible(&_ret));
 		return _ret;
 	}
 	final void IsCenterMarkerVisible(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).set_IsCenterMarkerVisible(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterProtractor)this.asInterface(uuid("7de3f2aa-ef6c-4e91-a73b-5b70d56fbd17"))).set_IsCenterMarkerVisible(value));
 	}
 	final bool IsAngleReadoutVisible()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).get_IsAngleReadoutVisible(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterProtractor)this.asInterface(uuid("7de3f2aa-ef6c-4e91-a73b-5b70d56fbd17"))).get_IsAngleReadoutVisible(&_ret));
 		return _ret;
 	}
 	final void IsAngleReadoutVisible(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).set_IsAngleReadoutVisible(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterProtractor)this.asInterface(uuid("7de3f2aa-ef6c-4e91-a73b-5b70d56fbd17"))).set_IsAngleReadoutVisible(value));
 	}
 	final bool IsResizable()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).get_IsResizable(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterProtractor)this.asInterface(uuid("7de3f2aa-ef6c-4e91-a73b-5b70d56fbd17"))).get_IsResizable(&_ret));
 		return _ret;
 	}
 	final void IsResizable(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).set_IsResizable(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterProtractor)this.asInterface(uuid("7de3f2aa-ef6c-4e91-a73b-5b70d56fbd17"))).set_IsResizable(value));
 	}
 	final double Radius()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).get_Radius(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterProtractor)this.asInterface(uuid("7de3f2aa-ef6c-4e91-a73b-5b70d56fbd17"))).get_Radius(&_ret));
 		return _ret;
 	}
 	final void Radius(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).set_Radius(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterProtractor)this.asInterface(uuid("7de3f2aa-ef6c-4e91-a73b-5b70d56fbd17"))).set_Radius(value));
 	}
 	final Windows.UI.Color AccentColor()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).get_AccentColor(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterProtractor)this.asInterface(uuid("7de3f2aa-ef6c-4e91-a73b-5b70d56fbd17"))).get_AccentColor(&_ret));
 		return _ret;
 	}
 	final void AccentColor(Windows.UI.Color value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterProtractor).set_AccentColor(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterProtractor)this.asInterface(uuid("7de3f2aa-ef6c-4e91-a73b-5b70d56fbd17"))).set_AccentColor(value));
 	}
 	final Windows.UI.Input.Inking.InkPresenterStencilKind Kind()
 	{
 		Windows.UI.Input.Inking.InkPresenterStencilKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).get_Kind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterStencil)this.asInterface(uuid("30d12d6d-3e06-4d02-b116-277fb5d8addc"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final bool IsVisible()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).get_IsVisible(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterStencil)this.asInterface(uuid("30d12d6d-3e06-4d02-b116-277fb5d8addc"))).get_IsVisible(&_ret));
 		return _ret;
 	}
 	final void IsVisible(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).set_IsVisible(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterStencil)this.asInterface(uuid("30d12d6d-3e06-4d02-b116-277fb5d8addc"))).set_IsVisible(value));
 	}
 	final Windows.UI.Color BackgroundColor()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).get_BackgroundColor(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterStencil)this.asInterface(uuid("30d12d6d-3e06-4d02-b116-277fb5d8addc"))).get_BackgroundColor(&_ret));
 		return _ret;
 	}
 	final void BackgroundColor(Windows.UI.Color value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).set_BackgroundColor(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterStencil)this.asInterface(uuid("30d12d6d-3e06-4d02-b116-277fb5d8addc"))).set_BackgroundColor(value));
 	}
 	final Windows.UI.Color ForegroundColor()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).get_ForegroundColor(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterStencil)this.asInterface(uuid("30d12d6d-3e06-4d02-b116-277fb5d8addc"))).get_ForegroundColor(&_ret));
 		return _ret;
 	}
 	final void ForegroundColor(Windows.UI.Color value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).set_ForegroundColor(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterStencil)this.asInterface(uuid("30d12d6d-3e06-4d02-b116-277fb5d8addc"))).set_ForegroundColor(value));
 	}
 	final Windows.Foundation.Numerics.Matrix3x2 Transform()
 	{
 		Windows.Foundation.Numerics.Matrix3x2 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).get_Transform(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterStencil)this.asInterface(uuid("30d12d6d-3e06-4d02-b116-277fb5d8addc"))).get_Transform(&_ret));
 		return _ret;
 	}
 	final void Transform(Windows.Foundation.Numerics.Matrix3x2 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).set_Transform(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterStencil)this.asInterface(uuid("30d12d6d-3e06-4d02-b116-277fb5d8addc"))).set_Transform(value));
 	}
 	static Windows.UI.Input.Inking.InkPresenterProtractor New(Windows.UI.Input.Inking.InkPresenter inkPresenter)
 	{
 		auto factory = factory!(Windows.UI.Input.Inking.IInkPresenterProtractorFactory);
 		Windows.UI.Input.Inking.InkPresenterProtractor _ret;
-		Debug.OK(factory.as!(Windows.UI.Input.Inking.IInkPresenterProtractorFactory).abi_Create(inkPresenter, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterProtractorFactory)factory.asInterface(uuid("320103c9-68fa-47e9-8127-8370711fc46c"))).abi_Create(inkPresenter, &_ret));
 		return _ret;
 	}
 }
@@ -1025,94 +1025,94 @@ extern(Windows):
 	final double Length()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterRuler).get_Length(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterRuler)this.asInterface(uuid("6cda7d5a-dec7-4dd7-877a-2133f183d48a"))).get_Length(&_ret));
 		return _ret;
 	}
 	final void Length(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterRuler).set_Length(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterRuler)this.asInterface(uuid("6cda7d5a-dec7-4dd7-877a-2133f183d48a"))).set_Length(value));
 	}
 	final double Width()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterRuler).get_Width(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterRuler)this.asInterface(uuid("6cda7d5a-dec7-4dd7-877a-2133f183d48a"))).get_Width(&_ret));
 		return _ret;
 	}
 	final void Width(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterRuler).set_Width(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterRuler)this.asInterface(uuid("6cda7d5a-dec7-4dd7-877a-2133f183d48a"))).set_Width(value));
 	}
 	final Windows.UI.Input.Inking.InkPresenterStencilKind Kind()
 	{
 		Windows.UI.Input.Inking.InkPresenterStencilKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).get_Kind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterStencil)this.asInterface(uuid("30d12d6d-3e06-4d02-b116-277fb5d8addc"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final bool IsVisible()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).get_IsVisible(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterStencil)this.asInterface(uuid("30d12d6d-3e06-4d02-b116-277fb5d8addc"))).get_IsVisible(&_ret));
 		return _ret;
 	}
 	final void IsVisible(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).set_IsVisible(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterStencil)this.asInterface(uuid("30d12d6d-3e06-4d02-b116-277fb5d8addc"))).set_IsVisible(value));
 	}
 	final Windows.UI.Color BackgroundColor()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).get_BackgroundColor(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterStencil)this.asInterface(uuid("30d12d6d-3e06-4d02-b116-277fb5d8addc"))).get_BackgroundColor(&_ret));
 		return _ret;
 	}
 	final void BackgroundColor(Windows.UI.Color value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).set_BackgroundColor(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterStencil)this.asInterface(uuid("30d12d6d-3e06-4d02-b116-277fb5d8addc"))).set_BackgroundColor(value));
 	}
 	final Windows.UI.Color ForegroundColor()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).get_ForegroundColor(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterStencil)this.asInterface(uuid("30d12d6d-3e06-4d02-b116-277fb5d8addc"))).get_ForegroundColor(&_ret));
 		return _ret;
 	}
 	final void ForegroundColor(Windows.UI.Color value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).set_ForegroundColor(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterStencil)this.asInterface(uuid("30d12d6d-3e06-4d02-b116-277fb5d8addc"))).set_ForegroundColor(value));
 	}
 	final Windows.Foundation.Numerics.Matrix3x2 Transform()
 	{
 		Windows.Foundation.Numerics.Matrix3x2 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).get_Transform(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterStencil)this.asInterface(uuid("30d12d6d-3e06-4d02-b116-277fb5d8addc"))).get_Transform(&_ret));
 		return _ret;
 	}
 	final void Transform(Windows.Foundation.Numerics.Matrix3x2 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterStencil).set_Transform(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterStencil)this.asInterface(uuid("30d12d6d-3e06-4d02-b116-277fb5d8addc"))).set_Transform(value));
 	}
 	final bool AreTickMarksVisible()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterRuler2).get_AreTickMarksVisible(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterRuler2)this.asInterface(uuid("45130dc1-bc61-44d4-a423-54712ae671c4"))).get_AreTickMarksVisible(&_ret));
 		return _ret;
 	}
 	final void AreTickMarksVisible(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterRuler2).set_AreTickMarksVisible(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterRuler2)this.asInterface(uuid("45130dc1-bc61-44d4-a423-54712ae671c4"))).set_AreTickMarksVisible(value));
 	}
 	final bool IsCompassVisible()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterRuler2).get_IsCompassVisible(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterRuler2)this.asInterface(uuid("45130dc1-bc61-44d4-a423-54712ae671c4"))).get_IsCompassVisible(&_ret));
 		return _ret;
 	}
 	final void IsCompassVisible(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkPresenterRuler2).set_IsCompassVisible(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterRuler2)this.asInterface(uuid("45130dc1-bc61-44d4-a423-54712ae671c4"))).set_IsCompassVisible(value));
 	}
 	static Windows.UI.Input.Inking.InkPresenterRuler New(Windows.UI.Input.Inking.InkPresenter inkPresenter)
 	{
 		auto factory = factory!(Windows.UI.Input.Inking.IInkPresenterRulerFactory);
 		Windows.UI.Input.Inking.InkPresenterRuler _ret;
-		Debug.OK(factory.as!(Windows.UI.Input.Inking.IInkPresenterRulerFactory).abi_Create(inkPresenter, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkPresenterRulerFactory)factory.asInterface(uuid("34361beb-9001-4a4b-a690-69dbaf63e501"))).abi_Create(inkPresenter, &_ret));
 		return _ret;
 	}
 }
@@ -1123,19 +1123,19 @@ extern(Windows):
 	final Windows.Foundation.Rect BoundingRect()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkRecognitionResult).get_BoundingRect(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkRecognitionResult)this.asInterface(uuid("36461a94-5068-40ef-8a05-2c2fb60908a2"))).get_BoundingRect(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) GetTextCandidates()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkRecognitionResult).abi_GetTextCandidates(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkRecognitionResult)this.asInterface(uuid("36461a94-5068-40ef-8a05-2c2fb60908a2"))).abi_GetTextCandidates(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) GetStrokes()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkRecognitionResult).abi_GetStrokes(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkRecognitionResult)this.asInterface(uuid("36461a94-5068-40ef-8a05-2c2fb60908a2"))).abi_GetStrokes(&_ret));
 		return _ret;
 	}
 }
@@ -1146,7 +1146,7 @@ extern(Windows):
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkRecognizer).get_Name(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkRecognizer)this.asInterface(uuid("077ccea3-904d-442a-b151-aaca3631c43b"))).get_Name(&_ret));
 		return _ret;
 	}
 }
@@ -1156,25 +1156,25 @@ interface InkRecognizerContainer : Windows.UI.Input.Inking.IInkRecognizerContain
 extern(Windows):
 	final void SetDefaultRecognizer(Windows.UI.Input.Inking.InkRecognizer recognizer)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkRecognizerContainer).abi_SetDefaultRecognizer(recognizer));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkRecognizerContainer)this.asInterface(uuid("a74d9a31-8047-4698-a912-f82a5085012f"))).abi_SetDefaultRecognizer(recognizer));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult)) RecognizeAsync(Windows.UI.Input.Inking.InkStrokeContainer strokeCollection, Windows.UI.Input.Inking.InkRecognitionTarget recognitionTarget)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult)) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkRecognizerContainer).abi_RecognizeAsync(strokeCollection, recognitionTarget, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkRecognizerContainer)this.asInterface(uuid("a74d9a31-8047-4698-a912-f82a5085012f"))).abi_RecognizeAsync(strokeCollection, recognitionTarget, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognizer) GetRecognizers()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognizer) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkRecognizerContainer).abi_GetRecognizers(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkRecognizerContainer)this.asInterface(uuid("a74d9a31-8047-4698-a912-f82a5085012f"))).abi_GetRecognizers(&_ret));
 		return _ret;
 	}
 	static InkRecognizerContainer New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(InkRecognizerContainer).abi_ActivateInstance(&ret));
-		return ret.as!(InkRecognizerContainer);
+		return cast(InkRecognizerContainer) ret;
 	}
 }
 
@@ -1184,88 +1184,88 @@ extern(Windows):
 	final Windows.UI.Input.Inking.InkDrawingAttributes DrawingAttributes()
 	{
 		Windows.UI.Input.Inking.InkDrawingAttributes _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke).get_DrawingAttributes(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStroke)this.asInterface(uuid("15144d60-cce3-4fcf-9d52-11518ab6afd4"))).get_DrawingAttributes(&_ret));
 		return _ret;
 	}
 	final void DrawingAttributes(Windows.UI.Input.Inking.InkDrawingAttributes value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke).set_DrawingAttributes(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStroke)this.asInterface(uuid("15144d60-cce3-4fcf-9d52-11518ab6afd4"))).set_DrawingAttributes(value));
 	}
 	final Windows.Foundation.Rect BoundingRect()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke).get_BoundingRect(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStroke)this.asInterface(uuid("15144d60-cce3-4fcf-9d52-11518ab6afd4"))).get_BoundingRect(&_ret));
 		return _ret;
 	}
 	final bool Selected()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke).get_Selected(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStroke)this.asInterface(uuid("15144d60-cce3-4fcf-9d52-11518ab6afd4"))).get_Selected(&_ret));
 		return _ret;
 	}
 	final void Selected(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke).set_Selected(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStroke)this.asInterface(uuid("15144d60-cce3-4fcf-9d52-11518ab6afd4"))).set_Selected(value));
 	}
 	final bool Recognized()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke).get_Recognized(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStroke)this.asInterface(uuid("15144d60-cce3-4fcf-9d52-11518ab6afd4"))).get_Recognized(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStrokeRenderingSegment) GetRenderingSegments()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStrokeRenderingSegment) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke).abi_GetRenderingSegments(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStroke)this.asInterface(uuid("15144d60-cce3-4fcf-9d52-11518ab6afd4"))).abi_GetRenderingSegments(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.InkStroke Clone()
 	{
 		Windows.UI.Input.Inking.InkStroke _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke).abi_Clone(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStroke)this.asInterface(uuid("15144d60-cce3-4fcf-9d52-11518ab6afd4"))).abi_Clone(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Numerics.Matrix3x2 PointTransform()
 	{
 		Windows.Foundation.Numerics.Matrix3x2 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke2).get_PointTransform(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStroke2)this.asInterface(uuid("5db9e4f4-bafa-4de1-89d3-201b1ed7d89b"))).get_PointTransform(&_ret));
 		return _ret;
 	}
 	final void PointTransform(Windows.Foundation.Numerics.Matrix3x2 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke2).set_PointTransform(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStroke2)this.asInterface(uuid("5db9e4f4-bafa-4de1-89d3-201b1ed7d89b"))).set_PointTransform(value));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkPoint) GetInkPoints()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkPoint) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke2).abi_GetInkPoints(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStroke2)this.asInterface(uuid("5db9e4f4-bafa-4de1-89d3-201b1ed7d89b"))).abi_GetInkPoints(&_ret));
 		return _ret;
 	}
 	final UINT32 Id()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke3).get_Id(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStroke3)this.asInterface(uuid("4a807374-9499-411d-a1c4-68855d03d65f"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) StrokeStartedTime()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke3).get_StrokeStartedTime(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStroke3)this.asInterface(uuid("4a807374-9499-411d-a1c4-68855d03d65f"))).get_StrokeStartedTime(&_ret));
 		return _ret;
 	}
 	final void StrokeStartedTime(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke3).set_StrokeStartedTime(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStroke3)this.asInterface(uuid("4a807374-9499-411d-a1c4-68855d03d65f"))).set_StrokeStartedTime(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) StrokeDuration()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke3).get_StrokeDuration(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStroke3)this.asInterface(uuid("4a807374-9499-411d-a1c4-68855d03d65f"))).get_StrokeDuration(&_ret));
 		return _ret;
 	}
 	final void StrokeDuration(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStroke3).set_StrokeDuration(value));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStroke3)this.asInterface(uuid("4a807374-9499-411d-a1c4-68855d03d65f"))).set_StrokeDuration(value));
 	}
 }
 
@@ -1274,47 +1274,47 @@ interface InkStrokeBuilder : Windows.UI.Input.Inking.IInkStrokeBuilder, Windows.
 extern(Windows):
 	final void BeginStroke(Windows.UI.Input.PointerPoint pointerPoint)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeBuilder).abi_BeginStroke(pointerPoint));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeBuilder)this.asInterface(uuid("82bbd1dc-1c63-41dc-9e07-4b4a70ced801"))).abi_BeginStroke(pointerPoint));
 	}
 	final Windows.UI.Input.PointerPoint AppendToStroke(Windows.UI.Input.PointerPoint pointerPoint)
 	{
 		Windows.UI.Input.PointerPoint _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeBuilder).abi_AppendToStroke(pointerPoint, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeBuilder)this.asInterface(uuid("82bbd1dc-1c63-41dc-9e07-4b4a70ced801"))).abi_AppendToStroke(pointerPoint, &_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.InkStroke EndStroke(Windows.UI.Input.PointerPoint pointerPoint)
 	{
 		Windows.UI.Input.Inking.InkStroke _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeBuilder).abi_EndStroke(pointerPoint, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeBuilder)this.asInterface(uuid("82bbd1dc-1c63-41dc-9e07-4b4a70ced801"))).abi_EndStroke(pointerPoint, &_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.InkStroke CreateStroke(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Point) points)
 	{
 		Windows.UI.Input.Inking.InkStroke _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeBuilder).abi_CreateStroke(points, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeBuilder)this.asInterface(uuid("82bbd1dc-1c63-41dc-9e07-4b4a70ced801"))).abi_CreateStroke(points, &_ret));
 		return _ret;
 	}
 	final void SetDefaultDrawingAttributes(Windows.UI.Input.Inking.InkDrawingAttributes drawingAttributes)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeBuilder).abi_SetDefaultDrawingAttributes(drawingAttributes));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeBuilder)this.asInterface(uuid("82bbd1dc-1c63-41dc-9e07-4b4a70ced801"))).abi_SetDefaultDrawingAttributes(drawingAttributes));
 	}
 	final Windows.UI.Input.Inking.InkStroke CreateStrokeFromInkPoints(Windows.Foundation.Collections.IIterable!(Windows.UI.Input.Inking.InkPoint) inkPoints, Windows.Foundation.Numerics.Matrix3x2 transform)
 	{
 		Windows.UI.Input.Inking.InkStroke _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeBuilder2).abi_CreateStrokeFromInkPoints(inkPoints, transform, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeBuilder2)this.asInterface(uuid("bd82bc27-731f-4cbc-bbbf-6d468044f1e5"))).abi_CreateStrokeFromInkPoints(inkPoints, transform, &_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.InkStroke CreateStrokeFromInkPoints(Windows.Foundation.Collections.IIterable!(Windows.UI.Input.Inking.InkPoint) inkPoints, Windows.Foundation.Numerics.Matrix3x2 transform, Windows.Foundation.IReference!(Windows.Foundation.DateTime) strokeStartedTime, Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) strokeDuration)
 	{
 		Windows.UI.Input.Inking.InkStroke _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeBuilder3).abi_CreateStrokeFromInkPoints(inkPoints, transform, strokeStartedTime, strokeDuration, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeBuilder3)this.asInterface(uuid("b2c71fcd-5472-46b1-a81d-c37a3d169441"))).abi_CreateStrokeFromInkPoints(inkPoints, transform, strokeStartedTime, strokeDuration, &_ret));
 		return _ret;
 	}
 	static InkStrokeBuilder New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(InkStrokeBuilder).abi_ActivateInstance(&ret));
-		return ret.as!(InkStrokeBuilder);
+		return cast(InkStrokeBuilder) ret;
 	}
 }
 
@@ -1324,106 +1324,106 @@ extern(Windows):
 	final Windows.Foundation.Rect BoundingRect()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).get_BoundingRect(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).get_BoundingRect(&_ret));
 		return _ret;
 	}
 	final void AddStroke(Windows.UI.Input.Inking.InkStroke stroke)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_AddStroke(stroke));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_AddStroke(stroke));
 	}
 	final Windows.Foundation.Rect DeleteSelected()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_DeleteSelected(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_DeleteSelected(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect MoveSelected(Windows.Foundation.Point translation)
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_MoveSelected(translation, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_MoveSelected(translation, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect SelectWithPolyLine(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Point) polyline)
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_SelectWithPolyLine(polyline, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_SelectWithPolyLine(polyline, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect SelectWithLine(Windows.Foundation.Point from, Windows.Foundation.Point to)
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_SelectWithLine(from, to, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_SelectWithLine(from, to, &_ret));
 		return _ret;
 	}
 	final void CopySelectedToClipboard()
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_CopySelectedToClipboard());
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_CopySelectedToClipboard());
 	}
 	final Windows.Foundation.Rect PasteFromClipboard(Windows.Foundation.Point position)
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_PasteFromClipboard(position, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_PasteFromClipboard(position, &_ret));
 		return _ret;
 	}
 	final bool CanPasteFromClipboard()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_CanPasteFromClipboard(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_CanPasteFromClipboard(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncActionWithProgress!(ulong) LoadAsync(Windows.Storage.Streams.IInputStream inputStream)
 	{
 		Windows.Foundation.IAsyncActionWithProgress!(ulong) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_LoadAsync(inputStream, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_LoadAsync(inputStream, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) SaveAsync(Windows.Storage.Streams.IOutputStream outputStream)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_SaveAsync(outputStream, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_SaveAsync(outputStream, &_ret));
 		return _ret;
 	}
 	final void UpdateRecognitionResults(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult) recognitionResults)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_UpdateRecognitionResults(recognitionResults));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_UpdateRecognitionResults(recognitionResults));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) GetStrokes()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_GetStrokes(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_GetStrokes(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult) GetRecognitionResults()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer).abi_GetRecognitionResults(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer)this.asInterface(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16"))).abi_GetRecognitionResults(&_ret));
 		return _ret;
 	}
 	final void AddStrokes(Windows.Foundation.Collections.IIterable!(Windows.UI.Input.Inking.InkStroke) strokes)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer2).abi_AddStrokes(strokes));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer2)this.asInterface(uuid("8901d364-da36-4bcf-9e5c-d195825995b4"))).abi_AddStrokes(strokes));
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer2).abi_Clear());
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer2)this.asInterface(uuid("8901d364-da36-4bcf-9e5c-d195825995b4"))).abi_Clear());
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) SaveWithFormatAsync(Windows.Storage.Streams.IOutputStream outputStream, Windows.UI.Input.Inking.InkPersistenceFormat inkPersistenceFormat)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer3).abi_SaveWithFormatAsync(outputStream, inkPersistenceFormat, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer3)this.asInterface(uuid("3d07bea5-baea-4c82-a719-7b83da1067d2"))).abi_SaveWithFormatAsync(outputStream, inkPersistenceFormat, &_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.InkStroke GetStrokeById(UINT32 id)
 	{
 		Windows.UI.Input.Inking.InkStroke _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeContainer3).abi_GetStrokeById(id, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer3)this.asInterface(uuid("3d07bea5-baea-4c82-a719-7b83da1067d2"))).abi_GetStrokeById(id, &_ret));
 		return _ret;
 	}
 	static InkStrokeContainer New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(InkStrokeContainer).abi_ActivateInstance(&ret));
-		return ret.as!(InkStrokeContainer);
+		return cast(InkStrokeContainer) ret;
 	}
 }
 
@@ -1433,47 +1433,47 @@ extern(Windows):
 	final EventRegistrationToken OnStrokeStarted(void delegate(Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeInput).add_StrokeStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeInput)this.asInterface(uuid("cf2ffe7b-5e10-43c6-a080-88f26e1dc67d"))).add_StrokeStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStrokeStarted(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeInput).remove_StrokeStarted(cookie));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeInput)this.asInterface(uuid("cf2ffe7b-5e10-43c6-a080-88f26e1dc67d"))).remove_StrokeStarted(cookie));
 	}
 	final EventRegistrationToken OnStrokeContinued(void delegate(Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeInput).add_StrokeContinued(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeInput)this.asInterface(uuid("cf2ffe7b-5e10-43c6-a080-88f26e1dc67d"))).add_StrokeContinued(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStrokeContinued(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeInput).remove_StrokeContinued(cookie));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeInput)this.asInterface(uuid("cf2ffe7b-5e10-43c6-a080-88f26e1dc67d"))).remove_StrokeContinued(cookie));
 	}
 	final EventRegistrationToken OnStrokeEnded(void delegate(Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeInput).add_StrokeEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeInput)this.asInterface(uuid("cf2ffe7b-5e10-43c6-a080-88f26e1dc67d"))).add_StrokeEnded(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStrokeEnded(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeInput).remove_StrokeEnded(cookie));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeInput)this.asInterface(uuid("cf2ffe7b-5e10-43c6-a080-88f26e1dc67d"))).remove_StrokeEnded(cookie));
 	}
 	final EventRegistrationToken OnStrokeCanceled(void delegate(Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeInput).add_StrokeCanceled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeInput)this.asInterface(uuid("cf2ffe7b-5e10-43c6-a080-88f26e1dc67d"))).add_StrokeCanceled(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.InkStrokeInput, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStrokeCanceled(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeInput).remove_StrokeCanceled(cookie));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeInput)this.asInterface(uuid("cf2ffe7b-5e10-43c6-a080-88f26e1dc67d"))).remove_StrokeCanceled(cookie));
 	}
 	final Windows.UI.Input.Inking.InkPresenter InkPresenter()
 	{
 		Windows.UI.Input.Inking.InkPresenter _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeInput).get_InkPresenter(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeInput)this.asInterface(uuid("cf2ffe7b-5e10-43c6-a080-88f26e1dc67d"))).get_InkPresenter(&_ret));
 		return _ret;
 	}
 }
@@ -1484,43 +1484,43 @@ extern(Windows):
 	final Windows.Foundation.Point Position()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeRenderingSegment).get_Position(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeRenderingSegment)this.asInterface(uuid("68510f1f-88e3-477a-a2fa-569f5f1f9bd5"))).get_Position(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point BezierControlPoint1()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeRenderingSegment).get_BezierControlPoint1(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeRenderingSegment)this.asInterface(uuid("68510f1f-88e3-477a-a2fa-569f5f1f9bd5"))).get_BezierControlPoint1(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point BezierControlPoint2()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeRenderingSegment).get_BezierControlPoint2(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeRenderingSegment)this.asInterface(uuid("68510f1f-88e3-477a-a2fa-569f5f1f9bd5"))).get_BezierControlPoint2(&_ret));
 		return _ret;
 	}
 	final float Pressure()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeRenderingSegment).get_Pressure(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeRenderingSegment)this.asInterface(uuid("68510f1f-88e3-477a-a2fa-569f5f1f9bd5"))).get_Pressure(&_ret));
 		return _ret;
 	}
 	final float TiltX()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeRenderingSegment).get_TiltX(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeRenderingSegment)this.asInterface(uuid("68510f1f-88e3-477a-a2fa-569f5f1f9bd5"))).get_TiltX(&_ret));
 		return _ret;
 	}
 	final float TiltY()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeRenderingSegment).get_TiltY(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeRenderingSegment)this.asInterface(uuid("68510f1f-88e3-477a-a2fa-569f5f1f9bd5"))).get_TiltY(&_ret));
 		return _ret;
 	}
 	final float Twist()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokeRenderingSegment).get_Twist(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeRenderingSegment)this.asInterface(uuid("68510f1f-88e3-477a-a2fa-569f5f1f9bd5"))).get_Twist(&_ret));
 		return _ret;
 	}
 }
@@ -1531,7 +1531,7 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) Strokes()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokesCollectedEventArgs).get_Strokes(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokesCollectedEventArgs)this.asInterface(uuid("c4f3f229-1938-495c-b4d9-6de4b08d4811"))).get_Strokes(&_ret));
 		return _ret;
 	}
 }
@@ -1542,7 +1542,7 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) Strokes()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkStrokesErasedEventArgs).get_Strokes(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokesErasedEventArgs)this.asInterface(uuid("a4216a22-1503-4ebf-8ff5-2de84584a8aa"))).get_Strokes(&_ret));
 		return _ret;
 	}
 }
@@ -1553,12 +1553,12 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) BeginDry()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkStroke) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkSynchronizer).abi_BeginDry(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkSynchronizer)this.asInterface(uuid("9b9ea160-ae9b-45f9-8407-4b493b163661"))).abi_BeginDry(&_ret));
 		return _ret;
 	}
 	final void EndDry()
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkSynchronizer).abi_EndDry());
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkSynchronizer)this.asInterface(uuid("9b9ea160-ae9b-45f9-8407-4b493b163661"))).abi_EndDry());
 	}
 }
 
@@ -1568,77 +1568,77 @@ extern(Windows):
 	final EventRegistrationToken OnPointerEntered(void delegate(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkUnprocessedInput).add_PointerEntered(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkUnprocessedInput)this.asInterface(uuid("db4445e0-8398-4921-ac3b-ab978c5ba256"))).add_PointerEntered(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerEntered(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkUnprocessedInput).remove_PointerEntered(cookie));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkUnprocessedInput)this.asInterface(uuid("db4445e0-8398-4921-ac3b-ab978c5ba256"))).remove_PointerEntered(cookie));
 	}
 	final EventRegistrationToken OnPointerHovered(void delegate(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkUnprocessedInput).add_PointerHovered(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkUnprocessedInput)this.asInterface(uuid("db4445e0-8398-4921-ac3b-ab978c5ba256"))).add_PointerHovered(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerHovered(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkUnprocessedInput).remove_PointerHovered(cookie));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkUnprocessedInput)this.asInterface(uuid("db4445e0-8398-4921-ac3b-ab978c5ba256"))).remove_PointerHovered(cookie));
 	}
 	final EventRegistrationToken OnPointerExited(void delegate(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkUnprocessedInput).add_PointerExited(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkUnprocessedInput)this.asInterface(uuid("db4445e0-8398-4921-ac3b-ab978c5ba256"))).add_PointerExited(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerExited(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkUnprocessedInput).remove_PointerExited(cookie));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkUnprocessedInput)this.asInterface(uuid("db4445e0-8398-4921-ac3b-ab978c5ba256"))).remove_PointerExited(cookie));
 	}
 	final EventRegistrationToken OnPointerPressed(void delegate(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkUnprocessedInput).add_PointerPressed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkUnprocessedInput)this.asInterface(uuid("db4445e0-8398-4921-ac3b-ab978c5ba256"))).add_PointerPressed(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerPressed(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkUnprocessedInput).remove_PointerPressed(cookie));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkUnprocessedInput)this.asInterface(uuid("db4445e0-8398-4921-ac3b-ab978c5ba256"))).remove_PointerPressed(cookie));
 	}
 	final EventRegistrationToken OnPointerMoved(void delegate(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkUnprocessedInput).add_PointerMoved(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkUnprocessedInput)this.asInterface(uuid("db4445e0-8398-4921-ac3b-ab978c5ba256"))).add_PointerMoved(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerMoved(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkUnprocessedInput).remove_PointerMoved(cookie));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkUnprocessedInput)this.asInterface(uuid("db4445e0-8398-4921-ac3b-ab978c5ba256"))).remove_PointerMoved(cookie));
 	}
 	final EventRegistrationToken OnPointerReleased(void delegate(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkUnprocessedInput).add_PointerReleased(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkUnprocessedInput)this.asInterface(uuid("db4445e0-8398-4921-ac3b-ab978c5ba256"))).add_PointerReleased(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerReleased(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkUnprocessedInput).remove_PointerReleased(cookie));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkUnprocessedInput)this.asInterface(uuid("db4445e0-8398-4921-ac3b-ab978c5ba256"))).remove_PointerReleased(cookie));
 	}
 	final EventRegistrationToken OnPointerLost(void delegate(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkUnprocessedInput).add_PointerLost(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkUnprocessedInput)this.asInterface(uuid("db4445e0-8398-4921-ac3b-ab978c5ba256"))).add_PointerLost(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs), Windows.UI.Input.Inking.InkUnprocessedInput, Windows.UI.Core.PointerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePointerLost(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkUnprocessedInput).remove_PointerLost(cookie));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkUnprocessedInput)this.asInterface(uuid("db4445e0-8398-4921-ac3b-ab978c5ba256"))).remove_PointerLost(cookie));
 	}
 	final Windows.UI.Input.Inking.InkPresenter InkPresenter()
 	{
 		Windows.UI.Input.Inking.InkPresenter _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.IInkUnprocessedInput).get_InkPresenter(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkUnprocessedInput)this.asInterface(uuid("db4445e0-8398-4921-ac3b-ab978c5ba256"))).get_InkPresenter(&_ret));
 		return _ret;
 	}
 }

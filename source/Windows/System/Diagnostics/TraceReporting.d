@@ -50,49 +50,49 @@ interface PlatformDiagnosticActions
 	static bool IsScenarioEnabled(GUID scenarioId)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticActionsStatics).abi_IsScenarioEnabled(scenarioId, &_ret));
+		Debug.OK(staticInstance.abi_IsScenarioEnabled(scenarioId, &_ret));
 		return _ret;
 	}
 	static bool TryEscalateScenario(GUID scenarioId, Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticEscalationType escalationType, HSTRING outputDirectory, bool timestampOutputDirectory, bool forceEscalationUpload, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) triggers)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticActionsStatics).abi_TryEscalateScenario(scenarioId, escalationType, outputDirectory, timestampOutputDirectory, forceEscalationUpload, triggers, &_ret));
+		Debug.OK(staticInstance.abi_TryEscalateScenario(scenarioId, escalationType, outputDirectory, timestampOutputDirectory, forceEscalationUpload, triggers, &_ret));
 		return _ret;
 	}
 	static Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticActionState DownloadLatestSettingsForNamespace(HSTRING partner, HSTRING feature, bool isScenarioNamespace, bool downloadOverCostedNetwork, bool downloadOverBattery)
 	{
 		Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticActionState _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticActionsStatics).abi_DownloadLatestSettingsForNamespace(partner, feature, isScenarioNamespace, downloadOverCostedNetwork, downloadOverBattery, &_ret));
+		Debug.OK(staticInstance.abi_DownloadLatestSettingsForNamespace(partner, feature, isScenarioNamespace, downloadOverCostedNetwork, downloadOverBattery, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(GUID) GetActiveScenarioList()
 	{
 		Windows.Foundation.Collections.IVectorView!(GUID) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticActionsStatics).abi_GetActiveScenarioList(&_ret));
+		Debug.OK(staticInstance.abi_GetActiveScenarioList(&_ret));
 		return _ret;
 	}
 	static Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticActionState ForceUpload(Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticEventBufferLatencies latency, bool uploadOverCostedNetwork, bool uploadOverBattery)
 	{
 		Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticActionState _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticActionsStatics).abi_ForceUpload(latency, uploadOverCostedNetwork, uploadOverBattery, &_ret));
+		Debug.OK(staticInstance.abi_ForceUpload(latency, uploadOverCostedNetwork, uploadOverBattery, &_ret));
 		return _ret;
 	}
 	static Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceSlotState IsTraceRunning(Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceSlotType slotType, GUID scenarioId, ulong traceProfileHash)
 	{
 		Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceSlotState _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticActionsStatics).abi_IsTraceRunning(slotType, scenarioId, traceProfileHash, &_ret));
+		Debug.OK(staticInstance.abi_IsTraceRunning(slotType, scenarioId, traceProfileHash, &_ret));
 		return _ret;
 	}
 	static Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceRuntimeInfo GetActiveTraceRuntime(Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceSlotType slotType)
 	{
 		Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceRuntimeInfo _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticActionsStatics).abi_GetActiveTraceRuntime(slotType, &_ret));
+		Debug.OK(staticInstance.abi_GetActiveTraceRuntime(slotType, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceInfo) GetKnownTraceList(Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceSlotType slotType)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTraceInfo) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticActionsStatics).abi_GetKnownTraceList(slotType, &_ret));
+		Debug.OK(staticInstance.abi_GetKnownTraceList(slotType, &_ret));
 		return _ret;
 	}
 }
@@ -103,37 +103,37 @@ extern(Windows):
 	final GUID ScenarioId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceInfo).get_ScenarioId(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceInfo)this.asInterface(uuid("f870ed97-d597-4bf7-88dc-cf5c7dc2a1d2"))).get_ScenarioId(&_ret));
 		return _ret;
 	}
 	final ulong ProfileHash()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceInfo).get_ProfileHash(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceInfo)this.asInterface(uuid("f870ed97-d597-4bf7-88dc-cf5c7dc2a1d2"))).get_ProfileHash(&_ret));
 		return _ret;
 	}
 	final bool IsExclusive()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceInfo).get_IsExclusive(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceInfo)this.asInterface(uuid("f870ed97-d597-4bf7-88dc-cf5c7dc2a1d2"))).get_IsExclusive(&_ret));
 		return _ret;
 	}
 	final bool IsAutoLogger()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceInfo).get_IsAutoLogger(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceInfo)this.asInterface(uuid("f870ed97-d597-4bf7-88dc-cf5c7dc2a1d2"))).get_IsAutoLogger(&_ret));
 		return _ret;
 	}
 	final INT64 MaxTraceDurationFileTime()
 	{
 		INT64 _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceInfo).get_MaxTraceDurationFileTime(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceInfo)this.asInterface(uuid("f870ed97-d597-4bf7-88dc-cf5c7dc2a1d2"))).get_MaxTraceDurationFileTime(&_ret));
 		return _ret;
 	}
 	final Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTracePriority Priority()
 	{
 		Windows.System.Diagnostics.TraceReporting.PlatformDiagnosticTracePriority _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceInfo).get_Priority(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceInfo)this.asInterface(uuid("f870ed97-d597-4bf7-88dc-cf5c7dc2a1d2"))).get_Priority(&_ret));
 		return _ret;
 	}
 }
@@ -144,13 +144,13 @@ extern(Windows):
 	final INT64 RuntimeFileTime()
 	{
 		INT64 _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceRuntimeInfo).get_RuntimeFileTime(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceRuntimeInfo)this.asInterface(uuid("3d4d5e2d-01d8-4768-8554-1eb1ca610986"))).get_RuntimeFileTime(&_ret));
 		return _ret;
 	}
 	final INT64 EtwRuntimeFileTime()
 	{
 		INT64 _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceRuntimeInfo).get_EtwRuntimeFileTime(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.TraceReporting.IPlatformDiagnosticTraceRuntimeInfo)this.asInterface(uuid("3d4d5e2d-01d8-4768-8554-1eb1ca610986"))).get_EtwRuntimeFileTime(&_ret));
 		return _ret;
 	}
 }

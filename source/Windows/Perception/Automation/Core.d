@@ -20,6 +20,6 @@ interface CorePerceptionAutomation
 	}
 	static void SetActivationFactoryProvider(Windows.Foundation.IGetActivationFactory provider)
 	{
-		Debug.OK(staticInstance.as!(Windows.Perception.Automation.Core.ICorePerceptionAutomationStatics).abi_SetActivationFactoryProvider(provider));
+		Debug.OK(staticInstance.abi_SetActivationFactoryProvider(provider));
 	}
 }

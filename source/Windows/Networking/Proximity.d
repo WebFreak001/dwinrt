@@ -182,7 +182,7 @@ extern(Windows):
 	final Windows.Networking.Proximity.PeerInformation PeerInformation()
 	{
 		Windows.Networking.Proximity.PeerInformation _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IConnectionRequestedEventArgs).get_PeerInformation(&_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IConnectionRequestedEventArgs)this.asInterface(uuid("eb6891ae-4f1e-4c66-bd0d-46924a942e08"))).get_PeerInformation(&_ret));
 		return _ret;
 	}
 }
@@ -198,97 +198,97 @@ interface PeerFinder
 	static bool AllowBluetooth()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).get_AllowBluetooth(&_ret));
+		Debug.OK(staticInstance.get_AllowBluetooth(&_ret));
 		return _ret;
 	}
 	static void AllowBluetooth(bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).set_AllowBluetooth(value));
+		Debug.OK(staticInstance.set_AllowBluetooth(value));
 	}
 	static bool AllowInfrastructure()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).get_AllowInfrastructure(&_ret));
+		Debug.OK(staticInstance.get_AllowInfrastructure(&_ret));
 		return _ret;
 	}
 	static void AllowInfrastructure(bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).set_AllowInfrastructure(value));
+		Debug.OK(staticInstance.set_AllowInfrastructure(value));
 	}
 	static bool AllowWiFiDirect()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).get_AllowWiFiDirect(&_ret));
+		Debug.OK(staticInstance.get_AllowWiFiDirect(&_ret));
 		return _ret;
 	}
 	static void AllowWiFiDirect(bool value)
 	{
-		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).set_AllowWiFiDirect(value));
+		Debug.OK(staticInstance.set_AllowWiFiDirect(value));
 	}
 	static HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).get_DisplayName(&_ret));
+		Debug.OK(staticInstance.get_DisplayName(&_ret));
 		return _ret;
 	}
 	static void DisplayName(HSTRING value)
 	{
-		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).set_DisplayName(value));
+		Debug.OK(staticInstance.set_DisplayName(value));
 	}
 	static Windows.Networking.Proximity.PeerDiscoveryTypes SupportedDiscoveryTypes()
 	{
 		Windows.Networking.Proximity.PeerDiscoveryTypes _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).get_SupportedDiscoveryTypes(&_ret));
+		Debug.OK(staticInstance.get_SupportedDiscoveryTypes(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) AlternateIdentities()
 	{
 		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).get_AlternateIdentities(&_ret));
+		Debug.OK(staticInstance.get_AlternateIdentities(&_ret));
 		return _ret;
 	}
 	static void Start()
 	{
-		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).abi_Start());
+		Debug.OK(staticInstance.abi_Start());
 	}
 	static void StartWithMessage(HSTRING peerMessage)
 	{
-		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).abi_StartWithMessage(peerMessage));
+		Debug.OK(staticInstance.abi_StartWithMessage(peerMessage));
 	}
 	static void Stop()
 	{
-		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).abi_Stop());
+		Debug.OK(staticInstance.abi_Stop());
 	}
 	static EventRegistrationToken OnTriggeredConnectionStateChanged(void delegate(IInspectable, Windows.Networking.Proximity.TriggeredConnectionStateChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).add_TriggeredConnectionStateChanged(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.Networking.Proximity.TriggeredConnectionStateChangedEventArgs), IInspectable, Windows.Networking.Proximity.TriggeredConnectionStateChangedEventArgs)(fn), &tok));
+		Debug.OK(staticInstance.add_TriggeredConnectionStateChanged(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.Networking.Proximity.TriggeredConnectionStateChangedEventArgs), IInspectable, Windows.Networking.Proximity.TriggeredConnectionStateChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	static void removeTriggeredConnectionStateChanged(EventRegistrationToken cookie)
 	{
-		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).remove_TriggeredConnectionStateChanged(cookie));
+		Debug.OK(staticInstance.remove_TriggeredConnectionStateChanged(cookie));
 	}
 	static EventRegistrationToken OnConnectionRequested(void delegate(IInspectable, Windows.Networking.Proximity.ConnectionRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).add_ConnectionRequested(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.Networking.Proximity.ConnectionRequestedEventArgs), IInspectable, Windows.Networking.Proximity.ConnectionRequestedEventArgs)(fn), &tok));
+		Debug.OK(staticInstance.add_ConnectionRequested(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.Networking.Proximity.ConnectionRequestedEventArgs), IInspectable, Windows.Networking.Proximity.ConnectionRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	static void removeConnectionRequested(EventRegistrationToken cookie)
 	{
-		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).remove_ConnectionRequested(cookie));
+		Debug.OK(staticInstance.remove_ConnectionRequested(cookie));
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Proximity.PeerInformation)) FindAllPeersAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Proximity.PeerInformation)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).abi_FindAllPeersAsync(&_ret));
+		Debug.OK(staticInstance.abi_FindAllPeersAsync(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Networking.Sockets.StreamSocket) ConnectAsync(Windows.Networking.Proximity.PeerInformation peerInformation)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.Sockets.StreamSocket) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IPeerFinderStatics).abi_ConnectAsync(peerInformation, &_ret));
+		Debug.OK(staticInstance.abi_ConnectAsync(peerInformation, &_ret));
 		return _ret;
 	}
 }
@@ -299,31 +299,31 @@ extern(Windows):
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerInformation).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IPeerInformation)this.asInterface(uuid("20024f08-9fff-45f4-b6e9-408b2ebef373"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerInformation3).get_Id(&_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IPeerInformation3)this.asInterface(uuid("b20f612a-dbd0-40f8-95bd-2d4209c7836f"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer DiscoveryData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerInformation3).get_DiscoveryData(&_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IPeerInformation3)this.asInterface(uuid("b20f612a-dbd0-40f8-95bd-2d4209c7836f"))).get_DiscoveryData(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.HostName HostName()
 	{
 		Windows.Networking.HostName _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerInformationWithHostAndService).get_HostName(&_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IPeerInformationWithHostAndService)this.asInterface(uuid("ecc7ccad-1b70-4e8b-92db-bbe781419308"))).get_HostName(&_ret));
 		return _ret;
 	}
 	final HSTRING ServiceName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerInformationWithHostAndService).get_ServiceName(&_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IPeerInformationWithHostAndService)this.asInterface(uuid("ecc7ccad-1b70-4e8b-92db-bbe781419308"))).get_ServiceName(&_ret));
 		return _ret;
 	}
 }
@@ -334,66 +334,66 @@ extern(Windows):
 	final EventRegistrationToken OnAdded(void delegate(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation), Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.Proximity.IPeerWatcher)this.asInterface(uuid("3cee21f8-2fa6-4679-9691-03c94a420f34"))).add_Added(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation), Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation)(fn), &tok));
 		return tok;
 	}
 	final void removeAdded(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).remove_Added(token));
+		Debug.OK((cast(Windows.Networking.Proximity.IPeerWatcher)this.asInterface(uuid("3cee21f8-2fa6-4679-9691-03c94a420f34"))).remove_Added(token));
 	}
 	final EventRegistrationToken OnRemoved(void delegate(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation), Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.Proximity.IPeerWatcher)this.asInterface(uuid("3cee21f8-2fa6-4679-9691-03c94a420f34"))).add_Removed(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation), Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation)(fn), &tok));
 		return tok;
 	}
 	final void removeRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).remove_Removed(token));
+		Debug.OK((cast(Windows.Networking.Proximity.IPeerWatcher)this.asInterface(uuid("3cee21f8-2fa6-4679-9691-03c94a420f34"))).remove_Removed(token));
 	}
 	final EventRegistrationToken OnUpdated(void delegate(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation), Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.Proximity.IPeerWatcher)this.asInterface(uuid("3cee21f8-2fa6-4679-9691-03c94a420f34"))).add_Updated(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation), Windows.Networking.Proximity.PeerWatcher, Windows.Networking.Proximity.PeerInformation)(fn), &tok));
 		return tok;
 	}
 	final void removeUpdated(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).remove_Updated(token));
+		Debug.OK((cast(Windows.Networking.Proximity.IPeerWatcher)this.asInterface(uuid("3cee21f8-2fa6-4679-9691-03c94a420f34"))).remove_Updated(token));
 	}
 	final EventRegistrationToken OnEnumerationCompleted(void delegate(Windows.Networking.Proximity.PeerWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, IInspectable), Windows.Networking.Proximity.PeerWatcher, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.Proximity.IPeerWatcher)this.asInterface(uuid("3cee21f8-2fa6-4679-9691-03c94a420f34"))).add_EnumerationCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, IInspectable), Windows.Networking.Proximity.PeerWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeEnumerationCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).remove_EnumerationCompleted(token));
+		Debug.OK((cast(Windows.Networking.Proximity.IPeerWatcher)this.asInterface(uuid("3cee21f8-2fa6-4679-9691-03c94a420f34"))).remove_EnumerationCompleted(token));
 	}
 	final EventRegistrationToken OnStopped(void delegate(Windows.Networking.Proximity.PeerWatcher, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, IInspectable), Windows.Networking.Proximity.PeerWatcher, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.Proximity.IPeerWatcher)this.asInterface(uuid("3cee21f8-2fa6-4679-9691-03c94a420f34"))).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Networking.Proximity.PeerWatcher, IInspectable), Windows.Networking.Proximity.PeerWatcher, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeStopped(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).remove_Stopped(token));
+		Debug.OK((cast(Windows.Networking.Proximity.IPeerWatcher)this.asInterface(uuid("3cee21f8-2fa6-4679-9691-03c94a420f34"))).remove_Stopped(token));
 	}
 	final Windows.Networking.Proximity.PeerWatcherStatus Status()
 	{
 		Windows.Networking.Proximity.PeerWatcherStatus _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).get_Status(&_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IPeerWatcher)this.asInterface(uuid("3cee21f8-2fa6-4679-9691-03c94a420f34"))).get_Status(&_ret));
 		return _ret;
 	}
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).abi_Start());
+		Debug.OK((cast(Windows.Networking.Proximity.IPeerWatcher)this.asInterface(uuid("3cee21f8-2fa6-4679-9691-03c94a420f34"))).abi_Start());
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.Networking.Proximity.IPeerWatcher).abi_Stop());
+		Debug.OK((cast(Windows.Networking.Proximity.IPeerWatcher)this.asInterface(uuid("3cee21f8-2fa6-4679-9691-03c94a420f34"))).abi_Stop());
 	}
 }
 
@@ -403,89 +403,89 @@ extern(Windows):
 	final INT64 SubscribeForMessage(HSTRING messageType, Windows.Networking.Proximity.MessageReceivedHandler messageReceivedHandler)
 	{
 		INT64 _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).abi_SubscribeForMessage(messageType, messageReceivedHandler, &_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_SubscribeForMessage(messageType, messageReceivedHandler, &_ret));
 		return _ret;
 	}
 	final INT64 PublishMessage(HSTRING messageType, HSTRING message)
 	{
 		INT64 _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).abi_PublishMessage(messageType, message, &_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishMessage(messageType, message, &_ret));
 		return _ret;
 	}
 	final INT64 PublishMessageWithCallback(HSTRING messageType, HSTRING message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler)
 	{
 		INT64 _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).abi_PublishMessageWithCallback(messageType, message, messageTransmittedHandler, &_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishMessageWithCallback(messageType, message, messageTransmittedHandler, &_ret));
 		return _ret;
 	}
 	final INT64 PublishBinaryMessage(HSTRING messageType, Windows.Storage.Streams.IBuffer message)
 	{
 		INT64 _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).abi_PublishBinaryMessage(messageType, message, &_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishBinaryMessage(messageType, message, &_ret));
 		return _ret;
 	}
 	final INT64 PublishBinaryMessageWithCallback(HSTRING messageType, Windows.Storage.Streams.IBuffer message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler)
 	{
 		INT64 _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).abi_PublishBinaryMessageWithCallback(messageType, message, messageTransmittedHandler, &_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishBinaryMessageWithCallback(messageType, message, messageTransmittedHandler, &_ret));
 		return _ret;
 	}
 	final INT64 PublishUriMessage(Windows.Foundation.Uri message)
 	{
 		INT64 _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).abi_PublishUriMessage(message, &_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishUriMessage(message, &_ret));
 		return _ret;
 	}
 	final INT64 PublishUriMessageWithCallback(Windows.Foundation.Uri message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler)
 	{
 		INT64 _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).abi_PublishUriMessageWithCallback(message, messageTransmittedHandler, &_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishUriMessageWithCallback(message, messageTransmittedHandler, &_ret));
 		return _ret;
 	}
 	final void StopSubscribingForMessage(INT64 subscriptionId)
 	{
-		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).abi_StopSubscribingForMessage(subscriptionId));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_StopSubscribingForMessage(subscriptionId));
 	}
 	final void StopPublishingMessage(INT64 messageId)
 	{
-		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).abi_StopPublishingMessage(messageId));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_StopPublishingMessage(messageId));
 	}
 	final EventRegistrationToken OnDeviceArrived(void delegate(Windows.Networking.Proximity.ProximityDevice) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).add_DeviceArrived(event!(Windows.Networking.Proximity.DeviceArrivedEventHandler, Windows.Networking.Proximity.ProximityDevice)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).add_DeviceArrived(event!(Windows.Networking.Proximity.DeviceArrivedEventHandler, Windows.Networking.Proximity.ProximityDevice)(fn), &tok));
 		return tok;
 	}
 	final void removeDeviceArrived(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).remove_DeviceArrived(cookie));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).remove_DeviceArrived(cookie));
 	}
 	final EventRegistrationToken OnDeviceDeparted(void delegate(Windows.Networking.Proximity.ProximityDevice) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).add_DeviceDeparted(event!(Windows.Networking.Proximity.DeviceDepartedEventHandler, Windows.Networking.Proximity.ProximityDevice)(fn), &tok));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).add_DeviceDeparted(event!(Windows.Networking.Proximity.DeviceDepartedEventHandler, Windows.Networking.Proximity.ProximityDevice)(fn), &tok));
 		return tok;
 	}
 	final void removeDeviceDeparted(EventRegistrationToken cookie)
 	{
-		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).remove_DeviceDeparted(cookie));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).remove_DeviceDeparted(cookie));
 	}
 	final UINT32 MaxMessageBytes()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).get_MaxMessageBytes(&_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).get_MaxMessageBytes(&_ret));
 		return _ret;
 	}
 	final ulong BitsPerSecond()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).get_BitsPerSecond(&_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).get_BitsPerSecond(&_ret));
 		return _ret;
 	}
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityDevice).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 
@@ -498,19 +498,19 @@ extern(Windows):
 	static HSTRING GetDeviceSelector()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IProximityDeviceStatics).abi_GetDeviceSelector(&_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
 		return _ret;
 	}
 	static Windows.Networking.Proximity.ProximityDevice GetDefault()
 	{
 		Windows.Networking.Proximity.ProximityDevice _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IProximityDeviceStatics).abi_GetDefault(&_ret));
+		Debug.OK(staticInstance.abi_GetDefault(&_ret));
 		return _ret;
 	}
 	static Windows.Networking.Proximity.ProximityDevice FromId(HSTRING deviceId)
 	{
 		Windows.Networking.Proximity.ProximityDevice _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Proximity.IProximityDeviceStatics).abi_FromId(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromId(deviceId, &_ret));
 		return _ret;
 	}
 }
@@ -521,25 +521,25 @@ extern(Windows):
 	final HSTRING MessageType()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityMessage).get_MessageType(&_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityMessage)this.asInterface(uuid("efab0782-f6e1-4675-a045-d8e320c24808"))).get_MessageType(&_ret));
 		return _ret;
 	}
 	final INT64 SubscriptionId()
 	{
 		INT64 _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityMessage).get_SubscriptionId(&_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityMessage)this.asInterface(uuid("efab0782-f6e1-4675-a045-d8e320c24808"))).get_SubscriptionId(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer Data()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityMessage).get_Data(&_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityMessage)this.asInterface(uuid("efab0782-f6e1-4675-a045-d8e320c24808"))).get_Data(&_ret));
 		return _ret;
 	}
 	final HSTRING DataAsString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.IProximityMessage).get_DataAsString(&_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityMessage)this.asInterface(uuid("efab0782-f6e1-4675-a045-d8e320c24808"))).get_DataAsString(&_ret));
 		return _ret;
 	}
 }
@@ -550,19 +550,19 @@ extern(Windows):
 	final Windows.Networking.Proximity.TriggeredConnectState State()
 	{
 		Windows.Networking.Proximity.TriggeredConnectState _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.ITriggeredConnectionStateChangedEventArgs).get_State(&_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.ITriggeredConnectionStateChangedEventArgs)this.asInterface(uuid("c6a780ad-f6e1-4d54-96e2-33f620bca88a"))).get_State(&_ret));
 		return _ret;
 	}
 	final UINT32 Id()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.ITriggeredConnectionStateChangedEventArgs).get_Id(&_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.ITriggeredConnectionStateChangedEventArgs)this.asInterface(uuid("c6a780ad-f6e1-4d54-96e2-33f620bca88a"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.StreamSocket Socket()
 	{
 		Windows.Networking.Sockets.StreamSocket _ret;
-		Debug.OK(this.as!(Windows.Networking.Proximity.ITriggeredConnectionStateChangedEventArgs).get_Socket(&_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.ITriggeredConnectionStateChangedEventArgs)this.asInterface(uuid("c6a780ad-f6e1-4d54-96e2-33f620bca88a"))).get_Socket(&_ret));
 		return _ret;
 	}
 }

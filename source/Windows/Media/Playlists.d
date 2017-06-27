@@ -27,25 +27,25 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVector!(Windows.Storage.StorageFile) Files()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Storage.StorageFile) _ret;
-		Debug.OK(this.as!(Windows.Media.Playlists.IPlaylist).get_Files(&_ret));
+		Debug.OK((cast(Windows.Media.Playlists.IPlaylist)this.asInterface(uuid("803736f5-cf44-4d97-83b3-7a089e9ab663"))).get_Files(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction SaveAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Playlists.IPlaylist).abi_SaveAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Playlists.IPlaylist)this.asInterface(uuid("803736f5-cf44-4d97-83b3-7a089e9ab663"))).abi_SaveAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) SaveAsAsync(Windows.Storage.IStorageFolder saveLocation, HSTRING desiredName, Windows.Storage.NameCollisionOption option)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
-		Debug.OK(this.as!(Windows.Media.Playlists.IPlaylist).abi_SaveAsAsync(saveLocation, desiredName, option, &_ret));
+		Debug.OK((cast(Windows.Media.Playlists.IPlaylist)this.asInterface(uuid("803736f5-cf44-4d97-83b3-7a089e9ab663"))).abi_SaveAsAsync(saveLocation, desiredName, option, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) SaveAsWithFormatAsync(Windows.Storage.IStorageFolder saveLocation, HSTRING desiredName, Windows.Storage.NameCollisionOption option, Windows.Media.Playlists.PlaylistFormat playlistFormat)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
-		Debug.OK(this.as!(Windows.Media.Playlists.IPlaylist).abi_SaveAsWithFormatAsync(saveLocation, desiredName, option, playlistFormat, &_ret));
+		Debug.OK((cast(Windows.Media.Playlists.IPlaylist)this.asInterface(uuid("803736f5-cf44-4d97-83b3-7a089e9ab663"))).abi_SaveAsWithFormatAsync(saveLocation, desiredName, option, playlistFormat, &_ret));
 		return _ret;
 	}
 
@@ -58,14 +58,14 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Media.Playlists.Playlist) LoadAsync(Windows.Storage.IStorageFile file)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Playlists.Playlist) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Playlists.IPlaylistStatics).abi_LoadAsync(file, &_ret));
+		Debug.OK(staticInstance.abi_LoadAsync(file, &_ret));
 		return _ret;
 	}
 	static Playlist New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Playlist).abi_ActivateInstance(&ret));
-		return ret.as!(Playlist);
+		return cast(Playlist) ret;
 	}
 }
 

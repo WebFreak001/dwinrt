@@ -459,110 +459,110 @@ extern(Windows):
 	final bool IsEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutData).get_IsEnabled(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutData)this.asInterface(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7"))).get_IsEnabled(&_ret));
 		return _ret;
 	}
 	final void IsEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutData).set_IsEnabled(value));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutData)this.asInterface(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7"))).set_IsEnabled(value));
 	}
 	final HSTRING DefaultAppName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutData).get_DefaultAppName(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutData)this.asInterface(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7"))).get_DefaultAppName(&_ret));
 		return _ret;
 	}
 	final void DefaultAppName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutData).set_DefaultAppName(value));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutData)this.asInterface(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7"))).set_DefaultAppName(value));
 	}
 	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) AppNames()
 	{
 		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutData).get_AppNames(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutData)this.asInterface(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7"))).get_AppNames(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) DateOfManufacture()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutData).get_DateOfManufacture(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutData)this.asInterface(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7"))).get_DateOfManufacture(&_ret));
 		return _ret;
 	}
 	final void DateOfManufacture(Windows.Foundation.IReference!(Windows.Foundation.DateTime) value)
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutData).set_DateOfManufacture(value));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutData)this.asInterface(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7"))).set_DateOfManufacture(value));
 	}
 	final HSTRING DefaultDescription()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutData).get_DefaultDescription(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutData)this.asInterface(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7"))).get_DefaultDescription(&_ret));
 		return _ret;
 	}
 	final void DefaultDescription(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutData).set_DefaultDescription(value));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutData)this.asInterface(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7"))).set_DefaultDescription(value));
 	}
 	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) Descriptions()
 	{
 		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutData).get_Descriptions(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutData)this.asInterface(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7"))).get_Descriptions(&_ret));
 		return _ret;
 	}
 	final HSTRING DefaultManufacturer()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutData).get_DefaultManufacturer(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutData)this.asInterface(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7"))).get_DefaultManufacturer(&_ret));
 		return _ret;
 	}
 	final void DefaultManufacturer(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutData).set_DefaultManufacturer(value));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutData)this.asInterface(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7"))).set_DefaultManufacturer(value));
 	}
 	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) Manufacturers()
 	{
 		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutData).get_Manufacturers(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutData)this.asInterface(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7"))).get_Manufacturers(&_ret));
 		return _ret;
 	}
 	final HSTRING ModelNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutData).get_ModelNumber(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutData)this.asInterface(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7"))).get_ModelNumber(&_ret));
 		return _ret;
 	}
 	final void ModelNumber(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutData).set_ModelNumber(value));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutData)this.asInterface(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7"))).set_ModelNumber(value));
 	}
 	final HSTRING SoftwareVersion()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutData).get_SoftwareVersion(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutData)this.asInterface(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7"))).get_SoftwareVersion(&_ret));
 		return _ret;
 	}
 	final void SoftwareVersion(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutData).set_SoftwareVersion(value));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutData)this.asInterface(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7"))).set_SoftwareVersion(value));
 	}
 	final Windows.Foundation.Uri SupportUrl()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutData).get_SupportUrl(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutData)this.asInterface(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7"))).get_SupportUrl(&_ret));
 		return _ret;
 	}
 	final void SupportUrl(Windows.Foundation.Uri value)
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutData).set_SupportUrl(value));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutData)this.asInterface(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7"))).set_SupportUrl(value));
 	}
 	final GUID AppId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutData).get_AppId(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutData)this.asInterface(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7"))).get_AppId(&_ret));
 		return _ret;
 	}
 	final void AppId(GUID value)
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutData).set_AppId(value));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutData)this.asInterface(uuid("e5a9bf00-1fa2-4839-93ef-f9df404890f7"))).set_AppId(value));
 	}
 }
 
@@ -572,97 +572,97 @@ extern(Windows):
 	final INT32 Status()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutDataView).get_Status(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutDataView)this.asInterface(uuid("6823111f-6212-4934-9c48-e19ca4984288"))).get_Status(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) Properties()
 	{
 		Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutDataView).get_Properties(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutDataView)this.asInterface(uuid("6823111f-6212-4934-9c48-e19ca4984288"))).get_Properties(&_ret));
 		return _ret;
 	}
 	final HSTRING AJSoftwareVersion()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutDataView).get_AJSoftwareVersion(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutDataView)this.asInterface(uuid("6823111f-6212-4934-9c48-e19ca4984288"))).get_AJSoftwareVersion(&_ret));
 		return _ret;
 	}
 	final GUID AppId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutDataView).get_AppId(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutDataView)this.asInterface(uuid("6823111f-6212-4934-9c48-e19ca4984288"))).get_AppId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) DateOfManufacture()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutDataView).get_DateOfManufacture(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutDataView)this.asInterface(uuid("6823111f-6212-4934-9c48-e19ca4984288"))).get_DateOfManufacture(&_ret));
 		return _ret;
 	}
 	final Windows.Globalization.Language DefaultLanguage()
 	{
 		Windows.Globalization.Language _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutDataView).get_DefaultLanguage(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutDataView)this.asInterface(uuid("6823111f-6212-4934-9c48-e19ca4984288"))).get_DefaultLanguage(&_ret));
 		return _ret;
 	}
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutDataView).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutDataView)this.asInterface(uuid("6823111f-6212-4934-9c48-e19ca4984288"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final HSTRING HardwareVersion()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutDataView).get_HardwareVersion(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutDataView)this.asInterface(uuid("6823111f-6212-4934-9c48-e19ca4984288"))).get_HardwareVersion(&_ret));
 		return _ret;
 	}
 	final HSTRING ModelNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutDataView).get_ModelNumber(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutDataView)this.asInterface(uuid("6823111f-6212-4934-9c48-e19ca4984288"))).get_ModelNumber(&_ret));
 		return _ret;
 	}
 	final HSTRING SoftwareVersion()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutDataView).get_SoftwareVersion(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutDataView)this.asInterface(uuid("6823111f-6212-4934-9c48-e19ca4984288"))).get_SoftwareVersion(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Globalization.Language) SupportedLanguages()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Globalization.Language) _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutDataView).get_SupportedLanguages(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutDataView)this.asInterface(uuid("6823111f-6212-4934-9c48-e19ca4984288"))).get_SupportedLanguages(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Uri SupportUrl()
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutDataView).get_SupportUrl(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutDataView)this.asInterface(uuid("6823111f-6212-4934-9c48-e19ca4984288"))).get_SupportUrl(&_ret));
 		return _ret;
 	}
 	final HSTRING AppName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutDataView).get_AppName(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutDataView)this.asInterface(uuid("6823111f-6212-4934-9c48-e19ca4984288"))).get_AppName(&_ret));
 		return _ret;
 	}
 	final HSTRING Description()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutDataView).get_Description(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutDataView)this.asInterface(uuid("6823111f-6212-4934-9c48-e19ca4984288"))).get_Description(&_ret));
 		return _ret;
 	}
 	final HSTRING DeviceName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutDataView).get_DeviceName(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutDataView)this.asInterface(uuid("6823111f-6212-4934-9c48-e19ca4984288"))).get_DeviceName(&_ret));
 		return _ret;
 	}
 	final HSTRING Manufacturer()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAboutDataView).get_Manufacturer(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAboutDataView)this.asInterface(uuid("6823111f-6212-4934-9c48-e19ca4984288"))).get_Manufacturer(&_ret));
 		return _ret;
 	}
 
@@ -675,13 +675,13 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView) GetDataBySessionPortAsync(HSTRING uniqueName, Windows.Devices.AllJoyn.AllJoynBusAttachment busAttachment, UINT16 sessionPort)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynAboutDataViewStatics).abi_GetDataBySessionPortAsync(uniqueName, busAttachment, sessionPort, &_ret));
+		Debug.OK(staticInstance.abi_GetDataBySessionPortAsync(uniqueName, busAttachment, sessionPort, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView) GetDataBySessionPortWithLanguageAsync(HSTRING uniqueName, Windows.Devices.AllJoyn.AllJoynBusAttachment busAttachment, UINT16 sessionPort, Windows.Globalization.Language language)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynAboutDataViewStatics).abi_GetDataBySessionPortWithLanguageAsync(uniqueName, busAttachment, sessionPort, language, &_ret));
+		Debug.OK(staticInstance.abi_GetDataBySessionPortWithLanguageAsync(uniqueName, busAttachment, sessionPort, language, &_ret));
 		return _ret;
 	}
 }
@@ -692,42 +692,42 @@ extern(Windows):
 	final HSTRING UniqueName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoinerEventArgs).get_UniqueName(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoinerEventArgs)this.asInterface(uuid("4efb5365-3e8a-4257-8f10-539ce0d56c0f"))).get_UniqueName(&_ret));
 		return _ret;
 	}
 	final UINT16 SessionPort()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoinerEventArgs).get_SessionPort(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoinerEventArgs)this.asInterface(uuid("4efb5365-3e8a-4257-8f10-539ce0d56c0f"))).get_SessionPort(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.AllJoyn.AllJoynTrafficType TrafficType()
 	{
 		Windows.Devices.AllJoyn.AllJoynTrafficType _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoinerEventArgs).get_TrafficType(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoinerEventArgs)this.asInterface(uuid("4efb5365-3e8a-4257-8f10-539ce0d56c0f"))).get_TrafficType(&_ret));
 		return _ret;
 	}
 	final bool SamePhysicalNode()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoinerEventArgs).get_SamePhysicalNode(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoinerEventArgs)this.asInterface(uuid("4efb5365-3e8a-4257-8f10-539ce0d56c0f"))).get_SamePhysicalNode(&_ret));
 		return _ret;
 	}
 	final bool SameNetwork()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoinerEventArgs).get_SameNetwork(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoinerEventArgs)this.asInterface(uuid("4efb5365-3e8a-4257-8f10-539ce0d56c0f"))).get_SameNetwork(&_ret));
 		return _ret;
 	}
 	final void Accept()
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoinerEventArgs).abi_Accept());
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoinerEventArgs)this.asInterface(uuid("4efb5365-3e8a-4257-8f10-539ce0d56c0f"))).abi_Accept());
 	}
 	static Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs New(HSTRING uniqueName, UINT16 sessionPort, Windows.Devices.AllJoyn.AllJoynTrafficType trafficType, ubyte proximity, Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoiner acceptSessionJoiner)
 	{
 		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoinerEventArgsFactory);
 		Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs _ret;
-		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoinerEventArgsFactory).abi_Create(uniqueName, sessionPort, trafficType, proximity, acceptSessionJoiner, &_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoinerEventArgsFactory)factory.asInterface(uuid("b4435bc0-6145-429e-84db-d5bfe772b14f"))).abi_Create(uniqueName, sessionPort, trafficType, proximity, acceptSessionJoiner, &_ret));
 		return _ret;
 	}
 }
@@ -738,19 +738,19 @@ extern(Windows):
 	final Windows.Devices.AllJoyn.AllJoynAuthenticationMechanism AuthenticationMechanism()
 	{
 		Windows.Devices.AllJoyn.AllJoynAuthenticationMechanism _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAuthenticationCompleteEventArgs).get_AuthenticationMechanism(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAuthenticationCompleteEventArgs)this.asInterface(uuid("97b4701c-15dc-4b53-b6a4-7d134300d7bf"))).get_AuthenticationMechanism(&_ret));
 		return _ret;
 	}
 	final HSTRING PeerUniqueName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAuthenticationCompleteEventArgs).get_PeerUniqueName(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAuthenticationCompleteEventArgs)this.asInterface(uuid("97b4701c-15dc-4b53-b6a4-7d134300d7bf"))).get_PeerUniqueName(&_ret));
 		return _ret;
 	}
 	final bool Succeeded()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynAuthenticationCompleteEventArgs).get_Succeeded(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynAuthenticationCompleteEventArgs)this.asInterface(uuid("97b4701c-15dc-4b53-b6a4-7d134300d7bf"))).get_Succeeded(&_ret));
 		return _ret;
 	}
 }
@@ -761,118 +761,118 @@ extern(Windows):
 	final Windows.Devices.AllJoyn.AllJoynAboutData AboutData()
 	{
 		Windows.Devices.AllJoyn.AllJoynAboutData _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).get_AboutData(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment)this.asInterface(uuid("f309f153-1eed-42c3-a20e-436d41fe62f6"))).get_AboutData(&_ret));
 		return _ret;
 	}
 	final HSTRING ConnectionSpecification()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).get_ConnectionSpecification(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment)this.asInterface(uuid("f309f153-1eed-42c3-a20e-436d41fe62f6"))).get_ConnectionSpecification(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.AllJoyn.AllJoynBusAttachmentState State()
 	{
 		Windows.Devices.AllJoyn.AllJoynBusAttachmentState _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).get_State(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment)this.asInterface(uuid("f309f153-1eed-42c3-a20e-436d41fe62f6"))).get_State(&_ret));
 		return _ret;
 	}
 	final HSTRING UniqueName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).get_UniqueName(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment)this.asInterface(uuid("f309f153-1eed-42c3-a20e-436d41fe62f6"))).get_UniqueName(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(INT32) PingAsync(HSTRING uniqueName)
 	{
 		Windows.Foundation.IAsyncOperation!(INT32) _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).abi_PingAsync(uniqueName, &_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment)this.asInterface(uuid("f309f153-1eed-42c3-a20e-436d41fe62f6"))).abi_PingAsync(uniqueName, &_ret));
 		return _ret;
 	}
 	final void Connect()
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).abi_Connect());
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment)this.asInterface(uuid("f309f153-1eed-42c3-a20e-436d41fe62f6"))).abi_Connect());
 	}
 	final void Disconnect()
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).abi_Disconnect());
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment)this.asInterface(uuid("f309f153-1eed-42c3-a20e-436d41fe62f6"))).abi_Disconnect());
 	}
 	final EventRegistrationToken OnStateChanged(void delegate(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynBusAttachmentStateChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynBusAttachmentStateChangedEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynBusAttachmentStateChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment)this.asInterface(uuid("f309f153-1eed-42c3-a20e-436d41fe62f6"))).add_StateChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynBusAttachmentStateChangedEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynBusAttachmentStateChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStateChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).remove_StateChanged(token));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment)this.asInterface(uuid("f309f153-1eed-42c3-a20e-436d41fe62f6"))).remove_StateChanged(token));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Devices.AllJoyn.AllJoynAuthenticationMechanism) AuthenticationMechanisms()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Devices.AllJoyn.AllJoynAuthenticationMechanism) _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).get_AuthenticationMechanisms(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment)this.asInterface(uuid("f309f153-1eed-42c3-a20e-436d41fe62f6"))).get_AuthenticationMechanisms(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnCredentialsRequested(void delegate(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).add_CredentialsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsRequestedEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment)this.asInterface(uuid("f309f153-1eed-42c3-a20e-436d41fe62f6"))).add_CredentialsRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsRequestedEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCredentialsRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).remove_CredentialsRequested(token));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment)this.asInterface(uuid("f309f153-1eed-42c3-a20e-436d41fe62f6"))).remove_CredentialsRequested(token));
 	}
 	final EventRegistrationToken OnCredentialsVerificationRequested(void delegate(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsVerificationRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).add_CredentialsVerificationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsVerificationRequestedEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsVerificationRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment)this.asInterface(uuid("f309f153-1eed-42c3-a20e-436d41fe62f6"))).add_CredentialsVerificationRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsVerificationRequestedEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynCredentialsVerificationRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCredentialsVerificationRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).remove_CredentialsVerificationRequested(token));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment)this.asInterface(uuid("f309f153-1eed-42c3-a20e-436d41fe62f6"))).remove_CredentialsVerificationRequested(token));
 	}
 	final EventRegistrationToken OnAuthenticationComplete(void delegate(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAuthenticationCompleteEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).add_AuthenticationComplete(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAuthenticationCompleteEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAuthenticationCompleteEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment)this.asInterface(uuid("f309f153-1eed-42c3-a20e-436d41fe62f6"))).add_AuthenticationComplete(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAuthenticationCompleteEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAuthenticationCompleteEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAuthenticationComplete(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment).remove_AuthenticationComplete(token));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment)this.asInterface(uuid("f309f153-1eed-42c3-a20e-436d41fe62f6"))).remove_AuthenticationComplete(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView) GetAboutDataAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView) _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment2).abi_GetAboutDataAsync(serviceInfo, &_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment2)this.asInterface(uuid("3474cb1e-2368-43b2-b43e-6a3ac1278d98"))).abi_GetAboutDataAsync(serviceInfo, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView) GetAboutDataWithLanguageAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo, Windows.Globalization.Language language)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView) _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment2).abi_GetAboutDataWithLanguageAsync(serviceInfo, language, &_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment2)this.asInterface(uuid("3474cb1e-2368-43b2-b43e-6a3ac1278d98"))).abi_GetAboutDataWithLanguageAsync(serviceInfo, language, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnAcceptSessionJoinerRequested(void delegate(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment2).add_AcceptSessionJoinerRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment2)this.asInterface(uuid("3474cb1e-2368-43b2-b43e-6a3ac1278d98"))).add_AcceptSessionJoinerRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAcceptSessionJoinerRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment2).remove_AcceptSessionJoinerRequested(token));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment2)this.asInterface(uuid("3474cb1e-2368-43b2-b43e-6a3ac1278d98"))).remove_AcceptSessionJoinerRequested(token));
 	}
 	final EventRegistrationToken OnSessionJoined(void delegate(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment2).add_SessionJoined(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment2)this.asInterface(uuid("3474cb1e-2368-43b2-b43e-6a3ac1278d98"))).add_SessionJoined(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs), Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSessionJoined(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachment2).remove_SessionJoined(token));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment2)this.asInterface(uuid("3474cb1e-2368-43b2-b43e-6a3ac1278d98"))).remove_SessionJoined(token));
 	}
 
 	private static Windows.Devices.AllJoyn.IAllJoynBusAttachmentStatics _staticInstance;
@@ -884,26 +884,26 @@ extern(Windows):
 	static Windows.Devices.AllJoyn.AllJoynBusAttachment GetDefault()
 	{
 		Windows.Devices.AllJoyn.AllJoynBusAttachment _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachmentStatics).abi_GetDefault(&_ret));
+		Debug.OK(staticInstance.abi_GetDefault(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Enumeration.DeviceWatcher GetWatcher(Windows.Foundation.Collections.IIterable!(HSTRING) requiredInterfaces)
 	{
 		Windows.Devices.Enumeration.DeviceWatcher _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachmentStatics).abi_GetWatcher(requiredInterfaces, &_ret));
+		Debug.OK(staticInstance.abi_GetWatcher(requiredInterfaces, &_ret));
 		return _ret;
 	}
 	static AllJoynBusAttachment New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(AllJoynBusAttachment).abi_ActivateInstance(&ret));
-		return ret.as!(AllJoynBusAttachment);
+		return cast(AllJoynBusAttachment) ret;
 	}
 	static Windows.Devices.AllJoyn.AllJoynBusAttachment New(HSTRING connectionSpecification)
 	{
 		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynBusAttachmentFactory);
 		Windows.Devices.AllJoyn.AllJoynBusAttachment _ret;
-		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachmentFactory).abi_Create(connectionSpecification, &_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachmentFactory)factory.asInterface(uuid("642ef1a4-ad85-4ddf-90ae-604452b22288"))).abi_Create(connectionSpecification, &_ret));
 		return _ret;
 	}
 }
@@ -914,13 +914,13 @@ extern(Windows):
 	final Windows.Devices.AllJoyn.AllJoynBusAttachmentState State()
 	{
 		Windows.Devices.AllJoyn.AllJoynBusAttachmentState _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachmentStateChangedEventArgs).get_State(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachmentStateChangedEventArgs)this.asInterface(uuid("d82e75f4-c02a-41ec-a8d5-eab1558953aa"))).get_State(&_ret));
 		return _ret;
 	}
 	final INT32 Status()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusAttachmentStateChangedEventArgs).get_Status(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachmentStateChangedEventArgs)this.asInterface(uuid("d82e75f4-c02a-41ec-a8d5-eab1558953aa"))).get_Status(&_ret));
 		return _ret;
 	}
 }
@@ -930,56 +930,56 @@ interface AllJoynBusObject : Windows.Devices.AllJoyn.IAllJoynBusObject
 extern(Windows):
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusObject).abi_Start());
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusObject)this.asInterface(uuid("e8fd825e-f73a-490c-8804-04e026643047"))).abi_Start());
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusObject).abi_Stop());
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusObject)this.asInterface(uuid("e8fd825e-f73a-490c-8804-04e026643047"))).abi_Stop());
 	}
 	final void AddProducer(Windows.Devices.AllJoyn.IAllJoynProducer producer)
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusObject).abi_AddProducer(producer));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusObject)this.asInterface(uuid("e8fd825e-f73a-490c-8804-04e026643047"))).abi_AddProducer(producer));
 	}
 	final Windows.Devices.AllJoyn.AllJoynBusAttachment BusAttachment()
 	{
 		Windows.Devices.AllJoyn.AllJoynBusAttachment _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusObject).get_BusAttachment(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusObject)this.asInterface(uuid("e8fd825e-f73a-490c-8804-04e026643047"))).get_BusAttachment(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.AllJoyn.AllJoynSession Session()
 	{
 		Windows.Devices.AllJoyn.AllJoynSession _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusObject).get_Session(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusObject)this.asInterface(uuid("e8fd825e-f73a-490c-8804-04e026643047"))).get_Session(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnStopped(void delegate(Windows.Devices.AllJoyn.AllJoynBusObject, Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusObject).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusObject, Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs), Windows.Devices.AllJoyn.AllJoynBusObject, Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusObject)this.asInterface(uuid("e8fd825e-f73a-490c-8804-04e026643047"))).add_Stopped(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusObject, Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs), Windows.Devices.AllJoyn.AllJoynBusObject, Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStopped(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusObject).remove_Stopped(token));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusObject)this.asInterface(uuid("e8fd825e-f73a-490c-8804-04e026643047"))).remove_Stopped(token));
 	}
 	static AllJoynBusObject New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(AllJoynBusObject).abi_ActivateInstance(&ret));
-		return ret.as!(AllJoynBusObject);
+		return cast(AllJoynBusObject) ret;
 	}
 	static Windows.Devices.AllJoyn.AllJoynBusObject New(HSTRING objectPath)
 	{
 		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynBusObjectFactory);
 		Windows.Devices.AllJoyn.AllJoynBusObject _ret;
-		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynBusObjectFactory).abi_Create(objectPath, &_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusObjectFactory)factory.asInterface(uuid("2c2f9f0b-8e02-4f9c-ac27-ea6dad5d3b50"))).abi_Create(objectPath, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.AllJoyn.AllJoynBusObject New(HSTRING objectPath, Windows.Devices.AllJoyn.AllJoynBusAttachment busAttachment)
 	{
 		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynBusObjectFactory);
 		Windows.Devices.AllJoyn.AllJoynBusObject _ret;
-		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynBusObjectFactory).abi_CreateWithBusAttachment(objectPath, busAttachment, &_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusObjectFactory)factory.asInterface(uuid("2c2f9f0b-8e02-4f9c-ac27-ea6dad5d3b50"))).abi_CreateWithBusAttachment(objectPath, busAttachment, &_ret));
 		return _ret;
 	}
 }
@@ -990,14 +990,14 @@ extern(Windows):
 	final INT32 Status()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynBusObjectStoppedEventArgs).get_Status(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusObjectStoppedEventArgs)this.asInterface(uuid("de102115-ef8e-4d42-b93b-a2ae74519766"))).get_Status(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs New(INT32 status)
 	{
 		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynBusObjectStoppedEventArgsFactory);
 		Windows.Devices.AllJoyn.AllJoynBusObjectStoppedEventArgs _ret;
-		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynBusObjectStoppedEventArgsFactory).abi_Create(status, &_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusObjectStoppedEventArgsFactory)factory.asInterface(uuid("6b22fd48-d0a3-4255-953a-4772b4028073"))).abi_Create(status, &_ret));
 		return _ret;
 	}
 }
@@ -1008,38 +1008,38 @@ extern(Windows):
 	final Windows.Devices.AllJoyn.AllJoynAuthenticationMechanism AuthenticationMechanism()
 	{
 		Windows.Devices.AllJoyn.AllJoynAuthenticationMechanism _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynCredentials).get_AuthenticationMechanism(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynCredentials)this.asInterface(uuid("824650f2-a190-40b1-abab-349ec244dfaa"))).get_AuthenticationMechanism(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Cryptography.Certificates.Certificate Certificate()
 	{
 		Windows.Security.Cryptography.Certificates.Certificate _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynCredentials).get_Certificate(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynCredentials)this.asInterface(uuid("824650f2-a190-40b1-abab-349ec244dfaa"))).get_Certificate(&_ret));
 		return _ret;
 	}
 	final void Certificate(Windows.Security.Cryptography.Certificates.Certificate value)
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynCredentials).set_Certificate(value));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynCredentials)this.asInterface(uuid("824650f2-a190-40b1-abab-349ec244dfaa"))).set_Certificate(value));
 	}
 	final Windows.Security.Credentials.PasswordCredential PasswordCredential()
 	{
 		Windows.Security.Credentials.PasswordCredential _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynCredentials).get_PasswordCredential(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynCredentials)this.asInterface(uuid("824650f2-a190-40b1-abab-349ec244dfaa"))).get_PasswordCredential(&_ret));
 		return _ret;
 	}
 	final void PasswordCredential(Windows.Security.Credentials.PasswordCredential value)
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynCredentials).set_PasswordCredential(value));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynCredentials)this.asInterface(uuid("824650f2-a190-40b1-abab-349ec244dfaa"))).set_PasswordCredential(value));
 	}
 	final Windows.Foundation.TimeSpan Timeout()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynCredentials).get_Timeout(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynCredentials)this.asInterface(uuid("824650f2-a190-40b1-abab-349ec244dfaa"))).get_Timeout(&_ret));
 		return _ret;
 	}
 	final void Timeout(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynCredentials).set_Timeout(value));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynCredentials)this.asInterface(uuid("824650f2-a190-40b1-abab-349ec244dfaa"))).set_Timeout(value));
 	}
 }
 
@@ -1049,31 +1049,31 @@ extern(Windows):
 	final UINT16 AttemptCount()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynCredentialsRequestedEventArgs).get_AttemptCount(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynCredentialsRequestedEventArgs)this.asInterface(uuid("6a87e34e-b069-4b80-9e1a-41bc837c65d2"))).get_AttemptCount(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.AllJoyn.AllJoynCredentials Credentials()
 	{
 		Windows.Devices.AllJoyn.AllJoynCredentials _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynCredentialsRequestedEventArgs).get_Credentials(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynCredentialsRequestedEventArgs)this.asInterface(uuid("6a87e34e-b069-4b80-9e1a-41bc837c65d2"))).get_Credentials(&_ret));
 		return _ret;
 	}
 	final HSTRING PeerUniqueName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynCredentialsRequestedEventArgs).get_PeerUniqueName(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynCredentialsRequestedEventArgs)this.asInterface(uuid("6a87e34e-b069-4b80-9e1a-41bc837c65d2"))).get_PeerUniqueName(&_ret));
 		return _ret;
 	}
 	final HSTRING RequestedUserName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynCredentialsRequestedEventArgs).get_RequestedUserName(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynCredentialsRequestedEventArgs)this.asInterface(uuid("6a87e34e-b069-4b80-9e1a-41bc837c65d2"))).get_RequestedUserName(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynCredentialsRequestedEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynCredentialsRequestedEventArgs)this.asInterface(uuid("6a87e34e-b069-4b80-9e1a-41bc837c65d2"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -1084,47 +1084,47 @@ extern(Windows):
 	final Windows.Devices.AllJoyn.AllJoynAuthenticationMechanism AuthenticationMechanism()
 	{
 		Windows.Devices.AllJoyn.AllJoynAuthenticationMechanism _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynCredentialsVerificationRequestedEventArgs).get_AuthenticationMechanism(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynCredentialsVerificationRequestedEventArgs)this.asInterface(uuid("800a7612-b805-44af-a2e1-792ab655a2d0"))).get_AuthenticationMechanism(&_ret));
 		return _ret;
 	}
 	final HSTRING PeerUniqueName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynCredentialsVerificationRequestedEventArgs).get_PeerUniqueName(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynCredentialsVerificationRequestedEventArgs)this.asInterface(uuid("800a7612-b805-44af-a2e1-792ab655a2d0"))).get_PeerUniqueName(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Cryptography.Certificates.Certificate PeerCertificate()
 	{
 		Windows.Security.Cryptography.Certificates.Certificate _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynCredentialsVerificationRequestedEventArgs).get_PeerCertificate(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynCredentialsVerificationRequestedEventArgs)this.asInterface(uuid("800a7612-b805-44af-a2e1-792ab655a2d0"))).get_PeerCertificate(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.SocketSslErrorSeverity PeerCertificateErrorSeverity()
 	{
 		Windows.Networking.Sockets.SocketSslErrorSeverity _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynCredentialsVerificationRequestedEventArgs).get_PeerCertificateErrorSeverity(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynCredentialsVerificationRequestedEventArgs)this.asInterface(uuid("800a7612-b805-44af-a2e1-792ab655a2d0"))).get_PeerCertificateErrorSeverity(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) PeerCertificateErrors()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.ChainValidationResult) _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynCredentialsVerificationRequestedEventArgs).get_PeerCertificateErrors(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynCredentialsVerificationRequestedEventArgs)this.asInterface(uuid("800a7612-b805-44af-a2e1-792ab655a2d0"))).get_PeerCertificateErrors(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) PeerIntermediateCertificates()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynCredentialsVerificationRequestedEventArgs).get_PeerIntermediateCertificates(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynCredentialsVerificationRequestedEventArgs)this.asInterface(uuid("800a7612-b805-44af-a2e1-792ab655a2d0"))).get_PeerIntermediateCertificates(&_ret));
 		return _ret;
 	}
 	final void Accept()
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynCredentialsVerificationRequestedEventArgs).abi_Accept());
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynCredentialsVerificationRequestedEventArgs)this.asInterface(uuid("800a7612-b805-44af-a2e1-792ab655a2d0"))).abi_Accept());
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynCredentialsVerificationRequestedEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynCredentialsVerificationRequestedEventArgs)this.asInterface(uuid("800a7612-b805-44af-a2e1-792ab655a2d0"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -1135,14 +1135,14 @@ extern(Windows):
 	final HSTRING SenderUniqueName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynMessageInfo).get_SenderUniqueName(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynMessageInfo)this.asInterface(uuid("ff2b0127-2c12-4859-aa3a-c74461ee814c"))).get_SenderUniqueName(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.AllJoyn.AllJoynMessageInfo New(HSTRING senderUniqueName)
 	{
 		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynMessageInfoFactory);
 		Windows.Devices.AllJoyn.AllJoynMessageInfo _ret;
-		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynMessageInfoFactory).abi_Create(senderUniqueName, &_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynMessageInfoFactory)factory.asInterface(uuid("34664c2a-8289-43d4-b4a8-3f4de359f043"))).abi_Create(senderUniqueName, &_ret));
 		return _ret;
 	}
 }
@@ -1153,14 +1153,14 @@ extern(Windows):
 	final INT32 Status()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynProducerStoppedEventArgs).get_Status(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynProducerStoppedEventArgs)this.asInterface(uuid("51309770-4937-492d-8080-236439987ceb"))).get_Status(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.AllJoyn.AllJoynProducerStoppedEventArgs New(INT32 status)
 	{
 		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynProducerStoppedEventArgsFactory);
 		Windows.Devices.AllJoyn.AllJoynProducerStoppedEventArgs _ret;
-		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynProducerStoppedEventArgsFactory).abi_Create(status, &_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynProducerStoppedEventArgsFactory)factory.asInterface(uuid("56529961-b219-4d6e-9f78-fa3f99fa8fe5"))).abi_Create(status, &_ret));
 		return _ret;
 	}
 }
@@ -1171,19 +1171,19 @@ extern(Windows):
 	final HSTRING UniqueName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynServiceInfo).get_UniqueName(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynServiceInfo)this.asInterface(uuid("4cbe8209-b93e-4182-999b-ddd000f9c575"))).get_UniqueName(&_ret));
 		return _ret;
 	}
 	final HSTRING ObjectPath()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynServiceInfo).get_ObjectPath(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynServiceInfo)this.asInterface(uuid("4cbe8209-b93e-4182-999b-ddd000f9c575"))).get_ObjectPath(&_ret));
 		return _ret;
 	}
 	final UINT16 SessionPort()
 	{
 		UINT16 _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynServiceInfo).get_SessionPort(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynServiceInfo)this.asInterface(uuid("4cbe8209-b93e-4182-999b-ddd000f9c575"))).get_SessionPort(&_ret));
 		return _ret;
 	}
 
@@ -1196,14 +1196,14 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynServiceInfo) FromIdAsync(HSTRING deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynServiceInfo) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynServiceInfoStatics).abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.AllJoyn.AllJoynServiceInfo New(HSTRING uniqueName, HSTRING objectPath, UINT16 sessionPort)
 	{
 		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynServiceInfoFactory);
 		Windows.Devices.AllJoyn.AllJoynServiceInfo _ret;
-		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynServiceInfoFactory).abi_Create(uniqueName, objectPath, sessionPort, &_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynServiceInfoFactory)factory.asInterface(uuid("7581dabd-fe03-4f4b-94a4-f02fdcbd11b8"))).abi_Create(uniqueName, objectPath, sessionPort, &_ret));
 		return _ret;
 	}
 }
@@ -1214,14 +1214,14 @@ extern(Windows):
 	final HSTRING UniqueName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynServiceInfoRemovedEventArgs).get_UniqueName(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynServiceInfoRemovedEventArgs)this.asInterface(uuid("3057a95f-1d3f-41f3-8969-e32792627396"))).get_UniqueName(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.AllJoyn.AllJoynServiceInfoRemovedEventArgs New(HSTRING uniqueName)
 	{
 		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynServiceInfoRemovedEventArgsFactory);
 		Windows.Devices.AllJoyn.AllJoynServiceInfoRemovedEventArgs _ret;
-		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynServiceInfoRemovedEventArgsFactory).abi_Create(uniqueName, &_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynServiceInfoRemovedEventArgsFactory)factory.asInterface(uuid("0dbf8627-9aff-4955-9227-6953baf41569"))).abi_Create(uniqueName, &_ret));
 		return _ret;
 	}
 }
@@ -1232,50 +1232,50 @@ extern(Windows):
 	final INT32 Id()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSession).get_Id(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynSession)this.asInterface(uuid("e8d11b0c-c0d4-406c-88a9-a93efa85d4b1"))).get_Id(&_ret));
 		return _ret;
 	}
 	final INT32 Status()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSession).get_Status(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynSession)this.asInterface(uuid("e8d11b0c-c0d4-406c-88a9-a93efa85d4b1"))).get_Status(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(INT32) RemoveMemberAsync(HSTRING uniqueName)
 	{
 		Windows.Foundation.IAsyncOperation!(INT32) _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSession).abi_RemoveMemberAsync(uniqueName, &_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynSession)this.asInterface(uuid("e8d11b0c-c0d4-406c-88a9-a93efa85d4b1"))).abi_RemoveMemberAsync(uniqueName, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnMemberAdded(void delegate(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberAddedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSession).add_MemberAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberAddedEventArgs), Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberAddedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynSession)this.asInterface(uuid("e8d11b0c-c0d4-406c-88a9-a93efa85d4b1"))).add_MemberAdded(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberAddedEventArgs), Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberAddedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMemberAdded(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSession).remove_MemberAdded(token));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynSession)this.asInterface(uuid("e8d11b0c-c0d4-406c-88a9-a93efa85d4b1"))).remove_MemberAdded(token));
 	}
 	final EventRegistrationToken OnMemberRemoved(void delegate(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberRemovedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSession).add_MemberRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberRemovedEventArgs), Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberRemovedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynSession)this.asInterface(uuid("e8d11b0c-c0d4-406c-88a9-a93efa85d4b1"))).add_MemberRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberRemovedEventArgs), Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionMemberRemovedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeMemberRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSession).remove_MemberRemoved(token));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynSession)this.asInterface(uuid("e8d11b0c-c0d4-406c-88a9-a93efa85d4b1"))).remove_MemberRemoved(token));
 	}
 	final EventRegistrationToken OnLost(void delegate(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionLostEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSession).add_Lost(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionLostEventArgs), Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionLostEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynSession)this.asInterface(uuid("e8d11b0c-c0d4-406c-88a9-a93efa85d4b1"))).add_Lost(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionLostEventArgs), Windows.Devices.AllJoyn.AllJoynSession, Windows.Devices.AllJoyn.AllJoynSessionLostEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeLost(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSession).remove_Lost(token));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynSession)this.asInterface(uuid("e8d11b0c-c0d4-406c-88a9-a93efa85d4b1"))).remove_Lost(token));
 	}
 
 	private static Windows.Devices.AllJoyn.IAllJoynSessionStatics _staticInstance;
@@ -1287,13 +1287,13 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynSession) GetFromServiceInfoAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynSession) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynSessionStatics).abi_GetFromServiceInfoAsync(serviceInfo, &_ret));
+		Debug.OK(staticInstance.abi_GetFromServiceInfoAsync(serviceInfo, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynSession) GetFromServiceInfoAndBusAttachmentAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo, Windows.Devices.AllJoyn.AllJoynBusAttachment busAttachment)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynSession) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynSessionStatics).abi_GetFromServiceInfoAndBusAttachmentAsync(serviceInfo, busAttachment, &_ret));
+		Debug.OK(staticInstance.abi_GetFromServiceInfoAndBusAttachmentAsync(serviceInfo, busAttachment, &_ret));
 		return _ret;
 	}
 }
@@ -1304,14 +1304,14 @@ extern(Windows):
 	final Windows.Devices.AllJoyn.AllJoynSession Session()
 	{
 		Windows.Devices.AllJoyn.AllJoynSession _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSessionJoinedEventArgs).get_Session(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynSessionJoinedEventArgs)this.asInterface(uuid("9e9f5bd0-b5d7-47c5-8dab-b040cc192871"))).get_Session(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs New(Windows.Devices.AllJoyn.AllJoynSession session)
 	{
 		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynSessionJoinedEventArgsFactory);
 		Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs _ret;
-		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynSessionJoinedEventArgsFactory).abi_Create(session, &_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynSessionJoinedEventArgsFactory)factory.asInterface(uuid("6824d689-d6cb-4d9e-a09e-35806870b17f"))).abi_Create(session, &_ret));
 		return _ret;
 	}
 }
@@ -1322,14 +1322,14 @@ extern(Windows):
 	final Windows.Devices.AllJoyn.AllJoynSessionLostReason Reason()
 	{
 		Windows.Devices.AllJoyn.AllJoynSessionLostReason _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSessionLostEventArgs).get_Reason(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynSessionLostEventArgs)this.asInterface(uuid("e766a48a-8bb8-4954-ae67-d2fa43d1f96b"))).get_Reason(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.AllJoyn.AllJoynSessionLostEventArgs New(Windows.Devices.AllJoyn.AllJoynSessionLostReason reason)
 	{
 		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynSessionLostEventArgsFactory);
 		Windows.Devices.AllJoyn.AllJoynSessionLostEventArgs _ret;
-		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynSessionLostEventArgsFactory).abi_Create(reason, &_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynSessionLostEventArgsFactory)factory.asInterface(uuid("13bbfd32-d2f4-49c9-980e-2805e13586b1"))).abi_Create(reason, &_ret));
 		return _ret;
 	}
 }
@@ -1340,14 +1340,14 @@ extern(Windows):
 	final HSTRING UniqueName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSessionMemberAddedEventArgs).get_UniqueName(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynSessionMemberAddedEventArgs)this.asInterface(uuid("49a2798a-0dd1-46c1-9cd6-27190e503a5e"))).get_UniqueName(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.AllJoyn.AllJoynSessionMemberAddedEventArgs New(HSTRING uniqueName)
 	{
 		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynSessionMemberAddedEventArgsFactory);
 		Windows.Devices.AllJoyn.AllJoynSessionMemberAddedEventArgs _ret;
-		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynSessionMemberAddedEventArgsFactory).abi_Create(uniqueName, &_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynSessionMemberAddedEventArgsFactory)factory.asInterface(uuid("341de352-1d33-40a1-a1d3-e5777020e1f1"))).abi_Create(uniqueName, &_ret));
 		return _ret;
 	}
 }
@@ -1358,14 +1358,14 @@ extern(Windows):
 	final HSTRING UniqueName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynSessionMemberRemovedEventArgs).get_UniqueName(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynSessionMemberRemovedEventArgs)this.asInterface(uuid("409a219f-aa4a-4893-b430-baa1b63c6219"))).get_UniqueName(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.AllJoyn.AllJoynSessionMemberRemovedEventArgs New(HSTRING uniqueName)
 	{
 		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynSessionMemberRemovedEventArgsFactory);
 		Windows.Devices.AllJoyn.AllJoynSessionMemberRemovedEventArgs _ret;
-		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynSessionMemberRemovedEventArgsFactory).abi_Create(uniqueName, &_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynSessionMemberRemovedEventArgsFactory)factory.asInterface(uuid("c4d355e8-42b8-4b67-b757-d0cfcad59280"))).abi_Create(uniqueName, &_ret));
 		return _ret;
 	}
 }
@@ -1381,109 +1381,109 @@ interface AllJoynStatus
 	static INT32 Ok()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_Ok(&_ret));
+		Debug.OK(staticInstance.get_Ok(&_ret));
 		return _ret;
 	}
 	static INT32 Fail()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_Fail(&_ret));
+		Debug.OK(staticInstance.get_Fail(&_ret));
 		return _ret;
 	}
 	static INT32 OperationTimedOut()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_OperationTimedOut(&_ret));
+		Debug.OK(staticInstance.get_OperationTimedOut(&_ret));
 		return _ret;
 	}
 	static INT32 OtherEndClosed()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_OtherEndClosed(&_ret));
+		Debug.OK(staticInstance.get_OtherEndClosed(&_ret));
 		return _ret;
 	}
 	static INT32 ConnectionRefused()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_ConnectionRefused(&_ret));
+		Debug.OK(staticInstance.get_ConnectionRefused(&_ret));
 		return _ret;
 	}
 	static INT32 AuthenticationFailed()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_AuthenticationFailed(&_ret));
+		Debug.OK(staticInstance.get_AuthenticationFailed(&_ret));
 		return _ret;
 	}
 	static INT32 AuthenticationRejectedByUser()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_AuthenticationRejectedByUser(&_ret));
+		Debug.OK(staticInstance.get_AuthenticationRejectedByUser(&_ret));
 		return _ret;
 	}
 	static INT32 SslConnectFailed()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_SslConnectFailed(&_ret));
+		Debug.OK(staticInstance.get_SslConnectFailed(&_ret));
 		return _ret;
 	}
 	static INT32 SslIdentityVerificationFailed()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_SslIdentityVerificationFailed(&_ret));
+		Debug.OK(staticInstance.get_SslIdentityVerificationFailed(&_ret));
 		return _ret;
 	}
 	static INT32 InsufficientSecurity()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_InsufficientSecurity(&_ret));
+		Debug.OK(staticInstance.get_InsufficientSecurity(&_ret));
 		return _ret;
 	}
 	static INT32 InvalidArgument1()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_InvalidArgument1(&_ret));
+		Debug.OK(staticInstance.get_InvalidArgument1(&_ret));
 		return _ret;
 	}
 	static INT32 InvalidArgument2()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_InvalidArgument2(&_ret));
+		Debug.OK(staticInstance.get_InvalidArgument2(&_ret));
 		return _ret;
 	}
 	static INT32 InvalidArgument3()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_InvalidArgument3(&_ret));
+		Debug.OK(staticInstance.get_InvalidArgument3(&_ret));
 		return _ret;
 	}
 	static INT32 InvalidArgument4()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_InvalidArgument4(&_ret));
+		Debug.OK(staticInstance.get_InvalidArgument4(&_ret));
 		return _ret;
 	}
 	static INT32 InvalidArgument5()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_InvalidArgument5(&_ret));
+		Debug.OK(staticInstance.get_InvalidArgument5(&_ret));
 		return _ret;
 	}
 	static INT32 InvalidArgument6()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_InvalidArgument6(&_ret));
+		Debug.OK(staticInstance.get_InvalidArgument6(&_ret));
 		return _ret;
 	}
 	static INT32 InvalidArgument7()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_InvalidArgument7(&_ret));
+		Debug.OK(staticInstance.get_InvalidArgument7(&_ret));
 		return _ret;
 	}
 	static INT32 InvalidArgument8()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.AllJoyn.IAllJoynStatusStatics).get_InvalidArgument8(&_ret));
+		Debug.OK(staticInstance.get_InvalidArgument8(&_ret));
 		return _ret;
 	}
 }
@@ -1494,14 +1494,14 @@ extern(Windows):
 	final INT32 Status()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.AllJoyn.IAllJoynWatcherStoppedEventArgs).get_Status(&_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynWatcherStoppedEventArgs)this.asInterface(uuid("c9fca03b-701d-4aa8-97dd-a2bb0a8f5fa3"))).get_Status(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.AllJoyn.AllJoynWatcherStoppedEventArgs New(INT32 status)
 	{
 		auto factory = factory!(Windows.Devices.AllJoyn.IAllJoynWatcherStoppedEventArgsFactory);
 		Windows.Devices.AllJoyn.AllJoynWatcherStoppedEventArgs _ret;
-		Debug.OK(factory.as!(Windows.Devices.AllJoyn.IAllJoynWatcherStoppedEventArgsFactory).abi_Create(status, &_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynWatcherStoppedEventArgsFactory)factory.asInterface(uuid("878fa5a8-2d50-47e1-904a-20bf0d48c782"))).abi_Create(status, &_ret));
 		return _ret;
 	}
 }

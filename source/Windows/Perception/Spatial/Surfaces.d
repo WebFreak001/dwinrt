@@ -100,31 +100,31 @@ extern(Windows):
 	final GUID Id()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceInfo).get_Id(&_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceInfo)this.asInterface(uuid("f8e9ebe7-39b7-3962-bb03-57f56e1fb0a1"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime UpdateTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceInfo).get_UpdateTime(&_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceInfo)this.asInterface(uuid("f8e9ebe7-39b7-3962-bb03-57f56e1fb0a1"))).get_UpdateTime(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Perception.Spatial.SpatialBoundingOrientedBox) TryGetBounds(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem)
 	{
 		Windows.Foundation.IReference!(Windows.Perception.Spatial.SpatialBoundingOrientedBox) _ret;
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceInfo).abi_TryGetBounds(coordinateSystem, &_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceInfo)this.asInterface(uuid("f8e9ebe7-39b7-3962-bb03-57f56e1fb0a1"))).abi_TryGetBounds(coordinateSystem, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Perception.Spatial.Surfaces.SpatialSurfaceMesh) TryComputeLatestMeshAsync(double maxTrianglesPerCubicMeter)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Perception.Spatial.Surfaces.SpatialSurfaceMesh) _ret;
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceInfo).abi_TryComputeLatestMeshAsync(maxTrianglesPerCubicMeter, &_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceInfo)this.asInterface(uuid("f8e9ebe7-39b7-3962-bb03-57f56e1fb0a1"))).abi_TryComputeLatestMeshAsync(maxTrianglesPerCubicMeter, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Perception.Spatial.Surfaces.SpatialSurfaceMesh) TryComputeLatestMeshWithOptionsAsync(double maxTrianglesPerCubicMeter, Windows.Perception.Spatial.Surfaces.SpatialSurfaceMeshOptions options)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Perception.Spatial.Surfaces.SpatialSurfaceMesh) _ret;
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceInfo).abi_TryComputeLatestMeshWithOptionsAsync(maxTrianglesPerCubicMeter, options, &_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceInfo)this.asInterface(uuid("f8e9ebe7-39b7-3962-bb03-57f56e1fb0a1"))).abi_TryComputeLatestMeshWithOptionsAsync(maxTrianglesPerCubicMeter, options, &_ret));
 		return _ret;
 	}
 }
@@ -135,37 +135,37 @@ extern(Windows):
 	final Windows.Perception.Spatial.Surfaces.SpatialSurfaceInfo SurfaceInfo()
 	{
 		Windows.Perception.Spatial.Surfaces.SpatialSurfaceInfo _ret;
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMesh).get_SurfaceInfo(&_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMesh)this.asInterface(uuid("108f57d9-df0d-3950-a0fd-f972c77c27b4"))).get_SurfaceInfo(&_ret));
 		return _ret;
 	}
 	final Windows.Perception.Spatial.SpatialCoordinateSystem CoordinateSystem()
 	{
 		Windows.Perception.Spatial.SpatialCoordinateSystem _ret;
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMesh).get_CoordinateSystem(&_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMesh)this.asInterface(uuid("108f57d9-df0d-3950-a0fd-f972c77c27b4"))).get_CoordinateSystem(&_ret));
 		return _ret;
 	}
 	final Windows.Perception.Spatial.Surfaces.SpatialSurfaceMeshBuffer TriangleIndices()
 	{
 		Windows.Perception.Spatial.Surfaces.SpatialSurfaceMeshBuffer _ret;
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMesh).get_TriangleIndices(&_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMesh)this.asInterface(uuid("108f57d9-df0d-3950-a0fd-f972c77c27b4"))).get_TriangleIndices(&_ret));
 		return _ret;
 	}
 	final Windows.Perception.Spatial.Surfaces.SpatialSurfaceMeshBuffer VertexPositions()
 	{
 		Windows.Perception.Spatial.Surfaces.SpatialSurfaceMeshBuffer _ret;
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMesh).get_VertexPositions(&_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMesh)this.asInterface(uuid("108f57d9-df0d-3950-a0fd-f972c77c27b4"))).get_VertexPositions(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Numerics.Vector3 VertexPositionScale()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMesh).get_VertexPositionScale(&_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMesh)this.asInterface(uuid("108f57d9-df0d-3950-a0fd-f972c77c27b4"))).get_VertexPositionScale(&_ret));
 		return _ret;
 	}
 	final Windows.Perception.Spatial.Surfaces.SpatialSurfaceMeshBuffer VertexNormals()
 	{
 		Windows.Perception.Spatial.Surfaces.SpatialSurfaceMeshBuffer _ret;
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMesh).get_VertexNormals(&_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMesh)this.asInterface(uuid("108f57d9-df0d-3950-a0fd-f972c77c27b4"))).get_VertexNormals(&_ret));
 		return _ret;
 	}
 }
@@ -176,25 +176,25 @@ extern(Windows):
 	final Windows.Graphics.DirectX.DirectXPixelFormat Format()
 	{
 		Windows.Graphics.DirectX.DirectXPixelFormat _ret;
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshBuffer).get_Format(&_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshBuffer)this.asInterface(uuid("93cf59e0-871f-33f8-98b2-03d101458f6f"))).get_Format(&_ret));
 		return _ret;
 	}
 	final UINT32 Stride()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshBuffer).get_Stride(&_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshBuffer)this.asInterface(uuid("93cf59e0-871f-33f8-98b2-03d101458f6f"))).get_Stride(&_ret));
 		return _ret;
 	}
 	final UINT32 ElementCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshBuffer).get_ElementCount(&_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshBuffer)this.asInterface(uuid("93cf59e0-871f-33f8-98b2-03d101458f6f"))).get_ElementCount(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer Data()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshBuffer).get_Data(&_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshBuffer)this.asInterface(uuid("93cf59e0-871f-33f8-98b2-03d101458f6f"))).get_Data(&_ret));
 		return _ret;
 	}
 }
@@ -205,42 +205,42 @@ extern(Windows):
 	final Windows.Graphics.DirectX.DirectXPixelFormat VertexPositionFormat()
 	{
 		Windows.Graphics.DirectX.DirectXPixelFormat _ret;
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions).get_VertexPositionFormat(&_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions)this.asInterface(uuid("d2759f89-3572-3d2d-a10d-5fee9394aa37"))).get_VertexPositionFormat(&_ret));
 		return _ret;
 	}
 	final void VertexPositionFormat(Windows.Graphics.DirectX.DirectXPixelFormat value)
 	{
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions).set_VertexPositionFormat(value));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions)this.asInterface(uuid("d2759f89-3572-3d2d-a10d-5fee9394aa37"))).set_VertexPositionFormat(value));
 	}
 	final Windows.Graphics.DirectX.DirectXPixelFormat TriangleIndexFormat()
 	{
 		Windows.Graphics.DirectX.DirectXPixelFormat _ret;
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions).get_TriangleIndexFormat(&_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions)this.asInterface(uuid("d2759f89-3572-3d2d-a10d-5fee9394aa37"))).get_TriangleIndexFormat(&_ret));
 		return _ret;
 	}
 	final void TriangleIndexFormat(Windows.Graphics.DirectX.DirectXPixelFormat value)
 	{
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions).set_TriangleIndexFormat(value));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions)this.asInterface(uuid("d2759f89-3572-3d2d-a10d-5fee9394aa37"))).set_TriangleIndexFormat(value));
 	}
 	final Windows.Graphics.DirectX.DirectXPixelFormat VertexNormalFormat()
 	{
 		Windows.Graphics.DirectX.DirectXPixelFormat _ret;
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions).get_VertexNormalFormat(&_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions)this.asInterface(uuid("d2759f89-3572-3d2d-a10d-5fee9394aa37"))).get_VertexNormalFormat(&_ret));
 		return _ret;
 	}
 	final void VertexNormalFormat(Windows.Graphics.DirectX.DirectXPixelFormat value)
 	{
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions).set_VertexNormalFormat(value));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions)this.asInterface(uuid("d2759f89-3572-3d2d-a10d-5fee9394aa37"))).set_VertexNormalFormat(value));
 	}
 	final bool IncludeVertexNormals()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions).get_IncludeVertexNormals(&_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions)this.asInterface(uuid("d2759f89-3572-3d2d-a10d-5fee9394aa37"))).get_IncludeVertexNormals(&_ret));
 		return _ret;
 	}
 	final void IncludeVertexNormals(bool value)
 	{
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions).set_IncludeVertexNormals(value));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptions)this.asInterface(uuid("d2759f89-3572-3d2d-a10d-5fee9394aa37"))).set_IncludeVertexNormals(value));
 	}
 
 	private static Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptionsStatics _staticInstance;
@@ -252,26 +252,26 @@ extern(Windows):
 	static Windows.Foundation.Collections.IVectorView!(Windows.Graphics.DirectX.DirectXPixelFormat) SupportedVertexPositionFormats()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Graphics.DirectX.DirectXPixelFormat) _ret;
-		Debug.OK(staticInstance.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptionsStatics).get_SupportedVertexPositionFormats(&_ret));
+		Debug.OK(staticInstance.get_SupportedVertexPositionFormats(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(Windows.Graphics.DirectX.DirectXPixelFormat) SupportedTriangleIndexFormats()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Graphics.DirectX.DirectXPixelFormat) _ret;
-		Debug.OK(staticInstance.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptionsStatics).get_SupportedTriangleIndexFormats(&_ret));
+		Debug.OK(staticInstance.get_SupportedTriangleIndexFormats(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(Windows.Graphics.DirectX.DirectXPixelFormat) SupportedVertexNormalFormats()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Graphics.DirectX.DirectXPixelFormat) _ret;
-		Debug.OK(staticInstance.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMeshOptionsStatics).get_SupportedVertexNormalFormats(&_ret));
+		Debug.OK(staticInstance.get_SupportedVertexNormalFormats(&_ret));
 		return _ret;
 	}
 	static SpatialSurfaceMeshOptions New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(SpatialSurfaceMeshOptions).abi_ActivateInstance(&ret));
-		return ret.as!(SpatialSurfaceMeshOptions);
+		return cast(SpatialSurfaceMeshOptions) ret;
 	}
 }
 
@@ -281,26 +281,26 @@ extern(Windows):
 	final Windows.Foundation.Collections.IMapView!(GUID, Windows.Perception.Spatial.Surfaces.SpatialSurfaceInfo) GetObservedSurfaces()
 	{
 		Windows.Foundation.Collections.IMapView!(GUID, Windows.Perception.Spatial.Surfaces.SpatialSurfaceInfo) _ret;
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserver).abi_GetObservedSurfaces(&_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserver)this.asInterface(uuid("10b69819-ddca-3483-ac3a-748fe8c86df5"))).abi_GetObservedSurfaces(&_ret));
 		return _ret;
 	}
 	final void SetBoundingVolume(Windows.Perception.Spatial.SpatialBoundingVolume bounds)
 	{
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserver).abi_SetBoundingVolume(bounds));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserver)this.asInterface(uuid("10b69819-ddca-3483-ac3a-748fe8c86df5"))).abi_SetBoundingVolume(bounds));
 	}
 	final void SetBoundingVolumes(Windows.Foundation.Collections.IIterable!(Windows.Perception.Spatial.SpatialBoundingVolume) bounds)
 	{
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserver).abi_SetBoundingVolumes(bounds));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserver)this.asInterface(uuid("10b69819-ddca-3483-ac3a-748fe8c86df5"))).abi_SetBoundingVolumes(bounds));
 	}
 	final EventRegistrationToken OnObservedSurfacesChanged(void delegate(Windows.Perception.Spatial.Surfaces.SpatialSurfaceObserver, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserver).add_ObservedSurfacesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.Surfaces.SpatialSurfaceObserver, IInspectable), Windows.Perception.Spatial.Surfaces.SpatialSurfaceObserver, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserver)this.asInterface(uuid("10b69819-ddca-3483-ac3a-748fe8c86df5"))).add_ObservedSurfacesChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Perception.Spatial.Surfaces.SpatialSurfaceObserver, IInspectable), Windows.Perception.Spatial.Surfaces.SpatialSurfaceObserver, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeObservedSurfacesChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserver).remove_ObservedSurfacesChanged(token));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserver)this.asInterface(uuid("10b69819-ddca-3483-ac3a-748fe8c86df5"))).remove_ObservedSurfacesChanged(token));
 	}
 
 	private static Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserverStatics _staticInstance;
@@ -312,13 +312,13 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Perception.Spatial.SpatialPerceptionAccessStatus) RequestAccessAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Perception.Spatial.SpatialPerceptionAccessStatus) _ret;
-		Debug.OK(staticInstance.as!(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceObserverStatics).abi_RequestAccessAsync(&_ret));
+		Debug.OK(staticInstance.abi_RequestAccessAsync(&_ret));
 		return _ret;
 	}
 	static SpatialSurfaceObserver New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(SpatialSurfaceObserver).abi_ActivateInstance(&ret));
-		return ret.as!(SpatialSurfaceObserver);
+		return cast(SpatialSurfaceObserver) ret;
 	}
 }

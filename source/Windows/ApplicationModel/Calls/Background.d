@@ -47,19 +47,19 @@ extern(Windows):
 	final HSTRING PhoneNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.Background.IPhoneCallBlockedTriggerDetails).get_PhoneNumber(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.Background.IPhoneCallBlockedTriggerDetails)this.asInterface(uuid("a4a690a2-e4c1-427f-864e-e470477ddb67"))).get_PhoneNumber(&_ret));
 		return _ret;
 	}
 	final GUID LineId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.Background.IPhoneCallBlockedTriggerDetails).get_LineId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.Background.IPhoneCallBlockedTriggerDetails)this.asInterface(uuid("a4a690a2-e4c1-427f-864e-e470477ddb67"))).get_LineId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Calls.Background.PhoneCallBlockedReason CallBlockedReason()
 	{
 		Windows.ApplicationModel.Calls.Background.PhoneCallBlockedReason _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.Background.IPhoneCallBlockedTriggerDetails).get_CallBlockedReason(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.Background.IPhoneCallBlockedTriggerDetails)this.asInterface(uuid("a4a690a2-e4c1-427f-864e-e470477ddb67"))).get_CallBlockedReason(&_ret));
 		return _ret;
 	}
 }
@@ -70,13 +70,13 @@ extern(Windows):
 	final GUID RequestId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.Background.IPhoneCallOriginDataRequestTriggerDetails).get_RequestId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.Background.IPhoneCallOriginDataRequestTriggerDetails)this.asInterface(uuid("6e9b5b3f-c54b-4e82-4cc9-e329a4184592"))).get_RequestId(&_ret));
 		return _ret;
 	}
 	final HSTRING PhoneNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.Background.IPhoneCallOriginDataRequestTriggerDetails).get_PhoneNumber(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.Background.IPhoneCallOriginDataRequestTriggerDetails)this.asInterface(uuid("6e9b5b3f-c54b-4e82-4cc9-e329a4184592"))).get_PhoneNumber(&_ret));
 		return _ret;
 	}
 }
@@ -87,19 +87,19 @@ extern(Windows):
 	final GUID LineId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.Background.IPhoneLineChangedTriggerDetails).get_LineId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.Background.IPhoneLineChangedTriggerDetails)this.asInterface(uuid("c6d321e7-d11d-40d8-b2b7-e40a01d66249"))).get_LineId(&_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Calls.Background.PhoneLineChangeKind ChangeType()
 	{
 		Windows.ApplicationModel.Calls.Background.PhoneLineChangeKind _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.Background.IPhoneLineChangedTriggerDetails).get_ChangeType(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.Background.IPhoneLineChangedTriggerDetails)this.asInterface(uuid("c6d321e7-d11d-40d8-b2b7-e40a01d66249"))).get_ChangeType(&_ret));
 		return _ret;
 	}
 	final bool HasLinePropertyChanged(Windows.ApplicationModel.Calls.Background.PhoneLineProperties lineProperty)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.Background.IPhoneLineChangedTriggerDetails).abi_HasLinePropertyChanged(lineProperty, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.Background.IPhoneLineChangedTriggerDetails)this.asInterface(uuid("c6d321e7-d11d-40d8-b2b7-e40a01d66249"))).abi_HasLinePropertyChanged(lineProperty, &_ret));
 		return _ret;
 	}
 }
@@ -110,19 +110,19 @@ extern(Windows):
 	final GUID LineId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.Background.IPhoneNewVoicemailMessageTriggerDetails).get_LineId(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.Background.IPhoneNewVoicemailMessageTriggerDetails)this.asInterface(uuid("13a8c01b-b831-48d3-8ba9-8d22a6580dcf"))).get_LineId(&_ret));
 		return _ret;
 	}
 	final INT32 VoicemailCount()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.Background.IPhoneNewVoicemailMessageTriggerDetails).get_VoicemailCount(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.Background.IPhoneNewVoicemailMessageTriggerDetails)this.asInterface(uuid("13a8c01b-b831-48d3-8ba9-8d22a6580dcf"))).get_VoicemailCount(&_ret));
 		return _ret;
 	}
 	final HSTRING OperatorMessage()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Calls.Background.IPhoneNewVoicemailMessageTriggerDetails).get_OperatorMessage(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.Background.IPhoneNewVoicemailMessageTriggerDetails)this.asInterface(uuid("13a8c01b-b831-48d3-8ba9-8d22a6580dcf"))).get_OperatorMessage(&_ret));
 		return _ret;
 	}
 }

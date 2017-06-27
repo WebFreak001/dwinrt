@@ -444,12 +444,12 @@ extern(Windows):
 	final EventRegistrationToken OnTaskRequested(void delegate(Windows.Graphics.Printing3D.Print3DManager, Windows.Graphics.Printing3D.Print3DTaskRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DManager).add_TaskRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DManager, Windows.Graphics.Printing3D.Print3DTaskRequestedEventArgs), Windows.Graphics.Printing3D.Print3DManager, Windows.Graphics.Printing3D.Print3DTaskRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrint3DManager)this.asInterface(uuid("4d2fcb0a-7366-4971-8bd5-17c4e3e8c6c0"))).add_TaskRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DManager, Windows.Graphics.Printing3D.Print3DTaskRequestedEventArgs), Windows.Graphics.Printing3D.Print3DManager, Windows.Graphics.Printing3D.Print3DTaskRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTaskRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DManager).remove_TaskRequested(token));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrint3DManager)this.asInterface(uuid("4d2fcb0a-7366-4971-8bd5-17c4e3e8c6c0"))).remove_TaskRequested(token));
 	}
 
 	private static Windows.Graphics.Printing3D.IPrint3DManagerStatics _staticInstance;
@@ -461,13 +461,13 @@ extern(Windows):
 	static Windows.Graphics.Printing3D.Print3DManager GetForCurrentView()
 	{
 		Windows.Graphics.Printing3D.Print3DManager _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Printing3D.IPrint3DManagerStatics).abi_GetForCurrentView(&_ret));
+		Debug.OK(staticInstance.abi_GetForCurrentView(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(bool) ShowPrintUIAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Printing3D.IPrint3DManagerStatics).abi_ShowPrintUIAsync(&_ret));
+		Debug.OK(staticInstance.abi_ShowPrintUIAsync(&_ret));
 		return _ret;
 	}
 }
@@ -478,38 +478,38 @@ extern(Windows):
 	final Windows.Graphics.Printing3D.Printing3D3MFPackage Source()
 	{
 		Windows.Graphics.Printing3D.Printing3D3MFPackage _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTask).get_Source(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrint3DTask)this.asInterface(uuid("8ce3d080-2118-4c28-80de-f426d70191ae"))).get_Source(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnSubmitting(void delegate(Windows.Graphics.Printing3D.Print3DTask, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTask).add_Submitting(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DTask, IInspectable), Windows.Graphics.Printing3D.Print3DTask, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrint3DTask)this.asInterface(uuid("8ce3d080-2118-4c28-80de-f426d70191ae"))).add_Submitting(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DTask, IInspectable), Windows.Graphics.Printing3D.Print3DTask, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeSubmitting(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTask).remove_Submitting(eventCookie));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrint3DTask)this.asInterface(uuid("8ce3d080-2118-4c28-80de-f426d70191ae"))).remove_Submitting(eventCookie));
 	}
 	final EventRegistrationToken OnCompleted(void delegate(Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTask).add_Completed(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskCompletedEventArgs), Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskCompletedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrint3DTask)this.asInterface(uuid("8ce3d080-2118-4c28-80de-f426d70191ae"))).add_Completed(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskCompletedEventArgs), Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeCompleted(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTask).remove_Completed(eventCookie));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrint3DTask)this.asInterface(uuid("8ce3d080-2118-4c28-80de-f426d70191ae"))).remove_Completed(eventCookie));
 	}
 	final EventRegistrationToken OnSourceChanged(void delegate(Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskSourceChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTask).add_SourceChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskSourceChangedEventArgs), Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskSourceChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrint3DTask)this.asInterface(uuid("8ce3d080-2118-4c28-80de-f426d70191ae"))).add_SourceChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskSourceChangedEventArgs), Windows.Graphics.Printing3D.Print3DTask, Windows.Graphics.Printing3D.Print3DTaskSourceChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSourceChanged(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTask).remove_SourceChanged(eventCookie));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrint3DTask)this.asInterface(uuid("8ce3d080-2118-4c28-80de-f426d70191ae"))).remove_SourceChanged(eventCookie));
 	}
 }
 
@@ -519,13 +519,13 @@ extern(Windows):
 	final Windows.Graphics.Printing3D.Print3DTaskCompletion Completion()
 	{
 		Windows.Graphics.Printing3D.Print3DTaskCompletion _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTaskCompletedEventArgs).get_Completion(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrint3DTaskCompletedEventArgs)this.asInterface(uuid("cc1914af-2614-4f1d-accc-d6fc4fda5455"))).get_Completion(&_ret));
 		return _ret;
 	}
 	final Windows.Graphics.Printing3D.Print3DTaskDetail ExtendedStatus()
 	{
 		Windows.Graphics.Printing3D.Print3DTaskDetail _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTaskCompletedEventArgs).get_ExtendedStatus(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrint3DTaskCompletedEventArgs)this.asInterface(uuid("cc1914af-2614-4f1d-accc-d6fc4fda5455"))).get_ExtendedStatus(&_ret));
 		return _ret;
 	}
 }
@@ -536,7 +536,7 @@ extern(Windows):
 	final Windows.Graphics.Printing3D.Print3DTask CreateTask(HSTRING title, HSTRING printerId, Windows.Graphics.Printing3D.Print3DTaskSourceRequestedHandler handler)
 	{
 		Windows.Graphics.Printing3D.Print3DTask _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTaskRequest).abi_CreateTask(title, printerId, handler, &_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrint3DTaskRequest)this.asInterface(uuid("2595c46f-2245-4c5a-8731-0d604dc6bc3c"))).abi_CreateTask(title, printerId, handler, &_ret));
 		return _ret;
 	}
 }
@@ -547,7 +547,7 @@ extern(Windows):
 	final Windows.Graphics.Printing3D.Print3DTaskRequest Request()
 	{
 		Windows.Graphics.Printing3D.Print3DTaskRequest _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTaskRequestedEventArgs).get_Request(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrint3DTaskRequestedEventArgs)this.asInterface(uuid("150cb77f-18c5-40d7-9f40-fab3096e05a9"))).get_Request(&_ret));
 		return _ret;
 	}
 }
@@ -558,7 +558,7 @@ extern(Windows):
 	final Windows.Graphics.Printing3D.Printing3D3MFPackage Source()
 	{
 		Windows.Graphics.Printing3D.Printing3D3MFPackage _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTaskSourceChangedEventArgs).get_Source(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrint3DTaskSourceChangedEventArgs)this.asInterface(uuid("5bcd34af-24e9-4c10-8d07-14c346ba3fcf"))).get_Source(&_ret));
 		return _ret;
 	}
 }
@@ -568,7 +568,7 @@ interface Print3DTaskSourceRequestedArgs : Windows.Graphics.Printing3D.IPrint3DT
 extern(Windows):
 	final void SetSource(Windows.Graphics.Printing3D.Printing3D3MFPackage source)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrint3DTaskSourceRequestedArgs).abi_SetSource(source));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrint3DTaskSourceRequestedArgs)this.asInterface(uuid("c77c9aba-24af-424d-a3bf-92250c355602"))).abi_SetSource(source));
 	}
 }
 
@@ -578,55 +578,55 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream) SaveAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackage).abi_SaveAsync(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3D3MFPackage)this.asInterface(uuid("f64dd5c8-2ab7-45a9-a1b7-267e948d5b18"))).abi_SaveAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IRandomAccessStream PrintTicket()
 	{
 		Windows.Storage.Streams.IRandomAccessStream _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackage).get_PrintTicket(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3D3MFPackage)this.asInterface(uuid("f64dd5c8-2ab7-45a9-a1b7-267e948d5b18"))).get_PrintTicket(&_ret));
 		return _ret;
 	}
 	final void PrintTicket(Windows.Storage.Streams.IRandomAccessStream value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackage).set_PrintTicket(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3D3MFPackage)this.asInterface(uuid("f64dd5c8-2ab7-45a9-a1b7-267e948d5b18"))).set_PrintTicket(value));
 	}
 	final Windows.Storage.Streams.IRandomAccessStream ModelPart()
 	{
 		Windows.Storage.Streams.IRandomAccessStream _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackage).get_ModelPart(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3D3MFPackage)this.asInterface(uuid("f64dd5c8-2ab7-45a9-a1b7-267e948d5b18"))).get_ModelPart(&_ret));
 		return _ret;
 	}
 	final void ModelPart(Windows.Storage.Streams.IRandomAccessStream value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackage).set_ModelPart(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3D3MFPackage)this.asInterface(uuid("f64dd5c8-2ab7-45a9-a1b7-267e948d5b18"))).set_ModelPart(value));
 	}
 	final Windows.Graphics.Printing3D.Printing3DTextureResource Thumbnail()
 	{
 		Windows.Graphics.Printing3D.Printing3DTextureResource _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackage).get_Thumbnail(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3D3MFPackage)this.asInterface(uuid("f64dd5c8-2ab7-45a9-a1b7-267e948d5b18"))).get_Thumbnail(&_ret));
 		return _ret;
 	}
 	final void Thumbnail(Windows.Graphics.Printing3D.Printing3DTextureResource value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackage).set_Thumbnail(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3D3MFPackage)this.asInterface(uuid("f64dd5c8-2ab7-45a9-a1b7-267e948d5b18"))).set_Thumbnail(value));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DTextureResource) Textures()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DTextureResource) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackage).get_Textures(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3D3MFPackage)this.asInterface(uuid("f64dd5c8-2ab7-45a9-a1b7-267e948d5b18"))).get_Textures(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Printing3D.Printing3DModel) LoadModelFromPackageAsync(Windows.Storage.Streams.IRandomAccessStream value)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Printing3D.Printing3DModel) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackage).abi_LoadModelFromPackageAsync(value, &_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3D3MFPackage)this.asInterface(uuid("f64dd5c8-2ab7-45a9-a1b7-267e948d5b18"))).abi_LoadModelFromPackageAsync(value, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction SaveModelToPackageAsync(Windows.Graphics.Printing3D.Printing3DModel value)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackage).abi_SaveModelToPackageAsync(value, &_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3D3MFPackage)this.asInterface(uuid("f64dd5c8-2ab7-45a9-a1b7-267e948d5b18"))).abi_SaveModelToPackageAsync(value, &_ret));
 		return _ret;
 	}
 
@@ -639,14 +639,14 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Graphics.Printing3D.Printing3D3MFPackage) LoadAsync(Windows.Storage.Streams.IRandomAccessStream value)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Printing3D.Printing3D3MFPackage) _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Printing3D.IPrinting3D3MFPackageStatics).abi_LoadAsync(value, &_ret));
+		Debug.OK(staticInstance.abi_LoadAsync(value, &_ret));
 		return _ret;
 	}
 	static Printing3D3MFPackage New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Printing3D3MFPackage).abi_ActivateInstance(&ret));
-		return ret.as!(Printing3D3MFPackage);
+		return cast(Printing3D3MFPackage) ret;
 	}
 }
 
@@ -656,22 +656,22 @@ extern(Windows):
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterial).get_Name(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DBaseMaterial)this.asInterface(uuid("d0f0e743-c50c-4bcb-9d04-fc16adcea2c9"))).get_Name(&_ret));
 		return _ret;
 	}
 	final void Name(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterial).set_Name(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DBaseMaterial)this.asInterface(uuid("d0f0e743-c50c-4bcb-9d04-fc16adcea2c9"))).set_Name(value));
 	}
 	final Windows.Graphics.Printing3D.Printing3DColorMaterial Color()
 	{
 		Windows.Graphics.Printing3D.Printing3DColorMaterial _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterial).get_Color(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DBaseMaterial)this.asInterface(uuid("d0f0e743-c50c-4bcb-9d04-fc16adcea2c9"))).get_Color(&_ret));
 		return _ret;
 	}
 	final void Color(Windows.Graphics.Printing3D.Printing3DColorMaterial value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterial).set_Color(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DBaseMaterial)this.asInterface(uuid("d0f0e743-c50c-4bcb-9d04-fc16adcea2c9"))).set_Color(value));
 	}
 
 	private static Windows.Graphics.Printing3D.IPrinting3DBaseMaterialStatics _staticInstance;
@@ -683,20 +683,20 @@ extern(Windows):
 	static HSTRING Abs()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterialStatics).get_Abs(&_ret));
+		Debug.OK(staticInstance.get_Abs(&_ret));
 		return _ret;
 	}
 	static HSTRING Pla()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterialStatics).get_Pla(&_ret));
+		Debug.OK(staticInstance.get_Pla(&_ret));
 		return _ret;
 	}
 	static Printing3DBaseMaterial New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Printing3DBaseMaterial).abi_ActivateInstance(&ret));
-		return ret.as!(Printing3DBaseMaterial);
+		return cast(Printing3DBaseMaterial) ret;
 	}
 }
 
@@ -706,20 +706,20 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DBaseMaterial) Bases()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DBaseMaterial) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterialGroup).get_Bases(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DBaseMaterialGroup)this.asInterface(uuid("94f070b8-2515-4a8d-a1f0-d0fc13d06021"))).get_Bases(&_ret));
 		return _ret;
 	}
 	final UINT32 MaterialGroupId()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterialGroup).get_MaterialGroupId(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DBaseMaterialGroup)this.asInterface(uuid("94f070b8-2515-4a8d-a1f0-d0fc13d06021"))).get_MaterialGroupId(&_ret));
 		return _ret;
 	}
 	static Windows.Graphics.Printing3D.Printing3DBaseMaterialGroup New(UINT32 MaterialGroupId)
 	{
 		auto factory = factory!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterialGroupFactory);
 		Windows.Graphics.Printing3D.Printing3DBaseMaterialGroup _ret;
-		Debug.OK(factory.as!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterialGroupFactory).abi_Create(MaterialGroupId, &_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DBaseMaterialGroupFactory)factory.asInterface(uuid("5c1546dc-8697-4193-976b-84bb4116e5bf"))).abi_Create(MaterialGroupId, &_ret));
 		return _ret;
 	}
 }
@@ -730,28 +730,28 @@ extern(Windows):
 	final UINT32 Value()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DColorMaterial).get_Value(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DColorMaterial)this.asInterface(uuid("e1899928-7ce7-4285-a35d-f145c9510c7b"))).get_Value(&_ret));
 		return _ret;
 	}
 	final void Value(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DColorMaterial).set_Value(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DColorMaterial)this.asInterface(uuid("e1899928-7ce7-4285-a35d-f145c9510c7b"))).set_Value(value));
 	}
 	final Windows.UI.Color Color()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DColorMaterial2).get_Color(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DColorMaterial2)this.asInterface(uuid("fab0e852-0aef-44e9-9ddd-36eeea5acd44"))).get_Color(&_ret));
 		return _ret;
 	}
 	final void Color(Windows.UI.Color value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DColorMaterial2).set_Color(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DColorMaterial2)this.asInterface(uuid("fab0e852-0aef-44e9-9ddd-36eeea5acd44"))).set_Color(value));
 	}
 	static Printing3DColorMaterial New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Printing3DColorMaterial).abi_ActivateInstance(&ret));
-		return ret.as!(Printing3DColorMaterial);
+		return cast(Printing3DColorMaterial) ret;
 	}
 }
 
@@ -761,20 +761,20 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DColorMaterial) Colors()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DColorMaterial) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DColorMaterialGroup).get_Colors(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DColorMaterialGroup)this.asInterface(uuid("001a6bd0-aadf-4226-afe9-f369a0b45004"))).get_Colors(&_ret));
 		return _ret;
 	}
 	final UINT32 MaterialGroupId()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DColorMaterialGroup).get_MaterialGroupId(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DColorMaterialGroup)this.asInterface(uuid("001a6bd0-aadf-4226-afe9-f369a0b45004"))).get_MaterialGroupId(&_ret));
 		return _ret;
 	}
 	static Windows.Graphics.Printing3D.Printing3DColorMaterialGroup New(UINT32 MaterialGroupId)
 	{
 		auto factory = factory!(Windows.Graphics.Printing3D.IPrinting3DColorMaterialGroupFactory);
 		Windows.Graphics.Printing3D.Printing3DColorMaterialGroup _ret;
-		Debug.OK(factory.as!(Windows.Graphics.Printing3D.IPrinting3DColorMaterialGroupFactory).abi_Create(MaterialGroupId, &_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DColorMaterialGroupFactory)factory.asInterface(uuid("71d38d6d-b1ea-4a5b-bc54-19c65f3df044"))).abi_Create(MaterialGroupId, &_ret));
 		return _ret;
 	}
 }
@@ -785,64 +785,64 @@ extern(Windows):
 	final Windows.Graphics.Printing3D.Printing3DMesh Mesh()
 	{
 		Windows.Graphics.Printing3D.Printing3DMesh _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponent).get_Mesh(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DComponent)this.asInterface(uuid("7e287845-bf7f-4cdb-a27f-30a01437fede"))).get_Mesh(&_ret));
 		return _ret;
 	}
 	final void Mesh(Windows.Graphics.Printing3D.Printing3DMesh value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponent).set_Mesh(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DComponent)this.asInterface(uuid("7e287845-bf7f-4cdb-a27f-30a01437fede"))).set_Mesh(value));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DComponentWithMatrix) Components()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DComponentWithMatrix) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponent).get_Components(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DComponent)this.asInterface(uuid("7e287845-bf7f-4cdb-a27f-30a01437fede"))).get_Components(&_ret));
 		return _ret;
 	}
 	final Windows.Graphics.Printing3D.Printing3DTextureResource Thumbnail()
 	{
 		Windows.Graphics.Printing3D.Printing3DTextureResource _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponent).get_Thumbnail(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DComponent)this.asInterface(uuid("7e287845-bf7f-4cdb-a27f-30a01437fede"))).get_Thumbnail(&_ret));
 		return _ret;
 	}
 	final void Thumbnail(Windows.Graphics.Printing3D.Printing3DTextureResource value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponent).set_Thumbnail(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DComponent)this.asInterface(uuid("7e287845-bf7f-4cdb-a27f-30a01437fede"))).set_Thumbnail(value));
 	}
 	final Windows.Graphics.Printing3D.Printing3DObjectType Type()
 	{
 		Windows.Graphics.Printing3D.Printing3DObjectType _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponent).get_Type(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DComponent)this.asInterface(uuid("7e287845-bf7f-4cdb-a27f-30a01437fede"))).get_Type(&_ret));
 		return _ret;
 	}
 	final void Type(Windows.Graphics.Printing3D.Printing3DObjectType value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponent).set_Type(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DComponent)this.asInterface(uuid("7e287845-bf7f-4cdb-a27f-30a01437fede"))).set_Type(value));
 	}
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponent).get_Name(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DComponent)this.asInterface(uuid("7e287845-bf7f-4cdb-a27f-30a01437fede"))).get_Name(&_ret));
 		return _ret;
 	}
 	final void Name(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponent).set_Name(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DComponent)this.asInterface(uuid("7e287845-bf7f-4cdb-a27f-30a01437fede"))).set_Name(value));
 	}
 	final HSTRING PartNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponent).get_PartNumber(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DComponent)this.asInterface(uuid("7e287845-bf7f-4cdb-a27f-30a01437fede"))).get_PartNumber(&_ret));
 		return _ret;
 	}
 	final void PartNumber(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponent).set_PartNumber(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DComponent)this.asInterface(uuid("7e287845-bf7f-4cdb-a27f-30a01437fede"))).set_PartNumber(value));
 	}
 	static Printing3DComponent New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Printing3DComponent).abi_ActivateInstance(&ret));
-		return ret.as!(Printing3DComponent);
+		return cast(Printing3DComponent) ret;
 	}
 }
 
@@ -852,28 +852,28 @@ extern(Windows):
 	final Windows.Graphics.Printing3D.Printing3DComponent Component()
 	{
 		Windows.Graphics.Printing3D.Printing3DComponent _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponentWithMatrix).get_Component(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DComponentWithMatrix)this.asInterface(uuid("3279f335-0ef0-456b-9a21-49bebe8b51c2"))).get_Component(&_ret));
 		return _ret;
 	}
 	final void Component(Windows.Graphics.Printing3D.Printing3DComponent value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponentWithMatrix).set_Component(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DComponentWithMatrix)this.asInterface(uuid("3279f335-0ef0-456b-9a21-49bebe8b51c2"))).set_Component(value));
 	}
 	final Windows.Foundation.Numerics.Matrix4x4 Matrix()
 	{
 		Windows.Foundation.Numerics.Matrix4x4 _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponentWithMatrix).get_Matrix(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DComponentWithMatrix)this.asInterface(uuid("3279f335-0ef0-456b-9a21-49bebe8b51c2"))).get_Matrix(&_ret));
 		return _ret;
 	}
 	final void Matrix(Windows.Foundation.Numerics.Matrix4x4 value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DComponentWithMatrix).set_Matrix(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DComponentWithMatrix)this.asInterface(uuid("3279f335-0ef0-456b-9a21-49bebe8b51c2"))).set_Matrix(value));
 	}
 	static Printing3DComponentWithMatrix New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Printing3DComponentWithMatrix).abi_ActivateInstance(&ret));
-		return ret.as!(Printing3DComponentWithMatrix);
+		return cast(Printing3DComponentWithMatrix) ret;
 	}
 }
 
@@ -883,14 +883,14 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVector!(double) Values()
 	{
 		Windows.Foundation.Collections.IVector!(double) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterial).get_Values(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterial)this.asInterface(uuid("462238dd-562e-4f6c-882d-f4d841fd63c7"))).get_Values(&_ret));
 		return _ret;
 	}
 	static Printing3DCompositeMaterial New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Printing3DCompositeMaterial).abi_ActivateInstance(&ret));
-		return ret.as!(Printing3DCompositeMaterial);
+		return cast(Printing3DCompositeMaterial) ret;
 	}
 }
 
@@ -900,36 +900,36 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DCompositeMaterial) Composites()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DCompositeMaterial) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroup).get_Composites(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroup)this.asInterface(uuid("8d946a5b-40f1-496d-a5fb-340a5a678e30"))).get_Composites(&_ret));
 		return _ret;
 	}
 	final UINT32 MaterialGroupId()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroup).get_MaterialGroupId(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroup)this.asInterface(uuid("8d946a5b-40f1-496d-a5fb-340a5a678e30"))).get_MaterialGroupId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(UINT32) MaterialIndices()
 	{
 		Windows.Foundation.Collections.IVector!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroup).get_MaterialIndices(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroup)this.asInterface(uuid("8d946a5b-40f1-496d-a5fb-340a5a678e30"))).get_MaterialIndices(&_ret));
 		return _ret;
 	}
 	final Windows.Graphics.Printing3D.Printing3DBaseMaterialGroup BaseMaterialGroup()
 	{
 		Windows.Graphics.Printing3D.Printing3DBaseMaterialGroup _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroup2).get_BaseMaterialGroup(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroup2)this.asInterface(uuid("06e86d62-7d3b-41e1-944c-bafde4555483"))).get_BaseMaterialGroup(&_ret));
 		return _ret;
 	}
 	final void BaseMaterialGroup(Windows.Graphics.Printing3D.Printing3DBaseMaterialGroup value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroup2).set_BaseMaterialGroup(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroup2)this.asInterface(uuid("06e86d62-7d3b-41e1-944c-bafde4555483"))).set_BaseMaterialGroup(value));
 	}
 	static Windows.Graphics.Printing3D.Printing3DCompositeMaterialGroup New(UINT32 MaterialGroupId)
 	{
 		auto factory = factory!(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroupFactory);
 		Windows.Graphics.Printing3D.Printing3DCompositeMaterialGroup _ret;
-		Debug.OK(factory.as!(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroupFactory).abi_Create(MaterialGroupId, &_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DCompositeMaterialGroupFactory)factory.asInterface(uuid("d08ecd13-92ff-43aa-a627-8d43c22c817e"))).abi_Create(MaterialGroupId, &_ret));
 		return _ret;
 	}
 }
@@ -940,38 +940,38 @@ extern(Windows):
 	final double MaxReductionArea()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DFaceReductionOptions).get_MaxReductionArea(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DFaceReductionOptions)this.asInterface(uuid("bbfed397-2d74-46f7-be85-99a67bbb6629"))).get_MaxReductionArea(&_ret));
 		return _ret;
 	}
 	final void MaxReductionArea(double value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DFaceReductionOptions).set_MaxReductionArea(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DFaceReductionOptions)this.asInterface(uuid("bbfed397-2d74-46f7-be85-99a67bbb6629"))).set_MaxReductionArea(value));
 	}
 	final UINT32 TargetTriangleCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DFaceReductionOptions).get_TargetTriangleCount(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DFaceReductionOptions)this.asInterface(uuid("bbfed397-2d74-46f7-be85-99a67bbb6629"))).get_TargetTriangleCount(&_ret));
 		return _ret;
 	}
 	final void TargetTriangleCount(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DFaceReductionOptions).set_TargetTriangleCount(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DFaceReductionOptions)this.asInterface(uuid("bbfed397-2d74-46f7-be85-99a67bbb6629"))).set_TargetTriangleCount(value));
 	}
 	final double MaxEdgeLength()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DFaceReductionOptions).get_MaxEdgeLength(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DFaceReductionOptions)this.asInterface(uuid("bbfed397-2d74-46f7-be85-99a67bbb6629"))).get_MaxEdgeLength(&_ret));
 		return _ret;
 	}
 	final void MaxEdgeLength(double value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DFaceReductionOptions).set_MaxEdgeLength(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DFaceReductionOptions)this.asInterface(uuid("bbfed397-2d74-46f7-be85-99a67bbb6629"))).set_MaxEdgeLength(value));
 	}
 	static Printing3DFaceReductionOptions New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Printing3DFaceReductionOptions).abi_ActivateInstance(&ret));
-		return ret.as!(Printing3DFaceReductionOptions);
+		return cast(Printing3DFaceReductionOptions) ret;
 	}
 }
 
@@ -981,38 +981,38 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DBaseMaterialGroup) BaseGroups()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DBaseMaterialGroup) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMaterial).get_BaseGroups(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMaterial)this.asInterface(uuid("378db256-ed62-4952-b85b-03567d7c465e"))).get_BaseGroups(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DColorMaterialGroup) ColorGroups()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DColorMaterialGroup) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMaterial).get_ColorGroups(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMaterial)this.asInterface(uuid("378db256-ed62-4952-b85b-03567d7c465e"))).get_ColorGroups(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DTexture2CoordMaterialGroup) Texture2CoordGroups()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DTexture2CoordMaterialGroup) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMaterial).get_Texture2CoordGroups(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMaterial)this.asInterface(uuid("378db256-ed62-4952-b85b-03567d7c465e"))).get_Texture2CoordGroups(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DCompositeMaterialGroup) CompositeGroups()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DCompositeMaterialGroup) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMaterial).get_CompositeGroups(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMaterial)this.asInterface(uuid("378db256-ed62-4952-b85b-03567d7c465e"))).get_CompositeGroups(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DMultiplePropertyMaterialGroup) MultiplePropertyGroups()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DMultiplePropertyMaterialGroup) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMaterial).get_MultiplePropertyGroups(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMaterial)this.asInterface(uuid("378db256-ed62-4952-b85b-03567d7c465e"))).get_MultiplePropertyGroups(&_ret));
 		return _ret;
 	}
 	static Printing3DMaterial New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Printing3DMaterial).abi_ActivateInstance(&ret));
-		return ret.as!(Printing3DMaterial);
+		return cast(Printing3DMaterial) ret;
 	}
 }
 
@@ -1022,126 +1022,126 @@ extern(Windows):
 	final UINT32 VertexCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).get_VertexCount(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMesh)this.asInterface(uuid("192e90dc-0228-2e01-bc20-c5290cbf32c4"))).get_VertexCount(&_ret));
 		return _ret;
 	}
 	final void VertexCount(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).set_VertexCount(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMesh)this.asInterface(uuid("192e90dc-0228-2e01-bc20-c5290cbf32c4"))).set_VertexCount(value));
 	}
 	final UINT32 IndexCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).get_IndexCount(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMesh)this.asInterface(uuid("192e90dc-0228-2e01-bc20-c5290cbf32c4"))).get_IndexCount(&_ret));
 		return _ret;
 	}
 	final void IndexCount(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).set_IndexCount(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMesh)this.asInterface(uuid("192e90dc-0228-2e01-bc20-c5290cbf32c4"))).set_IndexCount(value));
 	}
 	final Windows.Graphics.Printing3D.Printing3DBufferDescription VertexPositionsDescription()
 	{
 		Windows.Graphics.Printing3D.Printing3DBufferDescription _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).get_VertexPositionsDescription(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMesh)this.asInterface(uuid("192e90dc-0228-2e01-bc20-c5290cbf32c4"))).get_VertexPositionsDescription(&_ret));
 		return _ret;
 	}
 	final void VertexPositionsDescription(Windows.Graphics.Printing3D.Printing3DBufferDescription value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).set_VertexPositionsDescription(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMesh)this.asInterface(uuid("192e90dc-0228-2e01-bc20-c5290cbf32c4"))).set_VertexPositionsDescription(value));
 	}
 	final Windows.Graphics.Printing3D.Printing3DBufferDescription VertexNormalsDescription()
 	{
 		Windows.Graphics.Printing3D.Printing3DBufferDescription _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).get_VertexNormalsDescription(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMesh)this.asInterface(uuid("192e90dc-0228-2e01-bc20-c5290cbf32c4"))).get_VertexNormalsDescription(&_ret));
 		return _ret;
 	}
 	final void VertexNormalsDescription(Windows.Graphics.Printing3D.Printing3DBufferDescription value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).set_VertexNormalsDescription(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMesh)this.asInterface(uuid("192e90dc-0228-2e01-bc20-c5290cbf32c4"))).set_VertexNormalsDescription(value));
 	}
 	final Windows.Graphics.Printing3D.Printing3DBufferDescription TriangleIndicesDescription()
 	{
 		Windows.Graphics.Printing3D.Printing3DBufferDescription _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).get_TriangleIndicesDescription(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMesh)this.asInterface(uuid("192e90dc-0228-2e01-bc20-c5290cbf32c4"))).get_TriangleIndicesDescription(&_ret));
 		return _ret;
 	}
 	final void TriangleIndicesDescription(Windows.Graphics.Printing3D.Printing3DBufferDescription value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).set_TriangleIndicesDescription(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMesh)this.asInterface(uuid("192e90dc-0228-2e01-bc20-c5290cbf32c4"))).set_TriangleIndicesDescription(value));
 	}
 	final Windows.Graphics.Printing3D.Printing3DBufferDescription TriangleMaterialIndicesDescription()
 	{
 		Windows.Graphics.Printing3D.Printing3DBufferDescription _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).get_TriangleMaterialIndicesDescription(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMesh)this.asInterface(uuid("192e90dc-0228-2e01-bc20-c5290cbf32c4"))).get_TriangleMaterialIndicesDescription(&_ret));
 		return _ret;
 	}
 	final void TriangleMaterialIndicesDescription(Windows.Graphics.Printing3D.Printing3DBufferDescription value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).set_TriangleMaterialIndicesDescription(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMesh)this.asInterface(uuid("192e90dc-0228-2e01-bc20-c5290cbf32c4"))).set_TriangleMaterialIndicesDescription(value));
 	}
 	final Windows.Storage.Streams.IBuffer GetVertexPositions()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).abi_GetVertexPositions(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMesh)this.asInterface(uuid("192e90dc-0228-2e01-bc20-c5290cbf32c4"))).abi_GetVertexPositions(&_ret));
 		return _ret;
 	}
 	final void CreateVertexPositions(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).abi_CreateVertexPositions(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMesh)this.asInterface(uuid("192e90dc-0228-2e01-bc20-c5290cbf32c4"))).abi_CreateVertexPositions(value));
 	}
 	final Windows.Storage.Streams.IBuffer GetVertexNormals()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).abi_GetVertexNormals(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMesh)this.asInterface(uuid("192e90dc-0228-2e01-bc20-c5290cbf32c4"))).abi_GetVertexNormals(&_ret));
 		return _ret;
 	}
 	final void CreateVertexNormals(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).abi_CreateVertexNormals(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMesh)this.asInterface(uuid("192e90dc-0228-2e01-bc20-c5290cbf32c4"))).abi_CreateVertexNormals(value));
 	}
 	final Windows.Storage.Streams.IBuffer GetTriangleIndices()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).abi_GetTriangleIndices(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMesh)this.asInterface(uuid("192e90dc-0228-2e01-bc20-c5290cbf32c4"))).abi_GetTriangleIndices(&_ret));
 		return _ret;
 	}
 	final void CreateTriangleIndices(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).abi_CreateTriangleIndices(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMesh)this.asInterface(uuid("192e90dc-0228-2e01-bc20-c5290cbf32c4"))).abi_CreateTriangleIndices(value));
 	}
 	final Windows.Storage.Streams.IBuffer GetTriangleMaterialIndices()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).abi_GetTriangleMaterialIndices(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMesh)this.asInterface(uuid("192e90dc-0228-2e01-bc20-c5290cbf32c4"))).abi_GetTriangleMaterialIndices(&_ret));
 		return _ret;
 	}
 	final void CreateTriangleMaterialIndices(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).abi_CreateTriangleMaterialIndices(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMesh)this.asInterface(uuid("192e90dc-0228-2e01-bc20-c5290cbf32c4"))).abi_CreateTriangleMaterialIndices(value));
 	}
 	final Windows.Foundation.Collections.IPropertySet BufferDescriptionSet()
 	{
 		Windows.Foundation.Collections.IPropertySet _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).get_BufferDescriptionSet(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMesh)this.asInterface(uuid("192e90dc-0228-2e01-bc20-c5290cbf32c4"))).get_BufferDescriptionSet(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IPropertySet BufferSet()
 	{
 		Windows.Foundation.Collections.IPropertySet _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).get_BufferSet(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMesh)this.asInterface(uuid("192e90dc-0228-2e01-bc20-c5290cbf32c4"))).get_BufferSet(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Printing3D.Printing3DMeshVerificationResult) VerifyAsync(Windows.Graphics.Printing3D.Printing3DMeshVerificationMode value)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Printing3D.Printing3DMeshVerificationResult) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMesh).abi_VerifyAsync(value, &_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMesh)this.asInterface(uuid("192e90dc-0228-2e01-bc20-c5290cbf32c4"))).abi_VerifyAsync(value, &_ret));
 		return _ret;
 	}
 	static Printing3DMesh New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Printing3DMesh).abi_ActivateInstance(&ret));
-		return ret.as!(Printing3DMesh);
+		return cast(Printing3DMesh) ret;
 	}
 }
 
@@ -1151,19 +1151,19 @@ extern(Windows):
 	final bool IsValid()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMeshVerificationResult).get_IsValid(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMeshVerificationResult)this.asInterface(uuid("195671ba-e93a-4e8a-a46f-dea8e852197e"))).get_IsValid(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(UINT32) NonmanifoldTriangles()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMeshVerificationResult).get_NonmanifoldTriangles(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMeshVerificationResult)this.asInterface(uuid("195671ba-e93a-4e8a-a46f-dea8e852197e"))).get_NonmanifoldTriangles(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(UINT32) ReversedNormalTriangles()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMeshVerificationResult).get_ReversedNormalTriangles(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMeshVerificationResult)this.asInterface(uuid("195671ba-e93a-4e8a-a46f-dea8e852197e"))).get_ReversedNormalTriangles(&_ret));
 		return _ret;
 	}
 }
@@ -1174,126 +1174,126 @@ extern(Windows):
 	final Windows.Graphics.Printing3D.Printing3DModelUnit Unit()
 	{
 		Windows.Graphics.Printing3D.Printing3DModelUnit _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).get_Unit(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel)this.asInterface(uuid("2d012ef0-52fb-919a-77b0-4b1a3b80324f"))).get_Unit(&_ret));
 		return _ret;
 	}
 	final void Unit(Windows.Graphics.Printing3D.Printing3DModelUnit value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).set_Unit(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel)this.asInterface(uuid("2d012ef0-52fb-919a-77b0-4b1a3b80324f"))).set_Unit(value));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DModelTexture) Textures()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DModelTexture) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).get_Textures(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel)this.asInterface(uuid("2d012ef0-52fb-919a-77b0-4b1a3b80324f"))).get_Textures(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DMesh) Meshes()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DMesh) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).get_Meshes(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel)this.asInterface(uuid("2d012ef0-52fb-919a-77b0-4b1a3b80324f"))).get_Meshes(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DComponent) Components()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DComponent) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).get_Components(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel)this.asInterface(uuid("2d012ef0-52fb-919a-77b0-4b1a3b80324f"))).get_Components(&_ret));
 		return _ret;
 	}
 	final Windows.Graphics.Printing3D.Printing3DMaterial Material()
 	{
 		Windows.Graphics.Printing3D.Printing3DMaterial _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).get_Material(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel)this.asInterface(uuid("2d012ef0-52fb-919a-77b0-4b1a3b80324f"))).get_Material(&_ret));
 		return _ret;
 	}
 	final void Material(Windows.Graphics.Printing3D.Printing3DMaterial value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).set_Material(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel)this.asInterface(uuid("2d012ef0-52fb-919a-77b0-4b1a3b80324f"))).set_Material(value));
 	}
 	final Windows.Graphics.Printing3D.Printing3DComponent Build()
 	{
 		Windows.Graphics.Printing3D.Printing3DComponent _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).get_Build(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel)this.asInterface(uuid("2d012ef0-52fb-919a-77b0-4b1a3b80324f"))).get_Build(&_ret));
 		return _ret;
 	}
 	final void Build(Windows.Graphics.Printing3D.Printing3DComponent value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).set_Build(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel)this.asInterface(uuid("2d012ef0-52fb-919a-77b0-4b1a3b80324f"))).set_Build(value));
 	}
 	final HSTRING Version()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).get_Version(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel)this.asInterface(uuid("2d012ef0-52fb-919a-77b0-4b1a3b80324f"))).get_Version(&_ret));
 		return _ret;
 	}
 	final void Version(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).set_Version(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel)this.asInterface(uuid("2d012ef0-52fb-919a-77b0-4b1a3b80324f"))).set_Version(value));
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) RequiredExtensions()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).get_RequiredExtensions(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel)this.asInterface(uuid("2d012ef0-52fb-919a-77b0-4b1a3b80324f"))).get_RequiredExtensions(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) Metadata()
 	{
 		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).get_Metadata(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel)this.asInterface(uuid("2d012ef0-52fb-919a-77b0-4b1a3b80324f"))).get_Metadata(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction RepairAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).abi_RepairAsync(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel)this.asInterface(uuid("2d012ef0-52fb-919a-77b0-4b1a3b80324f"))).abi_RepairAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Graphics.Printing3D.Printing3DModel Clone()
 	{
 		Windows.Graphics.Printing3D.Printing3DModel _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel).abi_Clone(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel)this.asInterface(uuid("2d012ef0-52fb-919a-77b0-4b1a3b80324f"))).abi_Clone(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TryPartialRepairAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel2).abi_TryPartialRepairAsync(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel2)this.asInterface(uuid("c92069c7-c841-47f3-a84e-a149fd08b657"))).abi_TryPartialRepairAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TryPartialRepairWithTimeAsync(Windows.Foundation.TimeSpan maxWaitTime)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel2).abi_TryPartialRepairWithTimeAsync(maxWaitTime, &_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel2)this.asInterface(uuid("c92069c7-c841-47f3-a84e-a149fd08b657"))).abi_TryPartialRepairWithTimeAsync(maxWaitTime, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(bool, double) TryReduceFacesAsync()
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(bool, double) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel2).abi_TryReduceFacesAsync(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel2)this.asInterface(uuid("c92069c7-c841-47f3-a84e-a149fd08b657"))).abi_TryReduceFacesAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(bool, double) TryReduceFacesWithOptionsAsync(Windows.Graphics.Printing3D.Printing3DFaceReductionOptions printing3DFaceReductionOptions)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(bool, double) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel2).abi_TryReduceFacesWithOptionsAsync(printing3DFaceReductionOptions, &_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel2)this.asInterface(uuid("c92069c7-c841-47f3-a84e-a149fd08b657"))).abi_TryReduceFacesWithOptionsAsync(printing3DFaceReductionOptions, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(bool, double) TryReduceFacesWithOptionsAndTimeAsync(Windows.Graphics.Printing3D.Printing3DFaceReductionOptions printing3DFaceReductionOptions, Windows.Foundation.TimeSpan maxWait)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(bool, double) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel2).abi_TryReduceFacesWithOptionsAndTimeAsync(printing3DFaceReductionOptions, maxWait, &_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel2)this.asInterface(uuid("c92069c7-c841-47f3-a84e-a149fd08b657"))).abi_TryReduceFacesWithOptionsAndTimeAsync(printing3DFaceReductionOptions, maxWait, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(bool, double) RepairWithProgressAsync()
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(bool, double) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModel2).abi_RepairWithProgressAsync(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel2)this.asInterface(uuid("c92069c7-c841-47f3-a84e-a149fd08b657"))).abi_RepairWithProgressAsync(&_ret));
 		return _ret;
 	}
 	static Printing3DModel New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Printing3DModel).abi_ActivateInstance(&ret));
-		return ret.as!(Printing3DModel);
+		return cast(Printing3DModel) ret;
 	}
 }
 
@@ -1303,38 +1303,38 @@ extern(Windows):
 	final Windows.Graphics.Printing3D.Printing3DTextureResource TextureResource()
 	{
 		Windows.Graphics.Printing3D.Printing3DTextureResource _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModelTexture).get_TextureResource(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModelTexture)this.asInterface(uuid("5dafcf01-b59d-483c-97bb-a4d546d1c75c"))).get_TextureResource(&_ret));
 		return _ret;
 	}
 	final void TextureResource(Windows.Graphics.Printing3D.Printing3DTextureResource value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModelTexture).set_TextureResource(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModelTexture)this.asInterface(uuid("5dafcf01-b59d-483c-97bb-a4d546d1c75c"))).set_TextureResource(value));
 	}
 	final Windows.Graphics.Printing3D.Printing3DTextureEdgeBehavior TileStyleU()
 	{
 		Windows.Graphics.Printing3D.Printing3DTextureEdgeBehavior _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModelTexture).get_TileStyleU(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModelTexture)this.asInterface(uuid("5dafcf01-b59d-483c-97bb-a4d546d1c75c"))).get_TileStyleU(&_ret));
 		return _ret;
 	}
 	final void TileStyleU(Windows.Graphics.Printing3D.Printing3DTextureEdgeBehavior value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModelTexture).set_TileStyleU(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModelTexture)this.asInterface(uuid("5dafcf01-b59d-483c-97bb-a4d546d1c75c"))).set_TileStyleU(value));
 	}
 	final Windows.Graphics.Printing3D.Printing3DTextureEdgeBehavior TileStyleV()
 	{
 		Windows.Graphics.Printing3D.Printing3DTextureEdgeBehavior _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModelTexture).get_TileStyleV(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModelTexture)this.asInterface(uuid("5dafcf01-b59d-483c-97bb-a4d546d1c75c"))).get_TileStyleV(&_ret));
 		return _ret;
 	}
 	final void TileStyleV(Windows.Graphics.Printing3D.Printing3DTextureEdgeBehavior value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DModelTexture).set_TileStyleV(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModelTexture)this.asInterface(uuid("5dafcf01-b59d-483c-97bb-a4d546d1c75c"))).set_TileStyleV(value));
 	}
 	static Printing3DModelTexture New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Printing3DModelTexture).abi_ActivateInstance(&ret));
-		return ret.as!(Printing3DModelTexture);
+		return cast(Printing3DModelTexture) ret;
 	}
 }
 
@@ -1344,14 +1344,14 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVector!(UINT32) MaterialIndices()
 	{
 		Windows.Foundation.Collections.IVector!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterial).get_MaterialIndices(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterial)this.asInterface(uuid("25a6254b-c6e9-484d-a214-a25e5776ba62"))).get_MaterialIndices(&_ret));
 		return _ret;
 	}
 	static Printing3DMultiplePropertyMaterial New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Printing3DMultiplePropertyMaterial).abi_ActivateInstance(&ret));
-		return ret.as!(Printing3DMultiplePropertyMaterial);
+		return cast(Printing3DMultiplePropertyMaterial) ret;
 	}
 }
 
@@ -1361,26 +1361,26 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DMultiplePropertyMaterial) MultipleProperties()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DMultiplePropertyMaterial) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterialGroup).get_MultipleProperties(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterialGroup)this.asInterface(uuid("f0950519-aeb9-4515-a39b-a088fbbb277c"))).get_MultipleProperties(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(UINT32) MaterialGroupIndices()
 	{
 		Windows.Foundation.Collections.IVector!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterialGroup).get_MaterialGroupIndices(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterialGroup)this.asInterface(uuid("f0950519-aeb9-4515-a39b-a088fbbb277c"))).get_MaterialGroupIndices(&_ret));
 		return _ret;
 	}
 	final UINT32 MaterialGroupId()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterialGroup).get_MaterialGroupId(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterialGroup)this.asInterface(uuid("f0950519-aeb9-4515-a39b-a088fbbb277c"))).get_MaterialGroupId(&_ret));
 		return _ret;
 	}
 	static Windows.Graphics.Printing3D.Printing3DMultiplePropertyMaterialGroup New(UINT32 MaterialGroupId)
 	{
 		auto factory = factory!(Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterialGroupFactory);
 		Windows.Graphics.Printing3D.Printing3DMultiplePropertyMaterialGroup _ret;
-		Debug.OK(factory.as!(Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterialGroupFactory).abi_Create(MaterialGroupId, &_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DMultiplePropertyMaterialGroupFactory)factory.asInterface(uuid("323e196e-d4c6-451e-a814-4d78a210fe53"))).abi_Create(MaterialGroupId, &_ret));
 		return _ret;
 	}
 }
@@ -1391,38 +1391,38 @@ extern(Windows):
 	final Windows.Graphics.Printing3D.Printing3DModelTexture Texture()
 	{
 		Windows.Graphics.Printing3D.Printing3DModelTexture _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterial).get_Texture(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterial)this.asInterface(uuid("8d844bfb-07e9-4986-9833-8dd3d48c6859"))).get_Texture(&_ret));
 		return _ret;
 	}
 	final void Texture(Windows.Graphics.Printing3D.Printing3DModelTexture value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterial).set_Texture(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterial)this.asInterface(uuid("8d844bfb-07e9-4986-9833-8dd3d48c6859"))).set_Texture(value));
 	}
 	final double U()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterial).get_U(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterial)this.asInterface(uuid("8d844bfb-07e9-4986-9833-8dd3d48c6859"))).get_U(&_ret));
 		return _ret;
 	}
 	final void U(double value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterial).set_U(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterial)this.asInterface(uuid("8d844bfb-07e9-4986-9833-8dd3d48c6859"))).set_U(value));
 	}
 	final double V()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterial).get_V(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterial)this.asInterface(uuid("8d844bfb-07e9-4986-9833-8dd3d48c6859"))).get_V(&_ret));
 		return _ret;
 	}
 	final void V(double value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterial).set_V(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterial)this.asInterface(uuid("8d844bfb-07e9-4986-9833-8dd3d48c6859"))).set_V(value));
 	}
 	static Printing3DTexture2CoordMaterial New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Printing3DTexture2CoordMaterial).abi_ActivateInstance(&ret));
-		return ret.as!(Printing3DTexture2CoordMaterial);
+		return cast(Printing3DTexture2CoordMaterial) ret;
 	}
 }
 
@@ -1432,30 +1432,30 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DTexture2CoordMaterial) Texture2Coords()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Graphics.Printing3D.Printing3DTexture2CoordMaterial) _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroup).get_Texture2Coords(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroup)this.asInterface(uuid("627d7ca7-6d90-4fb9-9fc4-9feff3dfa892"))).get_Texture2Coords(&_ret));
 		return _ret;
 	}
 	final UINT32 MaterialGroupId()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroup).get_MaterialGroupId(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroup)this.asInterface(uuid("627d7ca7-6d90-4fb9-9fc4-9feff3dfa892"))).get_MaterialGroupId(&_ret));
 		return _ret;
 	}
 	final Windows.Graphics.Printing3D.Printing3DModelTexture Texture()
 	{
 		Windows.Graphics.Printing3D.Printing3DModelTexture _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroup2).get_Texture(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroup2)this.asInterface(uuid("69fbdbba-b12e-429b-8386-df5284f6e80f"))).get_Texture(&_ret));
 		return _ret;
 	}
 	final void Texture(Windows.Graphics.Printing3D.Printing3DModelTexture value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroup2).set_Texture(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroup2)this.asInterface(uuid("69fbdbba-b12e-429b-8386-df5284f6e80f"))).set_Texture(value));
 	}
 	static Windows.Graphics.Printing3D.Printing3DTexture2CoordMaterialGroup New(UINT32 MaterialGroupId)
 	{
 		auto factory = factory!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroupFactory);
 		Windows.Graphics.Printing3D.Printing3DTexture2CoordMaterialGroup _ret;
-		Debug.OK(factory.as!(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroupFactory).abi_Create(MaterialGroupId, &_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DTexture2CoordMaterialGroupFactory)factory.asInterface(uuid("cbb049b0-468a-4c6f-b2a2-8eb8ba8dea48"))).abi_Create(MaterialGroupId, &_ret));
 		return _ret;
 	}
 }
@@ -1466,28 +1466,28 @@ extern(Windows):
 	final Windows.Storage.Streams.IRandomAccessStreamWithContentType TextureData()
 	{
 		Windows.Storage.Streams.IRandomAccessStreamWithContentType _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTextureResource).get_TextureData(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DTextureResource)this.asInterface(uuid("a70df32d-6ab1-44ae-bc45-a27382c0d38c"))).get_TextureData(&_ret));
 		return _ret;
 	}
 	final void TextureData(Windows.Storage.Streams.IRandomAccessStreamWithContentType value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTextureResource).set_TextureData(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DTextureResource)this.asInterface(uuid("a70df32d-6ab1-44ae-bc45-a27382c0d38c"))).set_TextureData(value));
 	}
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTextureResource).get_Name(&_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DTextureResource)this.asInterface(uuid("a70df32d-6ab1-44ae-bc45-a27382c0d38c"))).get_Name(&_ret));
 		return _ret;
 	}
 	final void Name(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Printing3D.IPrinting3DTextureResource).set_Name(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DTextureResource)this.asInterface(uuid("a70df32d-6ab1-44ae-bc45-a27382c0d38c"))).set_Name(value));
 	}
 	static Printing3DTextureResource New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Printing3DTextureResource).abi_ActivateInstance(&ret));
-		return ret.as!(Printing3DTextureResource);
+		return cast(Printing3DTextureResource) ret;
 	}
 }
 

@@ -1307,75 +1307,75 @@ extern(Windows):
 	final Windows.UI.Xaml.Automation.ToggleState ToggleState()
 	{
 		Windows.UI.Xaml.Automation.ToggleState _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).get_ToggleState(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IToggleProvider)this.asInterface(uuid("93b88290-656f-44f7-aeaf-78b8f944d062"))).get_ToggleState(&_ret));
 		return _ret;
 	}
 	final void Toggle()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IToggleProvider)this.asInterface(uuid("93b88290-656f-44f7-aeaf-78b8f944d062"))).abi_Toggle());
 	}
 	final Windows.UI.Xaml.Automation.ExpandCollapseState ExpandCollapseState()
 	{
 		Windows.UI.Xaml.Automation.ExpandCollapseState _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).get_ExpandCollapseState(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider)this.asInterface(uuid("49ac8399-d626-4543-94b9-a6d9a9593af6"))).get_ExpandCollapseState(&_ret));
 		return _ret;
 	}
 	final void Collapse()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).abi_Collapse());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider)this.asInterface(uuid("49ac8399-d626-4543-94b9-a6d9a9593af6"))).abi_Collapse());
 	}
 	final void Expand()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).abi_Expand());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider)this.asInterface(uuid("49ac8399-d626-4543-94b9-a6d9a9593af6"))).abi_Expand());
 	}
 	final bool IsModal()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_IsModal(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)this.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_IsModal(&_ret));
 		return _ret;
 	}
 	final bool IsTopmost()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_IsTopmost(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)this.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_IsTopmost(&_ret));
 		return _ret;
 	}
 	final bool Maximizable()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_Maximizable(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)this.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_Maximizable(&_ret));
 		return _ret;
 	}
 	final bool Minimizable()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_Minimizable(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)this.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_Minimizable(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Automation.WindowInteractionState InteractionState()
 	{
 		Windows.UI.Xaml.Automation.WindowInteractionState _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_InteractionState(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)this.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_InteractionState(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Automation.WindowVisualState VisualState()
 	{
 		Windows.UI.Xaml.Automation.WindowVisualState _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_VisualState(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)this.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_VisualState(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_Close());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)this.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).abi_Close());
 	}
 	final void SetVisualState(Windows.UI.Xaml.Automation.WindowVisualState state)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_SetVisualState(state));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)this.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).abi_SetVisualState(state));
 	}
 	final bool WaitForInputIdle(INT32 milliseconds)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_WaitForInputIdle(milliseconds, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)this.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).abi_WaitForInputIdle(milliseconds, &_ret));
 		return _ret;
 	}
 }
@@ -1390,22 +1390,22 @@ class AppBarAutomationPeerT(Base) : AgileObject!Base, AppBarAutomationPeer
 		return ret;
 	}
 
-	override HRESULT get_ToggleState(Windows.UI.Xaml.Automation.ToggleState* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).get_ToggleState(return_value); }
-	override HRESULT abi_Toggle() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle(); }
+	override HRESULT get_ToggleState(Windows.UI.Xaml.Automation.ToggleState* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IToggleProvider)m_inner.asInterface(uuid("93b88290-656f-44f7-aeaf-78b8f944d062"))).get_ToggleState(return_value); }
+	override HRESULT abi_Toggle() { return (cast(Windows.UI.Xaml.Automation.Provider.IToggleProvider)m_inner.asInterface(uuid("93b88290-656f-44f7-aeaf-78b8f944d062"))).abi_Toggle(); }
 
-	override HRESULT get_ExpandCollapseState(Windows.UI.Xaml.Automation.ExpandCollapseState* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).get_ExpandCollapseState(return_value); }
-	override HRESULT abi_Collapse() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).abi_Collapse(); }
-	override HRESULT abi_Expand() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).abi_Expand(); }
+	override HRESULT get_ExpandCollapseState(Windows.UI.Xaml.Automation.ExpandCollapseState* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider)m_inner.asInterface(uuid("49ac8399-d626-4543-94b9-a6d9a9593af6"))).get_ExpandCollapseState(return_value); }
+	override HRESULT abi_Collapse() { return (cast(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider)m_inner.asInterface(uuid("49ac8399-d626-4543-94b9-a6d9a9593af6"))).abi_Collapse(); }
+	override HRESULT abi_Expand() { return (cast(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider)m_inner.asInterface(uuid("49ac8399-d626-4543-94b9-a6d9a9593af6"))).abi_Expand(); }
 
-	override HRESULT get_IsModal(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_IsModal(return_value); }
-	override HRESULT get_IsTopmost(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_IsTopmost(return_value); }
-	override HRESULT get_Maximizable(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_Maximizable(return_value); }
-	override HRESULT get_Minimizable(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_Minimizable(return_value); }
-	override HRESULT get_InteractionState(Windows.UI.Xaml.Automation.WindowInteractionState* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_InteractionState(return_value); }
-	override HRESULT get_VisualState(Windows.UI.Xaml.Automation.WindowVisualState* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_VisualState(return_value); }
-	override HRESULT abi_Close() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_Close(); }
-	override HRESULT abi_SetVisualState(Windows.UI.Xaml.Automation.WindowVisualState state) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_SetVisualState(state); }
-	override HRESULT abi_WaitForInputIdle(INT32 milliseconds, bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_WaitForInputIdle(milliseconds, return_returnValue); }
+	override HRESULT get_IsModal(bool* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)m_inner.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_IsModal(return_value); }
+	override HRESULT get_IsTopmost(bool* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)m_inner.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_IsTopmost(return_value); }
+	override HRESULT get_Maximizable(bool* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)m_inner.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_Maximizable(return_value); }
+	override HRESULT get_Minimizable(bool* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)m_inner.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_Minimizable(return_value); }
+	override HRESULT get_InteractionState(Windows.UI.Xaml.Automation.WindowInteractionState* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)m_inner.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_InteractionState(return_value); }
+	override HRESULT get_VisualState(Windows.UI.Xaml.Automation.WindowVisualState* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)m_inner.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_VisualState(return_value); }
+	override HRESULT abi_Close() { return (cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)m_inner.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).abi_Close(); }
+	override HRESULT abi_SetVisualState(Windows.UI.Xaml.Automation.WindowVisualState state) { return (cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)m_inner.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).abi_SetVisualState(state); }
+	override HRESULT abi_WaitForInputIdle(INT32 milliseconds, bool* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)m_inner.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).abi_WaitForInputIdle(milliseconds, return_returnValue); }
 
 	this() {}
 	IInspectable m_inner;
@@ -1453,7 +1453,7 @@ interface AutoSuggestBoxAutomationPeer : Windows.UI.Xaml.Automation.Peers.Framew
 	{
 		auto factory = factory!(Windows.UI.Xaml.Automation.Peers.IAutoSuggestBoxAutomationPeerFactory);
 		Windows.UI.Xaml.Automation.Peers.AutoSuggestBoxAutomationPeer _ret;
-		Debug.OK(factory.as!(Windows.UI.Xaml.Automation.Peers.IAutoSuggestBoxAutomationPeerFactory).abi_CreateInstanceWithOwner(owner, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutoSuggestBoxAutomationPeerFactory)factory.asInterface(uuid("80046849-18e7-4475-b362-4bbd53d24562"))).abi_CreateInstanceWithOwner(owner, &_ret));
 		return _ret;
 	}
 }
@@ -1464,303 +1464,303 @@ extern(Windows):
 	final Windows.UI.Xaml.Automation.Peers.AutomationPeer EventsSource()
 	{
 		Windows.UI.Xaml.Automation.Peers.AutomationPeer _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).get_EventsSource(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).get_EventsSource(&_ret));
 		return _ret;
 	}
 	final void EventsSource(Windows.UI.Xaml.Automation.Peers.AutomationPeer value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).set_EventsSource(value));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).set_EventsSource(value));
 	}
 	final IInspectable GetPattern(Windows.UI.Xaml.Automation.Peers.PatternInterface patternInterface)
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetPattern(patternInterface, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetPattern(patternInterface, &_ret));
 		return _ret;
 	}
 	final void RaiseAutomationEvent(Windows.UI.Xaml.Automation.Peers.AutomationEvents eventId)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_RaiseAutomationEvent(eventId));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_RaiseAutomationEvent(eventId));
 	}
 	final void RaisePropertyChangedEvent(Windows.UI.Xaml.Automation.AutomationProperty automationProperty, IInspectable oldValue, IInspectable newValue)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_RaisePropertyChangedEvent(automationProperty, oldValue, newValue));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_RaisePropertyChangedEvent(automationProperty, oldValue, newValue));
 	}
 	final HSTRING GetAcceleratorKey()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetAcceleratorKey(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetAcceleratorKey(&_ret));
 		return _ret;
 	}
 	final HSTRING GetAccessKey()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetAccessKey(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetAccessKey(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Automation.Peers.AutomationControlType GetAutomationControlType()
 	{
 		Windows.UI.Xaml.Automation.Peers.AutomationControlType _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetAutomationControlType(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetAutomationControlType(&_ret));
 		return _ret;
 	}
 	final HSTRING GetAutomationId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetAutomationId(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetAutomationId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect GetBoundingRectangle()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetBoundingRectangle(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetBoundingRectangle(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) GetChildren()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetChildren(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetChildren(&_ret));
 		return _ret;
 	}
 	final HSTRING GetClassName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetClassName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetClassName(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point GetClickablePoint()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetClickablePoint(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetClickablePoint(&_ret));
 		return _ret;
 	}
 	final HSTRING GetHelpText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetHelpText(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetHelpText(&_ret));
 		return _ret;
 	}
 	final HSTRING GetItemStatus()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetItemStatus(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetItemStatus(&_ret));
 		return _ret;
 	}
 	final HSTRING GetItemType()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetItemType(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetItemType(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Automation.Peers.AutomationPeer GetLabeledBy()
 	{
 		Windows.UI.Xaml.Automation.Peers.AutomationPeer _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetLabeledBy(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetLabeledBy(&_ret));
 		return _ret;
 	}
 	final HSTRING GetLocalizedControlType()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetLocalizedControlType(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetLocalizedControlType(&_ret));
 		return _ret;
 	}
 	final HSTRING GetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetName(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetName(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Automation.Peers.AutomationOrientation GetOrientation()
 	{
 		Windows.UI.Xaml.Automation.Peers.AutomationOrientation _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetOrientation(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetOrientation(&_ret));
 		return _ret;
 	}
 	final bool HasKeyboardFocus()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_HasKeyboardFocus(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_HasKeyboardFocus(&_ret));
 		return _ret;
 	}
 	final bool IsContentElement()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsContentElement(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_IsContentElement(&_ret));
 		return _ret;
 	}
 	final bool IsControlElement()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsControlElement(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_IsControlElement(&_ret));
 		return _ret;
 	}
 	final bool IsEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_IsEnabled(&_ret));
 		return _ret;
 	}
 	final bool IsKeyboardFocusable()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsKeyboardFocusable(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_IsKeyboardFocusable(&_ret));
 		return _ret;
 	}
 	final bool IsOffscreen()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsOffscreen(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_IsOffscreen(&_ret));
 		return _ret;
 	}
 	final bool IsPassword()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsPassword(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_IsPassword(&_ret));
 		return _ret;
 	}
 	final bool IsRequiredForForm()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsRequiredForForm(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_IsRequiredForForm(&_ret));
 		return _ret;
 	}
 	final void SetFocus()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_SetFocus());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_SetFocus());
 	}
 	deprecated("Consider using Navigate with AutomationNavigationDirection::Parent, which is an improved version of GetParent. For more info, see MSDN.")
 	final Windows.UI.Xaml.Automation.Peers.AutomationPeer GetParent()
 	{
 		Windows.UI.Xaml.Automation.Peers.AutomationPeer _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetParent(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetParent(&_ret));
 		return _ret;
 	}
 	final void InvalidatePeer()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_InvalidatePeer());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_InvalidatePeer());
 	}
 	deprecated("Consider using GetElementFromPoint, which is an improved version of GetPeerFromPoint. For more info, see MSDN.")
 	final Windows.UI.Xaml.Automation.Peers.AutomationPeer GetPeerFromPoint(Windows.Foundation.Point point)
 	{
 		Windows.UI.Xaml.Automation.Peers.AutomationPeer _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetPeerFromPoint(point, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetPeerFromPoint(point, &_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Automation.Peers.AutomationLiveSetting GetLiveSetting()
 	{
 		Windows.UI.Xaml.Automation.Peers.AutomationLiveSetting _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetLiveSetting(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)this.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetLiveSetting(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Automation.Peers.AutomationPeer PeerFromProvider(Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple provider)
 	{
 		Windows.UI.Xaml.Automation.Peers.AutomationPeer _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerProtected).abi_PeerFromProvider(provider, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerProtected)this.asInterface(uuid("f4b40e52-642f-4629-a54a-ea5d2349c448"))).abi_PeerFromProvider(provider, &_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple ProviderFromPeer(Windows.UI.Xaml.Automation.Peers.AutomationPeer peer)
 	{
 		Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerProtected).abi_ProviderFromPeer(peer, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerProtected)this.asInterface(uuid("f4b40e52-642f-4629-a54a-ea5d2349c448"))).abi_ProviderFromPeer(peer, &_ret));
 		return _ret;
 	}
 	final IInspectable Navigate(Windows.UI.Xaml.Automation.Peers.AutomationNavigationDirection direction)
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_Navigate(direction, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)this.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_Navigate(direction, &_ret));
 		return _ret;
 	}
 	final IInspectable GetElementFromPoint(Windows.Foundation.Point pointInWindowCoordinates)
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetElementFromPoint(pointInWindowCoordinates, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)this.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_GetElementFromPoint(pointInWindowCoordinates, &_ret));
 		return _ret;
 	}
 	final IInspectable GetFocusedElement()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetFocusedElement(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)this.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_GetFocusedElement(&_ret));
 		return _ret;
 	}
 	final void ShowContextMenu()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_ShowContextMenu());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)this.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_ShowContextMenu());
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) GetControlledPeers()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Automation.Peers.AutomationPeer) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetControlledPeers(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)this.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_GetControlledPeers(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation) GetAnnotations()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation) _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetAnnotations(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)this.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_GetAnnotations(&_ret));
 		return _ret;
 	}
 	final void SetParent(Windows.UI.Xaml.Automation.Peers.AutomationPeer peer)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_SetParent(peer));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)this.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_SetParent(peer));
 	}
 	final void RaiseTextEditTextChangedEvent(Windows.UI.Xaml.Automation.AutomationTextEditChangeType automationTextEditChangeType, Windows.Foundation.Collections.IVectorView!(HSTRING) changedData)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_RaiseTextEditTextChangedEvent(automationTextEditChangeType, changedData));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)this.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_RaiseTextEditTextChangedEvent(automationTextEditChangeType, changedData));
 	}
 	final INT32 GetPositionInSet()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetPositionInSet(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)this.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_GetPositionInSet(&_ret));
 		return _ret;
 	}
 	final INT32 GetSizeOfSet()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetSizeOfSet(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)this.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_GetSizeOfSet(&_ret));
 		return _ret;
 	}
 	final INT32 GetLevel()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetLevel(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)this.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_GetLevel(&_ret));
 		return _ret;
 	}
 	final void RaiseStructureChangedEvent(Windows.UI.Xaml.Automation.Peers.AutomationStructureChangeType structureChangeType, Windows.UI.Xaml.Automation.Peers.AutomationPeer child)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_RaiseStructureChangedEvent(structureChangeType, child));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)this.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_RaiseStructureChangedEvent(structureChangeType, child));
 	}
 	final Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType GetLandmarkType()
 	{
 		Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer4).abi_GetLandmarkType(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer4)this.asInterface(uuid("761ce752-73c1-4f44-be75-43c49ec0d4d5"))).abi_GetLandmarkType(&_ret));
 		return _ret;
 	}
 	final HSTRING GetLocalizedLandmarkType()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer4).abi_GetLocalizedLandmarkType(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer4)this.asInterface(uuid("761ce752-73c1-4f44-be75-43c49ec0d4d5"))).abi_GetLocalizedLandmarkType(&_ret));
 		return _ret;
 	}
 	final bool IsPeripheral()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer5).abi_IsPeripheral(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer5)this.asInterface(uuid("f632e1c6-0a3f-4574-9fef-cdc151765674"))).abi_IsPeripheral(&_ret));
 		return _ret;
 	}
 	final bool IsDataValidForForm()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer5).abi_IsDataValidForForm(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer5)this.asInterface(uuid("f632e1c6-0a3f-4574-9fef-cdc151765674"))).abi_IsDataValidForForm(&_ret));
 		return _ret;
 	}
 	final HSTRING GetFullDescription()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer5).abi_GetFullDescription(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer5)this.asInterface(uuid("f632e1c6-0a3f-4574-9fef-cdc151765674"))).abi_GetFullDescription(&_ret));
 		return _ret;
 	}
 	final INT32 GetCulture()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer6).abi_GetCulture(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer6)this.asInterface(uuid("caf8608f-13ff-42fb-866d-22206434cc6b"))).abi_GetCulture(&_ret));
 		return _ret;
 	}
 
@@ -1773,7 +1773,7 @@ extern(Windows):
 	static bool ListenerExists(Windows.UI.Xaml.Automation.Peers.AutomationEvents eventId)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerStatics).abi_ListenerExists(eventId, &_ret));
+		Debug.OK(staticInstance.abi_ListenerExists(eventId, &_ret));
 		return _ret;
 	}
 	static AutomationPeer New()
@@ -1794,161 +1794,161 @@ class AutomationPeerT(Base) : AgileObject!Base, AutomationPeer
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_EventsSource(Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).get_EventsSource(return_value); }
-	override HRESULT set_EventsSource(Windows.UI.Xaml.Automation.Peers.AutomationPeer value) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).set_EventsSource(value); }
-	override HRESULT abi_GetPattern(Windows.UI.Xaml.Automation.Peers.PatternInterface patternInterface, IInspectable* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetPattern(patternInterface, return_returnValue); }
-	override HRESULT abi_RaiseAutomationEvent(Windows.UI.Xaml.Automation.Peers.AutomationEvents eventId) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_RaiseAutomationEvent(eventId); }
-	override HRESULT abi_RaisePropertyChangedEvent(Windows.UI.Xaml.Automation.AutomationProperty automationProperty, IInspectable oldValue, IInspectable newValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_RaisePropertyChangedEvent(automationProperty, oldValue, newValue); }
-	override HRESULT abi_GetAcceleratorKey(HSTRING* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetAcceleratorKey(return_returnValue); }
-	override HRESULT abi_GetAccessKey(HSTRING* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetAccessKey(return_returnValue); }
-	override HRESULT abi_GetAutomationControlType(Windows.UI.Xaml.Automation.Peers.AutomationControlType* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetAutomationControlType(return_returnValue); }
-	override HRESULT abi_GetAutomationId(HSTRING* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetAutomationId(return_returnValue); }
-	override HRESULT abi_GetBoundingRectangle(Windows.Foundation.Rect* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetBoundingRectangle(return_returnValue); }
-	override HRESULT abi_GetChildren(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetChildren(return_returnValue); }
-	override HRESULT abi_GetClassName(HSTRING* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetClassName(return_returnValue); }
-	override HRESULT abi_GetClickablePoint(Windows.Foundation.Point* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetClickablePoint(return_returnValue); }
-	override HRESULT abi_GetHelpText(HSTRING* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetHelpText(return_returnValue); }
-	override HRESULT abi_GetItemStatus(HSTRING* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetItemStatus(return_returnValue); }
-	override HRESULT abi_GetItemType(HSTRING* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetItemType(return_returnValue); }
-	override HRESULT abi_GetLabeledBy(Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetLabeledBy(return_returnValue); }
-	override HRESULT abi_GetLocalizedControlType(HSTRING* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetLocalizedControlType(return_returnValue); }
-	override HRESULT abi_GetName(HSTRING* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetName(return_returnValue); }
-	override HRESULT abi_GetOrientation(Windows.UI.Xaml.Automation.Peers.AutomationOrientation* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetOrientation(return_returnValue); }
-	override HRESULT abi_HasKeyboardFocus(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_HasKeyboardFocus(return_returnValue); }
-	override HRESULT abi_IsContentElement(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsContentElement(return_returnValue); }
-	override HRESULT abi_IsControlElement(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsControlElement(return_returnValue); }
-	override HRESULT abi_IsEnabled(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsEnabled(return_returnValue); }
-	override HRESULT abi_IsKeyboardFocusable(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsKeyboardFocusable(return_returnValue); }
-	override HRESULT abi_IsOffscreen(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsOffscreen(return_returnValue); }
-	override HRESULT abi_IsPassword(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsPassword(return_returnValue); }
-	override HRESULT abi_IsRequiredForForm(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_IsRequiredForForm(return_returnValue); }
-	override HRESULT abi_SetFocus() { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_SetFocus(); }
-	override HRESULT abi_GetParent(Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetParent(return_returnValue); }
-	override HRESULT abi_InvalidatePeer() { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_InvalidatePeer(); }
-	override HRESULT abi_GetPeerFromPoint(Windows.Foundation.Point point, Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetPeerFromPoint(point, return_returnValue); }
-	override HRESULT abi_GetLiveSetting(Windows.UI.Xaml.Automation.Peers.AutomationLiveSetting* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer).abi_GetLiveSetting(return_returnValue); }
+	override HRESULT get_EventsSource(Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_value) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).get_EventsSource(return_value); }
+	override HRESULT set_EventsSource(Windows.UI.Xaml.Automation.Peers.AutomationPeer value) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).set_EventsSource(value); }
+	override HRESULT abi_GetPattern(Windows.UI.Xaml.Automation.Peers.PatternInterface patternInterface, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetPattern(patternInterface, return_returnValue); }
+	override HRESULT abi_RaiseAutomationEvent(Windows.UI.Xaml.Automation.Peers.AutomationEvents eventId) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_RaiseAutomationEvent(eventId); }
+	override HRESULT abi_RaisePropertyChangedEvent(Windows.UI.Xaml.Automation.AutomationProperty automationProperty, IInspectable oldValue, IInspectable newValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_RaisePropertyChangedEvent(automationProperty, oldValue, newValue); }
+	override HRESULT abi_GetAcceleratorKey(HSTRING* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetAcceleratorKey(return_returnValue); }
+	override HRESULT abi_GetAccessKey(HSTRING* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetAccessKey(return_returnValue); }
+	override HRESULT abi_GetAutomationControlType(Windows.UI.Xaml.Automation.Peers.AutomationControlType* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetAutomationControlType(return_returnValue); }
+	override HRESULT abi_GetAutomationId(HSTRING* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetAutomationId(return_returnValue); }
+	override HRESULT abi_GetBoundingRectangle(Windows.Foundation.Rect* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetBoundingRectangle(return_returnValue); }
+	override HRESULT abi_GetChildren(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetChildren(return_returnValue); }
+	override HRESULT abi_GetClassName(HSTRING* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetClassName(return_returnValue); }
+	override HRESULT abi_GetClickablePoint(Windows.Foundation.Point* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetClickablePoint(return_returnValue); }
+	override HRESULT abi_GetHelpText(HSTRING* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetHelpText(return_returnValue); }
+	override HRESULT abi_GetItemStatus(HSTRING* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetItemStatus(return_returnValue); }
+	override HRESULT abi_GetItemType(HSTRING* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetItemType(return_returnValue); }
+	override HRESULT abi_GetLabeledBy(Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetLabeledBy(return_returnValue); }
+	override HRESULT abi_GetLocalizedControlType(HSTRING* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetLocalizedControlType(return_returnValue); }
+	override HRESULT abi_GetName(HSTRING* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetName(return_returnValue); }
+	override HRESULT abi_GetOrientation(Windows.UI.Xaml.Automation.Peers.AutomationOrientation* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetOrientation(return_returnValue); }
+	override HRESULT abi_HasKeyboardFocus(bool* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_HasKeyboardFocus(return_returnValue); }
+	override HRESULT abi_IsContentElement(bool* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_IsContentElement(return_returnValue); }
+	override HRESULT abi_IsControlElement(bool* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_IsControlElement(return_returnValue); }
+	override HRESULT abi_IsEnabled(bool* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_IsEnabled(return_returnValue); }
+	override HRESULT abi_IsKeyboardFocusable(bool* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_IsKeyboardFocusable(return_returnValue); }
+	override HRESULT abi_IsOffscreen(bool* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_IsOffscreen(return_returnValue); }
+	override HRESULT abi_IsPassword(bool* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_IsPassword(return_returnValue); }
+	override HRESULT abi_IsRequiredForForm(bool* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_IsRequiredForForm(return_returnValue); }
+	override HRESULT abi_SetFocus() { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_SetFocus(); }
+	override HRESULT abi_GetParent(Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetParent(return_returnValue); }
+	override HRESULT abi_InvalidatePeer() { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_InvalidatePeer(); }
+	override HRESULT abi_GetPeerFromPoint(Windows.Foundation.Point point, Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetPeerFromPoint(point, return_returnValue); }
+	override HRESULT abi_GetLiveSetting(Windows.UI.Xaml.Automation.Peers.AutomationLiveSetting* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer)m_inner.asInterface(uuid("35aac87a-62ee-4d3e-a24c-2bc8432d68b7"))).abi_GetLiveSetting(return_returnValue); }
 
 	override HRESULT abi_GetPatternCore(Windows.UI.Xaml.Automation.Peers.PatternInterface patternInterface, IInspectable* return_returnValue) { this.GetPatternCore(patternInterface, return_returnValue); return S_OK; }
-	void GetPatternCore(Windows.UI.Xaml.Automation.Peers.PatternInterface patternInterface, IInspectable* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetPatternCore(patternInterface, return_returnValue)); }
+	void GetPatternCore(Windows.UI.Xaml.Automation.Peers.PatternInterface patternInterface, IInspectable* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_GetPatternCore(patternInterface, return_returnValue)); }
 	override HRESULT abi_GetAcceleratorKeyCore(HSTRING* return_returnValue) { this.GetAcceleratorKeyCore(return_returnValue); return S_OK; }
-	void GetAcceleratorKeyCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetAcceleratorKeyCore(return_returnValue)); }
+	void GetAcceleratorKeyCore(HSTRING* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_GetAcceleratorKeyCore(return_returnValue)); }
 	override HRESULT abi_GetAccessKeyCore(HSTRING* return_returnValue) { this.GetAccessKeyCore(return_returnValue); return S_OK; }
-	void GetAccessKeyCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetAccessKeyCore(return_returnValue)); }
+	void GetAccessKeyCore(HSTRING* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_GetAccessKeyCore(return_returnValue)); }
 	override HRESULT abi_GetAutomationControlTypeCore(Windows.UI.Xaml.Automation.Peers.AutomationControlType* return_returnValue) { this.GetAutomationControlTypeCore(return_returnValue); return S_OK; }
-	void GetAutomationControlTypeCore(Windows.UI.Xaml.Automation.Peers.AutomationControlType* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetAutomationControlTypeCore(return_returnValue)); }
+	void GetAutomationControlTypeCore(Windows.UI.Xaml.Automation.Peers.AutomationControlType* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_GetAutomationControlTypeCore(return_returnValue)); }
 	override HRESULT abi_GetAutomationIdCore(HSTRING* return_returnValue) { this.GetAutomationIdCore(return_returnValue); return S_OK; }
-	void GetAutomationIdCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetAutomationIdCore(return_returnValue)); }
+	void GetAutomationIdCore(HSTRING* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_GetAutomationIdCore(return_returnValue)); }
 	override HRESULT abi_GetBoundingRectangleCore(Windows.Foundation.Rect* return_returnValue) { this.GetBoundingRectangleCore(return_returnValue); return S_OK; }
-	void GetBoundingRectangleCore(Windows.Foundation.Rect* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetBoundingRectangleCore(return_returnValue)); }
+	void GetBoundingRectangleCore(Windows.Foundation.Rect* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_GetBoundingRectangleCore(return_returnValue)); }
 	override HRESULT abi_GetChildrenCore(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { this.GetChildrenCore(return_returnValue); return S_OK; }
-	void GetChildrenCore(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetChildrenCore(return_returnValue)); }
+	void GetChildrenCore(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_GetChildrenCore(return_returnValue)); }
 	override HRESULT abi_GetClassNameCore(HSTRING* return_returnValue) { this.GetClassNameCore(return_returnValue); return S_OK; }
-	void GetClassNameCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetClassNameCore(return_returnValue)); }
+	void GetClassNameCore(HSTRING* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_GetClassNameCore(return_returnValue)); }
 	override HRESULT abi_GetClickablePointCore(Windows.Foundation.Point* return_returnValue) { this.GetClickablePointCore(return_returnValue); return S_OK; }
-	void GetClickablePointCore(Windows.Foundation.Point* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetClickablePointCore(return_returnValue)); }
+	void GetClickablePointCore(Windows.Foundation.Point* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_GetClickablePointCore(return_returnValue)); }
 	override HRESULT abi_GetHelpTextCore(HSTRING* return_returnValue) { this.GetHelpTextCore(return_returnValue); return S_OK; }
-	void GetHelpTextCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetHelpTextCore(return_returnValue)); }
+	void GetHelpTextCore(HSTRING* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_GetHelpTextCore(return_returnValue)); }
 	override HRESULT abi_GetItemStatusCore(HSTRING* return_returnValue) { this.GetItemStatusCore(return_returnValue); return S_OK; }
-	void GetItemStatusCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetItemStatusCore(return_returnValue)); }
+	void GetItemStatusCore(HSTRING* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_GetItemStatusCore(return_returnValue)); }
 	override HRESULT abi_GetItemTypeCore(HSTRING* return_returnValue) { this.GetItemTypeCore(return_returnValue); return S_OK; }
-	void GetItemTypeCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetItemTypeCore(return_returnValue)); }
+	void GetItemTypeCore(HSTRING* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_GetItemTypeCore(return_returnValue)); }
 	override HRESULT abi_GetLabeledByCore(Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { this.GetLabeledByCore(return_returnValue); return S_OK; }
-	void GetLabeledByCore(Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetLabeledByCore(return_returnValue)); }
+	void GetLabeledByCore(Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_GetLabeledByCore(return_returnValue)); }
 	override HRESULT abi_GetLocalizedControlTypeCore(HSTRING* return_returnValue) { this.GetLocalizedControlTypeCore(return_returnValue); return S_OK; }
-	void GetLocalizedControlTypeCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetLocalizedControlTypeCore(return_returnValue)); }
+	void GetLocalizedControlTypeCore(HSTRING* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_GetLocalizedControlTypeCore(return_returnValue)); }
 	override HRESULT abi_GetNameCore(HSTRING* return_returnValue) { this.GetNameCore(return_returnValue); return S_OK; }
-	void GetNameCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetNameCore(return_returnValue)); }
+	void GetNameCore(HSTRING* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_GetNameCore(return_returnValue)); }
 	override HRESULT abi_GetOrientationCore(Windows.UI.Xaml.Automation.Peers.AutomationOrientation* return_returnValue) { this.GetOrientationCore(return_returnValue); return S_OK; }
-	void GetOrientationCore(Windows.UI.Xaml.Automation.Peers.AutomationOrientation* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetOrientationCore(return_returnValue)); }
+	void GetOrientationCore(Windows.UI.Xaml.Automation.Peers.AutomationOrientation* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_GetOrientationCore(return_returnValue)); }
 	override HRESULT abi_HasKeyboardFocusCore(bool* return_returnValue) { this.HasKeyboardFocusCore(return_returnValue); return S_OK; }
-	void HasKeyboardFocusCore(bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_HasKeyboardFocusCore(return_returnValue)); }
+	void HasKeyboardFocusCore(bool* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_HasKeyboardFocusCore(return_returnValue)); }
 	override HRESULT abi_IsContentElementCore(bool* return_returnValue) { this.IsContentElementCore(return_returnValue); return S_OK; }
-	void IsContentElementCore(bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsContentElementCore(return_returnValue)); }
+	void IsContentElementCore(bool* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_IsContentElementCore(return_returnValue)); }
 	override HRESULT abi_IsControlElementCore(bool* return_returnValue) { this.IsControlElementCore(return_returnValue); return S_OK; }
-	void IsControlElementCore(bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsControlElementCore(return_returnValue)); }
+	void IsControlElementCore(bool* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_IsControlElementCore(return_returnValue)); }
 	override HRESULT abi_IsEnabledCore(bool* return_returnValue) { this.IsEnabledCore(return_returnValue); return S_OK; }
-	void IsEnabledCore(bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsEnabledCore(return_returnValue)); }
+	void IsEnabledCore(bool* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_IsEnabledCore(return_returnValue)); }
 	override HRESULT abi_IsKeyboardFocusableCore(bool* return_returnValue) { this.IsKeyboardFocusableCore(return_returnValue); return S_OK; }
-	void IsKeyboardFocusableCore(bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsKeyboardFocusableCore(return_returnValue)); }
+	void IsKeyboardFocusableCore(bool* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_IsKeyboardFocusableCore(return_returnValue)); }
 	override HRESULT abi_IsOffscreenCore(bool* return_returnValue) { this.IsOffscreenCore(return_returnValue); return S_OK; }
-	void IsOffscreenCore(bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsOffscreenCore(return_returnValue)); }
+	void IsOffscreenCore(bool* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_IsOffscreenCore(return_returnValue)); }
 	override HRESULT abi_IsPasswordCore(bool* return_returnValue) { this.IsPasswordCore(return_returnValue); return S_OK; }
-	void IsPasswordCore(bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsPasswordCore(return_returnValue)); }
+	void IsPasswordCore(bool* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_IsPasswordCore(return_returnValue)); }
 	override HRESULT abi_IsRequiredForFormCore(bool* return_returnValue) { this.IsRequiredForFormCore(return_returnValue); return S_OK; }
-	void IsRequiredForFormCore(bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_IsRequiredForFormCore(return_returnValue)); }
+	void IsRequiredForFormCore(bool* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_IsRequiredForFormCore(return_returnValue)); }
 	override HRESULT abi_SetFocusCore() { this.SetFocusCore(); return S_OK; }
-	void SetFocusCore() { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_SetFocusCore()); }
+	void SetFocusCore() { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_SetFocusCore()); }
 	override HRESULT abi_GetPeerFromPointCore(Windows.Foundation.Point point, Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { this.GetPeerFromPointCore(point, return_returnValue); return S_OK; }
-	void GetPeerFromPointCore(Windows.Foundation.Point point, Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetPeerFromPointCore(point, return_returnValue)); }
+	void GetPeerFromPointCore(Windows.Foundation.Point point, Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_GetPeerFromPointCore(point, return_returnValue)); }
 	override HRESULT abi_GetLiveSettingCore(Windows.UI.Xaml.Automation.Peers.AutomationLiveSetting* return_returnValue) { this.GetLiveSettingCore(return_returnValue); return S_OK; }
-	void GetLiveSettingCore(Windows.UI.Xaml.Automation.Peers.AutomationLiveSetting* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides).abi_GetLiveSettingCore(return_returnValue)); }
+	void GetLiveSettingCore(Windows.UI.Xaml.Automation.Peers.AutomationLiveSetting* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides)m_inner.asInterface(uuid("bea93e67-dbee-4f7b-af0d-a79aae5333bf"))).abi_GetLiveSettingCore(return_returnValue)); }
 
-	override HRESULT abi_PeerFromProvider(Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple provider, Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerProtected).abi_PeerFromProvider(provider, return_returnValue); }
-	override HRESULT abi_ProviderFromPeer(Windows.UI.Xaml.Automation.Peers.AutomationPeer peer, Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerProtected).abi_ProviderFromPeer(peer, return_returnValue); }
+	override HRESULT abi_PeerFromProvider(Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple provider, Windows.UI.Xaml.Automation.Peers.AutomationPeer* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerProtected)m_inner.asInterface(uuid("f4b40e52-642f-4629-a54a-ea5d2349c448"))).abi_PeerFromProvider(provider, return_returnValue); }
+	override HRESULT abi_ProviderFromPeer(Windows.UI.Xaml.Automation.Peers.AutomationPeer peer, Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerProtected)m_inner.asInterface(uuid("f4b40e52-642f-4629-a54a-ea5d2349c448"))).abi_ProviderFromPeer(peer, return_returnValue); }
 
 
 	override HRESULT abi_ShowContextMenuCore() { this.ShowContextMenuCore(); return S_OK; }
-	void ShowContextMenuCore() { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides2).abi_ShowContextMenuCore()); }
+	void ShowContextMenuCore() { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides2)m_inner.asInterface(uuid("2603682a-9da6-4023-b496-496e5ef228d2"))).abi_ShowContextMenuCore()); }
 	override HRESULT abi_GetControlledPeersCore(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { this.GetControlledPeersCore(return_returnValue); return S_OK; }
-	void GetControlledPeersCore(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides2).abi_GetControlledPeersCore(return_returnValue)); }
+	void GetControlledPeersCore(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides2)m_inner.asInterface(uuid("2603682a-9da6-4023-b496-496e5ef228d2"))).abi_GetControlledPeersCore(return_returnValue)); }
 
-	override HRESULT abi_Navigate(Windows.UI.Xaml.Automation.Peers.AutomationNavigationDirection direction, IInspectable* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_Navigate(direction, return_returnValue); }
-	override HRESULT abi_GetElementFromPoint(Windows.Foundation.Point pointInWindowCoordinates, IInspectable* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetElementFromPoint(pointInWindowCoordinates, return_returnValue); }
-	override HRESULT abi_GetFocusedElement(IInspectable* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetFocusedElement(return_returnValue); }
-	override HRESULT abi_ShowContextMenu() { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_ShowContextMenu(); }
-	override HRESULT abi_GetControlledPeers(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetControlledPeers(return_returnValue); }
-	override HRESULT abi_GetAnnotations(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation)* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetAnnotations(return_returnValue); }
-	override HRESULT abi_SetParent(Windows.UI.Xaml.Automation.Peers.AutomationPeer peer) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_SetParent(peer); }
-	override HRESULT abi_RaiseTextEditTextChangedEvent(Windows.UI.Xaml.Automation.AutomationTextEditChangeType automationTextEditChangeType, Windows.Foundation.Collections.IVectorView!(HSTRING) changedData) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_RaiseTextEditTextChangedEvent(automationTextEditChangeType, changedData); }
-	override HRESULT abi_GetPositionInSet(INT32* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetPositionInSet(return_returnValue); }
-	override HRESULT abi_GetSizeOfSet(INT32* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetSizeOfSet(return_returnValue); }
-	override HRESULT abi_GetLevel(INT32* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_GetLevel(return_returnValue); }
-	override HRESULT abi_RaiseStructureChangedEvent(Windows.UI.Xaml.Automation.Peers.AutomationStructureChangeType structureChangeType, Windows.UI.Xaml.Automation.Peers.AutomationPeer child) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3).abi_RaiseStructureChangedEvent(structureChangeType, child); }
+	override HRESULT abi_Navigate(Windows.UI.Xaml.Automation.Peers.AutomationNavigationDirection direction, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)m_inner.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_Navigate(direction, return_returnValue); }
+	override HRESULT abi_GetElementFromPoint(Windows.Foundation.Point pointInWindowCoordinates, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)m_inner.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_GetElementFromPoint(pointInWindowCoordinates, return_returnValue); }
+	override HRESULT abi_GetFocusedElement(IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)m_inner.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_GetFocusedElement(return_returnValue); }
+	override HRESULT abi_ShowContextMenu() { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)m_inner.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_ShowContextMenu(); }
+	override HRESULT abi_GetControlledPeers(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)m_inner.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_GetControlledPeers(return_returnValue); }
+	override HRESULT abi_GetAnnotations(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation)* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)m_inner.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_GetAnnotations(return_returnValue); }
+	override HRESULT abi_SetParent(Windows.UI.Xaml.Automation.Peers.AutomationPeer peer) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)m_inner.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_SetParent(peer); }
+	override HRESULT abi_RaiseTextEditTextChangedEvent(Windows.UI.Xaml.Automation.AutomationTextEditChangeType automationTextEditChangeType, Windows.Foundation.Collections.IVectorView!(HSTRING) changedData) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)m_inner.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_RaiseTextEditTextChangedEvent(automationTextEditChangeType, changedData); }
+	override HRESULT abi_GetPositionInSet(INT32* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)m_inner.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_GetPositionInSet(return_returnValue); }
+	override HRESULT abi_GetSizeOfSet(INT32* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)m_inner.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_GetSizeOfSet(return_returnValue); }
+	override HRESULT abi_GetLevel(INT32* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)m_inner.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_GetLevel(return_returnValue); }
+	override HRESULT abi_RaiseStructureChangedEvent(Windows.UI.Xaml.Automation.Peers.AutomationStructureChangeType structureChangeType, Windows.UI.Xaml.Automation.Peers.AutomationPeer child) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer3)m_inner.asInterface(uuid("d3cfb977-0084-41d7-a221-28158d3bc32c"))).abi_RaiseStructureChangedEvent(structureChangeType, child); }
 
 	override HRESULT abi_NavigateCore(Windows.UI.Xaml.Automation.Peers.AutomationNavigationDirection direction, IInspectable* return_returnValue) { this.NavigateCore(direction, return_returnValue); return S_OK; }
-	void NavigateCore(Windows.UI.Xaml.Automation.Peers.AutomationNavigationDirection direction, IInspectable* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_NavigateCore(direction, return_returnValue)); }
+	void NavigateCore(Windows.UI.Xaml.Automation.Peers.AutomationNavigationDirection direction, IInspectable* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3)m_inner.asInterface(uuid("b6f0c4ad-4d39-49e6-bb91-d924eefd8538"))).abi_NavigateCore(direction, return_returnValue)); }
 	override HRESULT abi_GetElementFromPointCore(Windows.Foundation.Point pointInWindowCoordinates, IInspectable* return_returnValue) { this.GetElementFromPointCore(pointInWindowCoordinates, return_returnValue); return S_OK; }
-	void GetElementFromPointCore(Windows.Foundation.Point pointInWindowCoordinates, IInspectable* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetElementFromPointCore(pointInWindowCoordinates, return_returnValue)); }
+	void GetElementFromPointCore(Windows.Foundation.Point pointInWindowCoordinates, IInspectable* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3)m_inner.asInterface(uuid("b6f0c4ad-4d39-49e6-bb91-d924eefd8538"))).abi_GetElementFromPointCore(pointInWindowCoordinates, return_returnValue)); }
 	override HRESULT abi_GetFocusedElementCore(IInspectable* return_returnValue) { this.GetFocusedElementCore(return_returnValue); return S_OK; }
-	void GetFocusedElementCore(IInspectable* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetFocusedElementCore(return_returnValue)); }
+	void GetFocusedElementCore(IInspectable* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3)m_inner.asInterface(uuid("b6f0c4ad-4d39-49e6-bb91-d924eefd8538"))).abi_GetFocusedElementCore(return_returnValue)); }
 	override HRESULT abi_GetAnnotationsCore(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation)* return_returnValue) { this.GetAnnotationsCore(return_returnValue); return S_OK; }
-	void GetAnnotationsCore(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation)* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetAnnotationsCore(return_returnValue)); }
+	void GetAnnotationsCore(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation)* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3)m_inner.asInterface(uuid("b6f0c4ad-4d39-49e6-bb91-d924eefd8538"))).abi_GetAnnotationsCore(return_returnValue)); }
 	override HRESULT abi_GetPositionInSetCore(INT32* return_returnValue) { this.GetPositionInSetCore(return_returnValue); return S_OK; }
-	void GetPositionInSetCore(INT32* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetPositionInSetCore(return_returnValue)); }
+	void GetPositionInSetCore(INT32* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3)m_inner.asInterface(uuid("b6f0c4ad-4d39-49e6-bb91-d924eefd8538"))).abi_GetPositionInSetCore(return_returnValue)); }
 	override HRESULT abi_GetSizeOfSetCore(INT32* return_returnValue) { this.GetSizeOfSetCore(return_returnValue); return S_OK; }
-	void GetSizeOfSetCore(INT32* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetSizeOfSetCore(return_returnValue)); }
+	void GetSizeOfSetCore(INT32* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3)m_inner.asInterface(uuid("b6f0c4ad-4d39-49e6-bb91-d924eefd8538"))).abi_GetSizeOfSetCore(return_returnValue)); }
 	override HRESULT abi_GetLevelCore(INT32* return_returnValue) { this.GetLevelCore(return_returnValue); return S_OK; }
-	void GetLevelCore(INT32* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3).abi_GetLevelCore(return_returnValue)); }
+	void GetLevelCore(INT32* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides3)m_inner.asInterface(uuid("b6f0c4ad-4d39-49e6-bb91-d924eefd8538"))).abi_GetLevelCore(return_returnValue)); }
 
-	override HRESULT abi_GetLandmarkType(Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer4).abi_GetLandmarkType(return_returnValue); }
-	override HRESULT abi_GetLocalizedLandmarkType(HSTRING* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer4).abi_GetLocalizedLandmarkType(return_returnValue); }
+	override HRESULT abi_GetLandmarkType(Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer4)m_inner.asInterface(uuid("761ce752-73c1-4f44-be75-43c49ec0d4d5"))).abi_GetLandmarkType(return_returnValue); }
+	override HRESULT abi_GetLocalizedLandmarkType(HSTRING* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer4)m_inner.asInterface(uuid("761ce752-73c1-4f44-be75-43c49ec0d4d5"))).abi_GetLocalizedLandmarkType(return_returnValue); }
 
 	override HRESULT abi_GetLandmarkTypeCore(Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType* return_returnValue) { this.GetLandmarkTypeCore(return_returnValue); return S_OK; }
-	void GetLandmarkTypeCore(Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides4).abi_GetLandmarkTypeCore(return_returnValue)); }
+	void GetLandmarkTypeCore(Windows.UI.Xaml.Automation.Peers.AutomationLandmarkType* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides4)m_inner.asInterface(uuid("b186cda2-5d46-4bcd-a811-269ad15b3aee"))).abi_GetLandmarkTypeCore(return_returnValue)); }
 	override HRESULT abi_GetLocalizedLandmarkTypeCore(HSTRING* return_returnValue) { this.GetLocalizedLandmarkTypeCore(return_returnValue); return S_OK; }
-	void GetLocalizedLandmarkTypeCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides4).abi_GetLocalizedLandmarkTypeCore(return_returnValue)); }
+	void GetLocalizedLandmarkTypeCore(HSTRING* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides4)m_inner.asInterface(uuid("b186cda2-5d46-4bcd-a811-269ad15b3aee"))).abi_GetLocalizedLandmarkTypeCore(return_returnValue)); }
 
-	override HRESULT abi_IsPeripheral(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer5).abi_IsPeripheral(return_returnValue); }
-	override HRESULT abi_IsDataValidForForm(bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer5).abi_IsDataValidForForm(return_returnValue); }
-	override HRESULT abi_GetFullDescription(HSTRING* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer5).abi_GetFullDescription(return_returnValue); }
+	override HRESULT abi_IsPeripheral(bool* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer5)m_inner.asInterface(uuid("f632e1c6-0a3f-4574-9fef-cdc151765674"))).abi_IsPeripheral(return_returnValue); }
+	override HRESULT abi_IsDataValidForForm(bool* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer5)m_inner.asInterface(uuid("f632e1c6-0a3f-4574-9fef-cdc151765674"))).abi_IsDataValidForForm(return_returnValue); }
+	override HRESULT abi_GetFullDescription(HSTRING* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer5)m_inner.asInterface(uuid("f632e1c6-0a3f-4574-9fef-cdc151765674"))).abi_GetFullDescription(return_returnValue); }
 
 	override HRESULT abi_IsPeripheralCore(bool* return_returnValue) { this.IsPeripheralCore(return_returnValue); return S_OK; }
-	void IsPeripheralCore(bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_IsPeripheralCore(return_returnValue)); }
+	void IsPeripheralCore(bool* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5)m_inner.asInterface(uuid("2c847c85-781e-49f7-9fef-b9e14d014707"))).abi_IsPeripheralCore(return_returnValue)); }
 	override HRESULT abi_IsDataValidForFormCore(bool* return_returnValue) { this.IsDataValidForFormCore(return_returnValue); return S_OK; }
-	void IsDataValidForFormCore(bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_IsDataValidForFormCore(return_returnValue)); }
+	void IsDataValidForFormCore(bool* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5)m_inner.asInterface(uuid("2c847c85-781e-49f7-9fef-b9e14d014707"))).abi_IsDataValidForFormCore(return_returnValue)); }
 	override HRESULT abi_GetFullDescriptionCore(HSTRING* return_returnValue) { this.GetFullDescriptionCore(return_returnValue); return S_OK; }
-	void GetFullDescriptionCore(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_GetFullDescriptionCore(return_returnValue)); }
+	void GetFullDescriptionCore(HSTRING* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5)m_inner.asInterface(uuid("2c847c85-781e-49f7-9fef-b9e14d014707"))).abi_GetFullDescriptionCore(return_returnValue)); }
 	override HRESULT abi_GetDescribedByCore(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { this.GetDescribedByCore(return_returnValue); return S_OK; }
-	void GetDescribedByCore(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_GetDescribedByCore(return_returnValue)); }
+	void GetDescribedByCore(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5)m_inner.asInterface(uuid("2c847c85-781e-49f7-9fef-b9e14d014707"))).abi_GetDescribedByCore(return_returnValue)); }
 	override HRESULT abi_GetFlowsToCore(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { this.GetFlowsToCore(return_returnValue); return S_OK; }
-	void GetFlowsToCore(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_GetFlowsToCore(return_returnValue)); }
+	void GetFlowsToCore(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5)m_inner.asInterface(uuid("2c847c85-781e-49f7-9fef-b9e14d014707"))).abi_GetFlowsToCore(return_returnValue)); }
 	override HRESULT abi_GetFlowsFromCore(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { this.GetFlowsFromCore(return_returnValue); return S_OK; }
-	void GetFlowsFromCore(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5).abi_GetFlowsFromCore(return_returnValue)); }
+	void GetFlowsFromCore(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Automation.Peers.AutomationPeer)* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides5)m_inner.asInterface(uuid("2c847c85-781e-49f7-9fef-b9e14d014707"))).abi_GetFlowsFromCore(return_returnValue)); }
 
-	override HRESULT abi_GetCulture(INT32* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeer6).abi_GetCulture(return_returnValue); }
+	override HRESULT abi_GetCulture(INT32* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeer6)m_inner.asInterface(uuid("caf8608f-13ff-42fb-866d-22206434cc6b"))).abi_GetCulture(return_returnValue); }
 
 	override HRESULT abi_GetCultureCore(INT32* return_returnValue) { this.GetCultureCore(return_returnValue); return S_OK; }
-	void GetCultureCore(INT32* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides6).abi_GetCultureCore(return_returnValue)); }
+	void GetCultureCore(INT32* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerOverrides6)m_inner.asInterface(uuid("e98babe7-f6ff-444c-9c0d-277eaf0ad9c0"))).abi_GetCultureCore(return_returnValue)); }
 
 	this() {}
 	IInspectable m_inner;
@@ -1960,22 +1960,22 @@ extern(Windows):
 	final Windows.UI.Xaml.Automation.AnnotationType Type()
 	{
 		Windows.UI.Xaml.Automation.AnnotationType _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotation).get_Type(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotation)this.asInterface(uuid("0c456061-52cf-43fa-82f8-07f137351e5a"))).get_Type(&_ret));
 		return _ret;
 	}
 	final void Type(Windows.UI.Xaml.Automation.AnnotationType value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotation).set_Type(value));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotation)this.asInterface(uuid("0c456061-52cf-43fa-82f8-07f137351e5a"))).set_Type(value));
 	}
 	final Windows.UI.Xaml.Automation.Peers.AutomationPeer Peer()
 	{
 		Windows.UI.Xaml.Automation.Peers.AutomationPeer _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotation).get_Peer(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotation)this.asInterface(uuid("0c456061-52cf-43fa-82f8-07f137351e5a"))).get_Peer(&_ret));
 		return _ret;
 	}
 	final void Peer(Windows.UI.Xaml.Automation.Peers.AutomationPeer value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotation).set_Peer(value));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotation)this.asInterface(uuid("0c456061-52cf-43fa-82f8-07f137351e5a"))).set_Peer(value));
 	}
 
 	private static Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotationStatics _staticInstance;
@@ -1987,33 +1987,33 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty TypeProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotationStatics).get_TypeProperty(&_ret));
+		Debug.OK(staticInstance.get_TypeProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty PeerProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotationStatics).get_PeerProperty(&_ret));
+		Debug.OK(staticInstance.get_PeerProperty(&_ret));
 		return _ret;
 	}
 	static AutomationPeerAnnotation New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(AutomationPeerAnnotation).abi_ActivateInstance(&ret));
-		return ret.as!(AutomationPeerAnnotation);
+		return cast(AutomationPeerAnnotation) ret;
 	}
 	static Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation New(Windows.UI.Xaml.Automation.AnnotationType type)
 	{
 		auto factory = factory!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotationFactory);
 		Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation _ret;
-		Debug.OK(factory.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotationFactory).abi_CreateInstance(type, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotationFactory)factory.asInterface(uuid("f59c439e-c65b-43cd-9009-03fc023363a7"))).abi_CreateInstance(type, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation New(Windows.UI.Xaml.Automation.AnnotationType type, Windows.UI.Xaml.Automation.Peers.AutomationPeer peer)
 	{
 		auto factory = factory!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotationFactory);
 		Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation _ret;
-		Debug.OK(factory.as!(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotationFactory).abi_CreateWithPeerParameter(type, peer, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IAutomationPeerAnnotationFactory)factory.asInterface(uuid("f59c439e-c65b-43cd-9009-03fc023363a7"))).abi_CreateWithPeerParameter(type, peer, &_ret));
 		return _ret;
 	}
 }
@@ -2023,7 +2023,7 @@ interface ButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ButtonBaseAuto
 extern(Windows):
 	final void Invoke()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IInvokeProvider).abi_Invoke());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IInvokeProvider)this.asInterface(uuid("f7d1a187-b13c-4540-b09e-6778e2dc9ba5"))).abi_Invoke());
 	}
 }
 @makable!(ButtonAutomationPeer, ButtonAutomationPeer, Windows.UI.Xaml.Automation.Peers.IButtonAutomationPeerFactory)
@@ -2037,7 +2037,7 @@ class ButtonAutomationPeerT(Base) : AgileObject!Base, ButtonAutomationPeer
 		return ret;
 	}
 
-	override HRESULT abi_Invoke() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IInvokeProvider).abi_Invoke(); }
+	override HRESULT abi_Invoke() { return (cast(Windows.UI.Xaml.Automation.Provider.IInvokeProvider)m_inner.asInterface(uuid("f7d1a187-b13c-4540-b09e-6778e2dc9ba5"))).abi_Invoke(); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2103,81 +2103,81 @@ extern(Windows):
 	final Windows.UI.Xaml.Automation.ExpandCollapseState ExpandCollapseState()
 	{
 		Windows.UI.Xaml.Automation.ExpandCollapseState _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).get_ExpandCollapseState(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider)this.asInterface(uuid("49ac8399-d626-4543-94b9-a6d9a9593af6"))).get_ExpandCollapseState(&_ret));
 		return _ret;
 	}
 	final void Collapse()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).abi_Collapse());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider)this.asInterface(uuid("49ac8399-d626-4543-94b9-a6d9a9593af6"))).abi_Collapse());
 	}
 	final void Expand()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).abi_Expand());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider)this.asInterface(uuid("49ac8399-d626-4543-94b9-a6d9a9593af6"))).abi_Expand());
 	}
 	final bool IsReadOnly()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IValueProvider).get_IsReadOnly(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IValueProvider)this.asInterface(uuid("2086b7a7-ac0e-47d1-ab9b-2a64292afdf8"))).get_IsReadOnly(&_ret));
 		return _ret;
 	}
 	final HSTRING Value()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IValueProvider).get_Value(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IValueProvider)this.asInterface(uuid("2086b7a7-ac0e-47d1-ab9b-2a64292afdf8"))).get_Value(&_ret));
 		return _ret;
 	}
 	final void SetValue(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IValueProvider).abi_SetValue(value));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IValueProvider)this.asInterface(uuid("2086b7a7-ac0e-47d1-ab9b-2a64292afdf8"))).abi_SetValue(value));
 	}
 	final bool IsModal()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_IsModal(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)this.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_IsModal(&_ret));
 		return _ret;
 	}
 	final bool IsTopmost()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_IsTopmost(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)this.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_IsTopmost(&_ret));
 		return _ret;
 	}
 	final bool Maximizable()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_Maximizable(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)this.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_Maximizable(&_ret));
 		return _ret;
 	}
 	final bool Minimizable()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_Minimizable(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)this.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_Minimizable(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Automation.WindowInteractionState InteractionState()
 	{
 		Windows.UI.Xaml.Automation.WindowInteractionState _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_InteractionState(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)this.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_InteractionState(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Automation.WindowVisualState VisualState()
 	{
 		Windows.UI.Xaml.Automation.WindowVisualState _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_VisualState(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)this.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_VisualState(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_Close());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)this.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).abi_Close());
 	}
 	final void SetVisualState(Windows.UI.Xaml.Automation.WindowVisualState state)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_SetVisualState(state));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)this.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).abi_SetVisualState(state));
 	}
 	final bool WaitForInputIdle(INT32 milliseconds)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_WaitForInputIdle(milliseconds, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)this.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).abi_WaitForInputIdle(milliseconds, &_ret));
 		return _ret;
 	}
 }
@@ -2192,23 +2192,23 @@ class ComboBoxAutomationPeerT(Base) : AgileObject!Base, ComboBoxAutomationPeer
 		return ret;
 	}
 
-	override HRESULT get_ExpandCollapseState(Windows.UI.Xaml.Automation.ExpandCollapseState* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).get_ExpandCollapseState(return_value); }
-	override HRESULT abi_Collapse() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).abi_Collapse(); }
-	override HRESULT abi_Expand() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).abi_Expand(); }
+	override HRESULT get_ExpandCollapseState(Windows.UI.Xaml.Automation.ExpandCollapseState* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider)m_inner.asInterface(uuid("49ac8399-d626-4543-94b9-a6d9a9593af6"))).get_ExpandCollapseState(return_value); }
+	override HRESULT abi_Collapse() { return (cast(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider)m_inner.asInterface(uuid("49ac8399-d626-4543-94b9-a6d9a9593af6"))).abi_Collapse(); }
+	override HRESULT abi_Expand() { return (cast(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider)m_inner.asInterface(uuid("49ac8399-d626-4543-94b9-a6d9a9593af6"))).abi_Expand(); }
 
-	override HRESULT get_IsReadOnly(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IValueProvider).get_IsReadOnly(return_value); }
-	override HRESULT get_Value(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IValueProvider).get_Value(return_value); }
-	override HRESULT abi_SetValue(HSTRING value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IValueProvider).abi_SetValue(value); }
+	override HRESULT get_IsReadOnly(bool* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IValueProvider)m_inner.asInterface(uuid("2086b7a7-ac0e-47d1-ab9b-2a64292afdf8"))).get_IsReadOnly(return_value); }
+	override HRESULT get_Value(HSTRING* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IValueProvider)m_inner.asInterface(uuid("2086b7a7-ac0e-47d1-ab9b-2a64292afdf8"))).get_Value(return_value); }
+	override HRESULT abi_SetValue(HSTRING value) { return (cast(Windows.UI.Xaml.Automation.Provider.IValueProvider)m_inner.asInterface(uuid("2086b7a7-ac0e-47d1-ab9b-2a64292afdf8"))).abi_SetValue(value); }
 
-	override HRESULT get_IsModal(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_IsModal(return_value); }
-	override HRESULT get_IsTopmost(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_IsTopmost(return_value); }
-	override HRESULT get_Maximizable(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_Maximizable(return_value); }
-	override HRESULT get_Minimizable(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_Minimizable(return_value); }
-	override HRESULT get_InteractionState(Windows.UI.Xaml.Automation.WindowInteractionState* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_InteractionState(return_value); }
-	override HRESULT get_VisualState(Windows.UI.Xaml.Automation.WindowVisualState* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).get_VisualState(return_value); }
-	override HRESULT abi_Close() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_Close(); }
-	override HRESULT abi_SetVisualState(Windows.UI.Xaml.Automation.WindowVisualState state) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_SetVisualState(state); }
-	override HRESULT abi_WaitForInputIdle(INT32 milliseconds, bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IWindowProvider).abi_WaitForInputIdle(milliseconds, return_returnValue); }
+	override HRESULT get_IsModal(bool* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)m_inner.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_IsModal(return_value); }
+	override HRESULT get_IsTopmost(bool* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)m_inner.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_IsTopmost(return_value); }
+	override HRESULT get_Maximizable(bool* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)m_inner.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_Maximizable(return_value); }
+	override HRESULT get_Minimizable(bool* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)m_inner.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_Minimizable(return_value); }
+	override HRESULT get_InteractionState(Windows.UI.Xaml.Automation.WindowInteractionState* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)m_inner.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_InteractionState(return_value); }
+	override HRESULT get_VisualState(Windows.UI.Xaml.Automation.WindowVisualState* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)m_inner.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).get_VisualState(return_value); }
+	override HRESULT abi_Close() { return (cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)m_inner.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).abi_Close(); }
+	override HRESULT abi_SetVisualState(Windows.UI.Xaml.Automation.WindowVisualState state) { return (cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)m_inner.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).abi_SetVisualState(state); }
+	override HRESULT abi_WaitForInputIdle(INT32 milliseconds, bool* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Provider.IWindowProvider)m_inner.asInterface(uuid("1baa8b3d-38cf-415a-85d3-20e43a0ec1b1"))).abi_WaitForInputIdle(milliseconds, return_returnValue); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2237,7 +2237,7 @@ interface ComboBoxItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.Sele
 extern(Windows):
 	final void ScrollIntoView()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider)this.asInterface(uuid("9a3ec090-5d2c-4e42-9ee6-9d58db100b55"))).abi_ScrollIntoView());
 	}
 }
 @makable!(ComboBoxItemDataAutomationPeer, ComboBoxItemDataAutomationPeer, Windows.UI.Xaml.Automation.Peers.IComboBoxItemDataAutomationPeerFactory)
@@ -2251,7 +2251,7 @@ class ComboBoxItemDataAutomationPeerT(Base) : AgileObject!Base, ComboBoxItemData
 		return ret;
 	}
 
-	override HRESULT abi_ScrollIntoView() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView(); }
+	override HRESULT abi_ScrollIntoView() { return (cast(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider)m_inner.asInterface(uuid("9a3ec090-5d2c-4e42-9ee6-9d58db100b55"))).abi_ScrollIntoView(); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2320,7 +2320,7 @@ interface FlipViewItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.Sele
 extern(Windows):
 	final void ScrollIntoView()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider)this.asInterface(uuid("9a3ec090-5d2c-4e42-9ee6-9d58db100b55"))).abi_ScrollIntoView());
 	}
 }
 @makable!(FlipViewItemDataAutomationPeer, FlipViewItemDataAutomationPeer, Windows.UI.Xaml.Automation.Peers.IFlipViewItemDataAutomationPeerFactory)
@@ -2334,7 +2334,7 @@ class FlipViewItemDataAutomationPeerT(Base) : AgileObject!Base, FlipViewItemData
 		return ret;
 	}
 
-	override HRESULT abi_ScrollIntoView() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView(); }
+	override HRESULT abi_ScrollIntoView() { return (cast(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider)m_inner.asInterface(uuid("9a3ec090-5d2c-4e42-9ee6-9d58db100b55"))).abi_ScrollIntoView(); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2364,7 +2364,7 @@ extern(Windows):
 	final Windows.UI.Xaml.UIElement Owner()
 	{
 		Windows.UI.Xaml.UIElement _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IFrameworkElementAutomationPeer).get_Owner(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IFrameworkElementAutomationPeer)this.asInterface(uuid("b90ad781-bfeb-4451-bd47-9f3a63ebd24a"))).get_Owner(&_ret));
 		return _ret;
 	}
 
@@ -2377,13 +2377,13 @@ extern(Windows):
 	static Windows.UI.Xaml.Automation.Peers.AutomationPeer FromElement(Windows.UI.Xaml.UIElement element)
 	{
 		Windows.UI.Xaml.Automation.Peers.AutomationPeer _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.Peers.IFrameworkElementAutomationPeerStatics).abi_FromElement(element, &_ret));
+		Debug.OK(staticInstance.abi_FromElement(element, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.Peers.AutomationPeer CreatePeerForElement(Windows.UI.Xaml.UIElement element)
 	{
 		Windows.UI.Xaml.Automation.Peers.AutomationPeer _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Automation.Peers.IFrameworkElementAutomationPeerStatics).abi_CreatePeerForElement(element, &_ret));
+		Debug.OK(staticInstance.abi_CreatePeerForElement(element, &_ret));
 		return _ret;
 	}
 }
@@ -2397,7 +2397,7 @@ class FrameworkElementAutomationPeerT(Base) : AgileObject!Base, FrameworkElement
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_Owner(Windows.UI.Xaml.UIElement* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IFrameworkElementAutomationPeer).get_Owner(return_value); }
+	override HRESULT get_Owner(Windows.UI.Xaml.UIElement* return_value) { return (cast(Windows.UI.Xaml.Automation.Peers.IFrameworkElementAutomationPeer)m_inner.asInterface(uuid("b90ad781-bfeb-4451-bd47-9f3a63ebd24a"))).get_Owner(return_value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2462,7 +2462,7 @@ interface GridViewItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.Sele
 extern(Windows):
 	final void ScrollIntoView()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider)this.asInterface(uuid("9a3ec090-5d2c-4e42-9ee6-9d58db100b55"))).abi_ScrollIntoView());
 	}
 }
 @makable!(GridViewItemDataAutomationPeer, GridViewItemDataAutomationPeer, Windows.UI.Xaml.Automation.Peers.IGridViewItemDataAutomationPeerFactory)
@@ -2476,7 +2476,7 @@ class GridViewItemDataAutomationPeerT(Base) : AgileObject!Base, GridViewItemData
 		return ret;
 	}
 
-	override HRESULT abi_ScrollIntoView() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView(); }
+	override HRESULT abi_ScrollIntoView() { return (cast(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider)m_inner.asInterface(uuid("9a3ec090-5d2c-4e42-9ee6-9d58db100b55"))).abi_ScrollIntoView(); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2523,7 +2523,7 @@ interface HubSectionAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkE
 extern(Windows):
 	final void ScrollIntoView()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider)this.asInterface(uuid("9a3ec090-5d2c-4e42-9ee6-9d58db100b55"))).abi_ScrollIntoView());
 	}
 }
 @makable!(HubSectionAutomationPeer, HubSectionAutomationPeer, Windows.UI.Xaml.Automation.Peers.IHubSectionAutomationPeerFactory)
@@ -2537,7 +2537,7 @@ class HubSectionAutomationPeerT(Base) : AgileObject!Base, HubSectionAutomationPe
 		return ret;
 	}
 
-	override HRESULT abi_ScrollIntoView() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView(); }
+	override HRESULT abi_ScrollIntoView() { return (cast(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider)m_inner.asInterface(uuid("9a3ec090-5d2c-4e42-9ee6-9d58db100b55"))).abi_ScrollIntoView(); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2548,7 +2548,7 @@ interface HyperlinkButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.Butto
 extern(Windows):
 	final void Invoke()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IInvokeProvider).abi_Invoke());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IInvokeProvider)this.asInterface(uuid("f7d1a187-b13c-4540-b09e-6778e2dc9ba5"))).abi_Invoke());
 	}
 }
 @makable!(HyperlinkButtonAutomationPeer, HyperlinkButtonAutomationPeer, Windows.UI.Xaml.Automation.Peers.IHyperlinkButtonAutomationPeerFactory)
@@ -2562,7 +2562,7 @@ class HyperlinkButtonAutomationPeerT(Base) : AgileObject!Base, HyperlinkButtonAu
 		return ret;
 	}
 
-	override HRESULT abi_Invoke() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IInvokeProvider).abi_Invoke(); }
+	override HRESULT abi_Invoke() { return (cast(Windows.UI.Xaml.Automation.Provider.IInvokeProvider)m_inner.asInterface(uuid("f7d1a187-b13c-4540-b09e-6778e2dc9ba5"))).abi_Invoke(); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2596,18 +2596,18 @@ extern(Windows):
 	final IInspectable Item()
 	{
 		IInspectable _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IItemAutomationPeer).get_Item(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IItemAutomationPeer)this.asInterface(uuid("953c34f6-3b31-47a7-b3bf-25d3ae99c317"))).get_Item(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer ItemsControlAutomationPeer()
 	{
 		Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IItemAutomationPeer).get_ItemsControlAutomationPeer(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IItemAutomationPeer)this.asInterface(uuid("953c34f6-3b31-47a7-b3bf-25d3ae99c317"))).get_ItemsControlAutomationPeer(&_ret));
 		return _ret;
 	}
 	final void Realize()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IVirtualizedItemProvider).abi_Realize());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IVirtualizedItemProvider)this.asInterface(uuid("17d4a04b-d658-48e0-a574-5a516c58dfa7"))).abi_Realize());
 	}
 }
 @makable!(ItemAutomationPeer, ItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IItemAutomationPeerFactory)
@@ -2620,10 +2620,10 @@ class ItemAutomationPeerT(Base) : AgileObject!Base, ItemAutomationPeer
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_Item(IInspectable* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IItemAutomationPeer).get_Item(return_value); }
-	override HRESULT get_ItemsControlAutomationPeer(Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IItemAutomationPeer).get_ItemsControlAutomationPeer(return_value); }
+	override HRESULT get_Item(IInspectable* return_value) { return (cast(Windows.UI.Xaml.Automation.Peers.IItemAutomationPeer)m_inner.asInterface(uuid("953c34f6-3b31-47a7-b3bf-25d3ae99c317"))).get_Item(return_value); }
+	override HRESULT get_ItemsControlAutomationPeer(Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer* return_value) { return (cast(Windows.UI.Xaml.Automation.Peers.IItemAutomationPeer)m_inner.asInterface(uuid("953c34f6-3b31-47a7-b3bf-25d3ae99c317"))).get_ItemsControlAutomationPeer(return_value); }
 
-	override HRESULT abi_Realize() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IVirtualizedItemProvider).abi_Realize(); }
+	override HRESULT abi_Realize() { return (cast(Windows.UI.Xaml.Automation.Provider.IVirtualizedItemProvider)m_inner.asInterface(uuid("17d4a04b-d658-48e0-a574-5a516c58dfa7"))).abi_Realize(); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2635,13 +2635,13 @@ extern(Windows):
 	final Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple FindItemByProperty(Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple startAfter, Windows.UI.Xaml.Automation.AutomationProperty automationProperty, IInspectable value)
 	{
 		Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IItemContainerProvider).abi_FindItemByProperty(startAfter, automationProperty, value, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IItemContainerProvider)this.asInterface(uuid("ef5cd845-e1d4-40f4-bad5-c7fad44a703e"))).abi_FindItemByProperty(startAfter, automationProperty, value, &_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer CreateItemAutomationPeer(IInspectable item)
 	{
 		Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeer2).abi_CreateItemAutomationPeer(item, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeer2)this.asInterface(uuid("c48d8917-95a8-47b8-a517-bf891a6c039b"))).abi_CreateItemAutomationPeer(item, &_ret));
 		return _ret;
 	}
 }
@@ -2656,12 +2656,12 @@ class ItemsControlAutomationPeerT(Base) : AgileObject!Base, ItemsControlAutomati
 		return ret;
 	}
 
-	override HRESULT abi_FindItemByProperty(Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple startAfter, Windows.UI.Xaml.Automation.AutomationProperty automationProperty, IInspectable value, Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IItemContainerProvider).abi_FindItemByProperty(startAfter, automationProperty, value, return_returnValue); }
+	override HRESULT abi_FindItemByProperty(Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple startAfter, Windows.UI.Xaml.Automation.AutomationProperty automationProperty, IInspectable value, Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Provider.IItemContainerProvider)m_inner.asInterface(uuid("ef5cd845-e1d4-40f4-bad5-c7fad44a703e"))).abi_FindItemByProperty(startAfter, automationProperty, value, return_returnValue); }
 
-	override HRESULT abi_CreateItemAutomationPeer(IInspectable item, Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeer2).abi_CreateItemAutomationPeer(item, return_returnValue); }
+	override HRESULT abi_CreateItemAutomationPeer(IInspectable item, Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer* return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeer2)m_inner.asInterface(uuid("c48d8917-95a8-47b8-a517-bf891a6c039b"))).abi_CreateItemAutomationPeer(item, return_returnValue); }
 
 	override HRESULT abi_OnCreateItemAutomationPeer(IInspectable item, Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer* return_returnValue) { this.OnCreateItemAutomationPeer(item, return_returnValue); return S_OK; }
-	void OnCreateItemAutomationPeer(IInspectable item, Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeerOverrides2).abi_OnCreateItemAutomationPeer(item, return_returnValue)); }
+	void OnCreateItemAutomationPeer(IInspectable item, Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IItemsControlAutomationPeerOverrides2)m_inner.asInterface(uuid("361dc0e8-b56f-45e9-80fe-10a0fb0fe177"))).abi_OnCreateItemAutomationPeer(item, return_returnValue)); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2708,7 +2708,7 @@ interface ListBoxItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.Selec
 extern(Windows):
 	final void ScrollIntoView()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider)this.asInterface(uuid("9a3ec090-5d2c-4e42-9ee6-9d58db100b55"))).abi_ScrollIntoView());
 	}
 }
 @makable!(ListBoxItemDataAutomationPeer, ListBoxItemDataAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListBoxItemDataAutomationPeerFactory)
@@ -2722,7 +2722,7 @@ class ListBoxItemDataAutomationPeerT(Base) : AgileObject!Base, ListBoxItemDataAu
 		return ret;
 	}
 
-	override HRESULT abi_ScrollIntoView() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView(); }
+	override HRESULT abi_ScrollIntoView() { return (cast(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider)m_inner.asInterface(uuid("9a3ec090-5d2c-4e42-9ee6-9d58db100b55"))).abi_ScrollIntoView(); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2756,13 +2756,13 @@ extern(Windows):
 	final HSTRING DropEffect()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IDropTargetProvider).get_DropEffect(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IDropTargetProvider)this.asInterface(uuid("7a245bdd-b458-4fe0-98c8-aac89df56d61"))).get_DropEffect(&_ret));
 		return _ret;
 	}
 	final HSTRING* DropEffects(UINT32* out___valueSize)
 	{
 		HSTRING* _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IDropTargetProvider).get_DropEffects(out___valueSize, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IDropTargetProvider)this.asInterface(uuid("7a245bdd-b458-4fe0-98c8-aac89df56d61"))).get_DropEffects(out___valueSize, &_ret));
 		return _ret;
 	}
 }
@@ -2777,8 +2777,8 @@ class ListViewBaseAutomationPeerT(Base) : AgileObject!Base, ListViewBaseAutomati
 		return ret;
 	}
 
-	override HRESULT get_DropEffect(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IDropTargetProvider).get_DropEffect(return_value); }
-	override HRESULT get_DropEffects(UINT32* out___valueSize, HSTRING** return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IDropTargetProvider).get_DropEffects(out___valueSize, return_value); }
+	override HRESULT get_DropEffect(HSTRING* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IDropTargetProvider)m_inner.asInterface(uuid("7a245bdd-b458-4fe0-98c8-aac89df56d61"))).get_DropEffect(return_value); }
+	override HRESULT get_DropEffects(UINT32* out___valueSize, HSTRING** return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IDropTargetProvider)m_inner.asInterface(uuid("7a245bdd-b458-4fe0-98c8-aac89df56d61"))).get_DropEffects(out___valueSize, return_value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2843,7 +2843,7 @@ interface ListViewItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.Sele
 extern(Windows):
 	final void ScrollIntoView()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider)this.asInterface(uuid("9a3ec090-5d2c-4e42-9ee6-9d58db100b55"))).abi_ScrollIntoView());
 	}
 }
 @makable!(ListViewItemDataAutomationPeer, ListViewItemDataAutomationPeer, Windows.UI.Xaml.Automation.Peers.IListViewItemDataAutomationPeerFactory)
@@ -2857,7 +2857,7 @@ class ListViewItemDataAutomationPeerT(Base) : AgileObject!Base, ListViewItemData
 		return ret;
 	}
 
-	override HRESULT abi_ScrollIntoView() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView(); }
+	override HRESULT abi_ScrollIntoView() { return (cast(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider)m_inner.asInterface(uuid("9a3ec090-5d2c-4e42-9ee6-9d58db100b55"))).abi_ScrollIntoView(); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2869,83 +2869,83 @@ extern(Windows):
 	final Windows.UI.Xaml.Automation.ExpandCollapseState ExpandCollapseState()
 	{
 		Windows.UI.Xaml.Automation.ExpandCollapseState _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).get_ExpandCollapseState(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider)this.asInterface(uuid("49ac8399-d626-4543-94b9-a6d9a9593af6"))).get_ExpandCollapseState(&_ret));
 		return _ret;
 	}
 	final void Collapse()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).abi_Collapse());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider)this.asInterface(uuid("49ac8399-d626-4543-94b9-a6d9a9593af6"))).abi_Collapse());
 	}
 	final void Expand()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider).abi_Expand());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider)this.asInterface(uuid("49ac8399-d626-4543-94b9-a6d9a9593af6"))).abi_Expand());
 	}
 	final Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple FindItemByProperty(Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple startAfter, Windows.UI.Xaml.Automation.AutomationProperty automationProperty, IInspectable value)
 	{
 		Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IItemContainerProvider).abi_FindItemByProperty(startAfter, automationProperty, value, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IItemContainerProvider)this.asInterface(uuid("ef5cd845-e1d4-40f4-bad5-c7fad44a703e"))).abi_FindItemByProperty(startAfter, automationProperty, value, &_ret));
 		return _ret;
 	}
 	final bool HorizontallyScrollable()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontallyScrollable(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_HorizontallyScrollable(&_ret));
 		return _ret;
 	}
 	final double HorizontalScrollPercent()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontalScrollPercent(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_HorizontalScrollPercent(&_ret));
 		return _ret;
 	}
 	final double HorizontalViewSize()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontalViewSize(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_HorizontalViewSize(&_ret));
 		return _ret;
 	}
 	final bool VerticallyScrollable()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticallyScrollable(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_VerticallyScrollable(&_ret));
 		return _ret;
 	}
 	final double VerticalScrollPercent()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticalScrollPercent(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_VerticalScrollPercent(&_ret));
 		return _ret;
 	}
 	final double VerticalViewSize()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticalViewSize(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_VerticalViewSize(&_ret));
 		return _ret;
 	}
 	final void Scroll(Windows.UI.Xaml.Automation.ScrollAmount horizontalAmount, Windows.UI.Xaml.Automation.ScrollAmount verticalAmount)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).abi_Scroll(horizontalAmount, verticalAmount));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).abi_Scroll(horizontalAmount, verticalAmount));
 	}
 	final void SetScrollPercent(double horizontalPercent, double verticalPercent)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).abi_SetScrollPercent(horizontalPercent, verticalPercent));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).abi_SetScrollPercent(horizontalPercent, verticalPercent));
 	}
 	final bool CanSelectMultiple()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).get_CanSelectMultiple(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionProvider)this.asInterface(uuid("1f018fca-b944-4395-8de1-88f674af51d3"))).get_CanSelectMultiple(&_ret));
 		return _ret;
 	}
 	final bool IsSelectionRequired()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).get_IsSelectionRequired(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionProvider)this.asInterface(uuid("1f018fca-b944-4395-8de1-88f674af51d3"))).get_IsSelectionRequired(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* GetSelection(UINT32* out___returnValueSize)
 	{
 		Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).abi_GetSelection(out___returnValueSize, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionProvider)this.asInterface(uuid("1f018fca-b944-4395-8de1-88f674af51d3"))).abi_GetSelection(out___returnValueSize, &_ret));
 		return _ret;
 	}
 }
@@ -2955,31 +2955,31 @@ interface LoopingSelectorItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.F
 extern(Windows):
 	final void ScrollIntoView()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider)this.asInterface(uuid("9a3ec090-5d2c-4e42-9ee6-9d58db100b55"))).abi_ScrollIntoView());
 	}
 	final bool IsSelected()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_IsSelected(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)this.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).get_IsSelected(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple SelectionContainer()
 	{
 		Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_SelectionContainer(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)this.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).get_SelectionContainer(&_ret));
 		return _ret;
 	}
 	final void AddToSelection()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_AddToSelection());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)this.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).abi_AddToSelection());
 	}
 	final void RemoveFromSelection()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_RemoveFromSelection());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)this.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).abi_RemoveFromSelection());
 	}
 	final void Select()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_Select());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)this.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).abi_Select());
 	}
 }
 
@@ -2988,7 +2988,7 @@ interface LoopingSelectorItemDataAutomationPeer : Windows.UI.Xaml.Automation.Pee
 extern(Windows):
 	final void Realize()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IVirtualizedItemProvider).abi_Realize());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IVirtualizedItemProvider)this.asInterface(uuid("17d4a04b-d658-48e0-a574-5a516c58dfa7"))).abi_Realize());
 	}
 }
 
@@ -2998,108 +2998,108 @@ extern(Windows):
 	final bool HorizontallyScrollable()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontallyScrollable(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_HorizontallyScrollable(&_ret));
 		return _ret;
 	}
 	final double HorizontalScrollPercent()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontalScrollPercent(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_HorizontalScrollPercent(&_ret));
 		return _ret;
 	}
 	final double HorizontalViewSize()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontalViewSize(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_HorizontalViewSize(&_ret));
 		return _ret;
 	}
 	final bool VerticallyScrollable()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticallyScrollable(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_VerticallyScrollable(&_ret));
 		return _ret;
 	}
 	final double VerticalScrollPercent()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticalScrollPercent(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_VerticalScrollPercent(&_ret));
 		return _ret;
 	}
 	final double VerticalViewSize()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticalViewSize(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_VerticalViewSize(&_ret));
 		return _ret;
 	}
 	final void Scroll(Windows.UI.Xaml.Automation.ScrollAmount horizontalAmount, Windows.UI.Xaml.Automation.ScrollAmount verticalAmount)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).abi_Scroll(horizontalAmount, verticalAmount));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).abi_Scroll(horizontalAmount, verticalAmount));
 	}
 	final void SetScrollPercent(double horizontalPercent, double verticalPercent)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).abi_SetScrollPercent(horizontalPercent, verticalPercent));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).abi_SetScrollPercent(horizontalPercent, verticalPercent));
 	}
 	final bool CanZoom()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider2).get_CanZoom(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ITransformProvider2)this.asInterface(uuid("a8b11756-a39f-4e97-8c7d-c1ea8dd633c5"))).get_CanZoom(&_ret));
 		return _ret;
 	}
 	final double ZoomLevel()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider2).get_ZoomLevel(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ITransformProvider2)this.asInterface(uuid("a8b11756-a39f-4e97-8c7d-c1ea8dd633c5"))).get_ZoomLevel(&_ret));
 		return _ret;
 	}
 	final double MaxZoom()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider2).get_MaxZoom(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ITransformProvider2)this.asInterface(uuid("a8b11756-a39f-4e97-8c7d-c1ea8dd633c5"))).get_MaxZoom(&_ret));
 		return _ret;
 	}
 	final double MinZoom()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider2).get_MinZoom(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ITransformProvider2)this.asInterface(uuid("a8b11756-a39f-4e97-8c7d-c1ea8dd633c5"))).get_MinZoom(&_ret));
 		return _ret;
 	}
 	final void Zoom(double zoom)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider2).abi_Zoom(zoom));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ITransformProvider2)this.asInterface(uuid("a8b11756-a39f-4e97-8c7d-c1ea8dd633c5"))).abi_Zoom(zoom));
 	}
 	final void ZoomByUnit(Windows.UI.Xaml.Automation.ZoomUnit zoomUnit)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider2).abi_ZoomByUnit(zoomUnit));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ITransformProvider2)this.asInterface(uuid("a8b11756-a39f-4e97-8c7d-c1ea8dd633c5"))).abi_ZoomByUnit(zoomUnit));
 	}
 	final bool CanMove()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider).get_CanMove(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ITransformProvider)this.asInterface(uuid("79670fdd-f6a9-4a65-af17-861db799a2da"))).get_CanMove(&_ret));
 		return _ret;
 	}
 	final bool CanResize()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider).get_CanResize(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ITransformProvider)this.asInterface(uuid("79670fdd-f6a9-4a65-af17-861db799a2da"))).get_CanResize(&_ret));
 		return _ret;
 	}
 	final bool CanRotate()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider).get_CanRotate(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ITransformProvider)this.asInterface(uuid("79670fdd-f6a9-4a65-af17-861db799a2da"))).get_CanRotate(&_ret));
 		return _ret;
 	}
 	final void Move(double x, double y)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider).abi_Move(x, y));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ITransformProvider)this.asInterface(uuid("79670fdd-f6a9-4a65-af17-861db799a2da"))).abi_Move(x, y));
 	}
 	final void Resize(double width, double height)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider).abi_Resize(width, height));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ITransformProvider)this.asInterface(uuid("79670fdd-f6a9-4a65-af17-861db799a2da"))).abi_Resize(width, height));
 	}
 	final void Rotate(double degrees)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ITransformProvider).abi_Rotate(degrees));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ITransformProvider)this.asInterface(uuid("79670fdd-f6a9-4a65-af17-861db799a2da"))).abi_Rotate(degrees));
 	}
 }
 
@@ -3162,7 +3162,7 @@ interface MenuFlyoutItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.Framew
 extern(Windows):
 	final void Invoke()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IInvokeProvider).abi_Invoke());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IInvokeProvider)this.asInterface(uuid("f7d1a187-b13c-4540-b09e-6778e2dc9ba5"))).abi_Invoke());
 	}
 }
 @makable!(MenuFlyoutItemAutomationPeer, MenuFlyoutItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IMenuFlyoutItemAutomationPeerFactory)
@@ -3176,7 +3176,7 @@ class MenuFlyoutItemAutomationPeerT(Base) : AgileObject!Base, MenuFlyoutItemAuto
 		return ret;
 	}
 
-	override HRESULT abi_Invoke() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IInvokeProvider).abi_Invoke(); }
+	override HRESULT abi_Invoke() { return (cast(Windows.UI.Xaml.Automation.Provider.IInvokeProvider)m_inner.asInterface(uuid("f7d1a187-b13c-4540-b09e-6778e2dc9ba5"))).abi_Invoke(); }
 
 	this() {}
 	IInspectable m_inner;
@@ -3228,70 +3228,70 @@ extern(Windows):
 	final bool HorizontallyScrollable()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontallyScrollable(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_HorizontallyScrollable(&_ret));
 		return _ret;
 	}
 	final double HorizontalScrollPercent()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontalScrollPercent(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_HorizontalScrollPercent(&_ret));
 		return _ret;
 	}
 	final double HorizontalViewSize()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontalViewSize(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_HorizontalViewSize(&_ret));
 		return _ret;
 	}
 	final bool VerticallyScrollable()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticallyScrollable(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_VerticallyScrollable(&_ret));
 		return _ret;
 	}
 	final double VerticalScrollPercent()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticalScrollPercent(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_VerticalScrollPercent(&_ret));
 		return _ret;
 	}
 	final double VerticalViewSize()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticalViewSize(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_VerticalViewSize(&_ret));
 		return _ret;
 	}
 	final void Scroll(Windows.UI.Xaml.Automation.ScrollAmount horizontalAmount, Windows.UI.Xaml.Automation.ScrollAmount verticalAmount)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).abi_Scroll(horizontalAmount, verticalAmount));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).abi_Scroll(horizontalAmount, verticalAmount));
 	}
 	final void SetScrollPercent(double horizontalPercent, double verticalPercent)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).abi_SetScrollPercent(horizontalPercent, verticalPercent));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).abi_SetScrollPercent(horizontalPercent, verticalPercent));
 	}
 	final bool CanSelectMultiple()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).get_CanSelectMultiple(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionProvider)this.asInterface(uuid("1f018fca-b944-4395-8de1-88f674af51d3"))).get_CanSelectMultiple(&_ret));
 		return _ret;
 	}
 	final bool IsSelectionRequired()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).get_IsSelectionRequired(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionProvider)this.asInterface(uuid("1f018fca-b944-4395-8de1-88f674af51d3"))).get_IsSelectionRequired(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* GetSelection(UINT32* out___returnValueSize)
 	{
 		Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).abi_GetSelection(out___returnValueSize, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionProvider)this.asInterface(uuid("1f018fca-b944-4395-8de1-88f674af51d3"))).abi_GetSelection(out___returnValueSize, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Automation.Peers.PivotAutomationPeer New(Windows.UI.Xaml.Controls.Pivot owner)
 	{
 		auto factory = factory!(Windows.UI.Xaml.Automation.Peers.IPivotAutomationPeerFactory);
 		Windows.UI.Xaml.Automation.Peers.PivotAutomationPeer _ret;
-		Debug.OK(factory.as!(Windows.UI.Xaml.Automation.Peers.IPivotAutomationPeerFactory).abi_CreateInstanceWithOwner(owner, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IPivotAutomationPeerFactory)factory.asInterface(uuid("3efe0f94-0c91-4341-b9ac-1b56b4e6b84f"))).abi_CreateInstanceWithOwner(owner, &_ret));
 		return _ret;
 	}
 }
@@ -3302,7 +3302,7 @@ interface PivotItemAutomationPeer : Windows.UI.Xaml.Automation.Peers.FrameworkEl
 	{
 		auto factory = factory!(Windows.UI.Xaml.Automation.Peers.IPivotItemAutomationPeerFactory);
 		Windows.UI.Xaml.Automation.Peers.PivotItemAutomationPeer _ret;
-		Debug.OK(factory.as!(Windows.UI.Xaml.Automation.Peers.IPivotItemAutomationPeerFactory).abi_CreateInstanceWithOwner(owner, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IPivotItemAutomationPeerFactory)factory.asInterface(uuid("f2810471-183f-416b-b41a-1e5a958a91f4"))).abi_CreateInstanceWithOwner(owner, &_ret));
 		return _ret;
 	}
 }
@@ -3312,41 +3312,41 @@ interface PivotItemDataAutomationPeer : Windows.UI.Xaml.Automation.Peers.ItemAut
 extern(Windows):
 	final void ScrollIntoView()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider).abi_ScrollIntoView());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollItemProvider)this.asInterface(uuid("9a3ec090-5d2c-4e42-9ee6-9d58db100b55"))).abi_ScrollIntoView());
 	}
 	final bool IsSelected()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_IsSelected(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)this.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).get_IsSelected(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple SelectionContainer()
 	{
 		Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_SelectionContainer(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)this.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).get_SelectionContainer(&_ret));
 		return _ret;
 	}
 	final void AddToSelection()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_AddToSelection());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)this.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).abi_AddToSelection());
 	}
 	final void RemoveFromSelection()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_RemoveFromSelection());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)this.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).abi_RemoveFromSelection());
 	}
 	final void Select()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_Select());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)this.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).abi_Select());
 	}
 	final void Realize()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IVirtualizedItemProvider).abi_Realize());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IVirtualizedItemProvider)this.asInterface(uuid("17d4a04b-d658-48e0-a574-5a516c58dfa7"))).abi_Realize());
 	}
 	static Windows.UI.Xaml.Automation.Peers.PivotItemDataAutomationPeer New(IInspectable item, Windows.UI.Xaml.Automation.Peers.PivotAutomationPeer parent)
 	{
 		auto factory = factory!(Windows.UI.Xaml.Automation.Peers.IPivotItemDataAutomationPeerFactory);
 		Windows.UI.Xaml.Automation.Peers.PivotItemDataAutomationPeer _ret;
-		Debug.OK(factory.as!(Windows.UI.Xaml.Automation.Peers.IPivotItemDataAutomationPeerFactory).abi_CreateInstanceWithParentAndItem(item, parent, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Peers.IPivotItemDataAutomationPeerFactory)factory.asInterface(uuid("517a2480-d3b6-412e-82b6-94a0a84c13b0"))).abi_CreateInstanceWithParentAndItem(item, parent, &_ret));
 		return _ret;
 	}
 }
@@ -3393,26 +3393,26 @@ extern(Windows):
 	final bool IsSelected()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_IsSelected(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)this.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).get_IsSelected(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple SelectionContainer()
 	{
 		Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_SelectionContainer(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)this.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).get_SelectionContainer(&_ret));
 		return _ret;
 	}
 	final void AddToSelection()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_AddToSelection());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)this.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).abi_AddToSelection());
 	}
 	final void RemoveFromSelection()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_RemoveFromSelection());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)this.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).abi_RemoveFromSelection());
 	}
 	final void Select()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_Select());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)this.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).abi_Select());
 	}
 }
 @makable!(RadioButtonAutomationPeer, RadioButtonAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRadioButtonAutomationPeerFactory)
@@ -3426,11 +3426,11 @@ class RadioButtonAutomationPeerT(Base) : AgileObject!Base, RadioButtonAutomation
 		return ret;
 	}
 
-	override HRESULT get_IsSelected(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_IsSelected(return_value); }
-	override HRESULT get_SelectionContainer(Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_SelectionContainer(return_value); }
-	override HRESULT abi_AddToSelection() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_AddToSelection(); }
-	override HRESULT abi_RemoveFromSelection() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_RemoveFromSelection(); }
-	override HRESULT abi_Select() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_Select(); }
+	override HRESULT get_IsSelected(bool* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)m_inner.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).get_IsSelected(return_value); }
+	override HRESULT get_SelectionContainer(Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)m_inner.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).get_SelectionContainer(return_value); }
+	override HRESULT abi_AddToSelection() { return (cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)m_inner.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).abi_AddToSelection(); }
+	override HRESULT abi_RemoveFromSelection() { return (cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)m_inner.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).abi_RemoveFromSelection(); }
+	override HRESULT abi_Select() { return (cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)m_inner.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).abi_Select(); }
 
 	this() {}
 	IInspectable m_inner;
@@ -3442,42 +3442,42 @@ extern(Windows):
 	final bool IsReadOnly()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_IsReadOnly(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider)this.asInterface(uuid("838a34a8-7d5f-4079-af03-c3d015e93413"))).get_IsReadOnly(&_ret));
 		return _ret;
 	}
 	final double LargeChange()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_LargeChange(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider)this.asInterface(uuid("838a34a8-7d5f-4079-af03-c3d015e93413"))).get_LargeChange(&_ret));
 		return _ret;
 	}
 	final double Maximum()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_Maximum(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider)this.asInterface(uuid("838a34a8-7d5f-4079-af03-c3d015e93413"))).get_Maximum(&_ret));
 		return _ret;
 	}
 	final double Minimum()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_Minimum(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider)this.asInterface(uuid("838a34a8-7d5f-4079-af03-c3d015e93413"))).get_Minimum(&_ret));
 		return _ret;
 	}
 	final double SmallChange()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_SmallChange(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider)this.asInterface(uuid("838a34a8-7d5f-4079-af03-c3d015e93413"))).get_SmallChange(&_ret));
 		return _ret;
 	}
 	final double Value()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_Value(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider)this.asInterface(uuid("838a34a8-7d5f-4079-af03-c3d015e93413"))).get_Value(&_ret));
 		return _ret;
 	}
 	final void SetValue(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).abi_SetValue(value));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider)this.asInterface(uuid("838a34a8-7d5f-4079-af03-c3d015e93413"))).abi_SetValue(value));
 	}
 }
 @makable!(RangeBaseAutomationPeer, RangeBaseAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRangeBaseAutomationPeerFactory)
@@ -3491,13 +3491,13 @@ class RangeBaseAutomationPeerT(Base) : AgileObject!Base, RangeBaseAutomationPeer
 		return ret;
 	}
 
-	override HRESULT get_IsReadOnly(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_IsReadOnly(return_value); }
-	override HRESULT get_LargeChange(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_LargeChange(return_value); }
-	override HRESULT get_Maximum(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_Maximum(return_value); }
-	override HRESULT get_Minimum(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_Minimum(return_value); }
-	override HRESULT get_SmallChange(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_SmallChange(return_value); }
-	override HRESULT get_Value(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).get_Value(return_value); }
-	override HRESULT abi_SetValue(double value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider).abi_SetValue(value); }
+	override HRESULT get_IsReadOnly(bool* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider)m_inner.asInterface(uuid("838a34a8-7d5f-4079-af03-c3d015e93413"))).get_IsReadOnly(return_value); }
+	override HRESULT get_LargeChange(double* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider)m_inner.asInterface(uuid("838a34a8-7d5f-4079-af03-c3d015e93413"))).get_LargeChange(return_value); }
+	override HRESULT get_Maximum(double* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider)m_inner.asInterface(uuid("838a34a8-7d5f-4079-af03-c3d015e93413"))).get_Maximum(return_value); }
+	override HRESULT get_Minimum(double* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider)m_inner.asInterface(uuid("838a34a8-7d5f-4079-af03-c3d015e93413"))).get_Minimum(return_value); }
+	override HRESULT get_SmallChange(double* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider)m_inner.asInterface(uuid("838a34a8-7d5f-4079-af03-c3d015e93413"))).get_SmallChange(return_value); }
+	override HRESULT get_Value(double* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider)m_inner.asInterface(uuid("838a34a8-7d5f-4079-af03-c3d015e93413"))).get_Value(return_value); }
+	override HRESULT abi_SetValue(double value) { return (cast(Windows.UI.Xaml.Automation.Provider.IRangeValueProvider)m_inner.asInterface(uuid("838a34a8-7d5f-4079-af03-c3d015e93413"))).abi_SetValue(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -3508,7 +3508,7 @@ interface RepeatButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ButtonBa
 extern(Windows):
 	final void Invoke()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IInvokeProvider).abi_Invoke());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IInvokeProvider)this.asInterface(uuid("f7d1a187-b13c-4540-b09e-6778e2dc9ba5"))).abi_Invoke());
 	}
 }
 @makable!(RepeatButtonAutomationPeer, RepeatButtonAutomationPeer, Windows.UI.Xaml.Automation.Peers.IRepeatButtonAutomationPeerFactory)
@@ -3522,7 +3522,7 @@ class RepeatButtonAutomationPeerT(Base) : AgileObject!Base, RepeatButtonAutomati
 		return ret;
 	}
 
-	override HRESULT abi_Invoke() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IInvokeProvider).abi_Invoke(); }
+	override HRESULT abi_Invoke() { return (cast(Windows.UI.Xaml.Automation.Provider.IInvokeProvider)m_inner.asInterface(uuid("f7d1a187-b13c-4540-b09e-6778e2dc9ba5"))).abi_Invoke(); }
 
 	this() {}
 	IInspectable m_inner;
@@ -3606,46 +3606,46 @@ extern(Windows):
 	final bool HorizontallyScrollable()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontallyScrollable(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_HorizontallyScrollable(&_ret));
 		return _ret;
 	}
 	final double HorizontalScrollPercent()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontalScrollPercent(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_HorizontalScrollPercent(&_ret));
 		return _ret;
 	}
 	final double HorizontalViewSize()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontalViewSize(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_HorizontalViewSize(&_ret));
 		return _ret;
 	}
 	final bool VerticallyScrollable()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticallyScrollable(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_VerticallyScrollable(&_ret));
 		return _ret;
 	}
 	final double VerticalScrollPercent()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticalScrollPercent(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_VerticalScrollPercent(&_ret));
 		return _ret;
 	}
 	final double VerticalViewSize()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticalViewSize(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_VerticalViewSize(&_ret));
 		return _ret;
 	}
 	final void Scroll(Windows.UI.Xaml.Automation.ScrollAmount horizontalAmount, Windows.UI.Xaml.Automation.ScrollAmount verticalAmount)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).abi_Scroll(horizontalAmount, verticalAmount));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).abi_Scroll(horizontalAmount, verticalAmount));
 	}
 	final void SetScrollPercent(double horizontalPercent, double verticalPercent)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).abi_SetScrollPercent(horizontalPercent, verticalPercent));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)this.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).abi_SetScrollPercent(horizontalPercent, verticalPercent));
 	}
 }
 @makable!(ScrollViewerAutomationPeer, ScrollViewerAutomationPeer, Windows.UI.Xaml.Automation.Peers.IScrollViewerAutomationPeerFactory)
@@ -3659,14 +3659,14 @@ class ScrollViewerAutomationPeerT(Base) : AgileObject!Base, ScrollViewerAutomati
 		return ret;
 	}
 
-	override HRESULT get_HorizontallyScrollable(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontallyScrollable(return_value); }
-	override HRESULT get_HorizontalScrollPercent(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontalScrollPercent(return_value); }
-	override HRESULT get_HorizontalViewSize(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_HorizontalViewSize(return_value); }
-	override HRESULT get_VerticallyScrollable(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticallyScrollable(return_value); }
-	override HRESULT get_VerticalScrollPercent(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticalScrollPercent(return_value); }
-	override HRESULT get_VerticalViewSize(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).get_VerticalViewSize(return_value); }
-	override HRESULT abi_Scroll(Windows.UI.Xaml.Automation.ScrollAmount horizontalAmount, Windows.UI.Xaml.Automation.ScrollAmount verticalAmount) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).abi_Scroll(horizontalAmount, verticalAmount); }
-	override HRESULT abi_SetScrollPercent(double horizontalPercent, double verticalPercent) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IScrollProvider).abi_SetScrollPercent(horizontalPercent, verticalPercent); }
+	override HRESULT get_HorizontallyScrollable(bool* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)m_inner.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_HorizontallyScrollable(return_value); }
+	override HRESULT get_HorizontalScrollPercent(double* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)m_inner.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_HorizontalScrollPercent(return_value); }
+	override HRESULT get_HorizontalViewSize(double* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)m_inner.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_HorizontalViewSize(return_value); }
+	override HRESULT get_VerticallyScrollable(bool* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)m_inner.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_VerticallyScrollable(return_value); }
+	override HRESULT get_VerticalScrollPercent(double* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)m_inner.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_VerticalScrollPercent(return_value); }
+	override HRESULT get_VerticalViewSize(double* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)m_inner.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).get_VerticalViewSize(return_value); }
+	override HRESULT abi_Scroll(Windows.UI.Xaml.Automation.ScrollAmount horizontalAmount, Windows.UI.Xaml.Automation.ScrollAmount verticalAmount) { return (cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)m_inner.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).abi_Scroll(horizontalAmount, verticalAmount); }
+	override HRESULT abi_SetScrollPercent(double horizontalPercent, double verticalPercent) { return (cast(Windows.UI.Xaml.Automation.Provider.IScrollProvider)m_inner.asInterface(uuid("374bf581-7716-4bbc-82eb-d997006ea999"))).abi_SetScrollPercent(horizontalPercent, verticalPercent); }
 
 	this() {}
 	IInspectable m_inner;
@@ -3696,19 +3696,19 @@ extern(Windows):
 	final bool CanSelectMultiple()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).get_CanSelectMultiple(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionProvider)this.asInterface(uuid("1f018fca-b944-4395-8de1-88f674af51d3"))).get_CanSelectMultiple(&_ret));
 		return _ret;
 	}
 	final bool IsSelectionRequired()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).get_IsSelectionRequired(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionProvider)this.asInterface(uuid("1f018fca-b944-4395-8de1-88f674af51d3"))).get_IsSelectionRequired(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* GetSelection(UINT32* out___returnValueSize)
 	{
 		Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).abi_GetSelection(out___returnValueSize, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionProvider)this.asInterface(uuid("1f018fca-b944-4395-8de1-88f674af51d3"))).abi_GetSelection(out___returnValueSize, &_ret));
 		return _ret;
 	}
 }
@@ -3723,9 +3723,9 @@ class SelectorAutomationPeerT(Base) : AgileObject!Base, SelectorAutomationPeer
 		return ret;
 	}
 
-	override HRESULT get_CanSelectMultiple(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).get_CanSelectMultiple(return_value); }
-	override HRESULT get_IsSelectionRequired(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).get_IsSelectionRequired(return_value); }
-	override HRESULT abi_GetSelection(UINT32* out___returnValueSize, Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple** return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionProvider).abi_GetSelection(out___returnValueSize, return_returnValue); }
+	override HRESULT get_CanSelectMultiple(bool* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.ISelectionProvider)m_inner.asInterface(uuid("1f018fca-b944-4395-8de1-88f674af51d3"))).get_CanSelectMultiple(return_value); }
+	override HRESULT get_IsSelectionRequired(bool* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.ISelectionProvider)m_inner.asInterface(uuid("1f018fca-b944-4395-8de1-88f674af51d3"))).get_IsSelectionRequired(return_value); }
+	override HRESULT abi_GetSelection(UINT32* out___returnValueSize, Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple** return_returnValue) { return (cast(Windows.UI.Xaml.Automation.Provider.ISelectionProvider)m_inner.asInterface(uuid("1f018fca-b944-4395-8de1-88f674af51d3"))).abi_GetSelection(out___returnValueSize, return_returnValue); }
 
 	this() {}
 	IInspectable m_inner;
@@ -3737,26 +3737,26 @@ extern(Windows):
 	final bool IsSelected()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_IsSelected(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)this.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).get_IsSelected(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple SelectionContainer()
 	{
 		Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_SelectionContainer(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)this.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).get_SelectionContainer(&_ret));
 		return _ret;
 	}
 	final void AddToSelection()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_AddToSelection());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)this.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).abi_AddToSelection());
 	}
 	final void RemoveFromSelection()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_RemoveFromSelection());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)this.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).abi_RemoveFromSelection());
 	}
 	final void Select()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_Select());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)this.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).abi_Select());
 	}
 }
 @makable!(SelectorItemAutomationPeer, SelectorItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISelectorItemAutomationPeerFactory)
@@ -3770,11 +3770,11 @@ class SelectorItemAutomationPeerT(Base) : AgileObject!Base, SelectorItemAutomati
 		return ret;
 	}
 
-	override HRESULT get_IsSelected(bool* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_IsSelected(return_value); }
-	override HRESULT get_SelectionContainer(Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).get_SelectionContainer(return_value); }
-	override HRESULT abi_AddToSelection() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_AddToSelection(); }
-	override HRESULT abi_RemoveFromSelection() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_RemoveFromSelection(); }
-	override HRESULT abi_Select() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider).abi_Select(); }
+	override HRESULT get_IsSelected(bool* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)m_inner.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).get_IsSelected(return_value); }
+	override HRESULT get_SelectionContainer(Windows.UI.Xaml.Automation.Provider.IRawElementProviderSimple* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)m_inner.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).get_SelectionContainer(return_value); }
+	override HRESULT abi_AddToSelection() { return (cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)m_inner.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).abi_AddToSelection(); }
+	override HRESULT abi_RemoveFromSelection() { return (cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)m_inner.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).abi_RemoveFromSelection(); }
+	override HRESULT abi_Select() { return (cast(Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider)m_inner.asInterface(uuid("6a4977c1-830d-42d2-bf62-042ebddecc19"))).abi_Select(); }
 
 	this() {}
 	IInspectable m_inner;
@@ -3786,12 +3786,12 @@ extern(Windows):
 	final Windows.UI.Xaml.Automation.ToggleState ToggleState()
 	{
 		Windows.UI.Xaml.Automation.ToggleState _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).get_ToggleState(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IToggleProvider)this.asInterface(uuid("93b88290-656f-44f7-aeaf-78b8f944d062"))).get_ToggleState(&_ret));
 		return _ret;
 	}
 	final void Toggle()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IToggleProvider)this.asInterface(uuid("93b88290-656f-44f7-aeaf-78b8f944d062"))).abi_Toggle());
 	}
 }
 @makable!(SemanticZoomAutomationPeer, SemanticZoomAutomationPeer, Windows.UI.Xaml.Automation.Peers.ISemanticZoomAutomationPeerFactory)
@@ -3805,8 +3805,8 @@ class SemanticZoomAutomationPeerT(Base) : AgileObject!Base, SemanticZoomAutomati
 		return ret;
 	}
 
-	override HRESULT get_ToggleState(Windows.UI.Xaml.Automation.ToggleState* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).get_ToggleState(return_value); }
-	override HRESULT abi_Toggle() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle(); }
+	override HRESULT get_ToggleState(Windows.UI.Xaml.Automation.ToggleState* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IToggleProvider)m_inner.asInterface(uuid("93b88290-656f-44f7-aeaf-78b8f944d062"))).get_ToggleState(return_value); }
+	override HRESULT abi_Toggle() { return (cast(Windows.UI.Xaml.Automation.Provider.IToggleProvider)m_inner.asInterface(uuid("93b88290-656f-44f7-aeaf-78b8f944d062"))).abi_Toggle(); }
 
 	this() {}
 	IInspectable m_inner;
@@ -3930,12 +3930,12 @@ extern(Windows):
 	final Windows.UI.Xaml.Automation.ToggleState ToggleState()
 	{
 		Windows.UI.Xaml.Automation.ToggleState _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).get_ToggleState(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IToggleProvider)this.asInterface(uuid("93b88290-656f-44f7-aeaf-78b8f944d062"))).get_ToggleState(&_ret));
 		return _ret;
 	}
 	final void Toggle()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IToggleProvider)this.asInterface(uuid("93b88290-656f-44f7-aeaf-78b8f944d062"))).abi_Toggle());
 	}
 }
 @makable!(ToggleButtonAutomationPeer, ToggleButtonAutomationPeer, Windows.UI.Xaml.Automation.Peers.IToggleButtonAutomationPeerFactory)
@@ -3949,8 +3949,8 @@ class ToggleButtonAutomationPeerT(Base) : AgileObject!Base, ToggleButtonAutomati
 		return ret;
 	}
 
-	override HRESULT get_ToggleState(Windows.UI.Xaml.Automation.ToggleState* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).get_ToggleState(return_value); }
-	override HRESULT abi_Toggle() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle(); }
+	override HRESULT get_ToggleState(Windows.UI.Xaml.Automation.ToggleState* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IToggleProvider)m_inner.asInterface(uuid("93b88290-656f-44f7-aeaf-78b8f944d062"))).get_ToggleState(return_value); }
+	override HRESULT abi_Toggle() { return (cast(Windows.UI.Xaml.Automation.Provider.IToggleProvider)m_inner.asInterface(uuid("93b88290-656f-44f7-aeaf-78b8f944d062"))).abi_Toggle(); }
 
 	this() {}
 	IInspectable m_inner;
@@ -3962,12 +3962,12 @@ extern(Windows):
 	final Windows.UI.Xaml.Automation.ToggleState ToggleState()
 	{
 		Windows.UI.Xaml.Automation.ToggleState _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).get_ToggleState(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IToggleProvider)this.asInterface(uuid("93b88290-656f-44f7-aeaf-78b8f944d062"))).get_ToggleState(&_ret));
 		return _ret;
 	}
 	final void Toggle()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IToggleProvider)this.asInterface(uuid("93b88290-656f-44f7-aeaf-78b8f944d062"))).abi_Toggle());
 	}
 }
 @makable!(ToggleMenuFlyoutItemAutomationPeer, ToggleMenuFlyoutItemAutomationPeer, Windows.UI.Xaml.Automation.Peers.IToggleMenuFlyoutItemAutomationPeerFactory)
@@ -3981,8 +3981,8 @@ class ToggleMenuFlyoutItemAutomationPeerT(Base) : AgileObject!Base, ToggleMenuFl
 		return ret;
 	}
 
-	override HRESULT get_ToggleState(Windows.UI.Xaml.Automation.ToggleState* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).get_ToggleState(return_value); }
-	override HRESULT abi_Toggle() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle(); }
+	override HRESULT get_ToggleState(Windows.UI.Xaml.Automation.ToggleState* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IToggleProvider)m_inner.asInterface(uuid("93b88290-656f-44f7-aeaf-78b8f944d062"))).get_ToggleState(return_value); }
+	override HRESULT abi_Toggle() { return (cast(Windows.UI.Xaml.Automation.Provider.IToggleProvider)m_inner.asInterface(uuid("93b88290-656f-44f7-aeaf-78b8f944d062"))).abi_Toggle(); }
 
 	this() {}
 	IInspectable m_inner;
@@ -3994,12 +3994,12 @@ extern(Windows):
 	final Windows.UI.Xaml.Automation.ToggleState ToggleState()
 	{
 		Windows.UI.Xaml.Automation.ToggleState _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).get_ToggleState(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IToggleProvider)this.asInterface(uuid("93b88290-656f-44f7-aeaf-78b8f944d062"))).get_ToggleState(&_ret));
 		return _ret;
 	}
 	final void Toggle()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle());
+		Debug.OK((cast(Windows.UI.Xaml.Automation.Provider.IToggleProvider)this.asInterface(uuid("93b88290-656f-44f7-aeaf-78b8f944d062"))).abi_Toggle());
 	}
 }
 @makable!(ToggleSwitchAutomationPeer, ToggleSwitchAutomationPeer, Windows.UI.Xaml.Automation.Peers.IToggleSwitchAutomationPeerFactory)
@@ -4013,8 +4013,8 @@ class ToggleSwitchAutomationPeerT(Base) : AgileObject!Base, ToggleSwitchAutomati
 		return ret;
 	}
 
-	override HRESULT get_ToggleState(Windows.UI.Xaml.Automation.ToggleState* return_value) { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).get_ToggleState(return_value); }
-	override HRESULT abi_Toggle() { return m_inner.as!(Windows.UI.Xaml.Automation.Provider.IToggleProvider).abi_Toggle(); }
+	override HRESULT get_ToggleState(Windows.UI.Xaml.Automation.ToggleState* return_value) { return (cast(Windows.UI.Xaml.Automation.Provider.IToggleProvider)m_inner.asInterface(uuid("93b88290-656f-44f7-aeaf-78b8f944d062"))).get_ToggleState(return_value); }
+	override HRESULT abi_Toggle() { return (cast(Windows.UI.Xaml.Automation.Provider.IToggleProvider)m_inner.asInterface(uuid("93b88290-656f-44f7-aeaf-78b8f944d062"))).abi_Toggle(); }
 
 	this() {}
 	IInspectable m_inner;

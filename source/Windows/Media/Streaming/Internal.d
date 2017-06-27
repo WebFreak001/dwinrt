@@ -21,13 +21,13 @@ interface MediaRendererBroker
 	static Windows.Media.Streaming.CreateMediaRendererOperation CreateMediaRendererAsync(HSTRING deviceIdentifier, IInspectable mediaSessionFactoryMF, HSTRING applicationUserModelId)
 	{
 		Windows.Media.Streaming.CreateMediaRendererOperation _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Streaming.Internal.IMediaRendererBrokerStatics).abi_CreateMediaRendererAsync(deviceIdentifier, mediaSessionFactoryMF, applicationUserModelId, &_ret));
+		Debug.OK(staticInstance.abi_CreateMediaRendererAsync(deviceIdentifier, mediaSessionFactoryMF, applicationUserModelId, &_ret));
 		return _ret;
 	}
 	static Windows.Media.Streaming.CreateMediaRendererOperation CreateMediaRendererFromBasicDeviceAsync(Windows.Media.Streaming.IBasicDevice basicDevice, IInspectable mediaSessionFactoryMF, HSTRING applicationUserModelId)
 	{
 		Windows.Media.Streaming.CreateMediaRendererOperation _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Streaming.Internal.IMediaRendererBrokerStatics).abi_CreateMediaRendererFromBasicDeviceAsync(basicDevice, mediaSessionFactoryMF, applicationUserModelId, &_ret));
+		Debug.OK(staticInstance.abi_CreateMediaRendererFromBasicDeviceAsync(basicDevice, mediaSessionFactoryMF, applicationUserModelId, &_ret));
 		return _ret;
 	}
 }

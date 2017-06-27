@@ -35,7 +35,7 @@ extern(Windows):
 	final Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionRevokedReason Reason()
 	{
 		Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionRevokedReason _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionRevokedEventArgs).get_Reason(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionRevokedEventArgs)this.asInterface(uuid("bfbc9f16-63b5-4c0b-aad6-828af5373ec3"))).get_Reason(&_ret));
 		return _ret;
 	}
 }
@@ -46,58 +46,58 @@ extern(Windows):
 	final Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionReason Reason()
 	{
 		Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionReason _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession).get_Reason(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession)this.asInterface(uuid("af908a2d-118b-48f1-9308-0c4fc41e200f"))).get_Reason(&_ret));
 		return _ret;
 	}
 	final void Reason(Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionReason value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession).set_Reason(value));
+		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession)this.asInterface(uuid("af908a2d-118b-48f1-9308-0c4fc41e200f"))).set_Reason(value));
 	}
 	final HSTRING Description()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession).get_Description(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession)this.asInterface(uuid("af908a2d-118b-48f1-9308-0c4fc41e200f"))).get_Description(&_ret));
 		return _ret;
 	}
 	final void Description(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession).set_Description(value));
+		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession)this.asInterface(uuid("af908a2d-118b-48f1-9308-0c4fc41e200f"))).set_Description(value));
 	}
 	final UINT32 PercentProgress()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession).get_PercentProgress(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession)this.asInterface(uuid("af908a2d-118b-48f1-9308-0c4fc41e200f"))).get_PercentProgress(&_ret));
 		return _ret;
 	}
 	final void PercentProgress(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession).set_PercentProgress(value));
+		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession)this.asInterface(uuid("af908a2d-118b-48f1-9308-0c4fc41e200f"))).set_PercentProgress(value));
 	}
 	final EventRegistrationToken OnRevoked(void delegate(IInspectable, Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionRevokedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession).add_Revoked(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionRevokedEventArgs), IInspectable, Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionRevokedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession)this.asInterface(uuid("af908a2d-118b-48f1-9308-0c4fc41e200f"))).add_Revoked(event!(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionRevokedEventArgs), IInspectable, Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionRevokedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeRevoked(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession).remove_Revoked(token));
+		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession)this.asInterface(uuid("af908a2d-118b-48f1-9308-0c4fc41e200f"))).remove_Revoked(token));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionResult) RequestExtensionAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionResult) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession).abi_RequestExtensionAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.ExtendedExecution.IExtendedExecutionSession)this.asInterface(uuid("af908a2d-118b-48f1-9308-0c4fc41e200f"))).abi_RequestExtensionAsync(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	static ExtendedExecutionSession New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ExtendedExecutionSession).abi_ActivateInstance(&ret));
-		return ret.as!(ExtendedExecutionSession);
+		return cast(ExtendedExecutionSession) ret;
 	}
 }
 

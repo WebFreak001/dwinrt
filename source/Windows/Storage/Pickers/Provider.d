@@ -108,74 +108,74 @@ extern(Windows):
 	final Windows.Storage.Pickers.Provider.AddFileResult AddFile(HSTRING id, Windows.Storage.IStorageFile file)
 	{
 		Windows.Storage.Pickers.Provider.AddFileResult _ret;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).abi_AddFile(id, file, &_ret));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileOpenPickerUI)this.asInterface(uuid("dda45a10-f9d4-40c4-8af5-c5b6b5a61d1d"))).abi_AddFile(id, file, &_ret));
 		return _ret;
 	}
 	final void RemoveFile(HSTRING id)
 	{
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).abi_RemoveFile(id));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileOpenPickerUI)this.asInterface(uuid("dda45a10-f9d4-40c4-8af5-c5b6b5a61d1d"))).abi_RemoveFile(id));
 	}
 	final bool ContainsFile(HSTRING id)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).abi_ContainsFile(id, &_ret));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileOpenPickerUI)this.asInterface(uuid("dda45a10-f9d4-40c4-8af5-c5b6b5a61d1d"))).abi_ContainsFile(id, &_ret));
 		return _ret;
 	}
 	final bool CanAddFile(Windows.Storage.IStorageFile file)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).abi_CanAddFile(file, &_ret));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileOpenPickerUI)this.asInterface(uuid("dda45a10-f9d4-40c4-8af5-c5b6b5a61d1d"))).abi_CanAddFile(file, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) AllowedFileTypes()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).get_AllowedFileTypes(&_ret));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileOpenPickerUI)this.asInterface(uuid("dda45a10-f9d4-40c4-8af5-c5b6b5a61d1d"))).get_AllowedFileTypes(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Pickers.Provider.FileSelectionMode SelectionMode()
 	{
 		Windows.Storage.Pickers.Provider.FileSelectionMode _ret;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).get_SelectionMode(&_ret));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileOpenPickerUI)this.asInterface(uuid("dda45a10-f9d4-40c4-8af5-c5b6b5a61d1d"))).get_SelectionMode(&_ret));
 		return _ret;
 	}
 	final HSTRING SettingsIdentifier()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).get_SettingsIdentifier(&_ret));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileOpenPickerUI)this.asInterface(uuid("dda45a10-f9d4-40c4-8af5-c5b6b5a61d1d"))).get_SettingsIdentifier(&_ret));
 		return _ret;
 	}
 	final HSTRING Title()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).get_Title(&_ret));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileOpenPickerUI)this.asInterface(uuid("dda45a10-f9d4-40c4-8af5-c5b6b5a61d1d"))).get_Title(&_ret));
 		return _ret;
 	}
 	final void Title(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).set_Title(value));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileOpenPickerUI)this.asInterface(uuid("dda45a10-f9d4-40c4-8af5-c5b6b5a61d1d"))).set_Title(value));
 	}
 	deprecated("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")
 	final EventRegistrationToken OnFileRemoved(void delegate(Windows.Storage.Pickers.Provider.FileOpenPickerUI, Windows.Storage.Pickers.Provider.FileRemovedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).add_FileRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileOpenPickerUI, Windows.Storage.Pickers.Provider.FileRemovedEventArgs), Windows.Storage.Pickers.Provider.FileOpenPickerUI, Windows.Storage.Pickers.Provider.FileRemovedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileOpenPickerUI)this.asInterface(uuid("dda45a10-f9d4-40c4-8af5-c5b6b5a61d1d"))).add_FileRemoved(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileOpenPickerUI, Windows.Storage.Pickers.Provider.FileRemovedEventArgs), Windows.Storage.Pickers.Provider.FileOpenPickerUI, Windows.Storage.Pickers.Provider.FileRemovedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")
 	final void removeFileRemoved(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).remove_FileRemoved(token));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileOpenPickerUI)this.asInterface(uuid("dda45a10-f9d4-40c4-8af5-c5b6b5a61d1d"))).remove_FileRemoved(token));
 	}
 	final EventRegistrationToken OnClosing(void delegate(Windows.Storage.Pickers.Provider.FileOpenPickerUI, Windows.Storage.Pickers.Provider.PickerClosingEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).add_Closing(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileOpenPickerUI, Windows.Storage.Pickers.Provider.PickerClosingEventArgs), Windows.Storage.Pickers.Provider.FileOpenPickerUI, Windows.Storage.Pickers.Provider.PickerClosingEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileOpenPickerUI)this.asInterface(uuid("dda45a10-f9d4-40c4-8af5-c5b6b5a61d1d"))).add_Closing(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileOpenPickerUI, Windows.Storage.Pickers.Provider.PickerClosingEventArgs), Windows.Storage.Pickers.Provider.FileOpenPickerUI, Windows.Storage.Pickers.Provider.PickerClosingEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeClosing(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileOpenPickerUI).remove_Closing(token));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileOpenPickerUI)this.asInterface(uuid("dda45a10-f9d4-40c4-8af5-c5b6b5a61d1d"))).remove_Closing(token));
 	}
 }
 
@@ -186,7 +186,7 @@ extern(Windows):
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileRemovedEventArgs).get_Id(&_ret));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileRemovedEventArgs)this.asInterface(uuid("13043da7-7fca-4c2b-9eca-6890f9f00185"))).get_Id(&_ret));
 		return _ret;
 	}
 }
@@ -197,56 +197,56 @@ extern(Windows):
 	final HSTRING Title()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileSavePickerUI).get_Title(&_ret));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileSavePickerUI)this.asInterface(uuid("9656c1e7-3e56-43cc-8a39-33c73d9d542b"))).get_Title(&_ret));
 		return _ret;
 	}
 	final void Title(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileSavePickerUI).set_Title(value));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileSavePickerUI)this.asInterface(uuid("9656c1e7-3e56-43cc-8a39-33c73d9d542b"))).set_Title(value));
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) AllowedFileTypes()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileSavePickerUI).get_AllowedFileTypes(&_ret));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileSavePickerUI)this.asInterface(uuid("9656c1e7-3e56-43cc-8a39-33c73d9d542b"))).get_AllowedFileTypes(&_ret));
 		return _ret;
 	}
 	final HSTRING SettingsIdentifier()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileSavePickerUI).get_SettingsIdentifier(&_ret));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileSavePickerUI)this.asInterface(uuid("9656c1e7-3e56-43cc-8a39-33c73d9d542b"))).get_SettingsIdentifier(&_ret));
 		return _ret;
 	}
 	final HSTRING FileName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileSavePickerUI).get_FileName(&_ret));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileSavePickerUI)this.asInterface(uuid("9656c1e7-3e56-43cc-8a39-33c73d9d542b"))).get_FileName(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Pickers.Provider.SetFileNameResult TrySetFileName(HSTRING value)
 	{
 		Windows.Storage.Pickers.Provider.SetFileNameResult _ret;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileSavePickerUI).abi_TrySetFileName(value, &_ret));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileSavePickerUI)this.asInterface(uuid("9656c1e7-3e56-43cc-8a39-33c73d9d542b"))).abi_TrySetFileName(value, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnFileNameChanged(void delegate(Windows.Storage.Pickers.Provider.FileSavePickerUI, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileSavePickerUI).add_FileNameChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileSavePickerUI, IInspectable), Windows.Storage.Pickers.Provider.FileSavePickerUI, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileSavePickerUI)this.asInterface(uuid("9656c1e7-3e56-43cc-8a39-33c73d9d542b"))).add_FileNameChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileSavePickerUI, IInspectable), Windows.Storage.Pickers.Provider.FileSavePickerUI, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeFileNameChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileSavePickerUI).remove_FileNameChanged(token));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileSavePickerUI)this.asInterface(uuid("9656c1e7-3e56-43cc-8a39-33c73d9d542b"))).remove_FileNameChanged(token));
 	}
 	final EventRegistrationToken OnTargetFileRequested(void delegate(Windows.Storage.Pickers.Provider.FileSavePickerUI, Windows.Storage.Pickers.Provider.TargetFileRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileSavePickerUI).add_TargetFileRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileSavePickerUI, Windows.Storage.Pickers.Provider.TargetFileRequestedEventArgs), Windows.Storage.Pickers.Provider.FileSavePickerUI, Windows.Storage.Pickers.Provider.TargetFileRequestedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileSavePickerUI)this.asInterface(uuid("9656c1e7-3e56-43cc-8a39-33c73d9d542b"))).add_TargetFileRequested(event!(Windows.Foundation.TypedEventHandler!(Windows.Storage.Pickers.Provider.FileSavePickerUI, Windows.Storage.Pickers.Provider.TargetFileRequestedEventArgs), Windows.Storage.Pickers.Provider.FileSavePickerUI, Windows.Storage.Pickers.Provider.TargetFileRequestedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeTargetFileRequested(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IFileSavePickerUI).remove_TargetFileRequested(token));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IFileSavePickerUI)this.asInterface(uuid("9656c1e7-3e56-43cc-8a39-33c73d9d542b"))).remove_TargetFileRequested(token));
 	}
 }
 
@@ -255,7 +255,7 @@ interface PickerClosingDeferral : Windows.Storage.Pickers.Provider.IPickerClosin
 extern(Windows):
 	final void Complete()
 	{
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IPickerClosingDeferral).abi_Complete());
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IPickerClosingDeferral)this.asInterface(uuid("7af7f71e-1a67-4a31-ae80-e907708a619b"))).abi_Complete());
 	}
 }
 
@@ -265,13 +265,13 @@ extern(Windows):
 	final Windows.Storage.Pickers.Provider.PickerClosingOperation ClosingOperation()
 	{
 		Windows.Storage.Pickers.Provider.PickerClosingOperation _ret;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IPickerClosingEventArgs).get_ClosingOperation(&_ret));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IPickerClosingEventArgs)this.asInterface(uuid("7e59f224-b332-4f12-8b9f-a8c2f06b32cd"))).get_ClosingOperation(&_ret));
 		return _ret;
 	}
 	final bool IsCanceled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IPickerClosingEventArgs).get_IsCanceled(&_ret));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IPickerClosingEventArgs)this.asInterface(uuid("7e59f224-b332-4f12-8b9f-a8c2f06b32cd"))).get_IsCanceled(&_ret));
 		return _ret;
 	}
 }
@@ -282,13 +282,13 @@ extern(Windows):
 	final Windows.Storage.Pickers.Provider.PickerClosingDeferral GetDeferral()
 	{
 		Windows.Storage.Pickers.Provider.PickerClosingDeferral _ret;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IPickerClosingOperation).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IPickerClosingOperation)this.asInterface(uuid("4ce9fb84-beee-4e39-a773-fc5f0eae328d"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime Deadline()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.IPickerClosingOperation).get_Deadline(&_ret));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.IPickerClosingOperation)this.asInterface(uuid("4ce9fb84-beee-4e39-a773-fc5f0eae328d"))).get_Deadline(&_ret));
 		return _ret;
 	}
 }
@@ -299,17 +299,17 @@ extern(Windows):
 	final Windows.Storage.IStorageFile TargetFile()
 	{
 		Windows.Storage.IStorageFile _ret;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.ITargetFileRequest).get_TargetFile(&_ret));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.ITargetFileRequest)this.asInterface(uuid("42bd3355-7f88-478b-8e81-690b20340678"))).get_TargetFile(&_ret));
 		return _ret;
 	}
 	final void TargetFile(Windows.Storage.IStorageFile value)
 	{
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.ITargetFileRequest).set_TargetFile(value));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.ITargetFileRequest)this.asInterface(uuid("42bd3355-7f88-478b-8e81-690b20340678"))).set_TargetFile(value));
 	}
 	final Windows.Storage.Pickers.Provider.TargetFileRequestDeferral GetDeferral()
 	{
 		Windows.Storage.Pickers.Provider.TargetFileRequestDeferral _ret;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.ITargetFileRequest).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.ITargetFileRequest)this.asInterface(uuid("42bd3355-7f88-478b-8e81-690b20340678"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -319,7 +319,7 @@ interface TargetFileRequestDeferral : Windows.Storage.Pickers.Provider.ITargetFi
 extern(Windows):
 	final void Complete()
 	{
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.ITargetFileRequestDeferral).abi_Complete());
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.ITargetFileRequestDeferral)this.asInterface(uuid("4aee9d91-bf15-4da9-95f6-f6b7d558225b"))).abi_Complete());
 	}
 }
 
@@ -329,7 +329,7 @@ extern(Windows):
 	final Windows.Storage.Pickers.Provider.TargetFileRequest Request()
 	{
 		Windows.Storage.Pickers.Provider.TargetFileRequest _ret;
-		Debug.OK(this.as!(Windows.Storage.Pickers.Provider.ITargetFileRequestedEventArgs).get_Request(&_ret));
+		Debug.OK((cast(Windows.Storage.Pickers.Provider.ITargetFileRequestedEventArgs)this.asInterface(uuid("b163dbc1-1b51-4c89-a591-0fd40b3c57c9"))).get_Request(&_ret));
 		return _ret;
 	}
 }

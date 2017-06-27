@@ -503,6 +503,13 @@ auto as(U : IUnknown, T : IUnknown)(T base)
 	return tmp;
 }
 
+void* asInterface(IUnknown base, GUID id)
+{
+	void* tmp;
+	Debug.OK(base.QueryInterface(&id, &tmp));
+	return tmp;
+}
+
 Interface activationFactory(Class : IUnknown, Interface : IUnknown = IActivationFactory)()
 {
 	debug (DWinRT)

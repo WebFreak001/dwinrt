@@ -59,13 +59,13 @@ extern(Windows):
 	final Windows.Foundation.IAsyncAction RegisterAsync(Windows.Foundation.Collections.IIterable!(HSTRING) supportedPaymentMethodIds)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.Provider.IPaymentAppManager).abi_RegisterAsync(supportedPaymentMethodIds, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentAppManager)this.asInterface(uuid("0e47aa53-8521-4969-a957-df2538a3a98f"))).abi_RegisterAsync(supportedPaymentMethodIds, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction UnregisterAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.Provider.IPaymentAppManager).abi_UnregisterAsync(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentAppManager)this.asInterface(uuid("0e47aa53-8521-4969-a957-df2538a3a98f"))).abi_UnregisterAsync(&_ret));
 		return _ret;
 	}
 
@@ -78,7 +78,7 @@ extern(Windows):
 	static Windows.ApplicationModel.Payments.Provider.PaymentAppManager Current()
 	{
 		Windows.ApplicationModel.Payments.Provider.PaymentAppManager _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Payments.Provider.IPaymentAppManagerStatics).get_Current(&_ret));
+		Debug.OK(staticInstance.get_Current(&_ret));
 		return _ret;
 	}
 }
@@ -89,60 +89,60 @@ extern(Windows):
 	final Windows.ApplicationModel.Payments.PaymentRequest PaymentRequest()
 	{
 		Windows.ApplicationModel.Payments.PaymentRequest _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction).get_PaymentRequest(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction)this.asInterface(uuid("62581da0-26a5-4e9b-a6eb-66606cf001d3"))).get_PaymentRequest(&_ret));
 		return _ret;
 	}
 	final HSTRING PayerEmail()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction).get_PayerEmail(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction)this.asInterface(uuid("62581da0-26a5-4e9b-a6eb-66606cf001d3"))).get_PayerEmail(&_ret));
 		return _ret;
 	}
 	final void PayerEmail(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction).set_PayerEmail(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction)this.asInterface(uuid("62581da0-26a5-4e9b-a6eb-66606cf001d3"))).set_PayerEmail(value));
 	}
 	final HSTRING PayerName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction).get_PayerName(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction)this.asInterface(uuid("62581da0-26a5-4e9b-a6eb-66606cf001d3"))).get_PayerName(&_ret));
 		return _ret;
 	}
 	final void PayerName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction).set_PayerName(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction)this.asInterface(uuid("62581da0-26a5-4e9b-a6eb-66606cf001d3"))).set_PayerName(value));
 	}
 	final HSTRING PayerPhoneNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction).get_PayerPhoneNumber(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction)this.asInterface(uuid("62581da0-26a5-4e9b-a6eb-66606cf001d3"))).get_PayerPhoneNumber(&_ret));
 		return _ret;
 	}
 	final void PayerPhoneNumber(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction).set_PayerPhoneNumber(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction)this.asInterface(uuid("62581da0-26a5-4e9b-a6eb-66606cf001d3"))).set_PayerPhoneNumber(value));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.PaymentRequestChangedResult) UpdateShippingAddressAsync(Windows.ApplicationModel.Payments.PaymentAddress shippingAddress)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.PaymentRequestChangedResult) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction).abi_UpdateShippingAddressAsync(shippingAddress, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction)this.asInterface(uuid("62581da0-26a5-4e9b-a6eb-66606cf001d3"))).abi_UpdateShippingAddressAsync(shippingAddress, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.PaymentRequestChangedResult) UpdateSelectedShippingOptionAsync(Windows.ApplicationModel.Payments.PaymentShippingOption selectedShippingOption)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.PaymentRequestChangedResult) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction).abi_UpdateSelectedShippingOptionAsync(selectedShippingOption, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction)this.asInterface(uuid("62581da0-26a5-4e9b-a6eb-66606cf001d3"))).abi_UpdateSelectedShippingOptionAsync(selectedShippingOption, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.Provider.PaymentTransactionAcceptResult) AcceptAsync(Windows.ApplicationModel.Payments.PaymentToken paymentToken)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.Provider.PaymentTransactionAcceptResult) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction).abi_AcceptAsync(paymentToken, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction)this.asInterface(uuid("62581da0-26a5-4e9b-a6eb-66606cf001d3"))).abi_AcceptAsync(paymentToken, &_ret));
 		return _ret;
 	}
 	final void Reject()
 	{
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction).abi_Reject());
+		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction)this.asInterface(uuid("62581da0-26a5-4e9b-a6eb-66606cf001d3"))).abi_Reject());
 	}
 
 	private static Windows.ApplicationModel.Payments.Provider.IPaymentTransactionStatics _staticInstance;
@@ -154,7 +154,7 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.Provider.PaymentTransaction) FromIdAsync(HSTRING id)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.Provider.PaymentTransaction) _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Payments.Provider.IPaymentTransactionStatics).abi_FromIdAsync(id, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(id, &_ret));
 		return _ret;
 	}
 }
@@ -165,7 +165,7 @@ extern(Windows):
 	final Windows.ApplicationModel.Payments.PaymentRequestCompletionStatus Status()
 	{
 		Windows.ApplicationModel.Payments.PaymentRequestCompletionStatus _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Payments.Provider.IPaymentTransactionAcceptResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentTransactionAcceptResult)this.asInterface(uuid("060e3276-d30c-4817-95a2-df7ae9273b56"))).get_Status(&_ret));
 		return _ret;
 	}
 }

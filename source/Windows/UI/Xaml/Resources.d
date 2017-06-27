@@ -44,12 +44,12 @@ interface CustomXamlResourceLoader : Windows.UI.Xaml.Resources.ICustomXamlResour
 	static Windows.UI.Xaml.Resources.CustomXamlResourceLoader Current()
 	{
 		Windows.UI.Xaml.Resources.CustomXamlResourceLoader _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Resources.ICustomXamlResourceLoaderStatics).get_Current(&_ret));
+		Debug.OK(staticInstance.get_Current(&_ret));
 		return _ret;
 	}
 	static void Current(Windows.UI.Xaml.Resources.CustomXamlResourceLoader value)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Resources.ICustomXamlResourceLoaderStatics).set_Current(value));
+		Debug.OK(staticInstance.set_Current(value));
 	}
 	static CustomXamlResourceLoader New()
 	{
@@ -71,7 +71,7 @@ class CustomXamlResourceLoaderT(Base) : AgileObject!Base, CustomXamlResourceLoad
 	}
 
 	override HRESULT abi_GetResource(HSTRING resourceId, HSTRING objectType, HSTRING propertyName, HSTRING propertyType, IInspectable* return_returnValue) { this.GetResource(resourceId, objectType, propertyName, propertyType, return_returnValue); return S_OK; }
-	void GetResource(HSTRING resourceId, HSTRING objectType, HSTRING propertyName, HSTRING propertyType, IInspectable* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Resources.ICustomXamlResourceLoaderOverrides).abi_GetResource(resourceId, objectType, propertyName, propertyType, return_returnValue)); }
+	void GetResource(HSTRING resourceId, HSTRING objectType, HSTRING propertyName, HSTRING propertyType, IInspectable* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Resources.ICustomXamlResourceLoaderOverrides)m_inner.asInterface(uuid("f851e991-af02-46e8-9af8-427b7ebfe9f8"))).abi_GetResource(resourceId, objectType, propertyName, propertyType, return_returnValue)); }
 
 	this() {}
 	IInspectable m_inner;

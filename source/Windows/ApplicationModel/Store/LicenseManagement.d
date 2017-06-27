@@ -53,13 +53,13 @@ interface LicenseManager
 	static Windows.Foundation.IAsyncAction AddLicenseAsync(Windows.Storage.Streams.IBuffer license)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics).abi_AddLicenseAsync(license, &_ret));
+		Debug.OK(staticInstance.abi_AddLicenseAsync(license, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult) GetSatisfactionInfosAsync(Windows.Foundation.Collections.IIterable!(HSTRING) contentIds, Windows.Foundation.Collections.IIterable!(HSTRING) keyIds)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.ApplicationModel.Store.LicenseManagement.ILicenseManagerStatics).abi_GetSatisfactionInfosAsync(contentIds, keyIds, &_ret));
+		Debug.OK(staticInstance.abi_GetSatisfactionInfosAsync(contentIds, keyIds, &_ret));
 		return _ret;
 	}
 }
@@ -70,43 +70,43 @@ extern(Windows):
 	final bool SatisfiedByDevice()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo).get_SatisfiedByDevice(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo)this.asInterface(uuid("3ccbb08f-db31-48d5-8384-fa17c81474e2"))).get_SatisfiedByDevice(&_ret));
 		return _ret;
 	}
 	final bool SatisfiedByOpenLicense()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo).get_SatisfiedByOpenLicense(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo)this.asInterface(uuid("3ccbb08f-db31-48d5-8384-fa17c81474e2"))).get_SatisfiedByOpenLicense(&_ret));
 		return _ret;
 	}
 	final bool SatisfiedByTrial()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo).get_SatisfiedByTrial(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo)this.asInterface(uuid("3ccbb08f-db31-48d5-8384-fa17c81474e2"))).get_SatisfiedByTrial(&_ret));
 		return _ret;
 	}
 	final bool SatisfiedByPass()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo).get_SatisfiedByPass(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo)this.asInterface(uuid("3ccbb08f-db31-48d5-8384-fa17c81474e2"))).get_SatisfiedByPass(&_ret));
 		return _ret;
 	}
 	final bool SatisfiedByInstallMedia()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo).get_SatisfiedByInstallMedia(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo)this.asInterface(uuid("3ccbb08f-db31-48d5-8384-fa17c81474e2"))).get_SatisfiedByInstallMedia(&_ret));
 		return _ret;
 	}
 	final bool SatisfiedBySignedInUser()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo).get_SatisfiedBySignedInUser(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo)this.asInterface(uuid("3ccbb08f-db31-48d5-8384-fa17c81474e2"))).get_SatisfiedBySignedInUser(&_ret));
 		return _ret;
 	}
 	final bool IsSatisfied()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo).get_IsSatisfied(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionInfo)this.asInterface(uuid("3ccbb08f-db31-48d5-8384-fa17c81474e2"))).get_IsSatisfied(&_ret));
 		return _ret;
 	}
 }
@@ -117,13 +117,13 @@ extern(Windows):
 	final Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo) LicenseSatisfactionInfos()
 	{
 		Windows.Foundation.Collections.IMapView!(HSTRING, Windows.ApplicationModel.Store.LicenseManagement.LicenseSatisfactionInfo) _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionResult).get_LicenseSatisfactionInfos(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionResult)this.asInterface(uuid("3c674f73-3c87-4ee1-8201-f428359bd3af"))).get_LicenseSatisfactionInfos(&_ret));
 		return _ret;
 	}
 	final HRESULT ExtendedError()
 	{
 		HRESULT _ret;
-		Debug.OK(this.as!(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionResult).get_ExtendedError(&_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Store.LicenseManagement.ILicenseSatisfactionResult)this.asInterface(uuid("3c674f73-3c87-4ee1-8201-f428359bd3af"))).get_ExtendedError(&_ret));
 		return _ret;
 	}
 }

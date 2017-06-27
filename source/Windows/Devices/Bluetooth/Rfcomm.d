@@ -132,65 +132,65 @@ extern(Windows):
 	final Windows.Networking.HostName ConnectionHostName()
 	{
 		Windows.Networking.HostName _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService).get_ConnectionHostName(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService)this.asInterface(uuid("ae81ff1f-c5a1-4c40-8c28-f3efd69062f3"))).get_ConnectionHostName(&_ret));
 		return _ret;
 	}
 	final HSTRING ConnectionServiceName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService).get_ConnectionServiceName(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService)this.asInterface(uuid("ae81ff1f-c5a1-4c40-8c28-f3efd69062f3"))).get_ConnectionServiceName(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId ServiceId()
 	{
 		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService).get_ServiceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService)this.asInterface(uuid("ae81ff1f-c5a1-4c40-8c28-f3efd69062f3"))).get_ServiceId(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.SocketProtectionLevel ProtectionLevel()
 	{
 		Windows.Networking.Sockets.SocketProtectionLevel _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService).get_ProtectionLevel(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService)this.asInterface(uuid("ae81ff1f-c5a1-4c40-8c28-f3efd69062f3"))).get_ProtectionLevel(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Sockets.SocketProtectionLevel MaxProtectionLevel()
 	{
 		Windows.Networking.Sockets.SocketProtectionLevel _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService).get_MaxProtectionLevel(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService)this.asInterface(uuid("ae81ff1f-c5a1-4c40-8c28-f3efd69062f3"))).get_MaxProtectionLevel(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(UINT32, Windows.Storage.Streams.IBuffer)) GetSdpRawAttributesAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(UINT32, Windows.Storage.Streams.IBuffer)) _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService).abi_GetSdpRawAttributesAsync(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService)this.asInterface(uuid("ae81ff1f-c5a1-4c40-8c28-f3efd69062f3"))).abi_GetSdpRawAttributesAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(UINT32, Windows.Storage.Streams.IBuffer)) GetSdpRawAttributesWithCacheModeAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMapView!(UINT32, Windows.Storage.Streams.IBuffer)) _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService).abi_GetSdpRawAttributesWithCacheModeAsync(cacheMode, &_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService)this.asInterface(uuid("ae81ff1f-c5a1-4c40-8c28-f3efd69062f3"))).abi_GetSdpRawAttributesWithCacheModeAsync(cacheMode, &_ret));
 		return _ret;
 	}
 	final Windows.Devices.Bluetooth.BluetoothDevice Device()
 	{
 		Windows.Devices.Bluetooth.BluetoothDevice _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService2).get_Device(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService2)this.asInterface(uuid("536ced14-ebcd-49fe-bf9f-40efc689b20d"))).get_Device(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	final Windows.Devices.Enumeration.DeviceAccessInformation DeviceAccessInformation()
 	{
 		Windows.Devices.Enumeration.DeviceAccessInformation _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService3).get_DeviceAccessInformation(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService3)this.asInterface(uuid("1c22ace6-dd44-4d23-866d-8f3486ee6490"))).get_DeviceAccessInformation(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceAccessStatus) RequestAccessAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceAccessStatus) _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService3).abi_RequestAccessAsync(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService3)this.asInterface(uuid("1c22ace6-dd44-4d23-866d-8f3486ee6490"))).abi_RequestAccessAsync(&_ret));
 		return _ret;
 	}
 
@@ -203,13 +203,13 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService) FromIdAsync(HSTRING deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceServiceStatics).abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
 		return _ret;
 	}
 	static HSTRING GetDeviceSelector(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId serviceId)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceServiceStatics).abi_GetDeviceSelector(serviceId, &_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(serviceId, &_ret));
 		return _ret;
 	}
 }
@@ -220,13 +220,13 @@ extern(Windows):
 	final Windows.Devices.Bluetooth.BluetoothError Error()
 	{
 		Windows.Devices.Bluetooth.BluetoothError _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceServicesResult).get_Error(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceServicesResult)this.asInterface(uuid("3b48388c-7ccf-488e-9625-d259a5732d55"))).get_Error(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService) Services()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService) _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceServicesResult).get_Services(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceServicesResult)this.asInterface(uuid("3b48388c-7ccf-488e-9625-d259a5732d55"))).get_Services(&_ret));
 		return _ret;
 	}
 }
@@ -237,19 +237,19 @@ extern(Windows):
 	final GUID Uuid()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceId).get_Uuid(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceId)this.asInterface(uuid("22629204-7e02-4017-8136-da1b6a1b9bbf"))).get_Uuid(&_ret));
 		return _ret;
 	}
 	final UINT32 AsShortId()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceId).abi_AsShortId(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceId)this.asInterface(uuid("22629204-7e02-4017-8136-da1b6a1b9bbf"))).abi_AsShortId(&_ret));
 		return _ret;
 	}
 	final HSTRING AsString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceId).abi_AsString(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceId)this.asInterface(uuid("22629204-7e02-4017-8136-da1b6a1b9bbf"))).abi_AsString(&_ret));
 		return _ret;
 	}
 
@@ -262,49 +262,49 @@ extern(Windows):
 	static Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId FromUuid(GUID uuid)
 	{
 		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceIdStatics).abi_FromUuid(uuid, &_ret));
+		Debug.OK(staticInstance.abi_FromUuid(uuid, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId FromShortId(UINT32 shortId)
 	{
 		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceIdStatics).abi_FromShortId(shortId, &_ret));
+		Debug.OK(staticInstance.abi_FromShortId(shortId, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId SerialPort()
 	{
 		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceIdStatics).get_SerialPort(&_ret));
+		Debug.OK(staticInstance.get_SerialPort(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId ObexObjectPush()
 	{
 		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceIdStatics).get_ObexObjectPush(&_ret));
+		Debug.OK(staticInstance.get_ObexObjectPush(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId ObexFileTransfer()
 	{
 		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceIdStatics).get_ObexFileTransfer(&_ret));
+		Debug.OK(staticInstance.get_ObexFileTransfer(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId PhoneBookAccessPce()
 	{
 		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceIdStatics).get_PhoneBookAccessPce(&_ret));
+		Debug.OK(staticInstance.get_PhoneBookAccessPce(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId PhoneBookAccessPse()
 	{
 		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceIdStatics).get_PhoneBookAccessPse(&_ret));
+		Debug.OK(staticInstance.get_PhoneBookAccessPse(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId GenericFileTransfer()
 	{
 		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceIdStatics).get_GenericFileTransfer(&_ret));
+		Debug.OK(staticInstance.get_GenericFileTransfer(&_ret));
 		return _ret;
 	}
 }
@@ -315,26 +315,26 @@ extern(Windows):
 	final Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId ServiceId()
 	{
 		Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider).get_ServiceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider)this.asInterface(uuid("eadbfdc4-b1f6-44ff-9f7c-e7a82ab86821"))).get_ServiceId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMap!(UINT32, Windows.Storage.Streams.IBuffer) SdpRawAttributes()
 	{
 		Windows.Foundation.Collections.IMap!(UINT32, Windows.Storage.Streams.IBuffer) _ret;
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider).get_SdpRawAttributes(&_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider)this.asInterface(uuid("eadbfdc4-b1f6-44ff-9f7c-e7a82ab86821"))).get_SdpRawAttributes(&_ret));
 		return _ret;
 	}
 	final void StartAdvertising(Windows.Networking.Sockets.StreamSocketListener listener)
 	{
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider).abi_StartAdvertising(listener));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider)this.asInterface(uuid("eadbfdc4-b1f6-44ff-9f7c-e7a82ab86821"))).abi_StartAdvertising(listener));
 	}
 	final void StopAdvertising()
 	{
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider).abi_StopAdvertising());
+		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider)this.asInterface(uuid("eadbfdc4-b1f6-44ff-9f7c-e7a82ab86821"))).abi_StopAdvertising());
 	}
 	final void StartAdvertisingWithRadioDiscoverability(Windows.Networking.Sockets.StreamSocketListener listener, bool radioDiscoverable)
 	{
-		Debug.OK(this.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider2).abi_StartAdvertisingWithRadioDiscoverability(listener, radioDiscoverable));
+		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider2)this.asInterface(uuid("736bdfc6-3c81-4d1e-baf2-ddbb81284512"))).abi_StartAdvertisingWithRadioDiscoverability(listener, radioDiscoverable));
 	}
 
 	private static Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProviderStatics _staticInstance;
@@ -346,7 +346,7 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceProvider) CreateAsync(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId serviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceProvider) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProviderStatics).abi_CreateAsync(serviceId, &_ret));
+		Debug.OK(staticInstance.abi_CreateAsync(serviceId, &_ret));
 		return _ret;
 	}
 }

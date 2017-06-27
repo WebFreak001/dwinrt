@@ -367,31 +367,31 @@ extern(Windows):
 	final ulong BytesSent()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IAttributedNetworkUsage).get_BytesSent(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IAttributedNetworkUsage)this.asInterface(uuid("f769b039-eca2-45eb-ade1-b0368b756c49"))).get_BytesSent(&_ret));
 		return _ret;
 	}
 	final ulong BytesReceived()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IAttributedNetworkUsage).get_BytesReceived(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IAttributedNetworkUsage)this.asInterface(uuid("f769b039-eca2-45eb-ade1-b0368b756c49"))).get_BytesReceived(&_ret));
 		return _ret;
 	}
 	final HSTRING AttributionId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IAttributedNetworkUsage).get_AttributionId(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IAttributedNetworkUsage)this.asInterface(uuid("f769b039-eca2-45eb-ade1-b0368b756c49"))).get_AttributionId(&_ret));
 		return _ret;
 	}
 	final HSTRING AttributionName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IAttributedNetworkUsage).get_AttributionName(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IAttributedNetworkUsage)this.asInterface(uuid("f769b039-eca2-45eb-ade1-b0368b756c49"))).get_AttributionName(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IRandomAccessStreamReference AttributionThumbnail()
 	{
 		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IAttributedNetworkUsage).get_AttributionThumbnail(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IAttributedNetworkUsage)this.asInterface(uuid("f769b039-eca2-45eb-ade1-b0368b756c49"))).get_AttributionThumbnail(&_ret));
 		return _ret;
 	}
 }
@@ -402,68 +402,68 @@ extern(Windows):
 	final HSTRING ProviderId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.ICellularApnContext).get_ProviderId(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).get_ProviderId(&_ret));
 		return _ret;
 	}
 	final void ProviderId(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Connectivity.ICellularApnContext).set_ProviderId(value));
+		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).set_ProviderId(value));
 	}
 	final HSTRING AccessPointName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.ICellularApnContext).get_AccessPointName(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).get_AccessPointName(&_ret));
 		return _ret;
 	}
 	final void AccessPointName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Connectivity.ICellularApnContext).set_AccessPointName(value));
+		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).set_AccessPointName(value));
 	}
 	final HSTRING UserName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.ICellularApnContext).get_UserName(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).get_UserName(&_ret));
 		return _ret;
 	}
 	final void UserName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Connectivity.ICellularApnContext).set_UserName(value));
+		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).set_UserName(value));
 	}
 	final HSTRING Password()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.ICellularApnContext).get_Password(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).get_Password(&_ret));
 		return _ret;
 	}
 	final void Password(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Connectivity.ICellularApnContext).set_Password(value));
+		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).set_Password(value));
 	}
 	final bool IsCompressionEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.ICellularApnContext).get_IsCompressionEnabled(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).get_IsCompressionEnabled(&_ret));
 		return _ret;
 	}
 	final void IsCompressionEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Connectivity.ICellularApnContext).set_IsCompressionEnabled(value));
+		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).set_IsCompressionEnabled(value));
 	}
 	final Windows.Networking.Connectivity.CellularApnAuthenticationType AuthenticationType()
 	{
 		Windows.Networking.Connectivity.CellularApnAuthenticationType _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.ICellularApnContext).get_AuthenticationType(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).get_AuthenticationType(&_ret));
 		return _ret;
 	}
 	final void AuthenticationType(Windows.Networking.Connectivity.CellularApnAuthenticationType value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Connectivity.ICellularApnContext).set_AuthenticationType(value));
+		Debug.OK((cast(Windows.Networking.Connectivity.ICellularApnContext)this.asInterface(uuid("6fa529f4-effd-4542-9ab2-705bbf94943a"))).set_AuthenticationType(value));
 	}
 	static CellularApnContext New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(CellularApnContext).abi_ActivateInstance(&ret));
-		return ret.as!(CellularApnContext);
+		return cast(CellularApnContext) ret;
 	}
 }
 
@@ -473,31 +473,31 @@ extern(Windows):
 	final Windows.Networking.Connectivity.NetworkCostType NetworkCostType()
 	{
 		Windows.Networking.Connectivity.NetworkCostType _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionCost).get_NetworkCostType(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionCost)this.asInterface(uuid("bad7d829-3416-4b10-a202-bac0b075bdae"))).get_NetworkCostType(&_ret));
 		return _ret;
 	}
 	final bool Roaming()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionCost).get_Roaming(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionCost)this.asInterface(uuid("bad7d829-3416-4b10-a202-bac0b075bdae"))).get_Roaming(&_ret));
 		return _ret;
 	}
 	final bool OverDataLimit()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionCost).get_OverDataLimit(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionCost)this.asInterface(uuid("bad7d829-3416-4b10-a202-bac0b075bdae"))).get_OverDataLimit(&_ret));
 		return _ret;
 	}
 	final bool ApproachingDataLimit()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionCost).get_ApproachingDataLimit(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionCost)this.asInterface(uuid("bad7d829-3416-4b10-a202-bac0b075bdae"))).get_ApproachingDataLimit(&_ret));
 		return _ret;
 	}
 	final bool BackgroundDataUsageRestricted()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionCost2).get_BackgroundDataUsageRestricted(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionCost2)this.asInterface(uuid("8e113a05-e209-4549-bb25-5e0db691cb05"))).get_BackgroundDataUsageRestricted(&_ret));
 		return _ret;
 	}
 }
@@ -508,117 +508,117 @@ extern(Windows):
 	final HSTRING ProfileName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfile).get_ProfileName(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfile)this.asInterface(uuid("71ba143c-598e-49d0-84eb-8febaedcc195"))).get_ProfileName(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Connectivity.NetworkConnectivityLevel GetNetworkConnectivityLevel()
 	{
 		Windows.Networking.Connectivity.NetworkConnectivityLevel _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfile).abi_GetNetworkConnectivityLevel(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfile)this.asInterface(uuid("71ba143c-598e-49d0-84eb-8febaedcc195"))).abi_GetNetworkConnectivityLevel(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) GetNetworkNames()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfile).abi_GetNetworkNames(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfile)this.asInterface(uuid("71ba143c-598e-49d0-84eb-8febaedcc195"))).abi_GetNetworkNames(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Connectivity.ConnectionCost GetConnectionCost()
 	{
 		Windows.Networking.Connectivity.ConnectionCost _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfile).abi_GetConnectionCost(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfile)this.asInterface(uuid("71ba143c-598e-49d0-84eb-8febaedcc195"))).abi_GetConnectionCost(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Connectivity.DataPlanStatus GetDataPlanStatus()
 	{
 		Windows.Networking.Connectivity.DataPlanStatus _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfile).abi_GetDataPlanStatus(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfile)this.asInterface(uuid("71ba143c-598e-49d0-84eb-8febaedcc195"))).abi_GetDataPlanStatus(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Connectivity.NetworkAdapter NetworkAdapter()
 	{
 		Windows.Networking.Connectivity.NetworkAdapter _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfile).get_NetworkAdapter(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfile)this.asInterface(uuid("71ba143c-598e-49d0-84eb-8febaedcc195"))).get_NetworkAdapter(&_ret));
 		return _ret;
 	}
 	deprecated("GetLocalUsage may be altered or unavailable for releases after Windows 8.1. Instead, use GetNetworkUsageAsync.")
 	final Windows.Networking.Connectivity.DataUsage GetLocalUsage(Windows.Foundation.DateTime StartTime, Windows.Foundation.DateTime EndTime)
 	{
 		Windows.Networking.Connectivity.DataUsage _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfile).abi_GetLocalUsage(StartTime, EndTime, &_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfile)this.asInterface(uuid("71ba143c-598e-49d0-84eb-8febaedcc195"))).abi_GetLocalUsage(StartTime, EndTime, &_ret));
 		return _ret;
 	}
 	deprecated("GetLocalUsage may be altered or unavailable for releases after Windows 8.1. Instead, use GetNetworkUsageAsync.")
 	final Windows.Networking.Connectivity.DataUsage GetLocalUsagePerRoamingStates(Windows.Foundation.DateTime StartTime, Windows.Foundation.DateTime EndTime, Windows.Networking.Connectivity.RoamingStates States)
 	{
 		Windows.Networking.Connectivity.DataUsage _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfile).abi_GetLocalUsagePerRoamingStates(StartTime, EndTime, States, &_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfile)this.asInterface(uuid("71ba143c-598e-49d0-84eb-8febaedcc195"))).abi_GetLocalUsagePerRoamingStates(StartTime, EndTime, States, &_ret));
 		return _ret;
 	}
 	final Windows.Networking.Connectivity.NetworkSecuritySettings NetworkSecuritySettings()
 	{
 		Windows.Networking.Connectivity.NetworkSecuritySettings _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfile).get_NetworkSecuritySettings(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfile)this.asInterface(uuid("71ba143c-598e-49d0-84eb-8febaedcc195"))).get_NetworkSecuritySettings(&_ret));
 		return _ret;
 	}
 	final bool IsWwanConnectionProfile()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfile2).get_IsWwanConnectionProfile(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfile2)this.asInterface(uuid("e2045145-4c9f-400c-9150-7ec7d6e2888a"))).get_IsWwanConnectionProfile(&_ret));
 		return _ret;
 	}
 	final bool IsWlanConnectionProfile()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfile2).get_IsWlanConnectionProfile(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfile2)this.asInterface(uuid("e2045145-4c9f-400c-9150-7ec7d6e2888a"))).get_IsWlanConnectionProfile(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Connectivity.WwanConnectionProfileDetails WwanConnectionProfileDetails()
 	{
 		Windows.Networking.Connectivity.WwanConnectionProfileDetails _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfile2).get_WwanConnectionProfileDetails(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfile2)this.asInterface(uuid("e2045145-4c9f-400c-9150-7ec7d6e2888a"))).get_WwanConnectionProfileDetails(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Connectivity.WlanConnectionProfileDetails WlanConnectionProfileDetails()
 	{
 		Windows.Networking.Connectivity.WlanConnectionProfileDetails _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfile2).get_WlanConnectionProfileDetails(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfile2)this.asInterface(uuid("e2045145-4c9f-400c-9150-7ec7d6e2888a"))).get_WlanConnectionProfileDetails(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(GUID) ServiceProviderGuid()
 	{
 		Windows.Foundation.IReference!(GUID) _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfile2).get_ServiceProviderGuid(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfile2)this.asInterface(uuid("e2045145-4c9f-400c-9150-7ec7d6e2888a"))).get_ServiceProviderGuid(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(ubyte) GetSignalBars()
 	{
 		Windows.Foundation.IReference!(ubyte) _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfile2).abi_GetSignalBars(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfile2)this.asInterface(uuid("e2045145-4c9f-400c-9150-7ec7d6e2888a"))).abi_GetSignalBars(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Connectivity.DomainConnectivityLevel GetDomainConnectivityLevel()
 	{
 		Windows.Networking.Connectivity.DomainConnectivityLevel _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfile2).abi_GetDomainConnectivityLevel(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfile2)this.asInterface(uuid("e2045145-4c9f-400c-9150-7ec7d6e2888a"))).abi_GetDomainConnectivityLevel(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Connectivity.NetworkUsage)) GetNetworkUsageAsync(Windows.Foundation.DateTime startTime, Windows.Foundation.DateTime endTime, Windows.Networking.Connectivity.DataUsageGranularity granularity, Windows.Networking.Connectivity.NetworkUsageStates states)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Connectivity.NetworkUsage)) _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfile2).abi_GetNetworkUsageAsync(startTime, endTime, granularity, states, &_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfile2)this.asInterface(uuid("e2045145-4c9f-400c-9150-7ec7d6e2888a"))).abi_GetNetworkUsageAsync(startTime, endTime, granularity, states, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Connectivity.ConnectivityInterval)) GetConnectivityIntervalsAsync(Windows.Foundation.DateTime startTime, Windows.Foundation.DateTime endTime, Windows.Networking.Connectivity.NetworkUsageStates states)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Connectivity.ConnectivityInterval)) _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfile2).abi_GetConnectivityIntervalsAsync(startTime, endTime, states, &_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfile2)this.asInterface(uuid("e2045145-4c9f-400c-9150-7ec7d6e2888a"))).abi_GetConnectivityIntervalsAsync(startTime, endTime, states, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Connectivity.AttributedNetworkUsage)) GetAttributedNetworkUsageAsync(Windows.Foundation.DateTime startTime, Windows.Foundation.DateTime endTime, Windows.Networking.Connectivity.NetworkUsageStates states)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Connectivity.AttributedNetworkUsage)) _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfile3).abi_GetAttributedNetworkUsageAsync(startTime, endTime, states, &_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfile3)this.asInterface(uuid("578c2528-4cd9-4161-8045-201cfd5b115c"))).abi_GetAttributedNetworkUsageAsync(startTime, endTime, states, &_ret));
 		return _ret;
 	}
 }
@@ -628,95 +628,95 @@ interface ConnectionProfileFilter : Windows.Networking.Connectivity.IConnectionP
 extern(Windows):
 	final void IsConnected(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfileFilter).set_IsConnected(value));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfileFilter)this.asInterface(uuid("204c7cc8-bd2d-4e8d-a4b3-455ec337388a"))).set_IsConnected(value));
 	}
 	final bool IsConnected()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfileFilter).get_IsConnected(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfileFilter)this.asInterface(uuid("204c7cc8-bd2d-4e8d-a4b3-455ec337388a"))).get_IsConnected(&_ret));
 		return _ret;
 	}
 	final void IsWwanConnectionProfile(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfileFilter).set_IsWwanConnectionProfile(value));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfileFilter)this.asInterface(uuid("204c7cc8-bd2d-4e8d-a4b3-455ec337388a"))).set_IsWwanConnectionProfile(value));
 	}
 	final bool IsWwanConnectionProfile()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfileFilter).get_IsWwanConnectionProfile(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfileFilter)this.asInterface(uuid("204c7cc8-bd2d-4e8d-a4b3-455ec337388a"))).get_IsWwanConnectionProfile(&_ret));
 		return _ret;
 	}
 	final void IsWlanConnectionProfile(bool value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfileFilter).set_IsWlanConnectionProfile(value));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfileFilter)this.asInterface(uuid("204c7cc8-bd2d-4e8d-a4b3-455ec337388a"))).set_IsWlanConnectionProfile(value));
 	}
 	final bool IsWlanConnectionProfile()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfileFilter).get_IsWlanConnectionProfile(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfileFilter)this.asInterface(uuid("204c7cc8-bd2d-4e8d-a4b3-455ec337388a"))).get_IsWlanConnectionProfile(&_ret));
 		return _ret;
 	}
 	final void NetworkCostType(Windows.Networking.Connectivity.NetworkCostType value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfileFilter).set_NetworkCostType(value));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfileFilter)this.asInterface(uuid("204c7cc8-bd2d-4e8d-a4b3-455ec337388a"))).set_NetworkCostType(value));
 	}
 	final Windows.Networking.Connectivity.NetworkCostType NetworkCostType()
 	{
 		Windows.Networking.Connectivity.NetworkCostType _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfileFilter).get_NetworkCostType(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfileFilter)this.asInterface(uuid("204c7cc8-bd2d-4e8d-a4b3-455ec337388a"))).get_NetworkCostType(&_ret));
 		return _ret;
 	}
 	final void ServiceProviderGuid(Windows.Foundation.IReference!(GUID) value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfileFilter).set_ServiceProviderGuid(value));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfileFilter)this.asInterface(uuid("204c7cc8-bd2d-4e8d-a4b3-455ec337388a"))).set_ServiceProviderGuid(value));
 	}
 	final Windows.Foundation.IReference!(GUID) ServiceProviderGuid()
 	{
 		Windows.Foundation.IReference!(GUID) _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfileFilter).get_ServiceProviderGuid(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfileFilter)this.asInterface(uuid("204c7cc8-bd2d-4e8d-a4b3-455ec337388a"))).get_ServiceProviderGuid(&_ret));
 		return _ret;
 	}
 	final void IsRoaming(Windows.Foundation.IReference!(bool) value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfileFilter2).set_IsRoaming(value));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfileFilter2)this.asInterface(uuid("cd068ee1-c3fc-4fad-9ddc-593faa4b7885"))).set_IsRoaming(value));
 	}
 	final Windows.Foundation.IReference!(bool) IsRoaming()
 	{
 		Windows.Foundation.IReference!(bool) _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfileFilter2).get_IsRoaming(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfileFilter2)this.asInterface(uuid("cd068ee1-c3fc-4fad-9ddc-593faa4b7885"))).get_IsRoaming(&_ret));
 		return _ret;
 	}
 	final void IsOverDataLimit(Windows.Foundation.IReference!(bool) value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfileFilter2).set_IsOverDataLimit(value));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfileFilter2)this.asInterface(uuid("cd068ee1-c3fc-4fad-9ddc-593faa4b7885"))).set_IsOverDataLimit(value));
 	}
 	final Windows.Foundation.IReference!(bool) IsOverDataLimit()
 	{
 		Windows.Foundation.IReference!(bool) _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfileFilter2).get_IsOverDataLimit(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfileFilter2)this.asInterface(uuid("cd068ee1-c3fc-4fad-9ddc-593faa4b7885"))).get_IsOverDataLimit(&_ret));
 		return _ret;
 	}
 	final void IsBackgroundDataUsageRestricted(Windows.Foundation.IReference!(bool) value)
 	{
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfileFilter2).set_IsBackgroundDataUsageRestricted(value));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfileFilter2)this.asInterface(uuid("cd068ee1-c3fc-4fad-9ddc-593faa4b7885"))).set_IsBackgroundDataUsageRestricted(value));
 	}
 	final Windows.Foundation.IReference!(bool) IsBackgroundDataUsageRestricted()
 	{
 		Windows.Foundation.IReference!(bool) _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfileFilter2).get_IsBackgroundDataUsageRestricted(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfileFilter2)this.asInterface(uuid("cd068ee1-c3fc-4fad-9ddc-593faa4b7885"))).get_IsBackgroundDataUsageRestricted(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer RawData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionProfileFilter2).get_RawData(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfileFilter2)this.asInterface(uuid("cd068ee1-c3fc-4fad-9ddc-593faa4b7885"))).get_RawData(&_ret));
 		return _ret;
 	}
 	static ConnectionProfileFilter New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ConnectionProfileFilter).abi_ActivateInstance(&ret));
-		return ret.as!(ConnectionProfileFilter);
+		return cast(ConnectionProfileFilter) ret;
 	}
 }
 
@@ -726,12 +726,12 @@ extern(Windows):
 	final Windows.Networking.Connectivity.ConnectionProfile ConnectionProfile()
 	{
 		Windows.Networking.Connectivity.ConnectionProfile _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectionSession).get_ConnectionProfile(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionSession)this.asInterface(uuid("ff905d4c-f83b-41b0-8a0c-1462d9c56b73"))).get_ConnectionProfile(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 }
 
@@ -741,13 +741,13 @@ extern(Windows):
 	final Windows.Foundation.DateTime StartTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectivityInterval).get_StartTime(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectivityInterval)this.asInterface(uuid("4faa3fff-6746-4824-a964-eed8e87f8709"))).get_StartTime(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan ConnectionDuration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IConnectivityInterval).get_ConnectionDuration(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectivityInterval)this.asInterface(uuid("4faa3fff-6746-4824-a964-eed8e87f8709"))).get_ConnectionDuration(&_ret));
 		return _ret;
 	}
 }
@@ -763,16 +763,16 @@ interface ConnectivityManager
 	static Windows.Foundation.IAsyncOperation!(Windows.Networking.Connectivity.ConnectionSession) AcquireConnectionAsync(Windows.Networking.Connectivity.CellularApnContext cellularApnContext)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.Connectivity.ConnectionSession) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.IConnectivityManagerStatics).abi_AcquireConnectionAsync(cellularApnContext, &_ret));
+		Debug.OK(staticInstance.abi_AcquireConnectionAsync(cellularApnContext, &_ret));
 		return _ret;
 	}
 	static void AddHttpRoutePolicy(Windows.Networking.Connectivity.RoutePolicy routePolicy)
 	{
-		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.IConnectivityManagerStatics).abi_AddHttpRoutePolicy(routePolicy));
+		Debug.OK(staticInstance.abi_AddHttpRoutePolicy(routePolicy));
 	}
 	static void RemoveHttpRoutePolicy(Windows.Networking.Connectivity.RoutePolicy routePolicy)
 	{
-		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.IConnectivityManagerStatics).abi_RemoveHttpRoutePolicy(routePolicy));
+		Debug.OK(staticInstance.abi_RemoveHttpRoutePolicy(routePolicy));
 	}
 }
 
@@ -782,37 +782,37 @@ extern(Windows):
 	final Windows.Networking.Connectivity.DataPlanUsage DataPlanUsage()
 	{
 		Windows.Networking.Connectivity.DataPlanUsage _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IDataPlanStatus).get_DataPlanUsage(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IDataPlanStatus)this.asInterface(uuid("977a8b8c-3885-40f3-8851-42cd2bd568bb"))).get_DataPlanUsage(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(UINT32) DataLimitInMegabytes()
 	{
 		Windows.Foundation.IReference!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IDataPlanStatus).get_DataLimitInMegabytes(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IDataPlanStatus)this.asInterface(uuid("977a8b8c-3885-40f3-8851-42cd2bd568bb"))).get_DataLimitInMegabytes(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(ulong) InboundBitsPerSecond()
 	{
 		Windows.Foundation.IReference!(ulong) _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IDataPlanStatus).get_InboundBitsPerSecond(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IDataPlanStatus)this.asInterface(uuid("977a8b8c-3885-40f3-8851-42cd2bd568bb"))).get_InboundBitsPerSecond(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(ulong) OutboundBitsPerSecond()
 	{
 		Windows.Foundation.IReference!(ulong) _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IDataPlanStatus).get_OutboundBitsPerSecond(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IDataPlanStatus)this.asInterface(uuid("977a8b8c-3885-40f3-8851-42cd2bd568bb"))).get_OutboundBitsPerSecond(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) NextBillingCycle()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IDataPlanStatus).get_NextBillingCycle(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IDataPlanStatus)this.asInterface(uuid("977a8b8c-3885-40f3-8851-42cd2bd568bb"))).get_NextBillingCycle(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(UINT32) MaxTransferSizeInMegabytes()
 	{
 		Windows.Foundation.IReference!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IDataPlanStatus).get_MaxTransferSizeInMegabytes(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IDataPlanStatus)this.asInterface(uuid("977a8b8c-3885-40f3-8851-42cd2bd568bb"))).get_MaxTransferSizeInMegabytes(&_ret));
 		return _ret;
 	}
 }
@@ -823,13 +823,13 @@ extern(Windows):
 	final UINT32 MegabytesUsed()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IDataPlanUsage).get_MegabytesUsed(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IDataPlanUsage)this.asInterface(uuid("b921492d-3b44-47ff-b361-be59e69ed1b0"))).get_MegabytesUsed(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime LastSyncTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IDataPlanUsage).get_LastSyncTime(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IDataPlanUsage)this.asInterface(uuid("b921492d-3b44-47ff-b361-be59e69ed1b0"))).get_LastSyncTime(&_ret));
 		return _ret;
 	}
 }
@@ -841,14 +841,14 @@ extern(Windows):
 	final ulong BytesSent()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IDataUsage).get_BytesSent(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IDataUsage)this.asInterface(uuid("c1431dd3-b146-4d39-b959-0c69b096c512"))).get_BytesSent(&_ret));
 		return _ret;
 	}
 	deprecated("IDataUsage may be altered or unavailable for releases after Windows 8.1. Instead, use INetworkUsage.")
 	final ulong BytesReceived()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IDataUsage).get_BytesReceived(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IDataUsage)this.asInterface(uuid("c1431dd3-b146-4d39-b959-0c69b096c512"))).get_BytesReceived(&_ret));
 		return _ret;
 	}
 }
@@ -859,13 +859,13 @@ extern(Windows):
 	final Windows.Networking.Connectivity.NetworkAdapter NetworkAdapter()
 	{
 		Windows.Networking.Connectivity.NetworkAdapter _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IIPInformation).get_NetworkAdapter(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IIPInformation)this.asInterface(uuid("d85145e0-138f-47d7-9b3a-36bb488cef33"))).get_NetworkAdapter(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(ubyte) PrefixLength()
 	{
 		Windows.Foundation.IReference!(ubyte) _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IIPInformation).get_PrefixLength(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IIPInformation)this.asInterface(uuid("d85145e0-138f-47d7-9b3a-36bb488cef33"))).get_PrefixLength(&_ret));
 		return _ret;
 	}
 }
@@ -876,19 +876,19 @@ extern(Windows):
 	final Windows.Networking.Connectivity.LanIdentifierData InfrastructureId()
 	{
 		Windows.Networking.Connectivity.LanIdentifierData _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.ILanIdentifier).get_InfrastructureId(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.ILanIdentifier)this.asInterface(uuid("48aa53aa-1108-4546-a6cb-9a74da4b7ba0"))).get_InfrastructureId(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Connectivity.LanIdentifierData PortId()
 	{
 		Windows.Networking.Connectivity.LanIdentifierData _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.ILanIdentifier).get_PortId(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.ILanIdentifier)this.asInterface(uuid("48aa53aa-1108-4546-a6cb-9a74da4b7ba0"))).get_PortId(&_ret));
 		return _ret;
 	}
 	final GUID NetworkAdapterId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.ILanIdentifier).get_NetworkAdapterId(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.ILanIdentifier)this.asInterface(uuid("48aa53aa-1108-4546-a6cb-9a74da4b7ba0"))).get_NetworkAdapterId(&_ret));
 		return _ret;
 	}
 }
@@ -899,13 +899,13 @@ extern(Windows):
 	final UINT32 Type()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.ILanIdentifierData).get_Type(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.ILanIdentifierData)this.asInterface(uuid("a74e83c3-d639-45be-a36a-c4e4aeaf6d9b"))).get_Type(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(ubyte) Value()
 	{
 		Windows.Foundation.Collections.IVectorView!(ubyte) _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.ILanIdentifierData).get_Value(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.ILanIdentifierData)this.asInterface(uuid("a74e83c3-d639-45be-a36a-c4e4aeaf6d9b"))).get_Value(&_ret));
 		return _ret;
 	}
 }
@@ -916,37 +916,37 @@ extern(Windows):
 	final ulong OutboundMaxBitsPerSecond()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkAdapter).get_OutboundMaxBitsPerSecond(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.INetworkAdapter)this.asInterface(uuid("3b542e03-5388-496c-a8a3-affd39aec2e6"))).get_OutboundMaxBitsPerSecond(&_ret));
 		return _ret;
 	}
 	final ulong InboundMaxBitsPerSecond()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkAdapter).get_InboundMaxBitsPerSecond(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.INetworkAdapter)this.asInterface(uuid("3b542e03-5388-496c-a8a3-affd39aec2e6"))).get_InboundMaxBitsPerSecond(&_ret));
 		return _ret;
 	}
 	final UINT32 IanaInterfaceType()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkAdapter).get_IanaInterfaceType(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.INetworkAdapter)this.asInterface(uuid("3b542e03-5388-496c-a8a3-affd39aec2e6"))).get_IanaInterfaceType(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Connectivity.NetworkItem NetworkItem()
 	{
 		Windows.Networking.Connectivity.NetworkItem _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkAdapter).get_NetworkItem(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.INetworkAdapter)this.asInterface(uuid("3b542e03-5388-496c-a8a3-affd39aec2e6"))).get_NetworkItem(&_ret));
 		return _ret;
 	}
 	final GUID NetworkAdapterId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkAdapter).get_NetworkAdapterId(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.INetworkAdapter)this.asInterface(uuid("3b542e03-5388-496c-a8a3-affd39aec2e6"))).get_NetworkAdapterId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Connectivity.ConnectionProfile) GetConnectedProfileAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.Connectivity.ConnectionProfile) _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkAdapter).abi_GetConnectedProfileAsync(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.INetworkAdapter)this.asInterface(uuid("3b542e03-5388-496c-a8a3-affd39aec2e6"))).abi_GetConnectedProfileAsync(&_ret));
 		return _ret;
 	}
 }
@@ -962,48 +962,48 @@ interface NetworkInformation
 	static Windows.Foundation.Collections.IVectorView!(Windows.Networking.Connectivity.ConnectionProfile) GetConnectionProfiles()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Networking.Connectivity.ConnectionProfile) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.INetworkInformationStatics).abi_GetConnectionProfiles(&_ret));
+		Debug.OK(staticInstance.abi_GetConnectionProfiles(&_ret));
 		return _ret;
 	}
 	static Windows.Networking.Connectivity.ConnectionProfile GetInternetConnectionProfile()
 	{
 		Windows.Networking.Connectivity.ConnectionProfile _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.INetworkInformationStatics).abi_GetInternetConnectionProfile(&_ret));
+		Debug.OK(staticInstance.abi_GetInternetConnectionProfile(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(Windows.Networking.Connectivity.LanIdentifier) GetLanIdentifiers()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Networking.Connectivity.LanIdentifier) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.INetworkInformationStatics).abi_GetLanIdentifiers(&_ret));
+		Debug.OK(staticInstance.abi_GetLanIdentifiers(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) GetHostNames()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.INetworkInformationStatics).abi_GetHostNames(&_ret));
+		Debug.OK(staticInstance.abi_GetHostNames(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Networking.Connectivity.ProxyConfiguration) GetProxyConfigurationAsync(Windows.Foundation.Uri uri)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.Connectivity.ProxyConfiguration) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.INetworkInformationStatics).abi_GetProxyConfigurationAsync(uri, &_ret));
+		Debug.OK(staticInstance.abi_GetProxyConfigurationAsync(uri, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair) GetSortedEndpointPairs(Windows.Foundation.Collections.IIterable!(Windows.Networking.EndpointPair) destinationList, Windows.Networking.HostNameSortOptions sortOptions)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Networking.EndpointPair) _ret;
-		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.INetworkInformationStatics).abi_GetSortedEndpointPairs(destinationList, sortOptions, &_ret));
+		Debug.OK(staticInstance.abi_GetSortedEndpointPairs(destinationList, sortOptions, &_ret));
 		return _ret;
 	}
 	static EventRegistrationToken OnNetworkStatusChanged(void delegate(IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.INetworkInformationStatics).add_NetworkStatusChanged(event!(Windows.Networking.Connectivity.NetworkStatusChangedEventHandler, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_NetworkStatusChanged(event!(Windows.Networking.Connectivity.NetworkStatusChangedEventHandler, IInspectable)(fn), &tok));
 		return tok;
 	}
 	static void removeNetworkStatusChanged(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(staticInstance.as!(Windows.Networking.Connectivity.INetworkInformationStatics).remove_NetworkStatusChanged(eventCookie));
+		Debug.OK(staticInstance.remove_NetworkStatusChanged(eventCookie));
 	}
 }
 
@@ -1013,13 +1013,13 @@ extern(Windows):
 	final GUID NetworkId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkItem).get_NetworkId(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.INetworkItem)this.asInterface(uuid("01bc4d39-f5e0-4567-a28c-42080c831b2b"))).get_NetworkId(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Connectivity.NetworkTypes GetNetworkTypes()
 	{
 		Windows.Networking.Connectivity.NetworkTypes _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkItem).abi_GetNetworkTypes(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.INetworkItem)this.asInterface(uuid("01bc4d39-f5e0-4567-a28c-42080c831b2b"))).abi_GetNetworkTypes(&_ret));
 		return _ret;
 	}
 }
@@ -1030,13 +1030,13 @@ extern(Windows):
 	final Windows.Networking.Connectivity.NetworkAuthenticationType NetworkAuthenticationType()
 	{
 		Windows.Networking.Connectivity.NetworkAuthenticationType _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkSecuritySettings).get_NetworkAuthenticationType(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.INetworkSecuritySettings)this.asInterface(uuid("7ca07e8d-917b-4b5f-b84d-28f7a5ac5402"))).get_NetworkAuthenticationType(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Connectivity.NetworkEncryptionType NetworkEncryptionType()
 	{
 		Windows.Networking.Connectivity.NetworkEncryptionType _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkSecuritySettings).get_NetworkEncryptionType(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.INetworkSecuritySettings)this.asInterface(uuid("7ca07e8d-917b-4b5f-b84d-28f7a5ac5402"))).get_NetworkEncryptionType(&_ret));
 		return _ret;
 	}
 }
@@ -1047,49 +1047,49 @@ extern(Windows):
 	final bool HasNewInternetConnectionProfile()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkStateChangeEventDetails).get_HasNewInternetConnectionProfile(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.INetworkStateChangeEventDetails)this.asInterface(uuid("1f0cf333-d7a6-44dd-a4e9-687c476b903d"))).get_HasNewInternetConnectionProfile(&_ret));
 		return _ret;
 	}
 	final bool HasNewConnectionCost()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkStateChangeEventDetails).get_HasNewConnectionCost(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.INetworkStateChangeEventDetails)this.asInterface(uuid("1f0cf333-d7a6-44dd-a4e9-687c476b903d"))).get_HasNewConnectionCost(&_ret));
 		return _ret;
 	}
 	final bool HasNewNetworkConnectivityLevel()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkStateChangeEventDetails).get_HasNewNetworkConnectivityLevel(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.INetworkStateChangeEventDetails)this.asInterface(uuid("1f0cf333-d7a6-44dd-a4e9-687c476b903d"))).get_HasNewNetworkConnectivityLevel(&_ret));
 		return _ret;
 	}
 	final bool HasNewDomainConnectivityLevel()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkStateChangeEventDetails).get_HasNewDomainConnectivityLevel(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.INetworkStateChangeEventDetails)this.asInterface(uuid("1f0cf333-d7a6-44dd-a4e9-687c476b903d"))).get_HasNewDomainConnectivityLevel(&_ret));
 		return _ret;
 	}
 	final bool HasNewHostNameList()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkStateChangeEventDetails).get_HasNewHostNameList(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.INetworkStateChangeEventDetails)this.asInterface(uuid("1f0cf333-d7a6-44dd-a4e9-687c476b903d"))).get_HasNewHostNameList(&_ret));
 		return _ret;
 	}
 	final bool HasNewWwanRegistrationState()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkStateChangeEventDetails).get_HasNewWwanRegistrationState(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.INetworkStateChangeEventDetails)this.asInterface(uuid("1f0cf333-d7a6-44dd-a4e9-687c476b903d"))).get_HasNewWwanRegistrationState(&_ret));
 		return _ret;
 	}
 	final bool HasNewTetheringOperationalState()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkStateChangeEventDetails2).get_HasNewTetheringOperationalState(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.INetworkStateChangeEventDetails2)this.asInterface(uuid("d643c0e8-30d3-4f6a-ad47-6a1873ceb3c1"))).get_HasNewTetheringOperationalState(&_ret));
 		return _ret;
 	}
 	final bool HasNewTetheringClientCount()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkStateChangeEventDetails2).get_HasNewTetheringClientCount(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.INetworkStateChangeEventDetails2)this.asInterface(uuid("d643c0e8-30d3-4f6a-ad47-6a1873ceb3c1"))).get_HasNewTetheringClientCount(&_ret));
 		return _ret;
 	}
 }
@@ -1100,19 +1100,19 @@ extern(Windows):
 	final ulong BytesSent()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkUsage).get_BytesSent(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.INetworkUsage)this.asInterface(uuid("49da8fce-9985-4927-bf5b-072b5c65f8d9"))).get_BytesSent(&_ret));
 		return _ret;
 	}
 	final ulong BytesReceived()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkUsage).get_BytesReceived(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.INetworkUsage)this.asInterface(uuid("49da8fce-9985-4927-bf5b-072b5c65f8d9"))).get_BytesReceived(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan ConnectionDuration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.INetworkUsage).get_ConnectionDuration(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.INetworkUsage)this.asInterface(uuid("49da8fce-9985-4927-bf5b-072b5c65f8d9"))).get_ConnectionDuration(&_ret));
 		return _ret;
 	}
 }
@@ -1123,13 +1123,13 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Uri) ProxyUris()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Uri) _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IProxyConfiguration).get_ProxyUris(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IProxyConfiguration)this.asInterface(uuid("ef3a60b4-9004-4dd6-b7d8-b3e502f4aad0"))).get_ProxyUris(&_ret));
 		return _ret;
 	}
 	final bool CanConnectDirectly()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IProxyConfiguration).get_CanConnectDirectly(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IProxyConfiguration)this.asInterface(uuid("ef3a60b4-9004-4dd6-b7d8-b3e502f4aad0"))).get_CanConnectDirectly(&_ret));
 		return _ret;
 	}
 }
@@ -1140,26 +1140,26 @@ extern(Windows):
 	final Windows.Networking.Connectivity.ConnectionProfile ConnectionProfile()
 	{
 		Windows.Networking.Connectivity.ConnectionProfile _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IRoutePolicy).get_ConnectionProfile(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IRoutePolicy)this.asInterface(uuid("11abc4ac-0fc7-42e4-8742-569923b1ca11"))).get_ConnectionProfile(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.HostName HostName()
 	{
 		Windows.Networking.HostName _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IRoutePolicy).get_HostName(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IRoutePolicy)this.asInterface(uuid("11abc4ac-0fc7-42e4-8742-569923b1ca11"))).get_HostName(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.DomainNameType HostNameType()
 	{
 		Windows.Networking.DomainNameType _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IRoutePolicy).get_HostNameType(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IRoutePolicy)this.asInterface(uuid("11abc4ac-0fc7-42e4-8742-569923b1ca11"))).get_HostNameType(&_ret));
 		return _ret;
 	}
 	static Windows.Networking.Connectivity.RoutePolicy New(Windows.Networking.Connectivity.ConnectionProfile connectionProfile, Windows.Networking.HostName hostName, Windows.Networking.DomainNameType type)
 	{
 		auto factory = factory!(Windows.Networking.Connectivity.IRoutePolicyFactory);
 		Windows.Networking.Connectivity.RoutePolicy _ret;
-		Debug.OK(factory.as!(Windows.Networking.Connectivity.IRoutePolicyFactory).abi_CreateRoutePolicy(connectionProfile, hostName, type, &_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IRoutePolicyFactory)factory.asInterface(uuid("36027933-a18e-4db5-a697-f58fa7364e44"))).abi_CreateRoutePolicy(connectionProfile, hostName, type, &_ret));
 		return _ret;
 	}
 }
@@ -1170,7 +1170,7 @@ extern(Windows):
 	final HSTRING GetConnectedSsid()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IWlanConnectionProfileDetails).abi_GetConnectedSsid(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IWlanConnectionProfileDetails)this.asInterface(uuid("562098cb-b35a-4bf1-a884-b7557e88ff86"))).abi_GetConnectedSsid(&_ret));
 		return _ret;
 	}
 }
@@ -1181,25 +1181,25 @@ extern(Windows):
 	final HSTRING HomeProviderId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IWwanConnectionProfileDetails).get_HomeProviderId(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IWwanConnectionProfileDetails)this.asInterface(uuid("0e4da8fe-835f-4df3-82fd-df556ebc09ef"))).get_HomeProviderId(&_ret));
 		return _ret;
 	}
 	final HSTRING AccessPointName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IWwanConnectionProfileDetails).get_AccessPointName(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IWwanConnectionProfileDetails)this.asInterface(uuid("0e4da8fe-835f-4df3-82fd-df556ebc09ef"))).get_AccessPointName(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Connectivity.WwanNetworkRegistrationState GetNetworkRegistrationState()
 	{
 		Windows.Networking.Connectivity.WwanNetworkRegistrationState _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IWwanConnectionProfileDetails).abi_GetNetworkRegistrationState(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IWwanConnectionProfileDetails)this.asInterface(uuid("0e4da8fe-835f-4df3-82fd-df556ebc09ef"))).abi_GetNetworkRegistrationState(&_ret));
 		return _ret;
 	}
 	final Windows.Networking.Connectivity.WwanDataClass GetCurrentDataClass()
 	{
 		Windows.Networking.Connectivity.WwanDataClass _ret;
-		Debug.OK(this.as!(Windows.Networking.Connectivity.IWwanConnectionProfileDetails).abi_GetCurrentDataClass(&_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IWwanConnectionProfileDetails)this.asInterface(uuid("0e4da8fe-835f-4df3-82fd-df556ebc09ef"))).abi_GetCurrentDataClass(&_ret));
 		return _ret;
 	}
 }

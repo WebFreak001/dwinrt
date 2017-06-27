@@ -266,79 +266,79 @@ extern(Windows):
 	final Windows.Media.Import.PhotoImportSession Session()
 	{
 		Windows.Media.Import.PhotoImportSession _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult).get_Session(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult)this.asInterface(uuid("f4e112f8-843d-428a-a1a6-81510292b0ae"))).get_Session(&_ret));
 		return _ret;
 	}
 	final bool HasSucceeded()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult).get_HasSucceeded(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult)this.asInterface(uuid("f4e112f8-843d-428a-a1a6-81510292b0ae"))).get_HasSucceeded(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportItem) DeletedItems()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportItem) _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult).get_DeletedItems(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult)this.asInterface(uuid("f4e112f8-843d-428a-a1a6-81510292b0ae"))).get_DeletedItems(&_ret));
 		return _ret;
 	}
 	final UINT32 PhotosCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult).get_PhotosCount(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult)this.asInterface(uuid("f4e112f8-843d-428a-a1a6-81510292b0ae"))).get_PhotosCount(&_ret));
 		return _ret;
 	}
 	final ulong PhotosSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult).get_PhotosSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult)this.asInterface(uuid("f4e112f8-843d-428a-a1a6-81510292b0ae"))).get_PhotosSizeInBytes(&_ret));
 		return _ret;
 	}
 	final UINT32 VideosCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult).get_VideosCount(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult)this.asInterface(uuid("f4e112f8-843d-428a-a1a6-81510292b0ae"))).get_VideosCount(&_ret));
 		return _ret;
 	}
 	final ulong VideosSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult).get_VideosSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult)this.asInterface(uuid("f4e112f8-843d-428a-a1a6-81510292b0ae"))).get_VideosSizeInBytes(&_ret));
 		return _ret;
 	}
 	final UINT32 SidecarsCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult).get_SidecarsCount(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult)this.asInterface(uuid("f4e112f8-843d-428a-a1a6-81510292b0ae"))).get_SidecarsCount(&_ret));
 		return _ret;
 	}
 	final ulong SidecarsSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult).get_SidecarsSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult)this.asInterface(uuid("f4e112f8-843d-428a-a1a6-81510292b0ae"))).get_SidecarsSizeInBytes(&_ret));
 		return _ret;
 	}
 	final UINT32 SiblingsCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult).get_SiblingsCount(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult)this.asInterface(uuid("f4e112f8-843d-428a-a1a6-81510292b0ae"))).get_SiblingsCount(&_ret));
 		return _ret;
 	}
 	final ulong SiblingsSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult).get_SiblingsSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult)this.asInterface(uuid("f4e112f8-843d-428a-a1a6-81510292b0ae"))).get_SiblingsSizeInBytes(&_ret));
 		return _ret;
 	}
 	final UINT32 TotalCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult).get_TotalCount(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult)this.asInterface(uuid("f4e112f8-843d-428a-a1a6-81510292b0ae"))).get_TotalCount(&_ret));
 		return _ret;
 	}
 	final ulong TotalSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult).get_TotalSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportDeleteImportedItemsFromSourceResult)this.asInterface(uuid("f4e112f8-843d-428a-a1a6-81510292b0ae"))).get_TotalSizeInBytes(&_ret));
 		return _ret;
 	}
 }
@@ -349,194 +349,194 @@ extern(Windows):
 	final Windows.Media.Import.PhotoImportSession Session()
 	{
 		Windows.Media.Import.PhotoImportSession _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_Session(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_Session(&_ret));
 		return _ret;
 	}
 	final bool HasSucceeded()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_HasSucceeded(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_HasSucceeded(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportItem) FoundItems()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportItem) _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_FoundItems(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_FoundItems(&_ret));
 		return _ret;
 	}
 	final UINT32 PhotosCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_PhotosCount(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_PhotosCount(&_ret));
 		return _ret;
 	}
 	final ulong PhotosSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_PhotosSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_PhotosSizeInBytes(&_ret));
 		return _ret;
 	}
 	final UINT32 VideosCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_VideosCount(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_VideosCount(&_ret));
 		return _ret;
 	}
 	final ulong VideosSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_VideosSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_VideosSizeInBytes(&_ret));
 		return _ret;
 	}
 	final UINT32 SidecarsCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SidecarsCount(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_SidecarsCount(&_ret));
 		return _ret;
 	}
 	final ulong SidecarsSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SidecarsSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_SidecarsSizeInBytes(&_ret));
 		return _ret;
 	}
 	final UINT32 SiblingsCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SiblingsCount(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_SiblingsCount(&_ret));
 		return _ret;
 	}
 	final ulong SiblingsSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SiblingsSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_SiblingsSizeInBytes(&_ret));
 		return _ret;
 	}
 	final UINT32 TotalCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_TotalCount(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_TotalCount(&_ret));
 		return _ret;
 	}
 	final ulong TotalSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_TotalSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_TotalSizeInBytes(&_ret));
 		return _ret;
 	}
 	final void SelectAll()
 	{
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).abi_SelectAll());
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).abi_SelectAll());
 	}
 	final void SelectNone()
 	{
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).abi_SelectNone());
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).abi_SelectNone());
 	}
 	final Windows.Foundation.IAsyncAction SelectNewAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).abi_SelectNewAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).abi_SelectNewAsync(&_ret));
 		return _ret;
 	}
 	final void SetImportMode(Windows.Media.Import.PhotoImportImportMode value)
 	{
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).abi_SetImportMode(value));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).abi_SetImportMode(value));
 	}
 	final Windows.Media.Import.PhotoImportImportMode ImportMode()
 	{
 		Windows.Media.Import.PhotoImportImportMode _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_ImportMode(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_ImportMode(&_ret));
 		return _ret;
 	}
 	final UINT32 SelectedPhotosCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SelectedPhotosCount(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_SelectedPhotosCount(&_ret));
 		return _ret;
 	}
 	final ulong SelectedPhotosSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SelectedPhotosSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_SelectedPhotosSizeInBytes(&_ret));
 		return _ret;
 	}
 	final UINT32 SelectedVideosCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SelectedVideosCount(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_SelectedVideosCount(&_ret));
 		return _ret;
 	}
 	final ulong SelectedVideosSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SelectedVideosSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_SelectedVideosSizeInBytes(&_ret));
 		return _ret;
 	}
 	final UINT32 SelectedSidecarsCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SelectedSidecarsCount(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_SelectedSidecarsCount(&_ret));
 		return _ret;
 	}
 	final ulong SelectedSidecarsSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SelectedSidecarsSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_SelectedSidecarsSizeInBytes(&_ret));
 		return _ret;
 	}
 	final UINT32 SelectedSiblingsCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SelectedSiblingsCount(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_SelectedSiblingsCount(&_ret));
 		return _ret;
 	}
 	final ulong SelectedSiblingsSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SelectedSiblingsSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_SelectedSiblingsSizeInBytes(&_ret));
 		return _ret;
 	}
 	final UINT32 SelectedTotalCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SelectedTotalCount(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_SelectedTotalCount(&_ret));
 		return _ret;
 	}
 	final ulong SelectedTotalSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).get_SelectedTotalSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).get_SelectedTotalSizeInBytes(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnSelectionChanged(void delegate(Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportSelectionChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).add_SelectionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportSelectionChangedEventArgs), Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportSelectionChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).add_SelectionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportSelectionChangedEventArgs), Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportSelectionChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeSelectionChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).remove_SelectionChanged(token));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).remove_SelectionChanged(token));
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportImportItemsResult, Windows.Media.Import.PhotoImportProgress) ImportItemsAsync()
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportImportItemsResult, Windows.Media.Import.PhotoImportProgress) _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).abi_ImportItemsAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).abi_ImportItemsAsync(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnItemImported(void delegate(Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportItemImportedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).add_ItemImported(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportItemImportedEventArgs), Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportItemImportedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).add_ItemImported(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportItemImportedEventArgs), Windows.Media.Import.PhotoImportFindItemsResult, Windows.Media.Import.PhotoImportItemImportedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeItemImported(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult).remove_ItemImported(token));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult)this.asInterface(uuid("3915e647-6c78-492b-844e-8fe5e8f6bfb9"))).remove_ItemImported(token));
 	}
 	final void AddItemsInDateRangeToSelection(Windows.Foundation.DateTime rangeStart, Windows.Foundation.TimeSpan rangeLength)
 	{
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportFindItemsResult2).abi_AddItemsInDateRangeToSelection(rangeStart, rangeLength));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportFindItemsResult2)this.asInterface(uuid("fbdd6a3b-ecf9-406a-815e-5015625b0a88"))).abi_AddItemsInDateRangeToSelection(rangeStart, rangeLength));
 	}
 }
 
@@ -546,85 +546,85 @@ extern(Windows):
 	final Windows.Media.Import.PhotoImportSession Session()
 	{
 		Windows.Media.Import.PhotoImportSession _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).get_Session(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportImportItemsResult)this.asInterface(uuid("e4d4f478-d419-4443-a84e-f06a850c0b00"))).get_Session(&_ret));
 		return _ret;
 	}
 	final bool HasSucceeded()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).get_HasSucceeded(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportImportItemsResult)this.asInterface(uuid("e4d4f478-d419-4443-a84e-f06a850c0b00"))).get_HasSucceeded(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportItem) ImportedItems()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportItem) _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).get_ImportedItems(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportImportItemsResult)this.asInterface(uuid("e4d4f478-d419-4443-a84e-f06a850c0b00"))).get_ImportedItems(&_ret));
 		return _ret;
 	}
 	final UINT32 PhotosCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).get_PhotosCount(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportImportItemsResult)this.asInterface(uuid("e4d4f478-d419-4443-a84e-f06a850c0b00"))).get_PhotosCount(&_ret));
 		return _ret;
 	}
 	final ulong PhotosSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).get_PhotosSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportImportItemsResult)this.asInterface(uuid("e4d4f478-d419-4443-a84e-f06a850c0b00"))).get_PhotosSizeInBytes(&_ret));
 		return _ret;
 	}
 	final UINT32 VideosCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).get_VideosCount(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportImportItemsResult)this.asInterface(uuid("e4d4f478-d419-4443-a84e-f06a850c0b00"))).get_VideosCount(&_ret));
 		return _ret;
 	}
 	final ulong VideosSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).get_VideosSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportImportItemsResult)this.asInterface(uuid("e4d4f478-d419-4443-a84e-f06a850c0b00"))).get_VideosSizeInBytes(&_ret));
 		return _ret;
 	}
 	final UINT32 SidecarsCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).get_SidecarsCount(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportImportItemsResult)this.asInterface(uuid("e4d4f478-d419-4443-a84e-f06a850c0b00"))).get_SidecarsCount(&_ret));
 		return _ret;
 	}
 	final ulong SidecarsSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).get_SidecarsSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportImportItemsResult)this.asInterface(uuid("e4d4f478-d419-4443-a84e-f06a850c0b00"))).get_SidecarsSizeInBytes(&_ret));
 		return _ret;
 	}
 	final UINT32 SiblingsCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).get_SiblingsCount(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportImportItemsResult)this.asInterface(uuid("e4d4f478-d419-4443-a84e-f06a850c0b00"))).get_SiblingsCount(&_ret));
 		return _ret;
 	}
 	final ulong SiblingsSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).get_SiblingsSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportImportItemsResult)this.asInterface(uuid("e4d4f478-d419-4443-a84e-f06a850c0b00"))).get_SiblingsSizeInBytes(&_ret));
 		return _ret;
 	}
 	final UINT32 TotalCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).get_TotalCount(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportImportItemsResult)this.asInterface(uuid("e4d4f478-d419-4443-a84e-f06a850c0b00"))).get_TotalCount(&_ret));
 		return _ret;
 	}
 	final ulong TotalSizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).get_TotalSizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportImportItemsResult)this.asInterface(uuid("e4d4f478-d419-4443-a84e-f06a850c0b00"))).get_TotalSizeInBytes(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportDeleteImportedItemsFromSourceResult, double) DeleteImportedItemsFromSourceAsync()
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportDeleteImportedItemsFromSourceResult, double) _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportImportItemsResult).abi_DeleteImportedItemsFromSourceAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportImportItemsResult)this.asInterface(uuid("e4d4f478-d419-4443-a84e-f06a850c0b00"))).abi_DeleteImportedItemsFromSourceAsync(&_ret));
 		return _ret;
 	}
 }
@@ -635,77 +635,77 @@ extern(Windows):
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportItem).get_Name(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportItem)this.asInterface(uuid("a9d07e76-9bfc-43b8-b356-633b6a988c9e"))).get_Name(&_ret));
 		return _ret;
 	}
 	final ulong ItemKey()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportItem).get_ItemKey(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportItem)this.asInterface(uuid("a9d07e76-9bfc-43b8-b356-633b6a988c9e"))).get_ItemKey(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Import.PhotoImportContentType ContentType()
 	{
 		Windows.Media.Import.PhotoImportContentType _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportItem).get_ContentType(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportItem)this.asInterface(uuid("a9d07e76-9bfc-43b8-b356-633b6a988c9e"))).get_ContentType(&_ret));
 		return _ret;
 	}
 	final ulong SizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportItem).get_SizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportItem)this.asInterface(uuid("a9d07e76-9bfc-43b8-b356-633b6a988c9e"))).get_SizeInBytes(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime Date()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportItem).get_Date(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportItem)this.asInterface(uuid("a9d07e76-9bfc-43b8-b356-633b6a988c9e"))).get_Date(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Import.PhotoImportSidecar Sibling()
 	{
 		Windows.Media.Import.PhotoImportSidecar _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportItem).get_Sibling(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportItem)this.asInterface(uuid("a9d07e76-9bfc-43b8-b356-633b6a988c9e"))).get_Sibling(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportSidecar) Sidecars()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportSidecar) _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportItem).get_Sidecars(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportItem)this.asInterface(uuid("a9d07e76-9bfc-43b8-b356-633b6a988c9e"))).get_Sidecars(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportVideoSegment) VideoSegments()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportVideoSegment) _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportItem).get_VideoSegments(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportItem)this.asInterface(uuid("a9d07e76-9bfc-43b8-b356-633b6a988c9e"))).get_VideoSegments(&_ret));
 		return _ret;
 	}
 	final bool IsSelected()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportItem).get_IsSelected(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportItem)this.asInterface(uuid("a9d07e76-9bfc-43b8-b356-633b6a988c9e"))).get_IsSelected(&_ret));
 		return _ret;
 	}
 	final void IsSelected(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportItem).set_IsSelected(value));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportItem)this.asInterface(uuid("a9d07e76-9bfc-43b8-b356-633b6a988c9e"))).set_IsSelected(value));
 	}
 	final Windows.Storage.Streams.IRandomAccessStreamReference Thumbnail()
 	{
 		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportItem).get_Thumbnail(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportItem)this.asInterface(uuid("a9d07e76-9bfc-43b8-b356-633b6a988c9e"))).get_Thumbnail(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) ImportedFileNames()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportItem).get_ImportedFileNames(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportItem)this.asInterface(uuid("a9d07e76-9bfc-43b8-b356-633b6a988c9e"))).get_ImportedFileNames(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) DeletedFileNames()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportItem).get_DeletedFileNames(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportItem)this.asInterface(uuid("a9d07e76-9bfc-43b8-b356-633b6a988c9e"))).get_DeletedFileNames(&_ret));
 		return _ret;
 	}
 }
@@ -716,7 +716,7 @@ extern(Windows):
 	final Windows.Media.Import.PhotoImportItem ImportedItem()
 	{
 		Windows.Media.Import.PhotoImportItem _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportItemImportedEventArgs).get_ImportedItem(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportItemImportedEventArgs)this.asInterface(uuid("42cb2fdd-7d68-47b5-bc7c-ceb73e0c77dc"))).get_ImportedItem(&_ret));
 		return _ret;
 	}
 }
@@ -732,19 +732,19 @@ interface PhotoImportManager
 	static Windows.Foundation.IAsyncOperation!(bool) IsSupportedAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Import.IPhotoImportManagerStatics).abi_IsSupportedAsync(&_ret));
+		Debug.OK(staticInstance.abi_IsSupportedAsync(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportSource)) FindAllSourcesAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportSource)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Import.IPhotoImportManagerStatics).abi_FindAllSourcesAsync(&_ret));
+		Debug.OK(staticInstance.abi_FindAllSourcesAsync(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportOperation) GetPendingOperations()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportOperation) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Import.IPhotoImportManagerStatics).abi_GetPendingOperations(&_ret));
+		Debug.OK(staticInstance.abi_GetPendingOperations(&_ret));
 		return _ret;
 	}
 }
@@ -755,31 +755,31 @@ extern(Windows):
 	final Windows.Media.Import.PhotoImportStage Stage()
 	{
 		Windows.Media.Import.PhotoImportStage _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportOperation).get_Stage(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportOperation)this.asInterface(uuid("d9f797e4-a09a-4ee4-a4b1-20940277a5be"))).get_Stage(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Import.PhotoImportSession Session()
 	{
 		Windows.Media.Import.PhotoImportSession _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportOperation).get_Session(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportOperation)this.asInterface(uuid("d9f797e4-a09a-4ee4-a4b1-20940277a5be"))).get_Session(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportFindItemsResult, UINT32) ContinueFindingItemsAsync()
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportFindItemsResult, UINT32) _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportOperation).get_ContinueFindingItemsAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportOperation)this.asInterface(uuid("d9f797e4-a09a-4ee4-a4b1-20940277a5be"))).get_ContinueFindingItemsAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportImportItemsResult, Windows.Media.Import.PhotoImportProgress) ContinueImportingItemsAsync()
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportImportItemsResult, Windows.Media.Import.PhotoImportProgress) _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportOperation).get_ContinueImportingItemsAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportOperation)this.asInterface(uuid("d9f797e4-a09a-4ee4-a4b1-20940277a5be"))).get_ContinueImportingItemsAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportDeleteImportedItemsFromSourceResult, double) ContinueDeletingImportedItemsFromSourceAsync()
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportDeleteImportedItemsFromSourceResult, double) _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportOperation).get_ContinueDeletingImportedItemsFromSourceAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportOperation)this.asInterface(uuid("d9f797e4-a09a-4ee4-a4b1-20940277a5be"))).get_ContinueDeletingImportedItemsFromSourceAsync(&_ret));
 		return _ret;
 	}
 }
@@ -790,7 +790,7 @@ extern(Windows):
 	final bool IsSelectionEmpty()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSelectionChangedEventArgs).get_IsSelectionEmpty(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSelectionChangedEventArgs)this.asInterface(uuid("10461782-fa9d-4c30-8bc9-4d64911572d5"))).get_IsSelectionEmpty(&_ret));
 		return _ret;
 	}
 }
@@ -801,83 +801,83 @@ extern(Windows):
 	final Windows.Media.Import.PhotoImportSource Source()
 	{
 		Windows.Media.Import.PhotoImportSource _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSession).get_Source(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSession)this.asInterface(uuid("aa63916e-ecdb-4efe-94c6-5f5cafe34cfb"))).get_Source(&_ret));
 		return _ret;
 	}
 	final GUID SessionId()
 	{
 		GUID _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSession).get_SessionId(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSession)this.asInterface(uuid("aa63916e-ecdb-4efe-94c6-5f5cafe34cfb"))).get_SessionId(&_ret));
 		return _ret;
 	}
 	final void DestinationFolder(Windows.Storage.IStorageFolder value)
 	{
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSession).set_DestinationFolder(value));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSession)this.asInterface(uuid("aa63916e-ecdb-4efe-94c6-5f5cafe34cfb"))).set_DestinationFolder(value));
 	}
 	final Windows.Storage.IStorageFolder DestinationFolder()
 	{
 		Windows.Storage.IStorageFolder _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSession).get_DestinationFolder(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSession)this.asInterface(uuid("aa63916e-ecdb-4efe-94c6-5f5cafe34cfb"))).get_DestinationFolder(&_ret));
 		return _ret;
 	}
 	final void AppendSessionDateToDestinationFolder(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSession).set_AppendSessionDateToDestinationFolder(value));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSession)this.asInterface(uuid("aa63916e-ecdb-4efe-94c6-5f5cafe34cfb"))).set_AppendSessionDateToDestinationFolder(value));
 	}
 	final bool AppendSessionDateToDestinationFolder()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSession).get_AppendSessionDateToDestinationFolder(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSession)this.asInterface(uuid("aa63916e-ecdb-4efe-94c6-5f5cafe34cfb"))).get_AppendSessionDateToDestinationFolder(&_ret));
 		return _ret;
 	}
 	final void SubfolderCreationMode(Windows.Media.Import.PhotoImportSubfolderCreationMode value)
 	{
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSession).set_SubfolderCreationMode(value));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSession)this.asInterface(uuid("aa63916e-ecdb-4efe-94c6-5f5cafe34cfb"))).set_SubfolderCreationMode(value));
 	}
 	final Windows.Media.Import.PhotoImportSubfolderCreationMode SubfolderCreationMode()
 	{
 		Windows.Media.Import.PhotoImportSubfolderCreationMode _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSession).get_SubfolderCreationMode(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSession)this.asInterface(uuid("aa63916e-ecdb-4efe-94c6-5f5cafe34cfb"))).get_SubfolderCreationMode(&_ret));
 		return _ret;
 	}
 	final void DestinationFileNamePrefix(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSession).set_DestinationFileNamePrefix(value));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSession)this.asInterface(uuid("aa63916e-ecdb-4efe-94c6-5f5cafe34cfb"))).set_DestinationFileNamePrefix(value));
 	}
 	final HSTRING DestinationFileNamePrefix()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSession).get_DestinationFileNamePrefix(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSession)this.asInterface(uuid("aa63916e-ecdb-4efe-94c6-5f5cafe34cfb"))).get_DestinationFileNamePrefix(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportFindItemsResult, UINT32) FindItemsAsync(Windows.Media.Import.PhotoImportContentTypeFilter contentTypeFilter, Windows.Media.Import.PhotoImportItemSelectionMode itemSelectionMode)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Import.PhotoImportFindItemsResult, UINT32) _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSession).abi_FindItemsAsync(contentTypeFilter, itemSelectionMode, &_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSession)this.asInterface(uuid("aa63916e-ecdb-4efe-94c6-5f5cafe34cfb"))).abi_FindItemsAsync(contentTypeFilter, itemSelectionMode, &_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	final void SubfolderDateFormat(Windows.Media.Import.PhotoImportSubfolderDateFormat value)
 	{
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSession2).set_SubfolderDateFormat(value));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSession2)this.asInterface(uuid("2a526710-3ec6-469d-a375-2b9f4785391e"))).set_SubfolderDateFormat(value));
 	}
 	final Windows.Media.Import.PhotoImportSubfolderDateFormat SubfolderDateFormat()
 	{
 		Windows.Media.Import.PhotoImportSubfolderDateFormat _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSession2).get_SubfolderDateFormat(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSession2)this.asInterface(uuid("2a526710-3ec6-469d-a375-2b9f4785391e"))).get_SubfolderDateFormat(&_ret));
 		return _ret;
 	}
 	final void RememberDeselectedItems(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSession2).set_RememberDeselectedItems(value));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSession2)this.asInterface(uuid("2a526710-3ec6-469d-a375-2b9f4785391e"))).set_RememberDeselectedItems(value));
 	}
 	final bool RememberDeselectedItems()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSession2).get_RememberDeselectedItems(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSession2)this.asInterface(uuid("2a526710-3ec6-469d-a375-2b9f4785391e"))).get_RememberDeselectedItems(&_ret));
 		return _ret;
 	}
 }
@@ -888,19 +888,19 @@ extern(Windows):
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSidecar).get_Name(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSidecar)this.asInterface(uuid("46d7d757-f802-44c7-9c98-7a71f4bc1486"))).get_Name(&_ret));
 		return _ret;
 	}
 	final ulong SizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSidecar).get_SizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSidecar)this.asInterface(uuid("46d7d757-f802-44c7-9c98-7a71f4bc1486"))).get_SizeInBytes(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime Date()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSidecar).get_Date(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSidecar)this.asInterface(uuid("46d7d757-f802-44c7-9c98-7a71f4bc1486"))).get_Date(&_ret));
 		return _ret;
 	}
 }
@@ -911,103 +911,103 @@ extern(Windows):
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSource).get_Id(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).get_Id(&_ret));
 		return _ret;
 	}
 	final HSTRING DisplayName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSource).get_DisplayName(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).get_DisplayName(&_ret));
 		return _ret;
 	}
 	final HSTRING Description()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSource).get_Description(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).get_Description(&_ret));
 		return _ret;
 	}
 	final HSTRING Manufacturer()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSource).get_Manufacturer(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).get_Manufacturer(&_ret));
 		return _ret;
 	}
 	final HSTRING Model()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSource).get_Model(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).get_Model(&_ret));
 		return _ret;
 	}
 	final HSTRING SerialNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSource).get_SerialNumber(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).get_SerialNumber(&_ret));
 		return _ret;
 	}
 	final HSTRING ConnectionProtocol()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSource).get_ConnectionProtocol(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).get_ConnectionProtocol(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Import.PhotoImportConnectionTransport ConnectionTransport()
 	{
 		Windows.Media.Import.PhotoImportConnectionTransport _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSource).get_ConnectionTransport(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).get_ConnectionTransport(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Import.PhotoImportSourceType Type()
 	{
 		Windows.Media.Import.PhotoImportSourceType _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSource).get_Type(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).get_Type(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Import.PhotoImportPowerSource PowerSource()
 	{
 		Windows.Media.Import.PhotoImportPowerSource _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSource).get_PowerSource(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).get_PowerSource(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(UINT32) BatteryLevelPercent()
 	{
 		Windows.Foundation.IReference!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSource).get_BatteryLevelPercent(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).get_BatteryLevelPercent(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) DateTime()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSource).get_DateTime(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).get_DateTime(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportStorageMedium) StorageMedia()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportStorageMedium) _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSource).get_StorageMedia(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).get_StorageMedia(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(bool) IsLocked()
 	{
 		Windows.Foundation.IReference!(bool) _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSource).get_IsLocked(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).get_IsLocked(&_ret));
 		return _ret;
 	}
 	final bool IsMassStorage()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSource).get_IsMassStorage(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).get_IsMassStorage(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IRandomAccessStreamReference Thumbnail()
 	{
 		Windows.Storage.Streams.IRandomAccessStreamReference _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSource).get_Thumbnail(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).get_Thumbnail(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Import.PhotoImportSession CreateImportSession()
 	{
 		Windows.Media.Import.PhotoImportSession _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportSource).abi_CreateImportSession(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportSource)this.asInterface(uuid("1f8ea35e-145b-4cd6-87f1-54965a982fef"))).abi_CreateImportSession(&_ret));
 		return _ret;
 	}
 
@@ -1020,13 +1020,13 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Media.Import.PhotoImportSource) FromIdAsync(HSTRING sourceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Import.PhotoImportSource) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Import.IPhotoImportSourceStatics).abi_FromIdAsync(sourceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(sourceId, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Media.Import.PhotoImportSource) FromFolderAsync(Windows.Storage.IStorageFolder sourceRootFolder)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Import.PhotoImportSource) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Import.IPhotoImportSourceStatics).abi_FromFolderAsync(sourceRootFolder, &_ret));
+		Debug.OK(staticInstance.abi_FromFolderAsync(sourceRootFolder, &_ret));
 		return _ret;
 	}
 }
@@ -1037,48 +1037,48 @@ extern(Windows):
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportStorageMedium).get_Name(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportStorageMedium)this.asInterface(uuid("f2b9b093-fc85-487f-87c2-58d675d05b07"))).get_Name(&_ret));
 		return _ret;
 	}
 	final HSTRING Description()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportStorageMedium).get_Description(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportStorageMedium)this.asInterface(uuid("f2b9b093-fc85-487f-87c2-58d675d05b07"))).get_Description(&_ret));
 		return _ret;
 	}
 	final HSTRING SerialNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportStorageMedium).get_SerialNumber(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportStorageMedium)this.asInterface(uuid("f2b9b093-fc85-487f-87c2-58d675d05b07"))).get_SerialNumber(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Import.PhotoImportStorageMediumType StorageMediumType()
 	{
 		Windows.Media.Import.PhotoImportStorageMediumType _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportStorageMedium).get_StorageMediumType(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportStorageMedium)this.asInterface(uuid("f2b9b093-fc85-487f-87c2-58d675d05b07"))).get_StorageMediumType(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Import.PhotoImportAccessMode SupportedAccessMode()
 	{
 		Windows.Media.Import.PhotoImportAccessMode _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportStorageMedium).get_SupportedAccessMode(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportStorageMedium)this.asInterface(uuid("f2b9b093-fc85-487f-87c2-58d675d05b07"))).get_SupportedAccessMode(&_ret));
 		return _ret;
 	}
 	final ulong CapacityInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportStorageMedium).get_CapacityInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportStorageMedium)this.asInterface(uuid("f2b9b093-fc85-487f-87c2-58d675d05b07"))).get_CapacityInBytes(&_ret));
 		return _ret;
 	}
 	final ulong AvailableSpaceInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportStorageMedium).get_AvailableSpaceInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportStorageMedium)this.asInterface(uuid("f2b9b093-fc85-487f-87c2-58d675d05b07"))).get_AvailableSpaceInBytes(&_ret));
 		return _ret;
 	}
 	final void Refresh()
 	{
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportStorageMedium).abi_Refresh());
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportStorageMedium)this.asInterface(uuid("f2b9b093-fc85-487f-87c2-58d675d05b07"))).abi_Refresh());
 	}
 }
 
@@ -1088,31 +1088,31 @@ extern(Windows):
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportVideoSegment).get_Name(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportVideoSegment)this.asInterface(uuid("623c0289-321a-41d8-9166-8c62a333276c"))).get_Name(&_ret));
 		return _ret;
 	}
 	final ulong SizeInBytes()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportVideoSegment).get_SizeInBytes(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportVideoSegment)this.asInterface(uuid("623c0289-321a-41d8-9166-8c62a333276c"))).get_SizeInBytes(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime Date()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportVideoSegment).get_Date(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportVideoSegment)this.asInterface(uuid("623c0289-321a-41d8-9166-8c62a333276c"))).get_Date(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Import.PhotoImportSidecar Sibling()
 	{
 		Windows.Media.Import.PhotoImportSidecar _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportVideoSegment).get_Sibling(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportVideoSegment)this.asInterface(uuid("623c0289-321a-41d8-9166-8c62a333276c"))).get_Sibling(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportSidecar) Sidecars()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Import.PhotoImportSidecar) _ret;
-		Debug.OK(this.as!(Windows.Media.Import.IPhotoImportVideoSegment).get_Sidecars(&_ret));
+		Debug.OK((cast(Windows.Media.Import.IPhotoImportVideoSegment)this.asInterface(uuid("623c0289-321a-41d8-9166-8c62a333276c"))).get_Sidecars(&_ret));
 		return _ret;
 	}
 }

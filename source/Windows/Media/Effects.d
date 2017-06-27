@@ -205,17 +205,17 @@ extern(Windows):
 	final EventRegistrationToken OnAudioCaptureEffectsChanged(void delegate(Windows.Media.Effects.AudioCaptureEffectsManager, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Effects.IAudioCaptureEffectsManager).add_AudioCaptureEffectsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Effects.AudioCaptureEffectsManager, IInspectable), Windows.Media.Effects.AudioCaptureEffectsManager, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Effects.IAudioCaptureEffectsManager)this.asInterface(uuid("8f85c271-038d-4393-8298-540110608eef"))).add_AudioCaptureEffectsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Effects.AudioCaptureEffectsManager, IInspectable), Windows.Media.Effects.AudioCaptureEffectsManager, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeAudioCaptureEffectsChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Effects.IAudioCaptureEffectsManager).remove_AudioCaptureEffectsChanged(token));
+		Debug.OK((cast(Windows.Media.Effects.IAudioCaptureEffectsManager)this.asInterface(uuid("8f85c271-038d-4393-8298-540110608eef"))).remove_AudioCaptureEffectsChanged(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Effects.AudioEffect) GetAudioCaptureEffects()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Effects.AudioEffect) _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IAudioCaptureEffectsManager).abi_GetAudioCaptureEffects(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IAudioCaptureEffectsManager)this.asInterface(uuid("8f85c271-038d-4393-8298-540110608eef"))).abi_GetAudioCaptureEffects(&_ret));
 		return _ret;
 	}
 }
@@ -226,7 +226,7 @@ extern(Windows):
 	final Windows.Media.Effects.AudioEffectType AudioEffectType()
 	{
 		Windows.Media.Effects.AudioEffectType _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffect).get_AudioEffectType(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IAudioEffect)this.asInterface(uuid("34aafa51-9207-4055-be93-6e5734a86ae4"))).get_AudioEffectType(&_ret));
 		return _ret;
 	}
 }
@@ -237,27 +237,27 @@ extern(Windows):
 	final HSTRING ActivatableClassId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_ActivatableClassId(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IAudioEffectDefinition)this.asInterface(uuid("e4d7f974-7d80-4f73-9089-e31c9db9c294"))).get_ActivatableClassId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{
 		Windows.Foundation.Collections.IPropertySet _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_Properties(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IAudioEffectDefinition)this.asInterface(uuid("e4d7f974-7d80-4f73-9089-e31c9db9c294"))).get_Properties(&_ret));
 		return _ret;
 	}
 	static Windows.Media.Effects.AudioEffectDefinition New(HSTRING activatableClassId)
 	{
 		auto factory = factory!(Windows.Media.Effects.IAudioEffectDefinitionFactory);
 		Windows.Media.Effects.AudioEffectDefinition _ret;
-		Debug.OK(factory.as!(Windows.Media.Effects.IAudioEffectDefinitionFactory).abi_Create(activatableClassId, &_ret));
+		Debug.OK((cast(Windows.Media.Effects.IAudioEffectDefinitionFactory)factory.asInterface(uuid("8e1da646-e705-45ed-8a2b-fc4e4f405a97"))).abi_Create(activatableClassId, &_ret));
 		return _ret;
 	}
 	static Windows.Media.Effects.AudioEffectDefinition New(HSTRING activatableClassId, Windows.Foundation.Collections.IPropertySet props)
 	{
 		auto factory = factory!(Windows.Media.Effects.IAudioEffectDefinitionFactory);
 		Windows.Media.Effects.AudioEffectDefinition _ret;
-		Debug.OK(factory.as!(Windows.Media.Effects.IAudioEffectDefinitionFactory).abi_CreateWithProperties(activatableClassId, props, &_ret));
+		Debug.OK((cast(Windows.Media.Effects.IAudioEffectDefinitionFactory)factory.asInterface(uuid("8e1da646-e705-45ed-8a2b-fc4e4f405a97"))).abi_CreateWithProperties(activatableClassId, props, &_ret));
 		return _ret;
 	}
 }
@@ -273,25 +273,25 @@ interface AudioEffectsManager
 	static Windows.Media.Effects.AudioRenderEffectsManager CreateAudioRenderEffectsManager(HSTRING deviceId, Windows.Media.Render.AudioRenderCategory category)
 	{
 		Windows.Media.Effects.AudioRenderEffectsManager _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Effects.IAudioEffectsManagerStatics).abi_CreateAudioRenderEffectsManager(deviceId, category, &_ret));
+		Debug.OK(staticInstance.abi_CreateAudioRenderEffectsManager(deviceId, category, &_ret));
 		return _ret;
 	}
 	static Windows.Media.Effects.AudioRenderEffectsManager CreateAudioRenderEffectsManagerWithMode(HSTRING deviceId, Windows.Media.Render.AudioRenderCategory category, Windows.Media.AudioProcessing mode)
 	{
 		Windows.Media.Effects.AudioRenderEffectsManager _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Effects.IAudioEffectsManagerStatics).abi_CreateAudioRenderEffectsManagerWithMode(deviceId, category, mode, &_ret));
+		Debug.OK(staticInstance.abi_CreateAudioRenderEffectsManagerWithMode(deviceId, category, mode, &_ret));
 		return _ret;
 	}
 	static Windows.Media.Effects.AudioCaptureEffectsManager CreateAudioCaptureEffectsManager(HSTRING deviceId, Windows.Media.Capture.MediaCategory category)
 	{
 		Windows.Media.Effects.AudioCaptureEffectsManager _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Effects.IAudioEffectsManagerStatics).abi_CreateAudioCaptureEffectsManager(deviceId, category, &_ret));
+		Debug.OK(staticInstance.abi_CreateAudioCaptureEffectsManager(deviceId, category, &_ret));
 		return _ret;
 	}
 	static Windows.Media.Effects.AudioCaptureEffectsManager CreateAudioCaptureEffectsManagerWithMode(HSTRING deviceId, Windows.Media.Capture.MediaCategory category, Windows.Media.AudioProcessing mode)
 	{
 		Windows.Media.Effects.AudioCaptureEffectsManager _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Effects.IAudioEffectsManagerStatics).abi_CreateAudioCaptureEffectsManagerWithMode(deviceId, category, mode, &_ret));
+		Debug.OK(staticInstance.abi_CreateAudioCaptureEffectsManagerWithMode(deviceId, category, mode, &_ret));
 		return _ret;
 	}
 }
@@ -302,37 +302,37 @@ extern(Windows):
 	final EventRegistrationToken OnAudioRenderEffectsChanged(void delegate(Windows.Media.Effects.AudioRenderEffectsManager, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Effects.IAudioRenderEffectsManager).add_AudioRenderEffectsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Effects.AudioRenderEffectsManager, IInspectable), Windows.Media.Effects.AudioRenderEffectsManager, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Effects.IAudioRenderEffectsManager)this.asInterface(uuid("4dc98966-8751-42b2-bfcb-39ca7864bd47"))).add_AudioRenderEffectsChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Effects.AudioRenderEffectsManager, IInspectable), Windows.Media.Effects.AudioRenderEffectsManager, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeAudioRenderEffectsChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Effects.IAudioRenderEffectsManager).remove_AudioRenderEffectsChanged(token));
+		Debug.OK((cast(Windows.Media.Effects.IAudioRenderEffectsManager)this.asInterface(uuid("4dc98966-8751-42b2-bfcb-39ca7864bd47"))).remove_AudioRenderEffectsChanged(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Effects.AudioEffect) GetAudioRenderEffects()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Effects.AudioEffect) _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IAudioRenderEffectsManager).abi_GetAudioRenderEffects(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IAudioRenderEffectsManager)this.asInterface(uuid("4dc98966-8751-42b2-bfcb-39ca7864bd47"))).abi_GetAudioRenderEffects(&_ret));
 		return _ret;
 	}
 	deprecated("Not supported starting in windows 10")
 	final Windows.Storage.Streams.IRandomAccessStreamWithContentType EffectsProviderThumbnail()
 	{
 		Windows.Storage.Streams.IRandomAccessStreamWithContentType _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IAudioRenderEffectsManager2).get_EffectsProviderThumbnail(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IAudioRenderEffectsManager2)this.asInterface(uuid("a844cd09-5ecc-44b3-bb4e-1db07287139c"))).get_EffectsProviderThumbnail(&_ret));
 		return _ret;
 	}
 	deprecated("Not supported starting in windows 10")
 	final HSTRING EffectsProviderSettingsLabel()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IAudioRenderEffectsManager2).get_EffectsProviderSettingsLabel(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IAudioRenderEffectsManager2)this.asInterface(uuid("a844cd09-5ecc-44b3-bb4e-1db07287139c"))).get_EffectsProviderSettingsLabel(&_ret));
 		return _ret;
 	}
 	deprecated("Not supported starting in windows 10")
 	final void ShowSettingsUI()
 	{
-		Debug.OK(this.as!(Windows.Media.Effects.IAudioRenderEffectsManager2).abi_ShowSettingsUI());
+		Debug.OK((cast(Windows.Media.Effects.IAudioRenderEffectsManager2)this.asInterface(uuid("a844cd09-5ecc-44b3-bb4e-1db07287139c"))).abi_ShowSettingsUI());
 	}
 }
 
@@ -342,25 +342,25 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) SurfacesToOverlay()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.ICompositeVideoFrameContext).get_SurfacesToOverlay(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.ICompositeVideoFrameContext)this.asInterface(uuid("6c30024b-f514-4278-a5f7-b9188049d110"))).get_SurfacesToOverlay(&_ret));
 		return _ret;
 	}
 	final Windows.Media.VideoFrame BackgroundFrame()
 	{
 		Windows.Media.VideoFrame _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.ICompositeVideoFrameContext).get_BackgroundFrame(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.ICompositeVideoFrameContext)this.asInterface(uuid("6c30024b-f514-4278-a5f7-b9188049d110"))).get_BackgroundFrame(&_ret));
 		return _ret;
 	}
 	final Windows.Media.VideoFrame OutputFrame()
 	{
 		Windows.Media.VideoFrame _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.ICompositeVideoFrameContext).get_OutputFrame(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.ICompositeVideoFrameContext)this.asInterface(uuid("6c30024b-f514-4278-a5f7-b9188049d110"))).get_OutputFrame(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Editing.MediaOverlay GetOverlayForSurface(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface surfaceToOverlay)
 	{
 		Windows.Media.Editing.MediaOverlay _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.ICompositeVideoFrameContext).abi_GetOverlayForSurface(surfaceToOverlay, &_ret));
+		Debug.OK((cast(Windows.Media.Effects.ICompositeVideoFrameContext)this.asInterface(uuid("6c30024b-f514-4278-a5f7-b9188049d110"))).abi_GetOverlayForSurface(surfaceToOverlay, &_ret));
 		return _ret;
 	}
 }
@@ -371,13 +371,13 @@ extern(Windows):
 	final Windows.Media.AudioFrame InputFrame()
 	{
 		Windows.Media.AudioFrame _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IProcessAudioFrameContext).get_InputFrame(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IProcessAudioFrameContext)this.asInterface(uuid("4cd92946-1222-4a27-a586-fb3e20273255"))).get_InputFrame(&_ret));
 		return _ret;
 	}
 	final Windows.Media.AudioFrame OutputFrame()
 	{
 		Windows.Media.AudioFrame _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IProcessAudioFrameContext).get_OutputFrame(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IProcessAudioFrameContext)this.asInterface(uuid("4cd92946-1222-4a27-a586-fb3e20273255"))).get_OutputFrame(&_ret));
 		return _ret;
 	}
 }
@@ -388,13 +388,13 @@ extern(Windows):
 	final Windows.Media.VideoFrame InputFrame()
 	{
 		Windows.Media.VideoFrame _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IProcessVideoFrameContext).get_InputFrame(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IProcessVideoFrameContext)this.asInterface(uuid("276f0e2b-6461-401e-ba78-0fdad6114eec"))).get_InputFrame(&_ret));
 		return _ret;
 	}
 	final Windows.Media.VideoFrame OutputFrame()
 	{
 		Windows.Media.VideoFrame _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IProcessVideoFrameContext).get_OutputFrame(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IProcessVideoFrameContext)this.asInterface(uuid("276f0e2b-6461-401e-ba78-0fdad6114eec"))).get_OutputFrame(&_ret));
 		return _ret;
 	}
 }
@@ -405,27 +405,27 @@ extern(Windows):
 	final HSTRING ActivatableClassId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IVideoCompositorDefinition).get_ActivatableClassId(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IVideoCompositorDefinition)this.asInterface(uuid("7946b8d0-2010-4ae3-9ab2-2cef42edd4d2"))).get_ActivatableClassId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{
 		Windows.Foundation.Collections.IPropertySet _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IVideoCompositorDefinition).get_Properties(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IVideoCompositorDefinition)this.asInterface(uuid("7946b8d0-2010-4ae3-9ab2-2cef42edd4d2"))).get_Properties(&_ret));
 		return _ret;
 	}
 	static Windows.Media.Effects.VideoCompositorDefinition New(HSTRING activatableClassId)
 	{
 		auto factory = factory!(Windows.Media.Effects.IVideoCompositorDefinitionFactory);
 		Windows.Media.Effects.VideoCompositorDefinition _ret;
-		Debug.OK(factory.as!(Windows.Media.Effects.IVideoCompositorDefinitionFactory).abi_Create(activatableClassId, &_ret));
+		Debug.OK((cast(Windows.Media.Effects.IVideoCompositorDefinitionFactory)factory.asInterface(uuid("4366fd10-68b8-4d52-89b6-02a968cca899"))).abi_Create(activatableClassId, &_ret));
 		return _ret;
 	}
 	static Windows.Media.Effects.VideoCompositorDefinition New(HSTRING activatableClassId, Windows.Foundation.Collections.IPropertySet props)
 	{
 		auto factory = factory!(Windows.Media.Effects.IVideoCompositorDefinitionFactory);
 		Windows.Media.Effects.VideoCompositorDefinition _ret;
-		Debug.OK(factory.as!(Windows.Media.Effects.IVideoCompositorDefinitionFactory).abi_CreateWithProperties(activatableClassId, props, &_ret));
+		Debug.OK((cast(Windows.Media.Effects.IVideoCompositorDefinitionFactory)factory.asInterface(uuid("4366fd10-68b8-4d52-89b6-02a968cca899"))).abi_CreateWithProperties(activatableClassId, props, &_ret));
 		return _ret;
 	}
 }
@@ -436,27 +436,27 @@ extern(Windows):
 	final HSTRING ActivatableClassId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IVideoEffectDefinition).get_ActivatableClassId(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IVideoEffectDefinition)this.asInterface(uuid("39f38cf0-8d0f-4f3e-84fc-2d46a5297943"))).get_ActivatableClassId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{
 		Windows.Foundation.Collections.IPropertySet _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IVideoEffectDefinition).get_Properties(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IVideoEffectDefinition)this.asInterface(uuid("39f38cf0-8d0f-4f3e-84fc-2d46a5297943"))).get_Properties(&_ret));
 		return _ret;
 	}
 	static Windows.Media.Effects.VideoEffectDefinition New(HSTRING activatableClassId)
 	{
 		auto factory = factory!(Windows.Media.Effects.IVideoEffectDefinitionFactory);
 		Windows.Media.Effects.VideoEffectDefinition _ret;
-		Debug.OK(factory.as!(Windows.Media.Effects.IVideoEffectDefinitionFactory).abi_Create(activatableClassId, &_ret));
+		Debug.OK((cast(Windows.Media.Effects.IVideoEffectDefinitionFactory)factory.asInterface(uuid("81439b4e-6e33-428f-9d21-b5aafef7617c"))).abi_Create(activatableClassId, &_ret));
 		return _ret;
 	}
 	static Windows.Media.Effects.VideoEffectDefinition New(HSTRING activatableClassId, Windows.Foundation.Collections.IPropertySet props)
 	{
 		auto factory = factory!(Windows.Media.Effects.IVideoEffectDefinitionFactory);
 		Windows.Media.Effects.VideoEffectDefinition _ret;
-		Debug.OK(factory.as!(Windows.Media.Effects.IVideoEffectDefinitionFactory).abi_CreateWithProperties(activatableClassId, props, &_ret));
+		Debug.OK((cast(Windows.Media.Effects.IVideoEffectDefinitionFactory)factory.asInterface(uuid("81439b4e-6e33-428f-9d21-b5aafef7617c"))).abi_CreateWithProperties(activatableClassId, props, &_ret));
 		return _ret;
 	}
 }
@@ -467,80 +467,80 @@ extern(Windows):
 	final HSTRING ActivatableClassId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IVideoEffectDefinition).get_ActivatableClassId(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IVideoEffectDefinition)this.asInterface(uuid("39f38cf0-8d0f-4f3e-84fc-2d46a5297943"))).get_ActivatableClassId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{
 		Windows.Foundation.Collections.IPropertySet _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IVideoEffectDefinition).get_Properties(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IVideoEffectDefinition)this.asInterface(uuid("39f38cf0-8d0f-4f3e-84fc-2d46a5297943"))).get_Properties(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Color PaddingColor()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).get_PaddingColor(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IVideoTransformEffectDefinition)this.asInterface(uuid("9664bb6a-1ea6-4aa6-8074-abe8851ecae2"))).get_PaddingColor(&_ret));
 		return _ret;
 	}
 	final void PaddingColor(Windows.UI.Color value)
 	{
-		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).set_PaddingColor(value));
+		Debug.OK((cast(Windows.Media.Effects.IVideoTransformEffectDefinition)this.asInterface(uuid("9664bb6a-1ea6-4aa6-8074-abe8851ecae2"))).set_PaddingColor(value));
 	}
 	final Windows.Foundation.Size OutputSize()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).get_OutputSize(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IVideoTransformEffectDefinition)this.asInterface(uuid("9664bb6a-1ea6-4aa6-8074-abe8851ecae2"))).get_OutputSize(&_ret));
 		return _ret;
 	}
 	final void OutputSize(Windows.Foundation.Size value)
 	{
-		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).set_OutputSize(value));
+		Debug.OK((cast(Windows.Media.Effects.IVideoTransformEffectDefinition)this.asInterface(uuid("9664bb6a-1ea6-4aa6-8074-abe8851ecae2"))).set_OutputSize(value));
 	}
 	final Windows.Foundation.Rect CropRectangle()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).get_CropRectangle(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IVideoTransformEffectDefinition)this.asInterface(uuid("9664bb6a-1ea6-4aa6-8074-abe8851ecae2"))).get_CropRectangle(&_ret));
 		return _ret;
 	}
 	final void CropRectangle(Windows.Foundation.Rect value)
 	{
-		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).set_CropRectangle(value));
+		Debug.OK((cast(Windows.Media.Effects.IVideoTransformEffectDefinition)this.asInterface(uuid("9664bb6a-1ea6-4aa6-8074-abe8851ecae2"))).set_CropRectangle(value));
 	}
 	final Windows.Media.MediaProperties.MediaRotation Rotation()
 	{
 		Windows.Media.MediaProperties.MediaRotation _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).get_Rotation(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IVideoTransformEffectDefinition)this.asInterface(uuid("9664bb6a-1ea6-4aa6-8074-abe8851ecae2"))).get_Rotation(&_ret));
 		return _ret;
 	}
 	final void Rotation(Windows.Media.MediaProperties.MediaRotation value)
 	{
-		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).set_Rotation(value));
+		Debug.OK((cast(Windows.Media.Effects.IVideoTransformEffectDefinition)this.asInterface(uuid("9664bb6a-1ea6-4aa6-8074-abe8851ecae2"))).set_Rotation(value));
 	}
 	final Windows.Media.MediaProperties.MediaMirroringOptions Mirror()
 	{
 		Windows.Media.MediaProperties.MediaMirroringOptions _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).get_Mirror(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IVideoTransformEffectDefinition)this.asInterface(uuid("9664bb6a-1ea6-4aa6-8074-abe8851ecae2"))).get_Mirror(&_ret));
 		return _ret;
 	}
 	final void Mirror(Windows.Media.MediaProperties.MediaMirroringOptions value)
 	{
-		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).set_Mirror(value));
+		Debug.OK((cast(Windows.Media.Effects.IVideoTransformEffectDefinition)this.asInterface(uuid("9664bb6a-1ea6-4aa6-8074-abe8851ecae2"))).set_Mirror(value));
 	}
 	final void ProcessingAlgorithm(Windows.Media.Transcoding.MediaVideoProcessingAlgorithm value)
 	{
-		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).set_ProcessingAlgorithm(value));
+		Debug.OK((cast(Windows.Media.Effects.IVideoTransformEffectDefinition)this.asInterface(uuid("9664bb6a-1ea6-4aa6-8074-abe8851ecae2"))).set_ProcessingAlgorithm(value));
 	}
 	final Windows.Media.Transcoding.MediaVideoProcessingAlgorithm ProcessingAlgorithm()
 	{
 		Windows.Media.Transcoding.MediaVideoProcessingAlgorithm _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IVideoTransformEffectDefinition).get_ProcessingAlgorithm(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IVideoTransformEffectDefinition)this.asInterface(uuid("9664bb6a-1ea6-4aa6-8074-abe8851ecae2"))).get_ProcessingAlgorithm(&_ret));
 		return _ret;
 	}
 	static VideoTransformEffectDefinition New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(VideoTransformEffectDefinition).abi_ActivateInstance(&ret));
-		return ret.as!(VideoTransformEffectDefinition);
+		return cast(VideoTransformEffectDefinition) ret;
 	}
 }
 

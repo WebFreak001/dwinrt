@@ -146,49 +146,49 @@ extern(Windows):
 	final HSTRING RecognizedText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisInkBullet).get_RecognizedText(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisInkBullet)this.asInterface(uuid("ee049368-6110-4136-95f9-ee809fc20030"))).get_RecognizedText(&_ret));
 		return _ret;
 	}
 	final UINT32 Id()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Id(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind Kind()
 	{
 		Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Kind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect BoundingRect()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_BoundingRect(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_BoundingRect(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Point) RotatedBoundingRect()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Point) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_RotatedBoundingRect(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_RotatedBoundingRect(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode) Children()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Children(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Children(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.Analysis.IInkAnalysisNode Parent()
 	{
 		Windows.UI.Input.Inking.Analysis.IInkAnalysisNode _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Parent(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Parent(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(UINT32) GetStrokeIds()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).abi_GetStrokeIds(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).abi_GetStrokeIds(&_ret));
 		return _ret;
 	}
 }
@@ -199,61 +199,61 @@ extern(Windows):
 	final Windows.UI.Input.Inking.Analysis.InkAnalysisDrawingKind DrawingKind()
 	{
 		Windows.UI.Input.Inking.Analysis.InkAnalysisDrawingKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisInkDrawing).get_DrawingKind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisInkDrawing)this.asInterface(uuid("6a85ed1f-1fe4-4e15-898c-8e112377e021"))).get_DrawingKind(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point Center()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisInkDrawing).get_Center(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisInkDrawing)this.asInterface(uuid("6a85ed1f-1fe4-4e15-898c-8e112377e021"))).get_Center(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Point) Points()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Point) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisInkDrawing).get_Points(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisInkDrawing)this.asInterface(uuid("6a85ed1f-1fe4-4e15-898c-8e112377e021"))).get_Points(&_ret));
 		return _ret;
 	}
 	final UINT32 Id()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Id(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind Kind()
 	{
 		Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Kind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect BoundingRect()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_BoundingRect(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_BoundingRect(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Point) RotatedBoundingRect()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Point) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_RotatedBoundingRect(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_RotatedBoundingRect(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode) Children()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Children(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Children(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.Analysis.IInkAnalysisNode Parent()
 	{
 		Windows.UI.Input.Inking.Analysis.IInkAnalysisNode _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Parent(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Parent(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(UINT32) GetStrokeIds()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).abi_GetStrokeIds(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).abi_GetStrokeIds(&_ret));
 		return _ret;
 	}
 }
@@ -264,55 +264,55 @@ extern(Windows):
 	final HSTRING RecognizedText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisInkWord).get_RecognizedText(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisInkWord)this.asInterface(uuid("4bd228ad-83af-4034-8f3b-f8687dfff436"))).get_RecognizedText(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) TextAlternates()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisInkWord).get_TextAlternates(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisInkWord)this.asInterface(uuid("4bd228ad-83af-4034-8f3b-f8687dfff436"))).get_TextAlternates(&_ret));
 		return _ret;
 	}
 	final UINT32 Id()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Id(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind Kind()
 	{
 		Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Kind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect BoundingRect()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_BoundingRect(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_BoundingRect(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Point) RotatedBoundingRect()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Point) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_RotatedBoundingRect(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_RotatedBoundingRect(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode) Children()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Children(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Children(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.Analysis.IInkAnalysisNode Parent()
 	{
 		Windows.UI.Input.Inking.Analysis.IInkAnalysisNode _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Parent(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Parent(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(UINT32) GetStrokeIds()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).abi_GetStrokeIds(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).abi_GetStrokeIds(&_ret));
 		return _ret;
 	}
 }
@@ -323,55 +323,55 @@ extern(Windows):
 	final HSTRING RecognizedText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisLine).get_RecognizedText(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisLine)this.asInterface(uuid("a06d048d-2b8d-4754-ad5a-d0871193a956"))).get_RecognizedText(&_ret));
 		return _ret;
 	}
 	final INT32 IndentLevel()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisLine).get_IndentLevel(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisLine)this.asInterface(uuid("a06d048d-2b8d-4754-ad5a-d0871193a956"))).get_IndentLevel(&_ret));
 		return _ret;
 	}
 	final UINT32 Id()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Id(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind Kind()
 	{
 		Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Kind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect BoundingRect()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_BoundingRect(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_BoundingRect(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Point) RotatedBoundingRect()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Point) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_RotatedBoundingRect(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_RotatedBoundingRect(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode) Children()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Children(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Children(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.Analysis.IInkAnalysisNode Parent()
 	{
 		Windows.UI.Input.Inking.Analysis.IInkAnalysisNode _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Parent(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Parent(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(UINT32) GetStrokeIds()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).abi_GetStrokeIds(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).abi_GetStrokeIds(&_ret));
 		return _ret;
 	}
 }
@@ -382,49 +382,49 @@ extern(Windows):
 	final HSTRING RecognizedText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisListItem).get_RecognizedText(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisListItem)this.asInterface(uuid("b4e3c23f-c4c3-4c3a-a1a6-9d85547ee586"))).get_RecognizedText(&_ret));
 		return _ret;
 	}
 	final UINT32 Id()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Id(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind Kind()
 	{
 		Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Kind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect BoundingRect()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_BoundingRect(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_BoundingRect(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Point) RotatedBoundingRect()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Point) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_RotatedBoundingRect(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_RotatedBoundingRect(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode) Children()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Children(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Children(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.Analysis.IInkAnalysisNode Parent()
 	{
 		Windows.UI.Input.Inking.Analysis.IInkAnalysisNode _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Parent(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Parent(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(UINT32) GetStrokeIds()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).abi_GetStrokeIds(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).abi_GetStrokeIds(&_ret));
 		return _ret;
 	}
 }
@@ -435,43 +435,43 @@ extern(Windows):
 	final UINT32 Id()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Id(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind Kind()
 	{
 		Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Kind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect BoundingRect()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_BoundingRect(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_BoundingRect(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Point) RotatedBoundingRect()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Point) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_RotatedBoundingRect(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_RotatedBoundingRect(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode) Children()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Children(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Children(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.Analysis.IInkAnalysisNode Parent()
 	{
 		Windows.UI.Input.Inking.Analysis.IInkAnalysisNode _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Parent(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Parent(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(UINT32) GetStrokeIds()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).abi_GetStrokeIds(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).abi_GetStrokeIds(&_ret));
 		return _ret;
 	}
 }
@@ -482,49 +482,49 @@ extern(Windows):
 	final HSTRING RecognizedText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisParagraph).get_RecognizedText(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisParagraph)this.asInterface(uuid("d9ad045c-0cd1-4dd4-a68b-eb1f12b3d727"))).get_RecognizedText(&_ret));
 		return _ret;
 	}
 	final UINT32 Id()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Id(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind Kind()
 	{
 		Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Kind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect BoundingRect()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_BoundingRect(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_BoundingRect(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Point) RotatedBoundingRect()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Point) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_RotatedBoundingRect(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_RotatedBoundingRect(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode) Children()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Children(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Children(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.Analysis.IInkAnalysisNode Parent()
 	{
 		Windows.UI.Input.Inking.Analysis.IInkAnalysisNode _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Parent(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Parent(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(UINT32) GetStrokeIds()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).abi_GetStrokeIds(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).abi_GetStrokeIds(&_ret));
 		return _ret;
 	}
 }
@@ -535,7 +535,7 @@ extern(Windows):
 	final Windows.UI.Input.Inking.Analysis.InkAnalysisStatus Status()
 	{
 		Windows.UI.Input.Inking.Analysis.InkAnalysisStatus _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisResult)this.asInterface(uuid("8948ba79-a243-4aa3-a294-1f98bd0ff580"))).get_Status(&_ret));
 		return _ret;
 	}
 }
@@ -546,55 +546,55 @@ extern(Windows):
 	final HSTRING RecognizedText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisRoot).get_RecognizedText(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisRoot)this.asInterface(uuid("3fb6a3c4-2fde-4061-8502-a90f32545b84"))).get_RecognizedText(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode) FindNodes(Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind nodeKind)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisRoot).abi_FindNodes(nodeKind, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisRoot)this.asInterface(uuid("3fb6a3c4-2fde-4061-8502-a90f32545b84"))).abi_FindNodes(nodeKind, &_ret));
 		return _ret;
 	}
 	final UINT32 Id()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Id(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind Kind()
 	{
 		Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Kind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect BoundingRect()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_BoundingRect(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_BoundingRect(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Point) RotatedBoundingRect()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Point) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_RotatedBoundingRect(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_RotatedBoundingRect(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode) Children()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Children(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Children(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.Analysis.IInkAnalysisNode Parent()
 	{
 		Windows.UI.Input.Inking.Analysis.IInkAnalysisNode _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Parent(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Parent(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(UINT32) GetStrokeIds()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).abi_GetStrokeIds(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).abi_GetStrokeIds(&_ret));
 		return _ret;
 	}
 }
@@ -605,49 +605,49 @@ extern(Windows):
 	final HSTRING RecognizedText()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisWritingRegion).get_RecognizedText(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisWritingRegion)this.asInterface(uuid("dd6d6231-bd16-4663-b5ae-941d3043ef5b"))).get_RecognizedText(&_ret));
 		return _ret;
 	}
 	final UINT32 Id()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Id(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind Kind()
 	{
 		Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Kind(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect BoundingRect()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_BoundingRect(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_BoundingRect(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Point) RotatedBoundingRect()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Point) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_RotatedBoundingRect(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_RotatedBoundingRect(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode) Children()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Children(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Children(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Input.Inking.Analysis.IInkAnalysisNode Parent()
 	{
 		Windows.UI.Input.Inking.Analysis.IInkAnalysisNode _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).get_Parent(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).get_Parent(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(UINT32) GetStrokeIds()
 	{
 		Windows.Foundation.Collections.IVectorView!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode).abi_GetStrokeIds(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode)this.asInterface(uuid("30831f05-5f64-4a2c-ba37-4f4887879574"))).abi_GetStrokeIds(&_ret));
 		return _ret;
 	}
 }
@@ -658,54 +658,54 @@ extern(Windows):
 	final Windows.UI.Input.Inking.Analysis.InkAnalysisRoot AnalysisRoot()
 	{
 		Windows.UI.Input.Inking.Analysis.InkAnalysisRoot _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalyzer).get_AnalysisRoot(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalyzer)this.asInterface(uuid("f12b8f95-0866-4dc5-8c77-f88614dfe38c"))).get_AnalysisRoot(&_ret));
 		return _ret;
 	}
 	final bool IsAnalyzing()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalyzer).get_IsAnalyzing(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalyzer)this.asInterface(uuid("f12b8f95-0866-4dc5-8c77-f88614dfe38c"))).get_IsAnalyzing(&_ret));
 		return _ret;
 	}
 	final void AddDataForStroke(Windows.UI.Input.Inking.InkStroke stroke)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalyzer).abi_AddDataForStroke(stroke));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalyzer)this.asInterface(uuid("f12b8f95-0866-4dc5-8c77-f88614dfe38c"))).abi_AddDataForStroke(stroke));
 	}
 	final void AddDataForStrokes(Windows.Foundation.Collections.IIterable!(Windows.UI.Input.Inking.InkStroke) strokes)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalyzer).abi_AddDataForStrokes(strokes));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalyzer)this.asInterface(uuid("f12b8f95-0866-4dc5-8c77-f88614dfe38c"))).abi_AddDataForStrokes(strokes));
 	}
 	final void ClearDataForAllStrokes()
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalyzer).abi_ClearDataForAllStrokes());
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalyzer)this.asInterface(uuid("f12b8f95-0866-4dc5-8c77-f88614dfe38c"))).abi_ClearDataForAllStrokes());
 	}
 	final void RemoveDataForStroke(UINT32 strokeId)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalyzer).abi_RemoveDataForStroke(strokeId));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalyzer)this.asInterface(uuid("f12b8f95-0866-4dc5-8c77-f88614dfe38c"))).abi_RemoveDataForStroke(strokeId));
 	}
 	final void RemoveDataForStrokes(Windows.Foundation.Collections.IIterable!(UINT32) strokeIds)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalyzer).abi_RemoveDataForStrokes(strokeIds));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalyzer)this.asInterface(uuid("f12b8f95-0866-4dc5-8c77-f88614dfe38c"))).abi_RemoveDataForStrokes(strokeIds));
 	}
 	final void ReplaceDataForStroke(Windows.UI.Input.Inking.InkStroke stroke)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalyzer).abi_ReplaceDataForStroke(stroke));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalyzer)this.asInterface(uuid("f12b8f95-0866-4dc5-8c77-f88614dfe38c"))).abi_ReplaceDataForStroke(stroke));
 	}
 	final void SetStrokeDataKind(UINT32 strokeId, Windows.UI.Input.Inking.Analysis.InkAnalysisStrokeKind strokeKind)
 	{
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalyzer).abi_SetStrokeDataKind(strokeId, strokeKind));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalyzer)this.asInterface(uuid("f12b8f95-0866-4dc5-8c77-f88614dfe38c"))).abi_SetStrokeDataKind(strokeId, strokeKind));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.UI.Input.Inking.Analysis.InkAnalysisResult) AnalyzeAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.UI.Input.Inking.Analysis.InkAnalysisResult) _ret;
-		Debug.OK(this.as!(Windows.UI.Input.Inking.Analysis.IInkAnalyzer).abi_AnalyzeAsync(&_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalyzer)this.asInterface(uuid("f12b8f95-0866-4dc5-8c77-f88614dfe38c"))).abi_AnalyzeAsync(&_ret));
 		return _ret;
 	}
 	static InkAnalyzer New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(InkAnalyzer).abi_ActivateInstance(&ret));
-		return ret.as!(InkAnalyzer);
+		return cast(InkAnalyzer) ret;
 	}
 }
 

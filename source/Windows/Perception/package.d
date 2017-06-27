@@ -25,13 +25,13 @@ extern(Windows):
 	final Windows.Foundation.DateTime TargetTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Perception.IPerceptionTimestamp).get_TargetTime(&_ret));
+		Debug.OK((cast(Windows.Perception.IPerceptionTimestamp)this.asInterface(uuid("87c24804-a22e-4adb-ba26-d78ef639bcf4"))).get_TargetTime(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan PredictionAmount()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Perception.IPerceptionTimestamp).get_PredictionAmount(&_ret));
+		Debug.OK((cast(Windows.Perception.IPerceptionTimestamp)this.asInterface(uuid("87c24804-a22e-4adb-ba26-d78ef639bcf4"))).get_PredictionAmount(&_ret));
 		return _ret;
 	}
 }
@@ -47,7 +47,7 @@ interface PerceptionTimestampHelper
 	static Windows.Perception.PerceptionTimestamp FromHistoricalTargetTime(Windows.Foundation.DateTime targetTime)
 	{
 		Windows.Perception.PerceptionTimestamp _ret;
-		Debug.OK(staticInstance.as!(Windows.Perception.IPerceptionTimestampHelperStatics).abi_FromHistoricalTargetTime(targetTime, &_ret));
+		Debug.OK(staticInstance.abi_FromHistoricalTargetTime(targetTime, &_ret));
 		return _ret;
 	}
 }

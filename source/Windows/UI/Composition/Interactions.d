@@ -281,22 +281,22 @@ extern(Windows):
 	final Windows.UI.Composition.ExpressionAnimation Condition()
 	{
 		Windows.UI.Composition.ExpressionAnimation _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.ICompositionConditionalValue).get_Condition(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.ICompositionConditionalValue)this.asInterface(uuid("43250538-eb73-4561-a71d-1a43eaeb7a9b"))).get_Condition(&_ret));
 		return _ret;
 	}
 	final void Condition(Windows.UI.Composition.ExpressionAnimation value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.ICompositionConditionalValue).set_Condition(value));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.ICompositionConditionalValue)this.asInterface(uuid("43250538-eb73-4561-a71d-1a43eaeb7a9b"))).set_Condition(value));
 	}
 	final Windows.UI.Composition.ExpressionAnimation Value()
 	{
 		Windows.UI.Composition.ExpressionAnimation _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.ICompositionConditionalValue).get_Value(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.ICompositionConditionalValue)this.asInterface(uuid("43250538-eb73-4561-a71d-1a43eaeb7a9b"))).get_Value(&_ret));
 		return _ret;
 	}
 	final void Value(Windows.UI.Composition.ExpressionAnimation value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.ICompositionConditionalValue).set_Value(value));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.ICompositionConditionalValue)this.asInterface(uuid("43250538-eb73-4561-a71d-1a43eaeb7a9b"))).set_Value(value));
 	}
 
 	private static Windows.UI.Composition.Interactions.ICompositionConditionalValueStatics _staticInstance;
@@ -308,7 +308,7 @@ extern(Windows):
 	static Windows.UI.Composition.Interactions.CompositionConditionalValue Create(Windows.UI.Composition.Compositor compositor)
 	{
 		Windows.UI.Composition.Interactions.CompositionConditionalValue _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Composition.Interactions.ICompositionConditionalValueStatics).abi_Create(compositor, &_ret));
+		Debug.OK(staticInstance.abi_Create(compositor, &_ret));
 		return _ret;
 	}
 }
@@ -319,24 +319,24 @@ extern(Windows):
 	final INT32 Count()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.ICompositionInteractionSourceCollection).get_Count(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.ICompositionInteractionSourceCollection)this.asInterface(uuid("1b468e4b-a5bf-47d8-a547-3894155a158c"))).get_Count(&_ret));
 		return _ret;
 	}
 	final void Add(Windows.UI.Composition.Interactions.ICompositionInteractionSource value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.ICompositionInteractionSourceCollection).abi_Add(value));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.ICompositionInteractionSourceCollection)this.asInterface(uuid("1b468e4b-a5bf-47d8-a547-3894155a158c"))).abi_Add(value));
 	}
 	final void Remove(Windows.UI.Composition.Interactions.ICompositionInteractionSource value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.ICompositionInteractionSourceCollection).abi_Remove(value));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.ICompositionInteractionSourceCollection)this.asInterface(uuid("1b468e4b-a5bf-47d8-a547-3894155a158c"))).abi_Remove(value));
 	}
 	final void RemoveAll()
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.ICompositionInteractionSourceCollection).abi_RemoveAll());
+		Debug.OK((cast(Windows.UI.Composition.Interactions.ICompositionInteractionSourceCollection)this.asInterface(uuid("1b468e4b-a5bf-47d8-a547-3894155a158c"))).abi_RemoveAll());
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Composition.Interactions.ICompositionInteractionSource)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.ICompositionInteractionSource)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.ICompositionInteractionSource))this).abi_First(out_first));
 	}
 }
 
@@ -346,186 +346,186 @@ extern(Windows):
 	final Windows.UI.Composition.Interactions.CompositionInteractionSourceCollection InteractionSources()
 	{
 		Windows.UI.Composition.Interactions.CompositionInteractionSourceCollection _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).get_InteractionSources(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).get_InteractionSources(&_ret));
 		return _ret;
 	}
 	final bool IsPositionRoundingSuggested()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).get_IsPositionRoundingSuggested(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).get_IsPositionRoundingSuggested(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Numerics.Vector3 MaxPosition()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).get_MaxPosition(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).get_MaxPosition(&_ret));
 		return _ret;
 	}
 	final void MaxPosition(Windows.Foundation.Numerics.Vector3 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).set_MaxPosition(value));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).set_MaxPosition(value));
 	}
 	final float MaxScale()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).get_MaxScale(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).get_MaxScale(&_ret));
 		return _ret;
 	}
 	final void MaxScale(float value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).set_MaxScale(value));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).set_MaxScale(value));
 	}
 	final Windows.Foundation.Numerics.Vector3 MinPosition()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).get_MinPosition(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).get_MinPosition(&_ret));
 		return _ret;
 	}
 	final void MinPosition(Windows.Foundation.Numerics.Vector3 value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).set_MinPosition(value));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).set_MinPosition(value));
 	}
 	final float MinScale()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).get_MinScale(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).get_MinScale(&_ret));
 		return _ret;
 	}
 	final void MinScale(float value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).set_MinScale(value));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).set_MinScale(value));
 	}
 	final Windows.Foundation.Numerics.Vector3 NaturalRestingPosition()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).get_NaturalRestingPosition(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).get_NaturalRestingPosition(&_ret));
 		return _ret;
 	}
 	final float NaturalRestingScale()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).get_NaturalRestingScale(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).get_NaturalRestingScale(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Composition.Interactions.IInteractionTrackerOwner Owner()
 	{
 		Windows.UI.Composition.Interactions.IInteractionTrackerOwner _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).get_Owner(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).get_Owner(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Numerics.Vector3 Position()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).get_Position(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).get_Position(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3) PositionInertiaDecayRate()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3) _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).get_PositionInertiaDecayRate(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).get_PositionInertiaDecayRate(&_ret));
 		return _ret;
 	}
 	final void PositionInertiaDecayRate(Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3) value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).set_PositionInertiaDecayRate(value));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).set_PositionInertiaDecayRate(value));
 	}
 	final Windows.Foundation.Numerics.Vector3 PositionVelocityInPixelsPerSecond()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).get_PositionVelocityInPixelsPerSecond(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).get_PositionVelocityInPixelsPerSecond(&_ret));
 		return _ret;
 	}
 	final float Scale()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).get_Scale(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).get_Scale(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(float) ScaleInertiaDecayRate()
 	{
 		Windows.Foundation.IReference!(float) _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).get_ScaleInertiaDecayRate(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).get_ScaleInertiaDecayRate(&_ret));
 		return _ret;
 	}
 	final void ScaleInertiaDecayRate(Windows.Foundation.IReference!(float) value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).set_ScaleInertiaDecayRate(value));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).set_ScaleInertiaDecayRate(value));
 	}
 	final float ScaleVelocityInPercentPerSecond()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).get_ScaleVelocityInPercentPerSecond(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).get_ScaleVelocityInPercentPerSecond(&_ret));
 		return _ret;
 	}
 	final void AdjustPositionXIfGreaterThanThreshold(float adjustment, float positionThreshold)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).abi_AdjustPositionXIfGreaterThanThreshold(adjustment, positionThreshold));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).abi_AdjustPositionXIfGreaterThanThreshold(adjustment, positionThreshold));
 	}
 	final void AdjustPositionYIfGreaterThanThreshold(float adjustment, float positionThreshold)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).abi_AdjustPositionYIfGreaterThanThreshold(adjustment, positionThreshold));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).abi_AdjustPositionYIfGreaterThanThreshold(adjustment, positionThreshold));
 	}
 	final void ConfigurePositionXInertiaModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier) modifiers)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).abi_ConfigurePositionXInertiaModifiers(modifiers));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).abi_ConfigurePositionXInertiaModifiers(modifiers));
 	}
 	final void ConfigurePositionYInertiaModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier) modifiers)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).abi_ConfigurePositionYInertiaModifiers(modifiers));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).abi_ConfigurePositionYInertiaModifiers(modifiers));
 	}
 	final void ConfigureScaleInertiaModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.InteractionTrackerInertiaModifier) modifiers)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).abi_ConfigureScaleInertiaModifiers(modifiers));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).abi_ConfigureScaleInertiaModifiers(modifiers));
 	}
 	final INT32 TryUpdatePosition(Windows.Foundation.Numerics.Vector3 value)
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).abi_TryUpdatePosition(value, &_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).abi_TryUpdatePosition(value, &_ret));
 		return _ret;
 	}
 	final INT32 TryUpdatePositionBy(Windows.Foundation.Numerics.Vector3 amount)
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).abi_TryUpdatePositionBy(amount, &_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).abi_TryUpdatePositionBy(amount, &_ret));
 		return _ret;
 	}
 	final INT32 TryUpdatePositionWithAnimation(Windows.UI.Composition.CompositionAnimation animation)
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).abi_TryUpdatePositionWithAnimation(animation, &_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).abi_TryUpdatePositionWithAnimation(animation, &_ret));
 		return _ret;
 	}
 	final INT32 TryUpdatePositionWithAdditionalVelocity(Windows.Foundation.Numerics.Vector3 velocityInPixelsPerSecond)
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).abi_TryUpdatePositionWithAdditionalVelocity(velocityInPixelsPerSecond, &_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).abi_TryUpdatePositionWithAdditionalVelocity(velocityInPixelsPerSecond, &_ret));
 		return _ret;
 	}
 	final INT32 TryUpdateScale(float value, Windows.Foundation.Numerics.Vector3 centerPoint)
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).abi_TryUpdateScale(value, centerPoint, &_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).abi_TryUpdateScale(value, centerPoint, &_ret));
 		return _ret;
 	}
 	final INT32 TryUpdateScaleWithAnimation(Windows.UI.Composition.CompositionAnimation animation, Windows.Foundation.Numerics.Vector3 centerPoint)
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).abi_TryUpdateScaleWithAnimation(animation, centerPoint, &_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).abi_TryUpdateScaleWithAnimation(animation, centerPoint, &_ret));
 		return _ret;
 	}
 	final INT32 TryUpdateScaleWithAdditionalVelocity(float velocityInPercentPerSecond, Windows.Foundation.Numerics.Vector3 centerPoint)
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker).abi_TryUpdateScaleWithAdditionalVelocity(velocityInPercentPerSecond, centerPoint, &_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker)this.asInterface(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308"))).abi_TryUpdateScaleWithAdditionalVelocity(velocityInPercentPerSecond, centerPoint, &_ret));
 		return _ret;
 	}
 	final void ConfigureCenterPointXInertiaModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker2).abi_ConfigureCenterPointXInertiaModifiers(conditionalValues));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker2)this.asInterface(uuid("25769a3e-ce6d-448c-8386-92620d240756"))).abi_ConfigureCenterPointXInertiaModifiers(conditionalValues));
 	}
 	final void ConfigureCenterPointYInertiaModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTracker2).abi_ConfigureCenterPointYInertiaModifiers(conditionalValues));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTracker2)this.asInterface(uuid("25769a3e-ce6d-448c-8386-92620d240756"))).abi_ConfigureCenterPointYInertiaModifiers(conditionalValues));
 	}
 
 	private static Windows.UI.Composition.Interactions.IInteractionTrackerStatics _staticInstance;
@@ -537,13 +537,13 @@ extern(Windows):
 	static Windows.UI.Composition.Interactions.InteractionTracker Create(Windows.UI.Composition.Compositor compositor)
 	{
 		Windows.UI.Composition.Interactions.InteractionTracker _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Composition.Interactions.IInteractionTrackerStatics).abi_Create(compositor, &_ret));
+		Debug.OK(staticInstance.abi_Create(compositor, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Composition.Interactions.InteractionTracker CreateWithOwner(Windows.UI.Composition.Compositor compositor, Windows.UI.Composition.Interactions.IInteractionTrackerOwner owner)
 	{
 		Windows.UI.Composition.Interactions.InteractionTracker _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Composition.Interactions.IInteractionTrackerStatics).abi_CreateWithOwner(compositor, owner, &_ret));
+		Debug.OK(staticInstance.abi_CreateWithOwner(compositor, owner, &_ret));
 		return _ret;
 	}
 }
@@ -554,7 +554,7 @@ extern(Windows):
 	final INT32 RequestId()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerCustomAnimationStateEnteredArgs).get_RequestId(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTrackerCustomAnimationStateEnteredArgs)this.asInterface(uuid("8d1c8cf1-d7b0-434c-a5d2-2d7611864834"))).get_RequestId(&_ret));
 		return _ret;
 	}
 }
@@ -565,7 +565,7 @@ extern(Windows):
 	final INT32 RequestId()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerIdleStateEnteredArgs).get_RequestId(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTrackerIdleStateEnteredArgs)this.asInterface(uuid("50012faa-1510-4142-a1a5-019b09f8857b"))).get_RequestId(&_ret));
 		return _ret;
 	}
 }
@@ -594,22 +594,22 @@ extern(Windows):
 	final Windows.UI.Composition.ExpressionAnimation Condition()
 	{
 		Windows.UI.Composition.ExpressionAnimation _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaMotion).get_Condition(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaMotion)this.asInterface(uuid("04922fdc-f154-4cb8-bf33-cc1ba611e6db"))).get_Condition(&_ret));
 		return _ret;
 	}
 	final void Condition(Windows.UI.Composition.ExpressionAnimation value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaMotion).set_Condition(value));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaMotion)this.asInterface(uuid("04922fdc-f154-4cb8-bf33-cc1ba611e6db"))).set_Condition(value));
 	}
 	final Windows.UI.Composition.ExpressionAnimation Motion()
 	{
 		Windows.UI.Composition.ExpressionAnimation _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaMotion).get_Motion(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaMotion)this.asInterface(uuid("04922fdc-f154-4cb8-bf33-cc1ba611e6db"))).get_Motion(&_ret));
 		return _ret;
 	}
 	final void Motion(Windows.UI.Composition.ExpressionAnimation value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaMotion).set_Motion(value));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaMotion)this.asInterface(uuid("04922fdc-f154-4cb8-bf33-cc1ba611e6db"))).set_Motion(value));
 	}
 
 	private static Windows.UI.Composition.Interactions.IInteractionTrackerInertiaMotionStatics _staticInstance;
@@ -621,7 +621,7 @@ extern(Windows):
 	static Windows.UI.Composition.Interactions.InteractionTrackerInertiaMotion Create(Windows.UI.Composition.Compositor compositor)
 	{
 		Windows.UI.Composition.Interactions.InteractionTrackerInertiaMotion _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaMotionStatics).abi_Create(compositor, &_ret));
+		Debug.OK(staticInstance.abi_Create(compositor, &_ret));
 		return _ret;
 	}
 }
@@ -632,22 +632,22 @@ extern(Windows):
 	final Windows.UI.Composition.ExpressionAnimation Condition()
 	{
 		Windows.UI.Composition.ExpressionAnimation _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaRestingValue).get_Condition(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaRestingValue)this.asInterface(uuid("86f7ec09-5096-4170-9cc8-df2fe101bb93"))).get_Condition(&_ret));
 		return _ret;
 	}
 	final void Condition(Windows.UI.Composition.ExpressionAnimation value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaRestingValue).set_Condition(value));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaRestingValue)this.asInterface(uuid("86f7ec09-5096-4170-9cc8-df2fe101bb93"))).set_Condition(value));
 	}
 	final Windows.UI.Composition.ExpressionAnimation RestingValue()
 	{
 		Windows.UI.Composition.ExpressionAnimation _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaRestingValue).get_RestingValue(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaRestingValue)this.asInterface(uuid("86f7ec09-5096-4170-9cc8-df2fe101bb93"))).get_RestingValue(&_ret));
 		return _ret;
 	}
 	final void RestingValue(Windows.UI.Composition.ExpressionAnimation value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaRestingValue).set_RestingValue(value));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaRestingValue)this.asInterface(uuid("86f7ec09-5096-4170-9cc8-df2fe101bb93"))).set_RestingValue(value));
 	}
 
 	private static Windows.UI.Composition.Interactions.IInteractionTrackerInertiaRestingValueStatics _staticInstance;
@@ -659,7 +659,7 @@ extern(Windows):
 	static Windows.UI.Composition.Interactions.InteractionTrackerInertiaRestingValue Create(Windows.UI.Composition.Compositor compositor)
 	{
 		Windows.UI.Composition.Interactions.InteractionTrackerInertiaRestingValue _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaRestingValueStatics).abi_Create(compositor, &_ret));
+		Debug.OK(staticInstance.abi_Create(compositor, &_ret));
 		return _ret;
 	}
 }
@@ -670,43 +670,43 @@ extern(Windows):
 	final Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3) ModifiedRestingPosition()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.Numerics.Vector3) _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaStateEnteredArgs).get_ModifiedRestingPosition(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaStateEnteredArgs)this.asInterface(uuid("87108cf2-e7ff-4f7d-9ffd-d72f1e409b63"))).get_ModifiedRestingPosition(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(float) ModifiedRestingScale()
 	{
 		Windows.Foundation.IReference!(float) _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaStateEnteredArgs).get_ModifiedRestingScale(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaStateEnteredArgs)this.asInterface(uuid("87108cf2-e7ff-4f7d-9ffd-d72f1e409b63"))).get_ModifiedRestingScale(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Numerics.Vector3 NaturalRestingPosition()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaStateEnteredArgs).get_NaturalRestingPosition(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaStateEnteredArgs)this.asInterface(uuid("87108cf2-e7ff-4f7d-9ffd-d72f1e409b63"))).get_NaturalRestingPosition(&_ret));
 		return _ret;
 	}
 	final float NaturalRestingScale()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaStateEnteredArgs).get_NaturalRestingScale(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaStateEnteredArgs)this.asInterface(uuid("87108cf2-e7ff-4f7d-9ffd-d72f1e409b63"))).get_NaturalRestingScale(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Numerics.Vector3 PositionVelocityInPixelsPerSecond()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaStateEnteredArgs).get_PositionVelocityInPixelsPerSecond(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaStateEnteredArgs)this.asInterface(uuid("87108cf2-e7ff-4f7d-9ffd-d72f1e409b63"))).get_PositionVelocityInPixelsPerSecond(&_ret));
 		return _ret;
 	}
 	final INT32 RequestId()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaStateEnteredArgs).get_RequestId(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaStateEnteredArgs)this.asInterface(uuid("87108cf2-e7ff-4f7d-9ffd-d72f1e409b63"))).get_RequestId(&_ret));
 		return _ret;
 	}
 	final float ScaleVelocityInPercentPerSecond()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaStateEnteredArgs).get_ScaleVelocityInPercentPerSecond(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTrackerInertiaStateEnteredArgs)this.asInterface(uuid("87108cf2-e7ff-4f7d-9ffd-d72f1e409b63"))).get_ScaleVelocityInPercentPerSecond(&_ret));
 		return _ret;
 	}
 }
@@ -717,7 +717,7 @@ extern(Windows):
 	final INT32 RequestId()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerInteractingStateEnteredArgs).get_RequestId(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTrackerInteractingStateEnteredArgs)this.asInterface(uuid("a7263939-a17b-4011-99fd-b5c24f143748"))).get_RequestId(&_ret));
 		return _ret;
 	}
 }
@@ -728,7 +728,7 @@ extern(Windows):
 	final INT32 RequestId()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerRequestIgnoredArgs).get_RequestId(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTrackerRequestIgnoredArgs)this.asInterface(uuid("80dd82f1-ce25-488f-91dd-cb6455ccff2e"))).get_RequestId(&_ret));
 		return _ret;
 	}
 }
@@ -739,19 +739,19 @@ extern(Windows):
 	final Windows.Foundation.Numerics.Vector3 Position()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerValuesChangedArgs).get_Position(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTrackerValuesChangedArgs)this.asInterface(uuid("cf1578ef-d3df-4501-b9e6-f02fb22f73d0"))).get_Position(&_ret));
 		return _ret;
 	}
 	final INT32 RequestId()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerValuesChangedArgs).get_RequestId(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTrackerValuesChangedArgs)this.asInterface(uuid("cf1578ef-d3df-4501-b9e6-f02fb22f73d0"))).get_RequestId(&_ret));
 		return _ret;
 	}
 	final float Scale()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IInteractionTrackerValuesChangedArgs).get_Scale(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IInteractionTrackerValuesChangedArgs)this.asInterface(uuid("cf1578ef-d3df-4501-b9e6-f02fb22f73d0"))).get_Scale(&_ret));
 		return _ret;
 	}
 }
@@ -762,158 +762,158 @@ extern(Windows):
 	final bool IsPositionXRailsEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_IsPositionXRailsEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)this.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).get_IsPositionXRailsEnabled(&_ret));
 		return _ret;
 	}
 	final void IsPositionXRailsEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_IsPositionXRailsEnabled(value));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)this.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).set_IsPositionXRailsEnabled(value));
 	}
 	final bool IsPositionYRailsEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_IsPositionYRailsEnabled(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)this.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).get_IsPositionYRailsEnabled(&_ret));
 		return _ret;
 	}
 	final void IsPositionYRailsEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_IsPositionYRailsEnabled(value));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)this.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).set_IsPositionYRailsEnabled(value));
 	}
 	final Windows.UI.Composition.Interactions.VisualInteractionSourceRedirectionMode ManipulationRedirectionMode()
 	{
 		Windows.UI.Composition.Interactions.VisualInteractionSourceRedirectionMode _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_ManipulationRedirectionMode(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)this.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).get_ManipulationRedirectionMode(&_ret));
 		return _ret;
 	}
 	final void ManipulationRedirectionMode(Windows.UI.Composition.Interactions.VisualInteractionSourceRedirectionMode value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_ManipulationRedirectionMode(value));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)this.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).set_ManipulationRedirectionMode(value));
 	}
 	final Windows.UI.Composition.Interactions.InteractionChainingMode PositionXChainingMode()
 	{
 		Windows.UI.Composition.Interactions.InteractionChainingMode _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_PositionXChainingMode(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)this.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).get_PositionXChainingMode(&_ret));
 		return _ret;
 	}
 	final void PositionXChainingMode(Windows.UI.Composition.Interactions.InteractionChainingMode value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_PositionXChainingMode(value));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)this.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).set_PositionXChainingMode(value));
 	}
 	final Windows.UI.Composition.Interactions.InteractionSourceMode PositionXSourceMode()
 	{
 		Windows.UI.Composition.Interactions.InteractionSourceMode _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_PositionXSourceMode(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)this.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).get_PositionXSourceMode(&_ret));
 		return _ret;
 	}
 	final void PositionXSourceMode(Windows.UI.Composition.Interactions.InteractionSourceMode value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_PositionXSourceMode(value));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)this.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).set_PositionXSourceMode(value));
 	}
 	final Windows.UI.Composition.Interactions.InteractionChainingMode PositionYChainingMode()
 	{
 		Windows.UI.Composition.Interactions.InteractionChainingMode _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_PositionYChainingMode(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)this.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).get_PositionYChainingMode(&_ret));
 		return _ret;
 	}
 	final void PositionYChainingMode(Windows.UI.Composition.Interactions.InteractionChainingMode value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_PositionYChainingMode(value));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)this.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).set_PositionYChainingMode(value));
 	}
 	final Windows.UI.Composition.Interactions.InteractionSourceMode PositionYSourceMode()
 	{
 		Windows.UI.Composition.Interactions.InteractionSourceMode _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_PositionYSourceMode(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)this.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).get_PositionYSourceMode(&_ret));
 		return _ret;
 	}
 	final void PositionYSourceMode(Windows.UI.Composition.Interactions.InteractionSourceMode value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_PositionYSourceMode(value));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)this.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).set_PositionYSourceMode(value));
 	}
 	final Windows.UI.Composition.Interactions.InteractionChainingMode ScaleChainingMode()
 	{
 		Windows.UI.Composition.Interactions.InteractionChainingMode _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_ScaleChainingMode(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)this.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).get_ScaleChainingMode(&_ret));
 		return _ret;
 	}
 	final void ScaleChainingMode(Windows.UI.Composition.Interactions.InteractionChainingMode value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_ScaleChainingMode(value));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)this.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).set_ScaleChainingMode(value));
 	}
 	final Windows.UI.Composition.Interactions.InteractionSourceMode ScaleSourceMode()
 	{
 		Windows.UI.Composition.Interactions.InteractionSourceMode _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_ScaleSourceMode(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)this.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).get_ScaleSourceMode(&_ret));
 		return _ret;
 	}
 	final void ScaleSourceMode(Windows.UI.Composition.Interactions.InteractionSourceMode value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_ScaleSourceMode(value));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)this.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).set_ScaleSourceMode(value));
 	}
 	final Windows.UI.Composition.Visual Source()
 	{
 		Windows.UI.Composition.Visual _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_Source(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)this.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).get_Source(&_ret));
 		return _ret;
 	}
 	final void TryRedirectForManipulation(Windows.UI.Input.PointerPoint pointerPoint)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).abi_TryRedirectForManipulation(pointerPoint));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)this.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).abi_TryRedirectForManipulation(pointerPoint));
 	}
 	final Windows.Foundation.Numerics.Vector3 DeltaPosition()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).get_DeltaPosition(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource2)this.asInterface(uuid("aa914893-a73c-414d-80d0-249bad2fbd93"))).get_DeltaPosition(&_ret));
 		return _ret;
 	}
 	final float DeltaScale()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).get_DeltaScale(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource2)this.asInterface(uuid("aa914893-a73c-414d-80d0-249bad2fbd93"))).get_DeltaScale(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Numerics.Vector3 Position()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).get_Position(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource2)this.asInterface(uuid("aa914893-a73c-414d-80d0-249bad2fbd93"))).get_Position(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Numerics.Vector3 PositionVelocity()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).get_PositionVelocity(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource2)this.asInterface(uuid("aa914893-a73c-414d-80d0-249bad2fbd93"))).get_PositionVelocity(&_ret));
 		return _ret;
 	}
 	final float Scale()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).get_Scale(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource2)this.asInterface(uuid("aa914893-a73c-414d-80d0-249bad2fbd93"))).get_Scale(&_ret));
 		return _ret;
 	}
 	final float ScaleVelocity()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).get_ScaleVelocity(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource2)this.asInterface(uuid("aa914893-a73c-414d-80d0-249bad2fbd93"))).get_ScaleVelocity(&_ret));
 		return _ret;
 	}
 	final void ConfigureCenterPointXModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).abi_ConfigureCenterPointXModifiers(conditionalValues));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource2)this.asInterface(uuid("aa914893-a73c-414d-80d0-249bad2fbd93"))).abi_ConfigureCenterPointXModifiers(conditionalValues));
 	}
 	final void ConfigureCenterPointYModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).abi_ConfigureCenterPointYModifiers(conditionalValues));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource2)this.asInterface(uuid("aa914893-a73c-414d-80d0-249bad2fbd93"))).abi_ConfigureCenterPointYModifiers(conditionalValues));
 	}
 	final void ConfigureDeltaPositionXModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).abi_ConfigureDeltaPositionXModifiers(conditionalValues));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource2)this.asInterface(uuid("aa914893-a73c-414d-80d0-249bad2fbd93"))).abi_ConfigureDeltaPositionXModifiers(conditionalValues));
 	}
 	final void ConfigureDeltaPositionYModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).abi_ConfigureDeltaPositionYModifiers(conditionalValues));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource2)this.asInterface(uuid("aa914893-a73c-414d-80d0-249bad2fbd93"))).abi_ConfigureDeltaPositionYModifiers(conditionalValues));
 	}
 	final void ConfigureDeltaScaleModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).abi_ConfigureDeltaScaleModifiers(conditionalValues));
+		Debug.OK((cast(Windows.UI.Composition.Interactions.IVisualInteractionSource2)this.asInterface(uuid("aa914893-a73c-414d-80d0-249bad2fbd93"))).abi_ConfigureDeltaScaleModifiers(conditionalValues));
 	}
 
 	private static Windows.UI.Composition.Interactions.IVisualInteractionSourceStatics _staticInstance;
@@ -925,7 +925,7 @@ extern(Windows):
 	static Windows.UI.Composition.Interactions.VisualInteractionSource Create(Windows.UI.Composition.Visual source)
 	{
 		Windows.UI.Composition.Interactions.VisualInteractionSource _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Composition.Interactions.IVisualInteractionSourceStatics).abi_Create(source, &_ret));
+		Debug.OK(staticInstance.abi_Create(source, &_ret));
 		return _ret;
 	}
 }
@@ -939,39 +939,39 @@ class VisualInteractionSourceT(Base) : AgileObject!Base, VisualInteractionSource
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_IsPositionXRailsEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_IsPositionXRailsEnabled(return_value); }
-	override HRESULT set_IsPositionXRailsEnabled(bool value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_IsPositionXRailsEnabled(value); }
-	override HRESULT get_IsPositionYRailsEnabled(bool* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_IsPositionYRailsEnabled(return_value); }
-	override HRESULT set_IsPositionYRailsEnabled(bool value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_IsPositionYRailsEnabled(value); }
-	override HRESULT get_ManipulationRedirectionMode(Windows.UI.Composition.Interactions.VisualInteractionSourceRedirectionMode* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_ManipulationRedirectionMode(return_value); }
-	override HRESULT set_ManipulationRedirectionMode(Windows.UI.Composition.Interactions.VisualInteractionSourceRedirectionMode value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_ManipulationRedirectionMode(value); }
-	override HRESULT get_PositionXChainingMode(Windows.UI.Composition.Interactions.InteractionChainingMode* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_PositionXChainingMode(return_value); }
-	override HRESULT set_PositionXChainingMode(Windows.UI.Composition.Interactions.InteractionChainingMode value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_PositionXChainingMode(value); }
-	override HRESULT get_PositionXSourceMode(Windows.UI.Composition.Interactions.InteractionSourceMode* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_PositionXSourceMode(return_value); }
-	override HRESULT set_PositionXSourceMode(Windows.UI.Composition.Interactions.InteractionSourceMode value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_PositionXSourceMode(value); }
-	override HRESULT get_PositionYChainingMode(Windows.UI.Composition.Interactions.InteractionChainingMode* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_PositionYChainingMode(return_value); }
-	override HRESULT set_PositionYChainingMode(Windows.UI.Composition.Interactions.InteractionChainingMode value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_PositionYChainingMode(value); }
-	override HRESULT get_PositionYSourceMode(Windows.UI.Composition.Interactions.InteractionSourceMode* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_PositionYSourceMode(return_value); }
-	override HRESULT set_PositionYSourceMode(Windows.UI.Composition.Interactions.InteractionSourceMode value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_PositionYSourceMode(value); }
-	override HRESULT get_ScaleChainingMode(Windows.UI.Composition.Interactions.InteractionChainingMode* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_ScaleChainingMode(return_value); }
-	override HRESULT set_ScaleChainingMode(Windows.UI.Composition.Interactions.InteractionChainingMode value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_ScaleChainingMode(value); }
-	override HRESULT get_ScaleSourceMode(Windows.UI.Composition.Interactions.InteractionSourceMode* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_ScaleSourceMode(return_value); }
-	override HRESULT set_ScaleSourceMode(Windows.UI.Composition.Interactions.InteractionSourceMode value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).set_ScaleSourceMode(value); }
-	override HRESULT get_Source(Windows.UI.Composition.Visual* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).get_Source(return_value); }
-	override HRESULT abi_TryRedirectForManipulation(Windows.UI.Input.PointerPoint pointerPoint) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource).abi_TryRedirectForManipulation(pointerPoint); }
+	override HRESULT get_IsPositionXRailsEnabled(bool* return_value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)m_inner.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).get_IsPositionXRailsEnabled(return_value); }
+	override HRESULT set_IsPositionXRailsEnabled(bool value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)m_inner.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).set_IsPositionXRailsEnabled(value); }
+	override HRESULT get_IsPositionYRailsEnabled(bool* return_value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)m_inner.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).get_IsPositionYRailsEnabled(return_value); }
+	override HRESULT set_IsPositionYRailsEnabled(bool value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)m_inner.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).set_IsPositionYRailsEnabled(value); }
+	override HRESULT get_ManipulationRedirectionMode(Windows.UI.Composition.Interactions.VisualInteractionSourceRedirectionMode* return_value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)m_inner.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).get_ManipulationRedirectionMode(return_value); }
+	override HRESULT set_ManipulationRedirectionMode(Windows.UI.Composition.Interactions.VisualInteractionSourceRedirectionMode value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)m_inner.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).set_ManipulationRedirectionMode(value); }
+	override HRESULT get_PositionXChainingMode(Windows.UI.Composition.Interactions.InteractionChainingMode* return_value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)m_inner.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).get_PositionXChainingMode(return_value); }
+	override HRESULT set_PositionXChainingMode(Windows.UI.Composition.Interactions.InteractionChainingMode value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)m_inner.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).set_PositionXChainingMode(value); }
+	override HRESULT get_PositionXSourceMode(Windows.UI.Composition.Interactions.InteractionSourceMode* return_value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)m_inner.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).get_PositionXSourceMode(return_value); }
+	override HRESULT set_PositionXSourceMode(Windows.UI.Composition.Interactions.InteractionSourceMode value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)m_inner.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).set_PositionXSourceMode(value); }
+	override HRESULT get_PositionYChainingMode(Windows.UI.Composition.Interactions.InteractionChainingMode* return_value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)m_inner.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).get_PositionYChainingMode(return_value); }
+	override HRESULT set_PositionYChainingMode(Windows.UI.Composition.Interactions.InteractionChainingMode value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)m_inner.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).set_PositionYChainingMode(value); }
+	override HRESULT get_PositionYSourceMode(Windows.UI.Composition.Interactions.InteractionSourceMode* return_value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)m_inner.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).get_PositionYSourceMode(return_value); }
+	override HRESULT set_PositionYSourceMode(Windows.UI.Composition.Interactions.InteractionSourceMode value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)m_inner.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).set_PositionYSourceMode(value); }
+	override HRESULT get_ScaleChainingMode(Windows.UI.Composition.Interactions.InteractionChainingMode* return_value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)m_inner.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).get_ScaleChainingMode(return_value); }
+	override HRESULT set_ScaleChainingMode(Windows.UI.Composition.Interactions.InteractionChainingMode value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)m_inner.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).set_ScaleChainingMode(value); }
+	override HRESULT get_ScaleSourceMode(Windows.UI.Composition.Interactions.InteractionSourceMode* return_value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)m_inner.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).get_ScaleSourceMode(return_value); }
+	override HRESULT set_ScaleSourceMode(Windows.UI.Composition.Interactions.InteractionSourceMode value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)m_inner.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).set_ScaleSourceMode(value); }
+	override HRESULT get_Source(Windows.UI.Composition.Visual* return_value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)m_inner.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).get_Source(return_value); }
+	override HRESULT abi_TryRedirectForManipulation(Windows.UI.Input.PointerPoint pointerPoint) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource)m_inner.asInterface(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed"))).abi_TryRedirectForManipulation(pointerPoint); }
 
 
-	override HRESULT get_DeltaPosition(Windows.Foundation.Numerics.Vector3* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).get_DeltaPosition(return_value); }
-	override HRESULT get_DeltaScale(float* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).get_DeltaScale(return_value); }
-	override HRESULT get_Position(Windows.Foundation.Numerics.Vector3* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).get_Position(return_value); }
-	override HRESULT get_PositionVelocity(Windows.Foundation.Numerics.Vector3* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).get_PositionVelocity(return_value); }
-	override HRESULT get_Scale(float* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).get_Scale(return_value); }
-	override HRESULT get_ScaleVelocity(float* return_value) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).get_ScaleVelocity(return_value); }
-	override HRESULT abi_ConfigureCenterPointXModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).abi_ConfigureCenterPointXModifiers(conditionalValues); }
-	override HRESULT abi_ConfigureCenterPointYModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).abi_ConfigureCenterPointYModifiers(conditionalValues); }
-	override HRESULT abi_ConfigureDeltaPositionXModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).abi_ConfigureDeltaPositionXModifiers(conditionalValues); }
-	override HRESULT abi_ConfigureDeltaPositionYModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).abi_ConfigureDeltaPositionYModifiers(conditionalValues); }
-	override HRESULT abi_ConfigureDeltaScaleModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues) { return m_inner.as!(Windows.UI.Composition.Interactions.IVisualInteractionSource2).abi_ConfigureDeltaScaleModifiers(conditionalValues); }
+	override HRESULT get_DeltaPosition(Windows.Foundation.Numerics.Vector3* return_value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource2)m_inner.asInterface(uuid("aa914893-a73c-414d-80d0-249bad2fbd93"))).get_DeltaPosition(return_value); }
+	override HRESULT get_DeltaScale(float* return_value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource2)m_inner.asInterface(uuid("aa914893-a73c-414d-80d0-249bad2fbd93"))).get_DeltaScale(return_value); }
+	override HRESULT get_Position(Windows.Foundation.Numerics.Vector3* return_value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource2)m_inner.asInterface(uuid("aa914893-a73c-414d-80d0-249bad2fbd93"))).get_Position(return_value); }
+	override HRESULT get_PositionVelocity(Windows.Foundation.Numerics.Vector3* return_value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource2)m_inner.asInterface(uuid("aa914893-a73c-414d-80d0-249bad2fbd93"))).get_PositionVelocity(return_value); }
+	override HRESULT get_Scale(float* return_value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource2)m_inner.asInterface(uuid("aa914893-a73c-414d-80d0-249bad2fbd93"))).get_Scale(return_value); }
+	override HRESULT get_ScaleVelocity(float* return_value) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource2)m_inner.asInterface(uuid("aa914893-a73c-414d-80d0-249bad2fbd93"))).get_ScaleVelocity(return_value); }
+	override HRESULT abi_ConfigureCenterPointXModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource2)m_inner.asInterface(uuid("aa914893-a73c-414d-80d0-249bad2fbd93"))).abi_ConfigureCenterPointXModifiers(conditionalValues); }
+	override HRESULT abi_ConfigureCenterPointYModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource2)m_inner.asInterface(uuid("aa914893-a73c-414d-80d0-249bad2fbd93"))).abi_ConfigureCenterPointYModifiers(conditionalValues); }
+	override HRESULT abi_ConfigureDeltaPositionXModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource2)m_inner.asInterface(uuid("aa914893-a73c-414d-80d0-249bad2fbd93"))).abi_ConfigureDeltaPositionXModifiers(conditionalValues); }
+	override HRESULT abi_ConfigureDeltaPositionYModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource2)m_inner.asInterface(uuid("aa914893-a73c-414d-80d0-249bad2fbd93"))).abi_ConfigureDeltaPositionYModifiers(conditionalValues); }
+	override HRESULT abi_ConfigureDeltaScaleModifiers(Windows.Foundation.Collections.IIterable!(Windows.UI.Composition.Interactions.CompositionConditionalValue) conditionalValues) { return (cast(Windows.UI.Composition.Interactions.IVisualInteractionSource2)m_inner.asInterface(uuid("aa914893-a73c-414d-80d0-249bad2fbd93"))).abi_ConfigureDeltaScaleModifiers(conditionalValues); }
 
 	this() {}
 	IInspectable m_inner;

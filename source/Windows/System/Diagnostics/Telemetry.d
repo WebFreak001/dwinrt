@@ -41,13 +41,13 @@ interface PlatformTelemetryClient
 	static Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationResult Register(HSTRING id)
 	{
 		Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationResult _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.Telemetry.IPlatformTelemetryClientStatics).abi_Register(id, &_ret));
+		Debug.OK(staticInstance.abi_Register(id, &_ret));
 		return _ret;
 	}
 	static Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationResult RegisterWithSettings(HSTRING id, Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationSettings settings)
 	{
 		Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationResult _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Diagnostics.Telemetry.IPlatformTelemetryClientStatics).abi_RegisterWithSettings(id, settings, &_ret));
+		Debug.OK(staticInstance.abi_RegisterWithSettings(id, settings, &_ret));
 		return _ret;
 	}
 }
@@ -58,7 +58,7 @@ extern(Windows):
 	final Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationStatus Status()
 	{
 		Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationStatus _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.Telemetry.IPlatformTelemetryRegistrationResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.Telemetry.IPlatformTelemetryRegistrationResult)this.asInterface(uuid("4d8518ab-2292-49bd-a15a-3d71d2145112"))).get_Status(&_ret));
 		return _ret;
 	}
 }
@@ -69,28 +69,28 @@ extern(Windows):
 	final UINT32 StorageSize()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.Telemetry.IPlatformTelemetryRegistrationSettings).get_StorageSize(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.Telemetry.IPlatformTelemetryRegistrationSettings)this.asInterface(uuid("819a8582-ca19-415e-bb79-9c224bfa3a73"))).get_StorageSize(&_ret));
 		return _ret;
 	}
 	final void StorageSize(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.System.Diagnostics.Telemetry.IPlatformTelemetryRegistrationSettings).set_StorageSize(value));
+		Debug.OK((cast(Windows.System.Diagnostics.Telemetry.IPlatformTelemetryRegistrationSettings)this.asInterface(uuid("819a8582-ca19-415e-bb79-9c224bfa3a73"))).set_StorageSize(value));
 	}
 	final UINT32 UploadQuotaSize()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.System.Diagnostics.Telemetry.IPlatformTelemetryRegistrationSettings).get_UploadQuotaSize(&_ret));
+		Debug.OK((cast(Windows.System.Diagnostics.Telemetry.IPlatformTelemetryRegistrationSettings)this.asInterface(uuid("819a8582-ca19-415e-bb79-9c224bfa3a73"))).get_UploadQuotaSize(&_ret));
 		return _ret;
 	}
 	final void UploadQuotaSize(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.System.Diagnostics.Telemetry.IPlatformTelemetryRegistrationSettings).set_UploadQuotaSize(value));
+		Debug.OK((cast(Windows.System.Diagnostics.Telemetry.IPlatformTelemetryRegistrationSettings)this.asInterface(uuid("819a8582-ca19-415e-bb79-9c224bfa3a73"))).set_UploadQuotaSize(value));
 	}
 	static PlatformTelemetryRegistrationSettings New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PlatformTelemetryRegistrationSettings).abi_ActivateInstance(&ret));
-		return ret.as!(PlatformTelemetryRegistrationSettings);
+		return cast(PlatformTelemetryRegistrationSettings) ret;
 	}
 }
 

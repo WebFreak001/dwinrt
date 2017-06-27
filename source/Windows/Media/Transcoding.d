@@ -49,97 +49,97 @@ interface MediaTranscoder : Windows.Media.Transcoding.IMediaTranscoder, Windows.
 extern(Windows):
 	final void TrimStartTime(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).set_TrimStartTime(value));
+		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).set_TrimStartTime(value));
 	}
 	final Windows.Foundation.TimeSpan TrimStartTime()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).get_TrimStartTime(&_ret));
+		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).get_TrimStartTime(&_ret));
 		return _ret;
 	}
 	final void TrimStopTime(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).set_TrimStopTime(value));
+		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).set_TrimStopTime(value));
 	}
 	final Windows.Foundation.TimeSpan TrimStopTime()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).get_TrimStopTime(&_ret));
+		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).get_TrimStopTime(&_ret));
 		return _ret;
 	}
 	final void AlwaysReencode(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).set_AlwaysReencode(value));
+		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).set_AlwaysReencode(value));
 	}
 	final bool AlwaysReencode()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).get_AlwaysReencode(&_ret));
+		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).get_AlwaysReencode(&_ret));
 		return _ret;
 	}
 	final void HardwareAccelerationEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).set_HardwareAccelerationEnabled(value));
+		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).set_HardwareAccelerationEnabled(value));
 	}
 	final bool HardwareAccelerationEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).get_HardwareAccelerationEnabled(&_ret));
+		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).get_HardwareAccelerationEnabled(&_ret));
 		return _ret;
 	}
 	final void AddAudioEffect(HSTRING activatableClassId)
 	{
-		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).abi_AddAudioEffect(activatableClassId));
+		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).abi_AddAudioEffect(activatableClassId));
 	}
 	final void AddAudioEffectWithSettings(HSTRING activatableClassId, bool effectRequired, Windows.Foundation.Collections.IPropertySet configuration)
 	{
-		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).abi_AddAudioEffectWithSettings(activatableClassId, effectRequired, configuration));
+		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).abi_AddAudioEffectWithSettings(activatableClassId, effectRequired, configuration));
 	}
 	final void AddVideoEffect(HSTRING activatableClassId)
 	{
-		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).abi_AddVideoEffect(activatableClassId));
+		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).abi_AddVideoEffect(activatableClassId));
 	}
 	final void AddVideoEffectWithSettings(HSTRING activatableClassId, bool effectRequired, Windows.Foundation.Collections.IPropertySet configuration)
 	{
-		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).abi_AddVideoEffectWithSettings(activatableClassId, effectRequired, configuration));
+		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).abi_AddVideoEffectWithSettings(activatableClassId, effectRequired, configuration));
 	}
 	final void ClearEffects()
 	{
-		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).abi_ClearEffects());
+		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).abi_ClearEffects());
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Transcoding.PrepareTranscodeResult) PrepareFileTranscodeAsync(Windows.Storage.IStorageFile source, Windows.Storage.IStorageFile destination, Windows.Media.MediaProperties.MediaEncodingProfile profile)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Transcoding.PrepareTranscodeResult) _ret;
-		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).abi_PrepareFileTranscodeAsync(source, destination, profile, &_ret));
+		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).abi_PrepareFileTranscodeAsync(source, destination, profile, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Transcoding.PrepareTranscodeResult) PrepareStreamTranscodeAsync(Windows.Storage.Streams.IRandomAccessStream source, Windows.Storage.Streams.IRandomAccessStream destination, Windows.Media.MediaProperties.MediaEncodingProfile profile)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Transcoding.PrepareTranscodeResult) _ret;
-		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder).abi_PrepareStreamTranscodeAsync(source, destination, profile, &_ret));
+		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).abi_PrepareStreamTranscodeAsync(source, destination, profile, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Transcoding.PrepareTranscodeResult) PrepareMediaStreamSourceTranscodeAsync(Windows.Media.Core.IMediaSource source, Windows.Storage.Streams.IRandomAccessStream destination, Windows.Media.MediaProperties.MediaEncodingProfile profile)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Transcoding.PrepareTranscodeResult) _ret;
-		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder2).abi_PrepareMediaStreamSourceTranscodeAsync(source, destination, profile, &_ret));
+		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder2)this.asInterface(uuid("40531d74-35e0-4f04-8574-ca8bc4e5a082"))).abi_PrepareMediaStreamSourceTranscodeAsync(source, destination, profile, &_ret));
 		return _ret;
 	}
 	final void VideoProcessingAlgorithm(Windows.Media.Transcoding.MediaVideoProcessingAlgorithm value)
 	{
-		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder2).set_VideoProcessingAlgorithm(value));
+		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder2)this.asInterface(uuid("40531d74-35e0-4f04-8574-ca8bc4e5a082"))).set_VideoProcessingAlgorithm(value));
 	}
 	final Windows.Media.Transcoding.MediaVideoProcessingAlgorithm VideoProcessingAlgorithm()
 	{
 		Windows.Media.Transcoding.MediaVideoProcessingAlgorithm _ret;
-		Debug.OK(this.as!(Windows.Media.Transcoding.IMediaTranscoder2).get_VideoProcessingAlgorithm(&_ret));
+		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder2)this.asInterface(uuid("40531d74-35e0-4f04-8574-ca8bc4e5a082"))).get_VideoProcessingAlgorithm(&_ret));
 		return _ret;
 	}
 	static MediaTranscoder New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MediaTranscoder).abi_ActivateInstance(&ret));
-		return ret.as!(MediaTranscoder);
+		return cast(MediaTranscoder) ret;
 	}
 }
 
@@ -149,19 +149,19 @@ extern(Windows):
 	final bool CanTranscode()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Transcoding.IPrepareTranscodeResult).get_CanTranscode(&_ret));
+		Debug.OK((cast(Windows.Media.Transcoding.IPrepareTranscodeResult)this.asInterface(uuid("05f25dce-994f-4a34-9d68-97ccce1730d6"))).get_CanTranscode(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Transcoding.TranscodeFailureReason FailureReason()
 	{
 		Windows.Media.Transcoding.TranscodeFailureReason _ret;
-		Debug.OK(this.as!(Windows.Media.Transcoding.IPrepareTranscodeResult).get_FailureReason(&_ret));
+		Debug.OK((cast(Windows.Media.Transcoding.IPrepareTranscodeResult)this.asInterface(uuid("05f25dce-994f-4a34-9d68-97ccce1730d6"))).get_FailureReason(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncActionWithProgress!(double) TranscodeAsync()
 	{
 		Windows.Foundation.IAsyncActionWithProgress!(double) _ret;
-		Debug.OK(this.as!(Windows.Media.Transcoding.IPrepareTranscodeResult).abi_TranscodeAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Transcoding.IPrepareTranscodeResult)this.asInterface(uuid("05f25dce-994f-4a34-9d68-97ccce1730d6"))).abi_TranscodeAsync(&_ret));
 		return _ret;
 	}
 }

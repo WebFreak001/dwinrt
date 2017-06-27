@@ -140,13 +140,13 @@ interface AnalyticsInfo
 	static Windows.System.Profile.AnalyticsVersionInfo VersionInfo()
 	{
 		Windows.System.Profile.AnalyticsVersionInfo _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IAnalyticsInfoStatics).get_VersionInfo(&_ret));
+		Debug.OK(staticInstance.get_VersionInfo(&_ret));
 		return _ret;
 	}
 	static HSTRING DeviceForm()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IAnalyticsInfoStatics).get_DeviceForm(&_ret));
+		Debug.OK(staticInstance.get_DeviceForm(&_ret));
 		return _ret;
 	}
 }
@@ -157,13 +157,13 @@ extern(Windows):
 	final HSTRING DeviceFamily()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.System.Profile.IAnalyticsVersionInfo).get_DeviceFamily(&_ret));
+		Debug.OK((cast(Windows.System.Profile.IAnalyticsVersionInfo)this.asInterface(uuid("926130b8-9955-4c74-bdc1-7cd0decf9b03"))).get_DeviceFamily(&_ret));
 		return _ret;
 	}
 	final HSTRING DeviceFamilyVersion()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.System.Profile.IAnalyticsVersionInfo).get_DeviceFamilyVersion(&_ret));
+		Debug.OK((cast(Windows.System.Profile.IAnalyticsVersionInfo)this.asInterface(uuid("926130b8-9955-4c74-bdc1-7cd0decf9b03"))).get_DeviceFamilyVersion(&_ret));
 		return _ret;
 	}
 }
@@ -179,7 +179,7 @@ interface EducationSettings
 	static bool IsEducationEnvironment()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IEducationSettingsStatics).get_IsEducationEnvironment(&_ret));
+		Debug.OK(staticInstance.get_IsEducationEnvironment(&_ret));
 		return _ret;
 	}
 }
@@ -195,7 +195,7 @@ interface HardwareIdentification
 	static Windows.System.Profile.HardwareToken GetPackageSpecificToken(Windows.Storage.Streams.IBuffer nonce)
 	{
 		Windows.System.Profile.HardwareToken _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IHardwareIdentificationStatics).abi_GetPackageSpecificToken(nonce, &_ret));
+		Debug.OK(staticInstance.abi_GetPackageSpecificToken(nonce, &_ret));
 		return _ret;
 	}
 }
@@ -206,19 +206,19 @@ extern(Windows):
 	final Windows.Storage.Streams.IBuffer Id()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.System.Profile.IHardwareToken).get_Id(&_ret));
+		Debug.OK((cast(Windows.System.Profile.IHardwareToken)this.asInterface(uuid("28f6d4c0-fb12-40a4-8167-7f4e03d2724c"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer Signature()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.System.Profile.IHardwareToken).get_Signature(&_ret));
+		Debug.OK((cast(Windows.System.Profile.IHardwareToken)this.asInterface(uuid("28f6d4c0-fb12-40a4-8167-7f4e03d2724c"))).get_Signature(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer Certificate()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.System.Profile.IHardwareToken).get_Certificate(&_ret));
+		Debug.OK((cast(Windows.System.Profile.IHardwareToken)this.asInterface(uuid("28f6d4c0-fb12-40a4-8167-7f4e03d2724c"))).get_Certificate(&_ret));
 		return _ret;
 	}
 }
@@ -234,133 +234,133 @@ interface KnownRetailInfoProperties
 	static HSTRING RetailAccessCode()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IKnownRetailInfoPropertiesStatics).get_RetailAccessCode(&_ret));
+		Debug.OK(staticInstance.get_RetailAccessCode(&_ret));
 		return _ret;
 	}
 	static HSTRING ManufacturerName()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IKnownRetailInfoPropertiesStatics).get_ManufacturerName(&_ret));
+		Debug.OK(staticInstance.get_ManufacturerName(&_ret));
 		return _ret;
 	}
 	static HSTRING ModelName()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IKnownRetailInfoPropertiesStatics).get_ModelName(&_ret));
+		Debug.OK(staticInstance.get_ModelName(&_ret));
 		return _ret;
 	}
 	static HSTRING DisplayModelName()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IKnownRetailInfoPropertiesStatics).get_DisplayModelName(&_ret));
+		Debug.OK(staticInstance.get_DisplayModelName(&_ret));
 		return _ret;
 	}
 	static HSTRING Price()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IKnownRetailInfoPropertiesStatics).get_Price(&_ret));
+		Debug.OK(staticInstance.get_Price(&_ret));
 		return _ret;
 	}
 	static HSTRING IsFeatured()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IKnownRetailInfoPropertiesStatics).get_IsFeatured(&_ret));
+		Debug.OK(staticInstance.get_IsFeatured(&_ret));
 		return _ret;
 	}
 	static HSTRING FormFactor()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IKnownRetailInfoPropertiesStatics).get_FormFactor(&_ret));
+		Debug.OK(staticInstance.get_FormFactor(&_ret));
 		return _ret;
 	}
 	static HSTRING ScreenSize()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IKnownRetailInfoPropertiesStatics).get_ScreenSize(&_ret));
+		Debug.OK(staticInstance.get_ScreenSize(&_ret));
 		return _ret;
 	}
 	static HSTRING Weight()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IKnownRetailInfoPropertiesStatics).get_Weight(&_ret));
+		Debug.OK(staticInstance.get_Weight(&_ret));
 		return _ret;
 	}
 	static HSTRING DisplayDescription()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IKnownRetailInfoPropertiesStatics).get_DisplayDescription(&_ret));
+		Debug.OK(staticInstance.get_DisplayDescription(&_ret));
 		return _ret;
 	}
 	static HSTRING BatteryLifeDescription()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IKnownRetailInfoPropertiesStatics).get_BatteryLifeDescription(&_ret));
+		Debug.OK(staticInstance.get_BatteryLifeDescription(&_ret));
 		return _ret;
 	}
 	static HSTRING ProcessorDescription()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IKnownRetailInfoPropertiesStatics).get_ProcessorDescription(&_ret));
+		Debug.OK(staticInstance.get_ProcessorDescription(&_ret));
 		return _ret;
 	}
 	static HSTRING Memory()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IKnownRetailInfoPropertiesStatics).get_Memory(&_ret));
+		Debug.OK(staticInstance.get_Memory(&_ret));
 		return _ret;
 	}
 	static HSTRING StorageDescription()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IKnownRetailInfoPropertiesStatics).get_StorageDescription(&_ret));
+		Debug.OK(staticInstance.get_StorageDescription(&_ret));
 		return _ret;
 	}
 	static HSTRING GraphicsDescription()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IKnownRetailInfoPropertiesStatics).get_GraphicsDescription(&_ret));
+		Debug.OK(staticInstance.get_GraphicsDescription(&_ret));
 		return _ret;
 	}
 	static HSTRING FrontCameraDescription()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IKnownRetailInfoPropertiesStatics).get_FrontCameraDescription(&_ret));
+		Debug.OK(staticInstance.get_FrontCameraDescription(&_ret));
 		return _ret;
 	}
 	static HSTRING RearCameraDescription()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IKnownRetailInfoPropertiesStatics).get_RearCameraDescription(&_ret));
+		Debug.OK(staticInstance.get_RearCameraDescription(&_ret));
 		return _ret;
 	}
 	static HSTRING HasNfc()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IKnownRetailInfoPropertiesStatics).get_HasNfc(&_ret));
+		Debug.OK(staticInstance.get_HasNfc(&_ret));
 		return _ret;
 	}
 	static HSTRING HasSdSlot()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IKnownRetailInfoPropertiesStatics).get_HasSdSlot(&_ret));
+		Debug.OK(staticInstance.get_HasSdSlot(&_ret));
 		return _ret;
 	}
 	static HSTRING HasOpticalDrive()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IKnownRetailInfoPropertiesStatics).get_HasOpticalDrive(&_ret));
+		Debug.OK(staticInstance.get_HasOpticalDrive(&_ret));
 		return _ret;
 	}
 	static HSTRING IsOfficeInstalled()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IKnownRetailInfoPropertiesStatics).get_IsOfficeInstalled(&_ret));
+		Debug.OK(staticInstance.get_IsOfficeInstalled(&_ret));
 		return _ret;
 	}
 	static HSTRING WindowsEdition()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IKnownRetailInfoPropertiesStatics).get_WindowsEdition(&_ret));
+		Debug.OK(staticInstance.get_WindowsEdition(&_ret));
 		return _ret;
 	}
 }
@@ -376,23 +376,23 @@ interface PlatformDiagnosticsAndUsageDataSettings
 	static Windows.System.Profile.PlatformDataCollectionLevel CollectionLevel()
 	{
 		Windows.System.Profile.PlatformDataCollectionLevel _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IPlatformDiagnosticsAndUsageDataSettingsStatics).get_CollectionLevel(&_ret));
+		Debug.OK(staticInstance.get_CollectionLevel(&_ret));
 		return _ret;
 	}
 	static EventRegistrationToken OnCollectionLevelChanged(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IPlatformDiagnosticsAndUsageDataSettingsStatics).add_CollectionLevelChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_CollectionLevelChanged(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	static void removeCollectionLevelChanged(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IPlatformDiagnosticsAndUsageDataSettingsStatics).remove_CollectionLevelChanged(token));
+		Debug.OK(staticInstance.remove_CollectionLevelChanged(token));
 	}
 	static bool CanCollectDiagnostics(Windows.System.Profile.PlatformDataCollectionLevel level)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IPlatformDiagnosticsAndUsageDataSettingsStatics).abi_CanCollectDiagnostics(level, &_ret));
+		Debug.OK(staticInstance.abi_CanCollectDiagnostics(level, &_ret));
 		return _ret;
 	}
 }
@@ -408,13 +408,13 @@ interface RetailInfo
 	static bool IsDemoModeEnabled()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IRetailInfoStatics).get_IsDemoModeEnabled(&_ret));
+		Debug.OK(staticInstance.get_IsDemoModeEnabled(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) Properties()
 	{
 		Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.IRetailInfoStatics).get_Properties(&_ret));
+		Debug.OK(staticInstance.get_Properties(&_ret));
 		return _ret;
 	}
 }
@@ -430,7 +430,7 @@ interface SharedModeSettings
 	static bool IsEnabled()
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.ISharedModeSettingsStatics).get_IsEnabled(&_ret));
+		Debug.OK(staticInstance.get_IsEnabled(&_ret));
 		return _ret;
 	}
 }
@@ -446,13 +446,13 @@ interface SystemIdentification
 	static Windows.System.Profile.SystemIdentificationInfo GetSystemIdForPublisher()
 	{
 		Windows.System.Profile.SystemIdentificationInfo _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.ISystemIdentificationStatics).abi_GetSystemIdForPublisher(&_ret));
+		Debug.OK(staticInstance.abi_GetSystemIdForPublisher(&_ret));
 		return _ret;
 	}
 	static Windows.System.Profile.SystemIdentificationInfo GetSystemIdForUser(Windows.System.User user)
 	{
 		Windows.System.Profile.SystemIdentificationInfo _ret;
-		Debug.OK(staticInstance.as!(Windows.System.Profile.ISystemIdentificationStatics).abi_GetSystemIdForUser(user, &_ret));
+		Debug.OK(staticInstance.abi_GetSystemIdForUser(user, &_ret));
 		return _ret;
 	}
 }
@@ -463,13 +463,13 @@ extern(Windows):
 	final Windows.Storage.Streams.IBuffer Id()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.System.Profile.ISystemIdentificationInfo).get_Id(&_ret));
+		Debug.OK((cast(Windows.System.Profile.ISystemIdentificationInfo)this.asInterface(uuid("0c659e7d-c3c2-4d33-a2df-21bc41916eb3"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.System.Profile.SystemIdentificationSource Source()
 	{
 		Windows.System.Profile.SystemIdentificationSource _ret;
-		Debug.OK(this.as!(Windows.System.Profile.ISystemIdentificationInfo).get_Source(&_ret));
+		Debug.OK((cast(Windows.System.Profile.ISystemIdentificationInfo)this.asInterface(uuid("0c659e7d-c3c2-4d33-a2df-21bc41916eb3"))).get_Source(&_ret));
 		return _ret;
 	}
 }

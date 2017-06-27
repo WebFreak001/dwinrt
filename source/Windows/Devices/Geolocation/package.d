@@ -296,31 +296,31 @@ extern(Windows):
 	final HSTRING Country()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.ICivicAddress).get_Country(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.ICivicAddress)this.asInterface(uuid("a8567a1a-64f4-4d48-bcea-f6b008eca34c"))).get_Country(&_ret));
 		return _ret;
 	}
 	final HSTRING State()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.ICivicAddress).get_State(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.ICivicAddress)this.asInterface(uuid("a8567a1a-64f4-4d48-bcea-f6b008eca34c"))).get_State(&_ret));
 		return _ret;
 	}
 	final HSTRING City()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.ICivicAddress).get_City(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.ICivicAddress)this.asInterface(uuid("a8567a1a-64f4-4d48-bcea-f6b008eca34c"))).get_City(&_ret));
 		return _ret;
 	}
 	final HSTRING PostalCode()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.ICivicAddress).get_PostalCode(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.ICivicAddress)this.asInterface(uuid("a8567a1a-64f4-4d48-bcea-f6b008eca34c"))).get_PostalCode(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime Timestamp()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.ICivicAddress).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.ICivicAddress)this.asInterface(uuid("a8567a1a-64f4-4d48-bcea-f6b008eca34c"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 }
@@ -331,49 +331,49 @@ extern(Windows):
 	final Windows.Devices.Geolocation.BasicGeoposition NorthwestCorner()
 	{
 		Windows.Devices.Geolocation.BasicGeoposition _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoboundingBox).get_NorthwestCorner(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeoboundingBox)this.asInterface(uuid("0896c80b-274f-43da-9a06-cbfcdaeb4ec2"))).get_NorthwestCorner(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.BasicGeoposition SoutheastCorner()
 	{
 		Windows.Devices.Geolocation.BasicGeoposition _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoboundingBox).get_SoutheastCorner(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeoboundingBox)this.asInterface(uuid("0896c80b-274f-43da-9a06-cbfcdaeb4ec2"))).get_SoutheastCorner(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.BasicGeoposition Center()
 	{
 		Windows.Devices.Geolocation.BasicGeoposition _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoboundingBox).get_Center(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeoboundingBox)this.asInterface(uuid("0896c80b-274f-43da-9a06-cbfcdaeb4ec2"))).get_Center(&_ret));
 		return _ret;
 	}
 	final double MinAltitude()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoboundingBox).get_MinAltitude(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeoboundingBox)this.asInterface(uuid("0896c80b-274f-43da-9a06-cbfcdaeb4ec2"))).get_MinAltitude(&_ret));
 		return _ret;
 	}
 	final double MaxAltitude()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoboundingBox).get_MaxAltitude(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeoboundingBox)this.asInterface(uuid("0896c80b-274f-43da-9a06-cbfcdaeb4ec2"))).get_MaxAltitude(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.GeoshapeType GeoshapeType()
 	{
 		Windows.Devices.Geolocation.GeoshapeType _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_GeoshapeType(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeoshape)this.asInterface(uuid("c99ca2af-c729-43c1-8fab-d6dec914df7e"))).get_GeoshapeType(&_ret));
 		return _ret;
 	}
 	final UINT32 SpatialReferenceId()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_SpatialReferenceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeoshape)this.asInterface(uuid("c99ca2af-c729-43c1-8fab-d6dec914df7e"))).get_SpatialReferenceId(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.AltitudeReferenceSystem AltitudeReferenceSystem()
 	{
 		Windows.Devices.Geolocation.AltitudeReferenceSystem _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_AltitudeReferenceSystem(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeoshape)this.asInterface(uuid("c99ca2af-c729-43c1-8fab-d6dec914df7e"))).get_AltitudeReferenceSystem(&_ret));
 		return _ret;
 	}
 
@@ -386,40 +386,40 @@ extern(Windows):
 	static Windows.Devices.Geolocation.GeoboundingBox TryCompute(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions)
 	{
 		Windows.Devices.Geolocation.GeoboundingBox _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Geolocation.IGeoboundingBoxStatics).abi_TryCompute(positions, &_ret));
+		Debug.OK(staticInstance.abi_TryCompute(positions, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Geolocation.GeoboundingBox TryComputeWithAltitudeReference(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeRefSystem)
 	{
 		Windows.Devices.Geolocation.GeoboundingBox _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Geolocation.IGeoboundingBoxStatics).abi_TryComputeWithAltitudeReference(positions, altitudeRefSystem, &_ret));
+		Debug.OK(staticInstance.abi_TryComputeWithAltitudeReference(positions, altitudeRefSystem, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Geolocation.GeoboundingBox TryComputeWithAltitudeReferenceAndSpatialReference(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeRefSystem, UINT32 spatialReferenceId)
 	{
 		Windows.Devices.Geolocation.GeoboundingBox _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Geolocation.IGeoboundingBoxStatics).abi_TryComputeWithAltitudeReferenceAndSpatialReference(positions, altitudeRefSystem, spatialReferenceId, &_ret));
+		Debug.OK(staticInstance.abi_TryComputeWithAltitudeReferenceAndSpatialReference(positions, altitudeRefSystem, spatialReferenceId, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Geolocation.GeoboundingBox New(Windows.Devices.Geolocation.BasicGeoposition northwestCorner, Windows.Devices.Geolocation.BasicGeoposition southeastCorner)
 	{
 		auto factory = factory!(Windows.Devices.Geolocation.IGeoboundingBoxFactory);
 		Windows.Devices.Geolocation.GeoboundingBox _ret;
-		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeoboundingBoxFactory).abi_Create(northwestCorner, southeastCorner, &_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeoboundingBoxFactory)factory.asInterface(uuid("4dfba589-0411-4abc-b3b5-5bbccb57d98c"))).abi_Create(northwestCorner, southeastCorner, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Geolocation.GeoboundingBox New(Windows.Devices.Geolocation.BasicGeoposition northwestCorner, Windows.Devices.Geolocation.BasicGeoposition southeastCorner, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeReferenceSystem)
 	{
 		auto factory = factory!(Windows.Devices.Geolocation.IGeoboundingBoxFactory);
 		Windows.Devices.Geolocation.GeoboundingBox _ret;
-		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeoboundingBoxFactory).abi_CreateWithAltitudeReference(northwestCorner, southeastCorner, altitudeReferenceSystem, &_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeoboundingBoxFactory)factory.asInterface(uuid("4dfba589-0411-4abc-b3b5-5bbccb57d98c"))).abi_CreateWithAltitudeReference(northwestCorner, southeastCorner, altitudeReferenceSystem, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Geolocation.GeoboundingBox New(Windows.Devices.Geolocation.BasicGeoposition northwestCorner, Windows.Devices.Geolocation.BasicGeoposition southeastCorner, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeReferenceSystem, UINT32 spatialReferenceId)
 	{
 		auto factory = factory!(Windows.Devices.Geolocation.IGeoboundingBoxFactory);
 		Windows.Devices.Geolocation.GeoboundingBox _ret;
-		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeoboundingBoxFactory).abi_CreateWithAltitudeReferenceAndSpatialReference(northwestCorner, southeastCorner, altitudeReferenceSystem, spatialReferenceId, &_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeoboundingBoxFactory)factory.asInterface(uuid("4dfba589-0411-4abc-b3b5-5bbccb57d98c"))).abi_CreateWithAltitudeReferenceAndSpatialReference(northwestCorner, southeastCorner, altitudeReferenceSystem, spatialReferenceId, &_ret));
 		return _ret;
 	}
 }
@@ -430,52 +430,52 @@ extern(Windows):
 	final Windows.Devices.Geolocation.BasicGeoposition Center()
 	{
 		Windows.Devices.Geolocation.BasicGeoposition _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocircle).get_Center(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeocircle)this.asInterface(uuid("39e45843-a7f9-4e63-92a7-ba0c28d124b1"))).get_Center(&_ret));
 		return _ret;
 	}
 	final double Radius()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocircle).get_Radius(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeocircle)this.asInterface(uuid("39e45843-a7f9-4e63-92a7-ba0c28d124b1"))).get_Radius(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.GeoshapeType GeoshapeType()
 	{
 		Windows.Devices.Geolocation.GeoshapeType _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_GeoshapeType(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeoshape)this.asInterface(uuid("c99ca2af-c729-43c1-8fab-d6dec914df7e"))).get_GeoshapeType(&_ret));
 		return _ret;
 	}
 	final UINT32 SpatialReferenceId()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_SpatialReferenceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeoshape)this.asInterface(uuid("c99ca2af-c729-43c1-8fab-d6dec914df7e"))).get_SpatialReferenceId(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.AltitudeReferenceSystem AltitudeReferenceSystem()
 	{
 		Windows.Devices.Geolocation.AltitudeReferenceSystem _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_AltitudeReferenceSystem(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeoshape)this.asInterface(uuid("c99ca2af-c729-43c1-8fab-d6dec914df7e"))).get_AltitudeReferenceSystem(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Geolocation.Geocircle New(Windows.Devices.Geolocation.BasicGeoposition position, double radius)
 	{
 		auto factory = factory!(Windows.Devices.Geolocation.IGeocircleFactory);
 		Windows.Devices.Geolocation.Geocircle _ret;
-		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeocircleFactory).abi_Create(position, radius, &_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeocircleFactory)factory.asInterface(uuid("afd6531f-72b1-4f7d-87cc-4ed4c9849c05"))).abi_Create(position, radius, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Geolocation.Geocircle New(Windows.Devices.Geolocation.BasicGeoposition position, double radius, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeReferenceSystem)
 	{
 		auto factory = factory!(Windows.Devices.Geolocation.IGeocircleFactory);
 		Windows.Devices.Geolocation.Geocircle _ret;
-		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeocircleFactory).abi_CreateWithAltitudeReferenceSystem(position, radius, altitudeReferenceSystem, &_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeocircleFactory)factory.asInterface(uuid("afd6531f-72b1-4f7d-87cc-4ed4c9849c05"))).abi_CreateWithAltitudeReferenceSystem(position, radius, altitudeReferenceSystem, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Geolocation.Geocircle New(Windows.Devices.Geolocation.BasicGeoposition position, double radius, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeReferenceSystem, UINT32 spatialReferenceId)
 	{
 		auto factory = factory!(Windows.Devices.Geolocation.IGeocircleFactory);
 		Windows.Devices.Geolocation.Geocircle _ret;
-		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeocircleFactory).abi_CreateWithAltitudeReferenceSystemAndSpatialReferenceId(position, radius, altitudeReferenceSystem, spatialReferenceId, &_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeocircleFactory)factory.asInterface(uuid("afd6531f-72b1-4f7d-87cc-4ed4c9849c05"))).abi_CreateWithAltitudeReferenceSystemAndSpatialReferenceId(position, radius, altitudeReferenceSystem, spatialReferenceId, &_ret));
 		return _ret;
 	}
 }
@@ -487,75 +487,75 @@ extern(Windows):
 	final double Latitude()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinate).get_Latitude(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeocoordinate)this.asInterface(uuid("ee21a3aa-976a-4c70-803d-083ea55bcbc4"))).get_Latitude(&_ret));
 		return _ret;
 	}
 	deprecated("Longitude may be altered or unavailable after Windows 8.1. Instead, use Point.Position.Longitude")
 	final double Longitude()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinate).get_Longitude(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeocoordinate)this.asInterface(uuid("ee21a3aa-976a-4c70-803d-083ea55bcbc4"))).get_Longitude(&_ret));
 		return _ret;
 	}
 	deprecated("Altitude may be altered or unavailable after Windows 8.1. Instead, use Point.Position.Altitude")
 	final Windows.Foundation.IReference!(double) Altitude()
 	{
 		Windows.Foundation.IReference!(double) _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinate).get_Altitude(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeocoordinate)this.asInterface(uuid("ee21a3aa-976a-4c70-803d-083ea55bcbc4"))).get_Altitude(&_ret));
 		return _ret;
 	}
 	final double Accuracy()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinate).get_Accuracy(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeocoordinate)this.asInterface(uuid("ee21a3aa-976a-4c70-803d-083ea55bcbc4"))).get_Accuracy(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(double) AltitudeAccuracy()
 	{
 		Windows.Foundation.IReference!(double) _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinate).get_AltitudeAccuracy(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeocoordinate)this.asInterface(uuid("ee21a3aa-976a-4c70-803d-083ea55bcbc4"))).get_AltitudeAccuracy(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(double) Heading()
 	{
 		Windows.Foundation.IReference!(double) _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinate).get_Heading(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeocoordinate)this.asInterface(uuid("ee21a3aa-976a-4c70-803d-083ea55bcbc4"))).get_Heading(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(double) Speed()
 	{
 		Windows.Foundation.IReference!(double) _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinate).get_Speed(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeocoordinate)this.asInterface(uuid("ee21a3aa-976a-4c70-803d-083ea55bcbc4"))).get_Speed(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime Timestamp()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinate).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeocoordinate)this.asInterface(uuid("ee21a3aa-976a-4c70-803d-083ea55bcbc4"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.PositionSource PositionSource()
 	{
 		Windows.Devices.Geolocation.PositionSource _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinateWithPositionData).get_PositionSource(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeocoordinateWithPositionData)this.asInterface(uuid("95e634be-dbd6-40ac-b8f2-a65c0340d9a6"))).get_PositionSource(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.GeocoordinateSatelliteData SatelliteData()
 	{
 		Windows.Devices.Geolocation.GeocoordinateSatelliteData _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinateWithPositionData).get_SatelliteData(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeocoordinateWithPositionData)this.asInterface(uuid("95e634be-dbd6-40ac-b8f2-a65c0340d9a6"))).get_SatelliteData(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.Geopoint Point()
 	{
 		Windows.Devices.Geolocation.Geopoint _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinateWithPoint).get_Point(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeocoordinateWithPoint)this.asInterface(uuid("feea0525-d22c-4d46-b527-0b96066fc7db"))).get_Point(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) PositionSourceTimestamp()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.DateTime) _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinateWithPositionSourceTimestamp).get_PositionSourceTimestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeocoordinateWithPositionSourceTimestamp)this.asInterface(uuid("8543fc02-c9f1-4610-afe0-8bc3a6a87036"))).get_PositionSourceTimestamp(&_ret));
 		return _ret;
 	}
 }
@@ -566,19 +566,19 @@ extern(Windows):
 	final Windows.Foundation.IReference!(double) PositionDilutionOfPrecision()
 	{
 		Windows.Foundation.IReference!(double) _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinateSatelliteData).get_PositionDilutionOfPrecision(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeocoordinateSatelliteData)this.asInterface(uuid("c32a74d9-2608-474c-912c-06dd490f4af7"))).get_PositionDilutionOfPrecision(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(double) HorizontalDilutionOfPrecision()
 	{
 		Windows.Foundation.IReference!(double) _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinateSatelliteData).get_HorizontalDilutionOfPrecision(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeocoordinateSatelliteData)this.asInterface(uuid("c32a74d9-2608-474c-912c-06dd490f4af7"))).get_HorizontalDilutionOfPrecision(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(double) VerticalDilutionOfPrecision()
 	{
 		Windows.Foundation.IReference!(double) _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeocoordinateSatelliteData).get_VerticalDilutionOfPrecision(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeocoordinateSatelliteData)this.asInterface(uuid("c32a74d9-2608-474c-912c-06dd490f4af7"))).get_VerticalDilutionOfPrecision(&_ret));
 		return _ret;
 	}
 }
@@ -589,84 +589,84 @@ extern(Windows):
 	final Windows.Devices.Geolocation.PositionAccuracy DesiredAccuracy()
 	{
 		Windows.Devices.Geolocation.PositionAccuracy _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).get_DesiredAccuracy(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeolocator)this.asInterface(uuid("a9c3bf62-4524-4989-8aa9-de019d2e551f"))).get_DesiredAccuracy(&_ret));
 		return _ret;
 	}
 	final void DesiredAccuracy(Windows.Devices.Geolocation.PositionAccuracy value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).set_DesiredAccuracy(value));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeolocator)this.asInterface(uuid("a9c3bf62-4524-4989-8aa9-de019d2e551f"))).set_DesiredAccuracy(value));
 	}
 	final double MovementThreshold()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).get_MovementThreshold(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeolocator)this.asInterface(uuid("a9c3bf62-4524-4989-8aa9-de019d2e551f"))).get_MovementThreshold(&_ret));
 		return _ret;
 	}
 	final void MovementThreshold(double value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).set_MovementThreshold(value));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeolocator)this.asInterface(uuid("a9c3bf62-4524-4989-8aa9-de019d2e551f"))).set_MovementThreshold(value));
 	}
 	final UINT32 ReportInterval()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).get_ReportInterval(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeolocator)this.asInterface(uuid("a9c3bf62-4524-4989-8aa9-de019d2e551f"))).get_ReportInterval(&_ret));
 		return _ret;
 	}
 	final void ReportInterval(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).set_ReportInterval(value));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeolocator)this.asInterface(uuid("a9c3bf62-4524-4989-8aa9-de019d2e551f"))).set_ReportInterval(value));
 	}
 	final Windows.Devices.Geolocation.PositionStatus LocationStatus()
 	{
 		Windows.Devices.Geolocation.PositionStatus _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).get_LocationStatus(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeolocator)this.asInterface(uuid("a9c3bf62-4524-4989-8aa9-de019d2e551f"))).get_LocationStatus(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.Geoposition) GetGeopositionAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.Geoposition) _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).abi_GetGeopositionAsync(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeolocator)this.asInterface(uuid("a9c3bf62-4524-4989-8aa9-de019d2e551f"))).abi_GetGeopositionAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.Geoposition) GetGeopositionAsyncWithAgeAndTimeout(Windows.Foundation.TimeSpan maximumAge, Windows.Foundation.TimeSpan timeout)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.Geoposition) _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).abi_GetGeopositionAsyncWithAgeAndTimeout(maximumAge, timeout, &_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeolocator)this.asInterface(uuid("a9c3bf62-4524-4989-8aa9-de019d2e551f"))).abi_GetGeopositionAsyncWithAgeAndTimeout(maximumAge, timeout, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnPositionChanged(void delegate(Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.PositionChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).add_PositionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.PositionChangedEventArgs), Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.PositionChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeolocator)this.asInterface(uuid("a9c3bf62-4524-4989-8aa9-de019d2e551f"))).add_PositionChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.PositionChangedEventArgs), Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.PositionChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePositionChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).remove_PositionChanged(token));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeolocator)this.asInterface(uuid("a9c3bf62-4524-4989-8aa9-de019d2e551f"))).remove_PositionChanged(token));
 	}
 	final EventRegistrationToken OnStatusChanged(void delegate(Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.StatusChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).add_StatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.StatusChangedEventArgs), Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.StatusChangedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeolocator)this.asInterface(uuid("a9c3bf62-4524-4989-8aa9-de019d2e551f"))).add_StatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.StatusChangedEventArgs), Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.StatusChangedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeStatusChanged(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator).remove_StatusChanged(token));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeolocator)this.asInterface(uuid("a9c3bf62-4524-4989-8aa9-de019d2e551f"))).remove_StatusChanged(token));
 	}
 	final Windows.Foundation.IReference!(UINT32) DesiredAccuracyInMeters()
 	{
 		Windows.Foundation.IReference!(UINT32) _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocatorWithScalarAccuracy).get_DesiredAccuracyInMeters(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeolocatorWithScalarAccuracy)this.asInterface(uuid("96f5d3c1-b80f-460a-994d-a96c47a51aa4"))).get_DesiredAccuracyInMeters(&_ret));
 		return _ret;
 	}
 	final void DesiredAccuracyInMeters(Windows.Foundation.IReference!(UINT32) value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocatorWithScalarAccuracy).set_DesiredAccuracyInMeters(value));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeolocatorWithScalarAccuracy)this.asInterface(uuid("96f5d3c1-b80f-460a-994d-a96c47a51aa4"))).set_DesiredAccuracyInMeters(value));
 	}
 	final void AllowFallbackToConsentlessPositions()
 	{
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeolocator2).abi_AllowFallbackToConsentlessPositions());
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeolocator2)this.asInterface(uuid("d1b42e6d-8891-43b4-ad36-27c6fe9a97b1"))).abi_AllowFallbackToConsentlessPositions());
 	}
 
 	private static Windows.Devices.Geolocation.IGeolocatorStatics _staticInstance;
@@ -678,26 +678,26 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.GeolocationAccessStatus) RequestAccessAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.GeolocationAccessStatus) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Geolocation.IGeolocatorStatics).abi_RequestAccessAsync(&_ret));
+		Debug.OK(staticInstance.abi_RequestAccessAsync(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geoposition)) GetGeopositionHistoryAsync(Windows.Foundation.DateTime startTime)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geoposition)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Geolocation.IGeolocatorStatics).abi_GetGeopositionHistoryAsync(startTime, &_ret));
+		Debug.OK(staticInstance.abi_GetGeopositionHistoryAsync(startTime, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geoposition)) GetGeopositionHistoryWithDurationAsync(Windows.Foundation.DateTime startTime, Windows.Foundation.TimeSpan duration)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geoposition)) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Geolocation.IGeolocatorStatics).abi_GetGeopositionHistoryWithDurationAsync(startTime, duration, &_ret));
+		Debug.OK(staticInstance.abi_GetGeopositionHistoryWithDurationAsync(startTime, duration, &_ret));
 		return _ret;
 	}
 	static Geolocator New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Geolocator).abi_ActivateInstance(&ret));
-		return ret.as!(Geolocator);
+		return cast(Geolocator) ret;
 	}
 }
 
@@ -707,46 +707,46 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.BasicGeoposition) Positions()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.BasicGeoposition) _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeopath).get_Positions(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeopath)this.asInterface(uuid("e53fd7b9-2da4-4714-a652-de8593289898"))).get_Positions(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.GeoshapeType GeoshapeType()
 	{
 		Windows.Devices.Geolocation.GeoshapeType _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_GeoshapeType(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeoshape)this.asInterface(uuid("c99ca2af-c729-43c1-8fab-d6dec914df7e"))).get_GeoshapeType(&_ret));
 		return _ret;
 	}
 	final UINT32 SpatialReferenceId()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_SpatialReferenceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeoshape)this.asInterface(uuid("c99ca2af-c729-43c1-8fab-d6dec914df7e"))).get_SpatialReferenceId(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.AltitudeReferenceSystem AltitudeReferenceSystem()
 	{
 		Windows.Devices.Geolocation.AltitudeReferenceSystem _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_AltitudeReferenceSystem(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeoshape)this.asInterface(uuid("c99ca2af-c729-43c1-8fab-d6dec914df7e"))).get_AltitudeReferenceSystem(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Geolocation.Geopath New(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions)
 	{
 		auto factory = factory!(Windows.Devices.Geolocation.IGeopathFactory);
 		Windows.Devices.Geolocation.Geopath _ret;
-		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeopathFactory).abi_Create(positions, &_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeopathFactory)factory.asInterface(uuid("27bea9c8-c7e7-4359-9b9b-fca3e05ef593"))).abi_Create(positions, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Geolocation.Geopath New(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeReferenceSystem)
 	{
 		auto factory = factory!(Windows.Devices.Geolocation.IGeopathFactory);
 		Windows.Devices.Geolocation.Geopath _ret;
-		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeopathFactory).abi_CreateWithAltitudeReference(positions, altitudeReferenceSystem, &_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeopathFactory)factory.asInterface(uuid("27bea9c8-c7e7-4359-9b9b-fca3e05ef593"))).abi_CreateWithAltitudeReference(positions, altitudeReferenceSystem, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Geolocation.Geopath New(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeReferenceSystem, UINT32 spatialReferenceId)
 	{
 		auto factory = factory!(Windows.Devices.Geolocation.IGeopathFactory);
 		Windows.Devices.Geolocation.Geopath _ret;
-		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeopathFactory).abi_CreateWithAltitudeReferenceAndSpatialReference(positions, altitudeReferenceSystem, spatialReferenceId, &_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeopathFactory)factory.asInterface(uuid("27bea9c8-c7e7-4359-9b9b-fca3e05ef593"))).abi_CreateWithAltitudeReferenceAndSpatialReference(positions, altitudeReferenceSystem, spatialReferenceId, &_ret));
 		return _ret;
 	}
 }
@@ -757,46 +757,46 @@ extern(Windows):
 	final Windows.Devices.Geolocation.BasicGeoposition Position()
 	{
 		Windows.Devices.Geolocation.BasicGeoposition _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeopoint).get_Position(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeopoint)this.asInterface(uuid("6bfa00eb-e56e-49bb-9caf-cbaa78a8bcef"))).get_Position(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.GeoshapeType GeoshapeType()
 	{
 		Windows.Devices.Geolocation.GeoshapeType _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_GeoshapeType(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeoshape)this.asInterface(uuid("c99ca2af-c729-43c1-8fab-d6dec914df7e"))).get_GeoshapeType(&_ret));
 		return _ret;
 	}
 	final UINT32 SpatialReferenceId()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_SpatialReferenceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeoshape)this.asInterface(uuid("c99ca2af-c729-43c1-8fab-d6dec914df7e"))).get_SpatialReferenceId(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.AltitudeReferenceSystem AltitudeReferenceSystem()
 	{
 		Windows.Devices.Geolocation.AltitudeReferenceSystem _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoshape).get_AltitudeReferenceSystem(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeoshape)this.asInterface(uuid("c99ca2af-c729-43c1-8fab-d6dec914df7e"))).get_AltitudeReferenceSystem(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Geolocation.Geopoint New(Windows.Devices.Geolocation.BasicGeoposition position)
 	{
 		auto factory = factory!(Windows.Devices.Geolocation.IGeopointFactory);
 		Windows.Devices.Geolocation.Geopoint _ret;
-		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeopointFactory).abi_Create(position, &_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeopointFactory)factory.asInterface(uuid("db6b8d33-76bd-4e30-8af7-a844dc37b7a0"))).abi_Create(position, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Geolocation.Geopoint New(Windows.Devices.Geolocation.BasicGeoposition position, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeReferenceSystem)
 	{
 		auto factory = factory!(Windows.Devices.Geolocation.IGeopointFactory);
 		Windows.Devices.Geolocation.Geopoint _ret;
-		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeopointFactory).abi_CreateWithAltitudeReferenceSystem(position, altitudeReferenceSystem, &_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeopointFactory)factory.asInterface(uuid("db6b8d33-76bd-4e30-8af7-a844dc37b7a0"))).abi_CreateWithAltitudeReferenceSystem(position, altitudeReferenceSystem, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Geolocation.Geopoint New(Windows.Devices.Geolocation.BasicGeoposition position, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeReferenceSystem, UINT32 spatialReferenceId)
 	{
 		auto factory = factory!(Windows.Devices.Geolocation.IGeopointFactory);
 		Windows.Devices.Geolocation.Geopoint _ret;
-		Debug.OK(factory.as!(Windows.Devices.Geolocation.IGeopointFactory).abi_CreateWithAltitudeReferenceSystemAndSpatialReferenceId(position, altitudeReferenceSystem, spatialReferenceId, &_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeopointFactory)factory.asInterface(uuid("db6b8d33-76bd-4e30-8af7-a844dc37b7a0"))).abi_CreateWithAltitudeReferenceSystemAndSpatialReferenceId(position, altitudeReferenceSystem, spatialReferenceId, &_ret));
 		return _ret;
 	}
 }
@@ -807,19 +807,19 @@ extern(Windows):
 	final Windows.Devices.Geolocation.Geocoordinate Coordinate()
 	{
 		Windows.Devices.Geolocation.Geocoordinate _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoposition).get_Coordinate(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeoposition)this.asInterface(uuid("c18d0454-7d41-4ff7-a957-9dffb4ef7f5b"))).get_Coordinate(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.CivicAddress CivicAddress()
 	{
 		Windows.Devices.Geolocation.CivicAddress _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoposition).get_CivicAddress(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeoposition)this.asInterface(uuid("c18d0454-7d41-4ff7-a957-9dffb4ef7f5b"))).get_CivicAddress(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Geolocation.VenueData VenueData()
 	{
 		Windows.Devices.Geolocation.VenueData _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IGeoposition2).get_VenueData(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeoposition2)this.asInterface(uuid("7f62f697-8671-4b0d-86f8-474a8496187c"))).get_VenueData(&_ret));
 		return _ret;
 	}
 }
@@ -830,7 +830,7 @@ extern(Windows):
 	final Windows.Devices.Geolocation.Geoposition Position()
 	{
 		Windows.Devices.Geolocation.Geoposition _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IPositionChangedEventArgs).get_Position(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IPositionChangedEventArgs)this.asInterface(uuid("37859ce5-9d1e-46c5-bf3b-6ad8cac1a093"))).get_Position(&_ret));
 		return _ret;
 	}
 }
@@ -841,7 +841,7 @@ extern(Windows):
 	final Windows.Devices.Geolocation.PositionStatus Status()
 	{
 		Windows.Devices.Geolocation.PositionStatus _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IStatusChangedEventArgs).get_Status(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IStatusChangedEventArgs)this.asInterface(uuid("3453d2da-8c93-4111-a205-9aecfc9be5c0"))).get_Status(&_ret));
 		return _ret;
 	}
 }
@@ -852,13 +852,13 @@ extern(Windows):
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IVenueData).get_Id(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IVenueData)this.asInterface(uuid("66f39187-60e3-4b2f-b527-4f53f1c3c677"))).get_Id(&_ret));
 		return _ret;
 	}
 	final HSTRING Level()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Geolocation.IVenueData).get_Level(&_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IVenueData)this.asInterface(uuid("66f39187-60e3-4b2f-b527-4f53f1c3c677"))).get_Level(&_ret));
 		return _ret;
 	}
 }

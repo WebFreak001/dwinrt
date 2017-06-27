@@ -111,31 +111,31 @@ extern(Windows):
 	final Windows.UI.Xaml.Interop.NotifyCollectionChangedAction Action()
 	{
 		Windows.UI.Xaml.Interop.NotifyCollectionChangedAction _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs).get_Action(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs)this.asInterface(uuid("4cf68d33-e3f2-4964-b85e-945b4f7e2f21"))).get_Action(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Interop.IBindableVector NewItems()
 	{
 		Windows.UI.Xaml.Interop.IBindableVector _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs).get_NewItems(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs)this.asInterface(uuid("4cf68d33-e3f2-4964-b85e-945b4f7e2f21"))).get_NewItems(&_ret));
 		return _ret;
 	}
 	final Windows.UI.Xaml.Interop.IBindableVector OldItems()
 	{
 		Windows.UI.Xaml.Interop.IBindableVector _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs).get_OldItems(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs)this.asInterface(uuid("4cf68d33-e3f2-4964-b85e-945b4f7e2f21"))).get_OldItems(&_ret));
 		return _ret;
 	}
 	final INT32 NewStartingIndex()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs).get_NewStartingIndex(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs)this.asInterface(uuid("4cf68d33-e3f2-4964-b85e-945b4f7e2f21"))).get_NewStartingIndex(&_ret));
 		return _ret;
 	}
 	final INT32 OldStartingIndex()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs).get_OldStartingIndex(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs)this.asInterface(uuid("4cf68d33-e3f2-4964-b85e-945b4f7e2f21"))).get_OldStartingIndex(&_ret));
 		return _ret;
 	}
 }
@@ -149,11 +149,11 @@ class NotifyCollectionChangedEventArgsT(Base) : AgileObject!Base, NotifyCollecti
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_Action(Windows.UI.Xaml.Interop.NotifyCollectionChangedAction* return_value) { return m_inner.as!(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs).get_Action(return_value); }
-	override HRESULT get_NewItems(Windows.UI.Xaml.Interop.IBindableVector* return_value) { return m_inner.as!(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs).get_NewItems(return_value); }
-	override HRESULT get_OldItems(Windows.UI.Xaml.Interop.IBindableVector* return_value) { return m_inner.as!(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs).get_OldItems(return_value); }
-	override HRESULT get_NewStartingIndex(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs).get_NewStartingIndex(return_value); }
-	override HRESULT get_OldStartingIndex(INT32* return_value) { return m_inner.as!(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs).get_OldStartingIndex(return_value); }
+	override HRESULT get_Action(Windows.UI.Xaml.Interop.NotifyCollectionChangedAction* return_value) { return (cast(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs)m_inner.asInterface(uuid("4cf68d33-e3f2-4964-b85e-945b4f7e2f21"))).get_Action(return_value); }
+	override HRESULT get_NewItems(Windows.UI.Xaml.Interop.IBindableVector* return_value) { return (cast(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs)m_inner.asInterface(uuid("4cf68d33-e3f2-4964-b85e-945b4f7e2f21"))).get_NewItems(return_value); }
+	override HRESULT get_OldItems(Windows.UI.Xaml.Interop.IBindableVector* return_value) { return (cast(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs)m_inner.asInterface(uuid("4cf68d33-e3f2-4964-b85e-945b4f7e2f21"))).get_OldItems(return_value); }
+	override HRESULT get_NewStartingIndex(INT32* return_value) { return (cast(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs)m_inner.asInterface(uuid("4cf68d33-e3f2-4964-b85e-945b4f7e2f21"))).get_NewStartingIndex(return_value); }
+	override HRESULT get_OldStartingIndex(INT32* return_value) { return (cast(Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs)m_inner.asInterface(uuid("4cf68d33-e3f2-4964-b85e-945b4f7e2f21"))).get_OldStartingIndex(return_value); }
 
 	this() {}
 	IInspectable m_inner;

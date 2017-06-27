@@ -73,19 +73,19 @@ interface CredentialPicker
 	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) PickWithOptionsAsync(Windows.Security.Credentials.UI.CredentialPickerOptions options)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Credentials.UI.ICredentialPickerStatics).abi_PickWithOptionsAsync(options, &_ret));
+		Debug.OK(staticInstance.abi_PickWithOptionsAsync(options, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) PickWithMessageAsync(HSTRING targetName, HSTRING message)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Credentials.UI.ICredentialPickerStatics).abi_PickWithMessageAsync(targetName, message, &_ret));
+		Debug.OK(staticInstance.abi_PickWithMessageAsync(targetName, message, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) PickWithCaptionAsync(HSTRING targetName, HSTRING message, HSTRING caption)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Credentials.UI.ICredentialPickerStatics).abi_PickWithCaptionAsync(targetName, message, caption, &_ret));
+		Debug.OK(staticInstance.abi_PickWithCaptionAsync(targetName, message, caption, &_ret));
 		return _ret;
 	}
 }
@@ -95,109 +95,109 @@ interface CredentialPickerOptions : Windows.Security.Credentials.UI.ICredentialP
 extern(Windows):
 	final void Caption(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).set_Caption(value));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerOptions)this.asInterface(uuid("965a0b4c-95fa-467f-992b-0b22e5859bf6"))).set_Caption(value));
 	}
 	final HSTRING Caption()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).get_Caption(&_ret));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerOptions)this.asInterface(uuid("965a0b4c-95fa-467f-992b-0b22e5859bf6"))).get_Caption(&_ret));
 		return _ret;
 	}
 	final void Message(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).set_Message(value));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerOptions)this.asInterface(uuid("965a0b4c-95fa-467f-992b-0b22e5859bf6"))).set_Message(value));
 	}
 	final HSTRING Message()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).get_Message(&_ret));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerOptions)this.asInterface(uuid("965a0b4c-95fa-467f-992b-0b22e5859bf6"))).get_Message(&_ret));
 		return _ret;
 	}
 	final void ErrorCode(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).set_ErrorCode(value));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerOptions)this.asInterface(uuid("965a0b4c-95fa-467f-992b-0b22e5859bf6"))).set_ErrorCode(value));
 	}
 	final UINT32 ErrorCode()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).get_ErrorCode(&_ret));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerOptions)this.asInterface(uuid("965a0b4c-95fa-467f-992b-0b22e5859bf6"))).get_ErrorCode(&_ret));
 		return _ret;
 	}
 	final void TargetName(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).set_TargetName(value));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerOptions)this.asInterface(uuid("965a0b4c-95fa-467f-992b-0b22e5859bf6"))).set_TargetName(value));
 	}
 	final HSTRING TargetName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).get_TargetName(&_ret));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerOptions)this.asInterface(uuid("965a0b4c-95fa-467f-992b-0b22e5859bf6"))).get_TargetName(&_ret));
 		return _ret;
 	}
 	final void AuthenticationProtocol(Windows.Security.Credentials.UI.AuthenticationProtocol value)
 	{
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).set_AuthenticationProtocol(value));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerOptions)this.asInterface(uuid("965a0b4c-95fa-467f-992b-0b22e5859bf6"))).set_AuthenticationProtocol(value));
 	}
 	final Windows.Security.Credentials.UI.AuthenticationProtocol AuthenticationProtocol()
 	{
 		Windows.Security.Credentials.UI.AuthenticationProtocol _ret;
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).get_AuthenticationProtocol(&_ret));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerOptions)this.asInterface(uuid("965a0b4c-95fa-467f-992b-0b22e5859bf6"))).get_AuthenticationProtocol(&_ret));
 		return _ret;
 	}
 	final void CustomAuthenticationProtocol(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).set_CustomAuthenticationProtocol(value));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerOptions)this.asInterface(uuid("965a0b4c-95fa-467f-992b-0b22e5859bf6"))).set_CustomAuthenticationProtocol(value));
 	}
 	final HSTRING CustomAuthenticationProtocol()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).get_CustomAuthenticationProtocol(&_ret));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerOptions)this.asInterface(uuid("965a0b4c-95fa-467f-992b-0b22e5859bf6"))).get_CustomAuthenticationProtocol(&_ret));
 		return _ret;
 	}
 	final void PreviousCredential(Windows.Storage.Streams.IBuffer value)
 	{
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).set_PreviousCredential(value));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerOptions)this.asInterface(uuid("965a0b4c-95fa-467f-992b-0b22e5859bf6"))).set_PreviousCredential(value));
 	}
 	final Windows.Storage.Streams.IBuffer PreviousCredential()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).get_PreviousCredential(&_ret));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerOptions)this.asInterface(uuid("965a0b4c-95fa-467f-992b-0b22e5859bf6"))).get_PreviousCredential(&_ret));
 		return _ret;
 	}
 	final void AlwaysDisplayDialog(bool value)
 	{
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).set_AlwaysDisplayDialog(value));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerOptions)this.asInterface(uuid("965a0b4c-95fa-467f-992b-0b22e5859bf6"))).set_AlwaysDisplayDialog(value));
 	}
 	final bool AlwaysDisplayDialog()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).get_AlwaysDisplayDialog(&_ret));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerOptions)this.asInterface(uuid("965a0b4c-95fa-467f-992b-0b22e5859bf6"))).get_AlwaysDisplayDialog(&_ret));
 		return _ret;
 	}
 	final void CallerSavesCredential(bool value)
 	{
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).set_CallerSavesCredential(value));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerOptions)this.asInterface(uuid("965a0b4c-95fa-467f-992b-0b22e5859bf6"))).set_CallerSavesCredential(value));
 	}
 	final bool CallerSavesCredential()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).get_CallerSavesCredential(&_ret));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerOptions)this.asInterface(uuid("965a0b4c-95fa-467f-992b-0b22e5859bf6"))).get_CallerSavesCredential(&_ret));
 		return _ret;
 	}
 	final void CredentialSaveOption(Windows.Security.Credentials.UI.CredentialSaveOption value)
 	{
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).set_CredentialSaveOption(value));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerOptions)this.asInterface(uuid("965a0b4c-95fa-467f-992b-0b22e5859bf6"))).set_CredentialSaveOption(value));
 	}
 	final Windows.Security.Credentials.UI.CredentialSaveOption CredentialSaveOption()
 	{
 		Windows.Security.Credentials.UI.CredentialSaveOption _ret;
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerOptions).get_CredentialSaveOption(&_ret));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerOptions)this.asInterface(uuid("965a0b4c-95fa-467f-992b-0b22e5859bf6"))).get_CredentialSaveOption(&_ret));
 		return _ret;
 	}
 	static CredentialPickerOptions New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(CredentialPickerOptions).abi_ActivateInstance(&ret));
-		return ret.as!(CredentialPickerOptions);
+		return cast(CredentialPickerOptions) ret;
 	}
 }
 
@@ -207,43 +207,43 @@ extern(Windows):
 	final UINT32 ErrorCode()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerResults).get_ErrorCode(&_ret));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerResults)this.asInterface(uuid("1948f99a-cc30-410c-9c38-cc0884c5b3d7"))).get_ErrorCode(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Credentials.UI.CredentialSaveOption CredentialSaveOption()
 	{
 		Windows.Security.Credentials.UI.CredentialSaveOption _ret;
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerResults).get_CredentialSaveOption(&_ret));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerResults)this.asInterface(uuid("1948f99a-cc30-410c-9c38-cc0884c5b3d7"))).get_CredentialSaveOption(&_ret));
 		return _ret;
 	}
 	final bool CredentialSaved()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerResults).get_CredentialSaved(&_ret));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerResults)this.asInterface(uuid("1948f99a-cc30-410c-9c38-cc0884c5b3d7"))).get_CredentialSaved(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer Credential()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerResults).get_Credential(&_ret));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerResults)this.asInterface(uuid("1948f99a-cc30-410c-9c38-cc0884c5b3d7"))).get_Credential(&_ret));
 		return _ret;
 	}
 	final HSTRING CredentialDomainName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerResults).get_CredentialDomainName(&_ret));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerResults)this.asInterface(uuid("1948f99a-cc30-410c-9c38-cc0884c5b3d7"))).get_CredentialDomainName(&_ret));
 		return _ret;
 	}
 	final HSTRING CredentialUserName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerResults).get_CredentialUserName(&_ret));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerResults)this.asInterface(uuid("1948f99a-cc30-410c-9c38-cc0884c5b3d7"))).get_CredentialUserName(&_ret));
 		return _ret;
 	}
 	final HSTRING CredentialPassword()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Credentials.UI.ICredentialPickerResults).get_CredentialPassword(&_ret));
+		Debug.OK((cast(Windows.Security.Credentials.UI.ICredentialPickerResults)this.asInterface(uuid("1948f99a-cc30-410c-9c38-cc0884c5b3d7"))).get_CredentialPassword(&_ret));
 		return _ret;
 	}
 }
@@ -259,13 +259,13 @@ interface UserConsentVerifier
 	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.UserConsentVerifierAvailability) CheckAvailabilityAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.UserConsentVerifierAvailability) _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Credentials.UI.IUserConsentVerifierStatics).abi_CheckAvailabilityAsync(&_ret));
+		Debug.OK(staticInstance.abi_CheckAvailabilityAsync(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.UserConsentVerificationResult) RequestVerificationAsync(HSTRING message)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.UserConsentVerificationResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Credentials.UI.IUserConsentVerifierStatics).abi_RequestVerificationAsync(message, &_ret));
+		Debug.OK(staticInstance.abi_RequestVerificationAsync(message, &_ret));
 		return _ret;
 	}
 }

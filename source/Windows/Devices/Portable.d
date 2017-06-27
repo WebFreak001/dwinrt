@@ -31,13 +31,13 @@ interface ServiceDevice
 	static HSTRING GetDeviceSelector(Windows.Devices.Portable.ServiceDeviceType serviceType)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Portable.IServiceDeviceStatics).abi_GetDeviceSelector(serviceType, &_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(serviceType, &_ret));
 		return _ret;
 	}
 	static HSTRING GetDeviceSelectorFromServiceId(GUID serviceId)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Portable.IServiceDeviceStatics).abi_GetDeviceSelectorFromServiceId(serviceId, &_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelectorFromServiceId(serviceId, &_ret));
 		return _ret;
 	}
 }
@@ -53,13 +53,13 @@ interface StorageDevice
 	static Windows.Storage.StorageFolder FromId(HSTRING deviceId)
 	{
 		Windows.Storage.StorageFolder _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Portable.IStorageDeviceStatics).abi_FromId(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromId(deviceId, &_ret));
 		return _ret;
 	}
 	static HSTRING GetDeviceSelector()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Portable.IStorageDeviceStatics).abi_GetDeviceSelector(&_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
 		return _ret;
 	}
 }

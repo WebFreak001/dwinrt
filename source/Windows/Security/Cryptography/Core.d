@@ -398,109 +398,109 @@ interface AsymmetricAlgorithmNames
 	static HSTRING RsaPkcs1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IAsymmetricAlgorithmNamesStatics).get_RsaPkcs1(&_ret));
+		Debug.OK(staticInstance.get_RsaPkcs1(&_ret));
 		return _ret;
 	}
 	static HSTRING RsaOaepSha1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IAsymmetricAlgorithmNamesStatics).get_RsaOaepSha1(&_ret));
+		Debug.OK(staticInstance.get_RsaOaepSha1(&_ret));
 		return _ret;
 	}
 	static HSTRING RsaOaepSha256()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IAsymmetricAlgorithmNamesStatics).get_RsaOaepSha256(&_ret));
+		Debug.OK(staticInstance.get_RsaOaepSha256(&_ret));
 		return _ret;
 	}
 	static HSTRING RsaOaepSha384()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IAsymmetricAlgorithmNamesStatics).get_RsaOaepSha384(&_ret));
+		Debug.OK(staticInstance.get_RsaOaepSha384(&_ret));
 		return _ret;
 	}
 	static HSTRING RsaOaepSha512()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IAsymmetricAlgorithmNamesStatics).get_RsaOaepSha512(&_ret));
+		Debug.OK(staticInstance.get_RsaOaepSha512(&_ret));
 		return _ret;
 	}
 	static HSTRING EcdsaP256Sha256()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IAsymmetricAlgorithmNamesStatics).get_EcdsaP256Sha256(&_ret));
+		Debug.OK(staticInstance.get_EcdsaP256Sha256(&_ret));
 		return _ret;
 	}
 	static HSTRING EcdsaP384Sha384()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IAsymmetricAlgorithmNamesStatics).get_EcdsaP384Sha384(&_ret));
+		Debug.OK(staticInstance.get_EcdsaP384Sha384(&_ret));
 		return _ret;
 	}
 	static HSTRING EcdsaP521Sha512()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IAsymmetricAlgorithmNamesStatics).get_EcdsaP521Sha512(&_ret));
+		Debug.OK(staticInstance.get_EcdsaP521Sha512(&_ret));
 		return _ret;
 	}
 	static HSTRING DsaSha1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IAsymmetricAlgorithmNamesStatics).get_DsaSha1(&_ret));
+		Debug.OK(staticInstance.get_DsaSha1(&_ret));
 		return _ret;
 	}
 	static HSTRING DsaSha256()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IAsymmetricAlgorithmNamesStatics).get_DsaSha256(&_ret));
+		Debug.OK(staticInstance.get_DsaSha256(&_ret));
 		return _ret;
 	}
 	static HSTRING RsaSignPkcs1Sha1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IAsymmetricAlgorithmNamesStatics).get_RsaSignPkcs1Sha1(&_ret));
+		Debug.OK(staticInstance.get_RsaSignPkcs1Sha1(&_ret));
 		return _ret;
 	}
 	static HSTRING RsaSignPkcs1Sha256()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IAsymmetricAlgorithmNamesStatics).get_RsaSignPkcs1Sha256(&_ret));
+		Debug.OK(staticInstance.get_RsaSignPkcs1Sha256(&_ret));
 		return _ret;
 	}
 	static HSTRING RsaSignPkcs1Sha384()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IAsymmetricAlgorithmNamesStatics).get_RsaSignPkcs1Sha384(&_ret));
+		Debug.OK(staticInstance.get_RsaSignPkcs1Sha384(&_ret));
 		return _ret;
 	}
 	static HSTRING RsaSignPkcs1Sha512()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IAsymmetricAlgorithmNamesStatics).get_RsaSignPkcs1Sha512(&_ret));
+		Debug.OK(staticInstance.get_RsaSignPkcs1Sha512(&_ret));
 		return _ret;
 	}
 	static HSTRING RsaSignPssSha1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IAsymmetricAlgorithmNamesStatics).get_RsaSignPssSha1(&_ret));
+		Debug.OK(staticInstance.get_RsaSignPssSha1(&_ret));
 		return _ret;
 	}
 	static HSTRING RsaSignPssSha256()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IAsymmetricAlgorithmNamesStatics).get_RsaSignPssSha256(&_ret));
+		Debug.OK(staticInstance.get_RsaSignPssSha256(&_ret));
 		return _ret;
 	}
 	static HSTRING RsaSignPssSha384()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IAsymmetricAlgorithmNamesStatics).get_RsaSignPssSha384(&_ret));
+		Debug.OK(staticInstance.get_RsaSignPssSha384(&_ret));
 		return _ret;
 	}
 	static HSTRING RsaSignPssSha512()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IAsymmetricAlgorithmNamesStatics).get_RsaSignPssSha512(&_ret));
+		Debug.OK(staticInstance.get_RsaSignPssSha512(&_ret));
 		return _ret;
 	}
 }
@@ -511,49 +511,49 @@ extern(Windows):
 	final HSTRING AlgorithmName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider).get_AlgorithmName(&_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider)this.asInterface(uuid("e8d2ff37-6259-4e88-b7e0-94191fde699e"))).get_AlgorithmName(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Cryptography.Core.CryptographicKey CreateKeyPair(UINT32 keySize)
 	{
 		Windows.Security.Cryptography.Core.CryptographicKey _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider).abi_CreateKeyPair(keySize, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider)this.asInterface(uuid("e8d2ff37-6259-4e88-b7e0-94191fde699e"))).abi_CreateKeyPair(keySize, &_ret));
 		return _ret;
 	}
 	final Windows.Security.Cryptography.Core.CryptographicKey ImportDefaultPrivateKeyBlob(Windows.Storage.Streams.IBuffer keyBlob)
 	{
 		Windows.Security.Cryptography.Core.CryptographicKey _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider).abi_ImportDefaultPrivateKeyBlob(keyBlob, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider)this.asInterface(uuid("e8d2ff37-6259-4e88-b7e0-94191fde699e"))).abi_ImportDefaultPrivateKeyBlob(keyBlob, &_ret));
 		return _ret;
 	}
 	final Windows.Security.Cryptography.Core.CryptographicKey ImportKeyPairWithBlobType(Windows.Storage.Streams.IBuffer keyBlob, Windows.Security.Cryptography.Core.CryptographicPrivateKeyBlobType BlobType)
 	{
 		Windows.Security.Cryptography.Core.CryptographicKey _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider).abi_ImportKeyPairWithBlobType(keyBlob, BlobType, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider)this.asInterface(uuid("e8d2ff37-6259-4e88-b7e0-94191fde699e"))).abi_ImportKeyPairWithBlobType(keyBlob, BlobType, &_ret));
 		return _ret;
 	}
 	final Windows.Security.Cryptography.Core.CryptographicKey ImportDefaultPublicKeyBlob(Windows.Storage.Streams.IBuffer keyBlob)
 	{
 		Windows.Security.Cryptography.Core.CryptographicKey _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider).abi_ImportDefaultPublicKeyBlob(keyBlob, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider)this.asInterface(uuid("e8d2ff37-6259-4e88-b7e0-94191fde699e"))).abi_ImportDefaultPublicKeyBlob(keyBlob, &_ret));
 		return _ret;
 	}
 	final Windows.Security.Cryptography.Core.CryptographicKey ImportPublicKeyWithBlobType(Windows.Storage.Streams.IBuffer keyBlob, Windows.Security.Cryptography.Core.CryptographicPublicKeyBlobType BlobType)
 	{
 		Windows.Security.Cryptography.Core.CryptographicKey _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider).abi_ImportPublicKeyWithBlobType(keyBlob, BlobType, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider)this.asInterface(uuid("e8d2ff37-6259-4e88-b7e0-94191fde699e"))).abi_ImportPublicKeyWithBlobType(keyBlob, BlobType, &_ret));
 		return _ret;
 	}
 	final Windows.Security.Cryptography.Core.CryptographicKey CreateKeyPairWithCurveName(HSTRING curveName)
 	{
 		Windows.Security.Cryptography.Core.CryptographicKey _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider2).abi_CreateKeyPairWithCurveName(curveName, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider2)this.asInterface(uuid("4e322a7e-7c4d-4997-ac4f-1b848b36306e"))).abi_CreateKeyPairWithCurveName(curveName, &_ret));
 		return _ret;
 	}
 	final Windows.Security.Cryptography.Core.CryptographicKey CreateKeyPairWithCurveParameters(UINT32 __parametersSize, ubyte* parameters)
 	{
 		Windows.Security.Cryptography.Core.CryptographicKey _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider2).abi_CreateKeyPairWithCurveParameters(__parametersSize, parameters, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider2)this.asInterface(uuid("4e322a7e-7c4d-4997-ac4f-1b848b36306e"))).abi_CreateKeyPairWithCurveParameters(__parametersSize, parameters, &_ret));
 		return _ret;
 	}
 
@@ -566,7 +566,7 @@ extern(Windows):
 	static Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider OpenAlgorithm(HSTRING algorithm)
 	{
 		Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProviderStatics).abi_OpenAlgorithm(algorithm, &_ret));
+		Debug.OK(staticInstance.abi_OpenAlgorithm(algorithm, &_ret));
 		return _ret;
 	}
 }
@@ -582,43 +582,43 @@ interface CryptographicEngine
 	static Windows.Storage.Streams.IBuffer Encrypt(Windows.Security.Cryptography.Core.CryptographicKey key, Windows.Storage.Streams.IBuffer data, Windows.Storage.Streams.IBuffer iv)
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ICryptographicEngineStatics).abi_Encrypt(key, data, iv, &_ret));
+		Debug.OK(staticInstance.abi_Encrypt(key, data, iv, &_ret));
 		return _ret;
 	}
 	static Windows.Storage.Streams.IBuffer Decrypt(Windows.Security.Cryptography.Core.CryptographicKey key, Windows.Storage.Streams.IBuffer data, Windows.Storage.Streams.IBuffer iv)
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ICryptographicEngineStatics).abi_Decrypt(key, data, iv, &_ret));
+		Debug.OK(staticInstance.abi_Decrypt(key, data, iv, &_ret));
 		return _ret;
 	}
 	static Windows.Security.Cryptography.Core.EncryptedAndAuthenticatedData EncryptAndAuthenticate(Windows.Security.Cryptography.Core.CryptographicKey key, Windows.Storage.Streams.IBuffer data, Windows.Storage.Streams.IBuffer nonce, Windows.Storage.Streams.IBuffer authenticatedData)
 	{
 		Windows.Security.Cryptography.Core.EncryptedAndAuthenticatedData _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ICryptographicEngineStatics).abi_EncryptAndAuthenticate(key, data, nonce, authenticatedData, &_ret));
+		Debug.OK(staticInstance.abi_EncryptAndAuthenticate(key, data, nonce, authenticatedData, &_ret));
 		return _ret;
 	}
 	static Windows.Storage.Streams.IBuffer DecryptAndAuthenticate(Windows.Security.Cryptography.Core.CryptographicKey key, Windows.Storage.Streams.IBuffer data, Windows.Storage.Streams.IBuffer nonce, Windows.Storage.Streams.IBuffer authenticationTag, Windows.Storage.Streams.IBuffer authenticatedData)
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ICryptographicEngineStatics).abi_DecryptAndAuthenticate(key, data, nonce, authenticationTag, authenticatedData, &_ret));
+		Debug.OK(staticInstance.abi_DecryptAndAuthenticate(key, data, nonce, authenticationTag, authenticatedData, &_ret));
 		return _ret;
 	}
 	static Windows.Storage.Streams.IBuffer Sign(Windows.Security.Cryptography.Core.CryptographicKey key, Windows.Storage.Streams.IBuffer data)
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ICryptographicEngineStatics).abi_Sign(key, data, &_ret));
+		Debug.OK(staticInstance.abi_Sign(key, data, &_ret));
 		return _ret;
 	}
 	static bool VerifySignature(Windows.Security.Cryptography.Core.CryptographicKey key, Windows.Storage.Streams.IBuffer data, Windows.Storage.Streams.IBuffer signature)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ICryptographicEngineStatics).abi_VerifySignature(key, data, signature, &_ret));
+		Debug.OK(staticInstance.abi_VerifySignature(key, data, signature, &_ret));
 		return _ret;
 	}
 	static Windows.Storage.Streams.IBuffer DeriveKeyMaterial(Windows.Security.Cryptography.Core.CryptographicKey key, Windows.Security.Cryptography.Core.KeyDerivationParameters parameters, UINT32 desiredKeySize)
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ICryptographicEngineStatics).abi_DeriveKeyMaterial(key, parameters, desiredKeySize, &_ret));
+		Debug.OK(staticInstance.abi_DeriveKeyMaterial(key, parameters, desiredKeySize, &_ret));
 		return _ret;
 	}
 }
@@ -628,12 +628,12 @@ interface CryptographicHash : Windows.Security.Cryptography.Core.IHashComputatio
 extern(Windows):
 	final void Append(Windows.Storage.Streams.IBuffer data)
 	{
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IHashComputation).abi_Append(data));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IHashComputation)this.asInterface(uuid("5904d1b6-ad31-4603-a3a4-b1bda98e2562"))).abi_Append(data));
 	}
 	final Windows.Storage.Streams.IBuffer GetValueAndReset()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IHashComputation).abi_GetValueAndReset(&_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IHashComputation)this.asInterface(uuid("5904d1b6-ad31-4603-a3a4-b1bda98e2562"))).abi_GetValueAndReset(&_ret));
 		return _ret;
 	}
 }
@@ -644,31 +644,31 @@ extern(Windows):
 	final UINT32 KeySize()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.ICryptographicKey).get_KeySize(&_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.ICryptographicKey)this.asInterface(uuid("ed2a3b70-8e7b-4009-8401-ffd1a62eeb27"))).get_KeySize(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer ExportDefaultPrivateKeyBlobType()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.ICryptographicKey).abi_ExportDefaultPrivateKeyBlobType(&_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.ICryptographicKey)this.asInterface(uuid("ed2a3b70-8e7b-4009-8401-ffd1a62eeb27"))).abi_ExportDefaultPrivateKeyBlobType(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer ExportPrivateKeyWithBlobType(Windows.Security.Cryptography.Core.CryptographicPrivateKeyBlobType BlobType)
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.ICryptographicKey).abi_ExportPrivateKeyWithBlobType(BlobType, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.ICryptographicKey)this.asInterface(uuid("ed2a3b70-8e7b-4009-8401-ffd1a62eeb27"))).abi_ExportPrivateKeyWithBlobType(BlobType, &_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer ExportDefaultPublicKeyBlobType()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.ICryptographicKey).abi_ExportDefaultPublicKeyBlobType(&_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.ICryptographicKey)this.asInterface(uuid("ed2a3b70-8e7b-4009-8401-ffd1a62eeb27"))).abi_ExportDefaultPublicKeyBlobType(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer ExportPublicKeyWithBlobType(Windows.Security.Cryptography.Core.CryptographicPublicKeyBlobType BlobType)
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.ICryptographicKey).abi_ExportPublicKeyWithBlobType(BlobType, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.ICryptographicKey)this.asInterface(uuid("ed2a3b70-8e7b-4009-8401-ffd1a62eeb27"))).abi_ExportPublicKeyWithBlobType(BlobType, &_ret));
 		return _ret;
 	}
 }
@@ -684,277 +684,277 @@ interface EccCurveNames
 	static HSTRING BrainpoolP160r1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_BrainpoolP160r1(&_ret));
+		Debug.OK(staticInstance.get_BrainpoolP160r1(&_ret));
 		return _ret;
 	}
 	static HSTRING BrainpoolP160t1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_BrainpoolP160t1(&_ret));
+		Debug.OK(staticInstance.get_BrainpoolP160t1(&_ret));
 		return _ret;
 	}
 	static HSTRING BrainpoolP192r1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_BrainpoolP192r1(&_ret));
+		Debug.OK(staticInstance.get_BrainpoolP192r1(&_ret));
 		return _ret;
 	}
 	static HSTRING BrainpoolP192t1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_BrainpoolP192t1(&_ret));
+		Debug.OK(staticInstance.get_BrainpoolP192t1(&_ret));
 		return _ret;
 	}
 	static HSTRING BrainpoolP224r1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_BrainpoolP224r1(&_ret));
+		Debug.OK(staticInstance.get_BrainpoolP224r1(&_ret));
 		return _ret;
 	}
 	static HSTRING BrainpoolP224t1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_BrainpoolP224t1(&_ret));
+		Debug.OK(staticInstance.get_BrainpoolP224t1(&_ret));
 		return _ret;
 	}
 	static HSTRING BrainpoolP256r1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_BrainpoolP256r1(&_ret));
+		Debug.OK(staticInstance.get_BrainpoolP256r1(&_ret));
 		return _ret;
 	}
 	static HSTRING BrainpoolP256t1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_BrainpoolP256t1(&_ret));
+		Debug.OK(staticInstance.get_BrainpoolP256t1(&_ret));
 		return _ret;
 	}
 	static HSTRING BrainpoolP320r1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_BrainpoolP320r1(&_ret));
+		Debug.OK(staticInstance.get_BrainpoolP320r1(&_ret));
 		return _ret;
 	}
 	static HSTRING BrainpoolP320t1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_BrainpoolP320t1(&_ret));
+		Debug.OK(staticInstance.get_BrainpoolP320t1(&_ret));
 		return _ret;
 	}
 	static HSTRING BrainpoolP384r1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_BrainpoolP384r1(&_ret));
+		Debug.OK(staticInstance.get_BrainpoolP384r1(&_ret));
 		return _ret;
 	}
 	static HSTRING BrainpoolP384t1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_BrainpoolP384t1(&_ret));
+		Debug.OK(staticInstance.get_BrainpoolP384t1(&_ret));
 		return _ret;
 	}
 	static HSTRING BrainpoolP512r1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_BrainpoolP512r1(&_ret));
+		Debug.OK(staticInstance.get_BrainpoolP512r1(&_ret));
 		return _ret;
 	}
 	static HSTRING BrainpoolP512t1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_BrainpoolP512t1(&_ret));
+		Debug.OK(staticInstance.get_BrainpoolP512t1(&_ret));
 		return _ret;
 	}
 	static HSTRING Curve25519()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_Curve25519(&_ret));
+		Debug.OK(staticInstance.get_Curve25519(&_ret));
 		return _ret;
 	}
 	static HSTRING Ec192wapi()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_Ec192wapi(&_ret));
+		Debug.OK(staticInstance.get_Ec192wapi(&_ret));
 		return _ret;
 	}
 	static HSTRING NistP192()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_NistP192(&_ret));
+		Debug.OK(staticInstance.get_NistP192(&_ret));
 		return _ret;
 	}
 	static HSTRING NistP224()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_NistP224(&_ret));
+		Debug.OK(staticInstance.get_NistP224(&_ret));
 		return _ret;
 	}
 	static HSTRING NistP256()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_NistP256(&_ret));
+		Debug.OK(staticInstance.get_NistP256(&_ret));
 		return _ret;
 	}
 	static HSTRING NistP384()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_NistP384(&_ret));
+		Debug.OK(staticInstance.get_NistP384(&_ret));
 		return _ret;
 	}
 	static HSTRING NistP521()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_NistP521(&_ret));
+		Debug.OK(staticInstance.get_NistP521(&_ret));
 		return _ret;
 	}
 	static HSTRING NumsP256t1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_NumsP256t1(&_ret));
+		Debug.OK(staticInstance.get_NumsP256t1(&_ret));
 		return _ret;
 	}
 	static HSTRING NumsP384t1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_NumsP384t1(&_ret));
+		Debug.OK(staticInstance.get_NumsP384t1(&_ret));
 		return _ret;
 	}
 	static HSTRING NumsP512t1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_NumsP512t1(&_ret));
+		Debug.OK(staticInstance.get_NumsP512t1(&_ret));
 		return _ret;
 	}
 	static HSTRING SecP160k1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_SecP160k1(&_ret));
+		Debug.OK(staticInstance.get_SecP160k1(&_ret));
 		return _ret;
 	}
 	static HSTRING SecP160r1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_SecP160r1(&_ret));
+		Debug.OK(staticInstance.get_SecP160r1(&_ret));
 		return _ret;
 	}
 	static HSTRING SecP160r2()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_SecP160r2(&_ret));
+		Debug.OK(staticInstance.get_SecP160r2(&_ret));
 		return _ret;
 	}
 	static HSTRING SecP192k1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_SecP192k1(&_ret));
+		Debug.OK(staticInstance.get_SecP192k1(&_ret));
 		return _ret;
 	}
 	static HSTRING SecP192r1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_SecP192r1(&_ret));
+		Debug.OK(staticInstance.get_SecP192r1(&_ret));
 		return _ret;
 	}
 	static HSTRING SecP224k1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_SecP224k1(&_ret));
+		Debug.OK(staticInstance.get_SecP224k1(&_ret));
 		return _ret;
 	}
 	static HSTRING SecP224r1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_SecP224r1(&_ret));
+		Debug.OK(staticInstance.get_SecP224r1(&_ret));
 		return _ret;
 	}
 	static HSTRING SecP256k1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_SecP256k1(&_ret));
+		Debug.OK(staticInstance.get_SecP256k1(&_ret));
 		return _ret;
 	}
 	static HSTRING SecP256r1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_SecP256r1(&_ret));
+		Debug.OK(staticInstance.get_SecP256r1(&_ret));
 		return _ret;
 	}
 	static HSTRING SecP384r1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_SecP384r1(&_ret));
+		Debug.OK(staticInstance.get_SecP384r1(&_ret));
 		return _ret;
 	}
 	static HSTRING SecP521r1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_SecP521r1(&_ret));
+		Debug.OK(staticInstance.get_SecP521r1(&_ret));
 		return _ret;
 	}
 	static HSTRING Wtls7()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_Wtls7(&_ret));
+		Debug.OK(staticInstance.get_Wtls7(&_ret));
 		return _ret;
 	}
 	static HSTRING Wtls9()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_Wtls9(&_ret));
+		Debug.OK(staticInstance.get_Wtls9(&_ret));
 		return _ret;
 	}
 	static HSTRING Wtls12()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_Wtls12(&_ret));
+		Debug.OK(staticInstance.get_Wtls12(&_ret));
 		return _ret;
 	}
 	static HSTRING X962P192v1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_X962P192v1(&_ret));
+		Debug.OK(staticInstance.get_X962P192v1(&_ret));
 		return _ret;
 	}
 	static HSTRING X962P192v2()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_X962P192v2(&_ret));
+		Debug.OK(staticInstance.get_X962P192v2(&_ret));
 		return _ret;
 	}
 	static HSTRING X962P192v3()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_X962P192v3(&_ret));
+		Debug.OK(staticInstance.get_X962P192v3(&_ret));
 		return _ret;
 	}
 	static HSTRING X962P239v1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_X962P239v1(&_ret));
+		Debug.OK(staticInstance.get_X962P239v1(&_ret));
 		return _ret;
 	}
 	static HSTRING X962P239v2()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_X962P239v2(&_ret));
+		Debug.OK(staticInstance.get_X962P239v2(&_ret));
 		return _ret;
 	}
 	static HSTRING X962P239v3()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_X962P239v3(&_ret));
+		Debug.OK(staticInstance.get_X962P239v3(&_ret));
 		return _ret;
 	}
 	static HSTRING X962P256v1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_X962P256v1(&_ret));
+		Debug.OK(staticInstance.get_X962P256v1(&_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IVectorView!(HSTRING) AllEccCurveNames()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics).get_AllEccCurveNames(&_ret));
+		Debug.OK(staticInstance.get_AllEccCurveNames(&_ret));
 		return _ret;
 	}
 }
@@ -965,13 +965,13 @@ extern(Windows):
 	final Windows.Storage.Streams.IBuffer EncryptedData()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IEncryptedAndAuthenticatedData).get_EncryptedData(&_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IEncryptedAndAuthenticatedData)this.asInterface(uuid("6fa42fe7-1ecb-4b00-bea5-60b83f862f17"))).get_EncryptedData(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer AuthenticationTag()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IEncryptedAndAuthenticatedData).get_AuthenticationTag(&_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IEncryptedAndAuthenticatedData)this.asInterface(uuid("6fa42fe7-1ecb-4b00-bea5-60b83f862f17"))).get_AuthenticationTag(&_ret));
 		return _ret;
 	}
 }
@@ -987,31 +987,31 @@ interface HashAlgorithmNames
 	static HSTRING Md5()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IHashAlgorithmNamesStatics).get_Md5(&_ret));
+		Debug.OK(staticInstance.get_Md5(&_ret));
 		return _ret;
 	}
 	static HSTRING Sha1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IHashAlgorithmNamesStatics).get_Sha1(&_ret));
+		Debug.OK(staticInstance.get_Sha1(&_ret));
 		return _ret;
 	}
 	static HSTRING Sha256()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IHashAlgorithmNamesStatics).get_Sha256(&_ret));
+		Debug.OK(staticInstance.get_Sha256(&_ret));
 		return _ret;
 	}
 	static HSTRING Sha384()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IHashAlgorithmNamesStatics).get_Sha384(&_ret));
+		Debug.OK(staticInstance.get_Sha384(&_ret));
 		return _ret;
 	}
 	static HSTRING Sha512()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IHashAlgorithmNamesStatics).get_Sha512(&_ret));
+		Debug.OK(staticInstance.get_Sha512(&_ret));
 		return _ret;
 	}
 }
@@ -1022,25 +1022,25 @@ extern(Windows):
 	final HSTRING AlgorithmName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IHashAlgorithmProvider).get_AlgorithmName(&_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IHashAlgorithmProvider)this.asInterface(uuid("be9b3080-b2c3-422b-bce1-ec90efb5d7b5"))).get_AlgorithmName(&_ret));
 		return _ret;
 	}
 	final UINT32 HashLength()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IHashAlgorithmProvider).get_HashLength(&_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IHashAlgorithmProvider)this.asInterface(uuid("be9b3080-b2c3-422b-bce1-ec90efb5d7b5"))).get_HashLength(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer HashData(Windows.Storage.Streams.IBuffer data)
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IHashAlgorithmProvider).abi_HashData(data, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IHashAlgorithmProvider)this.asInterface(uuid("be9b3080-b2c3-422b-bce1-ec90efb5d7b5"))).abi_HashData(data, &_ret));
 		return _ret;
 	}
 	final Windows.Security.Cryptography.Core.CryptographicHash CreateHash()
 	{
 		Windows.Security.Cryptography.Core.CryptographicHash _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IHashAlgorithmProvider).abi_CreateHash(&_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IHashAlgorithmProvider)this.asInterface(uuid("be9b3080-b2c3-422b-bce1-ec90efb5d7b5"))).abi_CreateHash(&_ret));
 		return _ret;
 	}
 
@@ -1053,7 +1053,7 @@ extern(Windows):
 	static Windows.Security.Cryptography.Core.HashAlgorithmProvider OpenAlgorithm(HSTRING algorithm)
 	{
 		Windows.Security.Cryptography.Core.HashAlgorithmProvider _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IHashAlgorithmProviderStatics).abi_OpenAlgorithm(algorithm, &_ret));
+		Debug.OK(staticInstance.abi_OpenAlgorithm(algorithm, &_ret));
 		return _ret;
 	}
 }
@@ -1069,91 +1069,91 @@ interface KeyDerivationAlgorithmNames
 	static HSTRING Pbkdf2Md5()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmNamesStatics).get_Pbkdf2Md5(&_ret));
+		Debug.OK(staticInstance.get_Pbkdf2Md5(&_ret));
 		return _ret;
 	}
 	static HSTRING Pbkdf2Sha1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmNamesStatics).get_Pbkdf2Sha1(&_ret));
+		Debug.OK(staticInstance.get_Pbkdf2Sha1(&_ret));
 		return _ret;
 	}
 	static HSTRING Pbkdf2Sha256()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmNamesStatics).get_Pbkdf2Sha256(&_ret));
+		Debug.OK(staticInstance.get_Pbkdf2Sha256(&_ret));
 		return _ret;
 	}
 	static HSTRING Pbkdf2Sha384()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmNamesStatics).get_Pbkdf2Sha384(&_ret));
+		Debug.OK(staticInstance.get_Pbkdf2Sha384(&_ret));
 		return _ret;
 	}
 	static HSTRING Pbkdf2Sha512()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmNamesStatics).get_Pbkdf2Sha512(&_ret));
+		Debug.OK(staticInstance.get_Pbkdf2Sha512(&_ret));
 		return _ret;
 	}
 	static HSTRING Sp800108CtrHmacMd5()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmNamesStatics).get_Sp800108CtrHmacMd5(&_ret));
+		Debug.OK(staticInstance.get_Sp800108CtrHmacMd5(&_ret));
 		return _ret;
 	}
 	static HSTRING Sp800108CtrHmacSha1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmNamesStatics).get_Sp800108CtrHmacSha1(&_ret));
+		Debug.OK(staticInstance.get_Sp800108CtrHmacSha1(&_ret));
 		return _ret;
 	}
 	static HSTRING Sp800108CtrHmacSha256()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmNamesStatics).get_Sp800108CtrHmacSha256(&_ret));
+		Debug.OK(staticInstance.get_Sp800108CtrHmacSha256(&_ret));
 		return _ret;
 	}
 	static HSTRING Sp800108CtrHmacSha384()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmNamesStatics).get_Sp800108CtrHmacSha384(&_ret));
+		Debug.OK(staticInstance.get_Sp800108CtrHmacSha384(&_ret));
 		return _ret;
 	}
 	static HSTRING Sp800108CtrHmacSha512()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmNamesStatics).get_Sp800108CtrHmacSha512(&_ret));
+		Debug.OK(staticInstance.get_Sp800108CtrHmacSha512(&_ret));
 		return _ret;
 	}
 	static HSTRING Sp80056aConcatMd5()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmNamesStatics).get_Sp80056aConcatMd5(&_ret));
+		Debug.OK(staticInstance.get_Sp80056aConcatMd5(&_ret));
 		return _ret;
 	}
 	static HSTRING Sp80056aConcatSha1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmNamesStatics).get_Sp80056aConcatSha1(&_ret));
+		Debug.OK(staticInstance.get_Sp80056aConcatSha1(&_ret));
 		return _ret;
 	}
 	static HSTRING Sp80056aConcatSha256()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmNamesStatics).get_Sp80056aConcatSha256(&_ret));
+		Debug.OK(staticInstance.get_Sp80056aConcatSha256(&_ret));
 		return _ret;
 	}
 	static HSTRING Sp80056aConcatSha384()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmNamesStatics).get_Sp80056aConcatSha384(&_ret));
+		Debug.OK(staticInstance.get_Sp80056aConcatSha384(&_ret));
 		return _ret;
 	}
 	static HSTRING Sp80056aConcatSha512()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmNamesStatics).get_Sp80056aConcatSha512(&_ret));
+		Debug.OK(staticInstance.get_Sp80056aConcatSha512(&_ret));
 		return _ret;
 	}
 }
@@ -1164,13 +1164,13 @@ extern(Windows):
 	final HSTRING AlgorithmName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmProvider).get_AlgorithmName(&_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmProvider)this.asInterface(uuid("e1fba83b-4671-43b7-9158-763aaa98b6bf"))).get_AlgorithmName(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Cryptography.Core.CryptographicKey CreateKey(Windows.Storage.Streams.IBuffer keyMaterial)
 	{
 		Windows.Security.Cryptography.Core.CryptographicKey _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmProvider).abi_CreateKey(keyMaterial, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmProvider)this.asInterface(uuid("e1fba83b-4671-43b7-9158-763aaa98b6bf"))).abi_CreateKey(keyMaterial, &_ret));
 		return _ret;
 	}
 
@@ -1183,7 +1183,7 @@ extern(Windows):
 	static Windows.Security.Cryptography.Core.KeyDerivationAlgorithmProvider OpenAlgorithm(HSTRING algorithm)
 	{
 		Windows.Security.Cryptography.Core.KeyDerivationAlgorithmProvider _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmProviderStatics).abi_OpenAlgorithm(algorithm, &_ret));
+		Debug.OK(staticInstance.abi_OpenAlgorithm(algorithm, &_ret));
 		return _ret;
 	}
 }
@@ -1194,28 +1194,28 @@ extern(Windows):
 	final Windows.Storage.Streams.IBuffer KdfGenericBinary()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IKeyDerivationParameters).get_KdfGenericBinary(&_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IKeyDerivationParameters)this.asInterface(uuid("7bf05967-047b-4a8c-964a-469ffd5522e2"))).get_KdfGenericBinary(&_ret));
 		return _ret;
 	}
 	final void KdfGenericBinary(Windows.Storage.Streams.IBuffer value)
 	{
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IKeyDerivationParameters).set_KdfGenericBinary(value));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IKeyDerivationParameters)this.asInterface(uuid("7bf05967-047b-4a8c-964a-469ffd5522e2"))).set_KdfGenericBinary(value));
 	}
 	final UINT32 IterationCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IKeyDerivationParameters).get_IterationCount(&_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IKeyDerivationParameters)this.asInterface(uuid("7bf05967-047b-4a8c-964a-469ffd5522e2"))).get_IterationCount(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Cryptography.Core.Capi1KdfTargetAlgorithm Capi1KdfTargetAlgorithm()
 	{
 		Windows.Security.Cryptography.Core.Capi1KdfTargetAlgorithm _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IKeyDerivationParameters2).get_Capi1KdfTargetAlgorithm(&_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IKeyDerivationParameters2)this.asInterface(uuid("cd4166d1-417e-4f4c-b666-c0d879f3f8e0"))).get_Capi1KdfTargetAlgorithm(&_ret));
 		return _ret;
 	}
 	final void Capi1KdfTargetAlgorithm(Windows.Security.Cryptography.Core.Capi1KdfTargetAlgorithm value)
 	{
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IKeyDerivationParameters2).set_Capi1KdfTargetAlgorithm(value));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IKeyDerivationParameters2)this.asInterface(uuid("cd4166d1-417e-4f4c-b666-c0d879f3f8e0"))).set_Capi1KdfTargetAlgorithm(value));
 	}
 
 	private static Windows.Security.Cryptography.Core.IKeyDerivationParametersStatics _staticInstance;
@@ -1227,19 +1227,19 @@ extern(Windows):
 	static Windows.Security.Cryptography.Core.KeyDerivationParameters BuildForPbkdf2(Windows.Storage.Streams.IBuffer pbkdf2Salt, UINT32 iterationCount)
 	{
 		Windows.Security.Cryptography.Core.KeyDerivationParameters _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IKeyDerivationParametersStatics).abi_BuildForPbkdf2(pbkdf2Salt, iterationCount, &_ret));
+		Debug.OK(staticInstance.abi_BuildForPbkdf2(pbkdf2Salt, iterationCount, &_ret));
 		return _ret;
 	}
 	static Windows.Security.Cryptography.Core.KeyDerivationParameters BuildForSP800108(Windows.Storage.Streams.IBuffer label, Windows.Storage.Streams.IBuffer context)
 	{
 		Windows.Security.Cryptography.Core.KeyDerivationParameters _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IKeyDerivationParametersStatics).abi_BuildForSP800108(label, context, &_ret));
+		Debug.OK(staticInstance.abi_BuildForSP800108(label, context, &_ret));
 		return _ret;
 	}
 	static Windows.Security.Cryptography.Core.KeyDerivationParameters BuildForSP80056a(Windows.Storage.Streams.IBuffer algorithmId, Windows.Storage.Streams.IBuffer partyUInfo, Windows.Storage.Streams.IBuffer partyVInfo, Windows.Storage.Streams.IBuffer suppPubInfo, Windows.Storage.Streams.IBuffer suppPrivInfo)
 	{
 		Windows.Security.Cryptography.Core.KeyDerivationParameters _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IKeyDerivationParametersStatics).abi_BuildForSP80056a(algorithmId, partyUInfo, partyVInfo, suppPubInfo, suppPrivInfo, &_ret));
+		Debug.OK(staticInstance.abi_BuildForSP80056a(algorithmId, partyUInfo, partyVInfo, suppPubInfo, suppPrivInfo, &_ret));
 		return _ret;
 	}
 }
@@ -1255,37 +1255,37 @@ interface MacAlgorithmNames
 	static HSTRING HmacMd5()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IMacAlgorithmNamesStatics).get_HmacMd5(&_ret));
+		Debug.OK(staticInstance.get_HmacMd5(&_ret));
 		return _ret;
 	}
 	static HSTRING HmacSha1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IMacAlgorithmNamesStatics).get_HmacSha1(&_ret));
+		Debug.OK(staticInstance.get_HmacSha1(&_ret));
 		return _ret;
 	}
 	static HSTRING HmacSha256()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IMacAlgorithmNamesStatics).get_HmacSha256(&_ret));
+		Debug.OK(staticInstance.get_HmacSha256(&_ret));
 		return _ret;
 	}
 	static HSTRING HmacSha384()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IMacAlgorithmNamesStatics).get_HmacSha384(&_ret));
+		Debug.OK(staticInstance.get_HmacSha384(&_ret));
 		return _ret;
 	}
 	static HSTRING HmacSha512()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IMacAlgorithmNamesStatics).get_HmacSha512(&_ret));
+		Debug.OK(staticInstance.get_HmacSha512(&_ret));
 		return _ret;
 	}
 	static HSTRING AesCmac()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IMacAlgorithmNamesStatics).get_AesCmac(&_ret));
+		Debug.OK(staticInstance.get_AesCmac(&_ret));
 		return _ret;
 	}
 }
@@ -1296,25 +1296,25 @@ extern(Windows):
 	final HSTRING AlgorithmName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IMacAlgorithmProvider).get_AlgorithmName(&_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IMacAlgorithmProvider)this.asInterface(uuid("4a3fc5c3-1cbd-41ce-a092-aa0bc5d2d2f5"))).get_AlgorithmName(&_ret));
 		return _ret;
 	}
 	final UINT32 MacLength()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IMacAlgorithmProvider).get_MacLength(&_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IMacAlgorithmProvider)this.asInterface(uuid("4a3fc5c3-1cbd-41ce-a092-aa0bc5d2d2f5"))).get_MacLength(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Cryptography.Core.CryptographicKey CreateKey(Windows.Storage.Streams.IBuffer keyMaterial)
 	{
 		Windows.Security.Cryptography.Core.CryptographicKey _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IMacAlgorithmProvider).abi_CreateKey(keyMaterial, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IMacAlgorithmProvider)this.asInterface(uuid("4a3fc5c3-1cbd-41ce-a092-aa0bc5d2d2f5"))).abi_CreateKey(keyMaterial, &_ret));
 		return _ret;
 	}
 	final Windows.Security.Cryptography.Core.CryptographicHash CreateHash(Windows.Storage.Streams.IBuffer keyMaterial)
 	{
 		Windows.Security.Cryptography.Core.CryptographicHash _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.IMacAlgorithmProvider2).abi_CreateHash(keyMaterial, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IMacAlgorithmProvider2)this.asInterface(uuid("6da32a15-d931-42ed-8e7e-c301caee119c"))).abi_CreateHash(keyMaterial, &_ret));
 		return _ret;
 	}
 
@@ -1327,7 +1327,7 @@ extern(Windows):
 	static Windows.Security.Cryptography.Core.MacAlgorithmProvider OpenAlgorithm(HSTRING algorithm)
 	{
 		Windows.Security.Cryptography.Core.MacAlgorithmProvider _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IMacAlgorithmProviderStatics).abi_OpenAlgorithm(algorithm, &_ret));
+		Debug.OK(staticInstance.abi_OpenAlgorithm(algorithm, &_ret));
 		return _ret;
 	}
 }
@@ -1343,13 +1343,13 @@ interface PersistedKeyProvider
 	static Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Core.CryptographicKey) OpenKeyPairFromCertificateAsync(Windows.Security.Cryptography.Certificates.Certificate certificate, HSTRING hashAlgorithmName, Windows.Security.Cryptography.Core.CryptographicPadding padding)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Core.CryptographicKey) _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IPersistedKeyProviderStatics).abi_OpenKeyPairFromCertificateAsync(certificate, hashAlgorithmName, padding, &_ret));
+		Debug.OK(staticInstance.abi_OpenKeyPairFromCertificateAsync(certificate, hashAlgorithmName, padding, &_ret));
 		return _ret;
 	}
 	static Windows.Security.Cryptography.Core.CryptographicKey OpenPublicKeyFromCertificate(Windows.Security.Cryptography.Certificates.Certificate certificate, HSTRING hashAlgorithmName, Windows.Security.Cryptography.Core.CryptographicPadding padding)
 	{
 		Windows.Security.Cryptography.Core.CryptographicKey _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.IPersistedKeyProviderStatics).abi_OpenPublicKeyFromCertificate(certificate, hashAlgorithmName, padding, &_ret));
+		Debug.OK(staticInstance.abi_OpenPublicKeyFromCertificate(certificate, hashAlgorithmName, padding, &_ret));
 		return _ret;
 	}
 }
@@ -1365,115 +1365,115 @@ interface SymmetricAlgorithmNames
 	static HSTRING DesCbc()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ISymmetricAlgorithmNamesStatics).get_DesCbc(&_ret));
+		Debug.OK(staticInstance.get_DesCbc(&_ret));
 		return _ret;
 	}
 	static HSTRING DesEcb()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ISymmetricAlgorithmNamesStatics).get_DesEcb(&_ret));
+		Debug.OK(staticInstance.get_DesEcb(&_ret));
 		return _ret;
 	}
 	static HSTRING TripleDesCbc()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ISymmetricAlgorithmNamesStatics).get_TripleDesCbc(&_ret));
+		Debug.OK(staticInstance.get_TripleDesCbc(&_ret));
 		return _ret;
 	}
 	static HSTRING TripleDesEcb()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ISymmetricAlgorithmNamesStatics).get_TripleDesEcb(&_ret));
+		Debug.OK(staticInstance.get_TripleDesEcb(&_ret));
 		return _ret;
 	}
 	static HSTRING Rc2Cbc()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ISymmetricAlgorithmNamesStatics).get_Rc2Cbc(&_ret));
+		Debug.OK(staticInstance.get_Rc2Cbc(&_ret));
 		return _ret;
 	}
 	static HSTRING Rc2Ecb()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ISymmetricAlgorithmNamesStatics).get_Rc2Ecb(&_ret));
+		Debug.OK(staticInstance.get_Rc2Ecb(&_ret));
 		return _ret;
 	}
 	static HSTRING AesCbc()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ISymmetricAlgorithmNamesStatics).get_AesCbc(&_ret));
+		Debug.OK(staticInstance.get_AesCbc(&_ret));
 		return _ret;
 	}
 	static HSTRING AesEcb()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ISymmetricAlgorithmNamesStatics).get_AesEcb(&_ret));
+		Debug.OK(staticInstance.get_AesEcb(&_ret));
 		return _ret;
 	}
 	static HSTRING AesGcm()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ISymmetricAlgorithmNamesStatics).get_AesGcm(&_ret));
+		Debug.OK(staticInstance.get_AesGcm(&_ret));
 		return _ret;
 	}
 	static HSTRING AesCcm()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ISymmetricAlgorithmNamesStatics).get_AesCcm(&_ret));
+		Debug.OK(staticInstance.get_AesCcm(&_ret));
 		return _ret;
 	}
 	static HSTRING AesCbcPkcs7()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ISymmetricAlgorithmNamesStatics).get_AesCbcPkcs7(&_ret));
+		Debug.OK(staticInstance.get_AesCbcPkcs7(&_ret));
 		return _ret;
 	}
 	static HSTRING AesEcbPkcs7()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ISymmetricAlgorithmNamesStatics).get_AesEcbPkcs7(&_ret));
+		Debug.OK(staticInstance.get_AesEcbPkcs7(&_ret));
 		return _ret;
 	}
 	static HSTRING DesCbcPkcs7()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ISymmetricAlgorithmNamesStatics).get_DesCbcPkcs7(&_ret));
+		Debug.OK(staticInstance.get_DesCbcPkcs7(&_ret));
 		return _ret;
 	}
 	static HSTRING DesEcbPkcs7()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ISymmetricAlgorithmNamesStatics).get_DesEcbPkcs7(&_ret));
+		Debug.OK(staticInstance.get_DesEcbPkcs7(&_ret));
 		return _ret;
 	}
 	static HSTRING TripleDesCbcPkcs7()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ISymmetricAlgorithmNamesStatics).get_TripleDesCbcPkcs7(&_ret));
+		Debug.OK(staticInstance.get_TripleDesCbcPkcs7(&_ret));
 		return _ret;
 	}
 	static HSTRING TripleDesEcbPkcs7()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ISymmetricAlgorithmNamesStatics).get_TripleDesEcbPkcs7(&_ret));
+		Debug.OK(staticInstance.get_TripleDesEcbPkcs7(&_ret));
 		return _ret;
 	}
 	static HSTRING Rc2CbcPkcs7()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ISymmetricAlgorithmNamesStatics).get_Rc2CbcPkcs7(&_ret));
+		Debug.OK(staticInstance.get_Rc2CbcPkcs7(&_ret));
 		return _ret;
 	}
 	static HSTRING Rc2EcbPkcs7()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ISymmetricAlgorithmNamesStatics).get_Rc2EcbPkcs7(&_ret));
+		Debug.OK(staticInstance.get_Rc2EcbPkcs7(&_ret));
 		return _ret;
 	}
 	static HSTRING Rc4()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ISymmetricAlgorithmNamesStatics).get_Rc4(&_ret));
+		Debug.OK(staticInstance.get_Rc4(&_ret));
 		return _ret;
 	}
 }
@@ -1484,19 +1484,19 @@ extern(Windows):
 	final HSTRING AlgorithmName()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.ISymmetricKeyAlgorithmProvider).get_AlgorithmName(&_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.ISymmetricKeyAlgorithmProvider)this.asInterface(uuid("3d7e4a33-3bd0-4902-8ac8-470d50d21376"))).get_AlgorithmName(&_ret));
 		return _ret;
 	}
 	final UINT32 BlockLength()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.ISymmetricKeyAlgorithmProvider).get_BlockLength(&_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.ISymmetricKeyAlgorithmProvider)this.asInterface(uuid("3d7e4a33-3bd0-4902-8ac8-470d50d21376"))).get_BlockLength(&_ret));
 		return _ret;
 	}
 	final Windows.Security.Cryptography.Core.CryptographicKey CreateSymmetricKey(Windows.Storage.Streams.IBuffer keyMaterial)
 	{
 		Windows.Security.Cryptography.Core.CryptographicKey _ret;
-		Debug.OK(this.as!(Windows.Security.Cryptography.Core.ISymmetricKeyAlgorithmProvider).abi_CreateSymmetricKey(keyMaterial, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.ISymmetricKeyAlgorithmProvider)this.asInterface(uuid("3d7e4a33-3bd0-4902-8ac8-470d50d21376"))).abi_CreateSymmetricKey(keyMaterial, &_ret));
 		return _ret;
 	}
 
@@ -1509,7 +1509,7 @@ extern(Windows):
 	static Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider OpenAlgorithm(HSTRING algorithm)
 	{
 		Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider _ret;
-		Debug.OK(staticInstance.as!(Windows.Security.Cryptography.Core.ISymmetricKeyAlgorithmProviderStatics).abi_OpenAlgorithm(algorithm, &_ret));
+		Debug.OK(staticInstance.abi_OpenAlgorithm(algorithm, &_ret));
 		return _ret;
 	}
 }

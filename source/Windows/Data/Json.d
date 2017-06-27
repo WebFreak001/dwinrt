@@ -115,137 +115,137 @@ extern(Windows):
 	final Windows.Data.Json.JsonObject GetObjectAt(UINT32 index)
 	{
 		Windows.Data.Json.JsonObject _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonArray).abi_GetObjectAt(index, &_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonArray)this.asInterface(uuid("08c1ddb6-0cbd-4a9a-b5d3-2f852dc37e81"))).abi_GetObjectAt(index, &_ret));
 		return _ret;
 	}
 	final Windows.Data.Json.JsonArray GetArrayAt(UINT32 index)
 	{
 		Windows.Data.Json.JsonArray _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonArray).abi_GetArrayAt(index, &_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonArray)this.asInterface(uuid("08c1ddb6-0cbd-4a9a-b5d3-2f852dc37e81"))).abi_GetArrayAt(index, &_ret));
 		return _ret;
 	}
 	final HSTRING GetStringAt(UINT32 index)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonArray).abi_GetStringAt(index, &_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonArray)this.asInterface(uuid("08c1ddb6-0cbd-4a9a-b5d3-2f852dc37e81"))).abi_GetStringAt(index, &_ret));
 		return _ret;
 	}
 	final double GetNumberAt(UINT32 index)
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonArray).abi_GetNumberAt(index, &_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonArray)this.asInterface(uuid("08c1ddb6-0cbd-4a9a-b5d3-2f852dc37e81"))).abi_GetNumberAt(index, &_ret));
 		return _ret;
 	}
 	final bool GetBooleanAt(UINT32 index)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonArray).abi_GetBooleanAt(index, &_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonArray)this.asInterface(uuid("08c1ddb6-0cbd-4a9a-b5d3-2f852dc37e81"))).abi_GetBooleanAt(index, &_ret));
 		return _ret;
 	}
 	final Windows.Data.Json.JsonValueType ValueType()
 	{
 		Windows.Data.Json.JsonValueType _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).get_ValueType(&_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonValue)this.asInterface(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e"))).get_ValueType(&_ret));
 		return _ret;
 	}
 	final HSTRING Stringify()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_Stringify(&_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonValue)this.asInterface(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e"))).abi_Stringify(&_ret));
 		return _ret;
 	}
 	final HSTRING GetString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetString(&_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonValue)this.asInterface(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e"))).abi_GetString(&_ret));
 		return _ret;
 	}
 	final double GetNumber()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetNumber(&_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonValue)this.asInterface(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e"))).abi_GetNumber(&_ret));
 		return _ret;
 	}
 	final bool GetBoolean()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetBoolean(&_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonValue)this.asInterface(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e"))).abi_GetBoolean(&_ret));
 		return _ret;
 	}
 	final Windows.Data.Json.JsonArray GetArray()
 	{
 		Windows.Data.Json.JsonArray _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetArray(&_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonValue)this.asInterface(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e"))).abi_GetArray(&_ret));
 		return _ret;
 	}
 	final Windows.Data.Json.JsonObject GetObject()
 	{
 		Windows.Data.Json.JsonObject _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetObject(&_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonValue)this.asInterface(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e"))).abi_GetObject(&_ret));
 		return _ret;
 	}
 	final Windows.Data.Json.IJsonValue GetAt(uint index)
 	{
 		Windows.Data.Json.IJsonValue _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).get_GetAt(index, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue))this).get_GetAt(index, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue))this).get_Size(&_ret));
 		return _ret;
 	}
 	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Data.Json.IJsonValue)* out_view)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).abi_GetView(out_view));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue))this).abi_GetView(out_view));
 	}
 	final uint IndexOf(Windows.Data.Json.IJsonValue value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void SetAt(uint index, Windows.Data.Json.IJsonValue item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).abi_SetAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue))this).abi_SetAt(index, item));
 	}
 	final void InsertAt(uint index, Windows.Data.Json.IJsonValue item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).abi_InsertAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue))this).abi_InsertAt(index, item));
 	}
 	final void RemoveAt(uint index)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).abi_RemoveAt(index));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue))this).abi_RemoveAt(index));
 	}
 	final void Append(Windows.Data.Json.IJsonValue item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).abi_Append(item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue))this).abi_Append(item));
 	}
 	final void RemoveAtEnd()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).abi_RemoveAtEnd());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue))this).abi_RemoveAtEnd());
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue))this).abi_Clear());
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.Data.Json.IJsonValue* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void ReplaceAll(uint count, Windows.Data.Json.IJsonValue* out_value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue)).abi_ReplaceAll(count, out_value));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Data.Json.IJsonValue))this).abi_ReplaceAll(count, out_value));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Data.Json.IJsonValue)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Data.Json.IJsonValue)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.Data.Json.IJsonValue))this).abi_First(out_first));
 	}
 	final HSTRING ToString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		Debug.OK((cast(Windows.Foundation.IStringable)this.asInterface(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3"))).abi_ToString(&_ret));
 		return _ret;
 	}
 
@@ -258,20 +258,20 @@ extern(Windows):
 	static Windows.Data.Json.JsonArray Parse(HSTRING input)
 	{
 		Windows.Data.Json.JsonArray _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Json.IJsonArrayStatics).abi_Parse(input, &_ret));
+		Debug.OK(staticInstance.abi_Parse(input, &_ret));
 		return _ret;
 	}
 	static bool TryParse(HSTRING input, Windows.Data.Json.JsonArray* out_result)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Json.IJsonArrayStatics).abi_TryParse(input, out_result, &_ret));
+		Debug.OK(staticInstance.abi_TryParse(input, out_result, &_ret));
 		return _ret;
 	}
 	static JsonArray New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(JsonArray).abi_ActivateInstance(&ret));
-		return ret.as!(JsonArray);
+		return cast(JsonArray) ret;
 	}
 }
 
@@ -286,7 +286,7 @@ interface JsonError
 	static Windows.Data.Json.JsonErrorStatus GetJsonStatus(INT32 hresult)
 	{
 		Windows.Data.Json.JsonErrorStatus _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Json.IJsonErrorStatics2).abi_GetJsonStatus(hresult, &_ret));
+		Debug.OK(staticInstance.abi_GetJsonStatus(hresult, &_ret));
 		return _ret;
 	}
 }
@@ -297,167 +297,167 @@ extern(Windows):
 	final Windows.Data.Json.JsonValue GetNamedValue(HSTRING name)
 	{
 		Windows.Data.Json.JsonValue _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonObject).abi_GetNamedValue(name, &_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonObject)this.asInterface(uuid("064e24dd-29c2-4f83-9ac1-9ee11578beb3"))).abi_GetNamedValue(name, &_ret));
 		return _ret;
 	}
 	final void SetNamedValue(HSTRING name, Windows.Data.Json.IJsonValue value)
 	{
-		Debug.OK(this.as!(Windows.Data.Json.IJsonObject).abi_SetNamedValue(name, value));
+		Debug.OK((cast(Windows.Data.Json.IJsonObject)this.asInterface(uuid("064e24dd-29c2-4f83-9ac1-9ee11578beb3"))).abi_SetNamedValue(name, value));
 	}
 	final Windows.Data.Json.JsonObject GetNamedObject(HSTRING name)
 	{
 		Windows.Data.Json.JsonObject _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonObject).abi_GetNamedObject(name, &_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonObject)this.asInterface(uuid("064e24dd-29c2-4f83-9ac1-9ee11578beb3"))).abi_GetNamedObject(name, &_ret));
 		return _ret;
 	}
 	final Windows.Data.Json.JsonArray GetNamedArray(HSTRING name)
 	{
 		Windows.Data.Json.JsonArray _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonObject).abi_GetNamedArray(name, &_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonObject)this.asInterface(uuid("064e24dd-29c2-4f83-9ac1-9ee11578beb3"))).abi_GetNamedArray(name, &_ret));
 		return _ret;
 	}
 	final HSTRING GetNamedString(HSTRING name)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonObject).abi_GetNamedString(name, &_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonObject)this.asInterface(uuid("064e24dd-29c2-4f83-9ac1-9ee11578beb3"))).abi_GetNamedString(name, &_ret));
 		return _ret;
 	}
 	final double GetNamedNumber(HSTRING name)
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonObject).abi_GetNamedNumber(name, &_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonObject)this.asInterface(uuid("064e24dd-29c2-4f83-9ac1-9ee11578beb3"))).abi_GetNamedNumber(name, &_ret));
 		return _ret;
 	}
 	final bool GetNamedBoolean(HSTRING name)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonObject).abi_GetNamedBoolean(name, &_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonObject)this.asInterface(uuid("064e24dd-29c2-4f83-9ac1-9ee11578beb3"))).abi_GetNamedBoolean(name, &_ret));
 		return _ret;
 	}
 	final Windows.Data.Json.JsonValueType ValueType()
 	{
 		Windows.Data.Json.JsonValueType _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).get_ValueType(&_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonValue)this.asInterface(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e"))).get_ValueType(&_ret));
 		return _ret;
 	}
 	final HSTRING Stringify()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_Stringify(&_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonValue)this.asInterface(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e"))).abi_Stringify(&_ret));
 		return _ret;
 	}
 	final HSTRING GetString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetString(&_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonValue)this.asInterface(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e"))).abi_GetString(&_ret));
 		return _ret;
 	}
 	final double GetNumber()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetNumber(&_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonValue)this.asInterface(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e"))).abi_GetNumber(&_ret));
 		return _ret;
 	}
 	final bool GetBoolean()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetBoolean(&_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonValue)this.asInterface(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e"))).abi_GetBoolean(&_ret));
 		return _ret;
 	}
 	final Windows.Data.Json.JsonArray GetArray()
 	{
 		Windows.Data.Json.JsonArray _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetArray(&_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonValue)this.asInterface(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e"))).abi_GetArray(&_ret));
 		return _ret;
 	}
 	final Windows.Data.Json.JsonObject GetObject()
 	{
 		Windows.Data.Json.JsonObject _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetObject(&_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonValue)this.asInterface(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e"))).abi_GetObject(&_ret));
 		return _ret;
 	}
 	final  Windows.Data.Json.IJsonValue Lookup(HSTRING key)
 	{
 		 Windows.Data.Json.IJsonValue _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue)).abi_Lookup(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue))this).abi_Lookup(key, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue))this).get_Size(&_ret));
 		return _ret;
 	}
 	final bool HasKey(HSTRING key)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue)).abi_HasKey(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue))this).abi_HasKey(key, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMapView!(HSTRING,	 Windows.Data.Json.IJsonValue) GetView()
 	{
 		Windows.Foundation.Collections.IMapView!(HSTRING,  Windows.Data.Json.IJsonValue) _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue)).abi_GetView(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue))this).abi_GetView(&_ret));
 		return _ret;
 	}
 	final bool Insert(HSTRING key,	Windows.Data.Json.IJsonValue value)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue)).abi_Insert(key, value, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue))this).abi_Insert(key, value, &_ret));
 		return _ret;
 	}
 	final void Remove(HSTRING key)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue)).abi_Remove(key));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue))this).abi_Remove(key));
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Data.Json.IJsonValue))this).abi_Clear());
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Data.Json.IJsonValue))* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Data.Json.IJsonValue))).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Data.Json.IJsonValue)))this).abi_First(out_first));
 	}
 	final Windows.Data.Json.JsonValue GetNamedValueOrDefault(HSTRING name, Windows.Data.Json.JsonValue defaultValue)
 	{
 		Windows.Data.Json.JsonValue _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonObjectWithDefaultValues).abi_GetNamedValueOrDefault(name, defaultValue, &_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedValueOrDefault(name, defaultValue, &_ret));
 		return _ret;
 	}
 	final Windows.Data.Json.JsonObject GetNamedObjectOrDefault(HSTRING name, Windows.Data.Json.JsonObject defaultValue)
 	{
 		Windows.Data.Json.JsonObject _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonObjectWithDefaultValues).abi_GetNamedObjectOrDefault(name, defaultValue, &_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedObjectOrDefault(name, defaultValue, &_ret));
 		return _ret;
 	}
 	final HSTRING GetNamedStringOrDefault(HSTRING name, HSTRING defaultValue)
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonObjectWithDefaultValues).abi_GetNamedStringOrDefault(name, defaultValue, &_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedStringOrDefault(name, defaultValue, &_ret));
 		return _ret;
 	}
 	final Windows.Data.Json.JsonArray GetNamedArrayOrDefault(HSTRING name, Windows.Data.Json.JsonArray defaultValue)
 	{
 		Windows.Data.Json.JsonArray _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonObjectWithDefaultValues).abi_GetNamedArrayOrDefault(name, defaultValue, &_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedArrayOrDefault(name, defaultValue, &_ret));
 		return _ret;
 	}
 	final double GetNamedNumberOrDefault(HSTRING name, double defaultValue)
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonObjectWithDefaultValues).abi_GetNamedNumberOrDefault(name, defaultValue, &_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedNumberOrDefault(name, defaultValue, &_ret));
 		return _ret;
 	}
 	final bool GetNamedBooleanOrDefault(HSTRING name, bool defaultValue)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonObjectWithDefaultValues).abi_GetNamedBooleanOrDefault(name, defaultValue, &_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedBooleanOrDefault(name, defaultValue, &_ret));
 		return _ret;
 	}
 	final HSTRING ToString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		Debug.OK((cast(Windows.Foundation.IStringable)this.asInterface(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3"))).abi_ToString(&_ret));
 		return _ret;
 	}
 
@@ -470,20 +470,20 @@ extern(Windows):
 	static Windows.Data.Json.JsonObject Parse(HSTRING input)
 	{
 		Windows.Data.Json.JsonObject _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Json.IJsonObjectStatics).abi_Parse(input, &_ret));
+		Debug.OK(staticInstance.abi_Parse(input, &_ret));
 		return _ret;
 	}
 	static bool TryParse(HSTRING input, Windows.Data.Json.JsonObject* out_result)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Json.IJsonObjectStatics).abi_TryParse(input, out_result, &_ret));
+		Debug.OK(staticInstance.abi_TryParse(input, out_result, &_ret));
 		return _ret;
 	}
 	static JsonObject New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(JsonObject).abi_ActivateInstance(&ret));
-		return ret.as!(JsonObject);
+		return cast(JsonObject) ret;
 	}
 }
 
@@ -493,49 +493,49 @@ extern(Windows):
 	final Windows.Data.Json.JsonValueType ValueType()
 	{
 		Windows.Data.Json.JsonValueType _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).get_ValueType(&_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonValue)this.asInterface(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e"))).get_ValueType(&_ret));
 		return _ret;
 	}
 	final HSTRING Stringify()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_Stringify(&_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonValue)this.asInterface(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e"))).abi_Stringify(&_ret));
 		return _ret;
 	}
 	final HSTRING GetString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetString(&_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonValue)this.asInterface(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e"))).abi_GetString(&_ret));
 		return _ret;
 	}
 	final double GetNumber()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetNumber(&_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonValue)this.asInterface(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e"))).abi_GetNumber(&_ret));
 		return _ret;
 	}
 	final bool GetBoolean()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetBoolean(&_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonValue)this.asInterface(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e"))).abi_GetBoolean(&_ret));
 		return _ret;
 	}
 	final Windows.Data.Json.JsonArray GetArray()
 	{
 		Windows.Data.Json.JsonArray _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetArray(&_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonValue)this.asInterface(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e"))).abi_GetArray(&_ret));
 		return _ret;
 	}
 	final Windows.Data.Json.JsonObject GetObject()
 	{
 		Windows.Data.Json.JsonObject _ret;
-		Debug.OK(this.as!(Windows.Data.Json.IJsonValue).abi_GetObject(&_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonValue)this.asInterface(uuid("a3219ecb-f0b3-4dcd-beee-19d48cd3ed1e"))).abi_GetObject(&_ret));
 		return _ret;
 	}
 	final HSTRING ToString()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Foundation.IStringable).abi_ToString(&_ret));
+		Debug.OK((cast(Windows.Foundation.IStringable)this.asInterface(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3"))).abi_ToString(&_ret));
 		return _ret;
 	}
 
@@ -548,31 +548,31 @@ extern(Windows):
 	static Windows.Data.Json.JsonValue Parse(HSTRING input)
 	{
 		Windows.Data.Json.JsonValue _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Json.IJsonValueStatics).abi_Parse(input, &_ret));
+		Debug.OK(staticInstance.abi_Parse(input, &_ret));
 		return _ret;
 	}
 	static bool TryParse(HSTRING input, Windows.Data.Json.JsonValue* out_result)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Json.IJsonValueStatics).abi_TryParse(input, out_result, &_ret));
+		Debug.OK(staticInstance.abi_TryParse(input, out_result, &_ret));
 		return _ret;
 	}
 	static Windows.Data.Json.JsonValue CreateBooleanValue(bool input)
 	{
 		Windows.Data.Json.JsonValue _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Json.IJsonValueStatics).abi_CreateBooleanValue(input, &_ret));
+		Debug.OK(staticInstance.abi_CreateBooleanValue(input, &_ret));
 		return _ret;
 	}
 	static Windows.Data.Json.JsonValue CreateNumberValue(double input)
 	{
 		Windows.Data.Json.JsonValue _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Json.IJsonValueStatics).abi_CreateNumberValue(input, &_ret));
+		Debug.OK(staticInstance.abi_CreateNumberValue(input, &_ret));
 		return _ret;
 	}
 	static Windows.Data.Json.JsonValue CreateStringValue(HSTRING input)
 	{
 		Windows.Data.Json.JsonValue _ret;
-		Debug.OK(staticInstance.as!(Windows.Data.Json.IJsonValueStatics).abi_CreateStringValue(input, &_ret));
+		Debug.OK(staticInstance.abi_CreateStringValue(input, &_ret));
 		return _ret;
 	}
 }

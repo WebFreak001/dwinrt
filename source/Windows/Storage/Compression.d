@@ -48,43 +48,43 @@ extern(Windows):
 	final Windows.Foundation.IAsyncOperation!(bool) FinishAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.Storage.Compression.ICompressor).abi_FinishAsync(&_ret));
+		Debug.OK((cast(Windows.Storage.Compression.ICompressor)this.asInterface(uuid("0ac3645a-57ac-4ee1-b702-84d39d5424e0"))).abi_FinishAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IOutputStream DetachStream()
 	{
 		Windows.Storage.Streams.IOutputStream _ret;
-		Debug.OK(this.as!(Windows.Storage.Compression.ICompressor).abi_DetachStream(&_ret));
+		Debug.OK((cast(Windows.Storage.Compression.ICompressor)this.asInterface(uuid("0ac3645a-57ac-4ee1-b702-84d39d5424e0"))).abi_DetachStream(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) WriteAsync(Windows.Storage.Streams.IBuffer buffer)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) _ret;
-		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_WriteAsync(buffer, &_ret));
+		Debug.OK((cast(Windows.Storage.Streams.IOutputStream)this.asInterface(uuid("905a0fe6-bc53-11df-8c49-001e4fc686da"))).abi_WriteAsync(buffer, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) FlushAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(this.as!(Windows.Storage.Streams.IOutputStream).abi_FlushAsync(&_ret));
+		Debug.OK((cast(Windows.Storage.Streams.IOutputStream)this.asInterface(uuid("905a0fe6-bc53-11df-8c49-001e4fc686da"))).abi_FlushAsync(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	static Windows.Storage.Compression.Compressor New(Windows.Storage.Streams.IOutputStream underlyingStream)
 	{
 		auto factory = factory!(Windows.Storage.Compression.ICompressorFactory);
 		Windows.Storage.Compression.Compressor _ret;
-		Debug.OK(factory.as!(Windows.Storage.Compression.ICompressorFactory).abi_CreateCompressor(underlyingStream, &_ret));
+		Debug.OK((cast(Windows.Storage.Compression.ICompressorFactory)factory.asInterface(uuid("5f3d96a4-2cfb-442c-a8ba-d7d11b039da0"))).abi_CreateCompressor(underlyingStream, &_ret));
 		return _ret;
 	}
 	static Windows.Storage.Compression.Compressor New(Windows.Storage.Streams.IOutputStream underlyingStream, Windows.Storage.Compression.CompressAlgorithm algorithm, UINT32 blockSize)
 	{
 		auto factory = factory!(Windows.Storage.Compression.ICompressorFactory);
 		Windows.Storage.Compression.Compressor _ret;
-		Debug.OK(factory.as!(Windows.Storage.Compression.ICompressorFactory).abi_CreateCompressorEx(underlyingStream, algorithm, blockSize, &_ret));
+		Debug.OK((cast(Windows.Storage.Compression.ICompressorFactory)factory.asInterface(uuid("5f3d96a4-2cfb-442c-a8ba-d7d11b039da0"))).abi_CreateCompressorEx(underlyingStream, algorithm, blockSize, &_ret));
 		return _ret;
 	}
 }
@@ -95,24 +95,24 @@ extern(Windows):
 	final Windows.Storage.Streams.IInputStream DetachStream()
 	{
 		Windows.Storage.Streams.IInputStream _ret;
-		Debug.OK(this.as!(Windows.Storage.Compression.IDecompressor).abi_DetachStream(&_ret));
+		Debug.OK((cast(Windows.Storage.Compression.IDecompressor)this.asInterface(uuid("b883fe46-d68a-4c8b-ada0-4ee813fc5283"))).abi_DetachStream(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) ReadAsync(Windows.Storage.Streams.IBuffer buffer, UINT32 count, Windows.Storage.Streams.InputStreamOptions options)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, UINT32) _ret;
-		Debug.OK(this.as!(Windows.Storage.Streams.IInputStream).abi_ReadAsync(buffer, count, options, &_ret));
+		Debug.OK((cast(Windows.Storage.Streams.IInputStream)this.asInterface(uuid("905a0fe2-bc53-11df-8c49-001e4fc686da"))).abi_ReadAsync(buffer, count, options, &_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	static Windows.Storage.Compression.Decompressor New(Windows.Storage.Streams.IInputStream underlyingStream)
 	{
 		auto factory = factory!(Windows.Storage.Compression.IDecompressorFactory);
 		Windows.Storage.Compression.Decompressor _ret;
-		Debug.OK(factory.as!(Windows.Storage.Compression.IDecompressorFactory).abi_CreateDecompressor(underlyingStream, &_ret));
+		Debug.OK((cast(Windows.Storage.Compression.IDecompressorFactory)factory.asInterface(uuid("5337e252-1da2-42e1-8834-0379d28d742f"))).abi_CreateDecompressor(underlyingStream, &_ret));
 		return _ret;
 	}
 }

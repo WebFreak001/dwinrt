@@ -331,78 +331,78 @@ interface AudioEncodingProperties : Windows.Media.MediaProperties.IAudioEncoding
 extern(Windows):
 	final void Bitrate(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingProperties).set_Bitrate(value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IAudioEncodingProperties)this.asInterface(uuid("62bc7a16-005c-4b3b-8a0b-0a090e9687f3"))).set_Bitrate(value));
 	}
 	final UINT32 Bitrate()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingProperties).get_Bitrate(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IAudioEncodingProperties)this.asInterface(uuid("62bc7a16-005c-4b3b-8a0b-0a090e9687f3"))).get_Bitrate(&_ret));
 		return _ret;
 	}
 	final void ChannelCount(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingProperties).set_ChannelCount(value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IAudioEncodingProperties)this.asInterface(uuid("62bc7a16-005c-4b3b-8a0b-0a090e9687f3"))).set_ChannelCount(value));
 	}
 	final UINT32 ChannelCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingProperties).get_ChannelCount(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IAudioEncodingProperties)this.asInterface(uuid("62bc7a16-005c-4b3b-8a0b-0a090e9687f3"))).get_ChannelCount(&_ret));
 		return _ret;
 	}
 	final void SampleRate(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingProperties).set_SampleRate(value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IAudioEncodingProperties)this.asInterface(uuid("62bc7a16-005c-4b3b-8a0b-0a090e9687f3"))).set_SampleRate(value));
 	}
 	final UINT32 SampleRate()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingProperties).get_SampleRate(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IAudioEncodingProperties)this.asInterface(uuid("62bc7a16-005c-4b3b-8a0b-0a090e9687f3"))).get_SampleRate(&_ret));
 		return _ret;
 	}
 	final void BitsPerSample(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingProperties).set_BitsPerSample(value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IAudioEncodingProperties)this.asInterface(uuid("62bc7a16-005c-4b3b-8a0b-0a090e9687f3"))).set_BitsPerSample(value));
 	}
 	final UINT32 BitsPerSample()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingProperties).get_BitsPerSample(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IAudioEncodingProperties)this.asInterface(uuid("62bc7a16-005c-4b3b-8a0b-0a090e9687f3"))).get_BitsPerSample(&_ret));
 		return _ret;
 	}
 	final Windows.Media.MediaProperties.MediaPropertySet Properties()
 	{
 		Windows.Media.MediaProperties.MediaPropertySet _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Properties(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Properties(&_ret));
 		return _ret;
 	}
 	final HSTRING Type()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Type(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Type(&_ret));
 		return _ret;
 	}
 	final void Subtype(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).set_Subtype(value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).set_Subtype(value));
 	}
 	final HSTRING Subtype()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Subtype(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Subtype(&_ret));
 		return _ret;
 	}
 	final void SetFormatUserData(UINT32 __valueSize, ubyte* value)
 	{
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingPropertiesWithFormatUserData).abi_SetFormatUserData(__valueSize, value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IAudioEncodingPropertiesWithFormatUserData)this.asInterface(uuid("98f10d79-13ea-49ff-be70-2673db69702c"))).abi_SetFormatUserData(__valueSize, value));
 	}
 	final void GetFormatUserData(UINT32* out___valueSize, ubyte** out_value)
 	{
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingPropertiesWithFormatUserData).abi_GetFormatUserData(out___valueSize, out_value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IAudioEncodingPropertiesWithFormatUserData)this.asInterface(uuid("98f10d79-13ea-49ff-be70-2673db69702c"))).abi_GetFormatUserData(out___valueSize, out_value));
 	}
 	final bool IsSpatial()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IAudioEncodingProperties2).get_IsSpatial(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IAudioEncodingProperties2)this.asInterface(uuid("c45d54da-80bd-4c23-80d5-72d4a181e894"))).get_IsSpatial(&_ret));
 		return _ret;
 	}
 
@@ -415,38 +415,38 @@ extern(Windows):
 	static Windows.Media.MediaProperties.AudioEncodingProperties CreateAac(UINT32 sampleRate, UINT32 channelCount, UINT32 bitrate)
 	{
 		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IAudioEncodingPropertiesStatics).abi_CreateAac(sampleRate, channelCount, bitrate, &_ret));
+		Debug.OK(staticInstance.abi_CreateAac(sampleRate, channelCount, bitrate, &_ret));
 		return _ret;
 	}
 	static Windows.Media.MediaProperties.AudioEncodingProperties CreateAacAdts(UINT32 sampleRate, UINT32 channelCount, UINT32 bitrate)
 	{
 		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IAudioEncodingPropertiesStatics).abi_CreateAacAdts(sampleRate, channelCount, bitrate, &_ret));
+		Debug.OK(staticInstance.abi_CreateAacAdts(sampleRate, channelCount, bitrate, &_ret));
 		return _ret;
 	}
 	static Windows.Media.MediaProperties.AudioEncodingProperties CreateMp3(UINT32 sampleRate, UINT32 channelCount, UINT32 bitrate)
 	{
 		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IAudioEncodingPropertiesStatics).abi_CreateMp3(sampleRate, channelCount, bitrate, &_ret));
+		Debug.OK(staticInstance.abi_CreateMp3(sampleRate, channelCount, bitrate, &_ret));
 		return _ret;
 	}
 	static Windows.Media.MediaProperties.AudioEncodingProperties CreatePcm(UINT32 sampleRate, UINT32 channelCount, UINT32 bitsPerSample)
 	{
 		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IAudioEncodingPropertiesStatics).abi_CreatePcm(sampleRate, channelCount, bitsPerSample, &_ret));
+		Debug.OK(staticInstance.abi_CreatePcm(sampleRate, channelCount, bitsPerSample, &_ret));
 		return _ret;
 	}
 	static Windows.Media.MediaProperties.AudioEncodingProperties CreateWma(UINT32 sampleRate, UINT32 channelCount, UINT32 bitrate)
 	{
 		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IAudioEncodingPropertiesStatics).abi_CreateWma(sampleRate, channelCount, bitrate, &_ret));
+		Debug.OK(staticInstance.abi_CreateWma(sampleRate, channelCount, bitrate, &_ret));
 		return _ret;
 	}
 	static AudioEncodingProperties New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(AudioEncodingProperties).abi_ActivateInstance(&ret));
-		return ret.as!(AudioEncodingProperties);
+		return cast(AudioEncodingProperties) ret;
 	}
 }
 
@@ -456,30 +456,30 @@ extern(Windows):
 	final Windows.Media.MediaProperties.MediaPropertySet Properties()
 	{
 		Windows.Media.MediaProperties.MediaPropertySet _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Properties(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Properties(&_ret));
 		return _ret;
 	}
 	final HSTRING Type()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Type(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Type(&_ret));
 		return _ret;
 	}
 	final void Subtype(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).set_Subtype(value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).set_Subtype(value));
 	}
 	final HSTRING Subtype()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Subtype(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Subtype(&_ret));
 		return _ret;
 	}
 	static ContainerEncodingProperties New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ContainerEncodingProperties).abi_ActivateInstance(&ret));
-		return ret.as!(ContainerEncodingProperties);
+		return cast(ContainerEncodingProperties) ret;
 	}
 }
 
@@ -494,61 +494,61 @@ interface H264ProfileIds
 	static INT32 ConstrainedBaseline()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IH264ProfileIdsStatics).get_ConstrainedBaseline(&_ret));
+		Debug.OK(staticInstance.get_ConstrainedBaseline(&_ret));
 		return _ret;
 	}
 	static INT32 Baseline()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IH264ProfileIdsStatics).get_Baseline(&_ret));
+		Debug.OK(staticInstance.get_Baseline(&_ret));
 		return _ret;
 	}
 	static INT32 Extended()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IH264ProfileIdsStatics).get_Extended(&_ret));
+		Debug.OK(staticInstance.get_Extended(&_ret));
 		return _ret;
 	}
 	static INT32 Main()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IH264ProfileIdsStatics).get_Main(&_ret));
+		Debug.OK(staticInstance.get_Main(&_ret));
 		return _ret;
 	}
 	static INT32 High()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IH264ProfileIdsStatics).get_High(&_ret));
+		Debug.OK(staticInstance.get_High(&_ret));
 		return _ret;
 	}
 	static INT32 High10()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IH264ProfileIdsStatics).get_High10(&_ret));
+		Debug.OK(staticInstance.get_High10(&_ret));
 		return _ret;
 	}
 	static INT32 High422()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IH264ProfileIdsStatics).get_High422(&_ret));
+		Debug.OK(staticInstance.get_High422(&_ret));
 		return _ret;
 	}
 	static INT32 High444()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IH264ProfileIdsStatics).get_High444(&_ret));
+		Debug.OK(staticInstance.get_High444(&_ret));
 		return _ret;
 	}
 	static INT32 StereoHigh()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IH264ProfileIdsStatics).get_StereoHigh(&_ret));
+		Debug.OK(staticInstance.get_StereoHigh(&_ret));
 		return _ret;
 	}
 	static INT32 MultiviewHigh()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IH264ProfileIdsStatics).get_MultiviewHigh(&_ret));
+		Debug.OK(staticInstance.get_MultiviewHigh(&_ret));
 		return _ret;
 	}
 }
@@ -558,44 +558,44 @@ interface ImageEncodingProperties : Windows.Media.MediaProperties.IImageEncoding
 extern(Windows):
 	final void Width(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IImageEncodingProperties).set_Width(value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IImageEncodingProperties)this.asInterface(uuid("78625635-f331-4189-b1c3-b48d5ae034f1"))).set_Width(value));
 	}
 	final UINT32 Width()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IImageEncodingProperties).get_Width(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IImageEncodingProperties)this.asInterface(uuid("78625635-f331-4189-b1c3-b48d5ae034f1"))).get_Width(&_ret));
 		return _ret;
 	}
 	final void Height(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IImageEncodingProperties).set_Height(value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IImageEncodingProperties)this.asInterface(uuid("78625635-f331-4189-b1c3-b48d5ae034f1"))).set_Height(value));
 	}
 	final UINT32 Height()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IImageEncodingProperties).get_Height(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IImageEncodingProperties)this.asInterface(uuid("78625635-f331-4189-b1c3-b48d5ae034f1"))).get_Height(&_ret));
 		return _ret;
 	}
 	final Windows.Media.MediaProperties.MediaPropertySet Properties()
 	{
 		Windows.Media.MediaProperties.MediaPropertySet _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Properties(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Properties(&_ret));
 		return _ret;
 	}
 	final HSTRING Type()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Type(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Type(&_ret));
 		return _ret;
 	}
 	final void Subtype(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).set_Subtype(value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).set_Subtype(value));
 	}
 	final HSTRING Subtype()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Subtype(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Subtype(&_ret));
 		return _ret;
 	}
 
@@ -608,26 +608,26 @@ extern(Windows):
 	static Windows.Media.MediaProperties.ImageEncodingProperties CreateJpeg()
 	{
 		Windows.Media.MediaProperties.ImageEncodingProperties _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IImageEncodingPropertiesStatics).abi_CreateJpeg(&_ret));
+		Debug.OK(staticInstance.abi_CreateJpeg(&_ret));
 		return _ret;
 	}
 	static Windows.Media.MediaProperties.ImageEncodingProperties CreatePng()
 	{
 		Windows.Media.MediaProperties.ImageEncodingProperties _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IImageEncodingPropertiesStatics).abi_CreatePng(&_ret));
+		Debug.OK(staticInstance.abi_CreatePng(&_ret));
 		return _ret;
 	}
 	static Windows.Media.MediaProperties.ImageEncodingProperties CreateJpegXR()
 	{
 		Windows.Media.MediaProperties.ImageEncodingProperties _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IImageEncodingPropertiesStatics).abi_CreateJpegXR(&_ret));
+		Debug.OK(staticInstance.abi_CreateJpegXR(&_ret));
 		return _ret;
 	}
 	static ImageEncodingProperties New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ImageEncodingProperties).abi_ActivateInstance(&ret));
-		return ret.as!(ImageEncodingProperties);
+		return cast(ImageEncodingProperties) ret;
 	}
 }
 
@@ -636,32 +636,32 @@ interface MediaEncodingProfile : Windows.Media.MediaProperties.IMediaEncodingPro
 extern(Windows):
 	final void Audio(Windows.Media.MediaProperties.AudioEncodingProperties value)
 	{
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProfile).set_Audio(value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProfile)this.asInterface(uuid("e7dbf5a8-1db9-4783-876b-3dfe12acfdb3"))).set_Audio(value));
 	}
 	final Windows.Media.MediaProperties.AudioEncodingProperties Audio()
 	{
 		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProfile).get_Audio(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProfile)this.asInterface(uuid("e7dbf5a8-1db9-4783-876b-3dfe12acfdb3"))).get_Audio(&_ret));
 		return _ret;
 	}
 	final void Video(Windows.Media.MediaProperties.VideoEncodingProperties value)
 	{
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProfile).set_Video(value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProfile)this.asInterface(uuid("e7dbf5a8-1db9-4783-876b-3dfe12acfdb3"))).set_Video(value));
 	}
 	final Windows.Media.MediaProperties.VideoEncodingProperties Video()
 	{
 		Windows.Media.MediaProperties.VideoEncodingProperties _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProfile).get_Video(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProfile)this.asInterface(uuid("e7dbf5a8-1db9-4783-876b-3dfe12acfdb3"))).get_Video(&_ret));
 		return _ret;
 	}
 	final void Container(Windows.Media.MediaProperties.ContainerEncodingProperties value)
 	{
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProfile).set_Container(value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProfile)this.asInterface(uuid("e7dbf5a8-1db9-4783-876b-3dfe12acfdb3"))).set_Container(value));
 	}
 	final Windows.Media.MediaProperties.ContainerEncodingProperties Container()
 	{
 		Windows.Media.MediaProperties.ContainerEncodingProperties _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProfile).get_Container(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProfile)this.asInterface(uuid("e7dbf5a8-1db9-4783-876b-3dfe12acfdb3"))).get_Container(&_ret));
 		return _ret;
 	}
 
@@ -674,50 +674,50 @@ extern(Windows):
 	static Windows.Media.MediaProperties.MediaEncodingProfile CreateM4a(Windows.Media.MediaProperties.AudioEncodingQuality quality)
 	{
 		Windows.Media.MediaProperties.MediaEncodingProfile _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingProfileStatics).abi_CreateM4a(quality, &_ret));
+		Debug.OK(staticInstance.abi_CreateM4a(quality, &_ret));
 		return _ret;
 	}
 	static Windows.Media.MediaProperties.MediaEncodingProfile CreateMp3(Windows.Media.MediaProperties.AudioEncodingQuality quality)
 	{
 		Windows.Media.MediaProperties.MediaEncodingProfile _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingProfileStatics).abi_CreateMp3(quality, &_ret));
+		Debug.OK(staticInstance.abi_CreateMp3(quality, &_ret));
 		return _ret;
 	}
 	static Windows.Media.MediaProperties.MediaEncodingProfile CreateWma(Windows.Media.MediaProperties.AudioEncodingQuality quality)
 	{
 		Windows.Media.MediaProperties.MediaEncodingProfile _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingProfileStatics).abi_CreateWma(quality, &_ret));
+		Debug.OK(staticInstance.abi_CreateWma(quality, &_ret));
 		return _ret;
 	}
 	static Windows.Media.MediaProperties.MediaEncodingProfile CreateMp4(Windows.Media.MediaProperties.VideoEncodingQuality quality)
 	{
 		Windows.Media.MediaProperties.MediaEncodingProfile _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingProfileStatics).abi_CreateMp4(quality, &_ret));
+		Debug.OK(staticInstance.abi_CreateMp4(quality, &_ret));
 		return _ret;
 	}
 	static Windows.Media.MediaProperties.MediaEncodingProfile CreateWmv(Windows.Media.MediaProperties.VideoEncodingQuality quality)
 	{
 		Windows.Media.MediaProperties.MediaEncodingProfile _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingProfileStatics).abi_CreateWmv(quality, &_ret));
+		Debug.OK(staticInstance.abi_CreateWmv(quality, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Media.MediaProperties.MediaEncodingProfile) CreateFromFileAsync(Windows.Storage.IStorageFile file)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.MediaProperties.MediaEncodingProfile) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingProfileStatics).abi_CreateFromFileAsync(file, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromFileAsync(file, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Media.MediaProperties.MediaEncodingProfile) CreateFromStreamAsync(Windows.Storage.Streams.IRandomAccessStream stream)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.MediaProperties.MediaEncodingProfile) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingProfileStatics).abi_CreateFromStreamAsync(stream, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromStreamAsync(stream, &_ret));
 		return _ret;
 	}
 	static MediaEncodingProfile New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MediaEncodingProfile).abi_ActivateInstance(&ret));
-		return ret.as!(MediaEncodingProfile);
+		return cast(MediaEncodingProfile) ret;
 	}
 }
 
@@ -732,241 +732,241 @@ interface MediaEncodingSubtypes
 	static HSTRING Aac()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Aac(&_ret));
+		Debug.OK(staticInstance.get_Aac(&_ret));
 		return _ret;
 	}
 	static HSTRING AacAdts()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_AacAdts(&_ret));
+		Debug.OK(staticInstance.get_AacAdts(&_ret));
 		return _ret;
 	}
 	static HSTRING Ac3()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Ac3(&_ret));
+		Debug.OK(staticInstance.get_Ac3(&_ret));
 		return _ret;
 	}
 	static HSTRING AmrNb()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_AmrNb(&_ret));
+		Debug.OK(staticInstance.get_AmrNb(&_ret));
 		return _ret;
 	}
 	static HSTRING AmrWb()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_AmrWb(&_ret));
+		Debug.OK(staticInstance.get_AmrWb(&_ret));
 		return _ret;
 	}
 	static HSTRING Argb32()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Argb32(&_ret));
+		Debug.OK(staticInstance.get_Argb32(&_ret));
 		return _ret;
 	}
 	static HSTRING Asf()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Asf(&_ret));
+		Debug.OK(staticInstance.get_Asf(&_ret));
 		return _ret;
 	}
 	static HSTRING Avi()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Avi(&_ret));
+		Debug.OK(staticInstance.get_Avi(&_ret));
 		return _ret;
 	}
 	static HSTRING Bgra8()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Bgra8(&_ret));
+		Debug.OK(staticInstance.get_Bgra8(&_ret));
 		return _ret;
 	}
 	static HSTRING Bmp()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Bmp(&_ret));
+		Debug.OK(staticInstance.get_Bmp(&_ret));
 		return _ret;
 	}
 	static HSTRING Eac3()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Eac3(&_ret));
+		Debug.OK(staticInstance.get_Eac3(&_ret));
 		return _ret;
 	}
 	static HSTRING Float()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Float(&_ret));
+		Debug.OK(staticInstance.get_Float(&_ret));
 		return _ret;
 	}
 	static HSTRING Gif()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Gif(&_ret));
+		Debug.OK(staticInstance.get_Gif(&_ret));
 		return _ret;
 	}
 	static HSTRING H263()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_H263(&_ret));
+		Debug.OK(staticInstance.get_H263(&_ret));
 		return _ret;
 	}
 	static HSTRING H264()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_H264(&_ret));
+		Debug.OK(staticInstance.get_H264(&_ret));
 		return _ret;
 	}
 	static HSTRING H264Es()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_H264Es(&_ret));
+		Debug.OK(staticInstance.get_H264Es(&_ret));
 		return _ret;
 	}
 	static HSTRING Hevc()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Hevc(&_ret));
+		Debug.OK(staticInstance.get_Hevc(&_ret));
 		return _ret;
 	}
 	static HSTRING HevcEs()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_HevcEs(&_ret));
+		Debug.OK(staticInstance.get_HevcEs(&_ret));
 		return _ret;
 	}
 	static HSTRING Iyuv()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Iyuv(&_ret));
+		Debug.OK(staticInstance.get_Iyuv(&_ret));
 		return _ret;
 	}
 	static HSTRING Jpeg()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Jpeg(&_ret));
+		Debug.OK(staticInstance.get_Jpeg(&_ret));
 		return _ret;
 	}
 	static HSTRING JpegXr()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_JpegXr(&_ret));
+		Debug.OK(staticInstance.get_JpegXr(&_ret));
 		return _ret;
 	}
 	static HSTRING Mjpg()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Mjpg(&_ret));
+		Debug.OK(staticInstance.get_Mjpg(&_ret));
 		return _ret;
 	}
 	static HSTRING Mpeg()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Mpeg(&_ret));
+		Debug.OK(staticInstance.get_Mpeg(&_ret));
 		return _ret;
 	}
 	static HSTRING Mpeg1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Mpeg1(&_ret));
+		Debug.OK(staticInstance.get_Mpeg1(&_ret));
 		return _ret;
 	}
 	static HSTRING Mpeg2()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Mpeg2(&_ret));
+		Debug.OK(staticInstance.get_Mpeg2(&_ret));
 		return _ret;
 	}
 	static HSTRING Mp3()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Mp3(&_ret));
+		Debug.OK(staticInstance.get_Mp3(&_ret));
 		return _ret;
 	}
 	static HSTRING Mpeg4()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Mpeg4(&_ret));
+		Debug.OK(staticInstance.get_Mpeg4(&_ret));
 		return _ret;
 	}
 	static HSTRING Nv12()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Nv12(&_ret));
+		Debug.OK(staticInstance.get_Nv12(&_ret));
 		return _ret;
 	}
 	static HSTRING Pcm()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Pcm(&_ret));
+		Debug.OK(staticInstance.get_Pcm(&_ret));
 		return _ret;
 	}
 	static HSTRING Png()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Png(&_ret));
+		Debug.OK(staticInstance.get_Png(&_ret));
 		return _ret;
 	}
 	static HSTRING Rgb24()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Rgb24(&_ret));
+		Debug.OK(staticInstance.get_Rgb24(&_ret));
 		return _ret;
 	}
 	static HSTRING Rgb32()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Rgb32(&_ret));
+		Debug.OK(staticInstance.get_Rgb32(&_ret));
 		return _ret;
 	}
 	static HSTRING Tiff()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Tiff(&_ret));
+		Debug.OK(staticInstance.get_Tiff(&_ret));
 		return _ret;
 	}
 	static HSTRING Wave()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Wave(&_ret));
+		Debug.OK(staticInstance.get_Wave(&_ret));
 		return _ret;
 	}
 	static HSTRING Wma8()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Wma8(&_ret));
+		Debug.OK(staticInstance.get_Wma8(&_ret));
 		return _ret;
 	}
 	static HSTRING Wma9()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Wma9(&_ret));
+		Debug.OK(staticInstance.get_Wma9(&_ret));
 		return _ret;
 	}
 	static HSTRING Wmv3()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Wmv3(&_ret));
+		Debug.OK(staticInstance.get_Wmv3(&_ret));
 		return _ret;
 	}
 	static HSTRING Wvc1()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Wvc1(&_ret));
+		Debug.OK(staticInstance.get_Wvc1(&_ret));
 		return _ret;
 	}
 	static HSTRING Yuy2()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Yuy2(&_ret));
+		Debug.OK(staticInstance.get_Yuy2(&_ret));
 		return _ret;
 	}
 	static HSTRING Yv12()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics).get_Yv12(&_ret));
+		Debug.OK(staticInstance.get_Yv12(&_ret));
 		return _ret;
 	}
 }
@@ -977,50 +977,50 @@ extern(Windows):
 	final  IInspectable Lookup(GUID key)
 	{
 		 IInspectable _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(GUID, IInspectable)).abi_Lookup(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(GUID, IInspectable))this).abi_Lookup(key, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(GUID, IInspectable)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(GUID, IInspectable))this).get_Size(&_ret));
 		return _ret;
 	}
 	final bool HasKey(GUID key)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(GUID, IInspectable)).abi_HasKey(key, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(GUID, IInspectable))this).abi_HasKey(key, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMapView!(GUID,  IInspectable) GetView()
 	{
 		Windows.Foundation.Collections.IMapView!(GUID,	IInspectable) _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(GUID, IInspectable)).abi_GetView(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(GUID, IInspectable))this).abi_GetView(&_ret));
 		return _ret;
 	}
 	final bool Insert(GUID key,	 IInspectable value)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(GUID, IInspectable)).abi_Insert(key, value, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(GUID, IInspectable))this).abi_Insert(key, value, &_ret));
 		return _ret;
 	}
 	final void Remove(GUID key)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(GUID, IInspectable)).abi_Remove(key));
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(GUID, IInspectable))this).abi_Remove(key));
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IMap!(GUID, IInspectable)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IMap!(GUID, IInspectable))this).abi_Clear());
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Collections.IKeyValuePair!(GUID, IInspectable))* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(GUID, IInspectable))).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(GUID, IInspectable)))this).abi_First(out_first));
 	}
 	static MediaPropertySet New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MediaPropertySet).abi_ActivateInstance(&ret));
-		return ret.as!(MediaPropertySet);
+		return cast(MediaPropertySet) ret;
 	}
 }
 
@@ -1029,22 +1029,22 @@ interface MediaRatio : Windows.Media.MediaProperties.IMediaRatio
 extern(Windows):
 	final void Numerator(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaRatio).set_Numerator(value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaRatio)this.asInterface(uuid("d2d0fee5-8929-401d-ac78-7d357e378163"))).set_Numerator(value));
 	}
 	final UINT32 Numerator()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaRatio).get_Numerator(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaRatio)this.asInterface(uuid("d2d0fee5-8929-401d-ac78-7d357e378163"))).get_Numerator(&_ret));
 		return _ret;
 	}
 	final void Denominator(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaRatio).set_Denominator(value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaRatio)this.asInterface(uuid("d2d0fee5-8929-401d-ac78-7d357e378163"))).set_Denominator(value));
 	}
 	final UINT32 Denominator()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaRatio).get_Denominator(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaRatio)this.asInterface(uuid("d2d0fee5-8929-401d-ac78-7d357e378163"))).get_Denominator(&_ret));
 		return _ret;
 	}
 }
@@ -1060,31 +1060,31 @@ interface Mpeg2ProfileIds
 	static INT32 Simple()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMpeg2ProfileIdsStatics).get_Simple(&_ret));
+		Debug.OK(staticInstance.get_Simple(&_ret));
 		return _ret;
 	}
 	static INT32 Main()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMpeg2ProfileIdsStatics).get_Main(&_ret));
+		Debug.OK(staticInstance.get_Main(&_ret));
 		return _ret;
 	}
 	static INT32 SignalNoiseRatioScalable()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMpeg2ProfileIdsStatics).get_SignalNoiseRatioScalable(&_ret));
+		Debug.OK(staticInstance.get_SignalNoiseRatioScalable(&_ret));
 		return _ret;
 	}
 	static INT32 SpatiallyScalable()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMpeg2ProfileIdsStatics).get_SpatiallyScalable(&_ret));
+		Debug.OK(staticInstance.get_SpatiallyScalable(&_ret));
 		return _ret;
 	}
 	static INT32 High()
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IMpeg2ProfileIdsStatics).get_High(&_ret));
+		Debug.OK(staticInstance.get_High(&_ret));
 		return _ret;
 	}
 }
@@ -1094,96 +1094,96 @@ interface VideoEncodingProperties : Windows.Media.MediaProperties.IVideoEncoding
 extern(Windows):
 	final void Bitrate(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties).set_Bitrate(value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IVideoEncodingProperties)this.asInterface(uuid("76ee6c9a-37c2-4f2a-880a-1282bbb4373d"))).set_Bitrate(value));
 	}
 	final UINT32 Bitrate()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties).get_Bitrate(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IVideoEncodingProperties)this.asInterface(uuid("76ee6c9a-37c2-4f2a-880a-1282bbb4373d"))).get_Bitrate(&_ret));
 		return _ret;
 	}
 	final void Width(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties).set_Width(value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IVideoEncodingProperties)this.asInterface(uuid("76ee6c9a-37c2-4f2a-880a-1282bbb4373d"))).set_Width(value));
 	}
 	final UINT32 Width()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties).get_Width(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IVideoEncodingProperties)this.asInterface(uuid("76ee6c9a-37c2-4f2a-880a-1282bbb4373d"))).get_Width(&_ret));
 		return _ret;
 	}
 	final void Height(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties).set_Height(value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IVideoEncodingProperties)this.asInterface(uuid("76ee6c9a-37c2-4f2a-880a-1282bbb4373d"))).set_Height(value));
 	}
 	final UINT32 Height()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties).get_Height(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IVideoEncodingProperties)this.asInterface(uuid("76ee6c9a-37c2-4f2a-880a-1282bbb4373d"))).get_Height(&_ret));
 		return _ret;
 	}
 	final Windows.Media.MediaProperties.MediaRatio FrameRate()
 	{
 		Windows.Media.MediaProperties.MediaRatio _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties).get_FrameRate(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IVideoEncodingProperties)this.asInterface(uuid("76ee6c9a-37c2-4f2a-880a-1282bbb4373d"))).get_FrameRate(&_ret));
 		return _ret;
 	}
 	final Windows.Media.MediaProperties.MediaRatio PixelAspectRatio()
 	{
 		Windows.Media.MediaProperties.MediaRatio _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties).get_PixelAspectRatio(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IVideoEncodingProperties)this.asInterface(uuid("76ee6c9a-37c2-4f2a-880a-1282bbb4373d"))).get_PixelAspectRatio(&_ret));
 		return _ret;
 	}
 	final Windows.Media.MediaProperties.MediaPropertySet Properties()
 	{
 		Windows.Media.MediaProperties.MediaPropertySet _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Properties(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Properties(&_ret));
 		return _ret;
 	}
 	final HSTRING Type()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Type(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Type(&_ret));
 		return _ret;
 	}
 	final void Subtype(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).set_Subtype(value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).set_Subtype(value));
 	}
 	final HSTRING Subtype()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IMediaEncodingProperties).get_Subtype(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Subtype(&_ret));
 		return _ret;
 	}
 	final void SetFormatUserData(UINT32 __valueSize, ubyte* value)
 	{
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties2).abi_SetFormatUserData(__valueSize, value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IVideoEncodingProperties2)this.asInterface(uuid("f743a1ef-d465-4290-a94b-ef0f1528f8e3"))).abi_SetFormatUserData(__valueSize, value));
 	}
 	final void GetFormatUserData(UINT32* out___valueSize, ubyte** out_value)
 	{
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties2).abi_GetFormatUserData(out___valueSize, out_value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IVideoEncodingProperties2)this.asInterface(uuid("f743a1ef-d465-4290-a94b-ef0f1528f8e3"))).abi_GetFormatUserData(out___valueSize, out_value));
 	}
 	final void ProfileId(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties2).set_ProfileId(value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IVideoEncodingProperties2)this.asInterface(uuid("f743a1ef-d465-4290-a94b-ef0f1528f8e3"))).set_ProfileId(value));
 	}
 	final INT32 ProfileId()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties2).get_ProfileId(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IVideoEncodingProperties2)this.asInterface(uuid("f743a1ef-d465-4290-a94b-ef0f1528f8e3"))).get_ProfileId(&_ret));
 		return _ret;
 	}
 	final Windows.Media.MediaProperties.StereoscopicVideoPackingMode StereoscopicVideoPackingMode()
 	{
 		Windows.Media.MediaProperties.StereoscopicVideoPackingMode _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties3).get_StereoscopicVideoPackingMode(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IVideoEncodingProperties3)this.asInterface(uuid("386bcdc4-873a-479f-b3eb-56c1fcbec6d7"))).get_StereoscopicVideoPackingMode(&_ret));
 		return _ret;
 	}
 	final Windows.Media.MediaProperties.SphericalVideoFrameFormat SphericalVideoFrameFormat()
 	{
 		Windows.Media.MediaProperties.SphericalVideoFrameFormat _ret;
-		Debug.OK(this.as!(Windows.Media.MediaProperties.IVideoEncodingProperties4).get_SphericalVideoFrameFormat(&_ret));
+		Debug.OK((cast(Windows.Media.MediaProperties.IVideoEncodingProperties4)this.asInterface(uuid("724ef014-c10c-40f2-9d72-3ee13b45fa8e"))).get_SphericalVideoFrameFormat(&_ret));
 		return _ret;
 	}
 
@@ -1196,26 +1196,26 @@ extern(Windows):
 	static Windows.Media.MediaProperties.VideoEncodingProperties CreateH264()
 	{
 		Windows.Media.MediaProperties.VideoEncodingProperties _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IVideoEncodingPropertiesStatics).abi_CreateH264(&_ret));
+		Debug.OK(staticInstance.abi_CreateH264(&_ret));
 		return _ret;
 	}
 	static Windows.Media.MediaProperties.VideoEncodingProperties CreateMpeg2()
 	{
 		Windows.Media.MediaProperties.VideoEncodingProperties _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IVideoEncodingPropertiesStatics).abi_CreateMpeg2(&_ret));
+		Debug.OK(staticInstance.abi_CreateMpeg2(&_ret));
 		return _ret;
 	}
 	static Windows.Media.MediaProperties.VideoEncodingProperties CreateUncompressed(HSTRING subtype, UINT32 width, UINT32 height)
 	{
 		Windows.Media.MediaProperties.VideoEncodingProperties _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.MediaProperties.IVideoEncodingPropertiesStatics).abi_CreateUncompressed(subtype, width, height, &_ret));
+		Debug.OK(staticInstance.abi_CreateUncompressed(subtype, width, height, &_ret));
 		return _ret;
 	}
 	static VideoEncodingProperties New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(VideoEncodingProperties).abi_ActivateInstance(&ret));
-		return ret.as!(VideoEncodingProperties);
+		return cast(VideoEncodingProperties) ret;
 	}
 }
 

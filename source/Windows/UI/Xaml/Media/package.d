@@ -1129,52 +1129,52 @@ extern(Windows):
 	final Windows.Foundation.Point Point()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IArcSegment).get_Point(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IArcSegment)this.asInterface(uuid("07940c5f-63fb-4469-91be-f1097c168052"))).get_Point(&_ret));
 		return _ret;
 	}
 	final void Point(Windows.Foundation.Point value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IArcSegment).set_Point(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IArcSegment)this.asInterface(uuid("07940c5f-63fb-4469-91be-f1097c168052"))).set_Point(value));
 	}
 	final Windows.Foundation.Size Size()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IArcSegment).get_Size(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IArcSegment)this.asInterface(uuid("07940c5f-63fb-4469-91be-f1097c168052"))).get_Size(&_ret));
 		return _ret;
 	}
 	final void Size(Windows.Foundation.Size value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IArcSegment).set_Size(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IArcSegment)this.asInterface(uuid("07940c5f-63fb-4469-91be-f1097c168052"))).set_Size(value));
 	}
 	final double RotationAngle()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IArcSegment).get_RotationAngle(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IArcSegment)this.asInterface(uuid("07940c5f-63fb-4469-91be-f1097c168052"))).get_RotationAngle(&_ret));
 		return _ret;
 	}
 	final void RotationAngle(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IArcSegment).set_RotationAngle(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IArcSegment)this.asInterface(uuid("07940c5f-63fb-4469-91be-f1097c168052"))).set_RotationAngle(value));
 	}
 	final bool IsLargeArc()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IArcSegment).get_IsLargeArc(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IArcSegment)this.asInterface(uuid("07940c5f-63fb-4469-91be-f1097c168052"))).get_IsLargeArc(&_ret));
 		return _ret;
 	}
 	final void IsLargeArc(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IArcSegment).set_IsLargeArc(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IArcSegment)this.asInterface(uuid("07940c5f-63fb-4469-91be-f1097c168052"))).set_IsLargeArc(value));
 	}
 	final Windows.UI.Xaml.Media.SweepDirection SweepDirection()
 	{
 		Windows.UI.Xaml.Media.SweepDirection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IArcSegment).get_SweepDirection(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IArcSegment)this.asInterface(uuid("07940c5f-63fb-4469-91be-f1097c168052"))).get_SweepDirection(&_ret));
 		return _ret;
 	}
 	final void SweepDirection(Windows.UI.Xaml.Media.SweepDirection value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IArcSegment).set_SweepDirection(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IArcSegment)this.asInterface(uuid("07940c5f-63fb-4469-91be-f1097c168052"))).set_SweepDirection(value));
 	}
 
 	private static Windows.UI.Xaml.Media.IArcSegmentStatics _staticInstance;
@@ -1186,38 +1186,38 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty PointProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IArcSegmentStatics).get_PointProperty(&_ret));
+		Debug.OK(staticInstance.get_PointProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty SizeProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IArcSegmentStatics).get_SizeProperty(&_ret));
+		Debug.OK(staticInstance.get_SizeProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty RotationAngleProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IArcSegmentStatics).get_RotationAngleProperty(&_ret));
+		Debug.OK(staticInstance.get_RotationAngleProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty IsLargeArcProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IArcSegmentStatics).get_IsLargeArcProperty(&_ret));
+		Debug.OK(staticInstance.get_IsLargeArcProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty SweepDirectionProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IArcSegmentStatics).get_SweepDirectionProperty(&_ret));
+		Debug.OK(staticInstance.get_SweepDirectionProperty(&_ret));
 		return _ret;
 	}
 	static ArcSegment New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ArcSegment).abi_ActivateInstance(&ret));
-		return ret.as!(ArcSegment);
+		return cast(ArcSegment) ret;
 	}
 }
 
@@ -1227,32 +1227,32 @@ extern(Windows):
 	final Windows.Foundation.Point Point1()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBezierSegment).get_Point1(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IBezierSegment)this.asInterface(uuid("af4bb9ee-8984-49b7-81df-3f35994b95eb"))).get_Point1(&_ret));
 		return _ret;
 	}
 	final void Point1(Windows.Foundation.Point value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBezierSegment).set_Point1(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IBezierSegment)this.asInterface(uuid("af4bb9ee-8984-49b7-81df-3f35994b95eb"))).set_Point1(value));
 	}
 	final Windows.Foundation.Point Point2()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBezierSegment).get_Point2(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IBezierSegment)this.asInterface(uuid("af4bb9ee-8984-49b7-81df-3f35994b95eb"))).get_Point2(&_ret));
 		return _ret;
 	}
 	final void Point2(Windows.Foundation.Point value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBezierSegment).set_Point2(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IBezierSegment)this.asInterface(uuid("af4bb9ee-8984-49b7-81df-3f35994b95eb"))).set_Point2(value));
 	}
 	final Windows.Foundation.Point Point3()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBezierSegment).get_Point3(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IBezierSegment)this.asInterface(uuid("af4bb9ee-8984-49b7-81df-3f35994b95eb"))).get_Point3(&_ret));
 		return _ret;
 	}
 	final void Point3(Windows.Foundation.Point value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBezierSegment).set_Point3(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IBezierSegment)this.asInterface(uuid("af4bb9ee-8984-49b7-81df-3f35994b95eb"))).set_Point3(value));
 	}
 
 	private static Windows.UI.Xaml.Media.IBezierSegmentStatics _staticInstance;
@@ -1264,26 +1264,26 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty Point1Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IBezierSegmentStatics).get_Point1Property(&_ret));
+		Debug.OK(staticInstance.get_Point1Property(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty Point2Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IBezierSegmentStatics).get_Point2Property(&_ret));
+		Debug.OK(staticInstance.get_Point2Property(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty Point3Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IBezierSegmentStatics).get_Point3Property(&_ret));
+		Debug.OK(staticInstance.get_Point3Property(&_ret));
 		return _ret;
 	}
 	static BezierSegment New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(BezierSegment).abi_ActivateInstance(&ret));
-		return ret.as!(BezierSegment);
+		return cast(BezierSegment) ret;
 	}
 }
 
@@ -1293,7 +1293,7 @@ interface BitmapCache : Windows.UI.Xaml.Media.CacheMode, Windows.UI.Xaml.Media.I
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(BitmapCache).abi_ActivateInstance(&ret));
-		return ret.as!(BitmapCache);
+		return cast(BitmapCache) ret;
 	}
 }
 
@@ -1303,32 +1303,32 @@ extern(Windows):
 	final double Opacity()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBrush).get_Opacity(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IBrush)this.asInterface(uuid("8806a321-1e06-422c-a1cc-01696559e021"))).get_Opacity(&_ret));
 		return _ret;
 	}
 	final void Opacity(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBrush).set_Opacity(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IBrush)this.asInterface(uuid("8806a321-1e06-422c-a1cc-01696559e021"))).set_Opacity(value));
 	}
 	final Windows.UI.Xaml.Media.Transform Transform()
 	{
 		Windows.UI.Xaml.Media.Transform _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBrush).get_Transform(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IBrush)this.asInterface(uuid("8806a321-1e06-422c-a1cc-01696559e021"))).get_Transform(&_ret));
 		return _ret;
 	}
 	final void Transform(Windows.UI.Xaml.Media.Transform value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBrush).set_Transform(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IBrush)this.asInterface(uuid("8806a321-1e06-422c-a1cc-01696559e021"))).set_Transform(value));
 	}
 	final Windows.UI.Xaml.Media.Transform RelativeTransform()
 	{
 		Windows.UI.Xaml.Media.Transform _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBrush).get_RelativeTransform(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IBrush)this.asInterface(uuid("8806a321-1e06-422c-a1cc-01696559e021"))).get_RelativeTransform(&_ret));
 		return _ret;
 	}
 	final void RelativeTransform(Windows.UI.Xaml.Media.Transform value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IBrush).set_RelativeTransform(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IBrush)this.asInterface(uuid("8806a321-1e06-422c-a1cc-01696559e021"))).set_RelativeTransform(value));
 	}
 
 	private static Windows.UI.Xaml.Media.IBrushStatics _staticInstance;
@@ -1340,19 +1340,19 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty OpacityProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IBrushStatics).get_OpacityProperty(&_ret));
+		Debug.OK(staticInstance.get_OpacityProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty TransformProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IBrushStatics).get_TransformProperty(&_ret));
+		Debug.OK(staticInstance.get_TransformProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty RelativeTransformProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IBrushStatics).get_RelativeTransformProperty(&_ret));
+		Debug.OK(staticInstance.get_RelativeTransformProperty(&_ret));
 		return _ret;
 	}
 	static Brush New()
@@ -1373,12 +1373,12 @@ class BrushT(Base) : AgileObject!Base, Brush
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_Opacity(double* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IBrush).get_Opacity(return_value); }
-	override HRESULT set_Opacity(double value) { return m_inner.as!(Windows.UI.Xaml.Media.IBrush).set_Opacity(value); }
-	override HRESULT get_Transform(Windows.UI.Xaml.Media.Transform* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IBrush).get_Transform(return_value); }
-	override HRESULT set_Transform(Windows.UI.Xaml.Media.Transform value) { return m_inner.as!(Windows.UI.Xaml.Media.IBrush).set_Transform(value); }
-	override HRESULT get_RelativeTransform(Windows.UI.Xaml.Media.Transform* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IBrush).get_RelativeTransform(return_value); }
-	override HRESULT set_RelativeTransform(Windows.UI.Xaml.Media.Transform value) { return m_inner.as!(Windows.UI.Xaml.Media.IBrush).set_RelativeTransform(value); }
+	override HRESULT get_Opacity(double* return_value) { return (cast(Windows.UI.Xaml.Media.IBrush)m_inner.asInterface(uuid("8806a321-1e06-422c-a1cc-01696559e021"))).get_Opacity(return_value); }
+	override HRESULT set_Opacity(double value) { return (cast(Windows.UI.Xaml.Media.IBrush)m_inner.asInterface(uuid("8806a321-1e06-422c-a1cc-01696559e021"))).set_Opacity(value); }
+	override HRESULT get_Transform(Windows.UI.Xaml.Media.Transform* return_value) { return (cast(Windows.UI.Xaml.Media.IBrush)m_inner.asInterface(uuid("8806a321-1e06-422c-a1cc-01696559e021"))).get_Transform(return_value); }
+	override HRESULT set_Transform(Windows.UI.Xaml.Media.Transform value) { return (cast(Windows.UI.Xaml.Media.IBrush)m_inner.asInterface(uuid("8806a321-1e06-422c-a1cc-01696559e021"))).set_Transform(value); }
+	override HRESULT get_RelativeTransform(Windows.UI.Xaml.Media.Transform* return_value) { return (cast(Windows.UI.Xaml.Media.IBrush)m_inner.asInterface(uuid("8806a321-1e06-422c-a1cc-01696559e021"))).get_RelativeTransform(return_value); }
+	override HRESULT set_RelativeTransform(Windows.UI.Xaml.Media.Transform value) { return (cast(Windows.UI.Xaml.Media.IBrush)m_inner.asInterface(uuid("8806a321-1e06-422c-a1cc-01696559e021"))).set_RelativeTransform(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -1390,66 +1390,66 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Brush GetAt(uint index)
 	{
 		Windows.UI.Xaml.Media.Brush _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush)).get_GetAt(index, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush))this).get_GetAt(index, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush))this).get_Size(&_ret));
 		return _ret;
 	}
 	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Media.Brush)* out_view)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush)).abi_GetView(out_view));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush))this).abi_GetView(out_view));
 	}
 	final uint IndexOf(Windows.UI.Xaml.Media.Brush value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void SetAt(uint index, Windows.UI.Xaml.Media.Brush item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush)).abi_SetAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush))this).abi_SetAt(index, item));
 	}
 	final void InsertAt(uint index, Windows.UI.Xaml.Media.Brush item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush)).abi_InsertAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush))this).abi_InsertAt(index, item));
 	}
 	final void RemoveAt(uint index)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush)).abi_RemoveAt(index));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush))this).abi_RemoveAt(index));
 	}
 	final void Append(Windows.UI.Xaml.Media.Brush item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush)).abi_Append(item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush))this).abi_Append(item));
 	}
 	final void RemoveAtEnd()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush)).abi_RemoveAtEnd());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush))this).abi_RemoveAtEnd());
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush))this).abi_Clear());
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.Media.Brush* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void ReplaceAll(uint count, Windows.UI.Xaml.Media.Brush* out_value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush)).abi_ReplaceAll(count, out_value));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Brush))this).abi_ReplaceAll(count, out_value));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Media.Brush)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Brush)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Brush))this).abi_First(out_first));
 	}
 	static BrushCollection New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(BrushCollection).abi_ActivateInstance(&ret));
-		return ret.as!(BrushCollection);
+		return cast(BrushCollection) ret;
 	}
 }
 
@@ -1484,92 +1484,92 @@ extern(Windows):
 	final double CenterX()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).get_CenterX(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ICompositeTransform)this.asInterface(uuid("c8a4385b-f24a-4701-a265-a78846f142b9"))).get_CenterX(&_ret));
 		return _ret;
 	}
 	final void CenterX(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).set_CenterX(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ICompositeTransform)this.asInterface(uuid("c8a4385b-f24a-4701-a265-a78846f142b9"))).set_CenterX(value));
 	}
 	final double CenterY()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).get_CenterY(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ICompositeTransform)this.asInterface(uuid("c8a4385b-f24a-4701-a265-a78846f142b9"))).get_CenterY(&_ret));
 		return _ret;
 	}
 	final void CenterY(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).set_CenterY(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ICompositeTransform)this.asInterface(uuid("c8a4385b-f24a-4701-a265-a78846f142b9"))).set_CenterY(value));
 	}
 	final double ScaleX()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).get_ScaleX(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ICompositeTransform)this.asInterface(uuid("c8a4385b-f24a-4701-a265-a78846f142b9"))).get_ScaleX(&_ret));
 		return _ret;
 	}
 	final void ScaleX(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).set_ScaleX(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ICompositeTransform)this.asInterface(uuid("c8a4385b-f24a-4701-a265-a78846f142b9"))).set_ScaleX(value));
 	}
 	final double ScaleY()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).get_ScaleY(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ICompositeTransform)this.asInterface(uuid("c8a4385b-f24a-4701-a265-a78846f142b9"))).get_ScaleY(&_ret));
 		return _ret;
 	}
 	final void ScaleY(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).set_ScaleY(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ICompositeTransform)this.asInterface(uuid("c8a4385b-f24a-4701-a265-a78846f142b9"))).set_ScaleY(value));
 	}
 	final double SkewX()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).get_SkewX(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ICompositeTransform)this.asInterface(uuid("c8a4385b-f24a-4701-a265-a78846f142b9"))).get_SkewX(&_ret));
 		return _ret;
 	}
 	final void SkewX(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).set_SkewX(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ICompositeTransform)this.asInterface(uuid("c8a4385b-f24a-4701-a265-a78846f142b9"))).set_SkewX(value));
 	}
 	final double SkewY()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).get_SkewY(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ICompositeTransform)this.asInterface(uuid("c8a4385b-f24a-4701-a265-a78846f142b9"))).get_SkewY(&_ret));
 		return _ret;
 	}
 	final void SkewY(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).set_SkewY(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ICompositeTransform)this.asInterface(uuid("c8a4385b-f24a-4701-a265-a78846f142b9"))).set_SkewY(value));
 	}
 	final double Rotation()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).get_Rotation(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ICompositeTransform)this.asInterface(uuid("c8a4385b-f24a-4701-a265-a78846f142b9"))).get_Rotation(&_ret));
 		return _ret;
 	}
 	final void Rotation(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).set_Rotation(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ICompositeTransform)this.asInterface(uuid("c8a4385b-f24a-4701-a265-a78846f142b9"))).set_Rotation(value));
 	}
 	final double TranslateX()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).get_TranslateX(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ICompositeTransform)this.asInterface(uuid("c8a4385b-f24a-4701-a265-a78846f142b9"))).get_TranslateX(&_ret));
 		return _ret;
 	}
 	final void TranslateX(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).set_TranslateX(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ICompositeTransform)this.asInterface(uuid("c8a4385b-f24a-4701-a265-a78846f142b9"))).set_TranslateX(value));
 	}
 	final double TranslateY()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).get_TranslateY(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ICompositeTransform)this.asInterface(uuid("c8a4385b-f24a-4701-a265-a78846f142b9"))).get_TranslateY(&_ret));
 		return _ret;
 	}
 	final void TranslateY(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ICompositeTransform).set_TranslateY(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ICompositeTransform)this.asInterface(uuid("c8a4385b-f24a-4701-a265-a78846f142b9"))).set_TranslateY(value));
 	}
 
 	private static Windows.UI.Xaml.Media.ICompositeTransformStatics _staticInstance;
@@ -1581,62 +1581,62 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty CenterXProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositeTransformStatics).get_CenterXProperty(&_ret));
+		Debug.OK(staticInstance.get_CenterXProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty CenterYProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositeTransformStatics).get_CenterYProperty(&_ret));
+		Debug.OK(staticInstance.get_CenterYProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ScaleXProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositeTransformStatics).get_ScaleXProperty(&_ret));
+		Debug.OK(staticInstance.get_ScaleXProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ScaleYProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositeTransformStatics).get_ScaleYProperty(&_ret));
+		Debug.OK(staticInstance.get_ScaleYProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty SkewXProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositeTransformStatics).get_SkewXProperty(&_ret));
+		Debug.OK(staticInstance.get_SkewXProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty SkewYProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositeTransformStatics).get_SkewYProperty(&_ret));
+		Debug.OK(staticInstance.get_SkewYProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty RotationProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositeTransformStatics).get_RotationProperty(&_ret));
+		Debug.OK(staticInstance.get_RotationProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty TranslateXProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositeTransformStatics).get_TranslateXProperty(&_ret));
+		Debug.OK(staticInstance.get_TranslateXProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty TranslateYProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositeTransformStatics).get_TranslateYProperty(&_ret));
+		Debug.OK(staticInstance.get_TranslateYProperty(&_ret));
 		return _ret;
 	}
 	static CompositeTransform New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(CompositeTransform).abi_ActivateInstance(&ret));
-		return ret.as!(CompositeTransform);
+		return cast(CompositeTransform) ret;
 	}
 }
 
@@ -1651,22 +1651,22 @@ interface CompositionTarget : Windows.UI.Xaml.Media.ICompositionTarget
 	static EventRegistrationToken OnRendering(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositionTargetStatics).add_Rendering(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_Rendering(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	static void removeRendering(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositionTargetStatics).remove_Rendering(token));
+		Debug.OK(staticInstance.remove_Rendering(token));
 	}
 	static EventRegistrationToken OnSurfaceContentsLost(void delegate(IInspectable, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositionTargetStatics).add_SurfaceContentsLost(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
+		Debug.OK(staticInstance.add_SurfaceContentsLost(event!(Windows.Foundation.EventHandler!(IInspectable), IInspectable, IInspectable)(fn), &tok));
 		return tok;
 	}
 	static void removeSurfaceContentsLost(EventRegistrationToken token)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ICompositionTargetStatics).remove_SurfaceContentsLost(token));
+		Debug.OK(staticInstance.remove_SurfaceContentsLost(token));
 	}
 }
 
@@ -1676,66 +1676,66 @@ extern(Windows):
 	final double GetAt(uint index)
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(double)).get_GetAt(index, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(double))this).get_GetAt(index, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(double)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(double))this).get_Size(&_ret));
 		return _ret;
 	}
 	final void GetView(Windows.Foundation.Collections.IVectorView!(double)* out_view)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(double)).abi_GetView(out_view));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(double))this).abi_GetView(out_view));
 	}
 	final uint IndexOf(double value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(double)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(double))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void SetAt(uint index, double item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(double)).abi_SetAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(double))this).abi_SetAt(index, item));
 	}
 	final void InsertAt(uint index, double item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(double)).abi_InsertAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(double))this).abi_InsertAt(index, item));
 	}
 	final void RemoveAt(uint index)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(double)).abi_RemoveAt(index));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(double))this).abi_RemoveAt(index));
 	}
 	final void Append(double item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(double)).abi_Append(item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(double))this).abi_Append(item));
 	}
 	final void RemoveAtEnd()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(double)).abi_RemoveAtEnd());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(double))this).abi_RemoveAtEnd());
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(double)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(double))this).abi_Clear());
 	}
 	final void GetMany(uint startIndex, uint capacity, double* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(double)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(double))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void ReplaceAll(uint count, double* out_value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(double)).abi_ReplaceAll(count, out_value));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(double))this).abi_ReplaceAll(count, out_value));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(double)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(double)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(double))this).abi_First(out_first));
 	}
 	static DoubleCollection New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(DoubleCollection).abi_ActivateInstance(&ret));
-		return ret.as!(DoubleCollection);
+		return cast(DoubleCollection) ret;
 	}
 }
 
@@ -1745,32 +1745,32 @@ extern(Windows):
 	final Windows.Foundation.Point Center()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IEllipseGeometry).get_Center(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IEllipseGeometry)this.asInterface(uuid("d4f61bba-4ea2-40d6-aa6c-8d38aa87651f"))).get_Center(&_ret));
 		return _ret;
 	}
 	final void Center(Windows.Foundation.Point value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IEllipseGeometry).set_Center(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IEllipseGeometry)this.asInterface(uuid("d4f61bba-4ea2-40d6-aa6c-8d38aa87651f"))).set_Center(value));
 	}
 	final double RadiusX()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IEllipseGeometry).get_RadiusX(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IEllipseGeometry)this.asInterface(uuid("d4f61bba-4ea2-40d6-aa6c-8d38aa87651f"))).get_RadiusX(&_ret));
 		return _ret;
 	}
 	final void RadiusX(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IEllipseGeometry).set_RadiusX(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IEllipseGeometry)this.asInterface(uuid("d4f61bba-4ea2-40d6-aa6c-8d38aa87651f"))).set_RadiusX(value));
 	}
 	final double RadiusY()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IEllipseGeometry).get_RadiusY(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IEllipseGeometry)this.asInterface(uuid("d4f61bba-4ea2-40d6-aa6c-8d38aa87651f"))).get_RadiusY(&_ret));
 		return _ret;
 	}
 	final void RadiusY(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IEllipseGeometry).set_RadiusY(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IEllipseGeometry)this.asInterface(uuid("d4f61bba-4ea2-40d6-aa6c-8d38aa87651f"))).set_RadiusY(value));
 	}
 
 	private static Windows.UI.Xaml.Media.IEllipseGeometryStatics _staticInstance;
@@ -1782,26 +1782,26 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty CenterProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IEllipseGeometryStatics).get_CenterProperty(&_ret));
+		Debug.OK(staticInstance.get_CenterProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty RadiusXProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IEllipseGeometryStatics).get_RadiusXProperty(&_ret));
+		Debug.OK(staticInstance.get_RadiusXProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty RadiusYProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IEllipseGeometryStatics).get_RadiusYProperty(&_ret));
+		Debug.OK(staticInstance.get_RadiusYProperty(&_ret));
 		return _ret;
 	}
 	static EllipseGeometry New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(EllipseGeometry).abi_ActivateInstance(&ret));
-		return ret.as!(EllipseGeometry);
+		return cast(EllipseGeometry) ret;
 	}
 }
 
@@ -1811,7 +1811,7 @@ extern(Windows):
 	final HSTRING Source()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IFontFamily).get_Source(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IFontFamily)this.asInterface(uuid("92467e64-d66a-4cf4-9322-3d23b3c0c361"))).get_Source(&_ret));
 		return _ret;
 	}
 
@@ -1824,7 +1824,7 @@ extern(Windows):
 	static Windows.UI.Xaml.Media.FontFamily XamlAutoFontFamily()
 	{
 		Windows.UI.Xaml.Media.FontFamily _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IFontFamilyStatics2).get_XamlAutoFontFamily(&_ret));
+		Debug.OK(staticInstance.get_XamlAutoFontFamily(&_ret));
 		return _ret;
 	}
 }
@@ -1838,7 +1838,7 @@ class FontFamilyT(Base) : AgileObject!Base, FontFamily
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_Source(HSTRING* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IFontFamily).get_Source(return_value); }
+	override HRESULT get_Source(HSTRING* return_value) { return (cast(Windows.UI.Xaml.Media.IFontFamily)m_inner.asInterface(uuid("92467e64-d66a-4cf4-9322-3d23b3c0c361"))).get_Source(return_value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -1850,25 +1850,25 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.GeneralTransform Inverse()
 	{
 		Windows.UI.Xaml.Media.GeneralTransform _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeneralTransform).get_Inverse(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IGeneralTransform)this.asInterface(uuid("a06798b7-a2ec-415f-ade2-eade9333f2c7"))).get_Inverse(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Point TransformPoint(Windows.Foundation.Point point)
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeneralTransform).abi_TransformPoint(point, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IGeneralTransform)this.asInterface(uuid("a06798b7-a2ec-415f-ade2-eade9333f2c7"))).abi_TransformPoint(point, &_ret));
 		return _ret;
 	}
 	final bool TryTransform(Windows.Foundation.Point inPoint, Windows.Foundation.Point* out_outPoint)
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeneralTransform).abi_TryTransform(inPoint, out_outPoint, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IGeneralTransform)this.asInterface(uuid("a06798b7-a2ec-415f-ade2-eade9333f2c7"))).abi_TryTransform(inPoint, out_outPoint, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Rect TransformBounds(Windows.Foundation.Rect rect)
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeneralTransform).abi_TransformBounds(rect, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IGeneralTransform)this.asInterface(uuid("a06798b7-a2ec-415f-ade2-eade9333f2c7"))).abi_TransformBounds(rect, &_ret));
 		return _ret;
 	}
 	static GeneralTransform New()
@@ -1889,17 +1889,17 @@ class GeneralTransformT(Base) : AgileObject!Base, GeneralTransform
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_Inverse(Windows.UI.Xaml.Media.GeneralTransform* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IGeneralTransform).get_Inverse(return_value); }
-	override HRESULT abi_TransformPoint(Windows.Foundation.Point point, Windows.Foundation.Point* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Media.IGeneralTransform).abi_TransformPoint(point, return_returnValue); }
-	override HRESULT abi_TryTransform(Windows.Foundation.Point inPoint, Windows.Foundation.Point* out_outPoint, bool* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Media.IGeneralTransform).abi_TryTransform(inPoint, out_outPoint, return_returnValue); }
-	override HRESULT abi_TransformBounds(Windows.Foundation.Rect rect, Windows.Foundation.Rect* return_returnValue) { return m_inner.as!(Windows.UI.Xaml.Media.IGeneralTransform).abi_TransformBounds(rect, return_returnValue); }
+	override HRESULT get_Inverse(Windows.UI.Xaml.Media.GeneralTransform* return_value) { return (cast(Windows.UI.Xaml.Media.IGeneralTransform)m_inner.asInterface(uuid("a06798b7-a2ec-415f-ade2-eade9333f2c7"))).get_Inverse(return_value); }
+	override HRESULT abi_TransformPoint(Windows.Foundation.Point point, Windows.Foundation.Point* return_returnValue) { return (cast(Windows.UI.Xaml.Media.IGeneralTransform)m_inner.asInterface(uuid("a06798b7-a2ec-415f-ade2-eade9333f2c7"))).abi_TransformPoint(point, return_returnValue); }
+	override HRESULT abi_TryTransform(Windows.Foundation.Point inPoint, Windows.Foundation.Point* out_outPoint, bool* return_returnValue) { return (cast(Windows.UI.Xaml.Media.IGeneralTransform)m_inner.asInterface(uuid("a06798b7-a2ec-415f-ade2-eade9333f2c7"))).abi_TryTransform(inPoint, out_outPoint, return_returnValue); }
+	override HRESULT abi_TransformBounds(Windows.Foundation.Rect rect, Windows.Foundation.Rect* return_returnValue) { return (cast(Windows.UI.Xaml.Media.IGeneralTransform)m_inner.asInterface(uuid("a06798b7-a2ec-415f-ade2-eade9333f2c7"))).abi_TransformBounds(rect, return_returnValue); }
 
 	override HRESULT get_InverseCore(Windows.UI.Xaml.Media.GeneralTransform* return_value) { this.InverseCore(return_value); return S_OK; }
-	void InverseCore(Windows.UI.Xaml.Media.GeneralTransform* return_value) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Media.IGeneralTransformOverrides).get_InverseCore(return_value)); }
+	void InverseCore(Windows.UI.Xaml.Media.GeneralTransform* return_value) { Debug.OK((cast(Windows.UI.Xaml.Media.IGeneralTransformOverrides)m_inner.asInterface(uuid("4f121083-24cf-4524-90ad-8a42b1c12783"))).get_InverseCore(return_value)); }
 	override HRESULT abi_TryTransformCore(Windows.Foundation.Point inPoint, Windows.Foundation.Point* out_outPoint, bool* return_returnValue) { this.TryTransformCore(inPoint, out_outPoint, return_returnValue); return S_OK; }
-	void TryTransformCore(Windows.Foundation.Point inPoint, Windows.Foundation.Point* out_outPoint, bool* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Media.IGeneralTransformOverrides).abi_TryTransformCore(inPoint, out_outPoint, return_returnValue)); }
+	void TryTransformCore(Windows.Foundation.Point inPoint, Windows.Foundation.Point* out_outPoint, bool* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Media.IGeneralTransformOverrides)m_inner.asInterface(uuid("4f121083-24cf-4524-90ad-8a42b1c12783"))).abi_TryTransformCore(inPoint, out_outPoint, return_returnValue)); }
 	override HRESULT abi_TransformBoundsCore(Windows.Foundation.Rect rect, Windows.Foundation.Rect* return_returnValue) { this.TransformBoundsCore(rect, return_returnValue); return S_OK; }
-	void TransformBoundsCore(Windows.Foundation.Rect rect, Windows.Foundation.Rect* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Media.IGeneralTransformOverrides).abi_TransformBoundsCore(rect, return_returnValue)); }
+	void TransformBoundsCore(Windows.Foundation.Rect rect, Windows.Foundation.Rect* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Media.IGeneralTransformOverrides)m_inner.asInterface(uuid("4f121083-24cf-4524-90ad-8a42b1c12783"))).abi_TransformBoundsCore(rect, return_returnValue)); }
 
 	this() {}
 	IInspectable m_inner;
@@ -1911,17 +1911,17 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Transform Transform()
 	{
 		Windows.UI.Xaml.Media.Transform _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeometry).get_Transform(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IGeometry)this.asInterface(uuid("fa123889-0acd-417b-b62d-5ca1bf4dfc0e"))).get_Transform(&_ret));
 		return _ret;
 	}
 	final void Transform(Windows.UI.Xaml.Media.Transform value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeometry).set_Transform(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IGeometry)this.asInterface(uuid("fa123889-0acd-417b-b62d-5ca1bf4dfc0e"))).set_Transform(value));
 	}
 	final Windows.Foundation.Rect Bounds()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeometry).get_Bounds(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IGeometry)this.asInterface(uuid("fa123889-0acd-417b-b62d-5ca1bf4dfc0e"))).get_Bounds(&_ret));
 		return _ret;
 	}
 
@@ -1934,19 +1934,19 @@ extern(Windows):
 	static Windows.UI.Xaml.Media.Geometry Empty()
 	{
 		Windows.UI.Xaml.Media.Geometry _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGeometryStatics).get_Empty(&_ret));
+		Debug.OK(staticInstance.get_Empty(&_ret));
 		return _ret;
 	}
 	static double StandardFlatteningTolerance()
 	{
 		double _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGeometryStatics).get_StandardFlatteningTolerance(&_ret));
+		Debug.OK(staticInstance.get_StandardFlatteningTolerance(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty TransformProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGeometryStatics).get_TransformProperty(&_ret));
+		Debug.OK(staticInstance.get_TransformProperty(&_ret));
 		return _ret;
 	}
 }
@@ -1960,9 +1960,9 @@ class GeometryT(Base) : AgileObject!Base, Geometry
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_Transform(Windows.UI.Xaml.Media.Transform* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IGeometry).get_Transform(return_value); }
-	override HRESULT set_Transform(Windows.UI.Xaml.Media.Transform value) { return m_inner.as!(Windows.UI.Xaml.Media.IGeometry).set_Transform(value); }
-	override HRESULT get_Bounds(Windows.Foundation.Rect* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IGeometry).get_Bounds(return_value); }
+	override HRESULT get_Transform(Windows.UI.Xaml.Media.Transform* return_value) { return (cast(Windows.UI.Xaml.Media.IGeometry)m_inner.asInterface(uuid("fa123889-0acd-417b-b62d-5ca1bf4dfc0e"))).get_Transform(return_value); }
+	override HRESULT set_Transform(Windows.UI.Xaml.Media.Transform value) { return (cast(Windows.UI.Xaml.Media.IGeometry)m_inner.asInterface(uuid("fa123889-0acd-417b-b62d-5ca1bf4dfc0e"))).set_Transform(value); }
+	override HRESULT get_Bounds(Windows.Foundation.Rect* return_value) { return (cast(Windows.UI.Xaml.Media.IGeometry)m_inner.asInterface(uuid("fa123889-0acd-417b-b62d-5ca1bf4dfc0e"))).get_Bounds(return_value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -1974,66 +1974,66 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Geometry GetAt(uint index)
 	{
 		Windows.UI.Xaml.Media.Geometry _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry)).get_GetAt(index, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry))this).get_GetAt(index, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry))this).get_Size(&_ret));
 		return _ret;
 	}
 	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Media.Geometry)* out_view)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry)).abi_GetView(out_view));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry))this).abi_GetView(out_view));
 	}
 	final uint IndexOf(Windows.UI.Xaml.Media.Geometry value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void SetAt(uint index, Windows.UI.Xaml.Media.Geometry item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry)).abi_SetAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry))this).abi_SetAt(index, item));
 	}
 	final void InsertAt(uint index, Windows.UI.Xaml.Media.Geometry item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry)).abi_InsertAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry))this).abi_InsertAt(index, item));
 	}
 	final void RemoveAt(uint index)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry)).abi_RemoveAt(index));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry))this).abi_RemoveAt(index));
 	}
 	final void Append(Windows.UI.Xaml.Media.Geometry item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry)).abi_Append(item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry))this).abi_Append(item));
 	}
 	final void RemoveAtEnd()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry)).abi_RemoveAtEnd());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry))this).abi_RemoveAtEnd());
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry))this).abi_Clear());
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.Media.Geometry* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void ReplaceAll(uint count, Windows.UI.Xaml.Media.Geometry* out_value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry)).abi_ReplaceAll(count, out_value));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Geometry))this).abi_ReplaceAll(count, out_value));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Media.Geometry)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Geometry)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Geometry))this).abi_First(out_first));
 	}
 	static GeometryCollection New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(GeometryCollection).abi_ActivateInstance(&ret));
-		return ret.as!(GeometryCollection);
+		return cast(GeometryCollection) ret;
 	}
 }
 
@@ -2043,22 +2043,22 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.FillRule FillRule()
 	{
 		Windows.UI.Xaml.Media.FillRule _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeometryGroup).get_FillRule(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IGeometryGroup)this.asInterface(uuid("55225a61-8677-4c8c-8e46-ee3dc355114b"))).get_FillRule(&_ret));
 		return _ret;
 	}
 	final void FillRule(Windows.UI.Xaml.Media.FillRule value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeometryGroup).set_FillRule(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IGeometryGroup)this.asInterface(uuid("55225a61-8677-4c8c-8e46-ee3dc355114b"))).set_FillRule(value));
 	}
 	final Windows.UI.Xaml.Media.GeometryCollection Children()
 	{
 		Windows.UI.Xaml.Media.GeometryCollection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeometryGroup).get_Children(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IGeometryGroup)this.asInterface(uuid("55225a61-8677-4c8c-8e46-ee3dc355114b"))).get_Children(&_ret));
 		return _ret;
 	}
 	final void Children(Windows.UI.Xaml.Media.GeometryCollection value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGeometryGroup).set_Children(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IGeometryGroup)this.asInterface(uuid("55225a61-8677-4c8c-8e46-ee3dc355114b"))).set_Children(value));
 	}
 
 	private static Windows.UI.Xaml.Media.IGeometryGroupStatics _staticInstance;
@@ -2070,20 +2070,20 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty FillRuleProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGeometryGroupStatics).get_FillRuleProperty(&_ret));
+		Debug.OK(staticInstance.get_FillRuleProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ChildrenProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGeometryGroupStatics).get_ChildrenProperty(&_ret));
+		Debug.OK(staticInstance.get_ChildrenProperty(&_ret));
 		return _ret;
 	}
 	static GeometryGroup New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(GeometryGroup).abi_ActivateInstance(&ret));
-		return ret.as!(GeometryGroup);
+		return cast(GeometryGroup) ret;
 	}
 }
 
@@ -2093,42 +2093,42 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.GradientSpreadMethod SpreadMethod()
 	{
 		Windows.UI.Xaml.Media.GradientSpreadMethod _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientBrush).get_SpreadMethod(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IGradientBrush)this.asInterface(uuid("2166e69f-935a-4191-8e3c-1c8dfdfcdc78"))).get_SpreadMethod(&_ret));
 		return _ret;
 	}
 	final void SpreadMethod(Windows.UI.Xaml.Media.GradientSpreadMethod value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientBrush).set_SpreadMethod(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IGradientBrush)this.asInterface(uuid("2166e69f-935a-4191-8e3c-1c8dfdfcdc78"))).set_SpreadMethod(value));
 	}
 	final Windows.UI.Xaml.Media.BrushMappingMode MappingMode()
 	{
 		Windows.UI.Xaml.Media.BrushMappingMode _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientBrush).get_MappingMode(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IGradientBrush)this.asInterface(uuid("2166e69f-935a-4191-8e3c-1c8dfdfcdc78"))).get_MappingMode(&_ret));
 		return _ret;
 	}
 	final void MappingMode(Windows.UI.Xaml.Media.BrushMappingMode value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientBrush).set_MappingMode(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IGradientBrush)this.asInterface(uuid("2166e69f-935a-4191-8e3c-1c8dfdfcdc78"))).set_MappingMode(value));
 	}
 	final Windows.UI.Xaml.Media.ColorInterpolationMode ColorInterpolationMode()
 	{
 		Windows.UI.Xaml.Media.ColorInterpolationMode _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientBrush).get_ColorInterpolationMode(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IGradientBrush)this.asInterface(uuid("2166e69f-935a-4191-8e3c-1c8dfdfcdc78"))).get_ColorInterpolationMode(&_ret));
 		return _ret;
 	}
 	final void ColorInterpolationMode(Windows.UI.Xaml.Media.ColorInterpolationMode value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientBrush).set_ColorInterpolationMode(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IGradientBrush)this.asInterface(uuid("2166e69f-935a-4191-8e3c-1c8dfdfcdc78"))).set_ColorInterpolationMode(value));
 	}
 	final Windows.UI.Xaml.Media.GradientStopCollection GradientStops()
 	{
 		Windows.UI.Xaml.Media.GradientStopCollection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientBrush).get_GradientStops(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IGradientBrush)this.asInterface(uuid("2166e69f-935a-4191-8e3c-1c8dfdfcdc78"))).get_GradientStops(&_ret));
 		return _ret;
 	}
 	final void GradientStops(Windows.UI.Xaml.Media.GradientStopCollection value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientBrush).set_GradientStops(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IGradientBrush)this.asInterface(uuid("2166e69f-935a-4191-8e3c-1c8dfdfcdc78"))).set_GradientStops(value));
 	}
 
 	private static Windows.UI.Xaml.Media.IGradientBrushStatics _staticInstance;
@@ -2140,25 +2140,25 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty SpreadMethodProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGradientBrushStatics).get_SpreadMethodProperty(&_ret));
+		Debug.OK(staticInstance.get_SpreadMethodProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty MappingModeProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGradientBrushStatics).get_MappingModeProperty(&_ret));
+		Debug.OK(staticInstance.get_MappingModeProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ColorInterpolationModeProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGradientBrushStatics).get_ColorInterpolationModeProperty(&_ret));
+		Debug.OK(staticInstance.get_ColorInterpolationModeProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty GradientStopsProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGradientBrushStatics).get_GradientStopsProperty(&_ret));
+		Debug.OK(staticInstance.get_GradientStopsProperty(&_ret));
 		return _ret;
 	}
 	static GradientBrush New()
@@ -2179,14 +2179,14 @@ class GradientBrushT(Base) : AgileObject!Base, GradientBrush
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_SpreadMethod(Windows.UI.Xaml.Media.GradientSpreadMethod* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IGradientBrush).get_SpreadMethod(return_value); }
-	override HRESULT set_SpreadMethod(Windows.UI.Xaml.Media.GradientSpreadMethod value) { return m_inner.as!(Windows.UI.Xaml.Media.IGradientBrush).set_SpreadMethod(value); }
-	override HRESULT get_MappingMode(Windows.UI.Xaml.Media.BrushMappingMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IGradientBrush).get_MappingMode(return_value); }
-	override HRESULT set_MappingMode(Windows.UI.Xaml.Media.BrushMappingMode value) { return m_inner.as!(Windows.UI.Xaml.Media.IGradientBrush).set_MappingMode(value); }
-	override HRESULT get_ColorInterpolationMode(Windows.UI.Xaml.Media.ColorInterpolationMode* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IGradientBrush).get_ColorInterpolationMode(return_value); }
-	override HRESULT set_ColorInterpolationMode(Windows.UI.Xaml.Media.ColorInterpolationMode value) { return m_inner.as!(Windows.UI.Xaml.Media.IGradientBrush).set_ColorInterpolationMode(value); }
-	override HRESULT get_GradientStops(Windows.UI.Xaml.Media.GradientStopCollection* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IGradientBrush).get_GradientStops(return_value); }
-	override HRESULT set_GradientStops(Windows.UI.Xaml.Media.GradientStopCollection value) { return m_inner.as!(Windows.UI.Xaml.Media.IGradientBrush).set_GradientStops(value); }
+	override HRESULT get_SpreadMethod(Windows.UI.Xaml.Media.GradientSpreadMethod* return_value) { return (cast(Windows.UI.Xaml.Media.IGradientBrush)m_inner.asInterface(uuid("2166e69f-935a-4191-8e3c-1c8dfdfcdc78"))).get_SpreadMethod(return_value); }
+	override HRESULT set_SpreadMethod(Windows.UI.Xaml.Media.GradientSpreadMethod value) { return (cast(Windows.UI.Xaml.Media.IGradientBrush)m_inner.asInterface(uuid("2166e69f-935a-4191-8e3c-1c8dfdfcdc78"))).set_SpreadMethod(value); }
+	override HRESULT get_MappingMode(Windows.UI.Xaml.Media.BrushMappingMode* return_value) { return (cast(Windows.UI.Xaml.Media.IGradientBrush)m_inner.asInterface(uuid("2166e69f-935a-4191-8e3c-1c8dfdfcdc78"))).get_MappingMode(return_value); }
+	override HRESULT set_MappingMode(Windows.UI.Xaml.Media.BrushMappingMode value) { return (cast(Windows.UI.Xaml.Media.IGradientBrush)m_inner.asInterface(uuid("2166e69f-935a-4191-8e3c-1c8dfdfcdc78"))).set_MappingMode(value); }
+	override HRESULT get_ColorInterpolationMode(Windows.UI.Xaml.Media.ColorInterpolationMode* return_value) { return (cast(Windows.UI.Xaml.Media.IGradientBrush)m_inner.asInterface(uuid("2166e69f-935a-4191-8e3c-1c8dfdfcdc78"))).get_ColorInterpolationMode(return_value); }
+	override HRESULT set_ColorInterpolationMode(Windows.UI.Xaml.Media.ColorInterpolationMode value) { return (cast(Windows.UI.Xaml.Media.IGradientBrush)m_inner.asInterface(uuid("2166e69f-935a-4191-8e3c-1c8dfdfcdc78"))).set_ColorInterpolationMode(value); }
+	override HRESULT get_GradientStops(Windows.UI.Xaml.Media.GradientStopCollection* return_value) { return (cast(Windows.UI.Xaml.Media.IGradientBrush)m_inner.asInterface(uuid("2166e69f-935a-4191-8e3c-1c8dfdfcdc78"))).get_GradientStops(return_value); }
+	override HRESULT set_GradientStops(Windows.UI.Xaml.Media.GradientStopCollection value) { return (cast(Windows.UI.Xaml.Media.IGradientBrush)m_inner.asInterface(uuid("2166e69f-935a-4191-8e3c-1c8dfdfcdc78"))).set_GradientStops(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -2198,22 +2198,22 @@ extern(Windows):
 	final Windows.UI.Color Color()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientStop).get_Color(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IGradientStop)this.asInterface(uuid("665f44fe-2e59-4c4a-ab53-076a100ccd81"))).get_Color(&_ret));
 		return _ret;
 	}
 	final void Color(Windows.UI.Color value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientStop).set_Color(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IGradientStop)this.asInterface(uuid("665f44fe-2e59-4c4a-ab53-076a100ccd81"))).set_Color(value));
 	}
 	final double Offset()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientStop).get_Offset(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IGradientStop)this.asInterface(uuid("665f44fe-2e59-4c4a-ab53-076a100ccd81"))).get_Offset(&_ret));
 		return _ret;
 	}
 	final void Offset(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IGradientStop).set_Offset(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IGradientStop)this.asInterface(uuid("665f44fe-2e59-4c4a-ab53-076a100ccd81"))).set_Offset(value));
 	}
 
 	private static Windows.UI.Xaml.Media.IGradientStopStatics _staticInstance;
@@ -2225,20 +2225,20 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty ColorProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGradientStopStatics).get_ColorProperty(&_ret));
+		Debug.OK(staticInstance.get_ColorProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty OffsetProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IGradientStopStatics).get_OffsetProperty(&_ret));
+		Debug.OK(staticInstance.get_OffsetProperty(&_ret));
 		return _ret;
 	}
 	static GradientStop New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(GradientStop).abi_ActivateInstance(&ret));
-		return ret.as!(GradientStop);
+		return cast(GradientStop) ret;
 	}
 }
 
@@ -2248,66 +2248,66 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.GradientStop GetAt(uint index)
 	{
 		Windows.UI.Xaml.Media.GradientStop _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop)).get_GetAt(index, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop))this).get_GetAt(index, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop))this).get_Size(&_ret));
 		return _ret;
 	}
 	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Media.GradientStop)* out_view)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop)).abi_GetView(out_view));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop))this).abi_GetView(out_view));
 	}
 	final uint IndexOf(Windows.UI.Xaml.Media.GradientStop value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void SetAt(uint index, Windows.UI.Xaml.Media.GradientStop item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop)).abi_SetAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop))this).abi_SetAt(index, item));
 	}
 	final void InsertAt(uint index, Windows.UI.Xaml.Media.GradientStop item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop)).abi_InsertAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop))this).abi_InsertAt(index, item));
 	}
 	final void RemoveAt(uint index)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop)).abi_RemoveAt(index));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop))this).abi_RemoveAt(index));
 	}
 	final void Append(Windows.UI.Xaml.Media.GradientStop item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop)).abi_Append(item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop))this).abi_Append(item));
 	}
 	final void RemoveAtEnd()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop)).abi_RemoveAtEnd());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop))this).abi_RemoveAtEnd());
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop))this).abi_Clear());
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.Media.GradientStop* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void ReplaceAll(uint count, Windows.UI.Xaml.Media.GradientStop* out_value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop)).abi_ReplaceAll(count, out_value));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.GradientStop))this).abi_ReplaceAll(count, out_value));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Media.GradientStop)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.GradientStop)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.GradientStop))this).abi_First(out_first));
 	}
 	static GradientStopCollection New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(GradientStopCollection).abi_ActivateInstance(&ret));
-		return ret.as!(GradientStopCollection);
+		return cast(GradientStopCollection) ret;
 	}
 }
 
@@ -2317,32 +2317,32 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.ImageSource ImageSource()
 	{
 		Windows.UI.Xaml.Media.ImageSource _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IImageBrush).get_ImageSource(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IImageBrush)this.asInterface(uuid("9fd11377-c12a-4493-bf7d-f3a8ad74b554"))).get_ImageSource(&_ret));
 		return _ret;
 	}
 	final void ImageSource(Windows.UI.Xaml.Media.ImageSource value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IImageBrush).set_ImageSource(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IImageBrush)this.asInterface(uuid("9fd11377-c12a-4493-bf7d-f3a8ad74b554"))).set_ImageSource(value));
 	}
 	final EventRegistrationToken OnImageFailed(void delegate(IInspectable, Windows.UI.Xaml.ExceptionRoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IImageBrush).add_ImageFailed(event!(Windows.UI.Xaml.ExceptionRoutedEventHandler, IInspectable, Windows.UI.Xaml.ExceptionRoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IImageBrush)this.asInterface(uuid("9fd11377-c12a-4493-bf7d-f3a8ad74b554"))).add_ImageFailed(event!(Windows.UI.Xaml.ExceptionRoutedEventHandler, IInspectable, Windows.UI.Xaml.ExceptionRoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeImageFailed(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IImageBrush).remove_ImageFailed(token));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IImageBrush)this.asInterface(uuid("9fd11377-c12a-4493-bf7d-f3a8ad74b554"))).remove_ImageFailed(token));
 	}
 	final EventRegistrationToken OnImageOpened(void delegate(IInspectable, Windows.UI.Xaml.RoutedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IImageBrush).add_ImageOpened(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IImageBrush)this.asInterface(uuid("9fd11377-c12a-4493-bf7d-f3a8ad74b554"))).add_ImageOpened(event!(Windows.UI.Xaml.RoutedEventHandler, IInspectable, Windows.UI.Xaml.RoutedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeImageOpened(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IImageBrush).remove_ImageOpened(token));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IImageBrush)this.asInterface(uuid("9fd11377-c12a-4493-bf7d-f3a8ad74b554"))).remove_ImageOpened(token));
 	}
 
 	private static Windows.UI.Xaml.Media.IImageBrushStatics _staticInstance;
@@ -2354,14 +2354,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty ImageSourceProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IImageBrushStatics).get_ImageSourceProperty(&_ret));
+		Debug.OK(staticInstance.get_ImageSourceProperty(&_ret));
 		return _ret;
 	}
 	static ImageBrush New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ImageBrush).abi_ActivateInstance(&ret));
-		return ret.as!(ImageBrush);
+		return cast(ImageBrush) ret;
 	}
 }
 
@@ -2389,22 +2389,22 @@ extern(Windows):
 	final Windows.Foundation.Point StartPoint()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILineGeometry).get_StartPoint(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ILineGeometry)this.asInterface(uuid("30edd4a2-8fc5-40af-a7a2-c27fe7aa1363"))).get_StartPoint(&_ret));
 		return _ret;
 	}
 	final void StartPoint(Windows.Foundation.Point value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILineGeometry).set_StartPoint(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ILineGeometry)this.asInterface(uuid("30edd4a2-8fc5-40af-a7a2-c27fe7aa1363"))).set_StartPoint(value));
 	}
 	final Windows.Foundation.Point EndPoint()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILineGeometry).get_EndPoint(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ILineGeometry)this.asInterface(uuid("30edd4a2-8fc5-40af-a7a2-c27fe7aa1363"))).get_EndPoint(&_ret));
 		return _ret;
 	}
 	final void EndPoint(Windows.Foundation.Point value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILineGeometry).set_EndPoint(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ILineGeometry)this.asInterface(uuid("30edd4a2-8fc5-40af-a7a2-c27fe7aa1363"))).set_EndPoint(value));
 	}
 
 	private static Windows.UI.Xaml.Media.ILineGeometryStatics _staticInstance;
@@ -2416,20 +2416,20 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty StartPointProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ILineGeometryStatics).get_StartPointProperty(&_ret));
+		Debug.OK(staticInstance.get_StartPointProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty EndPointProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ILineGeometryStatics).get_EndPointProperty(&_ret));
+		Debug.OK(staticInstance.get_EndPointProperty(&_ret));
 		return _ret;
 	}
 	static LineGeometry New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(LineGeometry).abi_ActivateInstance(&ret));
-		return ret.as!(LineGeometry);
+		return cast(LineGeometry) ret;
 	}
 }
 
@@ -2439,12 +2439,12 @@ extern(Windows):
 	final Windows.Foundation.Point Point()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILineSegment).get_Point(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ILineSegment)this.asInterface(uuid("ef6a2e25-3ff0-4420-a411-7182a4cecb15"))).get_Point(&_ret));
 		return _ret;
 	}
 	final void Point(Windows.Foundation.Point value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILineSegment).set_Point(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ILineSegment)this.asInterface(uuid("ef6a2e25-3ff0-4420-a411-7182a4cecb15"))).set_Point(value));
 	}
 
 	private static Windows.UI.Xaml.Media.ILineSegmentStatics _staticInstance;
@@ -2456,14 +2456,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty PointProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ILineSegmentStatics).get_PointProperty(&_ret));
+		Debug.OK(staticInstance.get_PointProperty(&_ret));
 		return _ret;
 	}
 	static LineSegment New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(LineSegment).abi_ActivateInstance(&ret));
-		return ret.as!(LineSegment);
+		return cast(LineSegment) ret;
 	}
 }
 
@@ -2473,22 +2473,22 @@ extern(Windows):
 	final Windows.Foundation.Point StartPoint()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILinearGradientBrush).get_StartPoint(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ILinearGradientBrush)this.asInterface(uuid("8e96d16b-bb84-4c6f-9dbf-9d6c5c6d9c39"))).get_StartPoint(&_ret));
 		return _ret;
 	}
 	final void StartPoint(Windows.Foundation.Point value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILinearGradientBrush).set_StartPoint(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ILinearGradientBrush)this.asInterface(uuid("8e96d16b-bb84-4c6f-9dbf-9d6c5c6d9c39"))).set_StartPoint(value));
 	}
 	final Windows.Foundation.Point EndPoint()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILinearGradientBrush).get_EndPoint(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ILinearGradientBrush)this.asInterface(uuid("8e96d16b-bb84-4c6f-9dbf-9d6c5c6d9c39"))).get_EndPoint(&_ret));
 		return _ret;
 	}
 	final void EndPoint(Windows.Foundation.Point value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILinearGradientBrush).set_EndPoint(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ILinearGradientBrush)this.asInterface(uuid("8e96d16b-bb84-4c6f-9dbf-9d6c5c6d9c39"))).set_EndPoint(value));
 	}
 
 	private static Windows.UI.Xaml.Media.ILinearGradientBrushStatics _staticInstance;
@@ -2500,26 +2500,26 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty StartPointProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ILinearGradientBrushStatics).get_StartPointProperty(&_ret));
+		Debug.OK(staticInstance.get_StartPointProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty EndPointProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ILinearGradientBrushStatics).get_EndPointProperty(&_ret));
+		Debug.OK(staticInstance.get_EndPointProperty(&_ret));
 		return _ret;
 	}
 	static LinearGradientBrush New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(LinearGradientBrush).abi_ActivateInstance(&ret));
-		return ret.as!(LinearGradientBrush);
+		return cast(LinearGradientBrush) ret;
 	}
 	static Windows.UI.Xaml.Media.LinearGradientBrush New(Windows.UI.Xaml.Media.GradientStopCollection gradientStopCollection, double angle)
 	{
 		auto factory = factory!(Windows.UI.Xaml.Media.ILinearGradientBrushFactory);
 		Windows.UI.Xaml.Media.LinearGradientBrush _ret;
-		Debug.OK(factory.as!(Windows.UI.Xaml.Media.ILinearGradientBrushFactory).abi_CreateInstanceWithGradientStopCollectionAndAngle(gradientStopCollection, angle, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ILinearGradientBrushFactory)factory.asInterface(uuid("0ae0861c-1e7a-4fed-9857-ea8caa798490"))).abi_CreateInstanceWithGradientStopCollectionAndAngle(gradientStopCollection, angle, &_ret));
 		return _ret;
 	}
 }
@@ -2530,7 +2530,7 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.LoadedImageSourceLoadStatus Status()
 	{
 		Windows.UI.Xaml.Media.LoadedImageSourceLoadStatus _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILoadedImageSourceLoadCompletedEventArgs).get_Status(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ILoadedImageSourceLoadCompletedEventArgs)this.asInterface(uuid("1ac60b1e-7837-4489-b3e5-d0d5ad0a56c4"))).get_Status(&_ret));
 		return _ret;
 	}
 }
@@ -2541,34 +2541,34 @@ extern(Windows):
 	final Windows.Foundation.Size DecodedPhysicalSize()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILoadedImageSurface).get_DecodedPhysicalSize(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ILoadedImageSurface)this.asInterface(uuid("050c8313-6737-45ba-8531-33094febef55"))).get_DecodedPhysicalSize(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Size DecodedSize()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILoadedImageSurface).get_DecodedSize(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ILoadedImageSurface)this.asInterface(uuid("050c8313-6737-45ba-8531-33094febef55"))).get_DecodedSize(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Size NaturalSize()
 	{
 		Windows.Foundation.Size _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILoadedImageSurface).get_NaturalSize(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ILoadedImageSurface)this.asInterface(uuid("050c8313-6737-45ba-8531-33094febef55"))).get_NaturalSize(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnLoadCompleted(void delegate(Windows.UI.Xaml.Media.LoadedImageSurface, Windows.UI.Xaml.Media.LoadedImageSourceLoadCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILoadedImageSurface).add_LoadCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.LoadedImageSurface, Windows.UI.Xaml.Media.LoadedImageSourceLoadCompletedEventArgs), Windows.UI.Xaml.Media.LoadedImageSurface, Windows.UI.Xaml.Media.LoadedImageSourceLoadCompletedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ILoadedImageSurface)this.asInterface(uuid("050c8313-6737-45ba-8531-33094febef55"))).add_LoadCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.Media.LoadedImageSurface, Windows.UI.Xaml.Media.LoadedImageSourceLoadCompletedEventArgs), Windows.UI.Xaml.Media.LoadedImageSurface, Windows.UI.Xaml.Media.LoadedImageSourceLoadCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeLoadCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ILoadedImageSurface).remove_LoadCompleted(token));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ILoadedImageSurface)this.asInterface(uuid("050c8313-6737-45ba-8531-33094febef55"))).remove_LoadCompleted(token));
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 
 	private static Windows.UI.Xaml.Media.ILoadedImageSurfaceStatics _staticInstance;
@@ -2580,25 +2580,25 @@ extern(Windows):
 	static Windows.UI.Xaml.Media.LoadedImageSurface StartLoadFromUriWithSize(Windows.Foundation.Uri uri, Windows.Foundation.Size desiredMaxSize)
 	{
 		Windows.UI.Xaml.Media.LoadedImageSurface _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ILoadedImageSurfaceStatics).abi_StartLoadFromUriWithSize(uri, desiredMaxSize, &_ret));
+		Debug.OK(staticInstance.abi_StartLoadFromUriWithSize(uri, desiredMaxSize, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Media.LoadedImageSurface StartLoadFromUri(Windows.Foundation.Uri uri)
 	{
 		Windows.UI.Xaml.Media.LoadedImageSurface _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ILoadedImageSurfaceStatics).abi_StartLoadFromUri(uri, &_ret));
+		Debug.OK(staticInstance.abi_StartLoadFromUri(uri, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Media.LoadedImageSurface StartLoadFromStreamWithSize(Windows.Storage.Streams.IRandomAccessStream stream, Windows.Foundation.Size desiredMaxSize)
 	{
 		Windows.UI.Xaml.Media.LoadedImageSurface _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ILoadedImageSurfaceStatics).abi_StartLoadFromStreamWithSize(stream, desiredMaxSize, &_ret));
+		Debug.OK(staticInstance.abi_StartLoadFromStreamWithSize(stream, desiredMaxSize, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Media.LoadedImageSurface StartLoadFromStream(Windows.Storage.Streams.IRandomAccessStream stream)
 	{
 		Windows.UI.Xaml.Media.LoadedImageSurface _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ILoadedImageSurfaceStatics).abi_StartLoadFromStream(stream, &_ret));
+		Debug.OK(staticInstance.abi_StartLoadFromStream(stream, &_ret));
 		return _ret;
 	}
 }
@@ -2609,12 +2609,12 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Media3D.Matrix3D ProjectionMatrix()
 	{
 		Windows.UI.Xaml.Media.Media3D.Matrix3D _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IMatrix3DProjection).get_ProjectionMatrix(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IMatrix3DProjection)this.asInterface(uuid("6f03e149-bfc9-4c01-b578-50338cec97fc"))).get_ProjectionMatrix(&_ret));
 		return _ret;
 	}
 	final void ProjectionMatrix(Windows.UI.Xaml.Media.Media3D.Matrix3D value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IMatrix3DProjection).set_ProjectionMatrix(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IMatrix3DProjection)this.asInterface(uuid("6f03e149-bfc9-4c01-b578-50338cec97fc"))).set_ProjectionMatrix(value));
 	}
 
 	private static Windows.UI.Xaml.Media.IMatrix3DProjectionStatics _staticInstance;
@@ -2626,14 +2626,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty ProjectionMatrixProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IMatrix3DProjectionStatics).get_ProjectionMatrixProperty(&_ret));
+		Debug.OK(staticInstance.get_ProjectionMatrixProperty(&_ret));
 		return _ret;
 	}
 	static Matrix3DProjection New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(Matrix3DProjection).abi_ActivateInstance(&ret));
-		return ret.as!(Matrix3DProjection);
+		return cast(Matrix3DProjection) ret;
 	}
 }
 
@@ -2648,25 +2648,25 @@ interface MatrixHelper : Windows.UI.Xaml.Media.IMatrixHelper
 	static Windows.UI.Xaml.Media.Matrix Identity()
 	{
 		Windows.UI.Xaml.Media.Matrix _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IMatrixHelperStatics).get_Identity(&_ret));
+		Debug.OK(staticInstance.get_Identity(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Media.Matrix FromElements(double m11, double m12, double m21, double m22, double offsetX, double offsetY)
 	{
 		Windows.UI.Xaml.Media.Matrix _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IMatrixHelperStatics).abi_FromElements(m11, m12, m21, m22, offsetX, offsetY, &_ret));
+		Debug.OK(staticInstance.abi_FromElements(m11, m12, m21, m22, offsetX, offsetY, &_ret));
 		return _ret;
 	}
 	static bool GetIsIdentity(Windows.UI.Xaml.Media.Matrix target)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IMatrixHelperStatics).abi_GetIsIdentity(target, &_ret));
+		Debug.OK(staticInstance.abi_GetIsIdentity(target, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Point Transform(Windows.UI.Xaml.Media.Matrix target, Windows.Foundation.Point point)
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IMatrixHelperStatics).abi_Transform(target, point, &_ret));
+		Debug.OK(staticInstance.abi_Transform(target, point, &_ret));
 		return _ret;
 	}
 }
@@ -2677,12 +2677,12 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Matrix Matrix()
 	{
 		Windows.UI.Xaml.Media.Matrix _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IMatrixTransform).get_Matrix(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IMatrixTransform)this.asInterface(uuid("edfdd551-5fed-45fc-ae62-92a4b6cf9707"))).get_Matrix(&_ret));
 		return _ret;
 	}
 	final void Matrix(Windows.UI.Xaml.Media.Matrix value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IMatrixTransform).set_Matrix(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IMatrixTransform)this.asInterface(uuid("edfdd551-5fed-45fc-ae62-92a4b6cf9707"))).set_Matrix(value));
 	}
 
 	private static Windows.UI.Xaml.Media.IMatrixTransformStatics _staticInstance;
@@ -2694,14 +2694,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty MatrixProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IMatrixTransformStatics).get_MatrixProperty(&_ret));
+		Debug.OK(staticInstance.get_MatrixProperty(&_ret));
 		return _ret;
 	}
 	static MatrixTransform New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(MatrixTransform).abi_ActivateInstance(&ret));
-		return ret.as!(MatrixTransform);
+		return cast(MatrixTransform) ret;
 	}
 }
 
@@ -2710,12 +2710,12 @@ interface MediaTransportControlsThumbnailRequestedEventArgs : Windows.UI.Xaml.Me
 extern(Windows):
 	final void SetThumbnailImage(Windows.Storage.Streams.IInputStream source)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IMediaTransportControlsThumbnailRequestedEventArgs).abi_SetThumbnailImage(source));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IMediaTransportControlsThumbnailRequestedEventArgs)this.asInterface(uuid("e4a8b21c-e3c2-485c-ae69-f1537b76755a"))).abi_SetThumbnailImage(source));
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
 		Windows.Foundation.Deferral _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IMediaTransportControlsThumbnailRequestedEventArgs).abi_GetDeferral(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IMediaTransportControlsThumbnailRequestedEventArgs)this.asInterface(uuid("e4a8b21c-e3c2-485c-ae69-f1537b76755a"))).abi_GetDeferral(&_ret));
 		return _ret;
 	}
 }
@@ -2726,20 +2726,20 @@ extern(Windows):
 	final Windows.Media.Playback.FailedMediaStreamKind StreamKind()
 	{
 		Windows.Media.Playback.FailedMediaStreamKind _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPartialMediaFailureDetectedEventArgs).get_StreamKind(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPartialMediaFailureDetectedEventArgs)this.asInterface(uuid("02b65a91-e5a1-442b-88d3-2dc127bfc59b"))).get_StreamKind(&_ret));
 		return _ret;
 	}
 	final HRESULT ExtendedError()
 	{
 		HRESULT _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPartialMediaFailureDetectedEventArgs2).get_ExtendedError(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPartialMediaFailureDetectedEventArgs2)this.asInterface(uuid("73074875-890d-416b-b9ae-e84dfd9c4b1b"))).get_ExtendedError(&_ret));
 		return _ret;
 	}
 	static PartialMediaFailureDetectedEventArgs New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PartialMediaFailureDetectedEventArgs).abi_ActivateInstance(&ret));
-		return ret.as!(PartialMediaFailureDetectedEventArgs);
+		return cast(PartialMediaFailureDetectedEventArgs) ret;
 	}
 }
 
@@ -2749,42 +2749,42 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.PathSegmentCollection Segments()
 	{
 		Windows.UI.Xaml.Media.PathSegmentCollection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathFigure).get_Segments(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPathFigure)this.asInterface(uuid("5d955c8c-5fa9-4dda-a3cc-10fcdcaa20d7"))).get_Segments(&_ret));
 		return _ret;
 	}
 	final void Segments(Windows.UI.Xaml.Media.PathSegmentCollection value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathFigure).set_Segments(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPathFigure)this.asInterface(uuid("5d955c8c-5fa9-4dda-a3cc-10fcdcaa20d7"))).set_Segments(value));
 	}
 	final Windows.Foundation.Point StartPoint()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathFigure).get_StartPoint(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPathFigure)this.asInterface(uuid("5d955c8c-5fa9-4dda-a3cc-10fcdcaa20d7"))).get_StartPoint(&_ret));
 		return _ret;
 	}
 	final void StartPoint(Windows.Foundation.Point value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathFigure).set_StartPoint(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPathFigure)this.asInterface(uuid("5d955c8c-5fa9-4dda-a3cc-10fcdcaa20d7"))).set_StartPoint(value));
 	}
 	final bool IsClosed()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathFigure).get_IsClosed(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPathFigure)this.asInterface(uuid("5d955c8c-5fa9-4dda-a3cc-10fcdcaa20d7"))).get_IsClosed(&_ret));
 		return _ret;
 	}
 	final void IsClosed(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathFigure).set_IsClosed(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPathFigure)this.asInterface(uuid("5d955c8c-5fa9-4dda-a3cc-10fcdcaa20d7"))).set_IsClosed(value));
 	}
 	final bool IsFilled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathFigure).get_IsFilled(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPathFigure)this.asInterface(uuid("5d955c8c-5fa9-4dda-a3cc-10fcdcaa20d7"))).get_IsFilled(&_ret));
 		return _ret;
 	}
 	final void IsFilled(bool value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathFigure).set_IsFilled(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPathFigure)this.asInterface(uuid("5d955c8c-5fa9-4dda-a3cc-10fcdcaa20d7"))).set_IsFilled(value));
 	}
 
 	private static Windows.UI.Xaml.Media.IPathFigureStatics _staticInstance;
@@ -2796,32 +2796,32 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty SegmentsProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPathFigureStatics).get_SegmentsProperty(&_ret));
+		Debug.OK(staticInstance.get_SegmentsProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty StartPointProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPathFigureStatics).get_StartPointProperty(&_ret));
+		Debug.OK(staticInstance.get_StartPointProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty IsClosedProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPathFigureStatics).get_IsClosedProperty(&_ret));
+		Debug.OK(staticInstance.get_IsClosedProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty IsFilledProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPathFigureStatics).get_IsFilledProperty(&_ret));
+		Debug.OK(staticInstance.get_IsFilledProperty(&_ret));
 		return _ret;
 	}
 	static PathFigure New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PathFigure).abi_ActivateInstance(&ret));
-		return ret.as!(PathFigure);
+		return cast(PathFigure) ret;
 	}
 }
 
@@ -2831,66 +2831,66 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.PathFigure GetAt(uint index)
 	{
 		Windows.UI.Xaml.Media.PathFigure _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure)).get_GetAt(index, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure))this).get_GetAt(index, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure))this).get_Size(&_ret));
 		return _ret;
 	}
 	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Media.PathFigure)* out_view)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure)).abi_GetView(out_view));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure))this).abi_GetView(out_view));
 	}
 	final uint IndexOf(Windows.UI.Xaml.Media.PathFigure value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void SetAt(uint index, Windows.UI.Xaml.Media.PathFigure item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure)).abi_SetAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure))this).abi_SetAt(index, item));
 	}
 	final void InsertAt(uint index, Windows.UI.Xaml.Media.PathFigure item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure)).abi_InsertAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure))this).abi_InsertAt(index, item));
 	}
 	final void RemoveAt(uint index)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure)).abi_RemoveAt(index));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure))this).abi_RemoveAt(index));
 	}
 	final void Append(Windows.UI.Xaml.Media.PathFigure item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure)).abi_Append(item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure))this).abi_Append(item));
 	}
 	final void RemoveAtEnd()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure)).abi_RemoveAtEnd());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure))this).abi_RemoveAtEnd());
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure))this).abi_Clear());
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.Media.PathFigure* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void ReplaceAll(uint count, Windows.UI.Xaml.Media.PathFigure* out_value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure)).abi_ReplaceAll(count, out_value));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathFigure))this).abi_ReplaceAll(count, out_value));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Media.PathFigure)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.PathFigure)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.PathFigure))this).abi_First(out_first));
 	}
 	static PathFigureCollection New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PathFigureCollection).abi_ActivateInstance(&ret));
-		return ret.as!(PathFigureCollection);
+		return cast(PathFigureCollection) ret;
 	}
 }
 
@@ -2900,22 +2900,22 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.FillRule FillRule()
 	{
 		Windows.UI.Xaml.Media.FillRule _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathGeometry).get_FillRule(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPathGeometry)this.asInterface(uuid("081b9df8-bae6-4bcb-813c-bde0e46dc8b7"))).get_FillRule(&_ret));
 		return _ret;
 	}
 	final void FillRule(Windows.UI.Xaml.Media.FillRule value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathGeometry).set_FillRule(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPathGeometry)this.asInterface(uuid("081b9df8-bae6-4bcb-813c-bde0e46dc8b7"))).set_FillRule(value));
 	}
 	final Windows.UI.Xaml.Media.PathFigureCollection Figures()
 	{
 		Windows.UI.Xaml.Media.PathFigureCollection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathGeometry).get_Figures(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPathGeometry)this.asInterface(uuid("081b9df8-bae6-4bcb-813c-bde0e46dc8b7"))).get_Figures(&_ret));
 		return _ret;
 	}
 	final void Figures(Windows.UI.Xaml.Media.PathFigureCollection value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPathGeometry).set_Figures(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPathGeometry)this.asInterface(uuid("081b9df8-bae6-4bcb-813c-bde0e46dc8b7"))).set_Figures(value));
 	}
 
 	private static Windows.UI.Xaml.Media.IPathGeometryStatics _staticInstance;
@@ -2927,20 +2927,20 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty FillRuleProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPathGeometryStatics).get_FillRuleProperty(&_ret));
+		Debug.OK(staticInstance.get_FillRuleProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty FiguresProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPathGeometryStatics).get_FiguresProperty(&_ret));
+		Debug.OK(staticInstance.get_FiguresProperty(&_ret));
 		return _ret;
 	}
 	static PathGeometry New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PathGeometry).abi_ActivateInstance(&ret));
-		return ret.as!(PathGeometry);
+		return cast(PathGeometry) ret;
 	}
 }
 
@@ -2968,66 +2968,66 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.PathSegment GetAt(uint index)
 	{
 		Windows.UI.Xaml.Media.PathSegment _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment)).get_GetAt(index, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment))this).get_GetAt(index, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment))this).get_Size(&_ret));
 		return _ret;
 	}
 	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Media.PathSegment)* out_view)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment)).abi_GetView(out_view));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment))this).abi_GetView(out_view));
 	}
 	final uint IndexOf(Windows.UI.Xaml.Media.PathSegment value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void SetAt(uint index, Windows.UI.Xaml.Media.PathSegment item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment)).abi_SetAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment))this).abi_SetAt(index, item));
 	}
 	final void InsertAt(uint index, Windows.UI.Xaml.Media.PathSegment item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment)).abi_InsertAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment))this).abi_InsertAt(index, item));
 	}
 	final void RemoveAt(uint index)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment)).abi_RemoveAt(index));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment))this).abi_RemoveAt(index));
 	}
 	final void Append(Windows.UI.Xaml.Media.PathSegment item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment)).abi_Append(item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment))this).abi_Append(item));
 	}
 	final void RemoveAtEnd()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment)).abi_RemoveAtEnd());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment))this).abi_RemoveAtEnd());
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment))this).abi_Clear());
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.Media.PathSegment* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void ReplaceAll(uint count, Windows.UI.Xaml.Media.PathSegment* out_value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment)).abi_ReplaceAll(count, out_value));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.PathSegment))this).abi_ReplaceAll(count, out_value));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Media.PathSegment)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.PathSegment)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.PathSegment))this).abi_First(out_first));
 	}
 	static PathSegmentCollection New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PathSegmentCollection).abi_ActivateInstance(&ret));
-		return ret.as!(PathSegmentCollection);
+		return cast(PathSegmentCollection) ret;
 	}
 }
 
@@ -3037,127 +3037,127 @@ extern(Windows):
 	final double LocalOffsetX()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_LocalOffsetX(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).get_LocalOffsetX(&_ret));
 		return _ret;
 	}
 	final void LocalOffsetX(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_LocalOffsetX(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).set_LocalOffsetX(value));
 	}
 	final double LocalOffsetY()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_LocalOffsetY(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).get_LocalOffsetY(&_ret));
 		return _ret;
 	}
 	final void LocalOffsetY(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_LocalOffsetY(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).set_LocalOffsetY(value));
 	}
 	final double LocalOffsetZ()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_LocalOffsetZ(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).get_LocalOffsetZ(&_ret));
 		return _ret;
 	}
 	final void LocalOffsetZ(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_LocalOffsetZ(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).set_LocalOffsetZ(value));
 	}
 	final double RotationX()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_RotationX(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).get_RotationX(&_ret));
 		return _ret;
 	}
 	final void RotationX(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_RotationX(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).set_RotationX(value));
 	}
 	final double RotationY()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_RotationY(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).get_RotationY(&_ret));
 		return _ret;
 	}
 	final void RotationY(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_RotationY(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).set_RotationY(value));
 	}
 	final double RotationZ()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_RotationZ(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).get_RotationZ(&_ret));
 		return _ret;
 	}
 	final void RotationZ(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_RotationZ(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).set_RotationZ(value));
 	}
 	final double CenterOfRotationX()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_CenterOfRotationX(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).get_CenterOfRotationX(&_ret));
 		return _ret;
 	}
 	final void CenterOfRotationX(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_CenterOfRotationX(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).set_CenterOfRotationX(value));
 	}
 	final double CenterOfRotationY()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_CenterOfRotationY(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).get_CenterOfRotationY(&_ret));
 		return _ret;
 	}
 	final void CenterOfRotationY(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_CenterOfRotationY(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).set_CenterOfRotationY(value));
 	}
 	final double CenterOfRotationZ()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_CenterOfRotationZ(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).get_CenterOfRotationZ(&_ret));
 		return _ret;
 	}
 	final void CenterOfRotationZ(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_CenterOfRotationZ(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).set_CenterOfRotationZ(value));
 	}
 	final double GlobalOffsetX()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_GlobalOffsetX(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).get_GlobalOffsetX(&_ret));
 		return _ret;
 	}
 	final void GlobalOffsetX(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_GlobalOffsetX(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).set_GlobalOffsetX(value));
 	}
 	final double GlobalOffsetY()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_GlobalOffsetY(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).get_GlobalOffsetY(&_ret));
 		return _ret;
 	}
 	final void GlobalOffsetY(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_GlobalOffsetY(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).set_GlobalOffsetY(value));
 	}
 	final double GlobalOffsetZ()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_GlobalOffsetZ(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).get_GlobalOffsetZ(&_ret));
 		return _ret;
 	}
 	final void GlobalOffsetZ(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).set_GlobalOffsetZ(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).set_GlobalOffsetZ(value));
 	}
 	final Windows.UI.Xaml.Media.Media3D.Matrix3D ProjectionMatrix()
 	{
 		Windows.UI.Xaml.Media.Media3D.Matrix3D _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPlaneProjection).get_ProjectionMatrix(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPlaneProjection)this.asInterface(uuid("e6f82bfa-6726-469a-b259-a5188347ca8f"))).get_ProjectionMatrix(&_ret));
 		return _ret;
 	}
 
@@ -3170,86 +3170,86 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty LocalOffsetXProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_LocalOffsetXProperty(&_ret));
+		Debug.OK(staticInstance.get_LocalOffsetXProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty LocalOffsetYProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_LocalOffsetYProperty(&_ret));
+		Debug.OK(staticInstance.get_LocalOffsetYProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty LocalOffsetZProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_LocalOffsetZProperty(&_ret));
+		Debug.OK(staticInstance.get_LocalOffsetZProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty RotationXProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_RotationXProperty(&_ret));
+		Debug.OK(staticInstance.get_RotationXProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty RotationYProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_RotationYProperty(&_ret));
+		Debug.OK(staticInstance.get_RotationYProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty RotationZProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_RotationZProperty(&_ret));
+		Debug.OK(staticInstance.get_RotationZProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty CenterOfRotationXProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_CenterOfRotationXProperty(&_ret));
+		Debug.OK(staticInstance.get_CenterOfRotationXProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty CenterOfRotationYProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_CenterOfRotationYProperty(&_ret));
+		Debug.OK(staticInstance.get_CenterOfRotationYProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty CenterOfRotationZProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_CenterOfRotationZProperty(&_ret));
+		Debug.OK(staticInstance.get_CenterOfRotationZProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty GlobalOffsetXProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_GlobalOffsetXProperty(&_ret));
+		Debug.OK(staticInstance.get_GlobalOffsetXProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty GlobalOffsetYProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_GlobalOffsetYProperty(&_ret));
+		Debug.OK(staticInstance.get_GlobalOffsetYProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty GlobalOffsetZProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_GlobalOffsetZProperty(&_ret));
+		Debug.OK(staticInstance.get_GlobalOffsetZProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ProjectionMatrixProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPlaneProjectionStatics).get_ProjectionMatrixProperty(&_ret));
+		Debug.OK(staticInstance.get_ProjectionMatrixProperty(&_ret));
 		return _ret;
 	}
 	static PlaneProjection New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PlaneProjection).abi_ActivateInstance(&ret));
-		return ret.as!(PlaneProjection);
+		return cast(PlaneProjection) ret;
 	}
 }
 
@@ -3259,66 +3259,66 @@ extern(Windows):
 	final Windows.Foundation.Point GetAt(uint index)
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point)).get_GetAt(index, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point))this).get_GetAt(index, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point))this).get_Size(&_ret));
 		return _ret;
 	}
 	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.Foundation.Point)* out_view)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point)).abi_GetView(out_view));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point))this).abi_GetView(out_view));
 	}
 	final uint IndexOf(Windows.Foundation.Point value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void SetAt(uint index, Windows.Foundation.Point item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point)).abi_SetAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point))this).abi_SetAt(index, item));
 	}
 	final void InsertAt(uint index, Windows.Foundation.Point item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point)).abi_InsertAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point))this).abi_InsertAt(index, item));
 	}
 	final void RemoveAt(uint index)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point)).abi_RemoveAt(index));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point))this).abi_RemoveAt(index));
 	}
 	final void Append(Windows.Foundation.Point item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point)).abi_Append(item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point))this).abi_Append(item));
 	}
 	final void RemoveAtEnd()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point)).abi_RemoveAtEnd());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point))this).abi_RemoveAtEnd());
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point))this).abi_Clear());
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.Foundation.Point* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void ReplaceAll(uint count, Windows.Foundation.Point* out_value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point)).abi_ReplaceAll(count, out_value));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.Foundation.Point))this).abi_ReplaceAll(count, out_value));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Foundation.Point)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Point)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Point))this).abi_First(out_first));
 	}
 	static PointCollection New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PointCollection).abi_ActivateInstance(&ret));
-		return ret.as!(PointCollection);
+		return cast(PointCollection) ret;
 	}
 }
 
@@ -3328,12 +3328,12 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.PointCollection Points()
 	{
 		Windows.UI.Xaml.Media.PointCollection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPolyBezierSegment).get_Points(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPolyBezierSegment)this.asInterface(uuid("36805271-38c4-4bcf-96cd-028a6d38af25"))).get_Points(&_ret));
 		return _ret;
 	}
 	final void Points(Windows.UI.Xaml.Media.PointCollection value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPolyBezierSegment).set_Points(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPolyBezierSegment)this.asInterface(uuid("36805271-38c4-4bcf-96cd-028a6d38af25"))).set_Points(value));
 	}
 
 	private static Windows.UI.Xaml.Media.IPolyBezierSegmentStatics _staticInstance;
@@ -3345,14 +3345,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty PointsProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPolyBezierSegmentStatics).get_PointsProperty(&_ret));
+		Debug.OK(staticInstance.get_PointsProperty(&_ret));
 		return _ret;
 	}
 	static PolyBezierSegment New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PolyBezierSegment).abi_ActivateInstance(&ret));
-		return ret.as!(PolyBezierSegment);
+		return cast(PolyBezierSegment) ret;
 	}
 }
 
@@ -3362,12 +3362,12 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.PointCollection Points()
 	{
 		Windows.UI.Xaml.Media.PointCollection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPolyLineSegment).get_Points(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPolyLineSegment)this.asInterface(uuid("4b397f87-a2e6-479d-bdc8-6f4464646887"))).get_Points(&_ret));
 		return _ret;
 	}
 	final void Points(Windows.UI.Xaml.Media.PointCollection value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPolyLineSegment).set_Points(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPolyLineSegment)this.asInterface(uuid("4b397f87-a2e6-479d-bdc8-6f4464646887"))).set_Points(value));
 	}
 
 	private static Windows.UI.Xaml.Media.IPolyLineSegmentStatics _staticInstance;
@@ -3379,14 +3379,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty PointsProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPolyLineSegmentStatics).get_PointsProperty(&_ret));
+		Debug.OK(staticInstance.get_PointsProperty(&_ret));
 		return _ret;
 	}
 	static PolyLineSegment New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PolyLineSegment).abi_ActivateInstance(&ret));
-		return ret.as!(PolyLineSegment);
+		return cast(PolyLineSegment) ret;
 	}
 }
 
@@ -3396,12 +3396,12 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.PointCollection Points()
 	{
 		Windows.UI.Xaml.Media.PointCollection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPolyQuadraticBezierSegment).get_Points(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPolyQuadraticBezierSegment)this.asInterface(uuid("dd5ced7d-e6db-4c96-b6a1-3fce96e987a6"))).get_Points(&_ret));
 		return _ret;
 	}
 	final void Points(Windows.UI.Xaml.Media.PointCollection value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IPolyQuadraticBezierSegment).set_Points(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IPolyQuadraticBezierSegment)this.asInterface(uuid("dd5ced7d-e6db-4c96-b6a1-3fce96e987a6"))).set_Points(value));
 	}
 
 	private static Windows.UI.Xaml.Media.IPolyQuadraticBezierSegmentStatics _staticInstance;
@@ -3413,14 +3413,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty PointsProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IPolyQuadraticBezierSegmentStatics).get_PointsProperty(&_ret));
+		Debug.OK(staticInstance.get_PointsProperty(&_ret));
 		return _ret;
 	}
 	static PolyQuadraticBezierSegment New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PolyQuadraticBezierSegment).abi_ActivateInstance(&ret));
-		return ret.as!(PolyQuadraticBezierSegment);
+		return cast(PolyQuadraticBezierSegment) ret;
 	}
 }
 
@@ -3455,22 +3455,22 @@ extern(Windows):
 	final Windows.Foundation.Point Point1()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IQuadraticBezierSegment).get_Point1(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IQuadraticBezierSegment)this.asInterface(uuid("2c509a5b-bf18-455a-a078-914b5232d8af"))).get_Point1(&_ret));
 		return _ret;
 	}
 	final void Point1(Windows.Foundation.Point value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IQuadraticBezierSegment).set_Point1(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IQuadraticBezierSegment)this.asInterface(uuid("2c509a5b-bf18-455a-a078-914b5232d8af"))).set_Point1(value));
 	}
 	final Windows.Foundation.Point Point2()
 	{
 		Windows.Foundation.Point _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IQuadraticBezierSegment).get_Point2(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IQuadraticBezierSegment)this.asInterface(uuid("2c509a5b-bf18-455a-a078-914b5232d8af"))).get_Point2(&_ret));
 		return _ret;
 	}
 	final void Point2(Windows.Foundation.Point value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IQuadraticBezierSegment).set_Point2(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IQuadraticBezierSegment)this.asInterface(uuid("2c509a5b-bf18-455a-a078-914b5232d8af"))).set_Point2(value));
 	}
 
 	private static Windows.UI.Xaml.Media.IQuadraticBezierSegmentStatics _staticInstance;
@@ -3482,20 +3482,20 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty Point1Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IQuadraticBezierSegmentStatics).get_Point1Property(&_ret));
+		Debug.OK(staticInstance.get_Point1Property(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty Point2Property()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IQuadraticBezierSegmentStatics).get_Point2Property(&_ret));
+		Debug.OK(staticInstance.get_Point2Property(&_ret));
 		return _ret;
 	}
 	static QuadraticBezierSegment New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(QuadraticBezierSegment).abi_ActivateInstance(&ret));
-		return ret.as!(QuadraticBezierSegment);
+		return cast(QuadraticBezierSegment) ret;
 	}
 }
 
@@ -3505,7 +3505,7 @@ interface RateChangedRoutedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(RateChangedRoutedEventArgs).abi_ActivateInstance(&ret));
-		return ret.as!(RateChangedRoutedEventArgs);
+		return cast(RateChangedRoutedEventArgs) ret;
 	}
 }
 
@@ -3515,12 +3515,12 @@ extern(Windows):
 	final Windows.Foundation.Rect Rect()
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IRectangleGeometry).get_Rect(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IRectangleGeometry)this.asInterface(uuid("a25a1f58-c575-4196-91cf-9fdfb10445c3"))).get_Rect(&_ret));
 		return _ret;
 	}
 	final void Rect(Windows.Foundation.Rect value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IRectangleGeometry).set_Rect(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IRectangleGeometry)this.asInterface(uuid("a25a1f58-c575-4196-91cf-9fdfb10445c3"))).set_Rect(value));
 	}
 
 	private static Windows.UI.Xaml.Media.IRectangleGeometryStatics _staticInstance;
@@ -3532,14 +3532,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty RectProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IRectangleGeometryStatics).get_RectProperty(&_ret));
+		Debug.OK(staticInstance.get_RectProperty(&_ret));
 		return _ret;
 	}
 	static RectangleGeometry New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(RectangleGeometry).abi_ActivateInstance(&ret));
-		return ret.as!(RectangleGeometry);
+		return cast(RectangleGeometry) ret;
 	}
 }
 
@@ -3549,7 +3549,7 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan RenderingTime()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IRenderingEventArgs).get_RenderingTime(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IRenderingEventArgs)this.asInterface(uuid("5bf7d30d-9748-4aed-8380-d7890eb776a0"))).get_RenderingTime(&_ret));
 		return _ret;
 	}
 }
@@ -3560,32 +3560,32 @@ extern(Windows):
 	final double CenterX()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IRotateTransform).get_CenterX(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IRotateTransform)this.asInterface(uuid("688ea9b9-1e4e-4596-86e3-428b27334faf"))).get_CenterX(&_ret));
 		return _ret;
 	}
 	final void CenterX(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IRotateTransform).set_CenterX(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IRotateTransform)this.asInterface(uuid("688ea9b9-1e4e-4596-86e3-428b27334faf"))).set_CenterX(value));
 	}
 	final double CenterY()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IRotateTransform).get_CenterY(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IRotateTransform)this.asInterface(uuid("688ea9b9-1e4e-4596-86e3-428b27334faf"))).get_CenterY(&_ret));
 		return _ret;
 	}
 	final void CenterY(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IRotateTransform).set_CenterY(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IRotateTransform)this.asInterface(uuid("688ea9b9-1e4e-4596-86e3-428b27334faf"))).set_CenterY(value));
 	}
 	final double Angle()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IRotateTransform).get_Angle(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IRotateTransform)this.asInterface(uuid("688ea9b9-1e4e-4596-86e3-428b27334faf"))).get_Angle(&_ret));
 		return _ret;
 	}
 	final void Angle(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IRotateTransform).set_Angle(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IRotateTransform)this.asInterface(uuid("688ea9b9-1e4e-4596-86e3-428b27334faf"))).set_Angle(value));
 	}
 
 	private static Windows.UI.Xaml.Media.IRotateTransformStatics _staticInstance;
@@ -3597,26 +3597,26 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty CenterXProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IRotateTransformStatics).get_CenterXProperty(&_ret));
+		Debug.OK(staticInstance.get_CenterXProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty CenterYProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IRotateTransformStatics).get_CenterYProperty(&_ret));
+		Debug.OK(staticInstance.get_CenterYProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty AngleProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IRotateTransformStatics).get_AngleProperty(&_ret));
+		Debug.OK(staticInstance.get_AngleProperty(&_ret));
 		return _ret;
 	}
 	static RotateTransform New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(RotateTransform).abi_ActivateInstance(&ret));
-		return ret.as!(RotateTransform);
+		return cast(RotateTransform) ret;
 	}
 }
 
@@ -3626,42 +3626,42 @@ extern(Windows):
 	final double CenterX()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IScaleTransform).get_CenterX(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IScaleTransform)this.asInterface(uuid("ed67f18d-936e-43ab-929a-e9cd0a511e52"))).get_CenterX(&_ret));
 		return _ret;
 	}
 	final void CenterX(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IScaleTransform).set_CenterX(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IScaleTransform)this.asInterface(uuid("ed67f18d-936e-43ab-929a-e9cd0a511e52"))).set_CenterX(value));
 	}
 	final double CenterY()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IScaleTransform).get_CenterY(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IScaleTransform)this.asInterface(uuid("ed67f18d-936e-43ab-929a-e9cd0a511e52"))).get_CenterY(&_ret));
 		return _ret;
 	}
 	final void CenterY(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IScaleTransform).set_CenterY(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IScaleTransform)this.asInterface(uuid("ed67f18d-936e-43ab-929a-e9cd0a511e52"))).set_CenterY(value));
 	}
 	final double ScaleX()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IScaleTransform).get_ScaleX(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IScaleTransform)this.asInterface(uuid("ed67f18d-936e-43ab-929a-e9cd0a511e52"))).get_ScaleX(&_ret));
 		return _ret;
 	}
 	final void ScaleX(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IScaleTransform).set_ScaleX(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IScaleTransform)this.asInterface(uuid("ed67f18d-936e-43ab-929a-e9cd0a511e52"))).set_ScaleX(value));
 	}
 	final double ScaleY()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IScaleTransform).get_ScaleY(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IScaleTransform)this.asInterface(uuid("ed67f18d-936e-43ab-929a-e9cd0a511e52"))).get_ScaleY(&_ret));
 		return _ret;
 	}
 	final void ScaleY(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IScaleTransform).set_ScaleY(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IScaleTransform)this.asInterface(uuid("ed67f18d-936e-43ab-929a-e9cd0a511e52"))).set_ScaleY(value));
 	}
 
 	private static Windows.UI.Xaml.Media.IScaleTransformStatics _staticInstance;
@@ -3673,32 +3673,32 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty CenterXProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IScaleTransformStatics).get_CenterXProperty(&_ret));
+		Debug.OK(staticInstance.get_CenterXProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty CenterYProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IScaleTransformStatics).get_CenterYProperty(&_ret));
+		Debug.OK(staticInstance.get_CenterYProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ScaleXProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IScaleTransformStatics).get_ScaleXProperty(&_ret));
+		Debug.OK(staticInstance.get_ScaleXProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty ScaleYProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IScaleTransformStatics).get_ScaleYProperty(&_ret));
+		Debug.OK(staticInstance.get_ScaleYProperty(&_ret));
 		return _ret;
 	}
 	static ScaleTransform New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(ScaleTransform).abi_ActivateInstance(&ret));
-		return ret.as!(ScaleTransform);
+		return cast(ScaleTransform) ret;
 	}
 }
 
@@ -3708,42 +3708,42 @@ extern(Windows):
 	final double CenterX()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ISkewTransform).get_CenterX(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ISkewTransform)this.asInterface(uuid("4e8a3b15-7a0f-4617-9e98-1e65bdc92115"))).get_CenterX(&_ret));
 		return _ret;
 	}
 	final void CenterX(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ISkewTransform).set_CenterX(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ISkewTransform)this.asInterface(uuid("4e8a3b15-7a0f-4617-9e98-1e65bdc92115"))).set_CenterX(value));
 	}
 	final double CenterY()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ISkewTransform).get_CenterY(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ISkewTransform)this.asInterface(uuid("4e8a3b15-7a0f-4617-9e98-1e65bdc92115"))).get_CenterY(&_ret));
 		return _ret;
 	}
 	final void CenterY(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ISkewTransform).set_CenterY(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ISkewTransform)this.asInterface(uuid("4e8a3b15-7a0f-4617-9e98-1e65bdc92115"))).set_CenterY(value));
 	}
 	final double AngleX()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ISkewTransform).get_AngleX(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ISkewTransform)this.asInterface(uuid("4e8a3b15-7a0f-4617-9e98-1e65bdc92115"))).get_AngleX(&_ret));
 		return _ret;
 	}
 	final void AngleX(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ISkewTransform).set_AngleX(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ISkewTransform)this.asInterface(uuid("4e8a3b15-7a0f-4617-9e98-1e65bdc92115"))).set_AngleX(value));
 	}
 	final double AngleY()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ISkewTransform).get_AngleY(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ISkewTransform)this.asInterface(uuid("4e8a3b15-7a0f-4617-9e98-1e65bdc92115"))).get_AngleY(&_ret));
 		return _ret;
 	}
 	final void AngleY(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ISkewTransform).set_AngleY(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ISkewTransform)this.asInterface(uuid("4e8a3b15-7a0f-4617-9e98-1e65bdc92115"))).set_AngleY(value));
 	}
 
 	private static Windows.UI.Xaml.Media.ISkewTransformStatics _staticInstance;
@@ -3755,32 +3755,32 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty CenterXProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ISkewTransformStatics).get_CenterXProperty(&_ret));
+		Debug.OK(staticInstance.get_CenterXProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty CenterYProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ISkewTransformStatics).get_CenterYProperty(&_ret));
+		Debug.OK(staticInstance.get_CenterYProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty AngleXProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ISkewTransformStatics).get_AngleXProperty(&_ret));
+		Debug.OK(staticInstance.get_AngleXProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty AngleYProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ISkewTransformStatics).get_AngleYProperty(&_ret));
+		Debug.OK(staticInstance.get_AngleYProperty(&_ret));
 		return _ret;
 	}
 	static SkewTransform New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(SkewTransform).abi_ActivateInstance(&ret));
-		return ret.as!(SkewTransform);
+		return cast(SkewTransform) ret;
 	}
 }
 
@@ -3790,12 +3790,12 @@ extern(Windows):
 	final Windows.UI.Color Color()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ISolidColorBrush).get_Color(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ISolidColorBrush)this.asInterface(uuid("9d850850-66f3-48df-9a8f-824bd5e070af"))).get_Color(&_ret));
 		return _ret;
 	}
 	final void Color(Windows.UI.Color value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ISolidColorBrush).set_Color(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ISolidColorBrush)this.asInterface(uuid("9d850850-66f3-48df-9a8f-824bd5e070af"))).set_Color(value));
 	}
 
 	private static Windows.UI.Xaml.Media.ISolidColorBrushStatics _staticInstance;
@@ -3807,20 +3807,20 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty ColorProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ISolidColorBrushStatics).get_ColorProperty(&_ret));
+		Debug.OK(staticInstance.get_ColorProperty(&_ret));
 		return _ret;
 	}
 	static SolidColorBrush New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(SolidColorBrush).abi_ActivateInstance(&ret));
-		return ret.as!(SolidColorBrush);
+		return cast(SolidColorBrush) ret;
 	}
 	static Windows.UI.Xaml.Media.SolidColorBrush New(Windows.UI.Color color)
 	{
 		auto factory = factory!(Windows.UI.Xaml.Media.ISolidColorBrushFactory);
 		Windows.UI.Xaml.Media.SolidColorBrush _ret;
-		Debug.OK(factory.as!(Windows.UI.Xaml.Media.ISolidColorBrushFactory).abi_CreateInstanceWithColor(color, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ISolidColorBrushFactory)factory.asInterface(uuid("d935ce0c-86f5-4da6-8a27-b1619ef7f92b"))).abi_CreateInstanceWithColor(color, &_ret));
 		return _ret;
 	}
 }
@@ -3831,32 +3831,32 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.AlignmentX AlignmentX()
 	{
 		Windows.UI.Xaml.Media.AlignmentX _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITileBrush).get_AlignmentX(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ITileBrush)this.asInterface(uuid("c201cf06-cd84-48a5-9607-664d7361cd61"))).get_AlignmentX(&_ret));
 		return _ret;
 	}
 	final void AlignmentX(Windows.UI.Xaml.Media.AlignmentX value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITileBrush).set_AlignmentX(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ITileBrush)this.asInterface(uuid("c201cf06-cd84-48a5-9607-664d7361cd61"))).set_AlignmentX(value));
 	}
 	final Windows.UI.Xaml.Media.AlignmentY AlignmentY()
 	{
 		Windows.UI.Xaml.Media.AlignmentY _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITileBrush).get_AlignmentY(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ITileBrush)this.asInterface(uuid("c201cf06-cd84-48a5-9607-664d7361cd61"))).get_AlignmentY(&_ret));
 		return _ret;
 	}
 	final void AlignmentY(Windows.UI.Xaml.Media.AlignmentY value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITileBrush).set_AlignmentY(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ITileBrush)this.asInterface(uuid("c201cf06-cd84-48a5-9607-664d7361cd61"))).set_AlignmentY(value));
 	}
 	final Windows.UI.Xaml.Media.Stretch Stretch()
 	{
 		Windows.UI.Xaml.Media.Stretch _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITileBrush).get_Stretch(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ITileBrush)this.asInterface(uuid("c201cf06-cd84-48a5-9607-664d7361cd61"))).get_Stretch(&_ret));
 		return _ret;
 	}
 	final void Stretch(Windows.UI.Xaml.Media.Stretch value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITileBrush).set_Stretch(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ITileBrush)this.asInterface(uuid("c201cf06-cd84-48a5-9607-664d7361cd61"))).set_Stretch(value));
 	}
 
 	private static Windows.UI.Xaml.Media.ITileBrushStatics _staticInstance;
@@ -3868,19 +3868,19 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty AlignmentXProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ITileBrushStatics).get_AlignmentXProperty(&_ret));
+		Debug.OK(staticInstance.get_AlignmentXProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty AlignmentYProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ITileBrushStatics).get_AlignmentYProperty(&_ret));
+		Debug.OK(staticInstance.get_AlignmentYProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty StretchProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ITileBrushStatics).get_StretchProperty(&_ret));
+		Debug.OK(staticInstance.get_StretchProperty(&_ret));
 		return _ret;
 	}
 	static TileBrush New()
@@ -3901,12 +3901,12 @@ class TileBrushT(Base) : AgileObject!Base, TileBrush
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_AlignmentX(Windows.UI.Xaml.Media.AlignmentX* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.ITileBrush).get_AlignmentX(return_value); }
-	override HRESULT set_AlignmentX(Windows.UI.Xaml.Media.AlignmentX value) { return m_inner.as!(Windows.UI.Xaml.Media.ITileBrush).set_AlignmentX(value); }
-	override HRESULT get_AlignmentY(Windows.UI.Xaml.Media.AlignmentY* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.ITileBrush).get_AlignmentY(return_value); }
-	override HRESULT set_AlignmentY(Windows.UI.Xaml.Media.AlignmentY value) { return m_inner.as!(Windows.UI.Xaml.Media.ITileBrush).set_AlignmentY(value); }
-	override HRESULT get_Stretch(Windows.UI.Xaml.Media.Stretch* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.ITileBrush).get_Stretch(return_value); }
-	override HRESULT set_Stretch(Windows.UI.Xaml.Media.Stretch value) { return m_inner.as!(Windows.UI.Xaml.Media.ITileBrush).set_Stretch(value); }
+	override HRESULT get_AlignmentX(Windows.UI.Xaml.Media.AlignmentX* return_value) { return (cast(Windows.UI.Xaml.Media.ITileBrush)m_inner.asInterface(uuid("c201cf06-cd84-48a5-9607-664d7361cd61"))).get_AlignmentX(return_value); }
+	override HRESULT set_AlignmentX(Windows.UI.Xaml.Media.AlignmentX value) { return (cast(Windows.UI.Xaml.Media.ITileBrush)m_inner.asInterface(uuid("c201cf06-cd84-48a5-9607-664d7361cd61"))).set_AlignmentX(value); }
+	override HRESULT get_AlignmentY(Windows.UI.Xaml.Media.AlignmentY* return_value) { return (cast(Windows.UI.Xaml.Media.ITileBrush)m_inner.asInterface(uuid("c201cf06-cd84-48a5-9607-664d7361cd61"))).get_AlignmentY(return_value); }
+	override HRESULT set_AlignmentY(Windows.UI.Xaml.Media.AlignmentY value) { return (cast(Windows.UI.Xaml.Media.ITileBrush)m_inner.asInterface(uuid("c201cf06-cd84-48a5-9607-664d7361cd61"))).set_AlignmentY(value); }
+	override HRESULT get_Stretch(Windows.UI.Xaml.Media.Stretch* return_value) { return (cast(Windows.UI.Xaml.Media.ITileBrush)m_inner.asInterface(uuid("c201cf06-cd84-48a5-9607-664d7361cd61"))).get_Stretch(return_value); }
+	override HRESULT set_Stretch(Windows.UI.Xaml.Media.Stretch value) { return (cast(Windows.UI.Xaml.Media.ITileBrush)m_inner.asInterface(uuid("c201cf06-cd84-48a5-9607-664d7361cd61"))).set_Stretch(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -3918,32 +3918,32 @@ extern(Windows):
 	final Windows.Foundation.TimeSpan Time()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITimelineMarker).get_Time(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ITimelineMarker)this.asInterface(uuid("a68ef02d-45ba-4e50-8cad-aaea3a227af5"))).get_Time(&_ret));
 		return _ret;
 	}
 	final void Time(Windows.Foundation.TimeSpan value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITimelineMarker).set_Time(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ITimelineMarker)this.asInterface(uuid("a68ef02d-45ba-4e50-8cad-aaea3a227af5"))).set_Time(value));
 	}
 	final HSTRING Type()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITimelineMarker).get_Type(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ITimelineMarker)this.asInterface(uuid("a68ef02d-45ba-4e50-8cad-aaea3a227af5"))).get_Type(&_ret));
 		return _ret;
 	}
 	final void Type(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITimelineMarker).set_Type(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ITimelineMarker)this.asInterface(uuid("a68ef02d-45ba-4e50-8cad-aaea3a227af5"))).set_Type(value));
 	}
 	final HSTRING Text()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITimelineMarker).get_Text(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ITimelineMarker)this.asInterface(uuid("a68ef02d-45ba-4e50-8cad-aaea3a227af5"))).get_Text(&_ret));
 		return _ret;
 	}
 	final void Text(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITimelineMarker).set_Text(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ITimelineMarker)this.asInterface(uuid("a68ef02d-45ba-4e50-8cad-aaea3a227af5"))).set_Text(value));
 	}
 
 	private static Windows.UI.Xaml.Media.ITimelineMarkerStatics _staticInstance;
@@ -3955,26 +3955,26 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty TimeProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ITimelineMarkerStatics).get_TimeProperty(&_ret));
+		Debug.OK(staticInstance.get_TimeProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty TypeProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ITimelineMarkerStatics).get_TypeProperty(&_ret));
+		Debug.OK(staticInstance.get_TypeProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty TextProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ITimelineMarkerStatics).get_TextProperty(&_ret));
+		Debug.OK(staticInstance.get_TextProperty(&_ret));
 		return _ret;
 	}
 	static TimelineMarker New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(TimelineMarker).abi_ActivateInstance(&ret));
-		return ret.as!(TimelineMarker);
+		return cast(TimelineMarker) ret;
 	}
 }
 
@@ -3984,66 +3984,66 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.TimelineMarker GetAt(uint index)
 	{
 		Windows.UI.Xaml.Media.TimelineMarker _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker)).get_GetAt(index, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker))this).get_GetAt(index, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker))this).get_Size(&_ret));
 		return _ret;
 	}
 	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Media.TimelineMarker)* out_view)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker)).abi_GetView(out_view));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker))this).abi_GetView(out_view));
 	}
 	final uint IndexOf(Windows.UI.Xaml.Media.TimelineMarker value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void SetAt(uint index, Windows.UI.Xaml.Media.TimelineMarker item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker)).abi_SetAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker))this).abi_SetAt(index, item));
 	}
 	final void InsertAt(uint index, Windows.UI.Xaml.Media.TimelineMarker item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker)).abi_InsertAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker))this).abi_InsertAt(index, item));
 	}
 	final void RemoveAt(uint index)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker)).abi_RemoveAt(index));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker))this).abi_RemoveAt(index));
 	}
 	final void Append(Windows.UI.Xaml.Media.TimelineMarker item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker)).abi_Append(item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker))this).abi_Append(item));
 	}
 	final void RemoveAtEnd()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker)).abi_RemoveAtEnd());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker))this).abi_RemoveAtEnd());
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker))this).abi_Clear());
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.Media.TimelineMarker* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void ReplaceAll(uint count, Windows.UI.Xaml.Media.TimelineMarker* out_value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker)).abi_ReplaceAll(count, out_value));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.TimelineMarker))this).abi_ReplaceAll(count, out_value));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Media.TimelineMarker)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.TimelineMarker)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.TimelineMarker))this).abi_First(out_first));
 	}
 	static TimelineMarkerCollection New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(TimelineMarkerCollection).abi_ActivateInstance(&ret));
-		return ret.as!(TimelineMarkerCollection);
+		return cast(TimelineMarkerCollection) ret;
 	}
 }
 
@@ -4053,18 +4053,18 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.TimelineMarker Marker()
 	{
 		Windows.UI.Xaml.Media.TimelineMarker _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITimelineMarkerRoutedEventArgs).get_Marker(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ITimelineMarkerRoutedEventArgs)this.asInterface(uuid("7c3b3ef3-2c88-4d9c-99b6-46cdbd48d4c1"))).get_Marker(&_ret));
 		return _ret;
 	}
 	final void Marker(Windows.UI.Xaml.Media.TimelineMarker value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITimelineMarkerRoutedEventArgs).set_Marker(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ITimelineMarkerRoutedEventArgs)this.asInterface(uuid("7c3b3ef3-2c88-4d9c-99b6-46cdbd48d4c1"))).set_Marker(value));
 	}
 	static TimelineMarkerRoutedEventArgs New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(TimelineMarkerRoutedEventArgs).abi_ActivateInstance(&ret));
-		return ret.as!(TimelineMarkerRoutedEventArgs);
+		return cast(TimelineMarkerRoutedEventArgs) ret;
 	}
 }
 
@@ -4092,66 +4092,66 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.Transform GetAt(uint index)
 	{
 		Windows.UI.Xaml.Media.Transform _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform)).get_GetAt(index, &_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform))this).get_GetAt(index, &_ret));
 		return _ret;
 	}
 	final uint Size()
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform)).get_Size(&_ret));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform))this).get_Size(&_ret));
 		return _ret;
 	}
 	final void GetView(Windows.Foundation.Collections.IVectorView!(Windows.UI.Xaml.Media.Transform)* out_view)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform)).abi_GetView(out_view));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform))this).abi_GetView(out_view));
 	}
 	final uint IndexOf(Windows.UI.Xaml.Media.Transform value, bool* out_found)
 	{
 		uint _ret;
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform)).get_IndexOf(value, &_ret, out_found));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform))this).get_IndexOf(value, &_ret, out_found));
 		return _ret;
 	}
 	final void SetAt(uint index, Windows.UI.Xaml.Media.Transform item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform)).abi_SetAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform))this).abi_SetAt(index, item));
 	}
 	final void InsertAt(uint index, Windows.UI.Xaml.Media.Transform item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform)).abi_InsertAt(index, item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform))this).abi_InsertAt(index, item));
 	}
 	final void RemoveAt(uint index)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform)).abi_RemoveAt(index));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform))this).abi_RemoveAt(index));
 	}
 	final void Append(Windows.UI.Xaml.Media.Transform item)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform)).abi_Append(item));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform))this).abi_Append(item));
 	}
 	final void RemoveAtEnd()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform)).abi_RemoveAtEnd());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform))this).abi_RemoveAtEnd());
 	}
 	final void Clear()
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform)).abi_Clear());
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform))this).abi_Clear());
 	}
 	final void GetMany(uint startIndex, uint capacity, Windows.UI.Xaml.Media.Transform* out_value, uint* out_actual)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform)).abi_GetMany(startIndex, capacity, out_value, out_actual));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform))this).abi_GetMany(startIndex, capacity, out_value, out_actual));
 	}
 	final void ReplaceAll(uint count, Windows.UI.Xaml.Media.Transform* out_value)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform)).abi_ReplaceAll(count, out_value));
+		Debug.OK((cast(Windows.Foundation.Collections.IVector!(Windows.UI.Xaml.Media.Transform))this).abi_ReplaceAll(count, out_value));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.UI.Xaml.Media.Transform)* out_first)
 	{
-		Debug.OK(this.as!(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Transform)).abi_First(out_first));
+		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.Media.Transform))this).abi_First(out_first));
 	}
 	static TransformCollection New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(TransformCollection).abi_ActivateInstance(&ret));
-		return ret.as!(TransformCollection);
+		return cast(TransformCollection) ret;
 	}
 }
 
@@ -4161,17 +4161,17 @@ extern(Windows):
 	final Windows.UI.Xaml.Media.TransformCollection Children()
 	{
 		Windows.UI.Xaml.Media.TransformCollection _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITransformGroup).get_Children(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ITransformGroup)this.asInterface(uuid("63418ccc-8d2d-4737-b951-2afce1ddc4c4"))).get_Children(&_ret));
 		return _ret;
 	}
 	final void Children(Windows.UI.Xaml.Media.TransformCollection value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITransformGroup).set_Children(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ITransformGroup)this.asInterface(uuid("63418ccc-8d2d-4737-b951-2afce1ddc4c4"))).set_Children(value));
 	}
 	final Windows.UI.Xaml.Media.Matrix Value()
 	{
 		Windows.UI.Xaml.Media.Matrix _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITransformGroup).get_Value(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ITransformGroup)this.asInterface(uuid("63418ccc-8d2d-4737-b951-2afce1ddc4c4"))).get_Value(&_ret));
 		return _ret;
 	}
 
@@ -4184,14 +4184,14 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty ChildrenProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ITransformGroupStatics).get_ChildrenProperty(&_ret));
+		Debug.OK(staticInstance.get_ChildrenProperty(&_ret));
 		return _ret;
 	}
 	static TransformGroup New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(TransformGroup).abi_ActivateInstance(&ret));
-		return ret.as!(TransformGroup);
+		return cast(TransformGroup) ret;
 	}
 }
 
@@ -4201,22 +4201,22 @@ extern(Windows):
 	final double X()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITranslateTransform).get_X(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ITranslateTransform)this.asInterface(uuid("c975905c-3c36-4229-817b-178f64c0e113"))).get_X(&_ret));
 		return _ret;
 	}
 	final void X(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITranslateTransform).set_X(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ITranslateTransform)this.asInterface(uuid("c975905c-3c36-4229-817b-178f64c0e113"))).set_X(value));
 	}
 	final double Y()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITranslateTransform).get_Y(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ITranslateTransform)this.asInterface(uuid("c975905c-3c36-4229-817b-178f64c0e113"))).get_Y(&_ret));
 		return _ret;
 	}
 	final void Y(double value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.ITranslateTransform).set_Y(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.ITranslateTransform)this.asInterface(uuid("c975905c-3c36-4229-817b-178f64c0e113"))).set_Y(value));
 	}
 
 	private static Windows.UI.Xaml.Media.ITranslateTransformStatics _staticInstance;
@@ -4228,20 +4228,20 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty XProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ITranslateTransformStatics).get_XProperty(&_ret));
+		Debug.OK(staticInstance.get_XProperty(&_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyProperty YProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.ITranslateTransformStatics).get_YProperty(&_ret));
+		Debug.OK(staticInstance.get_YProperty(&_ret));
 		return _ret;
 	}
 	static TranslateTransform New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(TranslateTransform).abi_ActivateInstance(&ret));
-		return ret.as!(TranslateTransform);
+		return cast(TranslateTransform) ret;
 	}
 }
 
@@ -4256,48 +4256,48 @@ interface VisualTreeHelper : Windows.UI.Xaml.Media.IVisualTreeHelper
 	static Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) FindElementsInHostCoordinatesPoint(Windows.Foundation.Point intersectingPoint, Windows.UI.Xaml.UIElement subtree)
 	{
 		Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IVisualTreeHelperStatics).abi_FindElementsInHostCoordinatesPoint(intersectingPoint, subtree, &_ret));
+		Debug.OK(staticInstance.abi_FindElementsInHostCoordinatesPoint(intersectingPoint, subtree, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) FindElementsInHostCoordinatesRect(Windows.Foundation.Rect intersectingRect, Windows.UI.Xaml.UIElement subtree)
 	{
 		Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IVisualTreeHelperStatics).abi_FindElementsInHostCoordinatesRect(intersectingRect, subtree, &_ret));
+		Debug.OK(staticInstance.abi_FindElementsInHostCoordinatesRect(intersectingRect, subtree, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) FindAllElementsInHostCoordinatesPoint(Windows.Foundation.Point intersectingPoint, Windows.UI.Xaml.UIElement subtree, bool includeAllElements)
 	{
 		Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IVisualTreeHelperStatics).abi_FindAllElementsInHostCoordinatesPoint(intersectingPoint, subtree, includeAllElements, &_ret));
+		Debug.OK(staticInstance.abi_FindAllElementsInHostCoordinatesPoint(intersectingPoint, subtree, includeAllElements, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) FindAllElementsInHostCoordinatesRect(Windows.Foundation.Rect intersectingRect, Windows.UI.Xaml.UIElement subtree, bool includeAllElements)
 	{
 		Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IVisualTreeHelperStatics).abi_FindAllElementsInHostCoordinatesRect(intersectingRect, subtree, includeAllElements, &_ret));
+		Debug.OK(staticInstance.abi_FindAllElementsInHostCoordinatesRect(intersectingRect, subtree, includeAllElements, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyObject GetChild(Windows.UI.Xaml.DependencyObject reference, INT32 childIndex)
 	{
 		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IVisualTreeHelperStatics).abi_GetChild(reference, childIndex, &_ret));
+		Debug.OK(staticInstance.abi_GetChild(reference, childIndex, &_ret));
 		return _ret;
 	}
 	static INT32 GetChildrenCount(Windows.UI.Xaml.DependencyObject reference)
 	{
 		INT32 _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IVisualTreeHelperStatics).abi_GetChildrenCount(reference, &_ret));
+		Debug.OK(staticInstance.abi_GetChildrenCount(reference, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyObject GetParent(Windows.UI.Xaml.DependencyObject reference)
 	{
 		Windows.UI.Xaml.DependencyObject _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IVisualTreeHelperStatics).abi_GetParent(reference, &_ret));
+		Debug.OK(staticInstance.abi_GetParent(reference, &_ret));
 		return _ret;
 	}
 	static void DisconnectChildrenRecursive(Windows.UI.Xaml.UIElement element)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IVisualTreeHelperStatics).abi_DisconnectChildrenRecursive(element));
+		Debug.OK(staticInstance.abi_DisconnectChildrenRecursive(element));
 	}
 }
 
@@ -4307,22 +4307,22 @@ extern(Windows):
 	final Windows.UI.Color FallbackColor()
 	{
 		Windows.UI.Color _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBase).get_FallbackColor(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IXamlCompositionBrushBase)this.asInterface(uuid("03e432d9-b35c-4a79-811c-c5652004da0e"))).get_FallbackColor(&_ret));
 		return _ret;
 	}
 	final void FallbackColor(Windows.UI.Color value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBase).set_FallbackColor(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IXamlCompositionBrushBase)this.asInterface(uuid("03e432d9-b35c-4a79-811c-c5652004da0e"))).set_FallbackColor(value));
 	}
 	final Windows.UI.Composition.CompositionBrush CompositionBrush()
 	{
 		Windows.UI.Composition.CompositionBrush _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseProtected).get_CompositionBrush(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseProtected)this.asInterface(uuid("1513f3d8-0457-4e1c-ad77-11c1d9879743"))).get_CompositionBrush(&_ret));
 		return _ret;
 	}
 	final void CompositionBrush(Windows.UI.Composition.CompositionBrush value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseProtected).set_CompositionBrush(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseProtected)this.asInterface(uuid("1513f3d8-0457-4e1c-ad77-11c1d9879743"))).set_CompositionBrush(value));
 	}
 
 	private static Windows.UI.Xaml.Media.IXamlCompositionBrushBaseStatics _staticInstance;
@@ -4334,7 +4334,7 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty FallbackColorProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseStatics).get_FallbackColorProperty(&_ret));
+		Debug.OK(staticInstance.get_FallbackColorProperty(&_ret));
 		return _ret;
 	}
 	static XamlCompositionBrushBase New()
@@ -4355,16 +4355,16 @@ class XamlCompositionBrushBaseT(Base) : AgileObject!Base, XamlCompositionBrushBa
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_FallbackColor(Windows.UI.Color* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBase).get_FallbackColor(return_value); }
-	override HRESULT set_FallbackColor(Windows.UI.Color value) { return m_inner.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBase).set_FallbackColor(value); }
+	override HRESULT get_FallbackColor(Windows.UI.Color* return_value) { return (cast(Windows.UI.Xaml.Media.IXamlCompositionBrushBase)m_inner.asInterface(uuid("03e432d9-b35c-4a79-811c-c5652004da0e"))).get_FallbackColor(return_value); }
+	override HRESULT set_FallbackColor(Windows.UI.Color value) { return (cast(Windows.UI.Xaml.Media.IXamlCompositionBrushBase)m_inner.asInterface(uuid("03e432d9-b35c-4a79-811c-c5652004da0e"))).set_FallbackColor(value); }
 
 	override HRESULT abi_OnConnected() { this.OnConnected(); return S_OK; }
-	void OnConnected() { Debug.OK(m_inner.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseOverrides).abi_OnConnected()); }
+	void OnConnected() { Debug.OK((cast(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseOverrides)m_inner.asInterface(uuid("d19127f1-38b4-4ea1-8f33-849629a4c9c1"))).abi_OnConnected()); }
 	override HRESULT abi_OnDisconnected() { this.OnDisconnected(); return S_OK; }
-	void OnDisconnected() { Debug.OK(m_inner.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseOverrides).abi_OnDisconnected()); }
+	void OnDisconnected() { Debug.OK((cast(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseOverrides)m_inner.asInterface(uuid("d19127f1-38b4-4ea1-8f33-849629a4c9c1"))).abi_OnDisconnected()); }
 
-	override HRESULT get_CompositionBrush(Windows.UI.Composition.CompositionBrush* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseProtected).get_CompositionBrush(return_value); }
-	override HRESULT set_CompositionBrush(Windows.UI.Composition.CompositionBrush value) { return m_inner.as!(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseProtected).set_CompositionBrush(value); }
+	override HRESULT get_CompositionBrush(Windows.UI.Composition.CompositionBrush* return_value) { return (cast(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseProtected)m_inner.asInterface(uuid("1513f3d8-0457-4e1c-ad77-11c1d9879743"))).get_CompositionBrush(return_value); }
+	override HRESULT set_CompositionBrush(Windows.UI.Composition.CompositionBrush value) { return (cast(Windows.UI.Xaml.Media.IXamlCompositionBrushBaseProtected)m_inner.asInterface(uuid("1513f3d8-0457-4e1c-ad77-11c1d9879743"))).set_CompositionBrush(value); }
 
 	this() {}
 	IInspectable m_inner;
@@ -4376,12 +4376,12 @@ extern(Windows):
 	final Windows.UI.Composition.CompositionLight CompositionLight()
 	{
 		Windows.UI.Composition.CompositionLight _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlLightProtected).get_CompositionLight(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IXamlLightProtected)this.asInterface(uuid("5ecf220b-1252-43d0-9729-6ea692046838"))).get_CompositionLight(&_ret));
 		return _ret;
 	}
 	final void CompositionLight(Windows.UI.Composition.CompositionLight value)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Media.IXamlLightProtected).set_CompositionLight(value));
+		Debug.OK((cast(Windows.UI.Xaml.Media.IXamlLightProtected)this.asInterface(uuid("5ecf220b-1252-43d0-9729-6ea692046838"))).set_CompositionLight(value));
 	}
 
 	private static Windows.UI.Xaml.Media.IXamlLightStatics _staticInstance;
@@ -4392,19 +4392,19 @@ extern(Windows):
 	}
 	static void AddTargetElement(HSTRING lightId, Windows.UI.Xaml.UIElement element)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IXamlLightStatics).abi_AddTargetElement(lightId, element));
+		Debug.OK(staticInstance.abi_AddTargetElement(lightId, element));
 	}
 	static void RemoveTargetElement(HSTRING lightId, Windows.UI.Xaml.UIElement element)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IXamlLightStatics).abi_RemoveTargetElement(lightId, element));
+		Debug.OK(staticInstance.abi_RemoveTargetElement(lightId, element));
 	}
 	static void AddTargetBrush(HSTRING lightId, Windows.UI.Xaml.Media.Brush brush)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IXamlLightStatics).abi_AddTargetBrush(lightId, brush));
+		Debug.OK(staticInstance.abi_AddTargetBrush(lightId, brush));
 	}
 	static void RemoveTargetBrush(HSTRING lightId, Windows.UI.Xaml.Media.Brush brush)
 	{
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Media.IXamlLightStatics).abi_RemoveTargetBrush(lightId, brush));
+		Debug.OK(staticInstance.abi_RemoveTargetBrush(lightId, brush));
 	}
 	static XamlLight New()
 	{
@@ -4426,14 +4426,14 @@ class XamlLightT(Base) : AgileObject!Base, XamlLight
 	}
 
 	override HRESULT abi_GetId(HSTRING* return_returnValue) { this.GetId(return_returnValue); return S_OK; }
-	void GetId(HSTRING* return_returnValue) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Media.IXamlLightOverrides).abi_GetId(return_returnValue)); }
+	void GetId(HSTRING* return_returnValue) { Debug.OK((cast(Windows.UI.Xaml.Media.IXamlLightOverrides)m_inner.asInterface(uuid("7c6296c7-0173-48e1-b73d-7fa216a9ac28"))).abi_GetId(return_returnValue)); }
 	override HRESULT abi_OnConnected(Windows.UI.Xaml.UIElement newElement) { this.OnConnected(newElement); return S_OK; }
-	void OnConnected(Windows.UI.Xaml.UIElement newElement) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Media.IXamlLightOverrides).abi_OnConnected(newElement)); }
+	void OnConnected(Windows.UI.Xaml.UIElement newElement) { Debug.OK((cast(Windows.UI.Xaml.Media.IXamlLightOverrides)m_inner.asInterface(uuid("7c6296c7-0173-48e1-b73d-7fa216a9ac28"))).abi_OnConnected(newElement)); }
 	override HRESULT abi_OnDisconnected(Windows.UI.Xaml.UIElement oldElement) { this.OnDisconnected(oldElement); return S_OK; }
-	void OnDisconnected(Windows.UI.Xaml.UIElement oldElement) { Debug.OK(m_inner.as!(Windows.UI.Xaml.Media.IXamlLightOverrides).abi_OnDisconnected(oldElement)); }
+	void OnDisconnected(Windows.UI.Xaml.UIElement oldElement) { Debug.OK((cast(Windows.UI.Xaml.Media.IXamlLightOverrides)m_inner.asInterface(uuid("7c6296c7-0173-48e1-b73d-7fa216a9ac28"))).abi_OnDisconnected(oldElement)); }
 
-	override HRESULT get_CompositionLight(Windows.UI.Composition.CompositionLight* return_value) { return m_inner.as!(Windows.UI.Xaml.Media.IXamlLightProtected).get_CompositionLight(return_value); }
-	override HRESULT set_CompositionLight(Windows.UI.Composition.CompositionLight value) { return m_inner.as!(Windows.UI.Xaml.Media.IXamlLightProtected).set_CompositionLight(value); }
+	override HRESULT get_CompositionLight(Windows.UI.Composition.CompositionLight* return_value) { return (cast(Windows.UI.Xaml.Media.IXamlLightProtected)m_inner.asInterface(uuid("5ecf220b-1252-43d0-9729-6ea692046838"))).get_CompositionLight(return_value); }
+	override HRESULT set_CompositionLight(Windows.UI.Composition.CompositionLight value) { return (cast(Windows.UI.Xaml.Media.IXamlLightProtected)m_inner.asInterface(uuid("5ecf220b-1252-43d0-9729-6ea692046838"))).set_CompositionLight(value); }
 
 	this() {}
 	IInspectable m_inner;

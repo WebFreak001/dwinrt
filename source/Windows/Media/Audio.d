@@ -567,87 +567,87 @@ extern(Windows):
 	final Windows.Devices.Enumeration.DeviceInformation Device()
 	{
 		Windows.Devices.Enumeration.DeviceInformation _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioDeviceInputNode).get_Device(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioDeviceInputNode)this.asInterface(uuid("b01b6be1-6f4e-49e2-ac01-559d62beb3a9"))).get_Device(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection) OutgoingConnections()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).get_OutgoingConnections(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).get_OutgoingConnections(&_ret));
 		return _ret;
 	}
 	final void AddOutgoingConnection(Windows.Media.Audio.IAudioNode destination)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_AddOutgoingConnection(destination));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_AddOutgoingConnection(destination));
 	}
 	final void AddOutgoingConnectionWithGain(Windows.Media.Audio.IAudioNode destination, double gain)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_AddOutgoingConnectionWithGain(destination, gain));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_AddOutgoingConnectionWithGain(destination, gain));
 	}
 	final void RemoveOutgoingConnection(Windows.Media.Audio.IAudioNode destination)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_RemoveOutgoingConnection(destination));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_RemoveOutgoingConnection(destination));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) EffectDefinitions()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EffectDefinitions(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_EffectDefinitions(&_ret));
 		return _ret;
 	}
 	final void OutgoingGain(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_OutgoingGain(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).set_OutgoingGain(value));
 	}
 	final double OutgoingGain()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_OutgoingGain(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_OutgoingGain(&_ret));
 		return _ret;
 	}
 	final Windows.Media.MediaProperties.AudioEncodingProperties EncodingProperties()
 	{
 		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EncodingProperties(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_EncodingProperties(&_ret));
 		return _ret;
 	}
 	final bool ConsumeInput()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_ConsumeInput(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_ConsumeInput(&_ret));
 		return _ret;
 	}
 	final void ConsumeInput(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_ConsumeInput(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).set_ConsumeInput(value));
 	}
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Start());
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_Start());
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Stop());
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_Stop());
 	}
 	final void Reset()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Reset());
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_Reset());
 	}
 	final void DisableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_DisableEffectsByDefinition(definition));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_DisableEffectsByDefinition(definition));
 	}
 	final void EnableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_EnableEffectsByDefinition(definition));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_EnableEffectsByDefinition(definition));
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	final Windows.Media.Audio.AudioNodeEmitter Emitter()
 	{
 		Windows.Media.Audio.AudioNodeEmitter _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode2).get_Emitter(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode2)this.asInterface(uuid("905156b7-ca68-4c6d-a8bc-e3ee17fe3fd2"))).get_Emitter(&_ret));
 		return _ret;
 	}
 }
@@ -658,73 +658,73 @@ extern(Windows):
 	final Windows.Devices.Enumeration.DeviceInformation Device()
 	{
 		Windows.Devices.Enumeration.DeviceInformation _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioDeviceOutputNode).get_Device(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioDeviceOutputNode)this.asInterface(uuid("362edbff-ff1c-4434-9e0f-bd2ef522ac82"))).get_Device(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) EffectDefinitions()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EffectDefinitions(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_EffectDefinitions(&_ret));
 		return _ret;
 	}
 	final void OutgoingGain(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_OutgoingGain(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).set_OutgoingGain(value));
 	}
 	final double OutgoingGain()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_OutgoingGain(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_OutgoingGain(&_ret));
 		return _ret;
 	}
 	final Windows.Media.MediaProperties.AudioEncodingProperties EncodingProperties()
 	{
 		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EncodingProperties(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_EncodingProperties(&_ret));
 		return _ret;
 	}
 	final bool ConsumeInput()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_ConsumeInput(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_ConsumeInput(&_ret));
 		return _ret;
 	}
 	final void ConsumeInput(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_ConsumeInput(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).set_ConsumeInput(value));
 	}
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Start());
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_Start());
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Stop());
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_Stop());
 	}
 	final void Reset()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Reset());
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_Reset());
 	}
 	final void DisableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_DisableEffectsByDefinition(definition));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_DisableEffectsByDefinition(definition));
 	}
 	final void EnableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_EnableEffectsByDefinition(definition));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_EnableEffectsByDefinition(definition));
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	final void Listener(Windows.Media.Audio.AudioNodeListener value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeWithListener).set_Listener(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeWithListener)this.asInterface(uuid("0e0f907c-79ff-4544-9eeb-01257b15105a"))).set_Listener(value));
 	}
 	final Windows.Media.Audio.AudioNodeListener Listener()
 	{
 		Windows.Media.Audio.AudioNodeListener _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeWithListener).get_Listener(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeWithListener)this.asInterface(uuid("0e0f907c-79ff-4544-9eeb-01257b15105a"))).get_Listener(&_ret));
 		return _ret;
 	}
 }
@@ -734,154 +734,154 @@ interface AudioFileInputNode : Windows.Media.Audio.IAudioFileInputNode, Windows.
 extern(Windows):
 	final void PlaybackSpeedFactor(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).set_PlaybackSpeedFactor(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFileInputNode)this.asInterface(uuid("905b67c8-6f65-4cd4-8890-4694843c276d"))).set_PlaybackSpeedFactor(value));
 	}
 	final double PlaybackSpeedFactor()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).get_PlaybackSpeedFactor(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFileInputNode)this.asInterface(uuid("905b67c8-6f65-4cd4-8890-4694843c276d"))).get_PlaybackSpeedFactor(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.TimeSpan Position()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).get_Position(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFileInputNode)this.asInterface(uuid("905b67c8-6f65-4cd4-8890-4694843c276d"))).get_Position(&_ret));
 		return _ret;
 	}
 	final void Seek(Windows.Foundation.TimeSpan position)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).abi_Seek(position));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFileInputNode)this.asInterface(uuid("905b67c8-6f65-4cd4-8890-4694843c276d"))).abi_Seek(position));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) StartTime()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).get_StartTime(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFileInputNode)this.asInterface(uuid("905b67c8-6f65-4cd4-8890-4694843c276d"))).get_StartTime(&_ret));
 		return _ret;
 	}
 	final void StartTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).set_StartTime(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFileInputNode)this.asInterface(uuid("905b67c8-6f65-4cd4-8890-4694843c276d"))).set_StartTime(value));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) EndTime()
 	{
 		Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).get_EndTime(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFileInputNode)this.asInterface(uuid("905b67c8-6f65-4cd4-8890-4694843c276d"))).get_EndTime(&_ret));
 		return _ret;
 	}
 	final void EndTime(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).set_EndTime(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFileInputNode)this.asInterface(uuid("905b67c8-6f65-4cd4-8890-4694843c276d"))).set_EndTime(value));
 	}
 	final Windows.Foundation.IReference!(INT32) LoopCount()
 	{
 		Windows.Foundation.IReference!(INT32) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).get_LoopCount(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFileInputNode)this.asInterface(uuid("905b67c8-6f65-4cd4-8890-4694843c276d"))).get_LoopCount(&_ret));
 		return _ret;
 	}
 	final void LoopCount(Windows.Foundation.IReference!(INT32) value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).set_LoopCount(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFileInputNode)this.asInterface(uuid("905b67c8-6f65-4cd4-8890-4694843c276d"))).set_LoopCount(value));
 	}
 	final Windows.Foundation.TimeSpan Duration()
 	{
 		Windows.Foundation.TimeSpan _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).get_Duration(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFileInputNode)this.asInterface(uuid("905b67c8-6f65-4cd4-8890-4694843c276d"))).get_Duration(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.StorageFile SourceFile()
 	{
 		Windows.Storage.StorageFile _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).get_SourceFile(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFileInputNode)this.asInterface(uuid("905b67c8-6f65-4cd4-8890-4694843c276d"))).get_SourceFile(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnFileCompleted(void delegate(Windows.Media.Audio.AudioFileInputNode, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).add_FileCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFileInputNode, IInspectable), Windows.Media.Audio.AudioFileInputNode, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFileInputNode)this.asInterface(uuid("905b67c8-6f65-4cd4-8890-4694843c276d"))).add_FileCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFileInputNode, IInspectable), Windows.Media.Audio.AudioFileInputNode, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeFileCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileInputNode).remove_FileCompleted(token));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFileInputNode)this.asInterface(uuid("905b67c8-6f65-4cd4-8890-4694843c276d"))).remove_FileCompleted(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection) OutgoingConnections()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).get_OutgoingConnections(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).get_OutgoingConnections(&_ret));
 		return _ret;
 	}
 	final void AddOutgoingConnection(Windows.Media.Audio.IAudioNode destination)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_AddOutgoingConnection(destination));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_AddOutgoingConnection(destination));
 	}
 	final void AddOutgoingConnectionWithGain(Windows.Media.Audio.IAudioNode destination, double gain)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_AddOutgoingConnectionWithGain(destination, gain));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_AddOutgoingConnectionWithGain(destination, gain));
 	}
 	final void RemoveOutgoingConnection(Windows.Media.Audio.IAudioNode destination)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_RemoveOutgoingConnection(destination));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_RemoveOutgoingConnection(destination));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) EffectDefinitions()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EffectDefinitions(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_EffectDefinitions(&_ret));
 		return _ret;
 	}
 	final void OutgoingGain(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_OutgoingGain(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).set_OutgoingGain(value));
 	}
 	final double OutgoingGain()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_OutgoingGain(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_OutgoingGain(&_ret));
 		return _ret;
 	}
 	final Windows.Media.MediaProperties.AudioEncodingProperties EncodingProperties()
 	{
 		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EncodingProperties(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_EncodingProperties(&_ret));
 		return _ret;
 	}
 	final bool ConsumeInput()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_ConsumeInput(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_ConsumeInput(&_ret));
 		return _ret;
 	}
 	final void ConsumeInput(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_ConsumeInput(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).set_ConsumeInput(value));
 	}
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Start());
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_Start());
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Stop());
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_Stop());
 	}
 	final void Reset()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Reset());
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_Reset());
 	}
 	final void DisableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_DisableEffectsByDefinition(definition));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_DisableEffectsByDefinition(definition));
 	}
 	final void EnableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_EnableEffectsByDefinition(definition));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_EnableEffectsByDefinition(definition));
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	final Windows.Media.Audio.AudioNodeEmitter Emitter()
 	{
 		Windows.Media.Audio.AudioNodeEmitter _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode2).get_Emitter(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode2)this.asInterface(uuid("905156b7-ca68-4c6d-a8bc-e3ee17fe3fd2"))).get_Emitter(&_ret));
 		return _ret;
 	}
 }
@@ -892,76 +892,76 @@ extern(Windows):
 	final Windows.Storage.IStorageFile File()
 	{
 		Windows.Storage.IStorageFile _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileOutputNode).get_File(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFileOutputNode)this.asInterface(uuid("50e01980-5166-4093-80f8-ada00089e9cf"))).get_File(&_ret));
 		return _ret;
 	}
 	final Windows.Media.MediaProperties.MediaEncodingProfile FileEncodingProfile()
 	{
 		Windows.Media.MediaProperties.MediaEncodingProfile _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileOutputNode).get_FileEncodingProfile(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFileOutputNode)this.asInterface(uuid("50e01980-5166-4093-80f8-ada00089e9cf"))).get_FileEncodingProfile(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Transcoding.TranscodeFailureReason) FinalizeAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Transcoding.TranscodeFailureReason) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFileOutputNode).abi_FinalizeAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFileOutputNode)this.asInterface(uuid("50e01980-5166-4093-80f8-ada00089e9cf"))).abi_FinalizeAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) EffectDefinitions()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EffectDefinitions(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_EffectDefinitions(&_ret));
 		return _ret;
 	}
 	final void OutgoingGain(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_OutgoingGain(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).set_OutgoingGain(value));
 	}
 	final double OutgoingGain()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_OutgoingGain(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_OutgoingGain(&_ret));
 		return _ret;
 	}
 	final Windows.Media.MediaProperties.AudioEncodingProperties EncodingProperties()
 	{
 		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EncodingProperties(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_EncodingProperties(&_ret));
 		return _ret;
 	}
 	final bool ConsumeInput()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_ConsumeInput(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_ConsumeInput(&_ret));
 		return _ret;
 	}
 	final void ConsumeInput(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_ConsumeInput(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).set_ConsumeInput(value));
 	}
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Start());
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_Start());
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Stop());
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_Stop());
 	}
 	final void Reset()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Reset());
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_Reset());
 	}
 	final void DisableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_DisableEffectsByDefinition(definition));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_DisableEffectsByDefinition(definition));
 	}
 	final void EnableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_EnableEffectsByDefinition(definition));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_EnableEffectsByDefinition(definition));
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 }
 
@@ -971,7 +971,7 @@ extern(Windows):
 	final Windows.Media.AudioFrame Frame()
 	{
 		Windows.Media.AudioFrame _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameCompletedEventArgs).get_Frame(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFrameCompletedEventArgs)this.asInterface(uuid("dc7c829e-0208-4504-a5a8-f0f268920a65"))).get_Frame(&_ret));
 		return _ret;
 	}
 }
@@ -981,126 +981,126 @@ interface AudioFrameInputNode : Windows.Media.Audio.IAudioFrameInputNode, Window
 extern(Windows):
 	final void PlaybackSpeedFactor(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameInputNode).set_PlaybackSpeedFactor(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFrameInputNode)this.asInterface(uuid("01b266c7-fd96-4ff5-a3c5-d27a9bf44237"))).set_PlaybackSpeedFactor(value));
 	}
 	final double PlaybackSpeedFactor()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameInputNode).get_PlaybackSpeedFactor(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFrameInputNode)this.asInterface(uuid("01b266c7-fd96-4ff5-a3c5-d27a9bf44237"))).get_PlaybackSpeedFactor(&_ret));
 		return _ret;
 	}
 	final void AddFrame(Windows.Media.AudioFrame frame)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameInputNode).abi_AddFrame(frame));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFrameInputNode)this.asInterface(uuid("01b266c7-fd96-4ff5-a3c5-d27a9bf44237"))).abi_AddFrame(frame));
 	}
 	final void DiscardQueuedFrames()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameInputNode).abi_DiscardQueuedFrames());
+		Debug.OK((cast(Windows.Media.Audio.IAudioFrameInputNode)this.asInterface(uuid("01b266c7-fd96-4ff5-a3c5-d27a9bf44237"))).abi_DiscardQueuedFrames());
 	}
 	final ulong QueuedSampleCount()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameInputNode).get_QueuedSampleCount(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFrameInputNode)this.asInterface(uuid("01b266c7-fd96-4ff5-a3c5-d27a9bf44237"))).get_QueuedSampleCount(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnAudioFrameCompleted(void delegate(Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.AudioFrameCompletedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameInputNode).add_AudioFrameCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.AudioFrameCompletedEventArgs), Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.AudioFrameCompletedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFrameInputNode)this.asInterface(uuid("01b266c7-fd96-4ff5-a3c5-d27a9bf44237"))).add_AudioFrameCompleted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.AudioFrameCompletedEventArgs), Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.AudioFrameCompletedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAudioFrameCompleted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameInputNode).remove_AudioFrameCompleted(token));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFrameInputNode)this.asInterface(uuid("01b266c7-fd96-4ff5-a3c5-d27a9bf44237"))).remove_AudioFrameCompleted(token));
 	}
 	final EventRegistrationToken OnQuantumStarted(void delegate(Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameInputNode).add_QuantumStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs), Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFrameInputNode)this.asInterface(uuid("01b266c7-fd96-4ff5-a3c5-d27a9bf44237"))).add_QuantumStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs), Windows.Media.Audio.AudioFrameInputNode, Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeQuantumStarted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameInputNode).remove_QuantumStarted(token));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFrameInputNode)this.asInterface(uuid("01b266c7-fd96-4ff5-a3c5-d27a9bf44237"))).remove_QuantumStarted(token));
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection) OutgoingConnections()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).get_OutgoingConnections(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).get_OutgoingConnections(&_ret));
 		return _ret;
 	}
 	final void AddOutgoingConnection(Windows.Media.Audio.IAudioNode destination)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_AddOutgoingConnection(destination));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_AddOutgoingConnection(destination));
 	}
 	final void AddOutgoingConnectionWithGain(Windows.Media.Audio.IAudioNode destination, double gain)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_AddOutgoingConnectionWithGain(destination, gain));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_AddOutgoingConnectionWithGain(destination, gain));
 	}
 	final void RemoveOutgoingConnection(Windows.Media.Audio.IAudioNode destination)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_RemoveOutgoingConnection(destination));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_RemoveOutgoingConnection(destination));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) EffectDefinitions()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EffectDefinitions(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_EffectDefinitions(&_ret));
 		return _ret;
 	}
 	final void OutgoingGain(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_OutgoingGain(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).set_OutgoingGain(value));
 	}
 	final double OutgoingGain()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_OutgoingGain(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_OutgoingGain(&_ret));
 		return _ret;
 	}
 	final Windows.Media.MediaProperties.AudioEncodingProperties EncodingProperties()
 	{
 		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EncodingProperties(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_EncodingProperties(&_ret));
 		return _ret;
 	}
 	final bool ConsumeInput()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_ConsumeInput(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_ConsumeInput(&_ret));
 		return _ret;
 	}
 	final void ConsumeInput(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_ConsumeInput(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).set_ConsumeInput(value));
 	}
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Start());
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_Start());
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Stop());
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_Stop());
 	}
 	final void Reset()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Reset());
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_Reset());
 	}
 	final void DisableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_DisableEffectsByDefinition(definition));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_DisableEffectsByDefinition(definition));
 	}
 	final void EnableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_EnableEffectsByDefinition(definition));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_EnableEffectsByDefinition(definition));
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	final Windows.Media.Audio.AudioNodeEmitter Emitter()
 	{
 		Windows.Media.Audio.AudioNodeEmitter _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode2).get_Emitter(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode2)this.asInterface(uuid("905156b7-ca68-4c6d-a8bc-e3ee17fe3fd2"))).get_Emitter(&_ret));
 		return _ret;
 	}
 }
@@ -1111,64 +1111,64 @@ extern(Windows):
 	final Windows.Media.AudioFrame GetFrame()
 	{
 		Windows.Media.AudioFrame _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioFrameOutputNode).abi_GetFrame(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioFrameOutputNode)this.asInterface(uuid("b847371b-3299-45f5-88b3-c9d12a3f1cc8"))).abi_GetFrame(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) EffectDefinitions()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EffectDefinitions(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_EffectDefinitions(&_ret));
 		return _ret;
 	}
 	final void OutgoingGain(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_OutgoingGain(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).set_OutgoingGain(value));
 	}
 	final double OutgoingGain()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_OutgoingGain(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_OutgoingGain(&_ret));
 		return _ret;
 	}
 	final Windows.Media.MediaProperties.AudioEncodingProperties EncodingProperties()
 	{
 		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EncodingProperties(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_EncodingProperties(&_ret));
 		return _ret;
 	}
 	final bool ConsumeInput()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_ConsumeInput(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_ConsumeInput(&_ret));
 		return _ret;
 	}
 	final void ConsumeInput(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_ConsumeInput(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).set_ConsumeInput(value));
 	}
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Start());
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_Start());
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Stop());
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_Stop());
 	}
 	final void Reset()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Reset());
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_Reset());
 	}
 	final void DisableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_DisableEffectsByDefinition(definition));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_DisableEffectsByDefinition(definition));
 	}
 	final void EnableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_EnableEffectsByDefinition(definition));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_EnableEffectsByDefinition(definition));
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 }
 
@@ -1178,191 +1178,191 @@ extern(Windows):
 	final Windows.Media.Audio.AudioFrameInputNode CreateFrameInputNode()
 	{
 		Windows.Media.Audio.AudioFrameInputNode _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateFrameInputNode(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateFrameInputNode(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Audio.AudioFrameInputNode CreateFrameInputNodeWithFormat(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties)
 	{
 		Windows.Media.Audio.AudioFrameInputNode _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateFrameInputNodeWithFormat(encodingProperties, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateFrameInputNodeWithFormat(encodingProperties, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) CreateDeviceInputNodeAsync(Windows.Media.Capture.MediaCategory category)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateDeviceInputNodeAsync(category, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateDeviceInputNodeAsync(category, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) CreateDeviceInputNodeWithFormatAsync(Windows.Media.Capture.MediaCategory category, Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateDeviceInputNodeWithFormatAsync(category, encodingProperties, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateDeviceInputNodeWithFormatAsync(category, encodingProperties, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) CreateDeviceInputNodeWithFormatOnDeviceAsync(Windows.Media.Capture.MediaCategory category, Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Devices.Enumeration.DeviceInformation device)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateDeviceInputNodeWithFormatOnDeviceAsync(category, encodingProperties, device, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateDeviceInputNodeWithFormatOnDeviceAsync(category, encodingProperties, device, &_ret));
 		return _ret;
 	}
 	final Windows.Media.Audio.AudioFrameOutputNode CreateFrameOutputNode()
 	{
 		Windows.Media.Audio.AudioFrameOutputNode _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateFrameOutputNode(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateFrameOutputNode(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Audio.AudioFrameOutputNode CreateFrameOutputNodeWithFormat(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties)
 	{
 		Windows.Media.Audio.AudioFrameOutputNode _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateFrameOutputNodeWithFormat(encodingProperties, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateFrameOutputNodeWithFormat(encodingProperties, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceOutputNodeResult) CreateDeviceOutputNodeAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceOutputNodeResult) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateDeviceOutputNodeAsync(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateDeviceOutputNodeAsync(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileInputNodeResult) CreateFileInputNodeAsync(Windows.Storage.IStorageFile file)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileInputNodeResult) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateFileInputNodeAsync(file, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateFileInputNodeAsync(file, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileOutputNodeResult) CreateFileOutputNodeAsync(Windows.Storage.IStorageFile file)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileOutputNodeResult) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateFileOutputNodeAsync(file, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateFileOutputNodeAsync(file, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileOutputNodeResult) CreateFileOutputNodeWithFileProfileAsync(Windows.Storage.IStorageFile file, Windows.Media.MediaProperties.MediaEncodingProfile fileEncodingProfile)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileOutputNodeResult) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateFileOutputNodeWithFileProfileAsync(file, fileEncodingProfile, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateFileOutputNodeWithFileProfileAsync(file, fileEncodingProfile, &_ret));
 		return _ret;
 	}
 	final Windows.Media.Audio.AudioSubmixNode CreateSubmixNode()
 	{
 		Windows.Media.Audio.AudioSubmixNode _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateSubmixNode(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateSubmixNode(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Audio.AudioSubmixNode CreateSubmixNodeWithFormat(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties)
 	{
 		Windows.Media.Audio.AudioSubmixNode _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_CreateSubmixNodeWithFormat(encodingProperties, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateSubmixNodeWithFormat(encodingProperties, &_ret));
 		return _ret;
 	}
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_Start());
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_Start());
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_Stop());
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_Stop());
 	}
 	final void ResetAllNodes()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).abi_ResetAllNodes());
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_ResetAllNodes());
 	}
 	final EventRegistrationToken OnQuantumStarted(void delegate(Windows.Media.Audio.AudioGraph, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).add_QuantumStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioGraph, IInspectable), Windows.Media.Audio.AudioGraph, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).add_QuantumStarted(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioGraph, IInspectable), Windows.Media.Audio.AudioGraph, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeQuantumStarted(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).remove_QuantumStarted(token));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).remove_QuantumStarted(token));
 	}
 	final EventRegistrationToken OnQuantumProcessed(void delegate(Windows.Media.Audio.AudioGraph, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).add_QuantumProcessed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioGraph, IInspectable), Windows.Media.Audio.AudioGraph, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).add_QuantumProcessed(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioGraph, IInspectable), Windows.Media.Audio.AudioGraph, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeQuantumProcessed(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).remove_QuantumProcessed(token));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).remove_QuantumProcessed(token));
 	}
 	final EventRegistrationToken OnUnrecoverableErrorOccurred(void delegate(Windows.Media.Audio.AudioGraph, Windows.Media.Audio.AudioGraphUnrecoverableErrorOccurredEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).add_UnrecoverableErrorOccurred(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioGraph, Windows.Media.Audio.AudioGraphUnrecoverableErrorOccurredEventArgs), Windows.Media.Audio.AudioGraph, Windows.Media.Audio.AudioGraphUnrecoverableErrorOccurredEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).add_UnrecoverableErrorOccurred(event!(Windows.Foundation.TypedEventHandler!(Windows.Media.Audio.AudioGraph, Windows.Media.Audio.AudioGraphUnrecoverableErrorOccurredEventArgs), Windows.Media.Audio.AudioGraph, Windows.Media.Audio.AudioGraphUnrecoverableErrorOccurredEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeUnrecoverableErrorOccurred(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).remove_UnrecoverableErrorOccurred(token));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).remove_UnrecoverableErrorOccurred(token));
 	}
 	final ulong CompletedQuantumCount()
 	{
 		ulong _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).get_CompletedQuantumCount(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).get_CompletedQuantumCount(&_ret));
 		return _ret;
 	}
 	final Windows.Media.MediaProperties.AudioEncodingProperties EncodingProperties()
 	{
 		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).get_EncodingProperties(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).get_EncodingProperties(&_ret));
 		return _ret;
 	}
 	final INT32 LatencyInSamples()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).get_LatencyInSamples(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).get_LatencyInSamples(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Enumeration.DeviceInformation PrimaryRenderDevice()
 	{
 		Windows.Devices.Enumeration.DeviceInformation _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).get_PrimaryRenderDevice(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).get_PrimaryRenderDevice(&_ret));
 		return _ret;
 	}
 	final Windows.Media.AudioProcessing RenderDeviceAudioProcessing()
 	{
 		Windows.Media.AudioProcessing _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).get_RenderDeviceAudioProcessing(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).get_RenderDeviceAudioProcessing(&_ret));
 		return _ret;
 	}
 	final INT32 SamplesPerQuantum()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph).get_SamplesPerQuantum(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).get_SamplesPerQuantum(&_ret));
 		return _ret;
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	final Windows.Media.Audio.AudioFrameInputNode CreateFrameInputNodeWithFormatAndEmitter(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Media.Audio.AudioNodeEmitter emitter)
 	{
 		Windows.Media.Audio.AudioFrameInputNode _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph2).abi_CreateFrameInputNodeWithFormatAndEmitter(encodingProperties, emitter, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph2)this.asInterface(uuid("4e4c3bd5-4fc1-45f6-a947-3cd38f4fd839"))).abi_CreateFrameInputNodeWithFormatAndEmitter(encodingProperties, emitter, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync(Windows.Media.Capture.MediaCategory category, Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Devices.Enumeration.DeviceInformation device, Windows.Media.Audio.AudioNodeEmitter emitter)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph2).abi_CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync(category, encodingProperties, device, emitter, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph2)this.asInterface(uuid("4e4c3bd5-4fc1-45f6-a947-3cd38f4fd839"))).abi_CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync(category, encodingProperties, device, emitter, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileInputNodeResult) CreateFileInputNodeWithEmitterAsync(Windows.Storage.IStorageFile file, Windows.Media.Audio.AudioNodeEmitter emitter)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileInputNodeResult) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph2).abi_CreateFileInputNodeWithEmitterAsync(file, emitter, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph2)this.asInterface(uuid("4e4c3bd5-4fc1-45f6-a947-3cd38f4fd839"))).abi_CreateFileInputNodeWithEmitterAsync(file, emitter, &_ret));
 		return _ret;
 	}
 	final Windows.Media.Audio.AudioSubmixNode CreateSubmixNodeWithFormatAndEmitter(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Media.Audio.AudioNodeEmitter emitter)
 	{
 		Windows.Media.Audio.AudioSubmixNode _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph2).abi_CreateSubmixNodeWithFormatAndEmitter(encodingProperties, emitter, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph2)this.asInterface(uuid("4e4c3bd5-4fc1-45f6-a947-3cd38f4fd839"))).abi_CreateSubmixNodeWithFormatAndEmitter(encodingProperties, emitter, &_ret));
 		return _ret;
 	}
 	final Windows.Media.Audio.AudioGraphBatchUpdater CreateBatchUpdater()
 	{
 		Windows.Media.Audio.AudioGraphBatchUpdater _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraph2).abi_CreateBatchUpdater(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph2)this.asInterface(uuid("4e4c3bd5-4fc1-45f6-a947-3cd38f4fd839"))).abi_CreateBatchUpdater(&_ret));
 		return _ret;
 	}
 
@@ -1375,7 +1375,7 @@ extern(Windows):
 	static Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioGraphResult) CreateAsync(Windows.Media.Audio.AudioGraphSettings settings)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioGraphResult) _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Audio.IAudioGraphStatics).abi_CreateAsync(settings, &_ret));
+		Debug.OK(staticInstance.abi_CreateAsync(settings, &_ret));
 		return _ret;
 	}
 }
@@ -1385,7 +1385,7 @@ interface AudioGraphBatchUpdater : Windows.Foundation.IClosable
 extern(Windows):
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 }
 
@@ -1395,17 +1395,17 @@ extern(Windows):
 	final Windows.Media.Audio.IAudioNode Destination()
 	{
 		Windows.Media.Audio.IAudioNode _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphConnection).get_Destination(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraphConnection)this.asInterface(uuid("763070ed-d04e-4fac-b233-600b42edd469"))).get_Destination(&_ret));
 		return _ret;
 	}
 	final void Gain(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphConnection).set_Gain(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraphConnection)this.asInterface(uuid("763070ed-d04e-4fac-b233-600b42edd469"))).set_Gain(value));
 	}
 	final double Gain()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphConnection).get_Gain(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraphConnection)this.asInterface(uuid("763070ed-d04e-4fac-b233-600b42edd469"))).get_Gain(&_ret));
 		return _ret;
 	}
 }
@@ -1416,68 +1416,68 @@ extern(Windows):
 	final Windows.Media.MediaProperties.AudioEncodingProperties EncodingProperties()
 	{
 		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).get_EncodingProperties(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraphSettings)this.asInterface(uuid("1d59647f-e6fe-4628-84f8-9d8bdba25785"))).get_EncodingProperties(&_ret));
 		return _ret;
 	}
 	final void EncodingProperties(Windows.Media.MediaProperties.AudioEncodingProperties value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).set_EncodingProperties(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraphSettings)this.asInterface(uuid("1d59647f-e6fe-4628-84f8-9d8bdba25785"))).set_EncodingProperties(value));
 	}
 	final Windows.Devices.Enumeration.DeviceInformation PrimaryRenderDevice()
 	{
 		Windows.Devices.Enumeration.DeviceInformation _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).get_PrimaryRenderDevice(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraphSettings)this.asInterface(uuid("1d59647f-e6fe-4628-84f8-9d8bdba25785"))).get_PrimaryRenderDevice(&_ret));
 		return _ret;
 	}
 	final void PrimaryRenderDevice(Windows.Devices.Enumeration.DeviceInformation value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).set_PrimaryRenderDevice(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraphSettings)this.asInterface(uuid("1d59647f-e6fe-4628-84f8-9d8bdba25785"))).set_PrimaryRenderDevice(value));
 	}
 	final Windows.Media.Audio.QuantumSizeSelectionMode QuantumSizeSelectionMode()
 	{
 		Windows.Media.Audio.QuantumSizeSelectionMode _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).get_QuantumSizeSelectionMode(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraphSettings)this.asInterface(uuid("1d59647f-e6fe-4628-84f8-9d8bdba25785"))).get_QuantumSizeSelectionMode(&_ret));
 		return _ret;
 	}
 	final void QuantumSizeSelectionMode(Windows.Media.Audio.QuantumSizeSelectionMode value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).set_QuantumSizeSelectionMode(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraphSettings)this.asInterface(uuid("1d59647f-e6fe-4628-84f8-9d8bdba25785"))).set_QuantumSizeSelectionMode(value));
 	}
 	final INT32 DesiredSamplesPerQuantum()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).get_DesiredSamplesPerQuantum(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraphSettings)this.asInterface(uuid("1d59647f-e6fe-4628-84f8-9d8bdba25785"))).get_DesiredSamplesPerQuantum(&_ret));
 		return _ret;
 	}
 	final void DesiredSamplesPerQuantum(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).set_DesiredSamplesPerQuantum(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraphSettings)this.asInterface(uuid("1d59647f-e6fe-4628-84f8-9d8bdba25785"))).set_DesiredSamplesPerQuantum(value));
 	}
 	final Windows.Media.Render.AudioRenderCategory AudioRenderCategory()
 	{
 		Windows.Media.Render.AudioRenderCategory _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).get_AudioRenderCategory(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraphSettings)this.asInterface(uuid("1d59647f-e6fe-4628-84f8-9d8bdba25785"))).get_AudioRenderCategory(&_ret));
 		return _ret;
 	}
 	final void AudioRenderCategory(Windows.Media.Render.AudioRenderCategory value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).set_AudioRenderCategory(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraphSettings)this.asInterface(uuid("1d59647f-e6fe-4628-84f8-9d8bdba25785"))).set_AudioRenderCategory(value));
 	}
 	final Windows.Media.AudioProcessing DesiredRenderDeviceAudioProcessing()
 	{
 		Windows.Media.AudioProcessing _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).get_DesiredRenderDeviceAudioProcessing(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraphSettings)this.asInterface(uuid("1d59647f-e6fe-4628-84f8-9d8bdba25785"))).get_DesiredRenderDeviceAudioProcessing(&_ret));
 		return _ret;
 	}
 	final void DesiredRenderDeviceAudioProcessing(Windows.Media.AudioProcessing value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphSettings).set_DesiredRenderDeviceAudioProcessing(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraphSettings)this.asInterface(uuid("1d59647f-e6fe-4628-84f8-9d8bdba25785"))).set_DesiredRenderDeviceAudioProcessing(value));
 	}
 	static Windows.Media.Audio.AudioGraphSettings New(Windows.Media.Render.AudioRenderCategory audioRenderCategory)
 	{
 		auto factory = factory!(Windows.Media.Audio.IAudioGraphSettingsFactory);
 		Windows.Media.Audio.AudioGraphSettings _ret;
-		Debug.OK(factory.as!(Windows.Media.Audio.IAudioGraphSettingsFactory).abi_Create(audioRenderCategory, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraphSettingsFactory)factory.asInterface(uuid("a5d91cc6-c2eb-4a61-a214-1d66d75f83da"))).abi_Create(audioRenderCategory, &_ret));
 		return _ret;
 	}
 }
@@ -1488,7 +1488,7 @@ extern(Windows):
 	final Windows.Media.Audio.AudioGraphUnrecoverableError Error()
 	{
 		Windows.Media.Audio.AudioGraphUnrecoverableError _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioGraphUnrecoverableErrorOccurredEventArgs).get_Error(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraphUnrecoverableErrorOccurredEventArgs)this.asInterface(uuid("c3d9cbe0-3ff6-4fb3-b262-50d435c55423"))).get_Error(&_ret));
 		return _ret;
 	}
 }
@@ -1499,102 +1499,102 @@ extern(Windows):
 	final Windows.Foundation.Numerics.Vector3 Position()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).get_Position(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitter)this.asInterface(uuid("3676971d-880a-47b8-adf7-1323a9d965be"))).get_Position(&_ret));
 		return _ret;
 	}
 	final void Position(Windows.Foundation.Numerics.Vector3 value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).set_Position(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitter)this.asInterface(uuid("3676971d-880a-47b8-adf7-1323a9d965be"))).set_Position(value));
 	}
 	final Windows.Foundation.Numerics.Vector3 Direction()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).get_Direction(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitter)this.asInterface(uuid("3676971d-880a-47b8-adf7-1323a9d965be"))).get_Direction(&_ret));
 		return _ret;
 	}
 	final void Direction(Windows.Foundation.Numerics.Vector3 value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).set_Direction(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitter)this.asInterface(uuid("3676971d-880a-47b8-adf7-1323a9d965be"))).set_Direction(value));
 	}
 	final Windows.Media.Audio.AudioNodeEmitterShape Shape()
 	{
 		Windows.Media.Audio.AudioNodeEmitterShape _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).get_Shape(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitter)this.asInterface(uuid("3676971d-880a-47b8-adf7-1323a9d965be"))).get_Shape(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Audio.AudioNodeEmitterDecayModel DecayModel()
 	{
 		Windows.Media.Audio.AudioNodeEmitterDecayModel _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).get_DecayModel(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitter)this.asInterface(uuid("3676971d-880a-47b8-adf7-1323a9d965be"))).get_DecayModel(&_ret));
 		return _ret;
 	}
 	final double Gain()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).get_Gain(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitter)this.asInterface(uuid("3676971d-880a-47b8-adf7-1323a9d965be"))).get_Gain(&_ret));
 		return _ret;
 	}
 	final void Gain(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).set_Gain(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitter)this.asInterface(uuid("3676971d-880a-47b8-adf7-1323a9d965be"))).set_Gain(value));
 	}
 	final double DistanceScale()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).get_DistanceScale(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitter)this.asInterface(uuid("3676971d-880a-47b8-adf7-1323a9d965be"))).get_DistanceScale(&_ret));
 		return _ret;
 	}
 	final void DistanceScale(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).set_DistanceScale(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitter)this.asInterface(uuid("3676971d-880a-47b8-adf7-1323a9d965be"))).set_DistanceScale(value));
 	}
 	final double DopplerScale()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).get_DopplerScale(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitter)this.asInterface(uuid("3676971d-880a-47b8-adf7-1323a9d965be"))).get_DopplerScale(&_ret));
 		return _ret;
 	}
 	final void DopplerScale(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).set_DopplerScale(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitter)this.asInterface(uuid("3676971d-880a-47b8-adf7-1323a9d965be"))).set_DopplerScale(value));
 	}
 	final Windows.Foundation.Numerics.Vector3 DopplerVelocity()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).get_DopplerVelocity(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitter)this.asInterface(uuid("3676971d-880a-47b8-adf7-1323a9d965be"))).get_DopplerVelocity(&_ret));
 		return _ret;
 	}
 	final void DopplerVelocity(Windows.Foundation.Numerics.Vector3 value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).set_DopplerVelocity(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitter)this.asInterface(uuid("3676971d-880a-47b8-adf7-1323a9d965be"))).set_DopplerVelocity(value));
 	}
 	final bool IsDopplerDisabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter).get_IsDopplerDisabled(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitter)this.asInterface(uuid("3676971d-880a-47b8-adf7-1323a9d965be"))).get_IsDopplerDisabled(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Audio.SpatialAudioModel SpatialAudioModel()
 	{
 		Windows.Media.Audio.SpatialAudioModel _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter2).get_SpatialAudioModel(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitter2)this.asInterface(uuid("4ab6eecb-ec29-47f8-818c-b6b660a5aeb1"))).get_SpatialAudioModel(&_ret));
 		return _ret;
 	}
 	final void SpatialAudioModel(Windows.Media.Audio.SpatialAudioModel value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitter2).set_SpatialAudioModel(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitter2)this.asInterface(uuid("4ab6eecb-ec29-47f8-818c-b6b660a5aeb1"))).set_SpatialAudioModel(value));
 	}
 	static AudioNodeEmitter New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(AudioNodeEmitter).abi_ActivateInstance(&ret));
-		return ret.as!(AudioNodeEmitter);
+		return cast(AudioNodeEmitter) ret;
 	}
 	static Windows.Media.Audio.AudioNodeEmitter New(Windows.Media.Audio.AudioNodeEmitterShape shape, Windows.Media.Audio.AudioNodeEmitterDecayModel decayModel, Windows.Media.Audio.AudioNodeEmitterSettings settings)
 	{
 		auto factory = factory!(Windows.Media.Audio.IAudioNodeEmitterFactory);
 		Windows.Media.Audio.AudioNodeEmitter _ret;
-		Debug.OK(factory.as!(Windows.Media.Audio.IAudioNodeEmitterFactory).abi_CreateAudioNodeEmitter(shape, decayModel, settings, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitterFactory)factory.asInterface(uuid("fdc8489a-6ad6-4ce4-b7f7-a99370df7ee9"))).abi_CreateAudioNodeEmitter(shape, decayModel, settings, &_ret));
 		return _ret;
 	}
 }
@@ -1605,19 +1605,19 @@ extern(Windows):
 	final double InnerAngle()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterConeProperties).get_InnerAngle(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitterConeProperties)this.asInterface(uuid("e99b2cee-02ca-4375-9326-0c6ae4bcdfb5"))).get_InnerAngle(&_ret));
 		return _ret;
 	}
 	final double OuterAngle()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterConeProperties).get_OuterAngle(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitterConeProperties)this.asInterface(uuid("e99b2cee-02ca-4375-9326-0c6ae4bcdfb5"))).get_OuterAngle(&_ret));
 		return _ret;
 	}
 	final double OuterAngleGain()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterConeProperties).get_OuterAngleGain(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitterConeProperties)this.asInterface(uuid("e99b2cee-02ca-4375-9326-0c6ae4bcdfb5"))).get_OuterAngleGain(&_ret));
 		return _ret;
 	}
 }
@@ -1628,25 +1628,25 @@ extern(Windows):
 	final Windows.Media.Audio.AudioNodeEmitterDecayKind Kind()
 	{
 		Windows.Media.Audio.AudioNodeEmitterDecayKind _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterDecayModel).get_Kind(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitterDecayModel)this.asInterface(uuid("1d1d5af7-0d53-4fa9-bd84-d5816a86f3ff"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final double MinGain()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterDecayModel).get_MinGain(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitterDecayModel)this.asInterface(uuid("1d1d5af7-0d53-4fa9-bd84-d5816a86f3ff"))).get_MinGain(&_ret));
 		return _ret;
 	}
 	final double MaxGain()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterDecayModel).get_MaxGain(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitterDecayModel)this.asInterface(uuid("1d1d5af7-0d53-4fa9-bd84-d5816a86f3ff"))).get_MaxGain(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Audio.AudioNodeEmitterNaturalDecayModelProperties NaturalProperties()
 	{
 		Windows.Media.Audio.AudioNodeEmitterNaturalDecayModelProperties _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterDecayModel).get_NaturalProperties(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitterDecayModel)this.asInterface(uuid("1d1d5af7-0d53-4fa9-bd84-d5816a86f3ff"))).get_NaturalProperties(&_ret));
 		return _ret;
 	}
 
@@ -1659,13 +1659,13 @@ extern(Windows):
 	static Windows.Media.Audio.AudioNodeEmitterDecayModel CreateNatural(double minGain, double maxGain, double unityGainDistance, double cutoffDistance)
 	{
 		Windows.Media.Audio.AudioNodeEmitterDecayModel _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Audio.IAudioNodeEmitterDecayModelStatics).abi_CreateNatural(minGain, maxGain, unityGainDistance, cutoffDistance, &_ret));
+		Debug.OK(staticInstance.abi_CreateNatural(minGain, maxGain, unityGainDistance, cutoffDistance, &_ret));
 		return _ret;
 	}
 	static Windows.Media.Audio.AudioNodeEmitterDecayModel CreateCustom(double minGain, double maxGain)
 	{
 		Windows.Media.Audio.AudioNodeEmitterDecayModel _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Audio.IAudioNodeEmitterDecayModelStatics).abi_CreateCustom(minGain, maxGain, &_ret));
+		Debug.OK(staticInstance.abi_CreateCustom(minGain, maxGain, &_ret));
 		return _ret;
 	}
 }
@@ -1676,13 +1676,13 @@ extern(Windows):
 	final double UnityGainDistance()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterNaturalDecayModelProperties).get_UnityGainDistance(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitterNaturalDecayModelProperties)this.asInterface(uuid("48934bcf-cf2c-4efc-9331-75bd22df1f0c"))).get_UnityGainDistance(&_ret));
 		return _ret;
 	}
 	final double CutoffDistance()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterNaturalDecayModelProperties).get_CutoffDistance(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitterNaturalDecayModelProperties)this.asInterface(uuid("48934bcf-cf2c-4efc-9331-75bd22df1f0c"))).get_CutoffDistance(&_ret));
 		return _ret;
 	}
 }
@@ -1693,13 +1693,13 @@ extern(Windows):
 	final Windows.Media.Audio.AudioNodeEmitterShapeKind Kind()
 	{
 		Windows.Media.Audio.AudioNodeEmitterShapeKind _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterShape).get_Kind(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitterShape)this.asInterface(uuid("ea0311c5-e73d-44bc-859c-45553bbc4828"))).get_Kind(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Audio.AudioNodeEmitterConeProperties ConeProperties()
 	{
 		Windows.Media.Audio.AudioNodeEmitterConeProperties _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeEmitterShape).get_ConeProperties(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeEmitterShape)this.asInterface(uuid("ea0311c5-e73d-44bc-859c-45553bbc4828"))).get_ConeProperties(&_ret));
 		return _ret;
 	}
 
@@ -1712,13 +1712,13 @@ extern(Windows):
 	static Windows.Media.Audio.AudioNodeEmitterShape CreateCone(double innerAngle, double outerAngle, double outerAngleGain)
 	{
 		Windows.Media.Audio.AudioNodeEmitterShape _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Audio.IAudioNodeEmitterShapeStatics).abi_CreateCone(innerAngle, outerAngle, outerAngleGain, &_ret));
+		Debug.OK(staticInstance.abi_CreateCone(innerAngle, outerAngle, outerAngleGain, &_ret));
 		return _ret;
 	}
 	static Windows.Media.Audio.AudioNodeEmitterShape CreateOmnidirectional()
 	{
 		Windows.Media.Audio.AudioNodeEmitterShape _ret;
-		Debug.OK(staticInstance.as!(Windows.Media.Audio.IAudioNodeEmitterShapeStatics).abi_CreateOmnidirectional(&_ret));
+		Debug.OK(staticInstance.abi_CreateOmnidirectional(&_ret));
 		return _ret;
 	}
 }
@@ -1729,48 +1729,48 @@ extern(Windows):
 	final Windows.Foundation.Numerics.Vector3 Position()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeListener).get_Position(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeListener)this.asInterface(uuid("d9722e16-0c0a-41da-b755-6c77835fb1eb"))).get_Position(&_ret));
 		return _ret;
 	}
 	final void Position(Windows.Foundation.Numerics.Vector3 value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeListener).set_Position(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeListener)this.asInterface(uuid("d9722e16-0c0a-41da-b755-6c77835fb1eb"))).set_Position(value));
 	}
 	final Windows.Foundation.Numerics.Quaternion Orientation()
 	{
 		Windows.Foundation.Numerics.Quaternion _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeListener).get_Orientation(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeListener)this.asInterface(uuid("d9722e16-0c0a-41da-b755-6c77835fb1eb"))).get_Orientation(&_ret));
 		return _ret;
 	}
 	final void Orientation(Windows.Foundation.Numerics.Quaternion value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeListener).set_Orientation(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeListener)this.asInterface(uuid("d9722e16-0c0a-41da-b755-6c77835fb1eb"))).set_Orientation(value));
 	}
 	final double SpeedOfSound()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeListener).get_SpeedOfSound(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeListener)this.asInterface(uuid("d9722e16-0c0a-41da-b755-6c77835fb1eb"))).get_SpeedOfSound(&_ret));
 		return _ret;
 	}
 	final void SpeedOfSound(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeListener).set_SpeedOfSound(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeListener)this.asInterface(uuid("d9722e16-0c0a-41da-b755-6c77835fb1eb"))).set_SpeedOfSound(value));
 	}
 	final Windows.Foundation.Numerics.Vector3 DopplerVelocity()
 	{
 		Windows.Foundation.Numerics.Vector3 _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeListener).get_DopplerVelocity(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeListener)this.asInterface(uuid("d9722e16-0c0a-41da-b755-6c77835fb1eb"))).get_DopplerVelocity(&_ret));
 		return _ret;
 	}
 	final void DopplerVelocity(Windows.Foundation.Numerics.Vector3 value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNodeListener).set_DopplerVelocity(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNodeListener)this.asInterface(uuid("d9722e16-0c0a-41da-b755-6c77835fb1eb"))).set_DopplerVelocity(value));
 	}
 	static AudioNodeListener New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(AudioNodeListener).abi_ActivateInstance(&ret));
-		return ret.as!(AudioNodeListener);
+		return cast(AudioNodeListener) ret;
 	}
 }
 
@@ -1780,81 +1780,81 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection) OutgoingConnections()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).get_OutgoingConnections(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).get_OutgoingConnections(&_ret));
 		return _ret;
 	}
 	final void AddOutgoingConnection(Windows.Media.Audio.IAudioNode destination)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_AddOutgoingConnection(destination));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_AddOutgoingConnection(destination));
 	}
 	final void AddOutgoingConnectionWithGain(Windows.Media.Audio.IAudioNode destination, double gain)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_AddOutgoingConnectionWithGain(destination, gain));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_AddOutgoingConnectionWithGain(destination, gain));
 	}
 	final void RemoveOutgoingConnection(Windows.Media.Audio.IAudioNode destination)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode).abi_RemoveOutgoingConnection(destination));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_RemoveOutgoingConnection(destination));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) EffectDefinitions()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Media.Effects.IAudioEffectDefinition) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EffectDefinitions(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_EffectDefinitions(&_ret));
 		return _ret;
 	}
 	final void OutgoingGain(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_OutgoingGain(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).set_OutgoingGain(value));
 	}
 	final double OutgoingGain()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_OutgoingGain(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_OutgoingGain(&_ret));
 		return _ret;
 	}
 	final Windows.Media.MediaProperties.AudioEncodingProperties EncodingProperties()
 	{
 		Windows.Media.MediaProperties.AudioEncodingProperties _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_EncodingProperties(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_EncodingProperties(&_ret));
 		return _ret;
 	}
 	final bool ConsumeInput()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).get_ConsumeInput(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).get_ConsumeInput(&_ret));
 		return _ret;
 	}
 	final void ConsumeInput(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).set_ConsumeInput(value));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).set_ConsumeInput(value));
 	}
 	final void Start()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Start());
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_Start());
 	}
 	final void Stop()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Stop());
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_Stop());
 	}
 	final void Reset()
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_Reset());
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_Reset());
 	}
 	final void DisableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_DisableEffectsByDefinition(definition));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_DisableEffectsByDefinition(definition));
 	}
 	final void EnableEffectsByDefinition(Windows.Media.Effects.IAudioEffectDefinition definition)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioNode).abi_EnableEffectsByDefinition(definition));
+		Debug.OK((cast(Windows.Media.Audio.IAudioNode)this.asInterface(uuid("15389d7f-dbd8-4819-bf03-668e9357cd6d"))).abi_EnableEffectsByDefinition(definition));
 	}
 	final void Close()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IClosable).abi_Close());
+		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
 	final Windows.Media.Audio.AudioNodeEmitter Emitter()
 	{
 		Windows.Media.Audio.AudioNodeEmitter _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IAudioInputNode2).get_Emitter(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode2)this.asInterface(uuid("905156b7-ca68-4c6d-a8bc-e3ee17fe3fd2"))).get_Emitter(&_ret));
 		return _ret;
 	}
 }
@@ -1865,13 +1865,13 @@ extern(Windows):
 	final Windows.Media.Audio.AudioDeviceNodeCreationStatus Status()
 	{
 		Windows.Media.Audio.AudioDeviceNodeCreationStatus _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.ICreateAudioDeviceInputNodeResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.ICreateAudioDeviceInputNodeResult)this.asInterface(uuid("16eec7a8-1ca7-40ef-91a4-d346e0aa1bba"))).get_Status(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Audio.AudioDeviceInputNode DeviceInputNode()
 	{
 		Windows.Media.Audio.AudioDeviceInputNode _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.ICreateAudioDeviceInputNodeResult).get_DeviceInputNode(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.ICreateAudioDeviceInputNodeResult)this.asInterface(uuid("16eec7a8-1ca7-40ef-91a4-d346e0aa1bba"))).get_DeviceInputNode(&_ret));
 		return _ret;
 	}
 }
@@ -1882,13 +1882,13 @@ extern(Windows):
 	final Windows.Media.Audio.AudioDeviceNodeCreationStatus Status()
 	{
 		Windows.Media.Audio.AudioDeviceNodeCreationStatus _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.ICreateAudioDeviceOutputNodeResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.ICreateAudioDeviceOutputNodeResult)this.asInterface(uuid("f7776d27-1d9a-47f7-9cd4-2859cc1b7bff"))).get_Status(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Audio.AudioDeviceOutputNode DeviceOutputNode()
 	{
 		Windows.Media.Audio.AudioDeviceOutputNode _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.ICreateAudioDeviceOutputNodeResult).get_DeviceOutputNode(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.ICreateAudioDeviceOutputNodeResult)this.asInterface(uuid("f7776d27-1d9a-47f7-9cd4-2859cc1b7bff"))).get_DeviceOutputNode(&_ret));
 		return _ret;
 	}
 }
@@ -1899,13 +1899,13 @@ extern(Windows):
 	final Windows.Media.Audio.AudioFileNodeCreationStatus Status()
 	{
 		Windows.Media.Audio.AudioFileNodeCreationStatus _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.ICreateAudioFileInputNodeResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.ICreateAudioFileInputNodeResult)this.asInterface(uuid("ce83d61c-e297-4c50-9ce7-1c7a69d6bd09"))).get_Status(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Audio.AudioFileInputNode FileInputNode()
 	{
 		Windows.Media.Audio.AudioFileInputNode _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.ICreateAudioFileInputNodeResult).get_FileInputNode(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.ICreateAudioFileInputNodeResult)this.asInterface(uuid("ce83d61c-e297-4c50-9ce7-1c7a69d6bd09"))).get_FileInputNode(&_ret));
 		return _ret;
 	}
 }
@@ -1916,13 +1916,13 @@ extern(Windows):
 	final Windows.Media.Audio.AudioFileNodeCreationStatus Status()
 	{
 		Windows.Media.Audio.AudioFileNodeCreationStatus _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.ICreateAudioFileOutputNodeResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.ICreateAudioFileOutputNodeResult)this.asInterface(uuid("47d6ba7b-e909-453f-866e-5540cda734ff"))).get_Status(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Audio.AudioFileOutputNode FileOutputNode()
 	{
 		Windows.Media.Audio.AudioFileOutputNode _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.ICreateAudioFileOutputNodeResult).get_FileOutputNode(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.ICreateAudioFileOutputNodeResult)this.asInterface(uuid("47d6ba7b-e909-453f-866e-5540cda734ff"))).get_FileOutputNode(&_ret));
 		return _ret;
 	}
 }
@@ -1933,13 +1933,13 @@ extern(Windows):
 	final Windows.Media.Audio.AudioGraphCreationStatus Status()
 	{
 		Windows.Media.Audio.AudioGraphCreationStatus _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.ICreateAudioGraphResult).get_Status(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.ICreateAudioGraphResult)this.asInterface(uuid("5453ef7e-7bde-4b76-bb5d-48f79cfc8c0b"))).get_Status(&_ret));
 		return _ret;
 	}
 	final Windows.Media.Audio.AudioGraph Graph()
 	{
 		Windows.Media.Audio.AudioGraph _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.ICreateAudioGraphResult).get_Graph(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.ICreateAudioGraphResult)this.asInterface(uuid("5453ef7e-7bde-4b76-bb5d-48f79cfc8c0b"))).get_Graph(&_ret));
 		return _ret;
 	}
 }
@@ -1949,51 +1949,51 @@ interface EchoEffectDefinition : Windows.Media.Audio.IEchoEffectDefinition, Wind
 extern(Windows):
 	final void WetDryMix(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IEchoEffectDefinition).set_WetDryMix(value));
+		Debug.OK((cast(Windows.Media.Audio.IEchoEffectDefinition)this.asInterface(uuid("0e4d3faa-36b8-4c91-b9da-11f44a8a6610"))).set_WetDryMix(value));
 	}
 	final double WetDryMix()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IEchoEffectDefinition).get_WetDryMix(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IEchoEffectDefinition)this.asInterface(uuid("0e4d3faa-36b8-4c91-b9da-11f44a8a6610"))).get_WetDryMix(&_ret));
 		return _ret;
 	}
 	final void Feedback(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IEchoEffectDefinition).set_Feedback(value));
+		Debug.OK((cast(Windows.Media.Audio.IEchoEffectDefinition)this.asInterface(uuid("0e4d3faa-36b8-4c91-b9da-11f44a8a6610"))).set_Feedback(value));
 	}
 	final double Feedback()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IEchoEffectDefinition).get_Feedback(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IEchoEffectDefinition)this.asInterface(uuid("0e4d3faa-36b8-4c91-b9da-11f44a8a6610"))).get_Feedback(&_ret));
 		return _ret;
 	}
 	final void Delay(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IEchoEffectDefinition).set_Delay(value));
+		Debug.OK((cast(Windows.Media.Audio.IEchoEffectDefinition)this.asInterface(uuid("0e4d3faa-36b8-4c91-b9da-11f44a8a6610"))).set_Delay(value));
 	}
 	final double Delay()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IEchoEffectDefinition).get_Delay(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IEchoEffectDefinition)this.asInterface(uuid("0e4d3faa-36b8-4c91-b9da-11f44a8a6610"))).get_Delay(&_ret));
 		return _ret;
 	}
 	final HSTRING ActivatableClassId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_ActivatableClassId(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IAudioEffectDefinition)this.asInterface(uuid("e4d7f974-7d80-4f73-9089-e31c9db9c294"))).get_ActivatableClassId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{
 		Windows.Foundation.Collections.IPropertySet _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_Properties(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IAudioEffectDefinition)this.asInterface(uuid("e4d7f974-7d80-4f73-9089-e31c9db9c294"))).get_Properties(&_ret));
 		return _ret;
 	}
 	static Windows.Media.Audio.EchoEffectDefinition New(Windows.Media.Audio.AudioGraph audioGraph)
 	{
 		auto factory = factory!(Windows.Media.Audio.IEchoEffectDefinitionFactory);
 		Windows.Media.Audio.EchoEffectDefinition _ret;
-		Debug.OK(factory.as!(Windows.Media.Audio.IEchoEffectDefinitionFactory).abi_Create(audioGraph, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IEchoEffectDefinitionFactory)factory.asInterface(uuid("0d4e2257-aaf2-4e86-a54c-fb79db8f6c12"))).abi_Create(audioGraph, &_ret));
 		return _ret;
 	}
 }
@@ -2004,32 +2004,32 @@ extern(Windows):
 	final double Bandwidth()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IEqualizerBand).get_Bandwidth(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IEqualizerBand)this.asInterface(uuid("c00a5a6a-262d-4b85-9bb7-43280b62ed0c"))).get_Bandwidth(&_ret));
 		return _ret;
 	}
 	final void Bandwidth(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IEqualizerBand).set_Bandwidth(value));
+		Debug.OK((cast(Windows.Media.Audio.IEqualizerBand)this.asInterface(uuid("c00a5a6a-262d-4b85-9bb7-43280b62ed0c"))).set_Bandwidth(value));
 	}
 	final double FrequencyCenter()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IEqualizerBand).get_FrequencyCenter(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IEqualizerBand)this.asInterface(uuid("c00a5a6a-262d-4b85-9bb7-43280b62ed0c"))).get_FrequencyCenter(&_ret));
 		return _ret;
 	}
 	final void FrequencyCenter(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IEqualizerBand).set_FrequencyCenter(value));
+		Debug.OK((cast(Windows.Media.Audio.IEqualizerBand)this.asInterface(uuid("c00a5a6a-262d-4b85-9bb7-43280b62ed0c"))).set_FrequencyCenter(value));
 	}
 	final double Gain()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IEqualizerBand).get_Gain(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IEqualizerBand)this.asInterface(uuid("c00a5a6a-262d-4b85-9bb7-43280b62ed0c"))).get_Gain(&_ret));
 		return _ret;
 	}
 	final void Gain(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IEqualizerBand).set_Gain(value));
+		Debug.OK((cast(Windows.Media.Audio.IEqualizerBand)this.asInterface(uuid("c00a5a6a-262d-4b85-9bb7-43280b62ed0c"))).set_Gain(value));
 	}
 }
 
@@ -2039,26 +2039,26 @@ extern(Windows):
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.EqualizerBand) Bands()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.EqualizerBand) _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IEqualizerEffectDefinition).get_Bands(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IEqualizerEffectDefinition)this.asInterface(uuid("023f6f1f-83fe-449a-a822-c696442d16b0"))).get_Bands(&_ret));
 		return _ret;
 	}
 	final HSTRING ActivatableClassId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_ActivatableClassId(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IAudioEffectDefinition)this.asInterface(uuid("e4d7f974-7d80-4f73-9089-e31c9db9c294"))).get_ActivatableClassId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{
 		Windows.Foundation.Collections.IPropertySet _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_Properties(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IAudioEffectDefinition)this.asInterface(uuid("e4d7f974-7d80-4f73-9089-e31c9db9c294"))).get_Properties(&_ret));
 		return _ret;
 	}
 	static Windows.Media.Audio.EqualizerEffectDefinition New(Windows.Media.Audio.AudioGraph audioGraph)
 	{
 		auto factory = factory!(Windows.Media.Audio.IEqualizerEffectDefinitionFactory);
 		Windows.Media.Audio.EqualizerEffectDefinition _ret;
-		Debug.OK(factory.as!(Windows.Media.Audio.IEqualizerEffectDefinitionFactory).abi_Create(audioGraph, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IEqualizerEffectDefinitionFactory)factory.asInterface(uuid("d2876fc4-d410-4eb5-9e69-c9aa1277eaf0"))).abi_Create(audioGraph, &_ret));
 		return _ret;
 	}
 }
@@ -2069,7 +2069,7 @@ extern(Windows):
 	final INT32 RequiredSamples()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IFrameInputNodeQuantumStartedEventArgs).get_RequiredSamples(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IFrameInputNodeQuantumStartedEventArgs)this.asInterface(uuid("3d9bd498-a306-4f06-bd9f-e9efc8226304"))).get_RequiredSamples(&_ret));
 		return _ret;
 	}
 }
@@ -2079,41 +2079,41 @@ interface LimiterEffectDefinition : Windows.Media.Audio.ILimiterEffectDefinition
 extern(Windows):
 	final void Release(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.ILimiterEffectDefinition).set_Release(value));
+		Debug.OK((cast(Windows.Media.Audio.ILimiterEffectDefinition)this.asInterface(uuid("6b755d19-2603-47ba-bdeb-39055e3486dc"))).set_Release(value));
 	}
 	final UINT32 Release()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.ILimiterEffectDefinition).get_Release(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.ILimiterEffectDefinition)this.asInterface(uuid("6b755d19-2603-47ba-bdeb-39055e3486dc"))).get_Release(&_ret));
 		return _ret;
 	}
 	final void Loudness(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.ILimiterEffectDefinition).set_Loudness(value));
+		Debug.OK((cast(Windows.Media.Audio.ILimiterEffectDefinition)this.asInterface(uuid("6b755d19-2603-47ba-bdeb-39055e3486dc"))).set_Loudness(value));
 	}
 	final UINT32 Loudness()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.ILimiterEffectDefinition).get_Loudness(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.ILimiterEffectDefinition)this.asInterface(uuid("6b755d19-2603-47ba-bdeb-39055e3486dc"))).get_Loudness(&_ret));
 		return _ret;
 	}
 	final HSTRING ActivatableClassId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_ActivatableClassId(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IAudioEffectDefinition)this.asInterface(uuid("e4d7f974-7d80-4f73-9089-e31c9db9c294"))).get_ActivatableClassId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{
 		Windows.Foundation.Collections.IPropertySet _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_Properties(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IAudioEffectDefinition)this.asInterface(uuid("e4d7f974-7d80-4f73-9089-e31c9db9c294"))).get_Properties(&_ret));
 		return _ret;
 	}
 	static Windows.Media.Audio.LimiterEffectDefinition New(Windows.Media.Audio.AudioGraph audioGraph)
 	{
 		auto factory = factory!(Windows.Media.Audio.ILimiterEffectDefinitionFactory);
 		Windows.Media.Audio.LimiterEffectDefinition _ret;
-		Debug.OK(factory.as!(Windows.Media.Audio.ILimiterEffectDefinitionFactory).abi_Create(audioGraph, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.ILimiterEffectDefinitionFactory)factory.asInterface(uuid("ecbae6f1-61ff-45ef-b8f5-48659a57c72d"))).abi_Create(audioGraph, &_ret));
 		return _ret;
 	}
 }
@@ -2123,251 +2123,251 @@ interface ReverbEffectDefinition : Windows.Media.Audio.IReverbEffectDefinition, 
 extern(Windows):
 	final void WetDryMix(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_WetDryMix(value));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).set_WetDryMix(value));
 	}
 	final double WetDryMix()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_WetDryMix(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_WetDryMix(&_ret));
 		return _ret;
 	}
 	final void ReflectionsDelay(UINT32 value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_ReflectionsDelay(value));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).set_ReflectionsDelay(value));
 	}
 	final UINT32 ReflectionsDelay()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_ReflectionsDelay(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_ReflectionsDelay(&_ret));
 		return _ret;
 	}
 	final void ReverbDelay(ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_ReverbDelay(value));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).set_ReverbDelay(value));
 	}
 	final ubyte ReverbDelay()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_ReverbDelay(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_ReverbDelay(&_ret));
 		return _ret;
 	}
 	final void RearDelay(ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_RearDelay(value));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).set_RearDelay(value));
 	}
 	final ubyte RearDelay()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_RearDelay(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_RearDelay(&_ret));
 		return _ret;
 	}
 	final void PositionLeft(ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_PositionLeft(value));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).set_PositionLeft(value));
 	}
 	final ubyte PositionLeft()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_PositionLeft(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_PositionLeft(&_ret));
 		return _ret;
 	}
 	final void PositionRight(ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_PositionRight(value));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).set_PositionRight(value));
 	}
 	final ubyte PositionRight()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_PositionRight(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_PositionRight(&_ret));
 		return _ret;
 	}
 	final void PositionMatrixLeft(ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_PositionMatrixLeft(value));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).set_PositionMatrixLeft(value));
 	}
 	final ubyte PositionMatrixLeft()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_PositionMatrixLeft(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_PositionMatrixLeft(&_ret));
 		return _ret;
 	}
 	final void PositionMatrixRight(ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_PositionMatrixRight(value));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).set_PositionMatrixRight(value));
 	}
 	final ubyte PositionMatrixRight()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_PositionMatrixRight(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_PositionMatrixRight(&_ret));
 		return _ret;
 	}
 	final void EarlyDiffusion(ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_EarlyDiffusion(value));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).set_EarlyDiffusion(value));
 	}
 	final ubyte EarlyDiffusion()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_EarlyDiffusion(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_EarlyDiffusion(&_ret));
 		return _ret;
 	}
 	final void LateDiffusion(ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_LateDiffusion(value));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).set_LateDiffusion(value));
 	}
 	final ubyte LateDiffusion()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_LateDiffusion(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_LateDiffusion(&_ret));
 		return _ret;
 	}
 	final void LowEQGain(ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_LowEQGain(value));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).set_LowEQGain(value));
 	}
 	final ubyte LowEQGain()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_LowEQGain(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_LowEQGain(&_ret));
 		return _ret;
 	}
 	final void LowEQCutoff(ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_LowEQCutoff(value));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).set_LowEQCutoff(value));
 	}
 	final ubyte LowEQCutoff()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_LowEQCutoff(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_LowEQCutoff(&_ret));
 		return _ret;
 	}
 	final void HighEQGain(ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_HighEQGain(value));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).set_HighEQGain(value));
 	}
 	final ubyte HighEQGain()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_HighEQGain(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_HighEQGain(&_ret));
 		return _ret;
 	}
 	final void HighEQCutoff(ubyte value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_HighEQCutoff(value));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).set_HighEQCutoff(value));
 	}
 	final ubyte HighEQCutoff()
 	{
 		ubyte _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_HighEQCutoff(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_HighEQCutoff(&_ret));
 		return _ret;
 	}
 	final void RoomFilterFreq(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_RoomFilterFreq(value));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).set_RoomFilterFreq(value));
 	}
 	final double RoomFilterFreq()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_RoomFilterFreq(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_RoomFilterFreq(&_ret));
 		return _ret;
 	}
 	final void RoomFilterMain(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_RoomFilterMain(value));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).set_RoomFilterMain(value));
 	}
 	final double RoomFilterMain()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_RoomFilterMain(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_RoomFilterMain(&_ret));
 		return _ret;
 	}
 	final void RoomFilterHF(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_RoomFilterHF(value));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).set_RoomFilterHF(value));
 	}
 	final double RoomFilterHF()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_RoomFilterHF(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_RoomFilterHF(&_ret));
 		return _ret;
 	}
 	final void ReflectionsGain(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_ReflectionsGain(value));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).set_ReflectionsGain(value));
 	}
 	final double ReflectionsGain()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_ReflectionsGain(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_ReflectionsGain(&_ret));
 		return _ret;
 	}
 	final void ReverbGain(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_ReverbGain(value));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).set_ReverbGain(value));
 	}
 	final double ReverbGain()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_ReverbGain(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_ReverbGain(&_ret));
 		return _ret;
 	}
 	final void DecayTime(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_DecayTime(value));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).set_DecayTime(value));
 	}
 	final double DecayTime()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_DecayTime(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_DecayTime(&_ret));
 		return _ret;
 	}
 	final void Density(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_Density(value));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).set_Density(value));
 	}
 	final double Density()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_Density(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_Density(&_ret));
 		return _ret;
 	}
 	final void RoomSize(double value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_RoomSize(value));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).set_RoomSize(value));
 	}
 	final double RoomSize()
 	{
 		double _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_RoomSize(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_RoomSize(&_ret));
 		return _ret;
 	}
 	final void DisableLateField(bool value)
 	{
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).set_DisableLateField(value));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).set_DisableLateField(value));
 	}
 	final bool DisableLateField()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Media.Audio.IReverbEffectDefinition).get_DisableLateField(&_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_DisableLateField(&_ret));
 		return _ret;
 	}
 	final HSTRING ActivatableClassId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_ActivatableClassId(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IAudioEffectDefinition)this.asInterface(uuid("e4d7f974-7d80-4f73-9089-e31c9db9c294"))).get_ActivatableClassId(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{
 		Windows.Foundation.Collections.IPropertySet _ret;
-		Debug.OK(this.as!(Windows.Media.Effects.IAudioEffectDefinition).get_Properties(&_ret));
+		Debug.OK((cast(Windows.Media.Effects.IAudioEffectDefinition)this.asInterface(uuid("e4d7f974-7d80-4f73-9089-e31c9db9c294"))).get_Properties(&_ret));
 		return _ret;
 	}
 	static Windows.Media.Audio.ReverbEffectDefinition New(Windows.Media.Audio.AudioGraph audioGraph)
 	{
 		auto factory = factory!(Windows.Media.Audio.IReverbEffectDefinitionFactory);
 		Windows.Media.Audio.ReverbEffectDefinition _ret;
-		Debug.OK(factory.as!(Windows.Media.Audio.IReverbEffectDefinitionFactory).abi_Create(audioGraph, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinitionFactory)factory.asInterface(uuid("a7d5cbfe-100b-4ff0-9da6-dc4e05a759f0"))).abi_Create(audioGraph, &_ret));
 		return _ret;
 	}
 }

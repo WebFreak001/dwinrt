@@ -25,67 +25,67 @@ extern(Windows):
 	final float AmbientAmount()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).get_AmbientAmount(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Effects.ISceneLightingEffect)this.asInterface(uuid("91bb5e52-95d1-4f8b-9a5a-6408b24b8c6a"))).get_AmbientAmount(&_ret));
 		return _ret;
 	}
 	final void AmbientAmount(float value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).set_AmbientAmount(value));
+		Debug.OK((cast(Windows.UI.Composition.Effects.ISceneLightingEffect)this.asInterface(uuid("91bb5e52-95d1-4f8b-9a5a-6408b24b8c6a"))).set_AmbientAmount(value));
 	}
 	final float DiffuseAmount()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).get_DiffuseAmount(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Effects.ISceneLightingEffect)this.asInterface(uuid("91bb5e52-95d1-4f8b-9a5a-6408b24b8c6a"))).get_DiffuseAmount(&_ret));
 		return _ret;
 	}
 	final void DiffuseAmount(float value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).set_DiffuseAmount(value));
+		Debug.OK((cast(Windows.UI.Composition.Effects.ISceneLightingEffect)this.asInterface(uuid("91bb5e52-95d1-4f8b-9a5a-6408b24b8c6a"))).set_DiffuseAmount(value));
 	}
 	final Windows.Graphics.Effects.IGraphicsEffectSource NormalMapSource()
 	{
 		Windows.Graphics.Effects.IGraphicsEffectSource _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).get_NormalMapSource(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Effects.ISceneLightingEffect)this.asInterface(uuid("91bb5e52-95d1-4f8b-9a5a-6408b24b8c6a"))).get_NormalMapSource(&_ret));
 		return _ret;
 	}
 	final void NormalMapSource(Windows.Graphics.Effects.IGraphicsEffectSource value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).set_NormalMapSource(value));
+		Debug.OK((cast(Windows.UI.Composition.Effects.ISceneLightingEffect)this.asInterface(uuid("91bb5e52-95d1-4f8b-9a5a-6408b24b8c6a"))).set_NormalMapSource(value));
 	}
 	final float SpecularAmount()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).get_SpecularAmount(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Effects.ISceneLightingEffect)this.asInterface(uuid("91bb5e52-95d1-4f8b-9a5a-6408b24b8c6a"))).get_SpecularAmount(&_ret));
 		return _ret;
 	}
 	final void SpecularAmount(float value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).set_SpecularAmount(value));
+		Debug.OK((cast(Windows.UI.Composition.Effects.ISceneLightingEffect)this.asInterface(uuid("91bb5e52-95d1-4f8b-9a5a-6408b24b8c6a"))).set_SpecularAmount(value));
 	}
 	final float SpecularShine()
 	{
 		float _ret;
-		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).get_SpecularShine(&_ret));
+		Debug.OK((cast(Windows.UI.Composition.Effects.ISceneLightingEffect)this.asInterface(uuid("91bb5e52-95d1-4f8b-9a5a-6408b24b8c6a"))).get_SpecularShine(&_ret));
 		return _ret;
 	}
 	final void SpecularShine(float value)
 	{
-		Debug.OK(this.as!(Windows.UI.Composition.Effects.ISceneLightingEffect).set_SpecularShine(value));
+		Debug.OK((cast(Windows.UI.Composition.Effects.ISceneLightingEffect)this.asInterface(uuid("91bb5e52-95d1-4f8b-9a5a-6408b24b8c6a"))).set_SpecularShine(value));
 	}
 	final HSTRING Name()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Graphics.Effects.IGraphicsEffect).get_Name(&_ret));
+		Debug.OK((cast(Windows.Graphics.Effects.IGraphicsEffect)this.asInterface(uuid("cb51c0ce-8fe6-4636-b202-861faa07d8f3"))).get_Name(&_ret));
 		return _ret;
 	}
 	final void Name(HSTRING name)
 	{
-		Debug.OK(this.as!(Windows.Graphics.Effects.IGraphicsEffect).set_Name(name));
+		Debug.OK((cast(Windows.Graphics.Effects.IGraphicsEffect)this.asInterface(uuid("cb51c0ce-8fe6-4636-b202-861faa07d8f3"))).set_Name(name));
 	}
 	static SceneLightingEffect New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(SceneLightingEffect).abi_ActivateInstance(&ret));
-		return ret.as!(SceneLightingEffect);
+		return cast(SceneLightingEffect) ret;
 	}
 }

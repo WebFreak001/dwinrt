@@ -89,14 +89,14 @@ extern(Windows):
 	final Windows.Graphics.Printing.PrintTaskOptions PrintTaskOptions()
 	{
 		Windows.Graphics.Printing.PrintTaskOptions _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IAddPagesEventArgs).get_PrintTaskOptions(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Printing.IAddPagesEventArgs)this.asInterface(uuid("e2e52be5-056c-4420-9795-cb3526ce0c20"))).get_PrintTaskOptions(&_ret));
 		return _ret;
 	}
 	static AddPagesEventArgs New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(AddPagesEventArgs).abi_ActivateInstance(&ret));
-		return ret.as!(AddPagesEventArgs);
+		return cast(AddPagesEventArgs) ret;
 	}
 }
 
@@ -106,14 +106,14 @@ extern(Windows):
 	final INT32 PageNumber()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IGetPreviewPageEventArgs).get_PageNumber(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Printing.IGetPreviewPageEventArgs)this.asInterface(uuid("a43d703d-dea9-4df6-a7ed-35049cd485c7"))).get_PageNumber(&_ret));
 		return _ret;
 	}
 	static GetPreviewPageEventArgs New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(GetPreviewPageEventArgs).abi_ActivateInstance(&ret));
-		return ret.as!(GetPreviewPageEventArgs);
+		return cast(GetPreviewPageEventArgs) ret;
 	}
 }
 
@@ -123,20 +123,20 @@ extern(Windows):
 	final Windows.Graphics.Printing.PrintTaskOptions PrintTaskOptions()
 	{
 		Windows.Graphics.Printing.PrintTaskOptions _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPaginateEventArgs).get_PrintTaskOptions(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Printing.IPaginateEventArgs)this.asInterface(uuid("ed945fd6-79ab-42b7-930a-3d6e09011d21"))).get_PrintTaskOptions(&_ret));
 		return _ret;
 	}
 	final INT32 CurrentPreviewPageNumber()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPaginateEventArgs).get_CurrentPreviewPageNumber(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Printing.IPaginateEventArgs)this.asInterface(uuid("ed945fd6-79ab-42b7-930a-3d6e09011d21"))).get_CurrentPreviewPageNumber(&_ret));
 		return _ret;
 	}
 	static PaginateEventArgs New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(PaginateEventArgs).abi_ActivateInstance(&ret));
-		return ret.as!(PaginateEventArgs);
+		return cast(PaginateEventArgs) ret;
 	}
 }
 
@@ -146,58 +146,58 @@ extern(Windows):
 	final Windows.Graphics.Printing.IPrintDocumentSource DocumentSource()
 	{
 		Windows.Graphics.Printing.IPrintDocumentSource _ret;
-		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).get_DocumentSource(&_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Printing.IPrintDocument)this.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).get_DocumentSource(&_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnPaginate(void delegate(IInspectable, Windows.UI.Xaml.Printing.PaginateEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).add_Paginate(event!(Windows.UI.Xaml.Printing.PaginateEventHandler, IInspectable, Windows.UI.Xaml.Printing.PaginateEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.Printing.IPrintDocument)this.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).add_Paginate(event!(Windows.UI.Xaml.Printing.PaginateEventHandler, IInspectable, Windows.UI.Xaml.Printing.PaginateEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removePaginate(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).remove_Paginate(token));
+		Debug.OK((cast(Windows.UI.Xaml.Printing.IPrintDocument)this.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).remove_Paginate(token));
 	}
 	final EventRegistrationToken OnGetPreviewPage(void delegate(IInspectable, Windows.UI.Xaml.Printing.GetPreviewPageEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).add_GetPreviewPage(event!(Windows.UI.Xaml.Printing.GetPreviewPageEventHandler, IInspectable, Windows.UI.Xaml.Printing.GetPreviewPageEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.Printing.IPrintDocument)this.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).add_GetPreviewPage(event!(Windows.UI.Xaml.Printing.GetPreviewPageEventHandler, IInspectable, Windows.UI.Xaml.Printing.GetPreviewPageEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeGetPreviewPage(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).remove_GetPreviewPage(token));
+		Debug.OK((cast(Windows.UI.Xaml.Printing.IPrintDocument)this.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).remove_GetPreviewPage(token));
 	}
 	final EventRegistrationToken OnAddPages(void delegate(IInspectable, Windows.UI.Xaml.Printing.AddPagesEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).add_AddPages(event!(Windows.UI.Xaml.Printing.AddPagesEventHandler, IInspectable, Windows.UI.Xaml.Printing.AddPagesEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.UI.Xaml.Printing.IPrintDocument)this.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).add_AddPages(event!(Windows.UI.Xaml.Printing.AddPagesEventHandler, IInspectable, Windows.UI.Xaml.Printing.AddPagesEventArgs)(fn), &tok));
 		return tok;
 	}
 	final void removeAddPages(EventRegistrationToken token)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).remove_AddPages(token));
+		Debug.OK((cast(Windows.UI.Xaml.Printing.IPrintDocument)this.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).remove_AddPages(token));
 	}
 	final void AddPage(Windows.UI.Xaml.UIElement pageVisual)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).abi_AddPage(pageVisual));
+		Debug.OK((cast(Windows.UI.Xaml.Printing.IPrintDocument)this.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).abi_AddPage(pageVisual));
 	}
 	final void AddPagesComplete()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).abi_AddPagesComplete());
+		Debug.OK((cast(Windows.UI.Xaml.Printing.IPrintDocument)this.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).abi_AddPagesComplete());
 	}
 	final void SetPreviewPageCount(INT32 count, Windows.UI.Xaml.Printing.PreviewPageCountType type)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).abi_SetPreviewPageCount(count, type));
+		Debug.OK((cast(Windows.UI.Xaml.Printing.IPrintDocument)this.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).abi_SetPreviewPageCount(count, type));
 	}
 	final void SetPreviewPage(INT32 pageNumber, Windows.UI.Xaml.UIElement pageVisual)
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).abi_SetPreviewPage(pageNumber, pageVisual));
+		Debug.OK((cast(Windows.UI.Xaml.Printing.IPrintDocument)this.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).abi_SetPreviewPage(pageNumber, pageVisual));
 	}
 	final void InvalidatePreview()
 	{
-		Debug.OK(this.as!(Windows.UI.Xaml.Printing.IPrintDocument).abi_InvalidatePreview());
+		Debug.OK((cast(Windows.UI.Xaml.Printing.IPrintDocument)this.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).abi_InvalidatePreview());
 	}
 
 	private static Windows.UI.Xaml.Printing.IPrintDocumentStatics _staticInstance;
@@ -209,7 +209,7 @@ extern(Windows):
 	static Windows.UI.Xaml.DependencyProperty DocumentSourceProperty()
 	{
 		Windows.UI.Xaml.DependencyProperty _ret;
-		Debug.OK(staticInstance.as!(Windows.UI.Xaml.Printing.IPrintDocumentStatics).get_DocumentSourceProperty(&_ret));
+		Debug.OK(staticInstance.get_DocumentSourceProperty(&_ret));
 		return _ret;
 	}
 	static PrintDocument New()
@@ -230,18 +230,18 @@ class PrintDocumentT(Base) : AgileObject!Base, PrintDocument
 			return m_inner.QueryInterface(riid, ppv);
 		return ret;
 	}
-	override HRESULT get_DocumentSource(Windows.Graphics.Printing.IPrintDocumentSource* return_value) { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).get_DocumentSource(return_value); }
-	override HRESULT add_Paginate(Windows.UI.Xaml.Printing.PaginateEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).add_Paginate(value, return_token); }
-	override HRESULT remove_Paginate(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).remove_Paginate(token); }
-	override HRESULT add_GetPreviewPage(Windows.UI.Xaml.Printing.GetPreviewPageEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).add_GetPreviewPage(value, return_token); }
-	override HRESULT remove_GetPreviewPage(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).remove_GetPreviewPage(token); }
-	override HRESULT add_AddPages(Windows.UI.Xaml.Printing.AddPagesEventHandler value, EventRegistrationToken* return_token) { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).add_AddPages(value, return_token); }
-	override HRESULT remove_AddPages(EventRegistrationToken token) { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).remove_AddPages(token); }
-	override HRESULT abi_AddPage(Windows.UI.Xaml.UIElement pageVisual) { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).abi_AddPage(pageVisual); }
-	override HRESULT abi_AddPagesComplete() { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).abi_AddPagesComplete(); }
-	override HRESULT abi_SetPreviewPageCount(INT32 count, Windows.UI.Xaml.Printing.PreviewPageCountType type) { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).abi_SetPreviewPageCount(count, type); }
-	override HRESULT abi_SetPreviewPage(INT32 pageNumber, Windows.UI.Xaml.UIElement pageVisual) { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).abi_SetPreviewPage(pageNumber, pageVisual); }
-	override HRESULT abi_InvalidatePreview() { return m_inner.as!(Windows.UI.Xaml.Printing.IPrintDocument).abi_InvalidatePreview(); }
+	override HRESULT get_DocumentSource(Windows.Graphics.Printing.IPrintDocumentSource* return_value) { return (cast(Windows.UI.Xaml.Printing.IPrintDocument)m_inner.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).get_DocumentSource(return_value); }
+	override HRESULT add_Paginate(Windows.UI.Xaml.Printing.PaginateEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.Printing.IPrintDocument)m_inner.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).add_Paginate(value, return_token); }
+	override HRESULT remove_Paginate(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.Printing.IPrintDocument)m_inner.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).remove_Paginate(token); }
+	override HRESULT add_GetPreviewPage(Windows.UI.Xaml.Printing.GetPreviewPageEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.Printing.IPrintDocument)m_inner.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).add_GetPreviewPage(value, return_token); }
+	override HRESULT remove_GetPreviewPage(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.Printing.IPrintDocument)m_inner.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).remove_GetPreviewPage(token); }
+	override HRESULT add_AddPages(Windows.UI.Xaml.Printing.AddPagesEventHandler value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.Printing.IPrintDocument)m_inner.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).add_AddPages(value, return_token); }
+	override HRESULT remove_AddPages(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.Printing.IPrintDocument)m_inner.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).remove_AddPages(token); }
+	override HRESULT abi_AddPage(Windows.UI.Xaml.UIElement pageVisual) { return (cast(Windows.UI.Xaml.Printing.IPrintDocument)m_inner.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).abi_AddPage(pageVisual); }
+	override HRESULT abi_AddPagesComplete() { return (cast(Windows.UI.Xaml.Printing.IPrintDocument)m_inner.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).abi_AddPagesComplete(); }
+	override HRESULT abi_SetPreviewPageCount(INT32 count, Windows.UI.Xaml.Printing.PreviewPageCountType type) { return (cast(Windows.UI.Xaml.Printing.IPrintDocument)m_inner.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).abi_SetPreviewPageCount(count, type); }
+	override HRESULT abi_SetPreviewPage(INT32 pageNumber, Windows.UI.Xaml.UIElement pageVisual) { return (cast(Windows.UI.Xaml.Printing.IPrintDocument)m_inner.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).abi_SetPreviewPage(pageNumber, pageVisual); }
+	override HRESULT abi_InvalidatePreview() { return (cast(Windows.UI.Xaml.Printing.IPrintDocument)m_inner.asInterface(uuid("e44327c3-a999-485b-b1d8-72dc517821e6"))).abi_InvalidatePreview(); }
 
 	this() {}
 	IInspectable m_inner;

@@ -459,17 +459,17 @@ interface DeleteSmsMessageOperation : Windows.Foundation.IAsyncAction
 extern(Windows):
 	final void Completed(Windows.Foundation.AsyncActionCompletedHandler handler)
 	{
-		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).set_Completed(handler));
+		Debug.OK((cast(Windows.Foundation.IAsyncAction)this.asInterface(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b"))).set_Completed(handler));
 	}
 	final Windows.Foundation.AsyncActionCompletedHandler Completed()
 	{
 		Windows.Foundation.AsyncActionCompletedHandler _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).get_Completed(&_ret));
+		Debug.OK((cast(Windows.Foundation.IAsyncAction)this.asInterface(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b"))).get_Completed(&_ret));
 		return _ret;
 	}
 	final void GetResults()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).abi_GetResults());
+		Debug.OK((cast(Windows.Foundation.IAsyncAction)this.asInterface(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b"))).abi_GetResults());
 	}
 }
 
@@ -478,17 +478,17 @@ interface DeleteSmsMessagesOperation : Windows.Foundation.IAsyncAction
 extern(Windows):
 	final void Completed(Windows.Foundation.AsyncActionCompletedHandler handler)
 	{
-		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).set_Completed(handler));
+		Debug.OK((cast(Windows.Foundation.IAsyncAction)this.asInterface(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b"))).set_Completed(handler));
 	}
 	final Windows.Foundation.AsyncActionCompletedHandler Completed()
 	{
 		Windows.Foundation.AsyncActionCompletedHandler _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).get_Completed(&_ret));
+		Debug.OK((cast(Windows.Foundation.IAsyncAction)this.asInterface(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b"))).get_Completed(&_ret));
 		return _ret;
 	}
 	final void GetResults()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).abi_GetResults());
+		Debug.OK((cast(Windows.Foundation.IAsyncAction)this.asInterface(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b"))).abi_GetResults());
 	}
 }
 
@@ -497,18 +497,18 @@ interface GetSmsDeviceOperation : Windows.Foundation.IAsyncOperation!(Windows.De
 extern(Windows):
 	final void Completed(Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) handler)
 	{
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsDevice)).set_Completed(handler));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsDevice))this).set_Completed(handler));
 	}
 	final Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) Completed()
 	{
 		Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.SmsDevice) _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsDevice)).get_Completed(&_ret));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsDevice))this).get_Completed(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsDevice Results()
 	{
 		Windows.Devices.Sms.SmsDevice _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsDevice)).get_Results(&_ret));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsDevice))this).get_Results(&_ret));
 		return _ret;
 	}
 }
@@ -518,18 +518,18 @@ interface GetSmsMessageOperation : Windows.Foundation.IAsyncOperation!(Windows.D
 extern(Windows):
 	final void Completed(Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.ISmsMessage) handler)
 	{
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.ISmsMessage)).set_Completed(handler));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.ISmsMessage))this).set_Completed(handler));
 	}
 	final Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.ISmsMessage) Completed()
 	{
 		Windows.Foundation.AsyncOperationCompletedHandler!(Windows.Devices.Sms.ISmsMessage) _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.ISmsMessage)).get_Completed(&_ret));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.ISmsMessage))this).get_Completed(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.ISmsMessage Results()
 	{
 		Windows.Devices.Sms.ISmsMessage _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.ISmsMessage)).get_Results(&_ret));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.ISmsMessage))this).get_Results(&_ret));
 		return _ret;
 	}
 }
@@ -539,28 +539,28 @@ interface GetSmsMessagesOperation : Windows.Foundation.IAsyncOperationWithProgre
 extern(Windows):
 	final void Progress(Windows.Foundation.AsyncOperationProgressHandler!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage),	 INT32) handler)
 	{
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage), INT32)).set_Progress(handler));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage), INT32))this).set_Progress(handler));
 	}
 	final Windows.Foundation.AsyncOperationProgressHandler!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage),  INT32) Progress()
 	{
 		Windows.Foundation.AsyncOperationProgressHandler!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage),	 INT32) _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage), INT32)).get_Progress(&_ret));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage), INT32))this).get_Progress(&_ret));
 		return _ret;
 	}
 	final void Completed(Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage),  INT32) handler)
 	{
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage), INT32)).set_Completed(handler));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage), INT32))this).set_Completed(handler));
 	}
 	final Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage),	INT32) Completed()
 	{
 		Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage),  INT32) _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage), INT32)).get_Completed(&_ret));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage), INT32))this).get_Completed(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage) Results()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage) _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage), INT32)).get_Results(&_ret));
+		Debug.OK((cast(Windows.Foundation.IAsyncOperationWithProgress!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage), INT32))this).get_Results(&_ret));
 		return _ret;
 	}
 }
@@ -570,17 +570,17 @@ interface SendSmsMessageOperation : Windows.Foundation.IAsyncAction
 extern(Windows):
 	final void Completed(Windows.Foundation.AsyncActionCompletedHandler handler)
 	{
-		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).set_Completed(handler));
+		Debug.OK((cast(Windows.Foundation.IAsyncAction)this.asInterface(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b"))).set_Completed(handler));
 	}
 	final Windows.Foundation.AsyncActionCompletedHandler Completed()
 	{
 		Windows.Foundation.AsyncActionCompletedHandler _ret;
-		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).get_Completed(&_ret));
+		Debug.OK((cast(Windows.Foundation.IAsyncAction)this.asInterface(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b"))).get_Completed(&_ret));
 		return _ret;
 	}
 	final void GetResults()
 	{
-		Debug.OK(this.as!(Windows.Foundation.IAsyncAction).abi_GetResults());
+		Debug.OK((cast(Windows.Foundation.IAsyncAction)this.asInterface(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b"))).abi_GetResults());
 	}
 }
 
@@ -590,150 +590,150 @@ extern(Windows):
 	final Windows.Foundation.DateTime Timestamp()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsAppMessage)this.asInterface(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final HSTRING To()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_To(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsAppMessage)this.asInterface(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54"))).get_To(&_ret));
 		return _ret;
 	}
 	final void To(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).set_To(value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsAppMessage)this.asInterface(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54"))).set_To(value));
 	}
 	final HSTRING From()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_From(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsAppMessage)this.asInterface(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54"))).get_From(&_ret));
 		return _ret;
 	}
 	final HSTRING Body()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_Body(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsAppMessage)this.asInterface(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54"))).get_Body(&_ret));
 		return _ret;
 	}
 	final void Body(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).set_Body(value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsAppMessage)this.asInterface(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54"))).set_Body(value));
 	}
 	final HSTRING CallbackNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_CallbackNumber(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsAppMessage)this.asInterface(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54"))).get_CallbackNumber(&_ret));
 		return _ret;
 	}
 	final void CallbackNumber(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).set_CallbackNumber(value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsAppMessage)this.asInterface(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54"))).set_CallbackNumber(value));
 	}
 	final bool IsDeliveryNotificationEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_IsDeliveryNotificationEnabled(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsAppMessage)this.asInterface(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54"))).get_IsDeliveryNotificationEnabled(&_ret));
 		return _ret;
 	}
 	final void IsDeliveryNotificationEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).set_IsDeliveryNotificationEnabled(value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsAppMessage)this.asInterface(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54"))).set_IsDeliveryNotificationEnabled(value));
 	}
 	final INT32 RetryAttemptCount()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_RetryAttemptCount(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsAppMessage)this.asInterface(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54"))).get_RetryAttemptCount(&_ret));
 		return _ret;
 	}
 	final void RetryAttemptCount(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).set_RetryAttemptCount(value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsAppMessage)this.asInterface(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54"))).set_RetryAttemptCount(value));
 	}
 	final Windows.Devices.Sms.SmsEncoding Encoding()
 	{
 		Windows.Devices.Sms.SmsEncoding _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_Encoding(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsAppMessage)this.asInterface(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54"))).get_Encoding(&_ret));
 		return _ret;
 	}
 	final void Encoding(Windows.Devices.Sms.SmsEncoding value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).set_Encoding(value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsAppMessage)this.asInterface(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54"))).set_Encoding(value));
 	}
 	final INT32 PortNumber()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_PortNumber(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsAppMessage)this.asInterface(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54"))).get_PortNumber(&_ret));
 		return _ret;
 	}
 	final void PortNumber(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).set_PortNumber(value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsAppMessage)this.asInterface(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54"))).set_PortNumber(value));
 	}
 	final INT32 TeleserviceId()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_TeleserviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsAppMessage)this.asInterface(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54"))).get_TeleserviceId(&_ret));
 		return _ret;
 	}
 	final void TeleserviceId(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).set_TeleserviceId(value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsAppMessage)this.asInterface(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54"))).set_TeleserviceId(value));
 	}
 	final INT32 ProtocolId()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_ProtocolId(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsAppMessage)this.asInterface(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54"))).get_ProtocolId(&_ret));
 		return _ret;
 	}
 	final void ProtocolId(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).set_ProtocolId(value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsAppMessage)this.asInterface(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54"))).set_ProtocolId(value));
 	}
 	final Windows.Storage.Streams.IBuffer BinaryBody()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).get_BinaryBody(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsAppMessage)this.asInterface(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54"))).get_BinaryBody(&_ret));
 		return _ret;
 	}
 	final void BinaryBody(Windows.Storage.Streams.IBuffer value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsAppMessage).set_BinaryBody(value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsAppMessage)this.asInterface(uuid("e8bb8494-d3a0-4a0a-86d7-291033a8cf54"))).set_BinaryBody(value));
 	}
 	final Windows.Devices.Sms.SmsMessageType MessageType()
 	{
 		Windows.Devices.Sms.SmsMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageType(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_MessageType(&_ret));
 		return _ret;
 	}
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.CellularClass CellularClass()
 	{
 		Windows.Devices.Sms.CellularClass _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_CellularClass(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_CellularClass(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsMessageClass MessageClass()
 	{
 		Windows.Devices.Sms.SmsMessageClass _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageClass(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_MessageClass(&_ret));
 		return _ret;
 	}
 	final HSTRING SimIccId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_SimIccId(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_SimIccId(&_ret));
 		return _ret;
 	}
 	static SmsAppMessage New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(SmsAppMessage).abi_ActivateInstance(&ret));
-		return ret.as!(SmsAppMessage);
+		return cast(SmsAppMessage) ret;
 	}
 }
 
@@ -744,43 +744,43 @@ extern(Windows):
 	final Windows.Devices.Sms.SmsDataFormat Format()
 	{
 		Windows.Devices.Sms.SmsDataFormat _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBinaryMessage).get_Format(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsBinaryMessage)this.asInterface(uuid("5bf4e813-3b53-4c6e-b61a-d86a63755650"))).get_Format(&_ret));
 		return _ret;
 	}
 	deprecated("SmsBinaryMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsAppMessage.")
 	final void Format(Windows.Devices.Sms.SmsDataFormat value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBinaryMessage).set_Format(value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsBinaryMessage)this.asInterface(uuid("5bf4e813-3b53-4c6e-b61a-d86a63755650"))).set_Format(value));
 	}
 	deprecated("SmsBinaryMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsAppMessage.")
 	final ubyte* GetData(UINT32* out___valueSize)
 	{
 		ubyte* _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBinaryMessage).abi_GetData(out___valueSize, &_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsBinaryMessage)this.asInterface(uuid("5bf4e813-3b53-4c6e-b61a-d86a63755650"))).abi_GetData(out___valueSize, &_ret));
 		return _ret;
 	}
 	deprecated("SmsBinaryMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsAppMessage.")
 	final void SetData(UINT32 __valueSize, ubyte* value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBinaryMessage).abi_SetData(__valueSize, value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsBinaryMessage)this.asInterface(uuid("5bf4e813-3b53-4c6e-b61a-d86a63755650"))).abi_SetData(__valueSize, value));
 	}
 	final UINT32 Id()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessage).get_Id(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessage)this.asInterface(uuid("ed3c5e28-6984-4b07-811d-8d5906ed3cea"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsMessageClass MessageClass()
 	{
 		Windows.Devices.Sms.SmsMessageClass _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessage).get_MessageClass(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessage)this.asInterface(uuid("ed3c5e28-6984-4b07-811d-8d5906ed3cea"))).get_MessageClass(&_ret));
 		return _ret;
 	}
 	static SmsBinaryMessage New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(SmsBinaryMessage).abi_ActivateInstance(&ret));
-		return ret.as!(SmsBinaryMessage);
+		return cast(SmsBinaryMessage) ret;
 	}
 }
 
@@ -790,91 +790,91 @@ extern(Windows):
 	final Windows.Foundation.DateTime Timestamp()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBroadcastMessage).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsBroadcastMessage)this.asInterface(uuid("75aebbf1-e4b7-4874-a09c-2956e592f957"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final HSTRING To()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBroadcastMessage).get_To(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsBroadcastMessage)this.asInterface(uuid("75aebbf1-e4b7-4874-a09c-2956e592f957"))).get_To(&_ret));
 		return _ret;
 	}
 	final HSTRING Body()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBroadcastMessage).get_Body(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsBroadcastMessage)this.asInterface(uuid("75aebbf1-e4b7-4874-a09c-2956e592f957"))).get_Body(&_ret));
 		return _ret;
 	}
 	final INT32 Channel()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBroadcastMessage).get_Channel(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsBroadcastMessage)this.asInterface(uuid("75aebbf1-e4b7-4874-a09c-2956e592f957"))).get_Channel(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsGeographicalScope GeographicalScope()
 	{
 		Windows.Devices.Sms.SmsGeographicalScope _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBroadcastMessage).get_GeographicalScope(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsBroadcastMessage)this.asInterface(uuid("75aebbf1-e4b7-4874-a09c-2956e592f957"))).get_GeographicalScope(&_ret));
 		return _ret;
 	}
 	final INT32 MessageCode()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBroadcastMessage).get_MessageCode(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsBroadcastMessage)this.asInterface(uuid("75aebbf1-e4b7-4874-a09c-2956e592f957"))).get_MessageCode(&_ret));
 		return _ret;
 	}
 	final INT32 UpdateNumber()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBroadcastMessage).get_UpdateNumber(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsBroadcastMessage)this.asInterface(uuid("75aebbf1-e4b7-4874-a09c-2956e592f957"))).get_UpdateNumber(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsBroadcastType BroadcastType()
 	{
 		Windows.Devices.Sms.SmsBroadcastType _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBroadcastMessage).get_BroadcastType(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsBroadcastMessage)this.asInterface(uuid("75aebbf1-e4b7-4874-a09c-2956e592f957"))).get_BroadcastType(&_ret));
 		return _ret;
 	}
 	final bool IsEmergencyAlert()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBroadcastMessage).get_IsEmergencyAlert(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsBroadcastMessage)this.asInterface(uuid("75aebbf1-e4b7-4874-a09c-2956e592f957"))).get_IsEmergencyAlert(&_ret));
 		return _ret;
 	}
 	final bool IsUserPopupRequested()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsBroadcastMessage).get_IsUserPopupRequested(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsBroadcastMessage)this.asInterface(uuid("75aebbf1-e4b7-4874-a09c-2956e592f957"))).get_IsUserPopupRequested(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsMessageType MessageType()
 	{
 		Windows.Devices.Sms.SmsMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageType(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_MessageType(&_ret));
 		return _ret;
 	}
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.CellularClass CellularClass()
 	{
 		Windows.Devices.Sms.CellularClass _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_CellularClass(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_CellularClass(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsMessageClass MessageClass()
 	{
 		Windows.Devices.Sms.SmsMessageClass _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageClass(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_MessageClass(&_ret));
 		return _ret;
 	}
 	final HSTRING SimIccId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_SimIccId(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_SimIccId(&_ret));
 		return _ret;
 	}
 }
@@ -886,67 +886,67 @@ extern(Windows):
 	final Windows.Devices.Sms.SendSmsMessageOperation SendMessageAsync(Windows.Devices.Sms.ISmsMessage message)
 	{
 		Windows.Devices.Sms.SendSmsMessageOperation _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice).abi_SendMessageAsync(message, &_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDevice)this.asInterface(uuid("091791ed-872b-4eec-9c72-ab11627b34ec"))).abi_SendMessageAsync(message, &_ret));
 		return _ret;
 	}
 	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
 	final Windows.Devices.Sms.SmsEncodedLength CalculateLength(Windows.Devices.Sms.SmsTextMessage message)
 	{
 		Windows.Devices.Sms.SmsEncodedLength _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice).abi_CalculateLength(message, &_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDevice)this.asInterface(uuid("091791ed-872b-4eec-9c72-ab11627b34ec"))).abi_CalculateLength(message, &_ret));
 		return _ret;
 	}
 	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
 	final HSTRING AccountPhoneNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice).get_AccountPhoneNumber(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDevice)this.asInterface(uuid("091791ed-872b-4eec-9c72-ab11627b34ec"))).get_AccountPhoneNumber(&_ret));
 		return _ret;
 	}
 	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
 	final Windows.Devices.Sms.CellularClass CellularClass()
 	{
 		Windows.Devices.Sms.CellularClass _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice).get_CellularClass(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDevice)this.asInterface(uuid("091791ed-872b-4eec-9c72-ab11627b34ec"))).get_CellularClass(&_ret));
 		return _ret;
 	}
 	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
 	final Windows.Devices.Sms.SmsDeviceMessageStore MessageStore()
 	{
 		Windows.Devices.Sms.SmsDeviceMessageStore _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice).get_MessageStore(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDevice)this.asInterface(uuid("091791ed-872b-4eec-9c72-ab11627b34ec"))).get_MessageStore(&_ret));
 		return _ret;
 	}
 	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
 	final Windows.Devices.Sms.SmsDeviceStatus DeviceStatus()
 	{
 		Windows.Devices.Sms.SmsDeviceStatus _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice).get_DeviceStatus(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDevice)this.asInterface(uuid("091791ed-872b-4eec-9c72-ab11627b34ec"))).get_DeviceStatus(&_ret));
 		return _ret;
 	}
 	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
 	final EventRegistrationToken OnSmsMessageReceived(void delegate(Windows.Devices.Sms.SmsDevice, Windows.Devices.Sms.SmsMessageReceivedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice).add_SmsMessageReceived(event!(Windows.Devices.Sms.SmsMessageReceivedEventHandler, Windows.Devices.Sms.SmsDevice, Windows.Devices.Sms.SmsMessageReceivedEventArgs)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDevice)this.asInterface(uuid("091791ed-872b-4eec-9c72-ab11627b34ec"))).add_SmsMessageReceived(event!(Windows.Devices.Sms.SmsMessageReceivedEventHandler, Windows.Devices.Sms.SmsDevice, Windows.Devices.Sms.SmsMessageReceivedEventArgs)(fn), &tok));
 		return tok;
 	}
 	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
 	final void removeSmsMessageReceived(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice).remove_SmsMessageReceived(eventCookie));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDevice)this.asInterface(uuid("091791ed-872b-4eec-9c72-ab11627b34ec"))).remove_SmsMessageReceived(eventCookie));
 	}
 	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
 	final EventRegistrationToken OnSmsDeviceStatusChanged(void delegate(Windows.Devices.Sms.SmsDevice) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice).add_SmsDeviceStatusChanged(event!(Windows.Devices.Sms.SmsDeviceStatusChangedEventHandler, Windows.Devices.Sms.SmsDevice)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDevice)this.asInterface(uuid("091791ed-872b-4eec-9c72-ab11627b34ec"))).add_SmsDeviceStatusChanged(event!(Windows.Devices.Sms.SmsDeviceStatusChangedEventHandler, Windows.Devices.Sms.SmsDevice)(fn), &tok));
 		return tok;
 	}
 	deprecated("SmsDevice may be altered or unavailable for releases after Windows 10. Instead, use SmsDevice2.")
 	final void removeSmsDeviceStatusChanged(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice).remove_SmsDeviceStatusChanged(eventCookie));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDevice)this.asInterface(uuid("091791ed-872b-4eec-9c72-ab11627b34ec"))).remove_SmsDeviceStatusChanged(eventCookie));
 	}
 
 	private static Windows.Devices.Sms.ISmsDeviceStatics _staticInstance;
@@ -959,21 +959,21 @@ extern(Windows):
 	static HSTRING GetDeviceSelector()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Sms.ISmsDeviceStatics).abi_GetDeviceSelector(&_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
 		return _ret;
 	}
 	deprecated("ISmsDeviceStatics may be altered or unavailable for releases after Windows 10.")
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsDevice) FromIdAsync(HSTRING deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsDevice) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Sms.ISmsDeviceStatics).abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
 		return _ret;
 	}
 	deprecated("ISmsDeviceStatics may be altered or unavailable for releases after Windows 10.")
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsDevice) GetDefaultAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsDevice) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Sms.ISmsDeviceStatics).abi_GetDefaultAsync(&_ret));
+		Debug.OK(staticInstance.abi_GetDefaultAsync(&_ret));
 		return _ret;
 	}
 }
@@ -984,64 +984,64 @@ extern(Windows):
 	final HSTRING SmscAddress()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).get_SmscAddress(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDevice2)this.asInterface(uuid("bd8a5c13-e522-46cb-b8d5-9ead30fb6c47"))).get_SmscAddress(&_ret));
 		return _ret;
 	}
 	final void SmscAddress(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).set_SmscAddress(value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDevice2)this.asInterface(uuid("bd8a5c13-e522-46cb-b8d5-9ead30fb6c47"))).set_SmscAddress(value));
 	}
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDevice2)this.asInterface(uuid("bd8a5c13-e522-46cb-b8d5-9ead30fb6c47"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final HSTRING ParentDeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).get_ParentDeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDevice2)this.asInterface(uuid("bd8a5c13-e522-46cb-b8d5-9ead30fb6c47"))).get_ParentDeviceId(&_ret));
 		return _ret;
 	}
 	final HSTRING AccountPhoneNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).get_AccountPhoneNumber(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDevice2)this.asInterface(uuid("bd8a5c13-e522-46cb-b8d5-9ead30fb6c47"))).get_AccountPhoneNumber(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.CellularClass CellularClass()
 	{
 		Windows.Devices.Sms.CellularClass _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).get_CellularClass(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDevice2)this.asInterface(uuid("bd8a5c13-e522-46cb-b8d5-9ead30fb6c47"))).get_CellularClass(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsDeviceStatus DeviceStatus()
 	{
 		Windows.Devices.Sms.SmsDeviceStatus _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).get_DeviceStatus(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDevice2)this.asInterface(uuid("bd8a5c13-e522-46cb-b8d5-9ead30fb6c47"))).get_DeviceStatus(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsEncodedLength CalculateLength(Windows.Devices.Sms.ISmsMessageBase message)
 	{
 		Windows.Devices.Sms.SmsEncodedLength _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).abi_CalculateLength(message, &_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDevice2)this.asInterface(uuid("bd8a5c13-e522-46cb-b8d5-9ead30fb6c47"))).abi_CalculateLength(message, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsSendMessageResult) SendMessageAndGetResultAsync(Windows.Devices.Sms.ISmsMessageBase message)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.SmsSendMessageResult) _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).abi_SendMessageAndGetResultAsync(message, &_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDevice2)this.asInterface(uuid("bd8a5c13-e522-46cb-b8d5-9ead30fb6c47"))).abi_SendMessageAndGetResultAsync(message, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnDeviceStatusChanged(void delegate(Windows.Devices.Sms.SmsDevice2, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).add_DeviceStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sms.SmsDevice2, IInspectable), Windows.Devices.Sms.SmsDevice2, IInspectable)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDevice2)this.asInterface(uuid("bd8a5c13-e522-46cb-b8d5-9ead30fb6c47"))).add_DeviceStatusChanged(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sms.SmsDevice2, IInspectable), Windows.Devices.Sms.SmsDevice2, IInspectable)(fn), &tok));
 		return tok;
 	}
 	final void removeDeviceStatusChanged(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDevice2).remove_DeviceStatusChanged(eventCookie));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDevice2)this.asInterface(uuid("bd8a5c13-e522-46cb-b8d5-9ead30fb6c47"))).remove_DeviceStatusChanged(eventCookie));
 	}
 
 	private static Windows.Devices.Sms.ISmsDevice2Statics _staticInstance;
@@ -1053,25 +1053,25 @@ extern(Windows):
 	static HSTRING GetDeviceSelector()
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Sms.ISmsDevice2Statics).abi_GetDeviceSelector(&_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Sms.SmsDevice2 FromId(HSTRING deviceId)
 	{
 		Windows.Devices.Sms.SmsDevice2 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Sms.ISmsDevice2Statics).abi_FromId(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromId(deviceId, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Sms.SmsDevice2 GetDefault()
 	{
 		Windows.Devices.Sms.SmsDevice2 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Sms.ISmsDevice2Statics).abi_GetDefault(&_ret));
+		Debug.OK(staticInstance.abi_GetDefault(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Sms.SmsDevice2 FromParentId(HSTRING parentDeviceId)
 	{
 		Windows.Devices.Sms.SmsDevice2 _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Sms.ISmsDevice2Statics).abi_FromParentId(parentDeviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromParentId(parentDeviceId, &_ret));
 		return _ret;
 	}
 }
@@ -1083,35 +1083,35 @@ extern(Windows):
 	final Windows.Foundation.IAsyncAction DeleteMessageAsync(UINT32 messageId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDeviceMessageStore).abi_DeleteMessageAsync(messageId, &_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDeviceMessageStore)this.asInterface(uuid("9889f253-f188-4427-8d54-ce0c2423c5c1"))).abi_DeleteMessageAsync(messageId, &_ret));
 		return _ret;
 	}
 	deprecated("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")
 	final Windows.Foundation.IAsyncAction DeleteMessagesAsync(Windows.Devices.Sms.SmsMessageFilter messageFilter)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDeviceMessageStore).abi_DeleteMessagesAsync(messageFilter, &_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDeviceMessageStore)this.asInterface(uuid("9889f253-f188-4427-8d54-ce0c2423c5c1"))).abi_DeleteMessagesAsync(messageFilter, &_ret));
 		return _ret;
 	}
 	deprecated("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.ISmsMessage) GetMessageAsync(UINT32 messageId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Sms.ISmsMessage) _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDeviceMessageStore).abi_GetMessageAsync(messageId, &_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDeviceMessageStore)this.asInterface(uuid("9889f253-f188-4427-8d54-ce0c2423c5c1"))).abi_GetMessageAsync(messageId, &_ret));
 		return _ret;
 	}
 	deprecated("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage), INT32) GetMessagesAsync(Windows.Devices.Sms.SmsMessageFilter messageFilter)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsMessage), INT32) _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDeviceMessageStore).abi_GetMessagesAsync(messageFilter, &_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDeviceMessageStore)this.asInterface(uuid("9889f253-f188-4427-8d54-ce0c2423c5c1"))).abi_GetMessagesAsync(messageFilter, &_ret));
 		return _ret;
 	}
 	deprecated("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")
 	final UINT32 MaxMessages()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsDeviceMessageStore).get_MaxMessages(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsDeviceMessageStore)this.asInterface(uuid("9889f253-f188-4427-8d54-ce0c2423c5c1"))).get_MaxMessages(&_ret));
 		return _ret;
 	}
 }
@@ -1122,90 +1122,90 @@ extern(Windows):
 	final Windows.Devices.Sms.SmsMessageType MessageType()
 	{
 		Windows.Devices.Sms.SmsMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_MessageType(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsFilterRule)this.asInterface(uuid("40e32fae-b049-4fbc-afe9-e2a610eff55c"))).get_MessageType(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) ImsiPrefixes()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_ImsiPrefixes(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsFilterRule)this.asInterface(uuid("40e32fae-b049-4fbc-afe9-e2a610eff55c"))).get_ImsiPrefixes(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) DeviceIds()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_DeviceIds(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsFilterRule)this.asInterface(uuid("40e32fae-b049-4fbc-afe9-e2a610eff55c"))).get_DeviceIds(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) SenderNumbers()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_SenderNumbers(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsFilterRule)this.asInterface(uuid("40e32fae-b049-4fbc-afe9-e2a610eff55c"))).get_SenderNumbers(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) TextMessagePrefixes()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_TextMessagePrefixes(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsFilterRule)this.asInterface(uuid("40e32fae-b049-4fbc-afe9-e2a610eff55c"))).get_TextMessagePrefixes(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(INT32) PortNumbers()
 	{
 		Windows.Foundation.Collections.IVector!(INT32) _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_PortNumbers(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsFilterRule)this.asInterface(uuid("40e32fae-b049-4fbc-afe9-e2a610eff55c"))).get_PortNumbers(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.CellularClass CellularClass()
 	{
 		Windows.Devices.Sms.CellularClass _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_CellularClass(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsFilterRule)this.asInterface(uuid("40e32fae-b049-4fbc-afe9-e2a610eff55c"))).get_CellularClass(&_ret));
 		return _ret;
 	}
 	final void CellularClass(Windows.Devices.Sms.CellularClass value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).set_CellularClass(value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsFilterRule)this.asInterface(uuid("40e32fae-b049-4fbc-afe9-e2a610eff55c"))).set_CellularClass(value));
 	}
 	final Windows.Foundation.Collections.IVector!(INT32) ProtocolIds()
 	{
 		Windows.Foundation.Collections.IVector!(INT32) _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_ProtocolIds(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsFilterRule)this.asInterface(uuid("40e32fae-b049-4fbc-afe9-e2a610eff55c"))).get_ProtocolIds(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(INT32) TeleserviceIds()
 	{
 		Windows.Foundation.Collections.IVector!(INT32) _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_TeleserviceIds(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsFilterRule)this.asInterface(uuid("40e32fae-b049-4fbc-afe9-e2a610eff55c"))).get_TeleserviceIds(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) WapApplicationIds()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_WapApplicationIds(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsFilterRule)this.asInterface(uuid("40e32fae-b049-4fbc-afe9-e2a610eff55c"))).get_WapApplicationIds(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) WapContentTypes()
 	{
 		Windows.Foundation.Collections.IVector!(HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_WapContentTypes(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsFilterRule)this.asInterface(uuid("40e32fae-b049-4fbc-afe9-e2a610eff55c"))).get_WapContentTypes(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Devices.Sms.SmsBroadcastType) BroadcastTypes()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Devices.Sms.SmsBroadcastType) _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_BroadcastTypes(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsFilterRule)this.asInterface(uuid("40e32fae-b049-4fbc-afe9-e2a610eff55c"))).get_BroadcastTypes(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(INT32) BroadcastChannels()
 	{
 		Windows.Foundation.Collections.IVector!(INT32) _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRule).get_BroadcastChannels(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsFilterRule)this.asInterface(uuid("40e32fae-b049-4fbc-afe9-e2a610eff55c"))).get_BroadcastChannels(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Sms.SmsFilterRule New(Windows.Devices.Sms.SmsMessageType messageType)
 	{
 		auto factory = factory!(Windows.Devices.Sms.ISmsFilterRuleFactory);
 		Windows.Devices.Sms.SmsFilterRule _ret;
-		Debug.OK(factory.as!(Windows.Devices.Sms.ISmsFilterRuleFactory).abi_CreateFilterRule(messageType, &_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsFilterRuleFactory)factory.asInterface(uuid("00c36508-6296-4f29-9aad-8920ceba3ce8"))).abi_CreateFilterRule(messageType, &_ret));
 		return _ret;
 	}
 }
@@ -1216,20 +1216,20 @@ extern(Windows):
 	final Windows.Devices.Sms.SmsFilterActionType ActionType()
 	{
 		Windows.Devices.Sms.SmsFilterActionType _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRules).get_ActionType(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsFilterRules)this.asInterface(uuid("4e47eafb-79cd-4881-9894-55a4135b23fa"))).get_ActionType(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.Devices.Sms.SmsFilterRule) Rules()
 	{
 		Windows.Foundation.Collections.IVector!(Windows.Devices.Sms.SmsFilterRule) _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsFilterRules).get_Rules(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsFilterRules)this.asInterface(uuid("4e47eafb-79cd-4881-9894-55a4135b23fa"))).get_Rules(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Sms.SmsFilterRules New(Windows.Devices.Sms.SmsFilterActionType actionType)
 	{
 		auto factory = factory!(Windows.Devices.Sms.ISmsFilterRulesFactory);
 		Windows.Devices.Sms.SmsFilterRules _ret;
-		Debug.OK(factory.as!(Windows.Devices.Sms.ISmsFilterRulesFactory).abi_CreateFilterRules(actionType, &_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsFilterRulesFactory)factory.asInterface(uuid("a09924ed-6e2e-4530-9fde-465d02eed00e"))).abi_CreateFilterRules(actionType, &_ret));
 		return _ret;
 	}
 }
@@ -1241,14 +1241,14 @@ extern(Windows):
 	final Windows.Devices.Sms.SmsTextMessage TextMessage()
 	{
 		Windows.Devices.Sms.SmsTextMessage _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageReceivedEventArgs).get_TextMessage(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageReceivedEventArgs)this.asInterface(uuid("08e80a98-b8e5-41c1-a3d8-d3abfae22675"))).get_TextMessage(&_ret));
 		return _ret;
 	}
 	deprecated("SmsMessageReceivedEventArgs may be altered or unavailable for releases after Windows 10.")
 	final Windows.Devices.Sms.SmsBinaryMessage BinaryMessage()
 	{
 		Windows.Devices.Sms.SmsBinaryMessage _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageReceivedEventArgs).get_BinaryMessage(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageReceivedEventArgs)this.asInterface(uuid("08e80a98-b8e5-41c1-a3d8-d3abfae22675"))).get_BinaryMessage(&_ret));
 		return _ret;
 	}
 }
@@ -1259,52 +1259,52 @@ extern(Windows):
 	final Windows.Devices.Sms.SmsMessageType MessageType()
 	{
 		Windows.Devices.Sms.SmsMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails).get_MessageType(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails)this.asInterface(uuid("2bcfcbd4-2657-4128-ad5f-e3877132bdb1"))).get_MessageType(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsTextMessage2 TextMessage()
 	{
 		Windows.Devices.Sms.SmsTextMessage2 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails).get_TextMessage(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails)this.asInterface(uuid("2bcfcbd4-2657-4128-ad5f-e3877132bdb1"))).get_TextMessage(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsWapMessage WapMessage()
 	{
 		Windows.Devices.Sms.SmsWapMessage _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails).get_WapMessage(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails)this.asInterface(uuid("2bcfcbd4-2657-4128-ad5f-e3877132bdb1"))).get_WapMessage(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsAppMessage AppMessage()
 	{
 		Windows.Devices.Sms.SmsAppMessage _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails).get_AppMessage(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails)this.asInterface(uuid("2bcfcbd4-2657-4128-ad5f-e3877132bdb1"))).get_AppMessage(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsBroadcastMessage BroadcastMessage()
 	{
 		Windows.Devices.Sms.SmsBroadcastMessage _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails).get_BroadcastMessage(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails)this.asInterface(uuid("2bcfcbd4-2657-4128-ad5f-e3877132bdb1"))).get_BroadcastMessage(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsVoicemailMessage VoicemailMessage()
 	{
 		Windows.Devices.Sms.SmsVoicemailMessage _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails).get_VoicemailMessage(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails)this.asInterface(uuid("2bcfcbd4-2657-4128-ad5f-e3877132bdb1"))).get_VoicemailMessage(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsStatusMessage StatusMessage()
 	{
 		Windows.Devices.Sms.SmsStatusMessage _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails).get_StatusMessage(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails)this.asInterface(uuid("2bcfcbd4-2657-4128-ad5f-e3877132bdb1"))).get_StatusMessage(&_ret));
 		return _ret;
 	}
 	final void Drop()
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails).abi_Drop());
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails)this.asInterface(uuid("2bcfcbd4-2657-4128-ad5f-e3877132bdb1"))).abi_Drop());
 	}
 	final void Accept()
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails).abi_Accept());
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageReceivedTriggerDetails)this.asInterface(uuid("2bcfcbd4-2657-4128-ad5f-e3877132bdb1"))).abi_Accept());
 	}
 }
 
@@ -1314,22 +1314,22 @@ extern(Windows):
 	final HSTRING Id()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageRegistration).get_Id(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageRegistration)this.asInterface(uuid("1720503e-f34f-446b-83b3-0ff19923b409"))).get_Id(&_ret));
 		return _ret;
 	}
 	final void Unregister()
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageRegistration).abi_Unregister());
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageRegistration)this.asInterface(uuid("1720503e-f34f-446b-83b3-0ff19923b409"))).abi_Unregister());
 	}
 	final EventRegistrationToken OnMessageReceived(void delegate(Windows.Devices.Sms.SmsMessageRegistration, Windows.Devices.Sms.SmsMessageReceivedTriggerDetails) fn)
 	{
 		EventRegistrationToken tok;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageRegistration).add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sms.SmsMessageRegistration, Windows.Devices.Sms.SmsMessageReceivedTriggerDetails), Windows.Devices.Sms.SmsMessageRegistration, Windows.Devices.Sms.SmsMessageReceivedTriggerDetails)(fn), &tok));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageRegistration)this.asInterface(uuid("1720503e-f34f-446b-83b3-0ff19923b409"))).add_MessageReceived(event!(Windows.Foundation.TypedEventHandler!(Windows.Devices.Sms.SmsMessageRegistration, Windows.Devices.Sms.SmsMessageReceivedTriggerDetails), Windows.Devices.Sms.SmsMessageRegistration, Windows.Devices.Sms.SmsMessageReceivedTriggerDetails)(fn), &tok));
 		return tok;
 	}
 	final void removeMessageReceived(EventRegistrationToken eventCookie)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageRegistration).remove_MessageReceived(eventCookie));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageRegistration)this.asInterface(uuid("1720503e-f34f-446b-83b3-0ff19923b409"))).remove_MessageReceived(eventCookie));
 	}
 
 	private static Windows.Devices.Sms.ISmsMessageRegistrationStatics _staticInstance;
@@ -1341,13 +1341,13 @@ extern(Windows):
 	static Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.SmsMessageRegistration) AllRegistrations()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.SmsMessageRegistration) _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Sms.ISmsMessageRegistrationStatics).get_AllRegistrations(&_ret));
+		Debug.OK(staticInstance.get_AllRegistrations(&_ret));
 		return _ret;
 	}
 	static Windows.Devices.Sms.SmsMessageRegistration Register(HSTRING id, Windows.Devices.Sms.SmsFilterRules filterRules)
 	{
 		Windows.Devices.Sms.SmsMessageRegistration _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Sms.ISmsMessageRegistrationStatics).abi_Register(id, filterRules, &_ret));
+		Debug.OK(staticInstance.abi_Register(id, filterRules, &_ret));
 		return _ret;
 	}
 }
@@ -1359,28 +1359,28 @@ extern(Windows):
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsReceivedEventDetails).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsReceivedEventDetails)this.asInterface(uuid("5bb50f15-e46d-4c82-847d-5a0304c1d53d"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	deprecated("SmsReceivedEventDetails may be altered or unavailable for releases after Windows 10. Instead, use SmsMessageReceivedTriggerDetails.")
 	final UINT32 MessageIndex()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsReceivedEventDetails).get_MessageIndex(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsReceivedEventDetails)this.asInterface(uuid("5bb50f15-e46d-4c82-847d-5a0304c1d53d"))).get_MessageIndex(&_ret));
 		return _ret;
 	}
 	deprecated("SmsReceivedEventDetails may be altered or unavailable for releases after Windows 10. Instead, use SmsMessageReceivedTriggerDetails.")
 	final Windows.Devices.Sms.SmsMessageClass MessageClass()
 	{
 		Windows.Devices.Sms.SmsMessageClass _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsReceivedEventDetails2).get_MessageClass(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsReceivedEventDetails2)this.asInterface(uuid("40e05c86-a7b4-4771-9ae7-0b5ffb12c03a"))).get_MessageClass(&_ret));
 		return _ret;
 	}
 	deprecated("SmsReceivedEventDetails may be altered or unavailable for releases after Windows 10. Instead, use SmsMessageReceivedTriggerDetails.")
 	final Windows.Devices.Sms.SmsBinaryMessage BinaryMessage()
 	{
 		Windows.Devices.Sms.SmsBinaryMessage _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsReceivedEventDetails2).get_BinaryMessage(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsReceivedEventDetails2)this.asInterface(uuid("40e05c86-a7b4-4771-9ae7-0b5ffb12c03a"))).get_BinaryMessage(&_ret));
 		return _ret;
 	}
 }
@@ -1391,43 +1391,43 @@ extern(Windows):
 	final bool IsSuccessful()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsSendMessageResult).get_IsSuccessful(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsSendMessageResult)this.asInterface(uuid("db139af2-78c9-4feb-9622-452328088d62"))).get_IsSuccessful(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(INT32) MessageReferenceNumbers()
 	{
 		Windows.Foundation.Collections.IVectorView!(INT32) _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsSendMessageResult).get_MessageReferenceNumbers(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsSendMessageResult)this.asInterface(uuid("db139af2-78c9-4feb-9622-452328088d62"))).get_MessageReferenceNumbers(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.CellularClass CellularClass()
 	{
 		Windows.Devices.Sms.CellularClass _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsSendMessageResult).get_CellularClass(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsSendMessageResult)this.asInterface(uuid("db139af2-78c9-4feb-9622-452328088d62"))).get_CellularClass(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsModemErrorCode ModemErrorCode()
 	{
 		Windows.Devices.Sms.SmsModemErrorCode _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsSendMessageResult).get_ModemErrorCode(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsSendMessageResult)this.asInterface(uuid("db139af2-78c9-4feb-9622-452328088d62"))).get_ModemErrorCode(&_ret));
 		return _ret;
 	}
 	final bool IsErrorTransient()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsSendMessageResult).get_IsErrorTransient(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsSendMessageResult)this.asInterface(uuid("db139af2-78c9-4feb-9622-452328088d62"))).get_IsErrorTransient(&_ret));
 		return _ret;
 	}
 	final INT32 NetworkCauseCode()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsSendMessageResult).get_NetworkCauseCode(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsSendMessageResult)this.asInterface(uuid("db139af2-78c9-4feb-9622-452328088d62"))).get_NetworkCauseCode(&_ret));
 		return _ret;
 	}
 	final INT32 TransportFailureCause()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsSendMessageResult).get_TransportFailureCause(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsSendMessageResult)this.asInterface(uuid("db139af2-78c9-4feb-9622-452328088d62"))).get_TransportFailureCause(&_ret));
 		return _ret;
 	}
 }
@@ -1438,73 +1438,73 @@ extern(Windows):
 	final HSTRING To()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsStatusMessage).get_To(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsStatusMessage)this.asInterface(uuid("e6d28342-b70b-4677-9379-c9783fdff8f4"))).get_To(&_ret));
 		return _ret;
 	}
 	final HSTRING From()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsStatusMessage).get_From(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsStatusMessage)this.asInterface(uuid("e6d28342-b70b-4677-9379-c9783fdff8f4"))).get_From(&_ret));
 		return _ret;
 	}
 	final HSTRING Body()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsStatusMessage).get_Body(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsStatusMessage)this.asInterface(uuid("e6d28342-b70b-4677-9379-c9783fdff8f4"))).get_Body(&_ret));
 		return _ret;
 	}
 	final INT32 Status()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsStatusMessage).get_Status(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsStatusMessage)this.asInterface(uuid("e6d28342-b70b-4677-9379-c9783fdff8f4"))).get_Status(&_ret));
 		return _ret;
 	}
 	final INT32 MessageReferenceNumber()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsStatusMessage).get_MessageReferenceNumber(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsStatusMessage)this.asInterface(uuid("e6d28342-b70b-4677-9379-c9783fdff8f4"))).get_MessageReferenceNumber(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime ServiceCenterTimestamp()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsStatusMessage).get_ServiceCenterTimestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsStatusMessage)this.asInterface(uuid("e6d28342-b70b-4677-9379-c9783fdff8f4"))).get_ServiceCenterTimestamp(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.DateTime DischargeTime()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsStatusMessage).get_DischargeTime(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsStatusMessage)this.asInterface(uuid("e6d28342-b70b-4677-9379-c9783fdff8f4"))).get_DischargeTime(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsMessageType MessageType()
 	{
 		Windows.Devices.Sms.SmsMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageType(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_MessageType(&_ret));
 		return _ret;
 	}
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.CellularClass CellularClass()
 	{
 		Windows.Devices.Sms.CellularClass _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_CellularClass(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_CellularClass(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsMessageClass MessageClass()
 	{
 		Windows.Devices.Sms.SmsMessageClass _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageClass(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_MessageClass(&_ret));
 		return _ret;
 	}
 	final HSTRING SimIccId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_SimIccId(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_SimIccId(&_ret));
 		return _ret;
 	}
 }
@@ -1516,95 +1516,95 @@ extern(Windows):
 	final Windows.Foundation.DateTime Timestamp()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage)this.asInterface(uuid("d61c904c-a495-487f-9a6f-971548c5bc9f"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
 	final UINT32 PartReferenceId()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).get_PartReferenceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage)this.asInterface(uuid("d61c904c-a495-487f-9a6f-971548c5bc9f"))).get_PartReferenceId(&_ret));
 		return _ret;
 	}
 	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
 	final UINT32 PartNumber()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).get_PartNumber(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage)this.asInterface(uuid("d61c904c-a495-487f-9a6f-971548c5bc9f"))).get_PartNumber(&_ret));
 		return _ret;
 	}
 	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
 	final UINT32 PartCount()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).get_PartCount(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage)this.asInterface(uuid("d61c904c-a495-487f-9a6f-971548c5bc9f"))).get_PartCount(&_ret));
 		return _ret;
 	}
 	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
 	final HSTRING To()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).get_To(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage)this.asInterface(uuid("d61c904c-a495-487f-9a6f-971548c5bc9f"))).get_To(&_ret));
 		return _ret;
 	}
 	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
 	final void To(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).set_To(value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage)this.asInterface(uuid("d61c904c-a495-487f-9a6f-971548c5bc9f"))).set_To(value));
 	}
 	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
 	final HSTRING From()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).get_From(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage)this.asInterface(uuid("d61c904c-a495-487f-9a6f-971548c5bc9f"))).get_From(&_ret));
 		return _ret;
 	}
 	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
 	final void From(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).set_From(value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage)this.asInterface(uuid("d61c904c-a495-487f-9a6f-971548c5bc9f"))).set_From(value));
 	}
 	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
 	final HSTRING Body()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).get_Body(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage)this.asInterface(uuid("d61c904c-a495-487f-9a6f-971548c5bc9f"))).get_Body(&_ret));
 		return _ret;
 	}
 	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
 	final void Body(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).set_Body(value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage)this.asInterface(uuid("d61c904c-a495-487f-9a6f-971548c5bc9f"))).set_Body(value));
 	}
 	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
 	final Windows.Devices.Sms.SmsEncoding Encoding()
 	{
 		Windows.Devices.Sms.SmsEncoding _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).get_Encoding(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage)this.asInterface(uuid("d61c904c-a495-487f-9a6f-971548c5bc9f"))).get_Encoding(&_ret));
 		return _ret;
 	}
 	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
 	final void Encoding(Windows.Devices.Sms.SmsEncoding value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).set_Encoding(value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage)this.asInterface(uuid("d61c904c-a495-487f-9a6f-971548c5bc9f"))).set_Encoding(value));
 	}
 	deprecated("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsBinaryMessage) ToBinaryMessages(Windows.Devices.Sms.SmsDataFormat format)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sms.ISmsBinaryMessage) _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage).abi_ToBinaryMessages(format, &_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage)this.asInterface(uuid("d61c904c-a495-487f-9a6f-971548c5bc9f"))).abi_ToBinaryMessages(format, &_ret));
 		return _ret;
 	}
 	final UINT32 Id()
 	{
 		UINT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessage).get_Id(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessage)this.asInterface(uuid("ed3c5e28-6984-4b07-811d-8d5906ed3cea"))).get_Id(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsMessageClass MessageClass()
 	{
 		Windows.Devices.Sms.SmsMessageClass _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessage).get_MessageClass(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessage)this.asInterface(uuid("ed3c5e28-6984-4b07-811d-8d5906ed3cea"))).get_MessageClass(&_ret));
 		return _ret;
 	}
 
@@ -1618,21 +1618,21 @@ extern(Windows):
 	static Windows.Devices.Sms.SmsTextMessage FromBinaryMessage(Windows.Devices.Sms.SmsBinaryMessage binaryMessage)
 	{
 		Windows.Devices.Sms.SmsTextMessage _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Sms.ISmsTextMessageStatics).abi_FromBinaryMessage(binaryMessage, &_ret));
+		Debug.OK(staticInstance.abi_FromBinaryMessage(binaryMessage, &_ret));
 		return _ret;
 	}
 	deprecated("ISmsTextMessageStatics may be altered or unavailable for releases after Windows 10.")
 	static Windows.Devices.Sms.SmsTextMessage FromBinaryData(Windows.Devices.Sms.SmsDataFormat format, UINT32 __valueSize, ubyte* value)
 	{
 		Windows.Devices.Sms.SmsTextMessage _ret;
-		Debug.OK(staticInstance.as!(Windows.Devices.Sms.ISmsTextMessageStatics).abi_FromBinaryData(format, __valueSize, value, &_ret));
+		Debug.OK(staticInstance.abi_FromBinaryData(format, __valueSize, value, &_ret));
 		return _ret;
 	}
 	static SmsTextMessage New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(SmsTextMessage).abi_ActivateInstance(&ret));
-		return ret.as!(SmsTextMessage);
+		return cast(SmsTextMessage) ret;
 	}
 }
 
@@ -1642,122 +1642,122 @@ extern(Windows):
 	final Windows.Foundation.DateTime Timestamp()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage2)this.asInterface(uuid("22a0d893-4555-4755-b5a1-e7fd84955f8d"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final HSTRING To()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).get_To(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage2)this.asInterface(uuid("22a0d893-4555-4755-b5a1-e7fd84955f8d"))).get_To(&_ret));
 		return _ret;
 	}
 	final void To(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).set_To(value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage2)this.asInterface(uuid("22a0d893-4555-4755-b5a1-e7fd84955f8d"))).set_To(value));
 	}
 	final HSTRING From()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).get_From(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage2)this.asInterface(uuid("22a0d893-4555-4755-b5a1-e7fd84955f8d"))).get_From(&_ret));
 		return _ret;
 	}
 	final HSTRING Body()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).get_Body(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage2)this.asInterface(uuid("22a0d893-4555-4755-b5a1-e7fd84955f8d"))).get_Body(&_ret));
 		return _ret;
 	}
 	final void Body(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).set_Body(value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage2)this.asInterface(uuid("22a0d893-4555-4755-b5a1-e7fd84955f8d"))).set_Body(value));
 	}
 	final Windows.Devices.Sms.SmsEncoding Encoding()
 	{
 		Windows.Devices.Sms.SmsEncoding _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).get_Encoding(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage2)this.asInterface(uuid("22a0d893-4555-4755-b5a1-e7fd84955f8d"))).get_Encoding(&_ret));
 		return _ret;
 	}
 	final void Encoding(Windows.Devices.Sms.SmsEncoding value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).set_Encoding(value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage2)this.asInterface(uuid("22a0d893-4555-4755-b5a1-e7fd84955f8d"))).set_Encoding(value));
 	}
 	final HSTRING CallbackNumber()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).get_CallbackNumber(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage2)this.asInterface(uuid("22a0d893-4555-4755-b5a1-e7fd84955f8d"))).get_CallbackNumber(&_ret));
 		return _ret;
 	}
 	final void CallbackNumber(HSTRING value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).set_CallbackNumber(value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage2)this.asInterface(uuid("22a0d893-4555-4755-b5a1-e7fd84955f8d"))).set_CallbackNumber(value));
 	}
 	final bool IsDeliveryNotificationEnabled()
 	{
 		bool _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).get_IsDeliveryNotificationEnabled(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage2)this.asInterface(uuid("22a0d893-4555-4755-b5a1-e7fd84955f8d"))).get_IsDeliveryNotificationEnabled(&_ret));
 		return _ret;
 	}
 	final void IsDeliveryNotificationEnabled(bool value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).set_IsDeliveryNotificationEnabled(value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage2)this.asInterface(uuid("22a0d893-4555-4755-b5a1-e7fd84955f8d"))).set_IsDeliveryNotificationEnabled(value));
 	}
 	final INT32 RetryAttemptCount()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).get_RetryAttemptCount(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage2)this.asInterface(uuid("22a0d893-4555-4755-b5a1-e7fd84955f8d"))).get_RetryAttemptCount(&_ret));
 		return _ret;
 	}
 	final void RetryAttemptCount(INT32 value)
 	{
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).set_RetryAttemptCount(value));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage2)this.asInterface(uuid("22a0d893-4555-4755-b5a1-e7fd84955f8d"))).set_RetryAttemptCount(value));
 	}
 	final INT32 TeleserviceId()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).get_TeleserviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage2)this.asInterface(uuid("22a0d893-4555-4755-b5a1-e7fd84955f8d"))).get_TeleserviceId(&_ret));
 		return _ret;
 	}
 	final INT32 ProtocolId()
 	{
 		INT32 _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsTextMessage2).get_ProtocolId(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsTextMessage2)this.asInterface(uuid("22a0d893-4555-4755-b5a1-e7fd84955f8d"))).get_ProtocolId(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsMessageType MessageType()
 	{
 		Windows.Devices.Sms.SmsMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageType(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_MessageType(&_ret));
 		return _ret;
 	}
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.CellularClass CellularClass()
 	{
 		Windows.Devices.Sms.CellularClass _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_CellularClass(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_CellularClass(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsMessageClass MessageClass()
 	{
 		Windows.Devices.Sms.SmsMessageClass _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageClass(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_MessageClass(&_ret));
 		return _ret;
 	}
 	final HSTRING SimIccId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_SimIccId(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_SimIccId(&_ret));
 		return _ret;
 	}
 	static SmsTextMessage2 New()
 	{
 		IInspectable ret;
 		Debug.OK(activationFactory!(SmsTextMessage2).abi_ActivateInstance(&ret));
-		return ret.as!(SmsTextMessage2);
+		return cast(SmsTextMessage2) ret;
 	}
 }
 
@@ -1767,55 +1767,55 @@ extern(Windows):
 	final Windows.Foundation.DateTime Timestamp()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsVoicemailMessage).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsVoicemailMessage)this.asInterface(uuid("271aa0a6-95b1-44ff-bcb8-b8fdd7e08bc3"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final HSTRING To()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsVoicemailMessage).get_To(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsVoicemailMessage)this.asInterface(uuid("271aa0a6-95b1-44ff-bcb8-b8fdd7e08bc3"))).get_To(&_ret));
 		return _ret;
 	}
 	final HSTRING Body()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsVoicemailMessage).get_Body(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsVoicemailMessage)this.asInterface(uuid("271aa0a6-95b1-44ff-bcb8-b8fdd7e08bc3"))).get_Body(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IReference!(INT32) MessageCount()
 	{
 		Windows.Foundation.IReference!(INT32) _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsVoicemailMessage).get_MessageCount(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsVoicemailMessage)this.asInterface(uuid("271aa0a6-95b1-44ff-bcb8-b8fdd7e08bc3"))).get_MessageCount(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsMessageType MessageType()
 	{
 		Windows.Devices.Sms.SmsMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageType(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_MessageType(&_ret));
 		return _ret;
 	}
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.CellularClass CellularClass()
 	{
 		Windows.Devices.Sms.CellularClass _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_CellularClass(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_CellularClass(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsMessageClass MessageClass()
 	{
 		Windows.Devices.Sms.SmsMessageClass _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageClass(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_MessageClass(&_ret));
 		return _ret;
 	}
 	final HSTRING SimIccId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_SimIccId(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_SimIccId(&_ret));
 		return _ret;
 	}
 }
@@ -1826,73 +1826,73 @@ extern(Windows):
 	final Windows.Foundation.DateTime Timestamp()
 	{
 		Windows.Foundation.DateTime _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsWapMessage).get_Timestamp(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsWapMessage)this.asInterface(uuid("cd937743-7a55-4d3b-9021-f22e022d09c5"))).get_Timestamp(&_ret));
 		return _ret;
 	}
 	final HSTRING To()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsWapMessage).get_To(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsWapMessage)this.asInterface(uuid("cd937743-7a55-4d3b-9021-f22e022d09c5"))).get_To(&_ret));
 		return _ret;
 	}
 	final HSTRING From()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsWapMessage).get_From(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsWapMessage)this.asInterface(uuid("cd937743-7a55-4d3b-9021-f22e022d09c5"))).get_From(&_ret));
 		return _ret;
 	}
 	final HSTRING ApplicationId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsWapMessage).get_ApplicationId(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsWapMessage)this.asInterface(uuid("cd937743-7a55-4d3b-9021-f22e022d09c5"))).get_ApplicationId(&_ret));
 		return _ret;
 	}
 	final HSTRING ContentType()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsWapMessage).get_ContentType(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsWapMessage)this.asInterface(uuid("cd937743-7a55-4d3b-9021-f22e022d09c5"))).get_ContentType(&_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer BinaryBody()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsWapMessage).get_BinaryBody(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsWapMessage)this.asInterface(uuid("cd937743-7a55-4d3b-9021-f22e022d09c5"))).get_BinaryBody(&_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) Headers()
 	{
 		Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsWapMessage).get_Headers(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsWapMessage)this.asInterface(uuid("cd937743-7a55-4d3b-9021-f22e022d09c5"))).get_Headers(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsMessageType MessageType()
 	{
 		Windows.Devices.Sms.SmsMessageType _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageType(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_MessageType(&_ret));
 		return _ret;
 	}
 	final HSTRING DeviceId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_DeviceId(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_DeviceId(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.CellularClass CellularClass()
 	{
 		Windows.Devices.Sms.CellularClass _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_CellularClass(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_CellularClass(&_ret));
 		return _ret;
 	}
 	final Windows.Devices.Sms.SmsMessageClass MessageClass()
 	{
 		Windows.Devices.Sms.SmsMessageClass _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_MessageClass(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_MessageClass(&_ret));
 		return _ret;
 	}
 	final HSTRING SimIccId()
 	{
 		HSTRING _ret;
-		Debug.OK(this.as!(Windows.Devices.Sms.ISmsMessageBase).get_SimIccId(&_ret));
+		Debug.OK((cast(Windows.Devices.Sms.ISmsMessageBase)this.asInterface(uuid("2cf0fe30-fe50-4fc6-aa88-4ccfe27a29ea"))).get_SimIccId(&_ret));
 		return _ret;
 	}
 }
