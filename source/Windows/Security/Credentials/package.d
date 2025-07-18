@@ -16,8 +16,8 @@ interface IKeyCredential : IInspectable
 {
 extern(Windows):
 	HRESULT get_Name(HSTRING* return_value);
-	HRESULT abi_RetrievePublicKeyWithDefaultBlobType(Windows.Storage.Streams.IBuffer* return_value);
-	HRESULT abi_RetrievePublicKeyWithBlobType(Windows.Security.Cryptography.Core.CryptographicPublicKeyBlobType blobType, Windows.Storage.Streams.IBuffer* return_value);
+	HRESULT abi_RetrievePublicKey(Windows.Storage.Streams.IBuffer* return_value);
+	HRESULT abi_RetrievePublicKey(Windows.Security.Cryptography.Core.CryptographicPublicKeyBlobType blobType, Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT abi_RequestSignAsync(Windows.Storage.Streams.IBuffer data, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.KeyCredentialOperationResult)* return_value);
 	HRESULT abi_GetAttestationAsync(Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.KeyCredentialAttestationResult)* return_value);
 }
@@ -108,7 +108,7 @@ extern(Windows):
 	HRESULT get_Properties(Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING)* return_value);
 	HRESULT abi_GetPictureAsync(Windows.Security.Credentials.WebAccountPictureSize desizedSize, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStream)* return_asyncInfo);
 	HRESULT abi_SignOutAsync(Windows.Foundation.IAsyncAction* return_asyncInfo);
-	HRESULT abi_SignOutWithClientIdAsync(HSTRING clientId, Windows.Foundation.IAsyncAction* return_asyncInfo);
+	HRESULT abi_SignOutAsync(HSTRING clientId, Windows.Foundation.IAsyncAction* return_asyncInfo);
 }
 @uuid("7b56d6f8-990b-4eb5-94a7-5621f3a8b824")
 @WinrtFactory("Windows.Security.Credentials.WebAccount")
@@ -173,16 +173,16 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Credentials.IKeyCredential)this.asInterface(uuid("9585ef8d-457b-4847-b11a-fa960bbdb138"))).get_Name(&_ret));
 		return _ret;
 	}
-	final Windows.Storage.Streams.IBuffer RetrievePublicKeyWithDefaultBlobType()
+	final Windows.Storage.Streams.IBuffer RetrievePublicKey()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK((cast(Windows.Security.Credentials.IKeyCredential)this.asInterface(uuid("9585ef8d-457b-4847-b11a-fa960bbdb138"))).abi_RetrievePublicKeyWithDefaultBlobType(&_ret));
+		Debug.OK((cast(Windows.Security.Credentials.IKeyCredential)this.asInterface(uuid("9585ef8d-457b-4847-b11a-fa960bbdb138"))).abi_RetrievePublicKey(&_ret));
 		return _ret;
 	}
-	final Windows.Storage.Streams.IBuffer RetrievePublicKeyWithBlobType(Windows.Security.Cryptography.Core.CryptographicPublicKeyBlobType blobType)
+	final Windows.Storage.Streams.IBuffer RetrievePublicKey(Windows.Security.Cryptography.Core.CryptographicPublicKeyBlobType blobType)
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK((cast(Windows.Security.Credentials.IKeyCredential)this.asInterface(uuid("9585ef8d-457b-4847-b11a-fa960bbdb138"))).abi_RetrievePublicKeyWithBlobType(blobType, &_ret));
+		Debug.OK((cast(Windows.Security.Credentials.IKeyCredential)this.asInterface(uuid("9585ef8d-457b-4847-b11a-fa960bbdb138"))).abi_RetrievePublicKey(blobType, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.KeyCredentialOperationResult) RequestSignAsync(Windows.Storage.Streams.IBuffer data)
@@ -499,10 +499,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Credentials.IWebAccount2)this.asInterface(uuid("7b56d6f8-990b-4eb5-94a7-5621f3a8b824"))).abi_SignOutAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction SignOutWithClientIdAsync(HSTRING clientId)
+	final Windows.Foundation.IAsyncAction SignOutAsync(HSTRING clientId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Security.Credentials.IWebAccount2)this.asInterface(uuid("7b56d6f8-990b-4eb5-94a7-5621f3a8b824"))).abi_SignOutWithClientIdAsync(clientId, &_ret));
+		Debug.OK((cast(Windows.Security.Credentials.IWebAccount2)this.asInterface(uuid("7b56d6f8-990b-4eb5-94a7-5621f3a8b824"))).abi_SignOutAsync(clientId, &_ret));
 		return _ret;
 	}
 	static Windows.Security.Credentials.WebAccount New(Windows.Security.Credentials.WebAccountProvider webAccountProvider, HSTRING userName, Windows.Security.Credentials.WebAccountState state)

@@ -44,10 +44,10 @@ interface IAsymmetricKeyAlgorithmProvider : IInspectable
 extern(Windows):
 	HRESULT get_AlgorithmName(HSTRING* return_value);
 	HRESULT abi_CreateKeyPair(UINT32 keySize, Windows.Security.Cryptography.Core.CryptographicKey* return_key);
-	HRESULT abi_ImportDefaultPrivateKeyBlob(Windows.Storage.Streams.IBuffer keyBlob, Windows.Security.Cryptography.Core.CryptographicKey* return_key);
-	HRESULT abi_ImportKeyPairWithBlobType(Windows.Storage.Streams.IBuffer keyBlob, Windows.Security.Cryptography.Core.CryptographicPrivateKeyBlobType BlobType, Windows.Security.Cryptography.Core.CryptographicKey* return_key);
-	HRESULT abi_ImportDefaultPublicKeyBlob(Windows.Storage.Streams.IBuffer keyBlob, Windows.Security.Cryptography.Core.CryptographicKey* return_key);
-	HRESULT abi_ImportPublicKeyWithBlobType(Windows.Storage.Streams.IBuffer keyBlob, Windows.Security.Cryptography.Core.CryptographicPublicKeyBlobType BlobType, Windows.Security.Cryptography.Core.CryptographicKey* return_key);
+	HRESULT abi_ImportKeyPair(Windows.Storage.Streams.IBuffer keyBlob, Windows.Security.Cryptography.Core.CryptographicKey* return_key);
+	HRESULT abi_ImportKeyPair(Windows.Storage.Streams.IBuffer keyBlob, Windows.Security.Cryptography.Core.CryptographicPrivateKeyBlobType BlobType, Windows.Security.Cryptography.Core.CryptographicKey* return_key);
+	HRESULT abi_ImportPublicKey(Windows.Storage.Streams.IBuffer keyBlob, Windows.Security.Cryptography.Core.CryptographicKey* return_key);
+	HRESULT abi_ImportPublicKey(Windows.Storage.Streams.IBuffer keyBlob, Windows.Security.Cryptography.Core.CryptographicPublicKeyBlobType BlobType, Windows.Security.Cryptography.Core.CryptographicKey* return_key);
 }
 
 @uuid("4e322a7e-7c4d-4997-ac4f-1b848b36306e")
@@ -99,10 +99,10 @@ interface ICryptographicKey : IInspectable
 {
 extern(Windows):
 	HRESULT get_KeySize(UINT32* return_value);
-	HRESULT abi_ExportDefaultPrivateKeyBlobType(Windows.Storage.Streams.IBuffer* return_value);
-	HRESULT abi_ExportPrivateKeyWithBlobType(Windows.Security.Cryptography.Core.CryptographicPrivateKeyBlobType BlobType, Windows.Storage.Streams.IBuffer* return_value);
-	HRESULT abi_ExportDefaultPublicKeyBlobType(Windows.Storage.Streams.IBuffer* return_value);
-	HRESULT abi_ExportPublicKeyWithBlobType(Windows.Security.Cryptography.Core.CryptographicPublicKeyBlobType BlobType, Windows.Storage.Streams.IBuffer* return_value);
+	HRESULT abi_Export(Windows.Storage.Streams.IBuffer* return_value);
+	HRESULT abi_Export(Windows.Security.Cryptography.Core.CryptographicPrivateKeyBlobType BlobType, Windows.Storage.Streams.IBuffer* return_value);
+	HRESULT abi_ExportPublicKey(Windows.Storage.Streams.IBuffer* return_value);
+	HRESULT abi_ExportPublicKey(Windows.Security.Cryptography.Core.CryptographicPublicKeyBlobType BlobType, Windows.Storage.Streams.IBuffer* return_value);
 }
 
 @uuid("b3ff930c-aeeb-409e-b7d4-9b95295aaecf")
@@ -520,28 +520,28 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider)this.asInterface(uuid("e8d2ff37-6259-4e88-b7e0-94191fde699e"))).abi_CreateKeyPair(keySize, &_ret));
 		return _ret;
 	}
-	final Windows.Security.Cryptography.Core.CryptographicKey ImportDefaultPrivateKeyBlob(Windows.Storage.Streams.IBuffer keyBlob)
+	final Windows.Security.Cryptography.Core.CryptographicKey ImportKeyPair(Windows.Storage.Streams.IBuffer keyBlob)
 	{
 		Windows.Security.Cryptography.Core.CryptographicKey _ret;
-		Debug.OK((cast(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider)this.asInterface(uuid("e8d2ff37-6259-4e88-b7e0-94191fde699e"))).abi_ImportDefaultPrivateKeyBlob(keyBlob, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider)this.asInterface(uuid("e8d2ff37-6259-4e88-b7e0-94191fde699e"))).abi_ImportKeyPair(keyBlob, &_ret));
 		return _ret;
 	}
-	final Windows.Security.Cryptography.Core.CryptographicKey ImportKeyPairWithBlobType(Windows.Storage.Streams.IBuffer keyBlob, Windows.Security.Cryptography.Core.CryptographicPrivateKeyBlobType BlobType)
+	final Windows.Security.Cryptography.Core.CryptographicKey ImportKeyPair(Windows.Storage.Streams.IBuffer keyBlob, Windows.Security.Cryptography.Core.CryptographicPrivateKeyBlobType BlobType)
 	{
 		Windows.Security.Cryptography.Core.CryptographicKey _ret;
-		Debug.OK((cast(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider)this.asInterface(uuid("e8d2ff37-6259-4e88-b7e0-94191fde699e"))).abi_ImportKeyPairWithBlobType(keyBlob, BlobType, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider)this.asInterface(uuid("e8d2ff37-6259-4e88-b7e0-94191fde699e"))).abi_ImportKeyPair(keyBlob, BlobType, &_ret));
 		return _ret;
 	}
-	final Windows.Security.Cryptography.Core.CryptographicKey ImportDefaultPublicKeyBlob(Windows.Storage.Streams.IBuffer keyBlob)
+	final Windows.Security.Cryptography.Core.CryptographicKey ImportPublicKey(Windows.Storage.Streams.IBuffer keyBlob)
 	{
 		Windows.Security.Cryptography.Core.CryptographicKey _ret;
-		Debug.OK((cast(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider)this.asInterface(uuid("e8d2ff37-6259-4e88-b7e0-94191fde699e"))).abi_ImportDefaultPublicKeyBlob(keyBlob, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider)this.asInterface(uuid("e8d2ff37-6259-4e88-b7e0-94191fde699e"))).abi_ImportPublicKey(keyBlob, &_ret));
 		return _ret;
 	}
-	final Windows.Security.Cryptography.Core.CryptographicKey ImportPublicKeyWithBlobType(Windows.Storage.Streams.IBuffer keyBlob, Windows.Security.Cryptography.Core.CryptographicPublicKeyBlobType BlobType)
+	final Windows.Security.Cryptography.Core.CryptographicKey ImportPublicKey(Windows.Storage.Streams.IBuffer keyBlob, Windows.Security.Cryptography.Core.CryptographicPublicKeyBlobType BlobType)
 	{
 		Windows.Security.Cryptography.Core.CryptographicKey _ret;
-		Debug.OK((cast(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider)this.asInterface(uuid("e8d2ff37-6259-4e88-b7e0-94191fde699e"))).abi_ImportPublicKeyWithBlobType(keyBlob, BlobType, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider)this.asInterface(uuid("e8d2ff37-6259-4e88-b7e0-94191fde699e"))).abi_ImportPublicKey(keyBlob, BlobType, &_ret));
 		return _ret;
 	}
 	final Windows.Security.Cryptography.Core.CryptographicKey CreateKeyPairWithCurveName(HSTRING curveName)
@@ -647,28 +647,28 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Cryptography.Core.ICryptographicKey)this.asInterface(uuid("ed2a3b70-8e7b-4009-8401-ffd1a62eeb27"))).get_KeySize(&_ret));
 		return _ret;
 	}
-	final Windows.Storage.Streams.IBuffer ExportDefaultPrivateKeyBlobType()
+	final Windows.Storage.Streams.IBuffer Export()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK((cast(Windows.Security.Cryptography.Core.ICryptographicKey)this.asInterface(uuid("ed2a3b70-8e7b-4009-8401-ffd1a62eeb27"))).abi_ExportDefaultPrivateKeyBlobType(&_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.ICryptographicKey)this.asInterface(uuid("ed2a3b70-8e7b-4009-8401-ffd1a62eeb27"))).abi_Export(&_ret));
 		return _ret;
 	}
-	final Windows.Storage.Streams.IBuffer ExportPrivateKeyWithBlobType(Windows.Security.Cryptography.Core.CryptographicPrivateKeyBlobType BlobType)
+	final Windows.Storage.Streams.IBuffer Export(Windows.Security.Cryptography.Core.CryptographicPrivateKeyBlobType BlobType)
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK((cast(Windows.Security.Cryptography.Core.ICryptographicKey)this.asInterface(uuid("ed2a3b70-8e7b-4009-8401-ffd1a62eeb27"))).abi_ExportPrivateKeyWithBlobType(BlobType, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.ICryptographicKey)this.asInterface(uuid("ed2a3b70-8e7b-4009-8401-ffd1a62eeb27"))).abi_Export(BlobType, &_ret));
 		return _ret;
 	}
-	final Windows.Storage.Streams.IBuffer ExportDefaultPublicKeyBlobType()
+	final Windows.Storage.Streams.IBuffer ExportPublicKey()
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK((cast(Windows.Security.Cryptography.Core.ICryptographicKey)this.asInterface(uuid("ed2a3b70-8e7b-4009-8401-ffd1a62eeb27"))).abi_ExportDefaultPublicKeyBlobType(&_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.ICryptographicKey)this.asInterface(uuid("ed2a3b70-8e7b-4009-8401-ffd1a62eeb27"))).abi_ExportPublicKey(&_ret));
 		return _ret;
 	}
-	final Windows.Storage.Streams.IBuffer ExportPublicKeyWithBlobType(Windows.Security.Cryptography.Core.CryptographicPublicKeyBlobType BlobType)
+	final Windows.Storage.Streams.IBuffer ExportPublicKey(Windows.Security.Cryptography.Core.CryptographicPublicKeyBlobType BlobType)
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK((cast(Windows.Security.Cryptography.Core.ICryptographicKey)this.asInterface(uuid("ed2a3b70-8e7b-4009-8401-ffd1a62eeb27"))).abi_ExportPublicKeyWithBlobType(BlobType, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.ICryptographicKey)this.asInterface(uuid("ed2a3b70-8e7b-4009-8401-ffd1a62eeb27"))).abi_ExportPublicKey(BlobType, &_ret));
 		return _ret;
 	}
 }

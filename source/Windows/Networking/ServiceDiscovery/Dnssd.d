@@ -28,10 +28,10 @@ extern(Windows):
 	HRESULT get_Weight(UINT16* return_value);
 	HRESULT set_Weight(UINT16 value);
 	HRESULT get_TextAttributes(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_value);
-	HRESULT abi_RegisterStreamSocketListenerAsync1(Windows.Networking.Sockets.StreamSocketListener socket, Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult)* return_result);
-	HRESULT abi_RegisterStreamSocketListenerAsync2(Windows.Networking.Sockets.StreamSocketListener socket, Windows.Networking.Connectivity.NetworkAdapter adapter, Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult)* return_result);
-	HRESULT abi_RegisterDatagramSocketAsync1(Windows.Networking.Sockets.DatagramSocket socket, Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult)* return_result);
-	HRESULT abi_RegisterDatagramSocketAsync2(Windows.Networking.Sockets.DatagramSocket socket, Windows.Networking.Connectivity.NetworkAdapter adapter, Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult)* return_result);
+	HRESULT abi_RegisterStreamSocketListenerAsync(Windows.Networking.Sockets.StreamSocketListener socket, Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult)* return_result);
+	HRESULT abi_RegisterStreamSocketListenerAsync(Windows.Networking.Sockets.StreamSocketListener socket, Windows.Networking.Connectivity.NetworkAdapter adapter, Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult)* return_result);
+	HRESULT abi_RegisterDatagramSocketAsync(Windows.Networking.Sockets.DatagramSocket socket, Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult)* return_result);
+	HRESULT abi_RegisterDatagramSocketAsync(Windows.Networking.Sockets.DatagramSocket socket, Windows.Networking.Connectivity.NetworkAdapter adapter, Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult)* return_result);
 }
 
 @uuid("6cb061a1-c478-4331-9684-4af2186c0a2b")
@@ -152,28 +152,28 @@ extern(Windows):
 		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).get_TextAttributes(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) RegisterStreamSocketListenerAsync1(Windows.Networking.Sockets.StreamSocketListener socket)
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) RegisterStreamSocketListenerAsync(Windows.Networking.Sockets.StreamSocketListener socket)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) _ret;
-		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).abi_RegisterStreamSocketListenerAsync1(socket, &_ret));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).abi_RegisterStreamSocketListenerAsync(socket, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) RegisterStreamSocketListenerAsync2(Windows.Networking.Sockets.StreamSocketListener socket, Windows.Networking.Connectivity.NetworkAdapter adapter)
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) RegisterStreamSocketListenerAsync(Windows.Networking.Sockets.StreamSocketListener socket, Windows.Networking.Connectivity.NetworkAdapter adapter)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) _ret;
-		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).abi_RegisterStreamSocketListenerAsync2(socket, adapter, &_ret));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).abi_RegisterStreamSocketListenerAsync(socket, adapter, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) RegisterDatagramSocketAsync1(Windows.Networking.Sockets.DatagramSocket socket)
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) RegisterDatagramSocketAsync(Windows.Networking.Sockets.DatagramSocket socket)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) _ret;
-		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).abi_RegisterDatagramSocketAsync1(socket, &_ret));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).abi_RegisterDatagramSocketAsync(socket, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) RegisterDatagramSocketAsync2(Windows.Networking.Sockets.DatagramSocket socket, Windows.Networking.Connectivity.NetworkAdapter adapter)
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) RegisterDatagramSocketAsync(Windows.Networking.Sockets.DatagramSocket socket, Windows.Networking.Connectivity.NetworkAdapter adapter)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) _ret;
-		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).abi_RegisterDatagramSocketAsync2(socket, adapter, &_ret));
+		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).abi_RegisterDatagramSocketAsync(socket, adapter, &_ret));
 		return _ret;
 	}
 	final HSTRING ToString()

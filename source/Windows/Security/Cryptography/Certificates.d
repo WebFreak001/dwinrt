@@ -8,10 +8,10 @@ interface ICertificate : IInspectable
 {
 extern(Windows):
 	HRESULT abi_BuildChainAsync(Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.Certificate) certificates, Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Certificates.CertificateChain)* return_value);
-	HRESULT abi_BuildChainWithParametersAsync(Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.Certificate) certificates, Windows.Security.Cryptography.Certificates.ChainBuildingParameters parameters, Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Certificates.CertificateChain)* return_value);
+	HRESULT abi_BuildChainAsync(Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.Certificate) certificates, Windows.Security.Cryptography.Certificates.ChainBuildingParameters parameters, Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Certificates.CertificateChain)* return_value);
 	HRESULT get_SerialNumber(UINT32* out___valueSize, ubyte** return_value);
 	HRESULT abi_GetHashValue(UINT32* out___valueSize, ubyte** return_value);
-	HRESULT abi_GetHashValueWithAlgorithm(HSTRING hashAlgorithmName, UINT32* out___valueSize, ubyte** return_value);
+	HRESULT abi_GetHashValue(HSTRING hashAlgorithmName, UINT32* out___valueSize, ubyte** return_value);
 	HRESULT abi_GetCertificateBlob(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT get_Subject(HSTRING* return_value);
 	HRESULT get_Issuer(HSTRING* return_value);
@@ -53,7 +53,7 @@ interface ICertificateChain : IInspectable
 {
 extern(Windows):
 	HRESULT abi_Validate(Windows.Security.Cryptography.Certificates.ChainValidationResult* return_status);
-	HRESULT abi_ValidateWithParameters(Windows.Security.Cryptography.Certificates.ChainValidationParameters parameter, Windows.Security.Cryptography.Certificates.ChainValidationResult* return_status);
+	HRESULT abi_Validate(Windows.Security.Cryptography.Certificates.ChainValidationParameters parameter, Windows.Security.Cryptography.Certificates.ChainValidationResult* return_status);
 	HRESULT abi_GetCertificates(bool includeRoot, Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate)* return_certificates);
 }
 
@@ -73,7 +73,7 @@ interface ICertificateEnrollmentManagerStatics2 : IInspectable
 {
 extern(Windows):
 	HRESULT get_UserCertificateEnrollmentManager(Windows.Security.Cryptography.Certificates.UserCertificateEnrollmentManager* return_value);
-	HRESULT abi_ImportPfxDataToKspAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.ExportOption exportable, Windows.Security.Cryptography.Certificates.KeyProtectionLevel keyProtectionLevel, Windows.Security.Cryptography.Certificates.InstallOptions installOption, HSTRING friendlyName, HSTRING keyStorageProvider, Windows.Foundation.IAsyncAction* return_value);
+	HRESULT abi_ImportPfxDataAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.ExportOption exportable, Windows.Security.Cryptography.Certificates.KeyProtectionLevel keyProtectionLevel, Windows.Security.Cryptography.Certificates.InstallOptions installOption, HSTRING friendlyName, HSTRING keyStorageProvider, Windows.Foundation.IAsyncAction* return_value);
 }
 
 @uuid("fdec82be-617c-425a-b72d-398b26ac7264")
@@ -81,7 +81,7 @@ extern(Windows):
 interface ICertificateEnrollmentManagerStatics3 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_ImportPfxDataToKspWithParametersAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.PfxImportParameters pfxImportParameters, Windows.Foundation.IAsyncAction* return_value);
+	HRESULT abi_ImportPfxDataAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.PfxImportParameters pfxImportParameters, Windows.Foundation.IAsyncAction* return_value);
 }
 
 @uuid("84cf0656-a9e6-454d-8e45-2ea7c4bcd53b")
@@ -246,7 +246,7 @@ interface ICertificateStoresStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_FindAllAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate))* return_value);
-	HRESULT abi_FindAllWithQueryAsync(Windows.Security.Cryptography.Certificates.CertificateQuery query, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate))* return_value);
+	HRESULT abi_FindAllAsync(Windows.Security.Cryptography.Certificates.CertificateQuery query, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate))* return_value);
 	HRESULT get_TrustedRootCertificationAuthorities(Windows.Security.Cryptography.Certificates.CertificateStore* return_value);
 	HRESULT get_IntermediateCertificationAuthorities(Windows.Security.Cryptography.Certificates.CertificateStore* return_value);
 	HRESULT abi_GetStoreByName(HSTRING storeName, Windows.Security.Cryptography.Certificates.CertificateStore* return_value);
@@ -403,7 +403,7 @@ extern(Windows):
 interface IKeyAttestationHelperStatics2 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_DecryptTpmAttestationCredentialWithContainerNameAsync(HSTRING credential, HSTRING containerName, Windows.Foundation.IAsyncOperation!(HSTRING)* return_value);
+	HRESULT abi_DecryptTpmAttestationCredentialAsync(HSTRING credential, HSTRING containerName, Windows.Foundation.IAsyncOperation!(HSTRING)* return_value);
 }
 
 @uuid("af186ae0-5529-4602-bd94-0aab91957b5c")
@@ -490,7 +490,7 @@ extern(Windows):
 	HRESULT abi_CreateRequestAsync(Windows.Security.Cryptography.Certificates.CertificateRequestProperties request, Windows.Foundation.IAsyncOperation!(HSTRING)* return_value);
 	HRESULT abi_InstallCertificateAsync(HSTRING certificate, Windows.Security.Cryptography.Certificates.InstallOptions installOption, Windows.Foundation.IAsyncAction* return_value);
 	HRESULT abi_ImportPfxDataAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.ExportOption exportable, Windows.Security.Cryptography.Certificates.KeyProtectionLevel keyProtectionLevel, Windows.Security.Cryptography.Certificates.InstallOptions installOption, HSTRING friendlyName, Windows.Foundation.IAsyncAction* return_value);
-	HRESULT abi_ImportPfxDataToKspAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.ExportOption exportable, Windows.Security.Cryptography.Certificates.KeyProtectionLevel keyProtectionLevel, Windows.Security.Cryptography.Certificates.InstallOptions installOption, HSTRING friendlyName, HSTRING keyStorageProvider, Windows.Foundation.IAsyncAction* return_value);
+	HRESULT abi_ImportPfxDataAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.ExportOption exportable, Windows.Security.Cryptography.Certificates.KeyProtectionLevel keyProtectionLevel, Windows.Security.Cryptography.Certificates.InstallOptions installOption, HSTRING friendlyName, HSTRING keyStorageProvider, Windows.Foundation.IAsyncAction* return_value);
 }
 
 @uuid("0dad9cb1-65de-492a-b86d-fc5c482c3747")
@@ -498,7 +498,7 @@ extern(Windows):
 interface IUserCertificateEnrollmentManager2 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_ImportPfxDataToKspWithParametersAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.PfxImportParameters pfxImportParameters, Windows.Foundation.IAsyncAction* return_value);
+	HRESULT abi_ImportPfxDataAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.PfxImportParameters pfxImportParameters, Windows.Foundation.IAsyncAction* return_value);
 }
 
 @uuid("c9fb1d83-789f-4b4e-9180-045a757aac6d")
@@ -520,10 +520,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificate)this.asInterface(uuid("333f740c-04d8-43b3-b278-8c5fcc9be5a0"))).abi_BuildChainAsync(certificates, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Certificates.CertificateChain) BuildChainWithParametersAsync(Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.Certificate) certificates, Windows.Security.Cryptography.Certificates.ChainBuildingParameters parameters)
+	final Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Certificates.CertificateChain) BuildChainAsync(Windows.Foundation.Collections.IIterable!(Windows.Security.Cryptography.Certificates.Certificate) certificates, Windows.Security.Cryptography.Certificates.ChainBuildingParameters parameters)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Certificates.CertificateChain) _ret;
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificate)this.asInterface(uuid("333f740c-04d8-43b3-b278-8c5fcc9be5a0"))).abi_BuildChainWithParametersAsync(certificates, parameters, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificate)this.asInterface(uuid("333f740c-04d8-43b3-b278-8c5fcc9be5a0"))).abi_BuildChainAsync(certificates, parameters, &_ret));
 		return _ret;
 	}
 	final ubyte* SerialNumber(UINT32* out___valueSize)
@@ -538,10 +538,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificate)this.asInterface(uuid("333f740c-04d8-43b3-b278-8c5fcc9be5a0"))).abi_GetHashValue(out___valueSize, &_ret));
 		return _ret;
 	}
-	final ubyte* GetHashValueWithAlgorithm(HSTRING hashAlgorithmName, UINT32* out___valueSize)
+	final ubyte* GetHashValue(HSTRING hashAlgorithmName, UINT32* out___valueSize)
 	{
 		ubyte* _ret;
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificate)this.asInterface(uuid("333f740c-04d8-43b3-b278-8c5fcc9be5a0"))).abi_GetHashValueWithAlgorithm(hashAlgorithmName, out___valueSize, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificate)this.asInterface(uuid("333f740c-04d8-43b3-b278-8c5fcc9be5a0"))).abi_GetHashValue(hashAlgorithmName, out___valueSize, &_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.IBuffer GetCertificateBlob()
@@ -674,10 +674,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateChain)this.asInterface(uuid("20bf5385-3691-4501-a62c-fd97278b31ee"))).abi_Validate(&_ret));
 		return _ret;
 	}
-	final Windows.Security.Cryptography.Certificates.ChainValidationResult ValidateWithParameters(Windows.Security.Cryptography.Certificates.ChainValidationParameters parameter)
+	final Windows.Security.Cryptography.Certificates.ChainValidationResult Validate(Windows.Security.Cryptography.Certificates.ChainValidationParameters parameter)
 	{
 		Windows.Security.Cryptography.Certificates.ChainValidationResult _ret;
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateChain)this.asInterface(uuid("20bf5385-3691-4501-a62c-fd97278b31ee"))).abi_ValidateWithParameters(parameter, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateChain)this.asInterface(uuid("20bf5385-3691-4501-a62c-fd97278b31ee"))).abi_Validate(parameter, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) GetCertificates(bool includeRoot)
@@ -1171,10 +1171,10 @@ interface CertificateStores
 		Debug.OK(staticInstance.abi_FindAllAsync(&_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate)) FindAllWithQueryAsync(Windows.Security.Cryptography.Certificates.CertificateQuery query)
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate)) FindAllAsync(Windows.Security.Cryptography.Certificates.CertificateQuery query)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate)) _ret;
-		Debug.OK(staticInstance.abi_FindAllWithQueryAsync(query, &_ret));
+		Debug.OK(staticInstance.abi_FindAllAsync(query, &_ret));
 		return _ret;
 	}
 	static Windows.Security.Cryptography.Certificates.CertificateStore TrustedRootCertificationAuthorities()
@@ -1780,16 +1780,16 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IUserCertificateEnrollmentManager)this.asInterface(uuid("96313718-22e1-4819-b20b-ab46a6eca06e"))).abi_ImportPfxDataAsync(pfxData, password, exportable, keyProtectionLevel, installOption, friendlyName, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction ImportPfxDataToKspAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.ExportOption exportable, Windows.Security.Cryptography.Certificates.KeyProtectionLevel keyProtectionLevel, Windows.Security.Cryptography.Certificates.InstallOptions installOption, HSTRING friendlyName, HSTRING keyStorageProvider)
+	final Windows.Foundation.IAsyncAction ImportPfxDataAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.ExportOption exportable, Windows.Security.Cryptography.Certificates.KeyProtectionLevel keyProtectionLevel, Windows.Security.Cryptography.Certificates.InstallOptions installOption, HSTRING friendlyName, HSTRING keyStorageProvider)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IUserCertificateEnrollmentManager)this.asInterface(uuid("96313718-22e1-4819-b20b-ab46a6eca06e"))).abi_ImportPfxDataToKspAsync(pfxData, password, exportable, keyProtectionLevel, installOption, friendlyName, keyStorageProvider, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IUserCertificateEnrollmentManager)this.asInterface(uuid("96313718-22e1-4819-b20b-ab46a6eca06e"))).abi_ImportPfxDataAsync(pfxData, password, exportable, keyProtectionLevel, installOption, friendlyName, keyStorageProvider, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction ImportPfxDataToKspWithParametersAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.PfxImportParameters pfxImportParameters)
+	final Windows.Foundation.IAsyncAction ImportPfxDataAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.PfxImportParameters pfxImportParameters)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IUserCertificateEnrollmentManager2)this.asInterface(uuid("0dad9cb1-65de-492a-b86d-fc5c482c3747"))).abi_ImportPfxDataToKspWithParametersAsync(pfxData, password, pfxImportParameters, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IUserCertificateEnrollmentManager2)this.asInterface(uuid("0dad9cb1-65de-492a-b86d-fc5c482c3747"))).abi_ImportPfxDataAsync(pfxData, password, pfxImportParameters, &_ret));
 		return _ret;
 	}
 }

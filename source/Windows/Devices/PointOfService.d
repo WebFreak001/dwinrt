@@ -98,7 +98,7 @@ extern(Windows):
 interface IBarcodeScannerStatics2 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_GetDeviceSelectorWithConnectionTypes(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes, HSTRING* return_value);
+	HRESULT abi_GetDeviceSelector(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes, HSTRING* return_value);
 }
 
 @uuid("355d8586-9c43-462b-a91a-816dc97f452c")
@@ -320,7 +320,7 @@ extern(Windows):
 interface ICashDrawerStatics2 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_GetDeviceSelectorWithConnectionTypes(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes, HSTRING* return_value);
+	HRESULT abi_GetDeviceSelector(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes, HSTRING* return_value);
 }
 
 @uuid("6bbd78bf-dca1-4e06-99eb-5af6a5aec108")
@@ -460,7 +460,7 @@ interface IClaimedLineDisplayStatics : IInspectable
 extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.ClaimedLineDisplay)* return_operation);
 	HRESULT abi_GetDeviceSelector(HSTRING* return_result);
-	HRESULT abi_GetDeviceSelectorWithConnectionTypes(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes, HSTRING* return_value);
+	HRESULT abi_GetDeviceSelector(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes, HSTRING* return_value);
 }
 
 @uuid("475ca8f3-9417-48bc-b9d7-4163a7844c02")
@@ -695,7 +695,7 @@ extern(Windows):
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.LineDisplay)* return_operation);
 	HRESULT abi_GetDefaultAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.PointOfService.LineDisplay)* return_result);
 	HRESULT abi_GetDeviceSelector(HSTRING* return_result);
-	HRESULT abi_GetDeviceSelectorWithConnectionTypes(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes, HSTRING* return_value);
+	HRESULT abi_GetDeviceSelector(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes, HSTRING* return_value);
 }
 
 @uuid("d21feef4-2364-4be5-bee1-851680af4964")
@@ -708,8 +708,8 @@ extern(Windows):
 	HRESULT set_InterCharacterWaitInterval(Windows.Foundation.TimeSpan value);
 	HRESULT abi_TryRefreshAsync(Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_TryDisplayTextAsync(HSTRING text, Windows.Devices.PointOfService.LineDisplayTextAttribute displayAttribute, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
-	HRESULT abi_TryDisplayTextAtPositionAsync(HSTRING text, Windows.Devices.PointOfService.LineDisplayTextAttribute displayAttribute, Windows.Foundation.Point startPosition, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
-	HRESULT abi_TryDisplayTextNormalAsync(HSTRING text, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
+	HRESULT abi_TryDisplayTextAsync(HSTRING text, Windows.Devices.PointOfService.LineDisplayTextAttribute displayAttribute, Windows.Foundation.Point startPosition, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
+	HRESULT abi_TryDisplayTextAsync(HSTRING text, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_TryScrollTextAsync(Windows.Devices.PointOfService.LineDisplayScrollDirection direction, UINT32 numberOfColumnsOrRows, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_TryClearTextAsync(Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 }
@@ -859,7 +859,7 @@ extern(Windows):
 interface IMagneticStripeReaderStatics2 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_GetDeviceSelectorWithConnectionTypes(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes, HSTRING* return_value);
+	HRESULT abi_GetDeviceSelector(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes, HSTRING* return_value);
 }
 
 @uuid("09cc6bb0-3262-401d-9e8a-e80d6358906b")
@@ -939,7 +939,7 @@ interface IPosPrinterJob : IInspectable
 extern(Windows):
 	HRESULT abi_Print(HSTRING data);
 	HRESULT abi_PrintLine(HSTRING data);
-	HRESULT abi_PrintNewline();
+	HRESULT abi_PrintLine();
 	HRESULT abi_ExecuteAsync(Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 }
 
@@ -964,7 +964,7 @@ extern(Windows):
 interface IPosPrinterStatics2 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_GetDeviceSelectorWithConnectionTypes(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes, HSTRING* return_value);
+	HRESULT abi_GetDeviceSelector(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes, HSTRING* return_value);
 }
 
 @uuid("d1f0c730-da40-4328-bf76-5156fa33b747")
@@ -992,17 +992,17 @@ extern(Windows):
 	HRESULT abi_SetPrintRotation(Windows.Devices.PointOfService.PosPrinterRotation value, bool includeBitmaps);
 	HRESULT abi_SetPrintArea(Windows.Foundation.Rect value);
 	HRESULT abi_SetBitmap(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment);
-	HRESULT abi_SetBitmapCustomWidthStandardAlign(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment, UINT32 width);
+	HRESULT abi_SetBitmap(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment, UINT32 width);
 	HRESULT abi_SetCustomAlignedBitmap(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance);
-	HRESULT abi_SetBitmapCustomWidthCustomAlign(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance, UINT32 width);
+	HRESULT abi_SetCustomAlignedBitmap(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance, UINT32 width);
 	HRESULT abi_PrintSavedBitmap(UINT32 bitmapNumber);
 	HRESULT abi_DrawRuledLine(HSTRING positionList, Windows.Devices.PointOfService.PosPrinterLineDirection lineDirection, UINT32 lineWidth, Windows.Devices.PointOfService.PosPrinterLineStyle lineStyle, UINT32 lineColor);
 	HRESULT abi_PrintBarcode(HSTRING data, UINT32 symbology, UINT32 height, UINT32 width, Windows.Devices.PointOfService.PosPrinterBarcodeTextPosition textPosition, Windows.Devices.PointOfService.PosPrinterAlignment alignment);
 	HRESULT abi_PrintBarcodeCustomAlign(HSTRING data, UINT32 symbology, UINT32 height, UINT32 width, Windows.Devices.PointOfService.PosPrinterBarcodeTextPosition textPosition, UINT32 alignmentDistance);
 	HRESULT abi_PrintBitmap(Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment);
-	HRESULT abi_PrintBitmapCustomWidthStandardAlign(Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment, UINT32 width);
+	HRESULT abi_PrintBitmap(Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment, UINT32 width);
 	HRESULT abi_PrintCustomAlignedBitmap(Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance);
-	HRESULT abi_PrintBitmapCustomWidthCustomAlign(Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance, UINT32 width);
+	HRESULT abi_PrintCustomAlignedBitmap(Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance, UINT32 width);
 }
 @uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc")
 interface IReceiptOrSlipJob : IReceiptOrSlipJob_Base, Windows.Devices.PointOfService.IPosPrinterJob {}
@@ -1014,7 +1014,7 @@ interface IReceiptPrintJob_Base : IInspectable
 extern(Windows):
 	HRESULT abi_MarkFeed(Windows.Devices.PointOfService.PosPrinterMarkFeedKind kind);
 	HRESULT abi_CutPaper(double percentage);
-	HRESULT abi_CutPaperDefault();
+	HRESULT abi_CutPaper();
 }
 @uuid("aa96066e-acad-4b79-9d0f-c0cfc08dc77b")
 @WinrtFactory("Windows.Devices.PointOfService.ReceiptPrintJob")
@@ -2643,10 +2643,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelectorWithConnectionTypes(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes)
+	static HSTRING GetDeviceSelector(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.abi_GetDeviceSelectorWithConnectionTypes(connectionTypes, &_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(connectionTypes, &_ret));
 		return _ret;
 	}
 }
@@ -3286,9 +3286,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_PrintLine(data));
 	}
-	final void PrintNewline()
+	final void PrintLine()
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_PrintNewline());
+		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_PrintLine());
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) ExecuteAsync()
 	{
@@ -3461,10 +3461,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelectorWithConnectionTypes(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes)
+	static HSTRING GetDeviceSelector(Windows.Devices.PointOfService.PosConnectionTypes connectionTypes)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.abi_GetDeviceSelectorWithConnectionTypes(connectionTypes, &_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(connectionTypes, &_ret));
 		return _ret;
 	}
 }
@@ -3613,16 +3613,16 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.PointOfService.ILineDisplayWindow)this.asInterface(uuid("d21feef4-2364-4be5-bee1-851680af4964"))).abi_TryDisplayTextAsync(text, displayAttribute, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(bool) TryDisplayTextAtPositionAsync(HSTRING text, Windows.Devices.PointOfService.LineDisplayTextAttribute displayAttribute, Windows.Foundation.Point startPosition)
+	final Windows.Foundation.IAsyncOperation!(bool) TryDisplayTextAsync(HSTRING text, Windows.Devices.PointOfService.LineDisplayTextAttribute displayAttribute, Windows.Foundation.Point startPosition)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK((cast(Windows.Devices.PointOfService.ILineDisplayWindow)this.asInterface(uuid("d21feef4-2364-4be5-bee1-851680af4964"))).abi_TryDisplayTextAtPositionAsync(text, displayAttribute, startPosition, &_ret));
+		Debug.OK((cast(Windows.Devices.PointOfService.ILineDisplayWindow)this.asInterface(uuid("d21feef4-2364-4be5-bee1-851680af4964"))).abi_TryDisplayTextAsync(text, displayAttribute, startPosition, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(bool) TryDisplayTextNormalAsync(HSTRING text)
+	final Windows.Foundation.IAsyncOperation!(bool) TryDisplayTextAsync(HSTRING text)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK((cast(Windows.Devices.PointOfService.ILineDisplayWindow)this.asInterface(uuid("d21feef4-2364-4be5-bee1-851680af4964"))).abi_TryDisplayTextNormalAsync(text, &_ret));
+		Debug.OK((cast(Windows.Devices.PointOfService.ILineDisplayWindow)this.asInterface(uuid("d21feef4-2364-4be5-bee1-851680af4964"))).abi_TryDisplayTextAsync(text, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TryScrollTextAsync(Windows.Devices.PointOfService.LineDisplayScrollDirection direction, UINT32 numberOfColumnsOrRows)
@@ -4425,9 +4425,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptPrintJob)this.asInterface(uuid("aa96066e-acad-4b79-9d0f-c0cfc08dc77b"))).abi_CutPaper(percentage));
 	}
-	final void CutPaperDefault()
+	final void CutPaper()
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptPrintJob)this.asInterface(uuid("aa96066e-acad-4b79-9d0f-c0cfc08dc77b"))).abi_CutPaperDefault());
+		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptPrintJob)this.asInterface(uuid("aa96066e-acad-4b79-9d0f-c0cfc08dc77b"))).abi_CutPaper());
 	}
 	final void SetBarcodeRotation(Windows.Devices.PointOfService.PosPrinterRotation value)
 	{
@@ -4445,17 +4445,17 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_SetBitmap(bitmapNumber, bitmap, alignment));
 	}
-	final void SetBitmapCustomWidthStandardAlign(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment, UINT32 width)
+	final void SetBitmap(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment, UINT32 width)
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_SetBitmapCustomWidthStandardAlign(bitmapNumber, bitmap, alignment, width));
+		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_SetBitmap(bitmapNumber, bitmap, alignment, width));
 	}
 	final void SetCustomAlignedBitmap(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance)
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_SetCustomAlignedBitmap(bitmapNumber, bitmap, alignmentDistance));
 	}
-	final void SetBitmapCustomWidthCustomAlign(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance, UINT32 width)
+	final void SetCustomAlignedBitmap(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance, UINT32 width)
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_SetBitmapCustomWidthCustomAlign(bitmapNumber, bitmap, alignmentDistance, width));
+		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_SetCustomAlignedBitmap(bitmapNumber, bitmap, alignmentDistance, width));
 	}
 	final void PrintSavedBitmap(UINT32 bitmapNumber)
 	{
@@ -4477,17 +4477,17 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintBitmap(bitmap, alignment));
 	}
-	final void PrintBitmapCustomWidthStandardAlign(Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment, UINT32 width)
+	final void PrintBitmap(Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment, UINT32 width)
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintBitmapCustomWidthStandardAlign(bitmap, alignment, width));
+		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintBitmap(bitmap, alignment, width));
 	}
 	final void PrintCustomAlignedBitmap(Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance)
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintCustomAlignedBitmap(bitmap, alignmentDistance));
 	}
-	final void PrintBitmapCustomWidthCustomAlign(Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance, UINT32 width)
+	final void PrintCustomAlignedBitmap(Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance, UINT32 width)
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintBitmapCustomWidthCustomAlign(bitmap, alignmentDistance, width));
+		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintCustomAlignedBitmap(bitmap, alignmentDistance, width));
 	}
 	final void Print(HSTRING data)
 	{
@@ -4497,9 +4497,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_PrintLine(data));
 	}
-	final void PrintNewline()
+	final void PrintLine()
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_PrintNewline());
+		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_PrintLine());
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) ExecuteAsync()
 	{
@@ -4683,17 +4683,17 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_SetBitmap(bitmapNumber, bitmap, alignment));
 	}
-	final void SetBitmapCustomWidthStandardAlign(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment, UINT32 width)
+	final void SetBitmap(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment, UINT32 width)
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_SetBitmapCustomWidthStandardAlign(bitmapNumber, bitmap, alignment, width));
+		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_SetBitmap(bitmapNumber, bitmap, alignment, width));
 	}
 	final void SetCustomAlignedBitmap(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance)
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_SetCustomAlignedBitmap(bitmapNumber, bitmap, alignmentDistance));
 	}
-	final void SetBitmapCustomWidthCustomAlign(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance, UINT32 width)
+	final void SetCustomAlignedBitmap(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance, UINT32 width)
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_SetBitmapCustomWidthCustomAlign(bitmapNumber, bitmap, alignmentDistance, width));
+		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_SetCustomAlignedBitmap(bitmapNumber, bitmap, alignmentDistance, width));
 	}
 	final void PrintSavedBitmap(UINT32 bitmapNumber)
 	{
@@ -4715,17 +4715,17 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintBitmap(bitmap, alignment));
 	}
-	final void PrintBitmapCustomWidthStandardAlign(Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment, UINT32 width)
+	final void PrintBitmap(Windows.Graphics.Imaging.BitmapFrame bitmap, Windows.Devices.PointOfService.PosPrinterAlignment alignment, UINT32 width)
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintBitmapCustomWidthStandardAlign(bitmap, alignment, width));
+		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintBitmap(bitmap, alignment, width));
 	}
 	final void PrintCustomAlignedBitmap(Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance)
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintCustomAlignedBitmap(bitmap, alignmentDistance));
 	}
-	final void PrintBitmapCustomWidthCustomAlign(Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance, UINT32 width)
+	final void PrintCustomAlignedBitmap(Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance, UINT32 width)
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintBitmapCustomWidthCustomAlign(bitmap, alignmentDistance, width));
+		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintCustomAlignedBitmap(bitmap, alignmentDistance, width));
 	}
 	final void Print(HSTRING data)
 	{
@@ -4735,9 +4735,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_PrintLine(data));
 	}
-	final void PrintNewline()
+	final void PrintLine()
 	{
-		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_PrintNewline());
+		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_PrintLine());
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) ExecuteAsync()
 	{

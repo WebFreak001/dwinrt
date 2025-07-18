@@ -46,8 +46,8 @@ extern(Windows):
 interface INotesWindowManagerPreview2 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_ShowNoteRelativeToWithOptions(INT32 noteViewId, INT32 anchorNoteViewId, Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreviewShowNoteOptions options);
-	HRESULT abi_ShowNoteWithPlacementWithOptions(INT32 noteViewId, Windows.Storage.Streams.IBuffer data, Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreviewShowNoteOptions options);
+	HRESULT abi_ShowNoteRelativeTo(INT32 noteViewId, INT32 anchorNoteViewId, Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreviewShowNoteOptions options);
+	HRESULT abi_ShowNoteWithPlacement(INT32 noteViewId, Windows.Storage.Streams.IBuffer data, Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreviewShowNoteOptions options);
 	HRESULT abi_SetFocusToPreviousView();
 	HRESULT abi_SetThumbnailImageForTaskSwitcherAsync(Windows.Graphics.Imaging.SoftwareBitmap bitmap, Windows.Foundation.IAsyncAction* return_action);
 }
@@ -174,13 +174,13 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview)this.asInterface(uuid("dc2ac23e-4850-4f13-9cc7-ff487efdfcde"))).remove_NoteVisibilityChanged(token));
 	}
-	final void ShowNoteRelativeToWithOptions(INT32 noteViewId, INT32 anchorNoteViewId, Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreviewShowNoteOptions options)
+	final void ShowNoteRelativeTo(INT32 noteViewId, INT32 anchorNoteViewId, Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreviewShowNoteOptions options)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2)this.asInterface(uuid("edfe864a-1f54-4b09-9823-ff477f6fa3bc"))).abi_ShowNoteRelativeToWithOptions(noteViewId, anchorNoteViewId, options));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2)this.asInterface(uuid("edfe864a-1f54-4b09-9823-ff477f6fa3bc"))).abi_ShowNoteRelativeTo(noteViewId, anchorNoteViewId, options));
 	}
-	final void ShowNoteWithPlacementWithOptions(INT32 noteViewId, Windows.Storage.Streams.IBuffer data, Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreviewShowNoteOptions options)
+	final void ShowNoteWithPlacement(INT32 noteViewId, Windows.Storage.Streams.IBuffer data, Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreviewShowNoteOptions options)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2)this.asInterface(uuid("edfe864a-1f54-4b09-9823-ff477f6fa3bc"))).abi_ShowNoteWithPlacementWithOptions(noteViewId, data, options));
+		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2)this.asInterface(uuid("edfe864a-1f54-4b09-9823-ff477f6fa3bc"))).abi_ShowNoteWithPlacement(noteViewId, data, options));
 	}
 	final void SetFocusToPreviousView()
 	{

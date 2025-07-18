@@ -273,9 +273,9 @@ interface IAdaptiveMediaSourceStatics : IInspectable
 extern(Windows):
 	HRESULT abi_IsContentTypeSupported(HSTRING contentType, bool* return_result);
 	HRESULT abi_CreateFromUriAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult)* return_result);
-	HRESULT abi_CreateFromUriWithDownloaderAsync(Windows.Foundation.Uri uri, Windows.Web.Http.HttpClient httpClient, Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult)* return_result);
+	HRESULT abi_CreateFromUriAsync(Windows.Foundation.Uri uri, Windows.Web.Http.HttpClient httpClient, Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult)* return_result);
 	HRESULT abi_CreateFromStreamAsync(Windows.Storage.Streams.IInputStream stream, Windows.Foundation.Uri uri, HSTRING contentType, Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult)* return_result);
-	HRESULT abi_CreateFromStreamWithDownloaderAsync(Windows.Storage.Streams.IInputStream stream, Windows.Foundation.Uri uri, HSTRING contentType, Windows.Web.Http.HttpClient httpClient, Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult)* return_result);
+	HRESULT abi_CreateFromStreamAsync(Windows.Storage.Streams.IInputStream stream, Windows.Foundation.Uri uri, HSTRING contentType, Windows.Web.Http.HttpClient httpClient, Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult)* return_result);
 }
 
 interface AdaptiveMediaSource : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource, Windows.Media.Core.IMediaSource, Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource2, Windows.Media.Streaming.Adaptive.IAdaptiveMediaSource3, Windows.Foundation.IClosable
@@ -480,10 +480,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateFromUriAsync(uri, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) CreateFromUriWithDownloaderAsync(Windows.Foundation.Uri uri, Windows.Web.Http.HttpClient httpClient)
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) CreateFromUriAsync(Windows.Foundation.Uri uri, Windows.Web.Http.HttpClient httpClient)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) _ret;
-		Debug.OK(staticInstance.abi_CreateFromUriWithDownloaderAsync(uri, httpClient, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromUriAsync(uri, httpClient, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) CreateFromStreamAsync(Windows.Storage.Streams.IInputStream stream, Windows.Foundation.Uri uri, HSTRING contentType)
@@ -492,10 +492,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateFromStreamAsync(stream, uri, contentType, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) CreateFromStreamWithDownloaderAsync(Windows.Storage.Streams.IInputStream stream, Windows.Foundation.Uri uri, HSTRING contentType, Windows.Web.Http.HttpClient httpClient)
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) CreateFromStreamAsync(Windows.Storage.Streams.IInputStream stream, Windows.Foundation.Uri uri, HSTRING contentType, Windows.Web.Http.HttpClient httpClient)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) _ret;
-		Debug.OK(staticInstance.abi_CreateFromStreamWithDownloaderAsync(stream, uri, contentType, httpClient, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromStreamAsync(stream, uri, contentType, httpClient, &_ret));
 		return _ret;
 	}
 }

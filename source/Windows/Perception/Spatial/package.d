@@ -72,8 +72,8 @@ interface ISpatialAnchorStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_TryCreateRelativeTo(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Perception.Spatial.SpatialAnchor* return_value);
-	HRESULT abi_TryCreateWithPositionRelativeTo(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position, Windows.Perception.Spatial.SpatialAnchor* return_value);
-	HRESULT abi_TryCreateWithPositionAndOrientationRelativeTo(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position, Windows.Foundation.Numerics.Quaternion orientation, Windows.Perception.Spatial.SpatialAnchor* return_value);
+	HRESULT abi_TryCreateRelativeTo(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position, Windows.Perception.Spatial.SpatialAnchor* return_value);
+	HRESULT abi_TryCreateRelativeTo(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position, Windows.Foundation.Numerics.Quaternion orientation, Windows.Perception.Spatial.SpatialAnchor* return_value);
 }
 
 @uuid("b0bc3636-486a-3cb0-9e6f-1245165c4db6")
@@ -176,7 +176,7 @@ interface ISpatialEntityStoreStatics : IInspectable
 {
 extern(Windows):
 	HRESULT get_IsSupported(bool* return_value);
-	HRESULT abi_TryGetForRemoteSystemSession(Windows.System.RemoteSystems.RemoteSystemSession session, Windows.Perception.Spatial.SpatialEntityStore* return_value);
+	HRESULT abi_TryGet(Windows.System.RemoteSystems.RemoteSystemSession session, Windows.Perception.Spatial.SpatialEntityStore* return_value);
 }
 
 @uuid("e5671766-627b-43cb-a49f-b3be6d47deed")
@@ -230,13 +230,13 @@ extern(Windows):
 	HRESULT remove_PositionalTrackingDeactivating(EventRegistrationToken cookie);
 	HRESULT abi_TryLocateAtTimestamp(Windows.Perception.PerceptionTimestamp timestamp, Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Perception.Spatial.SpatialLocation* return_value);
 	HRESULT abi_CreateAttachedFrameOfReferenceAtCurrentHeading(Windows.Perception.Spatial.SpatialLocatorAttachedFrameOfReference* return_value);
-	HRESULT abi_CreateAttachedFrameOfReferenceAtCurrentHeadingWithPosition(Windows.Foundation.Numerics.Vector3 relativePosition, Windows.Perception.Spatial.SpatialLocatorAttachedFrameOfReference* return_value);
-	HRESULT abi_CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientation(Windows.Foundation.Numerics.Vector3 relativePosition, Windows.Foundation.Numerics.Quaternion relativeOrientation, Windows.Perception.Spatial.SpatialLocatorAttachedFrameOfReference* return_value);
-	HRESULT abi_CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientationAndRelativeHeading(Windows.Foundation.Numerics.Vector3 relativePosition, Windows.Foundation.Numerics.Quaternion relativeOrientation, double relativeHeadingInRadians, Windows.Perception.Spatial.SpatialLocatorAttachedFrameOfReference* return_value);
+	HRESULT abi_CreateAttachedFrameOfReferenceAtCurrentHeading(Windows.Foundation.Numerics.Vector3 relativePosition, Windows.Perception.Spatial.SpatialLocatorAttachedFrameOfReference* return_value);
+	HRESULT abi_CreateAttachedFrameOfReferenceAtCurrentHeading(Windows.Foundation.Numerics.Vector3 relativePosition, Windows.Foundation.Numerics.Quaternion relativeOrientation, Windows.Perception.Spatial.SpatialLocatorAttachedFrameOfReference* return_value);
+	HRESULT abi_CreateAttachedFrameOfReferenceAtCurrentHeading(Windows.Foundation.Numerics.Vector3 relativePosition, Windows.Foundation.Numerics.Quaternion relativeOrientation, double relativeHeadingInRadians, Windows.Perception.Spatial.SpatialLocatorAttachedFrameOfReference* return_value);
 	HRESULT abi_CreateStationaryFrameOfReferenceAtCurrentLocation(Windows.Perception.Spatial.SpatialStationaryFrameOfReference* return_value);
-	HRESULT abi_CreateStationaryFrameOfReferenceAtCurrentLocationWithPosition(Windows.Foundation.Numerics.Vector3 relativePosition, Windows.Perception.Spatial.SpatialStationaryFrameOfReference* return_value);
-	HRESULT abi_CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientation(Windows.Foundation.Numerics.Vector3 relativePosition, Windows.Foundation.Numerics.Quaternion relativeOrientation, Windows.Perception.Spatial.SpatialStationaryFrameOfReference* return_value);
-	HRESULT abi_CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientationAndRelativeHeading(Windows.Foundation.Numerics.Vector3 relativePosition, Windows.Foundation.Numerics.Quaternion relativeOrientation, double relativeHeadingInRadians, Windows.Perception.Spatial.SpatialStationaryFrameOfReference* return_value);
+	HRESULT abi_CreateStationaryFrameOfReferenceAtCurrentLocation(Windows.Foundation.Numerics.Vector3 relativePosition, Windows.Perception.Spatial.SpatialStationaryFrameOfReference* return_value);
+	HRESULT abi_CreateStationaryFrameOfReferenceAtCurrentLocation(Windows.Foundation.Numerics.Vector3 relativePosition, Windows.Foundation.Numerics.Quaternion relativeOrientation, Windows.Perception.Spatial.SpatialStationaryFrameOfReference* return_value);
+	HRESULT abi_CreateStationaryFrameOfReferenceAtCurrentLocation(Windows.Foundation.Numerics.Vector3 relativePosition, Windows.Foundation.Numerics.Quaternion relativeOrientation, double relativeHeadingInRadians, Windows.Perception.Spatial.SpatialStationaryFrameOfReference* return_value);
 }
 
 @uuid("e1774ef6-1f4f-499c-9625-ef5e6ed7a048")
@@ -345,16 +345,16 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_TryCreateRelativeTo(coordinateSystem, &_ret));
 		return _ret;
 	}
-	static Windows.Perception.Spatial.SpatialAnchor TryCreateWithPositionRelativeTo(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position)
+	static Windows.Perception.Spatial.SpatialAnchor TryCreateRelativeTo(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position)
 	{
 		Windows.Perception.Spatial.SpatialAnchor _ret;
-		Debug.OK(staticInstance.abi_TryCreateWithPositionRelativeTo(coordinateSystem, position, &_ret));
+		Debug.OK(staticInstance.abi_TryCreateRelativeTo(coordinateSystem, position, &_ret));
 		return _ret;
 	}
-	static Windows.Perception.Spatial.SpatialAnchor TryCreateWithPositionAndOrientationRelativeTo(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position, Windows.Foundation.Numerics.Quaternion orientation)
+	static Windows.Perception.Spatial.SpatialAnchor TryCreateRelativeTo(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position, Windows.Foundation.Numerics.Quaternion orientation)
 	{
 		Windows.Perception.Spatial.SpatialAnchor _ret;
-		Debug.OK(staticInstance.abi_TryCreateWithPositionAndOrientationRelativeTo(coordinateSystem, position, orientation, &_ret));
+		Debug.OK(staticInstance.abi_TryCreateRelativeTo(coordinateSystem, position, orientation, &_ret));
 		return _ret;
 	}
 }
@@ -580,10 +580,10 @@ extern(Windows):
 		Debug.OK(staticInstance.get_IsSupported(&_ret));
 		return _ret;
 	}
-	static Windows.Perception.Spatial.SpatialEntityStore TryGetForRemoteSystemSession(Windows.System.RemoteSystems.RemoteSystemSession session)
+	static Windows.Perception.Spatial.SpatialEntityStore TryGet(Windows.System.RemoteSystems.RemoteSystemSession session)
 	{
 		Windows.Perception.Spatial.SpatialEntityStore _ret;
-		Debug.OK(staticInstance.abi_TryGetForRemoteSystemSession(session, &_ret));
+		Debug.OK(staticInstance.abi_TryGet(session, &_ret));
 		return _ret;
 	}
 }
@@ -740,22 +740,22 @@ extern(Windows):
 		Debug.OK((cast(Windows.Perception.Spatial.ISpatialLocator)this.asInterface(uuid("f6478925-9e0c-3bb6-997e-b64ecca24cf4"))).abi_CreateAttachedFrameOfReferenceAtCurrentHeading(&_ret));
 		return _ret;
 	}
-	final Windows.Perception.Spatial.SpatialLocatorAttachedFrameOfReference CreateAttachedFrameOfReferenceAtCurrentHeadingWithPosition(Windows.Foundation.Numerics.Vector3 relativePosition)
+	final Windows.Perception.Spatial.SpatialLocatorAttachedFrameOfReference CreateAttachedFrameOfReferenceAtCurrentHeading(Windows.Foundation.Numerics.Vector3 relativePosition)
 	{
 		Windows.Perception.Spatial.SpatialLocatorAttachedFrameOfReference _ret;
-		Debug.OK((cast(Windows.Perception.Spatial.ISpatialLocator)this.asInterface(uuid("f6478925-9e0c-3bb6-997e-b64ecca24cf4"))).abi_CreateAttachedFrameOfReferenceAtCurrentHeadingWithPosition(relativePosition, &_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.ISpatialLocator)this.asInterface(uuid("f6478925-9e0c-3bb6-997e-b64ecca24cf4"))).abi_CreateAttachedFrameOfReferenceAtCurrentHeading(relativePosition, &_ret));
 		return _ret;
 	}
-	final Windows.Perception.Spatial.SpatialLocatorAttachedFrameOfReference CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientation(Windows.Foundation.Numerics.Vector3 relativePosition, Windows.Foundation.Numerics.Quaternion relativeOrientation)
+	final Windows.Perception.Spatial.SpatialLocatorAttachedFrameOfReference CreateAttachedFrameOfReferenceAtCurrentHeading(Windows.Foundation.Numerics.Vector3 relativePosition, Windows.Foundation.Numerics.Quaternion relativeOrientation)
 	{
 		Windows.Perception.Spatial.SpatialLocatorAttachedFrameOfReference _ret;
-		Debug.OK((cast(Windows.Perception.Spatial.ISpatialLocator)this.asInterface(uuid("f6478925-9e0c-3bb6-997e-b64ecca24cf4"))).abi_CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientation(relativePosition, relativeOrientation, &_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.ISpatialLocator)this.asInterface(uuid("f6478925-9e0c-3bb6-997e-b64ecca24cf4"))).abi_CreateAttachedFrameOfReferenceAtCurrentHeading(relativePosition, relativeOrientation, &_ret));
 		return _ret;
 	}
-	final Windows.Perception.Spatial.SpatialLocatorAttachedFrameOfReference CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientationAndRelativeHeading(Windows.Foundation.Numerics.Vector3 relativePosition, Windows.Foundation.Numerics.Quaternion relativeOrientation, double relativeHeadingInRadians)
+	final Windows.Perception.Spatial.SpatialLocatorAttachedFrameOfReference CreateAttachedFrameOfReferenceAtCurrentHeading(Windows.Foundation.Numerics.Vector3 relativePosition, Windows.Foundation.Numerics.Quaternion relativeOrientation, double relativeHeadingInRadians)
 	{
 		Windows.Perception.Spatial.SpatialLocatorAttachedFrameOfReference _ret;
-		Debug.OK((cast(Windows.Perception.Spatial.ISpatialLocator)this.asInterface(uuid("f6478925-9e0c-3bb6-997e-b64ecca24cf4"))).abi_CreateAttachedFrameOfReferenceAtCurrentHeadingWithPositionAndOrientationAndRelativeHeading(relativePosition, relativeOrientation, relativeHeadingInRadians, &_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.ISpatialLocator)this.asInterface(uuid("f6478925-9e0c-3bb6-997e-b64ecca24cf4"))).abi_CreateAttachedFrameOfReferenceAtCurrentHeading(relativePosition, relativeOrientation, relativeHeadingInRadians, &_ret));
 		return _ret;
 	}
 	final Windows.Perception.Spatial.SpatialStationaryFrameOfReference CreateStationaryFrameOfReferenceAtCurrentLocation()
@@ -764,22 +764,22 @@ extern(Windows):
 		Debug.OK((cast(Windows.Perception.Spatial.ISpatialLocator)this.asInterface(uuid("f6478925-9e0c-3bb6-997e-b64ecca24cf4"))).abi_CreateStationaryFrameOfReferenceAtCurrentLocation(&_ret));
 		return _ret;
 	}
-	final Windows.Perception.Spatial.SpatialStationaryFrameOfReference CreateStationaryFrameOfReferenceAtCurrentLocationWithPosition(Windows.Foundation.Numerics.Vector3 relativePosition)
+	final Windows.Perception.Spatial.SpatialStationaryFrameOfReference CreateStationaryFrameOfReferenceAtCurrentLocation(Windows.Foundation.Numerics.Vector3 relativePosition)
 	{
 		Windows.Perception.Spatial.SpatialStationaryFrameOfReference _ret;
-		Debug.OK((cast(Windows.Perception.Spatial.ISpatialLocator)this.asInterface(uuid("f6478925-9e0c-3bb6-997e-b64ecca24cf4"))).abi_CreateStationaryFrameOfReferenceAtCurrentLocationWithPosition(relativePosition, &_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.ISpatialLocator)this.asInterface(uuid("f6478925-9e0c-3bb6-997e-b64ecca24cf4"))).abi_CreateStationaryFrameOfReferenceAtCurrentLocation(relativePosition, &_ret));
 		return _ret;
 	}
-	final Windows.Perception.Spatial.SpatialStationaryFrameOfReference CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientation(Windows.Foundation.Numerics.Vector3 relativePosition, Windows.Foundation.Numerics.Quaternion relativeOrientation)
+	final Windows.Perception.Spatial.SpatialStationaryFrameOfReference CreateStationaryFrameOfReferenceAtCurrentLocation(Windows.Foundation.Numerics.Vector3 relativePosition, Windows.Foundation.Numerics.Quaternion relativeOrientation)
 	{
 		Windows.Perception.Spatial.SpatialStationaryFrameOfReference _ret;
-		Debug.OK((cast(Windows.Perception.Spatial.ISpatialLocator)this.asInterface(uuid("f6478925-9e0c-3bb6-997e-b64ecca24cf4"))).abi_CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientation(relativePosition, relativeOrientation, &_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.ISpatialLocator)this.asInterface(uuid("f6478925-9e0c-3bb6-997e-b64ecca24cf4"))).abi_CreateStationaryFrameOfReferenceAtCurrentLocation(relativePosition, relativeOrientation, &_ret));
 		return _ret;
 	}
-	final Windows.Perception.Spatial.SpatialStationaryFrameOfReference CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientationAndRelativeHeading(Windows.Foundation.Numerics.Vector3 relativePosition, Windows.Foundation.Numerics.Quaternion relativeOrientation, double relativeHeadingInRadians)
+	final Windows.Perception.Spatial.SpatialStationaryFrameOfReference CreateStationaryFrameOfReferenceAtCurrentLocation(Windows.Foundation.Numerics.Vector3 relativePosition, Windows.Foundation.Numerics.Quaternion relativeOrientation, double relativeHeadingInRadians)
 	{
 		Windows.Perception.Spatial.SpatialStationaryFrameOfReference _ret;
-		Debug.OK((cast(Windows.Perception.Spatial.ISpatialLocator)this.asInterface(uuid("f6478925-9e0c-3bb6-997e-b64ecca24cf4"))).abi_CreateStationaryFrameOfReferenceAtCurrentLocationWithPositionAndOrientationAndRelativeHeading(relativePosition, relativeOrientation, relativeHeadingInRadians, &_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.ISpatialLocator)this.asInterface(uuid("f6478925-9e0c-3bb6-997e-b64ecca24cf4"))).abi_CreateStationaryFrameOfReferenceAtCurrentLocation(relativePosition, relativeOrientation, relativeHeadingInRadians, &_ret));
 		return _ret;
 	}
 

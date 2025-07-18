@@ -32,7 +32,7 @@ extern(Windows):
 interface IDateTimeFormatter2 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_FormatUsingTimeZone(Windows.Foundation.DateTime datetime, HSTRING timeZoneId, HSTRING* return_result);
+	HRESULT abi_Format(Windows.Foundation.DateTime datetime, HSTRING timeZoneId, HSTRING* return_result);
 }
 
 @uuid("ec8d8a53-1a2e-412d-8815-3b745fb1a2a0")
@@ -169,10 +169,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter)this.asInterface(uuid("95eeca10-73e0-4e4b-a183-3d6ad0ba35ec"))).get_ResolvedGeographicRegion(&_ret));
 		return _ret;
 	}
-	final HSTRING FormatUsingTimeZone(Windows.Foundation.DateTime datetime, HSTRING timeZoneId)
+	final HSTRING Format(Windows.Foundation.DateTime datetime, HSTRING timeZoneId)
 	{
 		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter2)this.asInterface(uuid("27c91a86-bdaa-4fd0-9e36-671d5aa5ee03"))).abi_FormatUsingTimeZone(datetime, timeZoneId, &_ret));
+		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter2)this.asInterface(uuid("27c91a86-bdaa-4fd0-9e36-671d5aa5ee03"))).abi_Format(datetime, timeZoneId, &_ret));
 		return _ret;
 	}
 

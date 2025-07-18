@@ -27,8 +27,8 @@ extern(Windows):
 	HRESULT abi_GetCurrentDisplayMode(Windows.Graphics.Display.Core.HdmiDisplayMode* return_result);
 	HRESULT abi_SetDefaultDisplayModeAsync(Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_RequestSetCurrentDisplayModeAsync(Windows.Graphics.Display.Core.HdmiDisplayMode mode, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
-	HRESULT abi_RequestSetCurrentDisplayModeWithHdrAsync(Windows.Graphics.Display.Core.HdmiDisplayMode mode, Windows.Graphics.Display.Core.HdmiDisplayHdrOption hdrOption, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
-	HRESULT abi_RequestSetCurrentDisplayModeWithHdrAndMetadataAsync(Windows.Graphics.Display.Core.HdmiDisplayMode mode, Windows.Graphics.Display.Core.HdmiDisplayHdrOption hdrOption, Windows.Graphics.Display.Core.HdmiDisplayHdr2086Metadata hdrMetadata, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
+	HRESULT abi_RequestSetCurrentDisplayModeAsync(Windows.Graphics.Display.Core.HdmiDisplayMode mode, Windows.Graphics.Display.Core.HdmiDisplayHdrOption hdrOption, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
+	HRESULT abi_RequestSetCurrentDisplayModeAsync(Windows.Graphics.Display.Core.HdmiDisplayMode mode, Windows.Graphics.Display.Core.HdmiDisplayHdrOption hdrOption, Windows.Graphics.Display.Core.HdmiDisplayHdr2086Metadata hdrMetadata, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT add_DisplayModesChanged(Windows.Foundation.TypedEventHandler!(Windows.Graphics.Display.Core.HdmiDisplayInformation, IInspectable) value, EventRegistrationToken* return_token);
 	HRESULT remove_DisplayModesChanged(EventRegistrationToken token);
 }
@@ -86,16 +86,16 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayInformation)this.asInterface(uuid("130b3c0a-f565-476e-abd5-ea05aee74c69"))).abi_RequestSetCurrentDisplayModeAsync(mode, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(bool) RequestSetCurrentDisplayModeWithHdrAsync(Windows.Graphics.Display.Core.HdmiDisplayMode mode, Windows.Graphics.Display.Core.HdmiDisplayHdrOption hdrOption)
+	final Windows.Foundation.IAsyncOperation!(bool) RequestSetCurrentDisplayModeAsync(Windows.Graphics.Display.Core.HdmiDisplayMode mode, Windows.Graphics.Display.Core.HdmiDisplayHdrOption hdrOption)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayInformation)this.asInterface(uuid("130b3c0a-f565-476e-abd5-ea05aee74c69"))).abi_RequestSetCurrentDisplayModeWithHdrAsync(mode, hdrOption, &_ret));
+		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayInformation)this.asInterface(uuid("130b3c0a-f565-476e-abd5-ea05aee74c69"))).abi_RequestSetCurrentDisplayModeAsync(mode, hdrOption, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(bool) RequestSetCurrentDisplayModeWithHdrAndMetadataAsync(Windows.Graphics.Display.Core.HdmiDisplayMode mode, Windows.Graphics.Display.Core.HdmiDisplayHdrOption hdrOption, Windows.Graphics.Display.Core.HdmiDisplayHdr2086Metadata hdrMetadata)
+	final Windows.Foundation.IAsyncOperation!(bool) RequestSetCurrentDisplayModeAsync(Windows.Graphics.Display.Core.HdmiDisplayMode mode, Windows.Graphics.Display.Core.HdmiDisplayHdrOption hdrOption, Windows.Graphics.Display.Core.HdmiDisplayHdr2086Metadata hdrMetadata)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayInformation)this.asInterface(uuid("130b3c0a-f565-476e-abd5-ea05aee74c69"))).abi_RequestSetCurrentDisplayModeWithHdrAndMetadataAsync(mode, hdrOption, hdrMetadata, &_ret));
+		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayInformation)this.asInterface(uuid("130b3c0a-f565-476e-abd5-ea05aee74c69"))).abi_RequestSetCurrentDisplayModeAsync(mode, hdrOption, hdrMetadata, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnDisplayModesChanged(void delegate(Windows.Graphics.Display.Core.HdmiDisplayInformation, IInspectable) fn)

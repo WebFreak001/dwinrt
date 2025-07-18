@@ -60,7 +60,7 @@ interface ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStat
 {
 extern(Windows):
 	HRESULT abi_RegisterDevicePresenceMonitoringAsync(HSTRING deviceId, HSTRING deviceInstancePath, Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus)* return_operation);
-	HRESULT abi_RegisterDevicePresenceMonitoringWithNewDeviceAsync(HSTRING deviceId, HSTRING deviceInstancePath, Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode, HSTRING deviceFriendlyName, HSTRING deviceModelNumber, Windows.Storage.Streams.IBuffer deviceConfigurationData, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus)* return_operation);
+	HRESULT abi_RegisterDevicePresenceMonitoringAsync(HSTRING deviceId, HSTRING deviceInstancePath, Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode, HSTRING deviceFriendlyName, HSTRING deviceModelNumber, Windows.Storage.Streams.IBuffer deviceConfigurationData, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus)* return_operation);
 	HRESULT abi_UnregisterDevicePresenceMonitoringAsync(HSTRING deviceId, Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_IsDevicePresenceMonitoringSupported(bool* return_value);
 }
@@ -320,10 +320,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_RegisterDevicePresenceMonitoringAsync(deviceId, deviceInstancePath, monitoringMode, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus) RegisterDevicePresenceMonitoringWithNewDeviceAsync(HSTRING deviceId, HSTRING deviceInstancePath, Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode, HSTRING deviceFriendlyName, HSTRING deviceModelNumber, Windows.Storage.Streams.IBuffer deviceConfigurationData)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus) RegisterDevicePresenceMonitoringAsync(HSTRING deviceId, HSTRING deviceInstancePath, Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode, HSTRING deviceFriendlyName, HSTRING deviceModelNumber, Windows.Storage.Streams.IBuffer deviceConfigurationData)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Provider.SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus) _ret;
-		Debug.OK(staticInstance.abi_RegisterDevicePresenceMonitoringWithNewDeviceAsync(deviceId, deviceInstancePath, monitoringMode, deviceFriendlyName, deviceModelNumber, deviceConfigurationData, &_ret));
+		Debug.OK(staticInstance.abi_RegisterDevicePresenceMonitoringAsync(deviceId, deviceInstancePath, monitoringMode, deviceFriendlyName, deviceModelNumber, deviceConfigurationData, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncAction UnregisterDevicePresenceMonitoringAsync(HSTRING deviceId)

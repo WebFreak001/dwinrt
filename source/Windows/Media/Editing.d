@@ -97,11 +97,11 @@ extern(Windows):
 	HRESULT abi_GetThumbnailAsync(Windows.Foundation.TimeSpan timeFromStart, INT32 scaledWidth, INT32 scaledHeight, Windows.Media.Editing.VideoFramePrecision framePrecision, Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.ImageStream)* return_operation);
 	HRESULT abi_GetThumbnailsAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.TimeSpan) timesFromStart, INT32 scaledWidth, INT32 scaledHeight, Windows.Media.Editing.VideoFramePrecision framePrecision, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Graphics.Imaging.ImageStream))* return_operation);
 	HRESULT abi_RenderToFileAsync(Windows.Storage.IStorageFile destination, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double)* return_operation);
-	HRESULT abi_RenderToFileWithTrimmingPreferenceAsync(Windows.Storage.IStorageFile destination, Windows.Media.Editing.MediaTrimmingPreference trimmingPreference, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double)* return_operation);
-	HRESULT abi_RenderToFileWithProfileAsync(Windows.Storage.IStorageFile destination, Windows.Media.Editing.MediaTrimmingPreference trimmingPreference, Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double)* return_operation);
+	HRESULT abi_RenderToFileAsync(Windows.Storage.IStorageFile destination, Windows.Media.Editing.MediaTrimmingPreference trimmingPreference, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double)* return_operation);
+	HRESULT abi_RenderToFileAsync(Windows.Storage.IStorageFile destination, Windows.Media.Editing.MediaTrimmingPreference trimmingPreference, Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double)* return_operation);
 	HRESULT abi_CreateDefaultEncodingProfile(Windows.Media.MediaProperties.MediaEncodingProfile* return_value);
 	HRESULT abi_GenerateMediaStreamSource(Windows.Media.Core.MediaStreamSource* return_value);
-	HRESULT abi_GenerateMediaStreamSourceWithProfile(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Media.Core.MediaStreamSource* return_value);
+	HRESULT abi_GenerateMediaStreamSource(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Media.Core.MediaStreamSource* return_value);
 	HRESULT abi_GeneratePreviewMediaStreamSource(INT32 scaledWidth, INT32 scaledHeight, Windows.Media.Core.MediaStreamSource* return_value);
 }
 
@@ -463,16 +463,16 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).abi_RenderToFileAsync(destination, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double) RenderToFileWithTrimmingPreferenceAsync(Windows.Storage.IStorageFile destination, Windows.Media.Editing.MediaTrimmingPreference trimmingPreference)
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double) RenderToFileAsync(Windows.Storage.IStorageFile destination, Windows.Media.Editing.MediaTrimmingPreference trimmingPreference)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double) _ret;
-		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).abi_RenderToFileWithTrimmingPreferenceAsync(destination, trimmingPreference, &_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).abi_RenderToFileAsync(destination, trimmingPreference, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double) RenderToFileWithProfileAsync(Windows.Storage.IStorageFile destination, Windows.Media.Editing.MediaTrimmingPreference trimmingPreference, Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile)
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double) RenderToFileAsync(Windows.Storage.IStorageFile destination, Windows.Media.Editing.MediaTrimmingPreference trimmingPreference, Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double) _ret;
-		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).abi_RenderToFileWithProfileAsync(destination, trimmingPreference, encodingProfile, &_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).abi_RenderToFileAsync(destination, trimmingPreference, encodingProfile, &_ret));
 		return _ret;
 	}
 	final Windows.Media.MediaProperties.MediaEncodingProfile CreateDefaultEncodingProfile()
@@ -487,10 +487,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).abi_GenerateMediaStreamSource(&_ret));
 		return _ret;
 	}
-	final Windows.Media.Core.MediaStreamSource GenerateMediaStreamSourceWithProfile(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile)
+	final Windows.Media.Core.MediaStreamSource GenerateMediaStreamSource(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile)
 	{
 		Windows.Media.Core.MediaStreamSource _ret;
-		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).abi_GenerateMediaStreamSourceWithProfile(encodingProfile, &_ret));
+		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).abi_GenerateMediaStreamSource(encodingProfile, &_ret));
 		return _ret;
 	}
 	final Windows.Media.Core.MediaStreamSource GeneratePreviewMediaStreamSource(INT32 scaledWidth, INT32 scaledHeight)

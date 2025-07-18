@@ -28,14 +28,14 @@ interface IHttpClient_Base : IInspectable
 extern(Windows):
 	HRESULT abi_DeleteAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);
 	HRESULT abi_GetAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);
-	HRESULT abi_GetWithOptionAsync(Windows.Foundation.Uri uri, Windows.Web.Http.HttpCompletionOption completionOption, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);
+	HRESULT abi_GetAsync(Windows.Foundation.Uri uri, Windows.Web.Http.HttpCompletionOption completionOption, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);
 	HRESULT abi_GetBufferAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, Windows.Web.Http.HttpProgress)* return_operation);
 	HRESULT abi_GetInputStreamAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IInputStream, Windows.Web.Http.HttpProgress)* return_operation);
 	HRESULT abi_GetStringAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperationWithProgress!(HSTRING, Windows.Web.Http.HttpProgress)* return_operation);
 	HRESULT abi_PostAsync(Windows.Foundation.Uri uri, Windows.Web.Http.IHttpContent content, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);
 	HRESULT abi_PutAsync(Windows.Foundation.Uri uri, Windows.Web.Http.IHttpContent content, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);
 	HRESULT abi_SendRequestAsync(Windows.Web.Http.HttpRequestMessage request, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);
-	HRESULT abi_SendRequestWithOptionAsync(Windows.Web.Http.HttpRequestMessage request, Windows.Web.Http.HttpCompletionOption completionOption, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);
+	HRESULT abi_SendRequestAsync(Windows.Web.Http.HttpRequestMessage request, Windows.Web.Http.HttpCompletionOption completionOption, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress)* return_operation);
 	HRESULT get_DefaultRequestHeaders(Windows.Web.Http.Headers.HttpRequestHeaderCollection* return_value);
 }
 @uuid("7fda1151-3574-4880-a8ba-e6b1e0061f3d")
@@ -97,7 +97,7 @@ interface IHttpCookieManager : IInspectable
 {
 extern(Windows):
 	HRESULT abi_SetCookie(Windows.Web.Http.HttpCookie cookie, bool* return_replaced);
-	HRESULT abi_SetCookieWithThirdParty(Windows.Web.Http.HttpCookie cookie, bool thirdParty, bool* return_replaced);
+	HRESULT abi_SetCookie(Windows.Web.Http.HttpCookie cookie, bool thirdParty, bool* return_replaced);
 	HRESULT abi_DeleteCookie(Windows.Web.Http.HttpCookie cookie);
 	HRESULT abi_GetCookies(Windows.Foundation.Uri uri, Windows.Web.Http.HttpCookieCollection* return_value);
 }
@@ -166,8 +166,8 @@ interface IHttpMultipartFormDataContent_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_Add(Windows.Web.Http.IHttpContent content);
-	HRESULT abi_AddWithName(Windows.Web.Http.IHttpContent content, HSTRING name);
-	HRESULT abi_AddWithNameAndFileName(Windows.Web.Http.IHttpContent content, HSTRING name, HSTRING fileName);
+	HRESULT abi_Add(Windows.Web.Http.IHttpContent content, HSTRING name);
+	HRESULT abi_Add(Windows.Web.Http.IHttpContent content, HSTRING name, HSTRING fileName);
 }
 @uuid("64d337e2-e967-4624-b6d1-cf74604a4a42")
 @WinrtFactory("Windows.Web.Http.HttpMultipartFormDataContent")
@@ -356,10 +356,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Web.Http.IHttpClient)this.asInterface(uuid("7fda1151-3574-4880-a8ba-e6b1e0061f3d"))).abi_GetAsync(uri, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) GetWithOptionAsync(Windows.Foundation.Uri uri, Windows.Web.Http.HttpCompletionOption completionOption)
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) GetAsync(Windows.Foundation.Uri uri, Windows.Web.Http.HttpCompletionOption completionOption)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) _ret;
-		Debug.OK((cast(Windows.Web.Http.IHttpClient)this.asInterface(uuid("7fda1151-3574-4880-a8ba-e6b1e0061f3d"))).abi_GetWithOptionAsync(uri, completionOption, &_ret));
+		Debug.OK((cast(Windows.Web.Http.IHttpClient)this.asInterface(uuid("7fda1151-3574-4880-a8ba-e6b1e0061f3d"))).abi_GetAsync(uri, completionOption, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, Windows.Web.Http.HttpProgress) GetBufferAsync(Windows.Foundation.Uri uri)
@@ -398,10 +398,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Web.Http.IHttpClient)this.asInterface(uuid("7fda1151-3574-4880-a8ba-e6b1e0061f3d"))).abi_SendRequestAsync(request, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) SendRequestWithOptionAsync(Windows.Web.Http.HttpRequestMessage request, Windows.Web.Http.HttpCompletionOption completionOption)
+	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) SendRequestAsync(Windows.Web.Http.HttpRequestMessage request, Windows.Web.Http.HttpCompletionOption completionOption)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Web.Http.HttpResponseMessage, Windows.Web.Http.HttpProgress) _ret;
-		Debug.OK((cast(Windows.Web.Http.IHttpClient)this.asInterface(uuid("7fda1151-3574-4880-a8ba-e6b1e0061f3d"))).abi_SendRequestWithOptionAsync(request, completionOption, &_ret));
+		Debug.OK((cast(Windows.Web.Http.IHttpClient)this.asInterface(uuid("7fda1151-3574-4880-a8ba-e6b1e0061f3d"))).abi_SendRequestAsync(request, completionOption, &_ret));
 		return _ret;
 	}
 	final Windows.Web.Http.Headers.HttpRequestHeaderCollection DefaultRequestHeaders()
@@ -549,10 +549,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Web.Http.IHttpCookieManager)this.asInterface(uuid("7a431780-cd4f-4e57-a84a-5b0a53d6bb96"))).abi_SetCookie(cookie, &_ret));
 		return _ret;
 	}
-	final bool SetCookieWithThirdParty(Windows.Web.Http.HttpCookie cookie, bool thirdParty)
+	final bool SetCookie(Windows.Web.Http.HttpCookie cookie, bool thirdParty)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Web.Http.IHttpCookieManager)this.asInterface(uuid("7a431780-cd4f-4e57-a84a-5b0a53d6bb96"))).abi_SetCookieWithThirdParty(cookie, thirdParty, &_ret));
+		Debug.OK((cast(Windows.Web.Http.IHttpCookieManager)this.asInterface(uuid("7a431780-cd4f-4e57-a84a-5b0a53d6bb96"))).abi_SetCookie(cookie, thirdParty, &_ret));
 		return _ret;
 	}
 	final void DeleteCookie(Windows.Web.Http.HttpCookie cookie)
@@ -842,13 +842,13 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Web.Http.IHttpMultipartFormDataContent)this.asInterface(uuid("64d337e2-e967-4624-b6d1-cf74604a4a42"))).abi_Add(content));
 	}
-	final void AddWithName(Windows.Web.Http.IHttpContent content, HSTRING name)
+	final void Add(Windows.Web.Http.IHttpContent content, HSTRING name)
 	{
-		Debug.OK((cast(Windows.Web.Http.IHttpMultipartFormDataContent)this.asInterface(uuid("64d337e2-e967-4624-b6d1-cf74604a4a42"))).abi_AddWithName(content, name));
+		Debug.OK((cast(Windows.Web.Http.IHttpMultipartFormDataContent)this.asInterface(uuid("64d337e2-e967-4624-b6d1-cf74604a4a42"))).abi_Add(content, name));
 	}
-	final void AddWithNameAndFileName(Windows.Web.Http.IHttpContent content, HSTRING name, HSTRING fileName)
+	final void Add(Windows.Web.Http.IHttpContent content, HSTRING name, HSTRING fileName)
 	{
-		Debug.OK((cast(Windows.Web.Http.IHttpMultipartFormDataContent)this.asInterface(uuid("64d337e2-e967-4624-b6d1-cf74604a4a42"))).abi_AddWithNameAndFileName(content, name, fileName));
+		Debug.OK((cast(Windows.Web.Http.IHttpMultipartFormDataContent)this.asInterface(uuid("64d337e2-e967-4624-b6d1-cf74604a4a42"))).abi_Add(content, name, fileName));
 	}
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Web.Http.IHttpContent)* out_first)
 	{

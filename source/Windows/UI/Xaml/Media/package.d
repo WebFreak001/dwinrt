@@ -486,9 +486,9 @@ extern(Windows):
 interface ILoadedImageSurfaceStatics : IInspectable
 {
 extern(Windows):
-	HRESULT abi_StartLoadFromUriWithSize(Windows.Foundation.Uri uri, Windows.Foundation.Size desiredMaxSize, Windows.UI.Xaml.Media.LoadedImageSurface* return_returnValue);
+	HRESULT abi_StartLoadFromUri(Windows.Foundation.Uri uri, Windows.Foundation.Size desiredMaxSize, Windows.UI.Xaml.Media.LoadedImageSurface* return_returnValue);
 	HRESULT abi_StartLoadFromUri(Windows.Foundation.Uri uri, Windows.UI.Xaml.Media.LoadedImageSurface* return_returnValue);
-	HRESULT abi_StartLoadFromStreamWithSize(Windows.Storage.Streams.IRandomAccessStream stream, Windows.Foundation.Size desiredMaxSize, Windows.UI.Xaml.Media.LoadedImageSurface* return_returnValue);
+	HRESULT abi_StartLoadFromStream(Windows.Storage.Streams.IRandomAccessStream stream, Windows.Foundation.Size desiredMaxSize, Windows.UI.Xaml.Media.LoadedImageSurface* return_returnValue);
 	HRESULT abi_StartLoadFromStream(Windows.Storage.Streams.IRandomAccessStream stream, Windows.UI.Xaml.Media.LoadedImageSurface* return_returnValue);
 }
 
@@ -1018,10 +1018,10 @@ interface IVisualTreeHelper : IInspectable
 interface IVisualTreeHelperStatics : IInspectable
 {
 extern(Windows):
-	HRESULT abi_FindElementsInHostCoordinatesPoint(Windows.Foundation.Point intersectingPoint, Windows.UI.Xaml.UIElement subtree, Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement)* return_elements);
-	HRESULT abi_FindElementsInHostCoordinatesRect(Windows.Foundation.Rect intersectingRect, Windows.UI.Xaml.UIElement subtree, Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement)* return_elements);
-	HRESULT abi_FindAllElementsInHostCoordinatesPoint(Windows.Foundation.Point intersectingPoint, Windows.UI.Xaml.UIElement subtree, bool includeAllElements, Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement)* return_elements);
-	HRESULT abi_FindAllElementsInHostCoordinatesRect(Windows.Foundation.Rect intersectingRect, Windows.UI.Xaml.UIElement subtree, bool includeAllElements, Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement)* return_elements);
+	HRESULT abi_FindElementsInHostCoordinates(Windows.Foundation.Point intersectingPoint, Windows.UI.Xaml.UIElement subtree, Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement)* return_elements);
+	HRESULT abi_FindElementsInHostCoordinates(Windows.Foundation.Rect intersectingRect, Windows.UI.Xaml.UIElement subtree, Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement)* return_elements);
+	HRESULT abi_FindElementsInHostCoordinates(Windows.Foundation.Point intersectingPoint, Windows.UI.Xaml.UIElement subtree, bool includeAllElements, Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement)* return_elements);
+	HRESULT abi_FindElementsInHostCoordinates(Windows.Foundation.Rect intersectingRect, Windows.UI.Xaml.UIElement subtree, bool includeAllElements, Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement)* return_elements);
 	HRESULT abi_GetChild(Windows.UI.Xaml.DependencyObject reference, INT32 childIndex, Windows.UI.Xaml.DependencyObject* return_child);
 	HRESULT abi_GetChildrenCount(Windows.UI.Xaml.DependencyObject reference, INT32* return_count);
 	HRESULT abi_GetParent(Windows.UI.Xaml.DependencyObject reference, Windows.UI.Xaml.DependencyObject* return_parent);
@@ -2642,10 +2642,10 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.ILoadedImageSurfaceStatics);
 		return _staticInstance;
 	}
-	static Windows.UI.Xaml.Media.LoadedImageSurface StartLoadFromUriWithSize(Windows.Foundation.Uri uri, Windows.Foundation.Size desiredMaxSize)
+	static Windows.UI.Xaml.Media.LoadedImageSurface StartLoadFromUri(Windows.Foundation.Uri uri, Windows.Foundation.Size desiredMaxSize)
 	{
 		Windows.UI.Xaml.Media.LoadedImageSurface _ret;
-		Debug.OK(staticInstance.abi_StartLoadFromUriWithSize(uri, desiredMaxSize, &_ret));
+		Debug.OK(staticInstance.abi_StartLoadFromUri(uri, desiredMaxSize, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Media.LoadedImageSurface StartLoadFromUri(Windows.Foundation.Uri uri)
@@ -2654,10 +2654,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_StartLoadFromUri(uri, &_ret));
 		return _ret;
 	}
-	static Windows.UI.Xaml.Media.LoadedImageSurface StartLoadFromStreamWithSize(Windows.Storage.Streams.IRandomAccessStream stream, Windows.Foundation.Size desiredMaxSize)
+	static Windows.UI.Xaml.Media.LoadedImageSurface StartLoadFromStream(Windows.Storage.Streams.IRandomAccessStream stream, Windows.Foundation.Size desiredMaxSize)
 	{
 		Windows.UI.Xaml.Media.LoadedImageSurface _ret;
-		Debug.OK(staticInstance.abi_StartLoadFromStreamWithSize(stream, desiredMaxSize, &_ret));
+		Debug.OK(staticInstance.abi_StartLoadFromStream(stream, desiredMaxSize, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.Media.LoadedImageSurface StartLoadFromStream(Windows.Storage.Streams.IRandomAccessStream stream)
@@ -4374,28 +4374,28 @@ interface VisualTreeHelper : Windows.UI.Xaml.Media.IVisualTreeHelper
 		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.Media.IVisualTreeHelperStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) FindElementsInHostCoordinatesPoint(Windows.Foundation.Point intersectingPoint, Windows.UI.Xaml.UIElement subtree)
+	static Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) FindElementsInHostCoordinates(Windows.Foundation.Point intersectingPoint, Windows.UI.Xaml.UIElement subtree)
 	{
 		Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) _ret;
-		Debug.OK(staticInstance.abi_FindElementsInHostCoordinatesPoint(intersectingPoint, subtree, &_ret));
+		Debug.OK(staticInstance.abi_FindElementsInHostCoordinates(intersectingPoint, subtree, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) FindElementsInHostCoordinatesRect(Windows.Foundation.Rect intersectingRect, Windows.UI.Xaml.UIElement subtree)
+	static Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) FindElementsInHostCoordinates(Windows.Foundation.Rect intersectingRect, Windows.UI.Xaml.UIElement subtree)
 	{
 		Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) _ret;
-		Debug.OK(staticInstance.abi_FindElementsInHostCoordinatesRect(intersectingRect, subtree, &_ret));
+		Debug.OK(staticInstance.abi_FindElementsInHostCoordinates(intersectingRect, subtree, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) FindAllElementsInHostCoordinatesPoint(Windows.Foundation.Point intersectingPoint, Windows.UI.Xaml.UIElement subtree, bool includeAllElements)
+	static Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) FindElementsInHostCoordinates(Windows.Foundation.Point intersectingPoint, Windows.UI.Xaml.UIElement subtree, bool includeAllElements)
 	{
 		Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) _ret;
-		Debug.OK(staticInstance.abi_FindAllElementsInHostCoordinatesPoint(intersectingPoint, subtree, includeAllElements, &_ret));
+		Debug.OK(staticInstance.abi_FindElementsInHostCoordinates(intersectingPoint, subtree, includeAllElements, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) FindAllElementsInHostCoordinatesRect(Windows.Foundation.Rect intersectingRect, Windows.UI.Xaml.UIElement subtree, bool includeAllElements)
+	static Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) FindElementsInHostCoordinates(Windows.Foundation.Rect intersectingRect, Windows.UI.Xaml.UIElement subtree, bool includeAllElements)
 	{
 		Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) _ret;
-		Debug.OK(staticInstance.abi_FindAllElementsInHostCoordinatesRect(intersectingRect, subtree, includeAllElements, &_ret));
+		Debug.OK(staticInstance.abi_FindElementsInHostCoordinates(intersectingRect, subtree, includeAllElements, &_ret));
 		return _ret;
 	}
 	static Windows.UI.Xaml.DependencyObject GetChild(Windows.UI.Xaml.DependencyObject reference, INT32 childIndex)

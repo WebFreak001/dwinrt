@@ -37,7 +37,7 @@ extern(Windows):
 	HRESULT get_Era(INT32* return_value);
 	HRESULT set_Era(INT32 value);
 	HRESULT abi_AddEras(INT32 eras);
-	HRESULT abi_EraAsFullString(HSTRING* return_result);
+	HRESULT abi_EraAsString(HSTRING* return_result);
 	HRESULT abi_EraAsString(INT32 idealLength, HSTRING* return_result);
 	HRESULT get_FirstYearInThisEra(INT32* return_value);
 	HRESULT get_LastYearInThisEra(INT32* return_value);
@@ -54,9 +54,9 @@ extern(Windows):
 	HRESULT get_Month(INT32* return_value);
 	HRESULT set_Month(INT32 value);
 	HRESULT abi_AddMonths(INT32 months);
-	HRESULT abi_MonthAsFullString(HSTRING* return_result);
+	HRESULT abi_MonthAsString(HSTRING* return_result);
 	HRESULT abi_MonthAsString(INT32 idealLength, HSTRING* return_result);
-	HRESULT abi_MonthAsFullSoloString(HSTRING* return_result);
+	HRESULT abi_MonthAsSoloString(HSTRING* return_result);
 	HRESULT abi_MonthAsSoloString(INT32 idealLength, HSTRING* return_result);
 	HRESULT abi_MonthAsNumericString(HSTRING* return_result);
 	HRESULT abi_MonthAsPaddedNumericString(INT32 minDigits, HSTRING* return_result);
@@ -70,9 +70,9 @@ extern(Windows):
 	HRESULT abi_DayAsString(HSTRING* return_result);
 	HRESULT abi_DayAsPaddedString(INT32 minDigits, HSTRING* return_result);
 	HRESULT get_DayOfWeek(Windows.Globalization.DayOfWeek* return_value);
-	HRESULT abi_DayOfWeekAsFullString(HSTRING* return_result);
+	HRESULT abi_DayOfWeekAsString(HSTRING* return_result);
 	HRESULT abi_DayOfWeekAsString(INT32 idealLength, HSTRING* return_result);
-	HRESULT abi_DayOfWeekAsFullSoloString(HSTRING* return_result);
+	HRESULT abi_DayOfWeekAsSoloString(HSTRING* return_result);
 	HRESULT abi_DayOfWeekAsSoloString(INT32 idealLength, HSTRING* return_result);
 	HRESULT get_FirstPeriodInThisDay(INT32* return_value);
 	HRESULT get_LastPeriodInThisDay(INT32* return_value);
@@ -80,7 +80,7 @@ extern(Windows):
 	HRESULT get_Period(INT32* return_value);
 	HRESULT set_Period(INT32 value);
 	HRESULT abi_AddPeriods(INT32 periods);
-	HRESULT abi_PeriodAsFullString(HSTRING* return_result);
+	HRESULT abi_PeriodAsString(HSTRING* return_result);
 	HRESULT abi_PeriodAsString(INT32 idealLength, HSTRING* return_result);
 	HRESULT get_FirstHourInThisPeriod(INT32* return_value);
 	HRESULT get_LastHourInThisPeriod(INT32* return_value);
@@ -398,7 +398,7 @@ interface IJapanesePhoneticAnalyzerStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetWords(HSTRING input, Windows.Foundation.Collections.IVectorView!(Windows.Globalization.JapanesePhoneme)* return_result);
-	HRESULT abi_GetWordsWithMonoRubyOption(HSTRING input, bool monoRuby, Windows.Foundation.Collections.IVectorView!(Windows.Globalization.JapanesePhoneme)* return_result);
+	HRESULT abi_GetWords(HSTRING input, bool monoRuby, Windows.Foundation.Collections.IVectorView!(Windows.Globalization.JapanesePhoneme)* return_result);
 }
 
 @uuid("ea79a752-f7c2-4265-b1bd-c4dec4e4f080")
@@ -514,7 +514,7 @@ interface ITimeZoneOnCalendar : IInspectable
 extern(Windows):
 	HRESULT abi_GetTimeZone(HSTRING* return_value);
 	HRESULT abi_ChangeTimeZone(HSTRING timeZoneId);
-	HRESULT abi_TimeZoneAsFullString(HSTRING* return_result);
+	HRESULT abi_TimeZoneAsString(HSTRING* return_result);
 	HRESULT abi_TimeZoneAsString(INT32 idealLength, HSTRING* return_result);
 }
 
@@ -649,10 +649,10 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_AddEras(eras));
 	}
-	final HSTRING EraAsFullString()
+	final HSTRING EraAsString()
 	{
 		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_EraAsFullString(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_EraAsString(&_ret));
 		return _ret;
 	}
 	final HSTRING EraAsString(INT32 idealLength)
@@ -743,10 +743,10 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_AddMonths(months));
 	}
-	final HSTRING MonthAsFullString()
+	final HSTRING MonthAsString()
 	{
 		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_MonthAsFullString(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_MonthAsString(&_ret));
 		return _ret;
 	}
 	final HSTRING MonthAsString(INT32 idealLength)
@@ -755,10 +755,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_MonthAsString(idealLength, &_ret));
 		return _ret;
 	}
-	final HSTRING MonthAsFullSoloString()
+	final HSTRING MonthAsSoloString()
 	{
 		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_MonthAsFullSoloString(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_MonthAsSoloString(&_ret));
 		return _ret;
 	}
 	final HSTRING MonthAsSoloString(INT32 idealLength)
@@ -833,10 +833,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).get_DayOfWeek(&_ret));
 		return _ret;
 	}
-	final HSTRING DayOfWeekAsFullString()
+	final HSTRING DayOfWeekAsString()
 	{
 		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_DayOfWeekAsFullString(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_DayOfWeekAsString(&_ret));
 		return _ret;
 	}
 	final HSTRING DayOfWeekAsString(INT32 idealLength)
@@ -845,10 +845,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_DayOfWeekAsString(idealLength, &_ret));
 		return _ret;
 	}
-	final HSTRING DayOfWeekAsFullSoloString()
+	final HSTRING DayOfWeekAsSoloString()
 	{
 		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_DayOfWeekAsFullSoloString(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_DayOfWeekAsSoloString(&_ret));
 		return _ret;
 	}
 	final HSTRING DayOfWeekAsSoloString(INT32 idealLength)
@@ -889,10 +889,10 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_AddPeriods(periods));
 	}
-	final HSTRING PeriodAsFullString()
+	final HSTRING PeriodAsString()
 	{
 		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_PeriodAsFullString(&_ret));
+		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_PeriodAsString(&_ret));
 		return _ret;
 	}
 	final HSTRING PeriodAsString(INT32 idealLength)
@@ -1097,10 +1097,10 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Globalization.ITimeZoneOnCalendar)this.asInterface(uuid("bb3c25e5-46cf-4317-a3f5-02621ad54478"))).abi_ChangeTimeZone(timeZoneId));
 	}
-	final HSTRING TimeZoneAsFullString()
+	final HSTRING TimeZoneAsString()
 	{
 		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.ITimeZoneOnCalendar)this.asInterface(uuid("bb3c25e5-46cf-4317-a3f5-02621ad54478"))).abi_TimeZoneAsFullString(&_ret));
+		Debug.OK((cast(Windows.Globalization.ITimeZoneOnCalendar)this.asInterface(uuid("bb3c25e5-46cf-4317-a3f5-02621ad54478"))).abi_TimeZoneAsString(&_ret));
 		return _ret;
 	}
 	final HSTRING TimeZoneAsString(INT32 idealLength)
@@ -2279,10 +2279,10 @@ interface JapanesePhoneticAnalyzer
 		Debug.OK(staticInstance.abi_GetWords(input, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.Collections.IVectorView!(Windows.Globalization.JapanesePhoneme) GetWordsWithMonoRubyOption(HSTRING input, bool monoRuby)
+	static Windows.Foundation.Collections.IVectorView!(Windows.Globalization.JapanesePhoneme) GetWords(HSTRING input, bool monoRuby)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Globalization.JapanesePhoneme) _ret;
-		Debug.OK(staticInstance.abi_GetWordsWithMonoRubyOption(input, monoRuby, &_ret));
+		Debug.OK(staticInstance.abi_GetWords(input, monoRuby, &_ret));
 		return _ret;
 	}
 }

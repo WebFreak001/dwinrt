@@ -13,8 +13,8 @@ extern(Windows):
 	HRESULT add_AvailableNetworksChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.WiFi.WiFiAdapter, IInspectable) args, EventRegistrationToken* return_eventCookie);
 	HRESULT remove_AvailableNetworksChanged(EventRegistrationToken eventCookie);
 	HRESULT abi_ConnectAsync(Windows.Devices.WiFi.WiFiAvailableNetwork availableNetwork, Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind, Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult)* return_value);
-	HRESULT abi_ConnectWithPasswordCredentialAsync(Windows.Devices.WiFi.WiFiAvailableNetwork availableNetwork, Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind, Windows.Security.Credentials.PasswordCredential passwordCredential, Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult)* return_value);
-	HRESULT abi_ConnectWithPasswordCredentialAndSsidAsync(Windows.Devices.WiFi.WiFiAvailableNetwork availableNetwork, Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind, Windows.Security.Credentials.PasswordCredential passwordCredential, HSTRING ssid, Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult)* return_value);
+	HRESULT abi_ConnectAsync(Windows.Devices.WiFi.WiFiAvailableNetwork availableNetwork, Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind, Windows.Security.Credentials.PasswordCredential passwordCredential, Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult)* return_value);
+	HRESULT abi_ConnectAsync(Windows.Devices.WiFi.WiFiAvailableNetwork availableNetwork, Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind, Windows.Security.Credentials.PasswordCredential passwordCredential, HSTRING ssid, Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult)* return_value);
 	HRESULT abi_Disconnect();
 }
 
@@ -101,16 +101,16 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAdapter)this.asInterface(uuid("a6c4e423-3d75-43a4-b9de-11e26b72d9b0"))).abi_ConnectAsync(availableNetwork, reconnectionKind, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) ConnectWithPasswordCredentialAsync(Windows.Devices.WiFi.WiFiAvailableNetwork availableNetwork, Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind, Windows.Security.Credentials.PasswordCredential passwordCredential)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) ConnectAsync(Windows.Devices.WiFi.WiFiAvailableNetwork availableNetwork, Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind, Windows.Security.Credentials.PasswordCredential passwordCredential)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) _ret;
-		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAdapter)this.asInterface(uuid("a6c4e423-3d75-43a4-b9de-11e26b72d9b0"))).abi_ConnectWithPasswordCredentialAsync(availableNetwork, reconnectionKind, passwordCredential, &_ret));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAdapter)this.asInterface(uuid("a6c4e423-3d75-43a4-b9de-11e26b72d9b0"))).abi_ConnectAsync(availableNetwork, reconnectionKind, passwordCredential, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) ConnectWithPasswordCredentialAndSsidAsync(Windows.Devices.WiFi.WiFiAvailableNetwork availableNetwork, Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind, Windows.Security.Credentials.PasswordCredential passwordCredential, HSTRING ssid)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) ConnectAsync(Windows.Devices.WiFi.WiFiAvailableNetwork availableNetwork, Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind, Windows.Security.Credentials.PasswordCredential passwordCredential, HSTRING ssid)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) _ret;
-		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAdapter)this.asInterface(uuid("a6c4e423-3d75-43a4-b9de-11e26b72d9b0"))).abi_ConnectWithPasswordCredentialAndSsidAsync(availableNetwork, reconnectionKind, passwordCredential, ssid, &_ret));
+		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAdapter)this.asInterface(uuid("a6c4e423-3d75-43a4-b9de-11e26b72d9b0"))).abi_ConnectAsync(availableNetwork, reconnectionKind, passwordCredential, ssid, &_ret));
 		return _ret;
 	}
 	final void Disconnect()

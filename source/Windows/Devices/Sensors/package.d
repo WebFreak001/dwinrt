@@ -92,7 +92,7 @@ extern(Windows):
 interface IAccelerometerStatics2 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_GetDefaultWithAccelerometerReadingType(Windows.Devices.Sensors.AccelerometerReadingType readingType, Windows.Devices.Sensors.Accelerometer* return_result);
+	HRESULT abi_GetDefault(Windows.Devices.Sensors.AccelerometerReadingType readingType, Windows.Devices.Sensors.Accelerometer* return_result);
 }
 
 @uuid("cd7a630c-fb5f-48eb-b09b-a2708d1c61ef")
@@ -145,7 +145,7 @@ extern(Windows):
 	HRESULT abi_GetDeviceSelector(HSTRING* return_value);
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.ActivitySensor)* return_result);
 	HRESULT abi_GetSystemHistoryAsync(Windows.Foundation.DateTime fromTime, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.ActivitySensorReading))* return_result);
-	HRESULT abi_GetSystemHistoryWithDurationAsync(Windows.Foundation.DateTime fromTime, Windows.Foundation.TimeSpan duration, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.ActivitySensorReading))* return_result);
+	HRESULT abi_GetSystemHistoryAsync(Windows.Foundation.DateTime fromTime, Windows.Foundation.TimeSpan duration, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.ActivitySensorReading))* return_result);
 }
 
 @uuid("2c9e6612-b9ca-4677-b263-243297f79d3a")
@@ -434,7 +434,7 @@ extern(Windows):
 interface IInclinometerStatics3 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_GetDefaultWithSensorReadingType(Windows.Devices.Sensors.SensorReadingType sensorReadingtype, Windows.Devices.Sensors.Inclinometer* return_result);
+	HRESULT abi_GetDefault(Windows.Devices.Sensors.SensorReadingType sensorReadingtype, Windows.Devices.Sensors.Inclinometer* return_result);
 }
 
 @uuid("f84c0718-0c54-47ae-922e-789f57fb03a0")
@@ -619,8 +619,8 @@ extern(Windows):
 interface IOrientationSensorStatics3 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_GetDefaultWithSensorReadingType(Windows.Devices.Sensors.SensorReadingType sensorReadingtype, Windows.Devices.Sensors.OrientationSensor* return_result);
-	HRESULT abi_GetDefaultWithSensorReadingTypeAndSensorOptimizationGoal(Windows.Devices.Sensors.SensorReadingType sensorReadingType, Windows.Devices.Sensors.SensorOptimizationGoal optimizationGoal, Windows.Devices.Sensors.OrientationSensor* return_result);
+	HRESULT abi_GetDefault(Windows.Devices.Sensors.SensorReadingType sensorReadingtype, Windows.Devices.Sensors.OrientationSensor* return_result);
+	HRESULT abi_GetDefault(Windows.Devices.Sensors.SensorReadingType sensorReadingType, Windows.Devices.Sensors.SensorOptimizationGoal optimizationGoal, Windows.Devices.Sensors.OrientationSensor* return_result);
 }
 
 @uuid("9a1e013d-3d98-45f8-8920-8e4ecaca5f97")
@@ -681,7 +681,7 @@ extern(Windows):
 	HRESULT abi_GetDefaultAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Sensors.Pedometer)* return_operation);
 	HRESULT abi_GetDeviceSelector(HSTRING* return_result);
 	HRESULT abi_GetSystemHistoryAsync(Windows.Foundation.DateTime fromTime, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.PedometerReading))* return_operation);
-	HRESULT abi_GetSystemHistoryWithDurationAsync(Windows.Foundation.DateTime fromTime, Windows.Foundation.TimeSpan duration, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.PedometerReading))* return_operation);
+	HRESULT abi_GetSystemHistoryAsync(Windows.Foundation.DateTime fromTime, Windows.Foundation.TimeSpan duration, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.PedometerReading))* return_operation);
 }
 
 @uuid("79f5c6bb-ce0e-4133-b47e-8627ea72f677")
@@ -1063,10 +1063,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetSystemHistoryAsync(fromTime, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.ActivitySensorReading)) GetSystemHistoryWithDurationAsync(Windows.Foundation.DateTime fromTime, Windows.Foundation.TimeSpan duration)
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.ActivitySensorReading)) GetSystemHistoryAsync(Windows.Foundation.DateTime fromTime, Windows.Foundation.TimeSpan duration)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.ActivitySensorReading)) _ret;
-		Debug.OK(staticInstance.abi_GetSystemHistoryWithDurationAsync(fromTime, duration, &_ret));
+		Debug.OK(staticInstance.abi_GetSystemHistoryAsync(fromTime, duration, &_ret));
 		return _ret;
 	}
 }
@@ -2011,10 +2011,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetSystemHistoryAsync(fromTime, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.PedometerReading)) GetSystemHistoryWithDurationAsync(Windows.Foundation.DateTime fromTime, Windows.Foundation.TimeSpan duration)
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.PedometerReading)) GetSystemHistoryAsync(Windows.Foundation.DateTime fromTime, Windows.Foundation.TimeSpan duration)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Sensors.PedometerReading)) _ret;
-		Debug.OK(staticInstance.abi_GetSystemHistoryWithDurationAsync(fromTime, duration, &_ret));
+		Debug.OK(staticInstance.abi_GetSystemHistoryAsync(fromTime, duration, &_ret));
 		return _ret;
 	}
 }

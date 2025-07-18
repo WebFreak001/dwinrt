@@ -65,12 +65,12 @@ extern(Windows):
 interface IJsonObjectWithDefaultValues_Base : IInspectable
 {
 extern(Windows):
-	HRESULT abi_GetNamedValueOrDefault(HSTRING name, Windows.Data.Json.JsonValue defaultValue, Windows.Data.Json.JsonValue* return_returnValue);
-	HRESULT abi_GetNamedObjectOrDefault(HSTRING name, Windows.Data.Json.JsonObject defaultValue, Windows.Data.Json.JsonObject* return_returnValue);
-	HRESULT abi_GetNamedStringOrDefault(HSTRING name, HSTRING defaultValue, HSTRING* return_returnValue);
-	HRESULT abi_GetNamedArrayOrDefault(HSTRING name, Windows.Data.Json.JsonArray defaultValue, Windows.Data.Json.JsonArray* return_returnValue);
-	HRESULT abi_GetNamedNumberOrDefault(HSTRING name, double defaultValue, double* return_returnValue);
-	HRESULT abi_GetNamedBooleanOrDefault(HSTRING name, bool defaultValue, bool* return_returnValue);
+	HRESULT abi_GetNamedValue(HSTRING name, Windows.Data.Json.JsonValue defaultValue, Windows.Data.Json.JsonValue* return_returnValue);
+	HRESULT abi_GetNamedObject(HSTRING name, Windows.Data.Json.JsonObject defaultValue, Windows.Data.Json.JsonObject* return_returnValue);
+	HRESULT abi_GetNamedString(HSTRING name, HSTRING defaultValue, HSTRING* return_returnValue);
+	HRESULT abi_GetNamedArray(HSTRING name, Windows.Data.Json.JsonArray defaultValue, Windows.Data.Json.JsonArray* return_returnValue);
+	HRESULT abi_GetNamedNumber(HSTRING name, double defaultValue, double* return_returnValue);
+	HRESULT abi_GetNamedBoolean(HSTRING name, bool defaultValue, bool* return_returnValue);
 }
 @uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13")
 @WinrtFactory("Windows.Data.Json.JsonObject")
@@ -418,40 +418,40 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, Windows.Data.Json.IJsonValue)))this).abi_First(out_first));
 	}
-	final Windows.Data.Json.JsonValue GetNamedValueOrDefault(HSTRING name, Windows.Data.Json.JsonValue defaultValue)
+	final Windows.Data.Json.JsonValue GetNamedValue(HSTRING name, Windows.Data.Json.JsonValue defaultValue)
 	{
 		Windows.Data.Json.JsonValue _ret;
-		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedValueOrDefault(name, defaultValue, &_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedValue(name, defaultValue, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Json.JsonObject GetNamedObjectOrDefault(HSTRING name, Windows.Data.Json.JsonObject defaultValue)
+	final Windows.Data.Json.JsonObject GetNamedObject(HSTRING name, Windows.Data.Json.JsonObject defaultValue)
 	{
 		Windows.Data.Json.JsonObject _ret;
-		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedObjectOrDefault(name, defaultValue, &_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedObject(name, defaultValue, &_ret));
 		return _ret;
 	}
-	final HSTRING GetNamedStringOrDefault(HSTRING name, HSTRING defaultValue)
+	final HSTRING GetNamedString(HSTRING name, HSTRING defaultValue)
 	{
 		HSTRING _ret;
-		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedStringOrDefault(name, defaultValue, &_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedString(name, defaultValue, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Json.JsonArray GetNamedArrayOrDefault(HSTRING name, Windows.Data.Json.JsonArray defaultValue)
+	final Windows.Data.Json.JsonArray GetNamedArray(HSTRING name, Windows.Data.Json.JsonArray defaultValue)
 	{
 		Windows.Data.Json.JsonArray _ret;
-		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedArrayOrDefault(name, defaultValue, &_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedArray(name, defaultValue, &_ret));
 		return _ret;
 	}
-	final double GetNamedNumberOrDefault(HSTRING name, double defaultValue)
+	final double GetNamedNumber(HSTRING name, double defaultValue)
 	{
 		double _ret;
-		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedNumberOrDefault(name, defaultValue, &_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedNumber(name, defaultValue, &_ret));
 		return _ret;
 	}
-	final bool GetNamedBooleanOrDefault(HSTRING name, bool defaultValue)
+	final bool GetNamedBoolean(HSTRING name, bool defaultValue)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedBooleanOrDefault(name, defaultValue, &_ret));
+		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedBoolean(name, defaultValue, &_ret));
 		return _ret;
 	}
 	final HSTRING ToString()

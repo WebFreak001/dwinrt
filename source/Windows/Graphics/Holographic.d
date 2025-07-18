@@ -62,8 +62,8 @@ interface IHolographicCameraRenderingParameters : IInspectable
 {
 extern(Windows):
 	HRESULT abi_SetFocusPoint(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position);
-	HRESULT abi_SetFocusPointWithNormal(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position, Windows.Foundation.Numerics.Vector3 normal);
-	HRESULT abi_SetFocusPointWithNormalLinearVelocity(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position, Windows.Foundation.Numerics.Vector3 normal, Windows.Foundation.Numerics.Vector3 linearVelocity);
+	HRESULT abi_SetFocusPoint(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position, Windows.Foundation.Numerics.Vector3 normal);
+	HRESULT abi_SetFocusPoint(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position, Windows.Foundation.Numerics.Vector3 normal, Windows.Foundation.Numerics.Vector3 linearVelocity);
 	HRESULT get_Direct3D11Device(Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice* return_value);
 	HRESULT get_Direct3D11BackBuffer(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface* return_value);
 }
@@ -123,7 +123,7 @@ extern(Windows):
 	HRESULT get_CurrentPrediction(Windows.Graphics.Holographic.HolographicFramePrediction* return_value);
 	HRESULT abi_UpdateCurrentPrediction();
 	HRESULT abi_PresentUsingCurrentPrediction(Windows.Graphics.Holographic.HolographicFramePresentResult* return_result);
-	HRESULT abi_PresentUsingCurrentPredictionWithBehavior(Windows.Graphics.Holographic.HolographicFramePresentWaitBehavior waitBehavior, Windows.Graphics.Holographic.HolographicFramePresentResult* return_result);
+	HRESULT abi_PresentUsingCurrentPrediction(Windows.Graphics.Holographic.HolographicFramePresentWaitBehavior waitBehavior, Windows.Graphics.Holographic.HolographicFramePresentResult* return_result);
 	HRESULT abi_WaitForFrameToFinish();
 }
 
@@ -305,13 +305,13 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Graphics.Holographic.IHolographicCameraRenderingParameters)this.asInterface(uuid("8eac2ed1-5bf4-4e16-8236-ae0800c11d0d"))).abi_SetFocusPoint(coordinateSystem, position));
 	}
-	final void SetFocusPointWithNormal(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position, Windows.Foundation.Numerics.Vector3 normal)
+	final void SetFocusPoint(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position, Windows.Foundation.Numerics.Vector3 normal)
 	{
-		Debug.OK((cast(Windows.Graphics.Holographic.IHolographicCameraRenderingParameters)this.asInterface(uuid("8eac2ed1-5bf4-4e16-8236-ae0800c11d0d"))).abi_SetFocusPointWithNormal(coordinateSystem, position, normal));
+		Debug.OK((cast(Windows.Graphics.Holographic.IHolographicCameraRenderingParameters)this.asInterface(uuid("8eac2ed1-5bf4-4e16-8236-ae0800c11d0d"))).abi_SetFocusPoint(coordinateSystem, position, normal));
 	}
-	final void SetFocusPointWithNormalLinearVelocity(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position, Windows.Foundation.Numerics.Vector3 normal, Windows.Foundation.Numerics.Vector3 linearVelocity)
+	final void SetFocusPoint(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position, Windows.Foundation.Numerics.Vector3 normal, Windows.Foundation.Numerics.Vector3 linearVelocity)
 	{
-		Debug.OK((cast(Windows.Graphics.Holographic.IHolographicCameraRenderingParameters)this.asInterface(uuid("8eac2ed1-5bf4-4e16-8236-ae0800c11d0d"))).abi_SetFocusPointWithNormalLinearVelocity(coordinateSystem, position, normal, linearVelocity));
+		Debug.OK((cast(Windows.Graphics.Holographic.IHolographicCameraRenderingParameters)this.asInterface(uuid("8eac2ed1-5bf4-4e16-8236-ae0800c11d0d"))).abi_SetFocusPoint(coordinateSystem, position, normal, linearVelocity));
 	}
 	final Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice Direct3D11Device()
 	{
@@ -455,10 +455,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Holographic.IHolographicFrame)this.asInterface(uuid("c6988eb6-a8b9-3054-a6eb-d624b6536375"))).abi_PresentUsingCurrentPrediction(&_ret));
 		return _ret;
 	}
-	final Windows.Graphics.Holographic.HolographicFramePresentResult PresentUsingCurrentPredictionWithBehavior(Windows.Graphics.Holographic.HolographicFramePresentWaitBehavior waitBehavior)
+	final Windows.Graphics.Holographic.HolographicFramePresentResult PresentUsingCurrentPrediction(Windows.Graphics.Holographic.HolographicFramePresentWaitBehavior waitBehavior)
 	{
 		Windows.Graphics.Holographic.HolographicFramePresentResult _ret;
-		Debug.OK((cast(Windows.Graphics.Holographic.IHolographicFrame)this.asInterface(uuid("c6988eb6-a8b9-3054-a6eb-d624b6536375"))).abi_PresentUsingCurrentPredictionWithBehavior(waitBehavior, &_ret));
+		Debug.OK((cast(Windows.Graphics.Holographic.IHolographicFrame)this.asInterface(uuid("c6988eb6-a8b9-3054-a6eb-d624b6536375"))).abi_PresentUsingCurrentPrediction(waitBehavior, &_ret));
 		return _ret;
 	}
 	final void WaitForFrameToFinish()

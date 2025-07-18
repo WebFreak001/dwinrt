@@ -56,9 +56,9 @@ extern(Windows):
 	HRESULT abi_GetVpnSendPacketBuffer(Windows.Networking.Vpn.VpnPacketBuffer* return_vpnSendPacketBuffer);
 	HRESULT abi_GetVpnReceivePacketBuffer(Windows.Networking.Vpn.VpnPacketBuffer* return_vpnReceivePacketBuffer);
 	HRESULT abi_RequestCustomPromptAsync(Windows.Foundation.Collections.IVectorView!(Windows.Networking.Vpn.IVpnCustomPromptElement) customPromptElement, Windows.Foundation.IAsyncAction* return_action);
-	HRESULT abi_RequestCredentialsWithCertificateAsync(Windows.Networking.Vpn.VpnCredentialType credType, UINT32 credOptions, Windows.Security.Cryptography.Certificates.Certificate certificate, Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential)* return_credential);
-	HRESULT abi_RequestCredentialsWithOptionsAsync(Windows.Networking.Vpn.VpnCredentialType credType, UINT32 credOptions, Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential)* return_credential);
-	HRESULT abi_RequestCredentialsSimpleAsync(Windows.Networking.Vpn.VpnCredentialType credType, Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential)* return_credential);
+	HRESULT abi_RequestCredentialsAsync(Windows.Networking.Vpn.VpnCredentialType credType, UINT32 credOptions, Windows.Security.Cryptography.Certificates.Certificate certificate, Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential)* return_credential);
+	HRESULT abi_RequestCredentialsAsync(Windows.Networking.Vpn.VpnCredentialType credType, UINT32 credOptions, Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential)* return_credential);
+	HRESULT abi_RequestCredentialsAsync(Windows.Networking.Vpn.VpnCredentialType credType, Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential)* return_credential);
 	HRESULT abi_TerminateConnection(HSTRING message);
 	HRESULT abi_StartWithTrafficFilter(Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIpv4List, Windows.Foundation.Collections.IVectorView!(Windows.Networking.HostName) assignedClientIpv6List, Windows.Networking.Vpn.VpnInterfaceId vpnInterfaceId, Windows.Networking.Vpn.VpnRouteAssignment assignedRoutes, Windows.Networking.Vpn.VpnDomainNameAssignment assignedNamespace, UINT32 mtuSize, UINT32 maxFrameSize, bool reserved, IInspectable mainOuterTunnelTransport, IInspectable optionalOuterTunnelTransport, Windows.Networking.Vpn.VpnTrafficFilterAssignment assignedTrafficFilters);
 }
@@ -735,22 +735,22 @@ extern(Windows):
 		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel2)this.asInterface(uuid("2255d165-993b-4629-ad60-f1c3f3537f50"))).abi_RequestCustomPromptAsync(customPromptElement, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) RequestCredentialsWithCertificateAsync(Windows.Networking.Vpn.VpnCredentialType credType, UINT32 credOptions, Windows.Security.Cryptography.Certificates.Certificate certificate)
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) RequestCredentialsAsync(Windows.Networking.Vpn.VpnCredentialType credType, UINT32 credOptions, Windows.Security.Cryptography.Certificates.Certificate certificate)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) _ret;
-		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel2)this.asInterface(uuid("2255d165-993b-4629-ad60-f1c3f3537f50"))).abi_RequestCredentialsWithCertificateAsync(credType, credOptions, certificate, &_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel2)this.asInterface(uuid("2255d165-993b-4629-ad60-f1c3f3537f50"))).abi_RequestCredentialsAsync(credType, credOptions, certificate, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) RequestCredentialsWithOptionsAsync(Windows.Networking.Vpn.VpnCredentialType credType, UINT32 credOptions)
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) RequestCredentialsAsync(Windows.Networking.Vpn.VpnCredentialType credType, UINT32 credOptions)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) _ret;
-		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel2)this.asInterface(uuid("2255d165-993b-4629-ad60-f1c3f3537f50"))).abi_RequestCredentialsWithOptionsAsync(credType, credOptions, &_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel2)this.asInterface(uuid("2255d165-993b-4629-ad60-f1c3f3537f50"))).abi_RequestCredentialsAsync(credType, credOptions, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) RequestCredentialsSimpleAsync(Windows.Networking.Vpn.VpnCredentialType credType)
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) RequestCredentialsAsync(Windows.Networking.Vpn.VpnCredentialType credType)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) _ret;
-		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel2)this.asInterface(uuid("2255d165-993b-4629-ad60-f1c3f3537f50"))).abi_RequestCredentialsSimpleAsync(credType, &_ret));
+		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel2)this.asInterface(uuid("2255d165-993b-4629-ad60-f1c3f3537f50"))).abi_RequestCredentialsAsync(credType, &_ret));
 		return _ret;
 	}
 	final void TerminateConnection(HSTRING message)

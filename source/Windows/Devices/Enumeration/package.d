@@ -88,8 +88,8 @@ interface IDeviceInformationCustomPairing : IInspectable
 {
 extern(Windows):
 	HRESULT abi_PairAsync(Windows.Devices.Enumeration.DevicePairingKinds pairingKindsSupported, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult)* return_result);
-	HRESULT abi_PairWithProtectionLevelAsync(Windows.Devices.Enumeration.DevicePairingKinds pairingKindsSupported, Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult)* return_result);
-	HRESULT abi_PairWithProtectionLevelAndSettingsAsync(Windows.Devices.Enumeration.DevicePairingKinds pairingKindsSupported, Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel, Windows.Devices.Enumeration.IDevicePairingSettings devicePairingSettings, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult)* return_result);
+	HRESULT abi_PairAsync(Windows.Devices.Enumeration.DevicePairingKinds pairingKindsSupported, Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult)* return_result);
+	HRESULT abi_PairAsync(Windows.Devices.Enumeration.DevicePairingKinds pairingKindsSupported, Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel, Windows.Devices.Enumeration.IDevicePairingSettings devicePairingSettings, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult)* return_result);
 	HRESULT add_PairingRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DeviceInformationCustomPairing, Windows.Devices.Enumeration.DevicePairingRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PairingRequested(EventRegistrationToken token);
 }
@@ -102,7 +102,7 @@ extern(Windows):
 	HRESULT get_IsPaired(bool* return_value);
 	HRESULT get_CanPair(bool* return_value);
 	HRESULT abi_PairAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult)* return_result);
-	HRESULT abi_PairWithProtectionLevelAsync(Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult)* return_result);
+	HRESULT abi_PairAsync(Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult)* return_result);
 }
 
 @uuid("f68612fd-0aee-4328-85cc-1c742bb1790d")
@@ -112,7 +112,7 @@ interface IDeviceInformationPairing2 : IInspectable
 extern(Windows):
 	HRESULT get_ProtectionLevel(Windows.Devices.Enumeration.DevicePairingProtectionLevel* return_value);
 	HRESULT get_Custom(Windows.Devices.Enumeration.DeviceInformationCustomPairing* return_value);
-	HRESULT abi_PairWithProtectionLevelAndSettingsAsync(Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel, Windows.Devices.Enumeration.IDevicePairingSettings devicePairingSettings, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult)* return_result);
+	HRESULT abi_PairAsync(Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel, Windows.Devices.Enumeration.IDevicePairingSettings devicePairingSettings, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult)* return_result);
 	HRESULT abi_UnpairAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceUnpairingResult)* return_result);
 }
 
@@ -130,15 +130,15 @@ interface IDeviceInformationStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_CreateFromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation)* return_asyncOp);
-	HRESULT abi_CreateFromIdAsyncAdditionalProperties(HSTRING deviceId, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation)* return_asyncOp);
+	HRESULT abi_CreateFromIdAsync(HSTRING deviceId, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation)* return_asyncOp);
 	HRESULT abi_FindAllAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection)* return_asyncOp);
-	HRESULT abi_FindAllAsyncDeviceClass(Windows.Devices.Enumeration.DeviceClass deviceClass, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection)* return_asyncOp);
-	HRESULT abi_FindAllAsyncAqsFilter(HSTRING aqsFilter, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection)* return_asyncOp);
-	HRESULT abi_FindAllAsyncAqsFilterAndAdditionalProperties(HSTRING aqsFilter, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection)* return_asyncOp);
+	HRESULT abi_FindAllAsync(Windows.Devices.Enumeration.DeviceClass deviceClass, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection)* return_asyncOp);
+	HRESULT abi_FindAllAsync(HSTRING aqsFilter, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection)* return_asyncOp);
+	HRESULT abi_FindAllAsync(HSTRING aqsFilter, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection)* return_asyncOp);
 	HRESULT abi_CreateWatcher(Windows.Devices.Enumeration.DeviceWatcher* return_watcher);
-	HRESULT abi_CreateWatcherDeviceClass(Windows.Devices.Enumeration.DeviceClass deviceClass, Windows.Devices.Enumeration.DeviceWatcher* return_watcher);
-	HRESULT abi_CreateWatcherAqsFilter(HSTRING aqsFilter, Windows.Devices.Enumeration.DeviceWatcher* return_watcher);
-	HRESULT abi_CreateWatcherAqsFilterAndAdditionalProperties(HSTRING aqsFilter, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties, Windows.Devices.Enumeration.DeviceWatcher* return_watcher);
+	HRESULT abi_CreateWatcher(Windows.Devices.Enumeration.DeviceClass deviceClass, Windows.Devices.Enumeration.DeviceWatcher* return_watcher);
+	HRESULT abi_CreateWatcher(HSTRING aqsFilter, Windows.Devices.Enumeration.DeviceWatcher* return_watcher);
+	HRESULT abi_CreateWatcher(HSTRING aqsFilter, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties, Windows.Devices.Enumeration.DeviceWatcher* return_watcher);
 }
 
 @uuid("493b4f34-a84f-45fd-9167-15d1cb1bd1f9")
@@ -147,9 +147,9 @@ interface IDeviceInformationStatics2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetAqsFilterFromDeviceClass(Windows.Devices.Enumeration.DeviceClass deviceClass, HSTRING* return_aqsFilter);
-	HRESULT abi_CreateFromIdAsyncWithKindAndAdditionalProperties(HSTRING deviceId, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties, Windows.Devices.Enumeration.DeviceInformationKind kind, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation)* return_asyncOp);
-	HRESULT abi_FindAllAsyncWithKindAqsFilterAndAdditionalProperties(HSTRING aqsFilter, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties, Windows.Devices.Enumeration.DeviceInformationKind kind, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection)* return_asyncOp);
-	HRESULT abi_CreateWatcherWithKindAqsFilterAndAdditionalProperties(HSTRING aqsFilter, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties, Windows.Devices.Enumeration.DeviceInformationKind kind, Windows.Devices.Enumeration.DeviceWatcher* return_watcher);
+	HRESULT abi_CreateFromIdAsync(HSTRING deviceId, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties, Windows.Devices.Enumeration.DeviceInformationKind kind, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation)* return_asyncOp);
+	HRESULT abi_FindAllAsync(HSTRING aqsFilter, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties, Windows.Devices.Enumeration.DeviceInformationKind kind, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection)* return_asyncOp);
+	HRESULT abi_CreateWatcher(HSTRING aqsFilter, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties, Windows.Devices.Enumeration.DeviceInformationKind kind, Windows.Devices.Enumeration.DeviceWatcher* return_watcher);
 }
 
 @uuid("8f315305-d972-44b7-a37e-9e822c78213b")
@@ -178,7 +178,7 @@ extern(Windows):
 	HRESULT get_PairingKind(Windows.Devices.Enumeration.DevicePairingKinds* return_value);
 	HRESULT get_Pin(HSTRING* return_value);
 	HRESULT abi_Accept();
-	HRESULT abi_AcceptWithPin(HSTRING pin);
+	HRESULT abi_Accept(HSTRING pin);
 	HRESULT abi_GetDeferral(Windows.Foundation.Deferral* return_result);
 }
 
@@ -211,9 +211,9 @@ extern(Windows):
 	HRESULT add_DevicePickerDismissed(Windows.Foundation.TypedEventHandler!(Windows.Devices.Enumeration.DevicePicker, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DevicePickerDismissed(EventRegistrationToken token);
 	HRESULT abi_Show(Windows.Foundation.Rect selection);
-	HRESULT abi_ShowWithPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement placement);
+	HRESULT abi_Show(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement placement);
 	HRESULT abi_PickSingleDeviceAsync(Windows.Foundation.Rect selection, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation)* return_operation);
-	HRESULT abi_PickSingleDeviceAsyncWithPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement placement, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation)* return_operation);
+	HRESULT abi_PickSingleDeviceAsync(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement placement, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation)* return_operation);
 	HRESULT abi_Hide();
 	HRESULT abi_SetDisplayStatus(Windows.Devices.Enumeration.DeviceInformation device, HSTRING status, Windows.Devices.Enumeration.DevicePickerDisplayStatusOptions options);
 }
@@ -496,10 +496,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateFromIdAsync(deviceId, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation) CreateFromIdAsyncAdditionalProperties(HSTRING deviceId, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation) CreateFromIdAsync(HSTRING deviceId, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation) _ret;
-		Debug.OK(staticInstance.abi_CreateFromIdAsyncAdditionalProperties(deviceId, additionalProperties, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromIdAsync(deviceId, additionalProperties, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) FindAllAsync()
@@ -508,22 +508,22 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_FindAllAsync(&_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) FindAllAsyncDeviceClass(Windows.Devices.Enumeration.DeviceClass deviceClass)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) FindAllAsync(Windows.Devices.Enumeration.DeviceClass deviceClass)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) _ret;
-		Debug.OK(staticInstance.abi_FindAllAsyncDeviceClass(deviceClass, &_ret));
+		Debug.OK(staticInstance.abi_FindAllAsync(deviceClass, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) FindAllAsyncAqsFilter(HSTRING aqsFilter)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) FindAllAsync(HSTRING aqsFilter)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) _ret;
-		Debug.OK(staticInstance.abi_FindAllAsyncAqsFilter(aqsFilter, &_ret));
+		Debug.OK(staticInstance.abi_FindAllAsync(aqsFilter, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) FindAllAsyncAqsFilterAndAdditionalProperties(HSTRING aqsFilter, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) FindAllAsync(HSTRING aqsFilter, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) _ret;
-		Debug.OK(staticInstance.abi_FindAllAsyncAqsFilterAndAdditionalProperties(aqsFilter, additionalProperties, &_ret));
+		Debug.OK(staticInstance.abi_FindAllAsync(aqsFilter, additionalProperties, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Enumeration.DeviceWatcher CreateWatcher()
@@ -532,22 +532,22 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateWatcher(&_ret));
 		return _ret;
 	}
-	static Windows.Devices.Enumeration.DeviceWatcher CreateWatcherDeviceClass(Windows.Devices.Enumeration.DeviceClass deviceClass)
+	static Windows.Devices.Enumeration.DeviceWatcher CreateWatcher(Windows.Devices.Enumeration.DeviceClass deviceClass)
 	{
 		Windows.Devices.Enumeration.DeviceWatcher _ret;
-		Debug.OK(staticInstance.abi_CreateWatcherDeviceClass(deviceClass, &_ret));
+		Debug.OK(staticInstance.abi_CreateWatcher(deviceClass, &_ret));
 		return _ret;
 	}
-	static Windows.Devices.Enumeration.DeviceWatcher CreateWatcherAqsFilter(HSTRING aqsFilter)
+	static Windows.Devices.Enumeration.DeviceWatcher CreateWatcher(HSTRING aqsFilter)
 	{
 		Windows.Devices.Enumeration.DeviceWatcher _ret;
-		Debug.OK(staticInstance.abi_CreateWatcherAqsFilter(aqsFilter, &_ret));
+		Debug.OK(staticInstance.abi_CreateWatcher(aqsFilter, &_ret));
 		return _ret;
 	}
-	static Windows.Devices.Enumeration.DeviceWatcher CreateWatcherAqsFilterAndAdditionalProperties(HSTRING aqsFilter, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties)
+	static Windows.Devices.Enumeration.DeviceWatcher CreateWatcher(HSTRING aqsFilter, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties)
 	{
 		Windows.Devices.Enumeration.DeviceWatcher _ret;
-		Debug.OK(staticInstance.abi_CreateWatcherAqsFilterAndAdditionalProperties(aqsFilter, additionalProperties, &_ret));
+		Debug.OK(staticInstance.abi_CreateWatcher(aqsFilter, additionalProperties, &_ret));
 		return _ret;
 	}
 }
@@ -590,16 +590,16 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Enumeration.IDeviceInformationCustomPairing)this.asInterface(uuid("85138c02-4ee6-4914-8370-107a39144c0e"))).abi_PairAsync(pairingKindsSupported, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) PairWithProtectionLevelAsync(Windows.Devices.Enumeration.DevicePairingKinds pairingKindsSupported, Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) PairAsync(Windows.Devices.Enumeration.DevicePairingKinds pairingKindsSupported, Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) _ret;
-		Debug.OK((cast(Windows.Devices.Enumeration.IDeviceInformationCustomPairing)this.asInterface(uuid("85138c02-4ee6-4914-8370-107a39144c0e"))).abi_PairWithProtectionLevelAsync(pairingKindsSupported, minProtectionLevel, &_ret));
+		Debug.OK((cast(Windows.Devices.Enumeration.IDeviceInformationCustomPairing)this.asInterface(uuid("85138c02-4ee6-4914-8370-107a39144c0e"))).abi_PairAsync(pairingKindsSupported, minProtectionLevel, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) PairWithProtectionLevelAndSettingsAsync(Windows.Devices.Enumeration.DevicePairingKinds pairingKindsSupported, Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel, Windows.Devices.Enumeration.IDevicePairingSettings devicePairingSettings)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) PairAsync(Windows.Devices.Enumeration.DevicePairingKinds pairingKindsSupported, Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel, Windows.Devices.Enumeration.IDevicePairingSettings devicePairingSettings)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) _ret;
-		Debug.OK((cast(Windows.Devices.Enumeration.IDeviceInformationCustomPairing)this.asInterface(uuid("85138c02-4ee6-4914-8370-107a39144c0e"))).abi_PairWithProtectionLevelAndSettingsAsync(pairingKindsSupported, minProtectionLevel, devicePairingSettings, &_ret));
+		Debug.OK((cast(Windows.Devices.Enumeration.IDeviceInformationCustomPairing)this.asInterface(uuid("85138c02-4ee6-4914-8370-107a39144c0e"))).abi_PairAsync(pairingKindsSupported, minProtectionLevel, devicePairingSettings, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnPairingRequested(void delegate(Windows.Devices.Enumeration.DeviceInformationCustomPairing, Windows.Devices.Enumeration.DevicePairingRequestedEventArgs) fn)
@@ -635,10 +635,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Enumeration.IDeviceInformationPairing)this.asInterface(uuid("2c4769f5-f684-40d5-8469-e8dbaab70485"))).abi_PairAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) PairWithProtectionLevelAsync(Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) PairAsync(Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) _ret;
-		Debug.OK((cast(Windows.Devices.Enumeration.IDeviceInformationPairing)this.asInterface(uuid("2c4769f5-f684-40d5-8469-e8dbaab70485"))).abi_PairWithProtectionLevelAsync(minProtectionLevel, &_ret));
+		Debug.OK((cast(Windows.Devices.Enumeration.IDeviceInformationPairing)this.asInterface(uuid("2c4769f5-f684-40d5-8469-e8dbaab70485"))).abi_PairAsync(minProtectionLevel, &_ret));
 		return _ret;
 	}
 	final Windows.Devices.Enumeration.DevicePairingProtectionLevel ProtectionLevel()
@@ -653,10 +653,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Enumeration.IDeviceInformationPairing2)this.asInterface(uuid("f68612fd-0aee-4328-85cc-1c742bb1790d"))).get_Custom(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) PairWithProtectionLevelAndSettingsAsync(Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel, Windows.Devices.Enumeration.IDevicePairingSettings devicePairingSettings)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) PairAsync(Windows.Devices.Enumeration.DevicePairingProtectionLevel minProtectionLevel, Windows.Devices.Enumeration.IDevicePairingSettings devicePairingSettings)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DevicePairingResult) _ret;
-		Debug.OK((cast(Windows.Devices.Enumeration.IDeviceInformationPairing2)this.asInterface(uuid("f68612fd-0aee-4328-85cc-1c742bb1790d"))).abi_PairWithProtectionLevelAndSettingsAsync(minProtectionLevel, devicePairingSettings, &_ret));
+		Debug.OK((cast(Windows.Devices.Enumeration.IDeviceInformationPairing2)this.asInterface(uuid("f68612fd-0aee-4328-85cc-1c742bb1790d"))).abi_PairAsync(minProtectionLevel, devicePairingSettings, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceUnpairingResult) UnpairAsync()
@@ -728,9 +728,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.Enumeration.IDevicePairingRequestedEventArgs)this.asInterface(uuid("f717fc56-de6b-487f-8376-0180aca69963"))).abi_Accept());
 	}
-	final void AcceptWithPin(HSTRING pin)
+	final void Accept(HSTRING pin)
 	{
-		Debug.OK((cast(Windows.Devices.Enumeration.IDevicePairingRequestedEventArgs)this.asInterface(uuid("f717fc56-de6b-487f-8376-0180aca69963"))).abi_AcceptWithPin(pin));
+		Debug.OK((cast(Windows.Devices.Enumeration.IDevicePairingRequestedEventArgs)this.asInterface(uuid("f717fc56-de6b-487f-8376-0180aca69963"))).abi_Accept(pin));
 	}
 	final Windows.Foundation.Deferral GetDeferral()
 	{
@@ -812,9 +812,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.Enumeration.IDevicePicker)this.asInterface(uuid("84997aa2-034a-4440-8813-7d0bd479bf5a"))).abi_Show(selection));
 	}
-	final void ShowWithPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement placement)
+	final void Show(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement placement)
 	{
-		Debug.OK((cast(Windows.Devices.Enumeration.IDevicePicker)this.asInterface(uuid("84997aa2-034a-4440-8813-7d0bd479bf5a"))).abi_ShowWithPlacement(selection, placement));
+		Debug.OK((cast(Windows.Devices.Enumeration.IDevicePicker)this.asInterface(uuid("84997aa2-034a-4440-8813-7d0bd479bf5a"))).abi_Show(selection, placement));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation) PickSingleDeviceAsync(Windows.Foundation.Rect selection)
 	{
@@ -822,10 +822,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Enumeration.IDevicePicker)this.asInterface(uuid("84997aa2-034a-4440-8813-7d0bd479bf5a"))).abi_PickSingleDeviceAsync(selection, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation) PickSingleDeviceAsyncWithPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement placement)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation) PickSingleDeviceAsync(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement placement)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation) _ret;
-		Debug.OK((cast(Windows.Devices.Enumeration.IDevicePicker)this.asInterface(uuid("84997aa2-034a-4440-8813-7d0bd479bf5a"))).abi_PickSingleDeviceAsyncWithPlacement(selection, placement, &_ret));
+		Debug.OK((cast(Windows.Devices.Enumeration.IDevicePicker)this.asInterface(uuid("84997aa2-034a-4440-8813-7d0bd479bf5a"))).abi_PickSingleDeviceAsync(selection, placement, &_ret));
 		return _ret;
 	}
 	final void Hide()

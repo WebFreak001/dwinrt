@@ -291,8 +291,8 @@ interface IPointerPointStatics : IInspectable
 extern(Windows):
 	HRESULT abi_GetCurrentPoint(UINT32 pointerId, Windows.UI.Input.PointerPoint* return_pointerPoint);
 	HRESULT abi_GetIntermediatePoints(UINT32 pointerId, Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint)* return_pointerPoints);
-	HRESULT abi_GetCurrentPointTransformed(UINT32 pointerId, Windows.UI.Input.IPointerPointTransform transform, Windows.UI.Input.PointerPoint* return_pointerPoint);
-	HRESULT abi_GetIntermediatePointsTransformed(UINT32 pointerId, Windows.UI.Input.IPointerPointTransform transform, Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint)* return_pointerPoints);
+	HRESULT abi_GetCurrentPoint(UINT32 pointerId, Windows.UI.Input.IPointerPointTransform transform, Windows.UI.Input.PointerPoint* return_pointerPoint);
+	HRESULT abi_GetIntermediatePoints(UINT32 pointerId, Windows.UI.Input.IPointerPointTransform transform, Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint)* return_pointerPoints);
 }
 
 @uuid("4d5fe14f-b87c-4028-bc9c-59e9947fb056")
@@ -491,7 +491,7 @@ interface IRadialControllerMenuItemStatics2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_CreateFromFontGlyph(HSTRING displayText, HSTRING glyph, HSTRING fontFamily, Windows.UI.Input.RadialControllerMenuItem* return_result);
-	HRESULT abi_CreateFromFontGlyphWithUri(HSTRING displayText, HSTRING glyph, HSTRING fontFamily, Windows.Foundation.Uri fontUri, Windows.UI.Input.RadialControllerMenuItem* return_result);
+	HRESULT abi_CreateFromFontGlyph(HSTRING displayText, HSTRING glyph, HSTRING fontFamily, Windows.Foundation.Uri fontUri, Windows.UI.Input.RadialControllerMenuItem* return_result);
 }
 
 @uuid("206aa435-e651-11e5-bf62-2c27d7404e85")
@@ -1304,16 +1304,16 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetIntermediatePoints(pointerId, &_ret));
 		return _ret;
 	}
-	static Windows.UI.Input.PointerPoint GetCurrentPointTransformed(UINT32 pointerId, Windows.UI.Input.IPointerPointTransform transform)
+	static Windows.UI.Input.PointerPoint GetCurrentPoint(UINT32 pointerId, Windows.UI.Input.IPointerPointTransform transform)
 	{
 		Windows.UI.Input.PointerPoint _ret;
-		Debug.OK(staticInstance.abi_GetCurrentPointTransformed(pointerId, transform, &_ret));
+		Debug.OK(staticInstance.abi_GetCurrentPoint(pointerId, transform, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint) GetIntermediatePointsTransformed(UINT32 pointerId, Windows.UI.Input.IPointerPointTransform transform)
+	static Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint) GetIntermediatePoints(UINT32 pointerId, Windows.UI.Input.IPointerPointTransform transform)
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint) _ret;
-		Debug.OK(staticInstance.abi_GetIntermediatePointsTransformed(pointerId, transform, &_ret));
+		Debug.OK(staticInstance.abi_GetIntermediatePoints(pointerId, transform, &_ret));
 		return _ret;
 	}
 }

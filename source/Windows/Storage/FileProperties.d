@@ -120,7 +120,7 @@ interface IStorageItemExtraProperties : IInspectable
 extern(Windows):
 	HRESULT abi_RetrievePropertiesAsync(Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable))* return_operation);
 	HRESULT abi_SavePropertiesAsync(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, IInspectable)) propertiesToSave, Windows.Foundation.IAsyncAction* return_operation);
-	HRESULT abi_SavePropertiesAsyncOverloadDefault(Windows.Foundation.IAsyncAction* return_operation);
+	HRESULT abi_SavePropertiesAsync(Windows.Foundation.IAsyncAction* return_operation);
 }
 
 @uuid("693dd42f-dbe7-49b5-b3b3-2893ac5d3423")
@@ -198,10 +198,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsync(propertiesToSave, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction SavePropertiesAsyncOverloadDefault()
+	final Windows.Foundation.IAsyncAction SavePropertiesAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsyncOverloadDefault(&_ret));
+		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsync(&_ret));
 		return _ret;
 	}
 }
@@ -253,10 +253,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsync(propertiesToSave, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction SavePropertiesAsyncOverloadDefault()
+	final Windows.Foundation.IAsyncAction SavePropertiesAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsyncOverloadDefault(&_ret));
+		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsync(&_ret));
 		return _ret;
 	}
 }
@@ -396,10 +396,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsync(propertiesToSave, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction SavePropertiesAsyncOverloadDefault()
+	final Windows.Foundation.IAsyncAction SavePropertiesAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsyncOverloadDefault(&_ret));
+		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsync(&_ret));
 		return _ret;
 	}
 }
@@ -551,10 +551,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsync(propertiesToSave, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction SavePropertiesAsyncOverloadDefault()
+	final Windows.Foundation.IAsyncAction SavePropertiesAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsyncOverloadDefault(&_ret));
+		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsync(&_ret));
 		return _ret;
 	}
 }
@@ -598,10 +598,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsync(propertiesToSave, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction SavePropertiesAsyncOverloadDefault()
+	final Windows.Foundation.IAsyncAction SavePropertiesAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsyncOverloadDefault(&_ret));
+		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsync(&_ret));
 		return _ret;
 	}
 }
@@ -844,10 +844,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsync(propertiesToSave, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction SavePropertiesAsyncOverloadDefault()
+	final Windows.Foundation.IAsyncAction SavePropertiesAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsyncOverloadDefault(&_ret));
+		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsync(&_ret));
 		return _ret;
 	}
 }

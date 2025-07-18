@@ -52,9 +52,9 @@ interface IFullTrustProcessLauncherStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_LaunchFullTrustProcessForCurrentAppAsync(Windows.Foundation.IAsyncAction* return_asyncAction);
-	HRESULT abi_LaunchFullTrustProcessForCurrentAppWithParametersAsync(HSTRING parameterGroupId, Windows.Foundation.IAsyncAction* return_asyncAction);
+	HRESULT abi_LaunchFullTrustProcessForCurrentAppAsync(HSTRING parameterGroupId, Windows.Foundation.IAsyncAction* return_asyncAction);
 	HRESULT abi_LaunchFullTrustProcessForAppAsync(HSTRING fullTrustPackageRelativeAppId, Windows.Foundation.IAsyncAction* return_asyncAction);
-	HRESULT abi_LaunchFullTrustProcessForAppWithParametersAsync(HSTRING fullTrustPackageRelativeAppId, HSTRING parameterGroupId, Windows.Foundation.IAsyncAction* return_asyncAction);
+	HRESULT abi_LaunchFullTrustProcessForAppAsync(HSTRING fullTrustPackageRelativeAppId, HSTRING parameterGroupId, Windows.Foundation.IAsyncAction* return_asyncAction);
 }
 
 @uuid("39c6ec9a-ae6e-46f9-a07a-cfc23f88733e")
@@ -117,7 +117,7 @@ extern(Windows):
 	HRESULT abi_GetContentGroupsAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.PackageContentGroup))* return_operation);
 	HRESULT abi_GetContentGroupAsync(HSTRING name, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.PackageContentGroup)* return_operation);
 	HRESULT abi_StageContentGroupsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) names, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.PackageContentGroup))* return_operation);
-	HRESULT abi_StageContentGroupsWithPriorityAsync(Windows.Foundation.Collections.IIterable!(HSTRING) names, bool moveToHeadOfQueue, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.PackageContentGroup))* return_operation);
+	HRESULT abi_StageContentGroupsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) names, bool moveToHeadOfQueue, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.PackageContentGroup))* return_operation);
 	HRESULT abi_SetInUseAsync(bool inUse, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 }
 
@@ -461,10 +461,10 @@ interface FullTrustProcessLauncher
 		Debug.OK(staticInstance.abi_LaunchFullTrustProcessForCurrentAppAsync(&_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncAction LaunchFullTrustProcessForCurrentAppWithParametersAsync(HSTRING parameterGroupId)
+	static Windows.Foundation.IAsyncAction LaunchFullTrustProcessForCurrentAppAsync(HSTRING parameterGroupId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.abi_LaunchFullTrustProcessForCurrentAppWithParametersAsync(parameterGroupId, &_ret));
+		Debug.OK(staticInstance.abi_LaunchFullTrustProcessForCurrentAppAsync(parameterGroupId, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncAction LaunchFullTrustProcessForAppAsync(HSTRING fullTrustPackageRelativeAppId)
@@ -473,10 +473,10 @@ interface FullTrustProcessLauncher
 		Debug.OK(staticInstance.abi_LaunchFullTrustProcessForAppAsync(fullTrustPackageRelativeAppId, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncAction LaunchFullTrustProcessForAppWithParametersAsync(HSTRING fullTrustPackageRelativeAppId, HSTRING parameterGroupId)
+	static Windows.Foundation.IAsyncAction LaunchFullTrustProcessForAppAsync(HSTRING fullTrustPackageRelativeAppId, HSTRING parameterGroupId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.abi_LaunchFullTrustProcessForAppWithParametersAsync(fullTrustPackageRelativeAppId, parameterGroupId, &_ret));
+		Debug.OK(staticInstance.abi_LaunchFullTrustProcessForAppAsync(fullTrustPackageRelativeAppId, parameterGroupId, &_ret));
 		return _ret;
 	}
 }
@@ -632,10 +632,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.IPackage5)this.asInterface(uuid("0e842dd4-d9ac-45ed-9a1e-74ce056b2635"))).abi_StageContentGroupsAsync(names, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.PackageContentGroup)) StageContentGroupsWithPriorityAsync(Windows.Foundation.Collections.IIterable!(HSTRING) names, bool moveToHeadOfQueue)
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.PackageContentGroup)) StageContentGroupsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) names, bool moveToHeadOfQueue)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.PackageContentGroup)) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.IPackage5)this.asInterface(uuid("0e842dd4-d9ac-45ed-9a1e-74ce056b2635"))).abi_StageContentGroupsWithPriorityAsync(names, moveToHeadOfQueue, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.IPackage5)this.asInterface(uuid("0e842dd4-d9ac-45ed-9a1e-74ce056b2635"))).abi_StageContentGroupsAsync(names, moveToHeadOfQueue, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) SetInUseAsync(bool inUse)

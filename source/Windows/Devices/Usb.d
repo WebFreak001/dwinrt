@@ -109,9 +109,9 @@ interface IUsbDevice_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_SendControlOutTransferAsync(Windows.Devices.Usb.UsbSetupPacket setupPacket, Windows.Storage.Streams.IBuffer buffer, Windows.Foundation.IAsyncOperation!(UINT32)* return_operation);
-	HRESULT abi_SendControlOutTransferAsyncNoBuffer(Windows.Devices.Usb.UsbSetupPacket setupPacket, Windows.Foundation.IAsyncOperation!(UINT32)* return_operation);
+	HRESULT abi_SendControlOutTransferAsync(Windows.Devices.Usb.UsbSetupPacket setupPacket, Windows.Foundation.IAsyncOperation!(UINT32)* return_operation);
 	HRESULT abi_SendControlInTransferAsync(Windows.Devices.Usb.UsbSetupPacket setupPacket, Windows.Storage.Streams.IBuffer buffer, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer)* return_operation);
-	HRESULT abi_SendControlInTransferAsyncNoBuffer(Windows.Devices.Usb.UsbSetupPacket setupPacket, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer)* return_operation);
+	HRESULT abi_SendControlInTransferAsync(Windows.Devices.Usb.UsbSetupPacket setupPacket, Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer)* return_operation);
 	HRESULT get_DefaultInterface(Windows.Devices.Usb.UsbInterface* return_value);
 	HRESULT get_DeviceDescriptor(Windows.Devices.Usb.UsbDeviceDescriptor* return_value);
 	HRESULT get_Configuration(Windows.Devices.Usb.UsbConfiguration* return_value);
@@ -174,8 +174,8 @@ interface IUsbDeviceStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(UINT32 vendorId, UINT32 productId, GUID winUsbInterfaceClass, HSTRING* return_value);
-	HRESULT abi_GetDeviceSelectorGuidOnly(GUID winUsbInterfaceClass, HSTRING* return_value);
-	HRESULT abi_GetDeviceSelectorVidPidOnly(UINT32 vendorId, UINT32 productId, HSTRING* return_value);
+	HRESULT abi_GetDeviceSelector(GUID winUsbInterfaceClass, HSTRING* return_value);
+	HRESULT abi_GetDeviceSelector(UINT32 vendorId, UINT32 productId, HSTRING* return_value);
 	HRESULT abi_GetDeviceClassSelector(Windows.Devices.Usb.UsbDeviceClass usbClass, HSTRING* return_value);
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Usb.UsbDevice)* return_operation);
 }
@@ -605,10 +605,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Usb.IUsbDevice)this.asInterface(uuid("5249b992-c456-44d5-ad5e-24f5a089f63b"))).abi_SendControlOutTransferAsync(setupPacket, buffer, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(UINT32) SendControlOutTransferAsyncNoBuffer(Windows.Devices.Usb.UsbSetupPacket setupPacket)
+	final Windows.Foundation.IAsyncOperation!(UINT32) SendControlOutTransferAsync(Windows.Devices.Usb.UsbSetupPacket setupPacket)
 	{
 		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
-		Debug.OK((cast(Windows.Devices.Usb.IUsbDevice)this.asInterface(uuid("5249b992-c456-44d5-ad5e-24f5a089f63b"))).abi_SendControlOutTransferAsyncNoBuffer(setupPacket, &_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDevice)this.asInterface(uuid("5249b992-c456-44d5-ad5e-24f5a089f63b"))).abi_SendControlOutTransferAsync(setupPacket, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) SendControlInTransferAsync(Windows.Devices.Usb.UsbSetupPacket setupPacket, Windows.Storage.Streams.IBuffer buffer)
@@ -617,10 +617,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Usb.IUsbDevice)this.asInterface(uuid("5249b992-c456-44d5-ad5e-24f5a089f63b"))).abi_SendControlInTransferAsync(setupPacket, buffer, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) SendControlInTransferAsyncNoBuffer(Windows.Devices.Usb.UsbSetupPacket setupPacket)
+	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) SendControlInTransferAsync(Windows.Devices.Usb.UsbSetupPacket setupPacket)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;
-		Debug.OK((cast(Windows.Devices.Usb.IUsbDevice)this.asInterface(uuid("5249b992-c456-44d5-ad5e-24f5a089f63b"))).abi_SendControlInTransferAsyncNoBuffer(setupPacket, &_ret));
+		Debug.OK((cast(Windows.Devices.Usb.IUsbDevice)this.asInterface(uuid("5249b992-c456-44d5-ad5e-24f5a089f63b"))).abi_SendControlInTransferAsync(setupPacket, &_ret));
 		return _ret;
 	}
 	final Windows.Devices.Usb.UsbInterface DefaultInterface()
@@ -658,16 +658,16 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDeviceSelector(vendorId, productId, winUsbInterfaceClass, &_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelectorGuidOnly(GUID winUsbInterfaceClass)
+	static HSTRING GetDeviceSelector(GUID winUsbInterfaceClass)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.abi_GetDeviceSelectorGuidOnly(winUsbInterfaceClass, &_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(winUsbInterfaceClass, &_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelectorVidPidOnly(UINT32 vendorId, UINT32 productId)
+	static HSTRING GetDeviceSelector(UINT32 vendorId, UINT32 productId)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.abi_GetDeviceSelectorVidPidOnly(vendorId, productId, &_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(vendorId, productId, &_ret));
 		return _ret;
 	}
 	static HSTRING GetDeviceClassSelector(Windows.Devices.Usb.UsbDeviceClass usbClass)

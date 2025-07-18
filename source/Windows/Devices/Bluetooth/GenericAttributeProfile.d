@@ -17,9 +17,9 @@ extern(Windows):
 	HRESULT get_AttributeHandle(UINT16* return_value);
 	HRESULT get_PresentationFormats(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattPresentationFormat)* return_value);
 	HRESULT abi_ReadValueAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadResult)* return_value);
-	HRESULT abi_ReadValueWithCacheModeAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadResult)* return_value);
+	HRESULT abi_ReadValueAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadResult)* return_value);
 	HRESULT abi_WriteValueAsync(Windows.Storage.Streams.IBuffer value, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus)* return_asyncOp);
-	HRESULT abi_WriteValueWithOptionAsync(Windows.Storage.Streams.IBuffer value, Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteOption writeOption, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus)* return_asyncOp);
+	HRESULT abi_WriteValueAsync(Windows.Storage.Streams.IBuffer value, Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteOption writeOption, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus)* return_asyncOp);
 	HRESULT abi_ReadClientCharacteristicConfigurationDescriptorAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadClientCharacteristicConfigurationDescriptorResult)* return_asyncOp);
 	HRESULT abi_WriteClientCharacteristicConfigurationDescriptorAsync(Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientCharacteristicConfigurationDescriptorValue clientCharacteristicConfigurationDescriptorValue, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus)* return_asyncOp);
 	HRESULT add_ValueChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic, Windows.Devices.Bluetooth.GenericAttributeProfile.GattValueChangedEventArgs) valueChangedHandler, EventRegistrationToken* return_valueChangedEventCookie);
@@ -45,11 +45,11 @@ interface IGattCharacteristic3 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetDescriptorsAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult)* return_operation);
-	HRESULT abi_GetDescriptorsWithCacheModeAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult)* return_operation);
+	HRESULT abi_GetDescriptorsAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult)* return_operation);
 	HRESULT abi_GetDescriptorsForUuidAsync(GUID descriptorUuid, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult)* return_operation);
-	HRESULT abi_GetDescriptorsForUuidWithCacheModeAsync(GUID descriptorUuid, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult)* return_operation);
+	HRESULT abi_GetDescriptorsForUuidAsync(GUID descriptorUuid, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult)* return_operation);
 	HRESULT abi_WriteValueWithResultAsync(Windows.Storage.Streams.IBuffer value, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteResult)* return_operation);
-	HRESULT abi_WriteValueWithResultAndOptionAsync(Windows.Storage.Streams.IBuffer value, Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteOption writeOption, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteResult)* return_operation);
+	HRESULT abi_WriteValueWithResultAsync(Windows.Storage.Streams.IBuffer value, Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteOption writeOption, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteResult)* return_operation);
 	HRESULT abi_WriteClientCharacteristicConfigurationDescriptorWithResultAsync(Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientCharacteristicConfigurationDescriptorValue clientCharacteristicConfigurationDescriptorValue, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteResult)* return_operation);
 }
 
@@ -187,7 +187,7 @@ extern(Windows):
 	HRESULT get_Uuid(GUID* return_value);
 	HRESULT get_AttributeHandle(UINT16* return_value);
 	HRESULT abi_ReadValueAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadResult)* return_value);
-	HRESULT abi_ReadValueWithCacheModeAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadResult)* return_value);
+	HRESULT abi_ReadValueAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadResult)* return_value);
 	HRESULT abi_WriteValueAsync(Windows.Storage.Streams.IBuffer value, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus)* return_action);
 }
 
@@ -277,13 +277,13 @@ extern(Windows):
 	HRESULT abi_RequestAccessAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceAccessStatus)* return_value);
 	HRESULT abi_OpenAsync(Windows.Devices.Bluetooth.GenericAttributeProfile.GattSharingMode sharingMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattOpenStatus)* return_operation);
 	HRESULT abi_GetCharacteristicsAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicsResult)* return_operation);
-	HRESULT abi_GetCharacteristicsWithCacheModeAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicsResult)* return_operation);
+	HRESULT abi_GetCharacteristicsAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicsResult)* return_operation);
 	HRESULT abi_GetCharacteristicsForUuidAsync(GUID characteristicUuid, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicsResult)* return_operation);
-	HRESULT abi_GetCharacteristicsForUuidWithCacheModeAsync(GUID characteristicUuid, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicsResult)* return_operation);
+	HRESULT abi_GetCharacteristicsForUuidAsync(GUID characteristicUuid, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicsResult)* return_operation);
 	HRESULT abi_GetIncludedServicesAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult)* return_operation);
-	HRESULT abi_GetIncludedServicesWithCacheModeAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult)* return_operation);
+	HRESULT abi_GetIncludedServicesAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult)* return_operation);
 	HRESULT abi_GetIncludedServicesForUuidAsync(GUID serviceUuid, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult)* return_operation);
-	HRESULT abi_GetIncludedServicesForUuidWithCacheModeAsync(GUID serviceUuid, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult)* return_operation);
+	HRESULT abi_GetIncludedServicesForUuidAsync(GUID serviceUuid, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult)* return_operation);
 }
 
 @uuid("196d0022-faad-45dc-ae5b-2ac3184e84db")
@@ -304,11 +304,11 @@ extern(Windows):
 interface IGattDeviceServiceStatics2 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_FromIdWithSharingModeAsync(HSTRING deviceId, Windows.Devices.Bluetooth.GenericAttributeProfile.GattSharingMode sharingMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService)* return_operation);
+	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Devices.Bluetooth.GenericAttributeProfile.GattSharingMode sharingMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService)* return_operation);
 	HRESULT abi_GetDeviceSelectorForBluetoothDeviceId(Windows.Devices.Bluetooth.BluetoothDeviceId bluetoothDeviceId, HSTRING* return_result);
-	HRESULT abi_GetDeviceSelectorForBluetoothDeviceIdWithCacheMode(Windows.Devices.Bluetooth.BluetoothDeviceId bluetoothDeviceId, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, HSTRING* return_result);
+	HRESULT abi_GetDeviceSelectorForBluetoothDeviceId(Windows.Devices.Bluetooth.BluetoothDeviceId bluetoothDeviceId, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, HSTRING* return_result);
 	HRESULT abi_GetDeviceSelectorForBluetoothDeviceIdAndUuid(Windows.Devices.Bluetooth.BluetoothDeviceId bluetoothDeviceId, GUID serviceUuid, HSTRING* return_result);
-	HRESULT abi_GetDeviceSelectorForBluetoothDeviceIdAndUuidWithCacheMode(Windows.Devices.Bluetooth.BluetoothDeviceId bluetoothDeviceId, GUID serviceUuid, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, HSTRING* return_result);
+	HRESULT abi_GetDeviceSelectorForBluetoothDeviceIdAndUuid(Windows.Devices.Bluetooth.BluetoothDeviceId bluetoothDeviceId, GUID serviceUuid, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode, HSTRING* return_result);
 }
 
 @uuid("171dd3ee-016d-419d-838a-576cf475a3d8")
@@ -343,7 +343,7 @@ extern(Windows):
 	HRESULT add_WriteRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattLocalCharacteristic, Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteRequestedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_WriteRequested(EventRegistrationToken token);
 	HRESULT abi_NotifyValueAsync(Windows.Storage.Streams.IBuffer value, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientNotificationResult))* return_operation);
-	HRESULT abi_NotifyValueForSubscribedClientAsync(Windows.Storage.Streams.IBuffer value, Windows.Devices.Bluetooth.GenericAttributeProfile.GattSubscribedClient subscribedClient, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientNotificationResult)* return_operation);
+	HRESULT abi_NotifyValueAsync(Windows.Storage.Streams.IBuffer value, Windows.Devices.Bluetooth.GenericAttributeProfile.GattSubscribedClient subscribedClient, Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientNotificationResult)* return_operation);
 }
 
 @uuid("faf73db4-4cff-44c7-8445-040e6ead0063")
@@ -603,7 +603,7 @@ extern(Windows):
 	HRESULT add_AdvertisementStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProvider, Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisementStatusChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AdvertisementStatusChanged(EventRegistrationToken token);
 	HRESULT abi_StartAdvertising();
-	HRESULT abi_StartAdvertisingWithParameters(Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisingParameters parameters);
+	HRESULT abi_StartAdvertising(Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisingParameters parameters);
 	HRESULT abi_StopAdvertising();
 }
 
@@ -824,10 +824,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic)this.asInterface(uuid("59cb50c1-5934-4f68-a198-eb864fa44e6b"))).abi_ReadValueAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadResult) ReadValueWithCacheModeAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadResult) ReadValueAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadResult) _ret;
-		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic)this.asInterface(uuid("59cb50c1-5934-4f68-a198-eb864fa44e6b"))).abi_ReadValueWithCacheModeAsync(cacheMode, &_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic)this.asInterface(uuid("59cb50c1-5934-4f68-a198-eb864fa44e6b"))).abi_ReadValueAsync(cacheMode, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus) WriteValueAsync(Windows.Storage.Streams.IBuffer value)
@@ -836,10 +836,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic)this.asInterface(uuid("59cb50c1-5934-4f68-a198-eb864fa44e6b"))).abi_WriteValueAsync(value, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus) WriteValueWithOptionAsync(Windows.Storage.Streams.IBuffer value, Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteOption writeOption)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus) WriteValueAsync(Windows.Storage.Streams.IBuffer value, Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteOption writeOption)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus) _ret;
-		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic)this.asInterface(uuid("59cb50c1-5934-4f68-a198-eb864fa44e6b"))).abi_WriteValueWithOptionAsync(value, writeOption, &_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic)this.asInterface(uuid("59cb50c1-5934-4f68-a198-eb864fa44e6b"))).abi_WriteValueAsync(value, writeOption, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadClientCharacteristicConfigurationDescriptorResult) ReadClientCharacteristicConfigurationDescriptorAsync()
@@ -883,10 +883,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic3)this.asInterface(uuid("3f3c663e-93d4-406b-b817-db81f8ed53b3"))).abi_GetDescriptorsAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult) GetDescriptorsWithCacheModeAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult) GetDescriptorsAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult) _ret;
-		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic3)this.asInterface(uuid("3f3c663e-93d4-406b-b817-db81f8ed53b3"))).abi_GetDescriptorsWithCacheModeAsync(cacheMode, &_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic3)this.asInterface(uuid("3f3c663e-93d4-406b-b817-db81f8ed53b3"))).abi_GetDescriptorsAsync(cacheMode, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult) GetDescriptorsForUuidAsync(GUID descriptorUuid)
@@ -895,10 +895,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic3)this.asInterface(uuid("3f3c663e-93d4-406b-b817-db81f8ed53b3"))).abi_GetDescriptorsForUuidAsync(descriptorUuid, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult) GetDescriptorsForUuidWithCacheModeAsync(GUID descriptorUuid, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult) GetDescriptorsForUuidAsync(GUID descriptorUuid, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDescriptorsResult) _ret;
-		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic3)this.asInterface(uuid("3f3c663e-93d4-406b-b817-db81f8ed53b3"))).abi_GetDescriptorsForUuidWithCacheModeAsync(descriptorUuid, cacheMode, &_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic3)this.asInterface(uuid("3f3c663e-93d4-406b-b817-db81f8ed53b3"))).abi_GetDescriptorsForUuidAsync(descriptorUuid, cacheMode, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteResult) WriteValueWithResultAsync(Windows.Storage.Streams.IBuffer value)
@@ -907,10 +907,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic3)this.asInterface(uuid("3f3c663e-93d4-406b-b817-db81f8ed53b3"))).abi_WriteValueWithResultAsync(value, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteResult) WriteValueWithResultAndOptionAsync(Windows.Storage.Streams.IBuffer value, Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteOption writeOption)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteResult) WriteValueWithResultAsync(Windows.Storage.Streams.IBuffer value, Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteOption writeOption)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteResult) _ret;
-		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic3)this.asInterface(uuid("3f3c663e-93d4-406b-b817-db81f8ed53b3"))).abi_WriteValueWithResultAndOptionAsync(value, writeOption, &_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattCharacteristic3)this.asInterface(uuid("3f3c663e-93d4-406b-b817-db81f8ed53b3"))).abi_WriteValueWithResultAsync(value, writeOption, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattWriteResult) WriteClientCharacteristicConfigurationDescriptorWithResultAsync(Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientCharacteristicConfigurationDescriptorValue clientCharacteristicConfigurationDescriptorValue)
@@ -1148,10 +1148,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDescriptor)this.asInterface(uuid("92055f2b-8084-4344-b4c2-284de19a8506"))).abi_ReadValueAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadResult) ReadValueWithCacheModeAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadResult) ReadValueAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattReadResult) _ret;
-		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDescriptor)this.asInterface(uuid("92055f2b-8084-4344-b4c2-284de19a8506"))).abi_ReadValueWithCacheModeAsync(cacheMode, &_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDescriptor)this.asInterface(uuid("92055f2b-8084-4344-b4c2-284de19a8506"))).abi_ReadValueAsync(cacheMode, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCommunicationStatus) WriteValueAsync(Windows.Storage.Streams.IBuffer value)
@@ -1354,10 +1354,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3)this.asInterface(uuid("b293a950-0c53-437c-a9b3-5c3210c6e569"))).abi_GetCharacteristicsAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicsResult) GetCharacteristicsWithCacheModeAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicsResult) GetCharacteristicsAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicsResult) _ret;
-		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3)this.asInterface(uuid("b293a950-0c53-437c-a9b3-5c3210c6e569"))).abi_GetCharacteristicsWithCacheModeAsync(cacheMode, &_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3)this.asInterface(uuid("b293a950-0c53-437c-a9b3-5c3210c6e569"))).abi_GetCharacteristicsAsync(cacheMode, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicsResult) GetCharacteristicsForUuidAsync(GUID characteristicUuid)
@@ -1366,10 +1366,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3)this.asInterface(uuid("b293a950-0c53-437c-a9b3-5c3210c6e569"))).abi_GetCharacteristicsForUuidAsync(characteristicUuid, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicsResult) GetCharacteristicsForUuidWithCacheModeAsync(GUID characteristicUuid, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicsResult) GetCharacteristicsForUuidAsync(GUID characteristicUuid, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristicsResult) _ret;
-		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3)this.asInterface(uuid("b293a950-0c53-437c-a9b3-5c3210c6e569"))).abi_GetCharacteristicsForUuidWithCacheModeAsync(characteristicUuid, cacheMode, &_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3)this.asInterface(uuid("b293a950-0c53-437c-a9b3-5c3210c6e569"))).abi_GetCharacteristicsForUuidAsync(characteristicUuid, cacheMode, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) GetIncludedServicesAsync()
@@ -1378,10 +1378,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3)this.asInterface(uuid("b293a950-0c53-437c-a9b3-5c3210c6e569"))).abi_GetIncludedServicesAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) GetIncludedServicesWithCacheModeAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) GetIncludedServicesAsync(Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) _ret;
-		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3)this.asInterface(uuid("b293a950-0c53-437c-a9b3-5c3210c6e569"))).abi_GetIncludedServicesWithCacheModeAsync(cacheMode, &_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3)this.asInterface(uuid("b293a950-0c53-437c-a9b3-5c3210c6e569"))).abi_GetIncludedServicesAsync(cacheMode, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) GetIncludedServicesForUuidAsync(GUID serviceUuid)
@@ -1390,10 +1390,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3)this.asInterface(uuid("b293a950-0c53-437c-a9b3-5c3210c6e569"))).abi_GetIncludedServicesForUuidAsync(serviceUuid, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) GetIncludedServicesForUuidWithCacheModeAsync(GUID serviceUuid, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) GetIncludedServicesForUuidAsync(GUID serviceUuid, Windows.Devices.Bluetooth.BluetoothCacheMode cacheMode)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) _ret;
-		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3)this.asInterface(uuid("b293a950-0c53-437c-a9b3-5c3210c6e569"))).abi_GetIncludedServicesForUuidWithCacheModeAsync(serviceUuid, cacheMode, &_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattDeviceService3)this.asInterface(uuid("b293a950-0c53-437c-a9b3-5c3210c6e569"))).abi_GetIncludedServicesForUuidAsync(serviceUuid, cacheMode, &_ret));
 		return _ret;
 	}
 
@@ -1553,10 +1553,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristic)this.asInterface(uuid("aede376d-5412-4d74-92a8-8deb8526829c"))).abi_NotifyValueAsync(value, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientNotificationResult) NotifyValueForSubscribedClientAsync(Windows.Storage.Streams.IBuffer value, Windows.Devices.Bluetooth.GenericAttributeProfile.GattSubscribedClient subscribedClient)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientNotificationResult) NotifyValueAsync(Windows.Storage.Streams.IBuffer value, Windows.Devices.Bluetooth.GenericAttributeProfile.GattSubscribedClient subscribedClient)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattClientNotificationResult) _ret;
-		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristic)this.asInterface(uuid("aede376d-5412-4d74-92a8-8deb8526829c"))).abi_NotifyValueForSubscribedClientAsync(value, subscribedClient, &_ret));
+		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattLocalCharacteristic)this.asInterface(uuid("aede376d-5412-4d74-92a8-8deb8526829c"))).abi_NotifyValueAsync(value, subscribedClient, &_ret));
 		return _ret;
 	}
 }
@@ -2290,9 +2290,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProvider)this.asInterface(uuid("7822b3cd-2889-4f86-a051-3f0aed1c2760"))).abi_StartAdvertising());
 	}
-	final void StartAdvertisingWithParameters(Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisingParameters parameters)
+	final void StartAdvertising(Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceProviderAdvertisingParameters parameters)
 	{
-		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProvider)this.asInterface(uuid("7822b3cd-2889-4f86-a051-3f0aed1c2760"))).abi_StartAdvertisingWithParameters(parameters));
+		Debug.OK((cast(Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProvider)this.asInterface(uuid("7822b3cd-2889-4f86-a051-3f0aed1c2760"))).abi_StartAdvertising(parameters));
 	}
 	final void StopAdvertising()
 	{

@@ -8,7 +8,7 @@ interface IPhoneNumberFormatter : IInspectable
 {
 extern(Windows):
 	HRESULT abi_Format(Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo number, HSTRING* return_result);
-	HRESULT abi_FormatWithOutputFormat(Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo number, Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormat numberFormat, HSTRING* return_result);
+	HRESULT abi_Format(Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo number, Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormat numberFormat, HSTRING* return_result);
 	HRESULT abi_FormatPartialString(HSTRING number, HSTRING* return_result);
 	HRESULT abi_FormatString(HSTRING number, HSTRING* return_result);
 	HRESULT abi_FormatStringWithLeftToRightMarkers(HSTRING number, HSTRING* return_result);
@@ -54,7 +54,7 @@ interface IPhoneNumberInfoStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_TryParse(HSTRING input, Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo* out_phoneNumber, Windows.Globalization.PhoneNumberFormatting.PhoneNumberParseResult* return_result);
-	HRESULT abi_TryParseWithRegion(HSTRING input, HSTRING regionCode, Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo* out_phoneNumber, Windows.Globalization.PhoneNumberFormatting.PhoneNumberParseResult* return_result);
+	HRESULT abi_TryParse(HSTRING input, HSTRING regionCode, Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo* out_phoneNumber, Windows.Globalization.PhoneNumberFormatting.PhoneNumberParseResult* return_result);
 }
 
 interface PhoneNumberFormatter : Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatter
@@ -66,10 +66,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatter)this.asInterface(uuid("1556b49e-bad4-4b4a-900d-4407adb7c981"))).abi_Format(number, &_ret));
 		return _ret;
 	}
-	final HSTRING FormatWithOutputFormat(Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo number, Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormat numberFormat)
+	final HSTRING Format(Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo number, Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormat numberFormat)
 	{
 		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatter)this.asInterface(uuid("1556b49e-bad4-4b4a-900d-4407adb7c981"))).abi_FormatWithOutputFormat(number, numberFormat, &_ret));
+		Debug.OK((cast(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatter)this.asInterface(uuid("1556b49e-bad4-4b4a-900d-4407adb7c981"))).abi_Format(number, numberFormat, &_ret));
 		return _ret;
 	}
 	final HSTRING FormatPartialString(HSTRING number)
@@ -197,10 +197,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_TryParse(input, out_phoneNumber, &_ret));
 		return _ret;
 	}
-	static Windows.Globalization.PhoneNumberFormatting.PhoneNumberParseResult TryParseWithRegion(HSTRING input, HSTRING regionCode, Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo* out_phoneNumber)
+	static Windows.Globalization.PhoneNumberFormatting.PhoneNumberParseResult TryParse(HSTRING input, HSTRING regionCode, Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo* out_phoneNumber)
 	{
 		Windows.Globalization.PhoneNumberFormatting.PhoneNumberParseResult _ret;
-		Debug.OK(staticInstance.abi_TryParseWithRegion(input, regionCode, out_phoneNumber, &_ret));
+		Debug.OK(staticInstance.abi_TryParse(input, regionCode, out_phoneNumber, &_ret));
 		return _ret;
 	}
 	static Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo New(HSTRING number)

@@ -29,8 +29,8 @@ interface IThreadPoolStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_RunAsync(Windows.System.Threading.WorkItemHandler handler, Windows.Foundation.IAsyncAction* return_operation);
-	HRESULT abi_RunWithPriorityAsync(Windows.System.Threading.WorkItemHandler handler, Windows.System.Threading.WorkItemPriority priority, Windows.Foundation.IAsyncAction* return_operation);
-	HRESULT abi_RunWithPriorityAndOptionsAsync(Windows.System.Threading.WorkItemHandler handler, Windows.System.Threading.WorkItemPriority priority, Windows.System.Threading.WorkItemOptions options, Windows.Foundation.IAsyncAction* return_operation);
+	HRESULT abi_RunAsync(Windows.System.Threading.WorkItemHandler handler, Windows.System.Threading.WorkItemPriority priority, Windows.Foundation.IAsyncAction* return_operation);
+	HRESULT abi_RunAsync(Windows.System.Threading.WorkItemHandler handler, Windows.System.Threading.WorkItemPriority priority, Windows.System.Threading.WorkItemOptions options, Windows.Foundation.IAsyncAction* return_operation);
 }
 
 @uuid("594ebe78-55ea-4a88-a50d-3402ae1f9cf2")
@@ -50,8 +50,8 @@ interface IThreadPoolTimerStatics : IInspectable
 extern(Windows):
 	HRESULT abi_CreatePeriodicTimer(Windows.System.Threading.TimerElapsedHandler handler, Windows.Foundation.TimeSpan period, Windows.System.Threading.ThreadPoolTimer* return_timer);
 	HRESULT abi_CreateTimer(Windows.System.Threading.TimerElapsedHandler handler, Windows.Foundation.TimeSpan delay, Windows.System.Threading.ThreadPoolTimer* return_timer);
-	HRESULT abi_CreatePeriodicTimerWithCompletion(Windows.System.Threading.TimerElapsedHandler handler, Windows.Foundation.TimeSpan period, Windows.System.Threading.TimerDestroyedHandler destroyed, Windows.System.Threading.ThreadPoolTimer* return_timer);
-	HRESULT abi_CreateTimerWithCompletion(Windows.System.Threading.TimerElapsedHandler handler, Windows.Foundation.TimeSpan delay, Windows.System.Threading.TimerDestroyedHandler destroyed, Windows.System.Threading.ThreadPoolTimer* return_timer);
+	HRESULT abi_CreatePeriodicTimer(Windows.System.Threading.TimerElapsedHandler handler, Windows.Foundation.TimeSpan period, Windows.System.Threading.TimerDestroyedHandler destroyed, Windows.System.Threading.ThreadPoolTimer* return_timer);
+	HRESULT abi_CreateTimer(Windows.System.Threading.TimerElapsedHandler handler, Windows.Foundation.TimeSpan delay, Windows.System.Threading.TimerDestroyedHandler destroyed, Windows.System.Threading.ThreadPoolTimer* return_timer);
 }
 
 interface ThreadPool
@@ -68,16 +68,16 @@ interface ThreadPool
 		Debug.OK(staticInstance.abi_RunAsync(handler, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncAction RunWithPriorityAsync(Windows.System.Threading.WorkItemHandler handler, Windows.System.Threading.WorkItemPriority priority)
+	static Windows.Foundation.IAsyncAction RunAsync(Windows.System.Threading.WorkItemHandler handler, Windows.System.Threading.WorkItemPriority priority)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.abi_RunWithPriorityAsync(handler, priority, &_ret));
+		Debug.OK(staticInstance.abi_RunAsync(handler, priority, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncAction RunWithPriorityAndOptionsAsync(Windows.System.Threading.WorkItemHandler handler, Windows.System.Threading.WorkItemPriority priority, Windows.System.Threading.WorkItemOptions options)
+	static Windows.Foundation.IAsyncAction RunAsync(Windows.System.Threading.WorkItemHandler handler, Windows.System.Threading.WorkItemPriority priority, Windows.System.Threading.WorkItemOptions options)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.abi_RunWithPriorityAndOptionsAsync(handler, priority, options, &_ret));
+		Debug.OK(staticInstance.abi_RunAsync(handler, priority, options, &_ret));
 		return _ret;
 	}
 }
@@ -120,16 +120,16 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateTimer(handler, delay, &_ret));
 		return _ret;
 	}
-	static Windows.System.Threading.ThreadPoolTimer CreatePeriodicTimerWithCompletion(Windows.System.Threading.TimerElapsedHandler handler, Windows.Foundation.TimeSpan period, Windows.System.Threading.TimerDestroyedHandler destroyed)
+	static Windows.System.Threading.ThreadPoolTimer CreatePeriodicTimer(Windows.System.Threading.TimerElapsedHandler handler, Windows.Foundation.TimeSpan period, Windows.System.Threading.TimerDestroyedHandler destroyed)
 	{
 		Windows.System.Threading.ThreadPoolTimer _ret;
-		Debug.OK(staticInstance.abi_CreatePeriodicTimerWithCompletion(handler, period, destroyed, &_ret));
+		Debug.OK(staticInstance.abi_CreatePeriodicTimer(handler, period, destroyed, &_ret));
 		return _ret;
 	}
-	static Windows.System.Threading.ThreadPoolTimer CreateTimerWithCompletion(Windows.System.Threading.TimerElapsedHandler handler, Windows.Foundation.TimeSpan delay, Windows.System.Threading.TimerDestroyedHandler destroyed)
+	static Windows.System.Threading.ThreadPoolTimer CreateTimer(Windows.System.Threading.TimerElapsedHandler handler, Windows.Foundation.TimeSpan delay, Windows.System.Threading.TimerDestroyedHandler destroyed)
 	{
 		Windows.System.Threading.ThreadPoolTimer _ret;
-		Debug.OK(staticInstance.abi_CreateTimerWithCompletion(handler, delay, destroyed, &_ret));
+		Debug.OK(staticInstance.abi_CreateTimer(handler, delay, destroyed, &_ret));
 		return _ret;
 	}
 }

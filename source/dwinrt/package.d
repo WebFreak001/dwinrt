@@ -275,7 +275,7 @@ struct hstring
 		Debug.OK(result);
 	}
 
-	T opCast(T : string_type)()
+	T opCast(T : string_type)() const
 	{
 		uint32_t length = 0;
 		const_pointer buffer = WindowsGetStringRawBuffer(m_handle, &length);
@@ -939,7 +939,7 @@ interface IHTMLDocument : IDispatch
 extern (Windows):
 	HRESULT get_Script(IDispatch* p);
 
-};
+}
 
 @uuid("332c4425-26cb-11d0-b483-00c04fd90119")
 interface IHTMLDocument2 : IHTMLDocument

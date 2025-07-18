@@ -717,7 +717,7 @@ extern(Windows):
 	HRESULT set_AppendWindowEnd(Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) value);
 	HRESULT abi_AppendBuffer(Windows.Storage.Streams.IBuffer buffer);
 	HRESULT abi_AppendStream(Windows.Storage.Streams.IInputStream stream);
-	HRESULT abi_AppendStreamMaxSize(Windows.Storage.Streams.IInputStream stream, ulong maxSize);
+	HRESULT abi_AppendStream(Windows.Storage.Streams.IInputStream stream, ulong maxSize);
 	HRESULT abi_Abort();
 	HRESULT abi_Remove(Windows.Foundation.TimeSpan start, Windows.Foundation.IReference!(Windows.Foundation.TimeSpan) end);
 }
@@ -974,8 +974,8 @@ interface ITimedTextSourceStatics : IInspectable
 extern(Windows):
 	HRESULT abi_CreateFromStream(Windows.Storage.Streams.IRandomAccessStream stream, Windows.Media.Core.TimedTextSource* return_value);
 	HRESULT abi_CreateFromUri(Windows.Foundation.Uri uri, Windows.Media.Core.TimedTextSource* return_value);
-	HRESULT abi_CreateFromStreamWithLanguage(Windows.Storage.Streams.IRandomAccessStream stream, HSTRING defaultLanguage, Windows.Media.Core.TimedTextSource* return_value);
-	HRESULT abi_CreateFromUriWithLanguage(Windows.Foundation.Uri uri, HSTRING defaultLanguage, Windows.Media.Core.TimedTextSource* return_value);
+	HRESULT abi_CreateFromStream(Windows.Storage.Streams.IRandomAccessStream stream, HSTRING defaultLanguage, Windows.Media.Core.TimedTextSource* return_value);
+	HRESULT abi_CreateFromUri(Windows.Foundation.Uri uri, HSTRING defaultLanguage, Windows.Media.Core.TimedTextSource* return_value);
 }
 
 @uuid("b66b7602-923e-43fa-9633-587075812db5")
@@ -985,8 +985,8 @@ interface ITimedTextSourceStatics2 : IInspectable
 extern(Windows):
 	HRESULT abi_CreateFromStreamWithIndex(Windows.Storage.Streams.IRandomAccessStream stream, Windows.Storage.Streams.IRandomAccessStream indexStream, Windows.Media.Core.TimedTextSource* return_result);
 	HRESULT abi_CreateFromUriWithIndex(Windows.Foundation.Uri uri, Windows.Foundation.Uri indexUri, Windows.Media.Core.TimedTextSource* return_result);
-	HRESULT abi_CreateFromStreamWithIndexAndLanguage(Windows.Storage.Streams.IRandomAccessStream stream, Windows.Storage.Streams.IRandomAccessStream indexStream, HSTRING defaultLanguage, Windows.Media.Core.TimedTextSource* return_result);
-	HRESULT abi_CreateFromUriWithIndexAndLanguage(Windows.Foundation.Uri uri, Windows.Foundation.Uri indexUri, HSTRING defaultLanguage, Windows.Media.Core.TimedTextSource* return_result);
+	HRESULT abi_CreateFromStreamWithIndex(Windows.Storage.Streams.IRandomAccessStream stream, Windows.Storage.Streams.IRandomAccessStream indexStream, HSTRING defaultLanguage, Windows.Media.Core.TimedTextSource* return_result);
+	HRESULT abi_CreateFromUriWithIndex(Windows.Foundation.Uri uri, Windows.Foundation.Uri indexUri, HSTRING defaultLanguage, Windows.Media.Core.TimedTextSource* return_result);
 }
 
 @uuid("1bb2384d-a825-40c2-a7f5-281eaedf3b55")
@@ -2946,9 +2946,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Core.IMseSourceBuffer)this.asInterface(uuid("0c1aa3e3-df8d-4079-a3fe-6849184b4e2f"))).abi_AppendStream(stream));
 	}
-	final void AppendStreamMaxSize(Windows.Storage.Streams.IInputStream stream, ulong maxSize)
+	final void AppendStream(Windows.Storage.Streams.IInputStream stream, ulong maxSize)
 	{
-		Debug.OK((cast(Windows.Media.Core.IMseSourceBuffer)this.asInterface(uuid("0c1aa3e3-df8d-4079-a3fe-6849184b4e2f"))).abi_AppendStreamMaxSize(stream, maxSize));
+		Debug.OK((cast(Windows.Media.Core.IMseSourceBuffer)this.asInterface(uuid("0c1aa3e3-df8d-4079-a3fe-6849184b4e2f"))).abi_AppendStream(stream, maxSize));
 	}
 	final void Abort()
 	{
@@ -3705,16 +3705,16 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateFromUri(uri, &_ret));
 		return _ret;
 	}
-	static Windows.Media.Core.TimedTextSource CreateFromStreamWithLanguage(Windows.Storage.Streams.IRandomAccessStream stream, HSTRING defaultLanguage)
+	static Windows.Media.Core.TimedTextSource CreateFromStream(Windows.Storage.Streams.IRandomAccessStream stream, HSTRING defaultLanguage)
 	{
 		Windows.Media.Core.TimedTextSource _ret;
-		Debug.OK(staticInstance.abi_CreateFromStreamWithLanguage(stream, defaultLanguage, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromStream(stream, defaultLanguage, &_ret));
 		return _ret;
 	}
-	static Windows.Media.Core.TimedTextSource CreateFromUriWithLanguage(Windows.Foundation.Uri uri, HSTRING defaultLanguage)
+	static Windows.Media.Core.TimedTextSource CreateFromUri(Windows.Foundation.Uri uri, HSTRING defaultLanguage)
 	{
 		Windows.Media.Core.TimedTextSource _ret;
-		Debug.OK(staticInstance.abi_CreateFromUriWithLanguage(uri, defaultLanguage, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromUri(uri, defaultLanguage, &_ret));
 		return _ret;
 	}
 }

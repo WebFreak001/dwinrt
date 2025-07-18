@@ -76,7 +76,7 @@ interface ISpiDeviceStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(HSTRING* return_value);
-	HRESULT abi_GetDeviceSelectorFromFriendlyName(HSTRING friendlyName, HSTRING* return_value);
+	HRESULT abi_GetDeviceSelector(HSTRING friendlyName, HSTRING* return_value);
 	HRESULT abi_GetBusInfo(HSTRING busId, Windows.Devices.Spi.SpiBusInfo* return_busInfo);
 	HRESULT abi_FromIdAsync(HSTRING busId, Windows.Devices.Spi.SpiConnectionSettings settings, Windows.Foundation.IAsyncOperation!(Windows.Devices.Spi.SpiDevice)* return_operation);
 }
@@ -250,10 +250,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelectorFromFriendlyName(HSTRING friendlyName)
+	static HSTRING GetDeviceSelector(HSTRING friendlyName)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.abi_GetDeviceSelectorFromFriendlyName(friendlyName, &_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(friendlyName, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Spi.SpiBusInfo GetBusInfo(HSTRING busId)

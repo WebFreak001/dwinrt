@@ -7,8 +7,8 @@ import dwinrt;
 interface IWebAuthenticationBrokerStatics : IInspectable
 {
 extern(Windows):
-	HRESULT abi_AuthenticateWithCallbackUriAsync(Windows.Security.Authentication.Web.WebAuthenticationOptions options, Windows.Foundation.Uri requestUri, Windows.Foundation.Uri callbackUri, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult)* return_asyncInfo);
-	HRESULT abi_AuthenticateWithoutCallbackUriAsync(Windows.Security.Authentication.Web.WebAuthenticationOptions options, Windows.Foundation.Uri requestUri, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult)* return_asyncInfo);
+	HRESULT abi_AuthenticateAsync(Windows.Security.Authentication.Web.WebAuthenticationOptions options, Windows.Foundation.Uri requestUri, Windows.Foundation.Uri callbackUri, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult)* return_asyncInfo);
+	HRESULT abi_AuthenticateAsync(Windows.Security.Authentication.Web.WebAuthenticationOptions options, Windows.Foundation.Uri requestUri, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult)* return_asyncInfo);
 	HRESULT abi_GetCurrentApplicationCallbackUri(Windows.Foundation.Uri* return_callbackUri);
 }
 
@@ -18,10 +18,10 @@ interface IWebAuthenticationBrokerStatics2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_AuthenticateAndContinue(Windows.Foundation.Uri requestUri);
-	HRESULT abi_AuthenticateWithCallbackUriAndContinue(Windows.Foundation.Uri requestUri, Windows.Foundation.Uri callbackUri);
-	HRESULT abi_AuthenticateWithCallbackUriContinuationDataAndOptionsAndContinue(Windows.Foundation.Uri requestUri, Windows.Foundation.Uri callbackUri, Windows.Foundation.Collections.ValueSet continuationData, Windows.Security.Authentication.Web.WebAuthenticationOptions options);
+	HRESULT abi_AuthenticateAndContinue(Windows.Foundation.Uri requestUri, Windows.Foundation.Uri callbackUri);
+	HRESULT abi_AuthenticateAndContinue(Windows.Foundation.Uri requestUri, Windows.Foundation.Uri callbackUri, Windows.Foundation.Collections.ValueSet continuationData, Windows.Security.Authentication.Web.WebAuthenticationOptions options);
 	HRESULT abi_AuthenticateSilentlyAsync(Windows.Foundation.Uri requestUri, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult)* return_asyncInfo);
-	HRESULT abi_AuthenticateSilentlyWithOptionsAsync(Windows.Foundation.Uri requestUri, Windows.Security.Authentication.Web.WebAuthenticationOptions options, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult)* return_asyncInfo);
+	HRESULT abi_AuthenticateSilentlyAsync(Windows.Foundation.Uri requestUri, Windows.Security.Authentication.Web.WebAuthenticationOptions options, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult)* return_asyncInfo);
 }
 
 @uuid("64002b4b-ede9-470a-a5cd-0323faf6e262")
@@ -42,16 +42,16 @@ interface WebAuthenticationBroker
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Authentication.Web.IWebAuthenticationBrokerStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult) AuthenticateWithCallbackUriAsync(Windows.Security.Authentication.Web.WebAuthenticationOptions options, Windows.Foundation.Uri requestUri, Windows.Foundation.Uri callbackUri)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult) AuthenticateAsync(Windows.Security.Authentication.Web.WebAuthenticationOptions options, Windows.Foundation.Uri requestUri, Windows.Foundation.Uri callbackUri)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult) _ret;
-		Debug.OK(staticInstance.abi_AuthenticateWithCallbackUriAsync(options, requestUri, callbackUri, &_ret));
+		Debug.OK(staticInstance.abi_AuthenticateAsync(options, requestUri, callbackUri, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult) AuthenticateWithoutCallbackUriAsync(Windows.Security.Authentication.Web.WebAuthenticationOptions options, Windows.Foundation.Uri requestUri)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult) AuthenticateAsync(Windows.Security.Authentication.Web.WebAuthenticationOptions options, Windows.Foundation.Uri requestUri)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult) _ret;
-		Debug.OK(staticInstance.abi_AuthenticateWithoutCallbackUriAsync(options, requestUri, &_ret));
+		Debug.OK(staticInstance.abi_AuthenticateAsync(options, requestUri, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.Uri GetCurrentApplicationCallbackUri()

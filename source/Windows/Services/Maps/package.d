@@ -85,7 +85,7 @@ interface IMapLocationFinderStatics : IInspectable
 extern(Windows):
 	HRESULT abi_FindLocationsAtAsync(Windows.Devices.Geolocation.Geopoint queryPoint, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult)* return_result);
 	HRESULT abi_FindLocationsAsync(HSTRING searchText, Windows.Devices.Geolocation.Geopoint referencePoint, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult)* return_result);
-	HRESULT abi_FindLocationsWithMaxCountAsync(HSTRING searchText, Windows.Devices.Geolocation.Geopoint referencePoint, UINT32 maxCount, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult)* return_result);
+	HRESULT abi_FindLocationsAsync(HSTRING searchText, Windows.Devices.Geolocation.Geopoint referencePoint, UINT32 maxCount, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult)* return_result);
 }
 
 @uuid("959a8b96-6485-4dfd-851a-33ac317e3af6")
@@ -93,7 +93,7 @@ extern(Windows):
 interface IMapLocationFinderStatics2 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_FindLocationsAtWithAccuracyAsync(Windows.Devices.Geolocation.Geopoint queryPoint, Windows.Services.Maps.MapLocationDesiredAccuracy accuracy, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult)* return_result);
+	HRESULT abi_FindLocationsAtAsync(Windows.Devices.Geolocation.Geopoint queryPoint, Windows.Services.Maps.MapLocationDesiredAccuracy accuracy, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult)* return_result);
 }
 
 @uuid("37e3e515-82b4-4d54-8fd9-af2624b3011c")
@@ -174,13 +174,13 @@ interface IMapRouteFinderStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetDrivingRouteAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
-	HRESULT abi_GetDrivingRouteWithOptimizationAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
-	HRESULT abi_GetDrivingRouteWithOptimizationAndRestrictionsAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Services.Maps.MapRouteRestrictions restrictions, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
-	HRESULT abi_GetDrivingRouteWithOptimizationRestrictionsAndHeadingAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Services.Maps.MapRouteRestrictions restrictions, double headingInDegrees, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
+	HRESULT abi_GetDrivingRouteAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
+	HRESULT abi_GetDrivingRouteAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Services.Maps.MapRouteRestrictions restrictions, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
+	HRESULT abi_GetDrivingRouteAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Services.Maps.MapRouteRestrictions restrictions, double headingInDegrees, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
 	HRESULT abi_GetDrivingRouteFromWaypointsAsync(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) wayPoints, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
-	HRESULT abi_GetDrivingRouteFromWaypointsAndOptimizationAsync(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) wayPoints, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
-	HRESULT abi_GetDrivingRouteFromWaypointsOptimizationAndRestrictionsAsync(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) wayPoints, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Services.Maps.MapRouteRestrictions restrictions, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
-	HRESULT abi_GetDrivingRouteFromWaypointsOptimizationRestrictionsAndHeadingAsync(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) wayPoints, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Services.Maps.MapRouteRestrictions restrictions, double headingInDegrees, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
+	HRESULT abi_GetDrivingRouteFromWaypointsAsync(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) wayPoints, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
+	HRESULT abi_GetDrivingRouteFromWaypointsAsync(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) wayPoints, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Services.Maps.MapRouteRestrictions restrictions, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
+	HRESULT abi_GetDrivingRouteFromWaypointsAsync(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) wayPoints, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Services.Maps.MapRouteRestrictions restrictions, double headingInDegrees, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
 	HRESULT abi_GetWalkingRouteAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
 	HRESULT abi_GetWalkingRouteFromWaypointsAsync(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) wayPoints, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
 }
@@ -190,7 +190,7 @@ extern(Windows):
 interface IMapRouteFinderStatics2 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_GetDrivingRouteWithOptionsAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint, Windows.Services.Maps.MapRouteDrivingOptions options, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
+	HRESULT abi_GetDrivingRouteAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint, Windows.Services.Maps.MapRouteDrivingOptions options, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
 }
 
 @uuid("f6098134-5913-11e6-8b77-86f30ca893d3")
@@ -199,7 +199,7 @@ interface IMapRouteFinderStatics3 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetDrivingRouteFromEnhancedWaypointsAsync(Windows.Foundation.Collections.IIterable!(Windows.Services.Maps.EnhancedWaypoint) waypoints, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
-	HRESULT abi_GetDrivingRouteFromEnhancedWaypointsWithOptionsAsync(Windows.Foundation.Collections.IIterable!(Windows.Services.Maps.EnhancedWaypoint) waypoints, Windows.Services.Maps.MapRouteDrivingOptions options, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
+	HRESULT abi_GetDrivingRouteFromEnhancedWaypointsAsync(Windows.Foundation.Collections.IIterable!(Windows.Services.Maps.EnhancedWaypoint) waypoints, Windows.Services.Maps.MapRouteDrivingOptions options, Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult)* return_result);
 }
 
 @uuid("96f8b2f6-5bba-4d17-9db6-1a263fec7471")
@@ -479,10 +479,10 @@ interface MapLocationFinder
 		Debug.OK(staticInstance.abi_FindLocationsAsync(searchText, referencePoint, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult) FindLocationsWithMaxCountAsync(HSTRING searchText, Windows.Devices.Geolocation.Geopoint referencePoint, UINT32 maxCount)
+	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult) FindLocationsAsync(HSTRING searchText, Windows.Devices.Geolocation.Geopoint referencePoint, UINT32 maxCount)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult) _ret;
-		Debug.OK(staticInstance.abi_FindLocationsWithMaxCountAsync(searchText, referencePoint, maxCount, &_ret));
+		Debug.OK(staticInstance.abi_FindLocationsAsync(searchText, referencePoint, maxCount, &_ret));
 		return _ret;
 	}
 }
@@ -652,22 +652,22 @@ interface MapRouteFinder
 		Debug.OK(staticInstance.abi_GetDrivingRouteAsync(startPoint, endPoint, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetDrivingRouteWithOptimizationAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint, Windows.Services.Maps.MapRouteOptimization optimization)
+	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetDrivingRouteAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint, Windows.Services.Maps.MapRouteOptimization optimization)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) _ret;
-		Debug.OK(staticInstance.abi_GetDrivingRouteWithOptimizationAsync(startPoint, endPoint, optimization, &_ret));
+		Debug.OK(staticInstance.abi_GetDrivingRouteAsync(startPoint, endPoint, optimization, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetDrivingRouteWithOptimizationAndRestrictionsAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Services.Maps.MapRouteRestrictions restrictions)
+	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetDrivingRouteAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Services.Maps.MapRouteRestrictions restrictions)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) _ret;
-		Debug.OK(staticInstance.abi_GetDrivingRouteWithOptimizationAndRestrictionsAsync(startPoint, endPoint, optimization, restrictions, &_ret));
+		Debug.OK(staticInstance.abi_GetDrivingRouteAsync(startPoint, endPoint, optimization, restrictions, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetDrivingRouteWithOptimizationRestrictionsAndHeadingAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Services.Maps.MapRouteRestrictions restrictions, double headingInDegrees)
+	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetDrivingRouteAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Services.Maps.MapRouteRestrictions restrictions, double headingInDegrees)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) _ret;
-		Debug.OK(staticInstance.abi_GetDrivingRouteWithOptimizationRestrictionsAndHeadingAsync(startPoint, endPoint, optimization, restrictions, headingInDegrees, &_ret));
+		Debug.OK(staticInstance.abi_GetDrivingRouteAsync(startPoint, endPoint, optimization, restrictions, headingInDegrees, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetDrivingRouteFromWaypointsAsync(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) wayPoints)
@@ -676,22 +676,22 @@ interface MapRouteFinder
 		Debug.OK(staticInstance.abi_GetDrivingRouteFromWaypointsAsync(wayPoints, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetDrivingRouteFromWaypointsAndOptimizationAsync(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) wayPoints, Windows.Services.Maps.MapRouteOptimization optimization)
+	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetDrivingRouteFromWaypointsAsync(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) wayPoints, Windows.Services.Maps.MapRouteOptimization optimization)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) _ret;
-		Debug.OK(staticInstance.abi_GetDrivingRouteFromWaypointsAndOptimizationAsync(wayPoints, optimization, &_ret));
+		Debug.OK(staticInstance.abi_GetDrivingRouteFromWaypointsAsync(wayPoints, optimization, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetDrivingRouteFromWaypointsOptimizationAndRestrictionsAsync(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) wayPoints, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Services.Maps.MapRouteRestrictions restrictions)
+	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetDrivingRouteFromWaypointsAsync(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) wayPoints, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Services.Maps.MapRouteRestrictions restrictions)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) _ret;
-		Debug.OK(staticInstance.abi_GetDrivingRouteFromWaypointsOptimizationAndRestrictionsAsync(wayPoints, optimization, restrictions, &_ret));
+		Debug.OK(staticInstance.abi_GetDrivingRouteFromWaypointsAsync(wayPoints, optimization, restrictions, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetDrivingRouteFromWaypointsOptimizationRestrictionsAndHeadingAsync(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) wayPoints, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Services.Maps.MapRouteRestrictions restrictions, double headingInDegrees)
+	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetDrivingRouteFromWaypointsAsync(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) wayPoints, Windows.Services.Maps.MapRouteOptimization optimization, Windows.Services.Maps.MapRouteRestrictions restrictions, double headingInDegrees)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) _ret;
-		Debug.OK(staticInstance.abi_GetDrivingRouteFromWaypointsOptimizationRestrictionsAndHeadingAsync(wayPoints, optimization, restrictions, headingInDegrees, &_ret));
+		Debug.OK(staticInstance.abi_GetDrivingRouteFromWaypointsAsync(wayPoints, optimization, restrictions, headingInDegrees, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapRouteFinderResult) GetWalkingRouteAsync(Windows.Devices.Geolocation.Geopoint startPoint, Windows.Devices.Geolocation.Geopoint endPoint)

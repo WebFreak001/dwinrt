@@ -8,7 +8,7 @@ interface IPlatformTelemetryClientStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_Register(HSTRING id, Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationResult* return_result);
-	HRESULT abi_RegisterWithSettings(HSTRING id, Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationSettings settings, Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationResult* return_result);
+	HRESULT abi_Register(HSTRING id, Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationSettings settings, Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationResult* return_result);
 }
 
 @uuid("4d8518ab-2292-49bd-a15a-3d71d2145112")
@@ -44,10 +44,10 @@ interface PlatformTelemetryClient
 		Debug.OK(staticInstance.abi_Register(id, &_ret));
 		return _ret;
 	}
-	static Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationResult RegisterWithSettings(HSTRING id, Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationSettings settings)
+	static Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationResult Register(HSTRING id, Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationSettings settings)
 	{
 		Windows.System.Diagnostics.Telemetry.PlatformTelemetryRegistrationResult _ret;
-		Debug.OK(staticInstance.abi_RegisterWithSettings(id, settings, &_ret));
+		Debug.OK(staticInstance.abi_Register(id, settings, &_ret));
 		return _ret;
 	}
 }

@@ -95,7 +95,7 @@ extern(Windows):
 	HRESULT abi_WriteByte(ubyte value);
 	HRESULT abi_WriteBytes(UINT32 __valueSize, ubyte* value);
 	HRESULT abi_WriteBuffer(Windows.Storage.Streams.IBuffer buffer);
-	HRESULT abi_WriteBufferRange(Windows.Storage.Streams.IBuffer buffer, UINT32 start, UINT32 count);
+	HRESULT abi_WriteBuffer(Windows.Storage.Streams.IBuffer buffer, UINT32 start, UINT32 count);
 	HRESULT abi_WriteBoolean(bool value);
 	HRESULT abi_WriteGuid(GUID value);
 	HRESULT abi_WriteInt16(INT16 value);
@@ -190,7 +190,7 @@ interface IRandomAccessStreamStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_CopyAsync(Windows.Storage.Streams.IInputStream source, Windows.Storage.Streams.IOutputStream destination, Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong)* return_operation);
-	HRESULT abi_CopySizeAsync(Windows.Storage.Streams.IInputStream source, Windows.Storage.Streams.IOutputStream destination, ulong bytesToCopy, Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong)* return_operation);
+	HRESULT abi_CopyAsync(Windows.Storage.Streams.IInputStream source, Windows.Storage.Streams.IOutputStream destination, ulong bytesToCopy, Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong)* return_operation);
 	HRESULT abi_CopyAndCloseAsync(Windows.Storage.Streams.IInputStream source, Windows.Storage.Streams.IOutputStream destination, Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong)* return_operation);
 }
 
@@ -487,9 +487,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Storage.Streams.IDataWriter)this.asInterface(uuid("64b89265-d341-4922-b38a-dd4af8808c4e"))).abi_WriteBuffer(buffer));
 	}
-	final void WriteBufferRange(Windows.Storage.Streams.IBuffer buffer, UINT32 start, UINT32 count)
+	final void WriteBuffer(Windows.Storage.Streams.IBuffer buffer, UINT32 start, UINT32 count)
 	{
-		Debug.OK((cast(Windows.Storage.Streams.IDataWriter)this.asInterface(uuid("64b89265-d341-4922-b38a-dd4af8808c4e"))).abi_WriteBufferRange(buffer, start, count));
+		Debug.OK((cast(Windows.Storage.Streams.IDataWriter)this.asInterface(uuid("64b89265-d341-4922-b38a-dd4af8808c4e"))).abi_WriteBuffer(buffer, start, count));
 	}
 	final void WriteBoolean(bool value)
 	{
@@ -861,10 +861,10 @@ interface RandomAccessStream
 		Debug.OK(staticInstance.abi_CopyAsync(source, destination, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) CopySizeAsync(Windows.Storage.Streams.IInputStream source, Windows.Storage.Streams.IOutputStream destination, ulong bytesToCopy)
+	static Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) CopyAsync(Windows.Storage.Streams.IInputStream source, Windows.Storage.Streams.IOutputStream destination, ulong bytesToCopy)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) _ret;
-		Debug.OK(staticInstance.abi_CopySizeAsync(source, destination, bytesToCopy, &_ret));
+		Debug.OK(staticInstance.abi_CopyAsync(source, destination, bytesToCopy, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperationWithProgress!(ulong, ulong) CopyAndCloseAsync(Windows.Storage.Streams.IInputStream source, Windows.Storage.Streams.IOutputStream destination)

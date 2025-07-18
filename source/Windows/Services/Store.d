@@ -47,7 +47,7 @@ extern(Windows):
 	HRESULT get_Price(Windows.Services.Store.StorePrice* return_value);
 	HRESULT get_ExtendedJsonData(HSTRING* return_value);
 	HRESULT abi_RequestPurchaseAsync(Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult)* return_operation);
-	HRESULT abi_RequestPurchaseWithPurchasePropertiesAsync(Windows.Services.Store.StorePurchaseProperties storePurchaseProperties, Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult)* return_operation);
+	HRESULT abi_RequestPurchaseAsync(Windows.Services.Store.StorePurchaseProperties storePurchaseProperties, Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult)* return_operation);
 }
 
 @uuid("8aa4c3b3-5bb3-441a-2ab4-4dab73d5ce67")
@@ -97,7 +97,7 @@ extern(Windows):
 	HRESULT abi_GetConsumableBalanceRemainingAsync(HSTRING productStoreId, Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StoreConsumableResult)* return_operation);
 	HRESULT abi_AcquireStoreLicenseForOptionalPackageAsync(Windows.ApplicationModel.Package optionalPackage, Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StoreAcquireLicenseResult)* return_operation);
 	HRESULT abi_RequestPurchaseAsync(HSTRING storeId, Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult)* return_operation);
-	HRESULT abi_RequestPurchaseWithPurchasePropertiesAsync(HSTRING storeId, Windows.Services.Store.StorePurchaseProperties storePurchaseProperties, Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult)* return_operation);
+	HRESULT abi_RequestPurchaseAsync(HSTRING storeId, Windows.Services.Store.StorePurchaseProperties storePurchaseProperties, Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult)* return_operation);
 	HRESULT abi_GetAppAndOptionalStorePackageUpdatesAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Services.Store.StorePackageUpdate))* return_operation);
 	HRESULT abi_RequestDownloadStorePackageUpdatesAsync(Windows.Foundation.Collections.IIterable!(Windows.Services.Store.StorePackageUpdate) storePackageUpdates, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Services.Store.StorePackageUpdateResult, Windows.Services.Store.StorePackageUpdateStatus)* return_operation);
 	HRESULT abi_RequestDownloadAndInstallStorePackageUpdatesAsync(Windows.Foundation.Collections.IIterable!(Windows.Services.Store.StorePackageUpdate) storePackageUpdates, Windows.Foundation.IAsyncOperationWithProgress!(Windows.Services.Store.StorePackageUpdateResult, Windows.Services.Store.StorePackageUpdateStatus)* return_operation);
@@ -212,7 +212,7 @@ extern(Windows):
 	HRESULT get_LinkUri(Windows.Foundation.Uri* return_value);
 	HRESULT abi_GetIsAnySkuInstalledAsync(Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_RequestPurchaseAsync(Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult)* return_operation);
-	HRESULT abi_RequestPurchaseWithPurchasePropertiesAsync(Windows.Services.Store.StorePurchaseProperties storePurchaseProperties, Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult)* return_operation);
+	HRESULT abi_RequestPurchaseAsync(Windows.Services.Store.StorePurchaseProperties storePurchaseProperties, Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult)* return_operation);
 	HRESULT get_InAppOfferToken(HSTRING* return_value);
 }
 
@@ -319,7 +319,7 @@ extern(Windows):
 	HRESULT get_CollectionData(Windows.Services.Store.StoreCollectionData* return_value);
 	HRESULT abi_GetIsInstalledAsync(Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_RequestPurchaseAsync(Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult)* return_operation);
-	HRESULT abi_RequestPurchaseWithPurchasePropertiesAsync(Windows.Services.Store.StorePurchaseProperties storePurchaseProperties, Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult)* return_operation);
+	HRESULT abi_RequestPurchaseAsync(Windows.Services.Store.StorePurchaseProperties storePurchaseProperties, Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult)* return_operation);
 	HRESULT get_IsSubscription(bool* return_value);
 	HRESULT get_SubscriptionInfo(Windows.Services.Store.StoreSubscriptionInfo* return_value);
 }
@@ -458,10 +458,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStoreAvailability)this.asInterface(uuid("fa060325-0ffd-4493-ad43-f1f9918f69fa"))).abi_RequestPurchaseAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult) RequestPurchaseWithPurchasePropertiesAsync(Windows.Services.Store.StorePurchaseProperties storePurchaseProperties)
+	final Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult) RequestPurchaseAsync(Windows.Services.Store.StorePurchaseProperties storePurchaseProperties)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult) _ret;
-		Debug.OK((cast(Windows.Services.Store.IStoreAvailability)this.asInterface(uuid("fa060325-0ffd-4493-ad43-f1f9918f69fa"))).abi_RequestPurchaseWithPurchasePropertiesAsync(storePurchaseProperties, &_ret));
+		Debug.OK((cast(Windows.Services.Store.IStoreAvailability)this.asInterface(uuid("fa060325-0ffd-4493-ad43-f1f9918f69fa"))).abi_RequestPurchaseAsync(storePurchaseProperties, &_ret));
 		return _ret;
 	}
 }
@@ -645,10 +645,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStoreContext)this.asInterface(uuid("ac98b6be-f4fd-4912-babd-5035e5e8bcab"))).abi_RequestPurchaseAsync(storeId, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult) RequestPurchaseWithPurchasePropertiesAsync(HSTRING storeId, Windows.Services.Store.StorePurchaseProperties storePurchaseProperties)
+	final Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult) RequestPurchaseAsync(HSTRING storeId, Windows.Services.Store.StorePurchaseProperties storePurchaseProperties)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult) _ret;
-		Debug.OK((cast(Windows.Services.Store.IStoreContext)this.asInterface(uuid("ac98b6be-f4fd-4912-babd-5035e5e8bcab"))).abi_RequestPurchaseWithPurchasePropertiesAsync(storeId, storePurchaseProperties, &_ret));
+		Debug.OK((cast(Windows.Services.Store.IStoreContext)this.asInterface(uuid("ac98b6be-f4fd-4912-babd-5035e5e8bcab"))).abi_RequestPurchaseAsync(storeId, storePurchaseProperties, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Services.Store.StorePackageUpdate)) GetAppAndOptionalStorePackageUpdatesAsync()
@@ -981,10 +981,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStoreProduct)this.asInterface(uuid("320e2c52-d760-450a-a42b-67d1e901ac90"))).abi_RequestPurchaseAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult) RequestPurchaseWithPurchasePropertiesAsync(Windows.Services.Store.StorePurchaseProperties storePurchaseProperties)
+	final Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult) RequestPurchaseAsync(Windows.Services.Store.StorePurchaseProperties storePurchaseProperties)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult) _ret;
-		Debug.OK((cast(Windows.Services.Store.IStoreProduct)this.asInterface(uuid("320e2c52-d760-450a-a42b-67d1e901ac90"))).abi_RequestPurchaseWithPurchasePropertiesAsync(storePurchaseProperties, &_ret));
+		Debug.OK((cast(Windows.Services.Store.IStoreProduct)this.asInterface(uuid("320e2c52-d760-450a-a42b-67d1e901ac90"))).abi_RequestPurchaseAsync(storePurchaseProperties, &_ret));
 		return _ret;
 	}
 	final HSTRING InAppOfferToken()
@@ -1251,10 +1251,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStoreSku)this.asInterface(uuid("397e6f55-4440-4f03-863c-91f3fec83d79"))).abi_RequestPurchaseAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult) RequestPurchaseWithPurchasePropertiesAsync(Windows.Services.Store.StorePurchaseProperties storePurchaseProperties)
+	final Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult) RequestPurchaseAsync(Windows.Services.Store.StorePurchaseProperties storePurchaseProperties)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult) _ret;
-		Debug.OK((cast(Windows.Services.Store.IStoreSku)this.asInterface(uuid("397e6f55-4440-4f03-863c-91f3fec83d79"))).abi_RequestPurchaseWithPurchasePropertiesAsync(storePurchaseProperties, &_ret));
+		Debug.OK((cast(Windows.Services.Store.IStoreSku)this.asInterface(uuid("397e6f55-4440-4f03-863c-91f3fec83d79"))).abi_RequestPurchaseAsync(storePurchaseProperties, &_ret));
 		return _ret;
 	}
 	final bool IsSubscription()

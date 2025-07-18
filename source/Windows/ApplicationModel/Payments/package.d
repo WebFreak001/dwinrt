@@ -134,7 +134,7 @@ interface IPaymentMediator : IInspectable
 extern(Windows):
 	HRESULT abi_GetSupportedMethodIdsAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING))* return_result);
 	HRESULT abi_SubmitPaymentRequestAsync(Windows.ApplicationModel.Payments.PaymentRequest paymentRequest, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.PaymentRequestSubmitResult)* return_result);
-	HRESULT abi_SubmitPaymentRequestWithChangeHandlerAsync(Windows.ApplicationModel.Payments.PaymentRequest paymentRequest, Windows.ApplicationModel.Payments.PaymentRequestChangedHandler changeHandler, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.PaymentRequestSubmitResult)* return_result);
+	HRESULT abi_SubmitPaymentRequestAsync(Windows.ApplicationModel.Payments.PaymentRequest paymentRequest, Windows.ApplicationModel.Payments.PaymentRequestChangedHandler changeHandler, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.PaymentRequestSubmitResult)* return_result);
 }
 
 @uuid("63445050-0e94-4ed6-aacb-e6012bd327a7")
@@ -657,10 +657,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentMediator)this.asInterface(uuid("fb0ee829-ec0c-449a-83da-7ae3073365a2"))).abi_SubmitPaymentRequestAsync(paymentRequest, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.PaymentRequestSubmitResult) SubmitPaymentRequestWithChangeHandlerAsync(Windows.ApplicationModel.Payments.PaymentRequest paymentRequest, Windows.ApplicationModel.Payments.PaymentRequestChangedHandler changeHandler)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.PaymentRequestSubmitResult) SubmitPaymentRequestAsync(Windows.ApplicationModel.Payments.PaymentRequest paymentRequest, Windows.ApplicationModel.Payments.PaymentRequestChangedHandler changeHandler)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.PaymentRequestSubmitResult) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentMediator)this.asInterface(uuid("fb0ee829-ec0c-449a-83da-7ae3073365a2"))).abi_SubmitPaymentRequestWithChangeHandlerAsync(paymentRequest, changeHandler, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentMediator)this.asInterface(uuid("fb0ee829-ec0c-449a-83da-7ae3073365a2"))).abi_SubmitPaymentRequestAsync(paymentRequest, changeHandler, &_ret));
 		return _ret;
 	}
 	static PaymentMediator New()

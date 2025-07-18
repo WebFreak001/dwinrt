@@ -99,9 +99,9 @@ interface IVoiceCommandResponseStatics : IInspectable
 extern(Windows):
 	HRESULT get_MaxSupportedVoiceCommandContentTiles(UINT32* return_value);
 	HRESULT abi_CreateResponse(Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage userMessage, Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse* return_response);
-	HRESULT abi_CreateResponseWithTiles(Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage message, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile) contentTiles, Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse* return_response);
+	HRESULT abi_CreateResponse(Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage message, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile) contentTiles, Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse* return_response);
 	HRESULT abi_CreateResponseForPrompt(Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage message, Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage repeatMessage, Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse* return_response);
-	HRESULT abi_CreateResponseForPromptWithTiles(Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage message, Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage repeatMessage, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile) contentTiles, Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse* return_response);
+	HRESULT abi_CreateResponseForPrompt(Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage message, Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage repeatMessage, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile) contentTiles, Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse* return_response);
 }
 
 @uuid("d894bb9f-21da-44a4-98a2-fb131920a9cc")
@@ -390,10 +390,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateResponse(userMessage, &_ret));
 		return _ret;
 	}
-	static Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse CreateResponseWithTiles(Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage message, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile) contentTiles)
+	static Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse CreateResponse(Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage message, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile) contentTiles)
 	{
 		Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse _ret;
-		Debug.OK(staticInstance.abi_CreateResponseWithTiles(message, contentTiles, &_ret));
+		Debug.OK(staticInstance.abi_CreateResponse(message, contentTiles, &_ret));
 		return _ret;
 	}
 	static Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse CreateResponseForPrompt(Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage message, Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage repeatMessage)
@@ -402,10 +402,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateResponseForPrompt(message, repeatMessage, &_ret));
 		return _ret;
 	}
-	static Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse CreateResponseForPromptWithTiles(Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage message, Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage repeatMessage, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile) contentTiles)
+	static Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse CreateResponseForPrompt(Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage message, Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage repeatMessage, Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTile) contentTiles)
 	{
 		Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse _ret;
-		Debug.OK(staticInstance.abi_CreateResponseForPromptWithTiles(message, repeatMessage, contentTiles, &_ret));
+		Debug.OK(staticInstance.abi_CreateResponseForPrompt(message, repeatMessage, contentTiles, &_ret));
 		return _ret;
 	}
 }

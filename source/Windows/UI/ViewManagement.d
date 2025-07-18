@@ -19,7 +19,7 @@ interface IActivationViewSwitcher : IInspectable
 {
 extern(Windows):
 	HRESULT abi_ShowAsStandaloneAsync(INT32 viewId, Windows.Foundation.IAsyncAction* return_operation);
-	HRESULT abi_ShowAsStandaloneWithSizePreferenceAsync(INT32 viewId, Windows.UI.ViewManagement.ViewSizePreference sizePreference, Windows.Foundation.IAsyncAction* return_operation);
+	HRESULT abi_ShowAsStandaloneAsync(INT32 viewId, Windows.UI.ViewManagement.ViewSizePreference sizePreference, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_IsViewPresentedOnActivationVirtualDesktop(INT32 viewId, bool* return_value);
 }
 
@@ -83,7 +83,7 @@ extern(Windows):
 	HRESULT get_ViewMode(Windows.UI.ViewManagement.ApplicationViewMode* return_value);
 	HRESULT abi_IsViewModeSupported(Windows.UI.ViewManagement.ApplicationViewMode viewMode, bool* return_isViewModeSupported);
 	HRESULT abi_TryEnterViewModeAsync(Windows.UI.ViewManagement.ApplicationViewMode viewMode, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
-	HRESULT abi_TryEnterViewModeWithPreferencesAsync(Windows.UI.ViewManagement.ApplicationViewMode viewMode, Windows.UI.ViewManagement.ViewModePreferences viewModePreferences, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
+	HRESULT abi_TryEnterViewModeAsync(Windows.UI.ViewManagement.ApplicationViewMode viewMode, Windows.UI.ViewManagement.ViewModePreferences viewModePreferences, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_TryConsolidateAsync(Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 }
 
@@ -174,11 +174,11 @@ interface IApplicationViewSwitcherStatics : IInspectable
 extern(Windows):
 	HRESULT abi_DisableShowingMainViewOnActivation();
 	HRESULT abi_TryShowAsStandaloneAsync(INT32 viewId, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
-	HRESULT abi_TryShowAsStandaloneWithSizePreferenceAsync(INT32 viewId, Windows.UI.ViewManagement.ViewSizePreference sizePreference, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
-	HRESULT abi_TryShowAsStandaloneWithAnchorViewAndSizePreferenceAsync(INT32 viewId, Windows.UI.ViewManagement.ViewSizePreference sizePreference, INT32 anchorViewId, Windows.UI.ViewManagement.ViewSizePreference anchorSizePreference, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
+	HRESULT abi_TryShowAsStandaloneAsync(INT32 viewId, Windows.UI.ViewManagement.ViewSizePreference sizePreference, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
+	HRESULT abi_TryShowAsStandaloneAsync(INT32 viewId, Windows.UI.ViewManagement.ViewSizePreference sizePreference, INT32 anchorViewId, Windows.UI.ViewManagement.ViewSizePreference anchorSizePreference, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_SwitchAsync(INT32 viewId, Windows.Foundation.IAsyncAction* return_operation);
-	HRESULT abi_SwitchFromViewAsync(INT32 toViewId, INT32 fromViewId, Windows.Foundation.IAsyncAction* return_operation);
-	HRESULT abi_SwitchFromViewWithOptionsAsync(INT32 toViewId, INT32 fromViewId, Windows.UI.ViewManagement.ApplicationViewSwitchingOptions options, Windows.Foundation.IAsyncAction* return_operation);
+	HRESULT abi_SwitchAsync(INT32 toViewId, INT32 fromViewId, Windows.Foundation.IAsyncAction* return_operation);
+	HRESULT abi_SwitchAsync(INT32 toViewId, INT32 fromViewId, Windows.UI.ViewManagement.ApplicationViewSwitchingOptions options, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_PrepareForCustomAnimatedSwitchAsync(INT32 toViewId, INT32 fromViewId, Windows.UI.ViewManagement.ApplicationViewSwitchingOptions options, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 }
 
@@ -196,7 +196,7 @@ interface IApplicationViewSwitcherStatics3 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_TryShowAsViewModeAsync(INT32 viewId, Windows.UI.ViewManagement.ApplicationViewMode viewMode, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
-	HRESULT abi_TryShowAsViewModeWithPreferencesAsync(INT32 viewId, Windows.UI.ViewManagement.ApplicationViewMode viewMode, Windows.UI.ViewManagement.ViewModePreferences viewModePreferences, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
+	HRESULT abi_TryShowAsViewModeAsync(INT32 viewId, Windows.UI.ViewManagement.ApplicationViewMode viewMode, Windows.UI.ViewManagement.ViewModePreferences viewModePreferences, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 }
 
 @uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce")
@@ -313,9 +313,9 @@ extern(Windows):
 interface IProjectionManagerStatics2 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_StartProjectingWithDeviceInfoAsync(INT32 projectionViewId, INT32 anchorViewId, Windows.Devices.Enumeration.DeviceInformation displayDeviceInfo, Windows.Foundation.IAsyncAction* return_operation);
+	HRESULT abi_StartProjectingAsync(INT32 projectionViewId, INT32 anchorViewId, Windows.Devices.Enumeration.DeviceInformation displayDeviceInfo, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_RequestStartProjectingAsync(INT32 projectionViewId, INT32 anchorViewId, Windows.Foundation.Rect selection, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
-	HRESULT abi_RequestStartProjectingWithPlacementAsync(INT32 projectionViewId, INT32 anchorViewId, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement prefferedPlacement, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
+	HRESULT abi_RequestStartProjectingAsync(INT32 projectionViewId, INT32 anchorViewId, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement prefferedPlacement, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_GetDeviceSelector(HSTRING* return_selector);
 }
 
@@ -446,10 +446,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.ViewManagement.IActivationViewSwitcher)this.asInterface(uuid("dca71bb6-7350-492b-aac7-c8a13d7224ad"))).abi_ShowAsStandaloneAsync(viewId, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction ShowAsStandaloneWithSizePreferenceAsync(INT32 viewId, Windows.UI.ViewManagement.ViewSizePreference sizePreference)
+	final Windows.Foundation.IAsyncAction ShowAsStandaloneAsync(INT32 viewId, Windows.UI.ViewManagement.ViewSizePreference sizePreference)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.UI.ViewManagement.IActivationViewSwitcher)this.asInterface(uuid("dca71bb6-7350-492b-aac7-c8a13d7224ad"))).abi_ShowAsStandaloneWithSizePreferenceAsync(viewId, sizePreference, &_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IActivationViewSwitcher)this.asInterface(uuid("dca71bb6-7350-492b-aac7-c8a13d7224ad"))).abi_ShowAsStandaloneAsync(viewId, sizePreference, &_ret));
 		return _ret;
 	}
 	final bool IsViewPresentedOnActivationVirtualDesktop(INT32 viewId)
@@ -634,10 +634,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView4)this.asInterface(uuid("15e5cbec-9e0f-46b5-bc3f-9bf653e74b5e"))).abi_TryEnterViewModeAsync(viewMode, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(bool) TryEnterViewModeWithPreferencesAsync(Windows.UI.ViewManagement.ApplicationViewMode viewMode, Windows.UI.ViewManagement.ViewModePreferences viewModePreferences)
+	final Windows.Foundation.IAsyncOperation!(bool) TryEnterViewModeAsync(Windows.UI.ViewManagement.ApplicationViewMode viewMode, Windows.UI.ViewManagement.ViewModePreferences viewModePreferences)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView4)this.asInterface(uuid("15e5cbec-9e0f-46b5-bc3f-9bf653e74b5e"))).abi_TryEnterViewModeWithPreferencesAsync(viewMode, viewModePreferences, &_ret));
+		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView4)this.asInterface(uuid("15e5cbec-9e0f-46b5-bc3f-9bf653e74b5e"))).abi_TryEnterViewModeAsync(viewMode, viewModePreferences, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) TryConsolidateAsync()
@@ -719,16 +719,16 @@ interface ApplicationViewSwitcher
 		Debug.OK(staticInstance.abi_TryShowAsStandaloneAsync(viewId, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(bool) TryShowAsStandaloneWithSizePreferenceAsync(INT32 viewId, Windows.UI.ViewManagement.ViewSizePreference sizePreference)
+	static Windows.Foundation.IAsyncOperation!(bool) TryShowAsStandaloneAsync(INT32 viewId, Windows.UI.ViewManagement.ViewSizePreference sizePreference)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(staticInstance.abi_TryShowAsStandaloneWithSizePreferenceAsync(viewId, sizePreference, &_ret));
+		Debug.OK(staticInstance.abi_TryShowAsStandaloneAsync(viewId, sizePreference, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(bool) TryShowAsStandaloneWithAnchorViewAndSizePreferenceAsync(INT32 viewId, Windows.UI.ViewManagement.ViewSizePreference sizePreference, INT32 anchorViewId, Windows.UI.ViewManagement.ViewSizePreference anchorSizePreference)
+	static Windows.Foundation.IAsyncOperation!(bool) TryShowAsStandaloneAsync(INT32 viewId, Windows.UI.ViewManagement.ViewSizePreference sizePreference, INT32 anchorViewId, Windows.UI.ViewManagement.ViewSizePreference anchorSizePreference)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(staticInstance.abi_TryShowAsStandaloneWithAnchorViewAndSizePreferenceAsync(viewId, sizePreference, anchorViewId, anchorSizePreference, &_ret));
+		Debug.OK(staticInstance.abi_TryShowAsStandaloneAsync(viewId, sizePreference, anchorViewId, anchorSizePreference, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncAction SwitchAsync(INT32 viewId)
@@ -737,16 +737,16 @@ interface ApplicationViewSwitcher
 		Debug.OK(staticInstance.abi_SwitchAsync(viewId, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncAction SwitchFromViewAsync(INT32 toViewId, INT32 fromViewId)
+	static Windows.Foundation.IAsyncAction SwitchAsync(INT32 toViewId, INT32 fromViewId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.abi_SwitchFromViewAsync(toViewId, fromViewId, &_ret));
+		Debug.OK(staticInstance.abi_SwitchAsync(toViewId, fromViewId, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncAction SwitchFromViewWithOptionsAsync(INT32 toViewId, INT32 fromViewId, Windows.UI.ViewManagement.ApplicationViewSwitchingOptions options)
+	static Windows.Foundation.IAsyncAction SwitchAsync(INT32 toViewId, INT32 fromViewId, Windows.UI.ViewManagement.ApplicationViewSwitchingOptions options)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.abi_SwitchFromViewWithOptionsAsync(toViewId, fromViewId, options, &_ret));
+		Debug.OK(staticInstance.abi_SwitchAsync(toViewId, fromViewId, options, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(bool) PrepareForCustomAnimatedSwitchAsync(INT32 toViewId, INT32 fromViewId, Windows.UI.ViewManagement.ApplicationViewSwitchingOptions options)

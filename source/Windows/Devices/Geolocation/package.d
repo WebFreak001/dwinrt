@@ -52,8 +52,8 @@ interface IGeoboundingBoxStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_TryCompute(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions, Windows.Devices.Geolocation.GeoboundingBox* return_value);
-	HRESULT abi_TryComputeWithAltitudeReference(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeRefSystem, Windows.Devices.Geolocation.GeoboundingBox* return_value);
-	HRESULT abi_TryComputeWithAltitudeReferenceAndSpatialReference(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeRefSystem, UINT32 spatialReferenceId, Windows.Devices.Geolocation.GeoboundingBox* return_value);
+	HRESULT abi_TryCompute(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeRefSystem, Windows.Devices.Geolocation.GeoboundingBox* return_value);
+	HRESULT abi_TryCompute(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeRefSystem, UINT32 spatialReferenceId, Windows.Devices.Geolocation.GeoboundingBox* return_value);
 }
 
 @uuid("39e45843-a7f9-4e63-92a7-ba0c28d124b1")
@@ -147,7 +147,7 @@ extern(Windows):
 	HRESULT set_ReportInterval(UINT32 value);
 	HRESULT get_LocationStatus(Windows.Devices.Geolocation.PositionStatus* return_value);
 	HRESULT abi_GetGeopositionAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.Geoposition)* return_value);
-	HRESULT abi_GetGeopositionAsyncWithAgeAndTimeout(Windows.Foundation.TimeSpan maximumAge, Windows.Foundation.TimeSpan timeout, Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.Geoposition)* return_value);
+	HRESULT abi_GetGeopositionAsync(Windows.Foundation.TimeSpan maximumAge, Windows.Foundation.TimeSpan timeout, Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.Geoposition)* return_value);
 	HRESULT add_PositionChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.PositionChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_PositionChanged(EventRegistrationToken token);
 	HRESULT add_StatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.StatusChangedEventArgs) handler, EventRegistrationToken* return_token);
@@ -169,7 +169,7 @@ interface IGeolocatorStatics : IInspectable
 extern(Windows):
 	HRESULT abi_RequestAccessAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.GeolocationAccessStatus)* return_result);
 	HRESULT abi_GetGeopositionHistoryAsync(Windows.Foundation.DateTime startTime, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geoposition))* return_result);
-	HRESULT abi_GetGeopositionHistoryWithDurationAsync(Windows.Foundation.DateTime startTime, Windows.Foundation.TimeSpan duration, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geoposition))* return_result);
+	HRESULT abi_GetGeopositionHistoryAsync(Windows.Foundation.DateTime startTime, Windows.Foundation.TimeSpan duration, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geoposition))* return_result);
 }
 
 @uuid("993011a2-fa1c-4631-a71d-0dbeb1250d9c")
@@ -389,16 +389,16 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_TryCompute(positions, &_ret));
 		return _ret;
 	}
-	static Windows.Devices.Geolocation.GeoboundingBox TryComputeWithAltitudeReference(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeRefSystem)
+	static Windows.Devices.Geolocation.GeoboundingBox TryCompute(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeRefSystem)
 	{
 		Windows.Devices.Geolocation.GeoboundingBox _ret;
-		Debug.OK(staticInstance.abi_TryComputeWithAltitudeReference(positions, altitudeRefSystem, &_ret));
+		Debug.OK(staticInstance.abi_TryCompute(positions, altitudeRefSystem, &_ret));
 		return _ret;
 	}
-	static Windows.Devices.Geolocation.GeoboundingBox TryComputeWithAltitudeReferenceAndSpatialReference(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeRefSystem, UINT32 spatialReferenceId)
+	static Windows.Devices.Geolocation.GeoboundingBox TryCompute(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeRefSystem, UINT32 spatialReferenceId)
 	{
 		Windows.Devices.Geolocation.GeoboundingBox _ret;
-		Debug.OK(staticInstance.abi_TryComputeWithAltitudeReferenceAndSpatialReference(positions, altitudeRefSystem, spatialReferenceId, &_ret));
+		Debug.OK(staticInstance.abi_TryCompute(positions, altitudeRefSystem, spatialReferenceId, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Geolocation.GeoboundingBox New(Windows.Devices.Geolocation.BasicGeoposition northwestCorner, Windows.Devices.Geolocation.BasicGeoposition southeastCorner)
@@ -628,10 +628,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Geolocation.IGeolocator)this.asInterface(uuid("a9c3bf62-4524-4989-8aa9-de019d2e551f"))).abi_GetGeopositionAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.Geoposition) GetGeopositionAsyncWithAgeAndTimeout(Windows.Foundation.TimeSpan maximumAge, Windows.Foundation.TimeSpan timeout)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.Geoposition) GetGeopositionAsync(Windows.Foundation.TimeSpan maximumAge, Windows.Foundation.TimeSpan timeout)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Geolocation.Geoposition) _ret;
-		Debug.OK((cast(Windows.Devices.Geolocation.IGeolocator)this.asInterface(uuid("a9c3bf62-4524-4989-8aa9-de019d2e551f"))).abi_GetGeopositionAsyncWithAgeAndTimeout(maximumAge, timeout, &_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.IGeolocator)this.asInterface(uuid("a9c3bf62-4524-4989-8aa9-de019d2e551f"))).abi_GetGeopositionAsync(maximumAge, timeout, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnPositionChanged(void delegate(Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.PositionChangedEventArgs) fn)
@@ -687,10 +687,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetGeopositionHistoryAsync(startTime, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geoposition)) GetGeopositionHistoryWithDurationAsync(Windows.Foundation.DateTime startTime, Windows.Foundation.TimeSpan duration)
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geoposition)) GetGeopositionHistoryAsync(Windows.Foundation.DateTime startTime, Windows.Foundation.TimeSpan duration)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Devices.Geolocation.Geoposition)) _ret;
-		Debug.OK(staticInstance.abi_GetGeopositionHistoryWithDurationAsync(startTime, duration, &_ret));
+		Debug.OK(staticInstance.abi_GetGeopositionHistoryAsync(startTime, duration, &_ret));
 		return _ret;
 	}
 	static Geolocator New()

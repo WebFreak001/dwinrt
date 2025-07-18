@@ -28,7 +28,7 @@ interface IBackgroundDownloader_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_CreateDownload(Windows.Foundation.Uri uri, Windows.Storage.IStorageFile resultFile, Windows.Networking.BackgroundTransfer.DownloadOperation* return_operation);
-	HRESULT abi_CreateDownloadFromFile(Windows.Foundation.Uri uri, Windows.Storage.IStorageFile resultFile, Windows.Storage.IStorageFile requestBodyFile, Windows.Networking.BackgroundTransfer.DownloadOperation* return_operation);
+	HRESULT abi_CreateDownload(Windows.Foundation.Uri uri, Windows.Storage.IStorageFile resultFile, Windows.Storage.IStorageFile requestBodyFile, Windows.Networking.BackgroundTransfer.DownloadOperation* return_operation);
 	HRESULT abi_CreateDownloadAsync(Windows.Foundation.Uri uri, Windows.Storage.IStorageFile resultFile, Windows.Storage.Streams.IInputStream requestBodyStream, Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.DownloadOperation)* return_operation);
 }
 @uuid("c1c79333-6649-4b1d-a826-a4b3dd234d0b")
@@ -75,7 +75,7 @@ interface IBackgroundDownloaderStaticMethods : IInspectable
 extern(Windows):
 	HRESULT abi_GetCurrentDownloadsAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.DownloadOperation))* return_operation);
 	deprecated("GetCurrentDownloadsAsync(group) may be altered or unavailable for releases after Windows 8.1. Instead, use GetCurrentDownloadsForTransferGroupAsync.")
-	HRESULT abi_GetCurrentDownloadsForGroupAsync(HSTRING group, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.DownloadOperation))* return_operation);
+	HRESULT abi_GetCurrentDownloadsAsync(HSTRING group, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.DownloadOperation))* return_operation);
 }
 
 @uuid("2faa1327-1ad4-4ca5-b2cd-08dbf0746afe")
@@ -207,9 +207,9 @@ interface IBackgroundUploader_Base : IInspectable
 extern(Windows):
 	HRESULT abi_CreateUpload(Windows.Foundation.Uri uri, Windows.Storage.IStorageFile sourceFile, Windows.Networking.BackgroundTransfer.UploadOperation* return_operation);
 	HRESULT abi_CreateUploadFromStreamAsync(Windows.Foundation.Uri uri, Windows.Storage.Streams.IInputStream sourceStream, Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation)* return_operation);
-	HRESULT abi_CreateUploadWithFormDataAndAutoBoundaryAsync(Windows.Foundation.Uri uri, Windows.Foundation.Collections.IIterable!(Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart) parts, Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation)* return_operation);
-	HRESULT abi_CreateUploadWithSubTypeAsync(Windows.Foundation.Uri uri, Windows.Foundation.Collections.IIterable!(Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart) parts, HSTRING subType, Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation)* return_operation);
-	HRESULT abi_CreateUploadWithSubTypeAndBoundaryAsync(Windows.Foundation.Uri uri, Windows.Foundation.Collections.IIterable!(Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart) parts, HSTRING subType, HSTRING boundary, Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation)* return_operation);
+	HRESULT abi_CreateUploadAsync(Windows.Foundation.Uri uri, Windows.Foundation.Collections.IIterable!(Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart) parts, Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation)* return_operation);
+	HRESULT abi_CreateUploadAsync(Windows.Foundation.Uri uri, Windows.Foundation.Collections.IIterable!(Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart) parts, HSTRING subType, Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation)* return_operation);
+	HRESULT abi_CreateUploadAsync(Windows.Foundation.Uri uri, Windows.Foundation.Collections.IIterable!(Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart) parts, HSTRING subType, HSTRING boundary, Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation)* return_operation);
 }
 @uuid("c595c9ae-cead-465b-8801-c55ac90a01ce")
 @WinrtFactory("Windows.Networking.BackgroundTransfer.BackgroundUploader")
@@ -255,7 +255,7 @@ interface IBackgroundUploaderStaticMethods : IInspectable
 extern(Windows):
 	HRESULT abi_GetCurrentUploadsAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.UploadOperation))* return_operation);
 	deprecated("GetCurrentUploadsAsync(group) may be altered or unavailable for releases after Windows 8.1. Instead, use GetCurrentUploadsForTransferGroupAsync.")
-	HRESULT abi_GetCurrentUploadsForGroupAsync(HSTRING group, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.UploadOperation))* return_operation);
+	HRESULT abi_GetCurrentUploadsAsync(HSTRING group, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.UploadOperation))* return_operation);
 }
 
 @uuid("e919ac62-ea08-42f0-a2ac-07e467549080")
@@ -368,10 +368,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundDownloader)this.asInterface(uuid("c1c79333-6649-4b1d-a826-a4b3dd234d0b"))).abi_CreateDownload(uri, resultFile, &_ret));
 		return _ret;
 	}
-	final Windows.Networking.BackgroundTransfer.DownloadOperation CreateDownloadFromFile(Windows.Foundation.Uri uri, Windows.Storage.IStorageFile resultFile, Windows.Storage.IStorageFile requestBodyFile)
+	final Windows.Networking.BackgroundTransfer.DownloadOperation CreateDownload(Windows.Foundation.Uri uri, Windows.Storage.IStorageFile resultFile, Windows.Storage.IStorageFile requestBodyFile)
 	{
 		Windows.Networking.BackgroundTransfer.DownloadOperation _ret;
-		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundDownloader)this.asInterface(uuid("c1c79333-6649-4b1d-a826-a4b3dd234d0b"))).abi_CreateDownloadFromFile(uri, resultFile, requestBodyFile, &_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundDownloader)this.asInterface(uuid("c1c79333-6649-4b1d-a826-a4b3dd234d0b"))).abi_CreateDownload(uri, resultFile, requestBodyFile, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.DownloadOperation) CreateDownloadAsync(Windows.Foundation.Uri uri, Windows.Storage.IStorageFile resultFile, Windows.Storage.Streams.IInputStream requestBodyStream)
@@ -506,10 +506,10 @@ extern(Windows):
 		return _ret;
 	}
 	deprecated("GetCurrentDownloadsAsync(group) may be altered or unavailable for releases after Windows 8.1. Instead, use GetCurrentDownloadsForTransferGroupAsync.")
-	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.DownloadOperation)) GetCurrentDownloadsForGroupAsync(HSTRING group)
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.DownloadOperation)) GetCurrentDownloadsAsync(HSTRING group)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.DownloadOperation)) _ret;
-		Debug.OK(staticInstance.abi_GetCurrentDownloadsForGroupAsync(group, &_ret));
+		Debug.OK(staticInstance.abi_GetCurrentDownloadsAsync(group, &_ret));
 		return _ret;
 	}
 	static BackgroundDownloader New()
@@ -673,22 +673,22 @@ extern(Windows):
 		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploader)this.asInterface(uuid("c595c9ae-cead-465b-8801-c55ac90a01ce"))).abi_CreateUploadFromStreamAsync(uri, sourceStream, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) CreateUploadWithFormDataAndAutoBoundaryAsync(Windows.Foundation.Uri uri, Windows.Foundation.Collections.IIterable!(Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart) parts)
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) CreateUploadAsync(Windows.Foundation.Uri uri, Windows.Foundation.Collections.IIterable!(Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart) parts)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) _ret;
-		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploader)this.asInterface(uuid("c595c9ae-cead-465b-8801-c55ac90a01ce"))).abi_CreateUploadWithFormDataAndAutoBoundaryAsync(uri, parts, &_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploader)this.asInterface(uuid("c595c9ae-cead-465b-8801-c55ac90a01ce"))).abi_CreateUploadAsync(uri, parts, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) CreateUploadWithSubTypeAsync(Windows.Foundation.Uri uri, Windows.Foundation.Collections.IIterable!(Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart) parts, HSTRING subType)
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) CreateUploadAsync(Windows.Foundation.Uri uri, Windows.Foundation.Collections.IIterable!(Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart) parts, HSTRING subType)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) _ret;
-		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploader)this.asInterface(uuid("c595c9ae-cead-465b-8801-c55ac90a01ce"))).abi_CreateUploadWithSubTypeAsync(uri, parts, subType, &_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploader)this.asInterface(uuid("c595c9ae-cead-465b-8801-c55ac90a01ce"))).abi_CreateUploadAsync(uri, parts, subType, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) CreateUploadWithSubTypeAndBoundaryAsync(Windows.Foundation.Uri uri, Windows.Foundation.Collections.IIterable!(Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart) parts, HSTRING subType, HSTRING boundary)
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) CreateUploadAsync(Windows.Foundation.Uri uri, Windows.Foundation.Collections.IIterable!(Windows.Networking.BackgroundTransfer.BackgroundTransferContentPart) parts, HSTRING subType, HSTRING boundary)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.BackgroundTransfer.UploadOperation) _ret;
-		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploader)this.asInterface(uuid("c595c9ae-cead-465b-8801-c55ac90a01ce"))).abi_CreateUploadWithSubTypeAndBoundaryAsync(uri, parts, subType, boundary, &_ret));
+		Debug.OK((cast(Windows.Networking.BackgroundTransfer.IBackgroundUploader)this.asInterface(uuid("c595c9ae-cead-465b-8801-c55ac90a01ce"))).abi_CreateUploadAsync(uri, parts, subType, boundary, &_ret));
 		return _ret;
 	}
 	final void SetRequestHeader(HSTRING headerName, HSTRING headerValue)
@@ -817,10 +817,10 @@ extern(Windows):
 		return _ret;
 	}
 	deprecated("GetCurrentUploadsAsync(group) may be altered or unavailable for releases after Windows 8.1. Instead, use GetCurrentUploadsForTransferGroupAsync.")
-	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.UploadOperation)) GetCurrentUploadsForGroupAsync(HSTRING group)
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.UploadOperation)) GetCurrentUploadsAsync(HSTRING group)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Networking.BackgroundTransfer.UploadOperation)) _ret;
-		Debug.OK(staticInstance.abi_GetCurrentUploadsForGroupAsync(group, &_ret));
+		Debug.OK(staticInstance.abi_GetCurrentUploadsAsync(group, &_ret));
 		return _ret;
 	}
 	static BackgroundUploader New()

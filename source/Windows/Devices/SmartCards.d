@@ -43,7 +43,7 @@ extern(Windows):
 	HRESULT get_Challenge(Windows.Storage.Streams.IBuffer* return_value);
 	HRESULT abi_VerifyResponseAsync(Windows.Storage.Streams.IBuffer response, Windows.Foundation.IAsyncOperation!(bool)* return_result);
 	HRESULT abi_ProvisionAsync(Windows.Storage.Streams.IBuffer response, bool formatCard, Windows.Foundation.IAsyncAction* return_result);
-	HRESULT abi_ProvisionAsyncWithNewCardId(Windows.Storage.Streams.IBuffer response, bool formatCard, GUID newCardId, Windows.Foundation.IAsyncAction* return_result);
+	HRESULT abi_ProvisionAsync(Windows.Storage.Streams.IBuffer response, bool formatCard, GUID newCardId, Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_ChangeAdministrativeKeyAsync(Windows.Storage.Streams.IBuffer response, Windows.Storage.Streams.IBuffer newAdministrativeKey, Windows.Foundation.IAsyncAction* return_result);
 }
 @uuid("192a5319-c9c4-4947-81cc-44794a61ef91")
@@ -135,7 +135,7 @@ interface ISmartCardProvisioningStatics : IInspectable
 extern(Windows):
 	HRESULT abi_FromSmartCardAsync(Windows.Devices.SmartCards.SmartCard card, Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning)* return_result);
 	HRESULT abi_RequestVirtualSmartCardCreationAsync(HSTRING friendlyName, Windows.Storage.Streams.IBuffer administrativeKey, Windows.Devices.SmartCards.SmartCardPinPolicy pinPolicy, Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning)* return_result);
-	HRESULT abi_RequestVirtualSmartCardCreationAsyncWithCardId(HSTRING friendlyName, Windows.Storage.Streams.IBuffer administrativeKey, Windows.Devices.SmartCards.SmartCardPinPolicy pinPolicy, GUID cardId, Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning)* return_result);
+	HRESULT abi_RequestVirtualSmartCardCreationAsync(HSTRING friendlyName, Windows.Storage.Streams.IBuffer administrativeKey, Windows.Devices.SmartCards.SmartCardPinPolicy pinPolicy, GUID cardId, Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning)* return_result);
 	HRESULT abi_RequestVirtualSmartCardDeletionAsync(Windows.Devices.SmartCards.SmartCard card, Windows.Foundation.IAsyncOperation!(bool)* return_result);
 }
 
@@ -145,7 +145,7 @@ interface ISmartCardProvisioningStatics2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_RequestAttestedVirtualSmartCardCreationAsync(HSTRING friendlyName, Windows.Storage.Streams.IBuffer administrativeKey, Windows.Devices.SmartCards.SmartCardPinPolicy pinPolicy, Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning)* return_result);
-	HRESULT abi_RequestAttestedVirtualSmartCardCreationAsyncWithCardId(HSTRING friendlyName, Windows.Storage.Streams.IBuffer administrativeKey, Windows.Devices.SmartCards.SmartCardPinPolicy pinPolicy, GUID cardId, Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning)* return_result);
+	HRESULT abi_RequestAttestedVirtualSmartCardCreationAsync(HSTRING friendlyName, Windows.Storage.Streams.IBuffer administrativeKey, Windows.Devices.SmartCards.SmartCardPinPolicy pinPolicy, GUID cardId, Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning)* return_result);
 }
 
 @uuid("1074b4e0-54c2-4df0-817a-14c14378f06c")
@@ -170,7 +170,7 @@ interface ISmartCardReaderStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(HSTRING* return_selector);
-	HRESULT abi_GetDeviceSelectorWithKind(Windows.Devices.SmartCards.SmartCardReaderKind kind, HSTRING* return_selector);
+	HRESULT abi_GetDeviceSelector(Windows.Devices.SmartCards.SmartCardReaderKind kind, HSTRING* return_selector);
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardReader)* return_result);
 }
 
@@ -246,10 +246,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.SmartCards.ISmartCardChallengeContext)this.asInterface(uuid("192a5319-c9c4-4947-81cc-44794a61ef91"))).abi_ProvisionAsync(response, formatCard, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction ProvisionAsyncWithNewCardId(Windows.Storage.Streams.IBuffer response, bool formatCard, GUID newCardId)
+	final Windows.Foundation.IAsyncAction ProvisionAsync(Windows.Storage.Streams.IBuffer response, bool formatCard, GUID newCardId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Devices.SmartCards.ISmartCardChallengeContext)this.asInterface(uuid("192a5319-c9c4-4947-81cc-44794a61ef91"))).abi_ProvisionAsyncWithNewCardId(response, formatCard, newCardId, &_ret));
+		Debug.OK((cast(Windows.Devices.SmartCards.ISmartCardChallengeContext)this.asInterface(uuid("192a5319-c9c4-4947-81cc-44794a61ef91"))).abi_ProvisionAsync(response, formatCard, newCardId, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ChangeAdministrativeKeyAsync(Windows.Storage.Streams.IBuffer response, Windows.Storage.Streams.IBuffer newAdministrativeKey)
@@ -450,10 +450,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_RequestVirtualSmartCardCreationAsync(friendlyName, administrativeKey, pinPolicy, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning) RequestVirtualSmartCardCreationAsyncWithCardId(HSTRING friendlyName, Windows.Storage.Streams.IBuffer administrativeKey, Windows.Devices.SmartCards.SmartCardPinPolicy pinPolicy, GUID cardId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning) RequestVirtualSmartCardCreationAsync(HSTRING friendlyName, Windows.Storage.Streams.IBuffer administrativeKey, Windows.Devices.SmartCards.SmartCardPinPolicy pinPolicy, GUID cardId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning) _ret;
-		Debug.OK(staticInstance.abi_RequestVirtualSmartCardCreationAsyncWithCardId(friendlyName, administrativeKey, pinPolicy, cardId, &_ret));
+		Debug.OK(staticInstance.abi_RequestVirtualSmartCardCreationAsync(friendlyName, administrativeKey, pinPolicy, cardId, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(bool) RequestVirtualSmartCardDeletionAsync(Windows.Devices.SmartCards.SmartCard card)
@@ -530,10 +530,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelectorWithKind(Windows.Devices.SmartCards.SmartCardReaderKind kind)
+	static HSTRING GetDeviceSelector(Windows.Devices.SmartCards.SmartCardReaderKind kind)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.abi_GetDeviceSelectorWithKind(kind, &_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(kind, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardReader) FromIdAsync(HSTRING deviceId)

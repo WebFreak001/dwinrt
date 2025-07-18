@@ -103,7 +103,7 @@ extern(Windows):
 interface IUserDataAccountStore2_Base : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateAccountWithPackageRelativeAppIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount)* return_result);
+	HRESULT abi_CreateAccountAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount)* return_result);
 	HRESULT add_StoreChanged(Windows.Foundation.TypedEventHandler!(Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore, Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreChangedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_StoreChanged(EventRegistrationToken token);
 }
@@ -116,7 +116,7 @@ interface IUserDataAccountStore2 : IUserDataAccountStore2_Base, Windows.Applicat
 interface IUserDataAccountStore3_Base : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, HSTRING enterpriseId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount)* return_result);
+	HRESULT abi_CreateAccountAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, HSTRING enterpriseId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount)* return_result);
 }
 @uuid("8142c094-f3c9-478b-b117-6585bebb6789")
 @WinrtFactory("Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore")
@@ -357,10 +357,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore)this.asInterface(uuid("2073b0ad-7d0a-4e76-bf45-2368f978a59a"))).abi_CreateAccountAsync(userDisplayName, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount) CreateAccountWithPackageRelativeAppIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount) CreateAccountAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore2)this.asInterface(uuid("b1e0aef7-9560-4631-8af0-061d30161469"))).abi_CreateAccountWithPackageRelativeAppIdAsync(userDisplayName, packageRelativeAppId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore2)this.asInterface(uuid("b1e0aef7-9560-4631-8af0-061d30161469"))).abi_CreateAccountAsync(userDisplayName, packageRelativeAppId, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnStoreChanged(void delegate(Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore, Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreChangedEventArgs) fn)
@@ -373,10 +373,10 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore2)this.asInterface(uuid("b1e0aef7-9560-4631-8af0-061d30161469"))).remove_StoreChanged(token));
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount) CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, HSTRING enterpriseId)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount) CreateAccountAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, HSTRING enterpriseId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataAccounts.UserDataAccount) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore3)this.asInterface(uuid("8142c094-f3c9-478b-b117-6585bebb6789"))).abi_CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(userDisplayName, packageRelativeAppId, enterpriseId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore3)this.asInterface(uuid("8142c094-f3c9-478b-b117-6585bebb6789"))).abi_CreateAccountAsync(userDisplayName, packageRelativeAppId, enterpriseId, &_ret));
 		return _ret;
 	}
 }

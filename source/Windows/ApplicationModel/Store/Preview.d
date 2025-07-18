@@ -115,7 +115,7 @@ interface IWebAuthenticationCoreManagerHelper : IInspectable
 {
 extern(Windows):
 	HRESULT abi_RequestTokenWithUIElementHostingAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.UI.Xaml.UIElement uiElement, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult)* return_asyncInfo);
-	HRESULT abi_RequestTokenWithUIElementHostingAndWebAccountAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.Security.Credentials.WebAccount webAccount, Windows.UI.Xaml.UIElement uiElement, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult)* return_asyncInfo);
+	HRESULT abi_RequestTokenWithUIElementHostingAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.Security.Credentials.WebAccount webAccount, Windows.UI.Xaml.UIElement uiElement, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult)* return_asyncInfo);
 }
 
 interface StoreConfiguration
@@ -328,10 +328,10 @@ interface WebAuthenticationCoreManagerHelper
 		Debug.OK(staticInstance.abi_RequestTokenWithUIElementHostingAsync(request, uiElement, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) RequestTokenWithUIElementHostingAndWebAccountAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.Security.Credentials.WebAccount webAccount, Windows.UI.Xaml.UIElement uiElement)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) RequestTokenWithUIElementHostingAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.Security.Credentials.WebAccount webAccount, Windows.UI.Xaml.UIElement uiElement)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) _ret;
-		Debug.OK(staticInstance.abi_RequestTokenWithUIElementHostingAndWebAccountAsync(request, webAccount, uiElement, &_ret));
+		Debug.OK(staticInstance.abi_RequestTokenWithUIElementHostingAsync(request, webAccount, uiElement, &_ret));
 		return _ret;
 	}
 }

@@ -28,7 +28,7 @@ extern(Windows):
 	HRESULT abi_ReportStarted();
 	HRESULT abi_ReportDataRetrieved();
 	HRESULT abi_ReportSubmittedBackgroundTask();
-	HRESULT abi_ReportCompletedWithQuickLink(Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink quicklink);
+	HRESULT abi_ReportCompleted(Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink quicklink);
 	HRESULT abi_ReportCompleted();
 	HRESULT abi_ReportError(HSTRING value);
 }
@@ -125,9 +125,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation)this.asInterface(uuid("2246bab8-d0f8-41c1-a82a-4137db6504fb"))).abi_ReportSubmittedBackgroundTask());
 	}
-	final void ReportCompletedWithQuickLink(Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink quicklink)
+	final void ReportCompleted(Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink quicklink)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation)this.asInterface(uuid("2246bab8-d0f8-41c1-a82a-4137db6504fb"))).abi_ReportCompletedWithQuickLink(quicklink));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation)this.asInterface(uuid("2246bab8-d0f8-41c1-a82a-4137db6504fb"))).abi_ReportCompleted(quicklink));
 	}
 	final void ReportCompleted()
 	{

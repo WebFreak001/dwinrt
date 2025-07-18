@@ -11,7 +11,7 @@ extern(Windows):
 	HRESULT get_UpdateTime(Windows.Foundation.DateTime* return_value);
 	HRESULT abi_TryGetBounds(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.IReference!(Windows.Perception.Spatial.SpatialBoundingOrientedBox)* return_value);
 	HRESULT abi_TryComputeLatestMeshAsync(double maxTrianglesPerCubicMeter, Windows.Foundation.IAsyncOperation!(Windows.Perception.Spatial.Surfaces.SpatialSurfaceMesh)* return_value);
-	HRESULT abi_TryComputeLatestMeshWithOptionsAsync(double maxTrianglesPerCubicMeter, Windows.Perception.Spatial.Surfaces.SpatialSurfaceMeshOptions options, Windows.Foundation.IAsyncOperation!(Windows.Perception.Spatial.Surfaces.SpatialSurfaceMesh)* return_value);
+	HRESULT abi_TryComputeLatestMeshAsync(double maxTrianglesPerCubicMeter, Windows.Perception.Spatial.Surfaces.SpatialSurfaceMeshOptions options, Windows.Foundation.IAsyncOperation!(Windows.Perception.Spatial.Surfaces.SpatialSurfaceMesh)* return_value);
 }
 
 @uuid("108f57d9-df0d-3950-a0fd-f972c77c27b4")
@@ -121,10 +121,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceInfo)this.asInterface(uuid("f8e9ebe7-39b7-3962-bb03-57f56e1fb0a1"))).abi_TryComputeLatestMeshAsync(maxTrianglesPerCubicMeter, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Perception.Spatial.Surfaces.SpatialSurfaceMesh) TryComputeLatestMeshWithOptionsAsync(double maxTrianglesPerCubicMeter, Windows.Perception.Spatial.Surfaces.SpatialSurfaceMeshOptions options)
+	final Windows.Foundation.IAsyncOperation!(Windows.Perception.Spatial.Surfaces.SpatialSurfaceMesh) TryComputeLatestMeshAsync(double maxTrianglesPerCubicMeter, Windows.Perception.Spatial.Surfaces.SpatialSurfaceMeshOptions options)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Perception.Spatial.Surfaces.SpatialSurfaceMesh) _ret;
-		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceInfo)this.asInterface(uuid("f8e9ebe7-39b7-3962-bb03-57f56e1fb0a1"))).abi_TryComputeLatestMeshWithOptionsAsync(maxTrianglesPerCubicMeter, options, &_ret));
+		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceInfo)this.asInterface(uuid("f8e9ebe7-39b7-3962-bb03-57f56e1fb0a1"))).abi_TryComputeLatestMeshAsync(maxTrianglesPerCubicMeter, options, &_ret));
 		return _ret;
 	}
 }

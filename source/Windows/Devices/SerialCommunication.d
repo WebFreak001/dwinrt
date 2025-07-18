@@ -67,7 +67,7 @@ interface ISerialDeviceStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(HSTRING* return_value);
-	HRESULT abi_GetDeviceSelectorFromPortName(HSTRING portName, HSTRING* return_result);
+	HRESULT abi_GetDeviceSelector(HSTRING portName, HSTRING* return_result);
 	HRESULT abi_GetDeviceSelectorFromUsbVidPid(UINT16 vendorId, UINT16 productId, HSTRING* return_result);
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.SerialCommunication.SerialDevice)* return_result);
 }
@@ -288,10 +288,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelectorFromPortName(HSTRING portName)
+	static HSTRING GetDeviceSelector(HSTRING portName)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.abi_GetDeviceSelectorFromPortName(portName, &_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(portName, &_ret));
 		return _ret;
 	}
 	static HSTRING GetDeviceSelectorFromUsbVidPid(UINT16 vendorId, UINT16 productId)

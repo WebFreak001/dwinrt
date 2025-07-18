@@ -59,7 +59,7 @@ interface IAllJoynAboutDataViewStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetDataBySessionPortAsync(HSTRING uniqueName, Windows.Devices.AllJoyn.AllJoynBusAttachment busAttachment, UINT16 sessionPort, Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView)* return_operation);
-	HRESULT abi_GetDataBySessionPortWithLanguageAsync(HSTRING uniqueName, Windows.Devices.AllJoyn.AllJoynBusAttachment busAttachment, UINT16 sessionPort, Windows.Globalization.Language language, Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView)* return_operation);
+	HRESULT abi_GetDataBySessionPortAsync(HSTRING uniqueName, Windows.Devices.AllJoyn.AllJoynBusAttachment busAttachment, UINT16 sessionPort, Windows.Globalization.Language language, Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView)* return_operation);
 }
 
 @uuid("4da817d2-cd1d-4023-a7c4-16def89c28df")
@@ -129,7 +129,7 @@ interface IAllJoynBusAttachment2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetAboutDataAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo, Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView)* return_operation);
-	HRESULT abi_GetAboutDataWithLanguageAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo, Windows.Globalization.Language language, Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView)* return_operation);
+	HRESULT abi_GetAboutDataAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo, Windows.Globalization.Language language, Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView)* return_operation);
 	HRESULT add_AcceptSessionJoinerRequested(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_AcceptSessionJoinerRequested(EventRegistrationToken token);
 	HRESULT add_SessionJoined(Windows.Foundation.TypedEventHandler!(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynSessionJoinedEventArgs) handler, EventRegistrationToken* return_token);
@@ -409,7 +409,7 @@ interface IAllJoynSessionStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetFromServiceInfoAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo, Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynSession)* return_operation);
-	HRESULT abi_GetFromServiceInfoAndBusAttachmentAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo, Windows.Devices.AllJoyn.AllJoynBusAttachment busAttachment, Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynSession)* return_operation);
+	HRESULT abi_GetFromServiceInfoAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo, Windows.Devices.AllJoyn.AllJoynBusAttachment busAttachment, Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynSession)* return_operation);
 }
 
 @uuid("d0b7a17e-0d29-4da9-8ac6-54c554bedbc5")
@@ -678,10 +678,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDataBySessionPortAsync(uniqueName, busAttachment, sessionPort, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView) GetDataBySessionPortWithLanguageAsync(HSTRING uniqueName, Windows.Devices.AllJoyn.AllJoynBusAttachment busAttachment, UINT16 sessionPort, Windows.Globalization.Language language)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView) GetDataBySessionPortAsync(HSTRING uniqueName, Windows.Devices.AllJoyn.AllJoynBusAttachment busAttachment, UINT16 sessionPort, Windows.Globalization.Language language)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView) _ret;
-		Debug.OK(staticInstance.abi_GetDataBySessionPortWithLanguageAsync(uniqueName, busAttachment, sessionPort, language, &_ret));
+		Debug.OK(staticInstance.abi_GetDataBySessionPortAsync(uniqueName, busAttachment, sessionPort, language, &_ret));
 		return _ret;
 	}
 }
@@ -848,10 +848,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment2)this.asInterface(uuid("3474cb1e-2368-43b2-b43e-6a3ac1278d98"))).abi_GetAboutDataAsync(serviceInfo, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView) GetAboutDataWithLanguageAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo, Windows.Globalization.Language language)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView) GetAboutDataAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo, Windows.Globalization.Language language)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynAboutDataView) _ret;
-		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment2)this.asInterface(uuid("3474cb1e-2368-43b2-b43e-6a3ac1278d98"))).abi_GetAboutDataWithLanguageAsync(serviceInfo, language, &_ret));
+		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment2)this.asInterface(uuid("3474cb1e-2368-43b2-b43e-6a3ac1278d98"))).abi_GetAboutDataAsync(serviceInfo, language, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnAcceptSessionJoinerRequested(void delegate(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs) fn)
@@ -1290,10 +1290,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetFromServiceInfoAsync(serviceInfo, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynSession) GetFromServiceInfoAndBusAttachmentAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo, Windows.Devices.AllJoyn.AllJoynBusAttachment busAttachment)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynSession) GetFromServiceInfoAsync(Windows.Devices.AllJoyn.AllJoynServiceInfo serviceInfo, Windows.Devices.AllJoyn.AllJoynBusAttachment busAttachment)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.AllJoyn.AllJoynSession) _ret;
-		Debug.OK(staticInstance.abi_GetFromServiceInfoAndBusAttachmentAsync(serviceInfo, busAttachment, &_ret));
+		Debug.OK(staticInstance.abi_GetFromServiceInfoAsync(serviceInfo, busAttachment, &_ret));
 		return _ret;
 	}
 }

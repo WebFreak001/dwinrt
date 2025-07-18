@@ -105,18 +105,18 @@ interface IAudioGraph_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_CreateFrameInputNode(Windows.Media.Audio.AudioFrameInputNode* return_frameInputNode);
-	HRESULT abi_CreateFrameInputNodeWithFormat(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Media.Audio.AudioFrameInputNode* return_frameInputNode);
+	HRESULT abi_CreateFrameInputNode(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Media.Audio.AudioFrameInputNode* return_frameInputNode);
 	HRESULT abi_CreateDeviceInputNodeAsync(Windows.Media.Capture.MediaCategory category, Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult)* return_result);
-	HRESULT abi_CreateDeviceInputNodeWithFormatAsync(Windows.Media.Capture.MediaCategory category, Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult)* return_result);
-	HRESULT abi_CreateDeviceInputNodeWithFormatOnDeviceAsync(Windows.Media.Capture.MediaCategory category, Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Devices.Enumeration.DeviceInformation device, Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult)* return_result);
+	HRESULT abi_CreateDeviceInputNodeAsync(Windows.Media.Capture.MediaCategory category, Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult)* return_result);
+	HRESULT abi_CreateDeviceInputNodeAsync(Windows.Media.Capture.MediaCategory category, Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Devices.Enumeration.DeviceInformation device, Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult)* return_result);
 	HRESULT abi_CreateFrameOutputNode(Windows.Media.Audio.AudioFrameOutputNode* return_frameOutputNode);
-	HRESULT abi_CreateFrameOutputNodeWithFormat(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Media.Audio.AudioFrameOutputNode* return_frameOutputNode);
+	HRESULT abi_CreateFrameOutputNode(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Media.Audio.AudioFrameOutputNode* return_frameOutputNode);
 	HRESULT abi_CreateDeviceOutputNodeAsync(Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceOutputNodeResult)* return_result);
 	HRESULT abi_CreateFileInputNodeAsync(Windows.Storage.IStorageFile file, Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileInputNodeResult)* return_result);
 	HRESULT abi_CreateFileOutputNodeAsync(Windows.Storage.IStorageFile file, Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileOutputNodeResult)* return_result);
-	HRESULT abi_CreateFileOutputNodeWithFileProfileAsync(Windows.Storage.IStorageFile file, Windows.Media.MediaProperties.MediaEncodingProfile fileEncodingProfile, Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileOutputNodeResult)* return_result);
+	HRESULT abi_CreateFileOutputNodeAsync(Windows.Storage.IStorageFile file, Windows.Media.MediaProperties.MediaEncodingProfile fileEncodingProfile, Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileOutputNodeResult)* return_result);
 	HRESULT abi_CreateSubmixNode(Windows.Media.Audio.AudioSubmixNode* return_submixNode);
-	HRESULT abi_CreateSubmixNodeWithFormat(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Media.Audio.AudioSubmixNode* return_submixNode);
+	HRESULT abi_CreateSubmixNode(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Media.Audio.AudioSubmixNode* return_submixNode);
 	HRESULT abi_Start();
 	HRESULT abi_Stop();
 	HRESULT abi_ResetAllNodes();
@@ -142,10 +142,10 @@ interface IAudioGraph : IAudioGraph_Base, Windows.Foundation.IClosable {}
 interface IAudioGraph2_Base : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateFrameInputNodeWithFormatAndEmitter(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Media.Audio.AudioNodeEmitter emitter, Windows.Media.Audio.AudioFrameInputNode* return_frameInputNode);
-	HRESULT abi_CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync(Windows.Media.Capture.MediaCategory category, Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Devices.Enumeration.DeviceInformation device, Windows.Media.Audio.AudioNodeEmitter emitter, Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult)* return_result);
-	HRESULT abi_CreateFileInputNodeWithEmitterAsync(Windows.Storage.IStorageFile file, Windows.Media.Audio.AudioNodeEmitter emitter, Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileInputNodeResult)* return_result);
-	HRESULT abi_CreateSubmixNodeWithFormatAndEmitter(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Media.Audio.AudioNodeEmitter emitter, Windows.Media.Audio.AudioSubmixNode* return_submixNode);
+	HRESULT abi_CreateFrameInputNode(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Media.Audio.AudioNodeEmitter emitter, Windows.Media.Audio.AudioFrameInputNode* return_frameInputNode);
+	HRESULT abi_CreateDeviceInputNodeAsync(Windows.Media.Capture.MediaCategory category, Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Devices.Enumeration.DeviceInformation device, Windows.Media.Audio.AudioNodeEmitter emitter, Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult)* return_result);
+	HRESULT abi_CreateFileInputNodeAsync(Windows.Storage.IStorageFile file, Windows.Media.Audio.AudioNodeEmitter emitter, Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileInputNodeResult)* return_result);
+	HRESULT abi_CreateSubmixNode(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Media.Audio.AudioNodeEmitter emitter, Windows.Media.Audio.AudioSubmixNode* return_submixNode);
 	HRESULT abi_CreateBatchUpdater(Windows.Media.Audio.AudioGraphBatchUpdater* return_updater);
 }
 @uuid("4e4c3bd5-4fc1-45f6-a947-3cd38f4fd839")
@@ -211,7 +211,7 @@ interface IAudioInputNode_Base : IInspectable
 extern(Windows):
 	HRESULT get_OutgoingConnections(Windows.Foundation.Collections.IVectorView!(Windows.Media.Audio.AudioGraphConnection)* return_value);
 	HRESULT abi_AddOutgoingConnection(Windows.Media.Audio.IAudioNode destination);
-	HRESULT abi_AddOutgoingConnectionWithGain(Windows.Media.Audio.IAudioNode destination, double gain);
+	HRESULT abi_AddOutgoingConnection(Windows.Media.Audio.IAudioNode destination, double gain);
 	HRESULT abi_RemoveOutgoingConnection(Windows.Media.Audio.IAudioNode destination);
 }
 @uuid("d148005c-8428-4784-b7fd-a99d468c5d20")
@@ -580,9 +580,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_AddOutgoingConnection(destination));
 	}
-	final void AddOutgoingConnectionWithGain(Windows.Media.Audio.IAudioNode destination, double gain)
+	final void AddOutgoingConnection(Windows.Media.Audio.IAudioNode destination, double gain)
 	{
-		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_AddOutgoingConnectionWithGain(destination, gain));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_AddOutgoingConnection(destination, gain));
 	}
 	final void RemoveOutgoingConnection(Windows.Media.Audio.IAudioNode destination)
 	{
@@ -814,9 +814,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_AddOutgoingConnection(destination));
 	}
-	final void AddOutgoingConnectionWithGain(Windows.Media.Audio.IAudioNode destination, double gain)
+	final void AddOutgoingConnection(Windows.Media.Audio.IAudioNode destination, double gain)
 	{
-		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_AddOutgoingConnectionWithGain(destination, gain));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_AddOutgoingConnection(destination, gain));
 	}
 	final void RemoveOutgoingConnection(Windows.Media.Audio.IAudioNode destination)
 	{
@@ -1033,9 +1033,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_AddOutgoingConnection(destination));
 	}
-	final void AddOutgoingConnectionWithGain(Windows.Media.Audio.IAudioNode destination, double gain)
+	final void AddOutgoingConnection(Windows.Media.Audio.IAudioNode destination, double gain)
 	{
-		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_AddOutgoingConnectionWithGain(destination, gain));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_AddOutgoingConnection(destination, gain));
 	}
 	final void RemoveOutgoingConnection(Windows.Media.Audio.IAudioNode destination)
 	{
@@ -1181,10 +1181,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateFrameInputNode(&_ret));
 		return _ret;
 	}
-	final Windows.Media.Audio.AudioFrameInputNode CreateFrameInputNodeWithFormat(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties)
+	final Windows.Media.Audio.AudioFrameInputNode CreateFrameInputNode(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties)
 	{
 		Windows.Media.Audio.AudioFrameInputNode _ret;
-		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateFrameInputNodeWithFormat(encodingProperties, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateFrameInputNode(encodingProperties, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) CreateDeviceInputNodeAsync(Windows.Media.Capture.MediaCategory category)
@@ -1193,16 +1193,16 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateDeviceInputNodeAsync(category, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) CreateDeviceInputNodeWithFormatAsync(Windows.Media.Capture.MediaCategory category, Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) CreateDeviceInputNodeAsync(Windows.Media.Capture.MediaCategory category, Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) _ret;
-		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateDeviceInputNodeWithFormatAsync(category, encodingProperties, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateDeviceInputNodeAsync(category, encodingProperties, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) CreateDeviceInputNodeWithFormatOnDeviceAsync(Windows.Media.Capture.MediaCategory category, Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Devices.Enumeration.DeviceInformation device)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) CreateDeviceInputNodeAsync(Windows.Media.Capture.MediaCategory category, Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Devices.Enumeration.DeviceInformation device)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) _ret;
-		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateDeviceInputNodeWithFormatOnDeviceAsync(category, encodingProperties, device, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateDeviceInputNodeAsync(category, encodingProperties, device, &_ret));
 		return _ret;
 	}
 	final Windows.Media.Audio.AudioFrameOutputNode CreateFrameOutputNode()
@@ -1211,10 +1211,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateFrameOutputNode(&_ret));
 		return _ret;
 	}
-	final Windows.Media.Audio.AudioFrameOutputNode CreateFrameOutputNodeWithFormat(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties)
+	final Windows.Media.Audio.AudioFrameOutputNode CreateFrameOutputNode(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties)
 	{
 		Windows.Media.Audio.AudioFrameOutputNode _ret;
-		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateFrameOutputNodeWithFormat(encodingProperties, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateFrameOutputNode(encodingProperties, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceOutputNodeResult) CreateDeviceOutputNodeAsync()
@@ -1235,10 +1235,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateFileOutputNodeAsync(file, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileOutputNodeResult) CreateFileOutputNodeWithFileProfileAsync(Windows.Storage.IStorageFile file, Windows.Media.MediaProperties.MediaEncodingProfile fileEncodingProfile)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileOutputNodeResult) CreateFileOutputNodeAsync(Windows.Storage.IStorageFile file, Windows.Media.MediaProperties.MediaEncodingProfile fileEncodingProfile)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileOutputNodeResult) _ret;
-		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateFileOutputNodeWithFileProfileAsync(file, fileEncodingProfile, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateFileOutputNodeAsync(file, fileEncodingProfile, &_ret));
 		return _ret;
 	}
 	final Windows.Media.Audio.AudioSubmixNode CreateSubmixNode()
@@ -1247,10 +1247,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateSubmixNode(&_ret));
 		return _ret;
 	}
-	final Windows.Media.Audio.AudioSubmixNode CreateSubmixNodeWithFormat(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties)
+	final Windows.Media.Audio.AudioSubmixNode CreateSubmixNode(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties)
 	{
 		Windows.Media.Audio.AudioSubmixNode _ret;
-		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateSubmixNodeWithFormat(encodingProperties, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph)this.asInterface(uuid("1ad46eed-e48c-4e14-9660-2c4f83e9cdd8"))).abi_CreateSubmixNode(encodingProperties, &_ret));
 		return _ret;
 	}
 	final void Start()
@@ -1335,28 +1335,28 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
-	final Windows.Media.Audio.AudioFrameInputNode CreateFrameInputNodeWithFormatAndEmitter(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Media.Audio.AudioNodeEmitter emitter)
+	final Windows.Media.Audio.AudioFrameInputNode CreateFrameInputNode(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Media.Audio.AudioNodeEmitter emitter)
 	{
 		Windows.Media.Audio.AudioFrameInputNode _ret;
-		Debug.OK((cast(Windows.Media.Audio.IAudioGraph2)this.asInterface(uuid("4e4c3bd5-4fc1-45f6-a947-3cd38f4fd839"))).abi_CreateFrameInputNodeWithFormatAndEmitter(encodingProperties, emitter, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph2)this.asInterface(uuid("4e4c3bd5-4fc1-45f6-a947-3cd38f4fd839"))).abi_CreateFrameInputNode(encodingProperties, emitter, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync(Windows.Media.Capture.MediaCategory category, Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Devices.Enumeration.DeviceInformation device, Windows.Media.Audio.AudioNodeEmitter emitter)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) CreateDeviceInputNodeAsync(Windows.Media.Capture.MediaCategory category, Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Devices.Enumeration.DeviceInformation device, Windows.Media.Audio.AudioNodeEmitter emitter)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioDeviceInputNodeResult) _ret;
-		Debug.OK((cast(Windows.Media.Audio.IAudioGraph2)this.asInterface(uuid("4e4c3bd5-4fc1-45f6-a947-3cd38f4fd839"))).abi_CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync(category, encodingProperties, device, emitter, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph2)this.asInterface(uuid("4e4c3bd5-4fc1-45f6-a947-3cd38f4fd839"))).abi_CreateDeviceInputNodeAsync(category, encodingProperties, device, emitter, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileInputNodeResult) CreateFileInputNodeWithEmitterAsync(Windows.Storage.IStorageFile file, Windows.Media.Audio.AudioNodeEmitter emitter)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileInputNodeResult) CreateFileInputNodeAsync(Windows.Storage.IStorageFile file, Windows.Media.Audio.AudioNodeEmitter emitter)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Audio.CreateAudioFileInputNodeResult) _ret;
-		Debug.OK((cast(Windows.Media.Audio.IAudioGraph2)this.asInterface(uuid("4e4c3bd5-4fc1-45f6-a947-3cd38f4fd839"))).abi_CreateFileInputNodeWithEmitterAsync(file, emitter, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph2)this.asInterface(uuid("4e4c3bd5-4fc1-45f6-a947-3cd38f4fd839"))).abi_CreateFileInputNodeAsync(file, emitter, &_ret));
 		return _ret;
 	}
-	final Windows.Media.Audio.AudioSubmixNode CreateSubmixNodeWithFormatAndEmitter(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Media.Audio.AudioNodeEmitter emitter)
+	final Windows.Media.Audio.AudioSubmixNode CreateSubmixNode(Windows.Media.MediaProperties.AudioEncodingProperties encodingProperties, Windows.Media.Audio.AudioNodeEmitter emitter)
 	{
 		Windows.Media.Audio.AudioSubmixNode _ret;
-		Debug.OK((cast(Windows.Media.Audio.IAudioGraph2)this.asInterface(uuid("4e4c3bd5-4fc1-45f6-a947-3cd38f4fd839"))).abi_CreateSubmixNodeWithFormatAndEmitter(encodingProperties, emitter, &_ret));
+		Debug.OK((cast(Windows.Media.Audio.IAudioGraph2)this.asInterface(uuid("4e4c3bd5-4fc1-45f6-a947-3cd38f4fd839"))).abi_CreateSubmixNode(encodingProperties, emitter, &_ret));
 		return _ret;
 	}
 	final Windows.Media.Audio.AudioGraphBatchUpdater CreateBatchUpdater()
@@ -1787,9 +1787,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_AddOutgoingConnection(destination));
 	}
-	final void AddOutgoingConnectionWithGain(Windows.Media.Audio.IAudioNode destination, double gain)
+	final void AddOutgoingConnection(Windows.Media.Audio.IAudioNode destination, double gain)
 	{
-		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_AddOutgoingConnectionWithGain(destination, gain));
+		Debug.OK((cast(Windows.Media.Audio.IAudioInputNode)this.asInterface(uuid("d148005c-8428-4784-b7fd-a99d468c5d20"))).abi_AddOutgoingConnection(destination, gain));
 	}
 	final void RemoveOutgoingConnection(Windows.Media.Audio.IAudioNode destination)
 	{

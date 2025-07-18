@@ -44,8 +44,8 @@ interface IPopupMenu : IInspectable
 extern(Windows):
 	HRESULT get_Commands(Windows.Foundation.Collections.IVector!(Windows.UI.Popups.IUICommand)* return_value);
 	HRESULT abi_ShowAsync(Windows.Foundation.Point invocationPoint, Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand)* return_asyncOperation);
-	HRESULT abi_ShowAsyncWithRect(Windows.Foundation.Rect selection, Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand)* return_asyncOperation);
-	HRESULT abi_ShowAsyncWithRectAndPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement, Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand)* return_asyncOperation);
+	HRESULT abi_ShowForSelectionAsync(Windows.Foundation.Rect selection, Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand)* return_asyncOperation);
+	HRESULT abi_ShowForSelectionAsync(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement, Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand)* return_asyncOperation);
 }
 
 @uuid("4ff93a75-4145-47ff-ac7f-dff1c1fa5b0f")
@@ -166,16 +166,16 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Popups.IPopupMenu)this.asInterface(uuid("4e9bc6dc-880d-47fc-a0a1-72b639e62559"))).abi_ShowAsync(invocationPoint, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) ShowAsyncWithRect(Windows.Foundation.Rect selection)
+	final Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) ShowForSelectionAsync(Windows.Foundation.Rect selection)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) _ret;
-		Debug.OK((cast(Windows.UI.Popups.IPopupMenu)this.asInterface(uuid("4e9bc6dc-880d-47fc-a0a1-72b639e62559"))).abi_ShowAsyncWithRect(selection, &_ret));
+		Debug.OK((cast(Windows.UI.Popups.IPopupMenu)this.asInterface(uuid("4e9bc6dc-880d-47fc-a0a1-72b639e62559"))).abi_ShowForSelectionAsync(selection, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) ShowAsyncWithRectAndPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
+	final Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) ShowForSelectionAsync(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) _ret;
-		Debug.OK((cast(Windows.UI.Popups.IPopupMenu)this.asInterface(uuid("4e9bc6dc-880d-47fc-a0a1-72b639e62559"))).abi_ShowAsyncWithRectAndPlacement(selection, preferredPlacement, &_ret));
+		Debug.OK((cast(Windows.UI.Popups.IPopupMenu)this.asInterface(uuid("4e9bc6dc-880d-47fc-a0a1-72b639e62559"))).abi_ShowForSelectionAsync(selection, preferredPlacement, &_ret));
 		return _ret;
 	}
 	static PopupMenu New()

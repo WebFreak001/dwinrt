@@ -236,7 +236,7 @@ extern(Windows):
 	HRESULT get_CurrentPriority(Windows.UI.Core.CoreDispatcherPriority* return_value);
 	HRESULT set_CurrentPriority(Windows.UI.Core.CoreDispatcherPriority value);
 	HRESULT abi_ShouldYield(bool* return_value);
-	HRESULT abi_ShouldYieldToPriority(Windows.UI.Core.CoreDispatcherPriority priority, bool* return_value);
+	HRESULT abi_ShouldYield(Windows.UI.Core.CoreDispatcherPriority priority, bool* return_value);
 	HRESULT abi_StopProcessEvents();
 }
 
@@ -614,8 +614,8 @@ extern(Windows):
 	HRESULT set_ProximityEvaluation(Windows.UI.Core.CoreProximityEvaluation value);
 	HRESULT get_Point(Windows.Foundation.Point* return_value);
 	HRESULT get_BoundingBox(Windows.Foundation.Rect* return_value);
-	HRESULT abi_EvaluateProximityToRect(Windows.Foundation.Rect controlBoundingBox, Windows.UI.Core.CoreProximityEvaluation* return_proximityEvaluation);
-	HRESULT abi_EvaluateProximityToPolygon(UINT32 __controlVerticesSize, Windows.Foundation.Point* controlVertices, Windows.UI.Core.CoreProximityEvaluation* return_proximityEvaluation);
+	HRESULT abi_EvaluateProximity(Windows.Foundation.Rect controlBoundingBox, Windows.UI.Core.CoreProximityEvaluation* return_proximityEvaluation);
+	HRESULT abi_EvaluateProximity(UINT32 __controlVerticesSize, Windows.Foundation.Point* controlVertices, Windows.UI.Core.CoreProximityEvaluation* return_proximityEvaluation);
 }
 @uuid("22f3b823-0b7c-424e-9df7-33d4f962931b")
 @WinrtFactory("Windows.UI.Core.TouchHitTestingEventArgs")
@@ -1096,10 +1096,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Core.ICoreDispatcherWithTaskPriority)this.asInterface(uuid("bafaecad-484d-41be-ba80-1d58c65263ea"))).abi_ShouldYield(&_ret));
 		return _ret;
 	}
-	final bool ShouldYieldToPriority(Windows.UI.Core.CoreDispatcherPriority priority)
+	final bool ShouldYield(Windows.UI.Core.CoreDispatcherPriority priority)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.UI.Core.ICoreDispatcherWithTaskPriority)this.asInterface(uuid("bafaecad-484d-41be-ba80-1d58c65263ea"))).abi_ShouldYieldToPriority(priority, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreDispatcherWithTaskPriority)this.asInterface(uuid("bafaecad-484d-41be-ba80-1d58c65263ea"))).abi_ShouldYield(priority, &_ret));
 		return _ret;
 	}
 	final void StopProcessEvents()
@@ -2015,16 +2015,16 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Core.ITouchHitTestingEventArgs)this.asInterface(uuid("22f3b823-0b7c-424e-9df7-33d4f962931b"))).get_BoundingBox(&_ret));
 		return _ret;
 	}
-	final Windows.UI.Core.CoreProximityEvaluation EvaluateProximityToRect(Windows.Foundation.Rect controlBoundingBox)
+	final Windows.UI.Core.CoreProximityEvaluation EvaluateProximity(Windows.Foundation.Rect controlBoundingBox)
 	{
 		Windows.UI.Core.CoreProximityEvaluation _ret;
-		Debug.OK((cast(Windows.UI.Core.ITouchHitTestingEventArgs)this.asInterface(uuid("22f3b823-0b7c-424e-9df7-33d4f962931b"))).abi_EvaluateProximityToRect(controlBoundingBox, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ITouchHitTestingEventArgs)this.asInterface(uuid("22f3b823-0b7c-424e-9df7-33d4f962931b"))).abi_EvaluateProximity(controlBoundingBox, &_ret));
 		return _ret;
 	}
-	final Windows.UI.Core.CoreProximityEvaluation EvaluateProximityToPolygon(UINT32 __controlVerticesSize, Windows.Foundation.Point* controlVertices)
+	final Windows.UI.Core.CoreProximityEvaluation EvaluateProximity(UINT32 __controlVerticesSize, Windows.Foundation.Point* controlVertices)
 	{
 		Windows.UI.Core.CoreProximityEvaluation _ret;
-		Debug.OK((cast(Windows.UI.Core.ITouchHitTestingEventArgs)this.asInterface(uuid("22f3b823-0b7c-424e-9df7-33d4f962931b"))).abi_EvaluateProximityToPolygon(__controlVerticesSize, controlVertices, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ITouchHitTestingEventArgs)this.asInterface(uuid("22f3b823-0b7c-424e-9df7-33d4f962931b"))).abi_EvaluateProximity(__controlVerticesSize, controlVertices, &_ret));
 		return _ret;
 	}
 	final bool Handled()

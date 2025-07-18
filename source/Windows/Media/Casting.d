@@ -55,7 +55,7 @@ extern(Windows):
 	HRESULT add_CastingDevicePickerDismissed(Windows.Foundation.TypedEventHandler!(Windows.Media.Casting.CastingDevicePicker, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_CastingDevicePickerDismissed(EventRegistrationToken token);
 	HRESULT abi_Show(Windows.Foundation.Rect selection);
-	HRESULT abi_ShowWithPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement);
+	HRESULT abi_Show(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement);
 	HRESULT abi_Hide();
 }
 
@@ -286,9 +286,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Casting.ICastingDevicePicker)this.asInterface(uuid("dcd39924-0591-49be-aacb-4b82ee756a95"))).abi_Show(selection));
 	}
-	final void ShowWithPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
+	final void Show(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
 	{
-		Debug.OK((cast(Windows.Media.Casting.ICastingDevicePicker)this.asInterface(uuid("dcd39924-0591-49be-aacb-4b82ee756a95"))).abi_ShowWithPlacement(selection, preferredPlacement));
+		Debug.OK((cast(Windows.Media.Casting.ICastingDevicePicker)this.asInterface(uuid("dcd39924-0591-49be-aacb-4b82ee756a95"))).abi_Show(selection, preferredPlacement));
 	}
 	final void Hide()
 	{

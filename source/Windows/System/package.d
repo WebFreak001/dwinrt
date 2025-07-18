@@ -126,9 +126,9 @@ interface ILauncherStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_LaunchFileAsync(Windows.Storage.IStorageFile file, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
-	HRESULT abi_LaunchFileWithOptionsAsync(Windows.Storage.IStorageFile file, Windows.System.LauncherOptions options, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
+	HRESULT abi_LaunchFileAsync(Windows.Storage.IStorageFile file, Windows.System.LauncherOptions options, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_LaunchUriAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
-	HRESULT abi_LaunchUriWithOptionsAsync(Windows.Foundation.Uri uri, Windows.System.LauncherOptions options, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
+	HRESULT abi_LaunchUriAsync(Windows.Foundation.Uri uri, Windows.System.LauncherOptions options, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 }
 
 @uuid("59ba2fbb-24cb-4c02-a4c4-8294569d54f1")
@@ -137,14 +137,14 @@ interface ILauncherStatics2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_LaunchUriForResultsAsync(Windows.Foundation.Uri uri, Windows.System.LauncherOptions options, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchUriResult)* return_operation);
-	HRESULT abi_LaunchUriForResultsWithDataAsync(Windows.Foundation.Uri uri, Windows.System.LauncherOptions options, Windows.Foundation.Collections.ValueSet inputData, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchUriResult)* return_operation);
-	HRESULT abi_LaunchUriWithDataAsync(Windows.Foundation.Uri uri, Windows.System.LauncherOptions options, Windows.Foundation.Collections.ValueSet inputData, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
+	HRESULT abi_LaunchUriForResultsAsync(Windows.Foundation.Uri uri, Windows.System.LauncherOptions options, Windows.Foundation.Collections.ValueSet inputData, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchUriResult)* return_operation);
+	HRESULT abi_LaunchUriAsync(Windows.Foundation.Uri uri, Windows.System.LauncherOptions options, Windows.Foundation.Collections.ValueSet inputData, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_QueryUriSupportAsync(Windows.Foundation.Uri uri, Windows.System.LaunchQuerySupportType launchQuerySupportType, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchQuerySupportStatus)* return_operation);
-	HRESULT abi_QueryUriSupportWithPackageFamilyNameAsync(Windows.Foundation.Uri uri, Windows.System.LaunchQuerySupportType launchQuerySupportType, HSTRING packageFamilyName, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchQuerySupportStatus)* return_operation);
+	HRESULT abi_QueryUriSupportAsync(Windows.Foundation.Uri uri, Windows.System.LaunchQuerySupportType launchQuerySupportType, HSTRING packageFamilyName, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchQuerySupportStatus)* return_operation);
 	HRESULT abi_QueryFileSupportAsync(Windows.Storage.StorageFile file, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchQuerySupportStatus)* return_operation);
-	HRESULT abi_QueryFileSupportWithPackageFamilyNameAsync(Windows.Storage.StorageFile file, HSTRING packageFamilyName, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchQuerySupportStatus)* return_operation);
+	HRESULT abi_QueryFileSupportAsync(Windows.Storage.StorageFile file, HSTRING packageFamilyName, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchQuerySupportStatus)* return_operation);
 	HRESULT abi_FindUriSchemeHandlersAsync(HSTRING scheme, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppInfo))* return_operation);
-	HRESULT abi_FindUriSchemeHandlersWithLaunchUriTypeAsync(HSTRING scheme, Windows.System.LaunchQuerySupportType launchQuerySupportType, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppInfo))* return_operation);
+	HRESULT abi_FindUriSchemeHandlersAsync(HSTRING scheme, Windows.System.LaunchQuerySupportType launchQuerySupportType, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppInfo))* return_operation);
 	HRESULT abi_FindFileHandlersAsync(HSTRING extension, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppInfo))* return_operation);
 }
 
@@ -154,7 +154,7 @@ interface ILauncherStatics3 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_LaunchFolderAsync(Windows.Storage.IStorageFolder folder, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
-	HRESULT abi_LaunchFolderWithOptionsAsync(Windows.Storage.IStorageFolder folder, Windows.System.FolderLauncherOptions options, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
+	HRESULT abi_LaunchFolderAsync(Windows.Storage.IStorageFolder folder, Windows.System.FolderLauncherOptions options, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 }
 
 @uuid("b9ec819f-b5a5-41c6-b3b3-dd1b3178bcf2")
@@ -163,13 +163,13 @@ interface ILauncherStatics4 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_QueryAppUriSupportAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchQuerySupportStatus)* return_operation);
-	HRESULT abi_QueryAppUriSupportWithPackageFamilyNameAsync(Windows.Foundation.Uri uri, HSTRING packageFamilyName, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchQuerySupportStatus)* return_operation);
+	HRESULT abi_QueryAppUriSupportAsync(Windows.Foundation.Uri uri, HSTRING packageFamilyName, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchQuerySupportStatus)* return_operation);
 	HRESULT abi_FindAppUriHandlersAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.AppInfo))* return_operation);
 	HRESULT abi_LaunchUriForUserAsync(Windows.System.User user, Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchUriStatus)* return_operation);
-	HRESULT abi_LaunchUriWithOptionsForUserAsync(Windows.System.User user, Windows.Foundation.Uri uri, Windows.System.LauncherOptions options, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchUriStatus)* return_operation);
-	HRESULT abi_LaunchUriWithDataForUserAsync(Windows.System.User user, Windows.Foundation.Uri uri, Windows.System.LauncherOptions options, Windows.Foundation.Collections.ValueSet inputData, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchUriStatus)* return_operation);
+	HRESULT abi_LaunchUriForUserAsync(Windows.System.User user, Windows.Foundation.Uri uri, Windows.System.LauncherOptions options, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchUriStatus)* return_operation);
+	HRESULT abi_LaunchUriForUserAsync(Windows.System.User user, Windows.Foundation.Uri uri, Windows.System.LauncherOptions options, Windows.Foundation.Collections.ValueSet inputData, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchUriStatus)* return_operation);
 	HRESULT abi_LaunchUriForResultsForUserAsync(Windows.System.User user, Windows.Foundation.Uri uri, Windows.System.LauncherOptions options, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchUriResult)* return_operation);
-	HRESULT abi_LaunchUriForResultsWithDataForUserAsync(Windows.System.User user, Windows.Foundation.Uri uri, Windows.System.LauncherOptions options, Windows.Foundation.Collections.ValueSet inputData, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchUriResult)* return_operation);
+	HRESULT abi_LaunchUriForResultsForUserAsync(Windows.System.User user, Windows.Foundation.Uri uri, Windows.System.LauncherOptions options, Windows.Foundation.Collections.ValueSet inputData, Windows.Foundation.IAsyncOperation!(Windows.System.LaunchUriResult)* return_operation);
 }
 
 @uuid("1b25da6e-8aa6-41e9-8251-4165f5985f49")
@@ -255,7 +255,7 @@ interface IProcessLauncherStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_RunToCompletionAsync(HSTRING fileName, HSTRING args, Windows.Foundation.IAsyncOperation!(Windows.System.ProcessLauncherResult)* return_asyncOperationResult);
-	HRESULT abi_RunToCompletionAsyncWithOptions(HSTRING fileName, HSTRING args, Windows.System.ProcessLauncherOptions options, Windows.Foundation.IAsyncOperation!(Windows.System.ProcessLauncherResult)* return_asyncOperationResult);
+	HRESULT abi_RunToCompletionAsync(HSTRING fileName, HSTRING args, Windows.System.ProcessLauncherOptions options, Windows.Foundation.IAsyncOperation!(Windows.System.ProcessLauncherResult)* return_asyncOperationResult);
 }
 
 @uuid("087305a8-9b70-4782-8741-3a982b6ce5e4")
@@ -291,8 +291,8 @@ interface IRemoteLauncherStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_LaunchUriAsync(Windows.System.RemoteSystems.RemoteSystemConnectionRequest remoteSystemConnectionRequest, Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus)* return_operation);
-	HRESULT abi_LaunchUriWithOptionsAsync(Windows.System.RemoteSystems.RemoteSystemConnectionRequest remoteSystemConnectionRequest, Windows.Foundation.Uri uri, Windows.System.RemoteLauncherOptions options, Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus)* return_operation);
-	HRESULT abi_LaunchUriWithDataAsync(Windows.System.RemoteSystems.RemoteSystemConnectionRequest remoteSystemConnectionRequest, Windows.Foundation.Uri uri, Windows.System.RemoteLauncherOptions options, Windows.Foundation.Collections.ValueSet inputData, Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus)* return_operation);
+	HRESULT abi_LaunchUriAsync(Windows.System.RemoteSystems.RemoteSystemConnectionRequest remoteSystemConnectionRequest, Windows.Foundation.Uri uri, Windows.System.RemoteLauncherOptions options, Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus)* return_operation);
+	HRESULT abi_LaunchUriAsync(Windows.System.RemoteSystems.RemoteSystemConnectionRequest remoteSystemConnectionRequest, Windows.Foundation.Uri uri, Windows.System.RemoteLauncherOptions options, Windows.Foundation.Collections.ValueSet inputData, Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus)* return_operation);
 }
 
 @uuid("72e247ed-dd5b-4d6c-b1d0-c57a7bbb5f94")
@@ -311,7 +311,7 @@ interface IShutdownManagerStatics2_Base : IInspectable
 extern(Windows):
 	HRESULT abi_IsPowerStateSupported(Windows.System.PowerState powerState, bool* return_value);
 	HRESULT abi_EnterPowerState(Windows.System.PowerState powerState);
-	HRESULT abi_EnterPowerStateWithTimeSpan(Windows.System.PowerState powerState, Windows.Foundation.TimeSpan wakeUpAfter);
+	HRESULT abi_EnterPowerState(Windows.System.PowerState powerState, Windows.Foundation.TimeSpan wakeUpAfter);
 }
 @uuid("0f69a02f-9c34-43c7-a8c3-70b30a7f7504")
 @WinrtFactory("Windows.System.ShutdownManager")
@@ -415,8 +415,8 @@ interface IUserStatics : IInspectable
 extern(Windows):
 	HRESULT abi_CreateWatcher(Windows.System.UserWatcher* return_watcher);
 	HRESULT abi_FindAllAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User))* return_operation);
-	HRESULT abi_FindAllAsyncByType(Windows.System.UserType type, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User))* return_operation);
-	HRESULT abi_FindAllAsyncByTypeAndStatus(Windows.System.UserType type, Windows.System.UserAuthenticationStatus status, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User))* return_operation);
+	HRESULT abi_FindAllAsync(Windows.System.UserType type, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User))* return_operation);
+	HRESULT abi_FindAllAsync(Windows.System.UserType type, Windows.System.UserAuthenticationStatus status, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User))* return_operation);
 	HRESULT abi_GetFromId(HSTRING nonRoamableId, Windows.System.User* return_value);
 }
 
@@ -636,10 +636,10 @@ interface Launcher
 		Debug.OK(staticInstance.abi_LaunchFileAsync(file, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(bool) LaunchFileWithOptionsAsync(Windows.Storage.IStorageFile file, Windows.System.LauncherOptions options)
+	static Windows.Foundation.IAsyncOperation!(bool) LaunchFileAsync(Windows.Storage.IStorageFile file, Windows.System.LauncherOptions options)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(staticInstance.abi_LaunchFileWithOptionsAsync(file, options, &_ret));
+		Debug.OK(staticInstance.abi_LaunchFileAsync(file, options, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(bool) LaunchUriAsync(Windows.Foundation.Uri uri)
@@ -648,10 +648,10 @@ interface Launcher
 		Debug.OK(staticInstance.abi_LaunchUriAsync(uri, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(bool) LaunchUriWithOptionsAsync(Windows.Foundation.Uri uri, Windows.System.LauncherOptions options)
+	static Windows.Foundation.IAsyncOperation!(bool) LaunchUriAsync(Windows.Foundation.Uri uri, Windows.System.LauncherOptions options)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK(staticInstance.abi_LaunchUriWithOptionsAsync(uri, options, &_ret));
+		Debug.OK(staticInstance.abi_LaunchUriAsync(uri, options, &_ret));
 		return _ret;
 	}
 }
@@ -890,10 +890,10 @@ interface ProcessLauncher
 		Debug.OK(staticInstance.abi_RunToCompletionAsync(fileName, args, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.System.ProcessLauncherResult) RunToCompletionAsyncWithOptions(HSTRING fileName, HSTRING args, Windows.System.ProcessLauncherOptions options)
+	static Windows.Foundation.IAsyncOperation!(Windows.System.ProcessLauncherResult) RunToCompletionAsync(HSTRING fileName, HSTRING args, Windows.System.ProcessLauncherOptions options)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.System.ProcessLauncherResult) _ret;
-		Debug.OK(staticInstance.abi_RunToCompletionAsyncWithOptions(fileName, args, options, &_ret));
+		Debug.OK(staticInstance.abi_RunToCompletionAsync(fileName, args, options, &_ret));
 		return _ret;
 	}
 }
@@ -1000,16 +1000,16 @@ interface RemoteLauncher
 		Debug.OK(staticInstance.abi_LaunchUriAsync(remoteSystemConnectionRequest, uri, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus) LaunchUriWithOptionsAsync(Windows.System.RemoteSystems.RemoteSystemConnectionRequest remoteSystemConnectionRequest, Windows.Foundation.Uri uri, Windows.System.RemoteLauncherOptions options)
+	static Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus) LaunchUriAsync(Windows.System.RemoteSystems.RemoteSystemConnectionRequest remoteSystemConnectionRequest, Windows.Foundation.Uri uri, Windows.System.RemoteLauncherOptions options)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus) _ret;
-		Debug.OK(staticInstance.abi_LaunchUriWithOptionsAsync(remoteSystemConnectionRequest, uri, options, &_ret));
+		Debug.OK(staticInstance.abi_LaunchUriAsync(remoteSystemConnectionRequest, uri, options, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus) LaunchUriWithDataAsync(Windows.System.RemoteSystems.RemoteSystemConnectionRequest remoteSystemConnectionRequest, Windows.Foundation.Uri uri, Windows.System.RemoteLauncherOptions options, Windows.Foundation.Collections.ValueSet inputData)
+	static Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus) LaunchUriAsync(Windows.System.RemoteSystems.RemoteSystemConnectionRequest remoteSystemConnectionRequest, Windows.Foundation.Uri uri, Windows.System.RemoteLauncherOptions options, Windows.Foundation.Collections.ValueSet inputData)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus) _ret;
-		Debug.OK(staticInstance.abi_LaunchUriWithDataAsync(remoteSystemConnectionRequest, uri, options, inputData, &_ret));
+		Debug.OK(staticInstance.abi_LaunchUriAsync(remoteSystemConnectionRequest, uri, options, inputData, &_ret));
 		return _ret;
 	}
 }
@@ -1149,16 +1149,16 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_FindAllAsync(&_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User)) FindAllAsyncByType(Windows.System.UserType type)
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User)) FindAllAsync(Windows.System.UserType type)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User)) _ret;
-		Debug.OK(staticInstance.abi_FindAllAsyncByType(type, &_ret));
+		Debug.OK(staticInstance.abi_FindAllAsync(type, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User)) FindAllAsyncByTypeAndStatus(Windows.System.UserType type, Windows.System.UserAuthenticationStatus status)
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User)) FindAllAsync(Windows.System.UserType type, Windows.System.UserAuthenticationStatus status)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User)) _ret;
-		Debug.OK(staticInstance.abi_FindAllAsyncByTypeAndStatus(type, status, &_ret));
+		Debug.OK(staticInstance.abi_FindAllAsync(type, status, &_ret));
 		return _ret;
 	}
 	static Windows.System.User GetFromId(HSTRING nonRoamableId)

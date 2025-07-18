@@ -42,9 +42,9 @@ interface ISignalNotifierStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_AttachToEvent(HSTRING name, Windows.System.Threading.Core.SignalHandler handler, Windows.System.Threading.Core.SignalNotifier* return_signalNotifier);
-	HRESULT abi_AttachToEventWithTimeout(HSTRING name, Windows.System.Threading.Core.SignalHandler handler, Windows.Foundation.TimeSpan timeout, Windows.System.Threading.Core.SignalNotifier* return_signalNotifier);
+	HRESULT abi_AttachToEvent(HSTRING name, Windows.System.Threading.Core.SignalHandler handler, Windows.Foundation.TimeSpan timeout, Windows.System.Threading.Core.SignalNotifier* return_signalNotifier);
 	HRESULT abi_AttachToSemaphore(HSTRING name, Windows.System.Threading.Core.SignalHandler handler, Windows.System.Threading.Core.SignalNotifier* return_signalNotifier);
-	HRESULT abi_AttachToSemaphoreWithTimeout(HSTRING name, Windows.System.Threading.Core.SignalHandler handler, Windows.Foundation.TimeSpan timeout, Windows.System.Threading.Core.SignalNotifier* return_signalNotifier);
+	HRESULT abi_AttachToSemaphore(HSTRING name, Windows.System.Threading.Core.SignalHandler handler, Windows.Foundation.TimeSpan timeout, Windows.System.Threading.Core.SignalNotifier* return_signalNotifier);
 }
 
 interface PreallocatedWorkItem : Windows.System.Threading.Core.IPreallocatedWorkItem
@@ -103,10 +103,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_AttachToEvent(name, handler, &_ret));
 		return _ret;
 	}
-	static Windows.System.Threading.Core.SignalNotifier AttachToEventWithTimeout(HSTRING name, Windows.System.Threading.Core.SignalHandler handler, Windows.Foundation.TimeSpan timeout)
+	static Windows.System.Threading.Core.SignalNotifier AttachToEvent(HSTRING name, Windows.System.Threading.Core.SignalHandler handler, Windows.Foundation.TimeSpan timeout)
 	{
 		Windows.System.Threading.Core.SignalNotifier _ret;
-		Debug.OK(staticInstance.abi_AttachToEventWithTimeout(name, handler, timeout, &_ret));
+		Debug.OK(staticInstance.abi_AttachToEvent(name, handler, timeout, &_ret));
 		return _ret;
 	}
 	static Windows.System.Threading.Core.SignalNotifier AttachToSemaphore(HSTRING name, Windows.System.Threading.Core.SignalHandler handler)
@@ -115,10 +115,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_AttachToSemaphore(name, handler, &_ret));
 		return _ret;
 	}
-	static Windows.System.Threading.Core.SignalNotifier AttachToSemaphoreWithTimeout(HSTRING name, Windows.System.Threading.Core.SignalHandler handler, Windows.Foundation.TimeSpan timeout)
+	static Windows.System.Threading.Core.SignalNotifier AttachToSemaphore(HSTRING name, Windows.System.Threading.Core.SignalHandler handler, Windows.Foundation.TimeSpan timeout)
 	{
 		Windows.System.Threading.Core.SignalNotifier _ret;
-		Debug.OK(staticInstance.abi_AttachToSemaphoreWithTimeout(name, handler, timeout, &_ret));
+		Debug.OK(staticInstance.abi_AttachToSemaphore(name, handler, timeout, &_ret));
 		return _ret;
 	}
 }

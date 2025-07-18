@@ -16,7 +16,7 @@ interface IFaceDetector : IInspectable
 {
 extern(Windows):
 	HRESULT abi_DetectFacesAsync(Windows.Graphics.Imaging.SoftwareBitmap image, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.Media.FaceAnalysis.DetectedFace))* return_returnValue);
-	HRESULT abi_DetectFacesWithSearchAreaAsync(Windows.Graphics.Imaging.SoftwareBitmap image, Windows.Graphics.Imaging.BitmapBounds searchArea, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.Media.FaceAnalysis.DetectedFace))* return_returnValue);
+	HRESULT abi_DetectFacesAsync(Windows.Graphics.Imaging.SoftwareBitmap image, Windows.Graphics.Imaging.BitmapBounds searchArea, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.Media.FaceAnalysis.DetectedFace))* return_returnValue);
 	HRESULT get_MinDetectableFaceSize(Windows.Graphics.Imaging.BitmapSize* return_returnValue);
 	HRESULT set_MinDetectableFaceSize(Windows.Graphics.Imaging.BitmapSize value);
 	HRESULT get_MaxDetectableFaceSize(Windows.Graphics.Imaging.BitmapSize* return_returnValue);
@@ -77,10 +77,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.FaceAnalysis.IFaceDetector)this.asInterface(uuid("16b672dc-fe6f-3117-8d95-c3f04d51630c"))).abi_DetectFacesAsync(image, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.Media.FaceAnalysis.DetectedFace)) DetectFacesWithSearchAreaAsync(Windows.Graphics.Imaging.SoftwareBitmap image, Windows.Graphics.Imaging.BitmapBounds searchArea)
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.Media.FaceAnalysis.DetectedFace)) DetectFacesAsync(Windows.Graphics.Imaging.SoftwareBitmap image, Windows.Graphics.Imaging.BitmapBounds searchArea)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVector!(Windows.Media.FaceAnalysis.DetectedFace)) _ret;
-		Debug.OK((cast(Windows.Media.FaceAnalysis.IFaceDetector)this.asInterface(uuid("16b672dc-fe6f-3117-8d95-c3f04d51630c"))).abi_DetectFacesWithSearchAreaAsync(image, searchArea, &_ret));
+		Debug.OK((cast(Windows.Media.FaceAnalysis.IFaceDetector)this.asInterface(uuid("16b672dc-fe6f-3117-8d95-c3f04d51630c"))).abi_DetectFacesAsync(image, searchArea, &_ret));
 		return _ret;
 	}
 	final Windows.Graphics.Imaging.BitmapSize MinDetectableFaceSize()

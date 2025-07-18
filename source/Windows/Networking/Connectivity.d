@@ -79,7 +79,7 @@ extern(Windows):
 	deprecated("GetLocalUsage may be altered or unavailable for releases after Windows 8.1. Instead, use GetNetworkUsageAsync.")
 	HRESULT abi_GetLocalUsage(Windows.Foundation.DateTime StartTime, Windows.Foundation.DateTime EndTime, Windows.Networking.Connectivity.DataUsage* return_value);
 	deprecated("GetLocalUsage may be altered or unavailable for releases after Windows 8.1. Instead, use GetNetworkUsageAsync.")
-	HRESULT abi_GetLocalUsagePerRoamingStates(Windows.Foundation.DateTime StartTime, Windows.Foundation.DateTime EndTime, Windows.Networking.Connectivity.RoamingStates States, Windows.Networking.Connectivity.DataUsage* return_value);
+	HRESULT abi_GetLocalUsage(Windows.Foundation.DateTime StartTime, Windows.Foundation.DateTime EndTime, Windows.Networking.Connectivity.RoamingStates States, Windows.Networking.Connectivity.DataUsage* return_value);
 	HRESULT get_NetworkSecuritySettings(Windows.Networking.Connectivity.NetworkSecuritySettings* return_value);
 }
 
@@ -549,10 +549,10 @@ extern(Windows):
 		return _ret;
 	}
 	deprecated("GetLocalUsage may be altered or unavailable for releases after Windows 8.1. Instead, use GetNetworkUsageAsync.")
-	final Windows.Networking.Connectivity.DataUsage GetLocalUsagePerRoamingStates(Windows.Foundation.DateTime StartTime, Windows.Foundation.DateTime EndTime, Windows.Networking.Connectivity.RoamingStates States)
+	final Windows.Networking.Connectivity.DataUsage GetLocalUsage(Windows.Foundation.DateTime StartTime, Windows.Foundation.DateTime EndTime, Windows.Networking.Connectivity.RoamingStates States)
 	{
 		Windows.Networking.Connectivity.DataUsage _ret;
-		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfile)this.asInterface(uuid("71ba143c-598e-49d0-84eb-8febaedcc195"))).abi_GetLocalUsagePerRoamingStates(StartTime, EndTime, States, &_ret));
+		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfile)this.asInterface(uuid("71ba143c-598e-49d0-84eb-8febaedcc195"))).abi_GetLocalUsage(StartTime, EndTime, States, &_ret));
 		return _ret;
 	}
 	final Windows.Networking.Connectivity.NetworkSecuritySettings NetworkSecuritySettings()

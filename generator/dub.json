@@ -1,15 +1,26 @@
 {
-	"name": "generator",
+	"targetType": "executable",
 	"dependencies": {
-		"pegged": "~>0.4.2"
+		"pegged": "~>0.4.9",
+		"sha1ct": "~>1.0.0"
 	},
+	"name": "generator",
 	"sourceFiles-linux": [
-		"idl/grammar.di",
-		"grammar.a"
+		"grammar.a",
+		"../dwinrt.a"
 	],
 	"sourceFiles-windows": [
-		"idl/grammar.di",
-		"grammar.lib"
+		"grammar.lib",
+		"../dwinrt.lib"
 	],
-	"workingDirectory": ".."
+	"workingDirectory": ".",
+	"preBuildCommands": [
+		"cd .. && dub build",
+		"dmd -m64 -lib idl/grammar.d -I%APPDATA%/../Local/dub/packages/pegged/0.4.9/pegged"
+	],
+	"importPaths": [
+		"../directx",
+		"../source"
+	],
+	"dflags": ["-preview=bitfields"]
 }

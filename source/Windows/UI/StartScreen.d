@@ -93,13 +93,13 @@ extern(Windows):
 	deprecated("BackgroundColor may be altered or unavailable for releases after Windows 8.1. Instead, use VisualElements.BackgroundColor.")
 	HRESULT get_BackgroundColor(Windows.UI.Color* return_value);
 	HRESULT abi_RequestCreateAsync(Windows.Foundation.IAsyncOperation!(bool)* return_operation);
-	HRESULT abi_RequestCreateAsyncWithPoint(Windows.Foundation.Point invocationPoint, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
-	HRESULT abi_RequestCreateAsyncWithRect(Windows.Foundation.Rect selection, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
-	HRESULT abi_RequestCreateAsyncWithRectAndPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
+	HRESULT abi_RequestCreateAsync(Windows.Foundation.Point invocationPoint, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
+	HRESULT abi_RequestCreateForSelectionAsync(Windows.Foundation.Rect selection, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
+	HRESULT abi_RequestCreateForSelectionAsync(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_RequestDeleteAsync(Windows.Foundation.IAsyncOperation!(bool)* return_operation);
-	HRESULT abi_RequestDeleteAsyncWithPoint(Windows.Foundation.Point invocationPoint, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
-	HRESULT abi_RequestDeleteAsyncWithRect(Windows.Foundation.Rect selection, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
-	HRESULT abi_RequestDeleteAsyncWithRectAndPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
+	HRESULT abi_RequestDeleteAsync(Windows.Foundation.Point invocationPoint, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
+	HRESULT abi_RequestDeleteForSelectionAsync(Windows.Foundation.Rect selection, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
+	HRESULT abi_RequestDeleteForSelectionAsync(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_UpdateAsync(Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 }
 
@@ -150,7 +150,7 @@ interface ISecondaryTileStatics : IInspectable
 extern(Windows):
 	HRESULT abi_Exists(HSTRING tileId, bool* return_exists);
 	HRESULT abi_FindAllAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTile))* return_operation);
-	HRESULT abi_FindAllForApplicationAsync(HSTRING applicationId, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTile))* return_operation);
+	HRESULT abi_FindAllAsync(HSTRING applicationId, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTile))* return_operation);
 	HRESULT abi_FindAllForPackageAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTile))* return_operation);
 }
 
@@ -521,22 +521,22 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).abi_RequestCreateAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(bool) RequestCreateAsyncWithPoint(Windows.Foundation.Point invocationPoint)
+	final Windows.Foundation.IAsyncOperation!(bool) RequestCreateAsync(Windows.Foundation.Point invocationPoint)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).abi_RequestCreateAsyncWithPoint(invocationPoint, &_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).abi_RequestCreateAsync(invocationPoint, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(bool) RequestCreateAsyncWithRect(Windows.Foundation.Rect selection)
+	final Windows.Foundation.IAsyncOperation!(bool) RequestCreateForSelectionAsync(Windows.Foundation.Rect selection)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).abi_RequestCreateAsyncWithRect(selection, &_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).abi_RequestCreateForSelectionAsync(selection, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(bool) RequestCreateAsyncWithRectAndPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
+	final Windows.Foundation.IAsyncOperation!(bool) RequestCreateForSelectionAsync(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).abi_RequestCreateAsyncWithRectAndPlacement(selection, preferredPlacement, &_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).abi_RequestCreateForSelectionAsync(selection, preferredPlacement, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) RequestDeleteAsync()
@@ -545,22 +545,22 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).abi_RequestDeleteAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(bool) RequestDeleteAsyncWithPoint(Windows.Foundation.Point invocationPoint)
+	final Windows.Foundation.IAsyncOperation!(bool) RequestDeleteAsync(Windows.Foundation.Point invocationPoint)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).abi_RequestDeleteAsyncWithPoint(invocationPoint, &_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).abi_RequestDeleteAsync(invocationPoint, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(bool) RequestDeleteAsyncWithRect(Windows.Foundation.Rect selection)
+	final Windows.Foundation.IAsyncOperation!(bool) RequestDeleteForSelectionAsync(Windows.Foundation.Rect selection)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).abi_RequestDeleteAsyncWithRect(selection, &_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).abi_RequestDeleteForSelectionAsync(selection, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(bool) RequestDeleteAsyncWithRectAndPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
+	final Windows.Foundation.IAsyncOperation!(bool) RequestDeleteForSelectionAsync(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).abi_RequestDeleteAsyncWithRectAndPlacement(selection, preferredPlacement, &_ret));
+		Debug.OK((cast(Windows.UI.StartScreen.ISecondaryTile)this.asInterface(uuid("9e9e51e0-2bb5-4bc0-bb8d-42b23abcc88d"))).abi_RequestDeleteForSelectionAsync(selection, preferredPlacement, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(bool) UpdateAsync()
@@ -624,10 +624,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_FindAllAsync(&_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTile)) FindAllForApplicationAsync(HSTRING applicationId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTile)) FindAllAsync(HSTRING applicationId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTile)) _ret;
-		Debug.OK(staticInstance.abi_FindAllForApplicationAsync(applicationId, &_ret));
+		Debug.OK(staticInstance.abi_FindAllAsync(applicationId, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.StartScreen.SecondaryTile)) FindAllForPackageAsync()

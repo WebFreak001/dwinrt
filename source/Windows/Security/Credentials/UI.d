@@ -48,9 +48,9 @@ extern(Windows):
 interface ICredentialPickerStatics : IInspectable
 {
 extern(Windows):
-	HRESULT abi_PickWithOptionsAsync(Windows.Security.Credentials.UI.CredentialPickerOptions options, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults)* return_operation);
-	HRESULT abi_PickWithMessageAsync(HSTRING targetName, HSTRING message, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults)* return_operation);
-	HRESULT abi_PickWithCaptionAsync(HSTRING targetName, HSTRING message, HSTRING caption, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults)* return_operation);
+	HRESULT abi_PickAsync(Windows.Security.Credentials.UI.CredentialPickerOptions options, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults)* return_operation);
+	HRESULT abi_PickAsync(HSTRING targetName, HSTRING message, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults)* return_operation);
+	HRESULT abi_PickAsync(HSTRING targetName, HSTRING message, HSTRING caption, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults)* return_operation);
 }
 
 @uuid("af4f3f91-564c-4ddc-b8b5-973447627c65")
@@ -70,22 +70,22 @@ interface CredentialPicker
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Credentials.UI.ICredentialPickerStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) PickWithOptionsAsync(Windows.Security.Credentials.UI.CredentialPickerOptions options)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) PickAsync(Windows.Security.Credentials.UI.CredentialPickerOptions options)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) _ret;
-		Debug.OK(staticInstance.abi_PickWithOptionsAsync(options, &_ret));
+		Debug.OK(staticInstance.abi_PickAsync(options, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) PickWithMessageAsync(HSTRING targetName, HSTRING message)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) PickAsync(HSTRING targetName, HSTRING message)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) _ret;
-		Debug.OK(staticInstance.abi_PickWithMessageAsync(targetName, message, &_ret));
+		Debug.OK(staticInstance.abi_PickAsync(targetName, message, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) PickWithCaptionAsync(HSTRING targetName, HSTRING message, HSTRING caption)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) PickAsync(HSTRING targetName, HSTRING message, HSTRING caption)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) _ret;
-		Debug.OK(staticInstance.abi_PickWithCaptionAsync(targetName, message, caption, &_ret));
+		Debug.OK(staticInstance.abi_PickAsync(targetName, message, caption, &_ret));
 		return _ret;
 	}
 }

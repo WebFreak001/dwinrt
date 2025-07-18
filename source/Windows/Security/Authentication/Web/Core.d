@@ -29,12 +29,12 @@ interface IWebAuthenticationCoreManagerStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetTokenSilentlyAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult)* return_asyncInfo);
-	HRESULT abi_GetTokenSilentlyWithWebAccountAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.Security.Credentials.WebAccount webAccount, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult)* return_asyncInfo);
+	HRESULT abi_GetTokenSilentlyAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.Security.Credentials.WebAccount webAccount, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult)* return_asyncInfo);
 	HRESULT abi_RequestTokenAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult)* return_asyncInfo);
-	HRESULT abi_RequestTokenWithWebAccountAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.Security.Credentials.WebAccount webAccount, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult)* return_asyncInfo);
+	HRESULT abi_RequestTokenAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.Security.Credentials.WebAccount webAccount, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult)* return_asyncInfo);
 	HRESULT abi_FindAccountAsync(Windows.Security.Credentials.WebAccountProvider provider, HSTRING webAccountId, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_asyncInfo);
 	HRESULT abi_FindAccountProviderAsync(HSTRING webAccountProviderId, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccountProvider)* return_asyncInfo);
-	HRESULT abi_FindAccountProviderWithAuthorityAsync(HSTRING webAccountProviderId, HSTRING authority, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccountProvider)* return_asyncInfo);
+	HRESULT abi_FindAccountProviderAsync(HSTRING webAccountProviderId, HSTRING authority, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccountProvider)* return_asyncInfo);
 }
 
 @uuid("f584184a-8b57-4820-b6a4-70a5b6fcf44a")
@@ -42,7 +42,7 @@ extern(Windows):
 interface IWebAuthenticationCoreManagerStatics2_Base : IInspectable
 {
 extern(Windows):
-	HRESULT abi_FindAccountProviderWithAuthorityForUserAsync(HSTRING webAccountProviderId, HSTRING authority, Windows.System.User user, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccountProvider)* return_asyncInfo);
+	HRESULT abi_FindAccountProviderAsync(HSTRING webAccountProviderId, HSTRING authority, Windows.System.User user, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccountProvider)* return_asyncInfo);
 }
 @uuid("f584184a-8b57-4820-b6a4-70a5b6fcf44a")
 @WinrtFactory("Windows.Security.Authentication.Web.Core.WebAuthenticationCoreManager")
@@ -209,10 +209,10 @@ interface WebAuthenticationCoreManager
 		Debug.OK(staticInstance.abi_GetTokenSilentlyAsync(request, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) GetTokenSilentlyWithWebAccountAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.Security.Credentials.WebAccount webAccount)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) GetTokenSilentlyAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.Security.Credentials.WebAccount webAccount)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) _ret;
-		Debug.OK(staticInstance.abi_GetTokenSilentlyWithWebAccountAsync(request, webAccount, &_ret));
+		Debug.OK(staticInstance.abi_GetTokenSilentlyAsync(request, webAccount, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) RequestTokenAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request)
@@ -221,10 +221,10 @@ interface WebAuthenticationCoreManager
 		Debug.OK(staticInstance.abi_RequestTokenAsync(request, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) RequestTokenWithWebAccountAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.Security.Credentials.WebAccount webAccount)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) RequestTokenAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request, Windows.Security.Credentials.WebAccount webAccount)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) _ret;
-		Debug.OK(staticInstance.abi_RequestTokenWithWebAccountAsync(request, webAccount, &_ret));
+		Debug.OK(staticInstance.abi_RequestTokenAsync(request, webAccount, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount) FindAccountAsync(Windows.Security.Credentials.WebAccountProvider provider, HSTRING webAccountId)
@@ -239,10 +239,10 @@ interface WebAuthenticationCoreManager
 		Debug.OK(staticInstance.abi_FindAccountProviderAsync(webAccountProviderId, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccountProvider) FindAccountProviderWithAuthorityAsync(HSTRING webAccountProviderId, HSTRING authority)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccountProvider) FindAccountProviderAsync(HSTRING webAccountProviderId, HSTRING authority)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccountProvider) _ret;
-		Debug.OK(staticInstance.abi_FindAccountProviderWithAuthorityAsync(webAccountProviderId, authority, &_ret));
+		Debug.OK(staticInstance.abi_FindAccountProviderAsync(webAccountProviderId, authority, &_ret));
 		return _ret;
 	}
 }

@@ -342,10 +342,10 @@ interface IPrinting3DModel2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_TryPartialRepairAsync(Windows.Foundation.IAsyncOperation!(bool)* return_operation);
-	HRESULT abi_TryPartialRepairWithTimeAsync(Windows.Foundation.TimeSpan maxWaitTime, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
+	HRESULT abi_TryPartialRepairAsync(Windows.Foundation.TimeSpan maxWaitTime, Windows.Foundation.IAsyncOperation!(bool)* return_operation);
 	HRESULT abi_TryReduceFacesAsync(Windows.Foundation.IAsyncOperationWithProgress!(bool, double)* return_operation);
-	HRESULT abi_TryReduceFacesWithOptionsAsync(Windows.Graphics.Printing3D.Printing3DFaceReductionOptions printing3DFaceReductionOptions, Windows.Foundation.IAsyncOperationWithProgress!(bool, double)* return_operation);
-	HRESULT abi_TryReduceFacesWithOptionsAndTimeAsync(Windows.Graphics.Printing3D.Printing3DFaceReductionOptions printing3DFaceReductionOptions, Windows.Foundation.TimeSpan maxWait, Windows.Foundation.IAsyncOperationWithProgress!(bool, double)* return_operation);
+	HRESULT abi_TryReduceFacesAsync(Windows.Graphics.Printing3D.Printing3DFaceReductionOptions printing3DFaceReductionOptions, Windows.Foundation.IAsyncOperationWithProgress!(bool, double)* return_operation);
+	HRESULT abi_TryReduceFacesAsync(Windows.Graphics.Printing3D.Printing3DFaceReductionOptions printing3DFaceReductionOptions, Windows.Foundation.TimeSpan maxWait, Windows.Foundation.IAsyncOperationWithProgress!(bool, double)* return_operation);
 	HRESULT abi_RepairWithProgressAsync(Windows.Foundation.IAsyncOperationWithProgress!(bool, double)* return_operation);
 }
 
@@ -1259,10 +1259,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel2)this.asInterface(uuid("c92069c7-c841-47f3-a84e-a149fd08b657"))).abi_TryPartialRepairAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(bool) TryPartialRepairWithTimeAsync(Windows.Foundation.TimeSpan maxWaitTime)
+	final Windows.Foundation.IAsyncOperation!(bool) TryPartialRepairAsync(Windows.Foundation.TimeSpan maxWaitTime)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel2)this.asInterface(uuid("c92069c7-c841-47f3-a84e-a149fd08b657"))).abi_TryPartialRepairWithTimeAsync(maxWaitTime, &_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel2)this.asInterface(uuid("c92069c7-c841-47f3-a84e-a149fd08b657"))).abi_TryPartialRepairAsync(maxWaitTime, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(bool, double) TryReduceFacesAsync()
@@ -1271,16 +1271,16 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel2)this.asInterface(uuid("c92069c7-c841-47f3-a84e-a149fd08b657"))).abi_TryReduceFacesAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(bool, double) TryReduceFacesWithOptionsAsync(Windows.Graphics.Printing3D.Printing3DFaceReductionOptions printing3DFaceReductionOptions)
+	final Windows.Foundation.IAsyncOperationWithProgress!(bool, double) TryReduceFacesAsync(Windows.Graphics.Printing3D.Printing3DFaceReductionOptions printing3DFaceReductionOptions)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(bool, double) _ret;
-		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel2)this.asInterface(uuid("c92069c7-c841-47f3-a84e-a149fd08b657"))).abi_TryReduceFacesWithOptionsAsync(printing3DFaceReductionOptions, &_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel2)this.asInterface(uuid("c92069c7-c841-47f3-a84e-a149fd08b657"))).abi_TryReduceFacesAsync(printing3DFaceReductionOptions, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(bool, double) TryReduceFacesWithOptionsAndTimeAsync(Windows.Graphics.Printing3D.Printing3DFaceReductionOptions printing3DFaceReductionOptions, Windows.Foundation.TimeSpan maxWait)
+	final Windows.Foundation.IAsyncOperationWithProgress!(bool, double) TryReduceFacesAsync(Windows.Graphics.Printing3D.Printing3DFaceReductionOptions printing3DFaceReductionOptions, Windows.Foundation.TimeSpan maxWait)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(bool, double) _ret;
-		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel2)this.asInterface(uuid("c92069c7-c841-47f3-a84e-a149fd08b657"))).abi_TryReduceFacesWithOptionsAndTimeAsync(printing3DFaceReductionOptions, maxWait, &_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel2)this.asInterface(uuid("c92069c7-c841-47f3-a84e-a149fd08b657"))).abi_TryReduceFacesAsync(printing3DFaceReductionOptions, maxWait, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperationWithProgress!(bool, double) RepairWithProgressAsync()

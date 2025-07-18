@@ -13,9 +13,9 @@ extern(Windows):
 	HRESULT abi_UpdateWnsChannelAsync(HSTRING userAccountId, HSTRING channelUri, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse)* return_asyncOperation);
 	HRESULT abi_GetSessionsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) userAccountIdList, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorGetSessionsResult)* return_asyncOperation);
 	HRESULT abi_GetSessionsAndUnregisteredAccountsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) userAccountIdList, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo)* return_asyncOperation);
-	HRESULT abi_ApproveSessionUsingAuthSessionInfoAsync(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionAuthenticationStatus sessionAuthentictionStatus, Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionInfo authenticationSessionInfo, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse)* return_asyncOperation);
+	HRESULT abi_ApproveSessionAsync(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionAuthenticationStatus sessionAuthentictionStatus, Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionInfo authenticationSessionInfo, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse)* return_asyncOperation);
 	HRESULT abi_ApproveSessionAsync(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionAuthenticationStatus sessionAuthentictionStatus, HSTRING userAccountId, HSTRING sessionId, Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthenticationType sessionAuthenticationType, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse)* return_asyncOperation);
-	HRESULT abi_DenySessionUsingAuthSessionInfoAsync(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionInfo authenticationSessionInfo, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse)* return_asyncOperation);
+	HRESULT abi_DenySessionAsync(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionInfo authenticationSessionInfo, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse)* return_asyncOperation);
 	HRESULT abi_DenySessionAsync(HSTRING userAccountId, HSTRING sessionId, Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthenticationType sessionAuthenticationType, Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse)* return_asyncOperation);
 }
 
@@ -110,10 +110,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticationManager)this.asInterface(uuid("0fd340a5-f574-4320-a08e-0a19a82322aa"))).abi_GetSessionsAndUnregisteredAccountsAsync(userAccountIdList, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) ApproveSessionUsingAuthSessionInfoAsync(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionAuthenticationStatus sessionAuthentictionStatus, Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionInfo authenticationSessionInfo)
+	final Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) ApproveSessionAsync(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionAuthenticationStatus sessionAuthentictionStatus, Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionInfo authenticationSessionInfo)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) _ret;
-		Debug.OK((cast(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticationManager)this.asInterface(uuid("0fd340a5-f574-4320-a08e-0a19a82322aa"))).abi_ApproveSessionUsingAuthSessionInfoAsync(sessionAuthentictionStatus, authenticationSessionInfo, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticationManager)this.asInterface(uuid("0fd340a5-f574-4320-a08e-0a19a82322aa"))).abi_ApproveSessionAsync(sessionAuthentictionStatus, authenticationSessionInfo, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) ApproveSessionAsync(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionAuthenticationStatus sessionAuthentictionStatus, HSTRING userAccountId, HSTRING sessionId, Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthenticationType sessionAuthenticationType)
@@ -122,10 +122,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticationManager)this.asInterface(uuid("0fd340a5-f574-4320-a08e-0a19a82322aa"))).abi_ApproveSessionAsync(sessionAuthentictionStatus, userAccountId, sessionId, sessionAuthenticationType, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) DenySessionUsingAuthSessionInfoAsync(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionInfo authenticationSessionInfo)
+	final Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) DenySessionAsync(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionInfo authenticationSessionInfo)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) _ret;
-		Debug.OK((cast(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticationManager)this.asInterface(uuid("0fd340a5-f574-4320-a08e-0a19a82322aa"))).abi_DenySessionUsingAuthSessionInfoAsync(authenticationSessionInfo, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticationManager)this.asInterface(uuid("0fd340a5-f574-4320-a08e-0a19a82322aa"))).abi_DenySessionAsync(authenticationSessionInfo, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) DenySessionAsync(HSTRING userAccountId, HSTRING sessionId, Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthenticationType sessionAuthenticationType)

@@ -280,7 +280,7 @@ extern(Windows):
 	HRESULT get_Current(Windows.UI.Xaml.Application* return_value);
 	HRESULT abi_Start(Windows.UI.Xaml.ApplicationInitializationCallback callback);
 	HRESULT abi_LoadComponent(IInspectable component, Windows.Foundation.Uri resourceLocator);
-	HRESULT abi_LoadComponentWithResourceLocation(IInspectable component, Windows.Foundation.Uri resourceLocator, Windows.UI.Xaml.Controls.Primitives.ComponentResourceLocation componentResourceLocation);
+	HRESULT abi_LoadComponent(IInspectable component, Windows.Foundation.Uri resourceLocator, Windows.UI.Xaml.Controls.Primitives.ComponentResourceLocation componentResourceLocation);
 }
 
 @uuid("32c1d013-4dbd-446d-bbb8-0de35048a449")
@@ -570,9 +570,9 @@ interface IDragUI : IInspectable
 {
 extern(Windows):
 	HRESULT abi_SetContentFromBitmapImage(Windows.UI.Xaml.Media.Imaging.BitmapImage bitmapImage);
-	HRESULT abi_SetContentFromBitmapImageWithAnchorPoint(Windows.UI.Xaml.Media.Imaging.BitmapImage bitmapImage, Windows.Foundation.Point anchorPoint);
+	HRESULT abi_SetContentFromBitmapImage(Windows.UI.Xaml.Media.Imaging.BitmapImage bitmapImage, Windows.Foundation.Point anchorPoint);
 	HRESULT abi_SetContentFromSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap);
-	HRESULT abi_SetContentFromSoftwareBitmapWithAnchorPoint(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap, Windows.Foundation.Point anchorPoint);
+	HRESULT abi_SetContentFromSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap, Windows.Foundation.Point anchorPoint);
 	HRESULT abi_SetContentFromDataPackage();
 }
 
@@ -591,9 +591,9 @@ extern(Windows):
 	HRESULT set_IsGlyphVisible(bool value);
 	HRESULT abi_Clear();
 	HRESULT abi_SetContentFromBitmapImage(Windows.UI.Xaml.Media.Imaging.BitmapImage bitmapImage);
-	HRESULT abi_SetContentFromBitmapImageWithAnchorPoint(Windows.UI.Xaml.Media.Imaging.BitmapImage bitmapImage, Windows.Foundation.Point anchorPoint);
+	HRESULT abi_SetContentFromBitmapImage(Windows.UI.Xaml.Media.Imaging.BitmapImage bitmapImage, Windows.Foundation.Point anchorPoint);
 	HRESULT abi_SetContentFromSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap);
-	HRESULT abi_SetContentFromSoftwareBitmapWithAnchorPoint(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap, Windows.Foundation.Point anchorPoint);
+	HRESULT abi_SetContentFromSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap, Windows.Foundation.Point anchorPoint);
 }
 
 @uuid("6c4fc188-95bc-4261-9ec5-21cab677b734")
@@ -934,10 +934,10 @@ extern(Windows):
 interface IPropertyMetadataStatics : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateWithDefaultValue(IInspectable defaultValue, Windows.UI.Xaml.PropertyMetadata* return_returnValue);
-	HRESULT abi_CreateWithDefaultValueAndCallback(IInspectable defaultValue, Windows.UI.Xaml.PropertyChangedCallback propertyChangedCallback, Windows.UI.Xaml.PropertyMetadata* return_returnValue);
-	HRESULT abi_CreateWithFactory(Windows.UI.Xaml.CreateDefaultValueCallback createDefaultValueCallback, Windows.UI.Xaml.PropertyMetadata* return_returnValue);
-	HRESULT abi_CreateWithFactoryAndCallback(Windows.UI.Xaml.CreateDefaultValueCallback createDefaultValueCallback, Windows.UI.Xaml.PropertyChangedCallback propertyChangedCallback, Windows.UI.Xaml.PropertyMetadata* return_returnValue);
+	HRESULT abi_Create(IInspectable defaultValue, Windows.UI.Xaml.PropertyMetadata* return_returnValue);
+	HRESULT abi_Create(IInspectable defaultValue, Windows.UI.Xaml.PropertyChangedCallback propertyChangedCallback, Windows.UI.Xaml.PropertyMetadata* return_returnValue);
+	HRESULT abi_Create(Windows.UI.Xaml.CreateDefaultValueCallback createDefaultValueCallback, Windows.UI.Xaml.PropertyMetadata* return_returnValue);
+	HRESULT abi_Create(Windows.UI.Xaml.CreateDefaultValueCallback createDefaultValueCallback, Windows.UI.Xaml.PropertyChangedCallback propertyChangedCallback, Windows.UI.Xaml.PropertyMetadata* return_returnValue);
 }
 
 @uuid("300e5d8a-1ff3-4d2c-95ec-27f81debacb8")
@@ -979,8 +979,8 @@ extern(Windows):
 	HRESULT abi_Contains(Windows.Foundation.Rect target, Windows.Foundation.Point point, bool* return_returnValue);
 	HRESULT abi_Equals(Windows.Foundation.Rect target, Windows.Foundation.Rect value, bool* return_returnValue);
 	HRESULT abi_Intersect(Windows.Foundation.Rect target, Windows.Foundation.Rect rect, Windows.Foundation.Rect* return_returnValue);
-	HRESULT abi_UnionWithPoint(Windows.Foundation.Rect target, Windows.Foundation.Point point, Windows.Foundation.Rect* return_returnValue);
-	HRESULT abi_UnionWithRect(Windows.Foundation.Rect target, Windows.Foundation.Rect rect, Windows.Foundation.Rect* return_returnValue);
+	HRESULT abi_Union(Windows.Foundation.Rect target, Windows.Foundation.Point point, Windows.Foundation.Rect* return_returnValue);
+	HRESULT abi_Union(Windows.Foundation.Rect target, Windows.Foundation.Rect rect, Windows.Foundation.Rect* return_returnValue);
 }
 
 @uuid("c1ea4f24-d6de-4191-8e3a-f48601f7489c")
@@ -1411,7 +1411,7 @@ extern(Windows):
 	HRESULT add_NoFocusCandidateFound(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs) value, EventRegistrationToken* return_token);
 	HRESULT remove_NoFocusCandidateFound(EventRegistrationToken token);
 	HRESULT abi_StartBringIntoView();
-	HRESULT abi_StartBringIntoViewWithOptions(Windows.UI.Xaml.BringIntoViewOptions options);
+	HRESULT abi_StartBringIntoView(Windows.UI.Xaml.BringIntoViewOptions options);
 }
 
 @uuid("b9ee93fe-a338-419f-ac32-91dcaadf5d08")
@@ -1931,9 +1931,9 @@ extern(Windows):
 	{
 		Debug.OK(staticInstance.abi_LoadComponent(component, resourceLocator));
 	}
-	static void LoadComponentWithResourceLocation(IInspectable component, Windows.Foundation.Uri resourceLocator, Windows.UI.Xaml.Controls.Primitives.ComponentResourceLocation componentResourceLocation)
+	static void LoadComponent(IInspectable component, Windows.Foundation.Uri resourceLocator, Windows.UI.Xaml.Controls.Primitives.ComponentResourceLocation componentResourceLocation)
 	{
-		Debug.OK(staticInstance.abi_LoadComponentWithResourceLocation(component, resourceLocator, componentResourceLocation));
+		Debug.OK(staticInstance.abi_LoadComponent(component, resourceLocator, componentResourceLocation));
 	}
 	static Application New()
 	{
@@ -2716,17 +2716,17 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.IDragUI)this.asInterface(uuid("2d9bd838-7c60-4842-9170-346fe10a226a"))).abi_SetContentFromBitmapImage(bitmapImage));
 	}
-	final void SetContentFromBitmapImageWithAnchorPoint(Windows.UI.Xaml.Media.Imaging.BitmapImage bitmapImage, Windows.Foundation.Point anchorPoint)
+	final void SetContentFromBitmapImage(Windows.UI.Xaml.Media.Imaging.BitmapImage bitmapImage, Windows.Foundation.Point anchorPoint)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.IDragUI)this.asInterface(uuid("2d9bd838-7c60-4842-9170-346fe10a226a"))).abi_SetContentFromBitmapImageWithAnchorPoint(bitmapImage, anchorPoint));
+		Debug.OK((cast(Windows.UI.Xaml.IDragUI)this.asInterface(uuid("2d9bd838-7c60-4842-9170-346fe10a226a"))).abi_SetContentFromBitmapImage(bitmapImage, anchorPoint));
 	}
 	final void SetContentFromSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap)
 	{
 		Debug.OK((cast(Windows.UI.Xaml.IDragUI)this.asInterface(uuid("2d9bd838-7c60-4842-9170-346fe10a226a"))).abi_SetContentFromSoftwareBitmap(softwareBitmap));
 	}
-	final void SetContentFromSoftwareBitmapWithAnchorPoint(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap, Windows.Foundation.Point anchorPoint)
+	final void SetContentFromSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap, Windows.Foundation.Point anchorPoint)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.IDragUI)this.asInterface(uuid("2d9bd838-7c60-4842-9170-346fe10a226a"))).abi_SetContentFromSoftwareBitmapWithAnchorPoint(softwareBitmap, anchorPoint));
+		Debug.OK((cast(Windows.UI.Xaml.IDragUI)this.asInterface(uuid("2d9bd838-7c60-4842-9170-346fe10a226a"))).abi_SetContentFromSoftwareBitmap(softwareBitmap, anchorPoint));
 	}
 	final void SetContentFromDataPackage()
 	{
@@ -2785,17 +2785,17 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).abi_SetContentFromBitmapImage(bitmapImage));
 	}
-	final void SetContentFromBitmapImageWithAnchorPoint(Windows.UI.Xaml.Media.Imaging.BitmapImage bitmapImage, Windows.Foundation.Point anchorPoint)
+	final void SetContentFromBitmapImage(Windows.UI.Xaml.Media.Imaging.BitmapImage bitmapImage, Windows.Foundation.Point anchorPoint)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).abi_SetContentFromBitmapImageWithAnchorPoint(bitmapImage, anchorPoint));
+		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).abi_SetContentFromBitmapImage(bitmapImage, anchorPoint));
 	}
 	final void SetContentFromSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap)
 	{
 		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).abi_SetContentFromSoftwareBitmap(softwareBitmap));
 	}
-	final void SetContentFromSoftwareBitmapWithAnchorPoint(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap, Windows.Foundation.Point anchorPoint)
+	final void SetContentFromSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap, Windows.Foundation.Point anchorPoint)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).abi_SetContentFromSoftwareBitmapWithAnchorPoint(softwareBitmap, anchorPoint));
+		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).abi_SetContentFromSoftwareBitmap(softwareBitmap, anchorPoint));
 	}
 }
 
@@ -3682,7 +3682,7 @@ class FrameworkElementT(Base) : AgileObject!Base, FrameworkElement
 	override HRESULT add_NoFocusCandidateFound(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).add_NoFocusCandidateFound(value, return_token); }
 	override HRESULT remove_NoFocusCandidateFound(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).remove_NoFocusCandidateFound(token); }
 	override HRESULT abi_StartBringIntoView() { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).abi_StartBringIntoView(); }
-	override HRESULT abi_StartBringIntoViewWithOptions(Windows.UI.Xaml.BringIntoViewOptions options) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).abi_StartBringIntoViewWithOptions(options); }
+	override HRESULT abi_StartBringIntoView(Windows.UI.Xaml.BringIntoViewOptions options) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).abi_StartBringIntoView(options); }
 
 	override HRESULT abi_GetValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_GetValue(dp, return_returnValue); }
 	override HRESULT abi_SetValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable value) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_SetValue(dp, value); }
@@ -3881,28 +3881,28 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.UI.Xaml.IPropertyMetadataStatics);
 		return _staticInstance;
 	}
-	static Windows.UI.Xaml.PropertyMetadata CreateWithDefaultValue(IInspectable defaultValue)
+	static Windows.UI.Xaml.PropertyMetadata Create(IInspectable defaultValue)
 	{
 		Windows.UI.Xaml.PropertyMetadata _ret;
-		Debug.OK(staticInstance.abi_CreateWithDefaultValue(defaultValue, &_ret));
+		Debug.OK(staticInstance.abi_Create(defaultValue, &_ret));
 		return _ret;
 	}
-	static Windows.UI.Xaml.PropertyMetadata CreateWithDefaultValueAndCallback(IInspectable defaultValue, Windows.UI.Xaml.PropertyChangedCallback propertyChangedCallback)
+	static Windows.UI.Xaml.PropertyMetadata Create(IInspectable defaultValue, Windows.UI.Xaml.PropertyChangedCallback propertyChangedCallback)
 	{
 		Windows.UI.Xaml.PropertyMetadata _ret;
-		Debug.OK(staticInstance.abi_CreateWithDefaultValueAndCallback(defaultValue, propertyChangedCallback, &_ret));
+		Debug.OK(staticInstance.abi_Create(defaultValue, propertyChangedCallback, &_ret));
 		return _ret;
 	}
-	static Windows.UI.Xaml.PropertyMetadata CreateWithFactory(Windows.UI.Xaml.CreateDefaultValueCallback createDefaultValueCallback)
+	static Windows.UI.Xaml.PropertyMetadata Create(Windows.UI.Xaml.CreateDefaultValueCallback createDefaultValueCallback)
 	{
 		Windows.UI.Xaml.PropertyMetadata _ret;
-		Debug.OK(staticInstance.abi_CreateWithFactory(createDefaultValueCallback, &_ret));
+		Debug.OK(staticInstance.abi_Create(createDefaultValueCallback, &_ret));
 		return _ret;
 	}
-	static Windows.UI.Xaml.PropertyMetadata CreateWithFactoryAndCallback(Windows.UI.Xaml.CreateDefaultValueCallback createDefaultValueCallback, Windows.UI.Xaml.PropertyChangedCallback propertyChangedCallback)
+	static Windows.UI.Xaml.PropertyMetadata Create(Windows.UI.Xaml.CreateDefaultValueCallback createDefaultValueCallback, Windows.UI.Xaml.PropertyChangedCallback propertyChangedCallback)
 	{
 		Windows.UI.Xaml.PropertyMetadata _ret;
-		Debug.OK(staticInstance.abi_CreateWithFactoryAndCallback(createDefaultValueCallback, propertyChangedCallback, &_ret));
+		Debug.OK(staticInstance.abi_Create(createDefaultValueCallback, propertyChangedCallback, &_ret));
 		return _ret;
 	}
 }
@@ -4021,16 +4021,16 @@ interface RectHelper : Windows.UI.Xaml.IRectHelper
 		Debug.OK(staticInstance.abi_Intersect(target, rect, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.Rect UnionWithPoint(Windows.Foundation.Rect target, Windows.Foundation.Point point)
+	static Windows.Foundation.Rect Union(Windows.Foundation.Rect target, Windows.Foundation.Point point)
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(staticInstance.abi_UnionWithPoint(target, point, &_ret));
+		Debug.OK(staticInstance.abi_Union(target, point, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.Rect UnionWithRect(Windows.Foundation.Rect target, Windows.Foundation.Rect rect)
+	static Windows.Foundation.Rect Union(Windows.Foundation.Rect target, Windows.Foundation.Rect rect)
 	{
 		Windows.Foundation.Rect _ret;
-		Debug.OK(staticInstance.abi_UnionWithRect(target, rect, &_ret));
+		Debug.OK(staticInstance.abi_Union(target, rect, &_ret));
 		return _ret;
 	}
 }
@@ -5552,9 +5552,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).abi_StartBringIntoView());
 	}
-	final void StartBringIntoViewWithOptions(Windows.UI.Xaml.BringIntoViewOptions options)
+	final void StartBringIntoView(Windows.UI.Xaml.BringIntoViewOptions options)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).abi_StartBringIntoViewWithOptions(options));
+		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).abi_StartBringIntoView(options));
 	}
 
 	private static Windows.UI.Xaml.IUIElementStatics _staticInstance;
@@ -5981,7 +5981,7 @@ class UIElementT(Base) : AgileObject!Base, UIElement
 	override HRESULT add_NoFocusCandidateFound(Windows.Foundation.TypedEventHandler!(Windows.UI.Xaml.UIElement, Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs) value, EventRegistrationToken* return_token) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).add_NoFocusCandidateFound(value, return_token); }
 	override HRESULT remove_NoFocusCandidateFound(EventRegistrationToken token) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).remove_NoFocusCandidateFound(token); }
 	override HRESULT abi_StartBringIntoView() { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).abi_StartBringIntoView(); }
-	override HRESULT abi_StartBringIntoViewWithOptions(Windows.UI.Xaml.BringIntoViewOptions options) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).abi_StartBringIntoViewWithOptions(options); }
+	override HRESULT abi_StartBringIntoView(Windows.UI.Xaml.BringIntoViewOptions options) { return (cast(Windows.UI.Xaml.IUIElement5)m_inner.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).abi_StartBringIntoView(options); }
 
 	override HRESULT abi_GetValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable* return_returnValue) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_GetValue(dp, return_returnValue); }
 	override HRESULT abi_SetValue(Windows.UI.Xaml.DependencyProperty dp, IInspectable value) { return (cast(Windows.UI.Xaml.IDependencyObject)m_inner.asInterface(uuid("5c526665-f60e-4912-af59-5fe0680f089d"))).abi_SetValue(dp, value); }

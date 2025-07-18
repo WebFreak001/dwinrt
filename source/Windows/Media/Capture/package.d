@@ -47,7 +47,7 @@ interface IAdvancedPhotoCapture : IInspectable
 {
 extern(Windows):
 	HRESULT abi_CaptureAsync(Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.AdvancedCapturedPhoto)* return_operation);
-	HRESULT abi_CaptureWithContextAsync(IInspectable context, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.AdvancedCapturedPhoto)* return_operation);
+	HRESULT abi_CaptureAsync(IInspectable context, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.AdvancedCapturedPhoto)* return_operation);
 	HRESULT add_OptionalReferencePhotoCaptured(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AdvancedPhotoCapture, Windows.Media.Capture.OptionalReferencePhotoCapturedEventArgs) handler, EventRegistrationToken* return_token);
 	HRESULT remove_OptionalReferencePhotoCaptured(EventRegistrationToken token);
 	HRESULT add_AllPhotosCaptured(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.AdvancedPhotoCapture, IInspectable) handler, EventRegistrationToken* return_token);
@@ -933,11 +933,11 @@ interface IMediaCapture : IInspectable
 {
 extern(Windows):
 	HRESULT abi_InitializeAsync(Windows.Foundation.IAsyncAction* return_asyncInfo);
-	HRESULT abi_InitializeWithSettingsAsync(Windows.Media.Capture.MediaCaptureInitializationSettings mediaCaptureInitializationSettings, Windows.Foundation.IAsyncAction* return_asyncInfo);
+	HRESULT abi_InitializeAsync(Windows.Media.Capture.MediaCaptureInitializationSettings mediaCaptureInitializationSettings, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_StartRecordToStorageFileAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Storage.IStorageFile file, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_StartRecordToStreamAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Storage.Streams.IRandomAccessStream stream, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_StartRecordToCustomSinkAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Media.IMediaExtension customMediaSink, Windows.Foundation.IAsyncAction* return_asyncInfo);
-	HRESULT abi_StartRecordToCustomSinkIdAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, HSTRING customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings, Windows.Foundation.IAsyncAction* return_asyncInfo);
+	HRESULT abi_StartRecordToCustomSinkAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, HSTRING customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_StopRecordAsync(Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_CapturePhotoToStorageFileAsync(Windows.Media.MediaProperties.ImageEncodingProperties type, Windows.Storage.IStorageFile file, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_CapturePhotoToStreamAsync(Windows.Media.MediaProperties.ImageEncodingProperties type, Windows.Storage.Streams.IRandomAccessStream stream, Windows.Foundation.IAsyncAction* return_asyncInfo);
@@ -969,7 +969,7 @@ extern(Windows):
 	HRESULT abi_PrepareLowLagRecordToStorageFileAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Storage.IStorageFile file, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording)* return_operation);
 	HRESULT abi_PrepareLowLagRecordToStreamAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Storage.Streams.IRandomAccessStream stream, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording)* return_operation);
 	HRESULT abi_PrepareLowLagRecordToCustomSinkAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Media.IMediaExtension customMediaSink, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording)* return_operation);
-	HRESULT abi_PrepareLowLagRecordToCustomSinkIdAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, HSTRING customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording)* return_operation);
+	HRESULT abi_PrepareLowLagRecordToCustomSinkAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, HSTRING customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording)* return_operation);
 	HRESULT abi_PrepareLowLagPhotoCaptureAsync(Windows.Media.MediaProperties.ImageEncodingProperties type, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagPhotoCapture)* return_operation);
 	HRESULT abi_PrepareLowLagPhotoSequenceCaptureAsync(Windows.Media.MediaProperties.ImageEncodingProperties type, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagPhotoSequenceCapture)* return_operation);
 	HRESULT abi_SetEncodingPropertiesAsync(Windows.Media.Capture.MediaStreamType mediaStreamType, Windows.Media.MediaProperties.IMediaEncodingProperties mediaEncodingProperties, Windows.Media.MediaProperties.MediaPropertySet encoderProperties, Windows.Foundation.IAsyncAction* return_operation);
@@ -1000,7 +1000,7 @@ extern(Windows):
 	HRESULT remove_CameraStreamStateChanged(EventRegistrationToken token);
 	HRESULT get_CameraStreamState(Windows.Media.Devices.CameraStreamState* return_streamState);
 	HRESULT abi_GetPreviewFrameAsync(Windows.Foundation.IAsyncOperation!(Windows.Media.VideoFrame)* return_operation);
-	HRESULT abi_GetPreviewFrameCopyAsync(Windows.Media.VideoFrame destination, Windows.Foundation.IAsyncOperation!(Windows.Media.VideoFrame)* return_operation);
+	HRESULT abi_GetPreviewFrameAsync(Windows.Media.VideoFrame destination, Windows.Foundation.IAsyncOperation!(Windows.Media.VideoFrame)* return_operation);
 	HRESULT add_ThermalStatusChanged(Windows.Foundation.TypedEventHandler!(Windows.Media.Capture.MediaCapture, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_ThermalStatusChanged(EventRegistrationToken token);
 	HRESULT get_ThermalStatus(Windows.Media.Capture.MediaCaptureThermalStatus* return_value);
@@ -1017,8 +1017,8 @@ extern(Windows):
 	HRESULT abi_StopRecordWithResultAsync(Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.MediaCaptureStopResult)* return_operation);
 	HRESULT get_FrameSources(Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Media.Capture.Frames.MediaFrameSource)* return_value);
 	HRESULT abi_CreateFrameReaderAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader)* return_value);
-	HRESULT abi_CreateFrameReaderWithSubtypeAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, HSTRING outputSubtype, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader)* return_value);
-	HRESULT abi_CreateFrameReaderWithSubtypeAndSizeAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, HSTRING outputSubtype, Windows.Graphics.Imaging.BitmapSize outputSize, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader)* return_value);
+	HRESULT abi_CreateFrameReaderAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, HSTRING outputSubtype, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader)* return_value);
+	HRESULT abi_CreateFrameReaderAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, HSTRING outputSubtype, Windows.Graphics.Imaging.BitmapSize outputSize, Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader)* return_value);
 }
 
 @uuid("228948bd-4b20-4bb1-9fd6-a583212a1012")
@@ -1194,7 +1194,7 @@ interface IMediaCaptureVideoPreview : IInspectable
 extern(Windows):
 	HRESULT abi_StartPreviewAsync(Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_StartPreviewToCustomSinkAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Media.IMediaExtension customMediaSink, Windows.Foundation.IAsyncAction* return_asyncInfo);
-	HRESULT abi_StartPreviewToCustomSinkIdAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, HSTRING customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings, Windows.Foundation.IAsyncAction* return_asyncInfo);
+	HRESULT abi_StartPreviewToCustomSinkAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, HSTRING customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_StopPreviewAsync(Windows.Foundation.IAsyncAction* return_asyncInfo);
 }
 
@@ -1298,10 +1298,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IAdvancedPhotoCapture)this.asInterface(uuid("83ffaafa-6667-44dc-973c-a6bce596aa0f"))).abi_CaptureAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.AdvancedCapturedPhoto) CaptureWithContextAsync(IInspectable context)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.AdvancedCapturedPhoto) CaptureAsync(IInspectable context)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.AdvancedCapturedPhoto) _ret;
-		Debug.OK((cast(Windows.Media.Capture.IAdvancedPhotoCapture)this.asInterface(uuid("83ffaafa-6667-44dc-973c-a6bce596aa0f"))).abi_CaptureWithContextAsync(context, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IAdvancedPhotoCapture)this.asInterface(uuid("83ffaafa-6667-44dc-973c-a6bce596aa0f"))).abi_CaptureAsync(context, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnOptionalReferencePhotoCaptured(void delegate(Windows.Media.Capture.AdvancedPhotoCapture, Windows.Media.Capture.OptionalReferencePhotoCapturedEventArgs) fn)
@@ -3881,10 +3881,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_InitializeAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction InitializeWithSettingsAsync(Windows.Media.Capture.MediaCaptureInitializationSettings mediaCaptureInitializationSettings)
+	final Windows.Foundation.IAsyncAction InitializeAsync(Windows.Media.Capture.MediaCaptureInitializationSettings mediaCaptureInitializationSettings)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_InitializeWithSettingsAsync(mediaCaptureInitializationSettings, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_InitializeAsync(mediaCaptureInitializationSettings, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction StartRecordToStorageFileAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Storage.IStorageFile file)
@@ -3905,10 +3905,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_StartRecordToCustomSinkAsync(encodingProfile, customMediaSink, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction StartRecordToCustomSinkIdAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, HSTRING customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings)
+	final Windows.Foundation.IAsyncAction StartRecordToCustomSinkAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, HSTRING customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_StartRecordToCustomSinkIdAsync(encodingProfile, customSinkActivationId, customSinkSettings, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_StartRecordToCustomSinkAsync(encodingProfile, customSinkActivationId, customSinkSettings, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction StopRecordAsync()
@@ -4032,10 +4032,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoPreview)this.asInterface(uuid("27727073-549e-447f-a20a-4f03c479d8c0"))).abi_StartPreviewToCustomSinkAsync(encodingProfile, customMediaSink, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction StartPreviewToCustomSinkIdAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, HSTRING customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings)
+	final Windows.Foundation.IAsyncAction StartPreviewToCustomSinkAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, HSTRING customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoPreview)this.asInterface(uuid("27727073-549e-447f-a20a-4f03c479d8c0"))).abi_StartPreviewToCustomSinkIdAsync(encodingProfile, customSinkActivationId, customSinkSettings, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoPreview)this.asInterface(uuid("27727073-549e-447f-a20a-4f03c479d8c0"))).abi_StartPreviewToCustomSinkAsync(encodingProfile, customSinkActivationId, customSinkSettings, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction StopPreviewAsync()
@@ -4062,10 +4062,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IMediaCapture2)this.asInterface(uuid("9cc68260-7da1-4043-b652-21b8878daff9"))).abi_PrepareLowLagRecordToCustomSinkAsync(encodingProfile, customMediaSink, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording) PrepareLowLagRecordToCustomSinkIdAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, HSTRING customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording) PrepareLowLagRecordToCustomSinkAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, HSTRING customSinkActivationId, Windows.Foundation.Collections.IPropertySet customSinkSettings)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagMediaRecording) _ret;
-		Debug.OK((cast(Windows.Media.Capture.IMediaCapture2)this.asInterface(uuid("9cc68260-7da1-4043-b652-21b8878daff9"))).abi_PrepareLowLagRecordToCustomSinkIdAsync(encodingProfile, customSinkActivationId, customSinkSettings, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture2)this.asInterface(uuid("9cc68260-7da1-4043-b652-21b8878daff9"))).abi_PrepareLowLagRecordToCustomSinkAsync(encodingProfile, customSinkActivationId, customSinkSettings, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagPhotoCapture) PrepareLowLagPhotoCaptureAsync(Windows.Media.MediaProperties.ImageEncodingProperties type)
@@ -4162,10 +4162,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IMediaCapture4)this.asInterface(uuid("bacd6fd6-fb08-4947-aea2-ce14eff0ce13"))).abi_GetPreviewFrameAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.VideoFrame) GetPreviewFrameCopyAsync(Windows.Media.VideoFrame destination)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.VideoFrame) GetPreviewFrameAsync(Windows.Media.VideoFrame destination)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.VideoFrame) _ret;
-		Debug.OK((cast(Windows.Media.Capture.IMediaCapture4)this.asInterface(uuid("bacd6fd6-fb08-4947-aea2-ce14eff0ce13"))).abi_GetPreviewFrameCopyAsync(destination, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture4)this.asInterface(uuid("bacd6fd6-fb08-4947-aea2-ce14eff0ce13"))).abi_GetPreviewFrameAsync(destination, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnThermalStatusChanged(void delegate(Windows.Media.Capture.MediaCapture, IInspectable) fn)
@@ -4220,16 +4220,16 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IMediaCapture5)this.asInterface(uuid("da787c22-3a9b-4720-a71e-97900a316e5a"))).abi_CreateFrameReaderAsync(inputSource, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) CreateFrameReaderWithSubtypeAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, HSTRING outputSubtype)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) CreateFrameReaderAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, HSTRING outputSubtype)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) _ret;
-		Debug.OK((cast(Windows.Media.Capture.IMediaCapture5)this.asInterface(uuid("da787c22-3a9b-4720-a71e-97900a316e5a"))).abi_CreateFrameReaderWithSubtypeAsync(inputSource, outputSubtype, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture5)this.asInterface(uuid("da787c22-3a9b-4720-a71e-97900a316e5a"))).abi_CreateFrameReaderAsync(inputSource, outputSubtype, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) CreateFrameReaderWithSubtypeAndSizeAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, HSTRING outputSubtype, Windows.Graphics.Imaging.BitmapSize outputSize)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) CreateFrameReaderAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, HSTRING outputSubtype, Windows.Graphics.Imaging.BitmapSize outputSize)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) _ret;
-		Debug.OK((cast(Windows.Media.Capture.IMediaCapture5)this.asInterface(uuid("da787c22-3a9b-4720-a71e-97900a316e5a"))).abi_CreateFrameReaderWithSubtypeAndSizeAsync(inputSource, outputSubtype, outputSize, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.IMediaCapture5)this.asInterface(uuid("da787c22-3a9b-4720-a71e-97900a316e5a"))).abi_CreateFrameReaderAsync(inputSource, outputSubtype, outputSize, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnCaptureDeviceExclusiveControlStatusChanged(void delegate(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureDeviceExclusiveControlStatusChangedEventArgs) fn)

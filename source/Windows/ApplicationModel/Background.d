@@ -99,7 +99,7 @@ interface IApplicationTrigger_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_RequestAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.ApplicationTriggerResult)* return_result);
-	HRESULT abi_RequestAsyncWithArguments(Windows.Foundation.Collections.ValueSet arguments, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.ApplicationTriggerResult)* return_result);
+	HRESULT abi_RequestAsync(Windows.Foundation.Collections.ValueSet arguments, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.ApplicationTriggerResult)* return_result);
 }
 @uuid("0b468630-9574-492c-9e93-1a3ae6335fe9")
 @WinrtFactory("Windows.ApplicationModel.Background.ApplicationTrigger")
@@ -133,11 +133,11 @@ interface IBackgroundExecutionManagerStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_RequestAccessAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.BackgroundAccessStatus)* return_operation);
-	HRESULT abi_RequestAccessForApplicationAsync(HSTRING applicationId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.BackgroundAccessStatus)* return_operation);
+	HRESULT abi_RequestAccessAsync(HSTRING applicationId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.BackgroundAccessStatus)* return_operation);
 	HRESULT abi_RemoveAccess();
-	HRESULT abi_RemoveAccessForApplication(HSTRING applicationId);
+	HRESULT abi_RemoveAccess(HSTRING applicationId);
 	HRESULT abi_GetAccessStatus(Windows.ApplicationModel.Background.BackgroundAccessStatus* return_status);
-	HRESULT abi_GetAccessStatusForApplication(HSTRING applicationId, Windows.ApplicationModel.Background.BackgroundAccessStatus* return_status);
+	HRESULT abi_GetAccessStatus(HSTRING applicationId, Windows.ApplicationModel.Background.BackgroundAccessStatus* return_status);
 }
 
 @uuid("7d13d534-fd12-43ce-8c22-ea1ff13c06df")
@@ -479,8 +479,8 @@ extern(Windows):
 interface IDeviceServicingTrigger_Base : IInspectable
 {
 extern(Windows):
-	HRESULT abi_RequestAsyncSimple(HSTRING deviceId, Windows.Foundation.TimeSpan expectedDuration, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult)* return_result);
-	HRESULT abi_RequestAsyncWithArguments(HSTRING deviceId, Windows.Foundation.TimeSpan expectedDuration, HSTRING arguments, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult)* return_result);
+	HRESULT abi_RequestAsync(HSTRING deviceId, Windows.Foundation.TimeSpan expectedDuration, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult)* return_result);
+	HRESULT abi_RequestAsync(HSTRING deviceId, Windows.Foundation.TimeSpan expectedDuration, HSTRING arguments, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult)* return_result);
 }
 @uuid("1ab217ad-6e34-49d3-9e6f-17f1b6dfa881")
 @WinrtFactory("Windows.ApplicationModel.Background.DeviceServicingTrigger")
@@ -491,8 +491,8 @@ interface IDeviceServicingTrigger : IDeviceServicingTrigger_Base, Windows.Applic
 interface IDeviceUseTrigger_Base : IInspectable
 {
 extern(Windows):
-	HRESULT abi_RequestAsyncSimple(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult)* return_result);
-	HRESULT abi_RequestAsyncWithArguments(HSTRING deviceId, HSTRING arguments, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult)* return_result);
+	HRESULT abi_RequestAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult)* return_result);
+	HRESULT abi_RequestAsync(HSTRING deviceId, HSTRING arguments, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult)* return_result);
 }
 @uuid("0da68011-334f-4d57-b6ec-6dca64b412e4")
 @WinrtFactory("Windows.ApplicationModel.Background.DeviceUseTrigger")
@@ -548,7 +548,7 @@ extern(Windows):
 interface IGattCharacteristicNotificationTriggerFactory2 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateWithEventTriggeringMode(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic characteristic, Windows.Devices.Bluetooth.Background.BluetoothEventTriggeringMode eventTriggeringMode, Windows.ApplicationModel.Background.GattCharacteristicNotificationTrigger* return_result);
+	HRESULT abi_Create(Windows.Devices.Bluetooth.GenericAttributeProfile.GattCharacteristic characteristic, Windows.Devices.Bluetooth.Background.BluetoothEventTriggeringMode eventTriggeringMode, Windows.ApplicationModel.Background.GattCharacteristicNotificationTrigger* return_result);
 }
 
 @uuid("ddc6a3e9-1557-4bd8-8542-468aa0c696f6")
@@ -624,7 +624,7 @@ interface IMediaProcessingTrigger_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_RequestAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.MediaProcessingTriggerResult)* return_result);
-	HRESULT abi_RequestAsyncWithArguments(Windows.Foundation.Collections.ValueSet arguments, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.MediaProcessingTriggerResult)* return_result);
+	HRESULT abi_RequestAsync(Windows.Foundation.Collections.ValueSet arguments, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.MediaProcessingTriggerResult)* return_result);
 }
 @uuid("9a95be65-8a52-4b30-9011-cf38040ea8b0")
 @WinrtFactory("Windows.ApplicationModel.Background.MediaProcessingTrigger")
@@ -1010,10 +1010,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Background.IApplicationTrigger)this.asInterface(uuid("0b468630-9574-492c-9e93-1a3ae6335fe9"))).abi_RequestAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.ApplicationTriggerResult) RequestAsyncWithArguments(Windows.Foundation.Collections.ValueSet arguments)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.ApplicationTriggerResult) RequestAsync(Windows.Foundation.Collections.ValueSet arguments)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.ApplicationTriggerResult) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Background.IApplicationTrigger)this.asInterface(uuid("0b468630-9574-492c-9e93-1a3ae6335fe9"))).abi_RequestAsyncWithArguments(arguments, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Background.IApplicationTrigger)this.asInterface(uuid("0b468630-9574-492c-9e93-1a3ae6335fe9"))).abi_RequestAsync(arguments, &_ret));
 		return _ret;
 	}
 	static ApplicationTrigger New()
@@ -1059,19 +1059,19 @@ interface BackgroundExecutionManager
 		Debug.OK(staticInstance.abi_RequestAccessAsync(&_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.BackgroundAccessStatus) RequestAccessForApplicationAsync(HSTRING applicationId)
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.BackgroundAccessStatus) RequestAccessAsync(HSTRING applicationId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.BackgroundAccessStatus) _ret;
-		Debug.OK(staticInstance.abi_RequestAccessForApplicationAsync(applicationId, &_ret));
+		Debug.OK(staticInstance.abi_RequestAccessAsync(applicationId, &_ret));
 		return _ret;
 	}
 	static void RemoveAccess()
 	{
 		Debug.OK(staticInstance.abi_RemoveAccess());
 	}
-	static void RemoveAccessForApplication(HSTRING applicationId)
+	static void RemoveAccess(HSTRING applicationId)
 	{
-		Debug.OK(staticInstance.abi_RemoveAccessForApplication(applicationId));
+		Debug.OK(staticInstance.abi_RemoveAccess(applicationId));
 	}
 	static Windows.ApplicationModel.Background.BackgroundAccessStatus GetAccessStatus()
 	{
@@ -1079,10 +1079,10 @@ interface BackgroundExecutionManager
 		Debug.OK(staticInstance.abi_GetAccessStatus(&_ret));
 		return _ret;
 	}
-	static Windows.ApplicationModel.Background.BackgroundAccessStatus GetAccessStatusForApplication(HSTRING applicationId)
+	static Windows.ApplicationModel.Background.BackgroundAccessStatus GetAccessStatus(HSTRING applicationId)
 	{
 		Windows.ApplicationModel.Background.BackgroundAccessStatus _ret;
-		Debug.OK(staticInstance.abi_GetAccessStatusForApplication(applicationId, &_ret));
+		Debug.OK(staticInstance.abi_GetAccessStatus(applicationId, &_ret));
 		return _ret;
 	}
 }
@@ -1558,16 +1558,16 @@ extern(Windows):
 interface DeviceServicingTrigger : Windows.ApplicationModel.Background.IDeviceServicingTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 extern(Windows):
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult) RequestAsyncSimple(HSTRING deviceId, Windows.Foundation.TimeSpan expectedDuration)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult) RequestAsync(HSTRING deviceId, Windows.Foundation.TimeSpan expectedDuration)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Background.IDeviceServicingTrigger)this.asInterface(uuid("1ab217ad-6e34-49d3-9e6f-17f1b6dfa881"))).abi_RequestAsyncSimple(deviceId, expectedDuration, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Background.IDeviceServicingTrigger)this.asInterface(uuid("1ab217ad-6e34-49d3-9e6f-17f1b6dfa881"))).abi_RequestAsync(deviceId, expectedDuration, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult) RequestAsyncWithArguments(HSTRING deviceId, Windows.Foundation.TimeSpan expectedDuration, HSTRING arguments)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult) RequestAsync(HSTRING deviceId, Windows.Foundation.TimeSpan expectedDuration, HSTRING arguments)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Background.IDeviceServicingTrigger)this.asInterface(uuid("1ab217ad-6e34-49d3-9e6f-17f1b6dfa881"))).abi_RequestAsyncWithArguments(deviceId, expectedDuration, arguments, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Background.IDeviceServicingTrigger)this.asInterface(uuid("1ab217ad-6e34-49d3-9e6f-17f1b6dfa881"))).abi_RequestAsync(deviceId, expectedDuration, arguments, &_ret));
 		return _ret;
 	}
 	static DeviceServicingTrigger New()
@@ -1581,16 +1581,16 @@ extern(Windows):
 interface DeviceUseTrigger : Windows.ApplicationModel.Background.IDeviceUseTrigger, Windows.ApplicationModel.Background.IBackgroundTrigger
 {
 extern(Windows):
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult) RequestAsyncSimple(HSTRING deviceId)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult) RequestAsync(HSTRING deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Background.IDeviceUseTrigger)this.asInterface(uuid("0da68011-334f-4d57-b6ec-6dca64b412e4"))).abi_RequestAsyncSimple(deviceId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Background.IDeviceUseTrigger)this.asInterface(uuid("0da68011-334f-4d57-b6ec-6dca64b412e4"))).abi_RequestAsync(deviceId, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult) RequestAsyncWithArguments(HSTRING deviceId, HSTRING arguments)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult) RequestAsync(HSTRING deviceId, HSTRING arguments)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Background.IDeviceUseTrigger)this.asInterface(uuid("0da68011-334f-4d57-b6ec-6dca64b412e4"))).abi_RequestAsyncWithArguments(deviceId, arguments, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Background.IDeviceUseTrigger)this.asInterface(uuid("0da68011-334f-4d57-b6ec-6dca64b412e4"))).abi_RequestAsync(deviceId, arguments, &_ret));
 		return _ret;
 	}
 	static DeviceUseTrigger New()
@@ -1747,10 +1747,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Background.IMediaProcessingTrigger)this.asInterface(uuid("9a95be65-8a52-4b30-9011-cf38040ea8b0"))).abi_RequestAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.MediaProcessingTriggerResult) RequestAsyncWithArguments(Windows.Foundation.Collections.ValueSet arguments)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.MediaProcessingTriggerResult) RequestAsync(Windows.Foundation.Collections.ValueSet arguments)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.MediaProcessingTriggerResult) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Background.IMediaProcessingTrigger)this.asInterface(uuid("9a95be65-8a52-4b30-9011-cf38040ea8b0"))).abi_RequestAsyncWithArguments(arguments, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Background.IMediaProcessingTrigger)this.asInterface(uuid("9a95be65-8a52-4b30-9011-cf38040ea8b0"))).abi_RequestAsync(arguments, &_ret));
 		return _ret;
 	}
 	static MediaProcessingTrigger New()

@@ -713,7 +713,7 @@ extern(Windows):
 	HRESULT get_IsVideoFrameServerEnabled(bool* return_value);
 	HRESULT set_IsVideoFrameServerEnabled(bool value);
 	HRESULT abi_CopyFrameToVideoSurface(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface destination);
-	HRESULT abi_CopyFrameToVideoSurfaceWithTargetRectangle(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface destination, Windows.Foundation.Rect targetRectangle);
+	HRESULT abi_CopyFrameToVideoSurface(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface destination, Windows.Foundation.Rect targetRectangle);
 	HRESULT abi_CopyFrameToStereoscopicVideoSurfaces(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface destinationLeftEye, Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface destinationRightEye);
 }
 
@@ -2928,9 +2928,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer5)this.asInterface(uuid("cfe537fd-f86a-4446-bf4d-c8e792b7b4b3"))).abi_CopyFrameToVideoSurface(destination));
 	}
-	final void CopyFrameToVideoSurfaceWithTargetRectangle(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface destination, Windows.Foundation.Rect targetRectangle)
+	final void CopyFrameToVideoSurface(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface destination, Windows.Foundation.Rect targetRectangle)
 	{
-		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer5)this.asInterface(uuid("cfe537fd-f86a-4446-bf4d-c8e792b7b4b3"))).abi_CopyFrameToVideoSurfaceWithTargetRectangle(destination, targetRectangle));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer5)this.asInterface(uuid("cfe537fd-f86a-4446-bf4d-c8e792b7b4b3"))).abi_CopyFrameToVideoSurface(destination, targetRectangle));
 	}
 	final void CopyFrameToStereoscopicVideoSurfaces(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface destinationLeftEye, Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface destinationRightEye)
 	{
