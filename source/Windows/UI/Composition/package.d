@@ -948,6 +948,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Composition.IColorKeyFrameAnimation)this.asInterface(uuid("93adb5e9-8e05-4593-84a3-dca152781e56"))).abi_InsertKeyFrameWithEasingFunction(normalizedProgressKey, value, easingFunction));
 	}
+	alias InsertKeyFrame = InsertKeyFrameWithEasingFunction;
 }
 
 interface CompositionAnimation : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.ICompositionAnimation, Windows.UI.Composition.ICompositionAnimation2, Windows.UI.Composition.ICompositionAnimationBase
@@ -1363,6 +1364,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Composition.ICompositionDrawingSurface2)this.asInterface(uuid("fad0e88b-e354-44e8-8e3d-c4880d5a213f"))).abi_ScrollRect(offset, scrollRect));
 	}
+	alias Scroll = ScrollRect;
 	final void ScrollWithClip(Windows.Graphics.PointInt32 offset, Windows.Graphics.RectInt32 clipRect)
 	{
 		Debug.OK((cast(Windows.UI.Composition.ICompositionDrawingSurface2)this.asInterface(uuid("fad0e88b-e354-44e8-8e3d-c4880d5a213f"))).abi_ScrollWithClip(offset, clipRect));
@@ -1371,6 +1373,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Composition.ICompositionDrawingSurface2)this.asInterface(uuid("fad0e88b-e354-44e8-8e3d-c4880d5a213f"))).abi_ScrollRectWithClip(offset, clipRect, scrollRect));
 	}
+	alias ScrollWithClip = ScrollRectWithClip;
 }
 @makable!(CompositionDrawingSurface, CompositionDrawingSurface, Windows.UI.Composition.ICompositionDrawingSurfaceFactory)
 class CompositionDrawingSurfaceT(Base) : AgileObject!Base, CompositionDrawingSurface
@@ -1710,6 +1713,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Composition.ICompositionNineGridBrush)this.asInterface(uuid("f25154e4-bc8c-4be7-b80f-8685b83c0186"))).abi_SetInsetsWithValues(left, top, right, bottom));
 	}
+	alias SetInsets = SetInsetsWithValues;
 	final void SetInsetScales(float scale)
 	{
 		Debug.OK((cast(Windows.UI.Composition.ICompositionNineGridBrush)this.asInterface(uuid("f25154e4-bc8c-4be7-b80f-8685b83c0186"))).abi_SetInsetScales(scale));
@@ -1718,6 +1722,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Composition.ICompositionNineGridBrush)this.asInterface(uuid("f25154e4-bc8c-4be7-b80f-8685b83c0186"))).abi_SetInsetScalesWithValues(left, top, right, bottom));
 	}
+	alias SetInsetScales = SetInsetScalesWithValues;
 }
 
 interface CompositionObject : Windows.UI.Composition.ICompositionObject, Windows.Foundation.IClosable, Windows.UI.Composition.ICompositionObject2
@@ -2188,6 +2193,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Composition.ICompositor)this.asInterface(uuid("b403ca50-7f8c-4e83-985f-cc45060036d8"))).abi_CreateColorBrushWithColor(color, &_ret));
 		return _ret;
 	}
+	alias CreateColorBrush = CreateColorBrushWithColor;
 	final Windows.UI.Composition.ContainerVisual CreateContainerVisual()
 	{
 		Windows.UI.Composition.ContainerVisual _ret;
@@ -2212,6 +2218,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Composition.ICompositor)this.asInterface(uuid("b403ca50-7f8c-4e83-985f-cc45060036d8"))).abi_CreateEffectFactoryWithProperties(graphicsEffect, animatableProperties, &_ret));
 		return _ret;
 	}
+	alias CreateEffectFactory = CreateEffectFactoryWithProperties;
 	final Windows.UI.Composition.ExpressionAnimation CreateExpressionAnimation()
 	{
 		Windows.UI.Composition.ExpressionAnimation _ret;
@@ -2224,6 +2231,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Composition.ICompositor)this.asInterface(uuid("b403ca50-7f8c-4e83-985f-cc45060036d8"))).abi_CreateExpressionAnimationWithExpression(expression, &_ret));
 		return _ret;
 	}
+	alias CreateExpressionAnimation = CreateExpressionAnimationWithExpression;
 	final Windows.UI.Composition.InsetClip CreateInsetClip()
 	{
 		Windows.UI.Composition.InsetClip _ret;
@@ -2236,6 +2244,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Composition.ICompositor)this.asInterface(uuid("b403ca50-7f8c-4e83-985f-cc45060036d8"))).abi_CreateInsetClipWithInsets(leftInset, topInset, rightInset, bottomInset, &_ret));
 		return _ret;
 	}
+	alias CreateInsetClip = CreateInsetClipWithInsets;
 	final Windows.UI.Composition.LinearEasingFunction CreateLinearEasingFunction()
 	{
 		Windows.UI.Composition.LinearEasingFunction _ret;
@@ -2284,6 +2293,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Composition.ICompositor)this.asInterface(uuid("b403ca50-7f8c-4e83-985f-cc45060036d8"))).abi_CreateSurfaceBrushWithSurface(surface, &_ret));
 		return _ret;
 	}
+	alias CreateSurfaceBrush = CreateSurfaceBrushWithSurface;
 	final Windows.UI.Composition.CompositionTarget CreateTargetForCurrentView()
 	{
 		Windows.UI.Composition.CompositionTarget _ret;
@@ -2396,6 +2406,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Composition.ICompositor2)this.asInterface(uuid("735081dc-5e24-45da-a38f-e32cc349a9a0"))).abi_CreateStepEasingFunctionWithStepCount(stepCount, &_ret));
 		return _ret;
 	}
+	alias CreateStepEasingFunction = CreateStepEasingFunctionWithStepCount;
 	final Windows.UI.Composition.CompositionBackdropBrush CreateHostBackdropBrush()
 	{
 		Windows.UI.Composition.CompositionBackdropBrush _ret;
@@ -2773,6 +2784,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Composition.IKeyFrameAnimation)this.asInterface(uuid("126e7f22-3ae9-4540-9a8a-deae8a4a4a84"))).abi_InsertExpressionKeyFrameWithEasingFunction(normalizedProgressKey, value, easingFunction));
 	}
+	alias InsertExpressionKeyFrame = InsertExpressionKeyFrameWithEasingFunction;
 	final Windows.UI.Composition.AnimationDirection Direction()
 	{
 		Windows.UI.Composition.AnimationDirection _ret;
@@ -2954,6 +2966,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Composition.IQuaternionKeyFrameAnimation)this.asInterface(uuid("404e5835-ecf6-4240-8520-671279cf36bc"))).abi_InsertKeyFrameWithEasingFunction(normalizedProgressKey, value, easingFunction));
 	}
+	alias InsertKeyFrame = InsertKeyFrameWithEasingFunction;
 }
 
 interface RenderingDeviceReplacedEventArgs : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.IRenderingDeviceReplacedEventArgs
@@ -2978,6 +2991,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Composition.IScalarKeyFrameAnimation)this.asInterface(uuid("ae288fa9-252c-4b95-a725-bf85e38000a1"))).abi_InsertKeyFrameWithEasingFunction(normalizedProgressKey, value, easingFunction));
 	}
+	alias InsertKeyFrame = InsertKeyFrameWithEasingFunction;
 }
 
 interface SpotLight : Windows.UI.Composition.CompositionLight, Windows.UI.Composition.ISpotLight
@@ -3196,6 +3210,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Composition.IVector2KeyFrameAnimation)this.asInterface(uuid("df414515-4e29-4f11-b55e-bf2a6eb36294"))).abi_InsertKeyFrameWithEasingFunction(normalizedProgressKey, value, easingFunction));
 	}
+	alias InsertKeyFrame = InsertKeyFrameWithEasingFunction;
 }
 
 interface Vector3KeyFrameAnimation : Windows.UI.Composition.KeyFrameAnimation, Windows.UI.Composition.IVector3KeyFrameAnimation
@@ -3209,6 +3224,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Composition.IVector3KeyFrameAnimation)this.asInterface(uuid("c8039daa-a281-43c2-a73d-b68e3c533c40"))).abi_InsertKeyFrameWithEasingFunction(normalizedProgressKey, value, easingFunction));
 	}
+	alias InsertKeyFrame = InsertKeyFrameWithEasingFunction;
 }
 
 interface Vector4KeyFrameAnimation : Windows.UI.Composition.KeyFrameAnimation, Windows.UI.Composition.IVector4KeyFrameAnimation
@@ -3222,6 +3238,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Composition.IVector4KeyFrameAnimation)this.asInterface(uuid("2457945b-addd-4385-9606-b6a3d5e4e1b9"))).abi_InsertKeyFrameWithEasingFunction(normalizedProgressKey, value, easingFunction));
 	}
+	alias InsertKeyFrame = InsertKeyFrameWithEasingFunction;
 }
 
 interface Visual : Windows.UI.Composition.CompositionObject, Windows.UI.Composition.IVisual, Windows.UI.Composition.IVisual2

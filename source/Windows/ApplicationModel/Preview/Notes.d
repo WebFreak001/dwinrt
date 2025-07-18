@@ -178,10 +178,12 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2)this.asInterface(uuid("edfe864a-1f54-4b09-9823-ff477f6fa3bc"))).abi_ShowNoteRelativeToWithOptions(noteViewId, anchorNoteViewId, options));
 	}
+	alias ShowNoteRelativeTo = ShowNoteRelativeToWithOptions;
 	final void ShowNoteWithPlacementWithOptions(INT32 noteViewId, Windows.Storage.Streams.IBuffer data, Windows.ApplicationModel.Preview.Notes.NotesWindowManagerPreviewShowNoteOptions options)
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2)this.asInterface(uuid("edfe864a-1f54-4b09-9823-ff477f6fa3bc"))).abi_ShowNoteWithPlacementWithOptions(noteViewId, data, options));
 	}
+	alias ShowNoteWithPlacement = ShowNoteWithPlacementWithOptions;
 	final void SetFocusToPreviousView()
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Preview.Notes.INotesWindowManagerPreview2)this.asInterface(uuid("edfe864a-1f54-4b09-9823-ff477f6fa3bc"))).abi_SetFocusToPreviousView());

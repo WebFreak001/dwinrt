@@ -204,6 +204,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsyncOverloadDefault(&_ret));
 		return _ret;
 	}
+	alias SavePropertiesAsync = SavePropertiesAsyncOverloadDefault;
 }
 
 interface DocumentProperties : Windows.Storage.FileProperties.IDocumentProperties, Windows.Storage.FileProperties.IStorageItemExtraProperties
@@ -259,6 +260,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsyncOverloadDefault(&_ret));
 		return _ret;
 	}
+	alias SavePropertiesAsync = SavePropertiesAsyncOverloadDefault;
 }
 
 interface GeotagHelper
@@ -402,6 +404,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsyncOverloadDefault(&_ret));
 		return _ret;
 	}
+	alias SavePropertiesAsync = SavePropertiesAsyncOverloadDefault;
 }
 
 interface MusicProperties : Windows.Storage.FileProperties.IMusicProperties, Windows.Storage.FileProperties.IStorageItemExtraProperties
@@ -557,6 +560,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsyncOverloadDefault(&_ret));
 		return _ret;
 	}
+	alias SavePropertiesAsync = SavePropertiesAsyncOverloadDefault;
 }
 
 interface StorageItemContentProperties : Windows.Storage.FileProperties.IStorageItemContentProperties, Windows.Storage.FileProperties.IStorageItemExtraProperties
@@ -604,6 +608,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsyncOverloadDefault(&_ret));
 		return _ret;
 	}
+	alias SavePropertiesAsync = SavePropertiesAsyncOverloadDefault;
 }
 
 interface StorageItemThumbnail : Windows.Storage.Streams.IRandomAccessStreamWithContentType, Windows.Storage.Streams.IContentTypeProvider, Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream, Windows.Storage.FileProperties.IThumbnailProperties
@@ -850,6 +855,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.FileProperties.IStorageItemExtraProperties)this.asInterface(uuid("c54361b2-54cd-432b-bdbc-4b19c4b470d7"))).abi_SavePropertiesAsyncOverloadDefault(&_ret));
 		return _ret;
 	}
+	alias SavePropertiesAsync = SavePropertiesAsyncOverloadDefault;
 }
 
 enum PhotoOrientation

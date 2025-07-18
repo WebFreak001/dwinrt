@@ -464,6 +464,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStoreAvailability)this.asInterface(uuid("fa060325-0ffd-4493-ad43-f1f9918f69fa"))).abi_RequestPurchaseWithPurchasePropertiesAsync(storePurchaseProperties, &_ret));
 		return _ret;
 	}
+	alias RequestPurchaseAsync = RequestPurchaseWithPurchasePropertiesAsync;
 }
 
 interface StoreCollectionData : Windows.Services.Store.IStoreCollectionData
@@ -651,6 +652,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStoreContext)this.asInterface(uuid("ac98b6be-f4fd-4912-babd-5035e5e8bcab"))).abi_RequestPurchaseWithPurchasePropertiesAsync(storeId, storePurchaseProperties, &_ret));
 		return _ret;
 	}
+	alias RequestPurchaseAsync = RequestPurchaseWithPurchasePropertiesAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Services.Store.StorePackageUpdate)) GetAppAndOptionalStorePackageUpdatesAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Services.Store.StorePackageUpdate)) _ret;
@@ -987,6 +989,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStoreProduct)this.asInterface(uuid("320e2c52-d760-450a-a42b-67d1e901ac90"))).abi_RequestPurchaseWithPurchasePropertiesAsync(storePurchaseProperties, &_ret));
 		return _ret;
 	}
+	alias RequestPurchaseAsync = RequestPurchaseWithPurchasePropertiesAsync;
 	final HSTRING InAppOfferToken()
 	{
 		HSTRING _ret;
@@ -1257,6 +1260,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStoreSku)this.asInterface(uuid("397e6f55-4440-4f03-863c-91f3fec83d79"))).abi_RequestPurchaseWithPurchasePropertiesAsync(storePurchaseProperties, &_ret));
 		return _ret;
 	}
+	alias RequestPurchaseAsync = RequestPurchaseWithPurchasePropertiesAsync;
 	final bool IsSubscription()
 	{
 		bool _ret;

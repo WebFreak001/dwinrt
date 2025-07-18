@@ -171,6 +171,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService)this.asInterface(uuid("ae81ff1f-c5a1-4c40-8c28-f3efd69062f3"))).abi_GetSdpRawAttributesWithCacheModeAsync(cacheMode, &_ret));
 		return _ret;
 	}
+	alias GetSdpRawAttributesAsync = GetSdpRawAttributesWithCacheModeAsync;
 	final Windows.Devices.Bluetooth.BluetoothDevice Device()
 	{
 		Windows.Devices.Bluetooth.BluetoothDevice _ret;
@@ -336,6 +337,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProvider2)this.asInterface(uuid("736bdfc6-3c81-4d1e-baf2-ddbb81284512"))).abi_StartAdvertisingWithRadioDiscoverability(listener, radioDiscoverable));
 	}
+	alias StartAdvertising = StartAdvertisingWithRadioDiscoverability;
 
 	private static Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProviderStatics _staticInstance;
 	public static Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceProviderStatics staticInstance()

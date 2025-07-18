@@ -3,10 +3,9 @@
 	"authors": [
 		"webfreak"
 	],
+	"targetType": "library",
 	"dependencies": {
-		"sha1ct": {
-			"path": "../sha1ct"
-		}
+		"sha1ct": "~>1.0.0"
 	},
 	"description": "WinRT for D",
 	"copyright": "Copyright © 2017, webfreak",

@@ -396,6 +396,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateResponseWithTiles(message, contentTiles, &_ret));
 		return _ret;
 	}
+	alias CreateResponse = CreateResponseWithTiles;
 	static Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse CreateResponseForPrompt(Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage message, Windows.ApplicationModel.VoiceCommands.VoiceCommandUserMessage repeatMessage)
 	{
 		Windows.ApplicationModel.VoiceCommands.VoiceCommandResponse _ret;
@@ -408,6 +409,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateResponseForPromptWithTiles(message, repeatMessage, contentTiles, &_ret));
 		return _ret;
 	}
+	alias CreateResponseForPrompt = CreateResponseForPromptWithTiles;
 }
 
 interface VoiceCommandServiceConnection : Windows.ApplicationModel.VoiceCommands.IVoiceCommandServiceConnection

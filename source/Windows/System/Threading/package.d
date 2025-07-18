@@ -74,12 +74,14 @@ interface ThreadPool
 		Debug.OK(staticInstance.abi_RunWithPriorityAsync(handler, priority, &_ret));
 		return _ret;
 	}
+	alias RunAsync = RunWithPriorityAsync;
 	static Windows.Foundation.IAsyncAction RunWithPriorityAndOptionsAsync(Windows.System.Threading.WorkItemHandler handler, Windows.System.Threading.WorkItemPriority priority, Windows.System.Threading.WorkItemOptions options)
 	{
 		Windows.Foundation.IAsyncAction _ret;
 		Debug.OK(staticInstance.abi_RunWithPriorityAndOptionsAsync(handler, priority, options, &_ret));
 		return _ret;
 	}
+	alias RunAsync = RunWithPriorityAndOptionsAsync;
 }
 
 interface ThreadPoolTimer : Windows.System.Threading.IThreadPoolTimer
@@ -126,12 +128,14 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreatePeriodicTimerWithCompletion(handler, period, destroyed, &_ret));
 		return _ret;
 	}
+	alias CreatePeriodicTimer = CreatePeriodicTimerWithCompletion;
 	static Windows.System.Threading.ThreadPoolTimer CreateTimerWithCompletion(Windows.System.Threading.TimerElapsedHandler handler, Windows.Foundation.TimeSpan delay, Windows.System.Threading.TimerDestroyedHandler destroyed)
 	{
 		Windows.System.Threading.ThreadPoolTimer _ret;
 		Debug.OK(staticInstance.abi_CreateTimerWithCompletion(handler, delay, destroyed, &_ret));
 		return _ret;
 	}
+	alias CreateTimer = CreateTimerWithCompletion;
 }
 
 @bitflags

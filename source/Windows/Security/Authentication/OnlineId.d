@@ -113,6 +113,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator)this.asInterface(uuid("a003f58a-29ab-4817-b884-d7516dad18b9"))).abi_AuthenticateUserAsyncAdvanced(requests, credentialPromptType, &_ret));
 		return _ret;
 	}
+	alias AuthenticateUserAsync = AuthenticateUserAsyncAdvanced;
 	final Windows.Security.Authentication.OnlineId.SignOutUserOperation SignOutUserAsync()
 	{
 		Windows.Security.Authentication.OnlineId.SignOutUserOperation _ret;

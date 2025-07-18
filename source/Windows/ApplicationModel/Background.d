@@ -1016,6 +1016,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Background.IApplicationTrigger)this.asInterface(uuid("0b468630-9574-492c-9e93-1a3ae6335fe9"))).abi_RequestAsyncWithArguments(arguments, &_ret));
 		return _ret;
 	}
+	alias RequestAsync = RequestAsyncWithArguments;
 	static ApplicationTrigger New()
 	{
 		IInspectable ret;
@@ -1065,6 +1066,7 @@ interface BackgroundExecutionManager
 		Debug.OK(staticInstance.abi_RequestAccessForApplicationAsync(applicationId, &_ret));
 		return _ret;
 	}
+	alias RequestAccessAsync = RequestAccessForApplicationAsync;
 	static void RemoveAccess()
 	{
 		Debug.OK(staticInstance.abi_RemoveAccess());
@@ -1073,6 +1075,7 @@ interface BackgroundExecutionManager
 	{
 		Debug.OK(staticInstance.abi_RemoveAccessForApplication(applicationId));
 	}
+	alias RemoveAccess = RemoveAccessForApplication;
 	static Windows.ApplicationModel.Background.BackgroundAccessStatus GetAccessStatus()
 	{
 		Windows.ApplicationModel.Background.BackgroundAccessStatus _ret;
@@ -1085,6 +1088,7 @@ interface BackgroundExecutionManager
 		Debug.OK(staticInstance.abi_GetAccessStatusForApplication(applicationId, &_ret));
 		return _ret;
 	}
+	alias GetAccessStatus = GetAccessStatusForApplication;
 }
 
 interface BackgroundTaskBuilder : Windows.ApplicationModel.Background.IBackgroundTaskBuilder, Windows.ApplicationModel.Background.IBackgroundTaskBuilder2, Windows.ApplicationModel.Background.IBackgroundTaskBuilder3, Windows.ApplicationModel.Background.IBackgroundTaskBuilder4
@@ -1564,12 +1568,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Background.IDeviceServicingTrigger)this.asInterface(uuid("1ab217ad-6e34-49d3-9e6f-17f1b6dfa881"))).abi_RequestAsyncSimple(deviceId, expectedDuration, &_ret));
 		return _ret;
 	}
+	alias RequestAsync = RequestAsyncSimple;
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult) RequestAsyncWithArguments(HSTRING deviceId, Windows.Foundation.TimeSpan expectedDuration, HSTRING arguments)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult) _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Background.IDeviceServicingTrigger)this.asInterface(uuid("1ab217ad-6e34-49d3-9e6f-17f1b6dfa881"))).abi_RequestAsyncWithArguments(deviceId, expectedDuration, arguments, &_ret));
 		return _ret;
 	}
+	alias RequestAsync = RequestAsyncWithArguments;
 	static DeviceServicingTrigger New()
 	{
 		IInspectable ret;
@@ -1587,12 +1593,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Background.IDeviceUseTrigger)this.asInterface(uuid("0da68011-334f-4d57-b6ec-6dca64b412e4"))).abi_RequestAsyncSimple(deviceId, &_ret));
 		return _ret;
 	}
+	alias RequestAsync = RequestAsyncSimple;
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult) RequestAsyncWithArguments(HSTRING deviceId, HSTRING arguments)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Background.DeviceTriggerResult) _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Background.IDeviceUseTrigger)this.asInterface(uuid("0da68011-334f-4d57-b6ec-6dca64b412e4"))).abi_RequestAsyncWithArguments(deviceId, arguments, &_ret));
 		return _ret;
 	}
+	alias RequestAsync = RequestAsyncWithArguments;
 	static DeviceUseTrigger New()
 	{
 		IInspectable ret;
@@ -1637,6 +1645,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Background.IGattCharacteristicNotificationTriggerFactory)factory.asInterface(uuid("57ba1995-b143-4575-9f6b-fd59d93ace1a"))).abi_Create(characteristic, &_ret));
 		return _ret;
 	}
+	alias Create = New;
 }
 
 interface GattServiceProviderTrigger : Windows.ApplicationModel.Background.IBackgroundTrigger, Windows.ApplicationModel.Background.IGattServiceProviderTrigger
@@ -1753,6 +1762,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Background.IMediaProcessingTrigger)this.asInterface(uuid("9a95be65-8a52-4b30-9011-cf38040ea8b0"))).abi_RequestAsyncWithArguments(arguments, &_ret));
 		return _ret;
 	}
+	alias RequestAsync = RequestAsyncWithArguments;
 	static MediaProcessingTrigger New()
 	{
 		IInspectable ret;

@@ -1069,6 +1069,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetSystemHistoryWithDurationAsync(fromTime, duration, &_ret));
 		return _ret;
 	}
+	alias GetSystemHistoryAsync = GetSystemHistoryWithDurationAsync;
 }
 
 interface ActivitySensorReading : Windows.Devices.Sensors.IActivitySensorReading
@@ -2017,6 +2018,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetSystemHistoryWithDurationAsync(fromTime, duration, &_ret));
 		return _ret;
 	}
+	alias GetSystemHistoryAsync = GetSystemHistoryWithDurationAsync;
 }
 
 interface PedometerDataThreshold : Windows.Devices.Sensors.ISensorDataThreshold

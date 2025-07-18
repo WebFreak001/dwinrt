@@ -363,6 +363,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore2)this.asInterface(uuid("b1e0aef7-9560-4631-8af0-061d30161469"))).abi_CreateAccountWithPackageRelativeAppIdAsync(userDisplayName, packageRelativeAppId, &_ret));
 		return _ret;
 	}
+	alias CreateAccountAsync = CreateAccountWithPackageRelativeAppIdAsync;
 	final EventRegistrationToken OnStoreChanged(void delegate(Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore, Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
@@ -379,6 +380,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStore3)this.asInterface(uuid("8142c094-f3c9-478b-b117-6585bebb6789"))).abi_CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(userDisplayName, packageRelativeAppId, enterpriseId, &_ret));
 		return _ret;
 	}
+	alias CreateAccountAsync = CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync;
 }
 
 interface UserDataAccountStoreChangedEventArgs : Windows.ApplicationModel.UserDataAccounts.IUserDataAccountStoreChangedEventArgs

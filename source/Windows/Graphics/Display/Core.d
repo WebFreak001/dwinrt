@@ -92,12 +92,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayInformation)this.asInterface(uuid("130b3c0a-f565-476e-abd5-ea05aee74c69"))).abi_RequestSetCurrentDisplayModeWithHdrAsync(mode, hdrOption, &_ret));
 		return _ret;
 	}
+	alias RequestSetCurrentDisplayModeAsync = RequestSetCurrentDisplayModeWithHdrAsync;
 	final Windows.Foundation.IAsyncOperation!(bool) RequestSetCurrentDisplayModeWithHdrAndMetadataAsync(Windows.Graphics.Display.Core.HdmiDisplayMode mode, Windows.Graphics.Display.Core.HdmiDisplayHdrOption hdrOption, Windows.Graphics.Display.Core.HdmiDisplayHdr2086Metadata hdrMetadata)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
 		Debug.OK((cast(Windows.Graphics.Display.Core.IHdmiDisplayInformation)this.asInterface(uuid("130b3c0a-f565-476e-abd5-ea05aee74c69"))).abi_RequestSetCurrentDisplayModeWithHdrAndMetadataAsync(mode, hdrOption, hdrMetadata, &_ret));
 		return _ret;
 	}
+	alias RequestSetCurrentDisplayModeAsync = RequestSetCurrentDisplayModeWithHdrAndMetadataAsync;
 	final EventRegistrationToken OnDisplayModesChanged(void delegate(Windows.Graphics.Display.Core.HdmiDisplayInformation, IInspectable) fn)
 	{
 		EventRegistrationToken tok;

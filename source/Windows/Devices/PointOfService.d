@@ -2649,6 +2649,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDeviceSelectorWithConnectionTypes(connectionTypes, &_ret));
 		return _ret;
 	}
+	alias GetDeviceSelector = GetDeviceSelectorWithConnectionTypes;
 }
 
 interface ClaimedMagneticStripeReader : Windows.Devices.PointOfService.IClaimedMagneticStripeReader, Windows.Foundation.IClosable
@@ -3290,6 +3291,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_PrintNewline());
 	}
+	alias PrintLine = PrintNewline;
 	final Windows.Foundation.IAsyncOperation!(bool) ExecuteAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
@@ -3467,6 +3469,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDeviceSelectorWithConnectionTypes(connectionTypes, &_ret));
 		return _ret;
 	}
+	alias GetDeviceSelector = GetDeviceSelectorWithConnectionTypes;
 }
 
 interface LineDisplayCapabilities : Windows.Devices.PointOfService.ILineDisplayCapabilities
@@ -3619,12 +3622,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.PointOfService.ILineDisplayWindow)this.asInterface(uuid("d21feef4-2364-4be5-bee1-851680af4964"))).abi_TryDisplayTextAtPositionAsync(text, displayAttribute, startPosition, &_ret));
 		return _ret;
 	}
+	alias TryDisplayTextAsync = TryDisplayTextAtPositionAsync;
 	final Windows.Foundation.IAsyncOperation!(bool) TryDisplayTextNormalAsync(HSTRING text)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
 		Debug.OK((cast(Windows.Devices.PointOfService.ILineDisplayWindow)this.asInterface(uuid("d21feef4-2364-4be5-bee1-851680af4964"))).abi_TryDisplayTextNormalAsync(text, &_ret));
 		return _ret;
 	}
+	alias TryDisplayTextAsync = TryDisplayTextNormalAsync;
 	final Windows.Foundation.IAsyncOperation!(bool) TryScrollTextAsync(Windows.Devices.PointOfService.LineDisplayScrollDirection direction, UINT32 numberOfColumnsOrRows)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
@@ -4429,6 +4434,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptPrintJob)this.asInterface(uuid("aa96066e-acad-4b79-9d0f-c0cfc08dc77b"))).abi_CutPaperDefault());
 	}
+	alias CutPaper = CutPaperDefault;
 	final void SetBarcodeRotation(Windows.Devices.PointOfService.PosPrinterRotation value)
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_SetBarcodeRotation(value));
@@ -4449,6 +4455,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_SetBitmapCustomWidthStandardAlign(bitmapNumber, bitmap, alignment, width));
 	}
+	alias SetBitmap = SetBitmapCustomWidthStandardAlign;
 	final void SetCustomAlignedBitmap(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance)
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_SetCustomAlignedBitmap(bitmapNumber, bitmap, alignmentDistance));
@@ -4457,6 +4464,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_SetBitmapCustomWidthCustomAlign(bitmapNumber, bitmap, alignmentDistance, width));
 	}
+	alias SetCustomAlignedBitmap = SetBitmapCustomWidthCustomAlign;
 	final void PrintSavedBitmap(UINT32 bitmapNumber)
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintSavedBitmap(bitmapNumber));
@@ -4481,6 +4489,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintBitmapCustomWidthStandardAlign(bitmap, alignment, width));
 	}
+	alias PrintBitmap = PrintBitmapCustomWidthStandardAlign;
 	final void PrintCustomAlignedBitmap(Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance)
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintCustomAlignedBitmap(bitmap, alignmentDistance));
@@ -4489,6 +4498,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintBitmapCustomWidthCustomAlign(bitmap, alignmentDistance, width));
 	}
+	alias PrintCustomAlignedBitmap = PrintBitmapCustomWidthCustomAlign;
 	final void Print(HSTRING data)
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_Print(data));
@@ -4501,6 +4511,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_PrintNewline());
 	}
+	alias PrintLine = PrintNewline;
 	final Windows.Foundation.IAsyncOperation!(bool) ExecuteAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
@@ -4687,6 +4698,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_SetBitmapCustomWidthStandardAlign(bitmapNumber, bitmap, alignment, width));
 	}
+	alias SetBitmap = SetBitmapCustomWidthStandardAlign;
 	final void SetCustomAlignedBitmap(UINT32 bitmapNumber, Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance)
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_SetCustomAlignedBitmap(bitmapNumber, bitmap, alignmentDistance));
@@ -4695,6 +4707,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_SetBitmapCustomWidthCustomAlign(bitmapNumber, bitmap, alignmentDistance, width));
 	}
+	alias SetCustomAlignedBitmap = SetBitmapCustomWidthCustomAlign;
 	final void PrintSavedBitmap(UINT32 bitmapNumber)
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintSavedBitmap(bitmapNumber));
@@ -4719,6 +4732,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintBitmapCustomWidthStandardAlign(bitmap, alignment, width));
 	}
+	alias PrintBitmap = PrintBitmapCustomWidthStandardAlign;
 	final void PrintCustomAlignedBitmap(Windows.Graphics.Imaging.BitmapFrame bitmap, UINT32 alignmentDistance)
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintCustomAlignedBitmap(bitmap, alignmentDistance));
@@ -4727,6 +4741,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IReceiptOrSlipJob)this.asInterface(uuid("532199be-c8c3-4dc2-89e9-5c4a37b34ddc"))).abi_PrintBitmapCustomWidthCustomAlign(bitmap, alignmentDistance, width));
 	}
+	alias PrintCustomAlignedBitmap = PrintBitmapCustomWidthCustomAlign;
 	final void Print(HSTRING data)
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_Print(data));
@@ -4739,6 +4754,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.PointOfService.IPosPrinterJob)this.asInterface(uuid("9a94005c-0615-4591-a58f-30f87edfe2e4"))).abi_PrintNewline());
 	}
+	alias PrintLine = PrintNewline;
 	final Windows.Foundation.IAsyncOperation!(bool) ExecuteAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;

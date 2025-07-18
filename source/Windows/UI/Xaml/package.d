@@ -1935,6 +1935,7 @@ extern(Windows):
 	{
 		Debug.OK(staticInstance.abi_LoadComponentWithResourceLocation(component, resourceLocator, componentResourceLocation));
 	}
+	alias LoadComponent = LoadComponentWithResourceLocation;
 	static Application New()
 	{
 		IInspectable outer, inner;
@@ -2720,6 +2721,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.IDragUI)this.asInterface(uuid("2d9bd838-7c60-4842-9170-346fe10a226a"))).abi_SetContentFromBitmapImageWithAnchorPoint(bitmapImage, anchorPoint));
 	}
+	alias SetContentFromBitmapImage = SetContentFromBitmapImageWithAnchorPoint;
 	final void SetContentFromSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap)
 	{
 		Debug.OK((cast(Windows.UI.Xaml.IDragUI)this.asInterface(uuid("2d9bd838-7c60-4842-9170-346fe10a226a"))).abi_SetContentFromSoftwareBitmap(softwareBitmap));
@@ -2728,6 +2730,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.IDragUI)this.asInterface(uuid("2d9bd838-7c60-4842-9170-346fe10a226a"))).abi_SetContentFromSoftwareBitmapWithAnchorPoint(softwareBitmap, anchorPoint));
 	}
+	alias SetContentFromSoftwareBitmap = SetContentFromSoftwareBitmapWithAnchorPoint;
 	final void SetContentFromDataPackage()
 	{
 		Debug.OK((cast(Windows.UI.Xaml.IDragUI)this.asInterface(uuid("2d9bd838-7c60-4842-9170-346fe10a226a"))).abi_SetContentFromDataPackage());
@@ -2789,6 +2792,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).abi_SetContentFromBitmapImageWithAnchorPoint(bitmapImage, anchorPoint));
 	}
+	alias SetContentFromBitmapImage = SetContentFromBitmapImageWithAnchorPoint;
 	final void SetContentFromSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap)
 	{
 		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).abi_SetContentFromSoftwareBitmap(softwareBitmap));
@@ -2797,6 +2801,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.IDragUIOverride)this.asInterface(uuid("bd6c9dfa-c961-4861-b7a5-bf4fe4a8a6ef"))).abi_SetContentFromSoftwareBitmapWithAnchorPoint(softwareBitmap, anchorPoint));
 	}
+	alias SetContentFromSoftwareBitmap = SetContentFromSoftwareBitmapWithAnchorPoint;
 }
 
 interface DropCompletedEventArgs : Windows.UI.Xaml.RoutedEventArgs, Windows.UI.Xaml.IDropCompletedEventArgs
@@ -3887,24 +3892,28 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateWithDefaultValue(defaultValue, &_ret));
 		return _ret;
 	}
+	alias Create = CreateWithDefaultValue;
 	static Windows.UI.Xaml.PropertyMetadata CreateWithDefaultValueAndCallback(IInspectable defaultValue, Windows.UI.Xaml.PropertyChangedCallback propertyChangedCallback)
 	{
 		Windows.UI.Xaml.PropertyMetadata _ret;
 		Debug.OK(staticInstance.abi_CreateWithDefaultValueAndCallback(defaultValue, propertyChangedCallback, &_ret));
 		return _ret;
 	}
+	alias Create = CreateWithDefaultValueAndCallback;
 	static Windows.UI.Xaml.PropertyMetadata CreateWithFactory(Windows.UI.Xaml.CreateDefaultValueCallback createDefaultValueCallback)
 	{
 		Windows.UI.Xaml.PropertyMetadata _ret;
 		Debug.OK(staticInstance.abi_CreateWithFactory(createDefaultValueCallback, &_ret));
 		return _ret;
 	}
+	alias Create = CreateWithFactory;
 	static Windows.UI.Xaml.PropertyMetadata CreateWithFactoryAndCallback(Windows.UI.Xaml.CreateDefaultValueCallback createDefaultValueCallback, Windows.UI.Xaml.PropertyChangedCallback propertyChangedCallback)
 	{
 		Windows.UI.Xaml.PropertyMetadata _ret;
 		Debug.OK(staticInstance.abi_CreateWithFactoryAndCallback(createDefaultValueCallback, propertyChangedCallback, &_ret));
 		return _ret;
 	}
+	alias Create = CreateWithFactoryAndCallback;
 }
 @makable!(PropertyMetadata, PropertyMetadata, Windows.UI.Xaml.IPropertyMetadataFactory)
 class PropertyMetadataT(Base) : AgileObject!Base, PropertyMetadata
@@ -4027,12 +4036,14 @@ interface RectHelper : Windows.UI.Xaml.IRectHelper
 		Debug.OK(staticInstance.abi_UnionWithPoint(target, point, &_ret));
 		return _ret;
 	}
+	alias Union = UnionWithPoint;
 	static Windows.Foundation.Rect UnionWithRect(Windows.Foundation.Rect target, Windows.Foundation.Rect rect)
 	{
 		Windows.Foundation.Rect _ret;
 		Debug.OK(staticInstance.abi_UnionWithRect(target, rect, &_ret));
 		return _ret;
 	}
+	alias Union = UnionWithRect;
 }
 
 interface ResourceDictionary : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.IResourceDictionary, Windows.Foundation.Collections.IMap!(IInspectable, IInspectable), Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(IInspectable, IInspectable))
@@ -5556,6 +5567,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.IUIElement5)this.asInterface(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317"))).abi_StartBringIntoViewWithOptions(options));
 	}
+	alias StartBringIntoView = StartBringIntoViewWithOptions;
 
 	private static Windows.UI.Xaml.IUIElementStatics _staticInstance;
 	public static Windows.UI.Xaml.IUIElementStatics staticInstance()

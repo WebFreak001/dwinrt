@@ -336,6 +336,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Text.ITextConversionGenerator)this.asInterface(uuid("03606a5e-2aa9-4ab6-af8b-a562b63a8992"))).abi_GetCandidatesWithMaxCountAsync(input, maxCandidates, &_ret));
 		return _ret;
 	}
+	alias GetCandidatesAsync = GetCandidatesWithMaxCountAsync;
 	static Windows.Data.Text.TextConversionGenerator New(HSTRING languageTag)
 	{
 		auto factory = factory!(Windows.Data.Text.ITextConversionGeneratorFactory);
@@ -389,6 +390,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Text.ITextPredictionGenerator)this.asInterface(uuid("5eacab07-abf1-4cb6-9d9e-326f2b468756"))).abi_GetCandidatesWithMaxCountAsync(input, maxCandidates, &_ret));
 		return _ret;
 	}
+	alias GetCandidatesAsync = GetCandidatesWithMaxCountAsync;
 	static Windows.Data.Text.TextPredictionGenerator New(HSTRING languageTag)
 	{
 		auto factory = factory!(Windows.Data.Text.ITextPredictionGeneratorFactory);

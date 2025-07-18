@@ -107,12 +107,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAdapter)this.asInterface(uuid("a6c4e423-3d75-43a4-b9de-11e26b72d9b0"))).abi_ConnectWithPasswordCredentialAsync(availableNetwork, reconnectionKind, passwordCredential, &_ret));
 		return _ret;
 	}
+	alias ConnectAsync = ConnectWithPasswordCredentialAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) ConnectWithPasswordCredentialAndSsidAsync(Windows.Devices.WiFi.WiFiAvailableNetwork availableNetwork, Windows.Devices.WiFi.WiFiReconnectionKind reconnectionKind, Windows.Security.Credentials.PasswordCredential passwordCredential, HSTRING ssid)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.WiFi.WiFiConnectionResult) _ret;
 		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAdapter)this.asInterface(uuid("a6c4e423-3d75-43a4-b9de-11e26b72d9b0"))).abi_ConnectWithPasswordCredentialAndSsidAsync(availableNetwork, reconnectionKind, passwordCredential, ssid, &_ret));
 		return _ret;
 	}
+	alias ConnectAsync = ConnectWithPasswordCredentialAndSsidAsync;
 	final void Disconnect()
 	{
 		Debug.OK((cast(Windows.Devices.WiFi.IWiFiAdapter)this.asInterface(uuid("a6c4e423-3d75-43a4-b9de-11e26b72d9b0"))).abi_Disconnect());

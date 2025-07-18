@@ -174,6 +174,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Management.IMdmSession)this.asInterface(uuid("fe89314c-8f64-4797-a9d7-9d88f86ae166"))).abi_StartWithAlertsAsync(alerts, &_ret));
 		return _ret;
 	}
+	alias StartAsync = StartWithAlertsAsync;
 }
 
 interface MdmSessionManager

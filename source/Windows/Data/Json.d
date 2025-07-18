@@ -424,36 +424,42 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedValueOrDefault(name, defaultValue, &_ret));
 		return _ret;
 	}
+	alias GetNamedValue = GetNamedValueOrDefault;
 	final Windows.Data.Json.JsonObject GetNamedObjectOrDefault(HSTRING name, Windows.Data.Json.JsonObject defaultValue)
 	{
 		Windows.Data.Json.JsonObject _ret;
 		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedObjectOrDefault(name, defaultValue, &_ret));
 		return _ret;
 	}
+	alias GetNamedObject = GetNamedObjectOrDefault;
 	final HSTRING GetNamedStringOrDefault(HSTRING name, HSTRING defaultValue)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedStringOrDefault(name, defaultValue, &_ret));
 		return _ret;
 	}
+	alias GetNamedString = GetNamedStringOrDefault;
 	final Windows.Data.Json.JsonArray GetNamedArrayOrDefault(HSTRING name, Windows.Data.Json.JsonArray defaultValue)
 	{
 		Windows.Data.Json.JsonArray _ret;
 		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedArrayOrDefault(name, defaultValue, &_ret));
 		return _ret;
 	}
+	alias GetNamedArray = GetNamedArrayOrDefault;
 	final double GetNamedNumberOrDefault(HSTRING name, double defaultValue)
 	{
 		double _ret;
 		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedNumberOrDefault(name, defaultValue, &_ret));
 		return _ret;
 	}
+	alias GetNamedNumber = GetNamedNumberOrDefault;
 	final bool GetNamedBooleanOrDefault(HSTRING name, bool defaultValue)
 	{
 		bool _ret;
 		Debug.OK((cast(Windows.Data.Json.IJsonObjectWithDefaultValues)this.asInterface(uuid("d960d2a2-b7f0-4f00-8e44-d82cf415ea13"))).abi_GetNamedBooleanOrDefault(name, defaultValue, &_ret));
 		return _ret;
 	}
+	alias GetNamedBoolean = GetNamedBooleanOrDefault;
 	final HSTRING ToString()
 	{
 		HSTRING _ret;

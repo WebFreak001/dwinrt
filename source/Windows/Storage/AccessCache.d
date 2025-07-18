@@ -142,6 +142,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.AccessCache.IStorageItemAccessList)this.asInterface(uuid("2caff6ad-de90-47f5-b2c3-dd36c9fdd453"))).abi_AddOverloadDefaultMetadata(file, &_ret));
 		return _ret;
 	}
+	alias Add = AddOverloadDefaultMetadata;
 	final HSTRING Add(Windows.Storage.IStorageItem file, HSTRING metadata)
 	{
 		HSTRING _ret;
@@ -152,6 +153,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Storage.AccessCache.IStorageItemAccessList)this.asInterface(uuid("2caff6ad-de90-47f5-b2c3-dd36c9fdd453"))).abi_AddOrReplaceOverloadDefaultMetadata(token, file));
 	}
+	alias AddOrReplace = AddOrReplaceOverloadDefaultMetadata;
 	final void AddOrReplace(HSTRING token, Windows.Storage.IStorageItem file, HSTRING metadata)
 	{
 		Debug.OK((cast(Windows.Storage.AccessCache.IStorageItemAccessList)this.asInterface(uuid("2caff6ad-de90-47f5-b2c3-dd36c9fdd453"))).abi_AddOrReplace(token, file, metadata));
@@ -180,18 +182,21 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.AccessCache.IStorageItemAccessList)this.asInterface(uuid("2caff6ad-de90-47f5-b2c3-dd36c9fdd453"))).abi_GetItemWithOptionsAsync(token, options, &_ret));
 		return _ret;
 	}
+	alias GetItemAsync = GetItemWithOptionsAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) GetFileWithOptionsAsync(HSTRING token, Windows.Storage.AccessCache.AccessCacheOptions options)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
 		Debug.OK((cast(Windows.Storage.AccessCache.IStorageItemAccessList)this.asInterface(uuid("2caff6ad-de90-47f5-b2c3-dd36c9fdd453"))).abi_GetFileWithOptionsAsync(token, options, &_ret));
 		return _ret;
 	}
+	alias GetFileAsync = GetFileWithOptionsAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) GetFolderWithOptionsAsync(HSTRING token, Windows.Storage.AccessCache.AccessCacheOptions options)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) _ret;
 		Debug.OK((cast(Windows.Storage.AccessCache.IStorageItemAccessList)this.asInterface(uuid("2caff6ad-de90-47f5-b2c3-dd36c9fdd453"))).abi_GetFolderWithOptionsAsync(token, options, &_ret));
 		return _ret;
 	}
+	alias GetFolderAsync = GetFolderWithOptionsAsync;
 	final void Remove(HSTRING token)
 	{
 		Debug.OK((cast(Windows.Storage.AccessCache.IStorageItemAccessList)this.asInterface(uuid("2caff6ad-de90-47f5-b2c3-dd36c9fdd453"))).abi_Remove(token));
@@ -245,6 +250,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.AccessCache.IStorageItemAccessList)this.asInterface(uuid("2caff6ad-de90-47f5-b2c3-dd36c9fdd453"))).abi_AddOverloadDefaultMetadata(file, &_ret));
 		return _ret;
 	}
+	alias Add = AddOverloadDefaultMetadata;
 	final HSTRING Add(Windows.Storage.IStorageItem file, HSTRING metadata)
 	{
 		HSTRING _ret;
@@ -255,6 +261,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Storage.AccessCache.IStorageItemAccessList)this.asInterface(uuid("2caff6ad-de90-47f5-b2c3-dd36c9fdd453"))).abi_AddOrReplaceOverloadDefaultMetadata(token, file));
 	}
+	alias AddOrReplace = AddOrReplaceOverloadDefaultMetadata;
 	final void AddOrReplace(HSTRING token, Windows.Storage.IStorageItem file, HSTRING metadata)
 	{
 		Debug.OK((cast(Windows.Storage.AccessCache.IStorageItemAccessList)this.asInterface(uuid("2caff6ad-de90-47f5-b2c3-dd36c9fdd453"))).abi_AddOrReplace(token, file, metadata));
@@ -283,18 +290,21 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.AccessCache.IStorageItemAccessList)this.asInterface(uuid("2caff6ad-de90-47f5-b2c3-dd36c9fdd453"))).abi_GetItemWithOptionsAsync(token, options, &_ret));
 		return _ret;
 	}
+	alias GetItemAsync = GetItemWithOptionsAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) GetFileWithOptionsAsync(HSTRING token, Windows.Storage.AccessCache.AccessCacheOptions options)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
 		Debug.OK((cast(Windows.Storage.AccessCache.IStorageItemAccessList)this.asInterface(uuid("2caff6ad-de90-47f5-b2c3-dd36c9fdd453"))).abi_GetFileWithOptionsAsync(token, options, &_ret));
 		return _ret;
 	}
+	alias GetFileAsync = GetFileWithOptionsAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) GetFolderWithOptionsAsync(HSTRING token, Windows.Storage.AccessCache.AccessCacheOptions options)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) _ret;
 		Debug.OK((cast(Windows.Storage.AccessCache.IStorageItemAccessList)this.asInterface(uuid("2caff6ad-de90-47f5-b2c3-dd36c9fdd453"))).abi_GetFolderWithOptionsAsync(token, options, &_ret));
 		return _ret;
 	}
+	alias GetFolderAsync = GetFolderWithOptionsAsync;
 	final void Remove(HSTRING token)
 	{
 		Debug.OK((cast(Windows.Storage.AccessCache.IStorageItemAccessList)this.asInterface(uuid("2caff6ad-de90-47f5-b2c3-dd36c9fdd453"))).abi_Remove(token));
@@ -333,10 +343,12 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.AccessCache.IStorageItemMostRecentlyUsedList2)this.asInterface(uuid("da481ea0-ed8d-4731-a1db-e44ee2204093"))).abi_AddWithMetadataAndVisibility(file, metadata, visibility, &_ret));
 		return _ret;
 	}
+	alias Add = AddWithMetadataAndVisibility;
 	final void AddOrReplaceWithMetadataAndVisibility(HSTRING token, Windows.Storage.IStorageItem file, HSTRING metadata, Windows.Storage.AccessCache.RecentStorageItemVisibility visibility)
 	{
 		Debug.OK((cast(Windows.Storage.AccessCache.IStorageItemMostRecentlyUsedList2)this.asInterface(uuid("da481ea0-ed8d-4731-a1db-e44ee2204093"))).abi_AddOrReplaceWithMetadataAndVisibility(token, file, metadata, visibility));
 	}
+	alias AddOrReplace = AddOrReplaceWithMetadataAndVisibility;
 }
 
 @bitflags

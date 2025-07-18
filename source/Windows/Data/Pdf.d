@@ -109,6 +109,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_LoadFromFileWithPasswordAsync(file, password, &_ret));
 		return _ret;
 	}
+	alias LoadFromFileAsync = LoadFromFileWithPasswordAsync;
 	static Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument) LoadFromStreamAsync(Windows.Storage.Streams.IRandomAccessStream inputStream)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument) _ret;
@@ -121,6 +122,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_LoadFromStreamWithPasswordAsync(inputStream, password, &_ret));
 		return _ret;
 	}
+	alias LoadFromStreamAsync = LoadFromStreamWithPasswordAsync;
 }
 
 interface PdfPage : Windows.Data.Pdf.IPdfPage, Windows.Foundation.IClosable
@@ -138,6 +140,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Pdf.IPdfPage)this.asInterface(uuid("9db4b0c8-5320-4cfc-ad76-493fdad0e594"))).abi_RenderWithOptionsToStreamAsync(outputStream, options, &_ret));
 		return _ret;
 	}
+	alias RenderToStreamAsync = RenderWithOptionsToStreamAsync;
 	final Windows.Foundation.IAsyncAction PreparePageAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;

@@ -309,10 +309,12 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Graphics.Holographic.IHolographicCameraRenderingParameters)this.asInterface(uuid("8eac2ed1-5bf4-4e16-8236-ae0800c11d0d"))).abi_SetFocusPointWithNormal(coordinateSystem, position, normal));
 	}
+	alias SetFocusPoint = SetFocusPointWithNormal;
 	final void SetFocusPointWithNormalLinearVelocity(Windows.Perception.Spatial.SpatialCoordinateSystem coordinateSystem, Windows.Foundation.Numerics.Vector3 position, Windows.Foundation.Numerics.Vector3 normal, Windows.Foundation.Numerics.Vector3 linearVelocity)
 	{
 		Debug.OK((cast(Windows.Graphics.Holographic.IHolographicCameraRenderingParameters)this.asInterface(uuid("8eac2ed1-5bf4-4e16-8236-ae0800c11d0d"))).abi_SetFocusPointWithNormalLinearVelocity(coordinateSystem, position, normal, linearVelocity));
 	}
+	alias SetFocusPoint = SetFocusPointWithNormalLinearVelocity;
 	final Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice Direct3D11Device()
 	{
 		Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice _ret;
@@ -461,6 +463,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Holographic.IHolographicFrame)this.asInterface(uuid("c6988eb6-a8b9-3054-a6eb-d624b6536375"))).abi_PresentUsingCurrentPredictionWithBehavior(waitBehavior, &_ret));
 		return _ret;
 	}
+	alias PresentUsingCurrentPrediction = PresentUsingCurrentPredictionWithBehavior;
 	final void WaitForFrameToFinish()
 	{
 		Debug.OK((cast(Windows.Graphics.Holographic.IHolographicFrame)this.asInterface(uuid("c6988eb6-a8b9-3054-a6eb-d624b6536375"))).abi_WaitForFrameToFinish());

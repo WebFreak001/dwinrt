@@ -66,4 +66,3 @@ struct Vector4
 	float Z;
 	float W;
 }
-

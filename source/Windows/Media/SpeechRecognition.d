@@ -318,6 +318,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession)this.asInterface(uuid("6a213c04-6614-49f8-99a2-b5e9b3a085c8"))).abi_StartWithModeAsync(mode, &_ret));
 		return _ret;
 	}
+	alias StartAsync = StartWithModeAsync;
 	final Windows.Foundation.IAsyncAction StopAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;

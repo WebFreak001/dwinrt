@@ -552,6 +552,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Bluetooth.IBluetoothDevice3)this.asInterface(uuid("57fff78b-651a-4454-b90f-eb21ef0b0d71"))).abi_GetRfcommServicesWithCacheModeAsync(cacheMode, &_ret));
 		return _ret;
 	}
+	alias GetRfcommServicesAsync = GetRfcommServicesWithCacheModeAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult) GetRfcommServicesForIdAsync(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId serviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult) _ret;
@@ -564,6 +565,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Bluetooth.IBluetoothDevice3)this.asInterface(uuid("57fff78b-651a-4454-b90f-eb21ef0b0d71"))).abi_GetRfcommServicesForIdWithCacheModeAsync(serviceId, cacheMode, &_ret));
 		return _ret;
 	}
+	alias GetRfcommServicesForIdAsync = GetRfcommServicesForIdWithCacheModeAsync;
 
 	private static Windows.Devices.Bluetooth.IBluetoothDeviceStatics _staticInstance;
 	public static Windows.Devices.Bluetooth.IBluetoothDeviceStatics staticInstance()
@@ -1099,6 +1101,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Bluetooth.IBluetoothLEDevice3)this.asInterface(uuid("aee9e493-44ac-40dc-af33-b2c13c01ca46"))).abi_GetGattServicesWithCacheModeAsync(cacheMode, &_ret));
 		return _ret;
 	}
+	alias GetGattServicesAsync = GetGattServicesWithCacheModeAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) GetGattServicesForUuidAsync(GUID serviceUuid)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceServicesResult) _ret;
@@ -1111,6 +1114,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Bluetooth.IBluetoothLEDevice3)this.asInterface(uuid("aee9e493-44ac-40dc-af33-b2c13c01ca46"))).abi_GetGattServicesForUuidWithCacheModeAsync(serviceUuid, cacheMode, &_ret));
 		return _ret;
 	}
+	alias GetGattServicesForUuidAsync = GetGattServicesForUuidWithCacheModeAsync;
 
 	private static Windows.Devices.Bluetooth.IBluetoothLEDeviceStatics _staticInstance;
 	public static Windows.Devices.Bluetooth.IBluetoothLEDeviceStatics staticInstance()

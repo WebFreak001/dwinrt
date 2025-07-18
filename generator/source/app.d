@@ -11,6 +11,11 @@ import std.string;
 import pegged.grammar;
 import idl.grammar;
 
+version (Windows)
+	private enum newline = "\r\n";
+else
+	private enum newline = "\n";
+
 //dfmt off
 Module[] modules = [
 	// must be first
@@ -330,7 +335,7 @@ void main(string[] args)
 		}
 	}
 	dirEntries(directx ? `directx\base`
-			: `C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\winrt`, SpanMode.shallow)
+			: `../base`, SpanMode.shallow)
 		.array.sort!"a < b".each!(processIDL);
 	foreach (ref mod; modules)
 		mod.fixTypes;
@@ -340,24 +345,24 @@ void main(string[] args)
 	{
 		foreach (mod; modules)
 		{
-			auto fileName = buildPath("directx", mod.fileName);
+			auto fileName = buildPath("..", "directx", mod.fileName);
 			mkdirRecurse(fileName.dirName);
 			writeln("Writing to ", fileName);
-			std.file.write(fileName, mod.toString);
+			std.file.write(fileName, mod.toString.replace("\n", newline).chomp);
 		}
 	}
 	else
 	{
 		foreach (mod; modules)
 		{
-			auto fileName = buildPath("source", mod.fileName);
+			auto fileName = buildPath("..", "source", mod.fileName);
 			mkdirRecurse(fileName.dirName);
 			writeln("Writing to ", fileName);
-			std.file.write(fileName, mod.toString);
+			std.file.write(fileName, mod.toString.replace("\n", newline).chomp);
 		}
-		append(buildPath("source", "Windows", "Foundation", "package.d"), foundationSuffix);
+		append(buildPath("..", "source", "Windows", "Foundation", "package.d"), foundationSuffix);
 		writeln("Finding template UUIDs");
-		dirEntries(`C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0`, SpanMode.breadth).filter!(
+		dirEntries(`../base`, SpanMode.breadth).filter!(
 				a => a.extension == ".h").array.sort!"a < b".each!findUUIDs;
 		if (templateUUIDs.length)
 		{
@@ -377,7 +382,7 @@ void main(string[] args)
 				"}"
 			].join("\n");
 			//dfmt on
-			std.file.write(buildPath("source", "dwinrt", "uuids.d"), uuidsContent);
+			std.file.write(buildPath("..", "source", "dwinrt", "uuids.d"), uuidsContent);
 		}
 		modules.each!(mod => writeln("public static import " ~ mod.name.join(".") ~ ";"));
 	}
@@ -915,10 +920,10 @@ string fixEnumName(string name, string enumName, bool value = false)
 	string ret = name;
 	if ((enumName.endsWith("_MODE") || enumName.endsWith("_TYPE")
 			|| enumName.endsWith("_FLAG")) && name.startsWith(enumName[0 .. $ - 4]))
-		ret = name[enumName.length - 4 .. $];
+		ret = name[enumName.length + -4 .. $];
 	else if ((enumName.endsWith("_FLAGS") || enumName.endsWith("_HINTS"))
 			&& name.startsWith(enumName[0 .. $ - 5]))
-		ret = name[enumName.length - 5 .. $];
+		ret = name[enumName.length + -5 .. $];
 	else if (name.startsWith(enumName ~ '_'))
 		ret = name[enumName.length + 1 .. $];
 	else if (name.startsWith("D3D_"))
@@ -1029,7 +1034,7 @@ InterfaceMethod parseInterfaceMethod(ParseTree opdcl)
 					if (spec.children.length == 1 && spec.children[0].name == "IDL.op_overload_attribute")
 					{
 						enforce(spec.children[0].children.length == 1);
-						method.name = spec.children[0].children[0].parseString;
+						method.overloadName = spec.children[0].children[0].parseString;
 					}
 					else if (spec.children.length == 1 && spec.children[0].name == "IDL.deprecation")
 					{
@@ -1104,7 +1109,8 @@ InterfaceMethod parseInterfaceMethod(ParseTree opdcl)
 			}
 		}
 	}
-	method.name = opdcl.matches[skip];
+	if (method.name.length == 0)
+		method.name = opdcl.matches[skip];
 	assert(method.name.length > 0);
 	import std.ascii : isAlphaNum;
 
@@ -1254,8 +1260,7 @@ struct Module
 			ret ~= obj.toString ~ "\n\n";
 		foreach (obj; enums)
 			ret ~= obj.toString ~ "\n\n";
-		if (enums.length || interfaces.length)
-			ret.length -= 2;
+		ret = chomp(ret);
 		return ret;
 	}
 }
@@ -1515,8 +1520,16 @@ struct Interface
 		if (methods.length)
 			ret ~= "extern(Windows):\n";
 		auto extra = name in extraMethods;
+		bool[string] alreadyWrittenMethods;
 		foreach (method; methods ~ (extra ? *extra : []))
-			ret ~= method.toString.indent ~ "\n";
+		{
+			string signature = method.name ~ "(" ~ method.arguments.to!(string[]).join(", ") ~ ")";
+			if (signature !in alreadyWrittenMethods)
+			{
+				alreadyWrittenMethods[signature] = true;
+				ret ~= method.toString.indent ~ "\n";
+			}
+		}
 		if (staticBase.length)
 		{
 			if (methods.length)
@@ -1672,6 +1685,7 @@ struct InterfaceMethod
 	InterfaceArgument[] arguments;
 	bool typeFixed;
 	string implementation, documentation;
+	string overloadName;
 
 	void implement(string baseName, bool needsAs = true)
 	{
@@ -1680,15 +1694,15 @@ struct InterfaceMethod
 		{
 			enforce(arguments.length == 2);
 			string fname = fullName;
-			string type = arguments[0].type;
+			string thisType = arguments[0].type;
 			string args;
 			if (arguments[0].type.startsWith("Windows.Foundation.TypedEventHandler!("))
-				args = type["Windows.Foundation.TypedEventHandler!(".length .. $ - 1];
+				args = thisType["Windows.Foundation.TypedEventHandler!(".length .. $ - 1];
 			else if (arguments[0].type.startsWith("Windows.Foundation.EventHandler!("))
-				args = "IInspectable, " ~ type["Windows.Foundation.EventHandler!(".length .. $ - 1];
+				args = "IInspectable, " ~ thisType["Windows.Foundation.EventHandler!(".length .. $ - 1];
 			else if (!arguments[0].type.canFind("!"))
 			{
-				auto obj = findInterface(type);
+				auto obj = findInterface(thisType);
 				if (obj.methods.length == 1 && obj.methods[0].name == "Invoke")
 					args = obj.methods[0].arguments.map!"a.type".join(", ");
 			}
@@ -1698,7 +1712,7 @@ struct InterfaceMethod
 				arguments = [InterfaceArgument(ArgumentDirection.in_, "void delegate(" ~ args ~ ")", "fn")];
 				name = "On" ~ name;
 				returnType = "EventRegistrationToken";
-				string registerCall = "Debug.OK(" ~ self ~ "." ~ fname ~ "(event!(" ~ type
+				string registerCall = "Debug.OK(" ~ self ~ "." ~ fname ~ "(event!(" ~ thisType
 					~ ", " ~ args ~ ")(fn), &tok));";
 				implementation = "EventRegistrationToken tok;\n" ~ registerCall ~ "\nreturn tok;";
 			}
@@ -1808,6 +1822,8 @@ struct InterfaceMethod
 			ret ~= "\n{\n" ~ implementation.indent ~ "\n}";
 		else
 			ret ~= ";";
+		if (overloadName.length && overloadName != name && implementation.length)
+			ret ~= "\nalias " ~ overloadName ~ " = " ~ name ~ ";";
 		return ret;
 	}
 

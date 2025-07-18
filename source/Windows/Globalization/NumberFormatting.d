@@ -233,24 +233,6 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter2)this.asInterface(uuid("d4a8c1f0-80d0-4b0d-a89e-882c1e8f8310"))).abi_FormatDouble(value, &_ret));
 		return _ret;
 	}
-	final HSTRING FormatInt(INT64 value)
-	{
-		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter)this.asInterface(uuid("a5007c49-7676-4db7-8631-1b6ff265caa9"))).abi_FormatInt(value, &_ret));
-		return _ret;
-	}
-	final HSTRING FormatUInt(ulong value)
-	{
-		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter)this.asInterface(uuid("a5007c49-7676-4db7-8631-1b6ff265caa9"))).abi_FormatUInt(value, &_ret));
-		return _ret;
-	}
-	final HSTRING FormatDouble(double value)
-	{
-		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter)this.asInterface(uuid("a5007c49-7676-4db7-8631-1b6ff265caa9"))).abi_FormatDouble(value, &_ret));
-		return _ret;
-	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) Languages()
 	{
 		Windows.Foundation.Collections.IVectorView!(HSTRING) _ret;
@@ -468,36 +450,21 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter)this.asInterface(uuid("a5007c49-7676-4db7-8631-1b6ff265caa9"))).abi_FormatInt(value, &_ret));
 		return _ret;
 	}
+	alias Format = FormatInt;
 	final HSTRING FormatUInt(ulong value)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter)this.asInterface(uuid("a5007c49-7676-4db7-8631-1b6ff265caa9"))).abi_FormatUInt(value, &_ret));
 		return _ret;
 	}
+	alias Format = FormatUInt;
 	final HSTRING FormatDouble(double value)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter)this.asInterface(uuid("a5007c49-7676-4db7-8631-1b6ff265caa9"))).abi_FormatDouble(value, &_ret));
 		return _ret;
 	}
-	final HSTRING FormatInt(INT64 value)
-	{
-		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter2)this.asInterface(uuid("d4a8c1f0-80d0-4b0d-a89e-882c1e8f8310"))).abi_FormatInt(value, &_ret));
-		return _ret;
-	}
-	final HSTRING FormatUInt(ulong value)
-	{
-		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter2)this.asInterface(uuid("d4a8c1f0-80d0-4b0d-a89e-882c1e8f8310"))).abi_FormatUInt(value, &_ret));
-		return _ret;
-	}
-	final HSTRING FormatDouble(double value)
-	{
-		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter2)this.asInterface(uuid("d4a8c1f0-80d0-4b0d-a89e-882c1e8f8310"))).abi_FormatDouble(value, &_ret));
-		return _ret;
-	}
+	alias Format = FormatDouble;
 	final Windows.Foundation.IReference!(INT64) ParseInt(HSTRING text)
 	{
 		Windows.Foundation.IReference!(INT64) _ret;
@@ -757,36 +724,21 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter)this.asInterface(uuid("a5007c49-7676-4db7-8631-1b6ff265caa9"))).abi_FormatInt(value, &_ret));
 		return _ret;
 	}
+	alias Format = FormatInt;
 	final HSTRING FormatUInt(ulong value)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter)this.asInterface(uuid("a5007c49-7676-4db7-8631-1b6ff265caa9"))).abi_FormatUInt(value, &_ret));
 		return _ret;
 	}
+	alias Format = FormatUInt;
 	final HSTRING FormatDouble(double value)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter)this.asInterface(uuid("a5007c49-7676-4db7-8631-1b6ff265caa9"))).abi_FormatDouble(value, &_ret));
 		return _ret;
 	}
-	final HSTRING FormatInt(INT64 value)
-	{
-		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter2)this.asInterface(uuid("d4a8c1f0-80d0-4b0d-a89e-882c1e8f8310"))).abi_FormatInt(value, &_ret));
-		return _ret;
-	}
-	final HSTRING FormatUInt(ulong value)
-	{
-		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter2)this.asInterface(uuid("d4a8c1f0-80d0-4b0d-a89e-882c1e8f8310"))).abi_FormatUInt(value, &_ret));
-		return _ret;
-	}
-	final HSTRING FormatDouble(double value)
-	{
-		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter2)this.asInterface(uuid("d4a8c1f0-80d0-4b0d-a89e-882c1e8f8310"))).abi_FormatDouble(value, &_ret));
-		return _ret;
-	}
+	alias Format = FormatDouble;
 	final Windows.Foundation.IReference!(INT64) ParseInt(HSTRING text)
 	{
 		Windows.Foundation.IReference!(INT64) _ret;
@@ -933,36 +885,21 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter)this.asInterface(uuid("a5007c49-7676-4db7-8631-1b6ff265caa9"))).abi_FormatInt(value, &_ret));
 		return _ret;
 	}
+	alias Format = FormatInt;
 	final HSTRING FormatUInt(ulong value)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter)this.asInterface(uuid("a5007c49-7676-4db7-8631-1b6ff265caa9"))).abi_FormatUInt(value, &_ret));
 		return _ret;
 	}
+	alias Format = FormatUInt;
 	final HSTRING FormatDouble(double value)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter)this.asInterface(uuid("a5007c49-7676-4db7-8631-1b6ff265caa9"))).abi_FormatDouble(value, &_ret));
 		return _ret;
 	}
-	final HSTRING FormatInt(INT64 value)
-	{
-		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter2)this.asInterface(uuid("d4a8c1f0-80d0-4b0d-a89e-882c1e8f8310"))).abi_FormatInt(value, &_ret));
-		return _ret;
-	}
-	final HSTRING FormatUInt(ulong value)
-	{
-		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter2)this.asInterface(uuid("d4a8c1f0-80d0-4b0d-a89e-882c1e8f8310"))).abi_FormatUInt(value, &_ret));
-		return _ret;
-	}
-	final HSTRING FormatDouble(double value)
-	{
-		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.NumberFormatting.INumberFormatter2)this.asInterface(uuid("d4a8c1f0-80d0-4b0d-a89e-882c1e8f8310"))).abi_FormatDouble(value, &_ret));
-		return _ret;
-	}
+	alias Format = FormatDouble;
 	final Windows.Foundation.IReference!(INT64) ParseInt(HSTRING text)
 	{
 		Windows.Foundation.IReference!(INT64) _ret;

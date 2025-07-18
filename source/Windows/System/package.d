@@ -642,6 +642,7 @@ interface Launcher
 		Debug.OK(staticInstance.abi_LaunchFileWithOptionsAsync(file, options, &_ret));
 		return _ret;
 	}
+	alias LaunchFileAsync = LaunchFileWithOptionsAsync;
 	static Windows.Foundation.IAsyncOperation!(bool) LaunchUriAsync(Windows.Foundation.Uri uri)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
@@ -654,6 +655,7 @@ interface Launcher
 		Debug.OK(staticInstance.abi_LaunchUriWithOptionsAsync(uri, options, &_ret));
 		return _ret;
 	}
+	alias LaunchUriAsync = LaunchUriWithOptionsAsync;
 }
 
 interface LauncherOptions : Windows.System.ILauncherOptions, Windows.System.ILauncherViewOptions, Windows.System.ILauncherOptions2, Windows.System.ILauncherOptions3, Windows.System.ILauncherOptions4
@@ -896,6 +898,7 @@ interface ProcessLauncher
 		Debug.OK(staticInstance.abi_RunToCompletionAsyncWithOptions(fileName, args, options, &_ret));
 		return _ret;
 	}
+	alias RunToCompletionAsync = RunToCompletionAsyncWithOptions;
 }
 
 interface ProcessLauncherOptions : Windows.System.IProcessLauncherOptions
@@ -1006,12 +1009,14 @@ interface RemoteLauncher
 		Debug.OK(staticInstance.abi_LaunchUriWithOptionsAsync(remoteSystemConnectionRequest, uri, options, &_ret));
 		return _ret;
 	}
+	alias LaunchUriAsync = LaunchUriWithOptionsAsync;
 	static Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus) LaunchUriWithDataAsync(Windows.System.RemoteSystems.RemoteSystemConnectionRequest remoteSystemConnectionRequest, Windows.Foundation.Uri uri, Windows.System.RemoteLauncherOptions options, Windows.Foundation.Collections.ValueSet inputData)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.System.RemoteLaunchUriStatus) _ret;
 		Debug.OK(staticInstance.abi_LaunchUriWithDataAsync(remoteSystemConnectionRequest, uri, options, inputData, &_ret));
 		return _ret;
 	}
+	alias LaunchUriAsync = LaunchUriWithDataAsync;
 }
 
 interface RemoteLauncherOptions : Windows.System.IRemoteLauncherOptions
@@ -1155,12 +1160,14 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_FindAllAsyncByType(type, &_ret));
 		return _ret;
 	}
+	alias FindAllAsync = FindAllAsyncByType;
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User)) FindAllAsyncByTypeAndStatus(Windows.System.UserType type, Windows.System.UserAuthenticationStatus status)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.System.User)) _ret;
 		Debug.OK(staticInstance.abi_FindAllAsyncByTypeAndStatus(type, status, &_ret));
 		return _ret;
 	}
+	alias FindAllAsync = FindAllAsyncByTypeAndStatus;
 	static Windows.System.User GetFromId(HSTRING nonRoamableId)
 	{
 		Windows.System.User _ret;

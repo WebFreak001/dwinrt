@@ -405,11 +405,13 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPane)this.asInterface(uuid("fdacec38-3700-4d73-91a1-2f998674238a"))).abi_ShowOverloadDefault());
 	}
+	alias Show = ShowOverloadDefault;
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
 	final void ShowOverloadWithQuery(HSTRING query)
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPane)this.asInterface(uuid("fdacec38-3700-4d73-91a1-2f998674238a"))).abi_ShowOverloadWithQuery(query));
 	}
+	alias Show = ShowOverloadWithQuery;
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
 	final void ShowOnKeyboardInput(bool value)
 	{

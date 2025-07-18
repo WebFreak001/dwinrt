@@ -127,6 +127,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Perception.Spatial.Surfaces.ISpatialSurfaceInfo)this.asInterface(uuid("f8e9ebe7-39b7-3962-bb03-57f56e1fb0a1"))).abi_TryComputeLatestMeshWithOptionsAsync(maxTrianglesPerCubicMeter, options, &_ret));
 		return _ret;
 	}
+	alias TryComputeLatestMeshAsync = TryComputeLatestMeshWithOptionsAsync;
 }
 
 interface SpatialSurfaceMesh : Windows.Perception.Spatial.Surfaces.ISpatialSurfaceMesh

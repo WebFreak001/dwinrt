@@ -424,6 +424,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).abi_GetTaskReaderWithOptions(options, &_ret));
 		return _ret;
 	}
+	alias GetTaskReader = GetTaskReaderWithOptions;
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTask) GetTaskAsync(HSTRING userDataTask)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTask) _ret;
@@ -771,6 +772,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore)this.asInterface(uuid("f06a9cb0-f1db-45ba-8a62-086004c0213d"))).abi_CreateListInAccountAsync(name, userDataAccountId, &_ret));
 		return _ret;
 	}
+	alias CreateListAsync = CreateListInAccountAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList)) FindListsAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList)) _ret;

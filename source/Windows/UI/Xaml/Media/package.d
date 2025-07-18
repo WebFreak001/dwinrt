@@ -2648,6 +2648,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_StartLoadFromUriWithSize(uri, desiredMaxSize, &_ret));
 		return _ret;
 	}
+	alias StartLoadFromUri = StartLoadFromUriWithSize;
 	static Windows.UI.Xaml.Media.LoadedImageSurface StartLoadFromUri(Windows.Foundation.Uri uri)
 	{
 		Windows.UI.Xaml.Media.LoadedImageSurface _ret;
@@ -2660,6 +2661,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_StartLoadFromStreamWithSize(stream, desiredMaxSize, &_ret));
 		return _ret;
 	}
+	alias StartLoadFromStream = StartLoadFromStreamWithSize;
 	static Windows.UI.Xaml.Media.LoadedImageSurface StartLoadFromStream(Windows.Storage.Streams.IRandomAccessStream stream)
 	{
 		Windows.UI.Xaml.Media.LoadedImageSurface _ret;
@@ -4380,24 +4382,28 @@ interface VisualTreeHelper : Windows.UI.Xaml.Media.IVisualTreeHelper
 		Debug.OK(staticInstance.abi_FindElementsInHostCoordinatesPoint(intersectingPoint, subtree, &_ret));
 		return _ret;
 	}
+	alias FindElementsInHostCoordinates = FindElementsInHostCoordinatesPoint;
 	static Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) FindElementsInHostCoordinatesRect(Windows.Foundation.Rect intersectingRect, Windows.UI.Xaml.UIElement subtree)
 	{
 		Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) _ret;
 		Debug.OK(staticInstance.abi_FindElementsInHostCoordinatesRect(intersectingRect, subtree, &_ret));
 		return _ret;
 	}
+	alias FindElementsInHostCoordinates = FindElementsInHostCoordinatesRect;
 	static Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) FindAllElementsInHostCoordinatesPoint(Windows.Foundation.Point intersectingPoint, Windows.UI.Xaml.UIElement subtree, bool includeAllElements)
 	{
 		Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) _ret;
 		Debug.OK(staticInstance.abi_FindAllElementsInHostCoordinatesPoint(intersectingPoint, subtree, includeAllElements, &_ret));
 		return _ret;
 	}
+	alias FindElementsInHostCoordinates = FindAllElementsInHostCoordinatesPoint;
 	static Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) FindAllElementsInHostCoordinatesRect(Windows.Foundation.Rect intersectingRect, Windows.UI.Xaml.UIElement subtree, bool includeAllElements)
 	{
 		Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) _ret;
 		Debug.OK(staticInstance.abi_FindAllElementsInHostCoordinatesRect(intersectingRect, subtree, includeAllElements, &_ret));
 		return _ret;
 	}
+	alias FindElementsInHostCoordinates = FindAllElementsInHostCoordinatesRect;
 	static Windows.UI.Xaml.DependencyObject GetChild(Windows.UI.Xaml.DependencyObject reference, INT32 childIndex)
 	{
 		Windows.UI.Xaml.DependencyObject _ret;

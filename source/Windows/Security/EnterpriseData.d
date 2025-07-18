@@ -425,6 +425,7 @@ interface FileProtectionManager
 		Debug.OK(staticInstance.abi_LoadFileFromContainerWithTargetAsync(containerFile, target, &_ret));
 		return _ret;
 	}
+	alias LoadFileFromContainerAsync = LoadFileFromContainerWithTargetAsync;
 	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedFileCreateResult) CreateProtectedAndOpenAsync(Windows.Storage.IStorageFolder parentFolder, HSTRING desiredName, HSTRING identity, Windows.Storage.CreationCollisionOption collisionOption)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedFileCreateResult) _ret;

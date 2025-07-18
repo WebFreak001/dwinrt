@@ -192,6 +192,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragOperation)this.asInterface(uuid("cc06de4f-6db0-4e62-ab1b-a74a02dc6d85"))).abi_SetDragUIContentFromSoftwareBitmapWithAnchorPoint(softwareBitmap, anchorPoint));
 	}
+	alias SetDragUIContentFromSoftwareBitmap = SetDragUIContentFromSoftwareBitmapWithAnchorPoint;
 	final Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragUIContentMode DragUIContentMode()
 	{
 		Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragUIContentMode _ret;
@@ -237,6 +238,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragUIOverride)this.asInterface(uuid("89a85064-3389-4f4f-8897-7e8a3ffb3c93"))).abi_SetContentFromSoftwareBitmapWithAnchorPoint(softwareBitmap, anchorPoint));
 	}
+	alias SetContentFromSoftwareBitmap = SetContentFromSoftwareBitmapWithAnchorPoint;
 	final bool IsContentVisible()
 	{
 		bool _ret;

@@ -109,6 +109,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_AttachToEventWithTimeout(name, handler, timeout, &_ret));
 		return _ret;
 	}
+	alias AttachToEvent = AttachToEventWithTimeout;
 	static Windows.System.Threading.Core.SignalNotifier AttachToSemaphore(HSTRING name, Windows.System.Threading.Core.SignalHandler handler)
 	{
 		Windows.System.Threading.Core.SignalNotifier _ret;
@@ -121,4 +122,5 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_AttachToSemaphoreWithTimeout(name, handler, timeout, &_ret));
 		return _ret;
 	}
+	alias AttachToSemaphore = AttachToSemaphoreWithTimeout;
 }

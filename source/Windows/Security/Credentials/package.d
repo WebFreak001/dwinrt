@@ -179,12 +179,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Credentials.IKeyCredential)this.asInterface(uuid("9585ef8d-457b-4847-b11a-fa960bbdb138"))).abi_RetrievePublicKeyWithDefaultBlobType(&_ret));
 		return _ret;
 	}
+	alias RetrievePublicKey = RetrievePublicKeyWithDefaultBlobType;
 	final Windows.Storage.Streams.IBuffer RetrievePublicKeyWithBlobType(Windows.Security.Cryptography.Core.CryptographicPublicKeyBlobType blobType)
 	{
 		Windows.Storage.Streams.IBuffer _ret;
 		Debug.OK((cast(Windows.Security.Credentials.IKeyCredential)this.asInterface(uuid("9585ef8d-457b-4847-b11a-fa960bbdb138"))).abi_RetrievePublicKeyWithBlobType(blobType, &_ret));
 		return _ret;
 	}
+	alias RetrievePublicKey = RetrievePublicKeyWithBlobType;
 	final Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.KeyCredentialOperationResult) RequestSignAsync(Windows.Storage.Streams.IBuffer data)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.KeyCredentialOperationResult) _ret;
@@ -505,6 +507,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Credentials.IWebAccount2)this.asInterface(uuid("7b56d6f8-990b-4eb5-94a7-5621f3a8b824"))).abi_SignOutWithClientIdAsync(clientId, &_ret));
 		return _ret;
 	}
+	alias SignOutAsync = SignOutWithClientIdAsync;
 	static Windows.Security.Credentials.WebAccount New(Windows.Security.Credentials.WebAccountProvider webAccountProvider, HSTRING userName, Windows.Security.Credentials.WebAccountState state)
 	{
 		auto factory = factory!(Windows.Security.Credentials.IWebAccountFactory);

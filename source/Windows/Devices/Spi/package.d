@@ -256,6 +256,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDeviceSelectorFromFriendlyName(friendlyName, &_ret));
 		return _ret;
 	}
+	alias GetDeviceSelector = GetDeviceSelectorFromFriendlyName;
 	static Windows.Devices.Spi.SpiBusInfo GetBusInfo(HSTRING busId)
 	{
 		Windows.Devices.Spi.SpiBusInfo _ret;

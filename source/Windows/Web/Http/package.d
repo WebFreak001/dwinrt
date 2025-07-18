@@ -362,6 +362,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Web.Http.IHttpClient)this.asInterface(uuid("7fda1151-3574-4880-a8ba-e6b1e0061f3d"))).abi_GetWithOptionAsync(uri, completionOption, &_ret));
 		return _ret;
 	}
+	alias GetAsync = GetWithOptionAsync;
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, Windows.Web.Http.HttpProgress) GetBufferAsync(Windows.Foundation.Uri uri)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Storage.Streams.IBuffer, Windows.Web.Http.HttpProgress) _ret;
@@ -404,6 +405,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Web.Http.IHttpClient)this.asInterface(uuid("7fda1151-3574-4880-a8ba-e6b1e0061f3d"))).abi_SendRequestWithOptionAsync(request, completionOption, &_ret));
 		return _ret;
 	}
+	alias SendRequestAsync = SendRequestWithOptionAsync;
 	final Windows.Web.Http.Headers.HttpRequestHeaderCollection DefaultRequestHeaders()
 	{
 		Windows.Web.Http.Headers.HttpRequestHeaderCollection _ret;
@@ -555,6 +557,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Web.Http.IHttpCookieManager)this.asInterface(uuid("7a431780-cd4f-4e57-a84a-5b0a53d6bb96"))).abi_SetCookieWithThirdParty(cookie, thirdParty, &_ret));
 		return _ret;
 	}
+	alias SetCookie = SetCookieWithThirdParty;
 	final void DeleteCookie(Windows.Web.Http.HttpCookie cookie)
 	{
 		Debug.OK((cast(Windows.Web.Http.IHttpCookieManager)this.asInterface(uuid("7a431780-cd4f-4e57-a84a-5b0a53d6bb96"))).abi_DeleteCookie(cookie));
@@ -846,10 +849,12 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Web.Http.IHttpMultipartFormDataContent)this.asInterface(uuid("64d337e2-e967-4624-b6d1-cf74604a4a42"))).abi_AddWithName(content, name));
 	}
+	alias Add = AddWithName;
 	final void AddWithNameAndFileName(Windows.Web.Http.IHttpContent content, HSTRING name, HSTRING fileName)
 	{
 		Debug.OK((cast(Windows.Web.Http.IHttpMultipartFormDataContent)this.asInterface(uuid("64d337e2-e967-4624-b6d1-cf74604a4a42"))).abi_AddWithNameAndFileName(content, name, fileName));
 	}
+	alias Add = AddWithNameAndFileName;
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Web.Http.IHttpContent)* out_first)
 	{
 		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.Web.Http.IHttpContent))this).abi_First(out_first));

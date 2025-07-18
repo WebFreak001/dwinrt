@@ -158,24 +158,28 @@ extern(Windows):
 		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).abi_RegisterStreamSocketListenerAsync1(socket, &_ret));
 		return _ret;
 	}
+	alias RegisterStreamSocketListenerAsync = RegisterStreamSocketListenerAsync1;
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) RegisterStreamSocketListenerAsync2(Windows.Networking.Sockets.StreamSocketListener socket, Windows.Networking.Connectivity.NetworkAdapter adapter)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) _ret;
 		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).abi_RegisterStreamSocketListenerAsync2(socket, adapter, &_ret));
 		return _ret;
 	}
+	alias RegisterStreamSocketListenerAsync = RegisterStreamSocketListenerAsync2;
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) RegisterDatagramSocketAsync1(Windows.Networking.Sockets.DatagramSocket socket)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) _ret;
 		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).abi_RegisterDatagramSocketAsync1(socket, &_ret));
 		return _ret;
 	}
+	alias RegisterDatagramSocketAsync = RegisterDatagramSocketAsync1;
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) RegisterDatagramSocketAsync2(Windows.Networking.Sockets.DatagramSocket socket, Windows.Networking.Connectivity.NetworkAdapter adapter)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult) _ret;
 		Debug.OK((cast(Windows.Networking.ServiceDiscovery.Dnssd.IDnssdServiceInstance)this.asInterface(uuid("e246db7e-98a5-4ca1-b9e4-c253d33c35ff"))).abi_RegisterDatagramSocketAsync2(socket, adapter, &_ret));
 		return _ret;
 	}
+	alias RegisterDatagramSocketAsync = RegisterDatagramSocketAsync2;
 	final HSTRING ToString()
 	{
 		HSTRING _ret;

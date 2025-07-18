@@ -395,12 +395,14 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_TryComputeWithAltitudeReference(positions, altitudeRefSystem, &_ret));
 		return _ret;
 	}
+	alias TryCompute = TryComputeWithAltitudeReference;
 	static Windows.Devices.Geolocation.GeoboundingBox TryComputeWithAltitudeReferenceAndSpatialReference(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.BasicGeoposition) positions, Windows.Devices.Geolocation.AltitudeReferenceSystem altitudeRefSystem, UINT32 spatialReferenceId)
 	{
 		Windows.Devices.Geolocation.GeoboundingBox _ret;
 		Debug.OK(staticInstance.abi_TryComputeWithAltitudeReferenceAndSpatialReference(positions, altitudeRefSystem, spatialReferenceId, &_ret));
 		return _ret;
 	}
+	alias TryCompute = TryComputeWithAltitudeReferenceAndSpatialReference;
 	static Windows.Devices.Geolocation.GeoboundingBox New(Windows.Devices.Geolocation.BasicGeoposition northwestCorner, Windows.Devices.Geolocation.BasicGeoposition southeastCorner)
 	{
 		auto factory = factory!(Windows.Devices.Geolocation.IGeoboundingBoxFactory);
@@ -634,6 +636,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Geolocation.IGeolocator)this.asInterface(uuid("a9c3bf62-4524-4989-8aa9-de019d2e551f"))).abi_GetGeopositionAsyncWithAgeAndTimeout(maximumAge, timeout, &_ret));
 		return _ret;
 	}
+	alias GetGeopositionAsync = GetGeopositionAsyncWithAgeAndTimeout;
 	final EventRegistrationToken OnPositionChanged(void delegate(Windows.Devices.Geolocation.Geolocator, Windows.Devices.Geolocation.PositionChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
@@ -693,6 +696,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetGeopositionHistoryWithDurationAsync(startTime, duration, &_ret));
 		return _ret;
 	}
+	alias GetGeopositionHistoryAsync = GetGeopositionHistoryWithDurationAsync;
 	static Geolocator New()
 	{
 		IInspectable ret;

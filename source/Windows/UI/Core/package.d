@@ -1102,6 +1102,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Core.ICoreDispatcherWithTaskPriority)this.asInterface(uuid("bafaecad-484d-41be-ba80-1d58c65263ea"))).abi_ShouldYieldToPriority(priority, &_ret));
 		return _ret;
 	}
+	alias ShouldYield = ShouldYieldToPriority;
 	final void StopProcessEvents()
 	{
 		Debug.OK((cast(Windows.UI.Core.ICoreDispatcherWithTaskPriority)this.asInterface(uuid("bafaecad-484d-41be-ba80-1d58c65263ea"))).abi_StopProcessEvents());
@@ -2021,12 +2022,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Core.ITouchHitTestingEventArgs)this.asInterface(uuid("22f3b823-0b7c-424e-9df7-33d4f962931b"))).abi_EvaluateProximityToRect(controlBoundingBox, &_ret));
 		return _ret;
 	}
+	alias EvaluateProximity = EvaluateProximityToRect;
 	final Windows.UI.Core.CoreProximityEvaluation EvaluateProximityToPolygon(UINT32 __controlVerticesSize, Windows.Foundation.Point* controlVertices)
 	{
 		Windows.UI.Core.CoreProximityEvaluation _ret;
 		Debug.OK((cast(Windows.UI.Core.ITouchHitTestingEventArgs)this.asInterface(uuid("22f3b823-0b7c-424e-9df7-33d4f962931b"))).abi_EvaluateProximityToPolygon(__controlVerticesSize, controlVertices, &_ret));
 		return _ret;
 	}
+	alias EvaluateProximity = EvaluateProximityToPolygon;
 	final bool Handled()
 	{
 		bool _ret;
