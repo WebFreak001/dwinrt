@@ -105,6 +105,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_FindAllAsyncAqsFilter(type, requestedProperties, aqsFilter, &_ret));
 		return _ret;
 	}
+	alias FindAllAsync = FindAllAsyncAqsFilter;
 	static Windows.Devices.Enumeration.Pnp.PnpObjectWatcher CreateWatcher(Windows.Devices.Enumeration.Pnp.PnpObjectType type, Windows.Foundation.Collections.IIterable!(HSTRING) requestedProperties)
 	{
 		Windows.Devices.Enumeration.Pnp.PnpObjectWatcher _ret;
@@ -117,6 +118,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateWatcherAqsFilter(type, requestedProperties, aqsFilter, &_ret));
 		return _ret;
 	}
+	alias CreateWatcher = CreateWatcherAqsFilter;
 }
 
 interface PnpObjectCollection : Windows.Foundation.Collections.IVectorView!(Windows.Devices.Enumeration.Pnp.PnpObject), Windows.Foundation.Collections.IIterable!(Windows.Devices.Enumeration.Pnp.PnpObject)

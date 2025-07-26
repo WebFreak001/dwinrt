@@ -236,18 +236,21 @@ extern(Windows):
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManager)this.asInterface(uuid("9a7d4b65-5e8f-4fc7-a2e5-7f6925cb8b53"))).abi_FindPackagesByUserSecurityId(userSecurityId, &_ret));
 		return _ret;
 	}
+	alias FindPackagesForUser = FindPackagesByUserSecurityId;
 	final Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Package) FindPackagesByNamePublisher(HSTRING packageName, HSTRING packagePublisher)
 	{
 		Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Package) _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManager)this.asInterface(uuid("9a7d4b65-5e8f-4fc7-a2e5-7f6925cb8b53"))).abi_FindPackagesByNamePublisher(packageName, packagePublisher, &_ret));
 		return _ret;
 	}
+	alias FindPackages = FindPackagesByNamePublisher;
 	final Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Package) FindPackagesByUserSecurityIdNamePublisher(HSTRING userSecurityId, HSTRING packageName, HSTRING packagePublisher)
 	{
 		Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Package) _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManager)this.asInterface(uuid("9a7d4b65-5e8f-4fc7-a2e5-7f6925cb8b53"))).abi_FindPackagesByUserSecurityIdNamePublisher(userSecurityId, packageName, packagePublisher, &_ret));
 		return _ret;
 	}
+	alias FindPackagesForUser = FindPackagesByUserSecurityIdNamePublisher;
 	final Windows.Foundation.Collections.IIterable!(Windows.Management.Deployment.PackageUserInformation) FindUsers(HSTRING packageFullName)
 	{
 		Windows.Foundation.Collections.IIterable!(Windows.Management.Deployment.PackageUserInformation) _ret;
@@ -264,6 +267,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManager)this.asInterface(uuid("9a7d4b65-5e8f-4fc7-a2e5-7f6925cb8b53"))).abi_FindPackageByPackageFullName(packageFullName, &_ret));
 		return _ret;
 	}
+	alias FindPackage = FindPackageByPackageFullName;
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Management.Deployment.DeploymentResult, Windows.Management.Deployment.DeploymentProgress) CleanupPackageForUserAsync(HSTRING packageName, HSTRING userSecurityId)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Management.Deployment.DeploymentResult, Windows.Management.Deployment.DeploymentProgress) _ret;
@@ -276,30 +280,35 @@ extern(Windows):
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManager)this.asInterface(uuid("9a7d4b65-5e8f-4fc7-a2e5-7f6925cb8b53"))).abi_FindPackagesByPackageFamilyName(packageFamilyName, &_ret));
 		return _ret;
 	}
+	alias FindPackages = FindPackagesByPackageFamilyName;
 	final Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Package) FindPackagesByUserSecurityIdPackageFamilyName(HSTRING userSecurityId, HSTRING packageFamilyName)
 	{
 		Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Package) _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManager)this.asInterface(uuid("9a7d4b65-5e8f-4fc7-a2e5-7f6925cb8b53"))).abi_FindPackagesByUserSecurityIdPackageFamilyName(userSecurityId, packageFamilyName, &_ret));
 		return _ret;
 	}
+	alias FindPackagesForUser = FindPackagesByUserSecurityIdPackageFamilyName;
 	final Windows.ApplicationModel.Package FindPackageByUserSecurityIdPackageFullName(HSTRING userSecurityId, HSTRING packageFullName)
 	{
 		Windows.ApplicationModel.Package _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManager)this.asInterface(uuid("9a7d4b65-5e8f-4fc7-a2e5-7f6925cb8b53"))).abi_FindPackageByUserSecurityIdPackageFullName(userSecurityId, packageFullName, &_ret));
 		return _ret;
 	}
+	alias FindPackageForUser = FindPackageByUserSecurityIdPackageFullName;
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Management.Deployment.DeploymentResult, Windows.Management.Deployment.DeploymentProgress) RemovePackageWithOptionsAsync(HSTRING packageFullName, Windows.Management.Deployment.RemovalOptions removalOptions)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Management.Deployment.DeploymentResult, Windows.Management.Deployment.DeploymentProgress) _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManager2)this.asInterface(uuid("f7aad08d-0840-46f2-b5d8-cad47693a095"))).abi_RemovePackageWithOptionsAsync(packageFullName, removalOptions, &_ret));
 		return _ret;
 	}
+	alias RemovePackageAsync = RemovePackageWithOptionsAsync;
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Management.Deployment.DeploymentResult, Windows.Management.Deployment.DeploymentProgress) StagePackageWithOptionsAsync(Windows.Foundation.Uri packageUri, Windows.Foundation.Collections.IIterable!(Windows.Foundation.Uri) dependencyPackageUris, Windows.Management.Deployment.DeploymentOptions deploymentOptions)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Management.Deployment.DeploymentResult, Windows.Management.Deployment.DeploymentProgress) _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManager2)this.asInterface(uuid("f7aad08d-0840-46f2-b5d8-cad47693a095"))).abi_StagePackageWithOptionsAsync(packageUri, dependencyPackageUris, deploymentOptions, &_ret));
 		return _ret;
 	}
+	alias StagePackageAsync = StagePackageWithOptionsAsync;
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Management.Deployment.DeploymentResult, Windows.Management.Deployment.DeploymentProgress) RegisterPackageByFullNameAsync(HSTRING mainPackageFullName, Windows.Foundation.Collections.IIterable!(HSTRING) dependencyPackageFullNames, Windows.Management.Deployment.DeploymentOptions deploymentOptions)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Management.Deployment.DeploymentResult, Windows.Management.Deployment.DeploymentProgress) _ret;
@@ -318,30 +327,35 @@ extern(Windows):
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManager2)this.asInterface(uuid("f7aad08d-0840-46f2-b5d8-cad47693a095"))).abi_FindPackagesByUserSecurityIdWithPackageTypes(userSecurityId, packageTypes, &_ret));
 		return _ret;
 	}
+	alias FindPackagesForUserWithPackageTypes = FindPackagesByUserSecurityIdWithPackageTypes;
 	final Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Package) FindPackagesByNamePublisherWithPackageTypes(HSTRING packageName, HSTRING packagePublisher, Windows.Management.Deployment.PackageTypes packageTypes)
 	{
 		Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Package) _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManager2)this.asInterface(uuid("f7aad08d-0840-46f2-b5d8-cad47693a095"))).abi_FindPackagesByNamePublisherWithPackageTypes(packageName, packagePublisher, packageTypes, &_ret));
 		return _ret;
 	}
+	alias FindPackagesWithPackageTypes = FindPackagesByNamePublisherWithPackageTypes;
 	final Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Package) FindPackagesByUserSecurityIdNamePublisherWithPackageTypes(HSTRING userSecurityId, HSTRING packageName, HSTRING packagePublisher, Windows.Management.Deployment.PackageTypes packageTypes)
 	{
 		Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Package) _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManager2)this.asInterface(uuid("f7aad08d-0840-46f2-b5d8-cad47693a095"))).abi_FindPackagesByUserSecurityIdNamePublisherWithPackageTypes(userSecurityId, packageName, packagePublisher, packageTypes, &_ret));
 		return _ret;
 	}
+	alias FindPackagesForUserWithPackageTypes = FindPackagesByUserSecurityIdNamePublisherWithPackageTypes;
 	final Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Package) FindPackagesByPackageFamilyNameWithPackageTypes(HSTRING packageFamilyName, Windows.Management.Deployment.PackageTypes packageTypes)
 	{
 		Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Package) _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManager2)this.asInterface(uuid("f7aad08d-0840-46f2-b5d8-cad47693a095"))).abi_FindPackagesByPackageFamilyNameWithPackageTypes(packageFamilyName, packageTypes, &_ret));
 		return _ret;
 	}
+	alias FindPackagesWithPackageTypes = FindPackagesByPackageFamilyNameWithPackageTypes;
 	final Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Package) FindPackagesByUserSecurityIdPackageFamilyNameWithPackageTypes(HSTRING userSecurityId, HSTRING packageFamilyName, Windows.Management.Deployment.PackageTypes packageTypes)
 	{
 		Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Package) _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManager2)this.asInterface(uuid("f7aad08d-0840-46f2-b5d8-cad47693a095"))).abi_FindPackagesByUserSecurityIdPackageFamilyNameWithPackageTypes(userSecurityId, packageFamilyName, packageTypes, &_ret));
 		return _ret;
 	}
+	alias FindPackagesForUserWithPackageTypes = FindPackagesByUserSecurityIdPackageFamilyNameWithPackageTypes;
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Management.Deployment.DeploymentResult, Windows.Management.Deployment.DeploymentProgress) StageUserDataAsync(HSTRING packageFullName)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Management.Deployment.DeploymentResult, Windows.Management.Deployment.DeploymentProgress) _ret;
@@ -360,6 +374,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManager3)this.asInterface(uuid("daad9948-36f1-41a7-9188-bc263e0dcb72"))).abi_AddPackageToVolumeAsync(packageUri, dependencyPackageUris, deploymentOptions, targetVolume, &_ret));
 		return _ret;
 	}
+	alias AddPackageAsync = AddPackageToVolumeAsync;
 	final void ClearPackageStatus(HSTRING packageFullName, Windows.Management.Deployment.PackageStatus status)
 	{
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManager3)this.asInterface(uuid("daad9948-36f1-41a7-9188-bc263e0dcb72"))).abi_ClearPackageStatus(packageFullName, status));
@@ -370,12 +385,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManager3)this.asInterface(uuid("daad9948-36f1-41a7-9188-bc263e0dcb72"))).abi_RegisterPackageWithAppDataVolumeAsync(manifestUri, dependencyPackageUris, deploymentOptions, appDataVolume, &_ret));
 		return _ret;
 	}
+	alias RegisterPackageAsync = RegisterPackageWithAppDataVolumeAsync;
 	final Windows.Management.Deployment.PackageVolume FindPackageVolumeByName(HSTRING volumeName)
 	{
 		Windows.Management.Deployment.PackageVolume _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManager3)this.asInterface(uuid("daad9948-36f1-41a7-9188-bc263e0dcb72"))).abi_FindPackageVolumeByName(volumeName, &_ret));
 		return _ret;
 	}
+	alias FindPackageVolume = FindPackageVolumeByName;
 	final Windows.Foundation.Collections.IIterable!(Windows.Management.Deployment.PackageVolume) FindPackageVolumes()
 	{
 		Windows.Foundation.Collections.IIterable!(Windows.Management.Deployment.PackageVolume) _ret;
@@ -426,12 +443,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManager3)this.asInterface(uuid("daad9948-36f1-41a7-9188-bc263e0dcb72"))).abi_StagePackageToVolumeAsync(packageUri, dependencyPackageUris, deploymentOptions, targetVolume, &_ret));
 		return _ret;
 	}
+	alias StagePackageAsync = StagePackageToVolumeAsync;
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Management.Deployment.DeploymentResult, Windows.Management.Deployment.DeploymentProgress) StageUserDataWithOptionsAsync(HSTRING packageFullName, Windows.Management.Deployment.DeploymentOptions deploymentOptions)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Management.Deployment.DeploymentResult, Windows.Management.Deployment.DeploymentProgress) _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManager3)this.asInterface(uuid("daad9948-36f1-41a7-9188-bc263e0dcb72"))).abi_StageUserDataWithOptionsAsync(packageFullName, deploymentOptions, &_ret));
 		return _ret;
 	}
+	alias StageUserDataAsync = StageUserDataWithOptionsAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Management.Deployment.PackageVolume)) GetPackageVolumesAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Management.Deployment.PackageVolume)) _ret;
@@ -444,18 +463,21 @@ extern(Windows):
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManager5)this.asInterface(uuid("711f3117-1afd-4313-978c-9bb6e1b864a7"))).abi_AddPackageToVolumeAndOptionalPackagesAsync(packageUri, dependencyPackageUris, deploymentOptions, targetVolume, optionalPackageFamilyNames, externalPackageUris, &_ret));
 		return _ret;
 	}
+	alias AddPackageAsync = AddPackageToVolumeAndOptionalPackagesAsync;
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Management.Deployment.DeploymentResult, Windows.Management.Deployment.DeploymentProgress) StagePackageToVolumeAndOptionalPackagesAsync(Windows.Foundation.Uri packageUri, Windows.Foundation.Collections.IIterable!(Windows.Foundation.Uri) dependencyPackageUris, Windows.Management.Deployment.DeploymentOptions deploymentOptions, Windows.Management.Deployment.PackageVolume targetVolume, Windows.Foundation.Collections.IIterable!(HSTRING) optionalPackageFamilyNames, Windows.Foundation.Collections.IIterable!(Windows.Foundation.Uri) externalPackageUris)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Management.Deployment.DeploymentResult, Windows.Management.Deployment.DeploymentProgress) _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManager5)this.asInterface(uuid("711f3117-1afd-4313-978c-9bb6e1b864a7"))).abi_StagePackageToVolumeAndOptionalPackagesAsync(packageUri, dependencyPackageUris, deploymentOptions, targetVolume, optionalPackageFamilyNames, externalPackageUris, &_ret));
 		return _ret;
 	}
+	alias StagePackageAsync = StagePackageToVolumeAndOptionalPackagesAsync;
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Management.Deployment.DeploymentResult, Windows.Management.Deployment.DeploymentProgress) RegisterPackageByFamilyNameAndOptionalPackagesAsync(HSTRING mainPackageFamilyName, Windows.Foundation.Collections.IIterable!(HSTRING) dependencyPackageFamilyNames, Windows.Management.Deployment.DeploymentOptions deploymentOptions, Windows.Management.Deployment.PackageVolume appDataVolume, Windows.Foundation.Collections.IIterable!(HSTRING) optionalPackageFamilyNames)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Management.Deployment.DeploymentResult, Windows.Management.Deployment.DeploymentProgress) _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManager5)this.asInterface(uuid("711f3117-1afd-4313-978c-9bb6e1b864a7"))).abi_RegisterPackageByFamilyNameAndOptionalPackagesAsync(mainPackageFamilyName, dependencyPackageFamilyNames, deploymentOptions, appDataVolume, optionalPackageFamilyNames, &_ret));
 		return _ret;
 	}
+	alias RegisterPackageByFamilyNameAsync = RegisterPackageByFamilyNameAndOptionalPackagesAsync;
 	final Windows.Management.Deployment.PackageManagerDebugSettings DebugSettings()
 	{
 		Windows.Management.Deployment.PackageManagerDebugSettings _ret;
@@ -485,6 +507,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Management.Deployment.IPackageManagerDebugSettings)this.asInterface(uuid("1a611683-a988-4fcf-8f0f-ce175898e8eb"))).abi_SetContentGroupStateWithPercentageAsync(package_, contentGroupName, state, completionPercentage, &_ret));
 		return _ret;
 	}
+	alias SetContentGroupStateAsync = SetContentGroupStateWithPercentageAsync;
 }
 
 interface PackageUserInformation : Windows.Management.Deployment.IPackageUserInformation
@@ -555,12 +578,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.Management.Deployment.IPackageVolume)this.asInterface(uuid("cf2672c3-1a40-4450-9739-2ace2e898853"))).abi_FindPackagesByNamePublisher(packageName, packagePublisher, &_ret));
 		return _ret;
 	}
+	alias FindPackages = FindPackagesByNamePublisher;
 	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Package) FindPackagesByPackageFamilyName(HSTRING packageFamilyName)
 	{
 		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Package) _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageVolume)this.asInterface(uuid("cf2672c3-1a40-4450-9739-2ace2e898853"))).abi_FindPackagesByPackageFamilyName(packageFamilyName, &_ret));
 		return _ret;
 	}
+	alias FindPackages = FindPackagesByPackageFamilyName;
 	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Package) FindPackagesWithPackageTypes(Windows.Management.Deployment.PackageTypes packageTypes)
 	{
 		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Package) _ret;
@@ -573,60 +598,70 @@ extern(Windows):
 		Debug.OK((cast(Windows.Management.Deployment.IPackageVolume)this.asInterface(uuid("cf2672c3-1a40-4450-9739-2ace2e898853"))).abi_FindPackagesByNamePublisherWithPackagesTypes(packageTypes, packageName, packagePublisher, &_ret));
 		return _ret;
 	}
+	alias FindPackagesWithPackageTypes = FindPackagesByNamePublisherWithPackagesTypes;
 	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Package) FindPackagesByPackageFamilyNameWithPackageTypes(Windows.Management.Deployment.PackageTypes packageTypes, HSTRING packageFamilyName)
 	{
 		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Package) _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageVolume)this.asInterface(uuid("cf2672c3-1a40-4450-9739-2ace2e898853"))).abi_FindPackagesByPackageFamilyNameWithPackageTypes(packageTypes, packageFamilyName, &_ret));
 		return _ret;
 	}
+	alias FindPackagesWithPackageTypes = FindPackagesByPackageFamilyNameWithPackageTypes;
 	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Package) FindPackageByPackageFullName(HSTRING packageFullName)
 	{
 		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Package) _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageVolume)this.asInterface(uuid("cf2672c3-1a40-4450-9739-2ace2e898853"))).abi_FindPackageByPackageFullName(packageFullName, &_ret));
 		return _ret;
 	}
+	alias FindPackage = FindPackageByPackageFullName;
 	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Package) FindPackagesByUserSecurityId(HSTRING userSecurityId)
 	{
 		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Package) _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageVolume)this.asInterface(uuid("cf2672c3-1a40-4450-9739-2ace2e898853"))).abi_FindPackagesByUserSecurityId(userSecurityId, &_ret));
 		return _ret;
 	}
+	alias FindPackagesForUser = FindPackagesByUserSecurityId;
 	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Package) FindPackagesByUserSecurityIdNamePublisher(HSTRING userSecurityId, HSTRING packageName, HSTRING packagePublisher)
 	{
 		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Package) _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageVolume)this.asInterface(uuid("cf2672c3-1a40-4450-9739-2ace2e898853"))).abi_FindPackagesByUserSecurityIdNamePublisher(userSecurityId, packageName, packagePublisher, &_ret));
 		return _ret;
 	}
+	alias FindPackagesForUser = FindPackagesByUserSecurityIdNamePublisher;
 	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Package) FindPackagesByUserSecurityIdPackageFamilyName(HSTRING userSecurityId, HSTRING packageFamilyName)
 	{
 		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Package) _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageVolume)this.asInterface(uuid("cf2672c3-1a40-4450-9739-2ace2e898853"))).abi_FindPackagesByUserSecurityIdPackageFamilyName(userSecurityId, packageFamilyName, &_ret));
 		return _ret;
 	}
+	alias FindPackagesForUser = FindPackagesByUserSecurityIdPackageFamilyName;
 	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Package) FindPackagesByUserSecurityIdWithPackageTypes(HSTRING userSecurityId, Windows.Management.Deployment.PackageTypes packageTypes)
 	{
 		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Package) _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageVolume)this.asInterface(uuid("cf2672c3-1a40-4450-9739-2ace2e898853"))).abi_FindPackagesByUserSecurityIdWithPackageTypes(userSecurityId, packageTypes, &_ret));
 		return _ret;
 	}
+	alias FindPackagesForUserWithPackageTypes = FindPackagesByUserSecurityIdWithPackageTypes;
 	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Package) FindPackagesByUserSecurityIdNamePublisherWithPackageTypes(HSTRING userSecurityId, Windows.Management.Deployment.PackageTypes packageTypes, HSTRING packageName, HSTRING packagePublisher)
 	{
 		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Package) _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageVolume)this.asInterface(uuid("cf2672c3-1a40-4450-9739-2ace2e898853"))).abi_FindPackagesByUserSecurityIdNamePublisherWithPackageTypes(userSecurityId, packageTypes, packageName, packagePublisher, &_ret));
 		return _ret;
 	}
+	alias FindPackagesForUserWithPackageTypes = FindPackagesByUserSecurityIdNamePublisherWithPackageTypes;
 	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Package) FindPackagesByUserSecurityIdPackageFamilyNameWithPackagesTypes(HSTRING userSecurityId, Windows.Management.Deployment.PackageTypes packageTypes, HSTRING packageFamilyName)
 	{
 		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Package) _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageVolume)this.asInterface(uuid("cf2672c3-1a40-4450-9739-2ace2e898853"))).abi_FindPackagesByUserSecurityIdPackageFamilyNameWithPackagesTypes(userSecurityId, packageTypes, packageFamilyName, &_ret));
 		return _ret;
 	}
+	alias FindPackagesForUserWithPackageTypes = FindPackagesByUserSecurityIdPackageFamilyNameWithPackagesTypes;
 	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Package) FindPackageByUserSecurityIdPackageFullName(HSTRING userSecurityId, HSTRING packageFullName)
 	{
 		Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Package) _ret;
 		Debug.OK((cast(Windows.Management.Deployment.IPackageVolume)this.asInterface(uuid("cf2672c3-1a40-4450-9739-2ace2e898853"))).abi_FindPackageByUserSecurityIdPackageFullName(userSecurityId, packageFullName, &_ret));
 		return _ret;
 	}
+	alias FindPackageForUser = FindPackageByUserSecurityIdPackageFullName;
 	final bool IsFullTrustPackageSupported()
 	{
 		bool _ret;

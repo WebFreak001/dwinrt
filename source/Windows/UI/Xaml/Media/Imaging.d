@@ -557,6 +557,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmap)this.asInterface(uuid("500dee81-893c-4c0a-8fec-4678ac717589"))).abi_RenderToSizeAsync(element, scaledWidth, scaledHeight, &_ret));
 		return _ret;
 	}
+	alias RenderAsync = RenderToSizeAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) GetPixelsAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;

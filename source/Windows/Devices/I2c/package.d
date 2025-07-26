@@ -213,6 +213,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDeviceSelectorFromFriendlyName(friendlyName, &_ret));
 		return _ret;
 	}
+	alias GetDeviceSelector = GetDeviceSelectorFromFriendlyName;
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.I2c.I2cDevice) FromIdAsync(HSTRING deviceId, Windows.Devices.I2c.I2cConnectionSettings settings)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.I2c.I2cDevice) _ret;

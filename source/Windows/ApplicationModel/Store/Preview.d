@@ -334,6 +334,7 @@ interface WebAuthenticationCoreManagerHelper
 		Debug.OK(staticInstance.abi_RequestTokenWithUIElementHostingAndWebAccountAsync(request, webAccount, uiElement, &_ret));
 		return _ret;
 	}
+	alias RequestTokenWithUIElementHostingAsync = RequestTokenWithUIElementHostingAndWebAccountAsync;
 }
 
 @bitflags

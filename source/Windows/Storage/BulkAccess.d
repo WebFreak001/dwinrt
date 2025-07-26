@@ -134,18 +134,21 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.IStorageFile)this.asInterface(uuid("fa3f6186-4214-428c-a64c-14c9ac7315ea"))).abi_CopyOverloadDefaultNameAndOptions(destinationFolder, &_ret));
 		return _ret;
 	}
+	alias CopyAsync = CopyOverloadDefaultNameAndOptions;
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) CopyOverloadDefaultOptions(Windows.Storage.IStorageFolder destinationFolder, HSTRING desiredNewName)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
 		Debug.OK((cast(Windows.Storage.IStorageFile)this.asInterface(uuid("fa3f6186-4214-428c-a64c-14c9ac7315ea"))).abi_CopyOverloadDefaultOptions(destinationFolder, desiredNewName, &_ret));
 		return _ret;
 	}
+	alias CopyAsync = CopyOverloadDefaultOptions;
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) CopyOverload(Windows.Storage.IStorageFolder destinationFolder, HSTRING desiredNewName, Windows.Storage.NameCollisionOption option)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
 		Debug.OK((cast(Windows.Storage.IStorageFile)this.asInterface(uuid("fa3f6186-4214-428c-a64c-14c9ac7315ea"))).abi_CopyOverload(destinationFolder, desiredNewName, option, &_ret));
 		return _ret;
 	}
+	alias CopyAsync = CopyOverload;
 	final Windows.Foundation.IAsyncAction CopyAndReplaceAsync(Windows.Storage.IStorageFile fileToReplace)
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -158,18 +161,21 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.IStorageFile)this.asInterface(uuid("fa3f6186-4214-428c-a64c-14c9ac7315ea"))).abi_MoveOverloadDefaultNameAndOptions(destinationFolder, &_ret));
 		return _ret;
 	}
+	alias MoveAsync = MoveOverloadDefaultNameAndOptions;
 	final Windows.Foundation.IAsyncAction MoveOverloadDefaultOptions(Windows.Storage.IStorageFolder destinationFolder, HSTRING desiredNewName)
 	{
 		Windows.Foundation.IAsyncAction _ret;
 		Debug.OK((cast(Windows.Storage.IStorageFile)this.asInterface(uuid("fa3f6186-4214-428c-a64c-14c9ac7315ea"))).abi_MoveOverloadDefaultOptions(destinationFolder, desiredNewName, &_ret));
 		return _ret;
 	}
+	alias MoveAsync = MoveOverloadDefaultOptions;
 	final Windows.Foundation.IAsyncAction MoveOverload(Windows.Storage.IStorageFolder destinationFolder, HSTRING desiredNewName, Windows.Storage.NameCollisionOption option)
 	{
 		Windows.Foundation.IAsyncAction _ret;
 		Debug.OK((cast(Windows.Storage.IStorageFile)this.asInterface(uuid("fa3f6186-4214-428c-a64c-14c9ac7315ea"))).abi_MoveOverload(destinationFolder, desiredNewName, option, &_ret));
 		return _ret;
 	}
+	alias MoveAsync = MoveOverload;
 	final Windows.Foundation.IAsyncAction MoveAndReplaceAsync(Windows.Storage.IStorageFile fileToReplace)
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -194,6 +200,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.IStorageItem)this.asInterface(uuid("4207a996-ca2f-42f7-bde8-8b10457a7f30"))).abi_RenameAsyncOverloadDefaultOptions(desiredName, &_ret));
 		return _ret;
 	}
+	alias RenameAsync = RenameAsyncOverloadDefaultOptions;
 	final Windows.Foundation.IAsyncAction RenameAsync(HSTRING desiredName, Windows.Storage.NameCollisionOption option)
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -206,6 +213,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.IStorageItem)this.asInterface(uuid("4207a996-ca2f-42f7-bde8-8b10457a7f30"))).abi_DeleteAsyncOverloadDefaultOptions(&_ret));
 		return _ret;
 	}
+	alias DeleteAsync = DeleteAsyncOverloadDefaultOptions;
 	final Windows.Foundation.IAsyncAction DeleteAsync(Windows.Storage.StorageDeleteOption option)
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -254,12 +262,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.IStorageItemProperties)this.asInterface(uuid("86664478-8029-46fe-a789-1c2f3e2ffb5c"))).abi_GetThumbnailAsyncOverloadDefaultSizeDefaultOptions(mode, &_ret));
 		return _ret;
 	}
+	alias GetThumbnailAsync = GetThumbnailAsyncOverloadDefaultSizeDefaultOptions;
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) GetThumbnailAsyncOverloadDefaultOptions(Windows.Storage.FileProperties.ThumbnailMode mode, UINT32 requestedSize)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) _ret;
 		Debug.OK((cast(Windows.Storage.IStorageItemProperties)this.asInterface(uuid("86664478-8029-46fe-a789-1c2f3e2ffb5c"))).abi_GetThumbnailAsyncOverloadDefaultOptions(mode, requestedSize, &_ret));
 		return _ret;
 	}
+	alias GetThumbnailAsync = GetThumbnailAsyncOverloadDefaultOptions;
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) GetThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode mode, UINT32 requestedSize, Windows.Storage.FileProperties.ThumbnailOptions options)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) _ret;
@@ -320,12 +330,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.IStorageFile2)this.asInterface(uuid("954e4bcf-0a77-42fb-b777-c2ed58a52e44"))).abi_OpenWithOptionsAsync(accessMode, options, &_ret));
 		return _ret;
 	}
+	alias OpenAsync = OpenWithOptionsAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageStreamTransaction) OpenTransactedWriteWithOptionsAsync(Windows.Storage.StorageOpenOptions options)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageStreamTransaction) _ret;
 		Debug.OK((cast(Windows.Storage.IStorageFile2)this.asInterface(uuid("954e4bcf-0a77-42fb-b777-c2ed58a52e44"))).abi_OpenTransactedWriteWithOptionsAsync(options, &_ret));
 		return _ret;
 	}
+	alias OpenTransactedWriteAsync = OpenTransactedWriteWithOptionsAsync;
 }
 
 interface FileInformationFactory : Windows.Storage.BulkAccess.IFileInformationFactory
@@ -343,6 +355,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.BulkAccess.IFileInformationFactory)this.asInterface(uuid("401d88be-960f-4d6d-a7d0-1a3861e76c83"))).abi_GetItemsAsyncDefaultStartAndCount(&_ret));
 		return _ret;
 	}
+	alias GetItemsAsync = GetItemsAsyncDefaultStartAndCount;
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.BulkAccess.FileInformation)) GetFilesAsync(UINT32 startIndex, UINT32 maxItemsToRetrieve)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.BulkAccess.FileInformation)) _ret;
@@ -355,6 +368,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.BulkAccess.IFileInformationFactory)this.asInterface(uuid("401d88be-960f-4d6d-a7d0-1a3861e76c83"))).abi_GetFilesAsyncDefaultStartAndCount(&_ret));
 		return _ret;
 	}
+	alias GetFilesAsync = GetFilesAsyncDefaultStartAndCount;
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.BulkAccess.FolderInformation)) GetFoldersAsync(UINT32 startIndex, UINT32 maxItemsToRetrieve)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.BulkAccess.FolderInformation)) _ret;
@@ -367,6 +381,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.BulkAccess.IFileInformationFactory)this.asInterface(uuid("401d88be-960f-4d6d-a7d0-1a3861e76c83"))).abi_GetFoldersAsyncDefaultStartAndCount(&_ret));
 		return _ret;
 	}
+	alias GetFoldersAsync = GetFoldersAsyncDefaultStartAndCount;
 	final IInspectable GetVirtualizedItemsVector()
 	{
 		IInspectable _ret;
@@ -480,6 +495,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.IStorageFolder)this.asInterface(uuid("72d1cb78-b3ef-4f75-a80b-6fd9dae2944b"))).abi_CreateFileAsyncOverloadDefaultOptions(desiredName, &_ret));
 		return _ret;
 	}
+	alias CreateFileAsync = CreateFileAsyncOverloadDefaultOptions;
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) CreateFileAsync(HSTRING desiredName, Windows.Storage.CreationCollisionOption options)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFile) _ret;
@@ -492,6 +508,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.IStorageFolder)this.asInterface(uuid("72d1cb78-b3ef-4f75-a80b-6fd9dae2944b"))).abi_CreateFolderAsyncOverloadDefaultOptions(desiredName, &_ret));
 		return _ret;
 	}
+	alias CreateFolderAsync = CreateFolderAsyncOverloadDefaultOptions;
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) CreateFolderAsync(HSTRING desiredName, Windows.Storage.CreationCollisionOption options)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.StorageFolder) _ret;
@@ -522,24 +539,28 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.IStorageFolder)this.asInterface(uuid("72d1cb78-b3ef-4f75-a80b-6fd9dae2944b"))).abi_GetFilesAsyncOverloadDefaultOptionsStartAndCount(&_ret));
 		return _ret;
 	}
+	alias GetFilesAsync = GetFilesAsyncOverloadDefaultOptionsStartAndCount;
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFolder)) GetFoldersAsyncOverloadDefaultOptionsStartAndCount()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFolder)) _ret;
 		Debug.OK((cast(Windows.Storage.IStorageFolder)this.asInterface(uuid("72d1cb78-b3ef-4f75-a80b-6fd9dae2944b"))).abi_GetFoldersAsyncOverloadDefaultOptionsStartAndCount(&_ret));
 		return _ret;
 	}
+	alias GetFoldersAsync = GetFoldersAsyncOverloadDefaultOptionsStartAndCount;
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem)) GetItemsAsyncOverloadDefaultStartAndCount()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem)) _ret;
 		Debug.OK((cast(Windows.Storage.IStorageFolder)this.asInterface(uuid("72d1cb78-b3ef-4f75-a80b-6fd9dae2944b"))).abi_GetItemsAsyncOverloadDefaultStartAndCount(&_ret));
 		return _ret;
 	}
+	alias GetItemsAsync = GetItemsAsyncOverloadDefaultStartAndCount;
 	final Windows.Foundation.IAsyncAction RenameAsyncOverloadDefaultOptions(HSTRING desiredName)
 	{
 		Windows.Foundation.IAsyncAction _ret;
 		Debug.OK((cast(Windows.Storage.IStorageItem)this.asInterface(uuid("4207a996-ca2f-42f7-bde8-8b10457a7f30"))).abi_RenameAsyncOverloadDefaultOptions(desiredName, &_ret));
 		return _ret;
 	}
+	alias RenameAsync = RenameAsyncOverloadDefaultOptions;
 	final Windows.Foundation.IAsyncAction RenameAsync(HSTRING desiredName, Windows.Storage.NameCollisionOption option)
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -552,6 +573,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.IStorageItem)this.asInterface(uuid("4207a996-ca2f-42f7-bde8-8b10457a7f30"))).abi_DeleteAsyncOverloadDefaultOptions(&_ret));
 		return _ret;
 	}
+	alias DeleteAsync = DeleteAsyncOverloadDefaultOptions;
 	final Windows.Foundation.IAsyncAction DeleteAsync(Windows.Storage.StorageDeleteOption option)
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -600,12 +622,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.IStorageItemProperties)this.asInterface(uuid("86664478-8029-46fe-a789-1c2f3e2ffb5c"))).abi_GetThumbnailAsyncOverloadDefaultSizeDefaultOptions(mode, &_ret));
 		return _ret;
 	}
+	alias GetThumbnailAsync = GetThumbnailAsyncOverloadDefaultSizeDefaultOptions;
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) GetThumbnailAsyncOverloadDefaultOptions(Windows.Storage.FileProperties.ThumbnailMode mode, UINT32 requestedSize)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) _ret;
 		Debug.OK((cast(Windows.Storage.IStorageItemProperties)this.asInterface(uuid("86664478-8029-46fe-a789-1c2f3e2ffb5c"))).abi_GetThumbnailAsyncOverloadDefaultOptions(mode, requestedSize, &_ret));
 		return _ret;
 	}
+	alias GetThumbnailAsync = GetThumbnailAsyncOverloadDefaultOptions;
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) GetThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode mode, UINT32 requestedSize, Windows.Storage.FileProperties.ThumbnailOptions options)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.FileProperties.StorageItemThumbnail) _ret;
@@ -648,6 +672,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.Search.IStorageFolderQueryOperations)this.asInterface(uuid("cb43ccc9-446b-4a4f-be97-757771be5203"))).abi_CreateFileQueryOverloadDefault(&_ret));
 		return _ret;
 	}
+	alias CreateFileQuery = CreateFileQueryOverloadDefault;
 	final Windows.Storage.Search.StorageFileQueryResult CreateFileQuery(Windows.Storage.Search.CommonFileQuery query)
 	{
 		Windows.Storage.Search.StorageFileQueryResult _ret;
@@ -666,6 +691,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.Search.IStorageFolderQueryOperations)this.asInterface(uuid("cb43ccc9-446b-4a4f-be97-757771be5203"))).abi_CreateFolderQueryOverloadDefault(&_ret));
 		return _ret;
 	}
+	alias CreateFolderQuery = CreateFolderQueryOverloadDefault;
 	final Windows.Storage.Search.StorageFolderQueryResult CreateFolderQuery(Windows.Storage.Search.CommonFolderQuery query)
 	{
 		Windows.Storage.Search.StorageFolderQueryResult _ret;
@@ -702,6 +728,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.Search.IStorageFolderQueryOperations)this.asInterface(uuid("cb43ccc9-446b-4a4f-be97-757771be5203"))).abi_GetFilesAsyncOverloadDefaultStartAndCount(query, &_ret));
 		return _ret;
 	}
+	alias GetFilesAsync = GetFilesAsyncOverloadDefaultStartAndCount;
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFolder)) GetFoldersAsync(Windows.Storage.Search.CommonFolderQuery query, UINT32 startIndex, UINT32 maxItemsToRetrieve)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.StorageFolder)) _ret;
@@ -714,6 +741,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.Search.IStorageFolderQueryOperations)this.asInterface(uuid("cb43ccc9-446b-4a4f-be97-757771be5203"))).abi_GetFoldersAsyncOverloadDefaultStartAndCount(query, &_ret));
 		return _ret;
 	}
+	alias GetFoldersAsync = GetFoldersAsyncOverloadDefaultStartAndCount;
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem)) GetItemsAsync(UINT32 startIndex, UINT32 maxItemsToRetrieve)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Storage.IStorageItem)) _ret;

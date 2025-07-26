@@ -467,6 +467,7 @@ interface FullTrustProcessLauncher
 		Debug.OK(staticInstance.abi_LaunchFullTrustProcessForCurrentAppWithParametersAsync(parameterGroupId, &_ret));
 		return _ret;
 	}
+	alias LaunchFullTrustProcessForCurrentAppAsync = LaunchFullTrustProcessForCurrentAppWithParametersAsync;
 	static Windows.Foundation.IAsyncAction LaunchFullTrustProcessForAppAsync(HSTRING fullTrustPackageRelativeAppId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -479,6 +480,7 @@ interface FullTrustProcessLauncher
 		Debug.OK(staticInstance.abi_LaunchFullTrustProcessForAppWithParametersAsync(fullTrustPackageRelativeAppId, parameterGroupId, &_ret));
 		return _ret;
 	}
+	alias LaunchFullTrustProcessForAppAsync = LaunchFullTrustProcessForAppWithParametersAsync;
 }
 
 interface LeavingBackgroundEventArgs : Windows.ApplicationModel.ILeavingBackgroundEventArgs
@@ -638,6 +640,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.IPackage5)this.asInterface(uuid("0e842dd4-d9ac-45ed-9a1e-74ce056b2635"))).abi_StageContentGroupsWithPriorityAsync(names, moveToHeadOfQueue, &_ret));
 		return _ret;
 	}
+	alias StageContentGroupsAsync = StageContentGroupsWithPriorityAsync;
 	final Windows.Foundation.IAsyncOperation!(bool) SetInUseAsync(bool inUse)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;

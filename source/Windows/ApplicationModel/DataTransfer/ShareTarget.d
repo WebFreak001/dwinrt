@@ -129,6 +129,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation)this.asInterface(uuid("2246bab8-d0f8-41c1-a82a-4137db6504fb"))).abi_ReportCompletedWithQuickLink(quicklink));
 	}
+	alias ReportCompleted = ReportCompletedWithQuickLink;
 	final void ReportCompleted()
 	{
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.ShareTarget.IShareOperation)this.asInterface(uuid("2246bab8-d0f8-41c1-a82a-4137db6504fb"))).abi_ReportCompleted());

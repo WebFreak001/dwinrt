@@ -1265,6 +1265,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel2)this.asInterface(uuid("c92069c7-c841-47f3-a84e-a149fd08b657"))).abi_TryPartialRepairWithTimeAsync(maxWaitTime, &_ret));
 		return _ret;
 	}
+	alias TryPartialRepairAsync = TryPartialRepairWithTimeAsync;
 	final Windows.Foundation.IAsyncOperationWithProgress!(bool, double) TryReduceFacesAsync()
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(bool, double) _ret;
@@ -1277,12 +1278,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel2)this.asInterface(uuid("c92069c7-c841-47f3-a84e-a149fd08b657"))).abi_TryReduceFacesWithOptionsAsync(printing3DFaceReductionOptions, &_ret));
 		return _ret;
 	}
+	alias TryReduceFacesAsync = TryReduceFacesWithOptionsAsync;
 	final Windows.Foundation.IAsyncOperationWithProgress!(bool, double) TryReduceFacesWithOptionsAndTimeAsync(Windows.Graphics.Printing3D.Printing3DFaceReductionOptions printing3DFaceReductionOptions, Windows.Foundation.TimeSpan maxWait)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(bool, double) _ret;
 		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel2)this.asInterface(uuid("c92069c7-c841-47f3-a84e-a149fd08b657"))).abi_TryReduceFacesWithOptionsAndTimeAsync(printing3DFaceReductionOptions, maxWait, &_ret));
 		return _ret;
 	}
+	alias TryReduceFacesAsync = TryReduceFacesWithOptionsAndTimeAsync;
 	final Windows.Foundation.IAsyncOperationWithProgress!(bool, double) RepairWithProgressAsync()
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(bool, double) _ret;

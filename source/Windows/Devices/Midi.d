@@ -953,6 +953,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateFromAudioDeviceAsync(audioDevice, &_ret));
 		return _ret;
 	}
+	alias CreateAsync = CreateFromAudioDeviceAsync;
 	static bool IsSynthesizer(Windows.Devices.Enumeration.DeviceInformation midiDevice)
 	{
 		bool _ret;

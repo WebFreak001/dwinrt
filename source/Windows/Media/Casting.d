@@ -290,6 +290,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Casting.ICastingDevicePicker)this.asInterface(uuid("dcd39924-0591-49be-aacb-4b82ee756a95"))).abi_ShowWithPlacement(selection, preferredPlacement));
 	}
+	alias Show = ShowWithPlacement;
 	final void Hide()
 	{
 		Debug.OK((cast(Windows.Media.Casting.ICastingDevicePicker)this.asInterface(uuid("dcd39924-0591-49be-aacb-4b82ee756a95"))).abi_Hide());

@@ -1230,6 +1230,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Devices.IFocusControl)this.asInterface(uuid("c0d889f6-5228-4453-b153-85606592b238"))).abi_SetPresetWithCompletionOptionAsync(preset, completeBeforeFocus, &_ret));
 		return _ret;
 	}
+	alias SetPresetAsync = SetPresetWithCompletionOptionAsync;
 	final UINT32 Min()
 	{
 		UINT32 _ret;
@@ -1975,6 +1976,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Devices.IRegionsOfInterestControl)this.asInterface(uuid("c323f527-ab0b-4558-8b5b-df5693db0378"))).abi_SetRegionsWithLockAsync(regions, lockValues, &_ret));
 		return _ret;
 	}
+	alias SetRegionsAsync = SetRegionsWithLockAsync;
 	final Windows.Foundation.IAsyncAction ClearRegionsAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;

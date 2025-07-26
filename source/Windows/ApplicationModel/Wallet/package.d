@@ -604,6 +604,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemStore)this.asInterface(uuid("7160484b-6d49-48f8-91a9-40a1d0f13ef4"))).abi_GetItemsWithKindAsync(kind, &_ret));
 		return _ret;
 	}
+	alias GetItemsAsync = GetItemsWithKindAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.WalletItem) ImportItemAsync(Windows.Storage.Streams.IRandomAccessStreamReference stream)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.WalletItem) _ret;
@@ -628,6 +629,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemStore)this.asInterface(uuid("7160484b-6d49-48f8-91a9-40a1d0f13ef4"))).abi_ShowItemAsync(id, &_ret));
 		return _ret;
 	}
+	alias ShowAsync = ShowItemAsync;
 	final Windows.Foundation.IAsyncAction UpdateAsync(Windows.ApplicationModel.Wallet.WalletItem item)
 	{
 		Windows.Foundation.IAsyncAction _ret;

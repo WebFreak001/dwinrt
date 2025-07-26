@@ -611,6 +611,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Usb.IUsbDevice)this.asInterface(uuid("5249b992-c456-44d5-ad5e-24f5a089f63b"))).abi_SendControlOutTransferAsyncNoBuffer(setupPacket, &_ret));
 		return _ret;
 	}
+	alias SendControlOutTransferAsync = SendControlOutTransferAsyncNoBuffer;
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) SendControlInTransferAsync(Windows.Devices.Usb.UsbSetupPacket setupPacket, Windows.Storage.Streams.IBuffer buffer)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer) _ret;
@@ -623,6 +624,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Usb.IUsbDevice)this.asInterface(uuid("5249b992-c456-44d5-ad5e-24f5a089f63b"))).abi_SendControlInTransferAsyncNoBuffer(setupPacket, &_ret));
 		return _ret;
 	}
+	alias SendControlInTransferAsync = SendControlInTransferAsyncNoBuffer;
 	final Windows.Devices.Usb.UsbInterface DefaultInterface()
 	{
 		Windows.Devices.Usb.UsbInterface _ret;
@@ -664,12 +666,14 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDeviceSelectorGuidOnly(winUsbInterfaceClass, &_ret));
 		return _ret;
 	}
+	alias GetDeviceSelector = GetDeviceSelectorGuidOnly;
 	static HSTRING GetDeviceSelectorVidPidOnly(UINT32 vendorId, UINT32 productId)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelectorVidPidOnly(vendorId, productId, &_ret));
 		return _ret;
 	}
+	alias GetDeviceSelector = GetDeviceSelectorVidPidOnly;
 	static HSTRING GetDeviceClassSelector(Windows.Devices.Usb.UsbDeviceClass usbClass)
 	{
 		HSTRING _ret;

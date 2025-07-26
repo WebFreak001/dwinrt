@@ -326,6 +326,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_RegisterDevicePresenceMonitoringWithNewDeviceAsync(deviceId, deviceInstancePath, monitoringMode, deviceFriendlyName, deviceModelNumber, deviceConfigurationData, &_ret));
 		return _ret;
 	}
+	alias RegisterDevicePresenceMonitoringAsync = RegisterDevicePresenceMonitoringWithNewDeviceAsync;
 	static Windows.Foundation.IAsyncAction UnregisterDevicePresenceMonitoringAsync(HSTRING deviceId)
 	{
 		Windows.Foundation.IAsyncAction _ret;

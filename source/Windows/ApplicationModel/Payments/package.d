@@ -663,6 +663,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Payments.IPaymentMediator)this.asInterface(uuid("fb0ee829-ec0c-449a-83da-7ae3073365a2"))).abi_SubmitPaymentRequestWithChangeHandlerAsync(paymentRequest, changeHandler, &_ret));
 		return _ret;
 	}
+	alias SubmitPaymentRequestAsync = SubmitPaymentRequestWithChangeHandlerAsync;
 	static PaymentMediator New()
 	{
 		IInspectable ret;

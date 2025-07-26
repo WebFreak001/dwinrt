@@ -684,6 +684,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDataBySessionPortWithLanguageAsync(uniqueName, busAttachment, sessionPort, language, &_ret));
 		return _ret;
 	}
+	alias GetDataBySessionPortAsync = GetDataBySessionPortWithLanguageAsync;
 }
 
 interface AllJoynAcceptSessionJoinerEventArgs : Windows.Devices.AllJoyn.IAllJoynAcceptSessionJoinerEventArgs
@@ -854,6 +855,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.AllJoyn.IAllJoynBusAttachment2)this.asInterface(uuid("3474cb1e-2368-43b2-b43e-6a3ac1278d98"))).abi_GetAboutDataWithLanguageAsync(serviceInfo, language, &_ret));
 		return _ret;
 	}
+	alias GetAboutDataAsync = GetAboutDataWithLanguageAsync;
 	final EventRegistrationToken OnAcceptSessionJoinerRequested(void delegate(Windows.Devices.AllJoyn.AllJoynBusAttachment, Windows.Devices.AllJoyn.AllJoynAcceptSessionJoinerEventArgs) fn)
 	{
 		EventRegistrationToken tok;
@@ -1296,6 +1298,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetFromServiceInfoAndBusAttachmentAsync(serviceInfo, busAttachment, &_ret));
 		return _ret;
 	}
+	alias GetFromServiceInfoAsync = GetFromServiceInfoAndBusAttachmentAsync;
 }
 
 interface AllJoynSessionJoinedEventArgs : Windows.Devices.AllJoyn.IAllJoynSessionJoinedEventArgs

@@ -76,18 +76,21 @@ interface CredentialPicker
 		Debug.OK(staticInstance.abi_PickWithOptionsAsync(options, &_ret));
 		return _ret;
 	}
+	alias PickAsync = PickWithOptionsAsync;
 	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) PickWithMessageAsync(HSTRING targetName, HSTRING message)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) _ret;
 		Debug.OK(staticInstance.abi_PickWithMessageAsync(targetName, message, &_ret));
 		return _ret;
 	}
+	alias PickAsync = PickWithMessageAsync;
 	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) PickWithCaptionAsync(HSTRING targetName, HSTRING message, HSTRING caption)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.UI.CredentialPickerResults) _ret;
 		Debug.OK(staticInstance.abi_PickWithCaptionAsync(targetName, message, caption, &_ret));
 		return _ret;
 	}
+	alias PickAsync = PickWithCaptionAsync;
 }
 
 interface CredentialPickerOptions : Windows.Security.Credentials.UI.ICredentialPickerOptions

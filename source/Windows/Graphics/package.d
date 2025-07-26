@@ -21,4 +21,3 @@ struct SizeInt32
 	INT32 Width;
 	INT32 Height;
 }
-

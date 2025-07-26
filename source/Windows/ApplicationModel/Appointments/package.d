@@ -829,6 +829,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.IAppointmentCalendar)this.asInterface(uuid("5273819d-8339-3d4f-a02f-64084452bb5d"))).abi_FindAppointmentsAsyncWithOptions(rangeStart, rangeLength, options, &_ret));
 		return _ret;
 	}
+	alias FindAppointmentsAsync = FindAppointmentsAsyncWithOptions;
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.AppointmentException)) FindExceptionsFromMasterAsync(HSTRING masterLocalId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.AppointmentException)) _ret;
@@ -847,6 +848,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.IAppointmentCalendar)this.asInterface(uuid("5273819d-8339-3d4f-a02f-64084452bb5d"))).abi_FindAllInstancesAsyncWithOptions(masterLocalId, rangeStart, rangeLength, pOptions, &_ret));
 		return _ret;
 	}
+	alias FindAllInstancesAsync = FindAllInstancesAsyncWithOptions;
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.Appointment) GetAppointmentAsync(HSTRING localId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.Appointment) _ret;
@@ -871,6 +873,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.IAppointmentCalendar)this.asInterface(uuid("5273819d-8339-3d4f-a02f-64084452bb5d"))).abi_FindUnexpandedAppointmentsAsyncWithOptions(options, &_ret));
 		return _ret;
 	}
+	alias FindUnexpandedAppointmentsAsync = FindUnexpandedAppointmentsAsyncWithOptions;
 	final Windows.Foundation.IAsyncAction DeleteAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -1201,6 +1204,7 @@ interface AppointmentManager
 		Debug.OK(staticInstance.abi_ShowAddAppointmentWithPlacementAsync(appointment, selection, preferredPlacement, &_ret));
 		return _ret;
 	}
+	alias ShowAddAppointmentAsync = ShowAddAppointmentWithPlacementAsync;
 	static Windows.Foundation.IAsyncOperation!(HSTRING) ShowReplaceAppointmentAsync(HSTRING appointmentId, Windows.ApplicationModel.Appointments.Appointment appointment, Windows.Foundation.Rect selection)
 	{
 		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
@@ -1213,12 +1217,14 @@ interface AppointmentManager
 		Debug.OK(staticInstance.abi_ShowReplaceAppointmentWithPlacementAsync(appointmentId, appointment, selection, preferredPlacement, &_ret));
 		return _ret;
 	}
+	alias ShowReplaceAppointmentAsync = ShowReplaceAppointmentWithPlacementAsync;
 	static Windows.Foundation.IAsyncOperation!(HSTRING) ShowReplaceAppointmentWithPlacementAndDateAsync(HSTRING appointmentId, Windows.ApplicationModel.Appointments.Appointment appointment, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement, Windows.Foundation.DateTime instanceStartDate)
 	{
 		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
 		Debug.OK(staticInstance.abi_ShowReplaceAppointmentWithPlacementAndDateAsync(appointmentId, appointment, selection, preferredPlacement, instanceStartDate, &_ret));
 		return _ret;
 	}
+	alias ShowReplaceAppointmentAsync = ShowReplaceAppointmentWithPlacementAndDateAsync;
 	static Windows.Foundation.IAsyncOperation!(bool) ShowRemoveAppointmentAsync(HSTRING appointmentId, Windows.Foundation.Rect selection)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
@@ -1231,12 +1237,14 @@ interface AppointmentManager
 		Debug.OK(staticInstance.abi_ShowRemoveAppointmentWithPlacementAsync(appointmentId, selection, preferredPlacement, &_ret));
 		return _ret;
 	}
+	alias ShowRemoveAppointmentAsync = ShowRemoveAppointmentWithPlacementAsync;
 	static Windows.Foundation.IAsyncOperation!(bool) ShowRemoveAppointmentWithPlacementAndDateAsync(HSTRING appointmentId, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement, Windows.Foundation.DateTime instanceStartDate)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
 		Debug.OK(staticInstance.abi_ShowRemoveAppointmentWithPlacementAndDateAsync(appointmentId, selection, preferredPlacement, instanceStartDate, &_ret));
 		return _ret;
 	}
+	alias ShowRemoveAppointmentAsync = ShowRemoveAppointmentWithPlacementAndDateAsync;
 	static Windows.Foundation.IAsyncAction ShowTimeFrameAsync(Windows.Foundation.DateTime timeToShow, Windows.Foundation.TimeSpan duration)
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -1260,6 +1268,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.IAppointmentManagerForUser)this.asInterface(uuid("70261423-73cc-4660-b318-b01365302a03"))).abi_ShowAddAppointmentWithPlacementAsync(appointment, selection, preferredPlacement, &_ret));
 		return _ret;
 	}
+	alias ShowAddAppointmentAsync = ShowAddAppointmentWithPlacementAsync;
 	final Windows.Foundation.IAsyncOperation!(HSTRING) ShowReplaceAppointmentAsync(HSTRING appointmentId, Windows.ApplicationModel.Appointments.Appointment appointment, Windows.Foundation.Rect selection)
 	{
 		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
@@ -1272,12 +1281,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.IAppointmentManagerForUser)this.asInterface(uuid("70261423-73cc-4660-b318-b01365302a03"))).abi_ShowReplaceAppointmentWithPlacementAsync(appointmentId, appointment, selection, preferredPlacement, &_ret));
 		return _ret;
 	}
+	alias ShowReplaceAppointmentAsync = ShowReplaceAppointmentWithPlacementAsync;
 	final Windows.Foundation.IAsyncOperation!(HSTRING) ShowReplaceAppointmentWithPlacementAndDateAsync(HSTRING appointmentId, Windows.ApplicationModel.Appointments.Appointment appointment, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement, Windows.Foundation.DateTime instanceStartDate)
 	{
 		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.IAppointmentManagerForUser)this.asInterface(uuid("70261423-73cc-4660-b318-b01365302a03"))).abi_ShowReplaceAppointmentWithPlacementAndDateAsync(appointmentId, appointment, selection, preferredPlacement, instanceStartDate, &_ret));
 		return _ret;
 	}
+	alias ShowReplaceAppointmentAsync = ShowReplaceAppointmentWithPlacementAndDateAsync;
 	final Windows.Foundation.IAsyncOperation!(bool) ShowRemoveAppointmentAsync(HSTRING appointmentId, Windows.Foundation.Rect selection)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
@@ -1290,12 +1301,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.IAppointmentManagerForUser)this.asInterface(uuid("70261423-73cc-4660-b318-b01365302a03"))).abi_ShowRemoveAppointmentWithPlacementAsync(appointmentId, selection, preferredPlacement, &_ret));
 		return _ret;
 	}
+	alias ShowRemoveAppointmentAsync = ShowRemoveAppointmentWithPlacementAsync;
 	final Windows.Foundation.IAsyncOperation!(bool) ShowRemoveAppointmentWithPlacementAndDateAsync(HSTRING appointmentId, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement, Windows.Foundation.DateTime instanceStartDate)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.IAppointmentManagerForUser)this.asInterface(uuid("70261423-73cc-4660-b318-b01365302a03"))).abi_ShowRemoveAppointmentWithPlacementAndDateAsync(appointmentId, selection, preferredPlacement, instanceStartDate, &_ret));
 		return _ret;
 	}
+	alias ShowRemoveAppointmentAsync = ShowRemoveAppointmentWithPlacementAndDateAsync;
 	final Windows.Foundation.IAsyncAction ShowTimeFrameAsync(Windows.Foundation.DateTime timeToShow, Windows.Foundation.TimeSpan duration)
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -1314,6 +1327,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.IAppointmentManagerForUser)this.asInterface(uuid("70261423-73cc-4660-b318-b01365302a03"))).abi_ShowAppointmentDetailsWithDateAsync(appointmentId, instanceStartDate, &_ret));
 		return _ret;
 	}
+	alias ShowAppointmentDetailsAsync = ShowAppointmentDetailsWithDateAsync;
 	final Windows.Foundation.IAsyncOperation!(HSTRING) ShowEditNewAppointmentAsync(Windows.ApplicationModel.Appointments.Appointment appointment)
 	{
 		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
@@ -1671,6 +1685,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.IAppointmentStore)this.asInterface(uuid("a461918c-7a47-4d96-96c9-15cd8a05a735"))).abi_FindAppointmentCalendarsAsyncWithOptions(options, &_ret));
 		return _ret;
 	}
+	alias FindAppointmentCalendarsAsync = FindAppointmentCalendarsAsyncWithOptions;
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.Appointment)) FindAppointmentsAsync(Windows.Foundation.DateTime rangeStart, Windows.Foundation.TimeSpan rangeLength)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Appointments.Appointment)) _ret;
@@ -1683,6 +1698,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.IAppointmentStore)this.asInterface(uuid("a461918c-7a47-4d96-96c9-15cd8a05a735"))).abi_FindAppointmentsAsyncWithOptions(rangeStart, rangeLength, options, &_ret));
 		return _ret;
 	}
+	alias FindAppointmentsAsync = FindAppointmentsAsyncWithOptions;
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.AppointmentConflictResult) FindConflictAsync(Windows.ApplicationModel.Appointments.Appointment appointment)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Appointments.AppointmentConflictResult) _ret;
@@ -1695,6 +1711,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.IAppointmentStore)this.asInterface(uuid("a461918c-7a47-4d96-96c9-15cd8a05a735"))).abi_FindConflictAsyncWithInstanceStart(appointment, instanceStartTime, &_ret));
 		return _ret;
 	}
+	alias FindConflictAsync = FindConflictAsyncWithInstanceStart;
 	final Windows.Foundation.IAsyncAction MoveAppointmentAsync(Windows.ApplicationModel.Appointments.Appointment appointment, Windows.ApplicationModel.Appointments.AppointmentCalendar destinationCalendar)
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -1719,6 +1736,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.IAppointmentStore)this.asInterface(uuid("a461918c-7a47-4d96-96c9-15cd8a05a735"))).abi_ShowReplaceAppointmentWithPlacementAndDateAsync(localId, appointment, selection, preferredPlacement, instanceStartDate, &_ret));
 		return _ret;
 	}
+	alias ShowReplaceAppointmentAsync = ShowReplaceAppointmentWithPlacementAndDateAsync;
 	final Windows.Foundation.IAsyncOperation!(bool) ShowRemoveAppointmentAsync(HSTRING localId, Windows.Foundation.Rect selection)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
@@ -1731,6 +1749,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.IAppointmentStore)this.asInterface(uuid("a461918c-7a47-4d96-96c9-15cd8a05a735"))).abi_ShowRemoveAppointmentWithPlacementAndDateAsync(localId, selection, preferredPlacement, instanceStartDate, &_ret));
 		return _ret;
 	}
+	alias ShowRemoveAppointmentAsync = ShowRemoveAppointmentWithPlacementAndDateAsync;
 	final Windows.Foundation.IAsyncAction ShowAppointmentDetailsAsync(HSTRING localId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -1743,6 +1762,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.IAppointmentStore)this.asInterface(uuid("a461918c-7a47-4d96-96c9-15cd8a05a735"))).abi_ShowAppointmentDetailsWithDateAsync(localId, instanceStartDate, &_ret));
 		return _ret;
 	}
+	alias ShowAppointmentDetailsAsync = ShowAppointmentDetailsWithDateAsync;
 	final Windows.Foundation.IAsyncOperation!(HSTRING) ShowEditNewAppointmentAsync(Windows.ApplicationModel.Appointments.Appointment appointment)
 	{
 		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
@@ -1771,6 +1791,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.IAppointmentStore2)this.asInterface(uuid("25c48c20-1c41-424f-8084-67c1cfe0a854"))).abi_CreateAppointmentCalendarInAccountAsync(name, userDataAccountId, &_ret));
 		return _ret;
 	}
+	alias CreateAppointmentCalendarAsync = CreateAppointmentCalendarInAccountAsync;
 }
 
 interface AppointmentStoreChange : Windows.ApplicationModel.Appointments.IAppointmentStoreChange, Windows.ApplicationModel.Appointments.IAppointmentStoreChange2

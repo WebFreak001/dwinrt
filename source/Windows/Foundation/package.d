@@ -63,20 +63,12 @@ interface EventHandler(TArgs) : IUnknown
 {
 extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, TArgs args);
-	final void Invoke(IInspectable sender, TArgs args)
-	{
-		Debug.OK((cast(Windows.Foundation.EventHandler!(TArgs))this).abi_Invoke(sender, args));
-	}
 }
 
 interface TypedEventHandler(TSender, TArgs) : IUnknown
 {
 extern(Windows):
 	HRESULT abi_Invoke(TSender sender, TArgs args);
-	final void Invoke(TSender sender, TArgs args)
-	{
-		Debug.OK((cast(Windows.Foundation.TypedEventHandler!(TSender, TArgs))this).abi_Invoke(sender, args));
-	}
 }
 
 interface IAsyncActionWithProgress(TProgress) : IInspectable
@@ -84,10 +76,6 @@ interface IAsyncActionWithProgress(TProgress) : IInspectable
 extern(Windows):
 	HRESULT set_Progress(Windows.Foundation.AsyncActionProgressHandler!(TProgress) handler);
 	HRESULT get_Progress(Windows.Foundation.AsyncActionProgressHandler!(TProgress)* return_handler);
-	final void Progress(Windows.Foundation.AsyncActionProgressHandler!(TProgress) handler)
-	{
-		Debug.OK((cast(Windows.Foundation.IAsyncActionWithProgress!(TProgress))this).set_Progress(handler));
-	}
 	final Windows.Foundation.AsyncActionProgressHandler!(TProgress) Progress()
 	{
 		Windows.Foundation.AsyncActionProgressHandler!(TProgress) _ret;
@@ -100,20 +88,12 @@ interface AsyncActionProgressHandler(TProgress) : IUnknown
 {
 extern(Windows):
 	HRESULT abi_Invoke(Windows.Foundation.IAsyncActionWithProgress!(TProgress) asyncInfo, TProgress progressInfo);
-	final void Invoke(Windows.Foundation.IAsyncActionWithProgress!(TProgress) asyncInfo, TProgress progressInfo)
-	{
-		Debug.OK((cast(Windows.Foundation.AsyncActionProgressHandler!(TProgress))this).abi_Invoke(asyncInfo, progressInfo));
-	}
 }
 
 interface AsyncActionWithProgressCompletedHandler(TProgress) : IUnknown
 {
 extern(Windows):
 	HRESULT abi_Invoke(Windows.Foundation.IAsyncActionWithProgress!(TProgress) asyncInfo, AsyncStatus status);
-	final void Invoke(Windows.Foundation.IAsyncActionWithProgress!(TProgress) asyncInfo, AsyncStatus status)
-	{
-		Debug.OK((cast(Windows.Foundation.AsyncActionWithProgressCompletedHandler!(TProgress))this).abi_Invoke(asyncInfo, status));
-	}
 }
 
 interface IAsyncOperation_Base(TResult) : IInspectable
@@ -122,10 +102,6 @@ extern(Windows):
 	HRESULT set_Completed(Windows.Foundation.AsyncOperationCompletedHandler!(TResult) handler);
 	HRESULT get_Completed(Windows.Foundation.AsyncOperationCompletedHandler!(TResult)* return_handler);
 	HRESULT get_Results(TResult* return_results);
-	final void Completed(Windows.Foundation.AsyncOperationCompletedHandler!(TResult) handler)
-	{
-		Debug.OK((cast(Windows.Foundation.IAsyncOperation!(TResult))this).set_Completed(handler));
-	}
 	final Windows.Foundation.AsyncOperationCompletedHandler!(TResult) Completed()
 	{
 		Windows.Foundation.AsyncOperationCompletedHandler!(TResult) _ret;
@@ -145,20 +121,12 @@ interface AsyncOperationProgressHandler(TResult, TProgress) : IUnknown
 {
 extern(Windows):
 	HRESULT abi_Invoke(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, TProgress progressInfo);
-	final void Invoke(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, TProgress progressInfo)
-	{
-		Debug.OK((cast(Windows.Foundation.AsyncOperationProgressHandler!(TResult, TProgress))this).abi_Invoke(asyncInfo, progressInfo));
-	}
 }
 
 interface AsyncOperationCompletedHandler(TResult) : IUnknown
 {
 extern(Windows):
 	HRESULT abi_Invoke(Windows.Foundation.IAsyncOperation!(TResult) asyncInfo, AsyncStatus status);
-	final void Invoke(Windows.Foundation.IAsyncOperation!(TResult) asyncInfo, AsyncStatus status)
-	{
-		Debug.OK((cast(Windows.Foundation.AsyncOperationCompletedHandler!(TResult))this).abi_Invoke(asyncInfo, status));
-	}
 }
 
 interface IAsyncOperationWithProgress(TResult, TProgress) : IInspectable
@@ -169,19 +137,11 @@ extern(Windows):
 	HRESULT set_Completed(Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(TResult, TProgress) handler);
 	HRESULT get_Completed(Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(TResult, TProgress)* return_handler);
 	HRESULT get_Results(TResult* return_results);
-	final void Progress(Windows.Foundation.AsyncOperationProgressHandler!(TResult, TProgress) handler)
-	{
-		Debug.OK((cast(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress))this).set_Progress(handler));
-	}
 	final Windows.Foundation.AsyncOperationProgressHandler!(TResult, TProgress) Progress()
 	{
 		Windows.Foundation.AsyncOperationProgressHandler!(TResult, TProgress) _ret;
 		Debug.OK((cast(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress))this).get_Progress(&_ret));
 		return _ret;
-	}
-	final void Completed(Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(TResult, TProgress) handler)
-	{
-		Debug.OK((cast(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress))this).set_Completed(handler));
 	}
 	final Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(TResult, TProgress) Completed()
 	{
@@ -201,10 +161,6 @@ interface AsyncOperationWithProgressCompletedHandler(TResult, TProgress) : IUnkn
 {
 extern(Windows):
 	HRESULT abi_Invoke(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, AsyncStatus status);
-	final void Invoke(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, AsyncStatus status)
-	{
-		Debug.OK((cast(Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(TResult, TProgress))this).abi_Invoke(asyncInfo, status));
-	}
 }
 
 interface IReference(Type) : IUnknown
@@ -217,30 +173,6 @@ extern(Windows):
 		Debug.OK((cast(Windows.Foundation.IReference!(Type))this).get_Value(&_ret));
 		return _ret;
 	}
-}
-
-@uuid("45d64a29-a63e-4cb6-b498-5781d298cb4f")
-interface ICoreWindowInterop : IUnknown
-{
-extern(Windows):
-	HRESULT get_WindowHandle(HWND* return_hwnd);
-	HRESULT set_MessageHandled(bool value);
-}
-
-@uuid("40bfe3e3-b75a-4479-ac96-475365749bb8")
-interface ICoreInputInterop : IUnknown
-{
-extern(Windows):
-	HRESULT abi_SetInputSource(IUnknown value);
-	HRESULT set_MessageHandled(bool value);
-}
-
-@uuid("0576ab31-a310-4c40-ba31-fd37e0298dfa")
-interface ICoreWindowComponentInterop : IUnknown
-{
-extern(Windows):
-	HRESULT abi_ConfigureComponentInput(UINT32 hostViewInstanceId, HWND hwndHost, IUnknown inputSourceVisual);
-	HRESULT abi_GetViewInstanceId(UINT32* out_componentViewInstanceId);
 }
 
 @uuid("d8f579ab-402d-4b8e-82d9-5d63b1065c68")
@@ -290,84 +222,6 @@ extern(Windows):
 	HRESULT abi_GetWeakReference(IWeakReference* return_weakReference);
 }
 
-@uuid("7c3f6998-1567-4bba-b52b-48d32141d613")
-interface IWebApplicationScriptEvents : IUnknown
-{
-extern(Windows):
-	/// "Fired before any script is executed on the page."
-	HRESULT abi_BeforeScriptExecute(IHTMLWindow2* htmlWindow);
-	/// "Fired when an unhandled script error occurs."
-	HRESULT abi_ScriptError(IHTMLWindow2* htmlWindow, IActiveScriptError* scriptError, LPCWSTR url, BOOL errorHandled);
-}
-
-@uuid("c22615d2-d318-4da2-8422-1fcaf77b10e4")
-interface IWebApplicationNavigationEvents : IUnknown
-{
-extern(Windows):
-	/// "Fired before navigate occurs in the given host (window or frameset element)."
-	HRESULT abi_BeforeNavigate(IHTMLWindow2* htmlWindow, LPCWSTR url, DWORD navigationFlags, LPCWSTR targetFrameName);
-	/// "Fired when the document being navigated to becomes visible and enters the navigation stack."
-	HRESULT abi_NavigateComplete(IHTMLWindow2* htmlWindow, LPCWSTR url);
-	/// "Fired when a binding error occurs (window or frameset element)."
-	HRESULT abi_NavigateError(IHTMLWindow2* htmlWindow, LPCWSTR url, LPCWSTR targetFrameName, DWORD statusCode);
-	/// "Fired when the document being navigated to reaches ReadyState_Complete."
-	HRESULT abi_DocumentComplete(IHTMLWindow2* htmlWindow, LPCWSTR url);
-	/// "Download of a page started."
-	HRESULT abi_DownloadBegin();
-	/// "Download of a page has completed."
-	HRESULT abi_DownloadComplete();
-}
-
-@uuid("5b2b3f99-328c-41d5-a6f7-7483ed8e71dd")
-interface IWebApplicationUIEvents : IUnknown
-{
-extern(Windows):
-	/// "Notifies the authoring application about an authentication problem."
-	HRESULT abi_SecurityProblem(DWORD securityProblem, HRESULT* out_result);
-}
-
-@uuid("3e59e6b7-c652-4daf-ad5e-16feb350cde3")
-interface IWebApplicationUpdateEvents : IUnknown
-{
-extern(Windows):
-	/// "Notifies the authoring application about Paint surface modifications."
-	HRESULT abi_OnPaint();
-	/// "Notifies the authoring application about CSS changes."
-	HRESULT abi_OnCssChanged();
-}
-
-@uuid("cecbd2c3-a3a5-4749-9681-20e9161c6794")
-interface IWebApplicationHost : IUnknown
-{
-extern(Windows):
-	/// "Returns the HWND of the current WWAHost window."
-	HRESULT get_HWND(HWND* return_hwnd);
-	/// "Returns the HTML Document Object Model."
-	HRESULT get_Document(IHTMLDocument2** return_htmlDocument);
-	/// "Refresh the current document without sending a 'Pragma:no-cache' HTTP header to the server"
-	HRESULT abi_Refresh();
-	/// "Establishes a connection to allow a client to receive events."
-	HRESULT abi_Advise(REFIID interfaceId, IUnknown callback, DWORD* out_cookie);
-	/// "Removes a previously established connection."
-	HRESULT abi_Unadvise(DWORD cookie);
-}
-
-@uuid("bcdcd0de-330e-481b-b843-4898a6a8ebac")
-interface IWebApplicationActivation : IUnknown
-{
-extern(Windows):
-	/// "Cancels a pending activation."
-	HRESULT abi_CancelPendingActivation();
-}
-
-@uuid("720aea93-1964-4db0-b005-29eb9e2b18a9")
-interface IWebApplicationAuthoringMode : IServiceProvider
-{
-extern(Windows):
-	/// "Gets the full local path to a DLL that will be loaded into the WWAHost process."
-	HRESULT get_AuthoringClientBinary(wchar** return_designModeDllPath);
-}
-
 @uuid("a4ed5c81-76c9-40bd-8be6-b1d90fb20ae7")
 interface AsyncActionCompletedHandler : IUnknown
 {
@@ -394,10 +248,6 @@ extern(Windows):
 		Windows.Foundation.AsyncActionCompletedHandler ret;
 		Debug.OK((cast(IAsyncAction)this.asInterface(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b"))).get_Completed(&ret));
 		return ret;
-	}
-	final void Completed(Windows.Foundation.AsyncActionCompletedHandler handler)
-	{
-		Debug.OK((cast(IAsyncAction)this.asInterface(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b"))).set_Completed(handler));
 	}
 }
 @uuid("5a648006-843a-4da9-865b-9d26e5dfad7b")

@@ -294,6 +294,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDeviceSelectorFromPortName(portName, &_ret));
 		return _ret;
 	}
+	alias GetDeviceSelector = GetDeviceSelectorFromPortName;
 	static HSTRING GetDeviceSelectorFromUsbVidPid(UINT16 vendorId, UINT16 productId)
 	{
 		HSTRING _ret;

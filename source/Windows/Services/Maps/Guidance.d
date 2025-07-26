@@ -501,6 +501,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).abi_UpdateUserLocationWithPositionOverride(userLocation, positionOverride));
 	}
+	alias UpdateUserLocation = UpdateUserLocationWithPositionOverride;
 	final EventRegistrationToken OnAudioNotificationRequested(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceAudioNotificationRequestedEventArgs) fn)
 	{
 		EventRegistrationToken tok;

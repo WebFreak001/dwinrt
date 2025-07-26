@@ -215,6 +215,7 @@ interface WebAuthenticationCoreManager
 		Debug.OK(staticInstance.abi_GetTokenSilentlyWithWebAccountAsync(request, webAccount, &_ret));
 		return _ret;
 	}
+	alias GetTokenSilentlyAsync = GetTokenSilentlyWithWebAccountAsync;
 	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) RequestTokenAsync(Windows.Security.Authentication.Web.Core.WebTokenRequest request)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.Core.WebTokenRequestResult) _ret;
@@ -227,6 +228,7 @@ interface WebAuthenticationCoreManager
 		Debug.OK(staticInstance.abi_RequestTokenWithWebAccountAsync(request, webAccount, &_ret));
 		return _ret;
 	}
+	alias RequestTokenAsync = RequestTokenWithWebAccountAsync;
 	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount) FindAccountAsync(Windows.Security.Credentials.WebAccountProvider provider, HSTRING webAccountId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount) _ret;
@@ -245,6 +247,7 @@ interface WebAuthenticationCoreManager
 		Debug.OK(staticInstance.abi_FindAccountProviderWithAuthorityAsync(webAccountProviderId, authority, &_ret));
 		return _ret;
 	}
+	alias FindAccountProviderAsync = FindAccountProviderWithAuthorityAsync;
 }
 
 interface WebProviderError : Windows.Security.Authentication.Web.Core.IWebProviderError

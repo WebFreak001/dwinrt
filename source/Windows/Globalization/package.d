@@ -655,6 +655,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_EraAsFullString(&_ret));
 		return _ret;
 	}
+	alias EraAsString = EraAsFullString;
 	final HSTRING EraAsString(INT32 idealLength)
 	{
 		HSTRING _ret;
@@ -749,6 +750,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_MonthAsFullString(&_ret));
 		return _ret;
 	}
+	alias MonthAsString = MonthAsFullString;
 	final HSTRING MonthAsString(INT32 idealLength)
 	{
 		HSTRING _ret;
@@ -761,6 +763,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_MonthAsFullSoloString(&_ret));
 		return _ret;
 	}
+	alias MonthAsSoloString = MonthAsFullSoloString;
 	final HSTRING MonthAsSoloString(INT32 idealLength)
 	{
 		HSTRING _ret;
@@ -839,6 +842,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_DayOfWeekAsFullString(&_ret));
 		return _ret;
 	}
+	alias DayOfWeekAsString = DayOfWeekAsFullString;
 	final HSTRING DayOfWeekAsString(INT32 idealLength)
 	{
 		HSTRING _ret;
@@ -851,6 +855,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_DayOfWeekAsFullSoloString(&_ret));
 		return _ret;
 	}
+	alias DayOfWeekAsSoloString = DayOfWeekAsFullSoloString;
 	final HSTRING DayOfWeekAsSoloString(INT32 idealLength)
 	{
 		HSTRING _ret;
@@ -895,6 +900,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.ICalendar)this.asInterface(uuid("ca30221d-86d9-40fb-a26b-d44eb7cf08ea"))).abi_PeriodAsFullString(&_ret));
 		return _ret;
 	}
+	alias PeriodAsString = PeriodAsFullString;
 	final HSTRING PeriodAsString(INT32 idealLength)
 	{
 		HSTRING _ret;
@@ -1103,6 +1109,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.ITimeZoneOnCalendar)this.asInterface(uuid("bb3c25e5-46cf-4317-a3f5-02621ad54478"))).abi_TimeZoneAsFullString(&_ret));
 		return _ret;
 	}
+	alias TimeZoneAsString = TimeZoneAsFullString;
 	final HSTRING TimeZoneAsString(INT32 idealLength)
 	{
 		HSTRING _ret;
@@ -2285,6 +2292,7 @@ interface JapanesePhoneticAnalyzer
 		Debug.OK(staticInstance.abi_GetWordsWithMonoRubyOption(input, monoRuby, &_ret));
 		return _ret;
 	}
+	alias GetWords = GetWordsWithMonoRubyOption;
 }
 
 interface Language : Windows.Globalization.ILanguage, Windows.Globalization.ILanguageExtensionSubtags

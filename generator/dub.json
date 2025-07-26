@@ -1,15 +1,24 @@
 {
-	"name": "generator",
+	"targetType": "executable",
 	"dependencies": {
-		"pegged": "~>0.4.2"
+		"pegged": "~>0.4.9",
+		"sha1ct": "~>1.0.0"
 	},
+	"name": "generator",
 	"sourceFiles-linux": [
-		"idl/grammar.di",
-		"grammar.a"
+		"grammar.a",
+		"../dwinrt.a"
 	],
 	"sourceFiles-windows": [
-		"idl/grammar.di",
-		"grammar.lib"
+		"grammar.lib",
+		"../dwinrt.lib"
 	],
-	"workingDirectory": ".."
+	"workingDirectory": ".",
+	"importPaths": [
+		"../directx",
+		"../source",
+		"idl/source"
+	],
+	"dflags": ["-preview=bitfields"],
+	"subPackages": ["idl"]
 }

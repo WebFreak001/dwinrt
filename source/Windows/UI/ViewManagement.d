@@ -452,6 +452,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.ViewManagement.IActivationViewSwitcher)this.asInterface(uuid("dca71bb6-7350-492b-aac7-c8a13d7224ad"))).abi_ShowAsStandaloneWithSizePreferenceAsync(viewId, sizePreference, &_ret));
 		return _ret;
 	}
+	alias ShowAsStandaloneAsync = ShowAsStandaloneWithSizePreferenceAsync;
 	final bool IsViewPresentedOnActivationVirtualDesktop(INT32 viewId)
 	{
 		bool _ret;
@@ -640,6 +641,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.ViewManagement.IApplicationView4)this.asInterface(uuid("15e5cbec-9e0f-46b5-bc3f-9bf653e74b5e"))).abi_TryEnterViewModeWithPreferencesAsync(viewMode, viewModePreferences, &_ret));
 		return _ret;
 	}
+	alias TryEnterViewModeAsync = TryEnterViewModeWithPreferencesAsync;
 	final Windows.Foundation.IAsyncOperation!(bool) TryConsolidateAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
@@ -725,12 +727,14 @@ interface ApplicationViewSwitcher
 		Debug.OK(staticInstance.abi_TryShowAsStandaloneWithSizePreferenceAsync(viewId, sizePreference, &_ret));
 		return _ret;
 	}
+	alias TryShowAsStandaloneAsync = TryShowAsStandaloneWithSizePreferenceAsync;
 	static Windows.Foundation.IAsyncOperation!(bool) TryShowAsStandaloneWithAnchorViewAndSizePreferenceAsync(INT32 viewId, Windows.UI.ViewManagement.ViewSizePreference sizePreference, INT32 anchorViewId, Windows.UI.ViewManagement.ViewSizePreference anchorSizePreference)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
 		Debug.OK(staticInstance.abi_TryShowAsStandaloneWithAnchorViewAndSizePreferenceAsync(viewId, sizePreference, anchorViewId, anchorSizePreference, &_ret));
 		return _ret;
 	}
+	alias TryShowAsStandaloneAsync = TryShowAsStandaloneWithAnchorViewAndSizePreferenceAsync;
 	static Windows.Foundation.IAsyncAction SwitchAsync(INT32 viewId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -743,12 +747,14 @@ interface ApplicationViewSwitcher
 		Debug.OK(staticInstance.abi_SwitchFromViewAsync(toViewId, fromViewId, &_ret));
 		return _ret;
 	}
+	alias SwitchAsync = SwitchFromViewAsync;
 	static Windows.Foundation.IAsyncAction SwitchFromViewWithOptionsAsync(INT32 toViewId, INT32 fromViewId, Windows.UI.ViewManagement.ApplicationViewSwitchingOptions options)
 	{
 		Windows.Foundation.IAsyncAction _ret;
 		Debug.OK(staticInstance.abi_SwitchFromViewWithOptionsAsync(toViewId, fromViewId, options, &_ret));
 		return _ret;
 	}
+	alias SwitchAsync = SwitchFromViewWithOptionsAsync;
 	static Windows.Foundation.IAsyncOperation!(bool) PrepareForCustomAnimatedSwitchAsync(INT32 toViewId, INT32 fromViewId, Windows.UI.ViewManagement.ApplicationViewSwitchingOptions options)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;

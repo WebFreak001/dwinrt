@@ -741,18 +741,21 @@ extern(Windows):
 		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel2)this.asInterface(uuid("2255d165-993b-4629-ad60-f1c3f3537f50"))).abi_RequestCredentialsWithCertificateAsync(credType, credOptions, certificate, &_ret));
 		return _ret;
 	}
+	alias RequestCredentialsAsync = RequestCredentialsWithCertificateAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) RequestCredentialsWithOptionsAsync(Windows.Networking.Vpn.VpnCredentialType credType, UINT32 credOptions)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) _ret;
 		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel2)this.asInterface(uuid("2255d165-993b-4629-ad60-f1c3f3537f50"))).abi_RequestCredentialsWithOptionsAsync(credType, credOptions, &_ret));
 		return _ret;
 	}
+	alias RequestCredentialsAsync = RequestCredentialsWithOptionsAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) RequestCredentialsSimpleAsync(Windows.Networking.Vpn.VpnCredentialType credType)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.Vpn.VpnCredential) _ret;
 		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel2)this.asInterface(uuid("2255d165-993b-4629-ad60-f1c3f3537f50"))).abi_RequestCredentialsSimpleAsync(credType, &_ret));
 		return _ret;
 	}
+	alias RequestCredentialsAsync = RequestCredentialsSimpleAsync;
 	final void TerminateConnection(HSTRING message)
 	{
 		Debug.OK((cast(Windows.Networking.Vpn.IVpnChannel2)this.asInterface(uuid("2255d165-993b-4629-ad60-f1c3f3537f50"))).abi_TerminateConnection(message));

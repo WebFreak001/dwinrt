@@ -255,6 +255,7 @@ interface PeerFinder
 	{
 		Debug.OK(staticInstance.abi_StartWithMessage(peerMessage));
 	}
+	alias Start = StartWithMessage;
 	static void Stop()
 	{
 		Debug.OK(staticInstance.abi_Stop());
@@ -418,6 +419,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishMessageWithCallback(messageType, message, messageTransmittedHandler, &_ret));
 		return _ret;
 	}
+	alias PublishMessage = PublishMessageWithCallback;
 	final INT64 PublishBinaryMessage(HSTRING messageType, Windows.Storage.Streams.IBuffer message)
 	{
 		INT64 _ret;
@@ -430,6 +432,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishBinaryMessageWithCallback(messageType, message, messageTransmittedHandler, &_ret));
 		return _ret;
 	}
+	alias PublishBinaryMessage = PublishBinaryMessageWithCallback;
 	final INT64 PublishUriMessage(Windows.Foundation.Uri message)
 	{
 		INT64 _ret;
@@ -442,6 +445,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishUriMessageWithCallback(message, messageTransmittedHandler, &_ret));
 		return _ret;
 	}
+	alias PublishUriMessage = PublishUriMessageWithCallback;
 	final void StopSubscribingForMessage(INT64 subscriptionId)
 	{
 		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_StopSubscribingForMessage(subscriptionId));

@@ -422,6 +422,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Imaging.IBitmapFrame)this.asInterface(uuid("72a49a1c-8081-438d-91bc-94ecfc8185c6"))).abi_GetPixelDataTransformedAsync(pixelFormat, alphaMode, transform, exifOrientationMode, colorManagementMode, &_ret));
 		return _ret;
 	}
+	alias GetPixelDataAsync = GetPixelDataTransformedAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) GetSoftwareBitmapAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) _ret;
@@ -434,12 +435,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Imaging.IBitmapFrameWithSoftwareBitmap)this.asInterface(uuid("fe287c9a-420c-4963-87ad-691436e08383"))).abi_GetSoftwareBitmapConvertedAsync(pixelFormat, alphaMode, &_ret));
 		return _ret;
 	}
+	alias GetSoftwareBitmapAsync = GetSoftwareBitmapConvertedAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) GetSoftwareBitmapTransformedAsync(Windows.Graphics.Imaging.BitmapPixelFormat pixelFormat, Windows.Graphics.Imaging.BitmapAlphaMode alphaMode, Windows.Graphics.Imaging.BitmapTransform transform, Windows.Graphics.Imaging.ExifOrientationMode exifOrientationMode, Windows.Graphics.Imaging.ColorManagementMode colorManagementMode)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) _ret;
 		Debug.OK((cast(Windows.Graphics.Imaging.IBitmapFrameWithSoftwareBitmap)this.asInterface(uuid("fe287c9a-420c-4963-87ad-691436e08383"))).abi_GetSoftwareBitmapTransformedAsync(pixelFormat, alphaMode, transform, exifOrientationMode, colorManagementMode, &_ret));
 		return _ret;
 	}
+	alias GetSoftwareBitmapAsync = GetSoftwareBitmapTransformedAsync;
 
 	private static Windows.Graphics.Imaging.IBitmapDecoderStatics _staticInstance;
 	public static Windows.Graphics.Imaging.IBitmapDecoderStatics staticInstance()
@@ -507,6 +510,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateWithIdAsync(decoderId, stream, &_ret));
 		return _ret;
 	}
+	alias CreateAsync = CreateWithIdAsync;
 }
 
 interface BitmapEncoder : Windows.Graphics.Imaging.IBitmapEncoder, Windows.Graphics.Imaging.IBitmapEncoderWithSoftwareBitmap
@@ -582,6 +586,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Imaging.IBitmapEncoder)this.asInterface(uuid("2bc468e3-e1f8-4b54-95e8-32919551ce62"))).abi_GoToNextFrameWithEncodingOptionsAsync(encodingOptions, &_ret));
 		return _ret;
 	}
+	alias GoToNextFrameAsync = GoToNextFrameWithEncodingOptionsAsync;
 	final Windows.Foundation.IAsyncAction FlushAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -653,6 +658,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateWithEncodingOptionsAsync(encoderId, stream, encodingOptions, &_ret));
 		return _ret;
 	}
+	alias CreateAsync = CreateWithEncodingOptionsAsync;
 	static Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapEncoder) CreateForTranscodingAsync(Windows.Storage.Streams.IRandomAccessStream stream, Windows.Graphics.Imaging.BitmapDecoder bitmapDecoder)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.BitmapEncoder) _ret;
@@ -742,6 +748,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Imaging.IBitmapFrame)this.asInterface(uuid("72a49a1c-8081-438d-91bc-94ecfc8185c6"))).abi_GetPixelDataTransformedAsync(pixelFormat, alphaMode, transform, exifOrientationMode, colorManagementMode, &_ret));
 		return _ret;
 	}
+	alias GetPixelDataAsync = GetPixelDataTransformedAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) GetSoftwareBitmapAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) _ret;
@@ -754,12 +761,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Imaging.IBitmapFrameWithSoftwareBitmap)this.asInterface(uuid("fe287c9a-420c-4963-87ad-691436e08383"))).abi_GetSoftwareBitmapConvertedAsync(pixelFormat, alphaMode, &_ret));
 		return _ret;
 	}
+	alias GetSoftwareBitmapAsync = GetSoftwareBitmapConvertedAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) GetSoftwareBitmapTransformedAsync(Windows.Graphics.Imaging.BitmapPixelFormat pixelFormat, Windows.Graphics.Imaging.BitmapAlphaMode alphaMode, Windows.Graphics.Imaging.BitmapTransform transform, Windows.Graphics.Imaging.ExifOrientationMode exifOrientationMode, Windows.Graphics.Imaging.ColorManagementMode colorManagementMode)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) _ret;
 		Debug.OK((cast(Windows.Graphics.Imaging.IBitmapFrameWithSoftwareBitmap)this.asInterface(uuid("fe287c9a-420c-4963-87ad-691436e08383"))).abi_GetSoftwareBitmapTransformedAsync(pixelFormat, alphaMode, transform, exifOrientationMode, colorManagementMode, &_ret));
 		return _ret;
 	}
+	alias GetSoftwareBitmapAsync = GetSoftwareBitmapTransformedAsync;
 }
 
 interface BitmapProperties : Windows.Graphics.Imaging.IBitmapProperties, Windows.Graphics.Imaging.IBitmapPropertiesView
@@ -1138,6 +1147,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_ConvertWithAlpha(source, format, alpha, &_ret));
 		return _ret;
 	}
+	alias Convert = ConvertWithAlpha;
 	static Windows.Graphics.Imaging.SoftwareBitmap CreateCopyFromBuffer(Windows.Storage.Streams.IBuffer source, Windows.Graphics.Imaging.BitmapPixelFormat format, INT32 width, INT32 height)
 	{
 		Windows.Graphics.Imaging.SoftwareBitmap _ret;
@@ -1150,6 +1160,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateCopyWithAlphaFromBuffer(source, format, width, height, alpha, &_ret));
 		return _ret;
 	}
+	alias CreateCopyFromBuffer = CreateCopyWithAlphaFromBuffer;
 	static Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) CreateCopyFromSurfaceAsync(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface surface)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Graphics.Imaging.SoftwareBitmap) _ret;
@@ -1162,6 +1173,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateCopyWithAlphaFromSurfaceAsync(surface, alpha, &_ret));
 		return _ret;
 	}
+	alias CreateCopyFromSurfaceAsync = CreateCopyWithAlphaFromSurfaceAsync;
 	static Windows.Graphics.Imaging.SoftwareBitmap New(Windows.Graphics.Imaging.BitmapPixelFormat format, INT32 width, INT32 height)
 	{
 		auto factory = factory!(Windows.Graphics.Imaging.ISoftwareBitmapFactory);

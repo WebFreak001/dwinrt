@@ -95,6 +95,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).abi_AddAudioEffectWithSettings(activatableClassId, effectRequired, configuration));
 	}
+	alias AddAudioEffect = AddAudioEffectWithSettings;
 	final void AddVideoEffect(HSTRING activatableClassId)
 	{
 		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).abi_AddVideoEffect(activatableClassId));
@@ -103,6 +104,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).abi_AddVideoEffectWithSettings(activatableClassId, effectRequired, configuration));
 	}
+	alias AddVideoEffect = AddVideoEffectWithSettings;
 	final void ClearEffects()
 	{
 		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).abi_ClearEffects());

@@ -967,6 +967,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailConversation)this.asInterface(uuid("da18c248-a0bc-4349-902d-90f66389f51b"))).abi_FindMessagesWithCountAsync(count, &_ret));
 		return _ret;
 	}
+	alias FindMessagesAsync = FindMessagesWithCountAsync;
 }
 
 interface EmailConversationBatch : Windows.ApplicationModel.Email.IEmailConversationBatch
@@ -1094,6 +1095,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).abi_GetConversationReaderWithOptions(options, &_ret));
 		return _ret;
 	}
+	alias GetConversationReader = GetConversationReaderWithOptions;
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMessage) GetMessageAsync(HSTRING id)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMessage) _ret;
@@ -1112,6 +1114,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).abi_GetMessageReaderWithOptions(options, &_ret));
 		return _ret;
 	}
+	alias GetMessageReader = GetMessageReaderWithOptions;
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailItemCounts) GetMessageCountsAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailItemCounts) _ret;
@@ -1130,6 +1133,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailFolder)this.asInterface(uuid("a24f7771-996c-4864-b1ba-ed1240e57d11"))).abi_TryMoveWithNewNameAsync(newParentFolder, newFolderName, &_ret));
 		return _ret;
 	}
+	alias TryMoveAsync = TryMoveWithNewNameAsync;
 	final Windows.Foundation.IAsyncOperation!(bool) TrySaveAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
@@ -1474,6 +1478,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_GetConversationReaderWithOptions(options, &_ret));
 		return _ret;
 	}
+	alias GetConversationReader = GetConversationReaderWithOptions;
 	final Windows.ApplicationModel.Email.EmailMessageReader GetMessageReader()
 	{
 		Windows.ApplicationModel.Email.EmailMessageReader _ret;
@@ -1486,6 +1491,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_GetMessageReaderWithOptions(options, &_ret));
 		return _ret;
 	}
+	alias GetMessageReader = GetMessageReaderWithOptions;
 	final Windows.Foundation.IAsyncAction DeleteAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -1564,6 +1570,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_TryMoveFolderWithNewNameAsync(folderId, newParentFolderId, newFolderName, &_ret));
 		return _ret;
 	}
+	alias TryMoveFolderAsync = TryMoveFolderWithNewNameAsync;
 	final Windows.Foundation.IAsyncAction DeleteMessageAsync(HSTRING messageId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -1640,6 +1647,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailMailbox)this.asInterface(uuid("a8790649-cf5b-411b-80b1-4a6a1484ce25"))).abi_SmartSendMessageAsync(message, smartSend, &_ret));
 		return _ret;
 	}
+	alias SendMessageAsync = SmartSendMessageAsync;
 	final Windows.Foundation.IAsyncOperation!(bool) TrySetAutoReplySettingsAsync(Windows.ApplicationModel.Email.EmailMailboxAutoReplySettings autoReplySettings)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
@@ -2930,6 +2938,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailStore)this.asInterface(uuid("f803226e-9137-4f8b-a470-279ac3058eb6"))).abi_GetConversationReaderWithOptions(options, &_ret));
 		return _ret;
 	}
+	alias GetConversationReader = GetConversationReaderWithOptions;
 	final Windows.ApplicationModel.Email.EmailMessageReader GetMessageReader()
 	{
 		Windows.ApplicationModel.Email.EmailMessageReader _ret;
@@ -2942,6 +2951,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailStore)this.asInterface(uuid("f803226e-9137-4f8b-a470-279ac3058eb6"))).abi_GetMessageReaderWithOptions(options, &_ret));
 		return _ret;
 	}
+	alias GetMessageReader = GetMessageReaderWithOptions;
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMailbox) GetMailboxAsync(HSTRING id)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Email.EmailMailbox) _ret;
@@ -2978,6 +2988,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Email.IEmailStore)this.asInterface(uuid("f803226e-9137-4f8b-a470-279ac3058eb6"))).abi_CreateMailboxInAccountAsync(accountName, accountAddress, userDataAccountId, &_ret));
 		return _ret;
 	}
+	alias CreateMailboxAsync = CreateMailboxInAccountAsync;
 }
 
 interface EmailStoreNotificationTriggerDetails : Windows.ApplicationModel.Email.IEmailStoreNotificationTriggerDetails

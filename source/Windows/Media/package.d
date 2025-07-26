@@ -855,6 +855,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterSchemeHandlerWithSettings(activatableClassId, scheme, configuration));
 	}
+	alias RegisterSchemeHandler = RegisterSchemeHandlerWithSettings;
 	final void RegisterByteStreamHandler(HSTRING activatableClassId, HSTRING fileExtension, HSTRING mimeType)
 	{
 		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterByteStreamHandler(activatableClassId, fileExtension, mimeType));
@@ -863,6 +864,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterByteStreamHandlerWithSettings(activatableClassId, fileExtension, mimeType, configuration));
 	}
+	alias RegisterByteStreamHandler = RegisterByteStreamHandlerWithSettings;
 	final void RegisterAudioDecoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype)
 	{
 		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterAudioDecoder(activatableClassId, inputSubtype, outputSubtype));
@@ -871,6 +873,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterAudioDecoderWithSettings(activatableClassId, inputSubtype, outputSubtype, configuration));
 	}
+	alias RegisterAudioDecoder = RegisterAudioDecoderWithSettings;
 	final void RegisterAudioEncoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype)
 	{
 		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterAudioEncoder(activatableClassId, inputSubtype, outputSubtype));
@@ -879,6 +882,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterAudioEncoderWithSettings(activatableClassId, inputSubtype, outputSubtype, configuration));
 	}
+	alias RegisterAudioEncoder = RegisterAudioEncoderWithSettings;
 	final void RegisterVideoDecoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype)
 	{
 		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterVideoDecoder(activatableClassId, inputSubtype, outputSubtype));
@@ -887,6 +891,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterVideoDecoderWithSettings(activatableClassId, inputSubtype, outputSubtype, configuration));
 	}
+	alias RegisterVideoDecoder = RegisterVideoDecoderWithSettings;
 	final void RegisterVideoEncoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype)
 	{
 		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterVideoEncoder(activatableClassId, inputSubtype, outputSubtype));
@@ -895,6 +900,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterVideoEncoderWithSettings(activatableClassId, inputSubtype, outputSubtype, configuration));
 	}
+	alias RegisterVideoEncoder = RegisterVideoEncoderWithSettings;
 	final void RegisterMediaExtensionForAppService(Windows.Media.IMediaExtension extension, Windows.ApplicationModel.AppService.AppServiceConnection connection)
 	{
 		Debug.OK((cast(Windows.Media.IMediaExtensionManager2)this.asInterface(uuid("5bcebf47-4043-4fed-acaf-54ec29dfb1f7"))).abi_RegisterMediaExtensionForAppService(extension, connection));

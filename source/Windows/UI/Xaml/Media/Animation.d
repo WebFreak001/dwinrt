@@ -1916,6 +1916,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimation2)this.asInterface(uuid("5d2f8e5c-584b-4ddd-b668-973891431459"))).abi_TryStartWithCoordinatedElements(destination, coordinatedElements, &_ret));
 		return _ret;
 	}
+	alias TryStart = TryStartWithCoordinatedElements;
 	final void SetAnimationComponent(Windows.UI.Xaml.Media.Animation.ConnectedAnimationComponent component, Windows.UI.Composition.ICompositionAnimationBase animation)
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimation2)this.asInterface(uuid("5d2f8e5c-584b-4ddd-b668-973891431459"))).abi_SetAnimationComponent(component, animation));

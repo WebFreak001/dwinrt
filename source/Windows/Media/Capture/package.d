@@ -1304,6 +1304,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IAdvancedPhotoCapture)this.asInterface(uuid("83ffaafa-6667-44dc-973c-a6bce596aa0f"))).abi_CaptureWithContextAsync(context, &_ret));
 		return _ret;
 	}
+	alias CaptureAsync = CaptureWithContextAsync;
 	final EventRegistrationToken OnOptionalReferencePhotoCaptured(void delegate(Windows.Media.Capture.AdvancedPhotoCapture, Windows.Media.Capture.OptionalReferencePhotoCapturedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
@@ -3887,6 +3888,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_InitializeWithSettingsAsync(mediaCaptureInitializationSettings, &_ret));
 		return _ret;
 	}
+	alias InitializeAsync = InitializeWithSettingsAsync;
 	final Windows.Foundation.IAsyncAction StartRecordToStorageFileAsync(Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile, Windows.Storage.IStorageFile file)
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -3911,6 +3913,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IMediaCapture)this.asInterface(uuid("c61afbb4-fb10-4a34-ac18-ca80d9c8e7ee"))).abi_StartRecordToCustomSinkIdAsync(encodingProfile, customSinkActivationId, customSinkSettings, &_ret));
 		return _ret;
 	}
+	alias StartRecordToCustomSinkAsync = StartRecordToCustomSinkIdAsync;
 	final Windows.Foundation.IAsyncAction StopRecordAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -4038,6 +4041,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IMediaCaptureVideoPreview)this.asInterface(uuid("27727073-549e-447f-a20a-4f03c479d8c0"))).abi_StartPreviewToCustomSinkIdAsync(encodingProfile, customSinkActivationId, customSinkSettings, &_ret));
 		return _ret;
 	}
+	alias StartPreviewToCustomSinkAsync = StartPreviewToCustomSinkIdAsync;
 	final Windows.Foundation.IAsyncAction StopPreviewAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -4068,6 +4072,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IMediaCapture2)this.asInterface(uuid("9cc68260-7da1-4043-b652-21b8878daff9"))).abi_PrepareLowLagRecordToCustomSinkIdAsync(encodingProfile, customSinkActivationId, customSinkSettings, &_ret));
 		return _ret;
 	}
+	alias PrepareLowLagRecordToCustomSinkAsync = PrepareLowLagRecordToCustomSinkIdAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagPhotoCapture) PrepareLowLagPhotoCaptureAsync(Windows.Media.MediaProperties.ImageEncodingProperties type)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.LowLagPhotoCapture) _ret;
@@ -4168,6 +4173,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IMediaCapture4)this.asInterface(uuid("bacd6fd6-fb08-4947-aea2-ce14eff0ce13"))).abi_GetPreviewFrameCopyAsync(destination, &_ret));
 		return _ret;
 	}
+	alias GetPreviewFrameAsync = GetPreviewFrameCopyAsync;
 	final EventRegistrationToken OnThermalStatusChanged(void delegate(Windows.Media.Capture.MediaCapture, IInspectable) fn)
 	{
 		EventRegistrationToken tok;
@@ -4226,12 +4232,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Capture.IMediaCapture5)this.asInterface(uuid("da787c22-3a9b-4720-a71e-97900a316e5a"))).abi_CreateFrameReaderWithSubtypeAsync(inputSource, outputSubtype, &_ret));
 		return _ret;
 	}
+	alias CreateFrameReaderAsync = CreateFrameReaderWithSubtypeAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) CreateFrameReaderWithSubtypeAndSizeAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, HSTRING outputSubtype, Windows.Graphics.Imaging.BitmapSize outputSize)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameReader) _ret;
 		Debug.OK((cast(Windows.Media.Capture.IMediaCapture5)this.asInterface(uuid("da787c22-3a9b-4720-a71e-97900a316e5a"))).abi_CreateFrameReaderWithSubtypeAndSizeAsync(inputSource, outputSubtype, outputSize, &_ret));
 		return _ret;
 	}
+	alias CreateFrameReaderAsync = CreateFrameReaderWithSubtypeAndSizeAsync;
 	final EventRegistrationToken OnCaptureDeviceExclusiveControlStatusChanged(void delegate(Windows.Media.Capture.MediaCapture, Windows.Media.Capture.MediaCaptureDeviceExclusiveControlStatusChangedEventArgs) fn)
 	{
 		EventRegistrationToken tok;

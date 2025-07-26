@@ -539,6 +539,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateWatcherWithFilters(filters, &_ret));
 		return _ret;
 	}
+	alias CreateWatcher = CreateWatcherWithFilters;
 	static Windows.Foundation.IAsyncOperation!(Windows.System.RemoteSystems.RemoteSystemAccessStatus) RequestAccessAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.System.RemoteSystems.RemoteSystemAccessStatus) _ret;
@@ -786,6 +787,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionControllerFactory)factory.asInterface(uuid("bfcc2f6b-ac3d-4199-82cd-6670a773ef2e"))).abi_CreateController(displayName, &_ret));
 		return _ret;
 	}
+	alias CreateController = New;
 	static Windows.System.RemoteSystems.RemoteSystemSessionController New(HSTRING displayName, Windows.System.RemoteSystems.RemoteSystemSessionOptions options)
 	{
 		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemSessionControllerFactory);
@@ -793,6 +795,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionControllerFactory)factory.asInterface(uuid("bfcc2f6b-ac3d-4199-82cd-6670a773ef2e"))).abi_CreateControllerWithSessionOptions(displayName, options, &_ret));
 		return _ret;
 	}
+	alias CreateController = New;
 }
 
 interface RemoteSystemSessionCreationResult : Windows.System.RemoteSystems.IRemoteSystemSessionCreationResult
@@ -988,6 +991,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannelFactory)factory.asInterface(uuid("295e1c4a-bd16-4298-b7ce-415482b0e11d"))).abi_Create(session, channelName, &_ret));
 		return _ret;
 	}
+	alias Create = New;
 	static Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel New(Windows.System.RemoteSystems.RemoteSystemSession session, HSTRING channelName, Windows.System.RemoteSystems.RemoteSystemSessionMessageChannelReliability reliability)
 	{
 		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannelFactory);
@@ -995,6 +999,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannelFactory)factory.asInterface(uuid("295e1c4a-bd16-4298-b7ce-415482b0e11d"))).abi_CreateWithReliability(session, channelName, reliability, &_ret));
 		return _ret;
 	}
+	alias Create = New;
 }
 
 interface RemoteSystemSessionOptions : Windows.System.RemoteSystems.IRemoteSystemSessionOptions

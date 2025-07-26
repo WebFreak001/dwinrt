@@ -686,6 +686,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore)this.asInterface(uuid("2f907db8-b40e-422b-8545-cb1910a61c52"))).abi_GetEntryReaderWithOptions(queryOptions, &_ret));
 		return _ret;
 	}
+	alias GetEntryReader = GetEntryReaderWithOptions;
 	final Windows.Foundation.IAsyncAction SaveEntryAsync(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry callHistoryEntry)
 	{
 		Windows.Foundation.IAsyncAction _ret;

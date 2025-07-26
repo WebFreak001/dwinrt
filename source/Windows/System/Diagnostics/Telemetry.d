@@ -50,6 +50,7 @@ interface PlatformTelemetryClient
 		Debug.OK(staticInstance.abi_RegisterWithSettings(id, settings, &_ret));
 		return _ret;
 	}
+	alias Register = RegisterWithSettings;
 }
 
 interface PlatformTelemetryRegistrationResult : Windows.System.Diagnostics.Telemetry.IPlatformTelemetryRegistrationResult

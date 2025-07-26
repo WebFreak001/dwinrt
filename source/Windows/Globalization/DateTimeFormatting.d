@@ -175,6 +175,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.DateTimeFormatting.IDateTimeFormatter2)this.asInterface(uuid("27c91a86-bdaa-4fd0-9e36-671d5aa5ee03"))).abi_FormatUsingTimeZone(datetime, timeZoneId, &_ret));
 		return _ret;
 	}
+	alias Format = FormatUsingTimeZone;
 
 	private static Windows.Globalization.DateTimeFormatting.IDateTimeFormatterStatics _staticInstance;
 	public static Windows.Globalization.DateTimeFormatting.IDateTimeFormatterStatics staticInstance()

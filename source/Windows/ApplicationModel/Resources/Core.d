@@ -177,6 +177,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.INamedResource)this.asInterface(uuid("1c98c219-0b13-4240-89a5-d495dc189a00"))).abi_ResolveForContext(resourceContext, &_ret));
 		return _ret;
 	}
+	alias Resolve = ResolveForContext;
 	deprecated("ResolveAll may be altered or unavailable for releases after Windows 8.1. Instead, use ResolveAll(ResourceContext).")
 	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceCandidate) ResolveAll()
 	{
@@ -190,6 +191,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.INamedResource)this.asInterface(uuid("1c98c219-0b13-4240-89a5-d495dc189a00"))).abi_ResolveAllForContext(resourceContext, &_ret));
 		return _ret;
 	}
+	alias ResolveAll = ResolveAllForContext;
 }
 
 interface ResourceCandidate : Windows.ApplicationModel.Resources.Core.IResourceCandidate, Windows.ApplicationModel.Resources.Core.IResourceCandidate2
@@ -291,6 +293,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceContext)this.asInterface(uuid("2fa22f4b-707e-4b27-ad0d-d0d8cd468fd2"))).abi_ResetQualifierValues(qualifierNames));
 	}
+	alias Reset = ResetQualifierValues;
 	final void OverrideToMatch(Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Resources.Core.ResourceQualifier) result)
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceContext)this.asInterface(uuid("2fa22f4b-707e-4b27-ad0d-d0d8cd468fd2"))).abi_OverrideToMatch(result));
@@ -447,6 +450,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceMap)this.asInterface(uuid("72284824-db8c-42f8-b08c-53ff357dad82"))).abi_GetValueForContext(resource, context, &_ret));
 		return _ret;
 	}
+	alias GetValue = GetValueForContext;
 	final Windows.ApplicationModel.Resources.Core.ResourceMap GetSubtree(HSTRING reference)
 	{
 		Windows.ApplicationModel.Resources.Core.ResourceMap _ret;

@@ -555,6 +555,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Networking.Connectivity.IConnectionProfile)this.asInterface(uuid("71ba143c-598e-49d0-84eb-8febaedcc195"))).abi_GetLocalUsagePerRoamingStates(StartTime, EndTime, States, &_ret));
 		return _ret;
 	}
+	alias GetLocalUsage = GetLocalUsagePerRoamingStates;
 	final Windows.Networking.Connectivity.NetworkSecuritySettings NetworkSecuritySettings()
 	{
 		Windows.Networking.Connectivity.NetworkSecuritySettings _ret;

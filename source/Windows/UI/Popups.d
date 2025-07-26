@@ -172,12 +172,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Popups.IPopupMenu)this.asInterface(uuid("4e9bc6dc-880d-47fc-a0a1-72b639e62559"))).abi_ShowAsyncWithRect(selection, &_ret));
 		return _ret;
 	}
+	alias ShowForSelectionAsync = ShowAsyncWithRect;
 	final Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) ShowAsyncWithRectAndPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.UI.Popups.IUICommand) _ret;
 		Debug.OK((cast(Windows.UI.Popups.IPopupMenu)this.asInterface(uuid("4e9bc6dc-880d-47fc-a0a1-72b639e62559"))).abi_ShowAsyncWithRectAndPlacement(selection, preferredPlacement, &_ret));
 		return _ret;
 	}
+	alias ShowForSelectionAsync = ShowAsyncWithRectAndPlacement;
 	static PopupMenu New()
 	{
 		IInspectable ret;

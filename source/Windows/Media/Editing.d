@@ -469,12 +469,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).abi_RenderToFileWithTrimmingPreferenceAsync(destination, trimmingPreference, &_ret));
 		return _ret;
 	}
+	alias RenderToFileAsync = RenderToFileWithTrimmingPreferenceAsync;
 	final Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double) RenderToFileWithProfileAsync(Windows.Storage.IStorageFile destination, Windows.Media.Editing.MediaTrimmingPreference trimmingPreference, Windows.Media.MediaProperties.MediaEncodingProfile encodingProfile)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(Windows.Media.Transcoding.TranscodeFailureReason, double) _ret;
 		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).abi_RenderToFileWithProfileAsync(destination, trimmingPreference, encodingProfile, &_ret));
 		return _ret;
 	}
+	alias RenderToFileAsync = RenderToFileWithProfileAsync;
 	final Windows.Media.MediaProperties.MediaEncodingProfile CreateDefaultEncodingProfile()
 	{
 		Windows.Media.MediaProperties.MediaEncodingProfile _ret;
@@ -493,6 +495,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Editing.IMediaComposition)this.asInterface(uuid("2e06e605-dc71-41d6-b837-2d2bc14a2947"))).abi_GenerateMediaStreamSourceWithProfile(encodingProfile, &_ret));
 		return _ret;
 	}
+	alias GenerateMediaStreamSource = GenerateMediaStreamSourceWithProfile;
 	final Windows.Media.Core.MediaStreamSource GeneratePreviewMediaStreamSource(INT32 scaledWidth, INT32 scaledHeight)
 	{
 		Windows.Media.Core.MediaStreamSource _ret;

@@ -1727,24 +1727,28 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.IMapControl)this.asInterface(uuid("42d0b851-5256-4747-9e6c-0d11e966141e"))).abi_TrySetViewWithCenterAsync(center, &_ret));
 		return _ret;
 	}
+	alias TrySetViewAsync = TrySetViewWithCenterAsync;
 	final Windows.Foundation.IAsyncOperation!(bool) TrySetViewWithCenterAndZoomAsync(Windows.Devices.Geolocation.Geopoint center, Windows.Foundation.IReference!(double) zoomLevel)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.IMapControl)this.asInterface(uuid("42d0b851-5256-4747-9e6c-0d11e966141e"))).abi_TrySetViewWithCenterAndZoomAsync(center, zoomLevel, &_ret));
 		return _ret;
 	}
+	alias TrySetViewAsync = TrySetViewWithCenterAndZoomAsync;
 	final Windows.Foundation.IAsyncOperation!(bool) TrySetViewWithCenterZoomHeadingAndPitchAsync(Windows.Devices.Geolocation.Geopoint center, Windows.Foundation.IReference!(double) zoomLevel, Windows.Foundation.IReference!(double) heading, Windows.Foundation.IReference!(double) desiredPitch)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.IMapControl)this.asInterface(uuid("42d0b851-5256-4747-9e6c-0d11e966141e"))).abi_TrySetViewWithCenterZoomHeadingAndPitchAsync(center, zoomLevel, heading, desiredPitch, &_ret));
 		return _ret;
 	}
+	alias TrySetViewAsync = TrySetViewWithCenterZoomHeadingAndPitchAsync;
 	final Windows.Foundation.IAsyncOperation!(bool) TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync(Windows.Devices.Geolocation.Geopoint center, Windows.Foundation.IReference!(double) zoomLevel, Windows.Foundation.IReference!(double) heading, Windows.Foundation.IReference!(double) desiredPitch, Windows.UI.Xaml.Controls.Maps.MapAnimationKind animation)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.IMapControl)this.asInterface(uuid("42d0b851-5256-4747-9e6c-0d11e966141e"))).abi_TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync(center, zoomLevel, heading, desiredPitch, animation, &_ret));
 		return _ret;
 	}
+	alias TrySetViewAsync = TrySetViewWithCenterZoomHeadingPitchAndAnimationAsync;
 	final bool BusinessLandmarksVisible()
 	{
 		bool _ret;
@@ -1997,6 +2001,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.IMapControl2)this.asInterface(uuid("e1fd644d-96ec-4065-b0f0-75281da3654d"))).abi_TrySetSceneWithAnimationAsync(scene, animationKind, &_ret));
 		return _ret;
 	}
+	alias TrySetSceneAsync = TrySetSceneWithAnimationAsync;
 	final EventRegistrationToken OnMapRightTapped(void delegate(Windows.UI.Xaml.Controls.Maps.MapControl, Windows.UI.Xaml.Controls.Maps.MapRightTappedEventArgs) fn)
 	{
 		EventRegistrationToken tok;
@@ -2079,10 +2084,12 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.IMapControl5)this.asInterface(uuid("dd9b0ffd-7823-46a2-82c9-65ddac4f365f"))).abi_FindMapElementsAtOffsetWithRadius(offset, radius, &_ret));
 		return _ret;
 	}
+	alias FindMapElementsAtOffset = FindMapElementsAtOffsetWithRadius;
 	final void GetLocationFromOffsetWithReferenceSystem(Windows.Foundation.Point offset, Windows.Devices.Geolocation.AltitudeReferenceSystem desiredReferenceSystem, Windows.Devices.Geolocation.Geopoint* out_location)
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.IMapControl5)this.asInterface(uuid("dd9b0ffd-7823-46a2-82c9-65ddac4f365f"))).abi_GetLocationFromOffsetWithReferenceSystem(offset, desiredReferenceSystem, out_location));
 	}
+	alias GetLocationFromOffset = GetLocationFromOffsetWithReferenceSystem;
 	final void StartContinuousPan(double horizontalPixelsPerSecond, double verticalPixelsPerSecond)
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.IMapControl5)this.asInterface(uuid("dd9b0ffd-7823-46a2-82c9-65ddac4f365f"))).abi_StartContinuousPan(horizontalPixelsPerSecond, verticalPixelsPerSecond));
@@ -3211,6 +3218,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateFromBoundingBoxWithHeadingAndPitch(bounds, headingInDegrees, pitchInDegrees, &_ret));
 		return _ret;
 	}
+	alias CreateFromBoundingBox = CreateFromBoundingBoxWithHeadingAndPitch;
 	static Windows.UI.Xaml.Controls.Maps.MapScene CreateFromCamera(Windows.UI.Xaml.Controls.Maps.MapCamera camera)
 	{
 		Windows.UI.Xaml.Controls.Maps.MapScene _ret;
@@ -3229,6 +3237,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateFromLocationWithHeadingAndPitch(location, headingInDegrees, pitchInDegrees, &_ret));
 		return _ret;
 	}
+	alias CreateFromLocation = CreateFromLocationWithHeadingAndPitch;
 	static Windows.UI.Xaml.Controls.Maps.MapScene CreateFromLocationAndRadius(Windows.Devices.Geolocation.Geopoint location, double radiusInMeters)
 	{
 		Windows.UI.Xaml.Controls.Maps.MapScene _ret;
@@ -3241,6 +3250,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateFromLocationAndRadiusWithHeadingAndPitch(location, radiusInMeters, headingInDegrees, pitchInDegrees, &_ret));
 		return _ret;
 	}
+	alias CreateFromLocationAndRadius = CreateFromLocationAndRadiusWithHeadingAndPitch;
 	static Windows.UI.Xaml.Controls.Maps.MapScene CreateFromLocations(Windows.Foundation.Collections.IIterable!(Windows.Devices.Geolocation.Geopoint) locations)
 	{
 		Windows.UI.Xaml.Controls.Maps.MapScene _ret;
@@ -3253,6 +3263,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateFromLocationsWithHeadingAndPitch(locations, headingInDegrees, pitchInDegrees, &_ret));
 		return _ret;
 	}
+	alias CreateFromLocations = CreateFromLocationsWithHeadingAndPitch;
 }
 
 interface MapStyleSheet : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Controls.Maps.IMapStyleSheet
@@ -3872,12 +3883,14 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_FindNearbyWithLocationAsync(location, &_ret));
 		return _ret;
 	}
+	alias FindNearbyAsync = FindNearbyWithLocationAsync;
 	static Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Controls.Maps.StreetsidePanorama) FindNearbyWithLocationAndRadiusAsync(Windows.Devices.Geolocation.Geopoint location, double radiusInMeters)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.UI.Xaml.Controls.Maps.StreetsidePanorama) _ret;
 		Debug.OK(staticInstance.abi_FindNearbyWithLocationAndRadiusAsync(location, radiusInMeters, &_ret));
 		return _ret;
 	}
+	alias FindNearbyAsync = FindNearbyWithLocationAndRadiusAsync;
 }
 
 enum MapAnimationKind

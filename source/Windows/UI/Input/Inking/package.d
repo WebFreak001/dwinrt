@@ -644,6 +644,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Input.Inking.IInkManager)this.asInterface(uuid("4744737d-671b-4163-9c95-4e8d7a035fe1"))).abi_RecognizeAsync2(recognitionTarget, &_ret));
 		return _ret;
 	}
+	alias RecognizeAsync = RecognizeAsync2;
 	final void SetDefaultRecognizer(Windows.UI.Input.Inking.InkRecognizer recognizer)
 	{
 		Debug.OK((cast(Windows.UI.Input.Inking.IInkRecognizerContainer)this.asInterface(uuid("a74d9a31-8047-4698-a912-f82a5085012f"))).abi_SetDefaultRecognizer(recognizer));
@@ -1413,6 +1414,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer3)this.asInterface(uuid("3d07bea5-baea-4c82-a719-7b83da1067d2"))).abi_SaveWithFormatAsync(outputStream, inkPersistenceFormat, &_ret));
 		return _ret;
 	}
+	alias SaveAsync = SaveWithFormatAsync;
 	final Windows.UI.Input.Inking.InkStroke GetStrokeById(UINT32 id)
 	{
 		Windows.UI.Input.Inking.InkStroke _ret;

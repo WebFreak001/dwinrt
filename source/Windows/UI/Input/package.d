@@ -1310,12 +1310,14 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetCurrentPointTransformed(pointerId, transform, &_ret));
 		return _ret;
 	}
+	alias GetCurrentPoint = GetCurrentPointTransformed;
 	static Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint) GetIntermediatePointsTransformed(UINT32 pointerId, Windows.UI.Input.IPointerPointTransform transform)
 	{
 		Windows.Foundation.Collections.IVector!(Windows.UI.Input.PointerPoint) _ret;
 		Debug.OK(staticInstance.abi_GetIntermediatePointsTransformed(pointerId, transform, &_ret));
 		return _ret;
 	}
+	alias GetIntermediatePoints = GetIntermediatePointsTransformed;
 }
 
 interface PointerPointProperties : Windows.UI.Input.IPointerPointProperties, Windows.UI.Input.IPointerPointProperties2

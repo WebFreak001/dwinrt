@@ -282,6 +282,7 @@ interface AudioEffectsManager
 		Debug.OK(staticInstance.abi_CreateAudioRenderEffectsManagerWithMode(deviceId, category, mode, &_ret));
 		return _ret;
 	}
+	alias CreateAudioRenderEffectsManager = CreateAudioRenderEffectsManagerWithMode;
 	static Windows.Media.Effects.AudioCaptureEffectsManager CreateAudioCaptureEffectsManager(HSTRING deviceId, Windows.Media.Capture.MediaCategory category)
 	{
 		Windows.Media.Effects.AudioCaptureEffectsManager _ret;
@@ -294,6 +295,7 @@ interface AudioEffectsManager
 		Debug.OK(staticInstance.abi_CreateAudioCaptureEffectsManagerWithMode(deviceId, category, mode, &_ret));
 		return _ret;
 	}
+	alias CreateAudioCaptureEffectsManager = CreateAudioCaptureEffectsManagerWithMode;
 }
 
 interface AudioRenderEffectsManager : Windows.Media.Effects.IAudioRenderEffectsManager, Windows.Media.Effects.IAudioRenderEffectsManager2

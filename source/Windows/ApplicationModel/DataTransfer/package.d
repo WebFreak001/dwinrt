@@ -534,6 +534,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackage)this.asInterface(uuid("61ebf5c7-efea-4346-9554-981d7e198ffe"))).abi_SetStorageItemsReadOnly(value));
 	}
+	alias SetStorageItems = SetStorageItemsReadOnly;
 	final void SetStorageItems(Windows.Foundation.Collections.IIterable!(Windows.Storage.IStorageItem) value, bool readOnly)
 	{
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackage)this.asInterface(uuid("61ebf5c7-efea-4346-9554-981d7e198ffe"))).abi_SetStorageItems(value, readOnly));
@@ -879,6 +880,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackageView)this.asInterface(uuid("7b840471-5900-4d85-a90b-10cb85fe3552"))).abi_GetCustomTextAsync(formatId, &_ret));
 		return _ret;
 	}
+	alias GetTextAsync = GetCustomTextAsync;
 	deprecated("GetUriAsync may be altered or unavailable for releases after Windows 8.1. Instead, use GetWebLinkAsync or GetApplicationLinkAsync.")
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Uri) GetUriAsync()
 	{
@@ -940,6 +942,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackageView3)this.asInterface(uuid("d37771a8-ddad-4288-8428-d1cae394128b"))).abi_RequestAccessWithEnterpriseIdAsync(enterpriseId, &_ret));
 		return _ret;
 	}
+	alias RequestAccessAsync = RequestAccessWithEnterpriseIdAsync;
 	final Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult UnlockAndAssumeEnterpriseIdentity()
 	{
 		Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult _ret;

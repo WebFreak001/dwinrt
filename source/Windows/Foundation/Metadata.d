@@ -45,6 +45,7 @@ interface ApiInformation
 		Debug.OK(staticInstance.abi_IsMethodPresentWithArity(typeName, methodName, inputParameterCount, &_ret));
 		return _ret;
 	}
+	alias IsMethodPresent = IsMethodPresentWithArity;
 	static bool IsEventPresent(HSTRING typeName, HSTRING eventName)
 	{
 		bool _ret;
@@ -81,12 +82,14 @@ interface ApiInformation
 		Debug.OK(staticInstance.abi_IsApiContractPresentByMajor(contractName, majorVersion, &_ret));
 		return _ret;
 	}
+	alias IsApiContractPresent = IsApiContractPresentByMajor;
 	static bool IsApiContractPresentByMajorAndMinor(HSTRING contractName, UINT16 majorVersion, UINT16 minorVersion)
 	{
 		bool _ret;
 		Debug.OK(staticInstance.abi_IsApiContractPresentByMajorAndMinor(contractName, majorVersion, minorVersion, &_ret));
 		return _ret;
 	}
+	alias IsApiContractPresent = IsApiContractPresentByMajorAndMinor;
 }
 
 enum GCPressureAmount

@@ -1564,6 +1564,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotationStore)this.asInterface(uuid("23acf4aa-7a77-457d-8203-987f4b31af09"))).abi_CreateAnnotationListInAccountAsync(userDataAccountId, &_ret));
 		return _ret;
 	}
+	alias CreateAnnotationListAsync = CreateAnnotationListInAccountAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactAnnotationList) GetAnnotationListAsync(HSTRING annotationListId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactAnnotationList) _ret;
@@ -1893,6 +1894,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactFieldFactory)factory.asInterface(uuid("85e2913f-0e4a-4a3e-8994-406ae7ed646e"))).abi_CreateField_Default(value, type, &_ret));
 		return _ret;
 	}
+	alias CreateField = New;
 	static Windows.ApplicationModel.Contacts.ContactField New(HSTRING value, Windows.ApplicationModel.Contacts.ContactFieldType type, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactFieldFactory);
@@ -1900,6 +1902,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactFieldFactory)factory.asInterface(uuid("85e2913f-0e4a-4a3e-8994-406ae7ed646e"))).abi_CreateField_Category(value, type, category, &_ret));
 		return _ret;
 	}
+	alias CreateField = New;
 	static Windows.ApplicationModel.Contacts.ContactField New(HSTRING name, HSTRING value, Windows.ApplicationModel.Contacts.ContactFieldType type, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactFieldFactory);
@@ -1907,6 +1910,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactFieldFactory)factory.asInterface(uuid("85e2913f-0e4a-4a3e-8994-406ae7ed646e"))).abi_CreateField_Custom(name, value, type, category, &_ret));
 		return _ret;
 	}
+	alias CreateField = New;
 }
 
 interface ContactFieldFactory : Windows.ApplicationModel.Contacts.IContactFieldFactory, Windows.ApplicationModel.Contacts.IContactLocationFieldFactory, Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory
@@ -1918,54 +1922,63 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactFieldFactory)this.asInterface(uuid("85e2913f-0e4a-4a3e-8994-406ae7ed646e"))).abi_CreateField_Default(value, type, &_ret));
 		return _ret;
 	}
+	alias CreateField = CreateField_Default;
 	final Windows.ApplicationModel.Contacts.ContactField CreateField_Category(HSTRING value, Windows.ApplicationModel.Contacts.ContactFieldType type, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
 	{
 		Windows.ApplicationModel.Contacts.ContactField _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactFieldFactory)this.asInterface(uuid("85e2913f-0e4a-4a3e-8994-406ae7ed646e"))).abi_CreateField_Category(value, type, category, &_ret));
 		return _ret;
 	}
+	alias CreateField = CreateField_Category;
 	final Windows.ApplicationModel.Contacts.ContactField CreateField_Custom(HSTRING name, HSTRING value, Windows.ApplicationModel.Contacts.ContactFieldType type, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
 	{
 		Windows.ApplicationModel.Contacts.ContactField _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactFieldFactory)this.asInterface(uuid("85e2913f-0e4a-4a3e-8994-406ae7ed646e"))).abi_CreateField_Custom(name, value, type, category, &_ret));
 		return _ret;
 	}
+	alias CreateField = CreateField_Custom;
 	final Windows.ApplicationModel.Contacts.ContactLocationField CreateLocation_Default(HSTRING unstructuredAddress)
 	{
 		Windows.ApplicationModel.Contacts.ContactLocationField _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory)this.asInterface(uuid("f79932d7-2fdf-43fe-8f18-41897390bcfe"))).abi_CreateLocation_Default(unstructuredAddress, &_ret));
 		return _ret;
 	}
+	alias CreateLocation = CreateLocation_Default;
 	final Windows.ApplicationModel.Contacts.ContactLocationField CreateLocation_Category(HSTRING unstructuredAddress, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
 	{
 		Windows.ApplicationModel.Contacts.ContactLocationField _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory)this.asInterface(uuid("f79932d7-2fdf-43fe-8f18-41897390bcfe"))).abi_CreateLocation_Category(unstructuredAddress, category, &_ret));
 		return _ret;
 	}
+	alias CreateLocation = CreateLocation_Category;
 	final Windows.ApplicationModel.Contacts.ContactLocationField CreateLocation_All(HSTRING unstructuredAddress, Windows.ApplicationModel.Contacts.ContactFieldCategory category, HSTRING street, HSTRING city, HSTRING region, HSTRING country, HSTRING postalCode)
 	{
 		Windows.ApplicationModel.Contacts.ContactLocationField _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory)this.asInterface(uuid("f79932d7-2fdf-43fe-8f18-41897390bcfe"))).abi_CreateLocation_All(unstructuredAddress, category, street, city, region, country, postalCode, &_ret));
 		return _ret;
 	}
+	alias CreateLocation = CreateLocation_All;
 	final Windows.ApplicationModel.Contacts.ContactInstantMessageField CreateInstantMessage_Default(HSTRING userName)
 	{
 		Windows.ApplicationModel.Contacts.ContactInstantMessageField _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory)this.asInterface(uuid("ba0b6794-91a3-4bb2-b1b9-69a5dff0ba09"))).abi_CreateInstantMessage_Default(userName, &_ret));
 		return _ret;
 	}
+	alias CreateInstantMessage = CreateInstantMessage_Default;
 	final Windows.ApplicationModel.Contacts.ContactInstantMessageField CreateInstantMessage_Category(HSTRING userName, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
 	{
 		Windows.ApplicationModel.Contacts.ContactInstantMessageField _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory)this.asInterface(uuid("ba0b6794-91a3-4bb2-b1b9-69a5dff0ba09"))).abi_CreateInstantMessage_Category(userName, category, &_ret));
 		return _ret;
 	}
+	alias CreateInstantMessage = CreateInstantMessage_Category;
 	final Windows.ApplicationModel.Contacts.ContactInstantMessageField CreateInstantMessage_All(HSTRING userName, Windows.ApplicationModel.Contacts.ContactFieldCategory category, HSTRING service, HSTRING displayText, Windows.Foundation.Uri verb)
 	{
 		Windows.ApplicationModel.Contacts.ContactInstantMessageField _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory)this.asInterface(uuid("ba0b6794-91a3-4bb2-b1b9-69a5dff0ba09"))).abi_CreateInstantMessage_All(userName, category, service, displayText, verb, &_ret));
 		return _ret;
 	}
+	alias CreateInstantMessage = CreateInstantMessage_All;
 	static ContactFieldFactory New()
 	{
 		IInspectable ret;
@@ -2089,6 +2102,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory)factory.asInterface(uuid("ba0b6794-91a3-4bb2-b1b9-69a5dff0ba09"))).abi_CreateInstantMessage_Default(userName, &_ret));
 		return _ret;
 	}
+	alias CreateInstantMessage = New;
 	static Windows.ApplicationModel.Contacts.ContactInstantMessageField New(HSTRING userName, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory);
@@ -2096,6 +2110,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory)factory.asInterface(uuid("ba0b6794-91a3-4bb2-b1b9-69a5dff0ba09"))).abi_CreateInstantMessage_Category(userName, category, &_ret));
 		return _ret;
 	}
+	alias CreateInstantMessage = New;
 	static Windows.ApplicationModel.Contacts.ContactInstantMessageField New(HSTRING userName, Windows.ApplicationModel.Contacts.ContactFieldCategory category, HSTRING service, HSTRING displayText, Windows.Foundation.Uri verb)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory);
@@ -2103,6 +2118,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory)factory.asInterface(uuid("ba0b6794-91a3-4bb2-b1b9-69a5dff0ba09"))).abi_CreateInstantMessage_All(userName, category, service, displayText, verb, &_ret));
 		return _ret;
 	}
+	alias CreateInstantMessage = New;
 }
 
 interface ContactJobInfo : Windows.ApplicationModel.Contacts.IContactJobInfo
@@ -2361,6 +2377,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactList)this.asInterface(uuid("16ddec75-392c-4845-9dfb-51a3e7ef3e42"))).abi_GetContactReaderWithOptions(options, &_ret));
 		return _ret;
 	}
+	alias GetContactReader = GetContactReaderWithOptions;
 	final Windows.Foundation.IAsyncAction SaveContactAsync(Windows.ApplicationModel.Contacts.Contact contact)
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -2803,6 +2820,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory)factory.asInterface(uuid("f79932d7-2fdf-43fe-8f18-41897390bcfe"))).abi_CreateLocation_Default(unstructuredAddress, &_ret));
 		return _ret;
 	}
+	alias CreateLocation = New;
 	static Windows.ApplicationModel.Contacts.ContactLocationField New(HSTRING unstructuredAddress, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory);
@@ -2810,6 +2828,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory)factory.asInterface(uuid("f79932d7-2fdf-43fe-8f18-41897390bcfe"))).abi_CreateLocation_Category(unstructuredAddress, category, &_ret));
 		return _ret;
 	}
+	alias CreateLocation = New;
 	static Windows.ApplicationModel.Contacts.ContactLocationField New(HSTRING unstructuredAddress, Windows.ApplicationModel.Contacts.ContactFieldCategory category, HSTRING street, HSTRING city, HSTRING region, HSTRING country, HSTRING postalCode)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory);
@@ -2817,6 +2836,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory)factory.asInterface(uuid("f79932d7-2fdf-43fe-8f18-41897390bcfe"))).abi_CreateLocation_All(unstructuredAddress, category, street, city, region, country, postalCode, &_ret));
 		return _ret;
 	}
+	alias CreateLocation = New;
 }
 
 interface ContactManager
@@ -2835,6 +2855,7 @@ interface ContactManager
 	{
 		Debug.OK(staticInstance.abi_ShowContactCardWithPlacement(contact, selection, preferredPlacement));
 	}
+	alias ShowContactCard = ShowContactCardWithPlacement;
 	static Windows.ApplicationModel.Contacts.ContactCardDelayedDataLoader ShowDelayLoadedContactCard(Windows.ApplicationModel.Contacts.Contact contact, Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
 	{
 		Windows.ApplicationModel.Contacts.ContactCardDelayedDataLoader _ret;
@@ -2858,6 +2879,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactManagerForUser)this.asInterface(uuid("b74bba57-1076-4bef-aef3-54686d18387d"))).abi_ConvertContactToVCardAsyncWithMaxBytes(contact, maxBytes, &_ret));
 		return _ret;
 	}
+	alias ConvertContactToVCardAsync = ConvertContactToVCardAsyncWithMaxBytes;
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) ConvertVCardToContactAsync(Windows.Storage.Streams.IRandomAccessStreamReference vCard)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) _ret;
@@ -3310,6 +3332,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactStore)this.asInterface(uuid("2c220b10-3a6c-4293-b9bc-fe987f6e0d52"))).abi_FindContactsWithSearchTextAsync(searchText, &_ret));
 		return _ret;
 	}
+	alias FindContactsAsync = FindContactsWithSearchTextAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) GetContactAsync(HSTRING contactId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) _ret;
@@ -3374,12 +3397,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactStore2)this.asInterface(uuid("18ce1c22-ebd5-4bfb-b690-5f4f27c4f0e8"))).abi_GetContactReaderWithOptions(options, &_ret));
 		return _ret;
 	}
+	alias GetContactReader = GetContactReaderWithOptions;
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactList) CreateContactListInAccountAsync(HSTRING displayName, HSTRING userDataAccountId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactList) _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactStore2)this.asInterface(uuid("18ce1c22-ebd5-4bfb-b690-5f4f27c4f0e8"))).abi_CreateContactListInAccountAsync(displayName, userDataAccountId, &_ret));
 		return _ret;
 	}
+	alias CreateContactListAsync = CreateContactListInAccountAsync;
 }
 
 interface ContactStoreNotificationTriggerDetails : Windows.ApplicationModel.Contacts.IContactStoreNotificationTriggerDetails

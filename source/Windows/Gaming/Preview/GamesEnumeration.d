@@ -62,6 +62,7 @@ interface GameList
 		Debug.OK(staticInstance.abi_FindAllAsyncPackageFamilyName(packageFamilyName, &_ret));
 		return _ret;
 	}
+	alias FindAllAsync = FindAllAsyncPackageFamilyName;
 	static EventRegistrationToken OnGameAdded(void delegate(Windows.Gaming.Preview.GamesEnumeration.GameListEntry) fn)
 	{
 		EventRegistrationToken tok;

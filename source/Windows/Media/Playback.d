@@ -2932,6 +2932,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer5)this.asInterface(uuid("cfe537fd-f86a-4446-bf4d-c8e792b7b4b3"))).abi_CopyFrameToVideoSurfaceWithTargetRectangle(destination, targetRectangle));
 	}
+	alias CopyFrameToVideoSurface = CopyFrameToVideoSurfaceWithTargetRectangle;
 	final void CopyFrameToStereoscopicVideoSurfaces(Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface destinationLeftEye, Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface destinationRightEye)
 	{
 		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer5)this.asInterface(uuid("cfe537fd-f86a-4446-bf4d-c8e792b7b4b3"))).abi_CopyFrameToStereoscopicVideoSurfaces(destinationLeftEye, destinationRightEye));

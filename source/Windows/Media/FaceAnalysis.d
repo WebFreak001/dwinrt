@@ -83,6 +83,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.FaceAnalysis.IFaceDetector)this.asInterface(uuid("16b672dc-fe6f-3117-8d95-c3f04d51630c"))).abi_DetectFacesWithSearchAreaAsync(image, searchArea, &_ret));
 		return _ret;
 	}
+	alias DetectFacesAsync = DetectFacesWithSearchAreaAsync;
 	final Windows.Graphics.Imaging.BitmapSize MinDetectableFaceSize()
 	{
 		Windows.Graphics.Imaging.BitmapSize _ret;

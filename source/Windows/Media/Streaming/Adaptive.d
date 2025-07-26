@@ -486,6 +486,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateFromUriWithDownloaderAsync(uri, httpClient, &_ret));
 		return _ret;
 	}
+	alias CreateFromUriAsync = CreateFromUriWithDownloaderAsync;
 	static Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) CreateFromStreamAsync(Windows.Storage.Streams.IInputStream stream, Windows.Foundation.Uri uri, HSTRING contentType)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) _ret;
@@ -498,6 +499,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateFromStreamWithDownloaderAsync(stream, uri, contentType, httpClient, &_ret));
 		return _ret;
 	}
+	alias CreateFromStreamAsync = CreateFromStreamWithDownloaderAsync;
 }
 
 interface AdaptiveMediaSourceAdvancedSettings : Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceAdvancedSettings

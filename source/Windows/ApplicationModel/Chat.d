@@ -746,6 +746,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatConversation)this.asInterface(uuid("a58c080d-1a6f-46dc-8f3d-f5028660b6ee"))).abi_MarkAllMessagesAsReadAsync(&_ret));
 		return _ret;
 	}
+	alias MarkMessagesAsReadAsync = MarkAllMessagesAsReadAsync;
 	final Windows.Foundation.IAsyncAction MarkMessagesAsReadAsync(Windows.Foundation.DateTime value)
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -809,6 +810,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatConversationReader)this.asInterface(uuid("055136d2-de32-4a47-a93a-b3dc0833852b"))).abi_ReadBatchWithCountAsync(count, &_ret));
 		return _ret;
 	}
+	alias ReadBatchAsync = ReadBatchWithCountAsync;
 }
 
 interface ChatConversationThreadingInfo : Windows.ApplicationModel.Chat.IChatConversationThreadingInfo
@@ -1378,6 +1380,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageReader2)this.asInterface(uuid("89643683-64bb-470d-9df4-0de8be1a05bf"))).abi_ReadBatchWithCountAsync(count, &_ret));
 		return _ret;
 	}
+	alias ReadBatchAsync = ReadBatchWithCountAsync;
 }
 
 interface ChatMessageStore : Windows.ApplicationModel.Chat.IChatMessageStore, Windows.ApplicationModel.Chat.IChatMessageStore2, Windows.ApplicationModel.Chat.IChatMessageStore3
@@ -1413,12 +1416,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore)this.asInterface(uuid("31f2fd01-ccf6-580b-4976-0a07dd5d3b47"))).abi_GetMessageReader1(&_ret));
 		return _ret;
 	}
+	alias GetMessageReader = GetMessageReader1;
 	final Windows.ApplicationModel.Chat.ChatMessageReader GetMessageReader2(Windows.Foundation.TimeSpan recentTimeLimit)
 	{
 		Windows.ApplicationModel.Chat.ChatMessageReader _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore)this.asInterface(uuid("31f2fd01-ccf6-580b-4976-0a07dd5d3b47"))).abi_GetMessageReader2(recentTimeLimit, &_ret));
 		return _ret;
 	}
+	alias GetMessageReader = GetMessageReader2;
 	final Windows.Foundation.IAsyncAction MarkMessageReadAsync(HSTRING localChatMessageId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -1471,6 +1476,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore2)this.asInterface(uuid("ad4dc4ee-3ad4-491b-b311-abdf9bb22768"))).abi_GetConversationForTransportsAsync(conversationId, transportIds, &_ret));
 		return _ret;
 	}
+	alias GetConversationAsync = GetConversationForTransportsAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatConversation) GetConversationFromThreadingInfoAsync(Windows.ApplicationModel.Chat.ChatConversationThreadingInfo threadingInfo)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatConversation) _ret;
@@ -1489,6 +1495,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore2)this.asInterface(uuid("ad4dc4ee-3ad4-491b-b311-abdf9bb22768"))).abi_GetConversationForTransportsReader(transportIds, &_ret));
 		return _ret;
 	}
+	alias GetConversationReader = GetConversationForTransportsReader;
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) GetMessageByRemoteIdAsync(HSTRING transportId, HSTRING remoteId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) _ret;
@@ -1507,6 +1514,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore2)this.asInterface(uuid("ad4dc4ee-3ad4-491b-b311-abdf9bb22768"))).abi_GetUnseenCountForTransportsReaderAsync(transportIds, &_ret));
 		return _ret;
 	}
+	alias GetUnseenCountAsync = GetUnseenCountForTransportsReaderAsync;
 	final Windows.Foundation.IAsyncAction MarkAsSeenAsync()
 	{
 		Windows.Foundation.IAsyncAction _ret;
@@ -1519,6 +1527,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore2)this.asInterface(uuid("ad4dc4ee-3ad4-491b-b311-abdf9bb22768"))).abi_MarkAsSeenForTransportsAsync(transportIds, &_ret));
 		return _ret;
 	}
+	alias MarkAsSeenAsync = MarkAsSeenForTransportsAsync;
 	final Windows.ApplicationModel.Chat.ChatSearchReader GetSearchReader(Windows.ApplicationModel.Chat.ChatQueryOptions value)
 	{
 		Windows.ApplicationModel.Chat.ChatSearchReader _ret;
@@ -1796,6 +1805,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatSearchReader)this.asInterface(uuid("4665fe49-9020-4752-980d-39612325f589"))).abi_ReadBatchWithCountAsync(count, &_ret));
 		return _ret;
 	}
+	alias ReadBatchAsync = ReadBatchWithCountAsync;
 }
 
 interface ChatSyncConfiguration : Windows.ApplicationModel.Chat.IChatSyncConfiguration

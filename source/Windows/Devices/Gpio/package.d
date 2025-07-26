@@ -301,6 +301,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Gpio.IGpioController)this.asInterface(uuid("284012e3-7461-469c-a8bc-61d69d08a53c"))).abi_OpenPinWithSharingMode(pinNumber, sharingMode, &_ret));
 		return _ret;
 	}
+	alias OpenPin = OpenPinWithSharingMode;
 	final bool TryOpenPin(INT32 pinNumber, Windows.Devices.Gpio.GpioSharingMode sharingMode, Windows.Devices.Gpio.GpioPin* out_pin, Windows.Devices.Gpio.GpioOpenStatus* out_openStatus)
 	{
 		bool _ret;

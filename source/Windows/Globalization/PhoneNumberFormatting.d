@@ -72,6 +72,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberFormatter)this.asInterface(uuid("1556b49e-bad4-4b4a-900d-4407adb7c981"))).abi_FormatWithOutputFormat(number, numberFormat, &_ret));
 		return _ret;
 	}
+	alias Format = FormatWithOutputFormat;
 	final HSTRING FormatPartialString(HSTRING number)
 	{
 		HSTRING _ret;
@@ -203,6 +204,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_TryParseWithRegion(input, regionCode, out_phoneNumber, &_ret));
 		return _ret;
 	}
+	alias TryParse = TryParseWithRegion;
 	static Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo New(HSTRING number)
 	{
 		auto factory = factory!(Windows.Globalization.PhoneNumberFormatting.IPhoneNumberInfoFactory);

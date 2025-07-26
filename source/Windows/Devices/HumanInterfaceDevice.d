@@ -336,6 +336,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.HumanInterfaceDevice.IHidDevice)this.asInterface(uuid("5f8a14e7-2200-432e-95da-d09b87d574a8"))).abi_GetInputReportByIdAsync(reportId, &_ret));
 		return _ret;
 	}
+	alias GetInputReportAsync = GetInputReportByIdAsync;
 	final Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidFeatureReport) GetFeatureReportAsync()
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidFeatureReport) _ret;
@@ -348,6 +349,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.HumanInterfaceDevice.IHidDevice)this.asInterface(uuid("5f8a14e7-2200-432e-95da-d09b87d574a8"))).abi_GetFeatureReportByIdAsync(reportId, &_ret));
 		return _ret;
 	}
+	alias GetFeatureReportAsync = GetFeatureReportByIdAsync;
 	final Windows.Devices.HumanInterfaceDevice.HidOutputReport CreateOutputReport()
 	{
 		Windows.Devices.HumanInterfaceDevice.HidOutputReport _ret;
@@ -360,6 +362,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.HumanInterfaceDevice.IHidDevice)this.asInterface(uuid("5f8a14e7-2200-432e-95da-d09b87d574a8"))).abi_CreateOutputReportById(reportId, &_ret));
 		return _ret;
 	}
+	alias CreateOutputReport = CreateOutputReportById;
 	final Windows.Devices.HumanInterfaceDevice.HidFeatureReport CreateFeatureReport()
 	{
 		Windows.Devices.HumanInterfaceDevice.HidFeatureReport _ret;
@@ -372,6 +375,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.HumanInterfaceDevice.IHidDevice)this.asInterface(uuid("5f8a14e7-2200-432e-95da-d09b87d574a8"))).abi_CreateFeatureReportById(reportId, &_ret));
 		return _ret;
 	}
+	alias CreateFeatureReport = CreateFeatureReportById;
 	final Windows.Foundation.IAsyncOperation!(UINT32) SendOutputReportAsync(Windows.Devices.HumanInterfaceDevice.HidOutputReport outputReport)
 	{
 		Windows.Foundation.IAsyncOperation!(UINT32) _ret;
@@ -429,6 +433,7 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDeviceSelectorVidPid(usagePage, usageId, vendorId, productId, &_ret));
 		return _ret;
 	}
+	alias GetDeviceSelector = GetDeviceSelectorVidPid;
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidDevice) FromIdAsync(HSTRING deviceId, Windows.Storage.FileAccessMode accessMode)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidDevice) _ret;

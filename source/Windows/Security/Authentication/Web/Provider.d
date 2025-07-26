@@ -424,6 +424,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderSilentReportOperation)this.asInterface(uuid("e0b545f8-3b0f-44da-924c-7b18baaa62a9"))).abi_ReportUserInteractionRequiredWithError(value));
 	}
+	alias ReportUserInteractionRequired = ReportUserInteractionRequiredWithError;
 	final void ReportCompleted()
 	{
 		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation)this.asInterface(uuid("bba4acbb-993b-4d57-bbe4-1421e3668b4c"))).abi_ReportCompleted());

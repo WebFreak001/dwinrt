@@ -740,6 +740,7 @@ interface BadgeUpdateManager
 		Debug.OK(staticInstance.abi_CreateBadgeUpdaterForApplicationWithId(applicationId, &_ret));
 		return _ret;
 	}
+	alias CreateBadgeUpdaterForApplication = CreateBadgeUpdaterForApplicationWithId;
 	static Windows.UI.Notifications.BadgeUpdater CreateBadgeUpdaterForSecondaryTile(HSTRING tileId)
 	{
 		Windows.UI.Notifications.BadgeUpdater _ret;
@@ -769,6 +770,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Notifications.IBadgeUpdateManagerForUser)this.asInterface(uuid("996b21bc-0386-44e5-ba8d-0c1077a62e92"))).abi_CreateBadgeUpdaterForApplicationWithId(applicationId, &_ret));
 		return _ret;
 	}
+	alias CreateBadgeUpdaterForApplication = CreateBadgeUpdaterForApplicationWithId;
 	final Windows.UI.Notifications.BadgeUpdater CreateBadgeUpdaterForSecondaryTile(HSTRING tileId)
 	{
 		Windows.UI.Notifications.BadgeUpdater _ret;
@@ -802,6 +804,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Notifications.IBadgeUpdater)this.asInterface(uuid("b5fa1fd4-7562-4f6c-bfa3-1b6ed2e57f2f"))).abi_StartPeriodicUpdateAtTime(badgeContent, startTime, requestedInterval));
 	}
+	alias StartPeriodicUpdate = StartPeriodicUpdateAtTime;
 	final void StopPeriodicUpdate()
 	{
 		Debug.OK((cast(Windows.UI.Notifications.IBadgeUpdater)this.asInterface(uuid("b5fa1fd4-7562-4f6c-bfa3-1b6ed2e57f2f"))).abi_StopPeriodicUpdate());
@@ -1094,6 +1097,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Notifications.INotificationDataFactory)factory.asInterface(uuid("23c1e33a-1c10-46fb-8040-dec384621cf8"))).abi_CreateNotificationDataWithValuesAndSequenceNumber(initialValues, sequenceNumber, &_ret));
 		return _ret;
 	}
+	alias CreateNotificationData = New;
 	static Windows.UI.Notifications.NotificationData New(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) initialValues)
 	{
 		auto factory = factory!(Windows.UI.Notifications.INotificationDataFactory);
@@ -1101,6 +1105,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Notifications.INotificationDataFactory)factory.asInterface(uuid("23c1e33a-1c10-46fb-8040-dec384621cf8"))).abi_CreateNotificationDataWithValues(initialValues, &_ret));
 		return _ret;
 	}
+	alias CreateNotificationData = New;
 }
 
 interface NotificationVisual : Windows.UI.Notifications.INotificationVisual
@@ -1346,6 +1351,7 @@ interface TileFlyoutUpdateManager
 		Debug.OK(staticInstance.abi_CreateTileFlyoutUpdaterForApplicationWithId(applicationId, &_ret));
 		return _ret;
 	}
+	alias CreateTileFlyoutUpdaterForApplication = CreateTileFlyoutUpdaterForApplicationWithId;
 	static Windows.UI.Notifications.TileFlyoutUpdater CreateTileFlyoutUpdaterForSecondaryTile(HSTRING tileId)
 	{
 		Windows.UI.Notifications.TileFlyoutUpdater _ret;
@@ -1379,6 +1385,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Notifications.ITileFlyoutUpdater)this.asInterface(uuid("8d40c76a-c465-4052-a740-5c2654c1a089"))).abi_StartPeriodicUpdateAtTime(tileFlyoutContent, startTime, requestedInterval));
 	}
+	alias StartPeriodicUpdate = StartPeriodicUpdateAtTime;
 	final void StopPeriodicUpdate()
 	{
 		Debug.OK((cast(Windows.UI.Notifications.ITileFlyoutUpdater)this.asInterface(uuid("8d40c76a-c465-4052-a740-5c2654c1a089"))).abi_StopPeriodicUpdate());
@@ -1449,6 +1456,7 @@ interface TileUpdateManager
 		Debug.OK(staticInstance.abi_CreateTileUpdaterForApplicationWithId(applicationId, &_ret));
 		return _ret;
 	}
+	alias CreateTileUpdaterForApplication = CreateTileUpdaterForApplicationWithId;
 	static Windows.UI.Notifications.TileUpdater CreateTileUpdaterForSecondaryTile(HSTRING tileId)
 	{
 		Windows.UI.Notifications.TileUpdater _ret;
@@ -1472,12 +1480,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Notifications.ITileUpdateManagerForUser)this.asInterface(uuid("55141348-2ee2-4e2d-9cc1-216a20decc9f"))).abi_CreateTileUpdaterForApplication(&_ret));
 		return _ret;
 	}
+	alias CreateTileUpdaterForApplicationForUser = CreateTileUpdaterForApplication;
 	final Windows.UI.Notifications.TileUpdater CreateTileUpdaterForApplicationWithId(HSTRING applicationId)
 	{
 		Windows.UI.Notifications.TileUpdater _ret;
 		Debug.OK((cast(Windows.UI.Notifications.ITileUpdateManagerForUser)this.asInterface(uuid("55141348-2ee2-4e2d-9cc1-216a20decc9f"))).abi_CreateTileUpdaterForApplicationWithId(applicationId, &_ret));
 		return _ret;
 	}
+	alias CreateTileUpdaterForApplication = CreateTileUpdaterForApplicationWithId;
 	final Windows.UI.Notifications.TileUpdater CreateTileUpdaterForSecondaryTile(HSTRING tileId)
 	{
 		Windows.UI.Notifications.TileUpdater _ret;
@@ -1535,6 +1545,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Notifications.ITileUpdater)this.asInterface(uuid("0942a48b-1d91-44ec-9243-c1e821c29a20"))).abi_StartPeriodicUpdateAtTime(tileContent, startTime, requestedInterval));
 	}
+	alias StartPeriodicUpdate = StartPeriodicUpdateAtTime;
 	final void StopPeriodicUpdate()
 	{
 		Debug.OK((cast(Windows.UI.Notifications.ITileUpdater)this.asInterface(uuid("0942a48b-1d91-44ec-9243-c1e821c29a20"))).abi_StopPeriodicUpdate());
@@ -1547,6 +1558,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Notifications.ITileUpdater)this.asInterface(uuid("0942a48b-1d91-44ec-9243-c1e821c29a20"))).abi_StartPeriodicUpdateBatchAtTime(tileContents, startTime, requestedInterval));
 	}
+	alias StartPeriodicUpdateBatch = StartPeriodicUpdateBatchAtTime;
 	final void EnableNotificationQueueForSquare150x150(bool enable)
 	{
 		Debug.OK((cast(Windows.UI.Notifications.ITileUpdater2)this.asInterface(uuid("a2266e12-15ee-43ed-83f5-65b352bb1a84"))).abi_EnableNotificationQueueForSquare150x150(enable));
@@ -1845,14 +1857,17 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationHistory)this.asInterface(uuid("5caddc63-01d3-4c97-986f-0533483fee14"))).abi_RemoveGroupWithId(group, applicationId));
 	}
+	alias RemoveGroup = RemoveGroupWithId;
 	final void RemoveGroupedTagWithId(HSTRING tag, HSTRING group, HSTRING applicationId)
 	{
 		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationHistory)this.asInterface(uuid("5caddc63-01d3-4c97-986f-0533483fee14"))).abi_RemoveGroupedTagWithId(tag, group, applicationId));
 	}
+	alias Remove = RemoveGroupedTagWithId;
 	final void RemoveGroupedTag(HSTRING tag, HSTRING group)
 	{
 		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationHistory)this.asInterface(uuid("5caddc63-01d3-4c97-986f-0533483fee14"))).abi_RemoveGroupedTag(tag, group));
 	}
+	alias Remove = RemoveGroupedTag;
 	final void Remove(HSTRING tag)
 	{
 		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationHistory)this.asInterface(uuid("5caddc63-01d3-4c97-986f-0533483fee14"))).abi_Remove(tag));
@@ -1865,6 +1880,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationHistory)this.asInterface(uuid("5caddc63-01d3-4c97-986f-0533483fee14"))).abi_ClearWithId(applicationId));
 	}
+	alias Clear = ClearWithId;
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ToastNotification) GetHistory()
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.UI.Notifications.ToastNotification) _ret;
@@ -1877,6 +1893,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationHistory2)this.asInterface(uuid("3bc3d253-2f31-4092-9129-8ad5abf067da"))).abi_GetHistoryWithId(applicationId, &_ret));
 		return _ret;
 	}
+	alias GetHistory = GetHistoryWithId;
 }
 
 interface ToastNotificationHistoryChangedTriggerDetail : Windows.UI.Notifications.IToastNotificationHistoryChangedTriggerDetail, Windows.UI.Notifications.IToastNotificationHistoryChangedTriggerDetail2
@@ -1916,6 +1933,7 @@ interface ToastNotificationManager
 		Debug.OK(staticInstance.abi_CreateToastNotifierWithId(applicationId, &_ret));
 		return _ret;
 	}
+	alias CreateToastNotifier = CreateToastNotifierWithId;
 	static Windows.Data.Xml.Dom.XmlDocument GetTemplateContent(Windows.UI.Notifications.ToastTemplateType type)
 	{
 		Windows.Data.Xml.Dom.XmlDocument _ret;
@@ -1939,6 +1957,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationManagerForUser)this.asInterface(uuid("79ab57f6-43fe-487b-8a7f-99567200ae94"))).abi_CreateToastNotifierWithId(applicationId, &_ret));
 		return _ret;
 	}
+	alias CreateToastNotifier = CreateToastNotifierWithId;
 	final Windows.UI.Notifications.ToastNotificationHistory History()
 	{
 		Windows.UI.Notifications.ToastNotificationHistory _ret;
@@ -1975,6 +1994,7 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Notifications.IToastNotificationManagerForUser2)this.asInterface(uuid("679c64b7-81ab-42c2-8819-c958767753f4"))).abi_GetToastCollectionManagerWithAppId(appId, &_ret));
 		return _ret;
 	}
+	alias GetToastCollectionManager = GetToastCollectionManagerWithAppId;
 }
 
 interface ToastNotifier : Windows.UI.Notifications.IToastNotifier, Windows.UI.Notifications.IToastNotifier2
@@ -2014,12 +2034,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Notifications.IToastNotifier2)this.asInterface(uuid("354389c6-7c01-4bd5-9c20-604340cd2b74"))).abi_UpdateWithTagAndGroup(data, tag, group, &_ret));
 		return _ret;
 	}
+	alias Update = UpdateWithTagAndGroup;
 	final Windows.UI.Notifications.NotificationUpdateResult UpdateWithTag(Windows.UI.Notifications.NotificationData data, HSTRING tag)
 	{
 		Windows.UI.Notifications.NotificationUpdateResult _ret;
 		Debug.OK((cast(Windows.UI.Notifications.IToastNotifier2)this.asInterface(uuid("354389c6-7c01-4bd5-9c20-604340cd2b74"))).abi_UpdateWithTag(data, tag, &_ret));
 		return _ret;
 	}
+	alias Update = UpdateWithTag;
 }
 
 interface UserNotification : Windows.UI.Notifications.IUserNotification

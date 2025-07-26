@@ -48,12 +48,14 @@ interface WebAuthenticationBroker
 		Debug.OK(staticInstance.abi_AuthenticateWithCallbackUriAsync(options, requestUri, callbackUri, &_ret));
 		return _ret;
 	}
+	alias AuthenticateAsync = AuthenticateWithCallbackUriAsync;
 	static Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult) AuthenticateWithoutCallbackUriAsync(Windows.Security.Authentication.Web.WebAuthenticationOptions options, Windows.Foundation.Uri requestUri)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Web.WebAuthenticationResult) _ret;
 		Debug.OK(staticInstance.abi_AuthenticateWithoutCallbackUriAsync(options, requestUri, &_ret));
 		return _ret;
 	}
+	alias AuthenticateAsync = AuthenticateWithoutCallbackUriAsync;
 	static Windows.Foundation.Uri GetCurrentApplicationCallbackUri()
 	{
 		Windows.Foundation.Uri _ret;

@@ -153,6 +153,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.Haptics.ISimpleHapticsController)this.asInterface(uuid("3d577ef9-4cee-11e6-b535-001bdc06ab3b"))).abi_SendHapticFeedbackWithIntensity(feedback, intensity));
 	}
+	alias SendHapticFeedback = SendHapticFeedbackWithIntensity;
 	final void SendHapticFeedbackForDuration(Windows.Devices.Haptics.SimpleHapticsControllerFeedback feedback, double intensity, Windows.Foundation.TimeSpan playDuration)
 	{
 		Debug.OK((cast(Windows.Devices.Haptics.ISimpleHapticsController)this.asInterface(uuid("3d577ef9-4cee-11e6-b535-001bdc06ab3b"))).abi_SendHapticFeedbackForDuration(feedback, intensity, playDuration));

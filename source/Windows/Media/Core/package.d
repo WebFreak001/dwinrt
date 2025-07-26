@@ -2950,6 +2950,7 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Core.IMseSourceBuffer)this.asInterface(uuid("0c1aa3e3-df8d-4079-a3fe-6849184b4e2f"))).abi_AppendStreamMaxSize(stream, maxSize));
 	}
+	alias AppendStream = AppendStreamMaxSize;
 	final void Abort()
 	{
 		Debug.OK((cast(Windows.Media.Core.IMseSourceBuffer)this.asInterface(uuid("0c1aa3e3-df8d-4079-a3fe-6849184b4e2f"))).abi_Abort());
@@ -3711,12 +3712,14 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateFromStreamWithLanguage(stream, defaultLanguage, &_ret));
 		return _ret;
 	}
+	alias CreateFromStream = CreateFromStreamWithLanguage;
 	static Windows.Media.Core.TimedTextSource CreateFromUriWithLanguage(Windows.Foundation.Uri uri, HSTRING defaultLanguage)
 	{
 		Windows.Media.Core.TimedTextSource _ret;
 		Debug.OK(staticInstance.abi_CreateFromUriWithLanguage(uri, defaultLanguage, &_ret));
 		return _ret;
 	}
+	alias CreateFromUri = CreateFromUriWithLanguage;
 }
 
 interface TimedTextSourceResolveResultEventArgs : Windows.Media.Core.ITimedTextSourceResolveResultEventArgs
