@@ -117,7 +117,7 @@ interface IXmlDocumentIO : IInspectable
 {
 extern(Windows):
 	HRESULT abi_LoadXml(HSTRING xml);
-	HRESULT abi_LoadXml(HSTRING xml, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings);
+	HRESULT abi_LoadXmlWithSettings(HSTRING xml, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings);
 	HRESULT abi_SaveToFileAsync(Windows.Storage.IStorageFile file, Windows.Foundation.IAsyncAction* return_asyncInfo);
 }
 
@@ -127,7 +127,7 @@ interface IXmlDocumentIO2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_LoadXmlFromBuffer(Windows.Storage.Streams.IBuffer buffer);
-	HRESULT abi_LoadXmlFromBuffer(Windows.Storage.Streams.IBuffer buffer, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings);
+	HRESULT abi_LoadXmlFromBufferWithSettings(Windows.Storage.Streams.IBuffer buffer, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings);
 }
 
 @uuid("5543d254-d757-4b79-9539-232b18f50bf1")
@@ -136,9 +136,9 @@ interface IXmlDocumentStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_LoadFromUriAsync(Windows.Foundation.Uri uri, Windows.Foundation.IAsyncOperation!(Windows.Data.Xml.Dom.XmlDocument)* return_asyncInfo);
-	HRESULT abi_LoadFromUriAsync(Windows.Foundation.Uri uri, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings, Windows.Foundation.IAsyncOperation!(Windows.Data.Xml.Dom.XmlDocument)* return_asyncInfo);
+	HRESULT abi_LoadFromUriWithSettingsAsync(Windows.Foundation.Uri uri, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings, Windows.Foundation.IAsyncOperation!(Windows.Data.Xml.Dom.XmlDocument)* return_asyncInfo);
 	HRESULT abi_LoadFromFileAsync(Windows.Storage.IStorageFile file, Windows.Foundation.IAsyncOperation!(Windows.Data.Xml.Dom.XmlDocument)* return_asyncInfo);
-	HRESULT abi_LoadFromFileAsync(Windows.Storage.IStorageFile file, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings, Windows.Foundation.IAsyncOperation!(Windows.Data.Xml.Dom.XmlDocument)* return_asyncInfo);
+	HRESULT abi_LoadFromFileWithSettingsAsync(Windows.Storage.IStorageFile file, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings, Windows.Foundation.IAsyncOperation!(Windows.Data.Xml.Dom.XmlDocument)* return_asyncInfo);
 }
 
 @uuid("f7342425-9781-4964-8e94-9b1c6dfc9bc7")
@@ -1613,9 +1613,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocumentIO)this.asInterface(uuid("6cd0e74e-ee65-4489-9ebf-ca43e87ba637"))).abi_LoadXml(xml));
 	}
-	final void LoadXml(HSTRING xml, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings)
+	final void LoadXmlWithSettings(HSTRING xml, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocumentIO)this.asInterface(uuid("6cd0e74e-ee65-4489-9ebf-ca43e87ba637"))).abi_LoadXml(xml, loadSettings));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocumentIO)this.asInterface(uuid("6cd0e74e-ee65-4489-9ebf-ca43e87ba637"))).abi_LoadXmlWithSettings(xml, loadSettings));
 	}
 	alias LoadXml = LoadXmlWithSettings;
 	final Windows.Foundation.IAsyncAction SaveToFileAsync(Windows.Storage.IStorageFile file)
@@ -1628,9 +1628,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocumentIO2)this.asInterface(uuid("5d034661-7bd8-4ad5-9ebf-81e6347263b1"))).abi_LoadXmlFromBuffer(buffer));
 	}
-	final void LoadXmlFromBuffer(Windows.Storage.Streams.IBuffer buffer, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings)
+	final void LoadXmlFromBufferWithSettings(Windows.Storage.Streams.IBuffer buffer, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocumentIO2)this.asInterface(uuid("5d034661-7bd8-4ad5-9ebf-81e6347263b1"))).abi_LoadXmlFromBuffer(buffer, loadSettings));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocumentIO2)this.asInterface(uuid("5d034661-7bd8-4ad5-9ebf-81e6347263b1"))).abi_LoadXmlFromBufferWithSettings(buffer, loadSettings));
 	}
 	alias LoadXmlFromBuffer = LoadXmlFromBufferWithSettings;
 
@@ -1646,10 +1646,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_LoadFromUriAsync(uri, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Data.Xml.Dom.XmlDocument) LoadFromUriAsync(Windows.Foundation.Uri uri, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings)
+	static Windows.Foundation.IAsyncOperation!(Windows.Data.Xml.Dom.XmlDocument) LoadFromUriWithSettingsAsync(Windows.Foundation.Uri uri, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Data.Xml.Dom.XmlDocument) _ret;
-		Debug.OK(staticInstance.abi_LoadFromUriAsync(uri, loadSettings, &_ret));
+		Debug.OK(staticInstance.abi_LoadFromUriWithSettingsAsync(uri, loadSettings, &_ret));
 		return _ret;
 	}
 	alias LoadFromUriAsync = LoadFromUriWithSettingsAsync;
@@ -1659,10 +1659,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_LoadFromFileAsync(file, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Data.Xml.Dom.XmlDocument) LoadFromFileAsync(Windows.Storage.IStorageFile file, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings)
+	static Windows.Foundation.IAsyncOperation!(Windows.Data.Xml.Dom.XmlDocument) LoadFromFileWithSettingsAsync(Windows.Storage.IStorageFile file, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Data.Xml.Dom.XmlDocument) _ret;
-		Debug.OK(staticInstance.abi_LoadFromFileAsync(file, loadSettings, &_ret));
+		Debug.OK(staticInstance.abi_LoadFromFileWithSettingsAsync(file, loadSettings, &_ret));
 		return _ret;
 	}
 	alias LoadFromFileAsync = LoadFromFileWithSettingsAsync;

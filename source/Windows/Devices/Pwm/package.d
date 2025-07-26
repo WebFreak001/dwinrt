@@ -37,7 +37,7 @@ interface IPwmControllerStatics3 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(HSTRING* return_result);
-	HRESULT abi_GetDeviceSelector(HSTRING friendlyName, HSTRING* return_result);
+	HRESULT abi_GetDeviceSelectorFromFriendlyName(HSTRING friendlyName, HSTRING* return_result);
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Foundation.IAsyncOperation!(Windows.Devices.Pwm.PwmController)* return_operation);
 }
 

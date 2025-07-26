@@ -27,7 +27,7 @@ extern(Windows):
 	HRESULT get_IsReplayPauseIntervalSupported(bool* return_value);
 	HRESULT abi_StopFeedback();
 	HRESULT abi_SendHapticFeedback(Windows.Devices.Haptics.SimpleHapticsControllerFeedback feedback);
-	HRESULT abi_SendHapticFeedback(Windows.Devices.Haptics.SimpleHapticsControllerFeedback feedback, double intensity);
+	HRESULT abi_SendHapticFeedbackWithIntensity(Windows.Devices.Haptics.SimpleHapticsControllerFeedback feedback, double intensity);
 	HRESULT abi_SendHapticFeedbackForDuration(Windows.Devices.Haptics.SimpleHapticsControllerFeedback feedback, double intensity, Windows.Foundation.TimeSpan playDuration);
 	HRESULT abi_SendHapticFeedbackForPlayCount(Windows.Devices.Haptics.SimpleHapticsControllerFeedback feedback, double intensity, INT32 playCount, Windows.Foundation.TimeSpan replayPauseInterval);
 }
@@ -149,9 +149,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.Haptics.ISimpleHapticsController)this.asInterface(uuid("3d577ef9-4cee-11e6-b535-001bdc06ab3b"))).abi_SendHapticFeedback(feedback));
 	}
-	final void SendHapticFeedback(Windows.Devices.Haptics.SimpleHapticsControllerFeedback feedback, double intensity)
+	final void SendHapticFeedbackWithIntensity(Windows.Devices.Haptics.SimpleHapticsControllerFeedback feedback, double intensity)
 	{
-		Debug.OK((cast(Windows.Devices.Haptics.ISimpleHapticsController)this.asInterface(uuid("3d577ef9-4cee-11e6-b535-001bdc06ab3b"))).abi_SendHapticFeedback(feedback, intensity));
+		Debug.OK((cast(Windows.Devices.Haptics.ISimpleHapticsController)this.asInterface(uuid("3d577ef9-4cee-11e6-b535-001bdc06ab3b"))).abi_SendHapticFeedbackWithIntensity(feedback, intensity));
 	}
 	alias SendHapticFeedback = SendHapticFeedbackWithIntensity;
 	final void SendHapticFeedbackForDuration(Windows.Devices.Haptics.SimpleHapticsControllerFeedback feedback, double intensity, Windows.Foundation.TimeSpan playDuration)

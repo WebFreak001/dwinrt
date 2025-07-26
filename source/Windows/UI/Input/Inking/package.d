@@ -87,7 +87,7 @@ extern(Windows):
 	HRESULT abi_ProcessPointerUpdate(Windows.UI.Input.PointerPoint pointerPoint, IInspectable* return_updateInformation);
 	HRESULT abi_ProcessPointerUp(Windows.UI.Input.PointerPoint pointerPoint, Windows.Foundation.Rect* return_updateRectangle);
 	HRESULT abi_SetDefaultDrawingAttributes(Windows.UI.Input.Inking.InkDrawingAttributes drawingAttributes);
-	HRESULT abi_RecognizeAsync(Windows.UI.Input.Inking.InkRecognitionTarget recognitionTarget, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult))* return_recognitionResults);
+	HRESULT abi_RecognizeAsync2(Windows.UI.Input.Inking.InkRecognitionTarget recognitionTarget, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult))* return_recognitionResults);
 }
 @uuid("4744737d-671b-4163-9c95-4e8d7a035fe1")
 @WinrtFactory("Windows.UI.Input.Inking.InkManager")
@@ -368,7 +368,7 @@ extern(Windows):
 interface IInkStrokeContainer3 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_SaveAsync(Windows.Storage.Streams.IOutputStream outputStream, Windows.UI.Input.Inking.InkPersistenceFormat inkPersistenceFormat, Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32)* return_outputStreamOperation);
+	HRESULT abi_SaveWithFormatAsync(Windows.Storage.Streams.IOutputStream outputStream, Windows.UI.Input.Inking.InkPersistenceFormat inkPersistenceFormat, Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32)* return_outputStreamOperation);
 	HRESULT abi_GetStrokeById(UINT32 id, Windows.UI.Input.Inking.InkStroke* return_stroke);
 }
 
@@ -638,10 +638,10 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Input.Inking.IInkManager)this.asInterface(uuid("4744737d-671b-4163-9c95-4e8d7a035fe1"))).abi_SetDefaultDrawingAttributes(drawingAttributes));
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult)) RecognizeAsync(Windows.UI.Input.Inking.InkRecognitionTarget recognitionTarget)
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult)) RecognizeAsync2(Windows.UI.Input.Inking.InkRecognitionTarget recognitionTarget)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.InkRecognitionResult)) _ret;
-		Debug.OK((cast(Windows.UI.Input.Inking.IInkManager)this.asInterface(uuid("4744737d-671b-4163-9c95-4e8d7a035fe1"))).abi_RecognizeAsync(recognitionTarget, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkManager)this.asInterface(uuid("4744737d-671b-4163-9c95-4e8d7a035fe1"))).abi_RecognizeAsync2(recognitionTarget, &_ret));
 		return _ret;
 	}
 	alias RecognizeAsync = RecognizeAsync2;
@@ -1408,10 +1408,10 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer2)this.asInterface(uuid("8901d364-da36-4bcf-9e5c-d195825995b4"))).abi_Clear());
 	}
-	final Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) SaveAsync(Windows.Storage.Streams.IOutputStream outputStream, Windows.UI.Input.Inking.InkPersistenceFormat inkPersistenceFormat)
+	final Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) SaveWithFormatAsync(Windows.Storage.Streams.IOutputStream outputStream, Windows.UI.Input.Inking.InkPersistenceFormat inkPersistenceFormat)
 	{
 		Windows.Foundation.IAsyncOperationWithProgress!(UINT32, UINT32) _ret;
-		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer3)this.asInterface(uuid("3d07bea5-baea-4c82-a719-7b83da1067d2"))).abi_SaveAsync(outputStream, inkPersistenceFormat, &_ret));
+		Debug.OK((cast(Windows.UI.Input.Inking.IInkStrokeContainer3)this.asInterface(uuid("3d07bea5-baea-4c82-a719-7b83da1067d2"))).abi_SaveWithFormatAsync(outputStream, inkPersistenceFormat, &_ret));
 		return _ret;
 	}
 	alias SaveAsync = SaveWithFormatAsync;

@@ -86,7 +86,7 @@ extern(Windows):
 	HRESULT get_ResolvedLanguage(HSTRING* return_value);
 	HRESULT get_LanguageAvailableButNotInstalled(bool* return_value);
 	HRESULT abi_GetCandidatesAsync(HSTRING input, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING))* return_result);
-	HRESULT abi_GetCandidatesAsync(HSTRING input, UINT32 maxCandidates, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING))* return_result);
+	HRESULT abi_GetCandidatesWithMaxCountAsync(HSTRING input, UINT32 maxCandidates, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING))* return_result);
 }
 
 @uuid("fcaa3781-3083-49ab-be15-56dfbbb74d6f")
@@ -114,7 +114,7 @@ extern(Windows):
 	HRESULT get_ResolvedLanguage(HSTRING* return_value);
 	HRESULT get_LanguageAvailableButNotInstalled(bool* return_value);
 	HRESULT abi_GetCandidatesAsync(HSTRING input, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING))* return_result);
-	HRESULT abi_GetCandidatesAsync(HSTRING input, UINT32 maxCandidates, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING))* return_result);
+	HRESULT abi_GetCandidatesWithMaxCountAsync(HSTRING input, UINT32 maxCandidates, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING))* return_result);
 }
 
 @uuid("7257b416-8ba2-4751-9d30-9d85435653a2")
@@ -330,10 +330,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Text.ITextConversionGenerator)this.asInterface(uuid("03606a5e-2aa9-4ab6-af8b-a562b63a8992"))).abi_GetCandidatesAsync(input, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) GetCandidatesAsync(HSTRING input, UINT32 maxCandidates)
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) GetCandidatesWithMaxCountAsync(HSTRING input, UINT32 maxCandidates)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
-		Debug.OK((cast(Windows.Data.Text.ITextConversionGenerator)this.asInterface(uuid("03606a5e-2aa9-4ab6-af8b-a562b63a8992"))).abi_GetCandidatesAsync(input, maxCandidates, &_ret));
+		Debug.OK((cast(Windows.Data.Text.ITextConversionGenerator)this.asInterface(uuid("03606a5e-2aa9-4ab6-af8b-a562b63a8992"))).abi_GetCandidatesWithMaxCountAsync(input, maxCandidates, &_ret));
 		return _ret;
 	}
 	alias GetCandidatesAsync = GetCandidatesWithMaxCountAsync;
@@ -384,10 +384,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Text.ITextPredictionGenerator)this.asInterface(uuid("5eacab07-abf1-4cb6-9d9e-326f2b468756"))).abi_GetCandidatesAsync(input, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) GetCandidatesAsync(HSTRING input, UINT32 maxCandidates)
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) GetCandidatesWithMaxCountAsync(HSTRING input, UINT32 maxCandidates)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
-		Debug.OK((cast(Windows.Data.Text.ITextPredictionGenerator)this.asInterface(uuid("5eacab07-abf1-4cb6-9d9e-326f2b468756"))).abi_GetCandidatesAsync(input, maxCandidates, &_ret));
+		Debug.OK((cast(Windows.Data.Text.ITextPredictionGenerator)this.asInterface(uuid("5eacab07-abf1-4cb6-9d9e-326f2b468756"))).abi_GetCandidatesWithMaxCountAsync(input, maxCandidates, &_ret));
 		return _ret;
 	}
 	alias GetCandidatesAsync = GetCandidatesWithMaxCountAsync;

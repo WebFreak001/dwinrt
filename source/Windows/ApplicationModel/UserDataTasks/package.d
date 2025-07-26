@@ -62,7 +62,7 @@ extern(Windows):
 	HRESULT get_SyncManager(Windows.ApplicationModel.UserDataTasks.UserDataTaskListSyncManager* return_value);
 	HRESULT abi_RegisterSyncManagerAsync(Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_GetTaskReader(Windows.ApplicationModel.UserDataTasks.UserDataTaskReader* return_result);
-	HRESULT abi_GetTaskReader(Windows.ApplicationModel.UserDataTasks.UserDataTaskQueryOptions options, Windows.ApplicationModel.UserDataTasks.UserDataTaskReader* return_value);
+	HRESULT abi_GetTaskReaderWithOptions(Windows.ApplicationModel.UserDataTasks.UserDataTaskQueryOptions options, Windows.ApplicationModel.UserDataTasks.UserDataTaskReader* return_value);
 	HRESULT abi_GetTaskAsync(HSTRING userDataTask, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTask)* return_operation);
 	HRESULT abi_SaveTaskAsync(Windows.ApplicationModel.UserDataTasks.UserDataTask userDataTask, Windows.Foundation.IAsyncAction* return_action);
 	HRESULT abi_DeleteTaskAsync(HSTRING userDataTaskId, Windows.Foundation.IAsyncAction* return_action);
@@ -178,7 +178,7 @@ interface IUserDataTaskStore : IInspectable
 {
 extern(Windows):
 	HRESULT abi_CreateListAsync(HSTRING name, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList)* return_operation);
-	HRESULT abi_CreateListAsync(HSTRING name, HSTRING userDataAccountId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList)* return_result);
+	HRESULT abi_CreateListInAccountAsync(HSTRING name, HSTRING userDataAccountId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList)* return_result);
 	HRESULT abi_FindListsAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList))* return_operation);
 	HRESULT abi_GetListAsync(HSTRING taskListId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList)* return_operation);
 }
@@ -418,10 +418,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).abi_GetTaskReader(&_ret));
 		return _ret;
 	}
-	final Windows.ApplicationModel.UserDataTasks.UserDataTaskReader GetTaskReader(Windows.ApplicationModel.UserDataTasks.UserDataTaskQueryOptions options)
+	final Windows.ApplicationModel.UserDataTasks.UserDataTaskReader GetTaskReaderWithOptions(Windows.ApplicationModel.UserDataTasks.UserDataTaskQueryOptions options)
 	{
 		Windows.ApplicationModel.UserDataTasks.UserDataTaskReader _ret;
-		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).abi_GetTaskReader(options, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskList)this.asInterface(uuid("49412e39-7c1d-4df1-bed3-314b7cbf5e4e"))).abi_GetTaskReaderWithOptions(options, &_ret));
 		return _ret;
 	}
 	alias GetTaskReader = GetTaskReaderWithOptions;
@@ -766,10 +766,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore)this.asInterface(uuid("f06a9cb0-f1db-45ba-8a62-086004c0213d"))).abi_CreateListAsync(name, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) CreateListAsync(HSTRING name, HSTRING userDataAccountId)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) CreateListInAccountAsync(HSTRING name, HSTRING userDataAccountId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.UserDataTasks.UserDataTaskList) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore)this.asInterface(uuid("f06a9cb0-f1db-45ba-8a62-086004c0213d"))).abi_CreateListAsync(name, userDataAccountId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.UserDataTasks.IUserDataTaskStore)this.asInterface(uuid("f06a9cb0-f1db-45ba-8a62-086004c0213d"))).abi_CreateListInAccountAsync(name, userDataAccountId, &_ret));
 		return _ret;
 	}
 	alias CreateListAsync = CreateListInAccountAsync;

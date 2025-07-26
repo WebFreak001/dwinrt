@@ -576,7 +576,7 @@ extern(Windows):
 interface INetworkOperatorTetheringManagerStatics3 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateFromConnectionProfile(Windows.Networking.Connectivity.ConnectionProfile profile, Windows.Networking.Connectivity.NetworkAdapter adapter, Windows.Networking.NetworkOperators.NetworkOperatorTetheringManager* return_ppManager);
+	HRESULT abi_CreateFromConnectionProfileWithTargetAdapter(Windows.Networking.Connectivity.ConnectionProfile profile, Windows.Networking.Connectivity.NetworkAdapter adapter, Windows.Networking.NetworkOperators.NetworkOperatorTetheringManager* return_ppManager);
 }
 
 @uuid("ebd203a1-01ba-476d-b4b3-bf3d12c8f80c")

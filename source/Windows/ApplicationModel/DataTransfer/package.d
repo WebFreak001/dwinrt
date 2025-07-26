@@ -51,7 +51,7 @@ extern(Windows):
 	HRESULT get_ResourceMap(Windows.Foundation.Collections.IMap!(HSTRING, Windows.Storage.Streams.RandomAccessStreamReference)* return_value);
 	HRESULT abi_SetRtf(HSTRING value);
 	HRESULT abi_SetBitmap(Windows.Storage.Streams.RandomAccessStreamReference value);
-	HRESULT abi_SetStorageItems(Windows.Foundation.Collections.IIterable!(Windows.Storage.IStorageItem) value);
+	HRESULT abi_SetStorageItemsReadOnly(Windows.Foundation.Collections.IIterable!(Windows.Storage.IStorageItem) value);
 	HRESULT abi_SetStorageItems(Windows.Foundation.Collections.IIterable!(Windows.Storage.IStorageItem) value, bool readOnly);
 }
 
@@ -168,7 +168,7 @@ extern(Windows):
 	HRESULT abi_Contains(HSTRING formatId, bool* return_value);
 	HRESULT abi_GetDataAsync(HSTRING formatId, Windows.Foundation.IAsyncOperation!(IInspectable)* return_operation);
 	HRESULT abi_GetTextAsync(Windows.Foundation.IAsyncOperation!(HSTRING)* return_operation);
-	HRESULT abi_GetTextAsync(HSTRING formatId, Windows.Foundation.IAsyncOperation!(HSTRING)* return_operation);
+	HRESULT abi_GetCustomTextAsync(HSTRING formatId, Windows.Foundation.IAsyncOperation!(HSTRING)* return_operation);
 	deprecated("GetUriAsync may be altered or unavailable for releases after Windows 8.1. Instead, use GetWebLinkAsync or GetApplicationLinkAsync.")
 	HRESULT abi_GetUriAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Uri)* return_operation);
 	HRESULT abi_GetHtmlFormatAsync(Windows.Foundation.IAsyncOperation!(HSTRING)* return_operation);
@@ -193,7 +193,7 @@ interface IDataPackageView3 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_RequestAccessAsync(Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_operation);
-	HRESULT abi_RequestAccessAsync(HSTRING enterpriseId, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_operation);
+	HRESULT abi_RequestAccessWithEnterpriseIdAsync(HSTRING enterpriseId, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_operation);
 	HRESULT abi_UnlockAndAssumeEnterpriseIdentity(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult* return_result);
 }
 
@@ -530,9 +530,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackage)this.asInterface(uuid("61ebf5c7-efea-4346-9554-981d7e198ffe"))).abi_SetBitmap(value));
 	}
-	final void SetStorageItems(Windows.Foundation.Collections.IIterable!(Windows.Storage.IStorageItem) value)
+	final void SetStorageItemsReadOnly(Windows.Foundation.Collections.IIterable!(Windows.Storage.IStorageItem) value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackage)this.asInterface(uuid("61ebf5c7-efea-4346-9554-981d7e198ffe"))).abi_SetStorageItems(value));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackage)this.asInterface(uuid("61ebf5c7-efea-4346-9554-981d7e198ffe"))).abi_SetStorageItemsReadOnly(value));
 	}
 	alias SetStorageItems = SetStorageItemsReadOnly;
 	final void SetStorageItems(Windows.Foundation.Collections.IIterable!(Windows.Storage.IStorageItem) value, bool readOnly)
@@ -874,10 +874,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackageView)this.asInterface(uuid("7b840471-5900-4d85-a90b-10cb85fe3552"))).abi_GetTextAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(HSTRING) GetTextAsync(HSTRING formatId)
+	final Windows.Foundation.IAsyncOperation!(HSTRING) GetCustomTextAsync(HSTRING formatId)
 	{
 		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackageView)this.asInterface(uuid("7b840471-5900-4d85-a90b-10cb85fe3552"))).abi_GetTextAsync(formatId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackageView)this.asInterface(uuid("7b840471-5900-4d85-a90b-10cb85fe3552"))).abi_GetCustomTextAsync(formatId, &_ret));
 		return _ret;
 	}
 	alias GetTextAsync = GetCustomTextAsync;
@@ -936,10 +936,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackageView3)this.asInterface(uuid("d37771a8-ddad-4288-8428-d1cae394128b"))).abi_RequestAccessAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult) RequestAccessAsync(HSTRING enterpriseId)
+	final Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult) RequestAccessWithEnterpriseIdAsync(HSTRING enterpriseId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackageView3)this.asInterface(uuid("d37771a8-ddad-4288-8428-d1cae394128b"))).abi_RequestAccessAsync(enterpriseId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.IDataPackageView3)this.asInterface(uuid("d37771a8-ddad-4288-8428-d1cae394128b"))).abi_RequestAccessWithEnterpriseIdAsync(enterpriseId, &_ret));
 		return _ret;
 	}
 	alias RequestAccessAsync = RequestAccessWithEnterpriseIdAsync;

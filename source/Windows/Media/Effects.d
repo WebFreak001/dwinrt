@@ -43,9 +43,9 @@ interface IAudioEffectsManagerStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_CreateAudioRenderEffectsManager(HSTRING deviceId, Windows.Media.Render.AudioRenderCategory category, Windows.Media.Effects.AudioRenderEffectsManager* return_value);
-	HRESULT abi_CreateAudioRenderEffectsManager(HSTRING deviceId, Windows.Media.Render.AudioRenderCategory category, Windows.Media.AudioProcessing mode, Windows.Media.Effects.AudioRenderEffectsManager* return_value);
+	HRESULT abi_CreateAudioRenderEffectsManagerWithMode(HSTRING deviceId, Windows.Media.Render.AudioRenderCategory category, Windows.Media.AudioProcessing mode, Windows.Media.Effects.AudioRenderEffectsManager* return_value);
 	HRESULT abi_CreateAudioCaptureEffectsManager(HSTRING deviceId, Windows.Media.Capture.MediaCategory category, Windows.Media.Effects.AudioCaptureEffectsManager* return_value);
-	HRESULT abi_CreateAudioCaptureEffectsManager(HSTRING deviceId, Windows.Media.Capture.MediaCategory category, Windows.Media.AudioProcessing mode, Windows.Media.Effects.AudioCaptureEffectsManager* return_value);
+	HRESULT abi_CreateAudioCaptureEffectsManagerWithMode(HSTRING deviceId, Windows.Media.Capture.MediaCategory category, Windows.Media.AudioProcessing mode, Windows.Media.Effects.AudioCaptureEffectsManager* return_value);
 }
 
 @uuid("4dc98966-8751-42b2-bfcb-39ca7864bd47")
@@ -276,10 +276,10 @@ interface AudioEffectsManager
 		Debug.OK(staticInstance.abi_CreateAudioRenderEffectsManager(deviceId, category, &_ret));
 		return _ret;
 	}
-	static Windows.Media.Effects.AudioRenderEffectsManager CreateAudioRenderEffectsManager(HSTRING deviceId, Windows.Media.Render.AudioRenderCategory category, Windows.Media.AudioProcessing mode)
+	static Windows.Media.Effects.AudioRenderEffectsManager CreateAudioRenderEffectsManagerWithMode(HSTRING deviceId, Windows.Media.Render.AudioRenderCategory category, Windows.Media.AudioProcessing mode)
 	{
 		Windows.Media.Effects.AudioRenderEffectsManager _ret;
-		Debug.OK(staticInstance.abi_CreateAudioRenderEffectsManager(deviceId, category, mode, &_ret));
+		Debug.OK(staticInstance.abi_CreateAudioRenderEffectsManagerWithMode(deviceId, category, mode, &_ret));
 		return _ret;
 	}
 	alias CreateAudioRenderEffectsManager = CreateAudioRenderEffectsManagerWithMode;
@@ -289,10 +289,10 @@ interface AudioEffectsManager
 		Debug.OK(staticInstance.abi_CreateAudioCaptureEffectsManager(deviceId, category, &_ret));
 		return _ret;
 	}
-	static Windows.Media.Effects.AudioCaptureEffectsManager CreateAudioCaptureEffectsManager(HSTRING deviceId, Windows.Media.Capture.MediaCategory category, Windows.Media.AudioProcessing mode)
+	static Windows.Media.Effects.AudioCaptureEffectsManager CreateAudioCaptureEffectsManagerWithMode(HSTRING deviceId, Windows.Media.Capture.MediaCategory category, Windows.Media.AudioProcessing mode)
 	{
 		Windows.Media.Effects.AudioCaptureEffectsManager _ret;
-		Debug.OK(staticInstance.abi_CreateAudioCaptureEffectsManager(deviceId, category, mode, &_ret));
+		Debug.OK(staticInstance.abi_CreateAudioCaptureEffectsManagerWithMode(deviceId, category, mode, &_ret));
 		return _ret;
 	}
 	alias CreateAudioCaptureEffectsManager = CreateAudioCaptureEffectsManagerWithMode;

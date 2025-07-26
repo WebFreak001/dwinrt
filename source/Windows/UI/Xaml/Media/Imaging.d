@@ -134,7 +134,7 @@ extern(Windows):
 	HRESULT get_PixelWidth(INT32* return_value);
 	HRESULT get_PixelHeight(INT32* return_value);
 	HRESULT abi_RenderAsync(Windows.UI.Xaml.UIElement element, Windows.Foundation.IAsyncAction* return_returnValue);
-	HRESULT abi_RenderAsync(Windows.UI.Xaml.UIElement element, INT32 scaledWidth, INT32 scaledHeight, Windows.Foundation.IAsyncAction* return_returnValue);
+	HRESULT abi_RenderToSizeAsync(Windows.UI.Xaml.UIElement element, INT32 scaledWidth, INT32 scaledHeight, Windows.Foundation.IAsyncAction* return_returnValue);
 	HRESULT abi_GetPixelsAsync(Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IBuffer)* return_returnValue);
 }
 
@@ -551,10 +551,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmap)this.asInterface(uuid("500dee81-893c-4c0a-8fec-4678ac717589"))).abi_RenderAsync(element, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction RenderAsync(Windows.UI.Xaml.UIElement element, INT32 scaledWidth, INT32 scaledHeight)
+	final Windows.Foundation.IAsyncAction RenderToSizeAsync(Windows.UI.Xaml.UIElement element, INT32 scaledWidth, INT32 scaledHeight)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmap)this.asInterface(uuid("500dee81-893c-4c0a-8fec-4678ac717589"))).abi_RenderAsync(element, scaledWidth, scaledHeight, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Imaging.IRenderTargetBitmap)this.asInterface(uuid("500dee81-893c-4c0a-8fec-4678ac717589"))).abi_RenderToSizeAsync(element, scaledWidth, scaledHeight, &_ret));
 		return _ret;
 	}
 	alias RenderAsync = RenderToSizeAsync;

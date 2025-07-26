@@ -26,7 +26,7 @@ extern(Windows):
 	HRESULT get_AutoStopSilenceTimeout(Windows.Foundation.TimeSpan* return_value);
 	HRESULT set_AutoStopSilenceTimeout(Windows.Foundation.TimeSpan value);
 	HRESULT abi_StartAsync(Windows.Foundation.IAsyncAction* return_value);
-	HRESULT abi_StartAsync(Windows.Media.SpeechRecognition.SpeechContinuousRecognitionMode mode, Windows.Foundation.IAsyncAction* return_value);
+	HRESULT abi_StartWithModeAsync(Windows.Media.SpeechRecognition.SpeechContinuousRecognitionMode mode, Windows.Foundation.IAsyncAction* return_value);
 	HRESULT abi_StopAsync(Windows.Foundation.IAsyncAction* return_value);
 	HRESULT abi_CancelAsync(Windows.Foundation.IAsyncAction* return_value);
 	HRESULT abi_PauseAsync(Windows.Foundation.IAsyncAction* return_value);
@@ -312,10 +312,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession)this.asInterface(uuid("6a213c04-6614-49f8-99a2-b5e9b3a085c8"))).abi_StartAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction StartAsync(Windows.Media.SpeechRecognition.SpeechContinuousRecognitionMode mode)
+	final Windows.Foundation.IAsyncAction StartWithModeAsync(Windows.Media.SpeechRecognition.SpeechContinuousRecognitionMode mode)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession)this.asInterface(uuid("6a213c04-6614-49f8-99a2-b5e9b3a085c8"))).abi_StartAsync(mode, &_ret));
+		Debug.OK((cast(Windows.Media.SpeechRecognition.ISpeechContinuousRecognitionSession)this.asInterface(uuid("6a213c04-6614-49f8-99a2-b5e9b3a085c8"))).abi_StartWithModeAsync(mode, &_ret));
 		return _ret;
 	}
 	alias StartAsync = StartWithModeAsync;

@@ -18,9 +18,9 @@ interface IPdfDocumentStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_LoadFromFileAsync(Windows.Storage.IStorageFile file, Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument)* return_asyncInfo);
-	HRESULT abi_LoadFromFileAsync(Windows.Storage.IStorageFile file, HSTRING password, Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument)* return_asyncInfo);
+	HRESULT abi_LoadFromFileWithPasswordAsync(Windows.Storage.IStorageFile file, HSTRING password, Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument)* return_asyncInfo);
 	HRESULT abi_LoadFromStreamAsync(Windows.Storage.Streams.IRandomAccessStream inputStream, Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument)* return_asyncInfo);
-	HRESULT abi_LoadFromStreamAsync(Windows.Storage.Streams.IRandomAccessStream inputStream, HSTRING password, Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument)* return_asyncInfo);
+	HRESULT abi_LoadFromStreamWithPasswordAsync(Windows.Storage.Streams.IRandomAccessStream inputStream, HSTRING password, Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument)* return_asyncInfo);
 }
 
 @uuid("9db4b0c8-5320-4cfc-ad76-493fdad0e594")
@@ -29,7 +29,7 @@ interface IPdfPage : IInspectable
 {
 extern(Windows):
 	HRESULT abi_RenderToStreamAsync(Windows.Storage.Streams.IRandomAccessStream outputStream, Windows.Foundation.IAsyncAction* return_asyncInfo);
-	HRESULT abi_RenderToStreamAsync(Windows.Storage.Streams.IRandomAccessStream outputStream, Windows.Data.Pdf.PdfPageRenderOptions options, Windows.Foundation.IAsyncAction* return_asyncInfo);
+	HRESULT abi_RenderWithOptionsToStreamAsync(Windows.Storage.Streams.IRandomAccessStream outputStream, Windows.Data.Pdf.PdfPageRenderOptions options, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_PreparePageAsync(Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT get_Index(UINT32* return_value);
 	HRESULT get_Size(Windows.Foundation.Size* return_value);
@@ -103,10 +103,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_LoadFromFileAsync(file, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument) LoadFromFileAsync(Windows.Storage.IStorageFile file, HSTRING password)
+	static Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument) LoadFromFileWithPasswordAsync(Windows.Storage.IStorageFile file, HSTRING password)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument) _ret;
-		Debug.OK(staticInstance.abi_LoadFromFileAsync(file, password, &_ret));
+		Debug.OK(staticInstance.abi_LoadFromFileWithPasswordAsync(file, password, &_ret));
 		return _ret;
 	}
 	alias LoadFromFileAsync = LoadFromFileWithPasswordAsync;
@@ -116,10 +116,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_LoadFromStreamAsync(inputStream, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument) LoadFromStreamAsync(Windows.Storage.Streams.IRandomAccessStream inputStream, HSTRING password)
+	static Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument) LoadFromStreamWithPasswordAsync(Windows.Storage.Streams.IRandomAccessStream inputStream, HSTRING password)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Data.Pdf.PdfDocument) _ret;
-		Debug.OK(staticInstance.abi_LoadFromStreamAsync(inputStream, password, &_ret));
+		Debug.OK(staticInstance.abi_LoadFromStreamWithPasswordAsync(inputStream, password, &_ret));
 		return _ret;
 	}
 	alias LoadFromStreamAsync = LoadFromStreamWithPasswordAsync;
@@ -134,10 +134,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Pdf.IPdfPage)this.asInterface(uuid("9db4b0c8-5320-4cfc-ad76-493fdad0e594"))).abi_RenderToStreamAsync(outputStream, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction RenderToStreamAsync(Windows.Storage.Streams.IRandomAccessStream outputStream, Windows.Data.Pdf.PdfPageRenderOptions options)
+	final Windows.Foundation.IAsyncAction RenderWithOptionsToStreamAsync(Windows.Storage.Streams.IRandomAccessStream outputStream, Windows.Data.Pdf.PdfPageRenderOptions options)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Data.Pdf.IPdfPage)this.asInterface(uuid("9db4b0c8-5320-4cfc-ad76-493fdad0e594"))).abi_RenderToStreamAsync(outputStream, options, &_ret));
+		Debug.OK((cast(Windows.Data.Pdf.IPdfPage)this.asInterface(uuid("9db4b0c8-5320-4cfc-ad76-493fdad0e594"))).abi_RenderWithOptionsToStreamAsync(outputStream, options, &_ret));
 		return _ret;
 	}
 	alias RenderToStreamAsync = RenderWithOptionsToStreamAsync;

@@ -179,7 +179,7 @@ interface IPhoneCallHistoryStore : IInspectable
 extern(Windows):
 	HRESULT abi_GetEntryAsync(HSTRING callHistoryEntryId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry)* return_result);
 	HRESULT abi_GetEntryReader(Windows.ApplicationModel.Calls.PhoneCallHistoryEntryReader* return_result);
-	HRESULT abi_GetEntryReader(Windows.ApplicationModel.Calls.PhoneCallHistoryEntryQueryOptions queryOptions, Windows.ApplicationModel.Calls.PhoneCallHistoryEntryReader* return_result);
+	HRESULT abi_GetEntryReaderWithOptions(Windows.ApplicationModel.Calls.PhoneCallHistoryEntryQueryOptions queryOptions, Windows.ApplicationModel.Calls.PhoneCallHistoryEntryReader* return_result);
 	HRESULT abi_SaveEntryAsync(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry callHistoryEntry, Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_DeleteEntryAsync(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry callHistoryEntry, Windows.Foundation.IAsyncAction* return_result);
 	HRESULT abi_DeleteEntriesAsync(Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry) callHistoryEntries, Windows.Foundation.IAsyncAction* return_result);
@@ -680,10 +680,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore)this.asInterface(uuid("2f907db8-b40e-422b-8545-cb1910a61c52"))).abi_GetEntryReader(&_ret));
 		return _ret;
 	}
-	final Windows.ApplicationModel.Calls.PhoneCallHistoryEntryReader GetEntryReader(Windows.ApplicationModel.Calls.PhoneCallHistoryEntryQueryOptions queryOptions)
+	final Windows.ApplicationModel.Calls.PhoneCallHistoryEntryReader GetEntryReaderWithOptions(Windows.ApplicationModel.Calls.PhoneCallHistoryEntryQueryOptions queryOptions)
 	{
 		Windows.ApplicationModel.Calls.PhoneCallHistoryEntryReader _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore)this.asInterface(uuid("2f907db8-b40e-422b-8545-cb1910a61c52"))).abi_GetEntryReader(queryOptions, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore)this.asInterface(uuid("2f907db8-b40e-422b-8545-cb1910a61c52"))).abi_GetEntryReaderWithOptions(queryOptions, &_ret));
 		return _ret;
 	}
 	alias GetEntryReader = GetEntryReaderWithOptions;

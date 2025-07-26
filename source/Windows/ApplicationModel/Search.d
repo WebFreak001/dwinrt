@@ -61,9 +61,9 @@ extern(Windows):
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
 	HRESULT abi_SetLocalContentSuggestionSettings(Windows.ApplicationModel.Search.LocalContentSuggestionSettings settings);
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
-	HRESULT abi_Show();
+	HRESULT abi_ShowOverloadDefault();
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
-	HRESULT abi_Show(HSTRING query);
+	HRESULT abi_ShowOverloadWithQuery(HSTRING query);
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
 	HRESULT set_ShowOnKeyboardInput(bool value);
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
@@ -401,15 +401,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPane)this.asInterface(uuid("fdacec38-3700-4d73-91a1-2f998674238a"))).abi_SetLocalContentSuggestionSettings(settings));
 	}
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
-	final void Show()
+	final void ShowOverloadDefault()
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPane)this.asInterface(uuid("fdacec38-3700-4d73-91a1-2f998674238a"))).abi_Show());
+		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPane)this.asInterface(uuid("fdacec38-3700-4d73-91a1-2f998674238a"))).abi_ShowOverloadDefault());
 	}
 	alias Show = ShowOverloadDefault;
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")
-	final void Show(HSTRING query)
+	final void ShowOverloadWithQuery(HSTRING query)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPane)this.asInterface(uuid("fdacec38-3700-4d73-91a1-2f998674238a"))).abi_Show(query));
+		Debug.OK((cast(Windows.ApplicationModel.Search.ISearchPane)this.asInterface(uuid("fdacec38-3700-4d73-91a1-2f998674238a"))).abi_ShowOverloadWithQuery(query));
 	}
 	alias Show = ShowOverloadWithQuery;
 	deprecated("ISearchPane may be altered or unavailable for releases after Windows 10.")

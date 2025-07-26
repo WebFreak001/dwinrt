@@ -33,7 +33,7 @@ interface IGameListStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_FindAllAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Preview.GamesEnumeration.GameListEntry))* return_operation);
-	HRESULT abi_FindAllAsync(HSTRING packageFamilyName, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Preview.GamesEnumeration.GameListEntry))* return_operation);
+	HRESULT abi_FindAllAsyncPackageFamilyName(HSTRING packageFamilyName, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Preview.GamesEnumeration.GameListEntry))* return_operation);
 	HRESULT add_GameAdded(Windows.Gaming.Preview.GamesEnumeration.GameListChangedEventHandler handler, EventRegistrationToken* return_token);
 	HRESULT remove_GameAdded(EventRegistrationToken token);
 	HRESULT add_GameRemoved(Windows.Gaming.Preview.GamesEnumeration.GameListRemovedEventHandler handler, EventRegistrationToken* return_token);
@@ -56,10 +56,10 @@ interface GameList
 		Debug.OK(staticInstance.abi_FindAllAsync(&_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Preview.GamesEnumeration.GameListEntry)) FindAllAsync(HSTRING packageFamilyName)
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Preview.GamesEnumeration.GameListEntry)) FindAllAsyncPackageFamilyName(HSTRING packageFamilyName)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Preview.GamesEnumeration.GameListEntry)) _ret;
-		Debug.OK(staticInstance.abi_FindAllAsync(packageFamilyName, &_ret));
+		Debug.OK(staticInstance.abi_FindAllAsyncPackageFamilyName(packageFamilyName, &_ret));
 		return _ret;
 	}
 	alias FindAllAsync = FindAllAsyncPackageFamilyName;

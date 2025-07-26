@@ -79,7 +79,7 @@ interface IGpioController : IInspectable
 extern(Windows):
 	HRESULT get_PinCount(INT32* return_value);
 	HRESULT abi_OpenPin(INT32 pinNumber, Windows.Devices.Gpio.GpioPin* return_pin);
-	HRESULT abi_OpenPin(INT32 pinNumber, Windows.Devices.Gpio.GpioSharingMode sharingMode, Windows.Devices.Gpio.GpioPin* return_pin);
+	HRESULT abi_OpenPinWithSharingMode(INT32 pinNumber, Windows.Devices.Gpio.GpioSharingMode sharingMode, Windows.Devices.Gpio.GpioPin* return_pin);
 	HRESULT abi_TryOpenPin(INT32 pinNumber, Windows.Devices.Gpio.GpioSharingMode sharingMode, Windows.Devices.Gpio.GpioPin* out_pin, Windows.Devices.Gpio.GpioOpenStatus* out_openStatus, bool* return_succeeded);
 }
 
@@ -295,10 +295,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Gpio.IGpioController)this.asInterface(uuid("284012e3-7461-469c-a8bc-61d69d08a53c"))).abi_OpenPin(pinNumber, &_ret));
 		return _ret;
 	}
-	final Windows.Devices.Gpio.GpioPin OpenPin(INT32 pinNumber, Windows.Devices.Gpio.GpioSharingMode sharingMode)
+	final Windows.Devices.Gpio.GpioPin OpenPinWithSharingMode(INT32 pinNumber, Windows.Devices.Gpio.GpioSharingMode sharingMode)
 	{
 		Windows.Devices.Gpio.GpioPin _ret;
-		Debug.OK((cast(Windows.Devices.Gpio.IGpioController)this.asInterface(uuid("284012e3-7461-469c-a8bc-61d69d08a53c"))).abi_OpenPin(pinNumber, sharingMode, &_ret));
+		Debug.OK((cast(Windows.Devices.Gpio.IGpioController)this.asInterface(uuid("284012e3-7461-469c-a8bc-61d69d08a53c"))).abi_OpenPinWithSharingMode(pinNumber, sharingMode, &_ret));
 		return _ret;
 	}
 	alias OpenPin = OpenPinWithSharingMode;

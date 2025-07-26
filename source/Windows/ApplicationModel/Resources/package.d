@@ -42,9 +42,9 @@ interface IResourceLoaderStatics2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.ApplicationModel.Resources.ResourceLoader* return_loader);
-	HRESULT abi_GetForCurrentView(HSTRING name, Windows.ApplicationModel.Resources.ResourceLoader* return_loader);
+	HRESULT abi_GetForCurrentViewWithName(HSTRING name, Windows.ApplicationModel.Resources.ResourceLoader* return_loader);
 	HRESULT abi_GetForViewIndependentUse(Windows.ApplicationModel.Resources.ResourceLoader* return_loader);
-	HRESULT abi_GetForViewIndependentUse(HSTRING name, Windows.ApplicationModel.Resources.ResourceLoader* return_loader);
+	HRESULT abi_GetForViewIndependentUseWithName(HSTRING name, Windows.ApplicationModel.Resources.ResourceLoader* return_loader);
 }
 
 interface ResourceLoader : Windows.ApplicationModel.Resources.IResourceLoader, Windows.ApplicationModel.Resources.IResourceLoader2

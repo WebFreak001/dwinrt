@@ -139,7 +139,7 @@ extern(Windows):
 interface ICoreImmersiveApplication2 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateNewView(Windows.ApplicationModel.Core.CoreApplicationView* return_view);
+	HRESULT abi_CreateNewViewFromMainView(Windows.ApplicationModel.Core.CoreApplicationView* return_view);
 }
 
 @uuid("34a05b2f-ee0d-41e5-8314-cf10c91bf0af")
@@ -147,7 +147,7 @@ extern(Windows):
 interface ICoreImmersiveApplication3 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_CreateNewView(Windows.ApplicationModel.Core.IFrameworkViewSource viewSource, Windows.ApplicationModel.Core.CoreApplicationView* return_view);
+	HRESULT abi_CreateNewViewWithViewSource(Windows.ApplicationModel.Core.IFrameworkViewSource viewSource, Windows.ApplicationModel.Core.CoreApplicationView* return_view);
 }
 
 @uuid("faab5cd0-8924-45ac-ad0f-a08fae5d0324")

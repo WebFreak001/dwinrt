@@ -54,9 +54,9 @@ extern(Windows):
 	HRESULT add_DialDevicePickerDismissed(Windows.Foundation.TypedEventHandler!(Windows.Media.DialProtocol.DialDevicePicker, IInspectable) handler, EventRegistrationToken* return_token);
 	HRESULT remove_DialDevicePickerDismissed(EventRegistrationToken token);
 	HRESULT abi_Show(Windows.Foundation.Rect selection);
-	HRESULT abi_Show(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement);
+	HRESULT abi_ShowWithPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement);
 	HRESULT abi_PickSingleDialDeviceAsync(Windows.Foundation.Rect selection, Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialDevice)* return_operation);
-	HRESULT abi_PickSingleDialDeviceAsync(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement, Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialDevice)* return_operation);
+	HRESULT abi_PickSingleDialDeviceAsyncWithPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement, Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialDevice)* return_operation);
 	HRESULT abi_Hide();
 	HRESULT abi_SetDisplayStatus(Windows.Media.DialProtocol.DialDevice device, Windows.Media.DialProtocol.DialDeviceDisplayStatus status);
 }
@@ -244,9 +244,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.DialProtocol.IDialDevicePicker)this.asInterface(uuid("ba7e520a-ff59-4f4b-bdac-d89f495ad6e1"))).abi_Show(selection));
 	}
-	final void Show(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
+	final void ShowWithPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
 	{
-		Debug.OK((cast(Windows.Media.DialProtocol.IDialDevicePicker)this.asInterface(uuid("ba7e520a-ff59-4f4b-bdac-d89f495ad6e1"))).abi_Show(selection, preferredPlacement));
+		Debug.OK((cast(Windows.Media.DialProtocol.IDialDevicePicker)this.asInterface(uuid("ba7e520a-ff59-4f4b-bdac-d89f495ad6e1"))).abi_ShowWithPlacement(selection, preferredPlacement));
 	}
 	alias Show = ShowWithPlacement;
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialDevice) PickSingleDialDeviceAsync(Windows.Foundation.Rect selection)
@@ -255,10 +255,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.DialProtocol.IDialDevicePicker)this.asInterface(uuid("ba7e520a-ff59-4f4b-bdac-d89f495ad6e1"))).abi_PickSingleDialDeviceAsync(selection, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialDevice) PickSingleDialDeviceAsync(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialDevice) PickSingleDialDeviceAsyncWithPlacement(Windows.Foundation.Rect selection, Windows.UI.Popups.Placement preferredPlacement)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialDevice) _ret;
-		Debug.OK((cast(Windows.Media.DialProtocol.IDialDevicePicker)this.asInterface(uuid("ba7e520a-ff59-4f4b-bdac-d89f495ad6e1"))).abi_PickSingleDialDeviceAsync(selection, preferredPlacement, &_ret));
+		Debug.OK((cast(Windows.Media.DialProtocol.IDialDevicePicker)this.asInterface(uuid("ba7e520a-ff59-4f4b-bdac-d89f495ad6e1"))).abi_PickSingleDialDeviceAsyncWithPlacement(selection, preferredPlacement, &_ret));
 		return _ret;
 	}
 	alias PickSingleDialDeviceAsync = PickSingleDialDeviceAsyncWithPlacement;
