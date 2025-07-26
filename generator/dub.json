@@ -16,7 +16,9 @@
 	"workingDirectory": ".",
 	"importPaths": [
 		"../directx",
-		"../source"
+		"../source",
+		"idl/source"
 	],
-	"dflags": ["-preview=bitfields"]
+	"dflags": ["-preview=bitfields"],
+	"subPackages": ["idl"]
 }

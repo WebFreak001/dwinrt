@@ -1,0 +1,8 @@
+{
+	"targetType": "library",
+	"dependencies": {
+		"pegged": "~>0.4.9"
+	},
+	"targetName": "../grammar",
+	"name": "idl"
+}
