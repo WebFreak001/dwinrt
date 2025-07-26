@@ -1,0 +1,1 @@
+dmd -lib idl/grammar.d -I%LOCALAPPDATA%/dub/packages/pegged/0.4.9/pegged/

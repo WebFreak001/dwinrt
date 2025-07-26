@@ -14,9 +14,6 @@
 		"../dwinrt.lib"
 	],
 	"workingDirectory": ".",
-	"preBuildCommands": [
-		"dmd -m64 -lib idl/grammar.d -I%APPDATA%/../Local/dub/packages/pegged/0.4.9/pegged"
-	],
 	"importPaths": [
 		"../directx",
 		"../source"
