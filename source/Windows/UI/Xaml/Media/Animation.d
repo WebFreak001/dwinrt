@@ -193,7 +193,7 @@ interface IConnectedAnimation2 : IInspectable
 extern(Windows):
 	HRESULT get_IsScaleAnimationEnabled(bool* return_value);
 	HRESULT set_IsScaleAnimationEnabled(bool value);
-	HRESULT abi_TryStartWithCoordinatedElements(Windows.UI.Xaml.UIElement destination, Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) coordinatedElements, bool* return_returnValue);
+	HRESULT abi_TryStart(Windows.UI.Xaml.UIElement destination, Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) coordinatedElements, bool* return_returnValue);
 	HRESULT abi_SetAnimationComponent(Windows.UI.Xaml.Media.Animation.ConnectedAnimationComponent component, Windows.UI.Composition.ICompositionAnimationBase animation);
 }
 
@@ -1910,10 +1910,10 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimation2)this.asInterface(uuid("5d2f8e5c-584b-4ddd-b668-973891431459"))).set_IsScaleAnimationEnabled(value));
 	}
-	final bool TryStartWithCoordinatedElements(Windows.UI.Xaml.UIElement destination, Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) coordinatedElements)
+	final bool TryStart(Windows.UI.Xaml.UIElement destination, Windows.Foundation.Collections.IIterable!(Windows.UI.Xaml.UIElement) coordinatedElements)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimation2)this.asInterface(uuid("5d2f8e5c-584b-4ddd-b668-973891431459"))).abi_TryStartWithCoordinatedElements(destination, coordinatedElements, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Media.Animation.IConnectedAnimation2)this.asInterface(uuid("5d2f8e5c-584b-4ddd-b668-973891431459"))).abi_TryStart(destination, coordinatedElements, &_ret));
 		return _ret;
 	}
 	alias TryStart = TryStartWithCoordinatedElements;

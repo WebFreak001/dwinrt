@@ -294,7 +294,7 @@ extern(Windows):
 	HRESULT get_SupportedPresets(Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.FocusPreset)* return_value);
 	HRESULT get_Preset(Windows.Media.Devices.FocusPreset* return_value);
 	HRESULT abi_SetPresetAsync(Windows.Media.Devices.FocusPreset preset, Windows.Foundation.IAsyncAction* return_asyncInfo);
-	HRESULT abi_SetPresetWithCompletionOptionAsync(Windows.Media.Devices.FocusPreset preset, bool completeBeforeFocus, Windows.Foundation.IAsyncAction* return_asyncInfo);
+	HRESULT abi_SetPresetAsync(Windows.Media.Devices.FocusPreset preset, bool completeBeforeFocus, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT get_Min(UINT32* return_value);
 	HRESULT get_Max(UINT32* return_value);
 	HRESULT get_Step(UINT32* return_value);
@@ -550,7 +550,7 @@ interface IRegionsOfInterestControl : IInspectable
 extern(Windows):
 	HRESULT get_MaxRegions(UINT32* return_value);
 	HRESULT abi_SetRegionsAsync(Windows.Foundation.Collections.IIterable!(Windows.Media.Devices.RegionOfInterest) regions, Windows.Foundation.IAsyncAction* return_asyncInfo);
-	HRESULT abi_SetRegionsWithLockAsync(Windows.Foundation.Collections.IIterable!(Windows.Media.Devices.RegionOfInterest) regions, bool lockValues, Windows.Foundation.IAsyncAction* return_asyncInfo);
+	HRESULT abi_SetRegionsAsync(Windows.Foundation.Collections.IIterable!(Windows.Media.Devices.RegionOfInterest) regions, bool lockValues, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_ClearRegionsAsync(Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT get_AutoFocusSupported(bool* return_value);
 	HRESULT get_AutoWhiteBalanceSupported(bool* return_value);
@@ -1224,10 +1224,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Devices.IFocusControl)this.asInterface(uuid("c0d889f6-5228-4453-b153-85606592b238"))).abi_SetPresetAsync(preset, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction SetPresetWithCompletionOptionAsync(Windows.Media.Devices.FocusPreset preset, bool completeBeforeFocus)
+	final Windows.Foundation.IAsyncAction SetPresetAsync(Windows.Media.Devices.FocusPreset preset, bool completeBeforeFocus)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Media.Devices.IFocusControl)this.asInterface(uuid("c0d889f6-5228-4453-b153-85606592b238"))).abi_SetPresetWithCompletionOptionAsync(preset, completeBeforeFocus, &_ret));
+		Debug.OK((cast(Windows.Media.Devices.IFocusControl)this.asInterface(uuid("c0d889f6-5228-4453-b153-85606592b238"))).abi_SetPresetAsync(preset, completeBeforeFocus, &_ret));
 		return _ret;
 	}
 	alias SetPresetAsync = SetPresetWithCompletionOptionAsync;
@@ -1970,10 +1970,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Devices.IRegionsOfInterestControl)this.asInterface(uuid("c323f527-ab0b-4558-8b5b-df5693db0378"))).abi_SetRegionsAsync(regions, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction SetRegionsWithLockAsync(Windows.Foundation.Collections.IIterable!(Windows.Media.Devices.RegionOfInterest) regions, bool lockValues)
+	final Windows.Foundation.IAsyncAction SetRegionsAsync(Windows.Foundation.Collections.IIterable!(Windows.Media.Devices.RegionOfInterest) regions, bool lockValues)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Media.Devices.IRegionsOfInterestControl)this.asInterface(uuid("c323f527-ab0b-4558-8b5b-df5693db0378"))).abi_SetRegionsWithLockAsync(regions, lockValues, &_ret));
+		Debug.OK((cast(Windows.Media.Devices.IRegionsOfInterestControl)this.asInterface(uuid("c323f527-ab0b-4558-8b5b-df5693db0378"))).abi_SetRegionsAsync(regions, lockValues, &_ret));
 		return _ret;
 	}
 	alias SetRegionsAsync = SetRegionsWithLockAsync;

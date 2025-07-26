@@ -202,7 +202,7 @@ interface IFocusManagerStatics3 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_FindNextFocusableElement(Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, Windows.UI.Xaml.UIElement* return_result);
-	HRESULT abi_FindNextFocusableElementWithHint(Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, Windows.Foundation.Rect hintRect, Windows.UI.Xaml.UIElement* return_result);
+	HRESULT abi_FindNextFocusableElement(Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, Windows.Foundation.Rect hintRect, Windows.UI.Xaml.UIElement* return_result);
 }
 
 @uuid("29276e9c-1c6c-414a-ba1c-96efd5962bcd")
@@ -210,11 +210,11 @@ extern(Windows):
 interface IFocusManagerStatics4 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_TryMoveFocusWithOptions(Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, Windows.UI.Xaml.Input.FindNextElementOptions focusNavigationOptions, bool* return_returnValue);
+	HRESULT abi_TryMoveFocus(Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, Windows.UI.Xaml.Input.FindNextElementOptions focusNavigationOptions, bool* return_returnValue);
 	HRESULT abi_FindNextElement(Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, Windows.UI.Xaml.DependencyObject* return_returnValue);
 	HRESULT abi_FindFirstFocusableElement(Windows.UI.Xaml.DependencyObject searchScope, Windows.UI.Xaml.DependencyObject* return_returnValue);
 	HRESULT abi_FindLastFocusableElement(Windows.UI.Xaml.DependencyObject searchScope, Windows.UI.Xaml.DependencyObject* return_returnValue);
-	HRESULT abi_FindNextElementWithOptions(Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, Windows.UI.Xaml.Input.FindNextElementOptions focusNavigationOptions, Windows.UI.Xaml.DependencyObject* return_returnValue);
+	HRESULT abi_FindNextElement(Windows.UI.Xaml.Input.FocusNavigationDirection focusNavigationDirection, Windows.UI.Xaml.Input.FindNextElementOptions focusNavigationOptions, Windows.UI.Xaml.DependencyObject* return_returnValue);
 }
 
 @uuid("fa05b9ce-c67c-4be8-8fd4-c44d67877e0d")

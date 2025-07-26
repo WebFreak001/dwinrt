@@ -74,8 +74,8 @@ interface ICurrentAppSimulatorWithConsumables : IInspectable
 {
 extern(Windows):
 	HRESULT abi_ReportConsumableFulfillmentAsync(HSTRING productId, GUID transactionId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.FulfillmentResult)* return_reportConsumableFulfillmentOperation);
-	HRESULT abi_RequestProductPurchaseWithResultsAsync(HSTRING productId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.PurchaseResults)* return_requestProductPurchaseWithResultsOperation);
-	HRESULT abi_RequestProductPurchaseWithDisplayPropertiesAsync(HSTRING productId, HSTRING offerId, Windows.ApplicationModel.Store.ProductPurchaseDisplayProperties displayProperties, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.PurchaseResults)* return_requestProductPurchaseWithDisplayPropertiesOperation);
+	HRESULT abi_RequestProductPurchaseAsync(HSTRING productId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.PurchaseResults)* return_requestProductPurchaseWithResultsOperation);
+	HRESULT abi_RequestProductPurchaseAsync(HSTRING productId, HSTRING offerId, Windows.ApplicationModel.Store.ProductPurchaseDisplayProperties displayProperties, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.PurchaseResults)* return_requestProductPurchaseWithDisplayPropertiesOperation);
 	HRESULT abi_GetUnfulfilledConsumablesAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Store.UnfulfilledConsumable))* return_getUnfulfilledConsumablesOperation);
 }
 
@@ -103,8 +103,8 @@ interface ICurrentAppWithConsumables : IInspectable
 {
 extern(Windows):
 	HRESULT abi_ReportConsumableFulfillmentAsync(HSTRING productId, GUID transactionId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.FulfillmentResult)* return_reportConsumableFulfillmentOperation);
-	HRESULT abi_RequestProductPurchaseWithResultsAsync(HSTRING productId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.PurchaseResults)* return_requestProductPurchaseWithResultsOperation);
-	HRESULT abi_RequestProductPurchaseWithDisplayPropertiesAsync(HSTRING productId, HSTRING offerId, Windows.ApplicationModel.Store.ProductPurchaseDisplayProperties displayProperties, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.PurchaseResults)* return_requestProductPurchaseWithDisplayPropertiesOperation);
+	HRESULT abi_RequestProductPurchaseAsync(HSTRING productId, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.PurchaseResults)* return_requestProductPurchaseWithResultsOperation);
+	HRESULT abi_RequestProductPurchaseAsync(HSTRING productId, HSTRING offerId, Windows.ApplicationModel.Store.ProductPurchaseDisplayProperties displayProperties, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.PurchaseResults)* return_requestProductPurchaseWithDisplayPropertiesOperation);
 	HRESULT abi_GetUnfulfilledConsumablesAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Store.UnfulfilledConsumable))* return_getUnfulfilledConsumablesOperation);
 }
 

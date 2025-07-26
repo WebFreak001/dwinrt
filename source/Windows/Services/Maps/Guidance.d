@@ -84,7 +84,7 @@ extern(Windows):
 	HRESULT remove_UserLocationRestored(EventRegistrationToken token);
 	HRESULT abi_SetGuidanceVoice(INT32 voiceId, HSTRING voiceFolder);
 	HRESULT abi_UpdateUserLocation(Windows.Devices.Geolocation.Geocoordinate userLocation);
-	HRESULT abi_UpdateUserLocationWithPositionOverride(Windows.Devices.Geolocation.Geocoordinate userLocation, Windows.Devices.Geolocation.BasicGeoposition positionOverride);
+	HRESULT abi_UpdateUserLocation(Windows.Devices.Geolocation.Geocoordinate userLocation, Windows.Devices.Geolocation.BasicGeoposition positionOverride);
 }
 
 @uuid("6cdc50d1-041c-4bf3-b633-a101fc2f6b57")
@@ -497,9 +497,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).abi_UpdateUserLocation(userLocation));
 	}
-	final void UpdateUserLocationWithPositionOverride(Windows.Devices.Geolocation.Geocoordinate userLocation, Windows.Devices.Geolocation.BasicGeoposition positionOverride)
+	final void UpdateUserLocation(Windows.Devices.Geolocation.Geocoordinate userLocation, Windows.Devices.Geolocation.BasicGeoposition positionOverride)
 	{
-		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).abi_UpdateUserLocationWithPositionOverride(userLocation, positionOverride));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).abi_UpdateUserLocation(userLocation, positionOverride));
 	}
 	alias UpdateUserLocation = UpdateUserLocationWithPositionOverride;
 	final EventRegistrationToken OnAudioNotificationRequested(void delegate(Windows.Services.Maps.Guidance.GuidanceNavigator, Windows.Services.Maps.Guidance.GuidanceAudioNotificationRequestedEventArgs) fn)

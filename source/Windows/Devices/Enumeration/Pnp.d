@@ -20,9 +20,9 @@ interface IPnpObjectStatics : IInspectable
 extern(Windows):
 	HRESULT abi_CreateFromIdAsync(Windows.Devices.Enumeration.Pnp.PnpObjectType type, HSTRING id, Windows.Foundation.Collections.IIterable!(HSTRING) requestedProperties, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.Pnp.PnpObject)* return_asyncOp);
 	HRESULT abi_FindAllAsync(Windows.Devices.Enumeration.Pnp.PnpObjectType type, Windows.Foundation.Collections.IIterable!(HSTRING) requestedProperties, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.Pnp.PnpObjectCollection)* return_asyncOp);
-	HRESULT abi_FindAllAsyncAqsFilter(Windows.Devices.Enumeration.Pnp.PnpObjectType type, Windows.Foundation.Collections.IIterable!(HSTRING) requestedProperties, HSTRING aqsFilter, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.Pnp.PnpObjectCollection)* return_asyncOp);
+	HRESULT abi_FindAllAsync(Windows.Devices.Enumeration.Pnp.PnpObjectType type, Windows.Foundation.Collections.IIterable!(HSTRING) requestedProperties, HSTRING aqsFilter, Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.Pnp.PnpObjectCollection)* return_asyncOp);
 	HRESULT abi_CreateWatcher(Windows.Devices.Enumeration.Pnp.PnpObjectType type, Windows.Foundation.Collections.IIterable!(HSTRING) requestedProperties, Windows.Devices.Enumeration.Pnp.PnpObjectWatcher* return_watcher);
-	HRESULT abi_CreateWatcherAqsFilter(Windows.Devices.Enumeration.Pnp.PnpObjectType type, Windows.Foundation.Collections.IIterable!(HSTRING) requestedProperties, HSTRING aqsFilter, Windows.Devices.Enumeration.Pnp.PnpObjectWatcher* return_watcher);
+	HRESULT abi_CreateWatcher(Windows.Devices.Enumeration.Pnp.PnpObjectType type, Windows.Foundation.Collections.IIterable!(HSTRING) requestedProperties, HSTRING aqsFilter, Windows.Devices.Enumeration.Pnp.PnpObjectWatcher* return_watcher);
 }
 
 @uuid("6f59e812-001e-4844-bcc6-432886856a17")
@@ -99,10 +99,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_FindAllAsync(type, requestedProperties, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.Pnp.PnpObjectCollection) FindAllAsyncAqsFilter(Windows.Devices.Enumeration.Pnp.PnpObjectType type, Windows.Foundation.Collections.IIterable!(HSTRING) requestedProperties, HSTRING aqsFilter)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.Pnp.PnpObjectCollection) FindAllAsync(Windows.Devices.Enumeration.Pnp.PnpObjectType type, Windows.Foundation.Collections.IIterable!(HSTRING) requestedProperties, HSTRING aqsFilter)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.Pnp.PnpObjectCollection) _ret;
-		Debug.OK(staticInstance.abi_FindAllAsyncAqsFilter(type, requestedProperties, aqsFilter, &_ret));
+		Debug.OK(staticInstance.abi_FindAllAsync(type, requestedProperties, aqsFilter, &_ret));
 		return _ret;
 	}
 	alias FindAllAsync = FindAllAsyncAqsFilter;
@@ -112,10 +112,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateWatcher(type, requestedProperties, &_ret));
 		return _ret;
 	}
-	static Windows.Devices.Enumeration.Pnp.PnpObjectWatcher CreateWatcherAqsFilter(Windows.Devices.Enumeration.Pnp.PnpObjectType type, Windows.Foundation.Collections.IIterable!(HSTRING) requestedProperties, HSTRING aqsFilter)
+	static Windows.Devices.Enumeration.Pnp.PnpObjectWatcher CreateWatcher(Windows.Devices.Enumeration.Pnp.PnpObjectType type, Windows.Foundation.Collections.IIterable!(HSTRING) requestedProperties, HSTRING aqsFilter)
 	{
 		Windows.Devices.Enumeration.Pnp.PnpObjectWatcher _ret;
-		Debug.OK(staticInstance.abi_CreateWatcherAqsFilter(type, requestedProperties, aqsFilter, &_ret));
+		Debug.OK(staticInstance.abi_CreateWatcher(type, requestedProperties, aqsFilter, &_ret));
 		return _ret;
 	}
 	alias CreateWatcher = CreateWatcherAqsFilter;

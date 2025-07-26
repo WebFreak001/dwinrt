@@ -34,7 +34,7 @@ extern(Windows):
 	HRESULT abi_AttachAsync(Windows.Foundation.IAsyncAction* return_action);
 	HRESULT abi_Delete();
 	HRESULT abi_StartAsync(Windows.Foundation.IAsyncAction* return_action);
-	HRESULT abi_StartWithAlertsAsync(Windows.Foundation.Collections.IIterable!(Windows.Management.MdmAlert) alerts, Windows.Foundation.IAsyncAction* return_action);
+	HRESULT abi_StartAsync(Windows.Foundation.Collections.IIterable!(Windows.Management.MdmAlert) alerts, Windows.Foundation.IAsyncAction* return_action);
 }
 
 @uuid("cf4ad959-f745-4b79-9b5c-de0bf8efe44b")
@@ -168,10 +168,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Management.IMdmSession)this.asInterface(uuid("fe89314c-8f64-4797-a9d7-9d88f86ae166"))).abi_StartAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction StartWithAlertsAsync(Windows.Foundation.Collections.IIterable!(Windows.Management.MdmAlert) alerts)
+	final Windows.Foundation.IAsyncAction StartAsync(Windows.Foundation.Collections.IIterable!(Windows.Management.MdmAlert) alerts)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Management.IMdmSession)this.asInterface(uuid("fe89314c-8f64-4797-a9d7-9d88f86ae166"))).abi_StartWithAlertsAsync(alerts, &_ret));
+		Debug.OK((cast(Windows.Management.IMdmSession)this.asInterface(uuid("fe89314c-8f64-4797-a9d7-9d88f86ae166"))).abi_StartAsync(alerts, &_ret));
 		return _ret;
 	}
 	alias StartAsync = StartWithAlertsAsync;

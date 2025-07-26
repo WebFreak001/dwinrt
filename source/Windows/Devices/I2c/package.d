@@ -69,7 +69,7 @@ interface II2cDeviceStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(HSTRING* return_value);
-	HRESULT abi_GetDeviceSelectorFromFriendlyName(HSTRING friendlyName, HSTRING* return_value);
+	HRESULT abi_GetDeviceSelector(HSTRING friendlyName, HSTRING* return_value);
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Devices.I2c.I2cConnectionSettings settings, Windows.Foundation.IAsyncOperation!(Windows.Devices.I2c.I2cDevice)* return_operation);
 }
 
@@ -207,10 +207,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelectorFromFriendlyName(HSTRING friendlyName)
+	static HSTRING GetDeviceSelector(HSTRING friendlyName)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.abi_GetDeviceSelectorFromFriendlyName(friendlyName, &_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(friendlyName, &_ret));
 		return _ret;
 	}
 	alias GetDeviceSelector = GetDeviceSelectorFromFriendlyName;

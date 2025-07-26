@@ -50,7 +50,7 @@ extern(Windows):
 	HRESULT get_Data(Windows.ApplicationModel.DataTransfer.DataPackage* return_value);
 	HRESULT abi_SetPointerId(UINT32 pointerId);
 	HRESULT abi_SetDragUIContentFromSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap);
-	HRESULT abi_SetDragUIContentFromSoftwareBitmapWithAnchorPoint(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap, Windows.Foundation.Point anchorPoint);
+	HRESULT abi_SetDragUIContentFromSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap, Windows.Foundation.Point anchorPoint);
 	HRESULT get_DragUIContentMode(Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragUIContentMode* return_value);
 	HRESULT set_DragUIContentMode(Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragUIContentMode value);
 	HRESULT abi_StartAsync(Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.DataTransfer.DataPackageOperation)* return_value);
@@ -74,7 +74,7 @@ interface ICoreDragUIOverride : IInspectable
 {
 extern(Windows):
 	HRESULT abi_SetContentFromSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap);
-	HRESULT abi_SetContentFromSoftwareBitmapWithAnchorPoint(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap, Windows.Foundation.Point anchorPoint);
+	HRESULT abi_SetContentFromSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap, Windows.Foundation.Point anchorPoint);
 	HRESULT get_IsContentVisible(bool* return_value);
 	HRESULT set_IsContentVisible(bool value);
 	HRESULT get_Caption(HSTRING* return_value);
@@ -188,9 +188,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragOperation)this.asInterface(uuid("cc06de4f-6db0-4e62-ab1b-a74a02dc6d85"))).abi_SetDragUIContentFromSoftwareBitmap(softwareBitmap));
 	}
-	final void SetDragUIContentFromSoftwareBitmapWithAnchorPoint(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap, Windows.Foundation.Point anchorPoint)
+	final void SetDragUIContentFromSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap, Windows.Foundation.Point anchorPoint)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragOperation)this.asInterface(uuid("cc06de4f-6db0-4e62-ab1b-a74a02dc6d85"))).abi_SetDragUIContentFromSoftwareBitmapWithAnchorPoint(softwareBitmap, anchorPoint));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragOperation)this.asInterface(uuid("cc06de4f-6db0-4e62-ab1b-a74a02dc6d85"))).abi_SetDragUIContentFromSoftwareBitmap(softwareBitmap, anchorPoint));
 	}
 	alias SetDragUIContentFromSoftwareBitmap = SetDragUIContentFromSoftwareBitmapWithAnchorPoint;
 	final Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragUIContentMode DragUIContentMode()
@@ -234,9 +234,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragUIOverride)this.asInterface(uuid("89a85064-3389-4f4f-8897-7e8a3ffb3c93"))).abi_SetContentFromSoftwareBitmap(softwareBitmap));
 	}
-	final void SetContentFromSoftwareBitmapWithAnchorPoint(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap, Windows.Foundation.Point anchorPoint)
+	final void SetContentFromSoftwareBitmap(Windows.Graphics.Imaging.SoftwareBitmap softwareBitmap, Windows.Foundation.Point anchorPoint)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragUIOverride)this.asInterface(uuid("89a85064-3389-4f4f-8897-7e8a3ffb3c93"))).abi_SetContentFromSoftwareBitmapWithAnchorPoint(softwareBitmap, anchorPoint));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragUIOverride)this.asInterface(uuid("89a85064-3389-4f4f-8897-7e8a3ffb3c93"))).abi_SetContentFromSoftwareBitmap(softwareBitmap, anchorPoint));
 	}
 	alias SetContentFromSoftwareBitmap = SetContentFromSoftwareBitmapWithAnchorPoint;
 	final bool IsContentVisible()

@@ -20,7 +20,7 @@ interface IPushNotificationChannelManagerForUser : IInspectable
 {
 extern(Windows):
 	HRESULT abi_CreatePushNotificationChannelForApplicationAsync(Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel)* return_operation);
-	HRESULT abi_CreatePushNotificationChannelForApplicationAsyncWithId(HSTRING applicationId, Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel)* return_operation);
+	HRESULT abi_CreatePushNotificationChannelForApplicationAsync(HSTRING applicationId, Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel)* return_operation);
 	HRESULT abi_CreatePushNotificationChannelForSecondaryTileAsync(HSTRING tileId, Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel)* return_operation);
 	HRESULT get_User(Windows.System.User* return_value);
 }
@@ -31,7 +31,7 @@ interface IPushNotificationChannelManagerForUser2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(Windows.Storage.Streams.IBuffer appServerKey, HSTRING channelId, Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel)* return_operation);
-	HRESULT abi_CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsyncWithId(Windows.Storage.Streams.IBuffer appServerKey, HSTRING channelId, HSTRING appId, Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel)* return_operation);
+	HRESULT abi_CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(Windows.Storage.Streams.IBuffer appServerKey, HSTRING channelId, HSTRING appId, Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel)* return_operation);
 }
 
 @uuid("8baf9b65-77a1-4588-bd19-861529a9dcf0")
@@ -40,7 +40,7 @@ interface IPushNotificationChannelManagerStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_CreatePushNotificationChannelForApplicationAsync(Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel)* return_operation);
-	HRESULT abi_CreatePushNotificationChannelForApplicationAsyncWithId(HSTRING applicationId, Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel)* return_operation);
+	HRESULT abi_CreatePushNotificationChannelForApplicationAsync(HSTRING applicationId, Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel)* return_operation);
 	HRESULT abi_CreatePushNotificationChannelForSecondaryTileAsync(HSTRING tileId, Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel)* return_operation);
 }
 
@@ -136,10 +136,10 @@ interface PushNotificationChannelManager
 		Debug.OK(staticInstance.abi_CreatePushNotificationChannelForApplicationAsync(&_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) CreatePushNotificationChannelForApplicationAsyncWithId(HSTRING applicationId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) CreatePushNotificationChannelForApplicationAsync(HSTRING applicationId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) _ret;
-		Debug.OK(staticInstance.abi_CreatePushNotificationChannelForApplicationAsyncWithId(applicationId, &_ret));
+		Debug.OK(staticInstance.abi_CreatePushNotificationChannelForApplicationAsync(applicationId, &_ret));
 		return _ret;
 	}
 	alias CreatePushNotificationChannelForApplicationAsync = CreatePushNotificationChannelForApplicationAsyncWithId;
@@ -160,10 +160,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Networking.PushNotifications.IPushNotificationChannelManagerForUser)this.asInterface(uuid("a4c45704-1182-42c7-8890-f563c4890dc4"))).abi_CreatePushNotificationChannelForApplicationAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) CreatePushNotificationChannelForApplicationAsyncWithId(HSTRING applicationId)
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) CreatePushNotificationChannelForApplicationAsync(HSTRING applicationId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) _ret;
-		Debug.OK((cast(Windows.Networking.PushNotifications.IPushNotificationChannelManagerForUser)this.asInterface(uuid("a4c45704-1182-42c7-8890-f563c4890dc4"))).abi_CreatePushNotificationChannelForApplicationAsyncWithId(applicationId, &_ret));
+		Debug.OK((cast(Windows.Networking.PushNotifications.IPushNotificationChannelManagerForUser)this.asInterface(uuid("a4c45704-1182-42c7-8890-f563c4890dc4"))).abi_CreatePushNotificationChannelForApplicationAsync(applicationId, &_ret));
 		return _ret;
 	}
 	alias CreatePushNotificationChannelForApplicationAsync = CreatePushNotificationChannelForApplicationAsyncWithId;
@@ -185,10 +185,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Networking.PushNotifications.IPushNotificationChannelManagerForUser2)this.asInterface(uuid("c38b066a-7cc1-4dac-87fd-be6e920414a4"))).abi_CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(appServerKey, channelId, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsyncWithId(Windows.Storage.Streams.IBuffer appServerKey, HSTRING channelId, HSTRING appId)
+	final Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(Windows.Storage.Streams.IBuffer appServerKey, HSTRING channelId, HSTRING appId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Networking.PushNotifications.PushNotificationChannel) _ret;
-		Debug.OK((cast(Windows.Networking.PushNotifications.IPushNotificationChannelManagerForUser2)this.asInterface(uuid("c38b066a-7cc1-4dac-87fd-be6e920414a4"))).abi_CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsyncWithId(appServerKey, channelId, appId, &_ret));
+		Debug.OK((cast(Windows.Networking.PushNotifications.IPushNotificationChannelManagerForUser2)this.asInterface(uuid("c38b066a-7cc1-4dac-87fd-be6e920414a4"))).abi_CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(appServerKey, channelId, appId, &_ret));
 		return _ret;
 	}
 	alias CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync = CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsyncWithId;

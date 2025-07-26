@@ -173,7 +173,7 @@ interface IRemoteSystemSessionControllerFactory : IInspectable
 {
 extern(Windows):
 	HRESULT abi_CreateController(HSTRING displayName, Windows.System.RemoteSystems.RemoteSystemSessionController* return_result);
-	HRESULT abi_CreateControllerWithSessionOptions(HSTRING displayName, Windows.System.RemoteSystems.RemoteSystemSessionOptions options, Windows.System.RemoteSystems.RemoteSystemSessionController* return_result);
+	HRESULT abi_CreateController(HSTRING displayName, Windows.System.RemoteSystems.RemoteSystemSessionOptions options, Windows.System.RemoteSystems.RemoteSystemSessionController* return_result);
 }
 
 @uuid("a79812c2-37de-448c-8b83-a30aa3c4ead6")
@@ -275,7 +275,7 @@ interface IRemoteSystemSessionMessageChannelFactory : IInspectable
 {
 extern(Windows):
 	HRESULT abi_Create(Windows.System.RemoteSystems.RemoteSystemSession session, HSTRING channelName, Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel* return_result);
-	HRESULT abi_CreateWithReliability(Windows.System.RemoteSystems.RemoteSystemSession session, HSTRING channelName, Windows.System.RemoteSystems.RemoteSystemSessionMessageChannelReliability reliability, Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel* return_result);
+	HRESULT abi_Create(Windows.System.RemoteSystems.RemoteSystemSession session, HSTRING channelName, Windows.System.RemoteSystems.RemoteSystemSessionMessageChannelReliability reliability, Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel* return_result);
 }
 
 @uuid("740ed755-8418-4f01-9353-e21c9ecc6cfc")
@@ -384,7 +384,7 @@ interface IRemoteSystemStatics : IInspectable
 extern(Windows):
 	HRESULT abi_FindByHostNameAsync(Windows.Networking.HostName hostName, Windows.Foundation.IAsyncOperation!(Windows.System.RemoteSystems.RemoteSystem)* return_operation);
 	HRESULT abi_CreateWatcher(Windows.System.RemoteSystems.RemoteSystemWatcher* return_result);
-	HRESULT abi_CreateWatcherWithFilters(Windows.Foundation.Collections.IIterable!(Windows.System.RemoteSystems.IRemoteSystemFilter) filters, Windows.System.RemoteSystems.RemoteSystemWatcher* return_result);
+	HRESULT abi_CreateWatcher(Windows.Foundation.Collections.IIterable!(Windows.System.RemoteSystems.IRemoteSystemFilter) filters, Windows.System.RemoteSystems.RemoteSystemWatcher* return_result);
 	HRESULT abi_RequestAccessAsync(Windows.Foundation.IAsyncOperation!(Windows.System.RemoteSystems.RemoteSystemAccessStatus)* return_operation);
 }
 
@@ -533,10 +533,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateWatcher(&_ret));
 		return _ret;
 	}
-	static Windows.System.RemoteSystems.RemoteSystemWatcher CreateWatcherWithFilters(Windows.Foundation.Collections.IIterable!(Windows.System.RemoteSystems.IRemoteSystemFilter) filters)
+	static Windows.System.RemoteSystems.RemoteSystemWatcher CreateWatcher(Windows.Foundation.Collections.IIterable!(Windows.System.RemoteSystems.IRemoteSystemFilter) filters)
 	{
 		Windows.System.RemoteSystems.RemoteSystemWatcher _ret;
-		Debug.OK(staticInstance.abi_CreateWatcherWithFilters(filters, &_ret));
+		Debug.OK(staticInstance.abi_CreateWatcher(filters, &_ret));
 		return _ret;
 	}
 	alias CreateWatcher = CreateWatcherWithFilters;
@@ -792,7 +792,7 @@ extern(Windows):
 	{
 		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemSessionControllerFactory);
 		Windows.System.RemoteSystems.RemoteSystemSessionController _ret;
-		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionControllerFactory)factory.asInterface(uuid("bfcc2f6b-ac3d-4199-82cd-6670a773ef2e"))).abi_CreateControllerWithSessionOptions(displayName, options, &_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionControllerFactory)factory.asInterface(uuid("bfcc2f6b-ac3d-4199-82cd-6670a773ef2e"))).abi_CreateController(displayName, options, &_ret));
 		return _ret;
 	}
 	alias CreateController = New;
@@ -996,7 +996,7 @@ extern(Windows):
 	{
 		auto factory = factory!(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannelFactory);
 		Windows.System.RemoteSystems.RemoteSystemSessionMessageChannel _ret;
-		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannelFactory)factory.asInterface(uuid("295e1c4a-bd16-4298-b7ce-415482b0e11d"))).abi_CreateWithReliability(session, channelName, reliability, &_ret));
+		Debug.OK((cast(Windows.System.RemoteSystems.IRemoteSystemSessionMessageChannelFactory)factory.asInterface(uuid("295e1c4a-bd16-4298-b7ce-415482b0e11d"))).abi_Create(session, channelName, reliability, &_ret));
 		return _ret;
 	}
 	alias Create = New;

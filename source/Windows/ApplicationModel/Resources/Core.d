@@ -20,10 +20,10 @@ extern(Windows):
 	HRESULT get_Candidates(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceCandidate)* return_value);
 	deprecated("Resolve may be altered or unavailable for releases after Windows 8.1. Instead, use Resolve(ResourceContext).")
 	HRESULT abi_Resolve(Windows.ApplicationModel.Resources.Core.ResourceCandidate* return_result);
-	HRESULT abi_ResolveForContext(Windows.ApplicationModel.Resources.Core.ResourceContext resourceContext, Windows.ApplicationModel.Resources.Core.ResourceCandidate* return_result);
+	HRESULT abi_Resolve(Windows.ApplicationModel.Resources.Core.ResourceContext resourceContext, Windows.ApplicationModel.Resources.Core.ResourceCandidate* return_result);
 	deprecated("ResolveAll may be altered or unavailable for releases after Windows 8.1. Instead, use ResolveAll(ResourceContext).")
 	HRESULT abi_ResolveAll(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceCandidate)* return_result);
-	HRESULT abi_ResolveAllForContext(Windows.ApplicationModel.Resources.Core.ResourceContext resourceContext, Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceCandidate)* return_instances);
+	HRESULT abi_ResolveAll(Windows.ApplicationModel.Resources.Core.ResourceContext resourceContext, Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceCandidate)* return_instances);
 }
 
 @uuid("af5207d9-c433-4764-b3fd-8fa6bfbcbadc")
@@ -55,7 +55,7 @@ interface IResourceContext : IInspectable
 extern(Windows):
 	HRESULT get_QualifierValues(Windows.Foundation.Collections.IObservableMap!(HSTRING, HSTRING)* return_value);
 	HRESULT abi_Reset();
-	HRESULT abi_ResetQualifierValues(Windows.Foundation.Collections.IIterable!(HSTRING) qualifierNames);
+	HRESULT abi_Reset(Windows.Foundation.Collections.IIterable!(HSTRING) qualifierNames);
 	HRESULT abi_OverrideToMatch(Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Resources.Core.ResourceQualifier) result);
 	HRESULT abi_Clone(Windows.ApplicationModel.Resources.Core.ResourceContext* return_clone);
 	HRESULT get_Languages(Windows.Foundation.Collections.IVectorView!(HSTRING)* return_value);
@@ -79,7 +79,7 @@ extern(Windows):
 	HRESULT abi_GetForCurrentView(Windows.ApplicationModel.Resources.Core.ResourceContext* return_value);
 	HRESULT abi_SetGlobalQualifierValue(HSTRING key, HSTRING value);
 	HRESULT abi_ResetGlobalQualifierValues();
-	HRESULT abi_ResetGlobalQualifierValuesForSpecifiedQualifiers(Windows.Foundation.Collections.IIterable!(HSTRING) qualifierNames);
+	HRESULT abi_ResetGlobalQualifierValues(Windows.Foundation.Collections.IIterable!(HSTRING) qualifierNames);
 	HRESULT abi_GetForViewIndependentUse(Windows.ApplicationModel.Resources.Core.ResourceContext* return_loader);
 }
 
@@ -88,7 +88,7 @@ extern(Windows):
 interface IResourceContextStatics3 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_SetGlobalQualifierValueWithPersistence(HSTRING key, HSTRING value, Windows.ApplicationModel.Resources.Core.ResourceQualifierPersistence persistence);
+	HRESULT abi_SetGlobalQualifierValue(HSTRING key, HSTRING value, Windows.ApplicationModel.Resources.Core.ResourceQualifierPersistence persistence);
 }
 
 @uuid("f744d97b-9988-44fb-abd6-5378844cfa8b")
@@ -130,7 +130,7 @@ extern(Windows):
 	HRESULT get_Uri(Windows.Foundation.Uri* return_uri);
 	deprecated("GetValue(string) may be altered or unavailable for releases after Windows 8.1. Instead, use GetValue(string, ResourceContext).")
 	HRESULT abi_GetValue(HSTRING resource, Windows.ApplicationModel.Resources.Core.ResourceCandidate* return_value);
-	HRESULT abi_GetValueForContext(HSTRING resource, Windows.ApplicationModel.Resources.Core.ResourceContext context, Windows.ApplicationModel.Resources.Core.ResourceCandidate* return_value);
+	HRESULT abi_GetValue(HSTRING resource, Windows.ApplicationModel.Resources.Core.ResourceContext context, Windows.ApplicationModel.Resources.Core.ResourceCandidate* return_value);
 	HRESULT abi_GetSubtree(HSTRING reference, Windows.ApplicationModel.Resources.Core.ResourceMap* return_map);
 }
 @uuid("72284824-db8c-42f8-b08c-53ff357dad82")
@@ -171,10 +171,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.INamedResource)this.asInterface(uuid("1c98c219-0b13-4240-89a5-d495dc189a00"))).abi_Resolve(&_ret));
 		return _ret;
 	}
-	final Windows.ApplicationModel.Resources.Core.ResourceCandidate ResolveForContext(Windows.ApplicationModel.Resources.Core.ResourceContext resourceContext)
+	final Windows.ApplicationModel.Resources.Core.ResourceCandidate Resolve(Windows.ApplicationModel.Resources.Core.ResourceContext resourceContext)
 	{
 		Windows.ApplicationModel.Resources.Core.ResourceCandidate _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.INamedResource)this.asInterface(uuid("1c98c219-0b13-4240-89a5-d495dc189a00"))).abi_ResolveForContext(resourceContext, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.INamedResource)this.asInterface(uuid("1c98c219-0b13-4240-89a5-d495dc189a00"))).abi_Resolve(resourceContext, &_ret));
 		return _ret;
 	}
 	alias Resolve = ResolveForContext;
@@ -185,10 +185,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.INamedResource)this.asInterface(uuid("1c98c219-0b13-4240-89a5-d495dc189a00"))).abi_ResolveAll(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceCandidate) ResolveAllForContext(Windows.ApplicationModel.Resources.Core.ResourceContext resourceContext)
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceCandidate) ResolveAll(Windows.ApplicationModel.Resources.Core.ResourceContext resourceContext)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Resources.Core.ResourceCandidate) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.INamedResource)this.asInterface(uuid("1c98c219-0b13-4240-89a5-d495dc189a00"))).abi_ResolveAllForContext(resourceContext, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.INamedResource)this.asInterface(uuid("1c98c219-0b13-4240-89a5-d495dc189a00"))).abi_ResolveAll(resourceContext, &_ret));
 		return _ret;
 	}
 	alias ResolveAll = ResolveAllForContext;
@@ -289,9 +289,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceContext)this.asInterface(uuid("2fa22f4b-707e-4b27-ad0d-d0d8cd468fd2"))).abi_Reset());
 	}
-	final void ResetQualifierValues(Windows.Foundation.Collections.IIterable!(HSTRING) qualifierNames)
+	final void Reset(Windows.Foundation.Collections.IIterable!(HSTRING) qualifierNames)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceContext)this.asInterface(uuid("2fa22f4b-707e-4b27-ad0d-d0d8cd468fd2"))).abi_ResetQualifierValues(qualifierNames));
+		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceContext)this.asInterface(uuid("2fa22f4b-707e-4b27-ad0d-d0d8cd468fd2"))).abi_Reset(qualifierNames));
 	}
 	alias Reset = ResetQualifierValues;
 	final void OverrideToMatch(Windows.Foundation.Collections.IIterable!(Windows.ApplicationModel.Resources.Core.ResourceQualifier) result)
@@ -444,10 +444,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceMap)this.asInterface(uuid("72284824-db8c-42f8-b08c-53ff357dad82"))).abi_GetValue(resource, &_ret));
 		return _ret;
 	}
-	final Windows.ApplicationModel.Resources.Core.ResourceCandidate GetValueForContext(HSTRING resource, Windows.ApplicationModel.Resources.Core.ResourceContext context)
+	final Windows.ApplicationModel.Resources.Core.ResourceCandidate GetValue(HSTRING resource, Windows.ApplicationModel.Resources.Core.ResourceContext context)
 	{
 		Windows.ApplicationModel.Resources.Core.ResourceCandidate _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceMap)this.asInterface(uuid("72284824-db8c-42f8-b08c-53ff357dad82"))).abi_GetValueForContext(resource, context, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Resources.Core.IResourceMap)this.asInterface(uuid("72284824-db8c-42f8-b08c-53ff357dad82"))).abi_GetValue(resource, context, &_ret));
 		return _ret;
 	}
 	alias GetValue = GetValueForContext;

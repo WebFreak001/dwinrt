@@ -58,13 +58,13 @@ extern(Windows):
 	HRESULT get_UsagePage(UINT16* return_value);
 	HRESULT get_UsageId(UINT16* return_value);
 	HRESULT abi_GetInputReportAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidInputReport)* return_value);
-	HRESULT abi_GetInputReportByIdAsync(UINT16 reportId, Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidInputReport)* return_value);
+	HRESULT abi_GetInputReportAsync(UINT16 reportId, Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidInputReport)* return_value);
 	HRESULT abi_GetFeatureReportAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidFeatureReport)* return_value);
-	HRESULT abi_GetFeatureReportByIdAsync(UINT16 reportId, Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidFeatureReport)* return_value);
+	HRESULT abi_GetFeatureReportAsync(UINT16 reportId, Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidFeatureReport)* return_value);
 	HRESULT abi_CreateOutputReport(Windows.Devices.HumanInterfaceDevice.HidOutputReport* return_outputReport);
-	HRESULT abi_CreateOutputReportById(UINT16 reportId, Windows.Devices.HumanInterfaceDevice.HidOutputReport* return_outputReport);
+	HRESULT abi_CreateOutputReport(UINT16 reportId, Windows.Devices.HumanInterfaceDevice.HidOutputReport* return_outputReport);
 	HRESULT abi_CreateFeatureReport(Windows.Devices.HumanInterfaceDevice.HidFeatureReport* return_featureReport);
-	HRESULT abi_CreateFeatureReportById(UINT16 reportId, Windows.Devices.HumanInterfaceDevice.HidFeatureReport* return_featureReport);
+	HRESULT abi_CreateFeatureReport(UINT16 reportId, Windows.Devices.HumanInterfaceDevice.HidFeatureReport* return_featureReport);
 	HRESULT abi_SendOutputReportAsync(Windows.Devices.HumanInterfaceDevice.HidOutputReport outputReport, Windows.Foundation.IAsyncOperation!(UINT32)* return_operation);
 	HRESULT abi_SendFeatureReportAsync(Windows.Devices.HumanInterfaceDevice.HidFeatureReport featureReport, Windows.Foundation.IAsyncOperation!(UINT32)* return_operation);
 	HRESULT abi_GetBooleanControlDescriptions(Windows.Devices.HumanInterfaceDevice.HidReportType reportType, UINT16 usagePage, UINT16 usageId, Windows.Foundation.Collections.IVectorView!(Windows.Devices.HumanInterfaceDevice.HidBooleanControlDescription)* return_value);
@@ -82,7 +82,7 @@ interface IHidDeviceStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetDeviceSelector(UINT16 usagePage, UINT16 usageId, HSTRING* return_selector);
-	HRESULT abi_GetDeviceSelectorVidPid(UINT16 usagePage, UINT16 usageId, UINT16 vendorId, UINT16 productId, HSTRING* return_selector);
+	HRESULT abi_GetDeviceSelector(UINT16 usagePage, UINT16 usageId, UINT16 vendorId, UINT16 productId, HSTRING* return_selector);
 	HRESULT abi_FromIdAsync(HSTRING deviceId, Windows.Storage.FileAccessMode accessMode, Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidDevice)* return_hidDevice);
 }
 
@@ -330,10 +330,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.HumanInterfaceDevice.IHidDevice)this.asInterface(uuid("5f8a14e7-2200-432e-95da-d09b87d574a8"))).abi_GetInputReportAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidInputReport) GetInputReportByIdAsync(UINT16 reportId)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidInputReport) GetInputReportAsync(UINT16 reportId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidInputReport) _ret;
-		Debug.OK((cast(Windows.Devices.HumanInterfaceDevice.IHidDevice)this.asInterface(uuid("5f8a14e7-2200-432e-95da-d09b87d574a8"))).abi_GetInputReportByIdAsync(reportId, &_ret));
+		Debug.OK((cast(Windows.Devices.HumanInterfaceDevice.IHidDevice)this.asInterface(uuid("5f8a14e7-2200-432e-95da-d09b87d574a8"))).abi_GetInputReportAsync(reportId, &_ret));
 		return _ret;
 	}
 	alias GetInputReportAsync = GetInputReportByIdAsync;
@@ -343,10 +343,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.HumanInterfaceDevice.IHidDevice)this.asInterface(uuid("5f8a14e7-2200-432e-95da-d09b87d574a8"))).abi_GetFeatureReportAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidFeatureReport) GetFeatureReportByIdAsync(UINT16 reportId)
+	final Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidFeatureReport) GetFeatureReportAsync(UINT16 reportId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidFeatureReport) _ret;
-		Debug.OK((cast(Windows.Devices.HumanInterfaceDevice.IHidDevice)this.asInterface(uuid("5f8a14e7-2200-432e-95da-d09b87d574a8"))).abi_GetFeatureReportByIdAsync(reportId, &_ret));
+		Debug.OK((cast(Windows.Devices.HumanInterfaceDevice.IHidDevice)this.asInterface(uuid("5f8a14e7-2200-432e-95da-d09b87d574a8"))).abi_GetFeatureReportAsync(reportId, &_ret));
 		return _ret;
 	}
 	alias GetFeatureReportAsync = GetFeatureReportByIdAsync;
@@ -356,10 +356,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.HumanInterfaceDevice.IHidDevice)this.asInterface(uuid("5f8a14e7-2200-432e-95da-d09b87d574a8"))).abi_CreateOutputReport(&_ret));
 		return _ret;
 	}
-	final Windows.Devices.HumanInterfaceDevice.HidOutputReport CreateOutputReportById(UINT16 reportId)
+	final Windows.Devices.HumanInterfaceDevice.HidOutputReport CreateOutputReport(UINT16 reportId)
 	{
 		Windows.Devices.HumanInterfaceDevice.HidOutputReport _ret;
-		Debug.OK((cast(Windows.Devices.HumanInterfaceDevice.IHidDevice)this.asInterface(uuid("5f8a14e7-2200-432e-95da-d09b87d574a8"))).abi_CreateOutputReportById(reportId, &_ret));
+		Debug.OK((cast(Windows.Devices.HumanInterfaceDevice.IHidDevice)this.asInterface(uuid("5f8a14e7-2200-432e-95da-d09b87d574a8"))).abi_CreateOutputReport(reportId, &_ret));
 		return _ret;
 	}
 	alias CreateOutputReport = CreateOutputReportById;
@@ -369,10 +369,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.HumanInterfaceDevice.IHidDevice)this.asInterface(uuid("5f8a14e7-2200-432e-95da-d09b87d574a8"))).abi_CreateFeatureReport(&_ret));
 		return _ret;
 	}
-	final Windows.Devices.HumanInterfaceDevice.HidFeatureReport CreateFeatureReportById(UINT16 reportId)
+	final Windows.Devices.HumanInterfaceDevice.HidFeatureReport CreateFeatureReport(UINT16 reportId)
 	{
 		Windows.Devices.HumanInterfaceDevice.HidFeatureReport _ret;
-		Debug.OK((cast(Windows.Devices.HumanInterfaceDevice.IHidDevice)this.asInterface(uuid("5f8a14e7-2200-432e-95da-d09b87d574a8"))).abi_CreateFeatureReportById(reportId, &_ret));
+		Debug.OK((cast(Windows.Devices.HumanInterfaceDevice.IHidDevice)this.asInterface(uuid("5f8a14e7-2200-432e-95da-d09b87d574a8"))).abi_CreateFeatureReport(reportId, &_ret));
 		return _ret;
 	}
 	alias CreateFeatureReport = CreateFeatureReportById;
@@ -427,10 +427,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDeviceSelector(usagePage, usageId, &_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelectorVidPid(UINT16 usagePage, UINT16 usageId, UINT16 vendorId, UINT16 productId)
+	static HSTRING GetDeviceSelector(UINT16 usagePage, UINT16 usageId, UINT16 vendorId, UINT16 productId)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.abi_GetDeviceSelectorVidPid(usagePage, usageId, vendorId, productId, &_ret));
+		Debug.OK(staticInstance.abi_GetDeviceSelector(usagePage, usageId, vendorId, productId, &_ret));
 		return _ret;
 	}
 	alias GetDeviceSelector = GetDeviceSelectorVidPid;

@@ -8,7 +8,7 @@ interface IOnlineIdAuthenticator : IInspectable
 {
 extern(Windows):
 	HRESULT abi_AuthenticateUserAsync(Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest request, Windows.Security.Authentication.OnlineId.UserAuthenticationOperation* return_authenticationOperation);
-	HRESULT abi_AuthenticateUserAsyncAdvanced(Windows.Foundation.Collections.IIterable!(Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest) requests, Windows.Security.Authentication.OnlineId.CredentialPromptType credentialPromptType, Windows.Security.Authentication.OnlineId.UserAuthenticationOperation* return_authenticationOperation);
+	HRESULT abi_AuthenticateUserAsync(Windows.Foundation.Collections.IIterable!(Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest) requests, Windows.Security.Authentication.OnlineId.CredentialPromptType credentialPromptType, Windows.Security.Authentication.OnlineId.UserAuthenticationOperation* return_authenticationOperation);
 	HRESULT abi_SignOutUserAsync(Windows.Security.Authentication.OnlineId.SignOutUserOperation* return_signOutUserOperation);
 	HRESULT set_ApplicationId(GUID value);
 	HRESULT get_ApplicationId(GUID* return_value);
@@ -107,10 +107,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator)this.asInterface(uuid("a003f58a-29ab-4817-b884-d7516dad18b9"))).abi_AuthenticateUserAsync(request, &_ret));
 		return _ret;
 	}
-	final Windows.Security.Authentication.OnlineId.UserAuthenticationOperation AuthenticateUserAsyncAdvanced(Windows.Foundation.Collections.IIterable!(Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest) requests, Windows.Security.Authentication.OnlineId.CredentialPromptType credentialPromptType)
+	final Windows.Security.Authentication.OnlineId.UserAuthenticationOperation AuthenticateUserAsync(Windows.Foundation.Collections.IIterable!(Windows.Security.Authentication.OnlineId.OnlineIdServiceTicketRequest) requests, Windows.Security.Authentication.OnlineId.CredentialPromptType credentialPromptType)
 	{
 		Windows.Security.Authentication.OnlineId.UserAuthenticationOperation _ret;
-		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator)this.asInterface(uuid("a003f58a-29ab-4817-b884-d7516dad18b9"))).abi_AuthenticateUserAsyncAdvanced(requests, credentialPromptType, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.OnlineId.IOnlineIdAuthenticator)this.asInterface(uuid("a003f58a-29ab-4817-b884-d7516dad18b9"))).abi_AuthenticateUserAsync(requests, credentialPromptType, &_ret));
 		return _ret;
 	}
 	alias AuthenticateUserAsync = AuthenticateUserAsyncAdvanced;

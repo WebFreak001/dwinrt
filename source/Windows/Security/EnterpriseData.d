@@ -53,7 +53,7 @@ extern(Windows):
 	HRESULT abi_GetProtectionInfoAsync(Windows.Storage.IStorageItem source, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.FileProtectionInfo)* return_result);
 	HRESULT abi_SaveFileAsContainerAsync(Windows.Storage.IStorageFile protectedFile, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedContainerExportResult)* return_result);
 	HRESULT abi_LoadFileFromContainerAsync(Windows.Storage.IStorageFile containerFile, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedContainerImportResult)* return_result);
-	HRESULT abi_LoadFileFromContainerWithTargetAsync(Windows.Storage.IStorageFile containerFile, Windows.Storage.IStorageItem target, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedContainerImportResult)* return_result);
+	HRESULT abi_LoadFileFromContainerAsync(Windows.Storage.IStorageFile containerFile, Windows.Storage.IStorageItem target, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedContainerImportResult)* return_result);
 	HRESULT abi_CreateProtectedAndOpenAsync(Windows.Storage.IStorageFolder parentFolder, HSTRING desiredName, HSTRING identity, Windows.Storage.CreationCollisionOption collisionOption, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedFileCreateResult)* return_result);
 }
 
@@ -63,8 +63,8 @@ interface IFileProtectionManagerStatics2 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_IsContainerAsync(Windows.Storage.IStorageFile file, Windows.Foundation.IAsyncOperation!(bool)* return_result);
-	HRESULT abi_LoadFileFromContainerWithTargetAndNameCollisionOptionAsync(Windows.Storage.IStorageFile containerFile, Windows.Storage.IStorageItem target, Windows.Storage.NameCollisionOption collisionOption, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedContainerImportResult)* return_result);
-	HRESULT abi_SaveFileAsContainerWithSharingAsync(Windows.Storage.IStorageFile protectedFile, Windows.Foundation.Collections.IIterable!(HSTRING) sharedWithIdentities, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedContainerExportResult)* return_result);
+	HRESULT abi_LoadFileFromContainerAsync(Windows.Storage.IStorageFile containerFile, Windows.Storage.IStorageItem target, Windows.Storage.NameCollisionOption collisionOption, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedContainerImportResult)* return_result);
+	HRESULT abi_SaveFileAsContainerAsync(Windows.Storage.IStorageFile protectedFile, Windows.Foundation.Collections.IIterable!(HSTRING) sharedWithIdentities, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedContainerExportResult)* return_result);
 }
 
 @uuid("6918849a-624f-46d6-b241-e9cd5fdf3e3f")
@@ -73,7 +73,7 @@ interface IFileProtectionManagerStatics3 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_UnprotectAsync(Windows.Storage.IStorageItem target, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.FileProtectionInfo)* return_result);
-	HRESULT abi_UnprotectWithOptionsAsync(Windows.Storage.IStorageItem target, Windows.Security.EnterpriseData.FileUnprotectOptions options, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.FileProtectionInfo)* return_result);
+	HRESULT abi_UnprotectAsync(Windows.Storage.IStorageItem target, Windows.Security.EnterpriseData.FileUnprotectOptions options, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.FileProtectionInfo)* return_result);
 }
 
 @uuid("256bbc3d-1c5d-4260-8c75-9144cfb78ba9")
@@ -247,10 +247,10 @@ extern(Windows):
 interface IProtectionPolicyManagerStatics3 : IInspectable
 {
 extern(Windows):
-	HRESULT abi_RequestAccessWithAuditingInfoAsync(HSTRING sourceIdentity, HSTRING targetIdentity, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo auditInfo, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_result);
-	HRESULT abi_RequestAccessWithMessageAsync(HSTRING sourceIdentity, HSTRING targetIdentity, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo auditInfo, HSTRING messageFromApp, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_result);
-	HRESULT abi_RequestAccessForAppWithAuditingInfoAsync(HSTRING sourceIdentity, HSTRING appPackageFamilyName, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo auditInfo, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_result);
-	HRESULT abi_RequestAccessForAppWithMessageAsync(HSTRING sourceIdentity, HSTRING appPackageFamilyName, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo auditInfo, HSTRING messageFromApp, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_result);
+	HRESULT abi_RequestAccessAsync(HSTRING sourceIdentity, HSTRING targetIdentity, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo auditInfo, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_result);
+	HRESULT abi_RequestAccessAsync(HSTRING sourceIdentity, HSTRING targetIdentity, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo auditInfo, HSTRING messageFromApp, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_result);
+	HRESULT abi_RequestAccessForAppAsync(HSTRING sourceIdentity, HSTRING appPackageFamilyName, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo auditInfo, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_result);
+	HRESULT abi_RequestAccessForAppAsync(HSTRING sourceIdentity, HSTRING appPackageFamilyName, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo auditInfo, HSTRING messageFromApp, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_result);
 	HRESULT abi_LogAuditEvent(HSTRING sourceIdentity, HSTRING targetIdentity, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo auditInfo);
 }
 
@@ -260,12 +260,12 @@ interface IProtectionPolicyManagerStatics4 : IInspectable
 {
 extern(Windows):
 	HRESULT abi_IsRoamableProtectionEnabled(HSTRING identity, bool* return_value);
-	HRESULT abi_RequestAccessWithBehaviorAsync(HSTRING sourceIdentity, HSTRING targetIdentity, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo auditInfo, HSTRING messageFromApp, Windows.Security.EnterpriseData.ProtectionPolicyRequestAccessBehavior behavior, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_result);
-	HRESULT abi_RequestAccessForAppWithBehaviorAsync(HSTRING sourceIdentity, HSTRING appPackageFamilyName, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo auditInfo, HSTRING messageFromApp, Windows.Security.EnterpriseData.ProtectionPolicyRequestAccessBehavior behavior, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_result);
+	HRESULT abi_RequestAccessAsync(HSTRING sourceIdentity, HSTRING targetIdentity, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo auditInfo, HSTRING messageFromApp, Windows.Security.EnterpriseData.ProtectionPolicyRequestAccessBehavior behavior, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_result);
+	HRESULT abi_RequestAccessForAppAsync(HSTRING sourceIdentity, HSTRING appPackageFamilyName, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo auditInfo, HSTRING messageFromApp, Windows.Security.EnterpriseData.ProtectionPolicyRequestAccessBehavior behavior, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_result);
 	HRESULT abi_RequestAccessToFilesForAppAsync(Windows.Foundation.Collections.IIterable!(Windows.Storage.IStorageItem) sourceItemList, HSTRING appPackageFamilyName, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo auditInfo, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_result);
-	HRESULT abi_RequestAccessToFilesForAppWithMessageAndBehaviorAsync(Windows.Foundation.Collections.IIterable!(Windows.Storage.IStorageItem) sourceItemList, HSTRING appPackageFamilyName, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo auditInfo, HSTRING messageFromApp, Windows.Security.EnterpriseData.ProtectionPolicyRequestAccessBehavior behavior, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_result);
+	HRESULT abi_RequestAccessToFilesForAppAsync(Windows.Foundation.Collections.IIterable!(Windows.Storage.IStorageItem) sourceItemList, HSTRING appPackageFamilyName, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo auditInfo, HSTRING messageFromApp, Windows.Security.EnterpriseData.ProtectionPolicyRequestAccessBehavior behavior, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_result);
 	HRESULT abi_RequestAccessToFilesForProcessAsync(Windows.Foundation.Collections.IIterable!(Windows.Storage.IStorageItem) sourceItemList, UINT32 processId, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo auditInfo, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_result);
-	HRESULT abi_RequestAccessToFilesForProcessWithMessageAndBehaviorAsync(Windows.Foundation.Collections.IIterable!(Windows.Storage.IStorageItem) sourceItemList, UINT32 processId, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo auditInfo, HSTRING messageFromApp, Windows.Security.EnterpriseData.ProtectionPolicyRequestAccessBehavior behavior, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_result);
+	HRESULT abi_RequestAccessToFilesForProcessAsync(Windows.Foundation.Collections.IIterable!(Windows.Storage.IStorageItem) sourceItemList, UINT32 processId, Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo auditInfo, HSTRING messageFromApp, Windows.Security.EnterpriseData.ProtectionPolicyRequestAccessBehavior behavior, Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectionPolicyEvaluationResult)* return_result);
 	HRESULT abi_IsFileProtectionRequiredAsync(Windows.Storage.IStorageItem target, HSTRING identity, Windows.Foundation.IAsyncOperation!(bool)* return_result);
 	HRESULT abi_IsFileProtectionRequiredForNewFileAsync(Windows.Storage.IStorageFolder parentFolder, HSTRING identity, HSTRING desiredName, Windows.Foundation.IAsyncOperation!(bool)* return_result);
 	HRESULT get_PrimaryManagedIdentity(HSTRING* return_value);
@@ -419,10 +419,10 @@ interface FileProtectionManager
 		Debug.OK(staticInstance.abi_LoadFileFromContainerAsync(containerFile, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedContainerImportResult) LoadFileFromContainerWithTargetAsync(Windows.Storage.IStorageFile containerFile, Windows.Storage.IStorageItem target)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedContainerImportResult) LoadFileFromContainerAsync(Windows.Storage.IStorageFile containerFile, Windows.Storage.IStorageItem target)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.EnterpriseData.ProtectedContainerImportResult) _ret;
-		Debug.OK(staticInstance.abi_LoadFileFromContainerWithTargetAsync(containerFile, target, &_ret));
+		Debug.OK(staticInstance.abi_LoadFileFromContainerAsync(containerFile, target, &_ret));
 		return _ret;
 	}
 	alias LoadFileFromContainerAsync = LoadFileFromContainerWithTargetAsync;

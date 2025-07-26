@@ -54,7 +54,7 @@ extern(Windows):
 	HRESULT get_SupportedDiscoveryTypes(Windows.Networking.Proximity.PeerDiscoveryTypes* return_value);
 	HRESULT get_AlternateIdentities(Windows.Foundation.Collections.IMap!(HSTRING, HSTRING)* return_value);
 	HRESULT abi_Start();
-	HRESULT abi_StartWithMessage(HSTRING peerMessage);
+	HRESULT abi_Start(HSTRING peerMessage);
 	HRESULT abi_Stop();
 	HRESULT add_TriggeredConnectionStateChanged(Windows.Foundation.TypedEventHandler!(IInspectable, Windows.Networking.Proximity.TriggeredConnectionStateChangedEventArgs) handler, EventRegistrationToken* return_cookie);
 	HRESULT remove_TriggeredConnectionStateChanged(EventRegistrationToken cookie);
@@ -129,11 +129,11 @@ interface IProximityDevice : IInspectable
 extern(Windows):
 	HRESULT abi_SubscribeForMessage(HSTRING messageType, Windows.Networking.Proximity.MessageReceivedHandler messageReceivedHandler, INT64* return_subscriptionId);
 	HRESULT abi_PublishMessage(HSTRING messageType, HSTRING message, INT64* return_messageId);
-	HRESULT abi_PublishMessageWithCallback(HSTRING messageType, HSTRING message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler, INT64* return_messageId);
+	HRESULT abi_PublishMessage(HSTRING messageType, HSTRING message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler, INT64* return_messageId);
 	HRESULT abi_PublishBinaryMessage(HSTRING messageType, Windows.Storage.Streams.IBuffer message, INT64* return_messageId);
-	HRESULT abi_PublishBinaryMessageWithCallback(HSTRING messageType, Windows.Storage.Streams.IBuffer message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler, INT64* return_messageId);
+	HRESULT abi_PublishBinaryMessage(HSTRING messageType, Windows.Storage.Streams.IBuffer message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler, INT64* return_messageId);
 	HRESULT abi_PublishUriMessage(Windows.Foundation.Uri message, INT64* return_messageId);
-	HRESULT abi_PublishUriMessageWithCallback(Windows.Foundation.Uri message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler, INT64* return_messageId);
+	HRESULT abi_PublishUriMessage(Windows.Foundation.Uri message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler, INT64* return_messageId);
 	HRESULT abi_StopSubscribingForMessage(INT64 subscriptionId);
 	HRESULT abi_StopPublishingMessage(INT64 messageId);
 	HRESULT add_DeviceArrived(Windows.Networking.Proximity.DeviceArrivedEventHandler arrivedHandler, EventRegistrationToken* return_cookie);
@@ -251,9 +251,9 @@ interface PeerFinder
 	{
 		Debug.OK(staticInstance.abi_Start());
 	}
-	static void StartWithMessage(HSTRING peerMessage)
+	static void Start(HSTRING peerMessage)
 	{
-		Debug.OK(staticInstance.abi_StartWithMessage(peerMessage));
+		Debug.OK(staticInstance.abi_Start(peerMessage));
 	}
 	alias Start = StartWithMessage;
 	static void Stop()
@@ -413,10 +413,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishMessage(messageType, message, &_ret));
 		return _ret;
 	}
-	final INT64 PublishMessageWithCallback(HSTRING messageType, HSTRING message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler)
+	final INT64 PublishMessage(HSTRING messageType, HSTRING message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler)
 	{
 		INT64 _ret;
-		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishMessageWithCallback(messageType, message, messageTransmittedHandler, &_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishMessage(messageType, message, messageTransmittedHandler, &_ret));
 		return _ret;
 	}
 	alias PublishMessage = PublishMessageWithCallback;
@@ -426,10 +426,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishBinaryMessage(messageType, message, &_ret));
 		return _ret;
 	}
-	final INT64 PublishBinaryMessageWithCallback(HSTRING messageType, Windows.Storage.Streams.IBuffer message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler)
+	final INT64 PublishBinaryMessage(HSTRING messageType, Windows.Storage.Streams.IBuffer message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler)
 	{
 		INT64 _ret;
-		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishBinaryMessageWithCallback(messageType, message, messageTransmittedHandler, &_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishBinaryMessage(messageType, message, messageTransmittedHandler, &_ret));
 		return _ret;
 	}
 	alias PublishBinaryMessage = PublishBinaryMessageWithCallback;
@@ -439,10 +439,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishUriMessage(message, &_ret));
 		return _ret;
 	}
-	final INT64 PublishUriMessageWithCallback(Windows.Foundation.Uri message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler)
+	final INT64 PublishUriMessage(Windows.Foundation.Uri message, Windows.Networking.Proximity.MessageTransmittedHandler messageTransmittedHandler)
 	{
 		INT64 _ret;
-		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishUriMessageWithCallback(message, messageTransmittedHandler, &_ret));
+		Debug.OK((cast(Windows.Networking.Proximity.IProximityDevice)this.asInterface(uuid("efa8a552-f6e1-4329-a0fc-ab6b0fd28262"))).abi_PublishUriMessage(message, messageTransmittedHandler, &_ret));
 		return _ret;
 	}
 	alias PublishUriMessage = PublishUriMessageWithCallback;

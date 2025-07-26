@@ -53,8 +53,8 @@ interface IWebAccountManagerStatics3 : IInspectable
 extern(Windows):
 	HRESULT abi_FindAllProviderWebAccountsForUserAsync(Windows.System.User user, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Security.Credentials.WebAccount))* return_operation);
 	HRESULT abi_AddWebAccountForUserAsync(Windows.System.User user, HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) props, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_operation);
-	HRESULT abi_AddWebAccountWithScopeForUserAsync(Windows.System.User user, HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) props, Windows.Security.Authentication.Web.Provider.WebAccountScope scope_, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_operation);
-	HRESULT abi_AddWebAccountWithScopeAndMapForUserAsync(Windows.System.User user, HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) props, Windows.Security.Authentication.Web.Provider.WebAccountScope scope_, HSTRING perUserWebAccountId, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_operation);
+	HRESULT abi_AddWebAccountForUserAsync(Windows.System.User user, HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) props, Windows.Security.Authentication.Web.Provider.WebAccountScope scope_, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_operation);
+	HRESULT abi_AddWebAccountForUserAsync(Windows.System.User user, HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) props, Windows.Security.Authentication.Web.Provider.WebAccountScope scope_, HSTRING perUserWebAccountId, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_operation);
 }
 
 @uuid("e8fa446f-3a1b-48a4-8e90-1e59ca6f54db")
@@ -62,7 +62,7 @@ extern(Windows):
 interface IWebAccountMapManagerStatics : IInspectable
 {
 extern(Windows):
-	HRESULT abi_AddWebAccountWithScopeAndMapAsync(HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) props, Windows.Security.Authentication.Web.Provider.WebAccountScope scope_, HSTRING perUserWebAccountId, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_asyncInfo);
+	HRESULT abi_AddWebAccountAsync(HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) props, Windows.Security.Authentication.Web.Provider.WebAccountScope scope_, HSTRING perUserWebAccountId, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_asyncInfo);
 	HRESULT abi_SetPerAppToPerUserAccountAsync(Windows.Security.Credentials.WebAccount perAppAccount, HSTRING perUserWebAccountId, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_GetPerUserFromPerAppAccountAsync(Windows.Security.Credentials.WebAccount perAppAccount, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_asyncInfo);
 	HRESULT abi_ClearPerUserFromPerAppAccountAsync(Windows.Security.Credentials.WebAccount perAppAccount, Windows.Foundation.IAsyncAction* return_asyncInfo);
@@ -150,7 +150,7 @@ interface IWebAccountProviderSilentReportOperation_Base : IInspectable
 {
 extern(Windows):
 	HRESULT abi_ReportUserInteractionRequired();
-	HRESULT abi_ReportUserInteractionRequiredWithError(Windows.Security.Authentication.Web.Core.WebProviderError value);
+	HRESULT abi_ReportUserInteractionRequired(Windows.Security.Authentication.Web.Core.WebProviderError value);
 }
 @uuid("e0b545f8-3b0f-44da-924c-7b18baaa62a9")
 interface IWebAccountProviderSilentReportOperation : IWebAccountProviderSilentReportOperation_Base, Windows.Security.Authentication.Web.Provider.IWebAccountProviderBaseReportOperation {}
@@ -197,7 +197,7 @@ interface IWebAccountProviderUIReportOperation : IWebAccountProviderUIReportOper
 interface IWebAccountScopeManagerStatics : IInspectable
 {
 extern(Windows):
-	HRESULT abi_AddWebAccountWithScopeAsync(HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) props, Windows.Security.Authentication.Web.Provider.WebAccountScope scope_, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_asyncInfo);
+	HRESULT abi_AddWebAccountAsync(HSTRING webAccountId, HSTRING webAccountUserName, Windows.Foundation.Collections.IMapView!(HSTRING, HSTRING) props, Windows.Security.Authentication.Web.Provider.WebAccountScope scope_, Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount)* return_asyncInfo);
 	HRESULT abi_SetScopeAsync(Windows.Security.Credentials.WebAccount webAccount, Windows.Security.Authentication.Web.Provider.WebAccountScope scope_, Windows.Foundation.IAsyncAction* return_asyncInfo);
 	HRESULT abi_GetScope(Windows.Security.Credentials.WebAccount webAccount, Windows.Security.Authentication.Web.Provider.WebAccountScope* return_scope_);
 }
@@ -420,9 +420,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderSilentReportOperation)this.asInterface(uuid("e0b545f8-3b0f-44da-924c-7b18baaa62a9"))).abi_ReportUserInteractionRequired());
 	}
-	final void ReportUserInteractionRequiredWithError(Windows.Security.Authentication.Web.Core.WebProviderError value)
+	final void ReportUserInteractionRequired(Windows.Security.Authentication.Web.Core.WebProviderError value)
 	{
-		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderSilentReportOperation)this.asInterface(uuid("e0b545f8-3b0f-44da-924c-7b18baaa62a9"))).abi_ReportUserInteractionRequiredWithError(value));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Provider.IWebAccountProviderSilentReportOperation)this.asInterface(uuid("e0b545f8-3b0f-44da-924c-7b18baaa62a9"))).abi_ReportUserInteractionRequired(value));
 	}
 	alias ReportUserInteractionRequired = ReportUserInteractionRequiredWithError;
 	final void ReportCompleted()

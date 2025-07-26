@@ -120,7 +120,7 @@ interface IXamlMetadataProvider : IInspectable
 {
 extern(Windows):
 	HRESULT abi_GetXamlType(Windows.UI.Xaml.Interop.TypeName type, Windows.UI.Xaml.Markup.IXamlType* return_xamlType);
-	HRESULT abi_GetXamlTypeByFullName(HSTRING fullName, Windows.UI.Xaml.Markup.IXamlType* return_xamlType);
+	HRESULT abi_GetXamlType(HSTRING fullName, Windows.UI.Xaml.Markup.IXamlType* return_xamlType);
 	HRESULT abi_GetXmlnsDefinitions(UINT32* out___definitionsSize, Windows.UI.Xaml.Markup.XmlnsDefinition** return_definitions);
 }
 

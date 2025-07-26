@@ -122,11 +122,11 @@ extern(Windows):
 	HRESULT abi_ClearAsync(Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_GetWalletItemAsync(HSTRING id, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.WalletItem)* return_operation);
 	HRESULT abi_GetItemsAsync(Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Wallet.WalletItem))* return_operation);
-	HRESULT abi_GetItemsWithKindAsync(Windows.ApplicationModel.Wallet.WalletItemKind kind, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Wallet.WalletItem))* return_operation);
+	HRESULT abi_GetItemsAsync(Windows.ApplicationModel.Wallet.WalletItemKind kind, Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Wallet.WalletItem))* return_operation);
 	HRESULT abi_ImportItemAsync(Windows.Storage.Streams.IRandomAccessStreamReference stream, Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.WalletItem)* return_operation);
 	HRESULT abi_DeleteAsync(HSTRING id, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_ShowAsync(Windows.Foundation.IAsyncAction* return_operation);
-	HRESULT abi_ShowItemAsync(HSTRING id, Windows.Foundation.IAsyncAction* return_operation);
+	HRESULT abi_ShowAsync(HSTRING id, Windows.Foundation.IAsyncAction* return_operation);
 	HRESULT abi_UpdateAsync(Windows.ApplicationModel.Wallet.WalletItem item, Windows.Foundation.IAsyncAction* return_operation);
 }
 
@@ -598,10 +598,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemStore)this.asInterface(uuid("7160484b-6d49-48f8-91a9-40a1d0f13ef4"))).abi_GetItemsAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Wallet.WalletItem)) GetItemsWithKindAsync(Windows.ApplicationModel.Wallet.WalletItemKind kind)
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Wallet.WalletItem)) GetItemsAsync(Windows.ApplicationModel.Wallet.WalletItemKind kind)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Wallet.WalletItem)) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemStore)this.asInterface(uuid("7160484b-6d49-48f8-91a9-40a1d0f13ef4"))).abi_GetItemsWithKindAsync(kind, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemStore)this.asInterface(uuid("7160484b-6d49-48f8-91a9-40a1d0f13ef4"))).abi_GetItemsAsync(kind, &_ret));
 		return _ret;
 	}
 	alias GetItemsAsync = GetItemsWithKindAsync;
@@ -623,10 +623,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemStore)this.asInterface(uuid("7160484b-6d49-48f8-91a9-40a1d0f13ef4"))).abi_ShowAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction ShowItemAsync(HSTRING id)
+	final Windows.Foundation.IAsyncAction ShowAsync(HSTRING id)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemStore)this.asInterface(uuid("7160484b-6d49-48f8-91a9-40a1d0f13ef4"))).abi_ShowItemAsync(id, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemStore)this.asInterface(uuid("7160484b-6d49-48f8-91a9-40a1d0f13ef4"))).abi_ShowAsync(id, &_ret));
 		return _ret;
 	}
 	alias ShowAsync = ShowItemAsync;

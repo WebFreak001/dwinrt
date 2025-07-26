@@ -145,17 +145,17 @@ interface IMediaExtensionManager : IInspectable
 {
 extern(Windows):
 	HRESULT abi_RegisterSchemeHandler(HSTRING activatableClassId, HSTRING scheme);
-	HRESULT abi_RegisterSchemeHandlerWithSettings(HSTRING activatableClassId, HSTRING scheme, Windows.Foundation.Collections.IPropertySet configuration);
+	HRESULT abi_RegisterSchemeHandler(HSTRING activatableClassId, HSTRING scheme, Windows.Foundation.Collections.IPropertySet configuration);
 	HRESULT abi_RegisterByteStreamHandler(HSTRING activatableClassId, HSTRING fileExtension, HSTRING mimeType);
-	HRESULT abi_RegisterByteStreamHandlerWithSettings(HSTRING activatableClassId, HSTRING fileExtension, HSTRING mimeType, Windows.Foundation.Collections.IPropertySet configuration);
+	HRESULT abi_RegisterByteStreamHandler(HSTRING activatableClassId, HSTRING fileExtension, HSTRING mimeType, Windows.Foundation.Collections.IPropertySet configuration);
 	HRESULT abi_RegisterAudioDecoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype);
-	HRESULT abi_RegisterAudioDecoderWithSettings(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration);
+	HRESULT abi_RegisterAudioDecoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration);
 	HRESULT abi_RegisterAudioEncoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype);
-	HRESULT abi_RegisterAudioEncoderWithSettings(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration);
+	HRESULT abi_RegisterAudioEncoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration);
 	HRESULT abi_RegisterVideoDecoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype);
-	HRESULT abi_RegisterVideoDecoderWithSettings(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration);
+	HRESULT abi_RegisterVideoDecoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration);
 	HRESULT abi_RegisterVideoEncoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype);
-	HRESULT abi_RegisterVideoEncoderWithSettings(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration);
+	HRESULT abi_RegisterVideoEncoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration);
 }
 
 @uuid("5bcebf47-4043-4fed-acaf-54ec29dfb1f7")
@@ -851,54 +851,54 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterSchemeHandler(activatableClassId, scheme));
 	}
-	final void RegisterSchemeHandlerWithSettings(HSTRING activatableClassId, HSTRING scheme, Windows.Foundation.Collections.IPropertySet configuration)
+	final void RegisterSchemeHandler(HSTRING activatableClassId, HSTRING scheme, Windows.Foundation.Collections.IPropertySet configuration)
 	{
-		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterSchemeHandlerWithSettings(activatableClassId, scheme, configuration));
+		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterSchemeHandler(activatableClassId, scheme, configuration));
 	}
 	alias RegisterSchemeHandler = RegisterSchemeHandlerWithSettings;
 	final void RegisterByteStreamHandler(HSTRING activatableClassId, HSTRING fileExtension, HSTRING mimeType)
 	{
 		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterByteStreamHandler(activatableClassId, fileExtension, mimeType));
 	}
-	final void RegisterByteStreamHandlerWithSettings(HSTRING activatableClassId, HSTRING fileExtension, HSTRING mimeType, Windows.Foundation.Collections.IPropertySet configuration)
+	final void RegisterByteStreamHandler(HSTRING activatableClassId, HSTRING fileExtension, HSTRING mimeType, Windows.Foundation.Collections.IPropertySet configuration)
 	{
-		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterByteStreamHandlerWithSettings(activatableClassId, fileExtension, mimeType, configuration));
+		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterByteStreamHandler(activatableClassId, fileExtension, mimeType, configuration));
 	}
 	alias RegisterByteStreamHandler = RegisterByteStreamHandlerWithSettings;
 	final void RegisterAudioDecoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype)
 	{
 		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterAudioDecoder(activatableClassId, inputSubtype, outputSubtype));
 	}
-	final void RegisterAudioDecoderWithSettings(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration)
+	final void RegisterAudioDecoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration)
 	{
-		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterAudioDecoderWithSettings(activatableClassId, inputSubtype, outputSubtype, configuration));
+		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterAudioDecoder(activatableClassId, inputSubtype, outputSubtype, configuration));
 	}
 	alias RegisterAudioDecoder = RegisterAudioDecoderWithSettings;
 	final void RegisterAudioEncoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype)
 	{
 		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterAudioEncoder(activatableClassId, inputSubtype, outputSubtype));
 	}
-	final void RegisterAudioEncoderWithSettings(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration)
+	final void RegisterAudioEncoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration)
 	{
-		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterAudioEncoderWithSettings(activatableClassId, inputSubtype, outputSubtype, configuration));
+		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterAudioEncoder(activatableClassId, inputSubtype, outputSubtype, configuration));
 	}
 	alias RegisterAudioEncoder = RegisterAudioEncoderWithSettings;
 	final void RegisterVideoDecoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype)
 	{
 		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterVideoDecoder(activatableClassId, inputSubtype, outputSubtype));
 	}
-	final void RegisterVideoDecoderWithSettings(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration)
+	final void RegisterVideoDecoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration)
 	{
-		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterVideoDecoderWithSettings(activatableClassId, inputSubtype, outputSubtype, configuration));
+		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterVideoDecoder(activatableClassId, inputSubtype, outputSubtype, configuration));
 	}
 	alias RegisterVideoDecoder = RegisterVideoDecoderWithSettings;
 	final void RegisterVideoEncoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype)
 	{
 		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterVideoEncoder(activatableClassId, inputSubtype, outputSubtype));
 	}
-	final void RegisterVideoEncoderWithSettings(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration)
+	final void RegisterVideoEncoder(HSTRING activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows.Foundation.Collections.IPropertySet configuration)
 	{
-		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterVideoEncoderWithSettings(activatableClassId, inputSubtype, outputSubtype, configuration));
+		Debug.OK((cast(Windows.Media.IMediaExtensionManager)this.asInterface(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff"))).abi_RegisterVideoEncoder(activatableClassId, inputSubtype, outputSubtype, configuration));
 	}
 	alias RegisterVideoEncoder = RegisterVideoEncoderWithSettings;
 	final void RegisterMediaExtensionForAppService(Windows.Media.IMediaExtension extension, Windows.ApplicationModel.AppService.AppServiceConnection connection)

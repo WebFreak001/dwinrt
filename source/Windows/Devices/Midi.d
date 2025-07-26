@@ -262,7 +262,7 @@ interface IMidiSynthesizerStatics : IInspectable
 {
 extern(Windows):
 	HRESULT abi_CreateAsync(Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiSynthesizer)* return_value);
-	HRESULT abi_CreateFromAudioDeviceAsync(Windows.Devices.Enumeration.DeviceInformation audioDevice, Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiSynthesizer)* return_value);
+	HRESULT abi_CreateAsync(Windows.Devices.Enumeration.DeviceInformation audioDevice, Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiSynthesizer)* return_value);
 	HRESULT abi_IsSynthesizer(Windows.Devices.Enumeration.DeviceInformation midiDevice, bool* return_value);
 }
 
@@ -947,10 +947,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateAsync(&_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiSynthesizer) CreateFromAudioDeviceAsync(Windows.Devices.Enumeration.DeviceInformation audioDevice)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiSynthesizer) CreateAsync(Windows.Devices.Enumeration.DeviceInformation audioDevice)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiSynthesizer) _ret;
-		Debug.OK(staticInstance.abi_CreateFromAudioDeviceAsync(audioDevice, &_ret));
+		Debug.OK(staticInstance.abi_CreateAsync(audioDevice, &_ret));
 		return _ret;
 	}
 	alias CreateAsync = CreateFromAudioDeviceAsync;
