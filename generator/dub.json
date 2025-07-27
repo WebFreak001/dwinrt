@@ -2,7 +2,8 @@
 	"targetType": "executable",
 	"dependencies": {
 		"pegged": "~>0.4.9",
-		"sha1ct": "~>1.0.0"
+		"sha1ct": "~>1.0.0",
+		"idl" : { "path" : "./idl"}
 	},
 	"name": "generator",
 	"sourceFiles-linux": [
@@ -19,6 +20,5 @@
 		"../source",
 		"idl/source"
 	],
-	"dflags": ["-preview=bitfields"],
-	"subPackages": ["idl"]
+	"dflags": ["-preview=bitfields"]
 }
