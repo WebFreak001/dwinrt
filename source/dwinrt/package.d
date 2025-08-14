@@ -1307,6 +1307,12 @@ auto make(T, Args...)(Args args)
 	}
 }
 
+@uuid("3E68D4BD-7135-4D10-8018-9FB6D9F33FA1")
+interface IInitializeWithWindow : IUnknown
+{
+	HRESULT Initialize(HWND hwnd);
+}
+
 enum bitflags;
 
 public static import Windows.Foundation.Collections;
