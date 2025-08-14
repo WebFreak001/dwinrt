@@ -63,12 +63,20 @@ interface EventHandler(TArgs) : IUnknown
 {
 extern(Windows):
 	HRESULT abi_Invoke(IInspectable sender, TArgs args);
+	final void Invoke(IInspectable sender, TArgs args)
+	{
+		Debug.OK((cast(Windows.Foundation.EventHandler!(TArgs))this).abi_Invoke(sender, args));
+	}
 }
 
 interface TypedEventHandler(TSender, TArgs) : IUnknown
 {
 extern(Windows):
 	HRESULT abi_Invoke(TSender sender, TArgs args);
+	final void Invoke(TSender sender, TArgs args)
+	{
+		Debug.OK((cast(Windows.Foundation.TypedEventHandler!(TSender, TArgs))this).abi_Invoke(sender, args));
+	}
 }
 
 interface IAsyncActionWithProgress(TProgress) : IInspectable
@@ -76,6 +84,10 @@ interface IAsyncActionWithProgress(TProgress) : IInspectable
 extern(Windows):
 	HRESULT set_Progress(Windows.Foundation.AsyncActionProgressHandler!(TProgress) handler);
 	HRESULT get_Progress(Windows.Foundation.AsyncActionProgressHandler!(TProgress)* return_handler);
+	final void Progress(Windows.Foundation.AsyncActionProgressHandler!(TProgress) handler)
+	{
+		Debug.OK((cast(Windows.Foundation.IAsyncActionWithProgress!(TProgress))this).set_Progress(handler));
+	}
 	final Windows.Foundation.AsyncActionProgressHandler!(TProgress) Progress()
 	{
 		Windows.Foundation.AsyncActionProgressHandler!(TProgress) _ret;
@@ -88,12 +100,20 @@ interface AsyncActionProgressHandler(TProgress) : IUnknown
 {
 extern(Windows):
 	HRESULT abi_Invoke(Windows.Foundation.IAsyncActionWithProgress!(TProgress) asyncInfo, TProgress progressInfo);
+	final void Invoke(Windows.Foundation.IAsyncActionWithProgress!(TProgress) asyncInfo, TProgress progressInfo)
+	{
+		Debug.OK((cast(Windows.Foundation.AsyncActionProgressHandler!(TProgress))this).abi_Invoke(asyncInfo, progressInfo));
+	}
 }
 
 interface AsyncActionWithProgressCompletedHandler(TProgress) : IUnknown
 {
 extern(Windows):
 	HRESULT abi_Invoke(Windows.Foundation.IAsyncActionWithProgress!(TProgress) asyncInfo, AsyncStatus status);
+	final void Invoke(Windows.Foundation.IAsyncActionWithProgress!(TProgress) asyncInfo, AsyncStatus status)
+	{
+		Debug.OK((cast(Windows.Foundation.AsyncActionWithProgressCompletedHandler!(TProgress))this).abi_Invoke(asyncInfo, status));
+	}
 }
 
 interface IAsyncOperation_Base(TResult) : IInspectable
@@ -102,6 +122,10 @@ extern(Windows):
 	HRESULT set_Completed(Windows.Foundation.AsyncOperationCompletedHandler!(TResult) handler);
 	HRESULT get_Completed(Windows.Foundation.AsyncOperationCompletedHandler!(TResult)* return_handler);
 	HRESULT get_Results(TResult* return_results);
+	final void Completed(Windows.Foundation.AsyncOperationCompletedHandler!(TResult) handler)
+	{
+		Debug.OK((cast(Windows.Foundation.IAsyncOperation!(TResult))this).set_Completed(handler));
+	}
 	final Windows.Foundation.AsyncOperationCompletedHandler!(TResult) Completed()
 	{
 		Windows.Foundation.AsyncOperationCompletedHandler!(TResult) _ret;
@@ -121,12 +145,20 @@ interface AsyncOperationProgressHandler(TResult, TProgress) : IUnknown
 {
 extern(Windows):
 	HRESULT abi_Invoke(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, TProgress progressInfo);
+	final void Invoke(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, TProgress progressInfo)
+	{
+		Debug.OK((cast(Windows.Foundation.AsyncOperationProgressHandler!(TResult, TProgress))this).abi_Invoke(asyncInfo, progressInfo));
+	}
 }
 
 interface AsyncOperationCompletedHandler(TResult) : IUnknown
 {
 extern(Windows):
 	HRESULT abi_Invoke(Windows.Foundation.IAsyncOperation!(TResult) asyncInfo, AsyncStatus status);
+	final void Invoke(Windows.Foundation.IAsyncOperation!(TResult) asyncInfo, AsyncStatus status)
+	{
+		Debug.OK((cast(Windows.Foundation.AsyncOperationCompletedHandler!(TResult))this).abi_Invoke(asyncInfo, status));
+	}
 }
 
 interface IAsyncOperationWithProgress(TResult, TProgress) : IInspectable
@@ -137,11 +169,19 @@ extern(Windows):
 	HRESULT set_Completed(Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(TResult, TProgress) handler);
 	HRESULT get_Completed(Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(TResult, TProgress)* return_handler);
 	HRESULT get_Results(TResult* return_results);
+	final void Progress(Windows.Foundation.AsyncOperationProgressHandler!(TResult, TProgress) handler)
+	{
+		Debug.OK((cast(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress))this).set_Progress(handler));
+	}
 	final Windows.Foundation.AsyncOperationProgressHandler!(TResult, TProgress) Progress()
 	{
 		Windows.Foundation.AsyncOperationProgressHandler!(TResult, TProgress) _ret;
 		Debug.OK((cast(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress))this).get_Progress(&_ret));
 		return _ret;
+	}
+	final void Completed(Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(TResult, TProgress) handler)
+	{
+		Debug.OK((cast(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress))this).set_Completed(handler));
 	}
 	final Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(TResult, TProgress) Completed()
 	{
@@ -161,6 +201,10 @@ interface AsyncOperationWithProgressCompletedHandler(TResult, TProgress) : IUnkn
 {
 extern(Windows):
 	HRESULT abi_Invoke(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, AsyncStatus status);
+	final void Invoke(Windows.Foundation.IAsyncOperationWithProgress!(TResult, TProgress) asyncInfo, AsyncStatus status)
+	{
+		Debug.OK((cast(Windows.Foundation.AsyncOperationWithProgressCompletedHandler!(TResult, TProgress))this).abi_Invoke(asyncInfo, status));
+	}
 }
 
 interface IReference(Type) : IUnknown
@@ -248,6 +292,10 @@ extern(Windows):
 		Windows.Foundation.AsyncActionCompletedHandler ret;
 		Debug.OK((cast(IAsyncAction)this.asInterface(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b"))).get_Completed(&ret));
 		return ret;
+	}
+	final void Completed(Windows.Foundation.AsyncActionCompletedHandler handler)
+	{
+		Debug.OK((cast(IAsyncAction)this.asInterface(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b"))).set_Completed(handler));
 	}
 }
 @uuid("5a648006-843a-4da9-865b-9d26e5dfad7b")
