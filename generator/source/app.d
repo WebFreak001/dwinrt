@@ -1523,7 +1523,7 @@ struct Interface
 		bool[string] alreadyWrittenMethods;
 		foreach (method; methods ~ (extra ? *extra : []))
 		{
-			string signature = method.name ~ "(" ~ method.arguments.to!(string[]).join(", ") ~ ")";
+			string signature = method.fullName ~ "(" ~ method.arguments.to!(string[]).join(", ") ~ ")";
 			if (signature !in alreadyWrittenMethods)
 			{
 				alreadyWrittenMethods[signature] = true;
