@@ -335,7 +335,7 @@ void main(string[] args)
 		}
 	}
 	// "base" directory contains .idl files in "C:\Program Files (x86)\Windows Kits\10\Include\*\winrt".
-	dirEntries(directx ? `directx\base` : `../base`, SpanMode.shallow)
+	dirEntries(directx ? `..\directx\base` : `..\base`, SpanMode.shallow)
 		.array.sort!"a < b".each!(processIDL);
 	foreach (ref mod; modules)
 		mod.fixTypes;
