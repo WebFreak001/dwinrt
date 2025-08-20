@@ -4,12 +4,13 @@
 		{
 			"type": "dub",
 			"label": "dub build generator",
+			"detail": "dub build",
 			"run": false,
 			"cwd": ".",
 			"compiler": "$current",
 			"archType": "$current",
 			"buildType": "$current",
-			"configuration": "$current",
+			"configuration": "application",
 			"problemMatcher": [
 				"$dmd"
 			],
@@ -19,6 +20,29 @@
 			"group": {
 				"kind": "build",
 				"isDefault": true
+			},
+			"presentation": {
+				"clear": true
+			}
+		},
+		{
+			"type": "dub",
+			"label": "dub test generator",
+			"detail": "dub test",
+			"run": true,
+			"cwd": ".",
+			"compiler": "$current",
+			"archType": "$current",
+			"buildType": "unittest",
+			"configuration": "unittest",
+			"problemMatcher": [
+				"$dmd"
+			],
+			"dub_args": [
+				"--parallel"
+			],
+			"group": {
+				"kind": "test"
 			},
 			"presentation": {
 				"clear": true

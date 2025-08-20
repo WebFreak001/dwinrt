@@ -3,24 +3,36 @@
 	"authors": [
 		"webfreak"
 	],
-	"targetType": "library",
-	"dependencies": {
-		"sha1ct": "~>1.0.0"
-	},
 	"description": "WinRT for D",
 	"copyright": "Copyright © 2017, webfreak",
 	"license": "MIT",
+	"configurations": [
+		{
+			"name" : "library",
+			"targetType": "library",
+			"dependencies": {
+				"sha1ct": "~>1.0.0"
+			}
+		},
+		{
+			"name" : "unittest",
+			"targetType": "library",
+			"dependencies": {
+				"sha1ct": "~>1.0.0",
+				"silly": "~>1.2.0-dev.2"
+			}
+		}
+	],
 	"lflags-x86_64": [
 		"/MANIFEST:NO",
 		"/NXCOMPAT",
 		"/PDB:dwinrt.pdb",
 		"/DYNAMICBASE",
-		"WindowsApp.lib",
 		"/MACHINE:X64",
 		"/WINMD",
 		"/APPCONTAINER",
 		"/INCREMENTAL",
-		"/SUBSYSTEM:WINDOWS",
+		"/SUBSYSTEM:CONSOLE",
 		"/ERRORREPORT:PROMPT",
 		"/NOLOGO",
 		"/WINMDFILE:dwinrt.winmd",
@@ -31,12 +43,11 @@
 		"/NXCOMPAT",
 		"/PDB:dwinrt.pdb",
 		"/DYNAMICBASE",
-		"WindowsApp.lib",
 		"/MACHINE:X86",
 		"/WINMD",
 		"/APPCONTAINER",
 		"/INCREMENTAL",
-		"/SUBSYSTEM:WINDOWS",
+		"/SUBSYSTEM:CONSOLE",
 		"/ERRORREPORT:PROMPT",
 		"/NOLOGO",
 		"/WINMDFILE:dwinrt.winmd",
