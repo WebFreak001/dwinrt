@@ -1,24 +1,33 @@
 {
-	"targetType": "executable",
-	"dependencies": {
-		"pegged": "~>0.4.9",
-		"sha1ct": "~>1.0.0",
-		"idl" : { "path" : "./idl"}
-	},
 	"name": "generator",
-	"sourceFiles-linux": [
-		"grammar.a",
-		"../dwinrt.a"
+	"configurations": [
+		{
+			"name": "application",
+			"targetType": "executable",
+			"dependencies": {
+				"pegged": "~>0.4.9",
+				"sha1ct": "~>1.0.0",
+				"idl" : { "path" : "./idl"}
+			}
+		},
+		{
+			"name": "unittest",
+			"dependencies": {
+				"pegged": "~>0.4.9",
+				"sha1ct": "~>1.0.0",
+				"idl" : { "path" : "./idl"},
+				"silly": "~>1.2.0-dev.2"
+			}
+		}
 	],
-	"sourceFiles-windows": [
-		"grammar.lib",
-		"../dwinrt.lib"
-	],
-	"workingDirectory": ".",
 	"importPaths": [
 		"../directx",
 		"../source",
-		"idl/source"
+		"./idl/source"
+	],
+	"libs" : [
+		"grammar",
+		"../dwinrt"
 	],
 	"dflags": ["-preview=bitfields"]
 }

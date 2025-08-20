@@ -1,3 +1,5 @@
+module generator;
+
 import std.algorithm;
 import std.array;
 import std.conv;
@@ -308,6 +310,7 @@ string[] blockedInterfaces = [
 string[] defines;
 bool directx;
 
+version (unittest) {} else
 void main(string[] args)
 {
 	auto res = getopt(args, "d|define", &defines, "x|directx", &directx);
@@ -490,8 +493,8 @@ void processIDL(string file)
 	if (file.extension != ".idl")
 		return;
 
-	//if (file.baseName != "windows.ui.xaml.controls.idl")
-	//	return;
+	// if (file.baseName != "windows.ui.xaml.controls.idl" || file.baseName != "windows.ui.xaml.idl")
+	// 	return;
 
 	writeln("Processing ", file);
 
