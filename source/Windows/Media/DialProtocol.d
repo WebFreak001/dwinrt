@@ -98,16 +98,16 @@ extern(Windows):
 interface DialApp : Windows.Media.DialProtocol.IDialApp
 {
 extern(Windows):
-	final HSTRING AppName()
+	final wstring AppName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.DialProtocol.IDialApp)this.asInterface(uuid("555ffbd3-45b7-49f3-bbd7-302db6084646"))).get_AppName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialAppLaunchResult) RequestLaunchAsync(HSTRING appArgument)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialAppLaunchResult) RequestLaunchAsync(wstring appArgument)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialAppLaunchResult) _ret;
-		Debug.OK((cast(Windows.Media.DialProtocol.IDialApp)this.asInterface(uuid("555ffbd3-45b7-49f3-bbd7-302db6084646"))).abi_RequestLaunchAsync(appArgument, &_ret));
+		Debug.OK((cast(Windows.Media.DialProtocol.IDialApp)this.asInterface(uuid("555ffbd3-45b7-49f3-bbd7-302db6084646"))).abi_RequestLaunchAsync(hstring(appArgument).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialAppStopResult) StopAsync()
@@ -133,34 +133,34 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.DialProtocol.IDialAppStateDetails)this.asInterface(uuid("ddc4a4a1-f5de-400d-bea4-8c8466bb2961"))).get_State(&_ret));
 		return _ret;
 	}
-	final HSTRING FullXml()
+	final wstring FullXml()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.DialProtocol.IDialAppStateDetails)this.asInterface(uuid("ddc4a4a1-f5de-400d-bea4-8c8466bb2961"))).get_FullXml(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface DialDevice : Windows.Media.DialProtocol.IDialDevice, Windows.Media.DialProtocol.IDialDevice2
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.DialProtocol.IDialDevice)this.asInterface(uuid("fff0edaf-759f-41d2-a20a-7f29ce0b3784"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final Windows.Media.DialProtocol.DialApp GetDialApp(HSTRING appName)
+	final Windows.Media.DialProtocol.DialApp GetDialApp(wstring appName)
 	{
 		Windows.Media.DialProtocol.DialApp _ret;
-		Debug.OK((cast(Windows.Media.DialProtocol.IDialDevice)this.asInterface(uuid("fff0edaf-759f-41d2-a20a-7f29ce0b3784"))).abi_GetDialApp(appName, &_ret));
+		Debug.OK((cast(Windows.Media.DialProtocol.IDialDevice)this.asInterface(uuid("fff0edaf-759f-41d2-a20a-7f29ce0b3784"))).abi_GetDialApp(hstring(appName).handle, &_ret));
 		return _ret;
 	}
-	final HSTRING FriendlyName()
+	final wstring FriendlyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.DialProtocol.IDialDevice2)this.asInterface(uuid("bab7f3d5-5bfb-4eba-8b32-b57c5c5ee5c9"))).get_FriendlyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Storage.Streams.IRandomAccessStreamReference Thumbnail()
 	{
@@ -175,16 +175,16 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.DialProtocol.IDialDeviceStatics);
 		return _staticInstance;
 	}
-	static HSTRING GetDeviceSelector(HSTRING appName)
+	static wstring GetDeviceSelector(wstring appName)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.abi_GetDeviceSelector(appName, &_ret));
-		return _ret;
+		Debug.OK(staticInstance.abi_GetDeviceSelector(hstring(appName).handle, &_ret));
+		return hstring(_ret).d_str;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialDevice) FromIdAsync(HSTRING value)
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialDevice) FromIdAsync(wstring value)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.DialProtocol.DialDevice) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(value, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(value).handle, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(bool) DeviceInfoSupportsDialAsync(Windows.Devices.Enumeration.DeviceInformation device)

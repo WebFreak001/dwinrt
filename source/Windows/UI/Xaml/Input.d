@@ -526,11 +526,11 @@ interface AccessKeyDisplayDismissedEventArgs : Windows.UI.Xaml.Input.IAccessKeyD
 interface AccessKeyDisplayRequestedEventArgs : Windows.UI.Xaml.Input.IAccessKeyDisplayRequestedEventArgs
 {
 extern(Windows):
-	final HSTRING PressedKeys()
+	final wstring PressedKeys()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Input.IAccessKeyDisplayRequestedEventArgs)this.asInterface(uuid("0c079e55-13fe-4d03-a61d-e12f06567286"))).get_PressedKeys(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static AccessKeyDisplayRequestedEventArgs New()
 	{
@@ -967,11 +967,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Input.IKeyRoutedEventArgs2)this.asInterface(uuid("1b02d57a-9634-4f14-91b2-133e42fdb3cd"))).get_OriginalKey(&_ret));
 		return _ret;
 	}
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Input.IKeyRoutedEventArgs3)this.asInterface(uuid("2779f5b4-ca41-411b-a8ef-f4fc78e78057"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 

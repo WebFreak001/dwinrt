@@ -1144,11 +1144,11 @@ extern(Windows):
 interface InkRecognizer : Windows.UI.Input.Inking.IInkRecognizer
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Input.Inking.IInkRecognizer)this.asInterface(uuid("077ccea3-904d-442a-b151-aaca3631c43b"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 

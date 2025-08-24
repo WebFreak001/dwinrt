@@ -33,28 +33,28 @@ extern(Windows):
 interface CharacterGrouping : Windows.Globalization.Collation.ICharacterGrouping
 {
 extern(Windows):
-	final HSTRING First()
+	final wstring First()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.Collation.ICharacterGrouping)this.asInterface(uuid("fae761bb-805d-4bb0-95bb-c1f7c3e8eb8e"))).get_First(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Label()
+	final wstring Label()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Globalization.Collation.ICharacterGrouping)this.asInterface(uuid("fae761bb-805d-4bb0-95bb-c1f7c3e8eb8e"))).get_Label(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface CharacterGroupings : Windows.Globalization.Collation.ICharacterGroupings, Windows.Foundation.Collections.IVectorView!(Windows.Globalization.Collation.CharacterGrouping), Windows.Foundation.Collections.IIterable!(Windows.Globalization.Collation.CharacterGrouping)
 {
 extern(Windows):
-	final HSTRING Lookup(HSTRING text)
+	final wstring Lookup(wstring text)
 	{
 		HSTRING _ret;
-		Debug.OK((cast(Windows.Globalization.Collation.ICharacterGroupings)this.asInterface(uuid("b8d20a75-d4cf-4055-80e5-ce169c226496"))).abi_Lookup(text, &_ret));
-		return _ret;
+		Debug.OK((cast(Windows.Globalization.Collation.ICharacterGroupings)this.asInterface(uuid("b8d20a75-d4cf-4055-80e5-ce169c226496"))).abi_Lookup(hstring(text).handle, &_ret));
+		return hstring(_ret).d_str;
 	}
 	final void GetAt(uint index, Windows.Globalization.Collation.CharacterGrouping* out_item)
 	{
@@ -86,11 +86,11 @@ extern(Windows):
 		Debug.OK(activationFactory!(CharacterGroupings).abi_ActivateInstance(&ret));
 		return cast(CharacterGroupings) ret;
 	}
-	static Windows.Globalization.Collation.CharacterGroupings New(HSTRING language)
+	static Windows.Globalization.Collation.CharacterGroupings New(wstring language)
 	{
 		auto factory = factory!(Windows.Globalization.Collation.ICharacterGroupingsFactory);
 		Windows.Globalization.Collation.CharacterGroupings _ret;
-		Debug.OK((cast(Windows.Globalization.Collation.ICharacterGroupingsFactory)factory.asInterface(uuid("99ea9fd9-886d-4401-9f98-69c82d4c2f78"))).abi_Create(language, &_ret));
+		Debug.OK((cast(Windows.Globalization.Collation.ICharacterGroupingsFactory)factory.asInterface(uuid("99ea9fd9-886d-4401-9f98-69c82d4c2f78"))).abi_Create(hstring(language).handle, &_ret));
 		return _ret;
 	}
 }

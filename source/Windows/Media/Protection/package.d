@@ -299,10 +299,10 @@ extern(Windows):
 interface ProtectionCapabilities : Windows.Media.Protection.IProtectionCapabilities
 {
 extern(Windows):
-	final Windows.Media.Protection.ProtectionCapabilityResult IsTypeSupported(HSTRING type, HSTRING keySystem)
+	final Windows.Media.Protection.ProtectionCapabilityResult IsTypeSupported(wstring type, wstring keySystem)
 	{
 		Windows.Media.Protection.ProtectionCapabilityResult _ret;
-		Debug.OK((cast(Windows.Media.Protection.IProtectionCapabilities)this.asInterface(uuid("c7ac5d7e-7480-4d29-a464-7bcd913dd8e4"))).abi_IsTypeSupported(type, keySystem, &_ret));
+		Debug.OK((cast(Windows.Media.Protection.IProtectionCapabilities)this.asInterface(uuid("c7ac5d7e-7480-4d29-a464-7bcd913dd8e4"))).abi_IsTypeSupported(hstring(type).handle, hstring(keySystem).handle, &_ret));
 		return _ret;
 	}
 	static ProtectionCapabilities New()
@@ -333,29 +333,29 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Protection.IRevocationAndRenewalItem)this.asInterface(uuid("3099c20c-3cf0-49ea-902d-caf32d2dde2c"))).get_Reasons(&_ret));
 		return _ret;
 	}
-	final HSTRING HeaderHash()
+	final wstring HeaderHash()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Protection.IRevocationAndRenewalItem)this.asInterface(uuid("3099c20c-3cf0-49ea-902d-caf32d2dde2c"))).get_HeaderHash(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING PublicKeyHash()
+	final wstring PublicKeyHash()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Protection.IRevocationAndRenewalItem)this.asInterface(uuid("3099c20c-3cf0-49ea-902d-caf32d2dde2c"))).get_PublicKeyHash(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Protection.IRevocationAndRenewalItem)this.asInterface(uuid("3099c20c-3cf0-49ea-902d-caf32d2dde2c"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING RenewalId()
+	final wstring RenewalId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Protection.IRevocationAndRenewalItem)this.asInterface(uuid("3099c20c-3cf0-49ea-902d-caf32d2dde2c"))).get_RenewalId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 

@@ -249,15 +249,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragUIOverride)this.asInterface(uuid("89a85064-3389-4f4f-8897-7e8a3ffb3c93"))).set_IsContentVisible(value));
 	}
-	final HSTRING Caption()
+	final wstring Caption()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragUIOverride)this.asInterface(uuid("89a85064-3389-4f4f-8897-7e8a3ffb3c93"))).get_Caption(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Caption(HSTRING value)
+	final void Caption(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragUIOverride)this.asInterface(uuid("89a85064-3389-4f4f-8897-7e8a3ffb3c93"))).set_Caption(value));
+		Debug.OK((cast(Windows.ApplicationModel.DataTransfer.DragDrop.Core.ICoreDragUIOverride)this.asInterface(uuid("89a85064-3389-4f4f-8897-7e8a3ffb3c93"))).set_Caption(hstring(value).handle));
 	}
 	final bool IsCaptionVisible()
 	{

@@ -253,25 +253,25 @@ interface KnownPerceptionFrameKind
 		return _staticInstance;
 	}
 	deprecated("KnownPerceptionFrameKind may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
-	static HSTRING Color()
+	static wstring Color()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Color(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("KnownPerceptionFrameKind may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
-	static HSTRING Depth()
+	static wstring Depth()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Depth(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("KnownPerceptionFrameKind may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
-	static HSTRING Infrared()
+	static wstring Infrared()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Infrared(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -299,11 +299,11 @@ interface PerceptionCorrelation : Windows.Devices.Perception.Provider.IPerceptio
 {
 extern(Windows):
 	deprecated("PerceptionCorrelation may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
-	final HSTRING TargetId()
+	final wstring TargetId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Perception.Provider.IPerceptionCorrelation)this.asInterface(uuid("b4131a82-dff5-4047-8a19-3b4d805f7176"))).get_TargetId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("PerceptionCorrelation may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	final Windows.Foundation.Numerics.Vector3 Position()
@@ -320,11 +320,11 @@ extern(Windows):
 		return _ret;
 	}
 	deprecated("PerceptionCorrelation may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
-	static Windows.Devices.Perception.Provider.PerceptionCorrelation New(HSTRING targetId, Windows.Foundation.Numerics.Vector3 position, Windows.Foundation.Numerics.Quaternion orientation)
+	static Windows.Devices.Perception.Provider.PerceptionCorrelation New(wstring targetId, Windows.Foundation.Numerics.Vector3 position, Windows.Foundation.Numerics.Quaternion orientation)
 	{
 		auto factory = factory!(Windows.Devices.Perception.Provider.IPerceptionCorrelationFactory);
 		Windows.Devices.Perception.Provider.PerceptionCorrelation _ret;
-		Debug.OK((cast(Windows.Devices.Perception.Provider.IPerceptionCorrelationFactory)factory.asInterface(uuid("d4a6c425-2884-4a8f-8134-2835d7286cbf"))).abi_Create(targetId, position, orientation, &_ret));
+		Debug.OK((cast(Windows.Devices.Perception.Provider.IPerceptionCorrelationFactory)factory.asInterface(uuid("d4a6c425-2884-4a8f-8134-2835d7286cbf"))).abi_Create(hstring(targetId).handle, position, orientation, &_ret));
 		return _ret;
 	}
 }
@@ -404,52 +404,52 @@ interface PerceptionFrameProviderInfo : Windows.Devices.Perception.Provider.IPer
 {
 extern(Windows):
 	deprecated("PerceptionFrameProviderInfo may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo)this.asInterface(uuid("cca959e8-797e-4e83-9b87-036a74142fc4"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("PerceptionFrameProviderInfo may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
-	final void Id(HSTRING value)
+	final void Id(wstring value)
 	{
-		Debug.OK((cast(Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo)this.asInterface(uuid("cca959e8-797e-4e83-9b87-036a74142fc4"))).set_Id(value));
+		Debug.OK((cast(Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo)this.asInterface(uuid("cca959e8-797e-4e83-9b87-036a74142fc4"))).set_Id(hstring(value).handle));
 	}
 	deprecated("PerceptionFrameProviderInfo may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo)this.asInterface(uuid("cca959e8-797e-4e83-9b87-036a74142fc4"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("PerceptionFrameProviderInfo may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
-	final void DisplayName(HSTRING value)
+	final void DisplayName(wstring value)
 	{
-		Debug.OK((cast(Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo)this.asInterface(uuid("cca959e8-797e-4e83-9b87-036a74142fc4"))).set_DisplayName(value));
+		Debug.OK((cast(Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo)this.asInterface(uuid("cca959e8-797e-4e83-9b87-036a74142fc4"))).set_DisplayName(hstring(value).handle));
 	}
 	deprecated("PerceptionFrameProviderInfo may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
-	final HSTRING DeviceKind()
+	final wstring DeviceKind()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo)this.asInterface(uuid("cca959e8-797e-4e83-9b87-036a74142fc4"))).get_DeviceKind(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("PerceptionFrameProviderInfo may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
-	final void DeviceKind(HSTRING value)
+	final void DeviceKind(wstring value)
 	{
-		Debug.OK((cast(Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo)this.asInterface(uuid("cca959e8-797e-4e83-9b87-036a74142fc4"))).set_DeviceKind(value));
+		Debug.OK((cast(Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo)this.asInterface(uuid("cca959e8-797e-4e83-9b87-036a74142fc4"))).set_DeviceKind(hstring(value).handle));
 	}
 	deprecated("PerceptionFrameProviderInfo may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
-	final HSTRING FrameKind()
+	final wstring FrameKind()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo)this.asInterface(uuid("cca959e8-797e-4e83-9b87-036a74142fc4"))).get_FrameKind(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("PerceptionFrameProviderInfo may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
-	final void FrameKind(HSTRING value)
+	final void FrameKind(wstring value)
 	{
-		Debug.OK((cast(Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo)this.asInterface(uuid("cca959e8-797e-4e83-9b87-036a74142fc4"))).set_FrameKind(value));
+		Debug.OK((cast(Windows.Devices.Perception.Provider.IPerceptionFrameProviderInfo)this.asInterface(uuid("cca959e8-797e-4e83-9b87-036a74142fc4"))).set_FrameKind(hstring(value).handle));
 	}
 	deprecated("PerceptionFrameProviderInfo may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	final bool Hidden()
@@ -535,11 +535,11 @@ interface PerceptionPropertyChangeRequest : Windows.Devices.Perception.Provider.
 {
 extern(Windows):
 	deprecated("PerceptionPropertyChangeRequest may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Perception.Provider.IPerceptionPropertyChangeRequest)this.asInterface(uuid("3c5aeb51-350b-4df8-9414-59e09815510b"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("PerceptionPropertyChangeRequest may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")
 	final IInspectable Value()

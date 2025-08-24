@@ -82,11 +82,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofence)this.asInterface(uuid("9c090823-edb8-47e0-8245-5bf61d321f2d"))).get_DwellTime(&_ret));
 		return _ret;
 	}
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofence)this.asInterface(uuid("9c090823-edb8-47e0-8245-5bf61d321f2d"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Devices.Geolocation.Geofencing.MonitoredGeofenceStates MonitoredStates()
 	{
@@ -106,32 +106,32 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofence)this.asInterface(uuid("9c090823-edb8-47e0-8245-5bf61d321f2d"))).get_SingleUse(&_ret));
 		return _ret;
 	}
-	static Windows.Devices.Geolocation.Geofencing.Geofence New(HSTRING id, Windows.Devices.Geolocation.IGeoshape geoshape)
+	static Windows.Devices.Geolocation.Geofencing.Geofence New(wstring id, Windows.Devices.Geolocation.IGeoshape geoshape)
 	{
 		auto factory = factory!(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory);
 		Windows.Devices.Geolocation.Geofencing.Geofence _ret;
-		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory)factory.asInterface(uuid("841f624b-325f-4b90-bca7-2b8022a93796"))).abi_Create(id, geoshape, &_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory)factory.asInterface(uuid("841f624b-325f-4b90-bca7-2b8022a93796"))).abi_Create(hstring(id).handle, geoshape, &_ret));
 		return _ret;
 	}
-	static Windows.Devices.Geolocation.Geofencing.Geofence New(HSTRING id, Windows.Devices.Geolocation.IGeoshape geoshape, Windows.Devices.Geolocation.Geofencing.MonitoredGeofenceStates monitoredStates, bool singleUse)
+	static Windows.Devices.Geolocation.Geofencing.Geofence New(wstring id, Windows.Devices.Geolocation.IGeoshape geoshape, Windows.Devices.Geolocation.Geofencing.MonitoredGeofenceStates monitoredStates, bool singleUse)
 	{
 		auto factory = factory!(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory);
 		Windows.Devices.Geolocation.Geofencing.Geofence _ret;
-		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory)factory.asInterface(uuid("841f624b-325f-4b90-bca7-2b8022a93796"))).abi_CreateWithMonitorStates(id, geoshape, monitoredStates, singleUse, &_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory)factory.asInterface(uuid("841f624b-325f-4b90-bca7-2b8022a93796"))).abi_CreateWithMonitorStates(hstring(id).handle, geoshape, monitoredStates, singleUse, &_ret));
 		return _ret;
 	}
-	static Windows.Devices.Geolocation.Geofencing.Geofence New(HSTRING id, Windows.Devices.Geolocation.IGeoshape geoshape, Windows.Devices.Geolocation.Geofencing.MonitoredGeofenceStates monitoredStates, bool singleUse, Windows.Foundation.TimeSpan dwellTime)
+	static Windows.Devices.Geolocation.Geofencing.Geofence New(wstring id, Windows.Devices.Geolocation.IGeoshape geoshape, Windows.Devices.Geolocation.Geofencing.MonitoredGeofenceStates monitoredStates, bool singleUse, Windows.Foundation.TimeSpan dwellTime)
 	{
 		auto factory = factory!(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory);
 		Windows.Devices.Geolocation.Geofencing.Geofence _ret;
-		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory)factory.asInterface(uuid("841f624b-325f-4b90-bca7-2b8022a93796"))).abi_CreateWithMonitorStatesAndDwellTime(id, geoshape, monitoredStates, singleUse, dwellTime, &_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory)factory.asInterface(uuid("841f624b-325f-4b90-bca7-2b8022a93796"))).abi_CreateWithMonitorStatesAndDwellTime(hstring(id).handle, geoshape, monitoredStates, singleUse, dwellTime, &_ret));
 		return _ret;
 	}
-	static Windows.Devices.Geolocation.Geofencing.Geofence New(HSTRING id, Windows.Devices.Geolocation.IGeoshape geoshape, Windows.Devices.Geolocation.Geofencing.MonitoredGeofenceStates monitoredStates, bool singleUse, Windows.Foundation.TimeSpan dwellTime, Windows.Foundation.DateTime startTime, Windows.Foundation.TimeSpan duration)
+	static Windows.Devices.Geolocation.Geofencing.Geofence New(wstring id, Windows.Devices.Geolocation.IGeoshape geoshape, Windows.Devices.Geolocation.Geofencing.MonitoredGeofenceStates monitoredStates, bool singleUse, Windows.Foundation.TimeSpan dwellTime, Windows.Foundation.DateTime startTime, Windows.Foundation.TimeSpan duration)
 	{
 		auto factory = factory!(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory);
 		Windows.Devices.Geolocation.Geofencing.Geofence _ret;
-		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory)factory.asInterface(uuid("841f624b-325f-4b90-bca7-2b8022a93796"))).abi_CreateWithMonitorStatesDwellTimeStartTimeAndDuration(id, geoshape, monitoredStates, singleUse, dwellTime, startTime, duration, &_ret));
+		Debug.OK((cast(Windows.Devices.Geolocation.Geofencing.IGeofenceFactory)factory.asInterface(uuid("841f624b-325f-4b90-bca7-2b8022a93796"))).abi_CreateWithMonitorStatesDwellTimeStartTimeAndDuration(hstring(id).handle, geoshape, monitoredStates, singleUse, dwellTime, startTime, duration, &_ret));
 		return _ret;
 	}
 }

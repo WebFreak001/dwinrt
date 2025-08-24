@@ -126,22 +126,22 @@ interface StoreConfiguration
 		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Store.Preview.IStoreConfigurationStatics);
 		return _staticInstance;
 	}
-	static void SetSystemConfiguration(HSTRING catalogHardwareManufacturerId, HSTRING catalogStoreContentModifierId, Windows.Foundation.DateTime systemConfigurationExpiration, HSTRING catalogHardwareDescriptor)
+	static void SetSystemConfiguration(wstring catalogHardwareManufacturerId, wstring catalogStoreContentModifierId, Windows.Foundation.DateTime systemConfigurationExpiration, wstring catalogHardwareDescriptor)
 	{
-		Debug.OK(staticInstance.abi_SetSystemConfiguration(catalogHardwareManufacturerId, catalogStoreContentModifierId, systemConfigurationExpiration, catalogHardwareDescriptor));
+		Debug.OK(staticInstance.abi_SetSystemConfiguration(hstring(catalogHardwareManufacturerId).handle, hstring(catalogStoreContentModifierId).handle, systemConfigurationExpiration, hstring(catalogHardwareDescriptor).handle));
 	}
-	static void SetMobileOperatorConfiguration(HSTRING mobileOperatorId, UINT32 appDownloadLimitInMegabytes, UINT32 updateDownloadLimitInMegabytes)
+	static void SetMobileOperatorConfiguration(wstring mobileOperatorId, UINT32 appDownloadLimitInMegabytes, UINT32 updateDownloadLimitInMegabytes)
 	{
-		Debug.OK(staticInstance.abi_SetMobileOperatorConfiguration(mobileOperatorId, appDownloadLimitInMegabytes, updateDownloadLimitInMegabytes));
+		Debug.OK(staticInstance.abi_SetMobileOperatorConfiguration(hstring(mobileOperatorId).handle, appDownloadLimitInMegabytes, updateDownloadLimitInMegabytes));
 	}
-	static void SetStoreWebAccountId(HSTRING webAccountId)
+	static void SetStoreWebAccountId(wstring webAccountId)
 	{
-		Debug.OK(staticInstance.abi_SetStoreWebAccountId(webAccountId));
+		Debug.OK(staticInstance.abi_SetStoreWebAccountId(hstring(webAccountId).handle));
 	}
-	static bool IsStoreWebAccountId(HSTRING webAccountId)
+	static bool IsStoreWebAccountId(wstring webAccountId)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.abi_IsStoreWebAccountId(webAccountId, &_ret));
+		Debug.OK(staticInstance.abi_IsStoreWebAccountId(hstring(webAccountId).handle, &_ret));
 		return _ret;
 	}
 	static Windows.ApplicationModel.Store.Preview.StoreHardwareManufacturerInfo HardwareManufacturerInfo()
@@ -161,29 +161,29 @@ interface StoreConfiguration
 interface StoreHardwareManufacturerInfo : Windows.ApplicationModel.Store.Preview.IStoreHardwareManufacturerInfo
 {
 extern(Windows):
-	final HSTRING HardwareManufacturerId()
+	final wstring HardwareManufacturerId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Store.Preview.IStoreHardwareManufacturerInfo)this.asInterface(uuid("f292dc08-c654-43ac-a21f-34801c9d3388"))).get_HardwareManufacturerId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING StoreContentModifierId()
+	final wstring StoreContentModifierId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Store.Preview.IStoreHardwareManufacturerInfo)this.asInterface(uuid("f292dc08-c654-43ac-a21f-34801c9d3388"))).get_StoreContentModifierId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ModelName()
+	final wstring ModelName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Store.Preview.IStoreHardwareManufacturerInfo)this.asInterface(uuid("f292dc08-c654-43ac-a21f-34801c9d3388"))).get_ModelName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ManufacturerName()
+	final wstring ManufacturerName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Store.Preview.IStoreHardwareManufacturerInfo)this.asInterface(uuid("f292dc08-c654-43ac-a21f-34801c9d3388"))).get_ManufacturerName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -195,10 +195,10 @@ interface StorePreview
 		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Store.Preview.IStorePreview);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.Preview.StorePreviewPurchaseResults) RequestProductPurchaseByProductIdAndSkuIdAsync(HSTRING productId, HSTRING skuId)
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.Preview.StorePreviewPurchaseResults) RequestProductPurchaseByProductIdAndSkuIdAsync(wstring productId, wstring skuId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Store.Preview.StorePreviewPurchaseResults) _ret;
-		Debug.OK(staticInstance.abi_RequestProductPurchaseByProductIdAndSkuIdAsync(productId, skuId, &_ret));
+		Debug.OK(staticInstance.abi_RequestProductPurchaseByProductIdAndSkuIdAsync(hstring(productId).handle, hstring(skuId).handle, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Store.Preview.StorePreviewProductInfo)) LoadAddOnProductInfosAsync()
@@ -212,29 +212,29 @@ interface StorePreview
 interface StorePreviewProductInfo : Windows.ApplicationModel.Store.Preview.IStorePreviewProductInfo
 {
 extern(Windows):
-	final HSTRING ProductId()
+	final wstring ProductId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Store.Preview.IStorePreviewProductInfo)this.asInterface(uuid("1937dbb3-6c01-4c9d-85cd-5babaac2b351"))).get_ProductId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ProductType()
+	final wstring ProductType()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Store.Preview.IStorePreviewProductInfo)this.asInterface(uuid("1937dbb3-6c01-4c9d-85cd-5babaac2b351"))).get_ProductType(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Store.Preview.IStorePreviewProductInfo)this.asInterface(uuid("1937dbb3-6c01-4c9d-85cd-5babaac2b351"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Description()
+	final wstring Description()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Store.Preview.IStorePreviewProductInfo)this.asInterface(uuid("1937dbb3-6c01-4c9d-85cd-5babaac2b351"))).get_Description(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Store.Preview.StorePreviewSkuInfo) SkuInfoList()
 	{
@@ -258,59 +258,59 @@ extern(Windows):
 interface StorePreviewSkuInfo : Windows.ApplicationModel.Store.Preview.IStorePreviewSkuInfo
 {
 extern(Windows):
-	final HSTRING ProductId()
+	final wstring ProductId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Store.Preview.IStorePreviewSkuInfo)this.asInterface(uuid("81fd76e2-0b26-48d9-98ce-27461c669d6c"))).get_ProductId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING SkuId()
+	final wstring SkuId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Store.Preview.IStorePreviewSkuInfo)this.asInterface(uuid("81fd76e2-0b26-48d9-98ce-27461c669d6c"))).get_SkuId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING SkuType()
+	final wstring SkuType()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Store.Preview.IStorePreviewSkuInfo)this.asInterface(uuid("81fd76e2-0b26-48d9-98ce-27461c669d6c"))).get_SkuType(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Store.Preview.IStorePreviewSkuInfo)this.asInterface(uuid("81fd76e2-0b26-48d9-98ce-27461c669d6c"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Description()
+	final wstring Description()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Store.Preview.IStorePreviewSkuInfo)this.asInterface(uuid("81fd76e2-0b26-48d9-98ce-27461c669d6c"))).get_Description(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING CustomDeveloperData()
+	final wstring CustomDeveloperData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Store.Preview.IStorePreviewSkuInfo)this.asInterface(uuid("81fd76e2-0b26-48d9-98ce-27461c669d6c"))).get_CustomDeveloperData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING CurrencyCode()
+	final wstring CurrencyCode()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Store.Preview.IStorePreviewSkuInfo)this.asInterface(uuid("81fd76e2-0b26-48d9-98ce-27461c669d6c"))).get_CurrencyCode(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING FormattedListPrice()
+	final wstring FormattedListPrice()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Store.Preview.IStorePreviewSkuInfo)this.asInterface(uuid("81fd76e2-0b26-48d9-98ce-27461c669d6c"))).get_FormattedListPrice(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ExtendedData()
+	final wstring ExtendedData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Store.Preview.IStorePreviewSkuInfo)this.asInterface(uuid("81fd76e2-0b26-48d9-98ce-27461c669d6c"))).get_ExtendedData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 

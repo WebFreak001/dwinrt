@@ -293,29 +293,29 @@ extern(Windows):
 interface CivicAddress : Windows.Devices.Geolocation.ICivicAddress
 {
 extern(Windows):
-	final HSTRING Country()
+	final wstring Country()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Geolocation.ICivicAddress)this.asInterface(uuid("a8567a1a-64f4-4d48-bcea-f6b008eca34c"))).get_Country(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING State()
+	final wstring State()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Geolocation.ICivicAddress)this.asInterface(uuid("a8567a1a-64f4-4d48-bcea-f6b008eca34c"))).get_State(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING City()
+	final wstring City()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Geolocation.ICivicAddress)this.asInterface(uuid("a8567a1a-64f4-4d48-bcea-f6b008eca34c"))).get_City(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING PostalCode()
+	final wstring PostalCode()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Geolocation.ICivicAddress)this.asInterface(uuid("a8567a1a-64f4-4d48-bcea-f6b008eca34c"))).get_PostalCode(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.DateTime Timestamp()
 	{
@@ -853,17 +853,17 @@ extern(Windows):
 interface VenueData : Windows.Devices.Geolocation.IVenueData
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Geolocation.IVenueData)this.asInterface(uuid("66f39187-60e3-4b2f-b527-4f53f1c3c677"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Level()
+	final wstring Level()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Geolocation.IVenueData)this.asInterface(uuid("66f39187-60e3-4b2f-b527-4f53f1c3c677"))).get_Level(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 

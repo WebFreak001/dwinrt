@@ -340,11 +340,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Enumeration.IDeviceAccessChangedEventArgs)this.asInterface(uuid("deda0bcc-4f9d-4f58-9dba-a9bc800408d5"))).get_Status(&_ret));
 		return _ret;
 	}
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Enumeration.IDeviceAccessChangedEventArgs2)this.asInterface(uuid("82523262-934b-4b30-a178-adc39f2f2be3"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -374,10 +374,10 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Enumeration.IDeviceAccessInformationStatics);
 		return _staticInstance;
 	}
-	static Windows.Devices.Enumeration.DeviceAccessInformation CreateFromId(HSTRING deviceId)
+	static Windows.Devices.Enumeration.DeviceAccessInformation CreateFromId(wstring deviceId)
 	{
 		Windows.Devices.Enumeration.DeviceAccessInformation _ret;
-		Debug.OK(staticInstance.abi_CreateFromId(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromId(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
 	static Windows.Devices.Enumeration.DeviceAccessInformation CreateFromDeviceClassId(GUID deviceClassId)
@@ -397,11 +397,11 @@ extern(Windows):
 interface DeviceConnectionChangeTriggerDetails : Windows.Devices.Enumeration.IDeviceConnectionChangeTriggerDetails
 {
 extern(Windows):
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Enumeration.IDeviceConnectionChangeTriggerDetails)this.asInterface(uuid("b8578c0c-bbc1-484b-bffa-7b31dcc200b2"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -419,17 +419,17 @@ extern(Windows):
 interface DeviceInformation : Windows.Devices.Enumeration.IDeviceInformation, Windows.Devices.Enumeration.IDeviceInformation2
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Enumeration.IDeviceInformation)this.asInterface(uuid("aba0fb95-4398-489d-8e44-e6130927011f"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Enumeration.IDeviceInformation)this.asInterface(uuid("aba0fb95-4398-489d-8e44-e6130927011f"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsEnabled()
 	{
@@ -490,16 +490,16 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Enumeration.IDeviceInformationStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation) CreateFromIdAsync(HSTRING deviceId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation) CreateFromIdAsync(wstring deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation) _ret;
-		Debug.OK(staticInstance.abi_CreateFromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromIdAsync(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation) CreateFromIdAsyncAdditionalProperties(HSTRING deviceId, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation) CreateFromIdAsyncAdditionalProperties(wstring deviceId, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformation) _ret;
-		Debug.OK(staticInstance.abi_CreateFromIdAsyncAdditionalProperties(deviceId, additionalProperties, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromIdAsyncAdditionalProperties(hstring(deviceId).handle, additionalProperties, &_ret));
 		return _ret;
 	}
 	alias CreateFromIdAsync = CreateFromIdAsyncAdditionalProperties;
@@ -516,17 +516,17 @@ extern(Windows):
 		return _ret;
 	}
 	alias FindAllAsync = FindAllAsyncDeviceClass;
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) FindAllAsyncAqsFilter(HSTRING aqsFilter)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) FindAllAsyncAqsFilter(wstring aqsFilter)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) _ret;
-		Debug.OK(staticInstance.abi_FindAllAsyncAqsFilter(aqsFilter, &_ret));
+		Debug.OK(staticInstance.abi_FindAllAsyncAqsFilter(hstring(aqsFilter).handle, &_ret));
 		return _ret;
 	}
 	alias FindAllAsync = FindAllAsyncAqsFilter;
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) FindAllAsyncAqsFilterAndAdditionalProperties(HSTRING aqsFilter, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) FindAllAsyncAqsFilterAndAdditionalProperties(wstring aqsFilter, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Enumeration.DeviceInformationCollection) _ret;
-		Debug.OK(staticInstance.abi_FindAllAsyncAqsFilterAndAdditionalProperties(aqsFilter, additionalProperties, &_ret));
+		Debug.OK(staticInstance.abi_FindAllAsyncAqsFilterAndAdditionalProperties(hstring(aqsFilter).handle, additionalProperties, &_ret));
 		return _ret;
 	}
 	alias FindAllAsync = FindAllAsyncAqsFilterAndAdditionalProperties;
@@ -543,17 +543,17 @@ extern(Windows):
 		return _ret;
 	}
 	alias CreateWatcher = CreateWatcherDeviceClass;
-	static Windows.Devices.Enumeration.DeviceWatcher CreateWatcherAqsFilter(HSTRING aqsFilter)
+	static Windows.Devices.Enumeration.DeviceWatcher CreateWatcherAqsFilter(wstring aqsFilter)
 	{
 		Windows.Devices.Enumeration.DeviceWatcher _ret;
-		Debug.OK(staticInstance.abi_CreateWatcherAqsFilter(aqsFilter, &_ret));
+		Debug.OK(staticInstance.abi_CreateWatcherAqsFilter(hstring(aqsFilter).handle, &_ret));
 		return _ret;
 	}
 	alias CreateWatcher = CreateWatcherAqsFilter;
-	static Windows.Devices.Enumeration.DeviceWatcher CreateWatcherAqsFilterAndAdditionalProperties(HSTRING aqsFilter, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties)
+	static Windows.Devices.Enumeration.DeviceWatcher CreateWatcherAqsFilterAndAdditionalProperties(wstring aqsFilter, Windows.Foundation.Collections.IIterable!(HSTRING) additionalProperties)
 	{
 		Windows.Devices.Enumeration.DeviceWatcher _ret;
-		Debug.OK(staticInstance.abi_CreateWatcherAqsFilterAndAdditionalProperties(aqsFilter, additionalProperties, &_ret));
+		Debug.OK(staticInstance.abi_CreateWatcherAqsFilterAndAdditionalProperties(hstring(aqsFilter).handle, additionalProperties, &_ret));
 		return _ret;
 	}
 	alias CreateWatcher = CreateWatcherAqsFilterAndAdditionalProperties;
@@ -694,11 +694,11 @@ extern(Windows):
 interface DeviceInformationUpdate : Windows.Devices.Enumeration.IDeviceInformationUpdate, Windows.Devices.Enumeration.IDeviceInformationUpdate2
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Enumeration.IDeviceInformationUpdate)this.asInterface(uuid("8f315305-d972-44b7-a37e-9e822c78213b"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IMapView!(HSTRING, IInspectable) Properties()
 	{
@@ -729,19 +729,19 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Enumeration.IDevicePairingRequestedEventArgs)this.asInterface(uuid("f717fc56-de6b-487f-8376-0180aca69963"))).get_PairingKind(&_ret));
 		return _ret;
 	}
-	final HSTRING Pin()
+	final wstring Pin()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Enumeration.IDevicePairingRequestedEventArgs)this.asInterface(uuid("f717fc56-de6b-487f-8376-0180aca69963"))).get_Pin(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void Accept()
 	{
 		Debug.OK((cast(Windows.Devices.Enumeration.IDevicePairingRequestedEventArgs)this.asInterface(uuid("f717fc56-de6b-487f-8376-0180aca69963"))).abi_Accept());
 	}
-	final void AcceptWithPin(HSTRING pin)
+	final void AcceptWithPin(wstring pin)
 	{
-		Debug.OK((cast(Windows.Devices.Enumeration.IDevicePairingRequestedEventArgs)this.asInterface(uuid("f717fc56-de6b-487f-8376-0180aca69963"))).abi_AcceptWithPin(pin));
+		Debug.OK((cast(Windows.Devices.Enumeration.IDevicePairingRequestedEventArgs)this.asInterface(uuid("f717fc56-de6b-487f-8376-0180aca69963"))).abi_AcceptWithPin(hstring(pin).handle));
 	}
 	alias Accept = AcceptWithPin;
 	final Windows.Foundation.Deferral GetDeferral()
@@ -846,9 +846,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.Enumeration.IDevicePicker)this.asInterface(uuid("84997aa2-034a-4440-8813-7d0bd479bf5a"))).abi_Hide());
 	}
-	final void SetDisplayStatus(Windows.Devices.Enumeration.DeviceInformation device, HSTRING status, Windows.Devices.Enumeration.DevicePickerDisplayStatusOptions options)
+	final void SetDisplayStatus(Windows.Devices.Enumeration.DeviceInformation device, wstring status, Windows.Devices.Enumeration.DevicePickerDisplayStatusOptions options)
 	{
-		Debug.OK((cast(Windows.Devices.Enumeration.IDevicePicker)this.asInterface(uuid("84997aa2-034a-4440-8813-7d0bd479bf5a"))).abi_SetDisplayStatus(device, status, options));
+		Debug.OK((cast(Windows.Devices.Enumeration.IDevicePicker)this.asInterface(uuid("84997aa2-034a-4440-8813-7d0bd479bf5a"))).abi_SetDisplayStatus(device, hstring(status).handle, options));
 	}
 	static DevicePicker New()
 	{
@@ -861,15 +861,15 @@ extern(Windows):
 interface DevicePickerAppearance : Windows.Devices.Enumeration.IDevicePickerAppearance
 {
 extern(Windows):
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Enumeration.IDevicePickerAppearance)this.asInterface(uuid("e69a12c6-e627-4ed8-9b6c-460af445e56d"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Title(HSTRING value)
+	final void Title(wstring value)
 	{
-		Debug.OK((cast(Windows.Devices.Enumeration.IDevicePickerAppearance)this.asInterface(uuid("e69a12c6-e627-4ed8-9b6c-460af445e56d"))).set_Title(value));
+		Debug.OK((cast(Windows.Devices.Enumeration.IDevicePickerAppearance)this.asInterface(uuid("e69a12c6-e627-4ed8-9b6c-460af445e56d"))).set_Title(hstring(value).handle));
 	}
 	final Windows.UI.Color ForegroundColor()
 	{
@@ -964,11 +964,11 @@ extern(Windows):
 interface DeviceThumbnail : Windows.Storage.Streams.IRandomAccessStreamWithContentType, Windows.Storage.Streams.IContentTypeProvider, Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream
 {
 extern(Windows):
-	final HSTRING ContentType()
+	final wstring ContentType()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Streams.IContentTypeProvider)this.asInterface(uuid("97d098a5-3b99-4de9-88a5-e11d2f50c795"))).get_ContentType(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final ulong Size()
 	{

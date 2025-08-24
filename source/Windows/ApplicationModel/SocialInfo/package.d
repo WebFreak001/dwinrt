@@ -243,28 +243,28 @@ interface SocialFeedContent : Windows.ApplicationModel.SocialInfo.ISocialFeedCon
 {
 extern(Windows):
 	deprecated("ISocialFeedContent is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.ISocialFeedContent)this.asInterface(uuid("a234e429-3e39-494d-a37c-f462a2494514"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("ISocialFeedContent is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final void Title(HSTRING value)
+	final void Title(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.ISocialFeedContent)this.asInterface(uuid("a234e429-3e39-494d-a37c-f462a2494514"))).set_Title(value));
+		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.ISocialFeedContent)this.asInterface(uuid("a234e429-3e39-494d-a37c-f462a2494514"))).set_Title(hstring(value).handle));
 	}
 	deprecated("ISocialFeedContent is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final HSTRING Message()
+	final wstring Message()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.ISocialFeedContent)this.asInterface(uuid("a234e429-3e39-494d-a37c-f462a2494514"))).get_Message(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("ISocialFeedContent is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final void Message(HSTRING value)
+	final void Message(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.ISocialFeedContent)this.asInterface(uuid("a234e429-3e39-494d-a37c-f462a2494514"))).set_Message(value));
+		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.ISocialFeedContent)this.asInterface(uuid("a234e429-3e39-494d-a37c-f462a2494514"))).set_Message(hstring(value).handle));
 	}
 	deprecated("ISocialFeedContent is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final Windows.Foundation.Uri TargetUri()
@@ -372,16 +372,16 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.ISocialFeedItem)this.asInterface(uuid("4f1392ab-1f72-4d33-b695-de3e1db60317"))).set_BadgeCountValue(value));
 	}
 	deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final HSTRING RemoteId()
+	final wstring RemoteId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.ISocialFeedItem)this.asInterface(uuid("4f1392ab-1f72-4d33-b695-de3e1db60317"))).get_RemoteId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final void RemoteId(HSTRING value)
+	final void RemoteId(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.ISocialFeedItem)this.asInterface(uuid("4f1392ab-1f72-4d33-b695-de3e1db60317"))).set_RemoteId(value));
+		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.ISocialFeedItem)this.asInterface(uuid("4f1392ab-1f72-4d33-b695-de3e1db60317"))).set_RemoteId(hstring(value).handle));
 	}
 	deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final Windows.ApplicationModel.SocialInfo.SocialFeedChildItem ChildItem()
@@ -539,40 +539,40 @@ interface SocialUserInfo : Windows.ApplicationModel.SocialInfo.ISocialUserInfo
 {
 extern(Windows):
 	deprecated("ISocialUserInfo is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.ISocialUserInfo)this.asInterface(uuid("9e5e1bd1-90d0-4e1d-9554-844d46607f61"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("ISocialUserInfo is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final void DisplayName(HSTRING value)
+	final void DisplayName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.ISocialUserInfo)this.asInterface(uuid("9e5e1bd1-90d0-4e1d-9554-844d46607f61"))).set_DisplayName(value));
+		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.ISocialUserInfo)this.asInterface(uuid("9e5e1bd1-90d0-4e1d-9554-844d46607f61"))).set_DisplayName(hstring(value).handle));
 	}
 	deprecated("ISocialUserInfo is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final HSTRING UserName()
+	final wstring UserName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.ISocialUserInfo)this.asInterface(uuid("9e5e1bd1-90d0-4e1d-9554-844d46607f61"))).get_UserName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("ISocialUserInfo is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final void UserName(HSTRING value)
+	final void UserName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.ISocialUserInfo)this.asInterface(uuid("9e5e1bd1-90d0-4e1d-9554-844d46607f61"))).set_UserName(value));
+		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.ISocialUserInfo)this.asInterface(uuid("9e5e1bd1-90d0-4e1d-9554-844d46607f61"))).set_UserName(hstring(value).handle));
 	}
 	deprecated("ISocialUserInfo is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final HSTRING RemoteId()
+	final wstring RemoteId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.ISocialUserInfo)this.asInterface(uuid("9e5e1bd1-90d0-4e1d-9554-844d46607f61"))).get_RemoteId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("ISocialUserInfo is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final void RemoteId(HSTRING value)
+	final void RemoteId(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.ISocialUserInfo)this.asInterface(uuid("9e5e1bd1-90d0-4e1d-9554-844d46607f61"))).set_RemoteId(value));
+		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.ISocialUserInfo)this.asInterface(uuid("9e5e1bd1-90d0-4e1d-9554-844d46607f61"))).set_RemoteId(hstring(value).handle));
 	}
 	deprecated("ISocialUserInfo is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final Windows.Foundation.Uri TargetUri()

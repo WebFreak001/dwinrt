@@ -54,11 +54,11 @@ extern(Windows):
 		Debug.OK(activationFactory!(DataProtectionProvider).abi_ActivateInstance(&ret));
 		return cast(DataProtectionProvider) ret;
 	}
-	static Windows.Security.Cryptography.DataProtection.DataProtectionProvider New(HSTRING protectionDescriptor)
+	static Windows.Security.Cryptography.DataProtection.DataProtectionProvider New(wstring protectionDescriptor)
 	{
 		auto factory = factory!(Windows.Security.Cryptography.DataProtection.IDataProtectionProviderFactory);
 		Windows.Security.Cryptography.DataProtection.DataProtectionProvider _ret;
-		Debug.OK((cast(Windows.Security.Cryptography.DataProtection.IDataProtectionProviderFactory)factory.asInterface(uuid("adf33dac-4932-4cdf-ac41-7214333514ca"))).abi_CreateOverloadExplicit(protectionDescriptor, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.DataProtection.IDataProtectionProviderFactory)factory.asInterface(uuid("adf33dac-4932-4cdf-ac41-7214333514ca"))).abi_CreateOverloadExplicit(hstring(protectionDescriptor).handle, &_ret));
 		return _ret;
 	}
 }

@@ -661,16 +661,16 @@ interface ChatCapabilitiesManager
 		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Chat.IChatCapabilitiesManagerStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatCapabilities) GetCachedCapabilitiesAsync(HSTRING address)
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatCapabilities) GetCachedCapabilitiesAsync(wstring address)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatCapabilities) _ret;
-		Debug.OK(staticInstance.abi_GetCachedCapabilitiesAsync(address, &_ret));
+		Debug.OK(staticInstance.abi_GetCachedCapabilitiesAsync(hstring(address).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatCapabilities) GetCapabilitiesFromNetworkAsync(HSTRING address)
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatCapabilities) GetCapabilitiesFromNetworkAsync(wstring address)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatCapabilities) _ret;
-		Debug.OK(staticInstance.abi_GetCapabilitiesFromNetworkAsync(address, &_ret));
+		Debug.OK(staticInstance.abi_GetCapabilitiesFromNetworkAsync(hstring(address).handle, &_ret));
 		return _ret;
 	}
 }
@@ -684,21 +684,21 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatConversation)this.asInterface(uuid("a58c080d-1a6f-46dc-8f3d-f5028660b6ee"))).get_HasUnreadMessages(&_ret));
 		return _ret;
 	}
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatConversation)this.asInterface(uuid("a58c080d-1a6f-46dc-8f3d-f5028660b6ee"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Subject()
+	final wstring Subject()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatConversation)this.asInterface(uuid("a58c080d-1a6f-46dc-8f3d-f5028660b6ee"))).get_Subject(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Subject(HSTRING value)
+	final void Subject(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatConversation)this.asInterface(uuid("a58c080d-1a6f-46dc-8f3d-f5028660b6ee"))).set_Subject(value));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatConversation)this.asInterface(uuid("a58c080d-1a6f-46dc-8f3d-f5028660b6ee"))).set_Subject(hstring(value).handle));
 	}
 	final bool IsConversationMuted()
 	{
@@ -710,11 +710,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatConversation)this.asInterface(uuid("a58c080d-1a6f-46dc-8f3d-f5028660b6ee"))).set_IsConversationMuted(value));
 	}
-	final HSTRING MostRecentMessageId()
+	final wstring MostRecentMessageId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatConversation)this.asInterface(uuid("a58c080d-1a6f-46dc-8f3d-f5028660b6ee"))).get_MostRecentMessageId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) Participants()
 	{
@@ -759,13 +759,13 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatConversation)this.asInterface(uuid("a58c080d-1a6f-46dc-8f3d-f5028660b6ee"))).abi_SaveAsync(&_ret));
 		return _ret;
 	}
-	final void NotifyLocalParticipantComposing(HSTRING transportId, HSTRING participantAddress, bool isComposing)
+	final void NotifyLocalParticipantComposing(wstring transportId, wstring participantAddress, bool isComposing)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatConversation)this.asInterface(uuid("a58c080d-1a6f-46dc-8f3d-f5028660b6ee"))).abi_NotifyLocalParticipantComposing(transportId, participantAddress, isComposing));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatConversation)this.asInterface(uuid("a58c080d-1a6f-46dc-8f3d-f5028660b6ee"))).abi_NotifyLocalParticipantComposing(hstring(transportId).handle, hstring(participantAddress).handle, isComposing));
 	}
-	final void NotifyRemoteParticipantComposing(HSTRING transportId, HSTRING participantAddress, bool isComposing)
+	final void NotifyRemoteParticipantComposing(wstring transportId, wstring participantAddress, bool isComposing)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatConversation)this.asInterface(uuid("a58c080d-1a6f-46dc-8f3d-f5028660b6ee"))).abi_NotifyRemoteParticipantComposing(transportId, participantAddress, isComposing));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatConversation)this.asInterface(uuid("a58c080d-1a6f-46dc-8f3d-f5028660b6ee"))).abi_NotifyRemoteParticipantComposing(hstring(transportId).handle, hstring(participantAddress).handle, isComposing));
 	}
 	final EventRegistrationToken OnRemoteParticipantComposingChanged(void delegate(Windows.ApplicationModel.Chat.ChatConversation, Windows.ApplicationModel.Chat.RemoteParticipantComposingChangedEventArgs) fn)
 	{
@@ -816,35 +816,35 @@ extern(Windows):
 interface ChatConversationThreadingInfo : Windows.ApplicationModel.Chat.IChatConversationThreadingInfo
 {
 extern(Windows):
-	final HSTRING ContactId()
+	final wstring ContactId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatConversationThreadingInfo)this.asInterface(uuid("331c21dc-7a07-4422-a32c-24be7c6dab24"))).get_ContactId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ContactId(HSTRING value)
+	final void ContactId(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatConversationThreadingInfo)this.asInterface(uuid("331c21dc-7a07-4422-a32c-24be7c6dab24"))).set_ContactId(value));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatConversationThreadingInfo)this.asInterface(uuid("331c21dc-7a07-4422-a32c-24be7c6dab24"))).set_ContactId(hstring(value).handle));
 	}
-	final HSTRING Custom()
+	final wstring Custom()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatConversationThreadingInfo)this.asInterface(uuid("331c21dc-7a07-4422-a32c-24be7c6dab24"))).get_Custom(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Custom(HSTRING value)
+	final void Custom(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatConversationThreadingInfo)this.asInterface(uuid("331c21dc-7a07-4422-a32c-24be7c6dab24"))).set_Custom(value));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatConversationThreadingInfo)this.asInterface(uuid("331c21dc-7a07-4422-a32c-24be7c6dab24"))).set_Custom(hstring(value).handle));
 	}
-	final HSTRING ConversationId()
+	final wstring ConversationId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatConversationThreadingInfo)this.asInterface(uuid("331c21dc-7a07-4422-a32c-24be7c6dab24"))).get_ConversationId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ConversationId(HSTRING value)
+	final void ConversationId(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatConversationThreadingInfo)this.asInterface(uuid("331c21dc-7a07-4422-a32c-24be7c6dab24"))).set_ConversationId(value));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatConversationThreadingInfo)this.asInterface(uuid("331c21dc-7a07-4422-a32c-24be7c6dab24"))).set_ConversationId(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) Participants()
 	{
@@ -879,27 +879,27 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage)this.asInterface(uuid("4b39052a-1142-5089-76da-f2db3d17cd05"))).get_Attachments(&_ret));
 		return _ret;
 	}
-	final HSTRING Body()
+	final wstring Body()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage)this.asInterface(uuid("4b39052a-1142-5089-76da-f2db3d17cd05"))).get_Body(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Body(HSTRING value)
+	final void Body(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage)this.asInterface(uuid("4b39052a-1142-5089-76da-f2db3d17cd05"))).set_Body(value));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage)this.asInterface(uuid("4b39052a-1142-5089-76da-f2db3d17cd05"))).set_Body(hstring(value).handle));
 	}
-	final HSTRING From()
+	final wstring From()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage)this.asInterface(uuid("4b39052a-1142-5089-76da-f2db3d17cd05"))).get_From(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage)this.asInterface(uuid("4b39052a-1142-5089-76da-f2db3d17cd05"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsForwardingDisabled()
 	{
@@ -949,27 +949,27 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage)this.asInterface(uuid("4b39052a-1142-5089-76da-f2db3d17cd05"))).get_Status(&_ret));
 		return _ret;
 	}
-	final HSTRING Subject()
+	final wstring Subject()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage)this.asInterface(uuid("4b39052a-1142-5089-76da-f2db3d17cd05"))).get_Subject(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING TransportFriendlyName()
+	final wstring TransportFriendlyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage)this.asInterface(uuid("4b39052a-1142-5089-76da-f2db3d17cd05"))).get_TransportFriendlyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING TransportId()
+	final wstring TransportId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage)this.asInterface(uuid("4b39052a-1142-5089-76da-f2db3d17cd05"))).get_TransportId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void TransportId(HSTRING value)
+	final void TransportId(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage)this.asInterface(uuid("4b39052a-1142-5089-76da-f2db3d17cd05"))).set_TransportId(value));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage)this.asInterface(uuid("4b39052a-1142-5089-76da-f2db3d17cd05"))).set_TransportId(hstring(value).handle));
 	}
 	final ulong EstimatedDownloadSize()
 	{
@@ -981,9 +981,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage2)this.asInterface(uuid("86668332-543f-49f5-ac71-6c2afc6565fd"))).set_EstimatedDownloadSize(value));
 	}
-	final void From(HSTRING value)
+	final void From(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage2)this.asInterface(uuid("86668332-543f-49f5-ac71-6c2afc6565fd"))).set_From(value));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage2)this.asInterface(uuid("86668332-543f-49f5-ac71-6c2afc6565fd"))).set_From(hstring(value).handle));
 	}
 	final bool IsAutoReply()
 	{
@@ -1067,17 +1067,17 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage2)this.asInterface(uuid("86668332-543f-49f5-ac71-6c2afc6565fd"))).set_IsReceivedDuringQuietHours(value));
 	}
-	final void RemoteId(HSTRING value)
+	final void RemoteId(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage2)this.asInterface(uuid("86668332-543f-49f5-ac71-6c2afc6565fd"))).set_RemoteId(value));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage2)this.asInterface(uuid("86668332-543f-49f5-ac71-6c2afc6565fd"))).set_RemoteId(hstring(value).handle));
 	}
 	final void Status(Windows.ApplicationModel.Chat.ChatMessageStatus value)
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage2)this.asInterface(uuid("86668332-543f-49f5-ac71-6c2afc6565fd"))).set_Status(value));
 	}
-	final void Subject(HSTRING value)
+	final void Subject(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage2)this.asInterface(uuid("86668332-543f-49f5-ac71-6c2afc6565fd"))).set_Subject(value));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage2)this.asInterface(uuid("86668332-543f-49f5-ac71-6c2afc6565fd"))).set_Subject(hstring(value).handle));
 	}
 	final bool ShouldSuppressNotification()
 	{
@@ -1105,21 +1105,21 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage2)this.asInterface(uuid("86668332-543f-49f5-ac71-6c2afc6565fd"))).get_RecipientsDeliveryInfos(&_ret));
 		return _ret;
 	}
-	final HSTRING RemoteId()
+	final wstring RemoteId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage3)this.asInterface(uuid("74eb2fb0-3ba7-459f-8e0b-e8af0febd9ad"))).get_RemoteId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING SyncId()
+	final wstring SyncId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage4)this.asInterface(uuid("2d144b0f-d2bf-460c-aa68-6d3f8483c9bf"))).get_SyncId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void SyncId(HSTRING value)
+	final void SyncId(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage4)this.asInterface(uuid("2d144b0f-d2bf-460c-aa68-6d3f8483c9bf"))).set_SyncId(value));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessage4)this.asInterface(uuid("2d144b0f-d2bf-460c-aa68-6d3f8483c9bf"))).set_SyncId(hstring(value).handle));
 	}
 	final Windows.ApplicationModel.Chat.ChatItemKind ItemKind()
 	{
@@ -1158,25 +1158,25 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageAttachment)this.asInterface(uuid("c7c4fd74-bf63-58eb-508c-8b863ff16b67"))).set_GroupId(value));
 	}
-	final HSTRING MimeType()
+	final wstring MimeType()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageAttachment)this.asInterface(uuid("c7c4fd74-bf63-58eb-508c-8b863ff16b67"))).get_MimeType(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void MimeType(HSTRING value)
+	final void MimeType(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageAttachment)this.asInterface(uuid("c7c4fd74-bf63-58eb-508c-8b863ff16b67"))).set_MimeType(value));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageAttachment)this.asInterface(uuid("c7c4fd74-bf63-58eb-508c-8b863ff16b67"))).set_MimeType(hstring(value).handle));
 	}
-	final HSTRING Text()
+	final wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageAttachment)this.asInterface(uuid("c7c4fd74-bf63-58eb-508c-8b863ff16b67"))).get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Text(HSTRING value)
+	final void Text(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageAttachment)this.asInterface(uuid("c7c4fd74-bf63-58eb-508c-8b863ff16b67"))).set_Text(value));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageAttachment)this.asInterface(uuid("c7c4fd74-bf63-58eb-508c-8b863ff16b67"))).set_Text(hstring(value).handle));
 	}
 	final Windows.Storage.Streams.IRandomAccessStreamReference Thumbnail()
 	{
@@ -1198,21 +1198,21 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageAttachment2)this.asInterface(uuid("5ed99270-7dd1-4a87-a8ce-acdd87d80dc8"))).set_TransferProgress(value));
 	}
-	final HSTRING OriginalFileName()
+	final wstring OriginalFileName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageAttachment2)this.asInterface(uuid("5ed99270-7dd1-4a87-a8ce-acdd87d80dc8"))).get_OriginalFileName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void OriginalFileName(HSTRING value)
+	final void OriginalFileName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageAttachment2)this.asInterface(uuid("5ed99270-7dd1-4a87-a8ce-acdd87d80dc8"))).set_OriginalFileName(value));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageAttachment2)this.asInterface(uuid("5ed99270-7dd1-4a87-a8ce-acdd87d80dc8"))).set_OriginalFileName(hstring(value).handle));
 	}
-	static Windows.ApplicationModel.Chat.ChatMessageAttachment New(HSTRING mimeType, Windows.Storage.Streams.IRandomAccessStreamReference dataStreamReference)
+	static Windows.ApplicationModel.Chat.ChatMessageAttachment New(wstring mimeType, Windows.Storage.Streams.IRandomAccessStreamReference dataStreamReference)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Chat.IChatMessageAttachmentFactory);
 		Windows.ApplicationModel.Chat.ChatMessageAttachment _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageAttachmentFactory)factory.asInterface(uuid("205852a2-a356-5b71-6ca9-66c985b7d0d5"))).abi_CreateChatMessageAttachment(mimeType, dataStreamReference, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageAttachmentFactory)factory.asInterface(uuid("205852a2-a356-5b71-6ca9-66c985b7d0d5"))).abi_CreateChatMessageAttachment(hstring(mimeType).handle, dataStreamReference, &_ret));
 		return _ret;
 	}
 }
@@ -1225,10 +1225,10 @@ interface ChatMessageBlocking
 		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Chat.IChatMessageBlockingStatic);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncAction MarkMessageAsBlockedAsync(HSTRING localChatMessageId, bool blocked)
+	static Windows.Foundation.IAsyncAction MarkMessageAsBlockedAsync(wstring localChatMessageId, bool blocked)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.abi_MarkMessageAsBlockedAsync(localChatMessageId, blocked, &_ret));
+		Debug.OK(staticInstance.abi_MarkMessageAsBlockedAsync(hstring(localChatMessageId).handle, blocked, &_ret));
 		return _ret;
 	}
 }
@@ -1322,10 +1322,10 @@ interface ChatMessageManager
 		Debug.OK(staticInstance.abi_RegisterTransportAsync(&_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessageTransport) GetTransportAsync(HSTRING transportId)
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessageTransport) GetTransportAsync(wstring transportId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessageTransport) _ret;
-		Debug.OK(staticInstance.abi_GetTransportAsync(transportId, &_ret));
+		Debug.OK(staticInstance.abi_GetTransportAsync(hstring(transportId).handle, &_ret));
 		return _ret;
 	}
 }
@@ -1392,22 +1392,22 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore)this.asInterface(uuid("31f2fd01-ccf6-580b-4976-0a07dd5d3b47"))).get_ChangeTracker(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction DeleteMessageAsync(HSTRING localMessageId)
+	final Windows.Foundation.IAsyncAction DeleteMessageAsync(wstring localMessageId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore)this.asInterface(uuid("31f2fd01-ccf6-580b-4976-0a07dd5d3b47"))).abi_DeleteMessageAsync(localMessageId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore)this.asInterface(uuid("31f2fd01-ccf6-580b-4976-0a07dd5d3b47"))).abi_DeleteMessageAsync(hstring(localMessageId).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction DownloadMessageAsync(HSTRING localChatMessageId)
+	final Windows.Foundation.IAsyncAction DownloadMessageAsync(wstring localChatMessageId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore)this.asInterface(uuid("31f2fd01-ccf6-580b-4976-0a07dd5d3b47"))).abi_DownloadMessageAsync(localChatMessageId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore)this.asInterface(uuid("31f2fd01-ccf6-580b-4976-0a07dd5d3b47"))).abi_DownloadMessageAsync(hstring(localChatMessageId).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) GetMessageAsync(HSTRING localChatMessageId)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) GetMessageAsync(wstring localChatMessageId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore)this.asInterface(uuid("31f2fd01-ccf6-580b-4976-0a07dd5d3b47"))).abi_GetMessageAsync(localChatMessageId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore)this.asInterface(uuid("31f2fd01-ccf6-580b-4976-0a07dd5d3b47"))).abi_GetMessageAsync(hstring(localChatMessageId).handle, &_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Chat.ChatMessageReader GetMessageReader1()
@@ -1424,16 +1424,16 @@ extern(Windows):
 		return _ret;
 	}
 	alias GetMessageReader = GetMessageReader2;
-	final Windows.Foundation.IAsyncAction MarkMessageReadAsync(HSTRING localChatMessageId)
+	final Windows.Foundation.IAsyncAction MarkMessageReadAsync(wstring localChatMessageId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore)this.asInterface(uuid("31f2fd01-ccf6-580b-4976-0a07dd5d3b47"))).abi_MarkMessageReadAsync(localChatMessageId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore)this.asInterface(uuid("31f2fd01-ccf6-580b-4976-0a07dd5d3b47"))).abi_MarkMessageReadAsync(hstring(localChatMessageId).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction RetrySendMessageAsync(HSTRING localChatMessageId)
+	final Windows.Foundation.IAsyncAction RetrySendMessageAsync(wstring localChatMessageId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore)this.asInterface(uuid("31f2fd01-ccf6-580b-4976-0a07dd5d3b47"))).abi_RetrySendMessageAsync(localChatMessageId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore)this.asInterface(uuid("31f2fd01-ccf6-580b-4976-0a07dd5d3b47"))).abi_RetrySendMessageAsync(hstring(localChatMessageId).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction SendMessageAsync(Windows.ApplicationModel.Chat.ChatMessage chatMessage)
@@ -1458,22 +1458,22 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore)this.asInterface(uuid("31f2fd01-ccf6-580b-4976-0a07dd5d3b47"))).remove_MessageChanged(value));
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) ForwardMessageAsync(HSTRING localChatMessageId, Windows.Foundation.Collections.IIterable!(HSTRING) addresses)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) ForwardMessageAsync(wstring localChatMessageId, Windows.Foundation.Collections.IIterable!(HSTRING) addresses)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore2)this.asInterface(uuid("ad4dc4ee-3ad4-491b-b311-abdf9bb22768"))).abi_ForwardMessageAsync(localChatMessageId, addresses, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore2)this.asInterface(uuid("ad4dc4ee-3ad4-491b-b311-abdf9bb22768"))).abi_ForwardMessageAsync(hstring(localChatMessageId).handle, addresses, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatConversation) GetConversationAsync(HSTRING conversationId)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatConversation) GetConversationAsync(wstring conversationId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatConversation) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore2)this.asInterface(uuid("ad4dc4ee-3ad4-491b-b311-abdf9bb22768"))).abi_GetConversationAsync(conversationId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore2)this.asInterface(uuid("ad4dc4ee-3ad4-491b-b311-abdf9bb22768"))).abi_GetConversationAsync(hstring(conversationId).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatConversation) GetConversationForTransportsAsync(HSTRING conversationId, Windows.Foundation.Collections.IIterable!(HSTRING) transportIds)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatConversation) GetConversationForTransportsAsync(wstring conversationId, Windows.Foundation.Collections.IIterable!(HSTRING) transportIds)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatConversation) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore2)this.asInterface(uuid("ad4dc4ee-3ad4-491b-b311-abdf9bb22768"))).abi_GetConversationForTransportsAsync(conversationId, transportIds, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore2)this.asInterface(uuid("ad4dc4ee-3ad4-491b-b311-abdf9bb22768"))).abi_GetConversationForTransportsAsync(hstring(conversationId).handle, transportIds, &_ret));
 		return _ret;
 	}
 	alias GetConversationAsync = GetConversationForTransportsAsync;
@@ -1496,10 +1496,10 @@ extern(Windows):
 		return _ret;
 	}
 	alias GetConversationReader = GetConversationForTransportsReader;
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) GetMessageByRemoteIdAsync(HSTRING transportId, HSTRING remoteId)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) GetMessageByRemoteIdAsync(wstring transportId, wstring remoteId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore2)this.asInterface(uuid("ad4dc4ee-3ad4-491b-b311-abdf9bb22768"))).abi_GetMessageByRemoteIdAsync(transportId, remoteId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore2)this.asInterface(uuid("ad4dc4ee-3ad4-491b-b311-abdf9bb22768"))).abi_GetMessageByRemoteIdAsync(hstring(transportId).handle, hstring(remoteId).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(INT32) GetUnseenCountAsync()
@@ -1540,16 +1540,16 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore2)this.asInterface(uuid("ad4dc4ee-3ad4-491b-b311-abdf9bb22768"))).abi_SaveMessageAsync(chatMessage, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(bool) TryCancelDownloadMessageAsync(HSTRING localChatMessageId)
+	final Windows.Foundation.IAsyncOperation!(bool) TryCancelDownloadMessageAsync(wstring localChatMessageId)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore2)this.asInterface(uuid("ad4dc4ee-3ad4-491b-b311-abdf9bb22768"))).abi_TryCancelDownloadMessageAsync(localChatMessageId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore2)this.asInterface(uuid("ad4dc4ee-3ad4-491b-b311-abdf9bb22768"))).abi_TryCancelDownloadMessageAsync(hstring(localChatMessageId).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(bool) TryCancelSendMessageAsync(HSTRING localChatMessageId)
+	final Windows.Foundation.IAsyncOperation!(bool) TryCancelSendMessageAsync(wstring localChatMessageId)
 	{
 		Windows.Foundation.IAsyncOperation!(bool) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore2)this.asInterface(uuid("ad4dc4ee-3ad4-491b-b311-abdf9bb22768"))).abi_TryCancelSendMessageAsync(localChatMessageId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore2)this.asInterface(uuid("ad4dc4ee-3ad4-491b-b311-abdf9bb22768"))).abi_TryCancelSendMessageAsync(hstring(localChatMessageId).handle, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnStoreChanged(void delegate(Windows.ApplicationModel.Chat.ChatMessageStore, Windows.ApplicationModel.Chat.ChatMessageStoreChangedEventArgs) fn)
@@ -1562,10 +1562,10 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore2)this.asInterface(uuid("ad4dc4ee-3ad4-491b-b311-abdf9bb22768"))).remove_StoreChanged(token));
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) GetMessageBySyncIdAsync(HSTRING syncId)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) GetMessageBySyncIdAsync(wstring syncId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.ChatMessage) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore3)this.asInterface(uuid("9adbbb09-4345-4ec1-8b74-b7338243719c"))).abi_GetMessageBySyncIdAsync(syncId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStore3)this.asInterface(uuid("9adbbb09-4345-4ec1-8b74-b7338243719c"))).abi_GetMessageBySyncIdAsync(hstring(syncId).handle, &_ret));
 		return _ret;
 	}
 }
@@ -1573,11 +1573,11 @@ extern(Windows):
 interface ChatMessageStoreChangedEventArgs : Windows.ApplicationModel.Chat.IChatMessageStoreChangedEventArgs
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageStoreChangedEventArgs)this.asInterface(uuid("65c66fac-fe8c-46d4-9119-57b8410311d5"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Chat.ChatStoreChangedEventKind Kind()
 	{
@@ -1602,17 +1602,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageTransport)this.asInterface(uuid("63a9dbf8-e6b3-5c9a-5f85-d47925b9bd18"))).get_IsActive(&_ret));
 		return _ret;
 	}
-	final HSTRING TransportFriendlyName()
+	final wstring TransportFriendlyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageTransport)this.asInterface(uuid("63a9dbf8-e6b3-5c9a-5f85-d47925b9bd18"))).get_TransportFriendlyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING TransportId()
+	final wstring TransportId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatMessageTransport)this.asInterface(uuid("63a9dbf8-e6b3-5c9a-5f85-d47925b9bd18"))).get_TransportId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncAction RequestSetAsNotificationProviderAsync()
 	{
@@ -1701,15 +1701,15 @@ extern(Windows):
 interface ChatQueryOptions : Windows.ApplicationModel.Chat.IChatQueryOptions
 {
 extern(Windows):
-	final HSTRING SearchString()
+	final wstring SearchString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatQueryOptions)this.asInterface(uuid("2fd364a6-bf36-42f7-b7e7-923c0aabfe16"))).get_SearchString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void SearchString(HSTRING value)
+	final void SearchString(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatQueryOptions)this.asInterface(uuid("2fd364a6-bf36-42f7-b7e7-923c0aabfe16"))).set_SearchString(value));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatQueryOptions)this.asInterface(uuid("2fd364a6-bf36-42f7-b7e7-923c0aabfe16"))).set_SearchString(hstring(value).handle));
 	}
 	static ChatQueryOptions New()
 	{
@@ -1722,15 +1722,15 @@ extern(Windows):
 interface ChatRecipientDeliveryInfo : Windows.ApplicationModel.Chat.IChatRecipientDeliveryInfo
 {
 extern(Windows):
-	final HSTRING TransportAddress()
+	final wstring TransportAddress()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatRecipientDeliveryInfo)this.asInterface(uuid("ffc7b2a2-283c-4c0a-8a0e-8c33bdbf0545"))).get_TransportAddress(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void TransportAddress(HSTRING value)
+	final void TransportAddress(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatRecipientDeliveryInfo)this.asInterface(uuid("ffc7b2a2-283c-4c0a-8a0e-8c33bdbf0545"))).set_TransportAddress(value));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IChatRecipientDeliveryInfo)this.asInterface(uuid("ffc7b2a2-283c-4c0a-8a0e-8c33bdbf0545"))).set_TransportAddress(hstring(value).handle));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) DeliveryTime()
 	{
@@ -1875,23 +1875,23 @@ extern(Windows):
 interface RcsEndUserMessage : Windows.ApplicationModel.Chat.IRcsEndUserMessage
 {
 extern(Windows):
-	final HSTRING TransportId()
+	final wstring TransportId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IRcsEndUserMessage)this.asInterface(uuid("d7cda5eb-cbd7-4f3b-8526-b506dec35c53"))).get_TransportId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IRcsEndUserMessage)this.asInterface(uuid("d7cda5eb-cbd7-4f3b-8526-b506dec35c53"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Text()
+	final wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IRcsEndUserMessage)this.asInterface(uuid("d7cda5eb-cbd7-4f3b-8526-b506dec35c53"))).get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsPinRequired()
 	{
@@ -1911,10 +1911,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IRcsEndUserMessage)this.asInterface(uuid("d7cda5eb-cbd7-4f3b-8526-b506dec35c53"))).abi_SendResponseAsync(action, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction SendResponseWithPinAsync(Windows.ApplicationModel.Chat.RcsEndUserMessageAction action, HSTRING pin)
+	final Windows.Foundation.IAsyncAction SendResponseWithPinAsync(Windows.ApplicationModel.Chat.RcsEndUserMessageAction action, wstring pin)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Chat.IRcsEndUserMessage)this.asInterface(uuid("d7cda5eb-cbd7-4f3b-8526-b506dec35c53"))).abi_SendResponseWithPinAsync(action, pin, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Chat.IRcsEndUserMessage)this.asInterface(uuid("d7cda5eb-cbd7-4f3b-8526-b506dec35c53"))).abi_SendResponseWithPinAsync(action, hstring(pin).handle, &_ret));
 		return _ret;
 	}
 }
@@ -1922,11 +1922,11 @@ extern(Windows):
 interface RcsEndUserMessageAction : Windows.ApplicationModel.Chat.IRcsEndUserMessageAction
 {
 extern(Windows):
-	final HSTRING Label()
+	final wstring Label()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IRcsEndUserMessageAction)this.asInterface(uuid("92378737-9b42-46d3-9d5e-3c1b2dae7cb8"))).get_Label(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -1950,17 +1950,17 @@ extern(Windows):
 interface RcsEndUserMessageAvailableTriggerDetails : Windows.ApplicationModel.Chat.IRcsEndUserMessageAvailableTriggerDetails
 {
 extern(Windows):
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IRcsEndUserMessageAvailableTriggerDetails)this.asInterface(uuid("5b97742d-351f-4692-b41e-1b035dc18986"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Text()
+	final wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IRcsEndUserMessageAvailableTriggerDetails)this.asInterface(uuid("5b97742d-351f-4692-b41e-1b035dc18986"))).get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -1999,10 +1999,10 @@ interface RcsManager
 		Debug.OK(staticInstance.abi_GetTransportsAsync(&_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.RcsTransport) GetTransportAsync(HSTRING transportId)
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.RcsTransport) GetTransportAsync(wstring transportId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Chat.RcsTransport) _ret;
-		Debug.OK(staticInstance.abi_GetTransportAsync(transportId, &_ret));
+		Debug.OK(staticInstance.abi_GetTransportAsync(hstring(transportId).handle, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncAction LeaveConversationAsync(Windows.ApplicationModel.Chat.ChatConversation conversation)
@@ -2039,17 +2039,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IRcsTransport)this.asInterface(uuid("fea34759-f37c-4319-8546-ec84d21d30ff"))).get_IsActive(&_ret));
 		return _ret;
 	}
-	final HSTRING TransportFriendlyName()
+	final wstring TransportFriendlyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IRcsTransport)this.asInterface(uuid("fea34759-f37c-4319-8546-ec84d21d30ff"))).get_TransportFriendlyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING TransportId()
+	final wstring TransportId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IRcsTransport)this.asInterface(uuid("fea34759-f37c-4319-8546-ec84d21d30ff"))).get_TransportId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Chat.RcsTransportConfiguration Configuration()
 	{
@@ -2125,17 +2125,17 @@ extern(Windows):
 interface RemoteParticipantComposingChangedEventArgs : Windows.ApplicationModel.Chat.IRemoteParticipantComposingChangedEventArgs
 {
 extern(Windows):
-	final HSTRING TransportId()
+	final wstring TransportId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IRemoteParticipantComposingChangedEventArgs)this.asInterface(uuid("1ec045a7-cfc9-45c9-9876-449f2bc180f5"))).get_TransportId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ParticipantAddress()
+	final wstring ParticipantAddress()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Chat.IRemoteParticipantComposingChangedEventArgs)this.asInterface(uuid("1ec045a7-cfc9-45c9-9876-449f2bc180f5"))).get_ParticipantAddress(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsComposing()
 	{

@@ -74,28 +74,28 @@ extern(Windows):
 interface MicrosoftAccountMultiFactorAuthenticationManager : Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticationManager
 {
 extern(Windows):
-	final Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorOneTimeCodedInfo) GetOneTimePassCodeAsync(HSTRING userAccountId, UINT32 codeLength)
+	final Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorOneTimeCodedInfo) GetOneTimePassCodeAsync(wstring userAccountId, UINT32 codeLength)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorOneTimeCodedInfo) _ret;
-		Debug.OK((cast(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticationManager)this.asInterface(uuid("0fd340a5-f574-4320-a08e-0a19a82322aa"))).abi_GetOneTimePassCodeAsync(userAccountId, codeLength, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticationManager)this.asInterface(uuid("0fd340a5-f574-4320-a08e-0a19a82322aa"))).abi_GetOneTimePassCodeAsync(hstring(userAccountId).handle, codeLength, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) AddDeviceAsync(HSTRING userAccountId, HSTRING authenticationToken, HSTRING wnsChannelId)
+	final Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) AddDeviceAsync(wstring userAccountId, wstring authenticationToken, wstring wnsChannelId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) _ret;
-		Debug.OK((cast(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticationManager)this.asInterface(uuid("0fd340a5-f574-4320-a08e-0a19a82322aa"))).abi_AddDeviceAsync(userAccountId, authenticationToken, wnsChannelId, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticationManager)this.asInterface(uuid("0fd340a5-f574-4320-a08e-0a19a82322aa"))).abi_AddDeviceAsync(hstring(userAccountId).handle, hstring(authenticationToken).handle, hstring(wnsChannelId).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) RemoveDeviceAsync(HSTRING userAccountId)
+	final Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) RemoveDeviceAsync(wstring userAccountId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) _ret;
-		Debug.OK((cast(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticationManager)this.asInterface(uuid("0fd340a5-f574-4320-a08e-0a19a82322aa"))).abi_RemoveDeviceAsync(userAccountId, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticationManager)this.asInterface(uuid("0fd340a5-f574-4320-a08e-0a19a82322aa"))).abi_RemoveDeviceAsync(hstring(userAccountId).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) UpdateWnsChannelAsync(HSTRING userAccountId, HSTRING channelUri)
+	final Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) UpdateWnsChannelAsync(wstring userAccountId, wstring channelUri)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) _ret;
-		Debug.OK((cast(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticationManager)this.asInterface(uuid("0fd340a5-f574-4320-a08e-0a19a82322aa"))).abi_UpdateWnsChannelAsync(userAccountId, channelUri, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticationManager)this.asInterface(uuid("0fd340a5-f574-4320-a08e-0a19a82322aa"))).abi_UpdateWnsChannelAsync(hstring(userAccountId).handle, hstring(channelUri).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorGetSessionsResult) GetSessionsAsync(Windows.Foundation.Collections.IIterable!(HSTRING) userAccountIdList)
@@ -117,10 +117,10 @@ extern(Windows):
 		return _ret;
 	}
 	alias ApproveSessionAsync = ApproveSessionUsingAuthSessionInfoAsync;
-	final Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) ApproveSessionAsync(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionAuthenticationStatus sessionAuthentictionStatus, HSTRING userAccountId, HSTRING sessionId, Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthenticationType sessionAuthenticationType)
+	final Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) ApproveSessionAsync(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionAuthenticationStatus sessionAuthentictionStatus, wstring userAccountId, wstring sessionId, Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthenticationType sessionAuthenticationType)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) _ret;
-		Debug.OK((cast(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticationManager)this.asInterface(uuid("0fd340a5-f574-4320-a08e-0a19a82322aa"))).abi_ApproveSessionAsync(sessionAuthentictionStatus, userAccountId, sessionId, sessionAuthenticationType, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticationManager)this.asInterface(uuid("0fd340a5-f574-4320-a08e-0a19a82322aa"))).abi_ApproveSessionAsync(sessionAuthentictionStatus, hstring(userAccountId).handle, hstring(sessionId).handle, sessionAuthenticationType, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) DenySessionUsingAuthSessionInfoAsync(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionInfo authenticationSessionInfo)
@@ -130,10 +130,10 @@ extern(Windows):
 		return _ret;
 	}
 	alias DenySessionAsync = DenySessionUsingAuthSessionInfoAsync;
-	final Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) DenySessionAsync(HSTRING userAccountId, HSTRING sessionId, Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthenticationType sessionAuthenticationType)
+	final Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) DenySessionAsync(wstring userAccountId, wstring sessionId, Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorAuthenticationType sessionAuthenticationType)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorServiceResponse) _ret;
-		Debug.OK((cast(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticationManager)this.asInterface(uuid("0fd340a5-f574-4320-a08e-0a19a82322aa"))).abi_DenySessionAsync(userAccountId, sessionId, sessionAuthenticationType, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorAuthenticationManager)this.asInterface(uuid("0fd340a5-f574-4320-a08e-0a19a82322aa"))).abi_DenySessionAsync(hstring(userAccountId).handle, hstring(sessionId).handle, sessionAuthenticationType, &_ret));
 		return _ret;
 	}
 
@@ -171,11 +171,11 @@ extern(Windows):
 interface MicrosoftAccountMultiFactorOneTimeCodedInfo : Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorOneTimeCodedInfo
 {
 extern(Windows):
-	final HSTRING Code()
+	final wstring Code()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorOneTimeCodedInfo)this.asInterface(uuid("82ba264b-d87c-4668-a976-40cfae547d08"))).get_Code(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.TimeSpan TimeInterval()
 	{
@@ -200,23 +200,23 @@ extern(Windows):
 interface MicrosoftAccountMultiFactorSessionInfo : Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorSessionInfo
 {
 extern(Windows):
-	final HSTRING UserAccountId()
+	final wstring UserAccountId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorSessionInfo)this.asInterface(uuid("5f7eabb4-a278-4635-b765-b494eb260af4"))).get_UserAccountId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING SessionId()
+	final wstring SessionId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorSessionInfo)this.asInterface(uuid("5f7eabb4-a278-4635-b765-b494eb260af4"))).get_SessionId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DisplaySessionId()
+	final wstring DisplaySessionId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Authentication.Identity.Core.IMicrosoftAccountMultiFactorSessionInfo)this.asInterface(uuid("5f7eabb4-a278-4635-b765-b494eb260af4"))).get_DisplaySessionId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Security.Authentication.Identity.Core.MicrosoftAccountMultiFactorSessionApprovalStatus ApprovalStatus()
 	{

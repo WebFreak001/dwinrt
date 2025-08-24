@@ -65,11 +65,11 @@ interface SocialDashboardItemUpdater : Windows.ApplicationModel.SocialInfo.Provi
 {
 extern(Windows):
 	deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final HSTRING OwnerRemoteId()
+	final wstring OwnerRemoteId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.Provider.ISocialDashboardItemUpdater)this.asInterface(uuid("3cde9dc9-4800-46cd-869b-1973ec685bde"))).get_OwnerRemoteId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final Windows.ApplicationModel.SocialInfo.SocialFeedContent Content()
@@ -127,11 +127,11 @@ interface SocialFeedUpdater : Windows.ApplicationModel.SocialInfo.Provider.ISoci
 {
 extern(Windows):
 	deprecated("ISocialFeedUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
-	final HSTRING OwnerRemoteId()
+	final wstring OwnerRemoteId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.SocialInfo.Provider.ISocialFeedUpdater)this.asInterface(uuid("7a0c0aa7-ed89-4bd5-a8d9-15f4d9861c10"))).get_OwnerRemoteId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("ISocialFeedUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")
 	final Windows.ApplicationModel.SocialInfo.SocialFeedKind Kind()
@@ -165,28 +165,28 @@ interface SocialInfoProviderManager
 		return _staticInstance;
 	}
 	deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")
-	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.SocialInfo.Provider.SocialFeedUpdater) CreateSocialFeedUpdaterAsync(Windows.ApplicationModel.SocialInfo.SocialFeedKind kind, Windows.ApplicationModel.SocialInfo.SocialFeedUpdateMode mode, HSTRING ownerRemoteId)
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.SocialInfo.Provider.SocialFeedUpdater) CreateSocialFeedUpdaterAsync(Windows.ApplicationModel.SocialInfo.SocialFeedKind kind, Windows.ApplicationModel.SocialInfo.SocialFeedUpdateMode mode, wstring ownerRemoteId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.SocialInfo.Provider.SocialFeedUpdater) _ret;
-		Debug.OK(staticInstance.abi_CreateSocialFeedUpdaterAsync(kind, mode, ownerRemoteId, &_ret));
+		Debug.OK(staticInstance.abi_CreateSocialFeedUpdaterAsync(kind, mode, hstring(ownerRemoteId).handle, &_ret));
 		return _ret;
 	}
 	deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")
-	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.SocialInfo.Provider.SocialDashboardItemUpdater) CreateDashboardItemUpdaterAsync(HSTRING ownerRemoteId)
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.SocialInfo.Provider.SocialDashboardItemUpdater) CreateDashboardItemUpdaterAsync(wstring ownerRemoteId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.SocialInfo.Provider.SocialDashboardItemUpdater) _ret;
-		Debug.OK(staticInstance.abi_CreateDashboardItemUpdaterAsync(ownerRemoteId, &_ret));
+		Debug.OK(staticInstance.abi_CreateDashboardItemUpdaterAsync(hstring(ownerRemoteId).handle, &_ret));
 		return _ret;
 	}
 	deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")
-	static void UpdateBadgeCountValue(HSTRING itemRemoteId, INT32 newCount)
+	static void UpdateBadgeCountValue(wstring itemRemoteId, INT32 newCount)
 	{
-		Debug.OK(staticInstance.abi_UpdateBadgeCountValue(itemRemoteId, newCount));
+		Debug.OK(staticInstance.abi_UpdateBadgeCountValue(hstring(itemRemoteId).handle, newCount));
 	}
 	deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")
-	static void ReportNewContentAvailable(HSTRING contactRemoteId, Windows.ApplicationModel.SocialInfo.SocialFeedKind kind)
+	static void ReportNewContentAvailable(wstring contactRemoteId, Windows.ApplicationModel.SocialInfo.SocialFeedKind kind)
 	{
-		Debug.OK(staticInstance.abi_ReportNewContentAvailable(contactRemoteId, kind));
+		Debug.OK(staticInstance.abi_ReportNewContentAvailable(hstring(contactRemoteId).handle, kind));
 	}
 	deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")
 	static Windows.Foundation.IAsyncOperation!(bool) ProvisionAsync()

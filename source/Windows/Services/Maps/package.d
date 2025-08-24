@@ -332,101 +332,101 @@ extern(Windows):
 interface MapAddress : Windows.Services.Maps.IMapAddress, Windows.Services.Maps.IMapAddress2
 {
 extern(Windows):
-	final HSTRING BuildingName()
+	final wstring BuildingName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_BuildingName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING BuildingFloor()
+	final wstring BuildingFloor()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_BuildingFloor(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING BuildingRoom()
+	final wstring BuildingRoom()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_BuildingRoom(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING BuildingWing()
+	final wstring BuildingWing()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_BuildingWing(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING StreetNumber()
+	final wstring StreetNumber()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_StreetNumber(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Street()
+	final wstring Street()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_Street(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Neighborhood()
+	final wstring Neighborhood()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_Neighborhood(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING District()
+	final wstring District()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_District(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Town()
+	final wstring Town()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_Town(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Region()
+	final wstring Region()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_Region(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING RegionCode()
+	final wstring RegionCode()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_RegionCode(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Country()
+	final wstring Country()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_Country(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING CountryCode()
+	final wstring CountryCode()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_CountryCode(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING PostCode()
+	final wstring PostCode()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_PostCode(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Continent()
+	final wstring Continent()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.IMapAddress)this.asInterface(uuid("cfa7a973-a3b4-4494-b3ff-cba94db69699"))).get_Continent(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING FormattedAddress()
+	final wstring FormattedAddress()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.IMapAddress2)this.asInterface(uuid("75cd6df1-e5ad-45a9-bf40-6cf256c1dd13"))).get_FormattedAddress(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -439,17 +439,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Maps.IMapLocation)this.asInterface(uuid("3c073f57-0da4-42e8-9ee2-a96fcf2371dc"))).get_Point(&_ret));
 		return _ret;
 	}
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.IMapLocation)this.asInterface(uuid("3c073f57-0da4-42e8-9ee2-a96fcf2371dc"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Description()
+	final wstring Description()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.IMapLocation)this.asInterface(uuid("3c073f57-0da4-42e8-9ee2-a96fcf2371dc"))).get_Description(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Services.Maps.MapAddress Address()
 	{
@@ -473,16 +473,16 @@ interface MapLocationFinder
 		Debug.OK(staticInstance.abi_FindLocationsAtAsync(queryPoint, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult) FindLocationsAsync(HSTRING searchText, Windows.Devices.Geolocation.Geopoint referencePoint)
+	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult) FindLocationsAsync(wstring searchText, Windows.Devices.Geolocation.Geopoint referencePoint)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult) _ret;
-		Debug.OK(staticInstance.abi_FindLocationsAsync(searchText, referencePoint, &_ret));
+		Debug.OK(staticInstance.abi_FindLocationsAsync(hstring(searchText).handle, referencePoint, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult) FindLocationsWithMaxCountAsync(HSTRING searchText, Windows.Devices.Geolocation.Geopoint referencePoint, UINT32 maxCount)
+	static Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult) FindLocationsWithMaxCountAsync(wstring searchText, Windows.Devices.Geolocation.Geopoint referencePoint, UINT32 maxCount)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Maps.MapLocationFinderResult) _ret;
-		Debug.OK(staticInstance.abi_FindLocationsWithMaxCountAsync(searchText, referencePoint, maxCount, &_ret));
+		Debug.OK(staticInstance.abi_FindLocationsWithMaxCountAsync(hstring(searchText).handle, referencePoint, maxCount, &_ret));
 		return _ret;
 	}
 	alias FindLocationsAsync = FindLocationsWithMaxCountAsync;
@@ -800,11 +800,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Maps.IMapRouteManeuver)this.asInterface(uuid("ed5c17f0-a6ab-4d65-a086-fa8a7e340df2"))).get_LengthInMeters(&_ret));
 		return _ret;
 	}
-	final HSTRING InstructionText()
+	final wstring InstructionText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.IMapRouteManeuver)this.asInterface(uuid("ed5c17f0-a6ab-4d65-a086-fa8a7e340df2"))).get_InstructionText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Services.Maps.MapRouteManeuverKind Kind()
 	{
@@ -812,11 +812,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Maps.IMapRouteManeuver)this.asInterface(uuid("ed5c17f0-a6ab-4d65-a086-fa8a7e340df2"))).get_Kind(&_ret));
 		return _ret;
 	}
-	final HSTRING ExitNumber()
+	final wstring ExitNumber()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.IMapRouteManeuver)this.asInterface(uuid("ed5c17f0-a6ab-4d65-a086-fa8a7e340df2"))).get_ExitNumber(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Services.Maps.MapManeuverNotices ManeuverNotices()
 	{
@@ -836,11 +836,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Maps.IMapRouteManeuver2)this.asInterface(uuid("5d7bcd9c-7c9b-41df-838b-eae21e4b05a9"))).get_EndHeading(&_ret));
 		return _ret;
 	}
-	final HSTRING StreetName()
+	final wstring StreetName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.IMapRouteManeuver2)this.asInterface(uuid("5d7bcd9c-7c9b-41df-838b-eae21e4b05a9"))).get_StreetName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Maps.ManeuverWarning) Warnings()
 	{
@@ -858,15 +858,15 @@ interface MapService
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Services.Maps.IMapServiceStatics);
 		return _staticInstance;
 	}
-	static void ServiceToken(HSTRING value)
+	static void ServiceToken(wstring value)
 	{
-		Debug.OK(staticInstance.set_ServiceToken(value));
+		Debug.OK(staticInstance.set_ServiceToken(hstring(value).handle));
 	}
-	static HSTRING ServiceToken()
+	static wstring ServiceToken()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_ServiceToken(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 

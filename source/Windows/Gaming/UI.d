@@ -100,29 +100,29 @@ interface GameBar
 interface GameChatMessageReceivedEventArgs : Windows.Gaming.UI.IGameChatMessageReceivedEventArgs
 {
 extern(Windows):
-	final HSTRING AppId()
+	final wstring AppId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Gaming.UI.IGameChatMessageReceivedEventArgs)this.asInterface(uuid("a28201f1-3fb9-4e42-a403-7afce2023b1e"))).get_AppId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING AppDisplayName()
+	final wstring AppDisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Gaming.UI.IGameChatMessageReceivedEventArgs)this.asInterface(uuid("a28201f1-3fb9-4e42-a403-7afce2023b1e"))).get_AppDisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING SenderName()
+	final wstring SenderName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Gaming.UI.IGameChatMessageReceivedEventArgs)this.asInterface(uuid("a28201f1-3fb9-4e42-a403-7afce2023b1e"))).get_SenderName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Message()
+	final wstring Message()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Gaming.UI.IGameChatMessageReceivedEventArgs)this.asInterface(uuid("a28201f1-3fb9-4e42-a403-7afce2023b1e"))).get_Message(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Gaming.UI.GameChatMessageOrigin Origin()
 	{
@@ -145,9 +145,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Gaming.UI.IGameChatOverlay)this.asInterface(uuid("fbc64865-f6fc-4a48-ae07-03ac6ed43704"))).set_DesiredPosition(value));
 	}
-	final void AddMessage(HSTRING sender, HSTRING message, Windows.Gaming.UI.GameChatMessageOrigin origin)
+	final void AddMessage(wstring sender, wstring message, Windows.Gaming.UI.GameChatMessageOrigin origin)
 	{
-		Debug.OK((cast(Windows.Gaming.UI.IGameChatOverlay)this.asInterface(uuid("fbc64865-f6fc-4a48-ae07-03ac6ed43704"))).abi_AddMessage(sender, message, origin));
+		Debug.OK((cast(Windows.Gaming.UI.IGameChatOverlay)this.asInterface(uuid("fbc64865-f6fc-4a48-ae07-03ac6ed43704"))).abi_AddMessage(hstring(sender).handle, hstring(message).handle, origin));
 	}
 
 	private static Windows.Gaming.UI.IGameChatOverlayStatics _staticInstance;

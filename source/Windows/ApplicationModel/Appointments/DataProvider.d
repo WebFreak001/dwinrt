@@ -173,17 +173,17 @@ extern(Windows):
 interface AppointmentCalendarCancelMeetingRequest : Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest
 {
 extern(Windows):
-	final HSTRING AppointmentCalendarLocalId()
+	final wstring AppointmentCalendarLocalId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest)this.asInterface(uuid("49460f8d-6434-40d7-ad46-6297419314d1"))).get_AppointmentCalendarLocalId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING AppointmentLocalId()
+	final wstring AppointmentLocalId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest)this.asInterface(uuid("49460f8d-6434-40d7-ad46-6297419314d1"))).get_AppointmentLocalId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) AppointmentOriginalStartTime()
 	{
@@ -191,17 +191,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest)this.asInterface(uuid("49460f8d-6434-40d7-ad46-6297419314d1"))).get_AppointmentOriginalStartTime(&_ret));
 		return _ret;
 	}
-	final HSTRING Subject()
+	final wstring Subject()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest)this.asInterface(uuid("49460f8d-6434-40d7-ad46-6297419314d1"))).get_Subject(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Comment()
+	final wstring Comment()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCancelMeetingRequest)this.asInterface(uuid("49460f8d-6434-40d7-ad46-6297419314d1"))).get_Comment(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool NotifyInvitees()
 	{
@@ -243,11 +243,11 @@ extern(Windows):
 interface AppointmentCalendarCreateOrUpdateAppointmentRequest : Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequest
 {
 extern(Windows):
-	final HSTRING AppointmentCalendarLocalId()
+	final wstring AppointmentCalendarLocalId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarCreateOrUpdateAppointmentRequest)this.asInterface(uuid("2e62f2b2-ca96-48ac-9124-406b19fefa70"))).get_AppointmentCalendarLocalId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Appointments.Appointment Appointment()
 	{
@@ -301,17 +301,17 @@ extern(Windows):
 interface AppointmentCalendarForwardMeetingRequest : Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest
 {
 extern(Windows):
-	final HSTRING AppointmentCalendarLocalId()
+	final wstring AppointmentCalendarLocalId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest)this.asInterface(uuid("82e5ee56-26b6-4253-8a8f-6cf5f2ff7884"))).get_AppointmentCalendarLocalId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING AppointmentLocalId()
+	final wstring AppointmentLocalId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest)this.asInterface(uuid("82e5ee56-26b6-4253-8a8f-6cf5f2ff7884"))).get_AppointmentLocalId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) AppointmentOriginalStartTime()
 	{
@@ -325,23 +325,23 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest)this.asInterface(uuid("82e5ee56-26b6-4253-8a8f-6cf5f2ff7884"))).get_Invitees(&_ret));
 		return _ret;
 	}
-	final HSTRING Subject()
+	final wstring Subject()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest)this.asInterface(uuid("82e5ee56-26b6-4253-8a8f-6cf5f2ff7884"))).get_Subject(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ForwardHeader()
+	final wstring ForwardHeader()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest)this.asInterface(uuid("82e5ee56-26b6-4253-8a8f-6cf5f2ff7884"))).get_ForwardHeader(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Comment()
+	final wstring Comment()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarForwardMeetingRequest)this.asInterface(uuid("82e5ee56-26b6-4253-8a8f-6cf5f2ff7884"))).get_Comment(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
 	{
@@ -377,17 +377,17 @@ extern(Windows):
 interface AppointmentCalendarProposeNewTimeForMeetingRequest : Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest
 {
 extern(Windows):
-	final HSTRING AppointmentCalendarLocalId()
+	final wstring AppointmentCalendarLocalId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest)this.asInterface(uuid("ce1c63f5-edf6-43c3-82b7-be6b368c6900"))).get_AppointmentCalendarLocalId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING AppointmentLocalId()
+	final wstring AppointmentLocalId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest)this.asInterface(uuid("ce1c63f5-edf6-43c3-82b7-be6b368c6900"))).get_AppointmentLocalId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) AppointmentOriginalStartTime()
 	{
@@ -407,17 +407,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest)this.asInterface(uuid("ce1c63f5-edf6-43c3-82b7-be6b368c6900"))).get_NewDuration(&_ret));
 		return _ret;
 	}
-	final HSTRING Subject()
+	final wstring Subject()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest)this.asInterface(uuid("ce1c63f5-edf6-43c3-82b7-be6b368c6900"))).get_Subject(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Comment()
+	final wstring Comment()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarProposeNewTimeForMeetingRequest)this.asInterface(uuid("ce1c63f5-edf6-43c3-82b7-be6b368c6900"))).get_Comment(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
 	{
@@ -453,11 +453,11 @@ extern(Windows):
 interface AppointmentCalendarSyncManagerSyncRequest : Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarSyncManagerSyncRequest
 {
 extern(Windows):
-	final HSTRING AppointmentCalendarLocalId()
+	final wstring AppointmentCalendarLocalId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarSyncManagerSyncRequest)this.asInterface(uuid("12ab382b-7163-4a56-9a4e-7223a84adf46"))).get_AppointmentCalendarLocalId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
 	{
@@ -493,17 +493,17 @@ extern(Windows):
 interface AppointmentCalendarUpdateMeetingResponseRequest : Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest
 {
 extern(Windows):
-	final HSTRING AppointmentCalendarLocalId()
+	final wstring AppointmentCalendarLocalId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest)this.asInterface(uuid("a36d608c-c29d-4b94-b086-7e9ff7bd84a0"))).get_AppointmentCalendarLocalId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING AppointmentLocalId()
+	final wstring AppointmentLocalId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest)this.asInterface(uuid("a36d608c-c29d-4b94-b086-7e9ff7bd84a0"))).get_AppointmentLocalId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) AppointmentOriginalStartTime()
 	{
@@ -517,17 +517,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest)this.asInterface(uuid("a36d608c-c29d-4b94-b086-7e9ff7bd84a0"))).get_Response(&_ret));
 		return _ret;
 	}
-	final HSTRING Subject()
+	final wstring Subject()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest)this.asInterface(uuid("a36d608c-c29d-4b94-b086-7e9ff7bd84a0"))).get_Subject(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Comment()
+	final wstring Comment()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Appointments.DataProvider.IAppointmentCalendarUpdateMeetingResponseRequest)this.asInterface(uuid("a36d608c-c29d-4b94-b086-7e9ff7bd84a0"))).get_Comment(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool SendUpdate()
 	{

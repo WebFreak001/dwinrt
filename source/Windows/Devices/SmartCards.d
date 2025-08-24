@@ -445,16 +445,16 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_FromSmartCardAsync(card, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning) RequestVirtualSmartCardCreationAsync(HSTRING friendlyName, Windows.Storage.Streams.IBuffer administrativeKey, Windows.Devices.SmartCards.SmartCardPinPolicy pinPolicy)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning) RequestVirtualSmartCardCreationAsync(wstring friendlyName, Windows.Storage.Streams.IBuffer administrativeKey, Windows.Devices.SmartCards.SmartCardPinPolicy pinPolicy)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning) _ret;
-		Debug.OK(staticInstance.abi_RequestVirtualSmartCardCreationAsync(friendlyName, administrativeKey, pinPolicy, &_ret));
+		Debug.OK(staticInstance.abi_RequestVirtualSmartCardCreationAsync(hstring(friendlyName).handle, administrativeKey, pinPolicy, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning) RequestVirtualSmartCardCreationAsyncWithCardId(HSTRING friendlyName, Windows.Storage.Streams.IBuffer administrativeKey, Windows.Devices.SmartCards.SmartCardPinPolicy pinPolicy, GUID cardId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning) RequestVirtualSmartCardCreationAsyncWithCardId(wstring friendlyName, Windows.Storage.Streams.IBuffer administrativeKey, Windows.Devices.SmartCards.SmartCardPinPolicy pinPolicy, GUID cardId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardProvisioning) _ret;
-		Debug.OK(staticInstance.abi_RequestVirtualSmartCardCreationAsyncWithCardId(friendlyName, administrativeKey, pinPolicy, cardId, &_ret));
+		Debug.OK(staticInstance.abi_RequestVirtualSmartCardCreationAsyncWithCardId(hstring(friendlyName).handle, administrativeKey, pinPolicy, cardId, &_ret));
 		return _ret;
 	}
 	alias RequestVirtualSmartCardCreationAsync = RequestVirtualSmartCardCreationAsyncWithCardId;
@@ -469,17 +469,17 @@ extern(Windows):
 interface SmartCardReader : Windows.Devices.SmartCards.ISmartCardReader
 {
 extern(Windows):
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.SmartCards.ISmartCardReader)this.asInterface(uuid("1074b4e0-54c2-4df0-817a-14c14378f06c"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.SmartCards.ISmartCardReader)this.asInterface(uuid("1074b4e0-54c2-4df0-817a-14c14378f06c"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Devices.SmartCards.SmartCardReaderKind Kind()
 	{
@@ -526,23 +526,23 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.SmartCards.ISmartCardReaderStatics);
 		return _staticInstance;
 	}
-	static HSTRING GetDeviceSelector()
+	static wstring GetDeviceSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GetDeviceSelectorWithKind(Windows.Devices.SmartCards.SmartCardReaderKind kind)
+	static wstring GetDeviceSelectorWithKind(Windows.Devices.SmartCards.SmartCardReaderKind kind)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelectorWithKind(kind, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	alias GetDeviceSelector = GetDeviceSelectorWithKind;
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardReader) FromIdAsync(HSTRING deviceId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardReader) FromIdAsync(wstring deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.SmartCards.SmartCardReader) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
 }

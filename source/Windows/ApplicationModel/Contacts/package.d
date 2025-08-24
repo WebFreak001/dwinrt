@@ -979,10 +979,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IAggregateContactManager)this.asInterface(uuid("0379d5dd-db5a-4fd3-b54e-4df17917a212"))).abi_TrySetPreferredSourceForPictureAsync(aggregateContact, rawContact, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction SetRemoteIdentificationInformationAsync(HSTRING contactListId, HSTRING remoteSourceId, HSTRING accountId)
+	final Windows.Foundation.IAsyncAction SetRemoteIdentificationInformationAsync(wstring contactListId, wstring remoteSourceId, wstring accountId)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IAggregateContactManager2)this.asInterface(uuid("5e8cc2d8-a9cd-4430-9c4b-01348db2ca50"))).abi_SetRemoteIdentificationInformationAsync(contactListId, remoteSourceId, accountId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IAggregateContactManager2)this.asInterface(uuid("5e8cc2d8-a9cd-4430-9c4b-01348db2ca50"))).abi_SetRemoteIdentificationInformationAsync(hstring(contactListId).handle, hstring(remoteSourceId).handle, hstring(accountId).handle, &_ret));
 		return _ret;
 	}
 }
@@ -990,15 +990,15 @@ extern(Windows):
 interface Contact : Windows.ApplicationModel.Contacts.IContact, Windows.ApplicationModel.Contacts.IContact2, Windows.ApplicationModel.Contacts.IContactName, Windows.ApplicationModel.Contacts.IContact3
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact)this.asInterface(uuid("ec0072f3-2118-4049-9ebc-17f0ab692b64"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Name(HSTRING value)
+	final void Name(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact)this.asInterface(uuid("ec0072f3-2118-4049-9ebc-17f0ab692b64"))).set_Name(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact)this.asInterface(uuid("ec0072f3-2118-4049-9ebc-17f0ab692b64"))).set_Name(hstring(value).handle));
 	}
 	final Windows.Storage.Streams.IRandomAccessStreamReference Thumbnail()
 	{
@@ -1016,25 +1016,25 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact)this.asInterface(uuid("ec0072f3-2118-4049-9ebc-17f0ab692b64"))).get_Fields(&_ret));
 		return _ret;
 	}
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact2)this.asInterface(uuid("f312f365-bb77-4c94-802d-8328cee40c08"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Id(HSTRING value)
+	final void Id(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact2)this.asInterface(uuid("f312f365-bb77-4c94-802d-8328cee40c08"))).set_Id(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact2)this.asInterface(uuid("f312f365-bb77-4c94-802d-8328cee40c08"))).set_Id(hstring(value).handle));
 	}
-	final HSTRING Notes()
+	final wstring Notes()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact2)this.asInterface(uuid("f312f365-bb77-4c94-802d-8328cee40c08"))).get_Notes(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Notes(HSTRING value)
+	final void Notes(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact2)this.asInterface(uuid("f312f365-bb77-4c94-802d-8328cee40c08"))).set_Notes(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact2)this.asInterface(uuid("f312f365-bb77-4c94-802d-8328cee40c08"))).set_Notes(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IVector!(Windows.ApplicationModel.Contacts.ContactPhone) Phones()
 	{
@@ -1096,93 +1096,93 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact2)this.asInterface(uuid("f312f365-bb77-4c94-802d-8328cee40c08"))).get_ProviderProperties(&_ret));
 		return _ret;
 	}
-	final HSTRING FirstName()
+	final wstring FirstName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactName)this.asInterface(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d"))).get_FirstName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void FirstName(HSTRING value)
+	final void FirstName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactName)this.asInterface(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d"))).set_FirstName(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactName)this.asInterface(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d"))).set_FirstName(hstring(value).handle));
 	}
-	final HSTRING LastName()
+	final wstring LastName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactName)this.asInterface(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d"))).get_LastName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void LastName(HSTRING value)
+	final void LastName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactName)this.asInterface(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d"))).set_LastName(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactName)this.asInterface(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d"))).set_LastName(hstring(value).handle));
 	}
-	final HSTRING MiddleName()
+	final wstring MiddleName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactName)this.asInterface(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d"))).get_MiddleName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void MiddleName(HSTRING value)
+	final void MiddleName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactName)this.asInterface(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d"))).set_MiddleName(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactName)this.asInterface(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d"))).set_MiddleName(hstring(value).handle));
 	}
-	final HSTRING YomiGivenName()
+	final wstring YomiGivenName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactName)this.asInterface(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d"))).get_YomiGivenName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void YomiGivenName(HSTRING value)
+	final void YomiGivenName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactName)this.asInterface(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d"))).set_YomiGivenName(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactName)this.asInterface(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d"))).set_YomiGivenName(hstring(value).handle));
 	}
-	final HSTRING YomiFamilyName()
+	final wstring YomiFamilyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactName)this.asInterface(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d"))).get_YomiFamilyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void YomiFamilyName(HSTRING value)
+	final void YomiFamilyName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactName)this.asInterface(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d"))).set_YomiFamilyName(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactName)this.asInterface(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d"))).set_YomiFamilyName(hstring(value).handle));
 	}
-	final HSTRING HonorificNameSuffix()
+	final wstring HonorificNameSuffix()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactName)this.asInterface(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d"))).get_HonorificNameSuffix(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void HonorificNameSuffix(HSTRING value)
+	final void HonorificNameSuffix(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactName)this.asInterface(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d"))).set_HonorificNameSuffix(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactName)this.asInterface(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d"))).set_HonorificNameSuffix(hstring(value).handle));
 	}
-	final HSTRING HonorificNamePrefix()
+	final wstring HonorificNamePrefix()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactName)this.asInterface(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d"))).get_HonorificNamePrefix(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void HonorificNamePrefix(HSTRING value)
+	final void HonorificNamePrefix(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactName)this.asInterface(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d"))).set_HonorificNamePrefix(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactName)this.asInterface(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d"))).set_HonorificNamePrefix(hstring(value).handle));
 	}
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactName)this.asInterface(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING YomiDisplayName()
+	final wstring YomiDisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactName)this.asInterface(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d"))).get_YomiDisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ContactListId()
+	final wstring ContactListId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact3)this.asInterface(uuid("48201e67-e08e-42a4-b561-41d08ca9575d"))).get_ContactListId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.DateTime DisplayPictureUserUpdateTime()
 	{
@@ -1200,31 +1200,31 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact3)this.asInterface(uuid("48201e67-e08e-42a4-b561-41d08ca9575d"))).get_IsMe(&_ret));
 		return _ret;
 	}
-	final HSTRING AggregateId()
+	final wstring AggregateId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact3)this.asInterface(uuid("48201e67-e08e-42a4-b561-41d08ca9575d"))).get_AggregateId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING RemoteId()
+	final wstring RemoteId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact3)this.asInterface(uuid("48201e67-e08e-42a4-b561-41d08ca9575d"))).get_RemoteId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void RemoteId(HSTRING value)
+	final void RemoteId(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact3)this.asInterface(uuid("48201e67-e08e-42a4-b561-41d08ca9575d"))).set_RemoteId(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact3)this.asInterface(uuid("48201e67-e08e-42a4-b561-41d08ca9575d"))).set_RemoteId(hstring(value).handle));
 	}
-	final HSTRING RingToneToken()
+	final wstring RingToneToken()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact3)this.asInterface(uuid("48201e67-e08e-42a4-b561-41d08ca9575d"))).get_RingToneToken(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void RingToneToken(HSTRING value)
+	final void RingToneToken(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact3)this.asInterface(uuid("48201e67-e08e-42a4-b561-41d08ca9575d"))).set_RingToneToken(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact3)this.asInterface(uuid("48201e67-e08e-42a4-b561-41d08ca9575d"))).set_RingToneToken(hstring(value).handle));
 	}
 	final bool IsDisplayPictureManuallySet()
 	{
@@ -1254,15 +1254,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact3)this.asInterface(uuid("48201e67-e08e-42a4-b561-41d08ca9575d"))).set_SourceDisplayPicture(value));
 	}
-	final HSTRING TextToneToken()
+	final wstring TextToneToken()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact3)this.asInterface(uuid("48201e67-e08e-42a4-b561-41d08ca9575d"))).get_TextToneToken(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void TextToneToken(HSTRING value)
+	final void TextToneToken(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact3)this.asInterface(uuid("48201e67-e08e-42a4-b561-41d08ca9575d"))).set_TextToneToken(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact3)this.asInterface(uuid("48201e67-e08e-42a4-b561-41d08ca9575d"))).set_TextToneToken(hstring(value).handle));
 	}
 	final bool IsAggregate()
 	{
@@ -1270,37 +1270,37 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact3)this.asInterface(uuid("48201e67-e08e-42a4-b561-41d08ca9575d"))).get_IsAggregate(&_ret));
 		return _ret;
 	}
-	final HSTRING FullName()
+	final wstring FullName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact3)this.asInterface(uuid("48201e67-e08e-42a4-b561-41d08ca9575d"))).get_FullName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DisplayNameOverride()
+	final wstring DisplayNameOverride()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact3)this.asInterface(uuid("48201e67-e08e-42a4-b561-41d08ca9575d"))).get_DisplayNameOverride(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void DisplayNameOverride(HSTRING value)
+	final void DisplayNameOverride(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact3)this.asInterface(uuid("48201e67-e08e-42a4-b561-41d08ca9575d"))).set_DisplayNameOverride(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact3)this.asInterface(uuid("48201e67-e08e-42a4-b561-41d08ca9575d"))).set_DisplayNameOverride(hstring(value).handle));
 	}
-	final HSTRING Nickname()
+	final wstring Nickname()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact3)this.asInterface(uuid("48201e67-e08e-42a4-b561-41d08ca9575d"))).get_Nickname(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Nickname(HSTRING value)
+	final void Nickname(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact3)this.asInterface(uuid("48201e67-e08e-42a4-b561-41d08ca9575d"))).set_Nickname(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact3)this.asInterface(uuid("48201e67-e08e-42a4-b561-41d08ca9575d"))).set_Nickname(hstring(value).handle));
 	}
-	final HSTRING SortName()
+	final wstring SortName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContact3)this.asInterface(uuid("48201e67-e08e-42a4-b561-41d08ca9575d"))).get_SortName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static Contact New()
 	{
@@ -1313,55 +1313,55 @@ extern(Windows):
 interface ContactAddress : Windows.ApplicationModel.Contacts.IContactAddress
 {
 extern(Windows):
-	final HSTRING StreetAddress()
+	final wstring StreetAddress()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAddress)this.asInterface(uuid("9739d39a-42ce-4872-8d70-3063aa584b70"))).get_StreetAddress(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void StreetAddress(HSTRING value)
+	final void StreetAddress(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAddress)this.asInterface(uuid("9739d39a-42ce-4872-8d70-3063aa584b70"))).set_StreetAddress(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAddress)this.asInterface(uuid("9739d39a-42ce-4872-8d70-3063aa584b70"))).set_StreetAddress(hstring(value).handle));
 	}
-	final HSTRING Locality()
+	final wstring Locality()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAddress)this.asInterface(uuid("9739d39a-42ce-4872-8d70-3063aa584b70"))).get_Locality(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Locality(HSTRING value)
+	final void Locality(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAddress)this.asInterface(uuid("9739d39a-42ce-4872-8d70-3063aa584b70"))).set_Locality(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAddress)this.asInterface(uuid("9739d39a-42ce-4872-8d70-3063aa584b70"))).set_Locality(hstring(value).handle));
 	}
-	final HSTRING Region()
+	final wstring Region()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAddress)this.asInterface(uuid("9739d39a-42ce-4872-8d70-3063aa584b70"))).get_Region(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Region(HSTRING value)
+	final void Region(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAddress)this.asInterface(uuid("9739d39a-42ce-4872-8d70-3063aa584b70"))).set_Region(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAddress)this.asInterface(uuid("9739d39a-42ce-4872-8d70-3063aa584b70"))).set_Region(hstring(value).handle));
 	}
-	final HSTRING Country()
+	final wstring Country()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAddress)this.asInterface(uuid("9739d39a-42ce-4872-8d70-3063aa584b70"))).get_Country(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Country(HSTRING value)
+	final void Country(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAddress)this.asInterface(uuid("9739d39a-42ce-4872-8d70-3063aa584b70"))).set_Country(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAddress)this.asInterface(uuid("9739d39a-42ce-4872-8d70-3063aa584b70"))).set_Country(hstring(value).handle));
 	}
-	final HSTRING PostalCode()
+	final wstring PostalCode()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAddress)this.asInterface(uuid("9739d39a-42ce-4872-8d70-3063aa584b70"))).get_PostalCode(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void PostalCode(HSTRING value)
+	final void PostalCode(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAddress)this.asInterface(uuid("9739d39a-42ce-4872-8d70-3063aa584b70"))).set_PostalCode(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAddress)this.asInterface(uuid("9739d39a-42ce-4872-8d70-3063aa584b70"))).set_PostalCode(hstring(value).handle));
 	}
 	final Windows.ApplicationModel.Contacts.ContactAddressKind Kind()
 	{
@@ -1373,15 +1373,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAddress)this.asInterface(uuid("9739d39a-42ce-4872-8d70-3063aa584b70"))).set_Kind(value));
 	}
-	final HSTRING Description()
+	final wstring Description()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAddress)this.asInterface(uuid("9739d39a-42ce-4872-8d70-3063aa584b70"))).get_Description(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Description(HSTRING value)
+	final void Description(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAddress)this.asInterface(uuid("9739d39a-42ce-4872-8d70-3063aa584b70"))).set_Description(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAddress)this.asInterface(uuid("9739d39a-42ce-4872-8d70-3063aa584b70"))).set_Description(hstring(value).handle));
 	}
 	static ContactAddress New()
 	{
@@ -1394,37 +1394,37 @@ extern(Windows):
 interface ContactAnnotation : Windows.ApplicationModel.Contacts.IContactAnnotation, Windows.ApplicationModel.Contacts.IContactAnnotation2
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotation)this.asInterface(uuid("821fc2ef-7d41-44a2-84c3-60a281dd7b86"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING AnnotationListId()
+	final wstring AnnotationListId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotation)this.asInterface(uuid("821fc2ef-7d41-44a2-84c3-60a281dd7b86"))).get_AnnotationListId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ContactId()
+	final wstring ContactId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotation)this.asInterface(uuid("821fc2ef-7d41-44a2-84c3-60a281dd7b86"))).get_ContactId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ContactId(HSTRING value)
+	final void ContactId(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotation)this.asInterface(uuid("821fc2ef-7d41-44a2-84c3-60a281dd7b86"))).set_ContactId(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotation)this.asInterface(uuid("821fc2ef-7d41-44a2-84c3-60a281dd7b86"))).set_ContactId(hstring(value).handle));
 	}
-	final HSTRING RemoteId()
+	final wstring RemoteId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotation)this.asInterface(uuid("821fc2ef-7d41-44a2-84c3-60a281dd7b86"))).get_RemoteId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void RemoteId(HSTRING value)
+	final void RemoteId(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotation)this.asInterface(uuid("821fc2ef-7d41-44a2-84c3-60a281dd7b86"))).set_RemoteId(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotation)this.asInterface(uuid("821fc2ef-7d41-44a2-84c3-60a281dd7b86"))).set_RemoteId(hstring(value).handle));
 	}
 	final Windows.ApplicationModel.Contacts.ContactAnnotationOperations SupportedOperations()
 	{
@@ -1448,15 +1448,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotation)this.asInterface(uuid("821fc2ef-7d41-44a2-84c3-60a281dd7b86"))).get_ProviderProperties(&_ret));
 		return _ret;
 	}
-	final HSTRING ContactListId()
+	final wstring ContactListId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotation2)this.asInterface(uuid("b691ecf3-4ab7-4a1f-9941-0c9cf3171b75"))).get_ContactListId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ContactListId(HSTRING value)
+	final void ContactListId(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotation2)this.asInterface(uuid("b691ecf3-4ab7-4a1f-9941-0c9cf3171b75"))).set_ContactListId(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotation2)this.asInterface(uuid("b691ecf3-4ab7-4a1f-9941-0c9cf3171b75"))).set_ContactListId(hstring(value).handle));
 	}
 	static ContactAnnotation New()
 	{
@@ -1469,23 +1469,23 @@ extern(Windows):
 interface ContactAnnotationList : Windows.ApplicationModel.Contacts.IContactAnnotationList
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotationList)this.asInterface(uuid("92a486aa-5c88-45b9-aad0-461888e68d8a"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ProviderPackageFamilyName()
+	final wstring ProviderPackageFamilyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotationList)this.asInterface(uuid("92a486aa-5c88-45b9-aad0-461888e68d8a"))).get_ProviderPackageFamilyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING UserDataAccountId()
+	final wstring UserDataAccountId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotationList)this.asInterface(uuid("92a486aa-5c88-45b9-aad0-461888e68d8a"))).get_UserDataAccountId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncAction DeleteAsync()
 	{
@@ -1499,16 +1499,16 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotationList)this.asInterface(uuid("92a486aa-5c88-45b9-aad0-461888e68d8a"))).abi_TrySaveAnnotationAsync(annotation, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactAnnotation) GetAnnotationAsync(HSTRING annotationId)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactAnnotation) GetAnnotationAsync(wstring annotationId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactAnnotation) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotationList)this.asInterface(uuid("92a486aa-5c88-45b9-aad0-461888e68d8a"))).abi_GetAnnotationAsync(annotationId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotationList)this.asInterface(uuid("92a486aa-5c88-45b9-aad0-461888e68d8a"))).abi_GetAnnotationAsync(hstring(annotationId).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactAnnotation)) FindAnnotationsByRemoteIdAsync(HSTRING remoteId)
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactAnnotation)) FindAnnotationsByRemoteIdAsync(wstring remoteId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactAnnotation)) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotationList)this.asInterface(uuid("92a486aa-5c88-45b9-aad0-461888e68d8a"))).abi_FindAnnotationsByRemoteIdAsync(remoteId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotationList)this.asInterface(uuid("92a486aa-5c88-45b9-aad0-461888e68d8a"))).abi_FindAnnotationsByRemoteIdAsync(hstring(remoteId).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactAnnotation)) FindAnnotationsAsync()
@@ -1528,16 +1528,16 @@ extern(Windows):
 interface ContactAnnotationStore : Windows.ApplicationModel.Contacts.IContactAnnotationStore, Windows.ApplicationModel.Contacts.IContactAnnotationStore2
 {
 extern(Windows):
-	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) FindContactIdsByEmailAsync(HSTRING emailAddress)
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) FindContactIdsByEmailAsync(wstring emailAddress)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotationStore)this.asInterface(uuid("23acf4aa-7a77-457d-8203-987f4b31af09"))).abi_FindContactIdsByEmailAsync(emailAddress, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotationStore)this.asInterface(uuid("23acf4aa-7a77-457d-8203-987f4b31af09"))).abi_FindContactIdsByEmailAsync(hstring(emailAddress).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) FindContactIdsByPhoneNumberAsync(HSTRING phoneNumber)
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) FindContactIdsByPhoneNumberAsync(wstring phoneNumber)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(HSTRING)) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotationStore)this.asInterface(uuid("23acf4aa-7a77-457d-8203-987f4b31af09"))).abi_FindContactIdsByPhoneNumberAsync(phoneNumber, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotationStore)this.asInterface(uuid("23acf4aa-7a77-457d-8203-987f4b31af09"))).abi_FindContactIdsByPhoneNumberAsync(hstring(phoneNumber).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactAnnotation)) FindAnnotationsForContactAsync(Windows.ApplicationModel.Contacts.Contact contact)
@@ -1558,17 +1558,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotationStore)this.asInterface(uuid("23acf4aa-7a77-457d-8203-987f4b31af09"))).abi_CreateAnnotationListAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactAnnotationList) CreateAnnotationListInAccountAsync(HSTRING userDataAccountId)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactAnnotationList) CreateAnnotationListInAccountAsync(wstring userDataAccountId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactAnnotationList) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotationStore)this.asInterface(uuid("23acf4aa-7a77-457d-8203-987f4b31af09"))).abi_CreateAnnotationListInAccountAsync(userDataAccountId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotationStore)this.asInterface(uuid("23acf4aa-7a77-457d-8203-987f4b31af09"))).abi_CreateAnnotationListInAccountAsync(hstring(userDataAccountId).handle, &_ret));
 		return _ret;
 	}
 	alias CreateAnnotationListAsync = CreateAnnotationListInAccountAsync;
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactAnnotationList) GetAnnotationListAsync(HSTRING annotationListId)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactAnnotationList) GetAnnotationListAsync(wstring annotationListId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactAnnotationList) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotationStore)this.asInterface(uuid("23acf4aa-7a77-457d-8203-987f4b31af09"))).abi_GetAnnotationListAsync(annotationListId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotationStore)this.asInterface(uuid("23acf4aa-7a77-457d-8203-987f4b31af09"))).abi_GetAnnotationListAsync(hstring(annotationListId).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactAnnotationList)) FindAnnotationListsAsync()
@@ -1577,10 +1577,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotationStore)this.asInterface(uuid("23acf4aa-7a77-457d-8203-987f4b31af09"))).abi_FindAnnotationListsAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactAnnotation)) FindAnnotationsForContactListAsync(HSTRING contactListId)
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactAnnotation)) FindAnnotationsForContactListAsync(wstring contactListId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactAnnotation)) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotationStore2)this.asInterface(uuid("7ede23fd-61e7-4967-8ec5-bdf280a24063"))).abi_FindAnnotationsForContactListAsync(contactListId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactAnnotationStore2)this.asInterface(uuid("7ede23fd-61e7-4967-8ec5-bdf280a24063"))).abi_FindAnnotationsForContactListAsync(hstring(contactListId).handle, &_ret));
 		return _ret;
 	}
 }
@@ -1730,25 +1730,25 @@ extern(Windows):
 interface ContactConnectedServiceAccount : Windows.ApplicationModel.Contacts.IContactConnectedServiceAccount
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactConnectedServiceAccount)this.asInterface(uuid("f6f83553-aa27-4731-8e4a-3dec5ce9eec9"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Id(HSTRING value)
+	final void Id(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactConnectedServiceAccount)this.asInterface(uuid("f6f83553-aa27-4731-8e4a-3dec5ce9eec9"))).set_Id(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactConnectedServiceAccount)this.asInterface(uuid("f6f83553-aa27-4731-8e4a-3dec5ce9eec9"))).set_Id(hstring(value).handle));
 	}
-	final HSTRING ServiceName()
+	final wstring ServiceName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactConnectedServiceAccount)this.asInterface(uuid("f6f83553-aa27-4731-8e4a-3dec5ce9eec9"))).get_ServiceName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ServiceName(HSTRING value)
+	final void ServiceName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactConnectedServiceAccount)this.asInterface(uuid("f6f83553-aa27-4731-8e4a-3dec5ce9eec9"))).set_ServiceName(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactConnectedServiceAccount)this.asInterface(uuid("f6f83553-aa27-4731-8e4a-3dec5ce9eec9"))).set_ServiceName(hstring(value).handle));
 	}
 	static ContactConnectedServiceAccount New()
 	{
@@ -1801,15 +1801,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactDate)this.asInterface(uuid("fe98ae66-b205-4934-9174-0ff2b0565707"))).set_Kind(value));
 	}
-	final HSTRING Description()
+	final wstring Description()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactDate)this.asInterface(uuid("fe98ae66-b205-4934-9174-0ff2b0565707"))).get_Description(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Description(HSTRING value)
+	final void Description(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactDate)this.asInterface(uuid("fe98ae66-b205-4934-9174-0ff2b0565707"))).set_Description(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactDate)this.asInterface(uuid("fe98ae66-b205-4934-9174-0ff2b0565707"))).set_Description(hstring(value).handle));
 	}
 	static ContactDate New()
 	{
@@ -1822,15 +1822,15 @@ extern(Windows):
 interface ContactEmail : Windows.ApplicationModel.Contacts.IContactEmail
 {
 extern(Windows):
-	final HSTRING Address()
+	final wstring Address()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactEmail)this.asInterface(uuid("90a219a9-e3d3-4d63-993b-05b9a5393abf"))).get_Address(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Address(HSTRING value)
+	final void Address(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactEmail)this.asInterface(uuid("90a219a9-e3d3-4d63-993b-05b9a5393abf"))).set_Address(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactEmail)this.asInterface(uuid("90a219a9-e3d3-4d63-993b-05b9a5393abf"))).set_Address(hstring(value).handle));
 	}
 	final Windows.ApplicationModel.Contacts.ContactEmailKind Kind()
 	{
@@ -1842,15 +1842,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactEmail)this.asInterface(uuid("90a219a9-e3d3-4d63-993b-05b9a5393abf"))).set_Kind(value));
 	}
-	final HSTRING Description()
+	final wstring Description()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactEmail)this.asInterface(uuid("90a219a9-e3d3-4d63-993b-05b9a5393abf"))).get_Description(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Description(HSTRING value)
+	final void Description(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactEmail)this.asInterface(uuid("90a219a9-e3d3-4d63-993b-05b9a5393abf"))).set_Description(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactEmail)this.asInterface(uuid("90a219a9-e3d3-4d63-993b-05b9a5393abf"))).set_Description(hstring(value).handle));
 	}
 	static ContactEmail New()
 	{
@@ -1875,39 +1875,39 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactField)this.asInterface(uuid("b176486a-d293-492c-a058-db575b3e3c0f"))).get_Category(&_ret));
 		return _ret;
 	}
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactField)this.asInterface(uuid("b176486a-d293-492c-a058-db575b3e3c0f"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Value()
+	final wstring Value()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactField)this.asInterface(uuid("b176486a-d293-492c-a058-db575b3e3c0f"))).get_Value(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.ApplicationModel.Contacts.ContactField New(HSTRING value, Windows.ApplicationModel.Contacts.ContactFieldType type)
+	static Windows.ApplicationModel.Contacts.ContactField New(wstring value, Windows.ApplicationModel.Contacts.ContactFieldType type)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactFieldFactory);
 		Windows.ApplicationModel.Contacts.ContactField _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactFieldFactory)factory.asInterface(uuid("85e2913f-0e4a-4a3e-8994-406ae7ed646e"))).abi_CreateField_Default(value, type, &_ret));
-		return _ret;
-	}
-	alias CreateField = New;
-	static Windows.ApplicationModel.Contacts.ContactField New(HSTRING value, Windows.ApplicationModel.Contacts.ContactFieldType type, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
-	{
-		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactFieldFactory);
-		Windows.ApplicationModel.Contacts.ContactField _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactFieldFactory)factory.asInterface(uuid("85e2913f-0e4a-4a3e-8994-406ae7ed646e"))).abi_CreateField_Category(value, type, category, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactFieldFactory)factory.asInterface(uuid("85e2913f-0e4a-4a3e-8994-406ae7ed646e"))).abi_CreateField_Default(hstring(value).handle, type, &_ret));
 		return _ret;
 	}
 	alias CreateField = New;
-	static Windows.ApplicationModel.Contacts.ContactField New(HSTRING name, HSTRING value, Windows.ApplicationModel.Contacts.ContactFieldType type, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
+	static Windows.ApplicationModel.Contacts.ContactField New(wstring value, Windows.ApplicationModel.Contacts.ContactFieldType type, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactFieldFactory);
 		Windows.ApplicationModel.Contacts.ContactField _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactFieldFactory)factory.asInterface(uuid("85e2913f-0e4a-4a3e-8994-406ae7ed646e"))).abi_CreateField_Custom(name, value, type, category, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactFieldFactory)factory.asInterface(uuid("85e2913f-0e4a-4a3e-8994-406ae7ed646e"))).abi_CreateField_Category(hstring(value).handle, type, category, &_ret));
+		return _ret;
+	}
+	alias CreateField = New;
+	static Windows.ApplicationModel.Contacts.ContactField New(wstring name, wstring value, Windows.ApplicationModel.Contacts.ContactFieldType type, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactFieldFactory);
+		Windows.ApplicationModel.Contacts.ContactField _ret;
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactFieldFactory)factory.asInterface(uuid("85e2913f-0e4a-4a3e-8994-406ae7ed646e"))).abi_CreateField_Custom(hstring(name).handle, hstring(value).handle, type, category, &_ret));
 		return _ret;
 	}
 	alias CreateField = New;
@@ -1916,66 +1916,66 @@ extern(Windows):
 interface ContactFieldFactory : Windows.ApplicationModel.Contacts.IContactFieldFactory, Windows.ApplicationModel.Contacts.IContactLocationFieldFactory, Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory
 {
 extern(Windows):
-	final Windows.ApplicationModel.Contacts.ContactField CreateField_Default(HSTRING value, Windows.ApplicationModel.Contacts.ContactFieldType type)
+	final Windows.ApplicationModel.Contacts.ContactField CreateField_Default(wstring value, Windows.ApplicationModel.Contacts.ContactFieldType type)
 	{
 		Windows.ApplicationModel.Contacts.ContactField _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactFieldFactory)this.asInterface(uuid("85e2913f-0e4a-4a3e-8994-406ae7ed646e"))).abi_CreateField_Default(value, type, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactFieldFactory)this.asInterface(uuid("85e2913f-0e4a-4a3e-8994-406ae7ed646e"))).abi_CreateField_Default(hstring(value).handle, type, &_ret));
 		return _ret;
 	}
 	alias CreateField = CreateField_Default;
-	final Windows.ApplicationModel.Contacts.ContactField CreateField_Category(HSTRING value, Windows.ApplicationModel.Contacts.ContactFieldType type, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
+	final Windows.ApplicationModel.Contacts.ContactField CreateField_Category(wstring value, Windows.ApplicationModel.Contacts.ContactFieldType type, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
 	{
 		Windows.ApplicationModel.Contacts.ContactField _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactFieldFactory)this.asInterface(uuid("85e2913f-0e4a-4a3e-8994-406ae7ed646e"))).abi_CreateField_Category(value, type, category, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactFieldFactory)this.asInterface(uuid("85e2913f-0e4a-4a3e-8994-406ae7ed646e"))).abi_CreateField_Category(hstring(value).handle, type, category, &_ret));
 		return _ret;
 	}
 	alias CreateField = CreateField_Category;
-	final Windows.ApplicationModel.Contacts.ContactField CreateField_Custom(HSTRING name, HSTRING value, Windows.ApplicationModel.Contacts.ContactFieldType type, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
+	final Windows.ApplicationModel.Contacts.ContactField CreateField_Custom(wstring name, wstring value, Windows.ApplicationModel.Contacts.ContactFieldType type, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
 	{
 		Windows.ApplicationModel.Contacts.ContactField _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactFieldFactory)this.asInterface(uuid("85e2913f-0e4a-4a3e-8994-406ae7ed646e"))).abi_CreateField_Custom(name, value, type, category, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactFieldFactory)this.asInterface(uuid("85e2913f-0e4a-4a3e-8994-406ae7ed646e"))).abi_CreateField_Custom(hstring(name).handle, hstring(value).handle, type, category, &_ret));
 		return _ret;
 	}
 	alias CreateField = CreateField_Custom;
-	final Windows.ApplicationModel.Contacts.ContactLocationField CreateLocation_Default(HSTRING unstructuredAddress)
+	final Windows.ApplicationModel.Contacts.ContactLocationField CreateLocation_Default(wstring unstructuredAddress)
 	{
 		Windows.ApplicationModel.Contacts.ContactLocationField _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory)this.asInterface(uuid("f79932d7-2fdf-43fe-8f18-41897390bcfe"))).abi_CreateLocation_Default(unstructuredAddress, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory)this.asInterface(uuid("f79932d7-2fdf-43fe-8f18-41897390bcfe"))).abi_CreateLocation_Default(hstring(unstructuredAddress).handle, &_ret));
 		return _ret;
 	}
 	alias CreateLocation = CreateLocation_Default;
-	final Windows.ApplicationModel.Contacts.ContactLocationField CreateLocation_Category(HSTRING unstructuredAddress, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
+	final Windows.ApplicationModel.Contacts.ContactLocationField CreateLocation_Category(wstring unstructuredAddress, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
 	{
 		Windows.ApplicationModel.Contacts.ContactLocationField _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory)this.asInterface(uuid("f79932d7-2fdf-43fe-8f18-41897390bcfe"))).abi_CreateLocation_Category(unstructuredAddress, category, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory)this.asInterface(uuid("f79932d7-2fdf-43fe-8f18-41897390bcfe"))).abi_CreateLocation_Category(hstring(unstructuredAddress).handle, category, &_ret));
 		return _ret;
 	}
 	alias CreateLocation = CreateLocation_Category;
-	final Windows.ApplicationModel.Contacts.ContactLocationField CreateLocation_All(HSTRING unstructuredAddress, Windows.ApplicationModel.Contacts.ContactFieldCategory category, HSTRING street, HSTRING city, HSTRING region, HSTRING country, HSTRING postalCode)
+	final Windows.ApplicationModel.Contacts.ContactLocationField CreateLocation_All(wstring unstructuredAddress, Windows.ApplicationModel.Contacts.ContactFieldCategory category, wstring street, wstring city, wstring region, wstring country, wstring postalCode)
 	{
 		Windows.ApplicationModel.Contacts.ContactLocationField _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory)this.asInterface(uuid("f79932d7-2fdf-43fe-8f18-41897390bcfe"))).abi_CreateLocation_All(unstructuredAddress, category, street, city, region, country, postalCode, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory)this.asInterface(uuid("f79932d7-2fdf-43fe-8f18-41897390bcfe"))).abi_CreateLocation_All(hstring(unstructuredAddress).handle, category, hstring(street).handle, hstring(city).handle, hstring(region).handle, hstring(country).handle, hstring(postalCode).handle, &_ret));
 		return _ret;
 	}
 	alias CreateLocation = CreateLocation_All;
-	final Windows.ApplicationModel.Contacts.ContactInstantMessageField CreateInstantMessage_Default(HSTRING userName)
+	final Windows.ApplicationModel.Contacts.ContactInstantMessageField CreateInstantMessage_Default(wstring userName)
 	{
 		Windows.ApplicationModel.Contacts.ContactInstantMessageField _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory)this.asInterface(uuid("ba0b6794-91a3-4bb2-b1b9-69a5dff0ba09"))).abi_CreateInstantMessage_Default(userName, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory)this.asInterface(uuid("ba0b6794-91a3-4bb2-b1b9-69a5dff0ba09"))).abi_CreateInstantMessage_Default(hstring(userName).handle, &_ret));
 		return _ret;
 	}
 	alias CreateInstantMessage = CreateInstantMessage_Default;
-	final Windows.ApplicationModel.Contacts.ContactInstantMessageField CreateInstantMessage_Category(HSTRING userName, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
+	final Windows.ApplicationModel.Contacts.ContactInstantMessageField CreateInstantMessage_Category(wstring userName, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
 	{
 		Windows.ApplicationModel.Contacts.ContactInstantMessageField _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory)this.asInterface(uuid("ba0b6794-91a3-4bb2-b1b9-69a5dff0ba09"))).abi_CreateInstantMessage_Category(userName, category, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory)this.asInterface(uuid("ba0b6794-91a3-4bb2-b1b9-69a5dff0ba09"))).abi_CreateInstantMessage_Category(hstring(userName).handle, category, &_ret));
 		return _ret;
 	}
 	alias CreateInstantMessage = CreateInstantMessage_Category;
-	final Windows.ApplicationModel.Contacts.ContactInstantMessageField CreateInstantMessage_All(HSTRING userName, Windows.ApplicationModel.Contacts.ContactFieldCategory category, HSTRING service, HSTRING displayText, Windows.Foundation.Uri verb)
+	final Windows.ApplicationModel.Contacts.ContactInstantMessageField CreateInstantMessage_All(wstring userName, Windows.ApplicationModel.Contacts.ContactFieldCategory category, wstring service, wstring displayText, Windows.Foundation.Uri verb)
 	{
 		Windows.ApplicationModel.Contacts.ContactInstantMessageField _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory)this.asInterface(uuid("ba0b6794-91a3-4bb2-b1b9-69a5dff0ba09"))).abi_CreateInstantMessage_All(userName, category, service, displayText, verb, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory)this.asInterface(uuid("ba0b6794-91a3-4bb2-b1b9-69a5dff0ba09"))).abi_CreateInstantMessage_All(hstring(userName).handle, category, hstring(service).handle, hstring(displayText).handle, verb, &_ret));
 		return _ret;
 	}
 	alias CreateInstantMessage = CreateInstantMessage_All;
@@ -1994,11 +1994,11 @@ interface ContactGroup : Windows.ApplicationModel.Contacts.IContactGroup
 interface ContactInformation : Windows.ApplicationModel.Contacts.IContactInformation
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInformation)this.asInterface(uuid("275eb6d4-6a2e-4278-a914-e460d5f088f6"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamWithContentType) GetThumbnailAsync()
 	{
@@ -2036,10 +2036,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInformation)this.asInterface(uuid("275eb6d4-6a2e-4278-a914-e460d5f088f6"))).get_CustomFields(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactField) QueryCustomFields(HSTRING customName)
+	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactField) QueryCustomFields(wstring customName)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.ContactField) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInformation)this.asInterface(uuid("275eb6d4-6a2e-4278-a914-e460d5f088f6"))).abi_QueryCustomFields(customName, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInformation)this.asInterface(uuid("275eb6d4-6a2e-4278-a914-e460d5f088f6"))).abi_QueryCustomFields(hstring(customName).handle, &_ret));
 		return _ret;
 	}
 }
@@ -2047,23 +2047,23 @@ extern(Windows):
 interface ContactInstantMessageField : Windows.ApplicationModel.Contacts.IContactInstantMessageField, Windows.ApplicationModel.Contacts.IContactField
 {
 extern(Windows):
-	final HSTRING UserName()
+	final wstring UserName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInstantMessageField)this.asInterface(uuid("cce33b37-0d85-41fa-b43d-da599c3eb009"))).get_UserName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Service()
+	final wstring Service()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInstantMessageField)this.asInterface(uuid("cce33b37-0d85-41fa-b43d-da599c3eb009"))).get_Service(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DisplayText()
+	final wstring DisplayText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInstantMessageField)this.asInterface(uuid("cce33b37-0d85-41fa-b43d-da599c3eb009"))).get_DisplayText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Uri LaunchUri()
 	{
@@ -2083,39 +2083,39 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactField)this.asInterface(uuid("b176486a-d293-492c-a058-db575b3e3c0f"))).get_Category(&_ret));
 		return _ret;
 	}
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactField)this.asInterface(uuid("b176486a-d293-492c-a058-db575b3e3c0f"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Value()
+	final wstring Value()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactField)this.asInterface(uuid("b176486a-d293-492c-a058-db575b3e3c0f"))).get_Value(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.ApplicationModel.Contacts.ContactInstantMessageField New(HSTRING userName)
+	static Windows.ApplicationModel.Contacts.ContactInstantMessageField New(wstring userName)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory);
 		Windows.ApplicationModel.Contacts.ContactInstantMessageField _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory)factory.asInterface(uuid("ba0b6794-91a3-4bb2-b1b9-69a5dff0ba09"))).abi_CreateInstantMessage_Default(userName, &_ret));
-		return _ret;
-	}
-	alias CreateInstantMessage = New;
-	static Windows.ApplicationModel.Contacts.ContactInstantMessageField New(HSTRING userName, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
-	{
-		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory);
-		Windows.ApplicationModel.Contacts.ContactInstantMessageField _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory)factory.asInterface(uuid("ba0b6794-91a3-4bb2-b1b9-69a5dff0ba09"))).abi_CreateInstantMessage_Category(userName, category, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory)factory.asInterface(uuid("ba0b6794-91a3-4bb2-b1b9-69a5dff0ba09"))).abi_CreateInstantMessage_Default(hstring(userName).handle, &_ret));
 		return _ret;
 	}
 	alias CreateInstantMessage = New;
-	static Windows.ApplicationModel.Contacts.ContactInstantMessageField New(HSTRING userName, Windows.ApplicationModel.Contacts.ContactFieldCategory category, HSTRING service, HSTRING displayText, Windows.Foundation.Uri verb)
+	static Windows.ApplicationModel.Contacts.ContactInstantMessageField New(wstring userName, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory);
 		Windows.ApplicationModel.Contacts.ContactInstantMessageField _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory)factory.asInterface(uuid("ba0b6794-91a3-4bb2-b1b9-69a5dff0ba09"))).abi_CreateInstantMessage_All(userName, category, service, displayText, verb, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory)factory.asInterface(uuid("ba0b6794-91a3-4bb2-b1b9-69a5dff0ba09"))).abi_CreateInstantMessage_Category(hstring(userName).handle, category, &_ret));
+		return _ret;
+	}
+	alias CreateInstantMessage = New;
+	static Windows.ApplicationModel.Contacts.ContactInstantMessageField New(wstring userName, Windows.ApplicationModel.Contacts.ContactFieldCategory category, wstring service, wstring displayText, Windows.Foundation.Uri verb)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory);
+		Windows.ApplicationModel.Contacts.ContactInstantMessageField _ret;
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactInstantMessageFieldFactory)factory.asInterface(uuid("ba0b6794-91a3-4bb2-b1b9-69a5dff0ba09"))).abi_CreateInstantMessage_All(hstring(userName).handle, category, hstring(service).handle, hstring(displayText).handle, verb, &_ret));
 		return _ret;
 	}
 	alias CreateInstantMessage = New;
@@ -2124,85 +2124,85 @@ extern(Windows):
 interface ContactJobInfo : Windows.ApplicationModel.Contacts.IContactJobInfo
 {
 extern(Windows):
-	final HSTRING CompanyName()
+	final wstring CompanyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).get_CompanyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void CompanyName(HSTRING value)
+	final void CompanyName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).set_CompanyName(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).set_CompanyName(hstring(value).handle));
 	}
-	final HSTRING CompanyYomiName()
+	final wstring CompanyYomiName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).get_CompanyYomiName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void CompanyYomiName(HSTRING value)
+	final void CompanyYomiName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).set_CompanyYomiName(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).set_CompanyYomiName(hstring(value).handle));
 	}
-	final HSTRING Department()
+	final wstring Department()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).get_Department(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Department(HSTRING value)
+	final void Department(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).set_Department(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).set_Department(hstring(value).handle));
 	}
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Title(HSTRING value)
+	final void Title(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).set_Title(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).set_Title(hstring(value).handle));
 	}
-	final HSTRING Manager()
+	final wstring Manager()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).get_Manager(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Manager(HSTRING value)
+	final void Manager(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).set_Manager(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).set_Manager(hstring(value).handle));
 	}
-	final HSTRING Office()
+	final wstring Office()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).get_Office(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Office(HSTRING value)
+	final void Office(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).set_Office(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).set_Office(hstring(value).handle));
 	}
-	final HSTRING CompanyAddress()
+	final wstring CompanyAddress()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).get_CompanyAddress(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void CompanyAddress(HSTRING value)
+	final void CompanyAddress(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).set_CompanyAddress(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).set_CompanyAddress(hstring(value).handle));
 	}
-	final HSTRING Description()
+	final wstring Description()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).get_Description(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Description(HSTRING value)
+	final void Description(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).set_Description(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactJobInfo)this.asInterface(uuid("6d117b4c-ce50-4b43-9e69-b18258ea5315"))).set_Description(hstring(value).handle));
 	}
 	static ContactJobInfo New()
 	{
@@ -2220,62 +2220,62 @@ interface ContactLaunchActionVerbs
 		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Contacts.IContactLaunchActionVerbsStatics);
 		return _staticInstance;
 	}
-	static HSTRING Call()
+	static wstring Call()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Call(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Message()
+	static wstring Message()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Message(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Map()
+	static wstring Map()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Map(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Post()
+	static wstring Post()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Post(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING VideoCall()
+	static wstring VideoCall()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_VideoCall(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface ContactList : Windows.ApplicationModel.Contacts.IContactList, Windows.ApplicationModel.Contacts.IContactList2
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactList)this.asInterface(uuid("16ddec75-392c-4845-9dfb-51a3e7ef3e42"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactList)this.asInterface(uuid("16ddec75-392c-4845-9dfb-51a3e7ef3e42"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void DisplayName(HSTRING value)
+	final void DisplayName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactList)this.asInterface(uuid("16ddec75-392c-4845-9dfb-51a3e7ef3e42"))).set_DisplayName(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactList)this.asInterface(uuid("16ddec75-392c-4845-9dfb-51a3e7ef3e42"))).set_DisplayName(hstring(value).handle));
 	}
-	final HSTRING SourceDisplayName()
+	final wstring SourceDisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactList)this.asInterface(uuid("16ddec75-392c-4845-9dfb-51a3e7ef3e42"))).get_SourceDisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsHidden()
 	{
@@ -2325,11 +2325,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactList)this.asInterface(uuid("16ddec75-392c-4845-9dfb-51a3e7ef3e42"))).get_SupportsServerSearch(&_ret));
 		return _ret;
 	}
-	final HSTRING UserDataAccountId()
+	final wstring UserDataAccountId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactList)this.asInterface(uuid("16ddec75-392c-4845-9dfb-51a3e7ef3e42"))).get_UserDataAccountId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final EventRegistrationToken OnContactChanged(void delegate(Windows.ApplicationModel.Contacts.ContactList, Windows.ApplicationModel.Contacts.ContactChangedEventArgs) fn)
 	{
@@ -2353,10 +2353,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactList)this.asInterface(uuid("16ddec75-392c-4845-9dfb-51a3e7ef3e42"))).abi_DeleteAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) GetContactFromRemoteIdAsync(HSTRING remoteId)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) GetContactFromRemoteIdAsync(wstring remoteId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactList)this.asInterface(uuid("16ddec75-392c-4845-9dfb-51a3e7ef3e42"))).abi_GetContactFromRemoteIdAsync(remoteId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactList)this.asInterface(uuid("16ddec75-392c-4845-9dfb-51a3e7ef3e42"))).abi_GetContactFromRemoteIdAsync(hstring(remoteId).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) GetMeContactAsync()
@@ -2390,10 +2390,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactList)this.asInterface(uuid("16ddec75-392c-4845-9dfb-51a3e7ef3e42"))).abi_DeleteContactAsync(contact, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) GetContactAsync(HSTRING contactId)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) GetContactAsync(wstring contactId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactList)this.asInterface(uuid("16ddec75-392c-4845-9dfb-51a3e7ef3e42"))).abi_GetContactAsync(contactId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactList)this.asInterface(uuid("16ddec75-392c-4845-9dfb-51a3e7ef3e42"))).abi_GetContactAsync(hstring(contactId).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction RegisterSyncManagerAsync()
@@ -2753,41 +2753,41 @@ extern(Windows):
 interface ContactLocationField : Windows.ApplicationModel.Contacts.IContactLocationField, Windows.ApplicationModel.Contacts.IContactField
 {
 extern(Windows):
-	final HSTRING UnstructuredAddress()
+	final wstring UnstructuredAddress()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationField)this.asInterface(uuid("9ec00f82-ab6e-4b36-89e3-b23bc0a1dacc"))).get_UnstructuredAddress(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Street()
+	final wstring Street()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationField)this.asInterface(uuid("9ec00f82-ab6e-4b36-89e3-b23bc0a1dacc"))).get_Street(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING City()
+	final wstring City()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationField)this.asInterface(uuid("9ec00f82-ab6e-4b36-89e3-b23bc0a1dacc"))).get_City(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Region()
+	final wstring Region()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationField)this.asInterface(uuid("9ec00f82-ab6e-4b36-89e3-b23bc0a1dacc"))).get_Region(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Country()
+	final wstring Country()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationField)this.asInterface(uuid("9ec00f82-ab6e-4b36-89e3-b23bc0a1dacc"))).get_Country(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING PostalCode()
+	final wstring PostalCode()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationField)this.asInterface(uuid("9ec00f82-ab6e-4b36-89e3-b23bc0a1dacc"))).get_PostalCode(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Contacts.ContactFieldType Type()
 	{
@@ -2801,39 +2801,39 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactField)this.asInterface(uuid("b176486a-d293-492c-a058-db575b3e3c0f"))).get_Category(&_ret));
 		return _ret;
 	}
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactField)this.asInterface(uuid("b176486a-d293-492c-a058-db575b3e3c0f"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Value()
+	final wstring Value()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactField)this.asInterface(uuid("b176486a-d293-492c-a058-db575b3e3c0f"))).get_Value(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.ApplicationModel.Contacts.ContactLocationField New(HSTRING unstructuredAddress)
+	static Windows.ApplicationModel.Contacts.ContactLocationField New(wstring unstructuredAddress)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory);
 		Windows.ApplicationModel.Contacts.ContactLocationField _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory)factory.asInterface(uuid("f79932d7-2fdf-43fe-8f18-41897390bcfe"))).abi_CreateLocation_Default(unstructuredAddress, &_ret));
-		return _ret;
-	}
-	alias CreateLocation = New;
-	static Windows.ApplicationModel.Contacts.ContactLocationField New(HSTRING unstructuredAddress, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
-	{
-		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory);
-		Windows.ApplicationModel.Contacts.ContactLocationField _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory)factory.asInterface(uuid("f79932d7-2fdf-43fe-8f18-41897390bcfe"))).abi_CreateLocation_Category(unstructuredAddress, category, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory)factory.asInterface(uuid("f79932d7-2fdf-43fe-8f18-41897390bcfe"))).abi_CreateLocation_Default(hstring(unstructuredAddress).handle, &_ret));
 		return _ret;
 	}
 	alias CreateLocation = New;
-	static Windows.ApplicationModel.Contacts.ContactLocationField New(HSTRING unstructuredAddress, Windows.ApplicationModel.Contacts.ContactFieldCategory category, HSTRING street, HSTRING city, HSTRING region, HSTRING country, HSTRING postalCode)
+	static Windows.ApplicationModel.Contacts.ContactLocationField New(wstring unstructuredAddress, Windows.ApplicationModel.Contacts.ContactFieldCategory category)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory);
 		Windows.ApplicationModel.Contacts.ContactLocationField _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory)factory.asInterface(uuid("f79932d7-2fdf-43fe-8f18-41897390bcfe"))).abi_CreateLocation_All(unstructuredAddress, category, street, city, region, country, postalCode, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory)factory.asInterface(uuid("f79932d7-2fdf-43fe-8f18-41897390bcfe"))).abi_CreateLocation_Category(hstring(unstructuredAddress).handle, category, &_ret));
+		return _ret;
+	}
+	alias CreateLocation = New;
+	static Windows.ApplicationModel.Contacts.ContactLocationField New(wstring unstructuredAddress, Windows.ApplicationModel.Contacts.ContactFieldCategory category, wstring street, wstring city, wstring region, wstring country, wstring postalCode)
+	{
+		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory);
+		Windows.ApplicationModel.Contacts.ContactLocationField _ret;
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactLocationFieldFactory)factory.asInterface(uuid("f79932d7-2fdf-43fe-8f18-41897390bcfe"))).abi_CreateLocation_All(hstring(unstructuredAddress).handle, category, hstring(street).handle, hstring(city).handle, hstring(region).handle, hstring(country).handle, hstring(postalCode).handle, &_ret));
 		return _ret;
 	}
 	alias CreateLocation = New;
@@ -2945,11 +2945,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactMatchReason)this.asInterface(uuid("bc922504-e7d8-413e-95f4-b75c54c74077"))).get_Segments(&_ret));
 		return _ret;
 	}
-	final HSTRING Text()
+	final wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactMatchReason)this.asInterface(uuid("bc922504-e7d8-413e-95f4-b75c54c74077"))).get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -3021,15 +3021,15 @@ extern(Windows):
 interface ContactPhone : Windows.ApplicationModel.Contacts.IContactPhone
 {
 extern(Windows):
-	final HSTRING Number()
+	final wstring Number()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactPhone)this.asInterface(uuid("467dab65-2712-4f52-b783-9ea8111c63cd"))).get_Number(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Number(HSTRING value)
+	final void Number(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactPhone)this.asInterface(uuid("467dab65-2712-4f52-b783-9ea8111c63cd"))).set_Number(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactPhone)this.asInterface(uuid("467dab65-2712-4f52-b783-9ea8111c63cd"))).set_Number(hstring(value).handle));
 	}
 	final Windows.ApplicationModel.Contacts.ContactPhoneKind Kind()
 	{
@@ -3041,15 +3041,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactPhone)this.asInterface(uuid("467dab65-2712-4f52-b783-9ea8111c63cd"))).set_Kind(value));
 	}
-	final HSTRING Description()
+	final wstring Description()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactPhone)this.asInterface(uuid("467dab65-2712-4f52-b783-9ea8111c63cd"))).get_Description(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Description(HSTRING value)
+	final void Description(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactPhone)this.asInterface(uuid("467dab65-2712-4f52-b783-9ea8111c63cd"))).set_Description(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactPhone)this.asInterface(uuid("467dab65-2712-4f52-b783-9ea8111c63cd"))).set_Description(hstring(value).handle));
 	}
 	static ContactPhone New()
 	{
@@ -3062,15 +3062,15 @@ extern(Windows):
 interface ContactPicker : Windows.ApplicationModel.Contacts.IContactPicker, Windows.ApplicationModel.Contacts.IContactPicker2, Windows.ApplicationModel.Contacts.IContactPicker3
 {
 extern(Windows):
-	final HSTRING CommitButtonText()
+	final wstring CommitButtonText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactPicker)this.asInterface(uuid("0e09fd91-42f8-4055-90a0-896f96738936"))).get_CommitButtonText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void CommitButtonText(HSTRING value)
+	final void CommitButtonText(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactPicker)this.asInterface(uuid("0e09fd91-42f8-4055-90a0-896f96738936"))).set_CommitButtonText(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactPicker)this.asInterface(uuid("0e09fd91-42f8-4055-90a0-896f96738936"))).set_CommitButtonText(hstring(value).handle));
 	}
 	final Windows.ApplicationModel.Contacts.ContactSelectionMode SelectionMode()
 	{
@@ -3208,18 +3208,18 @@ extern(Windows):
 		Debug.OK(activationFactory!(ContactQueryOptions).abi_ActivateInstance(&ret));
 		return cast(ContactQueryOptions) ret;
 	}
-	static Windows.ApplicationModel.Contacts.ContactQueryOptions New(HSTRING text)
+	static Windows.ApplicationModel.Contacts.ContactQueryOptions New(wstring text)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactQueryOptionsFactory);
 		Windows.ApplicationModel.Contacts.ContactQueryOptions _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactQueryOptionsFactory)factory.asInterface(uuid("543fba47-8ce7-46cb-9dac-9aa42a1bc8e2"))).abi_CreateWithText(text, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactQueryOptionsFactory)factory.asInterface(uuid("543fba47-8ce7-46cb-9dac-9aa42a1bc8e2"))).abi_CreateWithText(hstring(text).handle, &_ret));
 		return _ret;
 	}
-	static Windows.ApplicationModel.Contacts.ContactQueryOptions New(HSTRING text, Windows.ApplicationModel.Contacts.ContactQuerySearchFields fields)
+	static Windows.ApplicationModel.Contacts.ContactQueryOptions New(wstring text, Windows.ApplicationModel.Contacts.ContactQuerySearchFields fields)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Contacts.IContactQueryOptionsFactory);
 		Windows.ApplicationModel.Contacts.ContactQueryOptions _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactQueryOptionsFactory)factory.asInterface(uuid("543fba47-8ce7-46cb-9dac-9aa42a1bc8e2"))).abi_CreateWithTextAndFields(text, fields, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactQueryOptionsFactory)factory.asInterface(uuid("543fba47-8ce7-46cb-9dac-9aa42a1bc8e2"))).abi_CreateWithTextAndFields(hstring(text).handle, fields, &_ret));
 		return _ret;
 	}
 }
@@ -3237,15 +3237,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactQueryTextSearch)this.asInterface(uuid("f7e3f9cb-a957-439b-a0b7-1c02a1963ff0"))).set_Fields(value));
 	}
-	final HSTRING Text()
+	final wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactQueryTextSearch)this.asInterface(uuid("f7e3f9cb-a957-439b-a0b7-1c02a1963ff0"))).get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Text(HSTRING value)
+	final void Text(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactQueryTextSearch)this.asInterface(uuid("f7e3f9cb-a957-439b-a0b7-1c02a1963ff0"))).set_Text(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactQueryTextSearch)this.asInterface(uuid("f7e3f9cb-a957-439b-a0b7-1c02a1963ff0"))).set_Text(hstring(value).handle));
 	}
 	final Windows.ApplicationModel.Contacts.ContactQuerySearchScope SearchScope()
 	{
@@ -3279,25 +3279,25 @@ extern(Windows):
 interface ContactSignificantOther : Windows.ApplicationModel.Contacts.IContactSignificantOther, Windows.ApplicationModel.Contacts.IContactSignificantOther2
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactSignificantOther)this.asInterface(uuid("8873b5ab-c5fb-46d8-93fe-da3ff1934054"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Name(HSTRING value)
+	final void Name(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactSignificantOther)this.asInterface(uuid("8873b5ab-c5fb-46d8-93fe-da3ff1934054"))).set_Name(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactSignificantOther)this.asInterface(uuid("8873b5ab-c5fb-46d8-93fe-da3ff1934054"))).set_Name(hstring(value).handle));
 	}
-	final HSTRING Description()
+	final wstring Description()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactSignificantOther)this.asInterface(uuid("8873b5ab-c5fb-46d8-93fe-da3ff1934054"))).get_Description(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Description(HSTRING value)
+	final void Description(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactSignificantOther)this.asInterface(uuid("8873b5ab-c5fb-46d8-93fe-da3ff1934054"))).set_Description(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactSignificantOther)this.asInterface(uuid("8873b5ab-c5fb-46d8-93fe-da3ff1934054"))).set_Description(hstring(value).handle));
 	}
 	final Windows.ApplicationModel.Contacts.ContactRelationship Relationship()
 	{
@@ -3326,17 +3326,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactStore)this.asInterface(uuid("2c220b10-3a6c-4293-b9bc-fe987f6e0d52"))).abi_FindContactsAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.Contact)) FindContactsWithSearchTextAsync(HSTRING searchText)
+	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.Contact)) FindContactsWithSearchTextAsync(wstring searchText)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Contacts.Contact)) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactStore)this.asInterface(uuid("2c220b10-3a6c-4293-b9bc-fe987f6e0d52"))).abi_FindContactsWithSearchTextAsync(searchText, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactStore)this.asInterface(uuid("2c220b10-3a6c-4293-b9bc-fe987f6e0d52"))).abi_FindContactsWithSearchTextAsync(hstring(searchText).handle, &_ret));
 		return _ret;
 	}
 	alias FindContactsAsync = FindContactsWithSearchTextAsync;
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) GetContactAsync(HSTRING contactId)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) GetContactAsync(wstring contactId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactStore)this.asInterface(uuid("2c220b10-3a6c-4293-b9bc-fe987f6e0d52"))).abi_GetContactAsync(contactId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactStore)this.asInterface(uuid("2c220b10-3a6c-4293-b9bc-fe987f6e0d52"))).abi_GetContactAsync(hstring(contactId).handle, &_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Contacts.ContactChangeTracker ChangeTracker()
@@ -3367,16 +3367,16 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactStore2)this.asInterface(uuid("18ce1c22-ebd5-4bfb-b690-5f4f27c4f0e8"))).abi_FindContactListsAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactList) GetContactListAsync(HSTRING contactListId)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactList) GetContactListAsync(wstring contactListId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactList) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactStore2)this.asInterface(uuid("18ce1c22-ebd5-4bfb-b690-5f4f27c4f0e8"))).abi_GetContactListAsync(contactListId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactStore2)this.asInterface(uuid("18ce1c22-ebd5-4bfb-b690-5f4f27c4f0e8"))).abi_GetContactListAsync(hstring(contactListId).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactList) CreateContactListAsync(HSTRING displayName)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactList) CreateContactListAsync(wstring displayName)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactList) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactStore2)this.asInterface(uuid("18ce1c22-ebd5-4bfb-b690-5f4f27c4f0e8"))).abi_CreateContactListAsync(displayName, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactStore2)this.asInterface(uuid("18ce1c22-ebd5-4bfb-b690-5f4f27c4f0e8"))).abi_CreateContactListAsync(hstring(displayName).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.Contact) GetMeContactAsync()
@@ -3398,10 +3398,10 @@ extern(Windows):
 		return _ret;
 	}
 	alias GetContactReader = GetContactReaderWithOptions;
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactList) CreateContactListInAccountAsync(HSTRING displayName, HSTRING userDataAccountId)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactList) CreateContactListInAccountAsync(wstring displayName, wstring userDataAccountId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Contacts.ContactList) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactStore2)this.asInterface(uuid("18ce1c22-ebd5-4bfb-b690-5f4f27c4f0e8"))).abi_CreateContactListInAccountAsync(displayName, userDataAccountId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactStore2)this.asInterface(uuid("18ce1c22-ebd5-4bfb-b690-5f4f27c4f0e8"))).abi_CreateContactListInAccountAsync(hstring(displayName).handle, hstring(userDataAccountId).handle, &_ret));
 		return _ret;
 	}
 	alias CreateContactListAsync = CreateContactListInAccountAsync;
@@ -3424,25 +3424,25 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactWebsite)this.asInterface(uuid("9f130176-dc1b-4055-ad66-652f39d990e8"))).set_Uri(value));
 	}
-	final HSTRING Description()
+	final wstring Description()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactWebsite)this.asInterface(uuid("9f130176-dc1b-4055-ad66-652f39d990e8"))).get_Description(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Description(HSTRING value)
+	final void Description(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactWebsite)this.asInterface(uuid("9f130176-dc1b-4055-ad66-652f39d990e8"))).set_Description(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactWebsite)this.asInterface(uuid("9f130176-dc1b-4055-ad66-652f39d990e8"))).set_Description(hstring(value).handle));
 	}
-	final HSTRING RawValue()
+	final wstring RawValue()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactWebsite2)this.asInterface(uuid("f87ee91e-5647-4068-bb5e-4b6f437ce308"))).get_RawValue(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void RawValue(HSTRING value)
+	final void RawValue(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactWebsite2)this.asInterface(uuid("f87ee91e-5647-4068-bb5e-4b6f437ce308"))).set_RawValue(value));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.IContactWebsite2)this.asInterface(uuid("f87ee91e-5647-4068-bb5e-4b6f437ce308"))).set_RawValue(hstring(value).handle));
 	}
 	static ContactWebsite New()
 	{
@@ -3482,46 +3482,46 @@ interface KnownContactField
 		return _staticInstance;
 	}
 	deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")
-	static HSTRING Email()
+	static wstring Email()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Email(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")
-	static HSTRING PhoneNumber()
+	static wstring PhoneNumber()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_PhoneNumber(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")
-	static HSTRING Location()
+	static wstring Location()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Location(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")
-	static HSTRING InstantMessage()
+	static wstring InstantMessage()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_InstantMessage(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")
-	static Windows.ApplicationModel.Contacts.ContactFieldType ConvertNameToType(HSTRING name)
+	static Windows.ApplicationModel.Contacts.ContactFieldType ConvertNameToType(wstring name)
 	{
 		Windows.ApplicationModel.Contacts.ContactFieldType _ret;
-		Debug.OK(staticInstance.abi_ConvertNameToType(name, &_ret));
+		Debug.OK(staticInstance.abi_ConvertNameToType(hstring(name).handle, &_ret));
 		return _ret;
 	}
 	deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")
-	static HSTRING ConvertTypeToName(Windows.ApplicationModel.Contacts.ContactFieldType type)
+	static wstring ConvertTypeToName(Windows.ApplicationModel.Contacts.ContactFieldType type)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_ConvertTypeToName(type, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 

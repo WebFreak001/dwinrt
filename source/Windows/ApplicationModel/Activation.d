@@ -555,11 +555,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderAddAppointmentActivatedEventArgs)this.asInterface(uuid("a2861367-cee5-4e4d-9ed7-41c34ec18b02"))).get_AddAppointmentOperation(&_ret));
 		return _ret;
 	}
-	final HSTRING Verb()
+	final wstring Verb()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs)this.asInterface(uuid("3364c405-933c-4e7d-a034-500fb8dcd9f3"))).get_Verb(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
@@ -596,11 +596,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderRemoveAppointmentActivatedEventArgs)this.asInterface(uuid("751f3ab8-0b8e-451c-9f15-966e699bac25"))).get_RemoveAppointmentOperation(&_ret));
 		return _ret;
 	}
-	final HSTRING Verb()
+	final wstring Verb()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs)this.asInterface(uuid("3364c405-933c-4e7d-a034-500fb8dcd9f3"))).get_Verb(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
@@ -637,11 +637,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderReplaceAppointmentActivatedEventArgs)this.asInterface(uuid("1551b7d4-a981-4067-8a62-0524e4ade121"))).get_ReplaceAppointmentOperation(&_ret));
 		return _ret;
 	}
-	final HSTRING Verb()
+	final wstring Verb()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs)this.asInterface(uuid("3364c405-933c-4e7d-a034-500fb8dcd9f3"))).get_Verb(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
@@ -678,23 +678,23 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs)this.asInterface(uuid("3958f065-9841-4ca5-999b-885198b9ef2a"))).get_InstanceStartDate(&_ret));
 		return _ret;
 	}
-	final HSTRING LocalId()
+	final wstring LocalId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs)this.asInterface(uuid("3958f065-9841-4ca5-999b-885198b9ef2a"))).get_LocalId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING RoamingId()
+	final wstring RoamingId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs)this.asInterface(uuid("3958f065-9841-4ca5-999b-885198b9ef2a"))).get_RoamingId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Verb()
+	final wstring Verb()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs)this.asInterface(uuid("3364c405-933c-4e7d-a034-500fb8dcd9f3"))).get_Verb(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
@@ -737,11 +737,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderShowTimeFrameActivatedEventArgs)this.asInterface(uuid("9baeaba6-0e0b-49aa-babc-12b1dc774986"))).get_Duration(&_ret));
 		return _ret;
 	}
-	final HSTRING Verb()
+	final wstring Verb()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IAppointmentsProviderActivatedEventArgs)this.asInterface(uuid("3364c405-933c-4e7d-a034-500fb8dcd9f3"))).get_Verb(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
@@ -853,17 +853,17 @@ extern(Windows):
 interface ContactCallActivatedEventArgs : Windows.ApplicationModel.Activation.IContactCallActivatedEventArgs, Windows.ApplicationModel.Activation.IContactActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
 {
 extern(Windows):
-	final HSTRING ServiceId()
+	final wstring ServiceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactCallActivatedEventArgs)this.asInterface(uuid("c2df14c7-30eb-41c6-b3bc-5b1694f9dab3"))).get_ServiceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ServiceUserId()
+	final wstring ServiceUserId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactCallActivatedEventArgs)this.asInterface(uuid("c2df14c7-30eb-41c6-b3bc-5b1694f9dab3"))).get_ServiceUserId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Contacts.Contact Contact()
 	{
@@ -871,11 +871,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactCallActivatedEventArgs)this.asInterface(uuid("c2df14c7-30eb-41c6-b3bc-5b1694f9dab3"))).get_Contact(&_ret));
 		return _ret;
 	}
-	final HSTRING Verb()
+	final wstring Verb()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactActivatedEventArgs)this.asInterface(uuid("d627a1c4-c025-4c41-9def-f1eafad075e7"))).get_Verb(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
@@ -912,11 +912,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactMapActivatedEventArgs)this.asInterface(uuid("b32bf870-eee7-4ad2-aaf1-a87effcf00a4"))).get_Contact(&_ret));
 		return _ret;
 	}
-	final HSTRING Verb()
+	final wstring Verb()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactActivatedEventArgs)this.asInterface(uuid("d627a1c4-c025-4c41-9def-f1eafad075e7"))).get_Verb(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
@@ -941,17 +941,17 @@ extern(Windows):
 interface ContactMessageActivatedEventArgs : Windows.ApplicationModel.Activation.IContactMessageActivatedEventArgs, Windows.ApplicationModel.Activation.IContactActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
 {
 extern(Windows):
-	final HSTRING ServiceId()
+	final wstring ServiceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactMessageActivatedEventArgs)this.asInterface(uuid("de598db2-0e03-43b0-bf56-bcc40b3162df"))).get_ServiceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ServiceUserId()
+	final wstring ServiceUserId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactMessageActivatedEventArgs)this.asInterface(uuid("de598db2-0e03-43b0-bf56-bcc40b3162df"))).get_ServiceUserId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Contacts.Contact Contact()
 	{
@@ -959,11 +959,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactMessageActivatedEventArgs)this.asInterface(uuid("de598db2-0e03-43b0-bf56-bcc40b3162df"))).get_Contact(&_ret));
 		return _ret;
 	}
-	final HSTRING Verb()
+	final wstring Verb()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactActivatedEventArgs)this.asInterface(uuid("d627a1c4-c025-4c41-9def-f1eafad075e7"))).get_Verb(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
@@ -1058,17 +1058,17 @@ extern(Windows):
 interface ContactPostActivatedEventArgs : Windows.ApplicationModel.Activation.IContactPostActivatedEventArgs, Windows.ApplicationModel.Activation.IContactActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
 {
 extern(Windows):
-	final HSTRING ServiceId()
+	final wstring ServiceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactPostActivatedEventArgs)this.asInterface(uuid("b35a3c67-f1e7-4655-ad6e-4857588f552f"))).get_ServiceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ServiceUserId()
+	final wstring ServiceUserId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactPostActivatedEventArgs)this.asInterface(uuid("b35a3c67-f1e7-4655-ad6e-4857588f552f"))).get_ServiceUserId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Contacts.Contact Contact()
 	{
@@ -1076,11 +1076,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactPostActivatedEventArgs)this.asInterface(uuid("b35a3c67-f1e7-4655-ad6e-4857588f552f"))).get_Contact(&_ret));
 		return _ret;
 	}
-	final HSTRING Verb()
+	final wstring Verb()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactActivatedEventArgs)this.asInterface(uuid("d627a1c4-c025-4c41-9def-f1eafad075e7"))).get_Verb(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
@@ -1105,17 +1105,17 @@ extern(Windows):
 interface ContactVideoCallActivatedEventArgs : Windows.ApplicationModel.Activation.IContactVideoCallActivatedEventArgs, Windows.ApplicationModel.Activation.IContactActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
 {
 extern(Windows):
-	final HSTRING ServiceId()
+	final wstring ServiceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactVideoCallActivatedEventArgs)this.asInterface(uuid("61079db8-e3e7-4b4f-858d-5c63a96ef684"))).get_ServiceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ServiceUserId()
+	final wstring ServiceUserId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactVideoCallActivatedEventArgs)this.asInterface(uuid("61079db8-e3e7-4b4f-858d-5c63a96ef684"))).get_ServiceUserId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Contacts.Contact Contact()
 	{
@@ -1123,11 +1123,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactVideoCallActivatedEventArgs)this.asInterface(uuid("61079db8-e3e7-4b4f-858d-5c63a96ef684"))).get_Contact(&_ret));
 		return _ret;
 	}
-	final HSTRING Verb()
+	final wstring Verb()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IContactActivatedEventArgs)this.asInterface(uuid("d627a1c4-c025-4c41-9def-f1eafad075e7"))).get_Verb(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
@@ -1152,17 +1152,17 @@ extern(Windows):
 interface DeviceActivatedEventArgs : Windows.ApplicationModel.Activation.IDeviceActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs, Windows.ApplicationModel.Activation.IViewSwitcherProvider, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
 extern(Windows):
-	final HSTRING DeviceInformationId()
+	final wstring DeviceInformationId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IDeviceActivatedEventArgs)this.asInterface(uuid("cd50b9a9-ce10-44d2-8234-c355a073ef33"))).get_DeviceInformationId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Verb()
+	final wstring Verb()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IDeviceActivatedEventArgs)this.asInterface(uuid("cd50b9a9-ce10-44d2-8234-c355a073ef33"))).get_Verb(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
@@ -1240,23 +1240,23 @@ extern(Windows):
 interface DialReceiverActivatedEventArgs : Windows.ApplicationModel.Activation.IDialReceiverActivatedEventArgs, Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs, Windows.ApplicationModel.Activation.IViewSwitcherProvider, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
 extern(Windows):
-	final HSTRING AppName()
+	final wstring AppName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IDialReceiverActivatedEventArgs)this.asInterface(uuid("fb777ed7-85ee-456e-a44d-85d730e70aed"))).get_AppName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Arguments()
+	final wstring Arguments()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs)this.asInterface(uuid("fbc93e26-a14a-4b4f-82b0-33bed920af52"))).get_Arguments(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING TileId()
+	final wstring TileId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs)this.asInterface(uuid("fbc93e26-a14a-4b4f-82b0-33bed920af52"))).get_TileId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
@@ -1305,11 +1305,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IFileActivatedEventArgs)this.asInterface(uuid("bb2afc33-93b1-42ed-8b26-236dd9c78496"))).get_Files(&_ret));
 		return _ret;
 	}
-	final HSTRING Verb()
+	final wstring Verb()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IFileActivatedEventArgs)this.asInterface(uuid("bb2afc33-93b1-42ed-8b26-236dd9c78496"))).get_Verb(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
@@ -1335,11 +1335,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IFileActivatedEventArgsWithNeighboringFiles)this.asInterface(uuid("433ba1a4-e1e2-48fd-b7fc-b5d6eee65033"))).get_NeighboringFilesQuery(&_ret));
 		return _ret;
 	}
-	final HSTRING CallerPackageFamilyName()
+	final wstring CallerPackageFamilyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IFileActivatedEventArgsWithCallerPackageFamilyName)this.asInterface(uuid("2d60f06b-d25f-4d25-8653-e1c5e1108309"))).get_CallerPackageFamilyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final INT32 CurrentlyShownApplicationViewId()
 	{
@@ -1388,11 +1388,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
-	final HSTRING CallerPackageFamilyName()
+	final wstring CallerPackageFamilyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IFileOpenPickerActivatedEventArgs2)this.asInterface(uuid("5e731f66-8d1f-45fb-af1d-73205c8fc7a1"))).get_CallerPackageFamilyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.System.User User()
 	{
@@ -1470,17 +1470,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
-	final HSTRING CallerPackageFamilyName()
+	final wstring CallerPackageFamilyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IFileSavePickerActivatedEventArgs2)this.asInterface(uuid("6b73fe13-2cf2-4d48-8cbc-af67d23f1ce7"))).get_CallerPackageFamilyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING EnterpriseId()
+	final wstring EnterpriseId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IFileSavePickerActivatedEventArgs2)this.asInterface(uuid("6b73fe13-2cf2-4d48-8cbc-af67d23f1ce7"))).get_EnterpriseId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.System.User User()
 	{
@@ -1575,17 +1575,17 @@ extern(Windows):
 interface LaunchActivatedEventArgs : Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs, Windows.ApplicationModel.Activation.IPrelaunchActivatedEventArgs, Windows.ApplicationModel.Activation.IViewSwitcherProvider, Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs2, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
 extern(Windows):
-	final HSTRING Arguments()
+	final wstring Arguments()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs)this.asInterface(uuid("fbc93e26-a14a-4b4f-82b0-33bed920af52"))).get_Arguments(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING TileId()
+	final wstring TileId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs)this.asInterface(uuid("fbc93e26-a14a-4b4f-82b0-33bed920af52"))).get_TileId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
@@ -1681,17 +1681,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Activation.ILockScreenCallActivatedEventArgs)this.asInterface(uuid("06f37fbe-b5f2-448b-b13e-e328ac1c516a"))).get_CallUI(&_ret));
 		return _ret;
 	}
-	final HSTRING Arguments()
+	final wstring Arguments()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs)this.asInterface(uuid("fbc93e26-a14a-4b4f-82b0-33bed920af52"))).get_Arguments(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING TileId()
+	final wstring TileId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.ILaunchActivatedEventArgs)this.asInterface(uuid("fbc93e26-a14a-4b4f-82b0-33bed920af52"))).get_TileId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
@@ -1751,11 +1751,11 @@ extern(Windows):
 interface PickerReturnedActivatedEventArgs : Windows.ApplicationModel.Activation.IPickerReturnedActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
 {
 extern(Windows):
-	final HSTRING PickerOperationId()
+	final wstring PickerOperationId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IPickerReturnedActivatedEventArgs)this.asInterface(uuid("360defb9-a9d3-4984-a4ed-9ec734604921"))).get_PickerOperationId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
@@ -1862,11 +1862,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IActivatedEventArgs)this.asInterface(uuid("cf651713-cd08-4fd8-b697-a281b6544e2e"))).get_SplashScreen(&_ret));
 		return _ret;
 	}
-	final HSTRING CallerPackageFamilyName()
+	final wstring CallerPackageFamilyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData)this.asInterface(uuid("d84a0c12-5c8f-438c-83cb-c28fcc0b2fdb"))).get_CallerPackageFamilyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.ValueSet Data()
 	{
@@ -1927,11 +1927,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IProtocolActivatedEventArgs)this.asInterface(uuid("6095f4dd-b7c0-46ab-81fe-d90f36d00d24"))).get_Uri(&_ret));
 		return _ret;
 	}
-	final HSTRING CallerPackageFamilyName()
+	final wstring CallerPackageFamilyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData)this.asInterface(uuid("d84a0c12-5c8f-438c-83cb-c28fcc0b2fdb"))).get_CallerPackageFamilyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.ValueSet Data()
 	{
@@ -1997,17 +1997,17 @@ extern(Windows):
 interface SearchActivatedEventArgs : Windows.ApplicationModel.Activation.ISearchActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs, Windows.ApplicationModel.Activation.ISearchActivatedEventArgsWithLinguisticDetails, Windows.ApplicationModel.Activation.IViewSwitcherProvider, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser
 {
 extern(Windows):
-	final HSTRING QueryText()
+	final wstring QueryText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.ISearchActivatedEventArgs)this.asInterface(uuid("8cb36951-58c8-43e3-94bc-41d33f8b630e"))).get_QueryText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.ISearchActivatedEventArgs)this.asInterface(uuid("8cb36951-58c8-43e3-94bc-41d33f8b630e"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{
@@ -2123,11 +2123,11 @@ extern(Windows):
 interface ToastNotificationActivatedEventArgs : Windows.ApplicationModel.Activation.IToastNotificationActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgsWithUser, Windows.ApplicationModel.Activation.IApplicationViewActivatedEventArgs
 {
 extern(Windows):
-	final HSTRING Argument()
+	final wstring Argument()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IToastNotificationActivatedEventArgs)this.asInterface(uuid("92a86f82-5290-431d-be85-c4aaeeb8685f"))).get_Argument(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.ValueSet UserInput()
 	{
@@ -2234,11 +2234,11 @@ extern(Windows):
 interface WalletActionActivatedEventArgs : Windows.ApplicationModel.Activation.IWalletActionActivatedEventArgs, Windows.ApplicationModel.Activation.IActivatedEventArgs
 {
 extern(Windows):
-	final HSTRING ItemId()
+	final wstring ItemId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IWalletActionActivatedEventArgs)this.asInterface(uuid("fcfc027b-1a1a-4d22-923f-ae6f45fa52d9"))).get_ItemId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Wallet.WalletActionKind ActionKind()
 	{
@@ -2246,11 +2246,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IWalletActionActivatedEventArgs)this.asInterface(uuid("fcfc027b-1a1a-4d22-923f-ae6f45fa52d9"))).get_ActionKind(&_ret));
 		return _ret;
 	}
-	final HSTRING ActionId()
+	final wstring ActionId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Activation.IWalletActionActivatedEventArgs)this.asInterface(uuid("fcfc027b-1a1a-4d22-923f-ae6f45fa52d9"))).get_ActionId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Activation.ActivationKind Kind()
 	{

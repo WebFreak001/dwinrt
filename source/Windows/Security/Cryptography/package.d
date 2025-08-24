@@ -56,41 +56,41 @@ interface CryptographicBuffer
 	{
 		Debug.OK(staticInstance.abi_CopyToByteArray(buffer, out___valueSize, out_value));
 	}
-	static Windows.Storage.Streams.IBuffer DecodeFromHexString(HSTRING value)
+	static Windows.Storage.Streams.IBuffer DecodeFromHexString(wstring value)
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(staticInstance.abi_DecodeFromHexString(value, &_ret));
+		Debug.OK(staticInstance.abi_DecodeFromHexString(hstring(value).handle, &_ret));
 		return _ret;
 	}
-	static HSTRING EncodeToHexString(Windows.Storage.Streams.IBuffer buffer)
+	static wstring EncodeToHexString(Windows.Storage.Streams.IBuffer buffer)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_EncodeToHexString(buffer, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.Storage.Streams.IBuffer DecodeFromBase64String(HSTRING value)
+	static Windows.Storage.Streams.IBuffer DecodeFromBase64String(wstring value)
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(staticInstance.abi_DecodeFromBase64String(value, &_ret));
+		Debug.OK(staticInstance.abi_DecodeFromBase64String(hstring(value).handle, &_ret));
 		return _ret;
 	}
-	static HSTRING EncodeToBase64String(Windows.Storage.Streams.IBuffer buffer)
+	static wstring EncodeToBase64String(Windows.Storage.Streams.IBuffer buffer)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_EncodeToBase64String(buffer, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.Storage.Streams.IBuffer ConvertStringToBinary(HSTRING value, Windows.Security.Cryptography.BinaryStringEncoding encoding)
+	static Windows.Storage.Streams.IBuffer ConvertStringToBinary(wstring value, Windows.Security.Cryptography.BinaryStringEncoding encoding)
 	{
 		Windows.Storage.Streams.IBuffer _ret;
-		Debug.OK(staticInstance.abi_ConvertStringToBinary(value, encoding, &_ret));
+		Debug.OK(staticInstance.abi_ConvertStringToBinary(hstring(value).handle, encoding, &_ret));
 		return _ret;
 	}
-	static HSTRING ConvertBinaryToString(Windows.Security.Cryptography.BinaryStringEncoding encoding, Windows.Storage.Streams.IBuffer buffer)
+	static wstring ConvertBinaryToString(Windows.Security.Cryptography.BinaryStringEncoding encoding, Windows.Storage.Streams.IBuffer buffer)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_ConvertBinaryToString(encoding, buffer, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 

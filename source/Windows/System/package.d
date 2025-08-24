@@ -549,59 +549,59 @@ interface KnownUserProperties
 		if (_staticInstance is null) _staticInstance = factory!(Windows.System.IKnownUserPropertiesStatics);
 		return _staticInstance;
 	}
-	static HSTRING DisplayName()
+	static wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING FirstName()
+	static wstring FirstName()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_FirstName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING LastName()
+	static wstring LastName()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_LastName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING ProviderName()
+	static wstring ProviderName()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_ProviderName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING AccountName()
+	static wstring AccountName()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_AccountName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GuestHost()
+	static wstring GuestHost()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_GuestHost(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING PrincipalName()
+	static wstring PrincipalName()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_PrincipalName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING DomainName()
+	static wstring DomainName()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_DomainName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SessionInitiationProtocolUri()
+	static wstring SessionInitiationProtocolUri()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SessionInitiationProtocolUri(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -687,25 +687,25 @@ extern(Windows):
 		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).get_UI(&_ret));
 		return _ret;
 	}
-	final HSTRING PreferredApplicationPackageFamilyName()
+	final wstring PreferredApplicationPackageFamilyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).get_PreferredApplicationPackageFamilyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void PreferredApplicationPackageFamilyName(HSTRING value)
+	final void PreferredApplicationPackageFamilyName(wstring value)
 	{
-		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).set_PreferredApplicationPackageFamilyName(value));
+		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).set_PreferredApplicationPackageFamilyName(hstring(value).handle));
 	}
-	final HSTRING PreferredApplicationDisplayName()
+	final wstring PreferredApplicationDisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).get_PreferredApplicationDisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void PreferredApplicationDisplayName(HSTRING value)
+	final void PreferredApplicationDisplayName(wstring value)
 	{
-		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).set_PreferredApplicationDisplayName(value));
+		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).set_PreferredApplicationDisplayName(hstring(value).handle));
 	}
 	final Windows.Foundation.Uri FallbackUri()
 	{
@@ -717,15 +717,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).set_FallbackUri(value));
 	}
-	final HSTRING ContentType()
+	final wstring ContentType()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).get_ContentType(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ContentType(HSTRING value)
+	final void ContentType(wstring value)
 	{
-		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).set_ContentType(value));
+		Debug.OK((cast(Windows.System.ILauncherOptions)this.asInterface(uuid("bafa21d8-b071-4cd8-853e-341203e557d3"))).set_ContentType(hstring(value).handle));
 	}
 	final Windows.UI.ViewManagement.ViewSizePreference DesiredRemainingView()
 	{
@@ -737,15 +737,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.System.ILauncherViewOptions)this.asInterface(uuid("8a9b29f1-7ca7-49de-9bd3-3c5b7184f616"))).set_DesiredRemainingView(value));
 	}
-	final HSTRING TargetApplicationPackageFamilyName()
+	final wstring TargetApplicationPackageFamilyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.System.ILauncherOptions2)this.asInterface(uuid("3ba08eb4-6e40-4dce-a1a3-2f53950afb49"))).get_TargetApplicationPackageFamilyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void TargetApplicationPackageFamilyName(HSTRING value)
+	final void TargetApplicationPackageFamilyName(wstring value)
 	{
-		Debug.OK((cast(Windows.System.ILauncherOptions2)this.asInterface(uuid("3ba08eb4-6e40-4dce-a1a3-2f53950afb49"))).set_TargetApplicationPackageFamilyName(value));
+		Debug.OK((cast(Windows.System.ILauncherOptions2)this.asInterface(uuid("3ba08eb4-6e40-4dce-a1a3-2f53950afb49"))).set_TargetApplicationPackageFamilyName(hstring(value).handle));
 	}
 	final Windows.Storage.Search.StorageFileQueryResult NeighboringFilesQuery()
 	{
@@ -886,16 +886,16 @@ interface ProcessLauncher
 		if (_staticInstance is null) _staticInstance = factory!(Windows.System.IProcessLauncherStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.System.ProcessLauncherResult) RunToCompletionAsync(HSTRING fileName, HSTRING args)
+	static Windows.Foundation.IAsyncOperation!(Windows.System.ProcessLauncherResult) RunToCompletionAsync(wstring fileName, wstring args)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.System.ProcessLauncherResult) _ret;
-		Debug.OK(staticInstance.abi_RunToCompletionAsync(fileName, args, &_ret));
+		Debug.OK(staticInstance.abi_RunToCompletionAsync(hstring(fileName).handle, hstring(args).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.System.ProcessLauncherResult) RunToCompletionAsyncWithOptions(HSTRING fileName, HSTRING args, Windows.System.ProcessLauncherOptions options)
+	static Windows.Foundation.IAsyncOperation!(Windows.System.ProcessLauncherResult) RunToCompletionAsyncWithOptions(wstring fileName, wstring args, Windows.System.ProcessLauncherOptions options)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.System.ProcessLauncherResult) _ret;
-		Debug.OK(staticInstance.abi_RunToCompletionAsyncWithOptions(fileName, args, options, &_ret));
+		Debug.OK(staticInstance.abi_RunToCompletionAsyncWithOptions(hstring(fileName).handle, hstring(args).handle, options, &_ret));
 		return _ret;
 	}
 	alias RunToCompletionAsync = RunToCompletionAsyncWithOptions;
@@ -934,15 +934,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.System.IProcessLauncherOptions)this.asInterface(uuid("3080b9cf-f444-4a83-beaf-a549a0f3229c"))).set_StandardError(value));
 	}
-	final HSTRING WorkingDirectory()
+	final wstring WorkingDirectory()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.System.IProcessLauncherOptions)this.asInterface(uuid("3080b9cf-f444-4a83-beaf-a549a0f3229c"))).get_WorkingDirectory(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void WorkingDirectory(HSTRING value)
+	final void WorkingDirectory(wstring value)
 	{
-		Debug.OK((cast(Windows.System.IProcessLauncherOptions)this.asInterface(uuid("3080b9cf-f444-4a83-beaf-a549a0f3229c"))).set_WorkingDirectory(value));
+		Debug.OK((cast(Windows.System.IProcessLauncherOptions)this.asInterface(uuid("3080b9cf-f444-4a83-beaf-a549a0f3229c"))).set_WorkingDirectory(hstring(value).handle));
 	}
 	static ProcessLauncherOptions New()
 	{
@@ -1072,11 +1072,11 @@ interface TimeZoneSettings
 		if (_staticInstance is null) _staticInstance = factory!(Windows.System.ITimeZoneSettingsStatics);
 		return _staticInstance;
 	}
-	static HSTRING CurrentTimeZoneDisplayName()
+	static wstring CurrentTimeZoneDisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_CurrentTimeZoneDisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static Windows.Foundation.Collections.IVectorView!(HSTRING) SupportedTimeZoneDisplayNames()
 	{
@@ -1090,20 +1090,20 @@ interface TimeZoneSettings
 		Debug.OK(staticInstance.get_CanChangeTimeZone(&_ret));
 		return _ret;
 	}
-	static void ChangeTimeZoneByDisplayName(HSTRING timeZoneDisplayName)
+	static void ChangeTimeZoneByDisplayName(wstring timeZoneDisplayName)
 	{
-		Debug.OK(staticInstance.abi_ChangeTimeZoneByDisplayName(timeZoneDisplayName));
+		Debug.OK(staticInstance.abi_ChangeTimeZoneByDisplayName(hstring(timeZoneDisplayName).handle));
 	}
 }
 
 interface User : Windows.System.IUser
 {
 extern(Windows):
-	final HSTRING NonRoamableId()
+	final wstring NonRoamableId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.System.IUser)this.asInterface(uuid("df9a26c6-e746-4bcd-b5d4-120103c4209b"))).get_NonRoamableId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.System.UserAuthenticationStatus AuthenticationStatus()
 	{
@@ -1117,10 +1117,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.System.IUser)this.asInterface(uuid("df9a26c6-e746-4bcd-b5d4-120103c4209b"))).get_Type(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(IInspectable) GetPropertyAsync(HSTRING value)
+	final Windows.Foundation.IAsyncOperation!(IInspectable) GetPropertyAsync(wstring value)
 	{
 		Windows.Foundation.IAsyncOperation!(IInspectable) _ret;
-		Debug.OK((cast(Windows.System.IUser)this.asInterface(uuid("df9a26c6-e746-4bcd-b5d4-120103c4209b"))).abi_GetPropertyAsync(value, &_ret));
+		Debug.OK((cast(Windows.System.IUser)this.asInterface(uuid("df9a26c6-e746-4bcd-b5d4-120103c4209b"))).abi_GetPropertyAsync(hstring(value).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IPropertySet) GetPropertiesAsync(Windows.Foundation.Collections.IVectorView!(HSTRING) values)
@@ -1168,10 +1168,10 @@ extern(Windows):
 		return _ret;
 	}
 	alias FindAllAsync = FindAllAsyncByTypeAndStatus;
-	static Windows.System.User GetFromId(HSTRING nonRoamableId)
+	static Windows.System.User GetFromId(wstring nonRoamableId)
 	{
 		Windows.System.User _ret;
-		Debug.OK(staticInstance.abi_GetFromId(nonRoamableId, &_ret));
+		Debug.OK(staticInstance.abi_GetFromId(hstring(nonRoamableId).handle, &_ret));
 		return _ret;
 	}
 }
@@ -1233,10 +1233,10 @@ interface UserDeviceAssociation
 		if (_staticInstance is null) _staticInstance = factory!(Windows.System.IUserDeviceAssociationStatics);
 		return _staticInstance;
 	}
-	static Windows.System.User FindUserFromDeviceId(HSTRING deviceId)
+	static Windows.System.User FindUserFromDeviceId(wstring deviceId)
 	{
 		Windows.System.User _ret;
-		Debug.OK(staticInstance.abi_FindUserFromDeviceId(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FindUserFromDeviceId(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
 	static EventRegistrationToken OnUserDeviceAssociationChanged(void delegate(IInspectable, Windows.System.UserDeviceAssociationChangedEventArgs) fn)
@@ -1254,11 +1254,11 @@ interface UserDeviceAssociation
 interface UserDeviceAssociationChangedEventArgs : Windows.System.IUserDeviceAssociationChangedEventArgs
 {
 extern(Windows):
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.System.IUserDeviceAssociationChangedEventArgs)this.asInterface(uuid("bd1f6f6c-bb5d-4d7b-a5f0-c8cd11a38d42"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.System.User NewUser()
 	{

@@ -2766,9 +2766,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer2)this.asInterface(uuid("3c841218-2123-4fc5-9082-2f883f77bdf5"))).set_AudioDeviceType(value));
 	}
-	final void AddAudioEffect(HSTRING activatableClassId, bool effectOptional, Windows.Foundation.Collections.IPropertySet configuration)
+	final void AddAudioEffect(wstring activatableClassId, bool effectOptional, Windows.Foundation.Collections.IPropertySet configuration)
 	{
-		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerEffects)this.asInterface(uuid("85a1deda-cab6-4cc0-8be3-6035f4de2591"))).abi_AddAudioEffect(activatableClassId, effectOptional, configuration));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerEffects)this.asInterface(uuid("85a1deda-cab6-4cc0-8be3-6035f4de2591"))).abi_AddAudioEffect(hstring(activatableClassId).handle, effectOptional, configuration));
 	}
 	final void RemoveAllEffects()
 	{
@@ -2900,9 +2900,9 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Playback.IMediaPlayer4)this.asInterface(uuid("80035db0-7448-4770-afcf-2a57450914c5"))).abi_GetSurface(compositor, &_ret));
 		return _ret;
 	}
-	final void AddVideoEffect(HSTRING activatableClassId, bool effectOptional, Windows.Foundation.Collections.IPropertySet effectConfiguration)
+	final void AddVideoEffect(wstring activatableClassId, bool effectOptional, Windows.Foundation.Collections.IPropertySet effectConfiguration)
 	{
-		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerEffects2)this.asInterface(uuid("fa419a79-1bbe-46c5-ae1f-8ee69fb3c2c7"))).abi_AddVideoEffect(activatableClassId, effectOptional, effectConfiguration));
+		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerEffects2)this.asInterface(uuid("fa419a79-1bbe-46c5-ae1f-8ee69fb3c2c7"))).abi_AddVideoEffect(hstring(activatableClassId).handle, effectOptional, effectConfiguration));
 	}
 	final EventRegistrationToken OnVideoFrameAvailable(void delegate(Windows.Media.Playback.MediaPlayer, IInspectable) fn)
 	{
@@ -2971,11 +2971,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerFailedEventArgs)this.asInterface(uuid("2744e9b9-a7e3-4f16-bac4-7914ebc08301"))).get_ExtendedErrorCode(&_ret));
 		return _ret;
 	}
-	final HSTRING ErrorMessage()
+	final wstring ErrorMessage()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Playback.IMediaPlayerFailedEventArgs)this.asInterface(uuid("2744e9b9-a7e3-4f16-bac4-7914ebc08301"))).get_ErrorMessage(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -3026,17 +3026,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Playback.IPlaybackMediaMarker)this.asInterface(uuid("c4d22f5c-3c1c-4444-b6b9-778b0422d41a"))).get_Time(&_ret));
 		return _ret;
 	}
-	final HSTRING MediaMarkerType()
+	final wstring MediaMarkerType()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Playback.IPlaybackMediaMarker)this.asInterface(uuid("c4d22f5c-3c1c-4444-b6b9-778b0422d41a"))).get_MediaMarkerType(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Text()
+	final wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Playback.IPlaybackMediaMarker)this.asInterface(uuid("c4d22f5c-3c1c-4444-b6b9-778b0422d41a"))).get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static Windows.Media.Playback.PlaybackMediaMarker New(Windows.Foundation.TimeSpan value)
 	{
@@ -3045,11 +3045,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Playback.IPlaybackMediaMarkerFactory)factory.asInterface(uuid("8c530a78-e0ae-4e1a-a8c8-e23f982a937b"))).abi_CreateFromTime(value, &_ret));
 		return _ret;
 	}
-	static Windows.Media.Playback.PlaybackMediaMarker New(Windows.Foundation.TimeSpan value, HSTRING mediaMarketType, HSTRING text)
+	static Windows.Media.Playback.PlaybackMediaMarker New(Windows.Foundation.TimeSpan value, wstring mediaMarketType, wstring text)
 	{
 		auto factory = factory!(Windows.Media.Playback.IPlaybackMediaMarkerFactory);
 		Windows.Media.Playback.PlaybackMediaMarker _ret;
-		Debug.OK((cast(Windows.Media.Playback.IPlaybackMediaMarkerFactory)factory.asInterface(uuid("8c530a78-e0ae-4e1a-a8c8-e23f982a937b"))).abi_Create(value, mediaMarketType, text, &_ret));
+		Debug.OK((cast(Windows.Media.Playback.IPlaybackMediaMarkerFactory)factory.asInterface(uuid("8c530a78-e0ae-4e1a-a8c8-e23f982a937b"))).abi_Create(value, hstring(mediaMarketType).handle, hstring(text).handle, &_ret));
 		return _ret;
 	}
 }

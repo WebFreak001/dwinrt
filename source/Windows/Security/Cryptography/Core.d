@@ -395,124 +395,124 @@ interface AsymmetricAlgorithmNames
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Core.IAsymmetricAlgorithmNamesStatics);
 		return _staticInstance;
 	}
-	static HSTRING RsaPkcs1()
+	static wstring RsaPkcs1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_RsaPkcs1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING RsaOaepSha1()
+	static wstring RsaOaepSha1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_RsaOaepSha1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING RsaOaepSha256()
+	static wstring RsaOaepSha256()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_RsaOaepSha256(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING RsaOaepSha384()
+	static wstring RsaOaepSha384()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_RsaOaepSha384(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING RsaOaepSha512()
+	static wstring RsaOaepSha512()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_RsaOaepSha512(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING EcdsaP256Sha256()
+	static wstring EcdsaP256Sha256()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_EcdsaP256Sha256(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING EcdsaP384Sha384()
+	static wstring EcdsaP384Sha384()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_EcdsaP384Sha384(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING EcdsaP521Sha512()
+	static wstring EcdsaP521Sha512()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_EcdsaP521Sha512(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING DsaSha1()
+	static wstring DsaSha1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_DsaSha1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING DsaSha256()
+	static wstring DsaSha256()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_DsaSha256(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING RsaSignPkcs1Sha1()
+	static wstring RsaSignPkcs1Sha1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_RsaSignPkcs1Sha1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING RsaSignPkcs1Sha256()
+	static wstring RsaSignPkcs1Sha256()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_RsaSignPkcs1Sha256(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING RsaSignPkcs1Sha384()
+	static wstring RsaSignPkcs1Sha384()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_RsaSignPkcs1Sha384(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING RsaSignPkcs1Sha512()
+	static wstring RsaSignPkcs1Sha512()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_RsaSignPkcs1Sha512(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING RsaSignPssSha1()
+	static wstring RsaSignPssSha1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_RsaSignPssSha1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING RsaSignPssSha256()
+	static wstring RsaSignPssSha256()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_RsaSignPssSha256(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING RsaSignPssSha384()
+	static wstring RsaSignPssSha384()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_RsaSignPssSha384(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING RsaSignPssSha512()
+	static wstring RsaSignPssSha512()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_RsaSignPssSha512(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface AsymmetricKeyAlgorithmProvider : Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider, Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider2
 {
 extern(Windows):
-	final HSTRING AlgorithmName()
+	final wstring AlgorithmName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider)this.asInterface(uuid("e8d2ff37-6259-4e88-b7e0-94191fde699e"))).get_AlgorithmName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Security.Cryptography.Core.CryptographicKey CreateKeyPair(UINT32 keySize)
 	{
@@ -548,10 +548,10 @@ extern(Windows):
 		return _ret;
 	}
 	alias ImportPublicKey = ImportPublicKeyWithBlobType;
-	final Windows.Security.Cryptography.Core.CryptographicKey CreateKeyPairWithCurveName(HSTRING curveName)
+	final Windows.Security.Cryptography.Core.CryptographicKey CreateKeyPairWithCurveName(wstring curveName)
 	{
 		Windows.Security.Cryptography.Core.CryptographicKey _ret;
-		Debug.OK((cast(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider2)this.asInterface(uuid("4e322a7e-7c4d-4997-ac4f-1b848b36306e"))).abi_CreateKeyPairWithCurveName(curveName, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProvider2)this.asInterface(uuid("4e322a7e-7c4d-4997-ac4f-1b848b36306e"))).abi_CreateKeyPairWithCurveName(hstring(curveName).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Security.Cryptography.Core.CryptographicKey CreateKeyPairWithCurveParameters(UINT32 __parametersSize, ubyte* parameters)
@@ -567,10 +567,10 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Core.IAsymmetricKeyAlgorithmProviderStatics);
 		return _staticInstance;
 	}
-	static Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider OpenAlgorithm(HSTRING algorithm)
+	static Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider OpenAlgorithm(wstring algorithm)
 	{
 		Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider _ret;
-		Debug.OK(staticInstance.abi_OpenAlgorithm(algorithm, &_ret));
+		Debug.OK(staticInstance.abi_OpenAlgorithm(hstring(algorithm).handle, &_ret));
 		return _ret;
 	}
 }
@@ -689,275 +689,275 @@ interface EccCurveNames
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Core.IEccCurveNamesStatics);
 		return _staticInstance;
 	}
-	static HSTRING BrainpoolP160r1()
+	static wstring BrainpoolP160r1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BrainpoolP160r1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BrainpoolP160t1()
+	static wstring BrainpoolP160t1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BrainpoolP160t1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BrainpoolP192r1()
+	static wstring BrainpoolP192r1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BrainpoolP192r1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BrainpoolP192t1()
+	static wstring BrainpoolP192t1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BrainpoolP192t1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BrainpoolP224r1()
+	static wstring BrainpoolP224r1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BrainpoolP224r1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BrainpoolP224t1()
+	static wstring BrainpoolP224t1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BrainpoolP224t1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BrainpoolP256r1()
+	static wstring BrainpoolP256r1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BrainpoolP256r1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BrainpoolP256t1()
+	static wstring BrainpoolP256t1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BrainpoolP256t1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BrainpoolP320r1()
+	static wstring BrainpoolP320r1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BrainpoolP320r1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BrainpoolP320t1()
+	static wstring BrainpoolP320t1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BrainpoolP320t1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BrainpoolP384r1()
+	static wstring BrainpoolP384r1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BrainpoolP384r1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BrainpoolP384t1()
+	static wstring BrainpoolP384t1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BrainpoolP384t1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BrainpoolP512r1()
+	static wstring BrainpoolP512r1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BrainpoolP512r1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING BrainpoolP512t1()
+	static wstring BrainpoolP512t1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_BrainpoolP512t1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Curve25519()
+	static wstring Curve25519()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Curve25519(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Ec192wapi()
+	static wstring Ec192wapi()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Ec192wapi(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING NistP192()
+	static wstring NistP192()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_NistP192(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING NistP224()
+	static wstring NistP224()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_NistP224(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING NistP256()
+	static wstring NistP256()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_NistP256(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING NistP384()
+	static wstring NistP384()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_NistP384(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING NistP521()
+	static wstring NistP521()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_NistP521(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING NumsP256t1()
+	static wstring NumsP256t1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_NumsP256t1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING NumsP384t1()
+	static wstring NumsP384t1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_NumsP384t1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING NumsP512t1()
+	static wstring NumsP512t1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_NumsP512t1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SecP160k1()
+	static wstring SecP160k1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SecP160k1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SecP160r1()
+	static wstring SecP160r1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SecP160r1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SecP160r2()
+	static wstring SecP160r2()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SecP160r2(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SecP192k1()
+	static wstring SecP192k1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SecP192k1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SecP192r1()
+	static wstring SecP192r1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SecP192r1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SecP224k1()
+	static wstring SecP224k1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SecP224k1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SecP224r1()
+	static wstring SecP224r1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SecP224r1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SecP256k1()
+	static wstring SecP256k1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SecP256k1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SecP256r1()
+	static wstring SecP256r1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SecP256r1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SecP384r1()
+	static wstring SecP384r1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SecP384r1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SecP521r1()
+	static wstring SecP521r1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SecP521r1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Wtls7()
+	static wstring Wtls7()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Wtls7(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Wtls9()
+	static wstring Wtls9()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Wtls9(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Wtls12()
+	static wstring Wtls12()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Wtls12(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING X962P192v1()
+	static wstring X962P192v1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_X962P192v1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING X962P192v2()
+	static wstring X962P192v2()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_X962P192v2(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING X962P192v3()
+	static wstring X962P192v3()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_X962P192v3(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING X962P239v1()
+	static wstring X962P239v1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_X962P239v1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING X962P239v2()
+	static wstring X962P239v2()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_X962P239v2(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING X962P239v3()
+	static wstring X962P239v3()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_X962P239v3(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING X962P256v1()
+	static wstring X962P256v1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_X962P256v1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static Windows.Foundation.Collections.IVectorView!(HSTRING) AllEccCurveNames()
 	{
@@ -992,46 +992,46 @@ interface HashAlgorithmNames
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Core.IHashAlgorithmNamesStatics);
 		return _staticInstance;
 	}
-	static HSTRING Md5()
+	static wstring Md5()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Md5(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Sha1()
+	static wstring Sha1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Sha1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Sha256()
+	static wstring Sha256()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Sha256(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Sha384()
+	static wstring Sha384()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Sha384(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Sha512()
+	static wstring Sha512()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Sha512(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface HashAlgorithmProvider : Windows.Security.Cryptography.Core.IHashAlgorithmProvider
 {
 extern(Windows):
-	final HSTRING AlgorithmName()
+	final wstring AlgorithmName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Core.IHashAlgorithmProvider)this.asInterface(uuid("be9b3080-b2c3-422b-bce1-ec90efb5d7b5"))).get_AlgorithmName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final UINT32 HashLength()
 	{
@@ -1058,10 +1058,10 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Core.IHashAlgorithmProviderStatics);
 		return _staticInstance;
 	}
-	static Windows.Security.Cryptography.Core.HashAlgorithmProvider OpenAlgorithm(HSTRING algorithm)
+	static Windows.Security.Cryptography.Core.HashAlgorithmProvider OpenAlgorithm(wstring algorithm)
 	{
 		Windows.Security.Cryptography.Core.HashAlgorithmProvider _ret;
-		Debug.OK(staticInstance.abi_OpenAlgorithm(algorithm, &_ret));
+		Debug.OK(staticInstance.abi_OpenAlgorithm(hstring(algorithm).handle, &_ret));
 		return _ret;
 	}
 }
@@ -1074,106 +1074,106 @@ interface KeyDerivationAlgorithmNames
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmNamesStatics);
 		return _staticInstance;
 	}
-	static HSTRING Pbkdf2Md5()
+	static wstring Pbkdf2Md5()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Pbkdf2Md5(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Pbkdf2Sha1()
+	static wstring Pbkdf2Sha1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Pbkdf2Sha1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Pbkdf2Sha256()
+	static wstring Pbkdf2Sha256()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Pbkdf2Sha256(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Pbkdf2Sha384()
+	static wstring Pbkdf2Sha384()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Pbkdf2Sha384(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Pbkdf2Sha512()
+	static wstring Pbkdf2Sha512()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Pbkdf2Sha512(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Sp800108CtrHmacMd5()
+	static wstring Sp800108CtrHmacMd5()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Sp800108CtrHmacMd5(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Sp800108CtrHmacSha1()
+	static wstring Sp800108CtrHmacSha1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Sp800108CtrHmacSha1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Sp800108CtrHmacSha256()
+	static wstring Sp800108CtrHmacSha256()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Sp800108CtrHmacSha256(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Sp800108CtrHmacSha384()
+	static wstring Sp800108CtrHmacSha384()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Sp800108CtrHmacSha384(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Sp800108CtrHmacSha512()
+	static wstring Sp800108CtrHmacSha512()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Sp800108CtrHmacSha512(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Sp80056aConcatMd5()
+	static wstring Sp80056aConcatMd5()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Sp80056aConcatMd5(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Sp80056aConcatSha1()
+	static wstring Sp80056aConcatSha1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Sp80056aConcatSha1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Sp80056aConcatSha256()
+	static wstring Sp80056aConcatSha256()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Sp80056aConcatSha256(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Sp80056aConcatSha384()
+	static wstring Sp80056aConcatSha384()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Sp80056aConcatSha384(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Sp80056aConcatSha512()
+	static wstring Sp80056aConcatSha512()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Sp80056aConcatSha512(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface KeyDerivationAlgorithmProvider : Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmProvider
 {
 extern(Windows):
-	final HSTRING AlgorithmName()
+	final wstring AlgorithmName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmProvider)this.asInterface(uuid("e1fba83b-4671-43b7-9158-763aaa98b6bf"))).get_AlgorithmName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Security.Cryptography.Core.CryptographicKey CreateKey(Windows.Storage.Streams.IBuffer keyMaterial)
 	{
@@ -1188,10 +1188,10 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Core.IKeyDerivationAlgorithmProviderStatics);
 		return _staticInstance;
 	}
-	static Windows.Security.Cryptography.Core.KeyDerivationAlgorithmProvider OpenAlgorithm(HSTRING algorithm)
+	static Windows.Security.Cryptography.Core.KeyDerivationAlgorithmProvider OpenAlgorithm(wstring algorithm)
 	{
 		Windows.Security.Cryptography.Core.KeyDerivationAlgorithmProvider _ret;
-		Debug.OK(staticInstance.abi_OpenAlgorithm(algorithm, &_ret));
+		Debug.OK(staticInstance.abi_OpenAlgorithm(hstring(algorithm).handle, &_ret));
 		return _ret;
 	}
 }
@@ -1260,52 +1260,52 @@ interface MacAlgorithmNames
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Core.IMacAlgorithmNamesStatics);
 		return _staticInstance;
 	}
-	static HSTRING HmacMd5()
+	static wstring HmacMd5()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_HmacMd5(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING HmacSha1()
+	static wstring HmacSha1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_HmacSha1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING HmacSha256()
+	static wstring HmacSha256()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_HmacSha256(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING HmacSha384()
+	static wstring HmacSha384()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_HmacSha384(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING HmacSha512()
+	static wstring HmacSha512()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_HmacSha512(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING AesCmac()
+	static wstring AesCmac()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_AesCmac(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface MacAlgorithmProvider : Windows.Security.Cryptography.Core.IMacAlgorithmProvider, Windows.Security.Cryptography.Core.IMacAlgorithmProvider2
 {
 extern(Windows):
-	final HSTRING AlgorithmName()
+	final wstring AlgorithmName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Core.IMacAlgorithmProvider)this.asInterface(uuid("4a3fc5c3-1cbd-41ce-a092-aa0bc5d2d2f5"))).get_AlgorithmName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final UINT32 MacLength()
 	{
@@ -1332,10 +1332,10 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Core.IMacAlgorithmProviderStatics);
 		return _staticInstance;
 	}
-	static Windows.Security.Cryptography.Core.MacAlgorithmProvider OpenAlgorithm(HSTRING algorithm)
+	static Windows.Security.Cryptography.Core.MacAlgorithmProvider OpenAlgorithm(wstring algorithm)
 	{
 		Windows.Security.Cryptography.Core.MacAlgorithmProvider _ret;
-		Debug.OK(staticInstance.abi_OpenAlgorithm(algorithm, &_ret));
+		Debug.OK(staticInstance.abi_OpenAlgorithm(hstring(algorithm).handle, &_ret));
 		return _ret;
 	}
 }
@@ -1348,16 +1348,16 @@ interface PersistedKeyProvider
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Core.IPersistedKeyProviderStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Core.CryptographicKey) OpenKeyPairFromCertificateAsync(Windows.Security.Cryptography.Certificates.Certificate certificate, HSTRING hashAlgorithmName, Windows.Security.Cryptography.Core.CryptographicPadding padding)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Core.CryptographicKey) OpenKeyPairFromCertificateAsync(Windows.Security.Cryptography.Certificates.Certificate certificate, wstring hashAlgorithmName, Windows.Security.Cryptography.Core.CryptographicPadding padding)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Cryptography.Core.CryptographicKey) _ret;
-		Debug.OK(staticInstance.abi_OpenKeyPairFromCertificateAsync(certificate, hashAlgorithmName, padding, &_ret));
+		Debug.OK(staticInstance.abi_OpenKeyPairFromCertificateAsync(certificate, hstring(hashAlgorithmName).handle, padding, &_ret));
 		return _ret;
 	}
-	static Windows.Security.Cryptography.Core.CryptographicKey OpenPublicKeyFromCertificate(Windows.Security.Cryptography.Certificates.Certificate certificate, HSTRING hashAlgorithmName, Windows.Security.Cryptography.Core.CryptographicPadding padding)
+	static Windows.Security.Cryptography.Core.CryptographicKey OpenPublicKeyFromCertificate(Windows.Security.Cryptography.Certificates.Certificate certificate, wstring hashAlgorithmName, Windows.Security.Cryptography.Core.CryptographicPadding padding)
 	{
 		Windows.Security.Cryptography.Core.CryptographicKey _ret;
-		Debug.OK(staticInstance.abi_OpenPublicKeyFromCertificate(certificate, hashAlgorithmName, padding, &_ret));
+		Debug.OK(staticInstance.abi_OpenPublicKeyFromCertificate(certificate, hstring(hashAlgorithmName).handle, padding, &_ret));
 		return _ret;
 	}
 }
@@ -1370,130 +1370,130 @@ interface SymmetricAlgorithmNames
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Core.ISymmetricAlgorithmNamesStatics);
 		return _staticInstance;
 	}
-	static HSTRING DesCbc()
+	static wstring DesCbc()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_DesCbc(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING DesEcb()
+	static wstring DesEcb()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_DesEcb(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING TripleDesCbc()
+	static wstring TripleDesCbc()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_TripleDesCbc(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING TripleDesEcb()
+	static wstring TripleDesEcb()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_TripleDesEcb(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Rc2Cbc()
+	static wstring Rc2Cbc()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Rc2Cbc(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Rc2Ecb()
+	static wstring Rc2Ecb()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Rc2Ecb(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING AesCbc()
+	static wstring AesCbc()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_AesCbc(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING AesEcb()
+	static wstring AesEcb()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_AesEcb(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING AesGcm()
+	static wstring AesGcm()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_AesGcm(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING AesCcm()
+	static wstring AesCcm()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_AesCcm(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING AesCbcPkcs7()
+	static wstring AesCbcPkcs7()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_AesCbcPkcs7(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING AesEcbPkcs7()
+	static wstring AesEcbPkcs7()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_AesEcbPkcs7(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING DesCbcPkcs7()
+	static wstring DesCbcPkcs7()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_DesCbcPkcs7(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING DesEcbPkcs7()
+	static wstring DesEcbPkcs7()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_DesEcbPkcs7(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING TripleDesCbcPkcs7()
+	static wstring TripleDesCbcPkcs7()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_TripleDesCbcPkcs7(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING TripleDesEcbPkcs7()
+	static wstring TripleDesEcbPkcs7()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_TripleDesEcbPkcs7(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Rc2CbcPkcs7()
+	static wstring Rc2CbcPkcs7()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Rc2CbcPkcs7(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Rc2EcbPkcs7()
+	static wstring Rc2EcbPkcs7()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Rc2EcbPkcs7(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Rc4()
+	static wstring Rc4()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Rc4(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface SymmetricKeyAlgorithmProvider : Windows.Security.Cryptography.Core.ISymmetricKeyAlgorithmProvider
 {
 extern(Windows):
-	final HSTRING AlgorithmName()
+	final wstring AlgorithmName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Core.ISymmetricKeyAlgorithmProvider)this.asInterface(uuid("3d7e4a33-3bd0-4902-8ac8-470d50d21376"))).get_AlgorithmName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final UINT32 BlockLength()
 	{
@@ -1514,10 +1514,10 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Core.ISymmetricKeyAlgorithmProviderStatics);
 		return _staticInstance;
 	}
-	static Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider OpenAlgorithm(HSTRING algorithm)
+	static Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider OpenAlgorithm(wstring algorithm)
 	{
 		Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider _ret;
-		Debug.OK(staticInstance.abi_OpenAlgorithm(algorithm, &_ret));
+		Debug.OK(staticInstance.abi_OpenAlgorithm(hstring(algorithm).handle, &_ret));
 		return _ret;
 	}
 }

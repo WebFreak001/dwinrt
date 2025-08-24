@@ -319,11 +319,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
-	final HSTRING ToString()
+	final wstring ToString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IStringable)this.asInterface(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3"))).abi_ToString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static Windows.Web.Http.HttpBufferContent New(Windows.Storage.Streams.IBuffer content)
 	{
@@ -416,11 +416,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
-	final HSTRING ToString()
+	final wstring ToString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IStringable)this.asInterface(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3"))).abi_ToString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static HttpClient New()
 	{
@@ -440,23 +440,23 @@ extern(Windows):
 interface HttpCookie : Windows.Web.Http.IHttpCookie, Windows.Foundation.IStringable
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Http.IHttpCookie)this.asInterface(uuid("1f5488e2-cc2d-4779-86a7-88f10687d249"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Domain()
+	final wstring Domain()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Http.IHttpCookie)this.asInterface(uuid("1f5488e2-cc2d-4779-86a7-88f10687d249"))).get_Domain(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Path()
+	final wstring Path()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Http.IHttpCookie)this.asInterface(uuid("1f5488e2-cc2d-4779-86a7-88f10687d249"))).get_Path(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) Expires()
 	{
@@ -488,27 +488,27 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Web.Http.IHttpCookie)this.asInterface(uuid("1f5488e2-cc2d-4779-86a7-88f10687d249"))).set_Secure(value));
 	}
-	final HSTRING Value()
+	final wstring Value()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Http.IHttpCookie)this.asInterface(uuid("1f5488e2-cc2d-4779-86a7-88f10687d249"))).get_Value(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Value(HSTRING value)
+	final void Value(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Http.IHttpCookie)this.asInterface(uuid("1f5488e2-cc2d-4779-86a7-88f10687d249"))).set_Value(value));
+		Debug.OK((cast(Windows.Web.Http.IHttpCookie)this.asInterface(uuid("1f5488e2-cc2d-4779-86a7-88f10687d249"))).set_Value(hstring(value).handle));
 	}
-	final HSTRING ToString()
+	final wstring ToString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IStringable)this.asInterface(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3"))).abi_ToString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.Web.Http.HttpCookie New(HSTRING name, HSTRING domain, HSTRING path)
+	static Windows.Web.Http.HttpCookie New(wstring name, wstring domain, wstring path)
 	{
 		auto factory = factory!(Windows.Web.Http.IHttpCookieFactory);
 		Windows.Web.Http.HttpCookie _ret;
-		Debug.OK((cast(Windows.Web.Http.IHttpCookieFactory)factory.asInterface(uuid("6a0585a9-931c-4cd1-a96d-c21701785c5f"))).abi_Create(name, domain, path, &_ret));
+		Debug.OK((cast(Windows.Web.Http.IHttpCookieFactory)factory.asInterface(uuid("6a0585a9-931c-4cd1-a96d-c21701785c5f"))).abi_Create(hstring(name).handle, hstring(domain).handle, hstring(path).handle, &_ret));
 		return _ret;
 	}
 }
@@ -619,11 +619,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
-	final HSTRING ToString()
+	final wstring ToString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IStringable)this.asInterface(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3"))).abi_ToString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static Windows.Web.Http.HttpFormUrlEncodedContent New(Windows.Foundation.Collections.IIterable!(Windows.Foundation.Collections.IKeyValuePair!(HSTRING, HSTRING)) content)
 	{
@@ -637,17 +637,17 @@ extern(Windows):
 interface HttpMethod : Windows.Web.Http.IHttpMethod, Windows.Foundation.IStringable
 {
 extern(Windows):
-	final HSTRING Method()
+	final wstring Method()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Http.IHttpMethod)this.asInterface(uuid("728d4022-700d-4fe0-afa5-40299c58dbfd"))).get_Method(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ToString()
+	final wstring ToString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IStringable)this.asInterface(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3"))).abi_ToString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 
 	private static Windows.Web.Http.IHttpMethodStatics _staticInstance;
@@ -698,11 +698,11 @@ extern(Windows):
 		Debug.OK(staticInstance.get_Put(&_ret));
 		return _ret;
 	}
-	static Windows.Web.Http.HttpMethod New(HSTRING method)
+	static Windows.Web.Http.HttpMethod New(wstring method)
 	{
 		auto factory = factory!(Windows.Web.Http.IHttpMethodFactory);
 		Windows.Web.Http.HttpMethod _ret;
-		Debug.OK((cast(Windows.Web.Http.IHttpMethodFactory)factory.asInterface(uuid("3c51d10d-36d7-40f8-a86d-e759caf2f83f"))).abi_Create(method, &_ret));
+		Debug.OK((cast(Windows.Web.Http.IHttpMethodFactory)factory.asInterface(uuid("3c51d10d-36d7-40f8-a86d-e759caf2f83f"))).abi_Create(hstring(method).handle, &_ret));
 		return _ret;
 	}
 }
@@ -764,11 +764,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.Web.Http.IHttpContent))this).abi_First(out_first));
 	}
-	final HSTRING ToString()
+	final wstring ToString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IStringable)this.asInterface(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3"))).abi_ToString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static HttpMultipartContent New()
 	{
@@ -776,18 +776,18 @@ extern(Windows):
 		Debug.OK(activationFactory!(HttpMultipartContent).abi_ActivateInstance(&ret));
 		return cast(HttpMultipartContent) ret;
 	}
-	static Windows.Web.Http.HttpMultipartContent New(HSTRING subtype)
+	static Windows.Web.Http.HttpMultipartContent New(wstring subtype)
 	{
 		auto factory = factory!(Windows.Web.Http.IHttpMultipartContentFactory);
 		Windows.Web.Http.HttpMultipartContent _ret;
-		Debug.OK((cast(Windows.Web.Http.IHttpMultipartContentFactory)factory.asInterface(uuid("7eb42e62-0222-4f20-b372-47d5db5d33b4"))).abi_CreateWithSubtype(subtype, &_ret));
+		Debug.OK((cast(Windows.Web.Http.IHttpMultipartContentFactory)factory.asInterface(uuid("7eb42e62-0222-4f20-b372-47d5db5d33b4"))).abi_CreateWithSubtype(hstring(subtype).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Web.Http.HttpMultipartContent New(HSTRING subtype, HSTRING boundary)
+	static Windows.Web.Http.HttpMultipartContent New(wstring subtype, wstring boundary)
 	{
 		auto factory = factory!(Windows.Web.Http.IHttpMultipartContentFactory);
 		Windows.Web.Http.HttpMultipartContent _ret;
-		Debug.OK((cast(Windows.Web.Http.IHttpMultipartContentFactory)factory.asInterface(uuid("7eb42e62-0222-4f20-b372-47d5db5d33b4"))).abi_CreateWithSubtypeAndBoundary(subtype, boundary, &_ret));
+		Debug.OK((cast(Windows.Web.Http.IHttpMultipartContentFactory)factory.asInterface(uuid("7eb42e62-0222-4f20-b372-47d5db5d33b4"))).abi_CreateWithSubtypeAndBoundary(hstring(subtype).handle, hstring(boundary).handle, &_ret));
 		return _ret;
 	}
 }
@@ -845,25 +845,25 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Web.Http.IHttpMultipartFormDataContent)this.asInterface(uuid("64d337e2-e967-4624-b6d1-cf74604a4a42"))).abi_Add(content));
 	}
-	final void AddWithName(Windows.Web.Http.IHttpContent content, HSTRING name)
+	final void AddWithName(Windows.Web.Http.IHttpContent content, wstring name)
 	{
-		Debug.OK((cast(Windows.Web.Http.IHttpMultipartFormDataContent)this.asInterface(uuid("64d337e2-e967-4624-b6d1-cf74604a4a42"))).abi_AddWithName(content, name));
+		Debug.OK((cast(Windows.Web.Http.IHttpMultipartFormDataContent)this.asInterface(uuid("64d337e2-e967-4624-b6d1-cf74604a4a42"))).abi_AddWithName(content, hstring(name).handle));
 	}
 	alias Add = AddWithName;
-	final void AddWithNameAndFileName(Windows.Web.Http.IHttpContent content, HSTRING name, HSTRING fileName)
+	final void AddWithNameAndFileName(Windows.Web.Http.IHttpContent content, wstring name, wstring fileName)
 	{
-		Debug.OK((cast(Windows.Web.Http.IHttpMultipartFormDataContent)this.asInterface(uuid("64d337e2-e967-4624-b6d1-cf74604a4a42"))).abi_AddWithNameAndFileName(content, name, fileName));
+		Debug.OK((cast(Windows.Web.Http.IHttpMultipartFormDataContent)this.asInterface(uuid("64d337e2-e967-4624-b6d1-cf74604a4a42"))).abi_AddWithNameAndFileName(content, hstring(name).handle, hstring(fileName).handle));
 	}
 	alias Add = AddWithNameAndFileName;
 	final void First(Windows.Foundation.Collections.IIterator!(Windows.Web.Http.IHttpContent)* out_first)
 	{
 		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.Web.Http.IHttpContent))this).abi_First(out_first));
 	}
-	final HSTRING ToString()
+	final wstring ToString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IStringable)this.asInterface(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3"))).abi_ToString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static HttpMultipartFormDataContent New()
 	{
@@ -871,11 +871,11 @@ extern(Windows):
 		Debug.OK(activationFactory!(HttpMultipartFormDataContent).abi_ActivateInstance(&ret));
 		return cast(HttpMultipartFormDataContent) ret;
 	}
-	static Windows.Web.Http.HttpMultipartFormDataContent New(HSTRING boundary)
+	static Windows.Web.Http.HttpMultipartFormDataContent New(wstring boundary)
 	{
 		auto factory = factory!(Windows.Web.Http.IHttpMultipartFormDataContentFactory);
 		Windows.Web.Http.HttpMultipartFormDataContent _ret;
-		Debug.OK((cast(Windows.Web.Http.IHttpMultipartFormDataContentFactory)factory.asInterface(uuid("a04d7311-5017-4622-93a8-49b24a4fcbfc"))).abi_CreateWithBoundary(boundary, &_ret));
+		Debug.OK((cast(Windows.Web.Http.IHttpMultipartFormDataContentFactory)factory.asInterface(uuid("a04d7311-5017-4622-93a8-49b24a4fcbfc"))).abi_CreateWithBoundary(hstring(boundary).handle, &_ret));
 		return _ret;
 	}
 }
@@ -935,11 +935,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
-	final HSTRING ToString()
+	final wstring ToString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IStringable)this.asInterface(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3"))).abi_ToString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static HttpRequestMessage New()
 	{
@@ -981,15 +981,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Web.Http.IHttpResponseMessage)this.asInterface(uuid("fee200fb-8664-44e0-95d9-42696199bffc"))).get_IsSuccessStatusCode(&_ret));
 		return _ret;
 	}
-	final HSTRING ReasonPhrase()
+	final wstring ReasonPhrase()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Web.Http.IHttpResponseMessage)this.asInterface(uuid("fee200fb-8664-44e0-95d9-42696199bffc"))).get_ReasonPhrase(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ReasonPhrase(HSTRING value)
+	final void ReasonPhrase(wstring value)
 	{
-		Debug.OK((cast(Windows.Web.Http.IHttpResponseMessage)this.asInterface(uuid("fee200fb-8664-44e0-95d9-42696199bffc"))).set_ReasonPhrase(value));
+		Debug.OK((cast(Windows.Web.Http.IHttpResponseMessage)this.asInterface(uuid("fee200fb-8664-44e0-95d9-42696199bffc"))).set_ReasonPhrase(hstring(value).handle));
 	}
 	final Windows.Web.Http.HttpRequestMessage RequestMessage()
 	{
@@ -1041,11 +1041,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
-	final HSTRING ToString()
+	final wstring ToString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IStringable)this.asInterface(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3"))).abi_ToString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static HttpResponseMessage New()
 	{
@@ -1111,11 +1111,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
-	final HSTRING ToString()
+	final wstring ToString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IStringable)this.asInterface(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3"))).abi_ToString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static Windows.Web.Http.HttpStreamContent New(Windows.Storage.Streams.IInputStream content)
 	{
@@ -1175,31 +1175,31 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Foundation.IClosable)this.asInterface(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e"))).abi_Close());
 	}
-	final HSTRING ToString()
+	final wstring ToString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IStringable)this.asInterface(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3"))).abi_ToString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.Web.Http.HttpStringContent New(HSTRING content)
+	static Windows.Web.Http.HttpStringContent New(wstring content)
 	{
 		auto factory = factory!(Windows.Web.Http.IHttpStringContentFactory);
 		Windows.Web.Http.HttpStringContent _ret;
-		Debug.OK((cast(Windows.Web.Http.IHttpStringContentFactory)factory.asInterface(uuid("46649d5b-2e93-48eb-8e61-19677878e57f"))).abi_CreateFromString(content, &_ret));
+		Debug.OK((cast(Windows.Web.Http.IHttpStringContentFactory)factory.asInterface(uuid("46649d5b-2e93-48eb-8e61-19677878e57f"))).abi_CreateFromString(hstring(content).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Web.Http.HttpStringContent New(HSTRING content, Windows.Storage.Streams.UnicodeEncoding encoding)
+	static Windows.Web.Http.HttpStringContent New(wstring content, Windows.Storage.Streams.UnicodeEncoding encoding)
 	{
 		auto factory = factory!(Windows.Web.Http.IHttpStringContentFactory);
 		Windows.Web.Http.HttpStringContent _ret;
-		Debug.OK((cast(Windows.Web.Http.IHttpStringContentFactory)factory.asInterface(uuid("46649d5b-2e93-48eb-8e61-19677878e57f"))).abi_CreateFromStringWithEncoding(content, encoding, &_ret));
+		Debug.OK((cast(Windows.Web.Http.IHttpStringContentFactory)factory.asInterface(uuid("46649d5b-2e93-48eb-8e61-19677878e57f"))).abi_CreateFromStringWithEncoding(hstring(content).handle, encoding, &_ret));
 		return _ret;
 	}
-	static Windows.Web.Http.HttpStringContent New(HSTRING content, Windows.Storage.Streams.UnicodeEncoding encoding, HSTRING mediaType)
+	static Windows.Web.Http.HttpStringContent New(wstring content, Windows.Storage.Streams.UnicodeEncoding encoding, wstring mediaType)
 	{
 		auto factory = factory!(Windows.Web.Http.IHttpStringContentFactory);
 		Windows.Web.Http.HttpStringContent _ret;
-		Debug.OK((cast(Windows.Web.Http.IHttpStringContentFactory)factory.asInterface(uuid("46649d5b-2e93-48eb-8e61-19677878e57f"))).abi_CreateFromStringWithEncodingAndMediaType(content, encoding, mediaType, &_ret));
+		Debug.OK((cast(Windows.Web.Http.IHttpStringContentFactory)factory.asInterface(uuid("46649d5b-2e93-48eb-8e61-19677878e57f"))).abi_CreateFromStringWithEncodingAndMediaType(hstring(content).handle, encoding, hstring(mediaType).handle, &_ret));
 		return _ret;
 	}
 }
@@ -1231,11 +1231,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Web.Http.IHttpTransportInformation)this.asInterface(uuid("70127198-c6a7-4ed0-833a-83fd8b8f178d"))).get_ServerIntermediateCertificates(&_ret));
 		return _ret;
 	}
-	final HSTRING ToString()
+	final wstring ToString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IStringable)this.asInterface(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3"))).abi_ToString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 

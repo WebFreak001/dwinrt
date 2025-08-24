@@ -216,15 +216,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.FileProperties.IDocumentProperties)this.asInterface(uuid("7eab19bc-1821-4923-b4a9-0aea404d0070"))).get_Author(&_ret));
 		return _ret;
 	}
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.FileProperties.IDocumentProperties)this.asInterface(uuid("7eab19bc-1821-4923-b4a9-0aea404d0070"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Title(HSTRING value)
+	final void Title(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.FileProperties.IDocumentProperties)this.asInterface(uuid("7eab19bc-1821-4923-b4a9-0aea404d0070"))).set_Title(value));
+		Debug.OK((cast(Windows.Storage.FileProperties.IDocumentProperties)this.asInterface(uuid("7eab19bc-1821-4923-b4a9-0aea404d0070"))).set_Title(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) Keywords()
 	{
@@ -232,15 +232,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.FileProperties.IDocumentProperties)this.asInterface(uuid("7eab19bc-1821-4923-b4a9-0aea404d0070"))).get_Keywords(&_ret));
 		return _ret;
 	}
-	final HSTRING Comment()
+	final wstring Comment()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.FileProperties.IDocumentProperties)this.asInterface(uuid("7eab19bc-1821-4923-b4a9-0aea404d0070"))).get_Comment(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Comment(HSTRING value)
+	final void Comment(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.FileProperties.IDocumentProperties)this.asInterface(uuid("7eab19bc-1821-4923-b4a9-0aea404d0070"))).set_Comment(value));
+		Debug.OK((cast(Windows.Storage.FileProperties.IDocumentProperties)this.asInterface(uuid("7eab19bc-1821-4923-b4a9-0aea404d0070"))).set_Comment(hstring(value).handle));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IMap!(HSTRING, IInspectable)) RetrievePropertiesAsync(Windows.Foundation.Collections.IIterable!(HSTRING) propertiesToRetrieve)
 	{
@@ -332,15 +332,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.FileProperties.IImageProperties)this.asInterface(uuid("523c9424-fcff-4275-afee-ecdb9ab47973"))).get_Height(&_ret));
 		return _ret;
 	}
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.FileProperties.IImageProperties)this.asInterface(uuid("523c9424-fcff-4275-afee-ecdb9ab47973"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Title(HSTRING value)
+	final void Title(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.FileProperties.IImageProperties)this.asInterface(uuid("523c9424-fcff-4275-afee-ecdb9ab47973"))).set_Title(value));
+		Debug.OK((cast(Windows.Storage.FileProperties.IImageProperties)this.asInterface(uuid("523c9424-fcff-4275-afee-ecdb9ab47973"))).set_Title(hstring(value).handle));
 	}
 	final Windows.Foundation.IReference!(double) Latitude()
 	{
@@ -354,25 +354,25 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.FileProperties.IImageProperties)this.asInterface(uuid("523c9424-fcff-4275-afee-ecdb9ab47973"))).get_Longitude(&_ret));
 		return _ret;
 	}
-	final HSTRING CameraManufacturer()
+	final wstring CameraManufacturer()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.FileProperties.IImageProperties)this.asInterface(uuid("523c9424-fcff-4275-afee-ecdb9ab47973"))).get_CameraManufacturer(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void CameraManufacturer(HSTRING value)
+	final void CameraManufacturer(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.FileProperties.IImageProperties)this.asInterface(uuid("523c9424-fcff-4275-afee-ecdb9ab47973"))).set_CameraManufacturer(value));
+		Debug.OK((cast(Windows.Storage.FileProperties.IImageProperties)this.asInterface(uuid("523c9424-fcff-4275-afee-ecdb9ab47973"))).set_CameraManufacturer(hstring(value).handle));
 	}
-	final HSTRING CameraModel()
+	final wstring CameraModel()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.FileProperties.IImageProperties)this.asInterface(uuid("523c9424-fcff-4275-afee-ecdb9ab47973"))).get_CameraModel(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void CameraModel(HSTRING value)
+	final void CameraModel(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.FileProperties.IImageProperties)this.asInterface(uuid("523c9424-fcff-4275-afee-ecdb9ab47973"))).set_CameraModel(value));
+		Debug.OK((cast(Windows.Storage.FileProperties.IImageProperties)this.asInterface(uuid("523c9424-fcff-4275-afee-ecdb9ab47973"))).set_CameraModel(hstring(value).handle));
 	}
 	final Windows.Storage.FileProperties.PhotoOrientation Orientation()
 	{
@@ -410,25 +410,25 @@ extern(Windows):
 interface MusicProperties : Windows.Storage.FileProperties.IMusicProperties, Windows.Storage.FileProperties.IStorageItemExtraProperties
 {
 extern(Windows):
-	final HSTRING Album()
+	final wstring Album()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.FileProperties.IMusicProperties)this.asInterface(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da"))).get_Album(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Album(HSTRING value)
+	final void Album(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.FileProperties.IMusicProperties)this.asInterface(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da"))).set_Album(value));
+		Debug.OK((cast(Windows.Storage.FileProperties.IMusicProperties)this.asInterface(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da"))).set_Album(hstring(value).handle));
 	}
-	final HSTRING Artist()
+	final wstring Artist()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.FileProperties.IMusicProperties)this.asInterface(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da"))).get_Artist(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Artist(HSTRING value)
+	final void Artist(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.FileProperties.IMusicProperties)this.asInterface(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da"))).set_Artist(value));
+		Debug.OK((cast(Windows.Storage.FileProperties.IMusicProperties)this.asInterface(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da"))).set_Artist(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) Genre()
 	{
@@ -446,15 +446,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Storage.FileProperties.IMusicProperties)this.asInterface(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da"))).set_TrackNumber(value));
 	}
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.FileProperties.IMusicProperties)this.asInterface(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Title(HSTRING value)
+	final void Title(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.FileProperties.IMusicProperties)this.asInterface(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da"))).set_Title(value));
+		Debug.OK((cast(Windows.Storage.FileProperties.IMusicProperties)this.asInterface(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da"))).set_Title(hstring(value).handle));
 	}
 	final UINT32 Rating()
 	{
@@ -478,15 +478,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.FileProperties.IMusicProperties)this.asInterface(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da"))).get_Bitrate(&_ret));
 		return _ret;
 	}
-	final HSTRING AlbumArtist()
+	final wstring AlbumArtist()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.FileProperties.IMusicProperties)this.asInterface(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da"))).get_AlbumArtist(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void AlbumArtist(HSTRING value)
+	final void AlbumArtist(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.FileProperties.IMusicProperties)this.asInterface(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da"))).set_AlbumArtist(value));
+		Debug.OK((cast(Windows.Storage.FileProperties.IMusicProperties)this.asInterface(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da"))).set_AlbumArtist(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) Composers()
 	{
@@ -500,15 +500,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.FileProperties.IMusicProperties)this.asInterface(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da"))).get_Conductors(&_ret));
 		return _ret;
 	}
-	final HSTRING Subtitle()
+	final wstring Subtitle()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.FileProperties.IMusicProperties)this.asInterface(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da"))).get_Subtitle(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Subtitle(HSTRING value)
+	final void Subtitle(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.FileProperties.IMusicProperties)this.asInterface(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da"))).set_Subtitle(value));
+		Debug.OK((cast(Windows.Storage.FileProperties.IMusicProperties)this.asInterface(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da"))).set_Subtitle(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) Producers()
 	{
@@ -516,15 +516,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.FileProperties.IMusicProperties)this.asInterface(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da"))).get_Producers(&_ret));
 		return _ret;
 	}
-	final HSTRING Publisher()
+	final wstring Publisher()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.FileProperties.IMusicProperties)this.asInterface(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da"))).get_Publisher(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Publisher(HSTRING value)
+	final void Publisher(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.FileProperties.IMusicProperties)this.asInterface(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da"))).set_Publisher(value));
+		Debug.OK((cast(Windows.Storage.FileProperties.IMusicProperties)this.asInterface(uuid("bc8aab62-66ec-419a-bc5d-ca65a4cb46da"))).set_Publisher(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) Writers()
 	{
@@ -614,11 +614,11 @@ extern(Windows):
 interface StorageItemThumbnail : Windows.Storage.Streams.IRandomAccessStreamWithContentType, Windows.Storage.Streams.IContentTypeProvider, Windows.Storage.Streams.IRandomAccessStream, Windows.Storage.Streams.IOutputStream, Windows.Foundation.IClosable, Windows.Storage.Streams.IInputStream, Windows.Storage.FileProperties.IThumbnailProperties
 {
 extern(Windows):
-	final HSTRING ContentType()
+	final wstring ContentType()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Streams.IContentTypeProvider)this.asInterface(uuid("97d098a5-3b99-4de9-88a5-e11d2f50c795"))).get_ContentType(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final ulong Size()
 	{
@@ -767,25 +767,25 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.FileProperties.IVideoProperties)this.asInterface(uuid("719ae507-68de-4db8-97de-49998c059f2f"))).get_Longitude(&_ret));
 		return _ret;
 	}
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.FileProperties.IVideoProperties)this.asInterface(uuid("719ae507-68de-4db8-97de-49998c059f2f"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Title(HSTRING value)
+	final void Title(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.FileProperties.IVideoProperties)this.asInterface(uuid("719ae507-68de-4db8-97de-49998c059f2f"))).set_Title(value));
+		Debug.OK((cast(Windows.Storage.FileProperties.IVideoProperties)this.asInterface(uuid("719ae507-68de-4db8-97de-49998c059f2f"))).set_Title(hstring(value).handle));
 	}
-	final HSTRING Subtitle()
+	final wstring Subtitle()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.FileProperties.IVideoProperties)this.asInterface(uuid("719ae507-68de-4db8-97de-49998c059f2f"))).get_Subtitle(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Subtitle(HSTRING value)
+	final void Subtitle(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.FileProperties.IVideoProperties)this.asInterface(uuid("719ae507-68de-4db8-97de-49998c059f2f"))).set_Subtitle(value));
+		Debug.OK((cast(Windows.Storage.FileProperties.IVideoProperties)this.asInterface(uuid("719ae507-68de-4db8-97de-49998c059f2f"))).set_Subtitle(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) Producers()
 	{
@@ -793,15 +793,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.FileProperties.IVideoProperties)this.asInterface(uuid("719ae507-68de-4db8-97de-49998c059f2f"))).get_Producers(&_ret));
 		return _ret;
 	}
-	final HSTRING Publisher()
+	final wstring Publisher()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.FileProperties.IVideoProperties)this.asInterface(uuid("719ae507-68de-4db8-97de-49998c059f2f"))).get_Publisher(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Publisher(HSTRING value)
+	final void Publisher(wstring value)
 	{
-		Debug.OK((cast(Windows.Storage.FileProperties.IVideoProperties)this.asInterface(uuid("719ae507-68de-4db8-97de-49998c059f2f"))).set_Publisher(value));
+		Debug.OK((cast(Windows.Storage.FileProperties.IVideoProperties)this.asInterface(uuid("719ae507-68de-4db8-97de-49998c059f2f"))).set_Publisher(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) Writers()
 	{

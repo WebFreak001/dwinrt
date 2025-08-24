@@ -375,21 +375,21 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Properties(&_ret));
 		return _ret;
 	}
-	final HSTRING Type()
+	final wstring Type()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Type(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Subtype(HSTRING value)
+	final void Subtype(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).set_Subtype(value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).set_Subtype(hstring(value).handle));
 	}
-	final HSTRING Subtype()
+	final wstring Subtype()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Subtype(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void SetFormatUserData(UINT32 __valueSize, ubyte* value)
 	{
@@ -459,21 +459,21 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Properties(&_ret));
 		return _ret;
 	}
-	final HSTRING Type()
+	final wstring Type()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Type(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Subtype(HSTRING value)
+	final void Subtype(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).set_Subtype(value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).set_Subtype(hstring(value).handle));
 	}
-	final HSTRING Subtype()
+	final wstring Subtype()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Subtype(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static ContainerEncodingProperties New()
 	{
@@ -582,21 +582,21 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Properties(&_ret));
 		return _ret;
 	}
-	final HSTRING Type()
+	final wstring Type()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Type(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Subtype(HSTRING value)
+	final void Subtype(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).set_Subtype(value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).set_Subtype(hstring(value).handle));
 	}
-	final HSTRING Subtype()
+	final wstring Subtype()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Subtype(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 
 	private static Windows.Media.MediaProperties.IImageEncodingPropertiesStatics _staticInstance;
@@ -729,245 +729,245 @@ interface MediaEncodingSubtypes
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.MediaProperties.IMediaEncodingSubtypesStatics);
 		return _staticInstance;
 	}
-	static HSTRING Aac()
+	static wstring Aac()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Aac(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING AacAdts()
+	static wstring AacAdts()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_AacAdts(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Ac3()
+	static wstring Ac3()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Ac3(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING AmrNb()
+	static wstring AmrNb()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_AmrNb(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING AmrWb()
+	static wstring AmrWb()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_AmrWb(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Argb32()
+	static wstring Argb32()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Argb32(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Asf()
+	static wstring Asf()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Asf(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Avi()
+	static wstring Avi()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Avi(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Bgra8()
+	static wstring Bgra8()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Bgra8(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Bmp()
+	static wstring Bmp()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Bmp(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Eac3()
+	static wstring Eac3()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Eac3(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Float()
+	static wstring Float()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Float(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Gif()
+	static wstring Gif()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Gif(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING H263()
+	static wstring H263()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_H263(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING H264()
+	static wstring H264()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_H264(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING H264Es()
+	static wstring H264Es()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_H264Es(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Hevc()
+	static wstring Hevc()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Hevc(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING HevcEs()
+	static wstring HevcEs()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_HevcEs(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Iyuv()
+	static wstring Iyuv()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Iyuv(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Jpeg()
+	static wstring Jpeg()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Jpeg(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING JpegXr()
+	static wstring JpegXr()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_JpegXr(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Mjpg()
+	static wstring Mjpg()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Mjpg(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Mpeg()
+	static wstring Mpeg()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Mpeg(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Mpeg1()
+	static wstring Mpeg1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Mpeg1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Mpeg2()
+	static wstring Mpeg2()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Mpeg2(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Mp3()
+	static wstring Mp3()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Mp3(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Mpeg4()
+	static wstring Mpeg4()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Mpeg4(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Nv12()
+	static wstring Nv12()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Nv12(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Pcm()
+	static wstring Pcm()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Pcm(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Png()
+	static wstring Png()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Png(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Rgb24()
+	static wstring Rgb24()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Rgb24(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Rgb32()
+	static wstring Rgb32()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Rgb32(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Tiff()
+	static wstring Tiff()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Tiff(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Wave()
+	static wstring Wave()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Wave(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Wma8()
+	static wstring Wma8()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Wma8(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Wma9()
+	static wstring Wma9()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Wma9(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Wmv3()
+	static wstring Wmv3()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Wmv3(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Wvc1()
+	static wstring Wvc1()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Wvc1(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Yuy2()
+	static wstring Yuy2()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Yuy2(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Yv12()
+	static wstring Yv12()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Yv12(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -1140,21 +1140,21 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Properties(&_ret));
 		return _ret;
 	}
-	final HSTRING Type()
+	final wstring Type()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Type(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Subtype(HSTRING value)
+	final void Subtype(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).set_Subtype(value));
+		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).set_Subtype(hstring(value).handle));
 	}
-	final HSTRING Subtype()
+	final wstring Subtype()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.MediaProperties.IMediaEncodingProperties)this.asInterface(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4"))).get_Subtype(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void SetFormatUserData(UINT32 __valueSize, ubyte* value)
 	{
@@ -1205,10 +1205,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_CreateMpeg2(&_ret));
 		return _ret;
 	}
-	static Windows.Media.MediaProperties.VideoEncodingProperties CreateUncompressed(HSTRING subtype, UINT32 width, UINT32 height)
+	static Windows.Media.MediaProperties.VideoEncodingProperties CreateUncompressed(wstring subtype, UINT32 width, UINT32 height)
 	{
 		Windows.Media.MediaProperties.VideoEncodingProperties _ret;
-		Debug.OK(staticInstance.abi_CreateUncompressed(subtype, width, height, &_ret));
+		Debug.OK(staticInstance.abi_CreateUncompressed(hstring(subtype).handle, width, height, &_ret));
 		return _ret;
 	}
 	static VideoEncodingProperties New()

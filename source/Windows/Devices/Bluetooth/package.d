@@ -313,11 +313,11 @@ extern(Windows):
 interface BluetoothAdapter : Windows.Devices.Bluetooth.IBluetoothAdapter
 {
 extern(Windows):
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Bluetooth.IBluetoothAdapter)this.asInterface(uuid("7974f04c-5f7a-4a34-9225-a855f84b1a8b"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final ulong BluetoothAddress()
 	{
@@ -368,16 +368,16 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Bluetooth.IBluetoothAdapterStatics);
 		return _staticInstance;
 	}
-	static HSTRING GetDeviceSelector()
+	static wstring GetDeviceSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothAdapter) FromIdAsync(HSTRING deviceId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothAdapter) FromIdAsync(wstring deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothAdapter) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothAdapter) GetDefaultAsync()
@@ -439,11 +439,11 @@ extern(Windows):
 interface BluetoothDevice : Windows.Devices.Bluetooth.IBluetoothDevice, Windows.Foundation.IClosable, Windows.Devices.Bluetooth.IBluetoothDevice2, Windows.Devices.Bluetooth.IBluetoothDevice3
 {
 extern(Windows):
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Bluetooth.IBluetoothDevice)this.asInterface(uuid("2335b156-90d2-4a04-aef5-0e20b9e6b707"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Networking.HostName HostName()
 	{
@@ -451,11 +451,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Bluetooth.IBluetoothDevice)this.asInterface(uuid("2335b156-90d2-4a04-aef5-0e20b9e6b707"))).get_HostName(&_ret));
 		return _ret;
 	}
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Bluetooth.IBluetoothDevice)this.asInterface(uuid("2335b156-90d2-4a04-aef5-0e20b9e6b707"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Devices.Bluetooth.BluetoothClassOfDevice ClassOfDevice()
 	{
@@ -573,10 +573,10 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Bluetooth.IBluetoothDeviceStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothDevice) FromIdAsync(HSTRING deviceId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothDevice) FromIdAsync(wstring deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothDevice) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothDevice) FromHostNameAsync(Windows.Networking.HostName hostName)
@@ -591,22 +591,22 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_FromBluetoothAddressAsync(address, &_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelector()
+	static wstring GetDeviceSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface BluetoothDeviceId : Windows.Devices.Bluetooth.IBluetoothDeviceId
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Bluetooth.IBluetoothDeviceId)this.asInterface(uuid("c17949af-57c1-4642-bcce-e6c06b20ae76"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsClassicDevice()
 	{
@@ -987,17 +987,17 @@ interface BluetoothLEAppearanceSubcategories
 interface BluetoothLEDevice : Windows.Devices.Bluetooth.IBluetoothLEDevice, Windows.Foundation.IClosable, Windows.Devices.Bluetooth.IBluetoothLEDevice2, Windows.Devices.Bluetooth.IBluetoothLEDevice3
 {
 extern(Windows):
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Bluetooth.IBluetoothLEDevice)this.asInterface(uuid("b5ee2f7b-4ad8-4642-ac48-80a0b500e887"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Bluetooth.IBluetoothLEDevice)this.asInterface(uuid("b5ee2f7b-4ad8-4642-ac48-80a0b500e887"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	deprecated("Use GetGattServicesAsync instead of GattServices.  For more information, see MSDN.")
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Bluetooth.GenericAttributeProfile.GattDeviceService) GattServices()
@@ -1122,10 +1122,10 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Bluetooth.IBluetoothLEDeviceStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothLEDevice) FromIdAsync(HSTRING deviceId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothLEDevice) FromIdAsync(wstring deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothLEDevice) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.BluetoothLEDevice) FromBluetoothAddressAsync(ulong bluetoothAddress)
@@ -1134,11 +1134,11 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_FromBluetoothAddressAsync(bluetoothAddress, &_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelector()
+	static wstring GetDeviceSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 

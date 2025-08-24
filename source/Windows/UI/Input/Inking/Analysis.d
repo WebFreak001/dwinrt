@@ -143,11 +143,11 @@ extern(Windows):
 interface InkAnalysisInkBullet : Windows.UI.Input.Inking.Analysis.IInkAnalysisInkBullet, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
 {
 extern(Windows):
-	final HSTRING RecognizedText()
+	final wstring RecognizedText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisInkBullet)this.asInterface(uuid("ee049368-6110-4136-95f9-ee809fc20030"))).get_RecognizedText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final UINT32 Id()
 	{
@@ -261,11 +261,11 @@ extern(Windows):
 interface InkAnalysisInkWord : Windows.UI.Input.Inking.Analysis.IInkAnalysisInkWord, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
 {
 extern(Windows):
-	final HSTRING RecognizedText()
+	final wstring RecognizedText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisInkWord)this.asInterface(uuid("4bd228ad-83af-4034-8f3b-f8687dfff436"))).get_RecognizedText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) TextAlternates()
 	{
@@ -320,11 +320,11 @@ extern(Windows):
 interface InkAnalysisLine : Windows.UI.Input.Inking.Analysis.IInkAnalysisLine, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
 {
 extern(Windows):
-	final HSTRING RecognizedText()
+	final wstring RecognizedText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisLine)this.asInterface(uuid("a06d048d-2b8d-4754-ad5a-d0871193a956"))).get_RecognizedText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final INT32 IndentLevel()
 	{
@@ -379,11 +379,11 @@ extern(Windows):
 interface InkAnalysisListItem : Windows.UI.Input.Inking.Analysis.IInkAnalysisListItem, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
 {
 extern(Windows):
-	final HSTRING RecognizedText()
+	final wstring RecognizedText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisListItem)this.asInterface(uuid("b4e3c23f-c4c3-4c3a-a1a6-9d85547ee586"))).get_RecognizedText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final UINT32 Id()
 	{
@@ -479,11 +479,11 @@ extern(Windows):
 interface InkAnalysisParagraph : Windows.UI.Input.Inking.Analysis.IInkAnalysisParagraph, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
 {
 extern(Windows):
-	final HSTRING RecognizedText()
+	final wstring RecognizedText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisParagraph)this.asInterface(uuid("d9ad045c-0cd1-4dd4-a68b-eb1f12b3d727"))).get_RecognizedText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final UINT32 Id()
 	{
@@ -543,11 +543,11 @@ extern(Windows):
 interface InkAnalysisRoot : Windows.UI.Input.Inking.Analysis.IInkAnalysisRoot, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
 {
 extern(Windows):
-	final HSTRING RecognizedText()
+	final wstring RecognizedText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisRoot)this.asInterface(uuid("3fb6a3c4-2fde-4061-8502-a90f32545b84"))).get_RecognizedText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.UI.Input.Inking.Analysis.IInkAnalysisNode) FindNodes(Windows.UI.Input.Inking.Analysis.InkAnalysisNodeKind nodeKind)
 	{
@@ -602,11 +602,11 @@ extern(Windows):
 interface InkAnalysisWritingRegion : Windows.UI.Input.Inking.Analysis.IInkAnalysisWritingRegion, Windows.UI.Input.Inking.Analysis.IInkAnalysisNode
 {
 extern(Windows):
-	final HSTRING RecognizedText()
+	final wstring RecognizedText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Input.Inking.Analysis.IInkAnalysisWritingRegion)this.asInterface(uuid("dd6d6231-bd16-4663-b5ae-941d3043ef5b"))).get_RecognizedText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final UINT32 Id()
 	{

@@ -1991,11 +1991,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Audio.IEchoEffectDefinition)this.asInterface(uuid("0e4d3faa-36b8-4c91-b9da-11f44a8a6610"))).get_Delay(&_ret));
 		return _ret;
 	}
-	final HSTRING ActivatableClassId()
+	final wstring ActivatableClassId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Effects.IAudioEffectDefinition)this.asInterface(uuid("e4d7f974-7d80-4f73-9089-e31c9db9c294"))).get_ActivatableClassId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{
@@ -2056,11 +2056,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Audio.IEqualizerEffectDefinition)this.asInterface(uuid("023f6f1f-83fe-449a-a822-c696442d16b0"))).get_Bands(&_ret));
 		return _ret;
 	}
-	final HSTRING ActivatableClassId()
+	final wstring ActivatableClassId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Effects.IAudioEffectDefinition)this.asInterface(uuid("e4d7f974-7d80-4f73-9089-e31c9db9c294"))).get_ActivatableClassId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{
@@ -2111,11 +2111,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Audio.ILimiterEffectDefinition)this.asInterface(uuid("6b755d19-2603-47ba-bdeb-39055e3486dc"))).get_Loudness(&_ret));
 		return _ret;
 	}
-	final HSTRING ActivatableClassId()
+	final wstring ActivatableClassId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Effects.IAudioEffectDefinition)this.asInterface(uuid("e4d7f974-7d80-4f73-9089-e31c9db9c294"))).get_ActivatableClassId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{
@@ -2365,11 +2365,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Audio.IReverbEffectDefinition)this.asInterface(uuid("4606aa89-f563-4d0a-8f6e-f0cddff35d84"))).get_DisableLateField(&_ret));
 		return _ret;
 	}
-	final HSTRING ActivatableClassId()
+	final wstring ActivatableClassId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Effects.IAudioEffectDefinition)this.asInterface(uuid("e4d7f974-7d80-4f73-9089-e31c9db9c294"))).get_ActivatableClassId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IPropertySet Properties()
 	{

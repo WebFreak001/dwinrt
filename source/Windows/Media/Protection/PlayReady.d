@@ -923,11 +923,11 @@ extern(Windows):
 		return _ret;
 	}
 	deprecated("INDTCPMessengerFactory is deprecated and might not work on all platforms. For more info, see MSDN.")
-	static Windows.Media.Protection.PlayReady.NDTCPMessenger New(HSTRING remoteHostName, UINT32 remoteHostPort)
+	static Windows.Media.Protection.PlayReady.NDTCPMessenger New(wstring remoteHostName, UINT32 remoteHostPort)
 	{
 		auto factory = factory!(Windows.Media.Protection.PlayReady.INDTCPMessengerFactory);
 		Windows.Media.Protection.PlayReady.NDTCPMessenger _ret;
-		Debug.OK((cast(Windows.Media.Protection.PlayReady.INDTCPMessengerFactory)factory.asInterface(uuid("7dd85cfe-1b99-4f68-8f82-8177f7cedf2b"))).abi_CreateInstance(remoteHostName, remoteHostPort, &_ret));
+		Debug.OK((cast(Windows.Media.Protection.PlayReady.INDTCPMessengerFactory)factory.asInterface(uuid("7dd85cfe-1b99-4f68-8f82-8177f7cedf2b"))).abi_CreateInstance(hstring(remoteHostName).handle, remoteHostPort, &_ret));
 		return _ret;
 	}
 }
@@ -941,11 +941,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyContentHeader)this.asInterface(uuid("9a438a6a-7f4c-452e-88bd-0148c6387a2c"))).get_KeyId(&_ret));
 		return _ret;
 	}
-	final HSTRING KeyIdString()
+	final wstring KeyIdString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyContentHeader)this.asInterface(uuid("9a438a6a-7f4c-452e-88bd-0148c6387a2c"))).get_KeyIdString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Uri LicenseAcquisitionUrl()
 	{
@@ -971,11 +971,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyContentHeader)this.asInterface(uuid("9a438a6a-7f4c-452e-88bd-0148c6387a2c"))).get_EncryptionType(&_ret));
 		return _ret;
 	}
-	final HSTRING CustomAttributes()
+	final wstring CustomAttributes()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyContentHeader)this.asInterface(uuid("9a438a6a-7f4c-452e-88bd-0148c6387a2c"))).get_CustomAttributes(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Media.Protection.PlayReady.PlayReadyDecryptorSetup DecryptorSetup()
 	{
@@ -1001,24 +1001,24 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyContentHeader2)this.asInterface(uuid("359c79f4-2180-498c-965b-e754d875eab2"))).get_KeyIds(out___contentKeyIdsSize, &_ret));
 		return _ret;
 	}
-	final HSTRING* KeyIdStrings(UINT32* out___contentKeyIdStringsSize)
+	final wstring KeyIdStrings(UINT32* out___contentKeyIdStringsSize)
 	{
 		HSTRING* _ret;
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyContentHeader2)this.asInterface(uuid("359c79f4-2180-498c-965b-e754d875eab2"))).get_KeyIdStrings(out___contentKeyIdStringsSize, &_ret));
-		return _ret;
+		return hstring(*_ret).d_str;
 	}
-	static Windows.Media.Protection.PlayReady.PlayReadyContentHeader New(UINT32 __headerBytesSize, ubyte* headerBytes, Windows.Foundation.Uri licenseAcquisitionUrl, Windows.Foundation.Uri licenseAcquisitionUserInterfaceUrl, HSTRING customAttributes, GUID domainServiceId)
+	static Windows.Media.Protection.PlayReady.PlayReadyContentHeader New(UINT32 __headerBytesSize, ubyte* headerBytes, Windows.Foundation.Uri licenseAcquisitionUrl, Windows.Foundation.Uri licenseAcquisitionUserInterfaceUrl, wstring customAttributes, GUID domainServiceId)
 	{
 		auto factory = factory!(Windows.Media.Protection.PlayReady.IPlayReadyContentHeaderFactory);
 		Windows.Media.Protection.PlayReady.PlayReadyContentHeader _ret;
-		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyContentHeaderFactory)factory.asInterface(uuid("cb97c8ff-b758-4776-bf01-217a8b510b2c"))).abi_CreateInstanceFromWindowsMediaDrmHeader(__headerBytesSize, headerBytes, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, customAttributes, domainServiceId, &_ret));
+		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyContentHeaderFactory)factory.asInterface(uuid("cb97c8ff-b758-4776-bf01-217a8b510b2c"))).abi_CreateInstanceFromWindowsMediaDrmHeader(__headerBytesSize, headerBytes, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, hstring(customAttributes).handle, domainServiceId, &_ret));
 		return _ret;
 	}
-	static Windows.Media.Protection.PlayReady.PlayReadyContentHeader New(GUID contentKeyId, HSTRING contentKeyIdString, Windows.Media.Protection.PlayReady.PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, Windows.Foundation.Uri licenseAcquisitionUrl, Windows.Foundation.Uri licenseAcquisitionUserInterfaceUrl, HSTRING customAttributes, GUID domainServiceId)
+	static Windows.Media.Protection.PlayReady.PlayReadyContentHeader New(GUID contentKeyId, wstring contentKeyIdString, Windows.Media.Protection.PlayReady.PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, Windows.Foundation.Uri licenseAcquisitionUrl, Windows.Foundation.Uri licenseAcquisitionUserInterfaceUrl, wstring customAttributes, GUID domainServiceId)
 	{
 		auto factory = factory!(Windows.Media.Protection.PlayReady.IPlayReadyContentHeaderFactory);
 		Windows.Media.Protection.PlayReady.PlayReadyContentHeader _ret;
-		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyContentHeaderFactory)factory.asInterface(uuid("cb97c8ff-b758-4776-bf01-217a8b510b2c"))).abi_CreateInstanceFromComponents(contentKeyId, contentKeyIdString, contentEncryptionAlgorithm, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, customAttributes, domainServiceId, &_ret));
+		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyContentHeaderFactory)factory.asInterface(uuid("cb97c8ff-b758-4776-bf01-217a8b510b2c"))).abi_CreateInstanceFromComponents(contentKeyId, hstring(contentKeyIdString).handle, contentEncryptionAlgorithm, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, hstring(customAttributes).handle, domainServiceId, &_ret));
 		return _ret;
 	}
 	static Windows.Media.Protection.PlayReady.PlayReadyContentHeader New(UINT32 __headerBytesSize, ubyte* headerBytes)
@@ -1067,11 +1067,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyDomain)this.asInterface(uuid("adcc93ac-97e6-43ef-95e4-d7868f3b16a9"))).get_Revision(&_ret));
 		return _ret;
 	}
-	final HSTRING FriendlyName()
+	final wstring FriendlyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyDomain)this.asInterface(uuid("adcc93ac-97e6-43ef-95e4-d7868f3b16a9"))).get_FriendlyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Uri DomainJoinUrl()
 	{
@@ -1135,15 +1135,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyDomainJoinServiceRequest)this.asInterface(uuid("171b4a5a-405f-4739-b040-67b9f0c38758"))).set_DomainAccountId(value));
 	}
-	final HSTRING DomainFriendlyName()
+	final wstring DomainFriendlyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyDomainJoinServiceRequest)this.asInterface(uuid("171b4a5a-405f-4739-b040-67b9f0c38758"))).get_DomainFriendlyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void DomainFriendlyName(HSTRING value)
+	final void DomainFriendlyName(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyDomainJoinServiceRequest)this.asInterface(uuid("171b4a5a-405f-4739-b040-67b9f0c38758"))).set_DomainFriendlyName(value));
+		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyDomainJoinServiceRequest)this.asInterface(uuid("171b4a5a-405f-4739-b040-67b9f0c38758"))).set_DomainFriendlyName(hstring(value).handle));
 	}
 	final GUID DomainServiceId()
 	{
@@ -1165,21 +1165,21 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).set_Uri(value));
 	}
-	final HSTRING ResponseCustomData()
+	final wstring ResponseCustomData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).get_ResponseCustomData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ChallengeCustomData()
+	final wstring ChallengeCustomData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).get_ChallengeCustomData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ChallengeCustomData(HSTRING value)
+	final void ChallengeCustomData(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).set_ChallengeCustomData(value));
+		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).set_ChallengeCustomData(hstring(value).handle));
 	}
 	final Windows.Foundation.IAsyncAction BeginServiceRequest()
 	{
@@ -1258,21 +1258,21 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).set_Uri(value));
 	}
-	final HSTRING ResponseCustomData()
+	final wstring ResponseCustomData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).get_ResponseCustomData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ChallengeCustomData()
+	final wstring ChallengeCustomData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).get_ChallengeCustomData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ChallengeCustomData(HSTRING value)
+	final void ChallengeCustomData(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).set_ChallengeCustomData(value));
+		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).set_ChallengeCustomData(hstring(value).handle));
 	}
 	final Windows.Foundation.IAsyncAction BeginServiceRequest()
 	{
@@ -1348,21 +1348,21 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).set_Uri(value));
 	}
-	final HSTRING ResponseCustomData()
+	final wstring ResponseCustomData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).get_ResponseCustomData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ChallengeCustomData()
+	final wstring ChallengeCustomData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).get_ChallengeCustomData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ChallengeCustomData(HSTRING value)
+	final void ChallengeCustomData(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).set_ChallengeCustomData(value));
+		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).set_ChallengeCustomData(hstring(value).handle));
 	}
 	final Windows.Foundation.IAsyncAction BeginServiceRequest()
 	{
@@ -1512,21 +1512,21 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).set_Uri(value));
 	}
-	final HSTRING ResponseCustomData()
+	final wstring ResponseCustomData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).get_ResponseCustomData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ChallengeCustomData()
+	final wstring ChallengeCustomData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).get_ChallengeCustomData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ChallengeCustomData(HSTRING value)
+	final void ChallengeCustomData(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).set_ChallengeCustomData(value));
+		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).set_ChallengeCustomData(hstring(value).handle));
 	}
 	final Windows.Foundation.IAsyncAction BeginServiceRequest()
 	{
@@ -1698,21 +1698,21 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).set_Uri(value));
 	}
-	final HSTRING ResponseCustomData()
+	final wstring ResponseCustomData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).get_ResponseCustomData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ChallengeCustomData()
+	final wstring ChallengeCustomData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).get_ChallengeCustomData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ChallengeCustomData(HSTRING value)
+	final void ChallengeCustomData(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).set_ChallengeCustomData(value));
+		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).set_ChallengeCustomData(hstring(value).handle));
 	}
 	final Windows.Foundation.IAsyncAction BeginServiceRequest()
 	{
@@ -1771,21 +1771,21 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).set_Uri(value));
 	}
-	final HSTRING ResponseCustomData()
+	final wstring ResponseCustomData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).get_ResponseCustomData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ChallengeCustomData()
+	final wstring ChallengeCustomData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).get_ChallengeCustomData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ChallengeCustomData(HSTRING value)
+	final void ChallengeCustomData(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).set_ChallengeCustomData(value));
+		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).set_ChallengeCustomData(hstring(value).handle));
 	}
 	final Windows.Foundation.IAsyncAction BeginServiceRequest()
 	{
@@ -1915,21 +1915,21 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).set_Uri(value));
 	}
-	final HSTRING ResponseCustomData()
+	final wstring ResponseCustomData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).get_ResponseCustomData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ChallengeCustomData()
+	final wstring ChallengeCustomData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).get_ChallengeCustomData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ChallengeCustomData(HSTRING value)
+	final void ChallengeCustomData(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).set_ChallengeCustomData(value));
+		Debug.OK((cast(Windows.Media.Protection.PlayReady.IPlayReadyServiceRequest)this.asInterface(uuid("8bad2836-a703-45a6-a180-76f3565aa725"))).set_ChallengeCustomData(hstring(value).handle));
 	}
 	final Windows.Foundation.IAsyncAction BeginServiceRequest()
 	{

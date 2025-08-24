@@ -231,11 +231,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceAudioNotificationRequestedEventArgs)this.asInterface(uuid("ca2aa24a-c7c2-4d4c-9d7c-499576bceddb"))).get_AudioFilePaths(&_ret));
 		return _ret;
 	}
-	final HSTRING AudioText()
+	final wstring AudioText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceAudioNotificationRequestedEventArgs)this.asInterface(uuid("ca2aa24a-c7c2-4d4c-9d7c-499576bceddb"))).get_AudioText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -277,29 +277,29 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceManeuver)this.asInterface(uuid("fc09326c-ecc9-4928-a2a1-7232b99b94a1"))).get_DistanceFromPreviousManeuver(&_ret));
 		return _ret;
 	}
-	final HSTRING DepartureRoadName()
+	final wstring DepartureRoadName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceManeuver)this.asInterface(uuid("fc09326c-ecc9-4928-a2a1-7232b99b94a1"))).get_DepartureRoadName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING NextRoadName()
+	final wstring NextRoadName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceManeuver)this.asInterface(uuid("fc09326c-ecc9-4928-a2a1-7232b99b94a1"))).get_NextRoadName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DepartureShortRoadName()
+	final wstring DepartureShortRoadName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceManeuver)this.asInterface(uuid("fc09326c-ecc9-4928-a2a1-7232b99b94a1"))).get_DepartureShortRoadName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING NextShortRoadName()
+	final wstring NextShortRoadName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceManeuver)this.asInterface(uuid("fc09326c-ecc9-4928-a2a1-7232b99b94a1"))).get_NextShortRoadName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Services.Maps.Guidance.GuidanceManeuverKind Kind()
 	{
@@ -325,11 +325,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceManeuver)this.asInterface(uuid("fc09326c-ecc9-4928-a2a1-7232b99b94a1"))).get_RoadSignpost(&_ret));
 		return _ret;
 	}
-	final HSTRING InstructionText()
+	final wstring InstructionText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceManeuver)this.asInterface(uuid("fc09326c-ecc9-4928-a2a1-7232b99b94a1"))).get_InstructionText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -489,9 +489,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).remove_UserLocationRestored(token));
 	}
-	final void SetGuidanceVoice(INT32 voiceId, HSTRING voiceFolder)
+	final void SetGuidanceVoice(INT32 voiceId, wstring voiceFolder)
 	{
-		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).abi_SetGuidanceVoice(voiceId, voiceFolder));
+		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceNavigator)this.asInterface(uuid("08f17ef7-8e3f-4d9a-be8a-108f9a012c67"))).abi_SetGuidanceVoice(voiceId, hstring(voiceFolder).handle));
 	}
 	final void UpdateUserLocation(Windows.Devices.Geolocation.Geocoordinate userLocation)
 	{
@@ -551,17 +551,17 @@ extern(Windows):
 interface GuidanceRoadSegment : Windows.Services.Maps.Guidance.IGuidanceRoadSegment
 {
 extern(Windows):
-	final HSTRING RoadName()
+	final wstring RoadName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoadSegment)this.asInterface(uuid("b32758a6-be78-4c63-afe7-6c2957479b3e"))).get_RoadName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ShortRoadName()
+	final wstring ShortRoadName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoadSegment)this.asInterface(uuid("b32758a6-be78-4c63-afe7-6c2957479b3e"))).get_ShortRoadName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final double SpeedLimit()
 	{
@@ -581,11 +581,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoadSegment)this.asInterface(uuid("b32758a6-be78-4c63-afe7-6c2957479b3e"))).get_Path(&_ret));
 		return _ret;
 	}
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoadSegment)this.asInterface(uuid("b32758a6-be78-4c63-afe7-6c2957479b3e"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsHighway()
 	{
@@ -610,17 +610,17 @@ extern(Windows):
 interface GuidanceRoadSignpost : Windows.Services.Maps.Guidance.IGuidanceRoadSignpost
 {
 extern(Windows):
-	final HSTRING ExitNumber()
+	final wstring ExitNumber()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoadSignpost)this.asInterface(uuid("f1a728b6-f77a-4742-8312-53300f9845f0"))).get_ExitNumber(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Exit()
+	final wstring Exit()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceRoadSignpost)this.asInterface(uuid("f1a728b6-f77a-4742-8312-53300f9845f0"))).get_Exit(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.UI.Color BackgroundColor()
 	{
@@ -817,11 +817,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs)this.asInterface(uuid("fdac160b-9e8d-4de3-a9fa-b06321d18db9"))).get_TimeToDestination(&_ret));
 		return _ret;
 	}
-	final HSTRING RoadName()
+	final wstring RoadName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Maps.Guidance.IGuidanceUpdatedEventArgs)this.asInterface(uuid("fdac160b-9e8d-4de3-a9fa-b06321d18db9"))).get_RoadName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Services.Maps.Guidance.GuidanceRoute Route()
 	{

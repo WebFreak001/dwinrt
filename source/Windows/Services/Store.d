@@ -369,11 +369,11 @@ extern(Windows):
 interface StoreAppLicense : Windows.Services.Store.IStoreAppLicense
 {
 extern(Windows):
-	final HSTRING SkuStoreId()
+	final wstring SkuStoreId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreAppLicense)this.asInterface(uuid("f389f9de-73c0-45ce-9bab-b2fe3e5eafd3"))).get_SkuStoreId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsActive()
 	{
@@ -393,11 +393,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStoreAppLicense)this.asInterface(uuid("f389f9de-73c0-45ce-9bab-b2fe3e5eafd3"))).get_ExpirationDate(&_ret));
 		return _ret;
 	}
-	final HSTRING ExtendedJsonData()
+	final wstring ExtendedJsonData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreAppLicense)this.asInterface(uuid("f389f9de-73c0-45ce-9bab-b2fe3e5eafd3"))).get_ExtendedJsonData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IMapView!(HSTRING, Windows.Services.Store.StoreLicense) AddOnLicenses()
 	{
@@ -417,22 +417,22 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStoreAppLicense)this.asInterface(uuid("f389f9de-73c0-45ce-9bab-b2fe3e5eafd3"))).get_IsTrialOwnedByThisUser(&_ret));
 		return _ret;
 	}
-	final HSTRING TrialUniqueId()
+	final wstring TrialUniqueId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreAppLicense)this.asInterface(uuid("f389f9de-73c0-45ce-9bab-b2fe3e5eafd3"))).get_TrialUniqueId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface StoreAvailability : Windows.Services.Store.IStoreAvailability
 {
 extern(Windows):
-	final HSTRING StoreId()
+	final wstring StoreId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreAvailability)this.asInterface(uuid("fa060325-0ffd-4493-ad43-f1f9918f69fa"))).get_StoreId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.DateTime EndDate()
 	{
@@ -446,11 +446,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStoreAvailability)this.asInterface(uuid("fa060325-0ffd-4493-ad43-f1f9918f69fa"))).get_Price(&_ret));
 		return _ret;
 	}
-	final HSTRING ExtendedJsonData()
+	final wstring ExtendedJsonData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreAvailability)this.asInterface(uuid("fa060325-0ffd-4493-ad43-f1f9918f69fa"))).get_ExtendedJsonData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult) RequestPurchaseAsync()
 	{
@@ -476,17 +476,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStoreCollectionData)this.asInterface(uuid("8aa4c3b3-5bb3-441a-2ab4-4dab73d5ce67"))).get_IsTrial(&_ret));
 		return _ret;
 	}
-	final HSTRING CampaignId()
+	final wstring CampaignId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreCollectionData)this.asInterface(uuid("8aa4c3b3-5bb3-441a-2ab4-4dab73d5ce67"))).get_CampaignId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DeveloperOfferId()
+	final wstring DeveloperOfferId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreCollectionData)this.asInterface(uuid("8aa4c3b3-5bb3-441a-2ab4-4dab73d5ce67"))).get_DeveloperOfferId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.DateTime AcquiredDate()
 	{
@@ -512,11 +512,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStoreCollectionData)this.asInterface(uuid("8aa4c3b3-5bb3-441a-2ab4-4dab73d5ce67"))).get_TrialTimeRemaining(&_ret));
 		return _ret;
 	}
-	final HSTRING ExtendedJsonData()
+	final wstring ExtendedJsonData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreCollectionData)this.asInterface(uuid("8aa4c3b3-5bb3-441a-2ab4-4dab73d5ce67"))).get_ExtendedJsonData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -568,16 +568,16 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Services.Store.IStoreContext)this.asInterface(uuid("ac98b6be-f4fd-4912-babd-5035e5e8bcab"))).remove_OfflineLicensesChanged(token));
 	}
-	final Windows.Foundation.IAsyncOperation!(HSTRING) GetCustomerPurchaseIdAsync(HSTRING serviceTicket, HSTRING publisherUserId)
+	final Windows.Foundation.IAsyncOperation!(HSTRING) GetCustomerPurchaseIdAsync(wstring serviceTicket, wstring publisherUserId)
 	{
 		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
-		Debug.OK((cast(Windows.Services.Store.IStoreContext)this.asInterface(uuid("ac98b6be-f4fd-4912-babd-5035e5e8bcab"))).abi_GetCustomerPurchaseIdAsync(serviceTicket, publisherUserId, &_ret));
+		Debug.OK((cast(Windows.Services.Store.IStoreContext)this.asInterface(uuid("ac98b6be-f4fd-4912-babd-5035e5e8bcab"))).abi_GetCustomerPurchaseIdAsync(hstring(serviceTicket).handle, hstring(publisherUserId).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(HSTRING) GetCustomerCollectionsIdAsync(HSTRING serviceTicket, HSTRING publisherUserId)
+	final Windows.Foundation.IAsyncOperation!(HSTRING) GetCustomerCollectionsIdAsync(wstring serviceTicket, wstring publisherUserId)
 	{
 		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
-		Debug.OK((cast(Windows.Services.Store.IStoreContext)this.asInterface(uuid("ac98b6be-f4fd-4912-babd-5035e5e8bcab"))).abi_GetCustomerCollectionsIdAsync(serviceTicket, publisherUserId, &_ret));
+		Debug.OK((cast(Windows.Services.Store.IStoreContext)this.asInterface(uuid("ac98b6be-f4fd-4912-babd-5035e5e8bcab"))).abi_GetCustomerCollectionsIdAsync(hstring(serviceTicket).handle, hstring(publisherUserId).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StoreAppLicense) GetAppLicenseAsync()
@@ -622,16 +622,16 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStoreContext)this.asInterface(uuid("ac98b6be-f4fd-4912-babd-5035e5e8bcab"))).abi_GetUserCollectionWithPagingAsync(productKinds, maxItemsToRetrievePerPage, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StoreConsumableResult) ReportConsumableFulfillmentAsync(HSTRING productStoreId, UINT32 quantity, GUID trackingId)
+	final Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StoreConsumableResult) ReportConsumableFulfillmentAsync(wstring productStoreId, UINT32 quantity, GUID trackingId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StoreConsumableResult) _ret;
-		Debug.OK((cast(Windows.Services.Store.IStoreContext)this.asInterface(uuid("ac98b6be-f4fd-4912-babd-5035e5e8bcab"))).abi_ReportConsumableFulfillmentAsync(productStoreId, quantity, trackingId, &_ret));
+		Debug.OK((cast(Windows.Services.Store.IStoreContext)this.asInterface(uuid("ac98b6be-f4fd-4912-babd-5035e5e8bcab"))).abi_ReportConsumableFulfillmentAsync(hstring(productStoreId).handle, quantity, trackingId, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StoreConsumableResult) GetConsumableBalanceRemainingAsync(HSTRING productStoreId)
+	final Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StoreConsumableResult) GetConsumableBalanceRemainingAsync(wstring productStoreId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StoreConsumableResult) _ret;
-		Debug.OK((cast(Windows.Services.Store.IStoreContext)this.asInterface(uuid("ac98b6be-f4fd-4912-babd-5035e5e8bcab"))).abi_GetConsumableBalanceRemainingAsync(productStoreId, &_ret));
+		Debug.OK((cast(Windows.Services.Store.IStoreContext)this.asInterface(uuid("ac98b6be-f4fd-4912-babd-5035e5e8bcab"))).abi_GetConsumableBalanceRemainingAsync(hstring(productStoreId).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StoreAcquireLicenseResult) AcquireStoreLicenseForOptionalPackageAsync(Windows.ApplicationModel.Package optionalPackage)
@@ -640,16 +640,16 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStoreContext)this.asInterface(uuid("ac98b6be-f4fd-4912-babd-5035e5e8bcab"))).abi_AcquireStoreLicenseForOptionalPackageAsync(optionalPackage, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult) RequestPurchaseAsync(HSTRING storeId)
+	final Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult) RequestPurchaseAsync(wstring storeId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult) _ret;
-		Debug.OK((cast(Windows.Services.Store.IStoreContext)this.asInterface(uuid("ac98b6be-f4fd-4912-babd-5035e5e8bcab"))).abi_RequestPurchaseAsync(storeId, &_ret));
+		Debug.OK((cast(Windows.Services.Store.IStoreContext)this.asInterface(uuid("ac98b6be-f4fd-4912-babd-5035e5e8bcab"))).abi_RequestPurchaseAsync(hstring(storeId).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult) RequestPurchaseWithPurchasePropertiesAsync(HSTRING storeId, Windows.Services.Store.StorePurchaseProperties storePurchaseProperties)
+	final Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult) RequestPurchaseWithPurchasePropertiesAsync(wstring storeId, Windows.Services.Store.StorePurchaseProperties storePurchaseProperties)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StorePurchaseResult) _ret;
-		Debug.OK((cast(Windows.Services.Store.IStoreContext)this.asInterface(uuid("ac98b6be-f4fd-4912-babd-5035e5e8bcab"))).abi_RequestPurchaseWithPurchasePropertiesAsync(storeId, storePurchaseProperties, &_ret));
+		Debug.OK((cast(Windows.Services.Store.IStoreContext)this.asInterface(uuid("ac98b6be-f4fd-4912-babd-5035e5e8bcab"))).abi_RequestPurchaseWithPurchasePropertiesAsync(hstring(storeId).handle, storePurchaseProperties, &_ret));
 		return _ret;
 	}
 	alias RequestPurchaseAsync = RequestPurchaseWithPurchasePropertiesAsync;
@@ -713,11 +713,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStoreImage)this.asInterface(uuid("081fd248-adb4-4b64-a993-784789926ed5"))).get_Uri(&_ret));
 		return _ret;
 	}
-	final HSTRING ImagePurposeTag()
+	final wstring ImagePurposeTag()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreImage)this.asInterface(uuid("081fd248-adb4-4b64-a993-784789926ed5"))).get_ImagePurposeTag(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final UINT32 Width()
 	{
@@ -731,22 +731,22 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStoreImage)this.asInterface(uuid("081fd248-adb4-4b64-a993-784789926ed5"))).get_Height(&_ret));
 		return _ret;
 	}
-	final HSTRING Caption()
+	final wstring Caption()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreImage)this.asInterface(uuid("081fd248-adb4-4b64-a993-784789926ed5"))).get_Caption(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface StoreLicense : Windows.Services.Store.IStoreLicense
 {
 extern(Windows):
-	final HSTRING SkuStoreId()
+	final wstring SkuStoreId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreLicense)this.asInterface(uuid("26dc9579-4c4f-4f30-bc89-649f60e36055"))).get_SkuStoreId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsActive()
 	{
@@ -760,17 +760,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStoreLicense)this.asInterface(uuid("26dc9579-4c4f-4f30-bc89-649f60e36055"))).get_ExpirationDate(&_ret));
 		return _ret;
 	}
-	final HSTRING ExtendedJsonData()
+	final wstring ExtendedJsonData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreLicense)this.asInterface(uuid("26dc9579-4c4f-4f30-bc89-649f60e36055"))).get_ExtendedJsonData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING InAppOfferToken()
+	final wstring InAppOfferToken()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreLicense)this.asInterface(uuid("26dc9579-4c4f-4f30-bc89-649f60e36055"))).get_InAppOfferToken(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -846,17 +846,17 @@ extern(Windows):
 interface StorePrice : Windows.Services.Store.IStorePrice
 {
 extern(Windows):
-	final HSTRING FormattedBasePrice()
+	final wstring FormattedBasePrice()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStorePrice)this.asInterface(uuid("55ba94c4-15f1-407c-8f06-006380f4df0b"))).get_FormattedBasePrice(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING FormattedPrice()
+	final wstring FormattedPrice()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStorePrice)this.asInterface(uuid("55ba94c4-15f1-407c-8f06-006380f4df0b"))).get_FormattedPrice(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsOnSale()
 	{
@@ -870,52 +870,52 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStorePrice)this.asInterface(uuid("55ba94c4-15f1-407c-8f06-006380f4df0b"))).get_SaleEndDate(&_ret));
 		return _ret;
 	}
-	final HSTRING CurrencyCode()
+	final wstring CurrencyCode()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStorePrice)this.asInterface(uuid("55ba94c4-15f1-407c-8f06-006380f4df0b"))).get_CurrencyCode(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING FormattedRecurrencePrice()
+	final wstring FormattedRecurrencePrice()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStorePrice)this.asInterface(uuid("55ba94c4-15f1-407c-8f06-006380f4df0b"))).get_FormattedRecurrencePrice(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface StoreProduct : Windows.Services.Store.IStoreProduct
 {
 extern(Windows):
-	final HSTRING StoreId()
+	final wstring StoreId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreProduct)this.asInterface(uuid("320e2c52-d760-450a-a42b-67d1e901ac90"))).get_StoreId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreProduct)this.asInterface(uuid("320e2c52-d760-450a-a42b-67d1e901ac90"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreProduct)this.asInterface(uuid("320e2c52-d760-450a-a42b-67d1e901ac90"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Description()
+	final wstring Description()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreProduct)this.asInterface(uuid("320e2c52-d760-450a-a42b-67d1e901ac90"))).get_Description(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ProductKind()
+	final wstring ProductKind()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreProduct)this.asInterface(uuid("320e2c52-d760-450a-a42b-67d1e901ac90"))).get_ProductKind(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool HasDigitalDownload()
 	{
@@ -959,11 +959,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStoreProduct)this.asInterface(uuid("320e2c52-d760-450a-a42b-67d1e901ac90"))).get_Price(&_ret));
 		return _ret;
 	}
-	final HSTRING ExtendedJsonData()
+	final wstring ExtendedJsonData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreProduct)this.asInterface(uuid("320e2c52-d760-450a-a42b-67d1e901ac90"))).get_ExtendedJsonData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Uri LinkUri()
 	{
@@ -990,11 +990,11 @@ extern(Windows):
 		return _ret;
 	}
 	alias RequestPurchaseAsync = RequestPurchaseWithPurchasePropertiesAsync;
-	final HSTRING InAppOfferToken()
+	final wstring InAppOfferToken()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreProduct)this.asInterface(uuid("320e2c52-d760-450a-a42b-67d1e901ac90"))).get_InAppOfferToken(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -1064,25 +1064,25 @@ extern(Windows):
 interface StorePurchaseProperties : Windows.Services.Store.IStorePurchaseProperties
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStorePurchaseProperties)this.asInterface(uuid("836278f3-ff87-4364-a5b4-fd2153ebe43b"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Name(HSTRING value)
+	final void Name(wstring value)
 	{
-		Debug.OK((cast(Windows.Services.Store.IStorePurchaseProperties)this.asInterface(uuid("836278f3-ff87-4364-a5b4-fd2153ebe43b"))).set_Name(value));
+		Debug.OK((cast(Windows.Services.Store.IStorePurchaseProperties)this.asInterface(uuid("836278f3-ff87-4364-a5b4-fd2153ebe43b"))).set_Name(hstring(value).handle));
 	}
-	final HSTRING ExtendedJsonData()
+	final wstring ExtendedJsonData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStorePurchaseProperties)this.asInterface(uuid("836278f3-ff87-4364-a5b4-fd2153ebe43b"))).get_ExtendedJsonData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ExtendedJsonData(HSTRING value)
+	final void ExtendedJsonData(wstring value)
 	{
-		Debug.OK((cast(Windows.Services.Store.IStorePurchaseProperties)this.asInterface(uuid("836278f3-ff87-4364-a5b4-fd2153ebe43b"))).set_ExtendedJsonData(value));
+		Debug.OK((cast(Windows.Services.Store.IStorePurchaseProperties)this.asInterface(uuid("836278f3-ff87-4364-a5b4-fd2153ebe43b"))).set_ExtendedJsonData(hstring(value).handle));
 	}
 	static StorePurchaseProperties New()
 	{
@@ -1090,11 +1090,11 @@ extern(Windows):
 		Debug.OK(activationFactory!(StorePurchaseProperties).abi_ActivateInstance(&ret));
 		return cast(StorePurchaseProperties) ret;
 	}
-	static Windows.Services.Store.StorePurchaseProperties New(HSTRING name)
+	static Windows.Services.Store.StorePurchaseProperties New(wstring name)
 	{
 		auto factory = factory!(Windows.Services.Store.IStorePurchasePropertiesFactory);
 		Windows.Services.Store.StorePurchaseProperties _ret;
-		Debug.OK((cast(Windows.Services.Store.IStorePurchasePropertiesFactory)factory.asInterface(uuid("a768f59e-fefd-489f-9a17-22a593e68b9d"))).abi_Create(name, &_ret));
+		Debug.OK((cast(Windows.Services.Store.IStorePurchasePropertiesFactory)factory.asInterface(uuid("a768f59e-fefd-489f-9a17-22a593e68b9d"))).abi_Create(hstring(name).handle, &_ret));
 		return _ret;
 	}
 }
@@ -1124,10 +1124,10 @@ interface StoreRequestHelper
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Services.Store.IStoreRequestHelperStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StoreSendRequestResult) SendRequestAsync(Windows.Services.Store.StoreContext context, UINT32 requestKind, HSTRING parametersAsJson)
+	static Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StoreSendRequestResult) SendRequestAsync(Windows.Services.Store.StoreContext context, UINT32 requestKind, wstring parametersAsJson)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Services.Store.StoreSendRequestResult) _ret;
-		Debug.OK(staticInstance.abi_SendRequestAsync(context, requestKind, parametersAsJson, &_ret));
+		Debug.OK(staticInstance.abi_SendRequestAsync(context, requestKind, hstring(parametersAsJson).handle, &_ret));
 		return _ret;
 	}
 }
@@ -1135,11 +1135,11 @@ interface StoreRequestHelper
 interface StoreSendRequestResult : Windows.Services.Store.IStoreSendRequestResult, Windows.Services.Store.IStoreSendRequestResult2
 {
 extern(Windows):
-	final HSTRING Response()
+	final wstring Response()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreSendRequestResult)this.asInterface(uuid("c73abe60-8272-4502-8a69-6e75153a4299"))).get_Response(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final HRESULT ExtendedError()
 	{
@@ -1158,29 +1158,29 @@ extern(Windows):
 interface StoreSku : Windows.Services.Store.IStoreSku
 {
 extern(Windows):
-	final HSTRING StoreId()
+	final wstring StoreId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreSku)this.asInterface(uuid("397e6f55-4440-4f03-863c-91f3fec83d79"))).get_StoreId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreSku)this.asInterface(uuid("397e6f55-4440-4f03-863c-91f3fec83d79"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreSku)this.asInterface(uuid("397e6f55-4440-4f03-863c-91f3fec83d79"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Description()
+	final wstring Description()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreSku)this.asInterface(uuid("397e6f55-4440-4f03-863c-91f3fec83d79"))).get_Description(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsTrial()
 	{
@@ -1188,11 +1188,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStoreSku)this.asInterface(uuid("397e6f55-4440-4f03-863c-91f3fec83d79"))).get_IsTrial(&_ret));
 		return _ret;
 	}
-	final HSTRING CustomDeveloperData()
+	final wstring CustomDeveloperData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreSku)this.asInterface(uuid("397e6f55-4440-4f03-863c-91f3fec83d79"))).get_CustomDeveloperData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Services.Store.StoreImage) Images()
 	{
@@ -1218,11 +1218,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStoreSku)this.asInterface(uuid("397e6f55-4440-4f03-863c-91f3fec83d79"))).get_Price(&_ret));
 		return _ret;
 	}
-	final HSTRING ExtendedJsonData()
+	final wstring ExtendedJsonData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreSku)this.asInterface(uuid("397e6f55-4440-4f03-863c-91f3fec83d79"))).get_ExtendedJsonData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsInUserCollection()
 	{
@@ -1319,11 +1319,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStoreVideo)this.asInterface(uuid("f26cb184-6f5e-4dc2-886c-3c63083c2f94"))).get_Uri(&_ret));
 		return _ret;
 	}
-	final HSTRING VideoPurposeTag()
+	final wstring VideoPurposeTag()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreVideo)this.asInterface(uuid("f26cb184-6f5e-4dc2-886c-3c63083c2f94"))).get_VideoPurposeTag(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final UINT32 Width()
 	{
@@ -1337,11 +1337,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Services.Store.IStoreVideo)this.asInterface(uuid("f26cb184-6f5e-4dc2-886c-3c63083c2f94"))).get_Height(&_ret));
 		return _ret;
 	}
-	final HSTRING Caption()
+	final wstring Caption()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Services.Store.IStoreVideo)this.asInterface(uuid("f26cb184-6f5e-4dc2-886c-3c63083c2f94"))).get_Caption(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Services.Store.StoreImage PreviewImage()
 	{

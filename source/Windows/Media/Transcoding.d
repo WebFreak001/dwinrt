@@ -87,22 +87,22 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).get_HardwareAccelerationEnabled(&_ret));
 		return _ret;
 	}
-	final void AddAudioEffect(HSTRING activatableClassId)
+	final void AddAudioEffect(wstring activatableClassId)
 	{
-		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).abi_AddAudioEffect(activatableClassId));
+		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).abi_AddAudioEffect(hstring(activatableClassId).handle));
 	}
-	final void AddAudioEffectWithSettings(HSTRING activatableClassId, bool effectRequired, Windows.Foundation.Collections.IPropertySet configuration)
+	final void AddAudioEffectWithSettings(wstring activatableClassId, bool effectRequired, Windows.Foundation.Collections.IPropertySet configuration)
 	{
-		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).abi_AddAudioEffectWithSettings(activatableClassId, effectRequired, configuration));
+		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).abi_AddAudioEffectWithSettings(hstring(activatableClassId).handle, effectRequired, configuration));
 	}
 	alias AddAudioEffect = AddAudioEffectWithSettings;
-	final void AddVideoEffect(HSTRING activatableClassId)
+	final void AddVideoEffect(wstring activatableClassId)
 	{
-		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).abi_AddVideoEffect(activatableClassId));
+		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).abi_AddVideoEffect(hstring(activatableClassId).handle));
 	}
-	final void AddVideoEffectWithSettings(HSTRING activatableClassId, bool effectRequired, Windows.Foundation.Collections.IPropertySet configuration)
+	final void AddVideoEffectWithSettings(wstring activatableClassId, bool effectRequired, Windows.Foundation.Collections.IPropertySet configuration)
 	{
-		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).abi_AddVideoEffectWithSettings(activatableClassId, effectRequired, configuration));
+		Debug.OK((cast(Windows.Media.Transcoding.IMediaTranscoder)this.asInterface(uuid("190c99d2-a0aa-4d34-86bc-eed1b12c2f5b"))).abi_AddVideoEffectWithSettings(hstring(activatableClassId).handle, effectRequired, configuration));
 	}
 	alias AddVideoEffect = AddVideoEffectWithSettings;
 	final void ClearEffects()

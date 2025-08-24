@@ -755,17 +755,17 @@ extern(Windows):
 interface AudioDeviceModule : Windows.Media.Devices.IAudioDeviceModule
 {
 extern(Windows):
-	final HSTRING ClassId()
+	final wstring ClassId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Devices.IAudioDeviceModule)this.asInterface(uuid("86cfac36-47c1-4b33-9852-8773ec4be123"))).get_ClassId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Devices.IAudioDeviceModule)this.asInterface(uuid("86cfac36-47c1-4b33-9852-8773ec4be123"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final UINT32 InstanceId()
 	{
@@ -823,10 +823,10 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Devices.IAudioDeviceModulesManager)this.asInterface(uuid("6aa40c4d-960a-4d1c-b318-0022604547ed"))).remove_ModuleNotificationReceived(token));
 	}
-	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.AudioDeviceModule) FindAllById(HSTRING moduleId)
+	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.AudioDeviceModule) FindAllById(wstring moduleId)
 	{
 		Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.AudioDeviceModule) _ret;
-		Debug.OK((cast(Windows.Media.Devices.IAudioDeviceModulesManager)this.asInterface(uuid("6aa40c4d-960a-4d1c-b318-0022604547ed"))).abi_FindAllById(moduleId, &_ret));
+		Debug.OK((cast(Windows.Media.Devices.IAudioDeviceModulesManager)this.asInterface(uuid("6aa40c4d-960a-4d1c-b318-0022604547ed"))).abi_FindAllById(hstring(moduleId).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Devices.AudioDeviceModule) FindAll()
@@ -835,11 +835,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Devices.IAudioDeviceModulesManager)this.asInterface(uuid("6aa40c4d-960a-4d1c-b318-0022604547ed"))).abi_FindAll(&_ret));
 		return _ret;
 	}
-	static Windows.Media.Devices.AudioDeviceModulesManager New(HSTRING deviceId)
+	static Windows.Media.Devices.AudioDeviceModulesManager New(wstring deviceId)
 	{
 		auto factory = factory!(Windows.Media.Devices.IAudioDeviceModulesManagerFactory);
 		Windows.Media.Devices.AudioDeviceModulesManager _ret;
-		Debug.OK((cast(Windows.Media.Devices.IAudioDeviceModulesManagerFactory)factory.asInterface(uuid("8db03670-e64d-4773-96c0-bc7ebf0e063f"))).abi_Create(deviceId, &_ret));
+		Debug.OK((cast(Windows.Media.Devices.IAudioDeviceModulesManagerFactory)factory.asInterface(uuid("8db03670-e64d-4773-96c0-bc7ebf0e063f"))).abi_Create(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
 }
@@ -847,10 +847,10 @@ extern(Windows):
 interface CallControl : Windows.Media.Devices.ICallControl
 {
 extern(Windows):
-	final ulong IndicateNewIncomingCall(bool enableRinger, HSTRING callerId)
+	final ulong IndicateNewIncomingCall(bool enableRinger, wstring callerId)
 	{
 		ulong _ret;
-		Debug.OK((cast(Windows.Media.Devices.ICallControl)this.asInterface(uuid("a520d0d6-ae8d-45db-8011-ca49d3b3e578"))).abi_IndicateNewIncomingCall(enableRinger, callerId, &_ret));
+		Debug.OK((cast(Windows.Media.Devices.ICallControl)this.asInterface(uuid("a520d0d6-ae8d-45db-8011-ca49d3b3e578"))).abi_IndicateNewIncomingCall(enableRinger, hstring(callerId).handle, &_ret));
 		return _ret;
 	}
 	final ulong IndicateNewOutgoingCall()
@@ -946,10 +946,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDefault(&_ret));
 		return _ret;
 	}
-	static Windows.Media.Devices.CallControl FromId(HSTRING deviceId)
+	static Windows.Media.Devices.CallControl FromId(wstring deviceId)
 	{
 		Windows.Media.Devices.CallControl _ret;
-		Debug.OK(staticInstance.abi_FromId(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromId(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
 }
@@ -957,11 +957,11 @@ extern(Windows):
 interface DefaultAudioCaptureDeviceChangedEventArgs : Windows.Media.Devices.IDefaultAudioDeviceChangedEventArgs
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Devices.IDefaultAudioDeviceChangedEventArgs)this.asInterface(uuid("110f882f-1c05-4657-a18e-47c9b69f07ab"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Media.Devices.AudioDeviceRole Role()
 	{
@@ -974,11 +974,11 @@ extern(Windows):
 interface DefaultAudioRenderDeviceChangedEventArgs : Windows.Media.Devices.IDefaultAudioDeviceChangedEventArgs
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Devices.IDefaultAudioDeviceChangedEventArgs)this.asInterface(uuid("110f882f-1c05-4657-a18e-47c9b69f07ab"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Media.Devices.AudioDeviceRole Role()
 	{
@@ -1662,35 +1662,35 @@ interface MediaDevice
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Devices.IMediaDeviceStatics);
 		return _staticInstance;
 	}
-	static HSTRING GetAudioCaptureSelector()
+	static wstring GetAudioCaptureSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetAudioCaptureSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GetAudioRenderSelector()
+	static wstring GetAudioRenderSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetAudioRenderSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GetVideoCaptureSelector()
+	static wstring GetVideoCaptureSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetVideoCaptureSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GetDefaultAudioCaptureId(Windows.Media.Devices.AudioDeviceRole role)
+	static wstring GetDefaultAudioCaptureId(Windows.Media.Devices.AudioDeviceRole role)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDefaultAudioCaptureId(role, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GetDefaultAudioRenderId(Windows.Media.Devices.AudioDeviceRole role)
+	static wstring GetDefaultAudioRenderId(Windows.Media.Devices.AudioDeviceRole role)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDefaultAudioRenderId(role, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static EventRegistrationToken OnDefaultAudioCaptureDeviceChanged(void delegate(IInspectable, Windows.Media.Devices.DefaultAudioCaptureDeviceChangedEventArgs) fn)
 	{
@@ -2162,14 +2162,14 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Devices.IMediaDeviceController)this.asInterface(uuid("f6f8f5ce-209a-48fb-86fc-d44578f317e6"))).abi_SetMediaStreamPropertiesAsync(mediaStreamType, mediaEncodingProperties, &_ret));
 		return _ret;
 	}
-	final void SetDeviceProperty(HSTRING propertyId, IInspectable propertyValue)
+	final void SetDeviceProperty(wstring propertyId, IInspectable propertyValue)
 	{
-		Debug.OK((cast(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController)this.asInterface(uuid("de6ff4d3-2b96-4583-80ab-b5b01dc6a8d7"))).abi_SetDeviceProperty(propertyId, propertyValue));
+		Debug.OK((cast(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController)this.asInterface(uuid("de6ff4d3-2b96-4583-80ab-b5b01dc6a8d7"))).abi_SetDeviceProperty(hstring(propertyId).handle, propertyValue));
 	}
-	final IInspectable GetDeviceProperty(HSTRING propertyId)
+	final IInspectable GetDeviceProperty(wstring propertyId)
 	{
 		IInspectable _ret;
-		Debug.OK((cast(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController)this.asInterface(uuid("de6ff4d3-2b96-4583-80ab-b5b01dc6a8d7"))).abi_GetDeviceProperty(propertyId, &_ret));
+		Debug.OK((cast(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController)this.asInterface(uuid("de6ff4d3-2b96-4583-80ab-b5b01dc6a8d7"))).abi_GetDeviceProperty(hstring(propertyId).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Media.Devices.LowLagPhotoSequenceControl LowLagPhotoSequence()
@@ -2300,22 +2300,22 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController4)this.asInterface(uuid("ea9fbfaf-d371-41c3-9a17-824a87ebdfd2"))).get_AdvancedPhotoControl(&_ret));
 		return _ret;
 	}
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController5)this.asInterface(uuid("33512b17-b9cb-4a23-b875-f9eaab535492"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final Windows.Media.Devices.VideoDeviceControllerGetDevicePropertyResult GetDevicePropertyById(HSTRING propertyId, Windows.Foundation.IReference!(UINT32) maxPropertyValueSize)
+	final Windows.Media.Devices.VideoDeviceControllerGetDevicePropertyResult GetDevicePropertyById(wstring propertyId, Windows.Foundation.IReference!(UINT32) maxPropertyValueSize)
 	{
 		Windows.Media.Devices.VideoDeviceControllerGetDevicePropertyResult _ret;
-		Debug.OK((cast(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController5)this.asInterface(uuid("33512b17-b9cb-4a23-b875-f9eaab535492"))).abi_GetDevicePropertyById(propertyId, maxPropertyValueSize, &_ret));
+		Debug.OK((cast(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController5)this.asInterface(uuid("33512b17-b9cb-4a23-b875-f9eaab535492"))).abi_GetDevicePropertyById(hstring(propertyId).handle, maxPropertyValueSize, &_ret));
 		return _ret;
 	}
-	final Windows.Media.Devices.VideoDeviceControllerSetDevicePropertyStatus SetDevicePropertyById(HSTRING propertyId, IInspectable propertyValue)
+	final Windows.Media.Devices.VideoDeviceControllerSetDevicePropertyStatus SetDevicePropertyById(wstring propertyId, IInspectable propertyValue)
 	{
 		Windows.Media.Devices.VideoDeviceControllerSetDevicePropertyStatus _ret;
-		Debug.OK((cast(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController5)this.asInterface(uuid("33512b17-b9cb-4a23-b875-f9eaab535492"))).abi_SetDevicePropertyById(propertyId, propertyValue, &_ret));
+		Debug.OK((cast(Windows.Media.Devices.IAdvancedVideoCaptureDeviceController5)this.asInterface(uuid("33512b17-b9cb-4a23-b875-f9eaab535492"))).abi_SetDevicePropertyById(hstring(propertyId).handle, propertyValue, &_ret));
 		return _ret;
 	}
 	final Windows.Media.Devices.VideoDeviceControllerGetDevicePropertyResult GetDevicePropertyByExtendedId(UINT32 __extendedPropertyIdSize, ubyte* extendedPropertyId, Windows.Foundation.IReference!(UINT32) maxPropertyValueSize)

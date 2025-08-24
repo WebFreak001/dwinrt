@@ -105,11 +105,11 @@ interface KnownSimpleHapticsControllerWaveforms
 interface SimpleHapticsController : Windows.Devices.Haptics.ISimpleHapticsController
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Haptics.ISimpleHapticsController)this.asInterface(uuid("3d577ef9-4cee-11e6-b535-001bdc06ab3b"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Devices.Haptics.SimpleHapticsControllerFeedback) SupportedFeedback()
 	{
@@ -184,11 +184,11 @@ extern(Windows):
 interface VibrationDevice : Windows.Devices.Haptics.IVibrationDevice
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Haptics.IVibrationDevice)this.asInterface(uuid("40f21a3e-8844-47ff-b312-06185a3844da"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Devices.Haptics.SimpleHapticsController SimpleHapticsController()
 	{
@@ -209,16 +209,16 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_RequestAccessAsync(&_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelector()
+	static wstring GetDeviceSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Haptics.VibrationDevice) FromIdAsync(HSTRING deviceId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Haptics.VibrationDevice) FromIdAsync(wstring deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Haptics.VibrationDevice) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Haptics.VibrationDevice) GetDefaultAsync()
