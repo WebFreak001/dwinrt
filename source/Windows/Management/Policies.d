@@ -39,16 +39,16 @@ interface NamedPolicy
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Management.Policies.INamedPolicyStatics);
 		return _staticInstance;
 	}
-	static Windows.Management.Policies.NamedPolicyData GetPolicyFromPath(HSTRING area, HSTRING name)
+	static Windows.Management.Policies.NamedPolicyData GetPolicyFromPath(wstring area, wstring name)
 	{
 		Windows.Management.Policies.NamedPolicyData _ret;
-		Debug.OK(staticInstance.abi_GetPolicyFromPath(area, name, &_ret));
+		Debug.OK(staticInstance.abi_GetPolicyFromPath(hstring(area).handle, hstring(name).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Management.Policies.NamedPolicyData GetPolicyFromPathForUser(Windows.System.User user, HSTRING area, HSTRING name)
+	static Windows.Management.Policies.NamedPolicyData GetPolicyFromPathForUser(Windows.System.User user, wstring area, wstring name)
 	{
 		Windows.Management.Policies.NamedPolicyData _ret;
-		Debug.OK(staticInstance.abi_GetPolicyFromPathForUser(user, area, name, &_ret));
+		Debug.OK(staticInstance.abi_GetPolicyFromPathForUser(user, hstring(area).handle, hstring(name).handle, &_ret));
 		return _ret;
 	}
 }
@@ -56,17 +56,17 @@ interface NamedPolicy
 interface NamedPolicyData : Windows.Management.Policies.INamedPolicyData
 {
 extern(Windows):
-	final HSTRING Area()
+	final wstring Area()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Management.Policies.INamedPolicyData)this.asInterface(uuid("38dcb198-95ac-4077-a643-8078cae26400"))).get_Area(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Management.Policies.INamedPolicyData)this.asInterface(uuid("38dcb198-95ac-4077-a643-8078cae26400"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Management.Policies.NamedPolicyKind Kind()
 	{
@@ -116,11 +116,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Management.Policies.INamedPolicyData)this.asInterface(uuid("38dcb198-95ac-4077-a643-8078cae26400"))).abi_GetInt64(&_ret));
 		return _ret;
 	}
-	final HSTRING GetString()
+	final wstring GetString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Management.Policies.INamedPolicyData)this.asInterface(uuid("38dcb198-95ac-4077-a643-8078cae26400"))).abi_GetString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final EventRegistrationToken OnChanged(void delegate(Windows.Management.Policies.NamedPolicyData, IInspectable) fn)
 	{

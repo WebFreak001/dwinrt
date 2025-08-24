@@ -533,10 +533,10 @@ extern(Windows):
 interface Print3DTaskRequest : Windows.Graphics.Printing3D.IPrint3DTaskRequest
 {
 extern(Windows):
-	final Windows.Graphics.Printing3D.Print3DTask CreateTask(HSTRING title, HSTRING printerId, Windows.Graphics.Printing3D.Print3DTaskSourceRequestedHandler handler)
+	final Windows.Graphics.Printing3D.Print3DTask CreateTask(wstring title, wstring printerId, Windows.Graphics.Printing3D.Print3DTaskSourceRequestedHandler handler)
 	{
 		Windows.Graphics.Printing3D.Print3DTask _ret;
-		Debug.OK((cast(Windows.Graphics.Printing3D.IPrint3DTaskRequest)this.asInterface(uuid("2595c46f-2245-4c5a-8731-0d604dc6bc3c"))).abi_CreateTask(title, printerId, handler, &_ret));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrint3DTaskRequest)this.asInterface(uuid("2595c46f-2245-4c5a-8731-0d604dc6bc3c"))).abi_CreateTask(hstring(title).handle, hstring(printerId).handle, handler, &_ret));
 		return _ret;
 	}
 }
@@ -653,15 +653,15 @@ extern(Windows):
 interface Printing3DBaseMaterial : Windows.Graphics.Printing3D.IPrinting3DBaseMaterial
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DBaseMaterial)this.asInterface(uuid("d0f0e743-c50c-4bcb-9d04-fc16adcea2c9"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Name(HSTRING value)
+	final void Name(wstring value)
 	{
-		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DBaseMaterial)this.asInterface(uuid("d0f0e743-c50c-4bcb-9d04-fc16adcea2c9"))).set_Name(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DBaseMaterial)this.asInterface(uuid("d0f0e743-c50c-4bcb-9d04-fc16adcea2c9"))).set_Name(hstring(value).handle));
 	}
 	final Windows.Graphics.Printing3D.Printing3DColorMaterial Color()
 	{
@@ -680,17 +680,17 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Graphics.Printing3D.IPrinting3DBaseMaterialStatics);
 		return _staticInstance;
 	}
-	static HSTRING Abs()
+	static wstring Abs()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Abs(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Pla()
+	static wstring Pla()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Pla(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static Printing3DBaseMaterial New()
 	{
@@ -818,25 +818,25 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DComponent)this.asInterface(uuid("7e287845-bf7f-4cdb-a27f-30a01437fede"))).set_Type(value));
 	}
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DComponent)this.asInterface(uuid("7e287845-bf7f-4cdb-a27f-30a01437fede"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Name(HSTRING value)
+	final void Name(wstring value)
 	{
-		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DComponent)this.asInterface(uuid("7e287845-bf7f-4cdb-a27f-30a01437fede"))).set_Name(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DComponent)this.asInterface(uuid("7e287845-bf7f-4cdb-a27f-30a01437fede"))).set_Name(hstring(value).handle));
 	}
-	final HSTRING PartNumber()
+	final wstring PartNumber()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DComponent)this.asInterface(uuid("7e287845-bf7f-4cdb-a27f-30a01437fede"))).get_PartNumber(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void PartNumber(HSTRING value)
+	final void PartNumber(wstring value)
 	{
-		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DComponent)this.asInterface(uuid("7e287845-bf7f-4cdb-a27f-30a01437fede"))).set_PartNumber(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DComponent)this.asInterface(uuid("7e287845-bf7f-4cdb-a27f-30a01437fede"))).set_PartNumber(hstring(value).handle));
 	}
 	static Printing3DComponent New()
 	{
@@ -1219,15 +1219,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel)this.asInterface(uuid("2d012ef0-52fb-919a-77b0-4b1a3b80324f"))).set_Build(value));
 	}
-	final HSTRING Version()
+	final wstring Version()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel)this.asInterface(uuid("2d012ef0-52fb-919a-77b0-4b1a3b80324f"))).get_Version(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Version(HSTRING value)
+	final void Version(wstring value)
 	{
-		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel)this.asInterface(uuid("2d012ef0-52fb-919a-77b0-4b1a3b80324f"))).set_Version(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DModel)this.asInterface(uuid("2d012ef0-52fb-919a-77b0-4b1a3b80324f"))).set_Version(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IVector!(HSTRING) RequiredExtensions()
 	{
@@ -1476,15 +1476,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DTextureResource)this.asInterface(uuid("a70df32d-6ab1-44ae-bc45-a27382c0d38c"))).set_TextureData(value));
 	}
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DTextureResource)this.asInterface(uuid("a70df32d-6ab1-44ae-bc45-a27382c0d38c"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Name(HSTRING value)
+	final void Name(wstring value)
 	{
-		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DTextureResource)this.asInterface(uuid("a70df32d-6ab1-44ae-bc45-a27382c0d38c"))).set_Name(value));
+		Debug.OK((cast(Windows.Graphics.Printing3D.IPrinting3DTextureResource)this.asInterface(uuid("a70df32d-6ab1-44ae-bc45-a27382c0d38c"))).set_Name(hstring(value).handle));
 	}
 	static Printing3DTextureResource New()
 	{

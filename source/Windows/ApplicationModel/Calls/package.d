@@ -330,15 +330,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Calls.ILockScreenCallUI)this.asInterface(uuid("c596fd8d-73c9-4a14-b021-ec1c50a3b727"))).remove_Closed(token));
 	}
-	final HSTRING CallTitle()
+	final wstring CallTitle()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Calls.ILockScreenCallUI)this.asInterface(uuid("c596fd8d-73c9-4a14-b021-ec1c50a3b727"))).get_CallTitle(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void CallTitle(HSTRING value)
+	final void CallTitle(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Calls.ILockScreenCallUI)this.asInterface(uuid("c596fd8d-73c9-4a14-b021-ec1c50a3b727"))).set_CallTitle(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.ILockScreenCallUI)this.asInterface(uuid("c596fd8d-73c9-4a14-b021-ec1c50a3b727"))).set_CallTitle(hstring(value).handle));
 	}
 }
 
@@ -356,11 +356,11 @@ extern(Windows):
 interface PhoneCallHistoryEntry : Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Calls.PhoneCallHistoryEntryAddress Address()
 	{
@@ -482,31 +482,31 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).set_OtherAppReadAccess(value));
 	}
-	final HSTRING RemoteId()
+	final wstring RemoteId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).get_RemoteId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void RemoteId(HSTRING value)
+	final void RemoteId(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).set_RemoteId(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).set_RemoteId(hstring(value).handle));
 	}
-	final HSTRING SourceDisplayName()
+	final wstring SourceDisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).get_SourceDisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING SourceId()
+	final wstring SourceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).get_SourceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void SourceId(HSTRING value)
+	final void SourceId(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).set_SourceId(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntry)this.asInterface(uuid("fab0e129-32a4-4b85-83d1-f90d8c23a857"))).set_SourceId(hstring(value).handle));
 	}
 	final Windows.ApplicationModel.Calls.PhoneCallHistorySourceIdKind SourceIdKind()
 	{
@@ -539,35 +539,35 @@ extern(Windows):
 interface PhoneCallHistoryEntryAddress : Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress
 {
 extern(Windows):
-	final HSTRING ContactId()
+	final wstring ContactId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress)this.asInterface(uuid("30f159da-3955-4042-84e6-66eebf82e67f"))).get_ContactId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ContactId(HSTRING value)
+	final void ContactId(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress)this.asInterface(uuid("30f159da-3955-4042-84e6-66eebf82e67f"))).set_ContactId(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress)this.asInterface(uuid("30f159da-3955-4042-84e6-66eebf82e67f"))).set_ContactId(hstring(value).handle));
 	}
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress)this.asInterface(uuid("30f159da-3955-4042-84e6-66eebf82e67f"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void DisplayName(HSTRING value)
+	final void DisplayName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress)this.asInterface(uuid("30f159da-3955-4042-84e6-66eebf82e67f"))).set_DisplayName(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress)this.asInterface(uuid("30f159da-3955-4042-84e6-66eebf82e67f"))).set_DisplayName(hstring(value).handle));
 	}
-	final HSTRING RawAddress()
+	final wstring RawAddress()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress)this.asInterface(uuid("30f159da-3955-4042-84e6-66eebf82e67f"))).get_RawAddress(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void RawAddress(HSTRING value)
+	final void RawAddress(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress)this.asInterface(uuid("30f159da-3955-4042-84e6-66eebf82e67f"))).set_RawAddress(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddress)this.asInterface(uuid("30f159da-3955-4042-84e6-66eebf82e67f"))).set_RawAddress(hstring(value).handle));
 	}
 	final Windows.ApplicationModel.Calls.PhoneCallHistoryEntryRawAddressKind RawAddressKind()
 	{
@@ -585,11 +585,11 @@ extern(Windows):
 		Debug.OK(activationFactory!(PhoneCallHistoryEntryAddress).abi_ActivateInstance(&ret));
 		return cast(PhoneCallHistoryEntryAddress) ret;
 	}
-	static Windows.ApplicationModel.Calls.PhoneCallHistoryEntryAddress New(HSTRING rawAddress, Windows.ApplicationModel.Calls.PhoneCallHistoryEntryRawAddressKind rawAddressKind)
+	static Windows.ApplicationModel.Calls.PhoneCallHistoryEntryAddress New(wstring rawAddress, Windows.ApplicationModel.Calls.PhoneCallHistoryEntryRawAddressKind rawAddressKind)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddressFactory);
 		Windows.ApplicationModel.Calls.PhoneCallHistoryEntryAddress _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddressFactory)factory.asInterface(uuid("fb0fadba-c7f0-4bb6-9f6b-ba5d73209aca"))).abi_Create(rawAddress, rawAddressKind, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryEntryAddressFactory)factory.asInterface(uuid("fb0fadba-c7f0-4bb6-9f6b-ba5d73209aca"))).abi_Create(hstring(rawAddress).handle, rawAddressKind, &_ret));
 		return _ret;
 	}
 }
@@ -668,10 +668,10 @@ extern(Windows):
 interface PhoneCallHistoryStore : Windows.ApplicationModel.Calls.IPhoneCallHistoryStore
 {
 extern(Windows):
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry) GetEntryAsync(HSTRING callHistoryEntryId)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry) GetEntryAsync(wstring callHistoryEntryId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.PhoneCallHistoryEntry) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore)this.asInterface(uuid("2f907db8-b40e-422b-8545-cb1910a61c52"))).abi_GetEntryAsync(callHistoryEntryId, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IPhoneCallHistoryStore)this.asInterface(uuid("2f907db8-b40e-422b-8545-cb1910a61c52"))).abi_GetEntryAsync(hstring(callHistoryEntryId).handle, &_ret));
 		return _ret;
 	}
 	final Windows.ApplicationModel.Calls.PhoneCallHistoryEntryReader GetEntryReader()
@@ -746,10 +746,10 @@ extern(Windows):
 interface VoipCallCoordinator : Windows.ApplicationModel.Calls.IVoipCallCoordinator
 {
 extern(Windows):
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.VoipPhoneCallResourceReservationStatus) ReserveCallResourcesAsync(HSTRING taskEntryPoint)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.VoipPhoneCallResourceReservationStatus) ReserveCallResourcesAsync(wstring taskEntryPoint)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Calls.VoipPhoneCallResourceReservationStatus) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipCallCoordinator)this.asInterface(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79"))).abi_ReserveCallResourcesAsync(taskEntryPoint, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipCallCoordinator)this.asInterface(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79"))).abi_ReserveCallResourcesAsync(hstring(taskEntryPoint).handle, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnMuteStateChanged(void delegate(Windows.ApplicationModel.Calls.VoipCallCoordinator, Windows.ApplicationModel.Calls.MuteChangeEventArgs) fn)
@@ -762,16 +762,16 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipCallCoordinator)this.asInterface(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79"))).remove_MuteStateChanged(token));
 	}
-	final Windows.ApplicationModel.Calls.VoipPhoneCall RequestNewIncomingCall(HSTRING context, HSTRING contactName, HSTRING contactNumber, Windows.Foundation.Uri contactImage, HSTRING serviceName, Windows.Foundation.Uri brandingImage, HSTRING callDetails, Windows.Foundation.Uri ringtone, Windows.ApplicationModel.Calls.VoipPhoneCallMedia media, Windows.Foundation.TimeSpan ringTimeout)
+	final Windows.ApplicationModel.Calls.VoipPhoneCall RequestNewIncomingCall(wstring context, wstring contactName, wstring contactNumber, Windows.Foundation.Uri contactImage, wstring serviceName, Windows.Foundation.Uri brandingImage, wstring callDetails, Windows.Foundation.Uri ringtone, Windows.ApplicationModel.Calls.VoipPhoneCallMedia media, Windows.Foundation.TimeSpan ringTimeout)
 	{
 		Windows.ApplicationModel.Calls.VoipPhoneCall _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipCallCoordinator)this.asInterface(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79"))).abi_RequestNewIncomingCall(context, contactName, contactNumber, contactImage, serviceName, brandingImage, callDetails, ringtone, media, ringTimeout, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipCallCoordinator)this.asInterface(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79"))).abi_RequestNewIncomingCall(hstring(context).handle, hstring(contactName).handle, hstring(contactNumber).handle, contactImage, hstring(serviceName).handle, brandingImage, hstring(callDetails).handle, ringtone, media, ringTimeout, &_ret));
 		return _ret;
 	}
-	final Windows.ApplicationModel.Calls.VoipPhoneCall RequestNewOutgoingCall(HSTRING context, HSTRING contactName, HSTRING serviceName, Windows.ApplicationModel.Calls.VoipPhoneCallMedia media)
+	final Windows.ApplicationModel.Calls.VoipPhoneCall RequestNewOutgoingCall(wstring context, wstring contactName, wstring serviceName, Windows.ApplicationModel.Calls.VoipPhoneCallMedia media)
 	{
 		Windows.ApplicationModel.Calls.VoipPhoneCall _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipCallCoordinator)this.asInterface(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79"))).abi_RequestNewOutgoingCall(context, contactName, serviceName, media, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipCallCoordinator)this.asInterface(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79"))).abi_RequestNewOutgoingCall(hstring(context).handle, hstring(contactName).handle, hstring(serviceName).handle, media, &_ret));
 		return _ret;
 	}
 	final void NotifyMuted()
@@ -782,16 +782,16 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipCallCoordinator)this.asInterface(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79"))).abi_NotifyUnmuted());
 	}
-	final Windows.ApplicationModel.Calls.VoipPhoneCall RequestOutgoingUpgradeToVideoCall(GUID callUpgradeGuid, HSTRING context, HSTRING contactName, HSTRING serviceName)
+	final Windows.ApplicationModel.Calls.VoipPhoneCall RequestOutgoingUpgradeToVideoCall(GUID callUpgradeGuid, wstring context, wstring contactName, wstring serviceName)
 	{
 		Windows.ApplicationModel.Calls.VoipPhoneCall _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipCallCoordinator)this.asInterface(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79"))).abi_RequestOutgoingUpgradeToVideoCall(callUpgradeGuid, context, contactName, serviceName, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipCallCoordinator)this.asInterface(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79"))).abi_RequestOutgoingUpgradeToVideoCall(callUpgradeGuid, hstring(context).handle, hstring(contactName).handle, hstring(serviceName).handle, &_ret));
 		return _ret;
 	}
-	final Windows.ApplicationModel.Calls.VoipPhoneCall RequestIncomingUpgradeToVideoCall(HSTRING context, HSTRING contactName, HSTRING contactNumber, Windows.Foundation.Uri contactImage, HSTRING serviceName, Windows.Foundation.Uri brandingImage, HSTRING callDetails, Windows.Foundation.Uri ringtone, Windows.Foundation.TimeSpan ringTimeout)
+	final Windows.ApplicationModel.Calls.VoipPhoneCall RequestIncomingUpgradeToVideoCall(wstring context, wstring contactName, wstring contactNumber, Windows.Foundation.Uri contactImage, wstring serviceName, Windows.Foundation.Uri brandingImage, wstring callDetails, Windows.Foundation.Uri ringtone, Windows.Foundation.TimeSpan ringTimeout)
 	{
 		Windows.ApplicationModel.Calls.VoipPhoneCall _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipCallCoordinator)this.asInterface(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79"))).abi_RequestIncomingUpgradeToVideoCall(context, contactName, contactNumber, contactImage, serviceName, brandingImage, callDetails, ringtone, ringTimeout, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipCallCoordinator)this.asInterface(uuid("4f118bcf-e8ef-4434-9c5f-a8d893fafe79"))).abi_RequestIncomingUpgradeToVideoCall(hstring(context).handle, hstring(contactName).handle, hstring(contactNumber).handle, contactImage, hstring(serviceName).handle, brandingImage, hstring(callDetails).handle, ringtone, ringTimeout, &_ret));
 		return _ret;
 	}
 	final void TerminateCellularCall(GUID callUpgradeGuid)
@@ -882,15 +882,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).abi_NotifyCallEnded());
 	}
-	final HSTRING ContactName()
+	final wstring ContactName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).get_ContactName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ContactName(HSTRING value)
+	final void ContactName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).set_ContactName(value));
+		Debug.OK((cast(Windows.ApplicationModel.Calls.IVoipPhoneCall)this.asInterface(uuid("6cf1f19a-7794-4a5a-8c68-ae87947a6990"))).set_ContactName(hstring(value).handle));
 	}
 	final Windows.Foundation.DateTime StartTime()
 	{

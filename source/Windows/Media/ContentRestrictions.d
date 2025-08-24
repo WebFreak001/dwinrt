@@ -60,11 +60,11 @@ extern(Windows):
 interface ContentRestrictionsBrowsePolicy : Windows.Media.ContentRestrictions.IContentRestrictionsBrowsePolicy
 {
 extern(Windows):
-	final HSTRING GeographicRegion()
+	final wstring GeographicRegion()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.ContentRestrictions.IContentRestrictionsBrowsePolicy)this.asInterface(uuid("8c0133a4-442e-461a-8757-fad2f5bd37e4"))).get_GeographicRegion(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IReference!(UINT32) MaxBrowsableAgeRating()
 	{
@@ -83,25 +83,25 @@ extern(Windows):
 interface RatedContentDescription : Windows.Media.ContentRestrictions.IRatedContentDescription
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.ContentRestrictions.IRatedContentDescription)this.asInterface(uuid("694866df-66b2-4dc3-96b1-f090eedee255"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Id(HSTRING value)
+	final void Id(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.ContentRestrictions.IRatedContentDescription)this.asInterface(uuid("694866df-66b2-4dc3-96b1-f090eedee255"))).set_Id(value));
+		Debug.OK((cast(Windows.Media.ContentRestrictions.IRatedContentDescription)this.asInterface(uuid("694866df-66b2-4dc3-96b1-f090eedee255"))).set_Id(hstring(value).handle));
 	}
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.ContentRestrictions.IRatedContentDescription)this.asInterface(uuid("694866df-66b2-4dc3-96b1-f090eedee255"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Title(HSTRING value)
+	final void Title(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.ContentRestrictions.IRatedContentDescription)this.asInterface(uuid("694866df-66b2-4dc3-96b1-f090eedee255"))).set_Title(value));
+		Debug.OK((cast(Windows.Media.ContentRestrictions.IRatedContentDescription)this.asInterface(uuid("694866df-66b2-4dc3-96b1-f090eedee255"))).set_Title(hstring(value).handle));
 	}
 	final Windows.Storage.Streams.IRandomAccessStreamReference Image()
 	{
@@ -133,11 +133,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.ContentRestrictions.IRatedContentDescription)this.asInterface(uuid("694866df-66b2-4dc3-96b1-f090eedee255"))).set_Ratings(value));
 	}
-	static Windows.Media.ContentRestrictions.RatedContentDescription New(HSTRING id, HSTRING title, Windows.Media.ContentRestrictions.RatedContentCategory category)
+	static Windows.Media.ContentRestrictions.RatedContentDescription New(wstring id, wstring title, Windows.Media.ContentRestrictions.RatedContentCategory category)
 	{
 		auto factory = factory!(Windows.Media.ContentRestrictions.IRatedContentDescriptionFactory);
 		Windows.Media.ContentRestrictions.RatedContentDescription _ret;
-		Debug.OK((cast(Windows.Media.ContentRestrictions.IRatedContentDescriptionFactory)factory.asInterface(uuid("2e38df62-9b90-4fa6-89c1-4b8d2ffb3573"))).abi_Create(id, title, category, &_ret));
+		Debug.OK((cast(Windows.Media.ContentRestrictions.IRatedContentDescriptionFactory)factory.asInterface(uuid("2e38df62-9b90-4fa6-89c1-4b8d2ffb3573"))).abi_Create(hstring(id).handle, hstring(title).handle, category, &_ret));
 		return _ret;
 	}
 }

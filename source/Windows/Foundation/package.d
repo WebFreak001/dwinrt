@@ -660,10 +660,10 @@ interface PropertyValue
 		Debug.OK(staticInstance.abi_CreateBoolean(value, &_ret));
 		return _ret;
 	}
-	static IInspectable CreateString(HSTRING value)
+	static IInspectable CreateString(wstring value)
 	{
 		IInspectable _ret;
-		Debug.OK(staticInstance.abi_CreateString(value, &_ret));
+		Debug.OK(staticInstance.abi_CreateString(hstring(value).handle, &_ret));
 		return _ret;
 	}
 	static IInspectable CreateInspectable(IInspectable value)
@@ -827,59 +827,59 @@ interface PropertyValue
 interface Uri : Windows.Foundation.IUriRuntimeClass, Windows.Foundation.IUriRuntimeClassWithAbsoluteCanonicalUri, Windows.Foundation.IStringable
 {
 extern(Windows):
-	final HSTRING AbsoluteUri()
+	final wstring AbsoluteUri()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_AbsoluteUri(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DisplayUri()
+	final wstring DisplayUri()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_DisplayUri(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Domain()
+	final wstring Domain()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_Domain(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Extension()
+	final wstring Extension()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_Extension(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Fragment()
+	final wstring Fragment()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_Fragment(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Host()
+	final wstring Host()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_Host(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Password()
+	final wstring Password()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_Password(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Path()
+	final wstring Path()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_Path(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Query()
+	final wstring Query()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_Query(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.WwwFormUrlDecoder QueryParsed()
 	{
@@ -887,23 +887,23 @@ extern(Windows):
 		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_QueryParsed(&_ret));
 		return _ret;
 	}
-	final HSTRING RawUri()
+	final wstring RawUri()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_RawUri(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING SchemeName()
+	final wstring SchemeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_SchemeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING UserName()
+	final wstring UserName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).get_UserName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final INT32 Port()
 	{
@@ -923,29 +923,29 @@ extern(Windows):
 		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).abi_Equals(pUri, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.Uri CombineUri(HSTRING relativeUri)
+	final Windows.Foundation.Uri CombineUri(wstring relativeUri)
 	{
 		Windows.Foundation.Uri _ret;
-		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).abi_CombineUri(relativeUri, &_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClass)this.asInterface(uuid("9e365e57-48b2-4160-956f-c7385120bbfc"))).abi_CombineUri(hstring(relativeUri).handle, &_ret));
 		return _ret;
 	}
-	final HSTRING AbsoluteCanonicalUri()
+	final wstring AbsoluteCanonicalUri()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IUriRuntimeClassWithAbsoluteCanonicalUri)this.asInterface(uuid("758d9661-221c-480f-a339-50656673f46f"))).get_AbsoluteCanonicalUri(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DisplayIri()
+	final wstring DisplayIri()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IUriRuntimeClassWithAbsoluteCanonicalUri)this.asInterface(uuid("758d9661-221c-480f-a339-50656673f46f"))).get_DisplayIri(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ToString()
+	final wstring ToString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IStringable)this.asInterface(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3"))).abi_ToString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 
 	private static Windows.Foundation.IUriEscapeStatics _staticInstance;
@@ -954,30 +954,30 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Foundation.IUriEscapeStatics);
 		return _staticInstance;
 	}
-	static HSTRING UnescapeComponent(HSTRING toUnescape)
+	static wstring UnescapeComponent(wstring toUnescape)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.abi_UnescapeComponent(toUnescape, &_ret));
-		return _ret;
+		Debug.OK(staticInstance.abi_UnescapeComponent(hstring(toUnescape).handle, &_ret));
+		return hstring(_ret).d_str;
 	}
-	static HSTRING EscapeComponent(HSTRING toEscape)
+	static wstring EscapeComponent(wstring toEscape)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.abi_EscapeComponent(toEscape, &_ret));
-		return _ret;
+		Debug.OK(staticInstance.abi_EscapeComponent(hstring(toEscape).handle, &_ret));
+		return hstring(_ret).d_str;
 	}
-	static Windows.Foundation.Uri New(HSTRING uri)
+	static Windows.Foundation.Uri New(wstring uri)
 	{
 		auto factory = factory!(Windows.Foundation.IUriRuntimeClassFactory);
 		Windows.Foundation.Uri _ret;
-		Debug.OK((cast(Windows.Foundation.IUriRuntimeClassFactory)factory.asInterface(uuid("44a9796f-723e-4fdf-a218-033e75b0c084"))).abi_CreateUri(uri, &_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClassFactory)factory.asInterface(uuid("44a9796f-723e-4fdf-a218-033e75b0c084"))).abi_CreateUri(hstring(uri).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.Uri New(HSTRING baseUri, HSTRING relativeUri)
+	static Windows.Foundation.Uri New(wstring baseUri, wstring relativeUri)
 	{
 		auto factory = factory!(Windows.Foundation.IUriRuntimeClassFactory);
 		Windows.Foundation.Uri _ret;
-		Debug.OK((cast(Windows.Foundation.IUriRuntimeClassFactory)factory.asInterface(uuid("44a9796f-723e-4fdf-a218-033e75b0c084"))).abi_CreateWithRelativeUri(baseUri, relativeUri, &_ret));
+		Debug.OK((cast(Windows.Foundation.IUriRuntimeClassFactory)factory.asInterface(uuid("44a9796f-723e-4fdf-a218-033e75b0c084"))).abi_CreateWithRelativeUri(hstring(baseUri).handle, hstring(relativeUri).handle, &_ret));
 		return _ret;
 	}
 }
@@ -985,11 +985,11 @@ extern(Windows):
 interface WwwFormUrlDecoder : Windows.Foundation.IWwwFormUrlDecoderRuntimeClass, Windows.Foundation.Collections.IVectorView!(Windows.Foundation.IWwwFormUrlDecoderEntry), Windows.Foundation.Collections.IIterable!(Windows.Foundation.IWwwFormUrlDecoderEntry)
 {
 extern(Windows):
-	final HSTRING GetFirstValueByName(HSTRING name)
+	final wstring GetFirstValueByName(wstring name)
 	{
 		HSTRING _ret;
-		Debug.OK((cast(Windows.Foundation.IWwwFormUrlDecoderRuntimeClass)this.asInterface(uuid("d45a0451-f225-4542-9296-0e1df5d254df"))).abi_GetFirstValueByName(name, &_ret));
-		return _ret;
+		Debug.OK((cast(Windows.Foundation.IWwwFormUrlDecoderRuntimeClass)this.asInterface(uuid("d45a0451-f225-4542-9296-0e1df5d254df"))).abi_GetFirstValueByName(hstring(name).handle, &_ret));
+		return hstring(_ret).d_str;
 	}
 	final void GetAt(uint index, Windows.Foundation.IWwwFormUrlDecoderEntry* out_item)
 	{
@@ -1015,11 +1015,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Foundation.Collections.IIterable!(Windows.Foundation.IWwwFormUrlDecoderEntry))this).abi_First(out_first));
 	}
-	static Windows.Foundation.WwwFormUrlDecoder New(HSTRING query)
+	static Windows.Foundation.WwwFormUrlDecoder New(wstring query)
 	{
 		auto factory = factory!(Windows.Foundation.IWwwFormUrlDecoderRuntimeClassFactory);
 		Windows.Foundation.WwwFormUrlDecoder _ret;
-		Debug.OK((cast(Windows.Foundation.IWwwFormUrlDecoderRuntimeClassFactory)factory.asInterface(uuid("5b8c6b3d-24ae-41b5-a1bf-f0c3d544845b"))).abi_CreateWwwFormUrlDecoder(query, &_ret));
+		Debug.OK((cast(Windows.Foundation.IWwwFormUrlDecoderRuntimeClassFactory)factory.asInterface(uuid("5b8c6b3d-24ae-41b5-a1bf-f0c3d544845b"))).abi_CreateWwwFormUrlDecoder(hstring(query).handle, &_ret));
 		return _ret;
 	}
 }
@@ -1027,17 +1027,17 @@ extern(Windows):
 interface WwwFormUrlDecoderEntry : Windows.Foundation.IWwwFormUrlDecoderEntry
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IWwwFormUrlDecoderEntry)this.asInterface(uuid("125e7431-f678-4e8e-b670-20a9b06c512d"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Value()
+	final wstring Value()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Foundation.IWwwFormUrlDecoderEntry)this.asInterface(uuid("125e7431-f678-4e8e-b670-20a9b06c512d"))).get_Value(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 

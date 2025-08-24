@@ -135,11 +135,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService)this.asInterface(uuid("ae81ff1f-c5a1-4c40-8c28-f3efd69062f3"))).get_ConnectionHostName(&_ret));
 		return _ret;
 	}
-	final HSTRING ConnectionServiceName()
+	final wstring ConnectionServiceName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceService)this.asInterface(uuid("ae81ff1f-c5a1-4c40-8c28-f3efd69062f3"))).get_ConnectionServiceName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId ServiceId()
 	{
@@ -201,17 +201,17 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Bluetooth.Rfcomm.IRfcommDeviceServiceStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService) FromIdAsync(HSTRING deviceId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService) FromIdAsync(wstring deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelector(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId serviceId)
+	static wstring GetDeviceSelector(Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId serviceId)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(serviceId, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -247,11 +247,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceId)this.asInterface(uuid("22629204-7e02-4017-8136-da1b6a1b9bbf"))).abi_AsShortId(&_ret));
 		return _ret;
 	}
-	final HSTRING AsString()
+	final wstring AsString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceId)this.asInterface(uuid("22629204-7e02-4017-8136-da1b6a1b9bbf"))).abi_AsString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 
 	private static Windows.Devices.Bluetooth.Rfcomm.IRfcommServiceIdStatics _staticInstance;

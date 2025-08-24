@@ -39,20 +39,20 @@ interface ContactPickerUI : Windows.ApplicationModel.Contacts.Provider.IContactP
 {
 extern(Windows):
 	deprecated("AddContact may be altered or unavailable for releases after Windows 8.1. Instead, use AddContact without the ID.")
-	final Windows.ApplicationModel.Contacts.Provider.AddContactResult AddContact(HSTRING id, Windows.ApplicationModel.Contacts.Contact contact)
+	final Windows.ApplicationModel.Contacts.Provider.AddContactResult AddContact(wstring id, Windows.ApplicationModel.Contacts.Contact contact)
 	{
 		Windows.ApplicationModel.Contacts.Provider.AddContactResult _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI)this.asInterface(uuid("e2cc1366-cf66-43c4-a96a-a5a112db4746"))).abi_AddContact(id, contact, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI)this.asInterface(uuid("e2cc1366-cf66-43c4-a96a-a5a112db4746"))).abi_AddContact(hstring(id).handle, contact, &_ret));
 		return _ret;
 	}
-	final void RemoveContact(HSTRING id)
+	final void RemoveContact(wstring id)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI)this.asInterface(uuid("e2cc1366-cf66-43c4-a96a-a5a112db4746"))).abi_RemoveContact(id));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI)this.asInterface(uuid("e2cc1366-cf66-43c4-a96a-a5a112db4746"))).abi_RemoveContact(hstring(id).handle));
 	}
-	final bool ContainsContact(HSTRING id)
+	final bool ContainsContact(wstring id)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI)this.asInterface(uuid("e2cc1366-cf66-43c4-a96a-a5a112db4746"))).abi_ContainsContact(id, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Contacts.Provider.IContactPickerUI)this.asInterface(uuid("e2cc1366-cf66-43c4-a96a-a5a112db4746"))).abi_ContainsContact(hstring(id).handle, &_ret));
 		return _ret;
 	}
 	deprecated("DesiredFields may be altered or unavailable for releases after Windows 8.1. Instead, use DesiredFieldsWithContactFieldType.")
@@ -95,11 +95,11 @@ extern(Windows):
 interface ContactRemovedEventArgs : Windows.ApplicationModel.Contacts.Provider.IContactRemovedEventArgs
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Contacts.Provider.IContactRemovedEventArgs)this.asInterface(uuid("6f354338-3302-4d13-ad8d-adcc0ff9e47c"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 

@@ -92,35 +92,35 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction)this.asInterface(uuid("62581da0-26a5-4e9b-a6eb-66606cf001d3"))).get_PaymentRequest(&_ret));
 		return _ret;
 	}
-	final HSTRING PayerEmail()
+	final wstring PayerEmail()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction)this.asInterface(uuid("62581da0-26a5-4e9b-a6eb-66606cf001d3"))).get_PayerEmail(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void PayerEmail(HSTRING value)
+	final void PayerEmail(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction)this.asInterface(uuid("62581da0-26a5-4e9b-a6eb-66606cf001d3"))).set_PayerEmail(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction)this.asInterface(uuid("62581da0-26a5-4e9b-a6eb-66606cf001d3"))).set_PayerEmail(hstring(value).handle));
 	}
-	final HSTRING PayerName()
+	final wstring PayerName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction)this.asInterface(uuid("62581da0-26a5-4e9b-a6eb-66606cf001d3"))).get_PayerName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void PayerName(HSTRING value)
+	final void PayerName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction)this.asInterface(uuid("62581da0-26a5-4e9b-a6eb-66606cf001d3"))).set_PayerName(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction)this.asInterface(uuid("62581da0-26a5-4e9b-a6eb-66606cf001d3"))).set_PayerName(hstring(value).handle));
 	}
-	final HSTRING PayerPhoneNumber()
+	final wstring PayerPhoneNumber()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction)this.asInterface(uuid("62581da0-26a5-4e9b-a6eb-66606cf001d3"))).get_PayerPhoneNumber(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void PayerPhoneNumber(HSTRING value)
+	final void PayerPhoneNumber(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction)this.asInterface(uuid("62581da0-26a5-4e9b-a6eb-66606cf001d3"))).set_PayerPhoneNumber(value));
+		Debug.OK((cast(Windows.ApplicationModel.Payments.Provider.IPaymentTransaction)this.asInterface(uuid("62581da0-26a5-4e9b-a6eb-66606cf001d3"))).set_PayerPhoneNumber(hstring(value).handle));
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.PaymentRequestChangedResult) UpdateShippingAddressAsync(Windows.ApplicationModel.Payments.PaymentAddress shippingAddress)
 	{
@@ -151,10 +151,10 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.ApplicationModel.Payments.Provider.IPaymentTransactionStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.Provider.PaymentTransaction) FromIdAsync(HSTRING id)
+	static Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.Provider.PaymentTransaction) FromIdAsync(wstring id)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Payments.Provider.PaymentTransaction) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(id, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(id).handle, &_ret));
 		return _ret;
 	}
 }

@@ -50,17 +50,17 @@ extern(Windows):
 interface ResourceLoader : Windows.ApplicationModel.Resources.IResourceLoader, Windows.ApplicationModel.Resources.IResourceLoader2
 {
 extern(Windows):
-	final HSTRING GetString(HSTRING resource)
+	final wstring GetString(wstring resource)
 	{
 		HSTRING _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Resources.IResourceLoader)this.asInterface(uuid("08524908-16ef-45ad-a602-293637d7e61a"))).abi_GetString(resource, &_ret));
-		return _ret;
+		Debug.OK((cast(Windows.ApplicationModel.Resources.IResourceLoader)this.asInterface(uuid("08524908-16ef-45ad-a602-293637d7e61a"))).abi_GetString(hstring(resource).handle, &_ret));
+		return hstring(_ret).d_str;
 	}
-	final HSTRING GetStringForUri(Windows.Foundation.Uri uri)
+	final wstring GetStringForUri(Windows.Foundation.Uri uri)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Resources.IResourceLoader2)this.asInterface(uuid("10eb6ec6-8138-48c1-bc65-e1f14207367c"))).abi_GetStringForUri(uri, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 
 	private static Windows.ApplicationModel.Resources.IResourceLoaderStatics _staticInstance;
@@ -70,11 +70,11 @@ extern(Windows):
 		return _staticInstance;
 	}
 	deprecated("GetStringForReference may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use GetStringForUri.")
-	static HSTRING GetStringForReference(Windows.Foundation.Uri uri)
+	static wstring GetStringForReference(Windows.Foundation.Uri uri)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetStringForReference(uri, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static ResourceLoader New()
 	{
@@ -83,11 +83,11 @@ extern(Windows):
 		return cast(ResourceLoader) ret;
 	}
 	deprecated("ResourceLoader may be altered or unavailable for releases after Windows 8.1. Instead, use GetForCurrentView.")
-	static Windows.ApplicationModel.Resources.ResourceLoader New(HSTRING name)
+	static Windows.ApplicationModel.Resources.ResourceLoader New(wstring name)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Resources.IResourceLoaderFactory);
 		Windows.ApplicationModel.Resources.ResourceLoader _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Resources.IResourceLoaderFactory)factory.asInterface(uuid("c33a3603-69dc-4285-a077-d5c0e47ccbe8"))).abi_CreateResourceLoaderByName(name, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Resources.IResourceLoaderFactory)factory.asInterface(uuid("c33a3603-69dc-4285-a077-d5c0e47ccbe8"))).abi_CreateResourceLoaderByName(hstring(name).handle, &_ret));
 		return _ret;
 	}
 }

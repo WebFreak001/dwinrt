@@ -654,36 +654,36 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Usb.IUsbDeviceStatics);
 		return _staticInstance;
 	}
-	static HSTRING GetDeviceSelector(UINT32 vendorId, UINT32 productId, GUID winUsbInterfaceClass)
+	static wstring GetDeviceSelector(UINT32 vendorId, UINT32 productId, GUID winUsbInterfaceClass)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(vendorId, productId, winUsbInterfaceClass, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GetDeviceSelectorGuidOnly(GUID winUsbInterfaceClass)
+	static wstring GetDeviceSelectorGuidOnly(GUID winUsbInterfaceClass)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelectorGuidOnly(winUsbInterfaceClass, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	alias GetDeviceSelector = GetDeviceSelectorGuidOnly;
-	static HSTRING GetDeviceSelectorVidPidOnly(UINT32 vendorId, UINT32 productId)
+	static wstring GetDeviceSelectorVidPidOnly(UINT32 vendorId, UINT32 productId)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelectorVidPidOnly(vendorId, productId, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	alias GetDeviceSelector = GetDeviceSelectorVidPidOnly;
-	static HSTRING GetDeviceClassSelector(Windows.Devices.Usb.UsbDeviceClass usbClass)
+	static wstring GetDeviceClassSelector(Windows.Devices.Usb.UsbDeviceClass usbClass)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceClassSelector(usbClass, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Usb.UsbDevice) FromIdAsync(HSTRING deviceId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Usb.UsbDevice) FromIdAsync(wstring deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Usb.UsbDevice) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
 }

@@ -229,22 +229,22 @@ interface WebAuthenticationCoreManager
 		return _ret;
 	}
 	alias RequestTokenAsync = RequestTokenWithWebAccountAsync;
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount) FindAccountAsync(Windows.Security.Credentials.WebAccountProvider provider, HSTRING webAccountId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount) FindAccountAsync(Windows.Security.Credentials.WebAccountProvider provider, wstring webAccountId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccount) _ret;
-		Debug.OK(staticInstance.abi_FindAccountAsync(provider, webAccountId, &_ret));
+		Debug.OK(staticInstance.abi_FindAccountAsync(provider, hstring(webAccountId).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccountProvider) FindAccountProviderAsync(HSTRING webAccountProviderId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccountProvider) FindAccountProviderAsync(wstring webAccountProviderId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccountProvider) _ret;
-		Debug.OK(staticInstance.abi_FindAccountProviderAsync(webAccountProviderId, &_ret));
+		Debug.OK(staticInstance.abi_FindAccountProviderAsync(hstring(webAccountProviderId).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccountProvider) FindAccountProviderWithAuthorityAsync(HSTRING webAccountProviderId, HSTRING authority)
+	static Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccountProvider) FindAccountProviderWithAuthorityAsync(wstring webAccountProviderId, wstring authority)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Security.Credentials.WebAccountProvider) _ret;
-		Debug.OK(staticInstance.abi_FindAccountProviderWithAuthorityAsync(webAccountProviderId, authority, &_ret));
+		Debug.OK(staticInstance.abi_FindAccountProviderWithAuthorityAsync(hstring(webAccountProviderId).handle, hstring(authority).handle, &_ret));
 		return _ret;
 	}
 	alias FindAccountProviderAsync = FindAccountProviderWithAuthorityAsync;
@@ -259,11 +259,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebProviderError)this.asInterface(uuid("db191bb1-50c5-4809-8dca-09c99410245c"))).get_ErrorCode(&_ret));
 		return _ret;
 	}
-	final HSTRING ErrorMessage()
+	final wstring ErrorMessage()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebProviderError)this.asInterface(uuid("db191bb1-50c5-4809-8dca-09c99410245c"))).get_ErrorMessage(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) Properties()
 	{
@@ -271,11 +271,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebProviderError)this.asInterface(uuid("db191bb1-50c5-4809-8dca-09c99410245c"))).get_Properties(&_ret));
 		return _ret;
 	}
-	static Windows.Security.Authentication.Web.Core.WebProviderError New(UINT32 errorCode, HSTRING errorMessage)
+	static Windows.Security.Authentication.Web.Core.WebProviderError New(UINT32 errorCode, wstring errorMessage)
 	{
 		auto factory = factory!(Windows.Security.Authentication.Web.Core.IWebProviderErrorFactory);
 		Windows.Security.Authentication.Web.Core.WebProviderError _ret;
-		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebProviderErrorFactory)factory.asInterface(uuid("e3c40a2d-89ef-4e37-847f-a8b9d5a32910"))).abi_Create(errorCode, errorMessage, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebProviderErrorFactory)factory.asInterface(uuid("e3c40a2d-89ef-4e37-847f-a8b9d5a32910"))).abi_Create(errorCode, hstring(errorMessage).handle, &_ret));
 		return _ret;
 	}
 }
@@ -289,17 +289,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebTokenRequest)this.asInterface(uuid("b77b4d68-adcb-4673-b364-0cf7b35caf97"))).get_WebAccountProvider(&_ret));
 		return _ret;
 	}
-	final HSTRING Scope()
+	final wstring Scope()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebTokenRequest)this.asInterface(uuid("b77b4d68-adcb-4673-b364-0cf7b35caf97"))).get_Scope(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ClientId()
+	final wstring ClientId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebTokenRequest)this.asInterface(uuid("b77b4d68-adcb-4673-b364-0cf7b35caf97"))).get_ClientId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Security.Authentication.Web.Core.WebTokenRequestPromptType PromptType()
 	{
@@ -319,28 +319,28 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebTokenRequest2)this.asInterface(uuid("d700c079-30c8-4397-9654-961c3be8b855"))).get_AppProperties(&_ret));
 		return _ret;
 	}
-	final HSTRING CorrelationId()
+	final wstring CorrelationId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebTokenRequest3)this.asInterface(uuid("5a755b51-3bb1-41a5-a63d-90bc32c7db9a"))).get_CorrelationId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void CorrelationId(HSTRING value)
+	final void CorrelationId(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebTokenRequest3)this.asInterface(uuid("5a755b51-3bb1-41a5-a63d-90bc32c7db9a"))).set_CorrelationId(value));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebTokenRequest3)this.asInterface(uuid("5a755b51-3bb1-41a5-a63d-90bc32c7db9a"))).set_CorrelationId(hstring(value).handle));
 	}
-	static Windows.Security.Authentication.Web.Core.WebTokenRequest New(Windows.Security.Credentials.WebAccountProvider provider, HSTRING scope_, HSTRING clientId)
-	{
-		auto factory = factory!(Windows.Security.Authentication.Web.Core.IWebTokenRequestFactory);
-		Windows.Security.Authentication.Web.Core.WebTokenRequest _ret;
-		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebTokenRequestFactory)factory.asInterface(uuid("6cf2141c-0ff0-4c67-b84f-99ddbe4a72c9"))).abi_Create(provider, scope_, clientId, &_ret));
-		return _ret;
-	}
-	static Windows.Security.Authentication.Web.Core.WebTokenRequest New(Windows.Security.Credentials.WebAccountProvider provider, HSTRING scope_, HSTRING clientId, Windows.Security.Authentication.Web.Core.WebTokenRequestPromptType promptType)
+	static Windows.Security.Authentication.Web.Core.WebTokenRequest New(Windows.Security.Credentials.WebAccountProvider provider, wstring scope_, wstring clientId)
 	{
 		auto factory = factory!(Windows.Security.Authentication.Web.Core.IWebTokenRequestFactory);
 		Windows.Security.Authentication.Web.Core.WebTokenRequest _ret;
-		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebTokenRequestFactory)factory.asInterface(uuid("6cf2141c-0ff0-4c67-b84f-99ddbe4a72c9"))).abi_CreateWithPromptType(provider, scope_, clientId, promptType, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebTokenRequestFactory)factory.asInterface(uuid("6cf2141c-0ff0-4c67-b84f-99ddbe4a72c9"))).abi_Create(provider, hstring(scope_).handle, hstring(clientId).handle, &_ret));
+		return _ret;
+	}
+	static Windows.Security.Authentication.Web.Core.WebTokenRequest New(Windows.Security.Credentials.WebAccountProvider provider, wstring scope_, wstring clientId, Windows.Security.Authentication.Web.Core.WebTokenRequestPromptType promptType)
+	{
+		auto factory = factory!(Windows.Security.Authentication.Web.Core.IWebTokenRequestFactory);
+		Windows.Security.Authentication.Web.Core.WebTokenRequest _ret;
+		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebTokenRequestFactory)factory.asInterface(uuid("6cf2141c-0ff0-4c67-b84f-99ddbe4a72c9"))).abi_CreateWithPromptType(provider, hstring(scope_).handle, hstring(clientId).handle, promptType, &_ret));
 		return _ret;
 	}
 	static Windows.Security.Authentication.Web.Core.WebTokenRequest New(Windows.Security.Credentials.WebAccountProvider provider)
@@ -350,11 +350,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebTokenRequestFactory)factory.asInterface(uuid("6cf2141c-0ff0-4c67-b84f-99ddbe4a72c9"))).abi_CreateWithProvider(provider, &_ret));
 		return _ret;
 	}
-	static Windows.Security.Authentication.Web.Core.WebTokenRequest New(Windows.Security.Credentials.WebAccountProvider provider, HSTRING scope_)
+	static Windows.Security.Authentication.Web.Core.WebTokenRequest New(Windows.Security.Credentials.WebAccountProvider provider, wstring scope_)
 	{
 		auto factory = factory!(Windows.Security.Authentication.Web.Core.IWebTokenRequestFactory);
 		Windows.Security.Authentication.Web.Core.WebTokenRequest _ret;
-		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebTokenRequestFactory)factory.asInterface(uuid("6cf2141c-0ff0-4c67-b84f-99ddbe4a72c9"))).abi_CreateWithScope(provider, scope_, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebTokenRequestFactory)factory.asInterface(uuid("6cf2141c-0ff0-4c67-b84f-99ddbe4a72c9"))).abi_CreateWithScope(provider, hstring(scope_).handle, &_ret));
 		return _ret;
 	}
 }
@@ -391,11 +391,11 @@ extern(Windows):
 interface WebTokenResponse : Windows.Security.Authentication.Web.Core.IWebTokenResponse
 {
 extern(Windows):
-	final HSTRING Token()
+	final wstring Token()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebTokenResponse)this.asInterface(uuid("67a7c5ca-83f6-44c6-a3b1-0eb69e41fa8a"))).get_Token(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Security.Authentication.Web.Core.WebProviderError ProviderError()
 	{
@@ -421,25 +421,25 @@ extern(Windows):
 		Debug.OK(activationFactory!(WebTokenResponse).abi_ActivateInstance(&ret));
 		return cast(WebTokenResponse) ret;
 	}
-	static Windows.Security.Authentication.Web.Core.WebTokenResponse New(HSTRING token)
+	static Windows.Security.Authentication.Web.Core.WebTokenResponse New(wstring token)
 	{
 		auto factory = factory!(Windows.Security.Authentication.Web.Core.IWebTokenResponseFactory);
 		Windows.Security.Authentication.Web.Core.WebTokenResponse _ret;
-		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebTokenResponseFactory)factory.asInterface(uuid("ab6bf7f8-5450-4ef6-97f7-052b0431c0f0"))).abi_CreateWithToken(token, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebTokenResponseFactory)factory.asInterface(uuid("ab6bf7f8-5450-4ef6-97f7-052b0431c0f0"))).abi_CreateWithToken(hstring(token).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Security.Authentication.Web.Core.WebTokenResponse New(HSTRING token, Windows.Security.Credentials.WebAccount webAccount)
+	static Windows.Security.Authentication.Web.Core.WebTokenResponse New(wstring token, Windows.Security.Credentials.WebAccount webAccount)
 	{
 		auto factory = factory!(Windows.Security.Authentication.Web.Core.IWebTokenResponseFactory);
 		Windows.Security.Authentication.Web.Core.WebTokenResponse _ret;
-		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebTokenResponseFactory)factory.asInterface(uuid("ab6bf7f8-5450-4ef6-97f7-052b0431c0f0"))).abi_CreateWithTokenAndAccount(token, webAccount, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebTokenResponseFactory)factory.asInterface(uuid("ab6bf7f8-5450-4ef6-97f7-052b0431c0f0"))).abi_CreateWithTokenAndAccount(hstring(token).handle, webAccount, &_ret));
 		return _ret;
 	}
-	static Windows.Security.Authentication.Web.Core.WebTokenResponse New(HSTRING token, Windows.Security.Credentials.WebAccount webAccount, Windows.Security.Authentication.Web.Core.WebProviderError error)
+	static Windows.Security.Authentication.Web.Core.WebTokenResponse New(wstring token, Windows.Security.Credentials.WebAccount webAccount, Windows.Security.Authentication.Web.Core.WebProviderError error)
 	{
 		auto factory = factory!(Windows.Security.Authentication.Web.Core.IWebTokenResponseFactory);
 		Windows.Security.Authentication.Web.Core.WebTokenResponse _ret;
-		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebTokenResponseFactory)factory.asInterface(uuid("ab6bf7f8-5450-4ef6-97f7-052b0431c0f0"))).abi_CreateWithTokenAccountAndError(token, webAccount, error, &_ret));
+		Debug.OK((cast(Windows.Security.Authentication.Web.Core.IWebTokenResponseFactory)factory.asInterface(uuid("ab6bf7f8-5450-4ef6-97f7-052b0431c0f0"))).abi_CreateWithTokenAccountAndError(hstring(token).handle, webAccount, error, &_ret));
 		return _ret;
 	}
 }

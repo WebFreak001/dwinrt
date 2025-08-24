@@ -132,25 +132,25 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Hosting.IXamlUIPresenter)this.asInterface(uuid("a714944a-1619-4fc6-b31b-89512ef022a2"))).set_RootElement(value));
 	}
-	final HSTRING ThemeKey()
+	final wstring ThemeKey()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Hosting.IXamlUIPresenter)this.asInterface(uuid("a714944a-1619-4fc6-b31b-89512ef022a2"))).get_ThemeKey(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ThemeKey(HSTRING value)
+	final void ThemeKey(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Hosting.IXamlUIPresenter)this.asInterface(uuid("a714944a-1619-4fc6-b31b-89512ef022a2"))).set_ThemeKey(value));
+		Debug.OK((cast(Windows.UI.Xaml.Hosting.IXamlUIPresenter)this.asInterface(uuid("a714944a-1619-4fc6-b31b-89512ef022a2"))).set_ThemeKey(hstring(value).handle));
 	}
-	final HSTRING ThemeResourcesXaml()
+	final wstring ThemeResourcesXaml()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Hosting.IXamlUIPresenter)this.asInterface(uuid("a714944a-1619-4fc6-b31b-89512ef022a2"))).get_ThemeResourcesXaml(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ThemeResourcesXaml(HSTRING value)
+	final void ThemeResourcesXaml(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Hosting.IXamlUIPresenter)this.asInterface(uuid("a714944a-1619-4fc6-b31b-89512ef022a2"))).set_ThemeResourcesXaml(value));
+		Debug.OK((cast(Windows.UI.Xaml.Hosting.IXamlUIPresenter)this.asInterface(uuid("a714944a-1619-4fc6-b31b-89512ef022a2"))).set_ThemeResourcesXaml(hstring(value).handle));
 	}
 	final void SetSize(INT32 width, INT32 height)
 	{

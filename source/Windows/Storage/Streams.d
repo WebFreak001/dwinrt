@@ -363,11 +363,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Storage.Streams.IDataReader)this.asInterface(uuid("e2b50029-b4c1-4314-a4b8-fb813a2f275e"))).abi_ReadDouble(&_ret));
 		return _ret;
 	}
-	final HSTRING ReadString(UINT32 codeUnitCount)
+	final wstring ReadString(UINT32 codeUnitCount)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Storage.Streams.IDataReader)this.asInterface(uuid("e2b50029-b4c1-4314-a4b8-fb813a2f275e"))).abi_ReadString(codeUnitCount, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.DateTime ReadDateTime()
 	{
@@ -540,16 +540,16 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Storage.Streams.IDataWriter)this.asInterface(uuid("64b89265-d341-4922-b38a-dd4af8808c4e"))).abi_WriteTimeSpan(value));
 	}
-	final UINT32 WriteString(HSTRING value)
+	final UINT32 WriteString(wstring value)
 	{
 		UINT32 _ret;
-		Debug.OK((cast(Windows.Storage.Streams.IDataWriter)this.asInterface(uuid("64b89265-d341-4922-b38a-dd4af8808c4e"))).abi_WriteString(value, &_ret));
+		Debug.OK((cast(Windows.Storage.Streams.IDataWriter)this.asInterface(uuid("64b89265-d341-4922-b38a-dd4af8808c4e"))).abi_WriteString(hstring(value).handle, &_ret));
 		return _ret;
 	}
-	final UINT32 MeasureString(HSTRING value)
+	final UINT32 MeasureString(wstring value)
 	{
 		UINT32 _ret;
-		Debug.OK((cast(Windows.Storage.Streams.IDataWriter)this.asInterface(uuid("64b89265-d341-4922-b38a-dd4af8808c4e"))).abi_MeasureString(value, &_ret));
+		Debug.OK((cast(Windows.Storage.Streams.IDataWriter)this.asInterface(uuid("64b89265-d341-4922-b38a-dd4af8808c4e"))).abi_MeasureString(hstring(value).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Storage.Streams.DataWriterStoreOperation StoreAsync()

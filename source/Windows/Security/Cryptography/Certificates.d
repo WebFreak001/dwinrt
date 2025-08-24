@@ -539,10 +539,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificate)this.asInterface(uuid("333f740c-04d8-43b3-b278-8c5fcc9be5a0"))).abi_GetHashValue(out___valueSize, &_ret));
 		return _ret;
 	}
-	final ubyte* GetHashValueWithAlgorithm(HSTRING hashAlgorithmName, UINT32* out___valueSize)
+	final ubyte* GetHashValueWithAlgorithm(wstring hashAlgorithmName, UINT32* out___valueSize)
 	{
 		ubyte* _ret;
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificate)this.asInterface(uuid("333f740c-04d8-43b3-b278-8c5fcc9be5a0"))).abi_GetHashValueWithAlgorithm(hashAlgorithmName, out___valueSize, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificate)this.asInterface(uuid("333f740c-04d8-43b3-b278-8c5fcc9be5a0"))).abi_GetHashValueWithAlgorithm(hstring(hashAlgorithmName).handle, out___valueSize, &_ret));
 		return _ret;
 	}
 	alias GetHashValue = GetHashValueWithAlgorithm;
@@ -552,17 +552,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificate)this.asInterface(uuid("333f740c-04d8-43b3-b278-8c5fcc9be5a0"))).abi_GetCertificateBlob(&_ret));
 		return _ret;
 	}
-	final HSTRING Subject()
+	final wstring Subject()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificate)this.asInterface(uuid("333f740c-04d8-43b3-b278-8c5fcc9be5a0"))).get_Subject(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Issuer()
+	final wstring Issuer()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificate)this.asInterface(uuid("333f740c-04d8-43b3-b278-8c5fcc9be5a0"))).get_Issuer(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool HasPrivateKey()
 	{
@@ -594,15 +594,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificate)this.asInterface(uuid("333f740c-04d8-43b3-b278-8c5fcc9be5a0"))).get_EnhancedKeyUsages(&_ret));
 		return _ret;
 	}
-	final void FriendlyName(HSTRING value)
+	final void FriendlyName(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificate)this.asInterface(uuid("333f740c-04d8-43b3-b278-8c5fcc9be5a0"))).set_FriendlyName(value));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificate)this.asInterface(uuid("333f740c-04d8-43b3-b278-8c5fcc9be5a0"))).set_FriendlyName(hstring(value).handle));
 	}
-	final HSTRING FriendlyName()
+	final wstring FriendlyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificate)this.asInterface(uuid("333f740c-04d8-43b3-b278-8c5fcc9be5a0"))).get_FriendlyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsSecurityDeviceBound()
 	{
@@ -616,23 +616,23 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificate2)this.asInterface(uuid("17b8374c-8a25-4d96-a492-8fc29ac4fda6"))).get_KeyUsages(&_ret));
 		return _ret;
 	}
-	final HSTRING KeyAlgorithmName()
+	final wstring KeyAlgorithmName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificate2)this.asInterface(uuid("17b8374c-8a25-4d96-a492-8fc29ac4fda6"))).get_KeyAlgorithmName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING SignatureAlgorithmName()
+	final wstring SignatureAlgorithmName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificate2)this.asInterface(uuid("17b8374c-8a25-4d96-a492-8fc29ac4fda6"))).get_SignatureAlgorithmName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING SignatureHashAlgorithmName()
+	final wstring SignatureHashAlgorithmName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificate2)this.asInterface(uuid("17b8374c-8a25-4d96-a492-8fc29ac4fda6"))).get_SignatureHashAlgorithmName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Security.Cryptography.Certificates.SubjectAlternativeNameInfo SubjectAlternativeName()
 	{
@@ -646,17 +646,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificate3)this.asInterface(uuid("be51a966-ae5f-4652-ace7-c6d7e7724cf3"))).get_IsPerUser(&_ret));
 		return _ret;
 	}
-	final HSTRING StoreName()
+	final wstring StoreName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificate3)this.asInterface(uuid("be51a966-ae5f-4652-ace7-c6d7e7724cf3"))).get_StoreName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING KeyStorageProviderName()
+	final wstring KeyStorageProviderName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificate3)this.asInterface(uuid("be51a966-ae5f-4652-ace7-c6d7e7724cf3"))).get_KeyStorageProviderName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static Windows.Security.Cryptography.Certificates.Certificate New(Windows.Storage.Streams.IBuffer certBlob)
 	{
@@ -705,16 +705,16 @@ interface CertificateEnrollmentManager
 		Debug.OK(staticInstance.abi_CreateRequestAsync(request, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncAction InstallCertificateAsync(HSTRING certificate, Windows.Security.Cryptography.Certificates.InstallOptions installOption)
+	static Windows.Foundation.IAsyncAction InstallCertificateAsync(wstring certificate, Windows.Security.Cryptography.Certificates.InstallOptions installOption)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.abi_InstallCertificateAsync(certificate, installOption, &_ret));
+		Debug.OK(staticInstance.abi_InstallCertificateAsync(hstring(certificate).handle, installOption, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncAction ImportPfxDataAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.ExportOption exportable, Windows.Security.Cryptography.Certificates.KeyProtectionLevel keyProtectionLevel, Windows.Security.Cryptography.Certificates.InstallOptions installOption, HSTRING friendlyName)
+	static Windows.Foundation.IAsyncAction ImportPfxDataAsync(wstring pfxData, wstring password, Windows.Security.Cryptography.Certificates.ExportOption exportable, Windows.Security.Cryptography.Certificates.KeyProtectionLevel keyProtectionLevel, Windows.Security.Cryptography.Certificates.InstallOptions installOption, wstring friendlyName)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK(staticInstance.abi_ImportPfxDataAsync(pfxData, password, exportable, keyProtectionLevel, installOption, friendlyName, &_ret));
+		Debug.OK(staticInstance.abi_ImportPfxDataAsync(hstring(pfxData).handle, hstring(password).handle, exportable, keyProtectionLevel, installOption, hstring(friendlyName).handle, &_ret));
 		return _ret;
 	}
 }
@@ -722,15 +722,15 @@ interface CertificateEnrollmentManager
 interface CertificateExtension : Windows.Security.Cryptography.Certificates.ICertificateExtension
 {
 extern(Windows):
-	final HSTRING ObjectId()
+	final wstring ObjectId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateExtension)this.asInterface(uuid("84cf0656-a9e6-454d-8e45-2ea7c4bcd53b"))).get_ObjectId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ObjectId(HSTRING value)
+	final void ObjectId(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateExtension)this.asInterface(uuid("84cf0656-a9e6-454d-8e45-2ea7c4bcd53b"))).set_ObjectId(value));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateExtension)this.asInterface(uuid("84cf0656-a9e6-454d-8e45-2ea7c4bcd53b"))).set_ObjectId(hstring(value).handle));
 	}
 	final bool IsCritical()
 	{
@@ -742,9 +742,9 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateExtension)this.asInterface(uuid("84cf0656-a9e6-454d-8e45-2ea7c4bcd53b"))).set_IsCritical(value));
 	}
-	final void EncodeValue(HSTRING value)
+	final void EncodeValue(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateExtension)this.asInterface(uuid("84cf0656-a9e6-454d-8e45-2ea7c4bcd53b"))).abi_EncodeValue(value));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateExtension)this.asInterface(uuid("84cf0656-a9e6-454d-8e45-2ea7c4bcd53b"))).abi_EncodeValue(hstring(value).handle));
 	}
 	final ubyte* Value(UINT32* out___valueSize)
 	{
@@ -864,25 +864,25 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateQuery)this.asInterface(uuid("5b082a31-a728-4916-b5ee-ffcb8acf2417"))).get_EnhancedKeyUsages(&_ret));
 		return _ret;
 	}
-	final HSTRING IssuerName()
+	final wstring IssuerName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateQuery)this.asInterface(uuid("5b082a31-a728-4916-b5ee-ffcb8acf2417"))).get_IssuerName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void IssuerName(HSTRING value)
+	final void IssuerName(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateQuery)this.asInterface(uuid("5b082a31-a728-4916-b5ee-ffcb8acf2417"))).set_IssuerName(value));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateQuery)this.asInterface(uuid("5b082a31-a728-4916-b5ee-ffcb8acf2417"))).set_IssuerName(hstring(value).handle));
 	}
-	final HSTRING FriendlyName()
+	final wstring FriendlyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateQuery)this.asInterface(uuid("5b082a31-a728-4916-b5ee-ffcb8acf2417"))).get_FriendlyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void FriendlyName(HSTRING value)
+	final void FriendlyName(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateQuery)this.asInterface(uuid("5b082a31-a728-4916-b5ee-ffcb8acf2417"))).set_FriendlyName(value));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateQuery)this.asInterface(uuid("5b082a31-a728-4916-b5ee-ffcb8acf2417"))).set_FriendlyName(hstring(value).handle));
 	}
 	final ubyte* Thumbprint(UINT32* out___valueSize)
 	{
@@ -924,15 +924,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateQuery2)this.asInterface(uuid("935a0af7-0bd9-4f75-b8c2-e27a7f74eecd"))).set_IncludeExpiredCertificates(value));
 	}
-	final HSTRING StoreName()
+	final wstring StoreName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateQuery2)this.asInterface(uuid("935a0af7-0bd9-4f75-b8c2-e27a7f74eecd"))).get_StoreName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void StoreName(HSTRING value)
+	final void StoreName(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateQuery2)this.asInterface(uuid("935a0af7-0bd9-4f75-b8c2-e27a7f74eecd"))).set_StoreName(value));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateQuery2)this.asInterface(uuid("935a0af7-0bd9-4f75-b8c2-e27a7f74eecd"))).set_StoreName(hstring(value).handle));
 	}
 	static CertificateQuery New()
 	{
@@ -945,25 +945,25 @@ extern(Windows):
 interface CertificateRequestProperties : Windows.Security.Cryptography.Certificates.ICertificateRequestProperties, Windows.Security.Cryptography.Certificates.ICertificateRequestProperties2, Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3, Windows.Security.Cryptography.Certificates.ICertificateRequestProperties4
 {
 extern(Windows):
-	final HSTRING Subject()
+	final wstring Subject()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties)this.asInterface(uuid("487e84f6-94e2-4dce-8833-1a700a37a29a"))).get_Subject(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Subject(HSTRING value)
+	final void Subject(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties)this.asInterface(uuid("487e84f6-94e2-4dce-8833-1a700a37a29a"))).set_Subject(value));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties)this.asInterface(uuid("487e84f6-94e2-4dce-8833-1a700a37a29a"))).set_Subject(hstring(value).handle));
 	}
-	final HSTRING KeyAlgorithmName()
+	final wstring KeyAlgorithmName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties)this.asInterface(uuid("487e84f6-94e2-4dce-8833-1a700a37a29a"))).get_KeyAlgorithmName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void KeyAlgorithmName(HSTRING value)
+	final void KeyAlgorithmName(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties)this.asInterface(uuid("487e84f6-94e2-4dce-8833-1a700a37a29a"))).set_KeyAlgorithmName(value));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties)this.asInterface(uuid("487e84f6-94e2-4dce-8833-1a700a37a29a"))).set_KeyAlgorithmName(hstring(value).handle));
 	}
 	final UINT32 KeySize()
 	{
@@ -975,25 +975,25 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties)this.asInterface(uuid("487e84f6-94e2-4dce-8833-1a700a37a29a"))).set_KeySize(value));
 	}
-	final HSTRING FriendlyName()
+	final wstring FriendlyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties)this.asInterface(uuid("487e84f6-94e2-4dce-8833-1a700a37a29a"))).get_FriendlyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void FriendlyName(HSTRING value)
+	final void FriendlyName(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties)this.asInterface(uuid("487e84f6-94e2-4dce-8833-1a700a37a29a"))).set_FriendlyName(value));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties)this.asInterface(uuid("487e84f6-94e2-4dce-8833-1a700a37a29a"))).set_FriendlyName(hstring(value).handle));
 	}
-	final HSTRING HashAlgorithmName()
+	final wstring HashAlgorithmName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties)this.asInterface(uuid("487e84f6-94e2-4dce-8833-1a700a37a29a"))).get_HashAlgorithmName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void HashAlgorithmName(HSTRING value)
+	final void HashAlgorithmName(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties)this.asInterface(uuid("487e84f6-94e2-4dce-8833-1a700a37a29a"))).set_HashAlgorithmName(value));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties)this.asInterface(uuid("487e84f6-94e2-4dce-8833-1a700a37a29a"))).set_HashAlgorithmName(hstring(value).handle));
 	}
 	final Windows.Security.Cryptography.Certificates.ExportOption Exportable()
 	{
@@ -1025,25 +1025,25 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties)this.asInterface(uuid("487e84f6-94e2-4dce-8833-1a700a37a29a"))).set_KeyProtectionLevel(value));
 	}
-	final HSTRING KeyStorageProviderName()
+	final wstring KeyStorageProviderName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties)this.asInterface(uuid("487e84f6-94e2-4dce-8833-1a700a37a29a"))).get_KeyStorageProviderName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void KeyStorageProviderName(HSTRING value)
+	final void KeyStorageProviderName(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties)this.asInterface(uuid("487e84f6-94e2-4dce-8833-1a700a37a29a"))).set_KeyStorageProviderName(value));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties)this.asInterface(uuid("487e84f6-94e2-4dce-8833-1a700a37a29a"))).set_KeyStorageProviderName(hstring(value).handle));
 	}
-	final HSTRING SmartcardReaderName()
+	final wstring SmartcardReaderName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties2)this.asInterface(uuid("3da0c954-d73f-4ff3-a0a6-0677c0ada05b"))).get_SmartcardReaderName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void SmartcardReaderName(HSTRING value)
+	final void SmartcardReaderName(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties2)this.asInterface(uuid("3da0c954-d73f-4ff3-a0a6-0677c0ada05b"))).set_SmartcardReaderName(value));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties2)this.asInterface(uuid("3da0c954-d73f-4ff3-a0a6-0677c0ada05b"))).set_SmartcardReaderName(hstring(value).handle));
 	}
 	final Windows.Security.Cryptography.Certificates.Certificate SigningCertificate()
 	{
@@ -1065,15 +1065,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties2)this.asInterface(uuid("3da0c954-d73f-4ff3-a0a6-0677c0ada05b"))).set_AttestationCredentialCertificate(value));
 	}
-	final HSTRING CurveName()
+	final wstring CurveName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3)this.asInterface(uuid("e687f616-734d-46b1-9d4c-6edfdbfc845b"))).get_CurveName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void CurveName(HSTRING value)
+	final void CurveName(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3)this.asInterface(uuid("e687f616-734d-46b1-9d4c-6edfdbfc845b"))).set_CurveName(value));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3)this.asInterface(uuid("e687f616-734d-46b1-9d4c-6edfdbfc845b"))).set_CurveName(hstring(value).handle));
 	}
 	final ubyte* CurveParameters(UINT32* out___valueSize)
 	{
@@ -1085,25 +1085,25 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3)this.asInterface(uuid("e687f616-734d-46b1-9d4c-6edfdbfc845b"))).set_CurveParameters(__valueSize, value));
 	}
-	final HSTRING ContainerNamePrefix()
+	final wstring ContainerNamePrefix()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3)this.asInterface(uuid("e687f616-734d-46b1-9d4c-6edfdbfc845b"))).get_ContainerNamePrefix(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ContainerNamePrefix(HSTRING value)
+	final void ContainerNamePrefix(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3)this.asInterface(uuid("e687f616-734d-46b1-9d4c-6edfdbfc845b"))).set_ContainerNamePrefix(value));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3)this.asInterface(uuid("e687f616-734d-46b1-9d4c-6edfdbfc845b"))).set_ContainerNamePrefix(hstring(value).handle));
 	}
-	final HSTRING ContainerName()
+	final wstring ContainerName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3)this.asInterface(uuid("e687f616-734d-46b1-9d4c-6edfdbfc845b"))).get_ContainerName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ContainerName(HSTRING value)
+	final void ContainerName(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3)this.asInterface(uuid("e687f616-734d-46b1-9d4c-6edfdbfc845b"))).set_ContainerName(value));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateRequestProperties3)this.asInterface(uuid("e687f616-734d-46b1-9d4c-6edfdbfc845b"))).set_ContainerName(hstring(value).handle));
 	}
 	final bool UseExistingKey()
 	{
@@ -1152,11 +1152,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateStore)this.asInterface(uuid("b0bff720-344e-4331-af14-a7f7a7ebc93a"))).abi_Delete(certificate));
 	}
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICertificateStore2)this.asInterface(uuid("c7e68e4a-417d-4d1a-babd-15687e549974"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -1193,10 +1193,10 @@ interface CertificateStores
 		Debug.OK(staticInstance.get_IntermediateCertificationAuthorities(&_ret));
 		return _ret;
 	}
-	static Windows.Security.Cryptography.Certificates.CertificateStore GetStoreByName(HSTRING storeName)
+	static Windows.Security.Cryptography.Certificates.CertificateStore GetStoreByName(wstring storeName)
 	{
 		Windows.Security.Cryptography.Certificates.CertificateStore _ret;
-		Debug.OK(staticInstance.abi_GetStoreByName(storeName, &_ret));
+		Debug.OK(staticInstance.abi_GetStoreByName(hstring(storeName).handle, &_ret));
 		return _ret;
 	}
 }
@@ -1410,15 +1410,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICmsSignerInfo)this.asInterface(uuid("50d020db-1d2f-4c1a-b5c5-d0188ff91f47"))).set_Certificate(value));
 	}
-	final HSTRING HashAlgorithmName()
+	final wstring HashAlgorithmName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICmsSignerInfo)this.asInterface(uuid("50d020db-1d2f-4c1a-b5c5-d0188ff91f47"))).get_HashAlgorithmName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void HashAlgorithmName(HSTRING value)
+	final void HashAlgorithmName(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICmsSignerInfo)this.asInterface(uuid("50d020db-1d2f-4c1a-b5c5-d0188ff91f47"))).set_HashAlgorithmName(value));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.ICmsSignerInfo)this.asInterface(uuid("50d020db-1d2f-4c1a-b5c5-d0188ff91f47"))).set_HashAlgorithmName(hstring(value).handle));
 	}
 	final Windows.Security.Cryptography.Certificates.CmsTimestampInfo TimestampInfo()
 	{
@@ -1465,53 +1465,53 @@ interface KeyAlgorithmNames
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Certificates.IKeyAlgorithmNamesStatics);
 		return _staticInstance;
 	}
-	static HSTRING Rsa()
+	static wstring Rsa()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Rsa(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Dsa()
+	static wstring Dsa()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Dsa(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Ecdh256()
+	static wstring Ecdh256()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Ecdh256(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Ecdh384()
+	static wstring Ecdh384()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Ecdh384(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Ecdh521()
+	static wstring Ecdh521()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Ecdh521(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Ecdsa256()
+	static wstring Ecdsa256()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Ecdsa256(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Ecdsa384()
+	static wstring Ecdsa384()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Ecdsa384(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING Ecdsa521()
+	static wstring Ecdsa521()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Ecdsa521(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -1523,17 +1523,17 @@ interface KeyAttestationHelper
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Certificates.IKeyAttestationHelperStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(HSTRING) DecryptTpmAttestationCredentialAsync(HSTRING credential)
+	static Windows.Foundation.IAsyncOperation!(HSTRING) DecryptTpmAttestationCredentialAsync(wstring credential)
 	{
 		Windows.Foundation.IAsyncOperation!(HSTRING) _ret;
-		Debug.OK(staticInstance.abi_DecryptTpmAttestationCredentialAsync(credential, &_ret));
+		Debug.OK(staticInstance.abi_DecryptTpmAttestationCredentialAsync(hstring(credential).handle, &_ret));
 		return _ret;
 	}
-	static HSTRING GetTpmAttestationCredentialId(HSTRING credential)
+	static wstring GetTpmAttestationCredentialId(wstring credential)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.abi_GetTpmAttestationCredentialId(credential, &_ret));
-		return _ret;
+		Debug.OK(staticInstance.abi_GetTpmAttestationCredentialId(hstring(credential).handle, &_ret));
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -1545,23 +1545,23 @@ interface KeyStorageProviderNames
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Certificates.IKeyStorageProviderNamesStatics);
 		return _staticInstance;
 	}
-	static HSTRING SoftwareKeyStorageProvider()
+	static wstring SoftwareKeyStorageProvider()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SoftwareKeyStorageProvider(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING SmartcardKeyStorageProvider()
+	static wstring SmartcardKeyStorageProvider()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_SmartcardKeyStorageProvider(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING PlatformKeyStorageProvider()
+	static wstring PlatformKeyStorageProvider()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_PlatformKeyStorageProvider(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -1598,45 +1598,45 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IPfxImportParameters)this.asInterface(uuid("680d3511-9a08-47c8-864a-2edd4d8eb46c"))).set_InstallOptions(value));
 	}
-	final HSTRING FriendlyName()
+	final wstring FriendlyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IPfxImportParameters)this.asInterface(uuid("680d3511-9a08-47c8-864a-2edd4d8eb46c"))).get_FriendlyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void FriendlyName(HSTRING value)
+	final void FriendlyName(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IPfxImportParameters)this.asInterface(uuid("680d3511-9a08-47c8-864a-2edd4d8eb46c"))).set_FriendlyName(value));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IPfxImportParameters)this.asInterface(uuid("680d3511-9a08-47c8-864a-2edd4d8eb46c"))).set_FriendlyName(hstring(value).handle));
 	}
-	final HSTRING KeyStorageProviderName()
+	final wstring KeyStorageProviderName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IPfxImportParameters)this.asInterface(uuid("680d3511-9a08-47c8-864a-2edd4d8eb46c"))).get_KeyStorageProviderName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void KeyStorageProviderName(HSTRING value)
+	final void KeyStorageProviderName(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IPfxImportParameters)this.asInterface(uuid("680d3511-9a08-47c8-864a-2edd4d8eb46c"))).set_KeyStorageProviderName(value));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IPfxImportParameters)this.asInterface(uuid("680d3511-9a08-47c8-864a-2edd4d8eb46c"))).set_KeyStorageProviderName(hstring(value).handle));
 	}
-	final HSTRING ContainerNamePrefix()
+	final wstring ContainerNamePrefix()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IPfxImportParameters)this.asInterface(uuid("680d3511-9a08-47c8-864a-2edd4d8eb46c"))).get_ContainerNamePrefix(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ContainerNamePrefix(HSTRING value)
+	final void ContainerNamePrefix(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IPfxImportParameters)this.asInterface(uuid("680d3511-9a08-47c8-864a-2edd4d8eb46c"))).set_ContainerNamePrefix(value));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IPfxImportParameters)this.asInterface(uuid("680d3511-9a08-47c8-864a-2edd4d8eb46c"))).set_ContainerNamePrefix(hstring(value).handle));
 	}
-	final HSTRING ReaderName()
+	final wstring ReaderName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IPfxImportParameters)this.asInterface(uuid("680d3511-9a08-47c8-864a-2edd4d8eb46c"))).get_ReaderName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ReaderName(HSTRING value)
+	final void ReaderName(wstring value)
 	{
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IPfxImportParameters)this.asInterface(uuid("680d3511-9a08-47c8-864a-2edd4d8eb46c"))).set_ReaderName(value));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IPfxImportParameters)this.asInterface(uuid("680d3511-9a08-47c8-864a-2edd4d8eb46c"))).set_ReaderName(hstring(value).handle));
 	}
 	static PfxImportParameters New()
 	{
@@ -1654,23 +1654,23 @@ interface StandardCertificateStoreNames
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Security.Cryptography.Certificates.IStandardCertificateStoreNamesStatics);
 		return _staticInstance;
 	}
-	static HSTRING Personal()
+	static wstring Personal()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_Personal(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING TrustedRootCertificationAuthorities()
+	static wstring TrustedRootCertificationAuthorities()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_TrustedRootCertificationAuthorities(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING IntermediateCertificationAuthorities()
+	static wstring IntermediateCertificationAuthorities()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.get_IntermediateCertificationAuthorities(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -1772,29 +1772,29 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IUserCertificateEnrollmentManager)this.asInterface(uuid("96313718-22e1-4819-b20b-ab46a6eca06e"))).abi_CreateRequestAsync(request, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction InstallCertificateAsync(HSTRING certificate, Windows.Security.Cryptography.Certificates.InstallOptions installOption)
+	final Windows.Foundation.IAsyncAction InstallCertificateAsync(wstring certificate, Windows.Security.Cryptography.Certificates.InstallOptions installOption)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IUserCertificateEnrollmentManager)this.asInterface(uuid("96313718-22e1-4819-b20b-ab46a6eca06e"))).abi_InstallCertificateAsync(certificate, installOption, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IUserCertificateEnrollmentManager)this.asInterface(uuid("96313718-22e1-4819-b20b-ab46a6eca06e"))).abi_InstallCertificateAsync(hstring(certificate).handle, installOption, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction ImportPfxDataAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.ExportOption exportable, Windows.Security.Cryptography.Certificates.KeyProtectionLevel keyProtectionLevel, Windows.Security.Cryptography.Certificates.InstallOptions installOption, HSTRING friendlyName)
+	final Windows.Foundation.IAsyncAction ImportPfxDataAsync(wstring pfxData, wstring password, Windows.Security.Cryptography.Certificates.ExportOption exportable, Windows.Security.Cryptography.Certificates.KeyProtectionLevel keyProtectionLevel, Windows.Security.Cryptography.Certificates.InstallOptions installOption, wstring friendlyName)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IUserCertificateEnrollmentManager)this.asInterface(uuid("96313718-22e1-4819-b20b-ab46a6eca06e"))).abi_ImportPfxDataAsync(pfxData, password, exportable, keyProtectionLevel, installOption, friendlyName, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IUserCertificateEnrollmentManager)this.asInterface(uuid("96313718-22e1-4819-b20b-ab46a6eca06e"))).abi_ImportPfxDataAsync(hstring(pfxData).handle, hstring(password).handle, exportable, keyProtectionLevel, installOption, hstring(friendlyName).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction ImportPfxDataToKspAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.ExportOption exportable, Windows.Security.Cryptography.Certificates.KeyProtectionLevel keyProtectionLevel, Windows.Security.Cryptography.Certificates.InstallOptions installOption, HSTRING friendlyName, HSTRING keyStorageProvider)
+	final Windows.Foundation.IAsyncAction ImportPfxDataToKspAsync(wstring pfxData, wstring password, Windows.Security.Cryptography.Certificates.ExportOption exportable, Windows.Security.Cryptography.Certificates.KeyProtectionLevel keyProtectionLevel, Windows.Security.Cryptography.Certificates.InstallOptions installOption, wstring friendlyName, wstring keyStorageProvider)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IUserCertificateEnrollmentManager)this.asInterface(uuid("96313718-22e1-4819-b20b-ab46a6eca06e"))).abi_ImportPfxDataToKspAsync(pfxData, password, exportable, keyProtectionLevel, installOption, friendlyName, keyStorageProvider, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IUserCertificateEnrollmentManager)this.asInterface(uuid("96313718-22e1-4819-b20b-ab46a6eca06e"))).abi_ImportPfxDataToKspAsync(hstring(pfxData).handle, hstring(password).handle, exportable, keyProtectionLevel, installOption, hstring(friendlyName).handle, hstring(keyStorageProvider).handle, &_ret));
 		return _ret;
 	}
 	alias ImportPfxDataAsync = ImportPfxDataToKspAsync;
-	final Windows.Foundation.IAsyncAction ImportPfxDataToKspWithParametersAsync(HSTRING pfxData, HSTRING password, Windows.Security.Cryptography.Certificates.PfxImportParameters pfxImportParameters)
+	final Windows.Foundation.IAsyncAction ImportPfxDataToKspWithParametersAsync(wstring pfxData, wstring password, Windows.Security.Cryptography.Certificates.PfxImportParameters pfxImportParameters)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IUserCertificateEnrollmentManager2)this.asInterface(uuid("0dad9cb1-65de-492a-b86d-fc5c482c3747"))).abi_ImportPfxDataToKspWithParametersAsync(pfxData, password, pfxImportParameters, &_ret));
+		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IUserCertificateEnrollmentManager2)this.asInterface(uuid("0dad9cb1-65de-492a-b86d-fc5c482c3747"))).abi_ImportPfxDataToKspWithParametersAsync(hstring(pfxData).handle, hstring(password).handle, pfxImportParameters, &_ret));
 		return _ret;
 	}
 	alias ImportPfxDataAsync = ImportPfxDataToKspWithParametersAsync;
@@ -1815,11 +1815,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IUserCertificateStore)this.asInterface(uuid("c9fb1d83-789f-4b4e-9180-045a757aac6d"))).abi_RequestDeleteAsync(certificate, &_ret));
 		return _ret;
 	}
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Cryptography.Certificates.IUserCertificateStore)this.asInterface(uuid("c9fb1d83-789f-4b4e-9180-045a757aac6d"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 

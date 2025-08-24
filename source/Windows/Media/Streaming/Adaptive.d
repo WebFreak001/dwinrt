@@ -468,10 +468,10 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceStatics);
 		return _staticInstance;
 	}
-	static bool IsContentTypeSupported(HSTRING contentType)
+	static bool IsContentTypeSupported(wstring contentType)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.abi_IsContentTypeSupported(contentType, &_ret));
+		Debug.OK(staticInstance.abi_IsContentTypeSupported(hstring(contentType).handle, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) CreateFromUriAsync(Windows.Foundation.Uri uri)
@@ -487,16 +487,16 @@ extern(Windows):
 		return _ret;
 	}
 	alias CreateFromUriAsync = CreateFromUriWithDownloaderAsync;
-	static Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) CreateFromStreamAsync(Windows.Storage.Streams.IInputStream stream, Windows.Foundation.Uri uri, HSTRING contentType)
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) CreateFromStreamAsync(Windows.Storage.Streams.IInputStream stream, Windows.Foundation.Uri uri, wstring contentType)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) _ret;
-		Debug.OK(staticInstance.abi_CreateFromStreamAsync(stream, uri, contentType, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromStreamAsync(stream, uri, hstring(contentType).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) CreateFromStreamWithDownloaderAsync(Windows.Storage.Streams.IInputStream stream, Windows.Foundation.Uri uri, HSTRING contentType, Windows.Web.Http.HttpClient httpClient)
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) CreateFromStreamWithDownloaderAsync(Windows.Storage.Streams.IInputStream stream, Windows.Foundation.Uri uri, wstring contentType, Windows.Web.Http.HttpClient httpClient)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationResult) _ret;
-		Debug.OK(staticInstance.abi_CreateFromStreamWithDownloaderAsync(stream, uri, contentType, httpClient, &_ret));
+		Debug.OK(staticInstance.abi_CreateFromStreamWithDownloaderAsync(stream, uri, hstring(contentType).handle, httpClient, &_ret));
 		return _ret;
 	}
 	alias CreateFromStreamAsync = CreateFromStreamWithDownloaderAsync;
@@ -893,15 +893,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult)this.asInterface(uuid("f4afdc73-bcee-4a6a-9f0a-fec41e2339b0"))).set_Buffer(value));
 	}
-	final HSTRING ContentType()
+	final wstring ContentType()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult)this.asInterface(uuid("f4afdc73-bcee-4a6a-9f0a-fec41e2339b0"))).get_ContentType(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ContentType(HSTRING value)
+	final void ContentType(wstring value)
 	{
-		Debug.OK((cast(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult)this.asInterface(uuid("f4afdc73-bcee-4a6a-9f0a-fec41e2339b0"))).set_ContentType(value));
+		Debug.OK((cast(Windows.Media.Streaming.Adaptive.IAdaptiveMediaSourceDownloadResult)this.asInterface(uuid("f4afdc73-bcee-4a6a-9f0a-fec41e2339b0"))).set_ContentType(hstring(value).handle));
 	}
 	final UINT32 ExtendedStatus()
 	{

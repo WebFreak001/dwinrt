@@ -1059,15 +1059,15 @@ class CustomMapTileDataSourceT(Base) : AgileObject!Base, CustomMapTileDataSource
 interface HttpMapTileDataSource : Windows.UI.Xaml.Controls.Maps.MapTileDataSource, Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource
 {
 extern(Windows):
-	final HSTRING UriFormatString()
+	final wstring UriFormatString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource)this.asInterface(uuid("9d03cb5c-fd79-4795-87be-7e54ca0b37d0"))).get_UriFormatString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void UriFormatString(HSTRING value)
+	final void UriFormatString(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource)this.asInterface(uuid("9d03cb5c-fd79-4795-87be-7e54ca0b37d0"))).set_UriFormatString(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.IHttpMapTileDataSource)this.asInterface(uuid("9d03cb5c-fd79-4795-87be-7e54ca0b37d0"))).set_UriFormatString(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IMap!(HSTRING, HSTRING) AdditionalRequestHeaders()
 	{
@@ -1138,15 +1138,15 @@ class HttpMapTileDataSourceT(Base) : AgileObject!Base, HttpMapTileDataSource
 interface LocalMapTileDataSource : Windows.UI.Xaml.Controls.Maps.MapTileDataSource, Windows.UI.Xaml.Controls.Maps.ILocalMapTileDataSource
 {
 extern(Windows):
-	final HSTRING UriFormatString()
+	final wstring UriFormatString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.ILocalMapTileDataSource)this.asInterface(uuid("616257b5-9108-4f12-8bf4-bb3c8f6274e5"))).get_UriFormatString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void UriFormatString(HSTRING value)
+	final void UriFormatString(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.ILocalMapTileDataSource)this.asInterface(uuid("616257b5-9108-4f12-8bf4-bb3c8f6274e5"))).set_UriFormatString(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.ILocalMapTileDataSource)this.asInterface(uuid("616257b5-9108-4f12-8bf4-bb3c8f6274e5"))).set_UriFormatString(hstring(value).handle));
 	}
 	final EventRegistrationToken OnUriRequested(void delegate(Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource, Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs) fn)
 	{
@@ -1501,15 +1501,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.IMapControl)this.asInterface(uuid("42d0b851-5256-4747-9e6c-0d11e966141e"))).get_LoadingStatus(&_ret));
 		return _ret;
 	}
-	final HSTRING MapServiceToken()
+	final wstring MapServiceToken()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.IMapControl)this.asInterface(uuid("42d0b851-5256-4747-9e6c-0d11e966141e"))).get_MapServiceToken(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void MapServiceToken(HSTRING value)
+	final void MapServiceToken(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.IMapControl)this.asInterface(uuid("42d0b851-5256-4747-9e6c-0d11e966141e"))).set_MapServiceToken(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.IMapControl)this.asInterface(uuid("42d0b851-5256-4747-9e6c-0d11e966141e"))).set_MapServiceToken(hstring(value).handle));
 	}
 	final double MaxZoomLevel()
 	{
@@ -2428,11 +2428,11 @@ extern(Windows):
 interface MapControlTransitFeatureClickEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeatureClickEventArgs
 {
 extern(Windows):
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeatureClickEventArgs)this.asInterface(uuid("76179969-b765-4622-b08a-3072745a4541"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Devices.Geolocation.Geopoint Location()
 	{
@@ -2457,11 +2457,11 @@ extern(Windows):
 interface MapControlTransitFeaturePointerEnteredEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeaturePointerEnteredEventArgs
 {
 extern(Windows):
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeaturePointerEnteredEventArgs)this.asInterface(uuid("73911a4e-ec4f-479e-94a1-36e081d0d897"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Devices.Geolocation.Geopoint Location()
 	{
@@ -2486,11 +2486,11 @@ extern(Windows):
 interface MapControlTransitFeaturePointerExitedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeaturePointerExitedEventArgs
 {
 extern(Windows):
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeaturePointerExitedEventArgs)this.asInterface(uuid("6a11258d-448d-44e7-bc69-d13d497154e9"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Devices.Geolocation.Geopoint Location()
 	{
@@ -2515,11 +2515,11 @@ extern(Windows):
 interface MapControlTransitFeatureRightTappedEventArgs : Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeatureRightTappedEventArgs
 {
 extern(Windows):
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.IMapControlTransitFeatureRightTappedEventArgs)this.asInterface(uuid("aea1cc49-a729-4eae-a59a-3ec9a125a028"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Devices.Geolocation.Geopoint Location()
 	{
@@ -2777,15 +2777,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.IMapIcon)this.asInterface(uuid("d2096872-23d9-4a2b-8be0-69f3a85482ab"))).set_Location(value));
 	}
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.IMapIcon)this.asInterface(uuid("d2096872-23d9-4a2b-8be0-69f3a85482ab"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Title(HSTRING value)
+	final void Title(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.IMapIcon)this.asInterface(uuid("d2096872-23d9-4a2b-8be0-69f3a85482ab"))).set_Title(value));
+		Debug.OK((cast(Windows.UI.Xaml.Controls.Maps.IMapIcon)this.asInterface(uuid("d2096872-23d9-4a2b-8be0-69f3a85482ab"))).set_Title(hstring(value).handle));
 	}
 	final Windows.Foundation.Point NormalizedAnchorPoint()
 	{
@@ -3316,16 +3316,16 @@ interface MapStyleSheet : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Cont
 		Debug.OK(staticInstance.abi_Combine(styleSheets, &_ret));
 		return _ret;
 	}
-	static Windows.UI.Xaml.Controls.Maps.MapStyleSheet ParseFromJson(HSTRING styleAsJson)
+	static Windows.UI.Xaml.Controls.Maps.MapStyleSheet ParseFromJson(wstring styleAsJson)
 	{
 		Windows.UI.Xaml.Controls.Maps.MapStyleSheet _ret;
-		Debug.OK(staticInstance.abi_ParseFromJson(styleAsJson, &_ret));
+		Debug.OK(staticInstance.abi_ParseFromJson(hstring(styleAsJson).handle, &_ret));
 		return _ret;
 	}
-	static bool TryParseFromJson(HSTRING styleAsJson, Windows.UI.Xaml.Controls.Maps.MapStyleSheet* out_styleSheet)
+	static bool TryParseFromJson(wstring styleAsJson, Windows.UI.Xaml.Controls.Maps.MapStyleSheet* out_styleSheet)
 	{
 		bool _ret;
-		Debug.OK(staticInstance.abi_TryParseFromJson(styleAsJson, out_styleSheet, &_ret));
+		Debug.OK(staticInstance.abi_TryParseFromJson(hstring(styleAsJson).handle, out_styleSheet, &_ret));
 		return _ret;
 	}
 }

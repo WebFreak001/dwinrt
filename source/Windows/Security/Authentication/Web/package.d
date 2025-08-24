@@ -67,11 +67,11 @@ interface WebAuthenticationBroker
 interface WebAuthenticationResult : Windows.Security.Authentication.Web.IWebAuthenticationResult
 {
 extern(Windows):
-	final HSTRING ResponseData()
+	final wstring ResponseData()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Security.Authentication.Web.IWebAuthenticationResult)this.asInterface(uuid("64002b4b-ede9-470a-a5cd-0323faf6e262"))).get_ResponseData(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Security.Authentication.Web.WebAuthenticationStatus ResponseStatus()
 	{

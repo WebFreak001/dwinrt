@@ -836,25 +836,25 @@ interface Bold : Windows.UI.Xaml.Documents.Span, Windows.UI.Xaml.Documents.IBold
 interface Glyphs : Windows.UI.Xaml.FrameworkElement, Windows.UI.Xaml.Documents.IGlyphs, Windows.UI.Xaml.Documents.IGlyphs2
 {
 extern(Windows):
-	final HSTRING UnicodeString()
+	final wstring UnicodeString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs)this.asInterface(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5"))).get_UnicodeString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void UnicodeString(HSTRING value)
+	final void UnicodeString(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs)this.asInterface(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5"))).set_UnicodeString(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs)this.asInterface(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5"))).set_UnicodeString(hstring(value).handle));
 	}
-	final HSTRING Indices()
+	final wstring Indices()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs)this.asInterface(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5"))).get_Indices(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Indices(HSTRING value)
+	final void Indices(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs)this.asInterface(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5"))).set_Indices(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IGlyphs)this.asInterface(uuid("d079498b-f2b1-4281-99a2-e4d05932b2b5"))).set_Indices(hstring(value).handle));
 	}
 	final Windows.Foundation.Uri FontUri()
 	{
@@ -1415,15 +1415,15 @@ extern(Windows):
 interface Run : Windows.UI.Xaml.Documents.Inline, Windows.UI.Xaml.Documents.IRun
 {
 extern(Windows):
-	final HSTRING Text()
+	final wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Documents.IRun)this.asInterface(uuid("59553c83-0e14-49bd-b84b-c526f3034349"))).get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Text(HSTRING value)
+	final void Text(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Documents.IRun)this.asInterface(uuid("59553c83-0e14-49bd-b84b-c526f3034349"))).set_Text(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.IRun)this.asInterface(uuid("59553c83-0e14-49bd-b84b-c526f3034349"))).set_Text(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.FlowDirection FlowDirection()
 	{
@@ -1562,11 +1562,11 @@ class SpanT(Base) : AgileObject!Base, Span
 interface TextElement : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Documents.ITextElement, Windows.UI.Xaml.Documents.ITextElementOverrides, Windows.UI.Xaml.Documents.ITextElement2, Windows.UI.Xaml.Documents.ITextElement3, Windows.UI.Xaml.Documents.ITextElement4
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final double FontSize()
 	{
@@ -1638,15 +1638,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_Foreground(value));
 	}
-	final HSTRING Language()
+	final wstring Language()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_Language(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Language(HSTRING value)
+	final void Language(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_Language(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).set_Language(hstring(value).handle));
 	}
 	final Windows.UI.Xaml.Documents.TextPointer ContentStart()
 	{
@@ -1672,10 +1672,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).get_ElementEnd(&_ret));
 		return _ret;
 	}
-	final IInspectable FindName(HSTRING name)
+	final IInspectable FindName(wstring name)
 	{
 		IInspectable _ret;
-		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).abi_FindName(name, &_ret));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement)this.asInterface(uuid("e83b0062-d776-4f92-baea-40e77d4791d5"))).abi_FindName(hstring(name).handle, &_ret));
 		return _ret;
 	}
 	final bool IsTextScaleFactorEnabled()
@@ -1698,15 +1698,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement3)this.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).set_AllowFocusOnInteraction(value));
 	}
-	final HSTRING AccessKey()
+	final wstring AccessKey()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement3)this.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).get_AccessKey(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void AccessKey(HSTRING value)
+	final void AccessKey(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement3)this.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).set_AccessKey(value));
+		Debug.OK((cast(Windows.UI.Xaml.Documents.ITextElement3)this.asInterface(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab"))).set_AccessKey(hstring(value).handle));
 	}
 	final bool ExitDisplayModeOnAccessKeyInvoked()
 	{

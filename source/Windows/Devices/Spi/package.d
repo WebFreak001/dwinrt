@@ -205,11 +205,11 @@ extern(Windows):
 interface SpiDevice : Windows.Devices.Spi.ISpiDevice, Windows.Foundation.IClosable
 {
 extern(Windows):
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Spi.ISpiDevice)this.asInterface(uuid("05d5356d-11b6-4d39-84d5-95dfb4c9f2ce"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Devices.Spi.SpiConnectionSettings ConnectionSettings()
 	{
@@ -244,29 +244,29 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Spi.ISpiDeviceStatics);
 		return _staticInstance;
 	}
-	static HSTRING GetDeviceSelector()
+	static wstring GetDeviceSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GetDeviceSelectorFromFriendlyName(HSTRING friendlyName)
+	static wstring GetDeviceSelectorFromFriendlyName(wstring friendlyName)
 	{
 		HSTRING _ret;
-		Debug.OK(staticInstance.abi_GetDeviceSelectorFromFriendlyName(friendlyName, &_ret));
-		return _ret;
+		Debug.OK(staticInstance.abi_GetDeviceSelectorFromFriendlyName(hstring(friendlyName).handle, &_ret));
+		return hstring(_ret).d_str;
 	}
 	alias GetDeviceSelector = GetDeviceSelectorFromFriendlyName;
-	static Windows.Devices.Spi.SpiBusInfo GetBusInfo(HSTRING busId)
+	static Windows.Devices.Spi.SpiBusInfo GetBusInfo(wstring busId)
 	{
 		Windows.Devices.Spi.SpiBusInfo _ret;
-		Debug.OK(staticInstance.abi_GetBusInfo(busId, &_ret));
+		Debug.OK(staticInstance.abi_GetBusInfo(hstring(busId).handle, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Spi.SpiDevice) FromIdAsync(HSTRING busId, Windows.Devices.Spi.SpiConnectionSettings settings)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Spi.SpiDevice) FromIdAsync(wstring busId, Windows.Devices.Spi.SpiConnectionSettings settings)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Spi.SpiDevice) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(busId, settings, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(busId).handle, settings, &_ret));
 		return _ret;
 	}
 }

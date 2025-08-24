@@ -114,11 +114,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Ocr.IOcrLine)this.asInterface(uuid("0043a16f-e31f-3a24-899c-d444bd088124"))).get_Words(&_ret));
 		return _ret;
 	}
-	final HSTRING Text()
+	final wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Ocr.IOcrLine)this.asInterface(uuid("0043a16f-e31f-3a24-899c-d444bd088124"))).get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -137,11 +137,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Ocr.IOcrResult)this.asInterface(uuid("9bd235b2-175b-3d6a-92e2-388c206e2f63"))).get_TextAngle(&_ret));
 		return _ret;
 	}
-	final HSTRING Text()
+	final wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Ocr.IOcrResult)this.asInterface(uuid("9bd235b2-175b-3d6a-92e2-388c206e2f63"))).get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -154,10 +154,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Ocr.IOcrWord)this.asInterface(uuid("3c2a477a-5cd9-3525-ba2a-23d1e0a68a1d"))).get_BoundingRect(&_ret));
 		return _ret;
 	}
-	final HSTRING Text()
+	final wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Ocr.IOcrWord)this.asInterface(uuid("3c2a477a-5cd9-3525-ba2a-23d1e0a68a1d"))).get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }

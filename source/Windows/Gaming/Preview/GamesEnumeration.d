@@ -56,10 +56,10 @@ interface GameList
 		Debug.OK(staticInstance.abi_FindAllAsync(&_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Preview.GamesEnumeration.GameListEntry)) FindAllAsyncPackageFamilyName(HSTRING packageFamilyName)
+	static Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Preview.GamesEnumeration.GameListEntry)) FindAllAsyncPackageFamilyName(wstring packageFamilyName)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.Gaming.Preview.GamesEnumeration.GameListEntry)) _ret;
-		Debug.OK(staticInstance.abi_FindAllAsyncPackageFamilyName(packageFamilyName, &_ret));
+		Debug.OK(staticInstance.abi_FindAllAsyncPackageFamilyName(hstring(packageFamilyName).handle, &_ret));
 		return _ret;
 	}
 	alias FindAllAsync = FindAllAsyncPackageFamilyName;

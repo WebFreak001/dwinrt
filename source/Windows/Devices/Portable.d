@@ -28,17 +28,17 @@ interface ServiceDevice
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Portable.IServiceDeviceStatics);
 		return _staticInstance;
 	}
-	static HSTRING GetDeviceSelector(Windows.Devices.Portable.ServiceDeviceType serviceType)
+	static wstring GetDeviceSelector(Windows.Devices.Portable.ServiceDeviceType serviceType)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(serviceType, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GetDeviceSelectorFromServiceId(GUID serviceId)
+	static wstring GetDeviceSelectorFromServiceId(GUID serviceId)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelectorFromServiceId(serviceId, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -50,17 +50,17 @@ interface StorageDevice
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Portable.IStorageDeviceStatics);
 		return _staticInstance;
 	}
-	static Windows.Storage.StorageFolder FromId(HSTRING deviceId)
+	static Windows.Storage.StorageFolder FromId(wstring deviceId)
 	{
 		Windows.Storage.StorageFolder _ret;
-		Debug.OK(staticInstance.abi_FromId(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromId(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelector()
+	static wstring GetDeviceSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 

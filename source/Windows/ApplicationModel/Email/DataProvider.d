@@ -541,23 +541,23 @@ extern(Windows):
 interface EmailMailboxCreateFolderRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxCreateFolderRequest
 {
 extern(Windows):
-	final HSTRING EmailMailboxId()
+	final wstring EmailMailboxId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxCreateFolderRequest)this.asInterface(uuid("184d3775-c921-4c39-a309-e16c9f22b04b"))).get_EmailMailboxId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING ParentFolderId()
+	final wstring ParentFolderId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxCreateFolderRequest)this.asInterface(uuid("184d3775-c921-4c39-a309-e16c9f22b04b"))).get_ParentFolderId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxCreateFolderRequest)this.asInterface(uuid("184d3775-c921-4c39-a309-e16c9f22b04b"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync(Windows.ApplicationModel.Email.EmailFolder folder)
 	{
@@ -593,17 +593,17 @@ extern(Windows):
 interface EmailMailboxDeleteFolderRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDeleteFolderRequest
 {
 extern(Windows):
-	final HSTRING EmailMailboxId()
+	final wstring EmailMailboxId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDeleteFolderRequest)this.asInterface(uuid("9469e88a-a931-4779-923d-09a3ea292e29"))).get_EmailMailboxId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING EmailFolderId()
+	final wstring EmailFolderId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDeleteFolderRequest)this.asInterface(uuid("9469e88a-a931-4779-923d-09a3ea292e29"))).get_EmailFolderId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
 	{
@@ -639,23 +639,23 @@ extern(Windows):
 interface EmailMailboxDownloadAttachmentRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadAttachmentRequest
 {
 extern(Windows):
-	final HSTRING EmailMailboxId()
+	final wstring EmailMailboxId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadAttachmentRequest)this.asInterface(uuid("0b1dbbb4-750c-48e1-bce4-8d589684ffbc"))).get_EmailMailboxId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING EmailMessageId()
+	final wstring EmailMessageId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadAttachmentRequest)this.asInterface(uuid("0b1dbbb4-750c-48e1-bce4-8d589684ffbc"))).get_EmailMessageId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING EmailAttachmentId()
+	final wstring EmailAttachmentId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadAttachmentRequest)this.asInterface(uuid("0b1dbbb4-750c-48e1-bce4-8d589684ffbc"))).get_EmailAttachmentId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
 	{
@@ -691,17 +691,17 @@ extern(Windows):
 interface EmailMailboxDownloadMessageRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadMessageRequest
 {
 extern(Windows):
-	final HSTRING EmailMailboxId()
+	final wstring EmailMailboxId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadMessageRequest)this.asInterface(uuid("497b4187-5b4d-4b23-816c-f3842beb753e"))).get_EmailMailboxId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING EmailMessageId()
+	final wstring EmailMessageId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxDownloadMessageRequest)this.asInterface(uuid("497b4187-5b4d-4b23-816c-f3842beb753e"))).get_EmailMessageId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
 	{
@@ -737,17 +737,17 @@ extern(Windows):
 interface EmailMailboxEmptyFolderRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxEmptyFolderRequest
 {
 extern(Windows):
-	final HSTRING EmailMailboxId()
+	final wstring EmailMailboxId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxEmptyFolderRequest)this.asInterface(uuid("fe4b03ab-f86d-46d9-b4ce-bc8a6d9e9268"))).get_EmailMailboxId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING EmailFolderId()
+	final wstring EmailFolderId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxEmptyFolderRequest)this.asInterface(uuid("fe4b03ab-f86d-46d9-b4ce-bc8a6d9e9268"))).get_EmailFolderId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
 	{
@@ -783,17 +783,17 @@ extern(Windows):
 interface EmailMailboxForwardMeetingRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxForwardMeetingRequest
 {
 extern(Windows):
-	final HSTRING EmailMailboxId()
+	final wstring EmailMailboxId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxForwardMeetingRequest)this.asInterface(uuid("616d6af1-70d4-4832-b869-b80542ae9be8"))).get_EmailMailboxId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING EmailMessageId()
+	final wstring EmailMessageId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxForwardMeetingRequest)this.asInterface(uuid("616d6af1-70d4-4832-b869-b80542ae9be8"))).get_EmailMessageId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Email.EmailRecipient) Recipients()
 	{
@@ -801,11 +801,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxForwardMeetingRequest)this.asInterface(uuid("616d6af1-70d4-4832-b869-b80542ae9be8"))).get_Recipients(&_ret));
 		return _ret;
 	}
-	final HSTRING Subject()
+	final wstring Subject()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxForwardMeetingRequest)this.asInterface(uuid("616d6af1-70d4-4832-b869-b80542ae9be8"))).get_Subject(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Email.EmailMessageBodyKind ForwardHeaderType()
 	{
@@ -813,17 +813,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxForwardMeetingRequest)this.asInterface(uuid("616d6af1-70d4-4832-b869-b80542ae9be8"))).get_ForwardHeaderType(&_ret));
 		return _ret;
 	}
-	final HSTRING ForwardHeader()
+	final wstring ForwardHeader()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxForwardMeetingRequest)this.asInterface(uuid("616d6af1-70d4-4832-b869-b80542ae9be8"))).get_ForwardHeader(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Comment()
+	final wstring Comment()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxForwardMeetingRequest)this.asInterface(uuid("616d6af1-70d4-4832-b869-b80542ae9be8"))).get_Comment(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
 	{
@@ -859,11 +859,11 @@ extern(Windows):
 interface EmailMailboxGetAutoReplySettingsRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxGetAutoReplySettingsRequest
 {
 extern(Windows):
-	final HSTRING EmailMailboxId()
+	final wstring EmailMailboxId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxGetAutoReplySettingsRequest)this.asInterface(uuid("9b380789-1e88-4e01-84cc-1386ad9a2c2f"))).get_EmailMailboxId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Email.EmailMailboxAutoReplyMessageResponseKind RequestedFormat()
 	{
@@ -905,29 +905,29 @@ extern(Windows):
 interface EmailMailboxMoveFolderRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxMoveFolderRequest
 {
 extern(Windows):
-	final HSTRING EmailMailboxId()
+	final wstring EmailMailboxId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxMoveFolderRequest)this.asInterface(uuid("10ba2856-4a95-4068-91cc-67cc7acf454f"))).get_EmailMailboxId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING EmailFolderId()
+	final wstring EmailFolderId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxMoveFolderRequest)this.asInterface(uuid("10ba2856-4a95-4068-91cc-67cc7acf454f"))).get_EmailFolderId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING NewParentFolderId()
+	final wstring NewParentFolderId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxMoveFolderRequest)this.asInterface(uuid("10ba2856-4a95-4068-91cc-67cc7acf454f"))).get_NewParentFolderId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING NewFolderName()
+	final wstring NewFolderName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxMoveFolderRequest)this.asInterface(uuid("10ba2856-4a95-4068-91cc-67cc7acf454f"))).get_NewFolderName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
 	{
@@ -963,17 +963,17 @@ extern(Windows):
 interface EmailMailboxProposeNewTimeForMeetingRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxProposeNewTimeForMeetingRequest
 {
 extern(Windows):
-	final HSTRING EmailMailboxId()
+	final wstring EmailMailboxId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxProposeNewTimeForMeetingRequest)this.asInterface(uuid("5aeff152-9799-4f9f-a399-ff07f3eef04e"))).get_EmailMailboxId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING EmailMessageId()
+	final wstring EmailMessageId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxProposeNewTimeForMeetingRequest)this.asInterface(uuid("5aeff152-9799-4f9f-a399-ff07f3eef04e"))).get_EmailMessageId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.DateTime NewStartTime()
 	{
@@ -987,17 +987,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxProposeNewTimeForMeetingRequest)this.asInterface(uuid("5aeff152-9799-4f9f-a399-ff07f3eef04e"))).get_NewDuration(&_ret));
 		return _ret;
 	}
-	final HSTRING Subject()
+	final wstring Subject()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxProposeNewTimeForMeetingRequest)this.asInterface(uuid("5aeff152-9799-4f9f-a399-ff07f3eef04e"))).get_Subject(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Comment()
+	final wstring Comment()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxProposeNewTimeForMeetingRequest)this.asInterface(uuid("5aeff152-9799-4f9f-a399-ff07f3eef04e"))).get_Comment(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
 	{
@@ -1033,11 +1033,11 @@ extern(Windows):
 interface EmailMailboxResolveRecipientsRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxResolveRecipientsRequest
 {
 extern(Windows):
-	final HSTRING EmailMailboxId()
+	final wstring EmailMailboxId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxResolveRecipientsRequest)this.asInterface(uuid("efa4cf70-7b39-4c9b-811e-41eaf43a332d"))).get_EmailMailboxId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IVectorView!(HSTRING) Recipients()
 	{
@@ -1079,23 +1079,23 @@ extern(Windows):
 interface EmailMailboxServerSearchReadBatchRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxServerSearchReadBatchRequest
 {
 extern(Windows):
-	final HSTRING SessionId()
+	final wstring SessionId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxServerSearchReadBatchRequest)this.asInterface(uuid("090eebdf-5a96-41d3-8ad8-34912f9aa60e"))).get_SessionId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING EmailMailboxId()
+	final wstring EmailMailboxId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxServerSearchReadBatchRequest)this.asInterface(uuid("090eebdf-5a96-41d3-8ad8-34912f9aa60e"))).get_EmailMailboxId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING EmailFolderId()
+	final wstring EmailFolderId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxServerSearchReadBatchRequest)this.asInterface(uuid("090eebdf-5a96-41d3-8ad8-34912f9aa60e"))).get_EmailFolderId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Email.EmailQueryOptions Options()
 	{
@@ -1149,11 +1149,11 @@ extern(Windows):
 interface EmailMailboxSetAutoReplySettingsRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxSetAutoReplySettingsRequest
 {
 extern(Windows):
-	final HSTRING EmailMailboxId()
+	final wstring EmailMailboxId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxSetAutoReplySettingsRequest)this.asInterface(uuid("75a422d0-a88e-4e54-8dc7-c243186b774e"))).get_EmailMailboxId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Email.EmailMailboxAutoReplySettings AutoReplySettings()
 	{
@@ -1195,11 +1195,11 @@ extern(Windows):
 interface EmailMailboxSyncManagerSyncRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxSyncManagerSyncRequest
 {
 extern(Windows):
-	final HSTRING EmailMailboxId()
+	final wstring EmailMailboxId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxSyncManagerSyncRequest)this.asInterface(uuid("4e10e8e4-7e67-405a-b673-dc60c91090fc"))).get_EmailMailboxId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncAction ReportCompletedAsync()
 	{
@@ -1235,17 +1235,17 @@ extern(Windows):
 interface EmailMailboxUpdateMeetingResponseRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxUpdateMeetingResponseRequest
 {
 extern(Windows):
-	final HSTRING EmailMailboxId()
+	final wstring EmailMailboxId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxUpdateMeetingResponseRequest)this.asInterface(uuid("5b99ac93-b2cf-4888-ba4f-306b6b66df30"))).get_EmailMailboxId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING EmailMessageId()
+	final wstring EmailMessageId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxUpdateMeetingResponseRequest)this.asInterface(uuid("5b99ac93-b2cf-4888-ba4f-306b6b66df30"))).get_EmailMessageId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.ApplicationModel.Email.EmailMeetingResponseType Response()
 	{
@@ -1253,17 +1253,17 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxUpdateMeetingResponseRequest)this.asInterface(uuid("5b99ac93-b2cf-4888-ba4f-306b6b66df30"))).get_Response(&_ret));
 		return _ret;
 	}
-	final HSTRING Subject()
+	final wstring Subject()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxUpdateMeetingResponseRequest)this.asInterface(uuid("5b99ac93-b2cf-4888-ba4f-306b6b66df30"))).get_Subject(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Comment()
+	final wstring Comment()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxUpdateMeetingResponseRequest)this.asInterface(uuid("5b99ac93-b2cf-4888-ba4f-306b6b66df30"))).get_Comment(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool SendUpdate()
 	{
@@ -1305,11 +1305,11 @@ extern(Windows):
 interface EmailMailboxValidateCertificatesRequest : Windows.ApplicationModel.Email.DataProvider.IEmailMailboxValidateCertificatesRequest
 {
 extern(Windows):
-	final HSTRING EmailMailboxId()
+	final wstring EmailMailboxId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Email.DataProvider.IEmailMailboxValidateCertificatesRequest)this.asInterface(uuid("a94d3931-e11a-4f97-b81a-187a70a8f41a"))).get_EmailMailboxId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Security.Cryptography.Certificates.Certificate) Certificates()
 	{

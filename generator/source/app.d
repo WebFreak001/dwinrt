@@ -1526,7 +1526,7 @@ struct Interface
 		bool[string] alreadyWrittenMethods;
 		foreach (method; methods ~ (extra ? *extra : []))
 		{
-			string signature = method.fullName ~ "(" ~ method.arguments.to!(string[]).join(", ") ~ ")";
+			string signature = method.fullName ~ "(" ~ method.arguments.fixArgsType.to!(string[]).join(", ") ~ ")";
 			if (signature !in alreadyWrittenMethods)
 			{
 				alreadyWrittenMethods[signature] = true;
@@ -1736,6 +1736,7 @@ struct InterfaceMethod
 		{
 			string fname = fullName;
 			int returnIndex = -1;
+			ReturnTypeFixer returnTypeFixer;
 			foreach (i, arg; arguments)
 			{
 				if (arg.direction & ArgumentDirection.retval)
@@ -1744,26 +1745,27 @@ struct InterfaceMethod
 					enforce(returnType[$ - 1] == '*');
 					returnType.length--;
 					returnIndex = cast(int) i;
+					returnTypeFixer.attach(returnType);
 					break;
 				}
 			}
 			if (returnIndex != -1)
 			{
-				string argsPre = arguments[0 .. returnIndex].map!"a.fullName".join(", ");
+				string argsPre = arguments[0 .. returnIndex].fixArgsName.map!"a.fullName".join(", ");
 				if (argsPre.length)
 					argsPre ~= ", ";
-				string argsPost = arguments[returnIndex + 1 .. $].map!"a.fullName".join(", ");
+				string argsPost = arguments[returnIndex + 1 .. $].fixArgsName.map!"a.fullName".join(", ");
 				arguments = arguments[0 .. returnIndex] ~ arguments[returnIndex + 1 .. $];
 				string pre = returnType ~ " _ret;\n";
 				string args = argsPre ~ "&_ret";
 				if (argsPost.length)
 					args ~= ", " ~ argsPost;
-				string post = "\nreturn _ret;";
+				string post = "\nreturn " ~ returnTypeFixer.fixedName("_ret") ~ ";";
 				implementation = pre ~ "Debug.OK(" ~ self ~ "." ~ fname ~ "(" ~ args ~ "));" ~ post;
 			}
 			else
 			{
-				string args = arguments.map!"a.fullName".join(", ");
+				string args = arguments.fixArgsName.map!"a.fullName".join(", ");
 				returnType = "void";
 				implementation = "Debug.OK(" ~ self ~ "." ~ fname ~ "(" ~ args ~ "));";
 			}
@@ -1816,10 +1818,15 @@ struct InterfaceMethod
 			ret ~= "deprecated(" ~ deprecation ~ ")\n";
 		if (implementation.length)
 			ret ~= implementationPrefix;
-		ret ~= returnType ~ " ";
+		ReturnTypeFixer returnTypeFixer;
+		returnTypeFixer.attach(returnType);
+		ret ~= returnTypeFixer.returnType ~ " ";
 		ret ~= fullName;
 		ret ~= "(";
-		ret ~= arguments.to!(string[]).join(", ");
+		if (implementation.length)
+			ret ~= arguments.fixArgsType.to!(string[]).join(", ");
+		else
+			ret ~= arguments.to!(string[]).join(", ");
 		ret ~= ")";
 		if (implementation.length)
 			ret ~= "\n{\n" ~ implementation.indent ~ "\n}";
@@ -1860,6 +1867,65 @@ struct InterfaceMethod
 		ret ~= " }";
 		return ret;
 	}
+}
+
+struct ReturnTypeFixer
+{
+	string returnType;
+	string pre;
+	string post;
+
+	void attach(string type)
+	{
+		if (type == "HSTRING")
+		{
+			returnType = "wstring";
+			pre = "hstring(";
+			post = ").d_str";
+		}
+		else if (type == "HSTRING*")
+		{
+			returnType = "wstring";
+			pre = "hstring(*";
+			post = ").d_str";
+		}
+		else
+		{
+			returnType = type;
+			pre = post = "";
+		}
+	}
+
+	string fixedName(string name)
+	{
+		return pre ~ name ~ post;
+	}
+}
+
+InterfaceArgument[] fixArgsType(in InterfaceArgument[] args)
+{
+	InterfaceArgument[] ret;
+	foreach (arg; args)
+	{
+		InterfaceArgument retArg = arg;
+		if (arg.type == "HSTRING")
+			retArg.type = "wstring";
+		ret ~= retArg;
+	}
+	return ret;
+}
+
+InterfaceArgument[] fixArgsName(in InterfaceArgument[] args)
+{
+	InterfaceArgument[] ret;
+	foreach (arg; args)
+	{
+		InterfaceArgument retArg = arg;
+		if (arg.type == "HSTRING")
+			retArg.name = "hstring(" ~ arg.name.makeDSafe ~ ").handle";
+		ret ~= retArg;
+	}
+	return ret;
 }
 
 string as(string var, string type)

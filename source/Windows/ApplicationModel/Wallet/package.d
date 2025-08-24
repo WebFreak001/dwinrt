@@ -203,11 +203,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletBarcode)this.asInterface(uuid("4f857b29-de80-4ea4-a1cd-81cd084dac27"))).get_Symbology(&_ret));
 		return _ret;
 	}
-	final HSTRING Value()
+	final wstring Value()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletBarcode)this.asInterface(uuid("4f857b29-de80-4ea4-a1cd-81cd084dac27"))).get_Value(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Storage.Streams.IRandomAccessStreamReference) GetImageAsync()
 	{
@@ -215,11 +215,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletBarcode)this.asInterface(uuid("4f857b29-de80-4ea4-a1cd-81cd084dac27"))).abi_GetImageAsync(&_ret));
 		return _ret;
 	}
-	static Windows.ApplicationModel.Wallet.WalletBarcode New(Windows.ApplicationModel.Wallet.WalletBarcodeSymbology symbology, HSTRING value)
+	static Windows.ApplicationModel.Wallet.WalletBarcode New(Windows.ApplicationModel.Wallet.WalletBarcodeSymbology symbology, wstring value)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Wallet.IWalletBarcodeFactory);
 		Windows.ApplicationModel.Wallet.WalletBarcode _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletBarcodeFactory)factory.asInterface(uuid("30117161-ed9c-469e-bbfd-306c95ea7108"))).abi_CreateWalletBarcode(symbology, value, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletBarcodeFactory)factory.asInterface(uuid("30117161-ed9c-469e-bbfd-306c95ea7108"))).abi_CreateWalletBarcode(symbology, hstring(value).handle, &_ret));
 		return _ret;
 	}
 	static Windows.ApplicationModel.Wallet.WalletBarcode New(Windows.Storage.Streams.IRandomAccessStreamReference streamToBarcodeImage)
@@ -234,21 +234,21 @@ extern(Windows):
 interface WalletItem : Windows.ApplicationModel.Wallet.IWalletItem
 {
 extern(Windows):
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItem)this.asInterface(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void DisplayName(HSTRING value)
+	final void DisplayName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItem)this.asInterface(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74"))).set_DisplayName(value));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItem)this.asInterface(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74"))).set_DisplayName(hstring(value).handle));
 	}
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItem)this.asInterface(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool IsAcknowledged()
 	{
@@ -260,15 +260,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItem)this.asInterface(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74"))).set_IsAcknowledged(value));
 	}
-	final HSTRING IssuerDisplayName()
+	final wstring IssuerDisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItem)this.asInterface(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74"))).get_IssuerDisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void IssuerDisplayName(HSTRING value)
+	final void IssuerDisplayName(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItem)this.asInterface(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74"))).set_IssuerDisplayName(value));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItem)this.asInterface(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74"))).set_IssuerDisplayName(hstring(value).handle));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) LastUpdated()
 	{
@@ -336,15 +336,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItem)this.asInterface(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74"))).set_Logo99x99(value));
 	}
-	final HSTRING DisplayMessage()
+	final wstring DisplayMessage()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItem)this.asInterface(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74"))).get_DisplayMessage(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void DisplayMessage(HSTRING value)
+	final void DisplayMessage(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItem)this.asInterface(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74"))).set_DisplayMessage(value));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItem)this.asInterface(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74"))).set_DisplayMessage(hstring(value).handle));
 	}
 	final bool IsDisplayMessageLaunchable()
 	{
@@ -356,15 +356,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItem)this.asInterface(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74"))).set_IsDisplayMessageLaunchable(value));
 	}
-	final HSTRING LogoText()
+	final wstring LogoText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItem)this.asInterface(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74"))).get_LogoText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void LogoText(HSTRING value)
+	final void LogoText(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItem)this.asInterface(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74"))).set_LogoText(value));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItem)this.asInterface(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74"))).set_LogoText(hstring(value).handle));
 	}
 	final Windows.UI.Color HeaderColor()
 	{
@@ -456,15 +456,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItem)this.asInterface(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74"))).set_RelevantDate(value));
 	}
-	final HSTRING RelevantDateDisplayMessage()
+	final wstring RelevantDateDisplayMessage()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItem)this.asInterface(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74"))).get_RelevantDateDisplayMessage(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void RelevantDateDisplayMessage(HSTRING value)
+	final void RelevantDateDisplayMessage(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItem)this.asInterface(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74"))).set_RelevantDateDisplayMessage(value));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItem)this.asInterface(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74"))).set_RelevantDateDisplayMessage(hstring(value).handle));
 	}
 	final Windows.Foundation.Collections.IMap!(HSTRING, Windows.ApplicationModel.Wallet.WalletTransaction) TransactionHistory()
 	{
@@ -500,11 +500,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItem)this.asInterface(uuid("20b54be8-118d-4ec4-996c-b963e7bd3e74"))).get_Verbs(&_ret));
 		return _ret;
 	}
-	static Windows.ApplicationModel.Wallet.WalletItem New(Windows.ApplicationModel.Wallet.WalletItemKind kind, HSTRING displayName)
+	static Windows.ApplicationModel.Wallet.WalletItem New(Windows.ApplicationModel.Wallet.WalletItemKind kind, wstring displayName)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Wallet.IWalletItemFactory);
 		Windows.ApplicationModel.Wallet.WalletItem _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemFactory)factory.asInterface(uuid("53e27470-4f0b-4a3e-99e5-0bbb1eab38d4"))).abi_CreateWalletItem(kind, displayName, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemFactory)factory.asInterface(uuid("53e27470-4f0b-4a3e-99e5-0bbb1eab38d4"))).abi_CreateWalletItem(kind, hstring(displayName).handle, &_ret));
 		return _ret;
 	}
 }
@@ -512,25 +512,25 @@ extern(Windows):
 interface WalletItemCustomProperty : Windows.ApplicationModel.Wallet.IWalletItemCustomProperty
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemCustomProperty)this.asInterface(uuid("b94b40f3-fa00-40fd-98dc-9de46697f1e7"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Name(HSTRING value)
+	final void Name(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemCustomProperty)this.asInterface(uuid("b94b40f3-fa00-40fd-98dc-9de46697f1e7"))).set_Name(value));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemCustomProperty)this.asInterface(uuid("b94b40f3-fa00-40fd-98dc-9de46697f1e7"))).set_Name(hstring(value).handle));
 	}
-	final HSTRING Value()
+	final wstring Value()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemCustomProperty)this.asInterface(uuid("b94b40f3-fa00-40fd-98dc-9de46697f1e7"))).get_Value(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Value(HSTRING value)
+	final void Value(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemCustomProperty)this.asInterface(uuid("b94b40f3-fa00-40fd-98dc-9de46697f1e7"))).set_Value(value));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemCustomProperty)this.asInterface(uuid("b94b40f3-fa00-40fd-98dc-9de46697f1e7"))).set_Value(hstring(value).handle));
 	}
 	final bool AutoDetectLinks()
 	{
@@ -562,11 +562,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemCustomProperty)this.asInterface(uuid("b94b40f3-fa00-40fd-98dc-9de46697f1e7"))).set_SummaryViewPosition(value));
 	}
-	static Windows.ApplicationModel.Wallet.WalletItemCustomProperty New(HSTRING name, HSTRING value)
+	static Windows.ApplicationModel.Wallet.WalletItemCustomProperty New(wstring name, wstring value)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Wallet.IWalletItemCustomPropertyFactory);
 		Windows.ApplicationModel.Wallet.WalletItemCustomProperty _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemCustomPropertyFactory)factory.asInterface(uuid("d0046a44-61a1-41aa-b259-a5610ab5d575"))).abi_CreateWalletItemCustomProperty(name, value, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemCustomPropertyFactory)factory.asInterface(uuid("d0046a44-61a1-41aa-b259-a5610ab5d575"))).abi_CreateWalletItemCustomProperty(hstring(name).handle, hstring(value).handle, &_ret));
 		return _ret;
 	}
 }
@@ -574,10 +574,10 @@ extern(Windows):
 interface WalletItemStore : Windows.ApplicationModel.Wallet.IWalletItemStore
 {
 extern(Windows):
-	final Windows.Foundation.IAsyncAction AddAsync(HSTRING id, Windows.ApplicationModel.Wallet.WalletItem item)
+	final Windows.Foundation.IAsyncAction AddAsync(wstring id, Windows.ApplicationModel.Wallet.WalletItem item)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemStore)this.asInterface(uuid("7160484b-6d49-48f8-91a9-40a1d0f13ef4"))).abi_AddAsync(id, item, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemStore)this.asInterface(uuid("7160484b-6d49-48f8-91a9-40a1d0f13ef4"))).abi_AddAsync(hstring(id).handle, item, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ClearAsync()
@@ -586,10 +586,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemStore)this.asInterface(uuid("7160484b-6d49-48f8-91a9-40a1d0f13ef4"))).abi_ClearAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.WalletItem) GetWalletItemAsync(HSTRING id)
+	final Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.WalletItem) GetWalletItemAsync(wstring id)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.ApplicationModel.Wallet.WalletItem) _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemStore)this.asInterface(uuid("7160484b-6d49-48f8-91a9-40a1d0f13ef4"))).abi_GetWalletItemAsync(id, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemStore)this.asInterface(uuid("7160484b-6d49-48f8-91a9-40a1d0f13ef4"))).abi_GetWalletItemAsync(hstring(id).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncOperation!(Windows.Foundation.Collections.IVectorView!(Windows.ApplicationModel.Wallet.WalletItem)) GetItemsAsync()
@@ -611,10 +611,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemStore)this.asInterface(uuid("7160484b-6d49-48f8-91a9-40a1d0f13ef4"))).abi_ImportItemAsync(stream, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction DeleteAsync(HSTRING id)
+	final Windows.Foundation.IAsyncAction DeleteAsync(wstring id)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemStore)this.asInterface(uuid("7160484b-6d49-48f8-91a9-40a1d0f13ef4"))).abi_DeleteAsync(id, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemStore)this.asInterface(uuid("7160484b-6d49-48f8-91a9-40a1d0f13ef4"))).abi_DeleteAsync(hstring(id).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Foundation.IAsyncAction ShowAsync()
@@ -623,10 +623,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemStore)this.asInterface(uuid("7160484b-6d49-48f8-91a9-40a1d0f13ef4"))).abi_ShowAsync(&_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncAction ShowItemAsync(HSTRING id)
+	final Windows.Foundation.IAsyncAction ShowItemAsync(wstring id)
 	{
 		Windows.Foundation.IAsyncAction _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemStore)this.asInterface(uuid("7160484b-6d49-48f8-91a9-40a1d0f13ef4"))).abi_ShowItemAsync(id, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletItemStore)this.asInterface(uuid("7160484b-6d49-48f8-91a9-40a1d0f13ef4"))).abi_ShowItemAsync(hstring(id).handle, &_ret));
 		return _ret;
 	}
 	alias ShowAsync = ShowItemAsync;
@@ -667,15 +667,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletRelevantLocation)this.asInterface(uuid("9fd8782a-e3f9-4de1-bab3-bb192e46b3f3"))).set_Position(value));
 	}
-	final HSTRING DisplayMessage()
+	final wstring DisplayMessage()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletRelevantLocation)this.asInterface(uuid("9fd8782a-e3f9-4de1-bab3-bb192e46b3f3"))).get_DisplayMessage(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void DisplayMessage(HSTRING value)
+	final void DisplayMessage(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletRelevantLocation)this.asInterface(uuid("9fd8782a-e3f9-4de1-bab3-bb192e46b3f3"))).set_DisplayMessage(value));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletRelevantLocation)this.asInterface(uuid("9fd8782a-e3f9-4de1-bab3-bb192e46b3f3"))).set_DisplayMessage(hstring(value).handle));
 	}
 	static WalletRelevantLocation New()
 	{
@@ -688,25 +688,25 @@ extern(Windows):
 interface WalletTransaction : Windows.ApplicationModel.Wallet.IWalletTransaction
 {
 extern(Windows):
-	final HSTRING Description()
+	final wstring Description()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletTransaction)this.asInterface(uuid("40e1e940-2606-4519-81cb-bff1c60d1f79"))).get_Description(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Description(HSTRING value)
+	final void Description(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletTransaction)this.asInterface(uuid("40e1e940-2606-4519-81cb-bff1c60d1f79"))).set_Description(value));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletTransaction)this.asInterface(uuid("40e1e940-2606-4519-81cb-bff1c60d1f79"))).set_Description(hstring(value).handle));
 	}
-	final HSTRING DisplayAmount()
+	final wstring DisplayAmount()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletTransaction)this.asInterface(uuid("40e1e940-2606-4519-81cb-bff1c60d1f79"))).get_DisplayAmount(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void DisplayAmount(HSTRING value)
+	final void DisplayAmount(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletTransaction)this.asInterface(uuid("40e1e940-2606-4519-81cb-bff1c60d1f79"))).set_DisplayAmount(value));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletTransaction)this.asInterface(uuid("40e1e940-2606-4519-81cb-bff1c60d1f79"))).set_DisplayAmount(hstring(value).handle));
 	}
 	final bool IgnoreTimeOfDay()
 	{
@@ -718,15 +718,15 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletTransaction)this.asInterface(uuid("40e1e940-2606-4519-81cb-bff1c60d1f79"))).set_IgnoreTimeOfDay(value));
 	}
-	final HSTRING DisplayLocation()
+	final wstring DisplayLocation()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletTransaction)this.asInterface(uuid("40e1e940-2606-4519-81cb-bff1c60d1f79"))).get_DisplayLocation(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void DisplayLocation(HSTRING value)
+	final void DisplayLocation(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletTransaction)this.asInterface(uuid("40e1e940-2606-4519-81cb-bff1c60d1f79"))).set_DisplayLocation(value));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletTransaction)this.asInterface(uuid("40e1e940-2606-4519-81cb-bff1c60d1f79"))).set_DisplayLocation(hstring(value).handle));
 	}
 	final Windows.Foundation.IReference!(Windows.Foundation.DateTime) TransactionDate()
 	{
@@ -759,21 +759,21 @@ extern(Windows):
 interface WalletVerb : Windows.ApplicationModel.Wallet.IWalletVerb
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletVerb)this.asInterface(uuid("17b826d6-e3c1-4c74-8a94-217aadbc4884"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Name(HSTRING value)
+	final void Name(wstring value)
 	{
-		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletVerb)this.asInterface(uuid("17b826d6-e3c1-4c74-8a94-217aadbc4884"))).set_Name(value));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletVerb)this.asInterface(uuid("17b826d6-e3c1-4c74-8a94-217aadbc4884"))).set_Name(hstring(value).handle));
 	}
-	static Windows.ApplicationModel.Wallet.WalletVerb New(HSTRING name)
+	static Windows.ApplicationModel.Wallet.WalletVerb New(wstring name)
 	{
 		auto factory = factory!(Windows.ApplicationModel.Wallet.IWalletVerbFactory);
 		Windows.ApplicationModel.Wallet.WalletVerb _ret;
-		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletVerbFactory)factory.asInterface(uuid("76012771-be58-4d5e-83ed-58b1669c7ad9"))).abi_CreateWalletVerb(name, &_ret));
+		Debug.OK((cast(Windows.ApplicationModel.Wallet.IWalletVerbFactory)factory.asInterface(uuid("76012771-be58-4d5e-83ed-58b1669c7ad9"))).abi_CreateWalletVerb(hstring(name).handle, &_ret));
 		return _ret;
 	}
 }

@@ -341,17 +341,17 @@ interface MediaFrameArrivedEventArgs : Windows.Media.Capture.Frames.IMediaFrameA
 interface MediaFrameFormat : Windows.Media.Capture.Frames.IMediaFrameFormat
 {
 extern(Windows):
-	final HSTRING MajorType()
+	final wstring MajorType()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.Frames.IMediaFrameFormat)this.asInterface(uuid("71902b4e-b279-4a97-a9db-bd5a2fb78f39"))).get_MajorType(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Subtype()
+	final wstring Subtype()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.Frames.IMediaFrameFormat)this.asInterface(uuid("71902b4e-b279-4a97-a9db-bd5a2fb78f39"))).get_Subtype(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Media.MediaProperties.MediaRatio FrameRate()
 	{
@@ -521,16 +521,16 @@ extern(Windows):
 interface MediaFrameSourceController : Windows.Media.Capture.Frames.IMediaFrameSourceController, Windows.Media.Capture.Frames.IMediaFrameSourceController2
 {
 extern(Windows):
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult) GetPropertyAsync(HSTRING propertyId)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult) GetPropertyAsync(wstring propertyId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult) _ret;
-		Debug.OK((cast(Windows.Media.Capture.Frames.IMediaFrameSourceController)this.asInterface(uuid("6d076635-316d-4b8f-b7b6-eeb04a8c6525"))).abi_GetPropertyAsync(propertyId, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.Frames.IMediaFrameSourceController)this.asInterface(uuid("6d076635-316d-4b8f-b7b6-eeb04a8c6525"))).abi_GetPropertyAsync(hstring(propertyId).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceSetPropertyStatus) SetPropertyAsync(HSTRING propertyId, IInspectable propertyValue)
+	final Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceSetPropertyStatus) SetPropertyAsync(wstring propertyId, IInspectable propertyValue)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceSetPropertyStatus) _ret;
-		Debug.OK((cast(Windows.Media.Capture.Frames.IMediaFrameSourceController)this.asInterface(uuid("6d076635-316d-4b8f-b7b6-eeb04a8c6525"))).abi_SetPropertyAsync(propertyId, propertyValue, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.Frames.IMediaFrameSourceController)this.asInterface(uuid("6d076635-316d-4b8f-b7b6-eeb04a8c6525"))).abi_SetPropertyAsync(hstring(propertyId).handle, propertyValue, &_ret));
 		return _ret;
 	}
 	final Windows.Media.Devices.VideoDeviceController VideoDeviceController()
@@ -573,17 +573,17 @@ extern(Windows):
 interface MediaFrameSourceGroup : Windows.Media.Capture.Frames.IMediaFrameSourceGroup
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.Frames.IMediaFrameSourceGroup)this.asInterface(uuid("7f605b87-4832-4b5f-ae3d-412faab37d34"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.Frames.IMediaFrameSourceGroup)this.asInterface(uuid("7f605b87-4832-4b5f-ae3d-412faab37d34"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IVectorView!(Windows.Media.Capture.Frames.MediaFrameSourceInfo) SourceInfos()
 	{
@@ -604,28 +604,28 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_FindAllAsync(&_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceGroup) FromIdAsync(HSTRING id)
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceGroup) FromIdAsync(wstring id)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Capture.Frames.MediaFrameSourceGroup) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(id, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(id).handle, &_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelector()
+	static wstring GetDeviceSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface MediaFrameSourceInfo : Windows.Media.Capture.Frames.IMediaFrameSourceInfo
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Capture.Frames.IMediaFrameSourceInfo)this.asInterface(uuid("87bdc9cd-4601-408f-91cf-038318cd0af3"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Media.Capture.MediaStreamType MediaStreamType()
 	{
@@ -709,10 +709,10 @@ extern(Windows):
 interface MultiSourceMediaFrameReference : Windows.Media.Capture.Frames.IMultiSourceMediaFrameReference, Windows.Foundation.IClosable
 {
 extern(Windows):
-	final Windows.Media.Capture.Frames.MediaFrameReference TryGetFrameReferenceBySourceId(HSTRING sourceId)
+	final Windows.Media.Capture.Frames.MediaFrameReference TryGetFrameReferenceBySourceId(wstring sourceId)
 	{
 		Windows.Media.Capture.Frames.MediaFrameReference _ret;
-		Debug.OK((cast(Windows.Media.Capture.Frames.IMultiSourceMediaFrameReference)this.asInterface(uuid("21964b1a-7fe2-44d6-92e5-298e6d2810e9"))).abi_TryGetFrameReferenceBySourceId(sourceId, &_ret));
+		Debug.OK((cast(Windows.Media.Capture.Frames.IMultiSourceMediaFrameReference)this.asInterface(uuid("21964b1a-7fe2-44d6-92e5-298e6d2810e9"))).abi_TryGetFrameReferenceBySourceId(hstring(sourceId).handle, &_ret));
 		return _ret;
 	}
 	final void Close()

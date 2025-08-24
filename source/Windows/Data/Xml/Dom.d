@@ -350,11 +350,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeType(&_ret));
 		return _ret;
 	}
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
 	{
@@ -466,44 +466,44 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).set_Prefix(value));
 	}
-	final HSTRING GetXml()
+	final wstring GetXml()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).abi_GetXml(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING InnerText()
+	final wstring InnerText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).get_InnerText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void InnerText(HSTRING value)
+	final void InnerText(wstring value)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(value));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(hstring(value).handle));
 	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(hstring(xpath).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(hstring(xpath).handle, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(wstring xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(hstring(xpath).handle, namespaces, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(wstring xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(hstring(xpath).handle, namespaces, &_ret));
 		return _ret;
 	}
 }
@@ -539,11 +539,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeType(&_ret));
 		return _ret;
 	}
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
 	{
@@ -655,44 +655,44 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).set_Prefix(value));
 	}
-	final HSTRING GetXml()
+	final wstring GetXml()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).abi_GetXml(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING InnerText()
+	final wstring InnerText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).get_InnerText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void InnerText(HSTRING value)
+	final void InnerText(wstring value)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(value));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(hstring(value).handle));
 	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(hstring(xpath).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(hstring(xpath).handle, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(wstring xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(hstring(xpath).handle, namespaces, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(wstring xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(hstring(xpath).handle, namespaces, &_ret));
 		return _ret;
 	}
 }
@@ -700,11 +700,11 @@ extern(Windows):
 interface XmlAttribute : Windows.Data.Xml.Dom.IXmlAttribute, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlAttribute)this.asInterface(uuid("ac144aa4-b4f1-4db6-b206-8a22c308db0a"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final bool Specified()
 	{
@@ -712,15 +712,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlAttribute)this.asInterface(uuid("ac144aa4-b4f1-4db6-b206-8a22c308db0a"))).get_Specified(&_ret));
 		return _ret;
 	}
-	final HSTRING Value()
+	final wstring Value()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlAttribute)this.asInterface(uuid("ac144aa4-b4f1-4db6-b206-8a22c308db0a"))).get_Value(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Value(HSTRING value)
+	final void Value(wstring value)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlAttribute)this.asInterface(uuid("ac144aa4-b4f1-4db6-b206-8a22c308db0a"))).set_Value(value));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlAttribute)this.asInterface(uuid("ac144aa4-b4f1-4db6-b206-8a22c308db0a"))).set_Value(hstring(value).handle));
 	}
 	final IInspectable NodeValue()
 	{
@@ -738,11 +738,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeType(&_ret));
 		return _ret;
 	}
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
 	{
@@ -854,44 +854,44 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).set_Prefix(value));
 	}
-	final HSTRING GetXml()
+	final wstring GetXml()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).abi_GetXml(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING InnerText()
+	final wstring InnerText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).get_InnerText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void InnerText(HSTRING value)
+	final void InnerText(wstring value)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(value));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(hstring(value).handle));
 	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(hstring(xpath).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(hstring(xpath).handle, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(wstring xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(hstring(xpath).handle, namespaces, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(wstring xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(hstring(xpath).handle, namespaces, &_ret));
 		return _ret;
 	}
 }
@@ -905,15 +905,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlText)this.asInterface(uuid("f931a4cb-308d-4760-a1d5-43b67450ac7e"))).abi_SplitText(offset, &_ret));
 		return _ret;
 	}
-	final HSTRING Data()
+	final wstring Data()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).get_Data(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Data(HSTRING value)
+	final void Data(wstring value)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).set_Data(value));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).set_Data(hstring(value).handle));
 	}
 	final UINT32 Length()
 	{
@@ -921,27 +921,27 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).get_Length(&_ret));
 		return _ret;
 	}
-	final HSTRING SubstringData(UINT32 offset, UINT32 count)
+	final wstring SubstringData(UINT32 offset, UINT32 count)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_SubstringData(offset, count, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void AppendData(HSTRING data)
+	final void AppendData(wstring data)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_AppendData(data));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_AppendData(hstring(data).handle));
 	}
-	final void InsertData(UINT32 offset, HSTRING data)
+	final void InsertData(UINT32 offset, wstring data)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_InsertData(offset, data));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_InsertData(offset, hstring(data).handle));
 	}
 	final void DeleteData(UINT32 offset, UINT32 count)
 	{
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_DeleteData(offset, count));
 	}
-	final void ReplaceData(UINT32 offset, UINT32 count, HSTRING data)
+	final void ReplaceData(UINT32 offset, UINT32 count, wstring data)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_ReplaceData(offset, count, data));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_ReplaceData(offset, count, hstring(data).handle));
 	}
 	final IInspectable NodeValue()
 	{
@@ -959,11 +959,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeType(&_ret));
 		return _ret;
 	}
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
 	{
@@ -1075,44 +1075,44 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).set_Prefix(value));
 	}
-	final HSTRING GetXml()
+	final wstring GetXml()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).abi_GetXml(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING InnerText()
+	final wstring InnerText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).get_InnerText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void InnerText(HSTRING value)
+	final void InnerText(wstring value)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(value));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(hstring(value).handle));
 	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(hstring(xpath).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(hstring(xpath).handle, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(wstring xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(hstring(xpath).handle, namespaces, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(wstring xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(hstring(xpath).handle, namespaces, &_ret));
 		return _ret;
 	}
 }
@@ -1120,15 +1120,15 @@ extern(Windows):
 interface XmlComment : Windows.Data.Xml.Dom.IXmlComment, Windows.Data.Xml.Dom.IXmlCharacterData, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
 extern(Windows):
-	final HSTRING Data()
+	final wstring Data()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).get_Data(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Data(HSTRING value)
+	final void Data(wstring value)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).set_Data(value));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).set_Data(hstring(value).handle));
 	}
 	final UINT32 Length()
 	{
@@ -1136,27 +1136,27 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).get_Length(&_ret));
 		return _ret;
 	}
-	final HSTRING SubstringData(UINT32 offset, UINT32 count)
+	final wstring SubstringData(UINT32 offset, UINT32 count)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_SubstringData(offset, count, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void AppendData(HSTRING data)
+	final void AppendData(wstring data)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_AppendData(data));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_AppendData(hstring(data).handle));
 	}
-	final void InsertData(UINT32 offset, HSTRING data)
+	final void InsertData(UINT32 offset, wstring data)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_InsertData(offset, data));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_InsertData(offset, hstring(data).handle));
 	}
 	final void DeleteData(UINT32 offset, UINT32 count)
 	{
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_DeleteData(offset, count));
 	}
-	final void ReplaceData(UINT32 offset, UINT32 count, HSTRING data)
+	final void ReplaceData(UINT32 offset, UINT32 count, wstring data)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_ReplaceData(offset, count, data));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_ReplaceData(offset, count, hstring(data).handle));
 	}
 	final IInspectable NodeValue()
 	{
@@ -1174,11 +1174,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeType(&_ret));
 		return _ret;
 	}
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
 	{
@@ -1290,44 +1290,44 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).set_Prefix(value));
 	}
-	final HSTRING GetXml()
+	final wstring GetXml()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).abi_GetXml(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING InnerText()
+	final wstring InnerText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).get_InnerText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void InnerText(HSTRING value)
+	final void InnerText(wstring value)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(value));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(hstring(value).handle));
 	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(hstring(xpath).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(hstring(xpath).handle, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(wstring xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(hstring(xpath).handle, namespaces, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(wstring xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(hstring(xpath).handle, namespaces, &_ret));
 		return _ret;
 	}
 }
@@ -1353,10 +1353,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).get_DocumentElement(&_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlElement CreateElement(HSTRING tagName)
+	final Windows.Data.Xml.Dom.XmlElement CreateElement(wstring tagName)
 	{
 		Windows.Data.Xml.Dom.XmlElement _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).abi_CreateElement(tagName, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).abi_CreateElement(hstring(tagName).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Data.Xml.Dom.XmlDocumentFragment CreateDocumentFragment()
@@ -1365,70 +1365,70 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).abi_CreateDocumentFragment(&_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlText CreateTextNode(HSTRING data)
+	final Windows.Data.Xml.Dom.XmlText CreateTextNode(wstring data)
 	{
 		Windows.Data.Xml.Dom.XmlText _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).abi_CreateTextNode(data, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).abi_CreateTextNode(hstring(data).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlComment CreateComment(HSTRING data)
+	final Windows.Data.Xml.Dom.XmlComment CreateComment(wstring data)
 	{
 		Windows.Data.Xml.Dom.XmlComment _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).abi_CreateComment(data, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).abi_CreateComment(hstring(data).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlProcessingInstruction CreateProcessingInstruction(HSTRING target, HSTRING data)
+	final Windows.Data.Xml.Dom.XmlProcessingInstruction CreateProcessingInstruction(wstring target, wstring data)
 	{
 		Windows.Data.Xml.Dom.XmlProcessingInstruction _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).abi_CreateProcessingInstruction(target, data, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).abi_CreateProcessingInstruction(hstring(target).handle, hstring(data).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlAttribute CreateAttribute(HSTRING name)
+	final Windows.Data.Xml.Dom.XmlAttribute CreateAttribute(wstring name)
 	{
 		Windows.Data.Xml.Dom.XmlAttribute _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).abi_CreateAttribute(name, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).abi_CreateAttribute(hstring(name).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlEntityReference CreateEntityReference(HSTRING name)
+	final Windows.Data.Xml.Dom.XmlEntityReference CreateEntityReference(wstring name)
 	{
 		Windows.Data.Xml.Dom.XmlEntityReference _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).abi_CreateEntityReference(name, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).abi_CreateEntityReference(hstring(name).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlNodeList GetElementsByTagName(HSTRING tagName)
+	final Windows.Data.Xml.Dom.XmlNodeList GetElementsByTagName(wstring tagName)
 	{
 		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).abi_GetElementsByTagName(tagName, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).abi_GetElementsByTagName(hstring(tagName).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlCDataSection CreateCDataSection(HSTRING data)
+	final Windows.Data.Xml.Dom.XmlCDataSection CreateCDataSection(wstring data)
 	{
 		Windows.Data.Xml.Dom.XmlCDataSection _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).abi_CreateCDataSection(data, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).abi_CreateCDataSection(hstring(data).handle, &_ret));
 		return _ret;
 	}
-	final HSTRING DocumentUri()
+	final wstring DocumentUri()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).get_DocumentUri(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final Windows.Data.Xml.Dom.XmlAttribute CreateAttributeNS(IInspectable namespaceUri, HSTRING qualifiedName)
+	final Windows.Data.Xml.Dom.XmlAttribute CreateAttributeNS(IInspectable namespaceUri, wstring qualifiedName)
 	{
 		Windows.Data.Xml.Dom.XmlAttribute _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).abi_CreateAttributeNS(namespaceUri, qualifiedName, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).abi_CreateAttributeNS(namespaceUri, hstring(qualifiedName).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlElement CreateElementNS(IInspectable namespaceUri, HSTRING qualifiedName)
+	final Windows.Data.Xml.Dom.XmlElement CreateElementNS(IInspectable namespaceUri, wstring qualifiedName)
 	{
 		Windows.Data.Xml.Dom.XmlElement _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).abi_CreateElementNS(namespaceUri, qualifiedName, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).abi_CreateElementNS(namespaceUri, hstring(qualifiedName).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlElement GetElementById(HSTRING elementId)
+	final Windows.Data.Xml.Dom.XmlElement GetElementById(wstring elementId)
 	{
 		Windows.Data.Xml.Dom.XmlElement _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).abi_GetElementById(elementId, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocument)this.asInterface(uuid("f7f3a506-1e87-42d6-bcfb-b8c809fa5494"))).abi_GetElementById(hstring(elementId).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Data.Xml.Dom.IXmlNode ImportNode(Windows.Data.Xml.Dom.IXmlNode node, bool deep)
@@ -1453,11 +1453,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeType(&_ret));
 		return _ret;
 	}
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
 	{
@@ -1569,53 +1569,53 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).set_Prefix(value));
 	}
-	final HSTRING GetXml()
+	final wstring GetXml()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).abi_GetXml(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING InnerText()
+	final wstring InnerText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).get_InnerText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void InnerText(HSTRING value)
+	final void InnerText(wstring value)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(value));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(hstring(value).handle));
 	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(hstring(xpath).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(hstring(xpath).handle, &_ret));
 		return _ret;
 	}
-	final void LoadXml(HSTRING xml)
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(wstring xpath, IInspectable namespaces)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocumentIO)this.asInterface(uuid("6cd0e74e-ee65-4489-9ebf-ca43e87ba637"))).abi_LoadXml(xml));
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(hstring(xpath).handle, namespaces, &_ret));
+		return _ret;
 	}
-	final void LoadXmlWithSettings(HSTRING xml, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings)
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(wstring xpath, IInspectable namespaces)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocumentIO)this.asInterface(uuid("6cd0e74e-ee65-4489-9ebf-ca43e87ba637"))).abi_LoadXmlWithSettings(xml, loadSettings));
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(hstring(xpath).handle, namespaces, &_ret));
+		return _ret;
+	}
+	final void LoadXml(wstring xml)
+	{
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocumentIO)this.asInterface(uuid("6cd0e74e-ee65-4489-9ebf-ca43e87ba637"))).abi_LoadXml(hstring(xml).handle));
+	}
+	final void LoadXmlWithSettings(wstring xml, Windows.Data.Xml.Dom.XmlLoadSettings loadSettings)
+	{
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocumentIO)this.asInterface(uuid("6cd0e74e-ee65-4489-9ebf-ca43e87ba637"))).abi_LoadXmlWithSettings(hstring(xml).handle, loadSettings));
 	}
 	alias LoadXml = LoadXmlWithSettings;
 	final Windows.Foundation.IAsyncAction SaveToFileAsync(Windows.Storage.IStorageFile file)
@@ -1693,11 +1693,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeType(&_ret));
 		return _ret;
 	}
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
 	{
@@ -1809,44 +1809,44 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).set_Prefix(value));
 	}
-	final HSTRING GetXml()
+	final wstring GetXml()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).abi_GetXml(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING InnerText()
+	final wstring InnerText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).get_InnerText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void InnerText(HSTRING value)
+	final void InnerText(wstring value)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(value));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(hstring(value).handle));
 	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(hstring(xpath).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(hstring(xpath).handle, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(wstring xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(hstring(xpath).handle, namespaces, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(wstring xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(hstring(xpath).handle, namespaces, &_ret));
 		return _ret;
 	}
 }
@@ -1854,11 +1854,11 @@ extern(Windows):
 interface XmlDocumentType : Windows.Data.Xml.Dom.IXmlDocumentType, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDocumentType)this.asInterface(uuid("f7342425-9781-4964-8e94-9b1c6dfc9bc7"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Data.Xml.Dom.XmlNamedNodeMap Entities()
 	{
@@ -1888,11 +1888,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeType(&_ret));
 		return _ret;
 	}
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
 	{
@@ -2004,44 +2004,44 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).set_Prefix(value));
 	}
-	final HSTRING GetXml()
+	final wstring GetXml()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).abi_GetXml(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING InnerText()
+	final wstring InnerText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).get_InnerText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void InnerText(HSTRING value)
+	final void InnerText(wstring value)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(value));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(hstring(value).handle));
 	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(hstring(xpath).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(hstring(xpath).handle, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(wstring xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(hstring(xpath).handle, namespaces, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(wstring xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(hstring(xpath).handle, namespaces, &_ret));
 		return _ret;
 	}
 }
@@ -2049,10 +2049,10 @@ extern(Windows):
 interface XmlDomImplementation : Windows.Data.Xml.Dom.IXmlDomImplementation
 {
 extern(Windows):
-	final bool HasFeature(HSTRING feature, IInspectable version_)
+	final bool HasFeature(wstring feature, IInspectable version_)
 	{
 		bool _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDomImplementation)this.asInterface(uuid("6de58132-f11d-4fbb-8cc6-583cba93112f"))).abi_HasFeature(feature, version_, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlDomImplementation)this.asInterface(uuid("6de58132-f11d-4fbb-8cc6-583cba93112f"))).abi_HasFeature(hstring(feature).handle, version_, &_ret));
 		return _ret;
 	}
 }
@@ -2060,30 +2060,30 @@ extern(Windows):
 interface XmlElement : Windows.Data.Xml.Dom.IXmlElement, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
 extern(Windows):
-	final HSTRING TagName()
+	final wstring TagName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlElement)this.asInterface(uuid("2dfb8a1f-6b10-4ef8-9f83-efcce8faec37"))).get_TagName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING GetAttribute(HSTRING attributeName)
+	final wstring GetAttribute(wstring attributeName)
 	{
 		HSTRING _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlElement)this.asInterface(uuid("2dfb8a1f-6b10-4ef8-9f83-efcce8faec37"))).abi_GetAttribute(attributeName, &_ret));
-		return _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlElement)this.asInterface(uuid("2dfb8a1f-6b10-4ef8-9f83-efcce8faec37"))).abi_GetAttribute(hstring(attributeName).handle, &_ret));
+		return hstring(_ret).d_str;
 	}
-	final void SetAttribute(HSTRING attributeName, HSTRING attributeValue)
+	final void SetAttribute(wstring attributeName, wstring attributeValue)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlElement)this.asInterface(uuid("2dfb8a1f-6b10-4ef8-9f83-efcce8faec37"))).abi_SetAttribute(attributeName, attributeValue));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlElement)this.asInterface(uuid("2dfb8a1f-6b10-4ef8-9f83-efcce8faec37"))).abi_SetAttribute(hstring(attributeName).handle, hstring(attributeValue).handle));
 	}
-	final void RemoveAttribute(HSTRING attributeName)
+	final void RemoveAttribute(wstring attributeName)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlElement)this.asInterface(uuid("2dfb8a1f-6b10-4ef8-9f83-efcce8faec37"))).abi_RemoveAttribute(attributeName));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlElement)this.asInterface(uuid("2dfb8a1f-6b10-4ef8-9f83-efcce8faec37"))).abi_RemoveAttribute(hstring(attributeName).handle));
 	}
-	final Windows.Data.Xml.Dom.XmlAttribute GetAttributeNode(HSTRING attributeName)
+	final Windows.Data.Xml.Dom.XmlAttribute GetAttributeNode(wstring attributeName)
 	{
 		Windows.Data.Xml.Dom.XmlAttribute _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlElement)this.asInterface(uuid("2dfb8a1f-6b10-4ef8-9f83-efcce8faec37"))).abi_GetAttributeNode(attributeName, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlElement)this.asInterface(uuid("2dfb8a1f-6b10-4ef8-9f83-efcce8faec37"))).abi_GetAttributeNode(hstring(attributeName).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Data.Xml.Dom.XmlAttribute SetAttributeNode(Windows.Data.Xml.Dom.XmlAttribute newAttribute)
@@ -2098,25 +2098,25 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlElement)this.asInterface(uuid("2dfb8a1f-6b10-4ef8-9f83-efcce8faec37"))).abi_RemoveAttributeNode(attributeNode, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlNodeList GetElementsByTagName(HSTRING tagName)
+	final Windows.Data.Xml.Dom.XmlNodeList GetElementsByTagName(wstring tagName)
 	{
 		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlElement)this.asInterface(uuid("2dfb8a1f-6b10-4ef8-9f83-efcce8faec37"))).abi_GetElementsByTagName(tagName, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlElement)this.asInterface(uuid("2dfb8a1f-6b10-4ef8-9f83-efcce8faec37"))).abi_GetElementsByTagName(hstring(tagName).handle, &_ret));
 		return _ret;
 	}
-	final void SetAttributeNS(IInspectable namespaceUri, HSTRING qualifiedName, HSTRING value)
+	final void SetAttributeNS(IInspectable namespaceUri, wstring qualifiedName, wstring value)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlElement)this.asInterface(uuid("2dfb8a1f-6b10-4ef8-9f83-efcce8faec37"))).abi_SetAttributeNS(namespaceUri, qualifiedName, value));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlElement)this.asInterface(uuid("2dfb8a1f-6b10-4ef8-9f83-efcce8faec37"))).abi_SetAttributeNS(namespaceUri, hstring(qualifiedName).handle, hstring(value).handle));
 	}
-	final HSTRING GetAttributeNS(IInspectable namespaceUri, HSTRING localName)
+	final wstring GetAttributeNS(IInspectable namespaceUri, wstring localName)
 	{
 		HSTRING _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlElement)this.asInterface(uuid("2dfb8a1f-6b10-4ef8-9f83-efcce8faec37"))).abi_GetAttributeNS(namespaceUri, localName, &_ret));
-		return _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlElement)this.asInterface(uuid("2dfb8a1f-6b10-4ef8-9f83-efcce8faec37"))).abi_GetAttributeNS(namespaceUri, hstring(localName).handle, &_ret));
+		return hstring(_ret).d_str;
 	}
-	final void RemoveAttributeNS(IInspectable namespaceUri, HSTRING localName)
+	final void RemoveAttributeNS(IInspectable namespaceUri, wstring localName)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlElement)this.asInterface(uuid("2dfb8a1f-6b10-4ef8-9f83-efcce8faec37"))).abi_RemoveAttributeNS(namespaceUri, localName));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlElement)this.asInterface(uuid("2dfb8a1f-6b10-4ef8-9f83-efcce8faec37"))).abi_RemoveAttributeNS(namespaceUri, hstring(localName).handle));
 	}
 	final Windows.Data.Xml.Dom.XmlAttribute SetAttributeNodeNS(Windows.Data.Xml.Dom.XmlAttribute newAttribute)
 	{
@@ -2124,10 +2124,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlElement)this.asInterface(uuid("2dfb8a1f-6b10-4ef8-9f83-efcce8faec37"))).abi_SetAttributeNodeNS(newAttribute, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlAttribute GetAttributeNodeNS(IInspectable namespaceUri, HSTRING localName)
+	final Windows.Data.Xml.Dom.XmlAttribute GetAttributeNodeNS(IInspectable namespaceUri, wstring localName)
 	{
 		Windows.Data.Xml.Dom.XmlAttribute _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlElement)this.asInterface(uuid("2dfb8a1f-6b10-4ef8-9f83-efcce8faec37"))).abi_GetAttributeNodeNS(namespaceUri, localName, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlElement)this.asInterface(uuid("2dfb8a1f-6b10-4ef8-9f83-efcce8faec37"))).abi_GetAttributeNodeNS(namespaceUri, hstring(localName).handle, &_ret));
 		return _ret;
 	}
 	final IInspectable NodeValue()
@@ -2146,11 +2146,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeType(&_ret));
 		return _ret;
 	}
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
 	{
@@ -2262,44 +2262,44 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).set_Prefix(value));
 	}
-	final HSTRING GetXml()
+	final wstring GetXml()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).abi_GetXml(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING InnerText()
+	final wstring InnerText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).get_InnerText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void InnerText(HSTRING value)
+	final void InnerText(wstring value)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(value));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(hstring(value).handle));
 	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(hstring(xpath).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(hstring(xpath).handle, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(wstring xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(hstring(xpath).handle, namespaces, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(wstring xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(hstring(xpath).handle, namespaces, &_ret));
 		return _ret;
 	}
 }
@@ -2323,11 +2323,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeType(&_ret));
 		return _ret;
 	}
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
 	{
@@ -2439,44 +2439,44 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).set_Prefix(value));
 	}
-	final HSTRING GetXml()
+	final wstring GetXml()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).abi_GetXml(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING InnerText()
+	final wstring InnerText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).get_InnerText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void InnerText(HSTRING value)
+	final void InnerText(wstring value)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(value));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(hstring(value).handle));
 	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(hstring(xpath).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(hstring(xpath).handle, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(wstring xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(hstring(xpath).handle, namespaces, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(wstring xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(hstring(xpath).handle, namespaces, &_ret));
 		return _ret;
 	}
 }
@@ -2557,10 +2557,10 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNamedNodeMap)this.asInterface(uuid("b3a69eb0-aab0-4b82-a6fa-b1453f7c021b"))).abi_Item(index, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.IXmlNode GetNamedItem(HSTRING name)
+	final Windows.Data.Xml.Dom.IXmlNode GetNamedItem(wstring name)
 	{
 		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNamedNodeMap)this.asInterface(uuid("b3a69eb0-aab0-4b82-a6fa-b1453f7c021b"))).abi_GetNamedItem(name, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNamedNodeMap)this.asInterface(uuid("b3a69eb0-aab0-4b82-a6fa-b1453f7c021b"))).abi_GetNamedItem(hstring(name).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Data.Xml.Dom.IXmlNode SetNamedItem(Windows.Data.Xml.Dom.IXmlNode node)
@@ -2569,22 +2569,22 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNamedNodeMap)this.asInterface(uuid("b3a69eb0-aab0-4b82-a6fa-b1453f7c021b"))).abi_SetNamedItem(node, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.IXmlNode RemoveNamedItem(HSTRING name)
+	final Windows.Data.Xml.Dom.IXmlNode RemoveNamedItem(wstring name)
 	{
 		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNamedNodeMap)this.asInterface(uuid("b3a69eb0-aab0-4b82-a6fa-b1453f7c021b"))).abi_RemoveNamedItem(name, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNamedNodeMap)this.asInterface(uuid("b3a69eb0-aab0-4b82-a6fa-b1453f7c021b"))).abi_RemoveNamedItem(hstring(name).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.IXmlNode GetNamedItemNS(IInspectable namespaceUri, HSTRING name)
+	final Windows.Data.Xml.Dom.IXmlNode GetNamedItemNS(IInspectable namespaceUri, wstring name)
 	{
 		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNamedNodeMap)this.asInterface(uuid("b3a69eb0-aab0-4b82-a6fa-b1453f7c021b"))).abi_GetNamedItemNS(namespaceUri, name, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNamedNodeMap)this.asInterface(uuid("b3a69eb0-aab0-4b82-a6fa-b1453f7c021b"))).abi_GetNamedItemNS(namespaceUri, hstring(name).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.IXmlNode RemoveNamedItemNS(IInspectable namespaceUri, HSTRING name)
+	final Windows.Data.Xml.Dom.IXmlNode RemoveNamedItemNS(IInspectable namespaceUri, wstring name)
 	{
 		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNamedNodeMap)this.asInterface(uuid("b3a69eb0-aab0-4b82-a6fa-b1453f7c021b"))).abi_RemoveNamedItemNS(namespaceUri, name, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNamedNodeMap)this.asInterface(uuid("b3a69eb0-aab0-4b82-a6fa-b1453f7c021b"))).abi_RemoveNamedItemNS(namespaceUri, hstring(name).handle, &_ret));
 		return _ret;
 	}
 	final Windows.Data.Xml.Dom.IXmlNode SetNamedItemNS(Windows.Data.Xml.Dom.IXmlNode node)
@@ -2663,21 +2663,21 @@ extern(Windows):
 interface XmlProcessingInstruction : Windows.Data.Xml.Dom.IXmlProcessingInstruction, Windows.Data.Xml.Dom.IXmlNode, Windows.Data.Xml.Dom.IXmlNodeSerializer, Windows.Data.Xml.Dom.IXmlNodeSelector
 {
 extern(Windows):
-	final HSTRING Target()
+	final wstring Target()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlProcessingInstruction)this.asInterface(uuid("2707fd1e-1e92-4ece-b6f4-26f069078ddc"))).get_Target(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING Data()
+	final wstring Data()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlProcessingInstruction)this.asInterface(uuid("2707fd1e-1e92-4ece-b6f4-26f069078ddc"))).get_Data(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Data(HSTRING value)
+	final void Data(wstring value)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlProcessingInstruction)this.asInterface(uuid("2707fd1e-1e92-4ece-b6f4-26f069078ddc"))).set_Data(value));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlProcessingInstruction)this.asInterface(uuid("2707fd1e-1e92-4ece-b6f4-26f069078ddc"))).set_Data(hstring(value).handle));
 	}
 	final IInspectable NodeValue()
 	{
@@ -2695,11 +2695,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeType(&_ret));
 		return _ret;
 	}
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
 	{
@@ -2811,44 +2811,44 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).set_Prefix(value));
 	}
-	final HSTRING GetXml()
+	final wstring GetXml()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).abi_GetXml(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING InnerText()
+	final wstring InnerText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).get_InnerText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void InnerText(HSTRING value)
+	final void InnerText(wstring value)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(value));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(hstring(value).handle));
 	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(hstring(xpath).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(hstring(xpath).handle, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(wstring xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(hstring(xpath).handle, namespaces, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(wstring xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(hstring(xpath).handle, namespaces, &_ret));
 		return _ret;
 	}
 }
@@ -2862,15 +2862,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlText)this.asInterface(uuid("f931a4cb-308d-4760-a1d5-43b67450ac7e"))).abi_SplitText(offset, &_ret));
 		return _ret;
 	}
-	final HSTRING Data()
+	final wstring Data()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).get_Data(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Data(HSTRING value)
+	final void Data(wstring value)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).set_Data(value));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).set_Data(hstring(value).handle));
 	}
 	final UINT32 Length()
 	{
@@ -2878,27 +2878,27 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).get_Length(&_ret));
 		return _ret;
 	}
-	final HSTRING SubstringData(UINT32 offset, UINT32 count)
+	final wstring SubstringData(UINT32 offset, UINT32 count)
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_SubstringData(offset, count, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void AppendData(HSTRING data)
+	final void AppendData(wstring data)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_AppendData(data));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_AppendData(hstring(data).handle));
 	}
-	final void InsertData(UINT32 offset, HSTRING data)
+	final void InsertData(UINT32 offset, wstring data)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_InsertData(offset, data));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_InsertData(offset, hstring(data).handle));
 	}
 	final void DeleteData(UINT32 offset, UINT32 count)
 	{
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_DeleteData(offset, count));
 	}
-	final void ReplaceData(UINT32 offset, UINT32 count, HSTRING data)
+	final void ReplaceData(UINT32 offset, UINT32 count, wstring data)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_ReplaceData(offset, count, data));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlCharacterData)this.asInterface(uuid("132e42ab-4e36-4df6-b1c8-0ce62fd88b26"))).abi_ReplaceData(offset, count, hstring(data).handle));
 	}
 	final IInspectable NodeValue()
 	{
@@ -2916,11 +2916,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeType(&_ret));
 		return _ret;
 	}
-	final HSTRING NodeName()
+	final wstring NodeName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).get_NodeName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Data.Xml.Dom.IXmlNode ParentNode()
 	{
@@ -3032,44 +3032,44 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNode)this.asInterface(uuid("1c741d59-2122-47d5-a856-83f3d4214875"))).set_Prefix(value));
 	}
-	final HSTRING GetXml()
+	final wstring GetXml()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).abi_GetXml(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING InnerText()
+	final wstring InnerText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).get_InnerText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void InnerText(HSTRING value)
+	final void InnerText(wstring value)
 	{
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(value));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSerializer)this.asInterface(uuid("5cc5b382-e6dd-4991-abef-06d8d2e7bd0c"))).set_InnerText(hstring(value).handle));
 	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(HSTRING xpath)
-	{
-		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(xpath, &_ret));
-		return _ret;
-	}
-	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNode(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.IXmlNode _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNode(hstring(xpath).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(HSTRING xpath, IInspectable namespaces)
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodes(wstring xpath)
 	{
 		Windows.Data.Xml.Dom.XmlNodeList _ret;
-		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(xpath, namespaces, &_ret));
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodes(hstring(xpath).handle, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.IXmlNode SelectSingleNodeNS(wstring xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.IXmlNode _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectSingleNodeNS(hstring(xpath).handle, namespaces, &_ret));
+		return _ret;
+	}
+	final Windows.Data.Xml.Dom.XmlNodeList SelectNodesNS(wstring xpath, IInspectable namespaces)
+	{
+		Windows.Data.Xml.Dom.XmlNodeList _ret;
+		Debug.OK((cast(Windows.Data.Xml.Dom.IXmlNodeSelector)this.asInterface(uuid("63dbba8b-d0db-4fe1-b745-f9433afdc25b"))).abi_SelectNodesNS(hstring(xpath).handle, namespaces, &_ret));
 		return _ret;
 	}
 }

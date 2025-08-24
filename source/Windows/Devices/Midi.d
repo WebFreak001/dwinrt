@@ -455,11 +455,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.Midi.IMidiInPort)this.asInterface(uuid("d5c1d9db-971a-4eaf-a23d-ea19fe607ff9"))).remove_MessageReceived(token));
 	}
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Midi.IMidiInPort)this.asInterface(uuid("d5c1d9db-971a-4eaf-a23d-ea19fe607ff9"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void Close()
 	{
@@ -472,17 +472,17 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Midi.IMidiInPortStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiInPort) FromIdAsync(HSTRING deviceId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiInPort) FromIdAsync(wstring deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.MidiInPort) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelector()
+	static wstring GetDeviceSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -604,11 +604,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.Midi.IMidiOutPort)this.asInterface(uuid("931d6d9f-57a2-4a3a-adb8-4640886f6693"))).abi_SendBuffer(midiData));
 	}
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Midi.IMidiOutPort)this.asInterface(uuid("931d6d9f-57a2-4a3a-adb8-4640886f6693"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void Close()
 	{
@@ -621,17 +621,17 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.Midi.IMidiOutPortStatics);
 		return _staticInstance;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.IMidiOutPort) FromIdAsync(HSTRING deviceId)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.IMidiOutPort) FromIdAsync(wstring deviceId)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.Midi.IMidiOutPort) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(deviceId).handle, &_ret));
 		return _ret;
 	}
-	static HSTRING GetDeviceSelector()
+	static wstring GetDeviceSelector()
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -924,11 +924,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.Devices.Midi.IMidiOutPort)this.asInterface(uuid("931d6d9f-57a2-4a3a-adb8-4640886f6693"))).abi_SendBuffer(midiData));
 	}
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Devices.Midi.IMidiOutPort)this.asInterface(uuid("931d6d9f-57a2-4a3a-adb8-4640886f6693"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void Close()
 	{

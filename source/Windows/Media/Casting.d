@@ -173,28 +173,28 @@ extern(Windows):
 		Debug.OK((cast(Windows.Media.Casting.ICastingConnectionErrorOccurredEventArgs)this.asInterface(uuid("a7fb3c69-8719-4f00-81fb-961863c79a32"))).get_ErrorStatus(&_ret));
 		return _ret;
 	}
-	final HSTRING Message()
+	final wstring Message()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Casting.ICastingConnectionErrorOccurredEventArgs)this.asInterface(uuid("a7fb3c69-8719-4f00-81fb-961863c79a32"))).get_Message(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface CastingDevice : Windows.Media.Casting.ICastingDevice
 {
 extern(Windows):
-	final HSTRING Id()
+	final wstring Id()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Casting.ICastingDevice)this.asInterface(uuid("de721c83-4a43-4ad1-a6d2-2492a796c3f2"))).get_Id(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final HSTRING FriendlyName()
+	final wstring FriendlyName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Media.Casting.ICastingDevice)this.asInterface(uuid("de721c83-4a43-4ad1-a6d2-2492a796c3f2"))).get_FriendlyName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Storage.Streams.IRandomAccessStreamWithContentType Icon()
 	{
@@ -221,11 +221,11 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Media.Casting.ICastingDeviceStatics);
 		return _staticInstance;
 	}
-	static HSTRING GetDeviceSelector(Windows.Media.Casting.CastingPlaybackTypes type)
+	static wstring GetDeviceSelector(Windows.Media.Casting.CastingPlaybackTypes type)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(type, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	static Windows.Foundation.IAsyncOperation!(HSTRING) GetDeviceSelectorFromCastingSourceAsync(Windows.Media.Casting.CastingSource castingSource)
 	{
@@ -233,10 +233,10 @@ extern(Windows):
 		Debug.OK(staticInstance.abi_GetDeviceSelectorFromCastingSourceAsync(castingSource, &_ret));
 		return _ret;
 	}
-	static Windows.Foundation.IAsyncOperation!(Windows.Media.Casting.CastingDevice) FromIdAsync(HSTRING value)
+	static Windows.Foundation.IAsyncOperation!(Windows.Media.Casting.CastingDevice) FromIdAsync(wstring value)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Media.Casting.CastingDevice) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(value, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(value).handle, &_ret));
 		return _ret;
 	}
 	static Windows.Foundation.IAsyncOperation!(bool) DeviceInfoSupportsCastingAsync(Windows.Devices.Enumeration.DeviceInformation device)

@@ -29,10 +29,10 @@ extern(Windows):
 interface HostedCoreWindowFactory : Windows.UI.Core.ICoreWindowFactory
 {
 extern(Windows):
-	final Windows.UI.Core.CoreWindow CreateCoreWindow(HSTRING windowTitle)
+	final Windows.UI.Core.CoreWindow CreateCoreWindow(wstring windowTitle)
 	{
 		Windows.UI.Core.CoreWindow _ret;
-		Debug.OK((cast(Windows.UI.Core.ICoreWindowFactory)this.asInterface(uuid("cd292360-2763-4085-8a9f-74b224a29175"))).abi_CreateCoreWindow(windowTitle, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFactory)this.asInterface(uuid("cd292360-2763-4085-8a9f-74b224a29175"))).abi_CreateCoreWindow(hstring(windowTitle).handle, &_ret));
 		return _ret;
 	}
 	final bool WindowReuseAllowed()
@@ -46,10 +46,10 @@ extern(Windows):
 interface ImmersiveCoreWindowFactory : Windows.UI.Core.ICoreWindowFactory
 {
 extern(Windows):
-	final Windows.UI.Core.CoreWindow CreateCoreWindow(HSTRING windowTitle)
+	final Windows.UI.Core.CoreWindow CreateCoreWindow(wstring windowTitle)
 	{
 		Windows.UI.Core.CoreWindow _ret;
-		Debug.OK((cast(Windows.UI.Core.ICoreWindowFactory)this.asInterface(uuid("cd292360-2763-4085-8a9f-74b224a29175"))).abi_CreateCoreWindow(windowTitle, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFactory)this.asInterface(uuid("cd292360-2763-4085-8a9f-74b224a29175"))).abi_CreateCoreWindow(hstring(windowTitle).handle, &_ret));
 		return _ret;
 	}
 	final bool WindowReuseAllowed()
@@ -63,10 +63,10 @@ extern(Windows):
 interface UAPCoreWindowFactory : Windows.UI.Core.ICoreWindowFactory
 {
 extern(Windows):
-	final Windows.UI.Core.CoreWindow CreateCoreWindow(HSTRING windowTitle)
+	final Windows.UI.Core.CoreWindow CreateCoreWindow(wstring windowTitle)
 	{
 		Windows.UI.Core.CoreWindow _ret;
-		Debug.OK((cast(Windows.UI.Core.ICoreWindowFactory)this.asInterface(uuid("cd292360-2763-4085-8a9f-74b224a29175"))).abi_CreateCoreWindow(windowTitle, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFactory)this.asInterface(uuid("cd292360-2763-4085-8a9f-74b224a29175"))).abi_CreateCoreWindow(hstring(windowTitle).handle, &_ret));
 		return _ret;
 	}
 	final bool WindowReuseAllowed()
@@ -685,11 +685,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).set_Handled(value));
 	}
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Core.IAcceleratorKeyEventArgs2)this.asInterface(uuid("d300a9f6-2f7e-4873-a555-166e596ee1c5"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -1013,11 +1013,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Core.ICoreClosestInteractiveBoundsRequested)this.asInterface(uuid("f303043a-e8bf-4e8e-ae69-c9dadd57a114"))).remove_ClosestInteractiveBoundsRequested(cookie));
 	}
-	final HSTRING GetCurrentKeyEventDeviceId()
+	final wstring GetCurrentKeyEventDeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Core.ICoreKeyboardInputSource2)this.asInterface(uuid("fa24cb94-f963-47a5-8778-207c482b0afd"))).abi_GetCurrentKeyEventDeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
@@ -1563,11 +1563,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Core.ICoreWindow3)this.asInterface(uuid("32c20dd8-faef-4375-a2ab-32640e4815c7"))).remove_ClosestInteractiveBoundsRequested(cookie));
 	}
-	final HSTRING GetCurrentKeyEventDeviceId()
+	final wstring GetCurrentKeyEventDeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Core.ICoreWindow3)this.asInterface(uuid("32c20dd8-faef-4375-a2ab-32640e4815c7"))).abi_GetCurrentKeyEventDeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final EventRegistrationToken OnResizeStarted(void delegate(Windows.UI.Core.CoreWindow, IInspectable) fn)
 	{
@@ -1629,15 +1629,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Core.ICoreWindowDialog)this.asInterface(uuid("e7392ce0-c78d-427e-8b2c-01ff420c69d5"))).get_MinSize(&_ret));
 		return _ret;
 	}
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Core.ICoreWindowDialog)this.asInterface(uuid("e7392ce0-c78d-427e-8b2c-01ff420c69d5"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Title(HSTRING value)
+	final void Title(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Core.ICoreWindowDialog)this.asInterface(uuid("e7392ce0-c78d-427e-8b2c-01ff420c69d5"))).set_Title(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowDialog)this.asInterface(uuid("e7392ce0-c78d-427e-8b2c-01ff420c69d5"))).set_Title(hstring(value).handle));
 	}
 	final INT32 IsInteractionDelayed()
 	{
@@ -1697,11 +1697,11 @@ extern(Windows):
 		Debug.OK(activationFactory!(CoreWindowDialog).abi_ActivateInstance(&ret));
 		return cast(CoreWindowDialog) ret;
 	}
-	static Windows.UI.Core.CoreWindowDialog New(HSTRING title)
+	static Windows.UI.Core.CoreWindowDialog New(wstring title)
 	{
 		auto factory = factory!(Windows.UI.Core.ICoreWindowDialogFactory);
 		Windows.UI.Core.CoreWindowDialog _ret;
-		Debug.OK((cast(Windows.UI.Core.ICoreWindowDialogFactory)factory.asInterface(uuid("cfb2a855-1c59-4b13-b1e5-16e29805f7c4"))).abi_CreateWithTitle(title, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowDialogFactory)factory.asInterface(uuid("cfb2a855-1c59-4b13-b1e5-16e29805f7c4"))).abi_CreateWithTitle(hstring(title).handle, &_ret));
 		return _ret;
 	}
 }
@@ -1746,15 +1746,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Core.ICoreWindowFlyout)this.asInterface(uuid("e89d854d-2050-40bb-b344-f6f355eeb314"))).get_MinSize(&_ret));
 		return _ret;
 	}
-	final HSTRING Title()
+	final wstring Title()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Core.ICoreWindowFlyout)this.asInterface(uuid("e89d854d-2050-40bb-b344-f6f355eeb314"))).get_Title(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Title(HSTRING value)
+	final void Title(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Core.ICoreWindowFlyout)this.asInterface(uuid("e89d854d-2050-40bb-b344-f6f355eeb314"))).set_Title(value));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFlyout)this.asInterface(uuid("e89d854d-2050-40bb-b344-f6f355eeb314"))).set_Title(hstring(value).handle));
 	}
 	final INT32 IsInteractionDelayed()
 	{
@@ -1805,11 +1805,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Core.ICoreWindowFlyoutFactory)factory.asInterface(uuid("dec4c6c4-93e8-4f7c-be27-cefaa1af68a7"))).abi_Create(position, &_ret));
 		return _ret;
 	}
-	static Windows.UI.Core.CoreWindowFlyout New(Windows.Foundation.Point position, HSTRING title)
+	static Windows.UI.Core.CoreWindowFlyout New(Windows.Foundation.Point position, wstring title)
 	{
 		auto factory = factory!(Windows.UI.Core.ICoreWindowFlyoutFactory);
 		Windows.UI.Core.CoreWindowFlyout _ret;
-		Debug.OK((cast(Windows.UI.Core.ICoreWindowFlyoutFactory)factory.asInterface(uuid("dec4c6c4-93e8-4f7c-be27-cefaa1af68a7"))).abi_CreateWithTitle(position, title, &_ret));
+		Debug.OK((cast(Windows.UI.Core.ICoreWindowFlyoutFactory)factory.asInterface(uuid("dec4c6c4-93e8-4f7c-be27-cefaa1af68a7"))).abi_CreateWithTitle(position, hstring(title).handle, &_ret));
 		return _ret;
 	}
 }
@@ -1912,11 +1912,11 @@ extern(Windows):
 	{
 		Debug.OK((cast(Windows.UI.Core.ICoreWindowEventArgs)this.asInterface(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da"))).set_Handled(value));
 	}
-	final HSTRING DeviceId()
+	final wstring DeviceId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Core.IKeyEventArgs2)this.asInterface(uuid("583add98-0790-4571-9b12-645ef9d79e42"))).get_DeviceId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 

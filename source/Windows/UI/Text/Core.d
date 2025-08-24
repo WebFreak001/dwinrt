@@ -249,11 +249,11 @@ extern(Windows):
 interface CoreTextCompositionSegment : Windows.UI.Text.Core.ICoreTextCompositionSegment
 {
 extern(Windows):
-	final HSTRING PreconversionString()
+	final wstring PreconversionString()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextCompositionSegment)this.asInterface(uuid("776c6bd9-4ead-4da7-8f47-3a88b523cc34"))).get_PreconversionString(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.UI.Text.Core.CoreTextRange Range()
 	{
@@ -283,15 +283,15 @@ extern(Windows):
 interface CoreTextEditContext : Windows.UI.Text.Core.ICoreTextEditContext, Windows.UI.Text.Core.ICoreTextEditContext2
 {
 extern(Windows):
-	final HSTRING Name()
+	final wstring Name()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).get_Name(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Name(HSTRING value)
+	final void Name(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).set_Name(value));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextEditContext)this.asInterface(uuid("bf6608af-4041-47c3-b263-a918eb5eaef2"))).set_Name(hstring(value).handle));
 	}
 	final Windows.UI.Text.Core.CoreTextInputScope InputScope()
 	{
@@ -709,15 +709,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextTextRequest)this.asInterface(uuid("50d950a9-f51e-4cc1-8ca1-e6346d1a61be"))).get_Range(&_ret));
 		return _ret;
 	}
-	final HSTRING Text()
+	final wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextTextRequest)this.asInterface(uuid("50d950a9-f51e-4cc1-8ca1-e6346d1a61be"))).get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void Text(HSTRING value)
+	final void Text(wstring value)
 	{
-		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextTextRequest)this.asInterface(uuid("50d950a9-f51e-4cc1-8ca1-e6346d1a61be"))).set_Text(value));
+		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextTextRequest)this.asInterface(uuid("50d950a9-f51e-4cc1-8ca1-e6346d1a61be"))).set_Text(hstring(value).handle));
 	}
 	final bool IsCanceled()
 	{
@@ -753,11 +753,11 @@ extern(Windows):
 		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs)this.asInterface(uuid("eea7918d-cc2b-4f03-8ff6-02fd217db450"))).get_Range(&_ret));
 		return _ret;
 	}
-	final HSTRING Text()
+	final wstring Text()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.UI.Text.Core.ICoreTextTextUpdatingEventArgs)this.asInterface(uuid("eea7918d-cc2b-4f03-8ff6-02fd217db450"))).get_Text(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.UI.Text.Core.CoreTextRange NewSelection()
 	{

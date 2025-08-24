@@ -120,11 +120,11 @@ interface IPrintTextOptionDetails : IPrintTextOptionDetails_Base, Windows.Graphi
 interface PrintBindingOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails
 {
 extern(Windows):
-	final HSTRING OptionId()
+	final wstring OptionId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
 	{
@@ -132,15 +132,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionType(&_ret));
 		return _ret;
 	}
-	final void ErrorText(HSTRING value)
+	final void ErrorText(wstring value)
 	{
-		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(value));
+		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(hstring(value).handle));
 	}
-	final HSTRING ErrorText()
+	final wstring ErrorText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_ErrorText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
 	{
@@ -175,11 +175,11 @@ extern(Windows):
 interface PrintBorderingOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails
 {
 extern(Windows):
-	final HSTRING OptionId()
+	final wstring OptionId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
 	{
@@ -187,15 +187,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionType(&_ret));
 		return _ret;
 	}
-	final void ErrorText(HSTRING value)
+	final void ErrorText(wstring value)
 	{
-		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(value));
+		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(hstring(value).handle));
 	}
-	final HSTRING ErrorText()
+	final wstring ErrorText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_ErrorText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
 	{
@@ -230,11 +230,11 @@ extern(Windows):
 interface PrintCollationOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails
 {
 extern(Windows):
-	final HSTRING OptionId()
+	final wstring OptionId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
 	{
@@ -242,15 +242,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionType(&_ret));
 		return _ret;
 	}
-	final void ErrorText(HSTRING value)
+	final void ErrorText(wstring value)
 	{
-		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(value));
+		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(hstring(value).handle));
 	}
-	final HSTRING ErrorText()
+	final wstring ErrorText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_ErrorText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
 	{
@@ -285,11 +285,11 @@ extern(Windows):
 interface PrintColorModeOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails
 {
 extern(Windows):
-	final HSTRING OptionId()
+	final wstring OptionId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
 	{
@@ -297,15 +297,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionType(&_ret));
 		return _ret;
 	}
-	final void ErrorText(HSTRING value)
+	final void ErrorText(wstring value)
 	{
-		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(value));
+		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(hstring(value).handle));
 	}
-	final HSTRING ErrorText()
+	final wstring ErrorText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_ErrorText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
 	{
@@ -340,11 +340,11 @@ extern(Windows):
 interface PrintCopiesOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintNumberOptionDetails
 {
 extern(Windows):
-	final HSTRING OptionId()
+	final wstring OptionId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
 	{
@@ -352,15 +352,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionType(&_ret));
 		return _ret;
 	}
-	final void ErrorText(HSTRING value)
+	final void ErrorText(wstring value)
 	{
-		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(value));
+		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(hstring(value).handle));
 	}
-	final HSTRING ErrorText()
+	final wstring ErrorText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_ErrorText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
 	{
@@ -401,32 +401,32 @@ extern(Windows):
 interface PrintCustomItemDetails : Windows.Graphics.Printing.OptionDetails.IPrintCustomItemDetails
 {
 extern(Windows):
-	final HSTRING ItemId()
+	final wstring ItemId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintCustomItemDetails)this.asInterface(uuid("5704b637-5c3a-449a-aa36-b3291b1192fd"))).get_ItemId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	final void ItemDisplayName(HSTRING value)
+	final void ItemDisplayName(wstring value)
 	{
-		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintCustomItemDetails)this.asInterface(uuid("5704b637-5c3a-449a-aa36-b3291b1192fd"))).set_ItemDisplayName(value));
+		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintCustomItemDetails)this.asInterface(uuid("5704b637-5c3a-449a-aa36-b3291b1192fd"))).set_ItemDisplayName(hstring(value).handle));
 	}
-	final HSTRING ItemDisplayName()
+	final wstring ItemDisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintCustomItemDetails)this.asInterface(uuid("5704b637-5c3a-449a-aa36-b3291b1192fd"))).get_ItemDisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 }
 
 interface PrintCustomItemListOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintCustomOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintCustomItemListOptionDetails
 {
 extern(Windows):
-	final HSTRING OptionId()
+	final wstring OptionId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
 	{
@@ -434,15 +434,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionType(&_ret));
 		return _ret;
 	}
-	final void ErrorText(HSTRING value)
+	final void ErrorText(wstring value)
 	{
-		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(value));
+		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(hstring(value).handle));
 	}
-	final HSTRING ErrorText()
+	final wstring ErrorText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_ErrorText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
 	{
@@ -466,15 +466,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).abi_TrySetValue(value, &_ret));
 		return _ret;
 	}
-	final void DisplayName(HSTRING value)
+	final void DisplayName(wstring value)
 	{
-		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintCustomOptionDetails)this.asInterface(uuid("e32bde1c-28af-4b90-95da-a3acf320b929"))).set_DisplayName(value));
+		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintCustomOptionDetails)this.asInterface(uuid("e32bde1c-28af-4b90-95da-a3acf320b929"))).set_DisplayName(hstring(value).handle));
 	}
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintCustomOptionDetails)this.asInterface(uuid("e32bde1c-28af-4b90-95da-a3acf320b929"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Foundation.Collections.IVectorView!(IInspectable) Items()
 	{
@@ -482,20 +482,20 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails)this.asInterface(uuid("9a2257bf-fe61-43d8-a24f-a3f6ab7320e7"))).get_Items(&_ret));
 		return _ret;
 	}
-	final void AddItem(HSTRING itemId, HSTRING displayName)
+	final void AddItem(wstring itemId, wstring displayName)
 	{
-		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintCustomItemListOptionDetails)this.asInterface(uuid("a5fafd88-58f2-4ebd-b90f-51e4f2944c5d"))).abi_AddItem(itemId, displayName));
+		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintCustomItemListOptionDetails)this.asInterface(uuid("a5fafd88-58f2-4ebd-b90f-51e4f2944c5d"))).abi_AddItem(hstring(itemId).handle, hstring(displayName).handle));
 	}
 }
 
 interface PrintCustomTextOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintCustomOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintCustomTextOptionDetails
 {
 extern(Windows):
-	final HSTRING OptionId()
+	final wstring OptionId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
 	{
@@ -503,15 +503,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionType(&_ret));
 		return _ret;
 	}
-	final void ErrorText(HSTRING value)
+	final void ErrorText(wstring value)
 	{
-		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(value));
+		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(hstring(value).handle));
 	}
-	final HSTRING ErrorText()
+	final wstring ErrorText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_ErrorText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
 	{
@@ -535,15 +535,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).abi_TrySetValue(value, &_ret));
 		return _ret;
 	}
-	final void DisplayName(HSTRING value)
+	final void DisplayName(wstring value)
 	{
-		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintCustomOptionDetails)this.asInterface(uuid("e32bde1c-28af-4b90-95da-a3acf320b929"))).set_DisplayName(value));
+		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintCustomOptionDetails)this.asInterface(uuid("e32bde1c-28af-4b90-95da-a3acf320b929"))).set_DisplayName(hstring(value).handle));
 	}
-	final HSTRING DisplayName()
+	final wstring DisplayName()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintCustomOptionDetails)this.asInterface(uuid("e32bde1c-28af-4b90-95da-a3acf320b929"))).get_DisplayName(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void MaxCharacters(UINT32 value)
 	{
@@ -560,11 +560,11 @@ extern(Windows):
 interface PrintDuplexOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails
 {
 extern(Windows):
-	final HSTRING OptionId()
+	final wstring OptionId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
 	{
@@ -572,15 +572,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionType(&_ret));
 		return _ret;
 	}
-	final void ErrorText(HSTRING value)
+	final void ErrorText(wstring value)
 	{
-		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(value));
+		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(hstring(value).handle));
 	}
-	final HSTRING ErrorText()
+	final wstring ErrorText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_ErrorText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
 	{
@@ -615,11 +615,11 @@ extern(Windows):
 interface PrintHolePunchOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails
 {
 extern(Windows):
-	final HSTRING OptionId()
+	final wstring OptionId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
 	{
@@ -627,15 +627,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionType(&_ret));
 		return _ret;
 	}
-	final void ErrorText(HSTRING value)
+	final void ErrorText(wstring value)
 	{
-		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(value));
+		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(hstring(value).handle));
 	}
-	final HSTRING ErrorText()
+	final wstring ErrorText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_ErrorText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
 	{
@@ -670,11 +670,11 @@ extern(Windows):
 interface PrintMediaSizeOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails
 {
 extern(Windows):
-	final HSTRING OptionId()
+	final wstring OptionId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
 	{
@@ -682,15 +682,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionType(&_ret));
 		return _ret;
 	}
-	final void ErrorText(HSTRING value)
+	final void ErrorText(wstring value)
 	{
-		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(value));
+		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(hstring(value).handle));
 	}
-	final HSTRING ErrorText()
+	final wstring ErrorText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_ErrorText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
 	{
@@ -725,11 +725,11 @@ extern(Windows):
 interface PrintMediaTypeOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails
 {
 extern(Windows):
-	final HSTRING OptionId()
+	final wstring OptionId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
 	{
@@ -737,15 +737,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionType(&_ret));
 		return _ret;
 	}
-	final void ErrorText(HSTRING value)
+	final void ErrorText(wstring value)
 	{
-		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(value));
+		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(hstring(value).handle));
 	}
-	final HSTRING ErrorText()
+	final wstring ErrorText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_ErrorText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
 	{
@@ -780,11 +780,11 @@ extern(Windows):
 interface PrintOrientationOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails
 {
 extern(Windows):
-	final HSTRING OptionId()
+	final wstring OptionId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
 	{
@@ -792,15 +792,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionType(&_ret));
 		return _ret;
 	}
-	final void ErrorText(HSTRING value)
+	final void ErrorText(wstring value)
 	{
-		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(value));
+		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(hstring(value).handle));
 	}
-	final HSTRING ErrorText()
+	final wstring ErrorText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_ErrorText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
 	{
@@ -835,11 +835,11 @@ extern(Windows):
 interface PrintQualityOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails
 {
 extern(Windows):
-	final HSTRING OptionId()
+	final wstring OptionId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
 	{
@@ -847,15 +847,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionType(&_ret));
 		return _ret;
 	}
-	final void ErrorText(HSTRING value)
+	final void ErrorText(wstring value)
 	{
-		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(value));
+		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(hstring(value).handle));
 	}
-	final HSTRING ErrorText()
+	final wstring ErrorText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_ErrorText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
 	{
@@ -890,11 +890,11 @@ extern(Windows):
 interface PrintStapleOptionDetails : Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails, Windows.Graphics.Printing.OptionDetails.IPrintItemListOptionDetails
 {
 extern(Windows):
-	final HSTRING OptionId()
+	final wstring OptionId()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionId(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final Windows.Graphics.Printing.OptionDetails.PrintOptionType OptionType()
 	{
@@ -902,15 +902,15 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_OptionType(&_ret));
 		return _ret;
 	}
-	final void ErrorText(HSTRING value)
+	final void ErrorText(wstring value)
 	{
-		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(value));
+		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).set_ErrorText(hstring(value).handle));
 	}
-	final HSTRING ErrorText()
+	final wstring ErrorText()
 	{
 		HSTRING _ret;
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintOptionDetails)this.asInterface(uuid("390686cf-d682-495f-adfe-d7333f5c1808"))).get_ErrorText(&_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	final void State(Windows.Graphics.Printing.OptionDetails.PrintOptionStates value)
 	{
@@ -962,16 +962,16 @@ extern(Windows):
 		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintTaskOptionDetails)this.asInterface(uuid("f5720af1-a89e-42a6-81af-f8e010b38a68"))).get_Options(&_ret));
 		return _ret;
 	}
-	final Windows.Graphics.Printing.OptionDetails.PrintCustomItemListOptionDetails CreateItemListOption(HSTRING optionId, HSTRING displayName)
+	final Windows.Graphics.Printing.OptionDetails.PrintCustomItemListOptionDetails CreateItemListOption(wstring optionId, wstring displayName)
 	{
 		Windows.Graphics.Printing.OptionDetails.PrintCustomItemListOptionDetails _ret;
-		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintTaskOptionDetails)this.asInterface(uuid("f5720af1-a89e-42a6-81af-f8e010b38a68"))).abi_CreateItemListOption(optionId, displayName, &_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintTaskOptionDetails)this.asInterface(uuid("f5720af1-a89e-42a6-81af-f8e010b38a68"))).abi_CreateItemListOption(hstring(optionId).handle, hstring(displayName).handle, &_ret));
 		return _ret;
 	}
-	final Windows.Graphics.Printing.OptionDetails.PrintCustomTextOptionDetails CreateTextOption(HSTRING optionId, HSTRING displayName)
+	final Windows.Graphics.Printing.OptionDetails.PrintCustomTextOptionDetails CreateTextOption(wstring optionId, wstring displayName)
 	{
 		Windows.Graphics.Printing.OptionDetails.PrintCustomTextOptionDetails _ret;
-		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintTaskOptionDetails)this.asInterface(uuid("f5720af1-a89e-42a6-81af-f8e010b38a68"))).abi_CreateTextOption(optionId, displayName, &_ret));
+		Debug.OK((cast(Windows.Graphics.Printing.OptionDetails.IPrintTaskOptionDetails)this.asInterface(uuid("f5720af1-a89e-42a6-81af-f8e010b38a68"))).abi_CreateTextOption(hstring(optionId).handle, hstring(displayName).handle, &_ret));
 		return _ret;
 	}
 	final EventRegistrationToken OnOptionChanged(void delegate(Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails, Windows.Graphics.Printing.OptionDetails.PrintTaskOptionChangedEventArgs) fn)

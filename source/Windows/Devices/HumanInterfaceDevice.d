@@ -421,23 +421,23 @@ extern(Windows):
 		if (_staticInstance is null) _staticInstance = factory!(Windows.Devices.HumanInterfaceDevice.IHidDeviceStatics);
 		return _staticInstance;
 	}
-	static HSTRING GetDeviceSelector(UINT16 usagePage, UINT16 usageId)
+	static wstring GetDeviceSelector(UINT16 usagePage, UINT16 usageId)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelector(usagePage, usageId, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
-	static HSTRING GetDeviceSelectorVidPid(UINT16 usagePage, UINT16 usageId, UINT16 vendorId, UINT16 productId)
+	static wstring GetDeviceSelectorVidPid(UINT16 usagePage, UINT16 usageId, UINT16 vendorId, UINT16 productId)
 	{
 		HSTRING _ret;
 		Debug.OK(staticInstance.abi_GetDeviceSelectorVidPid(usagePage, usageId, vendorId, productId, &_ret));
-		return _ret;
+		return hstring(_ret).d_str;
 	}
 	alias GetDeviceSelector = GetDeviceSelectorVidPid;
-	static Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidDevice) FromIdAsync(HSTRING deviceId, Windows.Storage.FileAccessMode accessMode)
+	static Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidDevice) FromIdAsync(wstring deviceId, Windows.Storage.FileAccessMode accessMode)
 	{
 		Windows.Foundation.IAsyncOperation!(Windows.Devices.HumanInterfaceDevice.HidDevice) _ret;
-		Debug.OK(staticInstance.abi_FromIdAsync(deviceId, accessMode, &_ret));
+		Debug.OK(staticInstance.abi_FromIdAsync(hstring(deviceId).handle, accessMode, &_ret));
 		return _ret;
 	}
 }
